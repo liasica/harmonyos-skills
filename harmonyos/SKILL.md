@@ -56,7 +56,7 @@ rg -n "@ohos\.app\.ability" references/harmonyos-references/INDEX.md
 2. 用关键词在 `references/INDEX.md` 中匹配（明显属于某个分类时可直接到对应 `<category>/INDEX.md`）
 3. 仅 `Read` 命中的 `.md`，不要主动读邻居文件，除非确有必要
 4. 回答时引用 frontmatter 的 `url` 字段作为出处
-5. 如果本地文件比用户项目要求的版本陈旧（对比 `doc_updated_at`），或本地完全没命中而该话题确属鸿蒙领域，再用 WebFetch 拉取实时页并明确说明走了在线兜底
+5. 如果本地文件比用户项目要求的版本陈旧（对比 `doc_updated_at`），或本地完全没命中而该话题确属鸿蒙领域，用下方"在线兜底"调华为文档 API 拉取最新内容并明确说明走了在线兜底
 
 ## 质量约束
 
@@ -65,3 +65,39 @@ rg -n "@ohos\.app\.ability" references/harmonyos-references/INDEX.md
 - 不要修改 `references/` 下任何文件——它们是只读参考资料
 - 不要把 frontmatter 字段（`content_hash` / `scraped_at` / `category`）当成代码内容塞进生成的代码里
 - 当两份文档冲突（例如旧版指南与新版本说明），明确指出冲突并同时引用两边
+
+## 在线兜底（不要用 WebFetch / 浏览器）
+
+`developer.huawei.com/consumer/cn/doc/` 是 SPA 站点：`WebFetch` 拿不到正文（只返回加载占位页），`curl` 直接抓 URL 也只有 1.5KB 空壳。要拉最新内容请直接调华为文档 API（HTML 端点，毫秒级）：
+
+```bash
+# 把 URL 最后一段作为 objectId
+URL="https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/application-dev-guide"
+OBJECT_ID="${URL##*/}"
+OBJECT_ID="${OBJECT_ID%%\?*}"   # 去掉 ?istab=1&m=1 等 query
+
+curl -sL -X POST "https://developer.huawei.com/consumer/cn/documentPortal/getDocumentById" \
+  -H "Content-Type: application/json" \
+  -d "{\"objectId\":\"${OBJECT_ID}\",\"language\":\"cn\"}" \
+  | jq -r '.value.content.content'   # 输出原始 HTML
+```
+
+返回结构：
+
+```json
+{
+  "code": 0,
+  "value": {
+    "title": "应用开发导读",
+    "lang": "cn",
+    "anchorList": [...],
+    "content": {"type": "html", "content": "<html>...<h1>...</h1>...</html>"}
+  }
+}
+```
+
+需要 Markdown 时把 HTML 喂给 `pandoc -f html -t markdown`，或用 Python `markdownify`：
+
+```bash
+curl ... | jq -r '.value.content.content' | pandoc -f html -t gfm
+```
