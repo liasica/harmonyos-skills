@@ -1,0 +1,202 @@
+---
+url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-request
+title: 上传下载错误码
+breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > 错误码 > 上传下载错误码
+category: harmonyos-references
+scraped_at: 2026-04-28T08:09:57+08:00
+doc_updated_at: 2026-03-09
+content_hash: sha256:ac3ceb324656e0461732b61492aaf8de0d4daa489002caaeb6aee56dbf3d28a7
+---
+
+说明
+
+以下仅介绍本模块特有错误码，通用错误码请参考[通用错误码说明文档](errorcode-universal.md)。
+
+## 13400001 文件操作异常
+
+PhonePC/2in1TabletTVWearable
+
+**错误信息**
+
+Invalid file or file system error.
+
+**错误描述**
+
+在调用create、uploadFile或downloadFile接口时，传入了无效文件或文件系统错误。
+
+**可能原因**
+
+该错误码表示文件操作异常，可能原因是文件权限不足。具体原因可参考[BusinessError](js-apis-base.md#businesserror)中的错误信息message。
+
+**处理步骤**
+
+请检查文件权限是否合理。
+
+## 13400002 文件路径异常
+
+PhonePC/2in1TabletTVWearable
+
+**错误信息**
+
+File path not supported or invalid.
+
+**错误描述**
+
+在调用uploadFile或downloadFile接口时，文件路径不合法或文件路径下文件已存在。
+
+**可能原因**
+
+该错误码表示文件路径异常，可能原因是文件路径错误或文件路径下文件已存在。
+
+**处理步骤**
+
+请检查上传下载的文件路径是否正确。
+
+## 13400003 服务异常
+
+PhonePC/2in1TabletTVWearable
+
+**错误信息**
+
+Task service ability error.
+
+**错误描述**
+
+在调用downloadFile接口时，下载任务后台服务失败。
+
+**可能原因**
+
+该错误码表示服务异常，可能原因是任务创建失败。
+
+**处理步骤**
+
+请检查任务配置是否正确。
+
+## 13499999 其他错误
+
+**错误信息**
+
+Other error.
+
+**错误描述**
+
+在调用uploadFile或downloadFile接口时，出现其他错误。
+
+**可能原因**
+
+该错误码表示服务异常，可能原因是任务创建失败。
+
+**处理步骤**
+
+请检查任务配置是否正确。
+
+## 21900004 应用任务队列已满
+
+PhonePC/2in1TabletTVWearable
+
+**错误信息**
+
+The application task queue is full.
+
+**错误描述**
+
+应用任务队列已满。
+
+**可能原因**
+
+应用创建后台任务失败（前端任务直接抢占、不涉及工作队列）。
+
+**处理步骤**
+
+1. 通过查询接口获取应用所有的后台任务。
+2. 主动清理，释放配额。
+3. 重新创建后台任务。
+
+## 21900005 任务模式错误
+
+PhonePC/2in1TabletTVWearable
+
+**错误信息**
+
+Operation with wrong task mode.
+
+**错误描述**
+
+任务模式错误。
+
+**可能原因**
+
+非前台应用创建前端任务。
+
+**处理步骤**
+
+1. 给前台应用注册、注销事件监听。
+2. 这是接口限制，按接口说明使用即可。
+
+## 21900006 操作不存在的任务错误
+
+PhonePC/2in1TabletTVWearable
+
+**错误信息**
+
+Task removed or not found.
+
+**错误描述**
+
+操作不存在的任务。
+
+**可能原因**
+
+删除、查询不存在的任务。
+
+**处理步骤**
+
+1. 通过检索接口查询存在的任务。
+2. 确认所查询的任务是否存在（系统会定期清理垃圾任务）。
+3. 使用正确的任务编号重新操作。
+
+## 21900007 在不支持的状态上的操作
+
+PhonePC/2in1TabletTVWearable
+
+**错误信息**
+
+Operation with wrong task state.
+
+**错误描述**
+
+在不支持的状态上的操作任务。
+
+**可能原因**
+
+1. 启动一个已删除的任务。
+2. 启动一个非初始化的任务。
+3. 暂停一个非执行中的任务。
+4. 恢复一个非暂停的任务。
+5. 停止一个非执行中的任务。
+
+**处理步骤**
+
+1. 查询任务状态。
+2. 执行当前任务状态支持的操作。
+
+## 21900008 任务分组不存在或已移除
+
+PhonePC/2in1TabletTVWearable
+
+**错误信息**
+
+Group deleted or not found.
+
+**错误描述**
+
+任务分组不存在或已移除。
+
+**可能原因**
+
+1. 删除一个已移除或不存在的分组。
+2. 向一个已移除或不存在的分组中添加任务。
+
+**处理步骤**
+
+检查目标分组是否已被移除。

@@ -1,0 +1,31 @@
+---
+url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/thread-model-fa
+title: 线程模型
+breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > FA模型开发指导 > 线程模型
+category: harmonyos-guides
+scraped_at: 2026-04-28T07:38:04+08:00
+doc_updated_at: 2026-03-09
+content_hash: sha256:a80b7e090d462e428ff5517b4e288af0dab6d18a2f395fde498a155cb9d339bf
+---
+
+[FA模型](ability-terminology.md#fa模型)下的线程主要有如下三类：
+
+* 主线程：
+
+  负责管理其他线程。
+* Ability线程：
+
+  + 每个Ability一个线程。
+  + 输入事件分发。
+  + UI绘制。
+  + 应用代码回调（事件处理，生命周期）。
+  + 接收Worker发送的消息。
+* Worker线程：
+
+  执行耗时操作。
+
+基于当前的线程模型，不同的业务功能运行在不同的线程上，业务功能的交互就需要线程间通信。线程间通信目前主要有[Emitter](itc-with-emitter.md)和[Worker](worker-introduction.md)两种方式，其中Emitter主要适用于线程间的事件同步， Worker主要用于新开一个线程执行耗时任务。
+
+说明
+
+FA模型每个Ability都有一个独立的线程，Emitter可用于Ability线程内、Ability线程间、Ability线程与Worker线程的事件同步。

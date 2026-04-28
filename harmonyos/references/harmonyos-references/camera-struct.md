@@ -1,0 +1,49 @@
+---
+url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/camera-struct
+title: 结构体
+breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > C API > 结构体
+category: harmonyos-references
+scraped_at: 2026-04-28T08:12:46+08:00
+doc_updated_at: 2026-04-20
+content_hash: sha256:9e782051b1266952435b9ad85bd6e342ff049635dc641544d7aafd9a4219d0be
+---
+
+* **[Camera\_Size](capi-oh-camera-camera-size.md)**
+* **[Camera\_Profile](capi-oh-camera-camera-profile.md)**
+* **[Camera\_FrameRateRange](capi-oh-camera-camera-frameraterange.md)**
+* **[Camera\_VideoProfile](capi-oh-camera-camera-videoprofile.md)**
+* **[Camera\_OutputCapability](capi-oh-camera-camera-outputcapability.md)**
+* **[Camera\_Device](capi-oh-camera-camera-device.md)**
+* **[Camera\_DeviceQueryInfo](capi-oh-camera-camera-devicequeryinfo.md)**
+* **[Camera\_StatusInfo](capi-oh-camera-camera-statusinfo.md)**
+* **[Camera\_Point](capi-oh-camera-camera-point.md)**
+* **[Camera\_Location](capi-oh-camera-camera-location.md)**
+* **[Camera\_PhotoCaptureSetting](capi-oh-camera-camera-photocapturesetting.md)**
+* **[Camera\_FrameShutterInfo](capi-oh-camera-camera-frameshutterinfo.md)**
+* **[Camera\_CaptureEndInfo](capi-oh-camera-camera-captureendinfo.md)**
+* **[Camera\_Rect](capi-oh-camera-camera-rect.md)**
+* **[Camera\_MetadataObject](capi-oh-camera-camera-metadataobject.md)**
+* **[Camera\_TorchStatusInfo](capi-oh-camera-camera-torchstatusinfo.md)**
+* **[Camera\_SmoothZoomInfo](capi-oh-camera-camera-smoothzoominfo.md)**
+* **[Camera\_CaptureStartInfo](capi-oh-camera-camera-capturestartinfo.md)**
+* **[Camera\_FrameShutterEndInfo](capi-oh-camera-camera-frameshutterendinfo.md)**
+* **[Camera\_FoldStatusInfo](capi-oh-camera-camera-foldstatusinfo.md)**
+* **[Camera\_AutoDeviceSwitchStatusInfo](capi-oh-camera-camera-autodeviceswitchstatusinfo.md)**
+* **[Camera\_ConcurrentInfo](capi-oh-camera-camera-concurrentinfo.md)**
+* **[Camera\_ControlCenterStatusInfo](capi-oh-camera-camera-controlcenterstatusinfo.md)**
+* **[Camera\_Manager](capi-oh-camera-camera-manager.md)**
+* **[CameraInput\_Callbacks](capi-oh-camera-camerainput-callbacks.md)**
+* **[Camera\_Input](capi-oh-camera-camera-input.md)**
+* **[CameraManager\_Callbacks](capi-oh-camera-cameramanager-callbacks.md)**
+* **[CaptureSession\_Callbacks](capi-oh-camera-capturesession-callbacks.md)**
+* **[Camera\_CaptureSession](capi-oh-camera-camera-capturesession.md)**
+* **[MetadataOutput\_Callbacks](capi-oh-camera-metadataoutput-callbacks.md)**
+* **[Camera\_MetadataOutput](capi-oh-camera-camera-metadataoutput.md)**
+* **[OH\_PhotoNative](capi-oh-camera-oh-photonative.md)**
+* **[PhotoOutput\_Callbacks](capi-oh-camera-photooutput-callbacks.md)**
+* **[Camera\_PhotoOutput](capi-oh-camera-camera-photooutput.md)**
+* **[PreviewOutput\_Callbacks](capi-oh-camera-previewoutput-callbacks.md)**
+* **[Camera\_PreviewOutput](capi-oh-camera-camera-previewoutput.md)**
+* **[VideoOutput\_Callbacks](capi-oh-camera-videooutput-callbacks.md)**
+* **[Camera\_VideoOutput](capi-oh-camera-camera-videooutput.md)**
+* **[Camera\_OcclusionDetectionResult](capi-oh-camera-camera-occlusiondetectionresult.md)**

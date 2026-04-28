@@ -1,0 +1,37 @@
+---
+url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-vibrator
+title: 振动错误码
+breadcrumb: API参考 > 系统 > 硬件 > Sensor Service Kit（传感器服务） > 错误码 > 振动错误码
+category: harmonyos-references
+scraped_at: 2026-04-28T08:11:12+08:00
+doc_updated_at: 2026-03-09
+content_hash: sha256:211f4a363383a82418f36c7ba1d3bc76ef3364df890f34c50bbd5cc4adaeee5d
+---
+
+说明
+
+以下仅介绍本模块特有错误码，通用错误码请参考[通用错误码说明文档](errorcode-universal.md)。
+
+## 14600101 操作设备失败
+
+PhonePC/2in1TabletTVWearable
+
+**错误信息**
+
+Device operation failed.
+
+**错误描述**
+
+当调用vibrator模块startVibration接口时，若hdi服务异常或者设备被占用，会报此错误码。
+
+**可能原因**
+
+1. 访问hdi服务状态异常。
+2. 当前设备被占用。
+3. 调用振动时，系统中触觉管理相关开关被关闭。
+
+**处理步骤**
+
+1. 间隔一段时间重试操作，或按指数增长间隔重试；连续重试3次不可用则停止尝试，期间可优先尝试获取器件列表方式进一步获取设备可用性。
+2. 设置振动优先级较低，尝试设置更高优先级。
+3. 检查系统触觉开关是否被关闭或三态开关是否处理静音状态，是否正确使用了对应开关管理的usage字段。

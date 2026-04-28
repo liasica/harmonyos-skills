@@ -1,0 +1,17 @@
+---
+url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/js-apidiff-networkkit-5031
+title: Network Kit
+breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.0.3(15) > OS平台能力 > API变更清单 > HarmonyOS 5.0.3(15) Beta1引入的API > Network Kit
+category: harmonyos-releases
+scraped_at: 2026-04-28T07:35:42+08:00
+doc_updated_at: 2026-01-21
+content_hash: sha256:43e94d625187d69941b2de442a9864e41138c6b450a72f5aa70921c555e05595
+---
+
+| 操作 | 旧版本 | 新版本 | d.ts文件 |
+| --- | --- | --- | --- |
+| 错误码变更 | 类名：HttpRequest；  API声明：requestInStream(url: string, callback: AsyncCallback<number>): void;  差异内容：201,2300001,2300003,2300005,2300006,2300007,2300008,2300009,2300016,2300018,2300023,2300025,2300026,2300027,2300028,2300047,2300052,2300055,2300056,2300058,2300059,2300060,2300061,2300063,2300070,2300073,2300077,2300078,2300094,2300999,401 | 类名：HttpRequest；  API声明：requestInStream(url: string, callback: AsyncCallback<number>): void;  差异内容：201,2300001,2300003,2300005,2300006,2300007,2300008,2300009,2300016,2300018,2300023,2300025,2300026,2300027,2300028,2300047,2300052,2300055,2300056,2300058,2300059,2300060,2300061,2300063,2300070,2300073,2300077,2300078,2300094,2300998,2300999,401 | api/@ohos.net.http.d.ts |
+| 错误码变更 | 类名：HttpRequest；  API声明：requestInStream(url: string, options: HttpRequestOptions, callback: AsyncCallback<number>): void;  差异内容：201,2300001,2300003,2300005,2300006,2300007,2300008,2300009,2300016,2300018,2300023,2300025,2300026,2300027,2300028,2300047,2300052,2300055,2300056,2300058,2300059,2300060,2300061,2300063,2300070,2300073,2300077,2300078,2300094,2300999,401 | 类名：HttpRequest；  API声明：requestInStream(url: string, options: HttpRequestOptions, callback: AsyncCallback<number>): void;  差异内容：201,2300001,2300003,2300005,2300006,2300007,2300008,2300009,2300016,2300018,2300023,2300025,2300026,2300027,2300028,2300047,2300052,2300055,2300056,2300058,2300059,2300060,2300061,2300063,2300070,2300073,2300077,2300078,2300094,2300998,2300999,401 | api/@ohos.net.http.d.ts |
+| 错误码变更 | 类名：HttpRequest；  API声明：requestInStream(url: string, options?: HttpRequestOptions): Promise<number>;  差异内容：201,2300001,2300003,2300005,2300006,2300007,2300008,2300009,2300016,2300018,2300023,2300025,2300026,2300027,2300028,2300047,2300052,2300055,2300056,2300058,2300059,2300060,2300061,2300063,2300070,2300073,2300077,2300078,2300094,2300999,401 | 类名：HttpRequest；  API声明：requestInStream(url: string, options?: HttpRequestOptions): Promise<number>;  差异内容：201,2300001,2300003,2300005,2300006,2300007,2300008,2300009,2300016,2300018,2300023,2300025,2300026,2300027,2300028,2300047,2300052,2300055,2300056,2300058,2300059,2300060,2300061,2300063,2300070,2300073,2300077,2300078,2300094,2300998,2300999,401 | api/@ohos.net.http.d.ts |
+| 新增API | NA | 类名：connection；  API声明：function setPacUrl(pacUrl: string): void;  差异内容：function setPacUrl(pacUrl: string): void; | api/@ohos.net.connection.d.ts |
+| 新增API | NA | 类名：connection；  API声明：function getPacUrl(): string;  差异内容：function getPacUrl(): string; | api/@ohos.net.connection.d.ts |

@@ -1,0 +1,182 @@
+---
+url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/user-file-uri-intro
+title: 用户文件URI介绍
+breadcrumb: 指南 > 应用框架 > Core File Kit（文件基础服务） > 用户文件 > 用户文件URI介绍
+category: harmonyos-guides
+scraped_at: 2026-04-28T07:41:17+08:00
+doc_updated_at: 2026-04-20
+content_hash: sha256:e6ff72f5ba8ce38321178d7e1d579491cc659b016e78042e085b2ea8f19d1d3b
+---
+
+用户文件URI是文件的唯一标识，在对用户文件进行访问与修改等操作时往往都会使用到URI，不建议开发者解析URI中的片段用于业务代码开发，不同类型的URI使用方式将在下文详细介绍。
+
+## URI的类型
+
+URI类型可以归纳为文档类URI和媒体文件URI两类
+
+* 文档类URI：由picker拉起文件管理器选择或保存返回。具体获取方式参见[文档类URI获取方式](user-file-uri-intro.md#文档类uri获取方式)。
+* 媒体文件URI：由picker通过拉起图库选择图片或者视频返回，通过photoAccessHelper模块获取图片或者视频文件的URI，以及通过userFileManager模块获取图片、视频或者音频文件的URI。具体获取方式参见[媒体文件URI获取方式](user-file-uri-intro.md#媒体文件uri获取方式)。
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/Sc1txgQqR-iuoYg-glDiNg/zh-cn_image_0000002552798630.png?HW-CC-KV=V1&HW-CC-Date=20260427T234115Z&HW-CC-Expire=86400&HW-CC-Sign=D6C39AE67E3F82383C2A6E49FB40FB5644A28384C07F69AF713989FEC29F804E)
+
+## 文档类URI
+
+### 文档类URI介绍
+
+**文档类URI的格式类型为：**
+
+'file://docs/storage/Users/currentUser/<relative\_path>/test.txt'
+
+**其中各个字段表示的含义为：**
+
+| URI字段 | 说明 |
+| --- | --- |
+| 'file://docs/storage/Users/currentUser/' | 文件管理器的根目录。 |
+| '<relative\_path>/' | 文件在根目录下的相对路径。例如：'Download/'和'Documents/'。 |
+| 'test.txt' | 用户文件系统中存储的文件名，支持的文件类型为文件管理器支持的所有类型，以文件管理器为准。例如txt、jpg、mp4和mp3等格式的文件。 |
+
+### 文档类URI获取方式
+
+1. 通过[DocumentViewPicker](../harmonyos-references/js-apis-file-picker.md#documentviewpicker)接口选择或保存文件，返回选择或保存的文件URI。
+2. 通过[AudioViewPicker](../harmonyos-references/js-apis-file-picker.md#audioviewpicker)接口选择或保存文件，返回选择或保存的文件URI。
+
+### 文档类URI的使用方式
+
+应用使用此类URI可通过[文件管理](../harmonyos-references/js-apis-file-fs.md)进行进一步处理。示例代码参见picker中的[选择文档类文件](select-user-file.md#选择文档类文件)和[保存文档类文件](save-user-file.md#保存文档类文件)。
+
+## 媒体文件URI
+
+### 媒体文件URI介绍
+
+**媒体文件URI的格式类型为：**
+
+图片URI格式：
+
+* 'file://media/Photo/<id>/IMG\_datetime\_0001/displayName.jpg'
+
+视频URI格式：
+
+* 'file://media/Photo/<id>/VID\_datetime\_0001/displayName.mp4'
+
+音频URI格式：
+
+* 'file://media/Audio/<id>/AUD\_datetime\_0001/displayName.mp3'
+
+**其中各个字段表示的含义为：**
+
+| URI字段 | 说明 |
+| --- | --- |
+| 'file://media' | 表示这个URI是媒体文件。 |
+| 'Photo' | 表示这个URI是媒体文件中的图片或者视频类文件。 |
+| 'Audio' | 表示这个URI是媒体文件中的音频类文件。 |
+| '<id>' | 表示在数据库中多个表中处理后的值，并不是指表中的file\_id列，注意请不要使用此id去数据库中查询具体文件。 |
+| 'IMG\_datetime\_0001' | 表示图片文件在用户文件系统中存储的文件名去掉后缀剩下的部分。 |
+| 'VID\_datetime\_0001' | 表示视频文件在用户文件系统中存储的文件名去掉后缀剩下的部分。 |
+| 'AUD\_datetime\_0001' | 表示音频文件在用户文件系统中存储的文件名去掉后缀剩下的部分。 |
+
+### 媒体文件URI获取方式
+
+1. 通过PhotoAccessHelper的[PhotoViewPicker](../harmonyos-references/arkts-apis-photoaccesshelper-photoviewpicker.md)选择媒体文件，返回选择的媒体文件的URI。
+2. 通过[photoAccessHelper](../harmonyos-references/arkts-apis-photoaccesshelper.md)模块中的[getAssets](../harmonyos-references/arkts-apis-photoaccesshelper-photoaccesshelper.md#getassets)或[createAsset](../harmonyos-references/arkts-apis-photoaccesshelper-photoaccesshelper.md#createasset)接口获取媒体文件对应文件的URI。
+
+### 媒体文件URI的使用方式
+
+normal等级的应用使用此类URI可以通过[photoAccessHelper](../harmonyos-references/arkts-apis-photoaccesshelper.md)模块进行进一步处理。示例代码参见媒体资源使用指导中的[指定URI获取图片或视频资源](photoaccesshelper-photoviewpicker.md#指定uri获取图片或视频资源)。此接口需要申请相册管理模块读权限（[ohos.permission.READ\_IMAGEVIDEO](photoaccesshelper-overview.md#能力范围)），在使用中需要注意应用是否有此权限。
+
+若normal等级的应用不想申请权限也可以通过临时授权的方式使用PhotoAccessHelper的[PhotoViewPicker](../harmonyos-references/arkts-apis-photoaccesshelper-photoviewpicker.md)得到的URI使用[photoAccessHelper.getAssets](../harmonyos-references/arkts-apis-photoaccesshelper-photoaccesshelper.md#getassets)接口获取对应URI的PhotoAsset对象。通过此方式获取的PhotoAsset对象可调用[getThumbnail](../harmonyos-references/arkts-apis-photoaccesshelper-photoasset.md#getthumbnail)方法获取缩略图，并通过[get](../harmonyos-references/arkts-apis-photoaccesshelper-photoasset.md#get)接口方法读取[PhotoKeys](../harmonyos-references/arkts-apis-photoaccesshelper-e.md#photokeys)中的部分信息。
+
+以下为PhotoKeys中支持临时授权方式可以读取的信息：
+
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| URI | 'uri' | 文件URI。 |
+| PHOTO\_TYPE | 'media\_type' | 媒体文件类型。 |
+| DISPLAY\_NAME | 'display\_name' | 显示名字。 |
+| SIZE | 'size' | 文件大小。 |
+| DATE\_ADDED | 'date\_added' | 文件创建时的Unix时间戳（单位：秒）。 |
+| DATE\_MODIFIED | 'date\_modified' | 文件修改时的Unix时间戳（单位：秒）。修改文件名不会改变此值，当文件内容发生修改时才会更新。 |
+| DURATION | 'duration' | 持续时间（单位：毫秒）。 |
+| WIDTH | 'width' | 图片宽度（单位：像素）。 |
+| HEIGHT | 'height' | 图片高度（单位：像素）。 |
+| DATE\_TAKEN | 'date\_taken' | 拍摄时的Unix时间戳（单位：秒）。 |
+| ORIENTATION | 'orientation' | 图片文件的方向。 |
+| TITLE | 'title' | 文件标题。 |
+
+下面为通过临时授权方式使用媒体文件URI进行获取缩略图和读取文件部分信息的示例代码：
+
+```
+1. import { BusinessError } from '@kit.BasicServicesKit';
+2. // ...
+3. import { common } from '@kit.AbilityKit';
+4. // ...
+5. import { dataSharePredicates } from '@kit.ArkData';
+6. // ...
+7. import { photoAccessHelper } from '@kit.MediaLibraryKit';
+
+9. // 定义一个uri数组，用于接收PhotoViewPicker选择图片返回的uri
+10. let uris: string[] = [];
+
+12. // ...
+
+14. // 调用PhotoViewPicker.select选择图片
+15. async function photoPickerGetUri() {
+16. try {
+17. let photoSelectOptions = new photoAccessHelper.PhotoSelectOptions();
+18. photoSelectOptions.MIMEType = photoAccessHelper.PhotoViewMIMETypes.IMAGE_TYPE;
+19. // 设置最多可以选择的图片数量为1
+20. photoSelectOptions.maxSelectNumber = 1;
+21. let photoPicker = new photoAccessHelper.PhotoViewPicker();
+22. // 等待用户选择图片
+23. let photoSelectResult: photoAccessHelper.PhotoSelectResult = await photoPicker.select(photoSelectOptions);
+24. console.info('PhotoViewPicker.select successfully, PhotoSelectResult uri: ' + JSON.stringify(photoSelectResult));
+25. uris = photoSelectResult.photoUris;
+26. } catch (err) {
+27. let error: BusinessError = err as BusinessError;
+28. console.error(`PhotoViewPicker failed with err, code is ${error.code}, message is ${error.message}`);
+29. }
+30. }
+
+32. // 请在组件内获取context
+33. async function uriGetAssets(context: common.UIAbilityContext): Promise<string> {
+34. // 检查uris数组是否为空
+35. if (uris.length === 0) {
+36. throw new Error('No URIs available');
+37. }
+38. try {
+39. let phAccessHelper = photoAccessHelper.getPhotoAccessHelper(context);
+40. let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+41. // 配置查询条件，使用PhotoViewPicker选择图片返回的uri进行查询
+42. predicates.equalTo('uri', uris[0]);
+43. let fetchOption: photoAccessHelper.FetchOptions = {
+44. fetchColumns: [photoAccessHelper.PhotoKeys.WIDTH, photoAccessHelper.PhotoKeys.HEIGHT,
+45. photoAccessHelper.PhotoKeys.TITLE, photoAccessHelper.PhotoKeys.DURATION],
+46. predicates: predicates
+47. };
+48. let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
+49. await phAccessHelper.getAssets(fetchOption);
+50. // 得到uri对应的PhotoAsset对象，读取文件的部分信息
+51. const asset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
+52. console.info('asset displayName: ', asset.displayName);
+53. console.info('asset uri: ', asset.uri);
+54. console.info('asset photoType: ', asset.photoType);
+55. console.info('asset width: ', asset.get(photoAccessHelper.PhotoKeys.WIDTH));
+56. console.info('asset height: ', asset.get(photoAccessHelper.PhotoKeys.HEIGHT));
+57. console.info('asset title: ' + asset.get(photoAccessHelper.PhotoKeys.TITLE));
+58. // 获取缩略图
+59. asset.getThumbnail((err, pixelMap) => {
+60. if (err == undefined) {
+61. console.info('getThumbnail successful ' + JSON.stringify(pixelMap));
+62. } else {
+63. console.error('getThumbnail fail', err);
+64. }
+65. });
+66. // ...
+67. } catch (error) {
+68. console.error(`uriGetAssets failed with err, code is ${error.code}, message is ${error.message}`);
+69. return 'ReadMediaUriFail';
+70. }
+71. return 'ReadMediaUriFail';
+72. }
+```
+
+[Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/CoreFile/UserFile/UserFileURI/entry/src/main/ets/pages/Index.ets#L19-L123)

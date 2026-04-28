@@ -1,0 +1,116 @@
+---
+url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/driverdevelopment-overview
+title: Driver Development Kit简介
+breadcrumb: 指南 > 系统 > 硬件 > Driver Development Kit（驱动开发服务） > Driver Development Kit简介
+category: harmonyos-guides
+scraped_at: 2026-04-28T07:44:37+08:00
+doc_updated_at: 2026-04-20
+content_hash: sha256:17d94b4a307b5d2c078f873595702767e15888a12fef6206dcdad4cfc426d558
+---
+
+Driver Development Kit（驱动开发套件）为外设驱动开发者提供高效、安全、丰富的扩展外设驱动开发解决方案ArkTS-API和C-API，支持外设驱动开发者为消费者带来外设即插即用的极致体验。
+
+## 使用场景
+
+支持开发者高效、安全开发专业外设或扩展外设增强能力：
+
+1. 面向专业专用办公外设驱动开发场景。
+
+   例如：银行柜台、企业办公、医疗检测等领域专业专用外设，如：高拍仪、身份证扫描仪、指纹识别仪、血氧血糖监测设备。
+2. 面向非标外设扩展增强能力开放场景。
+
+   例如：厂商私有非标HID外设增强能力开放场景，如：手写板快捷键定制、压感/绘图区域设置、扩展增强能力设置、鼠标灯光效果设置、鼠标扩展按键定制、DPI及X/Y轴等高阶能力设置。
+
+## 亮点特征
+
+* 支持开发者开发外设配件的高阶功能，满足消费者高阶使用场景诉求。
+* 扩展驱动框架支持扩展外设驱动生命周期管理，面向扩展设备应用提供扩展外设查询绑定能力接口。
+
+## 基本概念
+
+* 扩展外设驱动客户端：查询驱动并绑定驱动，自定义驱动与设备之间的通信方式以及数据处理方式等，即[带UI界面基础驱动](externaldevice-guidelines.md)。
+* 扩展外设驱动：基于DDK能力开发的专业专用扩展外设驱动或扩展外设增强驱动，即[无UI界面基础驱动](driverextensionability.md)。
+* 扩展外设管理服务（External Device Manager）：扩展设备管理，驱动包全生命周期管理等。
+* BMS（Bundle Manager Service）：包管理服务，在HarmonyOS上主要负责应用的安装、卸载和数据管理。
+* AMS（Ability Manager Service）：元能力管理服务，用于拉起和关闭扩展驱动能力DriverExtensionAbility。
+* SA（SystemAbility）：系统元能力，是一种系统服务，对外提供能力。如：外设扩展服务SA就是对外提供非标外设驱动能力的系统服务。
+* 非标外设：指的是采用了非标准的协议通信（也称为厂商自定义协议）的一类外设。
+
+## 实现原理
+
+HDF扩展驱动框架为扩展外设驱动开发，提供稳定统一的外设驱动开发接口，支撑用户态扩展外设驱动开发者基于DDK能力开发用户态扩展外设驱动。
+
+扩展外设管理服务作为用户态扩展外设管理的核心服务，实现对扩展外部设备和扩展外设驱动的生命周期管理，同时面向扩展设备应用开发提供标准ArkTS API接口，支持扩展外设查询、绑定及解绑能力接口。
+
+### 扩展外设驱动架构
+
+**图1** 扩展外设驱动原理图
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/y2l2zczETv2RFcEeQKDMwg/zh-cn_image_0000002583438517.png?HW-CC-KV=V1&HW-CC-Date=20260427T234436Z&HW-CC-Expire=86400&HW-CC-Sign=3945FCED4C2F42D8B0C6300D66B02CDF52FCC1A624E8F6055E7BEC4AC7422DDC)
+
+### 运作流程
+
+用户插入外设时，外设与驱动的匹配流程如图2所示。
+
+**图2** 非标外设与对应扩展外设驱动应用匹配的时序图
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/HRhPcUSnTVaw15VkW5CVHA/zh-cn_image_0000002552958472.png?HW-CC-KV=V1&HW-CC-Date=20260427T234436Z&HW-CC-Expire=86400&HW-CC-Sign=8A8DE5590C4BA2973BAC77459B0F88E648F895F4F4FAAE5D997CA72FC70EC25A)
+
+用户使用扩展外设驱动客户端时，扩展外设驱动客户端与扩展外设驱动的绑定流程如图3所示。
+
+**图3** 扩展外设驱动客户端与扩展外设驱动绑定的时序图
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/BZHb3brvTC6e3E0MlftKdQ/zh-cn_image_0000002583478473.png?HW-CC-KV=V1&HW-CC-Date=20260427T234436Z&HW-CC-Expire=86400&HW-CC-Sign=F8A75D0751D54376FB579C051283084BD782A7D1529E13D1C644ACCC10AC1E4C)
+
+## 约束与限制
+
+调用Driver Development Kit提供的ArkTS-API或者C-API，开发者需要申请特定权限，才能使用相关接口。
+
+所需权限如下：
+
+| API 类型 | DDK类型 | 权限名称 |
+| --- | --- | --- |
+| ArkTS-API | 不涉及 | ohos.permission.ACCESS\_EXTENSIONAL\_DEVICE\_DRIVER |
+| C-API | UsbDdk | ohos.permission.ACCESS\_DDK\_USB |
+| C-API | HidDdk | ohos.permission.ACCESS\_DDK\_HID |
+| C-API | USBSerialDDK | ohos.permission.ACCESS\_DDK\_USB\_SERIAL |
+| C-API | ScsiPeripheralDDK | ohos.permission.ACCESS\_DDK\_SCSI\_PERIPHERAL |
+
+## 关联模块
+
+在扩展外设驱动开发过程中，需要使用到其他关联模块的部分能力，来协助驱动开发。
+
+| 名称 | 作用 |
+| --- | --- |
+| PerformanceAnalysisKit | 引入[hilog](../harmonyos-references/js-apis-hilog.md)用于日志打印。 |
+| BasicServicesKit | 引入[BusinessError](../harmonyos-references/js-apis-base.md#businesserror)用于捕获错误信息。 |
+| IPCKit | 引入[rpc](../harmonyos-references/js-apis-rpc.md)用于驱动与客户端IPC（Inter-Process Communication）通信。 |
+| AbilityKit | 引入[@ohos.application.Want (Want)](../harmonyos-references/js-apis-application-want.md)用于生命周期管理。 |
+
+## 驱动应用规格说明
+
+1.驱动应用定义
+
+* 驱动应用是基于Driver Development Kit开发的、面向非标外设的用户态驱动。
+* 驱动应用基于DriverExtensionAbility，开发者需要重写该Ability的生命周期回调接口。
+
+2.驱动应用安装卸载规格
+
+* 安装策略
+  + 当用户安装某一驱动应用时，系统会将应用安装到当前已有的所有用户环境下。
+  + 当创建新用户时，系统会将已安装的驱动应用在该用户环境下进行安装。
+* 卸载策略：当用户在任意用户环境下发起卸载某一驱动应用，系统会将所有用户环境下的该驱动应用卸载。
+
+3.基于DriverExtensionAbility生命周期管理说明
+
+* ExtensionAbility是基于场景服务的扩展能力的统称，简称为扩展能力（例如用户态扩展驱动、卡片、输入法等）以便满足不同的使用场景。
+* 各类Extension的生命周期由各个SA管理，通过connectAbility启动Extension，并驱动定义的业务接口；业务结束，SA调用disconnectAbility接口断开Extension连接，AMS会根据该Extension是否有SA连接来决定是否销毁该Extension及进程。在用户态扩展驱动开发场景下，管理DriverExtensionAbility生命周期的系统SA为外设扩展服务SA。
+
+4.在DriverExtensionAbility中API访问安全管控说明
+
+* 系统支持基于ExtensionAbility构建场景化扩展Ability，DriverExtensionAbility为支持开发用户态扩展驱动的一类Ability。
+* 在DriverExtensionAbility中仅支持访问DDK（[docs/zh-cn/application-dev/reference/apis-driverdevelopment-kit · HarmonyOS/docs - AtomGit | GitCode](https://gitcode.com/openharmony/docs/tree/master/zh-cn/application-dev/reference/apis-driverdevelopment-kit)）API，实现对非标外设进行访问控制和数据通信。
+* 基于驱动开发安全约束及驱动开发业务场景，在DriverExtensionAbility中不支持访问其它ArkTS API，以防止恶意行为和数据泄漏。
+* DriverExtensionAbility受限访问ArkTS API方案说明：
+  + ArkTS API受限原理：在初始化和创建Extension进程时，会根据Extension配置的受限访问ArkTS API名单加载系统模块。在运行时，如果在DriverExtensionAbility中调用受限ArkTS API，由于初始化和创建阶段未加载相应系统模块，API会调用失败。
+* DriverExtensionAbility具体受限ArkTS API名单，请参考[frameworks/native/ability/native/etc/extension\_blocklist\_config.json · HarmonyOS/ability\_ability\_runtime - AtomGit | GitCode](https://gitcode.com/openharmony/ability_ability_runtime/blob/master/frameworks/native/ability/native/etc/extension_blocklist_config.json)中DriverExtension配置。

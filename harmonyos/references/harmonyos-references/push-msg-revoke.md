@@ -1,0 +1,388 @@
+---
+url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/push-msg-revoke
+title: 消息撤回
+breadcrumb: API参考 > 应用服务 > Push Kit（推送服务） > REST API > 消息撤回
+category: harmonyos-references
+scraped_at: 2026-04-28T08:18:33+08:00
+doc_updated_at: 2026-04-20
+content_hash: sha256:1d7524c30c8a57695e3897773c75910b4c1f52092eb92d9415a71f99fe0c6043
+---
+
+说明
+
+为了更安全的网络访问，华为推送服务于2022年11月30日关闭Push相关域名的TLS1.0、TLS1.1协议及规定之外的加密套件，当前应用使用TLS1.2以下协议或使用规定外的加密套件将无法正常推送消息。
+
+若您的应用访问Push相关域名使用协议是TLS1.0或TLS1.1，可能无法正常发送消息，请您务必升级到TLS1.2及以上版本。
+
+## 功能介绍
+
+您调用本API完成消息撤回的功能。**撤回功能当前仅支持通知消息与语音播报消息**。为免歧义，以下说明中“消息”均为通知消息与语音播报消息。
+
+## 使用约束
+
+消息体最大不能超过4096Bytes（不包括Push Token），若超过请求会返回错误码[80300008](push-scenariozed-api-response.md#section80300008-消息体大小超过4096bytes不包括push-token)，单次最多携带的Push Token数不能超过1000（系统当前配置值）。
+
+## 接口原型
+
+* **承载协议：** HTTPS POST
+* **接口方向：** 开发者服务器 -> 华为Push服务器
+* **接口URL：** https://push-api.cloud.huawei.com/v1/**[clientId]**/messages:revoke
+* **数据格式：** 请求消息：Content-Type: application/json
+
+  响应消息：Content-Type: application/json
+
+说明
+
+**[clientId]** ：请替换为您应用的Client ID（参考[指导](../app/agc-help-view-app-info-0000002282674569.md)获取）
+
+## 请求参数
+
+### Request Header
+
+| 参数 | 取值描述 | 样例 |
+| --- | --- | --- |
+| Authorization | 鉴权方式：  **JWT方式**  请参见[基于服务账号生成鉴权令牌](../harmonyos-guides/push-jwt-token.md)。  **说明：**  建议JWT令牌过期时间设置为3600秒，有效期内可以复用。  Bearer后面拼接空格，再拼接获取的鉴权信息。 | Bearer eyJraWQiOiIx---xxx.eyJhdWQiOiJodHR---xxx.QRodgXa2xeXSt4Gp---xxx |
+| push-type | 待撤回的消息类型，取值如下：  0：通知消息。  2：语音播报消息。 | 0 |
+
+### Request Body
+
+| 参数 | 是否必选 | 参数类型 | 描述 |
+| --- | --- | --- | --- |
+| notifyId | 是 | Integer | 消息下发时携带的notifyId，详情请参见[notifyId](push-scenariozed-api-request-param.md#notification)。 |
+| token | 是 | Array [String] | 撤回消息时目标用户的Push Token。  样例："token": ["\*\*\*\*\*\*\*\*\*\*\*\*"]。  **说明：**  单次最多携带1000个Token。 |
+
+## 请求示例
+
+```
+1. // 按照notifyId和token撤回
+2. {
+3. "notifyId": 3114932,
+4. "token": [
+5. "pushToken1",
+6. "pushToken2",
+7. "pushToken3"
+8. ]
+9. }
+```
+
+## 响应参数
+
+### Response Body
+
+| 参数 | 是否必选 | 参数类型 | 描述 |
+| --- | --- | --- | --- |
+| code | 是 | String | 响应码。 |
+| msg | 是 | String | 响应码描述。 |
+| requestId | 是 | String | 请求标识。 |
+
+## 响应示例
+
+**响应成功示例：**
+
+```
+1. {
+2. "code": "80000000",
+3. "msg": "Success",
+4. "requestId": "157*******006"
+5. }
+```
+
+**响应失败示例：**
+
+```
+1. {
+2. "code": "80100003",
+3. "msg": "Illegal payload, The header does not contain valid push-type",
+4. "requestId": "1690*******1701"
+5. }
+```
+
+## HTTP响应码
+
+| HTTP响应码 | 描述 | 解决方法 |
+| --- | --- | --- |
+| 200 | 成功。 | - |
+| 400 | 参数错误。 | 请检查业务响应码并根据业务响应码进一步排查问题。 |
+| 401 | 鉴权失败。 | 请检查HTTP头中Authorization参数。 |
+| 404 | 找不到服务。 | 请检查请求URI是否正确。 |
+| 500 | 服务内部错误。 | 请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。 |
+| 502 | 请求连接异常，常见于网络状况不稳定。 | 建议稍后重试，或通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。 |
+| 503 | 流量控制。 | · 平均分配发送速度。  · 平均分配推送时间段，不要集中发送。 |
+
+## 业务响应码
+
+### 80000000 成功
+
+**错误信息**
+
+Success.
+
+**错误描述**
+
+发送成功。
+
+**可能原因**
+
+发送成功。
+
+**处理步骤**
+
+不涉及。
+
+### 80100001 请求参数部分错误
+
+**错误信息**
+
+Check Parameter Error.
+
+**错误描述**
+
+请求参数部分错误。
+
+**可能原因**
+
+请求参数部分错误。
+
+**处理步骤**
+
+请根据响应消息中的提示，检查并修改请求[参数内容](push-msg-revoke.md#请求参数)。
+
+### 80100003 消息结构体错误
+
+**错误信息**
+
+Illegal payload, {errorTips}.
+
+**错误描述**
+
+消息结构体错误。
+
+**可能原因**
+
+消息结构体错误。
+
+**处理步骤**
+
+请根据响应消息中的提示，检查并修改[请求体结构](push-msg-revoke.md#请求参数)。
+
+### 80100020 消息结构体部分错误
+
+**错误信息**
+
+Check Parameter Partial Success.
+
+**错误描述**
+
+消息结构体部分错误。
+
+**可能原因**
+
+消息结构体部分错误。
+
+**处理步骤**
+
+按照响应消息中的提示，请检查并修改消息结构体的参数。
+
+### 80200001 认证错误
+
+**错误信息**
+
+Authentication Error.
+
+**错误描述**
+
+认证错误。
+
+**可能原因**
+
+1. 发送消息时未添加Authorization参数或Authorization的值为空。
+2. 用于申请JWT Token的Project Id和推送消息的Project Id不一致。
+3. Authorization参数中的JWT Token与实际应用不匹配。
+
+**处理步骤**
+
+请根据响应消息中的提示，排查请求头中Authorization参数鉴权失败是否存在以下情况：
+
+1. 请检查发送消息时是否添加Authorization参数或Authorization的值为空。
+2. 请参考[鉴权令牌生成步骤](../harmonyos-guides/push-jwt-token.md#开发步骤)中的步骤二，检查推送请求URL（https://push-api.cloud.huawei.com/**v3**/[projectId]/messages:send）中的projectId，确保与您当前应用所属的项目保持一致。
+3. 请检查Authorization参数中的JWT Token与实际应用是否匹配，详情参见[基于服务账号生成鉴权令牌](../harmonyos-guides/push-jwt-token.md)。
+
+重新生成JWT Token后再发送请求。
+
+### 80200003 Access token过期
+
+**错误信息**
+
+Access token expired.
+
+**错误描述**
+
+Access token过期。
+
+**可能原因**
+
+Access token过期。
+
+**处理步骤**
+
+请根据响应消息中的提示，重新生成JWT Token后再推送消息，请参见[基于服务账号生成鉴权令牌](../harmonyos-guides/push-jwt-token.md)。
+
+### 80200005 JWT Token过期
+
+**错误信息**
+
+Jwt token expired.
+
+**错误描述**
+
+JWT Token过期。
+
+**可能原因**
+
+JWT Token过期。
+
+**处理步骤**
+
+请根据响应消息中的提示，重新生成JWT Token后再推送消息，请参见[基于服务账号生成鉴权令牌](../harmonyos-guides/push-jwt-token.md)。
+
+### 80300002 当前应用无权限下发推送消息
+
+**错误信息**
+
+No permission to send message to these tmIDs.
+
+**错误描述**
+
+当前应用无权限下发推送消息。
+
+**可能原因**
+
+1. Push服务状态未开通。
+2. ClientId不是应用级的ClientId。
+
+**处理步骤**
+
+1. 请登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)网站，查看Push服务状态是否已开通，请参见[开通推送服务](../harmonyos-guides/push-config-setting.md)。
+2. 请参考[指导](../app/agc-help-view-app-info-0000002282674569.md)检查是否是应用级ClientId。
+
+### 80300007 所有Token都是无效的
+
+**错误信息**
+
+All the tokens are invalid.
+
+**错误描述**
+
+所有Token都是无效的。
+
+**可能原因**
+
+1. 同一个设备，不同应用的Token原则上是不一样，但实际操作时可能误传递同样的值。
+2. 客户端应用配置的应用包名、应用ID与[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)网站上申请的不一致。
+3. 终端设备从HarmonyOS 4及以下（简称HarmonyOS）升级到HarmonyOS 5及以上版本（简称HarmonyOS NEXT）后，Push Token需要重新获取。
+
+**处理步骤**
+
+请根据响应消息中的提示，排查失败的Token是否存在以下情况
+
+1. 请确保未传递其他应用的Push Token。
+2. 请确保客户端应用配置的应用包名、应用ID与[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)网站上申请是一致的。
+3. 请确保终端设备升级至HarmonyOS NEXT版本后，重新生成对应的Push Token，并使用[HarmonyOS NEXT版本的请求体参数](push-scenariozed-api-request-param.md)进行消息请求。
+
+   请确保使用v3版本的请求URL（https://push-api.cloud.huawei.com/**v3**/[projectId]/messages:send）发送REST API请求。
+
+   建议您在应用启动时调用getToken()接口，若设备的Push Token发生变化，及时上报到您的应用服务器更新Push Token。
+
+### 80300010 消息体中的Token数量为0或超过系统设置的默认值
+
+**错误信息**
+
+token count should within {0} and {1}.
+
+**错误描述**
+
+消息体中的Token数量为0或超过系统设置的默认值。
+
+**可能原因**
+
+消息体中的Token数量为0或超过系统设置的默认值（系统当前配置值为1000）。
+
+**处理步骤**
+
+请根据响应消息中的提示，检查Token数量，若Token数量超过单次限制，请分批次发送。
+
+### 80300017 Token列表中token属于多个APP
+
+**错误信息**
+
+Token app count should not exceed 1.
+
+**错误描述**
+
+Token列表中token属于多个APP。
+
+**可能原因**
+
+Token列表中token由多个APP生成，无法处理。
+
+**处理步骤**
+
+请根据响应消息中的提示，检查Token列表中的多个token是否由不同应用生成的，并使用同个APP生成的token。
+
+### 80300028 Token与ClientId对应的应用不一致
+
+**错误信息**
+
+Token app mismatch with specify app.
+
+**错误描述**
+
+Token与ClientId对应的应用不一致。
+
+**可能原因**
+
+1. 同一个设备，不同应用的Token原则上是不一样，但实际操作时可能误传递同样的值。
+2. 客户端应用配置的应用包名、应用ID与[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)网站上申请的不一致。
+
+**处理步骤**
+
+请根据响应消息中的提示，排查是否存在以下情况：
+
+1. 请确保未传递其他应用的Push Token。
+2. 请确保客户端应用配置的应用包名、应用ID与[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)网站上申请是一致的。
+
+### 80300032 没有消息撤回权限
+
+**错误信息**
+
+No permission to revoke messages.
+
+**错误描述**
+
+没有消息撤回权限。
+
+**可能原因**
+
+没有消息撤回权限。
+
+**处理步骤**
+
+请同时使用token与notifyId进行消息撤回。
+
+### 80000001 系统内部错误
+
+**错误信息**
+
+CommonService Error.
+
+**错误描述**
+
+系统内部错误。
+
+**可能原因**
+
+其他未知错误。
+
+**处理步骤**
+
+请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。

@@ -1,0 +1,54 @@
+---
+url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-ge-operator
+title: Operator
+breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > Operator
+category: harmonyos-guides
+scraped_at: 2026-04-28T07:52:38+08:00
+doc_updated_at: 2026-03-09
+content_hash: sha256:d6c8fd2ce9ce507742a5682ab9d8d1a22bb3625fd6fbc6ffd48fe1c55c54c144
+---
+
+* **[构造函数和析构函数](cannkit-operator-construction-and-destructor.md)**
+* **[AddControlInput](cannkit-addcontrolinput.md)**
+* **[BreakConnect](cannkit-breakconnect.md)**
+* **[IsEmpty](cannkit-isempty.md)**
+* **[InferShapeAndType](cannkit-infershapeandtype.md)**
+* **[GetAttr](cannkit-getattr.md)**
+* **[GetAllAttrNamesAndTypes](cannkit-getallattrnamesandtypes.md)**
+* **[GetAllIrAttrNamesAndTypes](cannkit-getallirattrnamesandtypes.md)**
+* **[GetDynamicInputNum](cannkit-getdynamicinputnum.md)**
+* **[GetDynamicInputDesc](cannkit-operator-getdynamicinputdesc.md)**
+* **[GetDynamicOutputNum](cannkit-getdynamicoutputnum.md)**
+* **[GetDynamicOutputDesc](cannkit-getdynamicoutputdesc.md)**
+* **[GetDynamicSubgraph](cannkit-getdynamicsubgraph.md)**
+* **[GetDynamicSubgraphBuilder](cannkit-getdynamicsubgraphbuilder.md)**
+* **[GetInferenceContext](cannkit-getinferencecontext.md)**
+* **[GetInputConstData](cannkit-getinputconstdata.md)**
+* **[GetInputsSize](cannkit-getinputssize.md)**
+* **[GetInputDesc](cannkit-operator-getinputdesc.md)**
+* **[GetName](cannkit-getname.md)**
+* **[GetSubgraph](cannkit-getsubgraph.md)**
+* **[GetSubgraphBuilder](cannkit-getsubgraphbuilder.md)**
+* **[GetSubgraphNamesCount](cannkit-getsubgraphnamescount.md)**
+* **[GetSubgraphNames](cannkit-getsubgraphnames.md)**
+* **[GetOpType](cannkit-getoptype.md)**
+* **[GetOutputDesc](cannkit-operator-getoutputdesc.md)**
+* **[GetOutputsSize](cannkit-getoutputssize.md)**
+* **[SetAttr](cannkit-setattr.md)**
+* **[SetInput](cannkit-setinput.md)**
+* **[SetInferenceContext](cannkit-setinferencecontext.md)**
+* **[SetInputAttr](cannkit-setinputattr.md)**
+* **[SetOutputAttr](cannkit-setoutputattr.md)**
+* **[GetInputAttr](cannkit-getinputattr.md)**
+* **[GetOutputAttr](cannkit-getoutputattr.md)**
+* **[TryGetInputDesc](cannkit-trygetinputdesc.md)**
+* **[UpdateInputDesc](cannkit-updateinputdesc.md)**
+* **[UpdateOutputDesc](cannkit-updateoutputdesc.md)**
+* **[UpdateDynamicInputDesc](cannkit-updatedynamicinputdesc.md)**
+* **[UpdateDynamicOutputDesc](cannkit-updatedynamicoutputdesc.md)**
+* **[VerifyAllAttr](cannkit-verifyallattr.md)**
+* **[DynamicInputRegister](cannkit-dynamicinputregister.md)**
+* **[DynamicInputRegisterByIndex](cannkit-dynamicinputregisterbyindex.md)**
+* **[DynamicOutputRegister](cannkit-dynamicoutputregister.md)**
+* **[SubgraphCountRegister](cannkit-subgraphcountregister.md)**
+* **[SetSubgraphBuilder](cannkit-setsubgraphbuilder.md)**

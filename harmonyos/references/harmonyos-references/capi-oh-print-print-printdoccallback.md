@@ -1,0 +1,38 @@
+---
+url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-print-print-printdoccallback
+title: Print_PrintDocCallback
+breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > C API > 结构体 > Print_PrintDocCallback
+category: harmonyos-references
+scraped_at: 2026-04-28T08:09:55+08:00
+doc_updated_at: 2026-03-09
+content_hash: sha256:6ef1328a950893ba958e6d606a62c74ea11de8589df5de747c8925a4573c5026
+---
+
+```
+1. typedef struct {...} Print_PrintDocCallback
+```
+
+## 概述
+
+PhonePC/2in1Tablet
+
+表示打印文档状态回调结构体。
+
+**起始版本：** 13
+
+**相关模块：** [OH\_Print](capi-oh-print.md)
+
+**所在头文件：** [ohprint.h](capi-ohprint-h.md)
+
+## 汇总
+
+PhonePC/2in1Tablet
+
+### 成员变量
+
+PhonePC/2in1Tablet
+
+| 名称 | 描述 |
+| --- | --- |
+| [Print\_OnStartLayoutWrite](capi-ohprint-h.md#print_onstartlayoutwrite) startLayoutWriteCb | 打印开始布局回调。 |
+| [Print\_OnJobStateChanged](capi-ohprint-h.md#print_onjobstatechanged) jobStateChangedCb | 打印任务状态回调。 |

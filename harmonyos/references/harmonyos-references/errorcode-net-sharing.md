@@ -1,0 +1,173 @@
+---
+url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-sharing
+title: 网络共享错误码
+breadcrumb: API参考 > 系统 > 网络 > Network Kit（网络服务） > 错误码 > 网络共享错误码
+category: harmonyos-references
+scraped_at: 2026-04-28T08:08:46+08:00
+doc_updated_at: 2026-03-17
+content_hash: sha256:e96927e3bc23ef8f6d55617eebfd2a43b95beb6bc7c748be7eda7b8594499b39
+---
+
+说明
+
+以下仅介绍本模块特有错误码，通用错误码请参考[通用错误码](errorcode-universal.md)说明文档。
+
+## 2200001 非法参数值
+
+PhonePC/2in1TabletWearable
+
+**错误信息**
+
+Invalid parameter value.
+
+**错误描述**
+
+非法参数值。
+
+**可能原因**
+
+输入参数取值范围错误。
+
+**处理步骤**
+
+检查输入参数的取值范围是否正确。
+
+## 2200002 连接服务失败
+
+PhonePC/2in1TabletTVWearable
+
+**错误信息**
+
+Failed to connect to the service.
+
+**错误描述**
+
+操作失败，连接系统服务发生异常。
+
+**可能原因**
+
+服务发生异常。
+
+**处理步骤**
+
+检查系统服务运行状态是否正常。
+
+## 2200003 系统内部错误
+
+PhonePC/2in1TabletWearable
+
+**错误信息**
+
+System internal error.
+
+**错误描述**
+
+系统内部错误。
+
+**可能原因**
+
+1.内存异常。
+
+2.空指针。
+
+**处理步骤**
+
+1.检查内存空间是否充足，清理内存后重试。
+
+2.系统异常，请稍后重试或重启设备。
+
+## 2202004 共享的Iface不可用
+
+**错误信息**
+
+Try to share an unavailable iface.
+
+**错误描述**
+
+使用了不可用的网卡。
+
+**可能原因**
+
+使用的网卡不存在，或网卡名错误。
+
+**处理步骤**
+
+1.通过指令（ifconfig -a）查看共享的网卡是否被创建。
+
+2.检查网卡名是否拼写错误。
+
+## 2202005 WiFi共享失败
+
+**错误信息**
+
+WiFi sharing failed.
+
+**错误描述**
+
+开启WiFi共享失败。
+
+**可能原因**
+
+没有连接网络，获取默认网络失败。
+
+**处理步骤**
+
+检查网络的连接是否正常。
+
+## 2202006 蓝牙共享失败
+
+**错误信息**
+
+Bluetooth sharing failed.
+
+**错误描述**
+
+开启蓝牙共享失败。
+
+**可能原因**
+
+1.未开启蓝牙。
+
+2.没有连接网络，获取默认网络失败。
+
+**处理步骤**
+
+1.点击蓝牙图标，开启蓝牙模式。
+
+2.检查网络的连接是否正常。
+
+## 2202009 网络共享开启转发错误
+
+**错误信息**
+
+Failed to enable forwarding for network sharing.
+
+**错误描述**
+
+网络共享开启转发错误。
+
+**可能原因**
+
+设置iptables的规则失败，命令的拼接出错。
+
+**处理步骤**
+
+开启debug日志，检查iptables的命令是否拼接出现问题。
+
+## 2202011 无法获取网络共享配置
+
+**错误信息**
+
+Cannot get network sharing configuration.
+
+**错误描述**
+
+无法获取网络共享的配置。
+
+**可能原因**
+
+打开网络共享配置文件失败，文件路径出错。
+
+**处理步骤**
+
+检查配置文件目录。

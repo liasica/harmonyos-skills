@@ -1,0 +1,151 @@
+---
+url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-uri-config
+title: 应用链接说明
+breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > Stage模型开发指导 > 应用间跳转 > 拉起指定应用 > 应用链接说明
+category: harmonyos-guides
+scraped_at: 2026-04-28T07:37:49+08:00
+doc_updated_at: 2026-04-20
+content_hash: sha256:1ae9d6c73f905b420316eb7eab61e5efcef2533a639fd0e7af60cbb5b8445945
+---
+
+## uris标签说明
+
+当在[module.json5](module-configuration-file.md)文件的[skills字段](module-configuration-file.md#skills标签)中声明uris时，主要包含如下字段。
+
+* scheme：协议名称。常见的取值有http、https、file、ftp等，也可以自定义。
+* host：域名或IP地址。例如域名developer.huawei.com或IP地址127.0.0.1。
+* port：端口号。例如developer.huawei.com:80后面的80即为端口号。
+* path：路径，表示域名服务器上的目录或文件路径，该字段在scheme存在时才有意义。path字段不支持通配符，如果需要使用通配符，可以采用pathRegex字段。
+* pathStartWith：路径前缀，该字段在scheme存在时才有意义，表示域名服务器上的目录或文件路径的前缀，用于前缀匹配。
+* pathRegex：路径正则，该字段在scheme存在时才有意义，表示域名服务器上的目录或文件路径的正则表达式，用于正则匹配。
+* [linkFeature](app-uri-config.md#linkfeature标签说明)：应用的功能类型（如文件打开、分享、导航等）。取值为长度不超过127字节的字符串，不支持中文。
+
+说明
+
+* 通过浏览器拉起应用页面时，浏览器会将uri中scheme和host中的大写字母自动转化为小写字母，导致无法正确匹配应用。因此建议scheme和host中不要包含大写字母。
+* path、pathStartWith、pathRegex的取值前后均不需要加斜杠/。例如对于应用链接https://developer.huawei.com/consumer/cn/support，path字段应配置为consumer/cn/support，pathStartWith字段可配置为consumer/cn，pathRegex字段可配置为^consumer/cn/support$。
+
+### URL的基本格式
+
+按照配置的字段不同，uris可以拼接为不同的URL表达式。其中，scheme为必选字段，其他字段仅当scheme存在时才有意义。
+
+* 只配置scheme：scheme://
+* 只配置scheme和host：scheme://host
+* 只配置scheme、host和port：scheme://host:port
+* 当配置了path、pathStartWith或pathRegex字段时，组成的表达式如下。
+
+  + **全路径表达式**：scheme://host:port/path
+  + **路径前缀表达式**：scheme://host:port/pathStartWith
+  + **路径正则表达式**：scheme://host:port/pathRegex
+
+说明
+
+* 三方应用组件配置的scheme不能与系统应用重复，否则会导致无法通过该uri拉起三方应用组件。
+* 如果多个应用的URL配置相同，应用跳转时匹配到同多个应用，则会拉起应用选择框。为了更好的用户体验，开发者可以通过链接的path字段去区分同一域名下的不同应用，如链接https://www.example.com/path1拉起目标应用1，链接https://www.example.com/path2拉起目标应用2。
+
+### linkFeature标签说明
+
+说明
+
+同一Bundle中声明的linkFeature数量不能超过150个。
+
+目标应用在linkFeature字段中声明功能类型，并通过应用市场上架审核后，可以提升应用跳转体验。主要用于以下两种场景：
+
+1. 支持系统识别同类应用：当调用方拉起垂类应用（例如导航类应用）时，系统会根据linkFeature字段识别到匹配的应用，并在应用面板中展现。
+
+   | 值 | 说明 |
+   | --- | --- |
+   | AppStorageMgmt | 指示清理应用沙箱目录中缓存数据的功能。使用场景详见[清理应用沙箱缓存数据场景](app-uri-config.md#清理应用沙箱缓存数据场景)。 |
+   | FileOpen | 指示打开处理文件的功能。使用场景详见[拉起文件处理类应用](file-processing-apps-startup.md)。 |
+   | Navigation | 指示导航功能。使用场景详见[拉起导航类应用](start-navigation-apps.md)。 |
+   | RoutePlan | 指示路线规划功能。使用场景详见[拉起导航类应用](start-navigation-apps.md)。 |
+   | PlaceSearch | 指示地点搜索功能。使用场景详见[拉起导航类应用](start-navigation-apps.md)。 |
+   | Transfer | 指示转账汇款功能。使用场景详见[拉起金融类应用](start-finance-apps.md)。 |
+   | CreditCardRepayment | 指示信用卡还款功能。使用场景详见[拉起金融类应用](start-finance-apps.md)。 |
+   | ComposeMail | 指示撰写邮件功能。使用场景详见[拉起邮件类应用](start-email-apps.md)。 |
+   | QueryByFlightNo | 指示按航班号查询航班功能。使用场景详见[拉起航班类应用](start-flight-apps.md)。 |
+   | QueryByLocation | 指示按起降地查询航班功能。使用场景详见[拉起航班类应用](start-flight-apps.md)。 |
+   | QueryExpress | 指示快递查询功能。使用场景详见[拉起快递类应用](start-express-apps.md)。 |
+   | AppNotificationMgmt | 指示应用内通知设置的功能。使用场景详见[应用内通知设置快捷入口](notification-shortcut-settings.md)。 |
+   | PrimaryContactMgmt | 从API version 23开始，新增支持该字段。指示社交通讯类应用“重要联系人列表”的设置功能。使用场景详见[优先通知权益申请](priority-notification-permission-guidelines.md)。 |
+2. 指定类型的应用被拉起时免跳转弹框：正常情况下，拉起指定类型的应用时，都会弹出确认是否打开应用的弹窗。如果您的应用有向其他应用提供登录/分享/支付的功能，可以在应用中声明对应的LinkFeature（取值参见下表）。应用通过上架审核后，当其他应用拉起您的应用时将不再弹窗提示。
+
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/ln7b1AdKT4SxuUxnTAqYQw/zh-cn_image_0000002552797854.png?HW-CC-KV=V1&HW-CC-Date=20260427T233748Z&HW-CC-Expire=86400&HW-CC-Sign=EB4B1A056857144871FA5A3C3E5A0421EAB9C59246A991354286421B8C5A016F)
+
+   | 值 | 说明 |
+   | --- | --- |
+   | Login | 指示登录、授权登录等功能。 |
+   | Pay | 指示支付页面、收银台等功能。 |
+   | Share | 指示分享功能。 |
+
+## 配置示例
+
+### 清理应用沙箱缓存数据场景
+
+通过“设置 > 存储”可以选择进入某个应用的应用详情页，该页面默认会包含“清空缓存”选项，用于清除当前应用的所有缓存数据。
+
+如果开发者实现了自定义数据清理页面，并希望能够在应用详情页提供跳转入口，可以通过配置linkFeature字段进行接入。
+
+1. 在[module.json5配置文件](module-configuration-file.md)中，对实现了数据清理功能的Ability添加如下skills配置。
+
+   其中，linkFeature字段必须配置为AppStorageMgmt，其他字段取值请根据实际情况修改为实际值。
+
+   ```
+   1. {
+   2. "name": "ClearAbility",
+   3. "srcEntry": "./ets/clearability/ClearAbility.ets",
+   4. "description": "$string:ClearAbility_desc",
+   5. "icon": "$media:layered_image",
+   6. "label": "$string:ClearAbility_label",
+   7. // ···
+   8. "skills": [
+   9. {
+   10. "uris": [
+   11. {
+   12. "scheme": "storage",
+   13. "host": "developer.huawei.com",
+   14. "path": "clearcache",
+   15. "linkFeature": "AppStorageMgmt"
+   16. }
+   17. ]
+   18. }
+   19. ]
+   20. }
+   ```
+
+   [module.json5](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/Ability/PullLinking/entry/src/main/module.json5#L284-L308)
+2. 功能验证。
+
+   1. 在手机的“设置 > 存储”页面，选择当前应用，进入应用详情页。
+   2. 点击“前往xx清理数据”的选项，即可跳转至对应的缓存数据清理页面。
+
+效果图如下：
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/P5ZicJLOQHGNFUc12Ca0NQ/zh-cn_image_0000002583437549.png?HW-CC-KV=V1&HW-CC-Date=20260427T233748Z&HW-CC-Expire=86400&HW-CC-Sign=4691920635B7F3253738FFCA58DDA4E11B2A6497BD35B0CB44DD44120571D90A)
+
+### 指定类型的应用被拉起时免跳转弹框
+
+以登录场景为例，介绍指定类型的应用被拉起时如何实现免跳转弹框。
+
+1. 设置linkFeature属性以声明当前应用支持的特性功能，从而系统可以从设备已安装应用中找到当前支持该特性的应用，登录场景LinkFeature固定为Login。
+2. 设置scheme、host、port、path/pathStartWith属性，与want中uri相匹配，以便区分不同功能，linkFeature设置为Login。
+
+   ```
+   1. "uris": [
+   2. {
+   3. "scheme": "https",
+   4. "host": "developer.huawei.com",
+   5. "path": "consumer",
+   6. "linkFeature": "Login"
+   7. }
+   8. ]
+   ```
+
+   [module.json5](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/Ability/PullLinking/entry/src/main/module.json5#L271-L280)
+3. 解析参数并做对应处理。
+
+   ```
+   1. UIAbility.onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void
+   ```
+
+   在参数want.uri中会携带目标方配置的linkFeature对应的uri。

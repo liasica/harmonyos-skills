@@ -1,0 +1,180 @@
+---
+url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-image-mdk-common-h
+title: image_mdk_common.h
+breadcrumb: API参考 > 媒体 > Image Kit（图片处理服务） > C API > 头文件 > image_mdk_common.h
+category: harmonyos-references
+scraped_at: 2026-04-28T08:13:19+08:00
+doc_updated_at: 2026-04-24
+content_hash: sha256:89d7957193fafffe083aeb0676830c2bb4ddc004d802882006378f45fc16db13
+---
+
+## 概述
+
+PhonePC/2in1TabletTVWearable
+
+声明图像常用的枚举值和结构体。
+
+**引用文件：** <multimedia/image\_framework/image\_mdk\_common.h>
+
+**库：** libimage\_ndk.z.so
+
+**系统能力：** SystemCapability.Multimedia.Image.Core
+
+**起始版本：** 10
+
+**相关模块：** [Image](capi-image.md)
+
+## 汇总
+
+PhonePC/2in1TabletTVWearable
+
+### 宏定义
+
+PhonePC/2in1TabletTVWearable
+
+| 名称 | 描述 |
+| --- | --- |
+| IMAGE\_RESULT\_BASE 62980096 | 通用图像错误码，含义为操作失败。  **起始版本：** 10 |
+
+### 结构体
+
+PhonePC/2in1TabletTVWearable
+
+| 名称 | typedef关键字 | 描述 |
+| --- | --- | --- |
+| [OhosImageSize](capi-image-ohosimagesize.md) | - | 定义图像大小。是[OhosImageDecodingOps](capi-image-ohosimagedecodingops.md)的成员变量。 |
+
+### 枚举
+
+PhonePC/2in1TabletTVWearable
+
+| 名称 | typedef关键字 | 描述 |
+| --- | --- | --- |
+| [IRNdkErrCode](capi-image-mdk-common-h.md#irndkerrcode) | IRNdkErrCode | 被使用的接口返回值的枚举。 |
+
+## 枚举类型说明
+
+PhonePC/2in1TabletTVWearable
+
+### IRNdkErrCode
+
+PhonePC/2in1TabletTVWearable
+
+```
+1. enum IRNdkErrCode
+```
+
+**描述**
+
+被使用的接口返回值的枚举。
+
+**起始版本：** 10
+
+| 枚举项 | 描述 |
+| --- | --- |
+| IMAGE\_RESULT\_SUCCESS = 0 | 操作成功。 |
+| IMAGE\_RESULT\_BAD\_PARAMETER = -1 | 无效参数。 |
+| IMAGE\_RESULT\_IMAGE\_RESULT\_BASE = IMAGE\_RESULT\_BASE | 操作失败。 |
+| IMAGE\_RESULT\_ERR\_IPC = IMAGE\_RESULT\_BASE + 1 | ipc 错误。 |
+| IMAGE\_RESULT\_ERR\_SHAMEM\_NOT\_EXIST = IMAGE\_RESULT\_BASE + 2 | 共享内存失败。 |
+| IMAGE\_RESULT\_ERR\_SHAMEM\_DATA\_ABNORMAL = IMAGE\_RESULT\_BASE + 3 | 共享内存数据异常。 |
+| IMAGE\_RESULT\_DECODE\_ABNORMAL = IMAGE\_RESULT\_BASE + 4 | 图像解码失败。 |
+| IMAGE\_RESULT\_DATA\_ABNORMAL = IMAGE\_RESULT\_BASE + 5 | 图像输入数据异常。 |
+| IMAGE\_RESULT\_MALLOC\_ABNORMAL = IMAGE\_RESULT\_BASE + 6 | 图像内存分配异常。 |
+| IMAGE\_RESULT\_DATA\_UNSUPPORT = IMAGE\_RESULT\_BASE + 7 | 图像类型不支持。 |
+| IMAGE\_RESULT\_INIT\_ABNORMAL = IMAGE\_RESULT\_BASE + 8 | 图像初始化失败。 |
+| IMAGE\_RESULT\_GET\_DATA\_ABNORMAL = IMAGE\_RESULT\_BASE + 9 | 图像获取数据错误。 |
+| IMAGE\_RESULT\_TOO\_LARGE = IMAGE\_RESULT\_BASE + 10 | 图像数据过大。 |
+| IMAGE\_RESULT\_TRANSFORM = IMAGE\_RESULT\_BASE + 11 | 图像转换错误。 |
+| IMAGE\_RESULT\_COLOR\_CONVERT = IMAGE\_RESULT\_BASE + 12 | 图像颜色转换错误。 |
+| IMAGE\_RESULT\_CROP = IMAGE\_RESULT\_BASE + 13 | 裁剪错误。 |
+| IMAGE\_RESULT\_SOURCE\_DATA = IMAGE\_RESULT\_BASE + 14 | 图像源数据错误。 |
+| IMAGE\_RESULT\_SOURCE\_DATA\_INCOMPLETE = IMAGE\_RESULT\_BASE + 15 | 图像源数据不完整。 |
+| IMAGE\_RESULT\_MISMATCHED\_FORMAT = IMAGE\_RESULT\_BASE + 16 | 图像格式不匹配。 |
+| IMAGE\_RESULT\_UNKNOWN\_FORMAT = IMAGE\_RESULT\_BASE + 17 | 图像未知格式。 |
+| IMAGE\_RESULT\_SOURCE\_UNRESOLVED = IMAGE\_RESULT\_BASE + 18 | 图像源未解析。 |
+| IMAGE\_RESULT\_INVALID\_PARAMETER = IMAGE\_RESULT\_BASE + 19 | 图像无效参数。 |
+| IMAGE\_RESULT\_DECODE\_FAILED = IMAGE\_RESULT\_BASE + 20 | 解码失败。 |
+| IMAGE\_RESULT\_PLUGIN\_REGISTER\_FAILED = IMAGE\_RESULT\_BASE + 21 | 注册插件失败。 |
+| IMAGE\_RESULT\_PLUGIN\_CREATE\_FAILED = IMAGE\_RESULT\_BASE + 22 | 创建插件失败。 |
+| IMAGE\_RESULT\_ENCODE\_FAILED = IMAGE\_RESULT\_BASE + 23 | 图像编码失败。 |
+| IMAGE\_RESULT\_ADD\_PIXEL\_MAP\_FAILED = IMAGE\_RESULT\_BASE + 24 | 图像添加像素位图失败。 |
+| IMAGE\_RESULT\_HW\_DECODE\_UNSUPPORT = IMAGE\_RESULT\_BASE + 25 | 图像硬解码不支持。 |
+| IMAGE\_RESULT\_DECODE\_HEAD\_ABNORMAL = IMAGE\_RESULT\_BASE + 26 | 图像头解码失败。 |
+| IMAGE\_RESULT\_DECODE\_EXIF\_UNSUPPORT = IMAGE\_RESULT\_BASE + 27 | 图像解码EXIF不支持。 |
+| IMAGE\_RESULT\_PROPERTY\_NOT\_EXIST = IMAGE\_RESULT\_BASE + 28 | 图像属性不存在。 |
+| IMAGE\_RESULT\_MEDIA\_DATA\_UNSUPPORT = IMAGE\_RESULT\_BASE + 30 | 媒体类型不支持。 |
+| IMAGE\_RESULT\_MEDIA\_TOO\_LARGE = IMAGE\_RESULT\_BASE + 31 | 媒体数据过大。 |
+| IMAGE\_RESULT\_MEDIA\_MALLOC\_FAILED = IMAGE\_RESULT\_BASE + 32 | 媒体分配内存失败。 |
+| IMAGE\_RESULT\_MEDIA\_END\_OF\_STREAM = IMAGE\_RESULT\_BASE + 33 | 媒体数据流结束失败。 |
+| IMAGE\_RESULT\_MEDIA\_IO\_ABNORMAL = IMAGE\_RESULT\_BASE + 34 | 媒体输入输出流异常。 |
+| IMAGE\_RESULT\_MEDIA\_MALFORMED = IMAGE\_RESULT\_BASE + 35 | 媒体功能异常。 |
+| IMAGE\_RESULT\_MEDIA\_BUFFER\_TOO\_SMALL = IMAGE\_RESULT\_BASE + 36 | 媒体数据过小错误。 |
+| IMAGE\_RESULT\_MEDIA\_OUT\_OF\_RANGE = IMAGE\_RESULT\_BASE + 37 | 媒体超出范围错误。 |
+| IMAGE\_RESULT\_MEDIA\_STATUS\_ABNORMAL = IMAGE\_RESULT\_BASE + 38 | 媒体状态异常错误。 |
+| IMAGE\_RESULT\_MEDIA\_VALUE\_INVALID = IMAGE\_RESULT\_BASE + 39 | 媒体值无效。 |
+| IMAGE\_RESULT\_MEDIA\_NULL\_POINTER = IMAGE\_RESULT\_BASE + 40 | 媒体操作失败。 |
+| IMAGE\_RESULT\_MEDIA\_INVALID\_OPERATION = IMAGE\_RESULT\_BASE + 41 | 媒体操作无效。 |
+| IMAGE\_RESULT\_MEDIA\_ERR\_PLAYER\_NOT\_INIT = IMAGE\_RESULT\_BASE + 42 | 媒体初始化异常。 |
+| IMAGE\_RESULT\_MEDIA\_EARLY\_PREPARE = IMAGE\_RESULT\_BASE + 43 | 媒体过早预处理。 |
+| IMAGE\_RESULT\_MEDIA\_SEEK\_ERR = IMAGE\_RESULT\_BASE + 44 | 媒体查找失败。 |
+| IMAGE\_RESULT\_MEDIA\_PERMISSION\_DENIED = IMAGE\_RESULT\_BASE + 45 | 媒体权限拒绝。 |
+| IMAGE\_RESULT\_MEDIA\_DEAD\_OBJECT = IMAGE\_RESULT\_BASE + 46 | 媒体对象注销。 |
+| IMAGE\_RESULT\_MEDIA\_TIMED\_OUT = IMAGE\_RESULT\_BASE + 47 | 媒体超时。 |
+| IMAGE\_RESULT\_MEDIA\_TRACK\_NOT\_ALL\_SUPPORTED = IMAGE\_RESULT\_BASE + 48 | 媒体能力不支持。 |
+| IMAGE\_RESULT\_MEDIA\_ADAPTER\_INIT\_FAILED = IMAGE\_RESULT\_BASE + 49 | 媒体适配器初始化失败。 |
+| IMAGE\_RESULT\_MEDIA\_WRITE\_PARCEL\_FAIL = IMAGE\_RESULT\_BASE + 50 | 写入parcel失败。 |
+| IMAGE\_RESULT\_MEDIA\_READ\_PARCEL\_FAIL = IMAGE\_RESULT\_BASE + 51 | 读取parcel失败。 |
+| IMAGE\_RESULT\_MEDIA\_NO\_AVAIL\_BUFFER = IMAGE\_RESULT\_BASE + 52 | 无效数据。 |
+| IMAGE\_RESULT\_MEDIA\_INVALID\_PARAM = IMAGE\_RESULT\_BASE + 53 | 媒体接口发现无效参数。 |
+| IMAGE\_RESULT\_MEDIA\_CODEC\_ADAPTER\_NOT\_EXIST = IMAGE\_RESULT\_BASE + 54 | 媒体编解码适配器不存在。 |
+| IMAGE\_RESULT\_MEDIA\_CREATE\_CODEC\_ADAPTER\_FAILED = IMAGE\_RESULT\_BASE + 55 | 媒体创建编解码适配器失败。 |
+| IMAGE\_RESULT\_MEDIA\_CODEC\_ADAPTER\_NOT\_INIT = IMAGE\_RESULT\_BASE + 56 | 媒体编解码适配器未初始化。 |
+| IMAGE\_RESULT\_MEDIA\_ZCODEC\_CREATE\_FAILED = IMAGE\_RESULT\_BASE + 57 | 媒体编解码创建失败。 |
+| IMAGE\_RESULT\_MEDIA\_ZCODEC\_NOT\_EXIST = IMAGE\_RESULT\_BASE + 58 | 媒体编解码不存在。 |
+| IMAGE\_RESULT\_MEDIA\_JNI\_CLASS\_NOT\_EXIST = IMAGE\_RESULT\_BASE + 59 | 媒体JNI层类不存在。 |
+| IMAGE\_RESULT\_MEDIA\_JNI\_METHOD\_NOT\_EXIST = IMAGE\_RESULT\_BASE + 60 | 媒体JNI层方法不存在。 |
+| IMAGE\_RESULT\_MEDIA\_JNI\_NEW\_OBJ\_FAILED = IMAGE\_RESULT\_BASE + 61 | 媒体JNI层创建对象失败。 |
+| IMAGE\_RESULT\_MEDIA\_JNI\_COMMON\_ERROR = IMAGE\_RESULT\_BASE + 62 | 媒体JNI层异常。 |
+| IMAGE\_RESULT\_MEDIA\_DISTRIBUTE\_NOT\_SUPPORT = IMAGE\_RESULT\_BASE + 63 | 媒体不支持分布式。 |
+| IMAGE\_RESULT\_MEDIA\_SOURCE\_NOT\_SET = IMAGE\_RESULT\_BASE + 64 | 媒体源未设置。 |
+| IMAGE\_RESULT\_MEDIA\_RTSP\_ADAPTER\_NOT\_INIT = IMAGE\_RESULT\_BASE + 65 | 媒体rtsp适配器未初始化。 |
+| IMAGE\_RESULT\_MEDIA\_RTSP\_ADAPTER\_NOT\_EXIST = IMAGE\_RESULT\_BASE + 66 | 媒体rtsp适配器不存在。 |
+| IMAGE\_RESULT\_MEDIA\_RTSP\_SURFACE\_UNSUPPORT = IMAGE\_RESULT\_BASE + 67 | 媒体不支持rtsp surface。 |
+| IMAGE\_RESULT\_MEDIA\_RTSP\_CAPTURE\_NOT\_INIT = IMAGE\_RESULT\_BASE + 68 | 媒体rtsp capture初始化失败。 |
+| IMAGE\_RESULT\_MEDIA\_RTSP\_SOURCE\_URL\_INVALID = IMAGE\_RESULT\_BASE + 69 | 媒体rtsp源路径无效。 |
+| IMAGE\_RESULT\_MEDIA\_RTSP\_VIDEO\_TRACK\_NOT\_FOUND = IMAGE\_RESULT\_BASE + 70 | 媒体rtsp未发现视频能力。 |
+| IMAGE\_RESULT\_MEDIA\_RTSP\_CAMERA\_NUM\_REACH\_MAX = IMAGE\_RESULT\_BASE + 71 | rtsp相机数量达到最大数量。 |
+| IMAGE\_RESULT\_MEDIA\_SET\_VOLUME = IMAGE\_RESULT\_BASE + 72 | 媒体设置音量失败。 |
+| IMAGE\_RESULT\_MEDIA\_NUMBER\_OVERFLOW = IMAGE\_RESULT\_BASE + 73 | 媒体操作次数溢出。 |
+| IMAGE\_RESULT\_MEDIA\_DIS\_PLAYER\_UNSUPPORTED = IMAGE\_RESULT\_BASE + 74 | 媒体分布式播放器不支持。 |
+| IMAGE\_RESULT\_MEDIA\_DENCODE\_ICC\_FAILED = IMAGE\_RESULT\_BASE + 75 | 图像解码ICC失败。 |
+| IMAGE\_RESULT\_MEDIA\_ENCODE\_ICC\_FAILED = IMAGE\_RESULT\_BASE + 76 | 图像编码ICC失败。 |
+| IMAGE\_RESULT\_MEDIA\_READ\_PIXELMAP\_FAILED = IMAGE\_RESULT\_BASE + 150 | 读取像素位图失败。 |
+| IMAGE\_RESULT\_MEDIA\_WRITE\_PIXELMAP\_FAILED = IMAGE\_RESULT\_BASE + 151 | 写入像素位图失败。 |
+| IMAGE\_RESULT\_MEDIA\_PIXELMAP\_NOT\_ALLOW\_MODIFY = IMAGE\_RESULT\_BASE + 152 | 像素位图不允许修改。 |
+| IMAGE\_RESULT\_MEDIA\_CONFIG\_FAILED = IMAGE\_RESULT\_BASE + 153 | 配置失败。 |
+| IMAGE\_RESULT\_JNI\_ENV\_ABNORMAL = IMAGE\_RESULT\_BASE + 154 | JNI环境异常。 |
+| IMAGE\_RESULT\_SURFACE\_GRALLOC\_BUFFER\_FAILED = IMAGE\_RESULT\_BASE + 155 | surface申请内存失败。 |
+| IMAGE\_RESULT\_CREATE\_SURFACE\_FAILED = IMAGE\_RESULT\_BASE + 156 | 创建surface失败。 |
+| IMAGE\_RESULT\_SURFACE\_GET\_PARAMETER\_FAILED = IMAGE\_RESULT\_BASE + 157 | 从surface获取参数失败。 |
+| IMAGE\_RESULT\_GET\_SURFACE\_FAILED = IMAGE\_RESULT\_BASE + 158 | 获取surface失败。 |
+| IMAGE\_RESULT\_SURFACE\_ACQUIRE\_BUFFER\_FAILED = IMAGE\_RESULT\_BASE + 159 | 申请内存失败。 |
+| IMAGE\_RESULT\_SURFACE\_REQUEST\_BUFFER\_FAILED = IMAGE\_RESULT\_BASE + 160 | 申请内存失败。 |
+| IMAGE\_RESULT\_REGISTER\_LISTENER\_FAILED = IMAGE\_RESULT\_BASE + 161 | 注册监听失败。 |
+| IMAGE\_RESULT\_REGISTER\_BUFFER\_FAILED = IMAGE\_RESULT\_BASE + 162 | 注册内存失败。 |
+| IMAGE\_RESULT\_FREAD\_FAILED = IMAGE\_RESULT\_BASE + 163 | 读取文件失败。 |
+| IMAGE\_RESULT\_PEEK\_FAILED = IMAGE\_RESULT\_BASE + 164 | 检测文件失败。 |
+| IMAGE\_RESULT\_SEEK\_FAILED = IMAGE\_RESULT\_BASE + 165 | 查找文件失败。 |
+| IMAGE\_RESULT\_STREAM\_SIZE\_ERROR = IMAGE\_RESULT\_BASE + 166 | 数据流损坏。 |
+| IMAGE\_RESULT\_FILE\_FD\_ERROR = IMAGE\_RESULT\_BASE + 167 | 文件描述符损坏。 |
+| IMAGE\_RESULT\_FILE\_DAMAGED = IMAGE\_RESULT\_BASE + 168 | 文件损坏。 |
+| IMAGE\_RESULT\_CREATE\_DECODER\_FAILED = IMAGE\_RESULT\_BASE + 169 | 创建解码失败。 |
+| IMAGE\_RESULT\_CREATE\_ENCODER\_FAILED = IMAGE\_RESULT\_BASE + 170 | 创建编码失败。 |
+| IMAGE\_RESULT\_CHECK\_FORMAT\_ERROR = IMAGE\_RESULT\_BASE + 171 | 检查格式失败。 |
+| IMAGE\_RESULT\_THIRDPART\_SKIA\_ERROR = IMAGE\_RESULT\_BASE + 172 | skia解码失败。 |
+| IMAGE\_RESULT\_HW\_DECODE\_FAILED = IMAGE\_RESULT\_BASE + 173 | 硬解码失败。 |
+| IMAGE\_RESULT\_ALLOCATER\_TYPE\_ERROR = IMAGE\_RESULT\_BASE + 174 | 内存类型校验失败。 |
+| IMAGE\_RESULT\_ALPHA\_TYPE\_ERROR = IMAGE\_RESULT\_BASE + 175 | 透明度类型失败。 |
+| IMAGE\_RESULT\_INDEX\_INVALID = IMAGE\_RESULT\_BASE + 176 | 参数无效。 |
+| IMAGE\_RESULT\_MEDIA\_UNKNOWN = IMAGE\_RESULT\_BASE + 200 | 媒体未知错误。 |

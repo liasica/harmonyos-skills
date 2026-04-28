@@ -1,0 +1,42 @@
+---
+url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/js-ui-widget-overview
+title: JS卡片概述
+breadcrumb: 指南 > 应用框架 > Form Kit（卡片开发服务） > JS卡片开发 > JS卡片概述
+category: harmonyos-guides
+scraped_at: 2026-04-28T07:41:35+08:00
+doc_updated_at: 2026-03-09
+content_hash: sha256:e404c9e51e2eba58afaf841e35c666e665fcc8e5a1eafa6702362a7a33011ca8
+---
+
+JS卡片是使用类Web范式（HML+CSS+JSON）开发页面的卡片，现在已经支持FA模型和Stage模型两种[应用模型](application-models.md)。开发指导请参见[JS卡片开发指导（Stage模型）](js-ui-widget-development.md)和[JS卡片开发指导（FA模型）](widget-development-fa.md)。在开发新卡片时，推荐采用ArkTS声明式来构建UI，声明式和类web范式差异点可参考[ArkUI简介](arkui-overview.md)。
+
+## 实现原理
+
+JS卡片实现原理如图1所示。
+
+**图1** JS卡片实现原理
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/zb2VEEe0Rgmcauedlaw-gQ/zh-cn_image_0000002583438359.png?HW-CC-KV=V1&HW-CC-Date=20260427T234134Z&HW-CC-Expire=86400&HW-CC-Sign=34138EF542559A9590E7BDC2EBD1F0F9A86ADDF47C5757402F018A8ECCD42225)
+
+卡片使用方包含以下模块：
+
+* 卡片使用：包含卡片的创建、删除、请求更新等操作。
+* 通信适配层：由HarmonyOS SDK提供，负责与卡片管理服务通信，用于将卡片的相关操作指令发送到卡片管理服务。
+
+卡片管理服务包含以下模块：
+
+* 周期性刷新：在卡片添加后，根据卡片的刷新策略启动定时任务周期性触发卡片的刷新。
+* 卡片缓存管理：在卡片添加到卡片管理服务后，对卡片的视图信息进行缓存，以便下次获取卡片时可以直接返回缓存数据，降低时延。
+* 卡片生命周期管理：对于卡片切换到后台或者被遮挡时，暂停卡片的刷新；以及卡片的升级/卸载场景下对卡片数据的更新和清理。
+* 卡片使用方对象管理：对卡片使用方的RPC对象进行管理，用于使用方请求进行校验以及对卡片更新后的回调处理。
+* 通信适配层：负责与卡片使用方和提供方进行RPC通信。
+
+卡片提供方包含以下模块：
+
+* 卡片服务：由卡片提供方开发者实现，开发者实现生命周期处理创建卡片、更新卡片以及删除卡片等请求，提供相应的卡片服务。
+* 卡片提供方实例管理模块：由卡片提供方开发者实现，负责对卡片管理服务分配的卡片实例进行持久化管理。
+* 通信适配层：由HarmonyOS SDK提供，负责与卡片管理服务通信，用于将卡片的更新数据主动推送到卡片管理服务。
+
+说明
+
+实际开发时只需要作为卡片提供方进行卡片内容的开发，卡片使用方和卡片管理服务由系统自动处理。

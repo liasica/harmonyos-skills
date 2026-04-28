@@ -1,0 +1,156 @@
+---
+url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-service-widget-container-div
+title: div
+breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > JS服务卡片UI组件 > 容器组件 > div
+category: harmonyos-references
+scraped_at: 2026-04-28T08:03:37+08:00
+doc_updated_at: 2026-03-09
+content_hash: sha256:f7c3e676470c6b4d0a9042f03039e505c26afe1c0046d3c34a70195b04cf4611
+---
+
+基础容器，用作页面结构的根节点或将内容进行分组。
+
+说明
+
+从API version 8 开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
+
+## 子组件
+
+PhonePC/2in1TabletTVWearable
+
+支持。
+
+## 属性
+
+PhonePC/2in1TabletTVWearable
+
+支持[通用属性](js-service-widget-common-attributes.md)。
+
+## 样式
+
+PhonePC/2in1TabletTVWearable
+
+除支持[通用样式](js-service-widget-common-styles.md)外，还支持如下样式：
+
+| 名称 | 类型 | 默认值 | 必填 | 描述 |
+| --- | --- | --- | --- | --- |
+| flex-direction | string | row | 否 | flex容器主轴方向。可选项有：  - column：垂直方向从上到下。  - row：水平方向从左到右。 |
+| flex-wrap | string | nowrap | 否 | flex容器是单行还是多行显示，该值暂不支持动态修改。可选项有：  - nowrap：不换行，单行显示。  - wrap：换行，多行显示。 |
+| justify-content | string | flex-start | 否 | flex容器当前行的主轴对齐格式。可选项有：  - flex-start：项目位于容器的开头。  - flex-end：项目位于容器的结尾。  - center：项目位于容器的中心。  - space-between：项目位于各行之间留有空白的容器内。  - space-around：项目位于各行之前、之间、之后都留有空白的容器内。  - space-evenly5+: 均匀排列每个元素，每个元素之间的间隔相等。 |
+| align-items | string | stretch | 否 | flex容器当前行的交叉轴对齐格式，可选值为：  - stretch：弹性元素在交叉轴方向被拉伸到与容器相同的高度或宽度。  - flex-start：元素向交叉轴起点对齐。  - flex-end：元素向交叉轴终点对齐。  - center：元素在交叉轴居中。 |
+| align-content | string | flex-start | 否 | 交叉轴中有额外的空间时，多行内容对齐格式，可选值为：  - flex-start：所有行从交叉轴起点开始填充。第一行的交叉轴起点边和容器的交叉轴起点边对齐。接下来的每一行紧跟前一行。  - flex-end：所有行从交叉轴末尾开始填充。最后一行的交叉轴终点和容器的交叉轴终点对齐。同时所有后续行与前一个对齐。  - center：所有行朝向容器的中心填充。每行互相紧挨，相对于容器居中对齐。容器的交叉轴起点边和第一行的距离相等于容器的交叉轴终点边和最后一行的距离。  - space-between：所有行在容器中平均分布。相邻两行间距相等。容器的交叉轴起点边和终点边分别与第一行和最后一行的边对齐。  - space-around：所有行在容器中平均分布，相邻两行间距相等。容器的交叉轴起点边和终点边分别与第一行和最后一行的距离是相邻两行间距的一半。 |
+| display | string | flex | 否 | 确定该元素视图框的类型，该值暂不支持动态修改。可选值为：  - flex：弹性布局  - none：不渲染此元素 |
+| grid-template-[columns|rows] | string | 1行1列 | 否 | 用于设置当前网格布局行和列的数量，不设置时默认1行1列，仅当display为grid时生效。  示例：如设置grid-template-columns为：  - 50px 100px 60px：分三列，第一列50px，第二列100px，第三列60px。  - 1fr 1fr 2fr：分三列，将父组件允许的宽分为4等份，第一列占1份，第二列占1份，第三列占2份。  - 30% 20% 50%：分三列，将父组件允许的宽为基准，第一列占30%，第二列占20%，第三列占50%。  - repeat(2,100px)：分两列，第一列100px，第二列100px。  - repeat(auto-fill,100px)5+：按照每列100px的大小和交叉轴大小计算最大正整数重复次数，按照该重复次数布满交叉轴。  - auto 1fr 1fr：分三列，第一列自适应内部子组件所需宽度，剩余空间分为两等份，第二列占一份，第三列占一份。 |
+| grid-[columns|rows]-gap | <length> | 0 | 否 | 用于设置行与行的间距或者列与列的间距，也可以支持通过grid-gap设置相同的行列间距，仅当display为grid时生效。 |
+| grid-row-[start|end] | number | - | 否 | 用于设置当前元素在网格布局中的起止行号，仅当父组件display样式为grid时生效（仅div支持display样式设置为grid）。 |
+| grid-column-[start|end] | number | - | 否 | 用于设置当前元素在网格布局中的起止列号，仅当父组件display样式为grid时生效（仅div支持display样式设置为grid）。 |
+| grid-auto-flow | string | - | 否 | 使用框架自动布局算法进行网格的布局，可选值为：  - row：逐行填充元素，如果行空间不够，则新增行。  - column：逐列填充元素，如果列空间不够，则新增列。 |
+| align-items | string | - | 否 | 设置容器中元素交叉轴上的对齐方式：  - stretch：Flex容器内容在交叉轴方向被拉伸到与容器相同的高度或宽度。  - flex-start：Flex布局容器内元素向交叉轴起点对齐。  - flex-end：Flex布局容器内元素向交叉轴终点对齐。  - center：Flex布局容器内元素在交叉轴居中对齐。  - baseline：如Flex布局纵向排列，则该值与'flex-start'等效。横向布局时，内容元素存在文本时按照文本基线对齐，否则底部对齐。 |
+
+## 事件
+
+PhonePC/2in1TabletTVWearable
+
+支持[通用事件](js-service-widget-common-events.md)。
+
+## 示例
+
+PhonePC/2in1TabletTVWearable
+
+1. Flex样式
+
+   ```
+   1. <!-- xxx.hml -->
+   2. <div class="container">
+   3. <div class="flex-box">
+   4. <div class="flex-item color-primary"></div>
+   5. <div class="flex-item color-warning"></div>
+   6. <div class="flex-item color-success"></div>
+   7. </div>
+   8. </div>
+   ```
+
+   ```
+   1. /* xxx.css */
+   2. .container {
+   3. flex-direction: column;
+   4. justify-content: center;
+   5. align-items: center;
+   6. width: 454px;
+   7. height: 454px;
+   8. }
+   9. .flex-box {
+   10. justify-content: space-around;
+   11. align-items: center;
+   12. width: 400px;
+   13. height: 140px;
+   14. background-color: #ffffff;
+   15. }
+   16. .flex-item {
+   17. width: 120px;
+   18. height: 120px;
+   19. border-radius: 16px;
+   20. }
+   21. .color-primary {
+   22. background-color: #007dff;
+   23. }
+   24. .color-warning {
+   25. background-color: #ff7500;
+   26. }
+   27. .color-success {
+   28. background-color: #41ba41;
+   29. }
+   ```
+
+   **2\*4卡片**
+
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/ihXpBLRcQD20-Aos5ePKxg/zh-cn_image_0000002583480425.png?HW-CC-KV=V1&HW-CC-Date=20260428T000335Z&HW-CC-Expire=86400&HW-CC-Sign=D765A2E2F8975B0CA9D862D35A2D30972E620FF56E73FBE75F3B92D45A265173)
+2. Flex Wrap样式
+
+   ```
+   1. <!-- xxx.hml -->
+   2. <div class="container">
+   3. <div class="flex-box">
+   4. <div class="flex-item color-primary"></div>
+   5. <div class="flex-item color-warning"></div>
+   6. <div class="flex-item color-success"></div>
+   7. </div>
+   8. </div>
+   ```
+
+   ```
+   1. /* xxx.css */
+   2. .container {
+   3. flex-direction: column;
+   4. justify-content: center;
+   5. align-items: center;
+   6. width: 454px;
+   7. height: 454px;
+   8. }
+   9. .flex-box {
+   10. justify-content: space-around;
+   11. align-items: center;
+   12. flex-wrap: wrap;
+   13. width: 300px;
+   14. height: 250px;
+   15. background-color: #ffffff;
+   16. }
+   17. .flex-item {
+   18. width: 120px;
+   19. height: 120px;
+   20. border-radius: 16px;
+   21. }
+   22. .color-primary {
+   23. background-color: #007dff;
+   24. }
+   25. .color-warning {
+   26. background-color: #ff7500;
+   27. }
+   28. .color-success {
+   29. background-color: #41ba41;
+   30. }
+   ```
+
+   **4\*4卡片**
+
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/LiMSsnhMR7SJ8cJqhWquwg/zh-cn_image_0000002552800776.png?HW-CC-KV=V1&HW-CC-Date=20260428T000335Z&HW-CC-Expire=86400&HW-CC-Sign=2539332D97356D7CF80A9599504B6DD09B7E1A151552270B48A52CA286A2F69D)

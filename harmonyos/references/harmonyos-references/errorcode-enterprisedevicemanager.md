@@ -1,0 +1,504 @@
+---
+url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager
+title: 企业设备管理错误码
+breadcrumb: API参考 > 系统 > 基础功能 > MDM Kit（企业设备管理服务） > 错误码 > 企业设备管理错误码
+category: harmonyos-references
+scraped_at: 2026-04-28T08:10:32+08:00
+doc_updated_at: 2026-04-20
+content_hash: sha256:7a8edd9ab2a1ac276fb981b02de09f50cee62a6411e9640a365fffd2dbd57aee
+---
+
+说明
+
+以下仅介绍本模块特有错误码，通用错误码请参考[通用错误码说明文档](errorcode-universal.md)。
+
+## 9200001 应用没有激活成设备管理器
+
+PhonePC/2in1Tablet
+
+**错误信息**
+
+The application is not an administrator application of the device.
+
+**错误描述**
+
+当应用没有激活成设备管理器时，会产生此错误码。
+
+**可能原因**
+
+应用没有激活设备管理器。
+
+**处理步骤**
+
+请检查调用者是否成功激活过设备管理应用，没有激活过的设备管理应用无法调用设备管理接口。
+
+## 9200002 设备管理器权限不够
+
+PhonePC/2in1Tablet
+
+**错误信息**
+
+The administrator application does not have permission to manage the device.
+
+**错误描述**
+
+当设备管理器调用高权限接口时，则会产生此错误码。
+
+**可能原因**
+
+已激活为DA管理器，但调用了SDA管理器接口。
+
+**处理步骤**
+
+请检查调用者是否存在越权调用，即激活的设备管理器类型和调用的API要求的管理器类型是否一致。
+
+## 9200003 指定的设备管理器元能力组件无效
+
+PhonePC/2in1Tablet
+
+**错误信息**
+
+The administrator ability component is invalid.
+
+**错误描述**
+
+当应用传入参数中指定的设备管理器元能力组件无效时，会产生此错误码。
+
+**可能原因**
+
+该错误码表示指定的设备管理器元能力组件无效，可能原因如下。
+
+1. 应用激活设备管理器时指定的设备管理器元能力组件不存在。
+2. 设备管理器元能力组件不是合法的企业设备管理元能力组件。
+
+**处理步骤**
+
+1. 请检查激活时输入的设备管理器元能力组件name是否存在应用包中。
+2. 请检查企业设备管理组件是否继承企业设备管理框架定义的EnterpriseAdminExtensionAbility组件。
+
+## 9200004 激活设备管理器失败
+
+PhonePC/2in1Tablet
+
+**错误信息**
+
+Failed to activate the administrator application of the device.
+
+**错误描述**
+
+当应用重复激活不同类型的设备管理器或激活多个管理器时，会产生此错误码。
+
+**可能原因**
+
+该错误码表示激活设备管理器失败，可能原因如下：
+
+1. 同时激活多个SDA设备管理器。
+2. 重复激活设备管理器，且管理器类型发生变化。
+3. 同一个应用多个设备管理器元能力组件激活。
+
+**处理步骤**
+
+1. 检查是否激活多个SDA设备管理器，SDA设备管理器只允许激活一个。
+2. 检查指定的设备管理器是否已激活了，且重复激活时管理器类型发生变化，此时需要先解除激活，再重新激活。
+3. 检查待激活的设备管理器应用中是否已有设备管理元能力组件激活过，同一个应用只允许激活一个设备管理器元能力组件。
+
+## 9200005 解除激活设备管理器失败
+
+PhonePC/2in1Tablet
+
+**错误信息**
+
+Failed to deactivate the administrator application of the device.
+
+**错误描述**
+
+当应用没有激活过或者解除激活的是其他设备管理器时，会产生此错误码。
+
+**可能原因**
+
+该错误码表示解除激活设备管理器失败，可能原因如下。
+
+1. 解除激活的设备管理器应用没有激活过。
+2. 不能解除激活其他设备管理器。
+
+**处理步骤**
+
+1. 检查解除激活时设备管理应用是否激活过。
+2. 检查解除激活时设备管理应用中指定设备管理元能力组件是否激活过。
+3. 检查调用者是否解除激活自身，设备管理器应用不能解除激活其他设备管理器应用。
+
+## 9200006 指定的用户ID非法
+
+**错误信息**
+
+The specified user ID is invalid.
+
+**错误描述**
+
+当应用调用接口设置用户策略，指定的user ID不存在、或DA管理器跨用户设置，则会产生此错误码。
+
+**可能原因**
+
+该错误码表示指定的用户ID非法，可能原因如下。
+
+1. 调用接口设置用户策略，指定的user ID不存在。
+2. DA管理器不允许跨用户设置，指定的user ID和调用者user ID不同。
+
+**处理步骤**
+
+1. 检查调用接口中指定的user ID是否是有效的user ID。
+2. 检查调用者user ID和指定设置的user ID是否是同一user ID，DA模式下不允许跨用户设置策略。
+
+## 9200007 系统服务工作异常
+
+**错误信息**
+
+The system ability works abnormally.
+
+**错误描述**
+
+当企业设备管理服务异常时，则会产生此错误码。
+
+**可能原因**
+
+该错误码表示系统服务工作异常，可能原因如下。
+
+1. 企业设备管理服务没有正常启动。
+2. 企业设备管理的RPC对象无法获取。
+3. 企业设备管理依赖的其他服务没有正常启动或者RPC对象无法获取。
+4. 企业设备管理运行过程中系统异常。
+
+**处理步骤**
+
+系统服务内部工作异常，请稍后重试，或者重启设备尝试。
+
+## 9200008 系统订阅事件无效
+
+PhonePC/2in1Tablet
+
+**错误信息**
+
+The specified system event is invalid.
+
+**错误描述**
+
+当企业设备管理暂不支持订阅此事件或系统订阅的事件无效时，则会产生此错误码。
+
+**可能原因**
+
+企业设备管理暂不支持订阅此事件或系统订阅的事件无效。
+
+**处理步骤**
+
+检查所订阅事件是企业设备管理所支持的有效管理事件。
+
+## 9200009 授予应用权限失败
+
+PhonePC/2in1Tablet
+
+**错误信息**
+
+Failed to grant the permission to the application.
+
+**错误描述**
+
+当超级设备管理应用授予其他应用管理员权限失败时，则会产生此错误码。
+
+**可能原因**
+
+被授予权限的应用未在管理员用户下安装。
+
+**处理步骤**
+
+检查需要被授予权限的应用是否在管理员用户下安装。
+
+## 9200010 策略冲突
+
+PhonePC/2in1Tablet
+
+**错误信息**
+
+A conflict policy has been configured.
+
+**错误描述**
+
+当企业设备管理在存在互斥策略的情况下下发策略，则会产生此错误码。
+
+**可能原因**
+
+企业设备管理在存在互斥策略的情况下下发策略。
+
+**处理步骤**
+
+先取消与当前策略互斥的策略，然后再下发策略。
+
+## 9200012 参数校验失败
+
+PhonePC/2in1Tablet
+
+**错误信息**
+
+Parameter verification failed.
+
+**错误描述**
+
+参数校验失败时，会产生此错误码。
+
+**可能原因**
+
+参数校验失败时，可能的原因如下。
+
+1. 传入的企业设备管理扩展组件不属于当前应用。
+2. 传入的参数长度超长。
+3. 传入的数组长度超出限制。
+4. 参数值不在取值范围内。
+5. 对尚未设置的禁用或允许名单进行了移除操作。
+
+**处理步骤**
+
+1. 检查传入的企业设备管理扩展组件是否属于当前应用。
+2. 检查传入的参数长度是否超过接口限制。
+3. 检测传入的数组长度是否超过接口限制。
+4. 检查传入参数值是否在接口支持取值范围内。
+5. 移除前先查询是否有设置相应的名单。
+
+## 9200013 管控未实时生效
+
+PhonePC/2in1Tablet
+
+**错误信息**
+
+The enterprise management policy has been successfully set, but the function has not taken effect in real time.
+
+**错误描述**
+
+企业管控策略设置成功，但是管控未实时生效。
+
+**可能原因**
+
+在外置存储管控场景，禁用外置存储时，由于外置存储有文件正在被使用，导致禁用未实时生效，此时无法立即卸载外置存储。
+
+**处理步骤**
+
+重启设备，重启后管控生效。在外置存储管控场景下，重启后禁用外置存储生效，不会主动加载外置存储。
+
+## 9200014 启动组件失败
+
+PhonePC/2in1Tablet
+
+**错误信息**
+
+Failed to start the ability.
+
+**错误描述**
+
+启动组件失败时，会产生此错误码。
+
+**可能原因**
+
+1. 当设置了禁止运行应用名单（例如调用[addDisallowedRunningBundlesSync](js-apis-enterprise-applicationmanager.md#applicationmanageradddisallowedrunningbundlessync)接口），且应用在禁止运行应用名单中时，启动组件会失败。
+2. 当设置了允许运行应用名单（例如调用[addAllowedRunningBundles](js-apis-enterprise-applicationmanager.md#applicationmanageraddallowedrunningbundles21)接口），且应用不在允许运行应用名单中时，启动组件会失败。
+
+**处理步骤**
+
+1. 将应用从禁止运行名单中移除，例如调用[removeDisallowedRunningBundlesSync](js-apis-enterprise-applicationmanager.md#applicationmanagerremovedisallowedrunningbundlessync)接口。
+2. 将应用添加到允许运行名单，例如调用[addAllowedRunningBundles](js-apis-enterprise-applicationmanager.md#applicationmanageraddallowedrunningbundles21)接口。
+
+## 9200015 组件不存在
+
+PhonePC/2in1Tablet
+
+**错误信息**
+
+The ability does not exist.
+
+**错误描述**
+
+当组件不存在，启动该组件时，会产生此错误码。
+
+**可能原因**
+
+1. 传入了不存在bundleName和abilityName。
+2. 传入的Ability对外不可见。
+
+**处理步骤**
+
+1. 检查want中的bundleName和abilityName是否正确。
+2. 检查传入的Ability对外是否可见。
+
+## 9201001 管理证书失败
+
+PhonePC/2in1Tablet
+
+**错误信息**
+
+Failed to manage the certificate.
+
+**错误描述**
+
+当超级设备管理应用安装或卸载用户证书失败时，会产生此错误码。
+
+**可能原因**
+
+用户证书信息错误。
+
+**处理步骤**
+
+检查用户证书是否正确。
+
+## 9201002 企业应用安装失败
+
+PhonePC/2in1Tablet
+
+**错误信息**
+
+Failed to install the application.
+
+**错误描述**
+
+当企业设备管理安装企业应用失败时，则会产生此错误码。
+
+**可能原因**
+
+该错误码表示安装企业应用失败，可能原因如下。
+
+1. 应用安装路径为空、不存在、无效路径。
+2. 安装多个不同包名的应用。
+3. 当安装参数flag为0时再次安装已存在的应用。
+4. 传入无效用户id。
+
+**处理步骤**
+
+1. 检查应用安装路径是有效的安装路径。
+2. 检查安装参数是有效的安装参数。
+3. 检查安装的是同一应用。
+
+## 9201003 创建账号失败
+
+PhonePC/2in1Tablet
+
+**错误信息**
+
+Failed to add an OS account.
+
+**错误描述**
+
+当企业设备管理创建账号失败时，会产生此错误码。
+
+**可能原因**
+
+该错误码表示创建账号失败，可能原因如下。
+
+1. 账号已存在。
+2. 账号名非法。
+3. 创建账号时未连接网络。
+4. 系统不支持多账号。
+
+**处理步骤**
+
+1. 检查账号名是否已存在，如果已存在则需更换。
+2. 检查账号名长度和内容，确保正确性。
+3. 确保创建账号时网络畅通。
+
+## 9201004 系统更新包不存在或解析失败
+
+PhonePC/2in1Tablet
+
+**错误信息**
+
+The update packages do not exist or analyzing failed.
+
+**错误描述**
+
+当企业设备管理通知系统更新包失败时，会产生此错误码。
+
+**可能原因**
+
+该错误码表示通知系统更新包失败，可能原因如下。
+
+1. 系统更新包不存在。
+2. 系统更新包文件名校验失败。
+3. 系统更新包打开失败。
+4. 系统更新包解析失败。
+
+**处理步骤**
+
+1. 检查系统更新包是否存在。
+2. 检查系统更新包文件名是否有效。
+3. 检查系统更新包是否具有可读权限。
+4. 检查系统更新包是否完整。
+
+## 9201005 添加保活应用失败
+
+PhonePC/2in1Tablet
+
+**错误信息**
+
+Add keep alive applications failed.
+
+**错误描述**
+
+当企业设备管理添加保活应用失败时，则会产生此错误码。
+
+**可能原因**
+
+该错误码表示添加保活应用失败，可能原因如下。
+
+1. 应用未安装。
+2. 应用没有MainAbility。
+3. 应用没有托盘服务。
+4. 应用未添加到托盘。
+5. 当前设备不支持添加保活应用。
+
+**处理步骤**
+
+1. 检查应用是否安装。
+2. 检查应用是否有MainAbility。
+3. 检查应用是否实现托盘服务。
+4. 检查应用是否已添加到托盘。
+
+## 9201009 日志收集任务创建失败
+
+PhonePC/2in1Tablet
+
+**错误信息**
+
+Collecting logs, please try again later.
+
+**错误描述**
+
+当企业设备管理创建日志收集任务失败时，会产生此错误码。
+
+**可能原因**
+
+当已有一个日志收集任务正在执行时，调用了[systemManager.startCollectLog](js-apis-enterprise-systemmanager.md#systemmanagerstartcollectlog23)接口创建日志收集任务。
+
+**处理步骤**
+
+等前一个日志收集任务完成（即收到[EnterpriseAdminExtensionAbility.onLogCollected](js-apis-enterpriseadminextensionability.md#onlogcollected23)回调）后，再调用[systemManager.startCollectLog](js-apis-enterprise-systemmanager.md#systemmanagerstartcollectlog23)接口创建日志收集任务。
+
+## 9201010 以太网网络接口配置失败
+
+PhonePC/2in1Tablet
+
+**错误信息**
+
+Ethernet configuration failed. Ethernet device not connected.
+
+**错误描述**
+
+以太网配置失败，或以太网设备未连接。
+
+**可能原因**
+
+该错误码表示以太网配置失败，可能原因如下。
+
+1. 网卡未启用。
+2. 网卡名输入错误。
+3. 配置参数错误。
+
+**处理步骤**
+
+1. 检查网卡是否启用。
+2. 检查输入的网卡名是否正确。
+3. 检查配置的参数是否正确。

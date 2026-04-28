@@ -1,0 +1,328 @@
+---
+url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-graphics-drawing-typeface
+title: Class (Typeface)
+breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > ArkTS API > @ohos.graphics.drawing (绘制模块) > Class (Typeface)
+category: harmonyos-references
+scraped_at: 2026-04-28T08:14:43+08:00
+doc_updated_at: 2026-04-20
+content_hash: sha256:14033e8a2288ed2fb9b3c3c1841a896fd1bde0df5998d0733d5a60af2776e11b
+---
+
+字体，如宋体、楷体等。
+
+说明
+
+* 本模块首批接口从API version 11开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
+* 本模块使用屏幕物理像素单位px。
+* 本模块为单线程模型策略，需要调用方自行管理线程安全和上下文状态的切换。
+
+## 导入模块
+
+PhonePC/2in1TabletTVWearable
+
+```
+1. import { drawing } from '@kit.ArkGraphics2D';
+```
+
+## getFamilyName
+
+PhonePC/2in1TabletTVWearable
+
+getFamilyName(): string
+
+获取字体的族名，即一套字体设计的名称。
+
+**系统能力：** SystemCapability.Graphics.Drawing
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| string | 返回字体的族名。 |
+
+**示例：**
+
+```
+1. import { drawing } from '@kit.ArkGraphics2D';
+
+3. const font = new drawing.Font();
+4. let typeface = font.getTypeface();
+5. let familyName = typeface.getFamilyName();
+```
+
+## makeFromCurrent20+
+
+PhonePC/2in1TabletTVWearable
+
+makeFromCurrent(typefaceArguments: TypefaceArguments): Typeface
+
+基于当前字体结合字体属性构造新的字体对象。
+
+**系统能力：** SystemCapability.Graphics.Drawing
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| typefaceArguments | [TypefaceArguments](arkts-apis-graphics-drawing-typefacearguments.md) | 是 | 字体属性。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [Typeface](arkts-apis-graphics-drawing-typeface.md) | 返回字体对象（异常情况下会返回空指针）。 |
+
+**示例：**
+
+```
+1. import { RenderNode } from '@kit.ArkUI';
+2. import { drawing } from '@kit.ArkGraphics2D';
+
+4. class TextRenderNode extends RenderNode {
+5. async draw(context: DrawContext) {
+6. const canvas = context.canvas;
+7. let typeArguments = new drawing.TypefaceArguments();
+8. typeArguments.addVariation("wght", 100);
+9. const myTypeFace = drawing.Typeface.makeFromFile("/system/fonts/HarmonyOS_Sans_SC.ttf");
+10. const typeFace1 = myTypeFace.makeFromCurrent(typeArguments);
+11. let font = new drawing.Font();
+12. font.setTypeface(typeFace1);
+13. const textBlob = drawing.TextBlob.makeFromString("Hello World", font, drawing.TextEncoding.TEXT_ENCODING_UTF8);
+14. canvas.drawTextBlob(textBlob, 60, 100);
+15. }
+16. }
+```
+
+## makeFromFile12+
+
+PhonePC/2in1TabletTVWearable
+
+static makeFromFile(filePath: string): Typeface
+
+从指定字体文件构造字体。
+
+**元服务API：** 从API version 22开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Graphics.Drawing
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| filePath | string | 是 | 表示字体资源存放的路径。应用沙箱路径和真实物理路径的对应关系请参考[应用沙箱路径和真实物理路径的对应关系](../harmonyos-guides/app-sandbox-directory.md#应用沙箱路径和真实物理路径的对应关系)。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [Typeface](arkts-apis-graphics-drawing-typeface.md) | 返回Typeface对象。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
+
+**示例：**
+
+```
+1. import { RenderNode } from '@kit.ArkUI';
+2. import { drawing } from '@kit.ArkGraphics2D';
+
+4. class TextRenderNode extends RenderNode {
+5. async draw(context: DrawContext) {
+6. const canvas = context.canvas;
+7. let font = new drawing.Font();
+8. let str = "/system/fonts/HarmonyOS_Sans_Italic.ttf";
+9. const mytypeface = drawing.Typeface.makeFromFile(str);
+10. font.setTypeface(mytypeface);
+11. const textBlob = drawing.TextBlob.makeFromString("Hello World", font, drawing.TextEncoding.TEXT_ENCODING_UTF8);
+12. canvas.drawTextBlob(textBlob, 60, 100);
+13. }
+14. }
+```
+
+## makeFromRawFile18+
+
+PhonePC/2in1TabletTVWearable
+
+static makeFromRawFile(rawfile: Resource): Typeface
+
+使用指定的字体文件构造字体，其中要求指定的字体文件需保存在应用资源文件夹的rawfile路径下。
+
+**元服务API：** 从API version 22开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Graphics.Drawing
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| rawfile | [Resource](ts-types.md#resource) | 是 | 指定字体文件对应的资源对象。当前只支持$rawfile格式引用的资源对象，对应格式写为$rawfile('filePath')，其中filePath为指定字体文件相对于工程中resources/rawfile目录的相对路径。如将字体文件直接存放在resources/rawfile目录下，则引用格式应写为：$rawfile('HarmonyOS\_Sans\_Bold.ttf')；也可以创建子目录，将字体文件存放在resources/rawfile/ttf下，则引用格式应写为：$rawfile('ttf/HarmonyOS\_Sans\_Bold.ttf')。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [Typeface](arkts-apis-graphics-drawing-typeface.md) | 返回Typeface对象（异常情况下会返回空指针）。 |
+
+**示例：**
+
+```
+1. import { RenderNode } from '@kit.ArkUI';
+2. import { drawing } from '@kit.ArkGraphics2D';
+
+4. class TextRenderNode extends RenderNode {
+5. async draw(context: DrawContext) {
+6. const canvas = context.canvas;
+7. let font = new drawing.Font();
+8. const myTypeFace = drawing.Typeface.makeFromRawFile($rawfile('HarmonyOS_Sans_Bold.ttf'));
+9. font.setTypeface(myTypeFace);
+10. const textBlob = drawing.TextBlob.makeFromString("Hello World", font, drawing.TextEncoding.TEXT_ENCODING_UTF8);
+11. canvas.drawTextBlob(textBlob, 60, 100);
+12. }
+13. }
+```
+
+## makeFromFileWithArguments20+
+
+PhonePC/2in1TabletTVWearable
+
+static makeFromFileWithArguments(filePath: string, typefaceArguments: TypefaceArguments): Typeface
+
+根据字体文件路径和字体属性构造新的字体。
+
+**元服务API：** 从API version 22开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Graphics.Drawing
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| filePath | string | 是 | 表示字体资源存放的路径。应用沙箱路径和真实物理路径的对应关系请参考[应用沙箱路径和真实物理路径的对应关系](../harmonyos-guides/app-sandbox-directory.md#应用沙箱路径和真实物理路径的对应关系)。 |
+| typefaceArguments | [TypefaceArguments](arkts-apis-graphics-drawing-typefacearguments.md) | 是 | 表示字体属性。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [Typeface](arkts-apis-graphics-drawing-typeface.md) | 返回字体对象（异常情况下会返回空指针）。 |
+
+**示例：**
+
+```
+1. import { RenderNode } from '@kit.ArkUI';
+2. import { drawing } from '@kit.ArkGraphics2D';
+
+4. class TextRenderNode extends RenderNode {
+5. async draw(context: DrawContext) {
+6. const canvas = context.canvas;
+7. let font = new drawing.Font();
+8. let str = "/system/fonts/HarmonyOS_Sans_Italic.ttf";
+9. let typeFaceArgument = new drawing.TypefaceArguments();
+10. const myTypeFace = drawing.Typeface.makeFromFileWithArguments(str, typeFaceArgument);
+11. font.setTypeface(myTypeFace);
+12. const textBlob = drawing.TextBlob.makeFromString("Hello World", font, drawing.TextEncoding.TEXT_ENCODING_UTF8);
+13. canvas.drawTextBlob(textBlob, 60, 100);
+14. }
+15. }
+```
+
+## makeFromRawFileWithArguments20+
+
+PhonePC/2in1TabletTVWearable
+
+static makeFromRawFileWithArguments(rawfile: Resource, typefaceArguments: TypefaceArguments): Typeface
+
+使用指定的字体文件和字体属性构造字体，其中要求指定的字体文件需保存在应用资源文件夹的rawfile路径下。
+
+**元服务API：** 从API version 22开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Graphics.Drawing
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| rawfile | [Resource](ts-types.md#resource) | 是 | 指定字体文件对应的资源对象。当前只支持$rawfile格式引用的资源对象，对应格式写为$rawfile('filePath')，其中filePath为指定字体文件相对于工程中resources/rawfile目录的相对路径。 |
+| typefaceArguments | [TypefaceArguments](arkts-apis-graphics-drawing-typefacearguments.md) | 是 | 表示字体属性。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [Typeface](arkts-apis-graphics-drawing-typeface.md) | 返回字体对象（异常情况下会返回空指针）。 |
+
+**示例：**
+
+```
+1. import { RenderNode } from '@kit.ArkUI';
+2. import { drawing } from '@kit.ArkGraphics2D';
+
+4. class TextRenderNode extends RenderNode {
+5. async draw(context: DrawContext) {
+6. const canvas = context.canvas;
+7. let font = new drawing.Font();
+8. let typeFaceArgument = new drawing.TypefaceArguments();
+9. const myTypeFace = drawing.Typeface.makeFromRawFileWithArguments($rawfile('HarmonyOS_Sans_Bold.ttf'), typeFaceArgument);
+10. font.setTypeface(myTypeFace);
+11. const textBlob = drawing.TextBlob.makeFromString("Hello World", font, drawing.TextEncoding.TEXT_ENCODING_UTF8);
+12. canvas.drawTextBlob(textBlob, 60, 100);
+13. }
+14. }
+```
+
+## isBold23+
+
+PhonePC/2in1TabletTVWearable
+
+isBold(): boolean
+
+检查字体是否加粗。
+
+**系统能力：** SystemCapability.Graphics.Drawing
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 返回当前字体是否加粗。true表示字体加粗，false表示字体未加粗。 |
+
+**示例：**
+
+```
+1. import { drawing } from '@kit.ArkGraphics2D';
+
+3. const font = new drawing.Font();
+4. let typeface = font.getTypeface();
+5. let result = typeface.isBold();
+```
+
+## isItalic23+
+
+PhonePC/2in1TabletTVWearable
+
+isItalic(): boolean
+
+检查字体是否是斜体。
+
+**系统能力：** SystemCapability.Graphics.Drawing
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 返回当前字体是否是斜体。true表示字体是斜体，false表示字体不是斜体。 |
+
+**示例：**
+
+```
+1. import { drawing } from '@kit.ArkGraphics2D';
+
+3. const font = new drawing.Font();
+4. let typeface = font.getTypeface();
+5. let result = typeface.isItalic();
+```

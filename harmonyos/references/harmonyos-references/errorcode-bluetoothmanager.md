@@ -1,0 +1,610 @@
+---
+url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager
+title: 蓝牙服务子系统错误码
+breadcrumb: API参考 > 系统 > 网络 > Connectivity Kit（短距通信服务） > 错误码 > 蓝牙服务子系统错误码
+category: harmonyos-references
+scraped_at: 2026-04-28T08:08:07+08:00
+doc_updated_at: 2026-04-20
+content_hash: sha256:da027006d331168afe3c24eece28c2978b25076bbdcf2ed8fbcdfd477024838b
+---
+
+说明
+
+以下仅介绍本模块特有错误码，通用错误码请参考[通用错误码说明文档](errorcode-universal.md)。
+
+## 2900001
+
+PhonePC/2in1TabletTVWearable
+
+**错误信息**
+
+Service stopped.
+
+**错误描述**
+
+蓝牙服务已停止，蓝牙服务相关的接口无法调用。
+
+**可能原因**
+
+蓝牙服务启动异常。
+
+**处理步骤**
+
+重新执行打开或关闭蓝牙。
+
+## 2900003
+
+PhonePC/2in1TabletTVWearable
+
+**错误信息**
+
+Bluetooth disabled.
+
+**错误描述**
+
+蓝牙开关已关闭。
+
+**可能原因**
+
+蓝牙开关已关闭。
+
+**处理步骤**
+
+重新执行打开蓝牙开关。
+
+## 2900004
+
+PhonePC/2in1TabletTVWearable
+
+**错误信息**
+
+Profile not supported.
+
+**错误描述**
+
+配置文件是不支持的。
+
+**可能原因**
+
+该配置文件在当前设备环境不支持。
+
+**处理步骤**
+
+检查设备是否支持该配置文件功能，若不支持则停止调用。
+
+## 2900005
+
+**错误信息**
+
+Device not connected.
+
+**错误描述**
+
+该设备蓝牙未连接。
+
+**可能原因**
+
+设备配对异常。
+
+**处理步骤**
+
+重新打开蓝牙开关，执行配对流程。
+
+## 2900006
+
+**错误信息**
+
+The maximum number of connections has been reached.
+
+**错误描述**
+
+超过最大连接数量。
+
+**可能原因**
+
+超出设备最大连接数量。
+
+**处理步骤**
+
+检查已配对设备数量，是否超出阈值。
+
+## 2900007
+
+**错误信息**
+
+Asynchronous interface invoking timeout.
+
+**错误描述**
+
+异步接口调用超时。
+
+**可能原因**
+
+远端设备无响应。
+
+**处理步骤**
+
+超时后重试；若和远端设备存在链路，可以断开后，再重试。
+
+## 2900008
+
+**错误信息**
+
+The value of proxy is a null pointer.
+
+**错误描述**
+
+pimpl或proxy为空。
+
+**可能原因**
+
+设备配对异常。
+
+**处理步骤**
+
+重新打开蓝牙开关，执行配对流程。
+
+## 2900009
+
+PhonePC/2in1TabletTVWearable
+
+**错误信息**
+
+Fails to start scan as it is out of hardware resources.
+
+**错误描述**
+
+由于硬件资源不足，无法启动本次扫描。
+
+**可能原因**
+
+当前系统中本应用或其他应用已启动的扫描通道过多，导致硬件资源不足。
+
+**处理步骤**
+
+本应用未启动过扫描，可重新关开蓝牙，释放其他应用占用的扫描资源；
+
+本应用已启动过其他通道的扫描，可调用停止扫描接口，停止其他已启动的扫描，释放硬件资源后再重新启动本次扫描。
+
+## 2900010
+
+PhonePC/2in1TabletTVWearable
+
+**错误信息**
+
+Resources have reached the upper limit.
+
+**错误描述**
+
+资源达到上限。
+
+**可能原因**
+
+应用申请资源过多，需要释放资源。
+
+**处理步骤**
+
+调用对应接口释放资源。
+
+## 2900011
+
+PhonePC/2in1TabletTVWearable
+
+**错误信息**
+
+The operation is busy. The last operation is not complete.
+
+**错误描述**
+
+操作忙碌，上一个执行的操作还未完成。
+
+**可能原因**
+
+上一个执行的操作还未完成即执行本次操作，例如[readCharacteristicValue](js-apis-bluetooth-ble.md#readcharacteristicvalue)未结束即进行下一次操作。
+
+其他涉及的接口有[writeCharacteristicValue](js-apis-bluetooth-ble.md#writecharacteristicvalue)、[readDescriptorValue](js-apis-bluetooth-ble.md#readdescriptorvalue)、[writeDescriptorValue](js-apis-bluetooth-ble.md#writedescriptorvalue)、[getRssiValue](js-apis-bluetooth-ble.md#getrssivalue)、[setCharacteristicChangeNotification](js-apis-bluetooth-ble.md#setcharacteristicchangenotification)、[setCharacteristicChangeIndication](js-apis-bluetooth-ble.md#setcharacteristicchangeindication)，如调用未完成均可能阻塞下一次操作。
+
+**处理步骤**
+
+异步接口需等待callback或promise返回后再执行下一次操作。
+
+## 2900013
+
+PhonePC/2in1TabletTVWearable
+
+**错误信息**
+
+The user does not respond.
+
+**错误描述**
+
+用户未回复前置操作。
+
+**可能原因**
+
+用户在一定时间内未执行规定操作，导致前置操作超时。
+
+**处理步骤**
+
+重新执行前置操作。
+
+## 2900014
+
+PhonePC/2in1TabletTVWearable
+
+**错误信息**
+
+User refuse the action.
+
+**错误描述**
+
+用户执行拒绝操作。
+
+**可能原因**
+
+用户拒绝前置操作的请求。
+
+**处理步骤**
+
+重新执行前置操作。
+
+## 2900099
+
+PhonePC/2in1TabletTVWearable
+
+**错误信息**
+
+Operation failed.
+
+**错误描述**
+
+操作失败。
+
+**可能原因**
+
+蓝牙接口调用失败的通用错误码，常见可能原因如下：
+
+1. 未满足接口调用的前置依赖条件。
+2. 指定的虚拟地址不存在。
+
+**处理步骤**
+
+请重试该操作。
+
+## 2900100
+
+**错误信息**
+
+IPC failed.
+
+**错误描述**
+
+IPC 数据传输失败。
+
+**可能原因**
+
+数据传入异常。
+
+**处理步骤**
+
+请检查传入数据。
+
+## 2901000
+
+PhonePC/2in1TabletTVWearable
+
+**错误信息**
+
+Read forbidden.
+
+**错误描述**
+
+禁止读操作。
+
+**可能原因**
+
+无读操作权限。
+
+**处理步骤**
+
+检查是否有读操作权限。
+
+## 2901001
+
+PhonePC/2in1TabletTVWearable
+
+**错误信息**
+
+Write forbidden.
+
+**错误描述**
+
+禁止写操作。
+
+**可能原因**
+
+无写操作权限。
+
+**处理步骤**
+
+检查是否有写操作权限。
+
+## 2901003
+
+PhonePC/2in1TabletTVWearable
+
+**错误信息**
+
+The connection is not established.
+
+**错误描述**
+
+GATT未连接。
+
+**可能原因**
+
+GATT处于未连接的状态下执行操作，例如调用[getServices](js-apis-bluetooth-ble.md#getservices)和[readCharacteristicValue](js-apis-bluetooth-ble.md#readcharacteristicvalue)。
+
+**处理步骤**
+
+确保GATT处于已连接的状态。
+
+## 2901004
+
+PhonePC/2in1TabletTVWearable
+
+**错误信息**
+
+The connection is congested.
+
+**错误描述**
+
+GATT处于拥塞状态。
+
+**可能原因**
+
+读写特征值或描述符过于频繁，导致底层数据传输拥塞，例如入参[GattWriteType](js-apis-bluetooth-ble.md#gattwritetype)为WRITE\_NO\_RESPONSE的[writeCharacteristicValue](js-apis-bluetooth-ble.md#writecharacteristicvalue)接口调用过于频繁可能导致拥塞。
+
+**处理步骤**
+
+降低读写操作频率，如果是WRITE\_NO\_RESPONSE类型的写数据操作，建议调用间隔控制在50ms以上。
+
+## 2901005
+
+PhonePC/2in1TabletTVWearable
+
+**错误信息**
+
+The connection is not encrypted.
+
+**错误描述**
+
+GATT处于未加密的状态下，执行需要加密权限的特征值或描述符读写操作。此操作是否需要加密由server端特征值或描述符的权限指定。
+
+**可能原因**
+
+GATT加密权限不足。
+
+**处理步骤**
+
+检查GATT是否有加密权限。
+
+## 2901006
+
+PhonePC/2in1TabletTVWearable
+
+**错误信息**
+
+The connection is not authenticated.
+
+**错误描述**
+
+GATT处于未认证的状态下，执行需要认证权限的特征值或描述符读写操作。此操作是否需要加密由server端特征值或描述符的权限指定。
+
+**可能原因**
+
+GATT认证权限不足。
+
+**处理步骤**
+
+检查与对端设备是否配对，是否有认证权限。
+
+## 2901007
+
+PhonePC/2in1TabletTVWearable
+
+**错误信息**
+
+The connection is not authorized.
+
+**错误描述**
+
+GATT处于未授权的状态下，执行需要授权的特征值或描述符读写操作。此操作是否需要授权由server端特征值或描述符的权限指定。
+
+**可能原因**
+
+GATT未授权。
+
+**处理步骤**
+
+检查GATT是否已授权。
+
+## 2901008
+
+PhonePC/2in1TabletTVWearable
+
+**错误信息**
+
+GATT service is not found.
+
+**错误描述**
+
+GATT服务不存在。在获取指定的GATT服务之前，该服务应当已经被添加。
+
+**可能原因**
+
+GATT服务尚未被添加。
+
+**处理步骤**
+
+先调用[addService](js-apis-bluetooth-ble.md#addservice)添加该服务。
+
+## 2901054
+
+PhonePC/2in1TabletTVWearable
+
+**错误信息**
+
+IO error.
+
+**错误描述**
+
+IO传输失败。
+
+**可能原因**
+
+IO传输异常，造成失败。
+
+**处理步骤**
+
+请重试该操作。
+
+## 2902050
+
+PhonePC/2in1TabletTVWearable
+
+**错误信息**
+
+Failed to start scan as Ble scan is already started by the app.
+
+**错误描述**
+
+开启扫描失败。
+
+**可能原因**
+
+Ble扫描已被app开启。
+
+**处理步骤**
+
+检查是否已经开启扫描。
+
+## 2902054
+
+PhonePC/2in1TabletTVWearable
+
+**错误信息**
+
+The length of the advertising data exceeds the upper limit.
+
+**错误描述**
+
+广播报文超过最大长度。
+
+**可能原因**
+
+传统广播报文的最大长度为31字节，超过此长度将返回异常。当前，该长度限制仅适用于传统广播，不包括扩展广播。
+
+**处理步骤**
+
+检查广播报文是否超过最大长度限制。
+
+## 2902055
+
+PhonePC/2in1TabletTVWearable
+
+**错误信息**
+
+Invalid advertising id.
+
+**错误描述**
+
+广播标识符无效。
+
+**可能原因**
+
+传入的广播标识符应为[startAdvertising](js-apis-bluetooth-ble.md#blestartadvertising11)接口返回的值，无效的广播标识符默认为0xFF。
+
+**处理步骤**
+
+检查传入的广播标识符是否为[startAdvertising](js-apis-bluetooth-ble.md#blestartadvertising11)接口返回的有效标识符。
+
+## 2903050 HID不在前台
+
+PhonePC/2in1TabletTVWearable
+
+**错误信息**
+
+HID application is not int the foreground.
+
+**错误描述**
+
+注册HID设备能力的应用不在前台。
+
+**可能原因**
+
+当前注册HID设备能力的应用处于后台。
+
+**处理步骤**
+
+检查注册HID能力的应用是否处于前台。
+
+## 2903051 HID已注册
+
+PhonePC/2in1TabletTVWearable
+
+**错误信息**
+
+Any HID application has been registered.
+
+**错误描述**
+
+其他应用已经注册过HID设备能力。
+
+**可能原因**
+
+只允许一个应用注册HID设备能力。
+
+**处理步骤**
+
+检查是否已经有其他应用注册HID设备能力。
+
+## 2903052 HID未注册
+
+PhonePC/2in1TabletTVWearable
+
+**错误信息**
+
+HID application does not register.
+
+**错误描述**
+
+当前应用还没有注册HID设备能力。
+
+**可能原因**
+
+应用只有在注册HID设备能力之后才能和HID主机进行连接并进行数据交互。
+
+**处理步骤**
+
+检查当前应用注册HID设备能力是否成功。
+
+## 2903053 HID未连接
+
+PhonePC/2in1TabletTVWearable
+
+**错误信息**
+
+HID device is not connected.
+
+**错误描述**
+
+当前HID设备还没有连接HID主机。
+
+**可能原因**
+
+只有在连接完成之后HID设备才能和HID主机进行数据交互。
+
+**处理步骤**
+
+检查当前应用是否注册HID设备能力并连接HID主机成功。

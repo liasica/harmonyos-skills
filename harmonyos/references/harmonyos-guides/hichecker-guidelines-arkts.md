@@ -1,0 +1,125 @@
+---
+url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hichecker-guidelines-arkts
+title: 使用HiChecker检测问题（ArkTS）
+breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 检测模式 > 使用HiChecker检测问题（ArkTS）
+category: harmonyos-guides
+scraped_at: 2026-04-28T07:45:17+08:00
+doc_updated_at: 2026-04-20
+content_hash: sha256:212ea07a98646fb15a888d279b102893dccdd4c1d7a1e08a927ddff4a1967c5b
+---
+
+## 简介
+
+HiChecker可以作为应用开发阶段使用的检测能力，用于检测代码运行过程中部分易忽略的问题，如应用线程出现耗时调用、应用进程中元能力资源泄露等问题。开发者可以通过日志记录或进程crash等形式查看具体问题并进行修改，提升应用的使用体验。
+
+## 基本概念
+
+**规则常量**：HiChecker使用常量来表示已有的告警规则或者检测规则，一个常量表示一种规则，可以通过HiChecker的接口控制规则的添加和删除。
+
+## 实现原理
+
+1. 应用程序通过HiChecker函数接口控制规则的增删查改。
+2. 子系统有耗时调用或者Ability资源泄露时通过HiChecker通知有对应规则的事件发生，HiChecker检测条件满足时做对应的操作。
+
+## 约束与限制
+
+* 支持应用增加、删除不同的告警通知规则，目前支持记录流水日志（默认），应用崩溃两种规则。
+* 相关检测条件满足时，支持Native回栈到关键触发点，暂不支持JS回栈。
+
+## 接口说明
+
+检测模式接口由HiChecker模块提供，详细API请参考[@ohos.hichecker](../harmonyos-references/js-apis-hichecker.md)。
+
+| 接口名 | 描述 |
+| --- | --- |
+| hichecker.addCheckRule(rule: bigint): void | 添加一条或多条规则到系统，系统根据添加的规则进行检测或反馈。 |
+| hichecker.removeCheckRule(rule: bigint): void | 删除一条或多条规则，删除的规则后续将不再生效。 |
+| hichecker.containsCheckRule(rule: bigint): boolean | 当前已添加的规则集中是否包含了某一个特定的规则。 |
+| hichecker.getRule(): bigint | 获取当前线程规则、进程规则、告警规则的合集。 |
+
+## 开发步骤
+
+在应用启动执行页面加载后，开始检测；完成业务之后，停止检测。启动检测时，开发者可以根据需求配置不同的告警规则和检测规则。检测规则当前支持检测耗时函数调用、Ability泄漏和ArkUI性能。对于检测到问题之后触发的行为可通过告警规则来配置，当前支持日志和应用退出两种。
+
+开发者如果期望检测耗时函数调用，并期望检测到时通过打印日志来记录，可参考如下步骤进行开发。
+
+1. 新建一个ArkTS应用工程，在“Project”窗口点击“entry > src > main > ets > entryability ”，打开工程中的“EntryAbility.ets”文件；在页面执行加载后，在自己的业务中调用HiChecker的接口，添加检测规则， 示例代码如下：
+
+   ```
+   1. import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
+   2. import { hichecker, hilog } from '@kit.PerformanceAnalysisKit';
+   3. import { window } from '@kit.ArkUI';
+   4. import { image } from '@kit.ImageKit';
+
+   6. export default class EntryAbility extends UIAbility {
+   7. onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
+   8. // 添加检测规则，规则意义见检测模式API参考
+   9. hichecker.addCheckRule(hichecker.RULE_CAUTION_PRINT_LOG|hichecker.RULE_THREAD_CHECK_SLOW_PROCESS);
+   10. let filePath: string = this.context.filesDir + '/test.JPG';
+   11. const imageSourceObj: image.ImageSource = image.createImageSource(filePath);
+   12. const imagePackerObj: image.ImagePacker = image.createImagePacker();
+   13. let packOpts: image.PackingOption = { format:"image/jpeg", quality:98 };
+   14. imagePackerObj.packToData(imageSourceObj, packOpts);
+   15. // 以上5行通过image子系统触发检测规则
+   16. hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCreate');
+   17. }
+
+   19. onDestroy(): void {
+   20. hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onDestroy');
+   21. }
+
+   23. onWindowStageCreate(windowStage: window.WindowStage): void {
+   24. // Main window is created, set main page for this ability
+   25. hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
+
+   27. windowStage.loadContent('pages/Index', (err) => {
+   28. if (err.code) {
+   29. hilog.error(0x0000, 'testTag', 'Failed to load the content. Cause: %{public}s', JSON.stringify(err) ?? '');
+   30. return;
+   31. }
+   32. hilog.info(0x0000, 'testTag', 'Succeeded in loading the content.');
+   33. });
+   34. }
+
+   36. onWindowStageDestroy(): void {
+   37. // Main window is destroyed, release UI related resources
+   38. hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageDestroy');
+   39. }
+
+   41. onForeground(): void {
+   42. // Ability has brought to foreground
+   43. hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onForeground');
+   44. }
+
+   46. onBackground(): void {
+   47. // Ability has back to background
+   48. hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onBackground');
+   49. }
+   50. };
+   ```
+
+   [EntryAbility.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/PerformanceAnalysisKit/PerformanceAnalysisTool/entry/src/main/ets/entryability/EntryAbility.ets#L16-L67)
+2. 安装hap后运行，通过DevEco Studio Log插件过滤 HICHECKER 关键字日志或者通过 hdc shell "hilog | grep HICHECKER" 命令查询，有如下调用栈信息说明检测成功（调用栈为触发检测规则时的调用栈）。
+
+   ```
+   1. 08-05 23:11:07.206  1799  1799 I C02d0b/HICHECKER: StackTrace:
+   2. 08-05 23:11:07.206  1799  1799 I C02d0b/HICHECKER: #00 pc 00003d33 /system/lib/chipset-pub-sdk/libbacktrace_local.so(OHOS::HiviewDFX::GetBacktrace(std::__h::basic_string<char, std::__h::char_traits<char>, std::__h::allocator<char>>&, bool, unsigned int)+90)(7c7c81050ce2a86bf0a22943c25773db)
+   3. 08-05 23:11:07.206  1799  1799 I C02d0b/HICHECKER: #01 pc 00003a57 /system/lib/chipset-pub-sdk/libdfx_dumpcatcher.z.so(OHOS::HiviewDFX::DfxDumpCatcher::DoDumpCurrTid(unsigned int, std::__h::basic_string<char, std::__h::char_traits<char>, std::__h::allocator<char>>&, unsigned int)+26)(8e2b59ecc6cc00dd2135f9d84c23a724)
+   4. 08-05 23:11:07.206  1799  1799 I C02d0b/HICHECKER: #02 pc 000042a1 /system/lib/chipset-pub-sdk/libdfx_dumpcatcher.z.so(OHOS::HiviewDFX::DfxDumpCatcher::DoDumpLocalLocked(int, int, std::__h::basic_string<char, std::__h::char_traits<char>, std::__h::allocator<char>>&, unsigned int)+40)(8e2b59ecc6cc00dd2135f9d84c23a724)
+   5. 08-05 23:11:07.206  1799  1799 I C02d0b/HICHECKER: #03 pc 0000452d /system/lib/chipset-pub-sdk/libdfx_dumpcatcher.z.so(OHOS::HiviewDFX::DfxDumpCatcher::DumpCatch(int, int, std::__h::basic_string<char, std::__h::char_traits<char>, std::__h::allocator<char>>&, unsigned int, bool)+188)(8e2b59ecc6cc00dd2135f9d84c23a724)
+   6. 08-05 23:11:07.206  1799  1799 I C02d0b/HICHECKER: #04 pc 00002cd7 /system/lib/platformsdk/libhichecker.so(OHOS::HiviewDFX::HiChecker::NotifySlowProcess(std::__h::basic_string<char, std::__h::char_traits<char>, std::__h::allocator<char>> const&)+90)(03f34822b1baca8c33fb87a2cd1817cd)
+   7. 08-05 23:11:07.206  1799  1799 I C02d0b/HICHECKER: #05 pc 0004045d /system/lib/platformsdk/libimage_napi.z.so(f765998ba1f5185405f9735d86b0c7b7)
+   8. 08-05 23:11:07.206  1799  1799 I C02d0b/HICHECKER: #06 pc 00040f43 /system/lib/platformsdk/libimage_napi.z.so(f765998ba1f5185405f9735d86b0c7b7)
+   9. 08-05 23:11:07.206  1799  1799 I C02d0b/HICHECKER: #07 pc 0002b0c5 /system/lib/platformsdk/libace_napi.z.so(panda::JSValueRef ArkNativeFunctionCallBack<true>(panda::JsiRuntimeCallInfo*)+448)(a84fbb767fd826946623779c608395bf)
+   10. 08-05 23:11:07.206  1799  1799 I C02d0b/HICHECKER: #08 pc 001e7597 /system/lib/platformsdk/libark_jsruntime.so(panda::ecmascript::EcmaInterpreter::RunInternal(panda::ecmascript::JSThread*, unsigned char const*, unsigned long long*)+14710)(106c552f6ce4420b9feac95e8b21b792)
+   11. 08-05 23:11:07.206  1799  1799 I C02d0b/HICHECKER: #09 pc 001e043b /system/lib/platformsdk/libark_jsruntime.so(panda::ecmascript::EcmaInterpreter::Execute(panda::ecmascript::EcmaRuntimeCallInfo*)+986)(106c552f6ce4420b9feac95e8b21b792)
+   12. 08-05 23:11:07.206  1799  1799 I C02d0b/HICHECKER: #10 pc 0029ec99 /system/lib/platformsdk/libark_jsruntime.so(panda::ecmascript::JSFunction::Call(panda::ecmascript::EcmaRuntimeCallInfo*)+388)(106c552f6ce4420b9feac95e8b21b792)
+   13. 08-05 23:11:07.206  1799  1799 I C02d0b/HICHECKER: #11 pc 0034b14b /system/lib/platformsdk/libark_jsruntime.so(panda::FunctionRef::CallForNapi(panda::ecmascript::EcmaVM const*, panda::JSValueRef*, panda::JSValueRef* const*, int)+918)(106c552f6ce4420b9feac95e8b21b792)
+   14. 08-05 23:11:07.206  1799  1799 I C02d0b/HICHECKER: #12 pc 0003d343 /system/lib/platformsdk/libace_napi.z.so(napi_call_function+198)(a84fbb767fd826946623779c608395bf)
+   15. 08-05 23:11:07.206  1799  1799 I C02d0b/HICHECKER: #13 pc 000283e1 /system/lib/platformsdk/libuiabilitykit_native.z.so(OHOS::AbilityRuntime::JsUIAbility::CallObjectMethod(char const*, napi_value__* const*, unsigned int, bool, bool)+648)(118b2c16051d37927837ed0ce7874f1d)
+   16. 08-05 23:11:07.206  1799  1799 I C02d0b/HICHECKER: #14 pc 00027c0d /system/lib/platformsdk/libuiabilitykit_native.z.so(OHOS::AbilityRuntime::JsUIAbility::OnStart(OHOS::AAFwk::Want const&, OHOS::sptr<OHOS::AAFwk::SessionInfo>)+616)(118b2c16051d37927837ed0ce7874f1d)
+   17. 08-05 23:11:07.206  1799  1799 I C02d0b/HICHECKER: #15 pc 000548fd /system/lib/platformsdk/libuiabilitykit_native.z.so(OHOS::AbilityRuntime::UIAbilityImpl::Start(OHOS::AAFwk::Want const&, OHOS::sptr<OHOS::AAFwk::SessionInfo>)+396)(118b2c16051d37927837ed0ce7874f1d)
+   18. 08-05 23:11:07.206  1799  1799 I C02d0b/HICHECKER: #16 pc 0005549d /system/lib/platformsdk/libuiabilitykit_native.z.so(OHOS::AbilityRuntime::UIAbilityImpl::HandleAbilityTransaction(OHOS::AAFwk::Want const&, OHOS::AAFwk::LifeCycleStateInfo const&, OHOS::sptr<OHOS::AAFwk::SessionInfo>)+764)(118b2c16051d37927837ed0ce7874f1d)
+   19. 08-05 23:11:07.206  1799  1799 I C02d0b/HICHECKER: #17 pc 000359b3 /system/lib/platformsdk/libability_thread.z.so(OHOS::AbilityRuntime::UIAbilityThread::HandleAbilityTransaction(OHOS::AAFwk::Want const&, OHOS::AAFwk::LifeCycleStateInfo const&, OHOS::sptr<OHOS::AAFwk::SessionInfo>)+466)(889aa126c2fb643cd2ec6dbd64adddd1)
+   20. 08-05 23:11:07.206  1799  1799 I C02d0b/HICHECKER: #18 pc 00039c2d /system/lib/platformsdk/libability_thread.z.so(889aa126c2fb643cd2ec6dbd64adddd1)
+   ```

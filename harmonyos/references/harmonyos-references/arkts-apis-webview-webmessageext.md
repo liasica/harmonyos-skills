@@ -1,0 +1,352 @@
+---
+url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-webmessageext
+title: Class (WebMessageExt)
+breadcrumb: API参考 > 应用框架 > ArkWeb（方舟Web） > ArkTS API > @ohos.web.webview (Webview) > Class (WebMessageExt)
+category: harmonyos-references
+scraped_at: 2026-04-28T08:05:09+08:00
+doc_updated_at: 2026-04-13
+content_hash: sha256:dbcc82a6a123fc4781d649d327fb940ab9d9e62a4e76c5dd4f65a383831e9400
+---
+
+[WebMessagePort](arkts-apis-webview-webmessageport.md)接口接收、发送的数据对象。
+
+说明
+
+* 本模块首批接口从API version 9开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
+* 本Class首批接口从API version 10开始支持。
+* 示例效果请以真机运行为准。
+
+## getType10+
+
+PhonePC/2in1TabletTVWearable
+
+getType(): WebMessageType
+
+获取数据对象的类型。完整示例代码参考[onMessageEventExt](arkts-apis-webview-webmessageport.md#onmessageeventext10)。
+
+**系统能力：** SystemCapability.Web.Webview.Core
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [WebMessageType](arkts-apis-webview-e.md#webmessagetype10) | [WebMessagePort](arkts-apis-webview-webmessageport.md)接口所支持的数据类型。 |
+
+## getString10+
+
+PhonePC/2in1TabletTVWearable
+
+getString(): string
+
+获取数据对象的字符串类型数据。完整示例代码参考[onMessageEventExt](arkts-apis-webview-webmessageport.md#onmessageeventext10)。
+
+**系统能力：** SystemCapability.Web.Webview.Core
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| string | 返回字符串类型的数据。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[Webview错误码](errorcode-webview.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 17100014 | The type and value of the message do not match. |
+
+## getNumber10+
+
+PhonePC/2in1TabletTVWearable
+
+getNumber(): number
+
+获取数据对象的数值类型数据。完整示例代码参考[onMessageEventExt](arkts-apis-webview-webmessageport.md#onmessageeventext10)。
+
+**系统能力：** SystemCapability.Web.Webview.Core
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回数值类型的数据。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[Webview错误码](errorcode-webview.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 17100014 | The type and value of the message do not match. |
+
+## getBoolean10+
+
+PhonePC/2in1TabletTVWearable
+
+getBoolean(): boolean
+
+获取数据对象的布尔类型数据。完整示例代码参考[onMessageEventExt](arkts-apis-webview-webmessageport.md#onmessageeventext10)。
+
+**系统能力：** SystemCapability.Web.Webview.Core
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 返回布尔类型的数据。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[Webview错误码](errorcode-webview.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 17100014 | The type and value of the message do not match. |
+
+## getArrayBuffer10+
+
+PhonePC/2in1TabletTVWearable
+
+getArrayBuffer(): ArrayBuffer
+
+获取数据对象的原始二进制数据。完整示例代码参考[onMessageEventExt](arkts-apis-webview-webmessageport.md#onmessageeventext10)。
+
+**系统能力：** SystemCapability.Web.Webview.Core
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| ArrayBuffer | 返回原始二进制数据。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[Webview错误码](errorcode-webview.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 17100014 | The type and value of the message do not match. |
+
+## getArray10+
+
+PhonePC/2in1TabletTVWearable
+
+getArray(): Array<string | number | boolean>
+
+获取数据对象的数组类型数据。完整示例代码参考[onMessageEventExt](arkts-apis-webview-webmessageport.md#onmessageeventext10)。
+
+**系统能力：** SystemCapability.Web.Webview.Core
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Array<string | number | boolean> | 返回数组类型的数据。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[Webview错误码](errorcode-webview.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 17100014 | The type and value of the message do not match. |
+
+## getError10+
+
+PhonePC/2in1TabletTVWearable
+
+getError(): Error
+
+获取数据对象的错误类型数据。完整示例代码参考[onMessageEventExt](arkts-apis-webview-webmessageport.md#onmessageeventext10)。
+
+**系统能力：** SystemCapability.Web.Webview.Core
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Error | 返回错误对象类型的数据。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[Webview错误码](errorcode-webview.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 17100014 | The type and value of the message do not match. |
+
+## setType10+
+
+PhonePC/2in1TabletTVWearable
+
+setType(type: WebMessageType): void
+
+设置数据对象的类型。完整示例代码参考[onMessageEventExt](arkts-apis-webview-webmessageport.md#onmessageeventext10)。
+
+**系统能力：** SystemCapability.Web.Webview.Core
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | [WebMessageType](arkts-apis-webview-e.md#webmessagetype10) | 是 | [WebMessagePort](arkts-apis-webview-webmessageport.md)接口所支持的数据类型。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[Webview错误码](errorcode-webview.md)、[通用错误码](errorcode-universal.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 17100014 | The type and value of the message do not match. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
+
+## setString10+
+
+PhonePC/2in1TabletTVWearable
+
+setString(message: string): void
+
+设置数据对象的字符串类型数据。完整示例代码参考[onMessageEventExt](arkts-apis-webview-webmessageport.md#onmessageeventext10)。
+
+**系统能力：** SystemCapability.Web.Webview.Core
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| message | string | 是 | 字符串类型数据。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[Webview错误码](errorcode-webview.md)、[通用错误码](errorcode-universal.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 17100014 | The type and value of the message do not match. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
+
+## setNumber10+
+
+PhonePC/2in1TabletTVWearable
+
+setNumber(message: number): void
+
+设置数据对象的数值类型数据。完整示例代码参考[onMessageEventExt](arkts-apis-webview-webmessageport.md#onmessageeventext10)。
+
+**系统能力：** SystemCapability.Web.Webview.Core
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| message | number | 是 | 数值类型数据。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[Webview错误码](errorcode-webview.md)、[通用错误码](errorcode-universal.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 17100014 | The type and value of the message do not match. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
+
+## setBoolean10+
+
+PhonePC/2in1TabletTVWearable
+
+setBoolean(message: boolean): void
+
+设置数据对象的布尔类型数据。完整示例代码参考[onMessageEventExt](arkts-apis-webview-webmessageport.md#onmessageeventext10)。
+
+**系统能力：** SystemCapability.Web.Webview.Core
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| message | boolean | 是 | 布尔类型数据。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[Webview错误码](errorcode-webview.md)、[通用错误码](errorcode-universal.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 17100014 | The type and value of the message do not match. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
+
+## setArrayBuffer10+
+
+PhonePC/2in1TabletTVWearable
+
+setArrayBuffer(message: ArrayBuffer): void
+
+设置数据对象的原始二进制数据。完整示例代码参考[onMessageEventExt](arkts-apis-webview-webmessageport.md#onmessageeventext10)。
+
+**系统能力：** SystemCapability.Web.Webview.Core
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| message | ArrayBuffer | 是 | 原始二进制类型数据。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[Webview错误码](errorcode-webview.md)、[通用错误码](errorcode-universal.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 17100014 | The type and value of the message do not match. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
+
+## setArray10+
+
+PhonePC/2in1TabletTVWearable
+
+setArray(message: Array<string | number | boolean>): void
+
+设置数据对象的数组类型数据。完整示例代码参考[onMessageEventExt](arkts-apis-webview-webmessageport.md#onmessageeventext10)。
+
+**系统能力：** SystemCapability.Web.Webview.Core
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| message | Array<string | number | boolean> | 是 | 数组类型数据。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[Webview错误码](errorcode-webview.md)、[通用错误码](errorcode-universal.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 17100014 | The type and value of the message do not match. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
+
+## setError10+
+
+PhonePC/2in1TabletTVWearable
+
+setError(message: Error): void
+
+设置数据对象的错误对象类型数据。完整示例代码参考[onMessageEventExt](arkts-apis-webview-webmessageport.md#onmessageeventext10)。
+
+**系统能力：** SystemCapability.Web.Webview.Core
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| message | Error | 是 | 错误对象类型数据。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[Webview错误码](errorcode-webview.md)、[通用错误码](errorcode-universal.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 17100014 | The type and value of the message do not match. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |

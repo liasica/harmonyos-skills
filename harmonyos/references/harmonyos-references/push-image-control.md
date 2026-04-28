@@ -1,0 +1,357 @@
+---
+url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/push-image-control
+title: 图片风控
+breadcrumb: API参考 > 应用服务 > Push Kit（推送服务） > REST API > 图片风控
+category: harmonyos-references
+scraped_at: 2026-04-28T08:18:31+08:00
+doc_updated_at: 2026-04-20
+content_hash: sha256:9613e7f07a37663a52c1e88f76f9428fd3d94e803c9a55d0f1b7dc704a82b617
+---
+
+说明
+
+为了更安全的网络访问，华为推送服务于2022年11月30日关闭Push相关域名的TLS1.0、TLS1.1协议及规定之外的加密套件，当前应用使用TLS1.2以下协议或使用规定外的加密套件将无法正常推送消息。
+
+若您的应用访问Push相关域名使用协议是TLS1.0或TLS1.1，可能无法正常发送消息，请您务必升级到TLS1.2及以上版本。
+
+## 功能介绍
+
+此接口给您提供对计划下发的图片进行风控校验的功能。
+
+## 使用约束
+
+接口最大调用频率限制单个应用每分钟60次，超过此限制会返回错误码[83010002](push-image-control.md#section83010002-超出流控阈值)。
+
+说明
+
+本接口仅用于Push消息推送场景，不得用于其他用途。通过风控校验的图片不得修改，否则会导致通知消息无法正常显示。
+
+## 接口原型
+
+* **承载协议：** HTTPS POST
+* **接口方向：** 开发者服务器 -> 华为Push服务器
+* **接口URL：** https://push-api.cloud.huawei.com/v1/**[clientId]**/images:verify
+* **接口URL：** https://push-api.cloud.huawei.com/v2/**[projectId]**/images:verify
+* **数据格式：** 请求消息：Content-Type: application/json
+
+  响应消息：Content-Type: application/json
+
+说明
+
+* **[clientId]** ：OAuth 2.0客户端ID（凭据），登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)网站，选择“开发与服务”，在项目列表中选择对应的项目，左侧导航栏选择“项目设置”，在该页面获取。
+* **[projectId]** ：项目ID，登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)网站，选择“开发与服务”，在项目列表中选择对应的项目，左侧导航栏选择“项目设置”，在该页面获取。
+* 提供的两个接口URL功能相同，只是鉴权方式不同，均可使用。
+
+## 请求参数
+
+**Request Header**
+
+| 参数 | 取值描述 | 样例 |
+| --- | --- | --- |
+| Authorization | 鉴权方式：  **JWT方式**：  详情参见[基于服务账号生成鉴权令牌](../harmonyos-guides/push-jwt-token.md)。  **说明：**  建议JWT令牌过期时间设置为3600秒，有效期内可以复用。  Bearer后面拼接空格，再拼接获取的鉴权信息。 | Bearer eyJraWQiOiIx---xxx.eyJhdWQiOiJodHR---xxx.QRodgXa2xeXSt4Gp---xxx |
+| push-type | 消息类型，取值如下：  0：通知消息发送大图标消息场景  1：服务卡片刷新图片场景  2：通知扩展发送大图标消息场景 | 1 |
+
+**Request Body**
+
+| 参数 | 是否必选 | 参数类型 | 描述 |
+| --- | --- | --- | --- |
+| imageUrl | 是 | String | 待验证图片的公网地址，必须是https协议。 |
+
+## 请求示例
+
+```
+1. {
+2. "imageUrl": "https://example.com/image.png"
+3. }
+```
+
+## 响应参数
+
+**Response Body**
+
+| 参数 | 是否必选 | 参数类型 | 描述 |
+| --- | --- | --- | --- |
+| code | 是 | String | 响应码。 |
+| msg | 是 | String | 响应码描述。 |
+| requestId | 否 | String | 请求标识。 |
+| downloadUrl | 否 | String | 验证通过的图片地址（本接口成功时才返回）。 |
+| expireTime | 否 | String | 图片风控验证有效截止时间，以Unix时间戳表示，单位为秒（本接口成功时才返回）。 |
+
+## 响应示例
+
+**响应成功示例：**
+
+```
+1. {
+2. "code": "83010000",
+3. "msg": "Verify success",
+4. "requestId": "1631***********0101",
+5. "downloadUrl": "https://**.png?verifyKey=MEUCIQDzfYMReU*****************fdCOX9KToGq7o%3D",
+6. "expireTime": "1689911616"
+7. }
+```
+
+**响应失败示例：**
+
+```
+1. {
+2. "code": "83010005",
+3. "msg": "Download picture failed",
+4. "requestId": "1691***********1501"
+5. }
+```
+
+## HTTP响应码
+
+| HTTP响应码 | 描述 | 解决方法 |
+| --- | --- | --- |
+| 200 | 成功。 | - |
+| 400 | 参数错误。 | 请检查业务响应码并根据业务响应码进一步排查问题。 |
+| 401 | 鉴权失败。 | 请检查HTTP请求头中Authorization参数里面的JWT。 |
+| 404 | 找不到服务。 | 请检查请求URI是否正确。 |
+| 500 | 服务内部错误。 | 请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。 |
+| 502 | 请求连接异常，常见于网络状况不稳定。 | 建议稍后重试，或通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。 |
+
+## 业务响应码
+
+### 80100001 参数错误
+
+**错误信息**
+
+Check Parameter Error.
+
+**错误描述**
+
+参数错误。
+
+**可能原因**
+
+参数错误。
+
+**处理步骤**
+
+请按照响应消息中的提示，检查并修改[请求参数](push-image-control.md#请求参数)。
+
+### 80100003 url格式错误
+
+**错误信息**
+
+only https allow.
+
+**错误描述**
+
+url格式错误。
+
+**可能原因**
+
+url格式错误。
+
+**处理步骤**
+
+请根据响应消息中的提示，检查并修改图片imageUrl必须为https协议。
+
+### 80200001 认证错误
+
+**错误信息**
+
+Authentication Error.
+
+**错误描述**
+
+认证错误。
+
+**可能原因**
+
+1. 发送消息时未添加Authorization参数或Authorization的值为空。
+2. 用于申请JWT Token的Project Id和推送消息的Project Id不一致。
+3. Authorization参数中的JWT Token与实际应用不匹配。
+
+**处理步骤**
+
+请根据响应消息中的提示，排查请求头中Authorization参数鉴权失败是否存在以下情况：
+
+1. 请检查发送消息时是否添加Authorization参数或Authorization的值为空。
+2. 请参考[鉴权令牌生成步骤](../harmonyos-guides/push-jwt-token.md#开发步骤)中的步骤二，检查推送请求URL（https://push-api.cloud.huawei.com/**v3**/[projectId]/messages:send）中的projectId，确保与您当前应用所属的项目保持一致。
+3. 请检查Authorization参数中的JWT Token与实际应用是否匹配，详情参见[基于服务账号生成鉴权令牌](../harmonyos-guides/push-jwt-token.md)。
+
+重新生成JWT Token后再发送请求。
+
+### 80200003 Access token过期
+
+**错误信息**
+
+Access token expired.
+
+**错误描述**
+
+Access token过期。
+
+**可能原因**
+
+Access Token过期。
+
+**处理步骤**
+
+请根据响应消息中的提示，重新生成JWT Token后再推送消息，请参见[基于服务账号生成鉴权令牌](../harmonyos-guides/push-jwt-token.md)。
+
+### 80200005 JWT Token过期
+
+**错误信息**
+
+Jwt token expired.
+
+**错误描述**
+
+JWT Token过期。
+
+**可能原因**
+
+JWT Token过期。
+
+**处理步骤**
+
+请根据响应消息中的提示，重新生成JWT Token后再推送消息，请参见[基于服务账号生成鉴权令牌](../harmonyos-guides/push-jwt-token.md)。
+
+### 80300002 没有权益
+
+**错误信息**
+
+No permission to send message to these tmIDs.
+
+**错误描述**
+
+没有权益。
+
+**可能原因**
+
+发送的项目未开通推送服务。
+
+**处理步骤**
+
+请在[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)网站[开通推送服务](../harmonyos-guides/push-config-setting.md)。
+
+### 83010000 图片通过风控
+
+**错误信息**
+
+Verify success.
+
+**错误描述**
+
+图片通过风控。
+
+**可能原因**
+
+图片通过风控。
+
+**处理步骤**
+
+不涉及。
+
+### 83010001 图片未通过风控
+
+**错误信息**
+
+Verify failed.
+
+**错误描述**
+
+图片未通过风控。
+
+**可能原因**
+
+图片未通过风控，图片包含敏感信息。
+
+**处理步骤**
+
+请根据响应消息中的提示，修改图片并重新进行图片风控。
+
+### 83010002 超出流控阈值
+
+**错误信息**
+
+The number of sent messages exceeds the limit.
+
+**错误描述**
+
+超出流控阈值。
+
+**可能原因**
+
+超出流控阈值（单个应用每分钟60次）。
+
+**处理步骤**
+
+请根据响应消息中的提示，降低请求频率后重试。
+
+### 83010003 消息体为空
+
+**错误信息**
+
+Request body is empty.
+
+**错误描述**
+
+消息体为空。
+
+**可能原因**
+
+消息体为空。
+
+**处理步骤**
+
+请根据响应消息中的提示，检查并修改[消息体](push-image-control.md#请求参数)内容。
+
+### 83010004 不支持风控
+
+**错误信息**
+
+Send control is not supported.
+
+**错误描述**
+
+不支持风控。
+
+**可能原因**
+
+未匹配到风控策略，不支持风控。
+
+**处理步骤**
+
+未匹配到风控策略，请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。
+
+### 83010005 下载图片失败
+
+**错误信息**
+
+Download picture failed.
+
+**错误描述**
+
+图片下载失败。
+
+**可能原因**
+
+图片下载失败，请求体中的图片URL不正确。
+
+**处理步骤**
+
+请根据响应消息中的提示，请检查并修改请求体中的图片URL。
+
+### 83010007 消息类型错误
+
+**错误信息**
+
+The header does not contain valid push-type.
+
+**错误描述**
+
+消息类型错误。
+
+**可能原因**
+
+消息类型错误。
+
+**处理步骤**
+
+请根据响应消息中的提示，检查并修改[push-type](push-image-control.md#请求参数)。

@@ -1,0 +1,215 @@
+---
+url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hiappevent-watcher-app-events-arkts
+title: 事件订阅（ArkTS）
+breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 事件订阅 > 使用HiAppEvent订阅事件 > 事件订阅（ArkTS）
+category: harmonyos-guides
+scraped_at: 2026-04-28T07:45:02+08:00
+doc_updated_at: 2026-04-20
+content_hash: sha256:05e7532da131226973d912c6b1748c325c130fedf041c9f951067d2b126b851d
+---
+
+HiAppEvent提供了事件订阅接口，用于获取应用的事件。
+
+## 接口说明
+
+API接口使用说明，包括参数使用限制和具体取值范围。请参考[@ohos.hiviewdfx.hiAppEvent](../harmonyos-references/js-apis-hiviewdfx-hiappevent.md)。
+
+**订阅接口功能介绍**：
+
+| 接口名 | 描述 |
+| --- | --- |
+| addWatcher(watcher: Watcher): AppEventPackageHolder | 添加应用的事件观察者。 |
+| removeWatcher(watcher: Watcher): void | 移除应用的事件观察者。 |
+
+说明
+
+addWatcher接口涉及I/O操作。在对性能敏感的业务场景中，开发者应根据实际需要确定该接口是在主线程还是在子线程中调用。
+
+如果选择在子线程中调用addWatcher，需要确保该子线程在整个接口使用周期内不会被销毁，以免影响接口的正常工作。
+
+可参考[多线程并发概述](multi-thread-concurrency-overview.md)，以实现在子线程中调用接口。
+
+**打点接口功能介绍**：
+
+| 接口名 | 描述 |
+| --- | --- |
+| write(info: AppEventInfo, callback: AsyncCallback<void>): void | 应用事件异步打点方法，使用callback方式作为异步回调。 |
+| write(info: AppEventInfo): Promise<void> | 应用事件异步打点方法，使用Promise方式作为异步回调。 |
+
+说明
+
+write接口涉及I/O操作，执行时间通常在毫秒级别。因此，开发者应根据实际业务需求，确定该接口是在主线程还是在子线程中调用。
+
+可参考[多线程并发概述](multi-thread-concurrency-overview.md)，以实现在子线程中调用接口。
+
+## 事件订阅开发指导
+
+以订阅崩溃事件（系统事件）和按钮点击事件（应用事件）为例，说明开发步骤。
+
+1. 新建一个ArkTS应用工程，编辑工程中的“entry > src > main > ets > entryability > EntryAbility.ets”文件，导入所需的依赖模块：
+
+   ```
+   1. import { hiAppEvent, hilog } from '@kit.PerformanceAnalysisKit';
+   ```
+
+   [EntryAbility.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/PerformanceAnalysisKit/HiAppEvent/EventSub/entry/src/main/ets/entryability/EntryAbility.ets#L19-L21)
+2. 编辑工程中的“entry > src > main > ets > entryability > EntryAbility.ets” 文件，在onCreate函数中添加对崩溃事件、按钮点击事件的订阅。
+
+   订阅崩溃事件，采用OnReceive类型观察者的订阅方式，观察者接收到事件后会立即触发OnReceive()回调。编辑“EntryAbility.ets”文件，定义OnReceive类型观察者相关方法：
+
+   ```
+   1. hiAppEvent.addWatcher({
+   2. // 开发者可以自定义观察者名称，系统会使用名称来标识不同的观察者
+   3. name: 'AppCrashWatcher',
+   4. // 订阅过滤条件，这里是订阅了系统事件中的崩溃事件
+   5. appEventFilters: [
+   6. {
+   7. domain: hiAppEvent.domain.OS,
+   8. names: [hiAppEvent.event.APP_CRASH]
+   9. }
+   10. ],
+   11. // 实现onReceive回调，监听到事件后实时回调
+   12. onReceive: (domain: string, appEventGroups: Array<hiAppEvent.AppEventGroup>) => {
+   13. hilog.info(0x0000, 'testTag', 'AppEvents HiAppEvent success to read event with onReceive callback from ArkTS');
+   14. hilog.info(0x0000, 'testTag', `domain=${domain}`);
+   15. for (const eventGroup of appEventGroups) {
+   16. hilog.info(0x0000, 'testTag', `AppEvents HiAppEvent eventName=${eventGroup.name}`);
+   17. for (const eventInfo of eventGroup.appEventInfos) {
+   18. // 开发者可以获取到崩溃事件发生的时间戳
+   19. hilog.info(0x0000, 'testTag', `AppEvents HiAppEvent eventInfo.params.time=${JSON.stringify(eventInfo.params['time'])}`);
+   20. // 开发者可以获取到崩溃应用的包名
+   21. hilog.info(0x0000, 'testTag', `AppEvents HiAppEvent eventInfo.params.bundle_name=${JSON.stringify(eventInfo.params['bundle_name'])}`);
+   22. // 开发者可以获取到崩溃事件发生时的故障日志文件
+   23. hilog.info(0x0000, 'testTag', `AppEvents HiAppEvent eventInfo.params.external_log=${JSON.stringify(eventInfo.params['external_log'])}`);
+   24. }
+   25. }
+   26. }
+   27. });
+   ```
+
+   [EntryAbility.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/PerformanceAnalysisKit/HiAppEvent/EventSub/entry/src/main/ets/entryability/EntryAbility.ets#L33-L61)
+
+   订阅按钮点击事件，采用OnTrigger类型观察者的订阅方式。需满足triggerCondition设置的条件，才能触发OnTrigger()回调。编辑“EntryAbility.ets”文件，定义OnTrigger类型观察者相关方法：
+
+   ```
+   1. hiAppEvent.addWatcher({
+   2. // 开发者可以自定义观察者名称，系统会使用名称来标识不同的观察者
+   3. name: 'ButtonClickWatcher',
+   4. // 开发者可以订阅感兴趣的应用事件，此处是订阅了按钮事件
+   5. appEventFilters: [{ domain: 'button' }],
+   6. // 开发者可以设置订阅回调触发的条件，此处是设置为事件打点数量满足1个
+   7. triggerCondition: { row: 1 },
+   8. // 开发者可以自行实现订阅回调函数，以便对订阅获取到的事件打点数据进行自定义处理
+   9. onTrigger: (curRow: number, curSize: number, holder: hiAppEvent.AppEventPackageHolder) => {
+   10. // 如果返回的holder对象为null，表示订阅过程发生异常。因此，在记录错误日志后直接返回
+   11. if (holder == null) {
+   12. hilog.error(0x0000, 'testTag', 'AppEvents HiAppEvent holder is null');
+   13. return;
+   14. }
+   15. hilog.info(0x0000, 'testTag', 'AppEvents HiAppEvent success to read event with onTrigger callback from ArkTS');
+   16. hilog.info(0x0000, 'testTag', `AppEvents HiAppEvent onTrigger: curRow=%{public}d, curSize=%{public}d`, curRow, curSize);
+   17. let eventPkg: hiAppEvent.AppEventPackage | null = null;
+   18. // 根据设置阈值大小（默认为1条事件）去获取订阅事件包，直到将订阅数据全部取出
+   19. // 返回的事件包对象为null，表示当前订阅数据已被全部取出，此次订阅回调触发结束
+   20. while ((eventPkg = holder.takeNext()) != null) {
+   21. // 开发者可以对事件包中的事件打点数据进行自定义处理，此处是将事件打点数据打印在日志中
+   22. hilog.info(0x0000, 'testTag', `AppEvents HiAppEvent eventPkg.packageId=%{public}d`, eventPkg.packageId);
+   23. hilog.info(0x0000, 'testTag', `AppEvents HiAppEvent eventPkg.row=%{public}d`, eventPkg.row);
+   24. hilog.info(0x0000, 'testTag', `AppEvents HiAppEvent eventPkg.size=%{public}d`, eventPkg.size);
+   25. for (const eventInfo of eventPkg.data) {
+   26. hilog.info(0x0000, 'testTag', `AppEvents HiAppEvent eventPkg.info=%{public}s`, eventInfo);
+   27. }
+   28. }
+   29. }
+   30. });
+   ```
+
+   [EntryAbility.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/PerformanceAnalysisKit/HiAppEvent/EventSub/entry/src/main/ets/entryability/EntryAbility.ets#L62-L93)
+3. 编辑工程中的“entry > src > main > ets > pages > Index.ets” 文件，导入依赖模块：
+
+   ```
+   1. import { BusinessError } from '@kit.BasicServicesKit';
+   2. import { hiAppEvent, hilog } from '@kit.PerformanceAnalysisKit';
+   ```
+
+   [Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/PerformanceAnalysisKit/HiAppEvent/EventSub/entry/src/main/ets/pages/Index.ets#L16-L20)
+4. 编辑工程中的“entry > src > main > ets > pages > Index.ets” 文件，新增“WatchAppCrash ArkTS&C++”按钮触发崩溃事件；新增“writeEvent ArkTS”按钮，在按钮点击的函数中进行事件打点。示例代码如下：
+
+   触发崩溃事件。
+
+   ```
+   1. Button('WatchAppCrash ArkTS&C++')
+   2. .type(ButtonType.Capsule)
+   3. .margin({
+   4. top: 20
+   5. })
+   6. .backgroundColor('#0D9FFB')
+   7. .width('80%')
+   8. .height('5%')
+   9. .onClick(() => {
+   10. // 在按钮点击函数中构造一个crash场景，触发崩溃事件
+   11. let result: object = JSON.parse('');
+   12. })
+   ```
+
+   [Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/PerformanceAnalysisKit/HiAppEvent/EventSub/entry/src/main/ets/pages/Index.ets#L35-L48)
+
+   在按钮点击的函数中进行事件打点。
+
+   ```
+   1. Button('writeEvent ArkTS')
+   2. .type(ButtonType.Capsule)
+   3. .margin({
+   4. top: 20
+   5. })
+   6. .backgroundColor('#0D9FFB')
+   7. .width('80%')
+   8. .height('5%')
+   9. .onClick(() => {
+   10. // 在按钮点击函数中进行事件打点，以记录按钮点击事件
+   11. let eventParams: Record<string, number> = {'clickTime': 100};
+   12. let eventInfo: hiAppEvent.AppEventInfo = {
+   13. // 事件领域定义
+   14. domain: 'button',
+   15. // 事件名称定义
+   16. name: 'click',
+   17. // 事件类型定义
+   18. eventType: hiAppEvent.EventType.BEHAVIOR,
+   19. // 事件参数定义
+   20. params: eventParams,
+   21. };
+   22. hiAppEvent.write(eventInfo).then(() => {
+   23. hilog.info(0x0000, 'testTag', `AppEvents writeEvent ArkTS success`);
+   24. }).catch((err: BusinessError) => {
+   25. hilog.error(0x0000, 'testTag', `AppEvents HiAppEvent err.code: ${err.code}, err.message: ${err.message}`);
+   26. });
+   27. })
+   ```
+
+   [Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/PerformanceAnalysisKit/HiAppEvent/EventSub/entry/src/main/ets/pages/Index.ets#L49-L77)
+
+## 调测验证
+
+1. 点击DevEco Studio界面中的运行按钮，运行应用工程。在应用界面中点击“WatchAppCrash ArkTS&C++”按钮，触发崩溃事件。应用退出后，重新打开应用。
+2. 在HiLog窗口搜索“AppEvents”关键字，查看应用处理崩溃事件数据的日志：
+
+   ```
+   1. AppEvents HiAppEvent success to read event with onReceive callback from ArkTS
+   2. AppEvents HiAppEvent eventName=APP_CRASH
+   3. AppEvents HiAppEvent eventInfo.params.time=1750747995874
+   4. AppEvents HiAppEvent eventInfo.params.bundle_name="com.example.txxxxx"
+   5. AppEvents HiAppEvent eventInfo.params.external_log=
+   6. ["/data/storage/el2/log/hiappevent/APP_CRASH_1750747996042_28962.log"]
+   ```
+3. 点击DevEco Studio界面中的运行按钮，运行应用工程。在应用界面中点击“writeEvent ArkTS”按钮，触发按钮点击事件并打点。
+4. 在HiLog窗口搜索“AppEvents”关键字，查看应用处理按钮点击事件数据的日志：
+
+   ```
+   1. AppEvents HiAppEvent success to read event with onTrigger callback from ArkTS
+   2. AppEvents HiAppEvent onTrigger: curRow=1, curSize=121
+   3. AppEvents HiAppEvent eventPkg.packageId=0
+   4. AppEvents HiAppEvent eventPkg.row=1
+   5. AppEvents HiAppEvent eventPkg.size=121
+   6. AppEvents HiAppEvent eventPkg.info={"domain_":"button","name_":"click","type_":4,"time_":1750754529033,"tz_":"","pid_":40664,"tid_":40664,"clickTime":100}
+   7. AppEvents writeEvent ArkTS success
+   ```

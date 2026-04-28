@@ -1,0 +1,514 @@
+---
+url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/address-sanitizer-guidelines
+title: AddrSanitizer（地址越界）检测
+breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 故障检测 > AddrSanitizer（地址越界）检测
+category: harmonyos-guides
+scraped_at: 2026-04-28T07:44:57+08:00
+doc_updated_at: 2026-04-20
+content_hash: sha256:ec393b1f498f8969e7d70586cb3a219b53f25bc9dbe97dc01422a8006f9ca817
+---
+
+## 简介
+
+地址越界问题是指访问了不合法的地址，导致程序运行出现异常，通常表现为应用崩溃（Crash），其故障原因为释放后使用（use after free）、重复释放（double-free）、栈溢出（stack-overflow）、堆溢出（heap-overflow）等。由于应用崩溃日志信息有限且非崩溃第一现场，地址越界问题定位较为困难，一般依赖ASan、HWASan、GWP-ASan等检测工具以获取更多内存操作信息。从API13开始推荐[使用HWASan检测工具](../best-practices/bpta-stability-hwasan-detection.md)进行地址越界问题的分析。
+
+## 常见越界类型与影响
+
+常见地址越界类型和影响可参看[地址越界经典问题类型](../best-practices/bpta-stability-address-sanitizer-catagory.md)。
+
+## 地址越界检测原理
+
+检测原理和使用方法可参看[地址越界类问题检测](../best-practices/bpta-stability-ram-detection.md)。
+
+## 日志获取方式
+
+地址越界日志和进程崩溃日志一致，都是由Faultlogger模块进行管理，可通过以下方式获取：
+
+**方式一：通过DevEco Studio获取日志**
+
+DevEco Studio会收集设备/data/log/faultlog/faultlogger/路径下的进程崩溃故障日志到FaultLog下，根据进程名和故障和时间分类显示。获取日志的方法参见：[DevEco Studio使用指南-FaultLog](ide-fault-log.md)。
+
+**方式二：通过HiAppEvent接口订阅**
+
+HiAppEvent给开发者提供了故障订阅接口，详见[HiAppEvent介绍](hiappevent-intro.md)。参考[订阅地址越界事件（ArkTS）](hiappevent-watcher-address-sanitizer-events-arkts.md)或[订阅地址越界事件（C/C++）](hiappevent-watcher-address-sanitizer-events-ndk.md)完成地址越界事件订阅，并通过事件的[external\_log](hiappevent-watcher-address-sanitizer-events.md#params字段说明)字段读取故障日志文件内容。
+
+**方式三：通过hdc获取日志，需打开开发者选项**
+
+在运行态，日志默认都落盘至 /data/log/faultlog/faultlogger 下。在开发者选项打开的情况下，开发者可以通过hdc file recv /data/log/faultlog/faultlogger D:\命令导出故障日志到本地，故障日志文件名格式为[检测器类型]-[bundleName]-[uid]-[happenedTime].log。
+
+## 日志规格
+
+### ASan日志规格
+
+ASan日志规格如下，标题头会展示设备信息，故障发生时间，故障进程和故障原因等。日志详细描述了越界访问的地址（0x007fffd59768）、访问大小（WRITE of size 4）、发生的线程和进程信息。通过调用栈，展现了导致此次越界的函数调用路径，列出各个调用层的地址及对应的模块和偏移，帮助开发者快速定位代码位置。日志还提供影子内存（Shadow bytes）跟踪内存状态，帮助确认访问是否合法。同时，日志列出了进程的内存空间映射，帮助分析越界地址所处的具体内存区域。
+
+以下为具体示例：
+
+```
+1. Device info:XXX <- 设备信息
+2. Build info:XXX-XXXX x.x.x.xx(xxxxxxx) <- 版本信息
+3. Fingerprint:77cdc69cef714391a08c7cb1ceec8b8f9b02900fc6588e4231c2f8750b2bf330 <- 特征信息
+4. Timestamp:xxxx-xx-xx xx:xx:xx.xxx <- 时间戳
+5. Module name:com.example.sampleapplication <- 模块名
+6. Version:1.0.0 <- 版本号
+7. Pid:62642 <- 进程号
+8. Uid:20020185 <- 用户ID
+9. Reason:stack-buffer-overflow <- 触发原因
+
+11. ==appspawn==11766==AddressSanitizer: WARNING: unexpected format specifier in printf interceptor: %{ (reported once per process)
+12. =================================================================
+13. ==appspawn==11766==ERROR: AddressSanitizer: stack-buffer-overflow on address 0x007fffd59768 at pc 0x007c7e718f54 bp 0x007fffd59710 sp 0x007fffd59708 <- 问题概述
+14. WRITE of size 4 at 0x007fffd59768 thread T0 (e.myapplication) <- 越界大小
+15. #0 0x7c7e718f50  (/data/storage/el1/bundle/libs/arm64/libentry.so+0x58f50) (BuildId: 5e1d4fe4b589921373e51615051105e455462c5f) <- 调用栈信息
+16. #1 0x7b5710235c  (/system/lib64/platformsdk/libace_napi.z.so+0x4235c) (BuildId: e6ee1d59b23d2b0d1e746549da572967)
+17. #2 0x7b74ee79a4  (/system/lib64/module/arkcompiler/stub.an+0x4f89a4)
+18. #3 0x7b749fa8c0  (/system/lib64/module/arkcompiler/stub.an+0xb8c0)
+
+20. Address 0x007fffd59768 is located in stack of thread T0 (e.myapplication) at offset 72 in frame
+21. #0 0x7c7e718de4  (/data/storage/el1/bundle/libs/arm64/libentry.so+0x58de4) (BuildId: 5e1d4fe4b589921373e51615051105e455462c5f)
+
+23. This frame has 1 object(s):
+24. [32, 72) 'a' (line 66) <== Memory access at offset 72 overflows this variable
+25. HINT: this may be a false positive if your program uses some custom stack unwind mechanism, swapcontext or vfork
+26. (longjmp and C++ exceptions *are* supported)
+27. SUMMARY: AddressSanitizer: stack-buffer-overflow (/data/storage/el1/bundle/libs/arm64/libentry.so+0x58f50) (BuildId: 5e1d4fe4b589921373e51615051105e455462c5f)
+
+29. Shadow bytes around the buggy address:  <-影子内存信息
+30. 0x001ffffab290: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+31. 0x001ffffab2a0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+32. 0x001ffffab2b0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+33. 0x001ffffab2c0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+34. 0x001ffffab2d0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+35. =>0x001ffffab2e0: 00 00 00 00 f1 f1 f1 f1 00 00 00 00 00[f3]f3 f3
+36. 0x001ffffab2f0: f3 f3 f3 f3 00 00 00 00 00 00 00 00 00 00 00 00
+37. 0x001ffffab300: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+38. 0x001ffffab310: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+39. 0x001ffffab320: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+40. 0x001ffffab330: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+41. Shadow byte legend (one shadow byte represents 8 application bytes):
+42. Addressable:           00
+43. Partially addressable: 01 02 03 04 05 06 07
+44. Heap left redzone:       fa
+45. Freed heap region:       fd
+46. Stack left redzone:      f1
+47. Stack mid redzone:       f2
+48. Stack right redzone:     f3
+49. Stack after return:      f5
+50. Stack use after scope:   f8
+51. Global redzone:          f9
+52. Global init order:       f6
+53. Poisoned by user:        f7
+54. Container overflow:      fc
+55. Array cookie:            ac
+56. Intra object redzone:    bb
+57. ASan internal:           fe
+58. Left alloca redzone:     ca
+59. Right alloca redzone:    cb
+60. ==appspawn==11766==ABORTING
+
+62. ==appspawn==11766==Process memory map follows: <- 故障时进程的内存空间
+63. 0x000ffffff000-0x001200000000 [anon:low shadow]
+64. 0x001200000000-0x001400000000 [anon:shadow gap]
+65. 0x001400000000-0x001f6ccb1000 [anon:high shadow]
+66. 0x001f6ccb1000-0x001f6cd28000
+67. 0x001f6cd28000-0x001f6e87c000 [anon:high shadow]
+68. 0x001f6e87c000-0x001f6e89c000
+69. 0x001f6e89c000-0x001f6e89d000 [anon:high shadow]
+```
+
+### HWASan日志规格
+
+HWASan日志在格式上与ASan相近，也会在标题中展示设备信息、故障发生时间、故障进程及触发原因等关键信息。日志会详细记录越界访问的地址（如0x0002013c0100）和访问大小（如WRITE of size 4）。同时会记录发生时的线程和进程信息。完整的调用栈会展示触发越界的函数执行路径，列出各层地址、所属模块及偏移，便于开发者快速定位代码位置。不同于ASan的是，HWASan还会输出指针与内存块的标签（tags），并通过对比标签来辅助判断是否存在非法访问。
+
+```
+1. Device info:XXX <- 设备信息
+2. Build info:XXX-XXXX x.x.x.xx(xxxxxxx) <- 版本信息
+3. Fingerprint:77cdc69cef714391a08c7cb1ceec8b8f9b02900fc6588e4231c2f8750b2bf330 <- 特征信息
+4. Timestamp:xxxx-xx-xx xx:xx:xx.xxx <- 时间戳
+5. Module name:com.example.sampleapplication <- 模块名
+6. Version:1.0.0 <- 版本号
+7. Pid:62642 <- 进程号
+8. Uid:20020185 <- 用户ID
+9. Reason:use-after-free <- 触发原因
+
+11. ==appspawn==62642==ERROR: HWAddressSanitizer: tag-mismatch on address 0x0002013c0100 at pc 0x00651a5c0fa0 <- 问题概述
+12. WRITE of size 4 at 0x0002013c0100 tags: d2/11 (ptr/mem) in thread T240 <-越界大小
+13. #0 0x651a5c0fa0  (/data/storage/el1/bundle/libs/arm64/libijk.so+0x2c0fa0) (BuildId: 84383086df874d94fa191ddbbc25091cc14992c5) <-调用栈信息
+14. #1 0x651a49bfb0  (/data/storage/el1/bundle/libs/arm64/libijk.so+0x19bfb0) (BuildId: 84383086df874d94fa191ddbbc25091cc14992c5)
+15. #2 0x651a49beb8  (/data/storage/el1/bundle/libs/arm64/libijk.so+0x19beb8) (BuildId: 84383086df874d94fa191ddbbc25091cc14992c5)
+16. #3 0x651a5c100c  (/data/storage/el1/bundle/libs/arm64/libijk.so+0x2c100c) (BuildId: 84383086df874d94fa191ddbbc25091cc14992c5)
+17. #4 0x651a4eeb60  (/data/storage/el1/bundle/libs/arm64/libijk.so+0x1eeb60) (BuildId: 84383086df874d94fa191ddbbc25091cc14992c5)
+18. #5 0x651a4ed864  (/data/storage/el1/bundle/libs/arm64/libijk.so+0x1ed864) (BuildId: 84383086df874d94fa191ddbbc25091cc14992c5)
+19. #6 0x651a5c81f8  (/data/storage/el1/bundle/libs/arm64/libijk.so+0x2c81f8) (BuildId: 84383086df874d94fa191ddbbc25091cc14992c5)
+20. #7 0x651a5cc450  (/data/storage/el1/bundle/libs/arm64/libijk.so+0x2cc450) (BuildId: 84383086df874d94fa191ddbbc25091cc14992c5)
+21. #8 0x651a5c4708  (/data/storage/el1/bundle/libs/arm64/libijk.so+0x2c4708) (BuildId: 84383086df874d94fa191ddbbc25091cc14992c5)
+22. #9 0x651a5c48e8  (/data/storage/el1/bundle/libs/arm64/libijk.so+0x2c48e8) (BuildId: 84383086df874d94fa191ddbbc25091cc14992c5)
+23. #10 0x5a3e8d0d98  (/lib/ld-musl-aarch64-asan.so.1+0x10ed98) (BuildId: bac03842ac83e537d217a027e9584250)
+
+25. [0x0002013c0100,0x0002013c0140) is a small allocated heap chunk; size: 64 offset: 0 <-被踩内存信息
+
+27. Potential Cause: use-after-free <-可能的越界原因1
+28. 0x0002013c0100 (old ptr tags: 5d) is located 0 bytes inside of 48-byte region [0x0002013c0100,0x0002013c0130)
+29. freed by thread T0 here: <-释放的栈
+30. #0 0x5a3f868f98  (/system/asan/lib64/libclang_rt.hwasan.so+0x28f98) (BuildId: a6c55e97d9dbc519020b7732890fe5143f80d175) <- 调用栈信息
+31. #1 0x650009d6b4  (/system/asan/lib64/module/file/libfileuri.z.so+0x1d6b4) (BuildId: 7f492df25ba1291065c3cf49b731c56a)
+32. #2 0x65000a09ec  (/system/asan/lib64/module/file/libfileuri.z.so+0x209ec) (BuildId: 7f492df25ba1291065c3cf49b731c56a)
+33. #3 0x5a3e855790  (/lib/ld-musl-aarch64-asan.so.1+0x93790) (BuildId: bac03842ac83e537d217a027e9584250)
+34. #4 0x5a3e85801c  (/lib/ld-musl-aarch64-asan.so.1+0x9601c) (BuildId: bac03842ac83e537d217a027e9584250)
+35. #5 0x5ad738d43c  (/system/asan/lib64/platformsdk/libace_napi.z.so+0x4d43c) (BuildId: 90a9e7b85b14f6c805a699672bf8db4a)
+36. #6 0x5ad738c2d0  (/system/asan/lib64/platformsdk/libace_napi.z.so+0x4c2d0) (BuildId: 90a9e7b85b14f6c805a699672bf8db4a)
+37. #7 0x5ad738b9c0  (/system/asan/lib64/platformsdk/libace_napi.z.so+0x4b9c0) (BuildId: 90a9e7b85b14f6c805a699672bf8db4a)
+38. #8 0x5ad73a3b30  (/system/asan/lib64/platformsdk/libace_napi.z.so+0x63b30) (BuildId: 90a9e7b85b14f6c805a699672bf8db4a)
+39. #9 0x5ad6e75f1c  (/system/asan/lib64/platformsdk/libark_jsruntime.so+0x8b5f1c) (BuildId: a2f4a88f26244f527994da0cefbab138)
+40. #10 0x5af39b2130  (/system/lib64/module/arkcompiler/stub.an+0x332130)
+41. #11 0x5af36897d0  (/system/lib64/module/arkcompiler/stub.an+0x97d0)
+42. #12 0x212092dc04  ([anon:ArkTS Heap5576local space]+0x2dc04)
+
+44. previously allocated here: <-申请的栈
+45. #0 0x5a3f868ce8  (/system/asan/lib64/libclang_rt.hwasan.so+0x28ce8) (BuildId: a6c55e97d9dbc519020b7732890fe5143f80d175)
+46. #1 0x650009a840  (/system/asan/lib64/module/file/libfileuri.z.so+0x1a840) (BuildId: 7f492df25ba1291065c3cf49b731c56a)
+47. #2 0x65000a09ec  (/system/asan/lib64/module/file/libfileuri.z.so+0x209ec) (BuildId: 7f492df25ba1291065c3cf49b731c56a)
+48. #3 0x5a3e855790  (/lib/ld-musl-aarch64-asan.so.1+0x93790) (BuildId: bac03842ac83e537d217a027e9584250)
+49. #4 0x5a3e85801c  (/lib/ld-musl-aarch64-asan.so.1+0x9601c) (BuildId: bac03842ac83e537d217a027e9584250)
+50. #5 0x5ad738d43c  (/system/asan/lib64/platformsdk/libace_napi.z.so+0x4d43c) (BuildId: 90a9e7b85b14f6c805a699672bf8db4a)
+51. #6 0x5ad738c2d0  (/system/asan/lib64/platformsdk/libace_napi.z.so+0x4c2d0) (BuildId: 90a9e7b85b14f6c805a699672bf8db4a)
+52. #7 0x5ad738b9c0  (/system/asan/lib64/platformsdk/libace_napi.z.so+0x4b9c0) (BuildId: 90a9e7b85b14f6c805a699672bf8db4a)
+53. #8 0x5ad73a3b30  (/system/asan/lib64/platformsdk/libace_napi.z.so+0x63b30) (BuildId: 90a9e7b85b14f6c805a699672bf8db4a)
+54. #9 0x5ad6e75f1c  (/system/asan/lib64/platformsdk/libark_jsruntime.so+0x8b5f1c) (BuildId: a2f4a88f26244f527994da0cefbab138)
+55. #10 0x5af39b2130  (/system/lib64/module/arkcompiler/stub.an+0x332130)
+56. #11 0x5af36897d0  (/system/lib64/module/arkcompiler/stub.an+0x97d0)
+57. #12 0x212092dc04  ([anon:ArkTS Heap5576local space]+0x2dc04)
+
+59. Cause: heap-buffer-overflow <-可能的越界原因2
+60. 0x0002013c0100 is located 3352 bytes to the right of 40-byte region [0x0002013bf3c0,0x0002013bf3e8)
+61. allocated here:
+62. #0 0x5a3f868ce8  (/system/asan/lib64/libclang_rt.hwasan.so+0x28ce8) (BuildId: a6c55e97d9dbc519020b7732890fe5143f80d175)
+63. #1 0x65000a85b8  (/system/asan/lib64/module/file/libfileuri.z.so+0x285b8) (BuildId: 7f492df25ba1291065c3cf49b731c56a)
+64. #2 0x65000a09b4  (/system/asan/lib64/module/file/libfileuri.z.so+0x209b4) (BuildId: 7f492df25ba1291065c3cf49b731c56a)
+65. #3 0x5a3e855790  (/lib/ld-musl-aarch64-asan.so.1+0x93790) (BuildId: bac03842ac83e537d217a027e9584250)
+66. #4 0x5a3e85801c  (/lib/ld-musl-aarch64-asan.so.1+0x9601c) (BuildId: bac03842ac83e537d217a027e9584250)
+67. #5 0x5ad738d43c  (/system/asan/lib64/platformsdk/libace_napi.z.so+0x4d43c) (BuildId: 90a9e7b85b14f6c805a699672bf8db4a)
+68. #6 0x5ad738c2d0  (/system/asan/lib64/platformsdk/libace_napi.z.so+0x4c2d0) (BuildId: 90a9e7b85b14f6c805a699672bf8db4a)
+69. #7 0x5ad738b9c0  (/system/asan/lib64/platformsdk/libace_napi.z.so+0x4b9c0) (BuildId: 90a9e7b85b14f6c805a699672bf8db4a)
+70. #8 0x5ad73a3b30  (/system/asan/lib64/platformsdk/libace_napi.z.so+0x63b30) (BuildId: 90a9e7b85b14f6c805a699672bf8db4a)
+71. #9 0x5ad6e75f1c  (/system/asan/lib64/platformsdk/libark_jsruntime.so+0x8b5f1c) (BuildId: a2f4a88f26244f527994da0cefbab138)
+72. #10 0x5af39b2130  (/system/lib64/module/arkcompiler/stub.an+0x332130)
+73. #11 0x5af36897d0  (/system/lib64/module/arkcompiler/stub.an+0x97d0)
+74. #12 0x212092dc04  ([anon:ArkTS Heap5576local space]+0x2dc04)
+
+76. Memory tags around the buggy address (one tag corresponds to 16 bytes): <-shadow memory中储存tag信息，用于和指针的tag做判断
+77. 0x005c2013bf90: b6  b6  08  00  1f  1f  08  00  5a  5a  08  00  45  45  08  00
+78. 0x005c2013bfa0: bc  bc  08  00  3b  3b  08  00  35  35  08  00  9c  9c  08  00
+79. 0x005c2013bfb0: 9e  9e  08  00  d4  d4  08  00  14  14  08  00  ff  ff  08  00
+80. 0x005c2013bfc0: fe  fe  08  00  ec  ec  08  00  67  67  08  00  26  26  08  00
+81. 0x005c2013bfd0: 3e  3e  08  00  5f  5f  08  00  fe  fe  08  00  8b  8b  08  00
+82. 0x005c2013bfe0: 98  98  08  00  c3  c3  08  00  37  37  08  00  87  87  08  00
+83. 0x005c2013bff0: 3f  3f  08  00  02  02  08  00  b3  b3  08  00  fb  fb  08  00
+84. 0x005c2013c000: 56  56  08  00  ad  ad  08  00  02  02  08  00  94  94  08  00
+85. =>0x005c2013c010:[11] 11  08  00  a5  a5  08  00  13  13  08  00  2e  2e  08  00
+86. 0x005c2013c020: 09  09  08  00  68  68  08  00  df  df  08  00  17  17  08  00
+87. 0x005c2013c030: 24  24  08  00  5f  5f  08  00  f9  f9  08  00  05  05  08  00
+88. 0x005c2013c040: 02  02  08  00  78  78  08  00  50  50  08  00  33  33  08  00
+89. 0x005c2013c050: 57  57  08  63  4a  4a  08  4b  a8  a8  08  00  cd  cd  08  00
+90. 0x005c2013c060: e6  e6  08  00  0d  0d  08  00  3c  3c  3c  08  83  83  83  08
+91. 0x005c2013c070: 62  62  62  08  08  08  08  08  35  35  35  08  b5  b5  b5  08
+92. 0x005c2013c080: 87  87  87  08  4d  4d  4d  08  46  46  46  08  0e  0e  0e  08
+93. 0x005c2013c090: 6d  6d  6d  08  7a  7a  7a  08  11  11  11  08  af  af  af  08
+94. Tags for short granules around the buggy address (one tag corresponds to 16 bytes):
+95. 0x005c2013c000: ..  ..  56  ..  ..  ..  ad  ..  97  00  02  ..  ..  ..  94  ..
+96. =>0x005c2013c010:[..] ..  11  ..  ..  ..  a5  ..  ..  ..  13  ..  ..  ..  2e  ..
+97. 0x005c2013c020: 13  00  09  ..  ..  ..  68  ..  ..  ..  df  ..  ..  ..  17  ..
+98. See https://clang.llvm.org/docs/HardwareAssistedAddressSanitizerDesign.html#short-granules for a description of short granule tags
+99. Registers where the failure occurred (pc 0x00651a5c0fa0):
+100. x0  ec00000201e4ee88  x1  3c000004004c6b38  x2  0000000000000000  x3  0000000000000000
+101. x4  6e0000652737ff79  x5  e600000201f631b9  x6  3e000002016b0d10  x7  0000056d1a495b07
+102. x8  0200005bffffffff  x9  0000006527380ff0  x10 0000006527380f18  x11 0000000000000000
+103. x12 073e000002016b0d  x13 000000056d1a495b  x14 000000000000006e  x15 0000000000000000
+104. x16 0000005a3f867ef0  x17 000000651a5c0f64  x18 0000000000000005  x19 d2000002013c0100
+105. x20 0200005c00000000  x21 3c000004004c6b38  x22 ec00000201e4ee80  x23 0000000000000000
+106. x24 b800000000000000  x25 c8000065273804b0  x26 3e000002016b0d08  x27 b8000065273803a0
+107. x28 1700000400263f80  x29 000000652737ffa0  x30 000000651a5c0fa4   sp 000000652737ffa0
+
+109. SUMMARY: HWAddressSanitizer: tag-mismatch (/data/storage/el1/bundle/libs/arm64/libijk.so+0x2c0fa0) (BuildId: 84383086df874d94fa191ddbbc25091cc14992c5)
+
+111. Memory near registers: <-寄存器周边内存
+112. x0([anon:native_heap:jemalloc]):
+113. 0000005a2be445f0 0000000000000000
+114. 0000005a2be445f8 0000000000000000
+115. 0000005a2be44600 000000599a8d0208
+116. 0000005a2be44608 0000005a2be44600
+117. 0000005a2be44610 0000005a2beee520
+118. 0000005a2be44618 0000000000000021
+119. 0000005a2be44620 0000005a2be51800
+120. 0000005a2be44628 0000005a2be48080
+121. 0000005a2be44630 00004c94000000fc
+122. 0000005a2be44638 ffffffffffffffff
+123. 0000005a2be44640 ffffffffffffffff
+124. 0000005a2be44648 ffffffffffffffff
+125. 0000005a2be44650 0000ffffffffffff
+126. 0000005a2be44658 0000005a2be33600
+
+128. Process memory map follows: <- 故障时进程的内存空间
+129. 0x000000010000-0x000100020000 rw-p 00000000 [anon:SizeClassAllocator]
+130. 0x000100020000-0x000101490000 rw-p 00000000 [anon:SizeClassAllocator: region data]
+131. 0x000101490000-0x0001df870000 rw-p 00000000 [anon:SizeClassAllocator]
+132. 0x0001df870000-0x0001e0020000 rw-p 00000000 [anon:SizeClassAllocator: region metadata]
+133. 0x0001e0020000-0x0001e0140000 rw-p 00000000 [anon:SizeClassAllocator: freearray]
+134. 0x0001e0140000-0x000200020000 rw-p 00000000 [anon:SizeClassAllocator]
+135. 0x000200020000-0x000201fd0000 rw-p 00000000 [anon:SizeClassAllocator: region data]
+136. 0x000201fd0000-0x0002dfa20000 rw-p 00000000 [anon:SizeClassAllocator]
+137. 0x0002dfa20000-0x0002e0020000 rw-p 00000000 [anon:SizeClassAllocator: region metadata]
+138. 0x0002e0020000-0x0002e0040000 rw-p 00000000 [anon:SizeClassAllocator: freearray]
+```
+
+### MemDebug日志规格
+
+MemDebug采用隔离区加投毒填充的机制，并复用HWASan的Tag校验的检测工具，对于Double Free类问题，其日志规格和HWASan一致。
+
+```
+1. Device info:XXX <- 设备信息
+2. Build info:XXX-XXXX x.x.x.xx(xxxxxxx) <- 版本信息
+3. Fingerprint:77cdc69cef714391a08c7cb1ceec8b8f9b02900fc6588e4231c2f8750b2bf330 <- 特征信息
+4. Timestamp:xxxx-xx-xx xx:xx:xx.xxx <- 时间戳
+5. Module name:com.example.sampleapplication <- 模块名
+6. Version:1.0.0 <- 版本号
+7. Pid:62642 <- 进程号
+8. Uid:20020185 <- 用户ID
+9. Reason:use-after-free <- 触发原因
+
+11. ==appspawn==62642==ERROR: HWAddressSanitizer: invalid-free on address 0x000100945e20 at pc 0x005a16a634fc on thread 62642 <- 问题概述
+12. tags: 57/e9 (ptr/mem)
+13. #0 0x5a16a634fc  (/system/lib64/xxxxxxxxx.so+0xxxxxxxx) (BuildId: xxxxxxxxxxxxxxxxxxxxxxxxx) <- 调用栈信息
+14. #1 0x5ac1f47c94  (/data/storage/xxxxxxx.so+0xxxxx) (BuildId: xxxxxxxxxxxxxxxxxxxxxxxxxxxx)
+15. ...
+
+17. [0x000100945e20,0x000100945e40) is a small unallocated heap chunk; size: 32 offset: 0, Allocated By 62642 <- 内存块信息概述
+
+19. Potential Cause: use-after-free <- 可能的触发原因1
+20. 0x000100945e20 (rb[50] tags:57) is located 0 bytes inside of 16-byte region [0x000100945e20,0x000100945e30)
+21. freed by thread 62642 here: <- 调用栈信息
+22. #0 0x5a16a6b070  (/system/lib64/xxxxxx.so+0xxxxxxx) (BuildId: xxxxxxxxxxxxxxxxxxxxxxx)
+23. #1 0x5ac2fce684  (/system/lib64/xxxxxxxx.so+0xxxxx) (BuildId: xxxxxxxxxxxxxxxxxxxxxxx)
+24. ...
+
+26. previously allocated by thread 62642 here:
+27. #0 0x5a16a6b070  (/system/lib64/xxxxxx.so+0xxxxxxx) (BuildId: xxxxxxxxxxxxxxxxxxxxxxx)
+28. #1 0x5ac2fce684  (/system/lib64/xxxxxxxx.so+0xxxxx) (BuildId: xxxxxxxxxxxxxxxxxxxxxxx)
+29. ...
+
+31. hwasan_dev_note_heap_rb_distance: 51 1023000
+32. Thread: T0 0x005b00002000 stack: [0x007fb3025000,0x007fb3824000) sz: 8384512 tls: [0x005a16107a98,0x005a16108279) rb:(1023000/1023000) records(1301994/o:0) tid: 62642
+33. Searched 1028682 records, find 1 with same addr 0x000100945e20
+
+36. Cause: heap-buffer-overflow <- 可能的触发原因2
+37. 0x000100945e20 is located 2400 bytes to the left of 24-byte region [0x000100946780,0x000100946798)
+38. allocated here:
+39. #0 0x5a16a6b070  (/system/lib64/xxxxxx.so+0xxxxxxx) (BuildId: xxxxxxxxxxxxxxxxxxxxxxx)
+40. #1 0x5ac2fce684  (/system/lib64/xxxxxxxx.so+0xxxxx) (BuildId: xxxxxxxxxxxxxxxxxxxxxxx)
+41. ...
+
+43. 每个线程ringbuffer信息
+44. Thread: T0 0x005b00002000 stack: [0x007fb3025000,0x007fb3824000) sz: 8384512 tls: [0x005a16107a98,0x005a16108279) rb:(1023000/1023000) records(1301994/o:0) tid: 62642
+45. Thread: T6 0x005b0000a000 stack: [0x005ab7b64000,0x005ab7c64978) sz: 1051000 tls: [0x005ab7c64978,0x005ab7c64bc2) rb:(2/1023) records(2/o:0) tid: 62702
+46. Thread: T7 0x005b00016000 stack: [0x005abf7b4000,0x005abf8b4978) sz: 1051000 tls: [0x005abf8b4978,0x005abf8b4bc2) rb:(1023/1023) records(1133/o:0) tid: 62703
+47. Thread: T8 0x005b0000e000 stack: [0x005abf8b7000,0x005abf9b7978) sz: 1051000 tls: [0x005abf9b7978,0x005abf9b7bc2) rb:(123/1023) records(123/o:0) tid: 62704
+48. ...
+
+50. tag信息
+51. Memory tags around the buggy address (one tag corresponds to 16 bytes):
+52. ...
+53. 0x005c100945d0: ea  08  fa  fa  ab  ab  cb  08  32  c6  64  08  f7  f7  68  68
+54. =>0x005c100945e0: 96  08 [e9] e7  c9  c9  36  36  18  08  ef  d9  80  08  8e  08
+55. 0x005c100945f0: ba  08  98  98  b6  1b  63  63  08  00  bb  52  74  08  84  08
+56. ...
+57. Tags for short granules around the buggy address (one tag corresponds to 16 bytes):
+58. 0x005c100945d0: ..  ea  ..  ..  ..  ..  ..  cb  ..  ..  ..  64  ..  ..  ..  ..
+59. =>0x005c100945e0: ..  96 [..] ..  ..  ..  ..  ..  ..  18  ..  ..  ..  80  ..  8e
+60. 0x005c100945f0: ..  ba  ..  ..  ..  ..  ..  ..  64  ..  ..  ..  ..  74  ..  84
+61. See https://clang.llvm.org/docs/HardwareAssistedAddressSanitizerDesign.html#short-granules for a description of short granule tags
+62. SUMMARY: HWAddressSanitizer: invalid-free (/system/lib64/xxxxxx.xxxxx.so+0xxxxxx) (BuildId: xxxxxxxxxxxxxxxxxxxxxxxxxxx)
+
+64. 进程maps信息
+65. ==appspawn==62642==Process memory map follows:
+66. 0x000000010000-0x000100020000
+67. 0x000100020000-0x000100030000   [anon:SizeClassAllocator: region data]
+68. 0x000100030000-0x000100040000   [anon:SizeClassAllocator: region data]
+69. ...
+```
+
+对于Use-After-Free（Write）类问题，日志在问题概述部分会有所不同。示例输出如下：
+
+```
+1. ptrBeg was re-written after free 0x000100946540[1], 0x000100946548 5555555500000009:5555555555555555
+```
+
+其中，0x000100946540问题内存块起始地址，[1]为检测出问题的内存基于起始地址的8字节偏移数，0x000100946548为实际被修改的地址，5555555500000009:5555555555555555表示内存中的内容被修改后的实际值和预期值的对比。在该信息之后，日志还会输出对应内存块的释放堆栈和分配堆栈，调用栈的格式与HWASan日志一致，此处不再赘述。
+
+### GWP-ASan日志规格
+
+GWP-ASan的日志格式较为简洁，以下示例为典型的Use-After-Free问题日志，包含内存块的分配、释放及违规访问的调用栈信息。
+
+```
+1. Device info:XXX <- 设备信息
+2. Build info:XXX-XXXX x.x.x.xx(xxxxxxx) <- 版本信息
+3. Fingerprint:c41391f9c18acc1121ea519ffdba5698bfb5342ae7125e20ebf2865e31249f1a<- 特征信息
+4. Timestamp:xxxx-xx-xx xx:xx:xx.xxx <- 时间戳
+5. Module name:com.example.sampleapplication <- 模块名
+6. Version:1.0.0 <- 版本号
+7. Pid:13305<- 进程号
+8. Uid:20020181 <- 用户ID
+9. Reason:GWP-ASAN <- Reason固定为GWP-ASAN
+10. *** GWP-ASan detected a memory error ***
+11. Use After Free at 0x5b46ddaff0 (0 bytes into a 16-byte allocation at 0x5b46ddaff0) by thread 13305 here: <- 问题概述，描述了一个UAF问题
+12. #0 0x5c474f049c (/data/storage/xxxxxx.so+0x3049c) <- 调用栈信息
+13. #1 0x5c474fa8c0 (/data/storage/xxxxxx.so+0x3a8c0)
+14. #2 0x5c474fa870 (/data/storage/xxxxxx.so+0x3a870)
+15. #3 0x5c474fa834 (/data/storage/xxxxxx.so+0x3a834)
+16. #4 0x5c474fa7d4 (/data/storage/xxxxxx.so+0x3a7d4)
+17. #5 0x5c474fa4a0 (/data/storage/xxxxxx.so+0x3a4a0)
+18. #6 0x5b2d444c04 (/system/lib64/platformsdk/libace_napi.z.so+0x44c04)
+19. #7 0x5b401d484c
+20. #8 0x5b3fc11d7c
+21. #9 0xfffffffffffffffe
+22. 0x5b46ddaff0 was deallocated by thread 13305 here: <- 问题概述，此处是释放的栈
+23. #0 0x5aa0c0be2c (/lib/ld-musl-aarch64.so.1+0x13de2c) <- 调用栈信息
+24. #1 0x5aa0c0b97c (/lib/ld-musl-aarch64.so.1+0x13d97c)
+25. #2 0x5c474f0494 (/data/storage/xxxxxx.so+0x30494)
+26. #3 0x5c474fa8c0 (/data/storage/xxxxxx.so+0x3a8c0)
+27. #4 0x5c474fa870 (/data/storage/xxxxxx.so+0x3a870)
+28. #5 0x5c474fa834 (/data/storage/xxxxxx.so+0x3a834)
+29. #6 0x5c474fa7d4 (/data/storage/xxxxxx.so+0x3a7d4)
+30. #7 0x5c474fa4a0 (/data/storage/xxxxxx.so+0x3a4a0)
+31. #8 0x5b2d444c04 (/system/lib64/xxxxxx.so+0x44c04)
+32. #9 0x5b401d484c
+33. #10 0x5b3fc11d7c
+34. #11 0xfffffffffffffffe
+35. 0x5b46ddaff0 was allocated by thread 13305 here: <- 问题概述，此处是申请的栈
+36. #0 0x5aa0c0be2c (/lib/ld-musl-aarch64.so.1+0x13de2c) <- 调用栈信息
+37. #1 0x5aa0c0b77c (/lib/ld-musl-aarch64.so.1+0x13d77c)
+38. #2 0x5aa0c22e5c (/lib/ld-musl-aarch64.so.1+0x154e5c)
+39. #3 0x5c474f047c (/data/storage/xxxxxx.so+0x3047c)
+40. #4 0x5c474fa8c0 (/data/storage/xxxxxx.so+0x3a8c0)
+41. #5 0x5c474fa870 (/data/storage/xxxxxx.so+0x3a870)
+42. #6 0x5c474fa834 (/data/storage/xxxxxx.so+0x3a834)
+43. #7 0x5c474fa7d4 (/data/storage/xxxxxx.so+0x3a7d4)
+44. #8 0x5c474fa4a0 (/data/storage/xxxxxx.so+0x3a4a0)
+45. #9 0x5b2d444c04 (/system/lib64/xxxxxx.so+0x44c04)
+46. #10 0x5b401d484c
+47. #11 0x5b3fc11d7c
+48. #12 0xfffffffffffffffe
+49. * End GWP-ASan report *
+```
+
+## AddrSanitizer聚类
+
+### 聚类简介
+
+应用程序在不同版本或同一版本的不同时间，AddrSanitizer可能因同一原因产生故障，但AddrSanitizer故障日志中的大部分信息会随版本、时间等因素变化，导致难以快速判断是否为重复问题。此外，AddrSanitizer故障信息中包含系统侧和应用侧的调用栈，这不利于开发者快速定位和排查应用侧的问题。
+
+因此，为避免重复分析多份故障信息，提高应用故障问题的分析效率，需要对AddrSanitizer故障信息进行聚类；同时，聚类也能帮助开发者对不同原因问题进行分类统计。
+
+判断多份日志是否属于同一问题，主要基于以下两个维度：
+
+* 地址越界的故障类型。
+* 业务相关调用栈，过滤基础库后的栈顶前两帧。
+
+通过上述信息可对问题进行初步定界。
+
+### 提取聚类信息
+
+1. **提取故障类型**
+
+   不同类型日志的故障类型提取方式如下：
+
+   * GWP-ASan
+
+     在[GWP-ASan日志](address-sanitizer-guidelines.md#gwp-asan日志规格)中，故障类型根据原始日志中包含"at"的行提取。可能的故障类型包括Use After Free、Double Free、Invalid (Wild) Free等，详细类型说明可参考[GWP-ASan异常检测类型](../best-practices/bpta-stability-gwpasan-detection.md#section73731529454)。
+   * ASan/HWASan/MemDebug
+
+     在[ASan](address-sanitizer-guidelines.md#asan日志规格)、[HWASan](address-sanitizer-guidelines.md#hwasan日志规格)和[MemDebug](address-sanitizer-guidelines.md#memdebug日志规格)日志中，故障原因通过日志中的"Reason"字段提取，提取结果将作为后续聚类依据。详细字段说明可参考[AddrSanitizer日志type字段说明](hiappevent-watcher-address-sanitizer-events.md)。
+2. **标准化栈信息**
+
+   提取故障类型作为特征后，首先使用正则匹配筛选堆栈内容。然后，为了确保聚类准确性，需要对堆栈信息进行标准化和清洗。主要规则如下：
+
+   * 去除易变信息：行号、相同的BuildID和绝对地址。
+   * 过滤基础库栈帧：
+
+     ```
+     1. libc.so
+     2. libc++.so
+     3. libclang_rt.hwasan.so
+     4. libclang_rt.asan.so
+     5. ld-musl-aarch64-asan.so
+     6. ld-musl-aarch64.so
+     ```
+   * 保留业务相关栈帧：保留业务so路径作为关键特征。
+
+   对调用栈进行标准化后，最后得到的特征栈如下：
+
+   | 原始栈帧内容 | 标准化后栈帧内容 |
+   | --- | --- |
+   | #0 0x5b6d263a58 (/system/lib64/libclang\_rt.hwasan.so+0x23a58) (BuildId: a1396c21a0290124b0e0ebd03a4cced52b1addcc) | 忽略（基础库） |
+   | #1 0x661be0e870 (/data/storage/el1/bundle/libs/arm64/libentry.so+0x4e870) (BuildId: 5bc0684c2c3fc90841c2498efe1af4fd4792e5a8) | /data/storage/el1/bundle/libs/arm64/libentry.so+0x4e870 |
+
+### 提取聚类特征
+
+在完成标准化后，根据不同故障类型提取关键栈作为特征：
+
+1. Use After Free
+
+   | 故障特征 | 来源 | 提取规则 |
+   | --- | --- | --- |
+   | 故障特征1 | 使用栈 | 过滤基础库后，取栈顶的前两帧（so名+相对偏移） |
+   | 故障特征2 | 释放栈 | 过滤基础库后，取栈顶的前两帧（so名+相对偏移） |
+2. Double Free
+
+   | 故障特征 | 来源 | 提取规则 |
+   | --- | --- | --- |
+   | 故障特征1 | 第一次释放栈 | 过滤基础库后，取栈顶的前两帧（so名+相对偏移） |
+   | 故障特征2 | 第二次释放栈 | 过滤基础库后，取栈顶的前两帧（so名+相对偏移） |
+3. 其他故障类型
+
+   | 故障特征 | 来源 | 提取规则 |
+   | --- | --- | --- |
+   | 故障特征 | 使用栈 | 过滤基础库后，取栈顶的前两帧（so名+相对偏移） |
+
+### 生成聚类特征
+
+最终聚类特征为：故障类型+若干条标准化业务栈帧，以GWP-ASan日志为例：
+
+```
+1. *** GWP-ASan detected a memory error ***
+2. Use After Free at 0x5bab376000 (0 bytes into a 64-byte allocation at 0x5bab376000) by thread 52616 here:
+3. #0 0x5cad4c7ba4  (/data/storage/el1/bundle/libs/arm64/libsample.so+0x7ba4) (BuildId: 2a3f1826c75a903f89c46b8ffcd1846295fdebcf)
+4. #1 0x5cad4c849c  (/data/storage/el1/bundle/libs/arm64/libsample.so+0x849c) (BuildId: 2a3f1826c75a903f89c46b8ffcd1846295fdebcf)
+5. #2 0x5aef3bc03c  (/lib/ld-musl-aarch64.so.1+0x1dd03c) (BuildId: c89ea5bf4368de59af764818c03eb41b)
+6. 0x5bab376000 was deallocated by thread 52616 here:
+7. #0 0x5aef331010  (/lib/ld-musl-aarch64.so.1+0x152010) (BuildId: c89ea5bf4368de59af764818c03eb41b)
+8. #1 0x5aef329614  (/lib/ld-musl-aarch64.so.1+0x14a614) (BuildId: c89ea5bf4368de59af764818c03eb41b)
+9. #2 0x5cad4c7b9c  (/data/storage/el1/bundle/libs/arm64/libsample.so+0x7b9c) (BuildId: 2a3f1826c75a903f89c46b8ffcd1846295fdebcf)
+10. #3 0x5cad4c849c  (/data/storage/el1/bundle/libs/arm64/libsample.so+0x849c) (BuildId: 2a3f1826c75a903f89c46b8ffcd1846295fdebcf)
+11. #4 0x5cad4c8434  (/data/storage/el1/bundle/libs/arm64/libsample.so+0x8434) (BuildId: 2a3f1826c75a903f89c46b8ffcd1846295fdebcf)
+12. 0x5bab376000 was allocated by thread 52616 here:
+13. #0 0x5aef331010  (/lib/ld-musl-aarch64.so.1+0x152010) (BuildId: c89ea5bf4368de59af764818c03eb41b)
+14. #1 0x5aef3292e4  (/lib/ld-musl-aarch64.so.1+0x14a2e4) (BuildId: c89ea5bf4368de59af764818c03eb41b)
+15. #2 0x5aef34b5e0  (/lib/ld-musl-aarch64.so.1+0x16c5e0) (BuildId: c89ea5bf4368de59af764818c03eb41b)
+16. #3 0x5cad4c7b84  (/data/storage/el1/bundle/libs/arm64/libsample.so+0x7b84) (BuildId: 2a3f1826c75a903f89c46b8ffcd1846295fdebcf)
+17. #4 0x5cad4c849c  (/data/storage/el1/bundle/libs/arm64/libsample.so+0x849c) (BuildId: 2a3f1826c75a903f89c46b8ffcd1846295fdebcf)
+18. *** End GWP-ASan report ***
+```
+
+根据聚类规则：
+
+* 从“at”处提取故障类型：Use After Free。
+* 分别对使用栈与释放栈进行标准化。
+* 过滤基础库栈帧后，取栈顶前两帧作为关键特征。
+
+最终生成的聚类特征如下：
+
+| 故障特征 | 聚类特征 |
+| --- | --- |
+| 故障特征1-使用栈 | /data/storage/el1/bundle/libs/arm64/libsample.so+0x7ba4  /data/storage/el1/bundle/libs/arm64/libsample.so+0x849c |
+| 故障特征2-释放栈 | /data/storage/el1/bundle/libs/arm64/libsample.so+0x7b9c  /data/storage/el1/bundle/libs/arm64/libsample.so+0x849c |
+
+开发者可通过比对多份日志的聚类特征来归并AddrSanitizer故障，也可以对故障类型和故障特征内容计算哈希值，用于问题分类统计与自动化分析。

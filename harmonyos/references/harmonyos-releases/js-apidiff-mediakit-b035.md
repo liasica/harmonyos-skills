@@ -1,0 +1,43 @@
+---
+url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/js-apidiff-mediakit-b035
+title: Media Kit
+breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.0.0(12) > OS平台能力 > API变更清单 > HarmonyOS NEXT Developer Beta3引入的API > Media Kit
+category: harmonyos-releases
+scraped_at: 2026-04-28T07:36:31+08:00
+doc_updated_at: 2026-01-21
+content_hash: sha256:4f487564fed6b926571987e0d71383f2ac30fd80c1b80a2997a82b4d33843017
+---
+
+| 操作 | 旧版本 | 新版本 | d.ts文件 |
+| --- | --- | --- | --- |
+| 函数变更 | 类名：AVPlayer；  API声明：off(type: 'stateChange'): void;  差异内容：NA | 类名：AVPlayer；  API声明：off(type: 'stateChange', callback?: OnAVPlayerStateChangeHandle): void;  差异内容：callback?: OnAVPlayerStateChangeHandle | api/@ohos.multimedia.media.d.ts |
+| 函数变更 | 类名：AVPlayer；  API声明：off(type: 'volumeChange'): void;  差异内容：NA | 类名：AVPlayer；  API声明：off(type: 'volumeChange', callback?: Callback<number>): void;  差异内容：callback?: Callback<number> | api/@ohos.multimedia.media.d.ts |
+| 函数变更 | 类名：AVPlayer；  API声明：off(type: 'endOfStream'): void;  差异内容：NA | 类名：AVPlayer；  API声明：off(type: 'endOfStream', callback?: Callback<void>): void;  差异内容：callback?: Callback<void> | api/@ohos.multimedia.media.d.ts |
+| 函数变更 | 类名：AVPlayer；  API声明：off(type: 'seekDone'): void;  差异内容：NA | 类名：AVPlayer；  API声明：off(type: 'seekDone', callback?: Callback<number>): void;  差异内容：callback?: Callback<number> | api/@ohos.multimedia.media.d.ts |
+| 函数变更 | 类名：AVPlayer；  API声明：off(type: 'speedDone'): void;  差异内容：NA | 类名：AVPlayer；  API声明：off(type: 'speedDone', callback?: Callback<number>): void;  差异内容：callback?: Callback<number> | api/@ohos.multimedia.media.d.ts |
+| 函数变更 | 类名：AVPlayer；  API声明：off(type: 'bitrateDone'): void;  差异内容：NA | 类名：AVPlayer；  API声明：off(type: 'bitrateDone', callback?: Callback<number>): void;  差异内容：callback?: Callback<number> | api/@ohos.multimedia.media.d.ts |
+| 函数变更 | 类名：AVPlayer；  API声明：off(type: 'timeUpdate'): void;  差异内容：NA | 类名：AVPlayer；  API声明：off(type: 'timeUpdate', callback?: Callback<number>): void;  差异内容：callback?: Callback<number> | api/@ohos.multimedia.media.d.ts |
+| 函数变更 | 类名：AVPlayer；  API声明：off(type: 'durationUpdate'): void;  差异内容：NA | 类名：AVPlayer；  API声明：off(type: 'durationUpdate', callback?: Callback<number>): void;  差异内容：callback?: Callback<number> | api/@ohos.multimedia.media.d.ts |
+| 函数变更 | 类名：AVPlayer；  API声明：off(type: 'bufferingUpdate'): void;  差异内容：NA | 类名：AVPlayer；  API声明：off(type: 'bufferingUpdate', callback?: OnBufferingUpdateHandler): void;  差异内容：callback?: OnBufferingUpdateHandler | api/@ohos.multimedia.media.d.ts |
+| 函数变更 | 类名：AVPlayer；  API声明：off(type: 'startRenderFrame'): void;  差异内容：NA | 类名：AVPlayer；  API声明：off(type: 'startRenderFrame', callback?: Callback<void>): void;  差异内容：callback?: Callback<void> | api/@ohos.multimedia.media.d.ts |
+| 函数变更 | 类名：AVPlayer；  API声明：off(type: 'videoSizeChange'): void;  差异内容：NA | 类名：AVPlayer；  API声明：off(type: 'videoSizeChange', callback?: OnVideoSizeChangeHandler): void;  差异内容：callback?: OnVideoSizeChangeHandler | api/@ohos.multimedia.media.d.ts |
+| 函数变更 | 类名：AVPlayer；  API声明：off(type: 'audioInterrupt'): void;  差异内容：NA | 类名：AVPlayer；  API声明：off(type: 'audioInterrupt', callback?: Callback<audio.InterruptEvent>): void;  差异内容：callback?: Callback<audio.InterruptEvent> | api/@ohos.multimedia.media.d.ts |
+| 函数变更 | 类名：AVPlayer；  API声明：off(type: 'availableBitrates'): void;  差异内容：NA | 类名：AVPlayer；  API声明：off(type: 'availableBitrates', callback?: Callback<Array<number>>): void;  差异内容：callback?: Callback<Array<number>> | api/@ohos.multimedia.media.d.ts |
+| 函数变更 | 类名：AVPlayer；  API声明：off(type: 'error'): void;  差异内容：NA | 类名：AVPlayer；  API声明：off(type: 'error', callback?: ErrorCallback): void;  差异内容：callback?: ErrorCallback | api/@ohos.multimedia.media.d.ts |
+| 函数变更 | 类名：AVRecorder；  API声明：off(type: 'stateChange'): void;  差异内容：NA | 类名：AVRecorder；  API声明：off(type: 'stateChange', callback?: OnAVRecorderStateChangeHandler): void;  差异内容：callback?: OnAVRecorderStateChangeHandler | api/@ohos.multimedia.media.d.ts |
+| 函数变更 | 类名：AVRecorder；  API声明：off(type: 'error'): void;  差异内容：NA | 类名：AVRecorder；  API声明：off(type: 'error', callback?: ErrorCallback): void;  差异内容：callback?: ErrorCallback | api/@ohos.multimedia.media.d.ts |
+| 函数变更 | 类名：AVRecorder；  API声明：off(type: 'audioCapturerChange'): void;  差异内容：NA | 类名：AVRecorder；  API声明：off(type: 'audioCapturerChange', callback?: Callback<audio.AudioCapturerChangeInfo>): void;  差异内容：callback?: Callback<audio.AudioCapturerChangeInfo> | api/@ohos.multimedia.media.d.ts |
+| 函数变更 | 类名：AVPlayer；  API声明：on(type: 'mediaKeySystemInfoUpdate', callback: (mediaKeySystemInfo: Array<drm.MediaKeySystemInfo>) => void): void;  差异内容：callback: (mediaKeySystemInfo: Array<drm.MediaKeySystemInfo>) => void | 类名：AVPlayer；  API声明：on(type: 'mediaKeySystemInfoUpdate', callback: Callback<Array<drm.MediaKeySystemInfo>>): void;  差异内容：callback: Callback<Array<drm.MediaKeySystemInfo>> | api/@ohos.multimedia.media.d.ts |
+| 函数变更 | 类名：AVPlayer；  API声明：off(type: 'mediaKeySystemInfoUpdate', callback?: (mediaKeySystemInfo: Array<drm.MediaKeySystemInfo>) => void): void;  差异内容：callback?: (mediaKeySystemInfo: Array<drm.MediaKeySystemInfo>) => void | 类名：AVPlayer；  API声明：off(type: 'mediaKeySystemInfoUpdate', callback?: Callback<Array<drm.MediaKeySystemInfo>>): void;  差异内容：callback?: Callback<Array<drm.MediaKeySystemInfo>> | api/@ohos.multimedia.media.d.ts |
+| 函数变更 | 类名：AVPlayer；  API声明：on(type: 'stateChange', callback: (state: AVPlayerState, reason: StateChangeReason) => void): void;  差异内容：callback: (state: AVPlayerState, reason: StateChangeReason) => void | 类名：AVPlayer；  API声明：on(type: 'stateChange', callback: OnAVPlayerStateChangeHandle): void;  差异内容：callback: OnAVPlayerStateChangeHandle | api/@ohos.multimedia.media.d.ts |
+| 函数变更 | 类名：AVPlayer；  API声明：on(type: 'bufferingUpdate', callback: (infoType: BufferingInfoType, value: number) => void): void;  差异内容：callback: (infoType: BufferingInfoType, value: number) => void | 类名：AVPlayer；  API声明：on(type: 'bufferingUpdate', callback: OnBufferingUpdateHandler): void;  差异内容：callback: OnBufferingUpdateHandler | api/@ohos.multimedia.media.d.ts |
+| 函数变更 | 类名：AVPlayer；  API声明：on(type: 'videoSizeChange', callback: (width: number, height: number) => void): void;  差异内容：callback: (width: number, height: number) => void | 类名：AVPlayer；  API声明：on(type: 'videoSizeChange', callback: OnVideoSizeChangeHandler): void;  差异内容：callback: OnVideoSizeChangeHandler | api/@ohos.multimedia.media.d.ts |
+| 函数变更 | 类名：AVPlayer；  API声明：on(type: 'audioInterrupt', callback: (info: audio.InterruptEvent) => void): void;  差异内容：callback: (info: audio.InterruptEvent) => void | 类名：AVPlayer；  API声明：on(type: 'audioInterrupt', callback: Callback<audio.InterruptEvent>): void;  差异内容：callback: Callback<audio.InterruptEvent> | api/@ohos.multimedia.media.d.ts |
+| 函数变更 | 类名：AVPlayer；  API声明：on(type: 'availableBitrates', callback: (bitrates: Array<number>) => void): void;  差异内容：callback: (bitrates: Array<number>) => void | 类名：AVPlayer；  API声明：on(type: 'availableBitrates', callback: Callback<Array<number>>): void;  差异内容：callback: Callback<Array<number>> | api/@ohos.multimedia.media.d.ts |
+| 函数变更 | 类名：AVRecorder；  API声明：on(type: 'stateChange', callback: (state: AVRecorderState, reason: StateChangeReason) => void): void;  差异内容：callback: (state: AVRecorderState, reason: StateChangeReason) => void | 类名：AVRecorder；  API声明：on(type: 'stateChange', callback: OnAVRecorderStateChangeHandler): void;  差异内容：callback: OnAVRecorderStateChangeHandler | api/@ohos.multimedia.media.d.ts |
+| 新增API | NA | 类名：media；  API声明：type OnAVPlayerStateChangeHandle = (state: AVPlayerState, reason: StateChangeReason) => void;  差异内容：type OnAVPlayerStateChangeHandle = (state: AVPlayerState, reason: StateChangeReason) => void; | api/@ohos.multimedia.media.d.ts |
+| 新增API | NA | 类名：media；  API声明：type OnBufferingUpdateHandler = (infoType: BufferingInfoType, value: number) => void;  差异内容：type OnBufferingUpdateHandler = (infoType: BufferingInfoType, value: number) => void; | api/@ohos.multimedia.media.d.ts |
+| 新增API | NA | 类名：media；  API声明：type OnVideoSizeChangeHandler = (width: number, height: number) => void;  差异内容：type OnVideoSizeChangeHandler = (width: number, height: number) => void; | api/@ohos.multimedia.media.d.ts |
+| 新增API | NA | 类名：media；  API声明：type OnAVRecorderStateChangeHandler = (state: AVRecorderState, reason: StateChangeReason) => void;  差异内容：type OnAVRecorderStateChangeHandler = (state: AVRecorderState, reason: StateChangeReason) => void; | api/@ohos.multimedia.media.d.ts |
+| 新增API | NA | 类名：ContainerFormatType；  API声明：CFT\_MP3 = 'mp3'  差异内容：CFT\_MP3 = 'mp3' | api/@ohos.multimedia.media.d.ts |
+| 新增API | NA | 类名：CodecMimeType；  API声明：AUDIO\_MP3 = 'audio/mpeg'  差异内容：AUDIO\_MP3 = 'audio/mpeg' | api/@ohos.multimedia.media.d.ts |

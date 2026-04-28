@@ -1,0 +1,149 @@
+---
+url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hilog-guidelines-ndk
+title: 使用HiLog打印日志（C/C++）
+breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 日志打印 > 使用HiLog打印日志（C/C++）
+category: harmonyos-guides
+scraped_at: 2026-04-28T07:45:00+08:00
+doc_updated_at: 2026-03-12
+content_hash: sha256:635a50d8e655fa1263a046cafc1733625adb09de29713133bd07b9a462f02d12
+---
+
+在应用开发过程中，可在关键代码处输出日志信息。在运行应用后，通过查看日志信息来分析应用执行情况（如应用是否正常运行、代码运行时序、运行逻辑分支是否正常等）。
+
+HiLog日志系统，提供给系统框架、服务、以及应用，用于打印日志，记录用户操作、系统运行状态等。
+
+## 接口说明
+
+HiLog中定义了DEBUG、INFO、WARN、ERROR、FATAL五种日志级别，并提供了对应的方法输出不同级别的日志，接口如下表所示，具体说明可查阅[log.h](../harmonyos-references/capi-log-h.md)。
+
+| 方法/宏 | 接口描述 |
+| --- | --- |
+| bool OH\_LOG\_IsLoggable(unsigned int domain, const char \*tag, LogLevel level) | 检查指定domain、tag和日志级别的日志是否可以打印。  如果指定日志可以打印则返回true；否则返回false。 |
+| int OH\_LOG\_Print(LogType type, LogLevel level, unsigned int domain, const char \*tag, const char \*fmt, ...) | 输出指定domain、tag和日志级别的日志，并按照printf格式类型和隐私指示确定需要输出的变参。  返回值大于等于0表示成功，小于0表示失败。 |
+| int OH\_LOG\_PrintMsg(LogType type, LogLevel level, unsigned int domain, const char \*tag, const char \*message) | 输出指定domain、tag和日志级别的日志字符串。  返回值大于等于0表示成功，小于0表示失败。  **说明**：从API version 18开始，支持该接口。 |
+| int OH\_LOG\_PrintMsgByLen(LogType type, LogLevel level, unsigned int domain, const char \*tag, size\_t tagLen, const char \*message, size\_t messageLen) | 输出指定domain、tag和日志级别的日志字符串，需要指定tag及字符串长度。  返回值大于等于0表示成功，小于0表示失败。  **说明**：从API version 18开始，支持该接口。 |
+| int OH\_LOG\_VPrint(LogType type, LogLevel level, unsigned int domain, const char \*tag, const char \*fmt, va\_list ap) | 等效于OH\_LOG\_Print，但是参数列表为va\_list。  **说明**：从API version 18开始，支持该接口。 |
+| #define OH\_LOG\_DEBUG(type, ...) ((void)OH\_LOG\_Print((type), LOG\_DEBUG, LOG\_DOMAIN, LOG\_TAG, **VA\_ARGS**)) | DEBUG级别写日志，宏封装接口。 |
+| #define OH\_LOG\_INFO(type, ...) ((void)OH\_LOG\_Print((type), LOG\_INFO, LOG\_DOMAIN, LOG\_TAG, **VA\_ARGS**)) | INFO级别写日志，宏封装接口。 |
+| #define OH\_LOG\_WARN(type, ...) ((void)OH\_LOG\_Print((type), LOG\_WARN, LOG\_DOMAIN, LOG\_TAG, **VA\_ARGS**)) | WARN级别写日志，宏封装接口。 |
+| #define OH\_LOG\_ERROR(type, ...) ((void)OH\_LOG\_Print((type), LOG\_ERROR, LOG\_DOMAIN, LOG\_TAG, **VA\_ARGS**)) | ERROR级别写日志，宏封装接口。 |
+| #define OH\_LOG\_FATAL(type, ...) ((void)OH\_LOG\_Print((type), LOG\_FATAL, LOG\_DOMAIN, LOG\_TAG, **VA\_ARGS**)) | FATAL级别写日志，宏封装接口。 |
+| void OH\_LOG\_SetCallback(LogCallback callback) | 注册函数，注册后可通过LogCallback回调获取本进程的hilog日志。若OH\_LOG\_IsLoggable接口返回true，则回调函数可获取到该条日志。 |
+| void OH\_LOG\_SetMinLogLevel(LogLevel level) | 设置应用日志打印的最低日志级别，用于拦截低级别日志打印。  **说明**：从API version 15开始，支持该接口。 |
+| void OH\_LOG\_SetLogLevel(LogLevel level, PreferStrategy prefer) | 设置当前应用程序进程的最低日志级别。可以配置不同的偏好策略。  **说明**：从API version 21开始，支持该接口。 |
+
+注意
+
+hilog日志接口是非信号安全函数，禁止在信号处理函数中调用非信号安全的hilog日志接口。
+
+如果设置的日志级别低于[全局日志级别](hilog.md#查看和设置日志级别)，OH\_LOG\_SetMinLogLevel()设置不生效。
+
+debug版本应用下，OH\_LOG\_SetMinLogLevel()和OH\_LOG\_SetLogLevel()函数均不生效。
+
+### 参数解析
+
+* domain：用于指定输出日志所对应的业务领域，取值范围为0x0000~0xFFFF，开发者可以根据需要进行自定义。
+* tag：用于指定日志标识，可以为任意字符串，建议标识调用所在的类或者业务行为。tag最多为31字节，超出后会截断。不建议使用中文字符，可能出现乱码或者对齐问题。
+* level：用于指定日志级别。取值见[LogLevel](../harmonyos-references/capi-log-h.md#loglevel)。
+* prefer：用于指定偏好策略。取值见[PreferStrategy](../harmonyos-references/capi-log-h.md#preferstrategy)。
+* fmt：格式字符串，用于日志的格式化输出。日志打印的格式化参数需按照“%{private flag}specifier”的格式打印。
+
+  | 隐私标识符（private flag） | 说明 |
+  | --- | --- |
+  | private | 表示日志打印结果不可见，输出结果为<private>。 |
+  | public | 表示日志打印结果可见，明文显示参数。 |
+  | 无 | 缺省值默认为private，日志打印结果不可见。 |
+
+  | 格式说明符（specifier） | 说明 | 示例 |
+  | --- | --- | --- |
+  | d/i | 支持打印十进制整数类型。 | 123 |
+  | s | 支持打印char\*类型。 | "this is a hilog" |
+
+  格式字符串中可以设置多个参数，例如格式字符串为"%s World"，“%s”为参数类型为字符串的变参标识，具体取值在args中定义，格式说明符使用参考[printf](https://man7.org/linux/man-pages/man3/printf.3.html)。
+
+  debug应用无隐私管控机制，使用上述任意隐私标识符打印日志，都可明文显示参数。
+* args：可以为0个或多个参数，是格式字符串中参数类型对应的参数列表。参数的数量、类型必须与格式字符串中的标识一一对应。
+
+说明
+
+* OH\_LOG\_IsLoggable()和OH\_LOG\_Print()使用的domain、tag和level应保持一致。
+* OH\_LOG\_IsLoggable()返回值：如果指定的domain、tag、level日志可以打印则返回true；否则返回false。
+
+  debug应用：不做日志级别管控，所有级别日志都能够正常打印出来；
+
+  release应用：按照全局日志级别管控，当日志的级别不低于全局日志级别时，才能正常打印出来；
+
+  调试过程中，可手动修改日志级别，参考：[查看和设置日志级别](hilog.md#查看和设置日志级别)。
+
+## 约束与限制
+
+日志最多打印4096字节，超出限制文本将被截断。
+
+## 开发步骤
+
+1. 在CMakeLists.txt中新增libhilog\_ndk.z.so链接：
+
+   ```
+   1. target_link_libraries(entry PUBLIC libhilog_ndk.z.so)
+   ```
+2. 在源文件中包含hilog头文件，并定义domain、tag宏：
+
+   ```
+   1. #include "hilog/log.h"
+   ```
+
+   ```
+   1. #undef LOG_DOMAIN
+   2. #undef LOG_TAG
+   3. #define LOG_DOMAIN 0x3200  // 全局domain宏，标识业务领域
+   4. #define LOG_TAG "MY_TAG"   // 全局tag宏，标识模块日志tag
+   ```
+3. 打印日志：
+
+   ```
+   1. OH_LOG_INFO(LOG_APP, "Failed to visit path.");
+   2. // 设置应用日志最低打印级别，设置完成后，低于Warn级别的日志将无法打印
+   3. OH_LOG_SetMinLogLevel(LOG_WARN);
+   4. OH_LOG_INFO(LOG_APP, "this is an info level log");
+   5. OH_LOG_ERROR(LOG_APP, "this is an error level log");
+   6. // 设置应用日志PREFER_OPEN_LOG策略的最低打印级别，设置完成后，不低于INFO级别的日志都可打印
+   7. OH_LOG_SetLogLevel(LOG_WARN, PREFER_OPEN_LOG);
+   8. OH_LOG_INFO(LOG_APP, "this is an another info level log");
+   9. OH_LOG_ERROR(LOG_APP, "this is an another error level log");
+   ```
+4. 输出结果：
+
+```
+1. 01-02 08:39:38.915   9012-9012     A03200/com.example.hilogDemo/MY_TAG  com.example.hilogDemo  I     Failed to visit path.
+2. 01-02 08:39:38.915   9012-9012     A03200/com.example.hilogDemo/MY_TAG  com.example.hilogDemo  E     this is an error level log
+3. 01-02 08:39:38.915   9012-9012     A03200/com.example.hilogDemo/MY_TAG  com.example.hilogDemo  I     this is an another info level log
+4. 01-02 08:39:38.915   9012-9012     A03200/com.example.hilogDemo/MY_TAG  com.example.hilogDemo  E     this is an another error level log
+```
+
+### 日志回调接口使用示例
+
+注意
+
+1.在回调函数中禁止递归调用hilog接口，否则会导致循环调用问题。
+
+2.一个进程只需注册一次回调函数，若多次注册，以最后一次注册的回调函数为准。
+
+```
+1. #include "hilog/log.h"
+
+3. // 回调函数，开发者自定义的日志处理函数
+4. void MyHiLog(const LogType type, const LogLevel level, const unsigned int domain, const char *tag, const char *msg)
+5. {
+6. // user-defined to handle your log, such as redirect/filter
+7. // 注意: 在回调函数中禁止递归调用hilog接口，否则会导致循环调用问题。
+8. }
+
+10. static void Test(void)
+11. {
+12. // 1.注册回调接口
+13. OH_LOG_SetCallback(MyHiLog);
+
+15. // 2.调用hilog接口打印日志，日志内容会输出到hilog，同时通过回调返回给MyHiLog，开发者可以在MyHiLog中自行处理日志
+16. OH_LOG_INFO(LOG_APP, "hello world");
+17. }
+```

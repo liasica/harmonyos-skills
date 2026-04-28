@@ -1,0 +1,422 @@
+---
+url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-hilog
+title: @ohos.hilog (HiLog日志打印)
+breadcrumb: API参考 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > ArkTS API > @ohos.hilog (HiLog日志打印)
+category: harmonyos-references
+scraped_at: 2026-04-28T08:11:16+08:00
+doc_updated_at: 2026-04-02
+content_hash: sha256:677abfa461d80a7939fbc4c5e97f9bd575375287e0c83695eb5866b8c7924896
+---
+
+hilog日志系统，使应用/服务可以按照指定级别、标识和格式字符串输出日志内容，帮助开发者了解应用/服务的运行状态，更好地调试程序。
+
+说明
+
+本模块首批接口从API version 7开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
+
+## 导入模块
+
+PhonePC/2in1TabletTVWearable
+
+```
+1. import { hilog } from '@kit.PerformanceAnalysisKit';
+```
+
+## hilog.isLoggable
+
+PhonePC/2in1TabletTVWearable
+
+isLoggable(domain: number, tag: string, level: LogLevel) : boolean
+
+在打印日志前调用该接口，用于检查指定领域标识、日志标识和级别的日志是否可以打印。
+
+**元服务API**：从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力**：SystemCapability.HiviewDFX.HiLog
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| domain | number | 是 | 日志对应的领域标识，范围是0x0~0xFFFF，超出范围则日志无法打印。  建议开发者在应用内根据需要自定义划分。 |
+| tag | string | 是 | 指定日志标识，可以为任意字符串，建议用于标识调用所在的类或者业务行为。tag长度最多为31字节，超出后会截断，不建议使用中文字符，可能出现乱码或者对齐问题。 |
+| level | [LogLevel](js-apis-hilog.md#loglevel) | 是 | 日志级别。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 如果返回true，则该领域标识、日志标识和级别的日志可以打印，否则不能打印。 |
+
+**示例：**
+
+```
+1. hilog.isLoggable(0x0001, "testTag", hilog.LogLevel.INFO);
+```
+
+## LogLevel
+
+PhonePC/2in1TabletTVWearable
+
+日志级别。
+
+**元服务API**：从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力**：SystemCapability.HiviewDFX.HiLog
+
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| DEBUG | 3 | 详细的流程记录，通过该级别的日志可以更详细地分析业务流程和定位分析问题。 |
+| INFO | 4 | 用于记录业务关键流程节点，可以还原业务的主要运行过程；  用于记录可预料的非正常情况信息，如无网络信号、登录失败等。  这些日志都应该由该业务内处于支配地位的模块来记录，避免在多个被调用的模块或低级函数中重复记录。 |
+| WARN | 5 | 用于记录较为严重的非预期情况，但是对用户影响不大，应用可以自动恢复或通过简单的操作就可以恢复的问题。 |
+| ERROR | 6 | 应用发生了错误，该错误会影响功能的正常运行或用户的正常使用，可以恢复但恢复代价较高，如重置数据等。 |
+| FATAL | 7 | 重大致命异常，表明应用即将崩溃，故障无法恢复。 |
+
+## hilog.debug
+
+PhonePC/2in1TabletTVWearable
+
+debug(domain: number, tag: string, format: string, ...args: any[]) : void
+
+打印DEBUG级别的日志。
+
+DEBUG级别的日志在正式发布版本中默认不被打印，只有在调试版本或打开调试开关的情况下才会打印。
+
+**元服务API**：从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力**：SystemCapability.HiviewDFX.HiLog
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| domain | number | 是 | 日志对应的领域标识，范围是0x0~0xFFFF，超出范围则日志无法打印。  建议开发者在应用内根据需要自定义划分。 |
+| tag | string | 是 | 指定日志标识，可以为任意字符串，建议用于标识调用所在的类或者业务行为。tag长度最多为31字节，超出后会截断，不建议使用中文字符，可能出现乱码或者对齐问题。 |
+| format | string | 是 | 格式字符串，用于日志的格式化输出。格式字符串中可以设置多个参数，参数需要包含参数类型、隐私标识。  隐私标识分为{public}和{private}，缺省为{private}。标识{public}的内容明文输出，标识{private}的内容以<private>过滤回显。 |
+| args | any[] | 否 | 与格式字符串format对应的可变长度参数列表。参数数目、参数类型必须与格式字符串中的标识一一对应。 |
+
+**示例：**
+
+输出一条DEBUG信息，格式字符串为"%{public}s World %{private}d"。其中变参%{public}s为明文显示的字符串；%{private}d为隐私的整型数。
+
+```
+1. hilog.debug(0x0001, "testTag", "%{public}s World %{private}d", "hello", 3);
+```
+
+字符串"hello"填入%{public}s，整型数3填入%{private}d，输出日志：
+
+```
+1. 08-05 12:21:47.579  2695-2703  A00001/com.example.hilogDemo/testTag  com.example.hilogDemo  D     hello World <private>
+```
+
+## hilog.info
+
+PhonePC/2in1TabletTVWearable
+
+info(domain: number, tag: string, format: string, ...args: any[]) : void
+
+打印INFO级别的日志。
+
+**元服务API**：从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力**：SystemCapability.HiviewDFX.HiLog
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| domain | number | 是 | 日志对应的领域标识，范围是0x0~0xFFFF，超出范围则日志无法打印。  建议开发者在应用内根据需要自定义划分。 |
+| tag | string | 是 | 指定日志标识，可以为任意字符串，建议用于标识调用所在的类或者业务行为。tag长度最多为31字节，超出后会截断，不建议使用中文字符，可能出现乱码或者对齐问题。 |
+| format | string | 是 | 格式字符串，用于日志的格式化输出。格式字符串中可以设置多个参数，参数需要包含参数类型、隐私标识。  隐私标识分为{public}和{private}，缺省为{private}。标识{public}的内容明文输出，标识{private}的内容以<private>过滤回显。 |
+| args | any[] | 否 | 与格式字符串format对应的可变长度参数列表。参数数目、参数类型必须与格式字符串中的标识一一对应。 |
+
+**示例：**
+
+输出一条INFO信息，格式字符串为"%{public}s World %{private}d"。其中变参%{public}s为明文显示的字符串；%{private}d为隐私的整型数。
+
+```
+1. hilog.info(0x0001, "testTag", "%{public}s World %{private}d", "hello", 3);
+```
+
+字符串"hello"填入%{public}s，整型数3填入%{private}d，输出日志：
+
+```
+1. 08-05 12:21:47.579  2695-2703  A00001/com.example.hilogDemo/testTag  com.example.hilogDemo  I     hello World <private>
+```
+
+## hilog.warn
+
+PhonePC/2in1TabletTVWearable
+
+warn(domain: number, tag: string, format: string, ...args: any[]) : void
+
+打印WARN级别的日志。
+
+**元服务API**：从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力**：SystemCapability.HiviewDFX.HiLog
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| domain | number | 是 | 日志对应的领域标识，范围是0x0~0xFFFF，超出范围则日志无法打印。  建议开发者在应用内根据需要自定义划分。 |
+| tag | string | 是 | 指定日志标识，可以为任意字符串，建议用于标识调用所在的类或者业务行为。tag长度最多为31字节，超出后会截断，不建议使用中文字符，可能出现乱码或者对齐问题。 |
+| format | string | 是 | 格式字符串，用于日志的格式化输出。格式字符串中可以设置多个参数，参数需要包含参数类型、隐私标识。  隐私标识分为{public}和{private}，缺省为{private}。标识{public}的内容明文输出，标识{private}的内容以<private>过滤回显。 |
+| args | any[] | 否 | 与格式字符串format对应的可变长度参数列表。参数数目、参数类型必须与格式字符串中的标识一一对应。 |
+
+**示例：**
+
+输出一条WARN信息，格式字符串为"%{public}s World %{private}d"。其中变参%{public}s为明文显示的字符串；%{private}d为隐私的整型数。
+
+```
+1. hilog.warn(0x0001, "testTag", "%{public}s World %{private}d", "hello", 3);
+```
+
+字符串"hello"填入%{public}s，整型数3填入%{private}d，输出日志：
+
+```
+1. 08-05 12:21:47.579  2695-2703  A00001/com.example.hilogDemo/testTag  com.example.hilogDemo  W     hello World <private>
+```
+
+## hilog.error
+
+PhonePC/2in1TabletTVWearable
+
+error(domain: number, tag: string, format: string, ...args: any[]) : void
+
+打印ERROR级别的日志。
+
+**元服务API**：从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力**：SystemCapability.HiviewDFX.HiLog
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| domain | number | 是 | 日志对应的领域标识，范围是0x0~0xFFFF，超出范围则日志无法打印。  建议开发者在应用内根据需要自定义划分。 |
+| tag | string | 是 | 指定日志标识，可以为任意字符串，建议用于标识调用所在的类或者业务行为。 tag长度最多为31字节，超出后会截断，不建议使用中文字符，可能出现乱码或者对齐问题。 |
+| format | string | 是 | 格式字符串，用于日志的格式化输出。格式字符串中可以设置多个参数，参数需要包含参数类型、隐私标识。  隐私标识分为{public}和{private}，缺省为{private}。标识{public}的内容明文输出，标识{private}的内容以<private>过滤回显。 |
+| args | any[] | 否 | 与格式字符串format对应的可变长度参数列表。参数数目、参数类型必须与格式字符串中的标识一一对应。 |
+
+**示例：**
+
+输出一条ERROR信息，格式字符串为"%{public}s World %{private}d"。其中变参%{public}s为明文显示的字符串；%{private}d为隐私的整型数。
+
+```
+1. hilog.error(0x0001, "testTag", "%{public}s World %{private}d", "hello", 3);
+```
+
+字符串"hello"填入%{public}s，整型数3填入%{private}d，输出日志：
+
+```
+1. 08-05 12:21:47.579  2695-2703  A00001/com.example.hilogDemo/testTag  com.example.hilogDemo  E     hello World <private>
+```
+
+## hilog.fatal
+
+PhonePC/2in1TabletTVWearable
+
+fatal(domain: number, tag: string, format: string, ...args: any[]) : void
+
+打印FATAL级别的日志。
+
+**元服务API**：从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力**：SystemCapability.HiviewDFX.HiLog
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| domain | number | 是 | 日志对应的领域标识，范围是0x0~0xFFFF，超出范围则日志无法打印。  建议开发者在应用内根据需要自定义划分。 |
+| tag | string | 是 | 指定日志标识，可以为任意字符串，建议用于标识调用所在的类或者业务行为。tag长度最多为31字节，超出后会截断，不建议使用中文字符，可能出现乱码或者对齐问题。 |
+| format | string | 是 | 格式字符串，用于日志的格式化输出。格式字符串中可以设置多个参数，参数需要包含参数类型、隐私标识。  隐私标识分为{public}和{private}，缺省为{private}。标识{public}的内容明文输出，标识{private}的内容以<private>过滤回显。 |
+| args | any[] | 否 | 与格式字符串format对应的可变长度参数列表。参数数目、参数类型必须与格式字符串中的标识一一对应。 |
+
+**示例：**
+
+输出一条FATAL信息，格式字符串为"%{public}s World %{private}d"。其中变参%{public}s为明文显示的字符串；%{private}d为隐私的整型数。
+
+```
+1. hilog.fatal(0x0001, "testTag", "%{public}s World %{private}d", "hello", 3);
+```
+
+字符串"hello"填入%{public}s，整型数3填入%{private}d，输出日志：
+
+```
+1. 08-05 12:21:47.579  2695-2703  A00001/com.example.hilogDemo/testTag  com.example.hilogDemo  F     hello World <private>
+```
+
+## hilog.setMinLogLevel15+
+
+PhonePC/2in1TabletTVWearable
+
+setMinLogLevel(level: LogLevel): void
+
+设置应用日志打印的最低日志级别，用于拦截低级别日志打印。
+
+注意
+
+如果设置的日志级别低于[全局日志级别](../harmonyos-guides/hilog.md#查看和设置日志级别)，设置不生效。
+
+debug版本应用下，此函数不生效。
+
+**元服务API**：从API version 15开始，该接口支持在元服务中使用。
+
+**系统能力**：SystemCapability.HiviewDFX.HiLog
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| level | [LogLevel](js-apis-hilog.md#loglevel) | 是 | 日志级别。 |
+
+**示例：**
+
+以全局日志级别为INFO下，打印5条不同级别的hilog日志，在打印过程中调用两次setMinLogLevel接口为例：
+
+```
+1. hilog.info(0x0001, "testTag", 'this is an info level log, id: %{public}d', 1);
+2. hilog.setMinLogLevel(hilog.LogLevel.WARN);
+3. hilog.info(0x0001, "testTag", 'this is an info level log, id: %{public}d', 2);
+4. hilog.error(0x0001, 'testTag', 'this is an error level log, id: %{public}d', 3);
+5. hilog.setMinLogLevel(hilog.LogLevel.DEBUG);
+6. hilog.debug(0x0001, "testTag", 'this is a debug level log, id: %{public}d', 4);
+7. hilog.info(0x0001, "testTag", 'this is an info level log, id: %{public}d', 5);
+```
+
+由于全局日志起始为INFO，第一条日志可以正常打印。
+
+在设置进程最低可打印日志级别为WARN后，第二条日志不符合该日志级别，第二条日志打印失败，第三条日志可以正常打印。
+
+在设置进程最低日志级别为DEBUG后，但是此时全局日志级别为INFO，所以第四条日志不满足全局日志级别，打印失败，第五条日志可以打印。
+
+最终打印结果如下所示：
+
+```
+1. 08-07 23:50:01.532   13694-13694   A00001/com.example.hilogDemo/testTag  com.example.hilogDemo  I     this is an info level log, id: 1
+2. 08-07 23:50:01.532   13694-13694   A00001/com.example.hilogDemo/testTag  com.example.hilogDemo  E     this is an error level log, id: 3
+3. 08-07 23:50:01.532   13694-13694   A00001/com.example.hilogDemo/testTag  com.example.hilogDemo  I     this is an info level log, id: 5
+```
+
+## hilog.setLogLevel21+
+
+PhonePC/2in1TabletTVWearable
+
+setLogLevel(level: LogLevel, prefer: PreferStrategy): void
+
+设置当前应用程序进程的最低日志级别。
+
+可通过prefer参数配置不同的偏好策略。如果选择策略PREFER\_CLOSE\_LOG，等同于调用setMinLogLevel函数。
+
+注意
+
+debug版本应用下，此函数不生效。
+
+**元服务API**：从API version 21开始，该接口支持在元服务中使用。
+
+**系统能力**：SystemCapability.HiviewDFX.HiLog
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| level | [LogLevel](js-apis-hilog.md#loglevel) | 是 | 日志级别。 |
+| prefer | [PreferStrategy](js-apis-hilog.md#preferstrategy21) | 是 | 偏好策略。 |
+
+## PreferStrategy21+
+
+PhonePC/2in1TabletTVWearable
+
+偏好策略。
+
+**元服务API**：从API version 21开始，该接口支持在元服务中使用。
+
+**系统能力**：SystemCapability.HiviewDFX.HiLog
+
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| UNSET\_LOGLEVEL | 0 | 清除设置, 实际生效的最低日志级别是系统控制的最低级别。 |
+| PREFER\_CLOSE\_LOG | 1 | 实际生效的最低日志级别是新设置的级别和系统控制的最低级别两个值的较大值。 |
+| PREFER\_OPEN\_LOG | 2 | 实际生效的最低日志级别是新设置的级别和系统控制的最低级别两个值的较小值。 |
+
+**示例：**
+
+以全局日志级别为INFO下，打印5条不同级别的hilog日志，在打印过程中调用两次setLogLevel接口为例：
+
+```
+1. hilog.info(0x0001, "testTag", 'this is an info level log, id: %{public}d', 1);
+2. hilog.setLogLevel(hilog.LogLevel.WARN, hilog.PreferStrategy.PREFER_OPEN_LOG);
+3. hilog.info(0x0001, "testTag", 'this is an info level log, id: %{public}d', 2);
+4. hilog.error(0x0001, 'testTag', 'this is an error level log, id: %{public}d', 3);
+5. hilog.setLogLevel(hilog.LogLevel.DEBUG, hilog.PreferStrategy.PREFER_CLOSE_LOG);
+6. hilog.debug(0x0001, "testTag", 'this is a debug level log, id: %{public}d', 4);
+7. hilog.info(0x0001, "testTag", 'this is an info level log, id: %{public}d', 5);
+```
+
+由于全局日志起始为INFO，第一条日志可以正常打印。
+
+在设置进程最低日志级别为WARN, 并选择策略PREFER\_OPEN\_LOG后，实际生效的最低日志级别是全局日志级别INFO，所以第二条和第三条日志均可正常打印。
+
+在设置进程最低日志级别为DEBUG，并选择策略PREFER\_CLOSE\_LOG后（等同于hilog.setMinLogLevel(hilog.LogLevel.DEBUG)），但是此时全局日志级别为INFO，所以第四条日志不满足全局日志级别，打印失败，第五条日志可以打印。
+
+最终打印结果如下所示：
+
+```
+1. 08-07 23:50:01.532   13694-13694   A00001/com.example.hilogDemo/testTag  com.example.hilogDemo  I     this is an info level log, id: 1
+2. 08-07 23:50:01.532   13694-13694   A00001/com.example.hilogDemo/testTag  com.example.hilogDemo  I     this is an info level log, id: 2
+3. 08-07 23:50:01.532   13694-13694   A00001/com.example.hilogDemo/testTag  com.example.hilogDemo  E     this is an error level log, id: 3
+4. 08-07 23:50:01.532   13694-13694   A00001/com.example.hilogDemo/testTag  com.example.hilogDemo  I     this is an info level log, id: 5
+```
+
+## 参数格式符
+
+PhonePC/2in1TabletTVWearable
+
+上述接口中，日志打印的格式化参数需按照如下格式打印：
+
+%{[private flag]}specifier
+
+| 隐私标识符（private flag） | 说明 |
+| --- | --- |
+| 无 | 缺省值默认为private，不打印明文参数。 |
+| private | 隐私参数类型，不打印明文参数。 |
+| public | 明文显示参数。 |
+
+| 格式说明符（specifier） | 说明 | 示例 |
+| --- | --- | --- |
+| d/i | 支持打印number和bigint类型。 | 123 |
+| s | 支持打印string undefined bool 和null类型。 | "123" |
+| o/O | 支持打印object、undefined和null类型。  从API version 20开始，支持该能力。 | { 'name': "Jack", 'age': 22 } |
+
+**示例：**
+
+```
+1. let testObj: Record<string, string | number> = {
+2. 'name': "Jack",
+3. 'age': 22
+4. }
+5. let isBol = true;
+6. let bigNum = BigInt(1234567890123456789);
+7. hilog.info(0x0001, "jsHilogTest", "print object: %{public}s", JSON.stringify(testObj));
+8. hilog.info(0x0001, "jsHilogTest", "print object: %{public}o", testObj);
+9. hilog.info(0x0001, "jsHilogTest", "private flag: %{private}s %s, print null: %{public}s", "hello", "world", null);
+10. hilog.info(0x0001, "jsHilogTest", "print undefined: %{public}s", undefined);
+11. hilog.info(0x0001, "jsHilogTest", "print number: %{public}d %{public}i", 123, 456);
+12. hilog.info(0x0001, "jsHilogTest", "print bigNum: %{public}d %{public}i", bigNum, bigNum);
+13. hilog.info(0x0001, "jsHilogTest", "print boolean: %{public}s", isBol);
+```
+
+**打印结果：**
+
+```
+1. 08-09 13:26:29.094  2266-2266  A00001/com.example.hilogDemo/jsHilogTest  com.example.hilogDemo  I  print object: {"name":"Jack","age":22}
+2. 08-09 13:26:29.094  2266-2266  A00001/com.example.hilogDemo/jsHilogTest  com.example.hilogDemo  I  print object: {"name":"Jack","age":22}
+3. 08-09 13:26:29.094  2266-2266  A00001/com.example.hilogDemo/jsHilogTest  com.example.hilogDemo  I  private flag: <private> <private>, print null: null
+4. 08-09 13:26:29.094  2266-2266  A00001/com.example.hilogDemo/jsHilogTest  com.example.hilogDemo  I  print undefined: undefined
+5. 08-09 13:26:29.094  2266-2266  A00001/com.example.hilogDemo/jsHilogTest  com.example.hilogDemo  I  print number: 123 456
+6. 08-09 13:26:29.095  2266-2266  A00001/com.example.hilogDemo/jsHilogTest  com.example.hilogDemo  I  print bigNum: 1234567890123456768 1234567890123456768
+7. 08-09 13:26:29.095  2266-2266  A00001/com.example.hilogDemo/jsHilogTest  com.example.hilogDemo  I  print boolean: true
+```

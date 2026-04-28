@@ -1,0 +1,489 @@
+---
+url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media
+title: Media错误码
+breadcrumb: API参考 > 媒体 > Media Kit（媒体服务） > 错误码 > Media错误码
+category: harmonyos-references
+scraped_at: 2026-04-28T08:14:11+08:00
+doc_updated_at: 2026-04-20
+content_hash: sha256:fb9c1c86557f048f7a70359b41f28df66018267621801ba88eaa7638be9ecdbd
+---
+
+说明
+
+以下仅介绍本模块特有错误码，通用错误码请参考[通用错误码说明文档](errorcode-universal.md)。
+
+## 5400101 内存分配失败
+
+PhonePC/2in1TabletTVWearable
+
+**错误信息**
+
+No memory.
+
+**错误描述**
+
+分配内存失败。
+
+**可能原因**
+
+1. 实例数量超过16个。
+2. new或者malloc流程失败导致空指针。
+
+**处理步骤**
+
+销毁当前实例，并重新创建，如果重新创建失败，则停止相关操作。
+
+## 5400102 当前状态不支持此操作
+
+PhonePC/2in1TabletTVWearable
+
+**错误信息**
+
+Operation not allowed.
+
+**错误描述**
+
+当前操作不允许。
+
+**可能原因**
+
+当前状态不支持此操作。
+
+**处理步骤**
+
+确认当前状态是否支持当前操作，把实例切换到正确的状态进行正确的操作。
+
+## 5400103 出现IO错误
+
+PhonePC/2in1TabletTVWearable
+
+**错误信息**
+
+I/O error.
+
+**错误描述**
+
+出现IO错误。
+
+**可能原因**
+
+媒体与其他模块的数据交互发生问题（图形、音频、网络、HDI、相机）。
+
+**处理步骤**
+
+确认网络是否通畅，并销毁当前实例，并重新创建，如果重新创建失败，则停止相关操作。
+
+## 5400104 操作超时
+
+PhonePC/2in1TabletTVWearable
+
+**错误信息**
+
+Operation timeout.
+
+**错误描述**
+
+操作超时。
+
+**可能原因**
+
+1. 网络超时。默认网络超时时间为15秒，从开始缓存的事件上报后开始计时，超时后会上报该错误信息。
+2. 访问其他模块超时。
+
+**处理步骤**
+
+1. 确认网络是否通畅。
+2. 销毁当前实例，并重新创建，如果重新创建失败，则停止相关操作。
+
+## 5400105 播放服务死亡
+
+PhonePC/2in1TabletTVWearable
+
+**错误信息**
+
+Service died.
+
+**错误描述**
+
+播放服务死亡。
+
+**可能原因**
+
+播放服务死亡。
+
+**处理步骤**
+
+销毁当前实例，并重新创建，如果重新创建失败，则停止相关操作。
+
+## 5400106 不支持的规格
+
+PhonePC/2in1TabletTVWearable
+
+**错误信息**
+
+Unsupported format.
+
+**错误描述**
+
+不支持的规格。
+
+**可能原因**
+
+不支持的文件或者格式。
+
+**处理步骤**
+
+当前使用的格式规格不支持，用户需要切换为支持的规格。
+
+支持的规格请根据实际使用的模块功能，参考[Media Kit简介](../harmonyos-guides/media-kit-intro.md)中对应模块的规格介绍。
+
+## 5400107 音频焦点冲突
+
+PhonePC/2in1TabletTVWearable
+
+**错误信息**
+
+Audio interrupted.
+
+**错误描述**
+
+音频焦点冲突导致录制失败。
+
+**可能原因**
+
+有其他进程占用了音频焦点，导致无法获取音频焦点。
+
+**处理步骤**
+
+销毁当前实例，并确认当前是否有其他进程在进行录制。如果可以停止其他进程的占用，则可以重新创建。
+
+## 5400108 参数超过取值范围
+
+PhonePC/2in1TabletTVWearable
+
+**错误信息**
+
+The parameter check failed, parameter value out of range.
+
+**错误描述**
+
+参数检查失败，参数值超出范围。
+
+**可能原因**
+
+参数值超出取值范围。
+
+**处理步骤**
+
+调整参数值，使其在取值范围内。
+
+## 5411001 解析或链接服务端地址错误
+
+PhonePC/2in1TabletTVWearable
+
+**错误信息**
+
+Can not find host.
+
+**错误描述**
+
+解析或链接服务端地址错误。
+
+**可能原因**
+
+1. 链接服务端地址错误。
+2. 链接服务端地址解析失败。
+
+**处理步骤**
+
+当前使用链接服务端地址错误或是无法被解析，需使用其他链接服务端地址。
+
+## 5411002 网络连接超时
+
+PhonePC/2in1TabletTVWearable
+
+**错误信息**
+
+Connection timeout.
+
+**错误描述**
+
+网络连接超时。
+
+**可能原因**
+
+网络异常。
+
+**处理步骤**
+
+1. 确认网络是否通畅。
+2. 销毁当前实例，并重新创建，如果重新创建失败，则停止相关操作。
+
+## 5411003 网络异常导致的数据或链路异常
+
+PhonePC/2in1TabletTVWearable
+
+**错误信息**
+
+Network abnormal.
+
+**错误描述**
+
+网络异常导致的数据或链路异常。
+
+**可能原因**
+
+网络异常。
+
+**处理步骤**
+
+销毁当前实例，并重新创建，如果重新创建失败，则停止相关操作。
+
+## 5411004 网络被禁用
+
+PhonePC/2in1TabletTVWearable
+
+**错误信息**
+
+Network unavailable.
+
+**错误描述**
+
+网络被禁用导致的错误。
+
+**可能原因**
+
+网络被禁用。
+
+**处理步骤**
+
+1. 确认网络是否被禁用。
+2. 销毁当前实例，并重新创建，如果重新创建失败，则停止相关操作。
+
+## 5411005 无权限，访问被拒绝
+
+PhonePC/2in1TabletTVWearable
+
+**错误信息**
+
+No permission.
+
+**错误描述**
+
+无访问权限。
+
+**可能原因**
+
+无访问权限。
+
+**处理步骤**
+
+1. 确认是否有访问权限。
+2. 销毁当前实例，并重新创建，如果重新创建失败，则停止相关操作。
+
+## 5411006 客户端请求参数错误或超出处理能力
+
+PhonePC/2in1TabletTVWearable
+
+**错误信息**
+
+Network access denied.
+
+**错误描述**
+
+客户端请求参数错误或超出处理能力。
+
+**可能原因**
+
+客户端请求参数错误或超出处理能力。
+
+**处理步骤**
+
+1. 确认请求参数是否正常。
+2. 销毁当前实例，并重新创建，如果重新创建失败，则停止相关操作。
+
+## 5411007 无可用资源
+
+PhonePC/2in1TabletTVWearable
+
+**错误信息**
+
+Cannot find available network resources.
+
+**错误描述**
+
+无可用网络资源。
+
+**可能原因**
+
+链接服务端地址异常。
+
+**处理步骤**
+
+1. 确认链接服务端地址是否正常。
+2. 销毁当前实例，并重新创建，如果重新创建失败，则停止相关操作。
+
+## 5411008 服务端校验客户端证书失败
+
+PhonePC/2in1TabletTVWearable
+
+**错误信息**
+
+SSL client cert needed.
+
+**错误描述**
+
+SSL客户端不可信，服务端校验客户端证书失败。
+
+**可能原因**
+
+未携带证书、证书不合法、证书过期。
+
+**处理步骤**
+
+1. 确认SSL证书是否正常。
+2. 销毁当前实例，并重新创建，如果重新创建失败，则停止相关操作。
+
+## 5411009 SSL连接失败
+
+PhonePC/2in1TabletTVWearable
+
+**错误信息**
+
+SSL connection failed.
+
+**错误描述**
+
+SSL链接失败。
+
+**可能原因**
+
+SSL链接失败。
+
+**处理步骤**
+
+1. 确认SSL链接是否已失效。
+2. 销毁当前实例，并重新创建，如果重新创建失败，则停止相关操作。
+
+## 5411010 客户端校验服务端证书失败
+
+PhonePC/2in1TabletTVWearable
+
+**错误信息**
+
+SSL server cert untrusted.
+
+**错误描述**
+
+SSL服务端不可信，客户端校验服务端证书失败。
+
+**可能原因**
+
+未携带证书、证书不合法、证书过期。
+
+**处理步骤**
+
+1. 确认SSL证书是否正常。
+2. 销毁当前实例，并重新创建，如果重新创建失败，则停止相关操作。
+
+## 5411011 网络协议的原因导致请求不受支持
+
+PhonePC/2in1TabletTVWearable
+
+**错误信息**
+
+Unsupported request.
+
+**错误描述**
+
+客户端请求参数错误或超出处理能力。
+
+**可能原因**
+
+客户端请求参数错误或超出处理能力。
+
+**处理步骤**
+
+1. 确认客户端请求参数是否正常。
+2. 销毁当前实例，并重新创建，如果重新创建失败，则停止相关操作。
+
+## 5411012 HTTP明文拦截导致请求不受支持
+
+PhonePC/2in1TabletTVWearable
+
+**错误信息**
+
+Http cleartext traffic is not permitted.
+
+**错误描述**
+
+不允许HTTP明文访问。
+
+**可能原因**
+
+客户端在network\_config.json中对相关域名配置禁止HTTP明文访问。
+
+**处理步骤**
+
+1. 确认network\_config.json配置文件中是否对相关域名进行HTTP明文访问拦截。
+2. 如果不需要拦截，则参考[明文HTTP访问权限配置说明](../harmonyos-guides/http-request.md#明文http访问权限配置说明)对域名权限进行配置。
+
+## 5410002 不支持SEEK\_CONTINUOUS模式的Seek
+
+PhonePC/2in1TabletTVWearable
+
+**错误信息**
+
+Seek continuous is unsupported.
+
+**错误描述**
+
+该媒体源或者当前设备不支持以SEEK\_CONTINUOUS模式进行seek。
+
+**可能原因**
+
+该媒体源或者当前设备不支持以SEEK\_CONTINUOUS模式进行seek。
+
+**处理步骤**
+
+1. 提示性错误码，用于客户端感知不支持SEEK\_CONTINUOUS模式进行seek时的表现，客户端无需处理。
+
+## 5410003 不支持超分
+
+PhonePC/2in1TabletTVWearable
+
+**错误信息**
+
+Super resolution not supported.
+
+**错误描述**
+
+提示性错误码，该媒体源或者当前设备不支持超分。
+
+**可能原因**
+
+超分仅支持非hdr、非drm且分辨率在1080P及以下的视频。若媒体源不满足超分条件，或者当前设备不支持超分，则调用超分相关接口时会上报此错误。
+
+**处理步骤**
+
+用于客户端感知不支持超分时的表现，客户端后续不应再调用超分相关接口。
+
+## 5410004 未使能超分
+
+PhonePC/2in1TabletTVWearable
+
+**错误信息**
+
+Super resolution not enabled.
+
+**错误描述**
+
+没有使能超分功能，导致超分相关接口不可用。
+
+**可能原因**
+
+若没有通过[PlaybackStrategy](arkts-apis-media-i.md#playbackstrategy12)使能超分，则每次调用超分相关接口时会返回该错误码。
+
+**处理步骤**
+
+确认应用调用超分相关接口前正确使能了超分。

@@ -1,0 +1,163 @@
+---
+url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/payment-query-settle-bill
+title: 查询结算账单
+breadcrumb: API参考 > 应用服务 > Payment Kit（鸿蒙支付服务） > REST API > 直连商户 > 账单 > 查询结算账单
+category: harmonyos-references
+scraped_at: 2026-04-28T08:17:55+08:00
+doc_updated_at: 2026-04-20
+content_hash: sha256:ee9f56ad42c3fdef9e8bdd61af20df01183138298c6d7e5a2b69ffee5fa040df
+---
+
+## 功能介绍
+
+开发者可以通过该接口完成结算账单离线表单文件的下载。
+
+说明
+
+1. 获取结算账单API接口能力需要管理员先在“[华为支付商户平台](https://petalpay-merchant.cloud.huawei.com/)”的“功能设置”中开启“结算单接口获取开关”，开启后**次日开始生成**前一日的账单。
+
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/eRuC2fNnQ3mEGl5meZ1hjA/zh-cn_image_0000002583480907.png?HW-CC-KV=V1&HW-CC-Date=20260428T001753Z&HW-CC-Expire=86400&HW-CC-Sign=A818B3E392FB026B61B213A377100161011C7BF77F070A23E577FD7A8AC555BF)
+2. 无论是否产生交易，每日自动生成账单。如果查询日期超限或未生成，则不返回文件下载信息。其他情况会返回。
+3. 账单下载后，建议遍历附件目录以获取“.csv”后缀的文件进行解析。
+4. 解析表单内容时，需考虑表单更新，如新增列等场景。
+
+## 使用场景
+
+为方便开发者快速完成资金对账，可通过该接口获取华为支付商户结算账单离线文件下载链接。
+
+## 接口原型
+
+* **承载协议：** HTTPS GET
+* **接口方向：** 开发者服务器 -> 华为支付服务器
+* **接口URL：** https://petalpay-developer.cloud.huawei.com.cn/api/v1/bill/settle-bill/downloadInfo?billDate=xxxxxx
+* **数据格式：**
+
+  请求消息：Content-Type: application/json; charset=UTF-8
+
+  响应消息：Content-Type: application/json; charset=UTF-8
+
+## 请求参数
+
+**Request Header**
+
+| 参数 | 是否必选 | 参数类型 | 描述 |
+| --- | --- | --- | --- |
+| Content-Type | 是 | String | 取值为：application/json; charset=UTF-8 |
+| PayMercAuth | 是 | String | 取值为：[PayMercAuth](payment-model.md#paymercauth)的JSON字符串 |
+
+**Request Query**
+
+| 参数 | 是否必选 | 参数类型 | 描述 |
+| --- | --- | --- | --- |
+| billDate | 是 | String | 账单日期。只能查询九十日内的，需精确到某一天，格式：yyyyMMdd（如20210101）。  不支持下载当日账单，只能下载前一日24点前的账单数据，当日数据一般于次日 15 点后生成，特殊情况（如系统异常等）可能延迟。 |
+
+## 请求示例
+
+```
+1. GET /v1/bill/settle-bill/downloadInfo?billDate=20221010 HTTP/1.1
+2. Content-Type: application/json;charset=UTF-8
+3. PayMercAuth: {"callerId":"10132120***","traceId":"202305151518027020519","time":1684135082153,"authId":"120291744647139***","headerSign":"KJfXV9wiYjV9dpV********************vobQngEKq02sOB0RbrxZIk2Hll20OSMNPBsO8PIWk3168=","bodySign":"mL8Kf2jy9c7A7Yh9az3NlETYdzgOfNzLBJ2l/feRfoMeYViiGQdYX********************/pbTViW2ypPM="}
+```
+
+## 响应参数
+
+**Response Header**
+
+| 参数 | 是否必选 | 参数类型 | 描述 |
+| --- | --- | --- | --- |
+| Content-Type | 是 | String | 取值为：application/json; charset=UTF-8 |
+
+**Response Body**
+
+| 参数 | 是否必选 | 参数类型 | 描述 |
+| --- | --- | --- | --- |
+| resultCode | 是 | String | 结果码，“000000”表示成功，其他表示失败。 |
+| resultDesc | 是 | String | 结果描述。 |
+| subCode | 否 | String | 业务错误码。 |
+| subDesc | 否 | String | 业务错误描述信息。 |
+| sign | 是 | String | 签名值。用于开发者对响应报文进行防篡改验证。 |
+| billDownloadParam | 否 | [BillDownloadParam](payment-model.md#billdownloadparam) | 账单下载请求信息。有生成账单数据时返回。 |
+
+## 响应示例
+
+```
+1. HTTP/1.1 200 OK
+2. Content-Type: application/json; charset=UTF-8
+3. {
+4. "sign": "MEUCIGnmUY8Yg34Ma5NBwqYzLBd********************cRVu/W3HH+8WGGJsV3TA=",
+5. "resultCode": "000000",
+6. "resultDesc": "Success",
+7. "billDownloadParam": {
+8. "headers": {
+9. "Authorization": "AWS4-HMAC-SHA256 Credential=BJIIJMUMOQKXDCODXVCG/202211********************mz-date, Signature=e7275216278aebc548f413f899eb2f4d82011ed479087f0055c702fa6addc8e5",
+10. "x-amz-content-sha256": "UNSIGNED-PAYLOAD",
+11. "x-amz-client-request-id": "20210863286224479792",
+12. "x-amz-date": "20221103T005326Z",
+13. "connection": "close",
+14. "Host": "petalpay-merchant-test-001.obs.cn-north-4.myhuaweicloud.cn",
+15. "user-agent": "Apache-HttpAsyncClient/4.1.2 (Java/1.8.0_272)",
+16. "Content-Type": "application/octet-stream"
+17. },
+18. "method": "GET",
+19. "downloadUrl": "https://petalpay-merchant-test-001.obs.cn-north-4.myhuaweicloud.cn/xxxxxx.zip"
+20. }
+21. }
+```
+
+## 错误码
+
+**resultCode**非400000的错误码请查看[公共错误码说明](payment-error-code-rest.md#公共错误码说明)。
+
+| 返回码 | 错误码 | 错误描述 | **解决方案** |
+| --- | --- | --- | --- |
+| 400000 | NOT\_SETTLEMENT\_DATE | 非结算日，账单未生成 | 请修改入参日期重试。 |
+| 400000 | INVALID\_ARGUMENTS | 参数不合法 | 请检查请求参数。 |
+| 400000 | BILL\_SWITCH\_NOT\_TURN\_ON | 账单开关没有打开 | 请检查并[打开账单开关](payment-partner-agent-query-settle-bill.md#功能介绍)。 |
+| 400000 | UNKNOWN\_ERROR | 服务暂不可用，请稍后重试 | 稍后重试。 |
+
+## 下载文件示例
+
+```
+1. RestTemplate restTemplate = new RestTemplate(new HttpComponentsClientHttpRequestFactory(HttpClients.createSystem()));
+2. HttpHeaders headers = new HttpHeaders();
+3. // billResponse为请求账单接口响应的对象
+4. billResponse.getBillDownloadParam().getHeaders().forEach(headers::add);
+5. HttpEntity<?> httpEntity = new HttpEntity<>(headers);
+6. ResponseEntity<byte[]> responseEntity = restTemplate.exchange(billResponse.getBillDownloadParam().getDownloadUrl(), HttpMethod.GET, httpEntity, byte[].class, new Object[0]);
+7. if (responseEntity.getStatusCode() == HttpStatus.OK) {
+8. // 结算账单2022xxxx.zip 路径可自定义
+9. Files.write(Paths.get("./结算账单2022xxxx.zip"), responseEntity.getBody());
+10. }
+```
+
+## 结算账单文件说明
+
+| **字段名** | **是否必填** | **描述** | **示例值** |
+| --- | --- | --- | --- |
+| 结算单号 | 是 | 指商户号结算时，华为支付为该次结算分配的订单号。 | 71306c214b2d486199e3c19a6\*\*\*\*\*\*X |
+| 结算日 | 是 | 依据该商户号结算周期，华为支付将交易款结算给该商户号结算账户的日期，格式为yyyyMMdd。 | 20220826 |
+| 商户名称 | 是 | 发起该笔交易下单的华为支付商户主体名称。 | 测试\*\*\*\*\*\*商户 |
+| 商户号 | 是 | 发起该笔交易下单的华为支付商户号。 | 1015\*\*\*\*\*\*89 |
+| 交易创建时间 | 是 | 指该笔交易的创建时间，格式为yyyyMMdd。 | 20220825 |
+| 交易完成时间 | 是 | 指该笔交易的支付成功时间，格式为yyyy-MM-dd HH:mm:ss。 | 2022-08-25 10:29:19 |
+| 系统交易订单号 | 是 | 华为支付为该笔订单分配的订单号。 | 1220825102620000\*\*\*\*\*\*857556 |
+| 商户订单号 | 是 | 商户传入的该笔订单的商户订单号，对应下单接口里的mercOrderNo字段。 | Imagazine\_1661394\*\*\*\*\*\* |
+| 交易类型 | 是 | 该笔订单类型，包括但不限于（后续可能新增）：  - 收单：通过华为支付收款的订单  - 退款：给用户退款的订单  - 分账：收款资金分账给合作方的订单  - 分账回收入金：分账后从合作方分账回收的订单  - 分账回收出金：分账后被合作方分账回收的订单  - 协议分账：将收款资金根据分账规则分给合作方的订单  - 冻结：争议交易冻结结算款的订单  - 解冻：争议交易解冻结算款的订单  - 商户收单：通过华为支付收款的订单  - B2C转账：转账给用户支付账户的订单 | 收单 |
+| 产品实例编号 | 否 | 指该笔订单使用的交易产品编号。 | 87178478298\*\*\*\*\*\*0 |
+| 产品名称 | 否 | 指该笔订单使用的交易产品名称。 | 借记卡快捷支付 |
+| 银行名称 | 否 | 指该笔订单发生交易的银行。 | 工商银行 |
+| 卡类型 | 否 | 指该笔订单发生交易的银行卡类型：  - 借记卡  - 贷记卡 | 借记卡 |
+| 交易币种 | 是 | 指该笔订单的交易币种。  CNY（人民币，默认值） | CNY |
+| 结算金额(元) | 是 | 指该笔订单的实际应结算金额，最多保留小数点后2位。 | 5.01 |
+| 订单金额(元) | 是 | 该笔订单的总金额，包括用户支付金额、优惠金额，最多保留到小数点后2位。 | 5.01 |
+| 优惠金额(元) | 否 | 指该笔订单在用户支付时的减免金额，最多保留到小数点后2位。 | 0 |
+| 手续费金额(元) | 是 | 该笔订单产生的交易手续费，最多保留小数点后2位。 | 0.03 |
+| 手续费收取方式 | 是 | 指华为支付对当笔订单的手续费收取方式，一般以商户号维度配置，支持：  - 手续费轧差收取  - 手续费后收  - 手续费账户收取 | 手续费轧差收取 |
+| 分账类型 | 是 | 指分账订单的分账方式：  - 不分账  - 分账  - 分账回收  - 协议分账 | 不分账 |
+| 合作方商户名称 | 否 | 指分账订单的发起方商户主体名称。 | xyz |
+| 合作方商户号 | 是 | 指分账订单的发起方商户号。 | 1015\*\*\*\*\*\*89 |
+| 原系统交易订单号 | 否 | 退款或者分账原华为支付系统订单号。 | 124042317\*\*\*\*\*\*0740873494880 |
+| 原商户订单号 | 否 | 退款或者分账原商户订单号。 | czl00120\*\*\*\*\*\*554112 |
+| 商户预留信息 | 否 | 预下单时的商户预留信息。 | payload test |
+| AppID | 否 | 应用ID。  如果商户交易未配置AppID校验，则该字段信息为空。 | 5765880\*\*\*\*\*\*8652727 |
+| 用户标识 | 否 | 商户AppID生成的对应的openid。  如果商户交易未配置AppID校验，则该字段信息为空。 | 2248554\*\*\*\*\*\*3012454 |

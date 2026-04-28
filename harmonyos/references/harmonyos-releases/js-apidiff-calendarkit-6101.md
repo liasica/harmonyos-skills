@@ -1,0 +1,39 @@
+---
+url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/js-apidiff-calendarkit-6101
+title: Calendar Kit
+breadcrumb: 版本说明 > HarmonyOS 6.1.0(23) > OS平台能力 > API变更清单 > 6.1.0(23) Beta1引入的变更 > Calendar Kit
+category: harmonyos-releases
+scraped_at: 2026-04-28T07:33:27+08:00
+doc_updated_at: 2026-04-20
+content_hash: sha256:f7cefbea0ce510cff63f2f564f8521d27ba30a7c2602b9b549b7954f7a80d851
+---
+
+| 操作 | 旧版本 | 新版本 | d.ts文件 |
+| --- | --- | --- | --- |
+| 新增错误码 | 类名：CalendarManager；  API声明：createCalendar(calendarAccount: CalendarAccount): Promise<Calendar>;  差异内容：NA | 类名：CalendarManager；  API声明：createCalendar(calendarAccount: CalendarAccount): Promise<Calendar>;  差异内容：23900004 | api/@ohos.calendarManager.d.ts |
+| 新增错误码 | 类名：CalendarManager；  API声明：createCalendar(calendarAccount: CalendarAccount, callback: AsyncCallback<Calendar>): void;  差异内容：NA | 类名：CalendarManager；  API声明：createCalendar(calendarAccount: CalendarAccount, callback: AsyncCallback<Calendar>): void;  差异内容：23900004 | api/@ohos.calendarManager.d.ts |
+| 新增错误码 | 类名：CalendarManager；  API声明：deleteCalendar(calendar: Calendar): Promise<void>;  差异内容：NA | 类名：CalendarManager；  API声明：deleteCalendar(calendar: Calendar): Promise<void>;  差异内容：23900004 | api/@ohos.calendarManager.d.ts |
+| 新增错误码 | 类名：CalendarManager；  API声明：deleteCalendar(calendar: Calendar, callback: AsyncCallback<void>): void;  差异内容：NA | 类名：CalendarManager；  API声明：deleteCalendar(calendar: Calendar, callback: AsyncCallback<void>): void;  差异内容：23900004 | api/@ohos.calendarManager.d.ts |
+| 新增错误码 | 类名：CalendarManager；  API声明：getCalendar(calendarAccount?: CalendarAccount): Promise<Calendar>;  差异内容：NA | 类名：CalendarManager；  API声明：getCalendar(calendarAccount?: CalendarAccount): Promise<Calendar>;  差异内容：23900003,23900004 | api/@ohos.calendarManager.d.ts |
+| 新增错误码 | 类名：CalendarManager；  API声明：getCalendar(calendarAccount: CalendarAccount, callback: AsyncCallback<Calendar>): void;  差异内容：NA | 类名：CalendarManager；  API声明：getCalendar(calendarAccount: CalendarAccount, callback: AsyncCallback<Calendar>): void;  差异内容：23900003,23900004 | api/@ohos.calendarManager.d.ts |
+| 新增错误码 | 类名：CalendarManager；  API声明：getCalendar(callback: AsyncCallback<Calendar>): void;  差异内容：NA | 类名：CalendarManager；  API声明：getCalendar(callback: AsyncCallback<Calendar>): void;  差异内容：23900004 | api/@ohos.calendarManager.d.ts |
+| 新增错误码 | 类名：CalendarManager；  API声明：getAllCalendars(): Promise<Calendar[]>;  差异内容：NA | 类名：CalendarManager；  API声明：getAllCalendars(): Promise<Calendar[]>;  差异内容：23900004 | api/@ohos.calendarManager.d.ts |
+| 新增错误码 | 类名：CalendarManager；  API声明：getAllCalendars(callback: AsyncCallback<Calendar[]>): void;  差异内容：NA | 类名：CalendarManager；  API声明：getAllCalendars(callback: AsyncCallback<Calendar[]>): void;  差异内容：23900004 | api/@ohos.calendarManager.d.ts |
+| 新增错误码 | 类名：Calendar；  API声明：addEvent(event: Event): Promise<number>;  差异内容：NA | 类名：Calendar；  API声明：addEvent(event: Event): Promise<number>;  差异内容：201,23900004 | api/@ohos.calendarManager.d.ts |
+| 新增错误码 | 类名：Calendar；  API声明：addEvent(event: Event, callback: AsyncCallback<number>): void;  差异内容：NA | 类名：Calendar；  API声明：addEvent(event: Event, callback: AsyncCallback<number>): void;  差异内容：201,23900004 | api/@ohos.calendarManager.d.ts |
+| 新增错误码 | 类名：Calendar；  API声明：addEvents(events: Event[]): Promise<void>;  差异内容：NA | 类名：Calendar；  API声明：addEvents(events: Event[]): Promise<void>;  差异内容：201,23900004 | api/@ohos.calendarManager.d.ts |
+| 新增错误码 | 类名：Calendar；  API声明：addEvents(events: Event[], callback: AsyncCallback<void>): void;  差异内容：NA | 类名：Calendar；  API声明：addEvents(events: Event[], callback: AsyncCallback<void>): void;  差异内容：201,23900004 | api/@ohos.calendarManager.d.ts |
+| 新增错误码 | 类名：Calendar；  API声明：getEvents(eventFilter?: EventFilter, eventKey?: (keyof Event)[]): Promise<Event[]>;  差异内容：NA | 类名：Calendar；  API声明：getEvents(eventFilter?: EventFilter, eventKey?: (keyof Event)[]): Promise<Event[]>;  差异内容：201,23900004 | api/@ohos.calendarManager.d.ts |
+| 新增错误码 | 类名：Calendar；  API声明：getEvents(eventFilter: EventFilter, eventKey: (keyof Event)[], callback: AsyncCallback<Event[]>): void;  差异内容：NA | 类名：Calendar；  API声明：getEvents(eventFilter: EventFilter, eventKey: (keyof Event)[], callback: AsyncCallback<Event[]>): void;  差异内容：201,23900004 | api/@ohos.calendarManager.d.ts |
+| 新增错误码 | 类名：Calendar；  API声明：getEvents(callback: AsyncCallback<Event[]>): void;  差异内容：NA | 类名：Calendar；  API声明：getEvents(callback: AsyncCallback<Event[]>): void;  差异内容：201,23900004 | api/@ohos.calendarManager.d.ts |
+| 新增错误码 | 类名：Calendar；  API声明：setConfig(config: CalendarConfig): Promise<void>;  差异内容：NA | 类名：Calendar；  API声明：setConfig(config: CalendarConfig): Promise<void>;  差异内容：23900001 | api/@ohos.calendarManager.d.ts |
+| 新增错误码 | 类名：Calendar；  API声明：setConfig(config: CalendarConfig, callback: AsyncCallback<void>): void;  差异内容：NA | 类名：Calendar；  API声明：setConfig(config: CalendarConfig, callback: AsyncCallback<void>): void;  差异内容：23900001 | api/@ohos.calendarManager.d.ts |
+| 新增错误码 | 类名：Calendar；  API声明：queryEventInstances(start: number, end: number, ids?: number[], eventKey?: (keyof Event)[]): Promise<Event[]>;  差异内容：NA | 类名：Calendar；  API声明：queryEventInstances(start: number, end: number, ids?: number[], eventKey?: (keyof Event)[]): Promise<Event[]>;  差异内容：201,23900004 | api/@ohos.calendarManager.d.ts |
+| 权限变更 | 类名：Calendar；  API声明：addEvent(event: Event): Promise<number>;  差异内容：NA | 类名：Calendar；  API声明：addEvent(event: Event): Promise<number>;  差异内容：ohos.permission.WRITE\_CALENDAR or ohos.permission.WRITE\_WHOLE\_CALENDAR | api/@ohos.calendarManager.d.ts |
+| 权限变更 | 类名：Calendar；  API声明：addEvent(event: Event, callback: AsyncCallback<number>): void;  差异内容：NA | 类名：Calendar；  API声明：addEvent(event: Event, callback: AsyncCallback<number>): void;  差异内容：ohos.permission.WRITE\_CALENDAR or ohos.permission.WRITE\_WHOLE\_CALENDAR | api/@ohos.calendarManager.d.ts |
+| 权限变更 | 类名：Calendar；  API声明：addEvents(events: Event[]): Promise<void>;  差异内容：NA | 类名：Calendar；  API声明：addEvents(events: Event[]): Promise<void>;  差异内容：ohos.permission.WRITE\_CALENDAR or ohos.permission.WRITE\_WHOLE\_CALENDAR | api/@ohos.calendarManager.d.ts |
+| 权限变更 | 类名：Calendar；  API声明：addEvents(events: Event[], callback: AsyncCallback<void>): void;  差异内容：NA | 类名：Calendar；  API声明：addEvents(events: Event[], callback: AsyncCallback<void>): void;  差异内容：ohos.permission.WRITE\_CALENDAR or ohos.permission.WRITE\_WHOLE\_CALENDAR | api/@ohos.calendarManager.d.ts |
+| 权限变更 | 类名：Calendar；  API声明：getEvents(eventFilter?: EventFilter, eventKey?: (keyof Event)[]): Promise<Event[]>;  差异内容：NA | 类名：Calendar；  API声明：getEvents(eventFilter?: EventFilter, eventKey?: (keyof Event)[]): Promise<Event[]>;  差异内容：ohos.permission.READ\_CALENDAR or ohos.permission.READ\_WHOLE\_CALENDAR | api/@ohos.calendarManager.d.ts |
+| 权限变更 | 类名：Calendar；  API声明：getEvents(eventFilter: EventFilter, eventKey: (keyof Event)[], callback: AsyncCallback<Event[]>): void;  差异内容：NA | 类名：Calendar；  API声明：getEvents(eventFilter: EventFilter, eventKey: (keyof Event)[], callback: AsyncCallback<Event[]>): void;  差异内容：ohos.permission.READ\_CALENDAR or ohos.permission.READ\_WHOLE\_CALENDAR | api/@ohos.calendarManager.d.ts |
+| 权限变更 | 类名：Calendar；  API声明：getEvents(callback: AsyncCallback<Event[]>): void;  差异内容：NA | 类名：Calendar；  API声明：getEvents(callback: AsyncCallback<Event[]>): void;  差异内容：ohos.permission.READ\_CALENDAR or ohos.permission.READ\_WHOLE\_CALENDAR | api/@ohos.calendarManager.d.ts |
+| 权限变更 | 类名：Calendar；  API声明：queryEventInstances(start: number, end: number, ids?: number[], eventKey?: (keyof Event)[]): Promise<Event[]>;  差异内容：NA | 类名：Calendar；  API声明：queryEventInstances(start: number, end: number, ids?: number[], eventKey?: (keyof Event)[]): Promise<Event[]>;  差异内容：ohos.permission.READ\_CALENDAR or ohos.permission.READ\_WHOLE\_CALENDAR | api/@ohos.calendarManager.d.ts |

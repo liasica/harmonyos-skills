@@ -1,0 +1,242 @@
+---
+url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-sendable
+title: Sendable对象简介
+breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS并发 > 并发线程间通信 > 线程间通信对象 > Sendable对象 > Sendable对象简介
+category: harmonyos-guides
+scraped_at: 2026-04-28T07:38:32+08:00
+doc_updated_at: 2026-04-20
+content_hash: sha256:f98ecd087fa8b25d970b825f6aa5d5ba2c34f95b1cf939bf66972ff7a41bf0e8
+---
+
+在传统JS引擎中，要优化对象的并发通信开销，唯一的方法是将实现下沉到Native侧，通过[Transferable对象](transferabled-object.md)的转移或共享来降低开销。然而，开发者仍有大量对象并发通信的需求，这个问题在业界JS引擎中尚未解决。
+
+ArkTS提供了Sendable对象类型，它是一种可在ArkTS并发实例间安全共享和传递的数据类型，它支持引用传递来减少通信成本。
+
+Sendable对象可共享，跨线程前后指向同一个JS对象。如果Sendable对象通过调用Napi接口与一个Native对象绑定，当共享传递Sendable对象时，其绑定的Native对象也会一并共享传递。通信过程如下图所示：
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/sgcKhEovTC-jXMpStg1QtA/zh-cn_image_0000002552957534.png?HW-CC-KV=V1&HW-CC-Date=20260427T233832Z&HW-CC-Expire=86400&HW-CC-Sign=7A889F595E71F4307D75C0BE9EAADA003CBB3EC4D1FF6AA4102200D1AD3A3097)
+
+与其它ArkTS数据对象不同，符合Sendable协议的数据对象在运行时应为类型固定的对象。
+
+当多个并发实例尝试同时更新Sendable数据时，会发生数据竞争，例如[ArkTS共享容器](arkts-collections-introduction.md)的多线程操作。因此，ArkTS提供[异步锁](arkts-async-lock-introduction.md)机制来避免不同并发实例间的数据竞争，并提供了[异步等待](arkts-condition-variable-introduction.md)机制来控制多线程处理数据的时序。同时，还可以通过[对象冻结接口](sendable-freeze.md)将对象冻结为只读，从而避免数据竞争。
+
+Sendable对象提供了并发实例间高效的通信能力，即引用传递，适用于开发者自定义大对象需要线程间通信的场景，例如子线程读取数据库数据并返回给宿主线程，具体代码实现可参考[跨并发实例传输大数据场景](sendable-guide.md#跨并发实例传输大数据场景)。
+
+## 基础概念
+
+### Sendable协议
+
+Sendable协议定义了ArkTS的可共享对象体系及其规格约束。符合Sendable协议的数据（以下简称Sendable数据）可以在ArkTS并发实例间传递。
+
+默认情况下，Sendable数据在ArkTS并发实例间（包括UI主线程、TaskPool线程、Worker线程）采用引用传递方式，同时还支持拷贝传递方式。
+
+### ISendable
+
+在ArkTS语言基础库[@arkts.lang](../harmonyos-references/js-apis-arkts-lang.md)中引入了interface ISendable，没有任何方法或属性。ISendable是所有Sendable类型（除了null和undefined）的父类型。ISendable主要用于开发者自定义Sendable数据结构的场景中。类装饰器[@Sendable装饰器](arkts-sendable.md#sendable装饰器)是implement ISendable的语法糖。
+
+### Sendable class
+
+说明
+
+从API version 11开始，支持使用@Sendable装饰器校验Sendable class。
+
+Sendable class需同时满足以下两个规则：
+
+1. 针对API version 22以前的工程，当且仅当被标注了[@Sendable装饰器](arkts-sendable.md#sendable装饰器)。从API version 22开始，Sendable class除了必须标注@Sendable装饰器之外，开发者可根据需要在Sendable class上叠加使用其他自定义装饰器，具体操作可参考[在Sendable class上叠加其他自定义装饰器](sendable-constraints.md#支持在sendable-class上叠加自定义装饰器)。
+2. 需满足Sendable约束，详情可查[Sendable使用规则](sendable-constraints.md)。
+
+### Sendable function
+
+说明
+
+* 从API version 12开始，支持使用@Sendable装饰器校验Sendable function。
+* 针对API version 12的工程，开发者使用@Sendable装饰器校验Sendable function时，需在工程中配置"compatibleSdkVersionStage": "beta3"，否则其Sendable特性将不生效。参考[build-profile.json5配置文件说明](../harmonyos-guides-V5/ide-hvigor-build-profile-V5.md)。
+* 针对API version大于12的工程，可直接使用@Sendable装饰器校验Sendable function，无需再进行其他配置。
+
+Sendable function需同时满足以下两个规则：
+
+1. 当且仅当被标注了[@Sendable装饰器](arkts-sendable.md#sendable装饰器)。
+2. 需满足Sendable约束，具体可参考[Sendable使用规则](sendable-constraints.md)。
+
+### Sendable interface
+
+Sendable interface需同时满足以下两个规则：
+
+1. 当且仅当是[ISendable](arkts-sendable.md#isendable)或者继承了ISendable。
+2. 需满足Sendable约束，具体可参考[Sendable使用规则](sendable-constraints.md)。
+
+### Sendable支持的数据类型
+
+* ArkTS基本数据类型：boolean、number、string、bigint、null、undefined。
+* ArkTS数据类型：const enum（常量枚举）。
+* ArkTS语言标准库中定义的[容器类型数据](arkts-collections-introduction.md)（须显式引入[@arkts.collections](../harmonyos-references/arkts-apis-arkts-collections.md)）。
+* ArkTS语言标准库中定义的[异步锁对象](arkts-async-lock-introduction.md)（须显式引入[@arkts.utils](../harmonyos-references/arkts-apis-arkts-utils.md)）。
+* ArkTS语言标准库中定义的[异步等待对象](arkts-condition-variable-introduction.md)（须显式引入[@arkts.utils](../harmonyos-references/arkts-apis-arkts-utils.md)）。
+* ArkTS语言标准库中定义的[SendableLruCache对象](../harmonyos-references/arkts-apis-arkts-utils-sendablelrucache.md)（须显式引入[@arkts.utils](../harmonyos-references/arkts-apis-arkts-utils.md)）。
+* 继承了[ISendable](arkts-sendable.md#isendable)的interface。
+* 标注了[@Sendable装饰器](arkts-sendable.md#sendable装饰器)的class。
+* 标注了[@Sendable装饰器](arkts-sendable.md#sendable装饰器)的function。
+* 接入Sendable的系统对象：
+
+  + [共享用户首选项](../harmonyos-references/js-apis-data-sendablepreferences.md)
+  + [可共享的色彩管理](../harmonyos-references/js-apis-sendablecolorspacemanager.md)
+  + [基于Sendable对象的图片处理](../harmonyos-references/js-apis-sendableimage.md)
+  + [资源管理](../harmonyos-references/js-apis-sendable-resource-manager.md)
+  + [SendableContext对象管理](../harmonyos-references/js-apis-app-ability-sendablecontextmanager.md)
+* 元素均为Sendable类型的union type数据。
+* 开发者自定义的Native Sendable对象。ArkTS支持开发者自定义Native Sendable对象，详情参见[自定义Native Sendable对象的多线程操作场景](napi-define-sendable-object.md)。
+
+说明
+
+* JS内置对象在并发实例间传递时遵循结构化克隆算法，跨线程行为是拷贝传递。因此，JS内置对象的实例不是Sendable类型。
+* 对象字面量和数组字面量在并发实例间传递时遵循结构化克隆算法，跨线程行为是拷贝传递。因此，对象字面量和数组字面量不是Sendable类型。
+
+**Sendable支持const enum类型使用示例：**
+
+```
+1. // Test.ets
+2. export const enum ModelState {
+3. ACTIVE,
+4. INACTIVE
+5. }
+```
+
+```
+1. // Index.ets
+2. import { taskpool } from "@kit.ArkTS";
+3. import { ModelState } from "./Test";
+
+5. @Sendable
+6. class Model {
+7. state: ModelState = ModelState.ACTIVE;
+
+9. getState() {
+10. console.info("model state is " + this.state);
+11. }
+
+13. setState(state: ModelState) {
+14. this.state = state;
+15. }
+16. }
+
+18. @Concurrent
+19. function setModelState(model: Model) {
+20. model.setState(ModelState.INACTIVE);
+21. model.getState();
+22. }
+
+24. @Entry
+25. @Component
+26. struct Index {
+27. @State message: string = 'Hello World';
+28. @State num: number = 0;
+
+30. build() {
+31. RelativeContainer() {
+32. Text(this.message)
+33. .id('HelloWorld')
+34. .fontSize(50)
+35. .fontWeight(FontWeight.Bold)
+36. .alignRules({
+37. center: { anchor: '__container__', align: VerticalAlign.Center },
+38. middle: { anchor: '__container__', align: HorizontalAlign.Center }
+39. })
+40. .onClick(async () => {
+41. let model = new Model();
+42. model.getState();
+43. let task = new taskpool.Task(setModelState, model);
+44. await taskpool.execute(task);
+45. })
+46. }
+47. .height('100%')
+48. .width('100%')
+49. }
+50. }
+```
+
+## Sendable的实现原理
+
+为了实现[Sendable数据](arkts-sendable.md#sendable支持的数据类型)在不同并发实例间的引用传递，Sendable共享对象分配在共享堆中，实现跨并发实例的内存共享。
+
+共享堆（SharedHeap）是进程级别的堆空间，与虚拟机本地堆（LocalHeap）不同，LocalHeap仅限单个并发实例访问，而SharedHeap可被所有线程访问。Sendable对象的跨线程行为为引用传递，因此，一个Sendable对象可能被多个并发实例引用。判断该Sendable对象是否存活，取决于所有并发实例是否存在对此Sendable对象的引用。
+
+**SharedHeap与LocalHeap关系图**
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/iyQRLLt0RHSRp9eUfAFxsA/zh-cn_image_0000002583477535.png?HW-CC-KV=V1&HW-CC-Date=20260427T233832Z&HW-CC-Expire=86400&HW-CC-Sign=7FE1D3769541E27B087EFD690486C5993D49B06E88A5DEEC23995697B0CC9988)
+
+各个并发实例的LocalHeap是隔离的。SharedHeap是进程级别的堆，可以被所有并发实例共享，但SharedHeap不能引用LocalHeap中的对象。
+
+## @Sendable装饰器
+
+声明并校验Sendable class和Sendable function。
+
+| @Sendable装饰器 | 说明 |
+| --- | --- |
+| 装饰器参数 | 无。 |
+| 使用场景限制 | 仅支持在Stage模型的.ets文件中使用。 |
+| 装饰的函数类型限制 | 仅支持装饰普通function和Async function类型。 |
+| 装饰的类继承关系限制 | Sendable class只能继承Sendable class，普通Class不可继承Sendable class。 |
+| 装饰的对象内的属性类型限制 | 1. 支持string、number、boolean、bigint、null、undefined、const enum、Sendable class、collections容器集、ArkTSUtils.locks.AsyncLock、ArkTSUtils.SendableLruCache、ArkTSUtils.locks.ConditionVariable以及自定义的Sendable函数类型。  2. 禁止使用闭包变量，定义在顶层的Sendable class和Sendable function除外。  3. 不支持通过#定义私有属性，需用private。  4. 不支持计算属性。  5. 不支持类型别名。 |
+| 装饰的对象内的属性的其他限制 | 1. 成员属性必须显式初始化，不能使用感叹号。  2. 不支持增加或删除属性，允许修改属性，修改前后属性的类型必须一致，不支持修改方法。 |
+| 装饰的函数或类对象内的方法参数限制 | 允许使用local变量、入参和通过import引入的变量。禁止使用闭包变量，但定义在顶层的Sendable class和Sendable function除外。从API version 18开始，支持访问本文件导出的变量。 |
+| 适用场景 | 1. 在TaskPool或Worker中使用类方法或Sendable函数。  2. 传输对象数据量较大的场景。序列化耗时会随着数据量增大而增大，使用Sendable对数据进行改造后，传输100KB数据效率提升约20倍，传输1M数据效率提升约100倍。 |
+
+**装饰器修饰Class使用示例：**
+
+```
+1. @Sendable
+2. class SendableTestClass {
+3. desc: string = "sendable: this is SendableTestClass ";
+4. num: number = 5;
+5. printName() {
+6. console.info("sendable: SendableTestClass desc is: " + this.desc);
+7. }
+8. getNum(): number {
+9. return this.num;
+10. }
+11. }
+```
+
+**装饰器修饰Function使用示例：**
+
+```
+1. @Sendable
+2. type SendableFuncType = () => void;
+
+4. @Sendable
+5. class TopLevelSendableClass {
+6. num: number = 1;
+7. PrintNum() {
+8. console.info("Top level sendable class");
+9. }
+10. }
+
+12. @Sendable
+13. function TopLevelSendableFunction() {
+14. console.info("Top level sendable function");
+15. }
+
+17. @Sendable
+18. function SendableTestFunction() {
+19. const topClass = new TopLevelSendableClass(); // 顶层sendable class
+20. topClass.PrintNum();
+21. TopLevelSendableFunction(); // 顶层sendable function
+22. console.info("Sendable test function");
+23. }
+
+25. @Sendable
+26. class SendableTestClass {
+27. constructor(func: SendableFuncType) {
+28. this.callback = func;
+29. }
+30. callback: SendableFuncType; // 顶层sendable function
+
+32. CallSendableFunc() {
+33. SendableTestFunction(); // 顶层sendable function
+34. }
+35. }
+
+37. let sendableClass = new SendableTestClass(SendableTestFunction);
+38. sendableClass.callback();
+39. sendableClass.CallSendableFunc();
+```

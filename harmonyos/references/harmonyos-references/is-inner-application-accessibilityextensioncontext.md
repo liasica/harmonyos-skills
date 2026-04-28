@@ -1,0 +1,1574 @@
+---
+url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/is-inner-application-accessibilityextensioncontext
+title: AccessibilityExtensionContext (辅助功能扩展上下文)
+breadcrumb: API参考 > 应用框架 > Accessibility Kit（无障碍服务） > ArkTS API > AccessibilityExtensionContext (辅助功能扩展上下文)
+category: harmonyos-references
+scraped_at: 2026-04-28T07:59:07+08:00
+doc_updated_at: 2026-04-17
+content_hash: sha256:3f643018d6514f87dff6926c548cb40cb00b4cc5455cf9e8dd39cc9ceb43ec51
+---
+
+AccessibilityExtensionContext是AccessibilityExtensionAbility上下文环境，继承自ExtensionContext。
+
+辅助功能扩展上下文模块提供辅助功能扩展的上下文环境的能力，包括允许配置辅助应用关注信息类型、查询节点信息、手势注入等。
+
+说明
+
+* 本模块首批接口从API version 9开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
+
+## 使用说明
+
+PhonePC/2in1TabletWearable
+
+在使用AccessibilityExtensionContext的功能前，需要通过AccessibilityExtensionAbility子类实例获取AccessibilityExtensionContext的实例。
+
+```
+1. import { AccessibilityExtensionAbility } from '@kit.AccessibilityKit';
+
+3. class EntryAbility extends AccessibilityExtensionAbility {
+4. onConnect(): void {
+5. let axContext = this.context;
+6. }
+7. }
+```
+
+## ElementAttributeValues
+
+PhonePC/2in1TabletWearable
+
+节点元素具备的属性名称及属性值类型信息。
+
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**系统能力**：SystemCapability.BarrierFree.Accessibility.Core
+
+### 属性
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| accessibilityFocused | boolean | 否 | 否 | 表示元素是否处于无障碍焦点状态。true表示元素当前处于无障碍焦点状态，false表示元素当前不处于无障碍焦点状态，默认值为false。 |
+| accessibilityText12+ | string | 否 | 否 | 元素的无障碍文本信息。 |
+| bundleName | string | 否 | 否 | 应用包名。 |
+| checkable | boolean | 否 | 否 | 表示元素是否支持点击操作。true表示元素支持点击操作，false表示元素不支持点击操作，默认值为false。 |
+| checked | boolean | 否 | 否 | 表示元素当前的可点击状态。true表示元素当前是可点击的，false表示元素当前是不可点击的，默认值为false。 |
+| children | Array<[AccessibilityElement](is-inner-application-accessibilityextensioncontext.md#accessibilityelement)> | 否 | 否 | 所有子元素。 |
+| clickable | boolean | 否 | 否 | 表示元素是否可点击。true表示元素可点击，false表示元素不可点击，默认值为false。 |
+| componentId | number | 否 | 否 | 元素所属的组件ID。默认值为-1。 |
+| componentType | string | 否 | 否 | 应与元素所属的组件类型所对应，如：按钮Button类型->'Button'、图像Image类型->'Image'。 |
+| contents | Array<string> | 否 | 否 | 内容列表。根据实际场景设置，无特殊限制。 |
+| currentIndex | number | 否 | 否 | 当前项的索引。默认值为0。 |
+| description | string | 否 | 否 | 元素的描述信息。根据实际场景设置，无特殊限制。 |
+| editable | boolean | 否 | 否 | 表示元素是否可编辑。true表示元素可编辑，false表示元素不可编辑，默认值为false。 |
+| endIndex | number | 否 | 否 | 屏幕最后显示项的列表索引。默认值为0。 |
+| error | string | 否 | 否 | 错误状态字符串。 |
+| focusable | boolean | 否 | 否 | 表示元素是否可聚焦。true表示元素可聚焦，false表示元素不可聚焦，默认值为false。 |
+| hintText | string | 否 | 否 | 提示文本。 |
+| inputType | number | 否 | 否 | 输入文本的类型。默认值为0。 |
+| inspectorKey | string | 否 | 否 | 表示元素的别名。 |
+| isActive | boolean | 否 | 否 | 表示元素是否处于活动状态。true表示元素处于活动状态，false表示元素不处于活动状态，默认值为true。 |
+| isEnable | boolean | 否 | 否 | 表示元素是否启用。true表示元素已启用，false表示元素未启用，默认值为false。 |
+| isHint | boolean | 否 | 否 | 表示元素是否为提示状态。true表示元素处于提示状态，false表示元素不处于提示状态，默认值为false。 |
+| isFocused | boolean | 否 | 否 | 表示元素是否聚焦。true表示元素处于聚焦状态，false表示元素不处于聚焦状态，默认值为false。 |
+| isPassword | boolean | 否 | 否 | 表示元素是否为密码。true表示元素为密码，false表示元素不为密码，默认值为false。 |
+| isVisible | boolean | 否 | 否 | 表示元素是否可见。true表示元素可见，false表示元素不可见，默认值为false。 |
+| itemCount | number | 否 | 否 | 项目的总数。默认值为0。 |
+| lastContent | string | 否 | 否 | 最后的内容。 |
+| layer | number | 否 | 否 | 该元素的显示层。 |
+| longClickable | boolean | 否 | 否 | 表示元素是否可长单击。true表示元素可长单击，false表示元素不可长单击，默认值为false。 |
+| pageId | number | 否 | 否 | 页码id。默认值为-1。 |
+| parent | [AccessibilityElement](is-inner-application-accessibilityextensioncontext.md#accessibilityelement) | 否 | 否 | 元素的父元素。 |
+| pluralLineSupported | boolean | 否 | 否 | 表示元素是否支持多行文本。true表示元素支持多行文本，false表示元素不支持多行文本，默认值为false。 |
+| rect | [Rect](is-inner-application-accessibilityextensioncontext.md#rect) | 否 | 否 | 元素的面积。 |
+| resourceName | string | 否 | 否 | 元素的资源名称。 |
+| rootElement | [AccessibilityElement](is-inner-application-accessibilityextensioncontext.md#accessibilityelement) | 否 | 否 | 窗口元素的根元素。 |
+| screenRect | [Rect](is-inner-application-accessibilityextensioncontext.md#rect) | 否 | 否 | 元素的显示区域。 |
+| scrollable | boolean | 否 | 否 | 表示元素是否可滚动。true表示元素可滚动，false表示元素不可滚动，默认值为false。 |
+| selected | boolean | 否 | 否 | 表示元素是否被选中。true表示元素被选中，false表示元素未被选中，默认值为false。 |
+| startIndex | number | 否 | 否 | 在屏幕上的第一个项目的列表索引。默认值为0。 |
+| text | string | 否 | 否 | 元素的文本。 |
+| textLengthLimit | number | 否 | 否 | 元素文本的最大长度限制。 |
+| textMoveUnit | [accessibility.TextMoveUnit](js-apis-accessibility.md#textmoveunit) | 否 | 否 | 文本被读取时的移动粒度。 |
+| triggerAction | [accessibility.Action](js-apis-accessibility.md#action) | 否 | 否 | 触发元素事件的动作。 |
+| type | [WindowType](is-inner-application-accessibilityextensioncontext.md#windowtype) | 否 | 否 | 元素的窗口类型。 |
+| valueMax | number | 否 | 否 | 最大值。默认值为0。 |
+| valueMin | number | 否 | 否 | 最小值。默认值为0。 |
+| valueNow | number | 否 | 否 | 当前值。默认值为0。 |
+| windowId | number | 否 | 否 | 窗口ID。默认值为-1。 |
+| textType12+ | string | 否 | 否 | 元素的无障碍文本类型，由组件accessibilityTextHint属性配置。 |
+| offset12+ | number | 否 | 否 | 对于可滚动类控件，如List、Grid，内容区相对控件的顶部坐标滚动的像素偏移量。默认值为0。 |
+| hotArea12+ | [Rect](is-inner-application-accessibilityextensioncontext.md#rect) | 否 | 否 | 元素的可触摸区域。 |
+| customComponentType18+ | string | 否 | 是 | 自定义组件类型。与元素的[AccessibilityRoleType枚举说明](ts-universal-attributes-accessibility.md#accessibilityroletype18枚举说明)类型所对应。 |
+| accessibilityNextFocusId18+ | number | 否 | 是 | 下一个要聚焦的组件ID。通过findElement('elementId')查询到的AccessibilityElementInfo对象中可获取到用户在控件上设置的该属性值。默认值为-1。 |
+| accessibilityPreviousFocusId18+ | number | 否 | 是 | 上一个聚焦的组件ID。通过findElement('elementId')查询到的AccessibilityElementInfo对象中可获取到用户在控件上设置的该属性值。默认值为-1。 |
+| extraInfo18+ | string | 否 | 是 | 扩展属性，用于定义一些特定组件的属性，包含：  - CheckboxGroupSelectedStatus：表示CheckboxGroup组件的选中状态，其中取值0表示已选中，取值1表示部分选中，取值2表示未选中。  - Row：Grid组件中聚焦item的行信息，表示该item在第几行。  - Column：Grid组件中聚焦的item的列，表示该item在第几列。  - ListItemIndex：List组件中聚焦item的行信息，表示当前该item在第几行。  - SideBarContainerStates：表示可展开类组件（SideBarContainer、Select）的展开状态，其中取值0表示收起态，取值1表示展开态。  - ToggleType：表示Toggle组件的具体类型，其中取值0表示Checkbox，取值1表示Switch，取值2表示Button。  - BindSheet：表示BindSheet组件的状态，其中取值0表示状态高，取值1表示状态中，取值2表示状态低。  - hasRegisteredHover：表示组件是否注册了onAccessibilityHover事件回调，取值为1表示组件注册了事件回调，若未注册不会使用该字段。  - direction：表示list组件的布局方向，其中取值"vertical"表示竖向，取值"horizontal"表示横向。  - expandedState：表示list组件中listItem的展开状态，其中取值"expanded"表示展开态，取值"collapsed"表示收起态。  - componentTypeDescription：组件类型详细信息，对componentType的补充描述。 |
+| accessibilityScrollable18+ | boolean | 否 | 是 | 表示无障碍模式下元素是否滚动，优先级高于scrollable。其中，true表示可滚动，false表示不可滚动，默认值为true。 |
+
+## FocusDirection
+
+PhonePC/2in1TabletWearable
+
+type FocusDirection = 'up' | 'down' | 'left' | 'right' | 'forward' | 'backward'
+
+表示查询下一焦点元素的方向。
+
+**系统能力**：SystemCapability.BarrierFree.Accessibility.Core
+
+| 类型 | 说明 |
+| --- | --- |
+| 'up' | 表示向上查询。 |
+| 'down' | 表示向下查询。 |
+| 'left' | 表示向左查询。 |
+| 'right' | 表示向右查询。 |
+| 'forward' | 表示向前查询。 |
+| 'backward' | 表示向后查询。 |
+
+## FocusType
+
+PhonePC/2in1TabletWearable
+
+type FocusType = 'accessibility' | 'normal'
+
+表示查询焦点元素的类型。
+
+**系统能力**：SystemCapability.BarrierFree.Accessibility.Core
+
+| 类型 | 说明 |
+| --- | --- |
+| 'accessibility' | 表示无障碍的焦点类型。 |
+| 'normal' | 表示普通的焦点类型。 |
+
+## Rect
+
+PhonePC/2in1TabletWearable
+
+表示矩形区域。
+
+**系统能力**：SystemCapability.BarrierFree.Accessibility.Core
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| left | number | 否 | 否 | 矩形区域的左边界。 |
+| top | number | 否 | 否 | 矩形区域的上边界。 |
+| width | number | 否 | 否 | 矩形区域的宽度。 |
+| height | number | 否 | 否 | 矩形区域的高度。 |
+
+## WindowType
+
+PhonePC/2in1TabletWearable
+
+type WindowType = 'application' | 'system'
+
+表示窗口的类型。
+
+**系统能力**：SystemCapability.BarrierFree.Accessibility.Core
+
+| 类型 | 说明 |
+| --- | --- |
+| 'application' | 表示应用窗口类型。 |
+| 'system' | 表示系统窗口类型。 |
+
+## AccessibilityExtensionContext.setTargetBundleName(deprecated)
+
+PhonePC/2in1TabletWearable
+
+setTargetBundleName(targetNames: Array<string>): Promise<void>;
+
+设置关注的目标包名，使用Promise异步回调。
+
+说明
+
+从API version 9开始支持，从API version 12开始废弃，系统不再开放相关能力。
+
+**系统能力**：SystemCapability.BarrierFree.Accessibility.Core
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| targetNames | Array<string> | 是 | 设置关注应用的包名，服务接收关注应用的无障碍事件，默认接收所有应用的无障碍事件，取消关注应用则传空数组。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+
+**示例：**
+
+```
+1. import { BusinessError } from '@kit.BasicServicesKit';
+
+3. let targetNames = ['com.ohos.xyz'];
+4. axContext.setTargetBundleName(targetNames).then(() => {
+5. console.info(`succeeded in setting target bundle names, targetNames is ${targetNames}`);
+6. }).catch((err: BusinessError) => {
+7. console.error(`failed to set target bundle names, Code is ${err.code}, message is ${err.message}`);
+8. })
+```
+
+## AccessibilityExtensionContext.setTargetBundleName(deprecated)
+
+PhonePC/2in1TabletWearable
+
+setTargetBundleName(targetNames: Array<string>, callback: AsyncCallback<void>): void;
+
+设置关注的目标包名，使用callback异步回调。
+
+说明
+
+从API version 9开始支持，从API version 12开始废弃，系统不再开放相关能力。
+
+**系统能力**：SystemCapability.BarrierFree.Accessibility.Core
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| targetNames | Array<string> | 是 | 设置关注应用的包名，服务接收关注应用的无障碍事件，默认接收所有应用的无障碍事件，取消关注应用则传空数组。 |
+| callback | AsyncCallback<void> | 是 | 回调函数，如果设置关注的目标包名失败，则AsyncCallback中err有数据返回。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+
+**示例：**
+
+```
+1. import { BusinessError } from '@kit.BasicServicesKit';
+
+3. let targetNames = ['com.ohos.xyz'];
+4. try {
+5. axContext.setTargetBundleName(targetNames, (err: BusinessError) => {
+6. if (err && err.code) {
+7. console.error(`failed to set target bundle names, Code is ${err.code}, message is ${err.message}`);
+8. return;
+9. }
+10. console.info(`succeeded in setting target bundle names, targetNames is ${targetNames}`);
+11. });
+12. } catch (error) {
+13. console.error(`failed to set target bundle names, Because ${JSON.stringify(error)}`);
+14. }
+```
+
+## AccessibilityExtensionContext.getFocusElement(deprecated)
+
+PhonePC/2in1TabletWearable
+
+getFocusElement(isAccessibilityFocus?: boolean): Promise<AccessibilityElement>;
+
+获取焦点元素, 使用Promise异步回调。
+
+说明
+
+从API version 9开始支持，从API version 12开始废弃，系统不再开放相关能力。
+
+**系统能力**：SystemCapability.BarrierFree.Accessibility.Core
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| isAccessibilityFocus | boolean | 否 | 获取的是否是无障碍焦点元素，true表示是，false表示否，默认为否。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<[AccessibilityElement](is-inner-application-accessibilityextensioncontext.md#accessibilityelement)> | Promise对象，返回当前对应的焦点元素。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[无障碍子系统错误码](errorcode-accessibility.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 9300003 | No accessibility permission to perform the operation. |
+
+**示例：**
+
+```
+1. import { AccessibilityElement } from '@kit.AccessibilityKit';
+2. import { BusinessError } from '@kit.BasicServicesKit';
+
+4. let rootElement: AccessibilityElement;
+
+6. axContext.getFocusElement().then((data: AccessibilityElement) => {
+7. rootElement = data;
+8. console.info(`succeeded in getting focus element,${JSON.stringify(data)}`);
+9. }).catch((err: BusinessError) => {
+10. console.error(`failed to get focus element, Code is ${err.code}, message is ${err.message}`);
+11. })
+```
+
+## AccessibilityExtensionContext.getFocusElement(deprecated)
+
+PhonePC/2in1TabletWearable
+
+getFocusElement(callback: AsyncCallback<AccessibilityElement>): void;
+
+获取焦点元素, 使用callback异步回调。
+
+说明
+
+从API version 9开始支持，从API version 12开始废弃，系统不再开放相关能力。
+
+**系统能力**：SystemCapability.BarrierFree.Accessibility.Core
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<[AccessibilityElement](is-inner-application-accessibilityextensioncontext.md#accessibilityelement)> | 是 | 回调函数，返回当前对应的焦点元素。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[无障碍子系统错误码](errorcode-accessibility.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 9300003 | No accessibility permission to perform the operation. |
+
+**示例：**
+
+```
+1. import { AccessibilityElement } from '@kit.AccessibilityKit';
+2. import { BusinessError } from '@kit.BasicServicesKit';
+
+4. let rootElement: AccessibilityElement;
+
+6. axContext.getFocusElement((err: BusinessError, data: AccessibilityElement) => {
+7. if (err && err.code) {
+8. console.error(`failed to get focus element, Code is ${err.code}, message is ${err.message}`);
+9. return;
+10. }
+11. rootElement = data;
+12. console.info(`succeeded in getting focus element, ${JSON.stringify(data)}`);
+13. });
+```
+
+## AccessibilityExtensionContext.getFocusElement(deprecated)
+
+PhonePC/2in1TabletWearable
+
+getFocusElement(isAccessibilityFocus: boolean, callback: AsyncCallback<AccessibilityElement>): void;
+
+获取焦点元素, 使用callback异步回调。
+
+说明
+
+从API version 9开始支持，从API version 12开始废弃，系统不再开放相关能力。
+
+**系统能力**：SystemCapability.BarrierFree.Accessibility.Core
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| isAccessibilityFocus | boolean | 是 | 获取的是否是无障碍焦点元素，True表示是，False表示否。 |
+| callback | AsyncCallback<[AccessibilityElement](is-inner-application-accessibilityextensioncontext.md#accessibilityelement)> | 是 | 回调函数，返回当前对应的焦点元素。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[无障碍子系统错误码](errorcode-accessibility.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 9300003 | No accessibility permission to perform the operation. |
+
+**示例：**
+
+```
+1. import { AccessibilityElement } from '@kit.AccessibilityKit';
+2. import { BusinessError } from '@kit.BasicServicesKit';
+
+4. let isAccessibilityFocus = true;
+5. let rootElement: AccessibilityElement;
+
+7. axContext.getFocusElement(isAccessibilityFocus, (err: BusinessError, data: AccessibilityElement)=> {
+8. if (err && err.code) {
+9. console.error(`failed to get focus element, Code is ${err.code}, message is ${err.message}`);
+10. return;
+11. }
+12. rootElement = data;
+13. console.info(`succeeded in getting focus element, ${JSON.stringify(data)}`);
+14. });
+```
+
+## AccessibilityExtensionContext.getWindowRootElement(deprecated)
+
+PhonePC/2in1TabletWearable
+
+getWindowRootElement(windowId?: number): Promise<AccessibilityElement>;
+
+获取指定窗口的根节点元素, 使用Promise异步回调。
+
+说明
+
+从API version 9开始支持，从API version 12开始废弃，系统不再开放相关能力。
+
+**系统能力**：SystemCapability.BarrierFree.Accessibility.Core
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| windowId | number | 否 | 指定窗口的编号，未指定则从当前活跃窗口获取。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<[AccessibilityElement](is-inner-application-accessibilityextensioncontext.md#accessibilityelement)> | Promise对象，返回指定窗口的根节点元素。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[无障碍子系统错误码](errorcode-accessibility.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 9300003 | No accessibility permission to perform the operation. |
+
+**示例：**
+
+```
+1. import { AccessibilityElement } from '@kit.AccessibilityKit';
+2. import { BusinessError } from '@kit.BasicServicesKit';
+
+4. let rootElement: AccessibilityElement;
+
+6. axContext.getWindowRootElement().then((data: AccessibilityElement) => {
+7. rootElement = data;
+8. console.info(`succeeded in getting root element of the window, ${JSON.stringify(data)}`);
+9. }).catch((err: BusinessError) => {
+10. console.error(`failed to get root element of the window, Code is ${err.code}, message is ${err.message}`);
+11. });
+```
+
+## AccessibilityExtensionContext.getWindowRootElement(deprecated)
+
+PhonePC/2in1TabletWearable
+
+getWindowRootElement(callback: AsyncCallback<AccessibilityElement>): void;
+
+获取指定窗口的根节点元素, 使用callback异步回调。
+
+说明
+
+从API version 9开始支持，从API version 12开始废弃，系统不再开放相关能力。
+
+**系统能力**：SystemCapability.BarrierFree.Accessibility.Core
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<[AccessibilityElement](is-inner-application-accessibilityextensioncontext.md#accessibilityelement)> | 是 | 回调函数，返回指定窗口的根节点元素。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[无障碍子系统错误码](errorcode-accessibility.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 9300003 | No accessibility permission to perform the operation. |
+
+**示例：**
+
+```
+1. import { AccessibilityElement } from '@kit.AccessibilityKit';
+2. import { BusinessError } from '@kit.BasicServicesKit';
+
+4. let rootElement: AccessibilityElement;
+
+6. axContext.getWindowRootElement((err: BusinessError, data: AccessibilityElement) => {
+7. if (err && err.code) {
+8. console.error(`failed to get root element of the window, Code is ${err.code}, message is ${err.message}`);
+9. return;
+10. }
+11. rootElement = data;
+12. console.info(`succeeded in getting root element of the window, ${JSON.stringify(data)}`);
+13. });
+```
+
+## AccessibilityExtensionContext.getWindowRootElement(deprecated)
+
+PhonePC/2in1TabletWearable
+
+getWindowRootElement(windowId: number, callback: AsyncCallback<AccessibilityElement>): void;
+
+获取指定窗口的根节点元素, 使用callback异步回调。
+
+说明
+
+从API version 9开始支持，从API version 12开始废弃，系统不再开放相关能力。
+
+**系统能力**：SystemCapability.BarrierFree.Accessibility.Core
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| windowId | number | 是 | 指定窗口的编号，未指定则从当前活跃窗口获取。 |
+| callback | AsyncCallback<[AccessibilityElement](is-inner-application-accessibilityextensioncontext.md#accessibilityelement)> | 是 | 回调函数，返回指定窗口的根节点元素。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[无障碍子系统错误码](errorcode-accessibility.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 9300003 | No accessibility permission to perform the operation. |
+
+**示例：**
+
+```
+1. import { AccessibilityElement } from '@kit.AccessibilityKit';
+2. import { BusinessError } from '@kit.BasicServicesKit';
+
+4. let windowId = 10;
+5. let rootElement: AccessibilityElement;
+
+7. axContext.getWindowRootElement(windowId, (err: BusinessError, data: AccessibilityElement) => {
+8. if (err && err.code) {
+9. console.error(`failed to get root element of the window, Code is ${err.code}, message is ${err.message}`);
+10. return;
+11. }
+12. rootElement = data;
+13. console.info(`succeeded in getting root element of the window, ${JSON.stringify(data)}`);
+14. });
+```
+
+## AccessibilityExtensionContext.getWindows(deprecated)
+
+PhonePC/2in1TabletWearable
+
+getWindows(displayId?: number): Promise<Array<AccessibilityElement>>;
+
+获取指定屏幕中的所有窗口，使用Promise异步回调。
+
+说明
+
+从API version 9开始支持，从API version 12开始废弃，系统不再开放相关能力。
+
+**系统能力**：SystemCapability.BarrierFree.Accessibility.Core
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| displayId | number | 否 | 指定的屏幕编号，未指定则从默认主屏幕获取。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Array<[AccessibilityElement](is-inner-application-accessibilityextensioncontext.md#accessibilityelement)>> | Promise对象，返回指定屏幕的所有窗口。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[无障碍子系统错误码](errorcode-accessibility.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 9300003 | No accessibility permission to perform the operation. |
+
+**示例：**
+
+```
+1. import { AccessibilityElement } from '@kit.AccessibilityKit';
+2. import { BusinessError } from '@kit.BasicServicesKit';
+
+4. axContext.getWindows().then((data: AccessibilityElement[]) => {
+5. console.info(`succeeded in getting windows, ${JSON.stringify(data)}`);
+6. }).catch((err: BusinessError) => {
+7. console.error(`failed to get windows, Code is ${err.code}, message is ${err.message}`);
+8. });
+```
+
+## AccessibilityExtensionContext.getWindows(deprecated)
+
+PhonePC/2in1TabletWearable
+
+getWindows(callback: AsyncCallback<Array<AccessibilityElement>>): void;
+
+获取指定屏幕中的所有窗口，使用callback异步回调。
+
+说明
+
+从API version 9开始支持，从API version 12开始废弃，系统不再开放相关能力。
+
+**系统能力**：SystemCapability.BarrierFree.Accessibility.Core
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<Array<[AccessibilityElement](is-inner-application-accessibilityextensioncontext.md#accessibilityelement)>> | 是 | 回调函数，返回指定屏幕的所有窗口。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[无障碍子系统错误码](errorcode-accessibility.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 9300003 | No accessibility permission to perform the operation. |
+
+**示例：**
+
+```
+1. import { AccessibilityElement } from '@kit.AccessibilityKit';
+2. import { BusinessError } from '@kit.BasicServicesKit';
+
+4. axContext.getWindows((err: BusinessError, data: AccessibilityElement[]) => {
+5. if (err && err.code) {
+6. console.error(`failed to get windows, Code is ${err.code}, message is ${err.message}`);
+7. return;
+8. }
+9. console.info(`succeeded in getting windows, ${JSON.stringify(data)}`);
+10. });
+```
+
+## AccessibilityExtensionContext.getWindows(deprecated)
+
+PhonePC/2in1TabletWearable
+
+getWindows(displayId: number, callback: AsyncCallback<Array<AccessibilityElement>>): void;
+
+获取指定屏幕中的所有窗口，使用callback异步回调。
+
+说明
+
+从API version 9开始支持，从API version 12开始废弃，系统不再开放相关能力。
+
+**系统能力**：SystemCapability.BarrierFree.Accessibility.Core
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| displayId | number | 是 | 指定的屏幕编号，未指定则从默认主屏幕获取。 |
+| callback | AsyncCallback<Array<[AccessibilityElement](is-inner-application-accessibilityextensioncontext.md#accessibilityelement)>> | 是 | 回调函数，返回指定屏幕的所有窗口。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[无障碍子系统错误码](errorcode-accessibility.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 9300003 | No accessibility permission to perform the operation. |
+
+**示例：**
+
+```
+1. import { AccessibilityElement } from '@kit.AccessibilityKit';
+2. import { BusinessError } from '@kit.BasicServicesKit';
+
+4. let displayId = 10;
+5. axContext.getWindows(displayId, (err: BusinessError, data: AccessibilityElement[]) => {
+6. if (err && err.code) {
+7. console.error(`failed to get windows, Code is ${err.code}, message is ${err.message}`);
+8. return;
+9. }
+10. console.info(`succeeded in getting windows, ${JSON.stringify(data)}`);
+11. });
+```
+
+## AccessibilityExtensionContext.injectGesture(deprecated)
+
+PhonePC/2in1TabletWearable
+
+injectGesture(gesturePath: GesturePath): Promise<void>;
+
+说明
+
+从API version 9开始支持，从API version 10开始废弃，建议使用[AccessibilityExtensionContext.injectGestureSync](is-inner-application-accessibilityextensioncontext.md#accessibilityextensioncontextinjectgesturesyncdeprecated)替代。
+
+注入手势，使用Promise异步回调。
+
+**系统能力**：SystemCapability.BarrierFree.Accessibility.Core
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| gesturePath | [GesturePath](js-apis-accessibility-gesturepath.md#gesturepath) | 是 | 表示手势的路径信息。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[无障碍子系统错误码](errorcode-accessibility.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 9300003 | No accessibility permission to perform the operation. |
+
+**示例：**
+
+```
+1. import { GesturePath, GesturePoint } from '@kit.AccessibilityKit';
+2. import { BusinessError } from '@kit.BasicServicesKit';
+
+4. let gesturePath: GesturePath = new GesturePath(100);
+
+6. for (let i = 0; i < 10; i++) {
+7. let gesturePoint = new GesturePoint(100, i * 200);
+8. gesturePath.points.push(gesturePoint);
+9. }
+10. axContext.injectGesture(gesturePath).then(() => {
+11. console.info(`Succeeded in injecting gesture,gesturePath is ${gesturePath}`);
+12. }).catch((err: BusinessError) => {
+13. console.error(`failed to inject gesture, Code is ${err.code}, message is ${err.message}`);
+14. });
+```
+
+## AccessibilityExtensionContext.injectGesture(deprecated)
+
+PhonePC/2in1TabletWearable
+
+injectGesture(gesturePath: GesturePath, callback: AsyncCallback<void>): void
+
+说明
+
+从API version 9开始支持，从API version 10开始废弃，建议使用[AccessibilityExtensionContext.injectGestureSync](is-inner-application-accessibilityextensioncontext.md#accessibilityextensioncontextinjectgesturesyncdeprecated)替代。
+
+注入手势，使用callback异步回调。
+
+**系统能力**：SystemCapability.BarrierFree.Accessibility.Core
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| gesturePath | [GesturePath](js-apis-accessibility-gesturepath.md#gesturepath) | 是 | 表示手势的路径信息。 |
+| callback | AsyncCallback<void> | 是 | 回调函数，表示注入手势执行结果的回调。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[无障碍子系统错误码](errorcode-accessibility.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 9300003 | No accessibility permission to perform the operation. |
+
+**示例：**
+
+```
+1. import { GesturePath, GesturePoint } from '@kit.AccessibilityKit';
+2. import { BusinessError } from '@kit.BasicServicesKit';
+
+4. let gesturePath: GesturePath = new GesturePath(100);
+5. for (let i = 0; i < 10; i++) {
+6. let gesturePoint = new GesturePoint(100, i * 200);
+7. gesturePath.points.push(gesturePoint);
+8. }
+9. axContext.injectGesture(gesturePath, (err: BusinessError) => {
+10. if (err) {
+11. console.error(`failed to inject gesture, Code is ${err.code}, message is ${err.message}`);
+12. return;
+13. }
+14. console.info(`Succeeded in injecting gesture,gesturePath is ${gesturePath}`);
+15. });
+```
+
+## AccessibilityExtensionContext.injectGestureSync(deprecated)
+
+PhonePC/2in1TabletWearable
+
+injectGestureSync(gesturePath: GesturePath): void
+
+注入手势。
+
+说明
+
+从API version 10开始支持，从API version 12开始废弃，系统不再开放相关能力。
+
+**系统能力**：SystemCapability.BarrierFree.Accessibility.Core
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| gesturePath | [GesturePath](js-apis-accessibility-gesturepath.md#gesturepath) | 是 | 表示手势的路径信息。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[无障碍子系统错误码](errorcode-accessibility.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 9300003 | No accessibility permission to perform the operation. |
+
+**示例：**
+
+```
+1. import { GesturePath, GesturePoint } from '@kit.AccessibilityKit';
+
+3. let gesturePath: GesturePath = new GesturePath(100);
+4. for (let i = 0; i < 10; i++) {
+5. let gesturePoint = new GesturePoint(100, i * 200);
+6. gesturePath.points.push(gesturePoint);
+7. }
+8. axContext.injectGestureSync(gesturePath);
+```
+
+## AccessibilityElement
+
+PhonePC/2in1TabletWearable
+
+无障碍节点元素，在调用AccessibilityElement的方法前，需要先通过[AccessibilityExtensionContext.getFocusElement()](is-inner-application-accessibilityextensioncontext.md#accessibilityextensioncontextgetfocuselementdeprecated)或者[AccessibilityExtensionContext.getWindowRootElement()](is-inner-application-accessibilityextensioncontext.md#accessibilityextensioncontextgetwindowrootelementdeprecated)获取AccessibilityElement实例。
+
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**系统能力**：SystemCapability.BarrierFree.Accessibility.Core
+
+### attributeNames(deprecated)
+
+PhonePC/2in1TabletWearable
+
+attributeNames<T extends keyof ElementAttributeValues>() : Promise<Array<T>>;
+
+获取节点元素的所有属性名称，使用Promise异步回调。
+
+说明
+
+从API version 9开始支持，从API version 12开始废弃，系统不再开放相关能力。
+
+**系统能力**：SystemCapability.BarrierFree.Accessibility.Core
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Array<T>> | Promise对象，返回节点元素的所有属性名称。 |
+
+**示例：**
+
+```
+1. import { ElementAttributeKeys } from '@kit.AccessibilityKit';
+2. import { BusinessError } from '@kit.BasicServicesKit';
+
+4. // rootElement是AccessibilityElement的实例
+5. rootElement.attributeNames().then((data: ElementAttributeKeys[]) => {
+6. console.info(`succeeded in getting attribute names, ${JSON.stringify(data)}`);
+7. }).catch((err: BusinessError) => {
+8. console.error(`failed to get attribute names, Code is ${err.code}, message is ${err.message}`);
+9. });
+```
+
+### attributeNames(deprecated)
+
+PhonePC/2in1TabletWearable
+
+attributeNames<T extends keyof ElementAttributeValues>(callback: AsyncCallback<Array<T>>): void;
+
+获取节点元素的所有属性名称，使用callback异步回调。
+
+说明
+
+从API version 9开始支持，从API version 12开始废弃，系统不再开放相关能力。
+
+**系统能力**：SystemCapability.BarrierFree.Accessibility.Core
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<Array<T>> | 是 | 回调函数，返回节点元素的所有属性名称。 |
+
+**示例：**
+
+```
+1. import { ElementAttributeKeys } from '@kit.AccessibilityKit';
+2. import { BusinessError } from '@kit.BasicServicesKit';
+
+4. // rootElement是AccessibilityElement的实例
+5. rootElement.attributeNames((err: BusinessError, data: ElementAttributeKeys[]) => {
+6. if (err && err.code) {
+7. console.error(`failed to get attribute names, Code is ${err.code}, message is ${err.message}`);
+8. return;
+9. }
+10. console.info(`succeeded in getting attribute names, ${JSON.stringify(data)}`);
+11. });
+```
+
+### attributeValue(deprecated)
+
+PhonePC/2in1TabletWearable
+
+attributeValue<T extends keyof ElementAttributeValues>(attributeName: T): Promise<ElementAttributeValues[T]>;
+
+根据属性名称获取属性值，使用Promise异步回调。
+
+说明
+
+从API version 9开始支持，从API version 12开始废弃，系统不再开放相关能力。
+
+**系统能力**：SystemCapability.BarrierFree.Accessibility.Core
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| attributeName | ElementAttributeKeys | 是 | 表示属性的名称。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<ElementAttributeValues[T]> | Promise对象，返回根据节点属性名称获取的属性值。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[无障碍子系统错误码](errorcode-accessibility.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 9300004 | This property does not exist. |
+
+**示例：**
+
+```
+1. import { ElementAttributeKeys } from '@kit.AccessibilityKit';
+2. import { BusinessError } from '@kit.BasicServicesKit';
+
+4. let attributeName: ElementAttributeKeys = 'bundleName';
+
+6. // rootElement是AccessibilityElement的实例
+7. rootElement.attributeValue(attributeName).then((data: string) => {
+8. console.info(`succeeded in getting attribute value by name, ${JSON.stringify(data)}`);
+9. }).catch((err: BusinessError) => {
+10. console.error(`failed to get attribute value, Code is ${err.code}, message is ${err.message}`);
+11. });
+```
+
+### attributeValue(deprecated)
+
+PhonePC/2in1TabletWearable
+
+attributeValue<T extends keyof ElementAttributeValues>(attributeName: T, callback: AsyncCallback<ElementAttributeValues[T]>): void
+
+根据属性名称获取属性值。使用callback异步回调。
+
+说明
+
+从API version 9开始支持，从API version 12开始废弃，系统不再开放相关能力。
+
+**系统能力**：SystemCapability.BarrierFree.Accessibility.Core
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| attributeName | ElementAttributeKeys | 是 | 表示属性的名称。 |
+| callback | AsyncCallback<ElementAttributeValues[T]> | 是 | 回调函数，返回根据节点属性名称获取的属性值。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[无障碍子系统错误码](errorcode-accessibility.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 9300004 | This property does not exist. |
+
+**示例：**
+
+```
+1. import { ElementAttributeKeys } from '@kit.AccessibilityKit';
+2. import { BusinessError } from '@kit.BasicServicesKit';
+
+4. let attributeName: ElementAttributeKeys = 'bundleName';
+
+6. // rootElement是AccessibilityElement的实例
+7. rootElement.attributeValue(attributeName, (err: BusinessError, data: string) => {
+8. if (err && err.code) {
+9. console.error(`failed to get attribute value, Code is ${err.code}, message is ${err.message}`);
+10. return;
+11. }
+12. console.info(`succeeded in getting attribute value, ${JSON.stringify(data)}`);
+13. });
+```
+
+### actionNames(deprecated)
+
+PhonePC/2in1TabletWearable
+
+actionNames(): Promise<Array<string>>;
+
+获取节点元素支持的所有操作名称，使用Promise异步回调。
+
+说明
+
+从API version 9开始支持，从API version 12开始废弃，系统不再开放相关能力。
+
+**系统能力**：SystemCapability.BarrierFree.Accessibility.Core
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Array<string>> | Promise对象，返回节点元素支持的所有操作名称。 |
+
+**示例：**
+
+```
+1. import { BusinessError } from '@kit.BasicServicesKit';
+
+3. // rootElement是AccessibilityElement的实例
+4. rootElement.actionNames().then((data: string[]) => {
+5. console.info(`succeeded in getting action names, ${JSON.stringify(data)}`);
+6. }).catch((err: BusinessError) => {
+7. console.error(`failed to get action names, Code is ${err.code}, message is ${err.message}`);
+8. })
+```
+
+### actionNames(deprecated)
+
+PhonePC/2in1TabletWearable
+
+actionNames(callback: AsyncCallback<Array<string>>): void;
+
+获取节点元素支持的所有操作名称，使用callback异步回调。
+
+说明
+
+从API version 9开始支持，从API version 12开始废弃，系统不再开放相关能力。
+
+**系统能力**：SystemCapability.BarrierFree.Accessibility.Core
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<Array<string>> | 是 | 回调函数，返回节点元素支持的所有操作名称。 |
+
+**示例：**
+
+```
+1. // rootElement是AccessibilityElement的实例
+2. rootElement.actionNames((err: BusinessError, data: string[]) => {
+3. if (err && err.code) {
+4. console.error(`failed to get action names, Code is ${err.code}, message is ${err.message}`);
+5. return;
+6. }
+7. console.info(`succeeded in getting action names, ${JSON.stringify(data)}`);
+8. })
+```
+
+### performAction(deprecated)
+
+PhonePC/2in1TabletWearable
+
+performAction(actionName: string, parameters?: object): Promise<void>;
+
+根据操作名称执行某个操作，使用Promise异步回调。
+
+说明
+
+从API version 9开始支持，从API version 12开始废弃，系统不再开放相关能力。
+
+**系统能力**：SystemCapability.BarrierFree.Accessibility.Core
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| actionName | string | 是 | 表示属性的名称，取值参考[Action](js-apis-accessibility.md#action)。 |
+| parameters | object | 否 | 表示执行操作时所需要的参数；默认为空。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[无障碍子系统错误码](errorcode-accessibility.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 9300005 | This action is not supported. |
+
+**示例：**
+
+```
+1. import { BusinessError } from '@kit.BasicServicesKit';
+
+3. let actionName = 'action';
+
+5. // rootElement是AccessibilityElement的实例
+6. rootElement.performAction(actionName).then(() => {
+7. console.info(`succeeded in performing action,actionName is ${actionName}`);
+8. }).catch((err: BusinessError) => {
+9. console.error(`failed to perform action, Code is ${err.code}, message is ${err.message}`);
+10. });
+```
+
+**无参数Action示例：**
+
+```
+1. import { BusinessError } from '@kit.BasicServicesKit';
+
+3. // rootElement是AccessibilityElement的实例
+4. // Action描述中无明确要求的，均为无参数Action
+5. rootElement.performAction('click').then(() => {
+6. console.info(`succeeded in performing action.`);
+7. }).catch((err: BusinessError) => {
+8. console.error(`failed to perform action, Code is ${err.code}, message is ${err.message}`);
+9. });
+```
+
+**有参数Action示例：**
+
+```
+1. import { BusinessError } from '@kit.BasicServicesKit';
+
+3. // rootElement是AccessibilityElement的实例
+4. // setSelection示例代码
+5. rootElement.performAction('setSelection', {
+6. selectTextBegin: '0', // 表示选择起始位置
+7. selectTextEnd: '8',   // 表示选择结束位置
+8. selectTextInForWard: true   // true表示为前光标，false表示为后光标
+9. }).then(() => {
+10. console.info(`succeeded in performing action`);
+11. }).catch((err: BusinessError) => {
+12. console.error(`failed to perform action, Code is ${err.code}, message is ${err.message}`);
+13. });
+```
+
+```
+1. import { BusinessError } from '@kit.BasicServicesKit';
+
+3. // rootElement是AccessibilityElement的实例
+4. // setCursorPosition示例代码
+5. rootElement.performAction('setCursorPosition', {
+6. offset: '1'   // 表示光标的设置位置
+7. }).then(() => {
+8. console.info(`succeeded in performing action`);
+9. }).catch((err: BusinessError) => {
+10. console.error(`failed to perform action, Code is ${err.code}, message is ${err.message}`);
+11. });
+```
+
+### performAction(deprecated)
+
+PhonePC/2in1TabletWearable
+
+performAction(actionName: string, callback: AsyncCallback<void>): void;
+
+根据操作名称执行某个操作，使用callback异步回调。
+
+说明
+
+从API version 9开始支持，从API version 12开始废弃，系统不再开放相关能力。
+
+**系统能力**：SystemCapability.BarrierFree.Accessibility.Core
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| actionName | string | 是 | 表示属性的名称，取值参考[Action](js-apis-accessibility.md#action)。 |
+| callback | AsyncCallback<void> | 是 | 回调函数，表示执行指定操作的回调。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[无障碍子系统错误码](errorcode-accessibility.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 9300005 | This action is not supported. |
+
+**示例：**
+
+```
+1. import { BusinessError } from '@kit.BasicServicesKit';
+
+3. let actionName = 'action';
+
+5. // rootElement是AccessibilityElement的实例
+6. rootElement.performAction(actionName, (err: BusinessError) => {
+7. if (err && err.code) {
+8. console.error(`failed to perform action, Code is ${err.code}, message is ${err.message}`);
+9. return;
+10. }
+11. console.info(`succeeded in performing action, actionName is ${actionName}`);
+12. });
+```
+
+### performAction(deprecated)
+
+PhonePC/2in1TabletWearable
+
+performAction(actionName: string, parameters: object, callback: AsyncCallback<void>): void;
+
+根据操作名称执行某个操作，使用callback异步回调。
+
+说明
+
+从API version 9开始支持，从API version 12开始废弃，系统不再开放相关能力。
+
+**系统能力**：SystemCapability.BarrierFree.Accessibility.Core
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| actionName | string | 是 | 表示属性的名称，取值参考[Action](js-apis-accessibility.md#action)。 |
+| parameters | object | 是 | 表示执行操作时所需要的参数；默认为空。 |
+| callback | AsyncCallback<void> | 是 | 回调函数，表示执行指定操作的回调。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[无障碍子系统错误码](errorcode-accessibility.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 9300005 | This action is not supported. |
+
+**示例：**
+
+```
+1. import { BusinessError } from '@kit.BasicServicesKit';
+
+3. let actionName = 'action';
+4. let parameters: object = [];
+
+6. // rootElement是AccessibilityElement的实例
+7. rootElement.performAction(actionName, parameters, (err: BusinessError) => {
+8. if (err && err.code) {
+9. console.error(`failed to perform action, Code is ${err.code}, message is ${err.message}`);
+10. return;
+11. }
+12. console.info(`succeeded in performing action,actionName is ${actionName}, parameters is ${parameters}`);
+13. });
+```
+
+### findElement('content')(deprecated)
+
+PhonePC/2in1TabletWearable
+
+findElement(type: 'content', condition: string): Promise<Array<AccessibilityElement>>;
+
+根据节点内容查询所有节点元素，使用Promise异步回调。
+
+说明
+
+从API version 9开始支持，从API version 12开始废弃，系统不再开放相关能力。
+
+**系统能力**：SystemCapability.BarrierFree.Accessibility.Core
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 固定为'content', 表示查找的类型为节点元素内容。 |
+| condition | string | 是 | 表示查找的条件。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Array<[AccessibilityElement](is-inner-application-accessibilityextensioncontext.md#accessibilityelement)>> | Promise对象，返回满足指定查询关键字的所有节点元素。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+
+**示例：**
+
+```
+1. import { BusinessError } from '@kit.BasicServicesKit';
+
+3. let condition = 'keyword';
+
+5. // rootElement是AccessibilityElement的实例
+6. rootElement.findElement('content', condition).then((data: AccessibilityElement[]) => {
+7. console.info(`succeeded in finding element, ${JSON.stringify(data)}`);
+8. }).catch((err: BusinessError) => {
+9. console.error(`failed to find element, Code is ${err.code}, message is ${err.message}`);
+10. });
+```
+
+### findElement('content')(deprecated)
+
+PhonePC/2in1TabletWearable
+
+findElement(type: 'content', condition: string, callback: AsyncCallback<Array<AccessibilityElement>>): void;
+
+根据节点内容查询所有节点元素。使用callback异步回调。
+
+说明
+
+从API version 9开始支持，从API version 12开始废弃，系统不再开放相关能力。
+
+**系统能力**：SystemCapability.BarrierFree.Accessibility.Core
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 固定为'content',表示查找的类型为节点元素内容。 |
+| condition | string | 是 | 表示查找的条件。 |
+| callback | AsyncCallback<Array<[AccessibilityElement](is-inner-application-accessibilityextensioncontext.md#accessibilityelement)>> | 是 | 回调函数，返回满足指定查询关键字的所有节点元素。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+
+**示例：**
+
+```
+1. import { BusinessError } from '@kit.BasicServicesKit';
+
+3. let condition = 'keyword';
+
+5. // rootElement是AccessibilityElement的实例
+6. rootElement.findElement('content', condition, (err: BusinessError, data: AccessibilityElement[])=>{
+7. if (err && err.code) {
+8. console.error(`failed to find element, Code is ${err.code}, message is ${err.message}`);
+9. return;
+10. }
+11. console.info(`succeeded in finding element, ${JSON.stringify(data)}`);
+12. });
+```
+
+### findElement('focusType')(deprecated)
+
+PhonePC/2in1TabletWearable
+
+findElement(type: 'focusType', condition: FocusType): Promise<AccessibilityElement>;
+
+根据焦点元素类型查询节点元素，使用Promise异步回调。
+
+说明
+
+从API version 9开始支持，从API version 12开始废弃，系统不再开放相关能力。
+
+**系统能力**：SystemCapability.BarrierFree.Accessibility.Core
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 固定为'focusType'，表示查询的类型为节点的焦点元素类型。 |
+| condition | [FocusType](is-inner-application-accessibilityextensioncontext.md#focustype) | 是 | 表示查询焦点元素的类型。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<[AccessibilityElement](is-inner-application-accessibilityextensioncontext.md#accessibilityelement)> | Promise对象，返回满足指定查询焦点元素类型的节点元素。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+
+**示例：**
+
+```
+1. import { FocusType } from '@kit.AccessibilityKit';
+2. import { BusinessError } from '@kit.BasicServicesKit';
+
+4. let condition: FocusType = 'normal';
+
+6. // rootElement是AccessibilityElement的实例
+7. rootElement.findElement('focusType', condition).then((data: AccessibilityElement) => {
+8. console.info(`succeeded in finding element,${JSON.stringify(data)}`);
+9. }).catch((err: BusinessError) => {
+10. console.error(`failed to find element, Code is ${err.code}, message is ${err.message}`);
+11. });
+```
+
+### findElement('focusType')(deprecated)
+
+PhonePC/2in1TabletWearable
+
+findElement(type: 'focusType', condition: FocusType, callback: AsyncCallback<AccessibilityElement>): void;
+
+根据焦点元素类型查询节点元素，使用callback异步回调。
+
+说明
+
+从API version 9开始支持，从API version 12开始废弃，系统不再开放相关能力。
+
+**系统能力**：SystemCapability.BarrierFree.Accessibility.Core
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 固定为'focusType'，表示查询的类型为节点的焦点元素类型。 |
+| condition | [FocusType](is-inner-application-accessibilityextensioncontext.md#focustype) | 是 | 表示查询焦点元素的类型。 |
+| callback | AsyncCallback<[AccessibilityElement](is-inner-application-accessibilityextensioncontext.md#accessibilityelement)> | 是 | 回调函数，返回满足指定查询焦点元素类型的节点元素。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+
+**示例：**
+
+```
+1. import { FocusType } from '@kit.AccessibilityKit';
+2. import { BusinessError } from '@kit.BasicServicesKit';
+
+4. let condition: FocusType = 'normal';
+
+6. // rootElement是AccessibilityElement的实例
+7. rootElement.findElement('focusType', condition, (err: BusinessError, data: AccessibilityElement)=>{
+8. if (err && err.code) {
+9. console.error(`failed to find element, Code is ${err.code}, message is ${err.message}`);
+10. return;
+11. }
+12. console.info(`succeeded in finding element, ${JSON.stringify(data)}`);
+13. });
+```
+
+### findElement('focusDirection')(deprecated)
+
+PhonePC/2in1TabletWearable
+
+findElement(type: 'focusDirection', condition: FocusDirection): Promise<AccessibilityElement>;
+
+根据下一焦点元素方向查询节点元素，使用Promise异步回调。
+
+说明
+
+从API version 9开始支持，从API version 12开始废弃，系统不再开放相关能力。
+
+**系统能力**：SystemCapability.BarrierFree.Accessibility.Core
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 固定为'focusDirection'，表示查询的类型为节点的下一焦点元素方向。 |
+| condition | [FocusDirection](is-inner-application-accessibilityextensioncontext.md#focusdirection) | 是 | 表示查询下一焦点元素的方向。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<[AccessibilityElement](is-inner-application-accessibilityextensioncontext.md#accessibilityelement)> | Promise对象，返回满足指定查询下一焦点元素方向的节点元素。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+
+**示例：**
+
+```
+1. import { FocusDirection } from '@kit.AccessibilityKit';
+2. import { BusinessError } from '@kit.BasicServicesKit';
+
+4. let condition: FocusDirection = 'up';
+
+6. // rootElement是AccessibilityElement的实例
+7. rootElement.findElement('focusDirection', condition).then((data: AccessibilityElement) => {
+8. console.info(`succeeded in finding element, ${JSON.stringify(data)}`);
+9. }).catch((err: BusinessError) => {
+10. console.error(`failed to find element, Code is ${err.code}, message is ${err.message}`);
+11. });
+```
+
+### findElement('focusDirection')(deprecated)
+
+PhonePC/2in1TabletWearable
+
+findElement(type: 'focusDirection', condition: FocusDirection, callback: AsyncCallback<AccessibilityElement>): void;
+
+根据下一焦点元素方向查询节点元素，使用callback异步回调。
+
+说明
+
+从API version 9开始支持，从API version 12开始废弃，系统不再开放相关能力。
+
+**系统能力**：SystemCapability.BarrierFree.Accessibility.Core
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 固定为'focusDirection', 表示查询的类型为节点的下一焦点元素方向。 |
+| condition | [FocusDirection](is-inner-application-accessibilityextensioncontext.md#focusdirection) | 是 | 表示下一查询焦点元素的方向。 |
+| callback | AsyncCallback<[AccessibilityElement](is-inner-application-accessibilityextensioncontext.md#accessibilityelement)> | 是 | 回调函数，返回满足指定查询下一焦点元素方向的节点元素。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+
+**示例：**
+
+```
+1. import { FocusDirection } from '@kit.AccessibilityKit';
+2. import { BusinessError } from '@kit.BasicServicesKit';
+
+4. let condition: FocusDirection = 'up';
+
+6. // rootElement是AccessibilityElement的实例
+7. rootElement.findElement('focusDirection', condition, (err: BusinessError, data: AccessibilityElement) =>{
+8. if (err && err.code) {
+9. console.error(`failed to find element, Code is ${err.code}, message is ${err.message}`);
+10. return;
+11. }
+12. console.info(`succeeded in finding element, ${JSON.stringify(data)}`);
+13. });
+```
