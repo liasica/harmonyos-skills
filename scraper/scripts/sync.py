@@ -65,49 +65,68 @@ def _load_discovery_cache(today_start: str, args: argparse.Namespace) -> dict | 
         return None
 
 
-def _write_indexes(manifest: Manifest, log: logging.Logger) -> None:
-    """生成 harmonyos/references/INDEX.md（全量）+ 各 category 的 INDEX.md
+_CATEGORY_DISPLAY = {
+    "harmonyos-releases": "版本说明",
+    "harmonyos-guides": "指南",
+    "harmonyos-references": "API 参考",
+    "best-practices": "最佳实践",
+    "harmonyos-faqs": "FAQ",
+}
 
-    清单文件每行一个相对路径（参考 linhay/harmony-next.skills 格式），按字母序排列。
-    用作 AI 助手的"先在 INDEX 命中路径，再 Read 对应 .md"导航入口。
+
+def _write_indexes(manifest: Manifest, log: logging.Logger) -> None:
+    """生成 harmonyos/references/INDEX.md（全量，按分类分组）+ 各 category 的 INDEX.md
+
+    全量 INDEX 按分类分组，每条 `- [title](relative/path.md)`，便于 AI 用 grep 命中后 Read。
     """
     from collections import defaultdict
     by_category: dict[str, list[tuple[str, str]]] = defaultdict(list)
-    all_paths: list[str] = []
     for url, entry in manifest.entries.items():
         if entry.status in ("error", "stale") or not entry.local_path:
             continue
-        # local_path 是相对 REPO_ROOT 的路径，例如 harmonyos/references/<cat>/x.md
-        # 在 references 内的相对路径才是 INDEX 要列的内容
         try:
             in_refs = Path(entry.local_path).relative_to(Path("harmonyos/references"))
         except ValueError:
             continue
         rel = str(in_refs)
-        all_paths.append(rel)
         by_category[entry.category].append((rel, entry.title))
 
     DOCS_DIR.mkdir(parents=True, exist_ok=True)
-    # 全局清单
-    all_paths.sort()
-    (DOCS_DIR / "INDEX.md").write_text("\n".join(all_paths) + "\n", encoding="utf-8")
-    log.info("INDEX.md written: %d paths", len(all_paths))
+    total = sum(len(v) for v in by_category.values())
 
-    # 各 category 清单（带标题）
+    # 全量 INDEX（按分类分组，每条带标题）
+    lines = ["# HarmonyOS 文档全量索引", "",
+             f"共 {total} 篇文档。先在本文件 grep 关键词获取相对路径，再 Read 对应 `.md`。", ""]
+    ordered_cats = list(_CATEGORY_DISPLAY.keys())
+    for cat in ordered_cats:
+        items = by_category.get(cat, [])
+        if not items:
+            continue
+        items.sort(key=lambda x: x[0])
+        display = _CATEGORY_DISPLAY[cat]
+        lines.append(f"## {display}（`{cat}`）— {len(items)} 篇")
+        lines.append("")
+        for rel, title in items:
+            lines.append(f"- [{title}]({rel})")
+        lines.append("")
+    (DOCS_DIR / "INDEX.md").write_text("\n".join(lines), encoding="utf-8")
+    log.info("INDEX.md written: %d entries across %d categories", total, len(by_category))
+
+    # 各 category INDEX（带标题）
     for cat, items in by_category.items():
         items.sort(key=lambda x: x[0])
         cat_dir = DOCS_DIR / cat
         if not cat_dir.exists():
             continue
-        lines = [f"# {cat}", "", f"共 {len(items)} 篇文档。", ""]
+        display = _CATEGORY_DISPLAY.get(cat, cat)
+        cat_lines = [f"# {display}（{cat}）", "", f"共 {len(items)} 篇文档。", ""]
         for rel, title in items:
-            # 在 category INDEX 中链接是相对 category 目录
             try:
                 in_cat = Path(rel).relative_to(cat)
             except ValueError:
                 in_cat = Path(rel)
-            lines.append(f"- [{title}]({in_cat})")
-        (cat_dir / "INDEX.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
+            cat_lines.append(f"- [{title}]({in_cat})")
+        (cat_dir / "INDEX.md").write_text("\n".join(cat_lines) + "\n", encoding="utf-8")
     log.info("category INDEX.md written for %d categories", len(by_category))
 
 

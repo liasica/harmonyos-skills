@@ -1,4 +1,4 @@
-# harmonyos-releases
+# 版本说明（harmonyos-releases）
 
 共 1009 篇文档。
 
