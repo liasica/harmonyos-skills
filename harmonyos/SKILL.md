@@ -40,6 +40,16 @@ rg -n "@ohos\.app\.ability" references/harmonyos-references/INDEX.md
 
 文档中原本指向 5 个白名单根 URL 的链接已自动改写为指向本仓库内 `.md` 的相对路径。指向白名单外的链接保留为绝对 https URL。
 
+## 编码规则（写代码前必读）
+
+[`rules/arkts-coding-rules.md`](rules/arkts-coding-rules.md) 是 HarmonyOS 官方 ArkTS / ArkUI / API 使用强制规则，三段：
+
+1. **ArkTS / ets 语法约束** — 违反编译不通过（如不支持 `any`、`var`、解构赋值、`Function.bind`、`for..in` 等）
+2. **HarmonyOS API 使用规范** — 必须遵循 API Level、权限配置、`module.json5` / `oh-package.json5`、资源 `$r` 引用、国际化、深色主题
+3. **ArkUI 动画规范** — 优先声明式 + `@State`、复杂子树 `renderGroup(true)`、避免动画中改 `width/height/padding`
+
+**为用户写或修改 ArkTS / ArkUI 代码前先 Read 这份文件**。规则简洁、列表化，可一次性加载到上下文。
+
 ## 工作流程
 
 1. 先弄清用户问的是什么——功能查询、API 签名、错误码、版本差异，还是最佳实践？
