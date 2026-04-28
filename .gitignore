@@ -1,0 +1,10 @@
+.DS_Store
+__pycache__/
+*.pyc
+*.egg-info/
+.pytest_cache/
+.env
+# scraper 运行时
+scraper/.venv/
+scraper/data/
+

@@ -1,0 +1,25 @@
+roots:
+  - name: 版本说明
+    url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/overview-allversion
+    category: harmonyos-releases
+  - name: 指南
+    url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/application-dev-guide
+    category: harmonyos-guides
+  - name: API 参考
+    url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/development-intro-api
+    category: harmonyos-references
+  - name: 最佳实践
+    url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-best-practices-overview
+    category: best-practices
+  - name: FAQ
+    url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-multi-device-scenario
+    category: harmonyos-faqs
+
+settings:
+  concurrency: 8
+  page_timeout_ms: 30000
+  extra_wait_ms: 400
+  retries: 2
+  user_agent: "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"
+  url_allow_prefixes:
+    - https://developer.huawei.com/consumer/cn/doc/

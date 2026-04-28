@@ -1,0 +1,23 @@
+sidebar:
+  link_candidates:
+    - ".layout-left a[href]"
+    - "app-navbar a[href]"
+  ready_selector: ".layout-left, app-document-text"
+  # 折叠节点候选：discover 阶段会循环点击直到全部展开
+  expandable_node:
+    - ".layout-left .ant-tree-switcher_close"
+
+article:
+  ready_selector: "h1.doc-title"
+  title_candidates:
+    - "h1.doc-title"
+  body_candidates:
+    - "app-document-text"
+    - ".document-content"
+    - "#document-content"
+  updated_at_candidates:
+    - ".doc-header-box"
+    - ".doc-info"
+  breadcrumb_candidates:
+    - "nz-breadcrumb"
+    - ".ant-breadcrumb"
