@@ -42,22 +42,35 @@ HarmonyOS NEXT 离线参考库 + 采集脚本，供 AI 编程助手（Claude Cod
 
 ## SKILL 安装
 
-将 `harmonyos/` 作为 Skill 暴露给 AI 编程助手：
+### 一键脚本（推荐）
 
-### Claude Code
+会自动 clone 仓库到 `~/.local/share/harmonyos-skills`，并把 `harmonyos/` symlink 到当前机器上检测到的所有 AI CLI 的 skills 目录（Claude Code / Gemini / Codex / Copilot / Cursor / OpenCode）。
 
 ```bash
-git clone git@github.com:liasica/harmonyos-skills.git
-ln -s "$(pwd)/harmonyos-skills/harmonyos" ~/.claude/skills/harmonyos
+curl -fsSL https://raw.githubusercontent.com/liasica/harmonyos-skills/master/install.sh | bash
 ```
 
-### Gemini CLI
+或先 clone 再本地执行：
 
-按 [Gemini Skills 规范](https://github.com/google-gemini/gemini-cli) 把 `harmonyos/` 加入 skill 搜索路径，或 symlink 到 Gemini 的 skills 目录。
+```bash
+git clone https://github.com/liasica/harmonyos-skills.git
+cd harmonyos-skills
+bash install.sh
+```
 
-### Codex / Copilot CLI
+环境变量 `HARMONYOS_SKILLS_DIR` 可自定义 clone 位置（默认 `~/.local/share/harmonyos-skills`）。
 
-按各自 CLI 文档将 `harmonyos/` 加入 skills 目录。Skill 内部使用 `Read`、`grep`/`rg`、`jq` 等通用工具，跨 CLI 兼容。
+### 各 CLI 单独安装
+
+| CLI | 命令 |
+|---|---|
+| **Claude Code**（添加 marketplace） | `/plugin marketplace add liasica/harmonyos-skills`<br>然后 `/plugin install harmonyos-skills@harmonyos-skills-dev` |
+| **Claude Code**（手动 symlink） | `ln -s <repo>/harmonyos ~/.claude/skills/harmonyos` |
+| **Gemini CLI** | `gemini extensions install https://github.com/liasica/harmonyos-skills` |
+| **OpenAI Codex CLI** | `ln -s <repo>/harmonyos ~/.codex/skills/harmonyos` |
+| **GitHub Copilot CLI** | `ln -s <repo>/harmonyos ~/.copilot/skills/harmonyos` |
+| **Cursor** | `ln -s <repo>/harmonyos ~/.cursor/skills/harmonyos` |
+| **OpenCode** | 在 `~/.config/opencode/opencode.json` 加 `"skills": ["<repo>/harmonyos"]` |
 
 ### 验证
 
@@ -65,6 +78,17 @@ ln -s "$(pwd)/harmonyos-skills/harmonyos" ~/.claude/skills/harmonyos
 1. `grep` `harmonyos/references/INDEX.md` 找到 ability 相关路径
 2. `Read` 命中的 `.md` 文件
 3. 引用 frontmatter 中的 `url` 作为出处
+
+### 卸载
+
+```bash
+# 移除各 CLI 的 symlink
+rm -f ~/.claude/skills/harmonyos ~/.codex/skills/harmonyos \
+      ~/.copilot/skills/harmonyos ~/.cursor/skills/harmonyos \
+      ~/.gemini/skills/harmonyos
+# 移除 clone
+rm -rf ~/.local/share/harmonyos-skills
+```
 
 ## 采集脚本使用
 

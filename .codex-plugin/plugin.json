@@ -1,0 +1,36 @@
+{
+  "name": "harmonyos-skills",
+  "version": "1.0.0",
+  "description": "HarmonyOS NEXT offline reference library: 12000+ Markdown docs (releases / guides / API references / best practices / FAQs) for AI coding assistants.",
+  "author": {
+    "name": "liasica",
+    "email": "magicrolan@qq.com",
+    "url": "https://github.com/liasica"
+  },
+  "homepage": "https://github.com/liasica/harmonyos-skills",
+  "repository": "https://github.com/liasica/harmonyos-skills",
+  "license": "MIT",
+  "keywords": [
+    "harmonyos",
+    "harmonyos-next",
+    "arkts",
+    "arkui",
+    "documentation",
+    "reference"
+  ],
+  "skills": "./harmonyos/",
+  "interface": {
+    "displayName": "HarmonyOS",
+    "shortDescription": "HarmonyOS NEXT offline reference library",
+    "longDescription": "Offline mirror of Huawei HarmonyOS NEXT developer documentation (12215 docs). AI assistants grep the INDEX, then Read only the matched .md to answer ArkTS / ArkUI / API / best-practice questions with citations.",
+    "developerName": "liasica",
+    "category": "Coding",
+    "capabilities": [
+      "Read"
+    ],
+    "defaultPrompt": [
+      "我在做 HarmonyOS NEXT 应用，UIAbility 的生命周期回调有哪些？",
+      "ArkTS 中能用 any 类型吗？"
+    ]
+  }
+}
