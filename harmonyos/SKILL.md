@@ -52,16 +52,6 @@ rg -n "@ohos\.app\.ability" references/harmonyos-references/INDEX.md
 
 - `@ohos.*` API 的签名、入参、返回值以 `references/` 内的文档为准，不要凭训练时记忆补全
 - ArkUI 示例优先使用声明式语法（`@Entry` / `@Component` / `build()`），除非文档明确是 NDK 或系统服务
-- 不要修改 `references/` 下任何文件——它们是采集产物，下次 sync 会被覆盖
+- 不要修改 `references/` 下任何文件——它们是只读参考资料
 - 不要把 frontmatter 字段（`content_hash` / `scraped_at` / `category`）当成代码内容塞进生成的代码里
 - 当两份文档冲突（例如旧版指南与新版本说明），明确指出冲突并同时引用两边
-
-## 同步
-
-文档由 `scraper/` 子项目自动重新生成。手动刷新：
-
-```bash
-cd scraper && uv run python -m scripts.sync
-```
-
-被中断后再跑一次即可从 `scraper/data/manifest.json` 的进度断点继续。详细用法见 [`../README.md`](../README.md)。
