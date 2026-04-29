@@ -72,6 +72,14 @@ bash install.sh
 | **Cursor** | `ln -s <repo>/harmonyos ~/.cursor/skills/harmonyos` |
 | **OpenCode** | 在 `~/.config/opencode/opencode.json` 加 `"skills": ["<repo>/harmonyos"]` |
 
+### 更新
+
+| 安装方式 | 更新命令 |
+|---|---|
+| 一键脚本 | `cd ~/.local/share/harmonyos-skills && git pull` |
+| 手动 symlink | 在 clone 的 repo 目录执行 `git pull`（symlink 自动指向最新内容） |
+| Claude Code plugin | `/plugin update harmonyos-skills` |
+
 ### 验证
 
 让 AI 助手回答一个鸿蒙问题，例如："UIAbility 的生命周期回调有哪些？"。助手应：
