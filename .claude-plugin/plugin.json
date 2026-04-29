@@ -1,7 +1,7 @@
 {
   "name": "harmonyos-skills",
   "description": "HarmonyOS NEXT 离线参考库：版本说明 / 指南 / API 参考 / 最佳实践 / FAQ 共 12000+ 篇 Markdown，供 AI 编程助手按需查阅",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": {
     "name": "liasica",
     "email": "magicrolan@qq.com"
