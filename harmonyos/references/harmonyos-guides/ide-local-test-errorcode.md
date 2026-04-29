@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-local-tes
 title: 本地测试错误码
 breadcrumb: 指南 > 编写与调试应用 > 开发自测试 > 测试框架 > 测试框架错误码 > 本地测试错误码
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:57:02+08:00
+scraped_at: 2026-04-29T13:47:00+08:00
 doc_updated_at: 2026-01-15
-content_hash: sha256:1017dc674eee11ecd7b599e99ffc158328516961ee028a9670703ac5e0bbd73e
+content_hash: sha256:b518d135f91a21c74bd2299059a66d782f8f98963d8d67ddbf8df5c9ac76515c
 ---
 
 ## 00521001 测试用例名称存在非法字符
@@ -155,7 +155,7 @@ The function where the method XXX is located is not registered in the 'List.test
 
 在List.test.ets文件中注册函数，示例如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/OQX_vHrKRSGCMvr7uorOSg/zh-cn_image_0000002561833179.png?HW-CC-KV=V1&HW-CC-Date=20260427T235700Z&HW-CC-Expire=86400&HW-CC-Sign=0618DC1E1E220366CA9BE1D083B876339D0CE04D3D877F73846F2535B123B21D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/nau5cS27Rm-U9W7cI0R4hQ/zh-cn_image_0000002561833179.png?HW-CC-KV=V1&HW-CC-Date=20260429T054659Z&HW-CC-Expire=86400&HW-CC-Sign=7818744C514DDE02F6FB728A1DF252A77DEFB132A531D022F08341238A7A29A3)
 
 ## 00522002 函数未在List.test.ets文件中注册
 
@@ -175,7 +175,7 @@ The function where the suite XXX is located is not registered in the ''List.test
 
 在List.test.ets文件中注册函数，示例如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/NtTqpwQ9SIaqN-zvT-8o-A/zh-cn_image_0000002530913254.png?HW-CC-KV=V1&HW-CC-Date=20260427T235700Z&HW-CC-Expire=86400&HW-CC-Sign=7B0DE505395682861DAE5F3A8A679D8226F674BEB8FE41AA41DD73F3EE19DF75)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/qKOrniJcQ6qSMoE-oiJWjQ/zh-cn_image_0000002530913254.png?HW-CC-KV=V1&HW-CC-Date=20260429T054659Z&HW-CC-Expire=86400&HW-CC-Sign=54C3D3BFA7A9466FF71CDC749657CDAEE011E7F985BC9DAC049F7D5A462FB81C)
 
 ## 00522005 文件中所有函数都没有在List.test.ets文件中注册
 
@@ -195,7 +195,7 @@ None of the functions in the file XXX have been registered in the 'List.test.ets
 
 在List.test.ets文件中注册函数，示例如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/cQpj04UJQSCgEf6h27qzow/zh-cn_image_0000002561753195.png?HW-CC-KV=V1&HW-CC-Date=20260427T235700Z&HW-CC-Expire=86400&HW-CC-Sign=68F5F1B0B4265685E630070AED288E8BB7A23F6DC799E75B4C5E7D52C6D686AC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/v9dkOrkmTQWxFOK2iu2Cnw/zh-cn_image_0000002561753195.png?HW-CC-KV=V1&HW-CC-Date=20260429T054659Z&HW-CC-Expire=86400&HW-CC-Sign=55952A24096BC4D3457FF26A7F1374E10911363E559308C39756DC7A6536214D)
 
 ## 00522006 测试文件中找不到测试用例
 
@@ -216,7 +216,7 @@ Current test case XXX not found in the test file.
 * 选择要运行的测试用例，重新运行。
 * 在运行配置窗口修改Method name。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/ZCWiniGkSv2Lz2rS-K_4Ew/zh-cn_image_0000002561833175.png?HW-CC-KV=V1&HW-CC-Date=20260427T235700Z&HW-CC-Expire=86400&HW-CC-Sign=D835B0C0DC63B7ABD0A2D120B84E939266BD2A5DF6AB502677E7CE41EB9BA29D)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/ULQJHeCRTymGYLRuEL4cYw/zh-cn_image_0000002561833175.png?HW-CC-KV=V1&HW-CC-Date=20260429T054659Z&HW-CC-Expire=86400&HW-CC-Sign=019AE601A7B481B0B9062F611C85626D164462D11DFDE8F53B0C5648BDC01088)
 
 ## 00522007 找不到任何测试用例
 

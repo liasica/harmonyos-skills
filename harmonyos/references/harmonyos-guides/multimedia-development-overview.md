@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/multimedia-de
 title: 媒体开发概览
 breadcrumb: 指南 > 媒体 > 媒体开发概览
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:45:29+08:00
+scraped_at: 2026-04-29T13:34:26+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:dd4e3a54e9dd97d92d5462fd142a59baa4f4b8f4991a77349bdaf6fc49622a85
+content_hash: sha256:5a05cc0cb70aa25bf27c50ffc3c45d3a49b5426a7b074e233ca46887893cce64
 ---
 
 HarmonyOS提供丰富的一站式媒体业务开放能力，开发者能够在系统上快速开发主流的媒体业务，满足常规高频使用场景，并提供优秀的性能表现。
 
 ## 媒体系统架构
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/qOqMdpQnQPiSVZKwnpl9ag/zh-cn_image_0000002552958526.png?HW-CC-KV=V1&HW-CC-Date=20260427T234528Z&HW-CC-Expire=86400&HW-CC-Sign=6445948438E70122487F84627B36990FB7A57B14DB5C8604D08F95CC503D65FB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/jSmrHSAQSp6sBS8Ab3xQWA/zh-cn_image_0000002558765026.png?HW-CC-KV=V1&HW-CC-Date=20260429T053425Z&HW-CC-Expire=86400&HW-CC-Sign=61665623EF5BE98DCA5E0222288C9A898F1584DDC60232B1B5F5B6E5A576EC34)
 
 媒体系统架构提供用户视觉、听觉信息的处理能力，例如音视频信息的采集、编码存储、解码播放等。操作系统实现中，根据不同的媒体信息处理内容，将媒体划分为不同的模块，包括音频、视频、图片等。
 

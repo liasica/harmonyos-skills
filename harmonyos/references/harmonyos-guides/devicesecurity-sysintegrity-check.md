@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 系统完整性检测
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 安全检测 > 系统完整性检测
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:42:54+08:00
+scraped_at: 2026-04-29T13:31:30+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:3d031390577928516a3bf909639ca00abb0e8968ac881249ecba357bc2150ce7
+content_hash: sha256:7a40955bf4acda6b6801191e6ab531ba689ffd2d32ad930c3080e7ba31974c95
 ---
 
 ## 场景介绍
@@ -21,7 +21,7 @@ content_hash: sha256:3d031390577928516a3bf909639ca00abb0e8968ac881249ecba357bc21
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/9kCjsHfTQkKxaa0gT-K4Lw/zh-cn_image_0000002583438431.png?HW-CC-KV=V1&HW-CC-Date=20260427T234253Z&HW-CC-Expire=86400&HW-CC-Sign=2F15A5AD710D86330088883CED24B380785B2CA36428BEAB6676F859ED62763E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/QoBWyI4pTRywYEu-UVx6fg/zh-cn_image_0000002558605228.png?HW-CC-KV=V1&HW-CC-Date=20260429T053129Z&HW-CC-Expire=86400&HW-CC-Sign=387F8012085501A999E535B3F02E71CF01DDADEAADB81C5CC8ECD429B3AE3D09)
 
 **流程说明：**
 

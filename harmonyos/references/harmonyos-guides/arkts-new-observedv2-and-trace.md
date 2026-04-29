@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-obs
 title: @ObservedV2装饰器和@Trace装饰器：类属性变化观测
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理（V2） > 管理数据对象的状态 > @ObservedV2装饰器和@Trace装饰器：类属性变化观测
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:39:09+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:6d59372786984872e54f9792b54dd588082390ab348d1e03d923e9e5f9b7667c
+scraped_at: 2026-04-29T13:27:19+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:da5ffb13d8a8d523d859139c97b70cc7d9751f228132b14f24da68498cdf6885
 ---
 
 为了增强状态管理框架对类对象中属性的观测能力，开发者可以使用@ObservedV2装饰器和@Trace装饰器装饰类以及类中的属性。
@@ -68,14 +68,15 @@ content_hash: sha256:6d59372786984872e54f9792b54dd588082390ab348d1e03d923e9e5f9b
 30. .fontSize(50)
 31. .fontWeight(FontWeight.Bold)
 32. .onClick(() => {
-33. this.father.son.age++;
-34. })
-35. }
-36. .width('100%')
-37. }
-38. .height('100%')
-39. }
+33. // 嵌套类对象属性变化无法观测
+34. this.father.son.age++;
+35. })
+36. }
+37. .width('100%')
+38. }
+39. .height('100%')
 40. }
+41. }
 ```
 
 [Limitations.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/arktsobservedv2andtrace/entry/src/main/ets/pages/overview/Limitations.ets#L15-L57)
@@ -105,35 +106,36 @@ content_hash: sha256:6d59372786984872e54f9792b54dd588082390ab348d1e03d923e9e5f9b
 
 21. @Component
 22. struct Child {
-23. @ObjectLink son: Son;
+23. // @Observed对象与@ObjectLink一起使用，实现对嵌套类对象属性的观测能力
+24. @ObjectLink son: Son;
 
-25. build() {
-26. Row() {
-27. Column() {
-28. Text(`name: ${this.son.name} age: ${this.son.age}`)
-29. .fontSize(50)
-30. .fontWeight(FontWeight.Bold)
-31. .onClick(() => {
-32. this.son.age++;
-33. })
-34. }
-35. .width('100%')
-36. }
-37. .height('100%')
-38. }
+26. build() {
+27. Row() {
+28. Column() {
+29. Text(`name: ${this.son.name} age: ${this.son.age}`)
+30. .fontSize(50)
+31. .fontWeight(FontWeight.Bold)
+32. .onClick(() => {
+33. this.son.age++;
+34. })
+35. }
+36. .width('100%')
+37. }
+38. .height('100%')
 39. }
+40. }
 
-41. @Entry
-42. @Component
-43. struct Index {
-44. @State father: Father = new Father('John', 8);
+42. @Entry
+43. @Component
+44. struct Index {
+45. @State father: Father = new Father('John', 8);
 
-46. build() {
-47. Column() {
-48. Child({ son: this.father.son })
-49. }
+47. build() {
+48. Column() {
+49. Child({ son: this.father.son })
 50. }
 51. }
+52. }
 ```
 
 [RealizeObservation.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/arktsobservedv2andtrace/entry/src/main/ets/pages/overview/RealizeObservation.ets#L15-L68)
@@ -500,7 +502,7 @@ content_hash: sha256:6d59372786984872e54f9792b54dd588082390ab348d1e03d923e9e5f9b
 
 以下例子中，声明class GrandFather、Father、Uncle、Son、Cousin，继承关系如下图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/GNTL-254SsGt7ZajP5Xk0w/zh-cn_image_0000002583437663.png?HW-CC-KV=V1&HW-CC-Date=20260427T233907Z&HW-CC-Expire=86400&HW-CC-Sign=FD067A4BE8FF84BA4DE60CCED5A1C1790A452D94B354B8FF47146E28512AA910)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/wFlmMhrrSFyltnff2_JLtg/zh-cn_image_0000002558604452.png?HW-CC-KV=V1&HW-CC-Date=20260429T052717Z&HW-CC-Expire=86400&HW-CC-Sign=E1DA2A8E382D664197C55A143D3CE2827BF0D5598B8F392F15C331115F91D3A4)
 
 创建类Son和类Cousin的实例，点击Button('change Son age')和Button('change Cousin age')可以触发UI的刷新。
 
@@ -512,73 +514,74 @@ content_hash: sha256:6d59372786984872e54f9792b54dd588082390ab348d1e03d923e9e5f9b
 
 6. @ObservedV2
 7. class GrandFather {
-8. @Trace public age: number = 0;
+8. // 被@Trace装饰的属性具有被观测变化的能力
+9. @Trace public age: number = 0;
 
-10. constructor(age: number) {
-11. this.age = age;
-12. }
+11. constructor(age: number) {
+12. this.age = age;
 13. }
+14. }
 
-15. class Father extends GrandFather {
-16. constructor(father: number) {
-17. super(father);
-18. }
+16. class Father extends GrandFather {
+17. constructor(father: number) {
+18. super(father);
 19. }
+20. }
 
-21. class Uncle extends GrandFather {
-22. constructor(uncle: number) {
-23. super(uncle);
-24. }
+22. class Uncle extends GrandFather {
+23. constructor(uncle: number) {
+24. super(uncle);
 25. }
+26. }
 
-27. class Son extends Father {
-28. constructor(son: number) {
-29. super(son);
-30. }
+28. class Son extends Father {
+29. constructor(son: number) {
+30. super(son);
 31. }
+32. }
 
-33. class Cousin extends Uncle {
-34. constructor(cousin: number) {
-35. super(cousin);
-36. }
+34. class Cousin extends Uncle {
+35. constructor(cousin: number) {
+36. super(cousin);
 37. }
+38. }
 
-39. @Entry
-40. @ComponentV2
-41. struct Index {
-42. son: Son = new Son(0);
-43. cousin: Cousin = new Cousin(0);
-44. renderTimes: number = 0;
+40. @Entry
+41. @ComponentV2
+42. struct Index {
+43. son: Son = new Son(0);
+44. cousin: Cousin = new Cousin(0);
+45. renderTimes: number = 0;
 
-46. isRender(id: number): number {
-47. hilog.info(DOMAIN, TAG, `id: ${id} renderTimes: ${this.renderTimes}`);
-48. this.renderTimes++;
-49. return 40;
-50. }
+47. isRender(id: number): number {
+48. hilog.info(DOMAIN, TAG, `id: ${id} renderTimes: ${this.renderTimes}`);
+49. this.renderTimes++;
+50. return 40;
+51. }
 
-52. build() {
-53. Row() {
-54. Column() {
-55. Text(`Son ${this.son.age}`)
-56. .fontSize(this.isRender(1))
-57. .fontWeight(FontWeight.Bold)
-58. Text(`Cousin ${this.cousin.age}`)
-59. .fontSize(this.isRender(2))
-60. .fontWeight(FontWeight.Bold)
-61. Button('change Son age')
-62. .onClick(() => {
-63. this.son.age++;
-64. })
-65. Button('change Cousin age')
-66. .onClick(() => {
-67. this.cousin.age++;
-68. })
-69. }
-70. .width('100%')
-71. }
-72. .height('100%')
-73. }
+53. build() {
+54. Row() {
+55. Column() {
+56. Text(`Son ${this.son.age}`)
+57. .fontSize(this.isRender(1))
+58. .fontWeight(FontWeight.Bold)
+59. Text(`Cousin ${this.cousin.age}`)
+60. .fontSize(this.isRender(2))
+61. .fontWeight(FontWeight.Bold)
+62. Button('change Son age')
+63. .onClick(() => {
+64. this.son.age++;
+65. })
+66. Button('change Cousin age')
+67. .onClick(() => {
+68. this.cousin.age++;
+69. })
+70. }
+71. .width('100%')
+72. }
+73. .height('100%')
 74. }
+75. }
 ```
 
 [InheritanceClass.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/arktsobservedv2andtrace/entry/src/main/ets/pages/usagescenarios/InheritanceClass.ets#L15-L91)
@@ -638,53 +641,55 @@ content_hash: sha256:6d59372786984872e54f9792b54dd588082390ab348d1e03d923e9e5f9b
 46. .fontSize(40)
 47. })
 
-49. Button('push')
-50. .onClick(() => {
-51. this.arr.numberArr.push(50);
-52. })
+49. // numberArr是@Trace装饰的数组
+50. // 使用数组API操作numberArr时，可以观测到对应的变化
+51. Button('push')
+52. .onClick(() => {
+53. this.arr.numberArr.push(50);
+54. })
 
-54. Button('pop')
-55. .onClick(() => {
-56. this.arr.numberArr.pop();
-57. })
+56. Button('pop')
+57. .onClick(() => {
+58. this.arr.numberArr.pop();
+59. })
 
-59. Button('shift')
-60. .onClick(() => {
-61. this.arr.numberArr.shift();
-62. })
+61. Button('shift')
+62. .onClick(() => {
+63. this.arr.numberArr.shift();
+64. })
 
-64. Button('splice')
-65. .onClick(() => {
-66. this.arr.numberArr.splice(1, 0, 60);
-67. })
+66. Button('splice')
+67. .onClick(() => {
+68. this.arr.numberArr.splice(1, 0, 60);
+69. })
 
-70. Button('unshift')
-71. .onClick(() => {
-72. this.arr.numberArr.unshift(100);
-73. })
+71. Button('unshift')
+72. .onClick(() => {
+73. this.arr.numberArr.unshift(100);
+74. })
 
-75. Button('copywithin')
-76. .onClick(() => {
-77. this.arr.numberArr.copyWithin(0, 1, 2);
-78. })
+76. Button('copywithin')
+77. .onClick(() => {
+78. this.arr.numberArr.copyWithin(0, 1, 2);
+79. })
 
-80. Button('fill')
-81. .onClick(() => {
-82. this.arr.numberArr.fill(0, 2, 4);
-83. })
+81. Button('fill')
+82. .onClick(() => {
+83. this.arr.numberArr.fill(0, 2, 4);
+84. })
 
-85. Button('reverse')
-86. .onClick(() => {
-87. this.arr.numberArr.reverse();
-88. })
+86. Button('reverse')
+87. .onClick(() => {
+88. this.arr.numberArr.reverse();
+89. })
 
-90. Button('sort')
-91. .onClick(() => {
-92. this.arr.numberArr.sort();
-93. })
-94. }
+91. Button('sort')
+92. .onClick(() => {
+93. this.arr.numberArr.sort();
+94. })
 95. }
 96. }
+97. }
 ```
 
 [DecorationFoundation.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/arktsobservedv2andtrace/entry/src/main/ets/pages/usagescenarios/DecorationFoundation.ets#L15-L113)
@@ -699,63 +704,64 @@ content_hash: sha256:6d59372786984872e54f9792b54dd588082390ab348d1e03d923e9e5f9b
 
 3. @ObservedV2
 4. class Person {
-5. @Trace public age: number = 0;
+5. // @Trace装饰Person类中的age属性，使age可以被观测
+6. @Trace public age: number = 0;
 
-7. constructor(age: number) {
-8. this.age = age;
-9. }
+8. constructor(age: number) {
+9. this.age = age;
 10. }
+11. }
 
-12. @ObservedV2
-13. class Info {
-14. public id: number = 0;
-15. @Trace public personList: Person[] = [];
+13. @ObservedV2
+14. class Info {
+15. public id: number = 0;
+16. @Trace public personList: Person[] = [];
 
-17. constructor() {
-18. this.id = nextId++;
-19. this.personList = [new Person(0), new Person(1), new Person(2)];
-20. }
+18. constructor() {
+19. this.id = nextId++;
+20. this.personList = [new Person(0), new Person(1), new Person(2)];
 21. }
+22. }
 
-23. @Entry
-24. @ComponentV2
-25. struct Index {
-26. info: Info = new Info();
+24. @Entry
+25. @ComponentV2
+26. struct Index {
+27. info: Info = new Info();
 
-28. build() {
-29. Column() {
-30. Text(`length: ${this.info.personList.length}`)
-31. .fontSize(40)
-32. Divider()
-33. if (this.info.personList.length >= 3) {
-34. Text(`${this.info.personList[0].age}`)
-35. .fontSize(40)
-36. .onClick(() => {
-37. this.info.personList[0].age++;
-38. })
+29. build() {
+30. Column() {
+31. Text(`length: ${this.info.personList.length}`)
+32. .fontSize(40)
+33. Divider()
+34. if (this.info.personList.length >= 3) {
+35. Text(`${this.info.personList[0].age}`)
+36. .fontSize(40)
+37. .onClick(() => {
+38. this.info.personList[0].age++;
+39. })
 
-40. Text(`${this.info.personList[1].age}`)
-41. .fontSize(40)
-42. .onClick(() => {
-43. this.info.personList[1].age++;
-44. })
+41. Text(`${this.info.personList[1].age}`)
+42. .fontSize(40)
+43. .onClick(() => {
+44. this.info.personList[1].age++;
+45. })
 
-46. Text(`${this.info.personList[2].age}`)
-47. .fontSize(40)
-48. .onClick(() => {
-49. this.info.personList[2].age++;
-50. })
-51. }
+47. Text(`${this.info.personList[2].age}`)
+48. .fontSize(40)
+49. .onClick(() => {
+50. this.info.personList[2].age++;
+51. })
+52. }
 
-53. Divider()
+54. Divider()
 
-55. ForEach(this.info.personList, (item: Person, index: number) => {
-56. Text(`${index} ${item.age}`)
-57. .fontSize(40)
-58. })
-59. }
+56. ForEach(this.info.personList, (item: Person, index: number) => {
+57. Text(`${index} ${item.age}`)
+58. .fontSize(40)
+59. })
 60. }
 61. }
+62. }
 ```
 
 [DecorativeObject.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/arktsobservedv2andtrace/entry/src/main/ets/pages/usagescenarios/DecorativeObject.ets#L15-L78)
@@ -786,32 +792,33 @@ content_hash: sha256:6d59372786984872e54f9792b54dd588082390ab348d1e03d923e9e5f9b
 18. .fontSize(30)
 19. Divider()
 20. })
-21. Button('init map')
-22. .onClick(() => {
-23. this.info.memberMap = new Map([[0, 'a'], [1, 'b'], [3, 'c']]);
-24. })
-25. Button('set new one')
-26. .onClick(() => {
-27. this.info.memberMap.set(4, 'd');
-28. })
-29. Button('clear')
-30. .onClick(() => {
-31. this.info.memberMap.clear();
-32. })
-33. Button('set the key: 0')
-34. .onClick(() => {
-35. this.info.memberMap.set(0, 'aa');
-36. })
-37. Button('delete the first one')
-38. .onClick(() => {
-39. this.info.memberMap.delete(0);
-40. })
-41. }
-42. .width('100%')
-43. }
-44. .height('100%')
-45. }
+21. // 被@Trace装饰的Map类型属性可以观测到调用API带来的变化
+22. Button('init map')
+23. .onClick(() => {
+24. this.info.memberMap = new Map([[0, 'a'], [1, 'b'], [3, 'c']]);
+25. })
+26. Button('set new one')
+27. .onClick(() => {
+28. this.info.memberMap.set(4, 'd');
+29. })
+30. Button('clear')
+31. .onClick(() => {
+32. this.info.memberMap.clear();
+33. })
+34. Button('set the key: 0')
+35. .onClick(() => {
+36. this.info.memberMap.set(0, 'aa');
+37. })
+38. Button('delete the first one')
+39. .onClick(() => {
+40. this.info.memberMap.delete(0);
+41. })
+42. }
+43. .width('100%')
+44. }
+45. .height('100%')
 46. }
+47. }
 ```
 
 [DecorationMap.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/arktsobservedv2andtrace/entry/src/main/ets/pages/usagescenarios/DecorationMap.ets#L15-L63)
@@ -840,28 +847,29 @@ content_hash: sha256:6d59372786984872e54f9792b54dd588082390ab348d1e03d923e9e5f9b
 16. .fontSize(30)
 17. Divider()
 18. })
-19. Button('init set')
-20. .onClick(() => {
-21. this.info.memberSet = new Set([0, 1, 2, 3, 4]);
-22. })
-23. Button('set new one')
-24. .onClick(() => {
-25. this.info.memberSet.add(5);
-26. })
-27. Button('clear')
-28. .onClick(() => {
-29. this.info.memberSet.clear();
-30. })
-31. Button('delete the first one')
-32. .onClick(() => {
-33. this.info.memberSet.delete(0);
-34. })
-35. }
-36. .width('100%')
-37. }
-38. .height('100%')
-39. }
+19. // 被@Trace装饰的Set类型属性可以观测到调用API带来的变化
+20. Button('init set')
+21. .onClick(() => {
+22. this.info.memberSet = new Set([0, 1, 2, 3, 4]);
+23. })
+24. Button('set new one')
+25. .onClick(() => {
+26. this.info.memberSet.add(5);
+27. })
+28. Button('clear')
+29. .onClick(() => {
+30. this.info.memberSet.clear();
+31. })
+32. Button('delete the first one')
+33. .onClick(() => {
+34. this.info.memberSet.delete(0);
+35. })
+36. }
+37. .width('100%')
+38. }
+39. .height('100%')
 40. }
+41. }
 ```
 
 [DecorationSet.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/arktsobservedv2andtrace/entry/src/main/ets/pages/usagescenarios/DecorationSet.ets#L15-L57)
@@ -884,34 +892,35 @@ content_hash: sha256:6d59372786984872e54f9792b54dd588082390ab348d1e03d923e9e5f9b
 
 11. build() {
 12. Column() {
-13. Button('set selectedDate to 2023-07-08')
-14. .margin(10)
-15. .onClick(() => {
-16. this.info.selectedDate = new Date('2023-07-08');
-17. })
-18. Button('increase the year by 1')
-19. .margin(10)
-20. .onClick(() => {
-21. this.info.selectedDate.setFullYear(this.info.selectedDate.getFullYear() + 1);
-22. })
-23. Button('increase the month by 1')
-24. .margin(10)
-25. .onClick(() => {
-26. this.info.selectedDate.setMonth(this.info.selectedDate.getMonth() + 1);
-27. })
-28. Button('increase the day by 1')
-29. .margin(10)
-30. .onClick(() => {
-31. this.info.selectedDate.setDate(this.info.selectedDate.getDate() + 1);
-32. })
-33. DatePicker({
-34. start: new Date('1970-1-1'),
-35. end: new Date('2100-1-1'),
-36. selected: this.info.selectedDate
-37. })
-38. }.width('100%')
-39. }
+13. // @Trace装饰的Date类型属性可以观测调用API带来的变化
+14. Button('set selectedDate to 2023-07-08')
+15. .margin(10)
+16. .onClick(() => {
+17. this.info.selectedDate = new Date('2023-07-08');
+18. })
+19. Button('increase the year by 1')
+20. .margin(10)
+21. .onClick(() => {
+22. this.info.selectedDate.setFullYear(this.info.selectedDate.getFullYear() + 1);
+23. })
+24. Button('increase the month by 1')
+25. .margin(10)
+26. .onClick(() => {
+27. this.info.selectedDate.setMonth(this.info.selectedDate.getMonth() + 1);
+28. })
+29. Button('increase the day by 1')
+30. .margin(10)
+31. .onClick(() => {
+32. this.info.selectedDate.setDate(this.info.selectedDate.getDate() + 1);
+33. })
+34. DatePicker({
+35. start: new Date('1970-1-1'),
+36. end: new Date('2100-1-1'),
+37. selected: this.info.selectedDate
+38. })
+39. }.width('100%')
 40. }
+41. }
 ```
 
 [DecorateDate.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/arktsobservedv2andtrace/entry/src/main/ets/pages/usagescenarios/DecorateDate.ets#L15-L57)
@@ -1240,4 +1249,4 @@ reflect-metadata可以通过如下命令安装。
 
 [ChildPage.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/arktsobservedv2andtrace/entry/src/main/ets/pages/faqs/ChildPage.ets#L15-L33)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/MoQqnb7tTQeJj0JOuyCxeA/zh-cn_image_0000002552957618.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233907Z&HW-CC-Expire=86400&HW-CC-Sign=47EF7F11CDD66F3F7B0E8254229D46E442C7071E294F69AD706DCA9A8B5A88E2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/IXiSQlfSSX2pJlCre_laqA/zh-cn_image_0000002589323977.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052717Z&HW-CC-Expire=86400&HW-CC-Sign=BF62C5BC899CC7B82567FA7801D3988A7823720EB6AB22DBC687965D7637C801)

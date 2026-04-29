@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-root
 title: ohpm root
 breadcrumb: 指南 > 命令行工具 > 三方依赖管理工具（ohpm） > 常用命令 > ohpm root
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:57:43+08:00
+scraped_at: 2026-04-29T13:47:52+08:00
 doc_updated_at: 2026-04-22
-content_hash: sha256:14292270e6f7403f5167a9a7d7bc1070147ddefd01ff7f5296532f1b59aeddba
+content_hash: sha256:e9f15184471abbf42e1301de5e41fa1ba4397b878bd9c2a23b35a458ea4b344b
 ---
 
 在标准输出中打印有效的 oh\_modules 目录路径信息。
@@ -47,7 +47,7 @@ content_hash: sha256:14292270e6f7403f5167a9a7d7bc1070147ddefd01ff7f5296532f1b59a
 
 项目结构为：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/GfCrS0X-RLqmqfEWjU9z5w/zh-cn_image_0000002561752639.png?HW-CC-KV=V1&HW-CC-Date=20260427T235742Z&HW-CC-Expire=86400&HW-CC-Sign=698E452C7734EF821A12B382FB912069A7332EC185B90A8F71D34A39A7122B65)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/vMnpEzIZRPSRd7z1whcZJA/zh-cn_image_0000002561752639.png?HW-CC-KV=V1&HW-CC-Date=20260429T054751Z&HW-CC-Expire=86400&HW-CC-Sign=78477E09DEB80495427B1CB4D4773515F01510A5E998809EBB382E0DF7408544)
 
 在entry模块的src目录下执行：
 
@@ -57,4 +57,4 @@ content_hash: sha256:14292270e6f7403f5167a9a7d7bc1070147ddefd01ff7f5296532f1b59a
 
 结果示例：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/sdNGyTCkSaicoeI3LNQbQg/zh-cn_image_0000002530752698.png?HW-CC-KV=V1&HW-CC-Date=20260427T235742Z&HW-CC-Expire=86400&HW-CC-Sign=5E3C59F1B3BB3076A848BEB5EBF62F6DF71A84BBCA9BB168BF5EF0F4AB7E37EA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/krbvOxoDQr2A0xu9FN1nUg/zh-cn_image_0000002530752698.png?HW-CC-KV=V1&HW-CC-Date=20260429T054751Z&HW-CC-Expire=86400&HW-CC-Sign=99F272255DE581132F45DDEF9EC184C8359AEB40CF4B593F05DB294B356CFC71)

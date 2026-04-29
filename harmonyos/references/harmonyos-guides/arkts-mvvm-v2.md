@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-mvvm-v2
 title: MVVM模式（V2）
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > MVVM模式（V2）
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:39:02+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:67a3d8c8d9748eb5c82298b8b3c34afe1df6583a56fa633bbd2a5739a4a02339
+scraped_at: 2026-04-29T13:27:11+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:1f96e6ae6899ccf8377da94df14950830a21cc947e6128362179ed541caeb22e
 ---
 
 ## 概述
@@ -1020,7 +1020,7 @@ JSON文件存放在src/main/resources/rawfile/defaultTasks.json路径下。
 
 ### 效果图展示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/Fu6mYirASiOsYJdUQwNS-w/zh-cn_image_0000002583477595.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233901Z&HW-CC-Expire=86400&HW-CC-Sign=734EB4E88DA42166B803EC38DF614359D3D4CD2CDF0CA2D2D67DD3541E48A102)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/ZKxkHgGaRd-5wFKcK1_RIA/zh-cn_image_0000002589243893.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052709Z&HW-CC-Expire=86400&HW-CC-Sign=FCF1A395954CC5C6091505F44445A6D9A9F04FDE729719C8E12D6658646B226E)
 
 ## 重构代码以符合MVVM架构
 
@@ -1076,30 +1076,31 @@ Model层负责管理应用的数据及其业务逻辑，通常与后端或数据
 
   6. const DOMAIN = 0x0000;
 
-  8. export default class TaskListModel {
-  9. public tasks: TaskModel[] = [];
+  8. // Model层：TaskListModel负责加载任务列表
+  9. export default class TaskListModel {
+  10. public tasks: TaskModel[] = [];
 
-  11. constructor(tasks: TaskModel[]) {
-  12. this.tasks = tasks;
-  13. }
+  12. constructor(tasks: TaskModel[]) {
+  13. this.tasks = tasks;
+  14. }
 
-  15. async loadTasks(context: common.UIAbilityContext) {
-  16. try {
-  17. let getJson = await context.resourceManager.getRawFileContent('defaultTasks.json');
-  18. let textDecoderOptions: util.TextDecoderOptions = { ignoreBOM: true };
-  19. let textDecoder = util.TextDecoder.create('utf-8', textDecoderOptions);
-  20. let result = textDecoder.decodeToString(getJson);
-  21. this.tasks = JSON.parse(result).map((task: TaskModel) => {
-  22. let newTask = new TaskModel();
-  23. newTask.taskName = task.taskName;
-  24. newTask.isFinish = task.isFinish;
-  25. return newTask;
-  26. });
-  27. } catch (e) {
-  28. hilog.error(DOMAIN, 'testTag', 'Failed to getRawFileContent', JSON.stringify(e) ?? '');
-  29. }
+  16. async loadTasks(context: common.UIAbilityContext) {
+  17. try {
+  18. let getJson = await context.resourceManager.getRawFileContent('defaultTasks.json');
+  19. let textDecoderOptions: util.TextDecoderOptions = { ignoreBOM: true };
+  20. let textDecoder = util.TextDecoder.create('utf-8', textDecoderOptions);
+  21. let result = textDecoder.decodeToString(getJson);
+  22. this.tasks = JSON.parse(result).map((task: TaskModel) => {
+  23. let newTask = new TaskModel();
+  24. newTask.taskName = task.taskName;
+  25. newTask.isFinish = task.isFinish;
+  26. return newTask;
+  27. });
+  28. } catch (e) {
+  29. hilog.error(DOMAIN, 'testTag', 'Failed to getRawFileContent', JSON.stringify(e) ?? '');
   30. }
   31. }
+  32. }
   ```
 
   [TaskListModel.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/StateMgmtV2MVVM/entry/src/main/ets/model/TaskListModel.ets#L18-L43)

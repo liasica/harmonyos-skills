@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (AVTranscoder)
 breadcrumb: API参考 > 媒体 > Media Kit（媒体服务） > ArkTS API > @ohos.multimedia.media (媒体服务) > Interface (AVTranscoder)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:13:43+08:00
-doc_updated_at: 2026-03-20
-content_hash: sha256:e9f968bdc1a78443b653bd6742b2316f05e73d7e678c9a49d044a3509b1a4459
+scraped_at: 2026-04-29T14:04:20+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:cfd7fca71274ff3e30ea0edf8e873fa097ee4de3b10ba00615ac7d28dce0e8e8
 ---
 
 视频转码管理类，用于视频转码。在调用AVTranscoder的方法前，需要先通过[createAVTranscoder()](arkts-apis-media-f.md#mediacreateavtranscoder12)构建一个AVTranscoder实例。
@@ -351,7 +351,7 @@ on(type:'progressUpdate', callback: Callback<number>):void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 进度更新事件回调类型，支持的事件：'progressUpdate'，在转码过程中系统会自动触发此事件。 |
-| callback | [Callback<number>](js-apis-base.md#callback) | 是 | 回调函数，返回进度更新事件，函数中的参数number，表示当前转码进度。 |
+| callback | [Callback<number>](js-apis-base.md#callback) | 是 | 回调函数，返回进度更新事件，函数中的参数number，表示当前转码百分比进度。 |
 
 **示例：**
 

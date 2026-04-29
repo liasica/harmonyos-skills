@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/devicesec
 title: TrustedAuthentication（数字盾服务）
 breadcrumb: API参考 > 系统 > 安全 > Device Security Kit（设备安全服务） > ArkTS API > TrustedAuthentication（数字盾服务）
 category: harmonyos-references
-scraped_at: 2026-04-28T08:07:13+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:82f0d1746147b42d6fc0483db10ba338c81ad9448dff3561382595b95166795a
+scraped_at: 2026-04-29T13:57:42+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:3bd97da591fa1fe3c60d0ce54c080ab606edcee487f95ec62e56bafef08851b9
 ---
 
 本模块提供数字盾密码创建、修改、删除、交易认证，开通生物特征（3D人脸/指纹）交易认证能力、生物特征交易认证，密钥信息导入导出相关接口，金融应用可以使用对应接口，支撑数字盾业务开发。
@@ -453,8 +453,8 @@ getBiometricAuthToken(operType: OperateType, tuiAuthToken: Uint8Array, bioAuthTo
 9. const TAG = "TrustedAuthenticationJsTest";
 10. async function PwdVerify(challenge: Uint8Array, resourceMgr:resourceManager.ResourceManager):Promise<trustedAuthentication.AuthToken> {
 11. try {
-12. const authID: bigint = 11842183505170721246n;//实际填充为从服务器获取到的账号对应的authID值
-13. const fileData : Uint8Array = await resourceMgr.getRawFileContent('test_logo_rgba.png'); //实际使用时请替换为应用要在TUI界面展示的logo图片名称
+12. const authID: bigint = 11842183505170721246n; // 实际填充为从服务器获取到的账号对应的authID值
+13. const fileData : Uint8Array = await resourceMgr.getRawFileContent('test_logo_rgba.png'); // 实际使用时请替换为应用要在TUI界面展示的logo图片名称
 14. const buffer = fileData.buffer;
 15. const label:trustedAuthentication.TUILable = {
 16. image: buffer as ArrayBuffer,

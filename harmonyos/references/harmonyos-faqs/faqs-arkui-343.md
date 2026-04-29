@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-343
 title: 如何实现直播评论场景中顶部渐变遮罩效果
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 方舟UI框架（ArkUI） > 如何实现直播评论场景中顶部渐变遮罩效果
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:26:28+08:00
+scraped_at: 2026-04-29T14:17:26+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:61d602a4e7e44d14bd8ff9f1508fcb11ccca28146f798f0cae8af5c16e084c27
+content_hash: sha256:54b4572457a1c3dd195c1dac396e5f42cf5b41f3b171fad1161cb79286ecdb93
 ---
 
 1. 开发者可使用overlay在当前组件上添加遮罩。
@@ -69,4 +69,4 @@ content_hash: sha256:61d602a4e7e44d14bd8ff9f1508fcb11ccca28146f798f0cae8af5c16e0
 
 实现效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/xiyMlsvrRfGO7aXLFq2T1g/zh-cn_image_0000002229604397.png?HW-CC-KV=V1&HW-CC-Date=20260428T002626Z&HW-CC-Expire=86400&HW-CC-Sign=955F41CE6A743636AA8EBC5BBE2A857DC09A563FF0818A989B03D21C9F9A115A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/xiyMlsvrRfGO7aXLFq2T1g/zh-cn_image_0000002229604397.png?HW-CC-KV=V1&HW-CC-Date=20260429T061725Z&HW-CC-Expire=86400&HW-CC-Sign=58A8AA88654DB9E0681DAD1BEACA3C658CF8ECE20085F14C3425344AA8D1DC86)

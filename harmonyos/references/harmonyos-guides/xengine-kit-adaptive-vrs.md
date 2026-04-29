@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/xengine-kit-a
 title: 自适应VRS
 breadcrumb: 指南 > 图形 > XEngine Kit（GPU加速引擎服务） > 自适应VRS
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:47:53+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:eb37de0b7cec22481c7341eae97810989f11647b6c73b5caf00eb9f094ad4fb2
+scraped_at: 2026-04-29T13:36:43+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:260f8705d248ba60d524538b24bdc3e3cb84ca4ef1ad2511b432ee25ffa5f96d
 ---
 
 XEngine Kit提供自适应VRS功能，其通过合理分配画面的计算资源，视觉无损降低渲染频次，使不同的渲染图像使用不同的渲染速率，能够有效提高渲染性能。
@@ -36,7 +36,7 @@ XEngine Kit提供自适应VRS功能，其通过合理分配画面的计算资源
 
 * 下面是基于GLES图形API平台集成自适应VRS的主要业务流程
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/c10tmjpBSlmK4bAR1YHjPQ/zh-cn_image_0000002583438783.jpg?HW-CC-KV=V1&HW-CC-Date=20260427T234752Z&HW-CC-Expire=86400&HW-CC-Sign=45B5F664A0E1EB63A361A8D0C9E88F8F24D2AED23EA5875E569E3CC0454E0FBF)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/jTYmabT3SxyWjPD_NEc94A/zh-cn_image_0000002589245043.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053642Z&HW-CC-Expire=86400&HW-CC-Sign=5008807E394835C3C3CEBAB7E9454460C4E08F5C8A88925D652107E2DDD9A7CC)
 
 1. 用户在进入游戏初始化场景时调用HMS\_XEG\_GetString接口查询XEngine支持的特性，当查询接口返回支持的特性列表中包含自适应VRS时代表可以使用此特性。
 2. 此时调用HMS\_XEG\_AdaptiveVRSParameter接口配置超分参数。
@@ -49,7 +49,7 @@ XEngine Kit提供自适应VRS功能，其通过合理分配画面的计算资源
 
 * 下面是基于Vulkan图形API平台集成自适应VRS的主要业务流程
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/Z8MFZcoyQsuIhOQU2q9JXA/zh-cn_image_0000002552958738.jpg?HW-CC-KV=V1&HW-CC-Date=20260427T234752Z&HW-CC-Expire=86400&HW-CC-Sign=B9BA3B42A43F57AAB34FB93C95B6BAE84815EFA0E54D8A40B1111E35B5783F0A)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/TC0mCJudTQabzRP5HqxKWw/zh-cn_image_0000002558765238.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053642Z&HW-CC-Expire=86400&HW-CC-Sign=E83BF3455794F815A9FBBE0BC3202FF06B6D7F5D577BDAFF1A8B23B57AD63FE8)
 
 1. 用户在进入游戏初始化场景时调用HMS\_XEG\_EnumerateDeviceExtensionProperties接口查询XEngine支持的特性，当查询接口返回支持的特性列表中包含自适应VRS时代表可以使用此特性。
 2. 此时调用HMS\_XEG\_CreateAdaptiveVRS接口创建自适应VRS实例。
@@ -95,21 +95,21 @@ XEngine Kit提供自适应VRS功能，其通过合理分配画面的计算资源
 
   ```
   1. find_library(
-  2. # Sets the name of the path variable.
+  2. # 设置路径变量的名称。
   3. xengine-lib
-  4. # Specifies the name of the NDK library that you want CMake to locate.
+  4. # 指定希望CMake定位的NDK库的名称。
   5. xengine
   6. )
   7. find_library(
-  8. # Sets the name of the path variable.
+  8. # 设置路径变量的名称。
   9. EGL-lib
-  10. # Specifies the name of the NDK library that you want CMake to locate.
+  10. # 指定希望CMake定位的NDK库的名称。
   11. EGL
   12. )
   13. find_library(
-  14. # Sets the name of the path variable.
+  14. # 设置路径变量的名称。
   15. GLES-lib
-  16. # Specifies the name of the NDK library that you want CMake to locate.
+  16. # 指定希望CMake定位的NDK库的名称。
   17. GLESv3
   18. )
 
@@ -121,15 +121,15 @@ XEngine Kit提供自适应VRS功能，其通过合理分配画面的计算资源
 
   ```
   1. find_library(
-  2. # Sets the name of the path variable.
+  2. # 设置路径变量的名称。
   3. xengine-lib
-  4. # Specifies the name of the NDK library that you want CMake to locate.
+  4. # 指定希望CMake定位的NDK库的名称。
   5. xengine
   6. )
   7. find_library(
-  8. # Sets the name of the path variable.
+  8. # 设置路径变量的名称。
   9. Vulkan-lib
-  10. # Specifies the name of the NDK library that you want CMake to locate.
+  10. # 指定希望CMake定位的NDK库的名称。
   11. vulkan
   12. )
 

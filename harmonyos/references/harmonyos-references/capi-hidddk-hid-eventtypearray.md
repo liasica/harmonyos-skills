@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-hidd
 title: Hid_EventTypeArray
 breadcrumb: API参考 > 系统 > 硬件 > Driver Development Kit（驱动开发服务） > C API > 结构体 > Hid_EventTypeArray
 category: harmonyos-references
-scraped_at: 2026-04-28T08:10:45+08:00
-doc_updated_at: 2026-03-26
-content_hash: sha256:8b6e1fe4d4e24ebb6b9b20c7e4054dba3af0dd50139e791b0946761eaec5c687
+scraped_at: 2026-04-29T14:01:26+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:d99a71fc48dc47a790cb47478952d55a5543795a66e2089102f544cd8ac44e91
 ---
 
 ```
@@ -34,5 +34,5 @@ PC/2in1
 
 | 名称 | 描述 |
 | --- | --- |
-| Hid\_EventType\* hidEventType | 事件类型编码 |
+| [Hid\_EventType](capi-hid-ddk-types-h.md#hid_eventtype)\* hidEventType | 事件类型编码 |
 | uint16\_t length | 数组的有效长度 |

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-desktop-sh
 title: 桌面快捷方式
 breadcrumb: 最佳实践 > 应用框架 > 程序包结构 > 桌面快捷方式
 category: best-practices
-scraped_at: 2026-04-28T08:20:10+08:00
+scraped_at: 2026-04-29T14:10:47+08:00
 doc_updated_at: 2026-03-17
-content_hash: sha256:62b8abecd80db45de4a806fa5897813dcc4250bec1d00aa7c4116b945707d0a5
+content_hash: sha256:bd6188ef7d3d3e7944ff8715e5a68e96343ec9ecda623e283a365ea892789daf
 ---
 
 ## 概述
@@ -20,10 +20,10 @@ content_hash: sha256:62b8abecd80db45de4a806fa5897813dcc4250bec1d00aa7c4116b94570
 
 * 点击快捷方式入口列表中的“回家”项，即可快速打开地图应用，开启从当前位置到家的导航路线选择。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/mzTjD9rbQWad90yKhtFWtw/zh-cn_image_0000002229451729.gif?HW-CC-KV=V1&HW-CC-Date=20260428T002006Z&HW-CC-Expire=86400&HW-CC-Sign=B961D02F599E4DB64668947D6A4E84E9047FBEAD2A2055498A1837A20E79539E "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/mzTjD9rbQWad90yKhtFWtw/zh-cn_image_0000002229451729.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061046Z&HW-CC-Expire=86400&HW-CC-Sign=FAF03072FE56650B865092C443E31E90A4963A1A088E249C6492561B2B1D2830 "点击放大")
 * 长按快捷方式入口列表中的“回家”项，可将其拖动至桌面，点击桌面对应图标，即可开启从当前位置到家的导航路线选择。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/YoyXxc-qTe6zFJaDJPmzbg/zh-cn_image_0000002229451733.gif?HW-CC-KV=V1&HW-CC-Date=20260428T002006Z&HW-CC-Expire=86400&HW-CC-Sign=D7DF1850C2269074F91DCC01773EC8D4BBFC620B54C8712AE4E70292A0C38407 "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/YoyXxc-qTe6zFJaDJPmzbg/zh-cn_image_0000002229451733.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061046Z&HW-CC-Expire=86400&HW-CC-Sign=907819BBF3EA219C6184B4B8B717922392D5EDAF67D9332FBCF6F47AED0054AF "点击放大")
 
 说明
 

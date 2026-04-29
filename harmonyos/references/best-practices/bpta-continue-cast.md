@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-continue-c
 title: 应用接续概述
 breadcrumb: 最佳实践 > 自由流转 > 跨端迁移 > 应用接续概述
 category: best-practices
-scraped_at: 2026-04-28T08:21:36+08:00
+scraped_at: 2026-04-29T14:12:39+08:00
 doc_updated_at: 2026-04-08
-content_hash: sha256:9dc96f1ad0aae56ac84d434dc668daa2f2a8f9da4918068a29bec0fa09192a99
+content_hash: sha256:8bc3610c1e1ad35bd2bfbac03e59e62d25b5dea30e38524d604a585053730036
 ---
 
 ## 概述
@@ -22,7 +22,7 @@ content_hash: sha256:9dc96f1ad0aae56ac84d434dc668daa2f2a8f9da4918068a29bec0fa091
 * [应用接续数据迁移](bpta-continue-data.md)：文件以及数据量较大的场景如何完成接续。
 * [常见接续最佳实践](bpta-application-continue-progess.md)：长列表浏览、web页面浏览和媒体浏览三个场景如何完成接续。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/-SotM2J7QH2bsDVc7YugkQ/zh-cn_image_0000002564471927.png?HW-CC-KV=V1&HW-CC-Date=20260428T002134Z&HW-CC-Expire=86400&HW-CC-Sign=CC792A68F7A18F31E3F75DB4CD7992895622EA946B28EA6D6BEB6C7FACEBA8AC "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/-SotM2J7QH2bsDVc7YugkQ/zh-cn_image_0000002564471927.png?HW-CC-KV=V1&HW-CC-Date=20260429T061236Z&HW-CC-Expire=86400&HW-CC-Sign=3DE78402D869AB2D8775A4A4175F4FB6D5E3A4C5CAACFC120BC1A3AF749FEBDB "点击放大")
 
 ## 约束限制
 
@@ -77,7 +77,7 @@ content_hash: sha256:9dc96f1ad0aae56ac84d434dc668daa2f2a8f9da4918068a29bec0fa091
 
 ## 运作机制
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/qk8kUeWURzCxW7ytk7V96w/zh-cn_image_0000002533352056.png?HW-CC-KV=V1&HW-CC-Date=20260428T002134Z&HW-CC-Expire=86400&HW-CC-Sign=1A377D2237B902744F3316EC795DBE355A8A2E2C091E282C6D6E07314B06CA71 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/qk8kUeWURzCxW7ytk7V96w/zh-cn_image_0000002533352056.png?HW-CC-KV=V1&HW-CC-Date=20260429T061236Z&HW-CC-Expire=86400&HW-CC-Sign=A0901E432DF345BD1E4FA634A1D9288B444F0767D5139511818C47ECD8E0E16D "点击放大")
 
 1. 在源端，通过UIAbility的onContinue()回调，开发者可以保存待接续的业务数据。
 
@@ -167,7 +167,7 @@ content_hash: sha256:9dc96f1ad0aae56ac84d434dc668daa2f2a8f9da4918068a29bec0fa091
 
 在Stage模型中，应用在不同启动模式下将调用不同的接口，以恢复数据、加载界面。不同情况下的函数调用如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/vcVg3shwTv2G2-BWLufA0g/zh-cn_image_0000002533512000.png?HW-CC-KV=V1&HW-CC-Date=20260428T002134Z&HW-CC-Expire=86400&HW-CC-Sign=29751B0CA672BBFCC4E49EEC3A30C7B971F2F2A52E58DF782CCB12178DDB7520 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/vcVg3shwTv2G2-BWLufA0g/zh-cn_image_0000002533512000.png?HW-CC-KV=V1&HW-CC-Date=20260429T061236Z&HW-CC-Expire=86400&HW-CC-Sign=0CBB1F549A1C84BC17AC67A870741E6761D30253079C830F10B09C9CFF4251A4 "点击放大")
 
 说明
 
@@ -316,7 +316,7 @@ content_hash: sha256:9dc96f1ad0aae56ac84d434dc668daa2f2a8f9da4918068a29bec0fa091
 2. 为应用A申请接续服务。
    1. 进入A应用详情页找到接续服务，点击“申请”。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/8er9xedDTBaRLiTNOa0wUQ/zh-cn_image_0000002535559114.png?HW-CC-KV=V1&HW-CC-Date=20260428T002134Z&HW-CC-Expire=86400&HW-CC-Sign=C3A892472687319CDC501118689EFC047879649B2ACC72706FBC541F706EA65A "点击放大")
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/8er9xedDTBaRLiTNOa0wUQ/zh-cn_image_0000002535559114.png?HW-CC-KV=V1&HW-CC-Date=20260429T061236Z&HW-CC-Expire=86400&HW-CC-Sign=667778933AA2C80116972E62E8595C385D5F263D8DF35F5A3DAA5EBB10A13E1C "点击放大")
    2. 在“新建业务申请”页面填写如下字段，填写完成后点击“提交”。
       * “接续应用APP ID1”：填入“AppId\_B”
       * “接续应用APP ID2”：填入“AppId\_A”。
@@ -333,16 +333,16 @@ content_hash: sha256:9dc96f1ad0aae56ac84d434dc668daa2f2a8f9da4918068a29bec0fa091
       | TV端 | PC端/移动端 | ① PC版A应用AppId  ② TV版A应用AppId  ③ 移动版A应用AppId |
       | PC端 | TV端/移动端 | ① TV版A应用AppId  ② PC版A应用AppId  ③ 移动版A应用AppId |
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/QzSrXlEiTPyZEfnTR33aFQ/zh-cn_image_0000002535719072.png?HW-CC-KV=V1&HW-CC-Date=20260428T002134Z&HW-CC-Expire=86400&HW-CC-Sign=B34D5DB1EA746DA4BF7C73869280399A7EBB765C7BF313DE71D211DD057581DF "点击放大")
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/QzSrXlEiTPyZEfnTR33aFQ/zh-cn_image_0000002535719072.png?HW-CC-KV=V1&HW-CC-Date=20260429T061236Z&HW-CC-Expire=86400&HW-CC-Sign=20480B4C8EC5DF3AC0BEFF2748B9F64A0E8EC99E82DEE579E98CAC9C6492952F "点击放大")
    3. 进入互动中心页面，可看到申请已提交的消息。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/t0aLV3VsQNSmP8rcrsS17A/zh-cn_image_0000002566638915.png?HW-CC-KV=V1&HW-CC-Date=20260428T002134Z&HW-CC-Expire=86400&HW-CC-Sign=FE8B2181141635C05FEAAC8922D1F525A90F4B5FAF5994E2BD1BFA065D37A38E "点击放大")
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/t0aLV3VsQNSmP8rcrsS17A/zh-cn_image_0000002566638915.png?HW-CC-KV=V1&HW-CC-Date=20260429T061236Z&HW-CC-Expire=86400&HW-CC-Sign=B96DF2EFEED1C7921A99AC7EB805805F07101F1E53FF9FC217D59F3233A96192 "点击放大")
    4. 返回“开放能力接入”页面，原“申请”按钮变为“申请中”。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/hPZVYWvwQweGeeweAZxdEw/zh-cn_image_0000002566518903.png?HW-CC-KV=V1&HW-CC-Date=20260428T002134Z&HW-CC-Expire=86400&HW-CC-Sign=0C6EA531D3813995FD65E1C553E252E794174EA34CA1595EC306FBA6001B0027 "点击放大")
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/hPZVYWvwQweGeeweAZxdEw/zh-cn_image_0000002566518903.png?HW-CC-KV=V1&HW-CC-Date=20260429T061236Z&HW-CC-Expire=86400&HW-CC-Sign=238C8A84278C38287DB110854DC286786D8A7D57F4BB6D3E09C70994CFB4F1C0 "点击放大")
    5. 申请审批通过后，互动中心会发送通知消息给您。“申请中”按钮会变为“申请”，同时对应的能力开关会为您自动开启。至此，您的应用已成功接入接续服务能力。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/jyMLAMdrRuaNf-d3ezVbSA/zh-cn_image_0000002535559116.png?HW-CC-KV=V1&HW-CC-Date=20260428T002134Z&HW-CC-Expire=86400&HW-CC-Sign=22125D942276984DF528AFD6E9B6778A918E661CF36F7B1CEFFBE7AB29104E6F "点击放大")
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/jyMLAMdrRuaNf-d3ezVbSA/zh-cn_image_0000002535559116.png?HW-CC-KV=V1&HW-CC-Date=20260429T061236Z&HW-CC-Expire=86400&HW-CC-Sign=C1FA9C86E96E75BE31C7B63D6530DDC7B5E565688C23A6105C7D39EF9F1D2448 "点击放大")
 
 3. 为应用B进行接续服务申请，详细步骤同第2步。
 4. 重新分别申请并下载对应的Profile文件以供后续打包使用。
@@ -407,7 +407,7 @@ content_hash: sha256:9dc96f1ad0aae56ac84d434dc668daa2f2a8f9da4918068a29bec0fa091
 | 第一次启动请求 | onCreate (冷启动)  或 onNewWant (热启动) | AbilityConstant.LaunchReason.PREPARE\_CONTINUATION |
 | 第二次启动请求 | onNewWant | AbilityConstant.LaunchReason.CONTINUATION |
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/WI3tMSWGSf6tB7HmNiFkZQ/zh-cn_image_0000002564391901.png?HW-CC-KV=V1&HW-CC-Date=20260428T002134Z&HW-CC-Expire=86400&HW-CC-Sign=A368AC90D3015103D1F7A1BC1F92711D5EB74FC8778748643FECE8F91228F557 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/WI3tMSWGSf6tB7HmNiFkZQ/zh-cn_image_0000002564391901.png?HW-CC-KV=V1&HW-CC-Date=20260429T061236Z&HW-CC-Expire=86400&HW-CC-Sign=0C9B5BC1A853DAF3E9CFE717FD1925AD716311AB6FA5040D084C9577057F0427 "点击放大")
 
 如果没有配置快速启动，则触发迁移时只会收到一次启动请求：
 
@@ -657,7 +657,7 @@ content_hash: sha256:9dc96f1ad0aae56ac84d434dc668daa2f2a8f9da4918068a29bec0fa091
 
    执行完成后，RemoteDeviceInfo中列出的设备即为已成功与当前设备组网的设备。如下图所示，该设备已与两台其他设备成功组网。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/O9Q-aiJSRiuRAjnLdjeOPg/zh-cn_image_0000002564471931.png?HW-CC-KV=V1&HW-CC-Date=20260428T002134Z&HW-CC-Expire=86400&HW-CC-Sign=BA2F6CC742E25075CC5BC0C26C16F86DD727E70723A959008F36E15E4B896F8F)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/O9Q-aiJSRiuRAjnLdjeOPg/zh-cn_image_0000002564471931.png?HW-CC-KV=V1&HW-CC-Date=20260429T061236Z&HW-CC-Expire=86400&HW-CC-Sign=D319AD6F746FE7F0EE18DAE09AA2B6DFD0C8933D3A1BD33B4E7AA48FCFA4AC38)
 
 ### 1分钟以上无任何操作，图标将自动消失；再次操作应用时，图标将重新出现
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: swiper
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 容器组件 > swiper
 category: harmonyos-references
-scraped_at: 2026-04-28T08:02:58+08:00
+scraped_at: 2026-04-29T13:53:21+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:a1dd58d640f65e7799334a00e03b393a8b73ca7344604e67064d740708e97d29
+content_hash: sha256:0291de14892837aebb6c17dfb21ee9e39823ae8945c1dbccf2cc23fa03282f47
 ---
 
 说明
@@ -175,4 +175,4 @@ PhonePC/2in1TabletTVWearable
 12. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/mnpGlnSiSQuVH2fD9a5P5g/zh-cn_image_0000002583440231.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000257Z&HW-CC-Expire=86400&HW-CC-Sign=5031E706EBC06B172D8C20A19F26E0CADB83390EE295B7E10C1F7513E7FB5483)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/WhpkWRqsSSG_d4WKFwvbsg/zh-cn_image_0000002558766712.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055320Z&HW-CC-Expire=86400&HW-CC-Sign=02526F40FFDED48D8E48BF2C6B51CE0DAC8D87BC23DF8DCF43EA41DCA9D99B8F)

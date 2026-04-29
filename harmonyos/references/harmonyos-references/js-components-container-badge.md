@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: badge
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 容器组件 > badge
 category: harmonyos-references
-scraped_at: 2026-04-28T08:02:55+08:00
+scraped_at: 2026-04-29T13:53:17+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:b469bb0174ff370f0c4b2d10a2d9b2a18915626ba4a2d104389195a5837f07e0
+content_hash: sha256:d742ec57f0451bd5c07ef89f9c89d27346a940944a3891abe191be3cc2d68397
 ---
 
 说明
@@ -125,4 +125,4 @@ PhonePC/2in1TabletTVWearable
 9. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/nRiNtKUxRY6R054Dy8sERg/zh-cn_image_0000002583440223.png?HW-CC-KV=V1&HW-CC-Date=20260428T000254Z&HW-CC-Expire=86400&HW-CC-Sign=CD0E6F2616F8D7F608B58B6D99DBA3D30F5152AC3BC06B4F60F277209A6C0612)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/5FB6u7W9R3aKxqpD2iBwog/zh-cn_image_0000002558766704.png?HW-CC-KV=V1&HW-CC-Date=20260429T055316Z&HW-CC-Expire=86400&HW-CC-Sign=140B60CA88DEA4B3CD2A59A2BB79656BB842F636217BA8B4AD7B89DA4DD8B810)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-get-p
 title: 快速验证
 breadcrumb: 指南 > 应用服务 > Account Kit（华为账号服务） > 获取华为账号用户信息 > 获取手机号 > 快速验证
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:48:00+08:00
+scraped_at: 2026-04-29T13:36:53+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:d86a2e57b62c4fe525d87fd67d327d86da9c054b72003a63bb173e0a603912d4
+content_hash: sha256:59118daa370b0bbb7735f7b2c9bda6070b1c0c44e7475cfe75593221e877bf62
 ---
 
 ## 场景介绍
@@ -18,15 +18,15 @@ content_hash: sha256:d86a2e57b62c4fe525d87fd67d327d86da9c054b72003a63bb173e0a603
 
 **图1** 手机端快速验证手机号（请以实际效果为准）
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/_qQCTVbQRF2ko-_UWoa5dA/zh-cn_image_0000002552958754.png?HW-CC-KV=V1&HW-CC-Date=20260427T234759Z&HW-CC-Expire=86400&HW-CC-Sign=931C4AFE7DA71403B99E4CE510F236E071F908CC60DEFED220399A723614DFAE "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/DAGeVhTDT2ersA3G4gKO8g/zh-cn_image_0000002558765254.png?HW-CC-KV=V1&HW-CC-Date=20260429T053651Z&HW-CC-Expire=86400&HW-CC-Sign=6D78FA0DAAA4E30C8B16B68B0D187B39A23D785E293CA7951B158FC3B1FDBD60 "点击放大")
 
 **图2** Wearable设备快速验证手机号（请以实际效果为准）
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/7WmnkZoyQM2ITrczyF4Zkw/zh-cn_image_0000002583478755.png?HW-CC-KV=V1&HW-CC-Date=20260427T234759Z&HW-CC-Expire=86400&HW-CC-Sign=90E1BEB091186000F23180C38E70F21B1C00E18EE490433DDCDAEA80F694B007 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/tcft1iwLTsWUCXSTqeBjxQ/zh-cn_image_0000002558605598.png?HW-CC-KV=V1&HW-CC-Date=20260429T053651Z&HW-CC-Expire=86400&HW-CC-Sign=53AFC5399D2A33456C6634D8DFF7ACA15D8AD7C28A1AA86E560FF80555A00165 "点击放大")
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/L6VLOsFYTYii_TSyoHCuuw/zh-cn_image_0000002552799106.png?HW-CC-KV=V1&HW-CC-Date=20260427T234759Z&HW-CC-Expire=86400&HW-CC-Sign=88DDC7AB7B933307097B5A17DE0F7DBFC36000376F1878927CC77B52DF76C5C6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/YM9LjdHMQY-2UgRI1tQ0cQ/zh-cn_image_0000002589325125.png?HW-CC-KV=V1&HW-CC-Date=20260429T053651Z&HW-CC-Expire=86400&HW-CC-Sign=C3B21E18BB1C5F4B987EBD39A400C6C0C0FF2CF5C28EF363F543572B4C746FB9)
 
 流程说明：
 

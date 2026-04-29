@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (AudioVolumeManager)
 breadcrumb: API参考 > 媒体 > Audio Kit（音频服务） > ArkTS API > @ohos.multimedia.audio (音频管理) > Interface (AudioVolumeManager)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:11:42+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:e893a0f31ad6e0e8dc1c76e166f9e161e743794a13324c8d042f5fd0b5b33656
+scraped_at: 2026-04-29T14:02:21+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:6e361450409eb10c68bd630d0284ff19d8496a87dad0382cae0b968f3cb8744d
 ---
 
 音量管理。
@@ -672,7 +672,7 @@ off(type: 'streamVolumeChange', callback?: Callback<StreamVolumeEvent>): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 事件回调类型，支持的事件为'volumeChange'，当取消监听系统音量变化事件时，触发该事件。 |
+| type | string | 是 | 事件回调类型，支持的事件为'streamVolumeChange'，当取消监听系统音量变化事件时，触发该事件。 |
 | callback | Callback<[StreamVolumeEvent](arkts-apis-audio-i.md#streamvolumeevent20)> | 否 | 回调函数，返回变化后的音量信息。 |
 
 **示例：**

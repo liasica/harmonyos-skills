@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: chart
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 基础组件 > chart
 category: harmonyos-references
-scraped_at: 2026-04-28T08:03:00+08:00
+scraped_at: 2026-04-29T13:53:23+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:956143589c8de1939010197fc6bd7169cb4fe3c1a540be1ee3320a78e4e3acc7
+content_hash: sha256:65c204537dd6075ddf345bbfdc86ceb62dcdd9bd96f77cc74050b045198877ca
 ---
 
 说明
@@ -271,7 +271,7 @@ PhonePC/2in1TabletTVWearable
    49. }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/xOd12velQtqaCI15-vEbvA/zh-cn_image_0000002552800538.png?HW-CC-KV=V1&HW-CC-Date=20260428T000259Z&HW-CC-Expire=86400&HW-CC-Sign=DE0A11955E633FC927B2A2E36102A800C8D14A714758803BB93A07BCDA629011)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/jfIqNL5QT5qdtvzhWDaNqg/zh-cn_image_0000002589246521.png?HW-CC-KV=V1&HW-CC-Date=20260429T055321Z&HW-CC-Expire=86400&HW-CC-Sign=C829DE4E97E46A4F24CAF333F776B17E66C7087737D1A6F2339C66A4586A8AA6)
 2. 柱状图
 
    ```
@@ -339,7 +339,7 @@ PhonePC/2in1TabletTVWearable
    32. }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/fgFeNgL9TbGnVGV33zD6Sw/zh-cn_image_0000002583440233.png?HW-CC-KV=V1&HW-CC-Date=20260428T000259Z&HW-CC-Expire=86400&HW-CC-Sign=1BE1CD73C6B41E54B72B6D11035CC5FC6E6BBC3B41FCC2B59C58CBBB22A12314)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/kW2UzCfXQJ61o3BxbiOmVA/zh-cn_image_0000002558766714.png?HW-CC-KV=V1&HW-CC-Date=20260429T055321Z&HW-CC-Expire=86400&HW-CC-Sign=EB37A07D9D6189EA2307697943FA8A230BEAC58F73F270A864244C6235F270F4)
 3. 量规图
 
    ```
@@ -368,7 +368,7 @@ PhonePC/2in1TabletTVWearable
    14. }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/kbar-CR1Tvm7Y0iEk0c99g/zh-cn_image_0000002552960188.png?HW-CC-KV=V1&HW-CC-Date=20260428T000259Z&HW-CC-Expire=86400&HW-CC-Sign=3480965C78BDA6625FEC8DAA31A476B5E86F551112DBB56B50E8B104A05EC1BC)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/WgSrQDyHQDywo2vGKtuQog/zh-cn_image_0000002558607054.png?HW-CC-KV=V1&HW-CC-Date=20260429T055321Z&HW-CC-Expire=86400&HW-CC-Sign=C999E9B4042EE46F49122BF1A86EC8E631955A2B3E6FA1C7B08B8C713A22B4F7)
 4. 进度类、加载类、占比类圆形图表
 
    ```
@@ -444,4 +444,4 @@ PhonePC/2in1TabletTVWearable
    35. }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/SUD-aT3kS6CybKgdXHD0rA/zh-cn_image_0000002583480189.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000259Z&HW-CC-Expire=86400&HW-CC-Sign=98393C1F30F3E2CB07338D6B9A873F143CBF8640E3E3179B978762AB8973971C)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/jzFiH97OSTe9tEY3c2Imcw/zh-cn_image_0000002589326581.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055321Z&HW-CC-Expire=86400&HW-CC-Sign=6EBC172C968CFDFC6521609F9C9B9175BC2CAC7F94180722CAF06D471CCF2292)

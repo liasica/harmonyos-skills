@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-struct
 title: module对象内部结构
 breadcrumb: 指南 > 基础入门 > 开发基础知识 > 应用配置文件（FA模型） > module对象内部结构
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:37:30+08:00
+scraped_at: 2026-04-29T13:25:33+08:00
 doc_updated_at: 2026-04-10
-content_hash: sha256:9c094fe3ad8033c874ca64e169b1da65042804a64f9fba18c94dfccd6508d28b
+content_hash: sha256:a99281bc931f0635d1c522b2d410f530e59efa7594f4fd5ceac392fd011618b4
 ---
 
 module对象包含HAP的配置信息。
@@ -281,7 +281,7 @@ metadata对象示例：
 
 **图1** 应用的详情页示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/8YZz7VE4StyMqYl_j4lJTw/zh-cn_image_0000002552797828.jpg?HW-CC-KV=V1&HW-CC-Date=20260427T233728Z&HW-CC-Expire=86400&HW-CC-Sign=697B9219F07CAFEF76E7390B08A528617DFB534BF4C4BE3DB71A3B995A4A05B6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/tGtmAZQjTpCN-_t4Sohqdg/zh-cn_image_0000002558604312.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T052531Z&HW-CC-Expire=86400&HW-CC-Sign=52FEF04F3AB4A819136CB72F2D8601FA38C6B930C056A8372F42681A06638F44)
 
 注：应用详情页面中显示的label可能与桌面上显示的不同。如果非Page类型的PageAbility配置了入口图标和label，那么详情页中显示的即为配置的。
 

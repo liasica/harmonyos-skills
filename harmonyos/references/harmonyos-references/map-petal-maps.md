@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-petal
 title: petalMaps（拉起地图应用）
 breadcrumb: API参考 > 应用服务 > Map Kit（地图服务） > ArkTS API > petalMaps（拉起地图应用）
 category: harmonyos-references
-scraped_at: 2026-04-28T08:17:25+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:95de42240412bd186a9f53e9ff1841e1e9edc2bfd22246c806a6f2128722c95a
+scraped_at: 2026-04-29T14:08:09+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:52479c32e7a7e334a9cd4a6cf82654c0b35c35fcbf35f1a856bc1bde7c51c1dc
 ---
 
 本模块提供拉起地图应用功能。
@@ -331,9 +331,9 @@ POI详情的参数。
 
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
-| destinationPosition | [mapCommon.LatLng](map-common.md#latlng) | 否 | 否 | 终点的坐标。  取值范围：经度[-180, 180)，纬度[-85.2, 85.2]。对异常值进行处理，返回错误码401。 |
-| destinationName | string | 否 | 是 | 终点的名称，超长名称超出部分用省略号“...”表示。 |
-| destinationPoiId | string | 否 | 是 | 终点的POI ID。  POI ID和经纬度都作为入参时，POI ID具有更高优先级。 |
+| destinationPosition | [mapCommon.LatLng](map-common.md#latlng) | 否 | 否 | POI的坐标。  取值范围：经度[-180, 180)，纬度[-85.2, 85.2]。对异常值进行处理，返回错误码401。 |
+| destinationName | string | 否 | 是 | POI的名称，超长名称超出部分用省略号“...”表示。 |
+| destinationPoiId | string | 否 | 是 | POI ID。  POI ID和经纬度都作为入参时，POI ID具有更高优先级。 |
 | zoom | number | 否 | 是 | 地图缩放级别。取值范围：[3, 20]，默认值：17，异常值按照默认值处理。  **说明：**  当传入destinationPoiId时zoom层级不支持自定义。  **起始版本：** 6.0.1(21) |
 | coordinateType | [mapCommon.CoordinateType](map-common.md#coordinatetype) | 否 | 是 | 地图坐标系类型。默认值[mapCommon.CoordinateType](map-common.md#coordinatetype).GCJ02，异常值按照默认值处理。  **起始版本：** 6.0.1(21) |
 

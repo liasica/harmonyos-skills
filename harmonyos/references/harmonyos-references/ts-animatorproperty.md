@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-animat
 title: 属性动画 (animation)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 动画 > 属性动画 (animation)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:02:16+08:00
+scraped_at: 2026-04-29T13:52:41+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:ec0a345101a248d8b300cb66eb1095675ea3bcee4b224bff1782f0b43cf3fc74
+content_hash: sha256:7a08d7f3bc4d7a6b0b198cf1087c00903883f5c468c5fdb2bf3e169080314a4d
 ---
 
 组件的某些通用属性变化时，可以通过属性动画实现渐变过渡效果，提升用户体验。支持的属性包括[width](ts-universal-attributes-size.md#width)、[height](ts-universal-attributes-size.md#height)、[backgroundColor](ts-universal-attributes-background.md#backgroundcolor)、[opacity](ts-universal-attributes-opacity.md#opacity)、[scale](ts-universal-attributes-transformation.md#scale)、[rotate](ts-universal-attributes-transformation.md#rotate)、[translate](ts-universal-attributes-transformation.md#translate)等。对于改变布局类属性（如宽高）的动画，内容通常会直接跳转到最终状态，例如文字或[Canvas](ts-components-canvas-canvas.md)中的内容。如果希望内容跟随宽高变化，可以使用[renderFit](ts-universal-attributes-renderfit.md#renderfit)属性进行配置。
@@ -150,4 +150,4 @@ PhonePC/2in1TabletTVWearable
 52. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/ggHg7tPBQYGs7VQQfY55EA/zh-cn_image_0000002583480023.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000215Z&HW-CC-Expire=86400&HW-CC-Sign=F27C834A110C216AD57EE06D1041339E432793D937E9E9554876A2B109E6FAF0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/uEifmZSFRganTCPHnHmhmQ/zh-cn_image_0000002558606888.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055240Z&HW-CC-Expire=86400&HW-CC-Sign=48A6EBF9E06FCC167304CAD55A6922606E858994C11EA8ECD894C4D9B377AE55)

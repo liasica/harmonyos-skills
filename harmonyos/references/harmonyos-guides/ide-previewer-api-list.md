@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-previewer
 title: 支持使用预览器的API清单
 breadcrumb: 指南 > 编写与调试应用 > 界面预览 > 支持使用预览器的API清单
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:56:38+08:00
+scraped_at: 2026-04-29T13:46:34+08:00
 doc_updated_at: 2026-01-15
-content_hash: sha256:a55bf0bb2823d7194d82de7a5886f8967ed0a156757720c2f79de2426a812781
+content_hash: sha256:5200851e266b7342a570687255d1b2ea64d50b55ce2c71e5974022adf3dfe7e4
 ---
 
 ## 组件
@@ -223,7 +223,7 @@ content_hash: sha256:a55bf0bb2823d7194d82de7a5886f8967ed0a156757720c2f79de2426a8
 
 从DevEco Studio 6.0.0 Beta5版本开始，仅支持在预览/预览调试Stage模型的HAP/HSP时，使用文件管理的相关API，并且需要先打开**Enable file operation**开关。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/Sc3QtyKwSuCYjgzDMhNnzg/zh-cn_image_0000002561753763.png?HW-CC-KV=V1&HW-CC-Date=20260427T235637Z&HW-CC-Expire=86400&HW-CC-Sign=CAC4358AC496A0444D6D8E06DE2175B396D1C5033794314F0EC9B1E1C2B4C09B "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/ojsVAj1dSy6eNg6dvijU1Q/zh-cn_image_0000002561753763.png?HW-CC-KV=V1&HW-CC-Date=20260429T054633Z&HW-CC-Expire=86400&HW-CC-Sign=D7E05981454016D7C544C7985EF50A0DE95D5D5129A18E791931E20A54065781 "点击放大")
 
 | 模块 | API |
 | --- | --- |

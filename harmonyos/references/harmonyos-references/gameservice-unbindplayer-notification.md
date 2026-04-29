@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/gameservi
 title: 解绑账号通知
 breadcrumb: API参考 > 应用服务 > Game Service Kit（游戏服务） > REST API > 解绑账号通知
 category: harmonyos-references
-scraped_at: 2026-04-28T08:16:48+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:4e9924ee73b45d8fa7c47ca1112381caca94006fad4f6611eaecb0c7bb75f785
+scraped_at: 2026-04-29T14:07:31+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:be2fc7287a6ffacbe93c5a17c99f8b58f96825e469589f31a6a146092393c13a
 ---
 
 ## 功能介绍
@@ -64,7 +64,7 @@ content_hash: sha256:4e9924ee73b45d8fa7c47ca1112381caca94006fad4f6611eaecb0c7bb7
 
 | 参数 | 是否必选 | 类型 | 描述 |
 | --- | --- | --- | --- |
-| result | 是 | int | 服务端返回码。  0：成功  1：验签失败  2：超时  3：业务信息错误  94：系统错误  95：IO 错误  96：错误的url  97：错误的响应  98：参数错误  99：其他错误 |
+| result | 是 | int | 服务端返回码。  0：成功。  1：验签失败。通常由于签名不一致导致。  2：超时。表示服务端处理超时。  3：业务信息错误。表示传入的业务参数不符合规范。  94：系统错误。表示服务端内部异常。  95：IO 错误。表示网络或磁盘IO异常。  96：错误的url。表示回调地址配置错误。  97：错误的响应。表示响应格式不正确。  98：参数错误。表示缺失请求参数或格式错误。  99：其他错误。表示未归类的异常情况。 |
 
 ## 响应示例
 

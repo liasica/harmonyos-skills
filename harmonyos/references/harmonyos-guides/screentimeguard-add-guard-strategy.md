@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/screentimegua
 title: 添加策略
 breadcrumb: 指南 > 应用服务 > Screen Time Guard Kit（屏幕时间守护服务） > 守护策略管理 > 添加策略
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:50:53+08:00
+scraped_at: 2026-04-29T13:40:28+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:a437eeb96ba6114fd1feef6f405d2dcd5bc3f5a36dde7e731b279e17fd0c3157
+content_hash: sha256:c7cfc7298d3d64f79945c13bf9e764e9d8d8db6f918eb4f0dba7ecc80b048b75
 ---
 
 ## 场景介绍
@@ -14,11 +14,11 @@ content_hash: sha256:a437eeb96ba6114fd1feef6f405d2dcd5bc3f5a36dde7e731b279e17fd0
 
 ## 用户体验设计
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/mwoAX_9rRp20ss6MrECTFg/zh-cn_image_0000002583479169.png?HW-CC-KV=V1&HW-CC-Date=20260427T235053Z&HW-CC-Expire=86400&HW-CC-Sign=682D91C2BBFF2BB86EE8821FA89D61B94AE0AB19BFA3B2821BCEAAD1F6AE2BCE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/pKkZLzVSTESCvS9an8j2tw/zh-cn_image_0000002558765670.png?HW-CC-KV=V1&HW-CC-Date=20260429T054027Z&HW-CC-Expire=86400&HW-CC-Sign=26FB405E834B0582B3617E2DA57D4ACC67E7F5EF3A25D4A690CCFC143A013FF0)
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/caaUZ2HbR4OxIM6bytMU8g/zh-cn_image_0000002552799520.png?HW-CC-KV=V1&HW-CC-Date=20260427T235053Z&HW-CC-Expire=86400&HW-CC-Sign=099F5033A3A1B01A71B911CB41232CD3C2C12CD082B40FA9FD35F654F915BE17)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/SwAUzEBPSbOSkArkdsQsEA/zh-cn_image_0000002558606014.png?HW-CC-KV=V1&HW-CC-Date=20260429T054027Z&HW-CC-Expire=86400&HW-CC-Sign=6D513EECC85F029E0D169B1AE7AA3198C9DD3DA1C71472EECE4CCEB83AD6795B)
 
 流程说明：
 

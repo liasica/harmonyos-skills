@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-c
 title: @ohos.security.certManager (证书管理模块)
 breadcrumb: API参考 > 系统 > 安全 > Device Certificate Kit（设备证书服务） > ArkTS API > @ohos.security.certManager (证书管理模块)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:07:35+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:be78f8ec0b7b54b4a50bd90c08685c3395cb856c5ab35dcb2f28c9dda212ac7d
+scraped_at: 2026-04-29T13:58:03+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:3b1dd9acef6c28189f585a2569700c8118c0c636a9a4c79106077b3cf5322017
 ---
 
 证书管理主要提供系统级的证书管理能力，实现证书全生命周期（安装，存储，使用，销毁）的管理和安全使用。
@@ -360,7 +360,7 @@ PhonePC/2in1TabletTVWearable
 
 installPrivateCertificate(keystore: Uint8Array, keystorePwd: string, certAlias: string): Promise<CMResult>
 
-表示安装私有凭据，使用Promise方式异步返回结果。
+表示安装私有凭据。使用Promise异步回调。
 
 **需要权限：** ohos.permission.ACCESS\_CERT\_MANAGER
 
@@ -539,7 +539,7 @@ PhonePC/2in1TabletTVWearable
 
 getPrivateCertificate(keyUri: string): Promise<CMResult>
 
-表示获取私有凭据详情，使用Promise方式异步返回结果。
+表示获取私有凭据详情。使用Promise异步回调。
 
 **需要权限：** ohos.permission.ACCESS\_CERT\_MANAGER
 
@@ -646,7 +646,7 @@ PhonePC/2in1TabletTVWearable
 
 uninstallPrivateCertificate(keyUri: string): Promise<void>
 
-表示卸载指定的私有凭据，使用Promise方式异步返回结果。
+表示卸载指定的私有凭据。使用Promise异步回调。
 
 **需要权限：** ohos.permission.ACCESS\_CERT\_MANAGER
 
@@ -857,7 +857,7 @@ PhonePC/2in1TabletTVWearable
 
 init(authUri: string, spec: CMSignatureSpec): Promise<CMHandle>
 
-表示使用凭据进行签名、验签的初始化操作，使用Promise方式异步返回结果。
+表示使用凭据进行签名、验签的初始化操作。使用Promise异步回调。
 
 **需要权限：** ohos.permission.ACCESS\_CERT\_MANAGER
 
@@ -972,7 +972,7 @@ PhonePC/2in1TabletTVWearable
 
 update(handle: Uint8Array, data: Uint8Array): Promise<void>
 
-表示签名、验签的数据更新操作，使用Promise方式异步返回结果。
+表示签名、验签的数据更新操作。使用Promise异步回调。
 
 **需要权限：** ohos.permission.ACCESS\_CERT\_MANAGER
 
@@ -1142,7 +1142,7 @@ PhonePC/2in1TabletTVWearable
 
 finish(handle: Uint8Array, signature?: Uint8Array): Promise<CMResult>
 
-表示完成签名、验签的操作，使用Promise方式异步返回结果。
+表示完成签名、验签的操作。使用Promise异步回调。
 
 **需要权限：** ohos.permission.ACCESS\_CERT\_MANAGER
 
@@ -1266,7 +1266,7 @@ PhonePC/2in1TabletTVWearable
 
 abort(handle: Uint8Array): Promise<void>
 
-表示中止签名、验签的操作，使用Promise方式异步返回结果。
+表示中止签名、验签的操作。使用Promise异步回调。
 
 **需要权限：** ohos.permission.ACCESS\_CERT\_MANAGER
 
@@ -1321,7 +1321,7 @@ PhonePC/2in1TabletTVWearable
 
 getPublicCertificate(keyUri: string): Promise<CMResult>
 
-表示获取用户公共凭据的详细信息，使用Promise方式异步返回结果。
+表示获取用户公共凭据的详细信息。使用Promise异步回调。
 
 **需要权限：** ohos.permission.ACCESS\_CERT\_MANAGER
 
@@ -1380,7 +1380,7 @@ PhonePC/2in1TabletTVWearable
 
 isAuthorizedApp(keyUri: string): Promise<boolean>
 
-表示当前应用是否由指定的用户凭据授权，使用Promise方式异步返回结果。
+表示当前应用是否由指定的用户凭据授权。使用Promise异步回调。
 
 **需要权限：** ohos.permission.ACCESS\_CERT\_MANAGER
 
@@ -1436,7 +1436,7 @@ PhonePC/2in1TabletTVWearable
 
 getAllUserTrustedCertificates(): Promise<CMResult>
 
-表示获取当前用户和设备公共位置的所有用户根CA证书列表，使用Promise方式异步返回结果。
+表示获取当前用户和设备公共位置的所有用户根CA证书列表。使用Promise异步回调。
 
 **需要权限：** ohos.permission.ACCESS\_CERT\_MANAGER
 
@@ -1487,7 +1487,7 @@ PhonePC/2in1TabletTVWearable
 
 getAllUserTrustedCertificates(scope: CertScope): Promise<CMResult>
 
-表示根据证书的位置获取用户根CA证书列表，使用Promise方式异步返回结果。
+表示根据证书的位置获取用户根CA证书列表。使用Promise异步回调。
 
 **需要权限：** ohos.permission.ACCESS\_CERT\_MANAGER
 
@@ -1547,7 +1547,7 @@ PhonePC/2in1TabletTVWearable
 
 getUserTrustedCertificate(certUri: string): Promise<CMResult>
 
-表示获取用户根CA证书的详细信息，使用Promise方式异步返回结果。
+表示获取用户根CA证书的详细信息。使用Promise异步回调。
 
 **需要权限：** ohos.permission.ACCESS\_CERT\_MANAGER
 
@@ -1605,7 +1605,7 @@ PhonePC/2in1TabletTVWearable
 
 getPrivateCertificates(): Promise<CMResult>
 
-表示获取应用安装的凭据列表，使用Promise方式异步返回结果。
+表示获取应用安装的凭据列表。使用Promise异步回调。
 
 **需要权限：** ohos.permission.ACCESS\_CERT\_MANAGER
 

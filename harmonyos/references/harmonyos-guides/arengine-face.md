@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arengine-face
 title: 人脸跟踪（ArkTS）
 breadcrumb: 指南 > 图形 > AR Engine（AR引擎服务） > 人脸识别与跟踪 > 人脸跟踪（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:46:57+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:d67e9c39a19bef3d0d78752b5b6d271997cb46d9745452d268b76c801fbf3518
+scraped_at: 2026-04-29T13:36:00+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:b122005b70e9f80c889b2d3442a5d795595463babaa0bfb8787a623a8cd7895c
 ---
 
 ## 约束与限制
@@ -62,80 +62,71 @@ content_hash: sha256:d67e9c39a19bef3d0d78752b5b6d271997cb46d9745452d268b76c801fb
 6. @Component
 7. struct ARFace {
 8. @State arContext?: arViewController.ARViewContext = undefined;
-9. // 平面类型
-10. private intervalId: number = -1;
-11. // 重复调用函数时间间隔为33ms，即设定为30fps
-12. private delayInterval: number = 33;
 
-14. build(): void {
-15. NavDestination() {
-16. RelativeContainer() {
-17. if (this.arContext) {
-18. ARView({ context: this.arContext })
-19. .height('100%')
-20. .width('100%')
-21. .alignRules({
-22. center: { anchor: '__container__', align: VerticalAlign.Center },
-23. middle: { anchor: '__container__', align: HorizontalAlign.Center }
-24. })
-25. }
-26. }
-27. }
-28. .onAppear(() => {
-29. this.initARView();
-30. // 设定在30fps下更新获取物体体积信息
-31. this.intervalId = setInterval(async () => {
-32. }, this.delayInterval);
-33. })
-34. .onWillDisappear(() => {
-35. // 退出setInterval函数
-36. clearInterval(this.intervalId);
-37. this.stopARView();
-38. })
-39. .onShown(() => {
-40. this.resumeARView();
-41. })
-42. .onHidden(() => {
-43. this.pauseARView();
-44. })
-45. .hideTitleBar(true)
-46. .hideBackButton(true)
-47. .hideToolBar(true)
-48. }
+10. build(): void {
+11. NavDestination() {
+12. RelativeContainer() {
+13. if (this.arContext) {
+14. ARView({ context: this.arContext })
+15. .height('100%')
+16. .width('100%')
+17. .alignRules({
+18. center: { anchor: '__container__', align: VerticalAlign.Center },
+19. middle: { anchor: '__container__', align: HorizontalAlign.Center }
+20. })
+21. }
+22. }
+23. }
+24. .onAppear(() => {
+25. this.initARView();
+26. })
+27. .onWillDisappear(() => {
+28. this.stopARView();
+29. })
+30. .onShown(() => {
+31. this.resumeARView();
+32. })
+33. .onHidden(() => {
+34. this.pauseARView();
+35. })
+36. .hideTitleBar(true)
+37. .hideBackButton(true)
+38. .hideToolBar(true)
+39. }
 
-50. private initARView(): void {
-51. Scene.load().then((scene: Scene) => {
-52. let viewContext: arViewController.ARViewContext = new arViewController.ARViewContext();
-53. viewContext.scene = scene;
-54. viewContext.callback = new ARViewCallbackImpl();
-55. viewContext.config = {
-56. type: arEngine.ARType.FACE,
-57. planeFindingMode: arEngine.ARPlaneFindingMode.DISABLED,
-58. semanticMode: arEngine.ARSemanticMode.NONE,
-59. meshMode: arEngine.ARMeshMode.DISABLED,
-60. focusMode: arEngine.ARFocusMode.AUTO,
-61. cameraLensFacing: arEngine.ARCameraLensFacing.FRONT,
-62. multiFaceMode: arEngine.ARMultiFaceMode.MULTIFACE_DISABLE,
-63. }
-64. viewContext.init().then(() => {
-65. this.arContext = viewContext;
-66. console.info('Succeeded in initializing ARView.');
-67. }).catch((err: BusinessError) => {
-68. console.error(`Failed to init ARView. Code is ${err.code}, message is ${err.message}.`);
-69. })
-70. })
-71. }
+41. private initARView(): void {
+42. Scene.load().then((scene: Scene) => {
+43. let viewContext: arViewController.ARViewContext = new arViewController.ARViewContext();
+44. viewContext.scene = scene;
+45. viewContext.callback = new ARViewCallbackImpl();
+46. viewContext.config = {
+47. type: arEngine.ARType.FACE,
+48. planeFindingMode: arEngine.ARPlaneFindingMode.DISABLED,
+49. semanticMode: arEngine.ARSemanticMode.NONE,
+50. meshMode: arEngine.ARMeshMode.DISABLED,
+51. focusMode: arEngine.ARFocusMode.AUTO,
+52. cameraLensFacing: arEngine.ARCameraLensFacing.FRONT,
+53. multiFaceMode: arEngine.ARMultiFaceMode.MULTIFACE_DISABLE
+54. }
+55. viewContext.init().then(() => {
+56. this.arContext = viewContext;
+57. console.info('Succeeded in initializing ARView.');
+58. }).catch((err: BusinessError) => {
+59. console.error(`Failed to init ARView. Code is ${err.code}, message is ${err.message}.`);
+60. })
+61. })
+62. }
 
-73. private stopARView(): void {
-74. // ...
-75. }
-76. private resumeARView(): void {
-77. // ...
-78. }
-79. private pauseARView(): void {
-80. // ...
-81. }
-82. }
+64. private stopARView(): void {
+65. // ...
+66. }
+67. private resumeARView(): void {
+68. // ...
+69. }
+70. private pauseARView(): void {
+71. // ...
+72. }
+73. }
 ```
 
 ### 获取人脸几何数据和微表情数据

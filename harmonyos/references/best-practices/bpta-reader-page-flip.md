@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-reader-pag
 title: 阅读器翻页
 breadcrumb: 最佳实践 > 行业场景解决方案 > 新闻阅读 > 阅读器翻页
 category: best-practices
-scraped_at: 2026-04-28T08:21:55+08:00
+scraped_at: 2026-04-29T14:13:09+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:f3a28852870c798d6f97925b21de0e2100fd1865d9f092419d8f1047973e5ce8
+content_hash: sha256:b8bab372add9d8b230ef558b05e5dab6a4da45008049f205e7cde10b581f8006
 ---
 
 ## 概述
@@ -24,7 +24,7 @@ content_hash: sha256:f3a28852870c798d6f97925b21de0e2100fd1865d9f092419d8f1047973
 
 上下翻页时，页面内容沿着垂直方向移动。当用户向上滑动时，当前页面内容向上滑出屏幕顶部，同时下一页内容从屏幕底部滑入；向下滑动则相反（当前页向下滑出，上一页从顶部滑入）。实现效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/sUJgwTK1TgKSUPQ9vdLOog/zh-cn_image_0000002329710386.gif?HW-CC-KV=V1&HW-CC-Date=20260428T002152Z&HW-CC-Expire=86400&HW-CC-Sign=244A4F5E364740DE6BB2C14237200658DF3057CE07103950FE4BD6B75A71B379 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/sUJgwTK1TgKSUPQ9vdLOog/zh-cn_image_0000002329710386.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061302Z&HW-CC-Expire=86400&HW-CC-Sign=4560EE6484E8F4F165286AAE7A37B847C092C464EE3FA97C6E6C8856E01CF09B "点击放大")
 
 ### 实现原理
 
@@ -74,13 +74,13 @@ content_hash: sha256:f3a28852870c798d6f97925b21de0e2100fd1865d9f092419d8f1047973
 
 覆盖翻页效果模拟卡片切换，新页面（上一页）从屏幕的左侧水平滑入，完全覆盖当前页面。当前页支持从屏幕另一侧滑出，滑出时显示下层新页面。在整个过程中页面没有弯曲或折叠效果，页面作为一个整体平面进行移动。效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/x9Lg3bGNQwqrikJd_0accA/zh-cn_image_0000002329870186.gif?HW-CC-KV=V1&HW-CC-Date=20260428T002152Z&HW-CC-Expire=86400&HW-CC-Sign=91F781BEB95891B0273932CBF8E32171A5CD28292DA9CD025458289F6DBEA2C2 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/x9Lg3bGNQwqrikJd_0accA/zh-cn_image_0000002329870186.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061302Z&HW-CC-Expire=86400&HW-CC-Sign=404394F097E777BE4396126FB14C236EE41BCA05EFE3454DAE01DB44CD0E5B35 "点击放大")
 
 ### 实现原理
 
 使用[Stack](../harmonyos-references/ts-container-stack.md)堆叠容器，存放1、2、3三个页面，借助图形变换的[translate](../harmonyos-references/ts-universal-attributes-transformation.md#translate)平移属性，将上层页面向左平移屏幕宽度移至窗口左侧。使用[PanGesture](../harmonyos-references/ts-basic-gestures-pangesture.md)滑动手势事件判断手势滑动方向及平移距离，依据滑动方向及平移距离，执行1页面向右平移滑入屏幕，或2页面向左平移滑出屏幕。滑动手势结束后通过[显式动画 (animateTo)](../harmonyos-references/ts-explicit-animation.md)完成页面平移至窗口边缘，并重新渲染1、2、3页面。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/vR0209YYS-65bGg5tlNZSQ/zh-cn_image_0000002427853450.jpg?HW-CC-KV=V1&HW-CC-Date=20260428T002152Z&HW-CC-Expire=86400&HW-CC-Sign=A971B27567D368F9FB59D87AEA09981D6DE6B4DBC9D437C8D71AC671686EA58A "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/vR0209YYS-65bGg5tlNZSQ/zh-cn_image_0000002427853450.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T061302Z&HW-CC-Expire=86400&HW-CC-Sign=AF29DE4FC6248AEFF0308D6F11B68AB151E62E402E7B5A5F44584DDFCB94BA58 "点击放大")
 
 ### 开发步骤
 
@@ -169,7 +169,7 @@ content_hash: sha256:f3a28852870c798d6f97925b21de0e2100fd1865d9f092419d8f1047973
 
 仿真翻页效果模拟真实纸质书的翻页体验。用户拖动页面的角落（右上角或右下角），被拖动的页面会随着手指的移动而卷曲、折叠。在翻动过程中，可以看到当前页的背面（为当前页的翻转显示效果）以及被翻页覆盖的下一页内容逐渐显露出来。翻页轨迹遵循贝塞尔曲线，并伴有阴影效果增强立体感。翻页效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/kYW157C-TDKxwGC8gpW1BA/zh-cn_image_0000002363628777.gif?HW-CC-KV=V1&HW-CC-Date=20260428T002152Z&HW-CC-Expire=86400&HW-CC-Sign=13E4D0256EB212A4DCC7780DE8102B122DCC5B5D383CE68983CD29BB29F628C3 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/kYW157C-TDKxwGC8gpW1BA/zh-cn_image_0000002363628777.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061302Z&HW-CC-Expire=86400&HW-CC-Sign=BB18A4405A205955D7307340EA851C0BD2C9A70CF05F4BD4543359612E7BB1C1 "点击放大")
 
 ### 实现原理
 
@@ -179,7 +179,7 @@ content_hash: sha256:f3a28852870c798d6f97925b21de0e2100fd1865d9f092419d8f1047973
 
 1. 仿真翻页控制点。仿真翻页可以看作下图三个区域组合而成。要绘制出其中曲线及直线，需要计算出一组特定的坐标点（参考下图），计算公式详见开发步骤。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/TQSlo8C_SBKnkInexx0BFQ/zh-cn_image_0000002329710434.png?HW-CC-KV=V1&HW-CC-Date=20260428T002152Z&HW-CC-Expire=86400&HW-CC-Sign=3125D50084E40919AA0A9EF46AF79FDDA38E84F8C5147C1A2EBAA384A0180DFF "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/TQSlo8C_SBKnkInexx0BFQ/zh-cn_image_0000002329710434.png?HW-CC-KV=V1&HW-CC-Date=20260429T061302Z&HW-CC-Expire=86400&HW-CC-Sign=19E3C1BBD5D839115C8C0E18FD828770BF8C4245C9E754BD98D94D33A08B6682 "点击放大")
 2. 曲线绘制。为使用上述坐标点绘制出曲线，需要使用[@ohos.graphics.drawing (绘制模块)](../harmonyos-references/js-apis-graphics-drawing.md)的相关接口实现，如[Path.lineTo()](../harmonyos-references/arkts-apis-graphics-drawing-path.md#lineto)连接线段；[Path.quadTo()](../harmonyos-references/arkts-apis-graphics-drawing-path.md#quadto)实现二阶贝塞尔曲线；[Canvas.clipPath()](../harmonyos-references/arkts-apis-graphics-drawing-canvas.md#clippath12)实现对画布裁剪等。
 3. 内容绘制。仿真翻页绘制的内容来源于使用[@ohos.arkui.componentSnapshot (组件截图)](../harmonyos-references/js-apis-arkui-componentsnapshot.md#componentsnapshotgetsync12)的[componentSnapshot.getSync()](../harmonyos-references/js-apis-arkui-componentsnapshot.md#componentsnapshotgetsync12)接口获取的组件截图pixelMap，然后使用[@ohos.graphics.drawing (绘制模块)](../harmonyos-references/js-apis-graphics-drawing.md)的[Canvas.drawPixelMapMesh()](../harmonyos-references/arkts-apis-graphics-drawing-canvas.md#drawpixelmapmesh12)实现绘制。
 4. 阴影效果渲染。主要使用了[@ohos.graphics.drawing (绘制模块)](../harmonyos-references/js-apis-graphics-drawing.md)的[ShaderEffect](../harmonyos-references/arkts-apis-graphics-drawing-shadereffect.md)着色器实现。通过为画刷设置着色器效果，并设置相关参数，完成了渐变阴影的绘制。

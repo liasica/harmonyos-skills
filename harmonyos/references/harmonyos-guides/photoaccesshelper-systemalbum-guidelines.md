@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/photoaccesshe
 title: 系统相册资源使用指导
 breadcrumb: 指南 > 媒体 > Media Library Kit（媒体文件管理服务） > 受限开放能力 > 系统相册资源使用指导
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:46:39+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:e22d8498872d34e5e7b11b51aaebd03ff13b528e7e97cd2607fbe2e8c1209636
+scraped_at: 2026-04-29T13:35:38+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:a1c56d91a45935f4ece68b86f602f56a7e68a054024e2ceb8e3a794aaff248f9
 ---
 
 photoAccessHelper提供对收藏夹、视频相册、截屏和录屏相册的相关操作。
@@ -204,4 +204,4 @@ photoAccessHelper提供对收藏夹、视频相册、截屏和录屏相册的相
 30. }
 ```
 
-[GetVideosFromVideoAlbumAbility.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/MediaLibraryKit/SystemAlbumUsageSample/entry/src/main/ets/getvideosfromvideoalbumability/GetVideosFromVideoAlbumAbility.ets#L57-L52)
+[GetVideosFromVideoAlbumAbility.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/MediaLibraryKit/SystemAlbumUsageSample/entry/src/main/ets/getvideosfromvideoalbumability/GetVideosFromVideoAlbumAbility.ets#L57-L38)

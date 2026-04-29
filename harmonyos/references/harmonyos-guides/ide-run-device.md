@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-run-devic
 title: 使用本地真机运行应用
 breadcrumb: 指南 > 编写与调试应用 > 使用本地真机运行应用
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:56:39+08:00
+scraped_at: 2026-04-29T13:46:34+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:7514dfd8cca409f6801aeb007c53edd12a0fdebd05d024c62498ca1884bda66d
+content_hash: sha256:2fe856912b788e1762d93f79f3b8cac76aca612a957bcf51bea2c56a87ad8852
 ---
 
 在本地真机中运行HarmonyOS应用/元服务，可以采用USB连接方式或者无线连接方式。
@@ -26,10 +26,10 @@ Wearable设备仅支持无线连接方式（Lite Wearable设备不支持）。
 2. 在**设置 > 系统 > 开发者选项**中，打开**USB调试**开关（确保设备已连接USB）。
 3. 在真机设备中会弹出“允许USB调试”的弹框，单击**允许**。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/LQJ20k0CTeKpDNHhKL1_vw/zh-cn_image_0000002530753700.png?HW-CC-KV=V1&HW-CC-Date=20260427T235638Z&HW-CC-Expire=86400&HW-CC-Sign=D5762D2F60B6CF057CD621DCA57FC1422BE4EFE717ADEB06107E51F05DD7BC1C)
-4. 在菜单栏中，单击**Run>Run'模块名称'**或![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/KM6MQpDIQGiVddvyWbsPeQ/zh-cn_image_0000002561753635.png?HW-CC-KV=V1&HW-CC-Date=20260427T235638Z&HW-CC-Expire=86400&HW-CC-Sign=CEE972FFDD1D594B9096B15B231445B1D8F9429158935C65C3B53516260BAAC1)，或使用默认快捷键**Shift+F10**（macOS为**Control+R**）运行应用/元服务。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/Oyuug85pRguiANctBfqTLw/zh-cn_image_0000002530753700.png?HW-CC-KV=V1&HW-CC-Date=20260429T054633Z&HW-CC-Expire=86400&HW-CC-Sign=087974E739C5F0BE7C7640E55C20FAE694E5879DA673B04068CF4B8F3C317908)
+4. 在菜单栏中，单击**Run>Run'模块名称'**或![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/HA9pSB-1RsW5uicC0euiag/zh-cn_image_0000002561753635.png?HW-CC-KV=V1&HW-CC-Date=20260429T054633Z&HW-CC-Expire=86400&HW-CC-Sign=CB9AE50015EBE29F951EFD40AEDE8CDAA456A51554997D1E95654084B86C5234)，或使用默认快捷键**Shift+F10**（macOS为**Control+R**）运行应用/元服务。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/Y9Rol6Y7ScuurlVzTevfvg/zh-cn_image_0000002561753637.png?HW-CC-KV=V1&HW-CC-Date=20260427T235638Z&HW-CC-Expire=86400&HW-CC-Sign=8F766E5F3CFDAA180461BD6389B10FC7375A6C9FF44E9386CA094C443419ECC1)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/t8EbChjsRweUbEsRt0FOhQ/zh-cn_image_0000002561753637.png?HW-CC-KV=V1&HW-CC-Date=20260429T054633Z&HW-CC-Expire=86400&HW-CC-Sign=8BE0E4DF9C257593EDD1609D52AA2BC66689866ADBBD83EC332ADE130D98B966)
 5. DevEco Studio启动HAP的编译构建和安装。安装成功后，设备会自动运行安装的HarmonyOS应用/元服务。
 
 ### 使用设备连接助手排查问题
@@ -45,17 +45,17 @@ Wearable设备仅支持无线连接方式（Lite Wearable设备不支持）。
 1. 将真机设备和PC连接到同一WLAN网络。
 2. 在**设置 > 系统 >** **开发者选项**中，打开**无线调试**或**通过WLAN调试**（Wearable设备）开关，并获取设备端的IP地址和端口号。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/bkW4KVWLQxC0x7vfrpPPuw/zh-cn_image_0000002530753696.png?HW-CC-KV=V1&HW-CC-Date=20260427T235638Z&HW-CC-Expire=86400&HW-CC-Sign=5C209929091EDB0C3CE4797CBBF74B61C6D128BBE1F32D21FCE4347AD7541470 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/BJkPgitLTcW1zFJuQI3sHQ/zh-cn_image_0000002530753696.png?HW-CC-KV=V1&HW-CC-Date=20260429T054633Z&HW-CC-Expire=86400&HW-CC-Sign=AC4D90B6934B4866F9173719945A4DCBEC87EA0D28741111B878D662641D081A "点击放大")
 3. 连接设备，有两种方式。
-   * 在DevEco Studio菜单栏中，单击**Tools > IP Connection**，输入连接设备的IP地址和端口号，单击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/1VLHx9WoSCW8YUBsN3BvDw/zh-cn_image_0000002561833605.png?HW-CC-KV=V1&HW-CC-Date=20260427T235638Z&HW-CC-Expire=86400&HW-CC-Sign=E6E6AF22F5D1A147F452D91C31CACFFABB738CC438C13856C933608509B3EFA8)，连接正常后，设备状态为**online**。
+   * 在DevEco Studio菜单栏中，单击**Tools > IP Connection**，输入连接设备的IP地址和端口号，单击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/Dk2E8d71Svizmui5_epUog/zh-cn_image_0000002561833605.png?HW-CC-KV=V1&HW-CC-Date=20260429T054633Z&HW-CC-Expire=86400&HW-CC-Sign=08E94CEE74559FBD66C270F9AF67F1EBD0C02788D2884BC546984505D503C0AE)，连接正常后，设备状态为**online**。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/wbkGncctS_qFjNV5Vckugg/zh-cn_image_0000002561753629.png?HW-CC-KV=V1&HW-CC-Date=20260427T235638Z&HW-CC-Expire=86400&HW-CC-Sign=0A562B8A31454B5A94A59ADD430BFD1C91AA09526629D7F54BE95407CBBC8C58)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/RO1kecHUSHyo-R0jIvFm-Q/zh-cn_image_0000002561753629.png?HW-CC-KV=V1&HW-CC-Date=20260429T054633Z&HW-CC-Expire=86400&HW-CC-Sign=E576647C248772777A04929D57B71F4E48F590E29D083D2F641C351EDCC8F7EA)
    * 执行hdc命令，关于hdc工具的使用指导请参考[hdc](hdc.md)。
 
      ```
      1. hdc tconn 设备IP地址:端口号
      ```
-4. 在菜单栏中，单击**Run>Run'模块名称'**或![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/Gq8Ach0eQ72m6PRA1M9kmQ/zh-cn_image_0000002530913684.png?HW-CC-KV=V1&HW-CC-Date=20260427T235638Z&HW-CC-Expire=86400&HW-CC-Sign=C8345F6ACAD4DFC00AB7F4A37629BA47A8E0E5A54E2AD57EA21DD02AC1222B3F)，或使用默认快捷键**Shift+F10**（macOS为**Control+R**）运行应用/元服务。
+4. 在菜单栏中，单击**Run>Run'模块名称'**或![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/7nJF-G6ARie-FcxQloQAgw/zh-cn_image_0000002530913684.png?HW-CC-KV=V1&HW-CC-Date=20260429T054633Z&HW-CC-Expire=86400&HW-CC-Sign=3424A6FEAACF83AA6938032971C2A7B75B47FC21E078C997702F768882B087FB)，或使用默认快捷键**Shift+F10**（macOS为**Control+R**）运行应用/元服务。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/vbrRbj2FRiyL5FO3JG-rVw/zh-cn_image_0000002530753694.png?HW-CC-KV=V1&HW-CC-Date=20260427T235638Z&HW-CC-Expire=86400&HW-CC-Sign=5A8810DB164E2A7D07E203FE9EE8BC17AF622B241D81D338799824C8E7CFF116)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/oPhV_4ezTSOLT46o6l2nPg/zh-cn_image_0000002530753694.png?HW-CC-KV=V1&HW-CC-Date=20260429T054633Z&HW-CC-Expire=86400&HW-CC-Sign=4F3BD10C6B6F2076A1A6BD0FA6E06E5960A937D4A965DBAC4361F37832306058)
 5. DevEco Studio启动HAP的编译构建和安装。安装成功后，设备会自动运行安装的HarmonyOS应用/元服务。

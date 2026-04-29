@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-v1-v2-u
 title: 状态管理V1和V2更新机制差异
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理V1和V2更新机制差异
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:39:01+08:00
+scraped_at: 2026-04-29T13:27:09+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:ba6ee0cc9d68beaee4f251acd262bc368cd11e60c160410da00ea6ec243c4b48
+content_hash: sha256:e59872f06e874f18ef0f5e1dfbe2ce4b8224b6491136b8e4f06dc749d1648d6a
 ---
 
 ## V1状态管理演进到V2状态管理背景
@@ -147,7 +147,7 @@ V2装饰变量赋值，对象属性或数组（Map、Set）项变化，会触发
 
 如下图所示，展示V1组件和V2状态变量更新差异的流程图，相比V1状态管理，V2状态管理在状态变量变化时，会异步标脏组件。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/4mTJNzcuRqykm2jvrdG-BQ/zh-cn_image_0000002552797942.png?HW-CC-KV=V1&HW-CC-Date=20260427T233859Z&HW-CC-Expire=86400&HW-CC-Sign=0F2A2E514DAD943C7092F58CCE02EEE7A7519444B2D11FA8AC0CB6292438725A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/oVLGQk2VR7q-5o3UgaKorA/zh-cn_image_0000002558764082.png?HW-CC-KV=V1&HW-CC-Date=20260429T052708Z&HW-CC-Expire=86400&HW-CC-Sign=AF76E588BFE2B4769AB22CEDAA083492441A512F4A361590DA0EC0DE0B029D88)
 
 ### V1组件的更新
 

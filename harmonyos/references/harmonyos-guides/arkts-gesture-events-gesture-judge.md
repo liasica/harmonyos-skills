@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-gesture
 title: 手势冲突处理
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 添加交互响应 > 添加手势响应 > 手势冲突处理
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:39:57+08:00
+scraped_at: 2026-04-29T13:28:06+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:daeaba1ef199b5d49f11ee92aab22fcc6b85ed32fd39a774a590084b4bb0aa5d
+content_hash: sha256:2eb0bb4558aced118ed4166238912ec676438f86736e96d16f1c94bc0f652dc6
 ---
 
 手势冲突是指多个手势识别器在同一组件或重叠区域同时识别时产生竞争，导致识别结果不符合预期。常见冲突场景包括：
@@ -22,7 +22,7 @@ content_hash: sha256:daeaba1ef199b5d49f11ee92aab22fcc6b85ed32fd39a774a590084b4bb
 
 **图1** 自定义手势判定流程图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/jza11yrIQz2H7khvqc1qpg/zh-cn_image_0000002583438007.png?HW-CC-KV=V1&HW-CC-Date=20260427T233953Z&HW-CC-Expire=86400&HW-CC-Sign=ED23D5FBAA4384A5E68ECAD71E46A124CA810194987C34DC0CDFA974CCA291E3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/tUyE1fb8RGaVlxsfEUeb_A/zh-cn_image_0000002558604796.png?HW-CC-KV=V1&HW-CC-Date=20260429T052804Z&HW-CC-Expire=86400&HW-CC-Sign=5CF73A3C827B72DB8E55ED9F7723EBF83F8A01B1B3B439BF1E99D3CAFB922DB0)
 
 自定义手势判定涉及以下接口。
 
@@ -35,7 +35,7 @@ content_hash: sha256:daeaba1ef199b5d49f11ee92aab22fcc6b85ed32fd39a774a590084b4bb
 
 **图2** 示例图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/BwNJ2M4sQBSd3qLLNxXxFg/zh-cn_image_0000002552957962.png?HW-CC-KV=V1&HW-CC-Date=20260427T233953Z&HW-CC-Expire=86400&HW-CC-Sign=138EFAF8A61AAC4260500EDDD326F4312759F022559C6953D8EA52DD8296C28A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/Nv2PgOzRQNat7aOpx5Sq9Q/zh-cn_image_0000002589324321.png?HW-CC-KV=V1&HW-CC-Date=20260429T052804Z&HW-CC-Expire=86400&HW-CC-Sign=BF2B69EE92F40FC4B4A10B17FD409F1757B451AFFD95DB48C7A476F400DE9DE4)
 
 1. Image组件设置拖拽。
 
@@ -163,7 +163,7 @@ content_hash: sha256:daeaba1ef199b5d49f11ee92aab22fcc6b85ed32fd39a774a590084b4bb
 
    [CustomGestureDetermination.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/GestureConflict/entry/src/main/ets/Component/CustomGestures/CustomGestureDetermination.ets#L15-L78)
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/YUwXaNIqQOiHae2yEPhBTg/zh-cn_image_0000002583477963.png?HW-CC-KV=V1&HW-CC-Date=20260427T233953Z&HW-CC-Expire=86400&HW-CC-Sign=35B208501737770529C90739AD49F2C8D9602F2ECD77C18059F4AA1B71CA2E52)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/UG7wMIZwRrK8sSJTF7GPDA/zh-cn_image_0000002589244261.png?HW-CC-KV=V1&HW-CC-Date=20260429T052804Z&HW-CC-Expire=86400&HW-CC-Sign=619953D943A8B08546928FC4BEE99A75FB0D4F53587055907396AEAF7E07FEEB)
 
 ## 手势并行动态控制
 
@@ -171,7 +171,7 @@ content_hash: sha256:daeaba1ef199b5d49f11ee92aab22fcc6b85ed32fd39a774a590084b4bb
 
 **图3** 手势并行动态控制流程图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/LCDSaKtKQduMG8_swNCLWA/zh-cn_image_0000002552798314.png?HW-CC-KV=V1&HW-CC-Date=20260427T233953Z&HW-CC-Expire=86400&HW-CC-Sign=D6E908EBBD3CB19B804B2E0BF95F0652F72000B3C8729193620B0FDBAA42B523)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/WJe9q3zEQ-6CcqrbwfvwqQ/zh-cn_image_0000002558764454.png?HW-CC-KV=V1&HW-CC-Date=20260429T052804Z&HW-CC-Expire=86400&HW-CC-Sign=D12A8362682F3A9279212C836A135CCA735532A285D7F4DA7429B0FA52403787)
 
 手势并行动态控制的前提是手势识别成功，如果手势不成功则不会产生手势回调响应。
 
@@ -746,4 +746,4 @@ content_hash: sha256:daeaba1ef199b5d49f11ee92aab22fcc6b85ed32fd39a774a590084b4bb
 
 [PreventGestureRecognition.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/GestureConflict/entry/src/main/ets/Component/PreventGestureRecognition/PreventGestureRecognition.ets#L16-L256)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/7Y2RgTVZT8yrVrtKCBWZWQ/zh-cn_image_0000002583438009.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233953Z&HW-CC-Expire=86400&HW-CC-Sign=32C6D0C38DADB3A96F010353F8B97EA306561A8809B5D3F05ABF92D5EAD6C3E6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/OPdfm_yyRTCQzLf9rFN6kw/zh-cn_image_0000002558604798.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052804Z&HW-CC-Expire=86400&HW-CC-Sign=DBEB7A3B83B9A6ACF92FFEB4B3FA864187B3B7891CD5546F48D9E7BA7C2D10A6)

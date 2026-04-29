@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-securi
 title: SaveButton
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 安全 > SaveButton
 category: harmonyos-references
-scraped_at: 2026-04-28T08:02:26+08:00
+scraped_at: 2026-04-29T13:52:51+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:fe04ffa00bbab2176d573f2241e45458da02d0a941796479c95ce7b64daf8d11
+content_hash: sha256:c3ecd4ebd2bbfd80e70b111f1e1cb423e15551e196cbba2a86ed7981e1f9ec9f
 ---
 
 安全控件的保存控件。应用集成保存控件后，用户首次使用保存控件展示弹窗，在点击允许后自动授权，应用会在短时间内获取访问媒体库特权接口的授权。后续使用无需弹窗授权。在API version 19及之前的版本中，授权持续时间为10秒；在API version 20及之后的版本中，授权持续时间为1分钟。
@@ -390,7 +390,7 @@ PhonePC/2in1TabletTVWearable
 70. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/puIyRs2YS_GLyXNTZ6RTwg/zh-cn_image_0000002552960076.png?HW-CC-KV=V1&HW-CC-Date=20260428T000224Z&HW-CC-Expire=86400&HW-CC-Sign=F90DE48C228F44A4AFB3ABC167864829B297D95CB7439C9EFD9B5ABA2D84A960)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/dcXvQvX5QpKp6hdTM7nUOA/zh-cn_image_0000002558766602.png?HW-CC-KV=V1&HW-CC-Date=20260429T055250Z&HW-CC-Expire=86400&HW-CC-Sign=9BFC6D41D1ADE340B9DE2225EC2F816FDE3F21BCCE4EB0958BE48D2553C60B70)
 
 ## 示例2
 
@@ -467,4 +467,4 @@ PhonePC/2in1TabletTVWearable
 66. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/BccX_a_ESdal_cKU8uTsSA/zh-cn_image_0000002583480077.png?HW-CC-KV=V1&HW-CC-Date=20260428T000224Z&HW-CC-Expire=86400&HW-CC-Sign=14BF280486DD443A4E4769C110F343DB8AEE60A30D82F70DC3C960551C6ACB11)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/mYqA1e0cS_2yo5_iGfoIDg/zh-cn_image_0000002558606942.png?HW-CC-KV=V1&HW-CC-Date=20260429T055250Z&HW-CC-Expire=86400&HW-CC-Sign=4ADD296591FBAE88A1D56D57A43992E69D0B982C7F87B2CAE307EB9C215C504D)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/gameservi
 title: 批量转换teamPlayerId
 breadcrumb: API参考 > 应用服务 > Game Service Kit（游戏服务） > REST API > 批量转换teamPlayerId
 category: harmonyos-references
-scraped_at: 2026-04-28T08:16:47+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:e8741f6509b02c32ffcd192c0863c8809ae05558a400618584b293d3517e7588
+scraped_at: 2026-04-29T14:07:31+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:996e2e19b9473060793b35bdc84ef043c49dc2a05f1cafbbc5eeb895cb9fe7c8
 ---
 
 ## 功能介绍
@@ -144,7 +144,7 @@ content_hash: sha256:e8741f6509b02c32ffcd192c0863c8809ae05558a400618584b293d3517
 20. JSONObject keyString = new JSONObject();
 21. keyString.put("srcCpId", srcCpId);
 22. keyString.put("dstCpId", dstCpId);
-23. keyString.put("teamPlayerId", teamPlayerIds); // 原主体的teamPlayerId
+23. keyString.put("teamPlayerIds", teamPlayerIds); // 原主体的teamPlayerId
 24. StringEntity entity = new StringEntity(keyString.toString(), Charset.forName("UTF-8"));
 25. entity.setContentEncoding("UTF-8");
 26. // 发送Json格式的数据请求

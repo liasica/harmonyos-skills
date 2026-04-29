@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-appse
 title: 关闭应用的未成年人模式（推荐）
 breadcrumb: 指南 > 应用服务 > Account Kit（华为账号服务） > 未成年人模式 > 应用与系统实现未成年人模式联动 > 应用内关闭未成年人模式 > 关闭应用的未成年人模式（推荐）
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:48:03+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:63a1aef730f1fa65f3c1824a783395593e566fb4f85211523e8ed2ff4dcce7ec
+scraped_at: 2026-04-29T13:36:56+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:a6a29c858d997bc796fcb7ab6914df2a7899546dcd00dbc94a5a1bb9710e061d
 ---
 
 ## 场景介绍
@@ -25,7 +25,7 @@ content_hash: sha256:63a1aef730f1fa65f3c1824a783395593e566fb4f85211523e8ed2ff4dc
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/a8Axkm_GR2KBye2jq4U7cg/zh-cn_image_0000002552958760.png?HW-CC-KV=V1&HW-CC-Date=20260427T234802Z&HW-CC-Expire=86400&HW-CC-Sign=8276F8B8DFAE57911F0562867D73A24DD1A172CF5B7BF9911224E0CFFCF5C331)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/RxjVdGjIRw6VQZYKRxXL7A/zh-cn_image_0000002558765260.png?HW-CC-KV=V1&HW-CC-Date=20260429T053655Z&HW-CC-Expire=86400&HW-CC-Sign=D0F39E6824C724942EDBDCA404DC7DB338FBE9B28028CA285501294ABAB9D4AE)
 
 流程说明：
 
@@ -84,28 +84,29 @@ content_hash: sha256:63a1aef730f1fa65f3c1824a783395593e566fb4f85211523e8ed2ff4dc
    ```
    1. if (canIUse('SystemCapability.AuthenticationServices.HuaweiID.MinorsProtection')) {
    2. try {
-   3. if (minorsProtection.supportMinorsMode()) {
-   4. // 此示例为代码片段，实际需在自定义组件实例中使用，并传入有效的Context上下文对象
-   5. minorsProtection.verifyMinorsProtectionCredential(this.getUIContext().getHostContext())
-   6. .then((result: boolean) => {
-   7. hilog.info(0x0000, 'testTag', `Succeeded in getting verify result is: ${result.valueOf()}`);
-   8. // 使用结果判断验密是否通过，执行后续流程，验证成功后，关闭应用的未成年人模式，同时记录单独关闭的标记为true，需要缓存该标记
-   9. })
-   10. .catch((error: BusinessError<Object>) => {
-   11. dealVerifyAllError(error);
-   12. });
-   13. } else {
-   14. hilog.info(0x0000, 'testTag',
-   15. 'The current device environment does not support the youth mode, please check the current device environment.');
-   16. }
-   17. } catch (error) {
-   18. hilog.error(0x0000, 'testTag',
-   19. `Failed to invoke supportMinorsMode. errCode: ${error.code}, errMessage: ${error.message}`);
-   20. }
-   21. } else {
-   22. hilog.info(0x0000, 'testTag',
-   23. 'The current device does not support the invoking of the verifyMinorsProtectionCredential interface.');
-   24. }
+   3. // 查询是否支持系统未成年人模式
+   4. if (minorsProtection.supportMinorsMode()) {
+   5. // 此示例为代码片段，实际需在自定义组件实例中使用，并传入有效的Context上下文对象
+   6. minorsProtection.verifyMinorsProtectionCredential(this.getUIContext().getHostContext())
+   7. .then((result: boolean) => {
+   8. hilog.info(0x0000, 'testTag', `Succeeded in getting verify result is: ${result.valueOf()}`);
+   9. // 使用结果判断验密是否通过，执行后续流程，验证成功后，关闭应用的未成年人模式，同时记录单独关闭的标记为true，需要缓存该标记
+   10. })
+   11. .catch((error: BusinessError<Object>) => {
+   12. dealVerifyAllError(error);
+   13. });
+   14. } else {
+   15. hilog.info(0x0000, 'testTag',
+   16. 'The current device environment does not support the youth mode, please check the current device environment.');
+   17. }
+   18. } catch (error) {
+   19. hilog.error(0x0000, 'testTag',
+   20. `Failed to invoke supportMinorsMode. errCode: ${error.code}, errMessage: ${error.message}`);
+   21. }
+   22. } else {
+   23. hilog.info(0x0000, 'testTag',
+   24. 'The current device does not support the invoking of the verifyMinorsProtectionCredential interface.');
+   25. }
    ```
 
    ```

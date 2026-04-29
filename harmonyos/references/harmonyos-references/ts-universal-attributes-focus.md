@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 焦点控制
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 交互属性 > 焦点控制
 category: harmonyos-references
-scraped_at: 2026-04-28T08:01:11+08:00
+scraped_at: 2026-04-29T13:51:25+08:00
 doc_updated_at: 2026-04-10
-content_hash: sha256:679d69fd758f5de258ad2839ba9b606394b4d1f8bb8577843ddaa65256f030c7
+content_hash: sha256:af68132dad4d065cd032399e40545f3ea1ca66f3ce07285b1b7030d3e698dbc9
 ---
 
 自定义组件的走焦效果，可设置组件是否走焦和具体的走焦顺序，使用TAB键或方向键切换焦点。
@@ -358,7 +358,7 @@ tabStop(isTabStop: boolean): T
 
 **描述走焦的时候的按键以及获焦组件**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/v7v3EPc7QGSH8qiRzJ7E3w/zh-cn_image_0000002552959526.png?HW-CC-KV=V1&HW-CC-Date=20260428T000109Z&HW-CC-Expire=86400&HW-CC-Sign=31C023D4172C39A0E4D6D37C56B00DDDC629E95F8B22BF7D04A0CEF1A7205C4A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/23xHudx_SsqCzhEej5l3PA/zh-cn_image_0000002558766048.png?HW-CC-KV=V1&HW-CC-Date=20260429T055123Z&HW-CC-Expire=86400&HW-CC-Sign=58DCA9842ADD03AA6661B7E617CE2CA27C3618E30A94184448F857EA6CDC53A2)
 
 如果当前焦点停留在button2上，按下tab键将会走焦到Column3，再按下tab键会循环走焦到button1。
 
@@ -552,23 +552,23 @@ PhonePC/2in1TabletTVWearable
 
 首次进入时，焦点默认在defaultFocus绑定的TextInput组件上：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/nN9TuG9VQ_2dvA7TdXC8JA/zh-cn_image_0000002583479527.png?HW-CC-KV=V1&HW-CC-Date=20260428T000109Z&HW-CC-Expire=86400&HW-CC-Sign=8B790EB9E1D947376F005D03E5A1BD8FE0B1426559BF73A00B3CAEDCDEAA593A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/U9CUKdwuQQuAejvk8Pkq6A/zh-cn_image_0000002558606390.png?HW-CC-KV=V1&HW-CC-Date=20260429T055123Z&HW-CC-Expire=86400&HW-CC-Sign=4B5D12E1972D7C7B12FA36E77365C0D8B577DC10C73DE4B4F454CF7106B60F60)
 
 首次按TAB键，焦点切换到tabIndex(1)的容器上，且自动走焦到内部第一个可获焦组件上：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/CzqVbuMmT8-3j6Cv4AE08w/zh-cn_image_0000002552799878.png?HW-CC-KV=V1&HW-CC-Date=20260428T000109Z&HW-CC-Expire=86400&HW-CC-Sign=26163C00675FED75FA995551937A689045AA1C6456FAB6D8C13142A0419225D1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/-2i4H2WGRryfMzO-T1E1cg/zh-cn_image_0000002589325917.png?HW-CC-KV=V1&HW-CC-Date=20260429T055123Z&HW-CC-Expire=86400&HW-CC-Sign=BADC367D921E55FB970AB4AE96F8F9EB5E0072BDEA5A40FA94C264F47FEA5D6A)
 
 第二次按TAB键，焦点切换到tabIndex(2)的容器上，且自动走到其内部的groupDefaultFocus绑定的组件上：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/ZqaKdw1ISFKC2FXOkaNynw/zh-cn_image_0000002583439573.png?HW-CC-KV=V1&HW-CC-Date=20260428T000109Z&HW-CC-Expire=86400&HW-CC-Sign=0516603F9363C42A73E775385B41D75B485EA28685ED078D65F12943F60296A9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/l-xEoJ7eSMqeEjeH332Y9Q/zh-cn_image_0000002589245859.png?HW-CC-KV=V1&HW-CC-Date=20260429T055123Z&HW-CC-Expire=86400&HW-CC-Sign=47D260DD8BC89A4177F3C750DA67429F89B641247C60F26E96F7F0DE088D9E94)
 
 第三次按TAB键，焦点切换到tabIndex(3)的容器上，且自动走焦到内部配置了DefaultFocus的组件上：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/pKYJFrPDQRawY40v2DFHpQ/zh-cn_image_0000002552959528.png?HW-CC-KV=V1&HW-CC-Date=20260428T000109Z&HW-CC-Expire=86400&HW-CC-Sign=BEF3BCA551F0452F117A1D3756FD8EB20D3EBB490662DAB0E98F134133B5B2E3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/yu6O_6mbRm6pKSJ_25mSTQ/zh-cn_image_0000002558766050.png?HW-CC-KV=V1&HW-CC-Date=20260429T055123Z&HW-CC-Expire=86400&HW-CC-Sign=D43CE900E441CFBFE740F880B38EA5729C82B8C5E48FFC658AFB15887021648E)
 
 点击绑定了focusOnTouch的组件，组件自身获焦，焦点框被清除，再按下TAB键后，显示焦点框：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/ptG45yUNSmeTPuhpDoeXNg/zh-cn_image_0000002583479529.png?HW-CC-KV=V1&HW-CC-Date=20260428T000109Z&HW-CC-Expire=86400&HW-CC-Sign=6149D3D4005C27D534399A55B6DC0441774A6F755A486135DA731272938867B8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/LEXTH7g3Rf2Feds1axtv0A/zh-cn_image_0000002558606392.png?HW-CC-KV=V1&HW-CC-Date=20260429T055123Z&HW-CC-Expire=86400&HW-CC-Sign=F4949B8EDE7891400C9A0C65E555606071D14F350977F866A7A6C22E6ECD2792)
 
 ### 示例2（设置指定组件获焦）
 
@@ -649,15 +649,15 @@ PhonePC/2in1TabletTVWearable
 
 申请不存在的组件获焦：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/aKfmA6oFSkqBzS-GvCLdXQ/zh-cn_image_0000002552799880.png?HW-CC-KV=V1&HW-CC-Date=20260428T000109Z&HW-CC-Expire=86400&HW-CC-Sign=9765E7C6A84008387504DA10D67F4E1EBDD1516641C480247A01A5C18CE22275)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/GQT_7bPXRF6xEJZdPhGaYw/zh-cn_image_0000002589325919.png?HW-CC-KV=V1&HW-CC-Date=20260429T055123Z&HW-CC-Expire=86400&HW-CC-Sign=A97C2A56E67DAC2755DC538FD45EB47EDCD8899984F4AE2EA2C5D9E55E2F727A)
 
 申请不可获焦的组件获焦：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/yAW2nJErSM6J1Bm0vriJoA/zh-cn_image_0000002583439575.png?HW-CC-KV=V1&HW-CC-Date=20260428T000109Z&HW-CC-Expire=86400&HW-CC-Sign=FD3D0C77C0C7CA37704658220BE532F1D064F13C5AF21A4AFE8FD01CC9107FE7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/MmRLWDgST5qVQDHcUcgXlA/zh-cn_image_0000002589245861.png?HW-CC-KV=V1&HW-CC-Date=20260429T055123Z&HW-CC-Expire=86400&HW-CC-Sign=3A375628EB787312A9409CAC9838643965FDC49C2003CE95475F5CA93E604E41)
 
 申请存在且可获焦的组件获焦：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/wqhPBv8JQpuf5k_QheIkEg/zh-cn_image_0000002552959530.png?HW-CC-KV=V1&HW-CC-Date=20260428T000109Z&HW-CC-Expire=86400&HW-CC-Sign=E697AD6249965887741AAE79F581C9D88CECCC42D6DDD11EE67D955EB0570E12)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/FEMw1FjCSVmFePjXF9C1uQ/zh-cn_image_0000002558766052.png?HW-CC-KV=V1&HW-CC-Date=20260429T055123Z&HW-CC-Expire=86400&HW-CC-Sign=FA6A64EBF13DE818E612BC04DAD71B45CFB86FB069D2D7A4F837C461EC48359D)
 
 ### 示例3（设置焦点框样式）
 
@@ -689,7 +689,7 @@ PhonePC/2in1TabletTVWearable
 23. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/gGtoYnR7TEylsUqwsCBUfQ/zh-cn_image_0000002583479531.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000109Z&HW-CC-Expire=86400&HW-CC-Sign=F01500A9800E317C925BC96BB1752427E9C7190573099EE483B0CFD5C6B55B29)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/2I-TOvc0T8iiB5CRxIQSrg/zh-cn_image_0000002558606394.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055123Z&HW-CC-Expire=86400&HW-CC-Sign=DC003C564E6E9FB14173E05FAAC6407A3993002B150A04CFE264CC7482F6B95A)
 
 ### 示例4（设置焦点组走焦）
 
@@ -828,23 +828,23 @@ PhonePC/2in1TabletTVWearable
 
 首次按下TAB键时，焦点转移到容器1中绑定focusScopePriority的组件上。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/qV-9_XIkSuy26ePt-ce0Pg/zh-cn_image_0000002552799882.png?HW-CC-KV=V1&HW-CC-Date=20260428T000109Z&HW-CC-Expire=86400&HW-CC-Sign=53DB522F8FBA72A57F4A29246EA5BBF2391AAE9E5ABA0903416B2E72C2F5EAB5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/vDV-ZpVyQIWCSO90-1BRhg/zh-cn_image_0000002589325921.png?HW-CC-KV=V1&HW-CC-Date=20260429T055123Z&HW-CC-Expire=86400&HW-CC-Sign=D58A97B5ED5B148D64F09B5C4970ED04E79A50ECB764B896E6E4CB50D578DF80)
 
 继续按下TAB键，焦点转移到容器1下一个组件上。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/auhfogxkRM6rYlcxDPcOfQ/zh-cn_image_0000002583439577.png?HW-CC-KV=V1&HW-CC-Date=20260428T000109Z&HW-CC-Expire=86400&HW-CC-Sign=10CAB73BB59D24E8C0ABB8A33CC6C2F3E54B090AFA1727D62C61ABC26F603A02)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/bJYOoQthRuiTsDq9YEVWng/zh-cn_image_0000002589245863.png?HW-CC-KV=V1&HW-CC-Date=20260429T055123Z&HW-CC-Expire=86400&HW-CC-Sign=9524C0ED819F890663D469DC2C1441FD083D46F4D4634A0D8A6A03B3F721AB51)
 
 再次按下TAB键，焦点转移到容器1下一个组件上。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/GmGWphUSTn2_SPbnzFjBsA/zh-cn_image_0000002552959532.png?HW-CC-KV=V1&HW-CC-Date=20260428T000109Z&HW-CC-Expire=86400&HW-CC-Sign=F747F29485E458A59669C4FD7FC3AFB83D702C3DB23CFFE46FE57711A8A97D15)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/MjnbK7gCTH2vJwbVi-TD5w/zh-cn_image_0000002558766054.png?HW-CC-KV=V1&HW-CC-Date=20260429T055123Z&HW-CC-Expire=86400&HW-CC-Sign=CBD9E993F3577C175D0CDF62E97C5D81A10C0E68059820417B86583821C29D22)
 
 继续按下TAB键，焦点转移到容器2中配置了focusScopePriority的组件上。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/ooQmo6PlQwesDUqOGCAU0g/zh-cn_image_0000002583479533.png?HW-CC-KV=V1&HW-CC-Date=20260428T000109Z&HW-CC-Expire=86400&HW-CC-Sign=1574786FF943C369243C0D57078A07FAD284835F336B84B45A924E488162BA4A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/jhNHSGUVRVKUNMIILgstZA/zh-cn_image_0000002558606396.png?HW-CC-KV=V1&HW-CC-Date=20260429T055123Z&HW-CC-Expire=86400&HW-CC-Sign=3900EC48514082C7A3FCEDC6A6CC14F6384B9DD4645C5FE92DCE6C181796E551)
 
 继续按下TAB键，焦点转移到容器1中名为Group1的组件上。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/E5Jk3-cjRGaUiVYHOsZ5AQ/zh-cn_image_0000002552799884.png?HW-CC-KV=V1&HW-CC-Date=20260428T000109Z&HW-CC-Expire=86400&HW-CC-Sign=D2317D43869722BDF8B31CB9827FB55810E0C4C279937865092AF6AEF9E3D50B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/0gsyqLq_QvCb9QAcS3dfeQ/zh-cn_image_0000002589325923.png?HW-CC-KV=V1&HW-CC-Date=20260429T055123Z&HW-CC-Expire=86400&HW-CC-Sign=08254C7090A6A6E47A2FEF629E876156ECF2084743048C33768752D4B35CC8EA)
 
 ### 示例5（设置tab走焦停留）
 
@@ -918,23 +918,23 @@ PhonePC/2in1TabletTVWearable
 
 连续按下两次TAB键，焦点转移到button2上。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/VkM2h66oS4Cs3RzQiqnFTw/zh-cn_image_0000002583439579.png?HW-CC-KV=V1&HW-CC-Date=20260428T000109Z&HW-CC-Expire=86400&HW-CC-Sign=14E0C2DC9254520C1A622C2349E6DEEFB329B79A27AA87E95D7B3ED12A44F1FF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/nKQLrn9wSzSb0z9AuhqUvQ/zh-cn_image_0000002589245865.png?HW-CC-KV=V1&HW-CC-Date=20260429T055123Z&HW-CC-Expire=86400&HW-CC-Sign=E572420F55747E78643ABC8B64939BE522CDE13523E96E6D0FE8D81048C6F808)
 
 接着按下TAB键，焦点转移到配置了tabStop的组件。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/tEdUqIwETeWkH0N9fyVKVA/zh-cn_image_0000002552959534.png?HW-CC-KV=V1&HW-CC-Date=20260428T000109Z&HW-CC-Expire=86400&HW-CC-Sign=CEB6343D9E2D3591C20C30D7AAFD0C69EEB77E14524DE0A715D70EBAF640F3F3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/qYP9urpjT-GgU_SXiGjHYQ/zh-cn_image_0000002558766056.png?HW-CC-KV=V1&HW-CC-Date=20260429T055123Z&HW-CC-Expire=86400&HW-CC-Sign=C5F02DDD0455573A3B98A283BDFC76D2B63FA4CDEA2A46BE96CE28A98AB09BCE)
 
 再按下Enter键，焦点转移至内部button3上。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/tObFg_gCTxywa-4cH_26cQ/zh-cn_image_0000002583479535.png?HW-CC-KV=V1&HW-CC-Date=20260428T000109Z&HW-CC-Expire=86400&HW-CC-Sign=4EAF5B6C93164AE0163F35F1698992414D28AC95AC69FF712F0AEB75C57CEE16)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/5WgG-0xmT3e-0r2ybYakcw/zh-cn_image_0000002558606398.png?HW-CC-KV=V1&HW-CC-Date=20260429T055123Z&HW-CC-Expire=86400&HW-CC-Sign=C44B73B1F0D2E2DAD334473E288432A2CDD47C5334D62473A6331AD62AB1B395)
 
 再按下ESC键，焦点转移到配置了tabStop的组件上。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/-DIg6E6mRsu4WsWJ_Q5lGQ/zh-cn_image_0000002552959534.png?HW-CC-KV=V1&HW-CC-Date=20260428T000109Z&HW-CC-Expire=86400&HW-CC-Sign=0891D86A6A1A60228948C60B43C15D495F19B6D040FA46BAE4578C10673DC1D7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/UWDSOyJYSqKum1PYlqFG_w/zh-cn_image_0000002558766056.png?HW-CC-KV=V1&HW-CC-Date=20260429T055123Z&HW-CC-Expire=86400&HW-CC-Sign=A2CF91024DE2CFE2487BBAD7C40559B9C0FA7A2B677A1E51EE877F240C473EDE)
 
 再按下TAB键，焦点循环走焦到button1上。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/AZPRie6ETNyO19AZgUXjLA/zh-cn_image_0000002552799886.png?HW-CC-KV=V1&HW-CC-Date=20260428T000109Z&HW-CC-Expire=86400&HW-CC-Sign=56BA9EC99B4DA9C90A9808AA4D93BEFDAF2D7D08293BB1A3E8BF18440399815D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/SKR2Y1QoQw2lxRpnp-DFCQ/zh-cn_image_0000002589325925.png?HW-CC-KV=V1&HW-CC-Date=20260429T055123Z&HW-CC-Expire=86400&HW-CC-Sign=7B611A342BAA89593973878F4D0586FF46A073D77D60125B97B58C80542BBB78)
 
 ### 示例6（设置自定义走焦）
 
@@ -995,4 +995,4 @@ PhonePC/2in1TabletTVWearable
 50. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/CQ1yBAClQJutgGr6JAAnJg/zh-cn_image_0000002583439581.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000109Z&HW-CC-Expire=86400&HW-CC-Sign=33EA2E8D22C41521E95CD471B419E537114E5012D1016ECEDF75A65F642EE928)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/gQ6Uw3GMTU-0oO0x33eROQ/zh-cn_image_0000002589245867.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055123Z&HW-CC-Expire=86400&HW-CC-Sign=CC528DF392D635E8AD02BDDC1AD0F923E5C621DB9C542639CB2C75521A5CC1CB)

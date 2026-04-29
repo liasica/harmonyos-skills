@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-stabili
 title: UI相关应用崩溃常见问题
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发调试调优 > UI稳定性故障调试 > UI相关应用崩溃常见问题
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:40:37+08:00
+scraped_at: 2026-04-29T13:28:58+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:1e4df2cd302b6bdef0275bef18b6724c5f1902519a41fa50f9512da5cd6a41e7
+content_hash: sha256:0a022ec9431f2cf8d1f485e6f957725110354caffd4890506be2e3f327bb0edd
 ---
 
 本文档收集整理了一些常见的会导致应用崩溃的ArkUI API错误用法，旨在帮助开发者了解这些会导致应用崩溃问题的错误用法，从而避免在实际应用开发过程中犯类似错误。
@@ -31,7 +31,7 @@ content_hash: sha256:1e4df2cd302b6bdef0275bef18b6724c5f1902519a41fa50f9512da5cd6
 
 应用通过[OH\_NativeXComponent\_RegisterCallback](../harmonyos-references/capi-native-interface-xcomponent-h.md#oh_nativexcomponent_registercallback)接口注册的[OH\_NativeXComponent\_Callback](../harmonyos-references/ent-native-xcomponent-oh-nativexcomponent-callback.md)回调函数对象以裸指针形式保存在XComponentPattern对象中。这些回调的生命周期由应用控制。如果应用提前销毁了OH\_NativeXComponent\_Callback回调函数对象，将导致裸指针指向非法内存，引发Use-After-Free问题。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/tHlUi96aQDi59hrJUSJNGQ/zh-cn_image_0000002552958152.png?HW-CC-KV=V1&HW-CC-Date=20260427T234036Z&HW-CC-Expire=86400&HW-CC-Sign=F2200BFD976C776A741D33483E774FBC63EC404F660D705C99E9ECCDCA306166)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/kzyBkRl6TlyoBBdLuxwNiA/zh-cn_image_0000002589324513.png?HW-CC-KV=V1&HW-CC-Date=20260429T052857Z&HW-CC-Expire=86400&HW-CC-Sign=2DD751CC819B8F8E4DFD193D4CCCD11FB814EBC3C15F85894C219E25092361E2)
 
 **解决措施**
 
@@ -73,13 +73,13 @@ OH\_NativeXComponent使用裸指针管理。应用侧持有其裸指针。如果
 
 应用闪退并生成如下jscrash崩溃栈：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/R9lWymoxRBuKxcZEeeDO6A/zh-cn_image_0000002583478153.png?HW-CC-KV=V1&HW-CC-Date=20260427T234036Z&HW-CC-Expire=86400&HW-CC-Sign=04ADDDCEDD5E86A73CDB0CD9645AB3EEC9479CEB51402CDCE8469F4D45EF6FAC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/GkPZHNekQKyORQHdZ4DuhA/zh-cn_image_0000002589244451.png?HW-CC-KV=V1&HW-CC-Date=20260429T052857Z&HW-CC-Expire=86400&HW-CC-Sign=63C106A9E7C01EB16BA062A4BFFB7DBC73555405F0A2099D4A7BA1A895405A24)
 
 **可能原因**
 
 报错发生在@Consume初始化阶段，原因是@Consume初始化时仅通过key匹配对应的@Provide变量。如果未找到对应的@Provide，就会出现报错（missing @Provide）。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/_gryTI1jQW6CEXHPUA6v0Q/zh-cn_image_0000002552798504.png?HW-CC-KV=V1&HW-CC-Date=20260427T234036Z&HW-CC-Expire=86400&HW-CC-Sign=3D5CC9FDA8E6B7FAB2BB5314340D66F8C25918F0E8BD6E14360D84E95579650D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/XUMGir8mS3qCMpMJiwW_UQ/zh-cn_image_0000002558764644.png?HW-CC-KV=V1&HW-CC-Date=20260429T052857Z&HW-CC-Expire=86400&HW-CC-Sign=B19675B1A46ACED725361733804A2FF6E9CBA4D554BCBBBEC01C3FD55A74D9A9)
 
 **解决措施**
 
@@ -95,17 +95,17 @@ OH\_NativeXComponent使用裸指针管理。应用侧持有其裸指针。如果
 
 应用闪退并生成如下jscrash崩溃栈：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/snj2LmtxQW6G23Rs0tx0dQ/zh-cn_image_0000002583438199.png?HW-CC-KV=V1&HW-CC-Date=20260427T234036Z&HW-CC-Expire=86400&HW-CC-Sign=8E94F7621A57E1B26C7E8729AD62338497500C86AC959018E9A56BA629B80B6D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/UL4WJDbAQ_Wz_P2kqfc8ew/zh-cn_image_0000002558604988.png?HW-CC-KV=V1&HW-CC-Date=20260429T052857Z&HW-CC-Expire=86400&HW-CC-Sign=26DAE794A0816E1F52F73C59B457973D82E7DACEC87E05A6BB0E4C13F4914900)
 
 从API version 23开始，添加对@Link数据源错误的校验，运行时错误变为编译期报错：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/dux1bcWvS9uvht12QPz0Aw/zh-cn_image_0000002552958154.png?HW-CC-KV=V1&HW-CC-Date=20260427T234036Z&HW-CC-Expire=86400&HW-CC-Sign=A83BE47F1889940E0D57B9FAF96B8A1F17A9044E78134ED6DFEDC86967C4C59D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/zT1UqPuKQWS-5FzHW5fzaQ/zh-cn_image_0000002589324515.png?HW-CC-KV=V1&HW-CC-Date=20260429T052857Z&HW-CC-Expire=86400&HW-CC-Sign=D0902CE476FA02713D7F3BF1A030E4F84A623BE8A69E325FA66743A560700C42)
 
 **可能原因**
 
 报错发生在@Link初始化阶段，原因是@Link初始化时会注册到父组件并调用父组件的addSubscriber方法。如果此时数据源的类型与@Link不完全一致，或者使用常量初始化@Link，会导致该方法无法调用，从而引发“is not callable”错误。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/UJnzeL4ZT1q0l37fpPyEMw/zh-cn_image_0000002583478155.png?HW-CC-KV=V1&HW-CC-Date=20260427T234036Z&HW-CC-Expire=86400&HW-CC-Sign=5067869067F5BECC0A530B942264B1678E76AA892B51C4D1F2588CAC15309E5A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/K5sHjKGqSLajJ39B7KxC9Q/zh-cn_image_0000002589244453.png?HW-CC-KV=V1&HW-CC-Date=20260429T052857Z&HW-CC-Expire=86400&HW-CC-Sign=E3526C8A57F7ADFAE3E4FFEAE838B6586E2022A4A54B87681E108774FE6DEF3F)
 
 **解决措施**
 
@@ -121,13 +121,13 @@ OH\_NativeXComponent使用裸指针管理。应用侧持有其裸指针。如果
 
 应用闪退并生成如下jscrash崩溃栈：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/wZa4tkrBRgGFut_FdpUQQg/zh-cn_image_0000002552798506.png?HW-CC-KV=V1&HW-CC-Date=20260427T234036Z&HW-CC-Expire=86400&HW-CC-Sign=A4B979DFA116A8EDCA387A0BF00BA82EC27789B6410EC7CE2773346135810058)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/BH2J03RdSOSh1D6iVFNXBQ/zh-cn_image_0000002558764646.png?HW-CC-KV=V1&HW-CC-Date=20260429T052857Z&HW-CC-Expire=86400&HW-CC-Sign=CAD49B6FE286185FC35299D877CD46592A71BEC92296E2DA3C14080EEFDF1D5C)
 
 **可能原因**
 
 报错发生在@Provide初始化阶段，原因是@Provide重写需要声明allowOverride。声明后，别名和属性名都可以被覆盖。如果未声明且存在重复的别名或属性名，将导致错误（duplicate @Provide property with name xxxxx）。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/Ua8-g_D9TjSn29LAi76PqA/zh-cn_image_0000002583438201.png?HW-CC-KV=V1&HW-CC-Date=20260427T234036Z&HW-CC-Expire=86400&HW-CC-Sign=1FE5BD26865BF4989C3D6EABF70353F11E09CB82FE09DE9ED3E2F532547C376E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/lKROW1XBT0Kllv_IUQpvTQ/zh-cn_image_0000002558604990.png?HW-CC-KV=V1&HW-CC-Date=20260429T052857Z&HW-CC-Expire=86400&HW-CC-Sign=F71E2A45D61F31E5FB8C38124DB339947B241C0450A87D6C2BFF2A6BC04A521B)
 
 **解决措施**
 

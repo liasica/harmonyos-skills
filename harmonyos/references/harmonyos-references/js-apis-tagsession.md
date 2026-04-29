@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-t
 title: tagSession (标准NFC-Tag TagSession)
 breadcrumb: API参考 > 系统 > 网络 > Connectivity Kit（短距通信服务） > ArkTS API > tag > tagSession (标准NFC-Tag TagSession)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:08:05+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:d69b4bee0d04a6afedb6dcc85f0a72b672b4cfabee87c81adf6f0fa665ae54f5
+scraped_at: 2026-04-29T13:58:36+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:d4427daa566f0a0d3f3355d41e1ff2246f77f4cb0b7825464799825391ac30af
 ---
 
 本模块是对NFC TagSession的使用说明。
@@ -16,7 +16,7 @@ content_hash: sha256:d69b4bee0d04a6afedb6dcc85f0a72b672b4cfabee87c81adf6f0fa665a
 
 注意
 
-导入tag模块编辑器报错，在某个具体设备型号上能力可能超出工程默认设备定义的能力集范围，如需要使用此部分能力需额外配置自定义syscap，参考[syscap开发指南](syscap.md#syscap开发指导)。
+导入tag模块编辑器报错，在某个具体设备型号上能力可能超出工程默认设备定义的能力集范围，如需要使用此部分能力需额外配置自定义syscap，参考[syscap开发指南](syscap.md)。
 
 ## **导入模块**
 

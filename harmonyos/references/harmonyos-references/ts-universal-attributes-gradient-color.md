@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 颜色渐变
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 视效与模糊 > 颜色渐变
 category: harmonyos-references
-scraped_at: 2026-04-28T08:01:08+08:00
+scraped_at: 2026-04-29T13:51:20+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:25f8b660014d6a9aaea601d0cd2cb1e45c591f2b9508746c086dc03dfc91b03a
+content_hash: sha256:cdf33725c665b18ec9c097a188816a9735b2d8ef2ec6b8999c7374923de76e9b
 ---
 
 设置组件的颜色渐变效果。
@@ -295,7 +295,7 @@ PhonePC/2in1TabletTVWearable
 28. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/gTDEk6fxTiy6MLcsdPMejA/zh-cn_image_0000002583439563.png?HW-CC-KV=V1&HW-CC-Date=20260428T000106Z&HW-CC-Expire=86400&HW-CC-Sign=3476480EF3E38B34BDC98429C72776A0C151A86EB3D40EAECE5545BA5649DD56)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/d-o6xkHaQi-TuA_qAQnO3w/zh-cn_image_0000002589245849.png?HW-CC-KV=V1&HW-CC-Date=20260429T055118Z&HW-CC-Expire=86400&HW-CC-Sign=302F545D33B446548CAC5C00F8DDF03729BDAF5631EBB8889C58346B005D8FA3)
 
 ### 示例2（颜色按旋转角度渐变）
 
@@ -358,7 +358,7 @@ PhonePC/2in1TabletTVWearable
 54. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/OZ2RbuUMTu-Ju0tz6eOv_Q/zh-cn_image_0000002552959518.png?HW-CC-KV=V1&HW-CC-Date=20260428T000106Z&HW-CC-Expire=86400&HW-CC-Sign=C4C9F3DFA53D1CACE670B61409BAC55625A0257C8D7A550B7158DCC50EB3CD6A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/2dDEgzmkSmqLe2ay3tykRA/zh-cn_image_0000002558766040.png?HW-CC-KV=V1&HW-CC-Date=20260429T055118Z&HW-CC-Expire=86400&HW-CC-Sign=F5E9F7B3B12CCD4A430D6983A737A4DF86CBA92A0FE27DC8E80FFDD1EC620F5C)
 
 ### 示例3（颜色按径向渐变）
 
@@ -397,4 +397,4 @@ PhonePC/2in1TabletTVWearable
 30. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/13MXn_A0R7SEvC5JIwsvIw/zh-cn_image_0000002583479519.png?HW-CC-KV=V1&HW-CC-Date=20260428T000106Z&HW-CC-Expire=86400&HW-CC-Sign=EA4D32E5E40CD99B1819FC8732527827F0C873BF333E61C61B9B77C5A48867F8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/Zf3zJkmUSFmZzmViOkBPKQ/zh-cn_image_0000002558606382.png?HW-CC-KV=V1&HW-CC-Date=20260429T055118Z&HW-CC-Expire=86400&HW-CC-Sign=8A89DF142377119814C24777CAB093C77B517148D774417A559BDE54FDDF81EB)

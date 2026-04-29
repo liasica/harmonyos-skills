@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/c-api-compa
 title: C API兼容性保护
 breadcrumb: 版本说明 > 应用兼容性说明 > 应用开发中的兼容性场景开发指导 > API兼容性保护 > C API兼容性保护
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:37:17+08:00
+scraped_at: 2026-04-29T13:25:20+08:00
 doc_updated_at: 2026-04-27
-content_hash: sha256:7ad4fcb4a7aef00a97466518f25253582359e7ce96e4ce8d7103158b5d8f8a0f
+content_hash: sha256:1c4aabd10fc58f2b2edcc3b7b177e47df8e144c211fbf43f429cefa3a3eddde3
 ---
 
 从API version 22版本开始，推荐使用APIAVAILABLE接口，进行兼容性判断保护。
@@ -47,11 +47,11 @@ content_hash: sha256:7ad4fcb4a7aef00a97466518f25253582359e7ce96e4ce8d7103158b5d8
   + 针对OpenHarmony工程，"compatibleSdkVersion"：N，"-DOHOS\_COMPATIBLE\_SDK\_VERSION=N.0.0"。
   + 示例：工程级build-profile.json5文件中的compatibleSdkVersion配置的版本号为6.0.2(22)，
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/2BShj5FUQTy7qUc8k5N_1Q/zh-cn_image_0000002550606910.png?HW-CC-KV=V1&HW-CC-Date=20260427T233716Z&HW-CC-Expire=86400&HW-CC-Sign=447C42547FFBF701E0DF4AC0069A3C36882BAC14F59238742F0F5EA314A58BD7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/2BShj5FUQTy7qUc8k5N_1Q/zh-cn_image_0000002550606910.png?HW-CC-KV=V1&HW-CC-Date=20260429T052519Z&HW-CC-Expire=86400&HW-CC-Sign=A5426892821CDA41F92C7DF0719FF70BDA8D6EA4BD4FD46FE1D2F540B335D38A)
 
 模块级build-profile.json5配置文件中增加编译参数 "arguments": "-DOHOS\_COMPATIBLE\_SDK\_VERSION=22.0.0"。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/hQ954pfYTiqADgU6sKHLwA/zh-cn_image_0000002581206647.png?HW-CC-KV=V1&HW-CC-Date=20260427T233716Z&HW-CC-Expire=86400&HW-CC-Sign=E5B37E93A83F5979E9F1FA283932F99BE5E69B85628B7C7176ADC324AB97C3F4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/hQ954pfYTiqADgU6sKHLwA/zh-cn_image_0000002581206647.png?HW-CC-KV=V1&HW-CC-Date=20260429T052519Z&HW-CC-Expire=86400&HW-CC-Sign=2C6D33851CBD9D0E4CB8DF3773BA87588BAD9B5338AC4436A0301AA756903793)
 
 * **场景2：DevEco Studio版本高于 6.0.2.650 Release（API 22 Release）时：**
 
@@ -72,7 +72,7 @@ content_hash: sha256:7ad4fcb4a7aef00a97466518f25253582359e7ce96e4ce8d7103158b5d8
 
 具体传递过程如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/ap6Jij5QTTKy1Vejycz8mg/zh-cn_image_0000002550766556.png?HW-CC-KV=V1&HW-CC-Date=20260427T233716Z&HW-CC-Expire=86400&HW-CC-Sign=6DE65E31A4F46A7D341DB46B9AE81F018211238EEA07459664F07068A2B92325)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/ap6Jij5QTTKy1Vejycz8mg/zh-cn_image_0000002550766556.png?HW-CC-KV=V1&HW-CC-Date=20260429T052519Z&HW-CC-Expire=86400&HW-CC-Sign=A3D6450DC67B85B873469A67582E0A1405876F2D97CF2A231D01190BB9099296)
 
 **步骤2** 兼容性保护。
 

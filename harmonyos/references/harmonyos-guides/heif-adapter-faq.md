@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/heif-adapter-
 title: 如何处理HEIF图片
 breadcrumb: 指南 > 媒体 > Image Kit（图片处理服务） > Image Kit常见问题 > 如何处理HEIF图片
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:46:21+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:d9248403a20cbcec4e95d6e704a5d0028fb175f3ff3ea6db30eda1dc5b018ed1
+scraped_at: 2026-04-29T13:35:18+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:95a6e7fbb74d911a722e269ac559bc9c4927fdf3fbbdbe205bde46ae0781627e
 ---
 
 ## HEIF图片介绍
@@ -54,7 +54,7 @@ ArkWeb图片上传可参考：[使用Web组件上传文件](web-file-upload.md)�
 
 ```
 1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { fileIo as fs } from '@kit.CoreFileKit';
+2. import { fileIo } from '@kit.CoreFileKit';
 3. import { image } from '@kit.ImageKit';
 4. import { PromptAction } from '@kit.ArkUI';
 
@@ -73,7 +73,7 @@ ArkWeb图片上传可参考：[使用Web组件上传文件](web-file-upload.md)�
 18. // 指定图片编码文件的存放路径。
 19. const filePath : string = context.cacheDir + '/result.jpg';
 20. try {
-21. let file = fs.openSync(filePath, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE);
+21. let file = fileIo.openSync(filePath, fileIo.OpenMode.CREATE | fileIo.OpenMode.READ_WRITE);
 22. imagePackerApi.packToFile(imageSource, file.fd, packOpts).then(() => {
 23. promptAction.showToast({ message: `Succeed to pack the image.`});
 24. console.info('Succeed to pack the image.');
@@ -81,7 +81,7 @@ ArkWeb图片上传可参考：[使用Web组件上传文件](web-file-upload.md)�
 26. promptAction.showToast({ message: 'Failed to pack the image. And the error is: ' + error});
 27. console.error('Failed to pack the image. And the error is: ' + error);
 28. }).finally(()=>{
-29. fs.closeSync(file.fd);
+29. fileIo.closeSync(file.fd);
 30. })
 31. } catch (error) {
 32. console.error('Failed to pack the image. And the error is: ' + error);

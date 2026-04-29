@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-repo
 title: ohpm-repo pack
 breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 相关命令 > ohpm-repo pack
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:54:42+08:00
+scraped_at: 2026-04-29T13:44:39+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:fa34f6c161efb66e9f6724104c15503f4e53186f7921eb131457bd04066f5ecd
+content_hash: sha256:f1829ea6f6dadbd15117abe98cd7dd541e50408611a6bd696625ccaa86115684
 ---
 
 打包ohpm-repo部署目录文件。
@@ -49,4 +49,4 @@ content_hash: sha256:fa34f6c161efb66e9f6724104c15503f4e53186f7921eb131457bd04066
 
 结果示例：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/sxmgHyQgTumFy-MsskSBeQ/zh-cn_image_0000002530911278.png?HW-CC-KV=V1&HW-CC-Date=20260427T235441Z&HW-CC-Expire=86400&HW-CC-Sign=9F6A94EF2EFE9D55E5F73D2425B6DF0B8BF52D7D40C34F7F3A88904EA0304339 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/vros4BYqQF6VuG9PCyb3ZA/zh-cn_image_0000002530911278.png?HW-CC-KV=V1&HW-CC-Date=20260429T054438Z&HW-CC-Expire=86400&HW-CC-Sign=A1B2732D48E7D6757625A5811A10DB85F5F4B2D139F28E6B707C51812B8A2E4B "点击放大")

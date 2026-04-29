@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/push-msg-
 title: 消息撤回
 breadcrumb: API参考 > 应用服务 > Push Kit（推送服务） > REST API > 消息撤回
 category: harmonyos-references
-scraped_at: 2026-04-28T08:18:33+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:1d7524c30c8a57695e3897773c75910b4c1f52092eb92d9415a71f99fe0c6043
+scraped_at: 2026-04-29T14:09:11+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:61176b508d2ed9ff3103b5f14b9ed38eeb4713adfefbc8b9e61d04198b730e26
 ---
 
 说明
 
-为了更安全的网络访问，华为推送服务于2022年11月30日关闭Push相关域名的TLS1.0、TLS1.1协议及规定之外的加密套件，当前应用使用TLS1.2以下协议或使用规定外的加密套件将无法正常推送消息。
+为了更安全的网络访问，华为Push Kit于2022年11月30日关闭Push相关域名的TLS1.0、TLS1.1协议及规定之外的加密套件，当前应用使用TLS1.2以下协议或使用规定外的加密套件将无法正常推送消息。
 
 若您的应用访问Push相关域名使用协议是TLS1.0或TLS1.1，可能无法正常发送消息，请您务必升级到TLS1.2及以上版本。
 

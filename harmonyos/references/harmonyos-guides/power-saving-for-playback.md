@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/power-saving-
 title: 低功耗音频播放
 breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > 音频播放 > 低功耗音频播放
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:45:32+08:00
+scraped_at: 2026-04-29T13:34:28+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:750fbe8d8a85d72689c1d13738a5bb7b8cf49c08f618c2568dbd259ee1157c0f
+content_hash: sha256:b292c28b4570ce1d2e324332a96eba6c2d630f0974801929d97662fbef68cce0
 ---
 
 从API version 11开始支持低功耗音频播放。
@@ -22,13 +22,13 @@ content_hash: sha256:750fbe8d8a85d72689c1d13738a5bb7b8cf49c08f618c2568dbd259ee11
 
 **数据周期示意图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/kZz5hUMLSYyhMe6m-8x6wQ/zh-cn_image_0000002552958528.png?HW-CC-KV=V1&HW-CC-Date=20260427T234531Z&HW-CC-Expire=86400&HW-CC-Sign=5B791B7E42E6F9B9339DF2435DB4282B14FA142C747D4D94CB61F25BE8B0FFE6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/K-yJonoUSDKZMECh_F5DWg/zh-cn_image_0000002558765028.png?HW-CC-KV=V1&HW-CC-Date=20260429T053427Z&HW-CC-Expire=86400&HW-CC-Sign=5C02547EDFF0347AD629588C1D7CB85EC98B31E431159AB032A7AB409959DA30)
 
 在数据周期内，快速请求数据写满缓存时，进入休眠状态。当缓存数据消费完后，会触发下一个周期。
 
 **播放进度示意图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/SMjyIbi4TYqQTx4P0nJftg/zh-cn_image_0000002583478529.png?HW-CC-KV=V1&HW-CC-Date=20260427T234531Z&HW-CC-Expire=86400&HW-CC-Sign=89E9376CBB848BC1F9550C342646098FFAE50E4AC3991F205A64964BFCF77D00)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/j1puHP8rSfKJh4J-DgwKUg/zh-cn_image_0000002558605372.png?HW-CC-KV=V1&HW-CC-Date=20260429T053427Z&HW-CC-Expire=86400&HW-CC-Sign=95F65780EE87006FB8119BA13ECA2AF20CE052FA6241CF9ED8468887E2CD0684)
 
 在数据周期内，快速请求数据写满缓存时，播放进度按实际播放量计算。当缓存数据消费完（即播放进度到达写入数据量）后，会触发下一个周期。
 
@@ -51,4 +51,4 @@ content_hash: sha256:750fbe8d8a85d72689c1d13738a5bb7b8cf49c08f618c2568dbd259ee11
    * 获取时间戳接口调用频率建议大于200ms一次，以免影响系统性能。
    * 应用程序调用接口[flush](../harmonyos-references/arkts-apis-audio-audiorenderer.md#flush11)或[OH\_AudioRenderer\_Flush()](../harmonyos-references/capi-native-audiorenderer-h.md#oh_audiorenderer_flush)后，播放的数据量会重置为0。
    * 播放数据量均会小于写入数据量。由于系统帧长与时延机制，播完的播放数据量不等于写入数据量。
-   * 写完数据后获取时间戳，如果2个周期内时间戳不变，即为播完；或者根据设置的倍速推算剩余播放时长，超过相应时长，即为播完。（如：记总写入数据量p1，写完后获取时间戳p2，设置倍速α且α>0，音频采样率fs且fs>0，剩余可播时长t。公式：![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/ROQNnceFQSuEGdPIFVclAw/zh-cn_image_0000002552798880.png?HW-CC-KV=V1&HW-CC-Date=20260427T234531Z&HW-CC-Expire=86400&HW-CC-Sign=BD93F11CDA0A1CD552F33C9A5DA6882149B4499EF366708113259FFC0745C818)）
+   * 写完数据后获取时间戳，如果2个周期内时间戳不变，即为播完；或者根据设置的倍速推算剩余播放时长，超过相应时长，即为播完。（如：记总写入数据量p1，写完后获取时间戳p2，设置倍速α且α>0，音频采样率fs且fs>0，剩余可播时长t。公式：![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/i_zkExwWQ4KaQ2Q8wn3lLg/zh-cn_image_0000002589324899.png?HW-CC-KV=V1&HW-CC-Date=20260429T053427Z&HW-CC-Expire=86400&HW-CC-Sign=C5CF26AFD03683FADB835596CEAD2700FFB6AC2C5A718559095BC946E4788F3C)）

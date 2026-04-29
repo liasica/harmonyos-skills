@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/universal
 title: 动态SymbolGlyphModifier属性设置
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 动态属性与自定义 > 动态SymbolGlyphModifier属性设置
 category: harmonyos-references
-scraped_at: 2026-04-28T08:01:19+08:00
+scraped_at: 2026-04-29T13:51:32+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:fbd523adceff7be5a9a915cda5730555e64aa1936ae6bd21610ea046dc3c0015
+content_hash: sha256:73ab5d82aea33c591f9a8c1d07d620f8ea706e956fd400ae3bdbc4e6d5218dab
 ---
 
 SymbolGlyphModifier用于动态设置SymbolGlyph组件的属性和样式，支持使用if/else语句进行设置。[SymbolGlyph](ts-basic-components-symbolglyph.md)是一个用于展示图标符号的组件。
@@ -90,4 +90,4 @@ PhonePC/2in1TabletTVWearable
 21. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/lTP_uwGoTDCyua2-w-fflQ/zh-cn_image_0000002583479579.png?HW-CC-KV=V1&HW-CC-Date=20260428T000118Z&HW-CC-Expire=86400&HW-CC-Sign=C000B755ECC45F6AE9995E91D344C3147B601791EE8485F5F3C26FA8FECF75D6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/IJBrbymbRVm_386-Y3F7bQ/zh-cn_image_0000002558606442.png?HW-CC-KV=V1&HW-CC-Date=20260429T055131Z&HW-CC-Expire=86400&HW-CC-Sign=F5CCA782DB9E1505C2D5E1F8849F6DF43C3883A31AC829646240D8F834155214)

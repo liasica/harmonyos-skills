@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/changelogs-
 title: OS平台API行为的变更
 breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.1.0(18) > OS平台能力 > OS平台行为变更说明 > OS平台API行为的变更
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:35:00+08:00
+scraped_at: 2026-04-29T13:22:45+08:00
 doc_updated_at: 2026-02-09
-content_hash: sha256:f8e7347f7d3a7c04d2e98b4e97d059a508a1604ce472f19802230a375684fa08
+content_hash: sha256:64536c4958ca9a1c1685b660ec051e86b1e5548a8a1f97cb93f4e71d35e949be
 ---
 
 ## ArkTS
@@ -206,7 +206,7 @@ getKeyboardAvoidMode
 * 变更前：在XComponent组件上使用renderFit接口，使用部分fit模式的显示效果不符合预期。
 * 变更后：XComponent组件上使用renderFit接口后，可以正确显示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/GMd5rSfBT3yywGJPLEJsVQ/zh-cn_image_0000002295394565.png?HW-CC-KV=V1&HW-CC-Date=20260427T233458Z&HW-CC-Expire=86400&HW-CC-Sign=5227CD4F5AAFC06A4CBCD6A267168B3261CB6F457EBB44219B64333AAF4E79A7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/GMd5rSfBT3yywGJPLEJsVQ/zh-cn_image_0000002295394565.png?HW-CC-KV=V1&HW-CC-Date=20260429T052243Z&HW-CC-Expire=86400&HW-CC-Sign=AE62D385E80C9F4DC1094DD4BC0F4812C175EE28A31B28E837E765A38E813FB2)
 
 **起始API Level**
 
@@ -253,7 +253,7 @@ getKeyboardAvoidMode
 
 在白名单的内置组件属性与自定义组件重名时，编译拦截报错。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/YcqoScOgSOC4uBnwOnSiVg/zh-cn_image_0000002260714460.png?HW-CC-KV=V1&HW-CC-Date=20260427T233458Z&HW-CC-Expire=86400&HW-CC-Sign=ABBB611FDCEA44E8E5F293F7A7E08B66D88D480B0F87538215D4D4C5CBFB5811)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/YcqoScOgSOC4uBnwOnSiVg/zh-cn_image_0000002260714460.png?HW-CC-KV=V1&HW-CC-Date=20260429T052243Z&HW-CC-Expire=86400&HW-CC-Sign=E8C063E329D74F9FB4249F5399C1839BE5E6B58E7D312E986327F5C718A1EDCD)
 
 **起始API Level**
 

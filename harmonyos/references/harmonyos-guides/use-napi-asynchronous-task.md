@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-napi-asyn
 title: 使用Node-API接口进行异步任务开发
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用Node-API实现ArkTS/JS与C/C++语言交互 > Node-API典型使用场景 > 使用Node-API接口进行异步任务开发
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:54:09+08:00
+scraped_at: 2026-04-29T13:44:04+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:429497f7457145e6c889d33707df082478a0d4d58388e7adc1f0558b3e1aa5a3
+content_hash: sha256:bf9760bf7c0f0058ce8eb5e977dc3871d36a0328c23b1ef3a3938ca51865c7cc
 ---
 
 ## 场景介绍
@@ -21,11 +21,11 @@ napi\_queue\_async\_work接口使用uv\_queue\_work能力，并管理回调中na
 
 异步调用支持callback和Promise两种方式，选择哪种方式由开发者决定。以下是两种方式的示例代码：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/Li2SHRhxTkeNOSwr4HBEnw/zh-cn_image_0000002552799722.png?HW-CC-KV=V1&HW-CC-Date=20260427T235406Z&HW-CC-Expire=86400&HW-CC-Sign=E2FB07412A7FC2B2A5C855AA50251FEFB50B32C9FFEB9130FEE7525DE5E4891B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/YgjiPm8GTbqMrFRodIUGPg/zh-cn_image_0000002558606216.png?HW-CC-KV=V1&HW-CC-Date=20260429T054403Z&HW-CC-Expire=86400&HW-CC-Sign=378565A2EA1C5397D0500F0239057838CE958FF7E9EAEFC288D86B0FACBD42B5)
 
 ## 使用Promise方式示例
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/4fTNphjmSAmrzCjdtd7oSQ/zh-cn_image_0000002583439417.png?HW-CC-KV=V1&HW-CC-Date=20260427T235406Z&HW-CC-Expire=86400&HW-CC-Sign=EB929175A669157A87A2AB740A5643855C096E1743A333E6EF9DA9A13551193F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/36VPtzhiQmGFZvjPKKeJ2w/zh-cn_image_0000002589325743.png?HW-CC-KV=V1&HW-CC-Date=20260429T054403Z&HW-CC-Expire=86400&HW-CC-Sign=D7DE2482DE50236B786112657B148C57FEC1C49A0A992147FE72B6F446951591)
 
 1. CMakeLists.txt配置
 
@@ -156,7 +156,7 @@ napi\_queue\_async\_work接口使用uv\_queue\_work能力，并管理回调中na
 
 ## 使用callback方式示例
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/VzSOzjB5Q6ywqmmcgmC_4A/zh-cn_image_0000002552959372.png?HW-CC-KV=V1&HW-CC-Date=20260427T235406Z&HW-CC-Expire=86400&HW-CC-Sign=AB2CBF2DB14166802DD078ED1118E8511714B52070E93875F2954346FCCB19FB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/fGCoShzpREet-WgvuSE68A/zh-cn_image_0000002589245683.png?HW-CC-KV=V1&HW-CC-Date=20260429T054403Z&HW-CC-Expire=86400&HW-CC-Sign=D2F4464C669A56A29DB68C89A7A11B778EF71626ABF1AB41D65E61770048F3AB)
 
 1. 使用napi\_create\_async\_work创建异步任务，并使用napi\_queue\_async\_work将异步任务加入队列，等待执行。
 

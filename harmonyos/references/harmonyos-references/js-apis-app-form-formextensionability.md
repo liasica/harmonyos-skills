@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: @ohos.app.form.FormExtensionAbility (FormExtensionAbility)
 breadcrumb: API参考 > 应用框架 > Form Kit（卡片开发服务） > ArkTS API > @ohos.app.form.FormExtensionAbility (FormExtensionAbility)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:06:00+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:8317b3a37474fe767c5868e71fe547ba1b965aa9b51c7b20df8d01d3146a5477
+scraped_at: 2026-04-29T13:56:30+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:6d9d04a76a93ba22cbeb22ca48db5a08a8744a119dd9e1da4b56788a9a21edd4
 ---
 
 FormExtensionAbility为卡片扩展模块，提供卡片创建、销毁、刷新等生命周期回调。
@@ -184,9 +184,7 @@ PhonePC/2in1TabletTVWearable
 
 onChangeFormVisibility(newStatus: Record<string, number>): void
 
-卡片提供方接收修改可见性的通知接口。
-
-该接口仅对系统应用生效，且需要将formVisibleNotify配置为true。
+卡片提供方接收修改可见性的通知接口。该接口仅对系统应用生效，且需要将formVisibleNotify配置为true。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -196,7 +194,7 @@ onChangeFormVisibility(newStatus: Record<string, number>): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| newStatus | Record<string, number> | 是 | 请求修改的卡片标识和可见状态。 |
+| newStatus | Record<string, number> | 是 | 请求修改的卡片标识和可见状态。  **说明：** number参数是取值范围[0, 2]的整数，0是未知类型，1是可见状态，2是不可见状态。  详细参考 [formInfo.VisibilityType](js-apis-app-form-forminfo.md#visibilitytype) |
 
 **示例：**
 
@@ -340,7 +338,7 @@ PhonePC/2in1TabletTVWearable
 
 onAcquireFormState?(want: Want): formInfo.FormState
 
-卡片提供方接收查询卡片状态通知接口，默认返回卡片初始状态(该方法可以选择性重写)。
+卡片提供方接收查询卡片状态通知接口，默认返回卡片初始状态（该方法可以选择性重写）。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 

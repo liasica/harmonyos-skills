@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 栅格设置
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 已停止维护的组件与接口 > 栅格设置
 category: harmonyos-references
-scraped_at: 2026-04-28T08:02:51+08:00
+scraped_at: 2026-04-29T13:53:13+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:515769c2b53e0849a2552f3d1c548f213ede1e94eaf943ead6fbcd47360ee345
+content_hash: sha256:fa4037fd9e3b449e165267b8b8e85551735a96aa819d4e29fdaa6430097afcea
 ---
 
 栅格设置可以为布局提供规律性的结构，解决多尺寸多设备的动态布局问题，保证不同设备上各个模块的布局一致性。
@@ -116,16 +116,16 @@ PhonePC/2in1TabletTVWearable
 
 **图1** 设备宽度为SM
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/45qmOXA6SXC4PTfKboyd6Q/zh-cn_image_0000002583480167.png?HW-CC-KV=V1&HW-CC-Date=20260428T000250Z&HW-CC-Expire=86400&HW-CC-Sign=B9CCE3BDFE885BA8F5017A31D6BD6F3EAEEFF2C0F7AB51139F0E38D1765F1FE4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/9U4WlLvPQ7K690VPjKfdwQ/zh-cn_image_0000002589326559.png?HW-CC-KV=V1&HW-CC-Date=20260429T055312Z&HW-CC-Expire=86400&HW-CC-Sign=2C70499479D6B6D547CB6EA7926B2DF331718ACF6D107802B181FB97ED56EF27)
 
 **图2** 设备宽度为MD
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/lQMd0vaYQA-LQa5G6lkUlQ/zh-cn_image_0000002552800518.png?HW-CC-KV=V1&HW-CC-Date=20260428T000250Z&HW-CC-Expire=86400&HW-CC-Sign=09D76333A6C48993147FE7D5F63C5805F81B1D7B5E8C2BB033DDE35F02614899)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/kGGg88F-RJSFA1gpa7RAng/zh-cn_image_0000002589246501.png?HW-CC-KV=V1&HW-CC-Date=20260429T055312Z&HW-CC-Expire=86400&HW-CC-Sign=961EB418703278C8F3BC99C274EAB6DF309FCA1386337ACFA55AA653FF72F626)
 
 **图3** 设备宽度为LG
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/iQHfyEaLTYSLXoZ5NZ51iQ/zh-cn_image_0000002583440213.png?HW-CC-KV=V1&HW-CC-Date=20260428T000250Z&HW-CC-Expire=86400&HW-CC-Sign=B25D0FFC2BA57AEBAEF742F2B74FC4FAAF0FCEE9901E6E8F9C1077839DC6A2B0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/obbiB8itRg6cCMGnhwZ5xw/zh-cn_image_0000002558766694.png?HW-CC-KV=V1&HW-CC-Date=20260429T055312Z&HW-CC-Expire=86400&HW-CC-Sign=17EE60B5B772FDE01A165FA917E283F9247AEF8428F1F771A1754A54B934D1F1)
 
 **图4** 单独设置gridSpan和gridOffset在特定屏幕大小下的效果与useSizeType效果一致
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/-oYOVI7BSHGLicszFwyuyQ/zh-cn_image_0000002552960168.png?HW-CC-KV=V1&HW-CC-Date=20260428T000250Z&HW-CC-Expire=86400&HW-CC-Sign=5556F78C019810FDA62BE86208B8738ED2A36933256A5ADFF8FCF8E23FAA06C9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/Gq-SUvtSSkmJ_nYAVlYEMA/zh-cn_image_0000002558607034.png?HW-CC-KV=V1&HW-CC-Date=20260429T055312Z&HW-CC-Expire=86400&HW-CC-Sign=BF8DDD28913C8EC19DF574EE4196AFCD9F395BDC64C6FE7CDDB8DB46E1BFBC55)

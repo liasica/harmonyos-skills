@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-ui-skip-an
 title: 应用UI进程空跑问题分析
 breadcrumb: 最佳实践 > 功耗 > 应用功耗分析 > 应用UI进程空跑问题分析
 category: best-practices
-scraped_at: 2026-04-28T08:22:38+08:00
+scraped_at: 2026-04-29T14:13:47+08:00
 doc_updated_at: 2026-04-27
-content_hash: sha256:922223b6f6c5be2f8b7064d6b5fb787528f3cbf427ff319f2d081bbf38b434fb
+content_hash: sha256:362ca2a32d97e134aa868326d1947aeca772fe296b71793b7620bf2a8936656b
 ---
 
 ## 应用UI进程空跑介绍
@@ -14,15 +14,15 @@ content_hash: sha256:922223b6f6c5be2f8b7064d6b5fb787528f3cbf427ff319f2d081bbf38b
 
 如下图所示，为一个UI空跑的trace示例，图中应用主线程powerdemon以90Hz刷新，但在高亮框选区域，render\_service线程对应的帧未刷新，表明期间应用主线程powerdemon未递交有效绘制指令给render\_service进行绘制，产生空帧。这些空帧通常由应用注册帧回调但实际无节点脏区引起。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/LtQcKJOsR-qMfcd44x1pjA/zh-cn_image_0000002555774310.png?HW-CC-KV=V1&HW-CC-Date=20260428T002237Z&HW-CC-Expire=86400&HW-CC-Sign=2B7CFDECD67F2D93874555E07495E4CE55D56104DA2151A998CAAE48D0DF9E10 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/LtQcKJOsR-qMfcd44x1pjA/zh-cn_image_0000002555774310.png?HW-CC-KV=V1&HW-CC-Date=20260429T061346Z&HW-CC-Expire=86400&HW-CC-Sign=65895E804D8ECD57A586042653AB1F24A6C5DE98D85B336E44A34DE2C3AA8409 "点击放大")
 
 开发者可进一步在空刷帧中搜索“FlushMessages”，如下图所示，当“FlushMessages”下方存在“UI skip”时，表示该帧未递交任何绘制指令，属于UI空跑。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/-oL645ggTgmnoUBZKXlMng/zh-cn_image_0000002586294233.png?HW-CC-KV=V1&HW-CC-Date=20260428T002237Z&HW-CC-Expire=86400&HW-CC-Sign=009754F431353BEF111D779427679B8ECBFE7B7B69E7B5BF137B439AA060F636 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/-oL645ggTgmnoUBZKXlMng/zh-cn_image_0000002586294233.png?HW-CC-KV=V1&HW-CC-Date=20260429T061346Z&HW-CC-Expire=86400&HW-CC-Sign=1C2A4E994565A31CFC081151240AF747977E6D9906E2CE645152CFCAAD9F2F5D "点击放大")
 
 对比下图的非UI空跑场景，“FlushMessages”下方发现“H:MarshRSTransactionData cmdCount: 2, transactionFlag:[22766,879]”字样时，可确认该帧有绘制指令递交，将引起下一帧render\_service的RS树准备工作。其中22766表示下发绘制指令的线程ID，879表示帧数据的索引，“cmdCount:2”表示绘制指令数量为2，有两个arkui节点在该帧被标脏。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/qZefOOAmSeW-5E5PlpWv5A/zh-cn_image_0000002555614690.png?HW-CC-KV=V1&HW-CC-Date=20260428T002237Z&HW-CC-Expire=86400&HW-CC-Sign=1504C919F178470399CEFDA8E6AA47B453933B63998852FE3DE0C7F186D75375 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/qZefOOAmSeW-5E5PlpWv5A/zh-cn_image_0000002555614690.png?HW-CC-KV=V1&HW-CC-Date=20260429T061346Z&HW-CC-Expire=86400&HW-CC-Sign=210EDC7B7CB8FA20FD24FCAFBBC61BFFF90CF7A76C22777928EC37EF48D8D328 "点击放大")
 
 ## 分析思路
 
@@ -36,7 +36,7 @@ Type[0]：Animator
 
 Type[1]：Xcomponent
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/QCQGr3ZgTIO48E_LNTRBMA/zh-cn_image_0000002586174287.png?HW-CC-KV=V1&HW-CC-Date=20260428T002237Z&HW-CC-Expire=86400&HW-CC-Sign=E6F1B6DCBF429C64B0309151B40EA8CE9142D9DF1C2667250656D06EC2950B8E "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/QCQGr3ZgTIO48E_LNTRBMA/zh-cn_image_0000002586174287.png?HW-CC-KV=V1&HW-CC-Date=20260429T061346Z&HW-CC-Expire=86400&HW-CC-Sign=1E9595A79F0A3CF36270970BD1E48E80E02B4000334E89640FC9106E8C2A950C "点击放大")
 
 ### 使用Profiler的Energy工具分析（推荐）
 
@@ -51,13 +51,13 @@ Type[1]：Xcomponent
 
    图中① AnomalyType: 异常类型，② Anomaly Reason: 异常原因，③ Anomaly Count: 异常的帧数，④ More: 异常帧。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/Khtmk8zkRCWajfH0RzB8_A/zh-cn_image_0000002555774312.png?HW-CC-KV=V1&HW-CC-Date=20260428T002237Z&HW-CC-Expire=86400&HW-CC-Sign=C52C4CC8AFB4FAB87319937515AAD8B1161AF6070F0BCA499703510F094170C8 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/Khtmk8zkRCWajfH0RzB8_A/zh-cn_image_0000002555774312.png?HW-CC-KV=V1&HW-CC-Date=20260429T061346Z&HW-CC-Expire=86400&HW-CC-Sign=B97E264615FE6F0EF1B60AA938F3098616C901FA02BEBF0A365ABC171AEAF77A "点击放大")
 
 3. 查看单帧详情信息
 
    在More栏，点击其中一帧，在应用的主线程泳道，查看H:DisplaySyncId关键字的Trace，依据Type确认根因类型。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/vFzBthykRG24zNbP3O8t-A/zh-cn_image_0000002586294237.png?HW-CC-KV=V1&HW-CC-Date=20260428T002237Z&HW-CC-Expire=86400&HW-CC-Sign=5692287389E2B0CDF393719C0EE0E85941E1CFB0A9D6EF34273E7C1E273177F7 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/vFzBthykRG24zNbP3O8t-A/zh-cn_image_0000002586294237.png?HW-CC-KV=V1&HW-CC-Date=20260429T061346Z&HW-CC-Expire=86400&HW-CC-Sign=F0BD3ADDDCA559E0F597857A2BF3FA1CCF40B83D60476303C331602C08F63FB8 "点击放大")
 
 ## 常见故障根因
 
@@ -65,7 +65,7 @@ Type[1]：Xcomponent
 
 Animator是一种依赖DisplaySync机制产生UI刷新的动画机制。如下图“1”处所示，“jsAnimator onframe, duration: 5000, curve: ease, id:1”表明，该动效持续时间为5000ms，动效曲线为ease，Animator的ID为1。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/g4CA_J66TSy2xcJagD58hg/zh-cn_image_0000002555614692.png?HW-CC-KV=V1&HW-CC-Date=20260428T002237Z&HW-CC-Expire=86400&HW-CC-Sign=4AE55504D2021F2F335218CAEB6BE016D66607522AB0C39AE625F8E650534752 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/g4CA_J66TSy2xcJagD58hg/zh-cn_image_0000002555614692.png?HW-CC-KV=V1&HW-CC-Date=20260429T061346Z&HW-CC-Expire=86400&HW-CC-Sign=777FCB1AA04E3197CC4F504491E8DAC9480EB387EF7CA488CDD1A165867369D8 "点击放大")
 
 开启hdc shell param set persist.ace.debug.enabled 1开关后，如果该Animator导致实际的组件属性更新，下方会有打印信息如下：
 

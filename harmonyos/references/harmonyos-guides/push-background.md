@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/push-backgrou
 title: 推送后台消息
 breadcrumb: 指南 > 应用服务 > Push Kit（推送服务） > 推送场景化消息 > 推送后台消息
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:50:31+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:5fe4087c20b45cf3b4fefa7d54bb118f63109fbf5522744df315328b97b57d71
+scraped_at: 2026-04-29T13:39:55+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:8bad98e55ec528c8fb28b1fde3d095d5631985ea83bd7161c2983428182b9e9b
 ---
 
 ## 场景介绍
@@ -86,8 +86,8 @@ content_hash: sha256:5fe4087c20b45cf3b4fefa7d54bb118f63109fbf5522744df315328b97b
    12. }
    ```
 
-   * uri：固定格式为 datashareproxy://{bundleName}/PushMessage，请将 **{bundleName}** 替换为您应用的bundleName，PushMessage为固定名称，请勿随意更改。
-   * requiredWritePermission：固定值为 **ohos.permission.WRITE\_PRIVACY\_PUSH\_DATA**，推送服务需要使用该权限往数据库里写入后台消息数据。
+   * uri：固定格式为 datashareproxy://{bundleName}/PushMessage，请将 **{bundleName}** 替换为开发者应用的bundleName，PushMessage为固定名称，请勿随意更改。
+   * requiredWritePermission：固定值为 **ohos.permission.WRITE\_PRIVACY\_PUSH\_DATA**，Push Kit需要使用该权限往数据库里写入后台消息数据。
    * metadata：扩展配置，name固定值为**dataProperties**，resource固定格式为 **$profile:文件名称**，文件名称固定为**PushMessage**。
 5. 在项目中现有的UIAbility类（以PushMessageAbility为例）的onCreate()中，调用[receiveMessage](../harmonyos-references/push-pushservice.md#pushservicereceivemessage)()方法接收后台消息。注意，您仅能使用UIAbility接收后台消息。
 
@@ -180,4 +180,4 @@ content_hash: sha256:5fe4087c20b45cf3b4fefa7d54bb118f63109fbf5522744df315328b97b
 
    当设备中的应用进程在前台时会直接拉起应用并将数据传递，您可以在[receiveMessage](../harmonyos-references/push-pushservice.md#pushservicereceivemessage)()方法中获取消息数据。
 
-   当应用进程不在前台且[proxyData](../harmonyos-references/push-scenariozed-api-request-param.md#backgroundpayload-后台消息)为“ENABLE”时，推送服务将后台消息写入到数据库中，建议您在应用进程在前台时将数据库中数据迁移到您业务数据库中（**避免数据库大小无限制增长**）。当应用进程不在前台且无[proxyData](../harmonyos-references/push-scenariozed-api-request-param.md#backgroundpayload-后台消息)时则为缓存消息（**发送多条消息时仅缓存最新的一条**），等下次应用进程在前台时调用[getToken](../harmonyos-references/push-pushservice.md#pushservicegettoken-1)()接口，Push Kit将重新发送缓存消息，您可以在[receiveMessage](../harmonyos-references/push-pushservice.md#pushservicereceivemessage)()方法获取消息数据。
+   当应用进程不在前台且[proxyData](../harmonyos-references/push-scenariozed-api-request-param.md#backgroundpayload-后台消息)为“ENABLE”时，Push Kit将后台消息写入到数据库中，建议应用进程在前台时将数据库中数据迁移到您业务数据库中（**避免数据库大小无限制增长**）。当应用进程不在前台且无[proxyData](../harmonyos-references/push-scenariozed-api-request-param.md#backgroundpayload-后台消息)时则为缓存消息（**发送多条消息时仅缓存最新的一条**），等下次应用进程在前台时调用[getToken](../harmonyos-references/push-pushservice.md#pushservicegettoken-1)()接口，Push Kit将重新发送缓存消息，您可以在[receiveMessage](../harmonyos-references/push-pushservice.md#pushservicereceivemessage)方法获取消息数据。

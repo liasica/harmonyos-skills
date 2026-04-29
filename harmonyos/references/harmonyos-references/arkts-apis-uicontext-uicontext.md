@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (UIContext)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.arkui.UIContext (UIContext) > Class (UIContext)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:00:28+08:00
+scraped_at: 2026-04-29T13:50:39+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:cd8c55820cf555798e3dd61d42eddd602aaaa47e0f700e5c29e73073c5c6ff3f
+content_hash: sha256:a01b8ffeb42f47c185ac566e00331d6f5b8b874c77415e80f727c9beaef07db0
 ---
 
 UIContext实例对象。
@@ -475,7 +475,7 @@ isAvailable(): boolean
 55. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/qTloeL0aR8u2f76jI0mYOQ/zh-cn_image_0000002583479413.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000025Z&HW-CC-Expire=86400&HW-CC-Sign=040EE780C4F1C7F5C2B98CA6D8EB61F549FCF43602FCE1588C5B3B342C08A6F4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/_H4oOVMQTZG8fj6FcYSUFg/zh-cn_image_0000002558606276.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055036Z&HW-CC-Expire=86400&HW-CC-Sign=91016CDA5EA36FC1C85E8151F1E15E31B2EB67C22C9E9959AF22EDC385248B88)
 
 ## getFont
 
@@ -862,7 +862,7 @@ animateToImmediately(param: AnimateParam, processor: Callback<void>): void
 54. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/8oPqYhQkQK6k4HuTP-ezPA/zh-cn_image_0000002552799764.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000025Z&HW-CC-Expire=86400&HW-CC-Sign=57C7E3F844322F0C0B270592C7CA69CBEE865237A6CA83A498BD69D804C2EB7C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/lJsYtKSxRZmcHm_syURlqg/zh-cn_image_0000002589325803.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055036Z&HW-CC-Expire=86400&HW-CC-Sign=99D8706D5E01FE0277112F4F855BE5FEC2A9581C9225019CA1351A83E822FF11)
 
 ## animateTo
 
@@ -1389,7 +1389,7 @@ showAlertDialog(options: AlertDialogParamWithConfirm | AlertDialogParamWithButto
 32. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/h32XyngBTAaNetB4hn2yNw/zh-cn_image_0000002583439459.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000025Z&HW-CC-Expire=86400&HW-CC-Sign=439524A4D68D13A5F05EBB11E819789866B6A121A112FBCEBFFA4051AD9E6BF7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/UvdqEenuTf6rN_AF0NOpoA/zh-cn_image_0000002589245745.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055036Z&HW-CC-Expire=86400&HW-CC-Sign=C894FDAE9AFD7055AC1372898DB652CAA0AE64D3CE297D4FE189508296B3A47E)
 
 ## showActionSheet
 
@@ -1463,7 +1463,7 @@ showActionSheet(value: ActionSheetOptions): void
 49. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/YpZNOD1AS32DMjuEWYdAUA/zh-cn_image_0000002552959414.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000025Z&HW-CC-Expire=86400&HW-CC-Sign=6F74D4ADD94824F741D2A9E5B219B91368D5E612444F164B409DCF043BC9F871)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/VIRy23gkTpudvykCXrVmyQ/zh-cn_image_0000002558765934.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055036Z&HW-CC-Expire=86400&HW-CC-Sign=D4C99BDAF6B75A011B490DCA809AAB7E6D95FCBC86185F4F4C06897199D485FA)
 
 ## showDatePickerDialog
 
@@ -1542,7 +1542,7 @@ showDatePickerDialog(options: DatePickerDialogOptions): void
 48. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/mm4d_3w1SaOcvBdJ2eoQFw/zh-cn_image_0000002583479415.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000025Z&HW-CC-Expire=86400&HW-CC-Sign=DFEB2608E8FECD57AE1E77FDC0BFB9DD6F12BB4C7E3052541C810A289E4F1978)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/L-llKv4DT4iNDdmd0iPFow/zh-cn_image_0000002558606278.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055036Z&HW-CC-Expire=86400&HW-CC-Sign=7BC3E62658189BE65AB0EB5E20E5667AF79272A74A8E008FE0631357F4EACDD7)
 
 ## showTimePickerDialog
 
@@ -1692,7 +1692,7 @@ showTextPickerDialog(options: TextPickerDialogOptions): void
 50. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/mHF8gor5Q-KT3IOa7TNP8w/zh-cn_image_0000002552799766.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000025Z&HW-CC-Expire=86400&HW-CC-Sign=791FBE569B656DCAE2061294C5B584858C769B3BE58CA1E916CE1AD39126F129)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/fcC2SKztTLCjAdZBJ_xNuA/zh-cn_image_0000002589325805.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055036Z&HW-CC-Expire=86400&HW-CC-Sign=A1D1FC5A95D7D2FA1C4C182A4AECA9927A6B726D8BA5C75D2BA96AA14D5F6E4B)
 
 ## showTextPickerDialog20+
 
@@ -3709,7 +3709,7 @@ bindTabsToScrollable(tabsController: TabsController, scroller: Scroller): void
 92. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/PrpImuWSQoa-scSedGPYZQ/zh-cn_image_0000002583439461.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000025Z&HW-CC-Expire=86400&HW-CC-Sign=2BBE7D079BC18E1C0A00B420FDDCD0B9150698BF3F715B5786119562B9177CFA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/z4ZvqMBUTM6DPsKDTKxsCQ/zh-cn_image_0000002589245747.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055036Z&HW-CC-Expire=86400&HW-CC-Sign=1AB4192A721E3D482253F21023BF100E433DF2FDF7198968969CF7DAE0D38ADB)
 
 ## unbindTabsFromScrollable13+
 
@@ -4370,4 +4370,4 @@ setCustomKeyboardContinueFeature(feature: CustomKeyboardContinueFeature): void
 102. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/JNbFENkzQvm9IQd_QYYglQ/zh-cn_image_0000002552959416.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000025Z&HW-CC-Expire=86400&HW-CC-Sign=A3D9DA0D0CDAB84C90C0F71A21A590C7196B7AA102335D87A7E29ABFF1DBDB93)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/Lg0IIVZ_Rm-WkIWH92xUlQ/zh-cn_image_0000002558765936.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055036Z&HW-CC-Expire=86400&HW-CC-Sign=BFB5FD9BBA6666AC180CB0B1A8A2549952A2E30A0529C8E54FA6C10B5F706BBA)

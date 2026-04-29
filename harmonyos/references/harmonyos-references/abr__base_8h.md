@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/abr__base
 title: abr_base.h
 breadcrumb: API参考 > 图形 > Graphics Accelerate Kit（图形加速服务） > C API > 头文件和结构体 > 头文件 > abr_base.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:15:41+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:5538af16f90f935ce52493f2f339b97b91263303445581531a1e10f0ec5d5ca5
+scraped_at: 2026-04-29T14:06:18+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:3c838cad2b45d3eaf57e6fdf12a80a5b9678c31fd5c13b8633b95fbc49d7de5d
 ---
 
 ## 概述
@@ -64,13 +64,13 @@ PhoneTabletTV
 
 | 名称 | 描述 |
 | --- | --- |
-| [ABR\_Context](_graphics_accelerate.md#abr_context)\* [HMS\_ABR\_CreateContext](_graphics_accelerate.md#hms_abr_createcontext)([ABR\_RenderAPI\_Type](_graphics_accelerate.md#abr_renderapi_type-1) type) | 创建ABR上下文实例，每次调用会新建[ABR\_Context](_graphics_accelerate.md#abr_context)对象，并返回指向[ABR\_Context](_graphics_accelerate.md#abr_context)对象的指针。 |
+| [ABR\_Context](_graphics_accelerate.md#abr_context)\* [HMS\_ABR\_CreateContext](_graphics_accelerate.md#hms_abr_createcontext)([ABR\_RenderAPI\_Type](_graphics_accelerate.md#abr_renderapi_type-1) type) | 创建ABR上下文实例，每次调用会新建[ABR\_Context](_graphics_accelerate.md#abr_context)对象，并返回指向[ABR\_Context](_graphics_accelerate.md#abr_context)对象的指针，当前仅支持RENDER\_API\_GLES类型，其他类型会导致创建上下文失败。 |
 | [ABR\_ErrorCode](_graphics_accelerate.md#abr_errorcode-1) [HMS\_ABR\_SetTargetFps](_graphics_accelerate.md#hms_abr_settargetfps)([ABR\_Context](_graphics_accelerate.md#abr_context)\* context, const uint32\_t targetFps) | 配置ABR上下文实例的目标帧率属性。 |
-| [ABR\_ErrorCode](_graphics_accelerate.md#abr_errorcode-1) [HMS\_ABR\_SetScaleRange](_graphics_accelerate.md#hms_abr_setscalerange)([ABR\_Context](_graphics_accelerate.md#abr_context)\* context, const float minValue, const float maxValue) | 配置ABR上下文实例的Buffer分辨率因子范围属性。 |
-| [ABR\_ErrorCode](_graphics_accelerate.md#abr_errorcode-1) [HMS\_ABR\_Activate](_graphics_accelerate.md#hms_abr_activate)([ABR\_Context](_graphics_accelerate.md#abr_context)\* context) | 激活ABR上下文实例。激活ABR上下文实例前需调用[HMS\_ABR\_SetTargetFps](_graphics_accelerate.md#hms_abr_settargetfps)和[HMS\_ABR\_SetScaleRange](_graphics_accelerate.md#hms_abr_setscalerange)接口进行实例属性的配置。 |
+| [ABR\_ErrorCode](_graphics_accelerate.md#abr_errorcode-1) [HMS\_ABR\_SetScaleRange](_graphics_accelerate.md#hms_abr_setscalerange)([ABR\_Context](_graphics_accelerate.md#abr_context)\* context, const float minValue, const float maxValue) | 配置ABR上下文实例的Buffer分辨率因子范围属性，minValue和maxValue取值范围[0.5, 1.0]，minValue应小于等于maxValue，不满足约束条件时，会返回错误码ABR\_INVALID\_PARAMETER。 |
+| [ABR\_ErrorCode](_graphics_accelerate.md#abr_errorcode-1) [HMS\_ABR\_Activate](_graphics_accelerate.md#hms_abr_activate)([ABR\_Context](_graphics_accelerate.md#abr_context)\* context) | 激活ABR上下文实例。激活ABR上下文实例前需调用[HMS\_ABR\_SetTargetFps](_graphics_accelerate.md#hms_abr_settargetfps)和[HMS\_ABR\_SetScaleRange](_graphics_accelerate.md#hms_abr_setscalerange)接口进行实例属性的配置，若未正确配置目标帧率或分辨率范围，调用[HMS\_ABR\_Activate](_graphics_accelerate.md#hms_abr_activate)将返回错误码ABR\_CONTEXT\_NOT\_CONFIG。 |
 | [ABR\_ErrorCode](_graphics_accelerate.md#abr_errorcode-1) [HMS\_ABR\_IsActive](_graphics_accelerate.md#hms_abr_isactive)([ABR\_Context](_graphics_accelerate.md#abr_context)\* context, bool\* isActive) | 查询ABR上下文实例是否处于激活状态。 |
 | [ABR\_ErrorCode](_graphics_accelerate.md#abr_errorcode-1) [HMS\_ABR\_Deactivate](_graphics_accelerate.md#hms_abr_deactivate)([ABR\_Context](_graphics_accelerate.md#abr_context)\* context) | 去激活ABR上下文实例，可通过[HMS\_ABR\_Activate](_graphics_accelerate.md#hms_abr_activate)重新激活。 |
-| [ABR\_ErrorCode](_graphics_accelerate.md#abr_errorcode-1) [HMS\_ABR\_UpdateCameraData](_graphics_accelerate.md#hms_abr_updatecameradata)([ABR\_Context](_graphics_accelerate.md#abr_context)\* context, [ABR\_CameraData](_a_b_r___camera_data.md)\* data) | 更新每帧相机运动数据，ABR更新相机运动数据前需调用[HMS\_ABR\_Activate](_graphics_accelerate.md#hms_abr_activate)接口激活ABR上下文实例。 |
+| [ABR\_ErrorCode](_graphics_accelerate.md#abr_errorcode-1) [HMS\_ABR\_UpdateCameraData](_graphics_accelerate.md#hms_abr_updatecameradata)([ABR\_Context](_graphics_accelerate.md#abr_context)\* context, [ABR\_CameraData](_a_b_r___camera_data.md)\* data) | 更新每帧相机运动数据，ABR更新相机运动数据前需调用[HMS\_ABR\_Activate](_graphics_accelerate.md#hms_abr_activate)接口激活ABR上下文实例，在未激活状态下调用此函数，会返回ABR\_CONTEXT\_NOT\_ACTIVE错误码。 |
 | [ABR\_ErrorCode](_graphics_accelerate.md#abr_errorcode-1) [HMS\_ABR\_GetScale](_graphics_accelerate.md#hms_abr_getscale)([ABR\_Context](_graphics_accelerate.md#abr_context)\* context, float\* scale) | 获取ABR Buffer分辨率因子。 |
 | [ABR\_ErrorCode](_graphics_accelerate.md#abr_errorcode-1) [HMS\_ABR\_GetNextScale](_graphics_accelerate.md#hms_abr_getnextscale)([ABR\_Context](_graphics_accelerate.md#abr_context)\* context, float\* scale) | 获取下一帧的ABR Buffer分辨率因子。 |
 | [ABR\_ErrorCode](_graphics_accelerate.md#abr_errorcode-1) [HMS\_ABR\_DestroyContext](_graphics_accelerate.md#hms_abr_destroycontext)([ABR\_Context](_graphics_accelerate.md#abr_context)\*\* context) | 销毁ABR上下文实例并释放内存资源。 |

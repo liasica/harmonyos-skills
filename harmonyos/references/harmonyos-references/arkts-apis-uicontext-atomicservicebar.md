@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (AtomicServiceBar)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.arkui.UIContext (UIContext) > Interface (AtomicServiceBar)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:00:29+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:6551666d192d8363d27d3b4abdbd40c06f79efa1e1b6e7cf67dc0aa4e036e34c
+scraped_at: 2026-04-29T13:50:40+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:f4597a43cf24311798f658bdfb0affeaac4df691392419a6432b933389046c97
 ---
 
 提供设置元服务menuBar的属性。
@@ -27,7 +27,7 @@ setVisible(visible: boolean): void
 
 说明
 
-从API version 12开始元服务menuBar样式变更，menuBar默认隐藏，变为悬浮按钮，通过该接口无法改变menuBar的可见性。
+从API version 12开始，元服务menuBar默认隐藏并以悬浮按钮替代。**在元服务中调用setVisible()时，visible参数将被忽略，无法实现menuBar的显示或隐藏。**
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -74,7 +74,7 @@ setBackgroundColor(color:Nullable<Color | number | string>): void
 
 说明
 
-从API version 12开始元服务menuBar样式变更，menuBar的背景默认隐藏，通过该接口无法改变menuBar的背景颜色。
+从API version 12开始，元服务menuBar背景默认隐藏。**在元服务中调用setBackgroundColor()时，color参数将被忽略，无法设置menuBar的背景颜色。**
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -121,7 +121,7 @@ setTitleContent(content:string): void
 
 说明
 
-从API version 12开始元服务menuBar样式变更，menuBar的标题默认隐藏，通过该接口无法改变menuBar的标题内容。
+从API version 12开始，元服务menuBar标题默认隐藏。**在元服务中调用setTitleContent()时，content参数将被忽略，无法设置menuBar的标题内容。**
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -168,7 +168,7 @@ setTitleFontStyle(font:FontStyle):void
 
 说明
 
-从API version 12开始元服务menuBar样式变更，menuBar的标题默认隐藏，通过该接口无法改变menuBar的字体样式。
+从API version 12开始，元服务menuBar标题默认隐藏。**在元服务中调用setTitleFontStyle()时，font参数将被忽略，无法设置menuBar标题的字体样式，例如斜体显示。**
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -215,7 +215,7 @@ setIconColor(color:Nullable<Color | number | string>): void
 
 说明
 
-从API version 12开始元服务menuBar样式变更，menuBar默认隐藏，悬浮按钮图标不予用户设置，通过该接口无法改变menuBar的图标颜色。
+从API version 12开始，元服务menuBar默认隐藏并以悬浮按钮替代。**在元服务中调用setIconColor()时，color参数将被忽略，无法设置menuBar图标颜色。**
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 

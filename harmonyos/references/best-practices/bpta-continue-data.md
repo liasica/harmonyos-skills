@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-continue-d
 title: 应用接续数据迁移
 breadcrumb: 最佳实践 > 自由流转 > 跨端迁移 > 应用接续数据迁移
 category: best-practices
-scraped_at: 2026-04-28T08:21:35+08:00
+scraped_at: 2026-04-29T14:12:39+08:00
 doc_updated_at: 2026-04-01
-content_hash: sha256:08990ca599bd86178fd5d931b36021c23ca589b3d58414d5e7210163f92c1386
+content_hash: sha256:bcc6bd1caed5a27d38b4b949b1e243b58801c4bcdf4e2ea959a2812771b5476a
 ---
 
 ## 概述
@@ -19,7 +19,7 @@ content_hash: sha256:08990ca599bd86178fd5d931b36021c23ca589b3d58414d5e7210163f92
 
 ## 实现原理
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/TKU7lybAQHmeEq8umLE9XQ/zh-cn_image_0000002533352060.png?HW-CC-KV=V1&HW-CC-Date=20260428T002134Z&HW-CC-Expire=86400&HW-CC-Sign=7BF351C49F282BD184DBBF746CBA82725AD076B860119406AB869AAD6C74BCB0 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/TKU7lybAQHmeEq8umLE9XQ/zh-cn_image_0000002533352060.png?HW-CC-KV=V1&HW-CC-Date=20260429T061236Z&HW-CC-Expire=86400&HW-CC-Sign=2429EAE7AEF08AEF07102BAE38912D392E1C4858A38BF9DB0B8097F9B723EFD1 "点击放大")
 
 实现原理见[运作机制](bpta-continue-cast.md#section1218874218264)。
 
@@ -27,7 +27,7 @@ content_hash: sha256:08990ca599bd86178fd5d931b36021c23ca589b3d58414d5e7210163f92
 
 接入应用接续需要[启用应用接续能力](bpta-continue-cast.md#section15192222815)、[配置应用启动模式类型](bpta-continue-cast.md#section10604645308)、[源端保存迁移数据](bpta-continue-cast.md#section634613594303)和[对端恢复数据](bpta-continue-cast.md#section12346113618453)，具体开发流程见[应用接续概述](bpta-continue-cast.md)，本文只关注在不同场景下迁移数据方案的选择。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/X9wtNLttQmCZ4Ogjo9KHZw/zh-cn_image_0000002533512004.png?HW-CC-KV=V1&HW-CC-Date=20260428T002134Z&HW-CC-Expire=86400&HW-CC-Sign=7E8B7EAB4FAA91703D97F02CD5C1C3F60215B137F33814C5A2A7436D59F2737D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/X9wtNLttQmCZ4Ogjo9KHZw/zh-cn_image_0000002533512004.png?HW-CC-KV=V1&HW-CC-Date=20260429T061236Z&HW-CC-Expire=86400&HW-CC-Sign=5CCC1474EAFA0FF3570472F99047DF3D1AC507C41AA72EBA4E990A67F1D921B8)
 
 ## 使用want.param数据迁移
 

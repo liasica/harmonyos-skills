@@ -1,17 +1,18 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/graphics-accelerate-assetdownload-back-fore
 title: 系统后台切应用前台接续下载资源包
+breadcrumb: 指南 > 图形 > Graphics Accelerate Kit（图形加速服务） > 游戏资源加速服务 > 资源包后台下载 > 系统后台切应用前台接续下载资源包
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:47:41+08:00
+scraped_at: 2026-04-29T13:36:31+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:c8dd4b93b7abda3704ee0818580ca2a57f075b24cc5d251758110982bf0c6e04
+content_hash: sha256:037b9fe72164ce5a03d21452f886f10e5cfaf775d01d64a680f88b51f9e32ba3
 ---
 
 系统后台静默下载过程中启动游戏，应用前台将接管系统后台下载任务，资源包下载任务将在应用前台接续执行。
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/KD17mWXITyeoSdh8x2EQjA/zh-cn_image_0000002583478719.png?HW-CC-KV=V1&HW-CC-Date=20260427T234740Z&HW-CC-Expire=86400&HW-CC-Sign=FE5A5F8B8609869368280B737C8D9A496777C1B222AB344B6F5899C13789DB7E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/jDfeeMkZQNOkrVY1-ybZiw/zh-cn_image_0000002558605562.png?HW-CC-KV=V1&HW-CC-Date=20260429T053629Z&HW-CC-Expire=86400&HW-CC-Sign=BA7C13DBF2CC043F64458D40770B6934B2F2D515E1843D54F66D7EE2E320F719)
 
 1. 用户在应用市场安装游戏后、用户在应用市场更新游戏后、系统检测到用户设备符合闲时条件时，游戏资源加速服务开启资源包后台下载。
 2. 游戏资源加速服务携带manifestUrl资源清单，向资源加速ExtensionAbility获取资源包下载任务列表。

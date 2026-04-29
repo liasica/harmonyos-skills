@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/payment-digit
 title: 数字人民币支付场景
 breadcrumb: 指南 > 应用服务 > Payment Kit（鸿蒙支付服务） > 数字人民币支付场景
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:50:08+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:e39a337611b618fd0ac48fd70629a926e1715bc270726077fe864f6196285959
+scraped_at: 2026-04-29T13:39:32+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:93acb9183d13109e77159a0eaee849344307778ef6d36600c810c15ade2df1b9
 ---
 
 说明
@@ -23,7 +23,7 @@ content_hash: sha256:e39a337611b618fd0ac48fd70629a926e1715bc270726077fe864f61962
 
 数字人民币收银台展示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/9cSIgAknRjqotGlXIPsw4Q/zh-cn_image_0000002552799440.png?HW-CC-KV=V1&HW-CC-Date=20260427T235007Z&HW-CC-Expire=86400&HW-CC-Sign=3FA2C7CE16A59F9B143236F7FD02232FB91F8725025F7BA23C2AA872434C756B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/7YoL41WbRMqte9OPiUHN2w/zh-cn_image_0000002558605934.png?HW-CC-KV=V1&HW-CC-Date=20260429T053931Z&HW-CC-Expire=86400&HW-CC-Sign=D180D12E3EF6278EC5FA7B5B607DD75E51B2708774A7DE8AE4E6723BDD8C8433)
 
 ## 接入流程
 
@@ -38,13 +38,13 @@ content_hash: sha256:e39a337611b618fd0ac48fd70629a926e1715bc270726077fe864f61962
 
 开发者接入数字人民币支付服务，可以快速实现应用的数字人民币支付能力。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/QSNGuxoKTfa-BuX4X8JWZw/zh-cn_image_0000002583439135.png?HW-CC-KV=V1&HW-CC-Date=20260427T235007Z&HW-CC-Expire=86400&HW-CC-Sign=1F5526638A2254FC75881A706D9E319AFE994EFF115AEF6AC239B33C61C89CD7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/ot8-_tQuTEm65B3_bD3UAA/zh-cn_image_0000002589325461.png?HW-CC-KV=V1&HW-CC-Date=20260429T053931Z&HW-CC-Expire=86400&HW-CC-Sign=153C2742AA7ACF66C774293E78F914A0E315A2C7CE146B471CABBACED59E1BD4)
 
 1. 商户客户端请求商户服务器创建商品订单。
 2. 商户服务器按照商户模式（运营机构商户或受理服务机构商户）调用运营机构或受理服务机构提供的下单接口到数字人民币服务端下单，接口详情请参照商户合作的[运营机构或受理服务机构提供的开发指引](payment-faq-27.md)。
 3. 数字人民币服务端返回订单加密信息。
-4. 商户服务端组建订单信息参数[orderInfo](../harmonyos-references/payment-digitalcnyservice.md#ecnyorderinfo)返回给商户客户端。
-5. 商户客户端调用[requestEcnyPayment](../harmonyos-references/payment-digitalcnyservice.md#ecnypaymentservicerequestecnypayment)接口拉起Payment Kit客户端数字人民币收银台。
+4. 商户服务端组建订单信息参数[orderInfo](../harmonyos-references/payment-ecnypaymentservice.md#ecnyorderinfo)返回给商户客户端。
+5. 商户客户端调用[requestEcnyPayment](../harmonyos-references/payment-ecnypaymentservice.md#requestecnypayment)接口拉起Payment Kit客户端数字人民币收银台。
 6. Payment Kit客户端展示数字人民币支付收银台。
 7. 用户通过收银台选择数字人民币钱包完成支付，Payment Kit客户端请求数字人民币服务端处理支付。
 8. 数字人民币服务端成功受理支付订单并处理支付。
@@ -55,7 +55,7 @@ content_hash: sha256:e39a337611b618fd0ac48fd70629a926e1715bc270726077fe864f61962
 
 ## 接口说明
 
-接口返回值返回形式为Promise。具体API说明详见[接口文档](../harmonyos-references/payment-digitalcnyservice.md)。
+接口返回值返回形式为Promise。具体API说明详见[接口文档](../harmonyos-references/payment-ecnypaymentservice.md)。
 
 | 接口名 | 描述 |
 | --- | --- |
@@ -73,7 +73,7 @@ content_hash: sha256:e39a337611b618fd0ac48fd70629a926e1715bc270726077fe864f61962
 
 ### 拉起数字人民币收银台（端侧开发）
 
-商户客户端使用[orderInfo](../harmonyos-references/payment-digitalcnyservice.md#ecnyorderinfo)作为参数调用[requestEcnyPayment](../harmonyos-references/payment-digitalcnyservice.md#ecnypaymentservicerequestecnypayment)接口拉起数字人民币收银台。
+商户客户端使用[orderInfo](../harmonyos-references/payment-ecnypaymentservice.md#ecnyorderinfo)作为参数调用[requestEcnyPayment](../harmonyos-references/payment-ecnypaymentservice.md#requestecnypayment)接口拉起数字人民币收银台。
 
 当接口通过.then()方法返回时，则表示当前订单支付成功，通过.catch()方法返回表示订单支付失败。
 

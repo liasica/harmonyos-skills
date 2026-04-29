@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/performance-a
 title: Performance Analysis Kit（性能分析服务）
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务）
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:44:56+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:a1affa993338f9967ebc14347bf5bebb324fcf36abe8e365c7c442f591eb9c8e
+scraped_at: 2026-04-29T13:33:51+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:b6a55833079d8273d1ee993661d1930b6d1ddd38d7bc02f53e15a2e08098c730
 ---
 
 * **[Performance Analysis Kit简介](performance-analysis-kit-overview.md)**
@@ -21,4 +21,3 @@ content_hash: sha256:a1affa993338f9967ebc14347bf5bebb324fcf36abe8e365c7c442f591e
 * **[业务线程超时检测](hicollie.md)**
 * **[错误管理及应用恢复](error-manager.md)**
 * **[Performance Analysis Kit术语](performance-analysis-kit-terminology.md)**
-* **[命令行工具](perform-command-line-utilities.md)**

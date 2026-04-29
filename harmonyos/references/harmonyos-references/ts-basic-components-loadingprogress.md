@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: LoadingProgress
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 信息展示 > LoadingProgress
 category: harmonyos-references
-scraped_at: 2026-04-28T08:02:01+08:00
+scraped_at: 2026-04-29T13:52:20+08:00
 doc_updated_at: 2026-03-23
-content_hash: sha256:07fc55da110995958d5d804332a9ccf56e42b0f41057c206f0a77e702defed41
+content_hash: sha256:b7f7f411f604e0cfebdeac8366d7a22742e24dac23d68aa7c3949d2ed9a7225c
 ---
 
 用于显示加载动效的组件。
@@ -164,7 +164,7 @@ PhonePC/2in1TabletTVWearable
 13. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/O1e9WdiiTOODHnq2RtHrsA/zh-cn_image_0000002552959910.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000159Z&HW-CC-Expire=86400&HW-CC-Sign=637F07BCAB0269D4E1B4F0A8E3D1C3C3E6188904B9E80A351C39D12B522ABE38)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/wL2PoNGbSqKbegnchABHqw/zh-cn_image_0000002558766436.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055218Z&HW-CC-Expire=86400&HW-CC-Sign=16AB1692B432C88AADB01FC210FFDD059BBB41597BA87A57850C98993E403879)
 
 ### 示例2（设置定制内容区）
 
@@ -315,4 +315,4 @@ PhonePC/2in1TabletTVWearable
 143. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/9Pa2JUEoQoS9LDhtAeemEQ/zh-cn_image_0000002583479911.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000159Z&HW-CC-Expire=86400&HW-CC-Sign=92C52C700C7531637B387EBF932DB185F30CBBAC38ADC8A64D301923D67B0A62)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/mKskHLmUTvuUDE6VwlEeiw/zh-cn_image_0000002558606776.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055218Z&HW-CC-Expire=86400&HW-CC-Sign=E795DD18156915DDDDEC384A6F4D61592287BAE2C4B59D78A9538615C29D5BAF)

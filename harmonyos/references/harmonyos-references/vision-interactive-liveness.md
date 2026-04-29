@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/vision-in
 title: interactiveLiveness（人脸活体检测）
 breadcrumb: API参考 > AI > Vision Kit（场景化视觉服务） > ArkTS API > interactiveLiveness（人脸活体检测）
 category: harmonyos-references
-scraped_at: 2026-04-28T08:19:15+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:303f810afd2d897eb0e95323a8dbcb72b40abca338cab55449b5549714952b35
+scraped_at: 2026-04-29T14:09:51+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:15e92e1fb82396280e80907770a7b049507894834d9908474b5bf45002671adc
 ---
 
 人脸活体检测是指在一些身份验证场景中，确定对象真实生理特征的方法。
@@ -94,7 +94,7 @@ PhoneTablet
 | successfulRouteUrl | string | 否 | 是 | 表示人脸活体检测成功后跳转的页面路径。如果自定义界面，routeMode值为replace时生效。  如果不填，系统有默认的检测成功页面。 |
 | failedRouteUrl | string | 否 | 是 | 表示人脸活体检测失败后跳转的页面路径。如果自定义界面，routeMode值为replace时生效。  如果不填，系统有默认的检测失败页面。 |
 | routeMode | [RouteRedirectionMode](vision-interactive-liveness.md#routeredirectionmode) | 否 | 是 | 人脸活体检测完成后跳转模式。 |
-| challenge | string | 否 | 是 | 挑战值。仅用于安全摄像头场景（对应[initializeAttestContext](devicesecurity-taas-api.md#section166716269293)方法中的“userData”字段）的活体检测。  使用安全摄像头场景的前提需要[开通Device Security服务](../harmonyos-guides/devicesecurity-deviceverify-activateservice.md)。  长度范围是[16,128]之间（challenge传空或者undefined表示不使用安全摄像头）。  安全摄像头目前支持的设备详情请查看[约束与限制](../harmonyos-guides/devicesecurity-taas-securecamera.md#section104414218221)。 |
+| challenge | string | 否 | 是 | 挑战值。仅用于安全摄像头场景（对应[initializeAttestContext](devicesecurity-taas-api.md#initializeattestcontext)方法中的“userData”字段）的活体检测。  使用安全摄像头场景的前提需要[开通Device Security服务](../harmonyos-guides/devicesecurity-deviceverify-activateservice.md)。  长度范围是[16,128]之间（challenge传空或者undefined表示不使用安全摄像头）。  安全摄像头目前支持的设备详情请查看[约束与限制](../harmonyos-guides/devicesecurity-taas-securecamera.md#约束与限制)。 |
 | speechSwitch | boolean | 否 | 是 | 语音播报的开关。  - true表示开启语音播报。  - false表示关闭语音播报。  默认开启语音播报。 |
 | isPrivacyMode | boolean | 否 | 是 | 是否设置隐私模式。  - true：设置隐私模式。  - false：不设置隐私模式。  默认值为false。  **说明：**  当设置隐私模式时，需要申请ohos.permission.PRIVACY\_WINDOW权限。 |
 

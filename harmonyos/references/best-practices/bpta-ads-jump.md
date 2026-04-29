@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-ads-jump
 title: 广告跳转
 breadcrumb: 最佳实践 > 应用框架 > 程序框架 > 广告跳转
 category: best-practices
-scraped_at: 2026-04-28T08:20:09+08:00
+scraped_at: 2026-04-29T14:10:50+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:d961e06d9de652042b83991dbdf9c42f9e9df6771cac49c22d22e54846ae892e
+content_hash: sha256:50245d57ffcc146a5d53c2ebeed5b021165807767b37b86857e4352e1311a335
 ---
 
 ## 概述
@@ -14,7 +14,7 @@ content_hash: sha256:d961e06d9de652042b83991dbdf9c42f9e9df6771cac49c22d22e54846a
 
 典型场景：例如视频应用作为广告载体，用户在开屏广告中点击商品广告后，系统自动跳转到商城应用的商品详情页。这样既提升了广告转化率，也优化了用户体验。
 
-[](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/d8/v3/nRmm_glzR7ygTM2Y_90aQQ/zh-cn_media_0000002284717440.mp4?HW-CC-KV=V1&HW-CC-Date=20260428T002007Z&HW-CC-Expire=86400&HW-CC-Sign=FDE6024F4825D8FBB3CA2EFE866DE99EA0929B62BA2C01649B793591FF5ECEC0)
+[](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/d8/v3/nRmm_glzR7ygTM2Y_90aQQ/zh-cn_media_0000002284717440.mp4?HW-CC-KV=V1&HW-CC-Date=20260429T061048Z&HW-CC-Expire=86400&HW-CC-Sign=FBFD9167D644839F02EFFCBB36DBB7FF674D12481314D7056B79F24D49C060A3)
 
 Video Player is loading.
 
@@ -69,7 +69,7 @@ End of dialog window.
 
 广告跳转的流程图如下所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/H0piLtf6THCgCeiR9Xb0ng/zh-cn_image_0000002319470037.png?HW-CC-KV=V1&HW-CC-Date=20260428T002007Z&HW-CC-Expire=86400&HW-CC-Sign=FD5AA20F99C4719FEC43239387AD470D9CFBB3C5ED4AFDECD1751FCAD8706153 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/H0piLtf6THCgCeiR9Xb0ng/zh-cn_image_0000002319470037.png?HW-CC-KV=V1&HW-CC-Date=20260429T061048Z&HW-CC-Expire=86400&HW-CC-Sign=9D6BE67BC65F7F85C6E0FC9FA6E42980BB2B281A9BD1072179D1C02235F65436 "点击放大")
 
 跳转过程基于[App Linking](../harmonyos-guides/app-linking-startup.md)能力，分为几种情况：
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 修改数字盾密码
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 数字盾服务 > 数字盾密码管理 > 修改数字盾密码
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:42:57+08:00
+scraped_at: 2026-04-29T13:31:33+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:6d44371353e72a63683d0a5acc08e8130e716486baa6100333dd6065898e7086
+content_hash: sha256:d7ae47e0fa2ccf7ec7b7b5a586e4bbadd7364821bd07d5631c9e458b5b4daecf
 ---
 
 ## 场景介绍
@@ -18,7 +18,7 @@ content_hash: sha256:6d44371353e72a63683d0a5acc08e8130e716486baa6100333dd6065898
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/Q9A4xcN1Rf2Gz2l0YZ-aaA/zh-cn_image_0000002583478391.jpg?HW-CC-KV=V1&HW-CC-Date=20260427T234255Z&HW-CC-Expire=86400&HW-CC-Sign=9F9A500A1607E86DBFA188A73AC12DD2FB960C4F5D62198A608ECDEB61CC3F52)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/pGvrXBcYQ8qWodwbV4ZXYQ/zh-cn_image_0000002589244695.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053132Z&HW-CC-Expire=86400&HW-CC-Sign=17FD60E422CA1371B8B50AB90188BF79C12471D28720E0030EA860CA2C86FD7E)
 
 ## 接口说明
 
@@ -34,11 +34,11 @@ content_hash: sha256:6d44371353e72a63683d0a5acc08e8130e716486baa6100333dd6065898
 
 **图1** 旧密码认证
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/PapYKn4pQwydiPsu4wuK1Q/zh-cn_image_0000002552798742.png?HW-CC-KV=V1&HW-CC-Date=20260427T234255Z&HW-CC-Expire=86400&HW-CC-Sign=07359710BFB071BDFF98E5511F38C3F5A1E52A6E9326C80E95DF7143644D5F77)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/u10Cnz4nRoev1gYzeDaXTg/zh-cn_image_0000002558764890.png?HW-CC-KV=V1&HW-CC-Date=20260429T053132Z&HW-CC-Expire=86400&HW-CC-Sign=89AC82D75E6422FFEFA6653DE0D849F5F23532FD02BD01255DBE7FEB9C00725C)
 
 **图2** 新密码设置
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/g8tiqDARRBSMgQruV7Kvzw/zh-cn_image_0000002583438437.png?HW-CC-KV=V1&HW-CC-Date=20260427T234255Z&HW-CC-Expire=86400&HW-CC-Sign=0B0A0F4342D7DB87984A11D8D5E2B4C4E3B67C07F7116F547F3C1729038F579D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/8GDPItY2RYOhrjnbILfHUg/zh-cn_image_0000002558605234.png?HW-CC-KV=V1&HW-CC-Date=20260429T053132Z&HW-CC-Expire=86400&HW-CC-Sign=3EEF80AF3532BC2F99C577BC1E1A46735EE9364E6E9786B587F4CDF8959B0E12)
 
 ## 开发步骤
 

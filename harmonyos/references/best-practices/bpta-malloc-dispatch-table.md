@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-malloc-dis
 title: 内存泄漏定制能力开放使用指导
 breadcrumb: 最佳实践 > 稳定性 > 稳定性检测 > 开发态稳定性检测 > 资源泄漏类问题检测 > 内存泄漏类问题检测方法 > 内存泄漏定制能力开放使用指导
 category: best-practices
-scraped_at: 2026-04-28T08:22:51+08:00
+scraped_at: 2026-04-29T14:14:03+08:00
 doc_updated_at: 2026-03-19
-content_hash: sha256:76ceeff56585a8cd8313d4570e2ec3ff36698d970d017034b2948c63be07912d
+content_hash: sha256:7390b62956c013675791702bb47ec32a6d20f04bf6d4d680609ee6b6130cd083
 ---
 
 ## 概述
@@ -32,7 +32,7 @@ MallocDispatchTable简称内存分配表，提供对HarmonyOS [libc标准库](..
 
 如下图示例，开发者可使用自定义函数替换标准库函数，应用程序调用标准库函数时实际上执行的是自定义的函数。通过MallocDispatchTable里的函数指针，调用标准库函数时可以重定向到自定义的函数。MallocDispatchTable的主要功能在于将标准库函数的实现和自定义函数进行解耦。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/hIqhdykLT2mT-x44ljugjQ/zh-cn_image_0000002501437914.png?HW-CC-KV=V1&HW-CC-Date=20260428T002250Z&HW-CC-Expire=86400&HW-CC-Sign=AE9B0B0CB604C5021A7D2F0B64637885C6C4AF8DEF916863EE21356CABCEA373)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/hIqhdykLT2mT-x44ljugjQ/zh-cn_image_0000002501437914.png?HW-CC-KV=V1&HW-CC-Date=20260429T061402Z&HW-CC-Expire=86400&HW-CC-Sign=F4E36C70E2BFD0C531B7DB5D583B2D93FADB3585E0931E6E7EF32F93E93604B8)
 
 开发人员可使用提供的[OH\_HiDebug\_SetMallocDispatchTable()](../harmonyos-references/capi-hidebug-h.md#oh_hidebug_setmallocdispatchtable)接口设置libc标准库中使用的MallocDispatchTable；使用[OH\_HiDebug\_GetDefaultMallocDispatchTable()](../harmonyos-references/capi-hidebug-h.md#oh_hidebug_getdefaultmallocdispatchtable)接口获取libc中默认的MallocDispatchTable。
 

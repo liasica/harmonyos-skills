@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-er
 title: 配置错误码
 breadcrumb: 指南 > 构建应用 > 构建报错排查 > 编译构建错误码 > 配置错误码
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:57:26+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:573296f2eda0b7d0ab6528bf71a0066fe30a0b74c272d0231dd7da5430ec59d0
+scraped_at: 2026-04-29T13:47:25+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:c9169435bb0232e0a9bb8806dc9dd4b022642d39eb5ecb23fab799268e00bd7b
 ---
 
 ## 00303002 找不到某个任务对应的模块
@@ -3221,11 +3221,12 @@ Signature material verification failed, as: XXX.
 
 **可能原因**
 
-签名材料损坏。
+build-profile.json5中签名字段信息不完整或者签名材料损坏。
 
 **处理步骤**
 
-点击**File > Project Structure > Project > Signing Configs**重新签名。
+1. 点击**File > Project Structure > Project > Signing Configs**重新签名。
+2. 如果构建还是报错，说明您的material文件已经损坏，请访问C:\Users\用户名\.ohos\config （macOS路径为/Users/用户名/.ohos/config）删除material文件夹，然后点击**File > Project Structure > Project > Signing Configs**重新签名。
 
 ## 00303243 ability名称无效
 
@@ -3889,3 +3890,25 @@ hvigor命令行参数buildVersion不符合要求。
 **处理步骤**
 
 确保buildVersion是一个有效值，具体要求请参考[app.json5的buildVersion](app-configuration-file.md#配置文件标签)。
+
+## 00303287 -DOHOS\_COMPATIBLE\_SDK\_VERSION和compatibleSdkVersion不一致
+
+**错误信息**
+
+The '-DOHOS\_COMPATIBLE\_SDK\_VERSION=XXX' parameter configured under externalNativeOptions in the current module's build-profile.json5 is inconsistent with the 'compatibleSdkVersion=YYY' set in the project-level build-profile.json5, which will cause unexpected runtime and build behaviors. At file: ZZZ.
+
+**错误描述**
+
+当前模块build-profile.json5的externalNativeOptions下配置的-DOHOS\_COMPATIBLE\_SDK\_VERSION和工程级build-profile.json5中的compatibleSdkVersion不一致。
+
+**可能原因**
+
+-DOHOS\_COMPATIBLE\_SDK\_VERSION配置错误。
+
+**处理步骤**
+
+详细处理步骤请参考[C API兼容性保护](../harmonyos-releases/c-api-compatibility-warning-elim.md)，需要满足以下几个条件：
+
+1. 修改 '-DOHOS\_COMPATIBLE\_SDK\_VERSION=XXX' 参数，使其符合x.x.x格式。
+2. 确保 '-DOHOS\_COMPATIBLE\_SDK\_VERSION=XXX' 与compatibleSdkVersion转换的值保持一致。
+3. 若编译过程中使用了其他非Hvigor构建工具（如Bazel、GN等），需要手动添加对应的编译器构建参数。

@@ -3,18 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/car-preparati
 title: 开发准备
 breadcrumb: 指南 > 系统 > 硬件 > Car Kit（车服务） > 开发准备
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:44:34+08:00
+scraped_at: 2026-04-29T13:33:28+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:0a80497b9b73749720f467f9f42160197017aadaf68026b05bc16e4c98472241
+content_hash: sha256:d62431dc793c53e9608f2091d67a891369d6ffc130fc6cf9017f020cd46edd89
 ---
 
 应用在使用Car Kit能力前，开发者需要完成的配置：配置编译模式、配置权限、配置能力。
 
 ## 配置编译模式
 
-在打包应用时，请在DevEco Studio中，点击右上角![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/sfERdRKKTZCYN-37Wm9vvg/zh-cn_image_0000002583438511.png?HW-CC-KV=V1&HW-CC-Date=20260427T234433Z&HW-CC-Expire=86400&HW-CC-Sign=4DBCF94488AEC1AFE9AD14937EA679C1F66C4753302A9E374746A73D780208A9)图标，将编译模式修改为“release”，然后点击右下角的“Apply”即可。
+在打包应用时，请在DevEco Studio中，点击右上角![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/_1_ObhKjTv20vrJDf-2O7w/zh-cn_image_0000002589244771.png?HW-CC-KV=V1&HW-CC-Date=20260429T053327Z&HW-CC-Expire=86400&HW-CC-Sign=30CDE01AFD5BED559A9A35FDDD15C2A6DF0FB31BF5C232F4F7E4D2313C58ED76)图标，将编译模式修改为“release”，然后点击右下角的“Apply”即可。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/F2HrmWkpSvGS3_PWD6F7Cw/zh-cn_image_0000002552958466.png?HW-CC-KV=V1&HW-CC-Date=20260427T234433Z&HW-CC-Expire=86400&HW-CC-Sign=611A9DBA5F105D3273F2BEFA843605D92F6E0081723A656364712E8B6F535A25)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/SwNvxjUkT_2sGs39heTawQ/zh-cn_image_0000002558764966.png?HW-CC-KV=V1&HW-CC-Date=20260429T053327Z&HW-CC-Expire=86400&HW-CC-Sign=5442CF52583932CE75AF0352D9FD6A957441D82DE7A043BE2ECCACE85686CC5D)
 
 ## 配置权限
 

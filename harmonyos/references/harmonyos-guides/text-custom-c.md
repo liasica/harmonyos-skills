@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/text-custom-c
 title: 自定义文本绘制与显示（C/C++）
 breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 文本 > 文本绘制与显示 > 自定义文本绘制与显示（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:47:17+08:00
+scraped_at: 2026-04-29T13:36:17+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:c4793eee3cac555326e26ebff1ab2440dcd4f30b590d8e8382c96d541f287e7f
+content_hash: sha256:587633d8d8cd057a80c9440976e44ccf65150838d07dc2f6928cd6ae6a603e7b
 ---
 
 在复杂的文本排版场景中，当系统提供的标准文本组件无法满足特定的视觉或交互需求时，开发者可以利用ArkGraphics 2D提供的底层文本绘制能力，通过直接控制画布（Canvas）和文本样式，实现对文本外观、布局的精细控制。这种能力适用于需要高度定制化文本渲染效果的场景，例如艺术字体、复杂的富文本编排或特殊的动态文字效果。
@@ -170,4 +170,4 @@ content_hash: sha256:c4793eee3cac555326e26ebff1ab2440dcd4f30b590d8e8382c96d541f2
 
 效果展示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/waE7Ar7JQ0ytjiar-30Zzg/zh-cn_image_0000002583478699.png?HW-CC-KV=V1&HW-CC-Date=20260427T234716Z&HW-CC-Expire=86400&HW-CC-Sign=2CEE84981B251CA6DAA016C3E02CA5DFFB418E5C2056000F0ABA14E156229A4F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/QzwQMMSOQay7KHKlWDKFqg/zh-cn_image_0000002558605542.png?HW-CC-KV=V1&HW-CC-Date=20260429T053615Z&HW-CC-Expire=86400&HW-CC-Sign=E129FE1988A4EA4BBEE81EC86D1EB10DFEA7992C5DA83731BC20BC79004DAAAE)

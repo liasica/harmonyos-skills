@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-c
 title: @ohos.security.certManagerDialog (证书管理对话框模块)
 breadcrumb: API参考 > 系统 > 安全 > Device Certificate Kit（设备证书服务） > ArkTS API > @ohos.security.certManagerDialog (证书管理对话框模块)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:07:36+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:6f278cd52cc0323c0a4b8fb9da07da2e85351c79c9a303501ce895a9c763ff7e
+scraped_at: 2026-04-29T13:58:03+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:0bfbef9196f0d10961179225e2f1b35a2860884d9e4ef33ad02f53eb4fcb4bdd
 ---
 
 证书管理对话框主要提供拉起证书管理界面的能力，用户在拉起的证书管理对话框可对证书进行管理（安装，存储，使用，销毁）。
@@ -69,7 +69,7 @@ PhonePC/2in1Tablet
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| NOT\_SPECIFIED18+ | 0 | 未指定用户。 |
+| NOT\_SPECIFIED18+ | 0 | 不指定使用范围。 |
 | CURRENT\_USER | 1 | 当前用户。 |
 | GLOBAL\_USER18+ | 2 | 公共目录。 |
 
@@ -157,7 +157,7 @@ PhonePC/2in1Tablet
 
 openCertificateManagerDialog(context: common.Context, pageType: CertificateDialogPageType): Promise<void>
 
-表示拉起证书管理对话框，显示相应的页面，使用Promise方式异步返回结果。
+表示拉起证书管理对话框，显示相应的页面。使用Promise异步回调。
 
 **需要权限：** ohos.permission.ACCESS\_CERT\_MANAGER
 
@@ -217,7 +217,7 @@ PhonePC/2in1Tablet
 
 openInstallCertificateDialog(context: common.Context, certType: CertificateType, certScope: CertificateScope, cert: Uint8Array): Promise<string>
 
-表示拉起证书管理安装证书向导，显示相应的页面，使用Promise方式异步返回结果。
+表示拉起证书管理安装证书向导，显示相应的页面。使用Promise异步回调。
 
 **需要权限：** ohos.permission.ACCESS\_CERT\_MANAGER
 
@@ -291,7 +291,7 @@ PhonePC/2in1Tablet
 
 openUninstallCertificateDialog(context: common.Context, certType: CertificateType, certUri: string): Promise<void>
 
-表示拉起证书管理删除证书向导，显示相应的页面，使用Promise方式异步返回结果。
+表示拉起证书管理删除证书向导，显示相应的页面。使用Promise异步回调。
 
 **需要权限：** ohos.permission.ACCESS\_CERT\_MANAGER
 
@@ -360,7 +360,7 @@ PhonePC/2in1Tablet
 
 openCertificateDetailDialog(context: common.Context, cert: Uint8Array, property: CertificateDialogProperty): Promise<void>
 
-表示拉起证书管理对话框显示证书的详情，使用Promise方式异步返回结果。
+表示拉起证书管理对话框显示证书的详情。使用Promise异步回调。
 
 **需要权限：** ohos.permission.ACCESS\_CERT\_MANAGER
 
@@ -430,7 +430,7 @@ PhonePC/2in1Tablet
 
 openAuthorizeDialog(context: common.Context): Promise<string>
 
-打开证书管理对话框的授权页面。在弹出的页面中，用户可以为应用授权证书。使用Promise方式异步返回结果。
+打开证书管理对话框的授权页面。在弹出的页面中，用户可以为应用授权证书。使用Promise异步回调。
 
 **需要权限：** ohos.permission.ACCESS\_CERT\_MANAGER
 

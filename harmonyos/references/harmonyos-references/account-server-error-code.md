@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/account-s
 title: REST API错误码
 breadcrumb: API参考 > 应用服务 > Account Kit（华为账号服务） > REST API > REST API错误码
 category: harmonyos-references
-scraped_at: 2026-04-28T08:16:16+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:3c44c2586a3259859f1a7965eba2a8b9a39d2b1a8a0f906417f133e051cb536b
+scraped_at: 2026-04-29T14:06:55+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:64756832fdda4d078491b9c755d81f7c31c838ddbf55552a51886234576657c9
 ---
 
 ## 获取用户级凭证/刷新用户级凭证/获取应用级凭证
@@ -208,7 +208,7 @@ Response Header中的NSP\_STATUS字段，在处理成功时不会返回。
 
 | errCode | 描述 | 解决方法 |
 | --- | --- | --- |
-| 6 | 会话失效，session timeout。  可能原因:  - access\_token无效或已过期。  - access\_token格式不正确。  - 其他内部原因。 | - 请检查传参是否正确，如无问题请尝试重新获取。  - 本接口请求数据格式为 application/json;charset=utf-8，在构造请求体时，请确保不对access\_token参数进行URLEncode处理，可参考[示例代码](account-api-getuserrisklevel.md#section1888515151299)组装参数。  - 根据返回的错误描述进行处理，若仍无法解决，请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。 |
+| 6 | 会话失效，session timeout。  可能原因:  - access\_token无效或已过期。  - access\_token格式不正确。  - 其他内部原因。 | - 请检查传参是否正确，如无问题请尝试重新获取。  - 本接口请求数据格式为 application/json;charset=utf-8，在构造请求体时，请确保不对access\_token参数进行URLEncode处理，可参考[示例代码](account-api-getuserrisklevel.md#示例代码)组装参数。  - 根据返回的错误描述进行处理，若仍无法解决，请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。 |
 | 403 | 无权访问 | 请前往AppGallery Connect（简称AGC）为应用申请开放权限，详见[申请账号权限](../harmonyos-guides/account-config-permissions.md)。 |
 | 503 | 触发系统流控。 | 请稍后重试。 |
 | 70001201 | 请求参数错误 | 修改请求url或者请求体中的参数。 |

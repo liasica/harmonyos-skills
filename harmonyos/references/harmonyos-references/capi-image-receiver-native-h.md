@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-imag
 title: image_receiver_native.h
 breadcrumb: API参考 > 媒体 > Image Kit（图片处理服务） > C API > 头文件 > image_receiver_native.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:13:17+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:fe5a4ed04b066c8f94b050f3b925e39daaf904aea6f3824e7320ef1c1f48a1f5
+scraped_at: 2026-04-29T14:03:54+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:52f5fbe1f474e820c763bbc0fd2e6d77aeefb1345d253de9fff6a7052e91f69f
 ---
 
 ## 概述
@@ -221,7 +221,7 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | [OH\_ImageReceiverOptions](capi-image-nativemodule-oh-imagereceiveroptions.md)\* options | 表示OH\_ImageReceiverOptions对象的指针。 |
-| int32\_t capacity | 表示图片缓存容量对象的指针。 |
+| int32\_t capacity | 表示图片缓存容量值。 |
 
 **返回：**
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/vision-docume
 title: 文档扫描
 breadcrumb: 指南 > AI > Vision Kit（场景化视觉服务） > 文档扫描
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:53:55+08:00
+scraped_at: 2026-04-29T13:43:50+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:7d87b184e056a4f550fde761219c1ad7eefd26c426bd2e332205175c65563986
+content_hash: sha256:6b6de4cff8c9a042eb3de583a7a7780dcb47304a73e6fa7eb83c9282f4ab6447
 ---
 
 ## 场景介绍
@@ -16,7 +16,7 @@ content_hash: sha256:7d87b184e056a4f550fde761219c1ad7eefd26c426bd2e332205175c655
 
 **图1** 文档扫描示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/usA5giFpRI-alLIxD8JKWQ/zh-cn_image_0000002552799704.png?HW-CC-KV=V1&HW-CC-Date=20260427T235354Z&HW-CC-Expire=86400&HW-CC-Sign=4093353F473F677BB8BE5AF567CB64FABD7330EC8CB362212C4063F4682C1627)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/vpSzyJnZT4abPtRgtKVuIA/zh-cn_image_0000002558606198.png?HW-CC-KV=V1&HW-CC-Date=20260429T054101Z&HW-CC-Expire=86400&HW-CC-Sign=107C66985B825C5D58DD66ED27194B3BCEE22169CC5CB792A8ACBB50A382CE29)
 
 ## 约束与限制
 

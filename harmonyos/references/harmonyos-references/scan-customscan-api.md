@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/scan-cust
 title: customScan (自定义界面扫码)
 breadcrumb: API参考 > 媒体 > Scan Kit（统一扫码服务） > ArkTS API > customScan (自定义界面扫码)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:14:25+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:c29e106688f8c1bea8746df7c89854a22de08b493898d03c6d4cac017df5b158
+scraped_at: 2026-04-29T14:05:02+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:14dbc86537c6afb7443aea10890f13cb598679513b240a1a773432d83c44d4fc
 ---
 
 本模块提供自定义界面扫码能力。
@@ -67,7 +67,7 @@ PhoneTabletWearable
 19. controller: this.mXComponentController
 20. })
 21. .onLoad(() => {
-22. hilog.info(0x0001, '[Scan Sample]', 'onLoad is called')
+22. hilog.info(0x0001, '[Scan Sample]', 'onLoad is called');
 23. // 获取XComponent的surfaceId
 24. let surfaceId: string = this.mXComponentController.getXComponentSurfaceId();
 25. hilog.info(0x0001, 'viewControl', `onLoad surfaceId: ${surfaceId}`);
@@ -84,7 +84,7 @@ PhoneTabletWearable
 36. }).catch((err: BusinessError) => {
 37. hilog.error(0x0001, '[Scan Sample]',
 38. `Failed to get ScanResult by promise. Code: ${err.code}, message: ${err.message}`);
-39. })
+39. });
 40. } catch (err) {
 41. hilog.error(0x0001, '[Scan Sample]',
 42. `Failed to start customScan. Code: ${err.code}, message: ${err.message}`);
@@ -143,7 +143,7 @@ PhoneTabletWearable
 19. }
 20. hilog.info(0x0001, '[Scan Sample]',
 21. `Succeeded in getting ScanResult by callback, result is ${JSON.stringify(data)}`);
-22. }
+22. };
 23. // 回调获取ScanFrame
 24. private frameCallback: AsyncCallback<customScan.ScanFrame> =
 25. (err: BusinessError, frameResult: customScan.ScanFrame) => {
@@ -157,7 +157,7 @@ PhoneTabletWearable
 33. `Succeeded in getting ScanFrame.byteBuffer.byteLength:  ${frameResult.byteBuffer.byteLength}`);
 34. hilog.info(0x0001, '[Scan Sample]',
 35. `Succeeded in getting ScanFrame.scanCodeRect: ${JSON.stringify(frameResult.scanCodeRects)}`);
-36. }
+36. };
 
 38. build() {
 39. Stack() {
@@ -343,9 +343,9 @@ start(viewControl: ViewControl): Promise<Array<scanBarcode.ScanResult>>
 6. @Component
 7. struct CustomScanPage {
 8. // 设置预览流高度，默认单位：vp
-9. @State cameraHeight: number = 640
+9. @State cameraHeight: number = 640;
 10. // 设置预览流宽度，默认单位：vp
-11. @State cameraWidth: number = 360
+11. @State cameraWidth: number = 360;
 12. private mXComponentController: XComponentController = new XComponentController();
 
 14. build() {
@@ -459,18 +459,18 @@ start(viewControl: ViewControl, callback: AsyncCallback<Array<scanBarcode.ScanRe
 20. }
 21. hilog.info(0x0001, '[Scan Sample]',
 22. `Succeeded in getting ScanResult by callback, result is ${JSON.stringify(data)}`);
-23. }
+23. };
 24. // 回调获取ScanFrame
 25. private frameCallback: AsyncCallback<customScan.ScanFrame> =
-26. (err: BusinessError, scanFrame: customScan.ScanFrame) => {
+26. (err: BusinessError, data: customScan.ScanFrame) => {
 27. if (err) {
 28. hilog.error(0x0001, '[Scan Sample]',
 29. `Failed to get ScanFrame by callback. Code: ${err.code}, message: ${err.message}`);
 30. return;
 31. }
 32. hilog.info(0x0001, '[Scan Sample]',
-33. `Succeeded in getting ScanFrame by callback, scanFrame is ${JSON.stringify(scanFrame)}`);
-34. }
+33. `Succeeded in getting ScanFrame by callback, scanFrame is ${JSON.stringify(data)}`);
+34. };
 
 36. build() {
 37. Stack() {
@@ -906,7 +906,7 @@ on(type: 'lightingFlash', callback: AsyncCallback<boolean>): void
 9. return;
 10. }
 11. hilog.info(0x0001, '[Scan Sample]', `Succeeded in lighting Flash by callback, bool is ${bool}`);
-12. }
+12. };
 
 14. try {
 15. customScan.on('lightingFlash', callback);
@@ -963,7 +963,7 @@ off(type: 'lightingFlash', callback?: AsyncCallback<boolean>): void
 9. return;
 10. }
 11. hilog.info(0x0001, '[Scan Sample]', `Succeeded in cancelling Flash by callback, bool is ${bool}`);
-12. }
+12. };
 13. // 可以不填callback，取消lightingFlash所有监听。填写callback，必须保持和customScan.on中监听的事件保持一致
 14. try {
 15. customScan.off('lightingFlash', callback);
@@ -1033,7 +1033,7 @@ rescan(): void
 27. hilog.error(0x0001, '[Scan Sample]',
 28. `Failed to rescan customScan. Code: ${err.code}, message: ${err.message}`);
 29. }
-30. }
+30. };
 
 32. build() {
 33. Stack() {
@@ -1217,7 +1217,7 @@ stop(callback: AsyncCallback<void>): void
 10. return;
 11. }
 12. hilog.info(0x0001, '[Scan Sample]', 'Succeeded in stopping scan by callback');
-13. })
+13. });
 14. } catch (err) {
 15. hilog.error(0x0001, '[Scan Sample]',
 16. `Failed to stop customScan. Code: ${err.code}, message: ${err.message}`);
@@ -1269,7 +1269,7 @@ release(): Promise<void>
 8. }).catch((err: BusinessError) => {
 9. hilog.error(0x0001, '[Scan Sample]',
 10. `Failed to release scan by promise. Code: ${err.code}, message: ${err.message}`);
-11. })
+11. });
 12. } catch (err) {
 13. hilog.error(0x0001, '[Scan Sample]',
 14. `Failed to release customScan. Code: ${err.code}, message: ${err.message}`);

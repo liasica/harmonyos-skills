@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/multi-business-
 title: 多设备商务办公界面
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 > 多设备界面开发案例 > 多设备商务办公界面
 category: best-practices
-scraped_at: 2026-04-28T08:21:14+08:00
+scraped_at: 2026-04-29T14:12:21+08:00
 doc_updated_at: 2026-03-26
-content_hash: sha256:9b716657f44e538d0a23bbbdb7123f154a5d4bae02106b8d0cbcef008ba23cd8
+content_hash: sha256:ac17b6af6b2e0875f01b51bd7778b740f032f8181ed67617193c51de0d34a7c2
 ---
 
 ## 概述
@@ -38,7 +38,7 @@ content_hash: sha256:9b716657f44e538d0a23bbbdb7123f154a5d4bae02106b8d0cbcef008ba
 
 本示例中的商务办公应用包含入口、备忘录、笔记汇总、笔记、日历等页面。以平板端为例，应用的基本业务逻辑如下所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/-QJaTpWrRlSOIvo1GE4ARw/zh-cn_image_0000002229337365.png?HW-CC-KV=V1&HW-CC-Date=20260428T002107Z&HW-CC-Expire=86400&HW-CC-Sign=C30EFD6336258084DABB6DD6D115D2D5E7329E6797DA78CFE6EE546E331A21C7 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/-QJaTpWrRlSOIvo1GE4ARw/zh-cn_image_0000002229337365.png?HW-CC-KV=V1&HW-CC-Date=20260429T061210Z&HW-CC-Expire=86400&HW-CC-Sign=D84A6CE1E5EDA26AB5595798ECCA407C53BABCCF0369719F520A410F7D13A45A "点击放大")
 
 ## 架构设计
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pdf-pdfview-p
 title: PDF缩略图转换为图片
 breadcrumb: 指南 > 应用服务 > PDF Kit（PDF服务） > PdfView预览组件 > PDF缩略图转换为图片
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:50:24+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:4f42e3854e550f1df97d4345f32d0451b9627149ac69d9294bc8a485d01220de
+scraped_at: 2026-04-29T13:39:47+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:b262e68148d3dfc8fae8e9d8b3a2e11ae42ece3e7d2d32bdfce178d7a72dd588
 ---
 
 ## 场景介绍
@@ -39,8 +39,8 @@ content_hash: sha256:4f42e3854e550f1df97d4345f32d0451b9627149ac69d9294bc8a485d01
 12. private loadResult: pdfService.ParseResult = pdfService.ParseResult.PARSE_ERROR_FORMAT;
 
 14. aboutToAppear(): void {
-15. // 确保沙箱目录有input.pdf文档
-16. let filePath = this.context.filesDir + '/input.pdf';
+15. // 确保在工程目录src/main/resources/resfile里存在input.pdf文档
+16. let filePath = this.context.resourceDir + '/input.pdf';
 17. (async () => {
 18. this.loadResult = await this.controller.loadDocument(filePath);
 19. })()

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-v1-v2-m
 title: 应用内状态变量迁移
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理V1-V2迁移指导 > 状态管理V1向V2迁移场景 > 应用内状态变量迁移
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:39:16+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:7b69cac0051032c5b519c3efd0e056739c3850bee65aec385e624cc8e5fb03df
+scraped_at: 2026-04-29T13:27:27+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:886e8a406dbc66db920cc800d064f3da52245e58c8a0f24da940d5dc050dc9a4
 ---
 
 本文档主要介绍应用内状态变量迁移，包含以下场景。
@@ -142,18 +142,19 @@ V2:
 * 声明被@Trace的属性作为页面间共享的可观察的数据。
 
 ```
-1. @ObservedV2
-2. export class MyStorage {
-3. public static singleton_: MyStorage;
+1. // 声明@ObservedV2装饰的MyStorage类
+2. @ObservedV2
+3. export class MyStorage {
+4. public static singleton_: MyStorage;
 
-5. static instance() {
-6. if (!MyStorage.singleton_) {
-7. MyStorage.singleton_ = new MyStorage();
-8. }
-9. return MyStorage.singleton_;
-10. }
-11. @Trace public count: number = 47;
-12. }
+6. static instance() {
+7. if (!MyStorage.singleton_) {
+8. MyStorage.singleton_ = new MyStorage();
+9. }
+10. return MyStorage.singleton_;
+11. }
+12. @Trace public count: number = 47;
+13. }
 ```
 
 [storage.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/internalmigrate/Internal@ObservedV2@TraceV2/storage.ets#L15-L28)
@@ -576,34 +577,35 @@ V2：
 声明@ObservedV2装饰的class代替LocalStorage。其中LocalStorage的key可以用@Trace装饰的属性代替。
 
 ```
-1. @ObservedV2
-2. export class MyStorageA {
-3. @Trace public propA: string = 'Hello';
+1. // @ObservedV2装饰的class代替LocalStorage
+2. @ObservedV2
+3. export class MyStorageA {
+4. @Trace public propA: string = 'Hello';
 
-5. constructor(propA?: string) {
-6. this.propA = propA ? propA : this.propA;
-7. }
+6. constructor(propA?: string) {
+7. this.propA = propA ? propA : this.propA;
 8. }
+9. }
 
-10. @ObservedV2
-11. export class MyStorageB extends MyStorageA {
-12. @Trace public propB: string = 'Hello';
+11. @ObservedV2
+12. export class MyStorageB extends MyStorageA {
+13. @Trace public propB: string = 'Hello';
 
-14. constructor(propB: string) {
-15. super();
-16. this.propB = propB;
-17. }
+15. constructor(propB: string) {
+16. super();
+17. this.propB = propB;
 18. }
+19. }
 
-20. @ObservedV2
-21. export class MyStorageC extends MyStorageA {
-22. @Trace public propC: string = 'Hello';
+21. @ObservedV2
+22. export class MyStorageC extends MyStorageA {
+23. @Trace public propC: string = 'Hello';
 
-24. constructor(propC: string) {
-25. super();
-26. this.propC = propC;
-27. }
+25. constructor(propC: string) {
+26. super();
+27. this.propC = propC;
 28. }
+29. }
 ```
 
 [storage.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/internalmigrate/InternalTraceCustomize/storage.ets#L15-L44)
@@ -1294,17 +1296,18 @@ V2:
 3. import { env } from '../pages/Env';
 
 5. export default class EntryAbility extends UIAbility {
-6. onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
-7. env.language = this.context.config.language;
-8. env.colorMode = this.context.config.colorMode;
-9. env.fontSizeScale = this.context.config.fontSizeScale;
-10. env.fontWeightScale = this.context.config.fontWeightScale;
-11. }
+6. // 在onCreate里获取需要的系统环境变量
+7. onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
+8. env.language = this.context.config.language;
+9. env.colorMode = this.context.config.colorMode;
+10. env.fontSizeScale = this.context.config.fontSizeScale;
+11. env.fontWeightScale = this.context.config.fontWeightScale;
+12. }
 
-13. onWindowStageCreate(windowStage: window.WindowStage): void {
-14. windowStage.loadContent('pages/Index');
-15. }
+14. onWindowStageCreate(windowStage: window.WindowStage): void {
+15. windowStage.loadContent('pages/Index');
 16. }
+17. }
 ```
 
 [EntryAbility.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/internalmigrate/InternalEnvironmentV2/EntryAbility.ets#L15-L32)

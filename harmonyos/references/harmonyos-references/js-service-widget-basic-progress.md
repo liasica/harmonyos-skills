@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-servic
 title: progress
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > JS服务卡片UI组件 > 基础组件 > progress
 category: harmonyos-references
-scraped_at: 2026-04-28T08:03:40+08:00
+scraped_at: 2026-04-29T13:54:02+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:e81c36d9ede29f829bf2b287e5ad8b5d1d707a913caf29046aec35cb3fb6bca7
+content_hash: sha256:86ea1e60dbba58c5e232ec7d9c0bee16582bc5974cdb2bb754f770d570efb759
 ---
 
 进度条，用于显示内容加载或操作的处理进度。
@@ -130,4 +130,4 @@ PhonePC/2in1TabletTVWearable
 
 **4\*4卡片**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/0v87e7_QT8e7n6TbrM2GRA/zh-cn_image_0000002552960432.png?HW-CC-KV=V1&HW-CC-Date=20260428T000339Z&HW-CC-Expire=86400&HW-CC-Sign=D22B2CC5109A662D1DDB32070C0F706849E9E599AB780CC9BB7AC46F5A853129)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/MRZ1c_ufSt-_AsOpvPiRTw/zh-cn_image_0000002558607298.png?HW-CC-KV=V1&HW-CC-Date=20260429T055401Z&HW-CC-Expire=86400&HW-CC-Sign=4D50C10FA340E1507763CD2F76516F93BB86E3432DB9E4726BBAEDD58F3C2902)

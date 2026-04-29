@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ads-real-time
 title: 实时竞价
 breadcrumb: 指南 > 应用服务 > Ads Kit（广告服务） > 流量变现服务开发 > 实时竞价
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:48:12+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:c6f363908e7df5c65f708cd41308e8497ac2f2ee10e81e8474d03ac1f317aea8
+scraped_at: 2026-04-29T13:37:05+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:30d5b40dea845812e36a68a4243823da3e0c2ec334e52f9f361e33f7d26f5dd7
 ---
 
 ## 场景介绍
@@ -74,7 +74,7 @@ content_hash: sha256:c6f363908e7df5c65f708cd41308e8497ac2f2ee10e81e8474d03ac1f31
 
 ### 处理竞价结果
 
-开发者需要在广告请求成功后的回调AdLoadListener.[onAdLoadSuccess](../harmonyos-references/js-apis-advertising.md#onadloadsuccess)或MultiSlotsAdLoadListener.[onAdLoadSuccess](../harmonyos-references/js-apis-advertising.md#onadloadsuccess)中，处理广告返回的实时竞价结果[Advertisement](../harmonyos-references/js-apis-advertising.md#advertisement).biddingInfo。
+开发者需要在广告请求成功后的回调AdLoadListener.[onAdLoadSuccess](../harmonyos-references/js-apis-advertising.md#onadloadsuccess)或MultiSlotsAdLoadListener.[onAdLoadSuccess](../harmonyos-references/js-apis-advertising.md#onadloadsuccess)中，处理广告返回的实时竞价结果[Advertisement](../harmonyos-references/js-apis-advertisement.md#advertisement).biddingInfo。
 
 实时竞价结果信息如下所示：
 

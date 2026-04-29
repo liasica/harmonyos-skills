@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: 编译报错“Invalid tag 'xxx' at 'xxx/xxx.json5'.”
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 编译报错“Invalid tag 'xxx' at 'xxx/xxx.json5'.”
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:29:40+08:00
+scraped_at: 2026-04-29T14:20:55+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:26617596cec24ad60a970cf461cb544e2529ed1b8f475c4d41604160ca08a54e
+content_hash: sha256:b864ec9763c2aa0e663137adf93a732bd6ab5138a32457482b1dc9a38ca00c09
 ---
 
 **错误描述**
@@ -16,7 +16,7 @@ content_hash: sha256:26617596cec24ad60a970cf461cb544e2529ed1b8f475c4d41604160ca0
 
 在项目根目录的oh-package.json5文件中定义parameterFile参数配置文件的配置版本号时，使用的tag标签包含不符合要求的字符。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/xcSiXKFtRBKaj7rDpDQkxQ/zh-cn_image_0000002229758505.png?HW-CC-KV=V1&HW-CC-Date=20260428T002939Z&HW-CC-Expire=86400&HW-CC-Sign=A5363A0675B4C0347B31D37A6C3AA5F476E194E71F6AA51EBFCC85343A966B3C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/xcSiXKFtRBKaj7rDpDQkxQ/zh-cn_image_0000002229758505.png?HW-CC-KV=V1&HW-CC-Date=20260429T062054Z&HW-CC-Expire=86400&HW-CC-Sign=7ED9F9B3D2F0C11599BA6B46F33E9B19DB152D7DF6A28D7FE4A8DC48A860916B)
 
 **解决措施**
 

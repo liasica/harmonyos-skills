@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/scan-gene
 title: generateBarcode (码图生成)
 breadcrumb: API参考 > 媒体 > Scan Kit（统一扫码服务） > ArkTS API > generateBarcode (码图生成)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:14:26+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:fdc10e5965e66a2886cecc7b76781b00f9dd5d299e442325033dcd501d4e3a18
+scraped_at: 2026-04-29T14:05:06+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:9dd1afd5e2c4ade8992332bfff171677a36a3055725a3c7f0e4c63594d0035d7
 ---
 
 本模块支持通过文本或字节数组生成码图。目前已支持的码制式为EAN-8、EAN-13、UPC-A、UPC-E、Codabar、Code 39、Code 93、Code 128、ITF-14、QR Code、Data Matrix、PDF417、Aztec。暂时不支持MULTIFUNCTIONAL CODE生成。
@@ -92,7 +92,7 @@ PhonePC/2in1TabletTVWearable
 9. pixelMapColor: 0x000000,
 10. margin: 1,
 11. level: generateBarcode.ErrorCorrectionLevel.LEVEL_H
-12. }
+12. };
 ```
 
 ## generateBarcode.createBarcode
@@ -145,7 +145,7 @@ createBarcode(content: string, options: CreateOptions): Promise<image.PixelMap>
 9. scanType: scanCore.ScanType.QR_CODE,
 10. width: 200,
 11. height: 200
-12. }
+12. };
 13. generateBarcode.createBarcode(content, options).then((data: image.PixelMap) => {
 14. // 码图生成成功，返回生成码图的PixelMap对象
 15. hilog.info(0x0001, '[Scan Sample]',
@@ -297,7 +297,7 @@ createBarcode(content: ArrayBuffer, options: CreateOptions): Promise<image.Pixel
 22. height: 400
 23. }; // 码图生成的配置参数
 24. generateBarcode.createBarcode(contentBuffer, options).then((pixelMap: image.PixelMap) => {
-25. this.pixelMap = pixelMap; // 码图生成成功,返回生成码图的PixelMap对象
+25. this.pixelMap = pixelMap; // 码图生成成功，返回生成码图的PixelMap对象
 26. hilog.info(0x0001, '[Scan Sample]', 'Succeeded in creating barCode.');
 27. }).catch((err: BusinessError) => {
 28. // 码图生成失败，返回错误信息

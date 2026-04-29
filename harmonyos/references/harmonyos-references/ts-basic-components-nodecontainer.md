@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: NodeContainer
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 自定义占位组件 > NodeContainer
 category: harmonyos-references
-scraped_at: 2026-04-28T08:02:29+08:00
+scraped_at: 2026-04-29T13:52:53+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:13ff4360a82408f716321f2c2c17e66971d523d2947c12ee077f7b226732ba6b
+content_hash: sha256:bf3c298062c9b05588b43694b72302823a1153453e6b1fd447cbf058b5b1016f
 ---
 
 基础组件，用于挂载自定义节点（如[FrameNode](js-apis-arkui-framenode.md)或[BuilderNode](js-apis-arkui-buildernode.md)），并通过[NodeController](js-apis-arkui-nodecontroller.md)动态控制节点的上树和下树。组件不支持尾随添加子节点，接受一个[NodeController](js-apis-arkui-nodecontroller.md)实例接口，需与NodeController组合使用。
@@ -125,4 +125,4 @@ PhonePC/2in1TabletTVWearable
 55. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/r061eLBHSf2ddwhzDljwLA/zh-cn_image_0000002552800440.jpg?HW-CC-KV=V1&HW-CC-Date=20260428T000227Z&HW-CC-Expire=86400&HW-CC-Sign=4E3E1F6ED4F4F5A3952F7493D31282BA05AA1E18EF429755268C245ECF611330)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/dUzf7l13Sz-ph2PObVh7og/zh-cn_image_0000002589326481.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T055252Z&HW-CC-Expire=86400&HW-CC-Sign=55207C2384D3A488566009853B20CB39B64282925F79BCF5A1675E8E7501EDE0)

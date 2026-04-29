@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/neural-networ
 title: Neural Network Runtime Kit简介
 breadcrumb: 指南 > AI > Neural Network Runtime Kit（Neural Network运行时服务） > Neural Network Runtime Kit简介
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:53:50+08:00
+scraped_at: 2026-04-29T13:43:48+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:ed2b468ffe1dca54fe73505c86a93b3b20b081f76439b5f44960a06fc6d66706
+content_hash: sha256:9bd90ade8043192f0c243a77dcfdda7bc07004a63738bcb4d19cdf530b6d5292
 ---
 
 ## 使用场景
@@ -32,7 +32,7 @@ AI推理框架和应用开发者也可以无需调用NNRt构图接口，直接�
 
 **图1** Neural Network Runtime架构图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/6fJcQU3_TQq3YTpBStc73A/zh-cn_image_0000002552959350.jpg?HW-CC-KV=V1&HW-CC-Date=20260427T235349Z&HW-CC-Expire=86400&HW-CC-Sign=628F74DB8E703A3F25BFAC6CD342C16B43BDF407360FE76C7D65DFB8BECB1EB3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/Ij_lfG1ZQ3yHtm_XvN_qSg/zh-cn_image_0000002589245661.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T054347Z&HW-CC-Expire=86400&HW-CC-Sign=7FB53D947F4D79CD78009B9D38DE6C1AAAC23F1B25510E47AC314E752B4FDACD)
 
 ## 亮点特征
 

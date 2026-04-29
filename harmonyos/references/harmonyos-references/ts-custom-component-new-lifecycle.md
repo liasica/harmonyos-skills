@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-custom
 title: 自定义组件的生命周期（推荐）
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 自定义组件 > 自定义组件的生命周期（推荐）
 category: harmonyos-references
-scraped_at: 2026-04-28T08:02:31+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:9c17d3e5383b94577fd32962d911f89f31f112bb031cc09ae5f2786f255f1191
+scraped_at: 2026-04-29T13:52:54+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:f5ec50f03261decf89141feabe228e132f1f5a6e50da1e1e5c50b1728675a656
 ---
 
 自定义组件的生命周期回调函数用于通知用户该自定义组件的生命周期，这些回调函数是私有的，在运行时由开发框架在特定的时间进行调用，不能从应用程序中手动调用这些回调函数。
@@ -169,16 +169,17 @@ getCurrentState函数用于获得自定义组件当前的生命周期状态。
 5. struct Index {
 6. @ComponentBuilt
 7. myBuilt() {
-8. hilog.info(0x0000, 'testTag', 'Index Lifecycle is %{public}d', UIUtils.getLifecycle(this).getCurrentState());
-9. }
-10. build() {
-11. Column() {
-12. Text(`HelloWorld`)
-13. }
-14. .height('100%')
-15. .width('100%')
-16. }
+8. // CustomComponentLifecycle.getCurrentState用于获得自定义组件当前的生命周期状态
+9. hilog.info(0x0000, 'testTag', 'Index Lifecycle is %{public}d', UIUtils.getLifecycle(this).getCurrentState());
+10. }
+11. build() {
+12. Column() {
+13. Text(`HelloWorld`)
+14. }
+15. .height('100%')
+16. .width('100%')
 17. }
+18. }
 ```
 
 ### addObserver
@@ -426,16 +427,17 @@ PhonePC/2in1TabletTVWearable
 6. struct Index {
 7. @ComponentBuilt
 8. myBuilt() {
-9. hilog.info(0x0000, 'testTag', 'Index Lifecycle is %{public}d', CustomComponentLifecycleState.BUILT);
-10. }
-11. build() {
-12. Column() {
-13. Text(`HelloWorld`)
-14. }
-15. .height('100%')
-16. .width('100%')
-17. }
+9. // CustomComponentLifecycleState.BUILT代表自定义组件为已展开状态
+10. hilog.info(0x0000, 'testTag', 'Index Lifecycle is %{public}d', CustomComponentLifecycleState.BUILT);
+11. }
+12. build() {
+13. Column() {
+14. Text(`HelloWorld`)
+15. }
+16. .height('100%')
+17. .width('100%')
 18. }
+19. }
 ```
 
 ## 生命周期使用示例
@@ -489,40 +491,41 @@ PhonePC/2in1TabletTVWearable
 38. @State switch: boolean = true;
 39. @ComponentInit
 40. myInit() {
-41. hilog.info(0x0000, 'testTag', 'Child myInit');
-42. }
-43. @ComponentAppear
-44. myAppear() {
-45. this.label = 'myAppear'
-46. hilog.info(0x0000, 'testTag', 'Child myAppear');
-47. }
-48. @ComponentBuilt
-49. myBuilt() {
-50. this.label = 'myBuilt'
-51. hilog.info(0x0000, 'testTag', 'Child myBuilt');
-52. }
-53. @ComponentRecycle
-54. myRecycle() {
-55. this.label = 'myRecycle'
-56. hilog.info(0x0000, 'testTag', 'Child myRecycle');
-57. }
-58. @ComponentDisappear
-59. myDisappear() {
-60. this.label = 'myDisappear'
-61. hilog.info(0x0000, 'testTag', 'Child myDisappear');
-62. }
-63. @ComponentReuse
-64. myReuse() {
-65. this.label = 'myReuse'
-66. hilog.info(0x0000, 'testTag', 'Child myReuse');
-67. }
-68. build() {
-69. Column() {
-70. Text(this.message.value)
-71. .fontSize(30)
-72. }
-73. .borderWidth(1)
-74. .height(100)
-75. }
+41. // 自定义组件创建完毕后，触发myInit方法
+42. hilog.info(0x0000, 'testTag', 'Child myInit');
+43. }
+44. @ComponentAppear
+45. myAppear() {
+46. this.label = 'myAppear'
+47. hilog.info(0x0000, 'testTag', 'Child myAppear');
+48. }
+49. @ComponentBuilt
+50. myBuilt() {
+51. this.label = 'myBuilt'
+52. hilog.info(0x0000, 'testTag', 'Child myBuilt');
+53. }
+54. @ComponentRecycle
+55. myRecycle() {
+56. this.label = 'myRecycle'
+57. hilog.info(0x0000, 'testTag', 'Child myRecycle');
+58. }
+59. @ComponentDisappear
+60. myDisappear() {
+61. this.label = 'myDisappear'
+62. hilog.info(0x0000, 'testTag', 'Child myDisappear');
+63. }
+64. @ComponentReuse
+65. myReuse() {
+66. this.label = 'myReuse'
+67. hilog.info(0x0000, 'testTag', 'Child myReuse');
+68. }
+69. build() {
+70. Column() {
+71. Text(this.message.value)
+72. .fontSize(30)
+73. }
+74. .borderWidth(1)
+75. .height(100)
 76. }
+77. }
 ```

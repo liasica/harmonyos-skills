@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-repo
 title: ohpm-repo restart
 breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 相关命令 > ohpm-repo restart
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:54:41+08:00
+scraped_at: 2026-04-29T13:44:39+08:00
 doc_updated_at: 2026-01-15
-content_hash: sha256:56c01ce96f054eb2223fefa251b823d936571cc17df35bb1c286df7a0fef855e
+content_hash: sha256:bdc2ac91d40e2b59432daaec69ddb4ad962ed3c0d805d683d86a7602c6a2afcc
 ---
 
 重新启动ohpm-repo服务。
@@ -38,4 +38,4 @@ content_hash: sha256:56c01ce96f054eb2223fefa251b823d936571cc17df35bb1c286df7a0fe
 
 结果示例：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/pPPlZPyxQXy8JaI6LFbSsg/zh-cn_image_0000002561751491.png?HW-CC-KV=V1&HW-CC-Date=20260427T235440Z&HW-CC-Expire=86400&HW-CC-Sign=F23F79D19801816295D95C5757CE6FAE8E6BD57777113913482D3F84292AF5F4 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/Y9bIRESxTTWdQ0cOIWMLMw/zh-cn_image_0000002561751491.png?HW-CC-KV=V1&HW-CC-Date=20260429T054438Z&HW-CC-Expire=86400&HW-CC-Sign=42D28EC79FE22FBF6D23F27A930A818E710601972D4C27EC0223EF743D043578 "点击放大")

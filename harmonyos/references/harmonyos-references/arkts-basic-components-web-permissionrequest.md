@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-bas
 title: Class (PermissionRequest)
 breadcrumb: API参考 > 应用框架 > ArkWeb（方舟Web） > ArkTS 组件 > Web > Class (PermissionRequest)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:05:18+08:00
-doc_updated_at: 2026-04-03
-content_hash: sha256:7975e4798aa738877b34659ef3ed2b0b78cddc473de3df739ba36932bd4c2c74
+scraped_at: 2026-04-29T13:55:48+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:d6761a5a2f9443f785f57086f5e72c4e6431f7d218434acc0359cf63fa5c10db
 ---
 
 Web组件返回授权或拒绝权限功能的对象。示例代码参考[onPermissionRequest事件](arkts-basic-components-web-events.md#onpermissionrequest9)。
@@ -74,7 +74,7 @@ PhonePC/2in1TabletTVWearable
 
 grant(resources: Array<string>): void
 
-对网页访问的给定权限进行授权。
+对网页所请求的权限进行授权。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 

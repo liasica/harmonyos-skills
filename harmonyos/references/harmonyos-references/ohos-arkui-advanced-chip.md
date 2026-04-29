@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: Chip
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > Chip
 category: harmonyos-references
-scraped_at: 2026-04-28T08:02:36+08:00
+scraped_at: 2026-04-29T13:52:57+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:bb972ef5765480a03096b96ecf5b7263673c666b7954fd6d945b3c091b13687e
+content_hash: sha256:853cf40bdbe2ecfc14e97aa4c6e59a85f8fdbb433735377fe0167564ec5dfe6e
 ---
 
 Chip用于搜索框历史记录、邮件发送列表等场景。
@@ -370,7 +370,7 @@ PhonePC/2in1TabletTVWearable
 46. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/B5t9UKkLQ8mIFF3ijBWnyg/zh-cn_image_0000002552960094.png?HW-CC-KV=V1&HW-CC-Date=20260428T000234Z&HW-CC-Expire=86400&HW-CC-Sign=40C102E9C34F448A67EB9AAA3D119BBF175845990221CC4D8AAE2ED968D686B1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/rmtkePsPQLO8WqHyebD4eQ/zh-cn_image_0000002558766620.png?HW-CC-KV=V1&HW-CC-Date=20260429T055256Z&HW-CC-Expire=86400&HW-CC-Sign=FF4CA55C221F6242BD1409ECF315D94D9BE377E342B40C06EEA286745C8AFA82)
 
 ### 示例2（设置默认后缀图标）
 
@@ -419,7 +419,7 @@ PhonePC/2in1TabletTVWearable
 40. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/XgoeQTcOT2WleeBuBuBCpQ/zh-cn_image_0000002583480095.png?HW-CC-KV=V1&HW-CC-Date=20260428T000234Z&HW-CC-Expire=86400&HW-CC-Sign=CC3F52EFA2B4F2B301D8646964DB6D5DC1F30E91C031E2A9B98F9DEA8617DC3F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/v0vaNeFpR4a7fmsC-hZr2A/zh-cn_image_0000002558606960.png?HW-CC-KV=V1&HW-CC-Date=20260429T055256Z&HW-CC-Expire=86400&HW-CC-Sign=ADEE6D83EC2DC6A6F912F89EDB0C8EE6B0801EBABC6790860C8F6028DA54DA97)
 
 ### 示例3（不显示后缀图标）
 
@@ -470,7 +470,7 @@ PhonePC/2in1TabletTVWearable
 42. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/JNUIDfcdS5Os56MfH9EjLQ/zh-cn_image_0000002552800446.png?HW-CC-KV=V1&HW-CC-Date=20260428T000234Z&HW-CC-Expire=86400&HW-CC-Sign=355D07E0DB243F6F44B3EA81060133FFDE7A6592D3AE8864200C7E00632089C9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/W7MyWaRBRcCdrWOlFM505w/zh-cn_image_0000002589326487.png?HW-CC-KV=V1&HW-CC-Date=20260429T055256Z&HW-CC-Expire=86400&HW-CC-Sign=09897BE6B15CC32F91018FC0A8B55EADE059B5191414802A00612A8D544E116D)
 
 ### 示例4（激活态操作块）
 
@@ -528,7 +528,7 @@ PhonePC/2in1TabletTVWearable
 49. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/tahqCr2BToW2gPcYwa4Dxg/zh-cn_image_0000002583440141.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000234Z&HW-CC-Expire=86400&HW-CC-Sign=3A70DB4A8D2B2294C8AF014B66A0E3F96BC79C2D8954C3EB0F132444F19EA8A7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/7cpGpCTQSuiLRxLwi1dfJQ/zh-cn_image_0000002589246429.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055256Z&HW-CC-Expire=86400&HW-CC-Sign=AFBDE2A943E4282A765CF7DBFCC1A9DF5E435481F6757371C9C8C1DF4A74A08A)
 
 ### 示例5（设置symbol类型图标）
 
@@ -583,7 +583,7 @@ Chip组件的前缀图标使用symbol类型资源展示。
 46. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/2BmXgeuqQtKHo87Sdvrybw/zh-cn_image_0000002552960096.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000234Z&HW-CC-Expire=86400&HW-CC-Sign=D10786D5EC0372F40851A660C24701AB0EF72A947F6CA645E0465BD8B5C002EB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/xXKc8ldHSRq255Ig7X9ppg/zh-cn_image_0000002558766622.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055256Z&HW-CC-Expire=86400&HW-CC-Sign=2A0E5137D54C01630AE9CD8B372098A15E16625EBF3D94F82C7469C8A1C61043)
 
 ### 示例6（设置镜像效果）
 
@@ -635,7 +635,7 @@ Chip组件的前缀图标使用symbol类型资源展示。
 43. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/z_V3CGefQp6CRVSwVdTm_Q/zh-cn_image_0000002583480097.png?HW-CC-KV=V1&HW-CC-Date=20260428T000234Z&HW-CC-Expire=86400&HW-CC-Sign=C84C564AB3879A48F2B498E234C1FE00BFC8691A05F570A948990C8942164404)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/9KRM23GwTLKrZAbz7zOYxA/zh-cn_image_0000002558606962.png?HW-CC-KV=V1&HW-CC-Date=20260429T055256Z&HW-CC-Expire=86400&HW-CC-Sign=90CBE93BDED0855E78C6CA77A1807F340C5E0551E07EE3FA2ED1F9F11CDAFB7A)
 
 ### 示例7（Image类型无障碍朗读）
 

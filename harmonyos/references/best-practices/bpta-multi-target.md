@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-multi-targ
 title: 多目标产物构建
 breadcrumb: 最佳实践 > 编译构建 > 多目标产物构建
 category: best-practices
-scraped_at: 2026-04-28T08:23:11+08:00
+scraped_at: 2026-04-29T14:14:30+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:3e927360fb22ecfba552a718bc0f756f5d18dcd370ad528b8f8e6d7335a31325
+content_hash: sha256:5aaafce988d658a0fdd551036ded7efeae71ccf1bc2f29232da57512fc9b8b7e
 ---
 
 ## 概述
@@ -65,7 +65,7 @@ HarmonyOS多目标产物支持[HAP](../harmonyos-guides/hap-package.md)（应用
 
 ### 构建原理图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/Vfng891ESKibOJDHnvpGYQ/zh-cn_image_0000002523454541.png?HW-CC-KV=V1&HW-CC-Date=20260428T002309Z&HW-CC-Expire=86400&HW-CC-Sign=74A0A33D5C2F303461704C2F360566B153500FB4C5B4D43B6A001E56F2607A23 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/Vfng891ESKibOJDHnvpGYQ/zh-cn_image_0000002523454541.png?HW-CC-KV=V1&HW-CC-Date=20260429T061421Z&HW-CC-Expire=86400&HW-CC-Sign=506B5B6FA53F8EBAAD2A96EBF53215BEB5040F3F3195B94EE3615288C5F1522F "点击放大")
 
 如图所示，在HarmonyOS应用开发过程中，一个应用通常包含多个HAR/HAP/HSP模块。每个HAR/HAP/HSP模块可以通过配置模块级的build-profile.json文件定义多个target，每个target可以定制不同的资源（具体可参考上文定制项介绍）。因此形成了具有差异性的target，如：Module A通过定制生成了TargetA-1、TargetA-2；Module B通过定制生成了TargetB-1、TargetB-2、TargetB-3；Module C通过定制生成了TargetC-1、TargetC-2。然后通过配置工程级的build-profile.json定义多个product，每个product可以依赖不同的Target并且配置不同的App产物定制项。因此形成了具有差异的product，如：依赖TargetA-1、TargetB-1、TargetC-1构建出App-product1；依赖TargetB-3、TargetC-2构建出App-product2。最终在构建工程时选择相应的product就可以显示出对应的定制效果。
 
@@ -312,7 +312,7 @@ Test版本：工程会在首页中显示Test版的资源以及一个页面跳转
 4. 实现不同目标产物需要定制的业务逻辑。
    * 通过[source源码集-sourceRoots配置](../harmonyos-guides/ide-customized-multi-targets-and-products-guides.md#section18668905913)的差异性代码空间，实现标题（代码文件）多目标效果。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/CWU4jbxHSWebQ1_pZoUoNw/zh-cn_image_0000002229335589.png?HW-CC-KV=V1&HW-CC-Date=20260428T002309Z&HW-CC-Expire=86400&HW-CC-Sign=43FFCCC1EF2E5A71448C59232519A2202E6FD5190F831FE6A5165315DC89570A) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/Q0P7Br13TMOf3pU7S_VmFg/zh-cn_image_0000002193850196.png?HW-CC-KV=V1&HW-CC-Date=20260428T002309Z&HW-CC-Expire=86400&HW-CC-Sign=286A9ED40AF86060AB3281B467A5D1887DB9970AEA225DA61200881FCD2FA055)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/CWU4jbxHSWebQ1_pZoUoNw/zh-cn_image_0000002229335589.png?HW-CC-KV=V1&HW-CC-Date=20260429T061421Z&HW-CC-Expire=86400&HW-CC-Sign=AD7693822338B6EFA6F2A20A957EACAC7F967552621F30CD160690329E98A6B4) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/Q0P7Br13TMOf3pU7S_VmFg/zh-cn_image_0000002193850196.png?HW-CC-KV=V1&HW-CC-Date=20260429T061421Z&HW-CC-Expire=86400&HW-CC-Sign=B1E0713BD30DCC6F3E1DBA2626E9D8B03918B0C3E1E77BFB01EC66BE08A57109)
 
      在上述配置文件中，配置了HAP模块的source源码集-sourceRoots目录，official版本与test版本分别对应src/official\_pages和src/test\_pages。
 
@@ -390,7 +390,7 @@ Test版本：工程会在首页中显示Test版的资源以及一个页面跳转
      [Index.ets](https://gitcode.com/HarmonyOS_Samples/MultiTarget/blob/master/entry/src/main/ets/pages/Index.ets#L16-L61)
    * 在HAR模块引用差异性资源，实现页面中资源多目标效果。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/nD9bXVNxSqOQrRRRxof_kA/zh-cn_image_0000002194009792.png?HW-CC-KV=V1&HW-CC-Date=20260428T002309Z&HW-CC-Expire=86400&HW-CC-Sign=9FBAA34F7FFA777F50773689F05A273EEBE6422A59408FFC87B67BEB7BBD08FA) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/NN0depcgQmGYfGY1v3dWow/zh-cn_image_0000002194009796.png?HW-CC-KV=V1&HW-CC-Date=20260428T002309Z&HW-CC-Expire=86400&HW-CC-Sign=0BA0F541037A84B9010C725E5A4B24E6D10E19E23C7042EE4E729C6A53F8F934)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/nD9bXVNxSqOQrRRRxof_kA/zh-cn_image_0000002194009792.png?HW-CC-KV=V1&HW-CC-Date=20260429T061421Z&HW-CC-Expire=86400&HW-CC-Sign=2B4336C2CD8E518DCC225F2581464BBE2234D3D7E2314AED9E9C16AE95CE9071) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/NN0depcgQmGYfGY1v3dWow/zh-cn_image_0000002194009796.png?HW-CC-KV=V1&HW-CC-Date=20260429T061421Z&HW-CC-Expire=86400&HW-CC-Sign=977C9EFEFE97440705243BC3F11A2C6EE9FB894558CA178D2129C851FE1B44F0)
 
      在上述配置文件中，我们配置了HAR模块的资源文件路径，official版本和test版本分别对应src/main/official/resources和src/main/test/resources文件。
 
@@ -418,10 +418,10 @@ Test版本：工程会在首页中显示Test版的资源以及一个页面跳转
      效果对比如下：
 
      **图1** official版本  
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/W1AG4WmGRTeEYRf-9W5Ktw/zh-cn_image_0000002229335573.gif?HW-CC-KV=V1&HW-CC-Date=20260428T002309Z&HW-CC-Expire=86400&HW-CC-Sign=BC7D02DFE70FF77143B427C4389C5840CDD46E93E5D0FCB21F2D45E997D3BCD2)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/W1AG4WmGRTeEYRf-9W5Ktw/zh-cn_image_0000002229335573.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061421Z&HW-CC-Expire=86400&HW-CC-Sign=54F489CC8514F850F5AB5C8C28D30CEE7A319089C5FB05CB41F03900484C0252)
 
      **图2** test版本  
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/k-jnAMX4ThyspsxPh2JsAw/zh-cn_image_0000002193850204.gif?HW-CC-KV=V1&HW-CC-Date=20260428T002309Z&HW-CC-Expire=86400&HW-CC-Sign=FC8AA8828DBDA92BCB6A8D7D74ACAE0F2924F9220010C799BE3714CCF4721D56)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/k-jnAMX4ThyspsxPh2JsAw/zh-cn_image_0000002193850204.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061421Z&HW-CC-Expire=86400&HW-CC-Sign=344657BD47F1BF5BF1F6CE66F19143838BA628238D2BAFA412441D039C23383F)
 
      在先前的案例中，已经介绍了如何在sourceRoots目录配置的差异性代码空间中实现对同名文件中的同名方法的调用。这里主要介绍在不同的target中如何调用不同名的文件中的不同方法。
 
@@ -472,16 +472,16 @@ Test版本：工程会在首页中显示Test版的资源以及一个页面跳转
 5. 选择不同的product构建出不同的目标产物。
 
    **图3** 构建图示  
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/8ATZvCZfQW2-LqviuwsfBw/zh-cn_image_0000002229450045.png?HW-CC-KV=V1&HW-CC-Date=20260428T002309Z&HW-CC-Expire=86400&HW-CC-Sign=C5D8374447F1B8A0FF87E01E9E10F8D56170BB7B17C9903BAA50D681396942B0)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/8ATZvCZfQW2-LqviuwsfBw/zh-cn_image_0000002229450045.png?HW-CC-KV=V1&HW-CC-Date=20260429T061421Z&HW-CC-Expire=86400&HW-CC-Sign=3949048EE2D3FE145F47D56E4D073483155C4BF9984747418F6DB39C85AE56C7)
 
    首先点击DevEco Studio工具右上角的Product按钮，即图中的1号标识处，然后在2号标识处选择对应的product工程，选择完工程之后会自动映射出我们文件中已经依赖的target，最后点击Apply应用。上述操作完成之后就可以点击运行按钮查看多目标产物效果了。本案例运行效果图如下：
 
    **图4** Official版本
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/6RR9FvRlSeWhD4CIo8npdg/zh-cn_image_0000002194009800.gif?HW-CC-KV=V1&HW-CC-Date=20260428T002309Z&HW-CC-Expire=86400&HW-CC-Sign=D15670DAA20A841DEBDBD327C78285F386DA4FB5AF0EB0878044E5B90050488C)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/6RR9FvRlSeWhD4CIo8npdg/zh-cn_image_0000002194009800.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061421Z&HW-CC-Expire=86400&HW-CC-Sign=3729D660F431E741650ED8051E290C73F689DA058660441CF37A5D4C2234D0A7)
 
    **图5** Test版本  
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/WqnyDnGXSJChjIWCI0ovRQ/zh-cn_image_0000002229335577.gif?HW-CC-KV=V1&HW-CC-Date=20260428T002309Z&HW-CC-Expire=86400&HW-CC-Sign=28DE3CC2EE86515E83E93981BE22C5FC52CC32CD3D66E33F7DCC7DDD0BCB090D)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/WqnyDnGXSJChjIWCI0ovRQ/zh-cn_image_0000002229335577.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061421Z&HW-CC-Expire=86400&HW-CC-Sign=83CC03DA6CDF8D888245A3A454AE2E8D3C2C1AD3B7E3E5A117C47BBC825D2D2F)
 
 ## 常见问题
 
@@ -491,19 +491,19 @@ Test版本：工程会在首页中显示Test版的资源以及一个页面跳转
 
 首先需要在每个product下添加配置项"signingConfig"。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/7Q0LaCjWRC6cnYA6BP0yfw/zh-cn_image_0000002229335565.png?HW-CC-KV=V1&HW-CC-Date=20260428T002309Z&HW-CC-Expire=86400&HW-CC-Sign=2D28B1032C19A9707E0227F783CB8BEB8E7608EB0AF3ADE98BCFCB18137B4F5B "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/7Q0LaCjWRC6cnYA6BP0yfw/zh-cn_image_0000002229335565.png?HW-CC-KV=V1&HW-CC-Date=20260429T061421Z&HW-CC-Expire=86400&HW-CC-Sign=980C7AECFC6B1D2916C1024D8D86609E0CFE6F76E6968489919E0EBFB37FC274 "点击放大")
 
 然后进入到签名配置页面，点击加号，添加签名信息：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/VZjjueAzSieTSDmudgdyog/zh-cn_image_0000002229450081.png?HW-CC-KV=V1&HW-CC-Date=20260428T002309Z&HW-CC-Expire=86400&HW-CC-Sign=442FE7754EE3C3454AFFD8BCFA16A0C56A82576B011A48A3AA61B8F726D44C3A "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/VZjjueAzSieTSDmudgdyog/zh-cn_image_0000002229450081.png?HW-CC-KV=V1&HW-CC-Date=20260429T061421Z&HW-CC-Expire=86400&HW-CC-Sign=5AA0D74B458C75CE1AB82D2DFB24506131AD92C7349D92690769A6832BED8FB5 "点击放大")
 
 然后选择对应的bundle name，并填写上面配置的"signingConfig"信息（每个product产物都需要配置）：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/42oudhPPSgan1h72xeCi_w/zh-cn_image_0000002193850180.png?HW-CC-KV=V1&HW-CC-Date=20260428T002309Z&HW-CC-Expire=86400&HW-CC-Sign=C746C46FB426090C1E8D62BBE778478BC6EF0BA0876CA6B0A6511910841D68CD "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/42oudhPPSgan1h72xeCi_w/zh-cn_image_0000002193850180.png?HW-CC-KV=V1&HW-CC-Date=20260429T061421Z&HW-CC-Expire=86400&HW-CC-Sign=2AFB8392CAFDF4B443287085BD15C4A4CD1C90099C569DD32F166E9143957428 "点击放大")
 
 点击ok之后，进行签名即可。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/WY1EP5quQO-kdOp3DUncAQ/zh-cn_image_0000002193850208.png?HW-CC-KV=V1&HW-CC-Date=20260428T002309Z&HW-CC-Expire=86400&HW-CC-Sign=96073687527D0C36072FF1DBDEC75DA8082395500E9414C41D1D4387DF57421F "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/WY1EP5quQO-kdOp3DUncAQ/zh-cn_image_0000002193850208.png?HW-CC-KV=V1&HW-CC-Date=20260429T061421Z&HW-CC-Expire=86400&HW-CC-Sign=C3582386045F540DC9BE54308B299DC73561A533038EF706C44F021B33D74C70 "点击放大")
 
 ## 示例代码
 

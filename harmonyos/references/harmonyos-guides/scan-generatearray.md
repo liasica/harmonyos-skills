@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scan-generate
 title: 通过字节数组生成码图
 breadcrumb: 指南 > 媒体 > Scan Kit（统一扫码服务） > 码图生成 > 通过字节数组生成码图
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:46:43+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:ab0e24529cbff1200044ce6b1782a238090a978c004fc9590c31e39e64d51013
+scraped_at: 2026-04-29T13:35:42+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:2fa914eca0731cda82faf1f50e3022ea115c0fb1b5ce6db53c0ba982e980ce44
 ---
 
 ## 基本概念
@@ -25,7 +25,7 @@ content_hash: sha256:ab0e24529cbff1200044ce6b1782a238090a978c004fc9590c31e39e64d
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/bg7mDe3BTuqEyxcXiXUMQw/zh-cn_image_0000002552798966.png?HW-CC-KV=V1&HW-CC-Date=20260427T234642Z&HW-CC-Expire=86400&HW-CC-Sign=7DDF0A458868C06C9856DD3404171DB5F6ED6617749B4AFD1BF6E9B9D6E368C7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/toF2t2cBQ6C3Dtkz6lgkFg/zh-cn_image_0000002589324985.png?HW-CC-KV=V1&HW-CC-Date=20260429T053541Z&HW-CC-Expire=86400&HW-CC-Sign=0440AD45C8382B7AB286137814106656F38A788517471C7CCDE8123130E58345)
 
 1. 用户向应用发起生成码图请求后，传入需要生成的码图信息，包括码图的类型、宽高等。
 2. 应用通过调用Scan Kit的createBarcode接口启动码图生成能力。
@@ -68,7 +68,7 @@ content_hash: sha256:ab0e24529cbff1200044ce6b1782a238090a978c004fc9590c31e39e64d
      3. @Entry
      4. @Component
      5. struct Index {
-     6. @State pixelMap: image.PixelMap | undefined = undefined
+     6. @State pixelMap: image.PixelMap | undefined = undefined;
 
      8. build() {
      9. Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
@@ -81,7 +81,7 @@ content_hash: sha256:ab0e24529cbff1200044ce6b1782a238090a978c004fc9590c31e39e64d
      16. scanType: scanCore.ScanType.QR_CODE,
      17. height: 400,
      18. width: 400
-     19. }
+     19. };
      20. try {
      21. // 码图生成接口，成功返回PixelMap格式图片
      22. generateBarcode.createBarcode(contentBuffer, options).then((pixelMap: image.PixelMap) => {
@@ -89,7 +89,7 @@ content_hash: sha256:ab0e24529cbff1200044ce6b1782a238090a978c004fc9590c31e39e64d
      24. hilog.info(0x0001, TAG, 'Succeeded in creating barCode.');
      25. }).catch((err: BusinessError) => {
      26. hilog.error(0x0001, TAG, `Failed to createBarCode. Code: ${err.code}, message: ${err.message}`);
-     27. })
+     27. });
      28. } catch (err) {
      29. hilog.error(0x0001, TAG,
      30. `Failed to createBarcode by Promise with options. Code: ${err.code}, message: ${err.message}`);

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: label
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 基础组件 > label
 category: harmonyos-references
-scraped_at: 2026-04-28T08:03:01+08:00
+scraped_at: 2026-04-29T13:53:24+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:395729b928e516faab023c011be1742729c465ce3e45de17316106a7a7616697
+content_hash: sha256:1490bad197f82e84002c2644a2de74799f020b7cbf2c4cb39dc53d6807433073
 ---
 
 说明
@@ -114,4 +114,4 @@ PhonePC/2in1TabletTVWearable
 16. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/gyvDq0UQQByox-BPOMX05A/zh-cn_image_0000002583480193.png?HW-CC-KV=V1&HW-CC-Date=20260428T000300Z&HW-CC-Expire=86400&HW-CC-Sign=98BAC52ADF37AEBC35BB8D64317B2431543B68C39D9232A634E196DA2E0E96BE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/3lD3videS-Kd-ULwZimwgw/zh-cn_image_0000002589326585.png?HW-CC-KV=V1&HW-CC-Date=20260429T055323Z&HW-CC-Expire=86400&HW-CC-Sign=9EEBFA647FB84E524E879F2D724B9FF11FC2E6A1AB7B8C106648EA085EF0B388)

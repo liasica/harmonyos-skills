@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-cross-modu
 title: Native侧跨HAR/HSP模块接口调用
 breadcrumb: 最佳实践 > 应用框架 > 程序包结构 > Native侧跨HAR/HSP模块接口调用
 category: best-practices
-scraped_at: 2026-04-28T08:20:07+08:00
+scraped_at: 2026-04-29T14:10:48+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:938eef09afbc6d11c22476ad4a6b1db9bf7b7764b005a3063d2117f164154f62
+content_hash: sha256:c182665441bb57bef0ca5f6c6f88c580ef20603c0743ff3392ac9e490c863612
 ---
 
 ## 概述
@@ -31,14 +31,14 @@ content_hash: sha256:938eef09afbc6d11c22476ad4a6b1db9bf7b7764b005a3063d2117f1641
 3. 在Module2（HSP/HAR）模块中，Native侧通过Node-API接口进行模块加载，从而调用ArkTS方法。
 
 **图1** Native侧跨HAR/HSP模块调用原理图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/uxITzdV_RqW_z8ofbr6eNg/zh-cn_image_0000002229450825.png?HW-CC-KV=V1&HW-CC-Date=20260428T002005Z&HW-CC-Expire=86400&HW-CC-Sign=E2B320BA6371439862121A2C46C9C3BD9C1C9039878C6310218CDC6BE0005923 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/uxITzdV_RqW_z8ofbr6eNg/zh-cn_image_0000002229450825.png?HW-CC-KV=V1&HW-CC-Date=20260429T061047Z&HW-CC-Expire=86400&HW-CC-Sign=B6356B86B1F03004A97C8C47C3DF0799764E33C1CC7A58EEF45B5396DE109CFD "点击放大")
 
 ## Native侧跨HAR/HSP模块调用Native方法
 
 如下图所示，Native侧跨HAR/HSP模块调用Native方法的调用链路为Module1 ArkTS -> Module1 Native -> Module2 Native。在HarmonyOS项目中，Native侧跨模块调用Native方法实际就是C++侧调用，需要配置编译链接依赖。其实现的关键是在Module2（HSP/HAR）模块的build-profile.json5中，配置头文件导出，并在CMakeLists.txt中进行配置，将源文件配置到so中。
 
 **图2** Native侧跨HAR/HSP模块调用Native方法  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/NsziXW7vST-_nxSa7QDGnA/zh-cn_image_0000002229450829.png?HW-CC-KV=V1&HW-CC-Date=20260428T002005Z&HW-CC-Expire=86400&HW-CC-Sign=A9CC56AACA07C89AB29981815EED98219F2D5A355D9BD3C0D8EE25DA5BBFDF29 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/NsziXW7vST-_nxSa7QDGnA/zh-cn_image_0000002229450829.png?HW-CC-KV=V1&HW-CC-Date=20260429T061047Z&HW-CC-Expire=86400&HW-CC-Sign=BBF92ED6038A60F0AB835A06D3544421E8E09016C9B5CE3F896C3C44A2C930E4 "点击放大")
 
 ### 开发流程
 
@@ -193,7 +193,7 @@ Native侧跨HAR/HSP模块调用Native方法时，需要实现Module1（HAP）的
 ### 实现效果
 
 **图3** Native侧调用HAR模块的Native方法  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/0reNYm0tT9CjCOubVxz8LQ/zh-cn_image_0000002229450809.gif?HW-CC-KV=V1&HW-CC-Date=20260428T002005Z&HW-CC-Expire=86400&HW-CC-Sign=9512173714E0F7A4F46844CA773AC99D3BD6D4E6B3E92989FE0D329FE5406A49 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/0reNYm0tT9CjCOubVxz8LQ/zh-cn_image_0000002229450809.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061047Z&HW-CC-Expire=86400&HW-CC-Sign=84576D7C02D6A51D591A316D9D3CF7EA1B403A2A51171573DA8D0B6754AE7568 "点击放大")
 
 ## Native侧跨HAR/HSP模块调用ArkTS方法
 
@@ -201,7 +201,7 @@ Native侧跨HAR/HSP模块调用Native方法时，需要实现Module1（HAP）的
 
 **图4** Native侧跨HAR/HSP模块调用ArkTS方法
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/tftOS1mUTX2hIEIpeayV6g/zh-cn_image_0000002194010544.png?HW-CC-KV=V1&HW-CC-Date=20260428T002005Z&HW-CC-Expire=86400&HW-CC-Sign=72358DAB1DC1552C4BD44E75058B06EF63329DCF4EB9ED2283AA64F506D524C0 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/tftOS1mUTX2hIEIpeayV6g/zh-cn_image_0000002194010544.png?HW-CC-KV=V1&HW-CC-Date=20260429T061047Z&HW-CC-Expire=86400&HW-CC-Sign=A2519D3ECAEFF1F182E6C4CD3FDE4767E1D8350A94DED0A8D92550A29B7B3D2D "点击放大")
 
 ### 开发流程
 
@@ -372,7 +372,7 @@ Native侧跨HAR/HSP模块调用ArkTS方法具体实现方法如下所示。
 ### 实现效果
 
 **图5** Native侧调用HAR模块的ArkTS方法  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/gnx4OrwHQiSZfvBK9TUBRQ/zh-cn_image_0000002194010540.gif?HW-CC-KV=V1&HW-CC-Date=20260428T002005Z&HW-CC-Expire=86400&HW-CC-Sign=E8379E1536DE57C82BC5EE11CDA6BBDB3ABABF0E983B9FBEABD1AF8BE721AC15 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/gnx4OrwHQiSZfvBK9TUBRQ/zh-cn_image_0000002194010540.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061047Z&HW-CC-Expire=86400&HW-CC-Sign=0703695B66A5B8F011E3A0ED7293A79B3C8373AB7D5D450394BDEC3D07CE3F9C "点击放大")
 
 ## 常见问题
 
@@ -384,7 +384,7 @@ HSP模块和HAR模块被调用时，主要的区别在Module2 Native调用Module
 
 如图所示，编译构建后，HAR模块被打包到各个模块之中，所以其入口模块仍然是HAP模块，napi\_load\_module\_with\_info中第2个参数的模块名称要填HAP模块中oh-package.json5中定义的依赖HAR的名称，而不是HAR模块的实际名称。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/KRBwMGirTl-tj46DS0QQHA/zh-cn_image_0000002194010548.png?HW-CC-KV=V1&HW-CC-Date=20260428T002005Z&HW-CC-Expire=86400&HW-CC-Sign=BC5EB08ED7FC71C4B37CB8BFD803EF8DBF009BCE8B974635E756C4F9DE83A453 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/KRBwMGirTl-tj46DS0QQHA/zh-cn_image_0000002194010548.png?HW-CC-KV=V1&HW-CC-Date=20260429T061047Z&HW-CC-Expire=86400&HW-CC-Sign=34DE025FD9FA0B164799B623AB15FE91CF54447EBD3F192FA69A7F26ADB9670E "点击放大")
 
 2. 被调用模块Module2是HSP
 

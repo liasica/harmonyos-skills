@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-data
 title: data_asset.h
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > C API > 头文件 > data_asset.h
 category: harmonyos-references
-scraped_at: 2026-04-28T07:59:28+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:e691cc9cb3ff4e401104090c62794e309a0ebfc8577e29badca4312f88b3ec4b
+scraped_at: 2026-04-29T13:49:41+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:c996e5d09cd2ae67d386324c5b1bb3fe96dbbb4bba19285c5eb45dc959b07947
 ---
 
 ## 概述
@@ -257,7 +257,7 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | [Data\_Asset](capi-rdb-data-asset.md) \*asset | 表示指向[Data\_Asset](capi-rdb-data-asset.md)实例的指针。 |
-| size\_t size | 表示要设置的占用空间的大小。 |
+| size\_t size | 表示要设置的占用空间的大小（单位为字节（Byte），取值为非负整数）。 |
 
 **返回：**
 

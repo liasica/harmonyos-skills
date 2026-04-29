@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-performanc
 title: 如何获取设备的CPU信息
 breadcrumb: FAQ > 应用质量 > 技术质量 > 运维 > 如何获取设备的CPU信息
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:23:16+08:00
+scraped_at: 2026-04-29T14:14:32+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:2fd81d94fed94994599f8877e54a683f6d3f5a627414c542b78048c7ead30963
+content_hash: sha256:c94b25570d8aa62f273e9b779fcf2d8ce5d197b5df5404820be76a002818975d
 ---
 
 可以通过以下命令来查看CPU信息：
@@ -17,4 +17,4 @@ content_hash: sha256:2fd81d94fed94994599f8877e54a683f6d3f5a627414c542b78048c7ead
 
 返回结果如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/1uTysY7SROq_f18VG1wKqg/zh-cn_image_0000002229758737.png?HW-CC-KV=V1&HW-CC-Date=20260428T002315Z&HW-CC-Expire=86400&HW-CC-Sign=0B94867A9D4FE913A33F2BFD54B469F98BBB9580399A346C902A8FC5D2741E4D "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/1uTysY7SROq_f18VG1wKqg/zh-cn_image_0000002229758737.png?HW-CC-KV=V1&HW-CC-Date=20260429T061431Z&HW-CC-Expire=86400&HW-CC-Sign=C004AC851251972DBC32A366351869C14335DD1FCDA8DE3C88AEF5FEEA8A01D2 "点击放大")

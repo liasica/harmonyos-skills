@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: ComponentContent
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > arkui > ComponentContent
 category: harmonyos-references
-scraped_at: 2026-04-28T08:00:37+08:00
+scraped_at: 2026-04-29T13:50:54+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:8e83fbf06d7b30cb650a0d7b9a32e6b8933c1c0c5580b1320130618b04a9948c
+content_hash: sha256:651f4c6a59e988ee71dfbab7ace99e4a2186a6904daf51102ff1e63edab395ba
 ---
 
 有两种创建实体封装组件的方式。开发者在开发过程中任选下面方式其一即可。
@@ -159,7 +159,7 @@ ComponentContent的构造函数。
 56. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/EMkMMRZ2QSy3VtmYWOqz4g/zh-cn_image_0000002552959440.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000034Z&HW-CC-Expire=86400&HW-CC-Sign=726079C66AE4B1D894ACC46C182B0E237F26ADC4A56FC2F988D2357A00D97EE7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/y-EgZ6meRWigx36xb5ZnqA/zh-cn_image_0000002558765960.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055046Z&HW-CC-Expire=86400&HW-CC-Sign=0AA1EFB45ECBA06564367FD67D5F826F067FEF484992158E8445A97F1D428A1D)
 
 ### update
 
@@ -231,7 +231,7 @@ update(args: T): void
 47. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/weAIBNJjRVK2LojnEYQ0cA/zh-cn_image_0000002583479441.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000034Z&HW-CC-Expire=86400&HW-CC-Sign=E2EF2CA138D56E05EC23D422B50483B60D498CD7A331C53E36AA3E3DE18E437B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/4Gh1Dcz1Sd2WR4cqwIpSeQ/zh-cn_image_0000002558606304.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055046Z&HW-CC-Expire=86400&HW-CC-Sign=64B774D3A5789C86243D3C72C1F8C78A2B1FC6009A64329696C0EED1C8900743)
 
 ### reuse
 
@@ -435,7 +435,7 @@ recycle(): void
 169. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/dxe4GER8Q7GeCLK4ctzExQ/zh-cn_image_0000002552799792.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000034Z&HW-CC-Expire=86400&HW-CC-Sign=F94103654908FCD0A3C2B26B8086ECD0B12A59B8DF38E94C295A3E233D208FC4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/rQ7PW1QQTrqRd9LzY7MYJA/zh-cn_image_0000002589325831.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055046Z&HW-CC-Expire=86400&HW-CC-Sign=D50D80143DD869FD37A2AAB4DE2DD0AAC132294FE99F06073A994E90A2DD411A)
 
 ### dispose
 
@@ -515,7 +515,7 @@ dispose(): void
 57. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/lIAV0jCwTzWD8NXZekfPDQ/zh-cn_image_0000002583439487.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000034Z&HW-CC-Expire=86400&HW-CC-Sign=33B0044A8547DA4844D4C575C1EF3C6BF0AABD7B780A2D41AA085E2E979784DC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/jLsu3qCLSUGfqfqDedbTVQ/zh-cn_image_0000002589245773.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055046Z&HW-CC-Expire=86400&HW-CC-Sign=EFD7765251D090A388E69E362B172849932968EBA7A808E4D9D1ABAFED9B7929)
 
 ### updateConfiguration
 
@@ -633,7 +633,7 @@ updateConfiguration接口用于通知对象更新当前的系统环境变化。
 95. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/oIavGlIGTwuouw-fLO-ijA/zh-cn_image_0000002552959442.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000034Z&HW-CC-Expire=86400&HW-CC-Sign=99581497DC9B260E87930D1A4C0BD7CE2859A91B857A053F3365ACFC5507636A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/xJeUnqYATda-4ddsZUCdow/zh-cn_image_0000002558765962.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055046Z&HW-CC-Expire=86400&HW-CC-Sign=8E2B28BA795C72ED056063EEE8352B3AD978EF019E6EFDEEAA7621D2F2CEBA20)
 
 ### isDisposed20+
 
@@ -727,7 +727,7 @@ isDisposed(): boolean
 69. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/SW9SVQeATaiM_3Fyx_XHTw/zh-cn_image_0000002583479443.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000034Z&HW-CC-Expire=86400&HW-CC-Sign=626BAE19026AC55DD6EA699E35AC96052B9920C46F6C94C72A578DF427985C17)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/nh3QPLNWSuW01UXdYT-kmw/zh-cn_image_0000002558606306.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055046Z&HW-CC-Expire=86400&HW-CC-Sign=725743A14EAB182752C5B4ACB70C1837A3967F0C53F6DAA31A3E6BB609A20E8A)
 
 ### inheritFreezeOptions20+
 
@@ -939,7 +939,7 @@ ComponentContent设置inheritFreezeOptions为true，且父组件为自定义组�
 183. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/fgpE1Q3fRPmtnSQQ0amyrA/zh-cn_image_0000002552799794.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000034Z&HW-CC-Expire=86400&HW-CC-Sign=6488585B2BC63980C5982BAC1BD1346820B450EA378F7EDAD876E721B14AFB0A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/q8iv6Em6QDKh4OcLVKXZ9w/zh-cn_image_0000002589325833.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055046Z&HW-CC-Expire=86400&HW-CC-Sign=37951640908DF4B435A99BE73CFB9B83747133B761D40C98C9C8249393CD6F76)
 
 ## ReactiveComponentContent22+
 
@@ -1034,7 +1034,7 @@ ReactiveComponentContent的构造函数。
 55. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/dFOkGO1SQyix_S2a3qYXrg/zh-cn_image_0000002552959440.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000034Z&HW-CC-Expire=86400&HW-CC-Sign=17C46417D841D6D508265B637BD7BC356E014658B77A47ED0D93269E666CEB92)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/UqrWfy6zQRa8FtDVGwqhOw/zh-cn_image_0000002558765960.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055046Z&HW-CC-Expire=86400&HW-CC-Sign=D79757CCC57C09EF9694F1B8202EBE64C3B31A39BC7BB3C1112C1C7E4E8A713F)
 
 ### reuse22+
 
@@ -1246,7 +1246,7 @@ ReactiveComponentContent通过[reuse](js-apis-arkui-componentcontent.md#reuse)�
 165. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/VYU8diBLQ3SBzwf6GWfigg/zh-cn_image_0000002552799792.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000034Z&HW-CC-Expire=86400&HW-CC-Sign=79E7F3F964EF23C03A492666037C04772829A27109F25138A31253496EDA4F6B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/Vw_pyFGvTfiMbkjZJZEbyg/zh-cn_image_0000002589325831.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055046Z&HW-CC-Expire=86400&HW-CC-Sign=408FEECBA8F32AAD92C0EDDE628FBC3F0C0E695F2522FA3C43BF329B676425D7)
 
 ### dispose22+
 
@@ -1368,7 +1368,7 @@ ReactiveComponentContent对象调用dispose接口后，会与后端实体节点�
 97. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/bRvhivOTRuu8tAkLHXp3xQ/zh-cn_image_0000002583439489.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000034Z&HW-CC-Expire=86400&HW-CC-Sign=805EC7187C8A57E263288293FA2CFCB5D0B0085B3A4F412BAE529CDEF3A8EF85)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/ckHKftemR3aZpfYTWbRA3A/zh-cn_image_0000002589245775.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055046Z&HW-CC-Expire=86400&HW-CC-Sign=9C730A3340017ABE2C041CD56D79D71BAF28702C434B52AD2D5640B770D79070)
 
 ### updateConfiguration22+
 
@@ -1488,7 +1488,7 @@ updateConfiguration(): void
 99. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/i0OdNdNzT9GJubTZmrlgZg/zh-cn_image_0000002552959442.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000034Z&HW-CC-Expire=86400&HW-CC-Sign=760E390619282A998F3201B1CCC48613348FDF3FEF2B4C5F72F92FAE546E9F64)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/OY_ULrClQE29JrNkHBPRyg/zh-cn_image_0000002558765962.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055046Z&HW-CC-Expire=86400&HW-CC-Sign=FF7F7BC4A696EF5CA5FF667BBF607942D7D29DFE8CA10B655B30D4DD094398EA)
 
 ### flushState22+
 
@@ -1614,7 +1614,7 @@ flushState(): void
 105. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/ZsG1c4pCS3muBTHSAQivcQ/zh-cn_image_0000002552959444.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000034Z&HW-CC-Expire=86400&HW-CC-Sign=25DFC03FF8DC9C125EE6B573C4E4A46C085E6F0C054786C4B1E3D6ED41E4DA36)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/W8i8LZh0SoWKEDaCmNO39w/zh-cn_image_0000002558765964.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055046Z&HW-CC-Expire=86400&HW-CC-Sign=171C62CC42A0CC59185A93E4F4F985E2B3B5E235F5D85E4EFFCE1D95BDDAF435)
 
 ### inheritFreezeOptions22+
 
@@ -1822,7 +1822,7 @@ ReactiveComponentContent设置inheritFreezeOptions为true，且父组件为自�
 177. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/lYM__FmSRLmUDaam8oCcVA/zh-cn_image_0000002583479445.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000034Z&HW-CC-Expire=86400&HW-CC-Sign=533C0FF08CFE52D5EA168FD1CB4C3FF3751BB1D707EAA7328436C195DF1A6A7D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/eUeNTyyZTaytTBViSsJdtg/zh-cn_image_0000002558606308.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055046Z&HW-CC-Expire=86400&HW-CC-Sign=40B467D007DDDAA51F56FC0382B6FB5AD4C714A959A95819D3B7E743FF93E961)
 
 ### isDisposed22+
 
@@ -1966,4 +1966,4 @@ isDisposed(): boolean
 117. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/II11jDevSZKk4qZBXMkIiw/zh-cn_image_0000002552799796.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000034Z&HW-CC-Expire=86400&HW-CC-Sign=F3E470E30C9A73EC79E4ED8B60C8A9F11173504BA604938AEFB478A140218FE8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/7AU2l0jpTIehw9UPbldGCQ/zh-cn_image_0000002589325835.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055046Z&HW-CC-Expire=86400&HW-CC-Sign=4A32A7C73A911C7692D89D2D0DD0F3075D59FFD979FA12D59C5863D89C774442)

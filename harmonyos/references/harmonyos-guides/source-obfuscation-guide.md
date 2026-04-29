@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/source-obfusc
 title: ArkGuard混淆开启指南
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS编译工具链 > ArkGuard源码混淆工具 > ArkGuard混淆开启指南
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:38:49+08:00
+scraped_at: 2026-04-29T13:26:56+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:0247ce3d938250376f7e72ca090473a383fae17c55e6c95ab60451452552f97a
+content_hash: sha256:0890fe0ce6c87a9a3f032413213c86ab6d3a13c082ff7351bce7abba7d9cd05e
 ---
 
 ## 开启源码混淆
@@ -172,7 +172,7 @@ content_hash: sha256:0247ce3d938250376f7e72ca090473a383fae17c55e6c95ab6045145255
   + 名称映射表文件：nameCache.json，该文件记录了源码名称混淆的映射关系。
   + 系统API白名单文件：systemApiCache.json，该文件记录了SDK中的接口与属性名称，工程源码中与其重名的元素不会被混淆。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/t0avKBsTQLSw0a9nJUB-Cg/zh-cn_image_0000002552957546.png?HW-CC-KV=V1&HW-CC-Date=20260427T233848Z&HW-CC-Expire=86400&HW-CC-Sign=A67062EB90B74533F2533AE265C4231B13504BB9050FB91160E3B39ADF39D273)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/u4ws63ZiQcCURi_3dHX_Hw/zh-cn_image_0000002589323905.png?HW-CC-KV=V1&HW-CC-Date=20260429T052655Z&HW-CC-Expire=86400&HW-CC-Sign=5A390A93338963148C3115A515C6BE2F57403E82D3D646C75A019CE7DAB2BB5B)
 
 ## 报错栈还原
 
@@ -184,4 +184,4 @@ content_hash: sha256:0247ce3d938250376f7e72ca090473a383fae17c55e6c95ab6045145255
 
 * 源代码映射信息文件：sourceMaps.map，该文件记录了压缩/转换后的代码到原始源代码之间的映射关系。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/FLJ-h7w_QaCb8Jgekx_ExA/zh-cn_image_0000002583477547.png?HW-CC-KV=V1&HW-CC-Date=20260427T233848Z&HW-CC-Expire=86400&HW-CC-Sign=A1E644384E50CD16217F5A93E1D7BDC39E27883B21925A5EDA83D051B2F80E17)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/NTReNsB5QF6rWKq2OocMNQ/zh-cn_image_0000002589243845.png?HW-CC-KV=V1&HW-CC-Date=20260429T052655Z&HW-CC-Expire=86400&HW-CC-Sign=9B15701B12F26E9528033D381E3B3A320E4DC08BE6E8A31206EE8FAE78BC2C99)

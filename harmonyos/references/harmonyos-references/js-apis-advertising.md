@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: @ohos.advertising (广告服务框架)
 breadcrumb: API参考 > 应用服务 > Ads Kit（广告服务） > ArkTS API > @ohos.advertising (广告服务框架)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:16:17+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:fafbcdf5f835136aca50ba6736620c3020bd47397a7926bb34cc561c9c82ee8c
+scraped_at: 2026-04-29T14:06:56+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:fa94579c99c14f28f8f37745eccd545d580c424b3919141a2475f6445f33f612
 ---
 
 本模块提供广告操作能力，包括请求广告、展示广告。
@@ -38,7 +38,7 @@ showAd(ad: Advertisement, options: AdDisplayOptions, context?: common.UIAbilityC
 
 | **参数名** | **类型** | 必填 | 说明 |
 | --- | --- | --- | --- |
-| ad | [Advertisement](js-apis-advertising.md#advertisement) | 是 | 广告对象。 |
+| ad | [Advertisement](js-apis-advertisement.md#advertisement) | 是 | 广告对象。 |
 | options | [AdDisplayOptions](js-apis-advertising.md#addisplayoptions) | 是 | 广告展示参数。 |
 | context | common.[UIAbilityContext](js-apis-inner-application-uiabilitycontext.md) | 否 | UIAbility的上下文环境，不设置从api: [@ohos.app.ability.common](js-apis-app-ability-common.md)中获取。 |
 
@@ -573,7 +573,7 @@ onAdLoadSuccess(ads: Array<Advertisement>): void
 
 | 名称 | **类型** | 必填 | 说明 |
 | --- | --- | --- | --- |
-| ads | Array<[Advertisement](js-apis-advertising.md#advertisement)> | 是 | 广告数据。 |
+| ads | Array<[Advertisement](js-apis-advertisement.md#advertisement)> | 是 | 广告数据。 |
 
 **示例：**
 
@@ -648,7 +648,7 @@ onAdLoadSuccess(adsMap: Map<string, Array<Advertisement>>): void
 
 | **参数名** | **类型** | 必填 | 说明 |
 | --- | --- | --- | --- |
-| adsMap | Map<string, Array<[Advertisement](js-apis-advertising.md#advertisement)>> | 是 | 广告数据。 |
+| adsMap | Map<string, Array<[Advertisement](js-apis-advertisement.md#advertisement)>> | 是 | 广告数据。 |
 
 **示例：**
 
@@ -693,7 +693,7 @@ onStatusChanged(status: string, ad: Advertisement, data: string)
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | status | string | 是 | 广告展示状态。  - onAdLoad：广告加载成功。  - onAdFail：广告加载失败。  - onAdOpen：打开广告。  - onAdClick：点击广告。  - onAdClose：关闭广告。  - onMediaProgress：广告播放进度。  - onMediaStart：广告开始播放。  - onMediaPause：广告暂停播放。  - onMediaStop：广告停止播放。  - onMediaComplete：广告播放完成。  - onMediaCountDown：广告倒计时。  - onMediaError：广告播放失败。  - onLandscape：竖屏状态下点击全屏按钮。  - onPortrait：全屏状态下点击返回按钮。  - onBackClicked：点击返回按钮。 |
-| ad | [Advertisement](js-apis-advertising.md#advertisement) | 是 | 发生状态变化的广告内容。 |
+| ad | [Advertisement](js-apis-advertisement.md#advertisement) | 是 | 发生状态变化的广告内容。 |
 | data | string | 是 | 扩展信息。  当status参数为onAdClose时，data值为关闭原因，关闭原因描述如下：  - adShowEnded：广告展示结束。  - adCloseBtnClicked：点击关闭按钮。  - adSkipBtnClicked：点击跳过。  - adFeedbackClosed：负反馈关闭。  - adBackgroundClosed：开屏切后台关闭。 |
 
 **示例：**
@@ -816,23 +816,3 @@ PhonePC/2in1Tablet
 | mute | boolean | 否 | 广告视频播放是否静音。  - true：静音播放。  - false：非静音播放。  不填以业务逻辑为准。 |
 | audioFocusType | number | 否 | 视频播放过程中获得音频焦点的场景类型。  - 0：视频播放静音、非静音时都获取焦点。  - 1：视频静音播放时不获取焦点。  - 2：视频播放静音、非静音时都不获取焦点。  - 该接口依赖的相关功能当前不支持使用，暂不确定默认值。 |
 | [key: string] | number | boolean | string | undefined | 否 | 自定义参数。  - refreshTime：类型number，单位：ms，取值范围[30000, 120000]。AutoAdComponent组件可选自定义参数，用于控制广告的轮播时间间隔。填写了该参数，则广告按照参数配置的时间间隔轮播，否则广告不会轮播，只会展示广告响应中的第一个广告内容。 |
-
-## Advertisement
-
-PhonePC/2in1Tablet
-
-请求的广告内容。
-
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.Advertising.Ads
-
-| 名称 | 类型 | 只读 | 可选 | 说明 |
-| --- | --- | --- | --- | --- |
-| adType | number | 否 | 否 | 广告类型。  - 1：开屏广告。  - 3：原生广告。  - 7：激励广告。  - 8：横幅广告。  - 12：插屏广告。  - 60：贴片广告。  不填默认为原生广告类型。 |
-| uniqueId | string | 否 | 否 | 广告唯一标识。 |
-| rewarded | boolean | 否 | 否 | 广告是否获得奖励。  - true：获得奖励。  - false：没有获得奖励。 |
-| shown | boolean | 否 | 否 | 广告是否展示。  - true：展示。  - false：未展示。 |
-| clicked | boolean | 否 | 否 | 广告是否被点击。  - true：被点击。  - false：未被点击。 |
-| rewardVerifyConfig | Map<string, string> | 否 | 否 | 服务器验证参数。  {  customData: "test",  userId: "12345"  } |
-| [key: string] | Object | 否 | 是 | 自定义参数。  - isFullScreen：类型boolean。开屏广告自定义参数，用于标识返回的广告是否为全屏，true为全屏广告，false为半屏广告。  - biddingInfo：类型Object。用于获取实时竞价相关结果。  - biddingInfo.price：类型number。本条广告的eCPM（Effective Cost Per Mille，每一千次展示可以获得的广告收入）。  - biddingInfo.cur:类型string。 本条广告的价格币种。支持币种：CNY（单位：元）、USD（单位：美元）、EUR（单位：欧元）、GBP（单位：英镑）、JPY（单位：日元）。  - biddingInfo.nurl：类型string。媒体回传竞价成功结果的URL。  - biddingInfo.lurl：类型string。媒体回传竞价失败通知其他DSP竞价成功结果的URL。 |

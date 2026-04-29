@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design
 title: symbolRegister
 breadcrumb: API参考 > 应用框架 > UI Design Kit（UI设计套件） > ArkTS API > symbolRegister
 category: harmonyos-references
-scraped_at: 2026-04-28T08:06:39+08:00
+scraped_at: 2026-04-29T13:57:09+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:4c8501809cdce132bb026d68ef876725b58c7b113b1638471027c176f2944f5f
+content_hash: sha256:549ce47df2ad5c956e0aee1e35d0373bf2ea9dbdd3fe3c2d9240a808a7603414
 ---
 
 本模块提供自定义Symbol图标资源与动效参数资源注册加载能力。
@@ -87,4 +87,4 @@ registerSymbol(ttfSrc: resourceManager.Resource, jsonSrc: resourceManager.Resour
 24. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/9HvdSSgZRuu1LWY5vKpmow/zh-cn_image_0000002552960518.png?HW-CC-KV=V1&HW-CC-Date=20260428T000637Z&HW-CC-Expire=86400&HW-CC-Sign=2B6AE5D5861ADEBB52EA62E029C52F73B9B9CFF1D9CCF0D36212586621200BD7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/mW_dmRwRSXWZ_Q9-02qpwA/zh-cn_image_0000002558607384.png?HW-CC-KV=V1&HW-CC-Date=20260429T055708Z&HW-CC-Expire=86400&HW-CC-Sign=C6311B76D3380693072A656994C8F0B1A7CDF6BB67C97BFEAFBCAB8040300999)

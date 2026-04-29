@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-21
 title: 如何加载和使用自定义字体
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 方舟UI框架（ArkUI） > 如何加载和使用自定义字体
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:25:03+08:00
+scraped_at: 2026-04-29T14:16:11+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:039da50da42e215adb7c9952400d32bc19ec77cf6351303b77c5cc6343d721c1
+content_hash: sha256:c8628bbb266b292af0a47817e3788eb3d3517eb7b3be2249ef82dc760781a4bc
 ---
 
 1. 字体管理中[@ohos.font (注册自定义字体)](../harmonyos-references/js-apis-font.md)。
@@ -59,4 +59,4 @@ content_hash: sha256:039da50da42e215adb7c9952400d32bc19ec77cf6351303b77c5cc6343d
 
 效果如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/xguF_tpOSSCNgzsuLxmTlQ/zh-cn_image_0000002194158888.png?HW-CC-KV=V1&HW-CC-Date=20260428T002502Z&HW-CC-Expire=86400&HW-CC-Sign=9B1F2088012030A4647AE1E1CF16D7D4AA9C24005A37741A3453F9A818D28444 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/xguF_tpOSSCNgzsuLxmTlQ/zh-cn_image_0000002194158888.png?HW-CC-KV=V1&HW-CC-Date=20260429T061610Z&HW-CC-Expire=86400&HW-CC-Sign=3E9412415365D00347E1EBF243E34AA08A972751B789477823A192CB2707716F "点击放大")

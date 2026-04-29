@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-layout-
 title: 层叠布局 (Stack)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 组件布局 > 构建布局 > 层叠布局 (Stack)
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:39:31+08:00
+scraped_at: 2026-04-29T13:27:40+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:10815f45288664aac60b26ee08a04447861cda14cf39cb9496e4c632b4a67ac7
+content_hash: sha256:b66703cd66d47b2d5d16b95c57edf71ad6c265066ae5aa65bca417791248fa73
 ---
 
 ## 概述
@@ -18,7 +18,7 @@ content_hash: sha256:10815f45288664aac60b26ee08a04447861cda14cf39cb9496e4c632b4a
 
 **图1** 层叠布局
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/jQaxAXxJQ4CsqH55uFOA2Q/zh-cn_image_0000002583437757.png?HW-CC-KV=V1&HW-CC-Date=20260427T233929Z&HW-CC-Expire=86400&HW-CC-Sign=AFF69549C7E442B39C9E92DE97708FFFE000D0499C1D9345EE0E6BC99AF90DA8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/MhCg7vp3RciQ26Z8CvhRLg/zh-cn_image_0000002558604546.png?HW-CC-KV=V1&HW-CC-Date=20260429T052738Z&HW-CC-Expire=86400&HW-CC-Sign=82E7BDF4379879EF203E7B9FE00675816E1E3AD51691C87BCDCB5EE1D18A9D9D)
 
 说明
 
@@ -49,7 +49,7 @@ Stack组件为容器组件，容器内可包含各种子元素。其中子元素
 
 [StackLayoutExample.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/stacklayout/StackLayoutExample.ets#L15-L32)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/MJiBEaidRpC2oO7K-2rPGQ/zh-cn_image_0000002552957712.png?HW-CC-KV=V1&HW-CC-Date=20260427T233929Z&HW-CC-Expire=86400&HW-CC-Sign=61F784096C06C4E129B9DB1CE26B110F6898E2F4AE0B9FA12954D86032EB0AE1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/GSZ0HvukRimR2nfuYqHaNg/zh-cn_image_0000002589324071.png?HW-CC-KV=V1&HW-CC-Date=20260429T052738Z&HW-CC-Expire=86400&HW-CC-Sign=C9404FFDA9A22543F2D3700293AE74762D59DF282CA0312BA3B4DA8066877C17)
 
 ## 对齐方式
 
@@ -57,7 +57,7 @@ Stack组件通过[alignContent参数](../harmonyos-references/ts-container-stack
 
 **图2** Stack容器内元素的对齐方式
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/Ii99Q0KDRAKF_30JrD_NFg/zh-cn_image_0000002583477713.png?HW-CC-KV=V1&HW-CC-Date=20260427T233929Z&HW-CC-Expire=86400&HW-CC-Sign=81A0D14D3D769B4E9693532015B62450645E76B0FDD53E5E9D921D48156585EC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/qfhX9XxwQNS58LobTlDvtw/zh-cn_image_0000002589244011.png?HW-CC-KV=V1&HW-CC-Date=20260429T052738Z&HW-CC-Expire=86400&HW-CC-Sign=3534547F70221716EC6326CF95D704CFE745852392C92BF7FB8C32915CE3B537)
 
 ```
 1. // xxx.ets
@@ -103,7 +103,7 @@ Stack容器中兄弟组件显示层级关系可以通过[Z序控制](../harmonyo
 
 [StackLayoutNozIndex.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/stacklayout/StackLayoutNozIndex.ets#L20-L37)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/aWawmYPlRGODtfU4bw2VXg/zh-cn_image_0000002552798064.png?HW-CC-KV=V1&HW-CC-Date=20260427T233929Z&HW-CC-Expire=86400&HW-CC-Sign=43420E494CBF6ED2238145033352F260A8516139D8FDEF696F456CE13D502EE0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/jQItktHJQYqiYapa-9kKtA/zh-cn_image_0000002558764204.png?HW-CC-KV=V1&HW-CC-Date=20260429T052738Z&HW-CC-Expire=86400&HW-CC-Sign=4FECAA881392341A9334B7F69BB538BCDF3643338A1BC38383495BBB6E5E1CF5)
 
 上图中，最后的子元素3的尺寸大于前面的所有子元素，所以，前面两个元素完全隐藏。改变子元素1、子元素2的zIndex属性后，可以将元素展示出来。
 
@@ -128,7 +128,7 @@ Stack容器中兄弟组件显示层级关系可以通过[Z序控制](../harmonyo
 
 [StackLayoutzIndex.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/stacklayout/StackLayoutzIndex.ets#L20-L37)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/SHNQeow6QcGnWyz4i82YQQ/zh-cn_image_0000002583437759.png?HW-CC-KV=V1&HW-CC-Date=20260427T233929Z&HW-CC-Expire=86400&HW-CC-Sign=5C388DBEF8203AFCDA4793306E561766E6E74613D4A432E079735B6A16E17B76)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/OfFBirEtQQuW-7BFdgFBTQ/zh-cn_image_0000002558604548.png?HW-CC-KV=V1&HW-CC-Date=20260429T052738Z&HW-CC-Expire=86400&HW-CC-Sign=7F92E7D318A530A7C44DFB31E357437510ADBD89963380B2319918CAAEE8C50E)
 
 ## 场景示例
 
@@ -175,7 +175,7 @@ Stack容器中兄弟组件显示层级关系可以通过[Z序控制](../harmonyo
 
 [StackLayoutSceneExample.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/stacklayout/StackLayoutSceneExample.ets#L15-L52)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/e-uluOAcTZyBrY77rhOBMQ/zh-cn_image_0000002552957714.png?HW-CC-KV=V1&HW-CC-Date=20260427T233929Z&HW-CC-Expire=86400&HW-CC-Sign=493236FEE57730766B05E21FC152821238AE1F7E334483EF0D761076ED2D4E08)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/qswuW_2STjazFp42z5yYtg/zh-cn_image_0000002589324073.png?HW-CC-KV=V1&HW-CC-Date=20260429T052738Z&HW-CC-Expire=86400&HW-CC-Sign=A4A2A27AF08EB081378023B00A4C53E16CF3473DC4E644DDA0AFAD84160E1F2A)
 
 ## 示例代码
 

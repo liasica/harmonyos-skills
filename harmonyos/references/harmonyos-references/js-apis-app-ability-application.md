@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: @ohos.app.ability.application (应用工具类)
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > Stage模型能力的接口 > @ohos.app.ability.application (应用工具类)
 category: harmonyos-references
-scraped_at: 2026-04-28T07:58:14+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:bfe741573c277d6db50bc738bca15b0482f3411231d6182edd4b567290b9570e
+scraped_at: 2026-04-29T13:48:26+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:a733c07725760ea67bb35db09c8c8deea6b6fb34014f38b47eda7a41306dc4ae
 ---
 
 开发者可以通过该模块管理和获取应用的上下文[Context](../harmonyos-guides/application-context-stage.md)，以及控制应用进程的状态。
@@ -46,7 +46,7 @@ PhonePC/2in1TabletTVWearable
 
 createModuleContext(context: Context, moduleName: string): Promise<Context>
 
-创建指定模块的上下文。创建出的模块上下文中[resourceManager.Configuration](js-apis-resource-manager.md#configuration)资源继承自入参上下文，便于开发者获取[跨HAP/HSP包应用资源](../harmonyos-guides/resource-categories-and-access.md#跨haphsp包应用资源)。使用Promise异步回调。
+创建指定模块的上下文。创建出的模块上下文中[resourceManager.Configuration](js-apis-resource-manager.md#configuration)资源继承自入参上下文，便于开发者获取[跨HAP/HSP包资源](../harmonyos-guides/resource-categories-and-access.md#访问跨haphsp包资源)。使用Promise异步回调。
 
 说明
 

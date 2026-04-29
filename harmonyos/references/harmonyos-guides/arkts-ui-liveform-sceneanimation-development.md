@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-live
 title: 场景动效类型互动卡片开发指导
 breadcrumb: 指南 > 应用框架 > Form Kit（卡片开发服务） > ArkTS卡片开发（推荐） > 互动卡片开发 > 场景动效类型互动卡片 > 场景动效类型互动卡片开发指导
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:41:34+08:00
+scraped_at: 2026-04-29T13:30:01+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:4806b176fb85bbe1072da36feeed6748045bf2ffe5fb2d4960cdd7f8286ddb05
+content_hash: sha256:1081a31c5686a8bdcba25a1b4aa722dabae0e8f7dc2599483bcc1dedfa5c1a61
 ---
 
 本文档提供了场景动效类型互动卡片的开发指导，包括卡片非激活态和激活态UI界面开发、卡片配置文件开发。
@@ -423,4 +423,4 @@ content_hash: sha256:4806b176fb85bbe1072da36feeed6748045bf2ffe5fb2d4960cdd7f8286
 
 以下是按照本文档代码示例开发而成的效果demo，demo执行动效时，点击按钮，将调用 [formProvider.cancelOverflow](../harmonyos-references/js-apis-app-form-formprovider.md#formprovidercanceloverflow20) 接口，打断当前破框动效，卡片切换为非激活态。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/Ba3_Q7-GSqy6iLstl-aNQg/zh-cn_image_0000002552958312.gif?HW-CC-KV=V1&HW-CC-Date=20260427T234133Z&HW-CC-Expire=86400&HW-CC-Sign=67BE6BD309A66CE6253FCD0290B4D3157CD00FB55E3F45A5187D9615486894AB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/Dh9YjMH1TbOm-QwSB8VdWw/zh-cn_image_0000002589324679.gif?HW-CC-KV=V1&HW-CC-Date=20260429T053000Z&HW-CC-Expire=86400&HW-CC-Sign=BC044FDC72457917E9EDF0DD50C6930BF401366BAF1164ED0E4B59A9FEBDAC41)

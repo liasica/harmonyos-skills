@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/i18n-ui-desig
 title: 国际化界面设计
 breadcrumb: 指南 > 应用框架 > Localization Kit（本地化开发服务） > 应用国际化 > 国际化界面设计
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:41:40+08:00
+scraped_at: 2026-04-29T13:30:09+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:4ae1f0b95945e7ad62398a85d79c8e16b1e787c649078a06baca0ef71af3ce20
+content_hash: sha256:32edb2eee98b8477c58c5ef0fde176c5bd0f34e2c81890012de4fe2c4b9b4165
 ---
 
 一套有效的国际化界面布局设计规则，既可以树立产品在国际化设计中产品调性，还可以保证操作的一致性，遵循以下设计规则可有效提升应用全球化质量。
@@ -36,20 +36,20 @@ content_hash: sha256:4ae1f0b95945e7ad62398a85d79c8e16b1e787c649078a06baca0ef71af
 
 **图1** 一般布局示例（英文）
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/n0f5aeTEQfOf7S-l81oxsw/zh-cn_image_0000002552798670.png?HW-CC-KV=V1&HW-CC-Date=20260427T234139Z&HW-CC-Expire=86400&HW-CC-Sign=BFA93D2EB36B6C3448FC63D83DD8EBA9F7E6984CC28007EB6FF6B200709C15FC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/SXi-TvMaQ0CsvRI6EFvDRw/zh-cn_image_0000002558764818.png?HW-CC-KV=V1&HW-CC-Date=20260429T053008Z&HW-CC-Expire=86400&HW-CC-Sign=ABECAF86B9B4ABE90B4047839194BE47443E95374E4B770675CA8951C02EB739)
 
 **图2** 镜像布局示例（阿拉伯文）
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/GgpMT4fBTSq73ztWSl117g/zh-cn_image_0000002583438365.png?HW-CC-KV=V1&HW-CC-Date=20260427T234139Z&HW-CC-Expire=86400&HW-CC-Sign=4E7633FB1895A28B0DB608109AEBE40FF42F51452D9F9E347233A5A6922A5106)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/mnkiheR6Qfa96M1TGxKzRQ/zh-cn_image_0000002558605162.png?HW-CC-KV=V1&HW-CC-Date=20260429T053008Z&HW-CC-Expire=86400&HW-CC-Sign=150FD8A23F4B23BFDCD7701946AED26D30ED6C2BCAD014865817D192B9CC153E)
 
 **图3** 一般图标资源
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/B0YzMPUjS0-nUzksyZtaHw/zh-cn_image_0000002552958320.png?HW-CC-KV=V1&HW-CC-Date=20260427T234139Z&HW-CC-Expire=86400&HW-CC-Sign=F25FE7F3E9A638DBD5A182E23C9225056860A4D22B9EA31D723E73CFEAF5662C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/YYrAjXtNQFGb7cqNr_L-DA/zh-cn_image_0000002589324687.png?HW-CC-KV=V1&HW-CC-Date=20260429T053008Z&HW-CC-Expire=86400&HW-CC-Sign=BDFE8602DD497E4594C8032C221FD55A35114BA111724A5698EF2887CD370AD1)
 
 **图4** RTL语言系统下提供的图标资源
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/paClD48FTDSUBTj1-w6Q8A/zh-cn_image_0000002583478321.png?HW-CC-KV=V1&HW-CC-Date=20260427T234139Z&HW-CC-Expire=86400&HW-CC-Sign=2D24FACBC86AFE4B8F89A6EEEB3E6BB127FE4D7CE4FAFB3F6284A24242181051)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/fozh342dTkGURtokPPbtUg/zh-cn_image_0000002589244625.png?HW-CC-KV=V1&HW-CC-Date=20260429T053008Z&HW-CC-Expire=86400&HW-CC-Sign=8942D115A91270E847B67E00B818CCA72C7B0FD700D7F59A95F1F42E1956EBDE)
 
 **图5** RTL语言下提供的镜像控件
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/h31cXIqFRXKivnp1jHlQUw/zh-cn_image_0000002552798672.png?HW-CC-KV=V1&HW-CC-Date=20260427T234139Z&HW-CC-Expire=86400&HW-CC-Sign=2928CEA0262D2491C3AD428B8C1BB41EAB5639654BA6F3A97C4BB42B83D1610F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/T7YHRwa8T7qLkuZQkpC76w/zh-cn_image_0000002558764820.png?HW-CC-KV=V1&HW-CC-Date=20260429T053008Z&HW-CC-Expire=86400&HW-CC-Sign=A8D3BFE9A909B0F4A9D99CDC7EA48C12CE80BC8D39C6315A33B460016E35C8BC)

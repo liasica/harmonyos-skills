@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: DatePicker
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 按钮与选择 > DatePicker
 category: harmonyos-references
-scraped_at: 2026-04-28T08:01:43+08:00
+scraped_at: 2026-04-29T13:52:00+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:20c592c6848a16e144c9977674f613bc0d6aafcdaad6db5c80abc4fe6ba430f2
+content_hash: sha256:d5fdda6a0aa42797be76a49f310ff240e0270dc82564a0bd256b36f3eeede6ae
 ---
 
 滑动选择日期的组件。
@@ -459,7 +459,7 @@ PhonePC/2in1TabletTVWearable
 28. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/MqfOtYJRQRu1pWfaoBNxDQ/zh-cn_image_0000002552959708.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000141Z&HW-CC-Expire=86400&HW-CC-Sign=EF4E44CFDC3C4FBC6B5D96D78068AE12C52D1A99901216626D17BA8F68B1A7AE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/s1pXSBXnTTShqIz_9gPZbw/zh-cn_image_0000002558766230.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055158Z&HW-CC-Expire=86400&HW-CC-Sign=5AE663999BA4BBF4C0C777BD9FB15D062343A4C30FCA2B673B5609DFBA60680A)
 
 ### 示例2（设置文本样式）
 
@@ -492,7 +492,7 @@ PhonePC/2in1TabletTVWearable
 24. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/S3NUJJ6hR2Cu4hc81D-NXQ/zh-cn_image_0000002583479709.png?HW-CC-KV=V1&HW-CC-Date=20260428T000141Z&HW-CC-Expire=86400&HW-CC-Sign=9D5404C419C16F390B26F1C5BF1F8BA4A1BE40E9B4C7AA39B8AF343CBD9333BB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/AUPCngykT6KJKOTup67ksw/zh-cn_image_0000002558606572.png?HW-CC-KV=V1&HW-CC-Date=20260429T055158Z&HW-CC-Expire=86400&HW-CC-Sign=23700E90452DC8A42CD32A76073207B0D7ADD6B33560F50486D42224680A6EE2)
 
 ### 示例3（设置显示年、月和月、日列）
 
@@ -545,7 +545,7 @@ PhonePC/2in1TabletTVWearable
 42. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/F8TP7WuXQE6qfkSy4blyig/zh-cn_image_0000002552800060.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000141Z&HW-CC-Expire=86400&HW-CC-Sign=7658C65648D1B7852EC68A6D2B3EE5EA6835F5EE76E9AF46746E30125BE08684)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/zuwJqpXhRHemczIUqVua1Q/zh-cn_image_0000002589326099.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055158Z&HW-CC-Expire=86400&HW-CC-Sign=B3D7113A2DDD1C2DC13306FFE09A7950011BD1DD0F6B404121D6A6938DF7DB8B)
 
 ### 示例4（设置循环滚动）
 
@@ -583,4 +583,4 @@ PhonePC/2in1TabletTVWearable
 29. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/4yjWts1BTwaelx946d7vow/zh-cn_image_0000002583439755.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000141Z&HW-CC-Expire=86400&HW-CC-Sign=FFAC82D1DBE22F3969585C42D59665AF8A9174E476B1D604ED7027C36913E784)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/bkQiz5SbSJOp8BaMaiiI7g/zh-cn_image_0000002589246041.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055158Z&HW-CC-Expire=86400&HW-CC-Sign=09875A4E20E8FBD10E061C074D20D6D2BC0E0F47B8D4EA73FD7F6F060DCACF4A)

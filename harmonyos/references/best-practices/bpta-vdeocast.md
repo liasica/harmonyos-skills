@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-vdeocast
 title: 视频投播
 breadcrumb: 最佳实践 > 自由流转 > 多端协同 > 视频投播
 category: best-practices
-scraped_at: 2026-04-28T08:21:40+08:00
+scraped_at: 2026-04-29T14:12:46+08:00
 doc_updated_at: 2026-04-01
-content_hash: sha256:ad115a764317bba829c161bbf4e443a64e132030cebb73f8495918436e37f2e6
+content_hash: sha256:1756d837cbcd0d08ce2440c2f46da00524eef813e89b41d233bf0ecae99a1e0e
 ---
 
 ## 概述
@@ -29,7 +29,7 @@ content_hash: sha256:ad115a764317bba829c161bbf4e443a64e132030cebb73f8495918436e3
 
 **体验视频**
 
-[](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/23/v3/GACQ4K7HRie0N7KJnirDKg/zh-cn_media_0000002311894292.mp4?HW-CC-KV=V1&HW-CC-Date=20260428T002136Z&HW-CC-Expire=86400&HW-CC-Sign=4D7ED4F98CE9717FEEA93E77EABE545CBA772EC9DECFBA3C7B5FC6CF9C86B02C)
+[](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/23/v3/GACQ4K7HRie0N7KJnirDKg/zh-cn_media_0000002311894292.mp4?HW-CC-KV=V1&HW-CC-Date=20260429T061239Z&HW-CC-Expire=86400&HW-CC-Sign=E235A7072ACCBB52C1356517CFBAFE02FE5C5A412B09D08EC18FE8EFDA088225)
 
 Video Player is loading.
 
@@ -94,7 +94,7 @@ End of dialog window.
 
 投播功能通过AVSession建立设备连接，由AVCastController控制远端播放。详见[运作机制](../harmonyos-guides/distributed-playback-overview.md#运作机制)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/pQpD25_BSXyWHkAeW964vw/zh-cn_image_0000002345973089.png?HW-CC-KV=V1&HW-CC-Date=20260428T002136Z&HW-CC-Expire=86400&HW-CC-Sign=13E733A85A8F9436F40CF137B09761739B00119DD1B3BA25DF85A8091EB9ABEB "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/pQpD25_BSXyWHkAeW964vw/zh-cn_image_0000002345973089.png?HW-CC-KV=V1&HW-CC-Date=20260429T061239Z&HW-CC-Expire=86400&HW-CC-Sign=C88977758338AE4C97541BD8984D306B82F43458F7FA781D2DA7F622421FCC4E "点击放大")
 
 ## 模块设计
 
@@ -106,13 +106,13 @@ End of dialog window.
 
 完成投播功能，建议参考如下流程接入，其中本端视频显示和控制可参考[视频播放组件](../harmonyos-guides/arkts-common-components-video-player.md)、[使用AVPlayer播放视频(ArkTS)](../harmonyos-guides/video-playback.md)、[使用AVPlayer播放视频(C/C++)](../harmonyos-guides/using-ndk-avplayer-for-video-playback.md)等视频实现方案根据功能诉求自行实现，本文从接入播控中心进行介绍。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/o-S9NT9aSPGZ69PJTldS-w/zh-cn_image_0000002345853277.png?HW-CC-KV=V1&HW-CC-Date=20260428T002136Z&HW-CC-Expire=86400&HW-CC-Sign=3298C8AD1E4E734CB70AE954A67E7B05B1E57B5B052702D6ECDDAB8FB88AC45A "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/o-S9NT9aSPGZ69PJTldS-w/zh-cn_image_0000002345853277.png?HW-CC-KV=V1&HW-CC-Date=20260429T061239Z&HW-CC-Expire=86400&HW-CC-Sign=038F158381FAE7E213BA68566508A1B0A9CF834A1DF50ADD4AB3626C2A467945 "点击放大")
 
 ## 接入播控中心
 
 投播功能依赖于播控中心，因此必须接入播控中心才能实现投播功能。播控中心不仅能够控制本端设备的播放，还能控制远端设备的播放。本章节将简要介绍应用接入播控中心的开发流程。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/cuOiCQFNQ0e9n2BKoT4bzQ/zh-cn_image_0000002346524017.gif?HW-CC-KV=V1&HW-CC-Date=20260428T002136Z&HW-CC-Expire=86400&HW-CC-Sign=32984D0E2429C7DA2977D35D3771DD97CCAC240589E4A5AA98C8003F535CA7E5 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/cuOiCQFNQ0e9n2BKoT4bzQ/zh-cn_image_0000002346524017.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061239Z&HW-CC-Expire=86400&HW-CC-Sign=AC466BFE27EC31D095179306837800A46992B7309A2132310B5F3FDBB81A324C "点击放大")
 
 ### 媒体会话初始化
 
@@ -199,7 +199,7 @@ End of dialog window.
 
 在完成创建投播后，远端设备即可正常播放视频，本端会停止播放并页面跳转。
 
-[](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/30/v3/UGQQMvulTzu1k_UOGpThfw/zh-cn_media_0000002311894304.mp4?HW-CC-KV=V1&HW-CC-Date=20260428T002136Z&HW-CC-Expire=86400&HW-CC-Sign=E93EF8AE55C7F353EF73A69E94BB0C96372F5EB5946CA9EEFEC934124D6DD5CA)
+[](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/30/v3/UGQQMvulTzu1k_UOGpThfw/zh-cn_media_0000002311894304.mp4?HW-CC-KV=V1&HW-CC-Date=20260429T061239Z&HW-CC-Expire=86400&HW-CC-Sign=59611F9E6376810AD6626D70F1713284FFD23488BED873E620E415DC15C02E2A)
 
 Video Player is loading.
 
@@ -209,7 +209,7 @@ Play
 
 Current Time 0:00
 
-Loaded: 4.31%
+Loaded: 3.95%
 
 0:00
 
@@ -247,7 +247,7 @@ End of dialog window.
 
 **时序图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/OD2ljnbBRoiyvITFSM4ufw/zh-cn_image_0000002345973101.png?HW-CC-KV=V1&HW-CC-Date=20260428T002136Z&HW-CC-Expire=86400&HW-CC-Sign=CA9A228E06E78BBC2C01306313A332ABF7CB87379E71EDA15B9F5E46093DE5F1 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/OD2ljnbBRoiyvITFSM4ufw/zh-cn_image_0000002345973101.png?HW-CC-KV=V1&HW-CC-Date=20260429T061239Z&HW-CC-Expire=86400&HW-CC-Sign=2F66620DB1B547A825500F65E452FC0C438442DA361D4364221736F4881D9DF9 "点击放大")
 
 **开发步骤**
 
@@ -262,7 +262,7 @@ End of dialog window.
    [VideoPlayingView.ets](https://gitcode.com/HarmonyOS_Samples/VideoCast/blob/master/entry/src/main/ets/view/VideoPlayingView.ets#L150-L152)
 2. 绘制AVCastPicker，AVCastPicker是投播组件，点击后系统会弹出设备选择半模态。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/ZAHftCfXQyulHT8kyuozKQ/zh-cn_image_0000002473018785.jpg?HW-CC-KV=V1&HW-CC-Date=20260428T002136Z&HW-CC-Expire=86400&HW-CC-Sign=D5569CB7CB8C463B631442858380463E9A3AE0E71BC059DDC8017E1030E04FC7 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/ZAHftCfXQyulHT8kyuozKQ/zh-cn_image_0000002473018785.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T061239Z&HW-CC-Expire=86400&HW-CC-Sign=D4E4C652EC242EBB5C09A29800936446A411F9EC3BE6EAE37375F8B7E5BCB3B7 "点击放大")
 
    ```
    1. AVCastPicker({
@@ -364,7 +364,7 @@ End of dialog window.
 
 ### 设备切换
 
-[](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/1c/v3/q4KviacyR3CYd-ej6F8Bfg/zh-cn_media_0000002312054100.mp4?HW-CC-KV=V1&HW-CC-Date=20260428T002136Z&HW-CC-Expire=86400&HW-CC-Sign=114338E70B83E97655A67672FC430D77A5DC3C09152B15802D2017025E0EB1FE)
+[](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/1c/v3/q4KviacyR3CYd-ej6F8Bfg/zh-cn_media_0000002312054100.mp4?HW-CC-KV=V1&HW-CC-Date=20260429T061239Z&HW-CC-Expire=86400&HW-CC-Sign=410173C3CB74EF3A112EC30479BE327B2A210810CB0BEA66EB6D513818258AD8)
 
 Video Player is loading.
 
@@ -374,7 +374,7 @@ Play
 
 Current Time 0:00
 
-Loaded: 7.83%
+Loaded: 8.28%
 
 0:00
 
@@ -412,7 +412,7 @@ End of dialog window.
 
 **时序图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/BxaxvLSbSfKSqxcgobtUuA/zh-cn_image_0000002311894312.png?HW-CC-KV=V1&HW-CC-Date=20260428T002136Z&HW-CC-Expire=86400&HW-CC-Sign=95A5AAEA1618ECD49972A2CB13499FA94B31FD916B8008F84DAE6C8757940860 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/BxaxvLSbSfKSqxcgobtUuA/zh-cn_image_0000002311894312.png?HW-CC-KV=V1&HW-CC-Date=20260429T061239Z&HW-CC-Expire=86400&HW-CC-Sign=2B51340EA321563529E24B45CA53488B07A91DAA8C465457790100F0E194EF3C "点击放大")
 
 **开发步骤**
 
@@ -460,7 +460,7 @@ End of dialog window.
 
 ### 远端视频状态回传本端
 
-[](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/62/v3/yblcHlK4QGuJfE4pqLH9Dg/zh-cn_media_0000002345973105.mp4?HW-CC-KV=V1&HW-CC-Date=20260428T002136Z&HW-CC-Expire=86400&HW-CC-Sign=C4F01ED2F8B42A571AE0930C9C84F512584EE2FF62C3736DDAA4DBFA36229CDF)
+[](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/62/v3/yblcHlK4QGuJfE4pqLH9Dg/zh-cn_media_0000002345973105.mp4?HW-CC-KV=V1&HW-CC-Date=20260429T061239Z&HW-CC-Expire=86400&HW-CC-Sign=4316659CE0877DB8B16D1D20D2E60F917FC6FF7EFBB642001A5E13BBB5BB6C55)
 
 Video Player is loading.
 
@@ -508,7 +508,7 @@ End of dialog window.
 
 **时序图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/KVRI0xt2QbCGu23kDzHPVA/zh-cn_image_0000002345853289.png?HW-CC-KV=V1&HW-CC-Date=20260428T002136Z&HW-CC-Expire=86400&HW-CC-Sign=81209B84FE65E9E95BE12A6B0FBE7337F1306581D9E4E04C66ED7111F16FDF39 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/KVRI0xt2QbCGu23kDzHPVA/zh-cn_image_0000002345853289.png?HW-CC-KV=V1&HW-CC-Date=20260429T061239Z&HW-CC-Expire=86400&HW-CC-Sign=5701077A61DA5A5F3F626E1B5B0BA71458F7C596933163182063E20C6FB54963 "点击放大")
 
 **开发步骤**
 
@@ -542,7 +542,7 @@ End of dialog window.
 
 ### 本端控制远端设备状态
 
-[](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/c2/v3/xOifsBxDR2SN9BW-erySOA/zh-cn_media_0000002312054104.mp4?HW-CC-KV=V1&HW-CC-Date=20260428T002136Z&HW-CC-Expire=86400&HW-CC-Sign=AA15DF45ED6CDAACCF5BAC2522A0D283112AE3870BD5EC04EE1E79FD2B1BF4F6)
+[](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/c2/v3/xOifsBxDR2SN9BW-erySOA/zh-cn_media_0000002312054104.mp4?HW-CC-KV=V1&HW-CC-Date=20260429T061239Z&HW-CC-Expire=86400&HW-CC-Sign=286926459784D417D8C25815D633112A1A3CD2FB3CCA025D17039A7B3C442583)
 
 Video Player is loading.
 
@@ -552,7 +552,7 @@ Play
 
 Current Time 0:00
 
-Loaded: 12.52%
+Loaded: 11.94%
 
 0:00
 
@@ -588,7 +588,7 @@ End of dialog window.
 
 **时序图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/FqtwPS5EQNi9s-Nx0IlgbQ/zh-cn_image_0000002311894316.png?HW-CC-KV=V1&HW-CC-Date=20260428T002136Z&HW-CC-Expire=86400&HW-CC-Sign=14DF229F5E400ED08B5A823555C3F75555042D7FE0AB66F858FE4509D4BC7D0F "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/FqtwPS5EQNi9s-Nx0IlgbQ/zh-cn_image_0000002311894316.png?HW-CC-KV=V1&HW-CC-Date=20260429T061239Z&HW-CC-Expire=86400&HW-CC-Sign=389E7CDA201C54B2CFFD990E3F2229B391A296AEA38B5A6D5AD1FBAEFF5AB189 "点击放大")
 
 **开发步骤**
 
@@ -658,7 +658,7 @@ End of dialog window.
 
 建议应用集成悬浮球快捷控制功能，便于用户快速返回投播页面进行操作控制，实现效果如图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/iT05TjVQQAqKMraZG_n1mg/zh-cn_image_0000002346644421.gif?HW-CC-KV=V1&HW-CC-Date=20260428T002136Z&HW-CC-Expire=86400&HW-CC-Sign=3621A010E016CF594C30EC9014D6D8ED1D77CEF151C0105BBB5417EC059C5EDE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/iT05TjVQQAqKMraZG_n1mg/zh-cn_image_0000002346644421.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061239Z&HW-CC-Expire=86400&HW-CC-Sign=C6D7D132F58CA1EFC41ED35932195CFE9B4472075C4C633C4F67BFC4E13055EE)
 
 可以通过为页面设置浮层实现。
 

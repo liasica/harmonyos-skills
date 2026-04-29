@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: FolderStack
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > FolderStack
 category: harmonyos-references
-scraped_at: 2026-04-28T08:02:37+08:00
+scraped_at: 2026-04-29T13:53:00+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:7a4ed09e7814a7dd91c6a4236d65c4dce2ff0cbb52ebbeaadb4e4995b9591b8a
+content_hash: sha256:0f66216ad281362b85c507e1283479005f3beb22096d4566297e86fb66f0ba7a
 ---
 
 FolderStack继承于[Stack](ts-container-stack.md)(层叠布局)控件，新增了[折叠屏悬停](../best-practices/bpta-folded-hover.md)能力，通过在FolderStack的配置项[FolderStackOptions](ts-container-folderstack.md#folderstackoptions18对象说明)的upperItems数组上设置子组件id，使相应子组件自动避让折叠屏折痕区后移到上半屏。
@@ -372,11 +372,11 @@ PhonePC/2in1TabletTVWearable
 
 **图1** 横屏展开
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/1pRTYX8YT8S_BhY8ugJbWA/zh-cn_image_0000002552800460.png?HW-CC-KV=V1&HW-CC-Date=20260428T000236Z&HW-CC-Expire=86400&HW-CC-Sign=A70B516F12239019E42F8D6736908542BC63283460A8CCA596512486E3DCA31C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/FPXs3SilQvCtESdiodwtzA/zh-cn_image_0000002589326501.png?HW-CC-KV=V1&HW-CC-Date=20260429T055259Z&HW-CC-Expire=86400&HW-CC-Sign=AAC4CBB02584A6A932A78149F6CC4526B6FBBB2CC76ED75B6EE073E62062F570)
 
 **图2** 横屏半折叠
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/u3p8VaSoQve_BttWq-frmQ/zh-cn_image_0000002583440155.png?HW-CC-KV=V1&HW-CC-Date=20260428T000236Z&HW-CC-Expire=86400&HW-CC-Sign=3EEFE31B48B3FDBB8A3C68750CCEA16B32008891207DB3931785215E65C858F3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/0z9iGVCbSMqs6TDvREdeFQ/zh-cn_image_0000002589246443.png?HW-CC-KV=V1&HW-CC-Date=20260429T055259Z&HW-CC-Expire=86400&HW-CC-Sign=69E23AE3A9B257E1F0B9B839DA7B6D30A0D79FE94C2F15EAD99D40D521D5DE5A)
 
 ### 示例2（使用attributeModifier动态设置FolderStack组件的属性及方法）
 
@@ -477,7 +477,7 @@ this appRotation:3
 
 this windowStatusType:1
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/EF-pHMhRQSazO3Za9VmeZw/zh-cn_image_0000002552960110.png?HW-CC-KV=V1&HW-CC-Date=20260428T000236Z&HW-CC-Expire=86400&HW-CC-Sign=CA4B7099046FF84F987528E502FFB61441E0C229D8876CF20D6B124FDBCAB47E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/jHo1uNhXRB2Iw5ibJI8SHg/zh-cn_image_0000002558766636.png?HW-CC-KV=V1&HW-CC-Date=20260429T055259Z&HW-CC-Expire=86400&HW-CC-Sign=8567562FD8A44794C27CB056EC010C3BABF1CED033577B6957A1B036C4AD5EC6)
 
 **图2** 横屏半折叠
 
@@ -493,4 +493,4 @@ this appRotation:3
 
 this windowStatusType:1
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/4EoPfxOETRWoMGiMZyn0BQ/zh-cn_image_0000002583480111.png?HW-CC-KV=V1&HW-CC-Date=20260428T000236Z&HW-CC-Expire=86400&HW-CC-Sign=68D905F2502BC3341A0AE65AE1450968E2D71A45932138C51BB52BAA003D8416)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/FqgJ_2kxRMW6Akof07SuOQ/zh-cn_image_0000002558606976.png?HW-CC-KV=V1&HW-CC-Date=20260429T055259Z&HW-CC-Expire=86400&HW-CC-Sign=670E1D23237190CB9CB4E039B68E08F45556EFB0662E3944315BDD399C161A4F)

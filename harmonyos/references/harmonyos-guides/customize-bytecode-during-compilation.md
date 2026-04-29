@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/customize-byt
 title: 编译期自定义修改方舟字节码
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS编译工具链 > 方舟字节码 > 编译期自定义修改方舟字节码
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:38:47+08:00
+scraped_at: 2026-04-29T13:26:54+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:925e5e76922f472958ea178a9f2fb275abb262e33ecd03d6a0794865790ba883
+content_hash: sha256:1107bb52b8e133d46ef5a132345ad821d50db89ebfc4c0b8279412c1feeb6ccc
 ---
 
 如果开发者希望自定义修改方舟字节码文件的内容，可以使用ArkTS编译工具链提供的方法自定义修改方舟字节码文件。
@@ -60,5 +60,5 @@ content_hash: sha256:925e5e76922f472958ea178a9f2fb275abb262e33ecd03d6a0794865790
 
    选项中配置的路径为步骤2生成的链接库文件在项目中的路径（这里是dll目录下）。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/AXm4DRVLSRSXpBssS72DWA/zh-cn_image_0000002583477545.png?HW-CC-KV=V1&HW-CC-Date=20260427T233846Z&HW-CC-Expire=86400&HW-CC-Sign=AFAB3E0806C046FFC8447CCFC1BCC646726C49C998642ECA9871E29BAA1B7F08)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/byzBJ8WTTUOIPtxUBbmwZg/zh-cn_image_0000002589243843.png?HW-CC-KV=V1&HW-CC-Date=20260429T052653Z&HW-CC-Expire=86400&HW-CC-Sign=D16298AF22EDA902B523DBF1B998703328A3979114C14D58AD409D5980BC1152)
 4. 重新编译项目，即可完成自定义修改方舟字节码。

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 鼠标光标控制
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 交互属性 > 鼠标光标控制
 category: harmonyos-references
-scraped_at: 2026-04-28T08:01:12+08:00
+scraped_at: 2026-04-29T13:51:26+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:0cef747177aa00070373f82c7457cab8d92e57dc8a6550d34038f316a20f2ffd
+content_hash: sha256:df8adf5f1f33991d57720b938e5f897bafbd0c44c41de4989a694f1cd73748ac
 ---
 
 控制鼠标光标的显示样式。
@@ -123,8 +123,8 @@ PhonePC/2in1TabletTVWearable
 
 当鼠标悬浮在蓝色区域时，显示：向西箭头光标样式。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/NOEnm68oR-a9YpJFy2Hc7g/zh-cn_image_0000002583479545.jpg?HW-CC-KV=V1&HW-CC-Date=20260428T000112Z&HW-CC-Expire=86400&HW-CC-Sign=50AD722588981930692C28DD2F37445BAC6FD01B6FE83D6FDC6E7B93D39F9802)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/leje5rNtQB257NaUqxqjng/zh-cn_image_0000002558606408.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T055125Z&HW-CC-Expire=86400&HW-CC-Sign=B87478650C58AC835FFDF93E5C2D03EBDCED360FDD778F72A4077515D3D9798F)
 
 当鼠标悬浮在绿色区域时，显示：向东箭头光标样式。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/LosbMxgyRVW7SMO0uHulTQ/zh-cn_image_0000002552799896.jpg?HW-CC-KV=V1&HW-CC-Date=20260428T000112Z&HW-CC-Expire=86400&HW-CC-Sign=356B318E4C1ECBC8079C3D1F163F807ECA27E4E361383EC36A792942D5EBEA69)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/rqrMKARORgSNzPkbXmBiHg/zh-cn_image_0000002589325935.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T055125Z&HW-CC-Expire=86400&HW-CC-Sign=B3EF9E725F2D729F2B988B14ED15D8D2BCDF76C49BB8454DA7A168EF20B1EB42)

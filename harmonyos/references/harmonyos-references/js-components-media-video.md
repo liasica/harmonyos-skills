@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: video
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 媒体组件 > video
 category: harmonyos-references
-scraped_at: 2026-04-28T08:03:10+08:00
+scraped_at: 2026-04-29T13:53:29+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:05d4daf6f26af18607899d728c959bd39ce16fc1c8d317f4ca62efffadf03ccf
+content_hash: sha256:49d8ccaa565c273de91a976443e5ca5aacbc7f5c37ad5c1de45859bb2178ca8f
 ---
 
 说明
@@ -154,4 +154,4 @@ PhonePC/2in1TabletTVWearable
 42. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/qS862eHdS6KJMMwQMPMFhg/zh-cn_image_0000002583440249.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000309Z&HW-CC-Expire=86400&HW-CC-Sign=050D4FC870E78F32956EB3BB96E6E65EEF09D819358AB908C1E3EEBD8351A51D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/1wjTK-fcT7i2bXqjngTFtA/zh-cn_image_0000002558766730.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055328Z&HW-CC-Expire=86400&HW-CC-Sign=2166EB44E48BB7A6A16499277CAE5E8F78674679758F92F51CF64AA1125B7382)

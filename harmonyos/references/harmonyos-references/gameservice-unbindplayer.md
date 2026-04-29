@@ -3,18 +3,20 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/gameservi
 title: 解绑账号
 breadcrumb: API参考 > 应用服务 > Game Service Kit（游戏服务） > REST API > 解绑账号
 category: harmonyos-references
-scraped_at: 2026-04-28T08:16:48+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:8e84d5039fdd7fd9918f2436da8646a1306342d18145e2bc642f6c1e6c44ea7d
+scraped_at: 2026-04-29T14:07:30+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:83d7e9b10061cbe3a8b3575b61fc18dace98ebe2970ed7f84492bf6329c6fe30
 ---
 
 ## 功能介绍
 
-调用此接口可以将游戏官方账号与华为teamPlayerId的解绑结果上报给华为游戏服务器。
+调用此接口可以解绑游戏官方账号与华为teamPlayerId的绑定关系。
 
 ## 场景描述
 
-玩家选择华为账号登录游戏时，游戏需要将游戏官方账号与华为teamPlayerId绑定，并将绑定结果上报给华为游戏服务器。若需将游戏官方账号与华为teamPlayerId解绑，需将解绑结果上报给华为，此时客户端侧可通过Game Service Kit的[unbindPlayer](gameservice-gameplayer.md#gameplayerunbindplayer)接口实现，服务器侧则可通过本接口实现。
+玩家选择华为账号登录游戏后，游戏会绑定游戏官方账号与华为teamPlayerId。
+
+若需要解绑游戏官方账号与华为teamPlayerId的绑定关系，客户端侧可以调用[unbindPlayer](gameservice-gameplayer.md#gameplayerunbindplayer)接口实现，服务端可以调用本接口实现。
 
 ## 接口原型
 
@@ -53,7 +55,7 @@ content_hash: sha256:8e84d5039fdd7fd9918f2436da8646a1306342d18145e2bc642f6c1e6c4
 
 | 参数 | 是否必选 | 类型 | 描述 |
 | --- | --- | --- | --- |
-| rtnCode | 是 | int | 服务端返回码。  -1：响应失败  0：解绑成功  1：验签失败  3001：参数错误  2031002：玩家账号信息错误  2031006：游戏信息错误  2031007：华为玩家账号已绑定其他游戏玩家账号 |
+| rtnCode | 是 | int | 服务端返回码。  -1：响应失败。由未知异常导致。  0：解绑成功。  1：验签失败。通常由于签名不一致导致。  3001：参数错误。表示缺失请求参数或格式错误。  2031002：玩家账号信息错误。  2031006：游戏信息错误。表示未查询到游戏信息。  2031007：华为玩家账号已绑定其他游戏玩家账号。 |
 | errMsg | 否 | String | 异常场景下返回错误码的描述。 |
 
 ## 响应示例
@@ -101,7 +103,7 @@ content_hash: sha256:8e84d5039fdd7fd9918f2436da8646a1306342d18145e2bc642f6c1e6c4
    3. paramsMap.put("appId", "appId");
    4. paramsMap.put("cpId", "cpId");
    5. paramsMap.put("teamPlayerId", "teamPlayerId");
-   6. paramsMap.put("ts", "111111111");
+   6. paramsMap.put("ts", 123456L);
 
    8. // 对参数进行字典序排序
    9. Map<String, String> tempMap = new TreeMap<>(paramsMap);

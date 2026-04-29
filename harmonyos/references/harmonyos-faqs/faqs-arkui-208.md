@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-208
 title: 是否有处理"9图"（又称"draw9patch"、".9图"、"点9图"等）的平替方案
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 方舟UI框架（ArkUI） > 是否有处理"9图"（又称"draw9patch"、".9图"、"点9图"等）的平替方案
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:25:55+08:00
+scraped_at: 2026-04-29T14:16:54+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:6022bfc9077928c490000118da922a11e39b729fafe8b54bde7f5a2066f6530d
+content_hash: sha256:2315d4a796bb0f94d1ae040e0723e493ba194bd0beda1ec95e11586b3934af10
 ---
 
 Image组件提供与点九图相同功能的API设置，通过设置resizable属性来配置ResizableOptions，即图像拉伸时的大小调整选项。ResizableOptions的参数slice包含top、left、bottom和right四个属性，分别表示图片在上下左右四个方向拉伸时保持不变的距离。
@@ -79,15 +79,15 @@ Image组件提供与点九图相同功能的API设置，通过设置resizable属
 
 正常大小
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/2pi3HoDuRCiwpmG26Qs6pw/zh-cn_image_0000002229758793.png?HW-CC-KV=V1&HW-CC-Date=20260428T002553Z&HW-CC-Expire=86400&HW-CC-Sign=4BA1070F17D19CCA22C13B14E29B624A26D684322AB2B2AE2A1D3A0B62A6B42D "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/2pi3HoDuRCiwpmG26Qs6pw/zh-cn_image_0000002229758793.png?HW-CC-KV=V1&HW-CC-Date=20260429T061651Z&HW-CC-Expire=86400&HW-CC-Sign=D4753C95EED9F8C4EC8E4D8AEBFBEEEB8311DEF87CAD043D2E78376BFD96337B "点击放大")
 
 左右拉伸操作
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/PQ_FricPSiGHex6JtRL7MA/zh-cn_image_0000002194158916.png?HW-CC-KV=V1&HW-CC-Date=20260428T002553Z&HW-CC-Expire=86400&HW-CC-Sign=9F2F0CD34302DA5A7C5ECB1C3DEBBC4CC40BC2F2593B2F8EF8C0C13BAE8AFC52 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/PQ_FricPSiGHex6JtRL7MA/zh-cn_image_0000002194158916.png?HW-CC-KV=V1&HW-CC-Date=20260429T061651Z&HW-CC-Expire=86400&HW-CC-Sign=63414CD31C795D1699AF67C34E88AA7357ABA04E18BDE8C50BAAD97B5A112873 "点击放大")
 
 支持多行上下左右拉伸
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/BwAvisWpTW--uTA_PeNCuA/zh-cn_image_0000002194318528.png?HW-CC-KV=V1&HW-CC-Date=20260428T002553Z&HW-CC-Expire=86400&HW-CC-Sign=3DD4F111D6A21D7176B90A6AF722D37D2030DAAED92C1A2152AA3AD1A2752476 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/BwAvisWpTW--uTA_PeNCuA/zh-cn_image_0000002194318528.png?HW-CC-KV=V1&HW-CC-Date=20260429T061651Z&HW-CC-Expire=86400&HW-CC-Sign=0E3BD37C163353B331B0EEB7B0522BA17991BDD28D1A4BA8CF18907564156E3F "点击放大")
 
 上述示例实现的是图片拉伸中间，四周保持不变。还有另一种拉伸方式，实现图片拉伸四周，中间保持不变，示例如下。
 

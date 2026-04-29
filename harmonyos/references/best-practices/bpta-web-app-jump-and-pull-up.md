@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-web-app-ju
 title: Web和应用的跳转与拉起
 breadcrumb: 最佳实践 > 应用框架 > 程序框架 > Web和应用的跳转与拉起
 category: best-practices
-scraped_at: 2026-04-28T08:20:11+08:00
+scraped_at: 2026-04-29T14:10:50+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:513c502b29950e808fad3ab5d5ab4878b84fa2f8631bf01af53cb558630479fd
+content_hash: sha256:3db892bd88d80287dd5921dc114ff27e712caf63ca884f8a819eda693ea91bdf
 ---
 
 ## 概述
@@ -217,7 +217,7 @@ content_hash: sha256:513c502b29950e808fad3ab5d5ab4878b84fa2f8631bf01af53cb558630
 7. App Linking跳转失败时，默认配置下将会打开开发者自定义的网页版应用提供给用户进行浏览，通常此时网页内会嵌入按钮实现“在应用市场下载”，目前HarmonyOS设备的跳转逻辑与其他品类设备并不一致，所以需要开发者通过区分UA标识来判断是否为HarmonyOS设备，从而定制HarmonyOS设备上的跳转体验，实现上开发者可以参考[通过UserAgent识别HarmonyOS设备](../harmonyos-guides/web-default-useragent.md#如何通过user-agent来识别harmonyos操作系统中不同设备)。
 
 **图1** Web页面打开效果图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/NphsY3GkRJarSr701qW7yA/zh-cn_image_0000002229791806.png?HW-CC-KV=V1&HW-CC-Date=20260428T002008Z&HW-CC-Expire=86400&HW-CC-Sign=04FE4361E7550C164EC962CBAFCE4BA1E9FE6353A0AD591A9F670396D4816C7D "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/NphsY3GkRJarSr701qW7yA/zh-cn_image_0000002229791806.png?HW-CC-KV=V1&HW-CC-Date=20260429T061048Z&HW-CC-Expire=86400&HW-CC-Sign=9F1D6F7C5D9460DD78A07CF53F7DDD0F58914A1B55AFA2BFC0E1D765AAA152F9 "点击放大")
 
 因此，Deep Linking适用于需要在已安装的应用之间进行跳转，实现相对简单，但当无应用匹配时用户体验不佳。而App Linking适用于社交分享、广告引流等需要外部链接访问应用的场景，以及对安全性和用户体验要求较高的场景。AppLinking在Deep Linking的基础上增加了域名校验，提高了链接的安全性和可靠性，且无论应用是否安装，用户都能访问内容。
 

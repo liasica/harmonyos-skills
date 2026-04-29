@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/graphics-
 title: launchAcceleration（游戏启动加速）
 breadcrumb: API参考 > 图形 > Graphics Accelerate Kit（图形加速服务） > ArkTS API > launchAcceleration（游戏启动加速）
 category: harmonyos-references
-scraped_at: 2026-04-28T08:15:39+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:f1bcb64b4b575ab830928994072552c404079ba8c08b6b83c9af2e8e78aae468
+scraped_at: 2026-04-29T14:06:15+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:4944ff4280afa6816139a26725392487142b4b22e0b6256ab6e0d8de0e380e7d
 ---
 
 本模块提供游戏启动加速能力。
@@ -50,9 +50,10 @@ isLaunchMirrorEnabled(): boolean
 1. import { launchAcceleration } from '@kit.GraphicsAccelerateKit';
 
 3. onWindowStageWillDestroy(): void {
-4. let enable = launchAcceleration.isLaunchMirrorEnabled()
-5. if (enable) {
-6. // 切换场景的代码逻辑
-7. }
+4. // 查询当前游戏内存镜像功能是否使能。
+5. let enable = launchAcceleration.isLaunchMirrorEnabled()
+6. if (enable) {
+7. // 切换场景的代码逻辑
 8. }
+9. }
 ```

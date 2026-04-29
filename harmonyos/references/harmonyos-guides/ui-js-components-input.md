@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-compone
 title: input开发指导
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 常见组件开发指导 > 基础组件 > input开发指导
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:40:27+08:00
+scraped_at: 2026-04-29T13:28:48+08:00
 doc_updated_at: 2026-04-13
-content_hash: sha256:5c5fcddb3f11ffc286875929ae216d76982efe0434e324c9951f5fc12d8f1151
+content_hash: sha256:3f8c1e835b6907f3c0b51192b12772531bb43ffb8c83076188b8755ff9397936
 ---
 
 input是交互式组件，用于接收用户数据。其类型可设置为日期、多选框和按钮等。具体用法请参考[input API](../harmonyos-references/js-components-basic-input.md)。
@@ -35,7 +35,7 @@ input是交互式组件，用于接收用户数据。其类型可设置为日期
 9. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/zBgnCxAwQ8yVehiAp71KaA/zh-cn_image_0000002552798452.png?HW-CC-KV=V1&HW-CC-Date=20260427T234025Z&HW-CC-Expire=86400&HW-CC-Sign=40B460CAF3E422DCE2AD5ED9611651E7B521E5FC24451232B0E9149A1BB730C6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/noeFV2nHR1-b3DyepkEX2A/zh-cn_image_0000002558764592.png?HW-CC-KV=V1&HW-CC-Date=20260429T052846Z&HW-CC-Expire=86400&HW-CC-Sign=D42F0AA6B2F33CA0B3C0913B7350919365075177D4208CB4C54BDA171B31EC9F)
 
 ## 设置input类型
 
@@ -104,7 +104,7 @@ input是交互式组件，用于接收用户数据。其类型可设置为日期
 6. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/jVmgVrqHTPao3kKWscVcBA/zh-cn_image_0000002583438147.gif?HW-CC-KV=V1&HW-CC-Date=20260427T234025Z&HW-CC-Expire=86400&HW-CC-Sign=4C8B9B1F56569E2628159637A7A190BD38780685587BDF6FFB94432145763C17)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/PQeRvPbaTJC-JcDQwPSMDA/zh-cn_image_0000002558604936.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052846Z&HW-CC-Expire=86400&HW-CC-Sign=36A2B59559D3ACBABF1038D1E7FBDD21E95D38F938D80F66D6AC06F4068733CA)
 
 说明
 
@@ -160,7 +160,7 @@ input是交互式组件，用于接收用户数据。其类型可设置为日期
 11. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/IHDEQhlOSnGyNV7d6X2mTg/zh-cn_image_0000002552958102.gif?HW-CC-KV=V1&HW-CC-Date=20260427T234025Z&HW-CC-Expire=86400&HW-CC-Sign=05D1A3E6528EBA0ED0B27279C8E8781238C9CCD513A100863F63608E86B5E6D9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/jx3AA7gMQeO4EHB3PMHpww/zh-cn_image_0000002589324461.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052846Z&HW-CC-Expire=86400&HW-CC-Sign=A176C2030CF5C02473C1DDFD044041D97D3E74447BB06B0E21BB440CAECE0E89)
 
 ## 设置输入提示
 
@@ -227,7 +227,7 @@ input是交互式组件，用于接收用户数据。其类型可设置为日期
 29. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/MiDVzfjcQROmaFIzGdMdfQ/zh-cn_image_0000002583478103.gif?HW-CC-KV=V1&HW-CC-Date=20260427T234025Z&HW-CC-Expire=86400&HW-CC-Sign=C4363806989F27FD0EDFE5CB5C964780B819AA3EA516897350A0445BA4002F6C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/p2k61_y4T8u_3xGQDcpCZA/zh-cn_image_0000002589244401.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052846Z&HW-CC-Expire=86400&HW-CC-Sign=6A4631DD7FF2AA27C34B71DC0B86F0B5ECE88E0FD2B4FA37B572C7AC655F99DA)
 
 说明
 
@@ -309,4 +309,4 @@ showError方法仅在input类型为text、email、date、time、number和passwor
 13. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/7cOZpFE3TwSqcShfVsu4AQ/zh-cn_image_0000002552798454.gif?HW-CC-KV=V1&HW-CC-Date=20260427T234025Z&HW-CC-Expire=86400&HW-CC-Sign=3262551E09D1DE2F01B9BE940D0C9CB4DEE19F480AA9B8C8FAA1B76D5CDA29E0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/JNLfFaV2TYCifsNDaUD2lw/zh-cn_image_0000002558764594.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052846Z&HW-CC-Expire=86400&HW-CC-Sign=1370ED4D0DB824887BAEF21ACCB5B50500209F86B93D94C9A284BA16DF51DDA2)

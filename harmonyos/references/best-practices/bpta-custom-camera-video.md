@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-custom-cam
 title: 自定义相机录像
 breadcrumb: 最佳实践 > 媒体 > 相机 > 自定义相机录像
 category: best-practices
-scraped_at: 2026-04-28T08:20:23+08:00
+scraped_at: 2026-04-29T14:11:13+08:00
 doc_updated_at: 2026-03-19
-content_hash: sha256:251b44de98f470916f515ccdfffcaf51a9bcfc7b8b412e5c336d3a7252718b4c
+content_hash: sha256:6ce557ba1aadf0be461b61ed16da05e65ddb9943a2b3f3902f2e19a9fbb5faa2
 ---
 
 ## 概述
@@ -18,13 +18,13 @@ content_hash: sha256:251b44de98f470916f515ccdfffcaf51a9bcfc7b8b412e5c336d3a72527
 
 录像功能是自定义相机应用的核心功能，提供实时预览和构图调整能力。通过点击界面上的录像按钮，用户即可开始视频录制。在录制过程中，相机应用会持续采集画面数据并将其保存为视频文件，用户可根据需要随时暂停或结束录制。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/7-C2Gup5SDy-MkiYj00ZEw/zh-cn_image_0000002401601769.gif?HW-CC-KV=V1&HW-CC-Date=20260428T002022Z&HW-CC-Expire=86400&HW-CC-Sign=39E71FDBEB0D660A7400949B5D14D378A17D4DE28C0741C2916D42A384607E6A "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/7-C2Gup5SDy-MkiYj00ZEw/zh-cn_image_0000002401601769.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061106Z&HW-CC-Expire=86400&HW-CC-Sign=C5D508982763421A9F0C6FB0B7AF50ADF127171700BD57B897C5A77D05D005DB "点击放大")
 
 ### 开发步骤
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/RuolIUzBSQeCMuGWVOAB-w/zh-cn_image_0000002367922004.png?HW-CC-KV=V1&HW-CC-Date=20260428T002022Z&HW-CC-Expire=86400&HW-CC-Sign=F8BEF18B356B1BF6FC92612E36A0E5B5960B31CCF508D22793BF20E6D9ACEF3D "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/RuolIUzBSQeCMuGWVOAB-w/zh-cn_image_0000002367922004.png?HW-CC-KV=V1&HW-CC-Date=20260429T061106Z&HW-CC-Expire=86400&HW-CC-Sign=4238ADD69ACD0F4C90EB0C80E2F661D51BBD4530B6152D819703E9683DEE660A "点击放大")
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/jgZLgnPHS-Wo3tk9uaGnfg/zh-cn_image_0000002383780282.png?HW-CC-KV=V1&HW-CC-Date=20260428T002022Z&HW-CC-Expire=86400&HW-CC-Sign=70E83A9D481E77471323E5E445F7A66AA7E328AE2A68C12B1C29390B4A93EE7A "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/jgZLgnPHS-Wo3tk9uaGnfg/zh-cn_image_0000002383780282.png?HW-CC-KV=V1&HW-CC-Date=20260429T061106Z&HW-CC-Expire=86400&HW-CC-Sign=CA37CCD9A65FD6459AA8A5BFF3A414D89802A850298BCC09DC6CDA07C09EA192 "点击放大")
 
 详细的API说明请参考[Camera API参考](../harmonyos-references/js-apis-camera.md)。
 

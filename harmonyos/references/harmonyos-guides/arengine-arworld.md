@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arengine-arwo
 title: 物体摆放（ArkTS）
 breadcrumb: 指南 > 图形 > AR Engine（AR引擎服务） > 命中检测 > 物体摆放（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:46:52+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:fcb617b4e416f2cd47c62348cd16430315980d74ff9c62032f4f7289ac423ffa
+scraped_at: 2026-04-29T13:35:52+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:b4fe6d8506ccf6ed83885d4d9ea6209bf7fbf66104c249bbf00b4e1dda2a14c0
 ---
 
 本章节给出了关键开发步骤，完整代码可以参考[示例代码](https://gitcode.com/HarmonyOS_Samples/arengine_samplecode_clientdemo_arkts)。
@@ -176,14 +176,14 @@ AR物体摆放所需要导入的模块如下。
 102. depthMode: arEngine.ARDepthMode.AUTOMATIC,
 103. meshMode: arEngine.ARMeshMode.DISABLED,
 104. focusMode: arEngine.ARFocusMode.AUTO
-105. }
+105. };
 106. viewContext.init().then(() => {
 107. this.arContext = viewContext;
 108. console.info('Succeeded in initializing ARView.');
 109. }).catch((err: BusinessError) => {
 110. console.error(`Failed to init ARView. Code is ${err.code}, message is ${err.message}.`);
-111. })
-112. })
+111. });
+112. });
 113. }
 
 115. // 获取屏幕上减去状态栏的真实高度（预览流高度）
@@ -239,7 +239,7 @@ AR物体摆放所需要导入的模块如下。
 
 22. if (camera.state === arEngine.ARTrackingState.TRACKING) {
 23. trackable = arSession.getAllTrackables(arEngine.ARTrackableType.PLANE);
-24. console.info(`Succeeded in getting tracking plane，length is: ${trackable.length}.`);  // 输出识别到的平面数量
+24. console.info(`Succeeded in getting tracking plane，length is: ${trackable.length}.`); // 输出识别到的平面数量
 25. }
 
 27. } catch (error) {

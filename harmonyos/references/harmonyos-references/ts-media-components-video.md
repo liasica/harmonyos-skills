@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-media-
 title: Video
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 图片与视频 > Video
 category: harmonyos-references
-scraped_at: 2026-04-28T08:01:57+08:00
+scraped_at: 2026-04-29T13:52:16+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:29cd676614877d806ad4ec3d2cf4c0a8a8dce8b60d64b01b35984aec14a2ff5b
+content_hash: sha256:74943003931743c5ea92c13fd185e1c2b19e78f85b5dfd926fc6fe6e57abe5f4
 ---
 
 用于播放视频文件并控制其播放状态的组件。
@@ -831,7 +831,7 @@ PhonePC/2in1TabletTVWearable
 129. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/FMy3IS-QSGemv3_NzD2tfg/zh-cn_image_0000002583479847.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000154Z&HW-CC-Expire=86400&HW-CC-Sign=69BA3750B24851D90D131CC75B3107E4552EA6ABFE71CEDC882B4D822DC3F6E2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/KuzwyKZhTjiTAETD_dDMhg/zh-cn_image_0000002558606712.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055214Z&HW-CC-Expire=86400&HW-CC-Sign=8F3DB7D50DC75346066A460E7F1DD6D8B86FDD2335C9E35AE93157B1FDFC429F)
 
 ### 示例2（图像分析功能）
 
@@ -989,7 +989,7 @@ PhonePC/2in1TabletTVWearable
 50. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/orGWIXvVQhG4f4wbyD1gZg/zh-cn_image_0000002552800198.png?HW-CC-KV=V1&HW-CC-Date=20260428T000154Z&HW-CC-Expire=86400&HW-CC-Sign=1602160B4C287C3CA6404ABFD0B0A568AFA70E4C0AC024E1430339172C3039A3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/stL7uNxyRdiuzP4hWvFjqg/zh-cn_image_0000002589326237.png?HW-CC-KV=V1&HW-CC-Date=20260429T055214Z&HW-CC-Expire=86400&HW-CC-Sign=0A4C02EAAE74657F8DB5AED795C0F31BEF07C6A887A5EEC460AB00E658010AF1)
 
 ### 示例5（onError事件上报错误码）
 
@@ -1033,7 +1033,7 @@ PhonePC/2in1TabletTVWearable
 35. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/bW8Xnd2jR52AUCjxLbGF_g/zh-cn_image_0000002583439893.png?HW-CC-KV=V1&HW-CC-Date=20260428T000154Z&HW-CC-Expire=86400&HW-CC-Sign=28DEE99018DB3F7C5EE6307D1A05CA0C0252736C38B6D5C5352167CC154319B8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/jImHHWzeS9mBAjYSLxQ1tw/zh-cn_image_0000002589246179.png?HW-CC-KV=V1&HW-CC-Date=20260429T055214Z&HW-CC-Expire=86400&HW-CC-Sign=02288C45D0E3DDEA9C0481DFB5E591F56446DDE62E1889CD5D93338FACB36388)
 
 ### 示例6（使用attributeModifier动态设置Video组件的属性及方法）
 
@@ -1155,4 +1155,4 @@ PhonePC/2in1TabletTVWearable
 113. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/RBwS14-LRlCrt0l7hCxT1w/zh-cn_image_0000002552959848.png?HW-CC-KV=V1&HW-CC-Date=20260428T000154Z&HW-CC-Expire=86400&HW-CC-Sign=F97AEE8F78956D64A69D7C2BF8F5B268997893C276DDBE69E001AEE16AF81961)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/AcQv0XGPSOa5KRnwWakLJw/zh-cn_image_0000002558766372.png?HW-CC-KV=V1&HW-CC-Date=20260429T055214Z&HW-CC-Expire=86400&HW-CC-Sign=7B0F0411AAA3E65D14DE82E5C53F8461E4361A2E8E81702AA9F777DB8FE8D1C5)

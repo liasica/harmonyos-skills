@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/wearengin
 title: wearEngine(穿戴设备能力开放)
 breadcrumb: API参考 > 系统 > 硬件 > Wear Engine Kit（穿戴服务） > ArkTS API > wearEngine(穿戴设备能力开放)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:11:14+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:68d86be409f62c2b1bc202905b9102510e137793c918df38e9214fc0bf99e29a
+scraped_at: 2026-04-29T14:01:54+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:5ba0d0637cd466fa06ab1c5853016bd0207d6704a9b34479b280739e054f9487
 ---
 
 本模块提供手机与穿戴设备侧的交互能力。应用可调用模块内接口实现如下功能：
@@ -96,7 +96,7 @@ requestAuthorization(request: AuthorizationRequest): Promise<AuthorizationRespon
 
 **系统能力：** SystemCapability.Health.WearEngine
 
-**设备行为差异：** 该接口在Phone、Tablet中可正常调用，在其他设备类型中返回801错误码。
+**设备行为差异：** 该接口在Phone、Tablet中可正常调用，在其他设备类型中无法使用该能力。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -158,7 +158,7 @@ getAuthorization(): Promise<AuthorizationResponse>
 
 **系统能力：** SystemCapability.Health.WearEngine
 
-**设备行为差异：** 该接口在Phone、Tablet中可正常调用，在其他设备类型中返回801错误码。
+**设备行为差异：** 该接口在Phone、Tablet中可正常调用，在其他设备类型中无法使用该能力。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -721,7 +721,7 @@ queryStatus(deviceRandomId: string, item: MonitorItem): Promise<MonitorData>
 
 **系统能力：** SystemCapability.Health.WearEngine
 
-**设备行为差异：** 该接口在Phone、Tablet中可正常调用，在其他设备类型中返回801错误码。
+**设备行为差异：** 对于6.0.2(22)及之前版本，该接口在Phone、Tablet中可正常调用，在其他设备类型中无法使用该能力。对于6.1.0(23)及之后版本，该接口在Phone、Tablet中可正常调用，在其他设备类型中返回801错误码。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -747,6 +747,7 @@ queryStatus(deviceRandomId: string, item: MonitorItem): Promise<MonitorData>
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
+| 801 | Capability not supported. |
 | [1008500001](wearengine_api_error_code.md#section1008500001-网络错误) | Network error. The network is unavailable. |
 | [1008500002](wearengine_api_error_code.md#section1008500002-无绑定设备) | No device is bound. |
 | [1008500003](wearengine_api_error_code.md#section1008500003-设备未连接) | Device disconnected. |
@@ -793,7 +794,7 @@ subscribeEvent(deviceRandomId: string, type: MonitorEvent, callback: Callback<Mo
 
 **系统能力：** SystemCapability.Health.WearEngine
 
-**设备行为差异：** 对于6.0.2(22)及之前版本，该接口在Phone、Tablet中可正常调用，在其他设备类型中返回801错误码。对于6.1.0(23)及之后版本，该接口在Phone、Tablet中可正常调用，在Wearable中可以订阅设备连接状态变化事件，订阅其他事件返回801错误码。
+**设备行为差异：** 对于6.0.2(22)及之前版本，该接口在Phone、Tablet中可正常调用，在其他设备类型中无法使用该能力。对于6.1.0(23)及之后版本，该接口在Phone、Tablet中可正常调用，在Wearable中可以订阅设备连接状态变化事件，订阅其他事件返回801错误码。
 
 **起始版本：** 5.0.0(12)
 
@@ -818,6 +819,7 @@ subscribeEvent(deviceRandomId: string, type: MonitorEvent, callback: Callback<Mo
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
+| 801 | Capability not supported. |
 | [1008500001](wearengine_api_error_code.md#section1008500001-网络错误) | Network error. The network is unavailable. |
 | [1008500002](wearengine_api_error_code.md#section1008500002-无绑定设备) | No device is bound. |
 | [1008500003](wearengine_api_error_code.md#section1008500003-设备未连接) | Device disconnected. |
@@ -868,7 +870,7 @@ unsubscribeEvent(deviceRandomId: string, type: MonitorEvent, callback: Callback<
 
 **系统能力：** SystemCapability.Health.WearEngine
 
-**设备行为差异：** 对于6.0.2(22)及之前版本，该接口在Phone、Tablet中可正常调用，在其他设备类型中返回801错误码。对于6.1.0(23)及之后版本，该接口在Phone、Tablet中可正常调用，在Wearable中可以取消订阅设备连接状态变化事件，取消订阅其他事件返回801错误码。
+**设备行为差异：** 对于6.0.2(22)及之前版本，该接口在Phone、Tablet中可正常调用，在其他设备类型中无法使用该能力。对于6.1.0(23)及之后版本，该接口在Phone、Tablet中可正常调用，在Wearable中可以取消订阅设备连接状态变化事件，取消订阅其他事件返回801错误码。
 
 **起始版本：** 5.0.0(12)
 
@@ -893,6 +895,7 @@ unsubscribeEvent(deviceRandomId: string, type: MonitorEvent, callback: Callback<
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
+| 801 | Capability not supported. |
 | [1008500001](wearengine_api_error_code.md#section1008500001-网络错误) | Network error. The network is unavailable. |
 | [1008500002](wearengine_api_error_code.md#section1008500002-无绑定设备) | No device is bound. |
 | [1008500003](wearengine_api_error_code.md#section1008500003-设备未连接) | Device disconnected. |
@@ -2126,7 +2129,7 @@ notify(deviceRandomId: string, options: NotificationOptions): Promise<void>
 
 **系统能力：** SystemCapability.Health.WearEngine
 
-**设备行为差异：** 该接口在Phone、Tablet中可正常调用，在其他设备类型中返回801错误码。
+**设备行为差异：** 该接口在Phone、Tablet中可正常调用，在其他设备类型中无法使用该能力。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -2234,7 +2237,7 @@ onAction(feedback: NotificationFeedback): void
 
 **系统能力：** SystemCapability.Health.WearEngine
 
-**设备行为差异：** 该接口在Phone、Tablet中可正常调用，在其他设备类型中返回801错误码。
+**设备行为差异：** 该接口在Phone、Tablet中可正常调用，在其他设备类型中无法使用该能力。
 
 **起始版本：** 5.0.0(12)
 
@@ -2440,7 +2443,7 @@ getSensorList(deviceRandomId: string): Promise<Sensor[]>
 
 **系统能力：** SystemCapability.Health.WearEngine
 
-**设备行为差异：** 该接口在Phone、Tablet中可正常调用，在其他设备类型中返回801错误码。
+**设备行为差异：** 该接口在Phone、Tablet中可正常调用，在其他设备类型中无法使用该能力。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -2509,7 +2512,7 @@ subscribeSensor(deviceRandomId: string, type: SensorType, callback: Callback<Sen
 
 **系统能力：** SystemCapability.Health.WearEngine
 
-**设备行为差异：** 该接口在Phone、Tablet中可正常调用，在其他设备类型中返回801错误码。
+**设备行为差异：** 该接口在Phone、Tablet中可正常调用，在其他设备类型中无法使用该能力。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -2589,7 +2592,7 @@ unsubscribeSensor(deviceRandomId: string, type: SensorType, callback: Callback<S
 
 **系统能力：** SystemCapability.Health.WearEngine
 
-**设备行为差异：** 该接口在Phone、Tablet中可正常调用，在其他设备类型中返回801错误码。
+**设备行为差异：** 该接口在Phone、Tablet中可正常调用，在其他设备类型中无法使用该能力。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 

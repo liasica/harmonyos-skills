@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 触摸热区设置
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 交互属性 > 触摸交互控制 > 触摸热区设置
 category: harmonyos-references
-scraped_at: 2026-04-28T08:01:12+08:00
+scraped_at: 2026-04-29T13:51:26+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:069249fe287309da537e7a8222023e9bf1b2090ea99add495525697474051989
+content_hash: sha256:eac14d73bdc1b5dbdcdfebf2422110cd172acc3a16648160cd4df384a4be44c2
 ---
 
 设置组件的响应热区。在ArkUI开发框架中，处理触屏事件和鼠标事件时，会在事件触发前进行按压点与组件响应热区的[触摸测试](../harmonyos-guides/arkts-interaction-basic-principles.md#触摸测试)，以收集需响应事件的组件。基于测试结果，框架会分发相应的事件。影响[点击事件](ts-universal-events-click.md)、[触摸事件](ts-universal-events-touch.md)、[拖拽事件](ts-universal-events-drag-drop.md)、[鼠标事件](ts-universal-mouse-key.md)、[轴事件](ts-universal-events-axis.md)、[悬浮事件](ts-universal-events-hover.md)、[无障碍悬浮事件](ts-universal-accessibility-hover-event.md)和[手势事件](ts-gesture-settings.md)的分发。
@@ -209,7 +209,7 @@ PhonePC/2in1TabletTVWearable
 59. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/1dqx1M_zQES8X5u5488iJw/zh-cn_image_0000002583479543.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000110Z&HW-CC-Expire=86400&HW-CC-Sign=987F2149241F1FEE401E9689DBFBE3D1E8D022FE372AFEEA6276E90A17D05CBB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/FinD5ujxReCKu0O7yfvleg/zh-cn_image_0000002558606406.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055124Z&HW-CC-Expire=86400&HW-CC-Sign=FF1D04DBF5DA3CC6AD86F7134639DD1CBE699D4076F233FD8CADD7D9C23339D2)
 
 ### 示例2（通过responseRegionList接口设置触摸热区）
 
@@ -267,7 +267,7 @@ PhonePC/2in1TabletTVWearable
 47. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/okdGB6oISlaTEz15obBnZQ/zh-cn_image_0000002552799894.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000110Z&HW-CC-Expire=86400&HW-CC-Sign=33719660C4450314DFF2402254B6D7A05618295EB70AC42CB7612658E47ED68B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/MR2H6zRfRnuGP11RV0zbGw/zh-cn_image_0000002589325933.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055124Z&HW-CC-Expire=86400&HW-CC-Sign=1904DD1B508CE242F49D7D20C881D5B9F459C8DB685AA921D27EC1E8134F5DCB)
 
 ### 示例3（设置鼠标的触摸热区以响应点击事件）
 
@@ -359,4 +359,4 @@ PhonePC/2in1TabletTVWearable
 83. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/7_oBXi8BQP-sZfP3S4kSeQ/zh-cn_image_0000002583439589.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000110Z&HW-CC-Expire=86400&HW-CC-Sign=F27FF5FAFFB718C1F5DB0E6EF7FDE415F777921B0AA475291C85772F86148C72)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/UTj6KzzKTeCUZPm7X6Xi-w/zh-cn_image_0000002589245875.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055124Z&HW-CC-Expire=86400&HW-CC-Sign=0FDC75C920F7E58D115D4424288BADB1543810F6F86F2B2B410AA638376061A5)

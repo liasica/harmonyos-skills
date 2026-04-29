@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-dark-light
 title: 应用深浅色适配
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 主题设置 > 应用深浅色适配
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:40:07+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:eb5150b71d2c1f2f49b057dad1c577c69fa57bd00f60d9e8357554d9c540c1f1
+scraped_at: 2026-04-29T13:28:25+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:0539c68378a29a84ce476695f36fdec17e593b4b404ff574bbd12718e72e3f12
 ---
 
 ## 概述
@@ -26,7 +26,7 @@ content_hash: sha256:eb5150b71d2c1f2f49b057dad1c577c69fa57bd00f60d9e8357554d9c54
 
      图1 resources目录结构示意
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/MUWuzNzAQCq-Fv9hsLzK0g/zh-cn_image_0000002583438081.png?HW-CC-KV=V1&HW-CC-Date=20260427T234006Z&HW-CC-Expire=86400&HW-CC-Sign=9D86FFA4B56E6BDCE011D1C4A26D80D85FCBCCC0987BBCA3CA47577CE105CE49)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/X_TPyOEeSM2kd7IWpdSIdw/zh-cn_image_0000002558604870.png?HW-CC-KV=V1&HW-CC-Date=20260429T052824Z&HW-CC-Expire=86400&HW-CC-Sign=CB49FABBFB253AA0FD41CDCF98D55686586A1A057E9974256377F2372C3DFE1E)
 
      例如，开发者可在这两个color.json中定义同名配色定义并赋予不同的色值。
 
@@ -57,7 +57,7 @@ content_hash: sha256:eb5150b71d2c1f2f49b057dad1c577c69fa57bd00f60d9e8357554d9c54
      ```
    * 通过系统资源实现
 
-     开发者可直接使用的[系统预置资源](resource-categories-and-access.md#系统资源)，即分层参数，同一资源ID在设备类型、深浅色等不同配置下有不同的取值。通过使用系统资源，不同的开发者可以开发出具有相同视觉风格的应用，不需要自定义两份颜色资源，在深浅色模式下也会自动切换成不同的颜色值。例如，开发者可调用系统资源中的文本主要配色来定义应用内文本颜色。
+     开发者可直接使用的[系统预置资源](resource-categories-and-access.md#访问系统资源)，即分层参数，同一资源ID在设备类型、深浅色等不同配置下有不同的取值。通过使用系统资源，不同的开发者可以开发出具有相同视觉风格的应用，不需要自定义两份颜色资源，在深浅色模式下也会自动切换成不同的颜色值。例如，开发者可调用系统资源中的文本主要配色来定义应用内文本颜色。
 
      ```
      1. Text('使用系统定义配色')
@@ -209,7 +209,7 @@ content_hash: sha256:eb5150b71d2c1f2f49b057dad1c577c69fa57bd00f60d9e8357554d9c54
    * 如果应用工程dark目录下有深色资源，则系统组件在深色模式下会自动切换成为深色。
    * 如果应用工程dark目录下没有任何深色资源，则系统组件在深色模式下仍会保持浅色体验。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/JUaTgAmkT62uUJl7Vm4J3g/zh-cn_image_0000002552958036.png?HW-CC-KV=V1&HW-CC-Date=20260427T234006Z&HW-CC-Expire=86400&HW-CC-Sign=1A9C7B24778758FE7984BB3EF3FEFDC0F82EEE7E239B6D6EEA3ACFA787AC54A7)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/w00vdnkySP6YJOmZy84kWA/zh-cn_image_0000002589324395.png?HW-CC-KV=V1&HW-CC-Date=20260429T052824Z&HW-CC-Expire=86400&HW-CC-Sign=4615E713BB7898ABCB12B11E26FF87FDEB8E117AF38FEEAEB953166057490943)
 
 如果应用全部都是由系统组件/系统颜色开发，且想要跟随系统切换深浅色模式时，请参考以下示例修改代码来保证应用体验。
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arengine-get-
 title: 获取网格扫描信息（ArkTS）
 breadcrumb: 指南 > 图形 > AR Engine（AR引擎服务） > 环境Mesh识别 > 获取网格扫描信息（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:46:54+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:ddd28136ae95b9de2bb5ae10ab8b8c58173adc6d1b66e49aebe4c28a595fd6d7
+scraped_at: 2026-04-29T13:35:54+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:90fff194084c3a50cdded67a53ee174f396839be39e75894f51e51f3f84ed614
 ---
 
 本章节给出了关键开发步骤，完整代码可以参考[示例代码](https://gitcode.com/HarmonyOS_Samples/arengine_samplecode_clientdemo_arkts)。
@@ -140,7 +140,7 @@ AR Engine仅输出识别到的平面数据。为便于用户观察，可使用AG
 71. hitAnchorList.push(hitAnchor);
 
 73. }
-74. console.info('Succeeded in getting hit result.');  // 成功获取碰撞目标
+74. console.info('Succeeded in getting hit result.'); // 成功获取碰撞目标
 75. } catch (error) {
 76. const err: BusinessError = error as BusinessError;
 77. console.error(`Failed to get hitResults. Code is ${err.code}, message is ${err.message}`);
@@ -159,16 +159,16 @@ AR Engine仅输出识别到的平面数据。为便于用户观察，可使用AG
 90. semanticMode: arEngine.ARSemanticMode.NONE,
 91. poseMode: arEngine.ARPoseMode.GRAVITY,
 92. depthMode: arEngine.ARDepthMode.AUTOMATIC,
-93. meshMode: arEngine.ARMeshMode.ENABLE,  // 开启mesh
+93. meshMode: arEngine.ARMeshMode.ENABLE, // 开启mesh
 94. focusMode: arEngine.ARFocusMode.AUTO
-95. }
+95. };
 96. viewContext.init().then(() => {
 97. this.arContext = viewContext;
 98. console.info('Succeeded in initializing ARView.');
 99. }).catch((err: BusinessError) => {
 100. console.error(`Failed to init ARView. Code is ${err.code}, message is ${err.message}.`);
-101. })
-102. })
+101. });
+102. });
 103. }
 
 105. // 获取屏幕上减去状态栏的真实高度（预览流高度）

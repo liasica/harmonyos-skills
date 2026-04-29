@@ -1,10 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/wallet-preparations
 title: 创建Wallet Kit服务
+breadcrumb: 指南 > 应用服务 > Wallet Kit（钱包服务） > 创建Wallet Kit服务
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:51:08+08:00
+scraped_at: 2026-04-29T13:40:44+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:2990cc69b6a41473ba60af25728ddc12a3166caf259720891cbbea6c91f337ca
+content_hash: sha256:5dde83322dd2813708a019c355abbb30e5e42e711913ebf76369c3a7410c8625
 ---
 
 请先参考“[应用开发准备](application-dev-overview.md)”完成基本准备工作和指纹配置，再继续以下开发活动。
@@ -12,16 +13,16 @@ content_hash: sha256:2990cc69b6a41473ba60af25728ddc12a3166caf259720891cbbea6c91f
 1. 登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)，选择“我的项目”。
 2. 点击进入对应的项目，在左侧“项目设置”页签，上侧导航选择“开放能力管理”，打开华为钱包的开关。用于钱包对车钥匙管理台向钱包服务器发起http/https请求时的权限控制。关闭状态下，开发者服务器将访问不了钱包服务器。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/Kp5pXp1qSU-vIbYze7ZZBQ/zh-cn_image_0000002552799546.png?HW-CC-KV=V1&HW-CC-Date=20260427T235107Z&HW-CC-Expire=86400&HW-CC-Sign=673A4CB7E9B5E84FF06F08467D1939D7D0067C40A3A2DB69CE9398ADF07DB314)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/Ga-Ux62oSGaRMqOp5f5HJg/zh-cn_image_0000002558606040.png?HW-CC-KV=V1&HW-CC-Date=20260429T054043Z&HW-CC-Expire=86400&HW-CC-Sign=E2D9F7EF0EE7FFE97CAC5606BD471F5141AE24952C665BD252883C42B3776F83)
 3. 在“项目设置”页签，左侧导航选择“盈利 > 华为钱包”，点击“申请Wallet Kit服务”，进入申请Wallet Kit服务。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/GiyBSTfOTGyRazv0sVXlcA/zh-cn_image_0000002583439241.png?HW-CC-KV=V1&HW-CC-Date=20260427T235107Z&HW-CC-Expire=86400&HW-CC-Sign=BCF81333A2E9E01D6BE2CE5F80C001DCFDD4DA6459DD34E01D2D35700F38006E)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/SXSeAzyDQbiEYmIzyAajCg/zh-cn_image_0000002589325567.png?HW-CC-KV=V1&HW-CC-Date=20260429T054043Z&HW-CC-Expire=86400&HW-CC-Sign=0B3D0249121689CB2E1B082627DB472FF933D063B10796EF4333F0ECF371D52F)
 4. 点击“产品接入华为钱包服务”的“点击申请”按钮。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/DsFBg5hLRN-vSeL5i-uaNQ/zh-cn_image_0000002552959196.png?HW-CC-KV=V1&HW-CC-Date=20260427T235107Z&HW-CC-Expire=86400&HW-CC-Sign=01E46E18F8D91A4B4E36EF732C733EE73B2E54668E44504D1C71B7E8DCA2FDD2)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/M3k_PzjTSyKaBYAjNsGKRQ/zh-cn_image_0000002589245505.png?HW-CC-KV=V1&HW-CC-Date=20260429T054043Z&HW-CC-Expire=86400&HW-CC-Sign=489FDF40BD0B2AD701680210679CA434A49EED96D7E3F05D46FD39809154A71D)
 5. 各业务场景对应的参数有差异，具体参数请参考各业务的Wallet Kit服务基本信息。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/lATgV3A0QfuxVNW5fe2vhQ/zh-cn_image_0000002583479197.png?HW-CC-KV=V1&HW-CC-Date=20260427T235107Z&HW-CC-Expire=86400&HW-CC-Sign=4B661F7DD7982B96F12549DEADD2CC4B0586D99C3611233EF6463D55F52E13A7)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/V4p7JY86R-W8KouAICpqZQ/zh-cn_image_0000002558765698.png?HW-CC-KV=V1&HW-CC-Date=20260429T054043Z&HW-CC-Expire=86400&HW-CC-Sign=0A568FFC512E9431E654060B684FD729C937E787CFCE78D6B10EE171A56B92B1)
 
    | Wallet Kit服务参数名称 | 参数值 |
    | --- | --- |
@@ -61,10 +62,10 @@ content_hash: sha256:2990cc69b6a41473ba60af25728ddc12a3166caf259720891cbbea6c91f
 
    （3）从结果中拷贝生成的公私钥并保存。结果如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/VLXvov4tQ1CZQxKQkEGumg/zh-cn_image_0000002552799548.png?HW-CC-KV=V1&HW-CC-Date=20260427T235107Z&HW-CC-Expire=86400&HW-CC-Sign=99A0D0DF2C891BDA70F9BD4465159378E804157C84FB70D49F789A1A0DCE8E36)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/aUj5UzrdSfiXyBHl-jUDGA/zh-cn_image_0000002558606042.png?HW-CC-KV=V1&HW-CC-Date=20260429T054043Z&HW-CC-Expire=86400&HW-CC-Sign=84938DAFECEC2068AFAECE47AC3D900E2435E150B0A68D37B6A2FDC14EDA9E8D)
 6. 点击“下一步”，进入NFC参数设置页面，各业务场景对应的参数有差异，具体参数请参考各业务的NFC参数。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/-V6nZj7QQdCALxh8xWfbng/zh-cn_image_0000002583439243.png?HW-CC-KV=V1&HW-CC-Date=20260427T235107Z&HW-CC-Expire=86400&HW-CC-Sign=FA9EDD86B138EAB07B1A607AD350EFC6400A23420D610FC1E03E019CD7F0922B)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/kxzAkDb5RcGKqd55mdeoeA/zh-cn_image_0000002589325569.png?HW-CC-KV=V1&HW-CC-Date=20260429T054043Z&HW-CC-Expire=86400&HW-CC-Sign=813E5EB839FF5F2099CA8E98CBDAD11B7488D18B1EC560682D9BED8DE8FA7113)
 
    | NFC参数名称 | 参数值 |
    | --- | --- |

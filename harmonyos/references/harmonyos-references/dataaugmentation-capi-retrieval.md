@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/dataaugme
 title: Retrieval
 breadcrumb: API参考 > 应用框架 > Data Augmentation Kit（数据增强服务） > C API > 模块 > Retrieval
 category: harmonyos-references
-scraped_at: 2026-04-28T08:05:58+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:7e2b0d283b71f9ad7b2c011b600fcbb710d40f88f3f167d9163119d72307789e
+scraped_at: 2026-04-29T13:56:28+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:a67cba27b2758cb14e899ae4c04097138e75cb73c584f0aaf851f71d425df4c7
 ---
 
 ## 概述
@@ -99,7 +99,7 @@ PhonePC/2in1Tablet
 PhonePC/2in1Tablet
 
 ```
-1. typedef void(* OH_Retrieval_Callback) (void *context, OH_Retrieval_Record *record, int errCode)
+1. typedef void (*OH_Retrieval_Callback)(void *context, OH_Retrieval_Record *record, int errCode)
 ```
 
 **描述**
@@ -287,7 +287,7 @@ PhonePC/2in1Tablet
 PhonePC/2in1Tablet
 
 ```
-1. int OH_Retrieval_AddConfig (OH_Retrieval_Config * config, Retrieval_Channel_Type channelType, OH_Retrieval_DbConfig * dbConfig )
+1. int OH_Retrieval_AddConfig(OH_Retrieval_Config *config, Retrieval_Channel_Type channelType, OH_Retrieval_DbConfig *dbConfig)
 ```
 
 **描述**
@@ -322,7 +322,7 @@ PhonePC/2in1Tablet
 PhonePC/2in1Tablet
 
 ```
-1. int OH_Retrieval_AddSubCondition (OH_Retrieval_Condition * condition, OH_Retrieval_SubCondition * subCondition )
+1. int OH_Retrieval_AddSubCondition(OH_Retrieval_Condition *condition, OH_Retrieval_SubCondition *subCondition)
 ```
 
 **描述**
@@ -357,7 +357,7 @@ PhonePC/2in1Tablet
 PhonePC/2in1Tablet
 
 ```
-1. OH_Retrieval_Condition* OH_Retrieval_CreateCondition ()
+1. OH_Retrieval_Condition *OH_Retrieval_CreateCondition()
 ```
 
 **描述**
@@ -379,7 +379,7 @@ PhonePC/2in1Tablet
 PhonePC/2in1Tablet
 
 ```
-1. OH_Retrieval_Config* OH_Retrieval_CreateConfig ()
+1. OH_Retrieval_Config *OH_Retrieval_CreateConfig()
 ```
 
 **描述**
@@ -401,7 +401,7 @@ PhonePC/2in1Tablet
 PhonePC/2in1Tablet
 
 ```
-1. OH_Retrieval_DbConfig* OH_Retrieval_CreateDbConfig ()
+1. OH_Retrieval_DbConfig *OH_Retrieval_CreateDbConfig()
 ```
 
 **描述**
@@ -423,7 +423,7 @@ PhonePC/2in1Tablet
 PhonePC/2in1Tablet
 
 ```
-1. OH_Retrieval_Query* OH_Retrieval_CreateQuery ()
+1. OH_Retrieval_Query *OH_Retrieval_CreateQuery()
 ```
 
 **描述**
@@ -445,7 +445,7 @@ PhonePC/2in1Tablet
 PhonePC/2in1Tablet
 
 ```
-1. int OH_Retrieval_CreateRetriever (const OH_Retrieval_Config * config, OH_Retrieval_Retriever ** retriever )
+1. int OH_Retrieval_CreateRetriever(const OH_Retrieval_Config *config, OH_Retrieval_Retriever **retriever)
 ```
 
 **描述**
@@ -479,7 +479,7 @@ PhonePC/2in1Tablet
 PhonePC/2in1Tablet
 
 ```
-1. OH_Retrieval_VectorCondition* OH_Retrieval_CreateVectorCondition ()
+1. OH_Retrieval_VectorCondition *OH_Retrieval_CreateVectorCondition()
 ```
 
 **描述**
@@ -501,7 +501,7 @@ PhonePC/2in1Tablet
 PhonePC/2in1Tablet
 
 ```
-1. int OH_Retrieval_DestroyCondition (OH_Retrieval_Condition * condition)
+1. int OH_Retrieval_DestroyCondition(OH_Retrieval_Condition *condition)
 ```
 
 **描述**
@@ -534,7 +534,7 @@ PhonePC/2in1Tablet
 PhonePC/2in1Tablet
 
 ```
-1. int OH_Retrieval_DestroyConfig (OH_Retrieval_Config * config)
+1. int OH_Retrieval_DestroyConfig(OH_Retrieval_Config *config)
 ```
 
 **描述**
@@ -567,7 +567,7 @@ PhonePC/2in1Tablet
 PhonePC/2in1Tablet
 
 ```
-1. int OH_Retrieval_DestroyDbConfig (OH_Retrieval_DbConfig * dbConfig)
+1. int OH_Retrieval_DestroyDbConfig(OH_Retrieval_DbConfig *dbConfig)
 ```
 
 **描述**
@@ -600,7 +600,7 @@ PhonePC/2in1Tablet
 PhonePC/2in1Tablet
 
 ```
-1. int OH_Retrieval_DestroyQuery (OH_Retrieval_Query * query)
+1. int OH_Retrieval_DestroyQuery(OH_Retrieval_Query *query)
 ```
 
 **描述**
@@ -633,7 +633,7 @@ PhonePC/2in1Tablet
 PhonePC/2in1Tablet
 
 ```
-1. int OH_Retrieval_DestroyRecord (OH_Retrieval_Record * record)
+1. int OH_Retrieval_DestroyRecord(OH_Retrieval_Record *record)
 ```
 
 **描述**
@@ -666,7 +666,7 @@ PhonePC/2in1Tablet
 PhonePC/2in1Tablet
 
 ```
-1. int OH_Retrieval_DestroyRetriever (OH_Retrieval_Retriever * retriever)
+1. int OH_Retrieval_DestroyRetriever(OH_Retrieval_Retriever *retriever)
 ```
 
 **描述**
@@ -699,7 +699,7 @@ PhonePC/2in1Tablet
 PhonePC/2in1Tablet
 
 ```
-1. int OH_Retrieval_DestroySubCondition (OH_Retrieval_SubCondition * condition)
+1. int OH_Retrieval_DestroySubCondition(OH_Retrieval_SubCondition *condition)
 ```
 
 **描述**
@@ -732,7 +732,7 @@ PhonePC/2in1Tablet
 PhonePC/2in1Tablet
 
 ```
-1. int OH_Retrieval_DestroyVectorCondition (OH_Retrieval_VectorCondition * condition)
+1. int OH_Retrieval_DestroyVectorCondition(OH_Retrieval_VectorCondition *condition)
 ```
 
 **描述**
@@ -765,7 +765,7 @@ PhonePC/2in1Tablet
 PhonePC/2in1Tablet
 
 ```
-1. int OH_Retrieval_GetItemSize (const OH_Retrieval_RecordItem * items, const char * fieldName, size_t * size )
+1. int OH_Retrieval_GetItemSize(const OH_Retrieval_RecordItem *items, const char *fieldName, size_t *size)
 ```
 
 **描述**
@@ -801,7 +801,7 @@ PhonePC/2in1Tablet
 PhonePC/2in1Tablet
 
 ```
-1. int OH_Retrieval_GetItemText (const OH_Retrieval_RecordItem * items, const char * fieldName, char * value, size_t size )
+1. int OH_Retrieval_GetItemText(const OH_Retrieval_RecordItem *items, const char *fieldName, char *value, size_t size)
 ```
 
 **描述**
@@ -838,7 +838,7 @@ PhonePC/2in1Tablet
 PhonePC/2in1Tablet
 
 ```
-1. int OH_Retrieval_GetRecordItem (const OH_Retrieval_Record * record, uint32_t index, const OH_Retrieval_RecordItem ** item )
+1. int OH_Retrieval_GetRecordItem(const OH_Retrieval_Record *record, uint32_t index, const OH_Retrieval_RecordItem **item)
 ```
 
 **描述**
@@ -874,7 +874,7 @@ PhonePC/2in1Tablet
 PhonePC/2in1Tablet
 
 ```
-1. int OH_Retrieval_GetRecordLength (const OH_Retrieval_Record * record, uint32_t * length )
+1. int OH_Retrieval_GetRecordLength(const OH_Retrieval_Record *record, uint32_t *length)
 ```
 
 **描述**
@@ -908,7 +908,7 @@ PhonePC/2in1Tablet
 PhonePC/2in1Tablet
 
 ```
-1. int OH_Retrieval_Retrieve (const OH_Retrieval_Retriever * retriever, const OH_Retrieval_Query * query, const OH_Retrieval_Condition * condition, void * context, const OH_Retrieval_Callback * callback )
+1. int OH_Retrieval_Retrieve(const OH_Retrieval_Retriever *retriever, const OH_Retrieval_Query *query, const OH_Retrieval_Condition *condition, void *context, const OH_Retrieval_Callback *callback)
 ```
 
 **描述**
@@ -947,7 +947,7 @@ PhonePC/2in1Tablet
 PhonePC/2in1Tablet
 
 ```
-1. int OH_Retrieval_SetDbConfig (OH_Retrieval_DbConfig * dbConfig, OH_Rdb_ConfigV2 * rdbConfig )
+1. int OH_Retrieval_SetDbConfig(OH_Retrieval_DbConfig *dbConfig, OH_Rdb_ConfigV2 *rdbConfig)
 ```
 
 **描述**
@@ -981,7 +981,7 @@ PhonePC/2in1Tablet
 PhonePC/2in1Tablet
 
 ```
-1. int OH_Retrieval_SetOriginalQuestion (OH_Retrieval_Query * query, const char * question )
+1. int OH_Retrieval_SetOriginalQuestion(OH_Retrieval_Query *query, const char *question)
 ```
 
 **描述**
@@ -1016,7 +1016,7 @@ PhonePC/2in1Tablet
 PhonePC/2in1Tablet
 
 ```
-1. int OH_Retrieval_SetSimilarityThreshold (OH_Retrieval_VectorCondition * condition, double threshold )
+1. int OH_Retrieval_SetSimilarityThreshold(OH_Retrieval_VectorCondition *condition, double threshold)
 ```
 
 **描述**
@@ -1050,7 +1050,7 @@ PhonePC/2in1Tablet
 PhonePC/2in1Tablet
 
 ```
-1. int OH_Retrieval_SetVectorRecallLimit (OH_Retrieval_VectorCondition * condition, uint32_t limit )
+1. int OH_Retrieval_SetVectorRecallLimit(OH_Retrieval_VectorCondition *condition, uint32_t limit)
 ```
 
 **描述**

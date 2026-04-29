@@ -1,10 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-drawing-components-shape
 title: Shape
+breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 图形绘制 > Shape
 category: harmonyos-references
-scraped_at: 2026-04-28T08:02:13+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:21b5d83451660c74ce7eb3e007a6d9a6b9f8ef0b9eab45f2e4b52c590b68a398
+scraped_at: 2026-04-29T13:52:38+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:a6f60f5d8bd7a2e96e078646f625295770bc6c934d89b48faba9670049f3e72d
 ---
 
 绘制组件的父组件，父组件中会描述所有绘制组件均支持的通用属性。
@@ -30,6 +31,8 @@ PhonePC/2in1TabletTVWearable
 PhonePC/2in1TabletTVWearable
 
 Shape(value?: PixelMap)
+
+用于绘制Shape组件的构造函数。
 
 从API version 9开始，该接口支持在ArkTS卡片中使用，卡片中不支持使用PixelMap对象。
 
@@ -501,7 +504,7 @@ PhonePC/2in1TabletTVWearable
 150. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/Rs2RE5W6R1WTma-1eClgcw/zh-cn_image_0000002583440061.png?HW-CC-KV=V1&HW-CC-Date=20260428T000211Z&HW-CC-Expire=86400&HW-CC-Sign=275B2050464F990546240D4314733D8FB0A98B8DF3D89B6C184BA69F3FE9D2D4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/8ICRIxlTRbOsMJdz3mTGOg/zh-cn_image_0000002589246349.png?HW-CC-KV=V1&HW-CC-Date=20260429T055236Z&HW-CC-Expire=86400&HW-CC-Sign=BD3EF6870472FEBAC318FFEEC1357B16EF9DFF99800BC03014408D4E4268E119)
 
 ### 示例2（使用不同参数类型绘制图形）
 
@@ -544,7 +547,7 @@ PhonePC/2in1TabletTVWearable
 34. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/ROzgDYYDRv6sTGKGc5fXsw/zh-cn_image_0000002552960016.png?HW-CC-KV=V1&HW-CC-Date=20260428T000211Z&HW-CC-Expire=86400&HW-CC-Sign=979568667E8FBC048060958369F045D293D5ADA7B92A82378591850A5B90FC31)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/SIfECWgATW2YhM8G0yFmEg/zh-cn_image_0000002558766542.png?HW-CC-KV=V1&HW-CC-Date=20260429T055236Z&HW-CC-Expire=86400&HW-CC-Sign=C0DA402C42C16BFF3887A4FA1D21EAC0227EF9919D503BEA972E7CEDE821ED65)
 
 ### 示例3（使用attributeModifier动态设置Shape组件的属性）
 
@@ -588,7 +591,7 @@ PhonePC/2in1TabletTVWearable
 35. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/AK1aZRm8TEuRwFH6rUEhig/zh-cn_image_0000002583480017.png?HW-CC-KV=V1&HW-CC-Date=20260428T000211Z&HW-CC-Expire=86400&HW-CC-Sign=0479DDB0E3EFDE1B582B4A1F0F7DBB9D6FF39CB6ABEAC3A1F19CB69A7875C463)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/ryCaNMwDR66Ko3sZYP9lmA/zh-cn_image_0000002558606882.png?HW-CC-KV=V1&HW-CC-Date=20260429T055236Z&HW-CC-Expire=86400&HW-CC-Sign=9E9CF1321FF6196E3892ADB8E4A694E9DC1F065D76513E4841205554092EDFC9)
 
 ### 示例4（使用mesh实现图像局部扭曲）
 
@@ -629,4 +632,4 @@ PhonePC/2in1TabletTVWearable
 32. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/mVH4GWwISk2joyaqBJE-_Q/zh-cn_image_0000002552800368.png?HW-CC-KV=V1&HW-CC-Date=20260428T000211Z&HW-CC-Expire=86400&HW-CC-Sign=D464CDF29BA9A4CFA632FC642ECE8DF3589ED2C3F6B3CF598C9EA1A4DB923C20)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/rKbyHX1zRGuykgFsbrMQDA/zh-cn_image_0000002589326409.png?HW-CC-KV=V1&HW-CC-Date=20260429T055236Z&HW-CC-Expire=86400&HW-CC-Sign=D6A06BEEFE200DCEA967D9B29CF6FF447150DCFAE006FC0F3F4D649259567602)

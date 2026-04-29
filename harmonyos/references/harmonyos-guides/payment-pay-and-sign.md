@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/payment-pay-a
 title: 支付并签约场景
 breadcrumb: 指南 > 应用服务 > Payment Kit（鸿蒙支付服务） > 免密支付接入 > 支付并签约场景
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:50:08+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:337d6fd347eb8e60d5f3589c2e6d97f7f77639b1e2583bb2ae369afdeee3a53f
+scraped_at: 2026-04-29T13:39:31+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:9deca20a0c547f2a94d905a4bc92947cfe97807b8b18df852f2bc50916cf1586
 ---
 
 ## 场景介绍
@@ -18,19 +18,19 @@ content_hash: sha256:337d6fd347eb8e60d5f3589c2e6d97f7f77639b1e2583bb2ae369afdeee
 
 华为支付支付并签约页面展示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/132lSIj3T5WxAas1d7-S4A/zh-cn_image_0000002552799438.png?HW-CC-KV=V1&HW-CC-Date=20260427T235007Z&HW-CC-Expire=86400&HW-CC-Sign=56A27818A6B7E82FD3D60C8E21AF4ADD7D0B414E6C8ED3CEF9CACE65D6BA1A07)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/uG_VVv0vS0O9ZETS3vUz3Q/zh-cn_image_0000002558605932.png?HW-CC-KV=V1&HW-CC-Date=20260429T053930Z&HW-CC-Expire=86400&HW-CC-Sign=4F742DC2685DEBDAF053F8D64CFDC055BA4108666C2D491B7082E1CB123D0CDF)
 
 ## 业务流程
 
 开发者通过接入Payment Kit 提供的支付并签约能力，可以让用户在支付完成后快速与商户建立签约代扣的关系。具体接入流程如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/jRrZCBUsQLKwHMVHILagzw/zh-cn_image_0000002583439133.png?HW-CC-KV=V1&HW-CC-Date=20260427T235007Z&HW-CC-Expire=86400&HW-CC-Sign=791037A2161156B1965239D23368C639D3009E021211609500A3D191EEA117F6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/1ZTNID0gSVmsddnmwJyWeQ/zh-cn_image_0000002589325459.png?HW-CC-KV=V1&HW-CC-Date=20260429T053930Z&HW-CC-Expire=86400&HW-CC-Sign=43E11C46F246EB7B1812384CD8631EC9FF1B69A87A0BAC36D14B7F7572497E97)
 
 1. 商户客户端请求商户服务端创建商品订单。
 2. 商户服务端调用Payment Kit服务端[直连商户预下单](../harmonyos-references/payment-pas-prepay.md)或[服务商预下单](../harmonyos-references/payment-partner-pas-prepay.md)接口。
 3. Payment Kit服务端返回预支付ID（prepayId）给商户服务端。
 4. 商户服务端组建订单信息参数[orderStr](../harmonyos-references/payment-model.md#orderstr)返回给商户客户端。
-5. 商户客户端使用orderStr调用[requestPayment](../harmonyos-references/payment-paymentservice.md#paymentservicerequestpayment)接口拉起Payment Kit支付收银台。
+5. 商户客户端使用orderStr调用[requestPayment](../harmonyos-references/payment-paymentservice.md#requestpayment)接口拉起Payment Kit支付收银台。
 6. Payment Kit客户端展示支付收银台。
 7. 用户通过收银台完成支付并签约。
 8. Payment Kit服务端处理支付并同步返回支付受理成功结果给Payment Kit客户端。
@@ -61,7 +61,7 @@ content_hash: sha256:337d6fd347eb8e60d5f3589c2e6d97f7f77639b1e2583bb2ae369afdeee
 
 ### 拉起华为支付收银台（端侧开发）
 
-使用[orderStr](../harmonyos-references/payment-model.md#orderstr)调用[requestPayment](../harmonyos-references/payment-paymentservice.md#paymentservicerequestpayment)接口拉起Payment Kit支付收银台。
+使用[orderStr](../harmonyos-references/payment-model.md#orderstr)调用[requestPayment](../harmonyos-references/payment-paymentservice.md#requestpayment)接口拉起Payment Kit支付收银台。
 
 支付并签约拉起支付收银台与商户基础支付场景处理逻辑一致，可参见[这里](payment-payment-process.md#拉起华为支付收银台端侧开发)。
 

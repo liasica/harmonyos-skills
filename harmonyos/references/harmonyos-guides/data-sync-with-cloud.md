@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-sync-wit
 title: 端云数据同步云侧环境部署指导
 breadcrumb: 指南 > 应用框架 > ArkData（方舟数据管理） > 同应用端云数据同步（分布式） > 端云数据同步云侧环境部署指导
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:38:19+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:b68aba06ffcdc9a112b94ce37fd53ed6271efb689416c2c8f8607a605979b9f4
+scraped_at: 2026-04-29T13:26:20+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:601e32944bc20ed3c19285b1399dc72245b97c7d72cd0ec2c51cef1ade60a303
 ---
 
 ## 场景介绍
@@ -80,7 +80,7 @@ content_hash: sha256:b68aba06ffcdc9a112b94ce37fd53ed6271efb689416c2c8f8607a60597
 
    在API管理或开放能力管理启用“云空间”。
 
-   在导航树上选择“构建 > 云空间服务”。
+   点击“全部功能”（左侧导航树下方），选择“构建>云空间服务”，点击固定按钮，以将服务显示在左侧导航树中。
 2. 创建容器。
 
    在云同步服务主页面，点击**创建容器**按钮，填写**容器名称**，点击**确定**。
@@ -88,8 +88,6 @@ content_hash: sha256:b68aba06ffcdc9a112b94ce37fd53ed6271efb689416c2c8f8607a60597
    容器名称需要和ArkData本地数据库名称保持一致，例如：ArkData的数据库名称为note.db，容器名称则为note（大小写保持一致，不用填写后缀）。
 
    容器创建完成后才可进入数据类型配置页面。
-
-   可以创建多个容器，但容器创建后不可删除，请谨慎创建。
 3. 配置数据类型。
 
    在云同步服务主页面，选择“数据类型配置”，填写**数据类型名称**和**自定义字段**，可以根据需要进行增、删、改、查。
@@ -104,7 +102,6 @@ content_hash: sha256:b68aba06ffcdc9a112b94ce37fd53ed6271efb689416c2c8f8607a60597
    | Integer | INTEGER |
    | Double | DOUBLE |
    | Bytes | BLOB |
-   | Asset | ASSET |
 
    说明
 
@@ -156,8 +153,6 @@ content_hash: sha256:b68aba06ffcdc9a112b94ce37fd53ed6271efb689416c2c8f8607a60597
    5. }
    ```
 2. 环境连接。
-
-   前往“设置-云空间”，点击右上角“![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/--NwY41IRGCRg9BH7t0Tyw/zh-cn_image_0000002552957528.png?HW-CC-KV=V1&HW-CC-Date=20260427T233818Z&HW-CC-Expire=86400&HW-CC-Sign=303EEFCF54B60D05D3D1BCBCD6DFE6AC2BE8C04E19D8109445A9F6FC030B631B)-更多设置”。
 
    云空间识别接入应用的证书类型为debug则连接开发环境，应用证书类型为release则连接生产环境。
 3. 开发流程具体请见[端云数据同步关系型数据库端侧开发指导](data-cloud-sync-of-rdb-store.md)。

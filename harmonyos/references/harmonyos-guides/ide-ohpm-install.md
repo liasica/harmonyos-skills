@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-inst
 title: ohpm install
 breadcrumb: 指南 > 命令行工具 > 三方依赖管理工具（ohpm） > 常用命令 > ohpm install
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:57:41+08:00
+scraped_at: 2026-04-29T13:47:52+08:00
 doc_updated_at: 2026-04-22
-content_hash: sha256:75f01dce6999b0eea30ebdfae3e7e3c0ed372f9f83d3b86fd1403fa63f94867f
+content_hash: sha256:00c38ae34cbda90e99034c5e74bbfc953fd7fa707a93d4fc2f95e3898de7db69
 ---
 
 安装三方库。
@@ -235,7 +235,7 @@ content_hash: sha256:75f01dce6999b0eea30ebdfae3e7e3c0ed372f9f83d3b86fd1403fa63f9
 
 结果示例：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/O-XEk5BWRjWRFSF8lPRaaA/zh-cn_image_0000002530913590.png?HW-CC-KV=V1&HW-CC-Date=20260427T235740Z&HW-CC-Expire=86400&HW-CC-Sign=FCEA8C00B2CE891EB8A1018F07FD829E06BAE57D8CAB61A40FEA1BC09431E12D "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/zIRw_y2KTcmf5m83F_wzWg/zh-cn_image_0000002530913590.png?HW-CC-KV=V1&HW-CC-Date=20260429T054751Z&HW-CC-Expire=86400&HW-CC-Sign=C6BB652639A1D77607E6AD8FBB5BAF4B412888B55B518431DC9E217252E6ED98 "点击放大")
 
 ## oh\_modules
 

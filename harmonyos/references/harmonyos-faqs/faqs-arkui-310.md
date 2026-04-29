@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-310
 title: 在长按拖拽排序的场景下，如何实现自定义长按拖拽onItemDragStart的开始触发时长
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 方舟UI框架（ArkUI） > 在长按拖拽排序的场景下，如何实现自定义长按拖拽onItemDragStart的开始触发时长
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:26:18+08:00
+scraped_at: 2026-04-29T14:17:19+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:b9aa36feacae1fec5ed10ef804d0c65a8e22007b2aab0ef59cc778a28afb34ff
+content_hash: sha256:663c5921a1fe204ee568657a24a9abc6df2860c60d30564739eeb7393891fdaa
 ---
 
 在Grid组件中，onItemDragStart事件的默认触发时长为170毫秒，但当前版本不支持直接修改该参数。可以通过自定义Grid，通过设置长按手势LongPressGesture中的duration参数，来实现自定义长按拖拽的开始触发时长，参考代码如下：
@@ -330,4 +330,4 @@ content_hash: sha256:b9aa36feacae1fec5ed10ef804d0c65a8e22007b2aab0ef59cc778a28af
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/voLRAcmqSgCZ-E6yCDRTlQ/zh-cn_image_0000002194158820.png?HW-CC-KV=V1&HW-CC-Date=20260428T002617Z&HW-CC-Expire=86400&HW-CC-Sign=CC1B62CBAE34FA66A730227B4BB5E6A24AB827F58C9D31A4A8E797F1E5CF5D20 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/voLRAcmqSgCZ-E6yCDRTlQ/zh-cn_image_0000002194158820.png?HW-CC-KV=V1&HW-CC-Date=20260429T061717Z&HW-CC-Expire=86400&HW-CC-Sign=E61664DE13B186E305BC93399F7E875637E9725BD7284D13140CEFE82537E3C5 "点击放大")

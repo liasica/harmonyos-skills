@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (CursorController)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.arkui.UIContext (UIContext) > Class (CursorController)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:00:21+08:00
+scraped_at: 2026-04-29T13:50:34+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:104f705e6801f308decf2e67037933e3749a3d45157262fa52178dcc3b53c305
+content_hash: sha256:a5b63a5878cb5d5e1e90cfb4a8d6f4eb4a25d84464dd42cfe1ec38ba4f6dab91
 ---
 
 提供光标样式设置的能力。
@@ -58,7 +58,7 @@ restoreDefault(): void
 23. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/3D8xDinbSka0B0018-ws0Q/zh-cn_image_0000002583479407.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000020Z&HW-CC-Expire=86400&HW-CC-Sign=DDADF75D9B2988D5BC3A16B22501604706CF36F6231DF6763B7732C54956AFFC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/hAs_v0oHQyaSMfkO0KPliw/zh-cn_image_0000002558606270.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055033Z&HW-CC-Expire=86400&HW-CC-Sign=6EC582DE94F86F872D1937BEE54382195E21834DBF7A205D2BF890D370E534FA)
 
 ## setCursor12+
 
@@ -111,4 +111,4 @@ setCursor(value: PointerStyle): void
 22. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/oW38jslURGqRMcR8Ryok2g/zh-cn_image_0000002552799758.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000020Z&HW-CC-Expire=86400&HW-CC-Sign=8AC21D0AA00C3D98C87B292DD61C646CF70499F4AF0C726869C50533C674D2F1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/jSGiJ8g9SWGDAYe5ITOfsg/zh-cn_image_0000002589325797.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055033Z&HW-CC-Expire=86400&HW-CC-Sign=D6A6A7FC336685F052D4100B388BF26AC43F9C85B11B8C4ED719C0373C5DD6DD)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-purax-guid
 title: 阔折叠应用开发
 breadcrumb: 最佳实践 > 多端设备体验提升 > 手机 > 阔折叠应用开发
 category: best-practices
-scraped_at: 2026-04-28T08:21:47+08:00
+scraped_at: 2026-04-29T14:12:57+08:00
 doc_updated_at: 2026-04-23
-content_hash: sha256:d4c71848002e9a9dda0993d029f86064219f0b408c4939b3232c8290b3e922e3
+content_hash: sha256:e207c9b6253aa4ccee5467ce74ba0ec7ba97b7017083eb1e5d159ef6aa539822
 ---
 
 ## 概述
@@ -149,7 +149,7 @@ Pura X外屏仅支持全屏模式。
 * Pura X外屏当前不支持旋转，仅支持反向横屏（270度）展示。
 * 建议设置窗口旋转策略为FOLLOW\_DESKTOP，表示跟随桌面的旋转模式。具体适配逻辑可参考[为多设备配置旋转策略](bpta-multi-device-window-direction.md#section12636154743220)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/Sru6NOq7Qxiv9ifiy-XWeQ/zh-cn_image_0000002585773475.png?HW-CC-KV=V1&HW-CC-Date=20260428T001920Z&HW-CC-Expire=86400&HW-CC-Sign=F368B6F4AE9FE057B8798CBD99A01F0E11D7AE31A110ADF64BAF12C755671A46 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/Sru6NOq7Qxiv9ifiy-XWeQ/zh-cn_image_0000002585773475.png?HW-CC-KV=V1&HW-CC-Date=20260429T061253Z&HW-CC-Expire=86400&HW-CC-Sign=7429B7EC2D717CED8DDB812B0773382C92CC67CA88CB2353D78844CD1ABE1F6F "点击放大")
 
 阔折叠设备支持开发者设置窗口旋转策略，以Pura X和Pura X Max产品为例，产品默认的旋转逻辑如下表：
 
@@ -164,11 +164,11 @@ Pura X外屏仅支持全屏模式。
 
 沉浸式模式是指通过减少无关元素的干扰，使应用界面更加专注于内容呈现，以提升用户体验的设计模式，详情可参考窗口沉浸式的[实现沉浸式效果](bpta-multi-device-window-immersive.md#section180431120426)章节。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/sEHtx5YYR--aqgODsx0tjA/zh-cn_image_0000002585653415.png?HW-CC-KV=V1&HW-CC-Date=20260428T001920Z&HW-CC-Expire=86400&HW-CC-Sign=9936C12A5953EDA1D568929F8CC1578FFC12B2269A363FC6C4ED38D7EF3A9E2E "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/sEHtx5YYR--aqgODsx0tjA/zh-cn_image_0000002585653415.png?HW-CC-KV=V1&HW-CC-Date=20260429T061253Z&HW-CC-Expire=86400&HW-CC-Sign=A9BB6698D848517A385296FBCDF170419B1A24138836A09582B186802F01FB32 "点击放大")
 
 设备使用过程中避让区会发生变化，例如：设备旋转导致横竖屏切换，像这种设备使用状态变化引起避让区的变化的适配方案可参考[避让处理](bpta-multi-device-window-immersive.md#section1014820221441)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/-mThGRBBR3eyXZVw-YXMUQ/zh-cn_image_0000002555213478.png?HW-CC-KV=V1&HW-CC-Date=20260428T001920Z&HW-CC-Expire=86400&HW-CC-Sign=BF637B9EB1480F7497FE3F8D66828D6D4B3EF117260A0E4504BC6616463F6ABB "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/-mThGRBBR3eyXZVw-YXMUQ/zh-cn_image_0000002555213478.png?HW-CC-KV=V1&HW-CC-Date=20260429T061253Z&HW-CC-Expire=86400&HW-CC-Sign=8249E9C33EC8D4C42C9EA944C428FB58E47331B67E16030DC1B5F1DEEF3E48B5 "点击放大")
 
 说明
 
@@ -192,7 +192,7 @@ Pura X外屏仅支持全屏模式。
 
 使用透明磨砂材质的悬浮导航栏，提升可视区域的面积。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/mV8Ec0K7SjiQTS7inv4yNw/zh-cn_image_0000002555053864.gif?HW-CC-KV=V1&HW-CC-Date=20260428T001920Z&HW-CC-Expire=86400&HW-CC-Sign=A77B88A1D41D9D6AFD5C25FC64D06751F11AF877A3CE8C2D91911AF2F61F22D9 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/mV8Ec0K7SjiQTS7inv4yNw/zh-cn_image_0000002555053864.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061253Z&HW-CC-Expire=86400&HW-CC-Sign=6A7C4F9BDC0491C53D8048C410B7345A8A0FCEC03846B44D0AB2B2059609D680 "点击放大")
 
 1. 使用[HdsTab](../harmonyos-references/ui-design-hdstabs.md)组件的[barFloatingStyle](../harmonyos-references/ui-design-hdstabs.md#barfloatingstyle)属性，设置systemMaterialEffect悬浮[SystemMaterialParams](../harmonyos-references/ui-design-hdstabs.md#systemmaterialparams)材质，使用[TabContent](../harmonyos-references/ts-container-tabcontent.md)包裹每一项子页面的内容。
 
@@ -279,7 +279,7 @@ Pura X外屏仅支持全屏模式。
 
 在用户滑动浏览内容时，自动隐藏底部导航栏与顶部标题栏，以最大化可视区域，提升有效信息的呈现面积。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/sdV8GOvESdiegZzOskBCbA/zh-cn_image_0000002585773477.gif?HW-CC-KV=V1&HW-CC-Date=20260428T001920Z&HW-CC-Expire=86400&HW-CC-Sign=61DA55F0203FF0671F2D8B41C0DAB36A54EE02029442C7C53B2A4C852031E263 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/sdV8GOvESdiegZzOskBCbA/zh-cn_image_0000002585773477.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061253Z&HW-CC-Expire=86400&HW-CC-Sign=31204CCC2B39BB28EA74BA8B5CEE2FFCA7BBAD48ADBAB46D50FA772429AE55C6 "点击放大")
 
 1. 不同状态下，顶部和底部系统避让区高度会随应用窗口变化而变化。在窗口生命周期创建时，调用[window.getWindowAvoidArea](../harmonyos-references/arkts-apis-window-window.md#getwindowavoidarea9)获取初始的系统避让区高度，并使用window.on('avoidAreaChange')监听系统避让区的变化。常见触发系统避让区回调的场景可参考[on('avoidAreaChange')](../harmonyos-references/arkts-apis-window-window.md#onavoidareachange9)。并使用全局状态变量，在页面中可以拿到该状态值用于安全区的避让操作。
 
@@ -431,7 +431,7 @@ Pura X外屏仅支持全屏模式。
 
 以Pura X产品为例，该产品折叠态时，外屏由于独特的1:1比例的小方形屏，在设计时应确保布局完整显示，避免截断、挤压、堆叠，充分利用屏幕空间，提供最佳用户体验。小方形屏的布局设计与实现可参考[小方形屏](bpta-multi-device-screen-layout.md#section1395830175918)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/b1SUJ6yeSwSOXSmnjmo5wQ/zh-cn_image_0000002585653423.gif?HW-CC-KV=V1&HW-CC-Date=20260428T001920Z&HW-CC-Expire=86400&HW-CC-Sign=394D86F3484EBEF080F4D32E1871CB1AA5B70E9E867CEADD47857BE14E66C27B "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/b1SUJ6yeSwSOXSmnjmo5wQ/zh-cn_image_0000002585653423.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061253Z&HW-CC-Expire=86400&HW-CC-Sign=A94ACB7F03CB86FAD1EE0E42B19DB0B5280C34567F3B1596422A5205A4347C96 "点击放大")
 
 **横屏适配建议**
 
@@ -446,7 +446,7 @@ Pura X外屏仅支持全屏模式。
 
 **1.智感握姿**：系统提供感知用户当前握持手信息的能力，应用在获得手部信息后，改变核心交互组件的显示位置，提升用户单手操作效率。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/WRd4oqd_Qiaj006vWpIk2w/zh-cn_image_0000002555213488.gif?HW-CC-KV=V1&HW-CC-Date=20260428T001920Z&HW-CC-Expire=86400&HW-CC-Sign=1CA94DDE43140491850A13F38BDE48D46278CE6CC7BE36F94AFBBE80B8ADB665 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/WRd4oqd_Qiaj006vWpIk2w/zh-cn_image_0000002555213488.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061253Z&HW-CC-Expire=86400&HW-CC-Sign=73A9D0BD7081AF0F7005CEBAC755853F78CA69B3931FD11B9483556D6E7CDFD6 "点击放大")
 
 1. 在module.json5文件中注明申请ohos.permission.DETECT\_GESTURE权限。
 
@@ -500,7 +500,7 @@ Pura X外屏仅支持全屏模式。
 
 **2.跟手弹框**：展开状态下中间的弹出组件手指难以触达，弹出组件在点击的位置跟手出现，更易于交互，提升交互效率。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/4qFN8cJnTGW50nw5d0h7OQ/zh-cn_image_0000002555053870.png?HW-CC-KV=V1&HW-CC-Date=20260428T001920Z&HW-CC-Expire=86400&HW-CC-Sign=2C1AE9674387C14CEA037F4CDB27A192AD640CBC912597F77ECF3B2821F066BA "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/4qFN8cJnTGW50nw5d0h7OQ/zh-cn_image_0000002555053870.png?HW-CC-KV=V1&HW-CC-Date=20260429T061253Z&HW-CC-Expire=86400&HW-CC-Sign=C49263758C36BEA2FD71A9FDD2C814D67870D9C21972DFF543A44A6AEB76DF3F "点击放大")
 
 1. 应用适配[响应式布局](bpta-multi-device-responsive-layout.md)，监听窗口尺寸变化，使用窗口的[断点](bpta-multi-device-responsive-layout.md#section1532120147301)值来适配不同尺寸窗口的页面布局，实现方法可参考[通过断点刷新UI](bpta-multi-device-responsive-layout.md#section175001836203617)。当窗口尺寸发生变化时，页面应能实时、平滑地适配不同设备或窗口宽度（如Pura X Max从折叠态切换到展开态），从而提供一致且优质的用户体验。
 2. 构建UI布局时，使用条件表达式判断当横向断点为sm时，使用普通居中弹框。否则，使用跟手弹框[PopoverDialog](../harmonyos-references/ohos-arkui-advanced-dialog.md#popoverdialog14)，提升大屏设备下的操作效率。
@@ -546,7 +546,7 @@ Pura X外屏仅支持全屏模式。
 
 悬停态可以在桌面平稳放置，实现免手持体验，常用于视频通话、播放视频、拍照和听歌等不需要频繁交互的场景。这种状态下，应用需要对中间折痕区域进行避让，并且对上下两个界面进行悬停适配，重新布局。悬停态的实现方案可参考[使用FolderStack组件实现悬停态](bpta-folded-hover.md#section9671184110015)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/BTRLFn13SZ6quz-XKba9GQ/zh-cn_image_0000002585773485.png?HW-CC-KV=V1&HW-CC-Date=20260428T001920Z&HW-CC-Expire=86400&HW-CC-Sign=B285ACC747B7029DFA7985E180085A77B9A9484ADFB9CEA1635959A5B817A961 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/BTRLFn13SZ6quz-XKba9GQ/zh-cn_image_0000002585773485.png?HW-CC-KV=V1&HW-CC-Date=20260429T061253Z&HW-CC-Expire=86400&HW-CC-Sign=85288B702967DFAA005E7E2C5A0377A5C66E86AA94948F0C9DE73B308A8CAC88 "点击放大")
 
 ## 开合适配
 

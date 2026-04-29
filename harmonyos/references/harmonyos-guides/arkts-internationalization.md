@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-interna
 title: UI国际化
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > UI国际化
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:40:07+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:178750f58d3863d3dab8110f0cbbcb448325ab66ade42a55d5634c9ca572697b
+scraped_at: 2026-04-29T13:28:24+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:44d1b335a4c7c7622389860b0e72d7e4b56c09c3f8bf69392664c16fff6d90cc
 ---
 
 本文介绍如何实现应用程序UI界面的国际化，包含资源配置和镜像布局，关于应用适配国际化的详细参考，请参考[Localization Kit（本地化开发服务）](i18n-l10n.md)。
@@ -46,8 +46,8 @@ ArkUI 如下能力已默认适配镜像：
 但如下三种场景还需要进行适配：
 
 1. 界面布局、边框设置：关于方向类的通用属性，如果需要支持镜像能力，使用泛化的方向指示词 start/end入参类型替换 left/right、x/y等绝对方向指示词的入参类型，来表示自适应镜像能力。
-2. Canvas组件只有限支持文本绘制的镜像能力。
-3. XComponent组件不支持组件镜像能力。
+2. [Canvas](../harmonyos-references/ts-components-canvas-canvas.md)组件只有限支持文本绘制的镜像能力。
+3. [XComponent](../harmonyos-references/ts-basic-components-xcomponent.md)组件不支持组件镜像能力。
 
 ### 界面布局和边框设置
 
@@ -174,7 +174,7 @@ Canvas组件的绘制内容和坐标均不支持镜像能力。已绘制到Canva
 
 在LTR与RTL文本混排时，如一个英文句子中包含阿拉伯语的单词或短语，显示顺序将变得复杂。下图为数字和维吾尔语混合时对应的字符逻辑顺序。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/HiB2lf-2T2GEjoTSoTh41w/zh-cn_image_0000002583478033.png?HW-CC-KV=V1&HW-CC-Date=20260427T234005Z&HW-CC-Expire=86400&HW-CC-Sign=C2BB5898C114BE7F9F64DACB1D8E6CD173FED7B69F701EE90EF93B9002F5BD25)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/BcSpLOvVSL219wE8SVCumQ/zh-cn_image_0000002589244331.png?HW-CC-KV=V1&HW-CC-Date=20260429T052823Z&HW-CC-Expire=86400&HW-CC-Sign=B84EFCC3D2494675B784F85AC6D9E85BA8AB307300E01E80E1A01DA809CCC79F)
 
 此时，文本渲染引擎会采用名为“双向算法”或“Unicode双向算法”（Unicode Bidirectional Algorithm）的方法来确定字符的显示顺序。下图展示了LTR与RTL文本混合时对应的字符显示顺序，确定字符方向的基本原则如下：
 
@@ -182,4 +182,4 @@ Canvas组件的绘制内容和坐标均不支持镜像能力。已绘制到Canva
 2. 弱字符的方向性：弱字符不具备明确的方向性，这些字符不会影响其周围中性字符的方向。
 3. 中性字符的方向性：中性字符无固定方向性，它们会继承其最近的强字符的方向；若附近无强字符，则采用全局方向。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/h9GZ9g_xRduAvxUdlLQ3pw/zh-cn_image_0000002552798384.png?HW-CC-KV=V1&HW-CC-Date=20260427T234005Z&HW-CC-Expire=86400&HW-CC-Sign=7BA686D218B9CC01985EEC8C4D39BAA24D143996439EDE7B9172D3C5DD43CAED)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/DgPqJx36RgWk7oWkayfrmg/zh-cn_image_0000002558764524.png?HW-CC-KV=V1&HW-CC-Date=20260429T052823Z&HW-CC-Expire=86400&HW-CC-Sign=AC33D1F83F7CDD475ADF52F309700E88C4CE448A9DA091F1C6AF488199760B41)

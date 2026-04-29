@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/resource-cate
 title: 资源分类与访问
 breadcrumb: 指南 > 基础入门 > 资源分类与访问
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:37:36+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:e52f5b01a24bd4495674c75ba837c4b4988163771a167b7cace7dc5aec71bca7
+scraped_at: 2026-04-29T13:25:38+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:d8f610235bc2fba4467f62be8a3ce442c714c54fb7be71c6980bc1cda438cd0c
 ---
 
 ## 功能介绍
@@ -41,9 +41,9 @@ content_hash: sha256:e52f5b01a24bd4495674c75ba837c4b4988163771a167b7cace7dc5aec7
 说明
 
 * 资源目录和资源组目录下的文件均被视为资源文件，在应用打包时不会进行混淆。
-* stage模型多工程情况下，共有的资源文件放到AppScope下的resources目录。
-* 在编译构建时，AppScope目录下的资源文件会合入到模块下面的资源文件中，如果两个目录下的相同资源目录和资源组目录下存在重名资源，编译打包后只会保留AppScope目录下的资源。
 * 非resources目录下资源打包策略请参考[copyCodeResource](ide-hvigor-build-profile.md#table1476161719356)描述。
+* Stage模型多工程情况下，共有的资源文件放到AppScope下的resources目录。
+* 在编译构建时，AppScope目录下的资源文件会合入到模块下面的资源文件中，如果两个目录下的相同资源目录和资源组目录下存在重名资源，按照以下优先级进行打包（优先级由高到低）：AppScope里面的资源，HAP包自身模块，依赖的HAR模块（依赖的多个HAR之间有资源冲突，会按照工程oh-package.json5中dependencies下的依赖顺序进行覆盖，依赖顺序在前的优先级较高）。
 
 ### 资源目录
 
@@ -206,19 +206,19 @@ plural.json文件的内容如下：
 
 创建的目录名自动生成，格式固定为“限定词.资源组”，例如：创建一个限定词为dark的element目录，自动生成的目录名称为“dark/element”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/eqsNJ9AGRwW24qte__6ICA/zh-cn_image_0000002583477483.png?HW-CC-KV=V1&HW-CC-Date=20260427T233733Z&HW-CC-Expire=86400&HW-CC-Sign=C74CFE7F9FB12F39A9137D148137F983F25C08A7694529FA100866F8A8DFF414)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/_tqUweGPQ5WeAUq_PGIjMQ/zh-cn_image_0000002558763974.png?HW-CC-KV=V1&HW-CC-Date=20260429T052536Z&HW-CC-Expire=86400&HW-CC-Sign=BC5BDC415C06994FED25C6711B4F55CDAABFB7867C181B1602EDA0F4AAC146E6)
 
 ### 创建资源目录
 
 在resources目录右键菜单选择“New > Resource Directory”，可创建资源目录，默认创建的是base目录。如果选择了限定词，则会按照命名规范自动生成限定词和资源组目录。确定限定词后，选择资源组类型，当前资源组类型支持Element、Media、Profile三种，创建后生成资源目录。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/ohautW_4Tm2pVgO332DRyQ/zh-cn_image_0000002552797834.png?HW-CC-KV=V1&HW-CC-Date=20260427T233733Z&HW-CC-Expire=86400&HW-CC-Sign=30452A1A8BC989354F58805923BBB814071101BA1B9EB8B06DF1ADC2D9ED5DB7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/apC9-V6iTXi-wvgheYKaVw/zh-cn_image_0000002558604318.png?HW-CC-KV=V1&HW-CC-Date=20260429T052536Z&HW-CC-Expire=86400&HW-CC-Sign=36EDC6576D49B99A0BA17CC116274CE25C89461BB471880D7733802B85A41317)
 
 ### 创建资源文件
 
 在资源组目录（element、media、profile）的右键菜单选择“New > XXX Resource File”，可创建对应资源组目录的资源文件。例如，在element目录下可新建Element Resource File。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/MFnAiYETQ8CNNgM0Tzx28Q/zh-cn_image_0000002583437529.png?HW-CC-KV=V1&HW-CC-Date=20260427T233733Z&HW-CC-Expire=86400&HW-CC-Sign=C72606E11C99772D6B9F0339B124F5FD83CA94BECF248DFFD7E7A097B0121E6F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/It2-EKPaQ0CUvY2na1u5SA/zh-cn_image_0000002589323843.png?HW-CC-KV=V1&HW-CC-Date=20260429T052536Z&HW-CC-Expire=86400&HW-CC-Sign=9589AD2661B944730A485C63ABF1144B812ABB9424D93646EF23D20C3566E15A)
 
 ### 示例
 
@@ -226,12 +226,12 @@ plural.json文件的内容如下：
 
 1. 在resources目录右键菜单选择“New > Resource File”，File name填写为string\_sample，Resource type选择Element，Root Element选择string，Available qualifiers选中Locale，在右侧的语言列表中选择zh，地区列表中选择CN，将会在resources目录下创建zh\_CN/element/string\_sample.json文件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/MTI1bnnvR-Wwe_9vIprc_w/zh-cn_image_0000002552957484.png?HW-CC-KV=V1&HW-CC-Date=20260427T233733Z&HW-CC-Expire=86400&HW-CC-Sign=0CE3068E23B9B1E5C1FE954CA5E9ED0CE06860B3AE8288A1B18D009E430A8EAE)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/duaEVKYTTIyufBQGDHu9hQ/zh-cn_image_0000002589243781.png?HW-CC-KV=V1&HW-CC-Date=20260429T052536Z&HW-CC-Expire=86400&HW-CC-Sign=85F1EAF281E2446ABDE542DD3C9EE41E48EA914A491CB5E498B5F62518134E4C)
 2. 同理，语言选择en，地区选择US，创建en\_US/element/string\_sample.json文件。
 
    最终创建的资源文件如下。资源文件创建完成后，如何访问资源文件请参见[资源访问](resource-categories-and-access.md#资源访问)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/6RYwEv3eRbeoJb7Hq2TGyQ/zh-cn_image_0000002583477485.png?HW-CC-KV=V1&HW-CC-Date=20260427T233733Z&HW-CC-Expire=86400&HW-CC-Sign=69C41B7C635857AD7A2BFB03C4F4C23E52A187A575EAA1A37576468813F3E510)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/njxVPwAPT_-bbwbKD3cJdA/zh-cn_image_0000002558763976.png?HW-CC-KV=V1&HW-CC-Date=20260429T052536Z&HW-CC-Expire=86400&HW-CC-Sign=3233B9A92739F651765E143C32595EB86992B0FEF05B3B1A3FC6A7769C54FF0D)
 
 ## 资源可翻译特性
 
@@ -291,128 +291,178 @@ string资源配置attr属性示例如下，其中string1字符串被标记为不
 
 ### 单HAP包应用资源
 
-* 通过$r或$rawfile访问资源。
+**方式一：** 通过$r或$rawfile访问资源。此方法适合简单的、静态的资源引用场景，比如在UI组件中直接引用。
 
-  对于color、float、string、plural、media、profile等类型的资源，通过$r('app.type.name')形式访问。其中，app为resources目录中定义的资源，type为资源类型，name为资源名，由开发者定义资源时确定。
-
-  对于string.json中使用多个占位符的情况，例如资源值value中存在%1$s和%2$d两个占位符，需要通过$r('app.string.label', 'aaa', 444)形式访问。其中label为资源名称name，'aaa'和444用来替代占位符。
-
-  对于rawfile目录资源，通过$rawfile('filename')形式访问。其中，filename为rawfile目录下文件的相对路径，文件名需要包含后缀，路径开头不可以"/"开头。
+* 对于color、float、string、plural、media、profile等类型的资源，通过$r('app.type.name')形式访问。其中，app为resources目录中定义的资源，type为资源类型，name为资源名，由开发者定义资源时确定。
+* 对于rawfile目录资源，通过$rawfile('filename')形式访问。其中，filename为rawfile目录下文件的相对路径，文件名需要包含后缀，路径开头不可以"/"开头。
 
   说明
 
+  + 若string.json中使用多个占位符的情况，例如资源值value中存在%1$s和%2$d两个占位符，需要通过$r('app.string.label', 'aaa', 444)形式访问。其中label为资源名称name，'aaa'和444用来替代占位符。
   + 针对同一个资源，$r获取的资源信息Resource对象中的资源ID在应用重新编译时会发生变化，并非固定值，不建议缓存资源ID。如果确实需要缓存资源ID，需要对资源ID进行固定，具体请参考[固定资源ID](restool.md#固定资源id)。
-  + rawfile的native的访问方式请参考[Rawfile开发指导](rawfile-guidelines.md)。
+  + rawfile的native访问方式请参考[Rawfile开发指导](rawfile-guidelines.md)。
 
-[资源文件示例](resource-categories-and-access.md#资源文件示例)中显示了.json文件内容，包含color.json、string.json和plural.json，访问应用资源时需先了解.json文件的使用规范。
+  [资源文件示例](resource-categories-and-access.md#资源文件示例)中显示了.json文件内容，包含color.json、string.json和plural.json，访问应用资源时需先了解.json文件的使用规范。访问示例如下：
 
-资源的具体使用方法如下：
+  ```
+  1. // 通过$r('app.type.name')访问
+  2. // 资源name仅作示例，请替换为实际使用的资源
+  3. Text($r('app.string.string_hello'))
+  4. .id('app_resource')
+  5. .fontColor($r('app.color.color_emphasize'))
+  6. .fontSize($r('app.float.text_size_headline1'))
+  7. .fontFamily($r('app.string.font_family_medium'))
+  8. .backgroundColor($r('app.color.color_palette_aux1'))
 
-```
-1. // 通过$r('app.type.name')访问
-2. // 资源name仅作示例，请替换为实际使用的资源
-3. Text($r('app.string.string_hello'))
-4. .id('app_resource')
-5. .fontColor($r('app.color.color_emphasize'))
-6. .fontSize($r('app.float.text_size_headline1'))
-7. .fontFamily($r('app.string.font_family_medium'))
-8. .backgroundColor($r('app.color.color_palette_aux1'))
+  10. // 资源name仅作示例，请替换为实际使用的资源
+  11. Image($r('app.media.app_icon'))
+  12. .border({
+  13. color: $r('app.color.color_palette_aux1'),
+  14. radius: $r('app.float.corner_radius_button'), width: 2
+  15. })
+  16. .margin({
+  17. top: $r('app.float.elements_margin_horizontal_m'),
+  18. bottom: $r('app.float.elements_margin_horizontal_l')
+  19. })
+  20. .height(100)
+  21. .width(100)
 
-10. // 资源name仅作示例，请替换为实际使用的资源
-11. Image($r('app.media.app_icon'))
-12. .border({
-13. color: $r('app.color.color_palette_aux1'),
-14. radius: $r('app.float.corner_radius_button'), width: 2
-15. })
-16. .margin({
-17. top: $r('app.float.elements_margin_horizontal_m'),
-18. bottom: $r('app.float.elements_margin_horizontal_l')
-19. })
-20. .height(100)
-21. .width(100)
+  23. // 对于string.json中name为"message_notification"，value为"Hello, %1$s!,You have %2$d new messages."
+  24. // 该资源存在%1$s、%2$d两个占位符，需要替代为'LiHua'、2，则采用如下方式访问
+  25. // 资源name仅作示例，请替换为实际使用的资源
+  26. Text($r('app.string.message_notification', 'LiHua', 2)).id('app_string_resource')
 
-23. // 对于string.json中name为"message_notification"，value为"Hello, %1$s!,You have %2$d new messages."
-24. // 该资源存在%1$s、%2$d两个占位符，需要替代为'LiHua'、2，则采用如下方式访问
-25. // 资源name仅作示例，请替换为实际使用的资源
-26. Text($r('app.string.message_notification', 'LiHua', 2)).id('app_string_resource')
+  28. // 对于plural.json中name为"eat_apple"，单数的value为"%d apple"，复数的value为"%d apples"
+  29. // 访问plural.json资源，第一个参数控制字符串显示单数形式或复数形式，传递1表示单数，大于1表示复数，且在中文环境下始终为复数
+  30. // 该资源存在%d一个占位符，需要替代为2，则采用如下方式访问
+  31. // 资源name仅作示例，请替换为实际使用的资源
+  32. Text($r('app.plural.eat_apple', 2, 2)).id('app_plural_resource')
+  ```
 
-28. // 对于plural.json中name为"eat_apple"，单数的value为"%d apple"，复数的value为"%d apples"
-29. // 访问plural.json资源，第一个参数控制字符串显示单数形式或复数形式，传递1表示单数，大于1表示复数，且在中文环境下始终为复数
-30. // 该资源存在%d一个占位符，需要替代为2，则采用如下方式访问
-31. // 资源name仅作示例，请替换为实际使用的资源
-32. Text($r('app.plural.eat_apple', 2, 2)).id('app_plural_resource')
-```
+  [Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ResourceManagement/ResourceCategoriesAndAccess/entry/src/main/ets/pages/Index.ets#L28-L60)
 
-[Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ResourceManagement/ResourceCategoriesAndAccess/entry/src/main/ets/pages/Index.ets#L28-L60)
+**方式二：** 通过[resourceManager接口](../harmonyos-references/js-apis-resource-manager.md)访问资源。此方法提供的API更为丰富，适用于构建更加复杂的应用逻辑，比如图像效果处理。
 
-* 通过本应用上下文获取ResourceManager后，可调用不同[资源管理接口](../harmonyos-references/js-apis-resource-manager.md)通过资源ID值或资源名称访问各类资源。例如通过getContext().resourceManager.getStringByNameSync('test')可获取字符串资源，通过getContext().resourceManager.getRawFd('rawfilepath')可获取rawfile文件所在HAP包的descriptor信息，再使用其中的{fd, offset, length}可访问rawfile文件。
+获取本模块上下文的resourceManager对象后，调用资源管理接口，通过资源ID值或资源名称访问各类资源，如通过getContext().resourceManager.getStringByNameSync('test')可获取字符串资源；通过getContext().resourceManager.getRawFd('rawfilepath')可获取rawfile文件所在HAP包的descriptor信息，再使用其中的{fd, offset, length}可访问rawfile文件。
 
-  在API version 22及之前版本，中间码HAR、字节码HAR通过资源ID相关接口访问资源时，因ID无效会抛出异常；从API version 23开始，若将[compatibleSdkVersion](ide-hvigor-build-profile-app.md#section45865492619)配置为23及以上，则在当前Module的[AbilityStage](abilitystage.md)的onCreate()回调执行后，中间码HAR、字节码HAR通过资源ID相关接口可以正常访问资源。
+说明
 
-### 跨HAP/HSP包应用资源
+若在HAR模块访问HAR自身资源时，在API version 22及之前版本，中间码HAR、字节码HAR通过资源ID相关接口访问资源时，因ID无效会抛出异常；从API version 23开始，若将[compatibleSdkVersion](ide-hvigor-build-profile-app.md#section45865492619)配置为23及以上，则在当前Module的[AbilityStage](abilitystage.md)的onCreate()回调执行后，中间码HAR、字节码HAR通过资源ID相关接口可以正常访问资源。
+
+### 访问跨HAP/HSP包资源
 
 **bundle相同，跨module访问**
 
-* 通过[createModuleContext(context, moduleName)](../harmonyos-references/js-apis-app-ability-application.md#applicationcreatemodulecontext)接口创建同应用中不同module的上下文，获取resourceManager对象后，调用不同[资源管理接口](../harmonyos-references/js-apis-resource-manager.md)通过资源ID值或资源名称访问各类资源。
-* 通过$r或$rawfile访问资源。具体操作如下：
+**方式一：** 通过$r或$rawfile访问跨HSP包资源。适合简单的、静态的资源引用场景，比如在UI组件中直接引用。
 
-  1.在entry的oh-package.json5文件中添加依赖。如"dependencies": {"library": "file:../library"}。
+* 使用$r('[hsp].type.name')访问resources资源目录下资源。其中，[hsp]是HSP模块名，type是资源类型，name是资源名称。
+* 使用$rawfile('[hsp].name')访问rawfile资源目录下资源。rawfile下有多层目录，需要从rawfile下面第一个目录开始写，如$rawfile('[hsp].firstDir/secondDir/icon.png')。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/TFR71cfhRMeHh8MqNI2q-Q/zh-cn_image_0000002552797836.png?HW-CC-KV=V1&HW-CC-Date=20260427T233733Z&HW-CC-Expire=86400&HW-CC-Sign=506617CD7F234D8DC42595B6712CBCFACCCBD4357925EAF87ABD4A943DB9F21D)
+说明
 
-  2.使用字面量[模块名].type.name或变量获取资源。其中，模块名为hsp模块的名称，type为资源类型，name为资源名称，示例如下：
+使用$r和$rawfile跨模块访问HSP包资源时，编译时不会对资源校验，需要确保资源在对应包中存在。
 
-  ```
-  1. @Entry
-  2. @Component
-  3. struct Second {
-  4. // [library]仅为示例模块名，请替换为实际模块名
-  5. // 资源name仅作示例，请替换为实际使用的资源
-  6. text: string = '[library].string.test_string';
-  7. fontSize: string = '[library].float.font_size';
-  8. fontColor: string = '[library].color.font_color';
-  9. image: string = '[library].media.image';
-  10. rawfile: string = '[library].icon.png';
+示例如下：
 
-  12. build() {
-  13. Column() {
-  14. // 使用字面量[模块名].type.name获取资源
-  15. // 资源name仅作示例，请替换为实际使用的资源
-  16. Text($r('[library].string.test_string'))
-  17. .id('hsp_resource_one')
-  18. .fontSize($r('[library].float.font_size'))
-  19. .fontColor($r('[library].color.font_color'))
-  20. Image($rawfile('[library].icon.png'))
-  21. .height(100)
-  22. .width(100)
+1. 在entry的oh-package.json5文件中添加依赖。如"dependencies": {"library": "file:../library"}。
 
-  24. // 使用变量获取资源
-  25. Text($r(this.text))
-  26. .id('hsp_resource_two')
-  27. .fontSize($r(this.fontSize))
-  28. .fontColor($r(this.fontColor))
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/xA29gstrRoq2shYse8W-ww/zh-cn_image_0000002558604320.png?HW-CC-KV=V1&HW-CC-Date=20260429T052536Z&HW-CC-Expire=86400&HW-CC-Sign=BF36EC78FA26735C9412B7C4CC9E3D19132B629254B9C2B5D460AA3AAD8220CB)
+2. 获取资源。
 
-  30. Image($r(this.image))
-  31. .height(100)
-  32. .width(100)
+   ```
+   1. @Entry
+   2. @Component
+   3. struct Second {
+   4. // [library]仅为示例模块名，请替换为实际模块名
+   5. // 资源name仅作示例，请替换为实际使用的资源
+   6. text: string = '[library].string.test_string';
+   7. fontSize: string = '[library].float.font_size';
+   8. fontColor: string = '[library].color.font_color';
+   9. image: string = '[library].media.image';
+   10. rawfile: string = '[library].icon.png';
 
-  34. Image($rawfile(this.rawfile))
-  35. .height(100)
-  36. .width(100)
-  37. }
-  38. .height('100%')
-  39. .width('100%')
-  40. }
-  41. }
-  ```
+   12. build() {
+   13. Column() {
+   14. // 使用字面量[模块名].type.name获取资源
+   15. // 资源name仅作示例，请替换为实际使用的资源
+   16. Text($r('[library].string.test_string'))
+   17. .id('hsp_resource_one')
+   18. .fontSize($r('[library].float.font_size'))
+   19. .fontColor($r('[library].color.font_color'))
+   20. Image($rawfile('[library].icon.png'))
+   21. .height(100)
+   22. .width(100)
 
-  [Second.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ResourceManagement/ResourceCategoriesAndAccess/entry/src/main/ets/pages/Second.ets#L16-L58)
+   24. // 使用变量获取资源
+   25. Text($r(this.text))
+   26. .id('hsp_resource_two')
+   27. .fontSize($r(this.fontSize))
+   28. .fontColor($r(this.fontColor))
 
-  说明
+   30. Image($r(this.image))
+   31. .height(100)
+   32. .width(100)
 
-  hsp包名必须写在[]内，rawfile下有多层目录，需要从rawfile下面第一个目录开始写，如$rawfile('[hsp].firstDir/secondDir/icon.png')，使用$r和$rawfile跨包访问HSP包资源无法提供编译时的资源校验，需要开发者自行保证使用资源存在于对应包中。
+   34. Image($rawfile(this.rawfile))
+   35. .height(100)
+   36. .width(100)
+   37. }
+   38. .height('100%')
+   39. .width('100%')
+   40. }
+   41. }
+   ```
 
-### 系统资源
+   [Second.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ResourceManagement/ResourceCategoriesAndAccess/entry/src/main/ets/pages/Second.ets#L16-L58)
+
+**方式二：** 通过createModuleContext访问跨HAP/HSP包资源。根据业务逻辑需要对资源文件数据进行处理，比如图片编解码、字符串拼接处理，适合少量数据的使用。
+
+通过[createModuleContext(context, moduleName)](../harmonyos-references/js-apis-app-ability-application.md#applicationcreatemodulecontext)接口创建同应用中不同module的上下文，获取resourceManager对象后，调用不同[资源管理接口](../harmonyos-references/js-apis-resource-manager.md)，通过资源ID值或资源名称访问各类资源。
+
+**方式三：** HSP导出资源给其他模块使用。跨包访问HSP内资源时，推荐实现一个资源管理类，以封装对外导出的资源，其他模块无需感知HSP内部的资源名称。当HSP内部的资源名称发生变化时，其他模块不受影响。
+
+具体实现如下：
+
+1. 在HSP中对外提供的资源封装为一个资源管理类。
+
+   ```
+   1. export class ResManager {
+   2. static getPic(): Resource {
+   3. return $r('app.media.image');
+   4. }
+   5. static getDesc(): Resource {
+   6. return $r('app.string.test_string');
+   7. }
+   8. }
+   ```
+2. 在HSP入口文件index.ets中声明需要对外暴露的接口。
+
+   ```
+   1. export { ResManager } from './src/main/ets/common/ResManager';
+   ```
+3. 其他模块使用import导入ResManager，访问HSP导出的资源。
+
+   ```
+   1. import { ResManager } from 'library';
+
+   3. @Entry
+   4. @Component
+   5. struct Third {
+   6. build() {
+   7. Column() {
+   8. Text(ResManager.getDesc())
+   9. .fontSize(50)
+   10. .fontWeight(FontWeight.Bold)
+   11. Image(ResManager.getPic())
+   12. .height(100)
+   13. }
+   14. .width('100%')
+   15. .height('100%')
+   16. }
+   17. }
+   ```
+
+### 访问系统资源
 
 对于系统资源，可以通过$r('sys.type.name')的形式访问。其中，sys表示系统资源，type为资源类型，取值包括“color”、“float”、“string”、“media”、“symbol”，name为资源名称。
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/using-ndk-avr
 title: 使用AVRecorder录制视频(C/C++)
 breadcrumb: 指南 > 媒体 > Media Kit（媒体服务） > 媒体开发指导(C/C++) > 录制 > 使用AVRecorder录制视频(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:46:31+08:00
+scraped_at: 2026-04-29T13:35:28+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:ddcc20449cb0706c149aa95640cc44b101b6d35ac6f060bc3a82b9d6cd0baee6
+content_hash: sha256:3f615d194ae6b32df43ec6acb63f88595de7969d4c56b246e8836a4df655b91d
 ---
 
 AVRecorder支持开发音视频录制，集成了音频捕获，音频编码，视频编码，音视频封装功能，适用于实现简单视频录制并直接得到本地媒体文件的场景。
@@ -16,7 +16,7 @@ AVRecorder支持开发音视频录制，集成了音频捕获，音频编码，�
 
 **图1** 录制状态变化示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/7i39j5XYQhioMYi0hefgdA/zh-cn_image_0000002583438645.png?HW-CC-KV=V1&HW-CC-Date=20260427T234629Z&HW-CC-Expire=86400&HW-CC-Sign=78C7AD6DE7F55C36372564CDDE779CD4C86DAD70664171732CC69BCD6AC28AC9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/edSJlBsXRCuzc-6qkKj5sw/zh-cn_image_0000002589244905.png?HW-CC-KV=V1&HW-CC-Date=20260429T053527Z&HW-CC-Expire=86400&HW-CC-Sign=87659BBD18705A1036553C8E57967222884ABE06BEA39F9E532240D1ECEA3927)
 
 状态的详细说明请参考[AVRecorderState](../harmonyos-references/arkts-apis-media-t.md#avrecorderstate9)。
 

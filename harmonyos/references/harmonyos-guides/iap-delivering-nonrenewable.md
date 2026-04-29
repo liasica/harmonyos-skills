@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/iap-deliverin
 title: 权益发放
 breadcrumb: 指南 > 应用服务 > IAP Kit（应用内支付服务） > 商品购买 > 非续期订阅商品购买 > 权益发放
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:49:28+08:00
+scraped_at: 2026-04-29T13:38:40+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:acf053fc14afbd2a830d52670e9ee37caa75ce03715734d408100e56e0e5fe8d
+content_hash: sha256:6dc2f17e3b7e52157832153628b7f0fc80eabdbdb74dc886f7b0ae9d71810618
 ---
 
 ## 场景介绍
@@ -19,7 +19,7 @@ content_hash: sha256:acf053fc14afbd2a830d52670e9ee37caa75ce03715734d408100e56e0e
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/l85cjHHCQzygTCsAmOwgWQ/zh-cn_image_0000002552799282.png?HW-CC-KV=V1&HW-CC-Date=20260427T234927Z&HW-CC-Expire=86400&HW-CC-Sign=251D2FDD463934FD59A774D8EB6CD58D2F4C8F76F5905C122AA49538E36A785B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/ymGPNnPaSi-EPlJ3gt0kbw/zh-cn_image_0000002589325301.png?HW-CC-KV=V1&HW-CC-Date=20260429T053839Z&HW-CC-Expire=86400&HW-CC-Sign=4DCDC8A81EA2CE2CE75B41CE62ABB312DF010DFB13F24B9B6430D19B5E55D132)
 
 1. 应用客户端向IAP Kit发起[queryPurchases](../harmonyos-references/iap-iap.md#iapquerypurchases)请求，查询用户已购买但未确认发货的订单信息。
 2. IAP Kit返回[PurchaseData](../harmonyos-references/iap-data-model.md#purchasedata)列表。[数据类型说明](../harmonyos-references/iap-data-model.md)为JWS格式的字符串，承载了相关的订单信息。

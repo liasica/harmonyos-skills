@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-common-
 title: 单选框 (Radio)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 按钮与选择 > 单选框 (Radio)
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:39:42+08:00
+scraped_at: 2026-04-29T13:27:51+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:9bf36e3d45959f637bd45c4ef78187c72ab1a0fe044b0e1ad22817e24cbb4f1e
+content_hash: sha256:14c6a90d1830a6e1a021c9f57c1c755de8f7ed731adcaef94a2525126511dd7f
 ---
 
 Radio是单选框组件，通常用于提供相应的用户交互选择项，同一组的Radio中只有一个可以被选中。具体用法请参考[Radio](../harmonyos-references/ts-basic-components-radio.md)。
@@ -31,7 +31,7 @@ Radio支持设置选中状态和非选中状态的样式。
 
 [RadioButton.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ChooseComponent/entry/src/main/ets/pages/radio/RadioButton.ets#L34-L39)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/9YckuNUGSNeNPtTRgR_FIA/zh-cn_image_0000002583437929.png?HW-CC-KV=V1&HW-CC-Date=20260427T233939Z&HW-CC-Expire=86400&HW-CC-Sign=548F3C749E81305BA3BD3D9D4818C541625B3E0F506393B80BFA538ADF3587F5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/GchjfInxSkS6eFFFhPD7Lg/zh-cn_image_0000002558604718.png?HW-CC-KV=V1&HW-CC-Date=20260429T052750Z&HW-CC-Expire=86400&HW-CC-Sign=944787ABC751860325450047696BB86D04B3C7F69F2E8F05DC26A7D8DA53D8BF)
 
 ## 添加事件
 
@@ -120,4 +120,4 @@ Radio支持设置选中状态和非选中状态的样式。
 
 [RadioSample.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ChooseComponent/entry/src/main/ets/pages/radio/RadioSample.ets#L16-L76)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/fiwVLrGUQTq_zeHNash0UQ/zh-cn_image_0000002552957884.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233939Z&HW-CC-Expire=86400&HW-CC-Sign=223CC6BB7319AD97602748507C82229CC087E97018B1D90F1A90542DA9889B03)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/-d591WanSLOise_uAzwEvA/zh-cn_image_0000002589324243.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052750Z&HW-CC-Expire=86400&HW-CC-Sign=50C33DDFBDD1122BF80920D97F933A1DA344A4C9F337EF8AAE53721A37FD5456)

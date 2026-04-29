@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-run
 title: ohpm run
 breadcrumb: 指南 > 命令行工具 > 三方依赖管理工具（ohpm） > 常用命令 > ohpm run
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:57:44+08:00
+scraped_at: 2026-04-29T13:47:54+08:00
 doc_updated_at: 2026-04-22
-content_hash: sha256:458f997deddc5678fa98da14e808b5f6b7664de249047d7787e0b917f23a5db7
+content_hash: sha256:4bb0c8fb28b7f1567fbaaf1b1619cd8a799ab0ee5012d101c5ecd744f7384456
 ---
 
 执行用户自定义脚本。
@@ -123,7 +123,7 @@ content_hash: sha256:458f997deddc5678fa98da14e808b5f6b7664de249047d7787e0b917f23
 
 执行结果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/xMhPhC2yQL-9qXCjvRlfYg/zh-cn_image_0000002530913100.png?HW-CC-KV=V1&HW-CC-Date=20260427T235743Z&HW-CC-Expire=86400&HW-CC-Sign=2197632BBA40615DFD6DB2B75A3B47D4587C1A511A709244D911626F8369D2FE "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/Oanp0VfySRKjtOUbJStHLA/zh-cn_image_0000002530913100.png?HW-CC-KV=V1&HW-CC-Date=20260429T054753Z&HW-CC-Expire=86400&HW-CC-Sign=59C16C7D997CCE4C9BAA1D8ED3B46D98D0EE1B09BAE785823D14A0CC03801403 "点击放大")
 
 ### 失败示例
 
@@ -135,7 +135,7 @@ content_hash: sha256:458f997deddc5678fa98da14e808b5f6b7664de249047d7787e0b917f23
 
 执行结果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/FHEkRVyXTi2vMhdNPSyrLQ/zh-cn_image_0000002530753106.png?HW-CC-KV=V1&HW-CC-Date=20260427T235743Z&HW-CC-Expire=86400&HW-CC-Sign=A927A80CC035AF1EF3E837C30297C78ECEAB58460871005A7A498BDC26FF692D "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/59HOtoD3TlGDZjrGuimYkA/zh-cn_image_0000002530753106.png?HW-CC-KV=V1&HW-CC-Date=20260429T054753Z&HW-CC-Expire=86400&HW-CC-Sign=320C952192512A1FF0E75D2B1CB0DC489A6DC9E168E4FB7099E0A70197F8A651 "点击放大")
 
 ### 逻辑符(&&、||)使用示例
 
@@ -147,4 +147,4 @@ content_hash: sha256:458f997deddc5678fa98da14e808b5f6b7664de249047d7787e0b917f23
 
 执行结果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/SgYzIhyzTrmbloyZLE9tIg/zh-cn_image_0000002561833025.png?HW-CC-KV=V1&HW-CC-Date=20260427T235743Z&HW-CC-Expire=86400&HW-CC-Sign=8B32382528FFC9AF717F7EDE83647344B3A8762B1FB76AF28E725A1BD38FF9D7 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/E9is5ljCSb-GNqK5WLGtXw/zh-cn_image_0000002561833025.png?HW-CC-KV=V1&HW-CC-Date=20260429T054753Z&HW-CC-Expire=86400&HW-CC-Sign=1FB022B568DDAE23CE55FDC1630A65C4B917565AEC2337AF880DCADD1DB02803 "点击放大")

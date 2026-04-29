@@ -1,10 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-basic-toolbar-item
 title: toolbar-item
+breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 基础组件 > toolbar-item
 category: harmonyos-references
-scraped_at: 2026-04-28T08:03:09+08:00
+scraped_at: 2026-04-29T13:53:29+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:408be3031fe3660fd3313fb14a3935465ff880483b0848a3d5e22b1a1a2dc5eb
+content_hash: sha256:dba91627d58665da2055ca9ecabd915460f1c5a7dca3b0aa17403bee93165b62
 ---
 
 说明
@@ -83,4 +84,4 @@ PhonePC/2in1TabletTVWearable
 9. </toolbar>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/b3jUDRNOTSKuH_fE4X88vA/zh-cn_image_0000002583480203.jpg?HW-CC-KV=V1&HW-CC-Date=20260428T000306Z&HW-CC-Expire=86400&HW-CC-Sign=A86048E41955E8D300263E4B93A92B5414D00ECD27692998D991E8CD653CD72F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/rV5dekq6Tc2TV7GRiQSm7A/zh-cn_image_0000002589326595.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T055327Z&HW-CC-Expire=86400&HW-CC-Sign=DE8F0795678E2D1D91568FD75FCE79384DD1ECEE37363930D045359C9C4906C9)

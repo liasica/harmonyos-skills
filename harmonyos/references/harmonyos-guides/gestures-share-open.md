@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/gestures-shar
 title: 打开设备侧隔空传送开关
 breadcrumb: 指南 > 应用服务 > Share Kit（分享服务） > 隔空传送 > 打开设备侧隔空传送开关
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:51:05+08:00
+scraped_at: 2026-04-29T13:40:41+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:141b5de24e7a5900d291c22954499f88145deef84905795bc1ef1ae314f5a41a
+content_hash: sha256:f554dbecebe126ac05ddf2b6eab86e682e52f78df878276d0ece0f77e44598ca
 ---
 
 使用隔空传送功能前，需要先打开隔空传送开关。
 
 开启路径：设置 > 系统 > 快捷启动和手势 > 隔空传送。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/qQZ0p5jDRFiXZnDRhmKpQA/zh-cn_image_0000002583439239.png?HW-CC-KV=V1&HW-CC-Date=20260427T235104Z&HW-CC-Expire=86400&HW-CC-Sign=B83150826A59D7236756F535FC0B67C679440DE864A450F8CD0E55659805E58A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/CrdwgxnPRJGtHkVMV574Dg/zh-cn_image_0000002589325565.png?HW-CC-KV=V1&HW-CC-Date=20260429T054040Z&HW-CC-Expire=86400&HW-CC-Sign=2AD2F269EA5C824AC66D57011374071B07E33B41F3171BDE0863E2A5B1F90FFE)
 
 ## 隔空传送与隔空截屏的联动
 
@@ -26,4 +26,4 @@ content_hash: sha256:141b5de24e7a5900d291c22954499f88145deef84905795bc1ef1ae314f
 
 用户可手动勾选“保存截屏至本机”，则传送的同时截屏图片会被保存至图库。系统会记录本次选择结果，并作为下次操作的默认值。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/7sY4bKNVT7qgEomGhGzw_A/zh-cn_image_0000002552959194.png?HW-CC-KV=V1&HW-CC-Date=20260427T235104Z&HW-CC-Expire=86400&HW-CC-Sign=3B5840C9445DE41BF5113C97DF112C38ADF065543C7DC666ABE031F3DA6BB38F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/1SCkL6dCQNa86TMzyWJwuw/zh-cn_image_0000002589245503.png?HW-CC-KV=V1&HW-CC-Date=20260429T054040Z&HW-CC-Expire=86400&HW-CC-Sign=D5D6674F657E74A2965A055DC22E03516EC182C4B73C93F2D9B78C8D88CB4F00)

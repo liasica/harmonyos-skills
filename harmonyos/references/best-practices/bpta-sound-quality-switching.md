@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-sound-qual
 title: 音质切换开发实践
 breadcrumb: 最佳实践 > 媒体 > 音频和视频 > 音质切换开发实践
 category: best-practices
-scraped_at: 2026-04-28T08:20:47+08:00
+scraped_at: 2026-04-29T14:11:42+08:00
 doc_updated_at: 2026-04-01
-content_hash: sha256:dd8f371c7e498c5156cf862a64e3b3e08daed6c128e2b010d7e2b431f2638ad5
+content_hash: sha256:d273c56331285e5a5f4cc680a37b6202bc7d9c168633bd2da80e673cd188716d
 ---
 
 ## 概述
@@ -31,7 +31,7 @@ content_hash: sha256:dd8f371c7e498c5156cf862a64e3b3e08daed6c128e2b010d7e2b431f26
 
 本场景以同一音频文件的PCM格式与MP3格式之间进行切换播放为例，切换后保持音频播放进度一致，即无缝衔接。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/FY-E68G3Q8SC7l18PdBYvA/zh-cn_image_0000002490682592.gif?HW-CC-KV=V1&HW-CC-Date=20260428T002045Z&HW-CC-Expire=86400&HW-CC-Sign=E94A3FF87DC516B8A6633CC640B9DED9689BE40D63FBCEC1AE5A0853AE6260BB "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/FY-E68G3Q8SC7l18PdBYvA/zh-cn_image_0000002490682592.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061138Z&HW-CC-Expire=86400&HW-CC-Sign=1D50692ABE229A51E7FFDF2A36911D97C06038B005A476F10B6C8659C8ECA4AE "点击放大")
 
 ### 实现原理
 
@@ -339,7 +339,7 @@ content_hash: sha256:dd8f371c7e498c5156cf862a64e3b3e08daed6c128e2b010d7e2b431f26
 
 本场景以同一音频文件的FLAC格式与MP3格式之间进行切换播放为例，切换后保持音频播放进度一致，即无缝衔接。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/i5aCz9QdT3CNMoWzDSY76w/zh-cn_image_0000002522762335.gif?HW-CC-KV=V1&HW-CC-Date=20260428T002045Z&HW-CC-Expire=86400&HW-CC-Sign=04A9D38BA74F113922F7F47B4B58FF5D03A79614E55872642B8ABF30E4CBF1A8 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/i5aCz9QdT3CNMoWzDSY76w/zh-cn_image_0000002522762335.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061138Z&HW-CC-Expire=86400&HW-CC-Sign=B5B324D1521DA62B50565DB3377DBB13DA5B72E236C3954B32E073CCF9F97625 "点击放大")
 
 ### 实现原理
 

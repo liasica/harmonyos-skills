@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-scsi
 title: scsi_peripheral_api.h
 breadcrumb: API参考 > 系统 > 硬件 > Driver Development Kit（驱动开发服务） > C API > 头文件 > scsi_peripheral_api.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:10:42+08:00
-doc_updated_at: 2026-03-30
-content_hash: sha256:778d87f9d12884eaaf154caa5dd8c3cce8b91d09a0575b21fe4b868ff9fe8fef
+scraped_at: 2026-04-29T14:01:24+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:8dc1de7fcc7876e6bfae75bf6fcb6eb738e53408f7a2be0d43c363f74670c974
 ---
 
 ## 概述
@@ -478,4 +478,4 @@ PC/2in1
 
 | 类型 | 说明 |
 | --- | --- |
-| int32\_t | [SCSIPERIPHERAL\_DDK\_SUCCESS](capi-scsi-peripheral-types-h.md#scsiperipheral_ddkerrcode) 调用接口成功。  [SCSIPERIPHERAL\_DDK\_INVALID\_PARAMETER](capi-scsi-peripheral-types-h.md#scsiperipheral_ddkerrcode) senseData格式不是描述符或固定格式、senseDataLen小于  SCSIPERIPHERAL\_MIN\_DESCRIPTOR\_FORMAT\_SENSE或者senseDataLen小于SCSIPERIPHERAL\_MIN\_FIXED\_FORMAT\_SENSE。 |
+| int32\_t | [SCSIPERIPHERAL\_DDK\_SUCCESS](capi-scsi-peripheral-types-h.md#scsiperipheral_ddkerrcode) 调用接口成功。  [SCSIPERIPHERAL\_DDK\_INVALID\_PARAMETER](capi-scsi-peripheral-types-h.md#scsiperipheral_ddkerrcode) senseData格式不是描述符或固定格式、senseDataLen小于  [SCSIPERIPHERAL\_MIN\_DESCRIPTOR\_FORMAT\_SENSE](capi-scsi-peripheral-types-h.md)或者senseDataLen小于[SCSIPERIPHERAL\_MIN\_FIXED\_FORMAT\_SENSE](capi-scsi-peripheral-types-h.md)。 |

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-par
 title: @Param：组件外部输入
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理（V2） > 管理组件拥有的状态 > @Param：组件外部输入
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:39:08+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:84d1d3fedced4e6c30a2f89a7657178de9b4184ffe817256721813ea29e1ed75
+scraped_at: 2026-04-29T13:27:17+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:7f0186d8bd75f4179f08ae4a2756a524ba22daf788f94c15d6f4e20cd7706be6
 ---
 
 为了增强子组件接受外部参数输入的能力，开发者可以使用@Param装饰器。
@@ -81,19 +81,20 @@ content_hash: sha256:84d1d3fedced4e6c30a2f89a7657178de9b4184ffe817256721813ea29e
 
 43. @Component
 44. struct Child {
-45. @ObjectLink region: Region;
-46. @Prop regionProp: Region;
-47. @Prop infoProp: Info;
-48. @Link infoLink: Info;
-49. @State infoState: Info = new Info(1, 1);
+45. // V1版本接受外部传入的装饰器汇总
+46. @ObjectLink region: Region;
+47. @Prop regionProp: Region;
+48. @Prop infoProp: Info;
+49. @Link infoLink: Info;
+50. @State infoState: Info = new Info(1, 1);
 
-51. build() {
-52. Column() {
-53. Text(`ObjectLink region: ${this.region.x}-${this.region.y}`)
-54. Text(`Prop regionProp: ${this.regionProp.x}-${this.regionProp.y}`)
-55. }
+52. build() {
+53. Column() {
+54. Text(`ObjectLink region: ${this.region.x}-${this.region.y}`)
+55. Text(`Prop regionProp: ${this.regionProp.x}-${this.regionProp.y}`)
 56. }
 57. }
+58. }
 ```
 
 [ParamDecoratorLimitations.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/param/ParamDecoratorLimitations.ets#L30-L88)
@@ -253,41 +254,43 @@ content_hash: sha256:84d1d3fedced4e6c30a2f89a7657178de9b4184ffe817256721813ea29e
   11. Text(`${this.numArr[2]}`)
   12. Text(`${this.dimensionTwo[0][0]}`)
   13. Text(`${this.dimensionTwo[1][1]}`)
-  14. Button('change array item')
-  15. .onClick(() => {
-  16. this.numArr[0]++;
-  17. this.numArr[1] += 2;
-  18. this.dimensionTwo[0][0] = 0;
-  19. this.dimensionTwo[1][1] = 0;
-  20. })
-  21. Button('change whole array')
-  22. .onClick(() => {
-  23. this.numArr = [5, 4, 3, 2, 1];
-  24. this.dimensionTwo = [[7, 8, 9], [0, 1, 2]];
-  25. })
-  26. Child({
-  27. numArr: this.numArr,
-  28. dimensionTwo: this.dimensionTwo
-  29. })
-  30. }
-  31. }
+  14. // 装饰的变量为简单类型数组时，可观察到数组项变化
+  15. Button('change array item')
+  16. .onClick(() => {
+  17. this.numArr[0]++;
+  18. this.numArr[1] += 2;
+  19. this.dimensionTwo[0][0] = 0;
+  20. this.dimensionTwo[1][1] = 0;
+  21. })
+  22. // 装饰的变量为简单类型数组时，可观察到数组整体变化
+  23. Button('change whole array')
+  24. .onClick(() => {
+  25. this.numArr = [5, 4, 3, 2, 1];
+  26. this.dimensionTwo = [[7, 8, 9], [0, 1, 2]];
+  27. })
+  28. Child({
+  29. numArr: this.numArr,
+  30. dimensionTwo: this.dimensionTwo
+  31. })
   32. }
+  33. }
+  34. }
 
-  34. @ComponentV2
-  35. struct Child {
-  36. @Require @Param numArr: number[];
-  37. @Require @Param dimensionTwo: number[][];
+  36. @ComponentV2
+  37. struct Child {
+  38. @Require @Param numArr: number[];
+  39. @Require @Param dimensionTwo: number[][];
 
-  39. build() {
-  40. Column() {
-  41. Text(`${this.numArr[0]}`)
-  42. Text(`${this.numArr[1]}`)
-  43. Text(`${this.numArr[2]}`)
-  44. Text(`${this.dimensionTwo[0][0]}`)
-  45. Text(`${this.dimensionTwo[1][1]}`)
-  46. }
-  47. }
+  41. build() {
+  42. Column() {
+  43. Text(`${this.numArr[0]}`)
+  44. Text(`${this.numArr[1]}`)
+  45. Text(`${this.numArr[2]}`)
+  46. Text(`${this.dimensionTwo[0][0]}`)
+  47. Text(`${this.dimensionTwo[1][1]}`)
   48. }
+  49. }
+  50. }
   ```
 
   [ParamObserveChangeArray.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/param/ParamObserveChangeArray.ets#L30-L79)

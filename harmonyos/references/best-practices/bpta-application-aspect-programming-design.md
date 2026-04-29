@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-applicatio
 title: 应用切面编程设计
 breadcrumb: 最佳实践 > 应用框架 > ArkTS语言 > 应用切面编程设计
 category: best-practices
-scraped_at: 2026-04-28T08:20:05+08:00
+scraped_at: 2026-04-29T14:10:46+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:a9b4404b61112a171dcb7731acc24ac693a5a08669d688a93570b6efdc2e1d69
+content_hash: sha256:e06eecf0f16958d6da0c546cad1a15a98797e6e845a84c8a6e5a5125fe2eeeaf
 ---
 
 ## 概述
@@ -32,24 +32,24 @@ HarmonyOS主要通过插桩机制来实现切面编程，并提供了[Aspect类]
 addBefore()、addAfter()、replace()接口的原理基于class的ECMAScript语义，即类的静态方法是类的属性，类的实例方法是类的原型对象(prototype)的属性。
 
 **图1** class的ECMAScript语义示意  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/f1cKGw5bRYS5M4aOfvQKsw/zh-cn_image_0000002380185801.png?HW-CC-KV=V1&HW-CC-Date=20260428T002003Z&HW-CC-Expire=86400&HW-CC-Sign=004983C6BA98A35D59CEE01A93C36DED5447FD73A5D063B5EC3EAB2C7273B591 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/f1cKGw5bRYS5M4aOfvQKsw/zh-cn_image_0000002380185801.png?HW-CC-KV=V1&HW-CC-Date=20260429T061045Z&HW-CC-Expire=86400&HW-CC-Sign=F414F02B122559F2FD4F3F7AEE2BF18F60BEB9DFEC330DB029C81E0C68AC0582 "点击放大")
 
 ### 原理解析
 
 类的实例有一个属性\_\_proto\_\_（称为原型），它是指向类的prototype的引用，如图2所示。实例调用方法时，会通过\_\_proto\_\_找到类的prototype，再在prototype中找到方法并执行。类的原型对象prototype被所有实例共享，因此修改原型对象中的方法会影响所有实例。
 
 **图2** 类的实例化示意  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/ANaqYStfS0KaXC-cagecLg/zh-cn_image_0000002346386188.png?HW-CC-KV=V1&HW-CC-Date=20260428T002003Z&HW-CC-Expire=86400&HW-CC-Sign=1D0422CD9CAA0BC2AAB6456E8B43CF435AB2ADDACF762229DAC4648CAF31C84F "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/ANaqYStfS0KaXC-cagecLg/zh-cn_image_0000002346386188.png?HW-CC-KV=V1&HW-CC-Date=20260429T061045Z&HW-CC-Expire=86400&HW-CC-Sign=BA8521149E58FE270827B2F9930FF63956E0C0B744757A1AFCF569DD539315D8 "点击放大")
 
 原型对象也有原型\_proto\_。类的继承通过原型实现。实例方法调用时，会在原型链上查找方法，找到后执行调用。具体如图3所示。
 
 **图3** 类的原型与继承  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/fYiagsl7QJyLJzTA4KmoTQ/zh-cn_image_0000002346386564.png?HW-CC-KV=V1&HW-CC-Date=20260428T002003Z&HW-CC-Expire=86400&HW-CC-Sign=9F073D63B43A2233E8338534ED23FF4A7D95659C25B884EBEA1E579B06EF73FD "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/fYiagsl7QJyLJzTA4KmoTQ/zh-cn_image_0000002346386564.png?HW-CC-KV=V1&HW-CC-Date=20260429T061045Z&HW-CC-Expire=86400&HW-CC-Sign=2614F9AD2D4F672312476C6D461A0FEAF9613D36F576A8F36C3F028C4E2980CE "点击放大")
 
 插桩和替换的操作是将回调参数与原方法组合成新函数，再用新函数替换原方法。具体如图4所示。
 
 **图4** 插桩和替换原理示意图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/vZk_34gISD6AIZt5D_xHwA/zh-cn_image_0000002346546400.png?HW-CC-KV=V1&HW-CC-Date=20260428T002003Z&HW-CC-Expire=86400&HW-CC-Sign=3C9FDEFA0B67D8B49A0996F481DF20BE7CB3E264C1876E4886F39997330C9689 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/vZk_34gISD6AIZt5D_xHwA/zh-cn_image_0000002346546400.png?HW-CC-KV=V1&HW-CC-Date=20260429T061045Z&HW-CC-Expire=86400&HW-CC-Sign=2495AD9637C5B43F83D0788B398AF7B124E5B0ED37744A8C52CCD9C96A185418 "点击放大")
 
 ### 接口原理的伪代码示例
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-p
 title: @ohos.pasteboard (剪贴板)
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > ArkTS API > 数据文件处理 > @ohos.pasteboard (剪贴板)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:09:32+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:4ac4f0b1407454032925fdda8c6300835981c3e4a5a4a89aab930ce56e2e61b1
+scraped_at: 2026-04-29T14:00:15+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:f8061f2c79f5788c97afe13328d1e3bf45f02fc304bfd8e8fc02f82956841526
 ---
 
 本模块提供管理系统剪贴板的能力，支持系统复制、粘贴功能。系统剪贴板支持对文本、HTML、URI、Want、PixelMap等内容的操作。
@@ -2114,7 +2114,7 @@ getData(callback: AsyncCallback<PasteData>): void
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 27787277 | Another copy or paste operation is in progress. |
-| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. since API version 12. |
 | 401 | Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types. |
 
 **示例：**
@@ -2159,7 +2159,7 @@ getData(): Promise<PasteData>
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 27787277 | Another copy or paste operation is in progress. |
-| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. since API version 12. |
 
 **示例：**
 
@@ -2735,7 +2735,7 @@ getDataSync(): PasteData
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 12900005 | Excessive processing time for internal data. |
-| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. since API version 12. |
 
 **示例：**
 

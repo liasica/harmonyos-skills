@@ -3,15 +3,15 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-package-st
 title: 如何将多工程的HAP打包成一个App
 breadcrumb: FAQ > 应用框架开发 > 程序包结构 > 如何将多工程的HAP打包成一个App
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:23:33+08:00
+scraped_at: 2026-04-29T14:14:47+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:230baa1f3e36b8f953937cdd43d7c66c77a7cee1867fd4877773fb41c70660ad
+content_hash: sha256:beaa7e1dbbaf3c1aab9d522ddf5342ed7d0ae50981ba6fb30901ac6f4278ff9e
 ---
 
 1. 分别对不同工程的模块进行打包，执行DevEco Studio中的Build Hap指令。在outputs文件夹下获取未签名的hap包和pack.info文件。
 2. 合并所有模块的pack.info文件，生成app级别的pack.info文件，格式如下。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/EvOx1NwkRVyB-n9yTc_Nyg/zh-cn_image_0000002344840905.png?HW-CC-KV=V1&HW-CC-Date=20260428T002332Z&HW-CC-Expire=86400&HW-CC-Sign=46E59FE2E66B247F4BDB631B2AEA3897879C9320996524AE2779336599EA06B2)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/EvOx1NwkRVyB-n9yTc_Nyg/zh-cn_image_0000002344840905.png?HW-CC-KV=V1&HW-CC-Date=20260429T061446Z&HW-CC-Expire=86400&HW-CC-Sign=270024147332548014D9C4FA06EE6B57715F1BA7B87B61051534525E8F40F2FA)
 
    summary.app为整个包的配置信息，保证唯一。summary.modules和packages取模块级别pack.info文件中相对应的第1个值填入。
 3. 在SDK toolchains工具的lib文件夹下执行以下命令打包未签名的app包：`java -jar app\_packing\_tool.jar --mode app --force true --pack-info-path [pack.info 文件路径] --hap-path [hap 包路径，使用逗号隔开] --out-path [输出 app 包路径，以 .app 结尾]。

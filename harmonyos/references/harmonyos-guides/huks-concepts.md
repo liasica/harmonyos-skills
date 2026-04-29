@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/huks-concepts
 title: 本地密钥管理基础概念
 breadcrumb: 指南 > 系统 > 安全 > Universal Keystore Kit（密钥管理服务） > 本地密钥管理 > 本地密钥管理基础概念
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:43:12+08:00
+scraped_at: 2026-04-29T13:31:54+08:00
 doc_updated_at: 2026-03-20
-content_hash: sha256:610f78a9f1fea8daa8a17af3e2a98dfae4e7a316e2996254ff3602643758bdf2
+content_hash: sha256:bcf603db044ffb0092067e21e25508c05d0468688c33d79ecdc7d150411571db
 ---
 
 在使用通用密钥库完成应用开发前，开发者需要了解以下相关概念，以下概念将贯穿整个开发过程。
@@ -26,7 +26,7 @@ content_hash: sha256:610f78a9f1fea8daa8a17af3e2a98dfae4e7a316e2996254ff360264375
 
 下图为RSA密钥材料内存结构为例，其他算法格式见样例下方表格。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/31RvA0NSSuaC7ODmxL8gBw/zh-cn_image_0000002552958410.png?HW-CC-KV=V1&HW-CC-Date=20260427T234311Z&HW-CC-Expire=86400&HW-CC-Sign=44D2762BC2821BA29189772BA1431C4B5A13699EBEBEA59CDD262A52BA00B829)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/pEmds7AGS-iLPugXsJsx4Q/zh-cn_image_0000002589324777.png?HW-CC-KV=V1&HW-CC-Date=20260429T053153Z&HW-CC-Expire=86400&HW-CC-Sign=A309C15B1EF8C04E15921E48A5D3EA73476C722A4777503D7DE2B254F11885C9)
 
 其中，密钥算法的值取自枚举类[HuksKeyAlg](../harmonyos-references/js-apis-huks.md#hukskeyalg)。
 
@@ -122,7 +122,7 @@ content_hash: sha256:610f78a9f1fea8daa8a17af3e2a98dfae4e7a316e2996254ff360264375
 
 以RSA私钥材料为例：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/ybMQ99ykTc-Xl23jTL5Sag/zh-cn_image_0000002583478411.png?HW-CC-KV=V1&HW-CC-Date=20260427T234311Z&HW-CC-Expire=86400&HW-CC-Sign=4357CF2CD57AEA85F938FBB8C705765F6D34DC85C5781362344E1B5779EF01EF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/404D7RjVTLS0nqDjrHcNvg/zh-cn_image_0000002589244715.png?HW-CC-KV=V1&HW-CC-Date=20260429T053153Z&HW-CC-Expire=86400&HW-CC-Sign=C35A1BCDDCF7226FA06A3EA0CE2D2C0C6C5A9F06C98CB76C0F054CA542F5CE3E)
 
 ```
 1. let rsa2048PrivateKeyMaterial = new Uint8Array([

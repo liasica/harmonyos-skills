@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-har-impor
 title: 引用及管理共享包
 breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > 引用及管理共享包
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:54:38+08:00
+scraped_at: 2026-04-29T13:44:36+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:8a984304c713a93a07f2cb6decfe8e840561a650dcbd1893227ef4fe16fd6e4c
+content_hash: sha256:3197fb3d13fde67b5e4aacc599ce19978cebdfb75a242e36a1dd31298d8fbd8d
 ---
 
 引用三方HAR，包括从仓库进行安装、从本地文件夹和本地压缩包中进行安装三种方式。
@@ -131,14 +131,14 @@ content_hash: sha256:8a984304c713a93a07f2cb6decfe8e840561a650dcbd1893227ef4fe16f
 1. 在菜单栏点击**Tools >** **OHPM Index**，进入OpenHarmony开源中心仓。
 2. 在左侧搜索框可查询三方包名称，或点击目录树，根据分类查看不同分类下推荐的依赖包信息。选定所需要安装的三方包，点击右上角蓝色按钮**Install**进行安装。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/6QlirMVsRm6bHmiomwwMVA/zh-cn_image_0000002530752906.png?HW-CC-KV=V1&HW-CC-Date=20260427T235437Z&HW-CC-Expire=86400&HW-CC-Sign=0F02DA6EA2745DA070385DFFFDAD4D367C3D4E52E9D26D689737543822512A6E)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/ab32t8o_RgK9SeIJn_DRlQ/zh-cn_image_0000002530752906.png?HW-CC-KV=V1&HW-CC-Date=20260429T054435Z&HW-CC-Expire=86400&HW-CC-Sign=100C145B14E676AC137CA419DC6946B9827D49C2C5FD9A4A5DF2CBBFABECA77D)
 3. 安装过程中，如出现下方弹窗，点击**Add**按钮，将OpenHarmony中心仓地址添加到.ohpmrc文件中。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/7s7nTVk8Qz6TelawTfcwCg/zh-cn_image_0000002561752847.png?HW-CC-KV=V1&HW-CC-Date=20260427T235437Z&HW-CC-Expire=86400&HW-CC-Sign=903793A7960B43277C26918E8B9DB6FA2FAAE582B0F7F20EB1DA1A49E9F6A1AF)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/BO6s2Y6zTQKwg77RUZQtbQ/zh-cn_image_0000002561752847.png?HW-CC-KV=V1&HW-CC-Date=20260429T054435Z&HW-CC-Expire=86400&HW-CC-Sign=262F5D765941FDF4CB537DB3A463BFBEC91969F8BB6D465D4594DDDB87FE83E1)
 4. 三方包安装完成后，在工程级oh-package.json5文件中可以看到已安装的三方包名称及版本信息，oh\_modules中将同时添加该三方包。
-5. 点击页面左上角![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/tWLqB1YaT5Kc-Wkae7GAug/zh-cn_image_0000002561752839.png?HW-CC-KV=V1&HW-CC-Date=20260427T235437Z&HW-CC-Expire=86400&HW-CC-Sign=AF00B5636ACC75B88E885EF6AE9007032ADE90C38AB065F6C1C450B89DA240EC)图标，展示当前已安装的三方包信息。若当前三方包非最新版本，可以点击右上角**Update**按钮，更新至最新版本；点击**Delete**按钮，可以删除当前已安装的三方包。
+5. 点击页面左上角![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/BQkCZ6weTqq3HAGH17heDw/zh-cn_image_0000002561752839.png?HW-CC-KV=V1&HW-CC-Date=20260429T054435Z&HW-CC-Expire=86400&HW-CC-Sign=5CBA37BE97A2782973698F035838462A66B30A17995E917941005BB13787D6D7)图标，展示当前已安装的三方包信息。若当前三方包非最新版本，可以点击右上角**Update**按钮，更新至最新版本；点击**Delete**按钮，可以删除当前已安装的三方包。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/piykkwUSS9ulKFPCgR59Ng/zh-cn_image_0000002530912898.png?HW-CC-KV=V1&HW-CC-Date=20260427T235437Z&HW-CC-Expire=86400&HW-CC-Sign=F24F8342B6D5001FDA8EB72920C2CDC8B64242BDA700F246A407E385897E89DB)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/XK_8lNooTvKlUvfLIZBdZw/zh-cn_image_0000002530912898.png?HW-CC-KV=V1&HW-CC-Date=20260429T054435Z&HW-CC-Expire=86400&HW-CC-Sign=D9D0E628553352D8E36870FD8C6CA776904DEDF067B03E16B9A316BAB8420BF2)
 6. 若对于已使用的三方包依赖存在推荐的同类三方包，可点击编辑界面中黄色灯泡图标，在弹框中选择**Replace selected with recommended library**，将当前依赖替换为推荐的三方包依赖；或选择**Replace all with recommended libraries**，一键替换当前文件中所有同类推荐三方包。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/1J7SAZjBS3WeOLxDNW-c6Q/zh-cn_image_0000002561832827.png?HW-CC-KV=V1&HW-CC-Date=20260427T235437Z&HW-CC-Expire=86400&HW-CC-Sign=154C069ACDBF6D6DBB106CE3FAF74B35C0E9168D8DC8307FC4AD18192689B939)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/U0W1hPR0R8Gj6e9bPcAvFg/zh-cn_image_0000002586191491.png?HW-CC-KV=V1&HW-CC-Date=20260429T054435Z&HW-CC-Expire=86400&HW-CC-Sign=E2898A967A3CC186B9AC06501FF6E3531A6258518C7948DADD10F0AAC0F80F67)

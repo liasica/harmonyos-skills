@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-loc
 title: @Local装饰器：组件内部状态
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理（V2） > 管理组件拥有的状态 > @Local装饰器：组件内部状态
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:39:07+08:00
+scraped_at: 2026-04-29T13:27:17+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:19220cc129b94b252f0c1f6465320107ffd514e13b3b1d5487d00a7f15efd127
+content_hash: sha256:c21439503c3ca47348b909d65752de04ff14d8b219102bea441f7a9135692cf5
 ---
 
 为了实现对@ComponentV2装饰的自定义组件中变量变化的观测，开发者可以使用@Local装饰器装饰变量。
@@ -374,7 +374,7 @@ content_hash: sha256:19220cc129b94b252f0c1f6465320107ffd514e13b3b1d5487d00a7f15e
 
 [LocalUseCaseObject.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/local/LocalUseCaseObject.ets#L29-L66)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/yYLVJrH7SGK7hxLSuAQkbw/zh-cn_image_0000002552797964.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233904Z&HW-CC-Expire=86400&HW-CC-Sign=71047AC26B373B618C239452E9C44142D6C35FFD324A8D9617E2FE67CA7826DF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/hyQF4zeFRPaOymr7LCyahg/zh-cn_image_0000002558764104.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052716Z&HW-CC-Expire=86400&HW-CC-Sign=96FABD992002515FF6B7E7822322EAAA6E2C20F72363A2DB7C218A48A5201B28)
 
 ### 装饰Array类型变量
 
@@ -440,7 +440,7 @@ content_hash: sha256:19220cc129b94b252f0c1f6465320107ffd514e13b3b1d5487d00a7f15e
 
 [LocalUseCaseArray.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/local/LocalUseCaseArray.ets#L29-L85)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/kDzi0X_aSSqAk1TZOvH4ew/zh-cn_image_0000002583437659.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233904Z&HW-CC-Expire=86400&HW-CC-Sign=38373F6A0391AA735E062BC71326FEFEFBF4FA4C78ABF06AF4F6685892185111)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/F1NqwSO8Rq6YIIu_rUz17Q/zh-cn_image_0000002558604448.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052716Z&HW-CC-Expire=86400&HW-CC-Sign=59595E05E6B7728C04A63652F55730C787794EFE46BEA5CF84AF9A4E7443DE07)
 
 ### 装饰Date类型变量
 
@@ -498,7 +498,7 @@ content_hash: sha256:19220cc129b94b252f0c1f6465320107ffd514e13b3b1d5487d00a7f15e
 
 [LocalUseCaseDate.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/local/LocalUseCaseDate.ets#L30-L78)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/iuxX5jwXTwSRj-cssq648A/zh-cn_image_0000002552957614.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233904Z&HW-CC-Expire=86400&HW-CC-Sign=B1565331788E4ECA0F2DBE1AF1B21A641195A469967F17E65266E66F3023B53F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/zkgwgrugRc6hiox1Uu8Qmw/zh-cn_image_0000002589323973.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052716Z&HW-CC-Expire=86400&HW-CC-Sign=C849BD1F747FD3C0CB2049CE76005F98EF3DE18A6FB561E0133FBEB5C7E2535D)
 
 ### 装饰Map类型变量
 
@@ -563,7 +563,7 @@ content_hash: sha256:19220cc129b94b252f0c1f6465320107ffd514e13b3b1d5487d00a7f15e
 
 [LocalUseCaseMap.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/local/LocalUseCaseMap.ets#L29-L84)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/2cQmKnQ-Ti6Qr6mw7muZ-Q/zh-cn_image_0000002583477615.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233904Z&HW-CC-Expire=86400&HW-CC-Sign=4C8F02657106B897108EB6DC18EEF1333A02A1948422D23E59D892C6429EEAB3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/_3dmXVHTRfOexyvdqfptDQ/zh-cn_image_0000002589243913.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052716Z&HW-CC-Expire=86400&HW-CC-Sign=FA3C76CC9A1E853401B2480CFE3571B973C8B5FD55F8B4F29D2BB24CDB2FA768)
 
 ### 装饰Set类型变量
 
@@ -621,7 +621,7 @@ content_hash: sha256:19220cc129b94b252f0c1f6465320107ffd514e13b3b1d5487d00a7f15e
 
 [LocalUseCaseSet.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/local/LocalUseCaseSet.ets#L29-L77)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/hYANhWt8TNa4-6_AnZX_wg/zh-cn_image_0000002552797966.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233904Z&HW-CC-Expire=86400&HW-CC-Sign=C2AEBB8FEE2CBABA950EA070E31C23D47AD0AC0735E8DC0854758ED3762744E1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/RT5y4U-FTIugqIFSpojqXw/zh-cn_image_0000002558764106.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052716Z&HW-CC-Expire=86400&HW-CC-Sign=90D136EDE52B89748A77799E759C5DF0312943231FF2ABFEA76E34D39157348E)
 
 ### 联合类型
 
@@ -661,7 +661,7 @@ content_hash: sha256:19220cc129b94b252f0c1f6465320107ffd514e13b3b1d5487d00a7f15e
 
 [LocalUseCaseJoin.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/local/LocalUseCaseJoin.ets#L30-L60)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/paPwa8YMTVmdqGIHz-bJrQ/zh-cn_image_0000002583437661.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233904Z&HW-CC-Expire=86400&HW-CC-Sign=EE3030CDAEEB390200E6AC4D977334BC9C69CC1CDE67F64FBAA0F88B0A0243B2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/tBSkA8tPSmikIYz5j7blUQ/zh-cn_image_0000002558604450.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052716Z&HW-CC-Expire=86400&HW-CC-Sign=31B17A906B31B0BBFB5730ACE69A499EBC4D9DACB7E910996DF5141C6836D3A6)
 
 ## 常见问题
 
@@ -709,7 +709,7 @@ content_hash: sha256:19220cc129b94b252f0c1f6465320107ffd514e13b3b1d5487d00a7f15e
 
 上述代码中，开发者预期的动画效果是：绿色矩形从长宽100变为200，字符串从Hello World变为Hello ArkUI。但由于当前animateTo与V2的刷新机制不兼容，执行动画前的额外修改未生效，实际显示的动画效果是：绿色矩形从长宽50变为200，字符串从Hello变为Hello ArkUI。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/f3bEN-FfT7mQCqLlkiclqA/zh-cn_image_0000002552957616.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233904Z&HW-CC-Expire=86400&HW-CC-Sign=C5AEDD9459210077F20267D41EB7FC1A26C5D0E6F5C1B9FA371968EC92CD7ACE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/fofIAB_xSESuRSV5d63uDQ/zh-cn_image_0000002589323975.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052716Z&HW-CC-Expire=86400&HW-CC-Sign=3A46CE1E0AC59C1BF4D6A26E9F7F9A9F9917197AEEC6C9AFEDFCB82EB7B6CC8D)
 
 从API version 22开始，可以使用[applySync接口](arkts-new-applysync-flushupdates-flushuiupdates.md)实现预期的显示效果。
 
@@ -757,4 +757,4 @@ content_hash: sha256:19220cc129b94b252f0c1f6465320107ffd514e13b3b1d5487d00a7f15e
 
 原理为使用applySync接口同步刷新闭包函数内的状态变量变化，再执行原来的动画达成预期的效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/I0N98K9KRw60-PBJ9STE6A/zh-cn_image_0000002583477617.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233904Z&HW-CC-Expire=86400&HW-CC-Sign=F13A6A2271CE0FCBDEF96085798D7480701ACA0B4FD2D8A35295FA84A21E5EB2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/KTYPErxCQeqQRQ7pjYqwxQ/zh-cn_image_0000002589243915.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052716Z&HW-CC-Expire=86400&HW-CC-Sign=235663DFC7A261B6B340B1F55DA87F4B7DC39A07798D367645502B454E883786)

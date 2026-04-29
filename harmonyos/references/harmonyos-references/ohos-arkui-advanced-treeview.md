@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: TreeView
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > TreeView
 category: harmonyos-references
-scraped_at: 2026-04-28T08:02:43+08:00
+scraped_at: 2026-04-29T13:53:07+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:8fc0598062c763882bb71d6c6a661faddae35f014490683317e6a3a1a5610d38
+content_hash: sha256:dca8d5ac2e8b17bab7035b82b5721142bb5069ad8272f8b185e35713e36fdfb8
 ---
 
 树视图作为一种分层显示的列表，适合显示嵌套结构。拥有父列表项和子列表项，可展开或折叠。
@@ -453,7 +453,7 @@ PhonePC/2in1TabletTVWearable
 108. }}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/jRFQQfKBRIyGx8DcACJQ4w/zh-cn_image_0000002583480139.png?HW-CC-KV=V1&HW-CC-Date=20260428T000242Z&HW-CC-Expire=86400&HW-CC-Sign=33ED9A49157EC8250D8D34A9E30913F9F06B33446F256D2BDC0644DB898D4BBE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/26UdJdy4SJqcp_OZuyvBTA/zh-cn_image_0000002589326531.png?HW-CC-KV=V1&HW-CC-Date=20260429T055305Z&HW-CC-Expire=86400&HW-CC-Sign=42C8AA1404ABFA8CBB422D1C3316A05BB6E152A62B4EC403B2CCC6A668026B85)
 
 ### 示例2（设置Symbol类型图标）
 
@@ -579,4 +579,4 @@ PhonePC/2in1TabletTVWearable
 117. }}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/AaXRwHuWQy6MKS2HHvAOrg/zh-cn_image_0000002552800490.png?HW-CC-KV=V1&HW-CC-Date=20260428T000242Z&HW-CC-Expire=86400&HW-CC-Sign=40A25254439EF21973928343596B9457B2B6ED80949F1390F8B2CB76919929DA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/UaFKawynRd-d6jy9A4Zilw/zh-cn_image_0000002589246473.png?HW-CC-KV=V1&HW-CC-Date=20260429T055305Z&HW-CC-Expire=86400&HW-CC-Sign=9A9194E65D1B560EEF598EB48CEDE7B775C926F728A9DD9FC6E35574674878F5)

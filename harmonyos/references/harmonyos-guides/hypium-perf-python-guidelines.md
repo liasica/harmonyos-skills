@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hypium-perf-p
 title: 自定义性能脚本测试（基于Python）
 breadcrumb: 指南 > 应用测试 > 单元测试和UI测试 > 自定义性能脚本测试（基于Python）
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:57:54+08:00
-doc_updated_at: 2026-03-17
-content_hash: sha256:db48eff6b18f146751eb8febb0c891002c74c9cc6a8615f6002d53dd5750010d
+scraped_at: 2026-04-29T13:48:04+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:4cd6ae8c16a0e70aedd876fa0b084f4dbc5f60a91398b4488aed3be15f60fc31
 ---
 
 ## **概述**
@@ -50,16 +50,16 @@ Hypium基本API接口功能介绍，请参考指导：[Hypium框架-API使用方
 
 1）打开DevEco Testing客户端-专项测试-场景化性能测试卡片，点击获取安装包，打开安装包目录，如下图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/OgTZLJ5mRv6aL83NYvRW_w/zh-cn_image_0000002492343740.png?HW-CC-KV=V1&HW-CC-Date=20260427T235751Z&HW-CC-Expire=86400&HW-CC-Sign=AC491955AEA4106C03100D76B4FED76C4F6D1FD7CEE808FCB8F4CA3652119B62)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/balX7eVIRh-0ruLvIpKzAQ/zh-cn_image_0000002555828836.png?HW-CC-KV=V1&HW-CC-Date=20260429T054800Z&HW-CC-Expire=86400&HW-CC-Sign=200945303FD8234F471D3691923207CBFD8C39A3D2091CC0D7514228399A2C9D "点击放大")
 
 2）由于存在依赖关系，需要依次步骤1目录下的hypium、hypium-perf、perf\_analyzer等安装包。
 
 安装命令示例
 
 ```
-1. pip install hypium-6.0.7.210.tar.gz
-2. pip install hypium-perf-6.0.7.210.tar.gz
-3. pip install perf_analyzer-6.0.7.203b0-py3-none-any.whl perf_collector-6.0.7.203b0-py3-none-any.whl perf_common-6.0.7.203b0-py3-none-any.whl perf_resource-6.0.7.203b0-py3-none-any.whl
+1. pip install hypium-6.1.0.201.tar.gz
+2. pip install hypium-perf-6.1.0.201.tar.gz
+3. pip install perf_analyzer-6.1.0.12b0-py3-none-any.whl perf_collector-6.1.0.12b0-py3-none-any.whl perf_common-6.1.0.12b0-py3-none-any.whl perf_resource-6.1.0.12b0-py3-none-any.whl
 ```
 
 注意
@@ -78,15 +78,15 @@ Hypium基本API接口功能介绍，请参考指导：[Hypium框架-API使用方
 
 1）打开DevEco Testing客户端-专项测试-场景化性能测试卡片，在测试前准备中，点击创建工程模板按钮。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/_6CADMfJSsCZOYKOMswRuw/zh-cn_image_0000002492343738.png?HW-CC-KV=V1&HW-CC-Date=20260427T235751Z&HW-CC-Expire=86400&HW-CC-Sign=B8D02DBBF0E14CC1899ABC985A92DD7046C8C1CFCCE546902EE536BBDD29E836 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/4gIQBq0gRvW-5V0pOGTgnQ/zh-cn_image_0000002492343738.png?HW-CC-KV=V1&HW-CC-Date=20260429T054800Z&HW-CC-Expire=86400&HW-CC-Sign=EF86DE8938C4367907022E0408F02DF2C70BC52CF9D1F76A047241353587C931 "点击放大")
 
 2）填写工程项目名称，选择工程存放路径，点击开始生成按钮。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/3SQBpblcSWOycZJw_7zBPw/zh-cn_image_0000002524503435.png?HW-CC-KV=V1&HW-CC-Date=20260427T235751Z&HW-CC-Expire=86400&HW-CC-Sign=24C962B56BE30662BC05F170D856C13E00161899F0D954734289849B3A495CCF "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/kSuxYF_2TLe8libzg8w0gg/zh-cn_image_0000002524503435.png?HW-CC-KV=V1&HW-CC-Date=20260429T054800Z&HW-CC-Expire=86400&HW-CC-Sign=A8E2BD6079E78546E125DB97A8FB2564E08270D52121257F602586F776F52A0D "点击放大")
 
 3）在步骤2中填写的项目路径下，将自动生成用例模板。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/b7U4lX0oSxesi_vXieomqA/zh-cn_image_0000002492343728.png?HW-CC-KV=V1&HW-CC-Date=20260427T235751Z&HW-CC-Expire=86400&HW-CC-Sign=B757035F7609E60FD17AD3557AF94FF4557E891087FC6F5D6C8D789B4889EB69)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/W10P7koHQCOAA5I_EkV-IA/zh-cn_image_0000002492343728.png?HW-CC-KV=V1&HW-CC-Date=20260429T054800Z&HW-CC-Expire=86400&HW-CC-Sign=A9582118827EEB8E23129D8EDCCB2A89EA782F39AD4677C681C12FA1CFF0E947)
 
 注意
 
@@ -320,7 +320,7 @@ Model类必须继承基类ModelBase，ModelBase会负责与采集器的交互，
 
 使用DevEco Testing->实用工具->UIViewer工具，辅助脚本写作。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/rfH1ZV34QQ6qZ72GPEmwsw/zh-cn_image_0000002492343724.png?HW-CC-KV=V1&HW-CC-Date=20260427T235751Z&HW-CC-Expire=86400&HW-CC-Sign=97CB7578F22619323F203ACD5A9110AEDA1616983225041364BA7AFC0C520096)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/FJQGZIYbQLiS6YjKQl_vcg/zh-cn_image_0000002492343724.png?HW-CC-KV=V1&HW-CC-Date=20260429T054800Z&HW-CC-Expire=86400&HW-CC-Sign=D73CF8EC3E598F5D2B9397F993284D1F3C33D2CCD681DC100D6313960F0C6D98)
 
 ## 测试框架介绍
 
@@ -740,7 +740,7 @@ Hypium基本API接口功能介绍，请参考指导：[Hypium框架-API使用方
 
 **方法一：**在main.py中修改cmd命令，将参数替换为本地调试的场景用例名称。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/C1J7x6a1TQSMzI4uJOEHJg/zh-cn_image_0000002524503433.png?HW-CC-KV=V1&HW-CC-Date=20260427T235751Z&HW-CC-Expire=86400&HW-CC-Sign=C7CDBFA5FC1AA20D2EC19DC663218F89D924C03327398CAD466DC8D37A6E56F1 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/vUNejrAPSy6iw_PybNk6iA/zh-cn_image_0000002524503433.png?HW-CC-KV=V1&HW-CC-Date=20260429T054800Z&HW-CC-Expire=86400&HW-CC-Sign=6FE70650F1A7250E4F1E5A12155BEC73A95AF1C2484E25C5F33A6BA5341352AF "点击放大")
 
 main.py示例
 
@@ -762,7 +762,7 @@ main.py示例
 
 **方法二：**在main.py同级目录下，新建一个json文件，命名为action\_testsuite.json，并在main.py中修改cmd命令。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/Xt8Zl_GTSLy3ZyrQXxikrg/zh-cn_image_0000002492343730.png?HW-CC-KV=V1&HW-CC-Date=20260427T235751Z&HW-CC-Expire=86400&HW-CC-Sign=9C06B944FF38EACDCD13748115E9DAE7E73676330F4081C1FFF6E0C86CE71763 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/iglwBGFsQrSCUpjVhdpvow/zh-cn_image_0000002492343730.png?HW-CC-KV=V1&HW-CC-Date=20260429T054800Z&HW-CC-Expire=86400&HW-CC-Sign=FF01C2CD1BDC179C6375BE1D79FED34E3B4A40278521183828E67ADF74301661 "点击放大")
 
 action\_testsuite.json示例
 
@@ -791,11 +791,11 @@ action\_testsuite.json示例
 
 **方法一：**在main.py 的cmd命令中指定多个case，用”;”分割。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/lsjc-JANTbSUG1Zghvs_4g/zh-cn_image_0000002492343726.png?HW-CC-KV=V1&HW-CC-Date=20260427T235751Z&HW-CC-Expire=86400&HW-CC-Sign=E2EC74C3F7A961FAFA1A05B40515055E1E9D25389C5C2BA6BA0622FD9C6B42EB "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/1ntyyphpRmm3xE0IZgU0dg/zh-cn_image_0000002492343726.png?HW-CC-KV=V1&HW-CC-Date=20260429T054800Z&HW-CC-Expire=86400&HW-CC-Sign=3098C89F9F1C4BBAE58A43B9C9B861333A32BA7445BF9D7203F35A460B67C20D "点击放大")
 
 **方法二：**在json文件配置，并在main.py的cmd命令参数中指定json文件。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/D1FbTAm4ShKPlNGhh0KtMA/zh-cn_image_0000002492343736.png?HW-CC-KV=V1&HW-CC-Date=20260427T235751Z&HW-CC-Expire=86400&HW-CC-Sign=D8ABBD2B6272BDFD24EF178AB38A6D6675D0877E4F9BBBD0CE0063F16697CD9C "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/mzD1X1yQRxKSYvWLRom7gw/zh-cn_image_0000002492343736.png?HW-CC-KV=V1&HW-CC-Date=20260429T054800Z&HW-CC-Expire=86400&HW-CC-Sign=5CEFB258D42285C3237BF8164CE8484DC5AF793E3FD8FC5A8D787EA341916BAE "点击放大")
 
 action\_testsuite.json示例
 

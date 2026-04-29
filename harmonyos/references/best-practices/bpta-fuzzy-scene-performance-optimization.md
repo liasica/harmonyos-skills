@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-fuzzy-scen
 title: 图像模糊动效优化
 breadcrumb: 最佳实践 > 图形 > 图像处理 > 图像模糊动效优化
 category: best-practices
-scraped_at: 2026-04-28T08:20:52+08:00
+scraped_at: 2026-04-29T14:11:45+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:ca852ad119076c9fce00e48d3795429927703b29c97dc93a22768320f5c2e760
+content_hash: sha256:6447d133d11206fd3fb540ee8dc2c59bb564c6f64efefd6c3f88a11076ac12c0
 ---
 
 ## 概述
 
 模糊效果是一种常见的图像处理技术，它通过弱化图像细节来突出主体，使焦点更加鲜明。如下图所示，模糊效果不仅能增强界面空间感，还能清晰区分元素层级。当这一效果融入动态变化，便催生了模糊动效。模糊动效被广泛应用于页面转场、图像元素缩放等需要突出内容或改变用户关注点的场景中。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/IdB7LlOXTKqKAGgM0DI0dw/zh-cn_image_0000002337772197.png?HW-CC-KV=V1&HW-CC-Date=20260428T002051Z&HW-CC-Expire=86400&HW-CC-Sign=E674FE68D6784D182C2204DAE8DA067B45BA3D8E7C45A7291AE8FF0BFB7A58AF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/IdB7LlOXTKqKAGgM0DI0dw/zh-cn_image_0000002337772197.png?HW-CC-KV=V1&HW-CC-Date=20260429T061144Z&HW-CC-Expire=86400&HW-CC-Sign=FDFE6F5CA66B232AE5821457364D4418C7B8A96528FFCD4235EBD741CC220E09)
 
 由于模糊算法需要进行精细的像素级处理，因而在组件需要实时渲染时，这要求在极短的周期内完成模糊化处理。尤其是在组件同时执行动画渲染任务时，则会进一步加剧计算资源的消耗，容易导致模糊效果处理时间不足，无法按时完成模糊动效，最终引发卡顿、丢帧等不良现象。
 
@@ -113,7 +113,7 @@ content_hash: sha256:ca852ad119076c9fce00e48d3795429927703b29c97dc93a22768320f5c
 [MotionBlur.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/FuzzySceneOptimization/entry/src/main/ets/pages/MotionBlur.ets#L17-L92)
 
 **图1** 动态模糊  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/psurXvlFTu-kSD_c1xRSMA/zh-cn_image_0000002193850416.gif?HW-CC-KV=V1&HW-CC-Date=20260428T002051Z&HW-CC-Expire=86400&HW-CC-Sign=BC503E55124272E9570B98795F681E45D585D709212B3A07B2F651667BB41EEF "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/psurXvlFTu-kSD_c1xRSMA/zh-cn_image_0000002193850416.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061144Z&HW-CC-Expire=86400&HW-CC-Sign=5952A7C43973BDAF2BBD356B708F158A8F4F471CB7868AA6E05584DCCDFB6E5C "点击放大")
 
 下面是使用静态模糊对图片进行模糊处理的场景示例。主要步骤如下：
 
@@ -239,17 +239,17 @@ content_hash: sha256:ca852ad119076c9fce00e48d3795429927703b29c97dc93a22768320f5c
 
 **图2** 静态模糊
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/0x26v_O2T8WW72GzocZt7Q/zh-cn_image_0000002229450281.gif?HW-CC-KV=V1&HW-CC-Date=20260428T002051Z&HW-CC-Expire=86400&HW-CC-Sign=34E2D0A3F33C17770B6944204A02FFFA9B55DD6C5E3DB459F37F03A632858831 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/0x26v_O2T8WW72GzocZt7Q/zh-cn_image_0000002229450281.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061144Z&HW-CC-Expire=86400&HW-CC-Sign=D5FD1BBC1A56D0A653D71D227584DE100421D88E12AB14E5F39AE6A8C0C31833 "点击放大")
 
 ## 效果对比
 
 下面使用DevEco Studio内置的Profiler中的帧率分析工具Frame抓取点击按钮触发转场过程的trace来分析静态模糊和动态模糊场景下的性能差异。需要说明，由于场景示例通过点击按钮触发转场，所以可以通过User Events（用户输入事件）的Click标签定位到转场过程的起点为Click标签结束位置。转场过程的终点为连续的RenderFrame（执行GPU绘制）标签不再连续的位置。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/e5pqj4A0StacLsazyLfObg/zh-cn_image_0000002229450285.png?HW-CC-KV=V1&HW-CC-Date=20260428T002051Z&HW-CC-Expire=86400&HW-CC-Sign=9E9B6CFFCB36633041A3E67132F792C09AC78C11B16E58471ECC928CEFEF8120 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/e5pqj4A0StacLsazyLfObg/zh-cn_image_0000002229450285.png?HW-CC-KV=V1&HW-CC-Date=20260429T061144Z&HW-CC-Expire=86400&HW-CC-Sign=3BEEA7E067F82F7D776B1A5C17524041D3545C3D4027F5D7D09CF92E4C43399D "点击放大")
 
 如上图所示，通过RenderFrame（执行GPU绘制）标签可以看出，动态模糊转场平均渲染耗时为6.113ms。同时从Present Fence（图形上屏信号）标签可以看出动态模糊转场平均帧率为108.0fps。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/nU-FrpdGRTWsRBAV-IpPDA/zh-cn_image_0000002229335801.png?HW-CC-KV=V1&HW-CC-Date=20260428T002051Z&HW-CC-Expire=86400&HW-CC-Sign=E226A8D2D2CBC10BC397AB3990EEA721D965A2925ED34589199878786B096CA7 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/nU-FrpdGRTWsRBAV-IpPDA/zh-cn_image_0000002229335801.png?HW-CC-KV=V1&HW-CC-Date=20260429T061144Z&HW-CC-Expire=86400&HW-CC-Sign=FA3ADF9CF07C37447423AF97B8ED705A78CB7112678C98DBB37CDE243A74D58F "点击放大")
 
 如上图所示，通过RenderFrame标签可以看出，静态模糊转场平均渲染耗时为3.357ms。同时从Present Fence标签可以看出静态模糊转场平均帧率为119.9fps。和动态模糊转场相比平均渲染耗时减少了约45%（性能耗时数据因应用场景、设备型号版本而异，以实测为准）。
 

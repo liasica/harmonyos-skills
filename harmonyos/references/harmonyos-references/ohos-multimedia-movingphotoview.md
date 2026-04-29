@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-mult
 title: @ohos.multimedia.movingphotoview (动态照片)
 breadcrumb: API参考 > 媒体 > Media Library Kit（媒体文件管理服务） > ArkTS组件 > @ohos.multimedia.movingphotoview (动态照片)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:14:19+08:00
+scraped_at: 2026-04-29T14:04:56+08:00
 doc_updated_at: 2026-03-20
-content_hash: sha256:f304ad1cec5661d53e0a300a2e17d28cd57b1881e75aadd07811647d51203299
+content_hash: sha256:736d5521ee9d57a77aa628041dea3713616e486c38950348c118ffe8d173fcea
 ---
 
 用于播放动态照片文件并控制其播放状态的组件。
@@ -533,7 +533,7 @@ PhonePC/2in1TabletTV
 143. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/GuLLxJqUR5e2vi1ViLpI6Q/zh-cn_image_0000002583440901.gif?HW-CC-KV=V1&HW-CC-Date=20260428T001418Z&HW-CC-Expire=86400&HW-CC-Sign=E55479DE9724EDD4C01774D795D3EE0D5C230D4B14CE837D9E3B84BE34D6EE4A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/5KUzYMrbT6KmH44H9HWNAg/zh-cn_image_0000002558767382.gif?HW-CC-KV=V1&HW-CC-Date=20260429T060454Z&HW-CC-Expire=86400&HW-CC-Sign=BBC077C15EB00F4EC607AE70DF8561E17FD653394F7F7044B5EADDD78E0C6361)
 
 ## 示例2：在元服务中使用动态照片
 
@@ -631,7 +631,7 @@ PhonePC/2in1TabletTV
 89. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/Oz9TCtupS12rxMCZuwGHQw/zh-cn_image_0000002552960856.gif?HW-CC-KV=V1&HW-CC-Date=20260428T001418Z&HW-CC-Expire=86400&HW-CC-Sign=5B5E6D62598C69B73E220CF74C4AA7C1E79C3A4A58CBC86003C5E3172E41AB84)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/OvohNYXmQWKgWVs8GGWrPg/zh-cn_image_0000002558607724.gif?HW-CC-KV=V1&HW-CC-Date=20260429T060454Z&HW-CC-Expire=86400&HW-CC-Sign=E5D2D225E212B4192DE6D5F69616B74E19485171D6C0F3D7B2125E199FC8A2C9)
 
 ## 示例3：图像分析功能使用
 
@@ -789,4 +789,4 @@ PhonePC/2in1TabletTV
 149. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/G-U4WPc1TuuCl8b4k00fuw/zh-cn_image_0000002583480857.gif?HW-CC-KV=V1&HW-CC-Date=20260428T001418Z&HW-CC-Expire=86400&HW-CC-Sign=D75EF25EDB5DFE00E5697E13187F50E15763C9869870A8091AA17C7B1C239A12)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/3ou3SlMXSFSWwDJqi8oVew/zh-cn_image_0000002589327251.gif?HW-CC-KV=V1&HW-CC-Date=20260429T060454Z&HW-CC-Expire=86400&HW-CC-Sign=A025A19E1C6E4745ECB2E28321F77840E71737C5C5E2F10B4B444B5C781EEDD8)

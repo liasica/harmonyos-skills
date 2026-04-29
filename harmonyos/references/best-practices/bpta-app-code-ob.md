@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-app-code-o
 title: 应用代码混淆
 breadcrumb: 最佳实践 > 应用安全 > 应用代码混淆
 category: best-practices
-scraped_at: 2026-04-28T08:22:16+08:00
+scraped_at: 2026-04-29T14:13:16+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:a003ab71411ca5558e81e30e9bc644c344de2819c0b50e2b70c28398561c4395
+content_hash: sha256:a425e83b2d857588e6a787739f0eac8c305d59d59ab74be2147b6937991e5dae
 ---
 
 ## 概述
@@ -56,11 +56,11 @@ enable默认为false，默认不开启代码混淆功能。
 
 **图1** DevEco Studio选择release编译模式
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/49cAWlrpTWC7cZ77RcwL4w/zh-cn_image_0000002194010408.png?HW-CC-KV=V1&HW-CC-Date=20260428T002214Z&HW-CC-Expire=86400&HW-CC-Sign=4A80DCD518DFFF6DD04EFB1BE2B4070A2C82FE03C4D9AF292D76FBDFB3B0F382 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/49cAWlrpTWC7cZ77RcwL4w/zh-cn_image_0000002194010408.png?HW-CC-KV=V1&HW-CC-Date=20260429T061315Z&HW-CC-Expire=86400&HW-CC-Sign=7D9B36C98F7FBE6E60204807123D494B822E409784497B77314D3FFCB1A7EB39 "点击放大")
 
 **图2** DevEco Studio指定模块编译
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/TTvu8e-UTBeDYnhTe87udg/zh-cn_image_0000002229336225.png?HW-CC-KV=V1&HW-CC-Date=20260428T002214Z&HW-CC-Expire=86400&HW-CC-Sign=34D607E0018B9E8A800AAF8281910E4E34073C3CACAA5A6DB81EBFE9319067D2 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/TTvu8e-UTBeDYnhTe87udg/zh-cn_image_0000002229336225.png?HW-CC-KV=V1&HW-CC-Date=20260429T061315Z&HW-CC-Expire=86400&HW-CC-Sign=BA9D0CE2FE8C3CEDF57E5DF24854B65DFE57C7E7D4AC281355C749ECA8F3B7F2 "点击放大")
 
 ## 混淆配置能力
 
@@ -75,12 +75,12 @@ enable默认为false，默认不开启代码混淆功能。
 在每个模块下都能找到build-profile.json5文件，如下图所示。可以在此文件中配置是否开启混淆及混淆配置文件。
 
 **图3** 编译配置文件  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/k4eRyE-OSwWgB4r3nsrHug/zh-cn_image_0000002229336217.png?HW-CC-KV=V1&HW-CC-Date=20260428T002214Z&HW-CC-Expire=86400&HW-CC-Sign=59A530195DF5E8D4A90BD56FE3842FC49076CEA2C058D5A23834BA8A0D8F9B80 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/k4eRyE-OSwWgB4r3nsrHug/zh-cn_image_0000002229336217.png?HW-CC-KV=V1&HW-CC-Date=20260429T061315Z&HW-CC-Expire=86400&HW-CC-Sign=4F872B0BD15977F6BECEEDF263EA73A15BCA2C0FD4D50036A1D50608A2013863 "点击放大")
 
 新建工程时，每个模块下都有obfuscation-rules.txt文件，用于配置混淆。
 
 **图4** 混淆配置文件  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/PVPKeX5mTy-S_1llFmh7eA/zh-cn_image_0000002229336209.png?HW-CC-KV=V1&HW-CC-Date=20260428T002214Z&HW-CC-Expire=86400&HW-CC-Sign=EABF83D9B0889FDF2DEE7D9C8A5412F8EF99EA4798BA700F0D30B1DC81E15DEB "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/PVPKeX5mTy-S_1llFmh7eA/zh-cn_image_0000002229336209.png?HW-CC-KV=V1&HW-CC-Date=20260429T061315Z&HW-CC-Expire=86400&HW-CC-Sign=F93A73299AD8D59C722F747321ACE77F6876ED5873C44661152D6269C6EA2D23 "点击放大")
 
 在上图中，obfuscation-rules.txt文件中添加了-enable-property-obfuscation和-enable-toplevel-obfuscation开关，表示已启用属性混淆和顶层作用域名称混淆。
 
@@ -130,7 +130,7 @@ DevEco Studio混淆现有选项及功能描述如下：
   + - 系统API白名单文件：systemApiCache.json，记录SDK接口与属性名称。
 
   **图5** DevEco Studio编译产物与缓存文件  
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/V8SprUXSSkKtbr8Y8FgwHg/zh-cn_image_0000002194010432.png?HW-CC-KV=V1&HW-CC-Date=20260428T002214Z&HW-CC-Expire=86400&HW-CC-Sign=FE5C0C2660370AB8D7813C41FD26C6E944F49A92634383BF90F6389400EE4340)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/V8SprUXSSkKtbr8Y8FgwHg/zh-cn_image_0000002194010432.png?HW-CC-KV=V1&HW-CC-Date=20260429T061315Z&HW-CC-Expire=86400&HW-CC-Sign=03721984F3229ADD2F7BC4E126E9E372890C79407AC264B600F0C70F81D0D5C4)
 
 ## 调试
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 悬浮事件
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用事件 > 交互响应事件 > 悬浮事件
 category: harmonyos-references
-scraped_at: 2026-04-28T08:00:55+08:00
+scraped_at: 2026-04-29T13:51:08+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:9b150a975cf71d27b2400d3cd5a1e45687b805fc6640bab94c7aa583ed5ca051
+content_hash: sha256:dc64ee035c8c837f3f7f6e46eef8ac9ad588e970c132992f62eee68a32d390d2
 ---
 
 光标滑动或手写笔在屏幕上悬浮移动扫过组件时触发。
@@ -129,11 +129,11 @@ PhonePC/2in1TabletTVWearable
 
 未悬浮时的文本内容与背景颜色：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/t58K3F_jQOybGJJQkXePlQ/zh-cn_image_0000002583439515.png?HW-CC-KV=V1&HW-CC-Date=20260428T000054Z&HW-CC-Expire=86400&HW-CC-Sign=59FBA3BEA6A4F2EA8CB853A5ACB07965698EE8A63ADC633FFD46DA8A8ECDA9DB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/38inCwr4TjGMWh4b0-PtMA/zh-cn_image_0000002589245801.png?HW-CC-KV=V1&HW-CC-Date=20260429T055107Z&HW-CC-Expire=86400&HW-CC-Sign=BF9C7C2D2846392AAF8B781FB04EC8FCC01BB0D72EE1DBF57A438FEB5E997B14)
 
 手写笔悬浮时改变文本内容与背景颜色：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/jCKsI5qnQP6x0QjIauA8Lw/zh-cn_image_0000002552959470.png?HW-CC-KV=V1&HW-CC-Date=20260428T000054Z&HW-CC-Expire=86400&HW-CC-Sign=5E2BD3A7C2B03E7EEED874C871831F46CBBBFDC7E1FF40451BCB2644FA7C0B20)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/qpTPVpKrQsqvh0ZFootY3A/zh-cn_image_0000002558765992.png?HW-CC-KV=V1&HW-CC-Date=20260429T055107Z&HW-CC-Expire=86400&HW-CC-Sign=E704EDDC795A16C92EC2A2E979B267E0CA40205A52315AE98F0EF3CD14E713E1)
 
 ### 示例2（使用onHoverMove）
 
@@ -166,4 +166,4 @@ PhonePC/2in1TabletTVWearable
 
 手写笔悬浮在Button组件上时，UI不断刷新笔尖的位置信息：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/HCvFc3ZiRmqujHLXaz1DRA/zh-cn_image_0000002583479471.png?HW-CC-KV=V1&HW-CC-Date=20260428T000054Z&HW-CC-Expire=86400&HW-CC-Sign=69DE792674DF3EDAE32795518AE8484FFC02704C67FB77F61D4BCF29E245EE8B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/RWItx-vBRy-byt7hf4oHhg/zh-cn_image_0000002558606334.png?HW-CC-KV=V1&HW-CC-Date=20260429T055107Z&HW-CC-Expire=86400&HW-CC-Sign=B502D0A5FE84FD609BD8A00514F16C72E458CC86ACB4A2A9B7F5EA365C8178ED)

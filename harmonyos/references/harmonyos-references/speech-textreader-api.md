@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/speech-te
 title: TextReader（朗读控件）
 breadcrumb: API参考 > AI > Speech Kit（场景化语音服务） > ArkTS API > TextReader（朗读控件）
 category: harmonyos-references
-scraped_at: 2026-04-28T08:19:12+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:14e947cc74542a2b1cd5bf7c14b6d4b26c571b6bcfff6409553e92c8cf3c93ea
+scraped_at: 2026-04-29T14:09:50+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:5fe390f4c07f372ecc627452d38cdbbbde04a5427f2b0848c36e96425b7c582d
 ---
 
 朗读控件使用AI能力将文本实时转化成语音并进行朗读，适用于一些新闻类文本内容浏览类APP，帮助用户在一些无法直接浏览文本内容的场景下，通过文本朗读来高效获取信息。
@@ -976,7 +976,7 @@ queryReadStateByCategoryId(categoryId: string): ReadState
 8. }
 ```
 
-## on(type: 'setArticle')
+## on('setArticle')
 
 PhonePC/2in1Tablet
 
@@ -1019,7 +1019,7 @@ on(type: 'setArticle', callback: Callback<string>): void
 9. }
 ```
 
-## off(type: 'setArticle')
+## off('setArticle')
 
 PhonePC/2in1Tablet
 
@@ -1038,7 +1038,7 @@ off(type: 'setArticle', callback?: Callback<string>): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'setArticle'，设置文章后，触发该事件。 |
-| callback | Callback<string> | 否 | 需要取消监听的回调函数，需与订阅时传入的回调函数是同一个，若不填，则取消当前应用监听该事件的所有回调函数（当前仅有一个）。 |
+| callback | Callback<string> | 否 | 需要取消监听的回调函数，需与订阅时传入的回调函数是同一个，若不填，则取消当前应用监听该事件的所有回调函数。 |
 
 **错误码：**
 
@@ -1060,13 +1060,13 @@ off(type: 'setArticle', callback?: Callback<string>): void
 7. }
 ```
 
-## on(type: 'clickArticle' | 'clickAuthor' | 'clickNotification')
+## on('clickArticle')
 
 PhonePC/2in1Tablet
 
-on(type: 'clickArticle' | 'clickAuthor' | 'clickNotification', callback: Callback<string>): void
+on(type: 'clickArticle', callback: Callback<string>): void
 
-注册点击事件回调函数，点击标题、作者、通知栏时，触发该回调执行。同一类型监听，注册多个回调函数，仅第一次注册有效。
+注册点击事件回调函数，点击标题时，触发该回调执行。同一类型监听，注册多个回调函数，仅第一次注册有效。
 
 **元服务API：** 从版本5.0.3(15)开始，该接口支持在元服务中使用。
 
@@ -1078,8 +1078,8 @@ on(type: 'clickArticle' | 'clickAuthor' | 'clickNotification', callback: Callbac
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 事件回调类型。  - 'clickArticle'：点击文章标题，触发回调。  - 'clickAuthor'：点击作者，触发回调。  - 'clickNotification'：点击通知栏，触发回调。预留参数，暂未支持。 |
-| callback | Callback<string> | 是 | 点击事件回调函数，参数为文章id。 |
+| type | string | 是 | 事件回调类型，支持的事件为'clickArticle'，点击文章标题，触发回调。 |
+| callback | Callback<string> | 是 | 点击标题时执行的回调函数，参数为文章id。 |
 
 **错误码：**
 
@@ -1098,24 +1098,18 @@ on(type: 'clickArticle' | 'clickAuthor' | 'clickNotification', callback: Callbac
 4. TextReader.on('clickArticle', (id: string) => {
 5. console.info(`Succeeded in setting clickArticleListener: ${id}`);
 6. });
-7. TextReader.on('clickAuthor', (id: string) => {
-8. console.info(`Succeeded in setting clickAuthorListener: ${id}`);
-9. });
-10. TextReader.on('clickNotification', (id: string) => {
-11. console.info(`Succeeded in setting clickNotificationListener: ${id}`);
-12. });
-13. } catch (e) {
-14. console.error(`TextReader failed to set eventListener. Code: ${e.code}, message: ${e.message}`);
-15. }
+7. } catch (e) {
+8. console.error(`TextReader failed to set eventListener. Code: ${e.code}, message: ${e.message}`);
+9. }
 ```
 
-## off(type: 'clickArticle' | 'clickAuthor' | 'clickNotification')
+## off('clickArticle')
 
 PhonePC/2in1Tablet
 
-off(type: 'clickArticle' | 'clickAuthor' | 'clickNotification', callback?: Callback<string>): void
+off(type: 'clickArticle', callback?: Callback<string>): void
 
-在on(type: 'clickArticle' | 'clickAuthor' | 'clickNotification')函数调用之后使用，用于注销点击事件回调函数。注销监听后，可以重新注册。
+在on(type: 'clickArticle')函数调用之后使用，用于注销点击事件回调函数。注销监听后，可以重新注册。
 
 **元服务API：** 从版本5.0.3(15)开始，该接口支持在元服务中使用。
 
@@ -1127,8 +1121,8 @@ off(type: 'clickArticle' | 'clickAuthor' | 'clickNotification', callback?: Callb
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 事件回调类型。  - 'clickArticle'：点击文章标题，取消回调。  - 'clickAuthor'：点击作者事件，取消回调。  - 'clickNotification'：点击通知栏事件，取消回调。 |
-| callback | Callback<string> | 否 | 需要取消监听的回调函数，需与订阅时传入的回调函数是同一个，若不填，则取消当前应用监听该事件的所有回调函数（当前仅有一个）。 |
+| type | string | 是 | 事件回调类型，支持的事件为'clickArticle'，点击文章标题，取消回调。 |
+| callback | Callback<string> | 否 | 需要取消监听的回调函数，需与订阅时传入的回调函数是同一个，若不填，则取消当前应用监听该事件的所有回调函数。 |
 
 **错误码：**
 
@@ -1145,20 +1139,18 @@ off(type: 'clickArticle' | 'clickAuthor' | 'clickNotification', callback?: Callb
 
 3. try {
 4. TextReader.off('clickArticle');
-5. TextReader.off('clickAuthor');
-6. TextReader.off('clickNotification');
-7. } catch (e) {
-8. console.error(`TextReader failed to unset eventListener. Code: ${e.code}, message: ${e.message}`);
-9. }
+5. } catch (e) {
+6. console.error(`TextReader failed to unset eventListener. Code: ${e.code}, message: ${e.message}`);
+7. }
 ```
 
-## on(type: 'showPanel' | 'hidePanel')
+## on('clickAuthor')
 
 PhonePC/2in1Tablet
 
-on(type: 'showPanel' | 'hidePanel', callback: Callback<void>): void
+on(type: 'clickAuthor', callback: Callback<string>): void
 
-注册拉起/收回播放面板回调函数，拉起/收回播放面板时，触发该回调执行。同一类型监听，注册多个回调函数，仅第一次注册有效。
+注册点击事件回调函数，点击作者时，触发该回调执行。同一类型监听，注册多个回调函数，仅第一次注册有效。
 
 **元服务API：** 从版本5.0.3(15)开始，该接口支持在元服务中使用。
 
@@ -1170,8 +1162,176 @@ on(type: 'showPanel' | 'hidePanel', callback: Callback<void>): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 事件回调类型。  - 'showPanel'：拉起面板，触发回调。  - 'hidePanel'：收回面板，触发回调。 |
-| callback | Callback<void> | 是 | 面板事件回调函数。 |
+| type | string | 是 | 事件回调类型，支持的事件为'clickAuthor'，点击作者，触发回调。 |
+| callback | Callback<string> | 是 | 点击作者时执行的回调函数，参数为文章id。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[ArkTS API错误码](speech-errorcode.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. |
+
+**示例：**
+
+```
+1. import { TextReader } from '@kit.SpeechKit';
+
+3. try {
+4. TextReader.on('clickAuthor', (id: string) => {
+5. console.info(`Succeeded in setting clickAuthorListener: ${id}`);
+6. });
+7. } catch (e) {
+8. console.error(`TextReader failed to set eventListener. Code: ${e.code}, message: ${e.message}`);
+9. }
+```
+
+## off('clickAuthor')
+
+PhonePC/2in1Tablet
+
+off(type: 'clickAuthor', callback?: Callback<string>): void
+
+在on('clickAuthor')函数调用之后使用，用于注销点击事件回调函数。注销监听后，可以重新注册。
+
+**元服务API：** 从版本5.0.3(15)开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.AI.Component.TextReader
+
+**起始版本：** 5.0.0(12)
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持的事件为'clickAuthor'，点击作者事件，取消回调。 |
+| callback | Callback<string> | 否 | 需要取消监听的回调函数，需与订阅时传入的回调函数是同一个，若不填，则取消当前应用监听该事件的所有回调函数。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[ArkTS API错误码](speech-errorcode.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. |
+
+**示例：**
+
+```
+1. import { TextReader } from '@kit.SpeechKit';
+
+3. try {
+4. TextReader.off('clickAuthor');
+5. } catch (e) {
+6. console.error(`TextReader failed to unset eventListener. Code: ${e.code}, message: ${e.message}`);
+7. }
+```
+
+## on( 'clickNotification')
+
+PhonePC/2in1Tablet
+
+on(type: 'clickNotification', callback: Callback<string>): void
+
+注册点击事件回调函数，通知栏时，触发该回调执行。同一类型监听，注册多个回调函数，仅第一次注册有效。
+
+**元服务API：** 从版本5.0.3(15)开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.AI.Component.TextReader
+
+**起始版本：** 5.0.0(12)
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持的事件为'clickNotification'，点击通知栏，触发回调。预留参数，暂未支持。 |
+| callback | Callback<string> | 是 | 点击通知栏时执行的回调函数，参数为文章id。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[ArkTS API错误码](speech-errorcode.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. |
+
+**示例：**
+
+```
+1. import { TextReader } from '@kit.SpeechKit';
+
+3. try {
+4. TextReader.on('clickNotification', (id: string) => {
+5. console.info(`Succeeded in setting clickNotificationListener: ${id}`);
+6. });
+7. } catch (e) {
+8. console.error(`TextReader failed to set eventListener. Code: ${e.code}, message: ${e.message}`);
+9. }
+```
+
+## off('clickNotification')
+
+PhonePC/2in1Tablet
+
+off(type: 'clickNotification', callback?: Callback<string>): void
+
+在on(type: 'clickNotification')函数调用之后使用，用于注销点击事件回调函数。注销监听后，可以重新注册。
+
+**元服务API：** 从版本5.0.3(15)开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.AI.Component.TextReader
+
+**起始版本：** 5.0.0(12)
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持的事件为'clickNotification'，点击通知栏事件，取消回调。 |
+| callback | Callback<string> | 否 | 需要取消监听的回调函数，需与订阅时传入的回调函数是同一个，若不填，则取消当前应用监听该事件的所有回调函数。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[ArkTS API错误码](speech-errorcode.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. |
+
+**示例：**
+
+```
+1. import { TextReader } from '@kit.SpeechKit';
+
+3. try {
+4. TextReader.off('clickNotification');
+5. } catch (e) {
+6. console.error(`TextReader failed to unset eventListener. Code: ${e.code}, message: ${e.message}`);
+7. }
+```
+
+## on('showPanel')
+
+PhonePC/2in1Tablet
+
+on(type: 'showPanel', callback: Callback<void>): void
+
+注册拉起播放面板回调函数，拉起播放面板时，触发该回调执行。同一类型监听，注册多个回调函数，仅第一次注册有效。
+
+**元服务API：** 从版本5.0.3(15)开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.AI.Component.TextReader
+
+**起始版本：** 5.0.0(12)
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持的事件为'showPanel'，拉起面板，触发回调。 |
+| callback | Callback<void> | 是 | 拉起面板时执行的回调函数。 |
 
 **错误码：**
 
@@ -1190,21 +1350,18 @@ on(type: 'showPanel' | 'hidePanel', callback: Callback<void>): void
 4. TextReader.on('showPanel', () => {
 5. console.info(`Succeeded in setting showPanelListener.`);
 6. });
-7. TextReader.on('hidePanel', () => {
-8. console.info(`Succeeded in setting hidePanelListener.`);
-9. });
-10. } catch (e) {
-11. console.error(`TextReader failed to set eventListener. Code: ${e.code}, message: ${e.message}`);
-12. }
+7. } catch (e) {
+8. console.error(`TextReader failed to set eventListener. Code: ${e.code}, message: ${e.message}`);
+9. }
 ```
 
-## off(type: 'showPanel' | 'hidePanel')
+## off('showPanel')
 
 PhonePC/2in1Tablet
 
-off(type: 'showPanel' | 'hidePanel', callback?: Callback<void>): void
+off(type: 'showPanel', callback?: Callback<void>): void
 
-在on(type: 'showPanel' | 'hidePanel')函数调用之后使用，用于注销拉起/收回播放面板监听事件。注销监听后，可以重新注册。
+在on(type: 'showPanel')函数调用之后使用，用于注销拉起播放面板监听事件。注销监听后，可以重新注册。
 
 **元服务API：** 从版本5.0.3(15)开始，该接口支持在元服务中使用。
 
@@ -1216,8 +1373,8 @@ off(type: 'showPanel' | 'hidePanel', callback?: Callback<void>): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 事件回调类型。  - 'showPanel'：拉起面板，取消回调。  - 'hidePanel'：收起面板，取消回调。 |
-| callback | Callback<void> | 否 | 需要取消监听的回调函数，需与订阅时传入的回调函数是同一个，若不填，则取消当前应用监听该事件的所有回调函数（当前仅有一个）。 |
+| type | string | 是 | 事件回调类型，支持的事件为'showPanel'，拉起面板，取消回调。 |
+| callback | Callback<void> | 否 | 需要取消监听的回调函数，需与订阅时传入的回调函数是同一个，若不填，则取消当前应用监听该事件的所有回调函数。 |
 
 **错误码：**
 
@@ -1240,13 +1397,13 @@ off(type: 'showPanel' | 'hidePanel', callback?: Callback<void>): void
 8. }
 ```
 
-## on(type: 'stop' | 'release')
+## on('hidePanel')
 
 PhonePC/2in1Tablet
 
-on(type: 'stop' | 'release', callback: Callback<void>): void
+on(type: 'hidePanel', callback: Callback<void>): void
 
-注册停止/释放回调函数，调用stop/release时，触发该回调执行。同一类型监听，注册多个回调函数，仅第一次注册有效。
+注册收回播放面板回调函数，收回播放面板时，触发该回调执行。同一类型监听，注册多个回调函数，仅第一次注册有效。
 
 **元服务API：** 从版本5.0.3(15)开始，该接口支持在元服务中使用。
 
@@ -1258,8 +1415,93 @@ on(type: 'stop' | 'release', callback: Callback<void>): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 事件回调类型。  - 'stop'：调用stop接口。  - 'release'：调用release释放资源。 |
-| callback | Callback<void> | 是 | stop/release事件回调函数。 |
+| type | string | 是 | 事件回调类型，支持的事件为'hidePanel'，收回面板，触发回调。 |
+| callback | Callback<void> | 是 | 收回面板时执行的回调函数。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[ArkTS API错误码](speech-errorcode.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. |
+
+**示例：**
+
+```
+1. import { TextReader } from '@kit.SpeechKit';
+
+3. try {
+4. TextReader.on('hidePanel', () => {
+5. console.info(`Succeeded in setting hidePanelListener.`);
+6. });
+7. } catch (e) {
+8. console.error(`TextReader failed to set eventListener. Code: ${e.code}, message: ${e.message}`);
+9. }
+```
+
+## off('hidePanel')
+
+PhonePC/2in1Tablet
+
+off(type: 'hidePanel', callback?: Callback<void>): void
+
+在on(type: 'hidePanel')函数调用之后使用，用于注销收回播放面板监听事件。注销监听后，可以重新注册。
+
+**元服务API：** 从版本5.0.3(15)开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.AI.Component.TextReader
+
+**起始版本：** 5.0.0(12)
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持的事件为'hidePanel'，收起面板，取消回调。 |
+| callback | Callback<void> | 否 | 需要取消监听的回调函数，需与订阅时传入的回调函数是同一个，若不填，则取消当前应用监听该事件的所有回调函数。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[ArkTS API错误码](speech-errorcode.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. |
+
+**示例：**
+
+```
+1. import { TextReader } from '@kit.SpeechKit';
+
+3. try {
+4. TextReader.off('showPanel');
+5. TextReader.off('hidePanel');
+6. } catch (e) {
+7. console.error(`TextReader failed to unset eventListener. Code: ${e.code}, message: ${e.message}`);
+8. }
+```
+
+## on('stop')
+
+PhonePC/2in1Tablet
+
+on(type: 'stop', callback: Callback<void>): void
+
+注册停止回调函数，调用stop时，触发该回调执行。同一类型监听，注册多个回调函数，仅第一次注册有效。
+
+**元服务API：** 从版本5.0.3(15)开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.AI.Component.TextReader
+
+**起始版本：** 5.0.0(12)
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持的事件为'stop'，调用stop接口或用户主动滑动通知栏退出。 |
+| callback | Callback<void> | 是 | 触发stop事件时执行的回调函数。 |
 
 **错误码：**
 
@@ -1278,21 +1520,18 @@ on(type: 'stop' | 'release', callback: Callback<void>): void
 4. TextReader.on('stop', () => {
 5. console.info(`Succeeded in setting stopListener.`);
 6. });
-7. TextReader.on('release', () => {
-8. console.info(`Succeeded in setting releaseListener.`);
-9. });
-10. } catch (e) {
-11. console.error(`TextReader failed to set eventListener. Code: ${e.code}, message: ${e.message}`);
-12. }
+7. } catch (e) {
+8. console.error(`TextReader failed to set eventListener. Code: ${e.code}, message: ${e.message}`);
+9. }
 ```
 
-## off(type: 'stop' | 'release')
+## off('stop')
 
 PhonePC/2in1Tablet
 
-off(type: 'stop' | 'release', callback?: Callback<void>): void
+off(type: 'stop', callback?: Callback<void>): void
 
-在on(type: 'stop' | 'release')函数调用之后使用，用于注销stop/release事件的回调函数。注销监听后，可以重新注册。
+在on(type: 'stop')函数调用之后使用，用于注销stop事件的回调函数。注销监听后，可以重新注册。
 
 **元服务API：** 从版本5.0.3(15)开始，该接口支持在元服务中使用。
 
@@ -1304,8 +1543,8 @@ off(type: 'stop' | 'release', callback?: Callback<void>): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 事件回调类型。  - 'stop'：调用stop接口或用户主动滑动通知栏退出。  - 'release'：调用release释放资源。 |
-| callback | Callback<void> | 否 | 需要取消监听的回调函数，需与订阅时传入的回调函数是同一个，若不填，则取消当前应用监听该事件的所有回调函数（当前仅有一个）。 |
+| type | string | 是 | 事件回调类型，支持的事件为'stop'，调用stop接口或用户主动滑动通知栏退出。 |
+| callback | Callback<void> | 否 | 需要取消监听的回调函数，需与订阅时传入的回调函数是同一个，若不填，则取消当前应用监听该事件的所有回调函数。 |
 
 **错误码：**
 
@@ -1322,13 +1561,96 @@ off(type: 'stop' | 'release', callback?: Callback<void>): void
 
 3. try {
 4. TextReader.off('stop');
-5. TextReader.off('release');
-6. } catch (e) {
-7. console.error(`TextReader failed to unset eventListener. Code: ${e.code}, message: ${e.message}`);
-8. }
+5. } catch (e) {
+6. console.error(`TextReader failed to unset eventListener. Code: ${e.code}, message: ${e.message}`);
+7. }
 ```
 
-## on(type: 'stateChange')
+## on('release')
+
+PhonePC/2in1Tablet
+
+on(type:'release', callback: Callback<void>): void
+
+注册释放回调函数，调用release时，触发该回调执行。同一类型监听，注册多个回调函数，仅第一次注册有效。
+
+**元服务API：** 从版本5.0.3(15)开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.AI.Component.TextReader
+
+**起始版本：** 5.0.0(12)
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持的事件为'release'，调用release释放资源。 |
+| callback | Callback<void> | 是 | 触发release事件时执行的回调函数。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[ArkTS API错误码](speech-errorcode.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. |
+
+**示例：**
+
+```
+1. import { TextReader } from '@kit.SpeechKit';
+
+3. try {
+4. TextReader.on('release', () => {
+5. console.info(`Succeeded in setting releaseListener.`);
+6. });
+7. } catch (e) {
+8. console.error(`TextReader failed to set eventListener. Code: ${e.code}, message: ${e.message}`);
+9. }
+```
+
+## off('release')
+
+PhonePC/2in1Tablet
+
+off(type: 'release', callback?: Callback<void>): void
+
+在on(type: 'release')函数调用之后使用，用于注销release事件的回调函数。注销监听后，可以重新注册。
+
+**元服务API：** 从版本5.0.3(15)开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.AI.Component.TextReader
+
+**起始版本：** 5.0.0(12)
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持的事件为'release'，调用release释放资源。 |
+| callback | Callback<void> | 否 | 需要取消监听的回调函数，需与订阅时传入的回调函数是同一个，若不填，则取消当前应用监听该事件的所有回调函数。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[ArkTS API错误码](speech-errorcode.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. |
+
+**示例：**
+
+```
+1. import { TextReader } from '@kit.SpeechKit';
+
+3. try {
+4. TextReader.off('release');
+5. } catch (e) {
+6. console.error(`TextReader failed to unset eventListener. Code: ${e.code}, message: ${e.message}`);
+7. }
+```
+
+## on('stateChange')
 
 PhonePC/2in1Tablet
 
@@ -1371,7 +1693,7 @@ on(type: 'stateChange', callback: Callback<ReadState>): void
 9. }
 ```
 
-## off(type: 'stateChange')
+## off('stateChange')
 
 PhonePC/2in1Tablet
 
@@ -1390,7 +1712,7 @@ off(type: 'stateChange', callback?: Callback<ReadState>): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'stateChange'，当前正在播放的文章状态变更时，触发该事件。 |
-| callback | Callback<[ReadState](speech-textreader-api.md#readstate)> | 否 | 需要取消监听的回调函数，需与订阅时传入的回调函数是同一个，若不填，则取消当前应用监听该事件的所有回调函数（当前仅有一个）。 |
+| callback | Callback<[ReadState](speech-textreader-api.md#readstate)> | 否 | 需要取消监听的回调函数，需与订阅时传入的回调函数是同一个，若不填，则取消当前应用监听该事件的所有回调函数。 |
 
 **错误码：**
 
@@ -1412,7 +1734,7 @@ off(type: 'stateChange', callback?: Callback<ReadState>): void
 7. }
 ```
 
-## on(type: 'requestMore')
+## on('requestMore')
 
 PhonePC/2in1Tablet
 
@@ -1455,7 +1777,7 @@ on(type: 'requestMore', callback: Callback<void>): void
 9. }
 ```
 
-## on(type: 'requestMore')
+## on('requestMore')
 
 PhonePC/2in1Tablet
 
@@ -1496,7 +1818,7 @@ on(type: 'requestMore', callback: Callback<string>): void
 9. }
 ```
 
-## off(type: 'requestMore')
+## off('requestMore')
 
 PhonePC/2in1Tablet
 
@@ -1515,7 +1837,7 @@ off(type: 'requestMore', callback?: Callback<void>): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'requestMore'，请求更多文章时，触发该事件监听。 |
-| callback | Callback<void> | 否 | 需要取消监听的回调函数，需与订阅时传入的回调函数是同一个，若不填，则取消当前应用监听该事件的所有回调函数（当前仅有一个）。 |
+| callback | Callback<void> | 否 | 需要取消监听的回调函数，需与订阅时传入的回调函数是同一个，若不填，则取消当前应用监听该事件的所有回调函数。 |
 
 **错误码：**
 
@@ -1537,7 +1859,7 @@ off(type: 'requestMore', callback?: Callback<void>): void
 7. }
 ```
 
-## off(type: 'requestMore')
+## off('requestMore')
 
 PhonePC/2in1Tablet
 
@@ -1580,13 +1902,13 @@ off(type: 'requestMore', callback: Callback<string>): void
 9. }
 ```
 
-## on(type: 'eventNotification' | 'eventPanel')
+## on('eventNotification')
 
 PhonePC/2in1Tablet
 
-on(type: 'eventNotification' | 'eventPanel', callback: Callback<NotificationEvent| PanelEvent>): void
+on(type: 'eventNotification' , callback: Callback<NotificationEvent>): void
 
-注册播控中心/播放面板状态回调函数，播控中心/播放面板状态发生变化时，触发该回调执行。同一类型监听，注册多个回调函数，仅第一次注册有效。
+注册播控中心状态回调函数，播控中心状态发生变化时，触发该回调执行。同一类型监听，注册多个回调函数，仅第一次注册有效。
 
 **元服务API：** 从版本5.0.3(15)开始，该接口支持在元服务中使用。
 
@@ -1598,8 +1920,8 @@ on(type: 'eventNotification' | 'eventPanel', callback: Callback<NotificationEven
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 事件回调类型。  - 'eventNotification'：播控中心状态变化。  - 'eventPanel'：播放面板状态变化，其中[PanelEvent](speech-textreader-api.md#panelevent)中的BPC\_10 click事件回调只支持手机。 |
-| callback | Callback<[NotificationEvent](speech-textreader-api.md#notificationevent) | [PanelEvent](speech-textreader-api.md#panelevent)> | 是 | 播控中心/播放面板状态发生变化时，触发该回调执行。 |
+| type | string | 是 | 事件回调类型，支持的事件为'eventNotification'，播控中心状态变化,触发该事件。 |
+| callback | Callback<[NotificationEvent](speech-textreader-api.md#notificationevent)> | 是 | 播控中心状态发生变化时，触发该回调执行。 |
 
 **错误码：**
 
@@ -1618,21 +1940,18 @@ on(type: 'eventNotification' | 'eventPanel', callback: Callback<NotificationEven
 4. TextReader.on('eventNotification', (ne: TextReader.NotificationEvent) => {
 5. console.info(`Succeeded in setting eventNotificationListener: ${JSON.stringify(ne)}`);
 6. });
-7. TextReader.on('eventPanel', (pe: TextReader.PanelEvent) => {
-8. console.info(`Succeeded in setting eventPanelListener: ${JSON.stringify(pe)}`);
-9. });
-10. } catch (e) {
-11. console.error(`TextReader failed to set eventListener. Code: ${e.code}, message: ${e.message}`);
-12. }
+7. } catch (e) {
+8. console.error(`TextReader failed to set eventListener. Code: ${e.code}, message: ${e.message}`);
+9. }
 ```
 
-## off(type: 'eventNotification' | 'eventPanel')
+## off('eventNotification')
 
 PhonePC/2in1Tablet
 
-off(type: 'eventNotification' | 'eventPanel', callback?: Callback<NotificationEvent | PanelEvent>): void
+off(type: 'eventNotification', callback?: Callback<NotificationEvent>): void
 
-在on(type: 'eventNotification' | 'eventPanel')函数调用之后使用，用于注销播控中心、播放面板状态发生变化的回调函数。注销监听后，可以重新注册。
+在on(type: 'eventNotification')函数调用之后使用，用于注销播控中心状态发生变化的回调函数。注销监听后，可以重新注册。
 
 **元服务API：** 从版本5.0.3(15)开始，该接口支持在元服务中使用。
 
@@ -1644,8 +1963,92 @@ off(type: 'eventNotification' | 'eventPanel', callback?: Callback<NotificationEv
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 事件回调类型。  - 'eventNotification'：播控中心状态变化。  - 'eventPanel'：播放面板状态变化。 |
-| callback | Callback<[NotificationEvent](speech-textreader-api.md#notificationevent) | [PanelEvent](speech-textreader-api.md#panelevent)> | 否 | 需要取消监听的回调函数，需与订阅时传入的回调函数是同一个，若不填，则取消当前应用监听该事件的所有回调函数（当前仅有一个）。 |
+| type | string | 是 | 事件回调类型。事件回调类型，支持的事件为'eventNotification'，注销该事件。 |
+| callback | Callback<[NotificationEvent](speech-textreader-api.md#notificationevent)> | 否 | 需要取消监听的回调函数，需与订阅时传入的回调函数是同一个，若不填，则取消当前应用监听该事件的所有回调函数。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[ArkTS API错误码](speech-errorcode.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. |
+
+**示例：**
+
+```
+1. import { TextReader } from '@kit.SpeechKit';
+
+3. try {
+4. TextReader.off('eventNotification');
+5. } catch (e) {
+6. console.error(`TextReader failed to unset eventListener. Code: ${e.code}, message: ${e.message}`);
+7. }
+```
+
+## on('eventPanel')
+
+PhonePC/2in1Tablet
+
+on(type: 'eventPanel', callback: Callback<PanelEvent>): void
+
+注册播放面板状态回调函数，播放面板状态发生变化时，触发该回调执行。同一类型监听，注册多个回调函数，仅第一次注册有效。
+
+**元服务API：** 从版本5.0.3(15)开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.AI.Component.TextReader
+
+**起始版本：** 5.0.0(12)
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持的事件为'eventPanel'，播放面板状态变化，其中[PanelEvent](speech-textreader-api.md#panelevent)中的BPC\_10 click事件回调只支持手机。 |
+| callback | Callback<[PanelEvent](speech-textreader-api.md#panelevent)> | 是 | 播放面板状态发生变化时，触发该回调执行。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[ArkTS API错误码](speech-errorcode.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. |
+
+**示例：**
+
+```
+1. import { TextReader } from '@kit.SpeechKit';
+
+3. try {
+4. TextReader.on('eventPanel', (pe: TextReader.PanelEvent) => {
+5. console.info(`Succeeded in setting eventPanelListener: ${JSON.stringify(pe)}`);
+6. });
+7. } catch (e) {
+8. console.error(`TextReader failed to set eventListener. Code: ${e.code}, message: ${e.message}`);
+9. }
+```
+
+## off('eventPanel')
+
+PhonePC/2in1Tablet
+
+off(type: 'eventPanel', callback?: Callback<PanelEvent>): void
+
+在on(type: 'eventPanel')函数调用之后使用，用于播放面板状态发生变化的回调函数。注销监听后，可以重新注册。
+
+**元服务API：** 从版本5.0.3(15)开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.AI.Component.TextReader
+
+**起始版本：** 5.0.0(12)
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 事件回调类型，支持的事件为'eventPanel'，播放面板状态变化。 |
+| callback | Callback<[PanelEvent](speech-textreader-api.md#panelevent)> | 否 | 需要取消监听的回调函数，需与订阅时传入的回调函数是同一个，若不填，则取消当前应用监听该事件的所有回调函数。 |
 
 **错误码：**
 
@@ -1668,7 +2071,7 @@ off(type: 'eventNotification' | 'eventPanel', callback?: Callback<NotificationEv
 8. }
 ```
 
-## on(type: 'eventReadList')
+## on( 'eventReadList')
 
 PhonePC/2in1Tablet
 
@@ -1713,7 +2116,7 @@ on(type: 'eventReadList', callback: Callback<Array<ListEventState>>): void
 11. }
 ```
 
-## off(type: 'eventReadList')
+## off('eventReadList')
 
 PhonePC/2in1Tablet
 
@@ -1732,7 +2135,7 @@ off(type: 'eventReadList', callback?: Callback<Array<ListEventState>>): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'eventReadList'。 |
-| callback | Callback<Array<[ListEventState](speech-textreader-api.md#listeventstate)>> | 否 | 需要取消监听的回调函数，需与订阅时传入的回调函数是同一个，若不填，则取消当前应用监听该事件的所有回调函数（当前仅有一个）。 |
+| callback | Callback<Array<[ListEventState](speech-textreader-api.md#listeventstate)>> | 否 | 需要取消监听的回调函数，需与订阅时传入的回调函数是同一个，若不填，则取消当前应用监听该事件的所有回调函数。 |
 
 **错误码：**
 
@@ -1754,7 +2157,7 @@ off(type: 'eventReadList', callback?: Callback<Array<ListEventState>>): void
 7. }
 ```
 
-## on(type: 'readProgress')
+## on('readProgress')
 
 PhonePC/2in1Tablet
 
@@ -1797,7 +2200,7 @@ on(type: 'readProgress', callback: Callback<ReadProgress>): void
 9. }
 ```
 
-## off(type: 'readProgress')
+## off('readProgress')
 
 PhonePC/2in1Tablet
 
@@ -1816,7 +2219,7 @@ off(type: 'readProgress', callback?: Callback<ReadProgress>): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'readProgress'。 |
-| callback | Callback<[ReadProgress](speech-textreader-api.md#readprogress)> | 否 | 需要取消监听的回调函数，需与订阅时传入的回调函数是同一个，若不填，则取消当前应用监听该事件的所有回调函数（当前仅有一个）。 |
+| callback | Callback<[ReadProgress](speech-textreader-api.md#readprogress)> | 否 | 需要取消监听的回调函数，需与订阅时传入的回调函数是同一个，若不填，则取消当前应用监听该事件的所有回调函数。 |
 
 **错误码：**
 

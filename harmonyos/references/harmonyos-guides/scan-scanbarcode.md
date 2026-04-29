@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scan-scanbarc
 title: 默认界面扫码
 breadcrumb: 指南 > 媒体 > Scan Kit（统一扫码服务） > 默认界面扫码
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:46:41+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:a3ac44c8cbad6c9a914d2f2d9e60b4891b77215d529dfabb616206ad2b1c5e5a
+scraped_at: 2026-04-29T13:35:40+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:e1cb8aedb61569e8bcf71de81211c760348719029403e71fa3f6cc72f713a274
 ---
 
 ## 基本概念
@@ -22,7 +22,7 @@ content_hash: sha256:a3ac44c8cbad6c9a914d2f2d9e60b4891b77215d529dfabb616206ad2b1
 
 默认界面扫码UX：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/N6RzuhnTRiWqnGFLigDvMw/zh-cn_image_0000002583438657.png?HW-CC-KV=V1&HW-CC-Date=20260427T234640Z&HW-CC-Expire=86400&HW-CC-Sign=D7E176E5DB27B95B9BCB8CFDEE08CF771C5B63AEC0BB27F6D449A64E22E7DC75)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/1h5-85qdQCOZnZF5POXCmg/zh-cn_image_0000002589244917.png?HW-CC-KV=V1&HW-CC-Date=20260429T053539Z&HW-CC-Expire=86400&HW-CC-Sign=46C24AD9CE001A96187589D7AB3F74BB97C3EF77F543E6EE0A61A7519ECD7C68)
 
 说明
 
@@ -49,7 +49,7 @@ content_hash: sha256:a3ac44c8cbad6c9a914d2f2d9e60b4891b77215d529dfabb616206ad2b1
 
 使用默认界面扫码的主要业务流程如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/mSxNHHw0SKKm0lwZKf0OQQ/zh-cn_image_0000002552958612.png?HW-CC-KV=V1&HW-CC-Date=20260427T234640Z&HW-CC-Expire=86400&HW-CC-Sign=DE75A60D45C7CC5F60F47ACA841101210A52CA8E92CC8B34AD9BD8FDDDFACF8F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/avU2JV9fR5KaF3gkeCzhcA/zh-cn_image_0000002558765112.png?HW-CC-KV=V1&HW-CC-Date=20260429T053539Z&HW-CC-Expire=86400&HW-CC-Sign=AB648BE3D2B08FCD7077FFF7FCC9EACEE0B8A388DA7D38D4E6597105FEDE22F4)
 
 1. 用户向开发者的应用发起扫码请求。
 2. 开发者的应用通过调用Scan Kit的startScanForResult接口启动扫码界面。
@@ -100,7 +100,7 @@ Scan Kit提供了默认界面扫码的能力，由扫码接口直接控制相机
      4. build() {
      5. Column() {
      6. Row() {
-     7. Button("Promise with options")
+     7. Button('Promise with options')
      8. .backgroundColor('#0D9FFB')
      9. .fontSize(20)
      10. .fontColor($r('sys.color.comp_background_list_card'))
@@ -179,7 +179,7 @@ Scan Kit提供了默认界面扫码的能力，由扫码接口直接控制相机
      33. // 解析码值结果跳转应用服务页
      34. hilog.info(0x0001, '[Scan CPSample]',
      35. `Succeeded in getting ScanResult by callback with options, result is ${JSON.stringify(data)}`);
-     36. })
+     36. });
      37. } catch (err) {
      38. hilog.error(0x0001, '[Scan CPSample]',
      39. `Failed to start the scanning service. Code:${err.code}, message: ${err.message}`);

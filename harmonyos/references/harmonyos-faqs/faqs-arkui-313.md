@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-313
 title: 如何使用canvas绘制圆角矩形
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 方舟UI框架（ArkUI） > 如何使用canvas绘制圆角矩形
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:26:19+08:00
+scraped_at: 2026-04-29T14:17:20+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:e224aa078ac6556beb87200a25014565443cffa67b55d32841a29b99dfb65831
+content_hash: sha256:fba47011cb7b40d931605db39ccc9933aa270a5ec304eeaabd894ebc3ab2c07e
 ---
 
 利用[CanvasRenderingContext2D](../harmonyos-references/ts-canvasrenderingcontext2d.md)对象的arc绘制弧形路径，结合lineTo方法绘制直线，参考代码如下：
@@ -74,4 +74,4 @@ content_hash: sha256:e224aa078ac6556beb87200a25014565443cffa67b55d32841a29b99dfb
 
 实现效果图如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/Xw_riQDsQQmEzHOElDKNZQ/zh-cn_image_0000002229758593.png?HW-CC-KV=V1&HW-CC-Date=20260428T002617Z&HW-CC-Expire=86400&HW-CC-Sign=A2CB5727AACEBDD93F93286AA5D8E61A7A9B758E7610AFBB3EF76BE6711BBD5D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/Xw_riQDsQQmEzHOElDKNZQ/zh-cn_image_0000002229758593.png?HW-CC-KV=V1&HW-CC-Date=20260429T061717Z&HW-CC-Expire=86400&HW-CC-Sign=BB90EF80FAD5F03C7FA981F2EA0D6C8BFCF43673AC397D0512886606D9A74D3A)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ndk-35
 title: Native侧如何使用hilog打印出日志信息
 breadcrumb: FAQ > 应用框架开发 > NDK开发 > NDK开发 > Native侧如何使用hilog打印出日志信息
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:24:34+08:00
+scraped_at: 2026-04-29T14:15:52+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:9f9d7a0c1ca30d239be401623bd85ef4ebb95be0809c6153bd0061a830b221a2
+content_hash: sha256:3cc5d386b4f12c240e8297b3511e5133e2c6c3b743e30ab0e0f7531b3640687e
 ---
 
 1.在CMakeLists.txt中新增libhilog\_ndk.z.so链接：
@@ -41,7 +41,7 @@ content_hash: sha256:9f9d7a0c1ca30d239be401623bd85ef4ebb95be0809c6153bd0061a830b
 
 结果展示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/btiSFL7DS-mQRoQRZShn9g/zh-cn_image_0000002194318320.png?HW-CC-KV=V1&HW-CC-Date=20260428T002433Z&HW-CC-Expire=86400&HW-CC-Sign=FB6141976ADDD80C1298A7772BA70B58EA1E25551C77D0FFFDD1A8E1D24A25D7 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/btiSFL7DS-mQRoQRZShn9g/zh-cn_image_0000002194318320.png?HW-CC-KV=V1&HW-CC-Date=20260429T061551Z&HW-CC-Expire=86400&HW-CC-Sign=6732B999D31AE83D3A4C5D576D0F9CB7CFD9235BE69EFCFA5CB7783CAEA661C8 "点击放大")
 
 **参考链接：**
 

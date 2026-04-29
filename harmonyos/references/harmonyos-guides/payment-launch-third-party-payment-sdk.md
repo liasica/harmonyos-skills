@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/payment-launc
 title: 基于接口拉起方式
 breadcrumb: 指南 > 应用服务 > Payment Kit（鸿蒙支付服务） > 通用收银台接入 > 拉起三方支付收银台 > 基于接口拉起方式
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:50:10+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:6fbbbc67b26cd4183e1db48c920270f925a65563194ea5f3824e56d998255da7
+scraped_at: 2026-04-29T13:39:33+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:7d6c97c21ac3aaf08e06f8e897e31989f16fc3d2f82cc278798eb2866fb4bba0
 ---
 
 说明
@@ -69,9 +69,9 @@ content_hash: sha256:6fbbbc67b26cd4183e1db48c920270f925a65563194ea5f3824e56d9982
    8. onNewWant(want: Want): void {
    9. // 需要和拉起支付收银台的三方支付客户端对象为同一个
    10. if (thirdPayClient) {
-   11. hilog.info(0x0000, 'testTag', '%{public}s','clientForThirdPayment handlePayCallback');
+   11. console.info('clientForThirdPayment handlePayCallback');
    12. let handlePayCallback = thirdPayClient.handlePayCallback(want);
-   13. hilog.info(0x0000, 'testTag', 'clientForThirdPayment handlePayCallback result: %{public}s', handlePayCallback);
+   13. console.info(`clientForThirdPayment handlePayCallback result: ${handlePayCallback}`);
    14. }
    15. }
    16. }

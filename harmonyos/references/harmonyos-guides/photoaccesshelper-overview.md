@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/photoaccesshe
 title: Media Library Kit 简介
 breadcrumb: 指南 > 媒体 > Media Library Kit（媒体文件管理服务） > Media Library Kit 简介
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:46:34+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:05bacc9aab32ee30a5cd7b625d51ac1b65cb6f66a45c90226978413ad789782a
+scraped_at: 2026-04-29T13:35:34+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:2363fb9f2dc82196c2301f315cc4ccc7b158d0b229c9b669a215079716c6c204
 ---
 
 Media Library Kit（媒体文件管理服务）提供了管理相册和媒体文件的能力，包括图片和视频，帮助应用快速构建图片和视频的展示与播放功能。
@@ -33,7 +33,7 @@ Media Library Kit（媒体文件管理服务）提供了管理相册和媒体文
 
 注意
 
-受限开放的能力需要[申请相册管理模块功能相关权限](photoaccesshelper-preparation.md#申请相册管理模块功能相关权限)。这部分权限为受控开放，通常是不允许三方应用申请的。如果有特殊场景需要使用，请提供相关申请材料到应用市场（AGC）申请相应权限证书。
+受限开放的能力需要[申请相册管理模块功能相关权限](photoaccesshelper-preparation.md#申请相册管理模块功能相关权限)。这部分权限为受控开放，通常是不允许三方应用申请的。如果有特殊场景需要使用，请提供相关申请材料到AppGallery Connect申请相应权限证书。
 
 * [媒体资源使用指导](photoaccesshelper-resource-guidelines.md)，包括：
   + 获取指定媒体资源。

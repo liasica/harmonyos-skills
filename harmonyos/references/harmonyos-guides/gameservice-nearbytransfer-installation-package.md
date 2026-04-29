@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/gameservice-n
 title: 传输安装包
 breadcrumb: 指南 > 应用服务 > Game Service Kit（游戏服务） > 游戏近场快传（可选） > 开发指导 > 传输安装包
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:49:06+08:00
+scraped_at: 2026-04-29T13:38:13+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:fab2cb2114ae90d1208717d01fc675341d078c36c9840f5dc962d6490739c813
+content_hash: sha256:32d3edd75460a170714e4c9ca0718281578f328f03e81e492e0a35bb45e22a91
 ---
 
 游戏近场快传支持已安装游戏的玩家通过碰一碰或隔空传送将游戏安装包传输给未安装游戏的玩家，实现游戏传播效率的提升。
@@ -16,7 +16,7 @@ content_hash: sha256:fab2cb2114ae90d1208717d01fc675341d078c36c9840f5dc962d649073
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/vVT3-NjAQvGqTZ8HWGTs9A/zh-cn_image_0000002583478905.png?HW-CC-KV=V1&HW-CC-Date=20260427T234905Z&HW-CC-Expire=86400&HW-CC-Sign=EADFB3B5D847A2383D3B6613334510E18983386454ED41C5778D24E4C6AF6F8B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/B1AcRglwSXalc4RBNvOKXg/zh-cn_image_0000002558605748.png?HW-CC-KV=V1&HW-CC-Date=20260429T053812Z&HW-CC-Expire=86400&HW-CC-Sign=E92F9C0C824E1DF4FC49A2AF9B19B27B80D790D7A8DF1A36440227319418B985)
 
 1. 发送端设备打开游戏后与接收端设备通过[碰一碰](knock-share-between-phones-overview.md)或[隔空传送](gestures-share-overview.md)触发安装包传输。
 2. 发送端调用[create](../harmonyos-references/gameservice-nearbytransfer.md#gamenearbytransfercreate)创建安装包传输任务。

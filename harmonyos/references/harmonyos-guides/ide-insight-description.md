@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-insight-d
 title: 性能调优工具简介
 breadcrumb: 指南 > 优化应用性能 > 性能调优工具简介
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:57:29+08:00
-doc_updated_at: 2026-01-15
-content_hash: sha256:1b21223475b7130556aa3052ece299cfda285090b40c46ebe95fc2e31eb6f6c2
+scraped_at: 2026-04-29T13:47:30+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:9d048aac01b8644a5f60c560985b55065e08330619b7bcad1d808e7298e92a0a
 ---
 
 应用或元服务运行期间可能出现响应速度慢、动画播放不流畅、列表拖动卡顿、应用崩溃或耗电量过高、发烫、交互延迟等现象，这些现象表明应用或元服务可能存在性能问题。造成性能问题的原因可能是业务逻辑、应用代码对系统API的误用、对ArkTS对象的不合理持有导致内存泄漏等，引起对系统资源不合理使用，包括对CPU、内存、网络、文件、GPU以及其他外设器件的冗余占用，进而引发性能问题。
@@ -24,4 +24,4 @@ content_hash: sha256:1b21223475b7130556aa3052ece299cfda285090b40c46ebe95fc2e31eb
 
 **[DevEco Profiler](ide-profiler.md)**提供实时监控（Realtime Monitor）能力，提供全方位的设备资源监测，覆盖系统事件、异常报告、CPU占用、内存占用、实时帧率、GPU使用率、能耗以及网络流量消耗等多个维度的数据，自顶向下逐层展开分析，并可借助DevEco Profiler跳转到代码位置，结合代码进行白盒分析，明确不合理的负载出现位置，帮助识别性能瓶颈，定界问题所在，提高解决问题的效率。
 
-优化应用性能节点集中介绍DevEco Profiler工具，CodeLinter和AppAnalyzer请根据链接进行参考。
+优化应用性能章节集中介绍DevEco Profiler工具，CodeLinter和AppAnalyzer请根据链接进行参考。

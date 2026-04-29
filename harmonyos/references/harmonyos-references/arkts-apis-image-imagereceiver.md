@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (ImageReceiver)
 breadcrumb: API参考 > 媒体 > Image Kit（图片处理服务） > ArkTS API > @ohos.multimedia.image (图片处理) > Interface (ImageReceiver)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:13:10+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:4c0d4e38de0ec993b37a528aa61d2c84b1b1268bc7ceb889b57627c7cb49fb37
+scraped_at: 2026-04-29T14:03:47+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:3bf1a9d48c84a93a6daf4d500e292a4329822f6ab9e1a314a5448cba8b431ae6
 ---
 
 ImageReceiver类，用于获取组件surface id、接收最新的图片和读取下一张图片以及释放ImageReceiver实例。ImageReceiver作为图片的接收方和消费者，其参数属性实际上不会对接收到的图片产生影响。图片属性的配置应在发送方和生产者上进行，如相机预览流[createPreviewOutput](arkts-apis-camera-cameramanager.md#createpreviewoutput)。
@@ -257,7 +257,7 @@ on(type: 'imageArrival', callback: AsyncCallback<void>): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 注册事件的类型，固定为'imageArrival'，接收图片时触发。 |
+| type | string | 是 | 注册事件的类型，固定为'imageArrival'，接收图片到达时触发。 |
 | callback | AsyncCallback<void> | 是 | 回调函数，当注册事件触发成功，err为undefined，否则为错误对象。 |
 
 **示例：**

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: dialog
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 容器组件 > dialog
 category: harmonyos-references
-scraped_at: 2026-04-28T08:02:55+08:00
+scraped_at: 2026-04-29T13:53:17+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:674c38195159627114326fd9c2833d25b74ca283ee8296f697fbbebd4c99e4e1
+content_hash: sha256:e1b1a07715827d958e0735f6f8abcb8efaa9d9ed00399d06d057011a11481385
 ---
 
 说明
@@ -178,4 +178,4 @@ PhonePC/2in1TabletTVWearable
 29. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/z3SRNOabQgSvccWDeC3Lkg/zh-cn_image_0000002552960178.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000255Z&HW-CC-Expire=86400&HW-CC-Sign=81C66E13C4C41859BC3EE065B00E4128F2D3631B042270381DFD6D0F0B402410)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/7vn0674ITEyHHJ9w2TcCCg/zh-cn_image_0000002558607044.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055316Z&HW-CC-Expire=86400&HW-CC-Sign=837E5C9F37F70872C9BACF7FC9C9832A5194D774E638CD1BFD874ACA74E4E15B)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-emulator-
 title: 模拟器错误码
 breadcrumb: 指南 > 编写与调试应用 > 使用模拟器运行应用 > 模拟器错误码
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:56:44+08:00
+scraped_at: 2026-04-29T13:46:39+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:6416f7e93259d7a8868a8885c9c41900520d45e32db75ed154831a5cb73c06d6
+content_hash: sha256:0548b89b7a460cb952d0892b552ade63425faae8b5e89d7d0c2d3161d97a4245
 ---
 
 当模拟器运行出现错误时，您可以向我们提交错误信息。在扩展菜单栏打开**Bug报告**界面：
@@ -15,7 +15,7 @@ content_hash: sha256:6416f7e93259d7a8868a8885c9c41900520d45e32db75ed154831a5cb73
 * 在日志文件内容中，可以查看收集的日志内容。
 * 在界面右下方勾选同意用户协议后，点击**保存并发送**按钮，即可将问题和Bug日志传递给我们。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/iq6aLwaDRjujG_fJs8Fh2g/zh-cn_image_0000002561831011.png?HW-CC-KV=V1&HW-CC-Date=20260427T235643Z&HW-CC-Expire=86400&HW-CC-Sign=5901CFD7DBB081F413FCC7FC04F13F5E9F6C65EFD78B71D6F4D884679A01F557)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/-l6RNf8LRjSfk40Rkw5CMQ/zh-cn_image_0000002561831011.png?HW-CC-KV=V1&HW-CC-Date=20260429T054638Z&HW-CC-Expire=86400&HW-CC-Sign=19D8806613A646BC7D6E1B841481493B60C53E03C1E283D48CD9628969CA257A)
 
 ## 00801001 未开启Hyper-V
 
@@ -39,7 +39,7 @@ Hyper-V Not Enabled.
    * 如果不存在，说明系统未预装Hyper-V，请根据系统版本先安装Hyper-V。
    * 如果存在，勾选这三个功能，点击确定并重启电脑。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/y2TTyABgRJapK3gvHFAEGQ/zh-cn_image_0000002530751086.png?HW-CC-KV=V1&HW-CC-Date=20260427T235643Z&HW-CC-Expire=86400&HW-CC-Sign=36008EFECC57E8AA77060D9765C4F8422AE843E7F8E2B55CE2F628BA8A39B3FC)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/BYsfTu3pTKylTO84GTPlfQ/zh-cn_image_0000002530751086.png?HW-CC-KV=V1&HW-CC-Date=20260429T054638Z&HW-CC-Expire=86400&HW-CC-Sign=BC624CA12EC06EAE314EC1C2818F2BC8361941BB4021EC88D820483D04592F0C)
 3. 若勾选后启动模拟器仍然提示该错误，需要以管理员权限打开命令行窗口执行以下命令，并重启电脑。
 
    ```
@@ -47,7 +47,7 @@ Hyper-V Not Enabled.
    ```
 4. 如果按照上述步骤无法解决，打开**任务管理器->性能**，若显示虚拟化已禁用或未开启，则是BIOS中虚拟化没有开启，请根据计算机的主板型号，进入BIOS设置界面，并开启虚拟化功能。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/54AYw6uGRCqo4uBAKHdGfw/zh-cn_image_0000002530911074.png?HW-CC-KV=V1&HW-CC-Date=20260427T235643Z&HW-CC-Expire=86400&HW-CC-Sign=9731CC82E92A688C0EBF39C240C907039159CCC87936B3AA3A3160C5FEB6F8DC)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/UYoCeSKcRx6phv_ogj3MkA/zh-cn_image_0000002530911074.png?HW-CC-KV=V1&HW-CC-Date=20260429T054638Z&HW-CC-Expire=86400&HW-CC-Sign=BEEADF3203AB9CF88922ABB3D833AA4D68FF19EA5F1AFDAB2B53D4A902078775)
 
 更多关于Hyper-V安装请参考[在 Windows 上安装 Hyper-V](https://learn.microsoft.com/zh-cn/windows-server/virtualization/hyper-v/get-started/Install-Hyper-V?f=255&MSPPError=-2147217396)和[Hyper-V 系统要求](https://learn.microsoft.com/zh-cn/windows-server/virtualization/hyper-v/host-hardware-requirements)。
 
@@ -124,10 +124,10 @@ Emulator failed to start due to insufficient memory.
 
 1. 首先打开**任务管理器>详细信息**，在列表表头右键**>选择列**，找到并勾选“**提交大小**”，点击“**提交大小**”列进行排序，关闭部分提交大小占用高的进程。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/J9JWVJlCSYaews2EFfSxig/zh-cn_image_0000002561831013.png?HW-CC-KV=V1&HW-CC-Date=20260427T235643Z&HW-CC-Expire=86400&HW-CC-Sign=7DBB5EC8B4979692626C76FD57D8FA1358BDF761939F90D5020064753A38223A)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/8vHSiovZRyCUBCpMAmCQZg/zh-cn_image_0000002561831013.png?HW-CC-KV=V1&HW-CC-Date=20260429T054638Z&HW-CC-Expire=86400&HW-CC-Sign=37533E21F0587DE80A00ED89E045F502EA5B2286A75C1F99B1F14E09B503634B)
 2. 打开**任务管理器>性能>内存**页面，确保已提交内存的剩余量大于模拟器设置的RAM大小。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/XhXGSCYMRGePkbT8rOtlzw/zh-cn_image_0000002561831015.png?HW-CC-KV=V1&HW-CC-Date=20260427T235643Z&HW-CC-Expire=86400&HW-CC-Sign=819114E6A9AE77A5CE75438F5E5F778D81C37846BE0CD9A99BFFFD6551442CAF)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/t-W2mCiAQjmJLr7JQTS0jA/zh-cn_image_0000002561831015.png?HW-CC-KV=V1&HW-CC-Date=20260429T054638Z&HW-CC-Expire=86400&HW-CC-Sign=EE3DB902FA91019F0B90C0BC1879CA60C96306A2C5EC0EC1B6DAA4C2B79A5FD6)
 
 ## 00801006 Windows系统版本过低
 

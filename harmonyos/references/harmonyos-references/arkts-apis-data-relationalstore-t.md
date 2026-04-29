@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Types
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > ArkTS API > @ohos.data.relationalStore (关系型数据库) > Types
 category: harmonyos-references
-scraped_at: 2026-04-28T07:59:18+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:4b2f602d8539a3de89a73354f04aedf1c7d297254ba7923c54f306ffdc92109c
+scraped_at: 2026-04-29T13:49:31+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:6e5c54504ba932e02a572634efa95bb0932590de4771d76f42450ffdecb834b6
 ---
 
 说明
@@ -38,11 +38,11 @@ type ValueType = null | number | string | boolean | Uint8Array | Asset | Assets 
 
 | 类型 | 说明 |
 | --- | --- |
-| null10+ | 表示值类型为空。 |
+| null | 表示值类型为空。 |
 | number | 表示值类型为数字。 |
 | string | 表示值类型为字符串。 |
 | boolean | 表示值类型为布尔值。 |
-| Uint8Array10+ | 表示值类型为Uint8类型的数组。 |
+| Uint8Array | 表示值类型为Uint8类型的数组。 |
 | Asset10+ | 表示值类型为附件[Asset](arkts-apis-data-relationalstore-i.md#asset10)。  当字段类型是Asset时，在创建表的sql语句中，类型应当为：ASSET。 |
 | Assets10+ | 表示值类型为附件数组[Assets](arkts-apis-data-relationalstore-t.md#assets10)。  当字段类型是Assets时，在创建表的sql语句中，类型应当为：ASSETS。 |
 | Float32Array12+ | 表示值类型为浮点数组。  当字段类型是Float32Array时，在创建表的sql语句中，类型应当为：floatvector(128)。 |

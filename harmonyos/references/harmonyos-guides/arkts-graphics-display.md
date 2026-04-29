@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-graphic
 title: 显示图片 (Image)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 媒体展示 > 显示图片 (Image)
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:39:38+08:00
+scraped_at: 2026-04-29T13:27:48+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:efaabeb169584864bb6da2ead80047d1051141795221da92623321edddc5b059
+content_hash: sha256:1ded3229ec391b1fd6ebe3113c05a4f771ad073da9bc658930d3d7f75261ea2b
 ---
 
 开发者经常需要在应用中显示一些图片，例如：按钮中的icon、网络图片、本地图片等。在应用中显示图片需要使用Image组件实现，Image支持多种图片格式，包括png、jpg、jpeg等格式，不支持apng和svga格式，具体支持格式和用法请参考[Image](../harmonyos-references/ts-basic-components-image.md)组件。
@@ -80,7 +80,7 @@ Image支持加载存档图、多媒体像素图和可绘制描述符三种类型
 
   **图1** resources
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/7AQfSzoJT5W7YbcmewlK6Q/zh-cn_image_0000002583477857.jpg?HW-CC-KV=V1&HW-CC-Date=20260427T233936Z&HW-CC-Expire=86400&HW-CC-Sign=9297A8F3E18490C10FD9DC730D02F430583929292A3CB7EC270167A84F3B0CF3)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/qH43FZsdTWiD6DCGRoVTcA/zh-cn_image_0000002589244155.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T052746Z&HW-CC-Expire=86400&HW-CC-Sign=CA77BD64D9F36BA856F82B410C9A90CE7407C5E89B13E59DFF09E9D1D2DA5F2B)
 
   调用方式：
 
@@ -95,7 +95,7 @@ Image支持加载存档图、多媒体像素图和可绘制描述符三种类型
 
   **图2** rawfile
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/xhP7lHrtQFmbBHTpB9V2oQ/zh-cn_image_0000002552798208.jpg?HW-CC-KV=V1&HW-CC-Date=20260427T233936Z&HW-CC-Expire=86400&HW-CC-Sign=7C31B0D8AF8FE9D2CE3B438F21C13CE80A88F12C5A90B4C1E8E4EC27FFC84ED2)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/Q0ydIK1SRG6Q1mcrHnH7ZA/zh-cn_image_0000002558764348.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T052746Z&HW-CC-Expire=86400&HW-CC-Sign=FF0103FC2B498AAD2FB110B337B38AB05C2258A7AA33B2FCA7AC0915F9FDAD33)
 
   调用方式：
 
@@ -361,7 +361,7 @@ DrawableDescriptor是ArkUI提供的一种高级图片抽象机制，它通过将
 
 [DrawableDescriptor.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ImageComponent/entry/src/main/ets/pages/DrawableDescriptor.ets#L17-L132)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/hayRJnQuT6aB-1HETUGmzg/zh-cn_image_0000002583437903.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233936Z&HW-CC-Expire=86400&HW-CC-Sign=AF846362EF9750F43D2949EA1938B2041B283CDBAB4A95DED0D4E99991BE6E26)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/sWFG98ixRNyfHIGBqaR4yA/zh-cn_image_0000002558604692.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052746Z&HW-CC-Expire=86400&HW-CC-Sign=42E619C359EB22A4D8068B79F725F005DCDEADB3C85BE748EF4A25B9CCF9325E)
 
 ## 显示矢量图
 
@@ -382,11 +382,11 @@ SVG格式的图片可以使用fillColor属性改变图片的绘制颜色。
 
 **图3** 原始图片
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/bbqwE6pvRZCfBXNw2WhVIw/zh-cn_image_0000002552957858.png?HW-CC-KV=V1&HW-CC-Date=20260427T233936Z&HW-CC-Expire=86400&HW-CC-Sign=4CA7422607F5E1BF3D46062F7960D7762A4239FAE725434D1B640D43976C1581)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/JkVF9JeTS2WSHYKa07e1-g/zh-cn_image_0000002589324217.png?HW-CC-KV=V1&HW-CC-Date=20260429T052746Z&HW-CC-Expire=86400&HW-CC-Sign=F32EDBEEDD0CDDE5DCCE2836DBE1AF1AA910EDDAEBD604DB8CA45D7D874E77D8)
 
 **图4** 设置绘制颜色后的SVG图片
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/zm19a1bEShiqRoIffeK3gA/zh-cn_image_0000002583477859.png?HW-CC-KV=V1&HW-CC-Date=20260427T233936Z&HW-CC-Expire=86400&HW-CC-Sign=81A43E5F33A2FE8E60F7D261E4B3BD50778EBD969C3A23DCBBE99AB3C27B4A21)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/zbjtU9yOTK2x-hEfuyznDw/zh-cn_image_0000002589244157.png?HW-CC-KV=V1&HW-CC-Date=20260429T052746Z&HW-CC-Expire=86400&HW-CC-Sign=498A3ABAE20CFE06A0924421D9B80AEFF61AF67327D295896AF14A2F41A19FD0)
 
 ### 矢量图引用位图
 
@@ -413,7 +413,7 @@ SVG图源通过<image>标签的xlink:href属性指定本地位图路径，本地
 
 文件工程路径示例如图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/zx0vw1SJTxSUZb1DhhMScw/zh-cn_image_0000002552798210.png?HW-CC-KV=V1&HW-CC-Date=20260427T233936Z&HW-CC-Expire=86400&HW-CC-Sign=BD43AC0D13483E48F087D9205B8437B043E4DA5FAE146C3F25458CDFD9D50C03)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/ZH4Gla4ZSImsV5iRU5Ep6A/zh-cn_image_0000002558764350.png?HW-CC-KV=V1&HW-CC-Date=20260429T052746Z&HW-CC-Expire=86400&HW-CC-Sign=58C064B86BA2EDB7152717F41C6EBC9CD4262C782540328755322ED14FC19396)
 
 ## 添加属性
 
@@ -511,7 +511,7 @@ SVG图源通过<image>标签的xlink:href属性指定本地位图路径，本地
 
 [SetImageZoomType.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ImageComponent/entry/src/main/ets/pages/SetImageZoomType.ets#L17-L101)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/Iaox2KGFRu63A1gkBnnd2g/zh-cn_image_0000002583437905.png?HW-CC-KV=V1&HW-CC-Date=20260427T233936Z&HW-CC-Expire=86400&HW-CC-Sign=24F28C9FFE421269EC1D31094AAF2F32957865C35844EECAC4EAD1DFF7A70C1A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/RkQCoj0gTu-jwq0HRSP7jA/zh-cn_image_0000002558604694.png?HW-CC-KV=V1&HW-CC-Date=20260429T052746Z&HW-CC-Expire=86400&HW-CC-Sign=36CD5D075B109E52A9E592EFBF4AF920FB3282C14908FFB0D27EA59CA242EC97)
 
 ### 图片插值
 
@@ -574,7 +574,7 @@ SVG图源通过<image>标签的xlink:href属性指定本地位图路径，本地
 
 [ImageInterpolation.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ImageComponent/entry/src/main/ets/pages/ImageInterpolation.ets#L16-L69)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/wycmyAysQaiyyTb05SmECw/zh-cn_image_0000002552957860.png?HW-CC-KV=V1&HW-CC-Date=20260427T233936Z&HW-CC-Expire=86400&HW-CC-Sign=F7B22C2D19C6ED415D1FD40E486136874D5356E563B5B15FBFE5A2468CE1C386)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/uZ74hPdHTemH3xUzUzjHug/zh-cn_image_0000002589324219.png?HW-CC-KV=V1&HW-CC-Date=20260429T052746Z&HW-CC-Expire=86400&HW-CC-Sign=FB58A2E49109AC699E9759BA5B35629BB7A0484A9CB7571CDB3C7D939795E9E2)
 
 ### 设置图片重复样式
 
@@ -628,7 +628,7 @@ SVG图源通过<image>标签的xlink:href属性指定本地位图路径，本地
 
 [SetImageRepetitionStyle.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ImageComponent/entry/src/main/ets/pages/SetImageRepetitionStyle.ets#L17-L61)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/hjesf6nYSA2k0yeNEMnD2w/zh-cn_image_0000002583477861.png?HW-CC-KV=V1&HW-CC-Date=20260427T233936Z&HW-CC-Expire=86400&HW-CC-Sign=52149436A16134F53C7A54324887127CCD20BC91A24E14F5BE0DB7109939ABBC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/_kb_K9IoRFK7h2eA8aADcQ/zh-cn_image_0000002589244159.png?HW-CC-KV=V1&HW-CC-Date=20260429T052746Z&HW-CC-Expire=86400&HW-CC-Sign=CD3043E10A2D1C42EA9BA0AC36C199CB526A9FEF39B02F7343743023FDFAE4BB)
 
 ### 设置图片渲染模式
 
@@ -667,7 +667,7 @@ SVG图源通过<image>标签的xlink:href属性指定本地位图路径，本地
 
 [SetImageRenderingMode.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ImageComponent/entry/src/main/ets/pages/SetImageRenderingMode.ets#L17-L46)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/oTdmLTMhQf2hnVXhgBkhvQ/zh-cn_image_0000002552798212.png?HW-CC-KV=V1&HW-CC-Date=20260427T233936Z&HW-CC-Expire=86400&HW-CC-Sign=4C5F0B9DE6E35DFB72F488B170626506D2286D0799FCE7FF1BE31802FF75A7A0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/taTYdXDyQX6Iu0BE1SyOgw/zh-cn_image_0000002558764352.png?HW-CC-KV=V1&HW-CC-Date=20260429T052746Z&HW-CC-Expire=86400&HW-CC-Sign=7AE34479AA56F3629C0C4458CC2543CFEAF2D276324FE68021A169688BDC8A88)
 
 ### 设置图片解码尺寸
 
@@ -717,7 +717,7 @@ SVG图源通过<image>标签的xlink:href属性指定本地位图路径，本地
 
 [SetImageDecodingSize.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ImageComponent/entry/src/main/ets/pages/SetImageDecodingSize.ets#L17-L55)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/NK9BOQcFRLGb24EWVqo57Q/zh-cn_image_0000002583437907.png?HW-CC-KV=V1&HW-CC-Date=20260427T233936Z&HW-CC-Expire=86400&HW-CC-Sign=B67472A7F384D36728D14DC75BDD453A395887C3B8B1826DB9A7CBE389A2DF8C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/okwnK0NES-SAGjozcilHvQ/zh-cn_image_0000002558604696.png?HW-CC-KV=V1&HW-CC-Date=20260429T052746Z&HW-CC-Expire=86400&HW-CC-Sign=B70D46C8E59B81A5264C68CD9AA140E8FD9C27829A5D71F4546540401034C617)
 
 ### 为图片添加滤镜效果
 
@@ -753,7 +753,7 @@ SVG图源通过<image>标签的xlink:href属性指定本地位图路径，本地
 
 [AddFilterEffectsToImages.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ImageComponent/entry/src/main/ets/pages/AddFilterEffectsToImages.ets#L17-L43)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/n1chnHf-RkOpENpssUDqCw/zh-cn_image_0000002552957862.png?HW-CC-KV=V1&HW-CC-Date=20260427T233936Z&HW-CC-Expire=86400&HW-CC-Sign=275D6CEC066DF966B056F5BFA1BEBC13C6BBB704F46A01B47053C465A653F3A9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/l4CU3AYfRIOxuyEMTAvI1A/zh-cn_image_0000002589324221.png?HW-CC-KV=V1&HW-CC-Date=20260429T052746Z&HW-CC-Expire=86400&HW-CC-Sign=BC8F9C56E2EF3A06BF0689ACCEBFECF43F21D06D29BD11F4E5586C926B53E005)
 
 ### 同步加载图片
 
@@ -819,4 +819,4 @@ SVG图源通过<image>标签的xlink:href属性指定本地位图路径，本地
 
 [EventCall.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ImageComponent/entry/src/main/ets/pages/EventCall.ets#L17-L61)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/ocsj_BakSm6hpW9ecL4MKA/zh-cn_image_0000002583477863.png?HW-CC-KV=V1&HW-CC-Date=20260427T233936Z&HW-CC-Expire=86400&HW-CC-Sign=CCE37B736083A2CB12D95137316EE83D63F375B132707EB86C44DF24E8882F8E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/wyx4AtjNRouDJNN2HeLvcg/zh-cn_image_0000002589244161.png?HW-CC-KV=V1&HW-CC-Date=20260429T052746Z&HW-CC-Expire=86400&HW-CC-Sign=0770E5D8F65347D1FEED01DAA2A09F53163D2927665068B1440025D6D0B16559)

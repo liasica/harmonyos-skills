@@ -1,10 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-basic-qrcode
 title: qrcode
+breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 基础组件 > qrcode
 category: harmonyos-references
-scraped_at: 2026-04-28T08:03:07+08:00
+scraped_at: 2026-04-29T13:53:26+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:aa837f111bbf66fb3e729c387d12315f6aa208e7d13d4a1351fe5232f3d0145a
+content_hash: sha256:c3681c0c2798d6e9e53e083d5b0ce0bc28e9f9245949b41062f77784df6c2c8e
 ---
 
 说明
@@ -133,4 +134,4 @@ PhonePC/2in1TabletTVWearable
 24. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/oQC2TNgXTEWDkJkWEYXOPg/zh-cn_image_0000002552960198.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000304Z&HW-CC-Expire=86400&HW-CC-Sign=D7AF4DCB3B18A3160457759A1118A062119E48FA37EFB6691B7F9C95D30C09BB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/j9lX1sJcRsSgAGZCdTzztw/zh-cn_image_0000002558607064.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055325Z&HW-CC-Expire=86400&HW-CC-Sign=283F328D31763012B40975530C0D64E1A90EFC374006E9B8DF8D1AED45F76FDA)

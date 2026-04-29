@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/wallet-transp
 title: 交通卡删卡
 breadcrumb: 指南 > 应用服务 > Wallet Kit（钱包服务） > 接入交通卡 > 交通卡删卡
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:51:10+08:00
+scraped_at: 2026-04-29T13:40:46+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:36901b1533002f4afc945fc2adea1aed118d6be6a868224a7b2f5d2136286d35
+content_hash: sha256:ca9adf953c2dd6967dbc9353c9800c5e6d00ed192923df2312912b4b08bb3751
 ---
 
 交通卡的删卡过程分为：卡片展示、生成删卡业务订单和发起删卡三个步骤，整体流程如下图，相关接口定义请参照[钱包服务API](../harmonyos-references/wallet-wallettransitcard.md)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/oTLmI0NvTj-_hMeO0PnQlA/zh-cn_image_0000002552959206.png?HW-CC-KV=V1&HW-CC-Date=20260427T235109Z&HW-CC-Expire=86400&HW-CC-Sign=96BCB32F0BF57390DA8F711D7697432A0F4E22E7B921A951CE90D4AF516FA6BD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/HFlgZIc4QHqeKWAYzQaTYQ/zh-cn_image_0000002589245515.png?HW-CC-KV=V1&HW-CC-Date=20260429T054045Z&HW-CC-Expire=86400&HW-CC-Sign=04F3FB9BF074E82524FE6C49B940B091252719707B3E514FA5DA1CC6D50DDB63)
 
 * 开发者的app启动后，可调用[getCardMetadataInDevice](../harmonyos-references/wallet-wallettransitcard.md#getcardmetadataindevice)接口获取指定设备上开发者的app可以访问的交通卡的信息以数组的方式返回。如返回的数组为空，则表示开发者的app在该设备上没有可访问的交通卡，无需显示卡片开通入口；如返回数组不为空，则按具体的交通卡信息做展示。
 * 如果交通卡信息中包括卡号、余额信息，则表明该卡片在设备上已开通，显示卡片信息即可；否则可显示卡片的开通入口。

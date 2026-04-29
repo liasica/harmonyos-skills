@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-pro
 title: @Provider装饰器和@Consumer装饰器：跨组件层级双向同步
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理（V2） > 管理组件拥有的状态 > @Provider装饰器和@Consumer装饰器：跨组件层级双向同步
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:39:09+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:00fccbf7f8fcfd5161c16aa4949fae08e5263f7f3f7cb49ad248dda99f987c54
+scraped_at: 2026-04-29T13:27:18+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:5a6b10a65e4abbaf69c92613df6099aafcab363fbd1409e5460140d26c719a1b
 ---
 
 @Provider和@Consumer用于跨组件层级数据双向同步，可以使得开发者不用拘泥于组件层级。
@@ -30,7 +30,7 @@ content_hash: sha256:00fccbf7f8fcfd5161c16aa4949fae08e5263f7f3f7cb49ad248dda99f9
 
 @Consumer，即数据消费方，可以通过绑定同样的key获取其最近父节点的@Provider的数据，当查找不到@Provider的数据时，使用本地默认值。图示如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/E3ukPHXAS1CvkBYRXWk16Q/zh-cn_image_0000002552797968.png?HW-CC-KV=V1&HW-CC-Date=20260427T233907Z&HW-CC-Expire=86400&HW-CC-Sign=97FFAF5B33225FA1A0A535CA6B0FC73C822FB11B9D0CCA7CBAEDEA63A3304022)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/pgeMax3wSMmcKF_qcPdxmA/zh-cn_image_0000002558764108.png?HW-CC-KV=V1&HW-CC-Date=20260429T052717Z&HW-CC-Expire=86400&HW-CC-Sign=421FCE7D2B38F44265544509E720EC67C428F27F3D1B9FCE65F41907438253AD)
 
 @Provider和@Consumer装饰的数据类型需要一致。
 
@@ -260,46 +260,48 @@ aliasName是用于@Provider和@Consumer进行匹配的唯一指定key。
 10. Text(`parent: ${item}`).fontSize(30)
 11. Divider()
 12. })
-13. Button('push').onClick(() => {
-14. this.count.push(111);
-15. })
-16. Button('reverse').onClick(() => {
-17. this.count.reverse();
-18. })
-19. Button('fill').onClick(() => {
-20. this.count.fill(6);
-21. })
-22. Child()
-23. }
-24. .width('100%')
-25. }
-26. .height('100%')
-27. }
+13. // count被@Provider装饰，可以被观察到Array整体的赋值以及调用Array接口带来的变化
+14. Button('push').onClick(() => {
+15. this.count.push(111);
+16. })
+17. Button('reverse').onClick(() => {
+18. this.count.reverse();
+19. })
+20. Button('fill').onClick(() => {
+21. this.count.fill(6);
+22. })
+23. Child()
+24. }
+25. .width('100%')
+26. }
+27. .height('100%')
 28. }
+29. }
 
-30. @ComponentV2
-31. struct Child {
-32. @Consumer() count: number[] = [9, 8, 7];
+31. @ComponentV2
+32. struct Child {
+33. @Consumer() count: number[] = [9, 8, 7];
 
-34. build() {
-35. Column() {
-36. ForEach(this.count, (item: number) => {
-37. Text(`child: ${item}`).fontSize(30)
-38. Divider()
-39. })
-40. Button('push').onClick(() => {
-41. this.count.push(222);
-42. })
-43. Button('reverse').onClick(() => {
-44. this.count.reverse();
-45. })
-46. Button('fill').onClick(() => {
-47. this.count.fill(8);
-48. })
-49. }
-50. .width('100%')
+35. build() {
+36. Column() {
+37. ForEach(this.count, (item: number) => {
+38. Text(`child: ${item}`).fontSize(30)
+39. Divider()
+40. })
+41. // count被@Consumer装饰，可以被观察到Array整体的赋值以及调用Array接口带来的变化
+42. Button('push').onClick(() => {
+43. this.count.push(222);
+44. })
+45. Button('reverse').onClick(() => {
+46. this.count.reverse();
+47. })
+48. Button('fill').onClick(() => {
+49. this.count.fill(8);
+50. })
 51. }
-52. }
+52. .width('100%')
+53. }
+54. }
 ```
 
 [DecorativeArray.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ProviderConsumer/entry/src/main/ets/homePage/DecorativeArray.ets#L16-L69)
@@ -317,53 +319,55 @@ aliasName是用于@Provider和@Consumer进行匹配的唯一指定key。
 6. build() {
 7. Column() {
 8. Text(`parent: ${this.selectedDate}`)
-9. Button('update the new date')
-10. .onClick(() => {
-11. this.selectedDate = new Date('2023-07-07');
-12. })
-13. Button('increase the year by 1')
-14. .onClick(() => {
-15. this.selectedDate.setFullYear(this.selectedDate.getFullYear() + 1);
-16. })
-17. Button('increase the month by 1')
-18. .onClick(() => {
-19. this.selectedDate.setMonth(this.selectedDate.getMonth() + 1);
-20. })
-21. Button('increase the day by 1')
-22. .onClick(() => {
-23. this.selectedDate.setDate(this.selectedDate.getDate() + 1);
-24. })
-25. Child()
-26. }
+9. // selectedDate被@Provider装饰，可以被观察到Date整体的赋值以及调用Date接口带来的变化
+10. Button('update the new date')
+11. .onClick(() => {
+12. this.selectedDate = new Date('2023-07-07');
+13. })
+14. Button('increase the year by 1')
+15. .onClick(() => {
+16. this.selectedDate.setFullYear(this.selectedDate.getFullYear() + 1);
+17. })
+18. Button('increase the month by 1')
+19. .onClick(() => {
+20. this.selectedDate.setMonth(this.selectedDate.getMonth() + 1);
+21. })
+22. Button('increase the day by 1')
+23. .onClick(() => {
+24. this.selectedDate.setDate(this.selectedDate.getDate() + 1);
+25. })
+26. Child()
 27. }
 28. }
+29. }
 
-30. @ComponentV2
-31. struct Child {
-32. @Consumer() selectedDate: Date = new Date('2022-07-07');
+31. @ComponentV2
+32. struct Child {
+33. @Consumer() selectedDate: Date = new Date('2022-07-07');
 
-34. build() {
-35. Column() {
-36. Text(`child: ${this.selectedDate}`)
-37. Button('update the new date')
-38. .onClick(() => {
-39. this.selectedDate = new Date('2025-01-01');
-40. })
-41. Button('increase the year by 1')
-42. .onClick(() => {
-43. this.selectedDate.setFullYear(this.selectedDate.getFullYear() + 1);
-44. })
-45. Button('increase the month by 1')
-46. .onClick(() => {
-47. this.selectedDate.setMonth(this.selectedDate.getMonth() + 1);
-48. })
-49. Button('increase the day by 1')
-50. .onClick(() => {
-51. this.selectedDate.setDate(this.selectedDate.getDate() + 1);
-52. })
-53. }
-54. }
+35. build() {
+36. Column() {
+37. Text(`child: ${this.selectedDate}`)
+38. // selectedDate被@Consumer装饰，可以被观察到Date整体的赋值以及调用Date接口带来的变化
+39. Button('update the new date')
+40. .onClick(() => {
+41. this.selectedDate = new Date('2025-01-01');
+42. })
+43. Button('increase the year by 1')
+44. .onClick(() => {
+45. this.selectedDate.setFullYear(this.selectedDate.getFullYear() + 1);
+46. })
+47. Button('increase the month by 1')
+48. .onClick(() => {
+49. this.selectedDate.setMonth(this.selectedDate.getMonth() + 1);
+50. })
+51. Button('increase the day by 1')
+52. .onClick(() => {
+53. this.selectedDate.setDate(this.selectedDate.getDate() + 1);
+54. })
 55. }
+56. }
+57. }
 ```
 
 [DecorativeDate.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ProviderConsumer/entry/src/main/ets/homePage/DecorativeDate.ets#L16-L72)
@@ -386,56 +390,58 @@ aliasName是用于@Provider和@Consumer进行匹配的唯一指定key。
 11. Text(`${item[1]}`).fontSize(30)
 12. Divider()
 13. })
-14. Button('init map').onClick(() => {
-15. this.message = new Map([[0, 'aa'], [1, 'bb'], [3, 'cc']]);
-16. })
-17. Button('set new one').onClick(() => {
-18. this.message.set(4, 'd');
-19. })
-20. Button('clear').onClick(() => {
-21. this.message.clear();
-22. })
-23. Button('replace the first one').onClick(() => {
-24. this.message.set(0, 'a~');
-25. })
-26. Button('delete the first one').onClick(() => {
-27. this.message.delete(0);
-28. })
-29. Child()
-30. }
+14. // message被@Provider装饰，可以被观察到Map整体的赋值以及调用Map接口带来的变化
+15. Button('init map').onClick(() => {
+16. this.message = new Map([[0, 'aa'], [1, 'bb'], [3, 'cc']]);
+17. })
+18. Button('set new one').onClick(() => {
+19. this.message.set(4, 'd');
+20. })
+21. Button('clear').onClick(() => {
+22. this.message.clear();
+23. })
+24. Button('replace the first one').onClick(() => {
+25. this.message.set(0, 'a~');
+26. })
+27. Button('delete the first one').onClick(() => {
+28. this.message.delete(0);
+29. })
+30. Child()
 31. }
 32. }
+33. }
 
-34. @ComponentV2
-35. struct Child {
-36. @Consumer() message: Map<number, string> = new Map([[0, 'd'], [1, 'e'], [3, 'f']]);
+35. @ComponentV2
+36. struct Child {
+37. @Consumer() message: Map<number, string> = new Map([[0, 'd'], [1, 'e'], [3, 'f']]);
 
-38. build() {
-39. Column() {
-40. Text('Child').fontSize(30)
-41. ForEach(Array.from(this.message.entries()), (item: [number, string]) => {
-42. Text(`${item[0]}`).fontSize(30)
-43. Text(`${item[1]}`).fontSize(30)
-44. Divider()
-45. })
-46. Button('init map').onClick(() => {
-47. this.message = new Map([[0, 'dd'], [1, 'ee'], [3, 'ff']]);
-48. })
-49. Button('set new one').onClick(() => {
-50. this.message.set(4, 'g');
-51. })
-52. Button('clear').onClick(() => {
-53. this.message.clear();
-54. })
-55. Button('replace the first one').onClick(() => {
-56. this.message.set(0, 'a*');
-57. })
-58. Button('delete the first one').onClick(() => {
-59. this.message.delete(0);
-60. })
-61. }
-62. }
+39. build() {
+40. Column() {
+41. Text('Child').fontSize(30)
+42. ForEach(Array.from(this.message.entries()), (item: [number, string]) => {
+43. Text(`${item[0]}`).fontSize(30)
+44. Text(`${item[1]}`).fontSize(30)
+45. Divider()
+46. })
+47. // message被@Consumer装饰，可以被观察到Map整体的赋值以及调用Map接口带来的变化
+48. Button('init map').onClick(() => {
+49. this.message = new Map([[0, 'dd'], [1, 'ee'], [3, 'ff']]);
+50. })
+51. Button('set new one').onClick(() => {
+52. this.message.set(4, 'g');
+53. })
+54. Button('clear').onClick(() => {
+55. this.message.clear();
+56. })
+57. Button('replace the first one').onClick(() => {
+58. this.message.set(0, 'a*');
+59. })
+60. Button('delete the first one').onClick(() => {
+61. this.message.delete(0);
+62. })
 63. }
+64. }
+65. }
 ```
 
 [DecorativeMap.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ProviderConsumer/entry/src/main/ets/homePage/DecorativeMap.ets#L16-L80)
@@ -457,49 +463,51 @@ aliasName是用于@Provider和@Consumer进行匹配的唯一指定key。
 10. Text(`${item[0]}`).fontSize(30)
 11. Divider()
 12. })
-13. Button('init set').onClick(() => {
-14. this.message = new Set([1, 2, 3, 4]);
-15. })
-16. Button('set new one').onClick(() => {
-17. this.message.add(5);
-18. })
-19. Button('clear').onClick(() => {
-20. this.message.clear();
-21. })
-22. Button('delete the first one').onClick(() => {
-23. this.message.delete(1);
-24. })
-25. Child()
-26. }
+13. // message被@Provider装饰，可以被观察到Set整体的赋值以及调用Set接口带来的变化
+14. Button('init set').onClick(() => {
+15. this.message = new Set([1, 2, 3, 4]);
+16. })
+17. Button('set new one').onClick(() => {
+18. this.message.add(5);
+19. })
+20. Button('clear').onClick(() => {
+21. this.message.clear();
+22. })
+23. Button('delete the first one').onClick(() => {
+24. this.message.delete(1);
+25. })
+26. Child()
 27. }
 28. }
+29. }
 
-30. @ComponentV2
-31. struct Child {
-32. @Consumer() message: Set<number> = new Set([1, 2, 3, 4, 5, 6]);
+31. @ComponentV2
+32. struct Child {
+33. @Consumer() message: Set<number> = new Set([1, 2, 3, 4, 5, 6]);
 
-34. build() {
-35. Column() {
-36. Text('Child').fontSize(30)
-37. ForEach(Array.from(this.message.entries()), (item: [number, number]) => {
-38. Text(`${item[0]}`).fontSize(30)
-39. Divider()
-40. })
-41. Button('init set').onClick(() => {
-42. this.message = new Set([1, 2, 3, 4, 5, 6]);
-43. })
-44. Button('set new one').onClick(() => {
-45. this.message.add(7);
-46. })
-47. Button('clear').onClick(() => {
-48. this.message.clear();
-49. })
-50. Button('delete the first one').onClick(() => {
-51. this.message.delete(1);
-52. })
-53. }
-54. }
+35. build() {
+36. Column() {
+37. Text('Child').fontSize(30)
+38. ForEach(Array.from(this.message.entries()), (item: [number, number]) => {
+39. Text(`${item[0]}`).fontSize(30)
+40. Divider()
+41. })
+42. // message被@Consumer装饰，可以被观察到Set整体的赋值以及调用Set接口带来的变化
+43. Button('init set').onClick(() => {
+44. this.message = new Set([1, 2, 3, 4, 5, 6]);
+45. })
+46. Button('set new one').onClick(() => {
+47. this.message.add(7);
+48. })
+49. Button('clear').onClick(() => {
+50. this.message.clear();
+51. })
+52. Button('delete the first one').onClick(() => {
+53. this.message.delete(1);
+54. })
 55. }
+56. }
+57. }
 ```
 
 [DecorativeSet.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ProviderConsumer/entry/src/main/ets/homePage/DecorativeSet.ets#L16-L72)
@@ -555,55 +563,56 @@ aliasName是用于@Provider和@Consumer进行匹配的唯一指定key。
 ```
 1. @ObservedV2
 2. class User {
-3. @Trace public name: string;
-4. @Trace public age: number;
+3. // 复杂数据类型的属性被@Trace装饰，可以被观察到属性变化
+4. @Trace public name: string;
+5. @Trace public age: number;
 
-6. constructor(name: string, age: number) {
-7. this.name = name;
-8. this.age = age;
-9. }
+7. constructor(name: string, age: number) {
+8. this.name = name;
+9. this.age = age;
 10. }
-11. const data: User[] = [new User('Json', 10), new User('Eric', 15)];
-12. @Entry
-13. @ComponentV2
-14. struct Parent {
-15. @Provider('data') users: User[] = data;
+11. }
+12. const data: User[] = [new User('Json', 10), new User('Eric', 15)];
+13. @Entry
+14. @ComponentV2
+15. struct Parent {
+16. @Provider('data') users: User[] = data;
 
-17. build() {
-18. Column() {
-19. Child()
-20. Button('add new user')
-21. .onClick(() => {
-22. this.users.push(new User('Molly', 18));
-23. })
-24. Button('age++')
-25. .onClick(() => {
-26. this.users[0].age++;
-27. })
-28. Button('change name')
-29. .onClick(() => {
-30. this.users[0].name = 'Shelly';
-31. })
-32. }
+18. build() {
+19. Column() {
+20. Child()
+21. Button('add new user')
+22. .onClick(() => {
+23. this.users.push(new User('Molly', 18));
+24. })
+25. Button('age++')
+26. .onClick(() => {
+27. this.users[0].age++;
+28. })
+29. Button('change name')
+30. .onClick(() => {
+31. this.users[0].name = 'Shelly';
+32. })
 33. }
 34. }
+35. }
 
-36. @ComponentV2
-37. struct Child {
-38. @Consumer('data') users: User[] = [];
+37. @ComponentV2
+38. struct Child {
+39. @Consumer('data') users: User[] = [];
 
-40. build() {
-41. Column() {
-42. ForEach(this.users, (item: User) => {
-43. Column() {
-44. Text(`name: ${item.name}`).fontSize(30)
-45. Text(`age: ${item.age}`).fontSize(30)
-46. Divider()
-47. }
-48. })
-49. }
+41. build() {
+42. Column() {
+43. ForEach(this.users, (item: User) => {
+44. Column() {
+45. Text(`name: ${item.name}`).fontSize(30)
+46. Text(`age: ${item.age}`).fontSize(30)
+47. Divider()
+48. }
+49. })
 50. }
 51. }
+52. }
 ```
 
 [DecorativeComplex.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ProviderConsumer/entry/src/main/ets/homePage/DecorativeComplex.ets#L16-L68)
@@ -670,38 +679,40 @@ aliasName是用于@Provider和@Consumer进行匹配的唯一指定key。
 6. build() {
 7. Column() {
 8. Text(`Index @Provider val: ${this.val}`).fontSize(30)
-9. Parent({ val2: this.val })
-10. }
+9. // @Provider装饰的变量val可以初始化@Param装饰的变量val2
+10. Parent({ val2: this.val })
 11. }
 12. }
+13. }
 
-14. @ComponentV2
-15. struct Parent {
-16. @Consumer() val: number = 0;
-17. @Require @Param val2: number;
+15. @ComponentV2
+16. struct Parent {
+17. @Consumer() val: number = 0;
+18. @Require @Param val2: number;
 
-19. build() {
-20. Column() {
-21. Text(`Parent @Consumer val: ${this.val}`).fontSize(30)
-22. Button('change val').onClick(() => {
-23. this.val++;
-24. })
-25. Text(`Parent @Param val2: ${this.val2}`).fontSize(30)
-26. Child({ val: this.val })
-27. }.border({ width: 2, color: Color.Green })
-28. }
-29. }
+20. build() {
+21. Column() {
+22. Text(`Parent @Consumer val: ${this.val}`).fontSize(30)
+23. Button('change val').onClick(() => {
+24. this.val++;
+25. })
+26. Text(`Parent @Param val2: ${this.val2}`).fontSize(30)
+27. // @Consumer装饰的变量val可以初始化@Param装饰的变量val
+28. Child({ val: this.val })
+29. }.border({ width: 2, color: Color.Green })
+30. }
+31. }
 
-31. @ComponentV2
-32. struct Child {
-33. @Require @Param val: number;
+33. @ComponentV2
+34. struct Child {
+35. @Require @Param val: number;
 
-35. build() {
-36. Column() {
-37. Text(`Child @Param val ${this.val}`).fontSize(30)
-38. }.border({ width: 2, color: Color.Pink })
-39. }
-40. }
+37. build() {
+38. Column() {
+39. Text(`Child @Param val ${this.val}`).fontSize(30)
+40. }.border({ width: 2, color: Color.Pink })
+41. }
+42. }
 ```
 
 [DecorativeInitialized.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ProviderConsumer/entry/src/main/ets/homePage/DecorativeInitialized.ets#L16-L57)

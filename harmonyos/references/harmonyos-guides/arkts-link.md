@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-link
 title: @Link装饰器：父子双向同步
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理（V1） > 管理组件拥有的状态 > @Link装饰器：父子双向同步
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:39:04+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:f7e93a43a1f6e89ef634cf9f0060dc79f7e6f4a9f1d471d1f3355c2fef1c2912
+scraped_at: 2026-04-29T13:27:15+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:de29897ba0cdc3dfb5309927c0aa270791bcc22df00b83e3f080b25ff36b3b83
 ---
 
 子组件中被@Link装饰的变量与其父组件中对应的数据源建立双向数据绑定。
@@ -42,7 +42,7 @@ content_hash: sha256:f7e93a43a1f6e89ef634cf9f0060dc79f7e6f4a9f1d471d1f3355c2fef1
 
 **图1** 初始化规则示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/nvFMemy2T5aVbabZhJyrKw/zh-cn_image_0000002552797952.png?HW-CC-KV=V1&HW-CC-Date=20260427T233902Z&HW-CC-Expire=86400&HW-CC-Sign=2168438FB0CE905B02BE26FCE5ED08E37A2D84BBB496A9AB7D467B5E3568232E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/1BTv6K7TT06OYAza9a_xXg/zh-cn_image_0000002558764092.png?HW-CC-KV=V1&HW-CC-Date=20260429T052713Z&HW-CC-Expire=86400&HW-CC-Sign=CF91EB83665877FD37D23E5128C859008D870CFFDD9CD891D5B48C1B6F181713)
 
 ## 观察变化和行为表现
 
@@ -336,7 +336,7 @@ content_hash: sha256:f7e93a43a1f6e89ef634cf9f0060dc79f7e6f4a9f1d471d1f3355c2fef1
 
 [UsingLinkwithPrimitiveandClassTypes.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ComponentStateManagement/entry/src/main/ets/pages/LinkDecorator/UsingLinkwithPrimitiveandClassTypes.ets#L16-L99)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/5Oj-ON1FRWeoZ_9YjgncSg/zh-cn_image_0000002583437647.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233902Z&HW-CC-Expire=86400&HW-CC-Sign=26F56383F62EADDD47FBBE4245F19328C276EBCCB8E6166AA7FE9FE553A46436)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/1NYfFlWISnadhXSLTKcUiA/zh-cn_image_0000002558604436.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052713Z&HW-CC-Expire=86400&HW-CC-Sign=BE411DC394F66C9462A28682E86CEEA44D25FF858C424891A16278DBD4C53BB8)
 
 ### 数组类型的@Link
 
@@ -355,44 +355,45 @@ content_hash: sha256:f7e93a43a1f6e89ef634cf9f0060dc79f7e6f4a9f1d471d1f3355c2fef1
 12. .onClick(() => {
 13. this.items.push(this.items.length + 1);
 14. })
-15. Button(`Button2: replace whole item`)
-16. .margin(12)
-17. .width(312)
-18. .height(40)
-19. .fontColor('#FFFFFF')
-20. .onClick(() => {
-21. this.items = [100, 200, 300];
-22. })
-23. }
+15. // 子组件的数组类型可以同步回父组件
+16. Button(`Button2: replace whole item`)
+17. .margin(12)
+18. .width(312)
+19. .height(40)
+20. .fontColor('#FFFFFF')
+21. .onClick(() => {
+22. this.items = [100, 200, 300];
+23. })
 24. }
 25. }
+26. }
 
-27. @Entry
-28. @Component
-29. struct ArrayTypes {
-30. @State arr: number[] = [1, 2, 3];
+28. @Entry
+29. @Component
+30. struct ArrayTypes {
+31. @State arr: number[] = [1, 2, 3];
 
-32. build() {
-33. Column() {
-34. ArrayTypesChild({ items: $arr })
-35. .margin(12)
-36. ForEach(this.arr,
-37. (item: number) => {
-38. Button(`${item}`)
-39. .margin(12)
-40. .width(312)
-41. .height(40)
-42. .backgroundColor('#11a2a2a2')
-43. .fontColor('#e6000000')
-44. },
-45. (item: ForEachInterface) => item.toString()
-46. )
-47. }
+33. build() {
+34. Column() {
+35. ArrayTypesChild({ items: $arr })
+36. .margin(12)
+37. ForEach(this.arr,
+38. (item: number) => {
+39. Button(`${item}`)
+40. .margin(12)
+41. .width(312)
+42. .height(40)
+43. .backgroundColor('#11a2a2a2')
+44. .fontColor('#e6000000')
+45. },
+46. (item: ForEachInterface) => item.toString()
+47. )
 48. }
 49. }
+50. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/Yg0tqbTjQx-Kwd95xMNe-A/zh-cn_image_0000002552957602.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233902Z&HW-CC-Expire=86400&HW-CC-Sign=45E050454C1AA5AD1EA49920E7618C3CCC18811E49C7CAFEE306AE7C96B65D66)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/OmM9dKRbT_Kol3K8jSTDUA/zh-cn_image_0000002589323961.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052713Z&HW-CC-Expire=86400&HW-CC-Sign=574C766D0F860DF810FE32C02662163840A34CEA6858259A5511538FE3714447)
 
 状态管理框架可以观察到数组元素的添加、删除和替换。在该示例中，@State和@Link的类型均为number[]，不支持将@Link定义成number类型（@Link item : number），并用@State数组中的每个数据项在父组件中创建子组件。如需使用这种场景，可以参考[@Prop](arkts-prop.md)和[@Observed](arkts-observed-and-objectlink.md)。
 
@@ -416,40 +417,41 @@ content_hash: sha256:f7e93a43a1f6e89ef634cf9f0060dc79f7e6f4a9f1d471d1f3355c2fef1
 9. Text(`${item[1]}`).fontSize(30)
 10. Divider()
 11. })
-12. Button('child init map').onClick(() => {
-13. this.value = new Map([[0, 'a'], [1, 'b'], [3, 'c']]);
-14. })
-15. Button('child set new one').onClick(() => {
-16. this.value.set(4, 'd');
-17. })
-18. Button('child clear').onClick(() => {
-19. this.value.clear();
-20. })
-21. Button('child replace the first one').onClick(() => {
-22. this.value.set(0, 'aa');
-23. })
-24. Button('child delete the first one').onClick(() => {
-25. this.value.delete(0);
-26. })
-27. }
+12. // 子组件的Map类型可以同步回父组件
+13. Button('child init map').onClick(() => {
+14. this.value = new Map([[0, 'a'], [1, 'b'], [3, 'c']]);
+15. })
+16. Button('child set new one').onClick(() => {
+17. this.value.set(4, 'd');
+18. })
+19. Button('child clear').onClick(() => {
+20. this.value.clear();
+21. })
+22. Button('child replace the first one').onClick(() => {
+23. this.value.set(0, 'aa');
+24. })
+25. Button('child delete the first one').onClick(() => {
+26. this.value.delete(0);
+27. })
 28. }
 29. }
+30. }
 
-32. @Entry
-33. @Component
-34. struct MapSample {
-35. @State message: Map<number, string> = new Map([[0, 'a'], [1, 'b'], [3, 'c']]);
+33. @Entry
+34. @Component
+35. struct MapSample {
+36. @State message: Map<number, string> = new Map([[0, 'a'], [1, 'b'], [3, 'c']]);
 
-37. build() {
-38. Row() {
-39. Column() {
-40. MapSampleChild({ value: this.message })
-41. }
-42. .width('100%')
-43. }
-44. .height('100%')
-45. }
+38. build() {
+39. Row() {
+40. Column() {
+41. MapSampleChild({ value: this.message })
+42. }
+43. .width('100%')
+44. }
+45. .height('100%')
 46. }
+47. }
 ```
 
 [DecoratingVariablesMapType.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ComponentStateManagement/entry/src/main/ets/pages/LinkDecorator/DecoratingVariablesMapType.ets#L16-L63)
@@ -473,38 +475,39 @@ content_hash: sha256:f7e93a43a1f6e89ef634cf9f0060dc79f7e6f4a9f1d471d1f3355c2fef1
 8. Text(`${item[0]}`).fontSize(30)
 9. Divider()
 10. })
-11. Button('init set').onClick(() => {
-12. this.message = new Set([0, 1, 2, 3, 4]);
-13. })
-14. Button('set new one').onClick(() => {
-15. this.message.add(5);
-16. })
-17. Button('clear').onClick(() => {
-18. this.message.clear();
-19. })
-20. Button('delete the first one').onClick(() => {
-21. this.message.delete(0);
-22. })
-23. }
-24. .width('100%')
-25. }
+11. // 子组件的Set类型可以同步回父组件
+12. Button('init set').onClick(() => {
+13. this.message = new Set([0, 1, 2, 3, 4]);
+14. })
+15. Button('set new one').onClick(() => {
+16. this.message.add(5);
+17. })
+18. Button('clear').onClick(() => {
+19. this.message.clear();
+20. })
+21. Button('delete the first one').onClick(() => {
+22. this.message.delete(0);
+23. })
+24. }
+25. .width('100%')
 26. }
+27. }
 
-29. @Entry
-30. @Component
-31. struct SetSample {
-32. @State message: Set<number> = new Set([0, 1, 2, 3, 4]);
+30. @Entry
+31. @Component
+32. struct SetSample {
+33. @State message: Set<number> = new Set([0, 1, 2, 3, 4]);
 
-34. build() {
-35. Row() {
-36. Column() {
-37. SetSampleChild({ message: this.message })
-38. }
-39. .width('100%')
-40. }
-41. .height('100%')
-42. }
+35. build() {
+36. Row() {
+37. Column() {
+38. SetSampleChild({ message: this.message })
+39. }
+40. .width('100%')
+41. }
+42. .height('100%')
 43. }
+44. }
 ```
 
 [DecoratingVariablesSetType.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ComponentStateManagement/entry/src/main/ets/pages/LinkDecorator/DecoratingVariablesSetType.ets#L16-L60)
@@ -520,51 +523,52 @@ content_hash: sha256:f7e93a43a1f6e89ef634cf9f0060dc79f7e6f4a9f1d471d1f3355c2fef1
 
 5. build() {
 6. Column() {
-7. Button(`child increase the year by 1`)
-8. .onClick(() => {
-9. this.selectedDate.setFullYear(this.selectedDate.getFullYear() + 1);
-10. })
-11. Button('child update the new date')
-12. .margin(10)
-13. .onClick(() => {
-14. this.selectedDate = new Date('2023-09-09');
-15. })
-16. DatePicker({
-17. start: new Date('1970-1-1'),
-18. end: new Date('2100-1-1'),
-19. selected: this.selectedDate
-20. })
-21. }
+7. // 子组件的Date类型可以同步回父组件
+8. Button(`child increase the year by 1`)
+9. .onClick(() => {
+10. this.selectedDate.setFullYear(this.selectedDate.getFullYear() + 1);
+11. })
+12. Button('child update the new date')
+13. .margin(10)
+14. .onClick(() => {
+15. this.selectedDate = new Date('2023-09-09');
+16. })
+17. DatePicker({
+18. start: new Date('1970-1-1'),
+19. end: new Date('2100-1-1'),
+20. selected: this.selectedDate
+21. })
 22. }
 23. }
+24. }
 
-25. @Entry
-26. @Component
-27. struct ParentComponent {
-28. @State parentSelectedDate: Date = new Date('2021-08-08');
+26. @Entry
+27. @Component
+28. struct ParentComponent {
+29. @State parentSelectedDate: Date = new Date('2021-08-08');
 
-30. build() {
-31. Column() {
-32. Button('parent increase the month by 1')
-33. .margin(10)
-34. .onClick(() => {
-35. this.parentSelectedDate.setMonth(this.parentSelectedDate.getMonth() + 1);
-36. })
-37. Button('parent update the new date')
-38. .margin(10)
-39. .onClick(() => {
-40. this.parentSelectedDate = new Date('2023-07-07');
-41. })
-42. DatePicker({
-43. start: new Date('1970-1-1'),
-44. end: new Date('2100-1-1'),
-45. selected: this.parentSelectedDate
-46. })
+31. build() {
+32. Column() {
+33. Button('parent increase the month by 1')
+34. .margin(10)
+35. .onClick(() => {
+36. this.parentSelectedDate.setMonth(this.parentSelectedDate.getMonth() + 1);
+37. })
+38. Button('parent update the new date')
+39. .margin(10)
+40. .onClick(() => {
+41. this.parentSelectedDate = new Date('2023-07-07');
+42. })
+43. DatePicker({
+44. start: new Date('1970-1-1'),
+45. end: new Date('2100-1-1'),
+46. selected: this.parentSelectedDate
+47. })
 
-48. DateComponent({ selectedDate:this.parentSelectedDate })
-49. }
+49. DateComponent({ selectedDate:this.parentSelectedDate })
 50. }
 51. }
+52. }
 ```
 
 [DecoratingVariablesDateType.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ComponentStateManagement/entry/src/main/ets/pages/LinkDecorator/DecoratingVariablesDateType.ets#L16-L68)
@@ -585,36 +589,37 @@ content_hash: sha256:f7e93a43a1f6e89ef634cf9f0060dc79f7e6f4a9f1d471d1f3355c2fef1
 7. Column() {
 8. Text(`sourceNumber of the parent component:` + this.sourceNumber)
 9. ChangeVariablesChild({ sourceNumber: this.sourceNumber })
-10. Button('Change sourceNumber in Parent Component')
-11. .onClick(() => {
-12. this.sourceNumber++;
-13. })
-14. }
-15. .width('100%')
-16. .height('100%')
-17. }
+10. // sourceNumber的修改不会影响到父组件中的变量改变
+11. Button('Change sourceNumber in Parent Component')
+12. .onClick(() => {
+13. this.sourceNumber++;
+14. })
+15. }
+16. .width('100%')
+17. .height('100%')
 18. }
+19. }
 
-20. @Component
-21. struct ChangeVariablesChild {
-22. @State memberMessage: string = 'Hello World';
-23. @Link @Watch('onSourceChange') sourceNumber: number;
+21. @Component
+22. struct ChangeVariablesChild {
+23. @State memberMessage: string = 'Hello World';
+24. @Link @Watch('onSourceChange') sourceNumber: number;
 
-25. onSourceChange() {
-26. this.memberMessage = this.sourceNumber.toString();
-27. }
+26. onSourceChange() {
+27. this.memberMessage = this.sourceNumber.toString();
+28. }
 
-29. build() {
-30. Column() {
-31. Text(this.memberMessage)
-32. Text(`sourceNumber of the child component:` + this.sourceNumber.toString())
-33. Button('Change memberMessage in Child Component')
-34. .onClick(() => {
-35. this.memberMessage = 'Hello memberMessage';
-36. })
-37. }
+30. build() {
+31. Column() {
+32. Text(this.memberMessage)
+33. Text(`sourceNumber of the child component:` + this.sourceNumber.toString())
+34. Button('Change memberMessage in Child Component')
+35. .onClick(() => {
+36. this.memberMessage = 'Hello memberMessage';
+37. })
 38. }
 39. }
+40. }
 ```
 
 [UseWatchToChangeLocalVariables.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ComponentStateManagement/entry/src/main/ets/pages/LinkDecorator/UseWatchToChangeLocalVariables.ets#L16-L56)
@@ -626,48 +631,49 @@ content_hash: sha256:f7e93a43a1f6e89ef634cf9f0060dc79f7e6f4a9f1d471d1f3355c2fef1
 ```
 1. @Component
 2. struct UnionChild {
-3. @Link name: string | undefined;
+3. // @Link支持联合类型
+4. @Link name: string | undefined;
 
-5. build() {
-6. Column() {
+6. build() {
+7. Column() {
 
-8. Button('Child change name to Bob')
-9. .onClick(() => {
-10. this.name = 'Bob';
-11. })
+9. Button('Child change name to Bob')
+10. .onClick(() => {
+11. this.name = 'Bob';
+12. })
 
-13. Button('Child change name to undefined')
-14. .onClick(() => {
-15. this.name = undefined;
-16. })
+14. Button('Child change name to undefined')
+15. .onClick(() => {
+16. this.name = undefined;
+17. })
 
-18. }.width('100%')
-19. }
+19. }.width('100%')
 20. }
+21. }
 
-22. @Entry
-23. @Component
-24. struct UnionTypes {
-25. @State name: string | undefined = 'mary';
+23. @Entry
+24. @Component
+25. struct UnionTypes {
+26. @State name: string | undefined = 'mary';
 
-27. build() {
-28. Column() {
-29. Text(`The name is  ${this.name}`).fontSize(30)
+28. build() {
+29. Column() {
+30. Text(`The name is  ${this.name}`).fontSize(30)
 
-31. UnionChild({ name: this.name })
+32. UnionChild({ name: this.name })
 
-33. Button('Parents change name to Peter')
-34. .onClick(() => {
-35. this.name = 'Peter';
-36. })
+34. Button('Parents change name to Peter')
+35. .onClick(() => {
+36. this.name = 'Peter';
+37. })
 
-38. Button('Parents change name to undefined')
-39. .onClick(() => {
-40. this.name = undefined;
-41. })
-42. }
+39. Button('Parents change name to undefined')
+40. .onClick(() => {
+41. this.name = undefined;
+42. })
 43. }
 44. }
+45. }
 ```
 
 [UsingUnionTypes.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ComponentStateManagement/entry/src/main/ets/pages/LinkDecorator/UsingUnionTypes.ets#L16-L61)

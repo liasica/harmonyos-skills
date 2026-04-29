@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 触摸事件
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用事件 > 基础输入事件 > 触摸事件
 category: harmonyos-references
-scraped_at: 2026-04-28T08:00:53+08:00
+scraped_at: 2026-04-29T13:51:05+08:00
 doc_updated_at: 2026-03-26
-content_hash: sha256:a3c34734f3f6630b442eeebea6f11d174b01d695433facc2e17bed8d270e1471
+content_hash: sha256:ec9b959ab68f99e36e7272e708876e1976b009e44c1fd877b274a22a8b68afb3
 ---
 
 由手指、手写笔或鼠标左键在组件上按下、滑动或抬起时触发。
@@ -209,4 +209,4 @@ PhonePC/2in1TabletTVWearable
 75. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/zFLbtVjqQJ2_hzXucWdxvw/zh-cn_image_0000002552959462.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000052Z&HW-CC-Expire=86400&HW-CC-Sign=1A5C108E3E274538ADAFC3FCCA188FCCBEF1469D1370BD0161CDEC3F1A7746DD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/YuSH8XJmSjCEqPHoXKz-9g/zh-cn_image_0000002558765982.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055103Z&HW-CC-Expire=86400&HW-CC-Sign=37315FEAD83EF1FB86F9636F8FAE74460D683FB91DBAF32176A391CA83B1144B)

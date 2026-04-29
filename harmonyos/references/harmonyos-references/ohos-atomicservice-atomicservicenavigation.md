@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-atom
 title: AtomicServiceNavigation
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > AtomicService > AtomicServiceNavigation
 category: harmonyos-references
-scraped_at: 2026-04-28T08:02:26+08:00
+scraped_at: 2026-04-29T13:52:51+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:fdbea0e3ff915dd5378d25a2e35924faa8fcc5ba4a6a31d29589b9e179a5e0cd
+content_hash: sha256:402ea4147ca60e5991e9ee5da68844f7132e2297c0b5d29c453149882b393ec4
 ---
 
 作为Page页面的根容器使用，其内部默认包含了标题栏、内容区，其中内容区默认首页显示导航内容或非首页显示（[NavDestination](ts-basic-components-navdestination.md)的子组件），首页和非首页通过路由进行切换。
@@ -353,7 +353,7 @@ AtomicServiceNavigation的基础样式，并展示渐变色背景。
 128. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/4EEoO7-YTNKjZzWJF-IfPA/zh-cn_image_0000002583480079.jpg?HW-CC-KV=V1&HW-CC-Date=20260428T000225Z&HW-CC-Expire=86400&HW-CC-Sign=A5E576B52767ED109E023DA2184DECC64B436682DE3C0DA660776D4A28C46A7F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/JKq1iXAwSUi-IBMkGVo9XA/zh-cn_image_0000002558606944.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T055249Z&HW-CC-Expire=86400&HW-CC-Sign=7B60F14D0E63B04F6613A3B51324B6FAF6EB0AC3C5F22607B090A19B8B187797)
 
 ### 示例2（抽屉模式，宽屏场景下插入自定义布局）
 
@@ -496,7 +496,7 @@ AtomicServiceNavigation的基础样式，并展示渐变色背景。
 134. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/LGsTuwk_SE2yBUzNR6d5DA/zh-cn_image_0000002552800430.png?HW-CC-KV=V1&HW-CC-Date=20260428T000225Z&HW-CC-Expire=86400&HW-CC-Sign=7ED25512D721769678C4EC1861016EC48D915CA30CB329DDD2F13E7909011FAD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/n2nguYySRyS002SeoDhxdA/zh-cn_image_0000002589326471.png?HW-CC-KV=V1&HW-CC-Date=20260429T055249Z&HW-CC-Expire=86400&HW-CC-Sign=8235AB5A3FD540F3088FF10DEB2B5411EEA82E0C8420C2FA54369820E0C1BF63)
 
 ### 示例3（边栏使用场景）
 
@@ -648,4 +648,4 @@ AtomicServiceNavigation的基础样式，并展示渐变色背景。
 143. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/fVj5w_RBQva6a_0R9B2Fgg/zh-cn_image_0000002583440125.png?HW-CC-KV=V1&HW-CC-Date=20260428T000225Z&HW-CC-Expire=86400&HW-CC-Sign=C5D8728CF84F8747D4DCCAB43E496B8991AB45FEB31E71BE84BD8F26335D5C96)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/ffEbuGqmSouh0RcxBylGLw/zh-cn_image_0000002589246413.png?HW-CC-KV=V1&HW-CC-Date=20260429T055249Z&HW-CC-Expire=86400&HW-CC-Sign=86DBED0ADCE18B8DE8A5BEB20B6FC809AD8E8704B04DC1F1DB2F2FF80825DBDF)

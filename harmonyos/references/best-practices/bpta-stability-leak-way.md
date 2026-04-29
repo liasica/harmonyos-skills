@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: 资源泄漏类问题分析方法
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 资源泄漏类问题分析方法
 category: best-practices
-scraped_at: 2026-04-28T08:22:57+08:00
+scraped_at: 2026-04-29T14:14:09+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:c2adefac11cf256ecd6c9e34f3dda58d03d831ac1c22172bf874c38119df1331
+content_hash: sha256:25e8c855bdb187980a25a9fec023e4df929ade541bb0f1d484c95d6172a5d6c3
 ---
 
 ## 概述
@@ -24,7 +24,7 @@ content_hash: sha256:c2adefac11cf256ecd6c9e34f3dda58d03d831ac1c22172bf874c38119d
 
 整体分析策略：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/32nqFc3VQPCvh9PqRwceJg/zh-cn_image_0000002370565496.png?HW-CC-KV=V1&HW-CC-Date=20260428T002256Z&HW-CC-Expire=86400&HW-CC-Sign=BA2651FA9F3B653A81C5B87A7D0C7E1612C67E2F4867E25F2C654A81B17DD20E "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/32nqFc3VQPCvh9PqRwceJg/zh-cn_image_0000002370565496.png?HW-CC-KV=V1&HW-CC-Date=20260429T061408Z&HW-CC-Expire=86400&HW-CC-Sign=D7F12B290A4E61FC118CEEDE288B1CE1DBF069CEC861D6F914E8CED11BC734B0 "点击放大")
 
 **开发态-JS泄漏分析方法（适用于开发过程中特定场景下调优）**
 
@@ -42,7 +42,7 @@ Summary功能可以用来查看全量内存信息，Comparison可以用来进行
    3. 展开这个对象，找到对象的成员，看每个成员的distance，找到其中最小的。
    4. 重复b和c步骤，直到找到distance为1的为止，这个就是GC Root根节点。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/XYIzQllLSq-nfHuh4CqWdA/zh-cn_image_0000002404125169.png?HW-CC-KV=V1&HW-CC-Date=20260428T002256Z&HW-CC-Expire=86400&HW-CC-Sign=68B56BA0FD6FCF62C9F3E9865E398F637E42C619DC6C062E81F81721D87B83DF)具体操作方法可见[JS内存泄漏问题检测方法](bpta-stability-js-memleak-detection.md)。
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/XYIzQllLSq-nfHuh4CqWdA/zh-cn_image_0000002404125169.png?HW-CC-KV=V1&HW-CC-Date=20260429T061408Z&HW-CC-Expire=86400&HW-CC-Sign=DF0C7BB74F94B21174FC2154571E34C312BA93C457594F8BA55FA63EB36DC9A6)具体操作方法可见[JS内存泄漏问题检测方法](bpta-stability-js-memleak-detection.md)。
 
 **运维态-JS泄漏分析方法【适用于运维态自动采集获取日志】**
 
@@ -50,7 +50,7 @@ Summary功能可以用来查看全量内存信息，Comparison可以用来进行
 
 如下图，存在26个Note JSObject对象，与实际业务不符合，需要进一步查其引用关系判断是否泄漏：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/hatAHwBeTPi6A9eS6Hg23w/zh-cn_image_0000002370405628.png?HW-CC-KV=V1&HW-CC-Date=20260428T002256Z&HW-CC-Expire=86400&HW-CC-Sign=8A712219DDAB90349E75F69F145AFA846344AA16D7A958A9234C2701D37FC2C2)除以上方法外，JS泄漏分析方法还可参考[分析ArkTS/JS内存](bpta-arkts-js-memory-analysis.md)。
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/hatAHwBeTPi6A9eS6Hg23w/zh-cn_image_0000002370405628.png?HW-CC-KV=V1&HW-CC-Date=20260429T061408Z&HW-CC-Expire=86400&HW-CC-Sign=0541EA2DAB954A64629B4CBAFE85A5F0B8F938B362E2D4768CAC9B564F6AFEA3)除以上方法外，JS泄漏分析方法还可参考[分析ArkTS/JS内存](bpta-arkts-js-memory-analysis.md)。
 
 注意
 
@@ -70,7 +70,7 @@ Summary功能可以用来查看全量内存信息，Comparison可以用来进行
 
    如：某应用 PSS泄漏，根据TotalMem列可以看到进程内存一直持续增长，峰值内存TopPssMemory为3GB左右，观察Realtime一列带\*的那一行为将共享内存去重后的进程pss内存使用情况：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/mSOIXlVrS1iOt1xjuGmDpQ/zh-cn_image_0000002404045333.png?HW-CC-KV=V1&HW-CC-Date=20260428T002256Z&HW-CC-Expire=86400&HW-CC-Sign=0FF2B9B1EE22CB495F8E2F4334DE3C475F3A444F8B2A1E4654F1ED9D8728F8BC)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/mSOIXlVrS1iOt1xjuGmDpQ/zh-cn_image_0000002404045333.png?HW-CC-KV=V1&HW-CC-Date=20260429T061408Z&HW-CC-Expire=86400&HW-CC-Sign=F1A668854E615699CACDD0CD0D5C1935ECC825391AED419FE6D393C06396B26B)
 2. 分析smaps日志
 
    native泄漏有多种泄漏类型，具体可根据表格定位分析是哪一块泄漏，其中总PSS内存即sample文件的采样内存（可用最后一个）。
@@ -86,7 +86,7 @@ Summary功能可以用来查看全量内存信息，Comparison可以用来进行
 
    “LOGGER\_MEMCHECK\_SAMPLE\_NMD\_INFO”与“LOGGER\_MEMCHECK\_DETIAL\_INFO”中记录抓取进程native日志时内存的快照信息，主要关注其size和allocated两列，是否有比较突出的内存占用，日志格式如下。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/27CN44OORCixn_AKtaIhxw/zh-cn_image_0000002370565508.png?HW-CC-KV=V1&HW-CC-Date=20260428T002256Z&HW-CC-Expire=86400&HW-CC-Sign=53232CEB712FB18774AA65A3984335ACBC7C6026B1172C79658CEFD793237664)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/27CN44OORCixn_AKtaIhxw/zh-cn_image_0000002370565508.png?HW-CC-KV=V1&HW-CC-Date=20260429T061408Z&HW-CC-Expire=86400&HW-CC-Sign=18C51BD15FA6A773C3F1C9DF8DBE8919B2CBD42C008CB087C810A31E60419DEB)
 
    如果有，假设size为a（如128），就去调用栈中查找size为a的内存申请，重点分析这行调用栈，极可能是泄漏点。
 
@@ -103,12 +103,12 @@ Summary功能可以用来查看全量内存信息，Comparison可以用来进行
 
    * 开发者可以将获取到的profiler文件导入DevEco Studio Profiler插件中进行分析，导入后会在界面展示进程的内存分配情况及其调用栈。按照如下步骤将解析结果展开，通过将Bytes/Count的结果与通过smaps日志分析出的size进行匹配，来排查可疑的泄漏点，并通过调用栈进一步确认泄漏位置。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/ZdDXdrkuS4SHcHPmEH41MQ/zh-cn_image_0000002404125173.png?HW-CC-KV=V1&HW-CC-Date=20260428T002256Z&HW-CC-Expire=86400&HW-CC-Sign=FE0C8328DA58F1FAEAED50F518C2428B84196FDFAE5CD0E9B120E4C3123559BA "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/ZdDXdrkuS4SHcHPmEH41MQ/zh-cn_image_0000002404125173.png?HW-CC-KV=V1&HW-CC-Date=20260429T061408Z&HW-CC-Expire=86400&HW-CC-Sign=47754FD7872040FF6F1172AEAD30578E1353357A368B99B6F01E465D5F70CA50 "点击放大")
    * 本地搭建[Smartperf](https://gitcode.com/openharmony-sig/smartperf)环境，并导入profiler日志进行解析，框选All Heap，解析profiler，选择Created & Existing，在搜索框中搜索通过NMD信息拿到初步怀疑内存块并通过调用栈确认泄漏点。
 
      假设NMD信息中，12582912字节的内存块内存占比最大，则搜索并排查该堆栈中对应12582912字节对应的调用栈如下：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/cY5XgmXgSSysKR4OWKNZuw/zh-cn_image_0000002370405632.png?HW-CC-KV=V1&HW-CC-Date=20260428T002256Z&HW-CC-Expire=86400&HW-CC-Sign=4C19B70D23D93B9DB45407CD8EA239CCA5FAE466ACE8E13B1F048450C2E6E143)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/cY5XgmXgSSysKR4OWKNZuw/zh-cn_image_0000002370405632.png?HW-CC-KV=V1&HW-CC-Date=20260429T061408Z&HW-CC-Expire=86400&HW-CC-Sign=CABA998BB388C7D8791167745A6D69117C2A1286602AF37F513309E476976FE5)
 
 ### **ashmem泄漏**
 
@@ -122,7 +122,7 @@ Summary功能可以用来查看全量内存信息，Comparison可以用来进行
 
 这些内存都是由图片编解码框架提供的编解码工具申请的，申请代码如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/NhRS0llwREq1r6RJj781bQ/zh-cn_image_0000002404045337.png?HW-CC-KV=V1&HW-CC-Date=20260428T002256Z&HW-CC-Expire=86400&HW-CC-Sign=E4E48CF55F09C53046E7C4D412CA59A7761D97C21FE25AF550C5B1D3E046645B "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/NhRS0llwREq1r6RJj781bQ/zh-cn_image_0000002404045337.png?HW-CC-KV=V1&HW-CC-Date=20260429T061408Z&HW-CC-Expire=86400&HW-CC-Sign=93B062B98B0109D8670C437FF3ED98530EBA696286CE205CCA8E6594BD827EF7 "点击放大")
 
 解码框架本身没有问题，一旦完成解码，ashmem的所有权会转移给C++的PixelMap对象，如果是ashmem泄漏，基本上可以断定是C++层的PixelMap泄漏。
 
@@ -140,7 +140,7 @@ Summary功能可以用来查看全量内存信息，Comparison可以用来进行
 
 1. 对于ION泄漏，开发者可在ION泄漏维测日志[memleak-kernel-[module]-0-[timestamp].txt]中搜索“Total dmaheap size of”查看自身应用进程的ION内存占用量。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/nF-6WDdmQj2bfxIrSa_8mQ/zh-cn_image_0000002370565512.png?HW-CC-KV=V1&HW-CC-Date=20260428T002256Z&HW-CC-Expire=86400&HW-CC-Sign=E9554C54C182A8F697E6F8D1F1DFBF6B8468FBF49BE8A5AE17AE9892112EA659)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/nF-6WDdmQj2bfxIrSa_8mQ/zh-cn_image_0000002370565512.png?HW-CC-KV=V1&HW-CC-Date=20260429T061408Z&HW-CC-Expire=86400&HW-CC-Sign=226F91682DE6010646E5B3ED9D781D935069A1D4CFAD6566379DE9F76A89E50E)
 2. 搜索magic这一列，magic相同表示属于用一块buffer，正常如下，应该是存在buffer流转，buffer被多个进程共享。
 
    ```
@@ -163,7 +163,7 @@ Summary功能可以用来查看全量内存信息，Comparison可以用来进行
 
    **step2：**如果应用根本就没有使用Node-API实现C++代码，那么排查是否使用JS层的PixelMap，可能存在JS对象泄漏或者缓存太多导致PixelMap大量占用，可使用IDE抓两次snapshot看一下对象的增量分析，操作方法见下图。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/c0xFHCzXQW2I0W3jUtdSfw/zh-cn_image_0000002404125177.png?HW-CC-KV=V1&HW-CC-Date=20260428T002256Z&HW-CC-Expire=86400&HW-CC-Sign=0C891439E675C401937E1B93DFCE533EB634320D93AAD3DED215E72CEA61314F)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/c0xFHCzXQW2I0W3jUtdSfw/zh-cn_image_0000002404125177.png?HW-CC-KV=V1&HW-CC-Date=20260429T061408Z&HW-CC-Expire=86400&HW-CC-Sign=7825FF63B901CEF711BAF293E49BA0809E70BFEDEC93FC2AE0BDD499882274F7)
 
    **step3:**  **【推荐】**pixmap使用的ION内存，应用自定义绑定pixmap名字，当出现ION泄漏，快速根据ION的buffer名锁定哪张图片存在问题，反推至对应的问题组件。
 
@@ -278,21 +278,21 @@ Summary功能可以用来查看全量内存信息，Comparison可以用来进行
 
    开发者可以将获取到的profiler文件（[内存栈](../harmonyos-guides/resource-leak-guidelines.md#section18411753155019)）导入DevEco Studio Profiler插件中进行分析，导入后会在界面展示进程的内存分配情况及其调用栈。按照如下步骤将解析结果展开，按照前置分析框选怀疑泄漏的泳道，选择Created & Existing，按照内存申请大小来排查可疑的泄漏点，并通过调用栈进一步确认泄漏位置。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/TEdketgwSOSqm-FVp34yKg/zh-cn_image_0000002504303346.png?HW-CC-KV=V1&HW-CC-Date=20260428T002256Z&HW-CC-Expire=86400&HW-CC-Sign=9886003373A0834B10F6BC96FF787A19441257D85AD4C27FB63804B4F2B0392F)可本地搭建[Smartperf](https://gitcode.com/openharmony-sig/smartperf)环境，并导入profiler日志进行解析，按照前置分析框选怀疑泄漏的泳道，选择Created & Existing，通过步骤二分析出异常size范围进行匹配，来排查可疑的泄漏点，并通过调用栈进一步确认泄漏位置。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/TEdketgwSOSqm-FVp34yKg/zh-cn_image_0000002504303346.png?HW-CC-KV=V1&HW-CC-Date=20260429T061408Z&HW-CC-Expire=86400&HW-CC-Sign=68F448AFF1D4B8B5591A0960BEAF11ADA4B6D396D31E28D71F96EDB70315FC7B)可本地搭建[Smartperf](https://gitcode.com/openharmony-sig/smartperf)环境，并导入profiler日志进行解析，按照前置分析框选怀疑泄漏的泳道，选择Created & Existing，通过步骤二分析出异常size范围进行匹配，来排查可疑的泄漏点，并通过调用栈进一步确认泄漏位置。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/PIUhF344Q9qoHi9Snwvfgw/zh-cn_image_0000002504143532.png?HW-CC-KV=V1&HW-CC-Date=20260428T002256Z&HW-CC-Expire=86400&HW-CC-Sign=AE48ECC32B10748A01F47D2DFAD1A41489D39A3BD8743DD7695D310E12888214)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/PIUhF344Q9qoHi9Snwvfgw/zh-cn_image_0000002504143532.png?HW-CC-KV=V1&HW-CC-Date=20260429T061408Z&HW-CC-Expire=86400&HW-CC-Sign=4394CFF1DD18E41C3388144C03A3913D70A791EF7157A05E10C749F0AFCA68F3)
 
 ### gpu\_rs泄漏
 
 1. 对于gpu\_rs泄漏，开发者可以在维测日志[memleak-kernel-[module]-0-[timestamp].txt]中搜索“used summary:”字段，来查看renderservice的内存使用情况；
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/HwL_lul7T7OtRXascAIAKw/zh-cn_image_0000002370405636.png?HW-CC-KV=V1&HW-CC-Date=20260428T002256Z&HW-CC-Expire=86400&HW-CC-Sign=75F98377E21ADD01722E26CC857C17D49888EE428C895B71C86D7707DEC9F387)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/HwL_lul7T7OtRXascAIAKw/zh-cn_image_0000002370405636.png?HW-CC-KV=V1&HW-CC-Date=20260429T061408Z&HW-CC-Expire=86400&HW-CC-Sign=178EEE30B4C8B93C30DF98045B2EE5B615E4485CD84F1EEC7E16FAC779BFA318)
 2. 找到render\_service对应的GPU内存信息打印，gpu\_rs上报的进程泄漏是通过render\_service进行统一渲染的，因此需要分析render\_service的GPU内存信息占用来排查问题；
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/Bjbyh1_yQIuWyX769FDAyg/zh-cn_image_0000002404045341.png?HW-CC-KV=V1&HW-CC-Date=20260428T002256Z&HW-CC-Expire=86400&HW-CC-Sign=B0BCAA2CF63D6AB82056C6E6A39F34041FA86D2F661DC0AB9EDFDC006F2EEEA3)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/Bjbyh1_yQIuWyX769FDAyg/zh-cn_image_0000002404045341.png?HW-CC-KV=V1&HW-CC-Date=20260429T061408Z&HW-CC-Expire=86400&HW-CC-Sign=40F05BEE20BD297B88006D20C84899A49EF54747C20703FE05F84A54D64B8B08)
 3. 进一步查看rs gpu的内存占用发现vulkan image和vulkan buffer占用比较高，重点排查一下框选的两处维测信息。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/2l734tuMSgWCxA8JBgSzsw/zh-cn_image_0000002370565516.png?HW-CC-KV=V1&HW-CC-Date=20260428T002256Z&HW-CC-Expire=86400&HW-CC-Sign=7D6CCD179B0678F87B4533DD5C44CD16A874DDFD0FC95A6BBC81A476B1E486ED)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/2l734tuMSgWCxA8JBgSzsw/zh-cn_image_0000002370565516.png?HW-CC-KV=V1&HW-CC-Date=20260429T061408Z&HW-CC-Expire=86400&HW-CC-Sign=305615AFB968FC8FF94345AFB2FBEBBF379D942043BD2757FBE3188F03D84992)
 
 ## 句柄泄漏分析方法
 

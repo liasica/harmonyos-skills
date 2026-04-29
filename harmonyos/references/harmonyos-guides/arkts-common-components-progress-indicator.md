@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-common-
 title: 进度条 (Progress)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 添加组件 > 进度条 (Progress)
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:39:41+08:00
+scraped_at: 2026-04-29T13:27:53+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:5ea2071b77dfe35d15fe6270802079b8c2ffc255d2f0379bcce3206bc97cf7ef
+content_hash: sha256:c59b5e6c20d2ba7fbc97591ccbc3682c798605dd440725f72cb82f9cc7449a36
 ---
 
 Progress是进度条显示组件，显示内容通常为目标操作的当前进度。具体用法请参考[Progress](../harmonyos-references/ts-basic-components-progress.md)。
@@ -24,7 +24,7 @@ Progress通过调用接口来创建，接口调用方式如下：
 1. Progress({ value: 24, total: 100, type: ProgressType.Linear }) // 创建一个进度总长为100，初始进度值为24的线性进度条
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/bpb2O-WoQ7ijnHWBYB2j2w/zh-cn_image_0000002552798242.png?HW-CC-KV=V1&HW-CC-Date=20260427T233940Z&HW-CC-Expire=86400&HW-CC-Sign=199B2B4F55CA560378435141821F26B9BDCB2D72AA704AFB9ED9D927D7D4D946)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/eASdHqo0TIOwS2WO4OhXUw/zh-cn_image_0000002558764382.png?HW-CC-KV=V1&HW-CC-Date=20260429T052751Z&HW-CC-Expire=86400&HW-CC-Sign=9519819B94FEB764E81A2C9F1CE0511833CD431A003E20E88282BBC660DA2CEE)
 
 ## 设置进度条样式
 
@@ -43,7 +43,7 @@ Progress有5种可选类型，通过ProgressType可以设置进度条样式。Pr
 
   [Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/InfoComponent/ProgressProject/entry/src/main/ets/pages/Index.ets#L39-L42)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/dxBxfVTgT8SUiiLwTtZJoQ/zh-cn_image_0000002583437937.png?HW-CC-KV=V1&HW-CC-Date=20260427T233940Z&HW-CC-Expire=86400&HW-CC-Sign=F3E9257D4BE2E667C985426B25A258D3D6D5828035113792B74206F46BC2CFE3)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/4emqRrQJQoy_4u37rMBb6g/zh-cn_image_0000002558604726.png?HW-CC-KV=V1&HW-CC-Date=20260429T052751Z&HW-CC-Expire=86400&HW-CC-Sign=28EE6B8116239CAB7D4D6CAD2B97BAC9ADE2B574DE0B36EC04754980BC275F8D)
 * 环形无刻度样式进度条
 
   ```
@@ -57,7 +57,7 @@ Progress有5种可选类型，通过ProgressType可以设置进度条样式。Pr
 
   [Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/InfoComponent/ProgressProject/entry/src/main/ets/pages/Index.ets#L47-L54)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/ZPuk2vSCRk2mbLwAk1Dw-w/zh-cn_image_0000002552957892.png?HW-CC-KV=V1&HW-CC-Date=20260427T233940Z&HW-CC-Expire=86400&HW-CC-Sign=2A59B92851AFED0BE58BD751E81603C6FF67F2A3965517FC708B71D444BA80E7)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/4Z53UJ3tR7KFqz4JWwDpIw/zh-cn_image_0000002589324251.png?HW-CC-KV=V1&HW-CC-Date=20260429T052751Z&HW-CC-Expire=86400&HW-CC-Sign=79B3E28DA3AD022536C8E02C5B55CFA83B557B5302A483DC1533C96CDA0126DA)
 * 环形有刻度样式进度条
 
   ```
@@ -74,7 +74,7 @@ Progress有5种可选类型，通过ProgressType可以设置进度条样式。Pr
 
   [Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/InfoComponent/ProgressProject/entry/src/main/ets/pages/Index.ets#L60-L70)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/vkuD0kqPRWGUuyf8IeceHA/zh-cn_image_0000002583477893.png?HW-CC-KV=V1&HW-CC-Date=20260427T233940Z&HW-CC-Expire=86400&HW-CC-Sign=7B23FE1C442B46150B5583E6A67A6D7A0931254BC0535D9ADA726C92DEC09690)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/tH8NoguwRGGN4BLRctEFKw/zh-cn_image_0000002589244191.png?HW-CC-KV=V1&HW-CC-Date=20260429T052751Z&HW-CC-Expire=86400&HW-CC-Sign=919BAA8700BF580A36900C817CA31ED0B993E5A2B59A427C454ACEE850704582)
 * 圆形样式进度条
 
   ```
@@ -86,7 +86,7 @@ Progress有5种可选类型，通过ProgressType可以设置进度条样式。Pr
 
   [Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/InfoComponent/ProgressProject/entry/src/main/ets/pages/Index.ets#L76-L81)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/ukAcKzxfTRGTx2Jgueve1A/zh-cn_image_0000002552798244.png?HW-CC-KV=V1&HW-CC-Date=20260427T233940Z&HW-CC-Expire=86400&HW-CC-Sign=EF9ADD30BD58CB0EC9F3E8546D7BEE0719DBA37E5A092F9AE1870B50C1350818)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/Gb5cv6YGRzyu-XnJ61uZcw/zh-cn_image_0000002558764384.png?HW-CC-KV=V1&HW-CC-Date=20260429T052751Z&HW-CC-Expire=86400&HW-CC-Sign=B5114AAB0673C07E01E0B6CEEA8E5D2C504B40AD04D20DF9BE499DBBD7D898B6)
 * 胶囊样式进度条
 
   说明
@@ -103,7 +103,7 @@ Progress有5种可选类型，通过ProgressType可以设置进度条样式。Pr
 
   [Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/InfoComponent/ProgressProject/entry/src/main/ets/pages/Index.ets#L87-L91)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/vqk1XdAvSpimcTm9Aisq5g/zh-cn_image_0000002583437939.png?HW-CC-KV=V1&HW-CC-Date=20260427T233940Z&HW-CC-Expire=86400&HW-CC-Sign=A02BE73EA9839117EAD44D0B432494D9F175EBE4CB8F3DA83FB242E1A45DA1D0)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/vyeFOefbT6ervWzYAJzN-Q/zh-cn_image_0000002558604728.png?HW-CC-KV=V1&HW-CC-Date=20260429T052751Z&HW-CC-Expire=86400&HW-CC-Sign=235956C6A4AC8F64DCB43DACC74F8072B2FDCA3144BC1AE4A24981E6A72DDCF8)
 
 ## 场景示例
 
@@ -135,4 +135,4 @@ Progress有5种可选类型，通过ProgressType可以设置进度条样式。Pr
 
 [ProgressCase1.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/InfoComponent/ProgressProject/entry/src/main/ets/pages/ProgressCase1.ets#L15-L37)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/-5EpKTxVT0CEHFeqU5zKaA/zh-cn_image_0000002552957894.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233940Z&HW-CC-Expire=86400&HW-CC-Sign=DBEE35E340DBB1E972484DD3C97486EC890B2097B4FC068142B8663657856EE6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/ZldlOqbTSzaHNykh6NmkAg/zh-cn_image_0000002589324253.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052751Z&HW-CC-Expire=86400&HW-CC-Sign=8FD90F501ABEF8FA32ABAB28DE49B930030D26065C06D677179E2D991848048E)

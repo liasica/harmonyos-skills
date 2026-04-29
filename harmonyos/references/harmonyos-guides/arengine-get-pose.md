@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arengine-get-
 title: 获取设备位姿（ArkTS）
 breadcrumb: 指南 > 图形 > AR Engine（AR引擎服务） > 运动跟踪 > 获取设备位姿（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:46:51+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:5f6128c251c61b8f52908da75b081afb3da208bc911253e3c87ef2bae7e6ee32
+scraped_at: 2026-04-29T13:35:50+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:efc8c4b5337b7ecd4daf2d0f2b09efd180b2f74cb49e1f417a7322a0794c563a
 ---
 
 本章节给出了关键开发步骤，完整代码可以参考[示例代码](https://gitcode.com/HarmonyOS_Samples/arengine_samplecode_clientdemo_arkts)。
@@ -80,8 +80,8 @@ Vec3是一个三维向量，用于存储设备的位姿信息。
 26. .height('100%')
 27. .width('100%')
 28. .alignRules({
-29. center: { anchor: "__container__", align: VerticalAlign.Center },
-30. middle: { anchor: "__container__", align: HorizontalAlign.Center }
+29. center: { anchor: '__container__', align: VerticalAlign.Center },
+30. middle: { anchor: '__container__', align: HorizontalAlign.Center }
 31. })
 
 33. // 在屏幕上显示设备位姿信息
@@ -98,8 +98,8 @@ Vec3是一个三维向量，用于存储设备的位姿信息。
 44. .alignItems(HorizontalAlign.Start)
 45. .margin({ left: 28, top: 28 })
 46. .alignRules({
-47. top: { anchor: "__container__", align: VerticalAlign.Top },
-48. left: { anchor: "__container__", align: HorizontalAlign.Start }
+47. top: { anchor: '__container__', align: VerticalAlign.Top },
+48. left: { anchor: '__container__', align: HorizontalAlign.Start }
 49. })
 50. }
 51. }

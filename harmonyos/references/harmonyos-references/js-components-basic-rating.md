@@ -1,10 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-basic-rating
 title: rating
+breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 基础组件 > rating
 category: harmonyos-references
-scraped_at: 2026-04-28T08:03:05+08:00
+scraped_at: 2026-04-29T13:53:26+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:da6f698c473767ee8e4be42510297a7499ecffd559881ceb39f819cd56bb2ba6
+content_hash: sha256:c0dbda4887e722a9fb55487ad096bc7ddc7fbc04130ab6c8647ba4ffb7443249
 ---
 
 说明
@@ -109,4 +110,4 @@ PhonePC/2in1TabletTVWearable
 9. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/8B_FZY6qSQ-PWEB0utVVOg/zh-cn_image_0000002583480199.png?HW-CC-KV=V1&HW-CC-Date=20260428T000304Z&HW-CC-Expire=86400&HW-CC-Sign=B132AD692589B0FAF7CBFBFAF935BBCCEE566212A10AB5AEA871CE646C8A603F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/1zyRy5fsRJ2q65JT0Goi7Q/zh-cn_image_0000002589326591.png?HW-CC-KV=V1&HW-CC-Date=20260429T055325Z&HW-CC-Expire=86400&HW-CC-Sign=9ACD29C742856A247CCE525372292FEFCBCE30E1C16FC82C11D34AE038FCCC96)

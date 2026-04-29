@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-kerne
 title: 核函数
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > 自定义算子开发 > 基本概念 > 编程模型 > 核函数
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:51:26+08:00
+scraped_at: 2026-04-29T13:41:04+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:00f9e1b001bb1c12b5bb2ac4c3ba5b99b8690ff4a092fb5daa0de726ea9e8752
+content_hash: sha256:52b2518560cd4679362b8b12e57597ddde6d6b442e14a131dfc70a8f07be7fde
 ---
 
 从[SPMD模型](cannkit-spmd-model.md)可以得知，使用AscendC进行编程时，我们编写一份算子实现代码，算子被调用时，将启动N个运行实例，在N个核上运行。本节将介绍算子实现的入口函数。
@@ -40,7 +40,7 @@ Kirin9020/KirinX90系列处理器暂不支持通过<<<>>>调用核函数。
 
   **图1** 核函数（device侧执行）、host侧执行函数、device侧执行函数（除核函数之外的）调用关系
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/SbBbmBehStSiGeoYkZXP2Q/zh-cn_image_0000002552799580.png?HW-CC-KV=V1&HW-CC-Date=20260427T235125Z&HW-CC-Expire=86400&HW-CC-Sign=C524877C9A3C0018BCFE9C341D93BEFDCA71154BB6083D67C229C7D9297EE25D)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/f1VYE1wQQz2g0MUTzi9klg/zh-cn_image_0000002558606074.png?HW-CC-KV=V1&HW-CC-Date=20260429T054103Z&HW-CC-Expire=86400&HW-CC-Sign=16BDD162E40DC27C9806C3B1C6BD82BA9914823498FB4A2AA4EA06CCF6418A74)
 * **使用变量类型限定符**
 
   指针入参变量需要增加变量类型限定符\_\_gm\_\_，表明该指针变量指向Global Memory上某处内存地址。

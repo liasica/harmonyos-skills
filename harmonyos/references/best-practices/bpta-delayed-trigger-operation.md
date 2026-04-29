@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-delayed-tr
 title: 操作延时触发
 breadcrumb: 最佳实践 > 性能 > 性能优化 > 操作延时触发
 category: best-practices
-scraped_at: 2026-04-28T08:22:27+08:00
+scraped_at: 2026-04-29T14:13:28+08:00
 doc_updated_at: 2026-04-01
-content_hash: sha256:d6c1a29bbc934b00cbb5b463610cc1cf0404e71367c91b39c67b49cade8bb745
+content_hash: sha256:6be26316e0bbe090d514e1551b565271bbb286764dd1b918e2538f10659b905f
 ---
 
 ## **延迟加载Lazy-Import与动态加载await import**
@@ -31,7 +31,7 @@ content_hash: sha256:d6c1a29bbc934b00cbb5b463610cc1cf0404e71367c91b39c67b49cade8
 
 下面示例中，所有变量均从DeviceInfo模块中导出。除了冷启动用到的name模块，一些非关键路径模块（如screen和storage）也一起被导出。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/TqPshPDsTl2Uu5WYY-ei_A/zh-cn_image_0000002533090658.png?HW-CC-KV=V1&HW-CC-Date=20260428T002226Z&HW-CC-Expire=86400&HW-CC-Sign=B7DDA01DB792E3C93625C8A083F2DEF82A7748DC8F5F88FAC295DFA48EB3DA26 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/TqPshPDsTl2Uu5WYY-ei_A/zh-cn_image_0000002533090658.png?HW-CC-KV=V1&HW-CC-Date=20260429T061327Z&HW-CC-Expire=86400&HW-CC-Sign=89E3998EA311ED0D9D46526C3C3D9D653BF599760ADD75BD48BB7C3A04450C59 "点击放大")
 
 ```
 1. // entry\src\main\ets\pages\Index.ets
@@ -83,7 +83,7 @@ content_hash: sha256:d6c1a29bbc934b00cbb5b463610cc1cf0404e71367c91b39c67b49cade8
 
 使用体检工具[体检工具](bpta-application-cold-start-optimization.md#section16955857103112)可以查看冷启动阶段未使用的模块和这些模块的加载耗时。将这些未使用模块（storage和screen）从关键路径中剥离，添加lazy标识进行延迟加载。修改后，从下图Trace中可以观察到冷启动阶段仅加载了DeviceName模块。OtherDeviceInfo模块被推迟到用户首次点击文本时才会执行。从修改前后的Trace可以看出，冷启动耗时有所降低。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/1lHw25SDTASgyY3f8zxjYg/zh-cn_image_0000002563810679.png?HW-CC-KV=V1&HW-CC-Date=20260428T002226Z&HW-CC-Expire=86400&HW-CC-Sign=5E6DF864491477B99A1C163FDCB040485C272FE763A038075C0DEABC2ED18978 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/1lHw25SDTASgyY3f8zxjYg/zh-cn_image_0000002563810679.png?HW-CC-KV=V1&HW-CC-Date=20260429T061327Z&HW-CC-Expire=86400&HW-CC-Sign=A63BA2C9CF0CBA9D039FC4D24CF5635B6A03E5C956861A5CB9C591A45B7ACB5F "点击放大")
 
 ```
 1. // entry\src\main\ets\pages\Index.ets
@@ -186,7 +186,7 @@ content_hash: sha256:d6c1a29bbc934b00cbb5b463610cc1cf0404e71367c91b39c67b49cade8
 
 [name.ets](https://gitcode.com/HarmonyOS_Samples/BestPracticeSnippets/blob/master/ArkTSModuleHighPerformanceSegment/DynamicLoad/entry/src/main/ets/pages/name.ets#L2-L4)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/u5WSWAmvSV6cetJ1C8TFKw/zh-cn_image_0000002547097925.png?HW-CC-KV=V1&HW-CC-Date=20260428T002226Z&HW-CC-Expire=86400&HW-CC-Sign=6622DD673299A8AA843FBB4DA311CFAFB568F60E00149280033625F0914FA097 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/u5WSWAmvSV6cetJ1C8TFKw/zh-cn_image_0000002547097925.png?HW-CC-KV=V1&HW-CC-Date=20260429T061327Z&HW-CC-Expire=86400&HW-CC-Sign=2FAEC92C19FD3737FC44CF013F242BE5380FD42FDFFD987E4B1922CCDE5C73DC "点击放大")
 
 使用[体检工具](bpta-application-cold-start-optimization.md#section16955857103112)记录冷启动Trace，识别启动阶段未使用的模块及其加载耗时。在该示例中，不需要在用户点击事件前加载[libentry.so](https://libentry.so/)模块，建议删除import testNapi from 'libentry.so'语句，仅在需要使用时通过import()函数动态加载该模块。下图为修改后采集的冷启动Trace，从图中可以看到冷启动阶段不再加载libentry.so。从修改前后的Trace可以看出降低了冷启动的耗时。
 
@@ -224,7 +224,7 @@ content_hash: sha256:d6c1a29bbc934b00cbb5b463610cc1cf0404e71367c91b39c67b49cade8
 
 [Index.ets](https://gitcode.com/HarmonyOS_Samples/BestPracticeSnippets/blob/master/ArkTSModuleHighPerformanceSegment/DynamicLoad/entry/src/main/ets/pages/Index.ets#L2-L31)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/d_XBT8cyQzOwRPdwOerjBw/zh-cn_image_0000002515418092.png?HW-CC-KV=V1&HW-CC-Date=20260428T002226Z&HW-CC-Expire=86400&HW-CC-Sign=F00A727208F8235109C2405700C8E112E8F6C3B1B9868C070D5C7E99936B8583 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/d_XBT8cyQzOwRPdwOerjBw/zh-cn_image_0000002515418092.png?HW-CC-KV=V1&HW-CC-Date=20260429T061327Z&HW-CC-Expire=86400&HW-CC-Sign=6EF64191A316980F86A1C4CCBB5E821A9F6C77608066057E35127EF6BCEE9285 "点击放大")
 
 ## **延迟执行资源释放操作**
 

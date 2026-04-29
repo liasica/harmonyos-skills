@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-commandli
 title: 获取命令行工具
 breadcrumb: 指南 > 命令行工具 > 获取命令行工具
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:57:38+08:00
+scraped_at: 2026-04-29T13:47:47+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:0d3d104af9572f41f28368d6a97de77cd6aeb73a5d06c73451b955dc6a0ad3a5
+content_hash: sha256:ffd6b4205f2dccba9d4f5b119bd7cd240fef9be9ce172b9d231deb576a946786
 ---
 
 该命令行工具集合了HarmonyOS应用开发所用到的系列工具，包括代码检查codelinter、堆栈解析hstack、命令行构建hvigorw、三方依赖管理ohpm和SDK中包含的一系列工具，本文主要讲解codelinter、hstack、hvigorw等工具的使用方式，关于SDK中包含的工具的使用指导请参考[SDK命令行工具](command-line-tools-overview.md)。
@@ -28,7 +28,7 @@ HarmonyOS SDK已嵌入命令行工具中，无需额外下载配置。
 
 例如将命令行工具解压到D盘根目录，示例如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/VpNQTGXqTfO0IHv5lY7x0g/zh-cn_image_0000002561753287.png?HW-CC-KV=V1&HW-CC-Date=20260427T235737Z&HW-CC-Expire=86400&HW-CC-Sign=0767BF54AC03A8CAF1552D81E3453BE0CF1DB896D7D6270DC52D0DDD2EFB70F9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/HeGD0rX8RRuXbCjDadhyBw/zh-cn_image_0000002561753287.png?HW-CC-KV=V1&HW-CC-Date=20260429T054746Z&HW-CC-Expire=86400&HW-CC-Sign=037BA9FE60BC99DCA05C2E6FB0F9C8CB501AC1C3F349C126A42EFB0C6B678B54)
 
 ### macOS/Linux
 

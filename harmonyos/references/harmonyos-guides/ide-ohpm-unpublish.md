@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-unpu
 title: ohpm unpublish
 breadcrumb: 指南 > 命令行工具 > 三方依赖管理工具（ohpm） > 常用命令 > ohpm unpublish
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:57:43+08:00
+scraped_at: 2026-04-29T13:47:53+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:80cafb9e3496725e825a8279e895013764360c29426d082cc3d46a1ea6b00e8a
+content_hash: sha256:940b8c6c7ae9d7ed1361673b25d702f0b644f0f2b35b87caede7d44d2e30a18d
 ---
 
 下架已发布的三方库。
@@ -99,4 +99,4 @@ content_hash: sha256:80cafb9e3496725e825a8279e895013764360c29426d082cc3d46a1ea6b
 
 结果示例：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/Fa_B6cIpQMWhrbAul_8K_g/zh-cn_image_0000002530753718.png?HW-CC-KV=V1&HW-CC-Date=20260427T235742Z&HW-CC-Expire=86400&HW-CC-Sign=E24DF64CBDA2B68200C0ABD836A31539653FD0F4E979961AE954D4C9693406E3 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/QjOJvj91TVC41QQ-EhbH8g/zh-cn_image_0000002530753718.png?HW-CC-KV=V1&HW-CC-Date=20260429T054751Z&HW-CC-Expire=86400&HW-CC-Sign=064188093A621D91DF88C6ACC5A84B57F691239272319EEE754085FD01B0EE1D "点击放大")

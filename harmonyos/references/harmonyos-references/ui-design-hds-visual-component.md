@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design
 title: HdsVisualComponent
 breadcrumb: API参考 > 应用框架 > UI Design Kit（UI设计套件） > ArkTS组件 > HdsVisualComponent
 category: harmonyos-references
-scraped_at: 2026-04-28T08:06:44+08:00
+scraped_at: 2026-04-29T13:57:14+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:b5e8a1aa0210a99ccef652b8c35a2bdfe1323f1e38ea0f52c5eeac245ee1659f
+content_hash: sha256:8da3b72578d720cbb54e18bae5bfcac6546ddba35671ead41963db4ec09654af
 ---
 
 HdsVisualComponent组件承载复杂视效实现，应用开发者通过HdsVisualComponent选择具体视效场景完成复杂视效的开发。
@@ -311,4 +311,4 @@ PhonePC/2in1TabletTV
 32. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/bLQJUMaWR1GTTEBf9ena_w/zh-cn_image_0000002583440577.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000642Z&HW-CC-Expire=86400&HW-CC-Sign=31161CA2A2D1852BCAC572BF3703D8FAA206283ABB04C0FC0BC8B21694AE4DAE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/JHHTflxbQNKory1wqHeaZQ/zh-cn_image_0000002558767058.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055313Z&HW-CC-Expire=86400&HW-CC-Sign=5476CD2F850ACCBD41011054C74CB8D69793E940568EE031D3DD2A87ADBA37BA)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cloudfoundati
 title: Node.js
 breadcrumb: 指南 > 应用服务 > Cloud Foundation Kit（云开发服务） > 云函数 > 开发云函数 > 开发函数 > Node.js
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:48:39+08:00
+scraped_at: 2026-04-29T13:37:42+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:11b3e11aced4e5fb53628805be9a51fe7b27beac12903ee6570d95297d8f80e3
+content_hash: sha256:02a85e47e512b461dd7d23d269e8a940970838e32221d39ebd82c7d36a207f2d
 ---
 
 ## 约束与限制
@@ -49,7 +49,7 @@ content_hash: sha256:11b3e11aced4e5fb53628805be9a51fe7b27beac12903ee6570d95297d8
 
 若环境变量未配置，则会返回环境变量为undefined。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/YL-wsJ9iQkKhJTQ0wjPXhg/zh-cn_image_0000002552799194.png?HW-CC-KV=V1&HW-CC-Date=20260427T234839Z&HW-CC-Expire=86400&HW-CC-Sign=D3C8C4B76E87EEA3939DB514D9BE8E6EFF25C4367C6CC7508FD9868B241176BB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/VG4Ha1YDTWK3VJ2Iid0O8Q/zh-cn_image_0000002589325213.png?HW-CC-KV=V1&HW-CC-Date=20260429T053741Z&HW-CC-Expire=86400&HW-CC-Sign=E0DCC2BED8622515CC994F556749D07D4618031A2C489153A6A070962CE13A79)
 
 ## 异常处理
 
@@ -149,4 +149,4 @@ content_hash: sha256:11b3e11aced4e5fb53628805be9a51fe7b27beac12903ee6570d95297d8
 
 可通过npm工具的相关命令，安装与管理依赖。例如npm install xxx命令（执行路径无限制）可将依赖xxx自动安装到根目录的node\_modules文件夹下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/Opx-s0j8QQOLaPB8hQvJ3w/zh-cn_image_0000002583438889.png?HW-CC-KV=V1&HW-CC-Date=20260427T234839Z&HW-CC-Expire=86400&HW-CC-Sign=415961093B74ADC7AE5DFAC88C7E1C742D71B94A041F3FF6A657AB3564C2EB83)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/kG6yelJNRVedhazDdOf41A/zh-cn_image_0000002589245149.png?HW-CC-KV=V1&HW-CC-Date=20260429T053741Z&HW-CC-Expire=86400&HW-CC-Sign=37AD9E3F3523F64D21A64A5D37EF37442F1E82F0092D52F555C3C43DA369D03B)

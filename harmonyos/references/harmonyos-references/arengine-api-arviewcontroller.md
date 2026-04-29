@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arengine-
 title: arViewController（AR场景管理能力）
 breadcrumb: API参考 > 图形 > AR Engine（AR引擎服务） > ArkTS API > arViewController（AR场景管理能力）
 category: harmonyos-references
-scraped_at: 2026-04-28T08:14:27+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:9dd5fda66726761180c6ecd9490da67c840257cf39b700baf5adebf83c5eb32d
+scraped_at: 2026-04-29T14:05:04+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:3b0b2ace092b311df95c711980835287ee4f6173d4590b2c72ace757f6ed42c3
 ---
 
 本模块提供AR Engine（AR引擎服务）的arViewController（AR场景管理能力）相关接口。
@@ -265,7 +265,9 @@ set scene(scene: Scene)
 4. Scene.load().then((scene: Scene) => {
 5. let context: arViewController.ARViewContext = new arViewController.ARViewContext();
 6. context.scene = scene;
-7. })
+7. }).catch((err: BusinessError) => {
+8. console.error(`Failed to load scene. Code is ${err.code}, message is ${err.message}.`);
+9. });
 ```
 
 ### ARViewContext.scene
@@ -380,7 +382,7 @@ set config(conf: arEngine.ARConfig)
 6. poseMode: arEngine.ARPoseMode.GRAVITY_AND_HEADING,
 7. powerMode: arEngine.ARPowerMode.POWER_SAVING,
 8. depthMode: arEngine.ARDepthMode.AUTOMATIC
-9. }
+9. };
 ```
 
 ### ARViewContext.loadAsset
@@ -437,7 +439,7 @@ PhoneTabletTV
 
 removeAsset(landmark: LandmarkType):Promise<void>
 
-在指定的关键点移除已放置的模型。
+在指定的关键点移除已放置的模型。使用Promise异步回调。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -482,7 +484,7 @@ PhoneTabletTV
 
 clearResource():Promise<void>
 
-清除所有放置的模型。
+清除所有放置的模型。使用Promise异步回调。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -639,7 +641,7 @@ transformPose(position: Vec3, rotation: Quaternion): arEngine.ARPose | null
 
 | **类型** | **说明** |
 | --- | --- |
-| arEngine.ARPose | null | 转换后的位姿信息，若传入参数无效或创建[ARPose](arengine-api-arengine.md#arpose)对象失败则返回null。 |
+| [arEngine.ARPose](arengine-api-arengine.md#arpose) | null | 转换后的位姿信息，若传入参数无效或创建[ARPose](arengine-api-arengine.md#arpose)对象失败则返回null。 |
 
 **示例：**
 
@@ -648,9 +650,14 @@ transformPose(position: Vec3, rotation: Quaternion): arEngine.ARPose | null
 2. import { Vec3, Quaternion } from '@kit.ArkGraphics3D';
 
 4. let context: arViewController.ARViewContext = new arViewController.ARViewContext();
-5. let pose: Vec3 =  {x: 1.0, y: -1.0, z: -0.5};
-6. let rot: Quaternion =  {x: -0.1, y: 0.2, z: -0.3, w: 0.5};
-7. context.transformPose(pose, rot);
+5. let pose: Vec3 = { x: 1.0, y: -1.0, z: -0.5 };
+6. let rot: Quaternion = {
+7. x: -0.1,
+8. y: 0.2,
+9. z: -0.3,
+10. w: 0.5
+11. };
+12. context.transformPose(pose, rot);
 ```
 
 ### ARViewContext.callback
@@ -659,7 +666,7 @@ PhoneTabletTV
 
 set callback(callback: ARViewCallback)
 
-回调函数，可根据回调功能实现对应业务逻辑。
+回调函数，可根据回调功能实现对应业务逻辑。使用callback方式异步返回结果。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -673,7 +680,7 @@ set callback(callback: ARViewCallback)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callback | [ARViewCallback](arengine-api-arviewcontroller.md#arviewcallback) | 是 | ARViewCallback抽象类，声明ARView的回调接口。 |
+| callback | [ARViewCallback](arengine-api-arviewcontroller.md#arviewcallback) | 是 | ARViewCallback抽象类，声明ARView的回调接口。使用callback方式异步返回结果。 |
 
 **错误码：**
 
@@ -729,7 +736,7 @@ set callback(callback: ARViewCallback)
 
 PhoneTabletTV
 
-ARViewCallback抽象类，声明ARView的回调接口。
+ARViewCallback抽象类，声明ARView的回调接口。使用callback方式异步返回结果。
 
 开发者需继承此类并且根据业务逻辑实现回调子类。
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-multi-devi
 title: 响应式布局
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 > 界面布局响应式变化 > 响应式布局
 category: best-practices
-scraped_at: 2026-04-28T08:21:04+08:00
+scraped_at: 2026-04-29T14:11:55+08:00
 doc_updated_at: 2026-04-07
-content_hash: sha256:2612c7ba39159c66326c24dda1839bdd9dbb06b4432e38a9fcf0c99f2d009d86
+content_hash: sha256:ded7fcfc5d00f45633264712b4ae04e2409dc316a18756823b2c624b590909a9
 ---
 
 ## 概述
@@ -17,10 +17,10 @@ content_hash: sha256:2612c7ba39159c66326c24dda1839bdd9dbb06b4432e38a9fcf0c99f2d0
 响应式布局是基于响应式设计方法论进行布局的方法，核心思想是页面根据不同屏幕尺寸自动调整布局，提供更舒适的界面和更好的用户体验。响应式布局页面的效果图如下：
 
 **图1** 响应式布局示意图1  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/LGSQIbx9QpiIDFyzcNqG-w/zh-cn_image_0000002355146009.png?HW-CC-KV=V1&HW-CC-Date=20260428T002057Z&HW-CC-Expire=86400&HW-CC-Sign=FEFA60F25C6BB3C12BCE70BA77C010D0DB8F39276A2AD80C4DC3E7F56E43B358 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/LGSQIbx9QpiIDFyzcNqG-w/zh-cn_image_0000002355146009.png?HW-CC-KV=V1&HW-CC-Date=20260429T061153Z&HW-CC-Expire=86400&HW-CC-Sign=7F5FA312EB79CB2E20916726060CA8DB2B56783C0A0AC98E2EFCEFBACB2C4E48 "点击放大")
 
 **图2** 响应式布局示意图2  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/MzJbKbdCSH-TJuRA0znzLw/zh-cn_image_0000002321147306.png?HW-CC-KV=V1&HW-CC-Date=20260428T002057Z&HW-CC-Expire=86400&HW-CC-Sign=2E81B3A056E536765F567A649FB06FBE7C72B155B3DEA0FA23FCAA9D7AAA2D0C "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/MzJbKbdCSH-TJuRA0znzLw/zh-cn_image_0000002321147306.png?HW-CC-KV=V1&HW-CC-Date=20260429T061153Z&HW-CC-Expire=86400&HW-CC-Sign=4C6BD1A001D49BBA8FD7E3710EC1BA2456B07D71B5BE0463442EF0257F350E98 "点击放大")
 
 本文将详细介绍实现响应式布局的四种响应式布局能力，帮助开发者实现响应式布局效果。
 
@@ -75,7 +75,7 @@ content_hash: sha256:2612c7ba39159c66326c24dda1839bdd9dbb06b4432e38a9fcf0c99f2d0
 
 **图3** HarmonyOS常用设备断点区间表
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/5KeJBRs5SACnEEtSmVykfw/zh-cn_image_0000002321553558.png?HW-CC-KV=V1&HW-CC-Date=20260428T002057Z&HW-CC-Expire=86400&HW-CC-Sign=FE8BB11FC861FF58BF6E454596E04125C35FD16288CBA0F9BBB36EF404A09751 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/5KeJBRs5SACnEEtSmVykfw/zh-cn_image_0000002321553558.png?HW-CC-KV=V1&HW-CC-Date=20260429T061153Z&HW-CC-Expire=86400&HW-CC-Sign=38725654BC69B300668BAA2311126E6B47305AEEB10F8ED25320E43151207DBE "点击放大")
 
 说明
 
@@ -329,7 +329,7 @@ content_hash: sha256:2612c7ba39159c66326c24dda1839bdd9dbb06b4432e38a9fcf0c99f2d0
 
 为了提供独特的用户体验，类方形小窗口设计为独特布局。常见场景为手机上下1:1分屏或Pura X外屏，可使用横向断点为sm，纵向断点为md进行区分，示意图如下。更多详情和示例代码请参考[Pura X阔折叠应用开发](bpta-purax-guide.md)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/EW7Y5wnJTHmOggycGJO74A/zh-cn_image_0000002355146073.png?HW-CC-KV=V1&HW-CC-Date=20260428T002057Z&HW-CC-Expire=86400&HW-CC-Sign=3DE4386C33F89524AB2A73B0EDDD524A66BC2D4FAA4D936734DCB4815A6BDFEE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/EW7Y5wnJTHmOggycGJO74A/zh-cn_image_0000002355146073.png?HW-CC-KV=V1&HW-CC-Date=20260429T061153Z&HW-CC-Expire=86400&HW-CC-Sign=341CDC6E47CBDE3AC73AF7D484119C187CB386B40CD748F291288DAB43FD12AC)
 
 **类方屏旋转方案**
 
@@ -360,16 +360,16 @@ content_hash: sha256:2612c7ba39159c66326c24dda1839bdd9dbb06b4432e38a9fcf0c99f2d0
 
 本章节以视频类应用的全屏播放页为例。在手机横屏时，不支持旋转；在双折叠展开态和平板竖屏时，支持旋转。由于这三种场景的横向断点都在md范围内，无法区分，因此需要结合横向断点和纵向断点进行区分，以兼容多种设备的全屏播放窗口旋转方案。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/niUEvoplQkSKKdm3hbPPFA/zh-cn_image_0000002321147370.jpg?HW-CC-KV=V1&HW-CC-Date=20260428T002057Z&HW-CC-Expire=86400&HW-CC-Sign=CC74BC9CA8B67E73510390C9545FBEAE43858AC9D526FF59651FBDD3A254AFDB "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/niUEvoplQkSKKdm3hbPPFA/zh-cn_image_0000002321147370.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T061153Z&HW-CC-Expire=86400&HW-CC-Sign=D156C67BC66B084284EAA51AB10CBEC5520F0C1107A9D5B934CBC338FD29E025 "点击放大")
 
 1. 确保已完成[通过断点刷新UI](bpta-multi-device-responsive-layout.md#section175001836203617)中步骤5和步骤6的初始化操作。
 2. 使用@Watch装饰器监听状态变量isFullScreen的变化，以判断视频是否全屏播放，并在显示或隐藏时同步修改窗口方向。全屏播放时，未使用断点的窗口设置逻辑如下：需要将窗口设置为AUTO\_ROTATION\_LANDSCAPE属性的情况包括手机、双折叠屏（X 系列）的折叠态与半折态。
 
    **图4** **手机效果图**  
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/mLNfJIeiSUihssd9JP435Q/zh-cn_image_0000002355265933.jpg?HW-CC-KV=V1&HW-CC-Date=20260428T002057Z&HW-CC-Expire=86400&HW-CC-Sign=6934ADEE7372882E94B4AE8544F83CFDECFDA28471294F32938EB186B469476D "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/mLNfJIeiSUihssd9JP435Q/zh-cn_image_0000002355265933.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T061153Z&HW-CC-Expire=86400&HW-CC-Sign=D617495ED788E8DA36B745146A4139B57B8F304C9BF7CCD017359ABD6AA176E1 "点击放大")
 
    **图5** **双折叠屏（X系列）半折态**  
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/ZtWxUVVSQjOrgYHwQSo0yQ/zh-cn_image_0000002321307226.jpg?HW-CC-KV=V1&HW-CC-Date=20260428T002057Z&HW-CC-Expire=86400&HW-CC-Sign=4EF2109F3AF320CC96B634505EC1304C973C5E63724D9257B94C4C975C3D1CD1 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/ZtWxUVVSQjOrgYHwQSo0yQ/zh-cn_image_0000002321307226.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T061153Z&HW-CC-Expire=86400&HW-CC-Sign=4B5F80261662097197F240CAC6BBCC71B1509DFC7DE6CA221FCA1FD24996D45A "点击放大")
 
    **反例：**
 
@@ -646,7 +646,7 @@ HarmonyOS的栅格系统采用了12列设计，因为12可以被2、3、4、6整
 4. 自动换行和自适应：栅格布局可以完成一对多布局的自动换行和自适应。当页面元素的数量超出了一行或一列的容量时，他们会自动换到下一行或下一列，并且在不同的设备上自适应排版，使得页面布局更加灵活和适应性强。
 
 **图6** 栅格示意图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/30WhVdaWQLC2cBXDFQTF_w/zh-cn_image_0000002461092273.png?HW-CC-KV=V1&HW-CC-Date=20260428T002057Z&HW-CC-Expire=86400&HW-CC-Sign=AB4C4D85003FC8C9BEF8F68797496C062CA9FF704BE70DDB5D0A7FE52ADA2AB9 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/30WhVdaWQLC2cBXDFQTF_w/zh-cn_image_0000002461092273.png?HW-CC-KV=V1&HW-CC-Date=20260429T061153Z&HW-CC-Expire=86400&HW-CC-Sign=3CEE046EEFFEEC722F19448B6DB95B4C8172662934F47A2AC391C5E39A014368 "点击放大")
 
 栅格的样式由Margin、Gutter、Columns三个属性决定。
 
@@ -719,7 +719,7 @@ Gutter： 24vp
 
 图片左下角显示了当前设备屏幕的尺寸（即应用窗口尺寸），可以看到随着窗口尺寸发生变化，栅格的断点也相应发生了改变（为了便于理解，下图中将设备的DPI设置为160，此时1vp=1px）。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/mXEV2SEZSRCuxTUNSXQSUw/zh-cn_image_0000002355265993.gif?HW-CC-KV=V1&HW-CC-Date=20260428T002057Z&HW-CC-Expire=86400&HW-CC-Sign=09BAAF876D6864F69A9C4C8E575399516F8157D85A463406215CD3453D562E16 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/mXEV2SEZSRCuxTUNSXQSUw/zh-cn_image_0000002355265993.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061153Z&HW-CC-Expire=86400&HW-CC-Sign=A93F20C236C394333CCF5FDF9BD70720A25F717EB2963A9CCB48FCD1EA36E764 "点击放大")
 
 ```
 1. @Entry
@@ -893,7 +893,7 @@ Gutter： 24vp
 
 通过通用属性margin或者padding，均可以控制栅格组件与其父容器左右两侧的距离，但padding区域计算在栅格组件内而margin区域计算在栅格组件外。此外，借助onBreakpointChange事件，还可以改变不同断点下margin或padding值。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/5_uFwIiLS8emRBOSc-W9CQ/zh-cn_image_0000002355266017.png?HW-CC-KV=V1&HW-CC-Date=20260428T002057Z&HW-CC-Expire=86400&HW-CC-Sign=4DCC0932D5ADABD3FA5441BD6B73861E9FFD557627FCD0157B8454A3998A06B6 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/5_uFwIiLS8emRBOSc-W9CQ/zh-cn_image_0000002355266017.png?HW-CC-KV=V1&HW-CC-Date=20260429T061153Z&HW-CC-Expire=86400&HW-CC-Sign=A37BF916197BF987450B3B27365BF6B538766F825E68DB615A32001021A0B5A7 "点击放大")
 
 ```
 1. @Entry
@@ -1231,7 +1231,7 @@ HarmonyOS提供的一些组件支持响应式布局，例如： Tabs、Swiper、
 
 当横向vp大于等于600vp时，显示分栏布局。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/SOLxg0aSS8-xoCnsggWENg/zh-cn_image_0000002427564766.png?HW-CC-KV=V1&HW-CC-Date=20260428T002057Z&HW-CC-Expire=86400&HW-CC-Sign=E013B01C56BA771A2BD596AA9710826A4D0C854C485FB75E95AD2BAF1565C020 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/SOLxg0aSS8-xoCnsggWENg/zh-cn_image_0000002427564766.png?HW-CC-KV=V1&HW-CC-Date=20260429T061153Z&HW-CC-Expire=86400&HW-CC-Sign=2BA92B793D51738628437D115137DD129CE7B284BEA4E609BF3C3C4E908BB9C8 "点击放大")
 
 ### 重复布局
 
@@ -1239,7 +1239,7 @@ HarmonyOS提供的一些组件支持响应式布局，例如： Tabs、Swiper、
 
 重复布局适用于对宽高比敏感的图片和组合内容，当内容放大以后导致原图放大超过150%的场景。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/UVMRW7QKRACUD1Wq7zPgYg/zh-cn_image_0000002460966061.png?HW-CC-KV=V1&HW-CC-Date=20260428T002057Z&HW-CC-Expire=86400&HW-CC-Sign=88A66353B9F8B8A3DD2237E7EE43A9E5017E188300EEF985619BAE5E32A96C5D "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/UVMRW7QKRACUD1Wq7zPgYg/zh-cn_image_0000002460966061.png?HW-CC-KV=V1&HW-CC-Date=20260429T061153Z&HW-CC-Expire=86400&HW-CC-Sign=11F265BDD31836A6F3BB758BA7001FDED8539AADC9D996FFC4930743B9C2F3AA "点击放大")
 
 ### 挪移布局
 
@@ -1249,7 +1249,7 @@ HarmonyOS提供的一些组件支持响应式布局，例如： Tabs、Swiper、
 
 例如上下布局的插画和文字，横屏后左右布局。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/vK2tplw3TZCkTBgf_m6_rw/zh-cn_image_0000002427408746.png?HW-CC-KV=V1&HW-CC-Date=20260428T002057Z&HW-CC-Expire=86400&HW-CC-Sign=5A6CFBE39DDFEAA2E0588429D50F43E1B2990F39251EE29D30B37E4E34C15F4F "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/vK2tplw3TZCkTBgf_m6_rw/zh-cn_image_0000002427408746.png?HW-CC-KV=V1&HW-CC-Date=20260429T061153Z&HW-CC-Expire=86400&HW-CC-Sign=A73BA9184239222B0E42C135EFD5CED4735197B1C920527C385E73DB707D7CAB "点击放大")
 
 ### 缩进布局
 
@@ -1257,7 +1257,7 @@ HarmonyOS提供的一些组件支持响应式布局，例如： Tabs、Swiper、
 
 缩进布局适用于纯段落文本/上图下段落文本/卡片的布局结构的场景，在其对应的栅格规格下，缩进的规则占用栅格数量进行布局。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/u_6ej50MRJSfm1JZZLX4HA/zh-cn_image_0000002321147530.png?HW-CC-KV=V1&HW-CC-Date=20260428T002057Z&HW-CC-Expire=86400&HW-CC-Sign=8F6F7C0BD3E99021463E08F67C4073C53E75F33946BDAF75386DC7E38AFBF627 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/u_6ej50MRJSfm1JZZLX4HA/zh-cn_image_0000002321147530.png?HW-CC-KV=V1&HW-CC-Date=20260429T061153Z&HW-CC-Expire=86400&HW-CC-Sign=659889F533AD6101F24C63EFCB73F0CC435CD2174D4B5C42A6D46AB2F1548808 "点击放大")
 
 当栅格为8 columns或12 columns时可以使用6 columns和8 columns的缩进布局。
 

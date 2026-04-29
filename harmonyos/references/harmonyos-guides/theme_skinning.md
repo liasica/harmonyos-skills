@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/theme_skinnin
 title: 设置应用内主题换肤
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 主题设置 > 设置应用内主题换肤
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:40:09+08:00
+scraped_at: 2026-04-29T13:28:29+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:c7cad4758fe2d86ba661607b919d02c7959ef78b19860d76c2d8c6121af35858
+content_hash: sha256:2f8389f966556d15ac389e317da41c2f90c97fdd9939f730db9ac02e314fac2d
 ---
 
 ## 概述
@@ -207,7 +207,7 @@ content_hash: sha256:c7cad4758fe2d86ba661607b919d02c7959ef78b19860d76c2d8c6121af
 
   [EntryAbility.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ThemeSkinning/entry/src/main/ets/entryability/EntryAbility.ets#L16-L55)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/6jXOJpBtST2xFo1Zp-kTgQ/zh-cn_image_0000002583478037.png?HW-CC-KV=V1&HW-CC-Date=20260427T234007Z&HW-CC-Expire=86400&HW-CC-Sign=BC1B6C0D0FFB3C2822F178EA9DA71A9E9508224473B1BECF329380988976B198)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/f1zpCH2RSGeQH03iMM_ARQ/zh-cn_image_0000002589244335.png?HW-CC-KV=V1&HW-CC-Date=20260429T052825Z&HW-CC-Expire=86400&HW-CC-Sign=0FE80F16108CCBEB1324E0CB78B8C9D694A90187927446A4FA31B8AC99197AF6)
 
   说明
 
@@ -291,7 +291,7 @@ content_hash: sha256:c7cad4758fe2d86ba661607b919d02c7959ef78b19860d76c2d8c6121af
 
 [Theme2.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ThemeSkinning/entry/src/main/ets/pages/Theme2/Theme2.ets#L16-L79)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/C0NLuztRQlakeEIzhA5YbA/zh-cn_image_0000002552798388.gif?HW-CC-KV=V1&HW-CC-Date=20260427T234007Z&HW-CC-Expire=86400&HW-CC-Sign=B1BBC3F8D1C5BBB05270BDAD179E642078B4B6DD3AC11B3894997BF979254FFE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/ZdycFLAzSe-TqNf9HtyJsw/zh-cn_image_0000002558764528.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052825Z&HW-CC-Expire=86400&HW-CC-Sign=5665C58F365101DA6E945AABC7ED6BD26A7FAA327C65D04C813207726D160154)
 
 ## 设置应用页面局部深浅色
 
@@ -303,7 +303,7 @@ content_hash: sha256:c7cad4758fe2d86ba661607b919d02c7959ef78b19860d76c2d8c6121af
 
 设置局部深浅色时，需要添加dark.json资源文件，深浅色模式才会生效。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/blk970C8S-mj8YnLZ9ZuUw/zh-cn_image_0000002583438083.png?HW-CC-KV=V1&HW-CC-Date=20260427T234007Z&HW-CC-Expire=86400&HW-CC-Sign=8648772FE524125EC1A86297803C6B50940AEF664E1C6A58BE8EEE51A6D3FF79)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/IaMlgAMzTpeTKu407aj1Jw/zh-cn_image_0000002558604872.png?HW-CC-KV=V1&HW-CC-Date=20260429T052825Z&HW-CC-Expire=86400&HW-CC-Sign=CDA02540716385D019B9D322AC4E5189623EBF183E0F449339C853422D47B012)
 
 dark.json数据示例：
 
@@ -358,7 +358,7 @@ dark.json数据示例：
 
 [Theme3.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ThemeSkinning/entry/src/main/ets/pages/Theme3/Theme3.ets#L16-L50)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/HocBgcxeSB6dJhJ4esZFMQ/zh-cn_image_0000002552958038.png?HW-CC-KV=V1&HW-CC-Date=20260427T234007Z&HW-CC-Expire=86400&HW-CC-Sign=DCE490064B017EB8C357E476C05D319735A989A5906D53DA3AE838FD6F03F43E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/5KTQQUczSvOMkTFSmQF7LQ/zh-cn_image_0000002589324397.png?HW-CC-KV=V1&HW-CC-Date=20260429T052825Z&HW-CC-Expire=86400&HW-CC-Sign=9535D4893882C840F249D30F89002A1B188483D9C332DF31065425F3BED27ED7)
 
 ## 系统缺省token色值
 

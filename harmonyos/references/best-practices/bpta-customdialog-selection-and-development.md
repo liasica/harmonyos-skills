@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-customdial
 title: 自定义弹窗选型与开发
 breadcrumb: 最佳实践 > 布局与弹窗 > 自定义弹窗选型与开发
 category: best-practices
-scraped_at: 2026-04-28T08:19:47+08:00
+scraped_at: 2026-04-29T14:10:27+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:fff061d33b0dacbee5f9fc1545a9be16a5070ada5c79e42ca1dec6e08d1c6e78
+content_hash: sha256:9785759d21656425c3afa8071201585184e0cf2b0a8390216439152236671bd7
 ---
 
 ## 概述
@@ -87,7 +87,7 @@ content_hash: sha256:fff061d33b0dacbee5f9fc1545a9be16a5070ada5c79e42ca1dec6e08d1
 
 图文提示弹窗常用于显示用户操作的结果，如成功或失败提示，也可以在等待系统响应时展示加载动画等。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/LrGW_Q7oTmqeOqCBR2IxZg/zh-cn_image_0000002311582804.gif?HW-CC-KV=V1&HW-CC-Date=20260428T001943Z&HW-CC-Expire=86400&HW-CC-Sign=5B750F1AC6E52E380ED8E4FC798E8050CA8DF142752ABBA7910DC9C8DA19EE73 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/LrGW_Q7oTmqeOqCBR2IxZg/zh-cn_image_0000002311582804.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061023Z&HW-CC-Expire=86400&HW-CC-Sign=30FEF17CBEEBA0AFC67103B62E1E67FB388BB6EC9ABD54C7EE319CC316B33764 "点击放大")
 
 **实现方案**
 
@@ -157,7 +157,7 @@ content_hash: sha256:fff061d33b0dacbee5f9fc1545a9be16a5070ada5c79e42ca1dec6e08d1
 
 隐私弹窗主要用于确保法律合规性，要求应用在收集用户数据前必须获得用户的同意。当用户打开隐私弹窗时，可以通过点击弹窗内的超链接跳转至详细的隐私协议页面。返回后，隐私弹窗依旧保持显示状态，确保用户能够在充分了解相关信息的基础上做出选择。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/O7OQPJSFT_Ow457cT_nixA/zh-cn_image_0000002345701585.gif?HW-CC-KV=V1&HW-CC-Date=20260428T001943Z&HW-CC-Expire=86400&HW-CC-Sign=60C1C0BD1C5DE2F1E98A4C95C3BA0FFEE8051469358F9AD18C715963CF18247D "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/O7OQPJSFT_Ow457cT_nixA/zh-cn_image_0000002345701585.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061023Z&HW-CC-Expire=86400&HW-CC-Sign=EC3B5A871DB34E50D9ADE00067BFAD1B16F9404BBE5AEB45C4C0BCAE50AF90F0 "点击放大")
 
 在隐私页面中，需要关注的点主要有两个：
 
@@ -285,7 +285,7 @@ API 16之前的版本，可以使用NavDestinationMode.DIALOG弹窗实现，Dial
 
 展示进度条的弹窗是一种常见的弹窗组件，用于在耗时操作中向用户反馈任务进度，此类弹窗中主要涉及的特点在于弹窗与页面之间的数据交互，刷新弹窗的内容。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/GQJapef6Qv2XszAJQcLPuw/zh-cn_image_0000002311742592.gif?HW-CC-KV=V1&HW-CC-Date=20260428T001943Z&HW-CC-Expire=86400&HW-CC-Sign=B23546D52D843C6E1A1B1D3BDFBDD5F45CFA868DC9EFEA328C503850A45BB350 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/GQJapef6Qv2XszAJQcLPuw/zh-cn_image_0000002311742592.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061023Z&HW-CC-Expire=86400&HW-CC-Sign=C2800A7D828A32E0BA8687E4F6FB6C25C02ACE8582245001637A8863A6AA7623 "点击放大")
 
 **实现方案**
 
@@ -356,7 +356,7 @@ API 16之前的版本，可以使用NavDestinationMode.DIALOG弹窗实现，Dial
 
 操作栏弹窗通常是指在应用界面中，用户点击操作栏（如右上角的“更多”按钮）后触发的半模态菜单，通常具备分享、增删改查类功能。操作列表弹窗的内容主体是列表，分为固定高度，可变高度两种。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/qCmpUVh4RtWZljBR3FQJbg/zh-cn_image_0000002345581817.gif?HW-CC-KV=V1&HW-CC-Date=20260428T001943Z&HW-CC-Expire=86400&HW-CC-Sign=80B91E5BDC8F5A24D1A18303EA0308BE752988593032F98A2EFDF9A81EB7BA2A "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/qCmpUVh4RtWZljBR3FQJbg/zh-cn_image_0000002345581817.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061023Z&HW-CC-Expire=86400&HW-CC-Sign=4F96BBEAD1F8D02BF29BBB263B0837150AC51F2A5AF2E02A3F37527AC448CB6A "点击放大")
 
 **实现方案**
 
@@ -415,7 +415,7 @@ API 16之前的版本，可以使用NavDestinationMode.DIALOG弹窗实现，Dial
 
   [Index.ets](https://gitcode.com/HarmonyOS_Samples/custom-dialog-selection-and-development/blob/master/entry/src/main/ets/pages/Index.ets#L537-L549)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/h7QMXIpmQhOjcPaABarh_A/zh-cn_image_0000002311582836.gif?HW-CC-KV=V1&HW-CC-Date=20260428T001943Z&HW-CC-Expire=86400&HW-CC-Sign=550FDC5C757D1AD7BB9639AA0B02A2ED2F88B753DAC8AE2D227213B666054854 "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/h7QMXIpmQhOjcPaABarh_A/zh-cn_image_0000002311582836.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061023Z&HW-CC-Expire=86400&HW-CC-Sign=6017BD0EBDC6A408E817E4BE5CBDCA833D7FC5EBBD0D3555B2FC403C7AA3D871 "点击放大")
 
 ### 实现评论回复弹窗
 

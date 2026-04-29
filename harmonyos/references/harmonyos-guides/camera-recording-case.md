@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-record
 title: 录像实践(ArkTS)
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用基础能力(ArkTS) > 录像实践(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:45:57+08:00
+scraped_at: 2026-04-29T13:34:56+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:b84b74e9b265589e2dcdf707f10f6dfed251a1f3a0da741b9cff87171384476e
+content_hash: sha256:d458fe9a91439f65a29d7b7a428a8d19cac2fff09ec69f5ae88a6de0ad7c5517
 ---
 
 在开发相机应用时，需要先[申请相关权限](camera-preparation.md)。
@@ -20,7 +20,7 @@ content_hash: sha256:b84b74e9b265589e2dcdf707f10f6dfed251a1f3a0da741b9cff8717138
 
 在获取到相机支持的输出流能力后，开始创建录像流，开发流程如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/Ki3cU-JFQVKaPBjBgIRB3Q/zh-cn_image_0000002583478567.png?HW-CC-KV=V1&HW-CC-Date=20260427T234556Z&HW-CC-Expire=86400&HW-CC-Sign=46DE5E0C78CDE626698CF801B505167F9A0B1BC0A320ACB28A1FFCE3A6EF2855)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/ERY3ocCHRl-YjlaPXw5aRw/zh-cn_image_0000002558605410.png?HW-CC-KV=V1&HW-CC-Date=20260429T053455Z&HW-CC-Expire=86400&HW-CC-Sign=6F51EADDB8A5908200D087AB6139A59054AECB8C60C411AB48F551F4F4887ECC)
 
 ## 完整示例
 

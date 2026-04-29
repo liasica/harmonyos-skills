@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-polygon
 title: 多边形
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 在地图上绘制 > 多边形
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:49:49+08:00
+scraped_at: 2026-04-29T13:39:10+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:a57b2999012d9a4a20ebeda58d5e86ceb29f169ee903b4d6e9552b5b58edcbfa
+content_hash: sha256:6ef04a802a2dc500aa76b48085d882877c6387b206bc5ba6bafebf1463610b56
 ---
 
 ## 场景介绍
 
 本章节将向您介绍如何在地图上绘制多边形。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/891bywllQIyJsvJY5xxr8g/zh-cn_image_0000002583479037.jpg?HW-CC-KV=V1&HW-CC-Date=20260427T234948Z&HW-CC-Expire=86400&HW-CC-Sign=26D38E77354A059A9724B35E12F1C2103A93BC8288E98CCD92B7E2F3D43815FB "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/MUjwkhcuQn2pYbgPviY6BQ/zh-cn_image_0000002558605882.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053907Z&HW-CC-Expire=86400&HW-CC-Sign=C117712054F8A064097BA0B479DB9E24E7456185B775A2DD801BF5ED3E5628A3 "点击放大")
 
 ## 接口说明
 
@@ -96,4 +96,4 @@ content_hash: sha256:a57b2999012d9a4a20ebeda58d5e86ceb29f169ee903b4d6e9552b5b58e
    59. }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/uuuOxresQMK4c1SJbqHxLQ/zh-cn_image_0000002552799388.jpg?HW-CC-KV=V1&HW-CC-Date=20260427T234948Z&HW-CC-Expire=86400&HW-CC-Sign=56FE58F4BD3D1C7E2A38BC15123735D92147C5264C188215ADC11FC534F72613 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/L43hp1GdSsqrGReoW0TKAw/zh-cn_image_0000002589325409.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053907Z&HW-CC-Expire=86400&HW-CC-Sign=40E8F9028E2B181028FF547CE79106080659F7FC056505372EC9482105D27AEC "点击放大")

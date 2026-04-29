@@ -1,10 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-basic-switch
 title: switch
+breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 基础组件 > switch
 category: harmonyos-references
-scraped_at: 2026-04-28T08:03:08+08:00
+scraped_at: 2026-04-29T13:53:28+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:d79addc042340f557f1976c8b8caa149a61038eaa12fdd356fecd9f03cdfaa55
+content_hash: sha256:f3e98957c24914a9fb88e97afe12f35ba252832ef8243b326ab9f0776b884435
 ---
 
 说明
@@ -137,4 +138,4 @@ PhonePC/2in1TabletTVWearable
 29. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/m0ufxWcbTlmR2YhSntJDAQ/zh-cn_image_0000002552800552.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000305Z&HW-CC-Expire=86400&HW-CC-Sign=7FA16EA12E090BC09B5686F7211F41FACEB90F4036D0B3D4C3F8B2CA1D0E4303)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/aYnp-O_qQ-qeHUSW_sOZ6Q/zh-cn_image_0000002589246535.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055326Z&HW-CC-Expire=86400&HW-CC-Sign=707AF8E3E05276E1D3F6CA2835449A7188F573ED2C1CE951816D7ED24795A1DA)

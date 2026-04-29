@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/gameservice-g
 title: 概述
 breadcrumb: 指南 > 应用服务 > Game Service Kit（游戏服务） > 游戏场景感知（可选） > 概述
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:49:04+08:00
+scraped_at: 2026-04-29T13:38:11+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:5ce1b158e9024a7f964463a6a931f4a27e2789475def8b9f0615a1ff74bdeefb
+content_hash: sha256:b5d011100a4eece5c4c55355f0b65bab16da211b911732b729846dabc163a63d
 ---
 
 ## 功能说明
 
 游戏场景感知提供API接口，帮助开发者快速实现游戏与系统的交互，开发者通过游戏场景感知，可以完成向系统发送游戏信息以及从系统获取设备状态信息两大动作。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/8aS5K--9SRSb83PoFA06bw/zh-cn_image_0000002552799250.jpg?HW-CC-KV=V1&HW-CC-Date=20260427T234903Z&HW-CC-Expire=86400&HW-CC-Sign=A1D6DEC5557815A2E381DAF41744B62D307E5F2AE6CC6CA64F02A0A0F84BD5A9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/issnlSaqTO63zTsAJCoQUA/zh-cn_image_0000002589325269.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053810Z&HW-CC-Expire=86400&HW-CC-Sign=615EC919816BFC8F04E413C06A2BCD5DDA9B081E4516CE1DD467070927364D0F)
 
 ## 场景介绍
 

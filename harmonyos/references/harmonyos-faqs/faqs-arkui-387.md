@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-387
 title: 使用Text嵌套Span或者使用属性字符串渲染文本，部分文本颜色显示异常
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 方舟UI框架（ArkUI） > 使用Text嵌套Span或者使用属性字符串渲染文本，部分文本颜色显示异常
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:26:43+08:00
+scraped_at: 2026-04-29T14:17:40+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:41c9676be097641899dad508848f85b7b556d282a55cbec4090c224cffc3196d
+content_hash: sha256:63458f7880f2e6b5025c8b3a3b4aa757b1267b42e3f6234324a6ed40a2ab9133
 ---
 
 **问题现象**
@@ -36,7 +36,7 @@ content_hash: sha256:41c9676be097641899dad508848f85b7b556d282a55cbec4090c224cffc
 
 预期效果应为r显示蓝色、f显示红色，但实际rf都显示为蓝色：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/l5NAIuciTu2IxyJj2_8ceQ/zh-cn_image_0000002371388781.png?HW-CC-KV=V1&HW-CC-Date=20260428T002641Z&HW-CC-Expire=86400&HW-CC-Sign=04CB963D02FDEC7A4D46F053E9F53C0BEB479BD3538AFCAD1BAA32375BE67F8C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/l5NAIuciTu2IxyJj2_8ceQ/zh-cn_image_0000002371388781.png?HW-CC-KV=V1&HW-CC-Date=20260429T061738Z&HW-CC-Expire=86400&HW-CC-Sign=F8426B727C2182522D62DDDBCD9F44B3C496C4F6D63E9B4C8FB45F8C1C076634)
 
 2、使用属性字符串，同段文本设置不同样式后，与预期渲染结果不符。
 
@@ -82,7 +82,7 @@ content_hash: sha256:41c9676be097641899dad508848f85b7b556d282a55cbec4090c224cffc
 
 预期结果应该是sr为蓝色，fff为黄色，实际srf结合为蓝色。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/-u9kv5qfT2mR_s18BUisNg/zh-cn_image_0000002337590428.png?HW-CC-KV=V1&HW-CC-Date=20260428T002641Z&HW-CC-Expire=86400&HW-CC-Sign=EE2D991F575B67DCEADFD4593CD1FFCA2D7581B89AC35DEF4CEDD82FA9821BD6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/-u9kv5qfT2mR_s18BUisNg/zh-cn_image_0000002337590428.png?HW-CC-KV=V1&HW-CC-Date=20260429T061738Z&HW-CC-Expire=86400&HW-CC-Sign=333C7D20DE99E3F7B66A393191A3E8CB4A91E53891791EFF82A71EE88C44447C)
 
 **解决措施**
 

@@ -3,23 +3,23 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: 构建HSP模块时报错“Ohos BundleTool [Error]: hsp has home ability;Ohos BundleTool [Error]: CompressEntrance::main exit, verify failed.”
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 构建HSP模块时报错“Ohos BundleTool [Error]: hsp has home ability;Ohos BundleTool [Error]: CompressEntrance::main exit, verify failed.”
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:29:46+08:00
+scraped_at: 2026-04-29T14:21:01+08:00
 doc_updated_at: 2026-03-17
-content_hash: sha256:ae1a4602b67969ed9456484692859e61ce1f3f57f2cf284d5c0e1ade01b582f1
+content_hash: sha256:0d3265187c66945e8ad9e63436eedd766b786c1240e4a06fa55d0b6d98807a8d
 ---
 
 **问题现象**
 
 构建HSP模块时出现以下错误：Ohos BundleTool [Error]: hsp 包含 home 能力；Ohos BundleTool [Error]: CompressEntrance::main 校验失败。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/gD0K-_BtTvmnqfjvqrNbsg/zh-cn_image_0000002229758781.png?HW-CC-KV=V1&HW-CC-Date=20260428T002944Z&HW-CC-Expire=86400&HW-CC-Sign=5DE6E8EDB073E424FB212B348C83077EFB96A3AFFAEAC93AC64317068EA3C802)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/gD0K-_BtTvmnqfjvqrNbsg/zh-cn_image_0000002229758781.png?HW-CC-KV=V1&HW-CC-Date=20260429T062100Z&HW-CC-Expire=86400&HW-CC-Sign=0AB027D447C5EC4BECBFBF1BF46049042039881BAB83BDA04F022B185EF19235)
 
 **问题原因**
 
 1. 从DevEco Studio 5.0.2 Beta1版本开始，HSP支持配置UIAbility组件，除入口Ability外。
 2. 构建过程中，HSP模块会将依赖的HAR中的Ability与其自身配置合并。因此，HSP不支持依赖带有入口Ability的HAR。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/FXi8Ri0QTkS3NTHPfOzyvQ/zh-cn_image_0000002229604285.png?HW-CC-KV=V1&HW-CC-Date=20260428T002944Z&HW-CC-Expire=86400&HW-CC-Sign=A6DFF25B98BCBEFB6BB35DEAC9022136AEC23862CF6D0FBF313A906116235EDE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/FXi8Ri0QTkS3NTHPfOzyvQ/zh-cn_image_0000002229604285.png?HW-CC-KV=V1&HW-CC-Date=20260429T062100Z&HW-CC-Expire=86400&HW-CC-Sign=9846F578AB049DD8E787155A86E466435D136BA14B61F343DD9F0D999054B9CA)
 
 **解决措施**
 

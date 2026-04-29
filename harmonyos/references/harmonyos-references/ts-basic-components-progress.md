@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: Progress
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 信息展示 > Progress
 category: harmonyos-references
-scraped_at: 2026-04-28T08:02:03+08:00
+scraped_at: 2026-04-29T13:52:22+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:c9aa237271462447763fba16096a33972c69da8fe40221c3bb8889f8f6d8cd6f
+content_hash: sha256:7010c4e3599d32f86f2efe517eca80a75b2f232a4de87488e41d789f9243b619
 ---
 
 进度条组件，用于显示内容加载或操作处理等进度。
@@ -463,7 +463,7 @@ PhonePC/2in1TabletTVWearable
 55. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/wGnCJEoORhuPxR5VHdZezw/zh-cn_image_0000002583479913.png?HW-CC-KV=V1&HW-CC-Date=20260428T000202Z&HW-CC-Expire=86400&HW-CC-Sign=8AEDD9B5E15E3CA750F1F0B5180A5A96CF102867AEE5DA9251E16E0D322A2CC7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/F2_qdjimTWGNI79yWzIA5w/zh-cn_image_0000002558606778.png?HW-CC-KV=V1&HW-CC-Date=20260429T055221Z&HW-CC-Expire=86400&HW-CC-Sign=65F1D00A95EA96948AF199361605035C595047B2938387BB0CD967281F8F37BB)
 
 ### 示例2（设置环形进度条属性）
 
@@ -493,7 +493,7 @@ PhonePC/2in1TabletTVWearable
 21. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/ba-1K5W-TLmQYG5qZgz_aw/zh-cn_image_0000002552800264.png?HW-CC-KV=V1&HW-CC-Date=20260428T000202Z&HW-CC-Expire=86400&HW-CC-Sign=61FD9CA18672BBBDF5CE9DE42F3C6E4A1D3FEE87E9EE837251F0DBE1E06F0C54)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/RJzHqlwcQ-mmRZ0aSLvASw/zh-cn_image_0000002589326305.png?HW-CC-KV=V1&HW-CC-Date=20260429T055221Z&HW-CC-Expire=86400&HW-CC-Sign=F67ECEE08F0E5975EC2BA12CFB755EA509364805028C1E87AD93D92BF70BA388)
 
 ### 示例3（设置环形进度条动画）
 
@@ -520,7 +520,7 @@ PhonePC/2in1TabletTVWearable
 18. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/2CFlacEvTR-oaaQd4nHOlA/zh-cn_image_0000002583439959.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000202Z&HW-CC-Expire=86400&HW-CC-Sign=66700E9CB5455BD13CCC4440D414450D929C41F3100332035BF9C970BB350A41)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/CxgCnKAFRPmeLCnto640zQ/zh-cn_image_0000002589246247.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055221Z&HW-CC-Expire=86400&HW-CC-Sign=DA36B311AE6A9DBDC2F228347471AE7544B39CF7F1B5A9BB5BBAFB988F219491)
 
 ### 示例4（设置胶囊形进度条属性）
 
@@ -550,7 +550,7 @@ PhonePC/2in1TabletTVWearable
 21. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/ryUdja21QTObSPa33F4DeA/zh-cn_image_0000002552959914.png?HW-CC-KV=V1&HW-CC-Date=20260428T000202Z&HW-CC-Expire=86400&HW-CC-Sign=E78BC19FCC6B49D7B83B22E30960FC9E3C1D51CD3703CEF93DDDB547F8747F0D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/obbrEsr9QkOZeMQenYvChw/zh-cn_image_0000002558766440.png?HW-CC-KV=V1&HW-CC-Date=20260429T055221Z&HW-CC-Expire=86400&HW-CC-Sign=52194A65D07BE8D91A62E2508627F22E106AE987E4523E8ECD2D6FA17A67253D)
 
 ### 示例5（设置进度平滑动效）
 
@@ -592,7 +592,7 @@ PhonePC/2in1TabletTVWearable
 33. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/3LIKlpOFTLGgspMI4zBrig/zh-cn_image_0000002583479915.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000202Z&HW-CC-Expire=86400&HW-CC-Sign=043F1FEE29A2E2C334BBAC3CCBBBBDF8953F93952330760808D0B274594A022C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/CPC1qaIDS2q2e3lSnYtMOQ/zh-cn_image_0000002558606780.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055221Z&HW-CC-Expire=86400&HW-CC-Sign=B7AAF70DCB186375A8FA17FFEE47B0CA73E8423C03D158C0D7796148007B1E5B)
 
 ### 示例6（设置定制内容区）
 
@@ -673,7 +673,7 @@ PhonePC/2in1TabletTVWearable
 72. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/b8EZZ4ZHR2WCfHcjw4ISmQ/zh-cn_image_0000002552800266.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000202Z&HW-CC-Expire=86400&HW-CC-Sign=B6469D793338B5B25FAF976EC82D72FE29F423D13B6745E8390778C96E99CCBC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/bUs4aPbJQiqlMcmQCll3Cg/zh-cn_image_0000002589326307.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055221Z&HW-CC-Expire=86400&HW-CC-Sign=11B7EBF6EE609AD266C99C9341C2577FF046A512BC2526777809F4F8B0BF093E)
 
 ### 示例7（设置隐私隐藏）
 
@@ -710,7 +710,7 @@ PhonePC/2in1TabletTVWearable
 28. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/adX8upPuRQ2wuqfTOEJA_A/zh-cn_image_0000002583439961.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000202Z&HW-CC-Expire=86400&HW-CC-Sign=DFF03D49FF4A74D3EA0073EA0ED659318B8E67CA1EABF188AF69519C2960C997)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/hUHj6uEaRPqm1hOn_ze1Xw/zh-cn_image_0000002589246249.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055221Z&HW-CC-Expire=86400&HW-CC-Sign=76047DCAF79B55B1F1EEF6CE6C36F1133767A14D7AB6508CF873452623A06861)
 
 ### 示例8（设置Capsule进度条圆角半径）
 
@@ -747,7 +747,7 @@ PhonePC/2in1TabletTVWearable
 26. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/s7RMa6zMQN-Wo5T9iA25Ng/zh-cn_image_0000002552959916.png?HW-CC-KV=V1&HW-CC-Date=20260428T000202Z&HW-CC-Expire=86400&HW-CC-Sign=4600399ED051C10DC8AAF9E89F4D0D163FCDF3DF64F09B7F51DE83C2C41CEF62)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/VQqstHXzR46-BlJUcybkLQ/zh-cn_image_0000002558766442.png?HW-CC-KV=V1&HW-CC-Date=20260429T055221Z&HW-CC-Expire=86400&HW-CC-Sign=35C690E5EA9DF3FC5CCAD8EF8B9FCC1B4635DDBAC1A7A9B2D88C7A567B5B8018)
 
 ### 示例9（设置线性进度条和胶囊进度条属性）
 
@@ -779,4 +779,4 @@ PhonePC/2in1TabletTVWearable
 23. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/GS20ZY_-TW-vVUKVF8zyCg/zh-cn_image_0000002583479917.png?HW-CC-KV=V1&HW-CC-Date=20260428T000202Z&HW-CC-Expire=86400&HW-CC-Sign=E3AA8BCE4745DD119FC397BB8444275AED50730998DF7680F5CE4F2B09534022)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/T_M0RBOqR-WOXbBRWGzSqQ/zh-cn_image_0000002558606782.png?HW-CC-KV=V1&HW-CC-Date=20260429T055221Z&HW-CC-Expire=86400&HW-CC-Sign=274C75EECB6D8A0561FBC4B734328E9F8C1CF8436E2FFFA74560C7AB74E82F31)

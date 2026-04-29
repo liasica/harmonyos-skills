@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (DragController)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.arkui.UIContext (UIContext) > Class (DragController)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:00:21+08:00
+scraped_at: 2026-04-29T13:50:34+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:a7a1a4d6feb78402d7128044a8ccca369411d48048a1516029ac010fc98bd48e
+content_hash: sha256:b39fc23b4599debff1dea82e823abbabf5c19abd48b864a77bf2a9c362111f19
 ---
 
 提供发起主动拖拽的能力，当应用接收到触摸或长按等事件时可以主动发起拖拽的动作，并在其中携带拖拽信息。
@@ -105,7 +105,7 @@ executeDrag(custom: CustomBuilder | DragItemInfo, dragInfo: dragController.DragI
 55. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/hY1xb5eLSM---c52Z6HsYw/zh-cn_image_0000002583439453.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000020Z&HW-CC-Expire=86400&HW-CC-Sign=6ED1ED66DB9606E3BA059AF6686908A8E0D1C346A53B77531212438F66E8EEC6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/wVHW1kPrRPutVGXZjMAffw/zh-cn_image_0000002589245739.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055033Z&HW-CC-Expire=86400&HW-CC-Sign=0DEFA9B7201BEDC3F6E4E336323183D89B9C70088EFBE4A7E0A579F85E62CC04)
 
 ## executeDrag11+
 
@@ -228,7 +228,7 @@ executeDrag(custom: CustomBuilder | DragItemInfo, dragInfo: dragController.DragI
 82. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/eXEE2PRYS_eh8pS0wOQPhA/zh-cn_image_0000002552959408.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000020Z&HW-CC-Expire=86400&HW-CC-Sign=C26F43CC0ACF77B0307789A52A79BC53D0D4C2A31CB55DCC670DC7265FE23C71)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/9FeC0IxkSSi7pNzStbv68Q/zh-cn_image_0000002558765928.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055033Z&HW-CC-Expire=86400&HW-CC-Sign=A494FA937EEFF74C17B0E97847C93929BFDD57A3AE89353A9DB6415DCD937A3E)
 
 ## createDragAction11+
 
@@ -414,7 +414,7 @@ createDragAction(customArray: Array<CustomBuilder | DragItemInfo>, dragInfo: dra
 78. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/4YVDJYbLTR2jK6KFBT9dJw/zh-cn_image_0000002583479409.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000020Z&HW-CC-Expire=86400&HW-CC-Sign=FF4F1011B679D9D14D1B0C669067652A5054FF46A468D71AF62DAEF3FA5B3A94)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/6DkwyF9dRU2ZFRCCCWlAbg/zh-cn_image_0000002558606272.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055033Z&HW-CC-Expire=86400&HW-CC-Sign=22B713623A660A2211C88D4E683B35DF5DFF8300287B96B5DAE8F46C6CAC4C8C)
 
 ## getDragPreview11+
 
@@ -600,7 +600,7 @@ notifyDragStartRequest(requestStatus: dragController.DragStartRequestStatus): vo
 67. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/rY4Uyf63TKq8r3pcQe_tyA/zh-cn_image_0000002552799760.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000020Z&HW-CC-Expire=86400&HW-CC-Sign=BD11689304503C5EA9832124116C1E9C4D86CBB2A200FD00660F8E390BD0043A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/od58wB2FRRqGT8JOBv7ASw/zh-cn_image_0000002589325799.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055033Z&HW-CC-Expire=86400&HW-CC-Sign=6B501614371DF3020DC22077A96E77E33926BF15527BAC328A9196C7AA61CB5C)
 
 ## enableDropDisallowedBadge20+
 
@@ -672,4 +672,4 @@ enableDropDisallowedBadge(enabled: boolean): void
    19. }
    ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/5M9RmkGvRfC-YbmHl_IVig/zh-cn_image_0000002583439455.png?HW-CC-KV=V1&HW-CC-Date=20260428T000020Z&HW-CC-Expire=86400&HW-CC-Sign=0B4A848BD1FC99C6FB347BB8000E20C91A291A3341C376C9C2184C61E6A68F4C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/5glYnWdiQE6m6QVMFCfbKA/zh-cn_image_0000002589245741.png?HW-CC-KV=V1&HW-CC-Date=20260429T055033Z&HW-CC-Expire=86400&HW-CC-Sign=E47D3CCD154612188A1B63368BCC947BE8CED97CCD43C56080F445D07220D8F2)

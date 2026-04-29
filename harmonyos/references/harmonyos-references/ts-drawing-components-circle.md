@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-drawin
 title: Circle
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 图形绘制 > Circle
 category: harmonyos-references
-scraped_at: 2026-04-28T08:02:12+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:eaf83ee52f45ebeb030248e989d1aad2400d8b3171066578112171663a92a29f
+scraped_at: 2026-04-29T13:52:35+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:04404089e428ac288458969c0f594d64e9fd50fd62573b14811f55c5ee9f9c31
 ---
 
 用于绘制圆形的组件。
@@ -25,6 +25,8 @@ PhonePC/2in1TabletTVWearable
 PhonePC/2in1TabletTVWearable
 
 Circle(value?: CircleOptions)
+
+用于绘制圆形的构造函数。
 
 **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
 
@@ -311,7 +313,7 @@ PhonePC/2in1TabletTVWearable
 19. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/rB0Kn-URQ46Mf_Ts1d-vWw/zh-cn_image_0000002583440049.png?HW-CC-KV=V1&HW-CC-Date=20260428T000209Z&HW-CC-Expire=86400&HW-CC-Sign=D805AFEA628CC358B3DF6C4C46A1947E1C4F970361E392AD209AC3ECD83B95E2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/VAQaed1HSDuItjbOkoplYg/zh-cn_image_0000002589246337.png?HW-CC-KV=V1&HW-CC-Date=20260429T055231Z&HW-CC-Expire=86400&HW-CC-Sign=3C2ACEE44CA4B6C1868F60CBCF1785A9B9418FFBE4473E09201DA2F8B26B28D0)
 
 ### 示例2（宽和高使用不同参数类型绘制圆）
 
@@ -335,7 +337,7 @@ width、height属性分别使用不同的长度类型绘制圆。
 15. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/WQz51th9TXiJhzxhV1_F8A/zh-cn_image_0000002552960004.png?HW-CC-KV=V1&HW-CC-Date=20260428T000209Z&HW-CC-Expire=86400&HW-CC-Sign=690A113EC26F40E141644AEE02B24194923E8A83B57F4E8680DF7C87504FA00F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/warq-8fETvuJXfM2lTozHA/zh-cn_image_0000002558766530.png?HW-CC-KV=V1&HW-CC-Date=20260429T055231Z&HW-CC-Expire=86400&HW-CC-Sign=15AD54802FD1FB5A220782AC3F020C49267C85F0E02CA14F148FF48A18B2751C)
 
 ### 示例3（使用attributeModifier动态设置Circle组件的属性）
 
@@ -373,4 +375,4 @@ width、height属性分别使用不同的长度类型绘制圆。
 29. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/Jll3GOPKS0uRo0LVrhzhDw/zh-cn_image_0000002583480005.png?HW-CC-KV=V1&HW-CC-Date=20260428T000209Z&HW-CC-Expire=86400&HW-CC-Sign=73C8AAECF1C9E61D016ED53BD8C7DFF817D5CC83EAD0285DBF8E28CDEA402875)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/6cHFFEc4SXW1sYlvAnM7oA/zh-cn_image_0000002558606870.png?HW-CC-KV=V1&HW-CC-Date=20260429T055231Z&HW-CC-Expire=86400&HW-CC-Sign=81783963F654DE1C373E9820CEDEBE17B68143815019F4B326913130909CD795)

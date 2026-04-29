@@ -1,10 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pastebutton
 title: 使用粘贴控件
+breadcrumb: 指南 > 系统 > 安全 > 程序访问控制 > 使用安全控件 > 使用粘贴控件
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:42:06+08:00
+scraped_at: 2026-04-29T13:30:37+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:0752541faacf0058c4c3e05e67ccac82d2057933f3760ffe85b794811605a5d4
+content_hash: sha256:7272a7b1753a98a178eaaf06fa11ebcff2d85acdd293419694e19ed62c881fd4
 ---
 
 粘贴控件是一种特殊的系统安全控件，它允许应用在用户的授权下静默读取剪贴板数据。
@@ -15,7 +16,7 @@ content_hash: sha256:0752541faacf0058c4c3e05e67ccac82d2057933f3760ffe85b79481160
 
 粘贴控件效果如图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/wVo-1g38SWqO2lANhmdJ9A/zh-cn_image_0000002552798710.gif?HW-CC-KV=V1&HW-CC-Date=20260427T234205Z&HW-CC-Expire=86400&HW-CC-Sign=963759ABC0D63B50D0A2B9D5FEDD375F8F9ED761995A1FBC17F18F0556F67C8A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/UaLlxjsLSmaWk-zGzn08Rg/zh-cn_image_0000002558764858.gif?HW-CC-KV=V1&HW-CC-Date=20260429T053036Z&HW-CC-Expire=86400&HW-CC-Sign=F19882A54E3878B90E8EAB26C4CC0F379247548C63CB8FF1024818BD051B6742)
 
 ## 约束与限制
 

@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: 如何解决编译报错“Error: the name 'XXX' can only contain [a-zA-Z0-9_]”的问题
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 如何解决编译报错“Error: the name 'XXX' can only contain [a-zA-Z0-9_]”的问题
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:29:34+08:00
+scraped_at: 2026-04-29T14:20:49+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:55f478f6dd1fa0334ab5da3c25d81d4a2346978fe4bb5a29fcf73ea3cf427c9b
+content_hash: sha256:66049ea30de98d243d08dd0b1c593075340acebc2af94732c00810870777a6c6
 ---
 
 **问题现象**
 
 编译报错：文件名只能包含大小写字母、数字、下划线。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/EMQ1Opn8SOeiCZBORoMymg/zh-cn_image_0000002194158636.png?HW-CC-KV=V1&HW-CC-Date=20260428T002932Z&HW-CC-Expire=86400&HW-CC-Sign=3ABBC523E8291F35C6F3011512D982C12F9EFAA1B79B09266CBB49799E664C73)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/EMQ1Opn8SOeiCZBORoMymg/zh-cn_image_0000002194158636.png?HW-CC-KV=V1&HW-CC-Date=20260429T062048Z&HW-CC-Expire=86400&HW-CC-Sign=CFD161DF829FC491986A194CFA88ABE1ED830D6C3F304D5CD7BDE128D339F1A4)
 
 **解决方案**
 

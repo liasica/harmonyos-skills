@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/smart-photopi
 title: 使用PhotoPicker推荐图片
 breadcrumb: 指南 > 媒体 > Media Library Kit（媒体文件管理服务） > 使用PhotoPicker推荐图片
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:46:36+08:00
+scraped_at: 2026-04-29T13:35:35+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:f8842850ef127d2ed6af3ee9c18cd6e2f3254cb9e077a44994878b8aa7742c9b
+content_hash: sha256:ca273a3f1cc382c749eaff63218ee76e2c248ab2ae61ea4f918c754dcf4fa52a
 ---
 
 应用在调用PhotoPicker接口时，如果配置了PhotoPicker图片推荐参数，当设备中有满足图片推荐参数的图片，且设备中的图片已经分析完成时，PhotoPicker界面除了展示全量的图片外，还会展示符合条件的推荐图片供用户参考选择，从而缩短用户筛选图片的时间。
@@ -14,14 +14,14 @@ content_hash: sha256:f8842850ef127d2ed6af3ee9c18cd6e2f3254cb9e077a44994878b8aa77
 
   以指定图片类型为二维码为例，PhotoPicker界面上将出现“二维码”的Tab页，展示图库中的二维码图片。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/WPwyHhxPRgquzVpgsdrFlQ/zh-cn_image_0000002583438653.jpg?HW-CC-KV=V1&HW-CC-Date=20260427T234635Z&HW-CC-Expire=86400&HW-CC-Sign=5E97196FF742D3B29054BC8EA7FC10B3D0D6A0F133A416645AC48E7E554E602B)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/fzWRUosnQjiihpkwlgfZQA/zh-cn_image_0000002589244913.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053534Z&HW-CC-Expire=86400&HW-CC-Sign=24E89AFED210F2F9A40ACD6E437A50E2C68ABB125610D3E02C6EF6A1A1034E58)
 * 在图文编辑时选择图片，系统可以根据应用传入的文本信息，提取出时间、地点、事物或活动，并根据提取的信息，推荐对应的图片展示在PhotoPicker中。
 
   举例说明，如设置的推荐参数文本是“国庆节，带着女儿去了上海野生动物园，看到了凶猛的大象，漂亮的火烈鸟，还有她心心念念的大熊猫，小家伙可开心了。”
 
   而且手机中有相应的图片，图片分析完成时，会在“推荐”的Tab页中展示出时间是国庆节，地点是上海野生动物园的大熊猫、火烈鸟、大象的图片。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/mS83kuKxRPm9XdoXlCdzyg/zh-cn_image_0000002552958608.jpg?HW-CC-KV=V1&HW-CC-Date=20260427T234635Z&HW-CC-Expire=86400&HW-CC-Sign=08457CD6592E431907A4BDAE9BAA5D61E814CC03DBAC7591B291F02EBDCAC6C6)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/xMvzinTSQ2KMY0CiDWC8dQ/zh-cn_image_0000002558765108.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053534Z&HW-CC-Expire=86400&HW-CC-Sign=920DC1E3AF5DC903404D355FEB6557B1E0E1ABA949671CA46DEA000A6DE3BF8F)
 
 ## 约束与限制
 

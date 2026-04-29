@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/textblock-dra
 title: 字块绘制（C/C++）
 breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 图形绘制与显示 > 图元绘制 > 字块绘制（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:47:13+08:00
+scraped_at: 2026-04-29T13:36:12+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:3d77e0710fb101fa9e07f8d438204f72c27c15fb3314999b807e654988401b1e
+content_hash: sha256:4789e9771abe9de4e890951888848b5fcc0a917351215e4661cdef66f5ad87be
 ---
 
 ## 场景介绍
@@ -52,7 +52,7 @@ content_hash: sha256:3d77e0710fb101fa9e07f8d438204f72c27c15fb3314999b807e6549884
 
 [sample\_graphics.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/Drawing/NDKGraphicsDraw/entry/src/main/cpp/samples/sample_graphics.cpp#L1136-L1152)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/xgkk67NwT3WdpN4yb6jq1g/zh-cn_image_0000002552799018.jpg?HW-CC-KV=V1&HW-CC-Date=20260427T234712Z&HW-CC-Expire=86400&HW-CC-Sign=1AA9109EDE4A8C843AA3608CC6A83926F49BF5FE5FFBABC0941E0DA76F6B6309)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/rkUUWUp7SJyLTHfS2-Hfrw/zh-cn_image_0000002589325037.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053610Z&HW-CC-Expire=86400&HW-CC-Sign=ED93BF8BF6B51C5EB82EA34169E3FFFA385F7177A074A05EAE6607FB50213BD5)
 
 ## 文字描边
 
@@ -95,7 +95,7 @@ content_hash: sha256:3d77e0710fb101fa9e07f8d438204f72c27c15fb3314999b807e6549884
 
 [sample\_graphics.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/Drawing/NDKGraphicsDraw/entry/src/main/cpp/samples/sample_graphics.cpp#L1157-L1184)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/a_IYvXq9RfqW9XsPDw-lKw/zh-cn_image_0000002583438713.jpg?HW-CC-KV=V1&HW-CC-Date=20260427T234712Z&HW-CC-Expire=86400&HW-CC-Sign=1980CE0A6295EDE962172FDE2E3235C3B62A61C5207B07810F0447FC7B9C1052)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/RJK-6lrQTrmTDh4kFdccmg/zh-cn_image_0000002589244973.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053610Z&HW-CC-Expire=86400&HW-CC-Sign=B0B2D0D01963302B8A579BB227EA397C8FC4F0CB44CD0355B77A12A90E7DC763)
 
 ### 中文文字描边
 
@@ -145,7 +145,7 @@ content_hash: sha256:3d77e0710fb101fa9e07f8d438204f72c27c15fb3314999b807e6549884
 
 [sample\_graphics.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/Drawing/NDKGraphicsDraw/entry/src/main/cpp/samples/sample_graphics.cpp#L1189-L1227)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/IcSAF9PvTl2H9bgPPAvLnA/zh-cn_image_0000002552958668.png?HW-CC-KV=V1&HW-CC-Date=20260427T234712Z&HW-CC-Expire=86400&HW-CC-Sign=EE6002EE4A768C828D48EA98AA1C314BD032676FE0B889114EEDF99053E634A0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/eNCXsb5ZRCm-FJtIzl5GnQ/zh-cn_image_0000002558765168.png?HW-CC-KV=V1&HW-CC-Date=20260429T053610Z&HW-CC-Expire=86400&HW-CC-Sign=757B7790E764AF4DB6E8FCF2C6B63412E03BA27DC578ECE734360FFA26D7ACD1)
 
 ## 文字渐变
 
@@ -191,7 +191,7 @@ content_hash: sha256:3d77e0710fb101fa9e07f8d438204f72c27c15fb3314999b807e6549884
 
 [sample\_graphics.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/Drawing/NDKGraphicsDraw/entry/src/main/cpp/samples/sample_graphics.cpp#L1232-L1266)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/KyyIZCG1SfeSs-QCUEuBwQ/zh-cn_image_0000002583478669.jpg?HW-CC-KV=V1&HW-CC-Date=20260427T234712Z&HW-CC-Expire=86400&HW-CC-Sign=390917DDC370B1F013790CCCC3437A3B968EFE8D98811AECC34E5FF13BA6C941)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/SQjeT6aDQo6fx1AKyWQgfA/zh-cn_image_0000002558605512.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053610Z&HW-CC-Expire=86400&HW-CC-Sign=3F75E5F3247E3EF8CAC90DEA79F060BB61F1293043F5A1431BABE41F41E555AD)
 
 ## 主题字体
 
@@ -260,7 +260,7 @@ content_hash: sha256:3d77e0710fb101fa9e07f8d438204f72c27c15fb3314999b807e6549884
 
 [sample\_graphics.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/Drawing/NDKGraphicsDraw/entry/src/main/cpp/samples/sample_graphics.cpp#L1294-L1313)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/VDYp7YkMRdiZ4NtfwWxGQg/zh-cn_image_0000002583478663.jpg?HW-CC-KV=V1&HW-CC-Date=20260427T234712Z&HW-CC-Expire=86400&HW-CC-Sign=F0FEC9B33DF38B2C29CF66967A70AE23A4BC093F8793E43536B7E75D9B33886D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/Mu0WTaUhSmi15VG-8TmDBg/zh-cn_image_0000002558605506.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053610Z&HW-CC-Expire=86400&HW-CC-Sign=18B524CDACDFE847630C07F33ADB620194D0A9BFD2B28EDD01891306A6E45C27)
 
 进阶场景：绘制带字体特征的字符。
 
@@ -294,7 +294,7 @@ content_hash: sha256:3d77e0710fb101fa9e07f8d438204f72c27c15fb3314999b807e6549884
 
 [sample\_graphics.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/Drawing/NDKGraphicsDraw/entry/src/main/cpp/samples/sample_graphics.cpp#L1318-L1342)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/loN4LkyQSY6hdMxt7auGFw/zh-cn_image_0000002552799014.png?HW-CC-KV=V1&HW-CC-Date=20260427T234712Z&HW-CC-Expire=86400&HW-CC-Sign=50627CA112E14F398B0D4FB2E0EBEE13F918F0E972AB9401C3CB8F950E0983E8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/kZBIybrnSfGGFWbY5B7N-Q/zh-cn_image_0000002589325033.png?HW-CC-KV=V1&HW-CC-Date=20260429T053610Z&HW-CC-Expire=86400&HW-CC-Sign=368D9EE8F23810547043CAE8CCE516A2305DA6A22B8FE05CD71615EB0556E928)
 
 说明
 

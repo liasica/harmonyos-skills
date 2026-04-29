@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-scsi
 title: ScsiPeripheral_IORequest
 breadcrumb: API参考 > 系统 > 硬件 > Driver Development Kit（驱动开发服务） > C API > 结构体 > ScsiPeripheral_IORequest
 category: harmonyos-references
-scraped_at: 2026-04-28T08:10:47+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:f7de10a7020fd2815aa49a55c621ccfa78555092af0bda3ea1b2b9fddc7c89c0
+scraped_at: 2026-04-29T14:01:28+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:a3880c3ba834a6eb3db1f3beafaaad7bb50486f858979bd3ea899fe4e3bce4e9
 ---
 
 ```
@@ -39,5 +39,5 @@ PC/2in1
 | uint8\_t control | Control字段，用于指定一些控制信息。 |
 | uint8\_t byte1 | CDB的第一个字节。 |
 | uint8\_t byte6 | CDB的第六个字节。 |
-| ScsiPeripheral\_DeviceMemMap\* data | 数据传输的缓冲区。 |
+| [ScsiPeripheral\_DeviceMemMap](capi-scsiperipheralddk-scsiperipheral-devicememmap.md)\* data | 数据传输的缓冲区。 |
 | uint32\_t timeout | 超时时间（单位：毫秒）。 |

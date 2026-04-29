@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (AVPlayer)
 breadcrumb: API参考 > 媒体 > Media Kit（媒体服务） > ArkTS API > @ohos.multimedia.media (媒体服务) > Interface (AVPlayer)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:13:43+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:cfedbc372fe5c37c26eaf3b56370bc67ff7288b8ae336510d568b74da2e350ab
+scraped_at: 2026-04-29T14:04:20+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:c2846eff7338c5fc65580da85f033a174137658dad49e9b13eda633ae2a3feb4
 ---
 
 播放管理类，用于管理和播放媒体资源。在调用AVPlayer的方法前，需要先通过[createAVPlayer()](arkts-apis-media-f.md#mediacreateavplayer9)构建一个AVPlayer实例。
@@ -3142,16 +3142,15 @@ setSuperResolution(enabled: boolean) : Promise<void>
 ```
 1. async function test(){
 2. let avPlayer = await media.createAVPlayer();
-3. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-4. let fileDescriptor = await context.resourceManager.getRawFd('xxx.mp4');
-5. avPlayer.fdSrc = fileDescriptor
-6. let playStrategy : media.PlaybackStrategy = {
-7. enableSuperResolution: true
-8. };
-9. avPlayer.setPlaybackStrategy(playStrategy);
-10. // 此处仅为示意，实际开发中需要在stateChange事件成功触发至initialized/prepared/playing/paused/completed/stopped状态后才能调用。
-11. avPlayer.setSuperResolution(true);
-12. }
+3. let url: string = 'http://abc.bcd.efg/aa/test.mp4';    // 此处仅为示意，请替换为真实资源文件URL。
+4. avPlayer.url = url;
+5. let playStrategy : media.PlaybackStrategy = {
+6. enableSuperResolution: true
+7. };
+8. avPlayer.setPlaybackStrategy(playStrategy);
+9. // 此处仅为示意，实际开发中需要在stateChange事件成功触发至initialized/prepared/playing/paused/completed/stopped状态后才能调用。
+10. avPlayer.setSuperResolution(true);
+11. }
 ```
 
 ## setVideoWindowSize18+
@@ -3199,17 +3198,16 @@ setVideoWindowSize(width: number, height: number) : Promise<void>
 ```
 1. async function test(){
 2. let avPlayer = await media.createAVPlayer();
-3. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-4. let fileDescriptor = await context.resourceManager.getRawFd('xxx.mp4');
-5. avPlayer.fdSrc = fileDescriptor
-6. let playStrategy : media.PlaybackStrategy = {
-7. enableSuperResolution: true
-8. };
-9. avPlayer.setPlaybackStrategy(playStrategy);
-10. avPlayer.setSuperResolution(true);
-11. // 此处仅为示意，实际开发中需要在stateChange事件成功触发至initialized/prepared/playing/paused/completed/stopped状态后才能调用。
-12. avPlayer.setVideoWindowSize(1920, 1080);
-13. }
+3. let url: string = 'http://abc.bcd.efg/aa/test.mp4';    // 此处仅为示意，请替换为真实资源文件URL。
+4. avPlayer.url = url;
+5. let playStrategy : media.PlaybackStrategy = {
+6. enableSuperResolution: true
+7. };
+8. avPlayer.setPlaybackStrategy(playStrategy);
+9. avPlayer.setSuperResolution(true);
+10. // 此处仅为示意，实际开发中需要在stateChange事件成功触发至initialized/prepared/playing/paused/completed/stopped状态后才能调用。
+11. avPlayer.setVideoWindowSize(1920, 1080);
+12. }
 ```
 
 ## on('superResolutionChanged')18+

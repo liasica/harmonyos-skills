@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/application-w
 title: 管理应用窗口（Stage模型）
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 窗口管理 > 管理应用窗口（Stage模型）
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:40:41+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:aeb027b264d307df03224671c4d28215116c2ac16551dad544791a1a1fac27ad
+scraped_at: 2026-04-29T13:29:02+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:6b8d54c2a462b9393e787d7defb9b249344ea2dcf96355ebd152f3ee5599be33
 ---
 
 ## 基本概念
@@ -533,7 +533,7 @@ content_hash: sha256:aeb027b264d307df03224671c4d28215116c2ac16551dad544791a1a1fa
 
 注意
 
-如果应用未在应用市场（AGC）申请相应的权限证书，却试图在配置文件中声明此类权限，将会导致应用安装失败。
+如果应用未在AppGallery Connect申请相应的权限证书，却试图在配置文件中声明此类权限，将会导致应用安装失败。
 
 1. 创建全局悬浮窗。
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-atom
 title: NavPushPathHelper
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > AtomicService > NavPushPathHelper
 category: harmonyos-references
-scraped_at: 2026-04-28T08:02:28+08:00
+scraped_at: 2026-04-29T13:52:53+08:00
 doc_updated_at: 2026-03-27
-content_hash: sha256:23f457145e514b6900d20d6ae7042ad336610304b0e47abf75113c609a9e548a
+content_hash: sha256:7e1c6755e488e491523ae904d8b3282cc3380aadbebb6c0bbc51fa4adfc24d57
 ---
 
 当跳转的目标[NavDestination](ts-basic-components-navdestination.md)在不同的hsp分包，且未被主包依赖，首次运行元服务只会下载安装主包，需要使用NavPushPathHelper先下载安装相应hsp分包，再将指定的[NavDestination](ts-basic-components-navdestination.md)页面信息入栈。使[Navigation](ts-basic-components-navigation.md)支持动态加载hsp分包后再跳转。
@@ -787,4 +787,4 @@ PhonePC/2in1TabletTVWearable
 12. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/qggtx00FQVKotw--6pBbdg/zh-cn_image_0000002583480089.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000227Z&HW-CC-Expire=86400&HW-CC-Sign=8A69E70662B88DD3384B9C16CA0EB0D06F443A10DCC53CAB8A53EEB2EC4F7091)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/cPGe58WtSeCE83nwtQVuxA/zh-cn_image_0000002558606954.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055252Z&HW-CC-Expire=86400&HW-CC-Sign=A03DBF4082C7976CC9DFC9A0F445E29A994D6CD1028DAD3D553A84A355E7C896)

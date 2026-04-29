@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-base
 title: BaseDdk
 breadcrumb: API参考 > 系统 > 硬件 > Driver Development Kit（驱动开发服务） > C API > 模块 > BaseDdk
 category: harmonyos-references
-scraped_at: 2026-04-28T08:10:37+08:00
-doc_updated_at: 2026-03-26
-content_hash: sha256:b97c596a59d99ed54c26927709dcade01c14e227d92eb5a2289532e85c3b76ee
+scraped_at: 2026-04-29T14:01:20+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:4933edc9fbef590bcbdadb810c4ad0e77be21a51362f0e3c05309cc443d266ab
 ---
 
 ## 概述
 
 PC/2in1
 
-提供BASE DDK接口，包括创建共享内存，映射共享内存，取消映射共享内存，以及销毁共享内存。
+提供Base DDK接口，包括创建共享内存、映射共享内存、取消映射共享内存以及销毁共享内存。
 
 **起始版本：** 12
 

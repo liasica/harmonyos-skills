@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-e
 title: @ohos.telephony.esim (eSIM卡管理)
 breadcrumb: API参考 > 系统 > 网络 > Telephony Kit（蜂窝通信服务） > ArkTS API > @ohos.telephony.esim (eSIM卡管理)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:09:18+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:adebbe2fa004e3322927a75eab05ffc06881fa17cf3e17cdd109949d3a58f107
+scraped_at: 2026-04-29T13:59:59+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:a587b6a6152fce09a02300e673302a632f3f5b8ccebd4e0b9cfdf771f5373868
 ---
 
 eSIM卡管理模块提供了eSIM卡管理的基础能力，包括获取指定卡槽是否支持eSIM功能，如果支持则允许用户添加单个配置文件。
@@ -42,7 +42,7 @@ isSupported(slotId: number): boolean
 
 | 类型 | 说明 |
 | --- | --- |
-| boolean | 返回指定卡槽是否支持eSIM功能，如果支持返回true。 |
+| boolean | 返回指定卡槽是否支持eSIM功能，如果支持返回true，不支持返回false。 |
 
 **错误码：**
 

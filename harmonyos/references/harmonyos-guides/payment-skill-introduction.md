@@ -1,14 +1,14 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/payment-skill-introduction
-title: 接入Skill能力说明
-breadcrumb: 指南 > 应用服务 > Payment Kit（鸿蒙支付服务） > 接入Skill能力说明
+title: 接入Skill说明
+breadcrumb: 指南 > 应用服务 > Payment Kit（鸿蒙支付服务） > 接入Skill说明
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:50:04+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:730faa7d8cce766a0180244bacf48105bd08a7f1c279c1cd69541f9cbabf8046
+scraped_at: 2026-04-29T13:39:27+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:950fdb3b8bb665ae3a09ff339687d009f87734e66ba0286608947fcd8f46e613
 ---
 
-鸿蒙支付服务接入Skill是一套面向开发者/外部商户接入的能力，基于Payment Kit文档沉淀标准流程与关键校验点，将“文档阅读”转化为“任务清单执行”，帮助开发者更快完成接入闭环并降低上线风险。
+鸿蒙支付服务接入Skill是一套面向开发者/外部商户接入的能力，基于Payment Kit文档沉淀标准流程与关键校验点，将“文档阅读”转化为“任务清单执行”，帮助开发者更快完成鸿蒙支付服务接入的能力。
 
 接入Skill能力可获得：
 
@@ -28,7 +28,7 @@ content_hash: sha256:730faa7d8cce766a0180244bacf48105bd08a7f1c279c1cd69541f9cbab
 
 ## 使用方式
 
-[下载Skill技能](https://gitcode.com/HarmonyOS_Samples/paymentkit-sample-code-serverdemo-java/tree/master/skills)，把Skill放到AI编码工具的skills目录，工具就能在对话中自动或按需使用它。
+[下载Skill](https://gitcode.com/HarmonyOS_Samples/paymentkit-sample-code-serverdemo-java/tree/master/skills)，把Skill放到AI编码工具的skills目录（不同工具规范不一致，按工具要求处理），工具就能在对话中自动或按需使用它。
 
 ### 在工具里触发Skill的使用
 
@@ -38,7 +38,7 @@ content_hash: sha256:730faa7d8cce766a0180244bacf48105bd08a7f1c279c1cd69541f9cbab
 
 也可以直接这样提问以“强制触发”：
 
-* 使用huawei-payment-integrationSkill，给出基础支付最小闭环接入清单。
+* 使用“huawei-payment-integration”Skill，给出基础支付最小闭环接入清单。
 * 使用该Skill帮忙设计回调SM2验签与幂等方案，并给出验收点。
 
 ## 注意事项

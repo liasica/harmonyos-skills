@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-applicatio
 title: 应用时延优化
 breadcrumb: 最佳实践 > 性能 > 性能场景优化案例 > 应用启动与响应优化 > 应用时延优化
 category: best-practices
-scraped_at: 2026-04-28T08:22:32+08:00
+scraped_at: 2026-04-29T14:13:38+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:2dc231992acc65eb9ca51c0fb3c92bea31b9570f38b9a72793cbe4b45462851f
+content_hash: sha256:aa9462f47286cb345fce5963d4b1bddcb390dee15e0bbdd039429d430f44525a
 ---
 
 ## 应用时延概述
@@ -15,10 +15,10 @@ content_hash: sha256:2dc231992acc65eb9ca51c0fb3c92bea31b9570f38b9a72793cbe4b4546
 在一定时延水平以上，时延越短越好，当时延小于一定水平后，用户的流畅体验不再继续提升。建议应用或元服务内点击操作响应时延应≤100ms，应用或元服务内点击操作完成时延≤900ms，更多体验建议，请参考指南[《应用性能体验建议》](../harmonyos-guides/performance-experience-suggestions.md)。本文将给出时延问题常见优化方案。
 
 **图1** 点击完成起止点示意图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/MyUbz0pgT9uwC9jTY8x6OA/zh-cn_image_0000002229337521.png?HW-CC-KV=V1&HW-CC-Date=20260428T002230Z&HW-CC-Expire=86400&HW-CC-Sign=F80CD9A6D2E8F51C5C0114DC965E818CAF331F91B9F4CDC42B80EF829834C5EC "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/MyUbz0pgT9uwC9jTY8x6OA/zh-cn_image_0000002229337521.png?HW-CC-KV=V1&HW-CC-Date=20260429T061333Z&HW-CC-Expire=86400&HW-CC-Sign=DDC6E17979F2D87291E54ABCD16607DE4CD01665AA5DB30D96C05DFE6F4B7E9B "点击放大")
 
 **图2** 页面转场过程解析  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/B3Qsm1duQlKgK1eJiamEwg/zh-cn_image_0000002229452017.png?HW-CC-KV=V1&HW-CC-Date=20260428T002230Z&HW-CC-Expire=86400&HW-CC-Sign=B1F48D8DCF4CD65335BF7E26606993D1621712B1E7E9AF1C9708DED370BA999A "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/B3Qsm1duQlKgK1eJiamEwg/zh-cn_image_0000002229452017.png?HW-CC-KV=V1&HW-CC-Date=20260429T061333Z&HW-CC-Expire=86400&HW-CC-Sign=44AB7B6D6BC386576CCDD881B579BE1396073BFA53DBB064DDEDA5AEBDFCE2BE "点击放大")
 
 ## 常见时延问题优化方案
 
@@ -32,13 +32,13 @@ content_hash: sha256:2dc231992acc65eb9ca51c0fb3c92bea31b9570f38b9a72793cbe4b4546
 
 **图3** 留言箱列表界面
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/4FJMjGtTRH6ByvsYGbXWhg/zh-cn_image_0000002229337533.png?HW-CC-KV=V1&HW-CC-Date=20260428T002230Z&HW-CC-Expire=86400&HW-CC-Sign=4D2D76697ED27EC73C74F72220FE487250119E0C5E1E29A614E9B2A3C301D96A "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/4FJMjGtTRH6ByvsYGbXWhg/zh-cn_image_0000002229337533.png?HW-CC-KV=V1&HW-CC-Date=20260429T061333Z&HW-CC-Expire=86400&HW-CC-Sign=8A16D4720FD33862EE297FF0AFBE16134E2606E8EBC21F6506ADDC1F8C22E8D5 "点击放大")
 
 分解关系结构后，单个子项界面由6个构成元素组成，元素排列以线性风格为主，使用的组件包括Image、Badge和Text。
 
 **图4** 单个ListItem界面示意
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/MTCb4pEsQ7SqyiCk-WSizA/zh-cn_image_0000002193852136.png?HW-CC-KV=V1&HW-CC-Date=20260428T002230Z&HW-CC-Expire=86400&HW-CC-Sign=72C58B56F077BB523D966880FF89247EE44121A36933E84784F08118CEA33558 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/MTCb4pEsQ7SqyiCk-WSizA/zh-cn_image_0000002193852136.png?HW-CC-KV=V1&HW-CC-Date=20260429T061333Z&HW-CC-Expire=86400&HW-CC-Sign=AB5E135633A9294B22AF96FDA2AEF1866D9879F604BAADB5CD484023D4329AFD "点击放大")
 
 **具体实现**
 
@@ -46,11 +46,11 @@ content_hash: sha256:2dc231992acc65eb9ca51c0fb3c92bea31b9570f38b9a72793cbe4b4546
 * 接下来采用相对布局优化实现。先将左侧头像添加到容器中，然后锚定其位置，逐一在右侧添加其他元素。实现结果使用工具观察，发现层级相对减少，最终实现的层级是3层。同时，借助相对布局，子元素结构扁平化，容器也相对减少，进一步优化了页面的构建渲染时间。
 
 **图5** Flex布局下的界面层级关系  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/9NlvKGUURF6XciSuuOBVLQ/zh-cn_image_0000002229452013.png?HW-CC-KV=V1&HW-CC-Date=20260428T002230Z&HW-CC-Expire=86400&HW-CC-Sign=4E9A77DB8122BFE3E398DC04D02CAF5CF00D8DD40E9A464898067A25EE83F42A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/9NlvKGUURF6XciSuuOBVLQ/zh-cn_image_0000002229452013.png?HW-CC-KV=V1&HW-CC-Date=20260429T061333Z&HW-CC-Expire=86400&HW-CC-Sign=277D43849BC24546DBF91D98D9696F797AB238385BBD3CE12898C3E6917073F0)
 
 **图6** 相对布局下的界面层级关系
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/sWna8zPpQF2ZWuZCicr47w/zh-cn_image_0000002229452029.png?HW-CC-KV=V1&HW-CC-Date=20260428T002230Z&HW-CC-Expire=86400&HW-CC-Sign=83B5BECE21AAD97D920EF8143D166A2BDDB9E883D15C109ECCCA61AD742E2448)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/sWna8zPpQF2ZWuZCicr47w/zh-cn_image_0000002229452029.png?HW-CC-KV=V1&HW-CC-Date=20260429T061333Z&HW-CC-Expire=86400&HW-CC-Sign=390857F857943814DB7A12121489C1370758A395E2B26E0C870049861CB27EFE)
 
 **统计分析**
 
@@ -365,11 +365,11 @@ content_hash: sha256:2dc231992acc65eb9ca51c0fb3c92bea31b9570f38b9a72793cbe4b4546
 
 利用Profiler工具分析得到的trace图，重点关注两个trace标签：DispatchTouchEvent表示点击事件，PanGesture表示事件响应。追踪流程从应用侧的DispatchTouchEvent（type=0，表示手指接触屏幕）标签开始，到PanGesture（事件响应）的变化，整个过程耗时145.1毫秒。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/Yq5LcTEqQYaNIQ2iqO9SwA/zh-cn_image_0000002229337529.png?HW-CC-KV=V1&HW-CC-Date=20260428T002230Z&HW-CC-Expire=86400&HW-CC-Sign=CEE9396ECC5862DF77437BAB3DF71D516E031817BD2C401239F0C77E25F2ECE3 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/Yq5LcTEqQYaNIQ2iqO9SwA/zh-cn_image_0000002229337529.png?HW-CC-KV=V1&HW-CC-Date=20260429T061333Z&HW-CC-Expire=86400&HW-CC-Sign=53E67F96FB66F2BF2AACC57303324B717F500ED943888945FC8CF0C8B7299408 "点击放大")
 
 日志关注从应用接收TouchDown事件到pan识别的耗时，该过程耗时127ms。注：日志信息和trace图非同一时间获取，性能数据存在差异，提供的数值仅供参考。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/uvMs2RYeTPmQu1xvsTnuMg/zh-cn_image_0000002229452021.png?HW-CC-KV=V1&HW-CC-Date=20260428T002230Z&HW-CC-Expire=86400&HW-CC-Sign=6980E112651712083028FDA1DFFCF77C1E87E81B983F7301683E6779D4B5D713 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/uvMs2RYeTPmQu1xvsTnuMg/zh-cn_image_0000002229452021.png?HW-CC-KV=V1&HW-CC-Date=20260429T061333Z&HW-CC-Expire=86400&HW-CC-Sign=D4655B230688F30B5929D7205B2F408A806F4CB4FDDD57FBDEDDE7C438D0C821 "点击放大")
 
 针对该组件，其拖动手势识别距离可以调整到更合适的数值，这里优化后，指定触发拖动手势事件的最小拖动距离为4vp，代码如下：
 
@@ -384,11 +384,11 @@ content_hash: sha256:2dc231992acc65eb9ca51c0fb3c92bea31b9570f38b9a72793cbe4b4546
 
 同样采用Profiler工具分析trace图，得到对应耗时38.4ms
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/ADZHi8f7S1-zdV0gi9WxAg/zh-cn_image_0000002194011720.png?HW-CC-KV=V1&HW-CC-Date=20260428T002230Z&HW-CC-Expire=86400&HW-CC-Sign=927D6350DBE513422854FF425D381DC1B22193E6E047A08ED4C553AF571B27F7 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/ADZHi8f7S1-zdV0gi9WxAg/zh-cn_image_0000002194011720.png?HW-CC-KV=V1&HW-CC-Date=20260429T061333Z&HW-CC-Expire=86400&HW-CC-Sign=B1E93F82515764A7E74F8D8C6AA6DBFA8EF75ADD5101473F214E1F4323133F04 "点击放大")
 
 对应日志过程耗时42ms。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/R3euGxlDQ5C8BlQoHfW3LA/zh-cn_image_0000002229452025.png?HW-CC-KV=V1&HW-CC-Date=20260428T002230Z&HW-CC-Expire=86400&HW-CC-Sign=BAD8F5A12D0F573EB35CF7902691D48FC9F6C93122681DE6BBC44724AB10043E "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/R3euGxlDQ5C8BlQoHfW3LA/zh-cn_image_0000002229452025.png?HW-CC-KV=V1&HW-CC-Date=20260429T061333Z&HW-CC-Expire=86400&HW-CC-Sign=F3591BCD71F4C63223050EC63B0BBE479302019F733B9E8EC1C3314D4C1045F1 "点击放大")
 
 **性能比对**
 
@@ -413,7 +413,7 @@ content_hash: sha256:2dc231992acc65eb9ca51c0fb3c92bea31b9570f38b9a72793cbe4b4546
 
 **图7** 场景实例图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/6zxtixVDR9mSBUNttkqlxQ/zh-cn_image_0000002193852132.png?HW-CC-KV=V1&HW-CC-Date=20260428T002230Z&HW-CC-Expire=86400&HW-CC-Sign=5DD0E4BDAE70761300989E997EC4743B92FBEEBFA09E2DC1E0F4B5A788A47D2C "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/6zxtixVDR9mSBUNttkqlxQ/zh-cn_image_0000002193852132.png?HW-CC-KV=V1&HW-CC-Date=20260429T061333Z&HW-CC-Expire=86400&HW-CC-Sign=687FD307E63BAAF26B6F8021EA163B93BF2A2397C342B9FC0C9A966FE24BAC45 "点击放大")
 
 **具体实现**
 
@@ -590,7 +590,7 @@ content_hash: sha256:2dc231992acc65eb9ca51c0fb3c92bea31b9570f38b9a72793cbe4b4546
 
 [TabsPositiveExample.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/OptimizationAppDelay/entry/src/main/ets/pages/TabsPositiveExample.ets#L22-L82)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/oBaKOjP5TLiF7MM05M6_nQ/zh-cn_image_0000002229337537.png?HW-CC-KV=V1&HW-CC-Date=20260428T002230Z&HW-CC-Expire=86400&HW-CC-Sign=2C16D8E55564B609BC4EE1556F03C1F35428FB2E20C8278E1F88BB5E35ABF24A "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/oBaKOjP5TLiF7MM05M6_nQ/zh-cn_image_0000002229337537.png?HW-CC-KV=V1&HW-CC-Date=20260429T061333Z&HW-CC-Expire=86400&HW-CC-Sign=94DDC03F2E3EDF2726DD4E52609F791A613D95E9C395EE023960B60C191788DE "点击放大")
 
 实验二：设置animationDuration为1000ms
 
@@ -623,7 +623,7 @@ content_hash: sha256:2dc231992acc65eb9ca51c0fb3c92bea31b9570f38b9a72793cbe4b4546
 
 [TabsNegativeExample.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/OptimizationAppDelay/entry/src/main/ets/pages/TabsNegativeExample.ets#L22-L94)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/1I-zXkK3TT25GA9foRua1w/zh-cn_image_0000002229337525.png?HW-CC-KV=V1&HW-CC-Date=20260428T002230Z&HW-CC-Expire=86400&HW-CC-Sign=698F0EB3E8539CF40F02523059D14875638400AECC179EC5C0AAE06EA7AEB6C2 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/1I-zXkK3TT25GA9foRua1w/zh-cn_image_0000002229337525.png?HW-CC-KV=V1&HW-CC-Date=20260429T061333Z&HW-CC-Expire=86400&HW-CC-Sign=9522BCCAF491E20437E00980D9611BE468F30E46BBE406D5DB1FB1E0A9C07D41 "点击放大")
 
 **表7** 运行效果图
 

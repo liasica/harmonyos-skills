@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (ComponentSnapshot)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.arkui.UIContext (UIContext) > Class (ComponentSnapshot)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:00:20+08:00
+scraped_at: 2026-04-29T13:50:33+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:e1d906a5f0a80d022cfe27900a87b5c155f28b334116832c63606c23f7d9b8c1
+content_hash: sha256:9ce87258c996e51909a1aec20ce66912085951d609b17651d944318ed87cf3dd
 ---
 
 提供获取组件截图的能力，包括已加载的组件的截图和没有加载的组件的截图。
@@ -94,7 +94,7 @@ get(id: string, callback: AsyncCallback<image.PixelMap>, options?: componentSnap
 38. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/2sTeaq-6Rb-xcIteEnD6Qw/zh-cn_image_0000002583439451.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000018Z&HW-CC-Expire=86400&HW-CC-Sign=28689055D790DB83789D5E35994C9ABEA80BA3F5D9907E6DD58712D9F9061426)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/ZPVS6K8jTe-Q3YhRElvHIw/zh-cn_image_0000002589245737.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055031Z&HW-CC-Expire=86400&HW-CC-Sign=4BD322DF5D62DC5CF51F697354C29402603C45902FDBC4A9B4148FAF7BB4FC98)
 
 ## get12+
 

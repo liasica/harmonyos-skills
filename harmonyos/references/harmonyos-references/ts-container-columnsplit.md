@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: ColumnSplit
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 栅格与分栏 > ColumnSplit
 category: harmonyos-references
-scraped_at: 2026-04-28T08:01:27+08:00
+scraped_at: 2026-04-29T13:51:41+08:00
 doc_updated_at: 2026-04-08
-content_hash: sha256:5d6576708791b61f6600e2e9931fd1f05b2c6a22453697b6ab9b7c60eb496d3c
+content_hash: sha256:95515aa99073b78822b675f02aba5db3805c992dae80c929bf9ca5036fd227cb
 ---
 
 将子组件纵向布局，并在每个子组件之间插入横向分割线。
@@ -140,7 +140,7 @@ PhonePC/2in1TabletTVWearable
 20. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/1b8pZQyrRFyOY1LFs2LauQ/zh-cn_image_0000002583479603.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000125Z&HW-CC-Expire=86400&HW-CC-Sign=35AFE4DF00AAE18D5BC3ED664CD46D6CC175C29F533D7ED02537E5903A0DE927)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/KeGMl_zFQ5-ZYgiCX2eHeA/zh-cn_image_0000002558606466.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055140Z&HW-CC-Expire=86400&HW-CC-Sign=1F1ECA4C0EBF90FBA09A911AE4920534AB6328FEC6EA4643E730C42245D0E474)
 
 ### 示例2（设置带有间隔的ColumnSplit组件）
 
@@ -170,4 +170,4 @@ PhonePC/2in1TabletTVWearable
 21. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/GnQof7fbRmS7Wbb6cOJnrw/zh-cn_image_0000002552799954.png?HW-CC-KV=V1&HW-CC-Date=20260428T000125Z&HW-CC-Expire=86400&HW-CC-Sign=614A0C2E214DC3473FA1938EF1CA2F7A0F0F9FE20B5581CDD1BF6DD557CB8A61)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/u577pJwvSQ-FjL1ep_V-AA/zh-cn_image_0000002589325993.png?HW-CC-KV=V1&HW-CC-Date=20260429T055140Z&HW-CC-Expire=86400&HW-CC-Sign=FA99522C0840D51E420CCF711B9D3004640011F66ABE23537257BCA05B513809)

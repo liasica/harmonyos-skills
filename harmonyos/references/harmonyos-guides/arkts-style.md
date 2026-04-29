@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-style
 title: @Styles装饰器：定义组件重用样式
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式基本语法 > 组件扩展 > @Styles装饰器：定义组件重用样式
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:38:59+08:00
+scraped_at: 2026-04-29T13:27:07+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:b39b5d4c34a664353bd53d9255fd3f5003bbee453522f37dea36288aeda28093
+content_hash: sha256:2ba5b54f45cad71dc3f695eb9a2f8272756a54fb194dbb436c0b593e242f52f5
 ---
 
 如果每个组件的样式都需要单独设置，在开发过程中会出现大量代码在进行重复样式设置，虽然可以复制粘贴，但为了代码简洁性和后续方便维护，我们推出了可以提炼公共样式进行复用的装饰器@Styles。
@@ -62,7 +62,7 @@ content_hash: sha256:b39b5d4c34a664353bd53d9255fd3f5003bbee453522f37dea36288aeda
 
 [StylesDecorator2.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ComponentExtension/entry/src/main/ets/pages/StylesDecorator/StylesDecorator2.ets#L30-L54)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/BBbLxcqOSoqwnJz4ARC9HA/zh-cn_image_0000002583477583.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233857Z&HW-CC-Expire=86400&HW-CC-Sign=0123DC3C28CA9CAA797E7CBCE1C92DB9CEE2689BEA37DE8D6802E5E3B88C69CD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/AQel9SoKSlyNIRxh_KvZzA/zh-cn_image_0000002589243881.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052706Z&HW-CC-Expire=86400&HW-CC-Sign=33CA2670F95FD4BD8D29496948667739E7E3124857AD865F803A0C7617B835E8)
 
 ## 限制条件
 
@@ -155,4 +155,4 @@ content_hash: sha256:b39b5d4c34a664353bd53d9255fd3f5003bbee453522f37dea36288aeda
 
 [StylesDecorator1.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ComponentExtension/entry/src/main/ets/pages/StylesDecorator/StylesDecorator1.ets#L16-L52)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/HAyxJefkTtuwYiECV_tXyA/zh-cn_image_0000002552797934.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233857Z&HW-CC-Expire=86400&HW-CC-Sign=A7A593600B9E6F13DF8E18F13F50E8880B9DE743AD0793728DB95F1F3EEFC692)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/sCZXEUc1ShanBDN58WZMxw/zh-cn_image_0000002558764074.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052706Z&HW-CC-Expire=86400&HW-CC-Sign=14FA02F6AD6D0D00B20175E512F6A6C5472CE453830BC5B2EEC2BE3066005FDD)

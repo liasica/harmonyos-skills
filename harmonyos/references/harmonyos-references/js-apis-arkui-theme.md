@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: @ohos.arkui.theme(主题换肤)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.arkui.theme(主题换肤)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:00:19+08:00
+scraped_at: 2026-04-29T13:50:32+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:45c1e968f1fe851145e2c1a5537ee172dd63f6ab5b3f92253410d6aa5b4dca42
+content_hash: sha256:2ced2dca4345639b0eb11bb2ec8d5e54c9ff7ad793e02020143d04abd597c732
 ---
 
 支持自定义主题风格，实现App组件风格跟随Theme切换。
@@ -229,6 +229,6 @@ setDefaultTheme(theme: [CustomTheme](js-apis-arkui-theme.md#customtheme)): void
 47. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/Wrd4S6LyTwCrP68mOcg94Q/zh-cn_image_0000002583479405.png?HW-CC-KV=V1&HW-CC-Date=20260428T000018Z&HW-CC-Expire=86400&HW-CC-Sign=01C76362CCE4DDF47967CD8CD8DED069EE98303C7887348639B2AF6C16D4D07F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/wcKguYNUTaCnRjNv3_z4lA/zh-cn_image_0000002558606268.png?HW-CC-KV=V1&HW-CC-Date=20260429T054737Z&HW-CC-Expire=86400&HW-CC-Sign=92D258CBFF236343233B1309F965DC9F626B9F66CBBA5C861C750616EAC5A3E1)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/eerkMjXxS_yg9sZ0UYR_Qw/zh-cn_image_0000002552799756.png?HW-CC-KV=V1&HW-CC-Date=20260428T000018Z&HW-CC-Expire=86400&HW-CC-Sign=CBD5D89BE3CDCFBA2C732A5D64BA3F199ECECE8ACCE2D54800284B46869A88FC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/5fYM0BaTTJaK6d5apRu4yw/zh-cn_image_0000002589325795.png?HW-CC-KV=V1&HW-CC-Date=20260429T054737Z&HW-CC-Expire=86400&HW-CC-Sign=0CD4D263B6371BD27DB3F72F91373694A63E114E5CF1990EB4E1A85CE212603E)

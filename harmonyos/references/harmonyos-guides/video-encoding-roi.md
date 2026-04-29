@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/video-encodin
 title: ROI视频编码
 breadcrumb: 指南 > 媒体 > AVCodec Kit（音视频编解码服务） > 音视频编解码 > ROI视频编码
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:45:44+08:00
+scraped_at: 2026-04-29T13:34:41+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:21dc261ebd4ab6d3071717b7a947c5a3cadf22e0adc9dafa500b6e25c085ec60
+content_hash: sha256:b658da04038989fbccd90f7045036bb14981330ac685f25eaeeb8992a5595106
 ---
 
 ## 基础概念
@@ -57,7 +57,7 @@ ROI视频编码适用于因网络带宽限制导致码率不能满足视频画�
 
 **图1：ROI坐标和最大允许面积占比示意图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/XxE_NWXAQoO9U1i6_1anoA/zh-cn_image_0000002583478549.png?HW-CC-KV=V1&HW-CC-Date=20260427T234542Z&HW-CC-Expire=86400&HW-CC-Sign=62E88B4E90526EADD3018B52BAACA2FEF4049D429A468358ADD8827E63A6F716)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/z3yLPkHWSkG34DpovkoBlg/zh-cn_image_0000002558605392.png?HW-CC-KV=V1&HW-CC-Date=20260429T053440Z&HW-CC-Expire=86400&HW-CC-Sign=52967B868C984F243159CB68A45B73E56463033A5A55FBC0FC19E0725FD0AFAF)
 
 ## 生效机制说明
 
@@ -102,7 +102,7 @@ ROI信息需与相机视频帧信息严格对齐。实际应用中，若两个�
 
 **图2：NativeBuffer元数据接口配置ROI流程图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/TeKV9CiwQPG4fXrgzVtxOA/zh-cn_image_0000002552798900.png?HW-CC-KV=V1&HW-CC-Date=20260427T234542Z&HW-CC-Expire=86400&HW-CC-Sign=85F15169B70B68A6B79201980DF1EE3BCD8E0E74004435197925329F0371F818)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/xfB2hcvpSt2cUmbRSEO-Zw/zh-cn_image_0000002589324919.png?HW-CC-KV=V1&HW-CC-Date=20260429T053440Z&HW-CC-Expire=86400&HW-CC-Sign=006F7A707A8D5505DB9A6DBCC707C76BC215F63AAF0373BD4FEBFA95F297F661)
 
 详细开发步骤如下：
 
@@ -348,7 +348,7 @@ ROI信息需与相机视频帧信息严格对齐。实际应用中，若两个�
 
 **图3：编码输入参数回调接口配置ROI流程图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/MATwILgeRm-bpm-hqt1d_w/zh-cn_image_0000002583438595.png?HW-CC-KV=V1&HW-CC-Date=20260427T234542Z&HW-CC-Expire=86400&HW-CC-Sign=F496CBB9DA37CFB7B6C5AEE80CD141473EEB234311EEF5F1A0616AE3FC2C2100)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/aOVOWLiBRkee92-WawFq1Q/zh-cn_image_0000002589244855.png?HW-CC-KV=V1&HW-CC-Date=20260429T053440Z&HW-CC-Expire=86400&HW-CC-Sign=C1F154AE2C09B29EE1544014BB99B944904AF4E149FB87589C3533457BFAE78E)
 
 详细开发步骤如下：
 
@@ -510,7 +510,7 @@ ROI信息需与相机视频帧信息严格对齐。实际应用中，若两个�
 
 **图4：编码输入Buffer回调接口配置ROI流程图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/EeKCQaQmT6aJJXCjyFEhkQ/zh-cn_image_0000002552958550.png?HW-CC-KV=V1&HW-CC-Date=20260427T234542Z&HW-CC-Expire=86400&HW-CC-Sign=4850BEFE9D35CE613806481F428C1ED4CF531E5E9D9874F016D8950B85602A8D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/_HdDsCAPSG-3O3ZSNDqPUg/zh-cn_image_0000002558765050.png?HW-CC-KV=V1&HW-CC-Date=20260429T053440Z&HW-CC-Expire=86400&HW-CC-Sign=8C0684E5E3D25D768CA44A1C20AB682D4A1C13B43707C5A3E82061371A85B661)
 
 准备步骤同[Surface模式下通过编码输入回调接口配置ROI](video-encoding-roi.md#surface模式下通过编码输入回调接口配置roi)步骤1-4，此处仅说明配置差异。
 

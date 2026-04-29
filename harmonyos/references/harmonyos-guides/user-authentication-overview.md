@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/user-authenti
 title: User Authentication Kit简介
 breadcrumb: 指南 > 系统 > 安全 > User Authentication Kit（用户认证服务） > User Authentication Kit简介
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:43:36+08:00
+scraped_at: 2026-04-29T13:32:24+08:00
 doc_updated_at: 2026-04-10
-content_hash: sha256:ae602ced939994d48f981cb3ca85d41a5aa6efd1fe148c1edeccca118e038e68
+content_hash: sha256:70cf51102617250cef36192fa0a1a86d5d536c60e7d608d9aa6a08c1e7e26fdf
 ---
 
 User Authentication Kit（用户认证服务）提供了基于用户在设备本地注册的锁屏口令、人脸和指纹来认证用户身份的能力。
@@ -16,7 +16,7 @@ User Authentication Kit（用户认证服务）提供了基于用户在设备本
 
 用户身份认证可用于各种鉴权场景，如应用内账号登录、支付认证等。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/slzcp2hDTP6citMcnIVEiw/zh-cn_image_0000002552958416.png?HW-CC-KV=V1&HW-CC-Date=20260427T234335Z&HW-CC-Expire=86400&HW-CC-Sign=AD76F74721381029198E30504ABDBD4159A1319A3DCFFBCA758DA4D5102E4740)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/QS5hmjurQT-DQZSY5gvPGQ/zh-cn_image_0000002589324783.png?HW-CC-KV=V1&HW-CC-Date=20260429T053223Z&HW-CC-Expire=86400&HW-CC-Sign=6973D96430762A9E3E181CF267F10C258AC1353B8A0E521C16856E555AEF682A)
 
 ## 亮点/特征
 
@@ -53,7 +53,7 @@ User Authentication Kit（用户认证服务）提供了基于用户在设备本
 
 统一用户认证框架架构如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/oZ44Dw5oSHGcYwpcfR8Lcw/zh-cn_image_0000002583478417.png?HW-CC-KV=V1&HW-CC-Date=20260427T234335Z&HW-CC-Expire=86400&HW-CC-Sign=5E4C8282F5524CF6813E00D053B81430DB413F2FF893A7980064841E1BFE55B6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/xXw-wyKXQ5aF0ONiwOQxFA/zh-cn_image_0000002589244721.png?HW-CC-KV=V1&HW-CC-Date=20260429T053223Z&HW-CC-Expire=86400&HW-CC-Sign=431C9B931DA6CB661CAE968871780E56A7E03D2672B359BD04DE51BB8CB127DC)
 
 用户认证框架主要包括四个部分：
 

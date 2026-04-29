@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-asse
 title: asset_type.h
 breadcrumb: API参考 > 系统 > 安全 > Asset Store Kit（关键资产存储服务） > C API > 头文件 > asset_type.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:06:47+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:491e012d5b3e64d864e606f9ef67a29370af07de78c6d022ad7af4ccf5818763
+scraped_at: 2026-04-29T13:57:17+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:387d6dc484934f413d5b1a46f4c7dca7b0de34d22a2713a95e1fda41a84966fe
 ---
 
 ## 概述
@@ -115,7 +115,7 @@ PhonePC/2in1TabletTVWearable
 | ASSET\_TAG\_AUTH\_CHALLENGE = ASSET\_TYPE\_BYTES | 0x07 | 表示认证时防重放用的挑战值，其值为bytes类型。 |
 | ASSET\_TAG\_AUTH\_TOKEN = ASSET\_TYPE\_BYTES | 0x08 | 表示用户认证后获取到的认证令牌，其值为bytes类型。 |
 | ASSET\_TAG\_SYNC\_TYPE = ASSET\_TYPE\_NUMBER | 0x10 | 表示关键资产的同步类型，其值为uint32\_t类型。 |
-| ASSET\_TAG\_IS\_PERSISTENT = ASSET\_TYPE\_BOOL | 0x11 | 表示关键资产是否需持久化存储，其值为bool类型。  在调用OH\_Asset\_Add函数时传入该属性需要校验权限ohos.permission.STORE\_PERSISTENT\_DATA。 |
+| ASSET\_TAG\_IS\_PERSISTENT = ASSET\_TYPE\_BOOL | 0x11 | 表示关键资产是否需持久化存储，其值为bool类型。  在调用OH\_Asset\_Add函数时传入该属性需要校验权限ohos.permission.STORE\_PERSISTENT\_DATA，该权限申请方式请参考[声明权限](../harmonyos-guides/declare-permissions.md)。 |
 | ASSET\_TAG\_DATA\_LABEL\_CRITICAL\_1 = ASSET\_TYPE\_BYTES | 0x20 | 表示一个用户可自定义传入的字段，该字段不可被更新，其值为bytes类型。 |
 | ASSET\_TAG\_DATA\_LABEL\_CRITICAL\_2 = ASSET\_TYPE\_BYTES | 0x21 | 表示一个用户可自定义传入的字段，该字段不可被更新，其值为bytes类型。 |
 | ASSET\_TAG\_DATA\_LABEL\_CRITICAL\_3 = ASSET\_TYPE\_BYTES | 0x22 | 表示一个用户可自定义传入的字段，该字段不可被更新，其值为bytes类型。 |

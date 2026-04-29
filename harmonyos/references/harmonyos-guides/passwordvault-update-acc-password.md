@@ -1,15 +1,16 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/passwordvault-update-acc-password
 title: 账号密码更新
+breadcrumb: 指南 > 系统 > 安全 > 密码自动填充服务 > 应用接入密码保险箱 > 自动保存 > 账号密码更新
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:42:08+08:00
+scraped_at: 2026-04-29T13:30:39+08:00
 doc_updated_at: 2026-03-20
-content_hash: sha256:899077439b0dd458f17a42e723d5d15246ccf61e1a913a969afbe5b09c916c5a
+content_hash: sha256:7479b63c8adb65ba5cb0302a71be5a913ea602a25c7ab989511aa895f4686d86
 ---
 
 应用界面触发账号密码自动保存时，若密码保险箱中已存在同应用下与本次使用账号相同的账号，则弹出密码更新提示框，用户点击更新按钮，即可更新密码保险箱内对应账号的密码。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/fMO1aXNXQ-KcKWDD14qrKQ/zh-cn_image_0000002552958362.png?HW-CC-KV=V1&HW-CC-Date=20260427T234206Z&HW-CC-Expire=86400&HW-CC-Sign=97953BCD82E9B01F86497FD6D61A84719DDFB2E8178FD1B9D82A980C51E8172A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/JlDnPyidRna4DfAElQtoGg/zh-cn_image_0000002589324729.png?HW-CC-KV=V1&HW-CC-Date=20260429T053038Z&HW-CC-Expire=86400&HW-CC-Sign=DC06B41AB32A171B537AD9DF9702DCE07E7EBB920746EDF66280E2BB7308E53E)
 
 应用触发修改密码或使用已经保存过的账号手动登录时，均会触发密码更新功能。
 
@@ -19,7 +20,7 @@ content_hash: sha256:899077439b0dd458f17a42e723d5d15246ccf61e1a913a969afbe5b09c9
 
 ## 修改账号密码
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/jhLmpyhNSo-janty80VP2A/zh-cn_image_0000002583478363.png?HW-CC-KV=V1&HW-CC-Date=20260427T234206Z&HW-CC-Expire=86400&HW-CC-Sign=5037E55164782E6D3B024990947147848ADA0E66D4A1C88E481B0B937916A26B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/umZM2GHfSeO8REg8VPjjnQ/zh-cn_image_0000002589244667.png?HW-CC-KV=V1&HW-CC-Date=20260429T053038Z&HW-CC-Expire=86400&HW-CC-Sign=F3B8F9281EA73ED9974496318E0ED2C12BAC72A2F95B308295A72EBBA0570D57)
 
 示例代码如下：
 

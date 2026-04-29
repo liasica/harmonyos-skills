@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/bpta-multi-pa
 title: 多网并发网络加速
 breadcrumb: 指南 > 系统 > 网络 > Network Boost Kit（网络加速服务） > 连接迁移（多网并发） > 多网并发网络加速
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:43:57+08:00
+scraped_at: 2026-04-29T13:32:50+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:01d06b14ba9b7c97960ff2ce9c0fc05e1801f69c758677292bb23aa0b270b432
+content_hash: sha256:9aa3449dff302aeb2e38ae50fb9459fa7827bf778d3de42c0cc69e5c578fa479
 ---
 
 ## 概述
@@ -55,7 +55,7 @@ content_hash: sha256:01d06b14ba9b7c97960ff2ce9c0fc05e1801f69c758677292bb23aa0b27
 
 ### 开发步骤
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/rbtjKhRlR4yuacSVqzbrMA/zh-cn_image_0000002583438475.png?HW-CC-KV=V1&HW-CC-Date=20260427T234356Z&HW-CC-Expire=86400&HW-CC-Sign=093FFD5B768383D1FB8B658E2FB065719FEB44D93589273D65E85B389FF394B7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/AWQ5KBbLTrum5ppOQUjYRA/zh-cn_image_0000002589244735.png?HW-CC-KV=V1&HW-CC-Date=20260429T053248Z&HW-CC-Expire=86400&HW-CC-Sign=3230B9A733FF8B690B8BEA543DB6C1F02DA4B72A91FE2FF9CFD1CAD59BC87981)
 
 ### 代码实现
 
@@ -559,7 +559,7 @@ content_hash: sha256:01d06b14ba9b7c97960ff2ce9c0fc05e1801f69c758677292bb23aa0b27
 
 ### 开发步骤
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/KWkKknofTfS9ZS0b0MPxBg/zh-cn_image_0000002552958430.png?HW-CC-KV=V1&HW-CC-Date=20260427T234356Z&HW-CC-Expire=86400&HW-CC-Sign=F56503CFEBBBF6C740FEA3A8B0A2C7F7D3AB333310820E419FFD2C6AE250BBBB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/_PvjAkttSnW2qaa8-DFklw/zh-cn_image_0000002558764930.png?HW-CC-KV=V1&HW-CC-Date=20260429T053248Z&HW-CC-Expire=86400&HW-CC-Sign=E14C997B0B85837528AE43D6E5F2372CBA5997A78DDACF54B226FD8704E13623)
 
 ### 代码实现
 

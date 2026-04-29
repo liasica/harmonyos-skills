@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-common-
 title: 切换按钮 (Toggle)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 按钮与选择 > 切换按钮 (Toggle)
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:39:41+08:00
+scraped_at: 2026-04-29T13:27:51+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:65214c829e8830aea4a8f50c63204dbc402c865ea0d146ba818c19a25a1808bd
+content_hash: sha256:309f9f0d48479de6869974e16d9a8ae028c9050fc3855975dbaac7391405a99f
 ---
 
 Toggle组件提供状态按钮样式、勾选框样式和开关样式，一般用于两种状态之间的切换。具体用法请参考[Toggle](../harmonyos-references/ts-basic-components-toggle.md)。
@@ -35,7 +35,7 @@ API version 11开始，Checkbox默认样式由圆角方形变为圆形。
 
   [CreateToggle.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ChooseComponent/entry/src/main/ets/pages/toggle/CreateToggle.ets#L30-L33)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/N8guUNkXR56jCv8S4bfkgA/zh-cn_image_0000002583477885.png?HW-CC-KV=V1&HW-CC-Date=20260427T233939Z&HW-CC-Expire=86400&HW-CC-Sign=6F4537BA8CADEB67C12E50BF5AFE543F29EDAE102BBE38D942FE3AE21950D342)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/yPBszsovQxOhX2UftGTg3w/zh-cn_image_0000002589244183.png?HW-CC-KV=V1&HW-CC-Date=20260429T052750Z&HW-CC-Expire=86400&HW-CC-Sign=FD653784113B301E8D503CB3934AC01E207DD6DF24121EA0A2AC0BA2A47DC90C)
 
   ```
   1. Toggle({ type: ToggleType.Switch, isOn: false }).id('toggle3') // 请开发者替换为实际的id
@@ -44,7 +44,7 @@ API version 11开始，Checkbox默认样式由圆角方形变为圆形。
 
   [CreateToggle.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ChooseComponent/entry/src/main/ets/pages/toggle/CreateToggle.ets#L39-L42)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/C5CoHyeaTJWQRkXMYMxK2A/zh-cn_image_0000002552798236.png?HW-CC-KV=V1&HW-CC-Date=20260427T233939Z&HW-CC-Expire=86400&HW-CC-Sign=DE0B58800001BAC3E8E5CAC64C57C9D1834C9EC11A9A905B64D07A91AD3943F3)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/LhL7s_eJTvurJsiEE6MdUg/zh-cn_image_0000002558764376.png?HW-CC-KV=V1&HW-CC-Date=20260429T052750Z&HW-CC-Expire=86400&HW-CC-Sign=705D23270DE413E05DACD8835296647714976C417C896E424D6261FAE7D84727)
 * 创建包含子组件的Toggle。
 
   当ToggleType为Button时，只能包含一个子组件，如果子组件有文本设置，则相应的文本内容会显示在按钮上。
@@ -65,7 +65,7 @@ API version 11开始，Checkbox默认样式由圆角方形变为圆形。
 
   [CreateToggle.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ChooseComponent/entry/src/main/ets/pages/toggle/CreateToggle.ets#L61-L73)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/p8sOMMG_T7WUm7b0ektbYQ/zh-cn_image_0000002583437931.png?HW-CC-KV=V1&HW-CC-Date=20260427T233939Z&HW-CC-Expire=86400&HW-CC-Sign=FA658B546D9FE7621B3EE68D56EEB2459CF9635BEB6E2BA9DB5B128068EAA016)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/l0269XtpRh2g_tgjtcvzvg/zh-cn_image_0000002558604720.png?HW-CC-KV=V1&HW-CC-Date=20260429T052750Z&HW-CC-Expire=86400&HW-CC-Sign=6477D8E8DF1F2586AAE5D45B3E3B6EC0A216817CD4BB8B59A2868C132989745A)
 
 ## 自定义样式
 
@@ -90,7 +90,7 @@ API version 11开始，Checkbox默认样式由圆角方形变为圆形。
 
   [ToggleCustomStyle.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ChooseComponent/entry/src/main/ets/pages/toggle/ToggleCustomStyle.ets#L31-L52)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/wbxVMqgtThqFW20g3qylZQ/zh-cn_image_0000002552957886.png?HW-CC-KV=V1&HW-CC-Date=20260427T233939Z&HW-CC-Expire=86400&HW-CC-Sign=710FFA7F20D5A813CDB593DACBD6460B17F51D753C83317994EAFA1397536FC0)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/1qJjudpcT7uGIbuIlAyxjg/zh-cn_image_0000002589324245.png?HW-CC-KV=V1&HW-CC-Date=20260429T052750Z&HW-CC-Expire=86400&HW-CC-Sign=3A763FA7C570AB015B98EB36FEEA8789DEA08CE9DC1964FA12D9C138C900290B)
 * 通过switchPointColor属性设置Switch类型的圆形滑块颜色，仅对type为ToggleType.Switch生效。
 
   ```
@@ -104,7 +104,7 @@ API version 11开始，Checkbox默认样式由圆角方形变为圆形。
 
   [ToggleCustomStyle.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ChooseComponent/entry/src/main/ets/pages/toggle/ToggleCustomStyle.ets#L60-L71)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/2jKL_Ji_QKevQQCSZK5Lfw/zh-cn_image_0000002583477887.png?HW-CC-KV=V1&HW-CC-Date=20260427T233939Z&HW-CC-Expire=86400&HW-CC-Sign=7289DEFEAB78D94BBA4CB1BA9C60D16AFB74F5D1C627D9A70B214859762E50F7)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/FQgqcDnzTEmZ0O5zcScJaQ/zh-cn_image_0000002589244185.png?HW-CC-KV=V1&HW-CC-Date=20260429T052750Z&HW-CC-Expire=86400&HW-CC-Sign=7B9F8383E025C05F02F11910114E62791B3D3B10AD1F223D8AB8D22E3E017B59)
 
 ## 添加事件
 
@@ -177,4 +177,4 @@ Toggle用于切换蓝牙开关状态。
 
 [ToggleCaseExample.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ChooseComponent/entry/src/main/ets/pages/toggle/ToggleCaseExample.ets#L16-L69)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/-MMz484KTxKeaj-rXO3D1A/zh-cn_image_0000002552798238.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233939Z&HW-CC-Expire=86400&HW-CC-Sign=12C57D008CDB948F2E44DDABBBD2844B81CC97C9062759FB82E97A17F753DF50)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/CMJ5cdRrSguuWHz1rUeB7g/zh-cn_image_0000002558764378.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052750Z&HW-CC-Expire=86400&HW-CC-Sign=74D7EF1A6905E74000068D7D2D70576EEA4195A36A660505CFC350D18DE94AB3)

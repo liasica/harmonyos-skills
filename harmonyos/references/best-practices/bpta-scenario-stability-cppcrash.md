@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-scenario-s
 title: CppCrash类问题案例
 breadcrumb: 最佳实践 > 稳定性 > 稳定性案例 > 应用异常退出类问题案例 > CppCrash类问题案例
 category: best-practices
-scraped_at: 2026-04-28T08:23:05+08:00
+scraped_at: 2026-04-29T14:14:19+08:00
 doc_updated_at: 2026-03-19
-content_hash: sha256:6300eddaaafc3bc01e124bd3c23887760cbd5a4c9c6c99cd11e9572d62726846
+content_hash: sha256:abd81fb47ddeb1cf2a96b79eb03e36f6364668330df60434339557c50ebdac3a
 ---
 
 本文以列举常见案例方式介绍如何分析并修复CppCrash问题。阅读本文之前，建议开发者先阅读[应用崩溃问题检测方法](bpta-stability-runtime-crash-detection.md)了解系统检测CppCrash问题的原理和机制，然后阅读[CppCrash类问题分析方法](bpta-stability-app-crash-cpp-way.md)了解分析CppCrash问题的一般步骤。
@@ -70,7 +70,7 @@ napi\_env释放后仍被使用。
 
 核心崩溃栈如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/GRmxjylYTjOgnw13EHxJGg/zh-cn_image_0000002404125269.png?HW-CC-KV=V1&HW-CC-Date=20260428T002304Z&HW-CC-Expire=86400&HW-CC-Sign=46FCB8DF6DAB483579DBB836440FD7692DDD9268B1A70C27CE032A6CD33663B6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/GRmxjylYTjOgnw13EHxJGg/zh-cn_image_0000002404125269.png?HW-CC-KV=V1&HW-CC-Date=20260429T061417Z&HW-CC-Expire=86400&HW-CC-Sign=028B288995247A37B90807BA5171D35BF297E3EDBAF80A304DBF5598C8B4120F)
 
 ### 分析步骤
 
@@ -114,7 +114,7 @@ napi接口的env（JavaScript环境）指向非法内存，崩溃栈直接挂在
 
 崩溃调用栈如下图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/7en7ZpBpR3qipPTAiHkTRw/zh-cn_image_0000002370405724.png?HW-CC-KV=V1&HW-CC-Date=20260428T002304Z&HW-CC-Expire=86400&HW-CC-Sign=25FE1769B2AD7006B32419CDA2340AF75D0668955909BAA611989EF0083E3993)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/7en7ZpBpR3qipPTAiHkTRw/zh-cn_image_0000002370405724.png?HW-CC-KV=V1&HW-CC-Date=20260429T061417Z&HW-CC-Expire=86400&HW-CC-Sign=39A978135468A9893A4CF50551773F6BD84F5B9E38542CCB9D7BDA9E22C8A996)
 
 ### 分析步骤
 
@@ -173,15 +173,15 @@ ASan核心日志如下：
 
 根据调用栈继续分析，JsiWeak析构或重置的时候会触发其成员（类型为JsiObject/JsiValue/JsiFunction）父类JsiType中CopyableGlobal被释放，如下图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/Sul6XQ5XQYa0hh8mcGrXeg/zh-cn_image_0000002404045461.png?HW-CC-KV=V1&HW-CC-Date=20260428T002304Z&HW-CC-Expire=86400&HW-CC-Sign=F2DEC01F99BC1817CA6CA88B4F58FF427AAAF2709EC5F323BA165D588C24DEA7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/Sul6XQ5XQYa0hh8mcGrXeg/zh-cn_image_0000002404045461.png?HW-CC-KV=V1&HW-CC-Date=20260429T061417Z&HW-CC-Expire=86400&HW-CC-Sign=9A8B305927B6677BA307A651E8089F6FEEE82516284A9606DEC77EA29FE74D5F)
 
 运行时在GC过程中IterateWeakEcmaGlobalStorage，会对无callback的WeakNode调用DisposeGlobalHandle操作，也对其进行释放，如下图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/2VnUhrPkTJ6ERfCwESGa7g/zh-cn_image_0000002370565636.png?HW-CC-KV=V1&HW-CC-Date=20260428T002304Z&HW-CC-Expire=86400&HW-CC-Sign=8ADB411C4EFB683068112969E06C101D8E525AC404B076127A8CD69D6F7830C3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/2VnUhrPkTJ6ERfCwESGa7g/zh-cn_image_0000002370565636.png?HW-CC-KV=V1&HW-CC-Date=20260429T061417Z&HW-CC-Expire=86400&HW-CC-Sign=AEB3D7AB7ABC335A26A55691F68D86763227A2971A1FA7D709EABA9496F551C1)
 
 对于同一个WeakNode，可能会存在两个入口释放。如果是GC过程中IterateWeakEcmaGlobalStorage先释放，因为无callback回调通知到JsiWeak进行清理，JsiWeak那边仍保存一个对已释放的WeakNode引用，即CopyableGlobal；当前面讲的WeakNode所在的NodeList被整体释放，JsiWeak处保留的CopyableGlobal再释放，就会存在重复释放内存问题。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/a13wR2BrRtOmQmrqwppHOQ/zh-cn_image_0000002404125273.png?HW-CC-KV=V1&HW-CC-Date=20260428T002304Z&HW-CC-Expire=86400&HW-CC-Sign=4043FD910D4F1A8E8978B4EE3A56C87ABCECAF7F0A6E2698CE406B402BE22E0E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/a13wR2BrRtOmQmrqwppHOQ/zh-cn_image_0000002404125273.png?HW-CC-KV=V1&HW-CC-Date=20260429T061417Z&HW-CC-Expire=86400&HW-CC-Sign=3A0634D41F5A0B095E20B79DA0AF5F14454298C8DD5DF3BCB9F4D0EAD569B4EB)
 
 ### 修复方法
 
@@ -268,7 +268,7 @@ SIGABRT进程异常终止，通常为进程自身调用标准函数库的abort()
 
 [CppCrashCaseAnalyse5.cpp](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/CppCrash/entry/src/main/cpp/CppCrashCaseAnalyse5.cpp#L32-L37)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/IzWRXD4eRsizcbXV9P8adw/zh-cn_image_0000002370405728.png?HW-CC-KV=V1&HW-CC-Date=20260428T002304Z&HW-CC-Expire=86400&HW-CC-Sign=C6ACA19B779D7ADF039CD2F317A91E714E859962680BFDAC8AA06A42A51C2B84)构造主动调用abort函数场景举例说明SIGABRT类崩溃问题如何分析。上图所示，LastFatalMessage是进程退出前的最后一条fatal级别日志，对于SIGABRT类崩溃问题其一般能提供程序主动异常终止的原因，对定位该类问题有很大帮助。从上往下跳过C库的调用栈，找到调用abort函数的调用栈（图中#02层调用栈），从这里结合LastFatalMessage进行分析。
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/IzWRXD4eRsizcbXV9P8adw/zh-cn_image_0000002370405728.png?HW-CC-KV=V1&HW-CC-Date=20260429T061417Z&HW-CC-Expire=86400&HW-CC-Sign=AABCE1A0A465E667AA6726C4AD723F9CFEB1EE6F19FE2550E6D1AAC51513907A)构造主动调用abort函数场景举例说明SIGABRT类崩溃问题如何分析。上图所示，LastFatalMessage是进程退出前的最后一条fatal级别日志，对于SIGABRT类崩溃问题其一般能提供程序主动异常终止的原因，对定位该类问题有很大帮助。从上往下跳过C库的调用栈，找到调用abort函数的调用栈（图中#02层调用栈），从这里结合LastFatalMessage进行分析。
 
 除了调用abort函数外，C++中的另一个异常处理机制还包括assert函数，assert用于校验当前函数执行流程中的一些数据，校验失败进程会主动终止，分析问题的方法都是一样的。
 
@@ -287,7 +287,7 @@ SIGABRT进程异常终止，通常为进程自身调用标准函数库的abort()
 
 [CppCrashCaseAnalyse6.cpp](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/CppCrash/entry/src/main/cpp/CppCrashCaseAnalyse6.cpp#L29-L38)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/V9gEIgeNSIeas_n6n7xmTw/zh-cn_image_0000002404045465.png?HW-CC-KV=V1&HW-CC-Date=20260428T002304Z&HW-CC-Expire=86400&HW-CC-Sign=DE1E6467DADE31DD1F8A000EFAD1A22649A5339460E3D6014B9713F221E0BE1A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/V9gEIgeNSIeas_n6n7xmTw/zh-cn_image_0000002404045465.png?HW-CC-KV=V1&HW-CC-Date=20260429T061417Z&HW-CC-Expire=86400&HW-CC-Sign=F58BFD0139B04095BD724B810EC8C48A290C6E1C3BEF804AAC391981DFC34EDC)
 
 ## 案例6：通过反汇编分析CppCrash问题
 

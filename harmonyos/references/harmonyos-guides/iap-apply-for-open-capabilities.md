@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/iap-apply-for
 title: （可选）申请嵌入式收银台开放能力权限
 breadcrumb: 指南 > 应用服务 > IAP Kit（应用内支付服务） > 开发准备 > 基本准备工作 > （可选）申请嵌入式收银台开放能力权限
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:49:25+08:00
+scraped_at: 2026-04-29T13:38:36+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:1fe025d104bd00b74d50b52015de0215496fff4cb2f03278f1389234fbe40896
+content_hash: sha256:89f44e695d503456b44297c060da62934898d3084d70d79fce63e1960e68b024
 ---
 
 如果使用接入嵌入式收银台能力，则需要申请对应权限。
@@ -22,15 +22,15 @@ content_hash: sha256:1fe025d104bd00b74d50b52015de0215496fff4cb2f03278f1389234fbe
 2. 在项目列表选择项目，并在应用列表下选择需要申请嵌入式收银台功能的应用。
 3. 进入“项目设置 > 开放能力管理”页面，选择能力名称为应用内购买服务（HarmonyOS NEXT），然后点击“嵌入式收银台”对应的“申请”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/ePy2UFLDQR6hT4bv7Oqq9g/zh-cn_image_0000002583438967.png?HW-CC-KV=V1&HW-CC-Date=20260427T234924Z&HW-CC-Expire=86400&HW-CC-Sign=186A5EFBD22A309648F7CB6AEC404E37289AD24075A2150E4B1089538A2AE973)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/xFaCgFooTv2LxIJQIdGshA/zh-cn_image_0000002589245227.png?HW-CC-KV=V1&HW-CC-Date=20260429T053834Z&HW-CC-Expire=86400&HW-CC-Sign=35E299A943E0992929FA1AF6A6C6DB31025BE7CD94F28D745100F1735C31BDBA)
 4. 参考“申请原因”中的模板，提供申请必需的相关信息，包括应用介绍、使用场景，然后点击“提交”按钮。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/v17dXBl9QVaPgcq_LwtncQ/zh-cn_image_0000002552958922.png?HW-CC-KV=V1&HW-CC-Date=20260427T234924Z&HW-CC-Expire=86400&HW-CC-Sign=C70EAD1E26DC4209944646F8F629837CC020866B297B2D4D50E573A8B16BBB01)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/dK0ql2H4TMqBc-jr1DtdFA/zh-cn_image_0000002558765422.png?HW-CC-KV=V1&HW-CC-Date=20260429T053834Z&HW-CC-Expire=86400&HW-CC-Sign=61B0AE888C7BA16776ABCC0A04CA398B54C7C2893417818A3640D567EAFEC37D)
 
    返回“开放能力管理”页面，原“申请”变为“申请中”，1~5个工作日内反馈申请结果，请留意互动中心的“服务开通申请”信息。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/DgTRb0svSiOXakrCDR3ktg/zh-cn_image_0000002583478923.png?HW-CC-KV=V1&HW-CC-Date=20260427T234924Z&HW-CC-Expire=86400&HW-CC-Sign=5B3F68E3E287A9BB810B5DE4B9B4F328AB23581B677190414DEDA34E27DBDC01)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/vKjIZlKeRFOIcDwA1b4uMA/zh-cn_image_0000002558605766.png?HW-CC-KV=V1&HW-CC-Date=20260429T053834Z&HW-CC-Expire=86400&HW-CC-Sign=C8E0C39CCAA237EB4351767232EE94267E3636B46D6C996E127B46291F75D223)
 
    申请通过后，互动中心会发送通知给开发者，同时“申请中”会变为置灰显示的“申请”，至此，应用已成功开启嵌入式收银台开放能力。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/T0qGV5wWSCeSGGFmAAs9lA/zh-cn_image_0000002552799274.png?HW-CC-KV=V1&HW-CC-Date=20260427T234924Z&HW-CC-Expire=86400&HW-CC-Sign=B7A2F221F108F9BD9FA6D7C3B76E1120A317FDA559800D2CD48D0F00E17815DE)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/cFFXciGVQQa5z0smXroDVA/zh-cn_image_0000002589325293.png?HW-CC-KV=V1&HW-CC-Date=20260429T053834Z&HW-CC-Expire=86400&HW-CC-Sign=F4A4047602C60D818063CF4B35839DD42473E16C7A71F0764E9BDC192BB0707D)

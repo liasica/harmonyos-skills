@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-dialog-enc
 title: 弹窗组件封装
 breadcrumb: 最佳实践 > 布局与弹窗 > 弹窗组件封装
 category: best-practices
-scraped_at: 2026-04-28T08:19:54+08:00
+scraped_at: 2026-04-29T14:10:33+08:00
 doc_updated_at: 2026-03-19
-content_hash: sha256:247810570a94d35311dcf6a2a736fc380b4e47d94579247ac4599d320e4d9d16
+content_hash: sha256:1b2b557b52a9c929386491841dfb56e6b1717257c71b5c15c9177d92290f1bbe
 ---
 
 ## 概述
@@ -20,7 +20,7 @@ content_hash: sha256:247810570a94d35311dcf6a2a736fc380b4e47d94579247ac4599d320e4
 
 以使用方点击按钮后展示自定义弹窗场景为例，若需实现下图效果，基于promptAction封装弹窗工具类和使用步骤如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/_PdX7Aw1RoWTeknt-OMpPQ/zh-cn_image_0000002396265913.gif?HW-CC-KV=V1&HW-CC-Date=20260428T001948Z&HW-CC-Expire=86400&HW-CC-Sign=BD8F09914D207863E260C1FA37C74431421F38ECA564FFCBE60C7A067F3D6403 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/_PdX7Aw1RoWTeknt-OMpPQ/zh-cn_image_0000002396265913.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061027Z&HW-CC-Expire=86400&HW-CC-Sign=D8EB733914C0387E4B41CCBBBED77EF9C9214A3B8BB8B6EE42912ADEBDAFB96A "点击放大")
 
 1. 使用方通过全局@Builder封装弹窗结构。
 

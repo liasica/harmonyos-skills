@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 全屏模态转场
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 模态转场设置 > 全屏模态转场
 category: harmonyos-references
-scraped_at: 2026-04-28T08:01:15+08:00
+scraped_at: 2026-04-29T13:51:30+08:00
 doc_updated_at: 2026-03-23
-content_hash: sha256:c7e53f094cfd7757051163c03fd7979a6b9e914774ae44b8e05ea210a6b801a6
+content_hash: sha256:e833e2055ba929aaedd60760187cbbf4142e2c325202a192d3e0b8f231e438ec
 ---
 
 通过bindContentCover属性为组件绑定全屏模态页面，在组件插入和移除时可通过设置转场参数ModalTransition显示过渡动效。
@@ -204,7 +204,7 @@ PhonePC/2in1TabletTVWearable
 89. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/i4oQJoq1RzmjpjV9R_cUig/zh-cn_image_0000002552799914.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000113Z&HW-CC-Expire=86400&HW-CC-Sign=A11D257297C1DD7C0780006AF1D0423B5CD72355EB8C4ABED30717C653261160)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/9-8fJCKRRuSUx2nQeTFKug/zh-cn_image_0000002589325953.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055127Z&HW-CC-Expire=86400&HW-CC-Sign=D51E0AEA64BF131895CC044FF7FB3D4EF1A13D61868090343D5C01905DA50E37)
 
 ### 示例2（自定义转场动画）
 
@@ -318,7 +318,7 @@ PhonePC/2in1TabletTVWearable
 105. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/rga70VkwR-aolyRWXeCW8A/zh-cn_image_0000002583439609.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000113Z&HW-CC-Expire=86400&HW-CC-Sign=325F3957AC25928C3779389FCB7E3E1E3E5ED6BA09AFD03884F48E4A8B4A92AD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/Ubn5ap8JTwG_eF3H9h8ExQ/zh-cn_image_0000002589245895.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055127Z&HW-CC-Expire=86400&HW-CC-Sign=9049B669A76EFBA8761AAD9085DB6DE773863F5BB54463893FF989380BAC9FA9)
 
 ### 示例3（上下切换转场）
 
@@ -416,7 +416,7 @@ PhonePC/2in1TabletTVWearable
 89. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/Sni3Ek4KQGSV7EVjwNTWyg/zh-cn_image_0000002552959564.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000113Z&HW-CC-Expire=86400&HW-CC-Sign=9302A391D2EE186107053B2DD527FED65F361A1A55673D67C8AAD170660A11ED)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/wTuMgR_tQkm8vHoasPTLSA/zh-cn_image_0000002558766086.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055127Z&HW-CC-Expire=86400&HW-CC-Sign=8969AA87CEA2B1EDAEFB79BC0C576E64CA4BC6BE618D64F6BE0DE9C954EC5592)
 
 ### 示例4（透明度渐变转场）
 
@@ -515,7 +515,7 @@ PhonePC/2in1TabletTVWearable
 90. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/BdvyoQsQQtaaOjOn44-g8w/zh-cn_image_0000002583479565.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000113Z&HW-CC-Expire=86400&HW-CC-Sign=956AFFB1FDDC5AFFAF8D0E0DF5822D12FE2FB6D26D4CA7947207DB48C56A2F52)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/yu0rY1_yQ_msAZQw8JM4vg/zh-cn_image_0000002558606428.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055127Z&HW-CC-Expire=86400&HW-CC-Sign=8232EB8B07ADEA620EDFFBBBBC41F175DA970C86DE94E2ED539926795A741039)
 
 ### 示例5（设置不同效果的自定义转场）
 
@@ -631,7 +631,7 @@ PhonePC/2in1TabletTVWearable
 107. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/SowyrC85Qsmmws1xY7bcsQ/zh-cn_image_0000002552799916.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000113Z&HW-CC-Expire=86400&HW-CC-Sign=B5D9F6FA0FE984C442C8C63CBD91E0AB2DFE0647024D027C53ECDD666804E5C4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/o_rGaNpHT6axrW_XcM0MeA/zh-cn_image_0000002589325955.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055127Z&HW-CC-Expire=86400&HW-CC-Sign=B3EE5A9FDC8192F7852D381A111AF84B9C35C15BDD41E1E9C5E14EEC965CA2C0)
 
 ### 示例6（设置全屏模态适配安全区）
 
@@ -694,4 +694,4 @@ PhonePC/2in1TabletTVWearable
 54. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/kSNWAMQuQS6LSqNCZkIWiw/zh-cn_image_0000002583439611.png?HW-CC-KV=V1&HW-CC-Date=20260428T000113Z&HW-CC-Expire=86400&HW-CC-Sign=F18C7460ECFFF8A8F98907EAFC59A6C560842D6553EF545BD2BE994EF9920392)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/-j5D--6sS_yZHBLLCSzfrA/zh-cn_image_0000002589245897.png?HW-CC-KV=V1&HW-CC-Date=20260429T055127Z&HW-CC-Expire=86400&HW-CC-Sign=3D8C524087DA878BA239C316BC246E754BBA5517090CCA44AD6555801F6C8116)

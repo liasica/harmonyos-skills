@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-gestur
 title: 自定义手势判定
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 手势处理 > 手势控制 > 自定义手势判定
 category: harmonyos-references
-scraped_at: 2026-04-28T08:01:24+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:e2c7eae411043dae0dd538f7a299b68104e2064709c337e4087716e1922ee973
+scraped_at: 2026-04-29T13:51:37+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:7326c8264a832f4b180143e6bbc2f29c722fe51233edf3c85dc3ac2f674881ed
 ---
 
 为组件提供自定义手势判定能力。开发者可根据需要，在手势识别期间，决定是否响应手势。
@@ -21,6 +21,10 @@ PhonePC/2in1TabletTVWearable
 onGestureJudgeBegin(callback: (gestureInfo: GestureInfo, event: BaseGestureEvent) => GestureJudgeResult): T
 
 为组件绑定自定义手势判定回调。当手势即将成功时，触发用户定义的回调获取结果。
+
+说明
+
+在Text组件中使用该接口时，不支持对点击事件进行自定义手势判定。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -201,7 +205,7 @@ PhonePC/2in1TabletTVWearable
 88. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/R9UYAJLMQoGqBXKlia93Sg/zh-cn_image_0000002552959586.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000122Z&HW-CC-Expire=86400&HW-CC-Sign=B9B2EE40FED52053D0568BB44AEE594F8C4EE5A40340768C77C8A71E5A3D2D80)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/I9KhgbvLSYOao_RW1hMjCQ/zh-cn_image_0000002558766108.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055136Z&HW-CC-Expire=86400&HW-CC-Sign=A4E36028EC0520B025416FC25ED9B41F9A85F80CDFB6AF189AC1203E00FDE98D)
 
 ### 示例2（自定义区域手势判定）
 
@@ -279,7 +283,7 @@ PhonePC/2in1TabletTVWearable
 69. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/RcUMCttwRpqpxjAHXOsQcA/zh-cn_image_0000002583479587.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000122Z&HW-CC-Expire=86400&HW-CC-Sign=AFE62CB80EC7E7BA6BF24CA4A3D2FC2C9E9BA639FCA436D99AE3E6CAC4176A53)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/VDcZuRwXQYuN4Q9qfvvT-A/zh-cn_image_0000002558606450.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055136Z&HW-CC-Expire=86400&HW-CC-Sign=ADEEC10F73168E5C46992A1902E5CAC5CDBFF37E5EDABFCE15DDE2B1E7A797DA)
 
 ### 示例3（实时监测参与手势的有效触点的数量及其简要信息）
 
@@ -365,4 +369,4 @@ PhonePC/2in1TabletTVWearable
 78. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/Z2svUeDrTpeQGQLK5Y1KZQ/zh-cn_image_0000002552799938.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000122Z&HW-CC-Expire=86400&HW-CC-Sign=7085ED677333E32730417A88534A39C519DF9D50F9CD9B1AE304DAB16B3D7644)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/UEXIkHAaRI25XdMBxrEHLQ/zh-cn_image_0000002589325977.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055136Z&HW-CC-Expire=86400&HW-CC-Sign=350E7F6719D0B2C5769A385A4528E3BB3CC709AEDB8E036D05B99DF8A0CF2236)

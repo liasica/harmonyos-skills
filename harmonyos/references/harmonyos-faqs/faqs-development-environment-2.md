@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-developmen
 title: 导入Sample时，提示连接Gitee超时
 breadcrumb: FAQ > DevEco Studio > 环境准备 > 导入Sample时，提示连接Gitee超时
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:28:52+08:00
+scraped_at: 2026-04-29T14:20:04+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:b6a7b3452ed035b72f9b315cdd2cc31a15b1250c9f69766c6a6e7aacd1955cfb
+content_hash: sha256:6a472edd57b374c39bd17211cb0bc12ac87cfb9041b0a2698e508addd459a6ba
 ---
 
 **问题现象**
 
 导入Sample时，如果连接gitee.com的443端口超时，会提示“Failed to connect to gitee.com port 443: Time out”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/GimEzGRrSRSnpGFte_qmGw/zh-cn_image_0000002229758801.png?HW-CC-KV=V1&HW-CC-Date=20260428T002851Z&HW-CC-Expire=86400&HW-CC-Sign=5B7DD7FB786365E17317D73657F88FB44A24895D615E50AD2D969BEED9C34827)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/GimEzGRrSRSnpGFte_qmGw/zh-cn_image_0000002229758801.png?HW-CC-KV=V1&HW-CC-Date=20260429T062003Z&HW-CC-Expire=86400&HW-CC-Sign=6D67952EF77720CB84C804038A0804CEA4275CF92171C10D1ED32BAB175F60AD)
 
 **解决措施**
 

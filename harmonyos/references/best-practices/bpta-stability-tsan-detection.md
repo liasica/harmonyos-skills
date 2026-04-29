@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: 使用TSan检测线程问题
 breadcrumb: 最佳实践 > 稳定性 > 稳定性检测 > 开发态稳定性检测 > 线程并发类问题检测 > 使用TSan检测线程问题
 category: best-practices
-scraped_at: 2026-04-28T08:22:50+08:00
+scraped_at: 2026-04-29T14:14:02+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:aa0092b14d51aa8f4b23545e52183ba7562aed6bdb3d45132bb7af447714d949
+content_hash: sha256:8a0260da643a8cd015473e6be31ee5467161bd1587de5b790746bafcec4dace3
 ---
 
 ## 原理概述
@@ -60,10 +60,10 @@ TSan能够检测出如下问题：
 
 1. 点击**Run > Edit Configurations >** **Diagnostics**，勾选**Thread Sanitizer**。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/PzrgVPGoR6G5iywiUD8nsQ/zh-cn_image_0000002370405548.png?HW-CC-KV=V1&HW-CC-Date=20260428T002249Z&HW-CC-Expire=86400&HW-CC-Sign=DE12E86E856D0AFD68C407D278830912D636E6C63964A5085513A561F69E7B13)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/PzrgVPGoR6G5iywiUD8nsQ/zh-cn_image_0000002370405548.png?HW-CC-KV=V1&HW-CC-Date=20260429T061401Z&HW-CC-Expire=86400&HW-CC-Sign=6277D642347DCE2BCCD744E520AED3964A391B6162C91898151C11616635B264)
 2. 如果有引用本地library，需在library模块的build-profile.json5文件中，配置arguments字段值为“-DOHOS\_ENABLE\_TSAN=ON”，表示以TSan模式编译so文件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/AvbhKhfKTqCuhRQ0OjBEdA/zh-cn_image_0000002404045261.png?HW-CC-KV=V1&HW-CC-Date=20260428T002249Z&HW-CC-Expire=86400&HW-CC-Sign=755E84198C68E26A6A17A57C3F90CD36D941E7A2276412D928EE073BF396D8DF)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/AvbhKhfKTqCuhRQ0OjBEdA/zh-cn_image_0000002404045261.png?HW-CC-KV=V1&HW-CC-Date=20260429T061401Z&HW-CC-Expire=86400&HW-CC-Sign=BDE52686B2F69BF8F4D7CA83111D469E89B7760EFFBCF45C8E85E2EDF7B56355)
 
 **流水线场景**
 
@@ -81,12 +81,12 @@ TSan能够检测出如下问题：
 
 1. 修改工程目录下AppScope/app.json5，添加TSan配置开关。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/VxmqiPQnRPSEzFeDzjudQA/zh-cn_image_0000002370565432.png?HW-CC-KV=V1&HW-CC-Date=20260428T002249Z&HW-CC-Expire=86400&HW-CC-Sign=CB806C637763B0F8527E4042B2E518085358F907B7315701F324423C38EACE7F)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/VxmqiPQnRPSEzFeDzjudQA/zh-cn_image_0000002370565432.png?HW-CC-KV=V1&HW-CC-Date=20260429T061401Z&HW-CC-Expire=86400&HW-CC-Sign=833CB29450EF77095BE7D2749D25455EDB3319AE59B3AAF5CCF2CEC77D8E48A8)
 2. 设置模块级构建TSan插桩。
 
    在需要使能TSan的模块中，通过添加构建参数开启TSan检测插桩，在对应模块的模块级build-profile.json5中添加命令参数：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/s1yk25DORGm9MWfQRwkuiQ/zh-cn_image_0000002404125101.png?HW-CC-KV=V1&HW-CC-Date=20260428T002249Z&HW-CC-Expire=86400&HW-CC-Sign=D1367A4ECB8CBA0F0648CDD4B4780ABF359DEC96BC8D93064A587512349C3EC3)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/s1yk25DORGm9MWfQRwkuiQ/zh-cn_image_0000002404125101.png?HW-CC-KV=V1&HW-CC-Date=20260429T061401Z&HW-CC-Expire=86400&HW-CC-Sign=A46F3F8BE2F25BD3B2BF0D4524BEADB229FD74ED1E8CA6EE035505719F0C818F)
 
 **流水线场景**
 
@@ -146,7 +146,7 @@ TSan能够检测出如下问题：
 
 如果有工程代码，直接开启TSan检测，debug模式运行后复现该错误，可以触发TSan，直接点击堆栈中的超链接定位到代码行，能看到错误代码的位置。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/TADj1Im8RB6T7nt6lNxbIQ/zh-cn_image_0000002537311043.png?HW-CC-KV=V1&HW-CC-Date=20260428T002249Z&HW-CC-Expire=86400&HW-CC-Sign=1AD85E36B0ABE4C96F0C83F4D624729F5C55A9D56C123865AFF72FE8D646CF7E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/TADj1Im8RB6T7nt6lNxbIQ/zh-cn_image_0000002537311043.png?HW-CC-KV=V1&HW-CC-Date=20260429T061401Z&HW-CC-Expire=86400&HW-CC-Sign=E4839E5D3E4CE75D9A2BE6F2D378CD11151625BDADFAABE120216D100D019181)
 
 **修改方法**
 
@@ -226,7 +226,7 @@ TSan能够检测出如下问题：
 
 如果有工程代码，直接开启TSan检测，debug模式运行后复现该错误，可以触发TSan，直接点击堆栈中的超链接定位到代码行，能看到错误代码的位置。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/wGlc0JhtSp2cDeEUs-oHaw/zh-cn_image_0000002537431253.png?HW-CC-KV=V1&HW-CC-Date=20260428T002249Z&HW-CC-Expire=86400&HW-CC-Sign=295FF9F2CE2CDADF40C3D48A29C8AB2B6CAD1B4AF2A43FCAE99424F7029247D1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/wGlc0JhtSp2cDeEUs-oHaw/zh-cn_image_0000002537431253.png?HW-CC-KV=V1&HW-CC-Date=20260429T061401Z&HW-CC-Expire=86400&HW-CC-Sign=0DC114EEBFCF9148622E190B0309394CEB02CFD81C615D37C684EEBC3AD9123F)
 
 **修改方法**
 
@@ -291,7 +291,7 @@ TSan能够检测出如下问题：
 
 如果有工程代码，直接开启TSan检测，debug模式运行后复现该错误，可以触发TSan，直接点击堆栈中的超链接定位到代码行，能看到错误代码的位置。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/lYJZZ5qmSQykB-VRUFV2CQ/zh-cn_image_0000002537431429.png?HW-CC-KV=V1&HW-CC-Date=20260428T002249Z&HW-CC-Expire=86400&HW-CC-Sign=62E0260C21CB3EC67B5AC7F9C07B0CFFC9A0ED504099AFB39C692B1D016C9962)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/lYJZZ5qmSQykB-VRUFV2CQ/zh-cn_image_0000002537431429.png?HW-CC-KV=V1&HW-CC-Date=20260429T061401Z&HW-CC-Expire=86400&HW-CC-Sign=A35C689F3C5CE5F0290D5F2B9EEE8ABCF742F77EA53962E36687BC4CE903C53F)
 
 **修改方法**
 
@@ -363,7 +363,7 @@ TSan能够检测出如下问题：
 
 如果有工程代码，直接开启TSan检测，debug模式运行后复现该错误，可以触发TSan，直接点击堆栈中的超链接定位到代码行，能看到错误代码的位置。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/vw6Dh4DnQc6NkZHIY7CyHw/zh-cn_image_0000002505631712.png?HW-CC-KV=V1&HW-CC-Date=20260428T002249Z&HW-CC-Expire=86400&HW-CC-Sign=980DF86FD4414323A72E3AC4A205ECB2EB0006D1DF64345BC67D674581F41907)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/vw6Dh4DnQc6NkZHIY7CyHw/zh-cn_image_0000002505631712.png?HW-CC-KV=V1&HW-CC-Date=20260429T061401Z&HW-CC-Expire=86400&HW-CC-Sign=464BABF78684B7CEA82F3044612F5CCB6F4EF64E378055572F8CE72C9A1F979E)
 
 **修改方法**
 
@@ -425,7 +425,7 @@ TSan能够检测出如下问题：
 
 如果有工程代码，直接开启TSan检测，debug模式运行后复现该错误，可以触发TSan，直接点击堆栈中的超链接定位到代码行，能看到错误代码的位置**。**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/mvUVfkP-RFm9oHXKUyzgYA/zh-cn_image_0000002537311831.png?HW-CC-KV=V1&HW-CC-Date=20260428T002249Z&HW-CC-Expire=86400&HW-CC-Sign=D6641F6797D69F048A93048354A474207E6E7028584F48AC2FE17B35FCC8C68B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/mvUVfkP-RFm9oHXKUyzgYA/zh-cn_image_0000002537311831.png?HW-CC-KV=V1&HW-CC-Date=20260429T061401Z&HW-CC-Expire=86400&HW-CC-Sign=1A6CEA7C91F467EAD3A0C3179A6605BAD17536666EB86BC05824EB5665482748)
 
 **修改方法**
 
@@ -478,7 +478,7 @@ TSan能够检测出如下问题：
 
 如果有工程代码，直接开启TSan检测，debug模式运行后复现该错误，可以触发TSan，直接点击堆栈中的超链接定位到代码行，能看到错误代码的位置。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/ASji8YXvQ1i0SZbwsJM5Gw/zh-cn_image_0000002505472236.png?HW-CC-KV=V1&HW-CC-Date=20260428T002249Z&HW-CC-Expire=86400&HW-CC-Sign=A75B0ECAACA856D89F80B3B7D5D5E661DE607A46945D7A915FD078200D8751D9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/ASji8YXvQ1i0SZbwsJM5Gw/zh-cn_image_0000002505472236.png?HW-CC-KV=V1&HW-CC-Date=20260429T061401Z&HW-CC-Expire=86400&HW-CC-Sign=099EB00C068D881A405CB708B287F0319E88B053EF5AC562FBCFE4EE47BF20F5)
 
 **修改方法**
 

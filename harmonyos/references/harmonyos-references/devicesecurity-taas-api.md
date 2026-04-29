@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/devicesec
 title: TrustedAppService（可信应用服务）
 breadcrumb: API参考 > 系统 > 安全 > Device Security Kit（设备安全服务） > ArkTS API > TrustedAppService（可信应用服务）
 category: harmonyos-references
-scraped_at: 2026-04-28T08:07:12+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:709deb9b94d7f8a28c3fe2affa768be4e4dc0a8d1fd4f8b68a8dcd85aab4cc50
+scraped_at: 2026-04-29T13:57:40+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:74e826a505e849c0c01795e3d6384eb427844d824565022822ef32ca52ea3ff3
 ---
 
 本模块提供应用数据的安全证明服务，支持创建证明密钥、销毁证明密钥、初始化证明会话、结束证明会话和获取安全地理位置，能够为安全摄像头和安全地理位置功能提供安全证明能力，确保图像或位置数据未被篡改。
@@ -588,6 +588,8 @@ procSecImageTransform(srcSecImage: ArrayBuffer, procParams: SecImageProcParamsAr
 
 **系统能力：** SystemCapability.Security.TrustedAppService.Core
 
+**设备行为差异：** 该接口在支持安全摄像头能力的Phone、Tablet、PC/2in1均可正常调用，在不支持安全摄像头能力的Phone、Tablet、PC/2in1设备及其他设备类型中统一返回业务错误码1011500011。
+
 **起始版本：** 5.1.0(18)
 
 **参数：**
@@ -714,7 +716,7 @@ PhonePC/2in1Tablet
 | width | number | 否 | 否 | 裁剪区域的宽度，即横向的长度，取值范围在 0 到 640 之间的偶数，且需满足 x 与 width 的和不大于 640。单位是像素（pixel）。 |
 | height | number | 否 | 否 | 裁剪区域的高度，即纵向的长度，取值范围在 0 到 480 之间的偶数，且需满足 y 与 height 的和不大于 480。单位是像素（pixel）。 |
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/pbMfN6t1Q_-prOt7FB10zg/zh-cn_image_0000002583480533.jpg?HW-CC-KV=V1&HW-CC-Date=20260428T000710Z&HW-CC-Expire=86400&HW-CC-Sign=C9F3E30195A39A9F8D2899B0C905A7DDCAD07647F8577124D4257760711ABE13)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/pFZthqy2QISqUbE5ZY9Y_Q/zh-cn_image_0000002589326927.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T055739Z&HW-CC-Expire=86400&HW-CC-Sign=49188E5CF0B68472C90B0842ED62E8CA1D01F89C458FED7B726E318B2B2094FA)
 
 ## SecImageBuffer
 

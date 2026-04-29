@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/graphics-acce
 title: Vulkan平台
 breadcrumb: 指南 > 图形 > Graphics Accelerate Kit（图形加速服务） > 游戏渲染加速服务 > 超帧功能开发 > AI超帧模式 > Vulkan平台
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:47:27+08:00
+scraped_at: 2026-04-29T13:36:28+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:7984adcba88226bc0b3c8afc062589b420196622f930f2c28e3fb5f6f718c516
+content_hash: sha256:e02e944dcf1536b6ba4c0a6cfa325325cd2f96ea8c0234c371071e409384fcd3
 ---
 
 ## 业务流程
@@ -14,7 +14,7 @@ AI超帧调用流程上依赖系统送显模式功能，但与基本的系统送
 
 下面是基于Vulkan图形API平台，集成AI超帧的主要业务流程：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/Ct3WI7_kT8mHXQpR2xnAXg/zh-cn_image_0000002583478713.png?HW-CC-KV=V1&HW-CC-Date=20260427T234726Z&HW-CC-Expire=86400&HW-CC-Sign=42F119B6DC807C22D00C68EB08DABABBE92BF4F7DCDEF0B140950C25849866F2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/3x1LJMraSA-jnuf8TX9_NA/zh-cn_image_0000002558605556.png?HW-CC-KV=V1&HW-CC-Date=20260429T053627Z&HW-CC-Expire=86400&HW-CC-Sign=3B5E3906C879C9C9F6AE95314B226D910EE8569761B0C2022C66EC22F6C18E50)
 
 1. 用户进入超帧适用的游戏场景。
 2. 游戏应用调用[HMS\_FG\_CreateContext\_VK](../harmonyos-references/_graphics_accelerate.md#hms_fg_createcontext_vk)接口创建超帧上下文实例。如超帧上下文实例创建失败，则无需在步骤6提供当前帧信息，只需逐帧对场景进行渲染送显即可。

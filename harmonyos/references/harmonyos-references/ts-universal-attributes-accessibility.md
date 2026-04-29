@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 无障碍属性
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 无障碍属性
 category: harmonyos-references
-scraped_at: 2026-04-28T08:01:14+08:00
+scraped_at: 2026-04-29T13:51:29+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:6a0cdc959d71c42ae4c524560534eed215596a54ff396e83dab7c7fcecf04e17
+content_hash: sha256:d925e28f2f7f3f5fde04427742cdf7514b2e315ff3adb914816393f00f173205
 ---
 
 设置组件的无障碍属性和事件，以充分利用无障碍功能。
@@ -969,7 +969,7 @@ PhonePC/2in1TabletTVWearable
 99. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/SkRxMcz6SfizKAPL8gv2FQ/zh-cn_image_0000002583479563.png?HW-CC-KV=V1&HW-CC-Date=20260428T000112Z&HW-CC-Expire=86400&HW-CC-Sign=643D344CD6050B6DCF0F5AAED8083B3CF61DC1354796AF6E037D2DAF7C262260)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/OyLTPEbvTfe_5aYuAR5oMg/zh-cn_image_0000002558606426.png?HW-CC-KV=V1&HW-CC-Date=20260429T055127Z&HW-CC-Expire=86400&HW-CC-Sign=F2AF71B36794CBDEC60C25BF697DDE978172D7FDFB6B9D7A3D5676A35217920A)
 
 ### 示例6（设置无障碍聚合功能下的子组件状态和操作接管功能）
 

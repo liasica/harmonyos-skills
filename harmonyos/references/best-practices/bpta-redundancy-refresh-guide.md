@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-redundancy
 title: 组件冗余刷新解决方案
 breadcrumb: 最佳实践 > 声明式语法 > 组件冗余刷新解决方案
 category: best-practices
-scraped_at: 2026-04-28T08:19:56+08:00
+scraped_at: 2026-04-29T14:10:38+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:2435744bb6db83341fee8c3403696d1af28a75d4d0e94394eb76769f40ae5ab1
+content_hash: sha256:2851754953c92cfdff6a7baf3d79224e70ed7c3aeff2fe9a74366df4d86f668f
 ---
 
 ## 简介
@@ -156,7 +156,7 @@ content_hash: sha256:2435744bb6db83341fee8c3403696d1af28a75d4d0e94394eb76769f40a
 
 **图1** 修改代码前点击Scale按钮和Move按钮时运行动图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/rjMbFCdSSpOvYPYBxYcAkA/zh-cn_image_0000002229451917.gif?HW-CC-KV=V1&HW-CC-Date=20260428T001950Z&HW-CC-Expire=86400&HW-CC-Sign=D3D590E2C245BD2045CCDFFE9BA67500D0518872CE93E5FFD05831CA8CE4E260 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/rjMbFCdSSpOvYPYBxYcAkA/zh-cn_image_0000002229451917.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061031Z&HW-CC-Expire=86400&HW-CC-Sign=F847E7BC2E9DF251539EEFBD5D4EB9F36EDF6B7BF774AF42FD51C38538E6D096 "点击放大")
 
 点击Move按钮的时候SpecialImage组件却发生了旋转动画，这就造成了冗余刷新。
 
@@ -174,7 +174,7 @@ content_hash: sha256:2435744bb6db83341fee8c3403696d1af28a75d4d0e94394eb76769f40a
 
 **图2** 命令行获取应用窗口Id运行界面
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/sGIHK-0zTce6UKTuKOcuag/zh-cn_image_0000002194011628.png?HW-CC-KV=V1&HW-CC-Date=20260428T001950Z&HW-CC-Expire=86400&HW-CC-Sign=F1B73C880CAC602659DFE634664A4B8D5AC523400DFBBDE510975D5767AD57B6 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/sGIHK-0zTce6UKTuKOcuag/zh-cn_image_0000002194011628.png?HW-CC-KV=V1&HW-CC-Date=20260429T061031Z&HW-CC-Expire=86400&HW-CC-Sign=4F232563A8BB26492EE20E047F5FA3468901605A3ECC0729ADEA4BBA0DF14615 "点击放大")
 
 3. 基于上一步获取的窗口Id 11，使用-viewHierarchy命令携带-r 参数递归打印应用的自定义组件树。
 
@@ -389,7 +389,7 @@ content_hash: sha256:2435744bb6db83341fee8c3403696d1af28a75d4d0e94394eb76769f40a
 
 **图3** 修改代码后点击Scale按钮和Move按钮时运行动图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/HE23RMWnSHmF-8jrpQLTAA/zh-cn_image_0000002193852044.gif?HW-CC-KV=V1&HW-CC-Date=20260428T001950Z&HW-CC-Expire=86400&HW-CC-Sign=5DD9EA0D3B2AE8DFC25E2456EB9F21BB278FCEED1B190A0DE579DA7152DF5B0F "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/HE23RMWnSHmF-8jrpQLTAA/zh-cn_image_0000002193852044.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061031Z&HW-CC-Expire=86400&HW-CC-Sign=FB71D91C64AFA1389C59C2A474E22F44B1EAC9A6F45D8ECB5C1ED4D39F58E23E "点击放大")
 
 可以使用上文步骤再次获取ComponentA组件的状态变量信息如下，可以看到ComponentA中状态变量scaleStyle影响组件SpecialImage[8]和Image[18]，状态变量translateStyle影响组件Column[9]，translateStyle的变化不会再导致SpecialImage的刷新。
 

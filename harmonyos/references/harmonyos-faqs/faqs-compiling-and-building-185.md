@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: 升级react-native-openharmony编译出错
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 升级react-native-openharmony编译出错
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:29:47+08:00
+scraped_at: 2026-04-29T14:21:05+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:48cf1473b0db287ba0ad226b2e7afd3d95eea1b1ba36d6dbe42e0aa35bdeede6
+content_hash: sha256:5c2657f197b84cd99504698f17d9b8b8677e992156294e8cc1438d529863a333
 ---
 
 **问题现象**
 
 升级react-native-openharmony编译出错，类似如下报错：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/1tpFiQmBQ4Kl9kpDiQStfw/zh-cn_image_0000002304734606.png?HW-CC-KV=V1&HW-CC-Date=20260428T002946Z&HW-CC-Expire=86400&HW-CC-Sign=9E3CC312F6CFB83D99DF4D1791A588ED798FEBDD3FED1B238CDD2A1E50994E87)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/1tpFiQmBQ4Kl9kpDiQStfw/zh-cn_image_0000002304734606.png?HW-CC-KV=V1&HW-CC-Date=20260429T062103Z&HW-CC-Expire=86400&HW-CC-Sign=D921EBEB3B2B3B04B9C2263848BDAC7E0BB28041BB966F6781EE88467CDE72BE)
 
 **问题原因**
 

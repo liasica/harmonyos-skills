@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-menu
 title: 使用Web组件菜单处理网页内容
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 处理网页内容 > 使用Web组件菜单处理网页内容
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:41:07+08:00
+scraped_at: 2026-04-29T13:29:31+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:59f64486e359080a6e15a0bf2165b501acb76c33a396b981ae05a7ec93a413c2
+content_hash: sha256:9f57db417514ecbd76cf8e546223a8c6a53017a396309fd040b55c5d4a045a8a
 ---
 
 菜单作为用户交互的关键组件，其作用是构建清晰的导航体系，通过结构化布局展示功能入口，使用户能够迅速找到目标内容或执行操作。作为人机交互的重要枢纽，它显著提升了Web组件的可访问性和用户体验，是应用设计中必不可少的部分。Web组件菜单类型包括[文本选中菜单](web-menu.md#文本选中菜单)、[上下文菜单](web-menu.md#上下文菜单)和[自定义菜单](web-menu.md#自定义菜单)，应用可根据具体需求灵活选择。
@@ -112,7 +112,7 @@ Web组件的文本选中菜单是一种通过自定义元素实现的上下文�
 11. </html>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/0ZkA6B_aS9u2IuoJsKkubg/zh-cn_image_0000002583438281.gif?HW-CC-KV=V1&HW-CC-Date=20260427T234104Z&HW-CC-Expire=86400&HW-CC-Sign=FED4EFDE5F18AF0534410CB8632D25DF7D64558F25EE2ECA0B239F759F9E3D3D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/SpEJL684To28qwIXE8dsbA/zh-cn_image_0000002558605072.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052929Z&HW-CC-Expire=86400&HW-CC-Sign=224BE8DA549509492F6750E35F86D38BABF4C26BA19C0255C287BC2EA9E948FE)
 
 ## 上下文菜单
 
@@ -262,7 +262,7 @@ Web组件的文本选中菜单是一种通过自定义元素实现的上下文�
 11. </html>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/4aWI0HNiT7my138WK02N5A/zh-cn_image_0000002552958236.gif?HW-CC-KV=V1&HW-CC-Date=20260427T234104Z&HW-CC-Expire=86400&HW-CC-Sign=5F431CEA310B2BCDD2CE001A8D909AA789FACFEC8E41451EF2860C506C024BE0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/h5o6AxfXQ3eG-8niGQL6DQ/zh-cn_image_0000002589324597.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052929Z&HW-CC-Expire=86400&HW-CC-Sign=DF4FC008CFCCB198E89E653FC626A98D9C31ABFE3C59B2E2A20175EB5F11A53A)
 
 ## 自定义菜单
 
@@ -371,7 +371,7 @@ Web组件的文本选中菜单是一种通过自定义元素实现的上下文�
 12. </html>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/U5kn8shmQKK_yMspxlCVag/zh-cn_image_0000002583478237.gif?HW-CC-KV=V1&HW-CC-Date=20260427T234104Z&HW-CC-Expire=86400&HW-CC-Sign=481D0E81E2F02F65B7B88F253B64242079868A1F692D3D65E1371F9C5CA76210)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/OpbVfQ0VRxOmcxdtUc4qyQ/zh-cn_image_0000002589244535.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052929Z&HW-CC-Expire=86400&HW-CC-Sign=1B1FC2DD43DF2BD6D13DAF4DC3CCFEB0C6D843D3ECD194786CB7E772824D925B)
 
 自API version 20起，支持绑定长按超链接菜单。可以为图片和链接绑定不同的自定义菜单。
 
@@ -573,7 +573,7 @@ html示例
 19. </html>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/xFZuANDwTP6FcphLwnMPlw/zh-cn_image_0000002552798588.gif?HW-CC-KV=V1&HW-CC-Date=20260427T234104Z&HW-CC-Expire=86400&HW-CC-Sign=9E11BDC257F5101F2259E75028BD7578A2132AFBE19FD1A3D27C95BF8A082287)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/fMaTnotCTV2PJ08RCkptPA/zh-cn_image_0000002558764730.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052929Z&HW-CC-Expire=86400&HW-CC-Sign=15174075BDE63C9F8A1A0BC761E2710975A3E40B6A21758CF69A97C4CE70D794)
 
 ## Web菜单保存图片
 
@@ -726,7 +726,7 @@ html示例
 17. </html>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/PlqH4eIUQlmGIrs5NFGsAg/zh-cn_image_0000002583438283.gif?HW-CC-KV=V1&HW-CC-Date=20260427T234104Z&HW-CC-Expire=86400&HW-CC-Sign=76C11F3254EB2E59F1246AD092414F904ACDF65E303BA84863C174B78C500A5A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/vr9MrGAMQ7u0JTu-sviBRQ/zh-cn_image_0000002558605074.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052929Z&HW-CC-Expire=86400&HW-CC-Sign=1DFEEA2DC0FFDED67ACB0BE04521FF25F0575029F0D429202F9D13DCEA72A2A1)
 
 ## Web菜单获取选中文本
 
@@ -825,7 +825,7 @@ Web组件的[editMenuOptions](../harmonyos-references/arkts-basic-components-web
 41. </html>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/61nfsM74Qb6FPUlJEsEDKA/zh-cn_image_0000002552958238.gif?HW-CC-KV=V1&HW-CC-Date=20260427T234104Z&HW-CC-Expire=86400&HW-CC-Sign=30C821942B9ED3818180845FE7E99B582FE1ABC9C815CDB75815D6E074582B4B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/Uj-V0eerRBex3IW4exxSxw/zh-cn_image_0000002589324599.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052929Z&HW-CC-Expire=86400&HW-CC-Sign=282050B7FC73ED211F937305D33E8CDF8575877E410F22EC22DA05628616E4FC)
 
 ## 常见问题
 
@@ -880,7 +880,7 @@ Web组件的[editMenuOptions](../harmonyos-references/arkts-basic-components-web
 11. </html>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/npzxOHmYSaiJIKLgNVyZPA/zh-cn_image_0000002583478239.gif?HW-CC-KV=V1&HW-CC-Date=20260427T234104Z&HW-CC-Expire=86400&HW-CC-Sign=6FC362E09FA257B12F059F5612975A25FE4ACD2D821320E22EA534546097D506)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/wXrtQZeISDyaI03Zx8EmNA/zh-cn_image_0000002589244537.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052929Z&HW-CC-Expire=86400&HW-CC-Sign=3A6D088B9EC100DDCCBA26D2606CC509CCB4F25721751AA7A438BDD42EC5AA3C)
 
 ### 出现选区时手柄菜单不显示
 
@@ -1030,4 +1030,4 @@ Web组件的[editMenuOptions](../harmonyos-references/arkts-basic-components-web
 54. </html>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/mSPb4e-YR0qkM0aaZ3gKGQ/zh-cn_image_0000002552798590.gif?HW-CC-KV=V1&HW-CC-Date=20260427T234104Z&HW-CC-Expire=86400&HW-CC-Sign=8EEA45A41CEB43149E8DF06280D5DD2CEF4A181E238F63EAD084C79BF3051B0E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/28tLWEGfRO2MRbNZBHuH8g/zh-cn_image_0000002558764732.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052929Z&HW-CC-Expire=86400&HW-CC-Sign=AEFB51D5AFA5714A0A3736AA8F0C4D3A2E65D87E2109E3A6328D378FDE51D7DB)

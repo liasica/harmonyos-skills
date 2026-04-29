@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: 构建报错“ERROR: Task xxx was not found in the project xxx”
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 构建报错“ERROR: Task xxx was not found in the project xxx”
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:29:15+08:00
+scraped_at: 2026-04-29T14:20:28+08:00
 doc_updated_at: 2026-04-27
-content_hash: sha256:ee4c53c9068aff01ff00234af4f4c00bb24f03f07b867200ac40e15ed90cebb9
+content_hash: sha256:8fa4ade606cc116cc570dc6aa1c7686261a07d6a4456276c80c32468dad316ec
 ---
 
 **问题现象**
@@ -18,7 +18,7 @@ content_hash: sha256:ee4c53c9068aff01ff00234af4f4c00bb24f03f07b867200ac40e15ed90
 
 - 确认项目路径是否正确。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/p8yNuI9sR1Gz7PIgRMJSRA/zh-cn_image_0000002194318376.png?HW-CC-KV=V1&HW-CC-Date=20260428T002914Z&HW-CC-Expire=86400&HW-CC-Sign=330BD5A9AF8B2164AC2C0415BA8D85CE75BE8B684B123A8B7605FD5C9FAE9FFC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/p8yNuI9sR1Gz7PIgRMJSRA/zh-cn_image_0000002194318376.png?HW-CC-KV=V1&HW-CC-Date=20260429T062027Z&HW-CC-Expire=86400&HW-CC-Sign=71DACD5389FD1F42D5DE8E93AF55245F72943294B35681A02DEF33719BCDF31A)
 
 **问题确认**
 

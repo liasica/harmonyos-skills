@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: Marquee
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 信息展示 > Marquee
 category: harmonyos-references
-scraped_at: 2026-04-28T08:02:02+08:00
+scraped_at: 2026-04-29T13:52:21+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:29a1ea03f0acddd2693cf0901765b11ddc293de6029848e9001858fb5ab8ab08
+content_hash: sha256:531c74f192048922687b8701a2099f400a03d3c1490fd2871c4f1bf88720f5c7
 ---
 
 跑马灯组件，用于滚动展示一段单行文本。仅当文本内容宽度大于等于跑马灯组件宽度时滚动，当文本内容宽度小于跑马灯组件宽度时不滚动。
@@ -342,4 +342,4 @@ PhonePC/2in1TabletTVWearable
 75. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/n9-OomIET6GVVri0e9TP0w/zh-cn_image_0000002552800262.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000201Z&HW-CC-Expire=86400&HW-CC-Sign=A91DF3ECAB61F6AB4611C97087B8E50D113202D82DD4A8F5E46DF015869B1A77)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/SAV7OX5kT2erz6l3BymLqQ/zh-cn_image_0000002589326303.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055219Z&HW-CC-Expire=86400&HW-CC-Sign=E71DABC5035419EA0B7F1006D493BF49282E00F128EA02F61E5D46633C613894)

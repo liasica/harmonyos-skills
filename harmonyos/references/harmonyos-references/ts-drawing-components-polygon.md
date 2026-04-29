@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-drawin
 title: Polygon
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 图形绘制 > Polygon
 category: harmonyos-references
-scraped_at: 2026-04-28T08:02:12+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:571ab319eea976a12a8a40de4286a37d7310165c286377c63630ec3dbe9bf156
+scraped_at: 2026-04-29T13:52:37+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:b4153347cc661f6a7f6c31d0f2c77c54273dae494617323563e18ba70b3251d7
 ---
 
 多边形绘制组件。
@@ -27,6 +27,8 @@ PhonePC/2in1TabletTVWearable
 PhonePC/2in1TabletTVWearable
 
 Polygon(options?: PolygonOptions)
+
+用于绘制多边形的构造函数。
 
 **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
 
@@ -348,7 +350,7 @@ PhonePC/2in1TabletTVWearable
 28. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/K9b3RY-tTSCpe7lw07GSTQ/zh-cn_image_0000002583480011.png?HW-CC-KV=V1&HW-CC-Date=20260428T000209Z&HW-CC-Expire=86400&HW-CC-Sign=09A350B6FCCF045C9A12B4E13979D779647D5F94832F7380BC4C0AE9A88BDB38)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/Pza5ESZVQmK4dTm_jhCARg/zh-cn_image_0000002558606876.png?HW-CC-KV=V1&HW-CC-Date=20260429T055235Z&HW-CC-Expire=86400&HW-CC-Sign=8ECFA30263BED95326C00FE71815615B0F5A483135F01A949E7BFB1DB12348B1)
 
 ### 示例2（宽和高使用不同参数类型绘制多边形）
 
@@ -379,7 +381,7 @@ width、height属性分别使用不同的长度类型绘制图形。
 22. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/U2f8KxjuSNuI2IlSgKBenQ/zh-cn_image_0000002552800362.png?HW-CC-KV=V1&HW-CC-Date=20260428T000209Z&HW-CC-Expire=86400&HW-CC-Sign=080EE2CD1B642BFE04845682F80929EA609578FF49D299113FC174321A1DC56A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/XQ9bta9vS02O1ill8UWCpw/zh-cn_image_0000002589326403.png?HW-CC-KV=V1&HW-CC-Date=20260429T055235Z&HW-CC-Expire=86400&HW-CC-Sign=1ED516067BEE1A79B0338AE3C16818FD008BEC4E4366B3FB1D848982162032D1)
 
 ### 示例3（使用attributeModifier动态设置Polygon组件的属性）
 
@@ -422,4 +424,4 @@ width、height属性分别使用不同的长度类型绘制图形。
 34. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/VTzccUKgRAWiF877TxlkwQ/zh-cn_image_0000002583440057.png?HW-CC-KV=V1&HW-CC-Date=20260428T000209Z&HW-CC-Expire=86400&HW-CC-Sign=EA74E98D9530D4338D06BE2239DB89AE35CC6ADAEF2626EB7B5395AFAE035885)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/opdJO78ySTm4QSpRrR0GBQ/zh-cn_image_0000002589246345.png?HW-CC-KV=V1&HW-CC-Date=20260429T055235Z&HW-CC-Expire=86400&HW-CC-Sign=20A05BDADF1330E645BD63D7D9DCD0A663F7ED11C6269508E4779C86DD59BA44)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/unified-data-
 title: 通过标准化数据通路实现数据共享 (C/C++)
 breadcrumb: 指南 > 应用框架 > ArkData（方舟数据管理） > 跨应用数据共享 > 多对多跨应用数据共享 > 通过标准化数据通路实现数据共享 (C/C++)
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:38:23+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:c26a3990979a0c34d2e04efe4fb0073fe872e3519e5fb5ce457ee750005db17e
+scraped_at: 2026-04-29T13:26:24+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:1d741d2a817edc2a4d3f9a641bb33c408412829cdd590a4dc444319d100577ec
 ---
 
 ## 场景介绍
@@ -281,7 +281,7 @@ CMakeLists.txt中添加以下库。
 91. }
 ```
 
-[napi\_init.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkData/Udmf/UnifiedDataChannels_C/entry/src/main/cpp/napi_init.cpp#L105-L198)
+[napi\_init.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkData/Udmf/UnifiedDataChannels_C/entry/src/main/cpp/napi_init.cpp#L105-L197)
 
 ## 使用UDMF更新UDS数据
 
@@ -372,7 +372,7 @@ CMakeLists.txt中添加以下库。
 74. }
 ```
 
-[napi\_init.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkData/Udmf/UnifiedDataChannels_C/entry/src/main/cpp/napi_init.cpp#L200-L275)
+[napi\_init.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkData/Udmf/UnifiedDataChannels_C/entry/src/main/cpp/napi_init.cpp#L199-L274)
 
 ## 使用UDMF删除UDS数据
 
@@ -485,7 +485,7 @@ CMakeLists.txt中添加以下库。
 97. }
 ```
 
-[napi\_init.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkData/Udmf/UnifiedDataChannels_C/entry/src/main/cpp/napi_init.cpp#L277-L375)
+[napi\_init.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkData/Udmf/UnifiedDataChannels_C/entry/src/main/cpp/napi_init.cpp#L276-L374)
 
 ## 使用UDMF延迟写入UDS数据
 
@@ -517,7 +517,7 @@ CMakeLists.txt中添加以下库。
 16. static void ProviderFinalizeCallback(void* context) { OH_LOG_INFO(LOG_APP, "OH_UdmfRecordProvider finalize."); }
 ```
 
-[napi\_init.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkData/Udmf/UnifiedDataChannels_C/entry/src/main/cpp/napi_init.cpp#L377-L394)
+[napi\_init.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkData/Udmf/UnifiedDataChannels_C/entry/src/main/cpp/napi_init.cpp#L376-L393)
 
 ### 延迟写入UDS数据
 
@@ -567,4 +567,4 @@ CMakeLists.txt中添加以下库。
 35. }
 ```
 
-[napi\_init.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkData/Udmf/UnifiedDataChannels_C/entry/src/main/cpp/napi_init.cpp#L396-L432)
+[napi\_init.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkData/Udmf/UnifiedDataChannels_C/entry/src/main/cpp/napi_init.cpp#L395-L431)

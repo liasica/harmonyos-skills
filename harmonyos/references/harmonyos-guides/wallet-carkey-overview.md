@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/wallet-carkey
 title: 概述
 breadcrumb: 指南 > 应用服务 > Wallet Kit（钱包服务） > 数字车钥匙 > 概述
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:51:08+08:00
+scraped_at: 2026-04-29T13:40:44+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:4c847ef1c45f67a73f08a2308615b1386049662f57931b3b914bdf90a8a2478e
+content_hash: sha256:4cffe3d8b6fb584d76c6855c27fa58e0dcd40fb980c6dae9a99152acddd2fe96
 ---
 
 华为数字车钥匙依托华为钱包数字车钥匙业务集成方案，基于华为手机“芯-端-云”一体化的安全能力，且满足ICCE标准，可快速实现手机模拟车钥匙的功能。
@@ -18,7 +18,7 @@ content_hash: sha256:4c847ef1c45f67a73f08a2308615b1386049662f57931b3b914bdf90a8a
 
 ## 整体架构
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/Vv9gzR4ATKaVbunsi1GoEg/zh-cn_image_0000002552959198.png?HW-CC-KV=V1&HW-CC-Date=20260427T235107Z&HW-CC-Expire=86400&HW-CC-Sign=AE622137C13252D7BBE9B7AA20B514CC5EA178108BAA912F92C82B317705D4AA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/ioqhu-mcQOuLLjG-_mSd0Q/zh-cn_image_0000002589245507.png?HW-CC-KV=V1&HW-CC-Date=20260429T054043Z&HW-CC-Expire=86400&HW-CC-Sign=D3C7E5FDD1477D76A6C83A5432E9C77EEB6E86A300E671132154F3C26495CCB5)
 
 ### 按照参与各方的角色说明
 

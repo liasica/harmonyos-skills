@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 自定义事件分发
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用事件 > 交互事件分发控制 > 自定义事件分发
 category: harmonyos-references
-scraped_at: 2026-04-28T08:00:57+08:00
+scraped_at: 2026-04-29T13:51:08+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:c4c9ff7ac0d58ee1f1ed3c4c55fb0614e76a9a99b54b8d14650f8f1ca06184bb
+content_hash: sha256:bdf770bf608becede6197a9c34b136eda53c63c3cd96bbfbe4a7159c0c6a666c
 ---
 
 在处理触屏事件时，ArkUI会在触屏事件触发前进行按压点和组件区域的[触摸测试](../harmonyos-guides/arkts-interaction-basic-principles.md#触摸测试)，收集需要响应触屏事件的组件，再基于触摸测试结果分发相应的触屏事件。在父节点，可以通过onChildTouchTest决定子节点的触摸测试方式，影响子组件的触摸测试，从而影响后续的触屏事件分发。具体影响参考[TouchTestStrategy](ts-universal-attributes-on-child-touch-test.md#touchteststrategy11枚举说明)枚举说明。
@@ -192,7 +192,7 @@ PhonePC/2in1TabletTVWearable
 66. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/jJTF4INvS_yfNxqMUSudzg/zh-cn_image_0000002552959472.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000056Z&HW-CC-Expire=86400&HW-CC-Sign=0B0051BBDDCAC3B0B01F2FD6B8EF20335BDD4091040477B8A8315139135189D4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/H876hI8zTciu955VDYAbnA/zh-cn_image_0000002558765994.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055107Z&HW-CC-Expire=86400&HW-CC-Sign=AE69CD87D8452D9C581CBC867144AD40D7340A447E85AEF0ABF53F84BBE74BE5)
 
 ### 示例2（设置事件派发策略为FORWARD）
 
@@ -267,7 +267,7 @@ PhonePC/2in1TabletTVWearable
 66. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/4JkOY9jZR3G7xNvm1gs6Fg/zh-cn_image_0000002583479473.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000056Z&HW-CC-Expire=86400&HW-CC-Sign=3C1CE008663A07AE82CE5482C8EEEBE297F4866B1B1E25CD2ACEF99D296B06EE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/JOsvndPFQCmZObtm4OFzEA/zh-cn_image_0000002558606336.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055107Z&HW-CC-Expire=86400&HW-CC-Sign=B364DF0C021006AF1A5391A7948926DFBA7A299B8711E871E29472EAE86A0658)
 
 ### 示例3（设置事件派发策略为DEFAULT）
 
@@ -337,4 +337,4 @@ PhonePC/2in1TabletTVWearable
 61. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/70VFAujYR5eBJpPM_mw3jQ/zh-cn_image_0000002552799824.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000056Z&HW-CC-Expire=86400&HW-CC-Sign=578DBD0FFA2E03F09E73BC02CCB35EC18DF7CC7692A266B5A6520F12BA587D02)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/Ygr8xUcJSGur0KTHOBtiKQ/zh-cn_image_0000002589325863.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055107Z&HW-CC-Expire=86400&HW-CC-Sign=741DD0CC362D26A71BEC1FF78A92AE9E9C034AB26C923E3D9DB80C837B128238)

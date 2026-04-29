@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Enums
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > ArkTS API > @ohos.graphics.drawing (绘制模块) > Enums
 category: harmonyos-references
-scraped_at: 2026-04-28T08:14:44+08:00
+scraped_at: 2026-04-29T14:05:23+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:3b61c1df2cb0446cb035432c0ae472689e590efe94a7b780e47dedeb2b452052
+content_hash: sha256:97fb69a1765599e22b0818750935f85a6f1c5c0312605b3c7231883f503e8f73
 ---
 
 说明
@@ -217,7 +217,7 @@ PhonePC/2in1TabletTVWearable
 
 说明
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/nPM7zlf3TF29TNUS3kkiZg/zh-cn_image_0000002583480883.png?HW-CC-KV=V1&HW-CC-Date=20260428T001443Z&HW-CC-Expire=86400&HW-CC-Sign=A4D1CB4F8EC5B644F528290478F6438C272A48F60C0B8E0CEC37797F361984BE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/8vn0b4dJTEm_sqJ8kpdj3A/zh-cn_image_0000002589327277.png?HW-CC-KV=V1&HW-CC-Date=20260429T060520Z&HW-CC-Expire=86400&HW-CC-Sign=6C5858AC84A07F7E655831810C69B9857BD3FFD401F2AC1D148282170B2439EA)
 
 如图所示圆环为路径，箭头指示路径的方向，p为区域内任意一点，蓝色线条为点p出发的射线，黑色箭头所指为对应填充规则下使用蓝色填充路径的结果。WINDING填充规则下，射线与路径的交点计数为2，不为0，点p被涂色；EVEN\_ODD填充规则下，射线与路径的相交次数为2，是偶数，点p不被涂色。
 

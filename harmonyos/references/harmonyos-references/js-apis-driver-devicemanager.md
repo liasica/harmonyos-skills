@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-d
 title: @ohos.driver.deviceManager (外设管理)
 breadcrumb: API参考 > 系统 > 硬件 > Driver Development Kit（驱动开发服务） > ArkTS API > @ohos.driver.deviceManager (外设管理)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:10:39+08:00
-doc_updated_at: 2026-03-30
-content_hash: sha256:378e76b172e950ef1bc682459a3c9ca71163eba4aa9958cf5e97a65f2e081d4f
+scraped_at: 2026-04-29T14:01:19+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:6b0cefef124b3ee754f1c00455cd31f463e386c7d9f706ecf6e21988c269686e
 ---
 
 本模块主要提供管理外部设备的相关功能，包括查询设备列表、绑定设备和解除绑定设备。
@@ -486,7 +486,7 @@ PC/2in1
 
 unbindDevice(deviceId: number): Promise<number>
 
-解除设备绑定。
+解除设备绑定。该接口使用一个Promise对象来返回结果。
 
 说明
 

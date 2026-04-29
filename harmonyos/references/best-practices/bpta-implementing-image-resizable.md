@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-implementi
 title: 基于resizable实现图片拉伸效果
 breadcrumb: 最佳实践 > 主题与样式 > 基于resizable实现图片拉伸效果
 category: best-practices
-scraped_at: 2026-04-28T08:20:02+08:00
+scraped_at: 2026-04-29T14:10:45+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:cfdcbd4fdd23798486ef1956aa21208c7e050d2c8e30847ce255b4f174bc1053
+content_hash: sha256:f2546be694ec0e44ddb700e6b18bf151d29f685fa83abec29d4a91e5ced25cc4
 ---
 
 ## 概述
@@ -26,11 +26,11 @@ resizable属性参数类型为[ResizableOptions](../harmonyos-references/ts-basi
 
 通过slice参数指定原图片在上、下、左、右四个方向的偏移值（px像素点），将图片划分为九宫格布局：四个角的区域为固定区域，其余为可拉伸区域。如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/PGaoWRRITEOXtQf8VXHJ6A/zh-cn_image_0000002538512611.png?HW-CC-KV=V1&HW-CC-Date=20260428T002001Z&HW-CC-Expire=86400&HW-CC-Sign=C192C438B0C15DBC9A30911CF481CE34CFA9125B086C8E5584924094CAD15F21 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/PGaoWRRITEOXtQf8VXHJ6A/zh-cn_image_0000002538512611.png?HW-CC-KV=V1&HW-CC-Date=20260429T061039Z&HW-CC-Expire=86400&HW-CC-Sign=E082824F4728F0F5AF96AA1735ADAED3B4C2DEF5E8BEAD9A553B82F4E8F9DD36 "点击放大")
 
 下图展示了图片拉伸时各区域的拉伸效果。四个角的区域保持固定的宽高，中间区域可上下左右拉伸，顶部和底部的可拉伸区域保持高度不变，左右两侧的可拉伸区域保持宽度不变。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/5ia1P7ScQNanrfxFJn8Nyw/zh-cn_image_0000002538592581.png?HW-CC-KV=V1&HW-CC-Date=20260428T002001Z&HW-CC-Expire=86400&HW-CC-Sign=0EA36A0468F63BBA19C1225C68ED2E42077CB847771DBBEC18A4216FDF8C1CE8 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/5ia1P7ScQNanrfxFJn8Nyw/zh-cn_image_0000002538592581.png?HW-CC-KV=V1&HW-CC-Date=20260429T061039Z&HW-CC-Expire=86400&HW-CC-Sign=9B2EEDE59B9B5556D5BD700A615B6257A357DCF942B720527C01DB7A89BB691A "点击放大")
 
 slice除了在resizable属性中使用，还支持在[backgroundImageResizable](../harmonyos-references/ts-universal-attributes-background.md#backgroundimageresizable12)属性中使用。
 
@@ -57,7 +57,7 @@ slice除了在resizable属性中使用，还支持在[backgroundImageResizable](
 
 例如，下图使用x轴坐标点数组[1, 50, 648]和y轴坐标点数组，将图像划分为3行3列的网格，图中蓝色区域即为偶数行与偶数列相交的固定区域。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/2Heat1_GSbW2k-E5Nr9NIA/zh-cn_image_0000002506872706.png?HW-CC-KV=V1&HW-CC-Date=20260428T002001Z&HW-CC-Expire=86400&HW-CC-Sign=0ED88DBEEB13E313962F5EBA13BD32D7DBFBC4DD034607E0DFCE546CE74FA0B2 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/2Heat1_GSbW2k-E5Nr9NIA/zh-cn_image_0000002506872706.png?HW-CC-KV=V1&HW-CC-Date=20260429T061039Z&HW-CC-Expire=86400&HW-CC-Sign=08A8C476B87D77E9DD205F486D1049E6B62FEE96C3A061ED6B325B4CB183078F "点击放大")
 
 说明
 
@@ -104,7 +104,7 @@ slice除了在resizable属性中使用，还支持在[backgroundImageResizable](
 
 聊天消息气泡在社交应用中是一种常见场景，效果如下图所示。当消息内容的长度和高度不同时，消息气泡需保持四周圆角和小三角指示符的形状不变。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/bkv2t4hhTRaKKgybADyx5w/zh-cn_image_0000002506712868.png?HW-CC-KV=V1&HW-CC-Date=20260428T002001Z&HW-CC-Expire=86400&HW-CC-Sign=F5465E845ECC5A115396816421E23C52822FD6B585B69C0C8B612EF5DC76F9DA "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/bkv2t4hhTRaKKgybADyx5w/zh-cn_image_0000002506712868.png?HW-CC-KV=V1&HW-CC-Date=20260429T061039Z&HW-CC-Expire=86400&HW-CC-Sign=AC1209E71477AB819DF7696C289AE979DEA1AF6C38F3B7BD74D086B945EE5EB6 "点击放大")
 
 ### 场景实现
 
@@ -114,7 +114,7 @@ slice除了在resizable属性中使用，还支持在[backgroundImageResizable](
 
    开发者可以通过UX提供的坐标点或者使用PhotoShop等图片编辑工具，找到原始图固定区域上、下、左、右准确的偏移值。消息气泡图片区域划分和坐标点如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/dfzObmjjRxW3U6OtmCQOHA/zh-cn_image_0000002538512613.png?HW-CC-KV=V1&HW-CC-Date=20260428T002001Z&HW-CC-Expire=86400&HW-CC-Sign=19B15DE36C6228DF45E220C530A9D5CF8ACD64F092552990BD96EFE87BE1759F "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/dfzObmjjRxW3U6OtmCQOHA/zh-cn_image_0000002538512613.png?HW-CC-KV=V1&HW-CC-Date=20260429T061039Z&HW-CC-Expire=86400&HW-CC-Sign=4400E2A4D9CAD9163F9DC2ABDFFB3A498F9A74C62CD77762F2E8FC7D2A3ABCF4 "点击放大")
 2. 实现消息气泡布局。
 
    slice支持在[backgroundImageResizable](../harmonyos-references/ts-universal-attributes-background.md#backgroundimageresizable12)属性中使用。开发者可直接为消息内容的Text组件设置backgroundImage属性，将其作为内容的背景图片。当内容宽高不同时，背景图片会随之进行伸缩。然后，将前面获取的偏移值（{ left: '70px', top: '80px', right: '40px', bottom: '40px' }），赋给Text组件backgroundImageResizable属性中的slice参数即可。
@@ -163,7 +163,7 @@ slice除了在resizable属性中使用，还支持在[backgroundImageResizable](
 
 可拉伸占位图需实现边缘区域可拉伸，而中间的Logo区域保持不变，如下图所示。针对可拉伸占位图场景，本文将采用lattice属性实现。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/g_UDY5BMRtu_H22Bapom4Q/zh-cn_image_0000002538592583.gif?HW-CC-KV=V1&HW-CC-Date=20260428T002001Z&HW-CC-Expire=86400&HW-CC-Sign=DE724FC4CE0FCB4491CF7DCFF0A923AE773FBB9E0ECC64BC62EE8B600449215D "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/g_UDY5BMRtu_H22Bapom4Q/zh-cn_image_0000002538592583.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061039Z&HW-CC-Expire=86400&HW-CC-Sign=E6098EA9585A93E660B4517589D740E8CD4588E3F766C5514B912B0C0DAA6156 "点击放大")
 
 ### 场景实现
 
@@ -173,11 +173,11 @@ slice除了在resizable属性中使用，还支持在[backgroundImageResizable](
 
    图片Logo区域的坐标数组，可由UX设计人员提供，或由开发者通过Photoshop等图像编辑工具手动定位获取。示例场景中，该区域的x轴坐标数组为[150, 648]，y轴坐标数组为[150, 733]。若直接使用该坐标点数组，图片将被划分为3行3列的网格，Logo区域将位于第1行第1列（非偶数行和列）的交叉点，无法达到预期效果。如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/HDmvQ30WRtGl1PnZQu9owQ/zh-cn_image_0000002506872708.png?HW-CC-KV=V1&HW-CC-Date=20260428T002001Z&HW-CC-Expire=86400&HW-CC-Sign=B150F59AA99A37941D41EA895FA6034D02B9596461088C5D0D8C5945D4742619 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/HDmvQ30WRtGl1PnZQu9owQ/zh-cn_image_0000002506872708.png?HW-CC-KV=V1&HW-CC-Date=20260429T061039Z&HW-CC-Expire=86400&HW-CC-Sign=5741E324A02CC586D7C774051A543DF7D9CD97C5634549B2898CA0ECE685EF98 "点击放大")
 
    为解决此问题，可在x轴和y轴各增加一个坐标点，使Logo区域位于第2行第2列（偶数行和列）的交叉点。为避免影响显示效果，可在原坐标前添加一个较小的坐标值，如1。如此，新的x轴坐标点数组变为[1, 150, 648]，y轴坐标点数组变为[1, 150, 733]，如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/iemmYw4vSkSVPn8WxKcIww/zh-cn_image_0000002506712870.png?HW-CC-KV=V1&HW-CC-Date=20260428T002001Z&HW-CC-Expire=86400&HW-CC-Sign=1B5EF057D7C9DDAF2546B9FCBB70AF90026D4062ACAAA83B68E8824D3D38E422 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/iemmYw4vSkSVPn8WxKcIww/zh-cn_image_0000002506712870.png?HW-CC-KV=V1&HW-CC-Date=20260429T061039Z&HW-CC-Expire=86400&HW-CC-Sign=5E069B1E9FD579DEFA34A206702998DFDE887F30DF2A8CDA6098646DC7024811 "点击放大")
 2. 实现可拉伸占位图布局。
 
    根据上述获得的x轴和y轴坐标点数组，使用[createImageLattice()](../harmonyos-references/arkts-apis-graphics-drawing-lattice.md#createimagelattice12)方法创建矩形网格对象，并设置给lattice参数。

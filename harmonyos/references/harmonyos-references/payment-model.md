@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/payment-m
 title: 数据模型说明
 breadcrumb: API参考 > 应用服务 > Payment Kit（鸿蒙支付服务） > 数据模型说明
 category: harmonyos-references
-scraped_at: 2026-04-28T08:18:18+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:1f2863b56f3040aa20e299c5094f58a27325033a3213fe255d77408460d71364
+scraped_at: 2026-04-29T14:08:58+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:2ada696b1d39d5db71b1a8e7a84230fbeaa125d705cfda77d34e2382b54ebfe8
 ---
 
 ## orderStr
@@ -18,7 +18,7 @@ SDK华为支付接口入参**订单支付信息**。
 | merc\_no | 是 | String | 商户号。获取商户号请参见[查询商户号信息](../pay-docs/hwzf-shanghuhao-0000001725982508.md)。  **说明：** 请传递直连、平台/服务商商户号，需要和获取预支付ID商户号保持一致。 |
 | prepay\_id | 是 | String | 预支付ID。使用[直连商户预下单](payment-prepay.md)/[平台类商户/服务商预下单](payment-agent-prepay.md)请求生成，有效期10分钟。 |
 | timestamp | 是 | String | 当前时间戳，标准北京时间，时区为东八区，自1970年1月1日 0点0分0秒以来的毫秒数，13位。示例值：1666230721315。 |
-| noncestr | 是 | String | 随机字符串，不长于32位。推荐随机数生成算法。  每笔订单都需重新生成。 |
+| noncestr | 是 | String | 随机字符串。最小值1，最大值32，传递非取值范围内的值会导致请求异常。推荐随机数生成算法。  每笔订单都需重新生成。 |
 | sign | 是 | String | 签名，使用除了sign字段以外的其他字段计算签名值。可参考[签名规则](payment-rest-overview.md#签名规则)。 |
 | auth\_id | 是 | String | 商户证书编号。一个商户可配置多套证书，请妥善保管。获取可参见[准备证书](../harmonyos-guides/payment-certificates-config.md)。 |
 | reserved | 否 | String | 扩展字段，jsonStr格式。参见[reserved](payment-model.md#reserved)说明。 |
@@ -28,9 +28,9 @@ SDK跳转三方支付接口入参**订单支付跳转信息**。
 | **参数** | **是否必填** | **参数类型** | **描述** |
 | --- | --- | --- | --- |
 | nextAction | 是 | String | 指定三方支付方式。  - L：linkUrl  - S：scheme |
-| linkUrl | 否 | String | 三方支付方式linkUrl类型的链接（按照三方支付平台接入要求获取）。根据nextAction指定支付方式传递。 |
-| scheme | 否 | String | 三方支付方式scheme类型的链接（按照三方支付平台接入要求获取）。根据nextAction指定支付方式传递。 |
-| clientToken | 是 | String | 客户端凭据。  拉起通用收银台接口[requestPayment](payment-paymentservice.md#paymentservicerequestpayment)、[cashierPicker](payment-paymentservice.md#paymentservicecashierpicker)响应中获取。 |
+| linkUrl | 否 | String | 三方支付方式linkUrl类型的链接（按照三方支付平台接入要求获取），默认值为空字符串。根据nextAction指定支付方式传递。 |
+| scheme | 否 | String | 三方支付方式scheme类型的链接（按照三方支付平台接入要求获取），默认值为空字符串。根据nextAction指定支付方式传递。 |
+| clientToken | 是 | String | 客户端凭据。  拉起通用收银台接口[requestPayment](payment-paymentservice.md#requestpayment)、[cashierPicker](payment-paymentservice.md#cashierpicker)响应中获取。 |
 
 ## reserved
 
@@ -73,11 +73,11 @@ PayMercAuth JSON类型保存了商户鉴权信息，用于请求头入参。
 | --- | --- | --- | --- |
 | callerId | 是 | String | 商户号。获取商户号参见[查询商户号信息](../pay-docs/hwzf-shanghuhao-0000001725982508.md)。  **说明：** 请传递直连、平台/服务商商户号，和商户证书编号（authId）归属商户号保持一致。 |
 | traceId | 是 | String | 与请求对应，需要保证每次请求唯一，建议时间戳+随机数。最大长度32。 |
-| time | 是 | Long | 当前时间戳，以毫秒计，防止重复请求。 |
+| time | 是 | Long | 当前时间戳，以ms为单位，防止重复请求。 |
 | authId | 是 | String | 商户证书编号。一个商户可配置多套证书，请妥善保管。获取可参见[准备证书](../harmonyos-guides/payment-certificates-config.md)。 |
 | sessionKey | 否 | String | 使用SM2加密过的SM4密钥，涉及敏感参数传递场景（参见[敏感信息处理](../harmonyos-guides/payment-server-connect.md#敏感信息处理)）必传，否则无须传递。 |
 | headerSign | 是 | String | PayMercAuth对象内入参的签名值（除headerSign外的所有字段），根据[签名规则](payment-rest-overview.md#签名规则)排序拼接后签名。 |
-| bodySign | 是 | String | 请求Body参数签名，根据[签名规则](payment-rest-overview.md#签名规则)排序拼接后签名。  **说明：**  GET请求方式请对请求uri进行签名，如请求url为“https://www.xxxxxx.com/api/v2/aggr/transactions/merc-orders/202xxx?mercNo=1015xxx”，则签名内容为“/api/v2/aggr/transactions/merc-orders/202xxx?mercNo=1015xxx”。 |
+| bodySign | 是 | String | 请求Body参数签名，根据[签名规则](payment-rest-overview.md#签名规则)排序拼接后签名。  **说明：**  GET请求方式请对请求uri进行签名，如请求url为https://www.xxxxxx.com/api/v2/aggr/transactions/merc-orders/202xxx?mercNo=1015xxx ，则签名内容为/api/v2/aggr/transactions/merc-orders/202xxx?mercNo=1015xxx |
 
 ## PayDevAuth
 
@@ -88,13 +88,13 @@ JSON类型数据，保存了开发者鉴权信息，用于请求头入参。
 | clientId | 是 | String | 应用的OAuth 2.0客户端ID（在[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)网站点击“我的项目”，在项目列表中找到项目，在“项目设置 > 常规”页面的“应用”区域获取“OAuth 2.0客户端ID（凭据）：Client ID”的值）。 |
 | accessToken | 是 | String | 应用级的token。获取方式请参见[获取应用级凭证](payment-api-common-get-app-token.md)。 |
 | traceId | 是 | String | 与请求对应，需要保证每次请求唯一，建议时间戳+随机数。最大长度32。 |
-| time | 是 | Long | 当前时间戳，以毫秒计，防止重复请求。 |
+| time | 是 | Long | 当前时间戳，以ms为单位，防止重复请求。 |
 | developerEncKeyId | 否 | String | 开发者加密公钥证书Id（获取方式请参见[上传开发者公钥](../harmonyos-guides/payment-real-name-preparations.md#上传开发者公钥及下载华为公钥)）。接口涉及敏感参数（接口字段中说明）请求场景必传，否则无须传递。  开发者指定华为侧使用对应的开发者加密公钥进行响应字段加密返回，开发者使用对应的私钥进行解密。 |
 | petalpayEncKeyId | 否 | String | 华为加密公钥证书Id（获取方式请参见[下载华为公钥](../harmonyos-guides/payment-real-name-preparations.md#上传开发者公钥及下载华为公钥)）。接口涉及响应敏感参数（接口字段中说明）场景必传，否则无须传递。  开发者使用对应的华为加密公钥进行API接口请求中隐私字段加密，华为侧使用对应的私钥进行解密。 |
 | developerSignKeyId | 是 | String | 开发者验签公钥证书Id（获取方式请参见[上传开发者公钥](../harmonyos-guides/payment-real-name-preparations.md#上传开发者公钥及下载华为公钥)）。开发者使用对应的私钥进行接口请求签名，华为侧使用对应的公钥进行验签。 |
 | petalpaySignKeyId | 是 | String | 华为验签公钥证书Id（获取方式请参见[下载华为公钥](../harmonyos-guides/payment-real-name-preparations.md#上传开发者公钥及下载华为公钥)）。华为侧使用对应的华为加签私钥进行接口响应报文签名，开发者使用对应的公钥进行验签。 |
-| bodySign | 是 | String | 请求Body参数签名。请求参数根据[签名规则](payment-rest-overview.md#section174821258151218)排序拼接后使用SM2方式签名。 |
-| headerSign | 是 | String | 请求headerSign参数签名。PayDevAuth对象内入参的签名值（除headerSign外的所有字段）根据[签名规则](payment-rest-overview.md#section174821258151218)排序拼接后使用SM2方式签名。 |
+| bodySign | 是 | String | 请求Body参数签名。请求参数根据[签名规则](payment-rest-overview.md#签名规则)排序拼接后使用SM2方式签名。 |
+| headerSign | 是 | String | 请求headerSign参数签名。PayDevAuth对象内入参的签名值（除headerSign外的所有字段）根据[签名规则](payment-rest-overview.md#签名规则)排序拼接后使用SM2方式签名。 |
 
 ## PromotionItem
 
@@ -173,9 +173,9 @@ JSON类型数据，保存了开发者鉴权信息，用于请求头入参。
 | **参数** | **是否必选** | **参数类型** | **描述** |
 | --- | --- | --- | --- |
 | quantity | 是 | Integer | 商品数量。 |
-| unitPrice | 是 | Integer | 商品单价，单位为分。取值必须大于0。 |
-| goodsName | 是 | String | 商品名称。最大长度为128。 |
-| goodsId | 否 | String | 商品ID。最大长度为32。 |
+| unitPrice | 是 | Integer | 商品单价，单位为分。取值必须大于0，传递非取值范围内的值会导致请求异常。 |
+| goodsName | 是 | String | 商品名称。最大长度为128，传递非取值范围内的值会导致请求异常。 |
+| goodsId | 否 | String | 商品ID。最大长度为32，传递非取值范围内的值会导致请求异常。 |
 
 ## SubMercOrder
 
@@ -238,6 +238,7 @@ JSON类型数据，保存了开发者鉴权信息，用于请求头入参。
 | **参数** | **是否必选** | **参数类型** | **描述** |
 | --- | --- | --- | --- |
 | platCoupons | 否 | List<[PlatCoupon](payment-model.md#platcoupon)> | 平台券信息（可参见[查询用户可用券](payment-api-common-promotion-service-inquiry.md)接口获取）。 |
+| isPlatCouponRecommend | 否 | Boolean | 是否为用户推荐平台券。  - true（默认）：platCoupons可指定推荐的平台券；若不指定，则由华为支付默认逻辑处理。  - false：platCoupons字段不生效。 |
 
 ## PlatCoupon
 

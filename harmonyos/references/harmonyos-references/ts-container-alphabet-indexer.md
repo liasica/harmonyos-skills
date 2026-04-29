@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: AlphabetIndexer
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 信息展示 > AlphabetIndexer
 category: harmonyos-references
-scraped_at: 2026-04-28T08:02:02+08:00
+scraped_at: 2026-04-29T13:52:20+08:00
 doc_updated_at: 2026-04-10
-content_hash: sha256:1b96a3039dc6724188f17b83a1b2d2b97947dd901df1fd722cb1ca674189d630
+content_hash: sha256:8dfba3bad3d0ef8940067e3ab0c80bc2f9c6784c4ce8cb2da89122b78bf7d3a3
 ---
 
 可以与容器组件联动用于按逻辑结构快速定位容器显示区域的组件。
@@ -767,7 +767,7 @@ PhonePC/2in1TabletTVWearable
 107. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/oanHgnS0SwKK0AmT3UJ1kA/zh-cn_image_0000002552800250.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000200Z&HW-CC-Expire=86400&HW-CC-Sign=D8BC59741C37DBE57163C615A28D89DA113A516E8673731F7BCE68024A9ACF1E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/WyBgvw3ERA6qaygpi5zBfw/zh-cn_image_0000002589326291.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055215Z&HW-CC-Expire=86400&HW-CC-Sign=DF2BD71D57B9012A956D29C3272C3E9200864E40E9CF2221345FBB76F76C7575)
 
 ### 示例2（开启自适应折叠模式）
 
@@ -909,7 +909,7 @@ PhonePC/2in1TabletTVWearable
 133. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/8JRtCUejTsimUkAp_PxJXA/zh-cn_image_0000002583439945.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000200Z&HW-CC-Expire=86400&HW-CC-Sign=AE595336295C952B494A46E18D8D6684CFF926EEEBB3B60A0DFE0328C447F570)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/3VccQO-0TfuVGlkcJcRFKQ/zh-cn_image_0000002589246233.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055215Z&HW-CC-Expire=86400&HW-CC-Sign=409809156A68F5224C07BFD15674FE272C8AEDBB36E1E6A464F1D029516A27C5)
 
 ### 示例3（设置提示弹窗背景模糊材质）
 
@@ -1040,4 +1040,4 @@ PhonePC/2in1TabletTVWearable
 122. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/ptWvhhQUS92bKR58_kf6Og/zh-cn_image_0000002552959900.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000200Z&HW-CC-Expire=86400&HW-CC-Sign=082035324B446A4D181E42C07807294A2F1638297ABC34203FFA8833C415FAEA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/tF816-bqS4Gco8jr0MEQlA/zh-cn_image_0000002558766426.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055215Z&HW-CC-Expire=86400&HW-CC-Sign=364957F92C41BAC40511421F1C5F63B65A0099929E44DEC3DADF7804B32EA947)

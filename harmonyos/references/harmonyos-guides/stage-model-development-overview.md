@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/stage-model-d
 title: Stage模型开发概述
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > Stage模型开发指导 > Stage模型开发概述
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:37:39+08:00
+scraped_at: 2026-04-29T13:25:42+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:bd6a94e0ba81221297414e0ab30a5cdfbb87d29825897e198eaeb68e83637392
+content_hash: sha256:4bfcf15fd38e316a0364495c5d55d52e34a26ef9370d8c7040d12d65b9c4f1d2
 ---
 
 ## 基本概念
@@ -14,7 +14,7 @@ content_hash: sha256:bd6a94e0ba81221297414e0ab30a5cdfbb87d29825897e198eaeb68e836
 
 **图1** Stage模型概念图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/C_7OKWb1T9Symuve9jqrdw/zh-cn_image_0000002552797838.png?HW-CC-KV=V1&HW-CC-Date=20260427T233738Z&HW-CC-Expire=86400&HW-CC-Sign=7E9C26965F9DFDCBFD8169D9A91D85F26F92EBC5DB1EE7EC89500CE912B6AA01)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/yidyE5HuQpCv6v8KsLn1Mw/zh-cn_image_0000002558604322.png?HW-CC-KV=V1&HW-CC-Date=20260429T052541Z&HW-CC-Expire=86400&HW-CC-Sign=AC9C8C42030E632C24ED656FCD9A91E3042655AC0DAC04FB2F79C002E75EBABF)
 
 * [AbilityStage](abilitystage.md)
 
@@ -54,7 +54,7 @@ content_hash: sha256:bd6a94e0ba81221297414e0ab30a5cdfbb87d29825897e198eaeb68e836
 
 **图2** Stage模型构成要素
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/pICQvyxLT7Wd5w54KAFANA/zh-cn_image_0000002583437533.png?HW-CC-KV=V1&HW-CC-Date=20260427T233738Z&HW-CC-Expire=86400&HW-CC-Sign=73F33BFEBEB672D77A226BC73D3C22F2DF9E8C637A83671791D33993A5FEE6E6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/JTVS1yCxSHCxkD4vq83pJA/zh-cn_image_0000002589323847.png?HW-CC-KV=V1&HW-CC-Date=20260429T052541Z&HW-CC-Expire=86400&HW-CC-Sign=FBE5A75AABBCAB512F58E7F3611133A3D0C9C70A894AA9D0190BAA2C3CA30436)
 
 **开发阶段** ：需要通过Stage模型提供的应用组件（UIAbility组件和ExtensionAbility组件）开发应用功能，并在应用的配置文件（app.json5和module.json5）中注册应用的相关信息。
 

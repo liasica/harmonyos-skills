@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-network-ca
 title: 网络连接安全配置
 breadcrumb: 最佳实践 > 应用安全 > 网络连接安全配置
 category: best-practices
-scraped_at: 2026-04-28T08:22:17+08:00
+scraped_at: 2026-04-29T14:13:16+08:00
 doc_updated_at: 2026-03-17
-content_hash: sha256:319d7d5c217c5458f789d60d72c6f62c9e82f175cfe678b9145f58e080b725ba
+content_hash: sha256:5ba0a97f623674bb0bd9419bdabb8967abee04ffc312fd0c9598d878351d29e6
 ---
 
 ## 概述
@@ -16,7 +16,7 @@ content_hash: sha256:319d7d5c217c5458f789d60d72c6f62c9e82f175cfe678b9145f58e080b
 
 本文介绍如何配置CA证书以进行合法性校验，避免应用或云侧服务器的安全风险。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/kbFd_EfPRQa8cShu7MAdag/zh-cn_image_0000002457689021.png?HW-CC-KV=V1&HW-CC-Date=20260428T002216Z&HW-CC-Expire=86400&HW-CC-Sign=DF4207751616ECC1713C1EA12063D8211A4BE8E545D42E964BEEA77CC4D5D220 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/kbFd_EfPRQa8cShu7MAdag/zh-cn_image_0000002457689021.png?HW-CC-KV=V1&HW-CC-Date=20260429T061316Z&HW-CC-Expire=86400&HW-CC-Sign=2BD9F13F969376F491CC2B43C846B57EA92A395169A32EF0485843A81D49F4DB "点击放大")
 
 ## 配置CA证书对服务器进行合法性校验
 

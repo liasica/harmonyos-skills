@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: @ohos.arkui.componentUtils (componentUtils)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.arkui.componentUtils (componentUtils)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:00:17+08:00
+scraped_at: 2026-04-29T13:50:29+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:18a85bde39f2af99c24312e4c377b9ec43bd4f4dbe106e25f0dfd3a751dd1274
+content_hash: sha256:a962f1a6d29d4735690403f9f8502920a13a5d3b79e60125bb5a73136aec4016
 ---
 
 提供获取组件绘制区域坐标和大小的能力。
@@ -250,4 +250,4 @@ PhonePC/2in1TabletTVWearable
 43. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/F0qsaNt7SVm9bNV0FjMujQ/zh-cn_image_0000002583479401.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000015Z&HW-CC-Expire=86400&HW-CC-Sign=03787FB7DF422DC69201BABB36A1A290245659B0D201C41309B3BAE6E120AD1F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/lrABA5UoSq2F0M30eMYvfw/zh-cn_image_0000002558606264.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055027Z&HW-CC-Expire=86400&HW-CC-Sign=601FB42323BEC763569E4168C918CA68861072C4C741ADEAE94AFD03D82B9EFB)

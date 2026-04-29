@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: SegmentButtonV2
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > SegmentButtonV2
 category: harmonyos-references
-scraped_at: 2026-04-28T08:02:40+08:00
+scraped_at: 2026-04-29T13:53:03+08:00
 doc_updated_at: 2026-03-27
-content_hash: sha256:14b188980b6cbced40cad1b3fcf24096196fd780199e2509594e293121712477
+content_hash: sha256:a36edeb673c54823a611640d8e45646c3470b05d63663178c0e67b9e619f9a41
 ---
 
 分段按钮组件用于创建页签型、单选或多选的胶囊型分段按钮。
@@ -618,7 +618,7 @@ PhonePC/2in1TabletTVWearable
 129. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/6DmghY94SOK_Fva31KH0iA/zh-cn_image_0000002583480125.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000238Z&HW-CC-Expire=86400&HW-CC-Sign=B6215D9C9A3FEC8112AEC111B3CFC1528E50B880235B85F811E03F021B28343B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/x-PJqjoRT7eznc0wGOJ-qg/zh-cn_image_0000002589326517.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055301Z&HW-CC-Expire=86400&HW-CC-Sign=3A62B9D175BB881FA80898029EA04920032A7AB20090FC801CD6570299C5C46A)
 
 ### 示例 2（单选的胶囊型分段按钮）
 
@@ -748,7 +748,7 @@ PhonePC/2in1TabletTVWearable
 121. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/q-_aEhXqRdmzFizI1U4FIA/zh-cn_image_0000002552800476.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000238Z&HW-CC-Expire=86400&HW-CC-Sign=56767D9640F7ED88E84CC29F6D0437F2BD729E38177C57108F83BDC6ADBD6F14)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/_ifW52ntRtew2YmYPMpUSg/zh-cn_image_0000002589246459.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055301Z&HW-CC-Expire=86400&HW-CC-Sign=143337B4BEB643749F1EA6D8C1890F490FD641DF00D2D21D68FC525BD0AA8D5B)
 
 ### 示例 3（多选的胶囊型分段按钮）
 
@@ -878,7 +878,7 @@ PhonePC/2in1TabletTVWearable
 121. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/bAuGTPm2R4uxYxtA49tfYQ/zh-cn_image_0000002583440171.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000238Z&HW-CC-Expire=86400&HW-CC-Sign=3EEC6187D58130C75B73853E44B469E3DB1A23A83BA4A2341F87050E43FC7BA8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/_NTy39tSRvGnEY8CANLi1g/zh-cn_image_0000002558766652.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055301Z&HW-CC-Expire=86400&HW-CC-Sign=FF4F57159454D1889869FE3F955F02B4AAA31C8B4CD6BC402B89B7B612006A3D)
 
 ### 示例4（分段按钮Modifier的基本用法）
 
@@ -973,4 +973,4 @@ PhonePC/2in1TabletTVWearable
 86. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/5h0CB-LTSciIcpYZVkz4og/zh-cn_image_0000002552960126.png?HW-CC-KV=V1&HW-CC-Date=20260428T000238Z&HW-CC-Expire=86400&HW-CC-Sign=6890D19743677E33BF171E661E5C2F05D0880AFFAC29ED8878DA577D01DFB34C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/bYOzBgF7SniX_uBlk_si0w/zh-cn_image_0000002558606992.png?HW-CC-KV=V1&HW-CC-Date=20260429T055301Z&HW-CC-Expire=86400&HW-CC-Sign=6AFD8A6403FC42B006791C8CFD51C2067C4854A37C0B9D8E52A832907E0A0BDA)

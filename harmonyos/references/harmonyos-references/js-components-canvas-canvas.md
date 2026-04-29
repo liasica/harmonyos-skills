@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: canvas组件
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 画布组件 > canvas组件
 category: harmonyos-references
-scraped_at: 2026-04-28T08:03:11+08:00
+scraped_at: 2026-04-29T13:53:30+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:050d65438ec96afa33c55869bbd1979ec17beeab6259aed78c9383412373df7e
+content_hash: sha256:c0d34dba1045a462f4a7949337f14e95f1b644a49c0563f339ec57e8c21e0fdb
 ---
 
 说明
@@ -128,4 +128,4 @@ PhonePC/2in1TabletTVWearable
 9. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/znIrA8IoQL-KYu0F1VsCVw/zh-cn_image_0000002552960204.png?HW-CC-KV=V1&HW-CC-Date=20260428T000310Z&HW-CC-Expire=86400&HW-CC-Sign=26D6EF3504A817766DF19FF74BDE26F402464DB1CDE8C2D594E29ACC557551C1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/2hy3KiHiQt6NhGk3TFu-mw/zh-cn_image_0000002558607070.png?HW-CC-KV=V1&HW-CC-Date=20260429T055329Z&HW-CC-Expire=86400&HW-CC-Sign=DAB0C4C981E48B8E589699F57D5463536DA09CFF7DD0520DD621958B489E7CC4)

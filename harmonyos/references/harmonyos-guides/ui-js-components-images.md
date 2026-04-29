@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-compone
 title: image开发指导
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 常见组件开发指导 > 基础组件 > image开发指导
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:40:27+08:00
+scraped_at: 2026-04-29T13:28:48+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:293810cd3eee2a010898c2fa8bc78c5303982b89975d52bd6849a0be03125cc5
+content_hash: sha256:74059c9a554ed967057c7ffd1ee444ba2d6af3ee8dd8c682699ca7b2913053ef
 ---
 
 image是图片组件，用来渲染展示图片。具体用法请参考[image](../harmonyos-references/js-components-basic-image.md)组件。
@@ -33,7 +33,7 @@ image是图片组件，用来渲染展示图片。具体用法请参考[image](.
 9. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/Zv8llAa3SmG_9IPp9VsLeQ/zh-cn_image_0000002552958108.png?HW-CC-KV=V1&HW-CC-Date=20260427T234026Z&HW-CC-Expire=86400&HW-CC-Sign=8683E78AAF978372FEA833AB313A5F15A76B7A1C435874430079F6A090BEFC68)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/F5zAVfp8R4uLCkoDUeXe_g/zh-cn_image_0000002589324467.png?HW-CC-KV=V1&HW-CC-Date=20260429T052847Z&HW-CC-Expire=86400&HW-CC-Sign=24D08600ED91BCE335A6D929F2B5FD4E9ABADEB5B472DA3469E24FEF0236C30A)
 
 ## 设置image样式
 
@@ -66,7 +66,7 @@ image是图片组件，用来渲染展示图片。具体用法请参考[image](.
 17. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/DFFQakzEQ9mNmEWYbsMqmw/zh-cn_image_0000002583478109.png?HW-CC-KV=V1&HW-CC-Date=20260427T234026Z&HW-CC-Expire=86400&HW-CC-Sign=82746B06C4C9A90016632FAC54E4909E21CB113A3A68A23452A18DC36C3CDF9C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/0REX6IzyRdu7DA1LB_o-Kw/zh-cn_image_0000002589244407.png?HW-CC-KV=V1&HW-CC-Date=20260429T052847Z&HW-CC-Expire=86400&HW-CC-Sign=75AC77873A77677760D53EC57163AA8FBCD5197B02A9BC240727EFCDEECA3D7E)
 
 ## 加载图片
 
@@ -123,7 +123,7 @@ image是图片组件，用来渲染展示图片。具体用法请参考[image](.
 18. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/1GRiLt_iROOxINJMv8jCkg/zh-cn_image_0000002552798460.gif?HW-CC-KV=V1&HW-CC-Date=20260427T234026Z&HW-CC-Expire=86400&HW-CC-Sign=A53D81B2B22280971E54729EDAB8AD35D562E76E3F3B7F27BD791C3144F7D78C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/T4V7810MS6iCLoIskUiAtg/zh-cn_image_0000002558764600.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052847Z&HW-CC-Expire=86400&HW-CC-Sign=D58EBB597EEC0FB05D632EFFC5C17093B3D8F9D566EC70A4C703107A48DC068B)
 
 ## 场景示例
 
@@ -204,4 +204,4 @@ image是图片组件，用来渲染展示图片。具体用法请参考[image](.
 24. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/7tS7oQbATmuCWsthGKiU8w/zh-cn_image_0000002583438155.gif?HW-CC-KV=V1&HW-CC-Date=20260427T234026Z&HW-CC-Expire=86400&HW-CC-Sign=A82474ED9BD884AF8D616943E1547AE1B99AE6C42FDD8E1A8FFDE5B53C61F5CA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/2k1vQcNrSAKnba3tov7jMw/zh-cn_image_0000002558604944.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052847Z&HW-CC-Expire=86400&HW-CC-Sign=E3C552CDD57012C174D1F4576AA136A2B0E007CE9CED094FB4511EC5CE45EAD8)

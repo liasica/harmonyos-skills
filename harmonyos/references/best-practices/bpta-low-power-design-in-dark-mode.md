@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-low-power-
 title: 省电和深色模式下低功耗设计
 breadcrumb: 最佳实践 > 功耗 > 应用功耗优化 > 前台任务低功耗 > 省电和深色模式下低功耗设计
 category: best-practices
-scraped_at: 2026-04-28T08:22:39+08:00
+scraped_at: 2026-04-29T14:13:49+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:73efe15122ea62f3008702adce93480340744112c9e0dc195676b8daa1b45d42
+content_hash: sha256:379310209c779e23e57b6dc84ae36f544f4eda0c5918ace4fb402ba86df9bd04
 ---
 
 ## 概述
@@ -33,7 +33,7 @@ content_hash: sha256:73efe15122ea62f3008702adce93480340744112c9e0dc195676b8daa1b
 通过设置省电模式、深色模式、调节屏幕亮度、停止冗余动画，最终测量的总耗电量对比如下图所示：
 
 **图1** 总耗电量对比  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/0V6UZ24NTTqQbp8_ZXlamw/zh-cn_image_0000002194011364.png?HW-CC-KV=V1&HW-CC-Date=20260428T002238Z&HW-CC-Expire=86400&HW-CC-Sign=087812ECAB2416C3E826CFF0BD1B66CC735008DB96313CEAAAA17D8693F1330C "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/0V6UZ24NTTqQbp8_ZXlamw/zh-cn_image_0000002194011364.png?HW-CC-KV=V1&HW-CC-Date=20260429T061347Z&HW-CC-Expire=86400&HW-CC-Sign=4398D15AD61C06D7EC16BE525F81FA507C113F6A53220D7586470F708FD008CC "点击放大")
 
 ## 功耗测量工具
 
@@ -53,7 +53,7 @@ DevEco Profiler 应用调优工具（以下简称 Profiler）已内置在 DevEco
 Profiler耗电量示意图如下所示，详细信息及使用可参考[实时监控](../harmonyos-guides/realtime-monitor.md)。
 
 **图2** ProfilerEnergy模块示意图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/0niXJHu0Qb6AoGeUGHv7NA/zh-cn_image_0000002193851784.png?HW-CC-KV=V1&HW-CC-Date=20260428T002238Z&HW-CC-Expire=86400&HW-CC-Sign=3CE4DC0E79A6E679174FD142546376D382C62266890128D084CB74F80882BC27 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/0niXJHu0Qb6AoGeUGHv7NA/zh-cn_image_0000002193851784.png?HW-CC-KV=V1&HW-CC-Date=20260429T061347Z&HW-CC-Expire=86400&HW-CC-Sign=6D9AA7B9F69D9232BD500091F4996F6BA4363EFFE9309D85D2CC3226493973FE "点击放大")
 
 说明
 
@@ -172,7 +172,7 @@ HarmonyOS默认提供了电源模式的特性，主要分为以下三类：
 
 **图3** 使用省电模式前后耗电量对比
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/G-MjFfnmQpiacIbMCdPW3w/zh-cn_image_0000002194011352.png?HW-CC-KV=V1&HW-CC-Date=20260428T002238Z&HW-CC-Expire=86400&HW-CC-Sign=D50C063B1CBB6834E2EDF2DBFBFE572467B9A6513065D9A6B0E4570E10DAA58C "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/G-MjFfnmQpiacIbMCdPW3w/zh-cn_image_0000002194011352.png?HW-CC-KV=V1&HW-CC-Date=20260429T061347Z&HW-CC-Expire=86400&HW-CC-Sign=FB8B4F0AB8CCCBCD48619BF095E95D63FB4BA93B6AF81F0EACE6FCC666254586 "点击放大")
 
 从测试数据可以看出：
 
@@ -198,7 +198,7 @@ HarmonyOS默认提供了电源模式的特性，主要分为以下三类：
 1. 创建深色模式资源文件夹：在项目的resources文件下，创建深色模式的Dark资源文件夹，如下图1所示。
 
    **图4** 创建深色模式资源文件夹  
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/P3zuwodaTseI0KwkoBwmpQ/zh-cn_image_0000002229337161.png?HW-CC-KV=V1&HW-CC-Date=20260428T002238Z&HW-CC-Expire=86400&HW-CC-Sign=79E8FB87920F546E69C2E90110B4189CE9FA8EF680086FDC33CB61755B8CDBCA "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/P3zuwodaTseI0KwkoBwmpQ/zh-cn_image_0000002229337161.png?HW-CC-KV=V1&HW-CC-Date=20260429T061347Z&HW-CC-Expire=86400&HW-CC-Sign=62AB188313AEA96CA3029D91ED218BFFE20DB38194ECAE8F6BECCC0CE8890EE5 "点击放大")
 2. 资源文件适配：为深色模式下的界面设计相应的颜色和图标资源文件。
 3. 在主题中设置深色模式样式：在应用的主题中定义深色模式的样式，包括背景色、文本颜色、图标颜色等。
 4. 动态切换模式：在应用中实现动态切换深色模式和浅色模式的功能，使用户可以根据自己的喜好随时切换应用的界面模式。
@@ -206,7 +206,7 @@ HarmonyOS默认提供了电源模式的特性，主要分为以下三类：
 
 **图5** 深色模式示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/VEl6LhMzRD6kOzk45Iuvwg/zh-cn_image_0000002229451645.png?HW-CC-KV=V1&HW-CC-Date=20260428T002238Z&HW-CC-Expire=86400&HW-CC-Sign=6E2A6DE02E1467B1EC594FBF1B837B82AA6F3CAFC4D37619DCC65F7CA296CD4E "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/VEl6LhMzRD6kOzk45Iuvwg/zh-cn_image_0000002229451645.png?HW-CC-KV=V1&HW-CC-Date=20260429T061347Z&HW-CC-Expire=86400&HW-CC-Sign=925594E21A2F7CFCC47B3FCA0CD5C8572DF6AE3ABCAE610365050DB8AAB61CB6 "点击放大")
 
 ### 功耗分析
 
@@ -214,7 +214,7 @@ HarmonyOS默认提供了电源模式的特性，主要分为以下三类：
 
 **图6** 使用深色模式前后耗电量对比
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/W1P9l0YNSLSk9Ax6d6IXYQ/zh-cn_image_0000002194011372.png?HW-CC-KV=V1&HW-CC-Date=20260428T002238Z&HW-CC-Expire=86400&HW-CC-Sign=02581734E2C7C26432F4F91373871422AE432083203E687A9FE1A80D9B0902C8 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/W1P9l0YNSLSk9Ax6d6IXYQ/zh-cn_image_0000002194011372.png?HW-CC-KV=V1&HW-CC-Date=20260429T061347Z&HW-CC-Expire=86400&HW-CC-Sign=D5361878F852074A4E4A3975C44EC788286E7948B19C5A01BE8B699009546E5E "点击放大")
 
 根据测试数据分析，得出以下结论：
 
@@ -289,7 +289,7 @@ HarmonyOS默认提供了电源模式的特性，主要分为以下三类：
 3. 根据实际场景，停止或者替换冗余的动效。
 
 **图7** 省电和深色模式下停止冗余动效  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/m05HwtXQQ0WoIYnyCfxIlw/zh-cn_image_0000002193851772.gif?HW-CC-KV=V1&HW-CC-Date=20260428T002238Z&HW-CC-Expire=86400&HW-CC-Sign=92E03F323CEDB9E4639EF0A522468777ED35026D14616FB3D3583BBDF96714BD "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/m05HwtXQQ0WoIYnyCfxIlw/zh-cn_image_0000002193851772.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061347Z&HW-CC-Expire=86400&HW-CC-Sign=539C4C03CFA0020A78CB59996E81F994F406670115E7E4F670527A0CC19AEE99 "点击放大")
 
 在省电模式下，停止点赞和收藏动画，具体代码实现如下：
 
@@ -383,11 +383,11 @@ HarmonyOS默认提供了电源模式的特性，主要分为以下三类：
 同一界面下，设置省电模式和深色模式，测试主动减少应用亮度前后、去掉冗余动画前后CPU、GPU、显示模块的耗电量和总耗电量。使用DevEco Studio的Profiler工具检测得到数据如下：
 
 **图8** 主动降低应用亮度前后耗电量对比  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/B_nFDzIgQuyvInnms8BgCg/zh-cn_image_0000002229451657.png?HW-CC-KV=V1&HW-CC-Date=20260428T002238Z&HW-CC-Expire=86400&HW-CC-Sign=0BE9F36A81A56B0BC2C216F7F4E3E6141C70A476F0117CA40125394B9EC9AE8D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/B_nFDzIgQuyvInnms8BgCg/zh-cn_image_0000002229451657.png?HW-CC-KV=V1&HW-CC-Date=20260429T061347Z&HW-CC-Expire=86400&HW-CC-Sign=01125BA7690CA9C8B6C4B4F1C12135DF7439092268BD22AE54F259D28B6D2271)
 
 **图9** 去掉冗余动画前后耗电量对比
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/D6f3yHmYSs6Vme0-69kCkw/zh-cn_image_0000002229451665.png?HW-CC-KV=V1&HW-CC-Date=20260428T002238Z&HW-CC-Expire=86400&HW-CC-Sign=C4F61FA02B3DCEC7F2F1826823A5716A20DDDA5E7591928FF1931DA980559E4C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/D6f3yHmYSs6Vme0-69kCkw/zh-cn_image_0000002229451665.png?HW-CC-KV=V1&HW-CC-Date=20260429T061347Z&HW-CC-Expire=86400&HW-CC-Sign=F6B328B513A5F2249934922513F852072A8615AB31854101A956788F499C1C3C)
 
 测试数据显示：
 

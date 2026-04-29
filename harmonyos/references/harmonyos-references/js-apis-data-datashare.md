@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-d
 title: @ohos.data.dataShare (数据共享)
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > ArkTS API > @ohos.data.dataShare (数据共享)
 category: harmonyos-references
-scraped_at: 2026-04-28T07:59:08+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:f37bc1990933dd0bb58e8bef557aa4d2b83895e56c29ef06cf613c15839f6e6e
+scraped_at: 2026-04-29T13:49:22+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:0a1415b79a7320b3efbff977454bd389bb6904327dbb3bf190dbe906fe21c39c
 ---
 
 **DataShare**用于应用管理其自身数据，同时支持同个设备上不同应用间的数据共享。
@@ -60,8 +60,8 @@ createDataProxyHandle(): Promise<DataProxyHandle>
 8. }).catch((err: BusinessError) => {
 9. console.error(`createDataProxyHandle error: code: ${err.code}, message: ${err.message}`);
 10. });
-11. };
-12. };
+11. }
+12. }
 ```
 
 ## ChangeType20+
@@ -225,7 +225,7 @@ on(event: 'dataChange', uris: string[], config: DataProxyConfig, callback: Async
 5. };
 6. const callback = (err: BusinessError<void>, changes: dataShare.DataProxyChangeInfo[]): void => {
 7. if (err) {
-8. console.error('err:', err);
+8. console.error(`callback error: code: ${err.code}, message: ${err.message}`);
 9. } else {
 10. changes.forEach((change) => {
 11. console.info(`Change Type: ${change.type}, URI: ${change.uri}, Value: ${change.value}`);
@@ -282,7 +282,7 @@ off(event: 'dataChange', uris: string[], config: DataProxyConfig, callback?: Asy
 5. };
 6. const callback = (err: BusinessError<void>, changes: dataShare.DataProxyChangeInfo[]): void => {
 7. if (err) {
-8. console.error('err:', err);
+8. console.error(`callback error: code: ${err.code}, message: ${err.message}`);
 9. } else {
 10. changes.forEach((change) => {
 11. console.info(`Change Type: ${change.type}, URI: ${change.uri}, Value: ${change.value}`);
@@ -333,11 +333,11 @@ publish(data: ProxyData[], config: DataProxyConfig): Promise<DataProxyResult[]>
 1. const newConfigData: dataShare.ProxyData[] = [{
 2. uri: 'datashareproxy://com.example.app1/config1',
 3. value: 'Value1',
-4. allowList: ['appIdentifier2', 'appIdentifier3'], //此处字符串仅作示例，使用时需替换为应用实际的appIdentifier
+4. allowList: ['appIdentifier2', 'appIdentifier3'], // 此处字符串仅作示例，使用时需替换为应用实际的appIdentifier
 5. }, {
 6. uri: 'datashareproxy://com.example.app1/config2',
 7. value: 'Value2',
-8. allowList: ['appIdentifier3', 'appIdentifier4'], //此处字符串仅作示例，使用时需替换为应用实际的appIdentifier
+8. allowList: ['appIdentifier3', 'appIdentifier4'], // 此处字符串仅作示例，使用时需替换为应用实际的appIdentifier
 9. }];
 10. const config: dataShare.DataProxyConfig = {
 11. type: dataShare.DataProxyType.SHARED_CONFIG,
@@ -347,7 +347,7 @@ publish(data: ProxyData[], config: DataProxyConfig): Promise<DataProxyResult[]>
 15. console.info(`URI: ${result.uri}, Result: ${result.result}`);
 16. });
 17. }).catch((error: BusinessError) => {
-18. console.error('Error publishing config:', error);
+18. console.error(`Failed to publish config. code: ${error.code}, message: ${error.message}`);
 19. });
 ```
 
@@ -396,7 +396,7 @@ delete(uris: string[], config: DataProxyConfig): Promise<DataProxyResult[]>
 8. console.info(`URI: ${result.uri}, Result: ${result.result}`);
 9. });
 10. }).catch((error: BusinessError) => {
-11. console.error('Error deleting config:', error);
+11. console.error(`Failed to delete config. code: ${error.code}, message: ${error.message}`);
 12. });
 ```
 
@@ -445,6 +445,6 @@ get(uris: string[], config: DataProxyConfig): Promise<DataProxyGetResult[]>
 8. console.info(`URI: ${result.uri}, Result: ${result.result}, AllowList: ${result.allowList}`);
 9. });
 10. }).catch((error: BusinessError) => {
-11. console.error('Error getting config:', error);
+11. console.error(`Failed to get config. code: ${error.code}, message: ${error.message}`);
 12. });
 ```

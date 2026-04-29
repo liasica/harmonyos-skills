@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interfaces (其他)
 breadcrumb: API参考 > 应用框架 > ArkWeb（方舟Web） > ArkTS API > @ohos.web.webview (Webview) > Interfaces (其他)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:05:11+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:8c0877512306941d72480e3eca14c4f609a41e7ebdf37824178817a83f4b552e
+scraped_at: 2026-04-29T13:55:40+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:a63b13f886a11990931308abc101566df376b5bcc8e52d4a962954ca8d0634a8
 ---
 
 说明
@@ -127,7 +127,7 @@ PhonePC/2in1TabletTVWearable
 | urlList | Array<string> | 否 | 否 | 本地离线资源对应的网络地址列表，列表的第一项将作为资源的源（Origin），如果仅提供一个网络地址，则使用该地址作为这个资源的源。url仅支持http或https协议，长度不超过2048。 |
 | resource | Uint8Array | 否 | 否 | 本地离线资源的内容。 |
 | responseHeaders | Array<[WebHeader](arkts-apis-webview-i.md#webheader)> | 否 | 否 | 资源对应的HTTP响应头。其中提供的Cache-Control或Expires响应头将被用于控制资源在内存缓存中的有效期。如果不提供，默认的有效期为86400秒，即1天。其中提供的Content-Type响应头将被用于定义资源的MIMEType，MODULE\_JS必须提供有效的MIMEType，其他类型可不提供，无默认值，不符合标准的MIMEType会导致内存缓存失效。如果业务网页中的script标签使用了crossorigin属性，则必须在接口的responseHeaders参数中设置Cross-Origin响应头的值为anonymous或use-credentials。 |
-| type | [OfflineResourceType](arkts-apis-webview-e.md#offlineresourcetype12) | 否 | 否 | 资源的类型，目前仅支持Javascript、图片和CSS类型的资源。 |
+| type | [OfflineResourceType](arkts-apis-webview-e.md#offlineresourcetype12) | 否 | 否 | 资源的类型，目前仅支持JavaScript、图片和CSS类型的资源。 |
 
 ## PdfConfiguration14+
 
@@ -307,6 +307,6 @@ cookie的相关字段。
 | isSessionCookie | boolean | 否 | 否 | 标记该cookie是否是session cookie。  true表示是session cookie，false表示不是session cookie。 |
 | value | string | 否 | 否 | cookie的值。 |
 | path | string | 否 | 否 | cookie的路径。 |
-| isHttpOnly | boolean | 否 | 否 | 标记该cookie是否只能通过http请求访问。  true表示仅能通过http访问，不能通过javascript访问，false表示可以通过javascript访问。 |
+| isHttpOnly | boolean | 否 | 否 | 标记该cookie是否只能通过http请求访问。  true表示仅能通过http访问，不能通过JavaScript访问，false表示可以通过JavaScript访问。 |
 | isSecure | boolean | 否 | 否 | 标记该cookie是否只能通过https发送。  true表示仅能通过https发送，不能通过http发送，false表示可以通过http发送。 |
 | domain | string | 否 | 否 | 指定哪些域名可以访问该cookie。 |

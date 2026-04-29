@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: QRCode
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 信息展示 > QRCode
 category: harmonyos-references
-scraped_at: 2026-04-28T08:02:03+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:cc527e9ca627831b009fe6bdcea9ef4dd83c6bb3b39bd2b694b2098379a93c9a
+scraped_at: 2026-04-29T13:52:22+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:e8ce30ba8cead26d65286496b79703aa38f91d40131330f64770c1099d42f250
 ---
 
 用于显示单个二维码的组件。
@@ -14,6 +14,8 @@ content_hash: sha256:cc527e9ca627831b009fe6bdcea9ef4dd83c6bb3b39bd2b694b2098379a
 
 * 该组件从API version 7开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 * 二维码组件的像素点数量与内容有关，组件尺寸过小可能导致内容无法展示，此时需要适当调整组件尺寸。
+
+该组件当前仅支持生成二维码，涉及扫码的业务场景，推荐使用[Scan Kit（统一扫码服务）](../harmonyos-guides/scan-kit-guide.md)。
 
 ## 子组件
 
@@ -147,7 +149,7 @@ PhonePC/2in1TabletTVWearable
 25. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/3V8rOokPRLyN-KbBNjz3kA/zh-cn_image_0000002552800268.png?HW-CC-KV=V1&HW-CC-Date=20260428T000202Z&HW-CC-Expire=86400&HW-CC-Sign=7501BDCDC007A5CB727430C96588748EE7137146146730D93302BC7B7BC5E19C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/ixjPrcsqTYa8ni8PqjH5Ww/zh-cn_image_0000002589326309.png?HW-CC-KV=V1&HW-CC-Date=20260429T055221Z&HW-CC-Expire=86400&HW-CC-Sign=5B4A5526CB74AD3BD2BDA21C497A8C7CB5B88320C1E3F59FCF8C4DA77A0A3520)
 
 ### 示例2（设置背景颜色为透明）
 
@@ -173,4 +175,4 @@ PhonePC/2in1TabletTVWearable
 17. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/4_G8o2-qRkOCTeea0fCqEQ/zh-cn_image_0000002583439963.png?HW-CC-KV=V1&HW-CC-Date=20260428T000202Z&HW-CC-Expire=86400&HW-CC-Sign=F4473137AC8DE966BA51F634AF1604F7817C4A8FAEDD0DEF56E7C2CAC3690C9E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/K0xIqF-hTUKtkj8VoAArhQ/zh-cn_image_0000002589246251.png?HW-CC-KV=V1&HW-CC-Date=20260429T055221Z&HW-CC-Expire=86400&HW-CC-Sign=095AD51D131DD254384936A0D8337474E0F5CE46E71BC1383B38A8241DB4F546)

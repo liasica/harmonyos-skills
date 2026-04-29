@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-integ
 title: 集成模型
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 端侧部署 > App集成 > 集成模型
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:51:23+08:00
+scraped_at: 2026-04-29T13:41:00+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:aa1069be362dc9f1b023c34d1a292bf7ae5b332a474ceedd107581d9454ffa20
+content_hash: sha256:3c2d4ea787aed4e977ee53d50a2eec9a1c415441f784806862a9dc17851fa247
 ---
 
 模型的加载、编译和推理主要是在native层实现，应用层主要作为数据传递和展示作用。
@@ -14,7 +14,7 @@ content_hash: sha256:aa1069be362dc9f1b023c34d1a292bf7ae5b332a474ceedd107581d9454
 
 本节阐述同步模式下单模型的使用，从流程上分别阐述每个步骤在应用层和native层的实现和调用。接口请参见[API参考](../harmonyos-references/cannkit.md)，示例请参见[SampleCode](https://gitcode.com/HarmonyOS_Samples/cannkit-samplecode-clientdemo-cpp)，本示例支持加载离线模型对图片中的物体进行分类，App运行效果图如下所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/n4dd9_zqQC2e-ogqxPasrA/zh-cn_image_0000002583479223.png?HW-CC-KV=V1&HW-CC-Date=20260427T235122Z&HW-CC-Expire=86400&HW-CC-Sign=9860C415C38302A49CF322297C5C6E38A6C229670E0AFC8D51D926678CBFE2E5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/YEqrfpClRpCbaB4BN30Uag/zh-cn_image_0000002558765724.png?HW-CC-KV=V1&HW-CC-Date=20260429T054059Z&HW-CC-Expire=86400&HW-CC-Sign=5FF994D65C2867FBB86400859CB486055D5C7246C0CD989FC78FAEC5FFB36EDC)
 
 ## 预置模型
 

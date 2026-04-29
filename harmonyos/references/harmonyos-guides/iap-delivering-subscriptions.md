@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/iap-deliverin
 title: 权益发放
 breadcrumb: 指南 > 应用服务 > IAP Kit（应用内支付服务） > 商品购买 > 自动续期订阅商品购买 > 权益发放
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:49:27+08:00
+scraped_at: 2026-04-29T13:38:38+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:37587af6c34d447f7589016df814353794797992de2a46c2c2dd229de1e4a55c
+content_hash: sha256:bfb8f7fce13080f4d96f497061a30b5fa469516de9a984f3886d05737dfebae5
 ---
 
 ## 对生效中的订阅发放权益
@@ -20,7 +20,7 @@ content_hash: sha256:37587af6c34d447f7589016df814353794797992de2a46c2c2dd229de1e
 
 ### 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/cKp42pjbRs2jo4RWNQISIw/zh-cn_image_0000002552799280.png?HW-CC-KV=V1&HW-CC-Date=20260427T234926Z&HW-CC-Expire=86400&HW-CC-Sign=7D3A983F2AB4F905E5D0DED277BE5CB2050D131FBD6E6EB27356C448D4D37A03)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/qiL9jJvdQvOsYvXkV4NLxA/zh-cn_image_0000002589325299.png?HW-CC-KV=V1&HW-CC-Date=20260429T053837Z&HW-CC-Expire=86400&HW-CC-Sign=21D557430906340F86EDF6EFCAC7FCF6BE0839E650767E86133583A988F4CA5C)
 
 1. 应用客户端向IAP Kit发起[queryPurchases](../harmonyos-references/iap-iap.md#iapquerypurchases)请求，查询用户生效中的订阅列表。
 2. IAP Kit返回[PurchaseData](../harmonyos-references/iap-data-model.md#purchasedata)列表。[PurchaseData](../harmonyos-references/iap-data-model.md#purchasedata)为JWS格式的字符串，承载了相关的订阅信息。
@@ -159,7 +159,7 @@ content_hash: sha256:37587af6c34d447f7589016df814353794797992de2a46c2c2dd229de1e
 
 ### 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/qugtQyagRFyhkWRiPzC0BQ/zh-cn_image_0000002583438975.png?HW-CC-KV=V1&HW-CC-Date=20260427T234926Z&HW-CC-Expire=86400&HW-CC-Sign=D659CD22633DCC49D97D9CD46128AC704F7B01F3BE4AB0B082C01A82269B5017)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/gV_SjJhlRyu4EORmAmU5Aw/zh-cn_image_0000002589245235.png?HW-CC-KV=V1&HW-CC-Date=20260429T053837Z&HW-CC-Expire=86400&HW-CC-Sign=915D1C967D935EF4F8B354C87888CD574610FCEC52B489B02F215BE13F713D14)
 
 1. 应用客户端向IAP Kit发起[queryPurchases](../harmonyos-references/iap-iap.md#iapquerypurchases)请求，查询用户已购买但未确认发货的订阅列表。
 2. IAP Kit返回[PurchaseData](../harmonyos-references/iap-data-model.md#purchasedata)列表。[PurchaseData](../harmonyos-references/iap-data-model.md#purchasedata)为JWS格式的字符串，承载了相关的订阅信息。

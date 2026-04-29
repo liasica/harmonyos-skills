@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: ArcSwiper
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 滚动与滑动 > ArcSwiper
 category: harmonyos-references
-scraped_at: 2026-04-28T08:01:32+08:00
+scraped_at: 2026-04-29T13:51:49+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:9d4115869b1e236d191528b69e6388d43c5b31daf7315b9d67267a8ab19923a3
+content_hash: sha256:0385790b0fae535cbbfe8e2c9bde191e895a5d229dfa86d06e53089c8ab0ba41
 ---
 
 弧形滑块视图容器，提供子组件滑动轮播显示的能力。
@@ -817,7 +817,7 @@ PhonePC/2in1TabletTVWearable
 117. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/o7XTnteVQDKLv8jQyvmd2g/zh-cn_image_0000002583479645.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000130Z&HW-CC-Expire=86400&HW-CC-Sign=88B49D2594888B1FB2DB0175B477C30E66E5AA173257EB3BF9C603F267C74F8F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/T_MZCXk3S4u0NyT-n1gSkA/zh-cn_image_0000002558606508.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055145Z&HW-CC-Expire=86400&HW-CC-Sign=8BAE3E9394FC3FE70D9654B74CCB224CEDE4482344D46DD7437F90880ED77491)
 
 ### 示例2（设置ArcSwiper自定义页面切换动画）
 
@@ -881,4 +881,4 @@ PhonePC/2in1TabletTVWearable
 55. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/rC2xkIKDRTG5nyfmUZ03gA/zh-cn_image_0000002552799996.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000130Z&HW-CC-Expire=86400&HW-CC-Sign=05F80600260F5CF839AC5CEE2A9EE233A9270777110EBB8B1BF9ED8F150E739D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/bSY2C3I5R6qUZ28PnlJ4wA/zh-cn_image_0000002589326035.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055145Z&HW-CC-Expire=86400&HW-CC-Sign=9EDB1DA436B88FD6C5D542F127AC580D991B81598548E6139E531AB64FA7DF75)

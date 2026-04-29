@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-partic
 title: 粒子动画 (Particle)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 动画 > 粒子动画 (Particle)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:02:19+08:00
+scraped_at: 2026-04-29T13:52:46+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:ea1de5ce481fc70d9c593b5f649d47a3a54b50709b2e45b94b0a684f6140029c
+content_hash: sha256:2989f1269659288e7bc7d98d68b2c15031c20c70b8bf509747d8e8d7fea16541
 ---
 
 粒子动画是在一定范围内随机生成的大量粒子产生运动而组成的动画。动画元素是一个个粒子，这些粒子可以是圆点、图片。通过对粒子在颜色、透明度、大小、速度、加速度、自旋角度等维度变化做动画，来营造一种氛围感，比如下雪的动效，雪花飘舞就相当于一个个雪花粒子在做动画。
@@ -707,7 +707,7 @@ PhonePC/2in1TabletTVWearable
 * 当outerRadius小于innerRadius时（即外圆半径小于内圆半径时），会将当前较小的值作为新的内圆半径，将较大的值作为新的外圆半径。
 * 当endAngle小于startAngle时（即结束角度小于起始角度时），会将当前较小的值作为新的起始角度，将较大的值作为新的结束角度。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/qfwQY0aYTqqKTY1sEGosBA/zh-cn_image_0000002583440075.png?HW-CC-KV=V1&HW-CC-Date=20260428T000217Z&HW-CC-Expire=86400&HW-CC-Sign=E7985903570B0F0DA3DD19B0161A26BA00995923635D414175A0C60B2EEA4F4A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/X8vGVttXQfmbiosj3UN2-g/zh-cn_image_0000002589246363.png?HW-CC-KV=V1&HW-CC-Date=20260429T055241Z&HW-CC-Expire=86400&HW-CC-Sign=8C78627D7616646E0BC709254B9F655702F3EBD0C9F64BD4D3FF02EEFA9FD348)
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
 
@@ -915,7 +915,7 @@ PhonePC/2in1TabletTVWearable
 
 [Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/Animation/entry/src/main/ets/pages/particle/template1/Index.ets#L15-L127)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/g9UqsKmqS0K4YKHswK6Ipg/zh-cn_image_0000002552960030.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000217Z&HW-CC-Expire=86400&HW-CC-Sign=DB335B7CCF0E30C089793B8A80B1B8997C142AB017ECCB218E99A168163E39AD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/kngne2bHSOuEDpI-DRBJvw/zh-cn_image_0000002558766556.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055241Z&HW-CC-Expire=86400&HW-CC-Sign=0A5A1A69E60EE3286835D43DDF28FB0804E8FE974B6DCDAAD862E7D7AAA56670)
 
 ### 示例2（图片初始化粒子）
 
@@ -1309,7 +1309,7 @@ PhonePC/2in1TabletTVWearable
 385. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/jhWW9iH3QUKOcdaTr0vK3w/zh-cn_image_0000002583480031.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000217Z&HW-CC-Expire=86400&HW-CC-Sign=7BBBCF7111B5CFF26C441B50AAF96E9DAD88BA62233BC869632DAAA47DB800BB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/2nVFe6XmRbefoESgC9G1vg/zh-cn_image_0000002558606896.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055241Z&HW-CC-Expire=86400&HW-CC-Sign=8D1F5469E7C09FC5B1E479941C3264201CB10C52CE2AA4D7983327BAA65A705D)
 
 ### 示例3（粒子扰动场的干扰下运动轨迹发生变化）
 
@@ -1438,7 +1438,7 @@ PhonePC/2in1TabletTVWearable
 
 [Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/Animation/entry/src/main/ets/pages/particle/template3/Index.ets#L15-L134)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/fOXGJRwSTF-9CtFLb9w5hw/zh-cn_image_0000002552800382.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000217Z&HW-CC-Expire=86400&HW-CC-Sign=DA0B46C8EE8CA66D99A5BEACCE0999472065A4D60AF685DE161BF622FBB304BF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/eIVnfR_kTrSADNqfPi-lKQ/zh-cn_image_0000002589326423.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055241Z&HW-CC-Expire=86400&HW-CC-Sign=A7F7B081BF73A61C1ED877CEF940C194473D389C645838662458609A620445E5)
 
 ### 示例4（调整粒子发射器位置）
 
@@ -1519,7 +1519,7 @@ PhonePC/2in1TabletTVWearable
 
 [Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/Animation/entry/src/main/ets/pages/particle/template4/Index.ets#L15-L86)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/uSkJHORpSIGUDRB6Sq0HDw/zh-cn_image_0000002583440077.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000217Z&HW-CC-Expire=86400&HW-CC-Sign=8EE676A1E67073C7F98568E31C91E4F9A5CA2D3E995F78111F0F81F31FB863E5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/WQd5myrfQnyVd7_ME7nICw/zh-cn_image_0000002589246365.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055241Z&HW-CC-Expire=86400&HW-CC-Sign=65805C959FC8BB9BD26AA9EEF2997B748A0E21767574092D9C0AA7AA7A8BAC6D)
 
 ### 示例5（环形发射器创建）
 
@@ -1608,7 +1608,7 @@ PhonePC/2in1TabletTVWearable
 
 [Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/Animation/entry/src/main/ets/pages/particle/template5/Index.ets#L15-L94)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/VSRrYPoeQc-1HhjOOvI6Bw/zh-cn_image_0000002552960032.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000217Z&HW-CC-Expire=86400&HW-CC-Sign=BD8B594BEC8946F11F7525634A4DF445AA1871957A8F8697D66DF0BF618ED3E2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/WqWu0vrNRYOg8h--JHfGLA/zh-cn_image_0000002558766558.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055241Z&HW-CC-Expire=86400&HW-CC-Sign=02E754A412C03D28227A595B00D89A2BE8BF59952BE0E746584EFCD72307EB86)
 
 ### 示例6（环形发射器更新）
 
@@ -1734,7 +1734,7 @@ PhonePC/2in1TabletTVWearable
 
 [Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/Animation/entry/src/main/ets/pages/particle/template6/Index.ets#L15-L131)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/EU_6qyETRNCZp8D7WLhbdA/zh-cn_image_0000002583480033.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000217Z&HW-CC-Expire=86400&HW-CC-Sign=2774A86F1FDAF8CD0C9A60DCA92B2420394F19A950B78AA1489774EBB28718BA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/VWB_zfe6Sm2_IasSzs9BFw/zh-cn_image_0000002558606898.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055241Z&HW-CC-Expire=86400&HW-CC-Sign=3C680D8AAE087970EB228B50CC990E65D21094913F1B13F0686DE200567C1859)
 
 ### 示例7（设置波动场和速度场）
 
@@ -1863,4 +1863,4 @@ PhonePC/2in1TabletTVWearable
 120. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/1oCehukTRCiRzk3tYWNTBw/zh-cn_image_0000002552800384.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000217Z&HW-CC-Expire=86400&HW-CC-Sign=D467E79B3445AD46ADF9D0964A46782BE3FE8D6EAC52A86973C5E924B3E6BFE4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/Hm9PNukyQkC1LvjTi3bM9Q/zh-cn_image_0000002589326425.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055241Z&HW-CC-Expire=86400&HW-CC-Sign=EDA121158C19DDDA368B457E1FCF95A894887596B2434015FFB0286AC9ED9C18)

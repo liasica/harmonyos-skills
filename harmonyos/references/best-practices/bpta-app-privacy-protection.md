@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-app-privac
 title: 应用隐私保护
 breadcrumb: 最佳实践 > 应用安全 > 应用隐私保护
 category: best-practices
-scraped_at: 2026-04-28T08:22:15+08:00
+scraped_at: 2026-04-29T14:13:15+08:00
 doc_updated_at: 2026-03-17
-content_hash: sha256:40c8b0b7fc2791f5b0114da2fd4a5efa3b4b1afd1f11d6a4354b21ad1f2227ef
+content_hash: sha256:693aea8c787e03d377952fc3d3bd5fe649d8fa480f94d5309aaba1911deb2576
 ---
 
 ## 概述
@@ -83,7 +83,7 @@ content_hash: sha256:40c8b0b7fc2791f5b0114da2fd4a5efa3b4b1afd1f11d6a4354b21ad1f2
 
 例如在[“HMOS世界”](https://gitcode.com/harmonyos_samples/hmosworld)中使用了隐私声明的弹窗，具体实现可以参考代码[SafePage.ets](https://gitcode.com/harmonyos_samples/hmosworld/blob/master/HMOSWorld/Application/products/phone/src/main/ets/pages/SafePage.ets)。应用首次启动后，会弹出该弹窗，当应用获得用户授权同意后，应用才能开始正常使用。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/bU7aUxncS1KfkfbX4MST5w/zh-cn_image_0000002194010840.png?HW-CC-KV=V1&HW-CC-Date=20260428T002213Z&HW-CC-Expire=86400&HW-CC-Sign=C284C7FFF6046AB325453927A0CD7D92CFBE3A829DA663E6033EFB2E4721974E "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/bU7aUxncS1KfkfbX4MST5w/zh-cn_image_0000002194010840.png?HW-CC-KV=V1&HW-CC-Date=20260429T061312Z&HW-CC-Expire=86400&HW-CC-Sign=0A9AA5BD8A526DD0C63766A4069813CB081EC13B6508AB9E4C9E72D170C3B084 "点击放大")
 
 ### 减少应用的位置信息访问权限
 
@@ -110,7 +110,7 @@ content_hash: sha256:40c8b0b7fc2791f5b0114da2fd4a5efa3b4b1afd1f11d6a4354b21ad1f2
 
 **图1** 权限申请弹窗
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/WYY9vPYmSJGwLlLr71BCBw/zh-cn_image_0000002193851252.png?HW-CC-KV=V1&HW-CC-Date=20260428T002213Z&HW-CC-Expire=86400&HW-CC-Sign=A76B09DCE79DEB015457417A209557CD226D177FEC643562C860BC0DA1324F14 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/WYY9vPYmSJGwLlLr71BCBw/zh-cn_image_0000002193851252.png?HW-CC-KV=V1&HW-CC-Date=20260429T061312Z&HW-CC-Expire=86400&HW-CC-Sign=FBC69E8C4FD935F2CA7138C048C6B7C1FC16DD9CE61A8685A730B86B9A3ADA7B "点击放大")
 
 接下来介绍模糊位置申请的实现方法：
 
@@ -190,7 +190,7 @@ content_hash: sha256:40c8b0b7fc2791f5b0114da2fd4a5efa3b4b1afd1f11d6a4354b21ad1f2
 
 用户往往不愿意授予应用对其所有照片和视频的访问权限。因此，HarmonyOS在API9版本之后引入了Picker选择器，以满足用户正常的数据访问需求，同时最小化应用的数据泄露风险。通过减少授权范围，降低授权的颗粒度，例如用户在发送图片时，仅允许应用访问用户选择的图片。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/jsWVAtS9TlmW05RQ2YqK5Q/zh-cn_image_0000002193851256.png?HW-CC-KV=V1&HW-CC-Date=20260428T002213Z&HW-CC-Expire=86400&HW-CC-Sign=B920AB311C572F861B0FA312B379BC19E36F431B291DCA5C5B021A1E59758259 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/jsWVAtS9TlmW05RQ2YqK5Q/zh-cn_image_0000002193851256.png?HW-CC-KV=V1&HW-CC-Date=20260429T061312Z&HW-CC-Expire=86400&HW-CC-Sign=29F904862619DDB8AB44837F1A7270BA818C7DA15AA3EE92ADBFC008C027001E "点击放大")
 
 示例代码如下：
 

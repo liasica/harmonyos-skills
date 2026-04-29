@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: NavDestination
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 导航与切换 > NavDestination
 category: harmonyos-references
-scraped_at: 2026-04-28T08:01:38+08:00
+scraped_at: 2026-04-29T13:51:53+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:29c11479448572b30982d8449132006a6f8e6ef0de350619e98263a869f00ecd
+content_hash: sha256:b3ba96214b7e764d2906a451f3b2e346f2122c149f8c1c7fe2797c2ed0971525
 ---
 
 作为子页面的根容器，用于显示[Navigation](ts-basic-components-navigation.md)的内容区。
@@ -1170,7 +1170,7 @@ PhonePC/2in1TabletTVWearable
 137. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/ev_AJ-ELTWm4loX1jh1G8w/zh-cn_image_0000002583479671.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000135Z&HW-CC-Expire=86400&HW-CC-Sign=CAA896908522EDB30E84CA80287D6FA11AE3DEE08AF2CE6984E2C0E2E6FC7F1B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/TAOkrT_uQNWOIBeuyVR22Q/zh-cn_image_0000002558606534.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055150Z&HW-CC-Expire=86400&HW-CC-Sign=3C975B471E4BE56638A9017EB5DE2F9AFF36091EC3AB135259528BB6F3688B2A)
 
 ### 示例2（设置NavDestination自定义转场）
 
@@ -1312,7 +1312,7 @@ PhonePC/2in1TabletTVWearable
 133. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/ShGvaZZXQi6WIY2-me25qw/zh-cn_image_0000002552800022.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000135Z&HW-CC-Expire=86400&HW-CC-Sign=7F4D66DB773051EE8AD5F8043A209328453D7348836C62C19828F42D64B15C29)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/fptm5K21Q4CIKhHPoNO92g/zh-cn_image_0000002589326061.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055150Z&HW-CC-Expire=86400&HW-CC-Sign=4CD9C06916A194ACE7E86713BF603A80377982B6B8C47D541007DF2CB000DE7C)
 
 ### 示例3（设置指定的NavDestination系统转场）
 
@@ -1560,13 +1560,13 @@ PhonePC/2in1TabletTVWearable
 239. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/YCu2cn6sQ1CngF7gAhFD1g/zh-cn_image_0000002583439717.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000135Z&HW-CC-Expire=86400&HW-CC-Sign=A671C0FCAF24BCC781D7B8446EB1D03522541BB09A5CFC7D4DC45D35AEC30553)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/QRu7i_5xQACrdcwJyz0-Vg/zh-cn_image_0000002589246003.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055150Z&HW-CC-Expire=86400&HW-CC-Sign=6906D20C239F2A2E2095224E25672B2EA7450C604B20BA22F7935A4710D18CD7)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/zLOHg_wWRAiG4wd3cq9HFA/zh-cn_image_0000002552959672.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000135Z&HW-CC-Expire=86400&HW-CC-Sign=C5061184D2F173BFE9C5AFA0852C41E6BBF4BEFB411C2F589412183B63258CED)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/xbIZcIIHQ0een67Z26qiSg/zh-cn_image_0000002558766194.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055150Z&HW-CC-Expire=86400&HW-CC-Sign=D3CC599B31CAD05A6CFA1BB7846603137103A97BC44A5979EAE25D792B2D814E)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/8QJ1qn_wQp-oY1R6iFoJqQ/zh-cn_image_0000002583479673.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000135Z&HW-CC-Expire=86400&HW-CC-Sign=ABE70C4AD0D457565BCAE30A6A52E879688125F2F27E61075CAFBCB2EE15D77D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/NArEB4IOTfGnDfJzkvuxCA/zh-cn_image_0000002558606536.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055150Z&HW-CC-Expire=86400&HW-CC-Sign=766AAF2F092C18CB5FCBB9ECBF47200F7672EEB376584A95B59BB7C7B67498F9)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/hirWjm4CQee59_SkJ52mQA/zh-cn_image_0000002552800024.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000135Z&HW-CC-Expire=86400&HW-CC-Sign=30D8544EABCDFDE3ED554AAE430C1EC1BD2136EF5EA60BAAEF546FCAA230184A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/53ZVxSCKStq8RaNjZfwgOw/zh-cn_image_0000002589326063.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055150Z&HW-CC-Expire=86400&HW-CC-Sign=A6CE572924ABF196F0BAD4B7F8EC19F4200EE8B9AEF4A488CFCFC8CE83E04D46)
 
 ### 示例4（NavDestination配置页面方向和对应状态栏、导航条显隐）
 
@@ -1655,7 +1655,7 @@ PhonePC/2in1TabletTVWearable
 80. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/A2flC76BT_K3tMNAKucnQA/zh-cn_image_0000002583439719.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000135Z&HW-CC-Expire=86400&HW-CC-Sign=6E9EE9BB1CD1750735311FA1948FE59E69C89389D97E2AC619CA88662B485DC9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/dLOvns6ZQhaHFvCbuG9_Bg/zh-cn_image_0000002589246005.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055150Z&HW-CC-Expire=86400&HW-CC-Sign=BF859F5809BDF6EC4F2856F51CF9940306EE0F0FF799F4D405C7BC4A367BBABA)
 
 ### 示例5（NavDestination的onActive与onInActive生命周期）
 
@@ -1872,6 +1872,6 @@ PhonePC/2in1TabletTVWearable
 208. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/rkN7p7sVQX-qssBxwah36Q/zh-cn_image_0000002552959674.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000135Z&HW-CC-Expire=86400&HW-CC-Sign=3FC8414940D8572E4E80F2861F79ADF88F81614692C4986E49C8BA581823CD4A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/V2I1GC7jR5iLDWcJOQdfHw/zh-cn_image_0000002558766196.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055150Z&HW-CC-Expire=86400&HW-CC-Sign=9A2254D7E81A2DEBEFE0DF22FCC316DBFD414A0A9882535F5893ABC6B12174A8)
 
 NavDestination其他用法可参考[Navigation示例](ts-basic-components-navigation.md#示例)。

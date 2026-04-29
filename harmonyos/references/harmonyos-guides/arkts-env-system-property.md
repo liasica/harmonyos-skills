@@ -1,10 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-env-system-property
 title: @Env：环境变量
+breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习响应式环境变量 > @Env：环境变量
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:39:24+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:e12d6526a6534bed411a91a05f3740c2a80fd6e84909c4fd8e06dd3f61e68f9d
+scraped_at: 2026-04-29T13:27:35+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:b0d37be43466be78ba9cb079d44156e7dbe2c4a284811d615deaf0562a105ab1
 ---
 
 在多设备开发的场景中，开发者可以使用[@Env](../harmonyos-references/ts-env-system-property.md)装饰器监听系统环境变量的改变，并根据系统环境变量来进行相应的场景判断，以减少不同设备间的适配逻辑和重复开发。
@@ -204,11 +205,11 @@ content_hash: sha256:e12d6526a6534bed411a91a05f3740c2a80fd6e84909c4fd8e06dd3f61e
 
 流程图如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/DJY0_IB7R2m1GrT7cQsdbQ/zh-cn_image_0000002583477675.png?HW-CC-KV=V1&HW-CC-Date=20260427T233922Z&HW-CC-Expire=86400&HW-CC-Sign=707E3624A4BA4093CB59C482B0BCA229F023DE87A37047C3A3769E3585844E48)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/-Euf2zUNQ2W0jIwDFYA83A/zh-cn_image_0000002589243973.png?HW-CC-KV=V1&HW-CC-Date=20260429T052734Z&HW-CC-Expire=86400&HW-CC-Sign=A214291342B81F1B3CE23F9D6756A07A4D6F99A1DFF0A5E6B58DD7BDCEBE7F42)
 
 基于上面流程，下面的示例中以@Env使用SystemProperties.BREAK\_POINT为例，各个组件中的初始化如下图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/WNStIYSWQZind4R91W0d3A/zh-cn_image_0000002552798026.png?HW-CC-KV=V1&HW-CC-Date=20260427T233922Z&HW-CC-Expire=86400&HW-CC-Sign=B40D5E81091269F5F31BE3B97DFB5C53953190FE430869DD7C0FF02FEA763AB1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/WZchCLX-R3WscL2Wsi6pXQ/zh-cn_image_0000002558764166.png?HW-CC-KV=V1&HW-CC-Date=20260429T052734Z&HW-CC-Expire=86400&HW-CC-Sign=F11F5A72E558B672E6DDE942B9C38F5B94DA504DFACE5F0AD14500D81C29CF0F)
 
 1. Child1初始化@Env(SystemProperties.BREAK\_POINT)：
    * 递归查找直到父组件为空：向上查找父组件Index，没有@Env对应的SystemProperties.BREAK\_POINT实例。
@@ -241,49 +242,50 @@ content_hash: sha256:e12d6526a6534bed411a91a05f3740c2a80fd6e84909c4fd8e06dd3f61e
 
 17. @Component
 18. struct Child1 {
-19. @Env(SystemProperties.BREAK_POINT) breakpoint: uiObserver.WindowSizeLayoutBreakpointInfo;
+19. // @Env读取系统环境变量
+20. @Env(SystemProperties.BREAK_POINT) breakpoint: uiObserver.WindowSizeLayoutBreakpointInfo;
 
-21. build() {
-22. Column() {
-23. Text(`Child1 breakpoint width: ${this.breakpoint.widthBreakpoint}`).fontSize(20)
-24. Text(`Child1 breakpoint height: ${this.breakpoint.heightBreakpoint}`).fontSize(20)
-25. GrandChild1()
-26. }
+22. build() {
+23. Column() {
+24. Text(`Child1 breakpoint width: ${this.breakpoint.widthBreakpoint}`).fontSize(20)
+25. Text(`Child1 breakpoint height: ${this.breakpoint.heightBreakpoint}`).fontSize(20)
+26. GrandChild1()
 27. }
 28. }
+29. }
 
-30. @Component
-31. struct Child2 {
-32. build() {
-33. Column() {
-34. GrandChild2()
-35. }
+31. @Component
+32. struct Child2 {
+33. build() {
+34. Column() {
+35. GrandChild2()
 36. }
 37. }
+38. }
 
-39. @Component
-40. struct GrandChild1 {
-41. @Env(SystemProperties.BREAK_POINT) breakpoint: uiObserver.WindowSizeLayoutBreakpointInfo;
+40. @Component
+41. struct GrandChild1 {
+42. @Env(SystemProperties.BREAK_POINT) breakpoint: uiObserver.WindowSizeLayoutBreakpointInfo;
 
-43. build() {
-44. Column() {
-45. Text(`GrandChild1 breakpoint width: ${this.breakpoint.widthBreakpoint}`).fontSize(20)
-46. Text(`GrandChild1 breakpoint height: ${this.breakpoint.heightBreakpoint}`).fontSize(20)
-47. }
+44. build() {
+45. Column() {
+46. Text(`GrandChild1 breakpoint width: ${this.breakpoint.widthBreakpoint}`).fontSize(20)
+47. Text(`GrandChild1 breakpoint height: ${this.breakpoint.heightBreakpoint}`).fontSize(20)
 48. }
 49. }
+50. }
 
-52. @Component
-53. struct GrandChild2 {
-54. @Env(SystemProperties.BREAK_POINT) breakpoint: uiObserver.WindowSizeLayoutBreakpointInfo;
+53. @Component
+54. struct GrandChild2 {
+55. @Env(SystemProperties.BREAK_POINT) breakpoint: uiObserver.WindowSizeLayoutBreakpointInfo;
 
-56. build() {
-57. Column() {
-58. Text(`GrandChild2 breakpoint width: ${this.breakpoint.widthBreakpoint}`).fontSize(20)
-59. Text(`GrandChild2 breakpoint height: ${this.breakpoint.heightBreakpoint}`).fontSize(20)
-60. }
+57. build() {
+58. Column() {
+59. Text(`GrandChild2 breakpoint width: ${this.breakpoint.widthBreakpoint}`).fontSize(20)
+60. Text(`GrandChild2 breakpoint height: ${this.breakpoint.heightBreakpoint}`).fontSize(20)
 61. }
 62. }
+63. }
 ```
 
 ## 使用场景
@@ -760,7 +762,7 @@ content_hash: sha256:e12d6526a6534bed411a91a05f3740c2a80fd6e84909c4fd8e06dd3f61e
 
 运行效果图如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/iI7nmPMkRpKFAZ_R7ebPZA/zh-cn_image_0000002583437721.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233922Z&HW-CC-Expire=86400&HW-CC-Sign=10580B8DA9062AAB46538E07C3A1EF878A9421D42B455783091D6BFF0655BF0A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/pGGmmeArQhmVUdFubihUkA/zh-cn_image_0000002558604510.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052734Z&HW-CC-Expire=86400&HW-CC-Sign=89FD63D26540F427ED9FB164C7DC78723D5D2F2DD295A10091C0512E2359A326)
 
 可以使用lambda闭包函数将ComponentUnderBuilderNode中的@Env向下传递。通过这种方式ComponentUnderBuilderNode中的@Env可以收集到子组件Comp内组件的依赖，在切换窗口实例的时候触发Comp内组件的刷新。
 
@@ -973,4 +975,4 @@ content_hash: sha256:e12d6526a6534bed411a91a05f3740c2a80fd6e84909c4fd8e06dd3f61e
 
 运行效果图如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/tnK-Y-W-SuajjIAaaoyGVQ/zh-cn_image_0000002552957676.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233922Z&HW-CC-Expire=86400&HW-CC-Sign=F447D114521C99DCAA3F85A882089C18895B11F2BEBE36A6F5FC4F45643029A9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/w-ZNVJljSEm408-7jLYx4w/zh-cn_image_0000002589324035.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052734Z&HW-CC-Expire=86400&HW-CC-Sign=466CFC47497BCD18C657B55619BE7C847BD7382676F8AD453DAF8DE75400A64B)

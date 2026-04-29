@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: Counter
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 信息展示 > Counter
 category: harmonyos-references
-scraped_at: 2026-04-28T08:02:02+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:fdf3b57a091936ece1ebbbcb3013a99d1ce495dd60fbb8511d03b111f1db45ed
+scraped_at: 2026-04-29T13:52:20+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:3617b2208e14216d4939457ad76415158dacad93a7383c15bb46cd8be97afc0f
 ---
 
 计数器组件，提供相应的增加或者减少的计数操作。
@@ -44,7 +44,7 @@ PhonePC/2in1TabletTVWearable
 
 enableInc(value: boolean)
 
-设置增加按钮的禁用或使能。
+设置“增加”按钮的禁用或使能。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -54,7 +54,7 @@ enableInc(value: boolean)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | boolean | 是 | 增加按钮禁用或使能。  默认值：true，true表示可以增加按钮，false表示禁止增加按钮。 |
+| value | boolean | 是 | “增加”按钮禁用或使能。  默认值：true，true表示使能“增加”按钮，false表示禁用“增加”按钮。 |
 
 ### enableDec10+
 
@@ -62,7 +62,7 @@ PhonePC/2in1TabletTVWearable
 
 enableDec(value: boolean)
 
-设置减少按钮的禁用或使能。
+设置“减少”按钮的禁用或使能。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -72,7 +72,7 @@ enableDec(value: boolean)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | boolean | 是 | 减少按钮禁用或使能。  默认值：true，true表示可以减少按钮，false表示禁止减少按钮。 |
+| value | boolean | 是 | “减少”按钮禁用或使能。  默认值：true，true表示使能“减少”按钮，false表示禁用“减少”按钮。 |
 
 ## 事件
 
@@ -165,4 +165,4 @@ PhonePC/2in1TabletTVWearable
 36. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/X5m1O4ULQ9SVfRISCF97EQ/zh-cn_image_0000002583479903.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000200Z&HW-CC-Expire=86400&HW-CC-Sign=9EF504D34ECAE181AA9B5C7F0F9AC96E3E6493EA9041B0C401437F9750CAB273)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/goDz_BeAQkO-o7B5FHAffA/zh-cn_image_0000002558606768.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055217Z&HW-CC-Expire=86400&HW-CC-Sign=E1196F3AC1CB074881B6D5B9CBBDED610E71B4CC0823001955FDD3C500BE5F1B)

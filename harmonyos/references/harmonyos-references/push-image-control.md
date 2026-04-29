@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/push-imag
 title: 图片风控
 breadcrumb: API参考 > 应用服务 > Push Kit（推送服务） > REST API > 图片风控
 category: harmonyos-references
-scraped_at: 2026-04-28T08:18:31+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:9613e7f07a37663a52c1e88f76f9428fd3d94e803c9a55d0f1b7dc704a82b617
+scraped_at: 2026-04-29T14:09:09+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:3bc8f8888461f7b5060393dc0f4a252bc21223434a9822a5a67a442d9ac9b16f
 ---
 
 说明
 
-为了更安全的网络访问，华为推送服务于2022年11月30日关闭Push相关域名的TLS1.0、TLS1.1协议及规定之外的加密套件，当前应用使用TLS1.2以下协议或使用规定外的加密套件将无法正常推送消息。
+为了更安全的网络访问，华为Push Kit于2022年11月30日关闭Push相关域名的TLS1.0、TLS1.1协议及规定之外的加密套件，当前应用使用TLS1.2以下协议或使用规定外的加密套件将无法正常推送消息。
 
 若您的应用访问Push相关域名使用协议是TLS1.0或TLS1.1，可能无法正常发送消息，请您务必升级到TLS1.2及以上版本。
 
@@ -49,7 +49,7 @@ content_hash: sha256:9613e7f07a37663a52c1e88f76f9428fd3d94e803c9a55d0f1b7dc704a8
 | 参数 | 取值描述 | 样例 |
 | --- | --- | --- |
 | Authorization | 鉴权方式：  **JWT方式**：  详情参见[基于服务账号生成鉴权令牌](../harmonyos-guides/push-jwt-token.md)。  **说明：**  建议JWT令牌过期时间设置为3600秒，有效期内可以复用。  Bearer后面拼接空格，再拼接获取的鉴权信息。 | Bearer eyJraWQiOiIx---xxx.eyJhdWQiOiJodHR---xxx.QRodgXa2xeXSt4Gp---xxx |
-| push-type | 消息类型，取值如下：  0：通知消息发送大图标消息场景  1：服务卡片刷新图片场景  2：通知扩展发送大图标消息场景 | 1 |
+| push-type | 消息类型，取值如下：  0：通知消息发送大图标消息场景  1：服务卡片刷新图片场景  2：语音播报发送大图标消息场景 | 1 |
 
 **Request Body**
 

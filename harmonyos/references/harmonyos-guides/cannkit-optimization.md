@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-optim
 title: 异构
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 端侧部署 > 异构
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:51:21+08:00
+scraped_at: 2026-04-29T13:40:59+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:5ea1eae393a7a26935c0773a5aa47f9f76daf6b4e01c6a5a72ef6d2b28b2bdf4
+content_hash: sha256:4b388ccec9bc7453ad724c201af0c6f990f74257c8c6ccb19e08c9148a7cb379
 ---
 
 ## 概述
@@ -14,7 +14,7 @@ content_hash: sha256:5ea1eae393a7a26935c0773a5aa47f9f76daf6b4e01c6a5a72ef6d2b28b
 
 异构的原理如下图所示，指定OP1、OP2、OP5~OPn在CPU上进行推理，OP3、OP4在NPU上进行推理。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/O_sbbJVvSgS9iLym7hyHOQ/zh-cn_image_0000002583479221.png?HW-CC-KV=V1&HW-CC-Date=20260427T235120Z&HW-CC-Expire=86400&HW-CC-Sign=D9DD9E7B0DD6C97E328953A52DB704FE979CAC552051B677909827E41491D1D1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/OaHlUI2DQnGG72g-Xf8fmQ/zh-cn_image_0000002558765722.png?HW-CC-KV=V1&HW-CC-Date=20260429T054058Z&HW-CC-Expire=86400&HW-CC-Sign=316831842D717599E39066ED545FFC067EFBDC43E015CACE5F567BEA08D166D9)
 
 实现异构可以通过在线调优方式，以下为在线调优参数设置接口，接口使用见[在线调优开发步骤](cannkit-optimization.md#在线调优开发步骤)。如要使用更丰富的设置和查询接口，请参见[API参考](../harmonyos-references/cannkit.md)。
 

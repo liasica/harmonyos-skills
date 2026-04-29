@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: GridContainer
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 已停止维护的组件与接口 > GridContainer
 category: harmonyos-references
-scraped_at: 2026-04-28T08:02:48+08:00
+scraped_at: 2026-04-29T13:53:12+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:5778e71ef950b48dea849570f515b78f78a78458f9d8a1c466aaf5a4deeb0def
+content_hash: sha256:33764a3e9ba3bc8127f0c2a2cebbd413fdc69b67d614d4a69583800aace1b807
 ---
 
 纵向排布栅格布局容器，仅在栅格布局场景中使用。
@@ -149,4 +149,4 @@ PhonePC/2in1TabletTVWearable
 67. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/2-teXGcLSSi9j-y49Pb2fg/zh-cn_image_0000002552960164.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000247Z&HW-CC-Expire=86400&HW-CC-Sign=0CE19BE4DC0A0C15A8B5381BED0FCB1FD1E0656F07F84F3C32292D3F7BF656FB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/Xx0aQY98Q82E3AFFOnfH6Q/zh-cn_image_0000002558607030.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055310Z&HW-CC-Expire=86400&HW-CC-Sign=07E8B367183418CC6B4C016E24FE37AF86371F50916F453D41D0B1F24EA9C00F)

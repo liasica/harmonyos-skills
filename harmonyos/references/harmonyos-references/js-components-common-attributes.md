@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: 通用属性
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 组件通用信息 > 通用属性
 category: harmonyos-references
-scraped_at: 2026-04-28T08:02:52+08:00
+scraped_at: 2026-04-29T13:53:14+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:ff0007f37a9a2f2a8cbc7bd1a5a3b3eb8131dd78f4ef01d12a9f9b94d50570c5
+content_hash: sha256:ed448d91732419e9c9ac48c33e7346d01887f346c0e3004589fa5d5eb92d6ead
 ---
 
 说明
@@ -118,7 +118,7 @@ PhonePC/2in1TabletTVWearable
 22. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/HiNTOIy2TkOAGQ5gMwnIbA/zh-cn_image_0000002552800520.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000251Z&HW-CC-Expire=86400&HW-CC-Sign=94F223F70EB7C979E3D907B8B85245A15F3A9A1948EA856C305A0464EDA5E8AF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/zpAL-JToRmGrXG5JH0wkgQ/zh-cn_image_0000002589246503.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055313Z&HW-CC-Expire=86400&HW-CC-Sign=C0D0B27DB2E744E24966CA795BE44887E4899FB57B257CFE574119909A6F8993)
 
 ### 示例2
 
@@ -158,4 +158,4 @@ PhonePC/2in1TabletTVWearable
 19. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/QaOxYMoZQ_u-5i8L0lp9qQ/zh-cn_image_0000002583440215.png?HW-CC-KV=V1&HW-CC-Date=20260428T000251Z&HW-CC-Expire=86400&HW-CC-Sign=A20BE4ACF7CE558F25AF09B25DDDBF170E3ACEAA7B54512CC81D26BB1C6B819B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/_MIjeZ46T0maOe58WUndAw/zh-cn_image_0000002558766696.png?HW-CC-KV=V1&HW-CC-Date=20260429T055313Z&HW-CC-Expire=86400&HW-CC-Sign=B707CE1A818CE097CC616BC49AA7774A675792BEBF788D50D98F084B09ED98FE)

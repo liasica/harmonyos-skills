@@ -1,11 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-and-building-106
 title: 编译过程内存过高
-breadcrumb: FAQ > DevEco Studio > 编译构建 > 编译过程内存过高
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:29:29+08:00
+scraped_at: 2026-04-29T14:20:42+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:8d987ffe350b808452d2c14b7eb94f653d5e9689e5a38a52a8bd4e2722d3df88
+content_hash: sha256:ecc853a1ba89ca361b31debc5d7ec9ffda5acdddf1d92b0bbd9f133691b1e709
 ---
 
 **问题现象**
@@ -44,7 +43,7 @@ content_hash: sha256:8d987ffe350b808452d2c14b7eb94f653d5e9689e5a38a52a8bd4e2722d
 * 如果上述修改未能达到预期效果，可以尝试使用非并行模式执行编译。
   + 在菜单栏中依次点击“File > Settings > Build, Execution, Deployment > Build Tools > Hvigor”，取消勾选“Execute tasks in parallel mode”。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/urfqROBTRvW9dk58fCShLA/zh-cn_image_0000002229758673.png?HW-CC-KV=V1&HW-CC-Date=20260428T002928Z&HW-CC-Expire=86400&HW-CC-Sign=34FF7562C90989FA96F6A66BE559DCF8D4D187490DB250895363E7CF7758A5D4)
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/urfqROBTRvW9dk58fCShLA/zh-cn_image_0000002229758673.png?HW-CC-KV=V1&HW-CC-Date=20260429T062041Z&HW-CC-Expire=86400&HW-CC-Sign=8763CD4E28B0E95FA3DD61A6BAE0FD7229149E9F7FEAF468496DB6C133ACD061)
   + 在命令行最后添加--no-parallel，示例：
 
     ```

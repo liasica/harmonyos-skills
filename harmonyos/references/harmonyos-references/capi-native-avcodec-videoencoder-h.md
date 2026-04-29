@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: native_avcodec_videoencoder.h
 breadcrumb: API参考 > 媒体 > AVCodec Kit（音视频编解码服务） > C API > 头文件 > native_avcodec_videoencoder.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:12:05+08:00
+scraped_at: 2026-04-29T14:02:44+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:b4ebf739204a5a88e32667c3c2f38f77ad066f02312c9c990f31d82c28213744
+content_hash: sha256:2a018cb104f5a3be985f994cbb99d46be49e7825e8a90dbffd3bbccfa09bf2dc
 ---
 
 ## 概述
@@ -28,9 +28,9 @@ PhonePC/2in1TabletTVWearable
 
 接口在每个版本，对每种模式的支持情况说明，如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/i00mMIKQSKWM5_d3WgdgMQ/zh-cn_image_0000002583440899.png?HW-CC-KV=V1&HW-CC-Date=20260428T001204Z&HW-CC-Expire=86400&HW-CC-Sign=6F07A42976A6C0DD9EB65B28C8E8EA1AB4B4C60444B540E30C0DBA68018038C6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/47Zb1WL5Q4-YBXTyG2I2jg/zh-cn_image_0000002558767380.png?HW-CC-KV=V1&HW-CC-Date=20260429T060243Z&HW-CC-Expire=86400&HW-CC-Sign=2F179A480BA68D789EEE50CFE91C414A938B566D9C95B342275EC4AF7D5960A4)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/ObXNaxFXQjiEqrMRPKNZHw/zh-cn_image_0000002583480855.png?HW-CC-KV=V1&HW-CC-Date=20260428T001204Z&HW-CC-Expire=86400&HW-CC-Sign=804040E543788EEE49D1C04F4DD9B90FC8BD6C54E5F400ED061AE1FD9F137834)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/2vLyqaXGQPeA61xC4zkhGg/zh-cn_image_0000002589327249.png?HW-CC-KV=V1&HW-CC-Date=20260429T060243Z&HW-CC-Expire=86400&HW-CC-Sign=74095C442A9413E17CFFC3DEF62144B0094218C05A04D4057A46E25E9185F746)
 
 ## 汇总
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-transi
 title: 组件内转场 (transition)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 动画 > 组件内转场 (transition)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:02:18+08:00
+scraped_at: 2026-04-29T13:52:43+08:00
 doc_updated_at: 2026-03-23
-content_hash: sha256:336dc9526e9005414a5093ea6f92cf78299320da4edca9adef22eaf993f7090b
+content_hash: sha256:befbdb301e14511359852dd3b6696a8b42372545f03f098e939b948540e872c7
 ---
 
 组件内转场主要通过transition属性配置转场参数，在组件插入和删除时显示过渡动效，主要用于容器组件中的子组件插入和删除时，提升用户体验。
@@ -451,7 +451,7 @@ PhonePC/2in1TabletTVWearable
 
 示意图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/W-CIxKKLSGKMK-75onrMaw/zh-cn_image_0000002583480027.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000217Z&HW-CC-Expire=86400&HW-CC-Sign=65897DCC3C0330D24278F966F75E4319EA443CB3C5A87F4FCF45C65192B8AED8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/3FId8i6IRWqKxgOlZKnMIw/zh-cn_image_0000002558606892.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055241Z&HW-CC-Expire=86400&HW-CC-Sign=6A3579E524C13B1EC11E2356CC118F33528FD3C2CBA7CD8F9ACC69145F75A656)
 
 ### 示例2（使用不同接口实现图片出现消失）
 
@@ -514,7 +514,7 @@ PhonePC/2in1TabletTVWearable
 
 示意图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/HlkteocbSmKvbPsXf67-WQ/zh-cn_image_0000002552800378.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000217Z&HW-CC-Expire=86400&HW-CC-Sign=A50BD797514D6A648DDAA27689E5672F88B5A61DC1B3D0ED12E9973455E17D61)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/H5aKE1tuR3-1Fv2LFmNsbA/zh-cn_image_0000002589326419.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055241Z&HW-CC-Expire=86400&HW-CC-Sign=E407EF541EAB020379E771D9765803745815E4FC40F09DE360331967158DE600)
 
 ### 示例3（设置父子组件为transition）
 
@@ -574,4 +574,4 @@ PhonePC/2in1TabletTVWearable
 
 示意图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/F72D-_bFQKO50k0Ai7zG8w/zh-cn_image_0000002583440073.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000217Z&HW-CC-Expire=86400&HW-CC-Sign=7ADEDB1FAD913DC12F3A150E201FA8E9544F477FA52E18ECF185ABAD9B4DBC77)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/_KKyeA5aRJqJFhhAmm3Syg/zh-cn_image_0000002589246361.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055241Z&HW-CC-Expire=86400&HW-CC-Sign=57EF33441E710F49FD1D74D108BC4552C2B7AE7B4CB73DBA61299203F88B71FC)

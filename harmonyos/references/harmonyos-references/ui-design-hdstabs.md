@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design
 title: HdsTabs
 breadcrumb: API参考 > 应用框架 > UI Design Kit（UI设计套件） > ArkTS组件 > HdsTabs
 category: harmonyos-references
-scraped_at: 2026-04-28T08:06:43+08:00
+scraped_at: 2026-04-29T13:57:13+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:6fea644cf3118861f1813b94a50bba8522444df68d88cd34429ad29a9b791db5
+content_hash: sha256:732c6db5575c70d547fc89ae553af82ffa1d422a7fdb68533362e92dde4fbc66
 ---
 
 本模块提供Tabs容器组件的分割线样式，模糊样式和页签侧边栏半屏居中对齐样式的效果。
@@ -1317,7 +1317,7 @@ PhonePC/2in1TabletTV
 
 效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/YOf7Qve3TkSsx6tB1g-8XA/zh-cn_image_0000002552800880.png?HW-CC-KV=V1&HW-CC-Date=20260428T000641Z&HW-CC-Expire=86400&HW-CC-Sign=10683D3C92C30FFA0B9E03F6095BB46B86718F14CC6416027692529929FF4FEB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/N8OI6sDxTUuMYNx3gzbjeQ/zh-cn_image_0000002589246863.png?HW-CC-KV=V1&HW-CC-Date=20260429T055711Z&HW-CC-Expire=86400&HW-CC-Sign=F23AE26120B02AD2242101FA99098878E6502E6A0089A83499F12E365BC1112B)
 
 ### 支持出血效果
 
@@ -1366,7 +1366,7 @@ PhonePC/2in1TabletTV
 
 效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/Cvgcxg2aQW2ZcFp-nnqsmA/zh-cn_image_0000002583440575.jpg?HW-CC-KV=V1&HW-CC-Date=20260428T000641Z&HW-CC-Expire=86400&HW-CC-Sign=2435D01D84CE5AE14EBAA0165D2FE0DB016DC40B3F44EF6B523DCFBFE54FBC1D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/obsJLnDeR5mGuz4x2aTUjw/zh-cn_image_0000002558767056.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T055711Z&HW-CC-Expire=86400&HW-CC-Sign=6A56F5F1C0E11C854C7239758516BEDBC2EDB7069D5240D8CF1D1E1041FAF2A8)
 
 ### 页签半屏居中对齐布局
 
@@ -1412,4 +1412,4 @@ PhonePC/2in1TabletTV
 
 效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/WuV9CriBTI2-PtSwC90KcA/zh-cn_image_0000002552960530.jpg?HW-CC-KV=V1&HW-CC-Date=20260428T000641Z&HW-CC-Expire=86400&HW-CC-Sign=52A9ADBDEB438644295357B6195ABDC8F9764F49730FC181CD366B1F5181E21C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/bpuQYQRnQm6O-58rXB3AiQ/zh-cn_image_0000002558607396.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T055711Z&HW-CC-Expire=86400&HW-CC-Sign=89CD58286362338F42A1D4CB4D121259CC2C677A3EB33B1CB6345A165CA1C4B2)

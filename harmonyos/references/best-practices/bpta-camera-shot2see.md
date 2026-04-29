@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-camera-sho
 title: 相机分段式拍照性能优化
 breadcrumb: 最佳实践 > 媒体 > 相机 > 相机分段式拍照性能优化
 category: best-practices
-scraped_at: 2026-04-28T08:20:23+08:00
+scraped_at: 2026-04-29T14:11:07+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:18f1684a63dcb5a2aaa608f82b2d17a7c414ce80f86dab08b374df0e11ffe660
+content_hash: sha256:a7704747aa91b5cc1fbb9214931f29093254af27cbabe2715cf24e7614c48624
 ---
 
 ## 概述
@@ -19,17 +19,17 @@ content_hash: sha256:18f1684a63dcb5a2aaa608f82b2d17a7c414ce80f86dab08b374df0e11f
 分段式与单段式拍照的全质量图输出质量一致，但输出低质量图场景下单段式更优。如果开发者不需要获取全质量图并且也不考虑Shot2See的完成时延，建议使用单段式拍照，否则的话，建议使用分段式拍照。本篇文章主要以相机Shot2See场景为例，来展示分段式拍照Shot2See的完成时延要低于单段式拍照。
 
 **图1** **分段式拍照流程示意图**  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/PZ6IHpFZRxCL9upFNnLM4A/zh-cn_image_0000002229450197.png?HW-CC-KV=V1&HW-CC-Date=20260428T002022Z&HW-CC-Expire=86400&HW-CC-Sign=D8F26CA81F92E8A9048D7392E9866E5EA37E02EDB1F8D0AE1DF049DCAC9068B5 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/PZ6IHpFZRxCL9upFNnLM4A/zh-cn_image_0000002229450197.png?HW-CC-KV=V1&HW-CC-Date=20260429T061105Z&HW-CC-Expire=86400&HW-CC-Sign=A29C9185485E660404626B06ADF265AEE8EFA7C0E97DE5702B83DAA455566160 "点击放大")
 
 ## 效果展示
 
 **图2** **单段式拍照效果图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/UQbu2nBPTH2d3-D3KAKr4w/zh-cn_image_0000002193850332.gif?HW-CC-KV=V1&HW-CC-Date=20260428T002022Z&HW-CC-Expire=86400&HW-CC-Sign=F2C11D179A2BE405F829C678193B6573A21122EB1AE1E11A6A62CBB82BD203A9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/UQbu2nBPTH2d3-D3KAKr4w/zh-cn_image_0000002193850332.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061105Z&HW-CC-Expire=86400&HW-CC-Sign=3E5A50DD49DDE3EBA19371C352E8223F551E516992359EF081B05CD3B3914235)
 
 **图3** **分段式拍照效果图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/4DuuzZ7wRZ2VWDRi0G3NTA/zh-cn_image_0000002229450193.gif?HW-CC-KV=V1&HW-CC-Date=20260428T002022Z&HW-CC-Expire=86400&HW-CC-Sign=2A0D3C75F746A452E29DD668FE33D25CEEE264F4A870292D128112FE1A353D33)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/4DuuzZ7wRZ2VWDRi0G3NTA/zh-cn_image_0000002229450193.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061105Z&HW-CC-Expire=86400&HW-CC-Sign=47EED4300E7A6FBA42D3A0D85A8F01434319DE8B8181BCBC02849B5FA4C77D05)
 
 从上述效果图中可以看出，分段式拍照从用户点击拍照控件到在缩略图显示区域显示缩略图的耗时比单段式拍照要短。
 
@@ -41,10 +41,10 @@ content_hash: sha256:18f1684a63dcb5a2aaa608f82b2d17a7c414ce80f86dab08b374df0e11f
 
 **图4** **单段式拍照性能数据图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/S2lOs8IrTTK6GHG9jrXCWw/zh-cn_image_0000002229450189.png?HW-CC-KV=V1&HW-CC-Date=20260428T002022Z&HW-CC-Expire=86400&HW-CC-Sign=A8C12CFCCBAE8C474A489E19D343C7DFF4EFCFF478EF0792E168DBFD7E17CD77 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/S2lOs8IrTTK6GHG9jrXCWw/zh-cn_image_0000002229450189.png?HW-CC-KV=V1&HW-CC-Date=20260429T061105Z&HW-CC-Expire=86400&HW-CC-Sign=DAFA635DC8F49E44DC45B453165128380ECF378DCFFE770BC67C6F2F68C27D51 "点击放大")
 
 **图5** **分段式拍照耗时数据****图**  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/K_DB-llHQeuQbL2e--Tz2w/zh-cn_image_0000002229450205.png?HW-CC-KV=V1&HW-CC-Date=20260428T002022Z&HW-CC-Expire=86400&HW-CC-Sign=E0D34DE454EE98CAA6EC6BD4977A9BBDC2BBABDDB00A0DC4914DA3BE6A356B33 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/K_DB-llHQeuQbL2e--Tz2w/zh-cn_image_0000002229450205.png?HW-CC-KV=V1&HW-CC-Date=20260429T061105Z&HW-CC-Expire=86400&HW-CC-Sign=D2267D16F20F952BB15F1D215E2C510484ED94A2B1B4906626EBFB0245F93253 "点击放大")
 
 **性能对比分析表**
 

@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-app-debugg
 title: HarmonyOS应用自动化签名时提示“Provision number exceeds limit”
 breadcrumb: FAQ > DevEco Studio > 应用调试 > HarmonyOS应用自动化签名时提示“Provision number exceeds limit”
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:30:06+08:00
+scraped_at: 2026-04-29T14:21:22+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:08b2beb018dcddf548ff388cfdd98fd6bf6c0183501acc0dfa2ce0169dabf749
+content_hash: sha256:94c15500a97df97a5ae7520fe7fd2c9860c802c7d8ac44d98b7fee858eb70e8e
 ---
 
 **问题现象**
 
 使用自动化签名功能对HarmonyOS进行签名时，提示“Provision number exceeds limit”信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/8ZLcW0aURtmjsitbsX8IEQ/zh-cn_image_0000002194318424.png?HW-CC-KV=V1&HW-CC-Date=20260428T003004Z&HW-CC-Expire=86400&HW-CC-Sign=0471861D0EC4D5B5EF3938AD79C27AD29FFABE7EC5F9D2415416FEE9A9D82D97)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/8ZLcW0aURtmjsitbsX8IEQ/zh-cn_image_0000002194318424.png?HW-CC-KV=V1&HW-CC-Date=20260429T062121Z&HW-CC-Expire=86400&HW-CC-Sign=6D8DC6AB7606D8E233BB5480CA50E60E0FCE5D4F49F947D858878D47A34DDAD8)
 
 **解决措施**
 

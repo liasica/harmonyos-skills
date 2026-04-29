@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: animate
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > svg组件 > animate
 category: harmonyos-references
-scraped_at: 2026-04-28T08:03:18+08:00
+scraped_at: 2026-04-29T13:53:38+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:0bb3ccdc56c70c65b413dbbde45369839db3011063478ad2e5667f58e26991c2
+content_hash: sha256:04a5afd116ea3917d9a6991e99d0f7e4f664e0f8d9b1b32724e3f4f249bdcde6
 ---
 
 说明
@@ -63,7 +63,7 @@ PhonePC/2in1TabletTVWearable
 9. </div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/FxwoMTUWToKtS5HNIOZtwg/zh-cn_image_0000002583480253.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000316Z&HW-CC-Expire=86400&HW-CC-Sign=67A6A05ADBFE574A23F7AE440C44B00C12666958A975EAAA12A07D79BD11D679)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/czgHB2mdTdO9RYeWdi_hwQ/zh-cn_image_0000002589326645.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055337Z&HW-CC-Expire=86400&HW-CC-Sign=30677B47B4AFA85C2961873CADE22D0022E2E59BA264F9F1BE725B44FA001FF8)
 
 ```
 1. <!-- xxx.hml -->
@@ -77,7 +77,7 @@ PhonePC/2in1TabletTVWearable
 9. </div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/pPuRMWfISpmRtLdP0B5oaA/zh-cn_image_0000002552800604.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000316Z&HW-CC-Expire=86400&HW-CC-Sign=ACAD4CE55F0F1ABDE067EB49985A41FEA7A5B0186085D693C42C940C583A27E7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/NDFMF1uVTKGTNe8yL9VL8g/zh-cn_image_0000002589246587.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055337Z&HW-CC-Expire=86400&HW-CC-Sign=BA000D47CCB2718CB1339600C042EF26F8F8F5091611FD6F2C339F345ECF7071)
 
 ```
 1. <!-- xxx.hml -->
@@ -90,7 +90,7 @@ PhonePC/2in1TabletTVWearable
 8. </div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/p-_WWSMnTBC6vjMau7gHUQ/zh-cn_image_0000002583440299.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000316Z&HW-CC-Expire=86400&HW-CC-Sign=E18A7F42F5EC51A75756238CC423D9BBF86661D421FED7D822C18FA4563CC0EB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/TU_JOKnpSb2HnBum1xmlcQ/zh-cn_image_0000002558766780.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055337Z&HW-CC-Expire=86400&HW-CC-Sign=E6CA1DCC9E40D8D459794B9646CA5C18A6A1ECA4B9F51EA804C6788858840ABD)
 
 ```
 1. <!-- xxx.hml -->
@@ -122,4 +122,4 @@ PhonePC/2in1TabletTVWearable
 27. </div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/1DVVncDCRhOi37UJMxrAsg/zh-cn_image_0000002552960254.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000316Z&HW-CC-Expire=86400&HW-CC-Sign=0DFAAC936F3495F90F286BC42AC4E74D82CFC083DB665A08104ABCB9283A6CA6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/7gNFOZnoSoSFXv36bED2Gw/zh-cn_image_0000002558607120.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055337Z&HW-CC-Expire=86400&HW-CC-Sign=F331ACC74E0068AEF5AC93F321D3A5428625E7CC6BBAF2AAD6AEF74E58E3D130)

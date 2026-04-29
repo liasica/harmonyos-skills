@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-matext-gui
 title: 三折叠应用开发
 breadcrumb: 最佳实践 > 多端设备体验提升 > 手机 > 三折叠应用开发
 category: best-practices
-scraped_at: 2026-04-28T08:21:49+08:00
+scraped_at: 2026-04-29T14:13:07+08:00
 doc_updated_at: 2026-04-07
-content_hash: sha256:ef655736bccab676a3227ca5cf1450e2dd9e44dbb948f9cd84362dc6147d92f2
+content_hash: sha256:52f7a9867cd210780b3df3cbe4e56cb56379f3d4a48a120c82d71c021356ee45
 ---
 
 ## 概述
@@ -214,7 +214,7 @@ content_hash: sha256:ef655736bccab676a3227ca5cf1450e2dd9e44dbb948f9cd84362dc6147
 | 1:2 | 367 \* 776 | 横向断点sm，纵向断点lg |
 | 2:1 | 733 \* 776 | 横向断点md，纵向断点md |
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/xelAxuHvTrqqK4h3K5P7vQ/zh-cn_image_0000002458026077.png?HW-CC-KV=V1&HW-CC-Date=20260428T002146Z&HW-CC-Expire=86400&HW-CC-Sign=B8994EB3C1CBCB969D15A22B4A7310061F99F1E176B493BDE75F08871D156D0C "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/xelAxuHvTrqqK4h3K5P7vQ/zh-cn_image_0000002458026077.png?HW-CC-KV=V1&HW-CC-Date=20260429T061259Z&HW-CC-Expire=86400&HW-CC-Sign=72078E57B2167807CF5C1A3A1FA217B530090BF33834EAA9C7AD1401459A85E7 "点击放大")
 
 **自由悬浮窗****口**
 
@@ -236,7 +236,7 @@ content_hash: sha256:ef655736bccab676a3227ca5cf1450e2dd9e44dbb948f9cd84362dc6147
 | 三屏态（G态） | 纵向悬浮窗 | 351 \* 658 | 横向断点sm，纵向断点md |
 | 横向悬浮窗 | 776 \* 437 | 横向断点md，纵向断点sm |
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/R7153VN8Rfu5WFkmrGoMjg/zh-cn_image_0000002424587346.png?HW-CC-KV=V1&HW-CC-Date=20260428T002146Z&HW-CC-Expire=86400&HW-CC-Sign=C97123E55C60DB02CAE223B57B2CAAE70CDD3826FA0FEA9C62A06E5640E25AEB "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/R7153VN8Rfu5WFkmrGoMjg/zh-cn_image_0000002424587346.png?HW-CC-KV=V1&HW-CC-Date=20260429T061259Z&HW-CC-Expire=86400&HW-CC-Sign=620EDFE9CFF77AA5F5ED78EFE1FA8549E98C0F2733446B8DF077FD8FF34A714F "点击放大")
 
 * 自由窗口
 
@@ -244,7 +244,7 @@ Mate XTs在三屏态时，横屏状态下可以开启[自由多窗](../design-gu
 
 Mate XTs在开启自由多窗模式后，会强制屏幕锁定，不支持屏幕旋转，要想切换为竖屏，需要先退出自由多窗模式。更多适配信息请参考[自由窗口模式适配](bpta-multi-device-window-mode.md#section151195853214)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/oFm6IKxfQ36N2IVw42ygbg/zh-cn_image_0000002462550117.png?HW-CC-KV=V1&HW-CC-Date=20260428T002146Z&HW-CC-Expire=86400&HW-CC-Sign=10E23DF380D038605E191EF5E8664084C88A3D3E0EBA5369663674C1E6E9A91C "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/oFm6IKxfQ36N2IVw42ygbg/zh-cn_image_0000002462550117.png?HW-CC-KV=V1&HW-CC-Date=20260429T061259Z&HW-CC-Expire=86400&HW-CC-Sign=1C962B9DDD402947F823C29806B049D429CF4D0D05AD1CD4A16BBC15B5B30F08 "点击放大")
 
 ### 适配设备显示方向
 
@@ -283,7 +283,7 @@ Mate XTs在开启自由多窗模式后，会强制屏幕锁定，不支持屏幕
 
 建议优化三折叠设备在双屏及三屏形态下的横竖屏旋转体验：界面布局应根据设备方向（横屏或竖屏）实现自适应调整，充分利用不同方向的空间特性。例如，在三折叠三屏态下切换至横屏时，可将评论区自动调整至侧边栏显示，以提升多设备协同场景下（如长视频播放）的观看与交互体验。具体适配逻辑可参考[为多设备配置旋转策略](bpta-multi-device-window-direction.md#section189311691213)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/724xgJyeSGCuNtAXYuoDgQ/zh-cn_image_0000002457946277.png?HW-CC-KV=V1&HW-CC-Date=20260428T002146Z&HW-CC-Expire=86400&HW-CC-Sign=F0928E3B65DBE5B511BAAB9A6BEFD6FCEA43DFCCC3D1FE6866E13B49984CF9AA "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/724xgJyeSGCuNtAXYuoDgQ/zh-cn_image_0000002457946277.png?HW-CC-KV=V1&HW-CC-Date=20260429T061259Z&HW-CC-Expire=86400&HW-CC-Sign=0E70E46F3B704F018D4CF6BC78A9ABC2F2DB3BB976B26724D68112A7AD9AF58C "点击放大")
 
 三折叠推荐的旋转逻辑如下。
 
@@ -299,7 +299,7 @@ Mate XTs在开启自由多窗模式后，会强制屏幕锁定，不支持屏幕
 
 三折叠支持的三种窗口模式：全屏、分屏、悬浮窗。应用可根据支持的窗口模式进行沉浸式适配，详情可参考[窗口沉浸式](bpta-multi-device-window-immersive.md)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/We_lGaisTqGghEcxYfz7rw/zh-cn_image_0000002424427546.png?HW-CC-KV=V1&HW-CC-Date=20260428T002146Z&HW-CC-Expire=86400&HW-CC-Sign=BB93BDE2904C03963C2269933BD96D6FC47A11F5FAB83DC78E1C2D2D3B6FBD01 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/We_lGaisTqGghEcxYfz7rw/zh-cn_image_0000002424427546.png?HW-CC-KV=V1&HW-CC-Date=20260429T061259Z&HW-CC-Expire=86400&HW-CC-Sign=631E11DE4117202A831FAEE26A0AE2B006E879145A1CBC7033ECB77E14252400 "点击放大")
 
 **建议适配不同窗口方向的沉浸式**
 
@@ -340,7 +340,7 @@ Mate XTs在开启自由多窗模式后，会强制屏幕锁定，不支持屏幕
 
 三折叠双屏态纵向断点为md，屏幕比例近似1:1，呈现出对称且均衡的视觉效果，横向宽度超过 600vp，是典型的大方形屏。大方形屏非常适合多任务处理、内容分屏展示以及创作类应用，能够显著提升用户的操作效率与交互体验。大方形屏的布局设计与实现可参考[大方形屏](bpta-multi-device-screen-layout.md#section12921201325714)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/H5rGM2iCQQmB28kP_Xd88A/zh-cn_image_0000002424427622.png?HW-CC-KV=V1&HW-CC-Date=20260428T002146Z&HW-CC-Expire=86400&HW-CC-Sign=741F991399027AC87DE893D74FAD6FF3055D3881424EAA9AB18AC1B3B8E1CC59 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/H5rGM2iCQQmB28kP_Xd88A/zh-cn_image_0000002424427622.png?HW-CC-KV=V1&HW-CC-Date=20260429T061259Z&HW-CC-Expire=86400&HW-CC-Sign=80CE4A487008A5D9FFBC564087CFE875310696F664C3000E403CE5D20CC826A7 "点击放大")
 
 ### 三折叠三屏态适配建议
 
@@ -348,19 +348,19 @@ Mate XTs在开启自由多窗模式后，会强制屏幕锁定，不支持屏幕
 
 三折叠三屏态横屏时横向断点为lg，纵向断点为sm，提供更宽广的显示视野和更强的信息承载能力。大屏横屏的布局设计与实现可参考[大屏横屏](bpta-multi-device-screen-layout.md#section6493354468)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/WOP-VElbRJikHxpdO7JHLw/zh-cn_image_0000002458026225.png?HW-CC-KV=V1&HW-CC-Date=20260428T002146Z&HW-CC-Expire=86400&HW-CC-Sign=8F0A15535994A220B3ABE4C825A275FE1D0A498D6A7A7DD598BB25731C0D536E "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/WOP-VElbRJikHxpdO7JHLw/zh-cn_image_0000002458026225.png?HW-CC-KV=V1&HW-CC-Date=20260429T061259Z&HW-CC-Expire=86400&HW-CC-Sign=79D8442B5BB99B57990F76C7ADC172E94A1D854FC027703989C2DBD6E454BF0E "点击放大")
 
 **大屏竖屏**
 
 三折叠三屏态竖屏时横向断点为md，纵向断点为lg，竖向上提供更大的操作空间。大屏竖屏的布局设计与实现可参考[大屏竖屏](bpta-multi-device-screen-layout.md#section86231545125515)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/HDAXTRZ_Q_Kk65wgux9mdQ/zh-cn_image_0000002424587482.png?HW-CC-KV=V1&HW-CC-Date=20260428T002146Z&HW-CC-Expire=86400&HW-CC-Sign=FA9E38C003DD666186D52F5DF74C52CD4ADB0E94148FE908FA518B67EFDD0A97 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/HDAXTRZ_Q_Kk65wgux9mdQ/zh-cn_image_0000002424587482.png?HW-CC-KV=V1&HW-CC-Date=20260429T061259Z&HW-CC-Expire=86400&HW-CC-Sign=DD68C46E33066DE6CEEC8A19DCFE30F64E4E9EB45DAE9C425141AE9AC7784BF6 "点击放大")
 
 ### 适配设备悬停态
 
 三折叠在双屏态时，悬停态可以在桌面平稳放置，实现免手持体验，常用于视频通话、播放视频、拍照和听歌等不需要频繁交互的场景。这种状态下，应用需要对中间折痕区域进行避让，并且对上下两个界面进行悬停适配，重新布局。悬停态的实现方案可参考[折叠屏悬停态](bpta-folded-hover.md)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/OE0ido9ZRVCaOMDlIL6_zg/zh-cn_image_0000002457946397.png?HW-CC-KV=V1&HW-CC-Date=20260428T002146Z&HW-CC-Expire=86400&HW-CC-Sign=343DB2A158C3C0FED70DEE65DD6B6492604290EC7800978232678CCD6D4F7647 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/OE0ido9ZRVCaOMDlIL6_zg/zh-cn_image_0000002457946397.png?HW-CC-KV=V1&HW-CC-Date=20260429T061259Z&HW-CC-Expire=86400&HW-CC-Sign=BD2CD851640E36F5E78199EDD013213480118277B23CDFEC099F3AF1B6F8EFAC "点击放大")
 
 ### 适配应用界面开合连续
 
@@ -372,7 +372,7 @@ Mate XTs在开启自由多窗模式后，会强制屏幕锁定，不支持屏幕
 
 Mate XTs搭载手写笔，支持无感连接与低延迟传输，开盒即用，适用于全局批注、提笔速记及按键遥控等功能场景，实现流畅自然的书写与交互体验。系统提供的[Pen Kit](../harmonyos-guides/pen-introduction.md)能力，开发者可灵活接入手写套件、全局取色、一笔成形等接口，提升书写交互的扩展性与创作效率。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/wevD9LU4Rp-_NB4tBmEaqw/zh-cn_image_0000002467756733.png?HW-CC-KV=V1&HW-CC-Date=20260428T002146Z&HW-CC-Expire=86400&HW-CC-Sign=230BA7EAF6C60EB96C8C40E1CFD091E1662FAB3275B14AB238988D5AB8592A86 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/wevD9LU4Rp-_NB4tBmEaqw/zh-cn_image_0000002467756733.png?HW-CC-KV=V1&HW-CC-Date=20260429T061259Z&HW-CC-Expire=86400&HW-CC-Sign=3813C04E54600A9842F345762B4995DC21A1E1168C43BA81F28BE8F21A26B6B7 "点击放大")
 
 ## 功能开发
 
@@ -398,7 +398,7 @@ Mate XTs搭载手写笔，支持无感连接与低延迟传输，开盒即用，
 
 购物比价类应用可以在三折叠双屏和三屏状态时可以展示更丰富的信息，例如可以使用分屏能力同时浏览两个商品的内容，方便用户进行对比；还可以利用三屏大横屏的优势使用侧边栏，展示更多信息。详细开发方案可参考[多设备购物比价界面](multi-shopping-price-comparison.md)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/PKW9kWokTGK7hnNZmHVX1Q/zh-cn_image_0000002424587546.png?HW-CC-KV=V1&HW-CC-Date=20260428T002146Z&HW-CC-Expire=86400&HW-CC-Sign=9508B7ABE42846B5EF507DF291BC8BE2E3F2A990BCD43B341A9756C0A5267606 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/PKW9kWokTGK7hnNZmHVX1Q/zh-cn_image_0000002424587546.png?HW-CC-KV=V1&HW-CC-Date=20260429T061259Z&HW-CC-Expire=86400&HW-CC-Sign=FFC827B58731FA0EC13B7BB19A5F306CB3CF8A240270D8C03B86B414644CF682 "点击放大")
 
 更多垂域案例可参考[多设备界面开发案例](bpta-multi-device-ui-development.md)。
 

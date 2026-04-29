@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/iap-integrate
 title: 接入购买
 breadcrumb: 指南 > 应用服务 > IAP Kit（应用内支付服务） > 商品购买 > 消耗型/非消耗型商品购买 > 接入购买
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:49:26+08:00
+scraped_at: 2026-04-29T13:38:37+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:9a899f5eb1b5c179a1e0ee6348d7d2fac7a546fc439eac363b24ea4cd230e110
+content_hash: sha256:9d4706593090228f52e8984d16c64fcf4d4d1e5cf5cd56002fd3eaca6bd399ac
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:9a899f5eb1b5c179a1e0ee6348d7d2fac7a546fc439eac363b24ea4cd23
 
 在接入消耗型/非消耗型商品购买能力前，需要提前[配置商品信息](iap-config-product.md)。用户在应用内购买时，应用拉起IAP Kit的收银台，收银台处会展示商品名称、商品价格等信息，用户根据需求完成商品购买。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/p8dlSPCkSQmDAnEH788ISw/zh-cn_image_0000002552958924.png?HW-CC-KV=V1&HW-CC-Date=20260427T234925Z&HW-CC-Expire=86400&HW-CC-Sign=95CF6FFCFBE7FF5DD33DB182B509B440A530994A0278C4CCE85019B3E189ED5D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/-G0bON6vR_agewMPE5udkQ/zh-cn_image_0000002558765424.png?HW-CC-KV=V1&HW-CC-Date=20260429T053501Z&HW-CC-Expire=86400&HW-CC-Sign=8027FE385B8E83F1F68C7DCEDADE895FCB3FE489D85515CCF40D92348B195E30)
 
 ## 提供优惠
 
@@ -37,7 +37,7 @@ content_hash: sha256:9a899f5eb1b5c179a1e0ee6348d7d2fac7a546fc439eac363b24ea4cd23
 
 如下业务流程对于单机应用同样适用。在单机应用中，应用服务器和应用客户端的交互放在应用客户端完成，应用服务器和IAP服务器交互的部分可不处理。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/K5AB8VOjSKeRsRGQXEi98w/zh-cn_image_0000002583478925.png?HW-CC-KV=V1&HW-CC-Date=20260427T234925Z&HW-CC-Expire=86400&HW-CC-Sign=E4FCF5122CF35C28EAB88FCA9B453B8D793C5500AC66FA0C9BBA2FC688987AD5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/VeGSM57ETP-wsUNLiPxScw/zh-cn_image_0000002558605768.png?HW-CC-KV=V1&HW-CC-Date=20260429T053501Z&HW-CC-Expire=86400&HW-CC-Sign=D01FE82FA861EA905FE26741CD26E365C923AAA257CCAF153D97B1581C161F7C)
 
 **展示商品**
 

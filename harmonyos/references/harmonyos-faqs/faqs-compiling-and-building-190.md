@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: 历史问题报错：“hvigor ERROR: Error: EINVAL: invalid argument, mkdir ‘D:xxx\yyy\zzz\D:’/ 'C:xxx\yyy\zzz\C:at Object.mkdirSync (node:fs:1391:3)”
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 历史问题报错：“hvigor ERROR: Error: EINVAL: invalid argument, mkdir ‘D:xxx\yyy\zzz\D:’/ 'C:xxx\yyy\zzz\C:at Object.mkdirSync (node:fs:1391:3)”
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:29:49+08:00
+scraped_at: 2026-04-29T14:21:05+08:00
 doc_updated_at: 2026-03-25
-content_hash: sha256:fbd6581ce53f64bc4e19fce835f5c50f38b9381f13a18a71c56b5af59328d9bc
+content_hash: sha256:4603868e83f6d20a6cde7e336acbc38aa0b42e912ab6c2ae6a10143e48afb1c6
 ---
 
 **问题现象**
 
 构建报错：“hvigor ERROR: Error: EINVAL: invalid argument, mkdir ‘D:xxx\yyy\zzz\D:’”
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/Ui_eiyzST3WI7mUYQ1DDnQ/zh-cn_image_0000002433194024.png?HW-CC-KV=V1&HW-CC-Date=20260428T002947Z&HW-CC-Expire=86400&HW-CC-Sign=1485D756EC0D13B73D15C92AB7167271D504439C34135485B4049954F07E496E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/Ui_eiyzST3WI7mUYQ1DDnQ/zh-cn_image_0000002433194024.png?HW-CC-KV=V1&HW-CC-Date=20260429T062103Z&HW-CC-Expire=86400&HW-CC-Sign=6352BD1356518C5854D593E4F798C0EC394959C428B02B420550CB31D589ABD9)
 
 **常见错误场景**
 
@@ -26,8 +26,8 @@ ohpm远程第三方包安装后，软连接指向的路径为非本工程路径�
 
 1.**在问题工程中重新执行ohpm install**，或者sync。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/P-0oou6RS42SHpS2G1mrQg/zh-cn_image_0000002433353864.png?HW-CC-KV=V1&HW-CC-Date=20260428T002947Z&HW-CC-Expire=86400&HW-CC-Sign=DCA2B1195C0D9CFE82EF6D6E9B3DFF3DDF74398951F4D1231B35322295566C85 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/P-0oou6RS42SHpS2G1mrQg/zh-cn_image_0000002433353864.png?HW-CC-KV=V1&HW-CC-Date=20260429T062103Z&HW-CC-Expire=86400&HW-CC-Sign=01BA1D6AC00902206887616C1F3837748A7A0477EE7ECC73F4F1B477BE6D54A4 "点击放大")
 
 2.使用build菜单先进行构建，再调试运行。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/-NtIbxJuSQqg6RMp9zJbCQ/zh-cn_image_0000002466912421.png?HW-CC-KV=V1&HW-CC-Date=20260428T002947Z&HW-CC-Expire=86400&HW-CC-Sign=66A6BA779FE34AAF512AA0C2C804C6B04D4E702D42B942FF7A69F083E07C535B "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/-NtIbxJuSQqg6RMp9zJbCQ/zh-cn_image_0000002466912421.png?HW-CC-KV=V1&HW-CC-Date=20260429T062103Z&HW-CC-Expire=86400&HW-CC-Sign=07FE310D74FCD752E7B94D2A4FAF9CE15BD40A8B5468C849FC5159439C2D82F8 "点击放大")

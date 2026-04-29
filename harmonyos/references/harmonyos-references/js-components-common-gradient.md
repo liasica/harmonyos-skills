@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: 渐变样式
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 组件通用信息 > 渐变样式
 category: harmonyos-references
-scraped_at: 2026-04-28T08:02:53+08:00
+scraped_at: 2026-04-29T13:53:16+08:00
 doc_updated_at: 2026-03-23
-content_hash: sha256:7499978669167d36e6aaa655b9127f4c6c44904abf948b9dc372ee5051438770
+content_hash: sha256:ea6ccb58118a4dc164c66624dd64557138468bee3f0baca3c16817fb787c078e
 ---
 
 说明
@@ -64,7 +64,7 @@ PhonePC/2in1TabletTVWearable
    6. }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/CkKiTTMTSfiRPzEJYir5Cw/zh-cn_image_0000002552800524.png?HW-CC-KV=V1&HW-CC-Date=20260428T000252Z&HW-CC-Expire=86400&HW-CC-Sign=535F4F1B59DA5B7897D3782A5360EE156C2472220705872A51542F69A56E9DCC)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/EMkK9jPMTCu57bvk_F5ijg/zh-cn_image_0000002589246507.png?HW-CC-KV=V1&HW-CC-Date=20260429T055315Z&HW-CC-Expire=86400&HW-CC-Sign=7254C7967EF1931E1C0CDAE77FA360FA2F5C548D73FECDF6331379E6ECEEC1F8)
 2. 45度夹角渐变。
 
    ```
@@ -72,7 +72,7 @@ PhonePC/2in1TabletTVWearable
    2. background: linear-gradient(45deg, rgb(255,0,0),rgb(0, 255, 0));
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/UQ-kJcw3RWiGBZbZ1LnoVg/zh-cn_image_0000002583440219.png?HW-CC-KV=V1&HW-CC-Date=20260428T000252Z&HW-CC-Expire=86400&HW-CC-Sign=689289B30C28648740AF415553B3315D13F91502C8F73837E58E9E03491B9C02)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/n9bau9XXSr2kMlC08mh0ZA/zh-cn_image_0000002558766700.png?HW-CC-KV=V1&HW-CC-Date=20260429T055315Z&HW-CC-Expire=86400&HW-CC-Sign=B89FA84A2DFEECAD09C2FC2E39DDF2E2248C43F245BBD9E2DB71BF01879A1C85)
 3. 设置方向从左向右渐变。
 
    ```
@@ -80,7 +80,7 @@ PhonePC/2in1TabletTVWearable
    2. background: linear-gradient(to right, rgb(255,0,0) 90px, rgb(0, 255, 0) 60%);
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/zLfRzyWeTNerc_cQ5OP9hw/zh-cn_image_0000002552960174.png?HW-CC-KV=V1&HW-CC-Date=20260428T000252Z&HW-CC-Expire=86400&HW-CC-Sign=8E5495CDDAF9ECBECA3746B9C4BD5DDCCEEE3E61C9363F9E277395EB4B503D2A)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/SYfVNAaVSFC19hprkFSXqw/zh-cn_image_0000002558607040.png?HW-CC-KV=V1&HW-CC-Date=20260429T055315Z&HW-CC-Expire=86400&HW-CC-Sign=2E5AF81A63F004CB7DFCF67E3DFD15F4F3F41FC0E2E3708E72160E10673DE12A)
 4. 重复渐变。
 
    ```
@@ -88,4 +88,4 @@ PhonePC/2in1TabletTVWearable
    2. background: repeating-linear-gradient(to right, rgba(255, 255, 0, 1) 30px,rgba(0, 0, 255, .5) 60px);
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/uzy6DZZDRZeZlsn2bo3EQA/zh-cn_image_0000002583480175.png?HW-CC-KV=V1&HW-CC-Date=20260428T000252Z&HW-CC-Expire=86400&HW-CC-Sign=DB1CF01A52B1C9874ABF70AF9DC3BDA3680A2CB2C9E005AA14451D90FF8867E9)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/QI9Az5GtSz6npgfEJo-JsA/zh-cn_image_0000002589326567.png?HW-CC-KV=V1&HW-CC-Date=20260429T055315Z&HW-CC-Expire=86400&HW-CC-Sign=4F98C5B4E902D3D802A413F6664581A9AE9C039AC0D33C606B23A1E1CF818B59)

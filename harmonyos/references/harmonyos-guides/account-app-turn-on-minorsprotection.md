@@ -3,20 +3,20 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-app-t
 title: 应用内开启未成年人模式
 breadcrumb: 指南 > 应用服务 > Account Kit（华为账号服务） > 未成年人模式 > 应用与系统实现未成年人模式联动 > 应用内开启未成年人模式
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:48:02+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:051fc5684c86489a81edc88568ce59eeb2830cdf48f5ee8f0d88a95af43118cf
+scraped_at: 2026-04-29T13:36:55+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:f05bff98901fb6d9b22b22421aec797669d2b7e9086d79c5fbfd128e79782d19
 ---
 
 ## 场景介绍
 
 在应用内增加引导开启系统未成年人模式的入口，当系统的未成年人模式未开启，可在应用内开启系统未成年人模式。
 
-应用可调用系统的未成年人模式开启接口[leadToTurnOnMinorsMode](../harmonyos-references/account-api-minorsprotection.md#leadtoturnonminorsmode)引导用户开启未成年人模式，设置家长身份验证密码，开启系统的未成年人模式。
+应用可调用系统的未成年人模式开启接口[leadToTurnOnMinorsMode](../harmonyos-references/account-api-minorsprotection.md#leadtoturnonminorsmode)引导用户设置家长身份验证密码，开启系统的未成年人模式。
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/l2Nr20X2Q4a0l8R2u8atnw/zh-cn_image_0000002583438805.png?HW-CC-KV=V1&HW-CC-Date=20260427T234801Z&HW-CC-Expire=86400&HW-CC-Sign=FB9A8A0936AC6F445D896E4CC7DE9A18B104EBC2E8F1CB3DE0B63A70EAAC20D6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/dPXIJsUIQAOLZeDwl47i9g/zh-cn_image_0000002589245065.png?HW-CC-KV=V1&HW-CC-Date=20260429T053654Z&HW-CC-Expire=86400&HW-CC-Sign=14944D4F0C73A0734BDF97824298EAF4EE5F37B94014BA4540B4D072A16317EE)
 
 流程说明：
 
@@ -77,27 +77,28 @@ content_hash: sha256:051fc5684c86489a81edc88568ce59eeb2830cdf48f5ee8f0d88a95af43
    ```
    1. if (canIUse('SystemCapability.AuthenticationServices.HuaweiID.MinorsProtection')) {
    2. try {
-   3. if (minorsProtection.supportMinorsMode()) {
-   4. // 此示例为代码片段，实际需在自定义组件实例中使用，并传入有效的Context上下文对象
-   5. minorsProtection.leadToTurnOnMinorsMode(this.getUIContext().getHostContext())
-   6. .then(() => {
-   7. // 接口调用完成，如需显示弹窗，请在此处处理
-   8. })
-   9. .catch((error: BusinessError<Object>) => {
-   10. dealTurnOnAllError(error);
-   11. });
-   12. } else {
-   13. hilog.info(0x0000, 'testTag',
-   14. 'The current device environment does not support the youth mode, please check the current device environment.');
-   15. }
-   16. } catch (error) {
-   17. hilog.error(0x0000, 'testTag',
-   18. `Failed to invoke supportMinorsMode. errCode: ${error.code}, errMessage: ${error.message}`);
-   19. }
-   20. } else {
-   21. hilog.info(0x0000, 'testTag',
-   22. 'The current device does not support the invoking of the leadToTurnOnMinorsMode interface.');
-   23. }
+   3. // 查询是否支持系统未成年人模式
+   4. if (minorsProtection.supportMinorsMode()) {
+   5. // 此示例为代码片段，实际需在自定义组件实例中使用，并传入有效的Context上下文对象
+   6. minorsProtection.leadToTurnOnMinorsMode(this.getUIContext().getHostContext())
+   7. .then(() => {
+   8. // 接口调用完成，如需显示弹窗，请在此处处理
+   9. })
+   10. .catch((error: BusinessError<Object>) => {
+   11. dealTurnOnAllError(error);
+   12. });
+   13. } else {
+   14. hilog.info(0x0000, 'testTag',
+   15. 'The current device environment does not support the youth mode, please check the current device environment.');
+   16. }
+   17. } catch (error) {
+   18. hilog.error(0x0000, 'testTag',
+   19. `Failed to invoke supportMinorsMode. errCode: ${error.code}, errMessage: ${error.message}`);
+   20. }
+   21. } else {
+   22. hilog.info(0x0000, 'testTag',
+   23. 'The current device does not support the invoking of the leadToTurnOnMinorsMode interface.');
+   24. }
    ```
 
    ```

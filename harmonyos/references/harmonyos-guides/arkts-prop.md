@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-prop
 title: @Prop装饰器：父子单向同步
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理（V1） > 管理组件拥有的状态 > @Prop装饰器：父子单向同步
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:39:03+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:794542b249b1ffbd0a78bf48850a5f646c44124d0da8ba72ae88471c84311b55
+scraped_at: 2026-04-29T13:27:11+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:352d2e2e280626de05469904d39a1262470aced0ee7805507a3370c989a2be4c
 ---
 
 @Prop装饰的变量可以和父组件建立单向同步关系。
@@ -46,7 +46,7 @@ content_hash: sha256:794542b249b1ffbd0a78bf48850a5f646c44124d0da8ba72ae88471c843
 
 初始化规则图示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/oz-cDnXQSqeb8bo4kZ_BOQ/zh-cn_image_0000002552797950.png?HW-CC-KV=V1&HW-CC-Date=20260427T233902Z&HW-CC-Expire=86400&HW-CC-Sign=16E6358F9387A378B13656D33ED6D46736A49DF8E309C28573DBAB8D7898DDFC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/BjDu5NugRaWMfJKwYBkTBg/zh-cn_image_0000002558764090.png?HW-CC-KV=V1&HW-CC-Date=20260429T052710Z&HW-CC-Expire=86400&HW-CC-Sign=4A75CA2089CFC0968CEEC3064665AF168B9F3E40AABA4DA74554386ABDC80D33)
 
 ## 观察变化和行为表现
 
@@ -180,10 +180,11 @@ content_hash: sha256:794542b249b1ffbd0a78bf48850a5f646c44124d0da8ba72ae88471c843
 20. Button(`father click`).onClick(() => {
 21. this.message += '*';
 22. })
-23. Son({ message: this.message })
-24. }
+23. // 父组件@State装饰的message传给子组件的message
+24. Son({ message: this.message })
 25. }
 26. }
+27. }
 ```
 
 [PageOne.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/Prop/entry/src/main/ets/pages/PageOne.ets#L16-L44)
@@ -214,16 +215,17 @@ content_hash: sha256:794542b249b1ffbd0a78bf48850a5f646c44124d0da8ba72ae88471c843
 
   16. @Component
   17. struct Child {
-  18. @Prop count: number | undefined = 0;
+  18. // 父组件传入undefined时，@Prop装饰的变量仍使用本地默认值进行初始化
+  19. @Prop count: number | undefined = 0;
 
-  20. build() {
-  21. Column() {
-  22. Text(`Child count value: ${this.count}`)
-  23. .fontSize(20)
-  24. .margin(10)
-  25. }
+  21. build() {
+  22. Column() {
+  23. Text(`Child count value: ${this.count}`)
+  24. .fontSize(20)
+  25. .margin(10)
   26. }
   27. }
+  28. }
   ```
 
 ## 使用场景
@@ -390,30 +392,32 @@ ParentComponent的状态变量countDownStartValue的变化将重置CountDownComp
 
 12. @Component
 13. struct ReaderComp {
-14. @Prop book: Book = new Book('', 0);
+14. // 父组件@State装饰的book传入子组件@Prop装饰的book
+15. @Prop book: Book = new Book('', 0);
 
-16. build() {
-17. Row() {
-18. Text(this.book.title)
-19. Text(`...has${this.book.pages} pages!`)
-20. Text(`...${this.book.readIt ? 'I have read' : 'I have not read it'}`)
-21. .onClick(() => this.book.readIt = true)
-22. }
+17. build() {
+18. Row() {
+19. Text(this.book.title)
+20. Text(`...has${this.book.pages} pages!`)
+21. Text(`...${this.book.readIt ? 'I have read' : 'I have not read it'}`)
+22. .onClick(() => this.book.readIt = true)
 23. }
 24. }
+25. }
 
-26. @Entry
-27. @Component
-28. struct Library {
-29. @State book: Book = new Book('100 secrets of C++', 765);
+27. @Entry
+28. @Component
+29. struct Library {
+30. @State book: Book = new Book('100 secrets of C++', 765);
 
-31. build() {
-32. Column() {
-33. ReaderComp({ book: this.book })
-34. ReaderComp({ book: this.book })
-35. }
-36. }
+32. build() {
+33. Column() {
+34. // 父组件将同一book分别传给两个ReaderComp
+35. ReaderComp({ book: this.book })
+36. ReaderComp({ book: this.book })
 37. }
+38. }
+39. }
 ```
 
 [PageFive.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/Prop/entry/src/main/ets/pages/PageFive.ets#L16-L55)
@@ -515,20 +519,21 @@ ParentComponent的状态变量countDownStartValue的变化将重置CountDownComp
 90. if (this.allBooks.length > 0) {
 91. this.allBooks.shift();
 92. } else {
-93. hilog.info(DOMAIN, TAG, 'length <= 0');
-94. }
-95. })
-96. Button('Mark read for everyone')
-97. .width(312)
-98. .height(40)
-99. .margin(12)
-100. .fontColor('#FFFFFF')
-101. .onClick(() => {
-102. this.allBooks.forEach((book) => book.readIt = true)
-103. })
-104. }
+93. // allBooks为空时输出提示信息
+94. hilog.info(DOMAIN, TAG, 'length <= 0');
+95. }
+96. })
+97. Button('Mark read for everyone')
+98. .width(312)
+99. .height(40)
+100. .margin(12)
+101. .fontColor('#FFFFFF')
+102. .onClick(() => {
+103. this.allBooks.forEach((book) => book.readIt = true)
+104. })
 105. }
 106. }
+107. }
 ```
 
 [PageSix.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/Prop/entry/src/main/ets/pages/PageSix.ets#L16-L124)
@@ -553,7 +558,7 @@ ParentComponent的状态变量countDownStartValue的变化将重置CountDownComp
 
 @Observed装饰的类的实例会被不透明的代理对象包装，此代理可以检测到包装对象内的所有属性更改。如果发生这种情况，此时，代理通知@Prop，@Prop对象值被更新。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/HtizzWTgRzOHtVZjTmZqZw/zh-cn_image_0000002583437645.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233902Z&HW-CC-Expire=86400&HW-CC-Sign=EF4C25F2DB063FF0F07BF7E74A8F5B3D162F533F80FBAD3703A0EE9567F8413C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/sEz7ojpHQg-G9kC2BwTF3A/zh-cn_image_0000002558604434.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052710Z&HW-CC-Expire=86400&HW-CC-Sign=0619ACEBD40F336627EBCFB302B522FA6C1C4A535D8047519C42C7304E5B9D1E)
 
 ### @Prop本地初始化不和父组件同步
 
@@ -629,7 +634,7 @@ ParentComponent的状态变量countDownStartValue的变化将重置CountDownComp
 
 [PageSeven.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/Prop/entry/src/main/ets/pages/PageSeven.ets#L16-L78)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/ysq3D80ATqGFePM20II4fA/zh-cn_image_0000002552957600.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233902Z&HW-CC-Expire=86400&HW-CC-Sign=C26E5C743A30EB372E9A5BB2B31661D4059F26E250C62B64EC89EC431EC02A66)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/8NV59O0NR8enCJ4_O9G6SQ/zh-cn_image_0000002589323959.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052710Z&HW-CC-Expire=86400&HW-CC-Sign=2A8AF0C61DC8B06E0391D53B9C9F85BE06FA1394FE47679A61251BCD2CB3F1D0)
 
 ### @Prop嵌套场景
 
@@ -742,7 +747,7 @@ ParentComponent的状态变量countDownStartValue的变化将重置CountDownComp
 
 [PageNine.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/Prop/entry/src/main/ets/pages/PageNine.ets#L36-L114)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/zAKZ67JuQwePNrXhR7jBKQ/zh-cn_image_0000002583477601.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233902Z&HW-CC-Expire=86400&HW-CC-Sign=8FE73C8C85C6ED781CCB406AE880D37E9A2B038A26CD41AFA800F51596042413)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/bZyE4593SUGeVIiKKhxLhQ/zh-cn_image_0000002589243899.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052710Z&HW-CC-Expire=86400&HW-CC-Sign=1F247E4DF9F3B988B4DFDFFCCA8EA056A5E755195B622E47CDD788EF7ED44015)
 
 ### 装饰Array类型变量
 
@@ -829,40 +834,41 @@ ParentComponent的状态变量countDownStartValue的变化将重置CountDownComp
 9. Text(`${item[1]}`).fontSize(30)
 10. Divider()
 11. })
-12. Button('child init map').onClick(() => {
-13. this.value = new Map([[0, 'a'], [1, 'b'], [3, 'c']]);
-14. })
-15. Button('child set new one').onClick(() => {
-16. this.value.set(4, 'd');
-17. })
-18. Button('child clear').onClick(() => {
-19. this.value.clear();
-20. })
-21. Button('child replace the first one').onClick(() => {
-22. this.value.set(0, 'aa');
-23. })
-24. Button('child delete the first one').onClick(() => {
-25. this.value.delete(0);
-26. })
-27. }
+12. // value被@Prop装饰，可以被观察到Map整体的赋值以及调用Map接口带来的变化
+13. Button('child init map').onClick(() => {
+14. this.value = new Map([[0, 'a'], [1, 'b'], [3, 'c']]);
+15. })
+16. Button('child set new one').onClick(() => {
+17. this.value.set(4, 'd');
+18. })
+19. Button('child clear').onClick(() => {
+20. this.value.clear();
+21. })
+22. Button('child replace the first one').onClick(() => {
+23. this.value.set(0, 'aa');
+24. })
+25. Button('child delete the first one').onClick(() => {
+26. this.value.delete(0);
+27. })
 28. }
 29. }
+30. }
 
-32. @Entry
-33. @Component
-34. struct MapSample {
-35. @State message: Map<number, string> = new Map([[0, 'a'], [1, 'b'], [3, 'c']]);
+33. @Entry
+34. @Component
+35. struct MapSample {
+36. @State message: Map<number, string> = new Map([[0, 'a'], [1, 'b'], [3, 'c']]);
 
-37. build() {
-38. Row() {
-39. Column() {
-40. Child({ value: this.message })
-41. }
-42. .width('100%')
-43. }
-44. .height('100%')
-45. }
+38. build() {
+39. Row() {
+40. Column() {
+41. Child({ value: this.message })
+42. }
+43. .width('100%')
+44. }
+45. .height('100%')
 46. }
+47. }
 ```
 
 [PageTen.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/Prop/entry/src/main/ets/pages/PageTen.ets#L16-L64)
@@ -886,38 +892,39 @@ ParentComponent的状态变量countDownStartValue的变化将重置CountDownComp
 8. Text(`${item[0]}`).fontSize(30)
 9. Divider()
 10. })
-11. Button('init set').onClick(() => {
-12. this.message = new Set([0, 1, 2, 3, 4]);
-13. })
-14. Button('set new one').onClick(() => {
-15. this.message.add(5);
-16. })
-17. Button('clear').onClick(() => {
-18. this.message.clear();
-19. })
-20. Button('delete the first one').onClick(() => {
-21. this.message.delete(0);
-22. })
-23. }
-24. .width('100%')
-25. }
+11. // message被@Prop装饰，可以被观察到Set整体的赋值以及调用Set接口带来的变化
+12. Button('init set').onClick(() => {
+13. this.message = new Set([0, 1, 2, 3, 4]);
+14. })
+15. Button('set new one').onClick(() => {
+16. this.message.add(5);
+17. })
+18. Button('clear').onClick(() => {
+19. this.message.clear();
+20. })
+21. Button('delete the first one').onClick(() => {
+22. this.message.delete(0);
+23. })
+24. }
+25. .width('100%')
 26. }
+27. }
 
-29. @Entry
-30. @Component
-31. struct SetSample {
-32. @State message: Set<number> = new Set([0, 1, 2, 3, 4]);
+30. @Entry
+31. @Component
+32. struct SetSample {
+33. @State message: Set<number> = new Set([0, 1, 2, 3, 4]);
 
-34. build() {
-35. Row() {
-36. Column() {
-37. Child({ message: this.message })
-38. }
-39. .width('100%')
-40. }
-41. .height('100%')
-42. }
+35. build() {
+36. Row() {
+37. Column() {
+38. Child({ message: this.message })
+39. }
+40. .width('100%')
+41. }
+42. .height('100%')
 43. }
+44. }
 ```
 
 [PageEleven.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/Prop/entry/src/main/ets/pages/PageEleven.ets#L16-L61)
@@ -933,50 +940,51 @@ ParentComponent的状态变量countDownStartValue的变化将重置CountDownComp
 
 5. build() {
 6. Column() {
-7. Button('child update the new date')
-8. .margin(10)
-9. .onClick(() => {
-10. this.selectedDate = new Date('2023-09-09');
-11. })
-12. Button(`child increase the year by 1`).onClick(() => {
-13. this.selectedDate.setFullYear(this.selectedDate.getFullYear() + 1);
-14. })
-15. DatePicker({
-16. start: new Date('1970-1-1'),
-17. end: new Date('2100-1-1'),
-18. selected: this.selectedDate
-19. })
-20. }
+7. // selectedDate被@Prop装饰，可以被观察到Date整体的赋值以及调用Date接口带来的变化
+8. Button('child update the new date')
+9. .margin(10)
+10. .onClick(() => {
+11. this.selectedDate = new Date('2023-09-09');
+12. })
+13. Button(`child increase the year by 1`).onClick(() => {
+14. this.selectedDate.setFullYear(this.selectedDate.getFullYear() + 1);
+15. })
+16. DatePicker({
+17. start: new Date('1970-1-1'),
+18. end: new Date('2100-1-1'),
+19. selected: this.selectedDate
+20. })
 21. }
 22. }
+23. }
 
-24. @Entry
-25. @Component
-26. struct ParentComponent {
-27. @State parentSelectedDate: Date = new Date('2021-08-08');
+25. @Entry
+26. @Component
+27. struct ParentComponent {
+28. @State parentSelectedDate: Date = new Date('2021-08-08');
 
-29. build() {
-30. Column() {
-31. Button('parent update the new date')
-32. .margin(10)
-33. .onClick(() => {
-34. this.parentSelectedDate = new Date('2023-07-07');
-35. })
-36. Button('parent increase the day by 1')
-37. .margin(10)
-38. .onClick(() => {
-39. this.parentSelectedDate.setDate(this.parentSelectedDate.getDate() + 1);
-40. })
-41. DatePicker({
-42. start: new Date('1970-1-1'),
-43. end: new Date('2100-1-1'),
-44. selected: this.parentSelectedDate
-45. })
+30. build() {
+31. Column() {
+32. Button('parent update the new date')
+33. .margin(10)
+34. .onClick(() => {
+35. this.parentSelectedDate = new Date('2023-07-07');
+36. })
+37. Button('parent increase the day by 1')
+38. .margin(10)
+39. .onClick(() => {
+40. this.parentSelectedDate.setDate(this.parentSelectedDate.getDate() + 1);
+41. })
+42. DatePicker({
+43. start: new Date('1970-1-1'),
+44. end: new Date('2100-1-1'),
+45. selected: this.parentSelectedDate
+46. })
 
-47. DateComponent({ selectedDate: this.parentSelectedDate })
-48. }
+48. DateComponent({ selectedDate: this.parentSelectedDate })
 49. }
 50. }
+51. }
 ```
 
 [PageTwelve.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/Prop/entry/src/main/ets/pages/PageTwelve.ets#L16-L68)

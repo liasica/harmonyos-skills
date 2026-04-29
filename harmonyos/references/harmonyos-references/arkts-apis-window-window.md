@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (Window)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > 窗口管理 > @ohos.window (窗口) > Interface (Window)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:00:47+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:42642be1cb8397e58c2918bfbcaa973cf2c8058716cf0c63d5b9d3a21142892b
+scraped_at: 2026-04-29T13:51:01+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:b7f59a4c4777e4c153dd2cab7c066cf01e338d3df642c1578a31d28a916ef436
 ---
 
 当前窗口实例，窗口管理器管理的基本单元。
@@ -1191,7 +1191,7 @@ setWindowContainerColor(activeColor: string, inactiveColor: string): void
 
 设置主窗口容器在焦点态和非焦点态时的背景色。在Stage模型下，该接口需在调用[loadContent()](arkts-apis-window-window.md#loadcontent9)或[setUIContent()](arkts-apis-window-window.md#setuicontent9)后使用。
 
-窗口容器背景色覆盖整个窗口区域，包括标题栏和内容区域。当同时使用该接口和[setWindowBackgroundColor()](arkts-apis-window-window.md#setwindowbackgroundcolor9)设置背景色时，内容区域显示窗口背景色，标题栏显示窗口容器背景色。
+窗口容器背景色覆盖整个窗口区域，包括标题栏和内容区域。内容区域背景色默认跟随系统深浅色，当同时使用该接口和[setWindowBackgroundColor()](arkts-apis-window-window.md#setwindowbackgroundcolor9)设置背景色时，内容区域显示窗口背景色，标题栏显示窗口容器背景色。
 
 **系统能力：** SystemCapability.Window.SessionManager
 
@@ -6121,7 +6121,10 @@ setWindowShadowEnabled(enable: boolean): Promise<void>
 
 **系统能力：** SystemCapability.Window.SessionManager
 
-**设备行为差异：** 在HarmonyOS 6.1.0之前，该接口在2in1设备中可正常调用，在其他设备中返回801错误码；从HarmonyOS 6.1.0开始，该接口在2in1和Tablet设备中可正常调用，在Tablet设备时仅在开启[自由多窗模式](../harmonyos-guides/window-terminology.md#自由多窗模式)下生效，在其他设备中返回801错误码。
+**设备行为差异：**
+
+* 在HarmonyOS 6.1.0之前，该接口在2in1设备中可正常调用，在其他设备中返回801错误码。
+* 从HarmonyOS 6.1.0开始，该接口在2in1和Tablet设备中可正常调用，在Tablet设备时仅在开启[自由多窗模式](../harmonyos-guides/window-terminology.md#自由多窗模式)或[电脑模式](../harmonyos-guides/window-terminology.md#电脑模式)下生效，在其他设备中返回801错误码。
 
 **需要权限：** ohos.permission.SET\_WINDOW\_TRANSPARENT
 
@@ -6202,14 +6205,15 @@ setWindowBrightness(brightness: number, callback: AsyncCallback<void>): void
 
 当窗口退至后台时，窗口亮度失效，可以通过控制中心或快捷键调整。不建议连续调用或窗口退至后台时调用此接口，否则可能产生时序问题。
 
-说明
+**设备行为差异：**
 
-* 针对非2in1设备：
+* 针对TV设备：当前接口不生效也不报错。
+* 针对非2in1设备（不包含TV设备）：
   + 在HarmonyOS 6.1.0之前，当前窗口的窗口亮度生效时，控制中心调整系统屏幕亮度不生效。
   + 从HarmonyOS 6.1.0开始，当前窗口的窗口亮度生效时，控制中心可以调整系统屏幕亮度，同时会将当前窗口恢复为系统屏幕亮度。
 * 针对2in1设备：
-  + 在HarmonyOS5.0.2之前，窗口设置屏幕亮度生效时，控制中心或快捷键调整系统屏幕亮度不生效。
-  + 从HarmonyOS5.0.2开始，窗口亮度与系统屏幕亮度保持一致，可以通过本接口、控制中心或者快捷键设置系统屏幕亮度。
+  + 在HarmonyOS 5.0.2之前，窗口设置屏幕亮度生效时，控制中心或快捷键调整系统屏幕亮度不生效。
+  + 从HarmonyOS 5.0.2开始，窗口亮度与系统屏幕亮度保持一致，可以通过本接口、控制中心或者快捷键设置系统屏幕亮度。
 
 **系统能力：** SystemCapability.WindowManager.WindowManager.Core
 
@@ -6290,14 +6294,15 @@ setWindowBrightness(brightness: number): Promise<void>
 
 当窗口退至后台时，窗口亮度失效，可以通过控制中心或快捷键调整。不建议连续调用或窗口退至后台时调用此接口，否则可能产生时序问题。
 
-说明
+**设备行为差异：**
 
-* 针对非2in1设备：
+* 针对TV设备：当前接口不生效也不报错。
+* 针对非2in1设备（不包含TV设备）：
   + 在HarmonyOS 6.1.0之前，当前窗口的窗口亮度生效时，控制中心调整系统屏幕亮度不生效。
   + 从HarmonyOS 6.1.0开始，当前窗口的窗口亮度生效时，控制中心可以调整系统屏幕亮度，同时会将当前窗口恢复为系统屏幕亮度。
 * 针对2in1设备：
-  + 在HarmonyOS5.0.2之前，窗口设置屏幕亮度生效时，控制中心或快捷键调整系统屏幕亮度不生效。
-  + 从HarmonyOS5.0.2开始，窗口亮度与系统屏幕亮度保持一致，可以通过本接口、控制中心或者快捷键设置系统屏幕亮度。
+  + 在HarmonyOS 5.0.2之前，窗口设置屏幕亮度生效时，控制中心或快捷键调整系统屏幕亮度不生效。
+  + 从HarmonyOS 5.0.2开始，窗口亮度与系统屏幕亮度保持一致，可以通过本接口、控制中心或者快捷键设置系统屏幕亮度。
 
 **系统能力：** SystemCapability.WindowManager.WindowManager.Core
 
@@ -7821,7 +7826,7 @@ restoreMainWindow(wantParameters?: Record<string, Object>): Promise<void>
 29. return;
 30. }
 31. windowClass = data;
-32. console.info(`succedded in creating the window. Data: ${JSON.stringify(data)}`);
+32. console.info(`succeeded in creating the window. Data: ${JSON.stringify(data)}`);
 33. windowClass.resize(500, 1600).then(() => {
 34. console.info('Succeeded in changing the window size.');
 35. }).catch((err: BusinessError) => {
@@ -10259,7 +10264,7 @@ PhonePC/2in1TabletTVWearable
 
 setWindowShadowRadius(radius: number): void
 
-设置子窗或悬浮窗窗口边缘阴影的模糊半径。
+设置子窗或全局悬浮窗窗口边缘阴影的模糊半径。
 
 **系统能力：** SystemCapability.Window.SessionManager
 
@@ -10304,7 +10309,7 @@ PhonePC/2in1TabletTVWearable
 
 setWindowCornerRadius(cornerRadius: number): Promise<void>
 
-设置子窗或悬浮窗的圆角半径值，使用Promise异步回调。
+设置子窗或全局悬浮窗的圆角半径值，使用Promise异步回调。
 
 圆角半径值过大将会导致三键（最大化、最小化、关闭按钮）位置被裁切，且会导致热区不易识别，请根据窗口大小设置合适的圆角半径值。
 
@@ -10367,7 +10372,7 @@ PhonePC/2in1TabletTVWearable
 
 getWindowCornerRadius(): number
 
-该接口用于获取子窗或悬浮窗的圆角半径值，在未调用[setWindowCornerRadius()](arkts-apis-window-window.md#setwindowcornerradius17)接口设置窗口圆角半径值时，调用此接口可获取窗口默认圆角半径值。
+该接口用于获取子窗或全局悬浮窗的圆角半径值，在未调用[setWindowCornerRadius()](arkts-apis-window-window.md#setwindowcornerradius17)接口设置窗口圆角半径值时，调用此接口可获取窗口默认圆角半径值。
 
 **系统能力**：SystemCapability.Window.SessionManager
 

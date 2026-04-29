@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/passwordvault
 title: 账号密码保存
 breadcrumb: 指南 > 系统 > 安全 > 密码自动填充服务 > 应用接入密码保险箱 > 自动保存 > 账号密码保存
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:42:08+08:00
+scraped_at: 2026-04-29T13:30:38+08:00
 doc_updated_at: 2026-03-20
-content_hash: sha256:0242ace7d05de461198abf936c48a98cb0109d319dd246b19e2e1499bf146235
+content_hash: sha256:8a60adebdcb07cd5ed2d3ad7e9b2fd2e1bace3ab927a5b9c03859be7cd20a046
 ---
 
 密码保险箱在应用的登录、注册、修改密码等场景中具备自动保存用户名和密码的能力。
@@ -14,7 +14,7 @@ content_hash: sha256:0242ace7d05de461198abf936c48a98cb0109d319dd246b19e2e1499bf1
 
 当应用界面触发账号密码自动保存时，若密码保险箱中不存在同应用下的相同账号，系统将弹出账号密码保存提示框，用户点击“保存密码”按钮后，本次使用的账号和密码将被保存至密码保险箱。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/Hb59tutrTfWmkwy3NgDYvw/zh-cn_image_0000002583478361.png?HW-CC-KV=V1&HW-CC-Date=20260427T234206Z&HW-CC-Expire=86400&HW-CC-Sign=18B03599F2F6A63739EDA97BAF2FEE53722E6A79E870196F0343D94D58A6CD9E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/cOdAdGGqRNiOqrWycE7z5w/zh-cn_image_0000002589244665.png?HW-CC-KV=V1&HW-CC-Date=20260429T053037Z&HW-CC-Expire=86400&HW-CC-Sign=E42112FFC11A81CD1BB499A7BD430D5F68D3511A11BCEFE21F20F404EBA34CA5)
 
 当应用触发账号登录或注册时，均可触发保存功能，以下分别介绍两种布局的标准适配场景。
 
@@ -37,7 +37,7 @@ content_hash: sha256:0242ace7d05de461198abf936c48a98cb0109d319dd246b19e2e1499bf1
 
 ## 账号密码登录
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/1NadLinOS9uGvwsEtJla_w/zh-cn_image_0000002552798712.png?HW-CC-KV=V1&HW-CC-Date=20260427T234206Z&HW-CC-Expire=86400&HW-CC-Sign=320C2F0E2427428E48703DCAE9EEB800C0A6BA65997B232BE205CB0C7ED00B08)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/pVdAtr6_RhqhSv1Ucjwycw/zh-cn_image_0000002558764860.png?HW-CC-KV=V1&HW-CC-Date=20260429T053037Z&HW-CC-Expire=86400&HW-CC-Sign=E1D960B8DF56C04568A55A06F83C532DFBAE5401D0EF6F04F0738EC5469E3CAD)
 
 示例代码如下：
 
@@ -135,7 +135,7 @@ content_hash: sha256:0242ace7d05de461198abf936c48a98cb0109d319dd246b19e2e1499bf1
 
 ## 账号密码注册
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/mfNP6YimReCGlOVnSETGcg/zh-cn_image_0000002583438407.png?HW-CC-KV=V1&HW-CC-Date=20260427T234206Z&HW-CC-Expire=86400&HW-CC-Sign=C760FC44F8E7FAD919B6DE55EF9795AD8533CBCBEAC228D9EBCAF1BBF0972A70)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/qoor2vIcRJOf42KWsbM5Cw/zh-cn_image_0000002558605204.png?HW-CC-KV=V1&HW-CC-Date=20260429T053037Z&HW-CC-Expire=86400&HW-CC-Sign=2FA444D27DF491DB55A4CAF52DBF0B25AB6060ABBE689A8BB0BA5EF5FFDCEDF6)
 
 示例代码如下：
 

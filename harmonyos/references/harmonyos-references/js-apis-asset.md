@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: @ohos.security.asset (关键资产存储服务)
 breadcrumb: API参考 > 系统 > 安全 > Asset Store Kit（关键资产存储服务） > ArkTS API > @ohos.security.asset (关键资产存储服务)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:06:45+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:be9afbe064acd7347050691de188fe348c648c2850047ee6d2e1cdd2cd256dfa
+scraped_at: 2026-04-29T13:57:16+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:ebdd8cc7375088a1500ddb19dbccf9b59c34a38bc37971e501b7f6db2cb59ca6
 ---
 
 关键资产存储服务提供了用户短敏感数据的安全存储及管理能力。其中，短敏感数据可以是密码类（账号/密码）、Token类（应用凭据）、其他关键明文（如银行卡号）等长度较短的用户敏感数据。
@@ -30,7 +30,7 @@ add(attributes: AssetMap): Promise<void>
 
 新增一条关键资产。使用Promise异步回调。
 
-设置[IS\_PERSISTENT](js-apis-asset.md#tag)属性时，需要申请ohos.permission.STORE\_PERSISTENT\_DATA权限。
+设置[Tag.IS\_PERSISTENT](js-apis-asset.md#tag)属性时，需要申请ohos.permission.STORE\_PERSISTENT\_DATA权限，申请方式请参考[声明权限](../harmonyos-guides/declare-permissions.md)。
 
 **元服务API：** 从API version 14开始，该接口支持在元服务中使用。
 
@@ -50,7 +50,7 @@ add(attributes: AssetMap): Promise<void>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[关键资产存储服务错误码](errorcode-asset.md)
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[关键资产存储服务错误码](errorcode-asset.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -99,7 +99,7 @@ addSync(attributes: AssetMap): void
 
 新增一条关键资产，使用同步方式返回结果。
 
-如果要设置[IS\_PERSISTENT](js-apis-asset.md#tag)属性，需要申请ohos.permission.STORE\_PERSISTENT\_DATA权限。
+如果要设置[Tag.IS\_PERSISTENT](js-apis-asset.md#tag)属性，需要申请ohos.permission.STORE\_PERSISTENT\_DATA权限，申请方式请参考[声明权限](../harmonyos-guides/declare-permissions.md)。
 
 **元服务API：** 从API version 14开始，该接口支持在元服务中使用。
 
@@ -113,7 +113,7 @@ addSync(attributes: AssetMap): void
 
 **错误码：**
 
-以下错误码的详细介绍请参见[关键资产存储服务错误码](errorcode-asset.md)
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[关键资产存储服务错误码](errorcode-asset.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -178,7 +178,7 @@ remove(query: AssetMap): Promise<void>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[关键资产存储服务错误码](errorcode-asset.md)
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[关键资产存储服务错误码](errorcode-asset.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -232,7 +232,7 @@ removeSync(query: AssetMap): void
 
 **错误码：**
 
-以下错误码的详细介绍请参见[关键资产存储服务错误码](errorcode-asset.md)
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[关键资产存储服务错误码](errorcode-asset.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -291,7 +291,7 @@ update(query: AssetMap, attributesToUpdate: AssetMap): Promise<void>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[关键资产存储服务错误码](errorcode-asset.md)
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[关键资产存储服务错误码](errorcode-asset.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -350,7 +350,7 @@ updateSync(query: AssetMap, attributesToUpdate: AssetMap): void
 
 **错误码：**
 
-以下错误码的详细介绍请参见[关键资产存储服务错误码](errorcode-asset.md)
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[关键资产存储服务错误码](errorcode-asset.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -412,7 +412,7 @@ preQuery(query: AssetMap): Promise<Uint8Array>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[关键资产存储服务错误码](errorcode-asset.md)
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[关键资产存储服务错误码](errorcode-asset.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -445,7 +445,7 @@ preQuery(query: AssetMap): Promise<Uint8Array>
 9. let query: asset.AssetMap = new Map();
 10. query.set(asset.Tag.ALIAS, stringToArray('demo_alias'));
 11. asset.preQuery(query).then((challenge: Uint8Array) => {
-12. console.info(`Succeeded in pre-querying Asset.`);
+12. console.info(`Succeeded in pre-querying Asset, the challenge is: `, challenge);
 13. });
 ```
 
@@ -475,7 +475,7 @@ preQuerySync(query: AssetMap): Uint8Array
 
 **错误码：**
 
-以下错误码的详细介绍请参见[关键资产存储服务错误码](errorcode-asset.md)
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[关键资产存储服务错误码](errorcode-asset.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -539,7 +539,7 @@ query(query: AssetMap): Promise<Array<AssetMap>>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[关键资产存储服务错误码](errorcode-asset.md)
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[关键资产存储服务错误码](errorcode-asset.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -611,7 +611,7 @@ querySync(query: AssetMap): Array<AssetMap>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[关键资产存储服务错误码](errorcode-asset.md)
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[关键资产存储服务错误码](errorcode-asset.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -680,7 +680,7 @@ postQuery(handle: AssetMap): Promise<void>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[关键资产存储服务错误码](errorcode-asset.md)
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[关键资产存储服务错误码](errorcode-asset.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -725,7 +725,7 @@ postQuerySync(handle: AssetMap): void
 
 **错误码：**
 
-以下错误码的详细介绍请参见[关键资产存储服务错误码](errorcode-asset.md)
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[关键资产存储服务错误码](errorcode-asset.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -849,7 +849,7 @@ PhonePC/2in1TabletTVWearable
 | DATA\_LABEL\_NORMAL\_LOCAL\_312+ | TagType.BYTES | 0x36 | 关键资产附属的本地信息，内容由业务自定义且**无完整性保护**，该项信息不会进行同步。  **元服务API：** 从API version 14开始，该接口支持在元服务中使用。 |
 | DATA\_LABEL\_NORMAL\_LOCAL\_412+ | TagType.BYTES | 0x37 | 关键资产附属的本地信息，内容由业务自定义且**无完整性保护**，该项信息不会进行同步。  **元服务API：** 从API version 14开始，该接口支持在元服务中使用。 |
 | RETURN\_TYPE | TagType.NUMBER | 0x40 | 关键资产查询返回的结果类型。  **元服务API：** 从API version 14开始，该接口支持在元服务中使用。 |
-| RETURN\_LIMIT | TagType.NUMBER | 0x41 | 关键资产查询返回的结果数量。  **元服务API：** 从API version 14开始，该接口支持在元服务中使用。 |
+| RETURN\_LIMIT | TagType.NUMBER | 0x41 | 关键资产查询返回的结果的最大数量。  **元服务API：** 从API version 14开始，该接口支持在元服务中使用。 |
 | RETURN\_OFFSET | TagType.NUMBER | 0x42 | 关键资产查询返回的结果偏移量。  **说明：** 用于分批查询场景，指定从第几个开始返回。  **元服务API：** 从API version 14开始，该接口支持在元服务中使用。 |
 | RETURN\_ORDERED\_BY | TagType.NUMBER | 0x43 | 关键资产查询返回的结果排序依据，仅支持按照附属信息排序。  **说明：** 默认按照关键资产新增的顺序返回。  **元服务API：** 从API version 14开始，该接口支持在元服务中使用。 |
 | CONFLICT\_RESOLUTION | TagType.NUMBER | 0x44 | 新增关键资产时的冲突（如：别名相同）处理策略。  **元服务API：** 从API version 14开始，该接口支持在元服务中使用。 |

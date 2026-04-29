@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-codegenie
 title: 版本说明
 breadcrumb: 指南 > 使用AI智能辅助编程 > 版本说明
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:55:12+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:f5961463e08b076cf2cd59f68af8d04e03096e129b07e8fea4fafb6881dc95fc
+scraped_at: 2026-04-29T13:45:08+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:4dd5f676700f2adcf1ff0ba354ee8c9d111f71f21a03d3c00e2a3b34f6265035
 ---
 
 ## 6.1.0.830
@@ -13,6 +13,10 @@ content_hash: sha256:f5961463e08b076cf2cd59f68af8d04e03096e129b07e8fea4fafb6881d
 ### 新增特性
 
 * 新增支持配置Skills。具体请参考[技能（Skills）配置](ide-skills.md)。
+
+### 变更特性
+
+* HarmonyOS Ask智能体和HarmonyOS Act智能体不再限制字符数。
 
 ## 6.1.0.818
 
@@ -81,7 +85,7 @@ content_hash: sha256:f5961463e08b076cf2cd59f68af8d04e03096e129b07e8fea4fafb6881d
 ### 增强特性
 
 * HarmonyOS Ask智能体可读取和修改工程代码，以及在问答区编译验证。
-* 删除对话框中用于上下文定位的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/uOcs3ybvRX-_wtxMAo5Lxw/zh-cn_image_0000002530753628.png?HW-CC-KV=V1&HW-CC-Date=20260427T235511Z&HW-CC-Expire=86400&HW-CC-Sign=B02FF4D9D4417BAA7E56184F120E94BFA871E3C16C4D312E7E3C7A765DC1B363)图标，可直接对选中的代码段或代码文件分析。
+* 删除对话框中用于上下文定位的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/BbHdkgx-RxCCxFPn7xtTQA/zh-cn_image_0000002530753628.png?HW-CC-KV=V1&HW-CC-Date=20260429T054507Z&HW-CC-Expire=86400&HW-CC-Sign=59150CA6CADDE8DA22F6DF0DAE34863F8758481A2609CDB63870A7D7D3C06BA3)图标，可直接对选中的代码段或代码文件分析。
 * 智能问答和代码生成能力增强，更加高效理解用户意图。
 
 ## 6.0.1.246

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/account-a
 title: realName (华为账号实名认证服务)
 breadcrumb: API参考 > 应用服务 > Account Kit（华为账号服务） > ArkTS API > realName (华为账号实名认证服务)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:16:06+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:30c15980318d3d78310ce1b6f0810e1885910126a872d7e72bd9f9f6cbbaa598
+scraped_at: 2026-04-29T14:06:44+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:54a697e908d3de34ea7cb822537a06c1027e46e364e1f195ece55f39f8b20da6
 ---
 
 本模块提供Account Kit实名认证能力，包括人脸核身功能。当需要验证用户实名信息的场景，为保证用户填写的实名信息的正确性，应用需要对用户的实名信息进行校验。
@@ -50,9 +50,9 @@ PhonePC/2in1TabletTVWearable
 2. import { util } from '@kit.ArkTS';
 
 4. const request: realName.FacialRecognitionVerificationRequest = {
-5. verificationToken: "<可调用华为账号服务实名信息校验接口获取>", // 调用华为账号OpenRealName服务实名信息校验接口获取
-6. state: util.generateRandomUUID() // 建议使用generateRandomUUID生成state
-7. }
+5. verificationToken: '<可调用华为账号服务实名信息校验接口获取>', // 调用华为账号OpenRealName服务实名信息校验接口获取
+6. state: util.generateRandomUUID() // 建议使用generateRandomUUID生成state，可用于一致性比对，防止跨站攻击
+7. };
 ```
 
 ## FacialRecognitionVerificationResult
@@ -171,9 +171,9 @@ startFacialRecognitionVerification(context: common.Context, request: FacialRecog
 4. import { util } from '@kit.ArkTS';
 
 6. const request: realName.FacialRecognitionVerificationRequest = {
-7. verificationToken: "<可调用华为账号服务实名信息校验接口获取>", // 调用华为账号OpenRealName服务实名信息校验接口获取
-8. state: util.generateRandomUUID() // 建议使用generateRandomUUID生成state
-9. }
+7. verificationToken: '<可调用华为账号服务实名信息校验接口获取>', // 调用华为账号OpenRealName服务实名信息校验接口获取
+8. state: util.generateRandomUUID() // 建议使用generateRandomUUID生成state，可用于一致性比对，防止跨站攻击
+9. };
 10. hilog.info(0x0000, 'testTag', `verifyFacialRecognitionWithPromise params ${request}`);
 11. // 此示例为代码片段，实际需在自定义组件实例中使用，并传入有效的Context上下文对象
 12. realName.startFacialRecognitionVerification(this.getUIContext().getHostContext(), request).then(data => {
@@ -182,10 +182,21 @@ startFacialRecognitionVerification(context: common.Context, request: FacialRecog
 15. hilog.info(0x0000, 'testTag', 'Succeeded in verifying facial recognition.');
 16. }).catch((error: BusinessError<Object>) => {
 17. dealAllError(error);
-18. })
+18. });
 
 20. // 错误处理
 21. function dealAllError(error: BusinessError<Object>): void {
-22. hilog.error(0x0000, 'testTag', `Failed to authorize. Code: ${error.code}, message: ${error.message}`);
-23. }
+22. hilog.error(0x0000, 'testTag',
+23. `Failed to verify facial recognition. Code: ${error.code}, message: ${error.message}`);
+24. // 在涉及UI交互场景下，建议按照如下错误码指导提示用户
+25. if (error.code === realName.RealNameErrorCode.ACCOUNT_NOT_LOGGED_IN) {
+26. // 用户未登录华为账号，请登录华为账号并重试
+27. } else if (error.code === realName.RealNameErrorCode.NETWORK_ERROR) {
+28. // 网络异常，请检查当前网络状态并重试
+29. } else if (error.code === realName.RealNameErrorCode.USER_CANCELED) {
+30. // 用户取消人脸核身
+31. } else {
+32. // 人脸核身失败，请稍后重试
+33. }
+34. }
 ```

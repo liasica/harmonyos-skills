@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: advanced.Counter
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > advanced.Counter
 category: harmonyos-references
-scraped_at: 2026-04-28T08:02:43+08:00
+scraped_at: 2026-04-29T13:53:06+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:dc2be4e372689c54c3b3806df7530ae01783e101dddc7c8925f17bdfffd5a00f
+content_hash: sha256:9909620f7fc044d5f3a9036c59c3baf031bef5d1944349994f4ce2952b693fc6
 ---
 
 Counter组件用于精确调节数值。
@@ -257,7 +257,7 @@ PhonePC/2in1TabletTVWearable
 22. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/EjpR2nCkSdm-4H6J-q9EVA/zh-cn_image_0000002583440185.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000242Z&HW-CC-Expire=86400&HW-CC-Sign=519A4D9BCE60DF640BB6257D2DF690260F2E631B9665DFFDB25E750348CDA83B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/lKy8qJwOQUeHQvOSjHERrQ/zh-cn_image_0000002558766666.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055304Z&HW-CC-Expire=86400&HW-CC-Sign=B724D3FFCF7F3ED26F96DBE77C24009FA6ECE44028F0F1D5A51FA7697264CDD2)
 
 ### 示例2（紧凑型Counter）
 
@@ -289,7 +289,7 @@ PhonePC/2in1TabletTVWearable
 23. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/88UsaheSTAWeof8V-My6zw/zh-cn_image_0000002552960140.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000242Z&HW-CC-Expire=86400&HW-CC-Sign=EAE56F6BB4161DFA8A023326E0247463C9D99F6DF8890417D5723D225D75D127)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/V8I4ZBwoScKWgP_vTXSZOA/zh-cn_image_0000002558607006.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055304Z&HW-CC-Expire=86400&HW-CC-Sign=6B2CE3CDC26C34DB548634A00E7A97F0863040D6FEA1E495AD9F22162DBAFB70)
 
 ### 示例3（数值内联型Counter）
 
@@ -324,7 +324,7 @@ PhonePC/2in1TabletTVWearable
 26. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/CQPmk_CQRf-_AEChNW4kCQ/zh-cn_image_0000002583480141.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000242Z&HW-CC-Expire=86400&HW-CC-Sign=456A4D3E9081A39C1D5B3E22F3AAF228FC3893051B332F9C1A2B3D4D02B1C4FB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/eVChhyDHQiyNMvgjYZHRWg/zh-cn_image_0000002589326533.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055304Z&HW-CC-Expire=86400&HW-CC-Sign=9BADBE1A90BA4AAC45A8F133C12487A4440490931A9B92C90B4326A0F5920CD4)
 
 ### 示例4（日期内联型Counter）
 
@@ -355,7 +355,7 @@ PhonePC/2in1TabletTVWearable
 22. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/ERVk-YKCQ8ePpQ-u_PeXbg/zh-cn_image_0000002552800492.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000242Z&HW-CC-Expire=86400&HW-CC-Sign=6EBC07DEADB30DF8F9B1A89B595BE21186B2CC9C7ABEAACA9B30B632E60BB611)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/EBNt8bcHTbm6kkMZS6-efA/zh-cn_image_0000002589246475.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055304Z&HW-CC-Expire=86400&HW-CC-Sign=9E00B7584CF706D8D105A8947645C8EBFDEDB1390B61D318B3A9E3069470FA56)
 
 ### 示例5（镜像布局展示）
 
@@ -441,4 +441,4 @@ PhonePC/2in1TabletTVWearable
 77. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/vA5d3eryQci6eyspUb_7UA/zh-cn_image_0000002583440187.png?HW-CC-KV=V1&HW-CC-Date=20260428T000242Z&HW-CC-Expire=86400&HW-CC-Sign=B1BB009DD415BBC0B1CD40A891DA22F36FB39FE4DEBE6DB2DCC5E403CE0DE1C9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/VCAJHB2rT9iqoU8a0bAxyA/zh-cn_image_0000002558766668.png?HW-CC-KV=V1&HW-CC-Date=20260429T055304Z&HW-CC-Expire=86400&HW-CC-Sign=8C113BBB0CFC238BADDFC0CB0743D8E1ED563C6BA09EC2048AF56BF54EE01013)

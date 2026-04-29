@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/subscribe-pro
 title: 订阅和处理用户信息变更
 breadcrumb: 指南 > 应用服务 > Account Kit（华为账号服务） > 订阅和处理用户信息变更
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:48:06+08:00
+scraped_at: 2026-04-29T13:36:56+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:281b21d857f00ac9544411b9f8d8bbe0220de12e36c8f298b9530ed41f3d665a
+content_hash: sha256:9afb1341ed2510216f7464c578bdcf0795dc75178e096fe8c947663568167c79
 ---
 
 ## 概述
@@ -27,13 +27,13 @@ content_hash: sha256:281b21d857f00ac9544411b9f8d8bbe0220de12e36c8f298b9530ed41f3
 1. 登录[华为开发者联盟](https://developer.huawei.com/consumer/cn/)，选择“管理中心 > API服务 > API库”。
 2. 选择项目，然后在API名称搜索框检索关键字“RISC”，找到RISC点击进入详情。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/3WCl7qbJTaWvyrqcr1ukdA/zh-cn_image_0000002583438807.png?HW-CC-KV=V1&HW-CC-Date=20260427T234804Z&HW-CC-Expire=86400&HW-CC-Sign=090699C04F70641EB07FE5B5182E61D0777C09B70BA9CA61C0F6FD9AB985951F)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/7PHH9e4VR3iERCv3kAxtqQ/zh-cn_image_0000002589245067.png?HW-CC-KV=V1&HW-CC-Date=20260429T053655Z&HW-CC-Expire=86400&HW-CC-Sign=60DC130113E5F0FBF57B198C9489238AAEC91E9A0AAB94E5DC1136C09B58EF33)
 3. 点击启用按钮。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/O6i05fRNRsGRlBUMNa-DTQ/zh-cn_image_0000002552958762.png?HW-CC-KV=V1&HW-CC-Date=20260427T234804Z&HW-CC-Expire=86400&HW-CC-Sign=A836FBB9F94938A64EAD8B8794581BBC4CC0F1E022AEED23447944B8C15B1E63)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/OZW67Z43QaKJ01aonBNKgA/zh-cn_image_0000002558765262.png?HW-CC-KV=V1&HW-CC-Date=20260429T053655Z&HW-CC-Expire=86400&HW-CC-Sign=74D868A200C8D8AC2A9EE8885925A385CB64DC6E1F30B72DF92E7E7CA8391F66)
 4. 点击订阅通知按钮，在弹窗中配置回调地址及订阅范围。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/1eAEQuJQRxW7i7xcsQ7EIw/zh-cn_image_0000002583478763.png?HW-CC-KV=V1&HW-CC-Date=20260427T234804Z&HW-CC-Expire=86400&HW-CC-Sign=8BF5D43A5F08BD41048F9B1F6F018279ECDCDF72DC7964F989193EEABBD6DB49)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/LRI3wyA8SQeVhylmIi54kA/zh-cn_image_0000002558605606.png?HW-CC-KV=V1&HW-CC-Date=20260429T053655Z&HW-CC-Expire=86400&HW-CC-Sign=685192CDD87A69B52F5DE0B33CE99AB3C7EFC2D3AB6C62E09133FA88566BE659)
 
    说明
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: GridCol
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 栅格与分栏 > GridCol
 category: harmonyos-references
-scraped_at: 2026-04-28T08:01:26+08:00
+scraped_at: 2026-04-29T13:51:40+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:ecd70600c1fb92dd401610d81edb40ed64ac1eb8e3f3015245bef5b596d8d8ee
+content_hash: sha256:a5fc914c422ad59781e41b1d92427851cbce0af37332a0620773231e6c047676
 ---
 
 栅格子组件，必须作为栅格容器组件([GridRow](ts-container-gridrow.md))的子组件使用。
@@ -214,4 +214,4 @@ GridCol的基本用法示例。
 36. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/Uw-SaTrnRkGA4kS4EEiC5g/zh-cn_image_0000002583439647.png?HW-CC-KV=V1&HW-CC-Date=20260428T000125Z&HW-CC-Expire=86400&HW-CC-Sign=39E55980102868727AF9D9CDE3D2A233172A0A5FF2C66E9F3164AF730C5C1621)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/vIzja-QiQpWxU00Pmz2sQQ/zh-cn_image_0000002589245933.png?HW-CC-KV=V1&HW-CC-Date=20260429T055138Z&HW-CC-Expire=86400&HW-CC-Sign=4378F29E7FDF443642DE13D78211DF0CB60EF353C2C39B1715EF90FCF786EE45)

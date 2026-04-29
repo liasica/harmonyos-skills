@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/photoaccesshe
 title: 开发准备
 breadcrumb: 指南 > 媒体 > Media Library Kit（媒体文件管理服务） > 受限开放能力 > 开发准备
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:46:37+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:8654e50d15cfa0e600f962d899d5bddba1acdf6350adcd91f415fffa8858e5ab
+scraped_at: 2026-04-29T13:35:37+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:29481a5f4be98aad852ca30c8a52c56d0f19f5b0ec2759694dc3dd34a6c52bbf
 ---
 
 应用需获取相册管理模块实例，才能访问和修改相册中的媒体数据。相册管理模块涉及用户个人数据信息，应用需向用户申请读写权限，以保证功能的正常运行。使用相册管理模块接口时，如无其他注明，默认在工程代码的pages/index.ets或其他自定义的ets文件中使用。
@@ -57,7 +57,7 @@ content_hash: sha256:8654e50d15cfa0e600f962d899d5bddba1acdf6350adcd91f415fffa885
 
 **开发步骤**
 
-上述权限ohos.permission.READ\_IMAGEVIDEO和ohos.permission.WRITE\_IMAGEVIDEO为受控权限，通常是不允许三方应用申请的。如果有特殊场景需要使用，请提供相关申请材料到应用市场（AGC）申请相应权限证书。申请前请参考[受限开放权限](restricted-permissions.md)，确保应用符合可申请的场景。然后再参考[申请受限权限](declare-permissions-in-acl.md)，完成受限开放权限的申请。
+上述权限ohos.permission.READ\_IMAGEVIDEO和ohos.permission.WRITE\_IMAGEVIDEO为受控权限，通常是不允许三方应用申请的。如果有特殊场景需要使用，请提供相关申请材料到AppGallery Connect申请相应权限证书。申请前请参考[受限开放权限](restricted-permissions.md)，确保应用符合可申请的场景。然后再参考[申请受限权限](declare-permissions-in-acl.md)，完成受限开放权限的申请。
 
 说明
 

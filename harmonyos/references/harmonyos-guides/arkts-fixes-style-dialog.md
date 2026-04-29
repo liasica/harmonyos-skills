@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-fixes-s
 title: 固定样式弹出框
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用弹窗 > 弹出框 (Dialog) > 固定样式弹出框
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:39:44+08:00
+scraped_at: 2026-04-29T13:27:55+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:2fbec0dcb9da5487104bcb2ea64023866c0a1c3384256c9481dfd8ab7ca9bf01
+content_hash: sha256:bb75df5d5630c9f0deead79a5477b3c1a30eb3f48db283bb35d9fbdc4dd6d543
 ---
 
 固定样式弹出框采用固定的布局格式，这使得开发者无需关心具体的显示布局细节，只需输入所需显示的文本内容，从而简化了使用流程，提升了便捷性。
@@ -91,7 +91,7 @@ content_hash: sha256:2fbec0dcb9da5487104bcb2ea64023866c0a1c3384256c9481dfd8ab7ca
 
 [ShowActionMenu.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/DialogProject/entry/src/main/ets/pages/fixedstyledialog/ShowActionMenu.ets#L16-L72)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/sdcMxs-dTJq_xCoBCSuH-A/zh-cn_image_0000002552798254.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233942Z&HW-CC-Expire=86400&HW-CC-Sign=63AD1C96BECA96165CCD1C4A6E6F17E1794BCCEFE24FEA495E1F1741EE587595)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/kidvYlVDToS5y1Qm_lVL8A/zh-cn_image_0000002558764394.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052753Z&HW-CC-Expire=86400&HW-CC-Sign=75DD644696964415B60B16F676A8FC5DCEA9DEB633A47D774592948CB76F977C)
 
 ## 对话框 (showDialog)
 
@@ -157,7 +157,7 @@ content_hash: sha256:2fbec0dcb9da5487104bcb2ea64023866c0a1c3384256c9481dfd8ab7ca
 
 [ShowDialog.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/DialogProject/entry/src/main/ets/pages/fixedstyledialog/ShowDialog.ets#L15-L74)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/Hf5GlKYSSkK_R47mO4AIDA/zh-cn_image_0000002583437949.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233942Z&HW-CC-Expire=86400&HW-CC-Sign=9AEE59A171473FFF84DA6601BD5EB30A1B048F232903912505E26FC41AE19F5E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/pBptNhTrRJqaK08jD6bNZA/zh-cn_image_0000002558604738.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052753Z&HW-CC-Expire=86400&HW-CC-Sign=D6F23CF28BB4F1EDEC600C74851C42456BA3B01677209B503DD0A9489E87CA5E)
 
 ## 选择器弹窗 (PickerDialog)
 
@@ -224,7 +224,7 @@ content_hash: sha256:2fbec0dcb9da5487104bcb2ea64023866c0a1c3384256c9481dfd8ab7ca
 
 [CalendarPickerDialog.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/DialogProject/entry/src/main/ets/pages/fixedstyledialog/CalendarPickerDialog.ets#L16-L68)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/Ydcdg1x9RJyM7sJ-m5w4tg/zh-cn_image_0000002552957904.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233942Z&HW-CC-Expire=86400&HW-CC-Sign=4328401C4F1865D26209C0E3CDA795148F10F5E31C683199DE622543443FB806)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/3bLPK3QCSx6wpYNnCzfA2Q/zh-cn_image_0000002589324263.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052753Z&HW-CC-Expire=86400&HW-CC-Sign=6D06D6710D0ABDE17707DE2356EDBBDC9A49FD8F1C3DB5D4DE2438705164B1EB)
 
 ### 日期滑动选择器弹窗 (DatePickerDialog)
 
@@ -274,7 +274,7 @@ content_hash: sha256:2fbec0dcb9da5487104bcb2ea64023866c0a1c3384256c9481dfd8ab7ca
 
 [DatePickerDialog.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/DialogProject/entry/src/main/ets/pages/fixedstyledialog/DatePickerDialog.ets#L16-L57)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/2rieIvw2R6y07OKVCuh3fA/zh-cn_image_0000002583477905.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233942Z&HW-CC-Expire=86400&HW-CC-Sign=4F4A61C698CD0AC89F0C030B50FD767E1D1106A0F5291D51B2F0EEC9F79282C4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/Ah9TvRjdTCud_bYvlAJU0A/zh-cn_image_0000002589244203.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052753Z&HW-CC-Expire=86400&HW-CC-Sign=D37F512C2EF6E4168E9E782BE29815207F426DAEEB618EE76E7BE4D89F61CB4B)
 
 该示例通过配置disappearTextStyle、textStyle、selectedTextStyle、acceptButtonStyle、cancelButtonStyle实现了自定义文本以及按钮样式。
 
@@ -319,7 +319,7 @@ content_hash: sha256:2fbec0dcb9da5487104bcb2ea64023866c0a1c3384256c9481dfd8ab7ca
 
 [DatePickerCustomDialog.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/DialogProject/entry/src/main/ets/pages/fixedstyledialog/DatePickerCustomDialog.ets#L17-L59)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/WXgjPkhmStywyTKnG5WcaA/zh-cn_image_0000002552798256.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233942Z&HW-CC-Expire=86400&HW-CC-Sign=A6479F05A5D5B72999272455D7D6B9C22E97ED4CC1EB7E27DDE2A56629DB3101)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/2nQRfvLmSf2Vcu0omme6hw/zh-cn_image_0000002558764396.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052753Z&HW-CC-Expire=86400&HW-CC-Sign=3A564CF4058DE07195A9B9F6AE73815FAE9AB29ABA09913CBCCA883BBE504E20)
 
 ### 时间滑动选择器弹窗 (TimePickerDialog)
 
@@ -374,7 +374,7 @@ content_hash: sha256:2fbec0dcb9da5487104bcb2ea64023866c0a1c3384256c9481dfd8ab7ca
 
 [TimePickerDialog.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/DialogProject/entry/src/main/ets/pages/fixedstyledialog/TimePickerDialog.ets#L16-L65)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/tDQ_1pCMStehJsjf2U63nQ/zh-cn_image_0000002583437951.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233942Z&HW-CC-Expire=86400&HW-CC-Sign=EE43CA2EB5C7EEB56F21168EF2DED1EFD40B9ED94027B33B386A4E8A81575591)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/BpWmLuieTEie9g6Jy4iCjg/zh-cn_image_0000002558604740.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052753Z&HW-CC-Expire=86400&HW-CC-Sign=B65AECC1A1EB163475045A8A30B1AE45E1923CA4547F2E590BCF8E7ED7D3A728)
 
 ### 文本滑动选择器弹窗 (TextPickerDialog)
 
@@ -430,7 +430,7 @@ content_hash: sha256:2fbec0dcb9da5487104bcb2ea64023866c0a1c3384256c9481dfd8ab7ca
 
 [TextPickerCNDialog.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/DialogProject/entry/src/main/ets/pages/fixedstyledialog/TextPickerCNDialog.ets#L16-L65)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/_VrM5bO2QtSYN44MqvYv-A/zh-cn_image_0000002552957906.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233942Z&HW-CC-Expire=86400&HW-CC-Sign=7889DDCFB0B298CA1F2666B149EE713D6C96F83313477097D003519A568B7E62)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/8-0mXKcdReK1q7CLCJK5sQ/zh-cn_image_0000002589324265.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052753Z&HW-CC-Expire=86400&HW-CC-Sign=632CEB1F75B6162CCA5A29F315D6950491ECB64D845C9B7C6A6A0BE61B699A54)
 
 ## 列表选择弹窗 (ActionSheet)
 
@@ -516,7 +516,7 @@ content_hash: sha256:2fbec0dcb9da5487104bcb2ea64023866c0a1c3384256c9481dfd8ab7ca
 
 [ActionSheet.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/DialogProject/entry/src/main/ets/pages/fixedstyledialog/ActionSheet.ets#L16-L86)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/Cfhhq0MiSpeoDUvg_bkMLQ/zh-cn_image_0000002583477907.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233942Z&HW-CC-Expire=86400&HW-CC-Sign=26123E374F5443C959E2CF1D4E1649DFCE9ABA7D16C10049C079B1C7D249C1D6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/h3EZQeOLQ56AK9dRhwKJww/zh-cn_image_0000002589244205.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052753Z&HW-CC-Expire=86400&HW-CC-Sign=B72B79A9AFEA090CD94537DECA4F0032975C3143113AF72743796FA749A80268)
 
 ## 警告弹窗 (AlertDialog)
 
@@ -594,4 +594,4 @@ content_hash: sha256:2fbec0dcb9da5487104bcb2ea64023866c0a1c3384256c9481dfd8ab7ca
 
 [AlertDialog.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/DialogProject/entry/src/main/ets/pages/fixedstyledialog/AlertDialog.ets#L16-L76)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/sEjZt6G7Sy6I2Wkd8h8Xdw/zh-cn_image_0000002552798258.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233942Z&HW-CC-Expire=86400&HW-CC-Sign=58792690D4F08C8F1A4CE4102B992D1F2CD8AA94CAB3988E43A16BC444DC04EF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/1Ay6LcO3S864MzSqcwQA2g/zh-cn_image_0000002558764398.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052753Z&HW-CC-Expire=86400&HW-CC-Sign=6174BDCE037DC64978DB92E7D0FEC5D70B739241BBC3601A501255F77109C169)

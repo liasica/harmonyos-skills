@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/video-recordi
 title: 使用AVRecorder录制视频(ArkTS)
 breadcrumb: 指南 > 媒体 > Media Kit（媒体服务） > 媒体开发指导(ArkTS) > 录制 > 使用AVRecorder录制视频(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:46:27+08:00
+scraped_at: 2026-04-29T13:35:25+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:5c46043a18cb91157c66d979c969090a11719d0896200152a27e3f6218157868
+content_hash: sha256:f3f5290cd771ecf29c8956c51c74480f31ae355ba497949d6162405032b5ebfb
 ---
 
 当前仅支持[AVRecorder](media-kit-intro.md#avrecorder)开发视频录制，集成了音频捕获，音频编码，视频编码，音视频封装功能，适用于实现简单视频录制并直接得到视频本地文件的场景。
@@ -16,7 +16,7 @@ content_hash: sha256:5c46043a18cb91157c66d979c969090a11719d0896200152a27e3f62181
 
 **图1** 录制状态变化示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/mK63ygukTP2f62VQBzof5A/zh-cn_image_0000002583478597.png?HW-CC-KV=V1&HW-CC-Date=20260427T234626Z&HW-CC-Expire=86400&HW-CC-Sign=B138ED89E35AD1EF01BCBD7FCA32FDBC48376A0833C58297F7F2B1E68EB28E62)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/nYGNmEAfQFi6OEWD3FSLFw/zh-cn_image_0000002558605440.png?HW-CC-KV=V1&HW-CC-Date=20260429T053524Z&HW-CC-Expire=86400&HW-CC-Sign=E79719D437889FE72F2BD2C960501CCB040970F1C549D580DC73FF8DC02FC078)
 
 状态的详细说明请参考[AVRecorderState](../harmonyos-references/arkts-apis-media-t.md#avrecorderstate9)。
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-onc
 title: @Once：初始化同步一次
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理（V2） > 管理组件拥有的状态 > @Once：初始化同步一次
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:39:08+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:5428eded4b5c066df6a60ecb5fcfb0c63e574952b3fcaea79f6087779db15592
+scraped_at: 2026-04-29T13:27:18+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:c59547b60fd402aef91fdd279e8e94a96304e33ca4f193ddbae414cfe1bb6c64
 ---
 
 想要实现仅从外部初始化一次且不接受后续同步变化的能力，可以使用@Once装饰器搭配@Param装饰器。
@@ -80,32 +80,33 @@ content_hash: sha256:5428eded4b5c066df6a60ecb5fcfb0c63e574952b3fcaea79f6087779db
 ```
 1. @ComponentV2
 2. struct ChildComponent {
-3. @Param @Once onceParam: string = '';
+3. // @Once装饰的onceParam仅初始化同步一次
+4. @Param @Once onceParam: string = '';
 
-5. build() {
-6. Column() {
-7. Text(`onceParam: ${this.onceParam}`)
-8. }
+6. build() {
+7. Column() {
+8. Text(`onceParam: ${this.onceParam}`)
 9. }
 10. }
+11. }
 
-12. @Entry
-13. @ComponentV2
-14. struct MyComponent {
-15. // ···
-16. @Local message: string = 'Hello World';
+13. @Entry
+14. @ComponentV2
+15. struct MyComponent {
+16. // ...
+17. @Local message: string = 'Hello World';
 
-18. build() {
-19. Column() {
-20. Text(`Parent message: ${this.message}`)
-21. Button('change message')
-22. .onClick(() => {
-23. this.message = 'Hello Tomorrow';
-24. })
-25. ChildComponent({ onceParam: this.message })
-26. }
+19. build() {
+20. Column() {
+21. Text(`Parent message: ${this.message}`)
+22. Button('change message')
+23. .onClick(() => {
+24. this.message = 'Hello Tomorrow';
+25. })
+26. ChildComponent({ onceParam: this.message })
 27. }
 28. }
+29. }
 ```
 
 [MyComponent.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ArktsNewOnce/entry/src/main/ets/pages/MyComponent.ets#L16-L59)
@@ -124,49 +125,50 @@ content_hash: sha256:5428eded4b5c066df6a60ecb5fcfb0c63e574952b3fcaea79f6087779db
 7. }
 8. @ComponentV2
 9. struct Child {
-10. @Param @Once onceParamNum: number = 0;
-11. @Param @Once @Require onceParamInfo: Info;
+10. // @Once与@Param结合使用时，可以在本地修改，并能够触发UI刷新
+11. @Param @Once onceParamNum: number = 0;
+12. @Param @Once @Require onceParamInfo: Info;
 
-13. build() {
-14. Column() {
-15. Text(`Child onceParamNum: ${this.onceParamNum}`)
-16. Text(`Child onceParamInfo: ${this.onceParamInfo.name}`)
-17. Button('changeOnceParamNum')
-18. .onClick(() => {
-19. this.onceParamNum++;
-20. })
-21. Button('changeParamInfo')
-22. .onClick(() => {
-23. this.onceParamInfo = new Info('Cindy');
-24. })
-25. }
+14. build() {
+15. Column() {
+16. Text(`Child onceParamNum: ${this.onceParamNum}`)
+17. Text(`Child onceParamInfo: ${this.onceParamInfo.name}`)
+18. Button('changeOnceParamNum')
+19. .onClick(() => {
+20. this.onceParamNum++;
+21. })
+22. Button('changeParamInfo')
+23. .onClick(() => {
+24. this.onceParamInfo = new Info('Cindy');
+25. })
 26. }
 27. }
-28. @Entry
-29. @ComponentV2
-30. struct Index {
-31. @Local localNum: number = 10;
-32. @Local localInfo: Info = new Info('Tom');
+28. }
+29. @Entry
+30. @ComponentV2
+31. struct Index {
+32. @Local localNum: number = 10;
+33. @Local localInfo: Info = new Info('Tom');
 
-34. build() {
-35. Column() {
-36. Text(`Parent localNum: ${this.localNum}`)
-37. Text(`Parent localInfo: ${this.localInfo.name}`)
-38. Button('changeLocalNum')
-39. .onClick(() => {
-40. this.localNum++;
-41. })
-42. Button('changeLocalInfo')
-43. .onClick(() => {
-44. this.localInfo = new Info('Cindy');
-45. })
-46. Child({
-47. onceParamNum: this.localNum,
-48. onceParamInfo: this.localInfo
-49. })
-50. }
+35. build() {
+36. Column() {
+37. Text(`Parent localNum: ${this.localNum}`)
+38. Text(`Parent localInfo: ${this.localInfo.name}`)
+39. Button('changeLocalNum')
+40. .onClick(() => {
+41. this.localNum++;
+42. })
+43. Button('changeLocalInfo')
+44. .onClick(() => {
+45. this.localInfo = new Info('Cindy');
+46. })
+47. Child({
+48. onceParamNum: this.localNum,
+49. onceParamInfo: this.localInfo
+50. })
 51. }
 52. }
+53. }
 ```
 
 [Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ArktsNewOnce/entry/src/main/ets/pages/Index.ets#L16-L69)

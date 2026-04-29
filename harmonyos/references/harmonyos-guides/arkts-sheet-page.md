@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-sheet-p
 title: 绑定半模态页面（bindSheet）
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用弹窗 > 绑定模态页面 > 绑定半模态页面（bindSheet）
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:39:47+08:00
+scraped_at: 2026-04-29T13:27:59+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:bc005ea3b8549f2910e8acaa4a3917fd2a3a7949c003727e30718cfeef8e2907
+content_hash: sha256:14efeeec589e1479bc88d565c31472616154d5c566a152225c1d745f910755d8
 ---
 
 [半模态页面（bindSheet）](../harmonyos-references/ts-universal-attributes-sheet-transition.md#bindsheet)默认是模态形式的非全屏弹窗式交互页面，允许部分底层父视图可见，帮助用户在与半模态交互时保留其父视图环境。
@@ -121,7 +121,7 @@ content_hash: sha256:bc005ea3b8549f2910e8acaa4a3917fd2a3a7949c003727e30718cfeef8
 
 [SheetDemo.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/BindSheet/entry/src/main/ets/pages/bindSheet/template10/SheetDemo.ets#L16-L72)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/zm51GTLlSZOd8L8SfsqmVw/zh-cn_image_0000002583477923.png?HW-CC-KV=V1&HW-CC-Date=20260427T233946Z&HW-CC-Expire=86400&HW-CC-Sign=99C1692647FE393C8E19FFB78167AD36655786C21C0A3BAF7B09A95D17020745)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/gqT85-_kSDOpruC5Lnq6ZQ/zh-cn_image_0000002589244221.png?HW-CC-KV=V1&HW-CC-Date=20260429T052757Z&HW-CC-Expire=86400&HW-CC-Sign=BDB6B96C225C08E6744E9AC03B8D04387457A7859BA5148132E95724639E52A3)
 
 ## 二次确认能力
 
@@ -204,7 +204,7 @@ content_hash: sha256:bc005ea3b8549f2910e8acaa4a3917fd2a3a7949c003727e30718cfeef8
 
 [OnWillDismiss\_Dismiss.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/BindSheet/entry/src/main/ets/pages/bindSheet/template11/OnWillDismiss_Dismiss.ets#L16-L86)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/NZZT2-_lTUeXHodtB9mFVA/zh-cn_image_0000002552798274.png?HW-CC-KV=V1&HW-CC-Date=20260427T233946Z&HW-CC-Expire=86400&HW-CC-Sign=2ECA19C61EDCEB114CF9ACD24D3042D59BCFCDF1A8F42ECA7D4CF292D7AC8CE9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/IlFh_GGgSX6qZPQs8EFSQQ/zh-cn_image_0000002558764414.png?HW-CC-KV=V1&HW-CC-Date=20260429T052757Z&HW-CC-Expire=86400&HW-CC-Sign=A520D78EFC96680B33A17ED3C46C9135432A2B74E40629EEAA01156A1C32E41C)
 
 ## 屏蔽部分关闭行为
 
@@ -312,4 +312,4 @@ content_hash: sha256:bc005ea3b8549f2910e8acaa4a3917fd2a3a7949c003727e30718cfeef8
 
 [SheetTransitionExample.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/BindSheet/entry/src/main/ets/pages/bindSheet/template12/SheetTransitionExample.ets#L16-L79)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/lJ2y1MHUQ_y0TThtvnbiLQ/zh-cn_image_0000002583437969.png?HW-CC-KV=V1&HW-CC-Date=20260427T233946Z&HW-CC-Expire=86400&HW-CC-Sign=B272794DC0368119C2EDABFEEB793B11FD3CEC4134F5D3D8FAC728525195A718)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/1T_2-aVISEy5DgQL-DYJmw/zh-cn_image_0000002558604758.png?HW-CC-KV=V1&HW-CC-Date=20260429T052757Z&HW-CC-Expire=86400&HW-CC-Sign=A7ABCBAF044D404E4B51AB5AB6C6898DACB2859B927D7BB3AF2B13470A05A846)

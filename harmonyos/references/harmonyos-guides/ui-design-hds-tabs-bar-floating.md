@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-design-hds
 title: 设置页签栏的悬浮样式
 breadcrumb: 指南 > 应用框架 > UI Design Kit（UI设计套件） > 底部页签 > 设置页签栏的悬浮样式
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:41:55+08:00
+scraped_at: 2026-04-29T13:30:23+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:63927470e9f3db1d2ae7339a6c57331847bafe7c683528d579e599212177fbfc
+content_hash: sha256:45889b0966dc3dc606017a80eaf6ee6ca61197175a89ced1f985588ae05bb812
 ---
 
 ## 场景介绍
@@ -16,7 +16,7 @@ content_hash: sha256:63927470e9f3db1d2ae7339a6c57331847bafe7c683528d579e59921217
 
 页签栏悬浮样式如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/-eAAl2kLTVOJTn-vkXyuqA/zh-cn_image_0000002552798696.png?HW-CC-KV=V1&HW-CC-Date=20260427T234153Z&HW-CC-Expire=86400&HW-CC-Sign=94C2F98ADBCE23C5008ADDB2FB34FA53B79B6BE34F225E3468BCF64209D4C44F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/tm3tn5HaS1uhNst-wuFfXw/zh-cn_image_0000002558764844.png?HW-CC-KV=V1&HW-CC-Date=20260429T053022Z&HW-CC-Expire=86400&HW-CC-Sign=AAC39F0F6B96BF8A9C7742992C0E189EE86724B261917D4D464AF0FAF8B43EBE)
 
 ## 迷你栏
 
@@ -24,11 +24,11 @@ content_hash: sha256:63927470e9f3db1d2ae7339a6c57331847bafe7c683528d579e59921217
 
 迷你栏的折叠样式如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/gn7OvdIlRCalIuPq6as4Qw/zh-cn_image_0000002583438391.png?HW-CC-KV=V1&HW-CC-Date=20260427T234153Z&HW-CC-Expire=86400&HW-CC-Sign=7859B00187A47749BE70705D67F18A1B2AF20B22DD092F759C8204835F767EC4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/IEbNMm4nTly7DP7YYF4EXQ/zh-cn_image_0000002558605188.png?HW-CC-KV=V1&HW-CC-Date=20260429T053022Z&HW-CC-Expire=86400&HW-CC-Sign=5891A63127E1BBD198B7402368E633DC31E1F71095B9244A53D9992A91D1B067)
 
 迷你栏的展开样式如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/8ItPrwkIS_ypLG-OWCaL8A/zh-cn_image_0000002552958346.png?HW-CC-KV=V1&HW-CC-Date=20260427T234153Z&HW-CC-Expire=86400&HW-CC-Sign=67BF26864CC759847D289153F4F0A5AAAADD55EB50A9B1F71CFC0A602E6978D0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/O7JeWuNzRvKtIwAHZz7r6Q/zh-cn_image_0000002589324713.png?HW-CC-KV=V1&HW-CC-Date=20260429T053022Z&HW-CC-Expire=86400&HW-CC-Sign=8A7E21A9230140B6A8899F2F5177D31598A195E5B8BA255E343F3914D30B6EBC)
 
 ## 开发步骤
 

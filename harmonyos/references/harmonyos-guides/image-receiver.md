@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-receive
 title: 使用ImageReceiver完成图片接收
 breadcrumb: 指南 > 媒体 > Image Kit（图片处理服务） > 图片开发指导(ArkTS) > 图片接收 > 使用ImageReceiver完成图片接收
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:46:17+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:b52da80b4ccd6fbd2bafb7d0151a5ff4150f63b77e7eed137c91421e7b4e1ef2
+scraped_at: 2026-04-29T13:35:14+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:d4b83c3a3b6a42b15fd7e8c0a242d7c7ef4f893cd9f8cfaf43df9fb2e356c8c8
 ---
 
 图片接收类ImageReceiver用于获取组件SurfaceId，接收最新的图片和读取下一张图片，以及释放ImageReceiver实例。
@@ -131,7 +131,7 @@ ImageReceiver可以接收相机预览流中的图片，实现[双路预览](came
 方式二：根据stride \* height创建pixelMap，然后调用pixelMap的cropSync方法裁剪掉多余的像素。
 
 ```
-1. // 创建pixelMap，width宽传行距stride的值。
+1. // 创建pixelMap，width传入行距（stride）的值。
 2. let pixelMap = await image.createPixelMap(imgComponent.byteBuffer, {
 3. size:{height: height, width: stride}, srcPixelFormat: 8});
 4. // 裁剪多余的像素。

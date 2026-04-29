@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: @ohos.app.ability.wantAgent (WantAgent模块)
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > 通用能力的接口(推荐) > @ohos.app.ability.wantAgent (WantAgent模块)
 category: harmonyos-references
-scraped_at: 2026-04-28T07:58:33+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:3d10248bcbcaa53a606fd0abb04a9397414481d0434ac3430e288fd8ea2daad2
+scraped_at: 2026-04-29T13:48:46+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:62b1abe1fee77441d1d6e0d7ef33547c5932ad6a121b95db32c198b6175c8a0d
 ---
 
 WantAgent模块封装了[Want](js-apis-app-ability-want.md)对象，允许应用程序在未来的某个时间点触发WantAgent实例执行指定操作（如启动Ability、发送公共事件等）。
@@ -654,7 +654,7 @@ cancel(agent: WantAgent, callback: AsyncCallback<void>): void
 44. if (err) {
 45. console.error(`cancel failed, err code: ${err.code}, err msg: ${err.message}.`);
 46. } else {
-47. console.info(`cancel sucecss.`);
+47. console.info(`cancel success.`);
 48. }
 49. }
 50. try {

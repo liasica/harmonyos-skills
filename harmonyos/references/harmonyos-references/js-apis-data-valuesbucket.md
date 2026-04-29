@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-d
 title: @ohos.data.ValuesBucket (数据集)
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > ArkTS API > @ohos.data.ValuesBucket (数据集)
 category: harmonyos-references
-scraped_at: 2026-04-28T07:59:20+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:983c05bbc1b03bc52487da812befeae8037a38e0f98a2b39ba543e8a5d981a29
+scraped_at: 2026-04-29T13:49:34+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:f2c51c9140cee36c5839365ce104bfff1f7537d373236b667b6bf338759ac98c
 ---
 
 **数据集（ValuesBucket）** 是开发者向数据库插入的数据集合，数据集以键值对的形式进行传输。
@@ -32,9 +32,9 @@ type ValueType = number | string | boolean
 
 该类型用于表示数据库允许的数据字段类型。
 
-**系统能力：** SystemCapability.DistributedDataManager.DataShare.Core
-
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.DistributedDataManager.DataShare.Core
 
 | 类型 | 说明 |
 | --- | --- |

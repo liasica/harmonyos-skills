@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-predictor
 title: 加速Web页面的访问
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 管理网页加载与浏览记录 > 加速Web页面的访问
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:41:00+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:9a1bc6e4525a6c2f13dffdb6849b5f6f24df2e1053b5c82952298c1141560a5e
+scraped_at: 2026-04-29T13:29:25+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:09325fcaac70e96645395ab09540b545fedf14f10de0786e6729789901645e28
 ---
 
 当Web页面加载缓慢时，可以使用预连接、预加载和预获取POST请求的能力加速Web页面的访问。
@@ -419,7 +419,7 @@ content_hash: sha256:9a1bc6e4525a6c2f13dffdb6849b5f6f24df2e1053b5c82952298c11415
    37. }
    ```
 
-   [Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkWeb/ManageWebPageLoadBrowse/AcceleratePageAccess/entry3/src/main/ets/pages/Index.ets#L16-L56)
+   [Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkWeb/ManageWebPageLoadBrowse/AcceleratePageAccess/entry3/src/main/ets/pages/Index.ets#L16-L32)
 
 当需要更新本地已经生成的编译字节码时，修改cacheOptions参数中responseHeaders中的E-Tag或Last-Modified响应头对应的值，再次调用接口即可。
 

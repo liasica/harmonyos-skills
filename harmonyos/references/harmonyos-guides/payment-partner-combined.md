@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/payment-partn
 title: 平台类商户合单支付场景
 breadcrumb: 指南 > 应用服务 > Payment Kit（鸿蒙支付服务） > 平台类商户合单支付场景
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:50:07+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:5a7be1f0a67a2ec8ce3aa1588f8ad1890b9eb85d76479abba011961b23cbcc01
+scraped_at: 2026-04-29T13:39:31+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:c367cbc7b782dcafd418b025cc9b9727e66f07d1713e76d565395c37ede6d6d9
 ---
 
 ## 场景介绍
@@ -18,19 +18,19 @@ content_hash: sha256:5a7be1f0a67a2ec8ce3aa1588f8ad1890b9eb85d76479abba011961b23c
 
 华为支付收银台合单支付展示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/PrndtLZMQSyRScftj-uBbg/zh-cn_image_0000002552959086.png?HW-CC-KV=V1&HW-CC-Date=20260427T235006Z&HW-CC-Expire=86400&HW-CC-Sign=F96565FDB3A74A2AAE481212012DB0699574F0F5B754DC2D9687989FF2ED7B22)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/UUHz-cefSqqNc-_QszBp0Q/zh-cn_image_0000002589245395.png?HW-CC-KV=V1&HW-CC-Date=20260429T053930Z&HW-CC-Expire=86400&HW-CC-Sign=004BFAADEEE86CB06FE861B213E362F14552971FB3B20CF4F390259B13F72B2F)
 
 ## 业务流程
 
 开发者通过接入Payment Kit合单支付，可以将多个子订单合并到同一个主订单里完成支付。具体接入流程如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/6nhYAOcqRAqPcGjYSSap8A/zh-cn_image_0000002583479087.png?HW-CC-KV=V1&HW-CC-Date=20260427T235006Z&HW-CC-Expire=86400&HW-CC-Sign=47C6BAD1396A02ECBF17E551B31C7690351DFD2EEA9901521C18231C08C76CB8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/3SvoqSHYRFiVnHnJyqOsRw/zh-cn_image_0000002558765588.png?HW-CC-KV=V1&HW-CC-Date=20260429T053930Z&HW-CC-Expire=86400&HW-CC-Sign=F6D34EB808ED75F551C973A0FCFF7477457174A9C1518B573E81DA21227CD1E7)
 
 1. 商户客户端请求商户服务端创建合单支付订单。
 2. 商户服务器通过调用Payment Kit服务端[平台类商户合单支付预下单](../harmonyos-references/payment-partner-combined-app-prepay.md)接口。
 3. Payment Kit服务端返回预支付ID（prepayId）给商户服务端。
 4. 商户服务端组建订单信息参数[orderStr](../harmonyos-references/payment-model.md#orderstr)返回给客户端。
-5. 商户客户端使用orderStr作为入参调用[requestPayment](../harmonyos-references/payment-paymentservice.md#paymentservicerequestpayment)接口拉起Payment Kit支付收银台。
+5. 商户客户端使用orderStr作为入参调用[requestPayment](../harmonyos-references/payment-paymentservice.md#requestpayment)接口拉起Payment Kit支付收银台。
 6. Payment Kit客户端展示支付收银台，通过支付收银台可查看多个订单详情信息。
 7. 用户在Payment Kit客户端收银台完成支付操作后。
 8. Payment Kit服务端受理支付，异步处理支付订单。
@@ -60,7 +60,7 @@ content_hash: sha256:5a7be1f0a67a2ec8ce3aa1588f8ad1890b9eb85d76479abba011961b23c
 
 ### 拉起华为支付收银台（端侧开发）
 
-使用服务端返回的[orderStr](../harmonyos-references/payment-model.md#orderstr)调用[requestPayment](../harmonyos-references/payment-paymentservice.md#paymentservicerequestpayment)接口拉起Payment Kit支付收银台。合单支付拉起支付收银台与商户基础支付场景处理逻辑一致，可参见[这里](payment-payment-process.md#拉起华为支付收银台端侧开发)。
+使用服务端返回的[orderStr](../harmonyos-references/payment-model.md#orderstr)调用[requestPayment](../harmonyos-references/payment-paymentservice.md#requestpayment)接口拉起Payment Kit支付收银台。合单支付拉起支付收银台与商户基础支付场景处理逻辑一致，可参见[这里](payment-payment-process.md#拉起华为支付收银台端侧开发)。
 
 ### 支付结果回调通知（服务器开发）
 

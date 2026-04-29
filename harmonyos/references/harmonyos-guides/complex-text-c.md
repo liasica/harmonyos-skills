@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/complex-text-
 title: 复杂文本绘制与显示（C/C++）
 breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 文本 > 文本绘制与显示 > 复杂文本绘制与显示（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:47:17+08:00
+scraped_at: 2026-04-29T13:36:17+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:465a76e5c4c5cdc2ddd120595c2aa22c2ba354f1d7e566ebcb063d4a0da6357d
+content_hash: sha256:00307ff61cada568608b46ec332cda1d004f452fafe0ee413384af4685cf923c
 ---
 
 在进行文本绘制时，可以通过选择合适的字体、大小和颜色完成简单文本的绘制与显示；此外，还支持通过设置其他丰富的样式、语言、段落等进行复杂文本的绘制。
@@ -78,7 +78,7 @@ content_hash: sha256:465a76e5c4c5cdc2ddd120595c2aa22c2ba354f1d7e566ebcb063d4a0da
 
 ### 效果展示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/LRCDmcXFSYqY2pf3bPGYUA/zh-cn_image_0000002552958690.png?HW-CC-KV=V1&HW-CC-Date=20260427T234715Z&HW-CC-Expire=86400&HW-CC-Sign=50D0A8863E4403DE8DE03803A987EB84295A1139E64C6864B1A53842237B2A99)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/UVONzMPKQMWHPvQ1A_DOHg/zh-cn_image_0000002558765190.png?HW-CC-KV=V1&HW-CC-Date=20260429T053615Z&HW-CC-Expire=86400&HW-CC-Sign=95E1BF26C11A5CDF59D35CAAA8BDC306AD7E00EDD5E61B837E88C05154CC24CE)
 
 ## 多行文本绘制与显示
 
@@ -252,7 +252,7 @@ content_hash: sha256:465a76e5c4c5cdc2ddd120595c2aa22c2ba354f1d7e566ebcb063d4a0da
 
 [draw\_text\_impl.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/TextEngine/NDKComplexText1/entry/src/main/cpp/samples/draw_text_impl.cpp#L366-L422)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/O4EuotboS9G73m9QsC8lxw/zh-cn_image_0000002552799044.png?HW-CC-KV=V1&HW-CC-Date=20260427T234715Z&HW-CC-Expire=86400&HW-CC-Sign=39FC939EB403642CC055080DCFC8C49EE5C5DAC42BD55594429A1D31E6A05759)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/M7YpYDYXTU2BuNcmMxSY6w/zh-cn_image_0000002589325063.png?HW-CC-KV=V1&HW-CC-Date=20260429T053615Z&HW-CC-Expire=86400&HW-CC-Sign=014F34D7EE24248226CEFC1D8F730D5B4B89F1494612BDFD6C2BCC87AEB5F5E1)
 
 ### 字体特征
 
@@ -326,7 +326,7 @@ content_hash: sha256:465a76e5c4c5cdc2ddd120595c2aa22c2ba354f1d7e566ebcb063d4a0da
 
 [draw\_text\_impl.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/TextEngine/NDKComplexText1/entry/src/main/cpp/samples/draw_text_impl.cpp#L427-L483)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/-35PTHxdTQu5ue_hl2iooQ/zh-cn_image_0000002583438739.png?HW-CC-KV=V1&HW-CC-Date=20260427T234715Z&HW-CC-Expire=86400&HW-CC-Sign=570D1D6BF47305386719517C47AE3A1B26F940E631902BF868B0B128D42EC4C7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/es8PQxOsR2yNR3zON3SZUw/zh-cn_image_0000002589244999.png?HW-CC-KV=V1&HW-CC-Date=20260429T053615Z&HW-CC-Expire=86400&HW-CC-Sign=0943BFA3BF9506A3E086453642E7E57F9767A3ACB5A21E6A96BDEF77FFB76A4D)
 
 ### 可变字体
 
@@ -401,7 +401,7 @@ content_hash: sha256:465a76e5c4c5cdc2ddd120595c2aa22c2ba354f1d7e566ebcb063d4a0da
 
 [draw\_text\_impl.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/TextEngine/NDKComplexText1/entry/src/main/cpp/samples/draw_text_impl.cpp#L489-L546)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/-h9CHmzFTm2ILIavom_gmA/zh-cn_image_0000002552958694.png?HW-CC-KV=V1&HW-CC-Date=20260427T234715Z&HW-CC-Expire=86400&HW-CC-Sign=F8F2CCFE72E9DCCADAC6ADE858C1D590F5B4A691F1D96788110D9EF9812FC0D1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/rsxVTtgATKORudukziQBuA/zh-cn_image_0000002558765194.png?HW-CC-KV=V1&HW-CC-Date=20260429T053615Z&HW-CC-Expire=86400&HW-CC-Sign=F934FD5921D70E9A071DE5EF94657BEAD9B662C8EFA5C9FD42C2FC2865459995)
 
 ### 文本阴影
 
@@ -485,7 +485,7 @@ content_hash: sha256:465a76e5c4c5cdc2ddd120595c2aa22c2ba354f1d7e566ebcb063d4a0da
 
 [draw\_text\_impl.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/TextEngine/NDKComplexText1/entry/src/main/cpp/samples/draw_text_impl.cpp#L551-L611)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/N0ERUbTJS5e0_kx8BQor8Q/zh-cn_image_0000002583478695.png?HW-CC-KV=V1&HW-CC-Date=20260427T234715Z&HW-CC-Expire=86400&HW-CC-Sign=33ACDF2CE8B71CEE1100F0874AB6BD98CF61D3B4CB9547F92DEE729136F3802F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/AKa064mCReWiBvfjZRuk8g/zh-cn_image_0000002558605538.png?HW-CC-KV=V1&HW-CC-Date=20260429T053615Z&HW-CC-Expire=86400&HW-CC-Sign=8CB19FDA71A2AB6A6A880BB46A7A04F1EC83FED41CA4BB976F59387FAA752EB6)
 
 ### 占位符
 
@@ -567,7 +567,7 @@ content_hash: sha256:465a76e5c4c5cdc2ddd120595c2aa22c2ba354f1d7e566ebcb063d4a0da
 
 [draw\_text\_impl.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/TextEngine/NDKComplexText1/entry/src/main/cpp/samples/draw_text_impl.cpp#L616-L680)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/Yg8_bhpdQm2Mw4GOyet6GQ/zh-cn_image_0000002552799046.png?HW-CC-KV=V1&HW-CC-Date=20260427T234715Z&HW-CC-Expire=86400&HW-CC-Sign=D93F35504D619BFECDBEAF34324CE36DBC801F95033AC069E9CDB2A1BE40130D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/D41FZSV_T5qRr79vsIiEHw/zh-cn_image_0000002589325065.png?HW-CC-KV=V1&HW-CC-Date=20260429T053615Z&HW-CC-Expire=86400&HW-CC-Sign=2BF5DA04B1D7B12057F71F9703D93D49A312C3FDD765DE41EF8A3859AD3E067F)
 
 ### 自动间距
 
@@ -698,7 +698,7 @@ content_hash: sha256:465a76e5c4c5cdc2ddd120595c2aa22c2ba354f1d7e566ebcb063d4a0da
 
 [draw\_text\_impl.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/TextEngine/NDKComplexText1/entry/src/main/cpp/samples/draw_text_impl.cpp#L746-L786)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/yDBX0JorSIeduQxWOrMccA/zh-cn_image_0000002583478697.png?HW-CC-KV=V1&HW-CC-Date=20260427T234715Z&HW-CC-Expire=86400&HW-CC-Sign=7A9D70AE4053A94F8F5E4A9541EFCA5AED1B788D99BC1E22D782E2ED9D40D192)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/M1rB0tPYQoKbkcP6D6SD0A/zh-cn_image_0000002558605540.png?HW-CC-KV=V1&HW-CC-Date=20260429T053615Z&HW-CC-Expire=86400&HW-CC-Sign=EBC25059F0DC3B78ACE37B13F0B95D65FD0CF6B1A258856F72D60CBADCB1FD00)
 
 ### 垂直对齐
 
@@ -745,7 +745,7 @@ content_hash: sha256:465a76e5c4c5cdc2ddd120595c2aa22c2ba354f1d7e566ebcb063d4a0da
 
 效果如下（黑框仅为展示文本绘制区域，实际不绘制）：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/2jL_c_ocSqSxBuwXnhYAhA/zh-cn_image_0000002552799034.jpg?HW-CC-KV=V1&HW-CC-Date=20260427T234715Z&HW-CC-Expire=86400&HW-CC-Sign=FE891FC5A79269441102065926C650D17FAF2EE11E875749B9259292BE459E60)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/0CfrR__bR9ancTAA9hXKnA/zh-cn_image_0000002589325053.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053615Z&HW-CC-Expire=86400&HW-CC-Sign=B159D8F1B8AB4B48F00D80613B3AF836AABA3F2766EBE884BDFACBB086EF9548)
 
 ### 上下标
 
@@ -796,7 +796,7 @@ content_hash: sha256:465a76e5c4c5cdc2ddd120595c2aa22c2ba354f1d7e566ebcb063d4a0da
 
 [draw\_text\_impl.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/TextEngine/NDKComplexText1/entry/src/main/cpp/samples/draw_text_impl.cpp#L825-L860)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/WPd4pm6SQgWm1Nuj5j6VIA/zh-cn_image_0000002583478685.jpg?HW-CC-KV=V1&HW-CC-Date=20260427T234715Z&HW-CC-Expire=86400&HW-CC-Sign=DF9180D8F2F6015502D889F63C161BB3CF730529EC9D2BA8CAF4EA0B5405D0C0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/kdSwhN59Q0ScR6OExYCAug/zh-cn_image_0000002558605528.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053615Z&HW-CC-Expire=86400&HW-CC-Sign=31AAE82620A361472E960B5417F5C4F34D9C903EDCF8E0BCCFAA0A5F826F1538)
 
 ### 高对比度
 
@@ -1109,4 +1109,4 @@ content_hash: sha256:465a76e5c4c5cdc2ddd120595c2aa22c2ba354f1d7e566ebcb063d4a0da
 
 [draw\_text\_impl.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/TextEngine/NDKComplexText1/entry/src/main/cpp/samples/draw_text_impl.cpp#L907-L993)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/GzWx1SnCSZm7xfJbtmsHGw/zh-cn_image_0000002552958698.png?HW-CC-KV=V1&HW-CC-Date=20260427T234715Z&HW-CC-Expire=86400&HW-CC-Sign=81E8FBC050188628D0E9A8F23ABBBF811BF33414947B1768CA9BF0E037E7DDF7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/mR1Up08eQHelfTV7acJk3w/zh-cn_image_0000002558765198.png?HW-CC-KV=V1&HW-CC-Date=20260429T053615Z&HW-CC-Expire=86400&HW-CC-Sign=F67253680C5E805200AAAD8909EECDB50B5AEF395AC2B9B17A12407972B5B508)

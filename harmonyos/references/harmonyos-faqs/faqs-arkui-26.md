@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-26
 title: 如何解决List组件在不设置高度的情况下滑动不到底的问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 方舟UI框架（ArkUI） > 如何解决List组件在不设置高度的情况下滑动不到底的问题
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:25:04+08:00
+scraped_at: 2026-04-29T14:16:14+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:356d87e8dfd8d1d8588ff1d04c7a16bf402171595c5cc5d367b411fd94c8b659
+content_hash: sha256:63165612cd1ade7e487f314a66dac3457ec79d838533f118cedb94cfd33d7449
 ---
 
 **原因**
@@ -62,4 +62,4 @@ content_hash: sha256:356d87e8dfd8d1d8588ff1d04c7a16bf402171595c5cc5d367b411fd94c
 
 效果如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/Ya7R8uEfRo6wVBFpQuJfpg/zh-cn_image_0000002194158648.png?HW-CC-KV=V1&HW-CC-Date=20260428T002503Z&HW-CC-Expire=86400&HW-CC-Sign=41B382A45F454F318E3DE278C2E830FB4C21A2D5980B592CCF110DFE866F5933 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/Ya7R8uEfRo6wVBFpQuJfpg/zh-cn_image_0000002194158648.png?HW-CC-KV=V1&HW-CC-Date=20260429T061612Z&HW-CC-Expire=86400&HW-CC-Sign=BFB84D3F4EAB7DECB89D4A9D888182D56205C4B1B16A5DD5783B39C001B21057 "点击放大")

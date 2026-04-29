@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arengine-
 title: AR Engine
 breadcrumb: API参考 > 图形 > AR Engine（AR引擎服务） > C API > 模块 > AR Engine
 category: harmonyos-references
-scraped_at: 2026-04-28T08:14:33+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:7fea5900d082529b2d3097a7a9c16db887a9c22a7db4adf32b9d31669b339c52
+scraped_at: 2026-04-29T14:05:09+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:7b7dc3fc3a651926746053bab69eb75273b14f2ac13ded8e8d9d2e2f8e34e07a
 ---
 
 ## 概述
@@ -81,7 +81,7 @@ PhoneTabletTV
 | typedef struct [AREngine\_ARTarget](arengine-capi-arengine.md#arengine_artarget) [AREngine\_ARTarget](arengine-capi-arengine.md#arengine_artarget) | 物体对象。 |
 | typedef struct [AREngine\_ARTrackable](arengine-capi-arengine.md#arengine_artrackable) [AREngine\_ARTrackable](arengine-capi-arengine.md#arengine_artrackable) | 可跟踪对象，如点、平面等。 |
 | typedef struct [AREngine\_ARTrackableList](arengine-capi-arengine.md#arengine_artrackablelist) [AREngine\_ARTrackableList](arengine-capi-arengine.md#arengine_artrackablelist) | 可跟踪对象列表。 |
-| typedef void (\*[HMS\_AREngine\_PhotoAvailableCallback](arengine-capi-arengine.md#hms_arengine_photoavailablecallback)([OH\_NativeBuffer](capi-vulkan-oh-nativebuffer.md) \*photoBuffer) | 输出拍照流图像回调。 |
+| typedef void (\*[HMS\_AREngine\_PhotoAvailableCallback](arengine-capi-arengine.md#hms_arengine_photoavailablecallback))([OH\_NativeBuffer](capi-vulkan-oh-nativebuffer.md) \*photoBuffer) | 输出拍照流图像回调。 |
 | typedef struct [AREngine\_ARBody](arengine-capi-arengine.md#arengine_arbody) [AREngine\_ARBody](arengine-capi-arengine.md#arengine_arbody) | 人体对象。 |
 
 ### 枚举
@@ -1241,7 +1241,7 @@ AR Engine输出的相机位姿对齐格式。
 | 枚举值 | 描述 |
 | --- | --- |
 | ARENGINE\_POSE\_MODE\_GRAVITY | 输出的位姿信息（通过[HMS\_AREngine\_ARCamera\_GetDisplayOrientedPose](arengine-capi-arengine.md#hms_arengine_arcamera_getdisplayorientedpose)、[HMS\_AREngine\_ARCamera\_GetPose](arengine-capi-arengine.md#hms_arengine_arcamera_getpose)接口返回）为重力坐标系对齐的数据。参见[坐标系说明](../harmonyos-guides/arengine-overview.md#坐标系说明)。 |
-| ARENGINE\_POSE\_MODE\_GRAVITY\_HEADING | 输出的位姿信息（通过[HMS\_AREngine\_ARCamera\_GetDisplayOrientedPose](arengine-capi-arengine.md#hms_arengine_arcamera_getdisplayorientedpose)、[HMS\_AREngine\_ARCamera\_GetPose](arengine-capi-arengine.md#hms_arengine_arcamera_getpose)接口返回）为北向ENU坐标系对齐的数据。参见[坐标系说明](../harmonyos-guides/arengine-overview.md#坐标系说明)。 |
+| ARENGINE\_POSE\_MODE\_GRAVITY\_HEADING | 输出的位姿信息（通过[HMS\_AREngine\_ARCamera\_GetDisplayOrientedPose](arengine-capi-arengine.md#hms_arengine_arcamera_getdisplayorientedpose)、[HMS\_AREngine\_ARCamera\_GetPose](arengine-capi-arengine.md#hms_arengine_arcamera_getpose)接口返回）为北向ENU坐标系对齐的数据。参见[坐标系说明](../harmonyos-guides/arengine-overview.md#坐标系说明)。  **说明：** 该选项当前仅支持省电模式，请调用[HMS\_AREngine\_ARConfig\_SetPowerMode](arengine-capi-arengine.md#hms_arengine_arconfig_setpowermode)将功耗模式设置为ARENGINE\_POWER\_MODE\_ULTRA\_POWER\_SAVING以启动该选项。 |
 
 ### AREngine\_ARPoseType
 
@@ -1883,7 +1883,7 @@ PhoneTabletTV
 | --- | --- |
 | session | 与AR Engine服务交互的[AREngine\_ARSession](arengine-capi-arengine.md#arengine_arsession)对象。 |
 | augmentedImage | 图像类型的可追踪对象，参见[AREngine\_ARAugmentedImage](arengine-capi-arengine.md#arengine_araugmentedimage)。 |
-| augmentedImageName | 图像名称，不能超出255字节，超出255字节的字符将会被丢弃。 |
+| augmentedImageName | 图像名称，不允许为空，255个字符以内，超过255个字符的部分将被自动截断。 |
 | outNameLength | 返回图像名称长度。 |
 
 **返回：**

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-taskpool_u
 title: TaskPool使用规范
 breadcrumb: 最佳实践 > 应用框架 > ArkTS语言 > TaskPool使用规范
 category: best-practices
-scraped_at: 2026-04-28T08:20:05+08:00
+scraped_at: 2026-04-29T14:10:46+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:bc89bb7dce042218e9b07f66a8e3723edc6f973a56a8598ee88e75d9086ad05b
+content_hash: sha256:44fb38f57056ff76d48c73d7517f9c818bc04b6c51b81e8aab82dc1c14a9c7ee
 ---
 
 ## 概述
@@ -22,7 +22,7 @@ content_hash: sha256:bc89bb7dce042218e9b07f66a8e3723edc6f973a56a8598ee88e75d9086
 
 在工程中导入文件和HAR时，某些文件使用了如@Observed、AppStorage等UI装饰器或状态变量，这些UI装饰器或状态变量即使没有被显式调用也可能会被解析执行。然而目前子线程并不支持UI属性，当解析到这些UI装饰器或状态变量时，会抛出异常并返回，导致本模块的解析会被中断。访问这些包含UI的文件中的某些变量时可能会抛出错误：xxx is not initialized ，导致功能失效甚至crash。如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/G3hsGPrwSJu5XMV4h67LVw/zh-cn_image_0000002229449997.png?HW-CC-KV=V1&HW-CC-Date=20260428T002003Z&HW-CC-Expire=86400&HW-CC-Sign=A2AA2E31C574717F7147966FE93509A31A70822F20E9798A22C5677FD2FDBFA8 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/G3hsGPrwSJu5XMV4h67LVw/zh-cn_image_0000002229449997.png?HW-CC-KV=V1&HW-CC-Date=20260429T061045Z&HW-CC-Expire=86400&HW-CC-Sign=26A84E5DC5378188B90D035EBC3A2F71FCDEA59A40B72EEB4CEE0FF598EB83C7 "点击放大")
 
 另外在一些复杂项目中，即使本模块未发生改动，也可能由于SDK或其他依赖模块发生变更而导致该问题。此类问题排查起来较为困难，因此推荐在开发和迭代阶段就做好相应的约束和验证。
 
@@ -161,7 +161,7 @@ content_hash: sha256:bc89bb7dce042218e9b07f66a8e3723edc6f973a56a8598ee88e75d9086
 
 因此，当开发者有监听需求时，推荐使用长时任务，主动管理任务所在线程的生命周期。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/z8d0hVGVRv-po3FasQYW1g/zh-cn_image_0000002229449993.png?HW-CC-KV=V1&HW-CC-Date=20260428T002003Z&HW-CC-Expire=86400&HW-CC-Sign=0A771A6A76FCE6A756E5FA60A967383465D7F9D466F8C17148261F14F2809F75 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/z8d0hVGVRv-po3FasQYW1g/zh-cn_image_0000002229449993.png?HW-CC-KV=V1&HW-CC-Date=20260429T061045Z&HW-CC-Expire=86400&HW-CC-Sign=1F20BF1944F9B48DA3C7F88F6E25DD7D863BCBE7362F39BE4904F29CF6B10BE6 "点击放大")
 
 **反例**
 
@@ -261,7 +261,7 @@ TaskPool提供了支持TaskPool子线程和宿主线程通信的接口[sendData(
 
 如果有需要，推荐使用emitter，emitter能够方便地实现宿主线程和子线程之间的双向通信。另外emitter的on()接口具有监听性质，在没有取消注册的情况下，能在任意时间被触发，因此需要在LongTask()中注册。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/pER8XbA5TbOuFudBGq154w/zh-cn_image_0000002229449989.png?HW-CC-KV=V1&HW-CC-Date=20260428T002003Z&HW-CC-Expire=86400&HW-CC-Sign=70DCA0E8AE9ABE15F4CE2F48E30A4B41F7EADBDBF4F5AC23BD796623DDC48C31 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/pER8XbA5TbOuFudBGq154w/zh-cn_image_0000002229449989.png?HW-CC-KV=V1&HW-CC-Date=20260429T061045Z&HW-CC-Expire=86400&HW-CC-Sign=E62FB2ABD4625B185B45513E89508EF119B42EB04355B09594BF36DDF1D97ED7 "点击放大")
 
 **反例**
 
@@ -358,7 +358,7 @@ TaskPool提供了支持TaskPool子线程和宿主线程通信的接口[sendData(
 
 在合适的场景下也可以使用[SequenceRunner](../harmonyos-references/js-apis-taskpool.md#sequencerunner-11)()等API，以避免短时间内大量任务连续进入任务池，使线程数瞬间提升到最大。主线程连续处理大量任务密集返回时的回调和微任务会阻塞UI，影响用户体验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/KomCQI-CQ0iv7WqV8YJ26g/zh-cn_image_0000002193850132.png?HW-CC-KV=V1&HW-CC-Date=20260428T002003Z&HW-CC-Expire=86400&HW-CC-Sign=5C984F3057C6A62CB5FC2E2D339AB808E56D7E9D4576BFE74A0A222E21530A1C "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/KomCQI-CQ0iv7WqV8YJ26g/zh-cn_image_0000002193850132.png?HW-CC-KV=V1&HW-CC-Date=20260429T061045Z&HW-CC-Expire=86400&HW-CC-Sign=81AE4C774E7573FE7C34F85EC5C57166F788D281647D52F4C128402CEFB54118 "点击放大")
 
 ```
 1. // Sample5.ets

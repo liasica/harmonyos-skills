@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/pen-handw
 title: HandwriteComponent（手写套件组件）
 breadcrumb: API参考 > 系统 > 硬件 > Pen Kit（手写笔服务） > ArkTS组件 > HandwriteComponent（手写套件组件）
 category: harmonyos-references
-scraped_at: 2026-04-28T08:10:59+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:90f8d7c8f0ac8fc535dbb07b70e7c778ad90b834c51685967a0d94d81cbf27e6
+scraped_at: 2026-04-29T14:01:39+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:f71ec640f03b675c007432195b61099f8ea68a55ab169b421891b60616a3afdc
 ---
 
 本模块提供手写套件组件，组件包含画布和手写工具栏，集成之后可快速实现手写能力。
@@ -47,9 +47,9 @@ PhonePC/2in1Tablet
 | defaultPenInfo | [PenHspInfo](pen-handwritecomponent.md#penhspinfo)[] | 否 | 是 | 设置各笔刷的默认宽度。  **起始版本**：5.1.0(18) |
 | widthRatio | number | 否 | 是 | 画布宽度占比。取值范围：0 ~ 1。  **起始版本**：6.0.0(20) |
 | heightRatio | number | 否 | 是 | 画布高度占比。取值范围：0 ~ 1。  **起始版本**：6.0.0(20) |
-| maxCanvasHeight | number | 否 | 是 | 长画布最大高度。单位vp。取值范围：大于0。  **起始版本**：6.1.0(23) |
-| scaleDisabled | boolean | 否 | 是 | 是否禁用画布缩放。true代表禁用缩放，false代表不禁用缩放。默认为false。  **起始版本**：6.1.0(23) |
-| onDidScroll | [DidScrollCallback](pen-handwritecomponent.md#didscrollcallback) | 否 | 是 | 画布滚动时的回调。  **起始版本**：6.1.0(23) |
+| maxCanvasHeight | number | 否 | 是 | 长画布最大高度。单位vp。取值范围：大于0。默认为无限大。  **起始版本**：6.1.0(23) |
+| scaleDisabled | boolean | 否 | 是 | 是否禁用画布缩放。true代表禁用缩放，false代表不禁用缩放。默认为false。设置scaleDisabled为true时，用户将无法通过手势缩放画布，适用于固定比例展示的场景。  **起始版本**：6.1.0(23) |
+| onDidScroll | [DidScrollCallback](pen-handwritecomponent.md#didscrollcallback) | 否 | 是 | 画布滚动时的回调。当需要监听画布滚动位置时，可使用此回调。  **起始版本**：6.1.0(23) |
 
 ## build
 
@@ -105,7 +105,7 @@ PhonePC/2in1Tablet
 
 type DidScrollCallback = (yOffset: number) => void
 
-画布滚动的回调。回调方法的参数是当前画布的偏移量。
+画布滚动的回调。在画布滚动时触发，用于获取当前画布的偏移量。使用callback异步回调。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -217,7 +217,7 @@ PhonePC/2in1Tablet
 50. // 需根据应用存储规则，获取到手写文件保存的路径，此处仅为实例参考
 51. const path = this.getUIContext().getHostContext()?.filesDir + '/aa';
 52. await this.controller?.save(path).then().catch((error: Error) => {
-53. console.error("save err：" + error.message);
+53. console.error("save err: " + error.message);
 54. })
 55. // 获取缩略图
 56. this.controller.getThumbnail(this.controller?.getContentRange())?.then((pixelMap: PixelMap) => {

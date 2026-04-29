@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-custom-hvi
 title: 定制hvigor插件
 breadcrumb: 最佳实践 > 编译构建 > 定制hvigor插件
 category: best-practices
-scraped_at: 2026-04-28T08:23:10+08:00
+scraped_at: 2026-04-29T14:14:22+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:5f4ce280bc6aaa4eec80c56a7af0f3a29d8d46efb735c0207dc2e0c05b4fdacf
+content_hash: sha256:e06baa4ff052c69e282ad0ad4e20a87294a70ec824e3902825bd792dc5f3f346
 ---
 
 ## 概述
@@ -41,7 +41,7 @@ content_hash: sha256:5f4ce280bc6aaa4eec80c56a7af0f3a29d8d46efb735c0207dc2e0c05b4
 
 定制hvigor插件，就是在编译构建的过程中插入开发者需要的自定义任务，将这些自定义任务抽象后封装成可复用的部分，通过输出plugin插件的目标形式，实现编译构建个性化逻辑的复用和共享分发。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/IG-sReqFS42pZ3wwxzfV4w/zh-cn_image_0000002229335981.png?HW-CC-KV=V1&HW-CC-Date=20260428T002308Z&HW-CC-Expire=86400&HW-CC-Sign=99F0B8BB8AAF75D4D6DDB90F35752106BDD7807F2F831A2DD0D37B25BEB51EF9 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/IG-sReqFS42pZ3wwxzfV4w/zh-cn_image_0000002229335981.png?HW-CC-KV=V1&HW-CC-Date=20260429T061420Z&HW-CC-Expire=86400&HW-CC-Sign=99475861524CB3FF93A8218EE0B4DAF6B4271D161061E99FE63EA7D4AF032F9A "点击放大")
 
 如上图所示，hvigor插件的工作原理：
 
@@ -160,4 +160,4 @@ hvigor主要提供了两种方式以实现插件的开发：
    [hvigorfile.ts](https://gitcode.com/HarmonyOS_Samples/BestPracticeSnippets/blob/master/customPlugin/library/hvigorfile.ts#L2-L8)
 5. 执行Build -> Make Module编译，编译产物的文件名被修改为“name-version-author.har”的组成形式，同时生成路径从default目录改到了target目录下。结果如下图：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/zLzZ5V8lSKWCBPVILG8AcA/zh-cn_image_0000002229335985.png?HW-CC-KV=V1&HW-CC-Date=20260428T002308Z&HW-CC-Expire=86400&HW-CC-Sign=0F9796D19E48F0B1227964F1EC03A80422FC55CFE7280BB88B2C07403A338964 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/zLzZ5V8lSKWCBPVILG8AcA/zh-cn_image_0000002229335985.png?HW-CC-KV=V1&HW-CC-Date=20260429T061420Z&HW-CC-Expire=86400&HW-CC-Sign=0C3C7FFAE4C0C3C3BCBF05F9AA3DB6BE6B91C043682CB3B620B94ED9C9687475 "点击放大")

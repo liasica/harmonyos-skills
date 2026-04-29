@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-hypium-au
 title: 使用Hypium实现ArkWeb自动化测试
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > Web调试维测 > 使用Hypium实现ArkWeb自动化测试
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:41:08+08:00
+scraped_at: 2026-04-29T13:29:32+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:884a0abd90a71b78ffe729d4a3010e54a8927541661fddf929f571c2edcb12cc
+content_hash: sha256:8a90ed2aa03b387433f447b3291a19d23538cb9608b91f3a714661ad9fea2da5
 ---
 
 ## 概述
@@ -48,7 +48,7 @@ ChromeDriver充当了Selenium WebDriver和Web页面之间的中介。通过Selen
 
 * 使用set\_chromedriver\_exe\_search\_path方法指定chromedriver所在文件夹的路径时，下层文件夹命名规则为chromedriver\_版本号，参考下图。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/ok5s2VU8RaOsXT6OrRLfgg/zh-cn_image_0000002552958256.png?HW-CC-KV=V1&HW-CC-Date=20260427T234107Z&HW-CC-Expire=86400&HW-CC-Sign=80F17CCD616F216E39B644C08B9AA637710A1AD0B6578B92174A9DE3D4270B05)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/jm_pKxtmQq6Wi57Jr3YYFA/zh-cn_image_0000002589324617.png?HW-CC-KV=V1&HW-CC-Date=20260429T052932Z&HW-CC-Expire=86400&HW-CC-Sign=D286871B445A11FBF3BE7CAA1346C4A1FAD99215F6D61C5EB1B1D1406B6AF3CE)
 
 ## 示例代码
 

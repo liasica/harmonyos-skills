@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-image-whit
 title: Image白块解决方案
 breadcrumb: 最佳实践 > 性能 > 性能场景优化案例 > 专项问题解决方案 > Image白块解决方案
 category: best-practices
-scraped_at: 2026-04-28T08:22:35+08:00
+scraped_at: 2026-04-29T14:13:40+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:a8753a5ec96e632c0cbba06021de1a9b440a2ff66ff8e962b3ad35882566aea2
+content_hash: sha256:9b5f621baa12fe60cbab76d667f8d5e5087db6b171aa580a1b18af0978b1141d
 ---
 
 ## 概述
@@ -18,7 +18,7 @@ content_hash: sha256:a8753a5ec96e632c0cbba06021de1a9b440a2ff66ff8e962b3ad3588256
 * 缓存复用阶段：当Image组件加载时，首先检查应用沙箱是否存在缓存。若存在，则直接读取缓存数据；若不存在，再发起网络请求。非首次请求时，该机制可避免重复下载，从而缩短白块持续时间。
 
 **图1** Image加载网络图片两种方式对比  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/S706tgT_R3CyANBKiNcgBA/zh-cn_image_0000002429762245.png?HW-CC-KV=V1&HW-CC-Date=20260428T002233Z&HW-CC-Expire=86400&HW-CC-Sign=D289B060B3F518CA06122E5D92626C87F7BE5CF9E4141CBD1D240B7B5520BB31 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/S706tgT_R3CyANBKiNcgBA/zh-cn_image_0000002429762245.png?HW-CC-KV=V1&HW-CC-Date=20260429T061338Z&HW-CC-Expire=86400&HW-CC-Sign=E58E3E51FBEE7BF96599EA9236464C08FBCA9D403294F80D60D9511B1BB281FE "点击放大")
 
 说明
 
@@ -82,7 +82,7 @@ content_hash: sha256:a8753a5ec96e632c0cbba06021de1a9b440a2ff66ff8e962b3ad3588256
 子页面PageOne中需展示一张较大的网络图片，在父组件的aboutToAppear()中提前发起网络请求，并做判断文件是否存在，已下载的不再重复请求，存储在应用沙箱中。当父页面点击按钮跳转子页面PageOne，此时触发pixMap请求读取应用沙箱中已缓存解码的网络图片并存储在LocalStorage中，通过在子页面的Image中传入被@StorageLink修饰的变量imageData进行数据刷新，图片送显。
 
 **图2** 使用预下载的方式，由开发者灵活地处理网络图片，减少白块出现时长  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/UIzcZ7m_RDKN-b-18tTsrg/zh-cn_image_0000002429764493.png?HW-CC-KV=V1&HW-CC-Date=20260428T002233Z&HW-CC-Expire=86400&HW-CC-Sign=F8317311341A9F1F621725FE250B6316995C54C3E0D77F37C0C24C89E410772F "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/UIzcZ7m_RDKN-b-18tTsrg/zh-cn_image_0000002429764493.png?HW-CC-KV=V1&HW-CC-Date=20260429T061338Z&HW-CC-Expire=86400&HW-CC-Sign=46FE53004B7F71DE9C431A17DAAF85A3B9719B14F7F4CBAC75340A024FBD2320 "点击放大")
 
 1. 在父组件里aboutToAppear()中提前发起网络请求，当父页面点击按钮跳转子页面PageOne，此时触发pixMap请求读取应用沙箱中已缓存解码的网络图片并存储在localStorage中。非首次点击时，不再重复调用getPixMap()，避免每次点击都从沙箱里读取文件。
 
@@ -249,14 +249,14 @@ content_hash: sha256:a8753a5ec96e632c0cbba06021de1a9b440a2ff66ff8e962b3ad3588256
 分析阶段的起点为父页面点击按钮开始计时即trace的H:DispatchTouchEvent，结束点为子页面图片渲染的首帧出现即H:CreateImagePixelMap标签后的第一个Vsync，记录白块出现时间为1.3s，其中以H:HttpRequestInner的标签起始为起点到H:DownloadImageSuccess标签结束为终点记录时间，即为网络下载耗时1.2s，因此使用Image直接加载网络图片时，出现长时间Image白块，其原因是需要等待网络下载资源完成。
 
 **图3** 直接使用Image加载网络数据  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/gTwBIu9zRSKuu-lman0e5w/zh-cn_image_0000002229337465.png?HW-CC-KV=V1&HW-CC-Date=20260428T002233Z&HW-CC-Expire=86400&HW-CC-Sign=829D0D8610FC30AFDFBA570C70BBDA616293BA35A7251763C402945651341E59 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/gTwBIu9zRSKuu-lman0e5w/zh-cn_image_0000002229337465.png?HW-CC-KV=V1&HW-CC-Date=20260429T061338Z&HW-CC-Expire=86400&HW-CC-Sign=ADB3DBA1C89BACAF8538EA142747F33E025DD3CB13935295D3E81E27709328CD "点击放大")
 
 【优化后】
 
 分析阶段的起点为父页面点击按钮开始计时即trace的H:DispatchTouchEvent，结束点为子页面图片渲染的首帧出现即H:CreateImagePixelMap标签后的第一个Vsync，记录白块出现时间为32.6ms，其中记录H:HttpRequestInner的标签耗时即为提前网络下载的耗时1.16s，对比白块时长可知提前预下载可以减少白块出现时长。
 
 **图4** 使用预下载的方式  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/m3cDVrbrTi-sPAMeSeHidg/zh-cn_image_0000002229451957.png?HW-CC-KV=V1&HW-CC-Date=20260428T002233Z&HW-CC-Expire=86400&HW-CC-Sign=C173B37220C936E54D4B5086DEDF793D40DFB28B4DD8F11D9067EE973028FD52 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/m3cDVrbrTi-sPAMeSeHidg/zh-cn_image_0000002229451957.png?HW-CC-KV=V1&HW-CC-Date=20260429T061338Z&HW-CC-Expire=86400&HW-CC-Sign=FD3AB947A4626E1A610B17B993A3C79B056EAC127AC6C759ABCAABBE68C20940 "点击放大")
 
 说明
 

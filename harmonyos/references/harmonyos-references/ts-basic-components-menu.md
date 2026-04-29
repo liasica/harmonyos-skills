@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: Menu
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 菜单 > Menu
 category: harmonyos-references
-scraped_at: 2026-04-28T08:02:15+08:00
+scraped_at: 2026-04-29T13:52:40+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:f46b1454b3b73286a11e8d9f1e97e13cd6fbf636488c6b6ae7e77b13dcfdf489
+content_hash: sha256:36dd8deaf366453897221bebca1d10c00369349e1a582c0bbd3c13a76fdf6ad2
 ---
 
 以垂直列表形式显示的菜单。
@@ -286,7 +286,7 @@ PhonePC/2in1TabletTVWearable
 62. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/84Z3uhJRTxuTfdqxBXmISQ/zh-cn_image_0000002552960020.png?HW-CC-KV=V1&HW-CC-Date=20260428T000213Z&HW-CC-Expire=86400&HW-CC-Sign=75DF07411AD0C579C7CDD3F573B6707A5BE19AC97D72B1E4ABE2DB95EC9C0B47)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/yyQX-VUYTb2YVCGZ8opxjw/zh-cn_image_0000002558766546.png?HW-CC-KV=V1&HW-CC-Date=20260429T054959Z&HW-CC-Expire=86400&HW-CC-Sign=C9E6879D3B4D2F9975ED7C3F5B03EB9F3A5426F6E669680E47439FA158DEABBD)
 
 ### 示例2（设置symbol类型图标）
 
@@ -360,7 +360,7 @@ PhonePC/2in1TabletTVWearable
 65. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/SThdkg6NS6qQE2j2j820fQ/zh-cn_image_0000002583480021.png?HW-CC-KV=V1&HW-CC-Date=20260428T000213Z&HW-CC-Expire=86400&HW-CC-Sign=EF3DC8E4120C24881765EC1111AE853EA200BBD0E0C9465559646C7B1753959F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/w5xwIjYNRi-WizR9b_lVdQ/zh-cn_image_0000002558606886.png?HW-CC-KV=V1&HW-CC-Date=20260429T054959Z&HW-CC-Expire=86400&HW-CC-Sign=F69F600781867E447AE06AAFA1BB63438562F4877C34D5BE1EB88E97D32355FD)
 
 ### 示例3（设置Menu子菜单展开符号）
 
@@ -424,7 +424,7 @@ PhonePC/2in1TabletTVWearable
 55. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/H_Y20dqHT062u4jLXxSg7Q/zh-cn_image_0000002552800372.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000213Z&HW-CC-Expire=86400&HW-CC-Sign=BBBCDE1072D5552437E223F4DB885C7F5AA2AF264292465C17CF1131FF241701)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/d0dKYt2tQTGDbB2pRwU8lw/zh-cn_image_0000002589326413.gif?HW-CC-KV=V1&HW-CC-Date=20260429T054959Z&HW-CC-Expire=86400&HW-CC-Sign=4C6B0D00B4FC8668D2321A2BB2780BBDB23AA73A0AC03AB3A811A16936BA000F)
 
 ### 示例4（设置分割线样式）
 
@@ -472,4 +472,4 @@ PhonePC/2in1TabletTVWearable
 39. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/1X7NlF9wSXWJkUaV-0GeoA/zh-cn_image_0000002583440067.png?HW-CC-KV=V1&HW-CC-Date=20260428T000213Z&HW-CC-Expire=86400&HW-CC-Sign=9485716A42BA9BDB01FC5EEC10691B4E28BB7B43DF050F696178ECA50C87D84B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/2de12uzgRtCAUU9cJFaAmg/zh-cn_image_0000002589246355.png?HW-CC-KV=V1&HW-CC-Date=20260429T054959Z&HW-CC-Expire=86400&HW-CC-Sign=AD85E409D952C22386D85381C0BA1FD52F4ACF3B773A613D6E1A05EED18CBD30)

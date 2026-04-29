@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/push-faq-5
 title: 关于通知消息被频控的问题
 breadcrumb: 指南 > 应用服务 > Push Kit（推送服务） > Push Kit常见问题 > 关于通知消息被频控的问题
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:50:34+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:6f63328d3bc94acaa7f404637032a1c9b0a6058100227d45e8b3bce221198d0e
+scraped_at: 2026-04-29T13:40:00+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:2bd0eadbc1b56118d58a62eb824d409848dca8a982a031dbe13817becf93a703
 ---
 
-为了给用户提供更好的消息通知体验，营造清朗网络空间，华为推送服务设置了多条频控规则。若消息超出规则限制，超出的消息将会被**丢弃**，直到**次日恢复**。
+为了给用户提供更好的消息通知体验，营造清朗网络空间，Push Kit设置了多条频控规则。若消息超出规则限制，超出的消息将会被**丢弃**，直到**次日恢复**。
 
 ## 通知消息被频控的可能原因
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/S9pSvhZXTqOYezB3ARF3pg/zh-cn_image_0000002552959140.png?HW-CC-KV=V1&HW-CC-Date=20260427T235033Z&HW-CC-Expire=86400&HW-CC-Sign=4090D2FBEB1ADDD1469FAE4DCE276D453937CA3B9FF000F249B7B542B2A6A8F1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/W-k63RE_Q2ezoqhPKJROCQ/zh-cn_image_0000002589245449.png?HW-CC-KV=V1&HW-CC-Date=20260429T053958Z&HW-CC-Expire=86400&HW-CC-Sign=5F816E078E5623265C200FFAD015577BCF60F788A68A9DFEDBD3A5E3E3C08A0B)
 
 具体规则如下：
 
@@ -20,7 +20,7 @@ content_hash: sha256:6f63328d3bc94acaa7f404637032a1c9b0a6058100227d45e8b3bce2211
 
 说明
 
-若消息数量超出1000条频次限制，推送服务将向您的回执服务器返回**256结果码**。（1000条为REST API请求成功总数，非成功到达端侧的消息总数）
+若消息数量超出1000条频次限制，Push Kit将向您的回执服务器返回**256结果码**。（1000条为REST API请求成功总数，非成功到达端侧的消息总数）
 
 **正式发布阶段**，系统会根据现网使用场景和流量进行管控，不合理的使用场景系统会进行频控，并受[场景化消息频控](../harmonyos-references/push-msg-freq-control.md#场景化消息频控)限制，具体频控规则见下表：
 
@@ -32,9 +32,9 @@ content_hash: sha256:6f63328d3bc94acaa7f404637032a1c9b0a6058100227d45e8b3bce2211
 
 说明
 
-系统会根据现网使用场景和流量进行管控，不合理的使用场景系统会进行频控，推送服务将向您的回执服务器返回**102结果码**。
+系统会根据现网使用场景和流量进行管控，不合理的使用场景系统会进行频控，Push Kit将向您的回执服务器返回**102结果码**。
 
-若场景化消息超出对应的频控规则限制，推送服务将向您的回执服务器返回**256结果码**。
+若场景化消息超出对应的频控规则限制，Push Kit将向您的回执服务器返回**256结果码**。
 
 频控规则详情请参见[消息频控](../harmonyos-references/push-msg-freq-control.md)，回执状态码详情请参考[回执状态码](push-msg-receipt.md#回执状态码)。
 

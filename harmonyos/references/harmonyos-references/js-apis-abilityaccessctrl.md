@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: @ohos.abilityAccessCtrl (程序访问控制管理)
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > 通用能力的接口(推荐) > @ohos.abilityAccessCtrl (程序访问控制管理)
 category: harmonyos-references
-scraped_at: 2026-04-28T07:58:29+08:00
+scraped_at: 2026-04-29T13:48:45+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:d87069dd1fd4dfac8194ee445a7320a5d3fab512130450b86582fcdba0f4cc79
+content_hash: sha256:375edbae6eb2bf2251fe59b3e5d5cd4560abbdd8cf475aa27c8b6854413596de
 ---
 
 程序访问控制提供应用程序的权限校验和管理能力。
@@ -256,7 +256,7 @@ requestPermissionsFromUser(context: Context, permissionList: Array<Permissions>,
 
 如果用户拒绝授权，将无法再次拉起弹框，需要用户在系统应用“设置”的界面中，手动授予权限，或是调用[requestPermissionOnSetting](js-apis-abilityaccessctrl.md#requestpermissiononsetting12)，拉起权限设置弹框，引导用户授权。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/SOc3wGUIStCsqcSSwEnfzg/zh-cn_image_0000002552799746.png?HW-CC-KV=V1&HW-CC-Date=20260427T235828Z&HW-CC-Expire=86400&HW-CC-Sign=3062DD63FD985D4508DDCA54AACAF0D0D4226C1EEDC0504216C889C7D8F4AD15)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/YjyAvkKNSlmVz6Isbs1GTA/zh-cn_image_0000002589325785.png?HW-CC-KV=V1&HW-CC-Date=20260429T054841Z&HW-CC-Expire=86400&HW-CC-Sign=9E1102B29B838B0D32E7FDD9F85ABB393AF490199E2C7983FE8C221F1EC00A84)
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -381,7 +381,7 @@ requestPermissionOnSetting(context: Context, permissionList: Array<Permissions>)
 
 在调用此接口前，应用需要先调用[requestPermissionsFromUser](js-apis-abilityaccessctrl.md#requestpermissionsfromuser9)，如果用户在首次弹窗授权时已授权，调用当前接口将无法拉起弹窗。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/w80q8_eZQamUh3KKuBoulQ/zh-cn_image_0000002583439441.png?HW-CC-KV=V1&HW-CC-Date=20260427T235828Z&HW-CC-Expire=86400&HW-CC-Sign=DF755AE766D814D96629DA2BD6EE2E9416CC8248ECC7B91E640C18CD36FFBE10)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/DXqccpGgQO6ACJzs2sRqVQ/zh-cn_image_0000002589245727.png?HW-CC-KV=V1&HW-CC-Date=20260429T054841Z&HW-CC-Expire=86400&HW-CC-Sign=85F607568A609F055C12E90517FD4D571DB1B7D8A5A376228C5E0A343E35E521)
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -442,7 +442,7 @@ requestGlobalSwitch(context: Context, type: SwitchType): Promise<boolean>
 
 在某些情况下，如果录音、拍照等功能被禁用，应用可拉起此弹框请求用户同意开启对应功能。如果当前全局开关的状态为开启，则不拉起弹框。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/dwvRfSoHSWir7SZtuo2w7g/zh-cn_image_0000002552959396.png?HW-CC-KV=V1&HW-CC-Date=20260427T235828Z&HW-CC-Expire=86400&HW-CC-Sign=2B1453A47D6BE74760E51D388BAE6CA9A9A307C0F01834CFEDECFBFEE5010843)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/N-ndmc1GQdCbLkotric1xw/zh-cn_image_0000002558765916.png?HW-CC-KV=V1&HW-CC-Date=20260429T054841Z&HW-CC-Expire=86400&HW-CC-Sign=D8086CEA7D7928A1B9F17F57C2F768645F338C0C934BC0FBFAC75EE45FC33A90)
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 

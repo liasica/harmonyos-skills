@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-gestur
 title: 绑定手势方法
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 手势处理 > 绑定手势 > 绑定手势方法
 category: harmonyos-references
-scraped_at: 2026-04-28T08:01:19+08:00
+scraped_at: 2026-04-29T13:51:34+08:00
 doc_updated_at: 2026-04-10
-content_hash: sha256:56c51c17a732af2ab619a9a2ae8836098165cca804c73b8eddfd50b9439c9504
+content_hash: sha256:8e3cb14a549bdb3cedc20b60e0e9d1fff3000895937840d72ee1da318352ae18
 ---
 
 为组件绑定不同类型的手势事件，并设置事件的响应方法。
@@ -200,7 +200,7 @@ PhonePC/2in1TabletTVWearable
 51. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/ooOhRqVNSJ-UCFFTurnxVQ/zh-cn_image_0000002583439625.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000118Z&HW-CC-Expire=86400&HW-CC-Sign=0FD905D849604AFAF7BBAFC0E7CDE74AC4BF672578A5B24F29FD07BD280E4F23)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/NdN4xIrkT6uu3a1wGOa9cA/zh-cn_image_0000002589245911.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055132Z&HW-CC-Expire=86400&HW-CC-Sign=9C71E1E5ABC3F7073369B78EFDDEA048165560C4238C572447A79076BC2A7770)
 
 ### 示例2（实时监测参与滑动手势的有效触点数量）
 
@@ -271,4 +271,4 @@ PhonePC/2in1TabletTVWearable
 62. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/Q-PFEke4SfugVlWvmqcD3g/zh-cn_image_0000002552959580.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000118Z&HW-CC-Expire=86400&HW-CC-Sign=807F72B3622386D11429DF774A4D468256463C728EF5E650AA1F3EB22EA95737)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/BhILHiTiSkG0lloAX1PswA/zh-cn_image_0000002558766102.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055132Z&HW-CC-Expire=86400&HW-CC-Sign=F506183229A59DD4E9902FA0F1E9351EE479A00AD71CE84B58C2EBAB6B622426)

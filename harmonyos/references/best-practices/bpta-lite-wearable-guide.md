@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-lite-weara
 title: 轻量级智能穿戴应用开发
 breadcrumb: 最佳实践 > 多端设备体验提升 > 穿戴 > 轻量级智能穿戴应用开发
 category: best-practices
-scraped_at: 2026-04-28T08:21:52+08:00
+scraped_at: 2026-04-29T14:13:07+08:00
 doc_updated_at: 2026-03-26
-content_hash: sha256:b6a001821021c0bc5a499fb1a794cb3eadeb5d6a34b8504e141f76efba0fb992
+content_hash: sha256:b3613f17bd1569ce2242b934f05a96611134d3aa74632196c0984a50f47a0790
 ---
 
 ## 概述
@@ -41,13 +41,13 @@ content_hash: sha256:b6a001821021c0bc5a499fb1a794cb3eadeb5d6a34b8504e141f76efba0
 * 搭建环境：请参考[安装DevEco Studio](../harmonyos-guides/ide-software-install.md)，配置开发环境。
 * 创建项目：请参考[创建一个新的工程](../harmonyos-guides/ide-create-new-project.md)，模板选择“[Lite]Empty Ability”，设备类型选择“Lite Wearable”。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/SIeKJiqgRuyco4scLYM3sw/zh-cn_image_0000002230878012.png?HW-CC-KV=V1&HW-CC-Date=20260428T002148Z&HW-CC-Expire=86400&HW-CC-Sign=0C5247CB5954D8D96CF96A126E2BC6419F1D48980EB2CAE7BE2008CBDA643812 "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/SIeKJiqgRuyco4scLYM3sw/zh-cn_image_0000002230878012.png?HW-CC-KV=V1&HW-CC-Date=20260429T061301Z&HW-CC-Expire=86400&HW-CC-Sign=44A4DF1CA5FA48E2B48A75E7F07396422E3D78282DB7D5690692EA378FE34CDE "点击放大")
 
 ### 工程目录介绍
 
 HelloWorld工程目录如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/05ptXwsET6WWFLKI5BnwPQ/zh-cn_image_0000002231037832.png?HW-CC-KV=V1&HW-CC-Date=20260428T002148Z&HW-CC-Expire=86400&HW-CC-Sign=A2DD1ECD49F7E600CE021F44680DEA9A884CB3AA4C36D6BB8B22162C84CD4380 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/05ptXwsET6WWFLKI5BnwPQ/zh-cn_image_0000002231037832.png?HW-CC-KV=V1&HW-CC-Date=20260429T061301Z&HW-CC-Expire=86400&HW-CC-Sign=BA9D152EDE3C7FB4115421D55ABDC79826064539F54DD6FFB614252E586DFE18 "点击放大")
 
 **pages/index/index.hml****：**此文件定义了index页面的布局，在index页面中用到的组件，以及这些组件的层级关系。以下示例代码包含了一个text组件，内容为“Hello World”。
 
@@ -373,7 +373,7 @@ HelloWorld工程目录如下图所示：
 
 1. 在“pages”目录右键，选择“New > Page”，将“Page name”设置为“details”。如果使用其他方式添加页面，则在添加页面后需要修改配置文件config.json中的pages标签。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/RJiSwKXcQmyd3P6u8bgzzw/zh-cn_image_0000002266037277.png?HW-CC-KV=V1&HW-CC-Date=20260428T002148Z&HW-CC-Expire=86400&HW-CC-Sign=C8DC7EADD64C66B788BE5FA38A9EBF6FBAB37CFACCE1F0B0CB585A8D390BF9CD "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/RJiSwKXcQmyd3P6u8bgzzw/zh-cn_image_0000002266037277.png?HW-CC-KV=V1&HW-CC-Date=20260429T061301Z&HW-CC-Expire=86400&HW-CC-Sign=950FFB226AFBFD5841B20D9C0C463295DF4E04CE4933EBC4F21B20D18D1DCDD6 "点击放大")
 2. 在index.hml页面添加一个文本和一个按钮，文本通过用来指明当前页面，按钮绑定clickAction()方法，用来实现两个页面之间的相互跳转。
 
    ```
@@ -434,7 +434,7 @@ HelloWorld工程目录如下图所示：
    [details.js](https://gitcode.com/HarmonyOS_Samples/BestPracticeSnippets/blob/master/LiteWearable/entry/src/main/js/MainAbility/details/details.js#L2-L11)
 6. 使用Preview预览效果，详情请参考[查看ArkTS/JS预览效果](../harmonyos-guides/ide-previewer-arkts-js.md)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/nIwV-iDjSHqMkEXpewqceA/zh-cn_image_0000002265917341.png?HW-CC-KV=V1&HW-CC-Date=20260428T002148Z&HW-CC-Expire=86400&HW-CC-Sign=8EF2258B278F4A2BA77E792987B40848A6A57B6BAEEC174A07650A3D0C8880A0)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/nIwV-iDjSHqMkEXpewqceA/zh-cn_image_0000002265917341.png?HW-CC-KV=V1&HW-CC-Date=20260429T061301Z&HW-CC-Expire=86400&HW-CC-Sign=14A61605CA745209255D4DC0C90832C26E25114BDB78C25C54BF0E4E2908E3AC)
 
 ## 应用退出
 
@@ -492,7 +492,7 @@ HelloWorld工程目录如下图所示：
 * onHide()：页面消失时被调用。
 * onDestroy()：页面销毁时被调用。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/XgAO41ptQKyn2q8qT4f8-g/zh-cn_image_0000002230878016.png?HW-CC-KV=V1&HW-CC-Date=20260428T002148Z&HW-CC-Expire=86400&HW-CC-Sign=77A030B2C8E5FFD1311C99D075E13844062BAE04B20945727A3FD3888060AB61 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/XgAO41ptQKyn2q8qT4f8-g/zh-cn_image_0000002230878016.png?HW-CC-KV=V1&HW-CC-Date=20260429T061301Z&HW-CC-Expire=86400&HW-CC-Sign=DE663C5D625BEE51E6211E895F15748EAC316DDF6D5A2E7A5259B0C32CB39211 "点击放大")
 
 常用场景如下：
 
@@ -563,7 +563,7 @@ HelloWorld工程目录如下图所示：
    ```
 4. 在preview中预览在轻量级智能穿戴上的显示效果，如下图所示。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/jcXqVUkSSYuoYg756djK5g/zh-cn_image_0000002231037836.png?HW-CC-KV=V1&HW-CC-Date=20260428T002148Z&HW-CC-Expire=86400&HW-CC-Sign=16785159A64DDB6458410045F4CCFB3D3ADF7B4AAA7CFD0535F47D93F46B2507 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/jcXqVUkSSYuoYg756djK5g/zh-cn_image_0000002231037836.png?HW-CC-KV=V1&HW-CC-Date=20260429T061301Z&HW-CC-Expire=86400&HW-CC-Sign=515B5F28184DA51DA35400307A10E602DFA4DA513BFD9F0DBD5A216C1923E2C5 "点击放大")
 
 说明
 
@@ -618,7 +618,7 @@ HelloWorld工程目录如下图所示：
 
 1. 多语言资源文件放在[文件组织](../harmonyos-guides/js-framework-file.md)中指定的i18n文件夹内，命名规则为：语言-国家/地区.json，如zh-CN.json为简体中文，en-US.json为英文。限制词取值要求可参考[定义资源文件](../harmonyos-guides/js-framework-multiple-languages.md#定义资源文件)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/vvkSNxnsSHOfJhvv2SbJ_Q/zh-cn_image_0000002505798198.png?HW-CC-KV=V1&HW-CC-Date=20260428T002148Z&HW-CC-Expire=86400&HW-CC-Sign=A3DAE65B0873F52DD21EC2F76F6D1A21423BB8C0EB5E919A3B4CEB4FC13CAD7C)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/vvkSNxnsSHOfJhvv2SbJ_Q/zh-cn_image_0000002505798198.png?HW-CC-KV=V1&HW-CC-Date=20260429T061301Z&HW-CC-Expire=86400&HW-CC-Sign=C30C5A21F3A47ACB34DF4849B3BCEF198B0A107BC8A9C13E1B61151981CA2043)
 
    说明
 

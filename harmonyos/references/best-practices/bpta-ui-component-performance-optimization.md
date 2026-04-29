@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-ui-compone
 title: UI组件性能优化
 breadcrumb: 最佳实践 > 性能 > 性能场景优化案例 > 界面渲染性能优化 > UI组件性能优化
 category: best-practices
-scraped_at: 2026-04-28T08:22:28+08:00
+scraped_at: 2026-04-29T14:13:29+08:00
 doc_updated_at: 2026-04-01
-content_hash: sha256:ea0e525d15fb68a8378730c13d4c54b6c10020b1908210ae2bdcc726734c4ef4
+content_hash: sha256:7755c4f8c427f7d920960e7d6d748c7634485d1ad86a984b7fe90169e99c39d3
 ---
 
 应用启动到UI页面展示过程包含框架初始化、页面加载和布局渲染三个步骤。其中页面加载和布局渲染的主要流程如下：
 
 **图1** 页面首次加载过程流程图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/gJw67nzCSGun_28mEO8d7A/zh-cn_image_0000002229336857.png?HW-CC-KV=V1&HW-CC-Date=20260428T002227Z&HW-CC-Expire=86400&HW-CC-Sign=9F91DDDF35D375AEC660F82F260B5983B1D5A815B31FE33D350414762B943CCA "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/gJw67nzCSGun_28mEO8d7A/zh-cn_image_0000002229336857.png?HW-CC-KV=V1&HW-CC-Date=20260429T061328Z&HW-CC-Expire=86400&HW-CC-Sign=AD784CF014BF75E9944D3CE7A559BD20E0CD8E3080BAF31E47B0243BC57EB8D2 "点击放大")
 
 * 在执行页面文件时，前端UI描述会在后端创建相应的FrameNode节点树。该树主要用于处理UI组件属性更新、布局测算、事件处理。每个树节点和前端UI组件是一一对应的关系。
 * FrameNode节点树生成之后，根节点开始创建布局任务。该任务遍历所有子节点并创建子节点的布局包装任务。布局包装任务包括执行相关测算和布局任务。
@@ -29,7 +29,7 @@ content_hash: sha256:ea0e525d15fb68a8378730c13d4c54b6c10020b1908210ae2bdcc726734
 
 **图2** 自定义组件生命周期流程图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/JP6YKJOvROShk7hs2rssow/zh-cn_image_0000002229451353.png?HW-CC-KV=V1&HW-CC-Date=20260428T002227Z&HW-CC-Expire=86400&HW-CC-Sign=D5783EAB6058A903BACF778E45F96FFE1318856DE5E5038B9C991CC39C612836 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/JP6YKJOvROShk7hs2rssow/zh-cn_image_0000002229451353.png?HW-CC-KV=V1&HW-CC-Date=20260429T061328Z&HW-CC-Expire=86400&HW-CC-Sign=9EDD1E980AA240FBF9E9B8774424E1989E858C431991505BCCD54D144AC369A0 "点击放大")
 
 如上图所示，自定义组件创建完成之后，在build函数执行之前，将先执行aboutToAppear()生命周期回调函数。此时若在该函数中执行耗时操作，将阻塞UI渲染，增加UI主线程负担。因此，应尽量避免在自定义组件的生命周期内执行高耗时操作。对于复杂计算的耗时场景，可以将计算结果进行缓存处理。对于不需要等待结果的高耗时任务，可以采用多线程处理该任务，通过并发的方式避免主线程阻塞。在aboutToAppear()生命周期函数内建议只做当前组件的初始化逻辑，其他业务逻辑可以按需提前或延后处理。假设在首页视频列表中的子组件内需要初始化创建一个复杂播放器对象，该对象的创建非常耗时。若在该组件的aboutToAppear()函数中创建该对象，当首页加载渲染时，列表内每个子组件的渲染都将等待相应的播放器对象初始化创建完成，此时页面加载将非常耗时甚至可能出现白屏。伪代码如下:
 
@@ -151,7 +151,7 @@ content_hash: sha256:ea0e525d15fb68a8378730c13d4c54b6c10020b1908210ae2bdcc726734
 
 可以通过[冷启动分析：Launch分析](../harmonyos-guides/ide-launch-overview.md)工具抓取Trace，根据hiTraceMeter性能打点，查看耗时为1.956ms。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/5edF_Xu7RKu39XgT3T3tNQ/zh-cn_image_0000002193851480.png?HW-CC-KV=V1&HW-CC-Date=20260428T002227Z&HW-CC-Expire=86400&HW-CC-Sign=3D35BD85E9632996885631CE7ADFDF8592F543B0210977614BB5A95D22ABE5D3 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/5edF_Xu7RKu39XgT3T3tNQ/zh-cn_image_0000002193851480.png?HW-CC-KV=V1&HW-CC-Date=20260429T061328Z&HW-CC-Expire=86400&HW-CC-Sign=FE1E29675A9D057E091B5D4A0EA68C4A2D2DFFC07F18BEEB6FD24605101A96EF "点击放大")
 
 **正例**
 
@@ -194,7 +194,7 @@ content_hash: sha256:ea0e525d15fb68a8378730c13d4c54b6c10020b1908210ae2bdcc726734
 
 可以通过[冷启动分析：Launch分析](../harmonyos-guides/ide-launch-overview.md)工具抓取Trace，根据hiTraceMeter性能打点，查看耗时为0.071ms。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/Wly0lLjLTzqmt4n3fktxfg/zh-cn_image_0000002229451345.png?HW-CC-KV=V1&HW-CC-Date=20260428T002227Z&HW-CC-Expire=86400&HW-CC-Sign=DAAF7CC5C687CE901C2FC3BF77967C8A7B37D819B30D126CB1761E2913868F27 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/Wly0lLjLTzqmt4n3fktxfg/zh-cn_image_0000002229451345.png?HW-CC-KV=V1&HW-CC-Date=20260429T061328Z&HW-CC-Expire=86400&HW-CC-Sign=98B4263F23AD3B850F269A2E996238C099EE63B6F87465322B6FFC8CCE412734 "点击放大")
 
 **表1** 耗时统计
 
@@ -248,7 +248,7 @@ content_hash: sha256:ea0e525d15fb68a8378730c13d4c54b6c10020b1908210ae2bdcc726734
 
 **图3** 表格展示头像组件界面
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/6BgJR3fqToa-arTo2iGk0Q/zh-cn_image_0000002193851484.png?HW-CC-KV=V1&HW-CC-Date=20260428T002227Z&HW-CC-Expire=86400&HW-CC-Sign=3D874AD3FCA19EB5F324253C1A227C9A670E39194011D62AC270C51E657D77F4 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/6BgJR3fqToa-arTo2iGk0Q/zh-cn_image_0000002193851484.png?HW-CC-KV=V1&HW-CC-Date=20260429T061328Z&HW-CC-Expire=86400&HW-CC-Sign=9F7953DF063058A1E587296C79CB347E17C7F442883B1004DE3D9A356FDDFBCE "点击放大")
 
 使用属性方法的方式给头像组件设置属性，代码如下：
 
@@ -431,10 +431,10 @@ content_hash: sha256:ea0e525d15fb68a8378730c13d4c54b6c10020b1908210ae2bdcc726734
 | First Frame - App Phase | 45ms554μs | 45ms638μs | 52ms918μs | 52ms643μs | 44ms603μs | 43ms923μs | 46ms709μs | 46ms355μs |
 
 **图4** 静态注册属性和动态注册属性在不同属性数量下LoadPage耗时  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/bd3GqQlSQ52aqhzVj7gkJw/zh-cn_image_0000002193851492.png?HW-CC-KV=V1&HW-CC-Date=20260428T002227Z&HW-CC-Expire=86400&HW-CC-Sign=590AAACD7BBF0764FDA81493D3F003BA99E6D397FEC75A9A6AC039F1F2BA32D2 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/bd3GqQlSQ52aqhzVj7gkJw/zh-cn_image_0000002193851492.png?HW-CC-KV=V1&HW-CC-Date=20260429T061328Z&HW-CC-Expire=86400&HW-CC-Sign=14F97A52FB383083438B5492E7D27895B7AC24208FB37A917D49E13B22EE0081 "点击放大")
 
 **图5** 静态注册属性和动态注册属性在不同属性数量下First Frame - App Phase耗时  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/ooSwUmAuT4q8Mhlz-3ZOJA/zh-cn_image_0000002229451349.png?HW-CC-KV=V1&HW-CC-Date=20260428T002227Z&HW-CC-Expire=86400&HW-CC-Sign=591E03A9EFEB096A6DDA78C688B390340F9846C62B56CC4574325E391D64DFE9 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/ooSwUmAuT4q8Mhlz-3ZOJA/zh-cn_image_0000002229451349.png?HW-CC-KV=V1&HW-CC-Date=20260429T061328Z&HW-CC-Expire=86400&HW-CC-Sign=4C549579363AC15AC7A104F92E37E3DC353E2501F09D0151C33E1407F18AB20F "点击放大")
 
 可以看到，当注册的属性个数较少时，使用动态注册的方案收益并不明显。当注册的属性个数递增时，动态注册的收益效果同步线性递增。
 
@@ -443,7 +443,7 @@ content_hash: sha256:ea0e525d15fb68a8378730c13d4c54b6c10020b1908210ae2bdcc726734
 在ArkUI中使用自定义组件时，在build阶段将在后端FrameNode树创建一个相应的CustomNode节点，在渲染阶段时也会创建对应的RenderNode节点，如下图所示。
 
 **图6** 前后端UI组件树关系图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/vHNixVz5TI-xRj0Z3vtdpg/zh-cn_image_0000002229336861.png?HW-CC-KV=V1&HW-CC-Date=20260428T002227Z&HW-CC-Expire=86400&HW-CC-Sign=DE14C6F4D6310EB6E8E9B42C27B0352CAF088CDDD20EC333729E70053A8F775D "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/vHNixVz5TI-xRj0Z3vtdpg/zh-cn_image_0000002229336861.png?HW-CC-KV=V1&HW-CC-Date=20260429T061328Z&HW-CC-Expire=86400&HW-CC-Sign=ADC5DFCFED6A025D5531D8B75AF44F7FC5EF593D1B370B661508FBCEB3DB0E85 "点击放大")
 
 * 前端UI描述结构会在后端创建相应的FrameNode节点树；
 * FrameNode节点树主要用于处理UI组件属性更新、布局测算、事件处理等业务逻辑；
@@ -462,7 +462,7 @@ content_hash: sha256:ea0e525d15fb68a8378730c13d4c54b6c10020b1908210ae2bdcc726734
 
 **图7** 卡片列表界面
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/7_cdBVwjQamntikWk9hi8A/zh-cn_image_0000002194011052.png?HW-CC-KV=V1&HW-CC-Date=20260428T002227Z&HW-CC-Expire=86400&HW-CC-Sign=5CE4E1DBF1BF8509E341335E9F384944D03FAE32040425E8F58C8E375700E9A2 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/7_cdBVwjQamntikWk9hi8A/zh-cn_image_0000002194011052.png?HW-CC-KV=V1&HW-CC-Date=20260429T061328Z&HW-CC-Expire=86400&HW-CC-Sign=84E4FC1B4707B7B977DB66EFE1F69DC4FB1B9F8DEE8D8CE715FB85FB75168624 "点击放大")
 
 使用自定义组件方案，示例代码如下：
 
@@ -599,10 +599,10 @@ content_hash: sha256:ea0e525d15fb68a8378730c13d4c54b6c10020b1908210ae2bdcc726734
 将组件数量从30个递增到3000个，通过profiler获取页面加载标签PageRouterManager::LoadPage和页面UI刷新任务标签UITaskScheduler::FlushTask的耗时，对比两种方案的耗时如下：
 
 **图8** 两种方案LoadPage标签耗时对比  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/x9vv7TnhQwmDw2TwHYRYvg/zh-cn_image_0000002193851476.png?HW-CC-KV=V1&HW-CC-Date=20260428T002227Z&HW-CC-Expire=86400&HW-CC-Sign=FED5A70FC56F070DA32FCE256A17B699EACA4F0E3A34ADF185914B45D0B5C729 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/x9vv7TnhQwmDw2TwHYRYvg/zh-cn_image_0000002193851476.png?HW-CC-KV=V1&HW-CC-Date=20260429T061328Z&HW-CC-Expire=86400&HW-CC-Sign=BD95B733AC7534863E9C30083ACB35B07C5F771822DC4367A2C86C89C1C04A16 "点击放大")
 
 **图9** 两种方案UITaskSchedule标签耗时对比  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/d1Qxc7tGSTGZmiXP5_L9cA/zh-cn_image_0000002229451369.png?HW-CC-KV=V1&HW-CC-Date=20260428T002227Z&HW-CC-Expire=86400&HW-CC-Sign=23BD3C3C430A8B6310C24A6AEF4D879C153CEBEF6738DD82FF4E7A29D37AFD88 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/d1Qxc7tGSTGZmiXP5_L9cA/zh-cn_image_0000002229451369.png?HW-CC-KV=V1&HW-CC-Date=20260429T061328Z&HW-CC-Expire=86400&HW-CC-Sign=D60248735DCCEFC9E4E5F029EFA607CE1AAFB6F56DBD2501F3F365454462809A "点击放大")
 
 通过对比图可以看到，@Builder方案在页面加载和刷新UI页面（包括布局、渲染和动画）方面优于自定义组件方案。随着组件个数增加，收益也线性增加。
 

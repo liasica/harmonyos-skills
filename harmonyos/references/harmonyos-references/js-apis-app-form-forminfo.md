@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: @ohos.app.form.formInfo (formInfo)
 breadcrumb: API参考 > 应用框架 > Form Kit（卡片开发服务） > ArkTS API > @ohos.app.form.formInfo (formInfo)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:06:00+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:d6ed567eab2ec98a80c36bcd9030c976b669132f08cde5479acbb98056ea6fe8
+scraped_at: 2026-04-29T13:56:30+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:ef9576d5063cb2b958ce82e44cac0830c959a2f714d078a3a9bbfbb90db9138f
 ---
 
 formInfo模块提供了卡片信息和状态等相关类型和枚举。
@@ -177,12 +177,14 @@ PhonePC/2in1TabletTVWearable
 
 定义卡片形状枚举。
 
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
 **系统能力：** SystemCapability.Ability.Form
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| RECT | 1 | 方形 form。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
-| CIRCLE | 2 | 圆形 form。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
+| RECT | 1 | 方形 form。 |
+| CIRCLE | 2 | 圆形 form。 |
 
 ## FormInfoFilter
 

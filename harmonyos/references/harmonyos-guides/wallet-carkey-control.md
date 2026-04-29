@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/wallet-carkey
 title: 车控
 breadcrumb: 指南 > 应用服务 > Wallet Kit（钱包服务） > 数字车钥匙 > 车控
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:51:08+08:00
+scraped_at: 2026-04-29T13:40:45+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:c858dd594c6d4464c5e6b025e2d19f1a4fe08655b39f56b0b8b35ba7f9e84e95
+content_hash: sha256:400ce9bd069d42e8f7dd80c9c40c298a21048e30491dbe8575bd28a9cd912277
 ---
 
 数字车钥匙开通完成后，车主APP可以通过车控指令远程控制车辆的开门等操作。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/oMkKOKnPRfi-5G_6UPQKqw/zh-cn_image_0000002583439249.png?HW-CC-KV=V1&HW-CC-Date=20260427T235107Z&HW-CC-Expire=86400&HW-CC-Sign=218476E436793CA64094896B4186793B56CA5150B5B128985C63B538F67B9E7C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/TX8n9KWYTwqsfRLwgXyEIA/zh-cn_image_0000002589325575.png?HW-CC-KV=V1&HW-CC-Date=20260429T054044Z&HW-CC-Expire=86400&HW-CC-Sign=9770997D0BFF43621282D46ACD9A1C022B36EAAC14E14D6229A8E6F6AA24E073)
 
 典型的交互流程如下:
 

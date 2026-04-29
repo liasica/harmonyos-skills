@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (NativeMediaPlayerHandler)
 breadcrumb: API参考 > 应用框架 > ArkWeb（方舟Web） > ArkTS API > @ohos.web.webview (Webview) > Interface (NativeMediaPlayerHandler)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:05:11+08:00
-doc_updated_at: 2026-04-03
-content_hash: sha256:06409640bc062a8084867196820a32426b59514caa967b12eaf2c52e2e81c219
+scraped_at: 2026-04-29T13:55:39+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:98a16aa98eb7a568e28f0f5a3fdee90260bb7c79f3987bd862bd94d9cc070df5
 ---
 
-[CreateNativeMediaPlayerCallback](arkts-apis-webview-t.md#createnativemediaplayercallback12)回调函数的参数。应用通过该对象，将播放器的状态报告给ArkWeb内核。
+[CreateNativeMediaPlayerCallback](arkts-apis-webview-t.md#createnativemediaplayercallback12)回调函数的参数。应用通过该对象，将播放器的状态通知给 ArkWeb 内核。
 
 说明
 
@@ -82,7 +82,7 @@ PhonePC/2in1TabletTVWearable
 
 handlePlaybackRateChanged(playbackRate: number): void
 
-当播放器的播放速度发生变化时，调用该方法将播放速度通知给 ArkWeb 内核。
+当播放器的播放速率发生变化时，调用该方法将播放速率通知给 ArkWeb 内核。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -162,7 +162,7 @@ PhonePC/2in1TabletTVWearable
 
 handleEnded(): void
 
-当媒体播放结束时，调用该方法通知给 ArkWeb 内核。
+当媒体播放结束时，调用该方法将播放结束事件通知给 ArkWeb 内核。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -236,7 +236,7 @@ PhonePC/2in1TabletTVWearable
 
 handleSeeking(): void
 
-当播放器进入 seek 状态时，调用该方法通知 ArkWeb 内核。
+当播放器进入seek状态时，调用该方法将seek进入事件通知 ArkWeb 内核。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -250,7 +250,7 @@ PhonePC/2in1TabletTVWearable
 
 handleSeekFinished(): void
 
-当播放器 seek 完成后，调用该方法通知 ArkWeb 内核。
+当播放器seek完成后，调用该方法将seek完成事件通知 ArkWeb 内核。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -264,7 +264,7 @@ PhonePC/2in1TabletTVWearable
 
 handleError(error: MediaError, errorMessage: string): void
 
-当播放器发生错误时， 调用该方法通知 ArkWeb 内核。
+当播放器发生错误时，调用该方法将错误通知 ArkWeb 内核。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -285,7 +285,7 @@ PhonePC/2in1TabletTVWearable
 
 handleVideoSizeChanged(width: number, height: number): void
 
-当播放器解析出视频的尺寸时， 调用该方法通知 ArkWeb 内核。
+当播放器解析出视频的尺寸时， 调用该方法将视频尺寸通知 ArkWeb 内核。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -293,8 +293,8 @@ handleVideoSizeChanged(width: number, height: number): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| width | number | 是 | 视频的宽，单位为像素，取值范围：[0, +∞) |
-| height | number | 是 | 视频的高，单位为像素，取值范围：[0, +∞) |
+| width | number | 是 | 视频的宽，单位：像素，取值范围：[0, +∞) |
+| height | number | 是 | 视频的高，单位：像素，取值范围：[0, +∞) |
 
 **示例：**
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-uri-confi
 title: 应用链接说明
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > Stage模型开发指导 > 应用间跳转 > 拉起指定应用 > 应用链接说明
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:37:49+08:00
+scraped_at: 2026-04-29T13:25:52+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:1ae9d6c73f905b420316eb7eab61e5efcef2533a639fd0e7af60cbb5b8445945
+content_hash: sha256:ec20b54fcf9bf0534dfbf5162745d802c84d5fb4d0f8523cf43fb9964d3fd5bc
 ---
 
 ## uris标签说明
@@ -70,7 +70,7 @@ content_hash: sha256:1ae9d6c73f905b420316eb7eab61e5efcef2533a639fd0e7af60cbb5b84
    | PrimaryContactMgmt | 从API version 23开始，新增支持该字段。指示社交通讯类应用“重要联系人列表”的设置功能。使用场景详见[优先通知权益申请](priority-notification-permission-guidelines.md)。 |
 2. 指定类型的应用被拉起时免跳转弹框：正常情况下，拉起指定类型的应用时，都会弹出确认是否打开应用的弹窗。如果您的应用有向其他应用提供登录/分享/支付的功能，可以在应用中声明对应的LinkFeature（取值参见下表）。应用通过上架审核后，当其他应用拉起您的应用时将不再弹窗提示。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/ln7b1AdKT4SxuUxnTAqYQw/zh-cn_image_0000002552797854.png?HW-CC-KV=V1&HW-CC-Date=20260427T233748Z&HW-CC-Expire=86400&HW-CC-Sign=EB4B1A056857144871FA5A3C3E5A0421EAB9C59246A991354286421B8C5A016F)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/OCCeslPNT5O5IuZJ2Jx8kQ/zh-cn_image_0000002558604338.png?HW-CC-KV=V1&HW-CC-Date=20260429T052550Z&HW-CC-Expire=86400&HW-CC-Sign=343935B10D3D39A5470A92F675FE1975020177297524D6EB718BA7939DE1F6AC)
 
    | 值 | 说明 |
    | --- | --- |
@@ -121,7 +121,7 @@ content_hash: sha256:1ae9d6c73f905b420316eb7eab61e5efcef2533a639fd0e7af60cbb5b84
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/P5ZicJLOQHGNFUc12Ca0NQ/zh-cn_image_0000002583437549.png?HW-CC-KV=V1&HW-CC-Date=20260427T233748Z&HW-CC-Expire=86400&HW-CC-Sign=4691920635B7F3253738FFCA58DDA4E11B2A6497BD35B0CB44DD44120571D90A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/cr_2r8i9SK-7t-H8dXr03g/zh-cn_image_0000002589323863.png?HW-CC-KV=V1&HW-CC-Date=20260429T052550Z&HW-CC-Expire=86400&HW-CC-Sign=B41F53D803C3CEA37F320618FA14DF9761A70E86421735FB931398CB8B46D1FD)
 
 ### 指定类型的应用被拉起时免跳转弹框
 

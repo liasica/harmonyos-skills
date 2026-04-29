@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: 使用方舟异常信息增强检测
 breadcrumb: 最佳实践 > 稳定性 > 稳定性检测 > 开发态稳定性检测 > 方舟类问题检测 > 使用方舟异常信息增强检测
 category: best-practices
-scraped_at: 2026-04-28T08:22:53+08:00
+scraped_at: 2026-04-29T14:14:04+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:13d030257b75ebcfa6fa1855a735b68ee18d2411eef14b9f7e28efffc5b807ef
+content_hash: sha256:fbade6b28b1efbc76922d58f516c1546a15a2a850e929e76663505cbd3346d08
 ---
 
 ## 概述
@@ -20,7 +20,7 @@ content_hash: sha256:13d030257b75ebcfa6fa1855a735b68ee18d2411eef14b9f7e28efffc5b
 
   点击**Run > Edit Configurations >** **Diagnostics**，勾选**Enhanced Error Info**。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/J_sivSo9TSCg3kFqpCpReQ/zh-cn_image_0000002404125161.png?HW-CC-KV=V1&HW-CC-Date=20260428T002252Z&HW-CC-Expire=86400&HW-CC-Sign=D4EBDFBF57EF8FE622A73C3C5ACBE2943D4FA2FA175526492A426B5FB552A8C4)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/J_sivSo9TSCg3kFqpCpReQ/zh-cn_image_0000002404125161.png?HW-CC-KV=V1&HW-CC-Date=20260429T061403Z&HW-CC-Expire=86400&HW-CC-Sign=E7CFF6B1A287FEBF33664B0A350A83042F4E5BA1C840146DA0205E0964AA9D65)
 
 * 方式二
 
@@ -35,4 +35,4 @@ content_hash: sha256:13d030257b75ebcfa6fa1855a735b68ee18d2411eef14b9f7e28efffc5b
 1. 运行或调试当前应用。
 2. 当程序出现因native模块加载导致的报错信息时，会显示更详细准确的错误信息。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/AYqYrVXGQ2myGU8FO1TMnA/zh-cn_image_0000002370405608.png?HW-CC-KV=V1&HW-CC-Date=20260428T002252Z&HW-CC-Expire=86400&HW-CC-Sign=2BA7C38FBDB669A1B5A0DADE4B63B9DEDED8D50F922C1063FC4C2F9632FC997A)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/AYqYrVXGQ2myGU8FO1TMnA/zh-cn_image_0000002370405608.png?HW-CC-KV=V1&HW-CC-Date=20260429T061403Z&HW-CC-Expire=86400&HW-CC-Sign=6538062A31B4DC131EE5BD5347EA443413233441940807F3975D6611038ECC61)

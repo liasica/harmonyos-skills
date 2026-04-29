@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scenario-fusi
 title: 推荐车牌号场景
 breadcrumb: 指南 > 应用服务 > Scenario Fusion Kit（融合场景服务） > 智能填充服务 > 推荐车牌号场景
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:50:47+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:dc1d258a74d4aa7ad1e453034b5a076baa99ee5891d58c9b69cbb034018170a8
+scraped_at: 2026-04-29T13:40:18+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:e6ac3c484dc2b8ce8a1e3ff2ea551d61a39a3b20b9a66c66f9923d950a8696d7
 ---
 
 从5.1.0(18)开始，支持智能填充的推荐车牌号场景。
@@ -18,7 +18,7 @@ content_hash: sha256:dc1d258a74d4aa7ad1e453034b5a076baa99ee5891d58c9b69cbb034018
 
 ## 效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/XbHyMkWyQSSLpZlfIUq1Ig/zh-cn_image_0000002552959158.png?HW-CC-KV=V1&HW-CC-Date=20260427T235046Z&HW-CC-Expire=86400&HW-CC-Sign=8C6DCA784FD96D5E115C16A44505827AD0912B44CB9AFB54435F827C5DAD68B0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/6xKuOaknQ7CFKs0X1AasVw/zh-cn_image_0000002589245467.png?HW-CC-KV=V1&HW-CC-Date=20260429T054017Z&HW-CC-Expire=86400&HW-CC-Sign=4784CBE00FEF9E0EB49101446F028A7C6F04DC70D745D1EC19A0BC8575B46489)
 
 ## 示例代码
 
@@ -128,7 +128,7 @@ content_hash: sha256:dc1d258a74d4aa7ad1e453034b5a076baa99ee5891d58c9b69cbb034018
 103. for(let index = 0; index <= 7; index++) {
 104. let id = index + this.licenseItemId;
 105. let position = this.getUIContext().getComponentUtils().getRectangleById(id);
-106. // 相对于屏幕的位置信息,单位px
+106. // 相对于屏幕的位置信息，单位px
 107. let left = position?.screenOffset?.x ?? 0;
 108. let right = left + (position?.size?.width ?? 0);
 109. if (screenX >= left && screenX <= right) {
@@ -184,7 +184,7 @@ content_hash: sha256:dc1d258a74d4aa7ad1e453034b5a076baa99ee5891d58c9b69cbb034018
 159. .opacity(0)
 160. .contentType(ContentType.LICENSE_PLATE)
 161. .onClick((event) => {
-162. // 相对于屏幕的X轴坐标,单位px
+162. // 相对于屏幕的X轴坐标，单位px
 163. let displayX = this.getUIContext().vp2px(event.displayX);
 164. this.handleLicenseClick(displayX);
 165. if (this.activeIndex < 0) {

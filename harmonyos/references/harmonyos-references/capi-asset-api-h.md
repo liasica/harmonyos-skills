@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-asse
 title: asset_api.h
 breadcrumb: API参考 > 系统 > 安全 > Asset Store Kit（关键资产存储服务） > C API > 头文件 > asset_api.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:06:46+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:f3e22d6d996d0d67463410d6e505407cd0ce1d997aeac2461398fe93e7bd8ca6
+scraped_at: 2026-04-29T13:57:17+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:3b589929521cc6df585ab67330be16a6025d376241aac24b8748da59dd7b8bce
 ---
 
 ## 概述
@@ -34,7 +34,7 @@ PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
-| [int32\_t OH\_Asset\_Add(const Asset\_Attr \*attributes, uint32\_t attrCnt)](capi-asset-api-h.md#oh_asset_add) | 新增一条关键资产。  如果要设置[Asset\_Tag](capi-asset-type-h.md#asset_tag).ASSET\_TAG\_IS\_PERSISTENT属性，需要申请ohos.permission.STORE\_PERSISTENT\_DATA权限。 |
+| [int32\_t OH\_Asset\_Add(const Asset\_Attr \*attributes, uint32\_t attrCnt)](capi-asset-api-h.md#oh_asset_add) | 新增一条关键资产。  如果要设置[Asset\_Tag](capi-asset-type-h.md#asset_tag).ASSET\_TAG\_IS\_PERSISTENT属性，需要申请ohos.permission.STORE\_PERSISTENT\_DATA权限，申请方式请参考[声明权限](../harmonyos-guides/declare-permissions.md)。 |
 | [int32\_t OH\_Asset\_Remove(const Asset\_Attr \*query, uint32\_t queryCnt)](capi-asset-api-h.md#oh_asset_remove) | 删除符合条件的一条或多条关键资产。 |
 | [int32\_t OH\_Asset\_Update(const Asset\_Attr \*query, uint32\_t queryCnt, const Asset\_Attr \*attributesToUpdate, uint32\_t updateCnt)](capi-asset-api-h.md#oh_asset_update) | 更新符合条件的一条关键资产。 |
 | [int32\_t OH\_Asset\_PreQuery(const Asset\_Attr \*query, uint32\_t queryCnt, Asset\_Blob \*challenge)](capi-asset-api-h.md#oh_asset_prequery) | 查询的预处理，用于需要用户认证的关键资产。 |
@@ -61,7 +61,7 @@ PhonePC/2in1TabletTVWearable
 
 新增一条关键资产。
 
-如果要设置[Asset\_Tag](capi-asset-type-h.md#asset_tag).ASSET\_TAG\_IS\_PERSISTENT属性，需要申请ohos.permission.STORE\_PERSISTENT\_DATA权限。
+如果要设置[Asset\_Tag](capi-asset-type-h.md#asset_tag).ASSET\_TAG\_IS\_PERSISTENT属性，需要申请ohos.permission.STORE\_PERSISTENT\_DATA权限，申请方式请参考[声明权限](../harmonyos-guides/declare-permissions.md)。
 
 **起始版本：** 11
 

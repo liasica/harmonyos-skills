@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 透明度设置
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 视效与模糊 > 透明度设置
 category: harmonyos-references
-scraped_at: 2026-04-28T08:01:06+08:00
+scraped_at: 2026-04-29T13:51:18+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:ad33847432b315a742c32563ff19a55438324218b17eacf0174a5c78825e651c
+content_hash: sha256:fd2c3f41dcd046b2b8e81b8fed3a0af0a81c3c97f7afffa7b1d13c334fbc649b
 ---
 
 设置组件的透明度。
@@ -96,4 +96,4 @@ PhonePC/2in1TabletTVWearable
 21. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/HpBnuAq-SfS872hfobXXCg/zh-cn_image_0000002552959506.png?HW-CC-KV=V1&HW-CC-Date=20260428T000105Z&HW-CC-Expire=86400&HW-CC-Sign=862EC70F8D0AC148BDDE7861B356BD42E5CC09152CE61474D677EE5208191F10)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/KHRwWEVJTWKYiox4gjDeKQ/zh-cn_image_0000002558766028.png?HW-CC-KV=V1&HW-CC-Date=20260429T055117Z&HW-CC-Expire=86400&HW-CC-Sign=713B3A161854FEB261FBA969802E1C14C19329C9117DBE347985220108917054)

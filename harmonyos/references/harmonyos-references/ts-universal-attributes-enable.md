@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 禁用控制
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 交互属性 > 禁用控制
 category: harmonyos-references
-scraped_at: 2026-04-28T08:01:10+08:00
+scraped_at: 2026-04-29T13:51:25+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:ab08e559fe34ea781aa3acc05010ce8b7c3534bce27b2ef513c8e93da4acd626
+content_hash: sha256:5ba7c13c9d0801c743235efe90ae6912ff2dae218148de7d010581db15e701fc
 ---
 
 组件可交互状态下响应[点击事件](ts-universal-events-click.md)、[触摸事件](ts-universal-events-touch.md)、[拖拽事件](ts-universal-events-drag-drop.md)、[按键事件](ts-universal-events-key.md)、[焦点事件](ts-universal-focus-event.md)、[鼠标事件](ts-universal-mouse-key.md)、[轴事件](ts-universal-events-axis.md)、[悬浮事件](ts-universal-events-hover.md)、[无障碍悬浮事件](ts-universal-accessibility-hover-event.md)、[手势事件](ts-gesture-settings.md)、[焦点轴事件](ts-universal-events-focus_axis.md)和[表冠事件](ts-universal-events-crown.md)。
@@ -65,4 +65,4 @@ PhonePC/2in1TabletTVWearable
 14. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/xmdACoooQSWcm50V9rrbrQ/zh-cn_image_0000002583439571.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000109Z&HW-CC-Expire=86400&HW-CC-Sign=1EC67648EE0E038394162FF498B4BC429C3E306AC3589F1FB1C7553265726C91)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/-cWtFkLtSS-JrZC95z0BrA/zh-cn_image_0000002589245857.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055123Z&HW-CC-Expire=86400&HW-CC-Sign=1A63E8788FDE68F81DF5F383A12403345AAF211320AE1388CDBDB8F070CC6E22)

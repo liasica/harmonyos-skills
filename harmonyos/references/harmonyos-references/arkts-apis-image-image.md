@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (Image)
 breadcrumb: API参考 > 媒体 > Image Kit（图片处理服务） > ArkTS API > @ohos.multimedia.image (图片处理) > Interface (Image)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:13:09+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:6b7cac491be0dc62ee7cbbffa08a34558d3978b1b4965a9d4e4ea4eeb2f16cc3
+scraped_at: 2026-04-29T14:03:46+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:a6afe30273666e6f175fad6a81758aa71eb51bf517deda1ca180b53a603c07a6
 ---
 
 Image类，供ImageReceiver和ImageCreator使用，用于传输图片对象，其实际内容由生产者决定。如相机预览流提供的Image对象存储了YUV数据、相机拍照提供的Image对象存储了JPEG文件。
@@ -40,7 +40,7 @@ PhonePC/2in1TabletTVWearable
 | clipRect9+ | [Region](arkts-apis-image-i.md#region8) | 否 | 否 | 要裁剪的图像区域。恒等于整个图像，不支持修改。 |
 | size9+ | [Size](arkts-apis-image-i.md#size) | 是 | 否 | 图像大小。  如果Image对象所存储的是相机预览流数据（YUV图像数据），那么获取到的size中的宽和高分别对应YUV图像的宽和高。  如果Image对象所存储的是相机拍照流数据（JPEG图像数据），由于已是编码后的文件，size中的宽等于JPEG文件大小，高等于1。  Image对象所存储的数据是预览流还是拍照流，取决于应用将receiver中的surfaceId传给相机的是previewOutput还是captureOutput。  相机预览与拍照最佳实践请参考[双路预览(ArkTS)](../harmonyos-guides/camera-dual-channel-preview.md)与[拍照实践(ArkTS)](../harmonyos-guides/camera-shooting-case.md)。 |
 | format9+ | number | 是 | 否 | 图像格式，参考[OH\_NativeBuffer\_Format](capi-buffer-common-h.md#oh_nativebuffer_format)。 |
-| timestamp12+ | number | 是 | 否 | 图像时间戳。时间戳以纳秒为单位，通常是单调递增的。时间戳的具体含义和基准取决于图像的生产者，在相机预览/拍照场景，生产者就是相机。来自不同生产者的图像的时间戳可能有不同的含义和基准，因此可能无法进行比较。如果要获取某张照片的生成时间，可以通过[getImageProperty](arkts-apis-image-imagesource.md#getimageproperty11)接口读取相关的EXIF信息。 |
+| timestamp12+ | number | 是 | 否 | 图像时间戳。时间戳以纳秒为单位，通常是单调递增的。时间戳的具体含义和基准取决于图像的生产者，在相机预览/拍照场景，生产者就是相机。来自不同生产者的图像的时间戳可能有不同的含义和基准，因此可能无法进行比较。如果要获取某张照片的生成时间，可以通过[getImageProperty](arkts-apis-image-imagesource.md#getimageproperty11)接口读取EXIF时间戳信息。 |
 | colorSpace23+ | [colorSpaceManager.ColorSpace](js-apis-colorspacemanager.md#colorspace) | 是 | 否 | 图像色彩空间，色域枚举类型。  **模型约束：** 此接口仅可在Stage模型下使用。 |
 
 ## getComponent9+

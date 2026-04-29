@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-navi-
 title: navi（路径规划）
 breadcrumb: API参考 > 应用服务 > Map Kit（地图服务） > ArkTS API > navi（路径规划）
 category: harmonyos-references
-scraped_at: 2026-04-28T08:17:25+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:fd74f14785a0edeeb48b73204e12d54695e55ced5edb2d8a39b13d2b79f83f8a
+scraped_at: 2026-04-29T14:08:08+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:07c710b3777ad307e806dffa8e84519ed5c6521835b746895ebbf5844f9f3afc
 ---
 
 本模块提供路径规划功能。
@@ -1291,7 +1291,7 @@ PhonePC/2in1TabletWearable
 | --- | --- | --- | --- | --- |
 | waypoints | Array<[mapCommon.LatLng](map-common.md#latlng)> | 否 | 是 | 途经点。最多可以输入5个途经点，异常值不处理。 |
 | isViaType | boolean | 否 | 是 | 途经点类型，是via类型还是stopover类型，默认值为false，异常值不处理。  - false：stopover类型。  - true：via类型  **说明：**  1. stopover类型为经停点，将分段下发路线信息。  2. via类型为经过点，将统一返回完整路线信息。 |
-| optimize | boolean | 否 | 是 | 是否对途经点进行优化，异常值不处理。  - false：不进行途经点优化，保持原始顺序，按照输入顺序返回途经点  - true：进行途经点优化，启用智能优化算法，按照距离起点的远近顺序返回途经点，实现路径规划效率最大化  默认值为false。 |
+| optimize | boolean | 否 | 是 | 是否对途经点进行优化，异常值不处理。  - false：不进行途经点优化，保持原始顺序，按照输入顺序返回途经点。  - true：进行途经点优化，启用智能优化算法，按照距离起点的远近顺序返回途经点，实现路径规划效率最大化。  默认值为false。 |
 | alternatives | boolean | 否 | 是 | 是否返回多条规划路线结果，异常值不处理。  - true：返回多条规划路线结果  - false：返回单条规划路线结果  默认值为false。 |
 | departAt | number | 否 | 是 | 预计出发时间。以自UTC 1970年1月1日午夜以来的秒数为单位，异常值不处理。  必须是当前或者未来时间，不能是过去时间。  **说明：**  departAt输入0时，按照当前时间进行处理。 |
 | trafficMode | number | 否 | 是 | 时间预估模型，异常值不处理。取值包括：  0：智能预测  1：路况差于历史平均水平  2：路况优于历史平均水平  默认值为0。 |

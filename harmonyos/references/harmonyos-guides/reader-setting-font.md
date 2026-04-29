@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/reader-settin
 title: 自定义字体
 breadcrumb: 指南 > 应用服务 > Reader Kit（阅读服务） > 书籍内容排版 > 修改阅读设置 > 自定义字体
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:50:39+08:00
+scraped_at: 2026-04-29T13:40:03+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:072dd16c3a506bc90096aeec5acaaefb1d63e4a12cfb662cbd2779583207b358
+content_hash: sha256:d40166c7cb1a90a2d948cb96b8d7c5bc6e74818d8dfd2c32f2250c3214178e63
 ---
 
 当应用需要支持自定义字体时，开发者可通过[ReaderSetting](../harmonyos-references/reader-read-core.md#readersetting)的fontPath属性，实现对阅读内容字体的实时修改。
@@ -17,7 +17,7 @@ content_hash: sha256:072dd16c3a506bc90096aeec5acaaefb1d63e4a12cfb662cbd277958320
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/Ld5ppEuXRVyF6AvMArLiKQ/zh-cn_image_0000002583439189.png?HW-CC-KV=V1&HW-CC-Date=20260427T235038Z&HW-CC-Expire=86400&HW-CC-Sign=6CDD061B6627057A820793AC07152C4E709B23DA68B5595DCA27A212B9692973)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/9Q51HO2sSS-d7ZO9e-uSKw/zh-cn_image_0000002589325515.png?HW-CC-KV=V1&HW-CC-Date=20260429T054002Z&HW-CC-Expire=86400&HW-CC-Sign=FB2810F0720B754F23389AE3102DDF3E9B9818E9C00199F0DF3E3B26FF3E9F20)
 
 ## 接口说明
 

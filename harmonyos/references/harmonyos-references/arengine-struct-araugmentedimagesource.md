@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arengine-
 title: AREngine_ARAugmentedImageSource
 breadcrumb: API参考 > 图形 > AR Engine（AR引擎服务） > C API > 头文件和结构体 > 结构体 > AREngine_ARAugmentedImageSource
 category: harmonyos-references
-scraped_at: 2026-04-28T08:14:33+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:e3baf4cb7d88ea029d5db6c9d2db7863bdb97ddfa79b494e7bb2b863853cecec
+scraped_at: 2026-04-29T14:05:10+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:ded57a31bff5554046ec252c12179d65635b4674eaf7aa147e6ce6bac2757c35
 ---
 
 ## 概述
@@ -30,7 +30,7 @@ PhoneTabletTV
 
 | 名称 | 描述 |
 | --- | --- |
-| const char \*[imageName](arengine-struct-araugmentedimagesource.md#imagename) | 图像名，不允许为空，不能超出255字节，超出255字节的字符将会被丢弃。 |
+| const char \*[imageName](arengine-struct-araugmentedimagesource.md#imagename) | 图像名，不允许为空，255个字符以内，超过255个字符的部分将被自动截断。 |
 | const uint8\_t \*[imageData](arengine-struct-araugmentedimagesource.md#imagedata) | 灰度图像元素数组地址。 |
 | int32\_t [pixelWidth](arengine-struct-araugmentedimagesource.md#pixelwidth) | 图像像素宽度。 |
 | int32\_t [pixelHeight](arengine-struct-araugmentedimagesource.md#pixelheight) | 图像像素高度。 |
@@ -51,7 +51,7 @@ PhoneTabletTV
 
 **描述**
 
-图像名，不允许为空，不能超出255字节，超出255字节的字符将会被丢弃。
+图像名，不允许为空，255个字符以内，超过255个字符的部分将被自动截断。
 
 ### imageData
 
@@ -111,4 +111,4 @@ PhoneTabletTV
 
 **描述**
 
-图像中对象的实际物理宽度。无限制，默认值为A4纸张尺寸。
+图像中对象的实际物理宽度。无限制，默认值为291mm。

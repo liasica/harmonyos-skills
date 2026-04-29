@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arengine-get-
 title: 识别平面语义（ArkTS）
 breadcrumb: 指南 > 图形 > AR Engine（AR引擎服务） > 平面语义 > 识别平面语义（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:46:52+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:651c907308182e421e19ce648f6cc39f846e0ccc5f745fea74cb091b9f911d60
+scraped_at: 2026-04-29T13:35:53+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:89ab2958808a73fedc019c18652d3e835eaa03e504b58eb7906d3c0f7aa34ac9
 ---
 
 ## 约束与限制
@@ -95,8 +95,8 @@ AR Engine仅输出识别到的平面数据。为便于用户观察，可使用AG
 32. .alignItems(HorizontalAlign.Center)
 33. .margin({ bottom: 10 })
 34. .alignRules({
-35. bottom: { anchor: "__container__", align: VerticalAlign.Bottom },
-36. middle: { anchor: "__container__", align: HorizontalAlign.Center }
+35. bottom: { anchor: '__container__', align: VerticalAlign.Bottom },
+36. middle: { anchor: '__container__', align: HorizontalAlign.Center }
 37. })
 38. }
 39. }
@@ -138,14 +138,14 @@ AR Engine仅输出识别到的平面数据。为便于用户观察，可使用AG
 75. depthMode: arEngine.ARDepthMode.AUTOMATIC,
 76. meshMode: arEngine.ARMeshMode.DISABLED,
 77. focusMode: arEngine.ARFocusMode.AUTO
-78. }
+78. };
 79. viewContext.init().then(() => {
 80. this.arContext = viewContext;
 81. console.info('Succeeded in initializing ARView.');
 82. }).catch((err: BusinessError) => {
 83. console.error(`Failed to init ARView. Code is ${err.code}, message is ${err.message}.`);
-84. })
-85. })
+84. });
+85. });
 86. }
 
 88. private stopARView(): void {

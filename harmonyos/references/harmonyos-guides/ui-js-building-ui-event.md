@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-buildin
 title: 手势事件
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 构建用户界面 > 手势事件
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:40:22+08:00
+scraped_at: 2026-04-29T13:28:44+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:65bdde76dd8f3137b56fbd709f522e7c5c076c14300557dd089f12ac64e34046
+content_hash: sha256:661854dd3465f6f3290e60edfe75d410891a288bee85618e7fb14c2bcf7d8f48
 ---
 
 手势表示由单个或多个事件识别的语义动作（例如：触摸、点击和长按）。一个完整的手势也可能由多个事件组成，对应手势的生命周期。支持的事件有：
@@ -112,4 +112,4 @@ longpress：用户在相同位置长时间保持与屏幕接触。
 33. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/px3iWbxTSP66GOS0RL0AeQ/zh-cn_image_0000002552958084.gif?HW-CC-KV=V1&HW-CC-Date=20260427T234021Z&HW-CC-Expire=86400&HW-CC-Sign=3CC6252DB3128673C31F14675EB469327FBFF0E43A3451F5B1AF993CD896CE0D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/odfCeEC3Q42jCzeow_fBbw/zh-cn_image_0000002589324443.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052843Z&HW-CC-Expire=86400&HW-CC-Sign=4BC2D061B1A481EBEC95D6FD4D201E448A03CC7FCDCB97BEC74B5C86B104087C)

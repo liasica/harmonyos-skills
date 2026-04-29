@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: TapGesture
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 手势处理 > 基础手势 > TapGesture
 category: harmonyos-references
-scraped_at: 2026-04-28T08:01:21+08:00
+scraped_at: 2026-04-29T13:51:35+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:0cfc490302f1c2008e31c8ca0b34ad9d270512b94fc98f53d6b5709a5f6011d3
+content_hash: sha256:ceb6b65ca9309e60065529da231dd31ec80a0c5d450182744be4004e4aeeff11
 ---
 
 支持单击、双击和多次点击事件的识别。
@@ -139,7 +139,7 @@ PhonePC/2in1TabletTVWearable
 27. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/EML47f2DTB6Xm5xnZ6ElRg/zh-cn_image_0000002583479581.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000120Z&HW-CC-Expire=86400&HW-CC-Sign=F66F65F85D261572BBBB46178A8A36BD83E90EF1CFE62F6522F2B1F4BB513908)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/Y95QQA8UQBCLrsrDY_GG-A/zh-cn_image_0000002558606444.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055134Z&HW-CC-Expire=86400&HW-CC-Sign=162AA0D30AE2E2F7970CA14ED1843E6D7F022DBABBD9D56B20FDD3CA6D0AB743)
 
 ### 示例2（获取单击手势坐标）
 
@@ -180,4 +180,4 @@ PhonePC/2in1TabletTVWearable
 32. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/pCR6UwnITvuIsSM2_KFsJg/zh-cn_image_0000002552799932.png?HW-CC-KV=V1&HW-CC-Date=20260428T000120Z&HW-CC-Expire=86400&HW-CC-Sign=82DC96FE255879ABD1D856D4B2DAAF82D32271AE46036D17910CE609B83E1A8D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/84jqV7NpR1eFABiw2311yA/zh-cn_image_0000002589325971.png?HW-CC-KV=V1&HW-CC-Date=20260429T055134Z&HW-CC-Expire=86400&HW-CC-Sign=F01D0A17E415D17B66C095D72FC5754D2258D216F6E03A94BC4E36EA8C7C1426)

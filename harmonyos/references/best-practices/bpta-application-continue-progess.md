@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-applicatio
 title: 常见接续最佳实践
 breadcrumb: 最佳实践 > 自由流转 > 跨端迁移 > 常见接续最佳实践
 category: best-practices
-scraped_at: 2026-04-28T08:21:37+08:00
+scraped_at: 2026-04-29T14:12:45+08:00
 doc_updated_at: 2026-04-01
-content_hash: sha256:8398a6647d9a541d69abb5e1205698b4fd75766903b9c8b3dbd8ab280b907647
+content_hash: sha256:9e585b185c6c3295d737a5df3e28d5222f53d62fabd890d2dabed2cb45640c7d
 ---
 
 ## 概述
@@ -20,7 +20,7 @@ content_hash: sha256:8398a6647d9a541d69abb5e1205698b4fd75766903b9c8b3dbd8ab280b9
 
 接续过程底层依赖分布式框架和软总线，开发者只需要启用接续、保存数据和恢复数据，具体运作机制可参考：[运作机制](bpta-continue-cast.md#section1218874218264)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/ShQPNVfPTryPFIMGi4Q55A/zh-cn_image_0000002314661150.png?HW-CC-KV=V1&HW-CC-Date=20260428T002135Z&HW-CC-Expire=86400&HW-CC-Sign=15B31C48832B9D2DF84271C1F1692D0863F00E6297AE5F017428BD0AC8ADA8D8 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/ShQPNVfPTryPFIMGi4Q55A/zh-cn_image_0000002314661150.png?HW-CC-KV=V1&HW-CC-Date=20260429T061237Z&HW-CC-Expire=86400&HW-CC-Sign=CCCF2CE7DDB0CD36D40183579492054743305E46528D5662E2B3CF11042A8305 "点击放大")
 
 ## 开发流程
 
@@ -153,7 +153,7 @@ content_hash: sha256:8398a6647d9a541d69abb5e1205698b4fd75766903b9c8b3dbd8ab280b9
 
 ## 长列表进度接续
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/u_yGHy5vRmeK_nBS1QbmFw/zh-cn_image_0000002348739881.gif?HW-CC-KV=V1&HW-CC-Date=20260428T002135Z&HW-CC-Expire=86400&HW-CC-Sign=20F8B80C2B3B34B014C1321B4201ACD242D00DBA95F3A41089AB55E342697A50 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/u_yGHy5vRmeK_nBS1QbmFw/zh-cn_image_0000002348739881.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061237Z&HW-CC-Expire=86400&HW-CC-Sign=7C5627BC150E94BC308788494788FFC47E01DF533887384BE01FCA52E068ABCB "点击放大")
 
 长列表通常用于存储大量信息，可以通过List、Grid、Scroll、WaterFlow等组件进行封装。系统提供了分布式迁移标识，以便在使用这些组件时恢复进度状态，调用起来非常方便。使用方法如下：
 
@@ -168,7 +168,7 @@ content_hash: sha256:8398a6647d9a541d69abb5e1205698b4fd75766903b9c8b3dbd8ab280b9
 
 使用分布式迁移标识可以快速实现接续。然而，该方法存在局限性，具体支持的场景和版本详见[分布式迁移标识](../harmonyos-references/ts-universal-attributes-restoreid.md)的说明。若需在开发中进行更多自定义设置以提升用户体验，可参考以下步骤。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/nTJ3Zlj2SyybCpYSVMiaDw/zh-cn_image_0000002439543518.jpg?HW-CC-KV=V1&HW-CC-Date=20260428T002135Z&HW-CC-Expire=86400&HW-CC-Sign=15A16384DDCC034612C26DC2BAB3A7A7EFB37A30C55B4B6C5491CF12042E50A2 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/nTJ3Zlj2SyybCpYSVMiaDw/zh-cn_image_0000002439543518.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T061237Z&HW-CC-Expire=86400&HW-CC-Sign=FA5C77FA2C0E78982C344B616DE59EBF7D758236FDA901211EBC1B0C6D91617B "点击放大")
 
 1. [启用接续](bpta-application-continue-progess.md#li6149192715494)。
 2. 在Scroll组件的onDidScroll()接口中监听长列表的浏览进度变化。
@@ -202,11 +202,11 @@ content_hash: sha256:8398a6647d9a541d69abb5e1205698b4fd75766903b9c8b3dbd8ab280b9
 
 ## 媒体播放进度接续
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/LRdzsFxNRSKU3dSGSlwRHQ/zh-cn_image_0000002314820978.gif?HW-CC-KV=V1&HW-CC-Date=20260428T002135Z&HW-CC-Expire=86400&HW-CC-Sign=147FD2AE3937E208033797A3500D43EF9611DD02898E8E5230686668512A0E9B "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/LRdzsFxNRSKU3dSGSlwRHQ/zh-cn_image_0000002314820978.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061237Z&HW-CC-Expire=86400&HW-CC-Sign=CC04824D03E29DB1303E550074D5032E0FE46A1E6EBD63CD167D25A6D1F82B27 "点击放大")
 
 媒体播放接续的内容主要包括播放列表中的集数、播放状态和进度。此外，还可以接续其他播放设置，以进一步提升用户体验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/EmBLsIwySP-8f9J4vIAtew/zh-cn_image_0000002472864265.jpg?HW-CC-KV=V1&HW-CC-Date=20260428T002135Z&HW-CC-Expire=86400&HW-CC-Sign=C1681A2175F2F52C11548425FBB3CAAEC275D5B54DD6B7E767A12FDCE108B41F "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/EmBLsIwySP-8f9J4vIAtew/zh-cn_image_0000002472864265.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T061237Z&HW-CC-Expire=86400&HW-CC-Sign=223D02571BEDFBC65B20602574AAA428BB832179F6723234C8B3A46E79794FC2 "点击放大")
 
 1. [启用接续](bpta-application-continue-progess.md#li6149192715494)。
 2. 使用avPlayer.on('timeUpdate')接口来监听媒体播放进度的变化。
@@ -238,11 +238,11 @@ content_hash: sha256:8398a6647d9a541d69abb5e1205698b4fd75766903b9c8b3dbd8ab280b9
 
 ## Web浏览进度接续
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/c2DmQ0iMSciNoSNTCi6vBQ/zh-cn_image_0000002348739889.gif?HW-CC-KV=V1&HW-CC-Date=20260428T002135Z&HW-CC-Expire=86400&HW-CC-Sign=3963509438A34F32D602069CD3B72062C21EF23A39999A18968DDF043E53F86C "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/c2DmQ0iMSciNoSNTCi6vBQ/zh-cn_image_0000002348739889.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061237Z&HW-CC-Expire=86400&HW-CC-Sign=8990D83D9C3DB1807739BFFE3F87DBEE1BC8912E82BF0CDC36F8CA8190219319 "点击放大")
 
 系统提供的Web组件用于在应用程序中展示Web页面内容。当Web组件加载大量信息时，保持浏览进度的连续性尤为重要。为了实现内容的连续展示，需要像处理长列表一样，通过传递当前的滚动位置来维持这一连续性。这可以通过使用runJavaScript()接口来获取和恢复滚动位置来实现。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/3AvwtCeaTsKwn378p-teOA/zh-cn_image_0000002439705250.jpg?HW-CC-KV=V1&HW-CC-Date=20260428T002135Z&HW-CC-Expire=86400&HW-CC-Sign=BBD9766761C37614EFF3FE9181BA6A721D48A7121E10301705CCD833721432ED "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/3AvwtCeaTsKwn378p-teOA/zh-cn_image_0000002439705250.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T061237Z&HW-CC-Expire=86400&HW-CC-Sign=041CAB7F79A1A80D608006434D55CCBAF38E29C868AAAFA01280C05FD9CD263F "点击放大")
 
 1. [启用接续](bpta-application-continue-progess.md#li6149192715494)。
 2. 使用onTouch()事件监听屏幕滑动，并通过runJavaScript()接口获取页面滚动条距离顶部的距离。
@@ -295,7 +295,7 @@ content_hash: sha256:8398a6647d9a541d69abb5e1205698b4fd75766903b9c8b3dbd8ab280b9
 
    执行完成后，RemoteDeviceInfo中列出的设备即为已成功与当前设备组网的设备。如下图所示，该设备已与两台其他设备成功组网。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/29QfXuzzQeCeJ_sumhxlBA/zh-cn_image_0000002314820982.png?HW-CC-KV=V1&HW-CC-Date=20260428T002135Z&HW-CC-Expire=86400&HW-CC-Sign=AF78AEDD19E66142F4D0A6E6828B8639F10682940BEF08D00163F371AD9A9EEF)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/29QfXuzzQeCeJ_sumhxlBA/zh-cn_image_0000002314820982.png?HW-CC-KV=V1&HW-CC-Date=20260429T061237Z&HW-CC-Expire=86400&HW-CC-Sign=CABD8678F95FE47EFDEEE694C6AA9121C0792EA0025CBDA3EA624C0465A67E39)
 
 ## 1分钟以上无任何操作，图标将自动消失；再次操作应用时，图标将重新出现
 

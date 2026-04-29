@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-web-
 title: 前台页面
 breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 页面功能介绍 > 前台页面
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:54:46+08:00
+scraped_at: 2026-04-29T13:44:44+08:00
 doc_updated_at: 2026-01-15
-content_hash: sha256:4e0586a28d7cd587c7e0ce857cc97d13578076716e48350e31ca325cff63ca4e
+content_hash: sha256:b592643f664d693deab1cf239281638dd6c87cc2b7190ffc94f35f1f47908308
 ---
 
 注意
@@ -24,17 +24,17 @@ ohpm-repo会自动创建默认管理员账号，账号名称：admin，账号密
 
 首页主要展示当前ohpm-repo私仓存储的包信息，同时提供搜索功能，页面效果如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/4xnfs23rTDqZUmT0XxySkw/zh-cn_image_0000002561831201.png?HW-CC-KV=V1&HW-CC-Date=20260427T235445Z&HW-CC-Expire=86400&HW-CC-Sign=22074EE00C4FED7BEC9D75BA2FD201C571A96B0F38129E100D14739F676118FF "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/H_rKnYgHQbKRBHdifMz20A/zh-cn_image_0000002561831201.png?HW-CC-KV=V1&HW-CC-Date=20260429T054443Z&HW-CC-Expire=86400&HW-CC-Sign=22C310461C4B6CA33C301492FDCFF1FA99BF06EF62E4015AC239BB01858293E3 "点击放大")
 
 * 区域1：搜索区域，搜索功能采用两级筛选：先通过下拉菜单选择目标仓库，然后基于所选仓库进行包名的模糊查询。
 * 区域2：登录注册区域，用户进行登录注册，登录后可通过此区域进入后台管理页面。
-* 区域3：包列表区域，全量展示符合查询条件的所有包。点击列表中包的摘要信息可进入包的详情页，查看更多关于该包的信息。若包名前显示![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/YYObtGfHQ7KtlcQvwHVaig/zh-cn_image_0000002530751286.png?HW-CC-KV=V1&HW-CC-Date=20260427T235445Z&HW-CC-Expire=86400&HW-CC-Sign=39AF51F10545E5EE7CF32D5A8B8E7BC813DDFAFE71010184016A94C729736EC6 "点击放大")锁图标，表示您暂无该包的访问权限。
+* 区域3：包列表区域，全量展示符合查询条件的所有包。点击列表中包的摘要信息可进入包的详情页，查看更多关于该包的信息。若包名前显示![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/QV1MV_c0TZKXDv_R5gMT_A/zh-cn_image_0000002530751286.png?HW-CC-KV=V1&HW-CC-Date=20260429T054443Z&HW-CC-Expire=86400&HW-CC-Sign=C3F1EDFC4EB6369D50C25AA85B39103AE9B602FBDA39AA06D78DD86626B07DD2 "点击放大")锁图标，表示您暂无该包的访问权限。
 
 ## 包详情页
 
 包详情页主要展示当前包的详细信息，这些信息主要来源于包的内部文件，同时记录了包的版本信息和下载量数据，页面效果如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/XX6mIBEwQ163pzIblBRawA/zh-cn_image_0000002530751284.png?HW-CC-KV=V1&HW-CC-Date=20260427T235445Z&HW-CC-Expire=86400&HW-CC-Sign=845EB11073E55EDABF9F184281AC074BD83D8A76F9E0ECD42CC50AD08FB48D88 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/R3_GN4lgQhSTaKwsOauR1g/zh-cn_image_0000002530751284.png?HW-CC-KV=V1&HW-CC-Date=20260429T054443Z&HW-CC-Expire=86400&HW-CC-Sign=AF6FC95BF49E2960E53C804D7159A7FFE4042B69748304EC54E245E778770F02 "点击放大")
 
 * 区域1：包的基本信息区域，包的基本信息取自包的oh-package.json5文件。
 * 区域2：标签页区域，通过选择不同的标签展示包的更多信息。

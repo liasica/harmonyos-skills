@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/account-c
 title: shippingAddress (华为账号收货地址管理服务)
 breadcrumb: API参考 > 应用服务 > Account Kit（华为账号服务） > ArkTS API > shippingAddress (华为账号收货地址管理服务)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:16:05+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:fe2647229eb34d456d39227930daf22370fb2adcf6072778ea959477f0538e74
+scraped_at: 2026-04-29T14:06:44+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:834a45238dc76206f689c4b1af8a8faf81b00e7fb13353d3f849f9519a298bc9
 ---
 
 本模块提供Account Kit的收货地址管理能力。应用可通过该能力获取到用户华为账号收货地址信息，包括详细地址、手机号等。
@@ -137,7 +137,7 @@ chooseAddress(context: common.Context): Promise<AddressInfo>
 18. // 开发者处理获取的收货地址信息
 19. }).catch((error: BusinessError) => {
 20. dealAllError(error);
-21. })
+21. });
 22. } catch (error) {
 23. dealAllError(error);
 24. }
@@ -145,5 +145,15 @@ chooseAddress(context: common.Context): Promise<AddressInfo>
 26. // 错误处理
 27. function dealAllError(error: BusinessError): void {
 28. hilog.error(0x0000, 'testTag', `Failed to chooseAddress. Code: ${error.code}, message: ${error.message}`);
-29. }
+29. // 在涉及UI交互场景下，建议按照如下错误码指导提示用户
+30. if (error.code === shippingAddress.ShippingAddressErrorCode.ACCOUNT_NOT_LOGGED_IN) {
+31. // 用户未登录华为账号，请登录华为账号并重试
+32. } else if (error.code === shippingAddress.ShippingAddressErrorCode.NETWORK_ERROR) {
+33. // 网络异常，请检查当前网络状态并重试
+34. } else if (error.code === shippingAddress.ShippingAddressErrorCode.USER_CANCELED) {
+35. // 用户取消选择收货地址
+36. } else {
+37. // 选择收货地址失败，请稍后重试
+38. }
+39. }
 ```

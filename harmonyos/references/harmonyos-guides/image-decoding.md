@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-decodin
 title: 使用ImageSource完成图片解码
 breadcrumb: 指南 > 媒体 > Image Kit（图片处理服务） > 图片开发指导(ArkTS) > 图片解码 > 使用ImageSource完成图片解码
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:46:12+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:4bc3be9a9243ad69462c59c94033e7c5c57212a39d2a13483f7f4958c5e4bd3e
+scraped_at: 2026-04-29T13:35:11+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:a4f9b181ffe78dea931c58cf47359141ccdacd263ff0013e0752f41425ba0ce6
 ---
 
 将所支持格式的图片文件解码成[PixelMap](../harmonyos-references/arkts-apis-image-pixelmap.md)，以便在应用或系统中显示或处理图片。当前支持的图片文件格式包括JPEG、PNG、GIF、WebP、BMP、SVG、ICO、DNG、HEIC、TIFF23+、HEIFS23+、WBMP23+。部分格式的解码能力依赖于具体的设备硬件，建议在调用前使用[image.getImageSourceSupportedFormats20+](../harmonyos-references/arkts-apis-image-f.md#imagegetimagesourcesupportedformats20)接口，动态查询当前设备上的解码能力。
@@ -19,7 +19,7 @@ content_hash: sha256:4bc3be9a9243ad69462c59c94033e7c5c57212a39d2a13483f7f4958c5e
 1. 全局导入Image模块。
 
    ```
-   1. // 导入相关模块包。
+   1. // 导入相关模块。
    2. import { image } from '@kit.ImageKit';
    3. import { BusinessError } from '@kit.BasicServicesKit';
    4. import { common } from '@kit.AbilityKit';
@@ -46,7 +46,7 @@ content_hash: sha256:4bc3be9a9243ad69462c59c94033e7c5c57212a39d2a13483f7f4958c5e
      1. function getFileFd(context: Context, fileName: string): number | undefined {
      2. try {
      3. const filePath: string = context.cacheDir + '/' + fileName;
-     4. const file: fs.File = fs.openSync(filePath, fs.OpenMode.READ_ONLY);
+     4. const file: fileIo.File = fileIo.openSync(filePath, fileIo.OpenMode.READ_ONLY);
      5. const fd: number = file?.fd;
      6. return fd;
      7. } catch (err) {

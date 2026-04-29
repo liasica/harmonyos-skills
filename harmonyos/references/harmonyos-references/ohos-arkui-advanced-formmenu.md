@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: FormMenu
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > FormMenu
 category: harmonyos-references
-scraped_at: 2026-04-28T08:02:37+08:00
+scraped_at: 2026-04-29T13:53:00+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:b76057fb25693e9d57fceaa464a9cb072342fe7ac517ae5650bf81f6f311c243
+content_hash: sha256:6cccd932f6b08dd05f32c74e4d7577c43669bbe6351707b61bdaaf72e07af3a7
 ---
 
 本组件封装了一个“添加至桌面”菜单，用于实现应用内长按组件生成“添加至桌面”菜单，点击该菜单，触发卡片添加至桌面操作。通过桌面访问该应用快捷卡片，可以直接访问该组件功能。在应用使用过程中，该组件作为留存和复访入口，可吸引用户将功能快捷添加到桌面。
@@ -240,10 +240,10 @@ PhonePC/2in1TabletTVWearable
 
 **高级自定义控件界面**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/LH3t72w0RYiSJeav-daNkA/zh-cn_image_0000002583440163.jpeg?HW-CC-KV=V1&HW-CC-Date=20260428T000236Z&HW-CC-Expire=86400&HW-CC-Sign=B1154FC2B620B5576A6EC700527F1261CC411ECE32F3CF9AB04A792200A86D79)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/eH89qSo1TiCBhDh8wjUhyQ/zh-cn_image_0000002589246451.jpeg?HW-CC-KV=V1&HW-CC-Date=20260429T055259Z&HW-CC-Expire=86400&HW-CC-Sign=D0E89494DB786E7077A19E770DABD136F2061CB1141CDA45211E8CC9D57412EC)
 
 **调用高级自定义控件桌面加桌结果**
 
 左侧是formbindingdata为空加桌结果，右侧是formbindingdata为{ data: 'share' }的加桌结果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/53Jm_jtETFifLomgQifGhg/zh-cn_image_0000002552960118.jpeg?HW-CC-KV=V1&HW-CC-Date=20260428T000236Z&HW-CC-Expire=86400&HW-CC-Sign=77CD0A5C2643841F7D1BBAE68CA3C5771518C7FF59C58896488F11A31BAA4FA9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/1z9dMfWGR-KrBfo65SAKzg/zh-cn_image_0000002558766644.jpeg?HW-CC-KV=V1&HW-CC-Date=20260429T055259Z&HW-CC-Expire=86400&HW-CC-Sign=E9AB413D1259AAB5958141CE065C996B769F9DE9A6E4C5E0610C966EC2EDCB4E)

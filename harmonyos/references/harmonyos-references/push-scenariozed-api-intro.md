@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/push-scen
 title: 功能介绍
 breadcrumb: API参考 > 应用服务 > Push Kit（推送服务） > REST API > 场景化消息 > 功能介绍
 category: harmonyos-references
-scraped_at: 2026-04-28T08:18:31+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:3e6c58b32c3527f461652b615e2052f50726f716242721d68dd44683dfd31117
+scraped_at: 2026-04-29T14:09:09+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:0600e69ebf093c7232825677186238179ae44311c8d11699b52cb32358e70e5c
 ---
 
 说明
 
-为了更安全的网络访问，华为推送服务于2022年11月30日关闭Push相关域名的TLS1.0、TLS1.1协议及规定之外的加密套件，当前应用使用TLS1.2以下协议或使用规定外的加密套件将无法正常推送消息。
+为了更安全的网络访问，华为Push Kit于2022年11月30日关闭Push相关域名的TLS1.0、TLS1.1协议及规定之外的加密套件，当前应用使用TLS1.2以下协议或使用规定外的加密套件将无法正常推送消息。
 
 若您的应用访问Push相关域名使用协议是TLS1.0或TLS1.1，可能无法正常发送消息，请您务必升级到TLS1.2及以上版本。
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-usb-
 title: usb_ddk_api.h
 breadcrumb: API参考 > 系统 > 硬件 > Driver Development Kit（驱动开发服务） > C API > 头文件 > usb_ddk_api.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:10:45+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:fcc2483cab2fdc663ca1fc9a52a5a19a8b393d43bdcaf2f8625566b5b15d8548
+scraped_at: 2026-04-29T14:01:24+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:b72b79df5788e870623ca7619ce6fba0b313bc72ded9230cc1e9d9f45e2fb6ad
 ---
 
 ## 概述
@@ -433,7 +433,7 @@ PC/2in1
 
 | 类型 | 说明 |
 | --- | --- |
-| int32\_t | [USB\_DDK\_SUCCESS](capi-usb-ddk-types-h.md#usbddkerrcode) 调用接口成功。  [USB\_DDK\_NO\_PERM](capi-usb-ddk-types-h.md#usbddkerrcode) 权限检查失败。  [USB\_DDK\_INVALID\_OPERATION](capi-usb-ddk-types-h.md#usbddkerrcode) 连接USB DDK服务失败。  [USB\_DDK\_INVALID\_PARAMETER](capi-usb-ddk-types-h.md#usbddkerrcode)入参pipe为空指针或ashmem为空指针或ashmem的地址为空。  [USB\_DDK\_MEMORY\_ERROR](capi-usb-ddk-types-h.md#usbddkerrcode) 读取数据的内存拷贝失败。  [USB\_DDK\_IO\_FAILED](capi-usb-ddk-types-h.md#usbddkerrcode) 数据 IO 异常。  [USB\_DDK\_TIMEOUT](capi-usb-ddk-types-h.md#usbddkerrcode) 接口超时。 |
+| int32\_t | [USB\_DDK\_SUCCESS](capi-usb-ddk-types-h.md#usbddkerrcode) 调用接口成功。  [USB\_DDK\_NO\_PERM](capi-usb-ddk-types-h.md#usbddkerrcode) 权限检查失败。  [USB\_DDK\_INVALID\_OPERATION](capi-usb-ddk-types-h.md#usbddkerrcode) 连接USB DDK服务失败。  [USB\_DDK\_INVALID\_PARAMETER](capi-usb-ddk-types-h.md#usbddkerrcode) 入参pipe为空指针或ashmem为空指针或ashmem的地址为空。  [USB\_DDK\_MEMORY\_ERROR](capi-usb-ddk-types-h.md#usbddkerrcode) 读取数据的内存拷贝失败。  [USB\_DDK\_IO\_FAILED](capi-usb-ddk-types-h.md#usbddkerrcode) 数据 IO 异常。  [USB\_DDK\_TIMEOUT](capi-usb-ddk-types-h.md#usbddkerrcode) 接口超时。 |
 
 ### OH\_Usb\_CreateDeviceMemMap()
 
@@ -463,7 +463,7 @@ PC/2in1
 
 | 类型 | 说明 |
 | --- | --- |
-| int32\_t | [USB\_DDK\_SUCCESS](capi-usb-ddk-types-h.md#usbddkerrcode)调用接口成功。  [USB\_DDK\_NO\_PERM](capi-usb-ddk-types-h.md#usbddkerrcode) 权限检查失败。  [USB\_DDK\_INVALID\_PARAMETER](capi-usb-ddk-types-h.md#usbddkerrcode) 入参devMmap为空指针或\*devMmap为空指针。  [USB\_DDK\_MEMORY\_ERROR](capi-usb-ddk-types-h.md#usbddkerrcode) 内存映射失败或devMmap的内存分配失败。 |
+| int32\_t | [USB\_DDK\_SUCCESS](capi-usb-ddk-types-h.md#usbddkerrcode) 调用接口成功。  [USB\_DDK\_NO\_PERM](capi-usb-ddk-types-h.md#usbddkerrcode) 权限检查失败。  [USB\_DDK\_INVALID\_PARAMETER](capi-usb-ddk-types-h.md#usbddkerrcode) 入参devMmap为空指针或\*devMmap为空指针。  [USB\_DDK\_MEMORY\_ERROR](capi-usb-ddk-types-h.md#usbddkerrcode) 内存映射失败或devMmap的内存分配失败。 |
 
 ### OH\_Usb\_DestroyDeviceMemMap()
 

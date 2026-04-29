@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/payment-withh
 title: 签约代扣场景
 breadcrumb: 指南 > 应用服务 > Payment Kit（鸿蒙支付服务） > 免密支付接入 > 签约代扣场景
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:50:08+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:b94661b42ffc22f4fc813fb91c553a051c7bd5bc5173f589d7eec062474acde2
+scraped_at: 2026-04-29T13:39:32+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:c9c2a46f13866347dd7e8d6252060f6d9ac6a6c4d46b9b295cd7c0c240d2b565
 ---
 
 ## 场景介绍
@@ -18,19 +18,19 @@ content_hash: sha256:b94661b42ffc22f4fc813fb91c553a051c7bd5bc5173f589d7eec062474
 
 华为支付签约页面展示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/fc4BlGaDTCWkJ9hhBHvHAQ/zh-cn_image_0000002552959088.png?HW-CC-KV=V1&HW-CC-Date=20260427T235007Z&HW-CC-Expire=86400&HW-CC-Sign=27779C78B3D6AF88A47A5E00DACC291B283296A758DFF9D9B7EE17334B061DC1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/q87LFkYhRHqCDY3aK5x9Iw/zh-cn_image_0000002589245397.png?HW-CC-KV=V1&HW-CC-Date=20260429T053931Z&HW-CC-Expire=86400&HW-CC-Sign=A84B6798AA4B236C817191C75CD98DDC0BDC34D788BE00A4887C8EEB6A94CCE6)
 
 ## 业务流程
 
 开发者通过接入Payment Kit 签约代扣能力，在获取用户签约授权的前提下，可以向用户的华为支付账户发起支付扣款，无需用户输入支付密码就可以优先使用签约的支付方式完成扣款。具体接入流程如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/iFCl53CxReSLsFZdA_Eu5w/zh-cn_image_0000002583479089.png?HW-CC-KV=V1&HW-CC-Date=20260427T235007Z&HW-CC-Expire=86400&HW-CC-Sign=04821D90CCAF75BEEA4FA2AF5131F02C7C4FEBBA83CD5EA110B98E9FDC68F0B8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/NHeApujvSzOEm2bvn6HB6A/zh-cn_image_0000002558765590.png?HW-CC-KV=V1&HW-CC-Date=20260429T053931Z&HW-CC-Expire=86400&HW-CC-Sign=E0557B1698CB3707351EF3AA526B7EF41E1A52F7FEAE719EE4A7AA4DB10B57B1)
 
 1. 商户客户端请求商户服务端创建签约订单。
 2. 商户服务端按照商户模型调用Payment Kit服务端[直连商户预签约](../harmonyos-references/payment-withhold-presign.md)或[服务商预签约](../harmonyos-references/payment-partner-withhold-presign.md)接口。
 3. Payment Kit服务端返回预签约号（preSignNo）给商户服务端。
 4. 商户服务端构建[contractStr](../harmonyos-references/payment-model.md#contractstr)参数返回给商户客户端。
-5. 商户客户端通过contractStr调用[requestContract](../harmonyos-references/payment-paymentservice.md#paymentservicerequestcontract)接口拉起Payment Kit签约收银台。
+5. 商户客户端通过contractStr调用[requestContract](../harmonyos-references/payment-paymentservice.md#requestcontract)接口拉起Payment Kit签约收银台。
 6. Payment Kit客户端通过签约收银台展示签约相关信息。
 7. 用户在Payment Kit客户端签约收银台完成签约操作。
 8. Payment Kit服务端处理签约。
@@ -114,7 +114,7 @@ content_hash: sha256:b94661b42ffc22f4fc813fb91c553a051c7bd5bc5173f589d7eec062474
 
 ### 拉起华为支付签约收银台（端侧开发）
 
-商户客户端使用[contractStr](../harmonyos-references/payment-model.md#contractstr)作为参数调用[requestContract](../harmonyos-references/payment-paymentservice.md#paymentservicerequestcontract)接口拉起Payment Kit签约收银台。
+商户客户端使用[contractStr](../harmonyos-references/payment-model.md#contractstr)作为参数调用[requestContract](../harmonyos-references/payment-paymentservice.md#requestcontract)接口拉起Payment Kit签约收银台。
 
 当接口通过.then()方法返回时，则表示当前订单支付成功，通过.catch()方法返回表示订单支付失败。当此次请求有异常时，可通过**error.code**获取错误码，错误码相关信息请参见[错误码](../harmonyos-references/payment-error-code.md)。示例代码如下：
 

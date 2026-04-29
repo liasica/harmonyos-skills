@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-keyfra
 title: 关键帧动画 (keyframeAnimateTo)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 动画 > 关键帧动画 (keyframeAnimateTo)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:02:19+08:00
+scraped_at: 2026-04-29T13:52:41+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:76cca39e3a9d8193f39d22e7604a1b5d13f0b2dabca3f92d099f290f5c280661
+content_hash: sha256:2063aa2bbe75e9862152700dd97daeb9c536afb683cf2cd23072cede17bb5b66
 ---
 
 在[UIContext](arkts-apis-uicontext-uicontext.md)中提供keyframeAnimateTo接口来指定若干个关键帧状态，实现分段的动画。同属性动画，布局类改变宽高的动画，内容都是直接到终点状态，例如文字、[Canvas](ts-components-canvas-canvas.md)的内容等，如果要内容跟随宽高变化，可以使用[renderFit](ts-universal-attributes-renderfit.md)属性配置。
@@ -126,4 +126,4 @@ PhonePC/2in1TabletTVWearable
 55. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/tcaEJw0FSw-iRFynPiY7cA/zh-cn_image_0000002552960024.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000217Z&HW-CC-Expire=86400&HW-CC-Sign=1B71B357C2B049A5F1C2E39E9766B2F7EFF8706ED8C9BAA4728A2809785CB618)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/4rjbf1JITDmUCnHxANE0xA/zh-cn_image_0000002558766550.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055240Z&HW-CC-Expire=86400&HW-CC-Sign=82BF88AB42F70E88359EFABCCD5B0AABE8A076E65E2FD4DB3D3A9B251C3128BE)

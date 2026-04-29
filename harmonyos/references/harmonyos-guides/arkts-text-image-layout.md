@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-text-im
 title: 图文混排
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用文本 > 图文混排
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:39:36+08:00
+scraped_at: 2026-04-29T13:27:47+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:4739a7ad260ff97057ee53dd150b8f7fc8494229942982f6380a9908dcd0d3c9
+content_hash: sha256:1bd281ec2f8a69c24de2bd85b5328776bd359318e703cdc864ac2ba06828832a
 ---
 
 图文混排是指图片与文字混合排列，文字可展示于图片四周。此排列方式能够直观呈现页面信息，增强视觉冲击力，使页面展示效果更加多样化。
@@ -38,7 +38,7 @@ content_hash: sha256:4739a7ad260ff97057ee53dd150b8f7fc8494229942982f6380a9908dcd
 
 [TextImageComponent.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/textImageMixedLayout/TextImageComponent.ets#L21-L41)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/SAek9WewT3C4n045BdmO9A/zh-cn_image_0000002583437895.png?HW-CC-KV=V1&HW-CC-Date=20260427T233935Z&HW-CC-Expire=86400&HW-CC-Sign=7CE501010FD79958934F438966E3920EDE1AE5E82BF76C9B4B0939B5DA0EB749)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/ubzc-tBgTGOgPL9h4pmylA/zh-cn_image_0000002558604684.png?HW-CC-KV=V1&HW-CC-Date=20260429T052744Z&HW-CC-Expire=86400&HW-CC-Sign=9D8AC95F186A287A34799A4434BD82C0B051069E7587D4BC680D55E23586C3FC)
 
 ## 使用属性字符串实现图文混排
 
@@ -235,4 +235,4 @@ content_hash: sha256:4739a7ad260ff97057ee53dd150b8f7fc8494229942982f6380a9908dcd
 
 [TextImageAttribute.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/textImageMixedLayout/TextImageAttribute.ets#L16-L203)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/w6coeOaARSqCkm7r_2NC-A/zh-cn_image_0000002552957850.png?HW-CC-KV=V1&HW-CC-Date=20260427T233935Z&HW-CC-Expire=86400&HW-CC-Sign=142A6B93A4AD71087445C74ADC4C9550B7A2C89195F005F24BBE94FBD8F7013D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/LYTUPiMeTbOfOHRjpowWUg/zh-cn_image_0000002589324209.png?HW-CC-KV=V1&HW-CC-Date=20260429T052744Z&HW-CC-Expire=86400&HW-CC-Sign=9EDEA40243061230274A8572F1EC150406BD5152236EF17234965CEE172DBBC3)

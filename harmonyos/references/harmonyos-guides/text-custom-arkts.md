@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/text-custom-a
 title: 自定义文本绘制与显示（ArkTS）
 breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 文本 > 文本绘制与显示 > 自定义文本绘制与显示（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:47:16+08:00
+scraped_at: 2026-04-29T13:36:16+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:46577541f0b0ebc620496e388407f2017be6490f830a6007cabf57a7be2f4d8b
+content_hash: sha256:6b3ddbb0c33e60111e4ee19cf4d24819defbc0d704560ee7f2575d36af7ddbde
 ---
 
 在复杂的文本排版场景中，当系统提供的标准文本组件无法满足特定的视觉或交互需求时，开发者可以利用ArkGraphics 2D提供的底层文本绘制能力，通过直接控制画布（Canvas）和文本样式，实现对文本外观、布局的精细控制。这种能力适用于需要高度定制化文本渲染效果的场景，例如艺术字体、复杂的富文本编排或特殊的动态文字效果。
@@ -118,4 +118,4 @@ content_hash: sha256:46577541f0b0ebc620496e388407f2017be6490f830a6007cabf57a7be2
 
 效果展示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/g9xSOQ9xRnSHqmFe76KBdQ/zh-cn_image_0000002552799040.png?HW-CC-KV=V1&HW-CC-Date=20260427T234715Z&HW-CC-Expire=86400&HW-CC-Sign=2A89C03783CCA003E90293FC14146E381D7EF5E267D95B2F715165596FDD06AC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/WV1c_QyTQkia5UBKC3-8tQ/zh-cn_image_0000002589325059.png?HW-CC-KV=V1&HW-CC-Date=20260429T053615Z&HW-CC-Expire=86400&HW-CC-Sign=D16BA79047529789B47C5456B439555D23DBB7B755F1AC251384723D56FC2084)

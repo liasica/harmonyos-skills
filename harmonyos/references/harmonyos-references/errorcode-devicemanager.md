@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 驱动错误码
 breadcrumb: API参考 > 系统 > 硬件 > Driver Development Kit（驱动开发服务） > 错误码 > 驱动错误码
 category: harmonyos-references
-scraped_at: 2026-04-28T08:10:53+08:00
-doc_updated_at: 2026-03-26
-content_hash: sha256:3ab8058e6b272dfa6fc8da6583b1952fb8af87e910da7440bda16c801022e2ec
+scraped_at: 2026-04-29T14:01:35+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:07ca1b304e8663ada38a80997462b3ce2a9637677f75f4cc2b8368ed01a5fb33
 ---
 
 说明
@@ -92,7 +92,7 @@ There is no binding relationship.
 
 **可能原因**
 
-在未调用或调用 bindDriverWithDeviceId 接口失败的情况下，调用 unbindDriverWithDeviceId 接口。
+在未调用或调用[bindDriverWithDeviceId](js-apis-driver-devicemanager.md#devicemanagerbinddriverwithdeviceid19)接口失败的情况下，调用[unbindDriverWithDeviceId](js-apis-driver-devicemanager.md#devicemanagerunbinddriverwithdeviceid19)接口。
 
 **处理步骤**
 

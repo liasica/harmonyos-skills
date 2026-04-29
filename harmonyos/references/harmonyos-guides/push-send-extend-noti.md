@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/push-send-ext
 title: 发送语音播报消息
 breadcrumb: 指南 > 应用服务 > Push Kit（推送服务） > 推送场景化消息 > 推送语音播报消息 > 发送语音播报消息
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:50:31+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:ffb04ad0dcce3cad03cdbda1971de0210a22ba440953ba15ce05827355ea05de
+scraped_at: 2026-04-29T13:39:55+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:0a592373f4e85203f0d86cb469055a142b57c45ee8f47c995a35018870cd43ae
 ---
 
 ## 场景介绍
@@ -77,12 +77,12 @@ content_hash: sha256:ffb04ad0dcce3cad03cdbda1971de0210a22ba440953ba15ce05827355e
    * extraData：语音播报场景可携带的额外数据，字符串类型。详情参见[ExtensionPayload 语音播报消息](../harmonyos-references/push-scenariozed-api-request-param.md#extensionpayload-语音播报消息)。extraData数据获取请参考[示例代码](https://gitcode.com/HarmonyOS_Samples/push-kit-sample-code-clientdemo-arkts/blob/master/entry/src/main/ets/entryability/RemoteNotificationExtAbility.ets)。
    * testMessage：（选填）测试消息标识，true表示测试消息。每个项目每天限制发送1000条测试消息，单次推送可发送Token数不超过10个。详情请参见[testMessage](../harmonyos-references/push-scenariozed-api-request-param.md#pushoptions)。
    * ttl：（选填）消息缓存时间，详见[ttl](../harmonyos-references/push-scenariozed-api-request-param.md#pushoptions)。
-   * notifyId：（选填）自定义消息标识字段。不携带或者设置-1时，推送服务自动为每条消息生成一个唯一标识；不同的通知消息可以拥有相同的notifyId，实现新消息覆盖旧消息功能。仅支持数字，范围 [0, 2147483647]，若要**用于消息撤回则必填**。详情请参见[notifyId](../harmonyos-references/push-scenariozed-api-request-param.md#notification)。
+   * notifyId：（选填）自定义消息标识字段。不携带或者设置-1时，Push Kit自动为每条消息生成一个唯一标识；不同的通知消息可以拥有相同的notifyId，实现新消息覆盖旧消息功能。仅支持数字，范围 [0, 2147483647]，若要**用于消息撤回则必填**。详情请参见[notifyId](../harmonyos-references/push-scenariozed-api-request-param.md#notification)。
    * image：（选填）通知右侧大图标URL，URL使用的协议必须是HTTPS协议。
 
    说明
 
-   推送服务禁止推送包含敏感信息的图片。
+   Push Kit禁止推送包含敏感信息的图片。
 4. 应用服务端调用REST API推送消息后，若应用进程在后台，Push Kit会将通知消息内容传递给通知扩展进程，并返回特定的消息内容（例如title、body等）后，通知栏将弹出通知提醒。实现步骤如下：
 
    在项目工程的**src/main/module.json5**文件的**extensionAbilities**模块中配置RemoteNotificationExtAbility的**type**和**actions**信息（**定义该type和actions的ExtensionAbility有且只能有一个，配置如下，若同时添加uris参数，则uris内容需为空**）：

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/payment-commo
 title: 纯外部支付场景
 breadcrumb: 指南 > 应用服务 > Payment Kit（鸿蒙支付服务） > 通用收银台接入 > 纯外部支付场景
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:50:09+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:4e52a3d0f29899d2ccb5451509032846f21ee37c7a3b75ee55506cb8f45b8463
+scraped_at: 2026-04-29T13:39:33+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:8b8c36c714361f51de5d0b0b6dcfcb219f4fc4880f57593fe39731b2a4bc4628
 ---
 
 ## 场景介绍
@@ -18,7 +18,7 @@ content_hash: sha256:4e52a3d0f29899d2ccb5451509032846f21ee37c7a3b75ee55506cb8f45
 
 通用收银台纯外部支付页面展示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/_n-7ffJHSyKqV3vMy57cKQ/zh-cn_image_0000002583439137.png?HW-CC-KV=V1&HW-CC-Date=20260427T235008Z&HW-CC-Expire=86400&HW-CC-Sign=AF2DD5FE959DBA522677DBA4447D0318DEB3E2E893A764FCA546EAB428FE75E1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/h-BnJoyVQWCk4x98PzRG3g/zh-cn_image_0000002589325463.png?HW-CC-KV=V1&HW-CC-Date=20260429T053932Z&HW-CC-Expire=86400&HW-CC-Sign=475C8E18A0E857AFBE4DE439BBE2B20C3DD52DB4D61A12100E5C41FDA97DB5F8)
 
 ## 接入流程
 
@@ -34,9 +34,9 @@ content_hash: sha256:4e52a3d0f29899d2ccb5451509032846f21ee37c7a3b75ee55506cb8f45
 
 纯外部支付模式下，收银台仅支持第三方平台支付，用户无法使用华为支付。具体接入流程如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/XORJZcFBQXG2e6GBLWY05g/zh-cn_image_0000002552959092.png?HW-CC-KV=V1&HW-CC-Date=20260427T235008Z&HW-CC-Expire=86400&HW-CC-Sign=FFA8E078AB55A484FDDF4FE2E5C725D1E9FD793BDDCA3581A429C4E0FBE3E684)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/_rWgqGHOT2aKZNo8RjkSKQ/zh-cn_image_0000002589245401.png?HW-CC-KV=V1&HW-CC-Date=20260429T053932Z&HW-CC-Expire=86400&HW-CC-Sign=6EA5DBFEFA01C64EA20037C57994C0D396861A5BE8B5D8CEC774794F618003AB)
 
-1. 商户客户端根据商户已开通的支付模式构建[PaymentInfo](../harmonyos-references/payment-paymentservice.md#paymentinfo)参数调用[cashierPicker](../harmonyos-references/payment-paymentservice.md#paymentservicecashierpicker)接口拉起Payment Kit通用收银台。
+1. 商户客户端根据商户已开通的支付模式构建[PaymentInfo](../harmonyos-references/payment-paymentservice.md#paymentinfo)参数调用[cashierPicker](../harmonyos-references/payment-paymentservice.md#cashierpicker)接口拉起Payment Kit通用收银台。
 2. Payment Kit通用收银台展示可用的三方支付方式，用户选择三方支付方式并确认支付。
 3. Payment Kit客户端将用户在通用收银台选择支付方式并确认支付后的支付信息[PickerResult](../harmonyos-references/payment-paymentservice.md#pickerresult)返回给商户客户端。
 
@@ -46,7 +46,7 @@ content_hash: sha256:4e52a3d0f29899d2ccb5451509032846f21ee37c7a3b75ee55506cb8f45
 2. 商户服务端调用三方支付的接口获取支付信息。
 3. 三方支付服务端将支付跳转链接信息返回给商户服务端。
 4. 商户服务端将支付跳转链接信息返回给商户客户端。
-5. 商户客户端构建**订单支付跳转信息**[orderStr](../harmonyos-references/payment-model.md#orderstr)请求Payment Kit的[requestPayment](../harmonyos-references/payment-paymentservice.md#paymentservicerequestpayment)接口跳转三方支付。
+5. 商户客户端构建**订单支付跳转信息**[orderStr](../harmonyos-references/payment-model.md#orderstr)请求Payment Kit的[requestPayment](../harmonyos-references/payment-paymentservice.md#requestpayment)接口跳转三方支付。
 6. Payment Kit客户端根据传递的支付消息拉起三方支付收银台。
 7. 三方支付客户端展示支付收银台。
 8. 用户完成支付操作。
@@ -86,7 +86,7 @@ content_hash: sha256:4e52a3d0f29899d2ccb5451509032846f21ee37c7a3b75ee55506cb8f45
 
 ### 拉起通用收银台（端侧开发）
 
-商户客户端构建[PaymentInfo](../harmonyos-references/payment-paymentservice.md#paymentinfo)参数调用[cashierPicker](../harmonyos-references/payment-paymentservice.md#paymentservicecashierpicker)接口拉起Payment Kit通用收银台，用户选择支付方式并确认支付后，Payment Kit客户端将支付信息[PickerResult](../harmonyos-references/payment-paymentservice.md#pickerresult)返回给商户客户端 。
+商户客户端构建[PaymentInfo](../harmonyos-references/payment-paymentservice.md#paymentinfo)参数调用[cashierPicker](../harmonyos-references/payment-paymentservice.md#cashierpicker)接口拉起Payment Kit通用收银台，用户选择支付方式并确认支付后，Payment Kit客户端将支付信息[PickerResult](../harmonyos-references/payment-paymentservice.md#pickerresult)返回给商户客户端 。
 
 当接口通过.then()方法返回时，则表示当前接口请求响应正常，通过.catch()方法返回表示接口请求响应异常。当此次请求有异常时，可通过**error.code**获取错误码，错误码相关信息请参见[错误码](../harmonyos-references/payment-error-code.md)。示例代码如下：
 

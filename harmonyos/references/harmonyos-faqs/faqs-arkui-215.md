@@ -1,10 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-215
 title: 如何动态控制键盘绑定在不同的TextInput上
+breadcrumb: FAQ > 应用框架开发 > UI框架 > 方舟UI框架（ArkUI） > 如何动态控制键盘绑定在不同的TextInput上
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:25:55+08:00
+scraped_at: 2026-04-29T14:16:55+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:3676c0fd82632e11cc26b20107e5215109facc63f0713e1a98c86f17b32b6fb0
+content_hash: sha256:460180a0586bd7a3542271d18de31d92fc1c6c810521fcd6b49f9bbc0641e3af
 ---
 
 软键盘的收起和弹出与输入框的获焦和失焦相关。可以通过 focusControl 动态控制输入框焦点的转移，从而控制软键盘的显示和隐藏。将焦点转移到目标输入框可以实现键盘的动态切换。参考代码如下：
@@ -64,7 +65,7 @@ content_hash: sha256:3676c0fd82632e11cc26b20107e5215109facc63f0713e1a98c86f17b32
 
 效果如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/ZKISCP9mTCCU8O6HyriW-w/zh-cn_image_0000002426207326.png?HW-CC-KV=V1&HW-CC-Date=20260428T002554Z&HW-CC-Expire=86400&HW-CC-Sign=50B0F0233AC9303E5284EC9D3FEA983CE7D4A870D30672F2DC6346FDD27F1FA6)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/HirB88-dTJ-IPvw5I3UcVA/zh-cn_image_0000002426218940.png?HW-CC-KV=V1&HW-CC-Date=20260428T002554Z&HW-CC-Expire=86400&HW-CC-Sign=2BF5C0036EC60DFCBE1CDC11E396D2CA46747B35B6BC8CD79ADD15652164B6FE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/ZKISCP9mTCCU8O6HyriW-w/zh-cn_image_0000002426207326.png?HW-CC-KV=V1&HW-CC-Date=20260429T061653Z&HW-CC-Expire=86400&HW-CC-Sign=E1C5778D9EE8C675A5882B3F4F9818B32EFEE7E857F0CF4CBDF55AFC8E9A152D)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/HirB88-dTJ-IPvw5I3UcVA/zh-cn_image_0000002426218940.png?HW-CC-KV=V1&HW-CC-Date=20260429T061653Z&HW-CC-Expire=86400&HW-CC-Sign=BC102C038E56B040F40DA730418D524BEC07EAA5A9DA6B2532B834DF6D0D6569)
 
 **参考链接**
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: @ohos.app.ability.insightIntentProvider (意图提供方管理能力)
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > Stage模型能力的接口 > @ohos.app.ability.insightIntentProvider (意图提供方管理能力)
 category: harmonyos-references
-scraped_at: 2026-04-28T07:58:20+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:c72828a7df2b762a3fca9b79b9707b0062e12f13b751061ea9ea5a83c28aa0c2
+scraped_at: 2026-04-29T13:48:32+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:711a63f356b456f5e9d9043317c211f56d7830cf2da60f8c73301310bce7e2d2
 ---
 
 本模块为意图提供方提供管理能力，如主动发送指定意图的执行结果。
@@ -243,7 +243,7 @@ sendIntentResult(instanceId: number, result: insightIntent.IntentResult<T>): Pro
 45. } catch (error) {
 46. let code = (error as BusinessError).code;
 47. let msg = (error as BusinessError).message;
-48. console.error(`testTag: setReturnModeForUIAbilityForeground failed，error code: ${code}, error msg: ${msg}.`);
+48. console.error(`testTag: setReturnModeForUIAbilityForeground failed, error code: ${code}, error msg: ${msg}.`);
 49. }
 
 51. try {

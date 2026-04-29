@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-secure-sh
 title: 坚盾守护模式
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 管理Web组件的网络安全与隐私 > 坚盾守护模式
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:40:59+08:00
+scraped_at: 2026-04-29T13:29:24+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:a51649467dd6f58ac7f8dfa93444f3da799a859b4dc7e304bea5fa13e43acfd3
+content_hash: sha256:77a343dbcf98dcdb6c4e1172cc43812ea6800f84b22acb77de35d4eaae736d9c
 ---
 
 坚盾守护模式提供给高安全需求用户的系统级别安全模式。该模式通过限制设备基础功能，增强安全性，有效抵御远程攻击面的针对性攻击。
@@ -29,7 +29,7 @@ content_hash: sha256:a51649467dd6f58ac7f8dfa93444f3da799a859b4dc7e304bea5fa13e43
 
 要评估应用在坚盾守护模式下的受影响程度及兼容性，可前往“设置 > 隐私和安全 > 坚盾守护模式”开启。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/sUGVP8blRnefbvG8VTghpw/zh-cn_image_0000002552798576.png?HW-CC-KV=V1&HW-CC-Date=20260427T234058Z&HW-CC-Expire=86400&HW-CC-Sign=29DB4EAF55AFFCCC23D17ED046A4DF5AB5470B3D045C89F6704C4A9AE4341FEB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/-tIbnPUkQKCX-zEfcQx31Q/zh-cn_image_0000002558764716.png?HW-CC-KV=V1&HW-CC-Date=20260429T052923Z&HW-CC-Expire=86400&HW-CC-Sign=E9A583C52F764EB12BB49252106EA1097A439B4592323282D5D10B5A0EE7F67A)
 
 说明
 

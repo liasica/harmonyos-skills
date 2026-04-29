@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-source-
 title: 使用Image_NativeModule完成图片解码
 breadcrumb: 指南 > 媒体 > Image Kit（图片处理服务） > 图片开发指导(C/C++) > 图片解码 > 使用Image_NativeModule完成图片解码
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:46:18+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:d0c780ba9ec2a33e7e3ae020a71df9f83f774030b60c8170e38f9868e02606c0
+scraped_at: 2026-04-29T13:35:14+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:222e9831e6fea1ba7661fbd360fd7259cf6c13f20c11995e7c32fbfd2bd75d13
 ---
 
 创建ImageSource，获取位图的宽、高信息，以及释放ImageSource实例。
@@ -284,7 +284,7 @@ content_hash: sha256:d0c780ba9ec2a33e7e3ae020a71df9f83f774030b60c8170e38f9868e02
      61. OH_LOG_INFO(LOG_APP, "ModifyImageProperty value: %{public}s.", setValue.data);
 
      63. Image_ErrorCode errCode = OH_ImageSourceNative_ModifyImageProperty(g_thisImageSource->source, &setKey, &setValue);
-     64. return ReturnErrorCode(env, errCode, "OH_ImageSourceNative_ModifyImageProperty");
+     64. return GetJsResult(env, errCode);
      65. }
      ```
 

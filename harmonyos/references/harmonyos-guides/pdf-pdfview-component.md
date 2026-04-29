@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pdf-pdfview-c
 title: 预览PDF文档
 breadcrumb: 指南 > 应用服务 > PDF Kit（PDF服务） > PdfView预览组件 > 预览PDF文档
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:50:22+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:be6162a4952c4dd1dae2d0196069096cfdac31a2f034ad78ef59b8dc067e3d1f
+scraped_at: 2026-04-29T13:39:46+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:a5f1b29b6e83bc5fd048e7519b6e9ca475e78a789d16b852be0e14773ee22572
 ---
 
 PDF Kit提供了丰富的PDF文档预览能力，比如：
@@ -38,8 +38,8 @@ PDF Kit提供了丰富的PDF文档预览能力，比如：
 
 11. aboutToAppear(): void {
 12. let context = this.getUIContext().getHostContext() as Context;
-13. let dir: string = context.filesDir
-14. // 确保在工程目录src/main/resources/rawfile里存在input.pdf文档
+13. let dir: string = context.resourceDir
+14. // 确保在工程目录src/main/resources/resfile里存在input.pdf文档
 15. let filePath: string = dir + '/input.pdf';
 16. try {
 17. let res = fileIo.accessSync(filePath);

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-imag
 title: image_packer_native.h
 breadcrumb: API参考 > 媒体 > Image Kit（图片处理服务） > C API > 头文件 > image_packer_native.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:13:16+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:e8251c132abbf7b19f5b6cfb8667d83d374e6f58806d0afac4baedb3cfc9a1c0
+scraped_at: 2026-04-29T14:03:54+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:a801b8ab13dc1d90ed2bf3243ff42e981bc07375a542c490c215e270498dc76d
 ---
 
 ## 概述
@@ -53,7 +53,7 @@ PhonePC/2in1TabletTVWearable
 | 名称 | 描述 |
 | --- | --- |
 | [Image\_ErrorCode OH\_PackingOptions\_Create(OH\_PackingOptions \*\*options)](capi-image-packer-native-h.md#oh_packingoptions_create) | 创建PackingOptions结构体的指针。 |
-| [Image\_ErrorCode OH\_PackingOptions\_GetMimeType(OH\_PackingOptions \*options, Image\_MimeType \*format)](capi-image-packer-native-h.md#oh_packingoptions_getmimetype) | 获取MIME类型。该接口获取到的value.data缺少字符串结束符'\0'，请谨慎使用。 |
+| [Image\_ErrorCode OH\_PackingOptions\_GetMimeType(OH\_PackingOptions \*options, Image\_MimeType \*format)](capi-image-packer-native-h.md#oh_packingoptions_getmimetype) | 获取MIME类型。该接口获取到的format.data缺少字符串结束符'\0'，请谨慎使用。 |
 | [Image\_ErrorCode OH\_PackingOptions\_GetMimeTypeWithNull(OH\_PackingOptions \*options, Image\_MimeType \*format)](capi-image-packer-native-h.md#oh_packingoptions_getmimetypewithnull) | 获取编解码参数中的MIME类型。输出的format.data以字符串结束符'\0'结尾。 |
 | [Image\_ErrorCode OH\_PackingOptions\_SetMimeType(OH\_PackingOptions \*options, Image\_MimeType \*format)](capi-image-packer-native-h.md#oh_packingoptions_setmimetype) | 设置MIME类型。 |
 | [Image\_ErrorCode OH\_PackingOptions\_GetQuality(OH\_PackingOptions \*options, uint32\_t \*quality)](capi-image-packer-native-h.md#oh_packingoptions_getquality) | 获取编码质量。 |
@@ -148,7 +148,7 @@ PhonePC/2in1TabletTVWearable
 
 **描述**
 
-获取MIME类型。该接口获取到的value.data缺少字符串结束符'\0'，请谨慎使用。
+获取MIME类型。该接口获取到的format.data缺少字符串结束符'\0'，请谨慎使用。
 
 **起始版本：** 12
 
@@ -157,7 +157,7 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | [OH\_PackingOptions](capi-image-nativemodule-oh-packingoptions.md) \*options | 被操作的OH\_PackingOptions指针。 |
-| [Image\_MimeType](capi-image-nativemodule-image-string.md) \*format | 图像格式。可传入一个空指针和零大小，系统将分配内存，但必须在使用后释放内存。 |
+| [Image\_MimeType](capi-image-nativemodule-image-string.md) \*format | 图像格式。format无需手动初始化，系统将分配内存，但必须在使用后释放内存。  该接口获取到的format.data缺少字符串结束符'\0'，需要检查实际数据长度是否超出了申请缓冲区的长度。 |
 
 **返回：**
 

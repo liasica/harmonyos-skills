@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-rich-text-
 title: 实现富文本编辑器
 breadcrumb: 最佳实践 > 布局与弹窗 > 实现富文本编辑器
 category: best-practices
-scraped_at: 2026-04-28T08:19:54+08:00
+scraped_at: 2026-04-29T14:10:34+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:1c67f8bbc8e9b09317a2cf4e00a5ae277d3abaa5c825b5321970da808845d343
+content_hash: sha256:81d70a822005cabdd741c1a16184a2b5abb7f51d8b6cbb4c27d557c188e1f6d1
 ---
 
 ## 概述
@@ -14,7 +14,7 @@ content_hash: sha256:1c67f8bbc8e9b09317a2cf4e00a5ae277d3abaa5c825b5321970da80884
 
 本文旨在探讨如何使用[RichEditor](../harmonyos-references/ts-basic-components-richeditor.md)组件，在内容发布场景中实现自定义表情、@好友、添加话题等功能，并提供示例代码详细拆解细节逻辑，如@好友如何被视为一个整体，编辑器中内容如何获取并归一化处理等。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/goDXPTOLRAKJfIIjYVrQow/zh-cn_image_0000002428614480.gif?HW-CC-KV=V1&HW-CC-Date=20260428T001949Z&HW-CC-Expire=86400&HW-CC-Sign=D67E846B61A20E15705E495232B46488698EDAE517CDB3C5B3B4DE9F586CF30C "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/goDXPTOLRAKJfIIjYVrQow/zh-cn_image_0000002428614480.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061031Z&HW-CC-Expire=86400&HW-CC-Sign=3EB1308D3C123B05D99E564512376CBB1F02F4CF010EDF0C57854712EBA7B7DE "点击放大")
 
 ## 实现原理
 
@@ -92,7 +92,7 @@ content_hash: sha256:1c67f8bbc8e9b09317a2cf4e00a5ae277d3abaa5c825b5321970da80884
 
 点击下方表情按钮，系统键盘切换为表情面板。点击表情图标，会在编辑区域光标后方添加对应的表情内容。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/Ru9eypDITly82dh6RdAFog/zh-cn_image_0000002428774296.gif?HW-CC-KV=V1&HW-CC-Date=20260428T001949Z&HW-CC-Expire=86400&HW-CC-Sign=7E5CAB1973232BF296169F66A072DDA3FAA1577B9BEF473EFF8B787475D79F4C "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/Ru9eypDITly82dh6RdAFog/zh-cn_image_0000002428774296.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061031Z&HW-CC-Expire=86400&HW-CC-Sign=334E6EA0B3CCFE9EEA15B586FDFDC25ECC49749891016CF6AE8394A3EC261267 "点击放大")
 
 ### 开发步骤
 
@@ -144,7 +144,7 @@ content_hash: sha256:1c67f8bbc8e9b09317a2cf4e00a5ae277d3abaa5c825b5321970da80884
 
 添加话题、标题与@好友逻辑一致。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/eon0VozsSI2a5gFDoey7wA/zh-cn_image_0000002462252949.gif?HW-CC-KV=V1&HW-CC-Date=20260428T001949Z&HW-CC-Expire=86400&HW-CC-Sign=B6578FE681AB868C66AB8DA729336F50AD26292F02E8E72C4736DA763D319661 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/eon0VozsSI2a5gFDoey7wA/zh-cn_image_0000002462252949.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061031Z&HW-CC-Expire=86400&HW-CC-Sign=9496C274BAF0A43B25C3B29BF1CF668A4851306B1D1E35182A6A90642BF45097 "点击放大")
 
 ### 开发步骤
 
@@ -247,7 +247,7 @@ content_hash: sha256:1c67f8bbc8e9b09317a2cf4e00a5ae277d3abaa5c825b5321970da80884
 
 光标不可落入@好友文本的内部。当用户点击或选中@好友这种自定义内容时，光标应自动跳转到内容的开始或结束位置。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/cFHtPrt2TTOFREBRV1Zfhw/zh-cn_image_0000002462133105.gif?HW-CC-KV=V1&HW-CC-Date=20260428T001949Z&HW-CC-Expire=86400&HW-CC-Sign=C5B81032884A81ED44BAEBBAF8BF3512DAD6136C96F0526235939142DB6C7BF9 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/cFHtPrt2TTOFREBRV1Zfhw/zh-cn_image_0000002462133105.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061031Z&HW-CC-Expire=86400&HW-CC-Sign=C666EBD4D40758CC5907953764795B6909EA02657A15FB5369C73673F7DB2A60 "点击放大")
 
 ### 开发步骤
 
@@ -319,7 +319,7 @@ content_hash: sha256:1c67f8bbc8e9b09317a2cf4e00a5ae277d3abaa5c825b5321970da80884
 
 点击软键盘删除按钮，光标前待删除的是@好友等自定义内容时，则作为整体删除。其余内容删除时无需额外处理。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/kbpfCG_mQfubXybOZO5ymg/zh-cn_image_0000002428614484.gif?HW-CC-KV=V1&HW-CC-Date=20260428T001949Z&HW-CC-Expire=86400&HW-CC-Sign=5DEFF299DD5725DD11B8F1FC77DDC4CD4D0D639F5780F177187841ADEAE14124 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/kbpfCG_mQfubXybOZO5ymg/zh-cn_image_0000002428614484.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061031Z&HW-CC-Expire=86400&HW-CC-Sign=8156DEDFA27815D127CFF90EA297338EE6B4AEEF142BB7265B45D4D9DA9E8154 "点击放大")
 
 ### 开发步骤
 
@@ -408,7 +408,7 @@ content_hash: sha256:1c67f8bbc8e9b09317a2cf4e00a5ae277d3abaa5c825b5321970da80884
    [EditorView.ets](https://gitcode.com/harmonyos_samples/content-publisher/blob/master/entry/src/main/ets/views/EditorView.ets#L270-L292)
 3. 图中内容通过getData()方法生成的数据序列化后的数据如下，如何与服务端交互或使用这些数据，根据业务需求调整即可。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/r_NR1F4QQMGPnsSUZXivdw/zh-cn_image_0000002428774300.png?HW-CC-KV=V1&HW-CC-Date=20260428T001949Z&HW-CC-Expire=86400&HW-CC-Sign=C8AB7F7DE58C81F2B12CFB4DE3F729F24F69ABB0BA3E3046B078FF77B705213C "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/r_NR1F4QQMGPnsSUZXivdw/zh-cn_image_0000002428774300.png?HW-CC-KV=V1&HW-CC-Date=20260429T061031Z&HW-CC-Expire=86400&HW-CC-Sign=D9A0AEC311AB1AEF9CCB92E4E73C1663FA612734FA3C74FA62B961C7A8F1CB8A "点击放大")
 
    ```
    1. [{

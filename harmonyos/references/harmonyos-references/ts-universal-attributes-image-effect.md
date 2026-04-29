@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 图像效果
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 视效与模糊 > 图像效果
 category: harmonyos-references
-scraped_at: 2026-04-28T08:01:07+08:00
+scraped_at: 2026-04-29T13:51:19+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:33db2e7e4ce413b1cca36a0df5947cdde3b576a71d5b061742cfc3a869a65028
+content_hash: sha256:502f788540cb842ef54bb0bfeff3deeee0cf7abbd16c56e72ec1279d143a9b0e
 ---
 
 设置组件的模糊、阴影、球面效果以及设置图片的图像效果。
@@ -1293,7 +1293,7 @@ PhonePC/2in1TabletTVWearable
 85. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/VrZsJzyoTmapC69o2UcpwQ/zh-cn_image_0000002583439555.png?HW-CC-KV=V1&HW-CC-Date=20260428T000105Z&HW-CC-Expire=86400&HW-CC-Sign=C8BAF3260A848742E72FDB2D6BF39DA76478A100E297BFCFB386A98DC6821655)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/za4gyHNSSO2iot_ZUUyF_w/zh-cn_image_0000002589245841.png?HW-CC-KV=V1&HW-CC-Date=20260429T055117Z&HW-CC-Expire=86400&HW-CC-Sign=1E789C751E83AD1E616B95CBCF1ABA8843276C2E69CC5D58A533322303634FB2)
 
 ### 示例2（设置组件线性渐变模糊效果）
 
@@ -1323,7 +1323,7 @@ PhonePC/2in1TabletTVWearable
 21. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/RVOuEb-NSHi4vqBBiwIyqA/zh-cn_image_0000002552959510.png?HW-CC-KV=V1&HW-CC-Date=20260428T000105Z&HW-CC-Expire=86400&HW-CC-Sign=391E67710046022BBEA19D6EE8EF77AE0E6B8D5FB12BE030EB6BD5CF05AEE958)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/Wxx6c2QoQMGDwxH416og3A/zh-cn_image_0000002558766032.png?HW-CC-KV=V1&HW-CC-Date=20260429T055117Z&HW-CC-Expire=86400&HW-CC-Sign=AB697A6672FA92DE9F1078DAA55A5E71F9E0E3076E323CC9D7F217F5E112E409)
 
 ### 示例3（设置离屏渲染效果）
 
@@ -1376,7 +1376,7 @@ PhonePC/2in1TabletTVWearable
 44. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/ewAEjb0QSSagb035u6YrKQ/zh-cn_image_0000002583479511.png?HW-CC-KV=V1&HW-CC-Date=20260428T000105Z&HW-CC-Expire=86400&HW-CC-Sign=5CD9F9976381496BC743B5F04A71028D61DD915048F735A9ACFC0B5F2E7ADFC4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/M-AvB_GXQZe-lpUIXTWadQ/zh-cn_image_0000002558606374.png?HW-CC-KV=V1&HW-CC-Date=20260429T055117Z&HW-CC-Expire=86400&HW-CC-Sign=133CCE21868C269C89C0A0EF2FB94E931A1DCB4E2710D11472D06DDFBA4B9A3E)
 
 ### 示例4（当前组件内容与下方画布内容混合）
 
@@ -1419,7 +1419,7 @@ PhonePC/2in1TabletTVWearable
 34. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/M_slZxt8SUWUVRE8OpEDxw/zh-cn_image_0000002552799862.png?HW-CC-KV=V1&HW-CC-Date=20260428T000105Z&HW-CC-Expire=86400&HW-CC-Sign=AD8404E3C0E11644810CCE91BF60EDEC5A394674F87434CFF24500B95012ABD5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/NqwmZMU6SLSYskoMlRgvlw/zh-cn_image_0000002589325901.png?HW-CC-KV=V1&HW-CC-Date=20260429T055117Z&HW-CC-Expire=86400&HW-CC-Sign=68126F89719D0BC8EE2DFD58417ABA2FADF1F9EF5948028531A6641FD9C20D7D)
 
 ### 示例5（前景智能取反色）
 
@@ -1459,7 +1459,7 @@ PhonePC/2in1TabletTVWearable
 31. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/-oShg7bNTi-ruKcMWXqjEg/zh-cn_image_0000002583439557.png?HW-CC-KV=V1&HW-CC-Date=20260428T000105Z&HW-CC-Expire=86400&HW-CC-Sign=6A03992A8195187813DA094FC8854FCD99FFC8AA3DC11A45087524F8B4BE9B8F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/TTxIlRqzT5qYCdhVNFMLCg/zh-cn_image_0000002589245843.png?HW-CC-KV=V1&HW-CC-Date=20260429T055117Z&HW-CC-Expire=86400&HW-CC-Sign=27D808858B43A203CFA6A280A6CD7F3DFAFE00C069313CECB3820EAD8405D7B9)
 
 ### 示例6（设置同层阴影不重叠效果）
 
@@ -1555,7 +1555,7 @@ PhonePC/2in1TabletTVWearable
 87. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/paxGVnhzTSGANanPG-U3tA/zh-cn_image_0000002552959512.png?HW-CC-KV=V1&HW-CC-Date=20260428T000105Z&HW-CC-Expire=86400&HW-CC-Sign=C1B105B379C8311456A2ACC996B0C79D558433CABEB68DDA47F36238280298E2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/nvnynmnpTdKh2fHwYxU5DQ/zh-cn_image_0000002558766034.png?HW-CC-KV=V1&HW-CC-Date=20260429T055117Z&HW-CC-Expire=86400&HW-CC-Sign=D0448ECE2EA01C89D44FE0CA794DFD70A3A16106A22D67636F963F1DD45ACC79)
 
 ### 示例7（设置组件图像球面效果）
 
@@ -1588,11 +1588,11 @@ PhonePC/2in1TabletTVWearable
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/vFhLCdCvQjenOcSCRoDoAg/zh-cn_image_0000002583479513.png?HW-CC-KV=V1&HW-CC-Date=20260428T000105Z&HW-CC-Expire=86400&HW-CC-Sign=017F3B56591E71D20881C4EF035EB7D46FB90C1DB52A818F3584832C4751CC81)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/u0GZK4myRtS0uh3x5VZWpg/zh-cn_image_0000002558606376.png?HW-CC-KV=V1&HW-CC-Date=20260429T055117Z&HW-CC-Expire=86400&HW-CC-Sign=61D1F650C6C1FD95A376030BFD6B02AAC556E2A215365CB46C2B3BDA34B55FED)
 
 去掉sphericalEffect的设置，效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/RBppdEWxTlSESenpg9v4mQ/zh-cn_image_0000002552799864.png?HW-CC-KV=V1&HW-CC-Date=20260428T000105Z&HW-CC-Expire=86400&HW-CC-Sign=5546CFCC1661DEB20F35773697497A3C99CE6D646F690DDE428EBE457AF0AA20)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/j6ZRl1NqSxSgCgzfPPROvA/zh-cn_image_0000002589325903.png?HW-CC-KV=V1&HW-CC-Date=20260429T055117Z&HW-CC-Expire=86400&HW-CC-Sign=EFEC07DB51B6D66518AF4669036F9402CCED3778FFA8A8D149E8EDADBA899FAA)
 
 ### 示例8（设置组件图像渐亮效果）
 
@@ -1619,15 +1619,15 @@ PhonePC/2in1TabletTVWearable
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/baxkrrn0SW6HQRKPp_5NHg/zh-cn_image_0000002583439559.png?HW-CC-KV=V1&HW-CC-Date=20260428T000105Z&HW-CC-Expire=86400&HW-CC-Sign=46E4D6A53D6DB4B60B0AC4136152331EFE85F49B8A9936C035FBCCDD13FC86E2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/i22ka3DlRg6A_Kg2stw6Jw/zh-cn_image_0000002589245845.png?HW-CC-KV=V1&HW-CC-Date=20260429T055117Z&HW-CC-Expire=86400&HW-CC-Sign=56A3B91BCFDE442D2F9D6E6B3879B4C48E2FFBCC70C3A1FB10FA00525B5D5244)
 
 修改lightUpEffect参数值为0.2：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/mEzsQafZQxyzNbqulh_87A/zh-cn_image_0000002552959514.png?HW-CC-KV=V1&HW-CC-Date=20260428T000105Z&HW-CC-Expire=86400&HW-CC-Sign=2C2064AA3717684702AA14CBBEAEE3493B5C83752B00E9A5E6C2C5BFDC3958ED)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/w0pG1hPHR5a9Kl5Ruc8Clg/zh-cn_image_0000002558766036.png?HW-CC-KV=V1&HW-CC-Date=20260429T055117Z&HW-CC-Expire=86400&HW-CC-Sign=EB49E8F3116A32062275193148E1931071DBAC63EBEC488E7BEC05AF8CD0DF40)
 
 去掉lightUpEffect的设置，效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/Xt2hppYiQ46Cs30He8-ylA/zh-cn_image_0000002583479515.png?HW-CC-KV=V1&HW-CC-Date=20260428T000105Z&HW-CC-Expire=86400&HW-CC-Sign=2D7A854812BF2D0FDD5C45CD7F27827AA53B0FF5EC31C1F0864F07A9FFBA6DA0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/TIt9uTgJQUG_oT5oHdldvg/zh-cn_image_0000002558606378.png?HW-CC-KV=V1&HW-CC-Date=20260429T055117Z&HW-CC-Expire=86400&HW-CC-Sign=7E332825C6771324391018188BD9BA67ACB1572C69659469AC44281D96729D0F)
 
 ### 示例9（设置组件图像边缘像素扩展效果）
 
@@ -1660,11 +1660,11 @@ PhonePC/2in1TabletTVWearable
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/qCv0CRRQR1ekBvHgGtI3Qw/zh-cn_image_0000002552799866.png?HW-CC-KV=V1&HW-CC-Date=20260428T000105Z&HW-CC-Expire=86400&HW-CC-Sign=6635E56E38B0A5055BF378F93FDBD507348E425D3F1CB1F1D79ABDDD15062A86)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/et_pV9WAQ3C1Wgek1IH4hw/zh-cn_image_0000002589325905.png?HW-CC-KV=V1&HW-CC-Date=20260429T055117Z&HW-CC-Expire=86400&HW-CC-Sign=0EE4B1B916D256B2C2D4B84C79A65965A5D977524C343031DF0043E97B1D53FE)
 
 去掉pixelStretchEffect的设置，原图效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/qZ7bSbLXTQiwZ-tD1NAODQ/zh-cn_image_0000002583439561.png?HW-CC-KV=V1&HW-CC-Date=20260428T000105Z&HW-CC-Expire=86400&HW-CC-Sign=21BCF1B498CCFA9D8061F4C03BF20A903CC9037E4656D3C9418D157B3CC5E500)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/nz7zjzmMSse0zqUjt8kg8A/zh-cn_image_0000002589245847.png?HW-CC-KV=V1&HW-CC-Date=20260429T055117Z&HW-CC-Expire=86400&HW-CC-Sign=2C79BDD51C1B40EFEBED27ED380D74452FC2EB25568C4D81F17B36D2C28A17D0)
 
 ### 示例10（系统导航条智能反色）
 
@@ -1694,4 +1694,4 @@ PhonePC/2in1TabletTVWearable
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/aReS3bUDTlCGVSIFTtu4sA/zh-cn_image_0000002552959516.png?HW-CC-KV=V1&HW-CC-Date=20260428T000105Z&HW-CC-Expire=86400&HW-CC-Sign=4423193D0FE49C58365A3A082182854F0E964193EB42386867F724C476B3315D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/N3B5iH-kTTK8oOtvhDQiVQ/zh-cn_image_0000002558766038.png?HW-CC-KV=V1&HW-CC-Date=20260429T055117Z&HW-CC-Expire=86400&HW-CC-Sign=D1BFAB21312318A78093CD820AE547E862BA36C9FDD004A765C284FE872C98B5)

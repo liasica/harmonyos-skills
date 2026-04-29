@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-startup
 title: 应用启动框架AppStartup
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > Stage模型开发指导 > Stage模型应用组件 > 应用启动框架AppStartup
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:37:46+08:00
+scraped_at: 2026-04-29T13:25:48+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:2556d6b75c2fdb4cbf80c1ffce1b5fe7c2c6b56cd822c9416709b026fdc8c16e
+content_hash: sha256:74d8a438652d54493c8955038329acac3e87d88a91defa40903523888159034b
 ---
 
 ## 概述
@@ -20,7 +20,7 @@ AppStartup提供了一种简单高效的应用启动方式，可以支持任务�
 
 **图1** 启动框架执行时机
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/rUScDWcNTGGzr8hSL6ukBg/zh-cn_image_0000002552797850.png?HW-CC-KV=V1&HW-CC-Date=20260427T233745Z&HW-CC-Expire=86400&HW-CC-Sign=AAF8BCA9E9000967DDF36FE6E25677DD7E6A3810A08BE7BDA76BDCA4D943378A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/go61K2onSlC0GTwuC2GJ-w/zh-cn_image_0000002558604334.png?HW-CC-KV=V1&HW-CC-Date=20260429T052546Z&HW-CC-Expire=86400&HW-CC-Sign=AD7FA97DF6F573847671C837E116163F56EC0C1CD0526E6610375EA6145C3221)
 
 ## 支持的范围
 
@@ -109,7 +109,7 @@ AppStartup提供了一种简单高效的应用启动方式，可以支持任务�
 
 **图2** 启动任务依赖关系图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/sdgWI-sjTxedyT0NnYh1Og/zh-cn_image_0000002583437545.png?HW-CC-KV=V1&HW-CC-Date=20260427T233745Z&HW-CC-Expire=86400&HW-CC-Sign=AF115AF5EA090CA8F25807EBF394AD680F6D88DECA084A22D87B8B3B76A6EC8B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/qCX-bCCrR9Wt9rQclZGUeA/zh-cn_image_0000002589323859.png?HW-CC-KV=V1&HW-CC-Date=20260429T052546Z&HW-CC-Expire=86400&HW-CC-Sign=4B211CF350A87E4DD9533B2AD11E6BA9A6B7B763F2FC11378BF3FA053F137565)
 
 1. 在“ets/startup”路径下，依次创建6个启动任务文件。文件名称必须确保唯一性。本例中的6个文件名分别为StartupTask\_001.ets~StartupTask\_006.ets。
 2. 在启动框架配置文件startup\_config.json中，添加启动任务配置。
@@ -198,7 +198,7 @@ AppStartup提供了一种简单高效的应用启动方式，可以支持任务�
 
 **图3** so预加载任务依赖关系图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/iXrjDWBvRxaQSiEzGB7Xow/zh-cn_image_0000002552957500.png?HW-CC-KV=V1&HW-CC-Date=20260427T233745Z&HW-CC-Expire=86400&HW-CC-Sign=8D20FE4FB7FE10C3461A11EFE3B5328A832AD6198F82B19C80BF0BD0A6B4A0A8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/AJ497ZhJQxGzjPtUDUSm2g/zh-cn_image_0000002589243797.png?HW-CC-KV=V1&HW-CC-Date=20260429T052546Z&HW-CC-Expire=86400&HW-CC-Sign=CC9A2CE5B9B311A51B9533968E6E7103EFFCDF2F6F184CE17DB55CD4873F861D)
 
 1. 参考[Node-API](use-napi-process.md)创建so文件。本例中的6个so文件名称分别为libentry\_001.so~libentry\_006.so。
 2. 在启动框架配置文件startup\_config.json中，添加预加载so任务配置。
@@ -373,7 +373,7 @@ AppStartup提供了一种简单高效的应用启动方式，可以支持任务�
 
    **图4** 启动任务与so预加载依赖关系图
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/H7B6WdRqT0ym-aU8pE3KDg/zh-cn_image_0000002583477501.png?HW-CC-KV=V1&HW-CC-Date=20260427T233745Z&HW-CC-Expire=86400&HW-CC-Sign=74B2437AAC93F5D22FD0BB57BD7BD31263281982F156750FD7B7ABB9C3E121A8)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/GNjwBWkZQLyUh3s-SmygoQ/zh-cn_image_0000002558763992.png?HW-CC-KV=V1&HW-CC-Date=20260429T052546Z&HW-CC-Expire=86400&HW-CC-Sign=7960B21086AEA42D88A750C296FF48CF7815EA3381BAE33CCDEFA909994A953F)
 
    [HAP](hap-package.md)的startup\_config.json可参考[定义启动任务配置](app-startup.md#定义启动任务配置)，HSP与HAR的startup\_config.json文件无法配置"configEntry"字段，以hsp1包配置文件为例，示例如下：
 

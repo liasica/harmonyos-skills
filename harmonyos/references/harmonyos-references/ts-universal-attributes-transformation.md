@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 图形变换
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 视效与模糊 > 图形变换
 category: harmonyos-references
-scraped_at: 2026-04-28T08:01:06+08:00
+scraped_at: 2026-04-29T13:51:18+08:00
 doc_updated_at: 2026-04-10
-content_hash: sha256:3c3c03ef0e756e083bd35f8258507f0d2529e44156c78a37a20db162db8630bd
+content_hash: sha256:d5de45da3a422c2e8f0da60a47bb52468cfd0addfc5737fbad64d3aad9b2c182
 ---
 
 用于对组件进行旋转、平移、缩放、矩阵变换等操作。
@@ -419,7 +419,7 @@ PhonePC/2in1TabletTVWearable
 45. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/Hh7FBXhRSNaMKrTXY-e-cw/zh-cn_image_0000002552799858.png?HW-CC-KV=V1&HW-CC-Date=20260428T000105Z&HW-CC-Expire=86400&HW-CC-Sign=44257A7F135E7CF106E663957D79006F19F6B34D4126DB06AB9E07BA355E50EE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/wpOe8FlcSp6S0oQeUf_3rA/zh-cn_image_0000002589325897.png?HW-CC-KV=V1&HW-CC-Date=20260429T055117Z&HW-CC-Expire=86400&HW-CC-Sign=8EC60DED6CD730081F5C6EB17A6DAA64BB035AB33294E728272A28748254FEA3)
 
 ### 示例2（设置旋转视距）
 
@@ -463,7 +463,7 @@ PhonePC/2in1TabletTVWearable
 35. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/grknVKyVTtOD9fdauyjLJQ/zh-cn_image_0000002583439553.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000105Z&HW-CC-Expire=86400&HW-CC-Sign=8EC54E81A5B98EE7ABEF4332E1C2253DA379DBD630F0EA1B2D324E04806337A4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/uhveTJtvQPOm0hd--gm_nw/zh-cn_image_0000002589245839.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055117Z&HW-CC-Expire=86400&HW-CC-Sign=20F46ED210D8F23EA7132A7F66908ED10F9747D641A2156EFE052A58E42AE90D)
 
 ### 示例3（按中心点旋转）
 
@@ -537,7 +537,7 @@ PhonePC/2in1TabletTVWearable
 65. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/IvQuil26QgGq9eVrIil0fw/zh-cn_image_0000002552959508.png?HW-CC-KV=V1&HW-CC-Date=20260428T000105Z&HW-CC-Expire=86400&HW-CC-Sign=DF20E0FAB8F730C2130CE4BACE9002C28869D572A83F6FFD0681FC3C5BF138F4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/q0tH7hcQQqeuHu1g6JzwBw/zh-cn_image_0000002558766030.png?HW-CC-KV=V1&HW-CC-Date=20260429T055117Z&HW-CC-Expire=86400&HW-CC-Sign=EEC0CD79F02E631EC174B46D0AEC2F39D11677E9E5EF6A7FB7AD7DA2273D2F5F)
 
 ### 示例4（通过transform3D实现图形变换）
 
@@ -574,7 +574,7 @@ PhonePC/2in1TabletTVWearable
 28. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/Sw050RzXSyuWblhHWZrVlg/zh-cn_image_0000002583479509.png?HW-CC-KV=V1&HW-CC-Date=20260428T000105Z&HW-CC-Expire=86400&HW-CC-Sign=E1B46406718855910A38C74F80FD3828D9D6720DFD84CFABD82E815F7E71527E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/HzCJrq4VRjCJmzWfA9Xivw/zh-cn_image_0000002558606372.png?HW-CC-KV=V1&HW-CC-Date=20260429T055117Z&HW-CC-Expire=86400&HW-CC-Sign=53397EA645FF05AD5D49A25A0E54213F8AFD0CF01758C1DFBCA12B31E00EAFD6)
 
 ### 示例5（按各轴旋转角的方式实现旋转）
 
@@ -615,4 +615,4 @@ PhonePC/2in1TabletTVWearable
 32. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/FkNFxPjbRaO6EdGdcJbhQg/zh-cn_image_0000002552799860.png?HW-CC-KV=V1&HW-CC-Date=20260428T000105Z&HW-CC-Expire=86400&HW-CC-Sign=3B89408B4BD96D249B973D1DC1BB5DE46092BBF364D3D924657D9C9A4615F0BE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/iE1jI9RLQXOH_WaaBAnnAg/zh-cn_image_0000002589325899.png?HW-CC-KV=V1&HW-CC-Date=20260429T055117Z&HW-CC-Expire=86400&HW-CC-Sign=23D02E2A8F92C7D8D1355BD985D6AD8EFE31DFC26BB6913AA3573B981B87B063)

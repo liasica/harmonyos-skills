@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/app-compati
 title: 应用升级targetSDKVersion兼容低版本指导
 breadcrumb: 版本说明 > 应用兼容性说明 > 应用开发中的兼容性场景开发指导 > 应用升级targetSDKVersion兼容低版本指导
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:37:18+08:00
+scraped_at: 2026-04-29T13:25:20+08:00
 doc_updated_at: 2026-01-21
-content_hash: sha256:d0de74615f82d1d3772bbfdd4a83a4e0d66be458cd379ae6d9c6c7f03ca0476a
+content_hash: sha256:93e3e12d1b424435f6165697b036e501f576354148b5e9d9695bcafb5ff08a4a
 ---
 
 应用的源码工程配置项（build-profile.json5文件）中通过targetSdkVersion和compatibleSdkVersion定义了应用运行的目标SDK版本和最低SDK版本。
@@ -16,7 +16,7 @@ content_hash: sha256:d0de74615f82d1d3772bbfdd4a83a4e0d66be458cd379ae6d9c6c7f03ca
 
 例如：接口A在SDK版本5.0.2(14)产生行为变更并进行了版本隔离，应用升级targetSDKVersion≥5.0.2(14)并适配了新版本行为， compatibleSdkVersion还保持设置为5.0.1(13)， 则若应用分发到低版本设备5.0.1(13)上，需保证该应用在低版本设备能够兼容运行正常（如下图所示）。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/AwG3E2qPSAaE0CmqrlfkkA/zh-cn_image_0000002448697365.png?HW-CC-KV=V1&HW-CC-Date=20260427T233717Z&HW-CC-Expire=86400&HW-CC-Sign=BA47D647E5228224B3A083FE21573D4434CD5A9A0CCC5CB72787D4B14FAF9C68 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/AwG3E2qPSAaE0CmqrlfkkA/zh-cn_image_0000002448697365.png?HW-CC-KV=V1&HW-CC-Date=20260429T052520Z&HW-CC-Expire=86400&HW-CC-Sign=E238D7423616961FB384BB645B0179BCB75A7224F43331004316D992A469F6E2 "点击放大")
 
 这种场景开发者可以使用如下方式进行兼容处理：
 

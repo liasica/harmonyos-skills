@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-design-sid
 title: 设置embed模式的侧边栏
 breadcrumb: 指南 > 应用框架 > UI Design Kit（UI设计套件） > 侧边栏样式 > 设置embed模式的侧边栏
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:41:53+08:00
+scraped_at: 2026-04-29T13:30:22+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:2b6f7c2a48c49dc8910922d828f1fec8fe402f74040c86329aec16c6cf8aeaa9
+content_hash: sha256:1b30fae07440e893601f7f879a6e1b1caa9187761e65ee1c0650d020ecb3ca10
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:2b6f7c2a48c49dc8910922d828f1fec8fe402f74040c86329aec16c6cf8
 
 [HdsSideBar](../harmonyos-references/ui-design-hdssidebar.md)提供可以显示和隐藏的侧边栏容器，通过子组件定义侧边栏和内容区，第一个子组件表示侧边栏，第二个子组件表示内容区，通过设置[sideBarContainerType](../harmonyos-references/ts-container-sidebarcontainer.md#sidebarcontainertype枚举说明)的值为SideBarContainerType.Embed，使得当前HdsSideBar为嵌入样式。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/pVuTZWBNRXC-p9fjkpQBXw/zh-cn_image_0000002552798690.png?HW-CC-KV=V1&HW-CC-Date=20260427T234152Z&HW-CC-Expire=86400&HW-CC-Sign=80F2A17832218D9278F038618E10CAD28CBD3EFA69A54C4DB3E956147D7FAACA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/JYLbjdr8QG6jIYTx2J6nAw/zh-cn_image_0000002558764838.png?HW-CC-KV=V1&HW-CC-Date=20260429T053020Z&HW-CC-Expire=86400&HW-CC-Sign=A0CF893A3BC13D91E76D42B0D927CB3812D4F985BF8A5093F0CFA8F22FD34A74)
 
 ## 开发步骤
 
@@ -27,7 +27,7 @@ content_hash: sha256:2b6f7c2a48c49dc8910922d828f1fec8fe402f74040c86329aec16c6cf8
 
    将图片资源，放到entry/src/main/resources/base/media下。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/fPr4MUbxTFOzzpctHg3DxQ/zh-cn_image_0000002583438385.png?HW-CC-KV=V1&HW-CC-Date=20260427T234152Z&HW-CC-Expire=86400&HW-CC-Sign=E115E0BC5A981BF98CBC22343E55F53ECC718C4F5EA561815CC3E7A867D2D386)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/K8x_24NwQsOVOax5hGhUHg/zh-cn_image_0000002558605182.png?HW-CC-KV=V1&HW-CC-Date=20260429T053020Z&HW-CC-Expire=86400&HW-CC-Sign=B08B789A16CE2692483449EEDEF64AC9AE01443F46C316E35A4CEE7E6E28346E)
 3. 创建HdsSideBar侧边栏组件，设置展开模式为embed。
 
    ```

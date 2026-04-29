@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-quick-res
 title: 滑动操作响应快
 breadcrumb: 指南 > 编写与调试应用 > 开发自测试 > 应用与元服务体检 > 附录 > 体检规则 > 滑动操作响应快
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:57:05+08:00
+scraped_at: 2026-04-29T13:47:04+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:3b355657ff97f7efb2a9d6d978ee70919533999a980f637bdaf6ca11061d8d30
+content_hash: sha256:f20aa961de6b829a56e6c927d2a2d16931f78f9d233c7d2d41cecfee7afa996d
 ---
 
 ## 规则详情
@@ -26,7 +26,7 @@ content_hash: sha256:3b355657ff97f7efb2a9d6d978ee70919533999a980f637bdaf6ca11061
   H:WEB\_LIST\_FLING
 * 备注：由于trace的响应时延小于用户实际感知的时延，所以目前滑动类算法会补偿30ms。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/3uSp0SOBSOK0hPk5LMhDYQ/zh-cn_image_0000002561833679.png?HW-CC-KV=V1&HW-CC-Date=20260427T235704Z&HW-CC-Expire=86400&HW-CC-Sign=3739CC4C30E70E47C27D1BCBAD801DE1AEA78079C75662FA98CE77AA6352FA5D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/OzK4EEqJT0GdFw79EH89Dw/zh-cn_image_0000002561833679.png?HW-CC-KV=V1&HW-CC-Date=20260429T054703Z&HW-CC-Expire=86400&HW-CC-Sign=F63586C975A5614C01A4B88F1D25E2C3EBCC596482E0FB97B48D362413151928)
 
 ## 计算逻辑
 

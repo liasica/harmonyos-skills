@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/window-faqs
 title: 窗口开发常见问题
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 窗口管理 > 窗口开发常见问题
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:40:47+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:1f5cefcef2e763f8079645f9d0972cd1b7947c7681ddcda05440eb5c2a1c6844
+scraped_at: 2026-04-29T13:29:11+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:d3296c49e41e43c1ff3f0f66a5c24b40ffedd2ab25d7a2b79cb4c7ebe82c0a52
 ---
 
 ## 如何在应用A启动过程中拉起另一个应用B
@@ -702,3 +702,41 @@ module.json5配置示例如下：
 系统的后续API版本中将提供新的字段修正。
 
 应用内创建窗口时需要指明窗口类型，开发者可以直接感知窗口类型，不必要通过此接口主动获取。
+
+## on('windowSizeChange')等监听回调中通过getWindowAvoidArea()接口获取到的避让区域数据不是最新的
+
+**问题现象**
+
+在[on('windowSizeChange')](../harmonyos-references/arkts-apis-window-window.md#onwindowsizechange7)、[on('windowRectChange')](../harmonyos-references/arkts-apis-window-window.md#onwindowrectchange12)等窗口属性变化监听回调中，通过[getWindowAvoidArea()](../harmonyos-references/arkts-apis-window-window.md#getwindowavoidarea9)接口获取到的避让区域数据不准确。
+
+**产生原因**
+
+避让区域更新同时依赖窗口位置/尺寸属性的更新和系统界面元素（如状态栏）的位置/尺寸更新，在窗口属性更新回调触发时系统界面元素不一定已完成更新，这个时候通过getWindowAvoidArea()接口不能拿到准确的避让区域。
+
+**解决措施**
+
+通过避让区域专有的监听接口[on('avoidAreaChange')](../harmonyos-references/arkts-apis-window-window.md#onavoidareachange9)监听避让区域变化，避免在其他窗口属性变化事件回调中通过getWindowAvoidArea()接口主动获取避让区域。
+
+**示例代码**
+
+```
+1. import { window } from '@kit.ArkUI';
+
+3. // 代码中假设windowClass为已获取的Window实例
+
+5. // 错误写法：监听windowSizeChange事件主动获取避让区域
+6. windowClass.on('windowSizeChange', () => {
+7. try {
+8. const systemAvoidArea = windowClass.getWindowAvoidArea(window.AvoidAreaType.TYPE_SYSTEM);  // 获取到的避让区域不准确
+9. } catch (exception) {
+10. console.error(`Failed to get window avoid area. Cause code: ${exception.code}, message: ${exception.message}`);
+11. }
+12. });
+
+14. // 正确写法：监听avoidAreaChange事件
+15. windowClass.on('avoidAreaChange', (data) => {
+16. if (data.type === window.AvoidAreaType.TYPE_SYSTEM) {
+17. const systemAvoidArea = data.area;  // 回调中的数据总是准确的避让区域
+18. }
+19. });
+```

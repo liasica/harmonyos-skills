@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design
 title: HdsListItem
 breadcrumb: API参考 > 应用框架 > UI Design Kit（UI设计套件） > ArkTS组件 > HdsListItem
 category: harmonyos-references
-scraped_at: 2026-04-28T08:06:43+08:00
+scraped_at: 2026-04-29T13:57:14+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:375fd895123f5adb71bac5ffb52eb2cafb2d5a7023717fe3bb8146b688d07740
+content_hash: sha256:b58774bf950bb63c3358dc090521b0daaf3a4a2983841c428c92ed55f283bc10
 ---
 
 该组件可设置ListItem的横滑动效，可以承载HdsListItemCard组件。
@@ -406,4 +406,4 @@ PhonePC/2in1TabletTV
 
 效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/KKsVaV2aRB63q63BGoj6VA/zh-cn_image_0000002583480531.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000641Z&HW-CC-Expire=86400&HW-CC-Sign=C5B5AA45CC6BFB4D0EF913D54FE2095B5859C6CE07BE43C3C943780D79B0FC3C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/6Mqkv-YWQveQPezyTAITsg/zh-cn_image_0000002589326925.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055329Z&HW-CC-Expire=86400&HW-CC-Sign=A21444A0DA2ED53F9B4BCD60FB96FD99B41840393C103315819EBE426ECF2ADF)

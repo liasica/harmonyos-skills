@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/scan-imag
 title: detectBarcode (图像识码)
 breadcrumb: API参考 > 媒体 > Scan Kit（统一扫码服务） > ArkTS API > detectBarcode (图像识码)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:14:25+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:89d318462f7e161e8019cd979b6304fd8b59447eae6ef938f1998bb882540f6b
+scraped_at: 2026-04-29T14:05:02+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:652852b55ceb85ee5b49c23384e4e40e1b853168a21ba992397baea62a687f83
 ---
 
 本模块提供本地图片识码和图像数据识码能力，支持对图像中的条形码、二维码、MULTIFUNCTIONAL CODE进行识别。
@@ -170,7 +170,7 @@ decode(inputImage: InputImage, options: scanBarcode.ScanOptions, callback: Async
 4. import { BusinessError } from '@kit.BasicServicesKit';
 
 6. // 定义识码参数options
-7. let options: scanBarcode.ScanOptions = { scanTypes: [scanCore.ScanType.ALL], enableMultiMode: true, enableAlbum: true }
+7. let options: scanBarcode.ScanOptions = { scanTypes: [scanCore.ScanType.ALL], enableMultiMode: true, enableAlbum: true };
 8. // 通过选择模式拉起photoPicker界面，用户可以选择一个图片
 9. let photoOption = new photoAccessHelper.PhotoSelectOptions();
 10. photoOption.MIMEType = photoAccessHelper.PhotoViewMIMETypes.IMAGE_TYPE;

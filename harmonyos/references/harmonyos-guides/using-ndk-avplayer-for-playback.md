@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/using-ndk-avp
 title: 使用AVPlayer播放音频(C/C++)
 breadcrumb: 指南 > 媒体 > Media Kit（媒体服务） > 媒体开发指导(C/C++) > 播放 > 使用AVPlayer播放音频(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:46:29+08:00
+scraped_at: 2026-04-29T13:35:27+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:2a6e6fffd6af5774eb0e2a397b5cbcbf85394e5a5bc27d2e13f53399c7c1e44c
+content_hash: sha256:a1afca36835af6acccfcc10d9aca1d9c991389424515ceba2ecabb1bd19c4a98
 ---
 
 使用[AVPlayer](media-kit-intro.md#avplayer)可以实现端到端播放原始媒体资源，本开发指导将以完整地播放一首音乐作为示例，向开发者讲解AVPlayer音频播放相关功能。
@@ -16,7 +16,7 @@ content_hash: sha256:2a6e6fffd6af5774eb0e2a397b5cbcbf85394e5a5bc27d2e13f53399c7c
 
 **图1** 播放状态变化示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/GQFox4kqTc-e0evElJprYQ/zh-cn_image_0000002583478599.png?HW-CC-KV=V1&HW-CC-Date=20260427T234628Z&HW-CC-Expire=86400&HW-CC-Sign=7CF62E61BAF5D8F390625514F4122500D3E593224DD38B0FE6B7837C2FD46452)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/gvD_s1HkST-7NMW4Clv8Pw/zh-cn_image_0000002558605442.png?HW-CC-KV=V1&HW-CC-Date=20260429T053526Z&HW-CC-Expire=86400&HW-CC-Sign=68E9589018C8C4446288901401EF13F35FAC4055345DE49DC4D2CB0431DF7677)
 
 状态的详细说明请参考[AVPlayerState](../harmonyos-references/capi-avplayer-base-h.md#avplayerstate)。当播放处于prepared / playing / paused / completed状态时，播放引擎处于工作状态，这需要占用系统较多的运行内存。当客户端暂时不使用播放器时，调用reset()或release()回收内存资源，做好资源利用。
 

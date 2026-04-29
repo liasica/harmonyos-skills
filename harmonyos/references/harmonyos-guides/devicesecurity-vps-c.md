@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 病毒防护服务管理(C/C++)
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 病毒防护服务管理(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:43:02+08:00
+scraped_at: 2026-04-29T13:31:43+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:fb2746094a7a3ef36faf31af14dcae8fa4370fa39ec0791546dbe6f66b8aa739
+content_hash: sha256:b24ebf1ca6074837dc296a76c4cbb49889f8eb1b225225af4891b69443c4026e
 ---
 
 ## 场景介绍
@@ -19,11 +19,11 @@ content_hash: sha256:fb2746094a7a3ef36faf31af14dcae8fa4370fa39ec0791546dbe6f66b8
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/j8cY4Gy3RFeGFITR5TR2xg/zh-cn_image_0000002552958404.png?HW-CC-KV=V1&HW-CC-Date=20260427T234301Z&HW-CC-Expire=86400&HW-CC-Sign=FB000E65DC6F64FCEF4D3237A4970E8671019A442D1D7524AA43E2F23ED6EF5C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/SzS3ENhDSzm1SEnAVVGoVw/zh-cn_image_0000002589324771.png?HW-CC-KV=V1&HW-CC-Date=20260429T053142Z&HW-CC-Expire=86400&HW-CC-Sign=4CF376199912F349B818B9E6939BF99C73136555D7196E731B0603D9C190BF6C)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/MMjF4VnrQRGv_dR1gy369g/zh-cn_image_0000002583478405.png?HW-CC-KV=V1&HW-CC-Date=20260427T234301Z&HW-CC-Expire=86400&HW-CC-Sign=06C3C5090A27B66F84F7A80C7A19ECBECF16BCB80AE2788EB6476882FC367499)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/lq9VvBJKTPyiEHIa6vCIDw/zh-cn_image_0000002589244709.png?HW-CC-KV=V1&HW-CC-Date=20260429T053142Z&HW-CC-Expire=86400&HW-CC-Sign=87501B4BE8420BD763A36CF7B7C309DFD7B6642630774A26E44FDE67CFE1B9C1)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/zHfC99FDQKyTzWG6aVoBjg/zh-cn_image_0000002552798756.png?HW-CC-KV=V1&HW-CC-Date=20260427T234301Z&HW-CC-Expire=86400&HW-CC-Sign=9FF20FE340CDB876D3A0EAFFBF4C627B1E6087410A1F27DCC12772993C67498A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/xS85BeDqRhCrAk0d13sUtg/zh-cn_image_0000002558764904.png?HW-CC-KV=V1&HW-CC-Date=20260429T053142Z&HW-CC-Expire=86400&HW-CC-Sign=92218D8FD51C855851A11EE12468482B6CC3E91B25B79FD991873947043FE4D1)
 
 **流程说明**：
 

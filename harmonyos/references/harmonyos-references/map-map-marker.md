@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-map-m
 title: Marker
 breadcrumb: API参考 > 应用服务 > Map Kit（地图服务） > ArkTS API > map（地图显示功能） > Marker
 category: harmonyos-references
-scraped_at: 2026-04-28T08:17:11+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:8fb1fa17f2ec5608a53d20bff4f703bcba4754447acc6849bc6b8d2667fa8cf9
+scraped_at: 2026-04-29T14:07:54+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:878b8d1b54b8ca85b9317902a908a2729fd49e96bfc5ac3bb717d9ffb4c06367
 ---
 
 ## 导入模块
@@ -421,7 +421,7 @@ setMarkerAnchor(anchorU: number, anchorV: number): void
 
 设置标记的锚点位置。锚点是标记图标接触地图平面的点，图标的左顶点为（0, 0）点，右顶点为（1, 0）点，左底点为（0, 1）点，右底点为（1, 1）点。例如，在标记X（0.5, 0.3）处的锚点坐标如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/tNTht7yxSjmJGOZBpQ82vw/zh-cn_image_0000002552960900.png?HW-CC-KV=V1&HW-CC-Date=20260428T001709Z&HW-CC-Expire=86400&HW-CC-Sign=B390187472713D57F6088F77F839D91DFAD9C6D008818BF3305B127511017DAB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/apgSao7SRLu-h4kw0aBARg/zh-cn_image_0000002558607768.png?HW-CC-KV=V1&HW-CC-Date=20260429T060752Z&HW-CC-Expire=86400&HW-CC-Sign=E03C18402698AAFA2CE7DAE475C5C773BF6CA5A58E73430E5EFE592014E808F4)
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -496,7 +496,7 @@ setRotation(rotation: number): void
 
 | 参数名 | **类型** | 必填 | **说明** |
 | --- | --- | --- | --- |
-| rotation | number | 是 | 标记的旋转角度，单位：度。  以正北方向为0度、顺时针方向为正的角度，取值范围：[0, 360)。超出取值范围的值会换算成取值范围内的值，比如361会被换算成1，-1换算为359，null和undefined不处理。 |
+| rotation | number | 是 | 标记的旋转角度，单位：度。  以正北方向为0度、顺时针方向为正的角度，取值范围：[0, 360)。超出取值范围的值会换算成取值范围内的值，比如361会被换算成1，-1换算为359，null和undefind不处理。 |
 
 **示例：**
 

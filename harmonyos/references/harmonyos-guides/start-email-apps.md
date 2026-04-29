@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/start-email-a
 title: 拉起邮件类应用（startAbilityByType）
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > Stage模型开发指导 > 应用间跳转 > 拉起指定类型的应用 > 拉起邮件类应用（startAbilityByType）
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:37:50+08:00
+scraped_at: 2026-04-29T13:25:53+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:d232389b280d96dbff0d6ccd39889b65af191ada632e26319c36dab139d8687d
+content_hash: sha256:f350d072bed93dd4f41629c0fcbf68f64346f77492143ee3f3f809ba6a8ea1d9
 ---
 
 本章节介绍如何拉起邮件类应用扩展面板。
@@ -95,7 +95,7 @@ startAbilityByType接口中type字段为mail，对应的wantParam参数：
 
    效果示例图：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/Diyi0ZBVTlyBUJNPBKFGBg/zh-cn_image_0000002583437551.png?HW-CC-KV=V1&HW-CC-Date=20260427T233749Z&HW-CC-Expire=86400&HW-CC-Sign=5DB1CF5106C68632CA8FF313BDA4C0F5C6FD740405D0EBA0F60D91C015948EA3)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/CCkymBI-QX6g4uMEjLF8uQ/zh-cn_image_0000002589323865.png?HW-CC-KV=V1&HW-CC-Date=20260429T052552Z&HW-CC-Expire=86400&HW-CC-Sign=D58DA3694EA374346C418130FED07321370C527CD6D0A0C90AB0979D21B14B6E)
 
 ## 目标方开发步骤
 

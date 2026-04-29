@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: @Entry：页面入口
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 自定义组件 > 组件扩展装饰器 > @Entry：页面入口
 category: harmonyos-references
-scraped_at: 2026-04-28T08:02:31+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:1749b00777a2abd295adfa802fb76a9fb1adf36a3654c1599c6e53ebb8d3933f
+scraped_at: 2026-04-29T13:52:56+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:f419045fa8fa44a2a76baeb7b5a2cdf63f0e09a467cb3e3d6d79fe2f5f61bd61
 ---
 
 @Entry装饰的自定义组件将作为UI页面的入口。
@@ -29,13 +29,14 @@ PhonePC/2in1TabletTVWearable
 **示例：**
 
 ```
-1. @Entry
-2. @Component
-3. struct Index {
-4. build() {
-5. Text('@Entry Test')
-6. }
+1. // @Entry装饰的自定义组件作为UI页面的入口
+2. @Entry
+3. @Component
+4. struct Index {
+5. build() {
+6. Text('@Entry Test')
 7. }
+8. }
 ```
 
 ## EntryOptions10+
@@ -55,11 +56,12 @@ PhonePC/2in1TabletTVWearable
 **示例：**
 
 ```
-1. @Entry({ routeName: 'myPage' })
-2. @Component
-3. struct Index {
-4. build() {
-5. Text('Index')
-6. }
+1. // 设置路由页面名字为myPage
+2. @Entry({ routeName: 'myPage' })
+3. @Component
+4. struct Index {
+5. build() {
+6. Text('Index')
 7. }
+8. }
 ```

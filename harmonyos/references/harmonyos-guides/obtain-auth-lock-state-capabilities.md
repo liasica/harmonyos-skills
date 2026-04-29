@@ -1,10 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/obtain-auth-lock-state-capabilities
 title: 查询指定认证类型的认证冻结状态
+breadcrumb: 指南 > 系统 > 安全 > User Authentication Kit（用户认证服务） > 用户身份认证开发指导 > 查询指定认证类型的认证冻结状态
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:43:39+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:638f33a8a6f42afdbbedf7bceb96f2e629b2b2fde78fa51e1ea019158e893cc1
+scraped_at: 2026-04-29T13:32:25+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:2368572e3ae87c273e29ecbe564a569ba4c3536a692b9db2662842100a174088
 ---
 
 从API version 22开始，开发者可以参考下述开发指导，查询指定认证类型的认证冻结状态，以及剩余可认证次数或还需等待的认证冻结时间。
@@ -30,10 +31,10 @@ content_hash: sha256:638f33a8a6f42afdbbedf7bceb96f2e629b2b2fde78fa51e1ea019158e8
 3. Logger.info(`get auth lock state start`);
 4. const authLockState : userAuth.AuthLockState = await userAuth.getAuthLockState(userAuth.UserAuthType.PIN);
 5. if (authLockState.lockoutDuration === userAuth.PERMANENT_LOCKOUT_DURATION) {
-6. Logger.info('the authentication of given authType is permanent locked');
+6. Logger.info('the authentication of given authType is permanent locked.');
 7. }
 8. const authLockStateContent : string = JSON.stringify(authLockState);
-9. Logger.info('get auth lock state successfully');
+9. Logger.info('get auth lock state successfully.');
 10. return authLockStateContent;
 11. } catch (error) {
 12. const errorMessage : string = `get auth lock state failed, err code is : ${error?.code}, err message is : ${error?.message}`;

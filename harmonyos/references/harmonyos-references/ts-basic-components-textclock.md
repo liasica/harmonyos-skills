@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: TextClock
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 信息展示 > TextClock
 category: harmonyos-references
-scraped_at: 2026-04-28T08:02:03+08:00
+scraped_at: 2026-04-29T13:52:22+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:4b92346b744a853bbe5bb5d3bb56981de5c3adb475c6fe60d3bfd0a14caf2338
+content_hash: sha256:22b709f69ddd14d74190bb3a0a1444f1b5a19c0ab6faddb282fb60e4fa73417b
 ---
 
 TextClock组件通过文本将当前系统时间显示在设备上。支持不同时区的时间显示，最高精度到秒级。
@@ -499,7 +499,7 @@ PhonePC/2in1TabletTVWearable
 35. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/-4xdzNzFSiKA2lu8M1moeA/zh-cn_image_0000002552959918.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000202Z&HW-CC-Expire=86400&HW-CC-Sign=0D65CA3ACA9B0BB25D6665FBE6CA7475D966029C81F4D12B864A18361146A624)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/msdgFzZoTKCFF10rJsvClQ/zh-cn_image_0000002558766444.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055221Z&HW-CC-Expire=86400&HW-CC-Sign=379C216D330AF0DBD32782CAEC6ECD376AF4B5769913308293F93177D7B31E6E)
 
 ### 示例2（设定文本阴影样式）
 
@@ -544,7 +544,7 @@ PhonePC/2in1TabletTVWearable
 36. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/CAsUsvHaTyKXJM-FsgV1rw/zh-cn_image_0000002583479919.png?HW-CC-KV=V1&HW-CC-Date=20260428T000202Z&HW-CC-Expire=86400&HW-CC-Sign=2D890756F0B9B46EE6021272DAF9F2DC377ED5C6669C762B382DA9C21E80A683)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/-ZbTX5U9QNqKl5V135aa5Q/zh-cn_image_0000002558606784.png?HW-CC-KV=V1&HW-CC-Date=20260429T055221Z&HW-CC-Expire=86400&HW-CC-Sign=29191CE36EDA4A8352666F949FE8730E56ECFC2033CC6C0A885D0EC567007245)
 
 ### 示例3（设定自定义内容区）
 
@@ -628,7 +628,7 @@ PhonePC/2in1TabletTVWearable
 75. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/EgrsMulVRcOlyOMlJgscaQ/zh-cn_image_0000002552800270.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000202Z&HW-CC-Expire=86400&HW-CC-Sign=2CB6F9597C98DCEE25C1542A2E9209A47424C0C5FE6F4BDE336DD5265F6A9162)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/ij_dDk0eQeuamHBhl9xvmg/zh-cn_image_0000002589326311.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055221Z&HW-CC-Expire=86400&HW-CC-Sign=EE837BFCDEA62F0EA8F610274025FA7553BBC9F7602C1D220DF44B7C7E8476A2)
 
 ### 示例4（设置前导零）
 
@@ -663,7 +663,7 @@ PhonePC/2in1TabletTVWearable
 26. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/F-ZvH5xOQ8Ga0InVc6BDHQ/zh-cn_image_0000002583439965.png?HW-CC-KV=V1&HW-CC-Date=20260428T000202Z&HW-CC-Expire=86400&HW-CC-Sign=5F76C7AC675BF78EE71D0AEE3610B63E26153EC9BC1570A1B3144CF9F19AA1A9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/GvuJ8hcETXi3dgrvLmetNw/zh-cn_image_0000002589246253.png?HW-CC-KV=V1&HW-CC-Date=20260429T055221Z&HW-CC-Expire=86400&HW-CC-Sign=07EBBBE9F8D57C87FDCCCCDE93582C25DEB25F8000299BE53477BD5F0B5C963D)
 
 ### 示例5（设置文字显示样式）
 
@@ -718,4 +718,4 @@ PhonePC/2in1TabletTVWearable
 46. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/jRQBD_RjROKxi6-_6VzApQ/zh-cn_image_0000002552959920.png?HW-CC-KV=V1&HW-CC-Date=20260428T000202Z&HW-CC-Expire=86400&HW-CC-Sign=2B9EE8F5046D80EC7CB0F9891EA198C96920C425E5AFAC2D9A000ADED683FB45)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/t746IvAFS9GbtOT-EH43ow/zh-cn_image_0000002558766446.png?HW-CC-KV=V1&HW-CC-Date=20260429T055221Z&HW-CC-Expire=86400&HW-CC-Sign=B4C8224F1E975A23FD62DCADF6F5A5177AF527CDA4753CE4EE1E0A9080F7FC20)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-bas
 title: 事件
 breadcrumb: API参考 > 应用框架 > ArkWeb（方舟Web） > ArkTS 组件 > Web > 事件
 category: harmonyos-references
-scraped_at: 2026-04-28T08:05:16+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:3e68088dc0dced9709b060b6b7d047096cabbeeaccb0bed6b7f5116d680f53a2
+scraped_at: 2026-04-29T13:55:45+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:e9d262e105d357f1791fb2feb3d46b0a6962b35bcea8f7cd461109d7e502e753
 ---
 
 通用事件仅支持[onAppear](ts-universal-events-show-hide.md#onappear)、[onDisAppear](ts-universal-events-show-hide.md#ondisappear)、[onBlur](ts-universal-focus-event.md#onblur)、[onFocus](ts-universal-focus-event.md#onfocus)、[onDragEnd](ts-universal-events-drag-drop.md#ondragend10)、[onDragEnter](ts-universal-events-drag-drop.md#ondragenter)、[onDragStart](ts-universal-events-drag-drop.md#ondragstart)、[onDragMove](ts-universal-events-drag-drop.md#ondragmove)、[onDragLeave](ts-universal-events-drag-drop.md#ondragleave)、[onDrop](ts-universal-events-drag-drop.md#ondrop)、[onHover](ts-universal-events-hover.md#onhover)、[onMouse](ts-universal-mouse-key.md#onmouse)、[onKeyEvent](ts-universal-events-key.md#onkeyevent)、[onTouch](ts-universal-events-touch.md#ontouch)、[onVisibleAreaChange](ts-universal-component-visible-area-change-event.md#onvisibleareachange)。
@@ -3442,6 +3442,10 @@ PhonePC/2in1TabletTVWearable
 onLoadIntercept(callback: Callback<OnLoadInterceptEvent, boolean>)
 
 当Web组件加载url之前触发该回调，用于判断是否阻止此次访问。
+
+说明
+
+* onLoadIntercept无法获取到完整的headers，如需获取完整headers建议在[onInterceptRequest](arkts-basic-components-web-events.md#oninterceptrequest9)或者通过WebSchemeHandler的[onRequestStart](arkts-apis-webview-webschemehandler.md#onrequeststart12)中获取。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 

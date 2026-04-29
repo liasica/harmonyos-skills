@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/window-termin
 title: 窗口开发术语
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 窗口管理 > 窗口开发术语
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:40:47+08:00
+scraped_at: 2026-04-29T13:29:11+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:61646f98e77345ecc776d8eb12cf84cea5e63910412f46873f901f148afa4756
+content_hash: sha256:b97002e97930c9871946bda80d5c028a6e92a36e52a3a9d0f06742c4be9fc562
 ---
 
 ## 窗口类型
@@ -60,7 +60,7 @@ content_hash: sha256:61646f98e77345ecc776d8eb12cf84cea5e63910412f46873f901f148af
 
 自由窗口可以通过拖动窗口边缘调节窗口大小，可以通过拖动标题栏移动窗口位置。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/61VLpTtVQWSBBYU76d5TFg/zh-cn_image_0000002552958202.png?HW-CC-KV=V1&HW-CC-Date=20260427T234045Z&HW-CC-Expire=86400&HW-CC-Sign=E706A63690E0F591C67A6F2563AEB5520509FBC4657EDF247DE5E819A59A09F1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/2kAPOFO5RJSD_kicnUE1hA/zh-cn_image_0000002589324563.png?HW-CC-KV=V1&HW-CC-Date=20260429T052909Z&HW-CC-Expire=86400&HW-CC-Sign=93AFE1931B0F897E69133D235473299736B93E81FD3DAB97FBED17A3B2D2A3CE)
 
 当前设备支持情况：
 
@@ -78,7 +78,7 @@ content_hash: sha256:61646f98e77345ecc776d8eb12cf84cea5e63910412f46873f901f148af
 
 部分Phone设备上，可通过下拉控制中心，点击“自由多窗”按钮开启自由多窗。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/7JvmWqUwT225w09PRdUbwg/zh-cn_image_0000002583478203.png?HW-CC-KV=V1&HW-CC-Date=20260427T234045Z&HW-CC-Expire=86400&HW-CC-Sign=8835B77E10393E9DB289AD8A3B2BC7E966119D92CCCE8D8268946B674DDDE750)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/JYmZqwlfRVSxzNqyYQooVg/zh-cn_image_0000002589244501.png?HW-CC-KV=V1&HW-CC-Date=20260429T052909Z&HW-CC-Expire=86400&HW-CC-Sign=15F2EBBC509C6CE3EF10581F2376CF8BFC49BD6C8DFC6050B4FF02E6A159AFB7)
 
 ### 电脑模式
 
@@ -114,7 +114,7 @@ content_hash: sha256:61646f98e77345ecc776d8eb12cf84cea5e63910412f46873f901f148af
 
 在该坐标系中，所有物理屏幕被映射到同一连续的虚拟坐标空间内，各类窗口操作、坐标转换及窗口矩形变化事件均基于该坐标空间进行计算和回调。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/jfdfiJqcRuqMkCokJZWgRg/zh-cn_image_0000002552798556.png?HW-CC-KV=V1&HW-CC-Date=20260427T234045Z&HW-CC-Expire=86400&HW-CC-Sign=F1E84F442CB35328F571B3597E0CFB94E016D0DFE3D3A24255349A8669303634)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/r2GTg-EvT3uDug2CMQG_uA/zh-cn_image_0000002558764696.png?HW-CC-KV=V1&HW-CC-Date=20260429T052909Z&HW-CC-Expire=86400&HW-CC-Sign=C82EC49CB9ABDE5026ABF5EE08FB67B7A750F349EE69EA293C1162D14CD40B9E)
 
 使用场景：
 

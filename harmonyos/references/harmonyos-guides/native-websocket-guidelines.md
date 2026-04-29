@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-websoc
 title: 使用WebSocket访问网络(C/C++)
 breadcrumb: 指南 > 系统 > 网络 > Network Kit（网络服务） > 访问网络 > 使用WebSocket访问网络(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:43:51+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:f5a3dac3bc912f6929c23c428577a0fde15f97b484b927494afd38036d9e6ae2
+scraped_at: 2026-04-29T13:32:42+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:539df0fdcf8eb7db78d9b024bcd7c0796d69778daf370459e27664c48142cc2b
 ---
 
 ## 场景介绍
@@ -87,109 +87,110 @@ CMakeLists.txt中添加以下lib:
 29. }
 30. tmp[length] = '\0';
 31. OH_LOG_INFO(LOG_APP, "onMessage: len: %{public}u, data: %{public}s", length, tmp);
-32. }
+32. delete[] tmp;
+33. }
 
-34. static void onError(struct WebSocket *wsClient, WebSocket_ErrorResult errorResult)
-35. {
-36. (void)wsClient;
-37. OH_LOG_INFO(LOG_APP, "onError: code: %{public}u, message: %{public}s", errorResult.errorCode,
-38. errorResult.errorMessage);
-39. }
+35. static void onError(struct WebSocket *wsClient, WebSocket_ErrorResult errorResult)
+36. {
+37. (void)wsClient;
+38. OH_LOG_INFO(LOG_APP, "onError: code: %{public}u, message: %{public}s", errorResult.errorCode,
+39. errorResult.errorMessage);
+40. }
 
-41. static void onClose(struct WebSocket *wsClient, WebSocket_CloseResult closeResult)
-42. {
-43. (void)wsClient;
-44. OH_LOG_INFO(LOG_APP, "onClose: code: %{public}u, reason: %{public}s", closeResult.code, closeResult.reason);
-45. }
+42. static void onClose(struct WebSocket *wsClient, WebSocket_CloseResult closeResult)
+43. {
+44. (void)wsClient;
+45. OH_LOG_INFO(LOG_APP, "onClose: code: %{public}u, reason: %{public}s", closeResult.code, closeResult.reason);
+46. }
 
-47. static napi_value ConnectWebsocket(napi_env env, napi_callback_info info)
-48. {
-49. size_t argc = 2;
-50. napi_value args[2] = {nullptr};
-51. napi_value result;
+48. static napi_value ConnectWebsocket(napi_env env, napi_callback_info info)
+49. {
+50. size_t argc = 2;
+51. napi_value args[2] = {nullptr};
+52. napi_value result;
 
-53. napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+54. napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
 
-55. size_t length = 0;
-56. napi_status status = napi_get_value_string_utf8(env, args[0], nullptr, 0, &length);
-57. if (status != napi_ok) {
-58. napi_get_boolean(env, false, &result);
-59. return result;
-60. }
+56. size_t length = 0;
+57. napi_status status = napi_get_value_string_utf8(env, args[0], nullptr, 0, &length);
+58. if (status != napi_ok) {
+59. napi_get_boolean(env, false, &result);
+60. return result;
+61. }
 
-62. if (g_client != nullptr) {
-63. OH_LOG_INFO(LOG_APP, "there is already one websocket client running.");
-64. napi_get_boolean(env, false, &result);
-65. return result;
-66. }
-67. char *buf = new char[length + 1];
-68. std::memset(buf, 0, length + 1);
-69. napi_get_value_string_utf8(env, args[0], buf, length + 1, &length);
-70. // 创建WebSocket Client对象指针
-71. g_client = OH_WebSocketClient_Constructor(onOpen, onMessage, onError, onClose);
-72. if (g_client == nullptr) {
-73. delete[] buf;
-74. napi_get_boolean(env, false, &result);
-75. return result;
-76. }
-77. // 连接buf存放的URL对应的WebSocket服务器
-78. int connectRet = OH_WebSocketClient_Connect(g_client, buf, {});
+63. if (g_client != nullptr) {
+64. OH_LOG_INFO(LOG_APP, "there is already one websocket client running.");
+65. napi_get_boolean(env, false, &result);
+66. return result;
+67. }
+68. char *buf = new char[length + 1];
+69. std::memset(buf, 0, length + 1);
+70. napi_get_value_string_utf8(env, args[0], buf, length + 1, &length);
+71. // 创建WebSocket Client对象指针
+72. g_client = OH_WebSocketClient_Constructor(onOpen, onMessage, onError, onClose);
+73. if (g_client == nullptr) {
+74. delete[] buf;
+75. napi_get_boolean(env, false, &result);
+76. return result;
+77. }
+78. // 连接buf存放的URL对应的WebSocket服务器
+79. int connectRet = OH_WebSocketClient_Connect(g_client, buf, {});
 
-80. delete[] buf;
-81. napi_get_boolean(env, connectRet == 0, &result);
-82. return result;
-83. }
+81. delete[] buf;
+82. napi_get_boolean(env, connectRet == 0, &result);
+83. return result;
+84. }
 
-86. static napi_value SendMessage(napi_env env, napi_callback_info info)
-87. {
-88. size_t argc = 1;
-89. napi_value args[1] = {nullptr};
-90. napi_value result;
+87. static napi_value SendMessage(napi_env env, napi_callback_info info)
+88. {
+89. size_t argc = 1;
+90. napi_value args[1] = {nullptr};
+91. napi_value result;
 
-92. napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+93. napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
 
-94. size_t length = 0;
-95. napi_status status = napi_get_value_string_utf8(env, args[0], nullptr, 0, &length);
-96. if (status != napi_ok) {
-97. napi_create_int32(env, -1, &result);
-98. return result;
-99. }
+95. size_t length = 0;
+96. napi_status status = napi_get_value_string_utf8(env, args[0], nullptr, 0, &length);
+97. if (status != napi_ok) {
+98. napi_create_int32(env, -1, &result);
+99. return result;
+100. }
 
-101. if (g_client == nullptr) {
-102. OH_LOG_INFO(LOG_APP, "websocket client not connected.");
-103. napi_create_int32(env, WebSocket_ErrCode::WEBSOCKET_CLIENT_NULL, &result);
-104. return result;
-105. }
-106. char *buf = new char[length + 1];
-107. std::memset(buf, 0, length + 1);
-108. napi_get_value_string_utf8(env, args[0], buf, length + 1, &length);
-109. // 发送buf中的消息给服务器
-110. int ret = OH_WebSocketClient_Send(g_client, buf, length);
+102. if (g_client == nullptr) {
+103. OH_LOG_INFO(LOG_APP, "websocket client not connected.");
+104. napi_create_int32(env, WebSocket_ErrCode::WEBSOCKET_CLIENT_NULL, &result);
+105. return result;
+106. }
+107. char *buf = new char[length + 1];
+108. std::memset(buf, 0, length + 1);
+109. napi_get_value_string_utf8(env, args[0], buf, length + 1, &length);
+110. // 发送buf中的消息给服务器
+111. int ret = OH_WebSocketClient_Send(g_client, buf, length);
 
-112. delete[] buf;
-113. napi_create_int32(env, ret, &result);
-114. return result;
-115. }
+113. delete[] buf;
+114. napi_create_int32(env, ret, &result);
+115. return result;
+116. }
 
-117. static napi_value CloseWebsocket(napi_env env, napi_callback_info info)
-118. {
-119. napi_value result;
-120. if (g_client == nullptr) {
-121. OH_LOG_INFO(LOG_APP, "websocket client not connected.");
-122. napi_create_int32(env, -1, &result);
-123. return result;
-124. }
-125. // 关闭WebSocket连接
-126. int ret = OH_WebSocketClient_Close(g_client, {
-127. .code = 0,
-128. .reason = "Actively Close",
-129. });
-130. // 释放WebSocket资源并置空
-131. OH_WebSocketClient_Destroy(g_client);
-132. g_client = nullptr;
-133. napi_create_int32(env, ret, &result);
-134. return result;
-135. }
+118. static napi_value CloseWebsocket(napi_env env, napi_callback_info info)
+119. {
+120. napi_value result;
+121. if (g_client == nullptr) {
+122. OH_LOG_INFO(LOG_APP, "websocket client not connected.");
+123. napi_create_int32(env, -1, &result);
+124. return result;
+125. }
+126. // 关闭WebSocket连接
+127. int ret = OH_WebSocketClient_Close(g_client, {
+128. .code = 0,
+129. .reason = "Actively Close",
+130. });
+131. // 释放WebSocket资源并置空
+132. OH_WebSocketClient_Destroy(g_client);
+133. g_client = nullptr;
+134. napi_create_int32(env, ret, &result);
+135. return result;
+136. }
 ```
 
 [napi\_init.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/NetWork_Kit/NetWorkKit_Datatransmission/WebSocket_C/entry/src/main/cpp/napi_init.cpp#L16-L152)
@@ -346,7 +347,7 @@ ConnectWebsocket函数接收一个WebSocket URL并尝试连接，连接成功返
 
 注意：如图所示，在add\_library中的entry是工程自动生成的modename，若要做修改，需和步骤3中.nm\_modname保持一致。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/vCX8qf5PQ_yqRpq9N7bBLw/zh-cn_image_0000002552798774.png?HW-CC-KV=V1&HW-CC-Date=20260427T234350Z&HW-CC-Expire=86400&HW-CC-Sign=9B7C8A26BBDCB21F05A42CDB932E29A468F07A8CCE12BCC35D5182594DE9979F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/FVSb2I2mSzGw2_jMdyA2Fg/zh-cn_image_0000002589324791.png?HW-CC-KV=V1&HW-CC-Date=20260429T053240Z&HW-CC-Expire=86400&HW-CC-Sign=FF499CE276668374D58C6449FA149B1C555A6BE8CAE6BA4B1388C7296298EB0C)
 
 7、调用WebSocket C API接口要求应用拥有ohos.permission.INTERNET权限，在module.json5中的requestPermissions项添加该权限。
 
@@ -358,7 +359,7 @@ ConnectWebsocket函数接收一个WebSocket URL并尝试连接，连接成功返
 
 2、运行工程，设备上会弹出以下图片所示界面：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/yeTkdBy1RbmP3tI_CLlAxw/zh-cn_image_0000002583438469.jpg?HW-CC-KV=V1&HW-CC-Date=20260427T234350Z&HW-CC-Expire=86400&HW-CC-Sign=1B864D68934053F04C1406439C809D774BEE98076FA9D3179D2A08FAE3802B26)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/miIVATpcSxOmv4e5OkPA-A/zh-cn_image_0000002589244729.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053240Z&HW-CC-Expire=86400&HW-CC-Sign=46DDA7BB9D54F82F5C278A311578C14D5424BC6F5142CEDE070B10A55009B166)
 
 简要说明：
 
@@ -367,6 +368,6 @@ ConnectWebsocket函数接收一个WebSocket URL并尝试连接，连接成功返
 * 在Content输入框里输入要发送给服务器的内容，点击Send按钮发送。如果服务器返回消息，会触发onMessage回调，打印日志。
 * 点击Close按钮，WebSocket连接释放，可以重新输入新的WebSocket URL。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/CSlGAbtpT0aJK9AGdKEEig/zh-cn_image_0000002552958424.jpg?HW-CC-KV=V1&HW-CC-Date=20260427T234350Z&HW-CC-Expire=86400&HW-CC-Sign=1A56CFCE0DFB1FBCC3A6CF725DEFF72F4824E890FFD53423FFBF9CBC4B6B18B7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/5v0mCTIfSxyIEDhWETdZaA/zh-cn_image_0000002558764924.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053240Z&HW-CC-Expire=86400&HW-CC-Sign=C3E517A2B94769EE6D24A2C221BB66893F638CEBB95B4527FB383E211794F91A)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/ftirEdu0TSmeXiVrSzzr5A/zh-cn_image_0000002583478425.png?HW-CC-KV=V1&HW-CC-Date=20260427T234350Z&HW-CC-Expire=86400&HW-CC-Sign=B5F4B2A4A97B7477C6E882E21585C8203AF8C7E1FE0C36F7AB7FD3591046D900)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/xckpkfhKQUGjBjNOfNUBHw/zh-cn_image_0000002558605268.png?HW-CC-KV=V1&HW-CC-Date=20260429T053240Z&HW-CC-Expire=86400&HW-CC-Sign=926BB3E227B0EC73A9AC4079C4E309C6EA9A8951C420FC63AEAA2145CE17D33A)

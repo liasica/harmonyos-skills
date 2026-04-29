@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-styled-
 title: 属性字符串（StyledString/MutableStyledString）
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用文本 > 属性字符串（StyledString/MutableStyledString）
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:39:37+08:00
+scraped_at: 2026-04-29T13:27:47+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:8dd82104fedbc9f59fe8af6050e4ae6f053c6c0fb8f57e131d9b80e9b099d7f1
+content_hash: sha256:1478a9f52d666806e4b3e43d1b501e397af329c83bf2f93e62f8edbcebef88d6
 ---
 
 属性字符串StyledString/MutableStyledString（其中MutableStyledString继承自StyledString，下文统称为StyledString），可用于在字符或段落级别上设置文本样式。将StyledString应用到文本组件上，可以采用多种方式修改文本，包括调整字号、添加字体颜色、使文本具备可点击性，以及通过自定义方式绘制文本等。具体使用方法请参考[属性字符串](../harmonyos-references/ts-universal-styled-string.md)的API文档。
@@ -57,7 +57,7 @@ content_hash: sha256:8dd82104fedbc9f59fe8af6050e4ae6f053c6c0fb8f57e131d9b80e9b09
 
 [CreateApply.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/propertyString/CreateApply.ets#L17-L46)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/tt2of2EyTjqyBTN5d7Go-w/zh-cn_image_0000002583437887.png?HW-CC-KV=V1&HW-CC-Date=20260427T233935Z&HW-CC-Expire=86400&HW-CC-Sign=68B747605FC335DD2C1C5B512B180536B9C9B2D2790DF9F90661FD6A2759EE40)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/LKKkwUykTwaUBrBvmx0S4Q/zh-cn_image_0000002558604676.png?HW-CC-KV=V1&HW-CC-Date=20260429T052744Z&HW-CC-Expire=86400&HW-CC-Sign=C9F4CE500311419407CC5B726247BBFAD8ACBF1493FDB3F238A59F2786E9BFC9)
 
 ## 设置文本样式
 
@@ -117,7 +117,7 @@ content_hash: sha256:8dd82104fedbc9f59fe8af6050e4ae6f053c6c0fb8f57e131d9b80e9b09
 
   [StyledStringTextStyle.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/propertyString/StyledStringTextStyle.ets#L15-L63)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/86DkMhH7Qpe6sVmd3OmT0w/zh-cn_image_0000002552957842.png?HW-CC-KV=V1&HW-CC-Date=20260427T233935Z&HW-CC-Expire=86400&HW-CC-Sign=C458EA7484D6FDB4C3D167E06AD9CF1922AAC7A0C52535F25B7DB1AFBFED6A1A)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/Sl2kSkDpS9aDi0Te2kQxyQ/zh-cn_image_0000002589324201.png?HW-CC-KV=V1&HW-CC-Date=20260429T052744Z&HW-CC-Expire=86400&HW-CC-Sign=151A297D34CF8AE520D5DFFE4109A25D83C84EBC53DA8CE4E123A13AA190301C)
 * 创建及应用文本阴影对象（TextShadowStyle）
 
   ```
@@ -159,7 +159,7 @@ content_hash: sha256:8dd82104fedbc9f59fe8af6050e4ae6f053c6c0fb8f57e131d9b80e9b09
 
   [StyledStringTextShadowStyle.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/propertyString/StyledStringTextShadowStyle.ets#L15-L50)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/g6V1DDwkSouZYNVTQjV9cw/zh-cn_image_0000002583477843.png?HW-CC-KV=V1&HW-CC-Date=20260427T233935Z&HW-CC-Expire=86400&HW-CC-Sign=C9D5651071695320E654DD79E6F8558EDBE72C7DE42F26D0D84BD608EFFF0B3B)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/wYG9od4rT0yFqpXN8fN42w/zh-cn_image_0000002589244141.png?HW-CC-KV=V1&HW-CC-Date=20260429T052744Z&HW-CC-Expire=86400&HW-CC-Sign=21CC418CD4BBA045F62245A63233BDC9033BF74DD25A4C3F752DECAFD0A9532A)
 * 创建及应用文本装饰线对象（DecorationStyle）
 
   ```
@@ -224,7 +224,7 @@ content_hash: sha256:8dd82104fedbc9f59fe8af6050e4ae6f053c6c0fb8f57e131d9b80e9b09
 
   [StyledStringDecorationStyle.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/propertyString/StyledStringDecorationStyle.ets#L15-L73)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/Ai3VBaa0TNOuh-TTUExcTA/zh-cn_image_0000002552798194.jpg?HW-CC-KV=V1&HW-CC-Date=20260427T233935Z&HW-CC-Expire=86400&HW-CC-Sign=396B90C16C208677A77AEE620B7E6C306BA1D151DE6F6FCEDF0A56BB2F99E11C)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/9EYOAxDbRmuPskwFWFYsfg/zh-cn_image_0000002558764334.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T052744Z&HW-CC-Expire=86400&HW-CC-Sign=44CD1D57927B2E2D584D8031FDE909D5323A6DD0A1FF34939DFB78E20F1EFE7F)
 * 创建及应用文本基线偏移量对象（BaselineOffsetStyle）
 
   ```
@@ -263,7 +263,7 @@ content_hash: sha256:8dd82104fedbc9f59fe8af6050e4ae6f053c6c0fb8f57e131d9b80e9b09
 
   [StyledStringBaselineOffsetStyle.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/propertyString/StyledStringBaselineOffsetStyle.ets#L15-L47)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/sgcS0KG7SdCrRcbQKbseHg/zh-cn_image_0000002583437889.png?HW-CC-KV=V1&HW-CC-Date=20260427T233935Z&HW-CC-Expire=86400&HW-CC-Sign=461DA060886E99A875E2D9D182AFECDB3B20DB5A2ED7A778C7519B8A1A78AC91)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/G1buKLViRiaOSrI9ffKXsw/zh-cn_image_0000002558604678.png?HW-CC-KV=V1&HW-CC-Date=20260429T052744Z&HW-CC-Expire=86400&HW-CC-Sign=6E30A356243C807CC41A1C433A0EA5219AD3EE0B494FC2CA64AAF057255166CA)
 * 创建及应用文本行高对象（LineHeightStyle）
 
   ```
@@ -303,7 +303,7 @@ content_hash: sha256:8dd82104fedbc9f59fe8af6050e4ae6f053c6c0fb8f57e131d9b80e9b09
 
   [StyledStringLineHeightStyle.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/propertyString/StyledStringLineHeightStyle.ets#L15-L48)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/aVl7TCvgTSKhj7c_7zevsw/zh-cn_image_0000002552957844.png?HW-CC-KV=V1&HW-CC-Date=20260427T233935Z&HW-CC-Expire=86400&HW-CC-Sign=665823D7A25FB57A38802ECFDBE21F1CAB7344BCFE3D6102730A5BDEF789874A)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/zIOsLfiLTNqq6iqHbVSqDQ/zh-cn_image_0000002589324203.png?HW-CC-KV=V1&HW-CC-Date=20260429T052744Z&HW-CC-Expire=86400&HW-CC-Sign=4E1A0F04D696FFDA8720191B53C1D38F1C573569273C0A6B6B987E43DFE5C85F)
 * 创建及应用文本字符间距对象（LetterSpacingStyle）
 
   ```
@@ -341,13 +341,13 @@ content_hash: sha256:8dd82104fedbc9f59fe8af6050e4ae6f053c6c0fb8f57e131d9b80e9b09
 
   [StyledStringLetterSpacingStyle.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/propertyString/StyledStringLetterSpacingStyle.ets#L15-L46)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/k7RB4lIWR7Wq4iY1Kh5a0g/zh-cn_image_0000002583477845.png?HW-CC-KV=V1&HW-CC-Date=20260427T233935Z&HW-CC-Expire=86400&HW-CC-Sign=C7DE471F4187AF72C68746CF1A532FC18AF4E6CEE38D81F06AA994FD0176ECB4)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/7iRor2QbTkOphaogSYzj9g/zh-cn_image_0000002589244143.png?HW-CC-KV=V1&HW-CC-Date=20260429T052744Z&HW-CC-Expire=86400&HW-CC-Sign=D3BC694DF195F1AFBD646CACB89C033F5B8BBC1C642E0622E2D13570CF0FD091)
 
 ## 设置段落样式
 
 可通过[ParagraphStyle](../harmonyos-references/ts-universal-styled-string.md#paragraphstyle)设置段落样式布局。下图显示了如何分割文本中的段落，段落以换行符 \n 结尾。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/iXciDBYoTAu4DvInFjVW9Q/zh-cn_image_0000002552798196.png?HW-CC-KV=V1&HW-CC-Date=20260427T233935Z&HW-CC-Expire=86400&HW-CC-Sign=4A35069BC9E6AF927D39B8CF4D1B698EB112BDF40F521DE560246E335B4E23F8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/gZaongqYRCOWFN1qirZ9cg/zh-cn_image_0000002558764336.png?HW-CC-KV=V1&HW-CC-Date=20260429T052744Z&HW-CC-Expire=86400&HW-CC-Sign=25D32B03C09F3E8B02640744B34E7B44ACCAE73F15082D6800189299F1B954CF)
 
 以下代码示例展示了如何创建ParagraphStyle并应用。如果将ParagraphStyle附加到段落开头、末尾或之间的任何位置，均会应用样式，非段落区间内则不会应用样式。
 
@@ -417,7 +417,7 @@ content_hash: sha256:8dd82104fedbc9f59fe8af6050e4ae6f053c6c0fb8f57e131d9b80e9b09
 
 [StyledStringParagraphStyleOne.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/propertyString/StyledStringParagraphStyleOne.ets#L15-L77)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/RMNBBYz1T9CxhAGmJFxYBw/zh-cn_image_0000002583437891.png?HW-CC-KV=V1&HW-CC-Date=20260427T233935Z&HW-CC-Expire=86400&HW-CC-Sign=834AC3276C3B32253E756737C01E1EEF6CF6A7097A4E947CED4CBF477BA91347)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/6DvLra4cS7OkXF37XPlucA/zh-cn_image_0000002558604680.png?HW-CC-KV=V1&HW-CC-Date=20260429T052744Z&HW-CC-Expire=86400&HW-CC-Sign=FC32A9A96522F379EBD399AEACD5867B73329F0B358301A3345121C95342850D)
 
 除了可以在创建属性字符串时就预设样式，也可以后续通过[replaceStyle](../harmonyos-references/ts-universal-styled-string.md#replacestyle)清空原样式替换新样式，同时需要在附加的文本组件controller上主动触发更新绑定的属性字符串。
 
@@ -506,7 +506,7 @@ content_hash: sha256:8dd82104fedbc9f59fe8af6050e4ae6f053c6c0fb8f57e131d9b80e9b09
 
 [StyledStringReplaceParagraphStyle.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/propertyString/StyledStringReplaceParagraphStyle.ets#L15-L96)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/LaAeetf9SiGDMUhviePhng/zh-cn_image_0000002552957846.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233935Z&HW-CC-Expire=86400&HW-CC-Sign=6376A7355A15C2232E1353989E74DC7B38C7F008A0EB03D98786FD6E9C2BBE20)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/8SQVYO4MQ1iqA-0myhYSNg/zh-cn_image_0000002589324205.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052744Z&HW-CC-Expire=86400&HW-CC-Sign=B562D3F86B7D3C49054C9975D7241B2590E4438F6CC46C63E5FD26FC621CA54E)
 
 ## 支持将属性字符串转换成Paragraph
 
@@ -724,7 +724,7 @@ content_hash: sha256:8dd82104fedbc9f59fe8af6050e4ae6f053c6c0fb8f57e131d9b80e9b09
 
   [StyledStringConvertedToParagraph.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/propertyString/StyledStringConvertedToParagraph.ets#L15-L221)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/9YDUK_yUSZqVyp4NnRb5Yw/zh-cn_image_0000002583477847.png?HW-CC-KV=V1&HW-CC-Date=20260427T233935Z&HW-CC-Expire=86400&HW-CC-Sign=1CB344971E4C20871A260DF208BA0C40A90486637C54C3532FA820E95E765696)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/XAaal4GCQ2i5rXXSfYdLnw/zh-cn_image_0000002589244145.png?HW-CC-KV=V1&HW-CC-Date=20260429T052744Z&HW-CC-Expire=86400&HW-CC-Sign=DEC14D739B08EF38D598D5AEE5A19E53F176EE10875E9AF9AC4966C00723ADDE)
 
 ## 使用图片
 
@@ -906,7 +906,7 @@ content_hash: sha256:8dd82104fedbc9f59fe8af6050e4ae6f053c6c0fb8f57e131d9b80e9b09
 
 [StyledStringImageAttachment.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/propertyString/StyledStringImageAttachment.ets#L18-L186)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/8_K-o_FSTHSWl7fnTowoWg/zh-cn_image_0000002552798198.png?HW-CC-KV=V1&HW-CC-Date=20260427T233935Z&HW-CC-Expire=86400&HW-CC-Sign=72C58A790EBBBC4AA5EB294C5360029B4E52551B15BDF9EBC5A497F28C3204AE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/TDqSo6VpQ5CepX0E8LJpbQ/zh-cn_image_0000002558764338.png?HW-CC-KV=V1&HW-CC-Date=20260429T052744Z&HW-CC-Expire=86400&HW-CC-Sign=89F696FBB631EA9C9226DE9596720023ED3B60FA35E1E4FD7BE3F7678F1B42BC)
 
 ## 设置事件
 
@@ -1067,7 +1067,7 @@ content_hash: sha256:8dd82104fedbc9f59fe8af6050e4ae6f053c6c0fb8f57e131d9b80e9b09
 
 [StyledStringGestureStyle.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/propertyString/StyledStringGestureStyle.ets#L17-L170)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/bmQpbiIAQMC-cIBkCe6n6g/zh-cn_image_0000002583437893.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233935Z&HW-CC-Expire=86400&HW-CC-Sign=E78C3E66F0DC42E4EE22030D3791722DC9200137BFA3AA78FF404A5C77CCCF60)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/_GPF8szoRpKpuCq8eYwjGw/zh-cn_image_0000002558604682.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052744Z&HW-CC-Expire=86400&HW-CC-Sign=80CA11352E2455962919B8F4D863D41F88F51E07B90EEE96F8057B80D71A3217)
 
 ## 格式转换
 
@@ -1159,7 +1159,7 @@ content_hash: sha256:8dd82104fedbc9f59fe8af6050e4ae6f053c6c0fb8f57e131d9b80e9b09
 
 [StyledStringHtml.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/propertyString/StyledStringHtml.ets#L18-L101)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/zivApfDyTpu2XWwmyV2Lmg/zh-cn_image_0000002552957848.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233935Z&HW-CC-Expire=86400&HW-CC-Sign=0A4ACC85B9063FF1FAB1FD6DA09CB0745EB5AF7B0B29FA750A8E482FCDD87E50)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/7UIPZoY6TxGXjk3K4ideEA/zh-cn_image_0000002589324207.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052744Z&HW-CC-Expire=86400&HW-CC-Sign=A607F26A79129DCE94045CFEBD633766C0A8077FCD5DC493B7541049B51A933B)
 
 * 将HTML中<strong>、<b>、<a>、<i>、<em>、<s>、<u>、<del>、<sup>、<sub>标签及其style属性中的background-color转换为属性字符串并转回HTML。
 
@@ -1233,7 +1233,7 @@ content_hash: sha256:8dd82104fedbc9f59fe8af6050e4ae6f053c6c0fb8f57e131d9b80e9b09
 
   [StyledStringHtmlOne.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/propertyString/StyledStringHtmlOne.ets#L15-L81)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/62ZteNVDQjKInH1FgadcxQ/zh-cn_image_0000002583477849.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233935Z&HW-CC-Expire=86400&HW-CC-Sign=E29D5FA5BA3A6245717696C83BBB78AF7CA80A3D43A3F066A767056073FFAB80)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/sC3KYdDNTWqaApEwV7A3Hw/zh-cn_image_0000002589244147.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052744Z&HW-CC-Expire=86400&HW-CC-Sign=786AD41B3BE51441586079B13FAD014BC11E5F3397F5146A63995EE39BECDB24)
 
 ## 场景示例
 
@@ -1404,4 +1404,4 @@ content_hash: sha256:8dd82104fedbc9f59fe8af6050e4ae6f053c6c0fb8f57e131d9b80e9b09
 
 [StyledStringSceneExample.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/propertyString/StyledStringSceneExample.ets#L18-L180)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/GAvfgpFDQfCnLM9WlJLChQ/zh-cn_image_0000002552798200.png?HW-CC-KV=V1&HW-CC-Date=20260427T233935Z&HW-CC-Expire=86400&HW-CC-Sign=F18BBABDFF1C90FF0D74C44D8D5C32A374F98A3F599DD711A34005368D590CA1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/LEhyzmCST7CqPj1Mz632jA/zh-cn_image_0000002558764340.png?HW-CC-KV=V1&HW-CC-Date=20260429T052744Z&HW-CC-Expire=86400&HW-CC-Sign=1B88D1CA5D055403AFB33F03DBAEF39149BA2D4BE52327D252C935486D23EDE8)

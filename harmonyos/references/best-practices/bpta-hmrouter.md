@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-hmrouter
 title: 基于HMRouter的页面跳转
 breadcrumb: 最佳实践 > 手势与导航 > 基于HMRouter的页面跳转
 category: best-practices
-scraped_at: 2026-04-28T08:19:56+08:00
+scraped_at: 2026-04-29T14:10:39+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:f3a522257c3d7a481be2965a609e6a793c7e3018f24b0133feb115e283ac9dcc
+content_hash: sha256:397960b9606cb7255595f0580d1f87c6d7a6c757738357aaef51f64da9c9f3ae
 ---
 
 ## 概述
@@ -98,7 +98,7 @@ HMRouter提供了基于自定义注解的页面跳转与返回功能，使用步
 [PaySuccessPageComponent.ets](https://gitcode.com/harmonyos_samples/HMRouter/blob/master/entry/src/main/ets/component/pay/PaySuccessPageComponent.ets#L94-L97)
 
 **图1** 返回指定页面示意图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/fABt8azrQgCyzytINCrRTA/zh-cn_image_0000002505304640.png?HW-CC-KV=V1&HW-CC-Date=20260428T001954Z&HW-CC-Expire=86400&HW-CC-Sign=286AFD781CDE7F363CBA477C751E0C6115425137979524A8991E40CABA5C89A4 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/fABt8azrQgCyzytINCrRTA/zh-cn_image_0000002505304640.png?HW-CC-KV=V1&HW-CC-Date=20260429T061034Z&HW-CC-Expire=86400&HW-CC-Sign=25E66B715F3E952A0DBFBD2883EAD3034C714571EBCC7A00F63BCFC3FF702435 "点击放大")
 
 ### 应用未登录，点击跳转登录页的校验场景
 
@@ -137,7 +137,7 @@ HMRouter提供了基于自定义注解的页面跳转与返回功能，使用步
 
 运行效果如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/j1vwVnTBQyuNCnloeRUG6w/zh-cn_image_0000002229450657.gif?HW-CC-KV=V1&HW-CC-Date=20260428T001954Z&HW-CC-Expire=86400&HW-CC-Sign=4FEC42D0A43A315831C2B08BD7D9EF70B010E3AD8FE6CBF54D358BCE45BE4FEB "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/j1vwVnTBQyuNCnloeRUG6w/zh-cn_image_0000002229450657.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061034Z&HW-CC-Expire=86400&HW-CC-Sign=2C702F5EF7D171490C8860AD0D162851C5074E2B843E7B5CEC0218D9F9E323A0 "点击放大")
 
 ### 实现单例页面的跳转
 
@@ -257,7 +257,7 @@ HMRouter提供了基于自定义注解的页面跳转与返回功能，使用步
 
 运行效果如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/cAraqQvAQ2uKOHmKqSQG8w/zh-cn_image_0000002193850796.gif?HW-CC-KV=V1&HW-CC-Date=20260428T001954Z&HW-CC-Expire=86400&HW-CC-Sign=06A354C9BCB8825EEF395AF6042C10DB510E5DB83876407FFE5E9F0B90FB2D60 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/cAraqQvAQ2uKOHmKqSQG8w/zh-cn_image_0000002193850796.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061034Z&HW-CC-Expire=86400&HW-CC-Sign=BF40A8DAEEA8976579F7108E4ED7EDC47196429394D6CD42260F8878056E3316 "点击放大")
 
 ### 首页两次返回退出应用
 
@@ -295,7 +295,7 @@ HMRouter提供了基于自定义注解的页面跳转与返回功能，使用步
 
 运行效果如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/jRw7XXayRKa0GgOpf9HPFw/zh-cn_image_0000002193850804.gif?HW-CC-KV=V1&HW-CC-Date=20260428T001954Z&HW-CC-Expire=86400&HW-CC-Sign=070F1F36EA08A28257CF96D1BE282FBB587FB95B2250F9BE04D0205582DCE028 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/jRw7XXayRKa0GgOpf9HPFw/zh-cn_image_0000002193850804.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061034Z&HW-CC-Expire=86400&HW-CC-Sign=74543F028D5FB46664B5495D9744804939ADF27C057C35275C219DE74809F6D0 "点击放大")
 
 ## 转场动效场景
 
@@ -396,7 +396,7 @@ HMRouter提供了基于自定义注解的页面跳转与返回功能，使用步
 
 运行效果如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/DTrRSd6USDGWjl-N1T1pYA/zh-cn_image_0000002194010372.gif?HW-CC-KV=V1&HW-CC-Date=20260428T001954Z&HW-CC-Expire=86400&HW-CC-Sign=835C7105DF15C0F1F82DB8C4AA4EECDE89DD3A532765841A8ACF082A7B08A9F6 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/DTrRSd6USDGWjl-N1T1pYA/zh-cn_image_0000002194010372.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061034Z&HW-CC-Expire=86400&HW-CC-Sign=2BD2C4410BA7D30D15EF092E383390467026CC14F5CB9E9CD6690787265D8E72 "点击放大")
 
 ### 根据条件呈现不同转场动效
 
@@ -498,7 +498,7 @@ HMRouter提供了基于自定义注解的页面跳转与返回功能，使用步
 
 运行效果如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/ZQqem70SSoW8Le8mMImdKA/zh-cn_image_0000002194010392.gif?HW-CC-KV=V1&HW-CC-Date=20260428T001954Z&HW-CC-Expire=86400&HW-CC-Sign=3346955FE1FF41133B492B0170A066AE07270122BE645F9A949C82B1785927C1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/ZQqem70SSoW8Le8mMImdKA/zh-cn_image_0000002194010392.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061034Z&HW-CC-Expire=86400&HW-CC-Sign=AA9240EB7F44055392B9AF9D85CEE16205906B8D15F49A31C281C2052388CEF7)
 
 ### 交互式转场
 
@@ -557,7 +557,7 @@ HMRouter提供了基于自定义注解的页面跳转与返回功能，使用步
 
 运行效果如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/F0UE_fo0RHqi9Ahh3Y7P3g/zh-cn_image_0000002194010388.gif?HW-CC-KV=V1&HW-CC-Date=20260428T001954Z&HW-CC-Expire=86400&HW-CC-Sign=1BE65A72C6ACE626A4AF21877887ABD256119A5B35DF7C23AE78C5DF0093274D "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/F0UE_fo0RHqi9Ahh3Y7P3g/zh-cn_image_0000002194010388.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061034Z&HW-CC-Expire=86400&HW-CC-Sign=45536394B7A4C7D2354CC64FE03A2B5F30E06EA50AB8BCF5A379FA35A8CDE613 "点击放大")
 
 ## 数据加载场景
 
@@ -598,7 +598,7 @@ HMRouter提供了基于自定义注解的页面跳转与返回功能，使用步
 3. 关联生命周期与对应组件。将生命周期的lifecycleName作为@HMRouter注解的lifecycle参数进行传入完成关联。
 
 **图2** 数据请求预加载流程  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/6SDs-uO1STCKWl5SropPlA/zh-cn_image_0000002428190130.png?HW-CC-KV=V1&HW-CC-Date=20260428T001954Z&HW-CC-Expire=86400&HW-CC-Sign=6461952C4ED46DAF042442182A1BCBB85A1DE325C3DA0B3328477E856F865739 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/6SDs-uO1STCKWl5SropPlA/zh-cn_image_0000002428190130.png?HW-CC-KV=V1&HW-CC-Date=20260429T061034Z&HW-CC-Expire=86400&HW-CC-Sign=C6B03B561B619B40C3051ED5E3FA628BFF22C2A5DAC4080044CED9CEC94E876A "点击放大")
 
 ### 页面重开数据恢复
 
@@ -676,7 +676,7 @@ HMRouter提供了基于自定义注解的页面跳转与返回功能，使用步
    [CommentInput.ets](https://gitcode.com/harmonyos_samples/HMRouter/blob/master/entry/src/main/ets/component/live/CommentInput.ets#L52-L129)
 
 **图3** 页面重开数据恢复流程  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/GOy2R7FBQl69eB_QTPVllQ/zh-cn_image_0000002461709833.png?HW-CC-KV=V1&HW-CC-Date=20260428T001954Z&HW-CC-Expire=86400&HW-CC-Sign=521A3A757029FB13ABFF701A2F4F029CF92167AE2E96F2DC1D6D6D1AFADF4F70 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/GOy2R7FBQl69eB_QTPVllQ/zh-cn_image_0000002461709833.png?HW-CC-KV=V1&HW-CC-Date=20260429T061034Z&HW-CC-Expire=86400&HW-CC-Sign=96065D1CC7497EA794015621F0558B3D4C614AACD1F7155E4939ADD69CA29437 "点击放大")
 
 ## 维测场景
 
@@ -708,7 +708,7 @@ HMRouter提供了基于自定义注解的页面跳转与返回功能，使用步
 
 **图4** 页面埋点日志记录
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/w03tFmeMT7WOchafA1my6Q/zh-cn_image_0000002194010384.png?HW-CC-KV=V1&HW-CC-Date=20260428T001954Z&HW-CC-Expire=86400&HW-CC-Sign=8DDF8786ADDAC7B2F448D911D8A13BA90282D53425C017693AFB5E8806DDF67D "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/w03tFmeMT7WOchafA1my6Q/zh-cn_image_0000002194010384.png?HW-CC-KV=V1&HW-CC-Date=20260429T061034Z&HW-CC-Expire=86400&HW-CC-Sign=521B8D91C5F1097D1250186FF70AEFB06A158C448AD3916EC17D942767BEFD53 "点击放大")
 
 ## 示例代码
 

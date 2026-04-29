@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 设置数字盾密码
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 数字盾服务 > 数字盾密码管理 > 设置数字盾密码
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:42:56+08:00
+scraped_at: 2026-04-29T13:31:33+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:214cbde6e8dcf8e64a48b894a81e1f8eb38590aa91d6ce29ed4cfbd42d927013
+content_hash: sha256:8e9f5b4a6c3ada608d084127fe18acfad7576984484a68c1659cc887db80c018
 ---
 
 ## 场景介绍
@@ -18,7 +18,7 @@ content_hash: sha256:214cbde6e8dcf8e64a48b894a81e1f8eb38590aa91d6ce29ed4cfbd42d9
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/FPoG0hrHTka_i0GPr2oPdg/zh-cn_image_0000002583438435.jpg?HW-CC-KV=V1&HW-CC-Date=20260427T234255Z&HW-CC-Expire=86400&HW-CC-Sign=E9867F44A94B42D449B67988013E6C9D69C125AF5A7FE04D13AAA0414DF48DD0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/E6JNVeE7Qb2wiUMIlxEWFw/zh-cn_image_0000002558605232.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053132Z&HW-CC-Expire=86400&HW-CC-Sign=B0998ACE160E83A5F56AC9E85747EF54283ABD2AC9F2741D0DEB984109BAD981)
 
 ## 接口说明
 
@@ -32,7 +32,7 @@ content_hash: sha256:214cbde6e8dcf8e64a48b894a81e1f8eb38590aa91d6ce29ed4cfbd42d9
 
 如图为开通数字盾服务时对应的TUI（Trusted User Interface）界面示例，其中密码长度、对应TUI应用图标以及当前应用场景说明均由开发者调用接口时传入，当设置盾密码长度不符合要求、密码强度低、两次密码设置不一致时，均会有对应失败报错提醒。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/quTImgwsScyQWlUBoM6cOQ/zh-cn_image_0000002552958390.png?HW-CC-KV=V1&HW-CC-Date=20260427T234255Z&HW-CC-Expire=86400&HW-CC-Sign=44C9DD8A784F668A3EFF67D71E778A7D86A66319593E5AB48F8D86D22F0B9BF5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/YKWMnWtDRuGrg_OQpoGNTg/zh-cn_image_0000002589324757.png?HW-CC-KV=V1&HW-CC-Date=20260429T053132Z&HW-CC-Expire=86400&HW-CC-Sign=683F99496C3C340C57DD01AA8452CC0B3B4E1739D9132386859E2E55A67D086E)
 
 ## 开发步骤
 

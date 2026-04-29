@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-smooth-app
 title: 性能体验设计
 breadcrumb: 最佳实践 > 性能 > 性能体验设计
 category: best-practices
-scraped_at: 2026-04-28T08:22:18+08:00
+scraped_at: 2026-04-29T14:13:19+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:4817c682763560919188a0052613cc7aacdaff425a253b936f9687026a794b05
+content_hash: sha256:d67fb98907dffcdcfaf5d2fcf6bda40fc44f0c839e909e49935e118dee33c978
 ---
 
 ## 概述
@@ -31,7 +31,7 @@ content_hash: sha256:4817c682763560919188a0052613cc7aacdaff425a253b936f9687026a7
 通过这些设计流程，不仅能提高用户满意度和忠诚度，还能降低应用风险，提升用户好感，增强市场竞争力。接下来，将首先介绍用户感知的整体指标和测评方法，然后分别阐述交互流畅体验和视觉流畅体验的设计原则及评价指标。
 
 **图1** 感知流畅性示意图   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/k6s_mlvcRjWDpMo7YHTSxg/zh-cn_image_0000002194011640.png?HW-CC-KV=V1&HW-CC-Date=20260428T002217Z&HW-CC-Expire=86400&HW-CC-Sign=24B1F41A0E86D4ED5AFDA2F4CAD3E3D86C7784AE30454EE766450F74F5A607E9 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/k6s_mlvcRjWDpMo7YHTSxg/zh-cn_image_0000002194011640.png?HW-CC-KV=V1&HW-CC-Date=20260429T061317Z&HW-CC-Expire=86400&HW-CC-Sign=2FDEE6A949D718305F348B278390EFD4C48F190F58C98C6DD31D811B52816FDA "点击放大")
 
 ## 用户体验设计
 
@@ -84,7 +84,7 @@ content_hash: sha256:4817c682763560919188a0052613cc7aacdaff425a253b936f9687026a7
 根据完成时延进行评测并优化，优化前后对比图如下所示。
 
 **图2** 应用启动优化前后对比图   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/NocN-g1RSoyw40N8mgMRBQ/zh-cn_image_0000002193852052.gif?HW-CC-KV=V1&HW-CC-Date=20260428T002217Z&HW-CC-Expire=86400&HW-CC-Sign=60C38396F6C576C53055CCDDE7B21E955BCB7864D32064D5B627CE2C7ED4582C "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/NocN-g1RSoyw40N8mgMRBQ/zh-cn_image_0000002193852052.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061317Z&HW-CC-Expire=86400&HW-CC-Sign=D2922924CFEAB82588A671CEEE007060808EA9295B77094FB22916EDE6F239F1 "点击放大")
 
 ## 交互流畅体验设计
 
@@ -207,7 +207,7 @@ content_hash: sha256:4817c682763560919188a0052613cc7aacdaff425a253b936f9687026a7
 根据最大连续丢帧数的评测指标进行优化，优化前后对比图如下所示。
 
 **图3** 最大连续丢帧数优化前后对比图   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/ZEYX3JyDQnGhvcLb5_2lKg/zh-cn_image_0000002194011636.gif?HW-CC-KV=V1&HW-CC-Date=20260428T002217Z&HW-CC-Expire=86400&HW-CC-Sign=C81130AA9927DEE43C754747B7E993F0EC2485C1A5CF4B734D36678E2F869505 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/ZEYX3JyDQnGhvcLb5_2lKg/zh-cn_image_0000002194011636.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061317Z&HW-CC-Expire=86400&HW-CC-Sign=F1F088014C0AC523C9C6B88AAF48531BB884A69B4738D80571935FA23DF78EB8 "点击放大")
 
 ## 总结
 

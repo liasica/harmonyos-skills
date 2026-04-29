@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/push-push
 title: pushService（推送服务基础能力）
 breadcrumb: API参考 > 应用服务 > Push Kit（推送服务） > ArkTS API > pushService（推送服务基础能力）
 category: harmonyos-references
-scraped_at: 2026-04-28T08:18:28+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:0c0e99531f5a8c1c811f055c29a579b8e5e16165965758c7f39b734233058f8b
+scraped_at: 2026-04-29T14:09:06+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:94a6309318c37148da7f01ded4398e08d5bfc17ee6fb9861bc5c9119123fa06c
 ---
 
-本模块提供Push Kit（推送服务）的基础能力，包括获取和删除推送服务Token、绑定和解绑账号、接收场景化消息、注册和解除注册token更新，以及注册和解除注册分布式消息接收事件监听的功能。
+本模块提供Push Kit的基础能力，包括获取和删除推送服务Token、绑定和解绑账号、接收场景化消息、注册和解除注册token更新，以及注册和解除注册分布式消息接收事件监听的功能。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 

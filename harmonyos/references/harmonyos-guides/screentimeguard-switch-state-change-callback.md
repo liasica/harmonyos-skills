@@ -3,24 +3,24 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/screentimegua
 title: 健康使用设备授权列表页中应用授权开关打开/关闭时触发回调
 breadcrumb: 指南 > 应用服务 > Screen Time Guard Kit（屏幕时间守护服务） > 用户授权管理 > 健康使用设备授权列表页中应用授权开关打开/关闭时触发回调
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:50:52+08:00
+scraped_at: 2026-04-29T13:40:27+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:73620e6a22432b212e8a7d6621b0b2a99d77bd4756c24ff5ad9b7da7ab077938
+content_hash: sha256:edef7a1d872af2597658dc69c1b92c2895bb6710bfb2899d9c991690ede81216
 ---
 
 ## 场景介绍
 
-当通过健康使用设备授权列表页中的授权开关开启或者关闭应用授权时（设置-健康使用设备-右上角四点设置![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/udKW1FqXQ-OpuRx3Cb6g1Q/zh-cn_image_0000002552799516.png?HW-CC-KV=V1&HW-CC-Date=20260427T235051Z&HW-CC-Expire=86400&HW-CC-Sign=DBD0AB964861DEE8A094FAE91CDDCD6AA125668F76FFCD5E2BE7334FDBFECC0B)-可访问健康使用设备的应用），会执行TimeGuardExtensionAbility中的onUserAuthSwitchOn/onUserAuthSwitchOff回调方法，支持开发者在用户授予授权和撤销授权时执行特定逻辑。若之前已设置过健康使用设备的密码，则在此页面取消应用授权时需要输入健康使用设备的密码。
+当通过健康使用设备授权列表页中的授权开关开启或者关闭应用授权时（设置-健康使用设备-右上角四点设置![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/NrRTHc56R0KqkllGkMUDvw/zh-cn_image_0000002558606010.png?HW-CC-KV=V1&HW-CC-Date=20260429T054026Z&HW-CC-Expire=86400&HW-CC-Sign=CD4B4D30844A630C330EEF798FA6769DF89110E99B199405EED34B2E4DF1509D)-可访问健康使用设备的应用），会执行TimeGuardExtensionAbility中的onUserAuthSwitchOn/onUserAuthSwitchOff回调方法，支持开发者在用户授予授权和撤销授权时执行特定逻辑。若之前已设置过健康使用设备的密码，则在此页面取消应用授权时需要输入健康使用设备的密码。
 
 注意
 
 应用调用Screen Time Guard Kit接口获取授权或者取消授权时，不会触发onUserAuthSwitchOn/onUserAuthSwitchOff回调方法。只有在健康使用设备授权列表页操作授权开关时才会触发。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/4TWrMXrdTeS79mnutk1iIg/zh-cn_image_0000002583439211.png?HW-CC-KV=V1&HW-CC-Date=20260427T235051Z&HW-CC-Expire=86400&HW-CC-Sign=3532C185C95F37BCE013F14602C6DD66C0842C4B673265AD1661DCC57B7BEFE1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/iQinrq2mRZqOctbYHYcnHw/zh-cn_image_0000002589325537.png?HW-CC-KV=V1&HW-CC-Date=20260429T054026Z&HW-CC-Expire=86400&HW-CC-Sign=4833EB4F1E2311FD08B66E34441E945B8BCC4344FDCCD3971E4666AD529B6910)
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/xdBEbYQoRIqR1GQDU7jorw/zh-cn_image_0000002552959166.png?HW-CC-KV=V1&HW-CC-Date=20260427T235051Z&HW-CC-Expire=86400&HW-CC-Sign=1E2EDFA6A629004562A32D5EF4A07D4BE161E825887D600CAE4E9094C82C5315)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/rF7rDIp0QMqDTveslQGjWw/zh-cn_image_0000002589245475.png?HW-CC-KV=V1&HW-CC-Date=20260429T054026Z&HW-CC-Expire=86400&HW-CC-Sign=0F7422AC514AD64BEBA899597C5CF39A30CFA6E7EDD6323C1DA9CDD2CCE31950)
 
 流程说明（以关闭授权开关为例）：
 

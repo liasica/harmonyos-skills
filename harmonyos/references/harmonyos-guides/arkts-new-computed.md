@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-com
 title: @Computed装饰器：计算属性
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理（V2） > 管理数据对象的状态 > @Computed装饰器：计算属性
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:39:10+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:600a2eb7c927a71e0e79830b071afd8757f493ef446943ace3515c879ad10e43
+scraped_at: 2026-04-29T13:27:19+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:e9a43df412d721796ea70f02261630c6282b11f75d8e9ca36d384923374c5c6a
 ---
 
 当开发者使用相同的计算逻辑重复绑定在UI上时，为了防止重复计算，可以使用@Computed计算属性。计算属性中依赖的状态变量变化时，只会计算一次。这解决了UI多次重用该属性导致的重复计算和性能问题。如下面例子。
@@ -294,12 +294,13 @@ content_hash: sha256:600a2eb7c927a71e0e79830b071afd8757f493ef446943ace3515c879ad
    27. Column() {
    28. Text(this.name1.fullName)
    29. Text(this.name1.fullName)
-   30. Button('changed lastName').onClick(() => {
-   31. this.name1.lastName += 'a';
-   32. })
-   33. }
+   30. // 点击Button改变lastName，触发fullName重新计算，且只被计算一次
+   31. Button('changed lastName').onClick(() => {
+   32. this.name1.lastName += 'a';
+   33. })
    34. }
    35. }
+   36. }
    ```
 
    [ObservedV2ClassUser.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ArktsNewComputed/entry/src/main/ets/pages/ObservedV2ClassUser.ets#L15-L51)
@@ -406,40 +407,42 @@ content_hash: sha256:600a2eb7c927a71e0e79830b071afd8757f493ef446943ace3515c879ad
   31. ForEach(this.shoppingBasket, (item: Article) => {
   32. Row() {
   33. Text(`unitPrice: ${item.unitPrice}`)
-  34. Button('-')
-  35. .onClick(() => {
-  36. if (item.quantity > 0) {
-  37. item.quantity--;
-  38. }
-  39. })
-  40. Text(`quantity: ${item.quantity}`)
-  41. Button('+')
-  42. .onClick(() => {
-  43. item.quantity++;
-  44. })
-  45. }
+  34. // 点击Button减少quantity，触发total和qualifiesForDiscount重新计算
+  35. Button('-')
+  36. .onClick(() => {
+  37. if (item.quantity > 0) {
+  38. item.quantity--;
+  39. }
+  40. })
+  41. Text(`quantity: ${item.quantity}`)
+  42. // 点击Button增加quantity，触发total和qualifiesForDiscount重新计算
+  43. Button('+')
+  44. .onClick(() => {
+  45. item.quantity++;
+  46. })
+  47. }
 
-  47. Divider()
-  48. })
-  49. Child({ total: this.total, qualifiesForDiscount: this.qualifiesForDiscount })
-  50. }.alignItems(HorizontalAlign.Start)
-  51. }
-  52. }
+  49. Divider()
+  50. })
+  51. Child({ total: this.total, qualifiesForDiscount: this.qualifiesForDiscount })
+  52. }.alignItems(HorizontalAlign.Start)
+  53. }
+  54. }
 
-  54. @ComponentV2
-  55. struct Child {
-  56. @Param total: number = 0;
-  57. @Param qualifiesForDiscount: boolean = false;
+  56. @ComponentV2
+  57. struct Child {
+  58. @Param total: number = 0;
+  59. @Param qualifiesForDiscount: boolean = false;
 
-  59. build() {
-  60. Row() {
-  61. Text(`Total: ${this.total} `)
-  62. .fontSize(30)
-  63. Text(`Discount: ${this.qualifiesForDiscount} `)
+  61. build() {
+  62. Row() {
+  63. Text(`Total: ${this.total} `)
   64. .fontSize(30)
-  65. }
-  66. }
+  65. Text(`Discount: ${this.qualifiesForDiscount} `)
+  66. .fontSize(30)
   67. }
+  68. }
+  69. }
   ```
 
   [ComputedInitParam.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ArktsNewComputed/entry/src/main/ets/pages/ComputedInitParam.ets#L16-L84)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/liveview-crea
 title: 构建本地实况窗
 breadcrumb: 指南 > 应用服务 > Live View Kit（实况窗服务） > 开发实况窗场景 > 构建本地实况窗
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:49:38+08:00
+scraped_at: 2026-04-29T13:38:53+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:3a2ce82f2743f165124717e540554b49efbf0681ef9f327a6f624ff7a2f3e63b
+content_hash: sha256:073147f441a748dc842c9f022e5b9797aadf9ba04a9123dffed978e23db0fc83
 ---
 
 ## 简介
@@ -42,7 +42,7 @@ Live View Kit提供了“出行打车/即时配送/航班/高铁火车/排队叫
 
 进度可视化模板适用于打车、外卖等场景。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/cdgVeEvvSLmkEeLmDceHrA/zh-cn_image_0000002552799330.png?HW-CC-KV=V1&HW-CC-Date=20260427T234937Z&HW-CC-Expire=86400&HW-CC-Sign=2854A4B90FC1056137A5C80578A5D60C58AE31610F1E5E6A9EF726B8C5106553)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/LHwh6FHfRwyXPaK-gqHf-A/zh-cn_image_0000002589325351.png?HW-CC-KV=V1&HW-CC-Date=20260429T053849Z&HW-CC-Expire=86400&HW-CC-Sign=6FE4FDE75394EF316F7A3582A2D235F890E2019035DB5076B1FA5CCB83745994)
 
 示例代码如下：
 
@@ -119,9 +119,9 @@ Live View Kit提供了“出行打车/即时配送/航班/高铁火车/排队叫
 
 从6.0.2(22)开始，实况窗卡片进度可视化模板支持显示雨、雪天气动效背景。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/SG7XGt15STyXZXzkvSsqmw/zh-cn_image_0000002583439025.png?HW-CC-KV=V1&HW-CC-Date=20260427T234937Z&HW-CC-Expire=86400&HW-CC-Sign=71ACCA06BF651CDA0A17ED6AFA042074BF5B2859CDCAA2E98323939DCE6C3422)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/HVPMfaycRr6Eu8kdACQjAg/zh-cn_image_0000002589245287.png?HW-CC-KV=V1&HW-CC-Date=20260429T053849Z&HW-CC-Expire=86400&HW-CC-Sign=E5EE868E6B728B44F6945813DDA1A9B170E27E88CA8338D1B2531925BB59DCE5)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/unXXGcWVTdW2cH38iY4gbg/zh-cn_image_0000002552958980.png?HW-CC-KV=V1&HW-CC-Date=20260427T234937Z&HW-CC-Expire=86400&HW-CC-Sign=343AF46A42C3B26877863B94E4E27959A81B0CA1D4EAE9B2FB764B57CF20CBA1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/7GlwIQIARSqbg2X-z1tzuA/zh-cn_image_0000002558765480.png?HW-CC-KV=V1&HW-CC-Date=20260429T053849Z&HW-CC-Expire=86400&HW-CC-Sign=AEEDF56E0A5C0DAC1C781C3530052B4C7C4445C976FFA8259D01DC5DE7838768)
 
 代码示例如下：
 
@@ -204,7 +204,7 @@ Live View Kit提供了“出行打车/即时配送/航班/高铁火车/排队叫
 
 强调文本模板适用于取餐、排队等场景。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/CjAjRJLtSh6vfy9j-f28NQ/zh-cn_image_0000002583478981.png?HW-CC-KV=V1&HW-CC-Date=20260427T234937Z&HW-CC-Expire=86400&HW-CC-Sign=3686DB3D871D59D72CDDBF82A0E39C73A36ED3D158D43B8E04A7D3A5CD1302B7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/YZLj3QiHQqiqpvhQx04Rog/zh-cn_image_0000002558605824.png?HW-CC-KV=V1&HW-CC-Date=20260429T053849Z&HW-CC-Expire=86400&HW-CC-Sign=17815F918642A14AB17DEC5A20AFFD381EBACF52B6A95EB66C1E474253C398C3)
 
 示例代码如下：
 
@@ -276,9 +276,9 @@ Live View Kit提供了“出行打车/即时配送/航班/高铁火车/排队叫
 
 从6.0.2(22)开始，实况窗卡片强调文本模板支持显示雨、雪天气动效背景。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/DOSnpbyoS_ucgQ-QZmXhog/zh-cn_image_0000002552799332.png?HW-CC-KV=V1&HW-CC-Date=20260427T234937Z&HW-CC-Expire=86400&HW-CC-Sign=F5D89E441D3FF76459B60E0062E9E9AC7E388312749EC2AC01F15FCFD98E4F2E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/Y36D2eqcT6eiPUALkrn8fA/zh-cn_image_0000002589325353.png?HW-CC-KV=V1&HW-CC-Date=20260429T053849Z&HW-CC-Expire=86400&HW-CC-Sign=58A3B51CF15DD62CAF014216249CDF37A80D1071F2CC071842360EFB783385A8)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/vMjFyL_IT3KROkZWCe5FXw/zh-cn_image_0000002583439027.png?HW-CC-KV=V1&HW-CC-Date=20260427T234937Z&HW-CC-Expire=86400&HW-CC-Sign=971673C3AEF07C673744D141A663E3FF02C92329F45FA1DCE1D9627389F36471)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/0Kr5gNTPQBmVqVZOnkvGlA/zh-cn_image_0000002589245289.png?HW-CC-KV=V1&HW-CC-Date=20260429T053849Z&HW-CC-Expire=86400&HW-CC-Sign=74A702F8D7EF8017F0F28E0DC6A6A55D5D9EB59ECBBCF9925893A6DCC850B11F)
 
 代码示例如下：
 
@@ -356,7 +356,7 @@ Live View Kit提供了“出行打车/即时配送/航班/高铁火车/排队叫
 
 左右文本模板适用于高铁、航班等场景。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/sSUEQym1RACIJWXc_IiBkw/zh-cn_image_0000002552958982.png?HW-CC-KV=V1&HW-CC-Date=20260427T234937Z&HW-CC-Expire=86400&HW-CC-Sign=9630F8BE3BA57F38C597589A780151673883FB5307461F485F8DE6E16A2AE637)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/pbjVrTeTSaWptg5xQEewXQ/zh-cn_image_0000002558765482.png?HW-CC-KV=V1&HW-CC-Date=20260429T053849Z&HW-CC-Expire=86400&HW-CC-Sign=C881FC8DB8ACDD4BB36DA57148CC09969BE2871E4EE4BFCCAB02241C6FDBC59D)
 
 示例代码如下：
 
@@ -432,7 +432,7 @@ Live View Kit提供了“出行打车/即时配送/航班/高铁火车/排队叫
 
 从6.0.0(20)开始，实况窗卡片左右文本模板支持显示雨、雪天气动效背景或夕阳、赏月氛围背景。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/pyUW-JVGRGuDLTFwvEnd_w/zh-cn_image_0000002583478983.gif?HW-CC-KV=V1&HW-CC-Date=20260427T234937Z&HW-CC-Expire=86400&HW-CC-Sign=39F5B952B1419DF8802EE2EF6232E6B121486C2A5E722D403566089A0406F4D9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/qIjg5UxCRUCo7DAH-B1Mqg/zh-cn_image_0000002558605826.gif?HW-CC-KV=V1&HW-CC-Date=20260429T053849Z&HW-CC-Expire=86400&HW-CC-Sign=67D12C469892A545EB0BB98C8FC471680B3CCDE49F6FDA4500659FCB8D61F64E)
 
 代码示例如下：
 
@@ -516,7 +516,7 @@ Live View Kit提供了“出行打车/即时配送/航班/高铁火车/排队叫
 
 赛事比分模板适用于赛事场景。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/pGmg3wS2RrmEn5nYVAEtIA/zh-cn_image_0000002552799334.png?HW-CC-KV=V1&HW-CC-Date=20260427T234937Z&HW-CC-Expire=86400&HW-CC-Sign=A6054741B96679F7C098724644938BA4060DBA8329B4313A6FAAF685D2FAE576)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/XFLnWsLxSdeSnRjBSPIUBQ/zh-cn_image_0000002589325355.png?HW-CC-KV=V1&HW-CC-Date=20260429T053849Z&HW-CC-Expire=86400&HW-CC-Sign=36640391BD72285E9127EBD09F33EFC21603934891F936253ABCFFFE493763AB)
 
 示例代码如下：
 
@@ -600,7 +600,7 @@ Live View Kit提供了“出行打车/即时配送/航班/高铁火车/排队叫
 
 导航模板适用于出行导航场景。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/oe1_ZYlVQea2O8iJdbAH_Q/zh-cn_image_0000002583439029.png?HW-CC-KV=V1&HW-CC-Date=20260427T234937Z&HW-CC-Expire=86400&HW-CC-Sign=7FF2174E16A8B5F9B1FF531BFFCA570E471636478621F9F69FC967FF177CF045)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/K9dNqNtSQW6pERohn9TAPw/zh-cn_image_0000002589245291.png?HW-CC-KV=V1&HW-CC-Date=20260429T053849Z&HW-CC-Expire=86400&HW-CC-Sign=AD8243B5F722B8984A9075E58CD14413844338AA28B0BFF65AF81FEF040454E0)
 
 示例代码如下：
 
@@ -899,7 +899,7 @@ Live View Kit提供了“出行打车/即时配送/航班/高铁火车/排队叫
 
 ### 实况胶囊
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/DtjGqh-_RduakNlil0bxiQ/zh-cn_image_0000002552958984.png?HW-CC-KV=V1&HW-CC-Date=20260427T234937Z&HW-CC-Expire=86400&HW-CC-Sign=C7ED8FD1D790161EF66450E44C90BA42DF1A700F4A2646A612A557FC2D1E8413)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/9X4Bj2hZRzy41T7g0HPeEg/zh-cn_image_0000002558765484.png?HW-CC-KV=V1&HW-CC-Date=20260429T053849Z&HW-CC-Expire=86400&HW-CC-Sign=4BAC0DDB95432042EA5BA6340E7857F6D2B4BECC4B5B5518F302D1169C782269)
 
 说明
 
@@ -984,7 +984,7 @@ Live View Kit提供了“出行打车/即时配送/航班/高铁火车/排队叫
 
 ### 小折叠外屏实况窗
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/hqNnU4w5Q5a8-6KoVd9ZOg/zh-cn_image_0000002583478985.png?HW-CC-KV=V1&HW-CC-Date=20260427T234937Z&HW-CC-Expire=86400&HW-CC-Sign=F22693B0C5E89A4CF6EE607932483EF29AE492226644A8B21E24ADC9BB8F0E5B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/pbJpWvmOQ72IhQPY_7f-yA/zh-cn_image_0000002558605828.png?HW-CC-KV=V1&HW-CC-Date=20260429T053849Z&HW-CC-Expire=86400&HW-CC-Sign=B966BD8DEB8CD77DDF99B1F203C5998A5946EA28D7CD94E12EC615A4D8E06424)
 
 外屏实况窗适用于在小折叠屏的外屏显示实况窗的简要信息，方便用户可以在折叠状态便捷查看。
 
@@ -1076,7 +1076,7 @@ Live View Kit提供了“出行打车/即时配送/航班/高铁火车/排队叫
 
 例如：固定区的文本内容中使用占位符，系统将替代占位符为实况窗计时器。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/ZBnf-PrDTiC43vT4eY84iQ/zh-cn_image_0000002552799336.png?HW-CC-KV=V1&HW-CC-Date=20260427T234937Z&HW-CC-Expire=86400&HW-CC-Sign=83E689946B5E36B1EB079BD50DC83A3F48ABB62557AC23EB1584E0AA691C4FB7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/uXAw8yjUTsyRTVpMb0euPg/zh-cn_image_0000002589325357.png?HW-CC-KV=V1&HW-CC-Date=20260429T053849Z&HW-CC-Expire=86400&HW-CC-Sign=57FD160CB46D186017D4304CF163A40928B787E6ABB2792E2B9EDD952070BCD6)
 
 示例代码如下：
 

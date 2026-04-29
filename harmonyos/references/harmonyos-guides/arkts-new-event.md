@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-eve
 title: @Event装饰器：规范组件输出
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理（V2） > 管理组件拥有的状态 > @Event装饰器：规范组件输出
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:39:08+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:4166aafd03e37f25e9fa79060d95769752537536803ab4818517a54ae788cc4a
+scraped_at: 2026-04-29T13:27:18+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:d0680dcbc18eae2c374a684a265845ccb71fb4cbd6810c746fc77e0e4bab806c
 ---
 
 为了实现子组件向父组件要求更新@Param装饰变量的能力，开发者可以使用@Event装饰器。使用@Event装饰回调方法是一种规范，表明子组件需要传入更新数据源的回调。
@@ -98,17 +98,18 @@ content_hash: sha256:4166aafd03e37f25e9fa79060d95769752537536803ab4818517a54ae78
 33. Column() {
 34. Text(`${this.title}`)
 35. .fontColor(this.fontColor)
-36. Button('change to Title Two')
-37. .onClick(() => {
-38. this.changeFactory(2);
-39. })
-40. Button('change to Title One')
-41. .onClick(() => {
-42. this.changeFactory(1);
-43. })
-44. }
+36. // 使用changeFactory更改父组件中的变量type
+37. Button('change to Title Two')
+38. .onClick(() => {
+39. this.changeFactory(2);
+40. })
+41. Button('change to Title One')
+42. .onClick(() => {
+43. this.changeFactory(1);
+44. })
 45. }
 46. }
+47. }
 ```
 
 [EventDecoratorTest1.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/EventDecorator/entry/src/main/ets/pages/EventDecoratorTest1.ets#L15-L62)
@@ -129,28 +130,30 @@ content_hash: sha256:4166aafd03e37f25e9fa79060d95769752537536803ab4818517a54ae78
 11. Text(`Child index: ${this.index}`)
 12. .onClick(() => {
 13. this.changeIndex(20);
-14. hilog.info(DOMAIN, TAG, `after changeIndex ${this.index}`);
-15. })
-16. }
+14. // 输出子组件this.index，验证调用@Event后值不会立即同步回子组件
+15. hilog.info(DOMAIN, TAG, `after changeIndex ${this.index}`);
+16. })
 17. }
 18. }
-19. @Entry
-20. @ComponentV2
-21. struct Index2 {
-22. @Local index: number = 0;
+19. }
+20. @Entry
+21. @ComponentV2
+22. struct Index2 {
+23. @Local index: number = 0;
 
-24. build() {
-25. Column() {
-26. Child2({
-27. index: this.index,
-28. changeIndex: (val: number) => {
-29. this.index = val;
-30. hilog.info(DOMAIN, TAG, `in changeIndex ${this.index}`);
-31. }
-32. })
+25. build() {
+26. Column() {
+27. Child2({
+28. index: this.index,
+29. changeIndex: (val: number) => {
+30. this.index = val;
+31. // 输出父组件的index，用于对比子组件侧日志
+32. hilog.info(DOMAIN, TAG, `in changeIndex ${this.index}`);
 33. }
-34. }
+34. })
 35. }
+36. }
+37. }
 ```
 
 [EventDecoratorTest2.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/EventDecorator/entry/src/main/ets/pages/EventDecoratorTest2.ets#L15-L52)

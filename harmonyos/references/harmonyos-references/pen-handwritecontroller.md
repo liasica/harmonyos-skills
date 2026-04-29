@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/pen-handw
 title: HandwriteController (手写套件功能)
 breadcrumb: API参考 > 系统 > 硬件 > Pen Kit（手写笔服务） > ArkTS API > HandwriteController (手写套件功能)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:10:58+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:536bdcbc393deee326b6fa35b5591c0892262a438f182e2924077687a35b19ce
+scraped_at: 2026-04-29T14:01:38+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:da65df4e1fd7e1745458388e50ab2192a8a363ddd715e370ff66b0fab826f119
 ---
 
 手写套件的主要功能入口类，包含手写能力的主要方法。
@@ -33,6 +33,8 @@ PhonePC/2in1Tablet
 | [onLoad](pen-handwritecontroller.md#onload) | 加载完成时的回调接口。 |
 | [getContentRange](pen-handwritecontroller.md#getcontentrange) | 获取笔迹范围。 |
 | [getThumbnail](pen-handwritecontroller.md#getthumbnail) | 获取缩略图数据。 |
+| [Rect](pen-handwritecontroller.md#rect) | Rect信息参数，表示矩形区域。 |
+| [scrollTo](pen-handwritecontroller.md#scrollto) | 设置长画布的滚动位置。 |
 
 ## load
 
@@ -213,7 +215,7 @@ scrollTo(yOffset: number): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| yOffset | number | 是 | 滚动位置的纵坐标绝对值。单位vp。当前可滚动最大距离为[px2vp](arkts-apis-uicontext-uicontext.md#px2vp12)(1000000)减去list组件高度。 |
+| yOffset | number | 是 | 滚动位置的纵坐标绝对值。单位vp。当前可滚动最大距离为[px2vp](arkts-apis-uicontext-uicontext.md#px2vp12)(1000000)减去list组件高度。超出范围取边界值。 |
 
 **示例**：
 
@@ -253,7 +255,7 @@ PhonePC/2in1Tablet
 27. handwriteController: this.controller,
 28. defaultPenType: PenType.PEN, // 可选属性，默认笔刷
 29. defaultPenInfo: [{ penType: PenType.PEN, penWidth: this.penWidth },
-30. { penType: PenType.BALLPOINT_PEN, penWidth: this.ballpointPenWidth }] as PenHspInfo[], //可选属性，各笔刷的默认宽度
+30. { penType: PenType.BALLPOINT_PEN, penWidth: this.ballpointPenWidth }] as PenHspInfo[], // 可选属性，各笔刷的默认宽度
 31. widthRatio: 1, // 可选属性，自定义画布大小，宽度占比（0-1）。
 32. heightRatio: 1, // 可选属性，自定义画布大小，高度占比（0-1）。
 33. maxCanvasHeight: 5000, // 可选属性，自定义画布最大高度
@@ -294,7 +296,7 @@ PhonePC/2in1Tablet
 68. }
 69. }).margin({ top: 100 }).width(220)
 70. // 当前画布的偏移量。
-71. Text("onDidScroll：" + this.yOffset)
+71. Text("onDidScroll: " + this.yOffset)
 72. .margin({ top: 150 }).width(220)
 73. }
 74. .width('100%')

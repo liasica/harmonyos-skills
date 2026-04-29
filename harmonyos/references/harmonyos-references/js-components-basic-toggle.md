@@ -1,10 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-basic-toggle
 title: toggle
+breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 基础组件 > toggle
 category: harmonyos-references
-scraped_at: 2026-04-28T08:03:09+08:00
+scraped_at: 2026-04-29T13:53:29+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:0cedaa896ce56216a60900fe53e19a27ef6e5ee04711ddf41e7b4b6961cfacd9
+content_hash: sha256:6d8f6ce3c7317dab19fc8f61f933b17975b438a4d361bad1c9cc01b5b93b827f
 ---
 
 说明
@@ -144,4 +145,4 @@ PhonePC/2in1TabletTVWearable
 48. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/1Pfi-L92Tcq5neDxZSisJg/zh-cn_image_0000002552800554.png?HW-CC-KV=V1&HW-CC-Date=20260428T000306Z&HW-CC-Expire=86400&HW-CC-Sign=FBBDB3F56782C6A36B90C4B33237DB75F529BCA178123ABCD46158F79BE65E0C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/5soaElyaTzyX62Ltviu5Cg/zh-cn_image_0000002589246537.png?HW-CC-KV=V1&HW-CC-Date=20260429T055328Z&HW-CC-Expire=86400&HW-CC-Sign=E281399929952E63113F0FFF6D0BB9878716E8EB92B55233ED7C196F856ABE31)

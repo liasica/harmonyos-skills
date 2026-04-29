@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/car-navi-hop
 title: 导航流转至车机
 breadcrumb: 指南 > 系统 > 硬件 > Car Kit（车服务） > 实现车机导航流转 > 导航流转至车机
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:44:35+08:00
+scraped_at: 2026-04-29T13:33:29+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:395f0a3c3a6ded74e5ba136aa7a755bd6cb20990e5b0c021e7fcca145fc85187
+content_hash: sha256:cac71f896145358b8e702ebdc9f77df860792c615b3f540d9c1d12b8c7f976a0
 ---
 
 ## 场景介绍
@@ -14,13 +14,13 @@ content_hash: sha256:395f0a3c3a6ded74e5ba136aa7a755bd6cb20990e5b0c021e7fcca145fc
 
 * 碰一碰导航流转：用户在手机地图的指定页面中（地图选点页面、规划路线页面、驾车导航页面），与车机中控屏指定区域碰一碰后，将手机上的导航数据流转至车机。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/RJ_RdQvBTdGVs6iId_yQlw/zh-cn_image_0000002583478467.png?HW-CC-KV=V1&HW-CC-Date=20260427T234434Z&HW-CC-Expire=86400&HW-CC-Sign=3647FDFB19A27FAA59245834E90260E18A2DA8FB10EB9DA703D90A706BE4491B)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/DaRr_7bvTbGj48wqRecQ_w/zh-cn_image_0000002558605310.png?HW-CC-KV=V1&HW-CC-Date=20260429T053328Z&HW-CC-Expire=86400&HW-CC-Sign=8AEC9F2B3D4846179EBB5C367BDF3314DC2172262FFC829C15FB3AF823857580)
 * 上车导航自动流转：用户使用手机地图应用发起驾车导航后上车，手机上的导航数据会自动流转至车机。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/s4vYEt4HSYKP1_6ewqoaMA/zh-cn_image_0000002552798818.png?HW-CC-KV=V1&HW-CC-Date=20260427T234434Z&HW-CC-Expire=86400&HW-CC-Sign=6EB0EEF6FBF769CED7097D71A6A759017CACB4FB4348D67479B1591761DE22B2)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/aFNCpp_ySzG6GwPg-rmaqg/zh-cn_image_0000002589324835.png?HW-CC-KV=V1&HW-CC-Date=20260429T053328Z&HW-CC-Expire=86400&HW-CC-Sign=4C0800E5E6D448ED8ADAA41C449DFBAA425E9385C35784E81B3220C36CBB6DC0)
 * 车内导航自动流转：用户在车内，使用手机地图应用发起驾车导航，手机上的导航数据会自动流转至车机。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/r8vo6R-nStOSYR1uNjAi5g/zh-cn_image_0000002583438513.png?HW-CC-KV=V1&HW-CC-Date=20260427T234434Z&HW-CC-Expire=86400&HW-CC-Sign=EBC7971316EBA656EC9CF4902993D36739426F2ABBF59812593FF147A34C158A)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/VQLjacuYSbeE5VYvUNpByg/zh-cn_image_0000002589244773.png?HW-CC-KV=V1&HW-CC-Date=20260429T053328Z&HW-CC-Expire=86400&HW-CC-Sign=4BAD30AB9A65E8F56C7468939B1A6C348FBDFB4DE319F7571FB6AABB010F3501)
 
 ## 接口说明
 
@@ -44,7 +44,7 @@ SmartMobilityEvent事件名（eventName）取值如下：
 
 ## 开发流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/GinNdQ7GQlWTSQMaeLmoUw/zh-cn_image_0000002552958468.png?HW-CC-KV=V1&HW-CC-Date=20260427T234434Z&HW-CC-Expire=86400&HW-CC-Sign=3F693744E2842BF8212DA3837A303465D3E1105043EEE2435E365C7F2BE9B5CE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/VfKZu2prRu-ob_NoER6RIA/zh-cn_image_0000002558764968.png?HW-CC-KV=V1&HW-CC-Date=20260429T053328Z&HW-CC-Expire=86400&HW-CC-Sign=376FEED4F6AFB5905564CAB59E87F60F0DE23D74A945B924513201CEC640F407)
 
 ## 开发步骤
 

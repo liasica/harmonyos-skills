@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/payment-sandb
 title: 沙盒环境验证
 breadcrumb: 指南 > 应用服务 > Payment Kit（鸿蒙支付服务） > 沙盒环境验证
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:50:12+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:63199bc8e4a0d0ba3a9c9367f287f2d15854ec56391eba8441062fc53e61983b
+scraped_at: 2026-04-29T13:39:35+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:d1dd22175d1d576d36a3bf96efd4c906a2a55d7844a30480009b40f44be4c5c1
 ---
 
 华为支付提供沙盒环境，开发者无需真实完成商户入网即可开始调试华为支付接入，模拟真实环境下华为支付交易过程，提前介入方案设计和开发联调，提升接入效率。
@@ -57,13 +57,13 @@ REST API请求说明：
 | 操作层面 | 能力维度描述 |
 | --- | --- |
 | 用户 | **用户登录**：支持用户在支付过程中使用华为账号进行登录操作。  **银行卡支付**：支持用户在华为支付收银台选择银行卡支付（测试配置默认绑定测试银行卡，暂不支持用户主动绑卡）。  **余额支付**：支持用户在华为支付收银台选择余额支付（预置余额，暂不支持充值，支付后不会产生扣费）。  **密码支付**：支持用户在华为支付收银台通过输入密码完成支付（不支持修改用户支付密码）。 |
-| 商户（开发者） | **拉起支付收银台：** 支持商户应用/元服务通过预下单接口获取预支付ID（prepayId）构建[orderStr](../harmonyos-references/payment-model.md#orderstr)参数调用[requestPayment](../harmonyos-references/payment-paymentservice.md#paymentservicerequestpayment)接口拉起华为支付收银台。  **调用REST API接口查询订单、退款等操作：**  - **直连商户：**  - [预下单](../harmonyos-references/payment-prepay.md)：商户可以通过本接口提交华为支付订单信息，同时获取华为支付预交易订单号。  - [支付结果回调通知](../harmonyos-references/payment-pay-notify.md)：用户支付完成后，华为支付服务器通过开发者请求预下单接口时入参传递的回调通知URL（callbackUrl）向开发者的服务器发送支付关键事件通知。  - [查询支付订单](../harmonyos-references/payment-merc-query-order.md)：商户可以通过本接口查询某笔交易订单状态。  - [申请退款](../harmonyos-references/payment-service--refund.md)：商户可以调用此接口将订单金额退还给用户。  - [退款结果通知](../harmonyos-references/payment-refund-notify.md)：用户支付完成后，华为支付服务器通过开发者请求申请退款接口时入参传递的回调通知URL（callbackUrl）向开发者的服务器发送支付关键事件通知。  - [查询退款订单](../harmonyos-references/payment-merc-query-refund.md)：商户调用退款申请成功后，商户可以调用此接口查询退款订单状态。  - **平台类商户/服务商：**  - [预下单](../harmonyos-references/payment-agent-prepay.md)：平台类商户/服务商可通过本接口提交华为支付订单信息，同时获取华为支付预交易订单号。  - [支付结果回调通知](../harmonyos-references/payment-agent-pay-notify.md)：用户支付完成后，华为支付服务器通过开发者请求预下单接口时入参传递的回调通知URL（callbackUrl）向开发者的服务器发送支付关键事件通知。  - [查询支付订单](../harmonyos-references/payment-agent-merc-query-order.md)：平台类商户/服务商可通过本接口查询某笔交易订单状态。  - [申请退款](../harmonyos-references/payment-agent-refund.md)：平台类商户/服务商可调用此接口将订单金额退还给用户。  - [退款结果通知](../harmonyos-references/payment-agent-refund-notify.md)：用户支付完成后，华为支付服务器通过开发者请求申请退款接口时入参传递的回调通知URL（callbackUrl）向开发者的服务器发送支付关键事件通知。  - [查询退款订单](../harmonyos-references/payment-agent-merc-query-refund.md)：调用退款申请成功后，平台类商户/服务商可调用此接口查询退款订单状态。 |
+| 商户（开发者） | **拉起支付收银台：** 支持商户应用/元服务通过预下单接口获取预支付ID（prepayId）构建[orderStr](../harmonyos-references/payment-model.md#orderstr)参数调用[requestPayment](../harmonyos-references/payment-paymentservice.md#requestpayment)接口拉起华为支付收银台。  **调用REST API接口查询订单、退款等操作：**  - **直连商户：**  - [预下单](../harmonyos-references/payment-prepay.md)：商户可以通过本接口提交华为支付订单信息，同时获取华为支付预交易订单号。  - [支付结果回调通知](../harmonyos-references/payment-pay-notify.md)：用户支付完成后，华为支付服务器通过开发者请求预下单接口时入参传递的回调通知URL（callbackUrl）向开发者的服务器发送支付关键事件通知。  - [查询支付订单](../harmonyos-references/payment-merc-query-order.md)：商户可以通过本接口查询某笔交易订单状态。  - [申请退款](../harmonyos-references/payment-service--refund.md)：商户可以调用此接口将订单金额退还给用户。  - [退款结果通知](../harmonyos-references/payment-refund-notify.md)：用户支付完成后，华为支付服务器通过开发者请求申请退款接口时入参传递的回调通知URL（callbackUrl）向开发者的服务器发送支付关键事件通知。  - [查询退款订单](../harmonyos-references/payment-merc-query-refund.md)：商户调用退款申请成功后，商户可以调用此接口查询退款订单状态。  - **平台类商户/服务商：**  - [预下单](../harmonyos-references/payment-agent-prepay.md)：平台类商户/服务商可通过本接口提交华为支付订单信息，同时获取华为支付预交易订单号。  - [支付结果回调通知](../harmonyos-references/payment-agent-pay-notify.md)：用户支付完成后，华为支付服务器通过开发者请求预下单接口时入参传递的回调通知URL（callbackUrl）向开发者的服务器发送支付关键事件通知。  - [查询支付订单](../harmonyos-references/payment-agent-merc-query-order.md)：平台类商户/服务商可通过本接口查询某笔交易订单状态。  - [申请退款](../harmonyos-references/payment-agent-refund.md)：平台类商户/服务商可调用此接口将订单金额退还给用户。  - [退款结果通知](../harmonyos-references/payment-agent-refund-notify.md)：用户支付完成后，华为支付服务器通过开发者请求申请退款接口时入参传递的回调通知URL（callbackUrl）向开发者的服务器发送支付关键事件通知。  - [查询退款订单](../harmonyos-references/payment-agent-merc-query-refund.md)：调用退款申请成功后，平台类商户/服务商可调用此接口查询退款订单状态。 |
 
 ## 验证商户基础支付场景
 
 **支持商户模型：** 直连商户、平台类商户、服务商
 
-1. 在满足沙盒验证条件（已获取[沙盒环境调试配置](payment-sandbox-test.md#沙盒环境调试配置)）下，开发者可以使用沙盒环境配置调用[直连商户预下单](../harmonyos-references/payment-prepay.md)/[平台类商户/服务商预下单](../harmonyos-references/payment-agent-prepay.md)获取预支付ID（prepayId）构建[orderStr](../harmonyos-references/payment-model.md#orderstr)请求[requestPayment](../harmonyos-references/payment-paymentservice.md#paymentservicerequestpayment)接口拉起Payment Kit支付收银台（开发步骤可参见[商户基础支付场景](payment-payment-process.md#开发步骤)）。
+1. 在满足沙盒验证条件（已获取[沙盒环境调试配置](payment-sandbox-test.md#沙盒环境调试配置)）下，开发者可以使用沙盒环境配置调用[直连商户预下单](../harmonyos-references/payment-prepay.md)/[平台类商户/服务商预下单](../harmonyos-references/payment-agent-prepay.md)获取预支付ID（prepayId）构建[orderStr](../harmonyos-references/payment-model.md#orderstr)请求[requestPayment](../harmonyos-references/payment-paymentservice.md#requestpayment)接口拉起Payment Kit支付收银台（开发步骤可参见[商户基础支付场景](payment-payment-process.md#开发步骤)）。
 
    说明
 

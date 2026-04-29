@@ -3,20 +3,20 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-debug-ark
 title: 使用调试器
 breadcrumb: 指南 > 编写与调试应用 > 应用调试 > 代码调试 > 使用调试器
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:56:51+08:00
+scraped_at: 2026-04-29T13:46:47+08:00
 doc_updated_at: 2026-01-15
-content_hash: sha256:e6bec4b0d189921ca7193f8ea48e9dc694d7dcd086001067645b06c0238635b4
+content_hash: sha256:e50b8e887ed24b7cf0f5e34d2b5319a325e8cee244e34f5b87258a3f3757f3c2
 ---
 
 Debug界面有三个tab页，分别是“entry”、“entry(PandaDebugger)”和“entry(Native)”。
 
 通常第一个tab页“entry”用于展示推包安装过程。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/j24Rt-3kQF2pOdJYr8xkLQ/zh-cn_image_0000002530913488.png?HW-CC-KV=V1&HW-CC-Date=20260427T235650Z&HW-CC-Expire=86400&HW-CC-Sign=979B27B71C71BBF6A0394019B965274B8B70AE3B90DB7BAEEFA55ADB2AA5EE2B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/Zh3HzwfGQxSMTppcDQXCgA/zh-cn_image_0000002530913488.png?HW-CC-KV=V1&HW-CC-Date=20260429T054646Z&HW-CC-Expire=86400&HW-CC-Sign=B0E7976FECFE6CBCF8E8460DBA30A6F08BD386A3318A2C946CF03BDF123EA111)
 
 第二个tab页“entry(PandaDebugger)”和第三个tab页“entry(Native)”是调试器，用于调试Debugger功能，其中“entry(Native)”仅在涉及Native调试时才会拉起。调试器包含两个窗格，**[Debugger](ide-debug-arkts-debugger.md#section1437520119316)**和**[Console](ide-debug-arkts-debugger.md#section327153017314)**。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/N1IGNWZRQs6gIlSFy8YrxA/zh-cn_image_0000002530753478.png?HW-CC-KV=V1&HW-CC-Date=20260427T235650Z&HW-CC-Expire=86400&HW-CC-Sign=DE776D9FED42B30334F65E5B62C0F9FDA2A561074756C19F4EA0D7D7A470457D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/jyfigosjRqyN-2MJROLR5Q/zh-cn_image_0000002530753478.png?HW-CC-KV=V1&HW-CC-Date=20260429T054646Z&HW-CC-Expire=86400&HW-CC-Sign=30F4A93452C347285A2E552D3FF2D801D679C99F5A6C1419E0679CE7D1430129)
 
 ## Debugger窗格
 
@@ -25,7 +25,7 @@ Debugger显示两个独立的窗格：
 * 左侧区域是Frames，当应用调试到某个断点时，Frames区会显示当前代码所引用的代码位置。
 * 右侧区域是Variables，用于展示当前变量。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/1M8kUAkPQnGEbNrBmADI2Q/zh-cn_image_0000002561833399.png?HW-CC-KV=V1&HW-CC-Date=20260427T235650Z&HW-CC-Expire=86400&HW-CC-Sign=D35FADFF77D431E3853DE12B39F6CD2EF0E7A00F1FF897D363D0B12A6DAD3E09)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/P2HT6xbJRFqzKEJ6Q-vdWw/zh-cn_image_0000002561833399.png?HW-CC-KV=V1&HW-CC-Date=20260429T054646Z&HW-CC-Expire=86400&HW-CC-Sign=03DBAB0F050FA4399BD5C8F70D1F7216D544BDFCC6EC39CC969354DFD5AFE2EF)
 
 Debugger窗格有多个按钮：
 
@@ -44,54 +44,54 @@ Debugger窗格有多个按钮：
 
 ### Resume Program
 
-点击Resume Program图标![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/JuG9wobKTB6iJIm--uomCQ/zh-cn_image_0000002530913484.png?HW-CC-KV=V1&HW-CC-Date=20260427T235650Z&HW-CC-Expire=86400&HW-CC-Sign=70A745EB980BF29D74A3BA96A7680ED61DB33444FF4AA223119132BB628FF45E)，如果存在断点时，命中下一个断点，并展示对应的Frames和Variables信息；如果不存在断点，设备上的应用正常运行，Frames和Variables信息会消失。
+点击Resume Program图标![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/LeQWtOOASeeGnqmRi6W1wg/zh-cn_image_0000002530913484.png?HW-CC-KV=V1&HW-CC-Date=20260429T054646Z&HW-CC-Expire=86400&HW-CC-Sign=F6D4505003EFF852F965359E6953EAE2728310392EA9C3C3C229644FD882683E)，如果存在断点时，命中下一个断点，并展示对应的Frames和Variables信息；如果不存在断点，设备上的应用正常运行，Frames和Variables信息会消失。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/vQGSx5ZVTQqFo9KC8Ph_tw/zh-cn_image_0000002530913478.png?HW-CC-KV=V1&HW-CC-Date=20260427T235650Z&HW-CC-Expire=86400&HW-CC-Sign=50F80F7E146D0438E56491172A4D0456EE86929FA61C76A68B33E435A74620E0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/r7SoKz5wR4yTYr7CiDZxQg/zh-cn_image_0000002530913478.png?HW-CC-KV=V1&HW-CC-Date=20260429T054646Z&HW-CC-Expire=86400&HW-CC-Sign=A78F740F7129B1DDF203BE9386599854F6AB365736666FA17336566F28C7D44F)
 
 ### Pause Program
 
-点击Pause Program图标![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/e9j7kSXCRoOgABJ-8Eg7PA/zh-cn_image_0000002561833433.png?HW-CC-KV=V1&HW-CC-Date=20260427T235650Z&HW-CC-Expire=86400&HW-CC-Sign=1FF26D487DD5126A598456207C32D2639525015810BCE50C0D0434451804FF11)，当有对应源代码时，应用会暂停。
+点击Pause Program图标![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/laoIxOxpSsOl_FKVkmpgEw/zh-cn_image_0000002561833433.png?HW-CC-KV=V1&HW-CC-Date=20260429T054646Z&HW-CC-Expire=86400&HW-CC-Sign=E606869AAA72A34EAE8DE418F0AD0DBBC3A0679927900F4B63DDAEC13150549D)，当有对应源代码时，应用会暂停。
 
 ### Step Over
 
-点击Step Over![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/b2xRVNArQ5Cwxw0-aa5Q8g/zh-cn_image_0000002561833431.png?HW-CC-KV=V1&HW-CC-Date=20260427T235650Z&HW-CC-Expire=86400&HW-CC-Sign=278A8055AE31A6DB28F8D8D887C9025F3DE7E01C44CE771539BD2BD06920CDFA)，当前代码执行到下一行代码。
+点击Step Over![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/xnVjV-bKSk2dIQUl_VhkHg/zh-cn_image_0000002561833431.png?HW-CC-KV=V1&HW-CC-Date=20260429T054646Z&HW-CC-Expire=86400&HW-CC-Sign=E708A92C7DF61A45FE3699DF082A50E4BAF73EC42725FB7CF25702FF58630DC5)，当前代码执行到下一行代码。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/fs-07LonQi6GugUrmqhY9A/zh-cn_image_0000002530913480.png?HW-CC-KV=V1&HW-CC-Date=20260427T235650Z&HW-CC-Expire=86400&HW-CC-Sign=76423AE998FCA62F08D6BFAF1D41FC5B7E593BCCA2D5E904F0E4B852369F3E35)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/OTgdJaMcS2Ki5Y-8aYysUA/zh-cn_image_0000002530913480.png?HW-CC-KV=V1&HW-CC-Date=20260429T054646Z&HW-CC-Expire=86400&HW-CC-Sign=BF462C75ECBBB3183402F617EF7CB1E785E710E2C325B8FA3AD2CE6D7D82474F)
 
 ### Step Into
 
-点击Step Into![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/l-jPHhT5RY2YJmIB13oIGw/zh-cn_image_0000002561833435.png?HW-CC-KV=V1&HW-CC-Date=20260427T235650Z&HW-CC-Expire=86400&HW-CC-Sign=603129A2B3DA4B0FEC8F3C9EF2B2A2843F911B873197A146CE586B0A9FF976E0)，当前代码进入到方法内部。
+点击Step Into![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/5nwCM2CvS7G_CUB74Ooz6Q/zh-cn_image_0000002561833435.png?HW-CC-KV=V1&HW-CC-Date=20260429T054646Z&HW-CC-Expire=86400&HW-CC-Sign=71313F6D93447C5090C334A8F5CC2AF74986B937FEF071CCA9A8AE6788769E95)，当前代码进入到方法内部。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/d8FkAxGPQwK-WTW6Dbyd9A/zh-cn_image_0000002530913482.png?HW-CC-KV=V1&HW-CC-Date=20260427T235650Z&HW-CC-Expire=86400&HW-CC-Sign=0AF8A5B390F27534D43082E805A3BA134E6ACAFF770BED2526B5717A2FF2C465)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/ACwRxCE2QuuSSGmDG15aVg/zh-cn_image_0000002530913482.png?HW-CC-KV=V1&HW-CC-Date=20260429T054646Z&HW-CC-Expire=86400&HW-CC-Sign=BC39A46B5EA6CB123BED4DC5F6E8EE71C10A0732B000B7DAA5291352E59B902A)
 
 例如代码进入add方法的定义处。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/Ey48Y7TXRrupd9Iw9nuLFA/zh-cn_image_0000002561753443.png?HW-CC-KV=V1&HW-CC-Date=20260427T235650Z&HW-CC-Expire=86400&HW-CC-Sign=F21C3A82FFA851DF214F77DD1C06E1D51D56CC6FB883EDC8764F76030E835AEA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/AoFMbt2HRF-93S8cza575w/zh-cn_image_0000002561753443.png?HW-CC-KV=V1&HW-CC-Date=20260429T054646Z&HW-CC-Expire=86400&HW-CC-Sign=C4C97EBB62AB707D767667EF43689A5D9919C60AA0DEBCCECB1595D8784A5AED)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/M8h6j_I9Qy-idLQ5ESqTLg/zh-cn_image_0000002561753413.png?HW-CC-KV=V1&HW-CC-Date=20260427T235650Z&HW-CC-Expire=86400&HW-CC-Sign=4FDBF68090B9ED8525FD664AACD4AB1F73B872E05C345E297FA52FFDEF44AA5F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/kvgPYRGKQpSxMn-_cu_PKA/zh-cn_image_0000002561753413.png?HW-CC-KV=V1&HW-CC-Date=20260429T054646Z&HW-CC-Expire=86400&HW-CC-Sign=A5ED5F711EA39DCC2DCA6424681FC87D69CA57C305E73CD118972D97EBC6F132)
 
 ### Step Out
 
-点击Step Out![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/M3LA63VYQGKOL4fhXIIE_Q/zh-cn_image_0000002530913494.png?HW-CC-KV=V1&HW-CC-Date=20260427T235650Z&HW-CC-Expire=86400&HW-CC-Sign=E6EA738E26AEA6D6A240EAD6A9E841EA70D53D7F44B11B3A61F6D9C197529E8E)，代码会从方法内部回到调用处。
+点击Step Out![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/ZIJ6INinT5GG-PkpD7-SuQ/zh-cn_image_0000002530913494.png?HW-CC-KV=V1&HW-CC-Date=20260429T054646Z&HW-CC-Expire=86400&HW-CC-Sign=DD5D88A562ECB317B0CC3C830EF384A5656533E0904A966FE4975A84D284A62D)，代码会从方法内部回到调用处。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/V1ywIXRJQdil4LRqVwBBLQ/zh-cn_image_0000002561833449.png?HW-CC-KV=V1&HW-CC-Date=20260427T235650Z&HW-CC-Expire=86400&HW-CC-Sign=66330849DEF0E82645624B7E368C599F318261012B5829E7E8404E67D9B9987E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/inTJ518BQHy0w-T5WxOhKg/zh-cn_image_0000002561833449.png?HW-CC-KV=V1&HW-CC-Date=20260429T054646Z&HW-CC-Expire=86400&HW-CC-Sign=BA71C9B5F2EA53EF9E767C06DEFA5512A3CE7EE2A408B9D94B9B033AF0C06BB4)
 
 ### Run to Cursor
 
-点击Run to Cursor![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/GMEnKN5eSiykk_NvsfJWUg/zh-cn_image_0000002530913460.png?HW-CC-KV=V1&HW-CC-Date=20260427T235650Z&HW-CC-Expire=86400&HW-CC-Sign=FA63E0A7BAFA179803E475012C43CFA2F3498B3AB29128D1ED4B528C61425255)，代码停留在鼠标停留处。
+点击Run to Cursor![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/PxA6cA59R1mxIhkIDuVkTg/zh-cn_image_0000002530913460.png?HW-CC-KV=V1&HW-CC-Date=20260429T054646Z&HW-CC-Expire=86400&HW-CC-Sign=BD2EB3E64E7DBF8A37EAB81A32DDAEC7D2F3952632EA2E341F1F70B28DFEF6D8)，代码停留在鼠标停留处。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/LJhvf2XHRoWexk_o6ps_Sg/zh-cn_image_0000002561833445.png?HW-CC-KV=V1&HW-CC-Date=20260427T235650Z&HW-CC-Expire=86400&HW-CC-Sign=41AAC8802F97A6AF88E92BFB04766ADCC3663F34ABB2B9644AAEB92C5F02BDF6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/JF5xV1lKQTiirZjdbMy2lw/zh-cn_image_0000002561833445.png?HW-CC-KV=V1&HW-CC-Date=20260429T054646Z&HW-CC-Expire=86400&HW-CC-Sign=0FC247D7573E1D883EFE3F8A2CD1FCECCD4238C56598F2752193811099791917)
 
 ### JSVM Debug Port
 
-点击JSVM Debug Port![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/p31Ti_sGRzOpIHYl_Z0l6g/zh-cn_image_0000002561833439.png?HW-CC-KV=V1&HW-CC-Date=20260427T235650Z&HW-CC-Expire=86400&HW-CC-Sign=7B56523A40FF4AB5DF26A1C5227A4CEF1E2F24FCA1D47470197A4984093CCDF2)，弹出输入转发端口的面板，输入端口并点击**OK**后会开始转发，转发成功后会有弹窗提示，打开对应的URL即可对JS代码进行调试。关于如何调试C++拉起的JS代码，请查阅[JSVM-API调试&定位](jsvm-debugger-cpuprofiler-heapsnapshot.md)。
+点击JSVM Debug Port![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/td7omKkpTbaCRsW4TIR0Zg/zh-cn_image_0000002561833439.png?HW-CC-KV=V1&HW-CC-Date=20260429T054646Z&HW-CC-Expire=86400&HW-CC-Sign=B97F1D4BCAF2EAEE4D8E64A23E50A9242BB661608F9DE9B6C7C73F844A017373)，弹出输入转发端口的面板，输入端口并点击**OK**后会开始转发，转发成功后会有弹窗提示，打开对应的URL即可对JS代码进行调试。关于如何调试C++拉起的JS代码，请查阅[JSVM-API调试&定位](jsvm-debugger-cpuprofiler-heapsnapshot.md)。
 
 该功能从DevEco Studio 5.1.0 Release版本开始支持。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/6ODK_yAXSZmIIviukUNXJQ/zh-cn_image_0000002561833389.png?HW-CC-KV=V1&HW-CC-Date=20260427T235650Z&HW-CC-Expire=86400&HW-CC-Sign=BF90BA25F3212208F9F8686E68D417D394B0D0C815F991BDCF0DD54FB5A892EE) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/_TZiT1UMRgmDuPSGnIMsww/zh-cn_image_0000002561833443.png?HW-CC-KV=V1&HW-CC-Date=20260427T235650Z&HW-CC-Expire=86400&HW-CC-Sign=DFED9AADED074482A120C802E6C5E6255AABE9D872E1A5CE4BD22070E9966E11)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/QwWM4vkcTwKSl_3sJl96Og/zh-cn_image_0000002561833389.png?HW-CC-KV=V1&HW-CC-Date=20260429T054646Z&HW-CC-Expire=86400&HW-CC-Sign=22552D4FA7E4F4C7CE916BF2892FB81AB66F4CD5EDE7C6E8DAAF2275E329EA3A) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/1YUOuGbHReSnSuQY2wy7Dg/zh-cn_image_0000002561833443.png?HW-CC-KV=V1&HW-CC-Date=20260429T054646Z&HW-CC-Expire=86400&HW-CC-Sign=2C79389E6DCD5271301550146B3BBA1818D1C0BD7C700E2458062734BCBDE7BB)
 
 ## Console窗格
 
 Console窗格用于展示已加载的ets/js。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/8G90rhotShWhfrsy_14vvQ/zh-cn_image_0000002561833441.png?HW-CC-KV=V1&HW-CC-Date=20260427T235650Z&HW-CC-Expire=86400&HW-CC-Sign=1F90ECE6B543C73C7F576C28C8E790CA53AB9C9446C14EE53EC016BF16F06E28)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/3HGzfJFCT5yaCf0hvxWGnA/zh-cn_image_0000002561833441.png?HW-CC-KV=V1&HW-CC-Date=20260429T054646Z&HW-CC-Expire=86400&HW-CC-Sign=D4FECD7B33F4F99BEFFDE52D3050EC41FCACA95CB44992A1DE45BD2D44108997)

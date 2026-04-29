@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 图片边框设置
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 布局与边框 > 图片边框设置
 category: harmonyos-references
-scraped_at: 2026-04-28T08:01:05+08:00
+scraped_at: 2026-04-29T13:51:17+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:6314794a14557d9d94961736d9dbe472f5b9150594df633246db619f8d9a4b90
+content_hash: sha256:a5853400460d830ae8db03259103473e4b8e74ec190d66cc0bfdcfb5fd4df840
 ---
 
 设置组件的图片边框样式。
@@ -130,7 +130,7 @@ PhonePC/2in1TabletTVWearable
 26. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/9OkXba5OTBymnvUS1QLwsw/zh-cn_image_0000002583479505.png?HW-CC-KV=V1&HW-CC-Date=20260428T000104Z&HW-CC-Expire=86400&HW-CC-Sign=BABF98689B67349397D34BE8F6C2657EAD96007EED7ABA5DEED8CBA85BAE8197)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/mi0oRxGYSCG25MBitlIFqw/zh-cn_image_0000002558606368.png?HW-CC-KV=V1&HW-CC-Date=20260429T055116Z&HW-CC-Expire=86400&HW-CC-Sign=1516B0782ED2B40BCB056A2CE69C37C980C5F5B8EFEEBCB3D72C7CB6B5A2B299)
 
 ### 示例2（动态调整属性值）
 
@@ -230,7 +230,7 @@ PhonePC/2in1TabletTVWearable
 91. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/-q__joGJQ8mhtIGUvUQjOQ/zh-cn_image_0000002552799856.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000104Z&HW-CC-Expire=86400&HW-CC-Sign=555888D81D6E81F579533E02ACA2A1D7F67BA7B67A1AB3A67AA8D90CEDA16631)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/APAdiqTDTVqpmsj7wDVSdg/zh-cn_image_0000002589325895.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055116Z&HW-CC-Expire=86400&HW-CC-Sign=050D2D7034D0D9097B2471868C1DDC9DBD102ADF486EE474A023024052B3604D)
 
 ### 示例3（使用LocalizedEdgeWidths类型值）
 
@@ -390,4 +390,4 @@ PhonePC/2in1TabletTVWearable
 
 显示语言示例图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/lz_alCINSsyl-r7hNZLRQg/zh-cn_image_0000002583439551.png?HW-CC-KV=V1&HW-CC-Date=20260428T000104Z&HW-CC-Expire=86400&HW-CC-Sign=BAA567D1AF0C594461FE717402204FDB099DC567740BE421A7C8EB3A34F64936)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/uryCBHjxRgi7gmndx4B7vg/zh-cn_image_0000002589245837.png?HW-CC-KV=V1&HW-CC-Date=20260429T055116Z&HW-CC-Expire=86400&HW-CC-Sign=C07B4D424D84FE340C11DC7E3EB334D5692E682F6B86569FD78CC839D0A311E2)

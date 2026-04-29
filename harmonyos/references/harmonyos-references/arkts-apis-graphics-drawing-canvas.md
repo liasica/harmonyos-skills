@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (Canvas)
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > ArkTS API > @ohos.graphics.drawing (绘制模块) > Class (Canvas)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:14:38+08:00
+scraped_at: 2026-04-29T14:05:15+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:bc3ac0770acbc3f2e033e57cebd6377418c09dc42ea8d2e55d1e67bbe3975bb1
+content_hash: sha256:8500b97e04fbb11f00a601681a9f912e0d9ad1fae24f79b61c1e1dc51d6e1b5c
 ---
 
 承载绘制内容与绘制状态的载体。
@@ -1395,7 +1395,7 @@ drawTextBlob(blob: TextBlob, x: number, y: number): void
 | x | number | 是 | 所绘制出的文字基线（下图蓝线）的左端点（下图红点）的横坐标，该参数为浮点数。 |
 | y | number | 是 | 所绘制出的文字基线（下图蓝线）的左端点（下图红点）的纵坐标，该参数为浮点数。 |
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/5LHhSsm1T-WwNL2F_E77iw/zh-cn_image_0000002583480863.png?HW-CC-KV=V1&HW-CC-Date=20260428T001436Z&HW-CC-Expire=86400&HW-CC-Sign=956C4661CD21F6EF41D528B5E213A5134C762978C18C15888C0A6B43C69427A8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/yR8OzXcURbKogLjo9ZQ0ow/zh-cn_image_0000002589327257.png?HW-CC-KV=V1&HW-CC-Date=20260429T060513Z&HW-CC-Expire=86400&HW-CC-Sign=468AFB8FF095A7E83F6F6FCE9EAE11BC28C1A22A0114309B7F4F3E4B2DA4C2E1)
 
 **错误码：**
 
@@ -1445,7 +1445,7 @@ drawSingleCharacter(text: string, font: Font, x: number, y: number): void
 | x | number | 是 | 所绘制出的字符基线（下图蓝线）的左端点（下图红点）的横坐标，该参数为浮点数。 |
 | y | number | 是 | 所绘制出的字符基线（下图蓝线）的左端点（下图红点）的纵坐标，该参数为浮点数。 |
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/PRlOzvi2TXCjmc9mHOS4mQ/zh-cn_image_0000002583480863.png?HW-CC-KV=V1&HW-CC-Date=20260428T001436Z&HW-CC-Expire=86400&HW-CC-Sign=9C7E7A4358B8FC1BEDF71A26BDCA6D4DF86BB32C7F46E4409AD37CA8F65134D2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/THkFq-5VT8mmJZMJRKcrIA/zh-cn_image_0000002589327257.png?HW-CC-KV=V1&HW-CC-Date=20260429T060513Z&HW-CC-Expire=86400&HW-CC-Sign=0F8112B7FF692D66CE542BFAE36D87FE8F275F1B92B62CA9A0ED1CFC31D986C1)
 
 **错误码：**
 

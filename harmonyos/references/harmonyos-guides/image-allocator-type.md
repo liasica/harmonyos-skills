@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-allocat
 title: 图片解码内存优化(ArkTS)
 breadcrumb: 指南 > 媒体 > Image Kit（图片处理服务） > 图片开发指导(ArkTS) > 图片解码 > 图片解码内存优化(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:46:13+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:1fc0e0588e80d96c866bdcc72572178667367ae0a70e28a4065e778d7c68a29d
+scraped_at: 2026-04-29T13:35:12+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:41709d4c88bd95da471d11373406f728e4711bbd37f678bbc2f96df890e2660e
 ---
 
 应用在进行图片解码操作时，需要申请对应内存。当前指导将介绍不同的内存类型，以及如何进行申请。
@@ -98,7 +98,7 @@ stride的值可以通过[getImageInfo()](../harmonyos-references/arkts-apis-imag
 2. 从ImageInfo对象中访问stride值：info.stride。
 
    ```
-   1. // 导入相关模块包。
+   1. // 导入相关模块。
    2. import { image } from '@kit.ImageKit';
    3. import { common } from '@kit.AbilityKit';
    ```
@@ -133,7 +133,7 @@ stride的值可以通过[getImageInfo()](../harmonyos-references/arkts-apis-imag
 
 为了防止内存溢出导致系统崩溃，系统对进程内存做了限制，详细说明请参考[应用被查杀问题检测方法](../best-practices/bpta-stability-runtime-appkilled-detection.md)。
 
-图片框架对解码单张图片设置了2GB的内存限制。进程需要主动管理自身内存，建议在不使用[PixelMap](../harmonyos-references/arkts-apis-image-pixelmap.md)时及时释放，以避免进程被系统终止。
+图片框架对单张图片的解码设置了2GB的内存限制。进程需要主动管理自身内存，建议在不使用[PixelMap](../harmonyos-references/arkts-apis-image-pixelmap.md)时及时释放，以避免进程被系统终止。
 
 应用可使用[onMemoryLevel](../harmonyos-references/js-apis-app-ability-abilitystage.md#onmemorylevel)监听系统内存变化情况。
 

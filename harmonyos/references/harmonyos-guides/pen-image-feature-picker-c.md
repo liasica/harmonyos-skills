@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pen-image-fea
 title: 接入全局取色
 breadcrumb: 指南 > 系统 > 硬件 > Pen Kit（手写笔服务） > 手写功能开发指导（C/C++） > 接入全局取色
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:44:43+08:00
+scraped_at: 2026-04-29T13:33:37+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:276f5013c41d3fdd8647f91af59b4880bd1eeaf16df7cbbb4d874f21e5b48b9a
+content_hash: sha256:3a854e05da139a4c1ff921b68e60c1a0fed3485184200c6e361a4667bf0695a0
 ---
 
 接入全局取色功能，用户可以使用手指或者手写笔操作取色器在屏幕上移动，在目标位置抬起手指/抬起手写笔，会生成该位置色值对应的图像信息。
@@ -14,7 +14,7 @@ content_hash: sha256:276f5013c41d3fdd8647f91af59b4880bd1eeaf16df7cbbb4d874f21e5b
 
 在应用中拉起全局取色，效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/L1C4gvibQ4qKN7nCnZDzZA/zh-cn_image_0000002552958478.png?HW-CC-KV=V1&HW-CC-Date=20260427T234442Z&HW-CC-Expire=86400&HW-CC-Sign=7EC9107011917E983619E43100288081B67F2563661BED84B7C3F18D8E3ED8CE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/hH5VAznjS8iVsb90_uzqRQ/zh-cn_image_0000002558764978.png?HW-CC-KV=V1&HW-CC-Date=20260429T053336Z&HW-CC-Expire=86400&HW-CC-Sign=431D4FA3852537CE963AE2C16551DC34640686D9B2D5ED7361AF5A05BBB3FF69)
 
 支持获取当前屏幕上选中位置的色值和色域空间。
 

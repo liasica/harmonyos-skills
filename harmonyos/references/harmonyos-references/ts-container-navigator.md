@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: Navigator
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 已停止维护的组件与接口 > Navigator
 category: harmonyos-references
-scraped_at: 2026-04-28T08:02:51+08:00
+scraped_at: 2026-04-29T13:53:12+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:f5441d9faa870474bae071120b6eb81f2c8a9b520896ef52ea46702979d63414
+content_hash: sha256:19ad2da91c416782d6217d81930fb1c10e0b71c956251f11b267fb2c903a9d9b
 ---
 
 路由容器组件，提供路由跳转能力。
@@ -254,4 +254,4 @@ PhonePC/2in1TabletTVWearable
 12. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/erwSL0_qRNaxFGn0imqQtg/zh-cn_image_0000002583440211.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000250Z&HW-CC-Expire=86400&HW-CC-Sign=B5A1E753984AD5709EB63F70B55559BE3757D4C6741CDF2A1A87125C02019EB8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/xzecYjGGQO215G_TWP_JhA/zh-cn_image_0000002558766692.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055311Z&HW-CC-Expire=86400&HW-CC-Sign=BCCF4F9BD72E554796AEDF2972274123B1513106D55EB04321FD302E41B6D6FA)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/dataaugme
 title: rag（检索增强生成）
 breadcrumb: API参考 > 应用框架 > Data Augmentation Kit（数据增强服务） > ArkTS API > rag（检索增强生成）
 category: harmonyos-references
-scraped_at: 2026-04-28T08:05:56+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:f793bf093d2ef2a13529a34311e6e24087ffb59fd5f246a665ab59cfd5a6be63
+scraped_at: 2026-04-29T13:56:26+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:76c7e932768589ef49d6342c8c5835dbdc5d6c9e13944cc338e111772d3d92ee
 ---
 
 本模块提供创建和关闭会话（[RagSession](dataaugmentation-rag-api.md#ragsession)）、流式请求大语言模型（[ChatLLM](dataaugmentation-rag-api.md#chatllm)）以及流式问答（[streamRun](dataaugmentation-rag-api.md#streamrun)）的能力。
@@ -72,7 +72,7 @@ PC/2in1
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| chatId | number | 否 | 否 | 表示大模型的请求ID。 |
+| chatId | number | 否 | 否 | 表示大模型的请求ID。取值范围：[0, 2147483647]。 |
 | status | [LLMRequestStatus](dataaugmentation-rag-api.md#llmrequeststatus) | 否 | 否 | 表示[streamChat](dataaugmentation-rag-api.md#streamchat)请求的状态。 |
 
 ## ChatLLM
@@ -173,7 +173,7 @@ abstract cancel(chatId: number): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| chatId | number | 是 | 需要被取消的请求LLM的ID。与[streamChat](dataaugmentation-rag-api.md#streamchat)返回值[LLMRequestInfo](dataaugmentation-rag-api.md#llmrequestinfo)中填入的chatId保持一致。 |
+| chatId | number | 是 | 需要被取消的请求LLM的ID。与[streamChat](dataaugmentation-rag-api.md#streamchat)返回值[LLMRequestInfo](dataaugmentation-rag-api.md#llmrequestinfo)中填入的chatId保持一致。取值范围：[0, 2147483647]。 |
 
 **示例：**
 
@@ -324,7 +324,7 @@ PC/2in1
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| runId | number | 否 | 否 | 会话内特定流式问答的唯一标识符。 |
+| runId | number | 否 | 否 | 会话内特定流式问答的唯一标识符。取值范围：[0, 2147483647]。 |
 | score | number | 否 | 否 | 用户对返回答案的评分。取值范围：[1, 5]。 |
 | source | Record<[StreamType](dataaugmentation-rag-api.md#streamtype), [Answer](dataaugmentation-rag-api.md#answer)> | 否 | 是 | 用户采用的答案信息。 |
 | comment | string | 否 | 是 | 用户反馈的文本信息。长度上限为1000字节。 |
@@ -361,7 +361,7 @@ streamRun(question: string, config: RunConfig, callback: AsyncCallback<Stream>):
 | --- | --- | --- | --- |
 | question | string | 是 | 表示本次提出的问题。长度上限为1000字节。 |
 | config | [RunConfig](dataaugmentation-rag-api.md#runconfig) | 是 | 表示本次提问的配置。 |
-| callback | AsyncCallback<[Stream](dataaugmentation-rag-api.md#stream)> | 是 | 表示用于接受回答的回调。 |
+| callback | AsyncCallback<[Stream](dataaugmentation-rag-api.md#stream)> | 是 | 回调函数。当流式问答成功，err取值为BusinessError，data为获取到的数据內容；否则为错误对象。 |
 
 **返回值：**
 
@@ -401,10 +401,10 @@ streamRun(question: string, config: RunConfig, callback: AsyncCallback<Stream>):
 1. import { hilog } from '@kit.PerformanceAnalysisKit';
 2. import { BusinessError } from '@kit.BasicServicesKit';
 3. import { rag } from '@kit.DataAugmentationKit';
-4. import common from '@ohos.app.ability.common';
+4. import { common } from '@kit.AbilityKit';
 
 6. let context = AppStorage.get<common.UIAbilityContext>("Context") as common.UIAbilityContext;
-7. let session: rag.RagSession | null;
+7. let session: rag.RagSession | null; // 需要先使用createRagSession接口创建session
 8. let runConfig: rag.RunConfig = {
 9. answerTypes: [ rag.StreamType.THOUGHT, rag.StreamType.REFERENCE, rag.StreamType.ANSWER ]
 10. };
@@ -471,7 +471,7 @@ cancel(runId: number): Promise<void>
 2. import { BusinessError } from '@kit.BasicServicesKit';
 3. import { rag } from '@kit.DataAugmentationKit';
 
-5. let session: rag.RagSession | null;
+5. let session: rag.RagSession | null; // 需要先使用createRagSession接口创建session
 
 7. if (session != null) {
 8. let runId: number = 0;  // 请开发者填入streamRun实际返回值
@@ -516,9 +516,9 @@ close(): Promise<void>
 ```
 1. import { rag } from '@kit.DataAugmentationKit';
 
-3. let session: rag.RagSession | null;
+3. let session: rag.RagSession | null; // 需要先使用createRagSession接口创建session
 
-5. functi onWindowStageDestroy(): void {
+5. function WindowStageDestroy(): void {
 6. // Main window is destroyed, release UI related resources
 7. hilog.info(0, 'testTag', '%{public}s', 'Ability onWindowStageDestroy');
 
@@ -574,7 +574,7 @@ createRagSession(context: common.Context, config: Config): Promise<RagSession>
 5. // MyChatLlm对应文件，是自定义实现的rag.ChatLLM类MyChatLLM所在的文件，具体实现见ChatLLM章节示例
 6. import MyChatLLM from './MyChatLlm';
 
-8. let session: rag.RagSession | null;
+8. let session: rag.RagSession | null = null;
 
 10. export default class EntryAbility extends UIAbility {
 11. onWindowStageCreate(windowStage: window.WindowStage): void {
@@ -657,57 +657,61 @@ feedback(context: common.Context, feedbackInfo: FeedbackInfo): Promise<void>
 ```
 1. import { rag, retrieval } from '@kit.DataAugmentationKit';
 2. import { relationalStore } from '@kit.ArkData';
-3. import common from '@ohos.app.ability.common';
+3. import { common } from '@kit.AbilityKit';
 
 5. let context = AppStorage.get<common.UIAbilityContext>("Context") as common.UIAbilityContext;
 
 7. async function feedback() {
-8. let valueTypeA: relationalStore.ValueType = 1
-9. let valueTypeRecord: Record<string, relationalStore.ValueType> = {
-10. "a": valueTypeA,
-11. "b": valueTypeA,
-12. }
-13. let recallScoreA: retrieval.RecallScore = {
-14. score: 0,
-15. isReverseQuery: false
-16. }
-17. let recallScoreRecord: Record<string, retrieval.RecallScore> = {
-18. "a": recallScoreA,
-19. "b": recallScoreA,
-20. "c": recallScoreA
-21. }
+8. // 定义ValueType类型的变量
+9. let valueTypeA: relationalStore.ValueType = 1
+10. let valueTypeRecord: Record<string, relationalStore.ValueType> = {
+11. "a": valueTypeA,
+12. "b": valueTypeA,
+13. }
+14. // 定义召回分数
+15. let recallScoreA: retrieval.RecallScore = {
+16. score: 0,
+17. isReverseQuery: false
+18. }
+19. let recallScoreRecord: Record<string, retrieval.RecallScore> = {
+20. "a": recallScoreA,
+21. "b": recallScoreA,
+22. "c": recallScoreA
+23. }
 
-23. let channelTypeRecord: Record<number, Record<string, retrieval.RecallScore>> = {
-24. 0: recallScoreRecord,
-25. 1: recallScoreRecord
-26. }
-
-28. let itemInfo: retrieval.ItemInfo = {
-29. primaryKey: '',
-30. columns: valueTypeRecord,
-31. score: 0,
-32. recallScores: channelTypeRecord,
-33. features: {
-34. "111": 1,
-35. "222": 2
-36. },
-37. similarityLevel: retrieval.SimilarityLevel.LOW
-38. }
-39. let answerB: rag.Answer = {
-40. chunk: '111',
-41. data: [itemInfo]
-42. };
-43. let sources: Record<number, rag.Answer> = {
-44. 0: answerB,
-45. 1: answerB,
-46. 2: answerB,
-47. }
-48. let feedbackInfo: rag.FeedbackInfo = {
-49. runId: 444,
-50. score: 5,
-51. comment: "111222333",
-52. source: sources
-53. }
-54. await rag.feedback(context, feedbackInfo);
-55. }
+25. let channelTypeRecord: Record<number, Record<string, retrieval.RecallScore>> = {
+26. 0: recallScoreRecord,
+27. 1: recallScoreRecord
+28. }
+29. // 定义检索项信息
+30. let itemInfo: retrieval.ItemInfo = {
+31. primaryKey: '',
+32. columns: valueTypeRecord,
+33. score: 0,
+34. recallScores: channelTypeRecord,
+35. features: {
+36. "111": 1,
+37. "222": 2
+38. },
+39. similarityLevel: retrieval.SimilarityLevel.LOW
+40. }
+41. // 定义答案信息
+42. let answerB: rag.Answer = {
+43. chunk: '111',
+44. data: [itemInfo]
+45. };
+46. // 定义来源信息Record，key为StreamType枚举值
+47. let sources: Record<number, rag.Answer> = {
+48. 0: answerB,
+49. 1: answerB,
+50. 2: answerB,
+51. }
+52. let feedbackInfo: rag.FeedbackInfo = {
+53. runId: 444,
+54. score: 5,
+55. comment: "111222333",
+56. source: sources
+57. }
+58. rag.feedback(context, feedbackInfo);
+59. }
 ```

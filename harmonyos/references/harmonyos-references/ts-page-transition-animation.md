@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-page-t
 title: 页面间转场 (pageTransition)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 动画 > 页面间转场 (pageTransition)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:02:18+08:00
+scraped_at: 2026-04-29T13:52:43+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:6389f9543592a5e30f1ae61ebec88f3dae9038cc0bcbb29f21d952f1effe0e2b
+content_hash: sha256:460f3d3e2700a61bc987d2407b6ac6e77ec7e68be85308480d628e5607c17fd4
 ---
 
 当路由([router](js-apis-router.md))进行切换时，可以通过在[pageTransition](ts-custom-component-lifecycle.md#pagetransition9)函数中自定义页面入场和页面退场的转场动效。详细指导请参考[页面转场动画](../harmonyos-guides/arkts-page-transition-animation.md)。
@@ -389,7 +389,7 @@ PhonePC/2in1TabletTVWearable
 38. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/brXyGOhdSq-g0txT68CeWA/zh-cn_image_0000002583480025.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000217Z&HW-CC-Expire=86400&HW-CC-Sign=B32D2B4DCB67ACE036C25CA115A554CD354B5F6AB5129F0F93E2CA674E5F5011)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/ErXeeD7MTiCqMHyHb5qNzg/zh-cn_image_0000002558606890.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055241Z&HW-CC-Expire=86400&HW-CC-Sign=AD7EACFA38883BB697B42BE79D8662777B90EA79DBD6A7747F531D5DA83C5FCB)
 
 自定义方式2：配置了当前页面的入场动画为从左侧滑入，退场为平移加透明度变化。
 
@@ -449,7 +449,7 @@ PhonePC/2in1TabletTVWearable
 25. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/eZDy9mqRRwSV-FCzpUY9FQ/zh-cn_image_0000002552800376.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000217Z&HW-CC-Expire=86400&HW-CC-Sign=DA0F3FE017F7C9FFA3CF18AF3C330D3EDE05E47237A600C63FB0F18B1DF96D8B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/QqMjtnOAQJK6acvklGi2PA/zh-cn_image_0000002589326417.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055241Z&HW-CC-Expire=86400&HW-CC-Sign=64E6CF00EB6A8713562AC5F47EA19F46E5B3CD930FF14A20C04F54939C899DEC)
 
 ### 示例2（设置退入场平移效果）
 
@@ -535,7 +535,7 @@ PhonePC/2in1TabletTVWearable
 36. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/HUzmQEN3SNGlLXH_aw0r2w/zh-cn_image_0000002583440071.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000217Z&HW-CC-Expire=86400&HW-CC-Sign=BD88DBC8E420B1193BE1B62AF94C97F7F78B50DCE21ECFEF08660CD545203E4B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/xNsrdz2XSqGMLnMrI-cUUw/zh-cn_image_0000002589246359.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055241Z&HW-CC-Expire=86400&HW-CC-Sign=386C00D7B17BBCEA9621A6B1336FF6EA51E7B5F95CDFA2E8B4A51E2775BC0CFE)
 
 自定义方式2：使用系统默认的退入场效果，将系统语言排版模式改为RTL。
 
@@ -595,4 +595,4 @@ PhonePC/2in1TabletTVWearable
 25. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/VTJ1N20QSYWxi87ktIIqIg/zh-cn_image_0000002552960026.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000217Z&HW-CC-Expire=86400&HW-CC-Sign=E09168687885B8623E46624A637470E4A3EAB57DC6946181AEEBF7DC9EC1CFD9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/HP7i2al0QGuaEm9eyvBjIw/zh-cn_image_0000002558766552.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055241Z&HW-CC-Expire=86400&HW-CC-Sign=ACF7F4A2D6A37143ADF9E32B8B9CA3E29CCAAF05EB677B5DBB96E64D79B8C54C)

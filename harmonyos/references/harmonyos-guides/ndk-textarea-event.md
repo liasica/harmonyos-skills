@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ndk-textarea-
 title: 监听输入框事件
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (基于NDK构建UI) > 使用文本 > 监听输入框事件
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:40:16+08:00
+scraped_at: 2026-04-29T13:28:33+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:3050df3ec8958a3deaafa572d2065222823376cb6feb93ec93476f59a49a2c5c
+content_hash: sha256:29f92dadc430cd49151f2c77796835dce8de29ea1ad4c97d4c5e1b8fdd4119a0
 ---
 
 输入框包含多种交互行为，开发者可注册事件监听并获取状态。
@@ -170,4 +170,4 @@ content_hash: sha256:3050df3ec8958a3deaafa572d2065222823376cb6feb93ec93476f59a49
 
   [manager.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextAreaEventNDK/entry/src/main/cpp/manager.cpp#L15-L115)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/WoLrj5XWScqvBYPiVnKxCQ/zh-cn_image_0000002552798418.gif?HW-CC-KV=V1&HW-CC-Date=20260427T234015Z&HW-CC-Expire=86400&HW-CC-Sign=EE8ADFD9B76B8F789DE14A71321181144CC39364CB679AEF54DFD7069BAE5948)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/95RZXnQ2SM-mf1xz72mudw/zh-cn_image_0000002558764558.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052832Z&HW-CC-Expire=86400&HW-CC-Sign=F738A74D970CB08314E5307B9B27022027BAD8AA91D802F9505388DC2206D058)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/multi-video-app
 title: 多设备长视频界面
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 > 多设备界面开发案例 > 多设备长视频界面
 category: best-practices
-scraped_at: 2026-04-28T08:21:13+08:00
+scraped_at: 2026-04-29T14:12:19+08:00
 doc_updated_at: 2026-04-27
-content_hash: sha256:7274dcf66ee0711c389033402da4540db39f54e08f602e1afd4d0bed2a3e3d8e
+content_hash: sha256:562b384eff3e3cb4ee8c0b11b6d9814b02743a0f81c56d64650d7af0c4bb702b
 ---
 
 ## 概述
@@ -30,7 +30,7 @@ content_hash: sha256:7274dcf66ee0711c389033402da4540db39f54e08f602e1afd4d0bed2a3
 
 长视频应用的UX设计可参考影音娱乐类多设备响应式设计指南的[长视频](../design-guides/responsive-design-examples1-0000001957369849.md#section10309114311327)章节，设计参考图如下所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/KaiVFkJZSuy79MjYOYiWwA/zh-cn_image_0000002586178755.png?HW-CC-KV=V1&HW-CC-Date=20260428T002107Z&HW-CC-Expire=86400&HW-CC-Sign=BCD588A20688C84B126690984281F2DACD7D267D2ABCAE0B798BB9F5CA076DAA "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/KaiVFkJZSuy79MjYOYiWwA/zh-cn_image_0000002586178755.png?HW-CC-KV=V1&HW-CC-Date=20260429T061208Z&HW-CC-Expire=86400&HW-CC-Sign=C69D68C9E37EEEC1078BA71D87E27083234E2E18A90B5743EC140ECE6AE13564 "点击放大")
 
 ## 工程管理
 
@@ -277,7 +277,7 @@ content_hash: sha256:7274dcf66ee0711c389033402da4540db39f54e08f602e1afd4d0bed2a3
 
   3. 悬停态页面布局：视频移至屏幕上半屏显示。屏幕中间设置为折叠屏折痕避让区。其他可操作组件，堆叠到屏幕下半屏。效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/X5Aekg3HQBaVYBgvHFM-Yg/zh-cn_image_0000002555778842.png?HW-CC-KV=V1&HW-CC-Date=20260428T002107Z&HW-CC-Expire=86400&HW-CC-Sign=1E4D19E389CAD5B5D9A0A16B5C714A5BFBF039A3B0B476772F8913C86D67EBFB "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/X5Aekg3HQBaVYBgvHFM-Yg/zh-cn_image_0000002555778842.png?HW-CC-KV=V1&HW-CC-Date=20260429T061208Z&HW-CC-Expire=86400&HW-CC-Sign=C2BF6B31463B8D5EAC6554874CABAC234EBE3517DAC78A059758D8D211AC54AC "点击放大")
 
 说明
 
@@ -301,7 +301,7 @@ content_hash: sha256:7274dcf66ee0711c389033402da4540db39f54e08f602e1afd4d0bed2a3
 
 长视频应用首页主要推荐精选视频，满足用户观看需求。根据功能设计，将应用首页相关内容划分为7个区域，效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/OQqRGQKcQpqIjbVaJqav4w/zh-cn_image_0000002555619216.png?HW-CC-KV=V1&HW-CC-Date=20260428T002107Z&HW-CC-Expire=86400&HW-CC-Sign=A123F46D29D9503D2F7FAE09271BDC09A234A7038E61C1336EE0AD33B57E50B1 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/OQqRGQKcQpqIjbVaJqav4w/zh-cn_image_0000002555619216.png?HW-CC-KV=V1&HW-CC-Date=20260429T061208Z&HW-CC-Expire=86400&HW-CC-Sign=ED975BEF513B50FF68F4D03247AC6290B9D786D61711D4B9E361639DC5CD5534 "点击放大")
 
 **界面开发**
 

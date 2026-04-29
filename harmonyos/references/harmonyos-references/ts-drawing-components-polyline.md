@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-drawin
 title: Polyline
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 图形绘制 > Polyline
 category: harmonyos-references
-scraped_at: 2026-04-28T08:02:12+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:e4388ff865cb993f29fa0cc1932fe4e8b687a23110ec8e243cf0ae1d705861aa
+scraped_at: 2026-04-29T13:52:36+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:977133a40f0431548424e570e41dd8c1e655774a912da1839fd3afb8f53a98f3
 ---
 
 折线绘制组件。
@@ -27,6 +27,8 @@ PhonePC/2in1TabletTVWearable
 PhonePC/2in1TabletTVWearable
 
 Polyline(options?: PolylineOptions)
+
+用于绘制折线的构造函数。
 
 **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
 
@@ -343,7 +345,7 @@ PhonePC/2in1TabletTVWearable
 27. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/M1KYhC6uS42iOhIS-4PrBQ/zh-cn_image_0000002552800360.png?HW-CC-KV=V1&HW-CC-Date=20260428T000209Z&HW-CC-Expire=86400&HW-CC-Sign=72A0883C5C3CE70FBBA61962AA0FC45FD429F9F180327AFCDA524FD9940C5940)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/y5KxwYPfQNOIPpRqZuBATg/zh-cn_image_0000002589326401.png?HW-CC-KV=V1&HW-CC-Date=20260429T055235Z&HW-CC-Expire=86400&HW-CC-Sign=14706DD9335F83725DED8300A2309061570A5B3F143243C770DC6C52BD3A669D)
 
 ### 示例2（宽和高使用不同参数类型绘制折线）
 
@@ -377,7 +379,7 @@ width、height属性分别使用不同的长度类型绘制图形。
 25. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/Olug72yJSB27AqZjlpOW9Q/zh-cn_image_0000002583440055.png?HW-CC-KV=V1&HW-CC-Date=20260428T000209Z&HW-CC-Expire=86400&HW-CC-Sign=3B05BF135A498A931687000810383756C7B21763D833538276FF120B78DCBC54)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/fcN83SYIQeG9ZtaBtdNlNw/zh-cn_image_0000002589246343.png?HW-CC-KV=V1&HW-CC-Date=20260429T055235Z&HW-CC-Expire=86400&HW-CC-Sign=E21377C1DFF6F1AF5B5612019DAEA617B6754BFA2E4286736D2B06156A600BD5)
 
 ### 示例3（使用attributeModifier动态设置Polyline组件的属性）
 
@@ -420,4 +422,4 @@ width、height属性分别使用不同的长度类型绘制图形。
 34. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/JmQCzy0yTPet0k7K3XZV4w/zh-cn_image_0000002552960010.png?HW-CC-KV=V1&HW-CC-Date=20260428T000209Z&HW-CC-Expire=86400&HW-CC-Sign=7C5446D3B3C75B0B9D2496BBAA2A4EF61B4DC4EE9E32AD39B5FE72F86A54AE10)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/g7uOBgU6QeCj2IgjSAiL8Q/zh-cn_image_0000002558766536.png?HW-CC-KV=V1&HW-CC-Date=20260429T055235Z&HW-CC-Expire=86400&HW-CC-Sign=F16A5C5254AD0559BC2953BFE4FEF5C2BB4F0C35584F6D4959FDE26BAF72B52B)

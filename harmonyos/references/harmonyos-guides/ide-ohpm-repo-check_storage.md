@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-repo
 title: ohpm-repo check_storage
 breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 相关命令 > ohpm-repo check_storage
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:54:43+08:00
+scraped_at: 2026-04-29T13:44:41+08:00
 doc_updated_at: 2026-01-15
-content_hash: sha256:b1065b4c70e896aacc6df795ac438120deb126365edb327438b7d0b46630be48
+content_hash: sha256:de512477ddc8c3cd42b3f0831d97a68de1d69455ba193504ba2f3b9a1b0fe788
 ---
 
 检查sftp中存储包的完整性。
@@ -59,4 +59,4 @@ content_hash: sha256:b1065b4c70e896aacc6df795ac438120deb126365edb327438b7d0b4663
 
 结果示例：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/_Ed5PKtYTNqjZehEqTEb5Q/zh-cn_image_0000002530911340.png?HW-CC-KV=V1&HW-CC-Date=20260427T235442Z&HW-CC-Expire=86400&HW-CC-Sign=FE7B4C651064980A4E85F6DF622AC9E434C7C2526C31CAB90CC6B1D6D30DCD99 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/azinPanJTmyGGrMRJ_Qumg/zh-cn_image_0000002530911340.png?HW-CC-KV=V1&HW-CC-Date=20260429T054440Z&HW-CC-Expire=86400&HW-CC-Sign=C534730C95B09CC77A5C19CFABA2D0F37DA96F5253A73BE33DBC023A1AC782D9 "点击放大")

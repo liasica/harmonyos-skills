@@ -1,10 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/obtain-enrolled-state-capabilities
 title: 查询用户注册凭据的状态
+breadcrumb: 指南 > 系统 > 安全 > User Authentication Kit（用户认证服务） > 用户身份认证开发指导 > 查询用户注册凭据的状态
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:43:38+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:a246ccdaabffbd8d110371e0f0cd8d1d93b95dfbf427c2b35d8a347fad8caa94
+scraped_at: 2026-04-29T13:32:25+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:a98f9202a98db7701343cd814bedef3ccc539e32d432c67eb34366b55758e452
 ---
 
 调用者需感知用户注册凭据（人脸、指纹、口令）的变化，可使用该接口查询当前用户注册凭据的状态。
@@ -28,11 +29,11 @@ content_hash: sha256:a246ccdaabffbd8d110371e0f0cd8d1d93b95dfbf427c2b35d8a347fad8
 1. obtainingEnrolledCredentialInformation() {
 2. try {
 3. let enrolledState = userAuth.getEnrolledState(userAuth.UserAuthType.FACE);
-4. Logger.info('get current enrolled state successfully');
+4. Logger.info('get current enrolled state successfully.');
 5. return enrolledState.credentialDigest;
 6. } catch (error) {
 7. const err: BusinessError = error as BusinessError;
-8. Logger.error(`get current enrolled state failed, Code is ${err?.code}, message is ${err?.message}`);
+8. Logger.error(`get current enrolled state failed, code is ${err?.code}, message is ${err?.message}`);
 9. return false;
 10. }
 11. }

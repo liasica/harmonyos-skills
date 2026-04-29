@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: 编译报错“JS heap out of memory”
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 编译报错“JS heap out of memory”
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:29:07+08:00
+scraped_at: 2026-04-29T14:20:20+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:a8eae314176be3550f283af3e4e01bf9d9c16031701785eb0c3fd3cfd8d99707
+content_hash: sha256:d7ab224987e012d59ab47372e059117e7b9cba6198712ad33e6eb001da7d3cc9
 ---
 
 **问题现象**
 
 编译构建时，出现报错“JS heap out of memory”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/ZzyVZI7dTEmDInUMJ4mA2Q/zh-cn_image_0000002194158628.png?HW-CC-KV=V1&HW-CC-Date=20260428T002906Z&HW-CC-Expire=86400&HW-CC-Sign=F707A769748ADED24A411F32E109D6EC04645BB45FF885763216B38ED107C83C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/ZzyVZI7dTEmDInUMJ4mA2Q/zh-cn_image_0000002194158628.png?HW-CC-KV=V1&HW-CC-Date=20260429T062018Z&HW-CC-Expire=86400&HW-CC-Sign=AA1BD2BF5D2708D925CE7A6FE161FBD115B55983C158D512208AA064DD78F18E)
 
 **解决措施**
 
@@ -20,6 +20,6 @@ content_hash: sha256:a8eae314176be3550f283af3e4e01bf9d9c16031701785eb0c3fd3cfd8d
 
 勾选 Enable the Daemon for tasks：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/ifd8oN51Sbio3aemIHKfTw/zh-cn_image_0000002194318244.png?HW-CC-KV=V1&HW-CC-Date=20260428T002906Z&HW-CC-Expire=86400&HW-CC-Sign=C7ED07C156283D7943171B4DEAFD9E3801681D753988ED0652AD25898FF15D34)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/ifd8oN51Sbio3aemIHKfTw/zh-cn_image_0000002194318244.png?HW-CC-KV=V1&HW-CC-Date=20260429T062018Z&HW-CC-Expire=86400&HW-CC-Sign=5257776D1DBCEB0B9B364490C21E4F25E87AA6740CDBEAABB6E34C7CBC21BC02)
 
 在hvigor-config.json5中修改maxOldSpaceSize字段，根据工程大小适当增大，例如设置为 8192。

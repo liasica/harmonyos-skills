@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cloudfoundati
 title: 开通云数据库服务
 breadcrumb: 指南 > 应用服务 > Cloud Foundation Kit（云开发服务） > 开发准备 > 开通云数据库服务
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:48:37+08:00
+scraped_at: 2026-04-29T13:37:40+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:6b6e51d0c852c4d9950c90546f69150c1c1637919787640f1c5112bf35aba737
+content_hash: sha256:7a610161d9d2fd5ccda72696f5837bdcaab1c72a3b48ff3381747e6f75d4a3e5
 ---
 
 首次使用云数据库服务前，需要先开通此服务。如果已经开通，可跳过本步骤。
@@ -14,7 +14,7 @@ content_hash: sha256:6b6e51d0c852c4d9950c90546f69150c1c1637919787640f1c5112bf35a
 2. 在项目列表中点击需要开通云数据库的项目。
 3. 在左侧导航栏选择“云开发（Serverless）> 云数据库”，进入云数据库页面，点击“立即开通”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/6TjRNhejQ_unV_ZlYmlJUg/zh-cn_image_0000002552958840.png?HW-CC-KV=V1&HW-CC-Date=20260427T234836Z&HW-CC-Expire=86400&HW-CC-Sign=883134F045D1F97D51CCBEA16C240DDE0E08A0A8125C42BBB3740F7EC7B62B6F)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/x1LnSmQjTai4BSQYl_stdg/zh-cn_image_0000002558765340.png?HW-CC-KV=V1&HW-CC-Date=20260429T053739Z&HW-CC-Expire=86400&HW-CC-Sign=5D77A198ECCA7BA14C48B501D4D4B4A89B2CF7982F05AB573700E012C21A1767)
 
    说明
 

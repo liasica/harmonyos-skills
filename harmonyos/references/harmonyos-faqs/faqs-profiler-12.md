@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-profiler-1
 title: DevEco Studio AppAnalyzer反复提示未配置python环境，无法进入卡片页
 breadcrumb: FAQ > DevEco Studio > 性能分析 > DevEco Studio AppAnalyzer反复提示未配置python环境，无法进入卡片页
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:30:15+08:00
+scraped_at: 2026-04-29T14:21:33+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:7a25c9c54a446a9aaa3d617e601617291ec73d90d05ee751fcc364353c750718
+content_hash: sha256:620249539a6422a0fd1de9b908210d57b16907ee9a700cb9cdc5a5a1190fe1a0
 ---
 
 **问题现象**
@@ -15,7 +15,7 @@ content_hash: sha256:7a25c9c54a446a9aaa3d617e601617291ec73d90d05ee751fcc364353c7
 1. 反复提示配置python环境，无法进入卡片页（6.0）。
 2. 场景化自动无法遍历（5.1）。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/qj9evKSpTlOWkNDW6HJDqw/zh-cn_image_0000002516304447.png?HW-CC-KV=V1&HW-CC-Date=20260428T003014Z&HW-CC-Expire=86400&HW-CC-Sign=DCA17FFD9F2BD8978DD5328C4ED437BF2C58C4EF184A0B1BE9D6D1273E750B08)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/qj9evKSpTlOWkNDW6HJDqw/zh-cn_image_0000002516304447.png?HW-CC-KV=V1&HW-CC-Date=20260429T062132Z&HW-CC-Expire=86400&HW-CC-Sign=E00C93BA844553A6AF3E642D0D9004F8A51A0562BD8D3088425468E84955D1F6)
 
 **可能原因**
 

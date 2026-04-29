@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pen-suite
 title: 接入手写套件
 breadcrumb: 指南 > 系统 > 硬件 > Pen Kit（手写笔服务） > 手写功能开发 > 接入手写套件
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:44:42+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:e95f225f2af0dda9615466bba91d3549b3d60322185788fc4dd58754b48550dd
+scraped_at: 2026-04-29T13:33:35+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:f8fec10eacb05db10a2a02a0028b1b7516bc958ec1fdc66d2900813463da096b
 ---
 
 接入手写套件后，可以在应用中创建手写功能界面。界面包括画布和工具栏两部分，画布部分支持手写笔和手指的书写效果绘制，工具栏部分提供多种笔刷和编辑工具，并支持对手写功能进行设置。接入手写套件后将自动开启一笔成形和报点预测功能，无需再单独接入。
@@ -20,7 +20,7 @@ content_hash: sha256:e95f225f2af0dda9615466bba91d3549b3d60322185788fc4dd58754b48
 
 在应用中创建手写功能界面，效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/CTd65G1VRt26cIXeQhj2DQ/zh-cn_image_0000002583478477.png?HW-CC-KV=V1&HW-CC-Date=20260427T234441Z&HW-CC-Expire=86400&HW-CC-Sign=6A28774207430E6767CF449ACCC63D10DB9F338A4594C8B561DD622EBDDEB820)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/vCA10_55RnG-u2zMrcQr4Q/zh-cn_image_0000002558605320.png?HW-CC-KV=V1&HW-CC-Date=20260429T053334Z&HW-CC-Expire=86400&HW-CC-Sign=C8C40057ED18C126911D1166A1C427DEB3712CF19A0896D7E39E1F8E9F707805)
 
 1. 可以加载和显示手写文件。
 2. 可以编辑和保存手写文件。
@@ -28,7 +28,7 @@ content_hash: sha256:e95f225f2af0dda9615466bba91d3549b3d60322185788fc4dd58754b48
 
 ## 开发流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/mMfY8JBWSSmPvGrvXzMGaA/zh-cn_image_0000002552798828.png?HW-CC-KV=V1&HW-CC-Date=20260427T234441Z&HW-CC-Expire=86400&HW-CC-Sign=A5DD10CD9E5A18064EEDD428E3B5CA6E3100CAF7C8E41BA704962A82A2ABBAC2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/4W-irWt4Qi2FCjuXpyTl8A/zh-cn_image_0000002589324845.png?HW-CC-KV=V1&HW-CC-Date=20260429T053334Z&HW-CC-Expire=86400&HW-CC-Sign=A3FEA32201A3A44E1066245646FCDC6A6EABAA2C3B62ADE3387565AB42C92DC5)
 
 ## 接口说明
 
@@ -62,7 +62,7 @@ content_hash: sha256:e95f225f2af0dda9615466bba91d3549b3d60322185788fc4dd58754b48
 2. 新建GlobalContext类。
 
    ```
-   1. import { common } from "@kit.AbilityKit";
+   1. import { common } from '@kit.AbilityKit';
 
    3. declare namespace globalThis {
    4. let _brushEngineContext: common.UIAbilityContext;
@@ -128,12 +128,12 @@ content_hash: sha256:e95f225f2af0dda9615466bba91d3549b3d60322185788fc4dd58754b48
    45. }
    46. })
    47. // 保存及获取缩略图。非必要组件，用户可自行调整或删除。
-   48. Button("save")
+   48. Button('save')
    49. .onClick(async () => {
    50. // 需根据应用存储规则，获取到手写文件保存的路径，此处仅为实例参考
    51. const path = this.getUIContext().getHostContext()?.filesDir + '/aa';
    52. await this.controller?.save(path).then().catch((error: Error) => {
-   53. console.error("save err：" + error.message);
+   53. console.error('save err: ' + error.message);
    54. })
    55. // 获取缩略图
    56. this.controller.getThumbnail(this.controller?.getContentRange())?.then((pixelMap: PixelMap) => {
@@ -151,7 +151,7 @@ content_hash: sha256:e95f225f2af0dda9615466bba91d3549b3d60322185788fc4dd58754b48
    68. }
    69. }).margin({ top: 100 }).width(220)
    70. // 当前画布的偏移量。
-   71. Text("onDidScroll：" + this.yOffset)
+   71. Text('onDidScroll:' + this.yOffset)
    72. .margin({ top: 150 }).width(220)
    73. }
    74. .width('100%')

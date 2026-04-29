@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-p
 title: oh_preferences.h
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > C API > 头文件 > oh_preferences.h
 category: harmonyos-references
-scraped_at: 2026-04-28T07:59:26+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:eea26dc3d6637f3268a287a64b76eab920aeeeececf143e495e840d66c6d2a80
+scraped_at: 2026-04-29T13:49:40+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:45925eba48526cd0e6fb8cf591476cae36b1dacc12c52e24c3a07ffb1b796e77
 ---
 
 ## 概述
@@ -430,6 +430,10 @@ PhonePC/2in1TabletTVWearable
 ```
 1. int OH_Preferences_IsStorageTypeSupported(Preferences_StorageType type, bool *isSupported)
 ```
+
+**描述**
+
+校验当前平台是否支持对应存储模式。
 
 **起始版本：** 18
 

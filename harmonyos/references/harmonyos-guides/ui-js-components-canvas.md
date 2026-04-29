@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-compone
 title: Canvas对象
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 常见组件开发指导 > Canvas开发指导 > Canvas对象
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:40:30+08:00
+scraped_at: 2026-04-29T13:28:51+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:03845e2e0ff5f1894005446760441b1dc2073ae3d45b5a4e110267e0db35019f
+content_hash: sha256:b640f6f183f46b31d4249f2992a957b85ca9737d0a6854466a792b6a679702ad
 ---
 
 Canvas组件提供画布，用于自定义绘制图形。具体用法请参考[CanvasRenderingContext2D对象](../harmonyos-references/js-components-canvas-canvasrenderingcontext2d.md)。
@@ -37,7 +37,7 @@ Canvas组件提供画布，用于自定义绘制图形。具体用法请参考[C
 13. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/nT-SxY4uQWqp5gC7GxbjKQ/zh-cn_image_0000002583478131.png?HW-CC-KV=V1&HW-CC-Date=20260427T234028Z&HW-CC-Expire=86400&HW-CC-Sign=59E42526B06B9E842F0657BD49E682263428D69776F69C0119495880D862D8DE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/LfARArMFQqK-EtFORxrTXg/zh-cn_image_0000002589244429.png?HW-CC-KV=V1&HW-CC-Date=20260429T052850Z&HW-CC-Expire=86400&HW-CC-Sign=DE3022FD9A3AAA3D8D5A667EFD3B2CB8FFF3EC0965CFADCB7815948BEE4FF10B)
 
 说明
 
@@ -74,7 +74,7 @@ Canvas组件设置宽（width）、高（height）、背景色（background-colo
 16. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/gtVJ7gaUSJqYEWjgmEtbIw/zh-cn_image_0000002552798482.png?HW-CC-KV=V1&HW-CC-Date=20260427T234028Z&HW-CC-Expire=86400&HW-CC-Sign=A2E56378578662FEA79586778DDEBBEC646EF1EA6BB6B44CA1DB06FE182486C5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/yiqBJtB6SC6Yoyu-iVv-Ug/zh-cn_image_0000002558764622.png?HW-CC-KV=V1&HW-CC-Date=20260429T052850Z&HW-CC-Expire=86400&HW-CC-Sign=D64BA846A9AA7A1037BE8BB1D976B830D11D8E9E1B8CDDD6D80A565700F44F0F)
 
 ## 添加事件
 
@@ -143,7 +143,7 @@ promptAction相关接口参考[弹窗](../harmonyos-references/js-apis-promptact
 19. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/63TUvLi7SkyVU41C1GkC1A/zh-cn_image_0000002583438177.gif?HW-CC-KV=V1&HW-CC-Date=20260427T234028Z&HW-CC-Expire=86400&HW-CC-Sign=30B21B7E2355D9E3475DAEE5D7EF3EBCD004D4E8BEF43A3A602C7AE6FB882177)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/v62KX6NBRFqya11VPgt2ww/zh-cn_image_0000002558604966.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052850Z&HW-CC-Expire=86400&HW-CC-Sign=F57D6AB1E9283BF5141F86E87F31418FC12500B379579FA01BDC2AE5A5ED9CB4)
 
 说明
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/arkts-api-c
 title: ArkTS API兼容性保护
 breadcrumb: 版本说明 > 应用兼容性说明 > 应用开发中的兼容性场景开发指导 > API兼容性保护 > ArkTS API兼容性保护
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:37:17+08:00
+scraped_at: 2026-04-29T13:25:20+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:ecc9fc779c6a573b38d559d2c5118eaa1e9cc9e9f403a890ee261c85b62aec8b
+content_hash: sha256:e113a6d551d1fa6e4f16f9e5b9a18a59ceeb1db4028771bb6cf06716296db0e3
 ---
 
 ## 简介
@@ -235,7 +235,7 @@ content_hash: sha256:ecc9fc779c6a573b38d559d2c5118eaa1e9cc9e9f403a890ee261c85b62
 
 编译器依据项目配置的compatibleSdkVersion进行校验，若该版本低于被注解API的引入版本，编译器将触发兼容性告警，提示低版本系统运行时可能因调用未存在的 API 导致崩溃。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/3DlA0YrwS2y5Y498xZr5yQ/zh-cn_image_0000002566867725.png?HW-CC-KV=V1&HW-CC-Date=20260427T233716Z&HW-CC-Expire=86400&HW-CC-Sign=0669E78BA36120B9C18B11A69217213C3DBB1A2FEF24F679B252D77E478798BC "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/3DlA0YrwS2y5Y498xZr5yQ/zh-cn_image_0000002566867725.png?HW-CC-KV=V1&HW-CC-Date=20260429T052519Z&HW-CC-Expire=86400&HW-CC-Sign=05EA1D19DD01AD95A2917A711B1A004B5391047D9242C96E9FB541D472613AD9 "点击放大")
 
 ### 正反示例
 

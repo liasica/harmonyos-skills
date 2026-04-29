@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-frame-cas
 title: 案例：使用Frame模板分析应用卡顿问题
 breadcrumb: 指南 > 优化应用性能 > 卡顿丢帧分析 > 案例：使用Frame模板分析应用卡顿问题
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:57:32+08:00
+scraped_at: 2026-04-29T13:47:32+08:00
 doc_updated_at: 2026-03-11
-content_hash: sha256:796d832680053257c492ec630346b3e86eb033580e4efa37511bb60212e853c0
+content_hash: sha256:5c825856c0c4af6505e031b182aa00e7dc784ce27d17425b2b0923d0a9a92f72
 ---
 
 本案例介绍如何判断应用存在卡顿帧，再通过调用栈和trace信息分析应用运行逻辑，找出应用卡顿的原因。
@@ -25,10 +25,10 @@ content_hash: sha256:796d832680053257c492ec630346b3e86eb033580e4efa37511bb60212e
 
 1. 框选Frame泳道，窗口下方的“Statistics”区域中会以进程维度对选定时间段内的Frame信息进行统计，当Jank Count大于0时，说明存在卡顿帧。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/Y-XSPLxKQjiC-h04kLelfA/zh-cn_image_0000002530913404.png?HW-CC-KV=V1&HW-CC-Date=20260427T235730Z&HW-CC-Expire=86400&HW-CC-Sign=8C9B1B12E07C6CC4A76C569B182A5187524C13C96E709DC8D1C3547635DAE98C "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/01tkrbg5TvCS6MWHo_rAJg/zh-cn_image_0000002530913404.png?HW-CC-KV=V1&HW-CC-Date=20260429T054730Z&HW-CC-Expire=86400&HW-CC-Sign=D25BFCB65FD2153C0A8AEB61AFEE5EAE266DCD2591ED3FC89979C763A9260E48 "点击放大")
 2. 找到“Statistics”页签中存在卡顿帧的进程，点击进程名称后方跳转按钮，跳转到“Frame List”页签。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/3IQj7prxT4SwcEJrwmScuw/zh-cn_image_0000002530753402.png?HW-CC-KV=V1&HW-CC-Date=20260427T235730Z&HW-CC-Expire=86400&HW-CC-Sign=5AC987663F56CFC21F0A1B40ED0F91AD7750FA98D5E969DC329860C704F5F541 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/f7VFTQgwTgiOOxC2CSrK5A/zh-cn_image_0000002530753402.png?HW-CC-KV=V1&HW-CC-Date=20260429T054730Z&HW-CC-Expire=86400&HW-CC-Sign=28D2A4D903FF7E2CF8D14C4D5C972382855AFD44645717A7E57E81EA66970FBA "点击放大")
 3. “Frame List”页签会展现该进程对应的Frame列表。在“Frame List”页签中对卡顿丢帧类型（Jank Type）进行升序排序，单击“Frame List”页签中任意一卡顿帧，直接跳转到该帧且泳道上该帧被反选。
 
    说明
@@ -36,14 +36,14 @@ content_hash: sha256:796d832680053257c492ec630346b3e86eb033580e4efa37511bb60212e
    * 在“RS Frame”和“App Frame”标签的泳道中，正常完成渲染的帧显示为绿色，出现卡顿的帧显示为红色。
    * AppDeadlineMissed：App侧的卡顿。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/EKbXgflOQzSP3YlZuOejjg/zh-cn_image_0000002530753404.png?HW-CC-KV=V1&HW-CC-Date=20260427T235730Z&HW-CC-Expire=86400&HW-CC-Sign=236C4436622C4BFCA41BE09A89C1C1E43997FA3FF386A9AB0908CFD543BA78D4 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/vqGyetyqToS8RnSKGzcOFA/zh-cn_image_0000002530753404.png?HW-CC-KV=V1&HW-CC-Date=20260429T054730Z&HW-CC-Expire=86400&HW-CC-Sign=A90F185CF3B97E4EB79ABC7801137D74FBDDE112E3CC9E39F2C8B541EE13B03E "点击放大")
 4. 点选该卡顿帧，窗口下方的“Details”区域中显示卡顿帧的关键信息。右侧应用进程前方跳转按钮可以跳转到应用进程Trace。
    * Expected Duration：一帧绘制的期望耗时。与fps的大小有关，如fps为120，对应的Vsync周期为8.3ms，即App侧/Render Service侧的帧耗时，一般需要在8.3ms以内。
    * Actual Duration：一帧绘制的实际耗时。
 
    如下图，可以看到该帧的期望耗时为8ms 330μs，实际耗时为44ms54μs，远远超过了期望耗时，因此被识别为卡顿帧。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/EGXfzIXqQkCzfZr5xKZh2w/zh-cn_image_0000002561753341.png?HW-CC-KV=V1&HW-CC-Date=20260427T235730Z&HW-CC-Expire=86400&HW-CC-Sign=DE7ECCE8301B3D68336ED796D028729A65AD04BD05F2532268919C110E647577 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/ov2ubt19T-OrUP1_S0-74A/zh-cn_image_0000002561753341.png?HW-CC-KV=V1&HW-CC-Date=20260429T054730Z&HW-CC-Expire=86400&HW-CC-Sign=9FD4BF8EAF57CB6400F7B8D89750A95E31814809DBF00A2E3EA8CC98598DC555 "点击放大")
 5. 框选该异常帧时间范围，结合ArkTS Callstack泳道、Callstack泳道和Trace等信息进一步分析异常点。
 
 ### 案例：分析应用卡顿原因
@@ -53,23 +53,23 @@ content_hash: sha256:796d832680053257c492ec630346b3e86eb033580e4efa37511bb60212e
 
    (program)代表程序执行进入纯Native代码阶段，该阶段无ArkTS代码执行，也无ArkTS调用Native或者Native调用ArkTS情况，一般很难通过这里分析出有效的信息，需要切换到Callstack泳道看具体的调用栈信息。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/Iq2_VxyvTZ6iNOj9PALODg/zh-cn_image_0000002530753408.png?HW-CC-KV=V1&HW-CC-Date=20260427T235730Z&HW-CC-Expire=86400&HW-CC-Sign=F3CEFF8222E195F1AC0BF53EE9D3AB2FA07CE4D99FF4F510F0241562D8948512 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/Drm4igZFSXScRe2TNoaKPA/zh-cn_image_0000002530753408.png?HW-CC-KV=V1&HW-CC-Date=20260429T054730Z&HW-CC-Expire=86400&HW-CC-Sign=A12EB3001A452410815BF14CC10A94A8EB3A6AA65DC01EF6744B5391779513EB "点击放大")
 3. 切换到Callstack泳道，查看Callstack泳道的主线程（线程号与进程号一致）子泳道，滑动观察下方Heaviest Stack区域“%”列中占比最大的函数调用栈，Category中亮色代表开发者调用栈，灰色代表系统调用栈，可以看出下图中耗时主要在系统侧的so，无法识别具体异常原因，接下来进一步分析应用进程Trace。
 
    说明
 
    也可通过底部的“Call Trees”选择框来隐藏系统调用栈，减少干扰信息。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/rX2_O23sTMG7zhY8Dav9iw/zh-cn_image_0000002561833327.png?HW-CC-KV=V1&HW-CC-Date=20260427T235730Z&HW-CC-Expire=86400&HW-CC-Sign=6BF89B21457AE10ED276A0F1EC7688C4038F292B7D13735229EC810E6BFCF262 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/g0G4jW48S_-hckmgvnu2pQ/zh-cn_image_0000002561833327.png?HW-CC-KV=V1&HW-CC-Date=20260429T054730Z&HW-CC-Expire=86400&HW-CC-Sign=CC4F032DA24B0B4305AF791943A5D408D6B1465F2E3DEF60BE3A88915FF60318 "点击放大")
 4. 切换到应用进程Process泳道，查看主线程（线程号与进程号一致）。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/3eZmkVTTRGOyWK_Lx1ngng/zh-cn_image_0000002530913408.png?HW-CC-KV=V1&HW-CC-Date=20260427T235730Z&HW-CC-Expire=86400&HW-CC-Sign=4D30CDDA0B6266E420BAAAC9268933042AE1504E90586484B2163129601F8E56 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/MfVcbsiZT1ObLLIsHEvBgA/zh-cn_image_0000002530913408.png?HW-CC-KV=V1&HW-CC-Date=20260429T054730Z&HW-CC-Expire=86400&HW-CC-Sign=8DA52E691AF434380778B27A3295B685B86CD3528E058C3E26CBAD9D6EAB0DE5 "点击放大")
 5. 窗口下方详情区可查看到Trace统计信息列表，逐层展开耗时最长的Trace，定位到主要耗时是在3次H:CreateImagePixelMap。接下来进一步分析这3次H:CreateImagePixelMap耗时的原因。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/TR_x_3IKQymX0vYDGhFzPQ/zh-cn_image_0000002561753345.png?HW-CC-KV=V1&HW-CC-Date=20260427T235730Z&HW-CC-Expire=86400&HW-CC-Sign=7750925F20ABBB151A5CE43BA1364D0CF0E963157BFFF7D175CF385EC11A7D61 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/B-IlGQL6T-WnYcaem0H_Mw/zh-cn_image_0000002561753345.png?HW-CC-KV=V1&HW-CC-Date=20260429T054730Z&HW-CC-Expire=86400&HW-CC-Sign=1AB92604A842A6465BDB872F558EBE29C4B1226DECE5A3D47D52293DF7BB7906 "点击放大")
 6. H:CreateImagePixelMap和图片加载相关，再结合业务代码查看，可以看到是因为同步加载网络图片，建议修改为异步加载。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/tgsrUyliTCad_eCDzPESwA/zh-cn_image_0000002561833331.png?HW-CC-KV=V1&HW-CC-Date=20260427T235730Z&HW-CC-Expire=86400&HW-CC-Sign=A03C205A87C09D5BE78B5CE9EB37CD743E31063449CC73F68B35F5F3A481E037 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/oIJjOfRtQYSMk4l-hotcVA/zh-cn_image_0000002561833331.png?HW-CC-KV=V1&HW-CC-Date=20260429T054730Z&HW-CC-Expire=86400&HW-CC-Sign=44948711DB9453C346E9C7F30011A70637040350E65DAF73B12E7AD9E40C09A9 "点击放大")
 
    说明
 

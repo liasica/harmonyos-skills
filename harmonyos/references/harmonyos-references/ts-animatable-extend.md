@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-animat
 title: 定义可动画属性 (@AnimatableExtend)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 自定义组件 > 组件扩展装饰器 > 定义可动画属性 (@AnimatableExtend)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:02:31+08:00
+scraped_at: 2026-04-29T13:52:56+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:11d078b462a9374ab3ddb1b4bd2ef95b9974a51f2a0dc2525ca4c3cf373f5c3b
+content_hash: sha256:1105ffa76e91ade0ff6c74be772302714136ee882d02160a589361a9972f0578
 ---
 
 @AnimatableExtend装饰器用于自定义可动画的属性方法，该装饰器内定义的函数在动画过程中会被逐帧调用，直到动画结束。该装饰器的常见用途有：
@@ -174,7 +174,7 @@ PhonePC/2in1TabletTVWearable
 23. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/KEWDGrc1Rxi81hEoGqESYA/zh-cn_image_0000002552800444.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000230Z&HW-CC-Expire=86400&HW-CC-Sign=686ACC1D34509EC84CE51904240A0CD2A5AC8A2C25026C16D56DB7436B9EE9A6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/U3bXTbBlQgylsjV0rBYAFQ/zh-cn_image_0000002589326485.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055254Z&HW-CC-Expire=86400&HW-CC-Sign=EB42A70B5B688A7F94082127CF584D731D7F642FB216E555F12EAEADB67F8D7D)
 
 ### 示例2（折线的动画效果）
 
@@ -301,4 +301,4 @@ PhonePC/2in1TabletTVWearable
 118. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/jlPa761oRGue-KDeYT-2vA/zh-cn_image_0000002583440139.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000230Z&HW-CC-Expire=86400&HW-CC-Sign=6D4B82A2D66C99D2416B8AB82A7F6E30F34680C70C4548A9DC83080726CF08AF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/NnfvSUkkR7GZTPfUUlbQ0w/zh-cn_image_0000002589246427.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055254Z&HW-CC-Expire=86400&HW-CC-Sign=78551A73CA78D2BD43AAAB4973B835096BB7A7DF5A20EC7C6A6486E6E17AA38F)

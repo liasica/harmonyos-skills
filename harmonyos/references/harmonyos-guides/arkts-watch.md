@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-watch
 title: @Watch装饰器：状态变量更改通知
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理（V1） > 管理组件拥有的状态 > @Watch装饰器：状态变量更改通知
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:39:05+08:00
+scraped_at: 2026-04-29T13:27:15+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:1654841265985a7420435dc9657912f5aeb09e0c5b55a065c38c8162cc160900
+content_hash: sha256:fcc82e56643ce2ab8d91347e7c1989cdcd4efcf8e1f1856b37e15d00ddc9abd8
 ---
 
 @Watch应用于对状态变量的监听。如果开发者需要关注某个状态变量的值是否改变，可以使用@Watch为状态变量设置回调函数。
@@ -220,7 +220,7 @@ content_hash: sha256:1654841265985a7420435dc9657912f5aeb09e0c5b55a065c38c8162cc1
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/LIAfxm4ORECUXrALjfZqVg/zh-cn_image_0000002552797960.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233904Z&HW-CC-Expire=86400&HW-CC-Sign=7DBAAECB26574A06813E769D924FD3D7D7839B9EFD6AE431463656FA56B1D906)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/XJdefpt9SMGoEOBvWSdy6A/zh-cn_image_0000002558764100.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052713Z&HW-CC-Expire=86400&HW-CC-Sign=661AC296A0EF4D4A79D0CF4A045B99CC39FC98F3208250291E6C0B985A0471D6)
 
 ### @Watch的触发时机
 

@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-app-debugg
 title: DevEco Studio安装HAP时报错“FileTransfer Failed: [Fail]Transfer Stop at:XXX, Reason: no space left on device”
 breadcrumb: FAQ > DevEco Studio > 应用调试 > DevEco Studio安装HAP时报错“FileTransfer Failed: [Fail]Transfer Stop at:XXX, Reason: no space left on device”
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:30:11+08:00
+scraped_at: 2026-04-29T14:21:27+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:cde051185bcc21b36693b37ef629997ef51380bfd8ba3897f239829fc59b8405
+content_hash: sha256:0a9990debe6c350d1443dc568ae0dbbe6fc1ab945e88ef58b20befcb3027f9c1
 ---
 
 **问题现象**
 
 DevEco Studio安装HAP时报错“FileTransfer Failed: [Fail]Transfer Stop at:XXX, Reason: no space left on device”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/TkJjr5zgQNCaXC9QVyMkPg/zh-cn_image_0000002356614812.png?HW-CC-KV=V1&HW-CC-Date=20260428T003009Z&HW-CC-Expire=86400&HW-CC-Sign=50807EF60B1C224BB7FCDAFE47F7EFEC192EACB86BA3DA4EDA659BED81163FE7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/TkJjr5zgQNCaXC9QVyMkPg/zh-cn_image_0000002356614812.png?HW-CC-KV=V1&HW-CC-Date=20260429T062126Z&HW-CC-Expire=86400&HW-CC-Sign=86A470679B0CA0E0DBAEA47F19CB2E70A1778877FA07AEBB97D074B7CA701105)
 
 **解决措施**
 

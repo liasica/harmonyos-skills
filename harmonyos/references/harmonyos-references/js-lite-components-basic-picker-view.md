@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-lite-c
 title: picker-view
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Lite） > 基础组件 > picker-view
 category: harmonyos-references
-scraped_at: 2026-04-28T08:03:29+08:00
+scraped_at: 2026-04-29T13:53:53+08:00
 doc_updated_at: 2026-04-02
-content_hash: sha256:a46b394e9b79d1fa676cd6f5365e89f14dd215a420da7136d43c0e0f5a49522a
+content_hash: sha256:49a8a7e655c1f71988a058cb5d25525e51c9ae02d9d3ef22d1622a6dc8f9e574
 ---
 
 嵌入页面的滑动选择器。
@@ -160,4 +160,4 @@ PhonePC/2in1TabletTVWearableLite Wearable
 27. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/aVqFUEmgS22ibtawGQ4aRg/zh-cn_image_0000002552800762.png?HW-CC-KV=V1&HW-CC-Date=20260428T000327Z&HW-CC-Expire=86400&HW-CC-Sign=E8E2A06FC351AF5CA1DA2B4D52AF51124A573BAC111062A90186E719FE211A98)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/95JFXngjR9yisqrC7o3yww/zh-cn_image_0000002589246745.png?HW-CC-KV=V1&HW-CC-Date=20260429T055351Z&HW-CC-Expire=86400&HW-CC-Sign=AD0FE355737DBB8215313AE9688D71F868135E9A555132FAC2B73133A7D7E7F0)

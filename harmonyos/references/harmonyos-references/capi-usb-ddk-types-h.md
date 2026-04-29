@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-usb-
 title: usb_ddk_types.h
 breadcrumb: API参考 > 系统 > 硬件 > Driver Development Kit（驱动开发服务） > C API > 头文件 > usb_ddk_types.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:10:43+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:e3ba2a0d484568e346148ead5e15350d4b989a91d21cff8a94d1f2a0ff99d04a
+scraped_at: 2026-04-29T14:01:24+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:9945fc3b3ea076fcb76ca6738af22641cfd014c71ccaa9266eab4eb1fad804fb
 ---
 
 ## 概述
@@ -44,8 +44,8 @@ PC/2in1
 | [UsbDdkInterface](capi-usbddk-usbddkinterface.md) | UsbDdkInterface | USB接口，是特定接口下备用设置的集合。 |
 | [UsbDdkConfigDescriptor](capi-usbddk-usbddkconfigdescriptor.md) | UsbDdkConfigDescriptor | 配置描述符。 |
 | [UsbRequestPipe](capi-usbddk-usbrequestpipe.md) | \_\_attribute\_\_((aligned(8))) UsbRequestPipe | 请求管道。 |
-| [UsbDeviceMemMap](capi-usbddk-usbdevicememmap.md) | UsbDeviceMemMap | 设备内存映射，通过OH\_Usb\_CreateDeviceMemMap创建设备内存映射，使用内存映射后的缓冲区，获得更好的性能。 |
-| [Usb\_DeviceArray](capi-usbddk-usb-devicearray.md) | Usb\_DeviceArray | 设备ID清单，用于存放OH\_Usb\_GetDevices接口获取到的设备ID列表和设备数量。 |
+| [UsbDeviceMemMap](capi-usbddk-usbdevicememmap.md) | UsbDeviceMemMap | 设备内存映射，通过[OH\_Usb\_CreateDeviceMemMap](capi-usb-ddk-api-h.md#oh_usb_createdevicememmap)创建设备内存映射，使用内存映射后的缓冲区，获得更好的性能。 |
+| [Usb\_DeviceArray](capi-usbddk-usb-devicearray.md) | Usb\_DeviceArray | 设备ID清单，用于存放[OH\_Usb\_GetDevices](capi-usb-ddk-api-h.md#oh_usb_getdevices)接口获取到的设备ID列表和设备数量。 |
 
 ### 枚举
 

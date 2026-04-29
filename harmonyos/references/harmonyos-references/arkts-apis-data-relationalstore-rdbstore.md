@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (RdbStore)
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > ArkTS API > @ohos.data.relationalStore (关系型数据库) > Interface (RdbStore)
 category: harmonyos-references
-scraped_at: 2026-04-28T07:59:15+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:3026a659a775eecbc20ad3b038ed3f8bdfc1835b5a27e12f92feae95d52a78af
+scraped_at: 2026-04-29T13:49:30+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:ee2ee3db540782f5cebff0638c4567a3ef392ad01fcfda02037a3c792018f466
 ---
 
 提供管理关系数据库（RDB）方法的接口。
@@ -2802,27 +2802,29 @@ remoteQuery(device: string, table: string, predicates: RdbPredicates, columns: A
 21. let predicates = new relationalStore.RdbPredicates('EMPLOYEE');
 22. predicates.greaterThan("id", 0);
 23. if (store != undefined && deviceId != undefined) {
-24. (store as relationalStore.RdbStore).remoteQuery(deviceId, "EMPLOYEE", predicates, ["ID", "NAME", "AGE", "SALARY", "CODES"]).then(async (resultSet: relationalStore.ResultSet) => {
-25. console.info(`ResultSet column names: ${resultSet.columnNames}, column count: ${resultSet.columnCount}`);
-26. // resultSet是一个数据集合的游标，默认指向第-1个记录，有效的数据从0开始。
-27. try {
-28. while (resultSet.goToNextRow()) {
-29. const id = resultSet.getLong(resultSet.getColumnIndex("ID"));
-30. const name = resultSet.getString(resultSet.getColumnIndex("NAME"));
-31. const age = resultSet.getLong(resultSet.getColumnIndex("AGE"));
-32. const salary = resultSet.getDouble(resultSet.getColumnIndex("SALARY"));
-33. console.info(`id=${id}, name=${name}, age=${age}, salary=${salary}`);
-34. }
-35. } catch (err) {
-36. console.error(`Query failed, code is ${err.code},message is ${err.message}`);
-37. } finally {
-38. // 释放数据集的内存，若不释放可能会引起fd泄露与内存泄露
-39. resultSet.close();
-40. }
-41. }).catch((err: BusinessError) => {
-42. console.error(`Failed to remoteQuery, code is ${err.code},message is ${err.message}`);
-43. });
+24. (store as relationalStore.RdbStore).remoteQuery(deviceId, "EMPLOYEE", predicates, ["ID", "NAME", "AGE", "SALARY", "CODES"], async (err, resultSet) => {
+25. if (err) {
+26. console.error(`Query failed, code is ${err.code},message is ${err.message}`);
+27. return;
+28. }
+29. console.info(`ResultSet column names: ${resultSet.columnNames}, column count: ${resultSet.columnCount}`);
+30. // resultSet是一个数据集合的游标，默认指向第-1个记录，有效的数据从0开始。
+31. try {
+32. while (resultSet.goToNextRow()) {
+33. const id = resultSet.getLong(resultSet.getColumnIndex("ID"));
+34. const name = resultSet.getString(resultSet.getColumnIndex("NAME"));
+35. const age = resultSet.getLong(resultSet.getColumnIndex("AGE"));
+36. const salary = resultSet.getDouble(resultSet.getColumnIndex("SALARY"));
+37. console.info(`id=${id}, name=${name}, age=${age}, salary=${salary}`);
+38. }
+39. } catch (err) {
+40. console.error(`Query failed, code is ${err.code},message is ${err.message}`);
+41. } finally {
+42. // 释放数据集的内存，若不释放可能会引起fd泄露与内存泄露
+43. resultSet.close();
 44. }
+45. });
+46. }
 ```
 
 ## remoteQuery
@@ -3537,7 +3539,7 @@ execute(sql: string, txId: number, args?: Array<ValueType>): Promise<ValueType>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<[ValueType](arkts-apis-data-relationalstore-t.md#valuetype)> | Promise对象，返回null。 |
+| Promise<[ValueType](arkts-apis-data-relationalstore-t.md#valuetype)> | Promise对象，返回sql执行后的结果。 |
 
 **错误码：**
 
@@ -5063,7 +5065,7 @@ PhonePC/2in1TabletTV
 
 cloudSync(mode: SyncMode, progress: Callback<ProgressDetails>, callback: AsyncCallback<void>): void
 
-手动执行对所有分布式表的端云同步，使用callback异步回调。使用该接口需要实现云服务功能。
+手动执行对所有分布式表的端云同步，使用callback异步回调。使用该接口需要实现[端云服务](js-apis-data-clouddata.md)功能。
 
 **系统能力：** SystemCapability.DistributedDataManager.CloudSync.Client
 
@@ -5107,7 +5109,7 @@ PhonePC/2in1TabletTV
 
 cloudSync(mode: SyncMode, progress: Callback<ProgressDetails>): Promise<void>
 
-手动执行对所有分布式表的端云同步，使用Promise异步回调。使用该接口需要实现云服务功能。
+手动执行对所有分布式表的端云同步，使用Promise异步回调。使用该接口需要实现[端云服务](js-apis-data-clouddata.md)功能。
 
 **系统能力：** SystemCapability.DistributedDataManager.CloudSync.Client
 
@@ -5156,7 +5158,7 @@ PhonePC/2in1TabletTV
 
 cloudSync(mode: SyncMode, tables: string[], progress: Callback<ProgressDetails>, callback: AsyncCallback<void>): void
 
-手动执行对指定表的端云同步，使用callback异步回调。使用该接口需要实现云服务功能。
+手动执行对指定表的端云同步，使用callback异步回调。使用该接口需要实现[端云服务](js-apis-data-clouddata.md)功能。
 
 **系统能力：** SystemCapability.DistributedDataManager.CloudSync.Client
 
@@ -5203,7 +5205,7 @@ PhonePC/2in1TabletTV
 
 cloudSync(mode: SyncMode, tables: string[], progress: Callback<ProgressDetails>): Promise<void>
 
-手动执行对指定表的端云同步，使用Promise异步回调。使用该接口需要实现云服务功能。
+手动执行对指定表的端云同步，使用Promise异步回调。使用该接口需要实现[端云服务](js-apis-data-clouddata.md)功能。
 
 **系统能力：** SystemCapability.DistributedDataManager.CloudSync.Client
 

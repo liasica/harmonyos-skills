@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: Image对象
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 画布组件 > Image对象
 category: harmonyos-references
-scraped_at: 2026-04-28T08:03:11+08:00
+scraped_at: 2026-04-29T13:53:30+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:1669e662a15e36d1675622c697868176a2353c02cd873589df44f2e7ba47b4d8
+content_hash: sha256:4f126bdb39dcbbee849c616d9a12ba6247e5f2fadb12643271b439fbaa3600ae
 ---
 
 说明
@@ -57,4 +57,4 @@ PhonePC/2in1TabletTVWearable
 17. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/iQLPHLQ-T8apYHk2GbiE-g/zh-cn_image_0000002583480231.png?HW-CC-KV=V1&HW-CC-Date=20260428T000310Z&HW-CC-Expire=86400&HW-CC-Sign=FB92A2701D5CC9A63F7147377CB219DA1F1BD45A33DC92FB0BDAAE919E38CB19)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/x-Fq1XwYRU2fqxjEkugRYQ/zh-cn_image_0000002589326623.png?HW-CC-KV=V1&HW-CC-Date=20260429T055329Z&HW-CC-Expire=86400&HW-CC-Sign=AD1D952D7406EB1C27E046171CF7CAC17AC99FB7530852F076D045B7A10AC895)

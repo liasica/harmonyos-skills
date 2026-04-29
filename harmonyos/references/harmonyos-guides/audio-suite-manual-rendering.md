@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-suite-m
 title: 离线编辑(C/C++)
 breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > 音频编创 > 离线编辑(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:45:39+08:00
+scraped_at: 2026-04-29T13:34:36+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:d72a7da53fbd82fee01ed3ccd8a5a5759aba4fe25965a81c8363873270a05ba9
+content_hash: sha256:3a9b43da175d47bea19b627f3ce268fa76f0acd798f5257e91a92cc7421a7768
 ---
 
 从API version 22开始，[OHAudioSuite](../harmonyos-references/capi-ohaudiosuite.md)给开发者提供音频离线编辑能力，允许在非实时播放场景下对音频数据进行处理，开发者可以组合多个音频节点实现复杂的音频处理流程。
@@ -49,7 +49,7 @@ content_hash: sha256:d72a7da53fbd82fee01ed3ccd8a5a5759aba4fe25965a81c8363873270a
 
 **图1**：基础离线编辑示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/cgbbGA7BTFa5yHCRU3M0Tg/zh-cn_image_0000002583478537.png?HW-CC-KV=V1&HW-CC-Date=20260427T234538Z&HW-CC-Expire=86400&HW-CC-Sign=7266CC07DB44B584EBCFFFC6D4F8B836EDC90FB7010B24AE406A9A3BCA4047D0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/AtoammMSScq9RnkNtrCxiA/zh-cn_image_0000002558605380.png?HW-CC-KV=V1&HW-CC-Date=20260429T053435Z&HW-CC-Expire=86400&HW-CC-Sign=C515B011A0E98802AD116389066D923D899886386CE26A1531AD9755B6F677DA)
 
 1. 创建引擎和管线。
 
@@ -207,7 +207,7 @@ content_hash: sha256:d72a7da53fbd82fee01ed3ccd8a5a5759aba4fe25965a81c8363873270a
 
 **图2**：音源分离编辑示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/xdXxS53NQnusjRh7u5Ywtg/zh-cn_image_0000002552798888.png?HW-CC-KV=V1&HW-CC-Date=20260427T234538Z&HW-CC-Expire=86400&HW-CC-Sign=49DAD30CA4D8F3D9D39B2A22619A836250AB0A0E734FBA6A70FE305A25F016C5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/CaDjEoYeRKeCPvHhUEw4ow/zh-cn_image_0000002589324907.png?HW-CC-KV=V1&HW-CC-Date=20260429T053435Z&HW-CC-Expire=86400&HW-CC-Sign=2ED54931A05D7EBE2DE334AC02FD84798E195E5E2919610C63F07E181107AC87)
 
 示例代码如下：
 
@@ -384,7 +384,7 @@ content_hash: sha256:d72a7da53fbd82fee01ed3ccd8a5a5759aba4fe25965a81c8363873270a
 
 **图3**：级联编辑示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/1tUejXEKQcWd-vivlUe-EA/zh-cn_image_0000002583438583.png?HW-CC-KV=V1&HW-CC-Date=20260427T234538Z&HW-CC-Expire=86400&HW-CC-Sign=AC9AE7A8ECBB04BC96A662CE4E9308DFF0FE4C30D0ED693FA532FCE91D5E83D6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/b0G_XkuaQgSFdIzQydV37A/zh-cn_image_0000002589244843.png?HW-CC-KV=V1&HW-CC-Date=20260429T053435Z&HW-CC-Expire=86400&HW-CC-Sign=CB89044001956678EBF2D8D42210E67A6DCB0A5927A50B5628F7F347DDF748F7)
 
 示例代码如下：
 

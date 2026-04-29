@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: grid-col
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 栅格组件 > grid-col
 category: harmonyos-references
-scraped_at: 2026-04-28T08:03:15+08:00
+scraped_at: 2026-04-29T13:53:36+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:4448dce21ee11c9312215b1ba28e8b5f039b0da26fe489bb780bec296828e6a5
+content_hash: sha256:6bdaa34c76882a2104eb86461c7e6f40b6798b8718981190c20127f95e7acf1c
 ---
 
 说明
@@ -131,4 +131,4 @@ PhonePC/2in1TabletTVWearable
 20. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/RSTiB2ztTV2B_pmKof7XZw/zh-cn_image_0000002583440285.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000314Z&HW-CC-Expire=86400&HW-CC-Sign=1B41292C7CF86596BD1C80371B96AB955ACB5046DD5A32EBAA717083FFA60E5F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/leYD0VDWQB28a0r4Rw6fSw/zh-cn_image_0000002558766766.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055334Z&HW-CC-Expire=86400&HW-CC-Sign=5054EFB21D032BBDAC2EEB828C21727EAC0A3050E6C50079A5C794A72712DEBA)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/screentimegua
 title: 取消用户授权
 breadcrumb: 指南 > 应用服务 > Screen Time Guard Kit（屏幕时间守护服务） > 用户授权管理 > 取消用户授权
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:50:52+08:00
+scraped_at: 2026-04-29T13:40:26+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:4c9ad27d121f9f8ce99ec803aa370edeb6a42fb0966937cff2949051ca5effde
+content_hash: sha256:7aa8ee1f0a18d8e677f5308142d69b4af47f7046878a523c7d3fe1418bad9ae9
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:4c9ad27d121f9f8ce99ec803aa370edeb6a42fb0966937cff2949051ca5
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/vN16Fc2KSKmqmEgVn10FjA/zh-cn_image_0000002583479165.png?HW-CC-KV=V1&HW-CC-Date=20260427T235051Z&HW-CC-Expire=86400&HW-CC-Sign=B332788BAC433C1BEAA9D13D73656EB2DA02BF43485EF136B322E0DAB4AE3D69)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/dtuDcQ1vRHSL0NH7BMZQ2A/zh-cn_image_0000002558765666.png?HW-CC-KV=V1&HW-CC-Date=20260429T054025Z&HW-CC-Expire=86400&HW-CC-Sign=C9BB464BD95E082691ABE6B8C21C7770DC47B277455D2DAD47849FC777A35EF7)
 
 流程说明：
 

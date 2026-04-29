@@ -3,21 +3,21 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/share-utd-lin
 title: 分享链接
 breadcrumb: 指南 > 应用服务 > Share Kit（分享服务） > 系统分享 > 常见分享场景 > 分享链接
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:51:02+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:91d954d3a6abce16f7bed96d1182094e955d85b0913beeb9b77fcb6371c91838
+scraped_at: 2026-04-29T13:40:36+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:78a3cbe1ae675a62458660644cc371ac50476171e8f96e8bd7f1d5c2ce21673c
 ---
 
 ## 分享App Linking直达应用
 
 使用App Linking分享应用，目标设备接收后可直达应用，参见：[使用App Linking实现应用间跳转](app-linking-startup.md)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/IICu9UsqTEq4nweXl8D9_w/zh-cn_image_0000002552959180.png?HW-CC-KV=V1&HW-CC-Date=20260427T235100Z&HW-CC-Expire=86400&HW-CC-Sign=085CBB31DAFC2ED04EAE2AAF4E1B584A6217AB9B24E7173F5958CA580CBA82BE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/qGnjaNrMRy-90Pgn-4AuPw/zh-cn_image_0000002589245489.png?HW-CC-KV=V1&HW-CC-Date=20260429T054035Z&HW-CC-Expire=86400&HW-CC-Sign=5B489F270BEE2223E048F90A3C3989D88DBC02C3E472C047BB1C8E0B60665722)
 
 ### 开发步骤
 
 1. 开通App Linking服务，并完成相关配置，App Linking需经过调试。参见：[调试App Linking](../AppGallery-connect-Guides/agc-applinking-debug-0000001059139667.md)。
-2. 在应用配置文件（src/main/module.json5）的[skills](module-configuration-file.md#skills标签)配置中增加关联配置。参见：[声明应用关联的网站域名](app-linking-startup.md#section1101111611317)。
+2. 在应用配置文件（src/main/module.json5）的[skills](module-configuration-file.md#skills标签)配置中增加关联配置。参见：[声明应用关联的网站域名](app-linking-startupapp.md#在modulejson5中配置关联的网址域名)。
 3. 使用App Linking发起系统分享。
 
    ```
@@ -71,7 +71,7 @@ content_hash: sha256:91d954d3a6abce16f7bed96d1182094e955d85b0913beeb9b77fcb6371c
    48. }
    49. }
    ```
-4. 目标应用处理App Linking。参见：[拉起方实现跳转指导](app-linking-startup.md#section93961521541)。
+4. 目标应用处理App Linking。参见：[拉起方实现跳转指导](app-linking-startupapp.md#处理传入的链接)。
 
    ```
    1. import { common, OpenLinkOptions } from '@kit.AbilityKit';

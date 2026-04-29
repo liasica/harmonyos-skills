@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/wallet-transp
 title: 交通卡开通
 breadcrumb: 指南 > 应用服务 > Wallet Kit（钱包服务） > 接入交通卡 > 交通卡开通
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:51:10+08:00
+scraped_at: 2026-04-29T13:40:46+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:9212b0799c57266c2beba315dd7c5c8da0d06e4a9065a9d424fbeabb5dce6b23
+content_hash: sha256:28b0ecbd68e07f2046bb0a9598406de4b62a9090ae9191b199e1116e4097830c
 ---
 
 交通卡的开通过程分为：获取卡片开通入口、确认卡片是否支持添加、生成并支付订单和完成开卡四个步骤，整体流程如下图，相关接口定义请参考[钱包服务API](../harmonyos-references/wallet-wallettransitcard.md)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/N8y1e_mTR5qXq1igPmcKIg/zh-cn_image_0000002583479205.png?HW-CC-KV=V1&HW-CC-Date=20260427T235109Z&HW-CC-Expire=86400&HW-CC-Sign=9974BF64E6F6BB7D22D3EEB13E9EC79951C085A15C686775E71599848659D4D2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/9t-rsczjQwOQiMWmODtxtQ/zh-cn_image_0000002558765706.png?HW-CC-KV=V1&HW-CC-Date=20260429T054045Z&HW-CC-Expire=86400&HW-CC-Sign=9A19264B0FDEC11574709FB80FCB1640EEC695AC36D7C0C86B8B445B9C51CF3E)
 
 * 开发者的app启动后，可调用[getCardMetadataInDevice](../harmonyos-references/wallet-wallettransitcard.md#getcardmetadataindevice)接口获取指定设备上开发者的app可以访问的交通卡的信息以数组的方式返回。如返回的数组为空，则表示开发者的app在该设备上没有可访问的交通卡，无需显示卡片开通入口；如返回数组不为空，则按具体的交通卡信息做展示。如果交通卡信息中包括卡号、余额信息，则表明该卡片在设备上已开通，显示卡片信息即可；否则可显示卡片的开通入口。
 * 用户在选择开通交通卡后，先调用[canAddTransitCard](../harmonyos-references/wallet-wallettransitcard.md#canaddtransitcard)传入issuerId和指定的设备Id接口，钱包会检查指定设备上目标卡片的开卡条件是否满足，如有条件不满足，会返回相应错误码，可参考[ArkTS API错误码](../harmonyos-references/wallet-error-code.md)，按错误码类型给用户具体的错误提示。如条件满足则会返回开卡凭证数据addCardOpaqueData。

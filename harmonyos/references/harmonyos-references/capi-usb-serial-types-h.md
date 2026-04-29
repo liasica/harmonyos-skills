@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-usb-
 title: usb_serial_types.h
 breadcrumb: API参考 > 系统 > 硬件 > Driver Development Kit（驱动开发服务） > C API > 头文件 > usb_serial_types.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:10:44+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:e3128c464781fee0b8a5167bc4fa963d9b4421bbe6a857e007067c8eb78af449
+scraped_at: 2026-04-29T14:01:25+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:d7b51121cf7292b9a2df5bfb4a6b351ec2cdf01b01ecd66013f30c81e3d7ed71
 ---
 
 ## 概述
@@ -34,7 +34,7 @@ PC/2in1
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
-| [UsbSerial\_Params](capi-serialddk-usbserial-params.md) | \_\_attribute\_\_((aligned(8))) UsbSerial\_Params | 定义USB Serial DDK使用的USB串口参数. |
+| [UsbSerial\_Params](capi-serialddk-usbserial-params.md) | \_\_attribute\_\_((aligned(8))) UsbSerial\_Params | 定义USB Serial DDK使用的USB串口参数。 |
 | [UsbSerial\_Device](capi-serialddk-usbserial-devicehandle.md) | UsbSerial\_Device | USB串口设备数据结构（不透明）。 |
 
 ### 枚举

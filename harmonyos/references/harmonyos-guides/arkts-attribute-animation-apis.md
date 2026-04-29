@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-attribu
 title: 实现属性动画
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用动画 > 属性动画 > 实现属性动画
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:39:56+08:00
+scraped_at: 2026-04-29T13:28:08+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:4e3fcd6059328f361d891e5c7efab954f13042ba0c77b6877b0e08a7828ab556
+content_hash: sha256:3465d55a428119604e6426f9eb30c2c6f362ca393da8ea35a7862a58c2d11694
 ---
 
 通过可动画属性改变引起UI上产生的连续视觉效果，即为属性动画。属性动画是最基础易懂的动画，ArkUI提供三种动画接口[animateTo](../harmonyos-references/arkts-apis-uicontext-uicontext.md#animateto)、[animation](../harmonyos-references/ts-animatorproperty.md)和[keyframeAnimateTo](../harmonyos-references/ts-keyframeanimateto.md)驱动组件属性按照动画曲线等动画参数进行连续的变化，产生属性动画。
@@ -89,7 +89,7 @@ content_hash: sha256:4e3fcd6059328f361d891e5c7efab954f13042ba0c77b6877b0e08a7828
 
 [Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/Animation/entry/src/main/ets/pages/animation/template2/Index.ets#L15-L68)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/MGpWbcArS36IyG4PoBhdPQ/zh-cn_image_0000002552957980.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233955Z&HW-CC-Expire=86400&HW-CC-Sign=189C96CF2B030376DB26F7C3FAC9693587BDB297DB81AC935C05BC0290DFA351)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/IsjrtXdWSGmXz31562xbHA/zh-cn_image_0000002589324339.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052807Z&HW-CC-Expire=86400&HW-CC-Sign=3FD22B66C2BF643B16B5244BC63E15E9E7E1B2DB1E2E88C217631FE771E743AB)
 
 ## 使用animation产生属性动画
 
@@ -154,7 +154,7 @@ content_hash: sha256:4e3fcd6059328f361d891e5c7efab954f13042ba0c77b6877b0e08a7828
 
 [Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/Animation/entry/src/main/ets/pages/animation/template3/Index.ets#L15-L70)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/_TLXoY2zT9SrlZ6Zzbs9Zg/zh-cn_image_0000002583477981.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233955Z&HW-CC-Expire=86400&HW-CC-Sign=C9726965A67F87FDD99046608E6370D9FE0B7C8A037859C9F02A033594C2CC90)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/sSD7LvKdTCWnmNVXPrZnLg/zh-cn_image_0000002589244279.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052807Z&HW-CC-Expire=86400&HW-CC-Sign=3BA4938E98BD3940D0E879D9EC5297955D366B2F2753DB8405DB552C16906AB7)
 
 ## 使用keyframeAnimateTo产生属性动画
 
@@ -233,7 +233,7 @@ content_hash: sha256:4e3fcd6059328f361d891e5c7efab954f13042ba0c77b6877b0e08a7828
 
 [Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/Animation/entry/src/main/ets/pages/animation/template4/Index.ets#L16-L77)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/J12CXrvPSxCPAnFpBsmArw/zh-cn_image_0000002552798332.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233955Z&HW-CC-Expire=86400&HW-CC-Sign=D4D6693FC5CAAB25F14AFA9254F5D34C612EDAF9FCFD16CE60BD0DF298212789)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/zNqym-RBTeSEsDd-j08MkA/zh-cn_image_0000002558764472.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052807Z&HW-CC-Expire=86400&HW-CC-Sign=9664F7C7EBC0857D1EE52AABC65A0FF7771A0D10E4014EBF8BD84696E9D23594)
 
 说明
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-state
 title: @State装饰器：组件内状态
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理（V1） > 管理组件拥有的状态 > @State装饰器：组件内状态
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:39:03+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:b3120d6c2d1b9b7493c31d203cb72f03b358f54b22babc0770acc88de2409cd4
+scraped_at: 2026-04-29T13:27:11+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:b7733780cc768457237d0b6cba4a983a9b859d7e7218b780e03c0ea896506057
 ---
 
 被状态变量装饰器装饰的变量称为状态变量，使普通变量具备状态属性。当状态变量改变时，会触发其直接绑定的UI组件渲染更新。
@@ -48,7 +48,7 @@ content_hash: sha256:b3120d6c2d1b9b7493c31d203cb72f03b358f54b22babc0770acc88de24
 
 **图1** 初始化规则图示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/U7mPi-NPTvCIWxiV4f2oyA/zh-cn_image_0000002552797946.png?HW-CC-KV=V1&HW-CC-Date=20260427T233901Z&HW-CC-Expire=86400&HW-CC-Sign=27EE9A9361D424119C11A5F1A66B62247A4EEDED2F0B5785F7B1AF67B0ED66D3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/saTn3lD1Q0unPAvkI3xtnQ/zh-cn_image_0000002558764086.png?HW-CC-KV=V1&HW-CC-Date=20260429T052710Z&HW-CC-Expire=86400&HW-CC-Sign=FFB8FDE34A2C6CFFE7541B4F1D0DF6433A21D41EAE9B21BB620483905B7E68CB)
 
 ## 观察变化和行为表现
 
@@ -69,23 +69,25 @@ content_hash: sha256:b3120d6c2d1b9b7493c31d203cb72f03b358f54b22babc0770acc88de24
   声明Person和Model类。
 
   ```
-  1. class Person {
-  2. public value: string;
+  1. // 声明Person类
+  2. class Person {
+  3. public value: string;
 
-  4. constructor(value: string) {
-  5. this.value = value;
-  6. }
+  5. constructor(value: string) {
+  6. this.value = value;
   7. }
+  8. }
 
-  9. class Model {
-  10. public value: string;
-  11. public name: Person;
+  10. // 声明Model类
+  11. class Model {
+  12. public value: string;
+  13. public name: Person;
 
-  13. constructor(value: string, person: Person) {
-  14. this.value = value;
-  15. this.name = person;
-  16. }
-  17. }
+  15. constructor(value: string, person: Person) {
+  16. this.value = value;
+  17. this.name = person;
+  18. }
+  19. }
   ```
 
   [StateChangeObservationObject.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/state/StateChangeObservationObject.ets#L15-L33)
@@ -169,16 +171,17 @@ content_hash: sha256:b3120d6c2d1b9b7493c31d203cb72f03b358f54b22babc0770acc88de24
 
    16. @Component
    17. struct Child {
-   18. @State count: number | undefined = 0;
+   18. // 子组件count本地默认值为0；父组件传入undefined时，框架会保留该本地默认值
+   19. @State count: number | undefined = 0;
 
-   20. build() {
-   21. Column() {
-   22. Text(`Child count value: ${this.count}`)
-   23. .fontSize(20)
-   24. .margin(10)
-   25. }
+   21. build() {
+   22. Column() {
+   23. Text(`Child count value: ${this.count}`)
+   24. .fontSize(20)
+   25. .margin(10)
    26. }
    27. }
+   28. }
    ```
 
 ## 使用场景
@@ -214,7 +217,7 @@ content_hash: sha256:b3120d6c2d1b9b7493c31d203cb72f03b358f54b22babc0770acc88de24
 
   [StateSceneSimpleType.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/state/StateSceneSimpleType.ets#L16-L36)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/AR0tnHZaTGiShXuYlAXl0g/zh-cn_image_0000002583437641.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233901Z&HW-CC-Expire=86400&HW-CC-Sign=87CD44E1DEAC74883324993A34B9205E731B6B73297381BD5F715039B3438242)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/SNiuSOGARRGC5yRYVis-Kg/zh-cn_image_0000002558604430.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052710Z&HW-CC-Expire=86400&HW-CC-Sign=9B53FE97249541D6C02152F02479285FD340066A3F35224FC883B29210CE92B2)
 
 ### 装饰class对象类型的变量
 
@@ -275,7 +278,7 @@ content_hash: sha256:b3120d6c2d1b9b7493c31d203cb72f03b358f54b22babc0770acc88de24
 
   [StateSceneTypeClass.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/state/StateSceneTypeClass.ets#L16-L66)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/j5jrG-20RbS8FeYhbf7Z9w/zh-cn_image_0000002552957596.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233901Z&HW-CC-Expire=86400&HW-CC-Sign=1D4A4C1218F8F94CFC5BD9E1FE48B27A15363C57DBDD9BB5CB63F72969110E81)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/pOJnI4l9RfyQvEpKhDGMaA/zh-cn_image_0000002589323955.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052710Z&HW-CC-Expire=86400&HW-CC-Sign=2B89D1B9D6620984314DA830046F496EB73E84906C32F8C9ABAF01AF2FC96BCE)
 
 从上述示例中，我们可以了解到@State变量的初始化机制：
 
@@ -371,7 +374,7 @@ content_hash: sha256:b3120d6c2d1b9b7493c31d203cb72f03b358f54b22babc0770acc88de24
 
 [StateSceneTypeArray.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/state/StateSceneTypeArray.ets#L16-L79)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/pUj7uPFUSQymHWMAitRs0w/zh-cn_image_0000002583477597.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233901Z&HW-CC-Expire=86400&HW-CC-Sign=9F0BD8D27C01F04A9AA2AC56358FA79C8DD81F66F24A927BD263730AFF131C8E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/BvtcZaH7QiSaigebCN4jQA/zh-cn_image_0000002589243895.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052710Z&HW-CC-Expire=86400&HW-CC-Sign=D89D96CDB83B2F15B3F9688E76AFBF8F40FD53A5C1C86903501D0C5DFACBFC7E)
 
 ### 装饰Map类型变量
 
@@ -440,7 +443,7 @@ content_hash: sha256:b3120d6c2d1b9b7493c31d203cb72f03b358f54b22babc0770acc88de24
 
 [StateSceneTypeMap.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/state/StateSceneTypeMap.ets#L16-L71)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/eTmCLqYBRzyQ5aP7znCvNQ/zh-cn_image_0000002552797948.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233901Z&HW-CC-Expire=86400&HW-CC-Sign=F9028DE778EC7F6DB3B448108B288E44B03AEA83F586A28F59510FF86FA164DB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/smVSWgtFQfK83G4YJTRuDQ/zh-cn_image_0000002558764088.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052710Z&HW-CC-Expire=86400&HW-CC-Sign=14B4514F4DFECD8C6D9165B22E4A7A12DEA36D10E02BB6E50DDCA8BBE5B4F0AC)
 
 ### 装饰Set类型变量
 
@@ -502,7 +505,7 @@ content_hash: sha256:b3120d6c2d1b9b7493c31d203cb72f03b358f54b22babc0770acc88de24
 
 [StateSceneTypeSet.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/state/StateSceneTypeSet.ets#L16-L64)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/eAUczHNiTWKJDDHgVdym-A/zh-cn_image_0000002583437643.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233901Z&HW-CC-Expire=86400&HW-CC-Sign=BCE5C909D3749584FDEC84388C3AAD8C22C1DD7A53C4FB1E6BD0AA64C434F2A4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/vfeS3_heTOWFNL15QkFlTg/zh-cn_image_0000002558604432.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052710Z&HW-CC-Expire=86400&HW-CC-Sign=DD6A94D5F80345A2BC8F90FAEBEB06E2F9F42BA85FA7AC63D1F4C015B4FEEEB8)
 
 ### 装饰Date类型变量
 
@@ -560,7 +563,7 @@ content_hash: sha256:b3120d6c2d1b9b7493c31d203cb72f03b358f54b22babc0770acc88de24
 
 [StateSceneTypeDate.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/state/StateSceneTypeDate.ets#L16-L64)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/n7h-KRoqRa-Se_IJq5802A/zh-cn_image_0000002552957598.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233901Z&HW-CC-Expire=86400&HW-CC-Sign=5E6AD733A5DF81119E4A76189E69176A331B8056B65E0466F14500DC9BB72C82)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/6vcmpkQ4QgG8Wuc0VR0U5g/zh-cn_image_0000002589323957.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052710Z&HW-CC-Expire=86400&HW-CC-Sign=4D4DCEE41B5E770F1A7A85CE1E0983BA18505B40BFD1427314CD51C03C2B685E)
 
 ### State支持联合类型实例
 
@@ -600,4 +603,4 @@ content_hash: sha256:b3120d6c2d1b9b7493c31d203cb72f03b358f54b22babc0770acc88de24
 
 [StateSceneJointTypeInstance.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/state/StateSceneJointTypeInstance.ets#L16-L46)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/Xh5bDoftR1OuoJ1fSuBxTw/zh-cn_image_0000002583477599.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233901Z&HW-CC-Expire=86400&HW-CC-Sign=465D5BE5CF4254002BECF5A7F6CB293B1DE73B06B5CC7279CDA7CFD10B28C350)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/nl3N4MlmRFS6x94DED6Tiw/zh-cn_image_0000002589243897.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052710Z&HW-CC-Expire=86400&HW-CC-Sign=D4D43E921C4B3C0C9F8B97C01718DF58E184252119EB903D881BA2BF14FDE63F)

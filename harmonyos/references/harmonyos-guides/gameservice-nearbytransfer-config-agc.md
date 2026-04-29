@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/gameservice-n
 title: 开发准备
 breadcrumb: 指南 > 应用服务 > Game Service Kit（游戏服务） > 游戏近场快传（可选） > 开发准备
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:49:06+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:a01f83ff59f5bdebe88f6ff72e7307991ad0976023258f1a6e2c8fa6257df7d5
+scraped_at: 2026-04-29T13:38:12+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:77deabbb32a3e5305c974082ee0ba78d046432b0f75c2556bfe63a2db3d6c3a6
 ---
 
 ## 创建游戏
@@ -22,13 +22,13 @@ content_hash: sha256:a01f83ff59f5bdebe88f6ff72e7307991ad0976023258f1a6e2c8fa6257
 1. 登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/)，点击“开发与服务”。在项目列表中找到项目，并点击选择需要申请权限的游戏。
 2. 在“项目设置”页面，选择“开放能力管理”页签，开始为游戏申请近场快传开放能力。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/Wn6i-7rpSD2qXESizuqnEQ/zh-cn_image_0000002583478901.png?HW-CC-KV=V1&HW-CC-Date=20260427T234905Z&HW-CC-Expire=86400&HW-CC-Sign=FDD27C99CFD871549A6036F489D5CB1EFCC9B0982415DD282820CE00A3B15464)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/ZmT10CkST32NDbRxELrgsQ/zh-cn_image_0000002558605744.png?HW-CC-KV=V1&HW-CC-Date=20260429T053811Z&HW-CC-Expire=86400&HW-CC-Sign=3A6230AFCA9640F85C59A43F943DFD044F00E330232F6E3B0078C01B06208297)
 3. 搜索“近场快传”，点击对应能力后面的“申请”，打开“新建业务申请”窗口。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/ldpWhzccQ42Bv4p9XS1GaA/zh-cn_image_0000002552799252.png?HW-CC-KV=V1&HW-CC-Date=20260427T234905Z&HW-CC-Expire=86400&HW-CC-Sign=17C7EF91432634E6C61189CF54A91E39189A6DA807E46B9635C48ABA1106B7D0)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/tb9OhEp7R1adllfG-6yTyQ/zh-cn_image_0000002589325271.png?HW-CC-KV=V1&HW-CC-Date=20260429T053811Z&HW-CC-Expire=86400&HW-CC-Sign=8E49B32D0C76ABDE3108D3237B149E980B10664A8D921282B7109606C313B1F6)
 4. 在“新建业务申请”窗口填写申请信息，然后点击“提交”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/goC1CgxeS2OmBDgzozz8bA/zh-cn_image_0000002583438947.png?HW-CC-KV=V1&HW-CC-Date=20260427T234905Z&HW-CC-Expire=86400&HW-CC-Sign=4C03C1A813E98C96CD4563A3568E7D5E70E784791E070301D2DC22EB4856BA69)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/6Iu9gZfrSdShN0V99CdPkQ/zh-cn_image_0000002589245207.png?HW-CC-KV=V1&HW-CC-Date=20260429T053811Z&HW-CC-Expire=86400&HW-CC-Sign=0B88FF3EDF8A385AAEB5CD59DACD4C550C0AE8F0E200D7728057DFEB8C9464C7)
 
    | 配置项 | 必填/选填 | 说明 |
    | --- | --- | --- |
@@ -36,24 +36,24 @@ content_hash: sha256:a01f83ff59f5bdebe88f6ff72e7307991ad0976023258f1a6e2c8fa6257
    | 上传附件 | 选填 | 仅可上传1个附件，大小不超过500MB。支持文本、表格、图片、视频、压缩包格式。 |
 5. 进入互动中心页面，可以看到申请已提交的消息。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/nLd-izEqSJWdJuNkf0l9tQ/zh-cn_image_0000002552958902.png?HW-CC-KV=V1&HW-CC-Date=20260427T234905Z&HW-CC-Expire=86400&HW-CC-Sign=D309A5A04A921A72054192B3132B00EEE4C784BC1C3E8BC149C1058B9A7DF2BF)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/UpEWY8DoQ1mMfZgN6UdkXA/zh-cn_image_0000002558765402.png?HW-CC-KV=V1&HW-CC-Date=20260429T053811Z&HW-CC-Expire=86400&HW-CC-Sign=AFF2A9A73FD9CFF58F40D595FC16A1A7B69A9649345C0DF3E6E793577F42714F)
 
    返回“开放能力管理”页面，近场快传显示“申请中”，1-3个工作日反馈申请结果。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/V5ATgkaZTtyGCkEGCB1Tgw/zh-cn_image_0000002583478903.png?HW-CC-KV=V1&HW-CC-Date=20260427T234905Z&HW-CC-Expire=86400&HW-CC-Sign=DBE2A5C7BFE59F2F986A499F721F3B8E29AAF861A2D752A0A407957C71CB5B71)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/9M49sVupRyKSzaRkDqZzNA/zh-cn_image_0000002558605746.png?HW-CC-KV=V1&HW-CC-Date=20260429T053811Z&HW-CC-Expire=86400&HW-CC-Sign=7D12E300270F638181C18253D8ACCBCE953868484FE623AA69AC774880D067F7)
 6. 申请审批通过后，互动中心将会发送通知给您，同时近场快传的能力开关会为您自动开启，“申请中”也会变为置灰显示的“申请”。至此，游戏已成功开启近场快传开放能力。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/mtmGStiAT6KKf0Ui0YxCNQ/zh-cn_image_0000002552799254.png?HW-CC-KV=V1&HW-CC-Date=20260427T234905Z&HW-CC-Expire=86400&HW-CC-Sign=DBB422F424411FDE23EFF8C2C8048D2C831E9B0DB96B3BB7C861BF5C13E7BDF6)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/SesXOa6CREeVu0S-vgUxAg/zh-cn_image_0000002589325273.png?HW-CC-KV=V1&HW-CC-Date=20260429T053811Z&HW-CC-Expire=86400&HW-CC-Sign=66151E3394044AF2F9CFAA18EC75EC0F983297130A537E566109BB01DA119251)
 
 ## 生成签名证书
 
-数字证书和Profile文件等签名信息可以确保游戏的完整性，请参见[配置签名信息](application-dev-overview.md#section42841246144813)完成配置。
+数字证书和Profile文件等签名信息可以确保游戏的完整性，请参见[配置签名信息](application-dev-overview.md#配置签名信息)完成配置。
 
 ## 配置APP ID和相关权限
 
 1. 登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)平台，在“开发与服务”中选择目标应用，获取“项目设置 > 常规 > 应用”的**APP ID**。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/QUUx1bMXSOKcOdmcKgu0Dg/zh-cn_image_0000002583438949.png?HW-CC-KV=V1&HW-CC-Date=20260427T234905Z&HW-CC-Expire=86400&HW-CC-Sign=FD5BE787740642DF7EEBC6BC3C4B03872E8C3E770343F20A36CA203CA40BF15A)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/FPNZcTRdRNKEKUD6Iu6fsQ/zh-cn_image_0000002589245209.png?HW-CC-KV=V1&HW-CC-Date=20260429T053811Z&HW-CC-Expire=86400&HW-CC-Sign=24FA731A4F6046E29C14FA8C2CFBEA0204D3514A6B5D561C2AB84F4BB3A3F19C)
 2. 在工程的entry模块module.json5文件中，新增metadata并配置app\_id，同时新增requestPermissions并配置如下权限。
 
    ```

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/obtaining-tar
 title: 获取目标应用的URL信息
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > Stage模型开发指导 > 应用间跳转 > 拉起指定应用 > 获取目标应用的URL信息
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:37:50+08:00
+scraped_at: 2026-04-29T13:25:51+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:0cdf36ad15cbfeb2589db0e2e72d696db4fcdd871d8b296fed2d0cd8d4da2d65
+content_hash: sha256:1ac6873c6ab2d73df0f3ea499dc7ee3d559b6370df99d299216f82e18a792199
 ---
 
 ## 场景介绍
@@ -188,4 +188,4 @@ content_hash: sha256:0cdf36ad15cbfeb2589db0e2e72d696db4fcdd871d8b296fed2d0cd8d4d
 
    **图1** 拉起目标应用演示
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/_28ABYOSQeukMC-X27D08w/zh-cn_image_0000002583477503.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233748Z&HW-CC-Expire=86400&HW-CC-Sign=CE09B16FD6E5B362A65C0171957FC7DB5F12D4DE5487AA761CD56CA8CFD66D73)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/i3rWdfHxRaCkEKkCo7raWg/zh-cn_image_0000002558763994.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052550Z&HW-CC-Expire=86400&HW-CC-Sign=9E6F9F66518FAD962B9FFB7A7BC27112DF7739407B6B48F491D6E0E6A49CB31A)

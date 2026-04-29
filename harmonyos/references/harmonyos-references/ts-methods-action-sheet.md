@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-method
 title: 列表选择弹窗 (ActionSheet)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 弹窗 > 列表选择弹窗 (ActionSheet)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:02:22+08:00
+scraped_at: 2026-04-29T13:52:44+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:d21cc88bcd2252fa7463c66300c374206a50a79ad8c482aed79b443a92fafd63
+content_hash: sha256:de24000881e4ad152726a103964b5fac90a432e4a9241bbf29d3d8781bfe05d3
 ---
 
 列表弹窗。
@@ -268,7 +268,7 @@ PhonePC/2in1TabletTVWearable
 61. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/NjbrskVUR8iF1HysjA61-A/zh-cn_image_0000002552960038.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000220Z&HW-CC-Expire=86400&HW-CC-Sign=C7D907310482F8171F78F678E988D51D9D79B97768B4F912FC298736A7E18B5D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/BeccOID6T8q7jCuqf1THcQ/zh-cn_image_0000002558766564.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055243Z&HW-CC-Expire=86400&HW-CC-Sign=BD96095663998E2D672733A27200699F2C6E4A4D75896B3D53A9678226B9A269)
 
 ### 示例2（可在主窗外弹出的弹窗）
 
@@ -340,7 +340,7 @@ PhonePC/2in1TabletTVWearable
 63. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/CZnW3l0oQd-7iwRKuOLgqQ/zh-cn_image_0000002583480039.jpg?HW-CC-KV=V1&HW-CC-Date=20260428T000220Z&HW-CC-Expire=86400&HW-CC-Sign=79CAF8C6D7F376BA410FB34BE2DFB07FE69469E428F50A0B82F02D0F8DCC53FF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/0tj5vzyCTZ-P1GhRxc1UAw/zh-cn_image_0000002558606904.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T055243Z&HW-CC-Expire=86400&HW-CC-Sign=2A300F603D002AC67632E121F7DC3F2A0F5BCD1C353CB02CC851747D1E370349)
 
 ### 示例3（设置弹窗的动画）
 
@@ -402,7 +402,7 @@ PhonePC/2in1TabletTVWearable
 53. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/OO5Fs2fnR-uoWlN_KSEsPw/zh-cn_image_0000002552800390.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000220Z&HW-CC-Expire=86400&HW-CC-Sign=D1963F64283ABDFBA5F138A0E9655098E577582FF748982504476B10F93CC634)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/nwJ6-B0vT4GktwgI67dOwg/zh-cn_image_0000002589326431.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055243Z&HW-CC-Expire=86400&HW-CC-Sign=6E5CD7368C32101F38D9A21A9927862BB1C90BE8398974784A8B1ABD8072D7DF)
 
 ### 示例4（设置弹窗的样式）
 
@@ -484,7 +484,7 @@ PhonePC/2in1TabletTVWearable
 73. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/K7hmDOKHRBGQ8WynoKrghA/zh-cn_image_0000002583440085.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000220Z&HW-CC-Expire=86400&HW-CC-Sign=069F687A19ADB073E33C3BB407B0F68A5FEB126D23DA05FE9C4B91887F766C32)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/gh7xb_saR62PjKjbJFQtQw/zh-cn_image_0000002589246373.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055243Z&HW-CC-Expire=86400&HW-CC-Sign=6F8B7F5003508E2CC196F4F33338CEDBCF2413706BEF8B18405AC9EEDE5BF1FD)
 
 ### 示例5（悬停态弹窗）
 
@@ -556,7 +556,7 @@ PhonePC/2in1TabletTVWearable
 63. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/xWlaxfyIQ3m8er6zA81mrw/zh-cn_image_0000002552960040.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000220Z&HW-CC-Expire=86400&HW-CC-Sign=A497AFD040D88CF6C88E9D8A46157B625387C1E42CEA187527F818DB03A04F7A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/RE4KEmjuSTeRX46z3noA8g/zh-cn_image_0000002558766566.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055243Z&HW-CC-Expire=86400&HW-CC-Sign=9C6C794968A2168F36617B4DFCCEB1BBF0FF9204CF16DCFA5F12346F61C7B0FC)
 
 ### 示例6（弹窗生命周期）
 
@@ -635,7 +635,7 @@ PhonePC/2in1TabletTVWearable
 68. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/EagLiRtATe2_DFAdMiApGA/zh-cn_image_0000002583480041.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000220Z&HW-CC-Expire=86400&HW-CC-Sign=B2FD4D903467BDA19830818358FBED1765F9B17F1943CDF76DE8EA8C914F201D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/PBfd704ORI2xlDgeGAox4Q/zh-cn_image_0000002558606906.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055243Z&HW-CC-Expire=86400&HW-CC-Sign=4F87416E1D9A9F1BE280FED69D29404E42489FFB0BC53E663681F3345F34FC75)
 
 ### 示例7（自定义背景模糊效果参数）
 
@@ -695,7 +695,7 @@ PhonePC/2in1TabletTVWearable
 49. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/eE2QY4ClT_uXbjv9VHEnZw/zh-cn_image_0000002552800392.png?HW-CC-KV=V1&HW-CC-Date=20260428T000220Z&HW-CC-Expire=86400&HW-CC-Sign=0D5A504022D5006E508FA5CE04F2789B5773FD39D65D5308BE6B6D1730F1D3CF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/CnUsmHg5S32egO7wT7KAlQ/zh-cn_image_0000002589326433.png?HW-CC-KV=V1&HW-CC-Date=20260429T055243Z&HW-CC-Expire=86400&HW-CC-Sign=B00C14AFFB3B1EDA1080AFC24242EF592E0CB3F27E74EFEB6AAA208B3C864102)
 
 ### 示例8（自定义背景效果参数）
 
@@ -756,4 +756,4 @@ PhonePC/2in1TabletTVWearable
 50. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/iD_PFGnzRZil5ngUtZKycA/zh-cn_image_0000002583440087.png?HW-CC-KV=V1&HW-CC-Date=20260428T000220Z&HW-CC-Expire=86400&HW-CC-Sign=A62553B62328F714D86093365EDCE1F2AAC8D47DCEE7032EAAB6AE4E31914855)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/loBE6uUnQy-_7_uN8XcpEQ/zh-cn_image_0000002589246375.png?HW-CC-KV=V1&HW-CC-Date=20260429T055243Z&HW-CC-Expire=86400&HW-CC-Sign=2DE8A4C3FB7CCBCFF23ADBF3CB708869ECBCE3DF4C79E775CE0B8A5582362531)

@@ -1,10 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-transition-animation-shared-elements
 title: 共享元素转场 (sharedTransition)
+breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 动画 > 共享元素转场 (sharedTransition)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:02:18+08:00
+scraped_at: 2026-04-29T13:52:42+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:066c3b839924ca1a9dfd320f54aaa1a48f084441a619f270575bb2c30510123f
+content_hash: sha256:9ba79f163c2a3259375d77660bf0e07b6c0390d106c9373b6b105aa4d121f1c1
 ---
 
 可以通过设置组件的sharedTransition属性将该元素标记为共享元素并设置对应的共享元素转场动效。sharedTransition仅发生在[@ohos.router (页面路由)](js-apis-router.md)跳转时。
@@ -113,4 +114,4 @@ PhonePC/2in1TabletTVWearable
 17. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/IvpQ2vdbStWzj746_YHyIw/zh-cn_image_0000002552960028.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000217Z&HW-CC-Expire=86400&HW-CC-Sign=C0C3CD2050E698F6F4EC43F0EFAF19C1715C54602A92952EA99C4A909D070B21)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/PKuglSyeTUuDhCpyHWyX_Q/zh-cn_image_0000002558766554.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055241Z&HW-CC-Expire=86400&HW-CC-Sign=988920A3B73F75E7D343447AD0479C5B31181848617BEFA9BFB3D3A79C14F647)

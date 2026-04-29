@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: SelectTitleBar
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > SelectTitleBar
 category: harmonyos-references
-scraped_at: 2026-04-28T08:02:40+08:00
+scraped_at: 2026-04-29T13:53:02+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:91c9dfb3079aacda64c5d3143a145a07bfddc2c9daf5bbc4ba552c123ff3d2bb
+content_hash: sha256:314f0005ad7f935743f3072eb60fffd2af8e9b1a13412a55bd6009208c01307e
 ---
 
 下拉菜单标题栏包含一个下拉菜单，可用于页面之间的切换；可用于一级页面、二级及其以上界面（配置返回键）。
@@ -200,7 +200,7 @@ PhonePC/2in1TabletTVWearable
 106. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/QY1mCVhgQXuxyVlrTgdDFg/zh-cn_image_0000002583480127.png?HW-CC-KV=V1&HW-CC-Date=20260428T000238Z&HW-CC-Expire=86400&HW-CC-Sign=48C2FE0CE337F929A538B961C3677FD42601210DCD4C46DA9F571DBAA99D00CE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/zJ1M2jXIQQOIVz4cCuV09A/zh-cn_image_0000002589326519.png?HW-CC-KV=V1&HW-CC-Date=20260429T055301Z&HW-CC-Expire=86400&HW-CC-Sign=FC44D607EB4210E70FE9AC471A0063309D71F912F57D08EA7DEF88E68EA82903)
 
 ### 示例2（右侧自定义按钮播报）
 
@@ -331,7 +331,7 @@ PhonePC/2in1TabletTVWearable
 122. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/eWt04DtgS-qSHW0NW8K7ng/zh-cn_image_0000002552800478.png?HW-CC-KV=V1&HW-CC-Date=20260428T000238Z&HW-CC-Expire=86400&HW-CC-Sign=D5C0DD28A8085D860E69F82F078098AC422FCC9F85CCA85DCA0E96D957028DF2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/ZGh1fP9OQ4urTuXFNFMfug/zh-cn_image_0000002589246461.png?HW-CC-KV=V1&HW-CC-Date=20260429T055301Z&HW-CC-Expire=86400&HW-CC-Sign=A754FF0516A45A7B39916C118A09B20545638B811C19BB1F1FE50F48F45B6EF8)
 
 ### 示例3（设置Symbol类型图标）
 
@@ -468,4 +468,4 @@ PhonePC/2in1TabletTVWearable
 128. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/rCGVLeJkSRGipRWWNmAXAA/zh-cn_image_0000002583440173.png?HW-CC-KV=V1&HW-CC-Date=20260428T000238Z&HW-CC-Expire=86400&HW-CC-Sign=C8DB2949F544A403B768B9D7C6EA2FB9FDA88437AC5CBC084E5A75E38A92BA34)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/3hqxOsWsT3-GnQ9bk7qt4A/zh-cn_image_0000002558766654.png?HW-CC-KV=V1&HW-CC-Date=20260429T055301Z&HW-CC-Expire=86400&HW-CC-Sign=ECD7EDDEC9FF4B025367309F163BDCFB385FCE35AADDE67F6A84C18BFA4E4890)

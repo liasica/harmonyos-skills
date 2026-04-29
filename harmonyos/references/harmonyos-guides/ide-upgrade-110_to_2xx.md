@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-upgrade-1
 title: 升级版本1.1.0至2.X.X/5.X.X
 breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 附录 > 版本升级 > 升级版本1.1.0至2.X.X/5.X.X
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:54:54+08:00
+scraped_at: 2026-04-29T13:44:50+08:00
 doc_updated_at: 2026-01-15
-content_hash: sha256:58b14ed45a35b35a731d017e61b7420ae16d287abeb99b6a822a5cd04b6e63a1
+content_hash: sha256:fa41e994f06b74fb778e91d956433fa3a9662e05853e9a3fbabf11ea95e7c61c
 ---
 
 升级至2.X.X版本与升级至5.X.X版本步骤一致，本文以升级至2.X.X版本为例。
@@ -27,7 +27,7 @@ content_hash: sha256:58b14ed45a35b35a731d017e61b7420ae16d287abeb99b6a822a5cd04b6
 
 2. 下载并解压工具包：下载版本2.X.X的ohpm-repo私仓工具包，并解压（请解压到一个空文件夹中）。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/wpsZsAYLSi69jd9PDsBhLA/zh-cn_image_0000002561831207.png?HW-CC-KV=V1&HW-CC-Date=20260427T235451Z&HW-CC-Expire=86400&HW-CC-Sign=1D15883779A5FD830B38CEE3DCB037F939791210AAF295A08CB0EB9F6254F68F)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/U6tCm2BSQ1iEmoLIaMEPgg/zh-cn_image_0000002561831207.png?HW-CC-KV=V1&HW-CC-Date=20260429T054448Z&HW-CC-Expire=86400&HW-CC-Sign=9EF657BDB344BD873F5B735D55165F5A8053A23108009B5DF99E0CA84182A796)
 3. 安装完成之后，进入ohpm-repo私仓工具包解压目录下的bin目录，执行如下命令：
 
    ```
@@ -252,7 +252,7 @@ content_hash: sha256:58b14ed45a35b35a731d017e61b7420ae16d287abeb99b6a822a5cd04b6
 
      结果示例：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/VoFMs5GJQp68hWlEcUmxoA/zh-cn_image_0000002561751235.png?HW-CC-KV=V1&HW-CC-Date=20260427T235451Z&HW-CC-Expire=86400&HW-CC-Sign=5AD1BC607E299E58EFAAAE831EB2C429B2A45753476306361BF87E8BA6509F3D "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/tiQpDLZmSaCyRmA-__2K_w/zh-cn_image_0000002561751235.png?HW-CC-KV=V1&HW-CC-Date=20260429T054448Z&HW-CC-Expire=86400&HW-CC-Sign=83A5438B6B379EAE79F9964963842EEF2E7D449660C70A365169043727CE8E4F "点击放大")
    * 刷新环境变量：安装成功后，必须根据给出的提示信息刷新环境变量，针对Windows系统和Linux/Mac系统，有不同处理方式：
      + Windows系统： 关闭当前窗口，重新开启一个窗口
      + Linux系统或Mac系统： 在命令行中执行刷新命令：source ~/.bashrc或者 . ~/.bashrc。
@@ -264,7 +264,7 @@ content_hash: sha256:58b14ed45a35b35a731d017e61b7420ae16d287abeb99b6a822a5cd04b6
 
      结果示例：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/bNwNcDGCQW6DHf1ss1aOBw/zh-cn_image_0000002530751292.png?HW-CC-KV=V1&HW-CC-Date=20260427T235451Z&HW-CC-Expire=86400&HW-CC-Sign=4A908BA783BC908FC2FE91C532DBEAC3175C9FA701954B8E268C847F573C97D4 "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/7DZwdvqmQxu6eeOGFoFfqw/zh-cn_image_0000002530751292.png?HW-CC-KV=V1&HW-CC-Date=20260429T054448Z&HW-CC-Expire=86400&HW-CC-Sign=1629E3A45AB0D5BE0D71EDAD112723F5E08D91B5EFE25EDC6DE0B67FF2771757 "点击放大")
 7. 多实例部署机器快速升级
 
    在多实例部署中，可先升级一台机器，然后拷贝其配置文件到其他机器中进行快速升级，具体步骤如下
@@ -288,7 +288,7 @@ content_hash: sha256:58b14ed45a35b35a731d017e61b7420ae16d287abeb99b6a822a5cd04b6
      若您想在其他目录使用ohpm-repo，请将对应版本ohpm-repo根目录中bin目录的路径配置到[系统环境变量](ide-ohpm-repo-faq.md#section24117279211)path中。
    * 下载并解压工具包：下载版本*`2.X.X`*的ohpm-repo私仓工具包，并解压。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/IW2TMDO3TNiZIflQe6FZ5A/zh-cn_image_0000002561751229.png?HW-CC-KV=V1&HW-CC-Date=20260427T235451Z&HW-CC-Expire=86400&HW-CC-Sign=4DCE427982B02557CBEDE94CB4FC28DC1E39996BFA49C9D8BF737FCB68507FB7)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/2_9KWpPZRTi6JfGaty-Pqg/zh-cn_image_0000002561751229.png?HW-CC-KV=V1&HW-CC-Date=20260429T054448Z&HW-CC-Expire=86400&HW-CC-Sign=6C7C27FF3B0CF9E2772911E9658BA17F9DE309F8E53D35163324938337E12864)
    * 版本检查：进入ohpm-repo私仓工具包解压目录下的bin目录，执行版本查看命令：
 
      ```
@@ -307,7 +307,7 @@ content_hash: sha256:58b14ed45a35b35a731d017e61b7420ae16d287abeb99b6a822a5cd04b6
 
         结果示例：
 
-        ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/23_P_SqBSEuuNXsTAwvNsQ/zh-cn_image_0000002530911280.png?HW-CC-KV=V1&HW-CC-Date=20260427T235451Z&HW-CC-Expire=86400&HW-CC-Sign=318F11B561EC023AE40832CC817AC41D9151B03851870DE69AF3D211F53815E4 "点击放大")
+        ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/SRbQ7HTaR6Ki6YFL_82SbA/zh-cn_image_0000002530911280.png?HW-CC-KV=V1&HW-CC-Date=20260429T054448Z&HW-CC-Expire=86400&HW-CC-Sign=C00AA6C590F14B46C8B9872AB100E78F1B346DC2B02DB7BDC9FE825635AD9B26 "点击放大")
      2. 刷新环境变量：安装成功后，必须根据给出的提示信息刷新环境变量，针对Windows系统和Linux/Mac系统，有不同处理方式
 
         说明
@@ -322,7 +322,7 @@ content_hash: sha256:58b14ed45a35b35a731d017e61b7420ae16d287abeb99b6a822a5cd04b6
 
         结果示例：
 
-        ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/FheZ5Jn2RRieuSK_ZQg1TQ/zh-cn_image_0000002561831213.png?HW-CC-KV=V1&HW-CC-Date=20260427T235451Z&HW-CC-Expire=86400&HW-CC-Sign=E141551AFFE9905C4ADB06F70F11115FBD014BC154DAEFAC628E97DD25B98A13 "点击放大")
+        ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/K1rYzAwyQIO15tlP7x1GHw/zh-cn_image_0000002561831213.png?HW-CC-KV=V1&HW-CC-Date=20260429T054448Z&HW-CC-Expire=86400&HW-CC-Sign=42E2CB1966204FD455894A581804CFDAC6482B47BA98CE9AC74221C65A3DB962 "点击放大")
 
         说明
 

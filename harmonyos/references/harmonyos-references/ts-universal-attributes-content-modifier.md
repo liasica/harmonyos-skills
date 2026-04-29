@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 自定义内容
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 动态属性与自定义 > 自定义内容
 category: harmonyos-references
-scraped_at: 2026-04-28T08:01:17+08:00
+scraped_at: 2026-04-29T13:51:31+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:c11ae4fcf409409b777e98345a7e8fa4894289c8197f71bbd6bd9ed592106736
+content_hash: sha256:1f9fda69c943bdca3c975dfa2db50c4239719b9034e26fb029c0cef7515dc99c
 ---
 
 支持通过样式builder自定义特定组件的内容区。
@@ -145,4 +145,4 @@ PhonePC/2in1TabletTVWearable
 75. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/ImIfZDWURgil6-sQ9mCN0g/zh-cn_image_0000002552959578.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000115Z&HW-CC-Expire=86400&HW-CC-Sign=863CE7C41AF57004429DEFD7B4E59F0E6D99C1C6E1EDE20F32D031A8A307099F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/MG-HwNUTQImMIT_fkE4hsg/zh-cn_image_0000002558766100.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055130Z&HW-CC-Expire=86400&HW-CC-Sign=691E1FB014F4981D983DB00F33657A09647C5A4F6ED107F241EB4E9DBB8A5789)

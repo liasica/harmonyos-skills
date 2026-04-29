@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-avplayer-e
 title: 基于AVPlayer播放网络视频实践
 breadcrumb: 最佳实践 > 媒体 > 音频和视频 > 基于AVPlayer播放视频系列开发实践 > 基于AVPlayer播放网络视频实践
 category: best-practices
-scraped_at: 2026-04-28T08:20:31+08:00
+scraped_at: 2026-04-29T14:11:18+08:00
 doc_updated_at: 2026-03-19
-content_hash: sha256:aa64ceaf3166f8e0b936ea9800b0710fd75222549a1e0a94fbcbf0b5c34379d6
+content_hash: sha256:95c29ec93133d6ad7dafac09f45108939e774bf3c5862c35187dc94ef7e19551
 ---
 
 ## 概述
@@ -33,7 +33,7 @@ content_hash: sha256:aa64ceaf3166f8e0b936ea9800b0710fd75222549a1e0a94fbcbf0b5c34
 
 通过正确设置音频流类型、中断事件处理和自定义焦点策略，完成播放过程中的音频焦点管理。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/JfjMBz3-SLeoEfT4N6MrsA/zh-cn_image_0000002486230889.gif?HW-CC-KV=V1&HW-CC-Date=20260428T002026Z&HW-CC-Expire=86400&HW-CC-Sign=7AC844B58AE8098B426832B921A23B65F1B419AAC538D110F0CD08DABFB8339B "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/JfjMBz3-SLeoEfT4N6MrsA/zh-cn_image_0000002486230889.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061114Z&HW-CC-Expire=86400&HW-CC-Sign=0FEA50B8FDD1A826FF8469D0F699BBA4A2ADA08633EF887F976557C38611F44F "点击放大")
 
 ### 开发步骤
 
@@ -55,7 +55,7 @@ content_hash: sha256:aa64ceaf3166f8e0b936ea9800b0710fd75222549a1e0a94fbcbf0b5c34
 
 应用在视频播放时，可以使用画中画能力将视频内容以小窗（画中画）模式呈现。切换为小窗（画中画）模式后，用户可以进行其他界面操作，提升使用体验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/EOy9lgwTQ7KkYlwY4CsriA/zh-cn_image_0000002453191104.gif?HW-CC-KV=V1&HW-CC-Date=20260428T002026Z&HW-CC-Expire=86400&HW-CC-Sign=8A5F8A16F7E6D128FCCB69EDD2CE6F0EBF4147046E38ED343450AF7461090F26 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/EOy9lgwTQ7KkYlwY4CsriA/zh-cn_image_0000002453191104.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061114Z&HW-CC-Expire=86400&HW-CC-Sign=F3980B034D77E7C604266C65C6EC6AB09ED83F07F14F9D0DAFB024855FD50214 "点击放大")
 
 ### 开发步骤
 
@@ -67,7 +67,7 @@ content_hash: sha256:aa64ceaf3166f8e0b936ea9800b0710fd75222549a1e0a94fbcbf0b5c34
 
 用户播放视频时可以根据实际需求进行横竖屏切换。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/4QCeC4jNRQ-3z9rzSP__MA/zh-cn_image_0000002453031500.gif?HW-CC-KV=V1&HW-CC-Date=20260428T002026Z&HW-CC-Expire=86400&HW-CC-Sign=1B982F9691F4335D3961A6DB9D00D9F33D0DD3D8BCE336B5CE279ABC276F6C17 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/4QCeC4jNRQ-3z9rzSP__MA/zh-cn_image_0000002453031500.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061114Z&HW-CC-Expire=86400&HW-CC-Sign=7C3E51E707059DF8C6DE3AEAD0DFA7C755C2745CC6C0A9344E7B22386CC166F4 "点击放大")
 
 ### 开发步骤
 
@@ -77,7 +77,7 @@ content_hash: sha256:aa64ceaf3166f8e0b936ea9800b0710fd75222549a1e0a94fbcbf0b5c34
 
 ### 场景描述
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/rB_VsjpVTrqdYz_I9Gefww/zh-cn_image_0000002486350845.gif?HW-CC-KV=V1&HW-CC-Date=20260428T002026Z&HW-CC-Expire=86400&HW-CC-Sign=0F4FB8695B68C085013857265A8AE3883402FBA478195EE6291A7F20EA763645 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/rB_VsjpVTrqdYz_I9Gefww/zh-cn_image_0000002486350845.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061114Z&HW-CC-Expire=86400&HW-CC-Sign=0334D196050C057BD6483A53EC1BF2E7533D9DCEFA112B975730145440259613 "点击放大")
 
 用AVPlayer开发播放功能，在不同场景下如何设置URL。该特性主要用于AVPlayer播放网络流媒体资源，包括在线流媒体链接及本地m3u8流媒体记录文件。在线流媒体支持以下协议：
 
@@ -188,7 +188,7 @@ AVPlayer通过URL形式配置播放源，有以下两种方式：
 
 网络视频缓冲进度条是影音娱乐类应用中的典型场景之一，如用户播放在线视频时，进度条显示当前缓冲的可播放进度。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/ViHNThhiS7C5wy7LcM83QA/zh-cn_image_0000002486230901.gif?HW-CC-KV=V1&HW-CC-Date=20260428T002026Z&HW-CC-Expire=86400&HW-CC-Sign=AB0C28F72B1B79CF24A312D306CE04F58156C56B726F7C9AFA750B7406DB5999 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/ViHNThhiS7C5wy7LcM83QA/zh-cn_image_0000002486230901.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061114Z&HW-CC-Expire=86400&HW-CC-Sign=D971AACAEAF4347C27426BAE874EA84C04CD48E8E83A2EC1B7BBDF8B056A8743 "点击放大")
 
 ### 实现原理
 
@@ -326,13 +326,13 @@ AVPlayer通过URL形式配置播放源，有以下两种方式：
 
 网络视频边缓冲边播放是影音娱乐类应用中的典型场景之一，如用户播放在线视频时，不用等待视频资源完全加载（缓冲）后再进行播放，可以缓冲到一定资源后，就可直接起播。AVPlayer自带边缓冲边播放的特性，本章节介绍AVPlayer缓冲区相关参数配置。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/cVSnf28IRBevvIwh2RtbXg/zh-cn_image_0000002453191116.gif?HW-CC-KV=V1&HW-CC-Date=20260428T002026Z&HW-CC-Expire=86400&HW-CC-Sign=D8EC9724CFE29C1798FA8CFC789266A5C8F466BE46C150D06157C2620385215C "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/cVSnf28IRBevvIwh2RtbXg/zh-cn_image_0000002453191116.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061114Z&HW-CC-Expire=86400&HW-CC-Sign=586C67A1B0B6A7435E6E897110A2716D1D5855045241328BA35BA3D46C81C9C0 "点击放大")
 
 ### AVPlayer缓冲区工作过程
 
 对于缓冲区而言，下载线程是生产端，读取线程则是消费端。生产端将数据写入到缓冲区中，消费端则从缓冲区读取数据，下面将介绍缓冲区中的几个水位线概念。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/y_oov6GFRVOvIz5delUG6w/zh-cn_image_0000002453031512.png?HW-CC-KV=V1&HW-CC-Date=20260428T002026Z&HW-CC-Expire=86400&HW-CC-Sign=8D0F1FC21E5FED03F997EA9236EC917CA2A92C3B1FB8B2F35F64A253796FD4BC "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/y_oov6GFRVOvIz5delUG6w/zh-cn_image_0000002453031512.png?HW-CC-KV=V1&HW-CC-Date=20260429T061114Z&HW-CC-Expire=86400&HW-CC-Sign=004583A0F1612546657BE51E336C5F9F5461661AD7728882BB25D584E5741D13 "点击放大")
 
 以上四个水位线取值情况如下，其中起播水位线，和下载暂停水位线（缓冲区大小）可通过配置AVPlayer的播放策略来控制，其他两个暂未提供配置接口。
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-compon
 title: CanvasPattern
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 画布绘制 > CanvasPattern
 category: harmonyos-references
-scraped_at: 2026-04-28T08:02:06+08:00
+scraped_at: 2026-04-29T13:52:24+08:00
 doc_updated_at: 2026-04-02
-content_hash: sha256:b6f0774dc6d972f1456826e082230e64ec9cb9e029e5bff58cd8f80e18a48d14
+content_hash: sha256:0ce8940183ea9782e632f60fb4e4b869d8c5922ba0d719dd67117c87f4a4de3f
 ---
 
 一个Object对象，使用[createPattern](ts-canvasrenderingcontext2d.md#createpattern)方法创建，通过指定图像和重复方式创建图片填充的模板。
@@ -98,4 +98,4 @@ PhonePC/2in1TabletTVWearable
 47. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/K8zSU2NVRt2rLVFZIAMPYg/zh-cn_image_0000002583479929.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000205Z&HW-CC-Expire=86400&HW-CC-Sign=12495CFB7DE31C68D8A8292C4AE0AE6D2D7FD95008E4A4D9EDD2F571151534E8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/C8wdRjMPS_eDAJlr7abcyg/zh-cn_image_0000002558606794.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055223Z&HW-CC-Expire=86400&HW-CC-Sign=780CD0C6162D00BBCC55DE4CF562D66339E467AA9DD9396443320642FDF4ADEF)

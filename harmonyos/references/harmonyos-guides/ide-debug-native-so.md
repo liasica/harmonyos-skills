@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-debug-nat
 title: so信息可视化
 breadcrumb: 指南 > 编写与调试应用 > 应用调试 > 代码调试 > Native代码调试 > so信息可视化
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:56:50+08:00
+scraped_at: 2026-04-29T13:46:47+08:00
 doc_updated_at: 2026-03-17
-content_hash: sha256:7ab33d3af94294c4329586ea6fb3c2df91d5783c40e0a6dd5163ac8251501312
+content_hash: sha256:3d9fc55e3e9ba7ac797b26edff16d4c06369cb20565ea14e4eea1942250a0615
 ---
 
-在native调试窗口中，点击**Layout Settings**![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/O1CfjU8yTSycL2aZ7U2O6w/zh-cn_image_0000002530753332.png?HW-CC-KV=V1&HW-CC-Date=20260427T235649Z&HW-CC-Expire=86400&HW-CC-Sign=6D209CD853EB8C7646FE5E99E8FAB678BE905536BE5AD215BA3E226E81178180)，勾选**Modules**，打开模块视图。
+在native调试窗口中，点击**Layout Settings**![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/f12f098PSg-cp4HCSNPz3w/zh-cn_image_0000002530753332.png?HW-CC-KV=V1&HW-CC-Date=20260429T054646Z&HW-CC-Expire=86400&HW-CC-Sign=121F7715F0039BD5AFC5370B7DE75E72495F8DEBF083E4BA917A2491E92C14A6)，勾选**Modules**，打开模块视图。
 
 在native调试期间，**Modules**窗口会列出并显示有关应用使用的so信息。点击各属性可按升序/降序来排序，支持字符串匹配搜索。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/MpXS5oCjRHizYJ95rYSFkA/zh-cn_image_0000002561753269.png?HW-CC-KV=V1&HW-CC-Date=20260427T235649Z&HW-CC-Expire=86400&HW-CC-Sign=4466610B79CF7B7E377E8B1D4FA86F39E4405AA945577677B09D891C40C39CF8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/TqC5CPfxTgmej9zWYvv3iw/zh-cn_image_0000002561753269.png?HW-CC-KV=V1&HW-CC-Date=20260429T054646Z&HW-CC-Expire=86400&HW-CC-Sign=A23758455B33A48EAB5711485A68124527B6348E89E85028702F6314311C3481)
 
 * 加载符号表文件
 

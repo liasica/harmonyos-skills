@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arengine-arse
 title: 管理AR会话（ArkTS）
 breadcrumb: 指南 > 图形 > AR Engine（AR引擎服务） > 管理AR会话 > 管理AR会话（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:46:48+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:0f52bbde1a2ca495c5d00e91bef0063401eb9a89c87ab0db62088294f374fb53
+scraped_at: 2026-04-29T13:35:49+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:0d19b56e1116c1fcd5df5c303d42fce2e5a76edb32d0a29e403eeeb727d720bd
 ---
 
 本章节给出了关键开发步骤，完整代码可以参考[示例代码](https://gitcode.com/HarmonyOS_Samples/arengine_samplecode_clientdemo_arkts)。
@@ -100,7 +100,7 @@ AR会话及场景创建好后使用[组件导航（Navigation）](arkts-navigati
 43. Scene.load().then((scene: Scene) => {
 44. let viewContext: arViewController.ARViewContext = new arViewController.ARViewContext();
 45. viewContext.scene = scene;
-46. viewContext.callback = new ARViewCallbackImpl();  // 通过回调实现业务场景
+46. viewContext.callback = new ARViewCallbackImpl(); // 通过回调实现业务场景
 47. viewContext.config = {
 48. type: arEngine.ARType.WORLD,
 49. planeFindingMode: arEngine.ARPlaneFindingMode.HORIZONTAL_AND_VERTICAL,
@@ -110,14 +110,14 @@ AR会话及场景创建好后使用[组件导航（Navigation）](arkts-navigati
 53. depthMode: arEngine.ARDepthMode.AUTOMATIC,
 54. meshMode: arEngine.ARMeshMode.DISABLED,
 55. focusMode: arEngine.ARFocusMode.AUTO
-56. }
+56. };
 57. viewContext.init().then(() => {
 58. this.arContext = viewContext;
 59. console.info('Succeeded in initializing ARView.');
 60. }).catch((err: BusinessError) => {
 61. console.error(`Failed to init ARView. Code is ${err.code}, message is ${err.message}.`);
-62. })
-63. })
+62. });
+63. });
 64. }
 65. }
 ```

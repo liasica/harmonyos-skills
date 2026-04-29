@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/payment-partn
 title: 引导用户绑卡场景
 breadcrumb: 指南 > 应用服务 > Payment Kit（鸿蒙支付服务） > 引导用户绑卡场景
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:50:12+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:75c9feaaa3552e3a9b9f36612a3380eb7ba110aec252fd55bc31916f87a6a8f7
+scraped_at: 2026-04-29T13:39:34+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:23940eaac1b35475722ea680fe11aec0380d939f3399b40d6e6d41d74b6f37b7
 ---
 
 ## 场景介绍
@@ -18,7 +18,7 @@ content_hash: sha256:75c9feaaa3552e3a9b9f36612a3380eb7ba110aec252fd55bc31916f87a
 
 引导用户绑卡页面展示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/wn_9DtiORFq0iG3TZTeemA/zh-cn_image_0000002583479093.png?HW-CC-KV=V1&HW-CC-Date=20260427T235011Z&HW-CC-Expire=86400&HW-CC-Sign=3AF65239E98250FDFC6BBDC507B0CB16FCEDBBDC24C4F4FADAEF35116AB574F5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/TKnycP6bSjKfOSTP1IwnZA/zh-cn_image_0000002558765594.png?HW-CC-KV=V1&HW-CC-Date=20260429T053933Z&HW-CC-Expire=86400&HW-CC-Sign=30970F1FF952690F7FA94F895EC1054E76EE4D0727F13EBEE07799507CAC54E1)
 
 ## 提供绑卡跳转应用信息
 
@@ -32,18 +32,18 @@ content_hash: sha256:75c9feaaa3552e3a9b9f36612a3380eb7ba110aec252fd55bc31916f87a
 
 开发者接入引导用户绑卡，具体接入流程如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/w-zJLq8rSx21HZ13pz1MmA/zh-cn_image_0000002552799444.png?HW-CC-KV=V1&HW-CC-Date=20260427T235011Z&HW-CC-Expire=86400&HW-CC-Sign=98E6D3979EF3F0FB01B242CBD0E0D79AA6BC8619E5AB7961740691E090E32367)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/DjZOGXGoSGqEfVSEuf2PRA/zh-cn_image_0000002558605938.png?HW-CC-KV=V1&HW-CC-Date=20260429T053933Z&HW-CC-Expire=86400&HW-CC-Sign=6FF618730EA663E31F75005D0A6D2299875F19AAB3B1DDEEC7094279BB6D3CF9)
 
 **场景1：用户取消绑卡**
 
-1. 商户客户端调用[requestBindCard](../harmonyos-references/payment-paymentservice.md#paymentservicerequestbindcard)接口拉起用户绑卡页面。
+1. 商户客户端调用[requestBindCard](../harmonyos-references/payment-paymentservice.md#requestbindcard)接口拉起用户绑卡页面。
 2. Payment Kit客户端展示绑卡页面，商户客户端可根据用户不同处理场景完成后续流程。
 3. 用户返回或取消绑卡。
 4. Payment Kit客户端返回商户客户端并将绑卡结果一并返回，商户客户端根据绑卡结果完成后续业务处理。
 
 **场景2：用户完成绑卡**
 
-1. 商户客户端调用[requestBindCard](../harmonyos-references/payment-paymentservice.md#paymentservicerequestbindcard)接口拉起用户绑卡页面。
+1. 商户客户端调用[requestBindCard](../harmonyos-references/payment-paymentservice.md#requestbindcard)接口拉起用户绑卡页面。
 2. Payment Kit客户端展示绑卡页面，商户客户端可根据用户不同处理场景完成后续流程。
 3. 用户通过绑卡页面完成绑卡操作，Payment Kit客户端会请求Payment Kit服务端处理绑卡。
 4. Payment Kit服务端处理绑卡。
@@ -54,7 +54,7 @@ content_hash: sha256:75c9feaaa3552e3a9b9f36612a3380eb7ba110aec252fd55bc31916f87a
 
 ## 接口说明
 
-拉起用户绑卡页面接口。具体API说明详见[接口文档](../harmonyos-references/payment-paymentservice.md#paymentservicerequestbindcard)。
+拉起用户绑卡页面接口。具体API说明详见[接口文档](../harmonyos-references/payment-paymentservice.md#requestbindcard)。
 
 | 接口名 | 描述 |
 | --- | --- |
@@ -64,7 +64,7 @@ content_hash: sha256:75c9feaaa3552e3a9b9f36612a3380eb7ba110aec252fd55bc31916f87a
 
 ### 拉起绑卡页面（端侧开发）
 
-商户客户端调用[requestBindCard](../harmonyos-references/payment-paymentservice.md#paymentservicerequestbindcard)接口拉起用户绑卡页面。
+商户客户端调用[requestBindCard](../harmonyos-references/payment-paymentservice.md#requestbindcard)接口拉起用户绑卡页面。
 
 当接口通过.then()方法返回结果，则表示接口请求成功，通过.catch()方法返回异常表示请求失败。当此次请求有异常时，可通过**error.code**获取错误码，错误码相关信息请参见[错误码](../harmonyos-references/payment-error-code.md)。
 

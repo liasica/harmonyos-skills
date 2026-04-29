@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-examp
 title: 模型轻量化示例
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 模型优化 > 模型轻量化 > 模型轻量化示例
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:51:17+08:00
+scraped_at: 2026-04-29T13:40:55+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:81a75db7c466df2351e86da7a3c3dc2c45568ee83d2d69c6e50230d898487e71
+content_hash: sha256:334a61a717422f57f5c2356ef158e946d0cdb89b25cecdebcaa2dc6ea3a0bea3
 ---
 
 ## TensorFlow Quant\_INT8-8无训练量化Demo
@@ -29,7 +29,7 @@ content_hash: sha256:81a75db7c466df2351e86da7a3c3dc2c45568ee83d2d69c6e50230d8984
 
 "dopt\_tf\_py3/demo/quant8-8/notrain/tensorflow\_mnist"中存有量化后的pb模型和量化配置文件，运行demo后生成的文件如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/bovXeb3bSKaQMr0WtokL5Q/zh-cn_image_0000002583479213.png?HW-CC-KV=V1&HW-CC-Date=20260427T235116Z&HW-CC-Expire=86400&HW-CC-Sign=258DD6F5672FDFD06BC04AC8B9F9E78367566DA6AB278CBAF8C4ACFAA9BA6803)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/usdb_P3sQ1KBh6-YTGIJ4g/zh-cn_image_0000002558765714.png?HW-CC-KV=V1&HW-CC-Date=20260429T054054Z&HW-CC-Expire=86400&HW-CC-Sign=06845A60B3DDCB0D10AD5521489AB8BD11D03033AFA65B08DA2F893C032726DB)
 
 ## PyTorch Quant\_INT8-8无训练量化Demo
 
@@ -54,7 +54,7 @@ content_hash: sha256:81a75db7c466df2351e86da7a3c3dc2c45568ee83d2d69c6e50230d8984
 
 "dopt\_pytorch\_py3/demo/quant8-8/notrain/pytorch\_mnist/"中存有PyTorch无训练量化示例文件，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/cnITDfkTRp2FDpVN_nunlQ/zh-cn_image_0000002552799564.png?HW-CC-KV=V1&HW-CC-Date=20260427T235116Z&HW-CC-Expire=86400&HW-CC-Sign=BCAC97D596594D8A86648B232EB6BB129883808046DE55C33C2F2D26BC6C14DE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/8tSXFzkbS1KCD7n8ALFX-w/zh-cn_image_0000002558606058.png?HW-CC-KV=V1&HW-CC-Date=20260429T054054Z&HW-CC-Expire=86400&HW-CC-Sign=F7C4858860B05B61A43A5DFB9F9C0812F26AD5AD073C8C327CC174A3171D97A8)
 
 ## ONNX Quant\_INT8-8无训练量化Demo
 
@@ -270,7 +270,7 @@ content_hash: sha256:81a75db7c466df2351e86da7a3c3dc2c45568ee83d2d69c6e50230d8984
 
 分类网络Demo位于tools\_dopt/dopt\_tf\_py3/demo/nas\_ea/ea\_cls\_imagenet，包含5个文件，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/ZiKeZ3QYRlaIqeQrap2nDw/zh-cn_image_0000002583439259.png?HW-CC-KV=V1&HW-CC-Date=20260427T235116Z&HW-CC-Expire=86400&HW-CC-Sign=CF4A07035C39C9882D744173E6432F6EC15AEC8B3FCD892F5D819EE7D992BE4C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/Ev4JaMwQSTWXowe2A_zYjA/zh-cn_image_0000002589325585.png?HW-CC-KV=V1&HW-CC-Date=20260429T054054Z&HW-CC-Expire=86400&HW-CC-Sign=7FBF0E2A76D4DE11055D760C995EDF4A8F8C0707615F64286F1A6468751851AC)
 
 * blocks.so：搜索空间文件
 * readme.md：搜索训练指导文件
@@ -333,7 +333,7 @@ content_hash: sha256:81a75db7c466df2351e86da7a3c3dc2c45568ee83d2d69c6e50230d8984
 
 检测网络Demo位于"tools\_dopt/dopt\_tf\_py3/demo/nas\_ea/ea\_det\_coco"，包含6个文件，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/tfpPcZv7QxusTXpgwhCE0A/zh-cn_image_0000002552959214.png?HW-CC-KV=V1&HW-CC-Date=20260427T235116Z&HW-CC-Expire=86400&HW-CC-Sign=41F11A0BBBF7FDBEC9DF68810F578C3B034A286B756F9326802647362C92F324)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/faUyUzHFRHmZbGEA3rBi4A/zh-cn_image_0000002589245523.png?HW-CC-KV=V1&HW-CC-Date=20260429T054054Z&HW-CC-Expire=86400&HW-CC-Sign=89B057AC9310CAEB919C768029B9F054B107727FFD4A075AE5E57832DC7FA32A)
 
 * blocks.so：搜索空间文件。
 * pre\_train.yaml：预训练的配置项。
@@ -411,7 +411,7 @@ content_hash: sha256:81a75db7c466df2351e86da7a3c3dc2c45568ee83d2d69c6e50230d8984
 
 分割网络Demo位于tools\_dopt/dopt\_tf\_py3/demo/nas\_ea/ea\_seg\_voc，包含 6个文件，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/KNEM87l1QzC3v5G9DKdNBg/zh-cn_image_0000002583479215.png?HW-CC-KV=V1&HW-CC-Date=20260427T235116Z&HW-CC-Expire=86400&HW-CC-Sign=4F7BBCC938474EA1F96E7A8F0E665F8FF1BB3BE1E0DD849B2965680F4E0F6974)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/JOehe6pFQfyAfur0xj2ICw/zh-cn_image_0000002558765716.png?HW-CC-KV=V1&HW-CC-Date=20260429T054054Z&HW-CC-Expire=86400&HW-CC-Sign=F9B6118056C7728EAE8D4689150D6840BC7E57BD0F41FE23CFAFDAC6A6DC0AAF)
 
 * blocks.so：搜索空间文件。
 * pre\_train.yaml：预训练的配置项
@@ -503,7 +503,7 @@ content_hash: sha256:81a75db7c466df2351e86da7a3c3dc2c45568ee83d2d69c6e50230d8984
 
 分类网络Demo位于tools\_dopt/dopt\_pytorch\_py3/demo/nas\_ea/ea\_cls\_imagenet\_pytorch，包含5个文件，如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/q6SgegLHSb2UDBjwBp_h1w/zh-cn_image_0000002552799566.png?HW-CC-KV=V1&HW-CC-Date=20260427T235116Z&HW-CC-Expire=86400&HW-CC-Sign=7CF0C7911DBFB9F578662732F2810C883AC675A9C46074679390CA88544CDBC4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/GK7P3ciQRWq8gfGPxUYzQw/zh-cn_image_0000002558606060.png?HW-CC-KV=V1&HW-CC-Date=20260429T054054Z&HW-CC-Expire=86400&HW-CC-Sign=C5CAC9F73D8008067348598AF65D8F30BBD4F4C3AB44572EE51C2759447E5173)
 
 * blocks.so：搜索空间文件
 * readme.md：搜索训练指导文件
@@ -523,7 +523,7 @@ content_hash: sha256:81a75db7c466df2351e86da7a3c3dc2c45568ee83d2d69c6e50230d8984
 
 分割网络Demo位于tools\_dopt/dopt\_pytorch\_py3/demo/nas\_ea/ea\_seg\_voc\_pytorch，包含 6个文件，如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/fjdqco8NR7mhrGz62TD1wA/zh-cn_image_0000002583439261.png?HW-CC-KV=V1&HW-CC-Date=20260427T235116Z&HW-CC-Expire=86400&HW-CC-Sign=AAD7F54B00CB726C0B698A7E70251FF4ED934B0D6AD46E423D5BCF45274E979F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/N7sf-Oa5ToS1R0lPIvIwuQ/zh-cn_image_0000002589325587.png?HW-CC-KV=V1&HW-CC-Date=20260429T054054Z&HW-CC-Expire=86400&HW-CC-Sign=DF8CF290E84572A547537533EF46100AB460314FA5F71ADD65CD8EE6E2517ADA)
 
 * blocks.so：搜索空间文件
 * pre\_train.yaml：预训练的配置项

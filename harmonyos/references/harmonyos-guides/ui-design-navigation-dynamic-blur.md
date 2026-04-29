@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-design-nav
 title: 设置动态模糊样式
 breadcrumb: 指南 > 应用框架 > UI Design Kit（UI设计套件） > 组件导航 > 设置动态模糊样式
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:41:50+08:00
+scraped_at: 2026-04-29T13:30:19+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:3c309661b3931eeee5647e8b93367ff09a2666beed82bc0aab4263a571f78956
+content_hash: sha256:d98ca76f47456e1101d70c9ad27cec4d30e8e2a074a4243ad4e5a760d215689c
 ---
 
 ## 场景介绍
@@ -20,19 +20,19 @@ content_hash: sha256:3c309661b3931eeee5647e8b93367ff09a2666beed82bc0aab4263a571f
 
 对组件背景进行均匀的模糊处理，模糊强度一致，边界清晰，用于强调控件与内容的层级分隔。滑动内容进入/离开标题栏区域过程中，模糊背板和分割线透明渐变出现/消失。此方式适用于非沉浸式场景。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/22fb8BKTQwaU9UTSWVCRdw/zh-cn_image_0000002583478333.gif?HW-CC-KV=V1&HW-CC-Date=20260427T234150Z&HW-CC-Expire=86400&HW-CC-Sign=C6AABB4E09ADCA20B72E5AA8722D9469DEC8BC5E76ED8B9CF351F86719C04C1E "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/lN9kGxRJTm67HiA0eanDEg/zh-cn_image_0000002589244637.gif?HW-CC-KV=V1&HW-CC-Date=20260429T053019Z&HW-CC-Expire=86400&HW-CC-Sign=FEB33C62B4A0522079894C9993E62B199AB83082E51C532D839FD8A9B927D3D9 "点击放大")
 
 ### 过渡模糊样式
 
 对组件背景进行均匀的模糊处理，模糊强度一致，边界清晰，用于强调控件与内容的层级分隔。滑动时标题栏内容发生颜色/状态变化，滑动过程中，随滑动距离，标题栏样式线性变化。此方式仅适用于沉浸式页面，随内容区滚动修改标题栏样式的场景。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/HLip7b6jRxKVJ0trgrYfhw/zh-cn_image_0000002552798684.gif?HW-CC-KV=V1&HW-CC-Date=20260427T234150Z&HW-CC-Expire=86400&HW-CC-Sign=03D932629D5D18ACF11ECD8FFD6338BDD68244E2F34AFE5930C24BDEF71E193C "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/E0-VneRPSpqQLO3In7TeEw/zh-cn_image_0000002558764832.gif?HW-CC-KV=V1&HW-CC-Date=20260429T053019Z&HW-CC-Expire=86400&HW-CC-Sign=F7E252F432267785B5362E212C198B32DBB25C2E04A725DA9C07BE98DB34DB95 "点击放大")
 
 ### 渐变模糊样式
 
 模糊效果在空间维度上呈现逐渐增强/减弱的变化，模糊边界柔和，用于增强页面沉浸感。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/gCGYfjvCQuC9FH6oqS-7IA/zh-cn_image_0000002583438379.gif?HW-CC-KV=V1&HW-CC-Date=20260427T234150Z&HW-CC-Expire=86400&HW-CC-Sign=2CC5AA222A5F21018D1B5BFA523DD7B701C41AE0ADD9A272CE8ED74CDDE17BB4 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/NW_lmSpDThW1cRNqd-M8oQ/zh-cn_image_0000002558605176.gif?HW-CC-KV=V1&HW-CC-Date=20260429T053019Z&HW-CC-Expire=86400&HW-CC-Sign=F023889F285C7577DA23FA8F60AFB2F0AD31EA9F0F76938545C436873DAB2392 "点击放大")
 
 ## 开发步骤
 

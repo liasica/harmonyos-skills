@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-avtr
 title: avtranscoder_base.h
 breadcrumb: API参考 > 媒体 > Media Kit（媒体服务） > C API > 头文件 > avtranscoder_base.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:13:54+08:00
-doc_updated_at: 2026-03-12
-content_hash: sha256:f45d8d4e2694b1474d86c39644a9b3c63ef23310d51baed8b488e74dba66b9cb
+scraped_at: 2026-04-29T14:04:31+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:8d8ede14c3695412c6bd021a1b277cf403eabde9aecc33585b15c157a01872ff
 ---
 
 ## 概述
@@ -157,5 +157,5 @@ PhonePC/2in1TabletTV
 | 参数项 | 描述 |
 | --- | --- |
 | [OH\_AVTranscoder](capi-avtranscoder-oh-avtranscoder.md) \*transcoder | OH\_AVTranscoder实例的指针。 |
-| int32\_t progress | 转码进度。 |
+| int32\_t progress | 转码百分比进度。 |
 | void \*userData | 用户特定数据的指针。 |

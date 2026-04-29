@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/payment-launc
 title: 基于URL跳转方式
 breadcrumb: 指南 > 应用服务 > Payment Kit（鸿蒙支付服务） > 通用收银台接入 > 拉起三方支付收银台 > 基于URL跳转方式
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:50:09+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:dd94887fd18625a90e0063a50fc01dbfaf32d9d5a52f2703ba7dd24542f704c5
+scraped_at: 2026-04-29T13:39:33+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:83f1390385655d3e3e44becfb8ccd9f06af057a4e1d916951c3f9c7692e9b709
 ---
 
-1. 商户客户端根据Payment Kit接口返回的支付信息[PayResult](../harmonyos-references/payment-paymentservice.md#payresult)(混合支付场景）/[PickerResult](../harmonyos-references/payment-paymentservice.md#pickerresult)（纯外部支付场景），按照三方支付平台接入要求创建订单获取拉起三方支付收银台链接并构建**订单支付跳转信息**[orderStr](../harmonyos-references/payment-model.md#orderstr)请求[requestPayment](../harmonyos-references/payment-paymentservice.md#paymentservicerequestpayment)接口跳转或拉起三方支付收银台。
+1. 商户客户端根据Payment Kit接口返回的支付信息[PayResult](../harmonyos-references/payment-paymentservice.md#payresult)(混合支付场景）/[PickerResult](../harmonyos-references/payment-paymentservice.md#pickerresult)（纯外部支付场景），按照三方支付平台接入要求创建订单获取拉起三方支付收银台链接并构建**订单支付跳转信息**[orderStr](../harmonyos-references/payment-model.md#orderstr)请求[requestPayment](../harmonyos-references/payment-paymentservice.md#requestpayment)接口跳转或拉起三方支付收银台。
 
    跳转三方支付收银台示例代码如下：
 

@@ -1,10 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-embedded-component
 title: EmbeddedComponent
+breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 渲染绘制 > EmbeddedComponent
 category: harmonyos-references
-scraped_at: 2026-04-28T08:02:14+08:00
+scraped_at: 2026-04-29T13:52:39+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:504b62f1b1be7a9c85a93b26a35b10608e19a83b7591bd24f2632d31247f13ff
+content_hash: sha256:ce6b26797fd8e68a852380e222d5c08b543c3155563c1d046efd25f5223c2a0b
 ---
 
 EmbeddedComponent用于支持在当前页面嵌入本应用内其他[EmbeddedUIExtensionAbility](js-apis-app-ability-embeddeduiextensionability.md)提供的UI。EmbeddedUIExtensionAbility在独立进程中运行，完成页面布局和渲染。
@@ -282,4 +283,4 @@ PhonePC/2in1TabletTVWearable
   ```
 * 示例图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/G9Fcj2O6SgSnpnw3nOta8g/zh-cn_image_0000002583440065.png?HW-CC-KV=V1&HW-CC-Date=20260428T000213Z&HW-CC-Expire=86400&HW-CC-Sign=8C4A24BE2782BCBC8F31FFB2E205E61B54410467675FCAEE2BF2CBD417672636)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/Bz2Ci4n8TiSvYj6g04Fbsw/zh-cn_image_0000002589246353.png?HW-CC-KV=V1&HW-CC-Date=20260429T055237Z&HW-CC-Expire=86400&HW-CC-Sign=008D5F62F3481BA717B77F16F0A29A82F4413F641FF5426A6E8CD185954C3478)

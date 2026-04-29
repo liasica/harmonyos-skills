@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scan-decodeim
 title: 识别图像数据
 breadcrumb: 指南 > 媒体 > Scan Kit（统一扫码服务） > 图像识码 > 识别图像数据
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:46:42+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:811f1b4b2fc05df846a8940b4e047724ac548717f3b102fbe09004c606260f0d
+scraped_at: 2026-04-29T13:35:41+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:b310daf5afdbcd4545cda5dec870f1ce8019fccaf839b4c1ccf83883674edf12
 ---
 
 ## 基本概念
@@ -18,7 +18,7 @@ content_hash: sha256:811f1b4b2fc05df846a8940b4e047724ac548717f3b102fbe09004c6062
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/IbDM4Jl7TkKDLA6YaxCxKQ/zh-cn_image_0000002552958614.png?HW-CC-KV=V1&HW-CC-Date=20260427T234641Z&HW-CC-Expire=86400&HW-CC-Sign=754DE450CD493DB3AE1FD99E82BEA482523FFAF04E7A8B7467AEB61548A96617)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/dTsEUzfYRIygorkE2LM6nA/zh-cn_image_0000002558765114.png?HW-CC-KV=V1&HW-CC-Date=20260429T053540Z&HW-CC-Expire=86400&HW-CC-Sign=F61915679E452EE3434CDD6F7CC89D19CDD369AE046591638062154064BF4B16)
 
 1. 用户向应用发起识码请求。
 2. 应用通过调用[Camera Kit](camera-overview.md)启动相机，获取预览流数据。
@@ -76,7 +76,7 @@ content_hash: sha256:811f1b4b2fc05df846a8940b4e047724ac548717f3b102fbe09004c6062
    19. }).catch((err: BusinessError) => {
    20. hilog.error(0x0001, '[Scan Sample]',
    21. `Failed to get DetectResult by promise with options. Code: ${err.code}, message: ${err.message}`);
-   22. })
+   22. });
    23. } catch (err) {
    24. hilog.error(0x0001, '[Scan Sample]', `Failed to detectBarcode. Code: ${err.code}, message: ${err.message}`);
    25. }

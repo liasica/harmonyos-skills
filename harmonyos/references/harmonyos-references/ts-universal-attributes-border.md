@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 边框设置
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 布局与边框 > 边框设置
 category: harmonyos-references
-scraped_at: 2026-04-28T08:01:05+08:00
+scraped_at: 2026-04-29T13:51:17+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:f21cb752351761d8e21adcfa8d750b5b0018482802612458994a472f186f7b56
+content_hash: sha256:e1558bab4ddd05eaeddde904ab90b9f865cd89ed0c55b32698b5b1ff5b74e312
 ---
 
 设置组件边框样式。
@@ -251,7 +251,7 @@ PhonePC/2in1TabletTVWearable
 65. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/jOEcEQIRSCCT7NULvK_aEQ/zh-cn_image_0000002552959502.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000103Z&HW-CC-Expire=86400&HW-CC-Sign=5E231CC2947C64D031D0894FA47642D9AA2DADC325AF39E61034075AB1E7A262)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/H6-WeMKGQTm1XNoyvH89XA/zh-cn_image_0000002558766024.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055116Z&HW-CC-Expire=86400&HW-CC-Sign=B290885429C5D303C5E9186F0254172114259B35B69DEE649A5B5837F94E51E9)
 
 ### 示例2（边框宽度类型和边框颜色）
 
@@ -329,11 +329,11 @@ border属性的width、radius、color属性值使用LocalizedEdgeWidths类型和
 
 从左至右显示语言示例图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/k8cg45zGQ7eDBnRE3DNGGA/zh-cn_image_0000002583479503.png?HW-CC-KV=V1&HW-CC-Date=20260428T000103Z&HW-CC-Expire=86400&HW-CC-Sign=4E3EFD4587AECB9B27B6C0C8036F7A41A93953D5A61917FD5B5C9928D326CBE3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/XK6leMFKT-Sc0WazE-uR3Q/zh-cn_image_0000002558606366.png?HW-CC-KV=V1&HW-CC-Date=20260429T055116Z&HW-CC-Expire=86400&HW-CC-Sign=9B47A1C8266EFC5B9D23013887CAA9B9093873B8CDF9C21F6334232FD7FB9FBD)
 
 从右至左显示语言示例图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/Kz4_RR3cSCqztH8_6V98Cw/zh-cn_image_0000002552799854.png?HW-CC-KV=V1&HW-CC-Date=20260428T000103Z&HW-CC-Expire=86400&HW-CC-Sign=6173B3542C9AEF854499052753DD15271F774139440CB20B216514F07F1F3078)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/msrq0SYQRWqGd7-XwbY9lQ/zh-cn_image_0000002589325893.png?HW-CC-KV=V1&HW-CC-Date=20260429T055116Z&HW-CC-Expire=86400&HW-CC-Sign=BEF503BBC504741FFE8EA05CD6D9A84B3782B2BA3E5E767A34BDD3B0FBCFA6BC)
 
 ### 示例3（设置离屏圆角）
 
@@ -412,7 +412,7 @@ border属性的width、radius、color属性值使用LocalizedEdgeWidths类型和
 
 设置在线绘制模式（上方）以及离屏绘制模式（下方）的示例图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/UgByTN6SSjyil0aG67ftSg/zh-cn_image_0000002583439549.jpg?HW-CC-KV=V1&HW-CC-Date=20260428T000103Z&HW-CC-Expire=86400&HW-CC-Sign=749812EB0D3C227A5EF341DD8743EFEE57F75D3284AFC52B1C19A5A3A1607B94)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/4LLh1eVmQTWFo3BH9GQ11A/zh-cn_image_0000002589245835.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T055116Z&HW-CC-Expire=86400&HW-CC-Sign=DB269679F37F7CA9A0E6F813397CE84505A4EAAABB82AF6C080B0396F1197E05)
 
 ### 示例4（设置异形圆角）
 
@@ -445,4 +445,4 @@ border属性的width、radius、color属性值使用LocalizedEdgeWidths类型和
 24. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/6ec1Gs-KSLG-X7l0jnuB5g/zh-cn_image_0000002552959504.png?HW-CC-KV=V1&HW-CC-Date=20260428T000103Z&HW-CC-Expire=86400&HW-CC-Sign=91C544A62D96EEB6D6A36D3EAAB040CEC2D4F2264E8B2E07AD3AB0CDFE251C5A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/jsYyE0UIQSOhR0LNlJBFnA/zh-cn_image_0000002558766026.png?HW-CC-KV=V1&HW-CC-Date=20260429T055116Z&HW-CC-Expire=86400&HW-CC-Sign=BDA21368C291FB28F99D22D5957E006D6760F90AE1D5412C68679951482C99C9)

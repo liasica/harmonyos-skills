@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/share-utd-ima
 title: 分享图片
 breadcrumb: 指南 > 应用服务 > Share Kit（分享服务） > 系统分享 > 常见分享场景 > 分享图片
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:51:02+08:00
+scraped_at: 2026-04-29T13:40:36+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:997b223abf3ce6fddf301407c83e30b6e450e04bdf690f7262ee3b8af629834a
+content_hash: sha256:b710a5642b9efc90e44cd85f8a3f8aa6ba3417eeb3aff3a308f0cfacef8dd9cc
 ---
 
 图片类型分享支持将一张或多张图片分享到目标设备/目标应用。
@@ -13,7 +13,7 @@ content_hash: sha256:997b223abf3ce6fddf301407c83e30b6e450e04bdf690f7262ee3b8af62
 * 目标设备接收时，图片会保存到图库中。
 * 目标应用接收时，可便捷的处理图片内容。例如：将一张图片分享给畅连，发送给畅连好友。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/YhZsV8PVRdm5iPHwMQhYcw/zh-cn_image_0000002583479181.png?HW-CC-KV=V1&HW-CC-Date=20260427T235101Z&HW-CC-Expire=86400&HW-CC-Sign=CA4C7F29D165020F4063FC38B0121EAE8A5D4C4E997310BF71E86C0E95FB3E19)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/BEaJalffRMeckfaUnFAXEQ/zh-cn_image_0000002558765682.png?HW-CC-KV=V1&HW-CC-Date=20260429T054035Z&HW-CC-Expire=86400&HW-CC-Sign=3B81FC7C5743C435EB1A8A19A5D172DF12824A6FC5A4706E5C14C18E625C8B7B)
 
 ## 开发步骤
 

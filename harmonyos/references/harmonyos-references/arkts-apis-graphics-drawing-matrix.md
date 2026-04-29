@@ -3,22 +3,22 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (Matrix)
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > ArkTS API > @ohos.graphics.drawing (绘制模块) > Class (Matrix)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:14:39+08:00
+scraped_at: 2026-04-29T14:05:17+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:f3659fd650933ec3f2ff69fa5733b95a26ca1bb1e1a7c969a43bf6df6df5fb71
+content_hash: sha256:15be76f08475975813e5889657bcec06de910531f823beb397310d5f2594f9c6
 ---
 
 矩阵对象。
 
 表示为3\*3的矩阵，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/cV6pjRSLQuOVUQAJzhZFHQ/zh-cn_image_0000002583440909.png?HW-CC-KV=V1&HW-CC-Date=20260428T001437Z&HW-CC-Expire=86400&HW-CC-Sign=9C7B5686D1A9B49BAFA23439D208054E8C39EA1EAE88034FEAD727C65A9B2C9B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/FFAvTjC4TDe-mMOfcFj7Sw/zh-cn_image_0000002558767390.png?HW-CC-KV=V1&HW-CC-Date=20260429T060514Z&HW-CC-Expire=86400&HW-CC-Sign=EEE7ACF5971D8308DE64AC350749AC887E5654EFFB391D2C1C1ED9F08D5E1AEA)
 
 矩阵中的元素从左到右，从上到下分别表示水平缩放系数、水平倾斜系数、水平位移系数、垂直倾斜系数、垂直缩放系数、垂直位移系数、X轴透视系数、Y轴透视系数、透视缩放系数。
 
 设(x1, y1)为源坐标点，(x2, y2)为源坐标点通过矩阵变换后的坐标点，则两个坐标点的关系如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/_66T52cRRZWdDTbM7Xk3fw/zh-cn_image_0000002552960864.png?HW-CC-KV=V1&HW-CC-Date=20260428T001437Z&HW-CC-Expire=86400&HW-CC-Sign=507AFD14924CC53062729ECCD82AA163A3604DC6BB2A0C926A5FD795EB8D6063)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/9ABxUOr6Q2auwpohQr3lPQ/zh-cn_image_0000002558607732.png?HW-CC-KV=V1&HW-CC-Date=20260429T060514Z&HW-CC-Expire=86400&HW-CC-Sign=E7017391ACB7BFE41F77A8318A478EA7D3EB8DA112191F112ED38A0525B08040)
 
 说明
 
@@ -1040,7 +1040,7 @@ mapRect(dst: common2D.Rect, src: common2D.Rect): boolean
 
 将目标矩形设置为源矩形通过矩阵变换后的图形的外接矩形。如下图所示，蓝色矩形为源矩形，假设黄色矩形为源矩形通过矩阵变换形成的图形，此时黄色矩形的边不与坐标轴平行，无法使用矩形对象表示，因此，将目标矩形设置为黄色矩形的外接矩形，即黑色矩形。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/41pqp6qHTC-CoaiaemcVCQ/zh-cn_image_0000002583480865.png?HW-CC-KV=V1&HW-CC-Date=20260428T001437Z&HW-CC-Expire=86400&HW-CC-Sign=FE65F3C113262A3783E54493BE38AD8F2F1D084CC641EFE77756253035A8AACC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/eZ-0EnbYSbS0phsrkiQzyQ/zh-cn_image_0000002589327259.png?HW-CC-KV=V1&HW-CC-Date=20260429T060514Z&HW-CC-Expire=86400&HW-CC-Sign=DBD479A906110697685C6E01C8422E2C15307165C4E62F4DDB3B05F5AA36A52A)
 
 **系统能力：** SystemCapability.Graphics.Drawing
 

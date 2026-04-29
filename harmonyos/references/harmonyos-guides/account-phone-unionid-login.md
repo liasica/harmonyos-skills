@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-phone
 title: 华为账号一键登录（获取手机号和UnionID/OpenID）
 breadcrumb: 指南 > 应用服务 > Account Kit（华为账号服务） > 登录 > 华为账号一键登录（获取手机号和UnionID/OpenID）
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:47:58+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:7432f039205f743b823c222686c5115aad06efa8c823a6cefea044d0b227d296
+scraped_at: 2026-04-29T13:36:49+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:3c7a6b2dc9d4d0b3db0e15ab481375ff834f78620df8999386bebf630d828497
 ---
 
 ## 概述
@@ -43,13 +43,13 @@ content_hash: sha256:7432f039205f743b823c222686c5115aad06efa8c823a6cefea044d0b22
 
 ## 用户体验设计
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/i5O__HLGR1is0wlWjPDu9Q/zh-cn_image_0000002583438791.png?HW-CC-KV=V1&HW-CC-Date=20260427T234757Z&HW-CC-Expire=86400&HW-CC-Sign=BE86E892682C9861C420C86ED6D72B8C76FA825045D2345C5D3F0DB76E64AE7E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/GYlpl0YdQLWeMkTRfmxIEQ/zh-cn_image_0000002589245051.png?HW-CC-KV=V1&HW-CC-Date=20260429T053622Z&HW-CC-Expire=86400&HW-CC-Sign=4C3E4D3913F9E447C5F4D1FC3347F0BFA49AF758F92C5B7F565B3D742AF2A970)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/k-XZJCCkTOCHPuicYnyYDA/zh-cn_image_0000002552958746.png?HW-CC-KV=V1&HW-CC-Date=20260427T234757Z&HW-CC-Expire=86400&HW-CC-Sign=A742D93FD5F3B3482B68CF2BA9D4CE8F8EC1B1CFEFBB753AD09B84C70E10760D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/zGOv-6rOTnySDgcO6Vvm0A/zh-cn_image_0000002558765246.png?HW-CC-KV=V1&HW-CC-Date=20260429T053622Z&HW-CC-Expire=86400&HW-CC-Sign=280F7B2031B7DCB21C84AA3762CC0C9F7176BCF56E76F98F24E36140DB5B40A8)
 
 ## 登录页面UX设计规范
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/mCAaMo6NQRq8ZRMt4Dxx_A/zh-cn_image_0000002583478747.png?HW-CC-KV=V1&HW-CC-Date=20260427T234757Z&HW-CC-Expire=86400&HW-CC-Sign=7FDB000EAE28E599348CD1353181A6B9BED112CD1F67072B6792A49B0591E5BE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/-BqrJ52ES-6RrpNtaYOt6A/zh-cn_image_0000002558605590.png?HW-CC-KV=V1&HW-CC-Date=20260429T053622Z&HW-CC-Expire=86400&HW-CC-Sign=9CAD8ABCE4ED4B43510E93CAA89CE7274F9149D3D30BD4E9D4ECF870E30AC748)
 
 一键登录按钮的用户体验和UX设计需符合[【华为账号一键登录】按钮](../design-guides/id-0000001880001344.md#section41792374210)规范，用户体验设计图2中的华为标志按钮可参考[华为账号登录视觉规范](../design-guides/id-0000001880001344.md#section61791745172816)中的样式三。不符合规范的UX设计可能会对应用上架和用户体验带来影响。一键登录按钮的样式设计具体可以参考[华为账号登录按钮类型](../harmonyos-references/account-api-component-manager.md#style)。
 
@@ -57,7 +57,7 @@ content_hash: sha256:7432f039205f743b823c222686c5115aad06efa8c823a6cefea044d0b22
 
 用户使用华为账号一键登录能力，注册/登录应用时，可能存在多种场景，应用可参照以下流程，根据自身业务场景进行设计。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/x6agirixThqMfUfiR1ptQQ/zh-cn_image_0000002552799098.png?HW-CC-KV=V1&HW-CC-Date=20260427T234757Z&HW-CC-Expire=86400&HW-CC-Sign=317E98DEB9182A2A90014105D957C46D3A0906EBC3D5922A11D7198A53364F8A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/FMv4J6m2Q720uziKX93IOw/zh-cn_image_0000002589325117.png?HW-CC-KV=V1&HW-CC-Date=20260429T053622Z&HW-CC-Expire=86400&HW-CC-Sign=08E985A7FE40F1191699D23624C7D4C8670690C9DC3322A4765E5F6B2FA66912)
 
 说明
 
@@ -71,7 +71,7 @@ content_hash: sha256:7432f039205f743b823c222686c5115aad06efa8c823a6cefea044d0b22
 
 **图1** 华为账号一键登录（用户首次登录应用）流程图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/lr0qO7wUTHevlH0SMg6-Sg/zh-cn_image_0000002583438793.png?HW-CC-KV=V1&HW-CC-Date=20260427T234757Z&HW-CC-Expire=86400&HW-CC-Sign=0081F363A3653B25A4E8D0C5375765A6AC62B209AA152747F0BF966525A855E4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/bRFMuarjSIy0O4-H6jeqFA/zh-cn_image_0000002589245053.png?HW-CC-KV=V1&HW-CC-Date=20260429T053622Z&HW-CC-Expire=86400&HW-CC-Sign=00C83113070E01D4A91D37A253FE7A6601430AFBDA748A6D3D77ED3C8B57D26C)
 
 流程说明：
 
@@ -98,7 +98,7 @@ content_hash: sha256:7432f039205f743b823c222686c5115aad06efa8c823a6cefea044d0b22
 
 **图2** 华为账号一键登录（用户非首次登录应用）流程图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/ftthIef2TdSEKcJkz5Lq0w/zh-cn_image_0000002552958748.png?HW-CC-KV=V1&HW-CC-Date=20260427T234757Z&HW-CC-Expire=86400&HW-CC-Sign=7567C48A8B107AE88DABC5F8DA115A3FDAC2301F0AABF938D3755C372A023069)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/zo06eReHRdyc7Kyqd_PwyQ/zh-cn_image_0000002558765248.png?HW-CC-KV=V1&HW-CC-Date=20260429T053622Z&HW-CC-Expire=86400&HW-CC-Sign=CB9AD184314B62FBD3E75B3D5C3E7AE134B276E243C8FB04659B221A94B1B742)
 
 流程说明：
 
@@ -326,7 +326,7 @@ content_hash: sha256:7432f039205f743b823c222686c5115aad06efa8c823a6cefea044d0b22
    70. .onClickEvent((error: BusinessError, clickEvent: loginComponentManager.ClickEvent) => {
    71. if (error) {
    72. hilog.error(this.domainId, this.logTag,
-   73. `onClickEvent error. errCode is ${error?.code}, errMessage is ${error?.message}`);
+   73. `onClickEvent error. errCode is ${error.code}, errMessage is ${error.message}`);
    74. return;
    75. }
    76. hilog.info(this.domainId, this.logTag, `onClickEvent clickEvent: ${clickEvent}`);
@@ -361,467 +361,468 @@ content_hash: sha256:7432f039205f743b823c222686c5115aad06efa8c823a6cefea044d0b22
    105. }
    106. }),
    107. autoCancel: false,
-   108. alignment: DialogAlignment.Center,
+   108. alignment: DialogAlignment.Center
    109. });
 
-   111. // 传递页面渲染所需的数据，如匿名手机号等
-   112. aboutToAppear(): void {
-   113. }
+   111. // Toast提示
+   112. showToast(resource: string) {
+   113. try {
+   114. this.getUIContext().getPromptAction().showToast({
+   115. message: resource,
+   116. duration: 2000
+   117. });
+   118. } catch (error) {
+   119. const message = (error as BusinessError).message;
+   120. const code = (error as BusinessError).code;
+   121. hilog.error(this.domainId, this.logTag, `showToast args  errCode is ${code}, errMessage is ${message}`);
+   122. }
+   123. }
 
-   115. // Toast提示
-   116. showToast(resource: string) {
-   117. try {
-   118. this.getUIContext().getPromptAction().showToast({
-   119. message: resource,
-   120. duration: 2000
-   121. });
-   122. } catch (error) {
-   123. const message = (error as BusinessError).message
-   124. const code = (error as BusinessError).code
-   125. hilog.error(this.domainId, this.logTag, `showToast args  errCode is ${code}, errMessage is ${message}`);
-   126. }
-   127. }
+   125. // 跳转华为账号用户认证协议页，该页面需在工程main_pages.json文件配置
+   126. jumpToPrivacyWebView() {
+   127. try {
+   128. // 需在module.json5中配置“ohos.permission.GET_NETWORK_INFO”权限
+   129. const checkNetConn = connection.hasDefaultNetSync();
+   130. if (!checkNetConn) {
+   131. this.showToast('服务或网络异常，请稍后重试');
+   132. return;
+   133. }
+   134. } catch (error) {
+   135. const message = error.message as string;
+   136. const code = error.code as string;
+   137. hilog.error(0x0000, 'testTag', `Failed to hasDefaultNetSync, errCode is ${code}, errMessage is ${message}`);
+   138. }
+   139. this.getUIContext().getRouter().pushUrl({
+   140. // 需在module.json5配置“ohos.permission.INTERNET”网络权限
+   141. url: 'pages/WebPage',
+   142. params: {
+   143. isFromDialog: true,
+   144. url: QuickLoginButtonComponent.USER_AUTHENTICATION_PROTOCOL
+   145. }
+   146. }, (err) => {
+   147. if (err) {
+   148. hilog.error(this.domainId, this.logTag,
+   149. `Failed to jumpToPrivacyWebView, errCode is ${err.code}, errMessage is ${err.message}`);
+   150. }
+   151. });
+   152. }
 
-   129. // 跳转华为账号用户认证协议页，该页面需在工程main_pages.json文件配置
-   130. jumpToPrivacyWebView() {
-   131. try {
-   132. // 需在module.json5中配置“ohos.permission.GET_NETWORK_INFO”权限
-   133. const checkNetConn = connection.hasDefaultNetSync();
-   134. if (!checkNetConn) {
-   135. this.showToast('服务或网络异常，请稍后重试');
-   136. return;
-   137. }
-   138. } catch (error) {
-   139. const message = error.message as string;
-   140. const code = error.code as string;
-   141. hilog.error(0x0000, 'testTag', `Failed to hasDefaultNetSync, errCode is ${code}, errMessage is ${message}`);
-   142. }
-   143. this.getUIContext().getRouter().pushUrl({
-   144. // 需在module.json5配置“ohos.permission.INTERNET”网络权限
-   145. url: 'pages/WebPage',
-   146. params: {
-   147. isFromDialog: true,
-   148. url: QuickLoginButtonComponent.USER_AUTHENTICATION_PROTOCOL,
-   149. }
-   150. }, (err) => {
-   151. if (err) {
-   152. hilog.error(this.domainId, this.logTag,
-   153. `Failed to jumpToPrivacyWebView, errCode is ${err.code}, errMessage is ${err.message}`);
-   154. }
-   155. });
-   156. }
-
-   158. handleLoginWithHuaweiIDButton(error: BusinessError | undefined,
-   159. response: loginComponentManager.HuaweiIDCredential) {
-   160. if (error) {
-   161. hilog.error(this.domainId, this.logTag,
-   162. `Failed to login with LoginWithHuaweiIDButton. errCode is ${error.code}, errMessage is ${error.message}`);
-   163. if (error.code === ErrorCode.ERROR_CODE_NETWORK_ERROR) {
-   164. this.getUIContext().showAlertDialog(
-   165. {
-   166. message: "网络未连接，请检查网络设置。",
-   167. offset: { dx: 0, dy: -12 },
-   168. alignment: DialogAlignment.Bottom,
-   169. autoCancel: false,
-   170. confirm: {
-   171. value: "知道了",
-   172. action: () => {
-   173. }
-   174. }
-   175. }
-   176. );
-   177. } else if (error.code === ErrorCode.ERROR_CODE_AGREEMENT_STATUS_NOT_ACCEPTED) {
-   178. // 未同意协议，弹出协议弹框，推荐使用该回调方式
-   179. this.agreementDialog.open();
-   180. } else if (error.code === ErrorCode.ERROR_CODE_LOGIN_OUT) {
-   181. // 华为账号未登录提示
-   182. this.showToast("华为账号未登录，请重试");
-   183. } else if (error.code === ErrorCode.ERROR_CODE_NOT_SUPPORTED) {
-   184. // 不支持该scopes或permissions提示
-   185. this.showToast("该scopes或permissions不支持");
-   186. } else if (error.code === ErrorCode.ERROR_CODE_PARAMETER_ERROR) {
-   187. // 参数错误提示
-   188. this.showToast("参数错误");
-   189. } else if (error.code === ErrorCode.ERROR_CODE_USER_CANCEL) {
-   190. // 用户取消，无需特别处理
-   191. } else {
-   192. // 其他提示系统或服务异常
-   193. this.showToast('服务或网络异常，请稍后重试');
+   154. handleLoginWithHuaweiIDButton(error: BusinessError | undefined,
+   155. response: loginComponentManager.HuaweiIDCredential) {
+   156. if (error) {
+   157. hilog.error(this.domainId, this.logTag,
+   158. `Failed to login with LoginWithHuaweiIDButton. errCode is ${error.code}, errMessage is ${error.message}`);
+   159. if (error.code === ErrorCode.ERROR_CODE_NETWORK_ERROR) {
+   160. this.getUIContext().showAlertDialog(
+   161. {
+   162. message: '网络未连接，请检查网络设置。',
+   163. offset: { dx: 0, dy: -12 },
+   164. alignment: DialogAlignment.Bottom,
+   165. autoCancel: false,
+   166. confirm: {
+   167. value: '知道了',
+   168. action: () => {
+   169. // 用户点击“知道了”按钮，可于此处补充业务逻辑
+   170. }
+   171. }
+   172. }
+   173. );
+   174. } else if (error.code === ErrorCode.ERROR_CODE_AGREEMENT_STATUS_NOT_ACCEPTED) {
+   175. // 未同意协议，弹出协议弹框，推荐使用该回调方式
+   176. this.agreementDialog.open();
+   177. } else if (error.code === ErrorCode.ERROR_CODE_LOGIN_OUT) {
+   178. // 华为账号未登录提示
+   179. this.showToast('华为账号未登录，请重试');
+   180. } else if (error.code === ErrorCode.ERROR_CODE_NOT_SUPPORTED) {
+   181. // 不支持该scopes或permissions提示
+   182. this.showToast('该scopes或permissions不支持');
+   183. } else if (error.code === ErrorCode.ERROR_CODE_PARAMETER_ERROR) {
+   184. // 参数错误提示
+   185. this.showToast('参数错误');
+   186. } else if (error.code === ErrorCode.ERROR_CODE_USER_CANCEL) {
+   187. // 用户取消，无需特别处理
+   188. } else {
+   189. // 其他提示系统或服务异常
+   190. this.showToast('服务或网络异常，请稍后重试');
+   191. }
+   192. this.controller.setEnabled(true);
+   193. return;
    194. }
-   195. this.controller.setEnabled(true);
-   196. return;
-   197. }
-   198. try {
-   199. if (this.isSelected) {
-   200. if (response) {
-   201. hilog.info(this.domainId, this.logTag, 'Succeeded in clicking LoginWithHuaweiIDButton.');
-   202. // 开发者根据实际业务情况使用以下信息
-   203. const authCode = response.authorizationCode;
+   195. try {
+   196. if (this.isSelected) {
+   197. if (response) {
+   198. hilog.info(this.domainId, this.logTag, 'Succeeded in clicking LoginWithHuaweiIDButton.');
+   199. // 开发者根据实际业务情况使用以下信息
+   200. const authCode = response.authorizationCode;
+   201. }
+   202. } else {
+   203. this.agreementDialog.open();
    204. }
-   205. } else {
-   206. this.agreementDialog.open();
-   207. }
-   208. } catch (err) {
-   209. hilog.error(this.domainId, this.logTag,
-   210. `Failed to login with LoginWithHuaweiIDButton, errCode: ${err.code}, errMessage: ${err.message}`);
-   211. this.getUIContext().showAlertDialog(
-   212. {
-   213. message: '服务或网络异常，请稍后重试',
-   214. offset: { dx: 0, dy: -12 },
-   215. alignment: DialogAlignment.Bottom,
-   216. autoCancel: false,
-   217. confirm: {
-   218. value: '知道了',
-   219. action: () => {
+   205. } catch (err) {
+   206. hilog.error(this.domainId, this.logTag,
+   207. `Failed to login with LoginWithHuaweiIDButton, errCode: ${err.code}, errMessage: ${err.message}`);
+   208. this.getUIContext().showAlertDialog(
+   209. {
+   210. message: '服务或网络异常，请稍后重试',
+   211. offset: { dx: 0, dy: -12 },
+   212. alignment: DialogAlignment.Bottom,
+   213. autoCancel: false,
+   214. confirm: {
+   215. value: '知道了',
+   216. action: () => {
+   217. // 用户点击“知道了”按钮，可于此处补充业务逻辑
+   218. }
+   219. }
    220. }
-   221. }
-   222. }
-   223. );
-   224. } finally {
-   225. this.controller.setEnabled(true);
-   226. }
-   227. }
+   221. );
+   222. } finally {
+   223. this.controller.setEnabled(true);
+   224. }
+   225. }
 
-   229. build() {
-   230. Scroll() {
+   227. build() {
+   228. Scroll() {
+   229. Column() {
+   230. Column() {
    231. Column() {
-   232. Column() {
-   233. Column() {
-   234. // 此处为示例资源，开发者可使用应用图标进行替换，以保证正常编译运行
-   235. Image($r('app.media.app_icon'))
-   236. .width(48)
-   237. .height(48)
-   238. .draggable(false)
-   239. .copyOption(CopyOptions.None)
-   240. .onComplete(() => {
-   241. hilog.info(this.domainId, this.logTag, 'appIcon loading success.');
-   242. })
-   243. .onError(() => {
-   244. hilog.error(this.domainId, this.logTag, 'appIcon loading fail.');
-   245. })
+   232. // 此处为示例资源，开发者可使用应用图标进行替换，以保证正常编译运行
+   233. Image($r('app.media.app_icon'))
+   234. .width(48)
+   235. .height(48)
+   236. .draggable(false)
+   237. .copyOption(CopyOptions.None)
+   238. .onComplete(() => {
+   239. hilog.info(this.domainId, this.logTag, 'appIcon loading success.');
+   240. })
+   241. .onError(() => {
+   242. hilog.error(this.domainId, this.logTag, 'appIcon loading fail.');
+   243. })
 
-   247. Text($r('app.string.app_name'))
-   248. .fontFamily($r('sys.string.ohos_id_text_font_family_medium'))
-   249. .fontWeight(FontWeight.Medium)
-   250. .fontWeight(FontWeight.Bold)
-   251. .maxFontSize($r('sys.float.ohos_id_text_size_headline8'))
-   252. .minFontSize($r('sys.float.ohos_id_text_size_body1'))
-   253. .maxLines(1)
-   254. .fontColor($r('sys.color.ohos_id_color_text_primary'))
-   255. .constraintSize({ maxWidth: '100%' })
-   256. .margin({
-   257. top: 12,
-   258. })
+   245. Text($r('app.string.app_name'))
+   246. .fontFamily($r('sys.string.ohos_id_text_font_family_medium'))
+   247. .fontWeight(FontWeight.Medium)
+   248. .fontWeight(FontWeight.Bold)
+   249. .maxFontSize($r('sys.float.ohos_id_text_size_headline8'))
+   250. .minFontSize($r('sys.float.ohos_id_text_size_body1'))
+   251. .maxLines(1)
+   252. .fontColor($r('sys.color.ohos_id_color_text_primary'))
+   253. .constraintSize({ maxWidth: '100%' })
+   254. .margin({
+   255. top: 12
+   256. })
 
-   260. Text('应用描述')
-   261. .fontSize($r('sys.float.ohos_id_text_size_body2'))
-   262. .fontColor($r('sys.color.ohos_id_color_text_secondary'))
-   263. .fontFamily($r('sys.string.ohos_id_text_font_family_regular'))
-   264. .fontWeight(FontWeight.Regular)
-   265. .constraintSize({ maxWidth: '100%' })
-   266. .margin({
-   267. top: 8,
-   268. })
-   269. }.margin({
-   270. top: 100
-   271. })
+   258. Text('应用描述')
+   259. .fontSize($r('sys.float.ohos_id_text_size_body2'))
+   260. .fontColor($r('sys.color.ohos_id_color_text_secondary'))
+   261. .fontFamily($r('sys.string.ohos_id_text_font_family_regular'))
+   262. .fontWeight(FontWeight.Regular)
+   263. .constraintSize({ maxWidth: '100%' })
+   264. .margin({
+   265. top: 8
+   266. })
+   267. }.margin({
+   268. top: 100
+   269. })
 
-   273. Column() {
-   274. Text(this.quickLoginAnonymousPhone)
-   275. .fontSize(36)
-   276. .fontColor($r('sys.color.ohos_id_color_text_primary'))
-   277. .fontFamily($r('sys.string.ohos_id_text_font_family_medium'))
-   278. .fontWeight(FontWeight.Bold)
-   279. .lineHeight(48)
-   280. .textAlign(TextAlign.Center)
-   281. .maxLines(1)
-   282. .constraintSize({ maxWidth: '100%', minHeight: 48 })
+   271. Column() {
+   272. Text(this.quickLoginAnonymousPhone)
+   273. .fontSize(36)
+   274. .fontColor($r('sys.color.ohos_id_color_text_primary'))
+   275. .fontFamily($r('sys.string.ohos_id_text_font_family_medium'))
+   276. .fontWeight(FontWeight.Bold)
+   277. .lineHeight(48)
+   278. .textAlign(TextAlign.Center)
+   279. .maxLines(1)
+   280. .constraintSize({ maxWidth: '100%', minHeight: 48 })
 
-   284. Text('华为账号绑定号码')
-   285. .fontSize($r('sys.float.ohos_id_text_size_body2'))
-   286. .fontColor($r('sys.color.ohos_id_color_text_secondary'))
-   287. .fontFamily($r('sys.string.ohos_id_text_font_family_regular'))
-   288. .fontWeight(FontWeight.Regular)
-   289. .lineHeight(19)
-   290. .textAlign(TextAlign.Center)
-   291. .maxLines(1)
-   292. .constraintSize({ maxWidth: '100%' })
-   293. .margin({
-   294. top: 8
-   295. })
-   296. }.margin({
-   297. top: 64
-   298. })
+   282. Text('华为账号绑定号码')
+   283. .fontSize($r('sys.float.ohos_id_text_size_body2'))
+   284. .fontColor($r('sys.color.ohos_id_color_text_secondary'))
+   285. .fontFamily($r('sys.string.ohos_id_text_font_family_regular'))
+   286. .fontWeight(FontWeight.Regular)
+   287. .lineHeight(19)
+   288. .textAlign(TextAlign.Center)
+   289. .maxLines(1)
+   290. .constraintSize({ maxWidth: '100%' })
+   291. .margin({
+   292. top: 8
+   293. })
+   294. }.margin({
+   295. top: 64
+   296. })
 
-   300. Column() {
-   301. LoginWithHuaweiIDButton({
-   302. params: {
-   303. // LoginWithHuaweiIDButton支持的样式
-   304. style: loginComponentManager.Style.BUTTON_RED,
-   305. // 账号登录按钮在登录过程中展示加载态
-   306. extraStyle: {
-   307. buttonStyle: new loginComponentManager.ButtonStyle().loadingStyle({
-   308. show: true
-   309. })
-   310. },
-   311. // LoginWithHuaweiIDButton的边框圆角半径
-   312. borderRadius: 24,
-   313. // LoginWithHuaweiIDButton支持的登录类型
-   314. loginType: loginComponentManager.LoginType.QUICK_LOGIN,
-   315. // LoginWithHuaweiIDButton支持按钮的样式跟随系统深浅色模式切换
-   316. supportDarkMode: true
-   317. },
-   318. controller: this.controller
-   319. })
-   320. }
-   321. .height(40)
-   322. .margin({
-   323. top: 56
-   324. })
+   298. Column() {
+   299. LoginWithHuaweiIDButton({
+   300. params: {
+   301. // LoginWithHuaweiIDButton支持的样式
+   302. style: loginComponentManager.Style.BUTTON_RED,
+   303. // 账号登录按钮在登录过程中展示加载态
+   304. extraStyle: {
+   305. buttonStyle: new loginComponentManager.ButtonStyle().loadingStyle({
+   306. show: true
+   307. })
+   308. },
+   309. // LoginWithHuaweiIDButton的边框圆角半径
+   310. borderRadius: 24,
+   311. // LoginWithHuaweiIDButton支持的登录类型
+   312. loginType: loginComponentManager.LoginType.QUICK_LOGIN,
+   313. // LoginWithHuaweiIDButton支持按钮的样式跟随系统深浅色模式切换
+   314. supportDarkMode: true
+   315. },
+   316. controller: this.controller
+   317. })
+   318. }
+   319. .height(40)
+   320. .margin({
+   321. top: 56
+   322. })
 
-   326. Column() {
-   327. Button({
-   328. type: ButtonType.Capsule,
-   329. stateEffect: true
-   330. }) {
-   331. Text('其他方式登录')
-   332. .fontColor($r('sys.color.ohos_id_color_text_primary_activated'))
-   333. .fontFamily($r('sys.string.ohos_id_text_font_family_medium'))
-   334. .fontWeight(FontWeight.Medium)
-   335. .fontSize($r('sys.float.ohos_id_text_size_button1'))
-   336. .focusable(true)
-   337. .focusOnTouch(true)
-   338. .textOverflow({ overflow: TextOverflow.Ellipsis })
-   339. .maxLines(1)
-   340. .padding({ left: 8, right: 8 })
-   341. }
-   342. .fontColor($r('sys.color.ohos_id_color_text_primary_activated'))
-   343. .fontFamily($r('sys.string.ohos_id_text_font_family_medium'))
-   344. .fontWeight(FontWeight.Medium)
-   345. .backgroundColor($r('sys.color.ohos_id_color_button_normal'))
-   346. .focusable(true)
-   347. .focusOnTouch(true)
-   348. .constraintSize({ minHeight: 40 })
-   349. .width('100%')
-   350. .onClick(() => {
-   351. hilog.info(this.domainId, this.logTag, 'click optionalLoginButton.');
-   352. })
-   353. }.margin({ top: 16 })
-   354. }.width('100%')
+   324. Column() {
+   325. Button({
+   326. type: ButtonType.Capsule,
+   327. stateEffect: true
+   328. }) {
+   329. Text('其他方式登录')
+   330. .fontColor($r('sys.color.ohos_id_color_text_primary_activated'))
+   331. .fontFamily($r('sys.string.ohos_id_text_font_family_medium'))
+   332. .fontWeight(FontWeight.Medium)
+   333. .fontSize($r('sys.float.ohos_id_text_size_button1'))
+   334. .focusable(true)
+   335. .focusOnTouch(true)
+   336. .textOverflow({ overflow: TextOverflow.Ellipsis })
+   337. .maxLines(1)
+   338. .padding({ left: 8, right: 8 })
+   339. }
+   340. .fontColor($r('sys.color.ohos_id_color_text_primary_activated'))
+   341. .fontFamily($r('sys.string.ohos_id_text_font_family_medium'))
+   342. .fontWeight(FontWeight.Medium)
+   343. .backgroundColor($r('sys.color.ohos_id_color_button_normal'))
+   344. .focusable(true)
+   345. .focusOnTouch(true)
+   346. .constraintSize({ minHeight: 40 })
+   347. .width('100%')
+   348. .onClick(() => {
+   349. hilog.info(this.domainId, this.logTag, 'click optionalLoginButton.');
+   350. })
+   351. }.margin({ top: 16 })
+   352. }.width('100%')
 
-   356. Row() {
-   357. Row() {
-   358. Checkbox({ name: 'privacyCheckbox', group: 'privacyCheckboxGroup' })
-   359. .width(24)
-   360. .height(24)
-   361. .focusable(true)
-   362. .focusOnTouch(true)
-   363. .margin({ top: 0 })
-   364. .select(this.isSelected)
-   365. .onChange((value: boolean) => {
-   366. if (value) {
-   367. this.isSelected = true;
-   368. this.controller.setAgreementStatus(loginComponentManager.AgreementStatus.ACCEPTED);
-   369. } else {
-   370. this.isSelected = false;
-   371. this.controller.setAgreementStatus(loginComponentManager.AgreementStatus.NOT_ACCEPTED);
-   372. }
-   373. hilog.info(this.domainId, this.logTag, `agreementChecked: ${value}`);
-   374. })
-   375. }
+   354. Row() {
+   355. Row() {
+   356. Checkbox({ name: 'privacyCheckbox', group: 'privacyCheckboxGroup' })
+   357. .width(24)
+   358. .height(24)
+   359. .focusable(true)
+   360. .focusOnTouch(true)
+   361. .margin({ top: 0 })
+   362. .select(this.isSelected)
+   363. .onChange((value: boolean) => {
+   364. if (value) {
+   365. this.isSelected = true;
+   366. this.controller.setAgreementStatus(loginComponentManager.AgreementStatus.ACCEPTED);
+   367. } else {
+   368. this.isSelected = false;
+   369. this.controller.setAgreementStatus(loginComponentManager.AgreementStatus.NOT_ACCEPTED);
+   370. }
+   371. hilog.info(this.domainId, this.logTag, `agreementChecked: ${value}`);
+   372. })
+   373. }
 
-   377. Row() {
-   378. Text() {
-   379. ForEach(this.privacyText, (item: loginComponentManager.PrivacyText) => {
-   380. if (item?.type === loginComponentManager.TextType.PLAIN_TEXT && item?.text) {
-   381. Span(item?.text)
-   382. .fontColor($r('sys.color.ohos_id_color_text_secondary'))
-   383. .fontFamily($r('sys.string.ohos_id_text_font_family_regular'))
-   384. .fontWeight(FontWeight.Regular)
-   385. .fontSize($r('sys.float.ohos_id_text_size_body3'))
-   386. } else if (item?.type === loginComponentManager.TextType.RICH_TEXT && item?.text) {
-   387. Span(item?.text)
-   388. .fontColor($r('sys.color.ohos_id_color_text_primary_activated'))
-   389. .fontFamily($r('sys.string.ohos_id_text_font_family_medium'))
-   390. .fontWeight(FontWeight.Medium)
-   391. .fontSize($r('sys.float.ohos_id_text_size_body3'))
-   392. .onClick(() => {
-   393. // 应用需要根据item.tag实现协议页面的跳转逻辑
-   394. hilog.info(this.domainId, this.logTag, `click privacy text tag: ${item.tag}`);
-   395. // 华为账号用户认证协议
-   396. if (item.tag === QuickLoginButtonComponent.USER_AUTHENTICATION_TAG) {
-   397. this.jumpToPrivacyWebView();
+   375. Row() {
+   376. Text() {
+   377. ForEach(this.privacyText, (item: loginComponentManager.PrivacyText) => {
+   378. if (item?.type === loginComponentManager.TextType.PLAIN_TEXT && item?.text) {
+   379. Span(item?.text)
+   380. .fontColor($r('sys.color.ohos_id_color_text_secondary'))
+   381. .fontFamily($r('sys.string.ohos_id_text_font_family_regular'))
+   382. .fontWeight(FontWeight.Regular)
+   383. .fontSize($r('sys.float.ohos_id_text_size_body3'))
+   384. } else if (item?.type === loginComponentManager.TextType.RICH_TEXT && item?.text) {
+   385. Span(item?.text)
+   386. .fontColor($r('sys.color.ohos_id_color_text_primary_activated'))
+   387. .fontFamily($r('sys.string.ohos_id_text_font_family_medium'))
+   388. .fontWeight(FontWeight.Medium)
+   389. .fontSize($r('sys.float.ohos_id_text_size_body3'))
+   390. .onClick(() => {
+   391. // 应用需要根据item.tag实现协议页面的跳转逻辑
+   392. hilog.info(this.domainId, this.logTag, `click privacy text tag: ${item.tag}`);
+   393. // 华为账号用户认证协议
+   394. if (item.tag === QuickLoginButtonComponent.USER_AUTHENTICATION_TAG) {
+   395. this.jumpToPrivacyWebView();
+   396. }
+   397. })
    398. }
-   399. })
+   399. }, (item: loginComponentManager.PrivacyText) => item.text.toString())
    400. }
-   401. }, (item: loginComponentManager.PrivacyText) => item.text.toString())
+   401. .width('100%')
    402. }
-   403. .width('100%')
-   404. }
-   405. .margin({ left: 12 })
-   406. .layoutWeight(1)
-   407. .constraintSize({ minHeight: 24 })
-   408. }
-   409. .alignItems(VerticalAlign.Top)
-   410. .margin({
-   411. top: 16,
-   412. bottom: 16
-   413. })
-   414. }
-   415. .justifyContent(FlexAlign.SpaceBetween)
-   416. .constraintSize({ minHeight: '100%' })
-   417. .margin({
-   418. left: 16,
-   419. right: 16
-   420. })
-   421. }
-   422. .width('100%')
-   423. .height('100%')
-   424. }
-   425. }
+   403. .margin({ left: 12 })
+   404. .layoutWeight(1)
+   405. .constraintSize({ minHeight: 24 })
+   406. }
+   407. .alignItems(VerticalAlign.Top)
+   408. .margin({
+   409. top: 16,
+   410. bottom: 16
+   411. })
+   412. }
+   413. .justifyContent(FlexAlign.SpaceBetween)
+   414. .constraintSize({ minHeight: '100%' })
+   415. .margin({
+   416. left: 16,
+   417. right: 16
+   418. })
+   419. }
+   420. .width('100%')
+   421. .height('100%')
+   422. }
+   423. }
 
-   427. @CustomDialog
-   428. export struct AgreementDialog {
-   429. logTag: string = 'AgreementDialog';
-   430. domainId: number = 0x0000;
-   431. dialogController?: CustomDialogController;
-   432. cancel: () => void = () => {
-   433. };
-   434. confirm: () => void = () => {
+   425. @CustomDialog
+   426. export struct AgreementDialog {
+   427. logTag: string = 'AgreementDialog';
+   428. domainId: number = 0x0000;
+   429. dialogController?: CustomDialogController;
+   430. cancel: () => void = () => {
+   431. // 用户点击“取消”按钮，可于此处补充业务逻辑
+   432. };
+   433. confirm: () => void = () => {
+   434. // 用户点击“同意并登录”按钮，可于此处补充业务逻辑
    435. };
    436. clickHyperlinkText: () => void = () => {
-   437. };
-   438. privacyText: loginComponentManager.PrivacyText[] = [];
-   439. private static USER_AUTHENTICATION_TAG = '华为账号用户认证协议';
+   437. // 用户点击超链接文本，可于此处补充业务逻辑
+   438. };
+   439. privacyText: loginComponentManager.PrivacyText[] = [];
+   440. private static USER_AUTHENTICATION_TAG = '华为账号用户认证协议';
 
-   441. build() {
-   442. Column() {
-   443. Row() {
-   444. Text('用户协议与隐私条款')
-   445. .id('loginPanel_agreement_dialog_privacy_title')
-   446. .maxFontSize($r('sys.float.ohos_id_text_size_headline8'))
-   447. .minFontSize($r('sys.float.ohos_id_text_size_body1'))
-   448. .fontColor($r('sys.color.ohos_id_color_text_primary'))
-   449. .fontFamily($r('sys.string.ohos_id_text_font_family_medium'))
-   450. .fontWeight(FontWeight.Bold)
-   451. .textAlign(TextAlign.Center)
-   452. .textOverflow({ overflow: TextOverflow.Ellipsis })
-   453. .maxLines(2)
-   454. }
-   455. .alignItems(VerticalAlign.Center)
-   456. .constraintSize({ minHeight: 56, maxWidth: 400 })
-   457. .margin({
-   458. left: $r('sys.float.ohos_id_max_padding_start'),
-   459. right: $r('sys.float.ohos_id_max_padding_start')
-   460. })
+   442. build() {
+   443. Column() {
+   444. Row() {
+   445. Text('用户协议与隐私条款')
+   446. .id('loginPanel_agreement_dialog_privacy_title')
+   447. .maxFontSize($r('sys.float.ohos_id_text_size_headline8'))
+   448. .minFontSize($r('sys.float.ohos_id_text_size_body1'))
+   449. .fontColor($r('sys.color.ohos_id_color_text_primary'))
+   450. .fontFamily($r('sys.string.ohos_id_text_font_family_medium'))
+   451. .fontWeight(FontWeight.Bold)
+   452. .textAlign(TextAlign.Center)
+   453. .textOverflow({ overflow: TextOverflow.Ellipsis })
+   454. .maxLines(2)
+   455. }
+   456. .alignItems(VerticalAlign.Center)
+   457. .constraintSize({ minHeight: 56, maxWidth: 400 })
+   458. .margin({
+   459. left: $r('sys.float.ohos_id_max_padding_start'),
+   460. right: $r('sys.float.ohos_id_max_padding_start')
+   461. })
 
-   462. Row() {
-   463. Text() {
-   464. ForEach(this.privacyText, (item: loginComponentManager.PrivacyText) => {
-   465. if (item?.type === loginComponentManager.TextType.PLAIN_TEXT && item?.text) {
-   466. Span(item?.text)
-   467. .fontSize($r('sys.float.ohos_id_text_size_body1'))
-   468. .fontColor($r('sys.color.ohos_id_color_text_primary'))
-   469. .fontFamily($r('sys.string.ohos_id_text_font_family_regular'))
-   470. .fontWeight(FontWeight.Regular)
-   471. } else if (item?.type === loginComponentManager.TextType.RICH_TEXT && item?.text) {
-   472. Span(item?.text)
-   473. .fontSize($r('sys.float.ohos_id_text_size_body1'))
-   474. .fontColor('#CE0E2D')
-   475. .fontFamily($r('sys.string.ohos_id_text_font_family_medium'))
-   476. .fontWeight(FontWeight.Medium)
-   477. .onClick(() => {
-   478. // 应用需要根据item.tag实现协议页面的跳转逻辑
-   479. hilog.info(this.domainId, this.logTag, `click privacy text tag: ${item.tag}`);
-   480. // 华为账号用户认证协议
-   481. if (item.tag === AgreementDialog.USER_AUTHENTICATION_TAG) {
-   482. hilog.info(this.domainId, this.logTag, 'AgreementDialog click.');
-   483. this.clickHyperlinkText();
-   484. }
-   485. })
-   486. }
-   487. }, (item: loginComponentManager.PrivacyText) => item.text.toString())
-   488. }
-   489. .width('100%')
-   490. .textOverflow({ overflow: TextOverflow.Ellipsis })
-   491. .maxLines(10)
-   492. .textAlign(TextAlign.Start)
-   493. .focusable(true)
-   494. .focusOnTouch(true)
-   495. .padding({ left: 24, right: 24 })
-   496. }.width('100%')
+   463. Row() {
+   464. Text() {
+   465. ForEach(this.privacyText, (item: loginComponentManager.PrivacyText) => {
+   466. if (item?.type === loginComponentManager.TextType.PLAIN_TEXT && item?.text) {
+   467. Span(item?.text)
+   468. .fontSize($r('sys.float.ohos_id_text_size_body1'))
+   469. .fontColor($r('sys.color.ohos_id_color_text_primary'))
+   470. .fontFamily($r('sys.string.ohos_id_text_font_family_regular'))
+   471. .fontWeight(FontWeight.Regular)
+   472. } else if (item?.type === loginComponentManager.TextType.RICH_TEXT && item?.text) {
+   473. Span(item?.text)
+   474. .fontSize($r('sys.float.ohos_id_text_size_body1'))
+   475. .fontColor('#CE0E2D')
+   476. .fontFamily($r('sys.string.ohos_id_text_font_family_medium'))
+   477. .fontWeight(FontWeight.Medium)
+   478. .onClick(() => {
+   479. // 应用需要根据item.tag实现协议页面的跳转逻辑
+   480. hilog.info(this.domainId, this.logTag, `click privacy text tag: ${item.tag}`);
+   481. // 华为账号用户认证协议
+   482. if (item.tag === AgreementDialog.USER_AUTHENTICATION_TAG) {
+   483. hilog.info(this.domainId, this.logTag, 'AgreementDialog click.');
+   484. this.clickHyperlinkText();
+   485. }
+   486. })
+   487. }
+   488. }, (item: loginComponentManager.PrivacyText) => item.text.toString())
+   489. }
+   490. .width('100%')
+   491. .textOverflow({ overflow: TextOverflow.Ellipsis })
+   492. .maxLines(10)
+   493. .textAlign(TextAlign.Start)
+   494. .focusable(true)
+   495. .focusOnTouch(true)
+   496. .padding({ left: 24, right: 24 })
+   497. }.width('100%')
 
-   498. Flex({
-   499. direction: FlexDirection.Row
-   500. }) {
-   501. Button('取消',
-   502. { type: ButtonType.Capsule, stateEffect: true })
-   503. .id('loginPanel_agreement_cancel_btn')
-   504. .fontColor($r('sys.color.ohos_id_color_text_primary'))
-   505. .fontSize($r('sys.float.ohos_id_text_size_button1'))
-   506. .fontFamily($r('sys.string.ohos_id_text_font_family_medium'))
-   507. .backgroundColor(Color.Transparent)
-   508. .fontWeight(FontWeight.Medium)
-   509. .focusable(true)
-   510. .focusOnTouch(true)
-   511. .constraintSize({ minHeight: 40, maxWidth: 400 })
-   512. .width('50%')
-   513. .onClick(() => {
-   514. hilog.info(this.domainId, this.logTag, 'AgreementDialog cancel.');
-   515. this.cancel();
-   516. })
+   499. Flex({
+   500. direction: FlexDirection.Row
+   501. }) {
+   502. Button('取消',
+   503. { type: ButtonType.Capsule, stateEffect: true })
+   504. .id('loginPanel_agreement_cancel_btn')
+   505. .fontColor($r('sys.color.ohos_id_color_text_primary'))
+   506. .fontSize($r('sys.float.ohos_id_text_size_button1'))
+   507. .fontFamily($r('sys.string.ohos_id_text_font_family_medium'))
+   508. .backgroundColor(Color.Transparent)
+   509. .fontWeight(FontWeight.Medium)
+   510. .focusable(true)
+   511. .focusOnTouch(true)
+   512. .constraintSize({ minHeight: 40, maxWidth: 400 })
+   513. .width('50%')
+   514. .onClick(() => {
+   515. hilog.info(this.domainId, this.logTag, 'AgreementDialog cancel.');
+   516. this.cancel();
+   517. })
 
-   518. Button('同意并登录',
-   519. { type: ButtonType.Capsule, stateEffect: true })
-   520. .id('loginPanel_agreement_dialog_huawei_id_login_btn')
-   521. .fontColor(Color.White)
-   522. .backgroundColor('#CE0E2D')
-   523. .fontSize($r('sys.float.ohos_id_text_size_button1'))
-   524. .fontFamily($r('sys.string.ohos_id_text_font_family_medium'))
-   525. .fontWeight(FontWeight.Medium)
-   526. .focusable(true)
-   527. .focusOnTouch(true)
-   528. .constraintSize({ minHeight: 40, maxWidth: 400 })
-   529. .width('50%')
-   530. .onClick(() => {
-   531. hilog.info(this.domainId, this.logTag, 'AgreementDialog confirm.');
-   532. this.confirm();
-   533. })
-   534. }
-   535. .margin({
-   536. top: 8,
-   537. left: $r('sys.float.ohos_id_elements_margin_horizontal_l'),
-   538. right: $r('sys.float.ohos_id_elements_margin_horizontal_l'),
-   539. bottom: 16
-   540. })
-   541. }.backgroundColor($r('sys.color.ohos_id_color_dialog_default_bg'))
-   542. .padding({
-   543. left: 16,
-   544. right: 16
-   545. })
-   546. }
+   519. Button('同意并登录',
+   520. { type: ButtonType.Capsule, stateEffect: true })
+   521. .id('loginPanel_agreement_dialog_huawei_id_login_btn')
+   522. .fontColor(Color.White)
+   523. .backgroundColor('#CE0E2D')
+   524. .fontSize($r('sys.float.ohos_id_text_size_button1'))
+   525. .fontFamily($r('sys.string.ohos_id_text_font_family_medium'))
+   526. .fontWeight(FontWeight.Medium)
+   527. .focusable(true)
+   528. .focusOnTouch(true)
+   529. .constraintSize({ minHeight: 40, maxWidth: 400 })
+   530. .width('50%')
+   531. .onClick(() => {
+   532. hilog.info(this.domainId, this.logTag, 'AgreementDialog confirm.');
+   533. this.confirm();
+   534. })
+   535. }
+   536. .margin({
+   537. top: 8,
+   538. left: $r('sys.float.ohos_id_elements_margin_horizontal_l'),
+   539. right: $r('sys.float.ohos_id_elements_margin_horizontal_l'),
+   540. bottom: 16
+   541. })
+   542. }.backgroundColor($r('sys.color.ohos_id_color_dialog_default_bg'))
+   543. .padding({
+   544. left: 16,
+   545. right: 16
+   546. })
    547. }
+   548. }
 
-   549. export enum ErrorCode {
-   550. // 账号未登录
-   551. ERROR_CODE_LOGIN_OUT = 1001502001,
-   552. // 该账号不支持一键登录，如海外账号
-   553. ERROR_CODE_NOT_SUPPORTED = 1001500003,
-   554. // 网络错误
-   555. ERROR_CODE_NETWORK_ERROR = 1001502005,
-   556. // 内部错误
-   557. ERROR_CODE_INTERNAL_ERROR = 1001502009,
-   558. // 用户取消授权
-   559. ERROR_CODE_USER_CANCEL = 1001502012,
-   560. // 系统服务异常
-   561. ERROR_CODE_SYSTEM_SERVICE = 12300001,
-   562. // 用户未同意用户协议
-   563. ERROR_CODE_AGREEMENT_STATUS_NOT_ACCEPTED = 1005300001,
-   564. // 参数错误
-   565. ERROR_CODE_PARAMETER_ERROR = 401,
-   566. // 重复请求
-   567. ERROR_CODE_REQUEST_REFUSE = 1001500002
-   568. }
+   550. export enum ErrorCode {
+   551. // 账号未登录
+   552. ERROR_CODE_LOGIN_OUT = 1001502001,
+   553. // 该账号不支持一键登录，如海外账号
+   554. ERROR_CODE_NOT_SUPPORTED = 1001500003,
+   555. // 网络错误
+   556. ERROR_CODE_NETWORK_ERROR = 1001502005,
+   557. // 内部错误
+   558. ERROR_CODE_INTERNAL_ERROR = 1001502009,
+   559. // 用户取消授权
+   560. ERROR_CODE_USER_CANCEL = 1001502012,
+   561. // 系统服务异常
+   562. ERROR_CODE_SYSTEM_SERVICE = 12300001,
+   563. // 用户未同意用户协议
+   564. ERROR_CODE_AGREEMENT_STATUS_NOT_ACCEPTED = 1005300001,
+   565. // 参数错误
+   566. ERROR_CODE_PARAMETER_ERROR = 401,
+   567. // 重复请求
+   568. ERROR_CODE_REQUEST_REFUSE = 1001500002
+   569. }
    ```
 
    以下是华为账号用户认证协议展示页示例代码：
@@ -940,7 +941,7 @@ content_hash: sha256:7432f039205f743b823c222686c5115aad06efa8c823a6cefea044d0b22
 2. 在DevEco Studio菜单栏点击View > Tool Windows > Kit Assistant，或使用快捷键Alt + K，进入Kit Assistant页面。
 3. 在左侧目录中点击选中AccountKit > QuickLoginButton，并拖拽至新创建的容器中。即可在当前位置插入相应的代码片段。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/g3aV8onrTRqe0ZmfdJOo6A/zh-cn_image_0000002583478749.png?HW-CC-KV=V1&HW-CC-Date=20260427T234757Z&HW-CC-Expire=86400&HW-CC-Sign=5B3AB39591BE911273B3A58BF2F0E3F6739F75D0A55BD3986F5B2B097DD2C213)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/F33Kza61QROHotOmO4r1OQ/zh-cn_image_0000002558605592.png?HW-CC-KV=V1&HW-CC-Date=20260429T053622Z&HW-CC-Expire=86400&HW-CC-Sign=54C9FB46BDF5FFCCD062283F4A46663BBEB756641F6ADB8148BE942440C5A0BD)
 
    若代码片段插入失败，可查询[快速插入场景化代码片段](ide-kit-assistant.md)的说明排查原因。
 4. 在自动生成的代码段的getQuickLoginAnonymousPhone函数中，执行executeRequest函数可获取响应结果。
@@ -974,12 +975,12 @@ content_hash: sha256:7432f039205f743b823c222686c5115aad06efa8c823a6cefea044d0b22
 
 业务流程：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/-JqCp4IzQtyXh3RBhrhBxA/zh-cn_image_0000002552799100.png?HW-CC-KV=V1&HW-CC-Date=20260427T234757Z&HW-CC-Expire=86400&HW-CC-Sign=FFA5901F2DAB6146A3D42135CB328E956B307614C6103F6FE0761B1789D68F5F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/pRFCiYrISwiW8UmFRdaHcQ/zh-cn_image_0000002589325119.png?HW-CC-KV=V1&HW-CC-Date=20260429T053622Z&HW-CC-Expire=86400&HW-CC-Sign=BBC559D2E2CD62013C072EBB0E587163536D356D6D9639B76F4B82AA1D98EE40)
 
 * 准备：
 
 1. 请先完成应用客户端一键登录的相关开发，相关开发指导参考[客户端开发](account-phone-unionid-login.md#客户端开发)；
-2. 参考[使用fetch发送网络请求](remote-communication-netsend-arkts.md#section71222326515)完成客户端到服务端的接口请求，开发步骤如下；
+2. 参考[使用fetch发送网络请求](remote-communication-netsend-arkts.md#如何使用fetch发起网络请求)完成客户端到服务端的接口请求，开发步骤如下；
 
    1. 在应用客户端调用应用服务端提供的接口，将Authorization Code传输给应用的服务端；
 
@@ -1552,11 +1553,11 @@ content_hash: sha256:7432f039205f743b823c222686c5115aad06efa8c823a6cefea044d0b22
 
 1. 在客户端获取到Authorization Code之后，传送给服务端接口；在服务端使用Authorization Code获取华为账号绑定的手机号、UnionID、OpenID。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/HxQX8b3ZQ--aSDGr-W3Lsg/zh-cn_image_0000002583438795.png?HW-CC-KV=V1&HW-CC-Date=20260427T234757Z&HW-CC-Expire=86400&HW-CC-Sign=A5B8BD49EC9AC3720FA9DC64B9B976D564EFC2A4EDC10D12D51252EC6D5DAC8E)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/jnOPjp-JTZqceO95VlIj1A/zh-cn_image_0000002589245055.png?HW-CC-KV=V1&HW-CC-Date=20260429T053622Z&HW-CC-Expire=86400&HW-CC-Sign=A1DF0469F848AC1C5D4378338DB985CF83A7F7FDAE5FE86988695C43EFB60C03)
 2. 根据应用登录方案使用华为账号绑定的手机号、UnionID、OpenID登录成功后，应用服务端返回用户信息给应用客户端，应用客户端可根据需要进行本地持久化存储，例如：登录状态、用户账号名、手机号、用户身份标识等。
 3. 在应用客户端首页或个人信息页等位置，对当前登录用户信息进行展示，举例如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/74yFVb0CRBOPuPxzgSrXBQ/zh-cn_image_0000002552958750.png?HW-CC-KV=V1&HW-CC-Date=20260427T234757Z&HW-CC-Expire=86400&HW-CC-Sign=EBD539B2D3A077E39F726F3476859274D77B032E6D1FCD2A67815A19AC00D87E "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/BhtEGNBOTwC0whn9lMvL_A/zh-cn_image_0000002558765250.png?HW-CC-KV=V1&HW-CC-Date=20260429T053622Z&HW-CC-Expire=86400&HW-CC-Sign=A86B0EB56376DE4A9A75631198BAA4431B12C283054FFD509768435098439A8A "点击放大")
 
 ## 开发后验证
 

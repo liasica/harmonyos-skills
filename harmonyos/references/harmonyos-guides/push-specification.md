@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/push-specific
 title: 学习Push Kit接入规范
 breadcrumb: 指南 > 应用服务 > Push Kit（推送服务） > 开发准备 > 学习Push Kit接入规范
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:50:28+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:1de213f5890bc3d8860381b51f71d9f0c3f92d641f1e064858ad8f88c7b85516
+scraped_at: 2026-04-29T13:39:53+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:4ece7e5664a1a621c62241e601d3d83020a8c3041e73cf0b2d784a1652fa307e
 ---
 
 为维护华为通知生态秩序，保障用户合法权益和良好的使用体验，根据现行法律法规及[《华为开发者服务协议》](../start/agreement-0000001052728169.md)、[《华为APIs使用协议》](../20209.md)、[《华为推送服务使用协议》](../app/20213.md)、[《应用审核指南》](../app/50104.md)、[《元服务审核指南》](../app/50129.md)，特制定本规范。
@@ -102,4 +102,4 @@ Wearable不支持此通知样式。
 
 * 应用不得擅自篡改、损坏、反编译Push Kit提供的服务功能，改变Push Kit的基本功能。
 * 避免出现其他可能影响终端用户体验的行为。
-* 应用使用推送服务时，推荐接入[应用内通知设置快捷入口](notification-shortcut-settings.md)，便于用户找到应用内的通知分类控制开关，提升用户通知管理的体验，减少应用通知关闭率。
+* 应用使用Push Kit时，推荐接入[应用内通知设置快捷入口](notification-shortcut-settings.md)，便于用户找到应用内的通知分类控制开关，提升用户通知管理的体验，减少应用通知关闭率。

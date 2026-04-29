@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-design-lay
 title: （推荐）分层图标处理
 breadcrumb: 指南 > 应用框架 > UI Design Kit（UI设计套件） > 图标处理 > （推荐）分层图标处理
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:41:50+08:00
+scraped_at: 2026-04-29T13:30:19+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:10f057a1898121280030291a5f971a23ab3639c18812e196dda660c2ef7f7370
+content_hash: sha256:08c1b079250dc303d6ee51e8f3f2c8ea4bf8a269336a7a0a8d141840a7db338f
 ---
 
 ## 场景介绍
@@ -18,7 +18,7 @@ content_hash: sha256:10f057a1898121280030291a5f971a23ab3639c18812e196dda660c2ef7
 * 展示应用详情：可调用UI Design Kit处理单个分层图标的接口获取处理后的应用图标。
 * 展示跟随在线主题的应用图标：可调用UI Design Kit处理分层图标的接口获取主题换肤后的应用图标。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/o1p22WigTO2fOCI8rao9RQ/zh-cn_image_0000002552958330.png?HW-CC-KV=V1&HW-CC-Date=20260427T234149Z&HW-CC-Expire=86400&HW-CC-Sign=36934F1B63BB68315BE942FF6B09D4A9DB39CCCC95EA29B178D36EC8A4BD580A)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/SUILzQutRC2GXbIPhziHQQ/zh-cn_image_0000002583478331.png?HW-CC-KV=V1&HW-CC-Date=20260427T234149Z&HW-CC-Expire=86400&HW-CC-Sign=44755A8E39A2551D0F58C2F6F5572AF763EC17262FB8437715BF18E749E13CF9)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/d6mnuKrqRN2lpk5g2n79lQ/zh-cn_image_0000002552798682.png?HW-CC-KV=V1&HW-CC-Date=20260427T234149Z&HW-CC-Expire=86400&HW-CC-Sign=B88830F0564423461536EA9BF6E7621CE2F2F8689AF19A789590446564684258)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/jDyaPHq3S7uxhuoKZ9AbgQ/zh-cn_image_0000002589324697.png?HW-CC-KV=V1&HW-CC-Date=20260429T053017Z&HW-CC-Expire=86400&HW-CC-Sign=6C89B8340B0D9924D44C2A4B9EA86B968F45EE0F474681A6E32EF83D2CF7FFDB)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/wzlmcONuQ1yMwZaguMmx7w/zh-cn_image_0000002589244635.png?HW-CC-KV=V1&HW-CC-Date=20260429T053017Z&HW-CC-Expire=86400&HW-CC-Sign=311DC24C7EBB65A1109B21FD5894639E18E3FDE4AECF19C757F078E360E953AA)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/VpMx4tWWQ_W5zbzGf_sz8Q/zh-cn_image_0000002558764830.png?HW-CC-KV=V1&HW-CC-Date=20260429T053017Z&HW-CC-Expire=86400&HW-CC-Sign=00B0263562FEBD3B574327E56B0413FE1F379FC11B4B399918537305DE9EEFDC)
 
 ## 约束条件
 
@@ -26,7 +26,7 @@ content_hash: sha256:10f057a1898121280030291a5f971a23ab3639c18812e196dda660c2ef7
 
 ## 开发步骤
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/SyDK8D7oSlm0Yh49soqwiQ/zh-cn_image_0000002583438377.png?HW-CC-KV=V1&HW-CC-Date=20260427T234149Z&HW-CC-Expire=86400&HW-CC-Sign=48BAC53B0B3CDCD584065C6AE7C02F6C4149F5961F77409A72ACE281F509792B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/x2fWIdLESq-KixpswEHetA/zh-cn_image_0000002558605174.png?HW-CC-KV=V1&HW-CC-Date=20260429T053017Z&HW-CC-Expire=86400&HW-CC-Sign=C4DBC462FC669A5BB8F548760024E6BE30FC809955BF9767B9DA9CD187803188)
 
 1. 设置分层图标，将前景资源和背景资源放至entry/src/main/resources/base/media文件中，并在该目录下创建一个json文件（例如：drawable.json）：
 

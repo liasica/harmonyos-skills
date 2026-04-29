@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scenario-comp
 title: 控件状态变化场景
 breadcrumb: 指南 > 应用框架 > Accessibility Kit（无障碍服务） > 提升应用的无障碍体验 > 提升屏幕朗读无障碍体验 > 控件状态变化场景
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:38:08+08:00
+scraped_at: 2026-04-29T13:26:09+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:d1d2fe7d16eeb3e9df033c6fa61a2a2eb1df2f04e434d2eb1145947269d9ac67
+content_hash: sha256:d83398ea0294a94c3d72677be74f4fd476d0edba3f8c0665510e7937906f03c3
 ---
 
 ## 开发实例
 
 例如下图，播放暂停按钮对应着两种状态，在状态切换时需要实时变化对应的标注信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/mX1gZsT2QoKOtwbDSj8-yg/zh-cn_image_0000002552957518.png?HW-CC-KV=V1&HW-CC-Date=20260427T233807Z&HW-CC-Expire=86400&HW-CC-Sign=E05883CB0B3E09C8B8506110B270F8AA6166679BC4142E29A9F9DDCC77032BDB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/Pvb_5gDOQbWH3YT8FKEUVw/zh-cn_image_0000002589243817.png?HW-CC-KV=V1&HW-CC-Date=20260429T052608Z&HW-CC-Expire=86400&HW-CC-Sign=644410FDE22CB388E7F70C46701AFD043C7B3CEFE50FB759F7FDC6272D1670F6)
 
 ```
 1. import { PromptAction } from "@kit.ArkUI"

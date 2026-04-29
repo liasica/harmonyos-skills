@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-v1-v2-m
 title: 组件内状态变量迁移
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理V1-V2迁移指导 > 状态管理V1向V2迁移场景 > 组件内状态变量迁移
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:39:15+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:b9175a7efb9f966403b086ee3c096eb382ed0acea4ffbc1c9560688583a5a483
+scraped_at: 2026-04-29T13:27:26+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:61bfa12565fd15763a0066a63c800ea0d957b3ac710bd894c6520d809b1cbd52
 ---
 
 本文档主要介绍组件内的状态变量的迁移场景，包含以下场景：
@@ -47,12 +47,13 @@ V1：
 3. @Entry
 4. @Component
 5. struct Child {
-6. @State val: number = INITIAL_VALUE;
+6. // V1的@State装饰简单类型变量
+7. @State val: number = INITIAL_VALUE;
 
-8. build() {
-9. Text(this.val.toString())
-10. }
+9. build() {
+10. Text(this.val.toString())
 11. }
+12. }
 ```
 
 [StateEasyV1.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/StateMigrationProject/entry/src/main/ets/pages/componentstatemigration/StateEasyV1.ets#L15-L27)
@@ -65,12 +66,13 @@ V2迁移策略：直接替换。
 3. @Entry
 4. @ComponentV2
 5. struct Child {
-6. @Local val: number = INITIAL_VALUE;
+6. // V2的@Local装饰简单类型变量
+7. @Local val: number = INITIAL_VALUE;
 
-8. build() {
-9. Text(this.val.toString())
-10. }
+9. build() {
+10. Text(this.val.toString())
 11. }
+12. }
 ```
 
 [StateEasyV2.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/StateMigrationProject/entry/src/main/ets/pages/componentstatemigration/StateEasyV2.ets#L16-L28)
@@ -298,22 +300,23 @@ V1实现：
 ```
 1. @Component
 2. struct Child {
-3. @Prop value: number;
+3. // V1的@Prop装饰简单类型变量
+4. @Prop value: number;
 
-5. build() {
-6. Text(this.value.toString())
-7. }
+6. build() {
+7. Text(this.value.toString())
 8. }
+9. }
 
-10. @Entry
-11. @Component
-12. struct Parent {
-13. build() {
-14. Column() {
-15. Child({ value: 30 })
-16. }
+11. @Entry
+12. @Component
+13. struct Parent {
+14. build() {
+15. Column() {
+16. Child({ value: 30 })
 17. }
 18. }
+19. }
 ```
 
 [PropEasyV1.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/StateMigrationProject/entry/src/main/ets/pages/componentstatemigration/PropEasyV1.ets#L15-L34)
@@ -323,22 +326,23 @@ V2迁移策略：直接替换。
 ```
 1. @ComponentV2
 2. struct Child {
-3. @Param value: number = 0;
+3. // V2的@Param装饰简单类型变量
+4. @Param value: number = 0;
 
-5. build() {
-6. Text(this.value.toString())
-7. }
+6. build() {
+7. Text(this.value.toString())
 8. }
+9. }
 
-10. @Entry
-11. @ComponentV2
-12. struct Parent {
-13. build() {
-14. Column() {
-15. Child({ value: 30 })
-16. }
+11. @Entry
+12. @ComponentV2
+13. struct Parent {
+14. build() {
+15. Column() {
+16. Child({ value: 30 })
 17. }
 18. }
+19. }
 ```
 
 [PropEasyV2.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/StateMigrationProject/entry/src/main/ets/pages/componentstatemigration/PropEasyV2.ets#L15-L34)
@@ -957,13 +961,14 @@ V1实现：
 15. build() {
 16. Column() {
 17. Text(`apple count: ${this.apple}`)
-18. Button('add apple')
-19. .onClick(() => {
-20. this.apple++;
-21. })
-22. }
+18. // 点击Button累加apple，触发UI刷新
+19. Button('add apple')
+20. .onClick(() => {
+21. this.apple++;
+22. })
 23. }
 24. }
+25. }
 ```
 
 [WatchSingleVarV1.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/StateMigrationProject/entry/src/main/ets/pages/componentstatemigration/WatchSingleVarV1.ets#L15-L40)
@@ -989,13 +994,14 @@ V2迁移策略：直接替换。
 16. build() {
 17. Column() {
 18. Text(`apple count: ${this.apple}`)
-19. Button('add apple')
-20. .onClick(() => {
-21. this.apple++;
-22. })
-23. }
+19. // 点击Button累加apple，触发UI刷新
+20. Button('add apple')
+21. .onClick(() => {
+22. this.apple++;
+23. })
 24. }
 25. }
+26. }
 ```
 
 [WatchSingleVarV2.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/StateMigrationProject/entry/src/main/ets/pages/componentstatemigration/WatchSingleVarV2.ets#L15-L41)
@@ -1108,13 +1114,14 @@ V1：
 8. Column() {
 9. Text(this.lastName + ' ' + this.firstName)
 10. Text(this.lastName + ' ' + this.firstName)
-11. Button('changed lastName').onClick(() => {
-12. this.lastName += 'a';
-13. })
+11. // 每次改变lastName都会触发Text组件的刷新
+12. Button('changed lastName').onClick(() => {
+13. this.lastName += 'a';
+14. })
 
-15. }
 16. }
 17. }
+18. }
 ```
 
 [ComputedV1.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/StateMigrationProject/entry/src/main/ets/pages/componentstatemigration/ComputedV1.ets#L15-L33)
@@ -1132,19 +1139,20 @@ V2:
 
 7. @Computed
 8. get fullName() {
-9. return this.firstName + ' ' + this.lastName;
-10. }
+9. // 每次改变lastName仅会触发一次计算
+10. return this.firstName + ' ' + this.lastName;
+11. }
 
-12. build() {
-13. Column() {
-14. Text(this.fullName)
+13. build() {
+14. Column() {
 15. Text(this.fullName)
-16. Button('changed lastName').onClick(() => {
-17. this.lastName += 'a';
-18. })
-19. }
+16. Text(this.fullName)
+17. Button('changed lastName').onClick(() => {
+18. this.lastName += 'a';
+19. })
 20. }
 21. }
+22. }
 ```
 
 [ComputedV2.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/StateMigrationProject/entry/src/main/ets/pages/componentstatemigration/ComputedV2.ets#L15-L37)
@@ -1173,17 +1181,18 @@ V1实现：
 7. build() {
 8. Column({ space: 20 }) {
 9. Text(this.text)
-10. TextInput({ text: $$this.text, placeholder: 'input your word...', controller: this.controller })
-11. .placeholderColor(Color.Grey)
-12. .placeholderFont({ size: 14, weight: 400 })
-13. .caretColor(Color.Blue)
-14. .width(300)
-15. }
-16. .width('100%')
-17. .height('100%')
-18. .justifyContent(FlexAlign.Center)
-19. }
+10. // $$运算符为系统组件提供TS变量的引用，使得TS变量和系统组件的内部状态保持同步
+11. TextInput({ text: $$this.text, placeholder: 'input your word...', controller: this.controller })
+12. .placeholderColor(Color.Grey)
+13. .placeholderFont({ size: 14, weight: 400 })
+14. .caretColor(Color.Blue)
+15. .width(300)
+16. }
+17. .width('100%')
+18. .height('100%')
+19. .justifyContent(FlexAlign.Center)
 20. }
+21. }
 ```
 
 [SyncUsageExample.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/syncStateManager/SyncUsageExample.ets#L30-L52)

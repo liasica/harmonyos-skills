@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-localbu
 title: @LocalBuilder装饰器： 维持组件关系
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式基本语法 > 组件扩展 > @LocalBuilder装饰器： 维持组件关系
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:38:58+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:d87e6125a1264053ffefed1293fd927e8a73e1bc934d43e4542926ce2cda3ca3
+scraped_at: 2026-04-29T13:27:07+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:122f6892b92f21de36a619868b838fb4759190d9c6fb0bc171a550773b24198e
 ---
 
 当开发者使用局部@Builder进行引用数据传递时，需要考虑组件的父子关系。然而在使用.bind(this)的方式更改函数调用上下文后，会出现组件的父子关系与状态管理的父子关系不一致的问题。为了解决这一问题，引入@LocalBuilder装饰器。@LocalBuilder拥有和局部@Builder相同的功能，且比局部@Builder能够更好的确定组件的父子关系和状态管理的父子关系。
@@ -51,7 +51,7 @@ content_hash: sha256:d87e6125a1264053ffefed1293fd927e8a73e1bc934d43e4542926ce2cd
 
 跨组件传递局部@Builder函数时，会使用.bind(this)更改函数上下文，但这可能会导致组件的父子关系与状态管理的父子关系不一致。而@LocalBuilder无论是否使用.bind(this)，都不会改变组件的父子关系，即@LocalBuilder中定义组件所属的父组件是确定的，无法被改变。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/Z-K6YKkETkKXjVjWRsIhSg/zh-cn_image_0000002552957576.png?HW-CC-KV=V1&HW-CC-Date=20260427T233855Z&HW-CC-Expire=86400&HW-CC-Sign=2F0B337095EFB725FABD232125BCB7397061696570BC1B74BE8E84B0B118A19F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/OAG4OQsYSHyOK-bMKim2Eg/zh-cn_image_0000002589323935.png?HW-CC-KV=V1&HW-CC-Date=20260429T052705Z&HW-CC-Expire=86400&HW-CC-Sign=7CBAB39B1AE34306131F227AE83F9F7DDBC9FFACF902D1CF649640FC8FB80AC6)
 
 说明
 
@@ -140,14 +140,15 @@ bind()方法创建一个新的函数，称为绑定函数，当调用者绑定bi
 
 15. build() {
 16. Column() {
-17. this.citeLocalBuilder(UIUtils.makeBinding<string>(() => this.variableValue))
-18. Button('Click me')
-19. .onClick(() => {
-20. this.variableValue = 'Hi World';
-21. })
-22. }
+17. // 通过UIUtils.makeBinding()方法和Binding类，实现@Builder函数中状态变量的刷新
+18. this.citeLocalBuilder(UIUtils.makeBinding<string>(() => this.variableValue))
+19. Button('Click me')
+20. .onClick(() => {
+21. this.variableValue = 'Hi World';
+22. })
 23. }
 24. }
+25. }
 ```
 
 [BuilderMakeBinding.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/localBuilder/BuilderMakeBinding.ets#L15-L40)
@@ -181,13 +182,14 @@ bind()方法创建一个新的函数，称为绑定函数，当调用者绑定bi
 
 17. build() {
 18. Column() {
-19. this.citeLocalBuilder({ paramString: this.variableValue })
-20. Button('Click me').onClick(() => {
-21. this.variableValue = 'Hi World';
-22. })
-23. }
+19. // 按键值对写法进行传值，传入的参数发生变化，会引起citeLocalBuilder内的UI刷新
+20. this.citeLocalBuilder({ paramString: this.variableValue })
+21. Button('Click me').onClick(() => {
+22. this.variableValue = 'Hi World';
+23. })
 24. }
 25. }
+26. }
 ```
 
 [ReferencePassing.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/localBuilder/ReferencePassing.ets#L30-L56)
@@ -229,13 +231,14 @@ bind()方法创建一个新的函数，称为绑定函数，当调用者绑定bi
 
 31. build() {
 32. Column() {
-33. this.citeLocalBuilder({ paramString: this.variableValue })
-34. Button('Click me').onClick(() => {
-35. this.variableValue = 'Hi World';
-36. })
-37. }
+33. // 按引用传递参数，传入的参数发生变化，会引起citeLocalBuilder内的UI刷新
+34. this.citeLocalBuilder({ paramString: this.variableValue })
+35. Button('Click me').onClick(() => {
+36. this.variableValue = 'Hi World';
+37. })
 38. }
 39. }
+40. }
 ```
 
 [ParentRefSync.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/localBuilder/ParentRefSync.ets#L30-L70)
@@ -341,10 +344,12 @@ bind()方法创建一个新的函数，称为绑定函数，当调用者绑定bi
 
 13. build() {
 14. Column() {
-15. this.citeLocalBuilder(this.label)
-16. }
-17. }
+15. // 按值传递参数
+16. // 改变@State修饰的label值时，@LocalBuilder函数内的值不会发生改变
+17. this.citeLocalBuilder(this.label)
 18. }
+19. }
+20. }
 ```
 
 [ValuePassing.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/localBuilder/ValuePassing.ets#L30-L49)
@@ -564,7 +569,7 @@ bind()方法创建一个新的函数，称为绑定函数，当调用者绑定bi
 
 [ProblemUINotRefreshPositive.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/localBuilder/ProblemUINotRefreshPositive.ets#L15-L58)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/esHBfleFQ2KrsejOf1gAKg/zh-cn_image_0000002583477577.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233855Z&HW-CC-Expire=86400&HW-CC-Sign=F9D3C549CF1D5125F7A42A91990607A9CD80B82FAF1283614266C1BB51545FFC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/aTQkVnwsRXir-Qnla6DFdA/zh-cn_image_0000002589243875.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052705Z&HW-CC-Expire=86400&HW-CC-Sign=372830F806AD52EDD9D728AF6B1BF2F77531A9BC0E314F7178F6913DCD076109)
 
 ### @LocalBuilder函数在参数处直接调用出现布局错乱
 
@@ -604,7 +609,7 @@ bind()方法创建一个新的函数，称为绑定函数，当调用者绑定bi
 29. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/TcIfQTp4QCyYddFz9GS3hw/zh-cn_image_0000002552797928.png?HW-CC-KV=V1&HW-CC-Date=20260427T233855Z&HW-CC-Expire=86400&HW-CC-Sign=2D394786CD25FE1D3B60ABCC1559A866F2A267DC5B1C882AA03DB1475BB51ED7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/xQvw1BeEQWG5jLlWX7nWIQ/zh-cn_image_0000002558764068.png?HW-CC-KV=V1&HW-CC-Date=20260429T052705Z&HW-CC-Expire=86400&HW-CC-Sign=824C2440261F18543B752F2715E3DB6714B01246761FBD9643021BCDF793D442)
 
 【正例】
 
@@ -642,4 +647,4 @@ bind()方法创建一个新的函数，称为绑定函数，当调用者绑定bi
 29. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/gVDqcgGpQ_iOe5bmbds1GQ/zh-cn_image_0000002583437623.png?HW-CC-KV=V1&HW-CC-Date=20260427T233855Z&HW-CC-Expire=86400&HW-CC-Sign=99B028A44FE9623B813301AD19E35C88A189E5EDEE86F0C879FC2DBAC66AE112)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/Gf0RtI3DSIyc2zX3kY0u_Q/zh-cn_image_0000002558604412.png?HW-CC-KV=V1&HW-CC-Date=20260429T052705Z&HW-CC-Expire=86400&HW-CC-Sign=487F69D1AB3096E8F7BFCB9D3EC356FFDC6D410DCDAD2D359828CA081E2771E4)

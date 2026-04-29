@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-ex
 title: 性能优化实验特性
 breadcrumb: 指南 > 构建应用 > 提升构建效率 > 性能优化实验特性
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:57:19+08:00
+scraped_at: 2026-04-29T13:47:20+08:00
 doc_updated_at: 2026-04-22
-content_hash: sha256:3697ca64e5909c0c09a52e94c67b3405a24e9109262c6b5b9ff2f24134fde9de
+content_hash: sha256:f4f5e58b71e4b4822b838aada4f7906ebf37deafd4829978c939073d55bd1476
 ---
 
 为了打造更敏捷流畅的使用体验，新版本的Hvigor带来了一系列的编译构建性能优化实验特性，这些优化特性将显著提高工程的编译速度，降低峰值内存占用等。由于部分优化方案仍处于试验性阶段，您可能在这些特性中体验到效率的提升，也可能在特定场景中遇到待完善的问题，因此，这些特性提供了开关，用户可以根据业务需求开启后使用。
@@ -136,17 +136,17 @@ content_hash: sha256:3697ca64e5909c0c09a52e94c67b3405a24e9109262c6b5b9ff2f24134f
 1. 按照以上方式开启开关**Enable ohpm execution by hvigor**。
 2. 在工程级build-profile.json5的module字段下，添加工程中不存在的模块，如testModule。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/YCN0-3nFQ963nCneK-pM4Q/zh-cn_image_0000002561752967.png?HW-CC-KV=V1&HW-CC-Date=20260427T235719Z&HW-CC-Expire=86400&HW-CC-Sign=D257826CB2A007467C87B954855D5350D979144A679693B88F1D72779369A451)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/3a1eJOx1Q8SoS-TGha25ew/zh-cn_image_0000002561752967.png?HW-CC-KV=V1&HW-CC-Date=20260429T054719Z&HW-CC-Expire=86400&HW-CC-Sign=9B8B16352A08483DA30F239EF984DCD62A66BF67A7FAD1804611712160E7484F)
 3. 调用excludeNodeByName方法，排除不存在的模块testModule。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/4xeSB1XXRqOq5bbrstRB-g/zh-cn_image_0000002530753032.png?HW-CC-KV=V1&HW-CC-Date=20260427T235719Z&HW-CC-Expire=86400&HW-CC-Sign=3F72D5819288DE1CDDBCEBFC14A7482F7090B202A00CD4724F2A8465089E22B9)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/4qeZjMP6SFeSjlx0j0XGPA/zh-cn_image_0000002530753032.png?HW-CC-KV=V1&HW-CC-Date=20260429T054719Z&HW-CC-Expire=86400&HW-CC-Sign=1DBF66BEDBC262E3C50DE95DC37DD8890E9AEDB0A9CEF321069502EF9D9CC13D)
 4. 执行构建成功。
 
 **使用场景二**
 
 调用[setDependenciesOpt](ide-build-expanding-context.md#section18789410129)、[setOverrides](ide-build-expanding-context.md#section469812496459)等方法动态修改oh-package.json5中的依赖信息后，执行sync或build等操作时，DevEco Studio会执行两次ohpm install操作，开启开关后，Hvigor仅执行一次ohpm install，可提升构建的效率。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/fPpKOXhMSlq3PpsTzpDbqA/zh-cn_image_0000002561832949.png?HW-CC-KV=V1&HW-CC-Date=20260427T235719Z&HW-CC-Expire=86400&HW-CC-Sign=76D20B3CF7BF6F61283AD34F4A03AFB707D00F3D58543AE314E39ECAC8A2EE71)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/339NbAuFQEeiQnKktmSt6w/zh-cn_image_0000002561832949.png?HW-CC-KV=V1&HW-CC-Date=20260429T054719Z&HW-CC-Expire=86400&HW-CC-Sign=DB7566FA91E7FE4F527C4359AB85338B2F47A657743A0914CB419C3B33FCD722)
 
 ## 通过IClang提升C++增量编译效率
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ffrt-concurre
 title: Function Flow Runtime任务伙伴(C++)
 breadcrumb: 指南 > 系统 > 基础功能 > Function Flow Runtime Kit（任务并发调度服务） > Function Flow Runtime开发样例(C++) > Function Flow Runtime任务伙伴(C++)
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:44:29+08:00
+scraped_at: 2026-04-29T13:33:22+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:15b232647b72a7c60fc9e11705e6c24132620658bf57f52f6f9b152ca5b69a50
+content_hash: sha256:a198b794fd7aad5597fb424c68420ee95f0a506b8f2f3e409f1465d81652b084
 ---
 
 ## 概述
@@ -17,7 +17,7 @@ content_hash: sha256:15b232647b72a7c60fc9e11705e6c24132620658bf57f52f6f9b152ca5b
 
 为解决以上问题，Job Partner并发范式应运而生。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/QwJkMVVGTm67a-LYcxPEuw/zh-cn_image_0000002583478457.png?HW-CC-KV=V1&HW-CC-Date=20260427T234428Z&HW-CC-Expire=86400&HW-CC-Sign=3E4B9C91E7AA1F10588BAF4C5F2AF14DDE2812F56DE6F35CC03BC1093620F572)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/hgRyW9pgS4eqgWswlCMsvA/zh-cn_image_0000002558605300.png?HW-CC-KV=V1&HW-CC-Date=20260429T053321Z&HW-CC-Expire=86400&HW-CC-Sign=C4C18E872F5F9C9CFD6FD6C9EAFA3482FB227F11D3933CDF413CD752FABB3B3D)
 
 Job Partner并发范式中定义原先的线程为master线程，并支持动态管理partner线程（伙伴线程）。它有两个特性：
 

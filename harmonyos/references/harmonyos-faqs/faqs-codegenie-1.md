@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-codegenie-
 title: 应用UI生成插件解压缩APK文件时，提示“tar.exe: Tool-small extra data: Need at least 4 bytes, but only found 1 bytes”
 breadcrumb: FAQ > DevEco Studio > AI辅助编程 > 应用UI生成插件解压缩APK文件时，提示“tar.exe: Tool-small extra data: Need at least 4 bytes, but only found 1 bytes”
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:30:20+08:00
+scraped_at: 2026-04-29T14:21:38+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:c24b690b47b1742a43a989ea84458c9280eaf3ddde8504b4ece7023067ed9cd8
+content_hash: sha256:0a2dd2324f7370089d4a5880210c9a4fd53adbc54ed48922a22f13b21fa6479c
 ---
 
 **问题现象**
 
 在Windows环境下使用应用UI生成插件时，选择完配置项信息（Install Package Path、SDK Path、Git Bash Path），点击Next按钮后，在应用UI生成插件的执行终端中提示“tar.exe: Tool-small extra data: Need at least 4 bytes, but only found 1 bytes”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/WI_ZF0CiT_KUD-sv-mN2DA/zh-cn_image_0000002541924407.png?HW-CC-KV=V1&HW-CC-Date=20260428T003019Z&HW-CC-Expire=86400&HW-CC-Sign=AECB1C954176A574179BCEA52A5CAE5455AC90F04ADBFEC6FA78A43E5A6D3598)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/WI_ZF0CiT_KUD-sv-mN2DA/zh-cn_image_0000002541924407.png?HW-CC-KV=V1&HW-CC-Date=20260429T062137Z&HW-CC-Expire=86400&HW-CC-Sign=CE6782F7FC76A952F70F43D6C6F0E803C999CA63F5F6CBF02C57B15D1C35FB7F)
 
 **可能原因**
 

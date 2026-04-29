@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/vision-cardre
 title: 卡证识别
 breadcrumb: 指南 > AI > Vision Kit（场景化视觉服务） > 卡证识别
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:53:54+08:00
+scraped_at: 2026-04-29T13:43:51+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:217e6fd5b67953e91e7112d9b3a63918577d0e1e3a01d8647691da2675124cb3
+content_hash: sha256:2576fa59bfa8bde7fee835e0f7bdc8b51bfda7879829a40d9776deec667c17a9
 ---
 
 从5.1.1(19)开始，[CardRecognition](../harmonyos-references/vision-card-recognition.md#cardrecognition)接口中的callback参数废弃，请使用onResult代替。
@@ -18,7 +18,7 @@ content_hash: sha256:217e6fd5b67953e91e7112d9b3a63918577d0e1e3a01d8647691da26751
 
 **图1** 银行卡识别示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/hR1a8c7tSo-LNE8OD3jkZA/zh-cn_image_0000002552799704.png?HW-CC-KV=V1&HW-CC-Date=20260427T235353Z&HW-CC-Expire=86400&HW-CC-Sign=ED55A227CBB283C22BF809521F2154E1580A999A7EC1B5A589A508C55F3934F0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/DpShCHJjTr-jymyHJ4zIcQ/zh-cn_image_0000002558606198.png?HW-CC-KV=V1&HW-CC-Date=20260429T054119Z&HW-CC-Expire=86400&HW-CC-Sign=F12274B4A136EB9DD93265B4D26E1B8ED1887573735EC7ABE7BA987732934609)
 
 ## 约束与限制
 

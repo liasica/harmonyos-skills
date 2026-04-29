@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-repo
 title: ohpm-repo export_userinfo
 breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 相关命令 > 数据迁移相关命令 > ohpm-repo export_userinfo
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:54:44+08:00
+scraped_at: 2026-04-29T13:44:42+08:00
 doc_updated_at: 2026-01-15
-content_hash: sha256:dc7a5f70e978e9bb028358e62a706ae87b7984b33383a0479b41ad4bcf16748f
+content_hash: sha256:3e234a8b6010e50400a44a846c8bfe820c032f709a10cf83a06f875ec3516f91
 ---
 
 导出用户必要的DB数据。
@@ -41,7 +41,7 @@ content_hash: sha256:dc7a5f70e978e9bb028358e62a706ae87b7984b33383a0479b41ad4bcf1
 
 结果示例：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/Pdmp8468TR-lbXw7cxuVZw/zh-cn_image_0000002530751298.png?HW-CC-KV=V1&HW-CC-Date=20260427T235443Z&HW-CC-Expire=86400&HW-CC-Sign=147CD676A7C38A70867F876A049A462D53FB67B559758DB4902587907EE86AEC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/8_TJEKsrSzWnpc_P3NfbKw/zh-cn_image_0000002530751298.png?HW-CC-KV=V1&HW-CC-Date=20260429T054441Z&HW-CC-Expire=86400&HW-CC-Sign=91584D4F42EE82E606568B535A401DC968A5FC2C022564F9A2D321E94B8B0984)
 
 ```
 1. PS D:\> ohpm-repo export_userinfo

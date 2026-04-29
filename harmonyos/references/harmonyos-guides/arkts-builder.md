@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-builder
 title: @Builder装饰器：自定义构建函数
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式基本语法 > 组件扩展 > @Builder装饰器：自定义构建函数
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:38:58+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:a91d819d5daa725b712ebc45297e92be5e6b6ba782796be7dc851fb28df407c1
+scraped_at: 2026-04-29T13:27:06+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:61fef45267b305ca285ed5e1b2f91d63afae499a0ef03b55832b43aada1e460c
 ---
 
 ArkUI提供轻量的UI元素复用机制@Builder，其内部UI结构固定，仅与使用方进行数据传递。开发者可将重复使用的UI元素抽象成函数，在build函数中调用。
@@ -78,22 +78,23 @@ ArkUI提供轻量的UI元素复用机制@Builder，其内部UI结构固定，仅
 示例：
 
 ```
-1. @Builder
-2. function showTextBuilder() {
-3. Text('Hello World')
-4. .fontSize(30)
-5. .fontWeight(FontWeight.Bold)
-6. }
+1. // 全局自定义构建函数showTextBuilder
+2. @Builder
+3. function showTextBuilder() {
+4. Text('Hello World')
+5. .fontSize(30)
+6. .fontWeight(FontWeight.Bold)
+7. }
 
-8. @Entry
-9. @Component
-10. struct BuilderSample {
-11. build() {
-12. Column() {
-13. showTextBuilder()
-14. }
+9. @Entry
+10. @Component
+11. struct BuilderSample {
+12. build() {
+13. Column() {
+14. showTextBuilder()
 15. }
 16. }
+17. }
 ```
 
 [GlobalCustomConstructor.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/BuilderComponent/entry/src/main/ets/pages/GlobalCustomConstructor.ets#L15-L31)
@@ -215,10 +216,11 @@ ArkUI提供轻量的UI元素复用机制@Builder，其内部UI结构固定，仅
 
 13. build() {
 14. Column() {
-15. overBuilderByValue(this.label)
-16. }
+15. // 按值传递参数，状态变量的改变不会引起overBuilderByValue内的UI刷新
+16. overBuilderByValue(this.label)
 17. }
 18. }
+19. }
 ```
 
 [ParameterValue.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/BuilderComponent/entry/src/main/ets/pages/ParameterValue.ets#L15-L34)
@@ -272,23 +274,24 @@ ArkUI提供轻量的UI元素复用机制@Builder，其内部UI结构固定，仅
 32. .borderRadius(20)
 33. .textAlign(TextAlign.Center)
 34. this.builder()
-35. Button('Click to change the builderValue')
-36. .onClick(() => {
-37. this.builderValue = 'builderValue was clicked';
-38. })
-39. }
-40. .height('100%')
-41. .width('100%')
-42. }
+35. // 点击Button更新builderValue，用于更新文本显示
+36. Button('Click to change the builderValue')
+37. .onClick(() => {
+38. this.builderValue = 'builderValue was clicked';
+39. })
+40. }
+41. .height('100%')
+42. .width('100%')
 43. }
 44. }
+45. }
 ```
 
 [InCustomComponent.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/BuilderComponent/entry/src/main/ets/pages/InCustomComponent.ets#L15-L60)
 
 示例效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/nM6K-LKhSlqs8fvuw99MDw/zh-cn_image_0000002583437617.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233855Z&HW-CC-Expire=86400&HW-CC-Sign=A44934320D7C57698965D0FB727A6722969C1DA8F4C33588C0FF10ADC4B881FE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/C5YXH3UgTXSal12zdMT9Xg/zh-cn_image_0000002558604406.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052703Z&HW-CC-Expire=86400&HW-CC-Sign=F75DC873850D3226728017BB5C386192B498F880A66898C35ADF89F743C684B2)
 
 ### 全局自定义构建函数
 
@@ -365,27 +368,28 @@ ArkUI提供轻量的UI元素复用机制@Builder，其内部UI结构固定，仅
 68. tmpValue: this.objParam.tmpValue,
 69. arrayTmpValue: this.objParam.arrayTmpValue
 70. })
-71. Button('Update Values').onClick(() => {
-72. this.objParam.strValue = 'Hello World';
-73. this.objParam.numValue = 1;
-74. this.objParam.tmpValue.val = 8;
-75. const childValue: ChildTmp = {
-76. val: 2
-77. }
-78. this.objParam.arrayTmpValue.push(childValue);
-79. })
-80. }
-81. .height('100%')
-82. .width('100%')
-83. }
+71. // 点击Button更新objParam，触发overBuilder内组件的刷新
+72. Button('Update Values').onClick(() => {
+73. this.objParam.strValue = 'Hello World';
+74. this.objParam.numValue = 1;
+75. this.objParam.tmpValue.val = 8;
+76. const childValue: ChildTmp = {
+77. val: 2
+78. }
+79. this.objParam.arrayTmpValue.push(childValue);
+80. })
+81. }
+82. .height('100%')
+83. .width('100%')
 84. }
+85. }
 ```
 
 [GlobalCustomBuilder.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/BuilderComponent/entry/src/main/ets/pages/GlobalCustomBuilder.ets#L15-L99)
 
 示例效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/kzpZNFyzQUehm9DvdnIz9g/zh-cn_image_0000002552957572.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233855Z&HW-CC-Expire=86400&HW-CC-Sign=FE8FED38F50142F64A6E04ED7B8BC257AB23EB90AB286C2954CDDE2688F24149)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/qxAHiABeSa2xaOpWbZZQlw/zh-cn_image_0000002589323931.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052703Z&HW-CC-Expire=86400&HW-CC-Sign=C78DD02052EC1D0B2F6831DD04DDA80098EC1C871374B337E1F53A6BA230456A)
 
 ### 修改装饰器修饰的变量触发UI刷新
 
@@ -429,22 +433,23 @@ ArkUI提供轻量的UI元素复用机制@Builder，其内部UI结构固定，仅
 35. Text('UI Rendered via @Builder')
 36. .fontSize(20)
 37. this.privateBuilder()
-38. Button('Update Values').onClick(() => {
-39. this.objParam.strValue = 'strValue Hello World';
-40. this.label = 'label Hello World';
-41. })
-42. }
-43. .height('100%')
-44. .width('100%')
-45. }
+38. // 点击Button更新label，触发Text组件的刷新
+39. Button('Update Values').onClick(() => {
+40. this.objParam.strValue = 'strValue Hello World';
+41. this.label = 'label Hello World';
+42. })
+43. }
+44. .height('100%')
+45. .width('100%')
 46. }
+47. }
 ```
 
 [ChangingByDecorator.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/BuilderComponent/entry/src/main/ets/pages/ChangingByDecorator.ets#L15-L62)
 
 示例效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/QqrcuhbCQziDIqYcxurmCg/zh-cn_image_0000002583477573.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233855Z&HW-CC-Expire=86400&HW-CC-Sign=7606ADF51B659909A23E146D7CC11D98DF922DFDCBAA0237EA42C3C82A4081A2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/6NFUM0-_T8Gl7DRT4cZabA/zh-cn_image_0000002589243871.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052703Z&HW-CC-Expire=86400&HW-CC-Sign=B32422AF5AFE8A68E2EB21D454F44F3C59C9964CF8E0D30A11F4F395B329FCC7)
 
 ### 将@Builder装饰的函数当作CustomBuilder类型使用
 
@@ -511,7 +516,7 @@ ArkUI提供轻量的UI元素复用机制@Builder，其内部UI结构固定，仅
 
 示例效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/Y3rdJJ-QQ7iNgVyAl4PdDA/zh-cn_image_0000002552797924.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233855Z&HW-CC-Expire=86400&HW-CC-Sign=6BEF1AED4F68778C2FD6B60980A1F1A3581BBDA595DDB7D7174C3B3ECB844257)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/vU4gNtejTZCk2P1nDshEgw/zh-cn_image_0000002558764064.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052703Z&HW-CC-Expire=86400&HW-CC-Sign=0F631445BA04494559FAAD7439FFBFF570F975543D8CFAA57FC51860F931B502)
 
 ### 多层@Builder函数嵌套
 
@@ -657,7 +662,7 @@ ArkUI提供轻量的UI元素复用机制@Builder，其内部UI结构固定，仅
 
 示例效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/iM50lOg3Q1C4BZkwVCyFfg/zh-cn_image_0000002583437619.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233855Z&HW-CC-Expire=86400&HW-CC-Sign=C9BAC5CEC84E1857D0F4C5B643339AA8A4D35CCD4E52EB384767CFE1FB3AC8ED)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/yr__zmDNRdK0VOzsltvnyg/zh-cn_image_0000002558604408.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052703Z&HW-CC-Expire=86400&HW-CC-Sign=6EE26AB8747819B65FB07B639D4854C20285B63183EBD91D42623AED1EF72C2C)
 
 ### @Builder函数联合V2装饰器
 
@@ -759,7 +764,7 @@ ArkUI提供轻量的UI元素复用机制@Builder，其内部UI结构固定，仅
 
 示例效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/m9pAjZIgRsG3RHY_RYQWbQ/zh-cn_image_0000002552957574.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233855Z&HW-CC-Expire=86400&HW-CC-Sign=B97063025DEE035A43A4BFF5EEB75D47605A62D6FC29216C8605B2C0596CD8B4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/-a0LYWWHTq-q5J9hzJefuw/zh-cn_image_0000002589323933.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052703Z&HW-CC-Expire=86400&HW-CC-Sign=83D24AB7417023511F13FAD6F26F0C1E604E765F787270D0E1053FBCB6F52034)
 
 当通过引用传递方式向@Builder传递参数时，若参数为[@Local](arkts-new-local.md)装饰的对象，对该对象进行整体赋值会触发@Builder中UI刷新。
 
@@ -851,7 +856,7 @@ ArkUI提供轻量的UI元素复用机制@Builder，其内部UI结构固定，仅
 
 示例效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/GfRxgvA3TqWIoQqSr1I-kw/zh-cn_image_0000002583477575.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233855Z&HW-CC-Expire=86400&HW-CC-Sign=A751FE12AD1F65EC6F9D79492C04093DA0E573F2AF636040F6F99B10BBAF49E0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/Gn5gAfw-Q72fXZg5RkEcUA/zh-cn_image_0000002589243873.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052703Z&HW-CC-Expire=86400&HW-CC-Sign=93A0B797486AF1CA54F0509F1858D58BBC80BD27D28E160F26A9A2481988B669)
 
 ### 跨组件复用的全局@Builder
 
@@ -957,7 +962,7 @@ ArkUI提供轻量的UI元素复用机制@Builder，其内部UI结构固定，仅
 
 示例效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/z0uyMPjCS5SyCBHKoJgkDg/zh-cn_image_0000002552797926.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233855Z&HW-CC-Expire=86400&HW-CC-Sign=F1C902AEA6BD031E43CA6115C8955629473648B76FB32DB25FE8555D9DCB7968)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/FFnGFCH1T06K-MZSMaQ6Dg/zh-cn_image_0000002558764066.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052703Z&HW-CC-Expire=86400&HW-CC-Sign=D8E2C08F0A990C3743647DB106E28B3AB2059781FEF6122C913DC14F6B271899)
 
 ### @Builder支持状态变量刷新
 
@@ -1081,7 +1086,7 @@ ArkUI提供轻量的UI元素复用机制@Builder，其内部UI结构固定，仅
 
 示例效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/A0XMdUueSeO8dbUirKpcJw/zh-cn_image_0000002583437621.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233855Z&HW-CC-Expire=86400&HW-CC-Sign=FE8BEFF259E7B4B78F63F80B95E39E66F9DB261F9A6043C1E80DFC484D0D6120)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/cvCSDMc1S2W-CBN-jYChvw/zh-cn_image_0000002558604410.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052703Z&HW-CC-Expire=86400&HW-CC-Sign=FBF07F1D3CBE5E38275464F04E9E68F74E72C334F08CCA645EA45861C9CEB914)
 
 ## 常见问题
 
@@ -1326,41 +1331,44 @@ ArkUI提供轻量的UI元素复用机制@Builder，其内部UI结构固定，仅
 45. aboutToAppear(): void {
 46. this.progressTimer = setInterval(() => {
 47. if (this.builderParams.count < 100) {
-48. this.builderParams.count += 5;
-49. this.mapValue.set('name', this.builderParams.count);
-50. this.setValue.add(this.builderParams.count);
-51. this.numArrValue[0] = this.builderParams.count;
-52. } else {
-53. clearInterval(this.progressTimer);
-54. }
-55. }, 500);
-56. }
+48. // builderParams是被@ObservedV2装饰的ParamTmpClass类
+49. // count属性被@Trace装饰
+50. // count变化会引起UI刷新
+51. this.builderParams.count += 5;
+52. this.mapValue.set('name', this.builderParams.count);
+53. this.setValue.add(this.builderParams.count);
+54. this.numArrValue[0] = this.builderParams.count;
+55. } else {
+56. clearInterval(this.progressTimer);
+57. }
+58. }, 500);
+59. }
 
-58. @Builder
-59. localBuilder() {
-60. Column() {
-61. Text(`localBuilder : ${this.builderParams.count}`)
-62. .fontSize(20)
-63. .fontWeight(FontWeight.Bold)
-64. }
-65. }
+61. @Builder
+62. localBuilder() {
+63. Column() {
+64. Text(`localBuilder : ${this.builderParams.count}`)
+65. .fontSize(20)
+66. .fontWeight(FontWeight.Bold)
+67. }
+68. }
 
-67. build() {
-68. Column() {
-69. this.localBuilder()
-70. Text(`builderParams :${this.builderParams.count}`)
-71. .fontSize(20)
-72. .fontWeight(FontWeight.Bold)
-73. renderText(this.builderParams)
-74. renderText({ count: this.builderParams.count })
-75. renderMap(this.mapValue)
-76. renderSet(this.setValue)
-77. renderNumberArr(this.numArrValue)
-78. }
-79. .width('100%')
-80. .height('100%')
+70. build() {
+71. Column() {
+72. this.localBuilder()
+73. Text(`builderParams :${this.builderParams.count}`)
+74. .fontSize(20)
+75. .fontWeight(FontWeight.Bold)
+76. renderText(this.builderParams)
+77. renderText({ count: this.builderParams.count })
+78. renderMap(this.mapValue)
+79. renderSet(this.setValue)
+80. renderNumberArr(this.numArrValue)
 81. }
-82. }
+82. .width('100%')
+83. .height('100%')
+84. }
+85. }
 ```
 
 [DynamicCorrectUsage.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/BuilderComponent/entry/src/main/ets/pages/DynamicCorrectUsage.ets#L15-L98)
@@ -1924,19 +1932,20 @@ Button按钮会出现UI异常的情况，开发者需要避免在@Watch函数中
 11. }
 
 13. provideWatch() {
-14. console.info(`content value has changed.`);
-15. }
+14. // 正确写法，不在@Watch函数中使用@Builder函数
+15. console.info(`content value has changed.`);
+16. }
 
-17. build() {
-18. Column() {
-19. Button(`content value: ${this.content}`)
-20. .onClick(() => {
-21. this.content += '_world';
-22. })
-23. this.watchBuilder(this.content);
-24. }
+18. build() {
+19. Column() {
+20. Button(`content value: ${this.content}`)
+21. .onClick(() => {
+22. this.content += '_world';
+23. })
+24. this.watchBuilder(this.content);
 25. }
 26. }
+27. }
 ```
 
 [WatchCorrectUsage.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/BuilderComponent/entry/src/main/ets/pages/WatchCorrectUsage.ets#L15-L42)

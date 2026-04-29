@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/os-new-feat
 title: 新增和增强特性
 breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.0.3(15) > OS平台能力 > 新增和增强特性
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:35:29+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:655377ac7a56632c7be5aea97fbd22fd47b29b5a1c4b6a2b6c9197878ba73349
+scraped_at: 2026-04-29T13:23:19+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:80f3787d4bce13a8ed0fb186a7a344022f756bbd3708e3d7dc623339f91c24c1
 ---
 
 ## Ability Kit
@@ -277,7 +277,7 @@ HiLog支持设置应用打印的最低日志级别。（[API参考-C API](../har
 
 ## Vision Kit
 
-卡证识别支持设置经裁剪的卡证图片预留边距。（[API参考](../harmonyos-references/vision-card-recognition.md#section14439151274411)）
+卡证识别支持设置经裁剪的卡证图片预留边距。（[API参考](../harmonyos-references/vision-card-recognition.md#cardrecognitionconfig)）
 
 ## NDK开发
 

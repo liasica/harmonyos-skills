@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkts-137
 title: gbk字符串TextEncoder编码结果属性buffer长度为何比编码结果长度略大
 breadcrumb: FAQ > 应用框架开发 > ArkTS语言 > 方舟编程语言（ArkTS） > gbk字符串TextEncoder编码结果属性buffer长度为何比编码结果长度略大
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:24:17+08:00
+scraped_at: 2026-04-29T14:15:33+08:00
 doc_updated_at: 2026-03-17
-content_hash: sha256:9e517fb84079f919fd9458b3342abc069ed8e942755a9c59a21d7d7e5c3fe1c2
+content_hash: sha256:75c1f27c1593ad22ce556c9a2012e83f22432a4bc600df0d7e92996a9d01c8a7
 ---
 
 **问题现象**
@@ -14,7 +14,7 @@ TextEncoder编码字符串“你好abc”，格式是gbk，分别获取编码结
 
 TextEncoder编码结果属性buffer的长度比编码结果的长度略大。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/iQYEO_2VRdSiqDgW2_nXNw/zh-cn_image_0000002194318536.png?HW-CC-KV=V1&HW-CC-Date=20260428T002416Z&HW-CC-Expire=86400&HW-CC-Sign=5B9B64E4BD8EFD418B2C2F941C2F093C0239B949CC890C4BC1431F7643473FA8 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/iQYEO_2VRdSiqDgW2_nXNw/zh-cn_image_0000002194318536.png?HW-CC-KV=V1&HW-CC-Date=20260429T061532Z&HW-CC-Expire=86400&HW-CC-Sign=9DBA0475258EED75B9E423DDDF60EE43A93E5E02EBE2E3EFAAC7CD7802DB0CE9 "点击放大")
 
 **原因解释**
 

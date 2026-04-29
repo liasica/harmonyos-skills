@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-intro
 title: Account Kit简介
 breadcrumb: 指南 > 应用服务 > Account Kit（华为账号服务） > Account Kit简介
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:47:56+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:62ebd267aa9895a0d85c018e2c3719da12869d0c6335a780b59c337127aa2527
+scraped_at: 2026-04-29T13:36:46+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:0db13fe808577494a9bcc4fb72ce386e6507e7fe41de73840f737e7899602f42
 ---
 
 ## 场景介绍
@@ -22,10 +22,10 @@ Account Kit（华为账号服务）提供简单、快速、安全的登录功能
 
 **一键登录**
 
-应用可以通过华为账号一键登录功能获取手机号授权并完成登录，帮助应用建立用户体系或者打通原有的用户体系。优点如下：
+应用可以通过华为账号一键登录功能获取手机号授权并完成登录，帮助应用建立用户体系或者与现有用户体系对接。优点如下：
 
 * 便捷性：一键完成登录和手机号授权，为用户提供更加便捷易用的登录体验。
-* 全场景：Phone、Tablet、PC/2in1设备登录体验一致，保障用户数据资产跨端延续。
+* 全场景：Phone、Tablet、PC/2in1、TV设备登录体验一致，保障用户数据资产跨端延续。
 * 效率高：无需单独集成SDK，减少开发者开发和运营成本。
 
 **未成年人模式**
@@ -60,7 +60,8 @@ Account Kit提供的[SampleCode示例工程](https://gitcode.com/HarmonyOS_Sampl
 | [获取发票抬头](account-select-invoice-title.md) | Phone、Tablet、PC/2in1 |
 | [获取风险等级](account-get-risklevel-introduction.md) | Phone、Tablet、PC/2in1、Wearable、TV |
 | [未成年人模式](account-overview-minorsprotection.md) | Phone、Tablet、PC/2in1、TV |
-| [华为账号登录组件](../harmonyos-references/account-api-loginpanel.md) | Phone、Tablet、PC/2in1、TV |
+| [登录按钮组件](../harmonyos-references/account-api-huawei-id-button.md) | Phone、Tablet、PC/2in1、TV |
+| [登录面板组件](../harmonyos-references/account-api-loginpanel.md) | Phone、Tablet、PC/2in1、TV |
 
 ### 支持的国家/地区
 

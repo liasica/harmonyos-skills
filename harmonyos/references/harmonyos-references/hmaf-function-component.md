@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/hmaf-func
 title: FunctionComponent（功能组件）
 breadcrumb: API参考 > AI > Agent Framework Kit（智能体框架服务） > ArkTS组件 > FunctionComponent（功能组件）
 category: harmonyos-references
-scraped_at: 2026-04-28T08:18:47+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:1a2b89845a170a968bed9f107fba7dc1fc05e7e1f8a80050e987a79d561e24c1
+scraped_at: 2026-04-29T14:09:25+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:23f3d9dcb096c066a3106d0e99ef7f6e8def3420eb5a59e808ddafd665f0a96a
 ---
 
 Agent Framework Kit（智能体框架服务）提供了拉起指定智能体的能力。
@@ -68,14 +68,14 @@ Agent功能组件，可以实现拉起智能体功能。
 5. @Entry
 6. @Component
 7. struct FunctionExample {
-8. private agentId: string = 'agentproxy65481da1fa2293a8482d45'; // 智能体对应的agentid，由小艺智能体平台在创建智能体时指定
+8. private agentId: string = 'agentproxy65481da1fa2293a8482d45'; // 智能体对应的agentId，由小艺智能体平台在创建智能体时指定
 
 10. build() {
 11. Column() {
 12. FunctionComponent({
 13. agentId: this.agentId,
 14. onError: (err: BusinessError) => {
-15. hilog.error(0x0001, 'FunctionExample', `err code: ${err.code}, message: ${err.message}`)
+15. hilog.error(0x0001, 'FunctionExample', `err code: ${err.code}, message: ${err.message}`);
 16. },
 17. options: {
 18. title: '智能创建',
@@ -150,21 +150,21 @@ isAgentSupport(context: common.UIAbilityContext, agentId: string): Promise<boole
 6. @Entry
 7. @Component
 8. struct AgentDemo {
-9. private functionController: FunctionController = new FunctionController()
-10. private agentId: string = 'agentproxy65481da1fa2293a8482d45'; // 智能体对应的agentid，由小艺智能体平台在创建智能体时指定
+9. private functionController: FunctionController = new FunctionController();
+10. private agentId: string = 'agentproxy65481da1fa2293a8482d45'; // 智能体对应的agentId，由小艺智能体平台在创建智能体时指定
 
 12. @State isAgentSupport: boolean = false;
 
 14. aboutToAppear() {
-15. void this.checkAgentSupport()
+15. void this.checkAgentSupport();
 16. }
 
 18. async checkAgentSupport() {
 19. try {
 20. let context = this.getUIContext()?.getHostContext() as common.UIAbilityContext;
-21. this.isAgentSupport = await this.functionController.isAgentSupport(context, this.agentId)
+21. this.isAgentSupport = await this.functionController.isAgentSupport(context, this.agentId);
 22. } catch (err) {
-23. hilog.error(0x0001, 'AgentExample', `err code: ${err.code}, message: ${err.message}`)
+23. hilog.error(0x0001, 'AgentExample', `err code: ${err.code}, message: ${err.message}`);
 24. }
 25. }
 26. build() {
@@ -174,7 +174,7 @@ isAgentSupport(context: common.UIAbilityContext, agentId: string): Promise<boole
 30. FunctionComponent({
 31. agentId: this.agentId,
 32. onError: (err: BusinessError) => {
-33. hilog.error(0x0001, 'AgentExample', `err: ${JSON.stringify(err)}, message: ${err.message}`)
+33. hilog.error(0x0001, 'AgentExample', `err: ${JSON.stringify(err)}, message: ${err.message}`);
 34. },
 35. options: {
 36. title: '智能创建',
@@ -194,7 +194,7 @@ PhoneTablet
 
 on(type: 'agentDialogOpened', callback: Callback<void>): void
 
-监听智能体对话框打开事件。
+监听智能体对话框打开事件。使用callback异步回调。
 
 **元服务API：** 从版本6.0.1(21)开始，该接口支持在元服务中使用。
 
@@ -207,7 +207,7 @@ on(type: 'agentDialogOpened', callback: Callback<void>): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 值为'agentDialogOpened'，监听智能体对话框打开事件。 |
-| callback | Callback<void> | 是 | callback回调函数。 |
+| callback | Callback<void> | 是 | callback回调函数。当具体的操作成功，err为undefined，否则为错误对象。 |
 
 **示例：**
 
@@ -220,28 +220,28 @@ on(type: 'agentDialogOpened', callback: Callback<void>): void
 6. @Component
 7. struct AgentDemo{
 8. private controller: FunctionController = new FunctionController();
-9. private agentId: string = 'agentproxy65481da1fa2293a8482d45'; // 智能体对应的agentid，由小艺智能体平台在创建智能体时指定
+9. private agentId: string = 'agentproxy65481da1fa2293a8482d45'; // 智能体对应的agentId，由小艺智能体平台在创建智能体时指定
 
 11. aboutToAppear() {
-12. this.controller?.on('agentDialogOpened', this.onAgentOpenedCallback)
-13. this.controller?.on('agentDialogClosed', this.onAgentClosedCallback)
+12. this.controller?.on('agentDialogOpened', this.onAgentOpenedCallback);
+13. this.controller?.on('agentDialogClosed', this.onAgentClosedCallback);
 14. }
 15. onAgentOpenedCallback = () => {
-16. hilog.info(0x0001, 'AgentExample', 'agent dialog opened callback')
-17. }
+16. hilog.info(0x0001, 'AgentExample', 'agent dialog opened callback');
+17. };
 18. onAgentClosedCallback = () => {
-19. hilog.info(0x0001, 'AgentExample', 'agent dialog closed callback')
-20. }
+19. hilog.info(0x0001, 'AgentExample', 'agent dialog closed callback');
+20. };
 21. aboutToDisappear() {
-22. this.controller?.off('agentDialogOpened')
-23. this.controller?.off('agentDialogClosed')
+22. this.controller?.off('agentDialogOpened');
+23. this.controller?.off('agentDialogClosed');
 24. }
 25. build() {
 26. Column() {
 27. FunctionComponent({
 28. agentId: this.agentId,
 29. onError: (err: BusinessError) => {
-30. hilog.error(0x0001, 'AgentExample', `err: ${JSON.stringify(err)}, message: ${err.message}`)
+30. hilog.error(0x0001, 'AgentExample', `err: ${JSON.stringify(err)}, message: ${err.message}`);
 31. },
 32. options: {
 33. title: '智能创建',
@@ -261,7 +261,7 @@ PhoneTablet
 
 off(type: 'agentDialogOpened', callback?: Callback<void>): void
 
-取消智能体对话框打开事件的监听。
+取消智能体对话框打开事件的监听。使用callback异步回调。
 
 **元服务API：** 从版本6.0.1(21)开始，该接口支持在元服务中使用。
 
@@ -274,7 +274,7 @@ off(type: 'agentDialogOpened', callback?: Callback<void>): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 值为 'agentDialogOpened'，取消智能体对话框打开事件的监听。 |
-| callback | Callback<void> | 否 | 需要取消注册的回调函数，需与订阅时传入的回调函数是同一个。若无此参数，则取消注册所有的回调函数。 |
+| callback | Callback<void> | 否 | 需要取消注册的回调函数，需与订阅时传入的回调函数是同一个。若无此参数，则取消注册所有的回调函数。当具体的操作成功，err为undefined，否则为错误对象。 |
 
 **示例：**
 
@@ -287,28 +287,28 @@ off(type: 'agentDialogOpened', callback?: Callback<void>): void
 6. @Component
 7. struct AgentDemo{
 8. private controller: FunctionController = new FunctionController();
-9. private agentId: string = 'agentproxy65481da1fa2293a8482d45'; // 智能体对应的agentid，由小艺智能体平台在创建智能体时指定
+9. private agentId: string = 'agentproxy65481da1fa2293a8482d45'; // 智能体对应的agentId，由小艺智能体平台在创建智能体时指定
 
 11. aboutToAppear() {
-12. this.controller?.on('agentDialogOpened', this.onAgentOpenedCallback)
-13. this.controller?.on('agentDialogClosed', this.onAgentClosedCallback)
+12. this.controller?.on('agentDialogOpened', this.onAgentOpenedCallback);
+13. this.controller?.on('agentDialogClosed', this.onAgentClosedCallback);
 14. }
 15. onAgentOpenedCallback = () => {
-16. hilog.info(0x0001, 'AgentExample', 'agent dialog opened callback')
-17. }
+16. hilog.info(0x0001, 'AgentExample', 'agent dialog opened callback');
+17. };
 18. onAgentClosedCallback = () => {
-19. hilog.info(0x0001, 'AgentExample', 'agent dialog closed callback')
-20. }
+19. hilog.info(0x0001, 'AgentExample', 'agent dialog closed callback');
+20. };
 21. aboutToDisappear() {
-22. this.controller?.off('agentDialogOpened')
-23. this.controller?.off('agentDialogClosed')
+22. this.controller?.off('agentDialogOpened');
+23. this.controller?.off('agentDialogClosed');
 24. }
 25. build() {
 26. Column() {
 27. FunctionComponent({
 28. agentId: this.agentId,
 29. onError: (err: BusinessError) => {
-30. hilog.error(0x0001, 'AgentExample', `err: ${JSON.stringify(err)}, message: ${err.message}`)
+30. hilog.error(0x0001, 'AgentExample', `err: ${JSON.stringify(err)}, message: ${err.message}`);
 31. },
 32. options: {
 33. title: '智能创建',
@@ -328,7 +328,7 @@ PhoneTablet
 
 on(type: 'agentDialogClosed', callback: Callback<void>): void
 
-监听智能体对话框关闭事件。
+监听智能体对话框关闭事件。使用callback异步回调。
 
 **元服务API：** 从版本6.0.1(21)开始，该接口支持在元服务中使用。
 
@@ -341,7 +341,7 @@ on(type: 'agentDialogClosed', callback: Callback<void>): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 值为'agentDialogClosed'，监听智能体对话框关闭事件。 |
-| callback | Callback<void> | 是 | callback回调函数。 |
+| callback | Callback<void> | 是 | callback回调函数。当具体的操作成功，err为undefined，否则为错误对象。 |
 
 **示例：**
 
@@ -354,28 +354,28 @@ on(type: 'agentDialogClosed', callback: Callback<void>): void
 6. @Component
 7. struct AgentDemo{
 8. private controller: FunctionController = new FunctionController();
-9. private agentId: string = 'agentproxy65481da1fa2293a8482d45'; // 智能体对应的agentid，由小艺智能体平台在创建智能体时指定
+9. private agentId: string = 'agentproxy65481da1fa2293a8482d45'; // 智能体对应的agentId，由小艺智能体平台在创建智能体时指定
 
 11. aboutToAppear() {
-12. this.controller?.on('agentDialogOpened', this.onAgentOpenedCallback)
-13. this.controller?.on('agentDialogClosed', this.onAgentClosedCallback)
+12. this.controller?.on('agentDialogOpened', this.onAgentOpenedCallback);
+13. this.controller?.on('agentDialogClosed', this.onAgentClosedCallback);
 14. }
 15. onAgentOpenedCallback = () => {
-16. hilog.info(0x0001, 'AgentExample', 'agent dialog opened callback')
-17. }
+16. hilog.info(0x0001, 'AgentExample', 'agent dialog opened callback');
+17. };
 18. onAgentClosedCallback = () => {
-19. hilog.info(0x0001, 'AgentExample', 'agent dialog closed callback')
-20. }
+19. hilog.info(0x0001, 'AgentExample', 'agent dialog closed callback');
+20. };
 21. aboutToDisappear() {
-22. this.controller?.off('agentDialogOpened')
-23. this.controller?.off('agentDialogClosed')
+22. this.controller?.off('agentDialogOpened');
+23. this.controller?.off('agentDialogClosed');
 24. }
 25. build() {
 26. Column() {
 27. FunctionComponent({
 28. agentId: this.agentId,
 29. onError: (err: BusinessError) => {
-30. hilog.error(0x0001, 'AgentExample', `err: ${JSON.stringify(err)}, message: ${err.message}`)
+30. hilog.error(0x0001, 'AgentExample', `err: ${JSON.stringify(err)}, message: ${err.message}`);
 31. },
 32. options: {
 33. title: '智能创建',
@@ -395,7 +395,7 @@ PhoneTablet
 
 off(type: 'agentDialogClosed', callback?: Callback<void>): void
 
-取消智能体对话框关闭事件的监听。
+取消智能体对话框关闭事件的监听。使用callback异步回调。
 
 **元服务API：** 从版本6.0.1(21)开始，该接口支持在元服务中使用。
 
@@ -408,7 +408,7 @@ off(type: 'agentDialogClosed', callback?: Callback<void>): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 值为 'agentDialogClosed'，取消智能体对话框关闭事件的监听。 |
-| callback | Callback<void> | 否 | 需要取消注册的回调函数，需与订阅时传入的回调函数是同一个。若不传入此参数，则取消注册所有的回调函数。 |
+| callback | Callback<void> | 否 | 需要取消注册的回调函数，需与订阅时传入的回调函数是同一个。若不传入此参数，则取消注册所有的回调函数。当具体的操作成功，err为undefined，否则为错误对象。 |
 
 **示例：**
 
@@ -421,28 +421,28 @@ off(type: 'agentDialogClosed', callback?: Callback<void>): void
 6. @Component
 7. struct AgentDemo{
 8. private controller: FunctionController = new FunctionController();
-9. private agentId: string = 'agentproxy65481da1fa2293a8482d45'; // 智能体对应的agentid，由小艺智能体平台在创建智能体时指定
+9. private agentId: string = 'agentproxy65481da1fa2293a8482d45'; // 智能体对应的agentId，由小艺智能体平台在创建智能体时指定
 
 11. aboutToAppear() {
-12. this.controller?.on('agentDialogOpened', this.onAgentOpenedCallback)
-13. this.controller?.on('agentDialogClosed', this.onAgentClosedCallback)
+12. this.controller?.on('agentDialogOpened', this.onAgentOpenedCallback);
+13. this.controller?.on('agentDialogClosed', this.onAgentClosedCallback);
 14. }
 15. onAgentOpenedCallback = () => {
-16. hilog.info(0x0001, 'AgentExample', 'agent dialog opened callback')
-17. }
+16. hilog.info(0x0001, 'AgentExample', 'agent dialog opened callback');
+17. };
 18. onAgentClosedCallback = () => {
-19. hilog.info(0x0001, 'AgentExample', 'agent dialog closed callback')
-20. }
+19. hilog.info(0x0001, 'AgentExample', 'agent dialog closed callback');
+20. };
 21. aboutToDisappear() {
-22. this.controller?.off('agentDialogOpened')
-23. this.controller?.off('agentDialogClosed')
+22. this.controller?.off('agentDialogOpened');
+23. this.controller?.off('agentDialogClosed');
 24. }
 25. build() {
 26. Column() {
 27. FunctionComponent({
 28. agentId: this.agentId,
 29. onError: (err: BusinessError) => {
-30. hilog.error(0x0001, 'AgentExample', `err: ${JSON.stringify(err)}, message: ${err.message}`)
+30. hilog.error(0x0001, 'AgentExample', `err: ${JSON.stringify(err)}, message: ${err.message}`);
 31. },
 32. options: {
 33. title: '智能创建',

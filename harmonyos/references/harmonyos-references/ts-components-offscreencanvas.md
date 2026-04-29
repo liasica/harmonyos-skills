@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-compon
 title: OffscreenCanvas
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 画布绘制 > OffscreenCanvas
 category: harmonyos-references
-scraped_at: 2026-04-28T08:02:08+08:00
+scraped_at: 2026-04-29T13:52:35+08:00
 doc_updated_at: 2026-04-02
-content_hash: sha256:c9d576b37122ef47f8865c2a7295d938a6b17b1e04f2806bdf658b18c715f64a
+content_hash: sha256:18aac8d32da556cac59c2f4c2f7c0be47fea462b0d0d0e42771a202cb18492af
 ---
 
 OffscreenCanvas组件用于绘制自定义图形。
@@ -122,7 +122,7 @@ OffscreenCanvas支持以下属性：
 29. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/BqU9no2sTmKOBEWQNdUOIA/zh-cn_image_0000002583440019.png?HW-CC-KV=V1&HW-CC-Date=20260428T000206Z&HW-CC-Expire=86400&HW-CC-Sign=8A5C3B50AED0D1056F33D5A0D1592FB13982DD4BB54EBACC92743EA023431E9E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/PfYyGPe1S6iS8B7p1BDWCw/zh-cn_image_0000002589246307.png?HW-CC-KV=V1&HW-CC-Date=20260429T055230Z&HW-CC-Expire=86400&HW-CC-Sign=2605B814BF403B84DEB5289757E29758E0FC3FA72DBCF6224597C868DCC10114)
 
 ### height
 
@@ -158,7 +158,7 @@ OffscreenCanvas支持以下属性：
 29. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/M1WRJZxaQxe8QkG25Ypuzw/zh-cn_image_0000002552959974.png?HW-CC-KV=V1&HW-CC-Date=20260428T000206Z&HW-CC-Expire=86400&HW-CC-Sign=9B8CF02B062CF4ABA51F2D0A20FB4C8E4D40C792D5E097588BEA7F5EF0154A2E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/mnT02E0BQIqx0Co8gx2yPg/zh-cn_image_0000002558766500.png?HW-CC-KV=V1&HW-CC-Date=20260429T055230Z&HW-CC-Expire=86400&HW-CC-Sign=BECE5EBF0F99E8AE8A68FDFAD3250B1C9209E62EDA88C6F0DC2B831999DCBB19)
 
 ## 方法
 
@@ -220,7 +220,7 @@ transferToImageBitmap(): ImageBitmap
 31. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/VytJAqZrTNq0pw9Ub6GpuA/zh-cn_image_0000002583479975.png?HW-CC-KV=V1&HW-CC-Date=20260428T000206Z&HW-CC-Expire=86400&HW-CC-Sign=C84AA4A422F823061ED56CFC7077B27E25BBC84376C0E2D68A7363EB2F97EF78)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/Ty0_CH2QTy2DS5-kGhEJMw/zh-cn_image_0000002558606840.png?HW-CC-KV=V1&HW-CC-Date=20260429T055230Z&HW-CC-Expire=86400&HW-CC-Sign=A77B0C502530A401C6E5C17326932842FAB23E86E0E5604000946EBA40B9E5E5)
 
 ### getContext10+
 
@@ -296,7 +296,7 @@ getContext(contextType: "2d", options?: RenderingContextSettings): OffscreenCanv
 44. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/mX5rKMyRTciSNfEro9qHbg/zh-cn_image_0000002552800326.png?HW-CC-KV=V1&HW-CC-Date=20260428T000206Z&HW-CC-Expire=86400&HW-CC-Sign=0C122B206C0B4DF6579E7C325221F7F970A81214986375EC1AEC57288D02C5AE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/70LH6usYQn6HZgRRk-hdNQ/zh-cn_image_0000002589326367.png?HW-CC-KV=V1&HW-CC-Date=20260429T055230Z&HW-CC-Expire=86400&HW-CC-Sign=928923482BAB3A16C71330BC51E22F366D005B86B75DD4CA8E6F47A567ABD56A)
 
 ## OffscreenCanvas支持并发线程绘制
 
@@ -411,4 +411,4 @@ Worker线程在onmessage中接收到主线程postMessage发送的OffscreenCanvas
 35. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/pDczNtmhTuWvoXarZEnmNA/zh-cn_image_0000002583440021.png?HW-CC-KV=V1&HW-CC-Date=20260428T000206Z&HW-CC-Expire=86400&HW-CC-Sign=A22D3FABDFFB9F044EFE2230240984E5CB2EEBE62F38A1F841473E49776546EF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/yi_cbUI8S6-TlufDoDb_SQ/zh-cn_image_0000002589246309.png?HW-CC-KV=V1&HW-CC-Date=20260429T055230Z&HW-CC-Expire=86400&HW-CC-Sign=7F571CAF2BA5CE812D53DC12E8A6C5FB49CA4778945A612DA6FC44A25D58A525)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 组件尺寸变化事件
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用事件 > 组件变化事件 > 组件尺寸变化事件
 category: harmonyos-references
-scraped_at: 2026-04-28T08:00:59+08:00
+scraped_at: 2026-04-29T13:51:12+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:6c559614dd28178e37b8859df83c8a1b0f7b8d674a42eca8bd2dfa880585dd70
+content_hash: sha256:49b0b1b15e5254f0d3535a864ed8bfe893897c8473c158ce015ae52e96a70842
 ---
 
 该事件指组件显示的尺寸发生变化时触发的事件。
@@ -102,4 +102,4 @@ PhonePC/2in1TabletTVWearable
 25. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/Ge9iooRaT_CNOLL_iVp79Q/zh-cn_image_0000002583479475.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000057Z&HW-CC-Expire=86400&HW-CC-Sign=328A2CC2A3BDE085709C4B27D684870C3AC586C7F6CF60AB3C60B346548B9791)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/P9w9wjn6SBerpkoPs-e_NA/zh-cn_image_0000002558606338.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055111Z&HW-CC-Expire=86400&HW-CC-Sign=ED5DA7B4610F8AB73B801B2FF0B105456C5256C5FA03B88E3BA811195BB5455F)

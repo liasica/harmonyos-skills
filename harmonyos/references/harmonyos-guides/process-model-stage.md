@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/process-model
 title: 进程模型
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > Stage模型开发指导 > 进程模型
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:37:52+08:00
+scraped_at: 2026-04-29T13:25:54+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:cb34b9a9cfcb1c5ac9d999a67ea0f4bf5ba87a117fbfa3405e2e35ab78b39dab
+content_hash: sha256:16973b1f55fce9f1caa4aadf0e3f07db6f46d35e585827f27dc8bee201ac2406
 ---
 
 ## 概述
@@ -26,7 +26,7 @@ content_hash: sha256:cb34b9a9cfcb1c5ac9d999a67ea0f4bf5ba87a117fbfa3405e2e35ab78b
 
 **图1** 基本进程类型
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/BXSAZ1EQR1aVneZy7ev5Vg/zh-cn_image_0000002583437555.png?HW-CC-KV=V1&HW-CC-Date=20260427T233751Z&HW-CC-Expire=86400&HW-CC-Sign=38D17DA395EEAED3D17D76637CE2D3B369BB54CF978CB8AC85B8A277F786CF0F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/-Lr9RxKqS7-obVYNJipr7g/zh-cn_image_0000002589323869.png?HW-CC-KV=V1&HW-CC-Date=20260429T052553Z&HW-CC-Expire=86400&HW-CC-Sign=4BB55EF206410B46BF41D28ED3D1D3EA4A6D1A1028BF2A6D22CD6AC37CA3D4B3)
 
 说明
 
@@ -44,7 +44,7 @@ content_hash: sha256:cb34b9a9cfcb1c5ac9d999a67ea0f4bf5ba87a117fbfa3405e2e35ab78b
 
 **图2** 其他进程类型
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/nLsoQApvSCiDd8F6qM0tHQ/zh-cn_image_0000002552957510.png?HW-CC-KV=V1&HW-CC-Date=20260427T233751Z&HW-CC-Expire=86400&HW-CC-Sign=89CC1FA5463E2370C28E13C1A1FB3E795F5B42D05DA66CE0F7490DED040C0A34)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/gwTlvWSESeGoY_PedBOVOw/zh-cn_image_0000002589243807.png?HW-CC-KV=V1&HW-CC-Date=20260429T052553Z&HW-CC-Expire=86400&HW-CC-Sign=79F607D6D89EA2D15DD486D69A1B26A7991ED47955DB5AE84CE8AE287A5325BA)
 
 ## 线程模型
 

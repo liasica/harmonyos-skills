@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-suite-r
 title: 实时渲染(C/C++)
 breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > 音频编创 > 实时渲染(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:45:39+08:00
+scraped_at: 2026-04-29T13:34:37+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:9e8bb7bd4c0d9ff3860cde6335385b1674069cc38eca930e3e78bad09f0997d9
+content_hash: sha256:c2f3f800dc3f0a47deabbaa6e36ee4a9af0e4cd4e2ab1531f5e42dfcb9f80c7d
 ---
 
 从API version 22开始，[OHAudioSuite](../harmonyos-references/capi-ohaudiosuite.md)给开发者提供音频实时渲染能力，即音频实时播放时可进行自定义音效（仅支持均衡器节点）。例如，可以使用均衡器中预置的音效，改变音乐的风格。
@@ -41,7 +41,7 @@ content_hash: sha256:9e8bb7bd4c0d9ff3860cde6335385b1674069cc38eca930e3e78bad09f0
 
 **图1**：实时播放示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/vGodh188SISEROowGeiReA/zh-cn_image_0000002552958538.png?HW-CC-KV=V1&HW-CC-Date=20260427T234538Z&HW-CC-Expire=86400&HW-CC-Sign=EB792011F1E0BA9D02B875E584A94FFE3E279BE3941D539E54BF73629CA37644)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/JnxoWRGUQWKKf2tCI8wILQ/zh-cn_image_0000002558765038.png?HW-CC-KV=V1&HW-CC-Date=20260429T053436Z&HW-CC-Expire=86400&HW-CC-Sign=79D0CF87103A39C66B56E6A7B68F1A1EC8C9941563EB0B56138FD75170078E97)
 
 开发者可以通过以下步骤来实现一个简单的均衡器效果节点实时播放功能。
 

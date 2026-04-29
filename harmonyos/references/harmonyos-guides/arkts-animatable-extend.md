@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-animata
 title: @AnimatableExtend装饰器：定义可动画属性
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式基本语法 > 组件扩展 > @AnimatableExtend装饰器：定义可动画属性
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:39:00+08:00
+scraped_at: 2026-04-29T13:27:08+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:0dfc40ead30221a88cb97e6ae6a881880f4dc44ffdb1ea5f7b9204d01f3695c0
+content_hash: sha256:262ad18585cafefe3dadcda8faa118bc02fd4171933bbd09695f6eee67368532
 ---
 
 @AnimatableExtend装饰器用于自定义可动画的属性方法，在这个属性方法中修改组件不可动画的属性。在动画执行过程中，通过逐帧回调函数修改不可动画属性值，让不可动画属性也能实现动画效果。也可通过逐帧回调函数修改可动画属性的值，实现逐帧布局的效果。
@@ -76,7 +76,7 @@ content_hash: sha256:0dfc40ead30221a88cb97e6ae6a881880f4dc44ffdb1ea5f7b9204d01f3
 
 [AnimatablePropertyText.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ComponentExtension/entry/src/main/ets/pages/AnimatableExtendDecorator/AnimatablePropertyText.ets#L16-L40)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/inaicdvlQW2ajN2XbnJBUw/zh-cn_image_0000002552957586.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233859Z&HW-CC-Expire=86400&HW-CC-Sign=9728FC677A3B8978AAF6439656052732493420394EDD13D3AEB829B80788C03E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/nkV0ut89QQ6xW_rYuP9vmw/zh-cn_image_0000002589323945.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052707Z&HW-CC-Expire=86400&HW-CC-Sign=4E5BCA8A0F6965457E5975D10CFC391CC791CC02DF192DD4C1715558BF02E347)
 
 以下示例实现折线的动画效果。
 
@@ -203,4 +203,4 @@ content_hash: sha256:0dfc40ead30221a88cb97e6ae6a881880f4dc44ffdb1ea5f7b9204d01f3
 
 [AnimatablePropertyExample.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ComponentExtension/entry/src/main/ets/pages/AnimatableExtendDecorator/AnimatablePropertyExample.ets#L16-L135)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/s4qw3rc2R7qNP8p1GU4obA/zh-cn_image_0000002583477587.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233859Z&HW-CC-Expire=86400&HW-CC-Sign=DC1BF128C04ACCA1B73E5F7C4B030D3AFEB3E37CC6657F33AFF9841344F320CC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/Qs7J_SXQRj6ZPtbXJ9g5Vw/zh-cn_image_0000002589243885.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052707Z&HW-CC-Expire=86400&HW-CC-Sign=D552E29B2524F41328508AA71743893080C0E337C1B629242535D7B462E1B36D)

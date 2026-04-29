@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-uiconte
 title: 不依赖UI组件的全局自定义弹出框 (openCustomDialog)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用弹窗 > 弹出框 (Dialog) > 不依赖UI组件的全局自定义弹出框 (openCustomDialog)
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:39:43+08:00
+scraped_at: 2026-04-29T13:27:53+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:97f9f48b5db68137ac4183ccd56e51924aed05428ea2a19f110ab6e2d9917eb7
+content_hash: sha256:8a5ce8d5e24d7b126acef78d7130ccb5300d0f9e22680a4b686b63a04e7c3210
 ---
 
 在广告、中奖、警告、软件更新等与用户交互响应操作的场景下，可以使用UIContext中获取到的PromptAction对象提供的[openCustomDialog](../harmonyos-references/arkts-apis-uicontext-promptaction.md#opencustomdialog12)接口来实现自定义弹出框。相较于[CustomDialogController](../harmonyos-references/ts-methods-custom-dialog-box.md#customdialogcontroller)优势点在于页面解耦，支持[动态刷新](../harmonyos-references/js-apis-arkui-componentcontent.md#update)。
@@ -197,7 +197,7 @@ ComponentContent与[BuilderNode](../harmonyos-references/js-apis-arkui-builderno
 
 [customDialogComponentWithTransition.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/DialogProject/entry/src/main/ets/pages/opencustomdialog/customDialogComponentWithTransition.ets#L16-L84)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/y7mE_msiS7yEplRouksGGw/zh-cn_image_0000002583437943.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233941Z&HW-CC-Expire=86400&HW-CC-Sign=926ECC98A6FF7770CD792DEEB61F4A9E77B4E6929D3812FBCC46B4BA5BC6DB6E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/UVCY71z7SzuMpvPmCgBoVw/zh-cn_image_0000002558604732.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052752Z&HW-CC-Expire=86400&HW-CC-Sign=30AB01416407E38917DCB313F2EEE50CF9A7B001B601484A57AC394B31C7B13D)
 
 ## 设置弹出框避让软键盘的距离
 
@@ -256,7 +256,7 @@ ComponentContent与[BuilderNode](../harmonyos-references/js-apis-arkui-builderno
 
 [customDialogWithKeyboardAvoidDistance.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/DialogProject/entry/src/main/ets/pages/opencustomdialog/customDialogWithKeyboardAvoidDistance.ets#L16-L64)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/JNfNJKwhShelj4BIn0S3MQ/zh-cn_image_0000002552957898.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233941Z&HW-CC-Expire=86400&HW-CC-Sign=4048774722591A3A57E0CEE424D0DD12FB65D21DA90A9117A22C605E3DD926A2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/5PzYkJbkQA-A2hx3wnccYg/zh-cn_image_0000002589324257.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052752Z&HW-CC-Expire=86400&HW-CC-Sign=D35258DD211360EF95ED08C1B8E2F52E7184FAA8189CFE6F79F6C8E855DB2241)
 
 ## 完整示例
 
@@ -412,4 +412,4 @@ ComponentContent与[BuilderNode](../harmonyos-references/js-apis-arkui-builderno
 
 [OpenDialogAndUpdate.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/DialogProject/entry/src/main/ets/pages/opencustomdialog/OpenDialogAndUpdate.ets#L16-L93)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/pJpPS7DmSICg-ZJBklZX5w/zh-cn_image_0000002583477899.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233941Z&HW-CC-Expire=86400&HW-CC-Sign=757E611FDAA97BECDC6E46A49D4ACB1DA02625DC6A11E21FEB907B1DF0D056BF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/jTg5Zm9-SkONIdMuAOAg7Q/zh-cn_image_0000002589244197.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052752Z&HW-CC-Expire=86400&HW-CC-Sign=D0E3B11D60476927924F14EFAF261AD13317F0056D14999B4D53215BF5D1717A)

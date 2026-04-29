@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-ta
 title: 开发Hvigor任务
 breadcrumb: 指南 > 构建应用 > 扩展构建能力 > 开发Hvigor任务
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:57:21+08:00
+scraped_at: 2026-04-29T13:47:20+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:e9801653fc7915f90c32c8b8743858ae69eca21006573c715697f2791e709b4f
+content_hash: sha256:e385db04fc20a11fa74bfd87928de0b115aae36aaa835dcddf3290322cb2ce68
 ---
 
 ## 了解任务
@@ -65,4 +65,4 @@ Finished
    ```
 4. 查看任务执行结果。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/JeeqoGUIThSM7BU2lnydBA/zh-cn_image_0000002561753201.png?HW-CC-KV=V1&HW-CC-Date=20260427T235720Z&HW-CC-Expire=86400&HW-CC-Sign=0E268D7146D174A50D0B5705FB5C4B263093EE2E0DD4A175A6AA709390826912 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/KCW0yEfIQWOKTWgj_9PDQw/zh-cn_image_0000002561753201.png?HW-CC-KV=V1&HW-CC-Date=20260429T054719Z&HW-CC-Expire=86400&HW-CC-Sign=3560AE887FE83D9F6BCC765472FE23047D011BB3F148243862017FB1D4B305A7 "点击放大")

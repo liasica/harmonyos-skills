@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 挂载卸载事件
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用事件 > 组件变化事件 > 挂载卸载事件
 category: harmonyos-references
-scraped_at: 2026-04-28T08:00:58+08:00
+scraped_at: 2026-04-29T13:51:11+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:c52fe19fa78e63e7e04e02f28d3f6d036998387edfef64ad526ab4ea25c2fdd3
+content_hash: sha256:0bd4cbf871f13748c4ed367bd6c7a5fd820e8c45d708e235b65617c100b08425
 ---
 
 挂载卸载事件指组件从组件树上挂载、卸载时触发的事件。
@@ -168,4 +168,4 @@ PhonePC/2in1TabletTVWearable
 36. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/vSWEUlSoRGa16ojb3GSupQ/zh-cn_image_0000002583439519.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000057Z&HW-CC-Expire=86400&HW-CC-Sign=F8F8387C883FCA8276D557AAC39DF06597511F61EA72C2147F4E4940652FA4DC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/1E4K-usuQZeWDttjsJzb1Q/zh-cn_image_0000002589245805.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055110Z&HW-CC-Expire=86400&HW-CC-Sign=5C196E4C954DAE3C8F537A7E23224B4C188B49E5877ACFBAA2092B5471B3BBB5)

@@ -3,18 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/store-iap-con
 title: 开通相关服务和配置参数
 breadcrumb: 指南 > 应用服务 > AppGallery Kit（应用市场服务） > 数字商品服务 > 启用数字商品服务 > 开通相关服务和配置参数
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:48:13+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:38dc3e5a01bb11ab621321712151e29bf16c586fc7d398887491d894468e3531
+scraped_at: 2026-04-29T13:37:08+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:5443b82cfbeca9c8dc0e3cb3aeb260c6ce439642b7cf7c59dd4b684aeb76f3a3
 ---
 
 请先参考“[应用开发准备](application-dev-overview.md)”完成基本准备工作及指纹配置，再继续进行以下开发活动。
 
 说明
 
-[配置签名信息](application-dev-overview.md#section42841246144813)时，请使用手动签名方式。
+[配置签名信息](application-dev-overview.md#配置签名信息)时，请使用手动签名方式。
 
-接入数字商品服务，需要[添加公钥指纹](application-dev-overview.md#section1726913517284)。
+接入数字商品服务，需要[添加公钥指纹](application-dev-overview.md#条件必选添加公钥指纹)。
 
 ## 开通商户服务
 

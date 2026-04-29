@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/graphics-acce
 title: ABR进行Buffer分辨率调整引起其他Pass渲染效果异常，该如何解决？
 breadcrumb: 指南 > 图形 > Graphics Accelerate Kit（图形加速服务） > Graphics Accelerate Kit常见问题 > 游戏渲染加速服务 > ABR进行Buffer分辨率调整引起其他Pass渲染效果异常，该如何解决？
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:47:46+08:00
+scraped_at: 2026-04-29T13:36:34+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:b1f608374eb30244c7bd06b09812c75909863d00ad067bb1b0140fe7b5ef3225
+content_hash: sha256:0b03119f039e12a0d737319b804712077b82a997b59a381381a09525975d134a
 ---
 
 **现象描述**
 
 以团结引擎URP管线为例，ABR对DrawOpaqueObjects绑定的Buffer进行分辨率调整时会引起SSAO shadow效果异常。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/cUTMTeVhSBqrf7bwVitphw/zh-cn_image_0000002552958732.png?HW-CC-KV=V1&HW-CC-Date=20260427T234744Z&HW-CC-Expire=86400&HW-CC-Sign=A797CD42308279253C022D1F6F5BDD1E1E818ECB679ADE75EA65F5A7036F49E4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/jEy7T_WRSZ2N5dW5ijLbxA/zh-cn_image_0000002558765232.png?HW-CC-KV=V1&HW-CC-Date=20260429T053633Z&HW-CC-Expire=86400&HW-CC-Sign=373F8BE0283B1B0D90E4966701D825F3121153FDC648A46B01FE64386A57A197)
 
 **原因分析**
 
@@ -26,7 +26,7 @@ content_hash: sha256:b1f608374eb30244c7bd06b09812c75909863d00ad067bb1b0140fe7b5e
 
     在URP资产中勾选“After Opaque”：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/t3q5ziBhSQetnqok-nMaIg/zh-cn_image_0000002583478733.png?HW-CC-KV=V1&HW-CC-Date=20260427T234744Z&HW-CC-Expire=86400&HW-CC-Sign=2A3A6CA4E11108878130D639946194FE60B21F918946E9C46B7F87BFA0D87059)
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/4LsnTCl3T5-N5_knTTcbNg/zh-cn_image_0000002558605576.png?HW-CC-KV=V1&HW-CC-Date=20260429T053633Z&HW-CC-Expire=86400&HW-CC-Sign=AA1CAA6C52D11DFB34CFE4E589C8C9E2CC728222A7773E914359302386224360)
   + **方案2**：获取实时的ABR Buffer分辨率因子，并根据Buffer分辨率因子对相关渲染数据进行同步调整。
 
     SSAO的shader会根据scaledScreenParams参数进行计算，该变量与渲染分辨率相关，在集成ABR后，scaledScreenParams需要根据实时的ABR Buffer分辨率因子调整。

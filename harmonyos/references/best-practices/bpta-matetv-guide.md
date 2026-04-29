@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-matetv-gui
 title: MateTV智慧屏应用开发
 breadcrumb: 最佳实践 > 多端设备体验提升 > 智慧屏 > MateTV智慧屏应用开发
 category: best-practices
-scraped_at: 2026-04-28T08:21:56+08:00
+scraped_at: 2026-04-29T14:13:07+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:7ffb5e69e4a341c1b70b76a944b913c69314a631e3600b999a85f97f0788cfe8
+content_hash: sha256:bdd2ba7cceb32456f39f3da72cb4ae25d0f42f083dc47f1bf15a6ebb3e3b9a4b
 ---
 
 ## 概述
@@ -17,7 +17,7 @@ content_hash: sha256:7ffb5e69e4a341c1b70b76a944b913c69314a631e3600b999a85f97f078
 * 配备高清大屏，兼具高分辨率与高刷新率，呈现细腻流畅的视觉体验，轻松满足学习、娱乐与办公等多场景内容展示需求。
 * Mate TV智慧屏注重操作的便捷性与灵活性，搭配灵犀指向遥控和灵犀触控板，带来如操作平板般直观流畅的人机交互体验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/cD8jMrcXTtW7Tt39z9_o_g/zh-cn_image_0000002457950389.png?HW-CC-KV=V1&HW-CC-Date=20260428T002150Z&HW-CC-Expire=86400&HW-CC-Sign=9BCE8A902350ED56604B9B230BB0075FC23A581B6059AD02160783C9BE9B0FB6 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/cD8jMrcXTtW7Tt39z9_o_g/zh-cn_image_0000002457950389.png?HW-CC-KV=V1&HW-CC-Date=20260429T061301Z&HW-CC-Expire=86400&HW-CC-Sign=C5580DD5A195E9E2BD49CBCBE5D4BC2E0D8BC8543E857F1E261F29B917D1A2C0 "点击放大")
 
 ## 硬件说明
 
@@ -180,7 +180,7 @@ Mate TV支持多种输入设备：
 
 采用光标指向交互时，使用的是灵犀指向遥控器，相比传统的焦点导航遥控器，点选方式更加轻松自如。操控方式像使用激光笔，可以精准指向目标并选中，无需一步一步地切换图标选择，高效便捷，所指即所得，享受流畅的操控体⁠验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/oVPprDNDS7KA0MGH2ooMiQ/zh-cn_image_0000002424431658.png?HW-CC-KV=V1&HW-CC-Date=20260428T002150Z&HW-CC-Expire=86400&HW-CC-Sign=2CFEDA4BF17148E2BD1F32A200115349C2ABD4136C9B6C3743087B08657AD19A "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/oVPprDNDS7KA0MGH2ooMiQ/zh-cn_image_0000002424431658.png?HW-CC-KV=V1&HW-CC-Date=20260429T061301Z&HW-CC-Expire=86400&HW-CC-Sign=49D4375F7F0360844BC731320F17A30A254606E239057EA31EFCEF8E46124EE4 "点击放大")
 
 以下是对灵犀指向遥控按键的说明：
 
@@ -246,7 +246,7 @@ Mate TV交互默认使用遥控器进行控制，应用可通过[按键事件](.
 
 根据智慧屏相机页面的UX设计稿，通过横向断点区分和实现智慧屏的页面布局。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/sHaHt1_eTE-eEI5iHFOsOQ/zh-cn_image_0000002424591502.png?HW-CC-KV=V1&HW-CC-Date=20260428T002150Z&HW-CC-Expire=86400&HW-CC-Sign=40A0182FC7BC3F1C6F95DDE2742E16C02DC37F4D0C61DA05A6833D0664E84E23 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/sHaHt1_eTE-eEI5iHFOsOQ/zh-cn_image_0000002424591502.png?HW-CC-KV=V1&HW-CC-Date=20260429T061301Z&HW-CC-Expire=86400&HW-CC-Sign=0569FDA2F8F070DBBEECA8883FF7C1F8AE89304981B31F6F014BC0841A2F66A8 "点击放大")
 
 **选择****相机设备**
 

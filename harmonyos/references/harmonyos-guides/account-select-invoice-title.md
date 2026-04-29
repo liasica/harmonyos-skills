@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-selec
 title: 获取发票抬头
 breadcrumb: 指南 > 应用服务 > Account Kit（华为账号服务） > 获取华为账号用户信息 > 获取发票抬头
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:48:00+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:04b16ebd04aff0f030c5be6c945bc1546d6b616673527637101085627d02e07e
+scraped_at: 2026-04-29T13:36:53+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:974fe1dfe04de9779413cae547d9c36d44c86150eb1dfe6d7dd3179956c87a32
 ---
 
 ## 场景介绍
 
 当应用需要获取用户发票抬头时，可使用Account Kit提供的发票助手能力，打开发票抬头选择页面，帮助用户快速选择或管理发票抬头。以下对Account Kit提供的发票助手能力进行介绍，获取发票抬头功能还可使用场景化控件[选择发票抬头Button](scenario-fusion-button-invoice-title.md)进行实现。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/9XeBQZSwRTmhJMCMtVpE2Q/zh-cn_image_0000002583478757.png?HW-CC-KV=V1&HW-CC-Date=20260427T234759Z&HW-CC-Expire=86400&HW-CC-Sign=D5FD0432951D4F80D8E5586DEB0AF6CD76A13AB48F9CE0C6AD6B4E9DCDCD7FEC "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/jsKvQcFLR3W-nF2nuGWDbA/zh-cn_image_0000002558605600.png?HW-CC-KV=V1&HW-CC-Date=20260429T053652Z&HW-CC-Expire=86400&HW-CC-Sign=74774C239DD10D453BDB53E26F05803B0F235148251EF4D1E9ECD980B1C8ED38 "点击放大")
 
 ## 约束与限制
 
@@ -20,7 +20,7 @@ Wearable、TV设备暂不支持使用获取发票抬头功能。
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/Q9bCguPDTieLbSreLCohzw/zh-cn_image_0000002552799108.png?HW-CC-KV=V1&HW-CC-Date=20260427T234759Z&HW-CC-Expire=86400&HW-CC-Sign=8171B6ABF5284D5A65A4AB82B919C49116BCC53490DEB3863FC1C96DCE8C3C5A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/WzrWJtu3RrWsVfEstoWeEA/zh-cn_image_0000002589325127.png?HW-CC-KV=V1&HW-CC-Date=20260429T053652Z&HW-CC-Expire=86400&HW-CC-Sign=FA789A12FF4282260D6F4096D52DA287EC10F77F4DE5B8A344566F4CE22C38E9)
 
 流程说明：
 
@@ -76,7 +76,7 @@ Wearable、TV设备暂不支持使用获取发票抬头功能。
    19. })
    20. .catch((error: BusinessError<Object>) => {
    21. dealAllError(error);
-   22. })
+   22. });
    23. } catch (error) {
    24. dealAllError(error);
    25. }

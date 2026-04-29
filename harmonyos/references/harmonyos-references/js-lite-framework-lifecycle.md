@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-lite-f
 title: 生命周期
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Lite） > 框架说明 > 生命周期
 category: harmonyos-references
-scraped_at: 2026-04-28T08:03:23+08:00
+scraped_at: 2026-04-29T13:53:43+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:ad5c8a12d4e7e72108156d88f0386aecb45ff786d6ef523f208ded2d802f4e35
+content_hash: sha256:efcc57970126f328f202a3e8cc12fb942697ff15c4630954f738fbc87d0673f2
 ---
 
 ## 应用生命周期
@@ -46,4 +46,4 @@ PhonePC/2in1TabletTVWearableLite Wearable
 * 页面隐藏到后台运行：onHide()
 * 页面从后台运行恢复到前台：onShow()
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/3Tm1II7kTR6Uz9ODRj8Dxw/zh-cn_image_0000002583480331.png?HW-CC-KV=V1&HW-CC-Date=20260428T000322Z&HW-CC-Expire=86400&HW-CC-Sign=08DDEE52E9F3B7221B7E7CAA1FE1E92018BC3B7E83C0E71A4C16307E46F3B53A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/k9YUxaenSVupo6NCykTyGA/zh-cn_image_0000002589326723.png?HW-CC-KV=V1&HW-CC-Date=20260429T055341Z&HW-CC-Expire=86400&HW-CC-Sign=D8C97028DF3C3FD8591B0D0EBE7AF8C132C64B6B691B324419942DD26ADA1EFD)

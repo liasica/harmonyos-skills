@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-bluetooth-
 title: 低功耗蓝牙基础使用
 breadcrumb: 最佳实践 > 网络 > 低功耗蓝牙基础使用
 category: best-practices
-scraped_at: 2026-04-28T08:20:20+08:00
+scraped_at: 2026-04-29T14:11:05+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:334a8dd0873a44b52e39b91bc7a4138ceb2e7c7a20e8453d607cdadc513ed27c
+content_hash: sha256:58e73bbc9eee537d88425ffb9a7c0a4a68b36dfe2bab6966fbee2997f139b0a3
 ---
 
 ## 概述
@@ -23,7 +23,7 @@ content_hash: sha256:334a8dd0873a44b52e39b91bc7a4138ceb2e7c7a20e8453d607cdadc513
 3. 数据传输阶段：服务端订阅描述符写请求事件，准备数据（如心率值），通过特征通知机制向已连接客户端发送数据；客户端监听特征值变化事件，接收并解析数据内容，根据业务需求更新用户界面或执行相应逻辑。
 4. 断开连接阶段：服务端在连接状态回调中处理断开事件，可以停止广播并清理资源；客户端主动断开连接，关闭GATT客户端，注销监听器，重置连接状态，可选择将设备ID持久化以便后续自动重连。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/sMe0zWXJQ3-uXA6vM4pQSw/zh-cn_image_0000002492448638.jpg?HW-CC-KV=V1&HW-CC-Date=20260428T002018Z&HW-CC-Expire=86400&HW-CC-Sign=4EE660FACF1592924C80DD4AB8C62860E521E42125B22820A1D4ADFFCCCB7F98 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/sMe0zWXJQ3-uXA6vM4pQSw/zh-cn_image_0000002492448638.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T061103Z&HW-CC-Expire=86400&HW-CC-Sign=FEA3D251E1111A258CEB212C2E1F6F1C6AE13AC4C61DECCD3F0959C6B2D638A2 "点击放大")
 
 ### 关键技术
 
@@ -83,7 +83,7 @@ content_hash: sha256:334a8dd0873a44b52e39b91bc7a4138ceb2e7c7a20e8453d607cdadc513
 
 这种协同工作机制大幅提升了BLE连接效率。服务端的精准广播与客户端的智能过滤形成互补，避免了传统全量扫描带来的资源浪费。当用户在应用中看到设备列表时，背后已完成多层筛选：硬件层过滤掉非BLE设备，协议层过滤掉不匹配服务的设备，应用层进一步通过制造商数据确认目标设备身份。这种分层过滤策略不仅加速了设备发现过程，也显著降低了系统功耗，为后续的连接与数据传输奠定了高效基础。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/kASmGtnpSLejBLI23mT6BA/zh-cn_image_0000002524568343.jpg?HW-CC-KV=V1&HW-CC-Date=20260428T002018Z&HW-CC-Expire=86400&HW-CC-Sign=E4F7C435F70F650C4FBBB4203770A821AD00ACD130EC725894CA04FDD5321065 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/kASmGtnpSLejBLI23mT6BA/zh-cn_image_0000002524568343.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T061103Z&HW-CC-Expire=86400&HW-CC-Sign=6F79F6DF5A7FC35822D6B153BAC50FD89AD916341ED0A5C5B022629C01B284ED "点击放大")
 
 **关键技术**
 

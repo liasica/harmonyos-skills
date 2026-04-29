@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 组件快捷键事件
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用事件 > 交互响应事件 > 组件快捷键事件
 category: harmonyos-references
-scraped_at: 2026-04-28T08:00:56+08:00
+scraped_at: 2026-04-29T13:51:10+08:00
 doc_updated_at: 2026-04-08
-content_hash: sha256:1cf34447fb84ec5f4ad27e96b3bb749edd066ba998c573abcd2702a60cf5bf74
+content_hash: sha256:86384f6be4acf5db866beb75ef4ab05a2e8ae8926c3382877d678fdd7bf854ad
 ---
 
 开发者可以设置组件的自定义组合键，每个组件可以设置多个组合键。
@@ -135,7 +135,7 @@ PhonePC/2in1TabletTVWearable
 37. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/Tg_eXTlVQNy8c1MQ6XmeQg/zh-cn_image_0000002552799822.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000055Z&HW-CC-Expire=86400&HW-CC-Sign=FF12784D75F7494152CB784856FD195A01CA5DE0C9A249C2A0B5321C13A91EFA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/KFGeVQgvS1iOe9rnLYLSTQ/zh-cn_image_0000002589325861.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055107Z&HW-CC-Expire=86400&HW-CC-Sign=C83DA1F9F1FB06E8F33A06BC2F9DE658B67B6C76B5FE258AD45BC625E35B3612)
 
 ### 示例2（快捷键的绑定和解除绑定）
 
@@ -175,4 +175,4 @@ PhonePC/2in1TabletTVWearable
 31. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/LGZ9--YGQGmaUSli2MZdSQ/zh-cn_image_0000002583439517.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000055Z&HW-CC-Expire=86400&HW-CC-Sign=C6B6D9E5BCB5F3597EBF89167CE6766B08DC7C1334384149611DB887640368F4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/9_iYcVDvSmypcr8IaWEeAw/zh-cn_image_0000002589245803.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055107Z&HW-CC-Expire=86400&HW-CC-Sign=910B1F4CE4964938B889AB51C1D290DFA3B1C9EC5604BB6985360E04BF7B98B2)

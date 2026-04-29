@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/pdf-arkts
 title: pdfViewManager（PDF预览）
 breadcrumb: API参考 > 应用服务 > PDF Kit（PDF服务） > ArkTS API > pdfViewManager（PDF预览）
 category: harmonyos-references
-scraped_at: 2026-04-28T08:18:21+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:3af6ba67b2b7cdb9c0633b6c7c68e920eb52f70c52a99b3939fd410fa403ad2e
+scraped_at: 2026-04-29T14:09:02+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:f34fdf2bea0726733ff021fad808cb6e0c630b06dcdb53225dadae60bb2c6108
 ---
 
 本模块为应用提供统一的PDF预览能力。
@@ -203,7 +203,7 @@ loadDocument(path: string, password?: string, initPageIndex?: number, onProgress
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | path | string | 是 | 文档路径。 |
-| password | string | 否 | 密码。默认值：空字符串 |
+| password | string | 否 | 密码，长度不超过512字节，仅支持ASCII字符（127以内）。默认值：空字符串 |
 | initPageIndex | number | 否 | 要打开的文档初始化页面索引，0为初始页。默认值：0 |
 | onProgress | [Callback](js-apis-base.md#callback)<number> | 否 | 加载文档进度回调函数，返回number类型数据，传此参数返回文档加载进度，不传不返回文档加载进度。 |
 
@@ -1025,7 +1025,7 @@ PhonePC/2in1Tablet
 
 getPageRotation(pageIndex: number): pdfService.RotationAngle
 
-获取指定页面的旋转度数: 0、90、180、270。
+获取指定页面的旋转度数： 0、90、180、270度。
 
 **系统能力：** SystemCapability.OfficeService.PDFService.Core
 
@@ -1098,7 +1098,7 @@ PhonePC/2in1Tablet
 
 addMarkupAnnotation(annotationType: SupportedAnnotationType, selectedRects: Array<SelectedRects>, color: number): void
 
-在PDF注释层，以PDFView视图左上角(0,0)为原点，以像素点为单位，向下延展，添加文本批注，如通过[registerAnnotationSelectedListener](pdf-arkts-pdfviewmanage.md#registerannotationselectedlistener)回调来高亮显示文本批注。
+在PDF注释层，以PDFView视图左上角(0,0)为原点，以像素点为单位，向下延展，添加文本批注。文本批注添加成功后，通过[registerAnnotationSelectedListener](pdf-arkts-pdfviewmanage.md#registerannotationselectedlistener)回调来高亮显示文本批注。
 
 **系统能力：** SystemCapability.OfficeService.PDFService.Core
 
@@ -1172,8 +1172,8 @@ deleteSelectedAnnotation(annotationIndex: number, pageIndex: number): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| annotationIndex | number | 是 | 批注索引。 |
-| pageIndex | number | 是 | 页面索引。 |
+| annotationIndex | number | 是 | 批注索引，从0开始。 |
+| pageIndex | number | 是 | 页面索引，从0开始。 |
 
 **示例：**
 
@@ -1254,7 +1254,7 @@ saveDocument(path: string, onProgress?: Callback<number>): Promise<number>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<number> | Promise对象，返回number类型，1: 成功, 0: 失败。 |
+| Promise<number> | Promise对象，返回number类型，1：成功， 0：失败。 |
 
 **示例：**
 
@@ -1313,7 +1313,7 @@ PhonePC/2in1Tablet
 
 registerPageFitChangedListener(listener: Callback<pdfService.PageFit>): void
 
-注册页面适配变化的时候监听器。
+注册页面适配变化监听器。
 
 **系统能力：** SystemCapability.OfficeService.PDFService.Core
 
@@ -1340,7 +1340,7 @@ PhonePC/2in1Tablet
 
 registerPageChangedListener(listener: Callback<number>): void
 
-注册页面索引变化的时候监听器。
+注册页面索引变化监听器。
 
 **系统能力：** SystemCapability.OfficeService.PDFService.Core
 
@@ -1367,7 +1367,7 @@ PhonePC/2in1Tablet
 
 registerScaleChangedListener(listener: Callback<number>): void
 
-注册页面缩放变化的时候监听器。
+注册页面缩放变化监听器。
 
 **系统能力：** SystemCapability.OfficeService.PDFService.Core
 
@@ -1394,7 +1394,7 @@ PhonePC/2in1Tablet
 
 registerTextSelectedListener(listener: Callback<TextSelectedParam>): void
 
-注册页面文本被选中的时候监听器。
+注册文本选中监听器。
 
 **系统能力：** SystemCapability.OfficeService.PDFService.Core
 
@@ -1421,7 +1421,7 @@ PhonePC/2in1Tablet
 
 registerAnnotationSelectedListener(listener: Callback<SelectedAnnotation>): void
 
-注册页面批注被选中时的监听器。
+注册页面批注选中监听器。
 
 **系统能力：** SystemCapability.OfficeService.PDFService.Core
 
@@ -1448,7 +1448,7 @@ PhonePC/2in1Tablet
 
 registerImageSelectedListener(listener: Callback<ImageSelectedParam>): void
 
-注册页面图片被选中的时候监听器。
+注册图片选中监听器。
 
 **系统能力：** SystemCapability.OfficeService.PDFService.Core
 
@@ -1502,7 +1502,7 @@ PhonePC/2in1Tablet
 
 registerAnnotationChangedListener(listener: Callback<AnnotationChangedParam>): void
 
-注册批注变化时候的监听器。
+注册批注变化监听器。
 
 **系统能力：** SystemCapability.OfficeService.PDFService.Core
 
@@ -1529,7 +1529,7 @@ PhonePC/2in1Tablet
 
 registerPageCountChangedListener(listener: Callback<number>): void
 
-注册总页数变化的时候监听器，这个目前只能在loadDocument之前调用。
+注册总页数变化的时候监听器，需要在loadDocument之前调用，否则无法捕获loadDocument期间的页数变化事件。
 
 **系统能力：** SystemCapability.OfficeService.PDFService.Core
 
@@ -1556,7 +1556,7 @@ PhonePC/2in1Tablet
 
 searchKey(text: string, listener: Callback<number>): void
 
-搜索文本并返回匹配的总数，之前[setHighlightText](pdf-arkts-pdfviewmanage.md#sethighlighttext)执行结果会失效。
+搜索文本并返回匹配的总数，执行搜索会清除之前通过[setHighlightText](pdf-arkts-pdfviewmanage.md#sethighlighttext)设置的文本高亮。
 
 **系统能力：** SystemCapability.OfficeService.PDFService.Core
 
@@ -1660,7 +1660,7 @@ setSearchIndex(index: number): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| index | number | 是 | 搜索结果索引。 |
+| index | number | 是 | 搜索结果索引，从0开始。 |
 
 **示例：**
 
@@ -1918,7 +1918,7 @@ constructor(pageIndex: number, rectArray: Array<pdfService.PdfRect>, isRotated: 
 
 PhonePC/2in1Tablet
 
-PDF页面 registerScrollListener 监听函数回调参数。
+PDF页面[registerScrollListener](pdf-arkts-pdfviewmanage.md#registerscrolllistener)监听函数回调参数。
 
 **系统能力：** SystemCapability.OfficeService.PDFService.Core
 

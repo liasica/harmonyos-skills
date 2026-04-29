@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-static-di
 title: 静态图
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 静态图
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:49:54+08:00
+scraped_at: 2026-04-29T13:39:17+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:a7ab580547c429933ff01f53e3b58110c375e58482ad7729c295022fe48739c0
+content_hash: sha256:c8eb2db314337b9ac24e5dd3d9fdaefee5b5921f9349e7e09edcd71a0a1f6e0c
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:a7ab580547c429933ff01f53e3b58110c375e58482ad7729c295022fe48
 
 **图1** 静态图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/wBO8ePrRRvSGYdCwH2InBg/zh-cn_image_0000002583479047.jpg?HW-CC-KV=V1&HW-CC-Date=20260427T234953Z&HW-CC-Expire=86400&HW-CC-Sign=75162CD4CB0081FB2701DCA69A131F841015A5FBA97640405713D4406F1EC95E "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/s57jvw2OTHey3nslExPjLw/zh-cn_image_0000002558605892.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053627Z&HW-CC-Expire=86400&HW-CC-Sign=FF77B795448C920AF67A0A3B9C3A78B7D54582A7F9A8672004B101C52A8EDB5B "点击放大")
 
 ## 接口说明
 
@@ -133,4 +133,4 @@ content_hash: sha256:a7ab580547c429933ff01f53e3b58110c375e58482ad7729c295022fe48
 
    **图2** 调用getMapImage方法获取静态图
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/85_fdR09SgOfPmJPGayx7w/zh-cn_image_0000002552799398.jpg?HW-CC-KV=V1&HW-CC-Date=20260427T234953Z&HW-CC-Expire=86400&HW-CC-Sign=2FC27E6D55F45EE23205BBEC4200FA4FF52ECC427165ECD0C6DE156CC78830E8 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/LSdhkCmIS_2h6f109WFi8g/zh-cn_image_0000002589325419.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053627Z&HW-CC-Expire=86400&HW-CC-Sign=48D4AF4CAD0E19E286020AAB441DFC911F3E94015777B6630756CF3DB056D137 "点击放大")

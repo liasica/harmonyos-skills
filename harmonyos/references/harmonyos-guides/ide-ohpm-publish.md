@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-publ
 title: ohpm publish
 breadcrumb: 指南 > 命令行工具 > 三方依赖管理工具（ohpm） > 常用命令 > ohpm publish
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:57:42+08:00
+scraped_at: 2026-04-29T13:47:52+08:00
 doc_updated_at: 2026-04-22
-content_hash: sha256:108f92e9bd33f1b7f7de295012402e2ee1e1f694a3715b7bcb50bcf703a42251
+content_hash: sha256:67696221db76a363a7d0b4dd233b3d04e09e6f88631dee322f8904a49a9369bc
 ---
 
 发布一个三方库。
@@ -168,4 +168,4 @@ content_hash: sha256:108f92e9bd33f1b7f7de295012402e2ee1e1f694a3715b7bcb50bcf703a
 
 结果示例：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/10w97klUQJy_tS1ABqvWIQ/zh-cn_image_0000002561832663.png?HW-CC-KV=V1&HW-CC-Date=20260427T235741Z&HW-CC-Expire=86400&HW-CC-Sign=BE093714D1EEA7B3C43CA0061EB9F7DB11B59E7E3229BAC556B7C2629CE35462)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/vYjkEj5wTLeWt5dMAA5eMw/zh-cn_image_0000002561832663.png?HW-CC-KV=V1&HW-CC-Date=20260429T054751Z&HW-CC-Expire=86400&HW-CC-Sign=33902AC7D1B97F0C59993865FDA43BFE55FA32C6B082A6E534C2B58CC52456E5)

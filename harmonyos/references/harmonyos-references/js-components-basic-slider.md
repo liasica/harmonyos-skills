@@ -1,10 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-basic-slider
 title: slider
+breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 基础组件 > slider
 category: harmonyos-references
-scraped_at: 2026-04-28T08:03:05+08:00
+scraped_at: 2026-04-29T13:53:27+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:9a443e7e3230f7bfc0b1f250b9e2885fdf7686d098885c86c0c5bf586646d76c
+content_hash: sha256:a1e756cc40f052ea9e6afcbc05d60082c57e26374e31e9e4a79f8ecdc5c9f714
 ---
 
 说明
@@ -89,4 +90,4 @@ PhonePC/2in1TabletTVWearable
 9. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/uzWS8yNsT3meIrOCismdxw/zh-cn_image_0000002552960200.png?HW-CC-KV=V1&HW-CC-Date=20260428T000304Z&HW-CC-Expire=86400&HW-CC-Sign=01D3D23DD6E2598830E7A8B3F88163661F52CECC0770869D3FB3E8AF0E54293B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/M8XNHvhTQRS83H-FGqoh-A/zh-cn_image_0000002558607066.png?HW-CC-KV=V1&HW-CC-Date=20260429T055326Z&HW-CC-Expire=86400&HW-CC-Sign=EC57DC5312C02F9EFF7AD3DEB1F3555D1CB593ABC13F33625D12251AD0F97B4C)

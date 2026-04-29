@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/embeddeduiext
 title: EmbeddedUIExtensionAbility
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > Stage模型开发指导 > Stage模型应用组件 > ExtensionAbility组件 > EmbeddedUIExtensionAbility
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:37:43+08:00
+scraped_at: 2026-04-29T13:25:45+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:b2e20499c3c762c7ad6c71390536cd807ac9282fbbd98e55e94f385d73d48cfb
+content_hash: sha256:a92168dea218eafcdd48618cf36bc1187f62f96e0478f1f57a478cc4027edbd9
 ---
 
 ## 概述
@@ -18,7 +18,7 @@ EmbeddedUIExtensionAbility需要和[EmbeddedComponent](../harmonyos-references/t
 
 **图1** EmbeddedUIExtensionAbility示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/YNhhlXpuQiajRRSeZ9a8lA/zh-cn_image_0000002552797844.png?HW-CC-KV=V1&HW-CC-Date=20260427T233742Z&HW-CC-Expire=86400&HW-CC-Sign=F9B67B7BBFEF7AD4FAE2A54C4888B0DAEC672E76F3574C32817C71215586D15F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/uALyDLpLTKOLBoEzJ1YS9A/zh-cn_image_0000002558604328.png?HW-CC-KV=V1&HW-CC-Date=20260429T052544Z&HW-CC-Expire=86400&HW-CC-Sign=CCDFD844898650BF1FC5F238B6311BD726DA7E7C34A8406CB5BFA4CA4A6AAA3F)
 
 ## 约束限制
 

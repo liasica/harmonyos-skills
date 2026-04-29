@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 浮层
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 基础属性 > 浮层
 category: harmonyos-references
-scraped_at: 2026-04-28T08:01:01+08:00
+scraped_at: 2026-04-29T13:51:14+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:d010c7db0c4ae4fc62f7545be059153ffbe16387443fa5db70f1050cfb42d174
+content_hash: sha256:c974539521ba26af917cf6f05ee0ece7d955a31ac192f29d7d22450233a04367
 ---
 
 设置组件的浮层。
@@ -141,7 +141,7 @@ PhonePC/2in1TabletTVWearable
 22. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/X8_MKxmXQGi3a0idgL4hEg/zh-cn_image_0000002552959482.png?HW-CC-KV=V1&HW-CC-Date=20260428T000100Z&HW-CC-Expire=86400&HW-CC-Sign=E14A43308865F6A79098CD268492D3DE44FA90EA1B527EDD24C8C5F89B77FD35)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/FarTrtX1RzauQ10bBpcAcg/zh-cn_image_0000002558766004.png?HW-CC-KV=V1&HW-CC-Date=20260429T055112Z&HW-CC-Expire=86400&HW-CC-Sign=DAA82EB20131A7636D9381E5B0B729CF2F6C13B6F2F5A8F4173548EFFEDECC05)
 
 ### 示例2（通过builder设置浮层）
 
@@ -177,7 +177,7 @@ PhonePC/2in1TabletTVWearable
 27. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/2WpB-jEFTdSP90Js1T-uag/zh-cn_image_0000002583479483.png?HW-CC-KV=V1&HW-CC-Date=20260428T000100Z&HW-CC-Expire=86400&HW-CC-Sign=CAA263115E8AC96D8F24A5FE082C925670E5EB81AFC057BFBDE7D9FE9E9E6878)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/OHKhK21KQiKG_SDZgbPvbA/zh-cn_image_0000002558606346.png?HW-CC-KV=V1&HW-CC-Date=20260429T055112Z&HW-CC-Expire=86400&HW-CC-Sign=E440929A200BFE94E813B8893BFDFC39A6002FD1E15F5FBB300A87B039BE05B3)
 
 ### 示例3（通过ComponentContent设置浮层）
 
@@ -236,4 +236,4 @@ PhonePC/2in1TabletTVWearable
 50. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/8oAHowEmSk6SK_HVMRCjWw/zh-cn_image_0000002552799834.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000100Z&HW-CC-Expire=86400&HW-CC-Sign=A6F7D546460FB68A2AF0A2333B22175305BDCE63D568C518AAB28E38D9825D8A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/KnKYMg39Tu2hAioU68n9Nw/zh-cn_image_0000002589325873.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055112Z&HW-CC-Expire=86400&HW-CC-Sign=5840785C778453CD4DE7E3984C8F17B196ED8F7752E8C0C7AD8B24A397A140E0)

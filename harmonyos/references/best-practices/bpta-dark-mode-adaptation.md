@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-dark-mode-
 title: 深色模式适配
 breadcrumb: 最佳实践 > 主题与样式 > 深色模式适配
 category: best-practices
-scraped_at: 2026-04-28T08:20:00+08:00
+scraped_at: 2026-04-29T14:10:42+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:2ff800c5f705f8a787687c718c52350423024fe00464f9e67414049af422864d
+content_hash: sha256:ad80cdd56e1148b35be2b08d4a898d855fc61acde2d909de664d17f5b7321c29
 ---
 
 ## 概述
@@ -31,7 +31,7 @@ content_hash: sha256:2ff800c5f705f8a787687c718c52350423024fe00464f9e67414049af42
 一般情况下深浅色模式切换不会导致应用界面产生结构上的变化，而是保持应用界面结构一致的同时展示不同的主题配色、配图等，使得整个应用在切换到深色模式后依然保持自然美观。以下为深色模式适配的UX示例。
 
 **图1** 深色模式适配UX示例图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/e9PRPkWwSP6-xfBh3lO2EQ/zh-cn_image_0000002229450789.png?HW-CC-KV=V1&HW-CC-Date=20260428T001957Z&HW-CC-Expire=86400&HW-CC-Sign=4A0EA54D996D04DF4D85DD80C9D178FCF3DC3C6CFE1843751CB9B93F7047D4AD "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/e9PRPkWwSP6-xfBh3lO2EQ/zh-cn_image_0000002229450789.png?HW-CC-KV=V1&HW-CC-Date=20260429T061036Z&HW-CC-Expire=86400&HW-CC-Sign=711114093982C3ED6753E128F6C1A3502BB1FD7DD5999D17CCB27CCB57BC6A9C "点击放大")
 
 从图1中可以看到，在应用进行深色模式适配过程中主要的适配项有[颜色资源适配](bpta-dark-mode-adaptation.md#section1292642062514)、[媒体资源适配](bpta-dark-mode-adaptation.md#section07671855272)、[状态栏适配](bpta-dark-mode-adaptation.md#section1618831013284)，除此之外若应用内使用了Web组件加载Web页面，那么还需实现[Web页面适配深色模式](bpta-dark-mode-adaptation.md#section157048320276)。
 
@@ -196,7 +196,7 @@ content_hash: sha256:2ff800c5f705f8a787687c718c52350423024fe00464f9e67414049af42
 状态栏适配即在深浅色模式下，采用不同的状态栏背景色与字体颜色。若应用未启用[沉浸式布局](../harmonyos-guides/window-terminology.md#沉浸式布局)，那么默认情况下，浅色模式下状态栏为白底黑字，深色模式下状态栏为黑底白字。当应用启用了沉浸式，状态栏背景色与应用背景色保持一致，而状态栏文字默认在浅色模式下显示黑色，在深色模式下切换成白色。此时如果应用在浅色模式下设置了偏暗的背景或在深色模式下设置了偏亮的背景，都会造成状态栏背景色与状态栏字体颜色对比度过低而显示异常。错误效果示例见图2。
 
 **图2** 状态栏适配错误效果  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/19Op9S08SdGPJ7xPeA8Ehw/zh-cn_image_0000002193850908.png?HW-CC-KV=V1&HW-CC-Date=20260428T001957Z&HW-CC-Expire=86400&HW-CC-Sign=EF6FF0D87A97344DD10F1AF56B19DD988742A735565C4388FD108A7E6C5759E5 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/19Op9S08SdGPJ7xPeA8Ehw/zh-cn_image_0000002193850908.png?HW-CC-KV=V1&HW-CC-Date=20260429T061036Z&HW-CC-Expire=86400&HW-CC-Sign=E151FEE0F05D0074B2B60C0E2F4CBB27FE9ACD44A844AEF0D2E913A2AB4A7389 "点击放大")
 
 上述错误效果的主要问题在于页面的背景色固定为黑色，当系统切换到浅色模式后，状态栏文字默认切换到黑色，此时状态栏背景色与文字颜色一致，对比度过低，于是状态栏中的文字就不可见了，此类问题对应解决方案有以下两种。
 
@@ -294,7 +294,7 @@ content_hash: sha256:2ff800c5f705f8a787687c718c52350423024fe00464f9e67414049af42
      [Index.ets](https://gitcode.com/harmonyos_samples/fit-for-dark-mode/blob/master/entry/src/main/ets/pages/Index.ets#L27-L149)
 
 **图3** 状态栏适配深色模式后效果  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/7PVhKv6fRLScZPjBR02pOQ/zh-cn_image_0000002229450793.png?HW-CC-KV=V1&HW-CC-Date=20260428T001957Z&HW-CC-Expire=86400&HW-CC-Sign=1EEF9D87C529F6ADDF5544DECBB96A818F86EE62AC6E5678F78D8BC18999A762 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/7PVhKv6fRLScZPjBR02pOQ/zh-cn_image_0000002229450793.png?HW-CC-KV=V1&HW-CC-Date=20260429T061036Z&HW-CC-Expire=86400&HW-CC-Sign=FA4B6ED49093639746452CE956F3E5558D889CFF31BE9648101CA34250884567 "点击放大")
 
 ### Web页面适配深色模式
 

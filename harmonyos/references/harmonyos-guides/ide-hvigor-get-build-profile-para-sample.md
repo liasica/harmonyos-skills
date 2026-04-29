@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-ge
 title: 实践说明
 breadcrumb: 指南 > 构建应用 > 定制构建 > 获取自定义编译参数 > 实践说明
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:57:18+08:00
+scraped_at: 2026-04-29T13:47:18+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:6512840b8217aeced3ef9b696b5455fb75eabfddb4020afc91025210d2f9fb9f
+content_hash: sha256:037e7db2cab7c1c2fa7319ab2ee506cbeca7bd869fda5a5e15cc9928d4e23b9e
 ---
 
 示例：配置工程级和模块级的自定义参数并通过切换product来展示不同的message。
@@ -212,28 +212,28 @@ content_hash: sha256:6512840b8217aeced3ef9b696b5455fb75eabfddb4020afc91025210d2f
 
 点击har模块执行以下按钮。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/eX-CKX5KSXOa561f3FShCw/zh-cn_image_0000002530753414.png?HW-CC-KV=V1&HW-CC-Date=20260427T235717Z&HW-CC-Expire=86400&HW-CC-Sign=C858C16263FCBCD25163D72DA7C5BE330E5D5C796D73E15E621E4D08B799F7AB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/A0fOE7ZqQt--z2bOUhcuag/zh-cn_image_0000002530753414.png?HW-CC-KV=V1&HW-CC-Date=20260429T054716Z&HW-CC-Expire=86400&HW-CC-Sign=B886AB51812B7CBE281660F274D72294DD3196FC6BB266EC661DB6398C2574C9)
 
 default模式下初始化的message为defaultMessage。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/A6RxCtQLSymt0hipZlHsVw/zh-cn_image_0000002561833325.png?HW-CC-KV=V1&HW-CC-Date=20260427T235717Z&HW-CC-Expire=86400&HW-CC-Sign=A23934AABF016A78731429C0EA10151216B5607B6560E92C99DBFA256EEA0F9B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/WKKUAaCSTUi-y6ERoJjrgA/zh-cn_image_0000002561833325.png?HW-CC-KV=V1&HW-CC-Date=20260429T054716Z&HW-CC-Expire=86400&HW-CC-Sign=C95CF4BF778CE2CC47BD1916CB566098A73A6AE025A2AAE37D503E13DAE30075)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/I9nLRDukRM6fVhT-19XK9g/zh-cn_image_0000002530753410.png?HW-CC-KV=V1&HW-CC-Date=20260427T235717Z&HW-CC-Expire=86400&HW-CC-Sign=E21F4E925C5AC21C7B7D680E17D98B9786479FCE6B400F06C320ABD05B9BB86B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/Tm9u-tZjSjyD47wQqlEEcA/zh-cn_image_0000002530753410.png?HW-CC-KV=V1&HW-CC-Date=20260429T054716Z&HW-CC-Expire=86400&HW-CC-Sign=11514C76BCEF98C523056448FA94DB706D3DE04D455D68AAE754A28E08FB8F6A)
 
 通过切换不同的product可以使用不同的自定义参数用来初始化message。
 
 切换product为mirror。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/1vQofxoISA6ibgpXHU-kCQ/zh-cn_image_0000002530913396.png?HW-CC-KV=V1&HW-CC-Date=20260427T235717Z&HW-CC-Expire=86400&HW-CC-Sign=01207FE3D327668874C0E5198E6023EFF045D7131F5E0BD36996AF5DDAC15D6E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/y_lIWVpWQ9SpUg3mmhO6FQ/zh-cn_image_0000002530913396.png?HW-CC-KV=V1&HW-CC-Date=20260429T054716Z&HW-CC-Expire=86400&HW-CC-Sign=17E0C9D118159D266329C642971D57AF766D8D55A20C240A68BA86F8E37F7676)
 
 可以观察到初始化参数为mirrorMessage：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/py9TJBidTc6yOsTNVFB3tQ/zh-cn_image_0000002530913400.png?HW-CC-KV=V1&HW-CC-Date=20260427T235717Z&HW-CC-Expire=86400&HW-CC-Sign=140A0308A08B5B0C7388EE45D37905636A9DFA4FD0F8D108189A83E5127301EB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/Sg0nnW2hQHGL3ZaTnR_Aqg/zh-cn_image_0000002530913400.png?HW-CC-KV=V1&HW-CC-Date=20260429T054716Z&HW-CC-Expire=86400&HW-CC-Sign=7C7321B01A2EE5EB131BE83960555A57A45AC82ADCC09B2E207E953A52C5BD42)
 
 点击不同的Button可以改变message为对应的自定义参数：
 
 **图1** 点击Button1  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/T9-GQb_LQm6F94x_OTL6iw/zh-cn_image_0000002530913398.png?HW-CC-KV=V1&HW-CC-Date=20260427T235717Z&HW-CC-Expire=86400&HW-CC-Sign=5E8C9CCB7D705F1F68826E27F4943F3D52D3CDDE9E9A445A7E7EECBE80FEEA94)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/gNALixuKRgGvFv8xfgSzUg/zh-cn_image_0000002530913398.png?HW-CC-KV=V1&HW-CC-Date=20260429T054716Z&HW-CC-Expire=86400&HW-CC-Sign=8BD51657530D583701464CDF5160A307173F118F3DF45BB58FA939DE7A673150)
 
 **图2** 点击Button2  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/Cys9BL6VTKqdX40_iLfmKg/zh-cn_image_0000002561753351.png?HW-CC-KV=V1&HW-CC-Date=20260427T235717Z&HW-CC-Expire=86400&HW-CC-Sign=871E6752078861CB38988A26663852AA5AB9A390FC437CB49B6C2D7471DEDAB1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/tUYI0lGsS9Kf9ouTeq8Rsw/zh-cn_image_0000002561753351.png?HW-CC-KV=V1&HW-CC-Date=20260429T054716Z&HW-CC-Expire=86400&HW-CC-Sign=E4F3AE700390D070519E53DD54B698503224CD666C1E4559B71885365DDCA14F)

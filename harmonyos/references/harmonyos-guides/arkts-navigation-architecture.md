@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-navigat
 title: Navigation基础架构介绍
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 设置组件导航和页面路由 > 组件导航(Navigation) (推荐) > Navigation基础架构介绍
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:39:26+08:00
+scraped_at: 2026-04-29T13:27:36+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:fd22a77047040493c68cebc3eb3d9d734eed4e3a1854295179b8e15841961abd
+content_hash: sha256:f00d9c30f16567c77d4576002cdce7e4d3f0c651fbf41469daeb54d4652b0780
 ---
 
 导航组件（[Navigation](../harmonyos-references/ts-basic-components-navigation.md)）主要用于实现[NavDestination](../harmonyos-references/ts-basic-components-navdestination.md)页面间的跳转，支持在不同NavDestination间传递参数，提供灵活的跳转栈操作，从而更便捷地实现对不同页面的访问和复用。
@@ -29,7 +29,7 @@ Navigation组件结构较为复杂，包含几个关键概念：
 
 **图1** Navigation总体架构图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/3TX9eVixSRelmHN2WIA2NQ/zh-cn_image_0000002552798028.png?HW-CC-KV=V1&HW-CC-Date=20260427T233924Z&HW-CC-Expire=86400&HW-CC-Sign=6BC2BAF7C9770235682D65B5E610897DA267A00AE456DC4ECB24D9F65610640D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/ekGcOUBBTLarl8sYmj2HEw/zh-cn_image_0000002558764168.png?HW-CC-KV=V1&HW-CC-Date=20260429T052735Z&HW-CC-Expire=86400&HW-CC-Sign=CAE75326F15876EBB201617FD18A865078364CA7D1B17B18FB5A2AEB7CE0CBC3)
 
 此外Navigation提供两种布局模式：单栏模式、分栏模式，不同模式下的结构如下。
 
@@ -39,18 +39,18 @@ Navigation组件结构较为复杂，包含几个关键概念：
 
   **图2** 单栏布局示意图
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/N90gd5siTZCmnuSQtgf0Cg/zh-cn_image_0000002583437723.png?HW-CC-KV=V1&HW-CC-Date=20260427T233924Z&HW-CC-Expire=86400&HW-CC-Sign=7740E400D7EEAE735FBEA44175E488D0C7C8D537911C931B30A189979EFF9789)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/KxxZhbHuRKKGhI-uJsNiKg/zh-cn_image_0000002558604512.png?HW-CC-KV=V1&HW-CC-Date=20260429T052735Z&HW-CC-Expire=86400&HW-CC-Sign=5CEB4A6B880A949A22D269305830CAB34A78CDB716E3D3F607F2681E316681CC)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/akmbyDWTQaytxYPKLUY8yg/zh-cn_image_0000002552957678.jpg?HW-CC-KV=V1&HW-CC-Date=20260427T233924Z&HW-CC-Expire=86400&HW-CC-Sign=2542C4FA7698694603360BB62BD062E6A19723D1F636D32071FA5F398A1C5583)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/_9_BibSASiGg5XrJ-PdEFQ/zh-cn_image_0000002589324037.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T052735Z&HW-CC-Expire=86400&HW-CC-Sign=48DA8CDCCFE878A75A3B5CECF2E03B9519F7280FE3A4D253AFA9CEFD33063E91)
 * 分栏模式：
 
   当Navigation容器宽度大于等于600vp时，建议使用分栏模式。此模式下Navigation分为左右两部分，左侧为导航栏（NavBar），右侧为子页面（NavDestination）。发生路由跳转时，只有右边子页会被替换。
 
   **图3** 分栏布局示意图
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/KErLsBgRSkGDvh0AjNnU6g/zh-cn_image_0000002583477679.png?HW-CC-KV=V1&HW-CC-Date=20260427T233924Z&HW-CC-Expire=86400&HW-CC-Sign=3E51291B5B7665CDFAB9DB2EEE6E695DE1F71EEC237D2EEB7000A3E17279F06F)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/xd1CbSNNQbCIGISVybipmg/zh-cn_image_0000002589243977.png?HW-CC-KV=V1&HW-CC-Date=20260429T052735Z&HW-CC-Expire=86400&HW-CC-Sign=65AFB79322BCD564F2A398AAD08B9C0775F712618F6F135F94D52C75F616EFE7)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/tZrKzuDPStSRyCR27RlIwA/zh-cn_image_0000002552798030.jpg?HW-CC-KV=V1&HW-CC-Date=20260427T233924Z&HW-CC-Expire=86400&HW-CC-Sign=B883EFD5329E4C6DA5B96DDF74F28E70D681F7BDAB7D1BD770A899526A24BCCC)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/MQAQ_W1ZQxqwE8o6hdwd1g/zh-cn_image_0000002558764170.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T052735Z&HW-CC-Expire=86400&HW-CC-Sign=2314909A74EF96B705E955B16399236D2A9BE82B6044FC00D3519E34FBC78D5C)
 
 ## Navigation（导航容器）
 
@@ -188,7 +188,7 @@ Navigation未设置[title](../harmonyos-references/ts-basic-components-navigatio
 
   **图4** Mini模式标题栏
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/zJmCFuP5RfCXey3HErObIw/zh-cn_image_0000002583437725.jpg?HW-CC-KV=V1&HW-CC-Date=20260427T233924Z&HW-CC-Expire=86400&HW-CC-Sign=D9850EF99B99A42C2EF5C396DACEA8CD979B83416C79262FD9815B58FF9CF417)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/jDv3fi2QTFq9bndor7Pfzw/zh-cn_image_0000002558604514.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T052735Z&HW-CC-Expire=86400&HW-CC-Sign=7CBC4A52C7BA443D3CF1AAAB404BF0ED1194A238090B996569473EE80E8206B7)
 
   ```
   1. Navigation() {
@@ -204,7 +204,7 @@ Navigation未设置[title](../harmonyos-references/ts-basic-components-navigatio
 
   **图5** Full模式标题栏
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/t4jaP3_dTKWL5HKBC1V0zg/zh-cn_image_0000002552957680.jpg?HW-CC-KV=V1&HW-CC-Date=20260427T233924Z&HW-CC-Expire=86400&HW-CC-Sign=B24349A535DBDCD01307F5AE41D82C52BEEBD3BAA5829511A5EFDDBF970683AF)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/__T27bRyTpGqWZCYD2DOaQ/zh-cn_image_0000002589324039.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T052735Z&HW-CC-Expire=86400&HW-CC-Sign=C0C805F67E0AFA796B66EF0B90EE788C0088D7102BA382DB7AB9C41C6A4EBE11)
 
   ```
   1. Navigation() {
@@ -221,7 +221,7 @@ Navigation未设置[title](../harmonyos-references/ts-basic-components-navigatio
 
 **图6** 设置了3个图标的菜单栏
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/XoDJZpR7RbatUJAQcSu_4g/zh-cn_image_0000002583477681.jpg?HW-CC-KV=V1&HW-CC-Date=20260427T233924Z&HW-CC-Expire=86400&HW-CC-Sign=6A3F146153B538ABC2DB767B36ADE7762982430FA1B5AA18AD7AF0584F950C77)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/XwFoIPqmTreqCCjqBLi3ow/zh-cn_image_0000002589243979.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T052735Z&HW-CC-Expire=86400&HW-CC-Sign=C6C1D0FB2DCF2F67BF89A5E279A347B766EED03EBA288CBF322D3B7BE993E4A0)
 
 ```
 1. let menuItem: NavigationMenuItem  = {
@@ -257,7 +257,7 @@ Navigation未设置[title](../harmonyos-references/ts-basic-components-navigatio
 
 **图7** 设置了4个图标的菜单栏
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/XGr0yuTyQN6vK6c1mzBLxw/zh-cn_image_0000002552798032.jpg?HW-CC-KV=V1&HW-CC-Date=20260427T233924Z&HW-CC-Expire=86400&HW-CC-Sign=FCFFE2848584FEF7C0855921AC99424F6F6959F4509ADF108EE6DABFBFCEA3E6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/PXkm4wcuQw67_O9a2WFJ5g/zh-cn_image_0000002558764172.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T052735Z&HW-CC-Expire=86400&HW-CC-Sign=ED03C531DBD7760533689AA0E9BF2A6E529BA6C16AC7BC8E99268C386791E6D2)
 
 竖屏状态下菜单栏，最多支持显示3个按钮，当按钮超过3个时，多余的按钮会被折叠。
 
@@ -283,7 +283,7 @@ Navigation未设置[title](../harmonyos-references/ts-basic-components-navigatio
 
 **图8** 工具栏
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/vdr_FTGhQsOZyBVi9K89yA/zh-cn_image_0000002583437727.jpg?HW-CC-KV=V1&HW-CC-Date=20260427T233924Z&HW-CC-Expire=86400&HW-CC-Sign=CA6A547F7D16F327996D1C6994377E1C89126E41B65D0927A1B5D80EAA15E017)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/4O4hyji-R7-V9H4g3PfjNg/zh-cn_image_0000002558604516.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T052735Z&HW-CC-Expire=86400&HW-CC-Sign=CB51C5A47F31038F88D21FE182751E005A022981827FB7148604704D6CC44E3F)
 
 ```
 1. let toolTmp: ToolbarItem = {

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: Row
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 行列与堆叠 > Row
 category: harmonyos-references
-scraped_at: 2026-04-28T08:01:25+08:00
+scraped_at: 2026-04-29T13:51:40+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:54296c41502b9c9d4860e9b0d0f16cd286789cc940a3ee633d6ba38a3d6dd65c
+content_hash: sha256:a7a3e13b028e6dcd4b8fc717161e269f22b93aced1ad3a818ea51139878b839c
 ---
 
 沿水平方向布局的容器。
@@ -259,7 +259,7 @@ PhonePC/2in1TabletTVWearable
 48. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/lQ98US5-QNSSMoqWNvahVg/zh-cn_image_0000002583479595.png?HW-CC-KV=V1&HW-CC-Date=20260428T000124Z&HW-CC-Expire=86400&HW-CC-Sign=DA2F4C5989483E80A4DE84B3D83745F25781707754F11E31EE04176D0CD7B9D1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/cQVXkIfsSd6LMrc678_fYw/zh-cn_image_0000002558606458.png?HW-CC-KV=V1&HW-CC-Date=20260429T055138Z&HW-CC-Expire=86400&HW-CC-Sign=00F5F549C3356AF05489A6AD03CA4D315C7E09BEF07F1B625116BD6F0D465E7F)
 
 ### 示例2（设置反转属性）
 
@@ -289,4 +289,4 @@ PhonePC/2in1TabletTVWearable
 21. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/QDjufXMGRXqeYPTNmv4t5Q/zh-cn_image_0000002552799946.png?HW-CC-KV=V1&HW-CC-Date=20260428T000124Z&HW-CC-Expire=86400&HW-CC-Sign=900F2C1423760A9B8C230FA12E98EE9B107F6A2B2F06309F4E1A7A923995FA95)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/8s3HXY02QtmT0VnZSpHuJw/zh-cn_image_0000002589325985.png?HW-CC-KV=V1&HW-CC-Date=20260429T055138Z&HW-CC-Expire=86400&HW-CC-Sign=60573DF1C69489D9A693EF4018D7F3809F704E1D6F0913CCF89CE73E5CD1A19C)

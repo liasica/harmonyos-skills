@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/agc-harmonyos
 title: 通用云开发模板
 breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > 端云一体化开发 > 附录：云开发工程模板 > 通用云开发模板
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:55:11+08:00
+scraped_at: 2026-04-29T13:45:06+08:00
 doc_updated_at: 2026-04-22
-content_hash: sha256:99227d1ccaf3cf680dd0d42638b117ce296b5da1706c942d401b5be1e3164743
+content_hash: sha256:86abab565ef496907451afd7506ea8c8d6c246be7d922d685d2eb116bf33af19
 ---
 
 ## 适用范围
@@ -49,7 +49,7 @@ content_hash: sha256:99227d1ccaf3cf680dd0d42638b117ce296b5da1706c942d401b5be1e31
       5. ]
       ```
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/x7aLg8byQiyN3U0zwp0M_A/zh-cn_image_0000002492564672.png?HW-CC-KV=V1&HW-CC-Date=20260427T235509Z&HW-CC-Expire=86400&HW-CC-Sign=FFFC320084049F04F3D666A039438E044A93CC9BA5E77F2A9F5050F677738A20)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/iyj7C-pcTDaxPomMZPXBvg/zh-cn_image_0000002492564672.png?HW-CC-KV=V1&HW-CC-Date=20260429T054505Z&HW-CC-Expire=86400&HW-CC-Sign=B6EBA9DD68E883FCBB3FC78155485ED2008F5EA55448E0A993AC3B403ECAFAA7)
 4. 将模板工程推包到手机上，在手机上开通应用访问数据权限，即可开始体验模板。
 
    注意

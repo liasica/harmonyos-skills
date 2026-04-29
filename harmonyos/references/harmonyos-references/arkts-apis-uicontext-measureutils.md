@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (MeasureUtils)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.arkui.UIContext (UIContext) > Class (MeasureUtils)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:00:24+08:00
+scraped_at: 2026-04-29T13:50:36+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:1dfdc77053783483f3afdb2c03a17a9446b19e631f33730c651f9ac271060723
+content_hash: sha256:2fca7589a97620746d7da183d126ce0fb47dfd71fd1f5ee66298cdf15ece7aef
 ---
 
 提供文本宽度、高度等相关计算。
@@ -240,7 +240,7 @@ measureTextSize(options: MeasureOptions): SizeOptions
 104. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/XmDYWVaZTdScIBfwOmKzlA/zh-cn_image_0000002583479411.png?HW-CC-KV=V1&HW-CC-Date=20260428T000023Z&HW-CC-Expire=86400&HW-CC-Sign=B76AAD479820CA71F90ED1E076A2C9D0CBBAC2B47637EDD3E118F9C5FFE2EB78)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/aWNWeyQvQayMz7wYYt2HVg/zh-cn_image_0000002558606274.png?HW-CC-KV=V1&HW-CC-Date=20260429T055034Z&HW-CC-Expire=86400&HW-CC-Sign=3520FD59B65DEDCA9DA158D56CE7A158A1CC1589AFE281EE7C23703EC8D1C659)
 
 ## getParagraphs20+
 
@@ -470,4 +470,4 @@ getParagraphs(styledString: StyledString, options?: TextLayoutOptions): Array<Pa
 198. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/RHWLE2fpT1uuj7SSwc93uQ/zh-cn_image_0000002552799762.png?HW-CC-KV=V1&HW-CC-Date=20260428T000023Z&HW-CC-Expire=86400&HW-CC-Sign=972899F1AC110E6FE21700B303820C86B539F215971D01DD2E40E3ECBA664F98)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/PZRMfXHlSmmzw5_gvsfwcA/zh-cn_image_0000002589325801.png?HW-CC-KV=V1&HW-CC-Date=20260429T055034Z&HW-CC-Expire=86400&HW-CC-Sign=687D4B044C36D4C22E5BB5A31F248DF67FD3535EF97230EDF19DDAD2A1DB9919)

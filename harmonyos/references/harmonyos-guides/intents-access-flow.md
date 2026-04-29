@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/intents-acces
 title: Intents Kit接入流程
 breadcrumb: 指南 > AI > Intents Kit（意图框架服务） > Intents Kit接入流程
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:53:30+08:00
+scraped_at: 2026-04-29T13:43:30+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:ca12f4d48fddd4336428ce485baaa366e0fd8b72e66ff270d230c1530feb963c
+content_hash: sha256:0817a5b23a8673d1b4c981f9a14dec1f9577c6a303c8162b2a9b198af5e5a53e
 ---
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/4oc9BY4KQs6pCYvBQnBjtw/zh-cn_image_0000002552959310.png?HW-CC-KV=V1&HW-CC-Date=20260427T235329Z&HW-CC-Expire=86400&HW-CC-Sign=618814F8834E63E9CE6DD6D5A08AAFA305BF2D8A49F93BBE480373F8B810AF3F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/EK4YOJi7T3ue5_PjWqchAA/zh-cn_image_0000002589245621.png?HW-CC-KV=V1&HW-CC-Date=20260429T054329Z&HW-CC-Expire=86400&HW-CC-Sign=B22674DCD96BC8C5140F18ED22FA67307998DF2A629B3F8061E6DF5D23197AEC)
 
 **阶段一：意向**
 

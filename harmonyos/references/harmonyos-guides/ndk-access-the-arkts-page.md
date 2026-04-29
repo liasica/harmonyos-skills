@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ndk-access-th
 title: 接入ArkTS页面
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (基于NDK构建UI) > 接入ArkTS页面
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:40:13+08:00
+scraped_at: 2026-04-29T13:28:30+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:957f7aef209dffc7e5958fa8580ada56a0c62cb76908edb0ba75165a13135b9e
+content_hash: sha256:d8db6e13373a415829cf03c96cd355596de2e3be0769851b87735d4db59ba00e
 ---
 
 ## 占位组件
@@ -167,7 +167,7 @@ NDK提供的UI组件能力如组件创建、树操作、属性设置、事件注
 
 **图1** Native文本列表
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/qn6LYYTIRf2BtoLKta1JHA/zh-cn_image_0000002583438107.gif?HW-CC-KV=V1&HW-CC-Date=20260427T234012Z&HW-CC-Expire=86400&HW-CC-Sign=C08CE82522B7E3C0F730025640B91C848D72F774C179DE18C52354545897D89A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/ZNn7N0WnTVi9ptPvxYN4Fw/zh-cn_image_0000002558604896.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052828Z&HW-CC-Expire=86400&HW-CC-Sign=4D6FBB9CB83D96A453F3E01A82B0EA998D242B5CB954BCE2398FCE7AD6A25A48)
 
 1. 在ArkTS页面上声明用于Native页面挂载的占位组件，并在页面创建时通知Native侧创建文本列表。
 

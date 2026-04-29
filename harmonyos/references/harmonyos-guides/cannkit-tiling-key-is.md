@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-tilin
 title: TILING_KEY_IS
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > AscendC API > 基础API > Kernel Tiling > TILING_KEY_IS
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:51:44+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:6dc45125c6b3e4e14f234eda57458648b81b233e51efd6595326d6342ac81d57
+scraped_at: 2026-04-29T13:41:31+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:676f3632dd14b306adc010e617b1cada8791820c026c6bac6430cbce5effae08
 ---
 
 ## 函数功能
@@ -22,7 +22,7 @@ content_hash: sha256:6dc45125c6b3e4e14f234eda57458648b81b233e51efd6595326d6342ac
 
 | 参数 | 输入/输出 | 说明 |
 | --- | --- | --- |
-| key | 输入 | 此参数是正数，表示某个核函数的分支。 |
+| key | 输入 | 此参数是非负整数，表示某个核函数的分支。 |
 
 ## 约束说明
 

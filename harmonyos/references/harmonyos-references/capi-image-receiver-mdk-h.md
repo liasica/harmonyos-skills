@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-imag
 title: image_receiver_mdk.h
 breadcrumb: API参考 > 媒体 > Image Kit（图片处理服务） > C API > 头文件 > image_receiver_mdk.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:13:20+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:3cfa6bd4ca151e175d3e58207d6f95e74c1854c114628d071b1841aaf5417467
+scraped_at: 2026-04-29T14:03:58+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:fc492fb580259bd4680b03b4d14047ec10ba414cc6761b4773ae213d0f80ea42
 ---
 
 ## 概述
@@ -99,7 +99,7 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| int32\_t | [IRNdkErrCode](capi-image-mdk-common-h.md#irndkerrcode)：  IMAGE\_RESULT\_SUCCESS：操作成功。  IMAGE\_RESULT\_BAD\_PARAMETER：参数错误。  IMAGE\_RESULT\_JNI\_ENV\_ABNORMAL：JNI环境异常。  IMAGE\_RESULT\_INVALID\_PARAMETER：参数无效。  IMAGE\_RESULT\_INVALID\_PARAMETER：从surface获取参数失败。  IMAGE\_RESULT\_CREATE\_SURFACE\_FAILED：创建surface失败。  IMAGE\_RESULT\_SURFACE\_GRALLOC\_BUFFER\_FAILED：surface分配内存失败。  IMAGE\_RESULT\_GET\_SURFACE\_FAILED：获取surface失败。  IMAGE\_RESULT\_MEDIA\_RTSP\_SURFACE\_UNSUPPORT：媒体rtsp surface不支持。  IMAGE\_RESULT\_DATA\_UNSUPPORT：图像类型不支持。  IMAGE\_RESULT\_MEDIA\_DATA\_UNSUPPORT：媒体类型不支持。 |
+| int32\_t | [IRNdkErrCode](capi-image-mdk-common-h.md#irndkerrcode)：  IMAGE\_RESULT\_SUCCESS：操作成功。  IMAGE\_RESULT\_BAD\_PARAMETER：参数错误。  IMAGE\_RESULT\_JNI\_ENV\_ABNORMAL：JNI环境异常。  IMAGE\_RESULT\_INVALID\_PARAMETER：参数无效。  IMAGE\_RESULT\_CREATE\_SURFACE\_FAILED：创建surface失败。  IMAGE\_RESULT\_SURFACE\_GRALLOC\_BUFFER\_FAILED：surface分配内存失败。  IMAGE\_RESULT\_GET\_SURFACE\_FAILED：获取surface失败。  IMAGE\_RESULT\_MEDIA\_RTSP\_SURFACE\_UNSUPPORT：媒体rtsp surface不支持。  IMAGE\_RESULT\_DATA\_UNSUPPORT：图像类型不支持。  IMAGE\_RESULT\_MEDIA\_DATA\_UNSUPPORT：媒体类型不支持。 |
 
 ### OH\_Image\_Receiver\_InitImageReceiverNative()
 

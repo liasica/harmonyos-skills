@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/perceive-adju
 title: 感知和调整认证过程
 breadcrumb: 指南 > 系统 > 安全 > User Authentication Kit（用户认证服务） > 用户身份认证开发指导 > 感知和调整认证过程
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:43:38+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:2f62671752e153ba19e05bc96e97fc7f05338230aee2b98fe0de093e081ceda8
+scraped_at: 2026-04-29T13:32:25+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:8819d4d145aa85de852cda00d21dd47f67977df38e4f10ce176bf037d7cd5f54
 ---
 
 从API version 20开始，在应用发起身份认证时，可通过接口调整认证过程，以及感知认证过程。
@@ -54,11 +54,11 @@ content_hash: sha256:2f62671752e153ba19e05bc96e97fc7f05338230aee2b98fe0de093e081
 17. };
 18. // 获取认证对象
 19. const userAuthInstance = userAuth.getUserAuthInstance(authParam, widgetParam);
-20. Logger.info('get userAuth instance successfully');
+20. Logger.info('get userAuth instance successfully.');
 21. // 订阅认证过程中的提示信息。
 22. userAuthInstance.on('authTip', (authTipInfo: userAuth.AuthTipInfo) => {
 23. try {
-24. Logger.info('userAuthInstance callback');
+24. Logger.info('userAuthInstance callback.');
 25. this.result[ResultIndex.PERCEIVE_ADJUST] = (`${authTipInfo.tipType}`);
 26. // 认证完成后取消订阅
 27. userAuthInstance.off('result');
@@ -72,10 +72,10 @@ content_hash: sha256:2f62671752e153ba19e05bc96e97fc7f05338230aee2b98fe0de093e081
 35. // ...
 36. // 取消订阅认证过程中的提示信息。
 37. userAuthInstance.off('authTip');
-38. Logger.info('off authTip successfully');
+38. Logger.info('off authTip successfully.');
 39. // 取消认证
 40. userAuthInstance.cancel();
-41. Logger.info('auth cancel successfully');
+41. Logger.info('auth cancel successfully.');
 42. // ...
 43. } catch (error) {
 44. const err: BusinessError = error as BusinessError;

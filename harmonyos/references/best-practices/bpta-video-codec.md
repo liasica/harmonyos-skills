@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-video-code
 title: 视频场景编解码低功耗规则
 breadcrumb: 最佳实践 > 功耗 > 应用功耗优化 > 前台任务低功耗 > 前台资源合理使用 > 视频场景编解码低功耗规则
 category: best-practices
-scraped_at: 2026-04-28T08:22:42+08:00
+scraped_at: 2026-04-29T14:13:50+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:8dc96ddabc5f1a081573a37214b6d0f65c1f62726cec9ddb6f0249cdbb0ace67
+content_hash: sha256:0ea9cbb09ba7090b1f234d0bbb43915188ebf11e0827af64e142642f003a1c79
 ---
 
 ## 规则
@@ -35,10 +35,10 @@ content_hash: sha256:8dc96ddabc5f1a081573a37214b6d0f65c1f62726cec9ddb6f0249cdbb0
 
 * 方法一：在命令提示符窗口中，输入hdc shell top命令，查看当前系统的top进程的CPU占用率。如果av\_codec\_service进程的CPU负载率超过 5%，则说明视频硬解码已启用。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/GnnvE7W2ThGyTulD5-bBag/zh-cn_image_0000002229337309.png?HW-CC-KV=V1&HW-CC-Date=20260428T002241Z&HW-CC-Expire=86400&HW-CC-Sign=B85B28FFA0D5A65D63FAD882E35CAE9A2A2B6031A6DE50BD4705176840F8C7EC "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/GnnvE7W2ThGyTulD5-bBag/zh-cn_image_0000002229337309.png?HW-CC-KV=V1&HW-CC-Date=20260429T061349Z&HW-CC-Expire=86400&HW-CC-Sign=CE01E182BD5E62C959A5FE0334AD71B1088629DD02079CDEB57922E846A1AA55 "点击放大")
 
 * 方法二：[通过DevEco Studio Profiler抓取systrace](../harmonyos-guides/ide-insight-session-time.md)
 
   通过systrace确认av\_codec\_service进程的负载，如下图所示。业务频繁唤醒且有实际函数运行，说明视频处于硬解码状态。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/E2BJbHjfRIu--mTjElhy9A/zh-cn_image_0000002193851924.png?HW-CC-KV=V1&HW-CC-Date=20260428T002241Z&HW-CC-Expire=86400&HW-CC-Sign=54296E8AD82C9D41E7A649031B8431ECBF6B40A9D63AD10A1602C7CA71BAA9F5 "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/E2BJbHjfRIu--mTjElhy9A/zh-cn_image_0000002193851924.png?HW-CC-KV=V1&HW-CC-Date=20260429T061349Z&HW-CC-Expire=86400&HW-CC-Sign=D350CC31E6AF95550CC43B20F4BAF870A3A41FB533984D66D9D529A5D1A420B9 "点击放大")

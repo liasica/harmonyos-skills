@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-n
 title: nfctech (标准NFC-Tag Nfc 技术)
 breadcrumb: API参考 > 系统 > 网络 > Connectivity Kit（短距通信服务） > ArkTS API > tag > nfctech (标准NFC-Tag Nfc 技术)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:08:04+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:4aa5873ca36d4cc0036b374e2308974e28ee341558bba8e823fc37c2378926f4
+scraped_at: 2026-04-29T13:58:35+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:edc386add6620649d187d72b08fabe20e38973de4303f3997c7a79654946b7e8
 ---
 
 本模块主要用于采用不同Nfc技术的Tag的读写操作。
@@ -16,7 +16,7 @@ content_hash: sha256:4aa5873ca36d4cc0036b374e2308974e28ee341558bba8e823fc37c2378
 
 注意
 
-导入tag模块编辑器报错，在某个具体设备型号上能力可能超出工程默认设备定义的能力集范围，如需要使用此部分能力需额外配置自定义syscap，参考[syscap开发指南](syscap.md#syscap开发指导)。
+导入tag模块编辑器报错，在某个具体设备型号上能力可能超出工程默认设备定义的能力集范围，如需要使用此部分能力需额外配置自定义syscap，参考[syscap开发指南](syscap.md)。
 
 ## 导入模块
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Enums
 breadcrumb: API参考 > 媒体 > Audio Kit（音频服务） > ArkTS API > @ohos.multimedia.audio (音频管理) > Enums
 category: harmonyos-references
-scraped_at: 2026-04-28T08:11:42+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:8d7523ca3c538c2f532e3b9f2d8279ffdf067e50264988fa1aa4cdcf1287678a
+scraped_at: 2026-04-29T14:02:23+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:8a34b73b01f824a4688be96275e210446af6908a8f3c02c7a218ed4a783e6997
 ---
 
 说明
@@ -730,7 +730,7 @@ PhonePC/2in1TabletTVWearable
 
 说明
 
-从API version 7开始支持，从API version 9开始废弃，无替代接口。
+从API version 7开始支持，从API version 9开始废弃，建议使用[InterruptType](arkts-apis-audio-e.md#interrupttype)替代。
 
 **系统能力：** SystemCapability.Multimedia.Audio.Renderer
 

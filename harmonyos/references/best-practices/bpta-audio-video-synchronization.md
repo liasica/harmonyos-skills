@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-audio-vide
 title: 音画同步
 breadcrumb: 最佳实践 > 媒体 > 音频和视频 > 音画同步
 category: best-practices
-scraped_at: 2026-04-28T08:20:46+08:00
+scraped_at: 2026-04-29T14:11:38+08:00
 doc_updated_at: 2026-04-13
-content_hash: sha256:d35b46ba6cd668b84394114d662da5e336f074ace07418415b07c0708e58e141
+content_hash: sha256:4b50a30763c81888afa3a4d7daa27845627f1672804d54930bb7dcaf3427538b
 ---
 
 ## 概述
@@ -82,7 +82,7 @@ content_hash: sha256:d35b46ba6cd668b84394114d662da5e336f074ace07418415b07c0708e5
 
 **连续播放音帧方案示意图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/36ssXTWdQVuM1ZG_rQIHwA/zh-cn_image_0000002519989771.png?HW-CC-KV=V1&HW-CC-Date=20260428T002045Z&HW-CC-Expire=86400&HW-CC-Sign=F7D9005805CA050DFA1D95341EBF30BF2288E5CB8A206840AA6CEDD6D1BB8971 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/36ssXTWdQVuM1ZG_rQIHwA/zh-cn_image_0000002519989771.png?HW-CC-KV=V1&HW-CC-Date=20260429T061134Z&HW-CC-Expire=86400&HW-CC-Sign=B25EA40DC0AA43F6E32E8341C18778998BAB90E1A5E93CE4481DD6BD9931A434 "点击放大")
 
 音频和视频的管道必须同时以相同的时间戳呈现每帧数据。将音频播放位置用作主时间参考，而视频管道只输出与最新渲染音频帧匹配的视频帧。对于所有可能的实现，精确计算最后一次呈现的音频时间戳是至关重要的。[OH\_AudioRenderer\_GetTimestamp()](../harmonyos-references/capi-native-audiorenderer-h.md#oh_audiorenderer_gettimestamp) 接口用以查询音频管道各个阶段的音频时间戳和延迟信息，此信息可用于控制视频管道，使视频帧与音频帧匹配。
 

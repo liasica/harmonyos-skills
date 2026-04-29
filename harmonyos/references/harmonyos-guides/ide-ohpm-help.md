@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-help
 title: ohpm help
 breadcrumb: 指南 > 命令行工具 > 三方依赖管理工具（ohpm） > 常用命令 > ohpm help
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:57:41+08:00
+scraped_at: 2026-04-29T13:47:50+08:00
 doc_updated_at: 2026-01-15
-content_hash: sha256:46b7d44bc69ebc5ef2d630ac18fb0955a42a23d3ade35b3b38718219d93b617a
+content_hash: sha256:0821a062e08fa0c0f0804978253ce1db6b6c52130e1f71355f0fee965377d001
 ---
 
 获取有关 ohpm 的帮助。
@@ -38,4 +38,4 @@ command：命令名称。
 
 结果示例：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/b1vTMjPoQ0CvkjENqhOJHQ/zh-cn_image_0000002530753216.png?HW-CC-KV=V1&HW-CC-Date=20260427T235739Z&HW-CC-Expire=86400&HW-CC-Sign=A3BA02F410D66556F92B351484E5F7A82099F1EE9DCA1E65D7EC75E859CD0EEB "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/jemQq9weQJKOou7mn2qDTQ/zh-cn_image_0000002530753216.png?HW-CC-KV=V1&HW-CC-Date=20260429T054748Z&HW-CC-Expire=86400&HW-CC-Sign=049A5256E4FA5FF4B7857A592EC6AF4D4FACD5B603F5486FF1578CFEA0A33E2E "点击放大")

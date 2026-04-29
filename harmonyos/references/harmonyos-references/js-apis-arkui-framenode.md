@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: FrameNode
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > arkui > FrameNode
 category: harmonyos-references
-scraped_at: 2026-04-28T08:00:40+08:00
+scraped_at: 2026-04-29T13:50:54+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:dceace0de0a3b5255ac46c729fcaf6fe5f2abce91eea276685141987386a4880
+content_hash: sha256:b3251211883a5f90e4b5c88f21151db451bbaa4e2f8adaef9bdc80186ee47f26
 ---
 
 FrameNode表示组件树的实体节点。[NodeController](js-apis-arkui-nodecontroller.md)可通过[BuilderNode](js-apis-arkui-buildernode.md)持有的FrameNode将其挂载到[NodeContainer](ts-basic-components-nodecontainer.md)上，也可通过FrameNode获取[RenderNode](js-apis-arkui-rendernode.md)，挂载到其他FrameNode上。最佳实践请参考[组件动态创建-组件动态添加、更新和删除](../best-practices/bpta-ui-dynamic-operations.md#section153921947151012)。
@@ -1617,7 +1617,7 @@ dispose(): void
 83. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/Sx7YUr_UTc6upUwGYf9Ztg/zh-cn_image_0000002583439491.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000034Z&HW-CC-Expire=86400&HW-CC-Sign=2BFC020FC26D3B2CCFA6642D37149D131016DE2B4E887ABEB5CAC2C6C4478B65)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/ex0aZdimSryqairGhJlFSQ/zh-cn_image_0000002589245777.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055046Z&HW-CC-Expire=86400&HW-CC-Sign=12118959DFCDEA87931AB52B55C25676B98D2CC5C64745A281A62D1C9DC524A6)
 
 ### commonAttribute12+
 
@@ -2147,7 +2147,7 @@ disposeTree(): void
 174. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/hh9L0SK7SN2nQJNgIB1DoQ/zh-cn_image_0000002552959446.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000034Z&HW-CC-Expire=86400&HW-CC-Sign=44CA5C7842933D0F578148F0ECB1C3A71DEA48B079839569096052C0D9C8D5F1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/AdtPhZ82QrCdZzz7j5bhdA/zh-cn_image_0000002558765966.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055046Z&HW-CC-Expire=86400&HW-CC-Sign=3E9754C59679FE2A20BA687EB0E5EC26A099327BCB07333BCD3C9E4B596F6C4E)
 
 ### setCrossLanguageOptions15+
 
@@ -8819,7 +8819,7 @@ PhonePC/2in1TabletTVWearable
 33. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/yJ7zHyVER96DlOTbEK2tgw/zh-cn_image_0000002583479447.png?HW-CC-KV=V1&HW-CC-Date=20260428T000034Z&HW-CC-Expire=86400&HW-CC-Sign=55B23FD42802C08A5BACD55DB271AF819825422E44C624C954B52E78111C2295)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/OyaSr6BmQ0Cksg1_7nBZcA/zh-cn_image_0000002558606310.png?HW-CC-KV=V1&HW-CC-Date=20260429T055046Z&HW-CC-Expire=86400&HW-CC-Sign=B2BC584090BD78E9102A6698584631BE808E62F6538D4D487124F5CFB15F720F)
 
 ## 节点操作示例
 
@@ -10794,7 +10794,7 @@ PhonePC/2in1TabletTVWearable
 94. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/8hErB7SOTaaLLZxIgmpjJQ/zh-cn_image_0000002552799798.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000034Z&HW-CC-Expire=86400&HW-CC-Sign=CF9A64323F9A3CB202133EFAF6931EDE55F6A33E1BB72F79CBFB002958464FA5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/XPBNC8YcT1moSDkJ7i7AbQ/zh-cn_image_0000002589325837.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055046Z&HW-CC-Expire=86400&HW-CC-Sign=CC627E6A85384B5352BABE70EBC4ECB47E3CA478970527894A675639C74BDE9B)
 
 ## 滚动事件示例
 
@@ -11005,7 +11005,7 @@ PhonePC/2in1TabletTVWearable
 106. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/AKCPWBwzS9eTyM4IZkJgvQ/zh-cn_image_0000002583439493.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000034Z&HW-CC-Expire=86400&HW-CC-Sign=E724AF6A342B9D5FC3A6A4E2ABC8F58E3688FDA4FB8694CBC50C93EE81F00A59)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/6sXo274ERpuKXn6Uf1atzg/zh-cn_image_0000002589245779.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055046Z&HW-CC-Expire=86400&HW-CC-Sign=8279FCCEA701ADBE9F49B81DB7A05CC328B33229C227108AF45796660508C235)
 
 ## 检验NodeAdapter是否有效示例
 
@@ -11126,7 +11126,7 @@ PhonePC/2in1TabletTVWearable
 110. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/-XZDPYWgR4yOTe3ILvbTtw/zh-cn_image_0000002552959448.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000034Z&HW-CC-Expire=86400&HW-CC-Sign=4E687A5848127392AF1B249C97B183A37109C514198CC4534D055324E22C1560)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/A4pspSydQtWFasI1lmj0zw/zh-cn_image_0000002558765968.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055046Z&HW-CC-Expire=86400&HW-CC-Sign=449FCB85FC60F3715503BDA2B83FC42F7825E8D2DF2529F5EA40B827D4FFDF3A)
 
 ## 获取根节点示例
 

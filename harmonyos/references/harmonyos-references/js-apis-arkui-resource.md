@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: Resource
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > arkui > Resource
 category: harmonyos-references
-scraped_at: 2026-04-28T08:00:41+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:cf4a1e3bec7f1078c2a1e73123a2ce94d4fa18927217b9096d1eed65af4a47c2
+scraped_at: 2026-04-29T13:50:54+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:95609eb4ab67f51a9f7e128d66bda283ef67001d70b73e76ea879d5d2c45b4ab
 ---
 
 提供获取应用资源或系统资源信息的接口。应用资源及系统资源的介绍及使用方法可参考[资源分类与访问](../harmonyos-guides/resource-categories-and-access.md)。
@@ -59,7 +59,7 @@ $r(value: string, ...params: any[]): Resource
 13. }
 ```
 
-访问HSP包的资源示例可参考[跨HAP/HSP包应用资源](../harmonyos-guides/resource-categories-and-access.md#跨haphsp包应用资源)。
+访问HSP包的资源示例可参考[访问跨HAP/HSP包资源](../harmonyos-guides/resource-categories-and-access.md#访问跨haphsp包资源)。
 
 ## $rawfile
 
@@ -105,4 +105,4 @@ $rawfile(value: string): Resource
 15. }
 ```
 
-访问HSP包资源示例可参考[跨HAP/HSP包应用资源](../harmonyos-guides/resource-categories-and-access.md#跨haphsp包应用资源)。
+访问HSP包资源示例可参考[跨HAP/HSP包应用资源](../harmonyos-guides/resource-categories-and-access.md#访问跨haphsp包资源)。

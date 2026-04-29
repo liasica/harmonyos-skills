@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-compon
 title: CanvasGradient
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 画布绘制 > CanvasGradient
 category: harmonyos-references
-scraped_at: 2026-04-28T08:02:05+08:00
+scraped_at: 2026-04-29T13:52:24+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:13861809e5b868ba4b3ad5afbc9e68824662df0af097f43fed42fe4519397ef8
+content_hash: sha256:903142b5edb5f990f9774aded241f9499660b1a4b1bdfd513187f50645fc2f06
 ---
 
 渐变对象。
@@ -68,7 +68,7 @@ addColorStop(offset: number, color: string): void
 26. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/AWPPj6yzSpC5KIGF8ymwQQ/zh-cn_image_0000002583439973.png?HW-CC-KV=V1&HW-CC-Date=20260428T000204Z&HW-CC-Expire=86400&HW-CC-Sign=7AF8B77248B2F00058F097AED4C5CFCC2B765A869ADFB2B16F8FD61612A266AE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/Dlc_4CbeRuixP3qEGNoWZQ/zh-cn_image_0000002589246261.png?HW-CC-KV=V1&HW-CC-Date=20260429T055223Z&HW-CC-Expire=86400&HW-CC-Sign=F152EF33BAA439811CA9AB733EE67858B03947B310A15FFF6589C00A4CC5AB9B)
 
 ## addColorStop20+
 
@@ -159,4 +159,4 @@ addColorStop(offset: number, color: string | ColorMetrics): void
 49. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/NtBvpKY_RECVqHNF2wqqMw/zh-cn_image_0000002552959928.png?HW-CC-KV=V1&HW-CC-Date=20260428T000204Z&HW-CC-Expire=86400&HW-CC-Sign=E911DDBB03D9103CC1FFE7734BE4671D7633538BF9779F89ED56E3A554D3E4A0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/JoWyed96QtiZtsvH8oj81Q/zh-cn_image_0000002558766454.png?HW-CC-KV=V1&HW-CC-Date=20260429T055223Z&HW-CC-Expire=86400&HW-CC-Sign=8A5D1EEEF3151DB56FE2A5D68F5C194E9884DF41DB4DB1D96E025F37DB718921)

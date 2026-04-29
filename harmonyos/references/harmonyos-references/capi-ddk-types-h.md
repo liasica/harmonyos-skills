@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-ddk-
 title: ddk_types.h
 breadcrumb: API参考 > 系统 > 硬件 > Driver Development Kit（驱动开发服务） > C API > 头文件 > ddk_types.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:10:41+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:b8546b27945612f8de4ea04cb84ae76bcb1944d7db7206d342b154f6dfcefe7c
+scraped_at: 2026-04-29T14:01:24+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:89332b938de2f9a0c3346210b672b0e2d249937674938d5ca1165267fbe61cfa
 ---
 
 ## 概述
@@ -34,7 +34,7 @@ PC/2in1
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
-| [DDK\_Ashmem](capi-baseddk-ddk-ashmem.md) | DDK\_Ashmem | 定义通过接口**OH\_DDK\_CreateAshmem**创建的共享内存，共享内存的缓冲区提供更好的性能。 |
+| [DDK\_Ashmem](capi-baseddk-ddk-ashmem.md) | DDK\_Ashmem | 定义通过接口[OH\_DDK\_CreateAshmem](capi-ddk-api-h.md#oh_ddk_createashmem)创建的共享内存，共享内存的缓冲区提供更好的性能。 |
 
 ### 枚举
 

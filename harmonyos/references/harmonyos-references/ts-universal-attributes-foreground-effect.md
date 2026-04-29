@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 前景属性设置
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 视效与模糊 > 前景属性设置
 category: harmonyos-references
-scraped_at: 2026-04-28T08:01:08+08:00
+scraped_at: 2026-04-29T13:51:20+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:a3901a73c6b52e475584d7da6a35ab0d32af33abb0df189119739892b4e0c79a
+content_hash: sha256:5ee6ea047340cb806a120fea6586f1705fe4743a87059ccc04eafaef406fafb5
 ---
 
 设置组件的前景属性。
@@ -82,4 +82,4 @@ PhonePC/2in1TabletTVWearable
 
 radius表示模糊半径，数值越大，效果越模糊。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/ab6htgPvRVKMxKeKjgPCMA/zh-cn_image_0000002583479521.jpg?HW-CC-KV=V1&HW-CC-Date=20260428T000106Z&HW-CC-Expire=86400&HW-CC-Sign=128021A98F545FA0338322C054E2D31644732D253A70AF04D238AD335A8BA156)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/CNTfN37rSZGwggphEgf9UA/zh-cn_image_0000002558606384.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T055118Z&HW-CC-Expire=86400&HW-CC-Sign=83870400D1B5B40722C133DAAE333E5BB76312DE1B75331266C1CE51ACCA30EF)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-env-sy
 title: @Env：环境变量
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 响应式环境变量 > @Env：环境变量
 category: harmonyos-references
-scraped_at: 2026-04-28T08:02:47+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:51a6cb9adca501e50777230a956ed0c2c5db0f8946e58a6bef1a56a63b694f40
+scraped_at: 2026-04-29T13:53:10+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:5018e1b8ea4acd1aaa12e456468fa16e2af113a47752613a9957b4aff74072a9
 ---
 
 说明
@@ -36,10 +36,11 @@ Env: EnvDecorator
 3. @Entry
 4. @Component
 5. struct Index {
-6. @Env(SystemProperties.BREAK_POINT) breakpoint: uiObserver.WindowSizeLayoutBreakpointInfo;
+6. // @Env读取系统环境变量
+7. @Env(SystemProperties.BREAK_POINT) breakpoint: uiObserver.WindowSizeLayoutBreakpointInfo;
 
-8. build() {}
-9. }
+9. build() {}
+10. }
 ```
 
 ## EnvDecorator

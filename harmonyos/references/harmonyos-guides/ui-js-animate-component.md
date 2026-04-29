@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-animate
 title: 组件动画
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 动效开发指导 > JS动画 > 组件动画
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:40:34+08:00
+scraped_at: 2026-04-29T13:28:56+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:8cd4a55455d9abb43a76d0c3dc36906f132fc1c83dbe44eaab192dc767ab7885
+content_hash: sha256:436464b8f482b1fbb1edfe30f732586de00b7ddc3d3f5b7d6ee01600423589f1
 ---
 
 在组件上创建和运行动画的快捷方式。具体用法请参考[通用方法](../harmonyos-references/js-components-common-methods.md)。
@@ -65,7 +65,7 @@ content_hash: sha256:8cd4a55455d9abb43a76d0c3dc36906f132fc1c83dbe44eaab192dc767a
 25. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/rRNvqGNlQ0eNyqIOXyEpwQ/zh-cn_image_0000002583438193.gif?HW-CC-KV=V1&HW-CC-Date=20260427T234033Z&HW-CC-Expire=86400&HW-CC-Sign=C762B104AEAFCEC2058EFC715E2B8297EEF0E17C575A7F3E6FE0737E4269DA0F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/cMGoOf76RtegSuxcmMvr7w/zh-cn_image_0000002558604982.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052855Z&HW-CC-Expire=86400&HW-CC-Sign=868AA140C546BAA4833129DFF3A9642A25BB1608ACAA4A199795A4FB9ACC16B6)
 
 说明
 
@@ -144,7 +144,7 @@ content_hash: sha256:8cd4a55455d9abb43a76d0c3dc36906f132fc1c83dbe44eaab192dc767a
 41. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/77Vm5_eQSsur6Z0ZmpkCAw/zh-cn_image_0000002552958148.gif?HW-CC-KV=V1&HW-CC-Date=20260427T234033Z&HW-CC-Expire=86400&HW-CC-Sign=7BB559621DE9DD92FB11AD9AE6D827AAC4B9D002110F2B0BBB57881D08951BDC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/4xzgZfjSRRS_DLO3S686bQ/zh-cn_image_0000002589324509.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052855Z&HW-CC-Expire=86400&HW-CC-Sign=8CE00AC229C628D8793328B79663ED61CE4F05B6ADFCB61C3B5E6DCD8B26D376)
 
 说明
 
@@ -212,7 +212,7 @@ content_hash: sha256:8cd4a55455d9abb43a76d0c3dc36906f132fc1c83dbe44eaab192dc767a
 33. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/FHCRMFjGTAGOV-JUt3I1sQ/zh-cn_image_0000002583478149.gif?HW-CC-KV=V1&HW-CC-Date=20260427T234033Z&HW-CC-Expire=86400&HW-CC-Sign=A330984CA77F968A501F7DB265E59857C8583D9B916D838518EDA57DAA28445C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/Jb8ZirkoRVm6Mq-ZuMtz8A/zh-cn_image_0000002589244447.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052855Z&HW-CC-Expire=86400&HW-CC-Sign=FB99E19564D63010E4508080A5D77D17044F0626B5652B7376091F2F0DDD47D8)
 
 说明
 

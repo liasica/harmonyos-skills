@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/scan-erro
 title: ArkTS API错误码
 breadcrumb: API参考 > 媒体 > Scan Kit（统一扫码服务） > ArkTS API > ArkTS API错误码
 category: harmonyos-references
-scraped_at: 2026-04-28T08:14:26+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:d406b06060eca0bf219793ed8aeb7a46eb3f6b979c7add8e3fa83c8982e9ab76
+scraped_at: 2026-04-29T14:05:04+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:ab5d9ea006707f9683936618437c3d0de333e21d2625fa494d083c2c8286ab21
 ---
 
 说明
@@ -127,7 +127,7 @@ Internal error. Get callback failed.
 
 **处理步骤**
 
-调整接口调用顺序,可参考自定义界面扫码的[业务流程](../harmonyos-guides/scan-customscan.md#业务流程)。例如：先调用customScan.init接口，再调用customScan.start。
+调整接口调用顺序，可参考自定义界面扫码的[业务流程](../harmonyos-guides/scan-customscan.md#业务流程)。例如：先调用customScan.init接口，再调用customScan.start。
 
 ### 接口调用不被允许
 

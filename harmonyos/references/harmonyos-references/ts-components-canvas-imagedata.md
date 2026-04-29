@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-compon
 title: ImageData
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 画布绘制 > ImageData
 category: harmonyos-references
-scraped_at: 2026-04-28T08:02:08+08:00
+scraped_at: 2026-04-29T13:52:30+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:33b81a2669a75a7f5265b3dbad777bb5fbe958cc5ad8de792d586a68732a982c
+content_hash: sha256:39abac27f4097371778b6038d17ade78109e9d95b852044b191a4b5744dc6126
 ---
 
 ImageData对象可以存储canvas渲染的像素数据。
@@ -115,4 +115,4 @@ PhonePC/2in1TabletTVWearable
 25. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/SZEvuQ0HQkSRKc_q1iNNiA/zh-cn_image_0000002583479961.png?HW-CC-KV=V1&HW-CC-Date=20260428T000205Z&HW-CC-Expire=86400&HW-CC-Sign=240C5C17ED18FD818814E972DF58C09B599952C22572E84D78DF1EF75E9306F4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/ulzIKuyLRpeUCpHh8NZvkQ/zh-cn_image_0000002558606826.png?HW-CC-KV=V1&HW-CC-Date=20260429T055229Z&HW-CC-Expire=86400&HW-CC-Sign=8909D7FC14C8355E0800F8166EDC58679B3E817D961BF222604826ADC86C7213)

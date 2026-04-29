@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-v1-v2-m
 title: 组件复用迁移
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理V1-V2迁移指导 > 状态管理V1向V2迁移场景 > 组件复用迁移
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:39:18+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:91eaa9baf308f09a90365d3e9855977e744677ddd2cb8235f5eaa5e927477ac8
+scraped_at: 2026-04-29T13:27:28+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:7d0107e7bdffa6916017ec52c7c3ed316f03e3cf43b0522ad7142d0cf34394ed
 ---
 
 本文档主要介绍组件复用从V1向V2的迁移，涉及如下装饰器。
@@ -170,7 +170,7 @@ content_hash: sha256:91eaa9baf308f09a90365d3e9855977e744677ddd2cb8235f5eaa5e9274
 54. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/AeYAEXDbSD6r74_IpN3AMg/zh-cn_image_0000002552797974.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233915Z&HW-CC-Expire=86400&HW-CC-Sign=8F6FEE5084EA97DB730FD8D1A50786B9CAC9F8CB04E12815E43B076D7FBC20EB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/ANhTizsGSgG5MspEYHbD7w/zh-cn_image_0000002558764114.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052725Z&HW-CC-Expire=86400&HW-CC-Sign=77FE7E529FD3FE84F76824F6001C791384ABB84823182B7740066A23504E4B9B)
 
 ### 列表滚动-Repeat使用场景
 
@@ -227,7 +227,7 @@ content_hash: sha256:91eaa9baf308f09a90365d3e9855977e744677ddd2cb8235f5eaa5e9274
 46. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/N8WvhCEfR827NGDNcOLr-g/zh-cn_image_0000002583437669.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233915Z&HW-CC-Expire=86400&HW-CC-Sign=F2F28626851A089B9336C6622E00DF27808B3015F2DBE241337BB1D5CB9F89E0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/laMngh0zQ1ecTJ54AgspvA/zh-cn_image_0000002558604458.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052725Z&HW-CC-Expire=86400&HW-CC-Sign=C7ECEB77284425376EF0EE3E078DCD27E3DB087B936E7DE5DFCBA413AE590938)
 
 ### 列表滚动-if使用场景
 
@@ -319,7 +319,7 @@ content_hash: sha256:91eaa9baf308f09a90365d3e9855977e744677ddd2cb8235f5eaa5e9274
 81. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/SErYjBPXRzmh1yMiP8iQ0Q/zh-cn_image_0000002552957624.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233915Z&HW-CC-Expire=86400&HW-CC-Sign=191C276AC746AA189FB33BD123D7EC0C32E9B0C423CEEC613F4AF41433AF4785)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/Gz4fJdhtSv2ysrxMIN6pXg/zh-cn_image_0000002589323983.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052725Z&HW-CC-Expire=86400&HW-CC-Sign=4FE8B4C7179791012722D920D136DCFC7C0B451F88684DA46C2C3445A8C38618)
 
 ### 列表滚动-Repeat全量加载使用场景
 
@@ -424,7 +424,7 @@ content_hash: sha256:91eaa9baf308f09a90365d3e9855977e744677ddd2cb8235f5eaa5e9274
 92. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/hPEjcYclR3WFbZwG_vMPSg/zh-cn_image_0000002583477625.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233915Z&HW-CC-Expire=86400&HW-CC-Sign=13D73D9006EA88B898F009624CE007A598D70D19A44F7180E8D945A663A7ADDB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/lJAnQLG6QRSR1rh-ZsCpjg/zh-cn_image_0000002589243923.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052725Z&HW-CC-Expire=86400&HW-CC-Sign=2F3839DF6FDEEEA241D6447DE69C111AA017030456D21F50CA5154FE904862CD)
 
 ### Grid使用场景
 
@@ -492,7 +492,7 @@ content_hash: sha256:91eaa9baf308f09a90365d3e9855977e744677ddd2cb8235f5eaa5e9274
 57. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/NXOnK4X8RzqM4_EtPqgRLg/zh-cn_image_0000002552797976.png?HW-CC-KV=V1&HW-CC-Date=20260427T233915Z&HW-CC-Expire=86400&HW-CC-Sign=163FC1A8F02169E80CF647B0735527B725B4BC74308DA3164125F3B52819B589)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/86oq1cFPTSm4zGU0Eeiubw/zh-cn_image_0000002558764116.png?HW-CC-KV=V1&HW-CC-Date=20260429T052725Z&HW-CC-Expire=86400&HW-CC-Sign=275E20557B55012488080CF44E16673FCCD2719DE9324157C1D3B6251F8D951A)
 
 ### WaterFlow使用场景
 
@@ -581,7 +581,7 @@ content_hash: sha256:91eaa9baf308f09a90365d3e9855977e744677ddd2cb8235f5eaa5e9274
 78. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/DBsjRxjBQXyBloDXJUhSsA/zh-cn_image_0000002583437671.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233915Z&HW-CC-Expire=86400&HW-CC-Sign=08BC5215532F0E411903680679D2586CBF37925F77E2FCD409ABAA10A3A28217)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/E786HvH4QLyjKbYPiSJr8w/zh-cn_image_0000002558604460.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052725Z&HW-CC-Expire=86400&HW-CC-Sign=E0E1A16616145A46B535B8A01E2A4871772759F65812DC0D4C0EA84D4B05398A)
 
 ### Swiper使用场景
 
@@ -679,7 +679,7 @@ content_hash: sha256:91eaa9baf308f09a90365d3e9855977e744677ddd2cb8235f5eaa5e9274
 87. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/hKrmugSuQROtkMkYeVZeVg/zh-cn_image_0000002552957626.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233915Z&HW-CC-Expire=86400&HW-CC-Sign=BF6245CE067AFB0C2CAB15B02FEB4CD78B3FFDA78366A56B07AD17C4809860C8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/Odjo2gN0SOilLDZ-ObMZWA/zh-cn_image_0000002589323985.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052725Z&HW-CC-Expire=86400&HW-CC-Sign=3FBBE711CC2AB932714618D544516485ACDD44FD2D476125D60794D04AD320F1)
 
 ### 列表滚动-ListItemGroup使用场景
 
@@ -703,9 +703,9 @@ content_hash: sha256:91eaa9baf308f09a90365d3e9855977e744677ddd2cb8235f5eaa5e9274
 13. }
 
 15. aboutToAppear() {
-16. for (let i = 0; i < 10000; i++) {
+16. for (let i = 0; i < 10000; i++) { // 循环10000次
 17. let data = new DataSrc();
-18. for (let j = 0; j < 12; j++) {
+18. for (let j = 0; j < 12; j++) { // 循环12次
 19. data.dataScr1.push(`测试条目数据: ${i} - ${j}`);
 20. }
 21. this.dataSource.push(data);
@@ -751,7 +751,7 @@ content_hash: sha256:91eaa9baf308f09a90365d3e9855977e744677ddd2cb8235f5eaa5e9274
 61. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/2A0zXGOBRly9ekGWsTqsIA/zh-cn_image_0000002583477627.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233915Z&HW-CC-Expire=86400&HW-CC-Sign=C8469A564B92FA3006A1DA2FD7EFBBFF42CAAEB50A95DEC1C1253FED2292BC1B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/ZfpNTUJPRienifL41tBprA/zh-cn_image_0000002589243925.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052725Z&HW-CC-Expire=86400&HW-CC-Sign=A49CDDE55F78296397E008AAD138F2FE985204F144C5F78E7245C6D6F49F7AAE)
 
 ### 多种条目类型使用场景
 
@@ -826,7 +826,7 @@ content_hash: sha256:91eaa9baf308f09a90365d3e9855977e744677ddd2cb8235f5eaa5e9274
 56. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/6tjfYZP6SriRUNriGAW5CQ/zh-cn_image_0000002552797978.png?HW-CC-KV=V1&HW-CC-Date=20260427T233915Z&HW-CC-Expire=86400&HW-CC-Sign=28C61BC159D31B302C666833DD0E0AD59ACF7E9B9EAB493872F2D28E04F7B788)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/qSouScKLT0eLw_LTL75fcg/zh-cn_image_0000002558764118.png?HW-CC-KV=V1&HW-CC-Date=20260429T052725Z&HW-CC-Expire=86400&HW-CC-Sign=4A2386CB468C229E8BCBD149704BD525877699163B96B1A1ECAC4486F3569EB2)
 
 **组合型**
 
@@ -982,4 +982,4 @@ content_hash: sha256:91eaa9baf308f09a90365d3e9855977e744677ddd2cb8235f5eaa5e9274
 147. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/BDZHwTScS4GSeBr-pp3tOQ/zh-cn_image_0000002583437673.png?HW-CC-KV=V1&HW-CC-Date=20260427T233915Z&HW-CC-Expire=86400&HW-CC-Sign=EAE689A525B1D5B7F45195FAFAF445FFA9C739D1917C80A6DF46DE3C0175CAF5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/LJFS8OeiRc-FOYBy1SzqeA/zh-cn_image_0000002558604462.png?HW-CC-KV=V1&HW-CC-Date=20260429T052725Z&HW-CC-Expire=86400&HW-CC-Sign=E997DFF9D130B2CF286B17E8D37FA84CCBB052CEB523E7D87055210F37A4D122)

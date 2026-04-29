@@ -1,10 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/gameservice-gameplayer
 title: gamePlayer（基础游戏服务）
+breadcrumb: API参考 > 应用服务 > Game Service Kit（游戏服务） > ArkTS API > gamePlayer（基础游戏服务）
 category: harmonyos-references
-scraped_at: 2026-04-28T08:16:43+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:92f473d3f247ee94a69c748ac6de16b4a9d8524ae86f4e06923047843782f4fe
+scraped_at: 2026-04-29T14:07:27+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:f8e4100bb1df5e7c4dca640935ca87021b46068604f88d39d219c03bd3e81cb3
 ---
 
 本模块提供接入Game Service Kit（游戏服务）的基础游戏服务能力。
@@ -36,7 +37,7 @@ PhonePC/2in1TabletTV
 | idCompatibleType | number | 否 | 否 | ID兼容类型。  0：gamePlayerId与openId、playerId不兼容，即调用[getLocalPlayer](gameservice-gameplayer.md#gameplayergetlocalplayer)接口时，玩家首次登录游戏生成的玩家标识；teamPlayerId与unionId不兼容，即调用[unionLogin](gameservice-gameplayer.md#gameplayerunionlogin)接口时，玩家首次登录游戏未选择转移APK游戏数据生成的玩家标识。  1：gamePlayerId兼容playerId，即玩家首次登录游戏时选择转移APK游戏数据，且APK游戏使用了playerId作为玩家标识，Game Service Kit将playerId作为新的gamePlayerId。  2：gamePlayerId兼容openId，即玩家首次登录游戏时选择转移APK游戏数据，且APK游戏使用了openId作为玩家标识，Game Service Kit将openId作为新的gamePlayerId。 |
 | level | number | 否 | 否 | 玩家等级。**此参数为预留参数，当前固定返回0。** |
 | playableTime | number | 否 | 否 | 玩家本次可玩时长，单位：分钟。**此参数为预留参数，当前固定返回-1。**  **说明**：-1表示成年玩家返回的当前可玩时长，大于等于0则表示未成年玩家当前的可玩时长。 |
-| loginIdType | number | 否 | 否 | 登录游戏时，玩家使用的账号ID类型。  1：gamePlayerId  2：teamPlayerId  **起始版本：** 5.0.0(12)。 |
+| loginIdType | number | 否 | 否 | 登录游戏时，玩家使用的账号ID类型。  1：gamePlayerId  2：teamPlayerId  **起始版本：** 5.0.0(12) |
 
 ## GSKPlayerRole
 
@@ -60,7 +61,7 @@ gamePlayerId、teamPlayerId和thirdOpenId不能同时为空。
 | serverName | string | 否 | 是 | 玩家区服名。  最大长度128个字符。 |
 | gamePlayerId | string | 否 | 是 | 游戏玩家ID。  最大长度256个字符。 |
 | teamPlayerId | string | 否 | 是 | 团队玩家ID。游戏官方账号与华为teamPlayerId绑定场景下可传入此参数。  最大长度256个字符。 |
-| thirdOpenId | string | 否 | 是 | 游戏官方账号ID。  最大长度128个字符。  **起始版本：** 5.0.0(12)。 |
+| thirdOpenId | string | 否 | 是 | 游戏官方账号ID。  最大长度128个字符。  **起始版本：** 5.0.0(12) |
 
 ## ThirdUserInfo
 
@@ -248,28 +249,28 @@ PhonePC/2in1TabletTV
 | GET\_HWID\_INFO\_FAILED | 1002000003 | 未查到华为账号相关信息。 |
 | REALNAME\_CANCELED\_OR\_NOT\_REALNAME | 1002000004 | 实名认证返回强制实名但用户取消，或需要强制实名但没有实名。 |
 | COUNTRY\_OR\_REGION\_NOT\_SUPPORTED | 1002000005 | 只支持服务地和注册地均为中国境内（香港特别行政区、澳门特别行政区、中国台湾除外）的华为账号。 |
-| ANTI\_ADDICTION\_ERROR | 1002000006 | 玩家未成年并且当前不在可游戏时间。  **起始版本：** 5.0.0(12)。 |
+| ANTI\_ADDICTION\_ERROR | 1002000006 | 玩家未成年并且当前不在可游戏时间。  **起始版本：** 5.0.0(12) |
 | PRODUCT\_BELONG\_REGION\_ERROR | 1002000007 | 商品所属的应用未在指定国家/地区上架。 |
 | HWID\_IN\_BLOCKLIST | 1002000008 | 该华为账号在禁止名单中。 |
-| GAME\_ACCOUNT\_UNAVAILABLE | 1002000009 | 当前游戏不支持第三方游戏账号。  **起始版本：** 5.0.0(12)。 |
-| PLAYER\_ID\_INVALID | 1002000010 | 华为teamPlayerId与当前玩家不匹配。  **起始版本：** 5.0.0(12)。 |
-| AGREEMENT\_NOT\_AGREED | 1002000011 | 玩家未同意隐私协议。  **起始版本：** 5.0.0(12)。 |
-| OPEN\_ID\_OR\_PLAYER\_ID\_BOUND | 1002000012 | 游戏官方账号与华为teamPlayerId已绑定。  **起始版本：** 5.0.0(12)。 |
-| OPEN\_ID\_AND\_PLAYER\_ID\_NOT\_BOUND | 1002000013 | 游戏官方账号与华为teamPlayerId未绑定。  **起始版本：** 5.0.0(12)。 |
-| CURRENT\_API\_NOT\_AVAILABLE\_FOR\_GAME | 1002000014 | 此接口不适用于此游戏。  **起始版本：** 5.0.0(12)。 |
-| CURRENT\_PLAYER\_INFO\_INVALID | 1002000015 | 当前玩家信息无效。  **起始版本：** 5.0.0(12)。 |
-| UNION\_LOGIN\_CANCELED | 1002000016 | 玩家取消联合登录。  **起始版本：** 5.0.0(12)。 |
-| ILLEGAL\_APPLICATION | 1002000017 | 非法应用。  **起始版本：** 5.0.0(12)。 |
-| NOT\_MINI\_GAME\_ERROR | 1002000018 | 此API仅支持小游戏。  **起始版本：** 6.0.1(21)。 |
-| PARAM\_ERROR | 1002000019 | 参数错误。  **起始版本：** 6.0.1(21)。 |
-| USER\_CANCELED | 1002000020 | 当前操作被用户取消。  **起始版本：** 6.0.1(21)。 |
-| CALLS\_FREQUENT | 1002000021 | API调用过于频繁。  **起始版本：** 6.0.1(21)。 |
-| PAY\_PRODUCT\_INVALID | 1002000050 | 无效的商品信息。  **起始版本：** 6.0.1(21)。 |
-| PAY\_PRODUCT\_OWNED | 1002000051 | 由于已经拥有该商品，购买失败。  **起始版本：** 6.0.1(21)。 |
-| PAY\_PRODUCT\_NOT\_OWNED | 1002000052 | 由于未拥有该商品，发货失败。  **起始版本：** 6.0.1(21)。 |
-| PAY\_PRODUCT\_CONSUMED | 1002000053 | 此次购买已经完成发货，无需重复发货。  **起始版本：** 6.0.1(21)。 |
-| PAY\_ACCOUNT\_REGION\_UNSUPPORTED | 1002000054 | 用户账号所在服务地不在IAP Kit支持结算的国家/地区中。  **起始版本：** 6.0.1(21)。 |
-| PAY\_DEAL\_REJECTED | 1002000056 | 用户交易被拒绝。  **起始版本：** 6.0.1(21)。 |
+| GAME\_ACCOUNT\_UNAVAILABLE | 1002000009 | 当前游戏不支持第三方游戏账号。  **起始版本：** 5.0.0(12) |
+| PLAYER\_ID\_INVALID | 1002000010 | 华为teamPlayerId与当前玩家不匹配。  **起始版本：** 5.0.0(12) |
+| AGREEMENT\_NOT\_AGREED | 1002000011 | 玩家未同意隐私协议。  **起始版本：** 5.0.0(12) |
+| OPEN\_ID\_OR\_PLAYER\_ID\_BOUND | 1002000012 | 游戏官方账号与华为teamPlayerId已绑定。  **起始版本：** 5.0.0(12) |
+| OPEN\_ID\_AND\_PLAYER\_ID\_NOT\_BOUND | 1002000013 | 游戏官方账号与华为teamPlayerId未绑定。  **起始版本：** 5.0.0(12) |
+| CURRENT\_API\_NOT\_AVAILABLE\_FOR\_GAME | 1002000014 | 此接口不适用于此游戏。  **起始版本：** 5.0.0(12) |
+| CURRENT\_PLAYER\_INFO\_INVALID | 1002000015 | 当前玩家信息无效。  **起始版本：** 5.0.0(12) |
+| UNION\_LOGIN\_CANCELED | 1002000016 | 玩家取消联合登录。  **起始版本：** 5.0.0(12) |
+| ILLEGAL\_APPLICATION | 1002000017 | 非法应用。  **起始版本：** 5.0.0(12) |
+| NOT\_MINI\_GAME\_ERROR | 1002000018 | 此API仅支持小游戏。  **起始版本：** 6.0.1(21) |
+| PARAM\_ERROR | 1002000019 | 参数错误。  **起始版本：** 6.0.1(21) |
+| USER\_CANCELED | 1002000020 | 当前操作被用户取消。  **起始版本：** 6.0.1(21) |
+| CALLS\_FREQUENT | 1002000021 | API调用过于频繁。  **起始版本：** 6.0.1(21) |
+| PAY\_PRODUCT\_INVALID | 1002000050 | 无效的商品信息。  **起始版本：** 6.0.1(21) |
+| PAY\_PRODUCT\_OWNED | 1002000051 | 由于已经拥有该商品，购买失败。  **起始版本：** 6.0.1(21) |
+| PAY\_PRODUCT\_NOT\_OWNED | 1002000052 | 由于未拥有该商品，发货失败。  **起始版本：** 6.0.1(21) |
+| PAY\_PRODUCT\_CONSUMED | 1002000053 | 此次购买已经完成发货，无需重复发货。  **起始版本：** 6.0.1(21) |
+| PAY\_ACCOUNT\_REGION\_UNSUPPORTED | 1002000054 | 用户账号所在服务地不在IAP Kit支持结算的国家/地区中。  **起始版本：** 6.0.1(21) |
+| PAY\_DEAL\_REJECTED | 1002000056 | 用户交易被拒绝。  **起始版本：** 6.0.1(21) |
 
 ## gamePlayer.init
 
@@ -326,7 +327,7 @@ PhonePC/2in1TabletTV
 
 init(context: common.UIAbilityContext, callback: AsyncCallback<void>): void
 
-游戏启动时，需要对Game Service Kit进行初始化。使用callback回调。
+游戏启动时，需要对Game Service Kit进行初始化。使用callback异步回调。
 
 **系统能力：** SystemCapability.Game.GameService.GamePlayer
 
@@ -546,7 +547,7 @@ PhonePC/2in1TabletTV
 
 getLocalPlayer(context: common.UIAbilityContext, callback: AsyncCallback<GSKLocalPlayer>): void
 
-获取玩家信息。使用callback回调。
+获取玩家信息。使用callback异步回调。
 
 **系统能力：** SystemCapability.Game.GameService.GamePlayer
 
@@ -950,7 +951,7 @@ PhonePC/2in1TabletTV
 
 savePlayerRole(context: common.UIAbilityContext, request: GSKPlayerRole, callback: AsyncCallback<void>): void
 
-保存角色信息到游戏服务器。使用callback回调。
+保存角色信息到游戏服务器。使用callback异步回调。
 
 **系统能力：** SystemCapability.Game.GameService.GamePlayer
 
@@ -1015,7 +1016,7 @@ PhonePC/2in1TabletTV
 
 on(type: 'playerChanged', callback: Callback<PlayerChangedResult>): void
 
-玩家变化事件监听。使用callback回调。
+玩家变化事件监听。使用callback异步回调。
 
 **系统能力：** SystemCapability.Game.GameService.GamePlayer
 
@@ -1065,7 +1066,7 @@ PhonePC/2in1TabletTV
 
 off(type: 'playerChanged', callback?: Callback<PlayerChangedResult>): void
 
-取消玩家变化事件监听。使用callback回调。
+取消玩家变化事件监听。使用callback异步回调。
 
 **系统能力：** SystemCapability.Game.GameService.GamePlayer
 
@@ -1153,7 +1154,7 @@ PhonePC/2in1TabletTV
 | --- | --- | --- | --- | --- |
 | playerId | string | 否 | 否 | 玩家账号ID。 |
 | isAdult | boolean | 否 | 否 | 玩家账号实名认证是否为成年人。  - true：已成年。  - false：未成年。 |
-| playerLevel | number | 否 | 否 | 当前玩家账号等级。 |
+| playerLevel | number | 否 | 否 | 当前玩家账号等级，取值范围[1,15]。 |
 | playerSign | string | 否 | 否 | 玩家登录签名。 |
 | signTs | string | 否 | 否 | 玩家登录签名的时间戳。 |
 | extraData | string | 否 | 是 | 附加信息，要求JSON String格式，可以将额外需要传入的字段以key:value的形式设置在JSON String中，并通过该参数传入。例如：  let extraData = "{"key1":"value1","key2":"value2"}"; |
@@ -1164,7 +1165,7 @@ PhonePC/2in1TabletTV
 
 on(type: 'miniGameAddictionPrevented', callback: Callback<string>): void
 
-注册小游戏防沉迷事件监听。使用callback回调。
+注册小游戏防沉迷事件监听。使用callback异步回调。
 
 **系统能力：** SystemCapability.Game.GameService.GamePlayer
 
@@ -1211,7 +1212,7 @@ PhonePC/2in1TabletTV
 
 off(type: 'miniGameAddictionPrevented', callback?: Callback<string>): void
 
-取消注册小游戏防沉迷事件监听。使用callback回调。
+取消注册小游戏防沉迷事件监听。使用callback异步回调。
 
 **系统能力：** SystemCapability.Game.GameService.GamePlayer
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/graphics-
 title: AssetAccelerationExtensionAbility（资源加速ExtensionAbility）
 breadcrumb: API参考 > 图形 > Graphics Accelerate Kit（图形加速服务） > ArkTS API > AssetAccelerationExtensionAbility（资源加速ExtensionAbility）
 category: harmonyos-references
-scraped_at: 2026-04-28T08:15:39+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:8d5f1a8b8ae38adf43c1578a83b3447bbcf500b5bfbbf72afbe187e35aaa07aa
+scraped_at: 2026-04-29T14:06:15+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:80751eddb864be622111db2d17845efd4beddbe18feef3852acdc595be344d0d
 ---
 
 本模块为资源包后台下载框架，为资源包后台下载提供关键的生命周期函数。在后台下载任务成功/失败/结束后支持调用相应的回调函数。本模块存在如下约束：
@@ -198,8 +198,8 @@ onDownloadWithAppControl(requestType: ContentRequestType, manifestUrl: string, a
 10. console.info('AssetAccelDemo', `onDownloadWithAppControl enter, requestType: ${requestType}, manifestUrl: ${manifestUrl}.`);
 11. // 如果有下载任务，则调用应用自身下载器进行资源下载，并返回true，否则返回false。
 12. // ...
-13. let result = true;
-14. return result;
+13. let hasDownloadTask = true;
+14. return hasDownloadTask;
 15. }
 16. };
 ```

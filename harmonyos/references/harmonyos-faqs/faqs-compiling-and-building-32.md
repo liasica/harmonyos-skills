@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: 编译报错“(is the command line too long?)”
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 编译报错“(is the command line too long?)”
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:29:13+08:00
+scraped_at: 2026-04-29T14:20:27+08:00
 doc_updated_at: 2026-03-17
-content_hash: sha256:20bfeebe5ae17ceb7301b62c4d9462cbef5c58c82cd1e41eeb870ca60e3f9f56
+content_hash: sha256:b3ec7ad837ae65b8f25fe9622ecefa62b56e3adb1dba69a34b08baacb3eef986
 ---
 
 **问题现象**
@@ -14,11 +14,11 @@ Native工程编译报错，出现告警和报错信息。
 
 出现工程目录长度超过250字符的告警，示例如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/k23joP0YQ3KQNw94NNIj_g/zh-cn_image_0000002194158988.png?HW-CC-KV=V1&HW-CC-Date=20260428T002912Z&HW-CC-Expire=86400&HW-CC-Sign=C50729281001A5EF6F80C5B023A969D76D0D7BBCFF0AA925B99D3D39F2328A41 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/k23joP0YQ3KQNw94NNIj_g/zh-cn_image_0000002194158988.png?HW-CC-KV=V1&HW-CC-Date=20260429T062026Z&HW-CC-Expire=86400&HW-CC-Sign=7BEF0610A249075533D8F12841D2149DB8A30782910CD3B63E60F46BA90EE4E6 "点击放大")
 
 出现编译报错“(is the command line too long?)”，示例如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/Dzr4_XFVRXi69KfJpYTqtw/zh-cn_image_0000002194318604.png?HW-CC-KV=V1&HW-CC-Date=20260428T002912Z&HW-CC-Expire=86400&HW-CC-Sign=D908FBA217590A205E87F6FA1342A0D9C9F68E8DAC7CC6A19E1C5D1467F192B1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/Dzr4_XFVRXi69KfJpYTqtw/zh-cn_image_0000002194318604.png?HW-CC-KV=V1&HW-CC-Date=20260429T062026Z&HW-CC-Expire=86400&HW-CC-Sign=04C47BD9E8866F5AE558ED0FC9074186471AB324F053100B389E575E580FF4A8)
 
 **解决措施**
 
@@ -35,7 +35,7 @@ CMAKE\_OBJECT\_PATH\_MAX的默认值为250，是CMake 中用于限制object file
 
   + 总路径长度为 object file directory 长度加上 object file 长度，两者之和为 297 个字符，具体如图所示。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/loaOTG5FQumzSLiX9JkmEw/zh-cn_image_0000002229604381.png?HW-CC-KV=V1&HW-CC-Date=20260428T002912Z&HW-CC-Expire=86400&HW-CC-Sign=F9D4D4AE4161BB0590927EE67E5055B3E337536EFE60F22327D1EC611D552FFA "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/loaOTG5FQumzSLiX9JkmEw/zh-cn_image_0000002229604381.png?HW-CC-KV=V1&HW-CC-Date=20260429T062026Z&HW-CC-Expire=86400&HW-CC-Sign=8903A58A5CCECEE5020C77DF7784416B2D374440AE6CFACA13B96EDE96DBE886 "点击放大")
   + object file中目录部分长度：示例中“\_\_/\_\_/\_\_/\_\_/\_\_/third-party/rn/ReactCommon/react/renderer/textlayoutmanager”长度为74字符，具体以实际为准。
   + CMake哈希值字符数：CMake将长路径转换为哈希值时哈希值的长度固定为32。
 

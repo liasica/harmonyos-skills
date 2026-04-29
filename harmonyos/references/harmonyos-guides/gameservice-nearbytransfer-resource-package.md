@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/gameservice-n
 title: 传输资源包
 breadcrumb: 指南 > 应用服务 > Game Service Kit（游戏服务） > 游戏近场快传（可选） > 开发指导 > 传输资源包
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:49:06+08:00
+scraped_at: 2026-04-29T13:38:13+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:f8360fb00d11fe8e5a440c9afcebf5df77f295a680c487feb0b2f15a0c8d1ae7
+content_hash: sha256:958c017a2a474696adf2d392cf93bbd92c9580d7d30d06983372b6cad2c47cb5
 ---
 
 游戏近场快传支持已安装游戏的玩家间传输游戏内资源包，节省玩家下载资源包所需的流量和时间。
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/s0DgY2WhR_qK4rjlHIAs6w/zh-cn_image_0000002552958904.png?HW-CC-KV=V1&HW-CC-Date=20260427T234905Z&HW-CC-Expire=86400&HW-CC-Sign=F73ACAECC1A7155E8E863EC592B9002C942CC668AA7BAD546885821BC75D5971)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/4kcrF8OdSWqpfEZyf_qc2g/zh-cn_image_0000002558765404.png?HW-CC-KV=V1&HW-CC-Date=20260429T053812Z&HW-CC-Expire=86400&HW-CC-Sign=A57B83DA15C057C783460116B9F13A7E9B182F7D7B2C5FFAC99276A8E4A84EC4)
 
 1. 发送端和接收端调用[create](../harmonyos-references/gameservice-nearbytransfer.md#gamenearbytransfercreate)创建游戏近场快传服务。
 2. 创建成功后，游戏客户端调用以下接口注册监听。

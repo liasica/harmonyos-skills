@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-presentin
 title: 显示地图
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 创建地图 > 显示地图
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:49:44+08:00
+scraped_at: 2026-04-29T13:39:00+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:26216d6675447b188df843f8286f9a888d905ae046394ca34e71cf5de565fff6
+content_hash: sha256:420e889e25b7905c14f5328fde0c885d21936339dbd6305e1fface602dada533
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:26216d6675447b188df843f8286f9a888d905ae046394ca34e71cf5de56
 
 本章节将向您介绍如何使用地图组件[MapComponent](../harmonyos-references/map-mapcomponent.md#mapcomponent)和[MapComponentController](../harmonyos-references/map-map-mapcomponentcontroller.md)呈现地图，效果如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/AEFBX43FS7mBrGCY_zjg2w/zh-cn_image_0000002552959002.jpg?HW-CC-KV=V1&HW-CC-Date=20260427T234942Z&HW-CC-Expire=86400&HW-CC-Sign=2BDD84C4D27D7CD2B608F814AEFFC9DC2C4EEAEC7A4F5619F250F27C79D7C628 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/b5XLT0SgRfKK_9ab33Lwbw/zh-cn_image_0000002558765504.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053859Z&HW-CC-Expire=86400&HW-CC-Sign=7F7CFE00D30D5078989A48C375603A9F67AA411BA865AD3DAC11D382F970C23F "点击放大")
 
 ## 接口说明
 
@@ -108,7 +108,7 @@ content_hash: sha256:26216d6675447b188df843f8286f9a888d905ae046394ca34e71cf5de56
 
    如果没有成功加载地图，请参见[地图不显示](map-faq-1.md)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/u9PeHZDxQVuMfuwQCm7BGA/zh-cn_image_0000002583479003.jpg?HW-CC-KV=V1&HW-CC-Date=20260427T234942Z&HW-CC-Expire=86400&HW-CC-Sign=53E406D74074F87016D344627ED14B76011C37A2A3EE1C2299C3783451605738 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/qdjNjwkwTICrfF9WKWTAHQ/zh-cn_image_0000002558605848.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053859Z&HW-CC-Expire=86400&HW-CC-Sign=A69A5F90F293C4A7639C4A8B7C5FE352196C096D2F35467459D4AD191F031629 "点击放大")
 
 ### 设置地图属性
 
@@ -141,7 +141,7 @@ content_hash: sha256:26216d6675447b188df843f8286f9a888d905ae046394ca34e71cf5de56
 1. 设置mapType，[切换地图类型](map-type.md)章节中有详细讲解。
 2. 设置myLocationControlsEnabled，展示我的位置按钮。
 
-   在mapOptions中设置myLocationControlsEnabled属性为true，可展示我的位置按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/bDinXwy0TyuCgieuBpofsA/zh-cn_image_0000002552799354.png?HW-CC-KV=V1&HW-CC-Date=20260427T234942Z&HW-CC-Expire=86400&HW-CC-Sign=C59E553A2B91AFE011E7509A3810729EE75BD2753822B5F142312227AD79C203)，显示效果如下图所示。
+   在mapOptions中设置myLocationControlsEnabled属性为true，可展示我的位置按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/j6cPSt5ASFqIzwDf4C2ZEQ/zh-cn_image_0000002589325375.png?HW-CC-KV=V1&HW-CC-Date=20260429T053859Z&HW-CC-Expire=86400&HW-CC-Sign=F6DFF01FCF22D58965AA2B4B209EA0821CF244AC9BBE5B7C7F6E934204520BDE)，显示效果如下图所示。
 
    也可通过调用[MapComponentController](../harmonyos-references/map-map-mapcomponentcontroller.md)对象的方法展示我的位置按钮，详情见[显示我的位置](map-location.md)章节。
 
@@ -158,7 +158,7 @@ content_hash: sha256:26216d6675447b188df843f8286f9a888d905ae046394ca34e71cf5de56
    10. };
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/fgVzDlTOT8abHno5dWhMRw/zh-cn_image_0000002583439049.jpg?HW-CC-KV=V1&HW-CC-Date=20260427T234942Z&HW-CC-Expire=86400&HW-CC-Sign=3DD34E1EDEDECEE798452F7CED3271574E099F186140A1A06DB338410CDD087E "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/S9vOpty6QYW6RfgGVSBdtw/zh-cn_image_0000002589245311.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053859Z&HW-CC-Expire=86400&HW-CC-Sign=FBC9D4B34F0499FCAD20B32915EA29812273C735BF154F16135D5AB02AF0B496 "点击放大")
 3. 展示比例尺。
 
    在mapOptions中设置scaleControlsEnabled属性为true，可展示比例尺，显示效果如下图所示。
@@ -176,7 +176,7 @@ content_hash: sha256:26216d6675447b188df843f8286f9a888d905ae046394ca34e71cf5de56
    10. };
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/YYY-Kj2LRu6gg_xfQ70DRA/zh-cn_image_0000002552959004.jpg?HW-CC-KV=V1&HW-CC-Date=20260427T234942Z&HW-CC-Expire=86400&HW-CC-Sign=3A74CCA4D0B53474C15526BA471D12ED6F08322AA58D3DAAD3B01B9244AFDC5C "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/-8PB_xCLS4a8qWHUw5AcQQ/zh-cn_image_0000002558765506.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053859Z&HW-CC-Expire=86400&HW-CC-Sign=559EEDABBD83EBD4EBA1691692E4430F2436B34CC31F0B71D4A81922DA86C5DC "点击放大")
 
 ### 开启3D建筑图层
 
@@ -188,7 +188,7 @@ content_hash: sha256:26216d6675447b188df843f8286f9a888d905ae046394ca34e71cf5de56
 
 显示效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/Tw89C2jST2qi8BFGRxeBuw/zh-cn_image_0000002583479005.jpg?HW-CC-KV=V1&HW-CC-Date=20260427T234942Z&HW-CC-Expire=86400&HW-CC-Sign=A95E61B1B3D205B51596826D2A9B105A8C3933688A7B87B66B8D1411DDE1D56B "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/0WapRCs5Tr2COF7IyoSp0Q/zh-cn_image_0000002558605850.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053859Z&HW-CC-Expire=86400&HW-CC-Sign=EB36AE4E09090DC1DA1CF9A79AFCB814FB285CE988F851E18BCE03A902230C22 "点击放大")
 
 ### 地图前后台切换
 
@@ -241,7 +241,7 @@ Map Kit提供2种方式设置地图的夜间模式：初始化地图时和创建
 12. };
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/DD6smXGIQLGWvyo2MCEXXA/zh-cn_image_0000002552799356.jpg?HW-CC-KV=V1&HW-CC-Date=20260427T234942Z&HW-CC-Expire=86400&HW-CC-Sign=2A0EE19676F977EB909B8E4E338C77C34806D3EB9C445687966F2F9300D5F87B "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/sGffMg6FT_6AYfU1m1WAmg/zh-cn_image_0000002589325377.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053859Z&HW-CC-Expire=86400&HW-CC-Sign=FB1F7A00B6951355DEBB7DAF68AA964177E929D82CE2192BB76F91CC1E290703 "点击放大")
 
 方式二：创建地图后
 
@@ -276,7 +276,7 @@ Map Kit提供2种方式开启地图的室内图功能：初始化地图时和创
 11. };
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/WnAxdv5wSfmrf8GWekgYuA/zh-cn_image_0000002583439051.jpg?HW-CC-KV=V1&HW-CC-Date=20260427T234942Z&HW-CC-Expire=86400&HW-CC-Sign=42840F1173E3BD7E5A798B8571DB74377413E34777AA1CF6B41BA762860FAF80 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/JrTrRNgYREqb4Q1ljBzKdA/zh-cn_image_0000002589245313.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053859Z&HW-CC-Expire=86400&HW-CC-Sign=FEF817E5A0F3C28EAAEE797735143F4AEE6F40F50B257589E8A1FA63CB30B751 "点击放大")
 
 方式二：创建地图后
 
@@ -387,10 +387,10 @@ Map Kit提供2种方式开启3D地球：初始化地图时和创建地图后。
 
 显示效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/l4dlsy18RuSKbqZ2MXzAog/zh-cn_image_0000002552959006.jpg?HW-CC-KV=V1&HW-CC-Date=20260427T234942Z&HW-CC-Expire=86400&HW-CC-Sign=45DF3F984EA08772709B97C6A2D1227A5CC3AE755CC66136F108822A7B726692 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/lmAeOoPBSl6XhLrIr9MtQw/zh-cn_image_0000002558765508.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053859Z&HW-CC-Expire=86400&HW-CC-Sign=CE76A24E90539F51C514AAC5388795E000513060BE0A8CB8F34C1929485D3DF5 "点击放大")
 
 开启城市灯光效果
 
 调用[MapComponentController](../harmonyos-references/map-map-mapcomponentcontroller.md)对象的[setSphereEnabled](../harmonyos-references/map-map-mapcomponentcontroller.md#setsphereenabled-2)(enabled: boolean, animateDuration: number, cityLight: boolean)方法开启城市灯光效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/LhA7qG3SRa6UDQDp6QaWjQ/zh-cn_image_0000002583479007.jpg?HW-CC-KV=V1&HW-CC-Date=20260427T234942Z&HW-CC-Expire=86400&HW-CC-Sign=2E3782EBD48E3C69CB58A51B94B931980FD39CD60E864ED9F5C6E45A8F700D25 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/IcAGukpqROWE7pi85XGhNA/zh-cn_image_0000002558605852.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053859Z&HW-CC-Expire=86400&HW-CC-Sign=BCB9DF4A49C867F0CDA38913A3CFD1CFB7933F0135D634DD08AB388E20E747B2 "点击放大")

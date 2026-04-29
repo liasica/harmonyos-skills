@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ndk-use-anima
 title: 使用动画
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (基于NDK构建UI) > 使用动画
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:40:15+08:00
+scraped_at: 2026-04-29T13:28:31+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:59014f6a82551f95d922a0d54924a644c725ef6a7edd126f9bb8c4c23f7badcd
+content_hash: sha256:52eee2106efb1b43a153de1b283aa6e44ac592f956cc58df46bcbe4e6226155c
 ---
 
 ## 使用属性动画
@@ -133,7 +133,7 @@ content_hash: sha256:59014f6a82551f95d922a0d54924a644c725ef6a7edd126f9bb8c4c23f7
 
    [ArkUIAnimate.h](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/AnimationNDK/entry/src/main/cpp/ArkUIAnimate.h#L249-L295)
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/KVJ1knY2RLawWvXxV59CuA/zh-cn_image_0000002552958062.gif?HW-CC-KV=V1&HW-CC-Date=20260427T234013Z&HW-CC-Expire=86400&HW-CC-Sign=4341DCEEDFD9ACB07B3DB7B371F1656285CE328F6C195405DEC6D6A1EB5D9ADF)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/M53hcY5CSACCglaco0nR5A/zh-cn_image_0000002589324421.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052830Z&HW-CC-Expire=86400&HW-CC-Sign=CE1C247DCDF466FA40B76F765172D031FB070F7E454771BC581FD324E11FBAA5)
 
 ## 组件出现/消失转场
 
@@ -259,7 +259,7 @@ content_hash: sha256:59014f6a82551f95d922a0d54924a644c725ef6a7edd126f9bb8c4c23f7
 
    [ArkUITransition.h](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/AnimationNDK/entry/src/main/cpp/ArkUITransition.h#L69-L92)
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/aChFJiQdTa-u4OJKxvN8zQ/zh-cn_image_0000002583478063.gif?HW-CC-KV=V1&HW-CC-Date=20260427T234013Z&HW-CC-Expire=86400&HW-CC-Sign=3928D4AFFA1612E003384C38370AF7A6F934DAB6CC4B433318B520E8C4235E91)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/Hg6xssHrT7GlwfxUS4kOmg/zh-cn_image_0000002589244361.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052830Z&HW-CC-Expire=86400&HW-CC-Sign=F46BF1A4852992093741162ACB2F677C476CBEC7BC602CC6B2691C3FC2385E65)
 
 ## 使用关键帧动画
 
@@ -378,7 +378,7 @@ content_hash: sha256:59014f6a82551f95d922a0d54924a644c725ef6a7edd126f9bb8c4c23f7
 
 [ArkUIAnimate.h](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/AnimationNDK/entry/src/main/cpp/ArkUIAnimate.h#L81-L190)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/Hweq-NAYTC65KcwKZM21Lw/zh-cn_image_0000002552798414.gif?HW-CC-KV=V1&HW-CC-Date=20260427T234013Z&HW-CC-Expire=86400&HW-CC-Sign=CCBE98C37977A00120BDE33B7DF97CED294915DDFA1F491BA279DDDB373310D8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/LOEyu362RIaRVaWYSpXIcw/zh-cn_image_0000002558764554.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052830Z&HW-CC-Expire=86400&HW-CC-Sign=390C9E9A8AF7A65CF1CCD8BCC94B17247BD297F25846005AC0AFFFF65D888BF4)
 
 ## 使用帧动画
 
@@ -602,4 +602,4 @@ content_hash: sha256:59014f6a82551f95d922a0d54924a644c725ef6a7edd126f9bb8c4c23f7
 
 [ArkUIAnimate.h](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/AnimationNDK/entry/src/main/cpp/ArkUIAnimate.h#L446-L656)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/uddpspNBTfOltkpodVgCyg/zh-cn_image_0000002583438109.gif?HW-CC-KV=V1&HW-CC-Date=20260427T234013Z&HW-CC-Expire=86400&HW-CC-Sign=76A593FB7053630B1C5283169EA72EC18E068EA6EB475D2FCCE4F001E57C4F18)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/aZ-8w4PjQaCHA9fDiyZyBw/zh-cn_image_0000002558604898.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052830Z&HW-CC-Expire=86400&HW-CC-Sign=C1E2976CEE2AA1292FD021427269F514E6A34F9AB09D016BCC0F3C982B2DBF52)

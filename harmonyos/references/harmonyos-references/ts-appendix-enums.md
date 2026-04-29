@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-append
 title: 枚举说明
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 公共定义 > 枚举说明
 category: harmonyos-references
-scraped_at: 2026-04-28T08:02:47+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:929879be053dbc672ef93650f89e631751fee3fed5b9adb70020a008f3ee590d
+scraped_at: 2026-04-29T13:53:12+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:cafac5938f385805d55511b046cafcc2af41b63545ee194a5f1d616d7117447c
 ---
 
 说明
@@ -589,14 +589,14 @@ PhonePC/2in1TabletTVWearable
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
-| 名称 | 说明 |
-| --- | --- |
-| Start | 元素在主轴方向首端对齐，第一个元素与行首对齐，后续元素与前一个对齐。 |
-| Center | 元素在主轴方向中心对齐，第一个元素与行首的距离和最后一个元素与行尾的距离相同。 |
-| End | 元素在主轴方向尾部对齐，最后一个元素与行尾对齐，其余元素与后一个对齐。 |
-| SpaceBetween | Flex主轴方向均匀分配弹性元素，相邻元素之间距离相同。第一个元素与行首对齐，最后一个元素与行尾对齐。 |
-| SpaceAround | Flex主轴方向均匀分配弹性元素，相邻元素之间距离相同。第一个元素到行首的距离和最后一个元素到行尾的距离是相邻元素之间距离的一半。 |
-| SpaceEvenly | Flex主轴方向均匀分配弹性元素，相邻元素之间的距离、第一个元素与行首的间距、最后一个元素到行尾的间距均相同。 |
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| Start | 0 | 元素在主轴方向首端对齐，第一个元素与行首对齐，后续元素与前一个对齐。 |
+| Center | 1 | 元素在主轴方向中心对齐，第一个元素与行首的距离和最后一个元素与行尾的距离相同。 |
+| End | 2 | 元素在主轴方向尾部对齐，最后一个元素与行尾对齐，其余元素与后一个对齐。 |
+| SpaceBetween | 3 | Flex主轴方向均匀分配弹性元素，相邻元素之间距离相同。第一个元素与行首对齐，最后一个元素与行尾对齐。 |
+| SpaceAround | 4 | Flex主轴方向均匀分配弹性元素，相邻元素之间距离相同。第一个元素到行首的距离和最后一个元素到行尾的距离是相邻元素之间距离的一半。 |
+| SpaceEvenly | 5 | Flex主轴方向均匀分配弹性元素，相邻元素之间的距离、第一个元素与行首的间距、最后一个元素到行尾的间距均相同。 |
 
 ## FlexDirection
 
@@ -610,12 +610,12 @@ PhonePC/2in1TabletTVWearable
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
-| 名称 | 说明 |
-| --- | --- |
-| Row | 主轴与行方向一致作为布局模式。 |
-| RowReverse | 与Row方向相反方向进行布局。 |
-| Column | 主轴与列方向一致作为布局模式。 |
-| ColumnReverse | 与Column相反方向进行布局。 |
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| Row | 0 | 主轴与行方向一致作为布局模式。 |
+| RowReverse | 1 | 与Row方向相反方向进行布局。 |
+| Column | 2 | 主轴与列方向一致作为布局模式。 |
+| ColumnReverse | 3 | 与Column相反方向进行布局。 |
 
 ## FlexWrap
 
@@ -629,11 +629,11 @@ PhonePC/2in1TabletTVWearable
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
-| 名称 | 说明 |
-| --- | --- |
-| NoWrap | Flex容器的元素以单行/列布局，子元素尽可能约束在容器内。当子元素有最小尺寸约束等设置时，Flex容器不会对其强制弹性压缩。 |
-| Wrap | Flex容器的元素以多行/列排布，子项允许超出容器。 |
-| WrapReverse | Flex容器的元素以反向多行/列排布，子项允许超出容器。 |
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| NoWrap | 0 | Flex容器的元素以单行/列布局，子元素尽可能约束在容器内。当子元素有最小尺寸约束等设置时，Flex容器不会对其强制弹性压缩。 |
+| Wrap | 1 | Flex容器的元素以多行/列排布，子项允许超出容器。 |
+| WrapReverse | 2 | Flex容器的元素以反向多行/列排布，子项允许超出容器。 |
 
 ## FontStyle
 
@@ -769,11 +769,11 @@ PhonePC/2in1TabletTVWearable
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
-| 名称 | 说明 |
-| --- | --- |
-| Start | 按照语言方向起始端对齐。 |
-| Center | 居中对齐，默认对齐方式。 |
-| End | 按照语言方向末端对齐。 |
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| Start | 0 | 按照语言方向起始端对齐。 |
+| Center | 1 | 居中对齐，默认对齐方式。 |
+| End | 2 | 按照语言方向末端对齐。 |
 
 ## HoverEffect8+
 
@@ -870,14 +870,14 @@ PhonePC/2in1TabletTVWearable
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
-| 名称 | 说明 |
-| --- | --- |
-| Auto | 使用Flex容器中的默认配置。 |
-| Start | 元素在Flex容器中，沿交叉轴方向首部对齐。 |
-| Center | 元素在Flex容器中，沿交叉轴方向居中对齐。 |
-| End | 元素在Flex容器中，沿交叉轴方向底部对齐。 |
-| Stretch | 元素在Flex容器中，沿交叉轴方向拉伸填充。容器为Flex且设置Wrap为FlexWrap.Wrap或FlexWrap.WrapReverse时，元素拉伸到与当前行/列交叉轴长度最长的元素尺寸。其余情况下，无论元素尺寸是否设置，均拉伸到容器尺寸。 |
-| Baseline | 元素在Flex容器中，交叉轴方向文本基线对齐。 |
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| Auto | 0 | 使用Flex容器中的默认配置。 |
+| Start | 1 | 元素在Flex容器中，沿交叉轴方向首部对齐。 |
+| Center | 2 | 元素在Flex容器中，沿交叉轴方向居中对齐。 |
+| End | 3 | 元素在Flex容器中，沿交叉轴方向底部对齐。 |
+| Stretch | 4 | 元素在Flex容器中，沿交叉轴方向拉伸填充。容器为Flex且设置Wrap为FlexWrap.Wrap或FlexWrap.WrapReverse时，元素拉伸到与当前行/列交叉轴长度最长的元素尺寸。其余情况下，无论元素尺寸是否设置，均拉伸到容器尺寸。 |
+| Baseline | 5 | 元素在Flex容器中，交叉轴方向文本基线对齐。 |
 
 ## ImageRepeat
 
@@ -1646,11 +1646,11 @@ PhonePC/2in1TabletTVWearable
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
-| 名称 | 说明 |
-| --- | --- |
-| Top | 顶部对齐。 |
-| Center | 居中对齐，默认对齐方式。 |
-| Bottom | 底部对齐。 |
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| Top | 0 | 顶部对齐。 |
+| Center | 1 | 居中对齐，默认对齐方式。 |
+| Bottom | 2 | 底部对齐。 |
 
 ## Visibility
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-wrapbui
 title: wrapBuilder：封装全局@Builder
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式基本语法 > 组件扩展 > wrapBuilder：封装全局@Builder
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:38:58+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:c9d4f45d56011271f6ca0e42fb6a15245e041ecd6fb543e8855c96f816b75fe9
+scraped_at: 2026-04-29T13:27:06+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:a92da36318244dbb28a137a3596a4c66fc280693bc18a6e449d40349b73df3ea
 ---
 
 当在一个struct内使用多个全局@Builder函数实现UI的不同效果时，代码维护将变得非常困难，且页面不够整洁。此时，可以使用[wrapBuilder](../harmonyos-references/ts-universal-wrapbuilder.md)封装全局@Builder。
@@ -29,10 +29,11 @@ content_hash: sha256:c9d4f45d56011271f6ca0e42fb6a15245e041ecd6fb543e8855c96f816b
 4. let builderArr: Function[] = [builderElement];
 5. @Builder
 6. function testBuilder() {
-7. ForEach(builderArr, (item: Function) => {
-8. item();
-9. })
-10. }
+7. // builderElement赋值给变量或者数组后，在UI方法中无法使用
+8. ForEach(builderArr, (item: Function) => {
+9. item();
+10. })
+11. }
 ```
 
 在上述代码中，builderArr是一个由@Builder方法组成的数组。在ForEach循环中取每个@Builder方法时，会出现@Builder方法在UI方法中无法使用的问题。
@@ -84,23 +85,24 @@ wrapBuilder是一个模板函数，返回一个WrappedBuilder对象。
 4. .fontSize(size)
 5. }
 
-7. let globalBuilder: WrappedBuilder<[string, number]> = wrapBuilder(myBuilder);
+7. // 使用wrapBuilder封装myBuilder，并赋值给globalBuilder变量
+8. let globalBuilder: WrappedBuilder<[string, number]> = wrapBuilder(myBuilder);
 
-9. @Entry
-10. @Component
-11. struct TestIndex {
-12. @State message: string = 'Hello World';
+10. @Entry
+11. @Component
+12. struct TestIndex {
+13. @State message: string = 'Hello World';
 
-14. build() {
-15. Row() {
-16. Column() {
-17. globalBuilder.builder(this.message, 50)
-18. }
-19. .width('100%')
-20. }
-21. .height('100%')
-22. }
+15. build() {
+16. Row() {
+17. Column() {
+18. globalBuilder.builder(this.message, 50);
+19. }
+20. .width('100%')
+21. }
+22. .height('100%')
 23. }
+24. }
 ```
 
 [PageTwo.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/wrapbuilder/entry/src/main/ets/pages/PageTwo.ets#L15-L39)
@@ -131,21 +133,22 @@ wrapBuilder是一个模板函数，返回一个WrappedBuilder对象。
 19. struct IndexItem {
 20. @Builder
 21. IndexItem() {
-22. ForEach(builderArr, (item: WrappedBuilder<[string, number]>) => {
-23. item.builder('Hello World', 30);
-24. })
-25. }
+22. // IndexItem使用ForEach进行不同@Builder函数的渲染
+23. ForEach(builderArr, (item: WrappedBuilder<[string, number]>) => {
+24. item.builder('Hello World', 30);
+25. })
+26. }
 
-27. build() {
-28. Row() {
-29. Column() {
-30. this.IndexItem();
-31. }
-32. .width('100%')
-33. }
-34. .height('100%')
-35. }
+28. build() {
+29. Row() {
+30. Column() {
+31. this.IndexItem();
+32. }
+33. .width('100%')
+34. }
+35. .height('100%')
 36. }
+37. }
 ```
 
 [PageThree.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/wrapbuilder/entry/src/main/ets/pages/PageThree.ets#L15-L52)
@@ -217,13 +220,14 @@ wrapBuilder是一个模板函数，返回一个WrappedBuilder对象。
 
 19. build() {
 20. Column() {
-21. wBuilder.builder({ paramA2: this.label.paramA2 })
-22. Button('Click me').onClick(() => {
-23. this.label.paramA2 = 'ArkUI';
-24. })
-25. }
+21. // 引用传递参数，label.paramA2的改变会引起overBuilder内的UI刷新
+22. wBuilder.builder({ paramA2: this.label.paramA2 });
+23. Button('Click me').onClick(() => {
+24. this.label.paramA2 = 'ArkUI';
+25. })
 26. }
 27. }
+28. }
 ```
 
 [PageFour.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/wrapbuilder/entry/src/main/ets/pages/PageFour.ets#L15-L43)

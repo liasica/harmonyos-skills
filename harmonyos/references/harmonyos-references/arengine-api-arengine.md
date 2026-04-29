@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arengine-
 title: arEngine（AR增强现实能力）
 breadcrumb: API参考 > 图形 > AR Engine（AR引擎服务） > ArkTS API > arEngine（AR增强现实能力）
 category: harmonyos-references
-scraped_at: 2026-04-28T08:14:28+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:bdf57e9eaccacc4dfefa3afa1f6538b6546d8e030450a0f9bbecd90ec43825c2
+scraped_at: 2026-04-29T14:05:05+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:96c007d82a81e4b20562bf4409c5470c77115f94c9b15b73528e9ec9adb1edbd
 ---
 
 本模块提供AR Engine（AR引擎服务）的arEngine（AR增强现实能力）相关接口。
@@ -739,7 +739,7 @@ addImage(name: string, pixelMap: image.PixelMap, widthInMeters: number): Promise
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| name | string | 是 | 图像名称。  不允许为空，255个字符以内，超过255个的字符将会被丢弃。 |
+| name | string | 是 | 图像名称。  不允许为空，255个字符以内，超过255个字符的部分将被自动截断。 |
 | pixelMap | [image.PixelMap](js-apis-sendableimage.md#pixelmap) | 是 | 图像的信息。 |
 | widthInMeters | number | 是 | 图像中对象的实际物理宽度。  无限制，单位为m。默认值是A4纸张的大小。 |
 
@@ -772,7 +772,7 @@ addImage(name: string, pixelMap: image.PixelMap, widthInMeters: number): Promise
 6. editable: true,
 7. pixelFormat: image.PixelMapFormat.RGBA_8888,
 8. size: { height: 4, width: 6 }
-9. }
+9. };
 10. let pixelMap: image.PixelMap = image.createPixelMapSync(color, opts);
 11. let imageDatabase: arEngine.ARAugmentedImageDatabase = await arEngine.createARAugmentedImageDatabase();
 12. await imageDatabase.addImage('xx', pixelMap, 0.3);

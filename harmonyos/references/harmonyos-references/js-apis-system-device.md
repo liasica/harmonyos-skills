@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-s
 title: @system.device (设备信息)
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > ArkTS API > 已停止维护的接口 > @system.device (设备信息)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:09:43+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:1fc1050131551bbee18af5134c092d0c13ae370cae9e80b82f1efa816bdc5d42
+scraped_at: 2026-04-29T14:00:24+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:9274422a5fb1a0c173230a3386061eeb209f7fe6848b2a6f61113c9192794ef6
 ---
 
 本模块提供当前设备的信息。
@@ -77,14 +77,16 @@ WearableLite Wearable
 | product | string | 代号。 |
 | language4+ | string | 系统语言。 |
 | region4+ | string | 系统地区。 |
-| windowWidth | number | 可使用的窗口宽度。 |
-| windowHeight | number | 可使用的窗口高度。 |
-| screenDensity4+ | number | 屏幕密度。 |
+| windowWidth | number | 可使用的窗口宽度，单位px。 |
+| windowHeight | number | 可使用的窗口高度，单位px。 |
+| screenDensity4+ | number | 屏幕密度，单位dpi。 |
 | screenShape4+ | string | 屏幕形状。可取值：  - rect：方形屏；  - circle：圆形屏。 |
 | apiVersion4+ | number | 系统API版本号。 |
 | deviceType4+ | string | 设备类型。 |
 
 **示例：**
+
+ArkTS示例：
 
 ```
 1. export default class Page {
@@ -107,4 +109,82 @@ WearableLite Wearable
 18. }
 19. }
 20. }
+```
+
+JS示例：
+
+```
+1. <div class="container">
+2. <text class="title">Device Information</text>
+3. <input type="button" value="Get Device Brand" class="button" onclick="getDeviceInfo"></input>
+4. <text class="info">{{brandInfo}}</text>
+5. </div>
+```
+
+```
+1. /*xxx.css*/
+2. .container {
+3. display: flex;
+4. flex-direction: column;
+5. align-items: center;
+6. justify-content: center;
+7. left: 0px;
+8. top: 0px;
+9. width: 100%;
+10. height: 100%;
+11. }
+
+13. .title {
+14. font-size: 40px;
+15. text-align: center;
+16. width: 100%;
+17. height: 80px;
+18. margin-bottom: 50px;
+19. }
+
+21. .button {
+22. font-size: 30px;
+23. text-align: center;
+24. width: 240px;
+25. height: 80px;
+26. margin: 20px;
+27. }
+
+29. .info {
+30. font-size: 28px;
+31. text-align: center;
+32. width: 100%;
+33. height: 60px;
+34. margin-top: 50px;
+35. color: #007dff;
+36. }
+```
+
+```
+1. //xxx.js
+2. import device from '@system.device';
+
+4. export default {
+5. data: {
+6. brandInfo: 'Click the button to get device brand'
+7. },
+
+9. getDeviceInfo() {
+10. try {
+11. device.getInfo({
+12. success: (data) => {
+13. console.info('Device information obtained successfully. Device brand:' + data.brand);
+14. this.brandInfo = 'Device brand: ' + data.brand;
+15. },
+16. fail: (data, code) => {
+17. console.info('Failed to obtain device information. Error code:' + code + '; Error information: ' + data);
+18. this.brandInfo = 'Failed to obtain, error code: ' + code;
+19. },
+20. });
+21. } catch (error) {
+22. console.error('Device information API is not supported');
+23. this.brandInfo = 'Current device does not support this API';
+24. }
+25. }
+26. }
 ```

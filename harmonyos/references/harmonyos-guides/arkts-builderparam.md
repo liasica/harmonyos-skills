@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-builder
 title: @BuilderParam装饰器：引用@Builder函数
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式基本语法 > 组件扩展 > @BuilderParam装饰器：引用@Builder函数
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:38:58+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:661c319f99e1e0c08ce8452debefc5b1789d0e7223cdd827abdc99701f94ed87
+scraped_at: 2026-04-29T13:27:07+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:8c7b761a7c74b2e6e69a04e6eed206ac23fbc9e10d510b6a36054903641ed2d0
 ---
 
 当开发者创建[自定义组件](arkts-create-custom-components.md)并需要为其添加特定功能（例如[页面跳转](../harmonyos-references/ts-basic-components-navigation.md)功能）时，如果直接在组件内嵌入事件方法，会导致所有该自定义组件的实例都增加此功能。为了解决此问题，ArkUI引入了@BuilderParam装饰器。@BuilderParam用于装饰指向@Builder方法的变量，开发者可以在初始化自定义组件时，使用不同的方式（如参数修改、尾随闭包、借用箭头函数等）对@BuilderParam装饰的自定义构建函数进行传参赋值。在自定义组件内部，通过调用@BuilderParam为组件增加特定功能。
@@ -78,17 +78,18 @@ content_hash: sha256:661c319f99e1e0c08ce8452debefc5b1789d0e7223cdd827abdc99701f9
 
   24. build() {
   25. Column() {
-  26. Child({ customBuilderParam: this.componentBuilder })
-  27. }
+  26. // 使用父组件自定义构建函数初始化子组件@BuilderParam装饰的方法
+  27. Child({ customBuilderParam: this.componentBuilder })
   28. }
   29. }
+  30. }
   ```
 
   [BuilderParamInitMethodDemo01.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateRestock/entry/src/main/ets/pages/builderParam/BuilderParamInitMethodDemo01.ets#L15-L45)
 
 **图1** 示例效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/24Hs1cQeSJWzGKZOJD2L2A/zh-cn_image_0000002552957578.png?HW-CC-KV=V1&HW-CC-Date=20260427T233856Z&HW-CC-Expire=86400&HW-CC-Sign=4F25DA313096DB612070EC94FCC71AF70D9C92BB3C3F090637740DC91F5C34B2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/rObRRoz0SXqSsRBL2CsrQw/zh-cn_image_0000002589323937.png?HW-CC-KV=V1&HW-CC-Date=20260429T052705Z&HW-CC-Expire=86400&HW-CC-Sign=5EB0FA7B1C036E42CE0174A64C63434441ECFDD363B699E9BCB930BE73869A7D)
 
 * 需要注意this的指向。
 
@@ -150,7 +151,7 @@ content_hash: sha256:661c319f99e1e0c08ce8452debefc5b1789d0e7223cdd827abdc99701f9
 
 **图2** 示例效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/-3G-og0ITY-Vcm4YJoIyyA/zh-cn_image_0000002583477579.png?HW-CC-KV=V1&HW-CC-Date=20260427T233856Z&HW-CC-Expire=86400&HW-CC-Sign=DB072F654E26FC82A9DE96756D0A74E53C5FC6AD73B8404C74DB41E365FF9CAE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/6GcKpz-uSGK2zKUhsJQ4Bw/zh-cn_image_0000002589243877.png?HW-CC-KV=V1&HW-CC-Date=20260429T052705Z&HW-CC-Expire=86400&HW-CC-Sign=6C1DF09D0A36B2745D48292CB0582951C63823B0F93FBD22E1CA2756884B22B5)
 
 ## 限制条件
 
@@ -221,7 +222,7 @@ content_hash: sha256:661c319f99e1e0c08ce8452debefc5b1789d0e7223cdd827abdc99701f9
 
 **图3** 示例效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/4xAZ9bdVQZOlOLTnH9_L-Q/zh-cn_image_0000002552797930.png?HW-CC-KV=V1&HW-CC-Date=20260427T233856Z&HW-CC-Expire=86400&HW-CC-Sign=AA8B5F0010758F92C94F4B1476907CFE67AB10EA3CD2062D3969BBEB6A3021B3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/_Hx8_OlPS3SoWZJLgXVH6Q/zh-cn_image_0000002558764070.png?HW-CC-KV=V1&HW-CC-Date=20260429T052705Z&HW-CC-Expire=86400&HW-CC-Sign=63CD1950241C0C15E679946425ACA15FCFBC10357AF0DDDF95AE75FE4AC16FE0)
 
 ### 尾随闭包初始化组件
 
@@ -293,7 +294,7 @@ content_hash: sha256:661c319f99e1e0c08ce8452debefc5b1789d0e7223cdd827abdc99701f9
 
 **图4** 示例效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/eaz9PeXtTpWOWbvnD-spuA/zh-cn_image_0000002583437625.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233856Z&HW-CC-Expire=86400&HW-CC-Sign=507AC375E883E15475043194010C614541BF12D5AFEF64A3CC70A7E7805F0829)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/A00_3C04QTmQCpZv3f03EQ/zh-cn_image_0000002558604414.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052705Z&HW-CC-Expire=86400&HW-CC-Sign=8F5005170DABBFB0A360A1ACE57E4B27E1D27B523EBCA4B3AF76F9625EB624D4)
 
 可以使用全局或局部@Builder通过尾随闭包的形式对[@ComponentV2](arkts-create-custom-components.md#componentv2)装饰的自定义组件中的@BuilderParam装饰的方法进行初始化。
 
@@ -472,17 +473,18 @@ content_hash: sha256:661c319f99e1e0c08ce8452debefc5b1789d0e7223cdd827abdc99701f9
 9. @State pathStack: NavPathStack = new NavPathStack();
 
 11. build() {
-12. NavDestination() {
-13. Column() {
-14. Text(this.message)
-15. .fontSize(20)
-16. .fontWeight(FontWeight.Bold)
-17. }
+12. // 用于跳转的子页面
+13. NavDestination() {
+14. Column() {
+15. Text(this.message)
+16. .fontSize(20)
+17. .fontWeight(FontWeight.Bold)
 18. }
-19. .height('100%')
-20. .width('100%')
-21. }
+19. }
+20. .height('100%')
+21. .width('100%')
 22. }
+23. }
 ```
 
 [helloworld.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateRestock/entry/src/main/ets/pages/helloworld.ets#L15-L38)
@@ -518,7 +520,7 @@ content_hash: sha256:661c319f99e1e0c08ce8452debefc5b1789d0e7223cdd827abdc99701f9
 
 **图5** 示例效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/YUCdvNwmQBq7rbJd3cihyw/zh-cn_image_0000002552957580.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233856Z&HW-CC-Expire=86400&HW-CC-Sign=0FA40A6604A6A1648658007D0CA0C186E350C935C41261CFFB5D8A574FB9B16B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/wz_bm_OxRiGf0t8Rqi6iqA/zh-cn_image_0000002589323939.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052705Z&HW-CC-Expire=86400&HW-CC-Sign=972A52B9C75D99A688D0B5699A5054B4D923506952CD5BE4A5E273B1AA068052)
 
 ### 使用全局和局部@Builder初始化@BuilderParam
 
@@ -606,7 +608,7 @@ content_hash: sha256:661c319f99e1e0c08ce8452debefc5b1789d0e7223cdd827abdc99701f9
 
 **图6** 示例效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/XqCpbZtWSfqvVgFxW7VHjg/zh-cn_image_0000002583477581.png?HW-CC-KV=V1&HW-CC-Date=20260427T233856Z&HW-CC-Expire=86400&HW-CC-Sign=3FAFFD25257BA7049198B923990BF0D6EFB44150EDD1C9DDD1D1463099275FBB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/Cr01zopfQiGy1p8nV917zw/zh-cn_image_0000002589243879.png?HW-CC-KV=V1&HW-CC-Date=20260429T052705Z&HW-CC-Expire=86400&HW-CC-Sign=EEF3E0DF2E71D1AD321D2DD6701D81F000E315F138A0B52C9762B688E51B8B0C)
 
 ### 在@ComponentV2装饰的自定义组件中使用@BuilderParam
 
@@ -694,7 +696,7 @@ content_hash: sha256:661c319f99e1e0c08ce8452debefc5b1789d0e7223cdd827abdc99701f9
 
 **图7** 示例效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/1E1y9OsaQiKg8BpnfyqDbA/zh-cn_image_0000002552797932.png?HW-CC-KV=V1&HW-CC-Date=20260427T233856Z&HW-CC-Expire=86400&HW-CC-Sign=78881118B526DE6012E8B656DA89A1704B59307F4279603158666529E8272C0F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/rODHaOCpRrasEudUk7Wq7w/zh-cn_image_0000002558764072.png?HW-CC-KV=V1&HW-CC-Date=20260429T052705Z&HW-CC-Expire=86400&HW-CC-Sign=EA6022553565B47E29153B45451E7D711061657E459837A6E0C2D5590FE1A669)
 
 ## 常见问题
 
@@ -859,21 +861,22 @@ content_hash: sha256:661c319f99e1e0c08ce8452debefc5b1789d0e7223cdd827abdc99701f9
 8. struct CustomBuilderDemo {
 9. build() {
 10. Column() {
-11. ChildPage({ childBuilder: globalBuilder })
-12. }
+11. // childBuilder被@Require装饰，必须从外部初始化
+12. ChildPage({ childBuilder: globalBuilder })
 13. }
 14. }
+15. }
 
-16. @Component
-17. struct ChildPage {
-18. @Require @BuilderParam childBuilder: () => void = globalBuilder;
+17. @Component
+18. struct ChildPage {
+19. @Require @BuilderParam childBuilder: () => void = globalBuilder;
 
-20. build() {
-21. Column() {
-22. this.childBuilder()
-23. }
+21. build() {
+22. Column() {
+23. this.childBuilder()
 24. }
 25. }
+26. }
 ```
 
 [BuilderParamProblemCombinedPositive.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateRestock/entry/src/main/ets/pages/builderParam/BuilderParamProblemCombinedPositive.ets#L15-L41)
@@ -930,21 +933,22 @@ content_hash: sha256:661c319f99e1e0c08ce8452debefc5b1789d0e7223cdd827abdc99701f9
 8. struct CustomBuilderDemo {
 9. build() {
 10. Column() {
-11. ChildPage({ childBuilder: globalBuilder })
-12. }
+11. // 正确写法
+12. ChildPage({ childBuilder: globalBuilder })
 13. }
 14. }
+15. }
 
-16. @Component
-17. struct ChildPage {
-18. @BuilderParam childBuilder: () => void = globalBuilder;
+17. @Component
+18. struct ChildPage {
+19. @BuilderParam childBuilder: () => void = globalBuilder;
 
-20. build() {
-21. Column() {
-22. this.childBuilder()
-23. }
+21. build() {
+22. Column() {
+23. this.childBuilder()
 24. }
 25. }
+26. }
 ```
 
 [BuilderParamProblemMustBuilderPositive.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateRestock/entry/src/main/ets/pages/builderParam/BuilderParamProblemMustBuilderPositive.ets#L15-L41)

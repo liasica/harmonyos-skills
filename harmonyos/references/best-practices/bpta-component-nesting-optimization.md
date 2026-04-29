@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-component-
 title: 组件嵌套优化
 breadcrumb: 最佳实践 > 性能 > 性能场景优化案例 > 界面渲染性能优化 > 组件嵌套优化
 category: best-practices
-scraped_at: 2026-04-28T08:22:28+08:00
+scraped_at: 2026-04-29T14:13:29+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:50e95b59522f9b13b5be7508e597d0b3df89be60e1609acadb01c126094d2dfb
+content_hash: sha256:bb34eb08b8fac3b83eab5c35a4fbfce2140fdb82a918acab4ef074f051076216
 ---
 
 本文通过原理概念、优化场景和实践数据对比三个角度，详细介绍了组件嵌套的优化，着重从优化场景角度为开发者阐明组件嵌套的优化场景以及优化策略。
@@ -16,7 +16,7 @@ content_hash: sha256:50e95b59522f9b13b5be7508e597d0b3df89be60e1609acadb01c126094
 
 ### ArkUI框架执行流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/E4ZlOXJ0QVyDIbkWFrCIaQ/zh-cn_image_0000002427576872.png?HW-CC-KV=V1&HW-CC-Date=20260428T002227Z&HW-CC-Expire=86400&HW-CC-Sign=001B7182E6886653687BE9B424AF0CEE68039AB2DB8863D893ED1133942F1F49 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/E4ZlOXJ0QVyDIbkWFrCIaQ/zh-cn_image_0000002427576872.png?HW-CC-KV=V1&HW-CC-Date=20260429T061328Z&HW-CC-Expire=86400&HW-CC-Sign=447CAACABEA72B3DD5DE34D5E28EF15E8BB89FE14A0DAD3A586D2E8B3893BAAE "点击放大")
 
 如上图所示，可以看到ArkUI框架的执行顺序：
 
@@ -26,7 +26,7 @@ content_hash: sha256:50e95b59522f9b13b5be7508e597d0b3df89be60e1609acadb01c126094
 
 ### 自定义组件的生命周期
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/BVH4NDKCSBSmCDXIQl0hjg/zh-cn_image_0000002229451945.png?HW-CC-KV=V1&HW-CC-Date=20260428T002227Z&HW-CC-Expire=86400&HW-CC-Sign=0F156E595EC4F8C934126E3856441B49D31671199043177636489BFD4C8185F4 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/BVH4NDKCSBSmCDXIQl0hjg/zh-cn_image_0000002229451945.png?HW-CC-KV=V1&HW-CC-Date=20260429T061328Z&HW-CC-Expire=86400&HW-CC-Sign=48ADC9956A692F0F6B1DFBFFB245FC48B0FC5D536BFA8B79A5BA1997E54E78C7 "点击放大")
 
 如上图所示，自定义组件创建完成之后，在build函数执行之前，将先执行aboutToAppear()生命周期回调函数。执行完build函数后，还会有一些事件监听函数，例如可以使用onPageShow监听页面显示事件，onPageHide函数可以监听页面隐藏事件。最终在自定义组件析构销毁前执行aboutToDisappear函数。
 
@@ -107,7 +107,7 @@ content_hash: sha256:50e95b59522f9b13b5be7508e597d0b3df89be60e1609acadb01c126094
 通过DevEco Studio内置ArkUI Inspector工具，查看组件树结构可以看到，相比使用@Builder方法，组件树多一个自定义组件节点，所以[优先使用@Builder方法代替自定义组件](bpta-component-nesting-optimization.md#section1012953161217)减少了自定义组件节点数量。而给自定义组件添加属性，会在自定义组件外部会创建一个“\_\_Common\_\_”类型的节点，如下图所示。为了避免这类“\_\_Common\_\_”节点的创建，可以将自定义组件的属性移至内部，或者动态设置自定义组件的属性。减少自定义组件产生多余节点，可以使总节点数量降低，从而提升性能。
 
 **图1** 自定义组件树变化示意图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/whD4P4LoRUCdpYQVY3pzLA/zh-cn_image_0000002229337457.png?HW-CC-KV=V1&HW-CC-Date=20260428T002227Z&HW-CC-Expire=86400&HW-CC-Sign=EA1E92AEB0D61A7AFEC34DAECFE7C018B9515F6D69CE41AF1BDB187A358C3862 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/whD4P4LoRUCdpYQVY3pzLA/zh-cn_image_0000002229337457.png?HW-CC-KV=V1&HW-CC-Date=20260429T061328Z&HW-CC-Expire=86400&HW-CC-Sign=2FDE68E3F0E0CC13F6B905CF132A581101A62431E25D446AC5E8426AED948010 "点击放大")
 
 **将自定义组件的属性移至内部**
 
@@ -268,7 +268,7 @@ ArkUI提供了[动态属性设置](../harmonyos-references/ts-universal-attribut
 在实现文本浮层、按压遮罩或颜色叠加等场景时，通常会采用Stack布局嵌套组件的方式。实际上有些场景直接使用组件属性或借助系统API的能力就能实现，例如使用[overlay](../harmonyos-references/ts-universal-attributes-overlay.md#overlay)属性可以实现浮层场景，使用[ColorMetrics](../harmonyos-references/js-apis-arkui-graphics.md#colormetrics12)可以实现颜色叠加效果。直接使用组件属性的方式可以减少Stack布局嵌套组件的使用，从而减少嵌套组件带来的节点数。以文本浮层场景为例，如下图所示，使用overlay属性实现文本浮层比Stack组件嵌套方式少了一层Stack节点。开发这一类场景时，推荐优先使用组件属性代替嵌套组件。
 
 **图2** 使用组件属性代替嵌套组件示意图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/UPq0ipapSKWuftM8WghsXw/zh-cn_image_0000002194011652.png?HW-CC-KV=V1&HW-CC-Date=20260428T002227Z&HW-CC-Expire=86400&HW-CC-Sign=4AC1767BEF30E2795BF5CF87DCB989A9D5E112FEAF5BD18F76596C544173248A "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/UPq0ipapSKWuftM8WghsXw/zh-cn_image_0000002194011652.png?HW-CC-KV=V1&HW-CC-Date=20260429T061328Z&HW-CC-Expire=86400&HW-CC-Sign=1B5FDF8C0EA4EBE08106EBE0E6E058A932D5FF919BFBF9F41E69AAD482AE7F96 "点击放大")
 
 **使用overlay属性实现浮层**
 

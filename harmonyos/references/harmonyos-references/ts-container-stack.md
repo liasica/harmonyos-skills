@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: Stack
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 行列与堆叠 > Stack
 category: harmonyos-references
-scraped_at: 2026-04-28T08:01:25+08:00
-doc_updated_at: 2026-03-30
-content_hash: sha256:7ee34adc86a63ae73074377c518ed6c3fe865e55206ddd5fd15eaf4cb37f8227
+scraped_at: 2026-04-29T13:51:41+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:799df296fa866c390be8eb3fc1def60103d6d7f73cb495e5932be61205364de2
 ---
 
 堆叠容器，子组件按照顺序依次入栈，后一个子组件覆盖前一个子组件。
@@ -27,6 +27,8 @@ PhonePC/2in1TabletTVWearable
 
 Stack(options?: StackOptions)
 
+堆叠容器，子组件按照顺序依次入栈，后一个子组件覆盖前一个子组件。
+
 说明
 
 过多的组件嵌套会导致性能劣化。在部分场景中，直接使用组件属性或借助系统API的能力可以替代层叠容器的效果，减少了嵌套组件数进而优化性能。最佳实践请参考[组件嵌套优化-优先使用组件属性代替嵌套组件](../best-practices/bpta-component-nesting-optimization.md#section78181114123811)。
@@ -46,6 +48,8 @@ Stack(options?: StackOptions)
 ## StackOptions18+对象说明
 
 PhonePC/2in1TabletTVWearable
+
+设置堆叠容器的子组件对齐方式。
 
 说明
 
@@ -113,4 +117,4 @@ Stack的alignContent设置为Alignment.Bottom条件下子组件显示效果。
 11. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/9-2YJThtQ4icRBRYsZqkpg/zh-cn_image_0000002583439641.png?HW-CC-KV=V1&HW-CC-Date=20260428T000124Z&HW-CC-Expire=86400&HW-CC-Sign=AFF92D45FB8A1E6577884CF89F5E990DB5EC84C26AA0A3C2D566C592F2A05E31)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/v6kTTo7eR1WFix3LhWohNw/zh-cn_image_0000002589245927.png?HW-CC-KV=V1&HW-CC-Date=20260429T055139Z&HW-CC-Expire=86400&HW-CC-Sign=9A53DD2F7B2AACD3A6EE4CE3C06E4919650A444D5611748C9EBD99E71505A1F1)

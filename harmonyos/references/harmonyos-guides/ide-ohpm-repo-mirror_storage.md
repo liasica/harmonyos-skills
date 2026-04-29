@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-repo
 title: ohpm-repo mirror_storage
 breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 相关命令 > ohpm-repo mirror_storage
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:54:42+08:00
+scraped_at: 2026-04-29T13:44:41+08:00
 doc_updated_at: 2026-01-27
-content_hash: sha256:bdee34e7b07c2ce0c1b29f5111751de5f4235746697d2574fd682438b6ec0dfe
+content_hash: sha256:a7a0a3dacf67599a053892b5d1dd8ce489c13226dbfb4e83561aa1ffbb4f4d7a
 ---
 
 同步sftp存储的包。
@@ -71,4 +71,4 @@ content_hash: sha256:bdee34e7b07c2ce0c1b29f5111751de5f4235746697d2574fd682438b6e
 
 结果示例：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/MQ9wcex3RSuklU6OunIhqw/zh-cn_image_0000002530751296.png?HW-CC-KV=V1&HW-CC-Date=20260427T235441Z&HW-CC-Expire=86400&HW-CC-Sign=8688336BC454165D062F60E424A3E5D5D70D9395E03116CEF2B831D689D916CE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/-FVwbsUOSJmNwh1qGEiqhA/zh-cn_image_0000002530751296.png?HW-CC-KV=V1&HW-CC-Date=20260429T054440Z&HW-CC-Expire=86400&HW-CC-Sign=C720E2A55026B6BBAF6C7AE3923B9ECB030633D5532DB95334023C29FC3B2660)

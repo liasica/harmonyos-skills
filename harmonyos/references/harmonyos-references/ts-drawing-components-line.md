@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-drawin
 title: Line
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 图形绘制 > Line
 category: harmonyos-references
-scraped_at: 2026-04-28T08:02:12+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:c8191fede5b9a4d1a84dc2a504a94cab91502f5c2d0d8a3058b007c958c4bea9
+scraped_at: 2026-04-29T13:52:36+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:2200d22d7009146ef1d71672fca4fee77322531392cc9337b17d363a35d625c1
 ---
 
 直线绘制组件。
@@ -27,6 +27,8 @@ PhonePC/2in1TabletTVWearable
 PhonePC/2in1TabletTVWearable
 
 Line(options?: LineOptions)
+
+用于绘制直线的构造函数。
 
 **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
 
@@ -385,7 +387,7 @@ PhonePC/2in1TabletTVWearable
 47. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/QhqNykRiSuGRn7SuADJq6w/zh-cn_image_0000002583480007.png?HW-CC-KV=V1&HW-CC-Date=20260428T000209Z&HW-CC-Expire=86400&HW-CC-Sign=3B919839CA7A2913233F722DDCA058ACADBB442EC09E108A75BE20C504BCA85F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/MLgmk-MZQfmv3RZBGy3Fsw/zh-cn_image_0000002558606872.png?HW-CC-KV=V1&HW-CC-Date=20260429T055234Z&HW-CC-Expire=86400&HW-CC-Sign=508079E144B25E2F1EF428A399526537935864B35D8075F6F8FAB7A022705639)
 
 ### 示例2（边框端点绘制）
 
@@ -434,7 +436,7 @@ PhonePC/2in1TabletTVWearable
 40. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/tCLaheNyS0aAKNeaS9B50A/zh-cn_image_0000002552800358.png?HW-CC-KV=V1&HW-CC-Date=20260428T000209Z&HW-CC-Expire=86400&HW-CC-Sign=D790F2D4C16C519DF12A61DE8931381C355D738650E3CD37361E8A2DB692331B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/c-HTsZpGRkmzt7w0iQqOzA/zh-cn_image_0000002589326399.png?HW-CC-KV=V1&HW-CC-Date=20260429T055234Z&HW-CC-Expire=86400&HW-CC-Sign=B4F340889E4DCB374781B70F16A2F97D0655E92C992FC15A0E9A762A9C5619B1)
 
 ### 示例3（边框间隙绘制）
 
@@ -495,7 +497,7 @@ PhonePC/2in1TabletTVWearable
 52. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/7nlTQ0yCQ9upMFhR53sqmw/zh-cn_image_0000002583440053.png?HW-CC-KV=V1&HW-CC-Date=20260428T000209Z&HW-CC-Expire=86400&HW-CC-Sign=0CA04EC5B8467AC34C5DC3A1B4AFA91B3516E2B94CD83D8252EE0C8884B1A57D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/Z9riZmNiTZii4T2V1b-ycQ/zh-cn_image_0000002589246341.png?HW-CC-KV=V1&HW-CC-Date=20260429T055234Z&HW-CC-Expire=86400&HW-CC-Sign=A250F929FC44F82B7545D595905F7A8B812FA9C36B6006A34E0D1B460B80AB25)
 
 ### 示例4（宽和高使用不同参数类型绘制直线）
 
@@ -537,7 +539,7 @@ width、height属性分别使用不同的长度类型绘制直线。
 33. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/dhoInNQ-Q3abZwJvyprzOg/zh-cn_image_0000002552960008.png?HW-CC-KV=V1&HW-CC-Date=20260428T000209Z&HW-CC-Expire=86400&HW-CC-Sign=9D7C55A91E6FDDB9B352151E62C940308075DA4F10FFDE5C81853A0C96A3620B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/BLgBG2njT6GdeMRWtDgm1g/zh-cn_image_0000002558766534.png?HW-CC-KV=V1&HW-CC-Date=20260429T055234Z&HW-CC-Expire=86400&HW-CC-Sign=EFE2B7675D993A7C6A86A511A579B6B8FC80542700CA90A8503AF081AD1DBC4E)
 
 ### 示例5（使用attributeModifier动态设置Line组件的属性）
 
@@ -575,4 +577,4 @@ width、height属性分别使用不同的长度类型绘制直线。
 29. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/LP-Djz6fSEuLJaO21Q-qUA/zh-cn_image_0000002583480009.png?HW-CC-KV=V1&HW-CC-Date=20260428T000209Z&HW-CC-Expire=86400&HW-CC-Sign=A6CBDBCA005C636392499976A16BA844B62CECA1648F86C9456ECE7E02D0BBD3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/A20RYVjLR9qvfNddyVnccA/zh-cn_image_0000002558606874.png?HW-CC-KV=V1&HW-CC-Date=20260429T055234Z&HW-CC-Expire=86400&HW-CC-Sign=7E3135FF21AE7438F59D4786747AB06DEB9E10541D869612D3A026B8DDC9FEEF)

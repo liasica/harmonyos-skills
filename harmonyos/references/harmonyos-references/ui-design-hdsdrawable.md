@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design
 title: hdsDrawable
 breadcrumb: API参考 > 应用框架 > UI Design Kit（UI设计套件） > ArkTS API > hdsDrawable
 category: harmonyos-references
-scraped_at: 2026-04-28T08:06:38+08:00
+scraped_at: 2026-04-29T13:57:11+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:b03de2ba1fe4380fa044438fb90381a53244cfc813ae052929469e10ce99ee0c
+content_hash: sha256:31b2ad511f8b9b3ce0ffa49614953c4f26681e2dc202e752e206d5ef496d7dd2
 ---
 
 本模块提供图标处理能力，包括对前后景合成、剪切、缩放、描边处理，支持分层图标和单层图标处理。
@@ -95,7 +95,7 @@ LayeredDrawableDescriptor对象：判断的方法是打开对应的Symbol json�
 21. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/T7KLSrMOT2-ulSLtBPn1jg/zh-cn_image_0000002552800868.png?HW-CC-KV=V1&HW-CC-Date=20260428T000637Z&HW-CC-Expire=86400&HW-CC-Sign=227A41C3FC8DF614E70718C8BED7EFF850E57FBD0E0B9EEAE1FB264A3800AC00)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/SAns584nRwm8bf_zbrTjcQ/zh-cn_image_0000002589246851.png?HW-CC-KV=V1&HW-CC-Date=20260429T055708Z&HW-CC-Expire=86400&HW-CC-Sign=017DC1751F9ED1C584FA77013B0C19980A18F3F876F1D79B67295680E7DF8118)
 
 ## hdsDrawable.getHdsLayeredIconAsync
 
@@ -168,7 +168,7 @@ getHdsLayeredIconAsync(bundleName: string, layeredDrawableDescriptor: LayeredDra
 27. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/LpEChHyNQU2dujX3KHriSw/zh-cn_image_0000002552800868.png?HW-CC-KV=V1&HW-CC-Date=20260428T000637Z&HW-CC-Expire=86400&HW-CC-Sign=C995FC73671053F4ADF05982E652E85D77966D97834EF9485FFF97224934F3A1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/KMj_Y9q7RHyX58urdmctGQ/zh-cn_image_0000002589246851.png?HW-CC-KV=V1&HW-CC-Date=20260429T055708Z&HW-CC-Expire=86400&HW-CC-Sign=4ECF8B0DE1C4A4ECBA09E3F6E5D472FB545F12E9AF388B1F25F351A716374220)
 
 ## hdsDrawable.getHdsIcon
 
@@ -238,7 +238,7 @@ getHdsIcon(bundleName: string, pixelMap: image.PixelMap, size: number, mask: ima
 23. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/RSdY53iTQL-TFsTkdPMaHg/zh-cn_image_0000002583440563.png?HW-CC-KV=V1&HW-CC-Date=20260428T000637Z&HW-CC-Expire=86400&HW-CC-Sign=F045669CF521B1A272B4CD23B632431AF129F401B851FA2F3FE416283E7CA48D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/3CQpzB0uT0CGRCoS7UGT3A/zh-cn_image_0000002558767044.png?HW-CC-KV=V1&HW-CC-Date=20260429T055708Z&HW-CC-Expire=86400&HW-CC-Sign=E94D50D53303CBD627B1E348249B208DC40D5B1581FA770A5F0EE3447AF0ADBD)
 
 ## hdsDrawable.getHdsIconAsync
 
@@ -315,7 +315,7 @@ getHdsIconAsync(bundleName: string, pixelMap: image.PixelMap, size: number, mask
 30. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/osMSBqm0TumZZkVKJcePkQ/zh-cn_image_0000002583440563.png?HW-CC-KV=V1&HW-CC-Date=20260428T000637Z&HW-CC-Expire=86400&HW-CC-Sign=6EDD53C9EDD159B8420E0C8F6D57F2F26D5E40AF2E295AE44EE085128EFCCBB5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/tFCu4izRR4SoEdEBvLympA/zh-cn_image_0000002558767044.png?HW-CC-KV=V1&HW-CC-Date=20260429T055708Z&HW-CC-Expire=86400&HW-CC-Sign=C3AC12C6ABA69DCC450D0C5478E30DA82A8CE5A1FE8673225B962FBD3C5F1E28)
 
 ## hdsDrawable.getHdsLayeredIcons
 
@@ -400,7 +400,7 @@ getHdsLayeredIcons(icons: Array<LayeredIcon>, options: Options): Promise<Array<P
 40. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/XUx0A-R3TjKtVR1znckarQ/zh-cn_image_0000002552800868.png?HW-CC-KV=V1&HW-CC-Date=20260428T000637Z&HW-CC-Expire=86400&HW-CC-Sign=B52CA241A9A3F211C76B28C65787C6CC0747CDA87AB893F9F4AEC49DC29CA8AD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/Vqp-ShCrSaOqdZjhurEFLQ/zh-cn_image_0000002589246851.png?HW-CC-KV=V1&HW-CC-Date=20260429T055708Z&HW-CC-Expire=86400&HW-CC-Sign=CD5E40ADD6DC2A8E09E472636A98BF487F517DE32333BEEA6C7058EB5CC5096E)
 
 ## hdsDrawable.getHdsIcons
 
@@ -489,7 +489,7 @@ getHdsIcons(icons: Array<Icon>, mask: image.PixelMap, options: Options): Promise
 43. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/PLvR0osUSJO2bOHH5Xn8FQ/zh-cn_image_0000002583440563.png?HW-CC-KV=V1&HW-CC-Date=20260428T000637Z&HW-CC-Expire=86400&HW-CC-Sign=9773A810F20EAF87DA89F89C8230DC3A49183FA1462B8A0612E330F1CC31DE97)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/4pzaJyU0QBSGh9kGJ7-N0g/zh-cn_image_0000002558767044.png?HW-CC-KV=V1&HW-CC-Date=20260429T055708Z&HW-CC-Expire=86400&HW-CC-Sign=DF9A7110CA5FF5FC6C7EAC244CC0E33E8A9D66B121E575676623783AB5D9E396)
 
 ## LayeredIcon
 

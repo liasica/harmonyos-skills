@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-i
 title: SceneType
 breadcrumb: API参考 > 图形 > ArkGraphics 3D（方舟3D图形） > ArkTS API > graphics3d > SceneType
 category: harmonyos-references
-scraped_at: 2026-04-28T08:15:37+08:00
+scraped_at: 2026-04-29T14:06:13+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:ce96ebeb12e78b62c88da61f0c46d863829b1fbaa951206530267745cc9a0eaf
+content_hash: sha256:0bd41bad6ed412d3ee0f63b615f57b1a5a5b5dcd5c2cc7cd79afabc7db2595b8
 ---
 
 本模块提供3D图形中常用的数据类型。
@@ -250,7 +250,7 @@ PhonePC/2in1TabletTVWearable
 
 以radius=0.5，height=1，segmentCount=20为例，生成圆柱体的网格以及UV布局如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/-gElpDz7QAizBwvEZkMQEQ/zh-cn_image_0000002583480899.png?HW-CC-KV=V1&HW-CC-Date=20260428T001535Z&HW-CC-Expire=86400&HW-CC-Sign=CAF7DF0687773E8FCF30E7DEB519F48384E9BC9CCA9419398AB0A67D1AF7BC8C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/Nd5krR9cSI25YWHyLGUMWw/zh-cn_image_0000002589327293.png?HW-CC-KV=V1&HW-CC-Date=20260429T060612Z&HW-CC-Expire=86400&HW-CC-Sign=3D2F980118D31F45BCA6D05C86C50420F7722F29014AE93F870615DE628ACFEB)
 
 ## Mat4x423+
 

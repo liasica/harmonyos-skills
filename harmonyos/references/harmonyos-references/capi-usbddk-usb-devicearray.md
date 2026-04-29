@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-usbd
 title: Usb_DeviceArray
 breadcrumb: API参考 > 系统 > 硬件 > Driver Development Kit（驱动开发服务） > C API > 结构体 > Usb_DeviceArray
 category: harmonyos-references
-scraped_at: 2026-04-28T08:10:52+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:ea7a552b816a62d0fbdf37b0a422b1916bff238d2168458372eb102b182c9a65
+scraped_at: 2026-04-29T14:01:32+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:29de2aea97670b94980d867f818cdbb92fdc99e9d49b39b509c9c7b70defbdf2
 ---
 
 ```
@@ -16,7 +16,7 @@ content_hash: sha256:ea7a552b816a62d0fbdf37b0a422b1916bff238d2168458372eb102b182
 
 PC/2in1
 
-设备ID清单，用于存放OH\_Usb\_GetDevices接口获取到的设备ID列表和设备数量。
+设备ID清单，用于存放[OH\_Usb\_GetDevices](capi-usb-ddk-api-h.md#oh_usb_getdevices)接口获取到的设备ID列表和设备数量。
 
 **起始版本：** 18
 

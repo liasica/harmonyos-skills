@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/troubleshooti
 title: 状态变量改变不触发组件刷新问题常用定位方法
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理常见问题 > 状态变量改变不触发组件刷新问题常用定位方法
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:39:19+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:42a71135d9b4661bacb40b443a5b336455a912d7e1515577f5ba3717624c1e51
+scraped_at: 2026-04-29T13:27:33+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:aef95058233c61b5196ad2f7a006a59e57144533c659e2ea29475b948173403d
 ---
 
 在声明式UI编程框架中，状态管理的主要职责是：当状态变量改变时，触发其关联组件的刷新。所以在使用状态变量的过程中，最常见的问题就是组件不刷新。本文主要针对开发者在使用状态变量时遇到的不刷新问题，阐述以下两个方面。
@@ -45,13 +45,14 @@ content_hash: sha256:42a71135d9b4661bacb40b443a5b336455a912d7e1515577f5ba3717624
 7. Column() {
 8. Text(this.message)
 9. .onClick(() => {
-10. console.info(`message set before ${this.message}`);
-11. this.message = 'Welcome';
-12. console.info(`message set after ${this.message}`);
-13. })
-14. }
+10. // 日志打印：输出赋值前后this.message
+11. console.info(`message set before ${this.message}`);
+12. this.message = 'Welcome';
+13. console.info(`message set after ${this.message}`);
+14. })
 15. }
 16. }
+17. }
 ```
 
 观察日志输出this.message前后发生改变，日志输出如下：
@@ -135,7 +136,7 @@ content_hash: sha256:42a71135d9b4661bacb40b443a5b336455a912d7e1515577f5ba3717624
 * 日志提示inner is not observed object。
 * ArkUI State泳道没有状态变量变化的上报信息。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/FrKDD2VlQPuMhRpFYkOFqQ/zh-cn_image_0000002552957640.png?HW-CC-KV=V1&HW-CC-Date=20260427T233918Z&HW-CC-Expire=86400&HW-CC-Sign=070BF0955E835B83C8A322BBD836403143E5B7E12AB345C222FC2BF3D590DDB6)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/WJ5WLERtQpCyVSEq-0RbBw/zh-cn_image_0000002589323999.png?HW-CC-KV=V1&HW-CC-Date=20260429T052731Z&HW-CC-Expire=86400&HW-CC-Sign=5CA11F3B40B926BC608478A3B550459036F0C0494A46FF4247C70310B5AA501F)
 
 需要注意，并非所有的类对象都需要被@Observed装饰。[@State](arkts-state.md)装饰器会默认对复杂对象包装第一层代理，而对嵌套对象，则需要在内层对象的类声明上增加@Observed装饰。
 
@@ -198,7 +199,7 @@ content_hash: sha256:42a71135d9b4661bacb40b443a5b336455a912d7e1515577f5ba3717624
 * 日志提示inner is observed object。
 * ArkUI State泳道有状态变量变化的上报信息。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/-c9FHYUVQlKKr6BLxVP0bw/zh-cn_image_0000002583477641.png?HW-CC-KV=V1&HW-CC-Date=20260427T233918Z&HW-CC-Expire=86400&HW-CC-Sign=0C9FE3B5ABE7137F4381FB712E9ABC386A30A324609877D54BF6A9C4191F7694)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/vtpIZDc9RvGQpc8A-Y0q_g/zh-cn_image_0000002589243939.png?HW-CC-KV=V1&HW-CC-Date=20260429T052731Z&HW-CC-Expire=86400&HW-CC-Sign=4E44B2FDBC63ACF163F566CCB77BC6F8DB08A7D4A6074A307DABBA56B5DF646B)
 
 **状态管理V2**
 
@@ -261,7 +262,7 @@ content_hash: sha256:42a71135d9b4661bacb40b443a5b336455a912d7e1515577f5ba3717624
 
 基于上面的示例，观察ArkUI State泳道，有两次状态变量的变化上报，即this.info.value和this.info.numberArr。count不是@Trace装饰的，所以不会被观察到变化，也不会在Profiler上报状态变量的变化。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/sVYF6AqZR1qLqbFhxLkhxA/zh-cn_image_0000002552797992.png?HW-CC-KV=V1&HW-CC-Date=20260427T233918Z&HW-CC-Expire=86400&HW-CC-Sign=60D624BC688FDA2270A05E95B19B349D282183FA60694940CE9F1A7F95CFFA6E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/jHBHxfj5Rt6h4792tp7CgA/zh-cn_image_0000002558764132.png?HW-CC-KV=V1&HW-CC-Date=20260429T052731Z&HW-CC-Expire=86400&HW-CC-Sign=C38D95900933AD5CD84700386E7FCCF6BFC94DCFDA8C2E49BA1E28525C1D0A14)
 
 ### 第四步：数据源和被同步的对象是否有关联关系
 

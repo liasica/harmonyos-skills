@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-user-de
 title: 自定义声明式节点 (BuilderNode)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用自定义能力 > 自定义节点 > 自定义声明式节点 (BuilderNode)
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:40:05+08:00
+scraped_at: 2026-04-29T13:28:20+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:aa6616cdc82f7267656916db3b2e41eb281482d437f8b13fe7cac358bd42970c
+content_hash: sha256:58e784a8144998b72de734c3a0b02a1888c59977cc39843cf0c076480c7d14b9
 ---
 
 ## 概述
@@ -16,7 +16,7 @@ content_hash: sha256:aa6616cdc82f7267656916db3b2e41eb281482d437f8b13fe7cac358bd4
 
 此外，BuilderNode还提供了组件预创建的能力，能够自定义系统组件的创建开始的时间，在后续业务中实现动态挂载与显示。此功能尤其适用于初始化耗时较长的声明式组件，如[Web](../harmonyos-references/arkts-basic-components-web.md)、[XComponent](../harmonyos-references/ts-basic-components-xcomponent.md)等，通过预创建，可以有效减少初始化时间，优化组件加载效率。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/mrJtiMaSTMaJBRCTnJbGGw/zh-cn_image_0000002583438055.png?HW-CC-KV=V1&HW-CC-Date=20260427T234001Z&HW-CC-Expire=86400&HW-CC-Sign=0846FA690017062F038ACDC7D1E08C1BAC8D2FFEC1D6E22A9BE54ADB510752D8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/W0mp2jFWQsyGBZTVCi7Bdg/zh-cn_image_0000002558604844.png?HW-CC-KV=V1&HW-CC-Date=20260429T052817Z&HW-CC-Expire=86400&HW-CC-Sign=6D4144938300722706305E358E2BFB2B0D807029980B0D8B9D87755E2721A8DE)
 
 ## 基本概念
 
@@ -306,7 +306,7 @@ BuilderNode的RenderNode挂载其它RenderNode下时，需要明确定义[Render
 
 [WrappedBuilder.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/BuilderNode/entry/src/main/ets/pages/WrappedBuilder.ets#L15-L105)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/jHmPEnVKRDSKOvAuKDvCMw/zh-cn_image_0000002552958010.gif?HW-CC-KV=V1&HW-CC-Date=20260427T234001Z&HW-CC-Expire=86400&HW-CC-Sign=6F66EFBBF46B9E18548164AECC7183A3D5AD5D191B0AFE62831B65DD350DD92C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/dWECJ6efS72bTW9lrqjj3g/zh-cn_image_0000002589324369.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052817Z&HW-CC-Expire=86400&HW-CC-Sign=A9D9D64F46DE8CA394A42EC5DF38A4367926BC270849A4011598A8A1F125239C)
 
 ## 解除实体节点引用关系
 
@@ -411,7 +411,7 @@ BuilderNode中提供了[postTouchEvent](../harmonyos-references/js-apis-arkui-bu
 
 在以下示例中，Column和Row绑定了触摸事件，同时Column设置了[hitTestBehavior](../harmonyos-references/ts-universal-attributes-hit-test-behavior.md#hittestbehavior)属性为[HitTestMode.Transparent](../harmonyos-references/ts-appendix-enums.md#hittestmode9)。然而，由于生成了BuilderProxyNode，且BuilderProxyNode无法设置属性，因此在触摸Column时，Column的触摸测试无法传递到Row上。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/b625nj9GQTeGQ07-u0GWvg/zh-cn_image_0000002583478011.png?HW-CC-KV=V1&HW-CC-Date=20260427T234001Z&HW-CC-Expire=86400&HW-CC-Sign=C559558E66801A798351035431C7C995F4B56661C65BABA04DC5E7AF9A6B2800)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/8YcEbJ6zQkiiYkx7dYoMUw/zh-cn_image_0000002589244309.png?HW-CC-KV=V1&HW-CC-Date=20260429T052817Z&HW-CC-Expire=86400&HW-CC-Sign=9FEE5A0F5DD962B6877B53648DFF5C8AE5FE90C3E724B0F64A6BD5154CD8AD6F)
 
 ```
 1. import { BuilderNode, typeNode, NodeController, UIContext } from '@kit.ArkUI';
@@ -495,7 +495,7 @@ BuilderNode中提供了[postTouchEvent](../harmonyos-references/js-apis-arkui-bu
 
 在上述场景中，若要实现触摸测试的传递，可以使用一个容器组件包裹语法节点或自定义组件，以避免生成BuilderProxyNode，并将容器组件的hitTestBehavior设置为HitTestMode.Transparent，从而向兄弟节点传递触摸测试。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/gjLJO_x1Su-FwMf_3KGEjw/zh-cn_image_0000002552798362.png?HW-CC-KV=V1&HW-CC-Date=20260427T234001Z&HW-CC-Expire=86400&HW-CC-Sign=150F948874F98FC6021A1D28E0629DB66374D12392FF7A8843E292F8399DBFC8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/2CsVPuQlQe-lI7kY73JxYQ/zh-cn_image_0000002558764502.png?HW-CC-KV=V1&HW-CC-Date=20260429T052817Z&HW-CC-Expire=86400&HW-CC-Sign=DF6CCA080E5CDF32D1D354A833D80C980E1C81F4D830225DE2CF2DC8AC2E501A)
 
 ```
 1. import { BuilderNode, typeNode, NodeController, UIContext } from '@kit.ArkUI';
@@ -582,7 +582,7 @@ BuilderNode中提供了[postTouchEvent](../harmonyos-references/js-apis-arkui-bu
 
 此外，对于自定义组件，可以直接设置属性，此时将额外生成节点\_\_Common\_\_，自定义组件的属性将挂载于\_\_Common\_\_上，同样能够实现上述效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/Z9Raf0sDQgGuIipVW3v07A/zh-cn_image_0000002583438057.png?HW-CC-KV=V1&HW-CC-Date=20260427T234001Z&HW-CC-Expire=86400&HW-CC-Sign=9D63AB3825481279AEF290D3A2CC7D1FB4F08EE764E12F028C6DD89DAF94E962)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/JplKQ4zVSf6id_W06TQE8g/zh-cn_image_0000002558604846.png?HW-CC-KV=V1&HW-CC-Date=20260429T052817Z&HW-CC-Expire=86400&HW-CC-Sign=914016B2DF6511870A1A7FF274C66F86A032C79A8D675BE2337FAED898032945)
 
 ```
 1. import { BuilderNode, typeNode, NodeController, UIContext } from '@kit.ArkUI';
@@ -670,7 +670,7 @@ BuilderNode中提供了[postTouchEvent](../harmonyos-references/js-apis-arkui-bu
 
 以下面的Demo为例，被复用的自定义组件ReusableChildComponent可以传递复用和回收事件到其下的自定义组件ChildComponent3，但无法传递给自定义组件ChildComponent2，因为被BuilderNode所隔断。因此需要主动调用BuilderNode的reuse和recycle接口，将复用和回收事件传递给自定义组件ChildComponent2，以实现复用效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/tTkb8EBORfyfmkvePsngzQ/zh-cn_image_0000002552958012.png?HW-CC-KV=V1&HW-CC-Date=20260427T234001Z&HW-CC-Expire=86400&HW-CC-Sign=8CBEC4A350E21EA05A6406B39D13081AEA512ABA840F9F5FF33441AC5C635571)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/6gBrgdg2Skqt-5k7O0nqjw/zh-cn_image_0000002589324371.png?HW-CC-KV=V1&HW-CC-Date=20260429T052817Z&HW-CC-Expire=86400&HW-CC-Sign=E6C5D558B5A2CB1F3D93A47822529CD6BEE660F46762E5765439EECAFAFA0C89)
 
 ```
 1. import { FrameNode, NodeController, BuilderNode, UIContext } from '@kit.ArkUI';
@@ -859,7 +859,7 @@ BuilderNode节点的复用机制与使用[@Reusable](arkts-reusable.md)装饰器
 
 在下面的示例中，ReusableChildComponent作为BuilderNode的子自定义组件，无法标记为@Reusable。通过ChildComponent2对其包裹，ReusableChildComponent可以使用@Reusable装饰器标记。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/LMgITo8cRdWuzcoKxPDxZg/zh-cn_image_0000002583478013.png?HW-CC-KV=V1&HW-CC-Date=20260427T234001Z&HW-CC-Expire=86400&HW-CC-Sign=AB0882C5C5D453E4CFD27C6CA826F443E9D3546087D9711E538314BF107586EE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/cfVx2OQ2SQevNCndc23y7w/zh-cn_image_0000002589244311.png?HW-CC-KV=V1&HW-CC-Date=20260429T052817Z&HW-CC-Expire=86400&HW-CC-Sign=C6BF675184859AD5718CEB075F0B2A1C16C14955DC829759CFA3CBE74114B427)
 
 ```
 1. import { FrameNode, NodeController, BuilderNode, UIContext } from '@kit.ArkUI';
@@ -1222,7 +1222,7 @@ PageTwo的实现如下：
 
 [RouterPage2.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/BuilderNode/entry/src/main/ets/pages/RouterPage2.ets#L16-L37)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/xjz6Ys6VQ0eIvPkKsftCrg/zh-cn_image_0000002552798364.gif?HW-CC-KV=V1&HW-CC-Date=20260427T234001Z&HW-CC-Expire=86400&HW-CC-Sign=A73AF085F4E000F07FA68863048B2930DCEF51AEA16B267A7B78EB5502A068A6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/GFSpHgBdTTKbuvphOttRIA/zh-cn_image_0000002558764504.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052817Z&HW-CC-Expire=86400&HW-CC-Sign=EC13F6CD86B1422D071C31EC2128C863C7F6BEBA8CCAAA729D344A7BFCC77509)
 
 在API version 16之前，解决该问题的方法是在页面销毁时，将页面上的BuilderNode从缓存中移除。以上述例子为例，可以在页面跳转前，通过点击事件将BuilderNode从[AppStorage](arkts-appstorage.md)中移除，以此达到预期效果。
 
@@ -1704,7 +1704,7 @@ BuilderNode节点只有通过以下方式上下树时，才会根据该节点是
 
 [InheritFreezeOptionsPage.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/BuilderNode/entry/src/main/ets/pages/InheritFreezeOptionsPage.ets#L15-L209)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/jtiUFlLQTuC-Rs-tqW5ekA/zh-cn_image_0000002583438059.gif?HW-CC-KV=V1&HW-CC-Date=20260427T234001Z&HW-CC-Expire=86400&HW-CC-Sign=C8C9CD647EFCF9526868D79BE0DC8753B666E17D22D2BA9B714335CC87B9BAB4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/HcAIIiFQQxWTedHF3BE8bg/zh-cn_image_0000002558604848.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052817Z&HW-CC-Expire=86400&HW-CC-Sign=1D1894965CC7597BB90BC1B9746F173D1A20D7F3336147B426AC06FF04182037)
 
 ### BuilderNode常用冻结场景（状态管理V2）
 
@@ -1714,7 +1714,7 @@ BuilderNode节点只有通过以下方式上下树时，才会根据该节点是
 
 当BuilderNode节点开启冻结（即[inheritFreezeOptions](../harmonyos-references/js-apis-arkui-buildernode.md#inheritfreezeoptions20)设置为true）并且继承父自定义组件的冻结策略设置为开启组件冻结（即freezeWhenInactive选项设为true）时，页面1调用router.pushUrl接口跳转到页面2时，页面1为隐藏不可见状态，此时如果更新页面1中的状态变量，不会触发页面1刷新。图示如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/5lCywBRPRcWZk3CUZ4GhMQ/zh-cn_image_0000002552957560.png?HW-CC-KV=V1&HW-CC-Date=20260427T234001Z&HW-CC-Expire=86400&HW-CC-Sign=2E07C68FC5D3137F9AE3684D93AB1A170374893047E518865A06AD7C1CB9E204)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/ruUEEZPuSpKSVpL9mJZ2XQ/zh-cn_image_0000002589323919.png?HW-CC-KV=V1&HW-CC-Date=20260429T052817Z&HW-CC-Expire=86400&HW-CC-Sign=91B6DE6CA5B1556EDBAAFF1CC767A071F6D05F9B015A8EDBFC093FCDAD47FD6A)
 
 页面1示例代码如下：
 
@@ -1817,7 +1817,7 @@ BuilderNode节点只有通过以下方式上下树时，才会根据该节点是
 13. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/QxTCsJSeQdCkClCHQcdd9w/zh-cn_image_0000002552958014.gif?HW-CC-KV=V1&HW-CC-Date=20260427T234001Z&HW-CC-Expire=86400&HW-CC-Sign=F34377EE2AFB43FDA62125253D54225C54C1392774A2293C4BE46E4C4AF739DA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/nS0PCwTtT0-lewxlORofWA/zh-cn_image_0000002589324373.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052817Z&HW-CC-Expire=86400&HW-CC-Sign=C9C6A7007D443ACC6172C676B34B044A5E67A9C7EBA172CE32488607CC345E4C)
 
 在上面的示例中：
 
@@ -1833,7 +1833,7 @@ BuilderNode节点只有通过以下方式上下树时，才会根据该节点是
 
 图示如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/a2qHtDahSgefUV6hU4YVyA/zh-cn_image_0000002583477561.png?HW-CC-KV=V1&HW-CC-Date=20260427T234001Z&HW-CC-Expire=86400&HW-CC-Sign=15B51FD8657A3458E1F4C0A6C8D514AE4F0641A0910AED4DCDC82FD0B7CE8CFE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/6KxVIphWSG2NZ8opVZYTnA/zh-cn_image_0000002589243859.png?HW-CC-KV=V1&HW-CC-Date=20260429T052817Z&HW-CC-Expire=86400&HW-CC-Sign=37540FB70EA1F415FF9CEF3BE4E078AB9774E85DD2248BAEEC3FEE4BE2B2E1F2)
 
 ```
 1. import { BuilderNode, FrameNode, NodeController } from '@kit.ArkUI';
@@ -1948,7 +1948,7 @@ BuilderNode节点只有通过以下方式上下树时，才会根据该节点是
 110. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/n2DobNWvQPGZsdRxbGIXNw/zh-cn_image_0000002583478015.gif?HW-CC-KV=V1&HW-CC-Date=20260427T234001Z&HW-CC-Expire=86400&HW-CC-Sign=A8D5AACBA95FF420F98F742B85A74BA6667BCA523AC77D99D32D9BE91873F370)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/LUsGThKjSbavv16RVlpksA/zh-cn_image_0000002589244313.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052817Z&HW-CC-Expire=86400&HW-CC-Sign=4211F658665966B9D63448CAF696ED0F094E20D46DE844904E499B93D809C2D2)
 
 在上面的示例中：
 
@@ -2145,7 +2145,7 @@ Navigation组件的BuilderNode冻结功能（通过配置[inheritFreezeOptions](
 180. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/MBl6-tglQNq2-JRvsaw9ZQ/zh-cn_image_0000002552798366.gif?HW-CC-KV=V1&HW-CC-Date=20260427T234001Z&HW-CC-Expire=86400&HW-CC-Sign=C97D8924039FA23BFB59FDD973E931D9557CBB50C339128F51425E505FFFCC48)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/o12n1jX3SSOnhpwNiYm2IQ/zh-cn_image_0000002558764506.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052817Z&HW-CC-Expire=86400&HW-CC-Sign=92FBFDC51550C2370C503E49D59F19379697020A5087769A35E8EF37A2C68C0D)
 
 在上面的示例中：
 
@@ -2293,7 +2293,7 @@ Repeat组件（用于循环生成子组件）的BuilderNode冻结功能（通过
 131. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/5LqadGqURreJNpSythEiQA/zh-cn_image_0000002583438061.gif?HW-CC-KV=V1&HW-CC-Date=20260427T234001Z&HW-CC-Expire=86400&HW-CC-Sign=6D2D27967CF221C0819F6A43CF367925AB51A1A2AAFAA29DBD8F487B6A5A3FD1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/O3_0MLeFRZ6uz40n0WiW0Q/zh-cn_image_0000002558604850.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052817Z&HW-CC-Expire=86400&HW-CC-Sign=7A82B83C0FCB4097AE12989E4A4648FF3BD44EDA66CDA324F9A945308E0BF0F7)
 
 在上面的示例中：
 
@@ -2431,7 +2431,7 @@ BuilderNode节点开启冻结功能（即通过设置[inheritFreezeOptions](../h
 123. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/LuF-A7ZBRvKTAl8c92XFOA/zh-cn_image_0000002552958016.gif?HW-CC-KV=V1&HW-CC-Date=20260427T234001Z&HW-CC-Expire=86400&HW-CC-Sign=951ECA7F367A171CC3851F8591A2BFF9A085DD92D20F86147D39D21C4F168FC5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/5mWf_ikmTgqZXpGXMNw3vA/zh-cn_image_0000002589324375.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052817Z&HW-CC-Expire=86400&HW-CC-Sign=6A1ABCC5BF5A84580689485A9F5C49155B96C0502BDC6BC71398481DBFC243AC)
 
 在上面的示例中：
 

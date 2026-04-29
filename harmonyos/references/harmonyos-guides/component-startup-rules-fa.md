@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/component-sta
 title: 组件启动规则（FA模型）
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > FA模型开发指导 > FA模型应用组件 > 组件启动规则（FA模型）
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:38:04+08:00
+scraped_at: 2026-04-29T13:26:05+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:2a714fbdfbda0f168b3d74cb7e73986f7a9f3f1b2d173ba2527b69eb6e0dda4f
+content_hash: sha256:135ce5c5354dc66b8d99b5f0cdcba99511cf0f5558e2ea4566194e7b6d85b479
 ---
 
 启动组件是指一切启动或连接应用组件的行为：
@@ -55,7 +55,7 @@ content_hash: sha256:2a714fbdfbda0f168b3d74cb7e73986f7a9f3f1b2d173ba2527b69eb6e0
 * 启动PageAbility。
 * 启动ServiceAbility或DataAbility。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/8L8U2Wh9Sg6S4-FcxDF1Xw/zh-cn_image_0000002552797864.png?HW-CC-KV=V1&HW-CC-Date=20260427T233803Z&HW-CC-Expire=86400&HW-CC-Sign=4292CC8439A614BE7F39F5E59EE68E03DDF76C8DE6201B8146DABA3558696473)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/BtSZHqLtRO-A7msKSFeETA/zh-cn_image_0000002558604348.png?HW-CC-KV=V1&HW-CC-Date=20260429T052604Z&HW-CC-Expire=86400&HW-CC-Sign=1DE026B3BEB5340D58C8B532CFD5D2EB627190A7608E5816E32526DC697C8D9F)
 
 ## 分布式跨设备组件启动规则
 
@@ -64,4 +64,4 @@ content_hash: sha256:2a714fbdfbda0f168b3d74cb7e73986f7a9f3f1b2d173ba2527b69eb6e0
 * 启动PageAbility。
 * 启动ServiceAbility。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/Kug9umaISa2TjCK-4KDCsg/zh-cn_image_0000002583437559.png?HW-CC-KV=V1&HW-CC-Date=20260427T233803Z&HW-CC-Expire=86400&HW-CC-Sign=DCC67425A3541DC62B1797A8B0D56A2B0F10BA960658D3C9F48D54974667036D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/exytk9gkQtmsX9zVgeOewQ/zh-cn_image_0000002589323873.png?HW-CC-KV=V1&HW-CC-Date=20260429T052604Z&HW-CC-Expire=86400&HW-CC-Sign=F20E77223E69A614B42BE790A74AE730C1E55E09F891DDF1860D65EAD8BFCD56)

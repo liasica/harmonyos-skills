@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-e
 title: @ohos.enterprise.systemManager （系统管理）
 breadcrumb: API参考 > 系统 > 基础功能 > MDM Kit（企业设备管理服务） > ArkTS API > @ohos.enterprise.systemManager （系统管理）
 category: harmonyos-references
-scraped_at: 2026-04-28T08:10:29+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:65a9f7a6cedc592d0e5f947c69459c1efcf237f9da44b0694072f473c1e16173
+scraped_at: 2026-04-29T14:01:12+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:5bf73fa55887e77b3322885573cbef11ec4044c03172924b8050279d2c1818c6
 ---
 
 本模块提供系统管理能力。
@@ -1432,8 +1432,8 @@ PhonePC/2in1Tablet
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| SSAP | 0 | SSAP（SparkLink Service Access Protocol）协议。具体请参考[SSAP协议](../harmonyos-guides/nearlink-terminology.md#section79222173354)。 |
-| DATA\_TRANSFER | 1 | 数据传输协议。具体请参考[Data Transfer协议](../harmonyos-guides/nearlink-terminology.md#section6203121773712)。 |
+| SSAP | 0 | SSAP（SparkLink Service Access Protocol）协议。具体请参考[SSAP协议](../harmonyos-guides/nearlink-terminology.md#ssap)。 |
+| DATA\_TRANSFER | 1 | 数据传输协议。具体请参考[Data Transfer协议](../harmonyos-guides/nearlink-terminology.md#data-transfer)。 |
 
 ## KeyEventPolicy23+
 

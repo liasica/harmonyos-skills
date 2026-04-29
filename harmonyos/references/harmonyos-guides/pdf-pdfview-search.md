@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pdf-pdfview-s
 title: 搜索关键字
 breadcrumb: 指南 > 应用服务 > PDF Kit（PDF服务） > PdfView预览组件 > 搜索关键字
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:50:24+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:4064254f9998f9dd357ef58c70f58efe709138c53a163d75b407c1c104b85160
+scraped_at: 2026-04-29T13:39:47+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:0e20232e9ae829eb3c5b76d256a9b7fa3433d52c554fb540ba7334a7a2985ce8
 ---
 
 预览PDF文档时，可以对页面的关键词（英文字符不区分大小写）进行搜索并高亮显示，同时使用[setSearchIndex](../harmonyos-references/pdf-arkts-pdfviewmanage.md#setsearchindex)方法高亮显示指定的搜索结果。
 
 使用[getSearchIndex](../harmonyos-references/pdf-arkts-pdfviewmanage.md#getsearchindex)方法获取当前高亮的索引，可以使用[clearSearch](../harmonyos-references/pdf-arkts-pdfviewmanage.md#clearsearch)方法清除所有搜索结果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/9Y5WlecFSHyp8YeZcIq29w/zh-cn_image_0000002583479105.jpg?HW-CC-KV=V1&HW-CC-Date=20260427T235023Z&HW-CC-Expire=86400&HW-CC-Sign=B1FA96E73B673FB7BC443E62D42D9E3F92013D3A11C2F76D2B905AA2FCFA98B5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/jL9U4JuITrqvJFJU9rhgpw/zh-cn_image_0000002558765606.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053946Z&HW-CC-Expire=86400&HW-CC-Sign=D71E69CFF5D803AC80A7C1345F74A6A89C4403EA9593D4D98F9CA8437300D193)
 
 ## 接口说明
 
@@ -46,8 +46,8 @@ content_hash: sha256:4064254f9998f9dd357ef58c70f58efe709138c53a163d75b407c1c104b
 11. private charCount = 0;
 
 13. aboutToAppear(): void {
-14. // 确保沙箱目录有input.pdf文档
-15. let filePath = this.context.filesDir + '/input.pdf';
+14. // 确保在工程目录src/main/resources/resfile里存在input.pdf文档
+15. let filePath = this.context.resourceDir + '/input.pdf';
 16. (async () => {
 17. this.loadResult = await this.controller.loadDocument(filePath);
 18. })()

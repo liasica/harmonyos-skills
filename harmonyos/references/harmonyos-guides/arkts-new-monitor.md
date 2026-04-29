@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-mon
 title: @Monitor装饰器：状态变量修改异步监听
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理（V2） > 管理数据对象的状态 > @Monitor装饰器：状态变量修改异步监听
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:39:10+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:84d3c839b2787ec866d9eae215d7a47cff3c0267b601cfacfa1ded0be207009c
+scraped_at: 2026-04-29T13:27:19+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:2feb4739109d93b5f83ecfb1c4f9a3b1a64411800f47cdd1557890e194b00609
 ---
 
 为了增强状态管理框架对状态变量变化的监听能力，开发者可以使用@Monitor装饰器对状态变量进行监听。
@@ -63,28 +63,29 @@ content_hash: sha256:84d3c839b2787ec866d9eae215d7a47cff3c0267b601cfacfa1ded0be20
 23. build() {
 24. Row() {
 25. Column() {
-26. Button('change info name')
-27. .onClick(() => {
-28. this.info.name = 'Jack';
-29. })
-30. Button('change info age')
-31. .onClick(() => {
-32. this.info.age = 30;
-33. })
-34. Button('change numArr[2]')
-35. .onClick(() => {
-36. this.numArr[2] = 5;
-37. })
-38. Button('change numArr[3]')
-39. .onClick(() => {
-40. this.numArr[3] = 6;
-41. })
-42. }
-43. .width('100%')
-44. }
-45. .height('100%')
-46. }
+26. // 对象、数组中某一单个属性或数组项变化，不会触发UI刷新
+27. Button('change info name')
+28. .onClick(() => {
+29. this.info.name = 'Jack';
+30. })
+31. Button('change info age')
+32. .onClick(() => {
+33. this.info.age = 30;
+34. })
+35. Button('change numArr[2]')
+36. .onClick(() => {
+37. this.numArr[2] = 5;
+38. })
+39. Button('change numArr[3]')
+40. .onClick(() => {
+41. this.numArr[3] = 6;
+42. })
+43. }
+44. .width('100%')
+45. }
+46. .height('100%')
 47. }
+48. }
 ```
 
 [WatchDecoratorLimitationsV1.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/monitor/WatchDecoratorLimitationsV1.ets#L15-L63)
@@ -130,14 +131,15 @@ IMonitor类型和IMonitorValue<T>类型的接口说明参考API文档：[状态�
 
   18. build() {
   19. Column() {
-  20. Button('change string')
-  21. .onClick(() => {
-  22. this.message += '!';
-  23. this.name = 'Jack';
-  24. })
-  25. }
+  20. // 点击Button更新message和name，触发onStrChange回调
+  21. Button('change string')
+  22. .onClick(() => {
+  23. this.message += '!';
+  24. this.name = 'Jack';
+  25. })
   26. }
   27. }
+  28. }
   ```
 
   [MonitorDecoratorMultiWatchCompV2.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/monitor/MonitorDecoratorMultiWatchCompV2.ets#L15-L43)
@@ -795,37 +797,38 @@ IMonitor类型和IMonitorValue<T>类型的接口说明参考API文档：[状态�
 15. let curValue: number = monitor.value()?.now as number;
 16. if (lastValue != 0) {
 17. let diffPercent: number = (curValue - lastValue) / lastValue;
-18. if (diffPercent > 0.1) {
-19. this.color = Color.Red;
-20. this.fontSize = 50;
-21. } else if (diffPercent < -0.1) {
-22. this.color = Color.Green;
-23. this.fontSize = 40;
-24. } else {
-25. this.color = Color.Black;
-26. this.fontSize = 45;
-27. }
+18. // 通过info.value变化的幅度，改变Text组件显示的样式
+19. if (diffPercent > 0.1) {
+20. this.color = Color.Red;
+21. this.fontSize = 50;
+22. } else if (diffPercent < -0.1) {
+23. this.color = Color.Green;
+24. this.fontSize = 40;
+25. } else {
+26. this.color = Color.Black;
+27. this.fontSize = 45;
 28. }
 29. }
 30. }
+31. }
 
-32. @Entry
-33. @ComponentV2
-34. struct Index {
-35. textStyle: UIStyle = new UIStyle();
+33. @Entry
+34. @ComponentV2
+35. struct Index {
+36. textStyle: UIStyle = new UIStyle();
 
-37. build() {
-38. Column() {
-39. Text(`Important Value: ${this.textStyle.info.value}`)
-40. .fontColor(this.textStyle.color)
-41. .fontSize(this.textStyle.fontSize)
-42. Button('change!')
-43. .onClick(() => {
-44. this.textStyle.info.value = Math.floor(Math.random() * 100) + 1;
-45. })
-46. }
+38. build() {
+39. Column() {
+40. Text(`Important Value: ${this.textStyle.info.value}`)
+41. .fontColor(this.textStyle.color)
+42. .fontSize(this.textStyle.fontSize)
+43. Button('change!')
+44. .onClick(() => {
+45. this.textStyle.info.value = Math.floor(Math.random() * 100) + 1;
+46. })
 47. }
 48. }
+49. }
 ```
 
 [MonitorSceneDeepAttributeChanges.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/monitor/MonitorSceneDeepAttributeChanges.ets#L30-L79)
@@ -845,71 +848,72 @@ IMonitor类型和IMonitorValue<T>类型的接口说明参考API文档：[状态�
 
 7. constructor() {
 8. hilog.info(0xFF00, 'testTag', '%{public}s', 'in constructor message change to initialized');
-9. this.message = 'initialized';
-10. }
+9. // 此时@Monitor还未初始化成功，因此不会监听到message的变化
+10. this.message = 'initialized';
 11. }
+12. }
 
-13. @ComponentV2
-14. struct Child {
-15. @Param info: Info = new Info();
+14. @ComponentV2
+15. struct Child {
+16. @Param info: Info = new Info();
 
-17. @Monitor('info.message')
-18. onMessageChange(monitor: IMonitor) {
-19. hilog.info(0xFF00, 'testTag', '%{public}s',
-20. `Child message change from ${monitor.value()?.before} to ${monitor.value()?.now}`);
-21. }
+18. @Monitor('info.message')
+19. onMessageChange(monitor: IMonitor) {
+20. hilog.info(0xFF00, 'testTag', '%{public}s',
+21. `Child message change from ${monitor.value()?.before} to ${monitor.value()?.now}`);
+22. }
 
-23. aboutToAppear(): void {
-24. this.info.message = 'Child aboutToAppear';
-25. }
+24. aboutToAppear(): void {
+25. this.info.message = 'Child aboutToAppear';
+26. }
 
-27. aboutToDisappear(): void {
-28. hilog.info(0xFF00, 'testTag', '%{public}s', 'Child aboutToDisappear');
-29. this.info.message = 'Child aboutToDisappear';
-30. }
+28. aboutToDisappear(): void {
+29. hilog.info(0xFF00, 'testTag', '%{public}s', 'Child aboutToDisappear');
+30. this.info.message = 'Child aboutToDisappear';
+31. }
 
-32. build() {
-33. Column() {
-34. Text('Child')
-35. Button('change message in Child')
-36. .onClick(() => {
-37. this.info.message = 'Child click to change Message';
-38. })
-39. }
-40. .borderColor(Color.Red)
-41. .borderWidth(2)
+33. build() {
+34. Column() {
+35. Text('Child')
+36. Button('change message in Child')
+37. .onClick(() => {
+38. this.info.message = 'Child click to change Message';
+39. })
+40. }
+41. .borderColor(Color.Red)
+42. .borderWidth(2)
 
-43. }
 44. }
+45. }
 
-46. @Entry
-47. @ComponentV2
-48. struct Index {
-49. @Local info: Info = new Info();
-50. @Local flag: boolean = false;
+47. @Entry
+48. @ComponentV2
+49. struct Index {
+50. @Local info: Info = new Info();
+51. @Local flag: boolean = false;
 
-52. @Monitor('info.message')
-53. onMessageChange(monitor: IMonitor) {
-54. hilog.info(0xFF00, 'testTag', '%{public}s',
-55. `Index message change from ${monitor.value()?.before} to ${monitor.value()?.now}`);
-56. }
+53. @Monitor('info.message')
+54. onMessageChange(monitor: IMonitor) {
+55. hilog.info(0xFF00, 'testTag', '%{public}s',
+56. `Index message change from ${monitor.value()?.before} to ${monitor.value()?.now}`);
+57. }
 
-58. build() {
-59. Column() {
-60. Button('show/hide Child')
-61. .onClick(() => {
-62. this.flag = !this.flag
-63. })
-64. Button('change message in Index')
-65. .onClick(() => {
-66. this.info.message = 'Index click to change Message';
-67. })
-68. if (this.flag) {
-69. Child({ info: this.info })
-70. }
+59. build() {
+60. Column() {
+61. Button('show/hide Child')
+62. .onClick(() => {
+63. this.flag = !this.flag
+64. })
+65. Button('change message in Index')
+66. .onClick(() => {
+67. this.info.message = 'Index click to change Message';
+68. })
+69. if (this.flag) {
+70. Child({ info: this.info })
 71. }
 72. }
 73. }
+74. }
 ```
 
 [MonitorProblemEffectTimeCompV2.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/monitor/MonitorProblemEffectTimeCompV2.ets#L15-L89)
@@ -937,34 +941,35 @@ IMonitor类型和IMonitorValue<T>类型的接口说明参考API文档：[状态�
 5. @Trace public message: string = 'not initialized';
 
 7. constructor() {
-8. this.message = 'initialized';
-9. }
+8. // 此时@Monitor还未生效，因此不会监听到message的变化
+9. this.message = 'initialized';
+10. }
 
-11. @Monitor('message')
-12. onMessageChange(monitor: IMonitor) {
-13. hilog.info(0xFF00, 'testTag', '%{public}s',
-14. `message change from ${monitor.value()?.before} to ${monitor.value()?.now}`);
-15. }
+12. @Monitor('message')
+13. onMessageChange(monitor: IMonitor) {
+14. hilog.info(0xFF00, 'testTag', '%{public}s',
+15. `message change from ${monitor.value()?.before} to ${monitor.value()?.now}`);
 16. }
+17. }
 
-18. @Entry
-19. @ComponentV2
-20. struct Index {
-21. info: Info = new Info();
+19. @Entry
+20. @ComponentV2
+21. struct Index {
+22. info: Info = new Info();
 
-23. aboutToAppear(): void {
-24. this.info.message = 'Index aboutToAppear';
-25. }
+24. aboutToAppear(): void {
+25. this.info.message = 'Index aboutToAppear';
+26. }
 
-27. build() {
-28. Column() {
-29. Button('change message')
-30. .onClick(() => {
-31. this.info.message = 'Index click to change message';
-32. })
-33. }
+28. build() {
+29. Column() {
+30. Button('change message')
+31. .onClick(() => {
+32. this.info.message = 'Index click to change message';
+33. })
 34. }
 35. }
+36. }
 ```
 
 [MonitorProblemEffectTimeClass.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/monitor/MonitorProblemEffectTimeClass.ets#L15-L51)
@@ -1124,30 +1129,31 @@ IMonitor类型和IMonitorValue<T>类型的接口说明参考API文档：[状态�
 
 54. build() {
 55. Column() {
-56. Button('change showFlag')
-57. .onClick(() => {
-58. this.showFlag = !this.showFlag;
-59. })
-60. Button('change number')
-61. .onClick(() => {
-62. hilog.info(0xFF00, 'testTag', '%{public}s', 'click to change age');
-63. this.dataArray.forEach((info: Info) => {
-64. info.age += 100;
-65. })
+56. // 点击Button切换showFlag，触发Child组件的创建/销毁
+57. Button('change showFlag')
+58. .onClick(() => {
+59. this.showFlag = !this.showFlag;
+60. })
+61. Button('change number')
+62. .onClick(() => {
+63. hilog.info(0xFF00, 'testTag', '%{public}s', 'click to change age');
+64. this.dataArray.forEach((info: Info) => {
+65. info.age += 100;
 66. })
-67. if (this.showFlag) {
-68. Column() {
-69. Text('Children')
-70. ForEach(this.dataArray, (info: Info) => {
-71. Child({ infoWrapper: new InfoWrapper(info) })
-72. })
-73. }
-74. .borderColor(Color.Red)
-75. .borderWidth(2)
-76. }
+67. })
+68. if (this.showFlag) {
+69. Column() {
+70. Text('Children')
+71. ForEach(this.dataArray, (info: Info) => {
+72. Child({ infoWrapper: new InfoWrapper(info) })
+73. })
+74. }
+75. .borderColor(Color.Red)
+76. .borderWidth(2)
 77. }
 78. }
 79. }
+80. }
 ```
 
 [MonitorProblemClassFailureTimeSetComp.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/monitor/MonitorProblemClassFailureTimeSetComp.ets#L15-L95)
@@ -1211,30 +1217,31 @@ IMonitor类型和IMonitorValue<T>类型的接口说明参考API文档：[状态�
 
 55. build() {
 56. Column() {
-57. Button('change showFlag')
-58. .onClick(() => {
-59. this.showFlag = !this.showFlag;
-60. })
-61. Button('change number')
-62. .onClick(() => {
-63. hilog.info(0xFF00, 'testTag', '%{public}s', 'click to change age');
-64. this.dataArray.forEach((info: Info) => {
-65. info.age += 100;
-66. })
+57. // 点击Button切换showFlag，触发Child组件的创建/销毁
+58. Button('change showFlag')
+59. .onClick(() => {
+60. this.showFlag = !this.showFlag;
+61. })
+62. Button('change number')
+63. .onClick(() => {
+64. hilog.info(0xFF00, 'testTag', '%{public}s', 'click to change age');
+65. this.dataArray.forEach((info: Info) => {
+66. info.age += 100;
 67. })
-68. if (this.showFlag) {
-69. Column() {
-70. Text('Children')
-71. ForEach(this.dataArray, (info: Info) => {
-72. Child({ infoWrapper: new InfoWrapper(info) })
-73. })
-74. }
-75. .borderColor(Color.Red)
-76. .borderWidth(2)
-77. }
+68. })
+69. if (this.showFlag) {
+70. Column() {
+71. Text('Children')
+72. ForEach(this.dataArray, (info: Info) => {
+73. Child({ infoWrapper: new InfoWrapper(info) })
+74. })
+75. }
+76. .borderColor(Color.Red)
+77. .borderWidth(2)
 78. }
 79. }
 80. }
+81. }
 ```
 
 [MonitorProblemClassFailureTimeEmptyObject.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/monitor/MonitorProblemClassFailureTimeEmptyObject.ets#L15-L96)

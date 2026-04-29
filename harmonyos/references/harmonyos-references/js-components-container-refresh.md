@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: refresh
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 容器组件 > refresh
 category: harmonyos-references
-scraped_at: 2026-04-28T08:02:58+08:00
+scraped_at: 2026-04-29T13:53:20+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:f5e256d89b3e33f2eda619d41f6618767a054bb6460e120b9e8c0a3a79c9e6d0
+content_hash: sha256:b3c3cf16e372d51ee37479be7e4cfe2ed02659784f9f52cce8199d2374fec5ee
 ---
 
 说明
@@ -154,4 +154,4 @@ PhonePC/2in1TabletTVWearable
 30. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/_TNBqboHQIqHUdkcjWSb3g/zh-cn_image_0000002552960184.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000256Z&HW-CC-Expire=86400&HW-CC-Sign=7A277C5F61F1C64E5B27758C3F55484C3EA1B8BD35D8096B1881BD814FB09FA5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/DFb1F3zNSZCQGcTmLugJrg/zh-cn_image_0000002558607050.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055319Z&HW-CC-Expire=86400&HW-CC-Sign=D4AAFB88BFFCB19B49735B7C7355C6ECA75C9730E720CB46D15E5C0CD62C8611)

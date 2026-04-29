@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-de
 title: 添加依赖项
 breadcrumb: 指南 > 构建应用 > 配置构建流程 > 添加依赖项
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:57:14+08:00
+scraped_at: 2026-04-29T13:47:14+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:4da5dcc1e6af221deda413469a586cfcb089331cedd12cf43b4eb67e113ab96a
+content_hash: sha256:decf83296bfdaaebd2a4403497a5b5bf7d299084aa9ea2a13ec38edad974740f
 ---
 
 应用/元服务支持通过包管理工具ohpm来安装、共享、分发代码，管理项目的依赖关系。本文介绍了在您的项目中如何配置依赖项，以及不同的配置方式在编译期间的处理逻辑和编译结果。
@@ -90,7 +90,7 @@ content_hash: sha256:4da5dcc1e6af221deda413469a586cfcb089331cedd12cf43b4eb67e113
 
 对比步骤2和3的构建日志，您会发现，步骤2会打印HAR相关的日志，如下图红框所示，步骤3并没有任何关于HAR的日志打印。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/qT0vS621SsaiGx0zQAg7FA/zh-cn_image_0000002561833365.png?HW-CC-KV=V1&HW-CC-Date=20260427T235712Z&HW-CC-Expire=86400&HW-CC-Sign=110959980888563F68B722E7518595C819C703DE0BD482ADB2654A16BE06D214)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/9oV7-nkmTraUwanoV5060w/zh-cn_image_0000002561833365.png?HW-CC-KV=V1&HW-CC-Date=20260429T054713Z&HW-CC-Expire=86400&HW-CC-Sign=E4DF6C8C02E6569FEB45495E7569C99CFBA290100D058C0F2FE97A713958E104)
 
 以上仅仅是日志的差异，为了确保编译正常，不建议将依赖项配置在工程级oh-package.json5中，下文将通过表格说明编译时具体的处理逻辑和可能造成的异常结果。
 

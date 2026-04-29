@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pdf-open-docu
 title: 打开和保存PDF文档
 breadcrumb: 指南 > 应用服务 > PDF Kit（PDF服务） > pdfService能力 > 打开和保存PDF文档
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:50:20+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:c1d59173faf35071511f670c92321dfdd18e33a3dbfbdb405d324447744187b1
+scraped_at: 2026-04-29T13:39:43+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:a7683090f17bc0f4660667d55c39823205f9d19c5afc0b2afb4f1feaa4b1ea50
 ---
 
 对PDF文档[添加内容](pdf-add-txt-img-annot.md)、[页眉页脚](pdf-add-headerfooter.md)、[水印](pdf-add-watermark.md)、[背景图片](pdf-add-background.md)或[书签](pdf-add-bookmark.md)等操作前，需要打开文档，并且在文档操作完成后，保存PDF文档。
@@ -46,7 +46,7 @@ pdfService和PdfView都可实现打开和保存文档，使用场景上有如下
 16. try {
 17. let res = fileIo.accessSync(this.filePath);
 18. if(!res) {
-19. // 确保在工程目录src/main/resources/rawfile里有input.pdf文档
+19. // 确保在工程目录src/main/resources/resfile里有input.pdf文档
 20. let content: Uint8Array = this.context.resourceManager.getRawFileContentSync('rawfile/input.pdf');
 21. let fdSand =
 22. fileIo.openSync(this.filePath, fileIo.OpenMode.WRITE_ONLY | fileIo.OpenMode.CREATE | fileIo.OpenMode.TRUNC);

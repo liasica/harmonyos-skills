@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 订阅状态改变事件场景
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 超级隐私模式 > 订阅状态改变事件场景
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:43:04+08:00
+scraped_at: 2026-04-29T13:31:43+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:9ba598229ad91aad7e117d33e6404c0abae933f9ccae9bd597126523c64da9ac
+content_hash: sha256:2a6feeb2f8a4c82647f7fde284c0ff6b10c9211fae133dac812c1164f69ef15f
 ---
 
 ## 场景介绍
@@ -20,7 +20,7 @@ content_hash: sha256:9ba598229ad91aad7e117d33e6404c0abae933f9ccae9bd597126523c64
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/dYj946mhSpuCdO3BHu5Ulw/zh-cn_image_0000002552958406.png?HW-CC-KV=V1&HW-CC-Date=20260427T234303Z&HW-CC-Expire=86400&HW-CC-Sign=92D080C7F0FF8DE4C0BE598E76859A72CCFE8D1903FDC33CCCC5A082EC86CDD8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/JmDEf3l0REm0qI_m2_DWMQ/zh-cn_image_0000002589324773.png?HW-CC-KV=V1&HW-CC-Date=20260429T053142Z&HW-CC-Expire=86400&HW-CC-Sign=AC828356FCE37C29C9B6F10A5B7A2550CFF0930EF6055D655F970470F82955C2)
 
 **流程说明：**
 

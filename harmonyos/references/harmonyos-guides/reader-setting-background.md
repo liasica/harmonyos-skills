@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/reader-settin
 title: 自定义页面背景
 breadcrumb: 指南 > 应用服务 > Reader Kit（阅读服务） > 书籍内容排版 > 修改阅读设置 > 自定义页面背景
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:50:39+08:00
+scraped_at: 2026-04-29T13:40:03+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:18946fc39bdfcda7d82d90cd74bf3cf07520f8ad36cd684f0979537abbb6fbd4
+content_hash: sha256:47de211b42aef427798895443dd46a620651b819e384c711e1831be7156d1a8b
 ---
 
 当应用需要支持自定义背景时，开发者可通过[ReaderSetting](../harmonyos-references/reader-read-core.md#readersetting)的themeColor及themeBgImg属性，实现对阅读内容自定义背景色及背景图片的实时修改。
@@ -19,7 +19,7 @@ content_hash: sha256:18946fc39bdfcda7d82d90cd74bf3cf07520f8ad36cd684f0979537abbb
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/4GfMNehURHCBSckiuhMaBQ/zh-cn_image_0000002552959144.png?HW-CC-KV=V1&HW-CC-Date=20260427T235038Z&HW-CC-Expire=86400&HW-CC-Sign=22FF5D21B4CE33B39C023F422099D4D15F80CE254E9170374C49E49CF04CB7B4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/PDS5_TQpSwyAcf57H-zDTQ/zh-cn_image_0000002589245453.png?HW-CC-KV=V1&HW-CC-Date=20260429T054002Z&HW-CC-Expire=86400&HW-CC-Sign=C07F6F1567882F7AAA1E9DAF9C2D7182E2F62500CF356A0C221651030D8A46A9)
 
 ## 接口说明
 

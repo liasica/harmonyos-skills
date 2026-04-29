@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-layout-
 title: 相对布局 (RelativeContainer)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 组件布局 > 构建布局 > 相对布局 (RelativeContainer)
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:39:31+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:0f4e0b2eb8e1535f868b89ab6f0b264cd1ad6148999b58ab4a52e2ee522f0552
+scraped_at: 2026-04-29T13:27:40+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:7bf89d759be54fa44639193a8e75282635bfc3672eb4b2d8a567f04d400f0eff
 ---
 
 ## 概述
@@ -16,7 +16,7 @@ RelativeContainer是一种采用相对布局的容器，支持容器内部的子
 
 **图1** 相对布局示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/7Xs99M3HQOS9epgMU6zk1Q/zh-cn_image_0000002552798082.png?HW-CC-KV=V1&HW-CC-Date=20260427T233930Z&HW-CC-Expire=86400&HW-CC-Sign=DB569CBBC062674398C34F248F18596C48B633D5DBA1DA72016AC9E116FAE8AB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/ZhDhy2HIQyeErO51eMLsBQ/zh-cn_image_0000002558764222.png?HW-CC-KV=V1&HW-CC-Date=20260429T052738Z&HW-CC-Expire=86400&HW-CC-Sign=BA6C5EBBC3B8E1C746896202FFA12A6AA759EAF06EF24AC6A7FE68958216378B)
 
 子元素并不完全是上图中的依赖关系。比如，Item4可以以Item2为依赖锚点，也可以以RelativeContainer父容器为依赖锚点。
 
@@ -37,10 +37,10 @@ RelativeContainer是一种采用相对布局的容器，支持容器内部的子
 
 * 在水平方向上，可以按照起始（left）、居中（middle）或尾端（right）的组件边界与锚点对齐。当设置三个边界时，仅起始（left）和居中（middle）的边界设置生效。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/8V3tkyEZSj2KzUzTQmkhgA/zh-cn_image_0000002583437777.png?HW-CC-KV=V1&HW-CC-Date=20260427T233930Z&HW-CC-Expire=86400&HW-CC-Sign=CCB516AB11ABD771FC6D505D31FB232E5E9CA29F3D3EF69FF7B09ED38B56C0E4)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/2MZRZBIKSOi284wZUW68ag/zh-cn_image_0000002558604566.png?HW-CC-KV=V1&HW-CC-Date=20260429T052738Z&HW-CC-Expire=86400&HW-CC-Sign=139E9F29D8795680125455619CD6D3B1FBD75A5C4A232F632C1386DDB7B87C92)
 * 在垂直方向上，可以设置组件边界与锚点对齐，具体包括顶部（top）、居中（center）和底部（bottom）。当设置三个边界时，仅顶部（top）和居中（center）生效。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/8UKRiwaeQ8i8WLR-k9BJqw/zh-cn_image_0000002552957732.png?HW-CC-KV=V1&HW-CC-Date=20260427T233930Z&HW-CC-Expire=86400&HW-CC-Sign=3DA8C50897261E7B1C37401B117FE89D28E86A087A13259D03C33775C2A0A7DB)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/j9bUZJ2yRiawTmuJM3FrjA/zh-cn_image_0000002589324091.png?HW-CC-KV=V1&HW-CC-Date=20260429T052738Z&HW-CC-Expire=86400&HW-CC-Sign=D21FF6DCFB5B029C108F8889AC6480AB3B591335771610809915E5EBB81ED36E)
 
 ### 设置锚点
 
@@ -100,7 +100,7 @@ RelativeContainer是一种采用相对布局的容器，支持容器内部的子
 
   [RelativeContainerParentComponentId.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/relativecontainerlayout/RelativeContainerParentComponentId.ets#L15-L56)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/JE8rv-CXQEK1IP1gcLRQFg/zh-cn_image_0000002583477733.png?HW-CC-KV=V1&HW-CC-Date=20260427T233930Z&HW-CC-Expire=86400&HW-CC-Sign=ED5CEFE08D11AE996AB4132F22CCDB67D44DBE66ED13002980BC7CF830F46ECD)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/OubAwYiRSSCpUOoXqF8ckA/zh-cn_image_0000002589244031.png?HW-CC-KV=V1&HW-CC-Date=20260429T052738Z&HW-CC-Expire=86400&HW-CC-Sign=B7B6712BF81B505102DEEEA6ADF3EA48B711BED2AFADE49171E6EB02F41E06A3)
 * 以兄弟元素为锚点。
 
   ```
@@ -148,7 +148,7 @@ RelativeContainer是一种采用相对布局的容器，支持容器内部的子
 
   [RelativeContainerSiblingComponentId.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/relativecontainerlayout/RelativeContainerSiblingComponentId.ets#L15-L56)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/bmDW9xyESsi3vhcxzTopvA/zh-cn_image_0000002552798084.png?HW-CC-KV=V1&HW-CC-Date=20260427T233930Z&HW-CC-Expire=86400&HW-CC-Sign=106FF944B1A1BC26CEF626355E37B09C34FAB84214E0BD9781179A3581F4C98B)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/YDLNfdq-TWKD6DSrBNnyQQ/zh-cn_image_0000002558764224.png?HW-CC-KV=V1&HW-CC-Date=20260429T052738Z&HW-CC-Expire=86400&HW-CC-Sign=63FD09F85C8BB5B80EBFEA1112F9C283A83B70C574CC6CD804EB90AA76FDB0F9)
 * 子组件锚点可以任意选择，但需注意不要相互依赖。
 
   ```
@@ -220,7 +220,7 @@ RelativeContainer是一种采用相对布局的容器，支持容器内部的子
 
   [RelativeContainerChildComponentId.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/relativecontainerlayout/RelativeContainerChildComponentId.ets#L15-L65)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/KjnObkCyR-CLh5Pq8GQR5Q/zh-cn_image_0000002583437779.png?HW-CC-KV=V1&HW-CC-Date=20260427T233930Z&HW-CC-Expire=86400&HW-CC-Sign=B09DC48C837E57591FE8E9ABCB4627CD076A9AD7A9288179952C3F00724B8793)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/2tbQP7eWT0Wg2RYxQBTjAQ/zh-cn_image_0000002558604568.png?HW-CC-KV=V1&HW-CC-Date=20260429T052738Z&HW-CC-Expire=86400&HW-CC-Sign=8B44CDB60CFF5276825E6DB50D0EBEE96685E0120027E21D00B0BDF65DA65384)
 
 ### 设置相对于锚点的对齐位置
 
@@ -228,11 +228,11 @@ RelativeContainer是一种采用相对布局的容器，支持容器内部的子
 
 在水平方向上，对齐位置可以设置为HorizontalAlign.Start、HorizontalAlign.Center、HorizontalAlign.End。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/xT10KIF4Q8e6tDJe1OsbDw/zh-cn_image_0000002552957734.png?HW-CC-KV=V1&HW-CC-Date=20260427T233930Z&HW-CC-Expire=86400&HW-CC-Sign=3A17FA2C2326BEA1BCB9BCE79A361F8378240A007496BA0C9D515A9576DCD8F8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/CEKc_tU9QhuhJduwT8oG7w/zh-cn_image_0000002589324093.png?HW-CC-KV=V1&HW-CC-Date=20260429T052738Z&HW-CC-Expire=86400&HW-CC-Sign=BB579C17DCB36C86CDAF73B161BE6B4716F9EFAC4A5B237C951C531E04957E9C)
 
 在垂直方向上，对齐位置可以设置为VerticalAlign.Top、VerticalAlign.Center、VerticalAlign.Bottom。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/02Xt1GJmSWeTrF-1AbxQFw/zh-cn_image_0000002583477735.png?HW-CC-KV=V1&HW-CC-Date=20260427T233930Z&HW-CC-Expire=86400&HW-CC-Sign=59CBBE68D23331910867E0BD500A94EFC9A49A6B44DE90075619EA52275F1A67)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/hHCZAIbOSiyltJQH6CYBqQ/zh-cn_image_0000002589244033.png?HW-CC-KV=V1&HW-CC-Date=20260429T052738Z&HW-CC-Expire=86400&HW-CC-Sign=6100985B3ED93EA09BD1E895959D45EA31D5F8868C24412AD859246829D58E86)
 
 ### 子组件位置偏移
 
@@ -356,11 +356,11 @@ RelativeContainer是一种采用相对布局的容器，支持容器内部的子
 
 [RelativeContainerChildComponentOffset.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/relativecontainerlayout/RelativeContainerChildComponentOffset.ets#L15-L129)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/wQAdSd-sQ72xegNnI_xGPA/zh-cn_image_0000002552798086.png?HW-CC-KV=V1&HW-CC-Date=20260427T233930Z&HW-CC-Expire=86400&HW-CC-Sign=A4DDB38E6DB81F583CC6573C91CB54F867E83286D20BD4159AE37D4596C88E54)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/1HU2mHzkS52ZieEVu4kWrw/zh-cn_image_0000002558764226.png?HW-CC-KV=V1&HW-CC-Date=20260429T052738Z&HW-CC-Expire=86400&HW-CC-Sign=16F5A169AC55B6303931FA711BDDEEE445A037E0B3494F8E64CDB0AF5D27F4E3)
 
 ## 多种组件的对齐布局
 
-Row、Column、Flex、Stack等多种布局组件，可按照RelativeContainer组件规则进行对齐排布。
+[Row](../harmonyos-references/ts-container-row.md)、[Column](../harmonyos-references/ts-container-column.md)、[Flex](../harmonyos-references/ts-container-flex.md)、[Stack](../harmonyos-references/ts-container-stack.md)等多种布局组件，可按照RelativeContainer组件规则进行对齐排布。
 
 ```
 1. @Entry
@@ -435,7 +435,7 @@ Row、Column、Flex、Stack等多种布局组件，可按照RelativeContainer组
 
 [RelativeContainerDifferentComponentId.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/relativecontainerlayout/RelativeContainerDifferentComponentId.ets#L15-L82)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/q1uLTBfvTbiVfp-jmdEC6w/zh-cn_image_0000002583437781.png?HW-CC-KV=V1&HW-CC-Date=20260427T233930Z&HW-CC-Expire=86400&HW-CC-Sign=EC366829D6A7EFF7F7C0A1B6E323D9151DA48798C8DA0F34B89C90F472AB5BDC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/rPW0Vrx3QNChL-wlAQTHpw/zh-cn_image_0000002558604570.png?HW-CC-KV=V1&HW-CC-Date=20260429T052738Z&HW-CC-Expire=86400&HW-CC-Sign=BC706AC07A12CF859D11F3BEA4139922EE9FF8E630EE3ED9797AFD13E4691E91)
 
 ## 组件尺寸
 
@@ -542,11 +542,11 @@ Row、Column、Flex、Stack等多种布局组件，可按照RelativeContainer组
 
 [RelativeContainerComponentSize.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/relativecontainerlayout/RelativeContainerComponentSize.ets#L15-L107)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/3W-KsfFbT7Kdk2k_5WKnQA/zh-cn_image_0000002552957736.png?HW-CC-KV=V1&HW-CC-Date=20260427T233930Z&HW-CC-Expire=86400&HW-CC-Sign=EB64DDD4E598EC4933D0610E8239BFD08D0073F6F15584213F3CD34E069D0B16)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/k1NMWJqXTV6R--_0CwhveA/zh-cn_image_0000002589324095.png?HW-CC-KV=V1&HW-CC-Date=20260429T052738Z&HW-CC-Expire=86400&HW-CC-Sign=4FA9C87C43A86F63737FF82F89FB494663DCE52E454363D3CCA7530D55FF5A76)
 
 ## 多个组件形成链
 
-链的形成依赖于组件之间的关联关系。以组件A和组件B构成的最简水平链为例，其依赖关系为：锚点1 <-- 组件A <---> 组件B --> 锚点2，即A具有left锚点，B具有right锚点，同时A的right锚点与B的HorizontalAlign.Start对齐，B的left锚点与A的HorizontalAlign.End对齐。
+链的形成依赖于组件之间的关联关系。以组件A和组件B构成的最简水平链为例，其依赖关系为：锚点1 <-- 组件A <---> 组件B --> 锚点2，即A具有left锚点，B具有right锚点，同时A的right锚点与B的[HorizontalAlign](../harmonyos-references/ts-appendix-enums.md#horizontalalign).Start对齐，B的left锚点与A的[HorizontalAlign](../harmonyos-references/ts-appendix-enums.md#horizontalalign).End对齐。
 
 * 链的方向和格式在链头组件的[chainMode](../harmonyos-references/ts-universal-attributes-location.md#chainmode12)接口中声明；链内元素的bias属性全部失效，链头元素的bias属性作为整个链的bias生效。链头是指在满足成链规则时链的第一个组件（在水平方向上，从左边开始，镜像语言中从右边开始；在垂直方向上，从上边开始）。
 * 如果链内所有元素的size超出链的锚点约束，超出部分将被均匀分配到链的两侧。在[PACKED](../harmonyos-references/ts-universal-attributes-location.md#chainstyle12)链中，可以通过[Bias](../harmonyos-references/ts-types.md#bias对象说明)设置超出部分的分布。
@@ -700,7 +700,7 @@ Row、Column、Flex、Stack等多种布局组件，可按照RelativeContainer组
 
 [RelativeContainerMultipleComponentsChainMode.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/relativecontainerlayout/RelativeContainerMultipleComponentsChainMode.ets#L15-L158)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/ZTxEf6-kQZqPD0SXgJA7GQ/zh-cn_image_0000002583477737.png?HW-CC-KV=V1&HW-CC-Date=20260427T233930Z&HW-CC-Expire=86400&HW-CC-Sign=DB7533B052099DA1DDC3C73D4E52480AB10722CD97895643A788D94286104909)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/VoHTiWzjSH6xYrEPllVBmA/zh-cn_image_0000002589244035.png?HW-CC-KV=V1&HW-CC-Date=20260429T052738Z&HW-CC-Expire=86400&HW-CC-Sign=138CAF65A910002DAFD4ACBBDAF655207A73F38043144DEA006209172D87B6F5)
 
 ## 使用辅助线辅助定位子组件
 
@@ -744,7 +744,7 @@ Row、Column、Flex、Stack等多种布局组件，可按照RelativeContainer组
 
 [RelativeContainerComponentGuideLine.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/relativecontainerlayout/RelativeContainerComponentGuideLine.ets#L15-L42)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/qx35sNSzQjCSMv1q42e_TA/zh-cn_image_0000002552798088.png?HW-CC-KV=V1&HW-CC-Date=20260427T233930Z&HW-CC-Expire=86400&HW-CC-Sign=36A2F9982AE025F72EDE16B6A7EF9DF581CDC333DA1A655C5EEFCDFDA7CC146F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/9Lc_J-C1StqsCCKy95FkEQ/zh-cn_image_0000002558764228.png?HW-CC-KV=V1&HW-CC-Date=20260429T052738Z&HW-CC-Expire=86400&HW-CC-Sign=1DB943346E98AD5E61385B51F98DB441361851CD59122AC870B487CCF883B17D)
 
 ## 多个组件的屏障
 
@@ -874,4 +874,4 @@ Row、Column、Flex、Stack等多种布局组件，可按照RelativeContainer组
 
 [RelativeContainerComponentBarrier.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/relativecontainerlayout/RelativeContainerComponentBarrier.ets#L15-L80)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/i84eWZyfRRGDwlEyv9lVTQ/zh-cn_image_0000002583437783.png?HW-CC-KV=V1&HW-CC-Date=20260427T233930Z&HW-CC-Expire=86400&HW-CC-Sign=6456CA10F4E2B05B33F53449699B8CE0327F5806139944FF97A41D58D379BF2A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/jOAnFrL1SRWivEudwLBC0A/zh-cn_image_0000002558604572.png?HW-CC-KV=V1&HW-CC-Date=20260429T052738Z&HW-CC-Expire=86400&HW-CC-Sign=68981DB98A0CB094E91D4491939479831D5384316E1F62C4680050CA9B6AB1E4)

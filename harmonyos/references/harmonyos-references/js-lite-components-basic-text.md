@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-lite-c
 title: text
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Lite） > 基础组件 > text
 category: harmonyos-references
-scraped_at: 2026-04-28T08:03:30+08:00
+scraped_at: 2026-04-29T13:53:54+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:236a384f698f67f448cf19e1c5a623816d19375398beab52d63e101d0096f9c8
+content_hash: sha256:fbb9952099707706745871e0cbc990454715205d9e2511b90057e01f729e40de
 ---
 
 文本，用于呈现一段信息。
@@ -110,4 +110,4 @@ PhonePC/2in1TabletTVWearableLite Wearable
 9. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/-3a8UMRyTEO4Dn4zgpOalw/zh-cn_image_0000002583440459.png?HW-CC-KV=V1&HW-CC-Date=20260428T000329Z&HW-CC-Expire=86400&HW-CC-Sign=8F1777B013CFF1596AB370733E8E9987FFB25D67E32C916E9DA024E2E9E36C9C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/pNqUOoUsQPmNFYN-1SZCvA/zh-cn_image_0000002558766940.png?HW-CC-KV=V1&HW-CC-Date=20260429T055353Z&HW-CC-Expire=86400&HW-CC-Sign=B81A49E3731FC3F848FEB7CB256BB79CD3E24737E9D6FFB9970AB275F357D9E4)

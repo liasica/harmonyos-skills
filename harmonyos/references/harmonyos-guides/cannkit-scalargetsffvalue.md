@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-scala
 title: ScalarGetSFFValue
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > AscendC API > 基础API > 标量计算 > ScalarGetSFFValue
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:51:39+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:c999f8e083a05cc7d0ec2cc6b43944ffd38025c6d5824f9b51dbf676551dce66
+scraped_at: 2026-04-29T13:41:23+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:7814cbe9b8e532d80341d427e87cfbc5fcfb6c908d459455149ca93ff157f210
 ---
 
 ## 功能说明
@@ -30,7 +30,7 @@ content_hash: sha256:c999f8e083a05cc7d0ec2cc6b43944ffd38025c6d5824f9b51dbf676551
 
 ## 返回值
 
-int64\_t类型的数，valueIn中第一个0或1出现的位置。
+valueIn中第一个0或1出现的位置。
 
 ## 支持的型号
 

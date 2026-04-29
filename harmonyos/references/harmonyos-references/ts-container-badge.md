@@ -1,10 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-badge
 title: Badge
+breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 信息展示 > Badge
 category: harmonyos-references
-scraped_at: 2026-04-28T08:02:00+08:00
+scraped_at: 2026-04-29T13:52:20+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:3389e24e65be945712d86edd4ec66eb2bf426bb552f978740d894285e16d2154
+content_hash: sha256:0de9e167b05d2b4dd720bebc84f710728c1547d49b55392d5816e6842e78b87d
 ---
 
 信息标记组件，可以附加在单个组件上用于信息提醒的容器组件。
@@ -338,7 +339,7 @@ PhonePC/2in1TabletTVWearable
 150. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/KjZX3VACQZ2YthLrG4O6rg/zh-cn_image_0000002552800252.png?HW-CC-KV=V1&HW-CC-Date=20260428T000159Z&HW-CC-Expire=86400&HW-CC-Sign=F7316BC8DDC7AA1A147C4FDF1704557415DE02471600D34C478946E6B311D0C6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/rkec-47CSEaO0SSTkPR_ww/zh-cn_image_0000002589326293.png?HW-CC-KV=V1&HW-CC-Date=20260429T055216Z&HW-CC-Expire=86400&HW-CC-Sign=D8B823B6FE52442C786747C58034B30B38CEB56669334BB6B6491254364862EC)
 
 ### 示例2（设置数字控制标记显隐）
 
@@ -376,7 +377,7 @@ PhonePC/2in1TabletTVWearable
 29. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/kVKjFUBjTeWXB3MdPtu5AA/zh-cn_image_0000002583439947.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000159Z&HW-CC-Expire=86400&HW-CC-Sign=E452B0A0305656E4C8F8B218C4585FF920DBBD49AFFA0522122A10F159342AB6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/wCaf7KCRQ9C5g6pehu_7gg/zh-cn_image_0000002589246235.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055216Z&HW-CC-Expire=86400&HW-CC-Sign=ED96220C882AEB5DC26C22171C6855097F0534EC864D23A202DB99FD0C7685B3)
 
 ### 示例3（设置外描边和文本延伸方式）
 
@@ -426,4 +427,4 @@ PhonePC/2in1TabletTVWearable
 41. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/6iotTpHNSrCWbMWEewLyFg/zh-cn_image_0000002552959902.png?HW-CC-KV=V1&HW-CC-Date=20260428T000159Z&HW-CC-Expire=86400&HW-CC-Sign=F85E86B9DF616A7E9E50DC848862E76A42AC69A2CE3BFC9D466D267CDE30628B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/LF6VSgXtTqSE5H04iKZ5Uw/zh-cn_image_0000002558766428.png?HW-CC-KV=V1&HW-CC-Date=20260429T055216Z&HW-CC-Expire=86400&HW-CC-Sign=B1CDAAB4833B20C2BC0345127AB55B0881CB8FDF6F452024A81D9E2AD6579A50)

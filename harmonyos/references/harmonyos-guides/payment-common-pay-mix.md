@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/payment-commo
 title: 混合支付场景
 breadcrumb: 指南 > 应用服务 > Payment Kit（鸿蒙支付服务） > 通用收银台接入 > 混合支付场景
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:50:09+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:74210b43edd2e5403b7d8ce676667ca721ca0729ff9dd17e4ab95ddae19b28d9
+scraped_at: 2026-04-29T13:39:33+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:cc9d224034fa145efd7aaf426bb7bbfe9c196f549367500827ca0b0817ee9962
 ---
 
 ## 场景介绍
@@ -18,7 +18,7 @@ content_hash: sha256:74210b43edd2e5403b7d8ce676667ca721ca0729ff9dd17e4ab95ddae19
 
 通用收银台混合支付页面展示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/O2UhAP2ZQpKQXwrzlSB38w/zh-cn_image_0000002583479091.png?HW-CC-KV=V1&HW-CC-Date=20260427T235008Z&HW-CC-Expire=86400&HW-CC-Sign=C5E7CA70348712F8B1583C252300AF0796EAABB24DA187F56851C707C19F2832)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/XDy7PvPdSq2zESvHiAAZgA/zh-cn_image_0000002558765592.png?HW-CC-KV=V1&HW-CC-Date=20260429T053932Z&HW-CC-Expire=86400&HW-CC-Sign=D3F415C72E08116B83FF2E3D13E8BB8C9F217968D4E05ADE6B36B594735E5DE5)
 
 ## 接入流程
 
@@ -34,13 +34,13 @@ content_hash: sha256:74210b43edd2e5403b7d8ce676667ca721ca0729ff9dd17e4ab95ddae19
 
 混合支付模式，收银台上用户可选择华为支付或三方支付方式支付。具体接入流程如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/0A_bdbgURCum4Wr4nnG3kg/zh-cn_image_0000002552799442.png?HW-CC-KV=V1&HW-CC-Date=20260427T235008Z&HW-CC-Expire=86400&HW-CC-Sign=57DCCF345E4CFE8FFF8773BBD9659960D4AB5DB889BB012D2D77F650ACA96542)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/bi1-nzZPS6KgqyHi01b0RA/zh-cn_image_0000002558605936.png?HW-CC-KV=V1&HW-CC-Date=20260429T053932Z&HW-CC-Expire=86400&HW-CC-Sign=4B8AD6202C58774D35C79C7649CD4F8CF59E5B4EF614A07E116A20BA2C09E9D7)
 
 1. 商户客户端请求商户服务器创建订单。
 2. 商户服务器按照商户模型调用Payment Kit服务端[直连商户预下单](../harmonyos-references/payment-prepay.md)或[平台类商户/服务商预下单](../harmonyos-references/payment-agent-prepay.md)接口。
 3. Payment Kit服务端返回预支付ID（prepayId）。
 4. 商户服务端构建**订单支付信息**[orderStr](../harmonyos-references/payment-model.md#orderstr)返回给商户客户端。
-5. 商户客户端调用[requestPayment](../harmonyos-references/payment-paymentservice.md#paymentservicerequestpayment)接口拉起Payment Kit通用收银台。
+5. 商户客户端调用[requestPayment](../harmonyos-references/payment-paymentservice.md#requestpayment)接口拉起Payment Kit通用收银台。
 6. Payment Kit客户端展示含华为支付方式的通用收银台，根据用户所选择的不同支付方式完成支付操作。
 
 ### 选择华为支付场景
@@ -66,7 +66,7 @@ content_hash: sha256:74210b43edd2e5403b7d8ce676667ca721ca0729ff9dd17e4ab95ddae19
 
 3-1-4. 商户服务端将支付跳转链接信息返回给商户客户端。
 
-3-1-5. 商户客户端构建**订单支付跳转信息**[orderStr](../harmonyos-references/payment-model.md#orderstr)调用Payment Kit的[requestPayment](../harmonyos-references/payment-paymentservice.md#paymentservicerequestpayment)接口跳转三方支付。
+3-1-5. 商户客户端构建**订单支付跳转信息**[orderStr](../harmonyos-references/payment-model.md#orderstr)调用Payment Kit的[requestPayment](../harmonyos-references/payment-paymentservice.md#requestpayment)接口跳转三方支付。
 
 3-1-6. Payment Kit客户端根据传递的支付消息拉起三方支付收银台。
 
@@ -131,7 +131,7 @@ content_hash: sha256:74210b43edd2e5403b7d8ce676667ca721ca0729ff9dd17e4ab95ddae19
 
 ### 拉起通用收银台（端侧开发）
 
-商户客户端使用[orderStr](../harmonyos-references/payment-model.md#orderstr)作为参数调用[requestPayment](../harmonyos-references/payment-paymentservice.md#paymentservicerequestpayment)接口拉起Payment Kit支付收银台。
+商户客户端使用[orderStr](../harmonyos-references/payment-model.md#orderstr)作为参数调用[requestPayment](../harmonyos-references/payment-paymentservice.md#requestpayment)接口拉起Payment Kit支付收银台。
 
 当接口通过.then()方法返回时，则表示当前接口请求响应正常，通过.catch()方法返回表示接口请求响应异常。当此次请求有异常时，可通过**error.code**获取错误码，错误码相关信息请参见[错误码](../harmonyos-references/payment-error-code.md)。示例代码如下：
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-login
 title: 订阅华为账号的登录/登出事件
 breadcrumb: 指南 > 应用服务 > Account Kit（华为账号服务） > 登录 > 订阅华为账号的登录/登出事件
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:47:59+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:ddb11a72442d08654adc27eae736457600e2201ec5a29c6dc47db43d70070f60
+scraped_at: 2026-04-29T13:36:49+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:384b53c65556e19cdf38734a9515bf8bba9c4214ca1a0bd1d003e70a6ba8cb84
 ---
 
 ## 场景介绍
@@ -52,18 +52,19 @@ content_hash: sha256:ddb11a72442d08654adc27eae736457600e2201ec5a29c6dc47db43d700
    14. (error: BusinessError, data: commonEventManager.CommonEventData) => {
    15. if (error) {
    16. hilog.error(0x0000, 'testTag',
-   17. `Failed to subscribe , code is ${error.code}, message is ${error.message}`);
+   17. `Failed to subscribe, code is ${error.code}, message is ${error.message}`);
    18. } else {
-   19. if (data.event === commonEventManager.Support.COMMON_EVENT_DISTRIBUTED_ACCOUNT_LOGIN) {
-   20. // 订阅到华为账号登录事件
-   21. }
-   22. if (data.event === commonEventManager.Support.COMMON_EVENT_DISTRIBUTED_ACCOUNT_LOGOUT) {
-   23. // 订阅到华为账号登出事件
-   24. }
+   19. hilog.info(0x0000, 'testTag', 'Succeeded in subscribing.');
+   20. if (data.event === commonEventManager.Support.COMMON_EVENT_DISTRIBUTED_ACCOUNT_LOGIN) {
+   21. // 订阅到华为账号登录事件
+   22. }
+   23. if (data.event === commonEventManager.Support.COMMON_EVENT_DISTRIBUTED_ACCOUNT_LOGOUT) {
+   24. // 订阅到华为账号登出事件
    25. }
-   26. });
-   27. })
-   28. .catch((err: BusinessError) => {
-   29. hilog.error(0x0000, 'testTag', `Failed to createSubscriber. Code: ${err.code}, message: ${err.message}`);
-   30. });
+   26. }
+   27. });
+   28. })
+   29. .catch((err: BusinessError) => {
+   30. hilog.error(0x0000, 'testTag', `Failed to createSubscriber. Code: ${err.code}, message: ${err.message}`);
+   31. });
    ```

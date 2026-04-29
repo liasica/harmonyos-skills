@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: LazyVGridLayout
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 滚动与滑动 > LazyVGridLayout
 category: harmonyos-references
-scraped_at: 2026-04-28T08:01:33+08:00
+scraped_at: 2026-04-29T13:51:48+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:065f5d13d65cda096996a64df22ac1b8037d103ce5f5d1d163ef67e2cfe5cf7e
+content_hash: sha256:aab654a3b1c71d8471dcaa7f4ace4d76c11b79256c7e5b7efecf411f97cd481c
 ---
 
 该组件用于实现支持懒加载的网格布局，其父组件仅限于[WaterFlow](ts-container-waterflow.md)或[FlowItem](ts-container-flowitem.md)，并支持使用自定义组件、[NodeContainer](ts-basic-components-nodecontainer.md)组件封装后，在WaterFlow或FlowItem组件下应用。
@@ -275,4 +275,4 @@ MyDataSource实现了[LazyForEach](ts-rendering-control-lazyforeach.md)数据源
 87. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/0jJNipoiRXOrQavgkDFM7g/zh-cn_image_0000002583439697.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000130Z&HW-CC-Expire=86400&HW-CC-Sign=C7791877D42D7970F3FC3045838C2C0C1FE29D5D602A21D3BA32AA65850C132E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/Xbq50YwlQnOxSXQ9grx1zg/zh-cn_image_0000002589245983.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055145Z&HW-CC-Expire=86400&HW-CC-Sign=EA425BBD53343EEB7B58D4F496EDAE7087698727EE9A7A3875D4319FA0CFE4A3)

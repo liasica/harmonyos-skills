@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arengine-c-fa
 title: 人脸跟踪（C/C++）
 breadcrumb: 指南 > 图形 > AR Engine（AR引擎服务） > 人脸识别与跟踪 > 人脸跟踪（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:46:57+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:f08132daf8cebd507ea4cfbb19f0c71d1d8e0e2024a47d6e55bb1bab39b0509d
+scraped_at: 2026-04-29T13:36:00+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:b377a134a4c203733d0d8406a5d739b8d7651ffcee651142476d675347a5ece5
 ---
 
 ## 约束与限制
@@ -77,14 +77,14 @@ content_hash: sha256:f08132daf8cebd507ea4cfbb19f0c71d1d8e0e2024a47d6e55bb1bab39b
 25. .width('100%')
 26. .height('100%')
 27. .alignRules({
-28. center: { anchor: "__container__", align: VerticalAlign.Center },
-29. middle: { anchor: "__container__", align: HorizontalAlign.Center }
+28. center: { anchor: '__container__', align: VerticalAlign.Center },
+29. middle: { anchor: '__container__', align: HorizontalAlign.Center }
 30. })
 31. .onLoad(() => {
 32. this.interval = setInterval(() => {
-33. // Call the update Native API to update the calculation result of each frame by AR Engine.
+33. // 调用更新Native API来更新AR Engine每帧的计算结果
 34. arEngineDemo.update(this.xComponentId);
-35. }, 33) // Set the frame rate to 30 fps (with the frame refreshed every 33 ms).
+35. }, 33) // // 将帧速率设置为30fps（每33ms刷新一次帧）
 36. })
 37. .onDestroy(() => {
 38. clearInterval(this.interval);
@@ -132,7 +132,7 @@ content_hash: sha256:f08132daf8cebd507ea4cfbb19f0c71d1d8e0e2024a47d6e55bb1bab39b
 5. // 创建AR会话配置器。
 6. HMS_AREngine_ARConfig_Create(arSession, &arConfig);
 7. // 设置ARType为FACE开启人脸跟踪模式。
-8. HMS_AREngine_ARConfig_SetARType(arSession, arConfig, ARENGINE_TYPE_FACE)；
+8. HMS_AREngine_ARConfig_SetARType(arSession, arConfig, ARENGINE_TYPE_FACE);
 9. // （可选）设置为前置相机
 10. HMS_AREngine_ARConfig_SetCameraLensFacing(arSession, arConfig, ARENGINE_CAMERA_FACING_FRONT);
 11. // （可选）设置为多人脸模式
@@ -146,10 +146,11 @@ content_hash: sha256:f08132daf8cebd507ea4cfbb19f0c71d1d8e0e2024a47d6e55bb1bab39b
 1. 创建一个可追踪对象列表trackableList，用于存放人脸跟踪模式下AR Engine运行过程中检测到的所有人脸。
 
    ```
-   1. AREngine_ARTrackableList *trackableList = nullptr;
-   2. HMS_AREngine_ARTrackableList_Create(arSession, &trackableList);
-   3. // 调用HMS_AREngine_ARSession_GetAllTrackables函数，检测当前环境中的所有人脸，并将结果存放在trackableList中。
-   4. HMS_AREngine_ARSession_GetAllTrackables(arSession, planeTrackedType, planeList);
+   1. AREngine_ARTrackableList *faceList = nullptr;
+   2. HMS_AREngine_ARTrackableList_Create(arSession, &faceList);
+   3. // 调用HMS_AREngine_ARSession_GetAllTrackables函数，检测当前环境中的所有人脸，并将结果存放在faceList中。
+   4. AREngine_ARTrackableType faceTrackedType = ARENGINE_TRACKABLE_FACE;
+   5. HMS_AREngine_ARSession_GetAllTrackables(arSession, faceTrackedType, faceList);
    ```
 2. 获取平面数量调用[HMS\_AREngine\_ARTrackableList\_GetSize](../harmonyos-references/arengine-capi-arengine.md#hms_arengine_artrackablelist_getsize)函数获取可追踪对象数量，结果存放在trackableListSize中。
 

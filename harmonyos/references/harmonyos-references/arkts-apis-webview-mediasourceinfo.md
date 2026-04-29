@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (MediaSourceInfo)
 breadcrumb: API参考 > 应用框架 > ArkWeb（方舟Web） > ArkTS API > @ohos.web.webview (Webview) > Class (MediaSourceInfo)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:05:01+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:ae224b99f81b97973632f150dc8f1e35bba7f557ef0b66a227ec54af2c8bddf2
+scraped_at: 2026-04-29T13:55:29+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:e2da3b0d9fb350c15aed56396efb5e0f96d716fe1b276d405cbe2766b587790d
 ---
 
 表示媒体源的信息。
@@ -26,4 +26,4 @@ PhonePC/2in1TabletTVWearable
 | --- | --- | --- | --- | --- |
 | type12+ | [SourceType](arkts-apis-webview-e.md#sourcetype12) | 否 | 否 | 媒体源的类型。 |
 | source12+ | string | 否 | 否 | 媒体源地址。 |
-| format12+ | string | 否 | 否 | 媒体源格式， 可能为空， 需要使用者自己去判断格式。 |
+| format12+ | string | 否 | 否 | 媒体源格式，可能为空，需要开发者自行判断格式。 |

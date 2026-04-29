@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/account-a
 title: LoginPanel (华为账号Panel登录组件)
 breadcrumb: API参考 > 应用服务 > Account Kit（华为账号服务） > ArkTS组件 > LoginPanel (华为账号Panel登录组件)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:16:06+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:b12b769312ae7e1db826f0159318d49b2b83f9cfc4386431ba3b9831c9361db2
+scraped_at: 2026-04-29T14:06:44+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:40aa22a7276e46de5dfb18be1b2383c08ee8aefe2c7dc4efc99d695a3b7c86f3
 ---
 
 本模块提供LoginPanel组件，应用通过集成该组件完成华为账号登录功能。
@@ -187,7 +187,7 @@ build(): void
 124. appInfo: {
 125. // 此处为示例资源，开发者可使用应用图标进行替换，以保证正常编译运行
 126. appIcon: $r('app.media.app_icon'),
-127. appName: '应用名称',
+127. appName: '应用名称'
 128. },
 129. privacyText: this.privacyText,
 130. // 参考华为账号开发指南获取匿名手机号

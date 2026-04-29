@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ndk-31
 title: 如何在Native侧集成三方库Curl，并进行HTTP数据请求
 breadcrumb: FAQ > 应用框架开发 > NDK开发 > NDK开发 > 如何在Native侧集成三方库Curl，并进行HTTP数据请求
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:24:35+08:00
+scraped_at: 2026-04-29T14:15:51+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:08a96c7b1c09cd4e6157aa2b8ea12b5de4db763e6f4ac9d790cabca01e38b70b
+content_hash: sha256:bf37e221039e039549cc2e97fef7b468a37cd739ea027499a3fbdd6d0483934f
 ---
 
 可以将Curl移植到HarmonyOS，并在Native侧开发时直接使用Curl的C++库实现。具体的移植方法请参考相关链接。
@@ -14,13 +14,13 @@ content_hash: sha256:08a96c7b1c09cd4e6157aa2b8ea12b5de4db763e6f4ac9d790cabca01e3
 
 1. 将移植后的Curl的so库放入Native工程的entry/libs/arm64-v8a/目录，将包含头文件的include目录放入entry/src/main/cpp目录。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/BLDwORnwS2C62cnmqQECYA/zh-cn_image_0000002194158760.png?HW-CC-KV=V1&HW-CC-Date=20260428T002434Z&HW-CC-Expire=86400&HW-CC-Sign=4836098D000098D5B49F54C3998AC14E4B724A527705219CB3B84308248F8919 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/BLDwORnwS2C62cnmqQECYA/zh-cn_image_0000002194158760.png?HW-CC-KV=V1&HW-CC-Date=20260429T061550Z&HW-CC-Expire=86400&HW-CC-Sign=0DA4C6EBE655587DD5667BA0499B62395C431675939EA7F86EDC2F197B470D9F "点击放大")
 2. 在CMakeLists.txt文件中链接Curl对应的so库。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/GB2qfpt7SfOP4ZsU5FL-3A/zh-cn_image_0000002194158764.png?HW-CC-KV=V1&HW-CC-Date=20260428T002434Z&HW-CC-Expire=86400&HW-CC-Sign=479E3B3087D4ABF3E6F31D044780CA9AAC65C21616C1BDC81798AFFEE52A1C33 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/GB2qfpt7SfOP4ZsU5FL-3A/zh-cn_image_0000002194158764.png?HW-CC-KV=V1&HW-CC-Date=20260429T061550Z&HW-CC-Expire=86400&HW-CC-Sign=44BD0AA2288A1FBA2880BCEA3FFDBE2DC1EDC3B0B173981DE275D39C76B4A402 "点击放大")
 3. 在Native侧的.cpp文件中引入头文件curl.h，使用Curl的相关能力。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/q4CXsIJQTqy_AXr70-8E7g/zh-cn_image_0000002229758629.png?HW-CC-KV=V1&HW-CC-Date=20260428T002434Z&HW-CC-Expire=86400&HW-CC-Sign=BCDF09D09A8897559AFA131C9AC4BBEEBD603C8FE06B06C52BA5139153DFBBC3 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/q4CXsIJQTqy_AXr70-8E7g/zh-cn_image_0000002229758629.png?HW-CC-KV=V1&HW-CC-Date=20260429T061550Z&HW-CC-Expire=86400&HW-CC-Sign=68CB197811F18F6A833B7107E4978862E6A2B6688CAA6315AA17B4E8B17EC630 "点击放大")
 
    具体可参考以下代码：
 
@@ -91,7 +91,7 @@ content_hash: sha256:08a96c7b1c09cd4e6157aa2b8ea12b5de4db763e6f4ac9d790cabca01e3
 
 终端使用curl指令获取的网站信息一致。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/4B0LVU1LQvWmb2l4lqmxug/zh-cn_image_0000002229604137.png?HW-CC-KV=V1&HW-CC-Date=20260428T002434Z&HW-CC-Expire=86400&HW-CC-Sign=623D78B31F4383FEB8DA154BFDF679DCC2316EADFD19AD1F56E501B05BB09141 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/4B0LVU1LQvWmb2l4lqmxug/zh-cn_image_0000002229604137.png?HW-CC-KV=V1&HW-CC-Date=20260429T061550Z&HW-CC-Expire=86400&HW-CC-Sign=3E0F6A4A23B948440BA230957844AB7FB2816EC07285C57D31A8B3907E83F4C2 "点击放大")
 
 **参考链接**
 

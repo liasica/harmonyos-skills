@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-faq-4
 title: 设置地图Logo始终显示
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > Map Kit常见问题 > 设置地图Logo始终显示
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:49:56+08:00
+scraped_at: 2026-04-29T13:39:21+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:2be603b9f19498a6e078081285fa0ab243fc422d6e7d1edbe98838f9b8db7b50
+content_hash: sha256:ebd339d97c4247b59b9f127de3d70348c7de1afb972ca53c538270dde89e4954
 ---
 
 **现象描述**
 
 Map Kit地图Logo不可见。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/Hqc0D3ZKRCiAKx66UnawoA/zh-cn_image_0000002552959056.jpg?HW-CC-KV=V1&HW-CC-Date=20260427T234955Z&HW-CC-Expire=86400&HW-CC-Sign=A568CA1CEE1CF35F682BE3CE076AE12F2A44D5727BFEAAD464FF2F427C71D30B "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/LCPL3o4KRUKO-OFQnQiRmA/zh-cn_image_0000002558765558.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053919Z&HW-CC-Expire=86400&HW-CC-Sign=2B11D117EFD10FD6FF473F7165406EDEE5C720DBB2E03BAAB25D392CAB19CDB8 "点击放大")
 
 **可能原因**
 
@@ -147,4 +147,4 @@ Map Kit无法隐藏地图Logo，用户可通过调整地图组件的边距或布
 
 展示效果如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/hRdDToCITqmlbqWP-GBeDQ/zh-cn_image_0000002583479057.gif?HW-CC-KV=V1&HW-CC-Date=20260427T234955Z&HW-CC-Expire=86400&HW-CC-Sign=D29F3A28085467E98414646260E350BC2F1F33EF0A025F631AB8F7938CBA18F9 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/0LEwYHxiREqhf-6Jm-kFyw/zh-cn_image_0000002558605902.gif?HW-CC-KV=V1&HW-CC-Date=20260429T053919Z&HW-CC-Expire=86400&HW-CC-Sign=EE93101231F369E7C5A6C19E9D3AAAA4E88516C7BF487407EA73F0713DCA980C "点击放大")

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/iap-data-
 title: 数据类型说明
 breadcrumb: API参考 > 应用服务 > IAP Kit（应用内支付服务） > ArkTS API > 数据类型说明
 category: harmonyos-references
-scraped_at: 2026-04-28T08:16:53+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:56abf199c1d9ebfa2d2cf2c8a3013fe1ed9be59862c534ea454c723e1a078a14
+scraped_at: 2026-04-29T14:07:37+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:6b22dbe93858671a3962389d4a2c95372cd25ce444e61d12f62850e2d324a208
 ---
 
 ## InAppPurchaseData
@@ -22,7 +22,7 @@ content_hash: sha256:56abf199c1d9ebfa2d2cf2c8a3013fe1ed9be59862c534ea454c723e1a0
 | packageName | 否 | string | 应用安装包名。 |
 | productId | 是 | string | 商品ID。  **说明：** 为避免资金损失，开发者在对支付结果验签成功后，必须对其进行校验。 |
 | productName | 否 | string | 商品名称。 |
-| purchaseTime | 否 | number | 商品购买时间，UTC时间戳，以毫秒为单位。  如果没有完成购买，则没有值。 |
+| purchaseTime | 否 | number | 商品购买时间，UTC时间戳，以ms为单位。  如果没有完成购买，则没有值。 |
 | purchaseTimeMillis | 否 | number | 历史接口兼容用，同purchaseTime，新接入无需关注本字段。 |
 | purchaseState | 是 | number | 订单交易状态。  -1：初始化  0：已购买  1：已取消  2：已退款  3：待处理 |
 | developerPayload | 否 | string | 商户侧保留信息，由应用在调用支付接口时传入。 |
@@ -70,18 +70,18 @@ payType取值说明。
 | productId | 是 | string | 商品ID。 |
 | productType | 是 | string | 商品类型。具体取值如下：  0：消耗型商品  1：非消耗型商品  2：自动续期订阅商品  3：非续期订阅商品 |
 | quantity | 否 | number | 购买参数。表示所购买消耗型/非续期订阅商品的数量，需满足以下限制。  一次仅针对单商品类型，不支持不同类型混合  一次请求数量不超过10个  **说明：** 如果开发者使用了quantity参数以支持商品的批量购买，则需要在发货时校验下单的商品数量和最终发货商品数量是否一致，避免造成漏发、多发的情况。  **元服务API：** 从版本5.0.3(15)开始，该接口支持在元服务中使用。  **起始版本：** 5.0.3(15) |
-| purchaseTime | 是 | number | 购买时间，UTC时间戳，以毫秒为单位。  如果没有完成购买，则没有值。 |
+| purchaseTime | 是 | number | 购买时间，UTC时间戳，以ms为单位。  如果没有完成购买，则没有值。 |
 | finishStatus | 否 | string | 发货状态。具体取值如下：  1：已发货  2：未发货 |
 | needFinish | 否 | boolean | 是否需要确认发货，完成购买。具体取值如下：  - true：必须确认发货，完成购买  - false：可选确认发货，完成购买 |
 | price | 是 | number | 价格，单位：分。价格受如下因素影响：  - 开发者在[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)中配置的商品价格  - 使用优惠后的价格，优惠类型包含[推介促销](../harmonyos-guides/iap-subscription-functions.md#提供优惠)、[优惠促销](../harmonyos-guides/iap-subscription-functions.md#提供优惠)、[挽留促销](../harmonyos-guides/iap-subscription-functions.md#提供优惠)  - 批量购买商品的总价格 |
 | currency | 是 | string | 币种，请参见[ISO 4217](https://www.iso.org/iso-4217-currency-codes.html)标准。例如CNY、USD、MYR。 |
 | developerPayload | 否 | string | 商户侧保留信息，由开发者在调用支付接口时传入。 |
 | purchaseOrderRevocationReasonCode | 否 | string | 购买订单撤销原因。  0：其他  1：用户遇到问题退款 |
-| revocationTime | 否 | number | 购买订单撤销时间，UTC时间戳，以毫秒为单位。 |
+| revocationTime | 否 | number | 购买订单撤销时间，UTC时间戳，以ms为单位。 |
 | offerTypeCode | 否 | string | 优惠类型。  1：推介促销  2：优惠促销  4：挽留促销 |
 | offerId | 否 | string | 优惠ID。 |
 | countryCode | 是 | string | 国家/地区码，用于区分国家/地区信息，请参见[ISO 3166](https://www.iso.org/iso-3166-country-codes.html)标准。 |
-| signedTime | 是 | number | 签名时间，UTC时间戳，以毫秒为单位。 |
+| signedTime | 是 | number | 签名时间，UTC时间戳，以ms为单位。 |
 
 以下参数只在自动续期订阅商品场景返回：
 
@@ -90,7 +90,7 @@ payType取值说明。
 | subGroupGenerationId | 是 | string | 订阅组的代ID。  - 用户切换订阅商品时，此ID不会改变。  - 订阅失效且超出[保留期](../harmonyos-guides/iap-subscription-functions.md#保留期)后，用户重新购买商品时，此ID会改变。 |
 | subscriptionId | 是 | string | 商品的订阅ID。以下场景，此ID会发生改变：  - 用户切换订阅商品时。  - 订阅失效且超出[保留期](../harmonyos-guides/iap-subscription-functions.md#保留期)后，用户重新购买商品时。 |
 | subGroupId | 是 | string | 订阅型商品所属的商品组ID。 |
-| duration | 是 | string | 此次购买的有效周期，采用ISO 8601格式。例如：P1W表示一周，P1M表示一个月。 |
+| duration | 是 | string | 此次购买的有效周期，采用[ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)格式。例如：P1W表示一周，P1M表示一个月。 |
 | durationTypeCode | 是 | string | 订阅周期段类型。  0：正常周期段  1：延期段 |
 
 ## SubGroupStatusPayload
@@ -116,7 +116,7 @@ payType取值说明。
 | subscriptionId | 是 | string | 商品的订阅ID。以下场景，此ID会发生改变：  - 用户切换订阅商品时。  - 订阅失效且超出[保留期](../harmonyos-guides/iap-subscription-functions.md#保留期)后，用户重新购买商品时。 |
 | purchaseToken | 是 | string | 购买token，在购买消耗型/非消耗型商品以及非续期订阅商品场景中与具体购买订单一一对应，在订阅型商品场景中与订阅ID一一对应。 |
 | status | 是 | string | 订阅状态。  1：生效中  2：已到期  3：尝试扣费  5：撤销 |
-| expiresTime | 是 | number | 自动续期订阅商品的过期时间，UTC时间戳，以毫秒为单位。 |
+| expiresTime | 是 | number | 自动续期订阅商品的过期时间，UTC时间戳，以ms为单位。 |
 | lastPurchaseOrder | 否 | object | 当前订阅最新的一笔购买订单。购买订单包含的参数请参见[PurchaseOrderPayload](iap-data-model.md#purchaseorderpayload)。 |
 | recentPurchaseOrderList | 否 | object[] | 当前订阅最新的购买订单列表，包含续期、折算、延期等产生的购买订单。购买订单包含的参数请参见[PurchaseOrderPayload](iap-data-model.md#purchaseorderpayload)。 |
 | renewalInfo | 否 | object | 当前订阅最新的未来扣费计划，包含的参数请参见[SubRenewalInfo](iap-data-model.md#subrenewalinfo)。 |
@@ -138,5 +138,5 @@ payType取值说明。
 | offerId | 否 | string | 优惠ID。 |
 | renewalPrice | 否 | number | 下期续费价格，取消订阅场景下不返回，单位：分。 |
 | currency | 否 | string | 币种，请参见[ISO 4217](https://www.iso.org/iso-4217-currency-codes.html)标准。例如CNY、USD、MYR。 |
-| renewalTime | 否 | number | 续期时间，UTC时间戳，以毫秒为单位。 |
+| renewalTime | 否 | number | 续期时间，UTC时间戳，以ms为单位。 |
 | expirationIntent | 否 | string | 订阅续期失败的原因。  1：用户取消  2：商品无效  3：签约无效  4：扣费异常  5：用户不同意涨价  6：未知  7：存在未发货的订阅 |

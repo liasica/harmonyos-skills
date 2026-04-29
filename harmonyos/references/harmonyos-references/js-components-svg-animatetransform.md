@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: animateTransform
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > svg组件 > animateTransform
 category: harmonyos-references
-scraped_at: 2026-04-28T08:03:18+08:00
+scraped_at: 2026-04-29T13:53:39+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:9770a7717764366b6a1bdc6ee0ea71d18c4e1e2d262c81e569f3ac0522f648de
+content_hash: sha256:255aa2ffe8a36c7cddf3df0f78e4f8fef045f7265ccb6ae126231c517771f730
 ---
 
 说明
@@ -101,7 +101,7 @@ PhonePC/2in1TabletTVWearable
 15. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/sorawcHIS2a_6RhXWZ-xOA/zh-cn_image_0000002583480255.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000317Z&HW-CC-Expire=86400&HW-CC-Sign=52E65953C75D901F91C5E97D21DAB26746C91FF086359FBEB5C9DEA1BD877F16)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/LhcIyv9NS4WuUMn_FaMCOg/zh-cn_image_0000002589326647.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055338Z&HW-CC-Expire=86400&HW-CC-Sign=EFAE3E8E71DA969927859CE0529BBDA66978A47986242CEFD49F9F8351CC2204)
 
 动画叠加
 
@@ -156,7 +156,7 @@ PhonePC/2in1TabletTVWearable
 14. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/8R23wV7oTSuh1AibFOuKIg/zh-cn_image_0000002552800606.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000317Z&HW-CC-Expire=86400&HW-CC-Sign=A47281FDFA19A1A12C140BDD5ED9C0E0C761B2839760AF6111371E4B9E397EB4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/AVy3EL6VSBiJiok7TvNydg/zh-cn_image_0000002589246589.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055338Z&HW-CC-Expire=86400&HW-CC-Sign=AC4CA5C0C00B1E9F4158B7B4FD497FE6D7D57E451042FA30E992777DD12C561C)
 
 涉及组件示例
 
@@ -224,4 +224,4 @@ PhonePC/2in1TabletTVWearable
 14. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/_3_ADR3OSNmOpi5G_eqWwg/zh-cn_image_0000002583440301.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000317Z&HW-CC-Expire=86400&HW-CC-Sign=DB3E33BAB7AFF960D5F34ACDDF4D6D9E3A963F7FDDAA8D416EAF675BFCEA8458)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/Rzcd4VO2QdOUeur-qF6O0g/zh-cn_image_0000002558766782.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055338Z&HW-CC-Expire=86400&HW-CC-Sign=3D9BA988C58BAD93FBBCE615ACE2400147B7767D876157DF82C2B675A2590D91)

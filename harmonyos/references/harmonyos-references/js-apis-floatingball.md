@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-f
 title: @ohos.window.floatingBall (闪控球窗口)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > 窗口管理 > @ohos.window.floatingBall (闪控球窗口)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:00:42+08:00
-doc_updated_at: 2026-04-17
-content_hash: sha256:9ebadb59c42788e3ac8c407ff929e36fed52f607938a5d4737a2d37975938620
+scraped_at: 2026-04-29T13:50:55+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:9e041da87343027dba08196258f7359f749a35ba9b41725b152ca9b99862a471
 ---
 
 该模块提供闪控球的基础功能，包括判断设备是否支持闪控球功能，以及创建闪控球控制器来启动、更新或停止闪控球。适用于跨应用的题目搜索、账单记录、商品比价、抢单、翻译场景，以及金融类应用的实时盯盘场景，以小窗模式呈现内容。闪控球以悬浮小组件形式显示在其他应用之上，即时呈现应用的关键信息。
@@ -56,7 +56,7 @@ create(config: FloatingBallConfiguration): Promise<FloatingBallController>
 
 **系统能力：** SystemCapability.Window.SessionManager
 
-**设备行为差异：** 该接口在Phone和Tablet设备中可正常调用，在其他设备中返回801错误码。
+**设备行为差异：** 该接口在Tablet设备的非电脑模式、Phone设备下可正常调用，在其他设备、Tablet设备的电脑模式下调用返回801错误码。
 
 **参数：**
 

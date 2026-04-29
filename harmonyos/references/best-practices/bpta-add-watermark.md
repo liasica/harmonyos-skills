@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-add-waterm
 title: 水印添加
 breadcrumb: 最佳实践 > 图形 > 图形绘制 > 水印添加
 category: best-practices
-scraped_at: 2026-04-28T08:20:53+08:00
+scraped_at: 2026-04-29T14:11:44+08:00
 doc_updated_at: 2026-03-17
-content_hash: sha256:0e6a6c75e579eb6b34eab3a3b2fb42faf13bf11f463704d628992f960338d7d4
+content_hash: sha256:2ad0a634ac0e81a1d8050b1649ac0f86cd7381609df2639c39e50395d3a7a7e9
 ---
 
 ## 概述
@@ -28,7 +28,7 @@ content_hash: sha256:0e6a6c75e579eb6b34eab3a3b2fb42faf13bf11f463704d628992f96033
 
 某个页面背景上添加水印文字，实现效果图如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/PobSZSlFQNWTslFD2eNLTQ/zh-cn_image_0000002229451785.png?HW-CC-KV=V1&HW-CC-Date=20260428T002051Z&HW-CC-Expire=86400&HW-CC-Sign=230046D919E33371F42AD3CC80AAB440340990537F185492070F24C3FFBF119B "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/PobSZSlFQNWTslFD2eNLTQ/zh-cn_image_0000002229451785.png?HW-CC-KV=V1&HW-CC-Date=20260429T061142Z&HW-CC-Expire=86400&HW-CC-Sign=FE2711E29D333B563B52AD23469CF178049C60066B5721DC0D5BF65FD1A66053 "点击放大")
 
 ### 实现原理
 
@@ -66,10 +66,10 @@ content_hash: sha256:0e6a6c75e579eb6b34eab3a3b2fb42faf13bf11f463704d628992f96033
    2. 实现绘制水印draw()方法。绘制的起点默认为坐标轴的原点（画布的左上角），通过坐标轴的平移及旋转，实现在画布的不同位置、不同角度绘制水印。如果水印有一定旋转角度，想保证第一个水印能完整显示，需要对绘制的起点做平移，平移距离通过旋转角度及水印宽高计算。
       * 旋转角度大于0，由下图可知，水印沿x轴方向平移距离positionX = tan(θ) \* 水印高度，即绘制起点为(positionX, 0)。
 
-        ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/zi36IK1xTbaeVVUsvFPo1w/zh-cn_image_0000002229337289.png?HW-CC-KV=V1&HW-CC-Date=20260428T002051Z&HW-CC-Expire=86400&HW-CC-Sign=7FD8AA2D26D94BD487E30820B888E4A565955DDE8087DB777292B6E71617A7FA "点击放大")
+        ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/zi36IK1xTbaeVVUsvFPo1w/zh-cn_image_0000002229337289.png?HW-CC-KV=V1&HW-CC-Date=20260429T061142Z&HW-CC-Expire=86400&HW-CC-Sign=9345C1CCB85EFE4A0B0293E0FEF607C2B4263948D91588D2DA346C9224324023 "点击放大")
       * 旋转角度小于0，由下图可知，水印沿y轴方向平移距离positionY = tan(θ) \* 水印宽度，即绘制起点为(0, positionY)。
 
-        ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/FNAgVi-cQwW8UdU5emUrrQ/zh-cn_image_0000002229337285.png?HW-CC-KV=V1&HW-CC-Date=20260428T002051Z&HW-CC-Expire=86400&HW-CC-Sign=2E5633FE85AAB4A11C0F80D35F8721D239CCD5F934D5C4AFD730B9A6531E79E9 "点击放大")
+        ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/FNAgVi-cQwW8UdU5emUrrQ/zh-cn_image_0000002229337285.png?HW-CC-KV=V1&HW-CC-Date=20260429T061142Z&HW-CC-Expire=86400&HW-CC-Sign=3BB07107C7FEA938EA3E19B3584C8DA7445FCC207AFDD283A8BCD1CCF5C7A0E2 "点击放大")
 
       最终通过[CanvasRenderingContext2D.fillText()](../harmonyos-references/ts-canvasrenderingcontext2d.md#filltext)方法进行水印文字的绘制。
 
@@ -160,7 +160,7 @@ content_hash: sha256:0e6a6c75e579eb6b34eab3a3b2fb42faf13bf11f463704d628992f96033
 
 保存的图片、拍照生成的图片等场景，需要添加水印。实现效果图如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/SuxDaIXrRGG3G1OgTGXaAQ/zh-cn_image_0000002229451781.png?HW-CC-KV=V1&HW-CC-Date=20260428T002051Z&HW-CC-Expire=86400&HW-CC-Sign=1C4A77D90455E8B9C91EA27E979C2C5261B4424965D70642AF4C58CB4CBDEA16 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/SuxDaIXrRGG3G1OgTGXaAQ/zh-cn_image_0000002229451781.png?HW-CC-KV=V1&HW-CC-Date=20260429T061142Z&HW-CC-Expire=86400&HW-CC-Sign=2514B31BC8B6CA472B0618F712A0351063EED12A220A4CE256093A24E5A1D10C "点击放大")
 
 ### 实现原理
 
@@ -300,7 +300,7 @@ content_hash: sha256:0e6a6c75e579eb6b34eab3a3b2fb42faf13bf11f463704d628992f96033
 
 在PDF预览页面点击添加水印按钮，生成带水印的PDF文档，并显示在预览页面中。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/p-rLzXoKSYOSl6i-2n-IYg/zh-cn_image_0000002229337293.png?HW-CC-KV=V1&HW-CC-Date=20260428T002051Z&HW-CC-Expire=86400&HW-CC-Sign=3476AAD9892AB0CC36B384FAD092853E82A8680081C414223E1CD542693C08E5 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/p-rLzXoKSYOSl6i-2n-IYg/zh-cn_image_0000002229337293.png?HW-CC-KV=V1&HW-CC-Date=20260429T061142Z&HW-CC-Expire=86400&HW-CC-Sign=BA31AE41F6821C404FD11161DD4C42B2D51874B975972DBC47F0853A6BC0365B "点击放大")
 
 ### 实现原理
 

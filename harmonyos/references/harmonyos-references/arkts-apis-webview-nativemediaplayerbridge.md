@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (NativeMediaPlayerBridge)
 breadcrumb: API参考 > 应用框架 > ArkWeb（方舟Web） > ArkTS API > @ohos.web.webview (Webview) > Interface (NativeMediaPlayerBridge)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:05:10+08:00
-doc_updated_at: 2026-03-12
-content_hash: sha256:28d4f0eb066000b16149c079d0072e181586d663aa079a4825affd0294e066d7
+scraped_at: 2026-04-29T13:55:39+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:158ae80c12d132f621c16f9ed9650f75613c4c45bd38f226f6313a2cb9cb9912
 ---
 
 [CreateNativeMediaPlayerCallback](arkts-apis-webview-t.md#createnativemediaplayercallback12)回调函数的返回值类型。接管网页媒体的播放器和ArkWeb内核之间的一个接口类。
@@ -47,7 +47,7 @@ PhonePC/2in1TabletTVWearable
 
 play(): void
 
-播放视频。
+播放媒体。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -75,7 +75,7 @@ PhonePC/2in1TabletTVWearable
 
 seek(targetTime: number): void
 
-播放跳转到某个时间点。
+跳转播放进度到指定时间点。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -97,13 +97,13 @@ setVolume(volume: number): void
 
 设置播放器音量值。
 
+**系统能力：** SystemCapability.Web.Webview.Core
+
 **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | volume | number | 是 | 播放器的音量。  取值范围：[0, 1.0]，其中0表示静音，1.0表示最大音量。 |
-
-**系统能力：** SystemCapability.Web.Webview.Core
 
 **示例：**
 
@@ -135,7 +135,7 @@ PhonePC/2in1TabletTVWearable
 
 setPlaybackRate(playbackRate: number): void
 
-设置播放速度。
+设置播放速率。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -143,7 +143,7 @@ setPlaybackRate(playbackRate: number): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| playbackRate | number | 是 | 播放倍率。  取值范围: [0, 10.0]，其中1表示原速播放。 |
+| playbackRate | number | 是 | 播放速率。  取值范围：[0, 10.0]，其中1表示原速播放。 |
 
 **示例：**
 
@@ -197,7 +197,7 @@ PhonePC/2in1TabletTVWearable
 
 resumePlayer?(): void
 
-通知应用重建应用内播放器，并恢复应用内播放器的状态信息。
+通知应用重建播放器，并恢复播放器的状态信息。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -211,7 +211,7 @@ PhonePC/2in1TabletTVWearable
 
 suspendPlayer?(type: SuspendType): void
 
-通知应用销毁应用内播放器，并保存应用内播放器的状态信息。
+通知应用销毁播放器，并保存播放器的状态信息。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 

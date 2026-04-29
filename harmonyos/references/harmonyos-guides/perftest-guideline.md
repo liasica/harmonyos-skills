@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/perftest-guid
 title: 白盒性能测试框架使用指导
 breadcrumb: 指南 > 应用测试 > 单元测试和UI测试 > 自动化测试框架使用指导 > 白盒性能测试框架使用指导
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:57:52+08:00
+scraped_at: 2026-04-29T13:48:01+08:00
 doc_updated_at: 2026-04-21
-content_hash: sha256:ce3d1d7e5efac07ec4792f15468aa170e6e6ffc91bbc24f2cde8a636663b41b9
+content_hash: sha256:6d881d0b402840b8157be401f1ea3968203553d7b05a7924469578c7451d6b51
 ---
 
 ## 简介
@@ -16,7 +16,7 @@ content_hash: sha256:ce3d1d7e5efac07ec4792f15468aa170e6e6ffc91bbc24f2cde8a636663
 
 PerfTest功能设计图如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/puXgmZl-RXmcjzemLSVzvQ/zh-cn_image_0000002581217683.png?HW-CC-KV=V1&HW-CC-Date=20260427T235751Z&HW-CC-Expire=86400&HW-CC-Sign=3A6576709ED943924649D51ED8F600AAA8584A39F981E959C0630C388818BCE0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/puXgmZl-RXmcjzemLSVzvQ/zh-cn_image_0000002581217683.png?HW-CC-KV=V1&HW-CC-Date=20260429T054759Z&HW-CC-Expire=86400&HW-CC-Sign=982ACF256867942674B26EE2CBF1A0D9805F3D18CFDB3BB25A6A1F2EC2806BDC)
 
 PerfTest对外提供ArkTS API，包括性能测试策略设置、性能测试执行、测试结果获取等能力。具体请参考[API文档](../harmonyos-references/js-apis-perftest.md)。
 
@@ -31,7 +31,7 @@ PerfTest服务端负责白盒性能测试框架的主要功能处理，包含以
 
 使用PerfTest接口进行白盒性能测试流程如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/Wjv4gbW8QjeZxuK8-s0tCg/zh-cn_image_0000002550777588.png?HW-CC-KV=V1&HW-CC-Date=20260427T235751Z&HW-CC-Expire=86400&HW-CC-Sign=07F33EE041E7ACFF7D4069532B682E8A4F402B764C3E772C5D6EB6B0CA5210BD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/Wjv4gbW8QjeZxuK8-s0tCg/zh-cn_image_0000002550777588.png?HW-CC-KV=V1&HW-CC-Date=20260429T054759Z&HW-CC-Expire=86400&HW-CC-Sign=F2B742630A4BC02FF9ED7FABC5F6AAEB2DF9409C837237AEE144716C49572957)
 
 1. 定义性能测试策略，明确测试指标列表、被测代码段、环境复位代码段、被测应用包名、测试迭代次数、代码段单次执行超时时间等，后续白盒性能测试中将依照此策略执行测试。
 2. 创建测试任务，配置测试策略并准备测试环境。

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: Checkbox
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 按钮与选择 > Checkbox
 category: harmonyos-references
-scraped_at: 2026-04-28T08:01:42+08:00
+scraped_at: 2026-04-29T13:51:58+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:8793556d30cf7abb395c83d4695ba3627edd24b318b10bda257a5d8547b21626
+content_hash: sha256:cffd491ae85299ec501f804bd890cf72a614d1d94c082c32c0f6927036dc49b8
 ---
 
 提供多选框组件，通常用于某选项的打开或关闭。
@@ -412,7 +412,7 @@ PhonePC/2in1TabletTVWearable
 23. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/TPUiDBk5Rn2wANka9z3duQ/zh-cn_image_0000002583439743.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000141Z&HW-CC-Expire=86400&HW-CC-Sign=589F74FA486162920712D9EADB2D1AD66C42D0A32427788D2E55BD8FE27A617E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/h2Qd83yUTF2gMhe6oUn04g/zh-cn_image_0000002589246029.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055154Z&HW-CC-Expire=86400&HW-CC-Sign=A9AE09C51721811985B9D5F370A3C011B5D520C21BD449497467CEBBED213FCC)
 
 ### 示例2（设置多选框颜色）
 
@@ -463,7 +463,7 @@ PhonePC/2in1TabletTVWearable
 42. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/wNLe87u5TkGhKzjHbj7lBQ/zh-cn_image_0000002552959698.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000141Z&HW-CC-Expire=86400&HW-CC-Sign=6C539BB3A5F0EE7EAFF82FD2FA0D913D3A221A6692F73A74529CDD267810DF49)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/iplpD52UQQq-yD-gCcNSaA/zh-cn_image_0000002558766220.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055154Z&HW-CC-Expire=86400&HW-CC-Sign=34190E3879DFE5163D92671D36B248AE412210F63193D2657732352FE45794D5)
 
 ### 示例3（自定义多选框样式）
 
@@ -554,7 +554,7 @@ PhonePC/2in1TabletTVWearable
 82. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/y3IGu4OwTpKZ4nXGJrKkpw/zh-cn_image_0000002583479699.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000141Z&HW-CC-Expire=86400&HW-CC-Sign=7E422569B0CA30480A6DD6E16DE107CE9BAF3F7FAC89E632286E085E466B202E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/9VUGLFXmQeqJE9HlFVjoEw/zh-cn_image_0000002558606562.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055154Z&HW-CC-Expire=86400&HW-CC-Sign=7113C4CC22FFC45CF9349E5F2CD72857983052148532609B8FDC6C573AF8E576)
 
 ### 示例4（设置文本多选框样式）
 
@@ -611,7 +611,7 @@ PhonePC/2in1TabletTVWearable
 48. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/jjbKARkqSBaiQJrz0flu6w/zh-cn_image_0000002552800050.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000141Z&HW-CC-Expire=86400&HW-CC-Sign=D0BBB07C08BFF79DF4AB3939BB51635F29F075D0EDD62CE56AB691D00A07D58B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/gKArHU9LQC-i1DQ_WFs7Aw/zh-cn_image_0000002589326089.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055154Z&HW-CC-Expire=86400&HW-CC-Sign=63436866D0FDC9C845B53EEDCE4346DFE7F54005454088C813BE2E78FE4F4333)
 
 ### 示例5（获取多选框选中信息）
 
@@ -771,7 +771,7 @@ PhonePC/2in1TabletTVWearable
 151. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/dwUs_ZxuTtCGNAp9FrLNJw/zh-cn_image_0000002583439745.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000141Z&HW-CC-Expire=86400&HW-CC-Sign=D6C730D04D8D29B9BF6AF76BE7E453A7C14E73580FBC29367C2B232149A96772)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/d4M9LTk8S2OxsRDqzFDYQw/zh-cn_image_0000002589246031.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055154Z&HW-CC-Expire=86400&HW-CC-Sign=E2ADF339522BB238E67C5C919A3154671951FBF85F6DA40116737B71C1D5D20F)
 
 ### 示例6（设置滑动多选）
 
@@ -986,4 +986,4 @@ PhonePC/2in1TabletTVWearable
 206. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/wafmv1yBTt-9GvZh9Qz27g/zh-cn_image_0000002552959700.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000141Z&HW-CC-Expire=86400&HW-CC-Sign=D9B48D9671A41ED5A1E5853D8EB91684FF07F1FFCE59A65EA8E0BE2CDA842E7B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/l5AQRg6lROO4NxI6QETebA/zh-cn_image_0000002558766222.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055154Z&HW-CC-Expire=86400&HW-CC-Sign=D06B2CC46D3BE28555B2BC4C418B66ABB4569C2A5446768C55DEDD9EFF430B20)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-emulator-
 title: 模拟器访问网络
 breadcrumb: 指南 > 编写与调试应用 > 使用模拟器运行应用 > 使用模拟器 > 模拟器访问网络
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:56:42+08:00
+scraped_at: 2026-04-29T13:46:37+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:3eb6c13aababffa31db743813353ddaf11f06ebe0517c0ad7023a48b44a0ecdd
+content_hash: sha256:29c395f7910396cf0e33ee335dd66309be5e3a86ca02ca5560da4ebd167216bb
 ---
 
 ## 模拟器访问互联网
@@ -39,4 +39,4 @@ content_hash: sha256:3eb6c13aababffa31db743813353ddaf11f06ebe0517c0ad7023a48b44a
    该命令中127.0.0.1:5555为模拟器B的HDC服务端口号，可通过hdc list targets命令查询。
 4. 在模拟器A上，设置客户端连接到10.0.2.2:<localPort>，其中10.0.2.2为模拟器的默认网关。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/KuXM6E-SQ2KdGh3Hb2nNkA/zh-cn_image_0000002530911062.png?HW-CC-KV=V1&HW-CC-Date=20260427T235641Z&HW-CC-Expire=86400&HW-CC-Sign=597AE27FB5F3ECA75DCC3C0F5F8FB61027BA67237970BDBCAF6E9B42131D4CF1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/9laeBSANS02CXLM5AlyVrA/zh-cn_image_0000002530911062.png?HW-CC-KV=V1&HW-CC-Date=20260429T054636Z&HW-CC-Expire=86400&HW-CC-Sign=524E5C10E319DAD4C774E06C8FB713DA35AF93DD18A13D00BF7C171134182B38)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-clip-sh
 title: 形状裁剪（clipShape）
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 几何图形绘制 > 形状裁剪（clipShape）
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:39:49+08:00
+scraped_at: 2026-04-29T13:28:01+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:f92ad5a774482c2d140cf0d475345892255ba05bd5fe2e5cc2ec38a8a5342610
+content_hash: sha256:5fb8c4f93f3ff745e25ca9e7d4192e744964df11222478dcc3fc48c64f499a3a
 ---
 
 可利用[clipShape](../harmonyos-references/ts-universal-attributes-sharp-clipping.md#clipshape12)接口将组件裁剪为所需的形状。调用该接口后，可以保留该形状覆盖的组件部分，同时移除组件的其余部分。裁剪形状本身是不可见的。
@@ -51,7 +51,7 @@ content_hash: sha256:f92ad5a774482c2d140cf0d475345892255ba05bd5fe2e5cc2ec38a8a53
 
 [ClipShapeExample1.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ClipShape/entry/src/main/ets/View/ClipShapeExample1.ets#L15-L40)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/oqwxIlonRvyVgscuxI6amQ/zh-cn_image_0000002583437981.png?HW-CC-KV=V1&HW-CC-Date=20260427T233948Z&HW-CC-Expire=86400&HW-CC-Sign=914E0F0B37F14848A46D4EBB4FD0284FE91D7A263B6045403C9EE9436B86346E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/abOw0pOQR6aahOBgdDQXJQ/zh-cn_image_0000002558604770.png?HW-CC-KV=V1&HW-CC-Date=20260429T052800Z&HW-CC-Expire=86400&HW-CC-Sign=3719D74D23ABD8BE309F5FDE5FE007A4315585D1BDC58F208CE20163D5815473)
 
 ## 裁剪椭圆形
 
@@ -84,7 +84,7 @@ content_hash: sha256:f92ad5a774482c2d140cf0d475345892255ba05bd5fe2e5cc2ec38a8a53
 
 [ClipShapeExample2.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ClipShape/entry/src/main/ets/View/ClipShapeExample2.ets#L15-L38)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/DwKfrqYWTni4FT8m7zfseA/zh-cn_image_0000002552957936.png?HW-CC-KV=V1&HW-CC-Date=20260427T233948Z&HW-CC-Expire=86400&HW-CC-Sign=7EAC3F9A40C9EE3B37D7214EF1BC5109C08F65177A9C9CB8886E88AEDF8E303B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/9MirZ29LSDuPvISz7HvGkw/zh-cn_image_0000002589324295.png?HW-CC-KV=V1&HW-CC-Date=20260429T052800Z&HW-CC-Expire=86400&HW-CC-Sign=F1183E5561A137350EAD73EC6637EFF5FBB2CA717ED62534C86F29F1B625873F)
 
 ## 裁剪矩形
 
@@ -117,7 +117,7 @@ content_hash: sha256:f92ad5a774482c2d140cf0d475345892255ba05bd5fe2e5cc2ec38a8a53
 
 [ClipShapeExample3.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ClipShape/entry/src/main/ets/View/ClipShapeExample3.ets#L15-L38)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/Jcq7e8PvSbyrNBbaopSAcA/zh-cn_image_0000002583477937.png?HW-CC-KV=V1&HW-CC-Date=20260427T233948Z&HW-CC-Expire=86400&HW-CC-Sign=E683D9FEE8EDE15A701E43C05FBFB9A4FD151B99A30E5C0FADD3C41989E78B71)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/XKFl4fw8R6yc0Yitv-0yHw/zh-cn_image_0000002589244235.png?HW-CC-KV=V1&HW-CC-Date=20260429T052800Z&HW-CC-Expire=86400&HW-CC-Sign=E934A7885397F8F2E7450DA4F978BA7DAF26323124E8C05B2313990DDB3F0D7C)
 
 ## 裁剪不规则形状
 
@@ -149,4 +149,4 @@ content_hash: sha256:f92ad5a774482c2d140cf0d475345892255ba05bd5fe2e5cc2ec38a8a53
 
 [ClipShapeExample4.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ClipShape/entry/src/main/ets/View/ClipShapeExample4.ets#L15-L37)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/mp0WqY0OQbO6QzhrgQbaqA/zh-cn_image_0000002552798288.png?HW-CC-KV=V1&HW-CC-Date=20260427T233948Z&HW-CC-Expire=86400&HW-CC-Sign=A5FEC8B25EAE3F80D12B2EF3B840F7FDE85EB01039AE4CF7F179D2E33378112E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/WBfIiBjpTxqWAlRGc3cg9w/zh-cn_image_0000002558764428.png?HW-CC-KV=V1&HW-CC-Date=20260429T052800Z&HW-CC-Expire=86400&HW-CC-Sign=B45B00F7A3F55F40791E4D419EE53D215C38834907C2185ED028A13D358F56B1)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/vibrator-guid
 title: 振动开发指导(ArkTS)
 breadcrumb: 指南 > 系统 > 硬件 > Sensor Service Kit（传感器服务） > 振动 > 振动开发指导(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:44:49+08:00
+scraped_at: 2026-04-29T13:33:41+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:a689f230ef16f05d779d8b09dfaf251e3d30ae0f852f53f6b6a3ebb9eafc9b0c
+content_hash: sha256:435992a119422f32fea02993a5d61c887c7d2924c98ed1fae3f9d09478bc6734
 ---
 
 ## 场景介绍
@@ -160,7 +160,7 @@ JSON文件共包含3个属性。
 
 1. 新建一个工程。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/Jz-0cjqrRZSKT195YlQOtw/zh-cn_image_0000002552958482.png?HW-CC-KV=V1&HW-CC-Date=20260427T234447Z&HW-CC-Expire=86400&HW-CC-Sign=DAFB5CA5714E69889FC55438EFA409860AA3DD019A98598455EC5D0A4BE10DD6)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/rvV9tGW8TfyB2nswxiDw9g/zh-cn_image_0000002558764982.png?HW-CC-KV=V1&HW-CC-Date=20260429T053340Z&HW-CC-Expire=86400&HW-CC-Sign=7164C96AE162BF950670F402AEE1FBEF9DDF184E4E10A9F6B68C1DCD9099CB19)
 2. 配置权限，具体配置方式请参考[声明权限](declare-permissions.md)。
 
    ```

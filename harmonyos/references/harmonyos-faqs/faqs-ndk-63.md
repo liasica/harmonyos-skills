@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ndk-63
 title: 如何通过多个xxx.d.ts文件导出Native侧接口
 breadcrumb: FAQ > 应用框架开发 > NDK开发 > NDK开发 > 如何通过多个xxx.d.ts文件导出Native侧接口
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:24:41+08:00
+scraped_at: 2026-04-29T14:15:58+08:00
 doc_updated_at: 2026-03-17
-content_hash: sha256:ff0ec8c97e652bb9e3f9b641190ee8aa64a0ca17af89570c30b22b95c88c8810
+content_hash: sha256:08009449e276c2ebac822c503fc2df9714d07fef661369a07a032019337eab2a
 ---
 
 **问题现象**
@@ -16,7 +16,7 @@ content_hash: sha256:ff0ec8c97e652bb9e3f9b641190ee8aa64a0ca17af89570c30b22b95c88
 
 在oh-package.json5中的types字段只能指定一个出口。如果需要封装多个.d.ts文件中的接口，可以使用重导出的方式。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/_39YHD1pTQWXM9oQi2ACaA/zh-cn_image_0000002194318472.png?HW-CC-KV=V1&HW-CC-Date=20260428T002440Z&HW-CC-Expire=86400&HW-CC-Sign=339361941E7623187AEA22C630A1BCD9D5F4644863CD2A62EF8BF191AF0F292F "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/_39YHD1pTQWXM9oQi2ACaA/zh-cn_image_0000002194318472.png?HW-CC-KV=V1&HW-CC-Date=20260429T061557Z&HW-CC-Expire=86400&HW-CC-Sign=4D7DEE5765A2C67ABCDBFD8825F286998756F296358DA47F4C0DAB95BC6E99F7 "点击放大")
 
 实现方式：
 

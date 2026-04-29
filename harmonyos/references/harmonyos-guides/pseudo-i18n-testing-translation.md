@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pseudo-i18n-t
 title: 翻译伪本地化测试
 breadcrumb: 指南 > 应用框架 > Localization Kit（本地化开发服务） > 本地化测试 > 伪本地化测试 > 翻译伪本地化测试
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:41:49+08:00
+scraped_at: 2026-04-29T13:30:18+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:2c96e978d3059e1ccee08e58d5556ad28ef1c0cb827214cd2874a354eb344659
+content_hash: sha256:1bce692622d519720fdded8c261db7e923403bdefa0c70fab04ddd10a905b5b8
 ---
 
 ## 使用场景
@@ -27,7 +27,7 @@ content_hash: sha256:2c96e978d3059e1ccee08e58d5556ad28ef1c0cb827214cd2874a354eb3
 
 ## 测试事项
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/ZS-9XQTHQ8eyk68zSyn9Ng/zh-cn_image_0000002583478323.png?HW-CC-KV=V1&HW-CC-Date=20260427T234148Z&HW-CC-Expire=86400&HW-CC-Sign=82F13E46623FB758A53DA204B71CA869A5FAA5EEFD4D876BEFFDA49487B5FD83)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/QFoLQ1TRSWKU0Q5H9_AW_w/zh-cn_image_0000002589244627.png?HW-CC-KV=V1&HW-CC-Date=20260429T053017Z&HW-CC-Expire=86400&HW-CC-Sign=9B4ABB2D2C23083D1E65AE4BD9A933CAC665A9933AEA4388A0F2BE3B7716AFDA)
 
 1. 检查界面截断、变形或布局异常等问题。其中，界面截断可通过观察界面字符串是否以“]”正确结尾，看不到“]”说明界面字符串未完整显示。
 2. 检查硬编码问题。如果界面需要翻译的文字未处理为伪翻译格式，说明代码中存在对界面文字的硬编码。

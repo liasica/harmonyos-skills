@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: 编译报错“Schema validate failed”
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 编译报错“Schema validate failed”
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:29:10+08:00
+scraped_at: 2026-04-29T14:20:24+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:da683380d308e8d521718747169d7fdda08698a0355cd72905e72eae3a52c18b
+content_hash: sha256:bcc84c12a4e82856ca13bda763af079b3a940148001cdc8863958bfcceb8437b
 ---
 
 **问题现象**
@@ -101,7 +101,7 @@ DevEco Studio编译时出现“Schema validate failed”错误。
   + required：表示该字段为必选配置项。若缺失或拼写错误将导致属性未配置。
   + oneOf：表示当前配置不符合oneOf要求。通过instancePath已经确认报错出现在abilities标签，在DevEco Studio中，按住Ctrl点击"abilities"跳转到对应的module.json文件，可以查看到必须配置以下两组中的一组。根据对比排查，可识别到因拼写错误导致"name"属性未配置。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/joXujhYmQ-im9vYytJ70Fw/zh-cn_image_0000002194158784.png?HW-CC-KV=V1&HW-CC-Date=20260428T002909Z&HW-CC-Expire=86400&HW-CC-Sign=FAB068F31AD3A43B560488F54D8414A657F701DDC44E9E1E85D9704D4CF03A03)
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/joXujhYmQ-im9vYytJ70Fw/zh-cn_image_0000002194158784.png?HW-CC-KV=V1&HW-CC-Date=20260429T062023Z&HW-CC-Expire=86400&HW-CC-Sign=BBB154B9E714E95F5DBF26C8D072BA78D88DD1D82B430F9C7D5AB3820C9E80FD)
   + enum：所有可配置的属性。开发者可根据枚举值确认属性的正确写法。
   + propertyNames：字段拼写错误时，propertyName: 'nam'指明 "nam" 为错误属性。
 * params：不同keyword对应不同的详细说明。例如，当keyword为'required'时，params的missingProperty: 'name'表示缺失的属性为“name”。

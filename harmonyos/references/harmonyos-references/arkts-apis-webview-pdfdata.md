@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (PdfData)
 breadcrumb: API参考 > 应用框架 > ArkWeb（方舟Web） > ArkTS API > @ohos.web.webview (Webview) > Class (PdfData)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:05:02+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:c2ed65446e6e11787461474dce29f5be4a6f7dd5124f6c9a99cc6c57a56592ff
+scraped_at: 2026-04-29T13:55:30+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:d9151b0bef717f510a25a5df7d61e7793fee2ac5db523f627e7169b913344f99
 ---
 
-createPdf函数输出数据流类。
+PdfData类用于封装createPdf函数输出的数据流。
 
 说明
 
@@ -23,7 +23,7 @@ PhonePC/2in1TabletTVWearable
 
 pdfArrayBuffer(): Uint8Array
 
-获取网页生成的数据流。完整示例代码参考[createPdf](arkts-apis-webview-webviewcontroller.md#createpdf14)。
+获取网页生成的PDF数据流。完整示例代码参考[createPdf](arkts-apis-webview-webviewcontroller.md#createpdf14)。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 

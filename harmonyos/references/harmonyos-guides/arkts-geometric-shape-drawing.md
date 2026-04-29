@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-geometr
 title: 绘制几何图形 (Shape)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 几何图形绘制 > 绘制几何图形 (Shape)
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:39:49+08:00
+scraped_at: 2026-04-29T13:28:01+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:cb58d01015c8531fd0ac7b341510fc6f8011ed26a496778805481c04560e9675
+content_hash: sha256:aefe880b7b55c1c2e5b2256144ef6fc1cb110f26bdb493437c8d7ac294709d6c
 ---
 
 绘制组件用于在页面绘制图形，Shape组件是绘制组件的父组件，包含所有绘制组件的通用属性。具体用法请参考[Shape](../harmonyos-references/ts-drawing-components-shape.md)。
@@ -43,7 +43,7 @@ content_hash: sha256:cb58d01015c8531fd0ac7b341510fc6f8011ed26a496778805481c04560
 
   [Shape.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ShapeDrawing/entry/src/main/ets/pages/Shape.ets#L27-L29)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/kGKYuzb9Sf2cnsojTBKO1g/zh-cn_image_0000002552957928.jpg?HW-CC-KV=V1&HW-CC-Date=20260427T233947Z&HW-CC-Expire=86400&HW-CC-Sign=F5DABCFB7575CB44DE9A6C362FF50B807DB33CD3A460BD2DF561976024C6D6DE)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/o8kL7njIRxON3kvG3TbseA/zh-cn_image_0000002589324287.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T052800Z&HW-CC-Expire=86400&HW-CC-Sign=52301A34382156F9EB1B1A20F93AEF86D8A427BCCEEA030C71FB43E94DBA9FDC)
 
 ## 形状视口viewPort
 
@@ -125,7 +125,7 @@ content_hash: sha256:cb58d01015c8531fd0ac7b341510fc6f8011ed26a496778805481c04560
 
   [ViewPort1.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ShapeDrawing/entry/src/main/ets/pages/ViewPort1.ets#L16-L80)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/vRneTajZQGGkBao4KrRbzw/zh-cn_image_0000002583477929.png?HW-CC-KV=V1&HW-CC-Date=20260427T233947Z&HW-CC-Expire=86400&HW-CC-Sign=E470203A61DD886769C40905AB0438980C61A0C49E79C41EA8A0B90AB16040BF)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/7aYSWTwWRta-SFuHREnn2Q/zh-cn_image_0000002589244227.png?HW-CC-KV=V1&HW-CC-Date=20260429T052800Z&HW-CC-Expire=86400&HW-CC-Sign=5EF758014872A34FE3D0F1AE7F724764D9F4FD841968A2EFDFFC14322E30B236)
 * 创建一个宽高都为300的shape组件，背景色为黄色，创建一个宽高都为300的viewPort。用一个蓝色的矩形来填充viewPort，在viewPort中绘制一个半径为75的圆。
 
   ```
@@ -158,7 +158,7 @@ content_hash: sha256:cb58d01015c8531fd0ac7b341510fc6f8011ed26a496778805481c04560
 
   [ViewPort2.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ShapeDrawing/entry/src/main/ets/pages/ViewPort2.ets#L16-L42)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/XR_Sz-ZkTrWycRkTkp83Qw/zh-cn_image_0000002552798280.jpg?HW-CC-KV=V1&HW-CC-Date=20260427T233947Z&HW-CC-Expire=86400&HW-CC-Sign=CBC68880F9810B4B0BE6E7689844FFD4C96DD95001171C47CCC6D77500705CDF)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/KMEvhLHVTcW8iVby85_yrA/zh-cn_image_0000002558764420.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T052800Z&HW-CC-Expire=86400&HW-CC-Sign=C01E6446FDFD10E8013BD20128C1815445E39617230BE07517BB17B849E2EA32)
 * 创建一个宽高都为300的shape组件，背景色为黄色，创建一个宽高都为300的viewPort。用一个蓝色的矩形来填充viewPort，在viewPort中绘制一个半径为75的圆，将viewPort向右方和下方各平移150。
 
   ```
@@ -191,7 +191,7 @@ content_hash: sha256:cb58d01015c8531fd0ac7b341510fc6f8011ed26a496778805481c04560
 
   [ViewPort3.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ShapeDrawing/entry/src/main/ets/pages/ViewPort3.ets#L16-L42)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/PVG--0ynSa-nAZr7ax8QAQ/zh-cn_image_0000002583437975.jpg?HW-CC-KV=V1&HW-CC-Date=20260427T233947Z&HW-CC-Expire=86400&HW-CC-Sign=A67DB44E37847EE540CF1BE9C197661245724CCD2FBDBA16CF39C8457D6FF443)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/4bOahKtpQAylYPT_kk4qpQ/zh-cn_image_0000002558604764.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T052800Z&HW-CC-Expire=86400&HW-CC-Sign=7DA41AF0F6CD609A1E52ED05C71EA603BF74FB3305C2F901C9104DD541DB1C0E)
 
 ## 自定义样式
 
@@ -214,7 +214,7 @@ content_hash: sha256:cb58d01015c8531fd0ac7b341510fc6f8011ed26a496778805481c04560
 
   [Fill.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ShapeDrawing/entry/src/main/ets/pages/Fill.ets#L21-L28)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/3OSRr3SHSjKM0MNcSmV7lg/zh-cn_image_0000002552957930.jpg?HW-CC-KV=V1&HW-CC-Date=20260427T233947Z&HW-CC-Expire=86400&HW-CC-Sign=789462BB019CC864C79EF6B6A81983E7EAF94EFB41F0625451E9C7BB30A7FEED)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/22-Y73nQQ1qnST9Uhd7aVw/zh-cn_image_0000002589324289.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T052800Z&HW-CC-Expire=86400&HW-CC-Sign=E433634B5AABEA80E1DFD0F9D5E9508D77D6AF5B0E98498A54C40C3478DA6DED)
 * 通过[stroke](../harmonyos-references/ts-drawing-components-path.md#stroke)可以设置组件边框颜色。
 
   ```
@@ -228,7 +228,7 @@ content_hash: sha256:cb58d01015c8531fd0ac7b341510fc6f8011ed26a496778805481c04560
 
   [Stroke.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ShapeDrawing/entry/src/main/ets/pages/Stroke.ets#L21-L28)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/G7rgjCWRSzudKWZWcFHvIg/zh-cn_image_0000002583477931.jpg?HW-CC-KV=V1&HW-CC-Date=20260427T233947Z&HW-CC-Expire=86400&HW-CC-Sign=92D1FFDECCE6F38F39627A403970EA94F33783EBDA7149C01713378CEDFF05CC)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/uOqs79gRSdWtk9_GsZmX-Q/zh-cn_image_0000002589244229.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T052800Z&HW-CC-Expire=86400&HW-CC-Sign=BBEE9D72FDCF13374D4549AAD0F9A0B7C70288DEDA746083086980CC78D47E90)
 * 通过[strokeOpacity](../harmonyos-references/ts-drawing-components-path.md#strokeopacity)可以设置边框透明度。
 
   ```
@@ -244,7 +244,7 @@ content_hash: sha256:cb58d01015c8531fd0ac7b341510fc6f8011ed26a496778805481c04560
 
   [StrokeOpacity.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ShapeDrawing/entry/src/main/ets/pages/StrokeOpacity.ets#L21-L30)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/MFaFZMjUQ92N8LRaObhRdA/zh-cn_image_0000002552798282.jpg?HW-CC-KV=V1&HW-CC-Date=20260427T233947Z&HW-CC-Expire=86400&HW-CC-Sign=635FEC04042EFE36978E7AF17FDE0ABDEE36F0862126F941B3AA7417644EAE4A)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/u4hFEtVvQPCroWU0J_1TBQ/zh-cn_image_0000002558764422.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T052800Z&HW-CC-Expire=86400&HW-CC-Sign=0580DDB8BB7861D06864AFDB3834DB1A3292B1A7689AB6E82046A1C94777626E)
 * 通过[strokeLineJoin](../harmonyos-references/ts-drawing-components-polyline.md#strokelinejoin)可以设置线条拐角绘制样式。拐角绘制样式分为Bevel(使用斜角连接路径段)、Miter(使用尖角连接路径段)、Round(使用圆角连接路径段)。
 
   ```
@@ -261,7 +261,7 @@ content_hash: sha256:cb58d01015c8531fd0ac7b341510fc6f8011ed26a496778805481c04560
 
   [StrokeLineJoin.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ShapeDrawing/entry/src/main/ets/pages/StrokeLineJoin.ets#L21-L31)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/fEPy4HC6TsmjQtySz8QKQg/zh-cn_image_0000002583437977.jpg?HW-CC-KV=V1&HW-CC-Date=20260427T233947Z&HW-CC-Expire=86400&HW-CC-Sign=C6D398435A345D6B64C176127C46BE09F706F7A6070BAA5B1C1B08B4EB70BD6A)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/L5gLqA1tQdah1esM3U3F_w/zh-cn_image_0000002558604766.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T052800Z&HW-CC-Expire=86400&HW-CC-Sign=80B6745EFDD0E2B3E9FA8BD9B289FC9EE7ED1E89F39207010F5A2B22B687D627)
 * 通过[strokeMiterLimit](../harmonyos-references/ts-drawing-components-polyline.md#strokemiterlimit)设置斜接长度与边框宽度比值的极限值。
 
   斜接长度表示外边框外边交点到内边交点的距离，边框宽度即[strokeWidth](../harmonyos-references/ts-drawing-components-polyline.md#strokewidth)属性的值。
@@ -293,7 +293,7 @@ content_hash: sha256:cb58d01015c8531fd0ac7b341510fc6f8011ed26a496778805481c04560
 
   [StrokeMiterLimit.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ShapeDrawing/entry/src/main/ets/pages/StrokeMiterLimit.ets#L21-L42)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/3McfVm8qQ4O0nf3yZvvaUA/zh-cn_image_0000002552957932.jpg?HW-CC-KV=V1&HW-CC-Date=20260427T233947Z&HW-CC-Expire=86400&HW-CC-Sign=CBB9BD8D8F5769E73811EDC741CEE73F2DBE42D4856C59738A9365A153114FA7)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/8Tykp-UdRzWHQFatZXbz-w/zh-cn_image_0000002589324291.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T052800Z&HW-CC-Expire=86400&HW-CC-Sign=92F2D2A6DA464450394210F63692647450BA1531781783F3DC1593E4AA195C09)
 * 通过[antiAlias](../harmonyos-references/ts-drawing-components-circle.md#antialias)设置是否开启抗锯齿，默认值为true（开启抗锯齿）。
 
   ```
@@ -308,7 +308,7 @@ content_hash: sha256:cb58d01015c8531fd0ac7b341510fc6f8011ed26a496778805481c04560
 
   [AntiAlias.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ShapeDrawing/entry/src/main/ets/pages/AntiAlias.ets#L22-L30)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/b9nCOTUrRne0aYxrKgoMwQ/zh-cn_image_0000002583477933.png?HW-CC-KV=V1&HW-CC-Date=20260427T233947Z&HW-CC-Expire=86400&HW-CC-Sign=89392601D0D0276234404A9BA4F95F14F0ADAA110479499BDF53BA7C37E19642)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/u0XKnmAeRMWWXH_qtb7rlw/zh-cn_image_0000002589244231.png?HW-CC-KV=V1&HW-CC-Date=20260429T052800Z&HW-CC-Expire=86400&HW-CC-Sign=E94AF006E5CF7F25019C7CA53CE9B37B5C330B605CC6E1A835A9AB7AF0C7CAA0)
 
   ```
   1. // 关闭抗锯齿
@@ -323,7 +323,7 @@ content_hash: sha256:cb58d01015c8531fd0ac7b341510fc6f8011ed26a496778805481c04560
 
   [AntiAlias.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ShapeDrawing/entry/src/main/ets/pages/AntiAlias.ets#L32-L41)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/EAoC6hXET4-Qc9_o_gvR5A/zh-cn_image_0000002552798284.jpg?HW-CC-KV=V1&HW-CC-Date=20260427T233947Z&HW-CC-Expire=86400&HW-CC-Sign=DB1E58855D2E998409E2C30CE784733A0F46D41CEBC5B5909C7E88E3E5D7CDAB)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/lLXpllYXQVWB7t5yueGlJg/zh-cn_image_0000002558764424.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T052800Z&HW-CC-Expire=86400&HW-CC-Sign=FB6E1AA8620C363433B3377FD678208BB747F610D48731E7AE325572AD1B394A)
 * 通过[mesh](../harmonyos-references/ts-drawing-components-shape.md#mesh8)设置网格效果，实现图像局部扭曲。
 
   说明
@@ -484,7 +484,7 @@ content_hash: sha256:cb58d01015c8531fd0ac7b341510fc6f8011ed26a496778805481c04560
 
   [Mesh.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ShapeDrawing/entry/src/main/ets/pages/Mesh.ets#L16-L166)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/UC5T26G4S02jZmeu8oSZLw/zh-cn_image_0000002583437979.png?HW-CC-KV=V1&HW-CC-Date=20260427T233947Z&HW-CC-Expire=86400&HW-CC-Sign=CD5D0AFF14832EC71612DFF81615B7237CBFB1C53776307A52F3F42C87DF3A6F)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/4WFovyJITqa0K6VNIcR8aA/zh-cn_image_0000002558604768.png?HW-CC-KV=V1&HW-CC-Date=20260429T052800Z&HW-CC-Expire=86400&HW-CC-Sign=C3B53D6B5B543C442F8F2B4E79F1A245D97EF9A4E06F0D3F7B89EAA0BEE37050)
 
 ## 场景示例
 
@@ -523,7 +523,7 @@ content_hash: sha256:cb58d01015c8531fd0ac7b341510fc6f8011ed26a496778805481c04560
 
 [ShapeExample.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ShapeDrawing/entry/src/main/ets/pages/ShapeExample.ets#L16-L39)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/CmFOsz7MR_-jm7oakBzvZg/zh-cn_image_0000002552957934.png?HW-CC-KV=V1&HW-CC-Date=20260427T233947Z&HW-CC-Expire=86400&HW-CC-Sign=E78E6CB278031C27D5620FB351C8BA843C056C8B0C192C48F1324DAB45FFED10)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/1xnN2RATRW2RNhux7kYFNQ/zh-cn_image_0000002589324293.png?HW-CC-KV=V1&HW-CC-Date=20260429T052800Z&HW-CC-Expire=86400&HW-CC-Sign=D66363B319FB3C7DA545A708DBD1464BF1578E49E661FD02D14E4B498254DDC2)
 
 ### 绘制圆和圆环
 
@@ -557,7 +557,7 @@ content_hash: sha256:cb58d01015c8531fd0ac7b341510fc6f8011ed26a496778805481c04560
 
 [CircleExample.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ShapeDrawing/entry/src/main/ets/pages/CircleExample.ets#L16-L46)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/a6II6i1LROeSl7sUBKbWfg/zh-cn_image_0000002583477935.jpg?HW-CC-KV=V1&HW-CC-Date=20260427T233947Z&HW-CC-Expire=86400&HW-CC-Sign=F8578B3D5DF6A13909EFA7ADDB3FF7E7D0270AF46B0510A2611C22383C0C85A2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/l9SlmDO6QDS2xXOb-TpnTQ/zh-cn_image_0000002589244233.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T052800Z&HW-CC-Expire=86400&HW-CC-Sign=77FD0C1FBE1476CC3AD63206A0E6BB7D02560FDE52D91EE629DA484BC65CE30A)
 
 ### UI视觉属性作用效果
 
@@ -584,4 +584,4 @@ content_hash: sha256:cb58d01015c8531fd0ac7b341510fc6f8011ed26a496778805481c04560
 
 [CircleExample.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ShapeDrawing/entry/src/main/ets/pages/CircleExample.ets#L17-L45)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/lH4Jbc6XQxSyjviqlrKUBQ/zh-cn_image_0000002552798286.jpg?HW-CC-KV=V1&HW-CC-Date=20260427T233947Z&HW-CC-Expire=86400&HW-CC-Sign=2799F40C2F2678FE0B8F3D8CAA0A52646FD14A1364C08890ADF05E09F9A226F6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/KIu9YSq4R46Ku7m31j_5BQ/zh-cn_image_0000002558764426.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T052800Z&HW-CC-Expire=86400&HW-CC-Sign=91D243FC9CE40B34C8C23EB5735F02DD7E6F647C353FB3A644ECDF6586C706A0)

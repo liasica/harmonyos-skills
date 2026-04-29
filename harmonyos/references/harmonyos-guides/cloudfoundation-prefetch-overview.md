@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cloudfoundati
 title: 概述
 breadcrumb: 指南 > 应用服务 > Cloud Foundation Kit（云开发服务） > 预加载 > 概述
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:48:45+08:00
+scraped_at: 2026-04-29T13:37:49+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:df163a5882d378e69bcaf5dfaf06e9a7cf80bdde54dc265fe9a8fcdefae8db9b
+content_hash: sha256:064738684ad781c638c1494d72b01d8b803c693eeb333c8184a93b4fa1a3958a
 ---
 
 从5.0.3(15)版本开始，新增支持安装预加载和周期性预加载功能；从6.1.0(23)版本开始，新增支持跳链安装预加载功能。
@@ -30,7 +30,7 @@ content_hash: sha256:df163a5882d378e69bcaf5dfaf06e9a7cf80bdde54dc265fe9a8fcdefae
 2. 预加载服务将获取的数据在本地进行缓存。
 3. 应用使用获取的缓存数据，进行页面渲染。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/SvdhqU3qTnKDLcHxT-0Npg/zh-cn_image_0000002583478865.jpg?HW-CC-KV=V1&HW-CC-Date=20260427T234844Z&HW-CC-Expire=86400&HW-CC-Sign=27BB666C93F67D52D5BCA5BD80C852A925E531D9DB85265507CD01763F38FC5D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/eo-oQhgyQQGKyqrQlIRRjw/zh-cn_image_0000002558605708.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053748Z&HW-CC-Expire=86400&HW-CC-Sign=4CFE075BE35A9EC0B56A0C8BBA08E4BE4EC6FB23FABAFBF9F9548328AFD2E769)
 
 ## 典型应用场景
 
@@ -38,13 +38,13 @@ content_hash: sha256:df163a5882d378e69bcaf5dfaf06e9a7cf80bdde54dc265fe9a8fcdefae
 
 在应用启动前或初始化阶段，为避免出现首页内容加载慢、白屏等情况，开发者可以使用预加载将一些必要的资源，例如图片、音频、视频或数据文件，提前加载到本地进行缓存。用户首次访问应用时，可直接从缓存中获取数据，这样就减少了从服务器重新下载资源的时间，提升了应用首开速度，从而提高用户留存率。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/csGn0E2HQ4eFDFTpxa836Q/zh-cn_image_0000002552799216.png?HW-CC-KV=V1&HW-CC-Date=20260427T234844Z&HW-CC-Expire=86400&HW-CC-Sign=A47CCCEEBDCE4B467D2463F523EF39875E7ACE3D0725FD341834FE82A186F124)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/yDFefIybTxGu5kENMBjbXQ/zh-cn_image_0000002589325235.png?HW-CC-KV=V1&HW-CC-Date=20260429T053748Z&HW-CC-Expire=86400&HW-CC-Sign=5174C58DF693BC525DA72226831621CB03479C206029B8198D38EEA897DC1E82)
 
 ### 实现节日主题即发即现
 
 很多应用会在节日更换特定主题内容进行活动营销，用户打开应用时需要从服务器上获取相关资源来呈现内容，可能会造成页面加载速度较慢而导致用户体验不佳。开发者可以使用预加载，在节日活动开始前通过周期性的数据拉取提前将主题资源获取到本地，活动开始用户访问时直接从本地获取即可，减少了网络请求的时间和带宽消耗，从而能够更快地展示节日主题，实现即发即现的效果，提升用户体验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/8Ir-bZOoSS-FRNRmwPYP5Q/zh-cn_image_0000002583438911.png?HW-CC-KV=V1&HW-CC-Date=20260427T234844Z&HW-CC-Expire=86400&HW-CC-Sign=63DB7EAE47EFA94282D24E6BC475E153FDAC74F6D641E398A0B54A6DC504302B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/k1d-WprdRdmxu76bZMAAOA/zh-cn_image_0000002589245171.png?HW-CC-KV=V1&HW-CC-Date=20260429T053748Z&HW-CC-Expire=86400&HW-CC-Sign=15AF3AA82DA5257A343724B69367AC27027AD1BB364D6A35507DD27E796EFD2B)
 
 ## 约束与限制
 

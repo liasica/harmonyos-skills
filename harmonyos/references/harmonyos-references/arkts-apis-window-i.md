@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interfaces (其他)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > 窗口管理 > @ohos.window (窗口) > Interfaces (其他)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:00:44+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:0d763a37ceeb215a8651f0768f5ecee0ccac36265340c06e684e61c86b0af855
+scraped_at: 2026-04-29T13:50:58+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:41309b46c8aa1bf4a0291b4a688e4362385c4185b47c3b8af92556af0c55c6e8
 ---
 
 说明
@@ -41,10 +41,10 @@ PhonePC/2in1TabletTVWearable
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| statusBarColor | string | 否 | 是 | 状态栏背景颜色，为十六进制RGB或ARGB颜色，不区分大小写，例如'#00FF00'或'#FF00FF00'。默认值：'#66000000'。  **系统能力：** SystemCapability.WindowManager.WindowManager.Core |
+| statusBarColor | string | 否 | 是 | 状态栏背景颜色。作为入参时格式为十六进制RGB或ARGB颜色，不区分大小写，例如'#00FF00'或'#FF00FF00'；作为返回值时格式固定为ARGB颜色，如'#FF00FF00'，默认值为系统配置的颜色。  **系统能力：** SystemCapability.WindowManager.WindowManager.Core |
 | isStatusBarLightIcon7+ | boolean | 否 | 是 | 状态栏图标是否为高亮状态。true表示高亮；false表示不高亮。默认值：false。  **系统能力：** SystemCapability.WindowManager.WindowManager.Core |
 | statusBarContentColor8+ | string | 否 | 是 | 状态栏文字颜色。当设置此属性后，isStatusBarLightIcon属性设置无效。默认值：'#E5FFFFFF'。  **系统能力：** SystemCapability.WindowManager.WindowManager.Core |
-| navigationBarColor | string | 否 | 是 | 三键导航栏背景颜色，为十六进制RGB或ARGB颜色，不区分大小写，例如'#00FF00'或'#FF00FF00'。默认值：'#66000000'。  HarmonyOS各设备不支持此能力。  **系统能力：** SystemCapability.WindowManager.WindowManager.Core |
+| navigationBarColor | string | 否 | 是 | 三键导航栏背景颜色。作为入参时格式为十六进制RGB或ARGB颜色，不区分大小写，例如'#00FF00'或'#FF00FF00'；作为返回值时格式固定为ARGB颜色，如'#FF00FF00'，默认值为系统配置的颜色。  HarmonyOS各设备不支持此能力。  **系统能力：** SystemCapability.WindowManager.WindowManager.Core |
 | isNavigationBarLightIcon7+ | boolean | 否 | 是 | 三键导航栏图标是否为高亮状态。true表示高亮；false表示不高亮。默认值：false。  HarmonyOS各设备不支持此能力。  **系统能力：** SystemCapability.WindowManager.WindowManager.Core |
 | navigationBarContentColor8+ | string | 否 | 是 | 三键导航栏文字颜色。当设置此属性后，isNavigationBarLightIcon属性设置无效。默认值：'#E5FFFFFF'。  HarmonyOS各设备不支持此能力。  **系统能力：** SystemCapability.WindowManager.WindowManager.Core |
 | enableStatusBarAnimation12+ | boolean | 否 | 是 | 是否启用状态栏属性变化时的动画效果。true表示启用；false表示不启用。默认值：false。  **系统能力：** SystemCapability.Window.SessionManager |
@@ -141,7 +141,7 @@ PhonePC/2in1TabletTVWearable
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| visible9+ | boolean | 否 | 否 | 避让区域是否可见。true表示可见；false表示不可见。 |
+| visible9+ | boolean | 否 | 否 | 无实际意义，暂不支持使用。 |
 | leftRect | [Rect](arkts-apis-window-i.md#rect7) | 否 | 否 | 中心位于窗口的两条对角线的左侧的矩形区。 |
 | topRect | [Rect](arkts-apis-window-i.md#rect7) | 否 | 否 | 中心位于窗口的两条对角线的顶部的矩形区。 |
 | rightRect | [Rect](arkts-apis-window-i.md#rect7) | 否 | 否 | 中心位于窗口的两条对角线的右侧的矩形区。 |
@@ -151,7 +151,7 @@ PhonePC/2in1TabletTVWearable
 
 示意图展示了leftRect、topRect、rightRect、bottomRect的含义。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/JT7KYqnTT_mPHVJMvprubA/zh-cn_image_0000002552959460.png?HW-CC-KV=V1&HW-CC-Date=20260428T000042Z&HW-CC-Expire=86400&HW-CC-Sign=FBB3FE5D1B8290DCA921C33B076217B97884FE7EE127886D91E59922BC2A0565)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/Eu3GlLKAQA6zB4cu24kTYA/zh-cn_image_0000002558765980.png?HW-CC-KV=V1&HW-CC-Date=20260429T055055Z&HW-CC-Expire=86400&HW-CC-Sign=D3ABB439015EE2F0929E39DD025AC2E318D0837EA6B059DC4DE9C89A1DCA66EF)
 
 ## UIEnvAvoidAreaVP23+
 
@@ -163,7 +163,7 @@ PhonePC/2in1TabletTVWearable
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| visible | boolean | 否 | 否 | 避让区域是否可见。true表示可见；false表示不可见。 |
+| visible | boolean | 否 | 否 | 无实际意义，暂不支持使用。 |
 | leftRect | [RectInVP](arkts-apis-window-i.md#rectinvp23) | 否 | 否 | 中心位于窗口的两条对角线的左侧的矩形区，单位为vp。 |
 | topRect | [RectInVP](arkts-apis-window-i.md#rectinvp23) | 否 | 否 | 中心位于窗口的两条对角线的顶部的矩形区，单位为vp。 |
 | rightRect | [RectInVP](arkts-apis-window-i.md#rectinvp23) | 否 | 否 | 中心位于窗口的两条对角线的右侧的矩形区，单位为vp。 |
@@ -393,7 +393,7 @@ PhonePC/2in1TabletTVWearable
 | --- | --- | --- | --- | --- |
 | systemDensity | number | 否 | 否 | 窗口所在屏幕的系统显示大小缩放系数，跟随用户设置变化，该参数变化范围为0.5-4.0。 |
 | defaultDensity | number | 否 | 否 | 窗口所在屏幕的系统默认显示大小缩放系数，跟随窗口所在屏幕变化，该参数变化范围为0.5-4.0。 |
-| customDensity | number | 否 | 否 | 窗口自定义设置的显示大小缩放系数，该参数取值范围为0.5-4.0。未设置该参数时，将跟随系统显示大小缩放系数变化。该参数仅主窗口生效，在子窗或系统窗口上等于系统显示大小缩放系数(systemDensity)。 |
+| customDensity | number | 否 | 否 | 窗口自定义设置的显示大小缩放系数，该参数取值范围为0.5-4.0。未设置该参数时，将跟随系统显示大小缩放系数变化。该参数仅主窗口生效，在子窗、模态窗、全局悬浮窗或系统窗口上等于系统显示大小缩放系数(systemDensity)。 |
 
 ## WindowLayoutInfo15+
 
@@ -470,7 +470,7 @@ PhonePC/2in1TabletTVWearable
 | windowId | number | 否 | 否 | 窗口ID。 |
 | windowStatusType | [WindowStatusType](arkts-apis-window-e.md#windowstatustype11) | 否 | 否 | 窗口模式枚举。 |
 | isFocused | boolean | 否 | 是 | 窗口是否获焦。true表示窗口获焦；false表示窗口未获焦。返回值与[isFocused()](arkts-apis-window-window.md#isfocused12)接口一致。 |
-| globalDisplayRect20+ | [Rect](arkts-apis-window-i.md#rect7) | 否 | 是 | 全局坐标系下的窗口尺寸。扩展屏场景下以主屏左上角为坐标原点，虚拟屏场景下以虚拟屏左上角为坐标原点。默认值：[0, 0, 0, 0]。 |
+| globalDisplayRect20+ | [Rect](arkts-apis-window-i.md#rect7) | 否 | 是 | 全局坐标系下的窗口尺寸，其中的宽高是未经缩放计算过的原始值。扩展屏场景下以主屏左上角为坐标原点，虚拟屏场景下以虚拟屏左上角为坐标原点。默认值：[0, 0, 0, 0]。 |
 
 ## TransitionAnimation20+
 

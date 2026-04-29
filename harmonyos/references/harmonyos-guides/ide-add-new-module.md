@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-add-new-m
 title: 添加/删除模块
 breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > 添加/删除模块
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:54:37+08:00
+scraped_at: 2026-04-29T13:44:34+08:00
 doc_updated_at: 2026-01-15
-content_hash: sha256:beca1a2206bdc52653553d4053f138cfc0ee2c9e793ca71736e118c189383158
+content_hash: sha256:84f4f38f6d14da809b6218a63d47ba1b1c387ee4142cda08820ac0b55389d7bb
 ---
 
 模块（Module）是应用/元服务的基本功能单元，包含了源代码、资源文件、第三方库及应用/元服务配置文件。一个应用/元服务通常会包含一个或多个模块，因此，可以在工程中创建多个模块。模块支持entry、feature（仅应用工程支持创建）、har、shared四种类型，具体请参考[module.json5配置文件](module-configuration-file.md#配置文件标签)。
@@ -24,7 +24,7 @@ content_hash: sha256:beca1a2206bdc52653553d4053f138cfc0ee2c9e793ca71736e118c1893
      当前暂不支持在AppScope、hvigor、oh\_modules、build、以点开头的目录（如：.hvigor、.idea）下通过单击鼠标右键创建模块。
 2. 在**New Project Module**界面中，选择需要创建的模板，单击**Next**。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/qnWQQTmqQx63LTZbAtLHzA/zh-cn_image_0000002530752976.png?HW-CC-KV=V1&HW-CC-Date=20260427T235436Z&HW-CC-Expire=86400&HW-CC-Sign=0C8B481DBEEDA29A57A1D7311D8006FD7913C34D2770454E8A23EC1CA0D6DC57)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/rhoJcmL0RlmUwK-7u4oU5Q/zh-cn_image_0000002530752976.png?HW-CC-KV=V1&HW-CC-Date=20260429T054433Z&HW-CC-Expire=86400&HW-CC-Sign=D58F4AD4AA98E44010248E34ABFF3BCFAA001D2931C9301A0F6B31457A00D05F)
 3. 在模块配置页面，设置新增模块的基本信息，然后单击**Next**。从DevEco Studio 6.0.1 Beta1开始，支持选择C++版本。
    * **Module name**：新增模块的名称，**Module name**不可与工程名称/工程中其他模块名称相同。
    * **Module type**：仅在Ability模板存在该字段，可以选择Feature和Entry类型。
@@ -37,7 +37,7 @@ content_hash: sha256:beca1a2206bdc52653553d4053f138cfc0ee2c9e793ca71736e118c1893
    * **Enable native**：仅Library模板存在，将创建一个可以调用C/C++的共享包。
    * **C++ Standard：**C++标准库，取值包括：Toolchain Default、C++11、C++14。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/5H0siov3Rs2yxbkAwCfiqg/zh-cn_image_0000002561832893.png?HW-CC-KV=V1&HW-CC-Date=20260427T235436Z&HW-CC-Expire=86400&HW-CC-Sign=1FC5DC65D9C4427EF778A5F55ED4D5ADF42987ECC9B24650FA9BCEECBC5CE9B6)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/_av20zlmScKSmX_ds960mQ/zh-cn_image_0000002561832893.png?HW-CC-KV=V1&HW-CC-Date=20260429T054433Z&HW-CC-Expire=86400&HW-CC-Sign=D31372336BAC4383FFE1DAEFFFCA6D8DB1436848BBA0068ED6B8518906BE75A9)
 4. 若该模块的模板类型为Ability，还需要设置新增Ability的**Ability name**和****E****xported****参数，**E****xported**参数表示该Ability是否可以被其它应用/元服务所调用（FA模型下为Visible参数)。
    * 勾选（true）：可以被其它应用/元服务调用。
    * 不勾选（false）：不能被其它应用/元服务调用。
@@ -54,18 +54,18 @@ DevEco Studio支持通过以下两种方式导入其他工程下的模块：
 
 1. 在菜单栏单击**File > New > Import... > Import Module。**
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/Ry0ttHvyRQ2fojzeS31RyQ/zh-cn_image_0000002530912964.png?HW-CC-KV=V1&HW-CC-Date=20260427T235436Z&HW-CC-Expire=86400&HW-CC-Sign=738314321470CE1C2441AEB9C368BD845C87F6DDD617D9085F083A201044FCB1)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/wWaU2fGhQ0yoqTFnUIqC1Q/zh-cn_image_0000002530912964.png?HW-CC-KV=V1&HW-CC-Date=20260429T054433Z&HW-CC-Expire=86400&HW-CC-Sign=16CB0AF8B2B2D0D7A96400854296EEFC75741B63DB860C33B5EB2033DEDE4B7E)
 2. 选择导入的模块。
 
    在指定路径下，选择导入的模块，单击**OK**。导入的模块可以为文件夹，也可以为zip格式。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/NH4iRWfWSmGsd8ud6MFrNQ/zh-cn_image_0000002530752972.png?HW-CC-KV=V1&HW-CC-Date=20260427T235436Z&HW-CC-Expire=86400&HW-CC-Sign=3A38548EF2DAF88CBB9E1CC3F9D80C9144BE357023238C8D637479C05980BA51)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/xYlx0lGeQEqx_HDMCJQpqw/zh-cn_image_0000002530752972.png?HW-CC-KV=V1&HW-CC-Date=20260429T054433Z&HW-CC-Expire=86400&HW-CC-Sign=42CDDD52F0F02B1EFE8C390D3D4E99AB86222117A2541A4844457E358052A33D)
 
 ### srcPath方式引用模块
 
 在工程级build-profile.json5文件中，如下图所示在modules > srcPath字段下配置工程外模块的相对路径，即可引用模块相关信息，不会将模块代码完全复制至本工程中。当前支持引用其他工程下的HAR和HSP模块。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/Bs1qaBHqT1KcbJHRPfYLSw/zh-cn_image_0000002530752974.png?HW-CC-KV=V1&HW-CC-Date=20260427T235436Z&HW-CC-Expire=86400&HW-CC-Sign=DF0613CEA9D5794574479513EC7C54298A47F6DD3FEA8D9C1810B4B584A5360F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/aDTtFHwPQxS1dqazxPOvJw/zh-cn_image_0000002530752974.png?HW-CC-KV=V1&HW-CC-Date=20260429T054433Z&HW-CC-Expire=86400&HW-CC-Sign=A02F96B2390123ECC867F84B2B03F8BD5A71E79298678E5B4164F5FF0D3953A9)
 
 ## 删除Module
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-picture
 title: 使用ImageSource完成多图对象解码
 breadcrumb: 指南 > 媒体 > Image Kit（图片处理服务） > 图片开发指导(ArkTS) > 图片解码 > 使用ImageSource完成多图对象解码
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:46:12+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:7a887ed45940c427399374502503eaa808a6d574ff3c935cf908b6a795e4d46f
+scraped_at: 2026-04-29T13:35:11+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:98ac56c246bc486f41861f0534cd60749e1707b7b1010b98523e8b728403be19
 ---
 
 将所支持格式的图片文件解码成[Picture](image-overview.md#基础概念)。当前支持的图片文件格式包括JPEG、HEIF。
@@ -17,7 +17,7 @@ content_hash: sha256:7a887ed45940c427399374502503eaa808a6d574ff3c935cf908b6a795e
 1. 全局导入Image模块。
 
    ```
-   1. // 导入相关模块包。
+   1. // 导入相关模块。
    2. import { image } from '@kit.ImageKit';
    3. import { BusinessError } from '@kit.BasicServicesKit';
    4. import { common } from '@kit.AbilityKit';
@@ -44,7 +44,7 @@ content_hash: sha256:7a887ed45940c427399374502503eaa808a6d574ff3c935cf908b6a795e
      1. function getFileFd(context: Context, fileName: string): number | undefined {
      2. try {
      3. const filePath: string = context.cacheDir + '/' + fileName;
-     4. const file: fs.File = fs.openSync(filePath, fs.OpenMode.READ_ONLY);
+     4. const file: fileIo.File = fileIo.openSync(filePath, fileIo.OpenMode.READ_ONLY);
      5. const fd: number = file?.fd;
      6. return fd;
      7. } catch (err) {

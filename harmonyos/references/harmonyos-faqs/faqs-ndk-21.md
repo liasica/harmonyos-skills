@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ndk-21
 title: 如何在ArkTS侧引用其他三方so库
 breadcrumb: FAQ > 应用框架开发 > NDK开发 > NDK开发 > 如何在ArkTS侧引用其他三方so库
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:24:32+08:00
+scraped_at: 2026-04-29T14:15:50+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:a9522209f5ffb0bb867217b7d199f5c2732366331d732e136b420ddd758ae00c
+content_hash: sha256:a13a053ca3855e731b31203a6ebe40fd34ea02645da3708c478865bf12d7d00d
 ---
 
 **解决措施**
@@ -14,10 +14,10 @@ content_hash: sha256:a9522209f5ffb0bb867217b7d199f5c2732366331d732e136b420ddd758
 
 1. 将so文件移动到libs文件夹下对应架构的目录。如果在纯ArkTS工程中，还需将编译三方库时生成的libc++\\_xxx.so移动到该目录。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/xF2DoqUGRmOqYT0Nt_TC9Q/zh-cn_image_0000002194318516.png?HW-CC-KV=V1&HW-CC-Date=20260428T002431Z&HW-CC-Expire=86400&HW-CC-Sign=915D0286C4F9CA000994044BAF7168C2FDAA4EC03277F7E6354628E4A2F56949 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/xF2DoqUGRmOqYT0Nt_TC9Q/zh-cn_image_0000002194318516.png?HW-CC-KV=V1&HW-CC-Date=20260429T061549Z&HW-CC-Expire=86400&HW-CC-Sign=B01486CAAC14050A76F1B12EAC481327E4668AF339AD49D137F36A801BA09159 "点击放大")
 2. 在src/main/cpp/types目录下创建新目录，并将Index.d.ts和oh-package.json5文件移动到该目录下。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/zApv2AXWR0CeIpUZ5OmM-g/zh-cn_image_0000002229604289.png?HW-CC-KV=V1&HW-CC-Date=20260428T002431Z&HW-CC-Expire=86400&HW-CC-Sign=318E420B227875D0A1D9EF0AB995D33CA72557515822454CFA368798EB9BA4D2 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/zApv2AXWR0CeIpUZ5OmM-g/zh-cn_image_0000002229604289.png?HW-CC-KV=V1&HW-CC-Date=20260429T061549Z&HW-CC-Expire=86400&HW-CC-Sign=1CEB3167E7AA6F336F3D65FA56F18F16925C394D20B1F985E4E1176D9FFA67B0 "点击放大")
 3. 在模块级的oh-package.json5文件中声明该 so 库的根目录路径。
 
    ```
@@ -61,7 +61,7 @@ content_hash: sha256:a9522209f5ffb0bb867217b7d199f5c2732366331d732e136b420ddd758
 
 运行结果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/3VvAKFIGRWWgnvrhW9rMnw/zh-cn_image_0000002229758785.png?HW-CC-KV=V1&HW-CC-Date=20260428T002431Z&HW-CC-Expire=86400&HW-CC-Sign=9E6068269B6E759A1D49EAAA7CCC6D398B1B2A32713EFEB85DE1BE3FFD0BA9CB "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/3VvAKFIGRWWgnvrhW9rMnw/zh-cn_image_0000002229758785.png?HW-CC-KV=V1&HW-CC-Date=20260429T061549Z&HW-CC-Expire=86400&HW-CC-Sign=FBB6F100A3A868055FC0B3CAF98BB9348C30129B2FEA745B47AA1AD14E2AEC19 "点击放大")
 
 **参考链接**
 

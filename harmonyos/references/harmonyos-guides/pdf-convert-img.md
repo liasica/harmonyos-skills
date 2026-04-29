@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pdf-convert-i
 title: 转换整个PDF文档为图片
 breadcrumb: 指南 > 应用服务 > PDF Kit（PDF服务） > pdfService能力 > 转换PDF文档为图片 > 转换整个PDF文档为图片
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:50:21+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:aa8ab6062fcc39698270f3f2668a15bd5019dab3270a1135b9c144a062278542
+scraped_at: 2026-04-29T13:39:45+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:f72d24d0cf1833659a67a1aa303f743c95d08989786963a5c692891115629876
 ---
 
 ## 场景介绍
@@ -38,8 +38,8 @@ content_hash: sha256:aa8ab6062fcc39698270f3f2668a15bd5019dab3270a1135b9c144a0622
 10. private loadResult: pdfService.ParseResult = pdfService.ParseResult.PARSE_ERROR_FORMAT;
 
 12. aboutToAppear(): void {
-13. // 确保沙箱目录有input.pdf文档
-14. let filePath = this.context.filesDir + '/input.pdf';
+13. // 确保在工程目录src/main/resources/resfile里有input.pdf文档
+14. let filePath = this.context.resourceDir + '/input.pdf';
 15. this.loadResult = this.pdfDocument.loadDocument(filePath);
 16. }
 

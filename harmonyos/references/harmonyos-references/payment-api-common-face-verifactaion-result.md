@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/payment-a
 title: 人脸核身实人验证结果查询
 breadcrumb: API参考 > 应用服务 > Payment Kit（鸿蒙支付服务） > REST API > 通用接口 > 人脸核身实人验证 > 人脸核身实人验证结果查询
 category: harmonyos-references
-scraped_at: 2026-04-28T08:18:14+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:5a40364dadead65e9ac743c91504c6f46a0962f21e039ec1da029823fe405041
+scraped_at: 2026-04-29T14:08:53+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:015a3729c178c8b013385c7fb3ca1ac2008ab910c1d6bcce6c21e5d376ada3e9
 ---
 
 ## 功能介绍
@@ -40,7 +40,7 @@ content_hash: sha256:5a40364dadead65e9ac743c91504c6f46a0962f21e039ec1da029823fe4
 
 | 参数 | 是否必选 | 类型 | 说明 |
 | --- | --- | --- | --- |
-| verifyResultId | 是 | String | 验证结果ID。[应用端接口](payment-realnameservice.md#realnameservicestartfaceverification)返回的验证结果ID。 |
+| verifyResultId | 是 | String | 验证结果ID。[应用端接口](payment-realnameservice.md#startfaceverification)返回的验证结果ID。 |
 | openId | 是 | String | 用户对外展示的ID（获取方式请参见[获取用户信息](account-api-get-user-info-overview.md)）。长度范围为1-512。 |
 
 ## 请求示例

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-p
 title: oh_pasteboard.h
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > C API > 头文件 > oh_pasteboard.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:09:48+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:794665534a19ca7b2e94aa0fa42506eb4f8ddf61360e70e20b4ce47636fa6150
+scraped_at: 2026-04-29T14:00:30+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:633a2267b36a30e4266317b08eb8b9ce99aa0b7fd1e009de6a49a8010ea34453
 ---
 
 ## 概述
@@ -722,7 +722,7 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| [Pasteboard\_GetDataParams](capi-pasteboard-getdataparams.md) \* params | 表示指向剪贴板OH\_Pasteboard\_GetDataParams的指针。 |
+| [Pasteboard\_GetDataParams](capi-pasteboard-getdataparams.md) \* params | 表示指向剪贴板Pasteboard\_GetDataParams的指针。 |
 
 ### OH\_Pasteboard\_GetDataParams\_SetProgressIndicator()
 
@@ -742,7 +742,7 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| [Pasteboard\_GetDataParams](capi-pasteboard-getdataparams.md)\* params | 表示指向剪贴板OH\_Pasteboard\_GetDataParams的指针。 |
+| [Pasteboard\_GetDataParams](capi-pasteboard-getdataparams.md)\* params | 表示指向剪贴板Pasteboard\_GetDataParams的指针。 |
 | [Pasteboard\_ProgressIndicator](capi-oh-pasteboard-h.md#pasteboard_progressindicator) progressIndicator | 定义进度条指示选项。 |
 
 ### OH\_Pasteboard\_GetDataParams\_SetDestUri()
@@ -763,7 +763,7 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| [Pasteboard\_GetDataParams](capi-pasteboard-getdataparams.md)\* params | 表示指向剪贴板OH\_Pasteboard\_GetDataParams的指针。 |
+| [Pasteboard\_GetDataParams](capi-pasteboard-getdataparams.md)\* params | 表示指向剪贴板Pasteboard\_GetDataParams的指针。 |
 | const char\* destUri | 定义拷贝文件目标路径。 |
 | uint32\_t destUriLen | 定义拷贝文件目标路径长度。 |
 
@@ -785,7 +785,7 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| [Pasteboard\_GetDataParams](capi-pasteboard-getdataparams.md)\* params | 表示指向剪贴板OH\_Pasteboard\_GetDataParams的指针。 |
+| [Pasteboard\_GetDataParams](capi-pasteboard-getdataparams.md)\* params | 表示指向剪贴板Pasteboard\_GetDataParams的指针。 |
 | [Pasteboard\_FileConflictOptions](capi-oh-pasteboard-h.md#pasteboard_fileconflictoptions) option | 定义文件拷贝冲突时的选项，默认为PASTEBOARD\_OVERWRITE。 |
 
 ### OH\_Pasteboard\_GetDataParams\_SetProgressListener()
@@ -806,7 +806,7 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| [Pasteboard\_GetDataParams](capi-pasteboard-getdataparams.md)\* params | 表示指向剪贴板OH\_Pasteboard\_GetDataParams的指针。 |
+| [Pasteboard\_GetDataParams](capi-pasteboard-getdataparams.md)\* params | 表示指向剪贴板Pasteboard\_GetDataParams的指针。 |
 | const [OH\_Pasteboard\_ProgressListener](capi-oh-pasteboard-h.md#oh_pasteboard_progresslistener) listener | 表示进度上报回调函数。 |
 
 ### OH\_Pasteboard\_ProgressInfo\_GetProgress()
@@ -853,7 +853,7 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| [Pasteboard\_GetDataParams](capi-pasteboard-getdataparams.md)\* params | 表示指向剪贴板OH\_Pasteboard\_GetDataParams的指针。 |
+| [Pasteboard\_GetDataParams](capi-pasteboard-getdataparams.md)\* params | 表示指向剪贴板Pasteboard\_GetDataParams的指针。 |
 
 ### OH\_Pasteboard\_GetDataWithProgress()
 
@@ -876,7 +876,7 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | [OH\_Pasteboard](capi-pasteboard-oh-pasteboard.md)\* pasteboard | 表示指向剪贴板[OH\_Pasteboard](capi-pasteboard-oh-pasteboard.md)实例的指针。 |
-| [Pasteboard\_GetDataParams](capi-pasteboard-getdataparams.md)\* params | 表示指向剪贴板OH\_Pasteboard\_GetDataParams的指针。 |
+| [Pasteboard\_GetDataParams](capi-pasteboard-getdataparams.md)\* params | 表示指向剪贴板Pasteboard\_GetDataParams的指针。 |
 | int\* status | 该参数是输出参数，表示执行的错误码。错误码定义详见[PASTEBOARD\_ErrCode](capi-oh-pasteboard-err-code-h.md#pasteboard_errcode)。 |
 
 **返回：**

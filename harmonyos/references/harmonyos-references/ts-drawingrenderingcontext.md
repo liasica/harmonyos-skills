@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-drawin
 title: DrawingRenderingContext
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 画布绘制 > DrawingRenderingContext
 category: harmonyos-references
-scraped_at: 2026-04-28T08:02:06+08:00
+scraped_at: 2026-04-29T13:52:35+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:c1c543c4742043ce20d9c9c0b58f6fae4aee1f253bde0bc127483c13f5580d9a
+content_hash: sha256:d2d02774fc9dfd49d5d7a3522cdad7dbfe3eb90aef516564cdcd41452dc65679
 ---
 
 DrawingRenderingContext对象与Canvas组件绑定后，可在Canvas组件上进行绘制，绘制对象可以是形状、文本、图片等。
@@ -171,11 +171,11 @@ PhonePC/2in1TabletTVWearable
 
 图1 绘制圆心为(200, 200)，半径为100的圆，填充色为RGBA(39, 135, 217, 255)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/qpFDag-EQbecqFsl9uevyg/zh-cn_image_0000002583440013.png?HW-CC-KV=V1&HW-CC-Date=20260428T000205Z&HW-CC-Expire=86400&HW-CC-Sign=75B786A2C338EC4447531B3D013A990CDEB9143059C51C832028DED37C0F4997)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/mSqwP2ChQBCBsSjGzwKuGg/zh-cn_image_0000002589246301.png?HW-CC-KV=V1&HW-CC-Date=20260429T055230Z&HW-CC-Expire=86400&HW-CC-Sign=7A9D26D165081A23403F1AA9478341C9A90E3BF93AC55CFCD7EF17125F2859CF)
 
 图2 点击Clear按钮清空画布
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/ozwhPuOgRj6DaaoYPyvmBw/zh-cn_image_0000002552959968.png?HW-CC-KV=V1&HW-CC-Date=20260428T000205Z&HW-CC-Expire=86400&HW-CC-Sign=03603A5F144FA09B1C040833592B1A0BE4D435948AE5243B4A11C0ADE148A8BC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/bJZT-CB6THKaVKQkQud7GA/zh-cn_image_0000002558766494.png?HW-CC-KV=V1&HW-CC-Date=20260429T055230Z&HW-CC-Expire=86400&HW-CC-Sign=6C6E7A2C9713DAA64F21FB24083F85DEEDBC831A9FBE19645499DF0E51AEFB17)
 
 ### 示例2（绘制文本）
 
@@ -214,4 +214,4 @@ PhonePC/2in1TabletTVWearable
 30. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/N3R7JqzSR0O7P75_MKkrdw/zh-cn_image_0000002583479969.png?HW-CC-KV=V1&HW-CC-Date=20260428T000205Z&HW-CC-Expire=86400&HW-CC-Sign=CFE543F893EBCFE4C612668F99841A1F413E37E6679B52839FDFEB6930E81CF9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/zMX_2pnoSUavxLHg1MmJiA/zh-cn_image_0000002558606834.png?HW-CC-KV=V1&HW-CC-Date=20260429T055230Z&HW-CC-Expire=86400&HW-CC-Sign=3B65BB5144C3992A29B685AC5A2598C477813A9DA881115FC17002E304F833BB)

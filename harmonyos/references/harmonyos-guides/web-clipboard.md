@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-clipboard
 title: 使用Web组件与系统剪贴板交互处理网页内容
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 处理网页内容 > 使用Web组件与系统剪贴板交互处理网页内容
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:41:06+08:00
+scraped_at: 2026-04-29T13:29:30+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:9f06e315d93b626b708ebefc3c6f5b1d7839337799a0f8af5cc13f733bd9008c
+content_hash: sha256:1a609306848c901f1f28aecf04cf7734ed0a9d29047ffec9c7d85331f162f923
 ---
 
 开发者能够通过Web组件和系统剪贴板进行交互，实现各种类型数据的复制和粘贴。支持通过[菜单](web-menu.md)、键盘快捷键以及[W3C剪贴板接口](https://www.w3.org/TR/clipboard-apis/)对网页内容执行剪切、复制和粘贴操作。
@@ -200,7 +200,7 @@ module.json5权限配置：
 
 [module.json5](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkWeb/ArkWebClipboard/entry/src/main/module.json5#L16-L81)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/sA9jDdTSQw-nToLGFMNH1w/zh-cn_image_0000002583438285.gif?HW-CC-KV=V1&HW-CC-Date=20260427T234104Z&HW-CC-Expire=86400&HW-CC-Sign=739C09275BBA2A5C6F0ECA88672152F10A9B4CC79293D1BCE6E4A20DB0FE0B90)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/HC2zNj1QQki6zDNzP9Dntg/zh-cn_image_0000002558605076.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052928Z&HW-CC-Expire=86400&HW-CC-Sign=693C3FB18075D962EE62C33A0D186C104D367AF75628A7813FF8AC30FCF2E967)
 
 ## 通过W3C剪贴板事件接口与系统剪贴板交互
 
@@ -285,7 +285,7 @@ module.json5权限配置：
 56. </html>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/pwRFDb0cS_GjHY0q5cDOpg/zh-cn_image_0000002552958240.gif?HW-CC-KV=V1&HW-CC-Date=20260427T234104Z&HW-CC-Expire=86400&HW-CC-Sign=83D42D83119044F9F5F7BF2132FCA0997360640D47806E71D2DD05509359409D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/dFDx93dLT-a5aGa3f1W05A/zh-cn_image_0000002589324601.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052928Z&HW-CC-Expire=86400&HW-CC-Sign=212DCE8CC60715BE194A96597688F250FC48A317A3EA5C7A947E52B687071001)
 
 ## 设置剪贴板复制范围选项
 

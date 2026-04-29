@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: 动画样式
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 组件通用信息 > 动画样式
 category: harmonyos-references
-scraped_at: 2026-04-28T08:02:53+08:00
+scraped_at: 2026-04-29T13:53:15+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:c291efbeaf3e5d3a0a66f3224f556e5cbd012ce5bf9ded5136bdf81fc03f55f3
+content_hash: sha256:d3bb0d9a2662080897a97618d0b0721e2efdf5fa86ba8f26a71e479e7e99bf06
 ---
 
 说明
@@ -109,7 +109,7 @@ content_hash: sha256:c291efbeaf3e5d3a0a66f3224f556e5cbd012ce5bf9ded5136bdf81fc03
 29. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/WX6uTlo-S1y-_kNdFTIuTQ/zh-cn_image_0000002552800522.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000252Z&HW-CC-Expire=86400&HW-CC-Sign=8FA672C1560F5A6606946207AF10B67CE4F1E286CC520EFF04471C2D50BC4A02)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/YxV7690vTdmgSfP0x5awrQ/zh-cn_image_0000002589246505.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055314Z&HW-CC-Expire=86400&HW-CC-Sign=882CEFC37CD873B266AC5197E4B6B70C482E594A7701534C4DFE36BF6E0680C0)
 
 ```
 1. <!-- xxx.hml -->
@@ -157,7 +157,7 @@ content_hash: sha256:c291efbeaf3e5d3a0a66f3224f556e5cbd012ce5bf9ded5136bdf81fc03
 14. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/OpynqPHdTkelN_gauaaENg/zh-cn_image_0000002583440217.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000252Z&HW-CC-Expire=86400&HW-CC-Sign=D144325E2B537C949E6B6185AD697336EA3A54A14AF3DDD67195FB3CADACCCCC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/Inof8TS8RQKbacm2W8dmRQ/zh-cn_image_0000002558766698.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055314Z&HW-CC-Expire=86400&HW-CC-Sign=F939B92AED985684398791A31FCBBD7F04A2E18B4CCBE4924BFCF580D1C144BC)
 
 ```
 1. <!-- xxx.hml -->
@@ -215,7 +215,7 @@ content_hash: sha256:c291efbeaf3e5d3a0a66f3224f556e5cbd012ce5bf9ded5136bdf81fc03
 18. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/f2Q2SaFDRcqclZjNpP7lqg/zh-cn_image_0000002552960172.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000252Z&HW-CC-Expire=86400&HW-CC-Sign=2D77D111DCC1D7E39229A1F33F25724461C491C86A684B369C0742C1EFC68AFE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/Z9Jk-LyzToO8Nh_B8TOjZg/zh-cn_image_0000002558607038.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055314Z&HW-CC-Expire=86400&HW-CC-Sign=118F3AD617B0848EDB08DF226B71783C61C81CC68EBBC1735AFE87E3F7C7F4BE)
 
 说明
 
@@ -223,4 +223,4 @@ content_hash: sha256:c291efbeaf3e5d3a0a66f3224f556e5cbd012ce5bf9ded5136bdf81fc03
 
 steps函数的end和start含义如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/xRtn0kF6T_2Pl1p7zKiS8A/zh-cn_image_0000002583480173.png?HW-CC-KV=V1&HW-CC-Date=20260428T000252Z&HW-CC-Expire=86400&HW-CC-Sign=42C7F1C40A77895B945315B6A421DFE5DBCAF38B8F6FC85E467C5117B14E4390)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/Ku6yeWntTNO9NIlpsg5uUg/zh-cn_image_0000002589326565.png?HW-CC-KV=V1&HW-CC-Date=20260429T055314Z&HW-CC-Expire=86400&HW-CC-Sign=78E9350BCA249268FC6F9F94A304CFB7C01684E748292A3747BAD25F1D00D4CA)

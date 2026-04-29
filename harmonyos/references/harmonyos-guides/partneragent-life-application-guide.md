@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/partneragent-
 title: 伙伴设备与HarmonyOS设备互通的开发指南
 breadcrumb: 指南 > 系统 > 网络 > Connectivity Kit（短距通信服务） > 融合短距 > 伙伴设备与HarmonyOS设备互通的开发指南
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:43:45+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:6566bc6930215dff6c78d07e57ce3ee1f89a40bb16b826bdb3b40bcf81a4e631
+scraped_at: 2026-04-29T13:32:35+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:3a0ad16ed45b0b98bf8847bbc8e912361a7a623f16f6280dbbbd21ceebf2b018
 ---
 
 ## 简介
@@ -114,7 +114,7 @@ content_hash: sha256:6566bc6930215dff6c78d07e57ce3ee1f89a40bb16b826bdb3b40bcf81a
 21. "supportMediaControl": true,
 22. "supportTelephonyControl": false,
 23. };
-24. if (isEnabled == true) {
+24. if (isEnabled == false) {
 25. // PartnerAgentAbility为设备发现时拉起的ability的name
 26. partnerAgent.bindDevice(deviceAddress, capability, businessCap, "PartnerAgentAbility")
 27. .then(() => {
@@ -139,7 +139,7 @@ content_hash: sha256:6566bc6930215dff6c78d07e57ce3ee1f89a40bb16b826bdb3b40bcf81a
 3. for (let i = 0; i < devices.length; i++) {
 4. let addr = devices[i].bluetoothAddress;
 5. if (addr) {
-6. console.info(`[testTag] bounded device (addr: ${addr.address}, addressType: ${addr.addressType},
+6. console.info(`[testTag] bound device (addr: ${addr.address}, addressType: ${addr.addressType},
 7. rawAddressType: ${addr.rawAddressType})`);
 8. }
 9. }
@@ -191,9 +191,9 @@ content_hash: sha256:6566bc6930215dff6c78d07e57ce3ee1f89a40bb16b826bdb3b40bcf81a
    ```
 2. EntryAbility.ets文件。
 
-   EntryAbility中加载ets/pages/Index.dts绘制的页面，请求用户授予访问蓝牙权限。
+   EntryAbility中加载ets/pages/Index.ets绘制的页面，请求用户授予访问蓝牙权限。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/GLTT1UpGQY6fmORz4vFjwA/zh-cn_image_0000002552798772.jpg?HW-CC-KV=V1&HW-CC-Date=20260427T234343Z&HW-CC-Expire=86400&HW-CC-Sign=1AAD265A5D78628E0EBE60932887389DDF33F422E66CBD0482D032CE62034DCF)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/iCp4enuATgCFuNAQ7siwQQ/zh-cn_image_0000002589324789.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053234Z&HW-CC-Expire=86400&HW-CC-Sign=D4BA53B0A95F074C27CB1ABC6DE2DFE5DC673FB467115224DC033DDB9ADA6A62)
 
    ```
    1. import { AbilityConstant, ConfigurationConstant, UIAbility, Want } from '@kit.AbilityKit';
@@ -249,7 +249,7 @@ content_hash: sha256:6566bc6930215dff6c78d07e57ce3ee1f89a40bb16b826bdb3b40bcf81a
 
    调用注册设备等功能接口。Index.ets中输入要注册的设备蓝牙地址，注册输入的蓝牙设备，去注册输入的蓝牙设备、查询设备的绑定状态，获取本机绑定的设备列表等。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/_1EBOncHRj27zn9rzgQ9tg/zh-cn_image_0000002583438467.jpg?HW-CC-KV=V1&HW-CC-Date=20260427T234343Z&HW-CC-Expire=86400&HW-CC-Sign=0A485E3DA0D8D4B8DDF60C6AE3720B5A317A05BCBB10774C78569CE6384F6C2C)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/Oh0uQlwWQWuKIyGcZC2s3A/zh-cn_image_0000002589244727.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053234Z&HW-CC-Expire=86400&HW-CC-Sign=803DF762CCBD26FC4255D8F1D020486FBFAC4607BA4E8A8EFA6E1373D00AB50E)
 
    ```
    1. import { BusinessError } from '@kit.BasicServicesKit';
@@ -305,7 +305,7 @@ content_hash: sha256:6566bc6930215dff6c78d07e57ce3ee1f89a40bb16b826bdb3b40bcf81a
 
    52. Row() {
    53. Button("unbindDevice").width(300).margin(5).onClick(() => {
-   54. console.info("[testTag] ubindDevice");
+   54. console.info("[testTag] unbindDevice");
    55. let btAddr: common.BluetoothAddress = {
    56. "address": this.perBtAddress,
    57. "addressType": common.BluetoothAddressType.VIRTUAL,
@@ -367,7 +367,7 @@ content_hash: sha256:6566bc6930215dff6c78d07e57ce3ee1f89a40bb16b826bdb3b40bcf81a
    113. for (let i = 0; i < devices.length; i++) {
    114. let btAddr = devices[i].bluetoothAddress;
    115. if (btAddr) {
-   116. console.info(`[testTag] bounded device (addr: ${btAddr.address}, addressType: ${btAddr.addressType},
+   116. console.info(`[testTag] bound device (addr: ${btAddr.address}, addressType: ${btAddr.addressType},
    117. rawAddressType: ${btAddr.rawAddressType})`);
    118. }
    119. }

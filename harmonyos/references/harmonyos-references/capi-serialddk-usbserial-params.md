@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-seri
 title: UsbSerial_Params
 breadcrumb: API参考 > 系统 > 硬件 > Driver Development Kit（驱动开发服务） > C API > 结构体 > UsbSerial_Params
 category: harmonyos-references
-scraped_at: 2026-04-28T08:10:53+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:2b074a519ed379028eae16209e53b6dc2f29647639ab5c4f3c09a9781584b900
+scraped_at: 2026-04-29T14:01:33+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:c2a67c64a8674b863a7544a3d2682ea4ee9e3384081f4424ce759af1975b118d
 ---
 
 ```
@@ -16,7 +16,7 @@ content_hash: sha256:2b074a519ed379028eae16209e53b6dc2f29647639ab5c4f3c09a978158
 
 PC/2in1
 
-定义USB Serial DDK使用的USB串口参数.
+定义USB Serial DDK使用的USB串口参数。
 
 **起始版本：** 18
 

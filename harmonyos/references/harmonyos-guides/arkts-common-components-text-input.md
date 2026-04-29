@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-common-
 title: 文本输入 (TextInput/TextArea/Search)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用文本 > 文本输入 (TextInput/TextArea/Search)
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:39:35+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:e2b2eed086b47d2867f367e8b5bc9e50e370c7b2bb712951f4a3b6d957080f34
+scraped_at: 2026-04-29T13:27:46+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:a0a21021192989b655607bd4a1667ab7d5133afbd79c97b8d233240d7ecc88ed
 ---
 
 TextInput、TextArea是输入框组件，用于响应用户输入，比如评论区的输入、聊天框的输入、表格的输入等，也可以结合其它组件构建功能页面，例如登录注册页面。具体用法请参考[TextInput](../harmonyos-references/ts-basic-components-textinput.md)和[TextArea](../harmonyos-references/ts-basic-components-textarea.md)组件的API文档。Search是特殊的输入框组件，称为搜索框，默认样式包含搜索图标。具体用法请参考[Search](../harmonyos-references/ts-basic-components-search.md)组件的API文档。
@@ -38,7 +38,7 @@ TextInput是单行输入框，TextArea是多行输入框，Search是搜索框。
 
   [CreatTextInput.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/textInput/CreatTextInput.ets#L26-L28)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/21jEHqVYRXmlpw9mmdYasw/zh-cn_image_0000002583437853.png?HW-CC-KV=V1&HW-CC-Date=20260427T233933Z&HW-CC-Expire=86400&HW-CC-Sign=A17B38ED20A5AB8990C43C99F16BA50E80AB1C5AF0A89F38B53640B970A2E285)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/ZsuCJfMkRR6SkVTOI1F9fg/zh-cn_image_0000002558604642.png?HW-CC-KV=V1&HW-CC-Date=20260429T052743Z&HW-CC-Expire=86400&HW-CC-Sign=56F26E57DC314E23E5FDD97CF7A7933259AAA8CCB8AF42784DBE664215B32C33)
 * 多行输入框。
 
   ```
@@ -47,7 +47,7 @@ TextInput是单行输入框，TextArea是多行输入框，Search是搜索框。
 
   [CreatTextInput.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/textInput/CreatTextInput.ets#L38-L40)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/_S_Y54ggSsG1EqIpL0GerQ/zh-cn_image_0000002552957808.png?HW-CC-KV=V1&HW-CC-Date=20260427T233933Z&HW-CC-Expire=86400&HW-CC-Sign=4DFD168D703275C1511E1E0E29E9DE2FF9B0F4291980CBF095B68DCE99BE0C1C)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/4C80bGYqR0iWG5Xrdrf9Fg/zh-cn_image_0000002589324167.png?HW-CC-KV=V1&HW-CC-Date=20260429T052743Z&HW-CC-Expire=86400&HW-CC-Sign=C4B2DD3C82D3C944DE0FCE41724C6336F6FE69C8DBCE41EE06B6797F937C1DC2)
 * 多行输入框文字超出一行时会自动折行。
 
   ```
@@ -60,7 +60,7 @@ TextInput是单行输入框，TextArea是多行输入框，Search是搜索框。
 
   [CreatTextInput.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/textInput/CreatTextInput.ets#L41-L46)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/6MWgatvRQlq0ltT7D5HIEw/zh-cn_image_0000002583477809.png?HW-CC-KV=V1&HW-CC-Date=20260427T233933Z&HW-CC-Expire=86400&HW-CC-Sign=B1BA6A9BF3513FADBA6A67FD923FBAF0E19AE4BC738BBD54341FB12B8F559A5B)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/Pe5VB5M7R7CJlwXh2mzGZQ/zh-cn_image_0000002589244107.png?HW-CC-KV=V1&HW-CC-Date=20260429T052743Z&HW-CC-Expire=86400&HW-CC-Sign=D8FEF8D0BEABFD28D8679929A16684EFAF2EA4D38C1D6785D771FF073B07AC92)
 * 搜索框。
 
   ```
@@ -71,7 +71,7 @@ TextInput是单行输入框，TextArea是多行输入框，Search是搜索框。
 
   [CreatTextInput.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/textInput/CreatTextInput.ets#L52-L56)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/NM_GsJc0QXC74u4JS_HI6Q/zh-cn_image_0000002552798160.png?HW-CC-KV=V1&HW-CC-Date=20260427T233933Z&HW-CC-Expire=86400&HW-CC-Sign=A412A0271145EBED1E2E63347E0FA9B50EE6FBA9E46FC4DE466D754D12472B8C)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/7nn3E205Td-x2VrTIWTqKA/zh-cn_image_0000002558764300.png?HW-CC-KV=V1&HW-CC-Date=20260429T052743Z&HW-CC-Expire=86400&HW-CC-Sign=BB0306950E3B6937E71B854170B8994DEB836533AC16D14B1C51B8DD46F25932)
 
 ## 设置输入框类型
 
@@ -88,7 +88,7 @@ TextInput有以下类型可选择：Normal基本输入模式、Password密码输
 
 [SetTextInputType.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/textInput/SetTextInputType.ets#L27-L30)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/TJJSS9hdT06HODwcvAMzVA/zh-cn_image_0000002583437855.png?HW-CC-KV=V1&HW-CC-Date=20260427T233933Z&HW-CC-Expire=86400&HW-CC-Sign=1ADFEFE300CB972B767A5C8F5F92EC99A38E8B1124404AF84EF849B1216B2CEC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/_e8qywflS92FUIAdNbzs4g/zh-cn_image_0000002558604644.png?HW-CC-KV=V1&HW-CC-Date=20260429T052743Z&HW-CC-Expire=86400&HW-CC-Sign=7A7E1983CB418FC34B3B8107402D19F62A464E8DFD13FA453AA5BA254770F287)
 
 ### 密码模式
 
@@ -103,7 +103,7 @@ TextInput有以下类型可选择：Normal基本输入模式、Password密码输
 
 [SetTextInputType.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/textInput/SetTextInputType.ets#L36-L39)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/5W_QlUBnRyunx5ecuVYvKQ/zh-cn_image_0000002552957810.png?HW-CC-KV=V1&HW-CC-Date=20260427T233933Z&HW-CC-Expire=86400&HW-CC-Sign=9C349D27AC56B662138A51F072D27231690B791BB91F6B139F5A3A20FEF7E84E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/9t9PzjKqS1SzK7JkzoEj6w/zh-cn_image_0000002589324169.png?HW-CC-KV=V1&HW-CC-Date=20260429T052743Z&HW-CC-Expire=86400&HW-CC-Sign=8F15B0796BAA0FA66B28FD90325FA42CC3257B75757EB63CCB1E5220DA597FBF)
 
 ### 邮箱地址输入模式
 
@@ -116,7 +116,7 @@ TextInput有以下类型可选择：Normal基本输入模式、Password密码输
 
 [SetTextInputType.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/textInput/SetTextInputType.ets#L45-L48)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/2k31ZHmxS9quvloVbIWrjA/zh-cn_image_0000002583477811.png?HW-CC-KV=V1&HW-CC-Date=20260427T233933Z&HW-CC-Expire=86400&HW-CC-Sign=5873FEA0864F91FB73B5C4F76A96A0E5A07EB4F8B3A0F01D38D498425DAEAFE8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/OzQPtHZdSliROEyV76m8mA/zh-cn_image_0000002589244109.png?HW-CC-KV=V1&HW-CC-Date=20260429T052743Z&HW-CC-Expire=86400&HW-CC-Sign=C8A1F61514D48C2123140360D4AE3B130F1553A932D5DD190A1082914BEE8053)
 
 ### 纯数字输入模式
 
@@ -129,7 +129,7 @@ TextInput有以下类型可选择：Normal基本输入模式、Password密码输
 
 [SetTextInputType.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/textInput/SetTextInputType.ets#L54-L57)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/4DtArWmQRZW23UAd566diQ/zh-cn_image_0000002552798162.png?HW-CC-KV=V1&HW-CC-Date=20260427T233933Z&HW-CC-Expire=86400&HW-CC-Sign=AD1947E2B4FBD23FD5CE22D047018388456EC538733DEFF65402AAB99C6D48DA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/Jurv_lu1Qs-TTn6zHrj9SA/zh-cn_image_0000002558764302.png?HW-CC-KV=V1&HW-CC-Date=20260429T052743Z&HW-CC-Expire=86400&HW-CC-Sign=C13235B21F8C56A20F5E9339F27CA54FC6DF5D1A8C395EB07B977FDD74EA5588)
 
 ### 电话号码输入模式
 
@@ -142,7 +142,7 @@ TextInput有以下类型可选择：Normal基本输入模式、Password密码输
 
 [SetTextInputType.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/textInput/SetTextInputType.ets#L63-L66)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/k48-ro_CSSqdMn7xAj1b_g/zh-cn_image_0000002583437857.png?HW-CC-KV=V1&HW-CC-Date=20260427T233933Z&HW-CC-Expire=86400&HW-CC-Sign=2AB4A043CBD93EB3F0F21C68BFBF064BFE86EEF688F653B5DBCBE7D17A3D1A53)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/HP2CHJkvRB257RpENX_Gcw/zh-cn_image_0000002558604646.png?HW-CC-KV=V1&HW-CC-Date=20260429T052743Z&HW-CC-Expire=86400&HW-CC-Sign=EAD4C7D0188B538ADA9FFC056274EF414B0A2BD708D7D1B6896E54DCDCA9FFA3)
 
 ### 带小数点的数字输入模式
 
@@ -155,7 +155,7 @@ TextInput有以下类型可选择：Normal基本输入模式、Password密码输
 
 [SetTextInputType.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/textInput/SetTextInputType.ets#L72-L75)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/V51qeSiFSk-neTXnumC2Og/zh-cn_image_0000002552957812.png?HW-CC-KV=V1&HW-CC-Date=20260427T233933Z&HW-CC-Expire=86400&HW-CC-Sign=523E57454F7BF148F1601A786D5E4284481C8B9E9C3CBD70AC1CAE825D2E795C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/aC6xpEIeTPKy7lTmo4n8eA/zh-cn_image_0000002589324171.png?HW-CC-KV=V1&HW-CC-Date=20260429T052743Z&HW-CC-Expire=86400&HW-CC-Sign=0D98A5AA65FA6CB40B22AFD70FD33DE554B9FD23C9B45D71C9D8784992FB9BAB)
 
 ### 带URL的输入模式
 
@@ -168,7 +168,7 @@ TextInput有以下类型可选择：Normal基本输入模式、Password密码输
 
 [SetTextInputType.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/textInput/SetTextInputType.ets#L81-L84)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/oJ2NiRkTRqWuNSMkrnVrLQ/zh-cn_image_0000002583477813.png?HW-CC-KV=V1&HW-CC-Date=20260427T233933Z&HW-CC-Expire=86400&HW-CC-Sign=781F9E5CA419886691E58C2CA9AF267E20AB7620BC6D9EAB23B21A950AF026FD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/W8bNxye9TDyyXzj688VzMA/zh-cn_image_0000002589244111.png?HW-CC-KV=V1&HW-CC-Date=20260429T052743Z&HW-CC-Expire=86400&HW-CC-Sign=8B5D4FF7DEEEC23FC64AAAD290B520BAF970F6303DB357ACA3669479704AB00E)
 
 ## 设置输入框多态样式
 
@@ -187,7 +187,7 @@ TextArea有以下2种类型可选择：默认风格，入参是TextContentStyle.
 
 [SetInputMultiTypeStyle.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/textInput/SetInputMultiTypeStyle.ets#L25-L28)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/PKSucriqRoiwPHS6rZjLfw/zh-cn_image_0000002552798164.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233933Z&HW-CC-Expire=86400&HW-CC-Sign=B4ACB2BEBEFE5CD614FA5D0C2089A96B144C5FD7524534A604FADA27FFC70ED0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/XMKYou3VQEia8tRulnv8Ew/zh-cn_image_0000002558764304.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052743Z&HW-CC-Expire=86400&HW-CC-Sign=E820DF58155741B726A291FC717CD93BD1154564707CDF42C5061FB193ACF697)
 
 ### 内联模式
 
@@ -200,7 +200,7 @@ TextArea有以下2种类型可选择：默认风格，入参是TextContentStyle.
 
 [SetInputMultiTypeStyle.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/textInput/SetInputMultiTypeStyle.ets#L32-L35)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/tb-Idc5YRNi4DDkU5unYBw/zh-cn_image_0000002583437859.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233933Z&HW-CC-Expire=86400&HW-CC-Sign=4653DC3124D0A32C312E950CBDE46A4F1172203383217DAA1221FD1D5831E29A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/V0lzbirFTPWNtYn_NT9Cbg/zh-cn_image_0000002558604648.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052743Z&HW-CC-Expire=86400&HW-CC-Sign=E2009E478B05BE882CD38BB2B15AF832206649FB4FD501EC521445F7B05E952E)
 
 ## 自定义样式
 
@@ -213,7 +213,7 @@ TextArea有以下2种类型可选择：默认风格，入参是TextContentStyle.
 
   [CustomTextInputStyle.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/textInput/CustomTextInputStyle.ets#L26-L29)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/e9-O6-h2SeegC9xLezlCQw/zh-cn_image_0000002552957814.png?HW-CC-KV=V1&HW-CC-Date=20260427T233933Z&HW-CC-Expire=86400&HW-CC-Sign=801CE7D75DD7C544E90F342360F4AD440297E6777E688D6EF8021DD6EBD53AB6)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/CYNJpCecRBm4zD1h70lJ0Q/zh-cn_image_0000002589324173.png?HW-CC-KV=V1&HW-CC-Date=20260429T052743Z&HW-CC-Expire=86400&HW-CC-Sign=2F810FB0F475BD920E52FADF64AF889C4C2517A303D6FAC43ED954835212D16A)
 * 设置输入框当前的文本内容。
 
   ```
@@ -227,7 +227,7 @@ TextArea有以下2种类型可选择：默认风格，入参是TextContentStyle.
 
   [CustomTextInputStyle.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/textInput/CustomTextInputStyle.ets#L35-L42)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/_Ces6q0OTXuu_7T1iZqhlA/zh-cn_image_0000002583477815.png?HW-CC-KV=V1&HW-CC-Date=20260427T233933Z&HW-CC-Expire=86400&HW-CC-Sign=41D23626EB8F2CD8ED343B3FA9F37CD3D387323663818BBF7344AC0C38EE4C76)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/QJjWmrwIRcylOi-iiwvrIg/zh-cn_image_0000002589244113.png?HW-CC-KV=V1&HW-CC-Date=20260429T052743Z&HW-CC-Expire=86400&HW-CC-Sign=C09462B030AFEFAAEE36E96C2730B912E0AB592972A9836322E014EA5C2B3193)
 * 添加backgroundColor改变输入框的背景颜色。
 
   ```
@@ -242,7 +242,7 @@ TextArea有以下2种类型可选择：默认风格，入参是TextContentStyle.
 
   [CustomTextInputStyle.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/textInput/CustomTextInputStyle.ets#L47-L55)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/Bpp4Q3IAQDaiQSIM7vuG2w/zh-cn_image_0000002552798166.png?HW-CC-KV=V1&HW-CC-Date=20260427T233933Z&HW-CC-Expire=86400&HW-CC-Sign=8FA8EF95864D179D47133CD03B2EEE647ED2A6BAA1C1B43017AEDAF5EB6737D1)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/nxu614IyQR-AfA2hjQvIdQ/zh-cn_image_0000002558764306.png?HW-CC-KV=V1&HW-CC-Date=20260429T052743Z&HW-CC-Expire=86400&HW-CC-Sign=A63ED0AC0704F8D39E6ECD4C76C66D2A72B5B80953146C0693E239D6EE4CD8EB)
 
   更丰富的样式可以结合[通用属性](../harmonyos-references/ts-component-general-attributes.md)实现。
 
@@ -349,7 +349,7 @@ TextArea有以下2种类型可选择：默认风格，入参是TextContentStyle.
 
 [TextInputAddEvent.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/textInput/TextInputAddEvent.ets#L15-L101)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/UOMAf2D0R9qJLq5KCoPnUg/zh-cn_image_0000002583437861.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233933Z&HW-CC-Expire=86400&HW-CC-Sign=CE565C0E3912D02A62B61D18BB9C8993CD17853B6ED78BBAAF0E8A5B9A9E08A0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/o4DURoaQSl-oHTpvwAEzLA/zh-cn_image_0000002558604650.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052743Z&HW-CC-Expire=86400&HW-CC-Sign=66B5F0A77223909E4DE48E2965EF0ED654158A800FF0A0AC484A0F2CF5BEE200)
 
 ## 选中菜单
 
@@ -364,7 +364,7 @@ TextInput:
 
 [SelectMenu.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/textInput/SelectMenu.ets#L26-L29)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/DoQCRPo_SqaZ8-vArIR_6A/zh-cn_image_0000002552957816.jpg?HW-CC-KV=V1&HW-CC-Date=20260427T233933Z&HW-CC-Expire=86400&HW-CC-Sign=63B6A1CF43BE43FB77824430B4B58E7710259BB4B6B0408E5551898CED98FA5F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/LZ-_uj6LQKq1-2A-0t5pJw/zh-cn_image_0000002589324175.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T052743Z&HW-CC-Expire=86400&HW-CC-Sign=95B5FED6A91EB02366579C63DB8EDE4253312C4AD7FD8CE717538AE405ACC44F)
 
 TextArea:
 
@@ -375,11 +375,11 @@ TextArea:
 
 [SelectMenu.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/textInput/SelectMenu.ets#L30-L33)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/RI4d7OyGSvaRyydKfIGfEw/zh-cn_image_0000002583477817.jpg?HW-CC-KV=V1&HW-CC-Date=20260427T233933Z&HW-CC-Expire=86400&HW-CC-Sign=8F35467818FF5F8D729BE5B337927E8D1A2E4D90E3DADA33BD29A42657B4FA71)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/8KMR4mKiTNKlzihxsprZgg/zh-cn_image_0000002589244115.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T052743Z&HW-CC-Expire=86400&HW-CC-Sign=4C9C298FE7F1ACD1909F7AE060FC93ACCB0CFF4C385E434568C6AF7A1A7D0C17)
 
 ## 禁用系统服务类菜单
 
-从API version 20开始，支持使用[disableSystemServiceMenuItems](../harmonyos-references/arkts-apis-uicontext-textmenucontroller.md#disablesystemservicemenuitems20)方法屏蔽文本选择菜单中的所有系统服务菜单项。
+从API version 20开始，支持使用[disableSystemServiceMenuItems](../harmonyos-references/arkts-apis-uicontext-textmenucontroller.md#disablesystemservicemenuitems20)方法屏蔽文本选择菜单中的所有系统服务菜单项。更多详见[disableSystemServiceMenuItems](../harmonyos-references/arkts-apis-uicontext-textmenucontroller.md#disablesystemservicemenuitems20)的API文档接口说明。以下示例只是完整示例工程中的一个示例，为了不影响工程其他页面示例效果，仅在页面的出现和消失生命周期中进行系统服务菜单的禁用和恢复，实际场景可自行选择其他时机，比如[UIAbility](../harmonyos-references/js-apis-app-ability-uiability.md)的[onCreate](../harmonyos-references/js-apis-app-ability-uiability.md#oncreate)和[onDestroy](../harmonyos-references/js-apis-app-ability-uiability.md#ondestroy)。
 
 ```
 1. import { TextMenuController } from '@kit.ArkUI';
@@ -425,9 +425,9 @@ TextArea:
 
 [DisableSystemServiceMenuItems.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/textInput/disablemenu/DisableSystemServiceMenuItems.ets#L16-L56)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/VAkrMtzmRh-XETXr_rTNsg/zh-cn_image_0000002552798168.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233933Z&HW-CC-Expire=86400&HW-CC-Sign=3A6B899D7DD3F69F7E45622926832129E97F316B86D37902A5B273DEFA48594F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/q7QfOsJdRd-3xyOd_5GMgg/zh-cn_image_0000002558764308.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052743Z&HW-CC-Expire=86400&HW-CC-Sign=912AE6892EE76EAFB266000691A6D2E557C30EAADAEAB891C74335EE4D198457)
 
-从API version 20开始，支持使用[disableMenuItems](../harmonyos-references/arkts-apis-uicontext-textmenucontroller.md#disablemenuitems20)方法屏蔽文本选择菜单中指定的系统服务菜单项。
+从API version 20开始，支持使用[disableMenuItems](../harmonyos-references/arkts-apis-uicontext-textmenucontroller.md#disablemenuitems20)方法屏蔽文本选择菜单中指定的系统服务菜单项。更多详见[disableMenuItems](../harmonyos-references/arkts-apis-uicontext-textmenucontroller.md#disablemenuitems20)的API文档接口说明。以下示例只是完整示例工程中的一个示例，为了不影响工程其他页面示例效果，仅在页面的出现和消失生命周期中进行系统服务菜单的禁用和恢复，实际场景可自行选择其他时机，比如[UIAbility](../harmonyos-references/js-apis-app-ability-uiability.md)的[onCreate](../harmonyos-references/js-apis-app-ability-uiability.md#oncreate)和[onDestroy](../harmonyos-references/js-apis-app-ability-uiability.md#ondestroy)。
 
 ```
 1. import { TextMenuController } from '@kit.ArkUI';
@@ -473,7 +473,7 @@ TextArea:
 
 [DisableMenuItems.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/textInput/disablemenu/DisableMenuItems.ets#L16-L56)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/PG3uSUVsTb27AnJAyoXEaQ/zh-cn_image_0000002583437863.png?HW-CC-KV=V1&HW-CC-Date=20260427T233933Z&HW-CC-Expire=86400&HW-CC-Sign=2A961A59A6F92894C93238BA527D536BB5E9A3E2D0889460D2A4DC8B4EFF31DD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/3Cj3gpxtQqiWOF4JDMOP0Q/zh-cn_image_0000002558604652.png?HW-CC-KV=V1&HW-CC-Date=20260429T052743Z&HW-CC-Expire=86400&HW-CC-Sign=1367A35A8B66F32678A8A37DBE8674E7FF71F5ECE704C5C166A42BEF959AFB6B)
 
 ## 自动填充
 
@@ -512,7 +512,7 @@ TextArea:
 
   [SetProperty.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/textInput/SetProperty.ets#L26-L34)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/InYfWCMJQ8CcN0JW6ELngg/zh-cn_image_0000002552957818.jpg?HW-CC-KV=V1&HW-CC-Date=20260427T233933Z&HW-CC-Expire=86400&HW-CC-Sign=12AE9DA67D6507E17A3291743FF188A9C8710BB9F02C152A551038BB3F895922)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/RApnwkHMS-K8plpbIRaaaA/zh-cn_image_0000002589324177.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T052743Z&HW-CC-Expire=86400&HW-CC-Sign=1111CE8F18B2875CC3F9D4DDDFBBA6503DBBCEDB4628F70538D4201D13F512C7)
 * 设置文本描边属性。
 
   从API version 20开始，输入框可以通过[strokeWidth](../harmonyos-references/ts-basic-components-textinput.md#strokewidth20)和[strokeColor](../harmonyos-references/ts-basic-components-textinput.md#strokecolor20)属性设置文本的描边宽度及颜色。
@@ -529,7 +529,7 @@ TextArea:
 
   [SetProperty.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/textInput/SetProperty.ets#L39-L47)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/OrQWJ9VZSTiK9j26XH8hYw/zh-cn_image_0000002583477819.jpg?HW-CC-KV=V1&HW-CC-Date=20260427T233933Z&HW-CC-Expire=86400&HW-CC-Sign=127D7A0B53DF65C13B85140F9E60B30CA5B5DBDA53D76F57180C39FECDB4438B)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/-X27viNmSfCFBfu4YaN3oQ/zh-cn_image_0000002589244117.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T052743Z&HW-CC-Expire=86400&HW-CC-Sign=2268EE92F5176BA5C016C09FDBDCE3B5C16B43D7BF1C779AD1DFE0DB8E05D2FE)
 
 ## 设置文本行间距
 
@@ -545,7 +545,7 @@ TextArea:
 
 [SetTextMargin.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/textInput/SetTextMargin.ets#L26-L32)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/uqLaScaHQjqxfsvDmNo5CA/zh-cn_image_0000002552798170.jpg?HW-CC-KV=V1&HW-CC-Date=20260427T233933Z&HW-CC-Expire=86400&HW-CC-Sign=BB63AB1A29C095A6B90F38924860FF79F51C7A2F6B13BA821BAFD71A17E1BFA8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/PDw5FkYXRh6CqsKjEY8GSw/zh-cn_image_0000002558764310.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T052743Z&HW-CC-Expire=86400&HW-CC-Sign=3B96F96FEC29B1637B715451909DFDD23A923E47E962A85042619AE744760937)
 
 ## 键盘避让
 
@@ -575,7 +575,7 @@ TextArea:
 
 [KeyboardAvoidance.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/textInput/KeyboardAvoidance.ets#L18-L40)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/IFNeKdygRga4p-DuFgI68Q/zh-cn_image_0000002583437865.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233933Z&HW-CC-Expire=86400&HW-CC-Sign=8666BD72C91DAFBA03F897E9984158D509D16FC9542613929DB1CAD62256889A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/gcTqAoKRQ1SHKFrK_x6tYw/zh-cn_image_0000002558604654.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052743Z&HW-CC-Expire=86400&HW-CC-Sign=5F3A2847C1A7A584B29461EC7A6EA0033F86DC15D0B810AC0A6A9F842AF179A6)
 
 ## 光标避让
 
@@ -656,7 +656,7 @@ TextArea:
 
 [CursorAvoidance.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/textInput/CursorAvoidance.ets#L18-L59)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/xXviYlwcQjKERTLJZ6e_UA/zh-cn_image_0000002552957820.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233933Z&HW-CC-Expire=86400&HW-CC-Sign=0B26DCF019287FA2058B90E22FAEF99A42F2C055985CCB376C0E5700913A8694)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/3iWp-REDTvKZt1gLIn6Sdg/zh-cn_image_0000002589324179.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052743Z&HW-CC-Expire=86400&HW-CC-Sign=960173E69B5C0486EE6612A56A429EFC7AD5F2DCA783FD4B179E5916AE7E9F5F)
 
 ## 常见问题
 
@@ -727,4 +727,4 @@ TextArea:
 
 [NormalQuestion.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/textInput/NormalQuestion.ets#L15-L68)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/aDGC0cEgSnKz1aVqC_xlUA/zh-cn_image_0000002583477821.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233933Z&HW-CC-Expire=86400&HW-CC-Sign=995D55EF50887DBF63F50E0D8B2F5C8EAC19576B8B65552476FD4D470861D084)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/aTEByXpUSEiPxMMH9Boevg/zh-cn_image_0000002589244119.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052743Z&HW-CC-Expire=86400&HW-CC-Sign=F46EBA165B40C321FD1032914030D05B5C746B250B99C8FE71A6BE55CBFA516B)

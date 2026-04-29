@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: Component3D
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 渲染绘制 > Component3D
 category: harmonyos-references
-scraped_at: 2026-04-28T08:02:14+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:25c0465c8fd557e7b5be9730cd7b88e16a7661b8321c18c40747e21b9852d86f
+scraped_at: 2026-04-29T13:52:39+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:cf01a1a12e91821525b1a57caef96a6c4d2e78dd89e7e4250b4dc95d1e1be995
 ---
 
 3D渲染组件，用于将ArkGraphics 3D场景或glTF（.gltf文件和.glb文件）模型渲染到ArkUI界面中，支持自定义场景模式与自动场景模式，并提供自定义渲染管线能力。
@@ -185,7 +185,7 @@ PhonePC/2in1TabletTVWearable
 
 renderWidth(value: Dimension)
 
-设置3D渲染分辨率的宽度。渲染分辨率的长宽可以不同于控件的长宽，若渲染分辨率与控件分辨率长宽不一致时会上采样或下采样到控件长宽。
+设置3D渲染分辨率的宽度。渲染分辨率的宽高可以不同于控件的宽高，若渲染分辨率与控件分辨率宽高不一致时会上采样或下采样到控件宽高。
 
 不调用此属性时默认渲染分辨率。
 
@@ -207,7 +207,7 @@ PhonePC/2in1TabletTVWearable
 
 renderHeight(value: Dimension)
 
-设置3D渲染分辨率的长度。渲染分辨率的长宽可以不同于控件的长宽，若渲染分辨率与控件分辨率长宽不一致时会上采样或下采样到控件长宽。
+设置3D渲染分辨率的高度。渲染分辨率的宽高可以不同于控件的宽高，若渲染分辨率与控件分辨率宽高不一致时会上采样或下采样到控件宽高。
 
 不调用此属性时默认渲染分辨率。
 
@@ -221,7 +221,7 @@ renderHeight(value: Dimension)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | [Dimension](ts-types.md#dimension10) | 是 | 3D渲染分辨率的长度，当前仅支持设置Dimension.Percentage，取值范围是[0, 100%]。 |
+| value | [Dimension](ts-types.md#dimension10) | 是 | 3D渲染分辨率的高度，当前仅支持设置Dimension.Percentage，取值范围是[0, 100%]。 |
 
 ## 事件
 

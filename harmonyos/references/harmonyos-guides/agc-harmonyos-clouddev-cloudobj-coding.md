@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/agc-harmonyos
 title: 开发云对象
 breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > 端云一体化开发 > 开发端云工程 > 开发云侧工程 > 开发云对象 > 开发云对象
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:55:03+08:00
+scraped_at: 2026-04-29T13:45:01+08:00
 doc_updated_at: 2026-01-21
-content_hash: sha256:93071203d3ddcf8cacd5b9baf33b187af423c4de8dbf75f9fc7fbfdcd6c378b7
+content_hash: sha256:969aca54124b05c7ab94c29f26f0376a15bbcf03ddf02902a3a90021e4901408
 ---
 
 云对象创建完成后，您便可以直接在云对象中编写需要实现的方法。例如，通过云对象实现add与subtract两个方法。
@@ -23,7 +23,7 @@ content_hash: sha256:93071203d3ddcf8cacd5b9baf33b187af423c4de8dbf75f9fc7fbfdcd6c
    8. }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/kf0nqf4KRU6cd58UgvxQCg/zh-cn_image_0000002179338600.png?HW-CC-KV=V1&HW-CC-Date=20260427T235502Z&HW-CC-Expire=86400&HW-CC-Sign=1D4F9CE5DFCA0680712B1CD2EFCE2BC0B86C2178D4A7883D919596905E0AC02D)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/wENWXiT4Si2Oba5cUs5QcA/zh-cn_image_0000002179338600.png?HW-CC-KV=V1&HW-CC-Date=20260429T054500Z&HW-CC-Expire=86400&HW-CC-Sign=38188679C9913E84438E1E3625B985DC5D60CC01A027F487306B54CF5F24D5BD)
 
    注意
 
@@ -41,8 +41,8 @@ content_hash: sha256:93071203d3ddcf8cacd5b9baf33b187af423c4de8dbf75f9fc7fbfdcd6c
 
    右击“package.json”文件，选择“Run 'npm install'”菜单，也可以实现依赖包安装。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/JuuTufRpSvW-2sw_iBxTaw/zh-cn_image_0000002425894173.png?HW-CC-KV=V1&HW-CC-Date=20260427T235502Z&HW-CC-Expire=86400&HW-CC-Sign=47E5FA8A458AC82C9F142F862A056CA9992385D14B0660394506CCCE099A6AE0)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/rcxs25jEQcK6xJHTR0KSrg/zh-cn_image_0000002425894173.png?HW-CC-KV=V1&HW-CC-Date=20260429T054500Z&HW-CC-Expire=86400&HW-CC-Sign=1A26BA1E11F73D795B5228B22A660EF24BE3AB45C73340B844547614B68F4221)
 
    所有安装的依赖包都会存储在当前云对象的“node\_modules”目录下。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/FEYu542vRpGV9zQt_06o0w/zh-cn_image_0000002425974957.png?HW-CC-KV=V1&HW-CC-Date=20260427T235502Z&HW-CC-Expire=86400&HW-CC-Sign=9631B39C7F49387CF9792C6A2BF4D608722E1AF479D4BAD2090D94E6EACFA5ED)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/Kjp6XYZrQwmQyNZJ8xqeug/zh-cn_image_0000002425974957.png?HW-CC-KV=V1&HW-CC-Date=20260429T054500Z&HW-CC-Expire=86400&HW-CC-Sign=AB0F6FFFCD9CF43361E27CA4F0CE4D54B81BB179D654E5CBC0AF98E657B0FC3D)

@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-app-test-1
 title: DevEco Studio AppAnalyzer-安装Python依赖错误
 breadcrumb: FAQ > DevEco Studio > 应用测试 > DevEco Studio AppAnalyzer-安装Python依赖错误
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:30:19+08:00
+scraped_at: 2026-04-29T14:21:37+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:0ab8e33600bf6d9b9719760875cec80dde60e9bf3f64e4e1b970337bd275d642
+content_hash: sha256:b2b4436c7e85759051697ee5a84e833c07a39e33f1219729557645d4ae2cfe05
 ---
 
 **问题现象**
 
 安装Python依赖报错。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/9SNxKQv6QISjTP9s9lZnXA/zh-cn_image_0000002265289721.png?HW-CC-KV=V1&HW-CC-Date=20260428T003018Z&HW-CC-Expire=86400&HW-CC-Sign=597CE662D0C0078E56BFBCB7B17038D4A0D0B8F3E856005D73FBAFBB64B8A137)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/9SNxKQv6QISjTP9s9lZnXA/zh-cn_image_0000002265289721.png?HW-CC-KV=V1&HW-CC-Date=20260429T062136Z&HW-CC-Expire=86400&HW-CC-Sign=3D16390E737E3D101B1A36F038D76631A57F87D12489205D151BE84AFAD7F2F5)
 
 **可能原因**一
 

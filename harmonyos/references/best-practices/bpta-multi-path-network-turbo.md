@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-multi-path
 title: 多网并发网络加速
 breadcrumb: 最佳实践 > 网络 > 多网并发网络加速
 category: best-practices
-scraped_at: 2026-04-28T08:20:23+08:00
+scraped_at: 2026-04-29T14:11:06+08:00
 doc_updated_at: 2026-04-13
-content_hash: sha256:2f9620b45f47d8b6af6215cb583514c9813e57fd9990694ee50c878188538cef
+content_hash: sha256:f6598809b46d4a51cbc2095e274496f6995964fe206e664760a557e9d68ee26f
 ---
 
 ## 概述
@@ -55,7 +55,7 @@ content_hash: sha256:2f9620b45f47d8b6af6215cb583514c9813e57fd9990694ee50c8781885
 
 ### 开发步骤
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/lJMnFdzbSAGg63o9GoX4lw/zh-cn_image_0000002456588494.png?HW-CC-KV=V1&HW-CC-Date=20260428T002022Z&HW-CC-Expire=86400&HW-CC-Sign=2F4705A657C740B34204FC72CD14FB9D05EC483824DECCD1C220339D8876015D "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/lJMnFdzbSAGg63o9GoX4lw/zh-cn_image_0000002456588494.png?HW-CC-KV=V1&HW-CC-Date=20260429T061104Z&HW-CC-Expire=86400&HW-CC-Sign=DEBA71C53D3A351B6ABB4841A479A28C9D6F70F9E142C3F70967CDFE0CA7867F "点击放大")
 
 ### 代码实现
 
@@ -589,7 +589,7 @@ content_hash: sha256:2f9620b45f47d8b6af6215cb583514c9813e57fd9990694ee50c8781885
 
 ### 开发步骤
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/Fg-3znLYRlejOxWTA4GQRQ/zh-cn_image_0000002489628085.png?HW-CC-KV=V1&HW-CC-Date=20260428T002022Z&HW-CC-Expire=86400&HW-CC-Sign=346C0098A34590DE777C3EF9C23042B07BEB2E595D9625CBA2861D26D2A738E5 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/Fg-3znLYRlejOxWTA4GQRQ/zh-cn_image_0000002489628085.png?HW-CC-KV=V1&HW-CC-Date=20260429T061104Z&HW-CC-Expire=86400&HW-CC-Sign=B4EA0B9DD5CE60472255D947305FEC83E40FEB79F87C85E3D38D5B2838C701F1 "点击放大")
 
 ### 代码实现
 

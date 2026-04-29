@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-picture-pr
 title: 图片预览器
 breadcrumb: 最佳实践 > 布局与弹窗 > 图片预览器
 category: best-practices
-scraped_at: 2026-04-28T08:19:45+08:00
+scraped_at: 2026-04-29T14:10:22+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:732883e69e6b1c38421cb16d73e51724ba64001570b5b9f13cbded3cf9bf90d8
+content_hash: sha256:5b9d80d5aeb83cd456575d8ba2e0816732887e79b7aca462e89534781555f5d1
 ---
 
 ## 概述
 
 图片预览器是常见的开发应用场景。在诸多日常使用的软件中，图片预览器都是提升用户体验的关键组件。它允许用户在上传、分享或编辑图片之前，先对图片进行预览，从而确保图片的质量和效果符合预期。本文章将深入探讨实现图片预览器过程中的几个复杂场景，具体包括：图片如何“跟手”，如何计算并合理限制图片的边界，以及如何解决Swiper组件与滑动手势之间产生的冲突问题。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/DL-yESTwT2iYoaxZpFG8gg/zh-cn_image_0000002194011008.gif?HW-CC-KV=V1&HW-CC-Date=20260428T001942Z&HW-CC-Expire=86400&HW-CC-Sign=BE5E5F94406FCF1987473FFE9CC1B90915F4F609149B8836A715C4A1E395DD61 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/DL-yESTwT2iYoaxZpFG8gg/zh-cn_image_0000002194011008.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061019Z&HW-CC-Expire=86400&HW-CC-Sign=27C8E69D70C87998E57281D643AA6B5E848DBDA12D760AD5AFF3079861A03D06 "点击放大")
 
 ## 实现原理
 
@@ -37,11 +37,11 @@ content_hash: sha256:732883e69e6b1c38421cb16d73e51724ba64001570b5b9f13cbded3cf9b
 
 在平移“跟手”中，无论用户的手指如何在屏幕上滑动，其触摸点相对于图片所保持的百分比位置始终保持不变。缩放“跟手”，则是在图片依据用户手势进行缩放调整时，用户手势的中心点不仅相对于屏幕上的坐标保持不变，而且相对于图片内容的百分比位置也保持不变。如下图所示，屏幕是蓝色区域，初始图片是橙色区域，放大后的图片是灰色区域。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/98eGjlJFTNabKMoiMnjLuw/zh-cn_image_0000002229451285.png?HW-CC-KV=V1&HW-CC-Date=20260428T001942Z&HW-CC-Expire=86400&HW-CC-Sign=4F7B6625323BB99B30BDD127AB9913D6F4E5EFA94F606DA2AC885157045AD553)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/98eGjlJFTNabKMoiMnjLuw/zh-cn_image_0000002229451285.png?HW-CC-KV=V1&HW-CC-Date=20260429T061019Z&HW-CC-Expire=86400&HW-CC-Sign=51A37D2A5847D6F6B98DCF66012176A6ECDAA424203326EACCD99CE07B540771)
 
 假定当前图片位置是<lastScale, offsetX, offsetY>，控件原始宽高为<w, h>，本次缩放图片的缩放值为scale，缩放的中心点百分比位置为<centerX, centerY>，偏移为<offX, offY>，计算终点位置设为<scale', offsetX', offsetY'>。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/q-t9OtJrRSi1vPQnmmsiJQ/zh-cn_image_0000002194011004.png?HW-CC-KV=V1&HW-CC-Date=20260428T001942Z&HW-CC-Expire=86400&HW-CC-Sign=A76CE3AAE48CA4B7CB5F3E8BA4094857D19D2ED5F6C0E101B544FC9B0D908013 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/q-t9OtJrRSi1vPQnmmsiJQ/zh-cn_image_0000002194011004.png?HW-CC-KV=V1&HW-CC-Date=20260429T061019Z&HW-CC-Expire=86400&HW-CC-Sign=02E5C0CD3D43B0ABDF325063B50A3F39483ADA8A20774B020EF8942AFA5A7410 "点击放大")
 
 如上图所示，假定缩放时，未发生偏移，蓝色看作交互开始时的控件，橙色是交互后的控件，如果缩放中心点在图片中心（图1），那么控件最终的offset没有任何变化；如果缩放中心在最左边缘（图3），在放大的过程中，整个控件的中心向右发生了偏移。由此，可以计算出图片的最终位置。其中，图2、图3中的问号代表图片的偏移量，而图中的橙色圆点是图片缩放操作的中心点。在以下计算公式中，0.5 表示图片中心点的百分比位置，即 50% = 0.5。
 
@@ -63,7 +63,7 @@ content_hash: sha256:732883e69e6b1c38421cb16d73e51724ba64001570b5b9f13cbded3cf9b
 
   缩放中心百分比位置<centerX , centerY>计算。如下图，橙色为手机屏幕，触摸点反馈的坐标(x,y)是相较屏幕左上角的（假设控件布满全屏）。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/x__APc6vRCOh5mVq0Maj1g/zh-cn_image_0000002229451301.png?HW-CC-KV=V1&HW-CC-Date=20260428T001942Z&HW-CC-Expire=86400&HW-CC-Sign=19FAFBA8657D4DE2BE81A4A1699B5F7663F4B286C298F99EE7F67964E279743D)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/x__APc6vRCOh5mVq0Maj1g/zh-cn_image_0000002229451301.png?HW-CC-KV=V1&HW-CC-Date=20260429T061019Z&HW-CC-Expire=86400&HW-CC-Sign=6A9A442BA5D0FB8C0DF2E4AAF9BEB02FB3C8DAB485DAF4AE968AFB5D8463D15C)
 * centerX = ( x - imgX ) / imgWidth
 
   = ( 触摸点坐标x- X方向图片左上角的坐标）/ 图片的宽度
@@ -86,11 +86,11 @@ content_hash: sha256:732883e69e6b1c38421cb16d73e51724ba64001570b5b9f13cbded3cf9b
 
 如下图，当X方向offset到达上界时图片上边缘x坐标等于0：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/JOneC8MST9uBijJUZzX2cQ/zh-cn_image_0000002194011016.png?HW-CC-KV=V1&HW-CC-Date=20260428T001942Z&HW-CC-Expire=86400&HW-CC-Sign=8DEFF9919AC4210445376751BB546502616CE9458FA8864110D921CF3006B265)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/JOneC8MST9uBijJUZzX2cQ/zh-cn_image_0000002194011016.png?HW-CC-KV=V1&HW-CC-Date=20260429T061019Z&HW-CC-Expire=86400&HW-CC-Sign=DEE3B092C1444ED1AE64AB30DE614AABAD415AFD20A79BA023DE66944FD4D76F)
 
 到达下界时，图片右边缘与显示区域右边缘重合：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/_yvy5ImzQMa6QlNhLi_4Ng/zh-cn_image_0000002193851408.png?HW-CC-KV=V1&HW-CC-Date=20260428T001942Z&HW-CC-Expire=86400&HW-CC-Sign=1EB06A832E4B2C7AACA204221A2E3D56757122ED752C5973BB96B977629DCAD8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/_yvy5ImzQMa6QlNhLi_4Ng/zh-cn_image_0000002193851408.png?HW-CC-KV=V1&HW-CC-Date=20260429T061019Z&HW-CC-Expire=86400&HW-CC-Sign=5669E581F8DB524B0E22647B9AF2BB84054DB88049F09A326DBF7C313CDE9053)
 
 ```
 1. // Calculate the actual display size of the scaled image.
@@ -142,7 +142,7 @@ Y方向同理，上下界为：
 
 跟手技术细分为两大类别：平移“跟手”与缩放“跟手”，接下来，将对这两者进行讲解。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/8o73XaSFRNWiBOiTFMBqYg/zh-cn_image_0000002229336801.gif?HW-CC-KV=V1&HW-CC-Date=20260428T001942Z&HW-CC-Expire=86400&HW-CC-Sign=18DE6222AFEF52FEB0E0D7A27E186E0AF977D0ABFEBF26882D1748A637ED2DB7 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/8o73XaSFRNWiBOiTFMBqYg/zh-cn_image_0000002229336801.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061019Z&HW-CC-Expire=86400&HW-CC-Sign=1D9B1FB3623530DD8C43D67C7356C2D799D1771BC66E69A084471121C2B9D0FD "点击放大")
 
 1. 响应平移手势：使用PanGesture接口实现滑动手势控制，为了实现单指滑动效果，需将参数fingers设置为1，当图片拖动后，即可获取当前图片的偏移量，具体为event.offsetX与event.offsetY。
 
@@ -397,7 +397,7 @@ Y方向同理，上下界为：
 
    当图片滑动至左边界或右边界时，this.isDisableSwipe会被设置为false；此时，Swiper组件将激活滑动切换功能，允许用户切换图片。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/5wMU5RYMQyyjkH8eV5ZdCQ/zh-cn_image_0000002194010992.gif?HW-CC-KV=V1&HW-CC-Date=20260428T001942Z&HW-CC-Expire=86400&HW-CC-Sign=FDDDAB7E22133C012107C58099AB51D3F0935341F9E9E40A3D7E1AEC9468CB6B "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/5wMU5RYMQyyjkH8eV5ZdCQ/zh-cn_image_0000002194010992.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061019Z&HW-CC-Expire=86400&HW-CC-Sign=874AEDF70AB952F3B4B891CE8170E2340A0C610E1CC5EF07A4954DAC2F0B3301 "点击放大")
 
    ```
    1. // Picture Boundary Restriction

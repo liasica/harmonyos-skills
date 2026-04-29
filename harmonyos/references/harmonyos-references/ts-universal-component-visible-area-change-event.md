@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 组件可见区域变化事件
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用事件 > 组件变化事件 > 组件可见区域变化事件
 category: harmonyos-references
-scraped_at: 2026-04-28T08:00:59+08:00
+scraped_at: 2026-04-29T13:51:12+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:15b56531becdde3509ffa01f4dbd502bffc347b8927928c138fdbc977c31847a
+content_hash: sha256:8498f53b23b33b60fed484363574a00adf315fb0c8d501dbbb32e8c5a61302bb
 ---
 
 组件可见区域变化事件是组件在屏幕中的显示区域面积变化时触发的事件，提供了判断组件是否完全或部分显示在屏幕中的能力，适用于广告曝光埋点之类的场景。
@@ -358,7 +358,7 @@ PhonePC/2in1TabletTVWearable
 96. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/VhovQO5XSbOa-WpYqkzs0w/zh-cn_image_0000002552799826.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000058Z&HW-CC-Expire=86400&HW-CC-Sign=968A67406B335D5377E50CA2E0F077E4D81C5F9EC19B8F6431F43715A873E30A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/YnV51iPZSlijAwKrNHD-mw/zh-cn_image_0000002589325865.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055111Z&HW-CC-Expire=86400&HW-CC-Sign=3FE3B0825ADF1E85C9F06BEE9EBDBCBFE84DF50231E0BCD50247F994636B9414)
 
 ### 示例3 (设置measureFromViewport子组件超出父组件显示)
 
@@ -471,4 +471,4 @@ PhonePC/2in1TabletTVWearable
 104. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/gafWvamhThyznhSPnF2jog/zh-cn_image_0000002583439521.jpg?HW-CC-KV=V1&HW-CC-Date=20260428T000058Z&HW-CC-Expire=86400&HW-CC-Sign=69C81032CC9E7629B9BBA58C15CE6E0D01DCB0C734331A3FE91C95F5822D1166)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/U_VI3nFRQlKhQ1xz_VNPkQ/zh-cn_image_0000002589245807.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T055111Z&HW-CC-Expire=86400&HW-CC-Sign=B242699FF2F71676921814FFD82F2DC8A456120F281143CFB154CD628B93A949)

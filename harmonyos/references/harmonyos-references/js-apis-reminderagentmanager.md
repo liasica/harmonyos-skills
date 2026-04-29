@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-r
 title: @ohos.reminderAgentManager (后台代理提醒)
 breadcrumb: API参考 > 应用框架 > Background Tasks Kit（后台任务开发服务） > ArkTS API > @ohos.reminderAgentManager (后台代理提醒)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:05:33+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:e4418c408d165e10991af7601a530894955ebf45336ffd742a15236aa409ee7d
+scraped_at: 2026-04-29T13:56:02+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:547de2069fe5a5d58c0b797ea5eab9a1759a9c81fa3e6b3f686458b5ccdae2d3
 ---
 
 本模块提供后台代理提醒的能力，即当应用被冻结或应用退出时，定时提醒功能将被系统服务代理。开发者可以调用本模块接口创建定时提醒，提醒类型支持倒计时、日历、闹钟三种。开发指导请参考[代理提醒开发指南](../harmonyos-guides/agent-powered-reminder.md)。
@@ -1093,7 +1093,7 @@ PhonePC/2in1TabletTVWearable
 | actionButton | [[ActionButton?, ActionButton?, ActionButton?]](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-reminderagentmanager#actionbutton) | 否 | 是 | 弹出的提醒通知中显示的按钮。  针对三方应用：最多支持两个按钮。  针对系统应用：从API version 10开始最多支持三个按钮，API version 10之前的版本最多支持两个按钮。 |
 | wantAgent | [WantAgent](js-apis-reminderagentmanager.md#wantagent) | 否 | 是 | 点击通知后需要跳转的目标ability信息。 |
 | maxScreenWantAgent | [MaxScreenWantAgent](js-apis-reminderagentmanager.md#maxscreenwantagent) | 否 | 是 | 提醒到达时，全屏显示自动拉起目标的ability信息。如果设备正在使用中，则弹出一个通知横幅框。  说明：该接口为预留接口，暂不支持使用。 |
-| ringDuration | number | 否 | 是 | 指明响铃时长。  单位：s，默认1s，范围：[0, 1800]。  值为0时：跟随系统设置中的通知铃声。  值大于0时：如果设置了[ReminderRequest.customRingUri](js-apis-reminderagentmanager.md#reminderrequest)，则在指定的通道[ReminderRequest.ringChannel](js-apis-reminderagentmanager.md#reminderrequest)上响铃。否则使用代理提醒默认的自定义提示音。 |
+| ringDuration | number | 否 | 是 | 指明响铃时长。  单位：s，默认1s，范围：[0, 1800]。  值为0时：跟随系统设置中的通知铃声。  值大于0时：如果设置了[ReminderRequest.customRingUri](js-apis-reminderagentmanager.md#reminderrequest)，则在指定的通道[ReminderRequest.ringChannel](js-apis-reminderagentmanager.md#reminderrequest)上响铃。否则使用代理提醒默认的自定义提示音。  响铃同时会触发振动，响铃时会快速振动一次。 |
 | snoozeTimes | number | 否 | 是 | 指明延时提醒次数，默认0次（不适用于倒计时提醒类型）。 |
 | timeInterval | number | 否 | 是 | 执行延时提醒间隔。  单位：s，最少30s（不适用于倒计时提醒类型）。 |
 | title | string | 否 | 是 | 指明提醒标题。 |

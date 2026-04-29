@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-interac
 title: 支持触屏输入事件
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 添加交互响应 > 输入设备与事件 > 支持触屏输入事件
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:39:50+08:00
+scraped_at: 2026-04-29T13:28:02+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:ab81399a52c935838e26229787aab8200150de2e592fe926a852d9b3d13577fa
+content_hash: sha256:ed275c5b61caf5deca67cded3880d14d90152081c7b188e9f901ebf2f6d1d94b
 ---
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/OiBUpR7SQy-O8OSBOP6Fwg/zh-cn_image_0000002552798294.png?HW-CC-KV=V1&HW-CC-Date=20260427T233949Z&HW-CC-Expire=86400&HW-CC-Sign=D06617F604FE2151B82F66313338BBEB61113D2FFB11ACCF0576DE2918786B18)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/ElYWqvawQYKKe4NljrD1nw/zh-cn_image_0000002558764434.png?HW-CC-KV=V1&HW-CC-Date=20260429T052801Z&HW-CC-Expire=86400&HW-CC-Sign=A055D46AFA082269A2D047D3409CBEA5D707CD40BB106FB6114EDD1CB2D2673D)
 
 触屏设备是最常见的输入设备，几乎所有手持类终端设备都支持用户通过触控操作。触摸事件也是应用开发者最常处理的事件类型之一。
 
@@ -78,7 +78,7 @@ content_hash: sha256:ab81399a52c935838e26229787aab8200150de2e592fe926a852d9b3d13
 
 基础事件的上报频率与具体的输入设备类型有关，但一般频率都是非常高的，如触屏一般每5~7ms即上报一个点，而对于一些高精度鼠标，上报频率最高可达到每1ms上报一次。由于对输入事件的响应是为了UI界面的变化来产生对用户操作的响应，因此将如此之高的基础事件上报给应用，多数情况下是冗余的。为此系统会对两帧之间所收到的基础事件进行重采样，只在帧内上报一次给应用。重采样是针对每个触点单独进行的，不同触点会单独进行重采样。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/ElTWfaiqRCOZfGPbvK0gqA/zh-cn_image_0000002583437989.png?HW-CC-KV=V1&HW-CC-Date=20260427T233949Z&HW-CC-Expire=86400&HW-CC-Sign=3E983701E2DF068402EB32FD28D1958CF5225A7795522FCDB7AE15E1C60F4760)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/FtAmbI1RSHWr3P8UTn9H3Q/zh-cn_image_0000002558604778.png?HW-CC-KV=V1&HW-CC-Date=20260429T052801Z&HW-CC-Expire=86400&HW-CC-Sign=70913649A80148347A0FC4C3ABFCE3093A1AF133497499F59458D515FC4879F3)
 
 * 按下时产生的事件会立即上报给应用；
 * 帧内的move报点并不会立即下发，而是会在送显帧到来时重采样合并后上报；
@@ -186,7 +186,7 @@ content_hash: sha256:ab81399a52c935838e26229787aab8200150de2e592fe926a852d9b3d13
 
 以下是上面的示例在如下操作序列时产生的日志输出情况：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/bHBlechQS_SMBGbpOFwKcA/zh-cn_image_0000002552957944.png?HW-CC-KV=V1&HW-CC-Date=20260427T233949Z&HW-CC-Expire=86400&HW-CC-Sign=4E41CD60C1042500F855F33D6C08C0E11A10CE14E0E6CF331E76DED8928CB0BD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/qfIZWLpIRjS5GAIyeAo8jw/zh-cn_image_0000002589324303.png?HW-CC-KV=V1&HW-CC-Date=20260429T052801Z&HW-CC-Expire=86400&HW-CC-Sign=0BCFACE5BAD8E3EB9A031D734573DCA0E1189CA71F08810FCDC6F5BA9EC049C4)
 
 按下手指① -> 按下手指② -> 按下手指③ -> 抬起手指② -> 抬起手指③ -> 按下手指② -> 抬起手指① -> 抬起手指③
 

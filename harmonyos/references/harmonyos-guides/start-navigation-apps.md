@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/start-navigat
 title: 拉起导航类应用（startAbilityByType）
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > Stage模型开发指导 > 应用间跳转 > 拉起指定类型的应用 > 拉起导航类应用（startAbilityByType）
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:37:50+08:00
+scraped_at: 2026-04-29T13:25:52+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:d566dda0d1a0c33ead210d204a6e57eeb6e1181d7d53cc1dbec4f63d7b5b446d
+content_hash: sha256:2b2c6596948e0670f83853315d831817a3a3d249ccb63b43468a17955fce190e
 ---
 
 本章节介绍如何拉起导航类应用扩展面板。
@@ -121,7 +121,7 @@ startAbilityByType接口中type字段为navigation，支持路线规划、导航
 
    效果示例图：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/F4hPi9BqQ7KzJMmettLutQ/zh-cn_image_0000002552797856.png?HW-CC-KV=V1&HW-CC-Date=20260427T233749Z&HW-CC-Expire=86400&HW-CC-Sign=3E6E200828953875C56CDFA8B8EA96CD131AFBA02615E5670217AFAE77A8893E)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/ucCm9y3kQ6WXH-jFl8CiLQ/zh-cn_image_0000002558604340.png?HW-CC-KV=V1&HW-CC-Date=20260429T052552Z&HW-CC-Expire=86400&HW-CC-Sign=6F845C6FE6FF11F0D41D948B6A334649043A50CADD50E9094B3E7222C7BAA9BA)
 
 ## 目标方开发步骤
 

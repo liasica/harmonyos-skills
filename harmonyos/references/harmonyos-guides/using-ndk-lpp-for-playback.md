@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/using-ndk-lpp
 title: 使用LPP播放器播放视频 (C/C++)
 breadcrumb: 指南 > 媒体 > Media Kit（媒体服务） > 媒体开发指导(C/C++) > 播放 > 使用LPP播放器播放视频 (C/C++)
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:46:29+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:d3ee8fa666ecbca94ab0298661322852085b7efa330cfdaddd247c9120d4ac12
+scraped_at: 2026-04-29T13:35:27+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:b3b487e74f33a214e3b7c50cff841784a78ff7c30657267da1aa074ae2bffb49
 ---
 
 从API version 20开始，使用LPP（low power player）播放器可以通过低功耗实现从媒体源到渲染的视频通路能力。本指南通过播放本地视频的示例，讲解如何使用LowPowerPlayer播放视频。
@@ -18,7 +18,7 @@ LowPowerPlayer播放器不支持纯视频和纯音频播放。纯音频低功耗
 
 **图1** 播放状态变化示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/P_-shltHTi-ON_QqQ-qZiw/zh-cn_image_0000002552798950.png?HW-CC-KV=V1&HW-CC-Date=20260427T234628Z&HW-CC-Expire=86400&HW-CC-Sign=25A6ED6ED080BC82612B80E822D65FDF43DCF18C398AAA725863A62CA509589A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/ibcd1bSjQGKT7NLOS23loQ/zh-cn_image_0000002589324969.png?HW-CC-KV=V1&HW-CC-Date=20260429T053526Z&HW-CC-Expire=86400&HW-CC-Sign=603E7F0E59DF42107B649D8E25BF56B0219CBB01E6D277CDEEF02C3671B7F880)
 
 播放流程包含：创建（created）、初始化（initialized）、就绪（ready）、解码（decoding）和渲染（rendering）五个阶段。
 
@@ -34,7 +34,7 @@ LowPowerPlayer播放器不支持纯视频和纯音频播放。纯音频低功耗
 
 ## 开发建议
 
-当前指导仅介绍如何实现媒体资源播放，在应用开发过程中可能会涉及后台播放、播放冲突等情况，请根据实际需要参考以下说明。
+当前指导仅介绍如何实现媒体资源播放，在应用开发过程中会涉及后台播放、播放冲突等情况，请根据实际需要参考以下说明。
 
 * 由于硬件差异，LPP播放器能力仅在部分手机上支持。从API version 21开始，建议通过[OH\_LowPowerAVSink\_GetCapability](../harmonyos-references/capi-lowpower-avsink-base-h.md#oh_lowpoweravsink_getcapability)查询LPP播放器能力是否支持。如果不支持，使用[AVCodec](avcodec-kit-intro.md)能力实现播放。
 * 当应用在播放过程中时，播放的媒体数据涉及音频，根据系统音频管理策略（参考[处理音频焦点变化](audio-playback-concurrency.md#处理音频焦点变化)事件）可知这会被其他应用打断，建议通过[OH\_LowPowerAudioSinkCallback\_SetInterruptListener](../harmonyos-references/capi-lowpower-audio-sink-h.md#oh_lowpoweraudiosinkcallback_setinterruptlistener)主动监听音频打断事件，根据其回调参数提示做出相应的处理，避免出现应用状态与预期效果不一致的问题。
@@ -182,7 +182,7 @@ LowPowerPlayer播放器不支持纯视频和纯音频播放。纯音频低功耗
    ```
    1. lpp_demo-sample/entry/src/main/
    2. ├── cpp                                # Native层
-   3. │   ├── capbilities                    # 能力接口和实现
+   3. │   ├── capabilities                   # 能力接口和实现
    4. │   │   ├── include                    # 能力接口
    5. │   │   ├── demuxer.cpp                # 解封装实现
    6. │   │   ├── lpp_audio_streamer.cpp     # 低功耗音频流实现

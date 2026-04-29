@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/wallet-carkey
 title: 钥匙开通
 breadcrumb: 指南 > 应用服务 > Wallet Kit（钱包服务） > 数字车钥匙 > 钥匙开通
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:51:09+08:00
+scraped_at: 2026-04-29T13:40:44+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:b94c2e4021bc8f85346b2148382f2fda0303c589a75f0e92d56341345c1ce6cd
+content_hash: sha256:a6a316ddfb1c614aabd74e1767d111a4d57b33b2af32b6b691977baa8d9fe1a6
 ---
 
 钥匙开通分为添加钥匙和激活钥匙两步，整体交互流程图如下。相关接口定义请参照[钱包服务API](../harmonyos-references/wallet-walletpass.md)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/EndADaG3QP2qmvD0pl-Oeg/zh-cn_image_0000002583479199.png?HW-CC-KV=V1&HW-CC-Date=20260427T235107Z&HW-CC-Expire=86400&HW-CC-Sign=58D329FC6FC95660785FCFBEAD41CBA5D1BDFFEA3F2124A3F863901872FD3C7A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/mu3lMPXoSMmB8Ocm56Engw/zh-cn_image_0000002558765700.png?HW-CC-KV=V1&HW-CC-Date=20260429T054043Z&HW-CC-Expire=86400&HW-CC-Sign=9C424EAB68065FF75AF44984F9598687FEFEDEC1E0069E340B99644C43E1018A)
 
 1. 车主APP调用[queryPass](../harmonyos-references/wallet-walletpass.md#querypass)接口检查当前设备车钥匙的开通情况。
 2. 如果[queryPass](../harmonyos-references/wallet-walletpass.md#querypass)接口返回[1010220501 查询卡券不存在](../harmonyos-references/wallet-error-code.md#section1010220501-查询卡券不存在)，则调用[canAddPass](../harmonyos-references/wallet-walletpass.md#canaddpass)接口检查当前设备是否支持添加车钥匙。
@@ -222,10 +222,10 @@ content_hash: sha256:b94c2e4021bc8f85346b2148382f2fda0303c589a75f0e92d56341345c1
 
 1. 使用Intellij IDEA打开[钱包服务-服务端卡片开通](https://gitcode.com/harmonyos_samples/wallet-kit-sample-code-severdemo-java)的示例代码，没有请先下载Intellij IDEA的当前最新版本。示例代码和工具下载完成后，目录结构如下，我们需要关注下图框出来几个文件：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/oLBMe6Y3TGmMTb3cNmEHaA/zh-cn_image_0000002552799550.png?HW-CC-KV=V1&HW-CC-Date=20260427T235107Z&HW-CC-Expire=86400&HW-CC-Sign=3F228A52DB0F4DB0E422B0750847577D8BDC1EAEEF371F91FE8382DF1173C4A3)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/zzK8V0H7QjeWvB9LN6vOsA/zh-cn_image_0000002558606044.png?HW-CC-KV=V1&HW-CC-Date=20260429T054043Z&HW-CC-Expire=86400&HW-CC-Sign=3687DE5166FBBAFDC57FE99364D4353070626834499BBF42794EADEECBA82814)
 2. 打开resources/release.config.properties文件，替换真实的应用数据。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/mnptBUtsRBqfgo0C9wGinA/zh-cn_image_0000002583439245.png?HW-CC-KV=V1&HW-CC-Date=20260427T235107Z&HW-CC-Expire=86400&HW-CC-Sign=48DC3413D3BC1C823566301A4B9677C911FCC9A4D67E0E5CC37A3010CF281067)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/7bhy5CpoTPaRnvdTm4R_Lw/zh-cn_image_0000002589325571.png?HW-CC-KV=V1&HW-CC-Date=20260429T054043Z&HW-CC-Expire=86400&HW-CC-Sign=542CF67401D7C31EAFEFC792FF49C36937386C3C11D76A4EA52E562A4FF3D86D)
 
    | 需替换的参数 | 参数说明 |
    | --- | --- |
@@ -235,24 +235,24 @@ content_hash: sha256:b94c2e4021bc8f85346b2148382f2fda0303c589a75f0e92d56341345c1
    | servicePrivateKey | [创建Wallet Kit服务](wallet-preparations.md)步骤5生成的私钥 |
 3. 打开resources/data/StdCarKeyModel.json文件，替换真实的应用数据，详细见[预置模板](../harmonyos-references/wallet-rest-api-carkey.md#预置模板)的请求参数。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/ouotbqdCQWG0DLGWXzAj3g/zh-cn_image_0000002583479201.png?HW-CC-KV=V1&HW-CC-Date=20260427T235107Z&HW-CC-Expire=86400&HW-CC-Sign=4A42432548B1F291C595C46619FCC9E500F29377C8CFE38E8FDBEEB4986024E1)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/FqSkWFfnTB-gp44QLHf5uw/zh-cn_image_0000002558765702.png?HW-CC-KV=V1&HW-CC-Date=20260429T054043Z&HW-CC-Expire=86400&HW-CC-Sign=5BD861F25322E8EDC3D5923AED904D73A344C1BC083D39B50FC94D80D11011A4)
 4. 打开stdcarkey/StdCarKeyModelTest.java文件，运行createStdCarKeyModel方法，可看到控制台如下输出，详细见[预置模板](../harmonyos-references/wallet-rest-api-carkey.md#预置模板)的响应参数。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/cXsgm5P5QEyGIvoieTHssg/zh-cn_image_0000002552799552.png?HW-CC-KV=V1&HW-CC-Date=20260427T235107Z&HW-CC-Expire=86400&HW-CC-Sign=9368B3048D3ED219D9ED780100174DBE87CD7AD4241DCC98CF33A68543DD7BCF)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/e9XD0kh5TomueCOlP2qCjw/zh-cn_image_0000002558606046.png?HW-CC-KV=V1&HW-CC-Date=20260429T054043Z&HW-CC-Expire=86400&HW-CC-Sign=658180F4DAE85993F387C8FBC21ADA7DC1B9AA9E4BA1DA29EBF321F6CBF35A78)
 5. 打开resources/data/StdCarKeyInstance.json文件，替换真实的应用数据，详细见[申请钥匙卡片](../harmonyos-references/wallet-rest-api-carkey.md#申请钥匙卡片)的请求参数。
 6. 打开stdcarkey/StdCarKeyInstanceTest.java文件，运行addStdCarKeyInstance方法，可看到控制台如下输出，详细见[申请钥匙卡片](../harmonyos-references/wallet-rest-api-carkey.md#申请钥匙卡片)的响应参数。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/4fVAk2uJTfWKChsWdBCXug/zh-cn_image_0000002583439247.png?HW-CC-KV=V1&HW-CC-Date=20260427T235107Z&HW-CC-Expire=86400&HW-CC-Sign=ECF34993FDBF8DE912722C999D1FD62470A0B828E00D011424F212AD32C56823)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/DKYAgnsISLadu3F5zUHh9A/zh-cn_image_0000002589325573.png?HW-CC-KV=V1&HW-CC-Date=20260429T054043Z&HW-CC-Expire=86400&HW-CC-Sign=17032D96392A392AE91A5470797EA1998A2B1475408423965B37EDB229332F6F)
 
 ## 车主服务器激活卡片
 
 1. 使用 Intellij IDEA打开[钱包服务-服务端卡片激活](https://gitcode.com/harmonyos_samples/wallet-kit-sample-code-severdemo-nfc-java)的示例代码。示例代码和工具下载完成后，解决工程配置等问题后，Constants类中替换SERVER\_PUBLIC\_KEY和SERVER\_SECRET\_KEY为您在[创建Wallet Kit服务](wallet-preparations.md)步骤5生成的公钥和私钥，直接打开PassesController这个类。
 2. [设备认证](../harmonyos-references/wallet-rest-api-public.md#设备认证)对应类中的register方法，通过此方法进行设备认证。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/e7U_ZyeqRd6AloZSLbv6Og/zh-cn_image_0000002552959202.png?HW-CC-KV=V1&HW-CC-Date=20260427T235107Z&HW-CC-Expire=86400&HW-CC-Sign=C5FF140AAEF32D56C080A1BBB52764F54DE4CF8EA9CBC20EB99BF135C5E98FDD)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/8OWecx6oTL67QZj8W9wJKQ/zh-cn_image_0000002589245511.png?HW-CC-KV=V1&HW-CC-Date=20260429T054043Z&HW-CC-Expire=86400&HW-CC-Sign=5C8A7B85C4EC75A6C38D7C04915D413E31209C215C7807FDB1F5C15EADF56C0A)
 3. [获取个人化数据Token](../harmonyos-references/wallet-rest-api-public.md#获取个人化数据token)对应类中的requestToken方法，通过此方法获取个人化数据Token。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/BKbfXLLITjCrAclx1nhJMA/zh-cn_image_0000002583479203.png?HW-CC-KV=V1&HW-CC-Date=20260427T235107Z&HW-CC-Expire=86400&HW-CC-Sign=CB968AAC9F81BE32C9B3FE14BD25A6C580EC4D78161AE3AFBB8A021AB874EA3D)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/ASZf74VyRPChC3mV3wvybQ/zh-cn_image_0000002558765704.png?HW-CC-KV=V1&HW-CC-Date=20260429T054043Z&HW-CC-Expire=86400&HW-CC-Sign=A12ADDC46263D96BF5B141E3AA8AB9C6E8528AC4C3AAD15EC108892C422F843C)
 4. [获取个人化数据](../harmonyos-references/wallet-rest-api-public.md#获取个人化数据)对应类中的getPersonalInfo方法，重点看dealWithPersonalizeDataRequest中的getDevicePassData这个方法，查看ICCECarKeyDevicePassUnit的generatePassData方法，通过这些方法获取个人化数据。再深入打开里面的getPersonalizeData方法，根据此接口的说明进行生成。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/_1ZvVOqAQA2MYAsrQdB1Pw/zh-cn_image_0000002552799554.png?HW-CC-KV=V1&HW-CC-Date=20260427T235107Z&HW-CC-Expire=86400&HW-CC-Sign=099225663808A8AF7058CFD68403C627A1051BCA672E3FF3041D1D01F184D2F0)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/Ut_itJfcQ9Sw3XoDEGwB2A/zh-cn_image_0000002558606048.png?HW-CC-KV=V1&HW-CC-Date=20260429T054043Z&HW-CC-Expire=86400&HW-CC-Sign=F67CFA22F1D55FCACEFCF08AF6DE3E412BE30FBEA1328B2A9161DC50DB2B873B)

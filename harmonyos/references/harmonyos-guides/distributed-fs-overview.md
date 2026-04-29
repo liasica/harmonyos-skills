@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/distributed-f
 title: 分布式文件系统概述
 breadcrumb: 指南 > 应用框架 > Core File Kit（文件基础服务） > 分布式文件系统 > 分布式文件系统概述
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:41:19+08:00
+scraped_at: 2026-04-29T13:29:45+08:00
 doc_updated_at: 2026-03-30
-content_hash: sha256:6c612ce65cf2bad415da4e73549556da4b86a60a09b0655438fc6009cc9e8408
+content_hash: sha256:7206321cafc27210d174c219e1e552f2b1aea822c4903c363c0c89d3d9e607d1
 ---
 
 分布式文件系统（hmdfs，HarmonyOS Distributed File System）提供跨设备的文件访问能力，适用于以下场景：
@@ -18,7 +18,7 @@ hmdfs在分布式软总线动态组网的基础上，为网络上各个设备节
 
 ## 分布式文件系统架构
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/8nZt96M6StmMOzkJnCOjEQ/zh-cn_image_0000002583438325.png?HW-CC-KV=V1&HW-CC-Date=20260427T234118Z&HW-CC-Expire=86400&HW-CC-Sign=8E7455B28FD3BB400652A96D69990BA4550D89837B93D98F7266939B5E59355D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/jzhz1iCPSGWf5YNjo4pTrg/zh-cn_image_0000002558605116.png?HW-CC-KV=V1&HW-CC-Date=20260429T052944Z&HW-CC-Expire=86400&HW-CC-Sign=0285F209441ECBD97A037F683B9D376589C45566B7CB85C626BD0CEAFF8DFE98)
 
 * distributedfile\_daemon：主要负责设备上线监听、通过软总线建立链路，并根据分布式的设备安全等级执行不同的数据流转策略。
 * hmdfs：实现在内核的网络文件系统，包括缓存管理、文件访问、元数据管理和冲突管理等。

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-101
 title: 如何在List组件中分组展示不同种类的数据
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 方舟UI框架（ArkUI） > 如何在List组件中分组展示不同种类的数据
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:25:28+08:00
+scraped_at: 2026-04-29T14:16:27+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:1ea48dc50e3cdd9913cc9a6cac05a684c2abd720f732ad33dcea890e803bb6b5
+content_hash: sha256:5fd30825df8bdfe655d6c0791110d65b12bcdf55926007db3eb54fbb76d057cc
 ---
 
 **问题现象**
@@ -95,7 +95,7 @@ content_hash: sha256:1ea48dc50e3cdd9913cc9a6cac05a684c2abd720f732ad33dcea890e803
 
 效果如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/fWpDSuUvSSSXLvn6bScSiw/zh-cn_image_0000002229758693.png?HW-CC-KV=V1&HW-CC-Date=20260428T002527Z&HW-CC-Expire=86400&HW-CC-Sign=1FB8CDE9DECD4C51B1042085EB91672234D03257F71FAC99EECE93E61F30382F "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/fWpDSuUvSSSXLvn6bScSiw/zh-cn_image_0000002229758693.png?HW-CC-KV=V1&HW-CC-Date=20260429T061625Z&HW-CC-Expire=86400&HW-CC-Sign=3810FECF54A48163EE5B3501D79D9FAD8DF52524BBDCE24FF2E936680DD4BAC8 "点击放大")
 
 **参考链接**
 

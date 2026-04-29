@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-compon
 title: Canvas
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 画布绘制 > Canvas
 category: harmonyos-references
-scraped_at: 2026-04-28T08:02:05+08:00
+scraped_at: 2026-04-29T13:52:24+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:fb4480750d509d9b7c4bfe90920c323e6c6ebdc3099325a7984e048a961e2962
+content_hash: sha256:fbd4fc5ff3797fa91b2bda036720e5fe7f718068fb91da32e2c94b0ad162baeb
 ---
 
 提供画布组件，用于自定义绘制图形。
@@ -220,7 +220,7 @@ PhonePC/2in1TabletTVWearable
 21. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/zjxU2qJCTkmvJUdy9dFSBg/zh-cn_image_0000002583439971.png?HW-CC-KV=V1&HW-CC-Date=20260428T000204Z&HW-CC-Expire=86400&HW-CC-Sign=F2CC9C51302B791010F92373AD05AA26C1B643FBC2986B3DD9C689BA3F212EEE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/RE3k0ExvSfqkBVuX0IUnWg/zh-cn_image_0000002589246259.png?HW-CC-KV=V1&HW-CC-Date=20260429T055223Z&HW-CC-Expire=86400&HW-CC-Sign=3D2CAFA08E228C9523380367A4D2822134D4121C756C1A966D5239E27D7BD193)
 
 ### 示例2（使用DrawingRenderingContext中的方法）
 
@@ -250,7 +250,7 @@ PhonePC/2in1TabletTVWearable
 21. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/zp-8kRB9TyyAtCrB4xiM4A/zh-cn_image_0000002552959926.png?HW-CC-KV=V1&HW-CC-Date=20260428T000204Z&HW-CC-Expire=86400&HW-CC-Sign=DEC7304AD70EFAD824756BD5B6C7B2044F1963D6EE5327D5C88FFA627B286841)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/ZK_w8neTS6qrNYVmUKqdtw/zh-cn_image_0000002558766452.png?HW-CC-KV=V1&HW-CC-Date=20260429T055223Z&HW-CC-Expire=86400&HW-CC-Sign=3753758D014A9D4AEA835FE4E9E3A418ECA4FF61248DB8FED3D6A17558E86456)
 
 ### 示例3（使用attributeModifier动态设置Canvas组件的属性及方法）
 
@@ -339,7 +339,7 @@ PhonePC/2in1TabletTVWearable
 76. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/IWcZVL2oQhK48fYJIV3CYw/zh-cn_image_0000002583479927.png?HW-CC-KV=V1&HW-CC-Date=20260428T000204Z&HW-CC-Expire=86400&HW-CC-Sign=72FD7FADE96A50A66A439BB91CE7C6D61C4143D9283E26A99D38FC89BEADCD0D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/sFi1vfb4T3qTBNPrTPKCRg/zh-cn_image_0000002558606792.png?HW-CC-KV=V1&HW-CC-Date=20260429T055223Z&HW-CC-Expire=86400&HW-CC-Sign=63C42E1C5A94D89A6FF2D7CA6FB22C3C3686BB40A9E1F23CB0253B1158348D10)
 
 ### 示例4（创建不缓存指令Canvas并进行绘制）
 
@@ -387,4 +387,4 @@ PhonePC/2in1TabletTVWearable
 37. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/oKJdafCXSr2IQLyuLa4WuA/zh-cn_image_0000002552800278.png?HW-CC-KV=V1&HW-CC-Date=20260428T000204Z&HW-CC-Expire=86400&HW-CC-Sign=18C6522BB9AA37F4B5DC022B4F65DC548DB036834A3BDECA1C40AB4A983C3C93)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/WED6ablTRRq9ZT0A1c5pGA/zh-cn_image_0000002589326319.png?HW-CC-KV=V1&HW-CC-Date=20260429T055223Z&HW-CC-Expire=86400&HW-CC-Sign=7F09544D1D6BCA4936638B4DF9E48DB73B9818343EE4CB83618A577A5D5CCCDF)

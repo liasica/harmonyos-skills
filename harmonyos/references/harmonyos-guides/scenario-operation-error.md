@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scenario-oper
 title: 操作错误场景
 breadcrumb: 指南 > 应用框架 > Accessibility Kit（无障碍服务） > 提升应用的无障碍体验 > 提升屏幕朗读无障碍体验 > 操作错误场景
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:38:08+08:00
+scraped_at: 2026-04-29T13:26:09+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:531ee50b11c0928ef195f968611a96b03170a745a3cda0f418ff2a5d02735253
+content_hash: sha256:302fedc813856832bc3a7907037721b429f0c2c1105841509eb42d3a847ef7d5
 ---
 
 ## 设计场景
 
 比如网络连接错误，或者其他警告信息，不能仅仅以颜色区分，需要实时告诉用户错误提示和改进方法。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/z20ef-7USZaYhkTgihv_sg/zh-cn_image_0000002583477519.png?HW-CC-KV=V1&HW-CC-Date=20260427T233807Z&HW-CC-Expire=86400&HW-CC-Sign=C07AF16BDC6DD06DFE0815D9A33CEC894CE941BDCF75B8769CFC86DB6FFEB74D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/FdXV0Lv3QCeCvv8SaZZdCA/zh-cn_image_0000002558764010.png?HW-CC-KV=V1&HW-CC-Date=20260429T052608Z&HW-CC-Expire=86400&HW-CC-Sign=19FCFDA36B687225A3A23D6D0BCB7D14E7B6E12A8B2397E20951291D126E6803)
 
 ## 开发实例
 

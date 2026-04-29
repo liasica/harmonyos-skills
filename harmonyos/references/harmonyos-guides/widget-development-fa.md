@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/widget-develo
 title: JS卡片开发指导（FA模型）
 breadcrumb: 指南 > 应用框架 > Form Kit（卡片开发服务） > JS卡片开发 > JS卡片开发指导（FA模型）
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:41:36+08:00
+scraped_at: 2026-04-29T13:30:06+08:00
 doc_updated_at: 2026-03-19
-content_hash: sha256:a6e81d6e873f90f586b008a0e69a01317846d758e79be91c76d9cf7e5eeae4d4
+content_hash: sha256:cfa20b133b368b788d7af9e1355fb939babc08bc8a557035ca89dee8ac42189d
 ---
 
 FA模型从API version 7开始支持，已经不再主推。该应用模型通过导出匿名对象、固定入口文件的方式指定应用组件，开发者无法进行派生，不利于扩展能力。建议使用新的Stage模型进行开发。
@@ -416,7 +416,7 @@ FormAbility不能常驻后台，即在卡片生命周期回调函数中无法处
 
 开发者可以使用类Web范式（HML+CSS+JSON）开发JS卡片页面。生成如下卡片页面，可以这样配置卡片页面文件：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/rLQ1fPGQT928ZYoUZ5-iVw/zh-cn_image_0000002583478315.png?HW-CC-KV=V1&HW-CC-Date=20260427T234134Z&HW-CC-Expire=86400&HW-CC-Sign=110ADD581B24C4981FC12F6A83EA6B89BB708D3EE6FE9BFB409685DAE22E8B43)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/qm5i1TLNQkOVzy8Yks9cZQ/zh-cn_image_0000002589244619.png?HW-CC-KV=V1&HW-CC-Date=20260429T053004Z&HW-CC-Expire=86400&HW-CC-Sign=E9044159D5AB46AB5C7838B61930A89FBBF98D1867BE8E0788E39FEEEFAC7AA2)
 
 说明
 

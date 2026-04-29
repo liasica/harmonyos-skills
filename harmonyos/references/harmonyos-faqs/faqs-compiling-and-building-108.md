@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: 构建报错"Cannot read properties of undefined(reading 'XXX')"
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 构建报错"Cannot read properties of undefined(reading 'XXX')"
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:29:30+08:00
+scraped_at: 2026-04-29T14:20:43+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:353e9f04b74c6370f28901d9928392d864f28c94c2c973457a12fba4d986553e
+content_hash: sha256:fcc24930a689fcfc4452140595136c0b3b012fec1adebc9ebd40176329ff6d35
 ---
 
 请先根据XXX的值从以下场景排查，没解决问题再参考最终方案。
@@ -37,7 +37,7 @@ content_hash: sha256:353e9f04b74c6370f28901d9928392d864f28c94c2c973457a12fba4d98
 
      假设是entry模块的hvigorfile.ts中的代码导致的问题 ，XXX的有效值就是下图中的“default@SignHap”、“default@CollectDebugSymbol”、“assembleHap”等值。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/m6sJrRo5Rq218RfAESIcwA/zh-cn_image_0000002289418625.png?HW-CC-KV=V1&HW-CC-Date=20260428T002929Z&HW-CC-Expire=86400&HW-CC-Sign=C231DAE0040006F6F12D6850ADA5B0C47F0534EF7B722BE71BC59744417B7BFA)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/m6sJrRo5Rq218RfAESIcwA/zh-cn_image_0000002289418625.png?HW-CC-KV=V1&HW-CC-Date=20260429T061840Z&HW-CC-Expire=86400&HW-CC-Sign=A90428D44739459009535689941F0AD6ECFF0C8945C95C87F56AE95B968A50BF)
   2. 确保getTaskByName的使用位置是在Hvigor的配置阶段及之后的生命周期里，包括beforeNodeEvaluate、afterNodeEvaluate、nodesEvaluated、taskGraphResolved、buildFinished。
 
   **参考链接**
@@ -171,7 +171,7 @@ content_hash: sha256:353e9f04b74c6370f28901d9928392d864f28c94c2c973457a12fba4d98
 
   确认堆栈内容是否如下。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/RBOT8QvTR02PjXDFaNSaAw/zh-cn_image_0000002289305561.png?HW-CC-KV=V1&HW-CC-Date=20260428T002929Z&HW-CC-Expire=86400&HW-CC-Sign=EB703379029C10D834DB0500DFFB5AF359EEE7FCD2F9E1C31F4A6FD4E57A51C1)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/RBOT8QvTR02PjXDFaNSaAw/zh-cn_image_0000002289305561.png?HW-CC-KV=V1&HW-CC-Date=20260429T061840Z&HW-CC-Expire=86400&HW-CC-Sign=75A11363B6000F129F13D7CF20F72EC6BAFF5D79468CC40EA3C4620610B0413C)
 
   **解决措施**
 
@@ -182,7 +182,7 @@ content_hash: sha256:353e9f04b74c6370f28901d9928392d864f28c94c2c973457a12fba4d98
 
   执行hap覆盖率测试时，出现报错：“Error Message: Cannot read properties of undefined (reading 'module')”。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/aXa4N4eNRbWIBML7RttzDA/zh-cn_image_0000002523012117.png?HW-CC-KV=V1&HW-CC-Date=20260428T002929Z&HW-CC-Expire=86400&HW-CC-Sign=0E5E1B1DC1C472799FC214CF87A7C48A0D8EC8FA0F6035AAB742657C9DAA9E4F)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/aXa4N4eNRbWIBML7RttzDA/zh-cn_image_0000002523012117.png?HW-CC-KV=V1&HW-CC-Date=20260429T061840Z&HW-CC-Expire=86400&HW-CC-Sign=D8F6CB1EF6D2141493B4B892DF679F34FEAF0F9AE12E8590E8F92E089E6AAD2E)
 
   **可能原因**
 
@@ -192,7 +192,7 @@ content_hash: sha256:353e9f04b74c6370f28901d9928392d864f28c94c2c973457a12fba4d98
 
   检查工程所有模块，如果build-profile.json5下targets里配置了ohosTest，模块内确保有src/ohosTest目录及目录对应结构；如不需要ohosTest，则在targets内删除ohosTest。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/KGWwij54T1u98UUtnW6xhA/zh-cn_image_0000002490972342.png?HW-CC-KV=V1&HW-CC-Date=20260428T002929Z&HW-CC-Expire=86400&HW-CC-Sign=39C99399A38069246D86A954E288EFE5622B151B1EE6B0BB3DBB9D6C9F934F0F)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/KGWwij54T1u98UUtnW6xhA/zh-cn_image_0000002490972342.png?HW-CC-KV=V1&HW-CC-Date=20260429T061840Z&HW-CC-Expire=86400&HW-CC-Sign=AE461CA3E1B8E1105423F3D73B7A9036C93930CD9C3D7E0C6D746DE0583D6CFE)
 * **最终方案：**
 
   如果以上场景都不符合，打开堆栈后，根据堆栈信息排查代码。
@@ -216,4 +216,4 @@ content_hash: sha256:353e9f04b74c6370f28901d9928392d864f28c94c2c973457a12fba4d98
 
   请按照如下步骤进行操作：[提单链接](https://developer.huawei.com/consumer/cn/support/)，在线提单 -> 问题分类选择"HarmonyOS NEXT / 开发工具 / DevEco Studio"。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/1YKcbaGQSsKjAQ53S_C6mw/zh-cn_image_0000002254825302.png?HW-CC-KV=V1&HW-CC-Date=20260428T002929Z&HW-CC-Expire=86400&HW-CC-Sign=F1F380E122D667B2AD4DD22A819A3B3C74049E8F83DEBABAE987B8A94072D548)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/1YKcbaGQSsKjAQ53S_C6mw/zh-cn_image_0000002254825302.png?HW-CC-KV=V1&HW-CC-Date=20260429T061840Z&HW-CC-Expire=86400&HW-CC-Sign=D3B2ADEFC3B9634761DC5C40B1404159C2C3B704AF4E1749DB89A6C0586805DF)

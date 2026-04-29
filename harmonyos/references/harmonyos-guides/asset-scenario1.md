@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/asset-scenari
 title: 保护密码类数据
 breadcrumb: 指南 > 系统 > 安全 > Asset Store Kit（关键资产存储服务） > 常见场景 > 保护密码类数据
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:42:10+08:00
+scraped_at: 2026-04-29T13:30:42+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:b7fc44cb31222cd4d6a2d146a65f4e920b6cb758fcd8119886e939325c88e42f
+content_hash: sha256:2efb8568864e14bd8c6d1a4dec9a69a6e37abc42d522955995bc342b0c85c1e0
 ---
 
 说明
@@ -18,13 +18,13 @@ content_hash: sha256:b7fc44cb31222cd4d6a2d146a65f4e920b6cb758fcd8119886e939325c8
 
 用户再次打开登录界面时，应用/浏览器可以从ASSET中查询用户密码，并将其自动填充到密码输入框，用户只需点击“登录”按钮即可完成账号登录，极大地提升了用户体验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/Osk9t6mLSnCvd5LW5vNLGg/zh-cn_image_0000002583478375.png?HW-CC-KV=V1&HW-CC-Date=20260427T234209Z&HW-CC-Expire=86400&HW-CC-Sign=22DB8DE38BD4D11473288EF4367C516B79909A3F7194D45688D4780934D4CB2B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/T6v3_ekdRv6fR4SSNIb5aw/zh-cn_image_0000002589244679.png?HW-CC-KV=V1&HW-CC-Date=20260429T053041Z&HW-CC-Expire=86400&HW-CC-Sign=9D734C9322B18D0A56F81D7CAB2F0C21EEF051A008DB1EC29D07657054CF7B48)
 
 ## 关键流程
 
 业务调用ASSET保护密码类数据（后文统称为“关键资产”），可以参照以下流程进行开发。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/BV5NuCZPRQeBGKNlfY2_Ug/zh-cn_image_0000002552798726.png?HW-CC-KV=V1&HW-CC-Date=20260427T234209Z&HW-CC-Expire=86400&HW-CC-Sign=2CF68DEA7AA0D60084880B478D6B31F36C2A07823BB41822C74F4452A756A1C9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/GkzVcfUESPajQmHgkbyofQ/zh-cn_image_0000002558764874.png?HW-CC-KV=V1&HW-CC-Date=20260429T053041Z&HW-CC-Expire=86400&HW-CC-Sign=DE53D797A69C8AFD68F1E6AD255C241E21B8E4EBB4D2A26CFBB4FB723647BFF4)
 
 1. 业务查询符合条件的关键资产属性，根据查询成功/失败，判断关键资产是否存在。
 

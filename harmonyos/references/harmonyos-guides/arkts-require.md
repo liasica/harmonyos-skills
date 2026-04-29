@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-require
 title: @Require装饰器：校验构造传参
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式基本语法 > @Require装饰器：校验构造传参
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:39:00+08:00
+scraped_at: 2026-04-29T13:27:08+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:9f93796da9105a4f249e903688f43b630755cfdcc3ef01bfb8fe69d1e2b2d83f
+content_hash: sha256:9d1487cc9422bfe5fc3974a66c822fd83040279fbfe62bba4cb32e0255d514e2
 ---
 
 @Require是校验@Prop、@State、@Provide、@BuilderParam、@Param和普通变量（无状态装饰器修饰的变量）是否需要构造传参的一个装饰器。
@@ -156,7 +156,7 @@ content_hash: sha256:9f93796da9105a4f249e903688f43b630755cfdcc3ef01bfb8fe69d1e2b
 
 [ParentPage.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/RequireDemo/entry/src/main/ets/pages/ParentPage.ets#L16-L82)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/B7t0F5KsQgW4CGnaYmLGmQ/zh-cn_image_0000002552797938.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233859Z&HW-CC-Expire=86400&HW-CC-Sign=CF084852B5353FDE31E2F0F394B8FE962E1369617E2609E022196DB5231E65EC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/3Ao_09jIShSVqbHQNMtEiA/zh-cn_image_0000002558764078.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052707Z&HW-CC-Expire=86400&HW-CC-Sign=AF5A18604D24FDF9535E83C2D2F27D456A52AA6428AA211406A45ED232BB84B3)
 
 从API version 18开始，使用@Require装饰@State、@Prop、@Provide装饰的状态变量，可以在无本地初始值的情况下直接在组件内使用，不会编译报错。
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-background
 title: 应用退后台禁止使用传感器问题分析
 breadcrumb: 最佳实践 > 功耗 > 应用功耗分析 > 应用退后台禁止使用传感器问题分析
 category: best-practices
-scraped_at: 2026-04-28T08:22:38+08:00
+scraped_at: 2026-04-29T14:13:48+08:00
 doc_updated_at: 2026-04-27
-content_hash: sha256:302da156849b51b95f93621d31d59f1794f4fa0fd07a09f8c116f805cc1847b4
+content_hash: sha256:9282b9dac22819aed49f16a616350f05a30245ed66f1cadf3c3755b7008cf960
 ---
 
 ## 应用退后台禁止使用传感器介绍
@@ -24,20 +24,20 @@ content_hash: sha256:302da156849b51b95f93621d31d59f1794f4fa0fd07a09f8c116f805cc1
 2. 判断应用内所有界面退后台后，是否存在传感器没有关闭的行为
    * 方法一：通过DevEco 软件日志栏中实时过滤：(bundleName).\*open the sensor|(bundleName).\*close the sensor
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/gNxMXzQ2TfiGQnFJCIOnQg/zh-cn_image_0000002555614824.png?HW-CC-KV=V1&HW-CC-Date=20260428T002238Z&HW-CC-Expire=86400&HW-CC-Sign=6197C1DCA655BB5089CBB317230523A3DEB7C9F75070088374395810406E0A05 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/gNxMXzQ2TfiGQnFJCIOnQg/zh-cn_image_0000002555614824.png?HW-CC-KV=V1&HW-CC-Date=20260429T061346Z&HW-CC-Expire=86400&HW-CC-Sign=55AEF63D725E37224A2CA044473629CC363773B986BA9B7EAF09948C90EAA2A8 "点击放大")
 
    * 方法二：本地使用命令行控制台实时过滤日志：hdc shell hilog | grep -i "(bundleName).\*open the sensor\|(bundleName).\*close the sensor"
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/NtfHOrV9SFWnZB-oGiyOzw/zh-cn_image_0000002586174413.png?HW-CC-KV=V1&HW-CC-Date=20260428T002238Z&HW-CC-Expire=86400&HW-CC-Sign=7AB0C7DF57AA18D8BCB478F04A731A8F0CAA30B3C66C244C87AB5D1232899DFB "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/NtfHOrV9SFWnZB-oGiyOzw/zh-cn_image_0000002586174413.png?HW-CC-KV=V1&HW-CC-Date=20260429T061346Z&HW-CC-Expire=86400&HW-CC-Sign=2828BCECCF8EE02030E6F1BFA446DD5E71018BD95C6B19AA7F7CF9C4C4550634 "点击放大")
 3. 判断应用在后台是否存在长时任务
    * 过滤关键词：suspend\_manager.\*(bundleName)
      + 应用后台不存在长时任务
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/zr7gZ4gdSLKfl5rp2dZKxw/zh-cn_image_0000002586294373.png?HW-CC-KV=V1&HW-CC-Date=20260428T002238Z&HW-CC-Expire=86400&HW-CC-Sign=BA40F09892500D02CB983B86458DB10BFFA51BD4185EFE322F4227777B87EE91 "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/zr7gZ4gdSLKfl5rp2dZKxw/zh-cn_image_0000002586294373.png?HW-CC-KV=V1&HW-CC-Date=20260429T061346Z&HW-CC-Expire=86400&HW-CC-Sign=424603E6F391ACB91AE075E86B637575DA37A9E5C973514A79C9F10C7D8A0DE6 "点击放大")
 
      + 应用后台存在长时任务
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/ldUFBlVpQ1WRd-OGqtoblw/zh-cn_image_0000002555774456.png?HW-CC-KV=V1&HW-CC-Date=20260428T002238Z&HW-CC-Expire=86400&HW-CC-Sign=808162960CEEDA9C568A1BB2B1CE1C99F398EFD64443423D5C5CB4028538C40E "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/ldUFBlVpQ1WRd-OGqtoblw/zh-cn_image_0000002555774456.png?HW-CC-KV=V1&HW-CC-Date=20260429T061346Z&HW-CC-Expire=86400&HW-CC-Sign=7A9FC92C7FA5DCD8C3A86D16DDCCC6A133B09289FACAE3163771C42066392E15 "点击放大")
 4. 如果存在应用退后台后还存在没有关闭的传感器，并且没有长时任务保活，需要进行优化，合理使用资源
    * 优化建议：在应用退后台后主动调用 sensor.off 关闭传感器
 
@@ -69,7 +69,7 @@ content_hash: sha256:302da156849b51b95f93621d31d59f1794f4fa0fd07a09f8c116f805cc1
 2. 通过所有日志查看哪些传感器在退后台后没有关闭。
    * 过滤日志关键词：(bundleName).\*open the sensor|(bundleName).\*close the sensor
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/BnydwFNmQsiDyev815c4vw/zh-cn_image_0000002555614826.png?HW-CC-KV=V1&HW-CC-Date=20260428T002238Z&HW-CC-Expire=86400&HW-CC-Sign=C781D92D99FD349BEBE56698FD3D425E8DCB11342D1FACD8C83EFEE541E73A9D "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/BnydwFNmQsiDyev815c4vw/zh-cn_image_0000002555614826.png?HW-CC-KV=V1&HW-CC-Date=20260429T061346Z&HW-CC-Expire=86400&HW-CC-Sign=ADA7102717B48E757AFBCD2171694DC53767FD868595F435234622C39D66C397 "点击放大")
 3. 如果存在应用退后台后还存在没有关闭的传感器，并且没有长时任务保活，需要进行优化，合理使用资源。
    * 优化建议：在应用退后台后主动调用 sensor.off 关闭传感器
 

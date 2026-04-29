@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-lock
 title: 锁屏卡片开发指导
 breadcrumb: 指南 > 应用框架 > Form Kit（卡片开发服务） > ArkTS卡片开发（推荐） > ArkTS卡片提供方开发指导 > ArkTS锁屏卡片 > 锁屏卡片开发指导
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:41:32+08:00
+scraped_at: 2026-04-29T13:29:59+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:f4709d9cf8e1f87d390a56573143bd95a311447fca76ccf3d72d395073a7990d
+content_hash: sha256:821741241e98c4e325628742da456d254c87b6f3cf806517be4b41e52587d5ce
 ---
 
 从API version 18开始，Form Kit提供在设备锁屏界面上显示卡片的能力，用以展示重要信息或快捷操作，旨在让用户无需解锁即可获取关键资讯或执行常用功能。锁屏卡片常用于展示天气、时钟等内容，并支持用户个性化定制。
@@ -26,7 +26,7 @@ content_hash: sha256:f4709d9cf8e1f87d390a56573143bd95a311447fca76ccf3d72d395073a
 3. 添加卡片：在锁屏卡片管理页面选择任一卡片，例如运动健康和时钟，卡片就会添加到锁屏上。
 4. 删除卡片：在锁屏编辑态，点击卡片右上角的减号即可删除卡片。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/O7HaC_YeTn6rt-HOp1RH5A/zh-cn_image_0000002583478301.png?HW-CC-KV=V1&HW-CC-Date=20260427T234131Z&HW-CC-Expire=86400&HW-CC-Sign=47FE8DE385E9A54F86F24E0F071268866CAD58736BC0D03D18D05564C47F804F)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/O077ZpcwRkKbp8s6g5Ktxw/zh-cn_image_0000002589244605.png?HW-CC-KV=V1&HW-CC-Date=20260429T052958Z&HW-CC-Expire=86400&HW-CC-Sign=763C6B9BD0CECD61A3C6ED9F11120084FBD36C98B346F8F745EB7D99C5FCCBDF)
 
 ## 约束和限制
 
@@ -111,16 +111,16 @@ content_hash: sha256:f4709d9cf8e1f87d390a56573143bd95a311447fca76ccf3d72d395073a
 
 1. 在“开放能力接入”页面，点击锁屏卡片对应的申请按钮。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/nwrjlrI6R3mD_GBDfuCs4w/zh-cn_image_0000002552798652.png?HW-CC-KV=V1&HW-CC-Date=20260427T234131Z&HW-CC-Expire=86400&HW-CC-Sign=B717E13BFBC8F9AA960A8D6B2C69CCB03704F3B558F5E12EEA80FF09A9520328)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/9RlFOXEvSNSw5_H_sJZ5mw/zh-cn_image_0000002558764800.png?HW-CC-KV=V1&HW-CC-Date=20260429T052958Z&HW-CC-Expire=86400&HW-CC-Sign=A31D8CC1423E5E973FFAEC797B8E6429D5AFD3BDE1DBFC227AA7B1528607A59A)
 2. 在“新建业务申请”窗口填写申请信息，然后点击“提交”。申请原因：必填，不超过256个字符。上传附件：选填，仅可上传1个附件，大小不超过500MB。支持文本、表格、图片、视频、压缩包格式。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/3PPlNkqASweu15-Yo6lHlA/zh-cn_image_0000002583438347.png?HW-CC-KV=V1&HW-CC-Date=20260427T234131Z&HW-CC-Expire=86400&HW-CC-Sign=10070CFC2851E26D47BFC7FD3FA6FBEEAE402BAB2346B94AD9A619A831FF8C94)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/yDFq8WxCRQqccQyQQHv7fQ/zh-cn_image_0000002558605144.png?HW-CC-KV=V1&HW-CC-Date=20260429T052958Z&HW-CC-Expire=86400&HW-CC-Sign=5A9C836EADED3262270504ABFBDEC9697D6902C7938A51A9FB573760E6892398)
 3. 返回“开放能力接入”页面，原“申请”按钮变为“申请中”，1-3个工作日反馈申请结果。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/SsLY45YWSLqa6nNDC2fpLg/zh-cn_image_0000002552958302.png?HW-CC-KV=V1&HW-CC-Date=20260427T234131Z&HW-CC-Expire=86400&HW-CC-Sign=5F17E656501CE2928F12876C713C4A0EB6350D83C687BAFB37188BC081EE4257)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/yb7moFF6QtCHmoojDu-oXQ/zh-cn_image_0000002589324669.png?HW-CC-KV=V1&HW-CC-Date=20260429T052958Z&HW-CC-Expire=86400&HW-CC-Sign=676975F0B821D9A964F026CBE4B6D22F60509F1F122F0B66F81C35BBFDF591A1)
 4. 申请审批通过后，互动中心会发送通知给您，同时“申请中”按钮会变为置灰显示的“申请”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/aEv0OchERrWr_3cObaBXmQ/zh-cn_image_0000002583478303.png?HW-CC-KV=V1&HW-CC-Date=20260427T234131Z&HW-CC-Expire=86400&HW-CC-Sign=B4B2DBB63FB14433550D18D49E8F5D9469E86D255B0648FC6F7388E16E03713F)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/xHMHPBhdSuCeLZBQD-rQ6g/zh-cn_image_0000002589244607.png?HW-CC-KV=V1&HW-CC-Date=20260429T052958Z&HW-CC-Expire=86400&HW-CC-Sign=725CBAD76F6EBE29AF21DCB44518EBD4995912A0F2DC03A82BDCB782C18DEBE1)
 5. 能力申请通过后，勾选锁屏卡片的能力开关，点击右上角“保存”。至此，您的应用已成功接入开放能力。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/PCcdowMUQjKdbQpb-kBQqw/zh-cn_image_0000002552798654.png?HW-CC-KV=V1&HW-CC-Date=20260427T234131Z&HW-CC-Expire=86400&HW-CC-Sign=EC57A41C079F4F6BE63B69A8942DC69E8EE22CBE37E118A52903C34BDA39C266)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/h_fTlSHMSBiESr9fQXBMOA/zh-cn_image_0000002558764802.png?HW-CC-KV=V1&HW-CC-Date=20260429T052958Z&HW-CC-Expire=86400&HW-CC-Sign=2D6726FAC8F301AA2F5B6570186C7F0B01B79C87AB6EE847896C503D52D55E7D)

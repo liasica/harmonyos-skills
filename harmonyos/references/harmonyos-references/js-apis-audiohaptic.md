@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: @ohos.multimedia.audioHaptic (音振协同)
 breadcrumb: API参考 > 媒体 > Audio Kit（音频服务） > ArkTS API > @ohos.multimedia.audioHaptic (音振协同)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:11:43+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:8017bcab6e7b8e8e21efe9830b9b79f80d10b8adc00ba84aba0fa09461e2aabe
+scraped_at: 2026-04-29T14:02:23+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:751f79b54f10fdf065299a254376f0b992030f1d3f7c547c3112623fe99f554a
 ---
 
 音振协同，表示在播放声音时，可同步发起振动。可用于来电通知、消息提醒等场景。
@@ -57,7 +57,7 @@ PhonePC/2in1TabletTVWearable
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | AUDIO\_LATENCY\_MODE\_NORMAL | 0 | 普通时延模式。 |
-| AUDIO\_LATENCY\_MODE\_FAST | 1 | 低时延模式。该模式适用于比较短的音频文件，音频文件过长时可能被截断，该特性与[SoundPool](js-apis-inner-multimedia-soundpool.md#soundpool)一致。 |
+| AUDIO\_LATENCY\_MODE\_FAST | 1 | 低时延模式。当音频文件过长时可能被截断，该特性与[SoundPool](js-apis-inner-multimedia-soundpool.md#soundpool)一致。 |
 
 ## AudioHapticPlayerOptions
 
@@ -141,14 +141,16 @@ registerSource(audioUri: string, hapticUri: string): Promise<number>
 5. let id = 0;
 6. // 单个应用最多支持同时注册128个资源，超过之后将会注册失败（返回注册的资源ID为负数）。推荐应用合理控制注册资源数量，对于不再需要使用的资源，建议及时取消注册。
 7. audioHapticManagerInstance.registerSource(audioUri, hapticUri).then((value: number) => {
-8. console.info(`Promise returned to indicate that the source id of the registered source ${value}.`);
+8. console.info(`Succeeded in registering source. ID: ${value}.`);
 9. id = value;
 10. }).catch((err: BusinessError) => {
-11. console.error(`Failed to register source ${err}`);
+11. console.error(`Failed to register source. Code: ${err.code}, message: ${err.message}`);
 12. });
 ```
 
 ### registerSourceFromFd20+
+
+PhonePC/2in1TabletTVWearable
 
 registerSourceFromFd(audioFd: AudioHapticFileDescriptor, hapticFd: AudioHapticFileDescriptor): Promise<number>
 
@@ -158,7 +160,7 @@ registerSourceFromFd(audioFd: AudioHapticFileDescriptor, hapticFd: AudioHapticFi
 
 单个应用最多支持同时注册128个资源，超过之后将会注册失败（返回注册的资源ID为负数）。推荐应用合理控制注册资源数量，对于不再需要使用的资源，建议及时取消注册。
 
-**系统能力：**: SystemCapability.Multimedia.AudioHaptic.Core
+**系统能力：** SystemCapability.Multimedia.AudioHaptic.Core
 
 **参数：**
 
@@ -198,10 +200,10 @@ registerSourceFromFd(audioFd: AudioHapticFileDescriptor, hapticFd: AudioHapticFi
 20. let id = 0;
 21. // 单个应用最多支持同时注册128个资源，超过之后将会注册失败（返回注册的资源ID为负数）。推荐应用合理控制注册资源数量，对于不再需要使用的资源，建议及时取消注册。
 22. audioHapticManagerInstance.registerSourceFromFd(audioFd, hapticFd).then((value: number) => {
-23. console.info('Succeeded in doing registerSourceFromFd.');
+23. console.info(`Succeeded in registering source from fd. ID: ${value}.`);
 24. id = value;
 25. }).catch((err: BusinessError) => {
-26. console.error(`Failed to registerSourceFromFd. Code: ${err.code}, message: ${err.message}`);
+26. console.error(`Failed to register source from fd. Code: ${err.code}, message: ${err.message}`);
 27. });
 ```
 
@@ -247,9 +249,9 @@ unregisterSource(id: number): Promise<void>
 3. let id = 0; // 需要通过registerSource方法获取。
 
 5. audioHapticManagerInstance.unregisterSource(id).then(() => {
-6. console.info('Succeeded in doing unregisterSource.');
+6. console.info('Succeeded in unregistering source.');
 7. }).catch((err: BusinessError) => {
-8. console.error(`Failed to unregisterSource. Code: ${err.code}, message: ${err.message}`);
+8. console.error(`Failed to unregister source. Code: ${err.code}, message: ${err.message}`);
 9. });
 ```
 
@@ -381,9 +383,9 @@ createPlayer(id: number, options?: AudioHapticPlayerOptions): Promise<AudioHapti
 
 8. audioHapticManagerInstance.createPlayer(id, options).then((value: audioHaptic.AudioHapticPlayer) => {
 9. audioHapticPlayerInstance = value;
-10. console.info('Succeeded in doing createPlayer.');
+10. console.info('Succeeded in creating player.');
 11. }).catch((err: BusinessError) => {
-12. console.error(`Failed to createPlayer. Code: ${err.code}, message: ${err.message}`);
+12. console.error(`Failed to create player. Code: ${err.code}, message: ${err.message}`);
 13. });
 ```
 
@@ -476,9 +478,9 @@ start(): Promise<void>
 1. import { BusinessError } from '@kit.BasicServicesKit';
 
 3. audioHapticPlayerInstance.start().then(() => {
-4. console.info(`Promise returned to indicate that start playing successfully.`);
+4. console.info('Succeeded in starting.');
 5. }).catch((err: BusinessError) => {
-6. console.error(`Failed to start playing. ${err}`);
+6. console.error(`Failed to start. Code: ${err.code}, message: ${err.message}`);
 7. });
 ```
 
@@ -513,9 +515,9 @@ stop(): Promise<void>
 1. import { BusinessError } from '@kit.BasicServicesKit';
 
 3. audioHapticPlayerInstance.stop().then(() => {
-4. console.info(`Promise returned to indicate that stop playing successfully.`);
+4. console.info('Succeeded in stopping.');
 5. }).catch((err: BusinessError) => {
-6. console.error(`Failed to stop playing. ${err}`);
+6. console.error(`Failed to stop Code: ${err.code}, message: ${err.message}`);
 7. });
 ```
 
@@ -549,9 +551,9 @@ release(): Promise<void>
 1. import { BusinessError } from '@kit.BasicServicesKit';
 
 3. audioHapticPlayerInstance.release().then(() => {
-4. console.info(`Promise returned to indicate that release the audio haptic player successfully.`);
+4. console.info('Succeeded in releasing.');
 5. }).catch((err: BusinessError) => {
-6. console.error(`Failed to release the audio haptic player. ${err}`);
+6. console.error(`Failed to release. Code: ${err.code}, message: ${err.message}`);
 7. });
 ```
 
@@ -597,9 +599,9 @@ setVolume(volume: number): Promise<void>
 1. import { BusinessError } from '@kit.BasicServicesKit';
 
 3. audioHapticPlayerInstance.setVolume(0.5).then(() => {
-4. console.info('Promise returned to indicate that set volume successfully.');
+4. console.info('Succeeded in setting volume.');
 5. }).catch((err: BusinessError) => {
-6. console.error(`Failed to set volume. ${err}`);
+6. console.error(`Failed to set volume. Code: ${err.code}, message: ${err.message}`);
 7. });
 ```
 
@@ -643,9 +645,9 @@ setLoop(loop: boolean): Promise<void>
 1. import { BusinessError } from '@kit.BasicServicesKit';
 
 3. audioHapticPlayerInstance.setLoop(true).then(() => {
-4. console.info('Promise returned to indicate that set player loop successfully.');
+4. console.info('Succeeded in setting loop.');
 5. }).catch((err: BusinessError) => {
-6. console.error(`Failed to set player loop. ${err}`);
+6. console.error(`Failed to set loop. Code: ${err.code}, message: ${err.message}`);
 7. });
 ```
 
@@ -670,7 +672,7 @@ on(type: 'endOfStream', callback: Callback<void>): void
 
 ```
 1. audioHapticPlayerInstance.on('endOfStream', () => {
-2. console.info(`Receive the callback of endOfStream.`);
+2. console.info('Succeeded in using on function.');
 3. });
 ```
 
@@ -699,7 +701,7 @@ off(type: 'endOfStream', callback?: Callback<void>): void
 
 4. // 同一监听事件中，on方法和off方法传入callback参数一致，off方法取消对应on方法订阅的监听。
 5. let endOfStreamCallback = () => {
-6. console.info(`Receive the callback of endOfStream.`);
+6. console.info('Succeeded in using on or off function.');
 7. };
 
 9. audioHapticPlayerInstance.on('endOfStream', endOfStreamCallback);

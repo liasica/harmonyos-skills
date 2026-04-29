@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/knock-share-b
 title: 内容分享
 breadcrumb: 指南 > 应用服务 > Share Kit（分享服务） > 碰一碰分享 > 手机与手机碰一碰分享 > 内容分享
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:51:03+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:8e374ddb017c705c97ad35102a9357cede783d672f6c41259517b6d459e94983
+scraped_at: 2026-04-29T13:40:39+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:5f6206c0304ef16e26c4dc60d8de809f3340740ddcef28861074aeb92d580a20
 ---
 
 ## 注册碰一碰事件
@@ -16,10 +16,10 @@ content_hash: sha256:8e374ddb017c705c97ad35102a9357cede783d672f6c41259517b6d459e
 
 * 文本提示**可碰一碰分享至 HarmonyOS 5 及以上版本手机**。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/Rq-5WajRTDO56n5v11K3Ww/zh-cn_image_0000002552799534.png?HW-CC-KV=V1&HW-CC-Date=20260427T235102Z&HW-CC-Expire=86400&HW-CC-Sign=80DA9F19EE4BDD0FF0EC0A034A6EED450C5EF754D7CE775BE3327567418FC1AF)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/hroyLWphQNu2ZLV3a-OarA/zh-cn_image_0000002558606028.png?HW-CC-KV=V1&HW-CC-Date=20260429T054038Z&HW-CC-Expire=86400&HW-CC-Sign=1CA9BBD4A54B7F8ECB0E6AED5C2E8EE5A4C72148CAF42E73C831EA3949A259D1)
 * 动图提示**可碰一碰分享**。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/iETFLb4ATgq3dgAV8sJBsg/zh-cn_image_0000002583439229.png?HW-CC-KV=V1&HW-CC-Date=20260427T235102Z&HW-CC-Expire=86400&HW-CC-Sign=F37E937BF1FA259C02B2500024F0A61E75D23BA699D746A9537C38B0291CFB4D)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/mYANkso5Qb6s64nsFL2Nog/zh-cn_image_0000002589325555.png?HW-CC-KV=V1&HW-CC-Date=20260429T054038Z&HW-CC-Expire=86400&HW-CC-Sign=EF06440ADEAEFA17389F4BD294B228B85388B6E2B4CF6F5254CD3338F5C8C5FF)
 
   Share Kit提供统一的动图资源文件以方便应用接入。
 
@@ -113,7 +113,7 @@ content_hash: sha256:8e374ddb017c705c97ad35102a9357cede783d672f6c41259517b6d459e
 | 设备 | 对端已登录华为账号 | 对端未登录华为账号 |
 | --- | --- | --- |
 | 碰一碰发送端 | 若对端已登录华为账号，将展示接收端华为账号昵称和头像。 | 若对端未登录华为账号，将展示接收端设备信息。 |
-| 碰一碰接收端 | 若对端已登录华为账号，将展示发送端华为账号昵称和头像。  \*\*说明：\*\*若发送端为HarmonyOS NEXT 5.0.0.123 SP16之前的版本，则不会展示任何信息。 | 若对端未登录华为账号，将展示发送端设备信息。  \*\*说明：\*\*若发送端为HarmonyOS NEXT 5.0.0.123 SP16之前的版本，则不会展示任何信息。 |
+| 碰一碰接收端 | 若对端已登录华为账号，将展示发送端华为账号昵称和头像。  **说明：** 若发送端为HarmonyOS NEXT 5.0.0.123 SP16之前的版本，则不会展示任何信息。 | 若对端未登录华为账号，将展示发送端设备信息。  **说明：** 若发送端为HarmonyOS NEXT 5.0.0.123 SP16之前的版本，则不会展示任何信息。 |
 
 ## 发送分享数据
 
@@ -208,7 +208,7 @@ content_hash: sha256:8e374ddb017c705c97ad35102a9357cede783d672f6c41259517b6d459e
 
 效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/34Jlg5MYTImq89FWsgpXiQ/zh-cn_image_0000002583439233.png?HW-CC-KV=V1&HW-CC-Date=20260427T235102Z&HW-CC-Expire=86400&HW-CC-Sign=068C9BC5926E0337F90CC72E440C7B5AA451673D382F96372BFCA3D197852AAD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/Nphv7lvURyi-ubC-gUZTxQ/zh-cn_image_0000002589325559.png?HW-CC-KV=V1&HW-CC-Date=20260429T054038Z&HW-CC-Expire=86400&HW-CC-Sign=998E9F026F01E822C0234BE3679F0D74280BF6C21A37CF1039C9AC063A08121A)
 
 示例代码：
 

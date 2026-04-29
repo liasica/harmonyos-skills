@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/dataability-c
 title: DataAbility组件配置
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > FA模型开发指导 > FA模型应用组件 > DataAbility组件开发指导 > DataAbility组件配置
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:38:01+08:00
+scraped_at: 2026-04-29T13:26:03+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:bf6d8c03b2e898bbed512f881a6e51392f79b65bf753d4ba057037ffde38078e
+content_hash: sha256:28842bb714c5551992d7dd7ec2d1336921efdc94f8eaee86fd87c30badb469c2
 ---
 
 ## URI介绍
 
 DataAbility的提供方和使用方都通过URI（Uniform Resource Identifier）来标识一个具体的数据，例如数据库中的某个表或磁盘上的某个文件。此处的URI仍基于URI通用标准，格式如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/KsL4vvXIRA2uJX2Qy_8JAQ/zh-cn_image_0000002583477513.png?HW-CC-KV=V1&HW-CC-Date=20260427T233800Z&HW-CC-Expire=86400&HW-CC-Sign=1EAD8AE35AF87B6585E0FD08C77D20B456FADE74CB10692808BB0576F42E027F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/DyaI41ziSFeltBx8ZgwXvg/zh-cn_image_0000002558764004.png?HW-CC-KV=V1&HW-CC-Date=20260429T052602Z&HW-CC-Expire=86400&HW-CC-Sign=99153F88A658945567AD56554731381FF301E70FD49D0080FFBF6D318E77FF72)
 
 * scheme：协议方案名，固定为"dataability"，代表Data Ability所使用的协议类型。
 * authority：设备ID。如果为跨设备场景，则为目标设备的ID；如果为本地设备场景，则不需要填写。

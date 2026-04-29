@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/avtranscoder-
 title: 创建异步线程执行AVTranscoder视频转码(ArkTS)
 breadcrumb: 指南 > 媒体 > Media Kit（媒体服务） > 媒体开发指导(ArkTS) > 视频转码 > 创建异步线程执行AVTranscoder视频转码(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:46:29+08:00
+scraped_at: 2026-04-29T13:35:26+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:0eb452abb2820ccd4216d76c9117650d3396f0a830220a7dcacf166aaf087a82
+content_hash: sha256:641fb64895b07b7feb118883338a290f313e076c8256e9d04ea5497b290d9cc1
 ---
 
 在开发过程中，应用经常会创建异步线程执行视频转码任务以满足不同诉求，主要包括：
@@ -55,13 +55,13 @@ content_hash: sha256:0eb452abb2820ccd4216d76c9117650d3396f0a830220a7dcacf166aaf0
 
   计算过程：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/QxIOby11RcKRLHHd-WNEyQ/zh-cn_image_0000002552798948.png?HW-CC-KV=V1&HW-CC-Date=20260427T234627Z&HW-CC-Expire=86400&HW-CC-Sign=E03E65677DA5A16E003B6D4AD39EC9440DA5DB1A35D5632B99D80387B1F37F52)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/8342kSOWRDeAKXeAR51Quw/zh-cn_image_0000002589324967.png?HW-CC-KV=V1&HW-CC-Date=20260429T053525Z&HW-CC-Expire=86400&HW-CC-Sign=627E886A63D80AF3A7ADAE6644B3FA4C7802C31F90FC2775407D35072047D58C)
 
   分辨率和帧率的系数由以下经验公式计算可得。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/O-JtU-JzQc2nVRI46zn8Ag/zh-cn_image_0000002583438643.png?HW-CC-KV=V1&HW-CC-Date=20260427T234627Z&HW-CC-Expire=86400&HW-CC-Sign=25E2531231600A877974F125DE62E1FC412AFCAA95DEB99450EDDBDEFD7649D3)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/DPOSnr9_T4qbvsafzTPMXg/zh-cn_image_0000002589244903.png?HW-CC-KV=V1&HW-CC-Date=20260429T053525Z&HW-CC-Expire=86400&HW-CC-Sign=DF7F366D504C8C9071D8B2BA539ADBD74954078775F2C3FF493596C7CED9E51E)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/Qvq3gqgJToGf91V8TgGpDg/zh-cn_image_0000002552958598.png?HW-CC-KV=V1&HW-CC-Date=20260427T234627Z&HW-CC-Expire=86400&HW-CC-Sign=6CACBF728CE2A8A1F88B63A245FF5FEE61722AF00E1B57A3D1C661EEEA8687D3)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/9ocZrJfPTAGb0DeBHzqidw/zh-cn_image_0000002558765098.png?HW-CC-KV=V1&HW-CC-Date=20260429T053525Z&HW-CC-Expire=86400&HW-CC-Sign=F237D94FEB01C5052F6BF97F161711441B2B94A20E6D3A27FE25A8D168A7D191)
 
   上述计算帧率的公式y=clip(0.5, 2, x)表示：如果x∈[0.5, 2.0]，取y=x；如果x＜0.5，取y=0.5；如果x＞2.0，取y=2.0。
 * **码率计算**

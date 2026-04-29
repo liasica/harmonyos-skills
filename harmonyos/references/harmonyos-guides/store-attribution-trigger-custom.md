@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/store-attribu
 title: 自定义转化事件
 breadcrumb: 指南 > 应用服务 > AppGallery Kit（应用市场服务） > 应用归因服务 > 开发准备 > 管理转化事件 > 自定义转化事件
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:48:20+08:00
+scraped_at: 2026-04-29T13:37:13+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:a457105e0165c6ac58915791d16681dda6e5de969f080e58d4687159c439f226
+content_hash: sha256:86c1feda52d7820ee5cf97127d771d3888b8e885bae4092c70d274e997669bf2
 ---
 
 **开发者角色的合作伙伴在转化事件管理页面可以做如下操作**：
@@ -18,13 +18,13 @@ content_hash: sha256:a457105e0165c6ac58915791d16681dda6e5de969f080e58d4687159c43
 
 1. 在左侧点击转化事件管理菜单栏，进入自定义转化事件页面。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/bNPjbccUSOimoCAQ3yjDpQ/zh-cn_image_0000002552958784.png?HW-CC-KV=V1&HW-CC-Date=20260427T234819Z&HW-CC-Expire=86400&HW-CC-Sign=F797F317F7D2E981C0667A9EA7F2AA023F580FB5E60F29153CE710B85896DAC1)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/UXlCyNYfR0yA5oMKS0htnA/zh-cn_image_0000002558765284.png?HW-CC-KV=V1&HW-CC-Date=20260429T053712Z&HW-CC-Expire=86400&HW-CC-Sign=23F60BBD6528EF5FF01FE881EB7E85D6A962A089CC485AAC10B2C7FC907ADD08)
 2. 点击右上角“新增”按钮，进入新增自定义转化事件页面。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/YeOxDKc6TfegJQXga5RK_Q/zh-cn_image_0000002583478785.png?HW-CC-KV=V1&HW-CC-Date=20260427T234819Z&HW-CC-Expire=86400&HW-CC-Sign=F180556F0CB95E4C8BB3DAE2264DCDC765D8A44D0BA13BBF131CAED7104EDD71)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/I8OEQlRLS_iSkxJM58-mFg/zh-cn_image_0000002558605628.png?HW-CC-KV=V1&HW-CC-Date=20260429T053712Z&HW-CC-Expire=86400&HW-CC-Sign=1DAA0A7164A916B595B4FA3C1B2A4CFD6EC151C17FC22F043091424954C5F9DE)
 3. 填写“转化事件名称”、“转化事件编码”、“含义说明”信息，点击“确认”按钮后会生成一条状态是“新建待审核”的自定义转化事件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/Y2hgXcSzQF-kT1iCuiHs_w/zh-cn_image_0000002552799136.png?HW-CC-KV=V1&HW-CC-Date=20260427T234819Z&HW-CC-Expire=86400&HW-CC-Sign=0B4DBD4A406FAF00FEA73B20F8B57B4138E1918BFEE8A68637129C104EC6877C)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/UjkyW_OhRGqoVcgs2e2l0g/zh-cn_image_0000002589325155.png?HW-CC-KV=V1&HW-CC-Date=20260429T053712Z&HW-CC-Expire=86400&HW-CC-Sign=8784E3D6AA5FF885D28D5277AD0044507FC0B8C7A920EF3E0EB0AD40E85A75A1)
 
 说明
 
@@ -35,13 +35,13 @@ content_hash: sha256:a457105e0165c6ac58915791d16681dda6e5de969f080e58d4687159c43
 
 1. 点击处于已生效或者驳回状态的自定义转化事件列表右侧“编辑”按钮：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/0KnTwIHLRkeGZvbbl3kFfQ/zh-cn_image_0000002583438831.png?HW-CC-KV=V1&HW-CC-Date=20260427T234819Z&HW-CC-Expire=86400&HW-CC-Sign=2845EE6A994E617CE16C4ACCB2251305264597B4333EEC165422B22150D82EC1)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/1UQaBDueR1aWwSDsSLy2eA/zh-cn_image_0000002589245091.png?HW-CC-KV=V1&HW-CC-Date=20260429T053712Z&HW-CC-Expire=86400&HW-CC-Sign=D9098388606B6AAE9F009E653679DC4897998B4B3E78101C989A581F0FA8C744)
 2. 进入编辑页面，修改“转化事件名称”、“转化事件编码”、“含义说明”信息后点击“确认”按钮。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/TqyeM89QSnW3iWDIGdpbLA/zh-cn_image_0000002552958786.png?HW-CC-KV=V1&HW-CC-Date=20260427T234819Z&HW-CC-Expire=86400&HW-CC-Sign=3302727FDAA0BA052AFD6FFDCEEE3F5FC8A16B22B25B22D0CEB5BFD908DED04E)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/8tCIfQM0SVC_LSqrIhLeAg/zh-cn_image_0000002558765286.png?HW-CC-KV=V1&HW-CC-Date=20260429T053712Z&HW-CC-Expire=86400&HW-CC-Sign=CC639E5B0C3E77D4B904AB4D6DD9246F8F3155679AA9F5B48CF357504AC665BC)
 3. 修改后的数据状态为“修改待审核”或者“新建待审核”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/PGMkt-GORqOtDYOi-SqFLg/zh-cn_image_0000002583478787.png?HW-CC-KV=V1&HW-CC-Date=20260427T234819Z&HW-CC-Expire=86400&HW-CC-Sign=1FDB11AA872AEC9199294FE07178DF840FE5E1817FBBAA5AEC3138519FB9A912)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/keWhz_ytTZyVX0ieM_hv-g/zh-cn_image_0000002558605630.png?HW-CC-KV=V1&HW-CC-Date=20260429T053712Z&HW-CC-Expire=86400&HW-CC-Sign=D82EFDB23EBBA0DEE5CEB809D8B8AFA8DE6226D288D08BB0D84FB2D2280B767D)
 
 “修改待审核”状态的自定义转化事件被审核通过后才能生效，如果被驳回，则维持修改之前的转化事件名称和转化事件编码值。
 
@@ -60,10 +60,10 @@ content_hash: sha256:a457105e0165c6ac58915791d16681dda6e5de969f080e58d4687159c43
 
 删除待审核的自定义转化事件需要审核人员审核通过后，才会被删除。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/FbjVkW4bQ_ini2e-62AgPg/zh-cn_image_0000002552799138.png?HW-CC-KV=V1&HW-CC-Date=20260427T234819Z&HW-CC-Expire=86400&HW-CC-Sign=948C86661DDE804ACA5CAA7582E5042404B2873210145C9C34084C57A52E047D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/NOQL2ucOQi25a-ErjZkYiA/zh-cn_image_0000002589325157.png?HW-CC-KV=V1&HW-CC-Date=20260429T053712Z&HW-CC-Expire=86400&HW-CC-Sign=1F28989DCD6F2E29645D0B5BE4000C27CA1407CF994F196AB0C797C376E4E032)
 
 ## 查看
 
 点击左侧转化事件管理菜单栏，进入自定义转化事件页面查看自定义转化事件信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/5QbJnfI9SWO2hghUKt8x9w/zh-cn_image_0000002583438833.png?HW-CC-KV=V1&HW-CC-Date=20260427T234819Z&HW-CC-Expire=86400&HW-CC-Sign=A090CB5051925D4BF82A833AED1E5CB80B78BFAFFB5887231B91F061A78C7730)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/M-UFwHiLSp2P7KkZsIV0Wg/zh-cn_image_0000002589245093.png?HW-CC-KV=V1&HW-CC-Date=20260429T053712Z&HW-CC-Expire=86400&HW-CC-Sign=2E5CF0AAACCA3069BDDF0177B3CA6247A854E463F7EFE3BBD97E3C8C69DEC2B3)

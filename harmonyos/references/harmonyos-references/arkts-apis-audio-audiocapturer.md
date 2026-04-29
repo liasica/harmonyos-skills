@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (AudioCapturer)
 breadcrumb: API参考 > 媒体 > Audio Kit（音频服务） > ArkTS API > @ohos.multimedia.audio (音频管理) > Interface (AudioCapturer)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:11:37+08:00
-doc_updated_at: 2026-04-17
-content_hash: sha256:11010e0aff234ca10451836fdb82f9f82fcf7f81e2534afc9d7e34f4d6a9e7a9
+scraped_at: 2026-04-29T14:02:18+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:903595ed104d466e22c4d4470ab6d1a017cc3eaf41e3a5045dff9dd8bf5cad0d
 ---
 
 提供音频采集的相关接口。
@@ -528,7 +528,7 @@ getAudioTime(callback: AsyncCallback<number>): void
 1. import { BusinessError } from '@kit.BasicServicesKit';
 
 3. audioCapturer.getAudioTime((err: BusinessError, timestamp: number) => {
-4. console.info(`Current timestamp: ${timestamp}`);
+4. console.info(`Succeeded in getting audio time. Timestamp: ${timestamp}`);
 5. });
 ```
 
@@ -553,10 +553,10 @@ getAudioTime(): Promise<number>
 ```
 1. import { BusinessError } from '@kit.BasicServicesKit';
 
-3. audioCapturer.getAudioTime().then((audioTime: number) => {
-4. console.info(`AudioFrameworkRecLog: AudioCapturer getAudioTime : Success ${audioTime}`);
+3. audioCapturer.getAudioTime().then((timestamp: number) => {
+4. console.info(`Succeeded in getting audio time. Timestamp: ${timestamp}`);
 5. }).catch((err: BusinessError) => {
-6. console.error(`AudioFrameworkRecLog: AudioCapturer Created : ERROR : ${err}`);
+6. console.error(`Failed to get audio time. Code: ${err.code}, message: ${err.message}`);
 7. });
 ```
 
@@ -582,11 +582,11 @@ getAudioTimeSync(): number
 1. import { BusinessError } from '@kit.BasicServicesKit';
 
 3. try {
-4. let audioTime: number = audioCapturer.getAudioTimeSync();
-5. console.info(`AudioFrameworkRecLog: AudioCapturer getAudioTimeSync : Success ${audioTime}`);
+4. let timestamp: number = audioCapturer.getAudioTimeSync();
+5. console.info(`Succeeded in getting audio time. Timestamp: ${timestamp}`);
 6. } catch (err) {
 7. let error = err as BusinessError;
-8. console.error(`AudioFrameworkRecLog: AudioCapturer getAudioTimeSync : ERROR : ${error}`);
+8. console.error(`Failed to get audio time. Code: ${error.code}, message: ${error.message}`);
 9. }
 ```
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: UIPickerComponent
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 按钮与选择 > UIPickerComponent
 category: harmonyos-references
-scraped_at: 2026-04-28T08:01:43+08:00
+scraped_at: 2026-04-29T13:51:59+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:f16a2898fd9dd2abfb27ea9b35ed080fea04af8d477a81968e5ee2fd8346a47d
+content_hash: sha256:f88e106266e07cdc964918e498a082f549b2d286986c5b3b1423f04dd2199235
 ---
 
 UIPickerComponent容器是用于实现用户选择操作的组件。它支持从一组有限的选项中让用户进行单选，可应用于时间选择、日期选择、地区选择、状态选择等多种场景。UIPickerComponent容器的显示效果为立体滚轮样式，支持选项按需定制，包括文本类型、图片类型和图文组合类型。
@@ -324,7 +324,7 @@ PhonePC/2in1TabletTVWearable
 54. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/GAI3dFAMTLSC_xSo8MHzlA/zh-cn_image_0000002583479703.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000141Z&HW-CC-Expire=86400&HW-CC-Sign=A16190C743B8D324B274DAB3F2766E3D97B5E3480A9BC63BC1F674DB027AD44B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/cco0on7ASGSSbtOFeOkbFw/zh-cn_image_0000002558606566.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055156Z&HW-CC-Expire=86400&HW-CC-Sign=4C34A62A2C8E3441980B116289C4010F9E9D6710F5E0C15E1FDC35A58D27F208)
 
 ### 示例2（设置事件回调）
 
@@ -370,7 +370,7 @@ PhonePC/2in1TabletTVWearable
 37. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/g9aBE1ctTf-0CQ5NAnIYpg/zh-cn_image_0000002552800054.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000141Z&HW-CC-Expire=86400&HW-CC-Sign=B46E060703395A07297912FA27ABAB1265D13990DC4B571B0996DB3AB79C19F2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/ssDGVodLSuapy_A3C-bhDQ/zh-cn_image_0000002589326093.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055156Z&HW-CC-Expire=86400&HW-CC-Sign=A206149448F396B0A02A7A7F62EE501B99A58391E8CF9D87DFA68C2F6E181BA3)
 
 ### 示例3（设置选中项索引值）
 
@@ -421,7 +421,7 @@ PhonePC/2in1TabletTVWearable
 42. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/lrGlfvgiQhaLeGP0B1F9JA/zh-cn_image_0000002583439749.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000141Z&HW-CC-Expire=86400&HW-CC-Sign=CD2571FA7C320E5DE27C0B25CE27FEF69DDE1146D681F08B430C237873ED4C40)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/gnuch8VyTKu2rJDJmEQ69A/zh-cn_image_0000002589246035.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055156Z&HW-CC-Expire=86400&HW-CC-Sign=C1EEF0460D8143BEE01B4B3C2508D1F7B2B4836101ECBF6C5D5BAC899C1E30BE)
 
 ### 示例4（设置选中项指示器）
 
@@ -720,7 +720,7 @@ PhonePC/2in1TabletTVWearable
 290. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/TugW0SHPS72hbw5JyTSLEw/zh-cn_image_0000002552959704.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000141Z&HW-CC-Expire=86400&HW-CC-Sign=68534B5D5D13CA3726D3FE18C760CC2167F1E9FBD86DC67E66B36995C5104851)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/q6hAHQFoSeawU4LxGOWMQA/zh-cn_image_0000002558766226.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055156Z&HW-CC-Expire=86400&HW-CC-Sign=A125959A14AED4DBDF0C04DDB51720A1F7EF0F7B20A60F87485FFC8C2F7C8B89)
 
 ### 示例5（自定义月份选择器）
 
@@ -772,7 +772,7 @@ PhonePC/2in1TabletTVWearable
 43. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/dPnJt400RymZaVWxttCidQ/zh-cn_image_0000002583479705.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000141Z&HW-CC-Expire=86400&HW-CC-Sign=5AE76E5BEC09A023F9757D534C70B2F2F9DF9268C6AFB67ECA4602621F17A231)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/2NO8XibiQoG99m7jUVBw7g/zh-cn_image_0000002558606568.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055156Z&HW-CC-Expire=86400&HW-CC-Sign=528886C8B062200C36FFE00A90601F21E5A7C1AF3FD6F2BAB4C3E6F661F368D5)
 
 ### 示例6（自定义地区选择器）
 
@@ -890,7 +890,7 @@ PhonePC/2in1TabletTVWearable
 109. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/o7KahnkaQ5muRtN5OEcIiA/zh-cn_image_0000002552800056.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000141Z&HW-CC-Expire=86400&HW-CC-Sign=6D953F3D742334A0887A83431D6B034A5A5C1927FAAA9A3E0CC81BBAC4F4D3C2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/okmCn2KnSUGb1ABZlPtuxg/zh-cn_image_0000002589326095.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055156Z&HW-CC-Expire=86400&HW-CC-Sign=82115AC96F90657342C1B9E31F2000FDD598158D59FF146CCDB57D547DA1F903)
 
 ### 示例7（自定义选项类型）
 
@@ -987,7 +987,7 @@ PhonePC/2in1TabletTVWearable
 88. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/6aJhOANITViGMQ3UI4q27A/zh-cn_image_0000002583439751.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000141Z&HW-CC-Expire=86400&HW-CC-Sign=BAE77A4089CEF04AF13025AB6045BDD6050A468F25DD91EA586571E6BC4194CA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/krJH3xWXT0GbPQjIWFVKOw/zh-cn_image_0000002589246037.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055156Z&HW-CC-Expire=86400&HW-CC-Sign=3217507FED790CE6011722C523AF7BADF6492A1A9F3CE04F2D43696931415AD1)
 
 ### 示例8（自定义时间选择器）
 
@@ -1448,4 +1448,4 @@ PhonePC/2in1TabletTVWearable
 381. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/S5kECIVITTSNHA0zSLfx8Q/zh-cn_image_0000002552959706.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000141Z&HW-CC-Expire=86400&HW-CC-Sign=71081E02F5F0AAD671B4A2D82E871E47BC0994554634B5A9D8DB097498DF05CD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/58Y8XxfsRHenWZQFfDu5zw/zh-cn_image_0000002558766228.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055156Z&HW-CC-Expire=86400&HW-CC-Sign=F76904EA8F82BA228F2A389AA9B2C9E9D0F16F60C13110ACC9F5E79EFD2D9C60)

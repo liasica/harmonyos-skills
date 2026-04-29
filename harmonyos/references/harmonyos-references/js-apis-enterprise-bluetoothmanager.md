@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-e
 title: @ohos.enterprise.bluetoothManager（蓝牙管理）
 breadcrumb: API参考 > 系统 > 基础功能 > MDM Kit（企业设备管理服务） > ArkTS API > @ohos.enterprise.bluetoothManager（蓝牙管理）
 category: harmonyos-references
-scraped_at: 2026-04-28T08:10:24+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:1ed5c1f572ae53696fd194ad542e8586869c95bdbdb0f5da21305e6d5c181d8b
+scraped_at: 2026-04-29T14:01:09+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:b6c170b5286052d125794534f30721de4ccae137065bc752242d6db5a3ab25c3
 ---
 
 本模块提供设备蓝牙管理的能力，包括设置和查询蓝牙信息等。
@@ -578,7 +578,7 @@ addDisallowedBluetoothProtocols(admin: Want, accountId: number, protocols: Array
 9. // 需根据实际情况进行替换
 10. let accountId: number = 100;
 11. let protocols: Array<bluetoothManager.Protocol> = [bluetoothManager.Protocol.GATT, bluetoothManager.Protocol.SPP];
-12. try{
+12. try {
 13. bluetoothManager.addDisallowedBluetoothProtocols(wantTemp, accountId, protocols);
 14. console.info('Succeeded in adding disallowed bluetooth protocols policy.');
 15. } catch (err) {
@@ -634,7 +634,7 @@ removeDisallowedBluetoothProtocols(admin: Want, accountId: number, protocols: Ar
 9. // 需根据实际情况进行替换
 10. let accountId: number = 100;
 11. let protocols: Array<bluetoothManager.Protocol> = [bluetoothManager.Protocol.GATT, bluetoothManager.Protocol.SPP];
-12. try{
+12. try {
 13. bluetoothManager.removeDisallowedBluetoothProtocols(wantTemp, accountId, protocols);
 14. console.info('Succeeded in removing disallowed bluetooth protocols policy.');
 15. } catch (err) {
@@ -692,7 +692,7 @@ getDisallowedBluetoothProtocols(admin: Want, accountId: number): Array<Protocol>
 8. };
 9. // 需根据实际情况进行替换
 10. let accountId: number = 100;
-11. try{
+11. try {
 12. let result: Array<bluetoothManager.Protocol> = bluetoothManager.getDisallowedBluetoothProtocols(wantTemp, accountId);
 13. console.info(`Succeeded in getting disallowed bluetooth protocols. Result: ${JSON.stringify(result)}`);
 14. } catch (err) {

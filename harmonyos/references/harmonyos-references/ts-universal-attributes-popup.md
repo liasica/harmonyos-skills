@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: Popup控制
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 弹窗控制 > Popup控制
 category: harmonyos-references
-scraped_at: 2026-04-28T08:01:13+08:00
+scraped_at: 2026-04-29T13:51:27+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:344ec7dada941d06b125c9174fa1eaec1e18c22c05c1c5d3b45bd4728857b376
+content_hash: sha256:7f47edf9b8b2ae2e4d09a5bf2ee00ecf71ec66abdb88881d99d1c4dd863d2176
 ---
 
 为组件绑定Popup气泡，并设置气泡内容、交互逻辑和显示状态。
@@ -382,7 +382,7 @@ PhonePC/2in1TabletTVWearable
 76. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/8tRIiSTbRtmcsDny4VmSBg/zh-cn_image_0000002552799898.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000112Z&HW-CC-Expire=86400&HW-CC-Sign=BF5890FE311C232F829A25EEB5D87E40CF13D058BFF4D57320428B9CFE2073C3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/hiqs7LvcSSyScgyByIzQfg/zh-cn_image_0000002589325937.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055126Z&HW-CC-Expire=86400&HW-CC-Sign=AAB13B6E830FB08BFA06269BEFC27388BDBB461C37D0B2F10C69BDF75D878903)
 
 ### 示例2（设置气泡的文本样式）
 
@@ -429,7 +429,7 @@ PhonePC/2in1TabletTVWearable
 38. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/wb0GJB69Rg6bxDNyWNe9rw/zh-cn_image_0000002583439593.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000112Z&HW-CC-Expire=86400&HW-CC-Sign=8FADC98CBE69CA0903D1C76F41BE175C9E97C023CF421139BE1992C4340B8B96)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/MNygZBQeS7ijUg2FNcYMlw/zh-cn_image_0000002589245879.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055126Z&HW-CC-Expire=86400&HW-CC-Sign=D88C217E973F4BB9D1CA0E1E7FDCF7AA37469ABA95D03893ACD4CD569A92288F)
 
 ### 示例3（设置气泡的样式）
 
@@ -477,7 +477,7 @@ PhonePC/2in1TabletTVWearable
 39. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/-8-nhwBfTtG_e6aWXLDPag/zh-cn_image_0000002552959548.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000112Z&HW-CC-Expire=86400&HW-CC-Sign=9D6839C08D2A97EF9A8FB3F7909FBF52567D66E6B3E93E297507B6B7354FDFD1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/kQtYytFiTf2chjq75fZmGQ/zh-cn_image_0000002558766070.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055126Z&HW-CC-Expire=86400&HW-CC-Sign=4558B916A9FCEFE27E18204E00C3266128AE44EC47F9DABB5E53E5A984D3A418)
 
 ### 示例4（设置气泡的动效）
 
@@ -547,7 +547,7 @@ PhonePC/2in1TabletTVWearable
 61. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/WK3jXvpYSG-VDrRmDQgujQ/zh-cn_image_0000002583479549.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000112Z&HW-CC-Expire=86400&HW-CC-Sign=EBC7E60ED45A8562E08F68455227FFA65CD9F4ECDCE8041D354E93AE10A4E704)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/5Qd9rsooSY2Xx-0WwbemGA/zh-cn_image_0000002558606412.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055126Z&HW-CC-Expire=86400&HW-CC-Sign=BB2FDDD970EB3B1BB5FA7442280ECC01C63241CB88916F0B44CB5FC46A4A3A5C)
 
 ### 示例5（为气泡添加事件）
 
@@ -598,7 +598,7 @@ PhonePC/2in1TabletTVWearable
 42. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/ogLKKwNeQs2WuogzFAknhA/zh-cn_image_0000002552799900.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000112Z&HW-CC-Expire=86400&HW-CC-Sign=1507D8CC85FE36E5DA3021254AFF079DE6B077FD81552940F33AD33453965714)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/DHvvt1-2TJ6n10RiRHW08A/zh-cn_image_0000002589325939.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055126Z&HW-CC-Expire=86400&HW-CC-Sign=DBA0E969AECE484D88E5BDBC3BD04E668BC2240272C88A31A8123F82F5B24D35)
 
 ### 示例6（为气泡拦截退出事件）
 
@@ -648,7 +648,7 @@ PhonePC/2in1TabletTVWearable
 41. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/iRp4a9VJTa2WYXU5Qjq9Iw/zh-cn_image_0000002583439595.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000112Z&HW-CC-Expire=86400&HW-CC-Sign=83787EF60AF04143481890773F1C20F25A65F18D5C47E1F9D7C7630796148D88)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/cdEINajBRhCJ4QqRsxBe_g/zh-cn_image_0000002589245881.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055126Z&HW-CC-Expire=86400&HW-CC-Sign=4842FDC13360BA9DAA561DFAB571A0E7C10A64B90103F20929D92DCA1B9B62EE)
 
 ### 示例7（为气泡内外描边设置线性渐变）
 
@@ -689,7 +689,7 @@ PhonePC/2in1TabletTVWearable
 30. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/QrliDa5AT8G6hGbBrcrTBg/zh-cn_image_0000002552959550.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000112Z&HW-CC-Expire=86400&HW-CC-Sign=BE73D9C11B419D3B9B653D95A2519D2AF10661E6C49A732A9B63DDEAB645897A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/2i5qznSARzOVzwVCWHbC4w/zh-cn_image_0000002558766072.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055126Z&HW-CC-Expire=86400&HW-CC-Sign=10FF1538909E084BECC4BBF48F6A982DC7AB2B9C2F3C09014A70B841D5CA4701)
 
 ### 示例8（为气泡设置避让宿主模式）
 
@@ -721,4 +721,4 @@ PhonePC/2in1TabletTVWearable
 21. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/0SQbsrfiQ9W67v4AjNfCXg/zh-cn_image_0000002583479551.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000112Z&HW-CC-Expire=86400&HW-CC-Sign=097BAEE6E8318EC51DEEEFD0CF48CF64ACB175DA077306D1DDF812BE7D9A6AE0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/iKR-J6MGTUeExR3YaxXfZQ/zh-cn_image_0000002558606414.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055126Z&HW-CC-Expire=86400&HW-CC-Sign=9B5C72B6B87E0769D869068CC4DD997D3C2ACD03667A12A030809F7D55A8E7AD)

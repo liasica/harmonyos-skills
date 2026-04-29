@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types
 title: 基础类型定义
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 公共定义 > 基础类型定义
 category: harmonyos-references
-scraped_at: 2026-04-28T08:02:47+08:00
+scraped_at: 2026-04-29T13:53:11+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:506bb4ce20ca9b59bad12a2d26e25c13ac66b255fddba6d37b15b8c1db3f9c03
+content_hash: sha256:ee3845c198534b948966d28d3964f0f09745aca478bcf2416f721612f306c6d4
 ---
 
 说明
@@ -962,11 +962,11 @@ PhonePC/2in1TabletTVWearable
 
 以水平方向Bias为例，其值为组件到左锚点的距离 Dstart与组件到水平方向锚点间总距离 Dstart + Dend的比值。镜像语言下，Dstart为组件到右锚点的距离。下图中Dwidth表示组件宽度。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/BO3hlPWUS5SRzeuhCXS_5w/zh-cn_image_0000002552960142.png?HW-CC-KV=V1&HW-CC-Date=20260428T000245Z&HW-CC-Expire=86400&HW-CC-Sign=5E91AC9D216D4C4C10A978DF1DF6984C2E22405FCC3420FFFFEEECA399278143)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/eKvt3FWuT9SVAaehuGLAsg/zh-cn_image_0000002558607008.png?HW-CC-KV=V1&HW-CC-Date=20260429T055309Z&HW-CC-Expire=86400&HW-CC-Sign=4F9B3FC61671AF7072866020D6220242F18638A0A831078274FB82D1453CEB3A)
 
 竖直方向同理，其值为组件到上锚点的距离Dtop与组件到竖直方向锚点间总距离Dtop + Dbottom的比值。下图中Dheight表示组件高度。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/voxkUg0-TwmzhHP6epg02w/zh-cn_image_0000002583480143.png?HW-CC-KV=V1&HW-CC-Date=20260428T000245Z&HW-CC-Expire=86400&HW-CC-Sign=9AEA111C3B3BD13BAD0370F74003039883D76890EF5A0D4DA968B8FAC9270DE7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/kPByJW77TQGhzxSSd0e3Kw/zh-cn_image_0000002589326535.png?HW-CC-KV=V1&HW-CC-Date=20260429T055309Z&HW-CC-Expire=86400&HW-CC-Sign=BA1E3E9AA87DD296589132FF198B4D0CBC5F5B9F1D572F57D21C4A129266F774)
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 

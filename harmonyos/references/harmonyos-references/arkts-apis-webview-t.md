@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Types
 breadcrumb: API参考 > 应用框架 > ArkWeb（方舟Web） > ArkTS API > @ohos.web.webview (Webview) > Types
 category: harmonyos-references
-scraped_at: 2026-04-28T08:05:11+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:c2a3130b9e77e867e77d36539156026c62946ce561e68c3498ef29c1441de8fc
+scraped_at: 2026-04-29T13:55:40+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:80ce2f398cd5ecc66a6c990dd9945f6d4bdab7b00d92f39933049d03faaf754d
 ---
 
 说明
@@ -63,7 +63,7 @@ type CreateNativeMediaPlayerCallback = (handler: NativeMediaPlayerHandler, media
 
 | 类型 | 说明 |
 | --- | --- |
-| [NativeMediaPlayerBridge](arkts-apis-webview-nativemediaplayerbridge.md) | 接管网页媒体的播放器和 ArkWeb 内核之间的一个接口类。  应用需要实现该接口类。  ArkWeb 内核通过该接口类的对象来控制应用创建的用来接管网页媒体的播放器。  如果应用返回了 null ， 则表示应用不接管这个媒体，由 ArkWeb 内核来播放该媒体。 |
+| [NativeMediaPlayerBridge](arkts-apis-webview-nativemediaplayerbridge.md) | 接管网页媒体的播放器和 ArkWeb 内核之间的一个接口类。  应用需要实现该接口类。  ArkWeb 内核通过该接口类的对象来控制应用创建的用来接管网页媒体的播放器。  如果应用返回了 null，则表示应用不接管这个媒体的播放，由 ArkWeb 内核来播放该媒体。 |
 
 **示例：**
 

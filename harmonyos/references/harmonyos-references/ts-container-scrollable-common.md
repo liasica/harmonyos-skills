@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: 滚动组件通用接口
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 滚动与滑动 > 滚动组件通用接口
 category: harmonyos-references
-scraped_at: 2026-04-28T08:01:36+08:00
+scraped_at: 2026-04-29T13:51:51+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:1b179a857be22342d48c467080eb6da6c1e4e369878d04e34a48bca1c6f8442e
+content_hash: sha256:2ce31c53b2bfdba4436b0841bf218f7c8bf66babc445dfb5e6e549ca9fb912f5
 ---
 
 滚动组件通用属性和事件目前只支持[List](ts-container-list.md)、[Grid](ts-container-grid.md)、[Scroll](ts-container-scroll.md)和[WaterFlow](ts-container-waterflow.md)组件。
@@ -866,7 +866,7 @@ PhonePC/2in1TabletTVWearable
 
 下图是组件配置了边距属性后的示意图，可理解每种枚举对应的裁剪区域。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/ROx-zxMzS_Wsf3GtnXNVFQ/zh-cn_image_0000002552800010.png?HW-CC-KV=V1&HW-CC-Date=20260428T000135Z&HW-CC-Expire=86400&HW-CC-Sign=26C424A16A7265829C06AB7B63B1CE5C6916F9B0808CD8AB1257D510E1AB9DAE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/kcbPVpplTFWYXLdA2D_o-A/zh-cn_image_0000002589326049.png?HW-CC-KV=V1&HW-CC-Date=20260429T055148Z&HW-CC-Expire=86400&HW-CC-Sign=FD8502C28174CA588B5FEF399F170E1D24A29E5C0B700A998DC4DAD083E5BEAD)
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1339,7 +1339,7 @@ ListDataSource说明及完整代码参考[示例1添加滚动事件](ts-containe
 58. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/bYxvyInuQSm7U2bNI_4sMA/zh-cn_image_0000002583479605.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000135Z&HW-CC-Expire=86400&HW-CC-Sign=EAAD068A8C6AA0ACB75C6D5F2E095BF42C96DF623273E6E26460D4A68BF04740)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/9Ns2LhdlTASKi0MUgBSy9A/zh-cn_image_0000002558606468.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055148Z&HW-CC-Expire=86400&HW-CC-Sign=0788E1F6B052889674407FF5658ABD5DE70EB3CBCAE2F6765D787836EB6D03C5)
 
 ### 示例2（设置边缘渐隐）
 
@@ -1384,7 +1384,7 @@ ListDataSource说明及完整代码参考[示例1添加滚动事件](ts-containe
 34. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/lQlI5kVlTrCHj1hX5-_R3Q/zh-cn_image_0000002583439653.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000135Z&HW-CC-Expire=86400&HW-CC-Sign=9F25C0E904092DB8DE99C59D7B87F916ED7C37441F292C29415160F02DEDD9A2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/j8OxEY_5Rt6M7rYT74kjDw/zh-cn_image_0000002589245939.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055148Z&HW-CC-Expire=86400&HW-CC-Sign=1E848ADEA3D6940651DED65D6B4BA8C205C039AC0F2A9D9054020801B3DA7150)
 
 ### 示例3（设置裁剪区域）
 
@@ -1445,7 +1445,7 @@ ListDataSource说明及完整代码参考[示例1添加滚动事件](ts-containe
 52. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/GqCpdk8zQ1SG0qp1_8c58g/zh-cn_image_0000002583439705.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000135Z&HW-CC-Expire=86400&HW-CC-Sign=2BF6AE41A8E08237C1C82C691B96080D5FDB9A16A5D0D3A1252DF27143C83B02)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/G-WpYzqAQJKC3w0gmiYnPw/zh-cn_image_0000002589245991.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055148Z&HW-CC-Expire=86400&HW-CC-Sign=8C682D321AD875095E71B100E7DD1F720066CC53B9B717B1097313791DCF28C1)
 
 ### 示例4（设置滚动条边距）
 
@@ -1502,4 +1502,4 @@ ListDataSource说明及完整代码参考[示例1添加滚动事件](ts-containe
 46. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/dunBPiiVR8KXeH0J5lk_3A/zh-cn_image_0000002552959660.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000135Z&HW-CC-Expire=86400&HW-CC-Sign=8131699A96952E693A686B2603125A35EBF061EA909B4FCEAF8259B6AD5D2912)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/myJuzSoXS6GK-KiP_vR6hw/zh-cn_image_0000002558766182.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055148Z&HW-CC-Expire=86400&HW-CC-Sign=E0E1FB9DC96200DEBBAA55A7A570AD541AFE3C3AE60383A0F326171A4237ED92)

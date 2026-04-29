@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pdf-add-backg
 title: 添加、删除背景
 breadcrumb: 指南 > 应用服务 > PDF Kit（PDF服务） > pdfService能力 > 添加、删除背景
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:50:23+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:4dbf8d45a8d9d4c26462165f2b1e5d4df61d622c4ba6767b701cecf0c2b568d1
+scraped_at: 2026-04-29T13:39:46+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:9db24920155b86e207db62346e545d93c1f8f2ceac605a54a0172fd87a08f499
 ---
 
 对指定页面添加背景图片或背景颜色，并设置大小、旋转、透明度和位置等属性，支持图片格式：PNG、BMP、JPEG。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/WGMU1QjyS-mUtYpOydZYXQ/zh-cn_image_0000002583439149.png?HW-CC-KV=V1&HW-CC-Date=20260427T235022Z&HW-CC-Expire=86400&HW-CC-Sign=6B880E54D4ECF91420B9850DB40F56CD443D371EE66DEACDBF3681C9F5535C29)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/9uB7J9H8Q0K9zhYil7OJTA/zh-cn_image_0000002589325475.png?HW-CC-KV=V1&HW-CC-Date=20260429T053945Z&HW-CC-Expire=86400&HW-CC-Sign=E808262CE9E6D59A478A825155DFF5C6EE7D6E967B5BC30BC81ABDEB00C7738E)
 
 ## 接口说明
 
@@ -51,13 +51,13 @@ content_hash: sha256:4dbf8d45a8d9d4c26462165f2b1e5d4df61d622c4ba6767b701cecf0c2b
 10. build() {
 11. Column() {
 12. Button('addBackground').onClick(async () => {
-13. // 确保沙箱目录有input.pdf文档
-14. let filePath = this.context.filesDir + '/input.pdf';
+13. // 确保在工程目录src/main/resources/resfile里有input.pdf文档
+14. let filePath = this.context.resourceDir + '/input.pdf';
 15. let res = this.pdfDocument.loadDocument(filePath);
 16. if (res === pdfService.ParseResult.PARSE_SUCCESS) {
 17. let bginfo: pdfService.BackgroundInfo = new pdfService.BackgroundInfo();
-18. // 确保沙箱目录有img.jpg文档
-19. bginfo.imagePath = this.context.filesDir + '/img.jpg';
+18. // 确保在工程目录src/main/resources/resfile里有img.jpg文件
+19. bginfo.imagePath = this.context.resourceDir + '/img.jpg';
 20. bginfo.backgroundColor = 50;
 21. bginfo.isOnTop = true;
 22. bginfo.rotation = 45;

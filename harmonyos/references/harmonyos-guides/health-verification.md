@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/health-verifi
 title: 申请验证获取正式权限
 breadcrumb: 指南 > 应用服务 > Health Service Kit（运动健康服务） > 开发接入 > 申请验证获取正式权限
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:49:21+08:00
+scraped_at: 2026-04-29T13:38:31+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:7d87fbb382fcfb168f4d1ce13f0ccf6cb1e9f4f53a06dcfe5bf3133ce5eac91a
+content_hash: sha256:1c301631dc7b8e39212b52cd4786210a630888510d4b4dd2056c2dc12fb7bedc
 ---
 
 完成[申请运动健康服务](health-apply.md)后，审核通过的权限为测试权限，有100个用户数量的限制。为解除用户数的限制，应用开发完成后，在上架之前，请按照以下步骤提交验证申请，以获取正式权限。完成验证后，您的应用可支持正式大规模商用。
@@ -14,12 +14,12 @@ content_hash: sha256:7d87fbb382fcfb168f4d1ce13f0ccf6cb1e9f4f53a06dcfe5bf3133ce5e
 
 1. 登录[开发者联盟网站](https://developer.huawei.com/consumer/cn/)，进入“管理中心”，在应用服务中，单击**Health Service Kit**卡片。如果无“Health Service Kit”卡片，请单击右上角“自定义桌面”添加卡片。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/-u3L0pxySqqQIV1NdUbhEA/zh-cn_image_0000002552958914.png?HW-CC-KV=V1&HW-CC-Date=20260427T234920Z&HW-CC-Expire=86400&HW-CC-Sign=A2CD6DB60C0B8AF9D88032A73651DDF84A16B856420DB1389E37BFF00267BF93)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/Iz7lx44tRDaVYm6p_dhE_A/zh-cn_image_0000002558765414.png?HW-CC-KV=V1&HW-CC-Date=20260429T053830Z&HW-CC-Expire=86400&HW-CC-Sign=4303E04A19284C30997021568BF20CA932FA7A47A711D093FDC685B1D96A9554)
 2. 单击“申请验证”按钮，选择验证的权限，提交审核材料由专家组进行评审，审批周期约为15个工作日，请耐心等待。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/g7lDf7N2Rri6HviD5YAS8w/zh-cn_image_0000002583478915.png?HW-CC-KV=V1&HW-CC-Date=20260427T234920Z&HW-CC-Expire=86400&HW-CC-Sign=E223E377A24E2FA8F11199AC51A77FDFB66292157A434C1B5BE5AE8F4AA48E43)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/6lbYL5_1TSegRJilu24Yxg/zh-cn_image_0000002558605758.png?HW-CC-KV=V1&HW-CC-Date=20260429T053830Z&HW-CC-Expire=86400&HW-CC-Sign=FE8F35E5B6AFE45D87B04D4C916116C7E4F70399CCC3BE3F335BB1B4C746B5F7)
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/A2cteYR8TVePewj1mPoQAA/zh-cn_image_0000002552799266.png?HW-CC-KV=V1&HW-CC-Date=20260427T234920Z&HW-CC-Expire=86400&HW-CC-Sign=3051DD8212D12BAADBD30CBD60A4110472E3336466547EAF29C8F44167B2E771)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/qpzhq3PrRg-TrRPkyF4hOw/zh-cn_image_0000002589325285.png?HW-CC-KV=V1&HW-CC-Date=20260429T053830Z&HW-CC-Expire=86400&HW-CC-Sign=04576E3274E5A35DC96DF3FAF68E1DE597910D77097C8F5B9622C2254EC96769)
 
    审核结果会出现以下两种类型，将以短信和邮件的形式通知您。
 

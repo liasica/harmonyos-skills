@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/core-vision-f
 title: 人脸比对
 breadcrumb: 指南 > AI > Core Vision Kit（基础视觉服务） > 人脸比对
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:53:29+08:00
+scraped_at: 2026-04-29T13:43:28+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:864ba981ac113bdfd414da6de4e6dec77d697294c1aabc806ab108ba3134fc5f
+content_hash: sha256:c2d916a79aeb246036791530f761a5fccd95ec25727b912cab4090c83c373ed6
 ---
 
 ## 适用场景
@@ -14,7 +14,7 @@ content_hash: sha256:864ba981ac113bdfd414da6de4e6dec77d697294c1aabc806ab108ba313
 
 效果如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/vmRLAX5WTWOMxynIkLza4g/zh-cn_image_0000002552799658.png?HW-CC-KV=V1&HW-CC-Date=20260427T235327Z&HW-CC-Expire=86400&HW-CC-Sign=374C079E46FA6E31A08E308D8C6765CF224BE6B1D9FE8B07EC7345105B690A3A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/WHeSEHc0RjKn35uGmGJ1Lg/zh-cn_image_0000002558606152.png?HW-CC-KV=V1&HW-CC-Date=20260429T054327Z&HW-CC-Expire=86400&HW-CC-Sign=78F23A1AE836A62D8A2FD183730A9AB9679F9570EC9DAF3EC03E99957626806A)
 
 ## 约束与限制
 

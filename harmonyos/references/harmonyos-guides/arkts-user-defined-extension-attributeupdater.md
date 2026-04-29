@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-user-de
 title: 属性更新器 (AttributeUpdater)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用自定义能力 > Modifier机制 > 属性更新器 (AttributeUpdater)
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:40:07+08:00
+scraped_at: 2026-04-29T13:28:24+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:f493f9003a0bf283c5c0145a7b9094ae7032929bfb18c598407cd4a6dede96d3
+content_hash: sha256:62a6dd324186125bfa6479f97e63541bd280ef71756ca37a1ee606de3477a61a
 ---
 
 ## 概述
@@ -84,7 +84,7 @@ AttributeUpdater实现了AttributeModifier接口，并额外提供了initializeM
 
 [AttModifier.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ArkTSUserAttributeUpdater/entry/src/main/ets/pages/AttModifier.ets#L15-L47)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/axvw0HIVTZKQuIWhabob3Q/zh-cn_image_0000002583438075.gif?HW-CC-KV=V1&HW-CC-Date=20260427T234006Z&HW-CC-Expire=86400&HW-CC-Sign=19E3508ABF704A38F95668AA35931C5E68B0C80CD25FE208CE3E7CFB3737A026)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/TtFDac1jR6qxu7LdVKacHA/zh-cn_image_0000002558604864.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052823Z&HW-CC-Expire=86400&HW-CC-Sign=CB5DDE8FB2239161BC57D15D42D4F2D6D132AB0948BDD011A4F1437525BB5909)
 
 ## 通过modifier更新组件的构造参数
 
@@ -130,4 +130,4 @@ AttributeUpdater实现了AttributeModifier接口，并额外提供了initializeM
 
 [AttUpdate.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ArkTSUserAttributeUpdater/entry/src/main/ets/pages/AttUpdate.ets#L15-L51)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/FJW0eFbMRDChjXdB5ZeLQQ/zh-cn_image_0000002552958030.gif?HW-CC-KV=V1&HW-CC-Date=20260427T234006Z&HW-CC-Expire=86400&HW-CC-Sign=5A30E1EB95B770D8C80D03BA17A3CBAB564B869C7019371C076A0A67E376BA9F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/SUeUgMW_Tey1E8mGltZ5Ig/zh-cn_image_0000002589324389.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052823Z&HW-CC-Expire=86400&HW-CC-Sign=6E7EDA666A3525A5FB31E08EBA56842AFD71C720D98766CC7C4F243A5B42AC99)

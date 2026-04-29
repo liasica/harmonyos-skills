@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 关系型数据库错误码
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > 错误码 > 关系型数据库错误码
 category: harmonyos-references
-scraped_at: 2026-04-28T07:59:47+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:f8206fc3233d31ff7262db6e606f9dc20e2900c1afbfb8d1d963eaea26ee92fb
+scraped_at: 2026-04-29T13:50:00+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:806bd6bd16ee79f19b1a2289dad94efdca62c294c91824cb715b02cfe161dc2d
 ---
 
 说明
@@ -94,11 +94,16 @@ The current operation failed because the database is corrupted.
 
 **可能原因**
 
-数据库文件不完整、数据库fd被误操作、数据库内存被踩等。
+1. 文件接口冲突：在数据库使用过程中使用文件接口直接操作数据库。
+2. 文件描述符误用：数据库fd被误操作，存在fd的double close和关闭后使用（use-after-close）问题。
+3. 内存访问异常：内存越界误写入数据库内存，导致数据库异常。
+4. 数据库文件不完整：文件拷贝或下载过程中断，导致文件内容不完整。
+5. 数据库文件不匹配：如：db文件和wal文件不是同一个数据库，导致数据库异常。
 
 **处理步骤**
 
-如果可以接受数据库数据丢失，则可尝试删除数据库后重新创建。否则，需要备份数据库以便恢复。具体操作可参考[数据库备份与恢复](../harmonyos-guides/data-backup-and-restore.md)。
+1. **问题定位**：优先排查使用场景，再查看日志。可在日志中搜索"fdsan"进行排查，详见[fdsan使用指导](../harmonyos-guides/fdsan.md)。
+2. **数据库恢复**：如果可以接受数据库数据丢失，则可尝试删除数据库后重新创建。否则，需要备份数据库以便恢复。具体操作可参考[数据库备份与恢复](../harmonyos-guides/data-backup-and-restore.md)。
 
 ## 14800012 结果集为空或指定位置不合法
 

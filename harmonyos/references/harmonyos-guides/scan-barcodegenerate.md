@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scan-barcodeg
 title: 通过文本生成码图
 breadcrumb: 指南 > 媒体 > Scan Kit（统一扫码服务） > 码图生成 > 通过文本生成码图
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:46:42+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:109d21910b25b5e0477fcd6378c4cc7071ec9cd349f0a383dc2877574d96b144
+scraped_at: 2026-04-29T13:35:42+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:5e51e22cbd8c6451fde136b72cbf076683f40fb0e488a6f348832e8b173e0061
 ---
 
 ## 基本概念
@@ -24,7 +24,7 @@ content_hash: sha256:109d21910b25b5e0477fcd6378c4cc7071ec9cd349f0a383dc2877574d9
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/x1ETXrs1TpiUfVZ9VKnaYg/zh-cn_image_0000002583478615.png?HW-CC-KV=V1&HW-CC-Date=20260427T234641Z&HW-CC-Expire=86400&HW-CC-Sign=1DFC42EFA1E67F9BADFD8A67C6E5DA73A51BF4C1584BEEE7B9D625BFA225BCBB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/23jC5i2fTCu1NA0JdTPD7Q/zh-cn_image_0000002558605458.png?HW-CC-KV=V1&HW-CC-Date=20260429T053541Z&HW-CC-Expire=86400&HW-CC-Sign=756D12148225934AC0D9EEA212B10F6FD31EC57EC63BAE086475655B1BCC985E)
 
 1. 用户向应用发起生成码图请求后，输入需要生成的码图信息，包括码图的类型、宽高等。
 2. 应用通过调用Scan Kit的createBarcode接口启动码图生成能力。
@@ -65,7 +65,7 @@ content_hash: sha256:109d21910b25b5e0477fcd6378c4cc7071ec9cd349f0a383dc2877574d9
      1. @Entry
      2. @Component
      3. struct Index {
-     4. @State pixelMap: image.PixelMap | undefined = undefined
+     4. @State pixelMap: image.PixelMap | undefined = undefined;
 
      6. build() {
      7. Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
@@ -77,7 +77,7 @@ content_hash: sha256:109d21910b25b5e0477fcd6378c4cc7071ec9cd349f0a383dc2877574d9
      13. scanType: scanCore.ScanType.QR_CODE,
      14. height: 400,
      15. width: 400
-     16. }
+     16. };
      17. try {
      18. // 码图生成接口，成功返回PixelMap格式图片
      19. generateBarcode.createBarcode(content, options).then((pixelMap: image.PixelMap) => {
@@ -85,22 +85,21 @@ content_hash: sha256:109d21910b25b5e0477fcd6378c4cc7071ec9cd349f0a383dc2877574d9
      21. }).catch((err: BusinessError) => {
      22. hilog.error(0x0001, '[generateBarcode]',
      23. `Failed to get PixelMap by promise with options. Code: ${err.code}, message: ${err.message}`);
-     24. })
+     24. });
      25. } catch (err) {
      26. hilog.error(0x0001, '[generateBarcode]',
      27. `Failed to createBarcode by promise with options. Code: ${err.code}, message: ${err.message}`);
      28. }
-
-     30. })
-     31. // 获取生成码图后显示
-     32. if (this.pixelMap) {
-     33. Image(this.pixelMap).width(300).height(300).objectFit(ImageFit.Contain)
+     29. })
+     30. // 获取生成码图后显示
+     31. if (this.pixelMap) {
+     32. Image(this.pixelMap).width(300).height(300).objectFit(ImageFit.Contain)
+     33. }
      34. }
-     35. }
-     36. .width('100%')
-     37. .height('100%')
+     35. .width('100%')
+     36. .height('100%')
+     37. }
      38. }
-     39. }
      ```
    * 通过Callback方式回调，获取生成的码图。
 
@@ -108,7 +107,7 @@ content_hash: sha256:109d21910b25b5e0477fcd6378c4cc7071ec9cd349f0a383dc2877574d9
      1. @Entry
      2. @Component
      3. struct Index {
-     4. @State pixelMap: image.PixelMap | undefined = undefined
+     4. @State pixelMap: image.PixelMap | undefined = undefined;
 
      6. build() {
      7. Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
@@ -119,7 +118,7 @@ content_hash: sha256:109d21910b25b5e0477fcd6378c4cc7071ec9cd349f0a383dc2877574d9
      12. scanType: scanCore.ScanType.QR_CODE,
      13. height: 400,
      14. width: 400
-     15. }
+     15. };
      16. try {
      17. // 码图生成接口，成功返回PixelMap格式图片
      18. generateBarcode.createBarcode(content, options, (err: BusinessError, pixelMap: image.PixelMap) => {
@@ -129,7 +128,7 @@ content_hash: sha256:109d21910b25b5e0477fcd6378c4cc7071ec9cd349f0a383dc2877574d9
      22. return;
      23. }
      24. this.pixelMap = pixelMap;
-     25. })
+     25. });
      26. } catch (err) {
      27. hilog.error(0x0001, '[generateBarcode]',
      28. `Failed to createBarcode by callback with options. Code: ${err.code}, message: ${err.message}`);

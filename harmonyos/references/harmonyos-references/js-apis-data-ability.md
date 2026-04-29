@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-d
 title: @ohos.data.dataAbility (DataAbility谓词)
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > ArkTS API > @ohos.data.dataAbility (DataAbility谓词)
 category: harmonyos-references
-scraped_at: 2026-04-28T07:59:09+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:feb05181f75914b709e0dc2ecad68e00fa31e0fc5c7ee0894bf3ed861ac2aa31
+scraped_at: 2026-04-29T13:49:21+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:1136f5823ab2a004024ec3062f553813d3f4f3d9915d2d7b5047d94a15846de4
 ---
 
 DataAbility谓词用于构造关系型数据库的谓词，提供用于实现不同查询方法的谓词。
@@ -134,7 +134,7 @@ PhonePC/2in1TabletTVWearable
 
 beginWrap(): DataAbilityPredicates
 
-在谓词中添加左括号。此方法类似于SQL语句的“(”，需要与endWrap一起使用。
+在谓词中添加左括号。此方法类似于SQL语句的“(”，需要与[endWrap](js-apis-data-ability.md#endwrap)一起使用。
 
 **系统能力：** SystemCapability.DistributedDataManager.DataShare.Core
 
@@ -161,7 +161,7 @@ PhonePC/2in1TabletTVWearable
 
 endWrap(): DataAbilityPredicates
 
-在谓词中添加右括号。此方法类似于SQL语句的“)”，需要和beginWrap一起使用。
+在谓词中添加右括号。此方法类似于SQL语句的“)”，需要和[beginWrap](js-apis-data-ability.md#beginwrap)一起使用。
 
 **系统能力：** SystemCapability.DistributedDataManager.DataShare.Core
 
@@ -269,7 +269,7 @@ beginsWith(field: string, value: string): DataAbilityPredicates
 
 配置谓词以匹配数据类型为string且值以指定字符串开头的字段。
 
-此方法类似于SQL语句的“%”。
+此方法类似于SQL语句的“value%”。
 
 **系统能力：** SystemCapability.DistributedDataManager.DataShare.Core
 
@@ -300,7 +300,7 @@ endsWith(field: string, value: string): DataAbilityPredicates
 
 配置谓词以匹配数据类型为string且值以指定字符串结尾的字段。
 
-此方法类似于SQL语句的“%”。
+此方法类似于SQL语句的“%value”。
 
 **系统能力：** SystemCapability.DistributedDataManager.DataShare.Core
 
@@ -735,7 +735,7 @@ PhonePC/2in1TabletTVWearable
 
 offsetAs(rowOffset: number): DataAbilityPredicates
 
-设置谓词查询结果的起始位置。需要同步调用limitAs接口指定查询数量，否则无查询结果。查询指定偏移位置后的所有行时，limitAs接口需传入参数-1。
+设置谓词查询结果的起始位置。需要同步调用[limitAs](js-apis-data-ability.md#limitas)接口指定查询数量，否则无查询结果。查询指定偏移位置后的所有行时，[limitAs](js-apis-data-ability.md#limitas)接口需传入参数-1。
 
 **系统能力：** SystemCapability.DistributedDataManager.DataShare.Core
 
@@ -848,7 +848,7 @@ indexedBy(field: string): DataAbilityPredicates
 35. let dataAbilityPredicates = new dataAbility.DataAbilityPredicates()
 36. dataAbilityPredicates.indexedBy("SALARY_INDEX")
 
-38. //  ...
+38. // ...
 39. }
 40. }
 ```

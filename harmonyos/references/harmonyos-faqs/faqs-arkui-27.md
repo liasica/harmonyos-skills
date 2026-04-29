@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-27
 title: List组件如何实现多列效果
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 方舟UI框架（ArkUI） > List组件如何实现多列效果
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:25:04+08:00
+scraped_at: 2026-04-29T14:16:14+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:d7f15d1c9e52a67ee7d2d412bdbf289fa7eff351dd17b31665d42da1b582b28d
+content_hash: sha256:7e3602cb9432ce616f3947290979610540b95d457b117cc37b54c82d8bb68bd6
 ---
 
 设置[List](../harmonyos-references/ts-container-list.md)组件的lanes属性，以实现交叉轴上的多列布局。示例代码如下：
@@ -48,4 +48,4 @@ content_hash: sha256:d7f15d1c9e52a67ee7d2d412bdbf289fa7eff351dd17b31665d42da1b58
 
 效果如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/gg5dh4zbT7qDxs224BBE_Q/zh-cn_image_0000002194158740.png?HW-CC-KV=V1&HW-CC-Date=20260428T002503Z&HW-CC-Expire=86400&HW-CC-Sign=1F13B3A786376037339937A28C9E29989B131C145E42FB98161334B5466A329B "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/gg5dh4zbT7qDxs224BBE_Q/zh-cn_image_0000002194158740.png?HW-CC-KV=V1&HW-CC-Date=20260429T061435Z&HW-CC-Expire=86400&HW-CC-Sign=EBC6DF64076FB6357466986586ECF8C060FA1A9ADEADFE5640504031521FAFC7 "点击放大")

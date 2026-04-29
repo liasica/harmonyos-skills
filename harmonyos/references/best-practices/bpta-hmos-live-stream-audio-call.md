@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-hmos-live-
 title: 基于媒体能力实现直播连麦功能
 breadcrumb: 最佳实践 > 行业场景解决方案 > 影音娱乐 > 基于媒体能力实现直播连麦功能
 category: best-practices
-scraped_at: 2026-04-28T08:22:12+08:00
+scraped_at: 2026-04-29T14:13:12+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:e4265f85a123d134bf7e8ed386090f604f653769abcd966d467c22b79492c026
+content_hash: sha256:f471ed7470fd809541cd544882fc0243dac6f6d5011a8a165eb53354b7d16492
 ---
 
 ## 概述
@@ -16,13 +16,13 @@ content_hash: sha256:e4265f85a123d134bf7e8ed386090f604f653769abcd966d467c22b7949
 
 因此，本文将聚焦于客户端开播侧的音视频流解码播放，详细介绍对应的技术实现方案。关于直播推拉流协议、云上服务器转码与分发等内容，本文暂不涉及。直播连麦系统的处理链路可参考下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/up2RTbn4RSiLc1hlDAe8KQ/zh-cn_image_0000002549729061.png?HW-CC-KV=V1&HW-CC-Date=20260428T002211Z&HW-CC-Expire=86400&HW-CC-Sign=139EBFDF7228AAC038E3B0DAD87969BE46B5C6AE0114E139516301EC905F03DB "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/up2RTbn4RSiLc1hlDAe8KQ/zh-cn_image_0000002549729061.png?HW-CC-KV=V1&HW-CC-Date=20260429T061308Z&HW-CC-Expire=86400&HW-CC-Sign=3931041CE599C616B28BA25C30171065159C18F1765C87AC51A62D6FFCEA64F6 "点击放大")
 
 ## 直播连麦架构
 
 以两路主播连麦场景为例，云端、应用客户端及系统的分层技术架构图如下图所示。实际直播场景支持多路连麦，每一路客户端的技术方案和基本原理均相似。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/2igkUFh-ToO8jmDhytL0TA/zh-cn_image_0000002518209536.png?HW-CC-KV=V1&HW-CC-Date=20260428T002211Z&HW-CC-Expire=86400&HW-CC-Sign=057EB93D3DB7DBEAEF464A9AD2EB344D26BD951BF2A33A331D4E8BA7DFD686FF "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/2igkUFh-ToO8jmDhytL0TA/zh-cn_image_0000002518209536.png?HW-CC-KV=V1&HW-CC-Date=20260429T061308Z&HW-CC-Expire=86400&HW-CC-Sign=2003CBEF2FB9C390F5FE8AFB8365DF2F773B664D866D584EFCD2750F9D35F9B7 "点击放大")
 
 由上图可见，直播连麦的整个流程可以分为**“发起连麦”**、**“连麦建立”** 和 **“观众观看”**三个主要阶段。
 
@@ -42,7 +42,7 @@ content_hash: sha256:e4265f85a123d134bf7e8ed386090f604f653769abcd966d467c22b7949
 
 主播1客户端从云端拉取主播2的视频码流（通常为H.264或H.265格式）并解码，与连麦UI布局XComponent创建的Surface ID关联后，即可直接渲染上屏显示。其原理示意图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/wy6ezV2UTeKQSprVE0TSrg/zh-cn_image_0000002518369668.png?HW-CC-KV=V1&HW-CC-Date=20260428T002211Z&HW-CC-Expire=86400&HW-CC-Sign=9C910C1B4EE791ED3F4E1C904827F88EEFD91EB042428AD7492ED6AFB231221E "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/wy6ezV2UTeKQSprVE0TSrg/zh-cn_image_0000002518369668.png?HW-CC-KV=V1&HW-CC-Date=20260429T061308Z&HW-CC-Expire=86400&HW-CC-Sign=12AE43D0047B7DCAE0802FDAFF20CDA764041CCC89616B47616D42A678052BCD "点击放大")
 
 ### 开发步骤
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/push-form-upd
 title: 推送卡片刷新消息
 breadcrumb: 指南 > 应用服务 > Push Kit（推送服务） > 推送场景化消息 > 推送卡片刷新消息
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:50:30+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:b2d255ce80366e3640ec713dec220f7354e40f2d093a1833c9743059f54caa96
+scraped_at: 2026-04-29T13:39:55+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:1014bfa72fd881f1ad2960e2e66f19eaa6a619b85e73613435dc2a3d3b52d318
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:b2d255ce80366e3640ec713dec220f7354e40f2d093a1833c9743059f54
 
 面对需要实时更新信息的应用卡片，Push Kit向开发者提供了卡片刷新服务。应用通过集成Push Kit后获取Push Token，基于Push Kit的系统级通道，便可以在合适场景向用户即时推送卡片内容，从而提升用户的感知度和活跃度。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/56qfdAeUTTqWo_4DBHXcRQ/zh-cn_image_0000002583479123.png?HW-CC-KV=V1&HW-CC-Date=20260427T235029Z&HW-CC-Expire=86400&HW-CC-Sign=41AA3142762184126263B5E8594B104590192299D6B5EBF2F291CD7BD9339C56)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/fUMR5u2eQlKMlB2sai78vg/zh-cn_image_0000002558765624.png?HW-CC-KV=V1&HW-CC-Date=20260429T053954Z&HW-CC-Expire=86400&HW-CC-Sign=E35EAA0D4E638FB00E906D08515B544E09F00F77C93901655BB9AC0CFD9CB271)
 
 ## 约束与限制
 
@@ -234,25 +234,25 @@ content_hash: sha256:b2d255ce80366e3640ec713dec220f7354e40f2d093a1833c9743059f54
    * push-type：1表示服务卡片刷新场景。
    * moduleName：项目模块级别下的 **src/main/module.json5** 中的 **module **标签下的**name**值。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/PcL6XnhETky3VMTGcNBCgA/zh-cn_image_0000002552799474.png?HW-CC-KV=V1&HW-CC-Date=20260427T235029Z&HW-CC-Expire=86400&HW-CC-Sign=4662517B4DADE1227D9899B0064C970E2C6041FF2D9594F6A4735C70BC482875)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/A7rpv3x8QTKrXQC24mPcvw/zh-cn_image_0000002558605968.png?HW-CC-KV=V1&HW-CC-Date=20260429T053954Z&HW-CC-Expire=86400&HW-CC-Sign=9D33BA6AD0D42E803904360FA0C05BE42CE64FACF4D914F709AC0EC38DB3C748)
    * abilityName：项目模块级别下的**src/main/module.json5**中的**extensionAbilities**标签下的服务卡片的ability名称。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/PbgFsRgeSkeFcebdROd6QQ/zh-cn_image_0000002583439169.png?HW-CC-KV=V1&HW-CC-Date=20260427T235029Z&HW-CC-Expire=86400&HW-CC-Sign=29D64B3DD7AAC61476EC1FAEE044A45F0ADE47215D9B3573852ACEC9A5AF19CF)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/VTSONYX4TMS8s5moXPw3RQ/zh-cn_image_0000002589325495.png?HW-CC-KV=V1&HW-CC-Date=20260429T053954Z&HW-CC-Expire=86400&HW-CC-Sign=516C4904BF1215E0C4A2EB0FD045B1C1C43F4E723FFB1C883EE98CCF1D30E5EB)
    * formName：项目模块级别下的**src/main/resources/base/profile/form\_config.json**中**forms**标签下服务卡片的名称。下图以卡片配置文件form\_config为例：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/XKjyP-VhSpC9WaHYFy89EA/zh-cn_image_0000002552959124.png?HW-CC-KV=V1&HW-CC-Date=20260427T235029Z&HW-CC-Expire=86400&HW-CC-Sign=2FDCE5673DCA29DF7BDFE1C13FEB31214BC564F35A0EDF9C336EBAFA1D8AA0D2)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/7Qr8JYg-QlusC4R7iB5BJA/zh-cn_image_0000002589245433.png?HW-CC-KV=V1&HW-CC-Date=20260429T053954Z&HW-CC-Expire=86400&HW-CC-Sign=6790BF08BF0ABD81C6B8945EB93F5D3562A169402C515BB15ABB305C302B304A)
    * version：当前卡片刷新消息的版本号，新的卡片刷新消息的版本号需**大于**当前卡片刷新消息版本号，否则会刷新失败。详情参见[version](../harmonyos-references/push-scenariozed-api-request-param.md#formupdatepayload-卡片刷新消息)。
    * formId：服务卡片的实例ID，当卡片的[onAddForm](../harmonyos-references/js-apis-app-form-formextensionability.md#formextensionabilityonaddform)()方法被调用时（卡片使用方添加卡片至桌面）进行获取。最大值为**231-1**。
    * formData：填写待刷新服务卡片的业务数据，该数据来源于项目模块级别下的**src/main/ets/widget/pages/WidgetCard.ets**文件下的声明式范式组件名称。下图以卡片页面文件WidgetCard为例：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/cZWmQsv4Q9izo-c4UDpnpg/zh-cn_image_0000002583479125.png?HW-CC-KV=V1&HW-CC-Date=20260427T235029Z&HW-CC-Expire=86400&HW-CC-Sign=897A42FD2AE1839CDCD488E612EACF85310A9D6615B62B582E38D0FC963AD0E5)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/7QroMG2wSDy4ZuK4UyjAcw/zh-cn_image_0000002558765626.png?HW-CC-KV=V1&HW-CC-Date=20260429T053954Z&HW-CC-Expire=86400&HW-CC-Sign=A053C60A3792A3DDA66A47AF088E4605671B8DA8A9319CB4AB20168595DB46C5)
    * images：待刷新服务卡片业务数据中的图片数据，其中keyName为您服务卡片中图片控件的key值，url为图片的地址，下图以卡片页面文件**WidgetCard**为例：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/zmrILjwfQRKNMAEp2YNe2Q/zh-cn_image_0000002552799476.png?HW-CC-KV=V1&HW-CC-Date=20260427T235029Z&HW-CC-Expire=86400&HW-CC-Sign=B1ADE9F6E5D93907150262722BF3B10B3841B59EDC3CC590E163CF4CB414F14A)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/w0Ii6LuzQFGynqWvnuzR8w/zh-cn_image_0000002558605970.png?HW-CC-KV=V1&HW-CC-Date=20260429T053954Z&HW-CC-Expire=86400&HW-CC-Sign=C0C3073A50EDEEBFB81531B1540CBDC1C8433BEE7C54093CFF395F3B0156A02F)
 
      说明
 
-     推送服务禁止推送包含敏感信息的图片。
+     Push Kit禁止推送包含敏感信息的图片。
 
      支持图片的格式为PNG、JPG、JPEG、WEBP，图片文件最大为512KB，若超过则图片不展示。
    * require：图片刷新策略控制，“0”表示如果图片下载失败，仅刷新文字；“1”表示如果图片下载失败，则不进行刷新操作。

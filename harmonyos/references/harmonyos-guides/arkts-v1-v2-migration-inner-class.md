@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-v1-v2-m
 title: 数据对象状态变量迁移
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理V1-V2迁移指导 > 状态管理V1向V2迁移场景 > 数据对象状态变量迁移
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:39:16+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:675af78365a6e028b24441e635df424f124eb2e124ce1ad8dc448a13459672f2
+scraped_at: 2026-04-29T13:27:26+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:e0937d4cb66d3c11f27ac18f1537096d7579bbfd6232f2aab16cab94a13c80eb
 ---
 
 本文档主要介绍数据对象内的状态变量的迁移场景，包含以下场景：
@@ -161,13 +161,14 @@ V1实现：
 18. Column() {
 19. Text(`Name: ${this.user.name}`)
 20. Text(`Age: ${this.user.age}`)
-21. Button('increase age')
-22. .onClick(() => {
-23. this.user.age++;
-24. })
-25. }
+21. // 点击Button更新user.age，触发UI刷新
+22. Button('increase age')
+23. .onClick(() => {
+24. this.user.age++;
+25. })
 26. }
 27. }
+28. }
 ```
 
 [MigrationClassAttributeV1.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/migrationDataObjectVariables/MigrationClassAttributeV1.ets#L29-L57)
@@ -175,33 +176,35 @@ V1实现：
 V2迁移策略：使用@ObservedV2和@Trace。
 
 ```
-1. @ObservedV2
-2. class User {
-3. @Trace public name: string;
-4. @Trace public age: number;
+1. // V2使用@ObservedV2代替V1的@Observed
+2. @ObservedV2
+3. class User {
+4. // V2使用@Trace代替V1的@Track
+5. @Trace public name: string;
+6. @Trace public age: number;
 
-6. constructor(name: string, age: number) {
-7. this.name = name;
-8. this.age = age;
-9. }
-10. }
+8. constructor(name: string, age: number) {
+9. this.name = name;
+10. this.age = age;
+11. }
+12. }
 
-12. @Entry
-13. @ComponentV2
-14. struct UserProfile {
-15. @Local user: User = new User('Alice', 30);
+14. @Entry
+15. @ComponentV2
+16. struct UserProfile {
+17. @Local user: User = new User('Alice', 30);
 
-17. build() {
-18. Column() {
-19. Text(`Name: ${this.user.name}`)
-20. Text(`Age: ${this.user.age}`)
-21. Button('Increase age')
-22. .onClick(() => {
-23. this.user.age++;
-24. })
-25. }
-26. }
+19. build() {
+20. Column() {
+21. Text(`Name: ${this.user.name}`)
+22. Text(`Age: ${this.user.age}`)
+23. Button('Increase age')
+24. .onClick(() => {
+25. this.user.age++;
+26. })
 27. }
+28. }
+29. }
 ```
 
 [MigrationClassAttributeV2.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/migrationDataObjectVariables/MigrationClassAttributeV2.ets#L29-L57)

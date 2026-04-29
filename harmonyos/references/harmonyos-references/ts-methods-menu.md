@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-method
 title: ContextMenu
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 菜单 > ContextMenu
 category: harmonyos-references
-scraped_at: 2026-04-28T08:02:16+08:00
+scraped_at: 2026-04-29T13:52:40+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:37a2c6a207a2cbbe6e8e939cccad2f70b3dc893747a1c7780bf666ae8e12f4f9
+content_hash: sha256:8ea24563233040193fed69ce6f21b1659eaf066276bb59364265b9844353335a
 ---
 
 在页面范围内关闭通过[bindContextMenu](ts-universal-attributes-menu.md#bindcontextmenu12)属性绑定的菜单。
@@ -81,4 +81,4 @@ PhonePC/2in1TabletTVWearable
 36. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/lLR4594VQHW5SSj5CRRUKA/zh-cn_image_0000002552960022.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000215Z&HW-CC-Expire=86400&HW-CC-Sign=C8A25355C13A907B50CFE0D4317B75C427CA21F5C0F85877CFD07035AF0CD5A2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/VNE8ZqLpTXOePSxwzQUUSQ/zh-cn_image_0000002558766548.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055239Z&HW-CC-Expire=86400&HW-CC-Sign=AB83B8095FFC5C0D1E57AE5FA3484EA5F7FBBF34046604A32C6E4C32AA01F918)

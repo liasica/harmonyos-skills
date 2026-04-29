@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 查询当前状态场景
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 超级隐私模式 > 查询当前状态场景
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:43:04+08:00
+scraped_at: 2026-04-29T13:31:43+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:8e2286777892cdaf456021616678a793ec356e7337f701f841725c4e822fbb08
+content_hash: sha256:973712a9ca263ee722c71bd95a543d673a709a5ced2ea4f262f29434f2d0b713
 ---
 
 ## 场景介绍
@@ -20,7 +20,7 @@ content_hash: sha256:8e2286777892cdaf456021616678a793ec356e7337f701f841725c4e822
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/7u4X8TCQTF-xaYgOFll7aA/zh-cn_image_0000002583438451.png?HW-CC-KV=V1&HW-CC-Date=20260427T234303Z&HW-CC-Expire=86400&HW-CC-Sign=1FA04C4CF706CA3F197A90FECF2B026BE51F951768A9E8F99EAD3F76A7ABF0CC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/EuOK6-e0QNeohg2Qvycv9A/zh-cn_image_0000002558605248.png?HW-CC-KV=V1&HW-CC-Date=20260429T053142Z&HW-CC-Expire=86400&HW-CC-Sign=DD3D3B3F2D076458818A8BE67D25EDEAE1957700E95651751BEF06E4192BEDE4)
 
 **流程说明：**
 

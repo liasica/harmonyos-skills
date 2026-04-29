@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/intents-event
 title: 开发者测试
 breadcrumb: 指南 > AI > Intents Kit（意图框架服务） > 事件推荐方案 > 开发者测试
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:53:34+08:00
+scraped_at: 2026-04-29T13:43:34+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:f9c6a3cc4a2d82d8a728312ee1feeb54914535fbb3df0b75023e68f5cad5e805
+content_hash: sha256:e7bf85256e7e7cc77e8a6db548f56718c49a3127c21b938c0783db2c35bc1444
 ---
 
 Intents Kit向开发者提供真机测试能力，即开发者可连接设备进行调测。开发者完成代码开发之后，功能正式上架应用市场前，可以在HarmonyOS NEXT设备上面进行自验证，打磨体验。真机测试分为三个步骤：基础信息提供，环境准备，联调验证。
@@ -31,19 +31,19 @@ Intents Kit向开发者提供真机测试能力，即开发者可连接设备进
 1. 保持设备联网，并且设备时间和实际北京时间保持一致。
 2. 点击桌面的小艺建议卡片。此时卡片显示的是“欢迎使用小艺建议”，点击卡片打开小艺的隐私页面，并选择“同意”。如果此前已经同意过小艺的隐私协议，此步骤可以跳过。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/-o6duRRhSVGOJg6cx59EKw/zh-cn_image_0000002552959312.png?HW-CC-KV=V1&HW-CC-Date=20260427T235331Z&HW-CC-Expire=86400&HW-CC-Sign=59E4786E3E3586CCD61DB5104B710C79360E35A9293843D3CC199B1A367275F1)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/5mxg8eGZRzKYX9G5hW9hXg/zh-cn_image_0000002589245623.png?HW-CC-KV=V1&HW-CC-Date=20260429T054331Z&HW-CC-Expire=86400&HW-CC-Sign=04AE1E708537AFA771470C33C2124069ACF133E0741E09FAED19A2E7AEC2BF39)
 3. 打开开发者调试模式：进入设置 > 机型 > 关于手机，连续点击软件版本7次，弹出“开启“开发者模式””，点击“确认开启”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/fWBuJptGT9-b7EB_4hkt4Q/zh-cn_image_0000002583479313.png?HW-CC-KV=V1&HW-CC-Date=20260427T235331Z&HW-CC-Expire=86400&HW-CC-Sign=CC643511F1CEF5417D86EAC078E8078651ACF1372C6E6CEA2C6A591A902DFABD)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/FczEKaqfQSGPtwIhjCw8cw/zh-cn_image_0000002558765814.png?HW-CC-KV=V1&HW-CC-Date=20260429T054331Z&HW-CC-Expire=86400&HW-CC-Sign=0D90D4847E151A0AF4316B10BA36626ABAC88F6F696A9200C6D5C00B17D434E6)
 4. 长按电源键唤醒小艺，将半屏态小艺向上拉升至全屏态，点击左上角返回上层，返回后点击右上角的头像，进入“设置”，找到并进入应用网络设置，打开“WLAN下自动更新”开关。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/gw0T1HN-TWiIcKqYTXnUDw/zh-cn_image_0000002552799664.png?HW-CC-KV=V1&HW-CC-Date=20260427T235331Z&HW-CC-Expire=86400&HW-CC-Sign=ED6EE52119C8380ECAF29CE45249EF7276245EFEBDFF17EB25EF1EE3897E3FF9)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/-EDCO9k3SKKVobGOOyVNjw/zh-cn_image_0000002558606158.png?HW-CC-KV=V1&HW-CC-Date=20260429T054331Z&HW-CC-Expire=86400&HW-CC-Sign=A348D2F402771C60AF5F9972E3BE0C4616B1915F53C4FDF27A77D82AFDE8FBA3)
 5. 在上一步页面中下滑，点击“个性化推荐”，进入后打开“个性化推荐”的开关。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/Ma-nZz4rSQeLQGH4taxaYg/zh-cn_image_0000002583439359.png?HW-CC-KV=V1&HW-CC-Date=20260427T235331Z&HW-CC-Expire=86400&HW-CC-Sign=FC6106F748362EE901A1BCA0DF8C320FD42B158C822425186A73A38A5E1DF263)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/IzkqeFmlQw2R_ejkAuP8Hw/zh-cn_image_0000002589325685.png?HW-CC-KV=V1&HW-CC-Date=20260429T054331Z&HW-CC-Expire=86400&HW-CC-Sign=DBD40DB1F35D1873FE73F33E2E8FBF0D48D8262C8763AE423DE6EB6D8B3CA76D)
 6. 进入设置 > 系统 > 开发者选项 > 意图框架调试，打开意图框架调试开关，如果下方显示已切换至真机模式并且测试应用包名在“本设备支持测试应用”下，则代表真机模式切换成功。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/ZFHOQdVERR201HIPxOY1VA/zh-cn_image_0000002552959314.png?HW-CC-KV=V1&HW-CC-Date=20260427T235331Z&HW-CC-Expire=86400&HW-CC-Sign=06549665EBD79C9CEBBCAFEBF0B5B685729AE4E26BA939F81374AE7CFC39B91F)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/-7OYmdNwQvKRQ1aHXyijDQ/zh-cn_image_0000002589245625.png?HW-CC-KV=V1&HW-CC-Date=20260429T054331Z&HW-CC-Expire=86400&HW-CC-Sign=A1F581F252F27101699088CEF66782D4EF81B99530395201A7E48E0EC1F7F9C7)
 
    【提示】如果出现意图框架调试打开后，设备长时间无法出现“已切换至真机模式”或者出现“已切换至真机模式”但没有包名的时候，可以尝试以下操作：
 

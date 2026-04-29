@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/_a_b_r___
 title: ABR_CameraData
 breadcrumb: API参考 > 图形 > Graphics Accelerate Kit（图形加速服务） > C API > 头文件和结构体 > 结构体 > ABR_CameraData
 category: harmonyos-references
-scraped_at: 2026-04-28T08:15:44+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:98cf4945dfe57684d262864de47faccfb020b5b639b48ccab660f593faf87134
+scraped_at: 2026-04-29T14:06:20+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:26864d0ec1125b6e662a01a7f7781ca9bcbe62ddf00ea4b612e293534796f392
 ---
 
 ## 概述
@@ -30,7 +30,7 @@ PhoneTabletTV
 
 | 名称 | 描述 |
 | --- | --- |
-| [ABR\_Vector3](_a_b_r___vector3.md) [rotation](_a_b_r___camera_data.md#rotation) | 相机变换的世界空间旋转欧拉角。取值范围：[0, 360]，参数不在范围内会返回ABR\_INVALID\_PARAMETER错误码。 |
+| [ABR\_Vector3](_a_b_r___vector3.md) [rotation](_a_b_r___camera_data.md#rotation) | 相机变换的世界空间旋转欧拉角。取值范围：[0, 360]，（单位：度），参数不在范围内会返回ABR\_INVALID\_PARAMETER错误码。 |
 | [ABR\_Vector3](_a_b_r___vector3.md) [position](_a_b_r___camera_data.md#position) | 相机变换的世界空间位移。 |
 
 ## 结构体成员变量说明
@@ -59,4 +59,4 @@ PhoneTabletTV
 
 **描述**
 
-相机变换的世界空间旋转欧拉角。取值范围：[0, 360]，参数不在范围内会返回ABR\_INVALID\_PARAMETER错误码。
+相机变换的世界空间旋转欧拉角。取值范围：[0, 360]，（单位：度），参数不在范围内会返回ABR\_INVALID\_PARAMETER错误码。

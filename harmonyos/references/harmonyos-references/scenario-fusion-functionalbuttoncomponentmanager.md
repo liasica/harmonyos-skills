@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/scenario-
 title: functionalButtonComponentManager(场景化融合Button组件管理)
 breadcrumb: API参考 > 应用服务 > Scenario Fusion Kit（融合场景服务） > ArkTS组件 > functionalButtonComponentManager(场景化融合Button组件管理)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:18:39+08:00
+scraped_at: 2026-04-29T14:09:17+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:b3557c7aaef350936f4ae09fd60ed07a6928ecc7240944b906d5cddf880aff7e
+content_hash: sha256:753b0eb7f1a2a1cf19dd9686694186a5589615cd68af0ca6a27644216928ef8a
 ---
 
 本模块提供Button组件的逻辑管理，辅助HarmonyOS应用和元服务通过Button组件完成相应功能。
@@ -3251,4 +3251,4 @@ PhonePC/2in1TabletTV
 44. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/hd8t7esFTLSnpd_9-rmpKg/zh-cn_image_0000002583480911.png?HW-CC-KV=V1&HW-CC-Date=20260428T001837Z&HW-CC-Expire=86400&HW-CC-Sign=2DF84D8A6ED6BDA3267A263370179A2F8696A70B79112D69A1A9DD7B231AA7DA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/EX5-QstxQt2sjRivHn3hJw/zh-cn_image_0000002589327305.png?HW-CC-KV=V1&HW-CC-Date=20260429T060915Z&HW-CC-Expire=86400&HW-CC-Sign=E8BF129B4315AEB64BB0DACAC60ED57F45967D4E0F0504BABE6490876A61885E)

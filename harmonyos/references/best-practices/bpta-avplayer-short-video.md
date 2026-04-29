@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-avplayer-s
 title: 基于AVPlayer播放短视频实践
 breadcrumb: 最佳实践 > 媒体 > 音频和视频 > 基于AVPlayer播放视频系列开发实践 > 基于AVPlayer播放短视频实践
 category: best-practices
-scraped_at: 2026-04-28T08:20:32+08:00
+scraped_at: 2026-04-29T14:11:20+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:45c8f680c6eec3efd884ecf1f73c3d4ca3d1dbec98b2b6f1e86949c48cf0a9ea
+content_hash: sha256:3ef7b5685078f21dc99b1111e2f95684d9062f4f0da9015d5a341c661289fcf6
 ---
 
 ## 概述
@@ -38,7 +38,7 @@ content_hash: sha256:45c8f680c6eec3efd884ecf1f73c3d4ca3d1dbec98b2b6f1e86949c48cf
 
 应用从后台切回到前台时，保持原视频播放且会从之前的位置继续播放。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/M0ehVM7RRb-zFy2DGsID4w/zh-cn_image_0000002486670617.gif?HW-CC-KV=V1&HW-CC-Date=20260428T002025Z&HW-CC-Expire=86400&HW-CC-Sign=94B3A9F223E9B12D3A3513853E095CF5A522CC9526E40D19895CE638C7E12605 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/M0ehVM7RRb-zFy2DGsID4w/zh-cn_image_0000002486670617.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061111Z&HW-CC-Expire=86400&HW-CC-Sign=57DDE3D5D4F9A9A4A0404BE06415F2D3A8D0211542000AF894764A90E8F211D8 "点击放大")
 
 ### 开发步骤
 
@@ -50,7 +50,7 @@ content_hash: sha256:45c8f680c6eec3efd884ecf1f73c3d4ca3d1dbec98b2b6f1e86949c48cf
 
 播放视频时可以手动进行横竖屏切换，也支持根据设备旋转方向自动切换横竖屏模式，以适应不同屏幕方向下的视频播放需求。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/SqxQ-hBZR3yRYCcZw-7Dvg/zh-cn_image_0000002453551286.png?HW-CC-KV=V1&HW-CC-Date=20260428T002025Z&HW-CC-Expire=86400&HW-CC-Sign=E94344AB4337D852EF59A7D20DBEF4062629F6A0361CA32AE4B32C9F425ED03A "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/SqxQ-hBZR3yRYCcZw-7Dvg/zh-cn_image_0000002453551286.png?HW-CC-KV=V1&HW-CC-Date=20260429T061111Z&HW-CC-Expire=86400&HW-CC-Sign=6B165C410197026CAF88D7995C0DCFD7768DB8A35449535478569DEAC2CA9D90 "点击放大")
 
 ### 开发步骤
 
@@ -66,7 +66,7 @@ content_hash: sha256:45c8f680c6eec3efd884ecf1f73c3d4ca3d1dbec98b2b6f1e86949c48cf
 2. 起点时间：松手时的时间。
 3. 终点时间：视频内容开始播放，画面首次变化的时间。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/vNDH83G2RXKSsPSEMPGNlg/zh-cn_image_0000002486710681.gif?HW-CC-KV=V1&HW-CC-Date=20260428T002025Z&HW-CC-Expire=86400&HW-CC-Sign=D1087B488CCB218020305492F4A19C37C262D266BDF80319D9CD38FADEA91585 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/vNDH83G2RXKSsPSEMPGNlg/zh-cn_image_0000002486710681.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061111Z&HW-CC-Expire=86400&HW-CC-Sign=0F27F505CE45892883224C098297B00DEDF27718F62A807AC49DD7823EC164D8 "点击放大")
 
 ### 场景体验指标
 
@@ -92,7 +92,7 @@ content_hash: sha256:45c8f680c6eec3efd884ecf1f73c3d4ca3d1dbec98b2b6f1e86949c48cf
 
 **图1** **流程图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/Sr_J5RCtTAaBnN8epEYGQw/zh-cn_image_0000002453710906.png?HW-CC-KV=V1&HW-CC-Date=20260428T002025Z&HW-CC-Expire=86400&HW-CC-Sign=B0CF2611427A72C14CC7961B46C60319F5D565B0CDDF565E115DFBE2B6ACD405 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/Sr_J5RCtTAaBnN8epEYGQw/zh-cn_image_0000002453710906.png?HW-CC-KV=V1&HW-CC-Date=20260429T061111Z&HW-CC-Expire=86400&HW-CC-Sign=4D2C27228D203F1B58A787457205315122A9CAA893CAA22F71285ED6CE60C916 "点击放大")
 
 1. 使用视频播放框架AVPlayer可以将Audio/Video媒体资源（比如mp4/mp3/mkv/mpeg-ts等）转码为可供渲染的图像和可听见的音频模拟信号，并通过输出设备进行播放。
 
@@ -106,7 +106,7 @@ content_hash: sha256:45c8f680c6eec3efd884ecf1f73c3d4ca3d1dbec98b2b6f1e86949c48cf
 
 **图2** **异步加载示意图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/85HoP068S9Svvns0RsrVRQ/zh-cn_image_0000002486670621.png?HW-CC-KV=V1&HW-CC-Date=20260428T002025Z&HW-CC-Expire=86400&HW-CC-Sign=40485A585B37D3A72E401C5ACA20645B3ABAE8476C9975B25904B20BC9E838C4 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/85HoP068S9Svvns0RsrVRQ/zh-cn_image_0000002486670621.png?HW-CC-KV=V1&HW-CC-Date=20260429T061111Z&HW-CC-Expire=86400&HW-CC-Sign=5CFC68AD68E3495413DA82CC5F542BD5464394DFC10E176885C8177FD9E13E3D "点击放大")
 
 在缓存池中有多个播放器实例，播放视频A时，提前预加载视频B并进入prepare状态；切换短视频时，可以立即播放已预加载的视频B，减少切换时间。手势上下滑动的时候，在动画开始时就更新当前索引值，最终实现短视频快速切换，综合起播时间≤230ms。
 

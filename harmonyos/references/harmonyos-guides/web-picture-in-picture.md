@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-picture-i
 title: Web组件支持画中画
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 使用网页多媒体 > Web组件支持画中画
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:41:04+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:f49e6d13432167a98a67bfff1416bdcfce1ae7c2b29a6aa874456ddfb9db86f8
+scraped_at: 2026-04-29T13:29:27+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:2cdf8a69c765f647b5f45ba4b3244035773ded3f1ea46204ff4e3dfc99c722c4
 ---
 
 Web组件提供画中画功能支持，应用可利用W3C标准的Picture-in-Picture API在网页中创建浮动窗口以播放视频，使用户在浏览其他网页或与其他应用交互时，可通过该画中画窗口继续观看视频。
@@ -37,7 +37,7 @@ Web组件提供画中画功能支持，应用可利用W3C标准的Picture-in-Pic
 3. <button id="togglePipButton">开启画中画</button>
 ```
 
-HTMLVideoElement接口提供的requestPictureInPicture()方法请求启动画中画，如果系统支持画中画能力，则会以画中画模式显示视频。
+HTMLVideoElement接口提供的requestPictureInPicture()方法请求进入画中画，如果系统支持画中画能力，则会以画中画模式显示视频。
 
 ```
 1. togglePipButton.addEventListener("click", async () => {
@@ -69,7 +69,7 @@ HTMLVideoElement接口提供的requestPictureInPicture()方法请求启动画中
 
 ## 监听画中画事件
 
-当用户启动画中画模式播放视频时，会显示一个浮动窗口用于播放视频。系统规定每次只能播放一个画中画视频。
+当用户进入画中画模式播放视频时，会显示一个浮动窗口用于播放视频。系统规定每次只能播放一个画中画视频。
 
 HTMLVideoElement的enterpictureinpicture事件在HTMLVideoElement成功进入画中画模式时触发，而HTMLVideoElement的leavepictureinpicture事件在HTMLVideoElement成功退出画中画模式时触发。
 
@@ -100,7 +100,7 @@ HTMLVideoElement的enterpictureinpicture事件在HTMLVideoElement成功进入画
 
   播放控制包含暂停，播放，前进/后退（默认显示前进/后退UI控件，若原视频不支持前进后退，单击无响应）。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/pC-dvWDeRoOhzkUCXIYnCA/zh-cn_image_0000002552958232.png?HW-CC-KV=V1&HW-CC-Date=20260427T234102Z&HW-CC-Expire=86400&HW-CC-Sign=5F95C7F480D00F34B2CF5511C4E0FD14703883B6F846AAD87ED87DEBFD832983)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/hEEjaWRrTBK-yOURcAebxw/zh-cn_image_0000002589324593.png?HW-CC-KV=V1&HW-CC-Date=20260429T052926Z&HW-CC-Expire=86400&HW-CC-Sign=7FF7A4E46D564F72F103526C0A62938C8DD396985239E4BFA4D0C593F7821B3A)
 
 ## 完整示例
 
@@ -126,7 +126,7 @@ HTMLVideoElement的enterpictureinpicture事件在HTMLVideoElement成功进入画
   ```
 
   [Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkWeb/ArkWebPictureInPicture/entry/src/main/ets/pages/Index.ets#L16-L31)
-* 前端页面html代码。
+* 前端页面HTML代码。
 
   ```
   1. <!-- PictureInPicture.html -->

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-e
 title: @ohos.enterprise.EnterpriseAdminExtensionAbility（企业设备管理扩展能力）
 breadcrumb: API参考 > 系统 > 基础功能 > MDM Kit（企业设备管理服务） > ArkTS API > @ohos.enterprise.EnterpriseAdminExtensionAbility（企业设备管理扩展能力）
 category: harmonyos-references
-scraped_at: 2026-04-28T08:10:29+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:0712263141fea8e0c8bdac062e08632def24ff1989db85dfaa582645b63b722f
+scraped_at: 2026-04-29T14:01:13+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:007921180c016e48745387947e9333ee7bfc1bd0f7574e701d35eadcf7f01387
 ---
 
 本模块提供[企业设备管理扩展能力](../harmonyos-guides/mdm-kit-term.md#企业设备管理扩展能力)。
@@ -62,7 +62,7 @@ onAdminEnabled(): void
 3. export default class EnterpriseAdminAbility extends EnterpriseAdminExtensionAbility {
 4. onAdminEnabled() {
 5. }
-6. };
+6. }
 ```
 
 ### onAdminDisabled
@@ -85,7 +85,7 @@ onAdminDisabled(): void
 3. export default class EnterpriseAdminAbility extends EnterpriseAdminExtensionAbility {
 4. onAdminDisabled() {
 5. }
-6. };
+6. }
 ```
 
 ### onBundleAdded
@@ -115,7 +115,7 @@ onBundleAdded(bundleName: string): void
 4. onBundleAdded(bundleName: string) {
 5. console.info(`Succeeded in calling onBundleAdded callback, added bundle name : ${bundleName}`);
 6. }
-7. };
+7. }
 ```
 
 ### onBundleAdded14+
@@ -147,7 +147,7 @@ onBundleAdded(bundleName: string, accountId: number): void
 5. onBundleAdded(bundleName: string, accountId?: number) {
 6. console.info(`Succeeded in calling onBundleAdded callback, added bundle name : ${bundleName}, accountId: ${accountId}`);
 7. }
-8. };
+8. }
 ```
 
 ### onBundleRemoved
@@ -177,7 +177,7 @@ onBundleRemoved(bundleName: string): void
 4. onBundleRemoved(bundleName: string) {
 5. console.info(`Succeeded in calling onBundleRemoved callback, removed bundle name : ${bundleName}`);
 6. }
-7. };
+7. }
 ```
 
 ### onBundleRemoved14+
@@ -209,7 +209,7 @@ onBundleRemoved(bundleName: string, accountId: number): void
 5. onBundleRemoved(bundleName: string, accountId?: number) {
 6. console.info(`Succeeded in calling onBundleRemoved callback, removed bundle name : ${bundleName}, accountId: ${accountId}`);
 7. }
-8. };
+8. }
 ```
 
 ### onAppStart
@@ -239,7 +239,7 @@ onAppStart(bundleName: string): void
 4. onAppStart(bundleName: string) {
 5. console.info(`Succeeded in calling onAppStart callback, started bundle name : ${bundleName}`);
 6. }
-7. };
+7. }
 ```
 
 ### onAppStop
@@ -269,7 +269,7 @@ onAppStop(bundleName: string): void
 4. onAppStop(bundleName: string) {
 5. console.info(`Succeeded in calling onAppStop callback, stopped bundle name : ${bundleName}`);
 6. }
-7. };
+7. }
 ```
 
 ### onSystemUpdate
@@ -300,7 +300,7 @@ onSystemUpdate(systemUpdateInfo: systemManager.SystemUpdateInfo): void
 5. onSystemUpdate(systemUpdateInfo: systemManager.SystemUpdateInfo) {
 6. console.info(`Succeeded in calling onSystemUpdate callback, version name  : ${systemUpdateInfo.versionName}`);
 7. }
-8. };
+8. }
 ```
 
 ### onStart
@@ -324,7 +324,7 @@ EnterpriseAdminExtensionAbility启动事件回调。
 4. onStart() {
 5. console.info(`Succeeded in calling onStart callback.`);
 6. }
-7. };
+7. }
 ```
 
 ### onAccountAdded18+
@@ -354,7 +354,7 @@ onAccountAdded(accountId: number): void
 4. onAccountAdded(accountId: number) {
 5. console.info(`Succeeded in calling onAccountAdded callback, added accountId: ${accountId}`);
 6. }
-7. };
+7. }
 ```
 
 ### onAccountSwitched18+
@@ -384,7 +384,7 @@ onAccountSwitched(accountId: number): void
 4. onAccountSwitched(accountId: number) {
 5. console.info(`Succeeded in calling onAccountSwitched callback, switched accountId: ${accountId}`);
 6. }
-7. };
+7. }
 ```
 
 ### onAccountRemoved18+
@@ -414,7 +414,7 @@ onAccountRemoved(accountId: number): void
 4. onAccountRemoved(accountId: number) {
 5. console.info(`Succeeded in calling onAccountRemoved callback, removed accountId: ${accountId}`);
 6. }
-7. };
+7. }
 ```
 
 ### onKioskModeEntering20+
@@ -447,7 +447,7 @@ Kiosk模式为系统层面提供的一种应用运行模式，该模式下会将
 4. onKioskModeEntering(bundleName: string, accountId: number): void {
 5. console.info(`Succeeded in calling onKioskModeEntering callback, bundleName:${bundleName}, accountId:${accountId}`);
 6. }
-7. };
+7. }
 ```
 
 ### onKioskModeExiting20+
@@ -478,7 +478,7 @@ onKioskModeExiting(bundleName: string, accountId: number): void
 4. onKioskModeExiting(bundleName: string, accountId: number): void {
 5. console.info(`Succeeded in calling onKioskModeExiting callback, bundleName:${bundleName}, accountId:${accountId}`);
 6. }
-7. };
+7. }
 ```
 
 ### onMarketAppInstallResult22+
@@ -509,7 +509,7 @@ onMarketAppInstallResult(bundleName: string, result: common.InstallationResult):
 4. onMarketAppInstallResult(bundleName: string, result: common.InstallationResult): void {
 5. console.info(`Succeeded in calling onMarketAppInstallResult callback, bundleName:${bundleName}, result:${result}`);
 6. }
-7. };
+7. }
 ```
 
 ### onDeviceAdminEnabled23+
@@ -538,7 +538,7 @@ onDeviceAdminEnabled(bundleName: string): void
 3. export default class EnterpriseAdminAbility extends EnterpriseAdminExtensionAbility {
 4. onDeviceAdminEnabled(bundleName: string) {
 5. }
-6. };
+6. }
 ```
 
 ### onDeviceAdminDisabled23+
@@ -567,7 +567,7 @@ onDeviceAdminDisabled(bundleName: string): void
 3. export default class EnterpriseAdminAbility extends EnterpriseAdminExtensionAbility {
 4. onDeviceAdminDisabled(bundleName: string) {
 5. }
-6. };
+6. }
 ```
 
 ### onKeyEvent23+
@@ -690,7 +690,7 @@ onKeyEvent(keyEvent: systemManager.KeyEvent): void
 91. onKeyEvent(keyEvent: systemManager.KeyEvent): void {
 92. console.info(`Succeeded in calling onKeyEvent callback, key event:${JSON.stringify(keyEvent)}`);
 93. }
-94. };
+94. }
 ```
 
 ### onLogCollected23+
@@ -754,5 +754,5 @@ onLogCollected(result: common.Result): void
 34. console.error("onLogCollected", "Failed to collect log.")
 35. }
 36. }
-37. };
+37. }
 ```

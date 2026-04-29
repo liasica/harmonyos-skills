@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: @ohos.advertising.AdComponent (广告展示组件)
 breadcrumb: API参考 > 应用服务 > Ads Kit（广告服务） > ArkTS组件 > @ohos.advertising.AdComponent (广告展示组件)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:16:18+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:d9cd44ece0faefa098662d92d96e22af9f6ae7343e1ca938cb0046aceb4f7eb9
+scraped_at: 2026-04-29T14:06:57+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:ac85afebb958aaf568c73075a2cd01afb47b461e3842228aed40735447fd0dad
 ---
 
 本模块提供展示广告的能力，覆盖了原生、贴片、开屏等广告样式。
@@ -46,7 +46,7 @@ PhonePC/2in1Tablet
 
 | **参数名** | **类型** | 必填 | 说明 |
 | --- | --- | --- | --- |
-| ads | advertising.[Advertisement](js-apis-advertising.md#advertisement)[] | 是 | 广告对象数组。  说明：非贴片广告类型，组件只展示数组第一个数据。  元服务API：从API version 12开始，该接口支持在元服务中使用。 |
+| ads | advertising.[Advertisement](js-apis-advertisement.md#advertisement)[] | 是 | 广告对象数组。  说明：非贴片广告类型，组件只展示数组第一个数据。  元服务API：从API version 12开始，该接口支持在元服务中使用。 |
 | displayOptions | advertising.[AdDisplayOptions](js-apis-advertising.md#addisplayoptions) | 是 | 广告展示参数。  元服务API：从API version 12开始，该接口支持在元服务中使用。 |
 | interactionListener | advertising.[AdInteractionListener](js-apis-advertising.md#adinteractionlistener) | 是 | 广告状态变化回调。  元服务API：从API version 12开始，该接口支持在元服务中使用。 |
 | adRenderer12+ | () => void | 否 | 应用自渲染广告样式。应用自渲染广告样式为受限使用能力，具体请前往[流量变现官网客服支持](../monetize/kefuzhichi-0000001104461922.md)进行咨询。  元服务API：从API version 20开始，该接口支持在元服务中使用。  装饰器类型：@BuilderParam |

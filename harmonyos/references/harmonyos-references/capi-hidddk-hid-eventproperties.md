@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-hidd
 title: Hid_EventProperties
 breadcrumb: API参考 > 系统 > 硬件 > Driver Development Kit（驱动开发服务） > C API > 结构体 > Hid_EventProperties
 category: harmonyos-references
-scraped_at: 2026-04-28T08:10:47+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:4726fd21582f8d88d6cfada1c77c5aacb35995512ef2c629b9b894a921b72be2
+scraped_at: 2026-04-29T14:01:27+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:dbfb5b77050edb6994c7d169894f38d90de43932195980e0a5c0bc27c93fe149
 ---
 
 ```
@@ -34,11 +34,11 @@ PC/2in1
 
 | 名称 | 描述 |
 | --- | --- |
-| struct Hid\_EventTypeArray hidEventTypes | 事件类型属性编码数组 |
-| struct Hid\_KeyCodeArray hidKeys | 键值属性编码数组 |
-| struct Hid\_AbsAxesArray hidAbs | 绝对坐标属性编码数组 |
-| struct Hid\_RelAxesArray hidRelBits | 相对坐标属性编码数组 |
-| struct Hid\_MscEventArray hidMiscellaneous | 其它特殊事件属性编码数组 |
+| struct [Hid\_EventTypeArray](capi-hidddk-hid-eventtypearray.md) hidEventTypes | 事件类型属性编码数组 |
+| struct [Hid\_KeyCodeArray](capi-hidddk-hid-keycodearray.md) hidKeys | 键值属性编码数组 |
+| struct [Hid\_AbsAxesArray](capi-hidddk-hid-absaxesarray.md) hidAbs | 绝对坐标属性编码数组 |
+| struct [Hid\_RelAxesArray](capi-hidddk-hid-relaxesarray.md) hidRelBits | 相对坐标属性编码数组 |
+| struct [Hid\_MscEventArray](capi-hidddk-hid-msceventarray.md) hidMiscellaneous | 其它特殊事件属性编码数组 |
 | int32\_t hidAbsMax[64] | 绝对坐标属性最大值 |
 | int32\_t hidAbsMin[64] | 绝对坐标属性最小值 |
 | int32\_t hidAbsFuzz[64] | 绝对坐标属性模糊值 |

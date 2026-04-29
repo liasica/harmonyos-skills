@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/changelog
 title: 最佳实践文档变更说明
 breadcrumb: 最佳实践 > 文档变更说明 > 最佳实践文档变更说明
 category: best-practices
-scraped_at: 2026-04-28T08:23:11+08:00
+scraped_at: 2026-04-29T14:14:26+08:00
 doc_updated_at: 2026-04-13
-content_hash: sha256:e328003119eb1e48e745dffff1050e01f6421d4f342715c0860a6cf8300a7d4b
+content_hash: sha256:a5111c18816e49d3366e26974c235b93393d7401fe2d16094e1319ff64f62c52
 ---
 
 ## 2026年4月
@@ -509,7 +509,7 @@ content_hash: sha256:e328003119eb1e48e745dffff1050e01f6421d4f342715c0860a6cf8300
 **变更效果**
 
 **图1** 最佳实践目录变更前后对比   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/71g_Cap3RyicKtfBAsy8ww/zh-cn_image_0000002307192376.png?HW-CC-KV=V1&HW-CC-Date=20260428T002309Z&HW-CC-Expire=86400&HW-CC-Sign=E8C7D502D421A6B56655DB345A710187E4AD20F1B8EF9A8C4C80545E0C2FEEE1 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/71g_Cap3RyicKtfBAsy8ww/zh-cn_image_0000002307192376.png?HW-CC-KV=V1&HW-CC-Date=20260429T061421Z&HW-CC-Expire=86400&HW-CC-Sign=51D7D84146EB0D4008090B4874C8A8CE5FE5EA838DB57AACEE67FEB5877245D9 "点击放大")
 
 ### 新增文档
 
@@ -706,7 +706,7 @@ content_hash: sha256:e328003119eb1e48e745dffff1050e01f6421d4f342715c0860a6cf8300
 
 **图2** 最佳实践目录变更
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/3mt6lCXUTnCbZM0DTbkruw/zh-cn_image_0000002318291885.png?HW-CC-KV=V1&HW-CC-Date=20260428T002309Z&HW-CC-Expire=86400&HW-CC-Sign=4D01B8D5D27538BE5971CDF40A5C75456E27696C81BB880EC06EE9F3DF4D9FA7 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/3mt6lCXUTnCbZM0DTbkruw/zh-cn_image_0000002318291885.png?HW-CC-KV=V1&HW-CC-Date=20260429T061421Z&HW-CC-Expire=86400&HW-CC-Sign=F4FA6816CE1F5888E89ADA1BAEFF030593BFB994A73F538DC596F33F153A133E "点击放大")
 
 ### 新增文档
 
@@ -858,7 +858,7 @@ content_hash: sha256:e328003119eb1e48e745dffff1050e01f6421d4f342715c0860a6cf8300
 * 原“常见性能优化场景”章节更名为“性能场景优化案例”，修改文档标题，提升查找的准确性和效率。
 
   **图3** 最佳实践性能目录变更对比   
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/Nc3iRFF7RSWxbtbyH2moMw/zh-cn_image_0000002283692304.png?HW-CC-KV=V1&HW-CC-Date=20260428T002309Z&HW-CC-Expire=86400&HW-CC-Sign=C2172FC7548CB0A14B65FB776C2AF12F3161F7BBF329FA53331FB320B3463BF1 "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/Nc3iRFF7RSWxbtbyH2moMw/zh-cn_image_0000002283692304.png?HW-CC-KV=V1&HW-CC-Date=20260429T061421Z&HW-CC-Expire=86400&HW-CC-Sign=505B3F4D2B0E5BE45EB82ACE81A016B2B3B775568D1A844EAC4BE46E427E8202 "点击放大")
 
 ### 新增文档
 

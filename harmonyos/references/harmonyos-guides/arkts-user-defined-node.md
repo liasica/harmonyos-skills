@@ -1,16 +1,15 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-user-defined-node
 title: 自定义节点概述
-breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用自定义能力 > 自定义节点 > 自定义节点概述
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:40:02+08:00
+scraped_at: 2026-04-29T13:28:17+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:936aa5d0a288e0e78eb1822b931e1750a46662f1c0ef5407073e1a55cd3839e5
+content_hash: sha256:712e009d79929cacff37a777d63caab8e13c821db83a92803cc25cedf21e9a86
 ---
 
 自定义节点是ArkUI通过接口提供的底层实体节点，具备部分基础能力，能够与系统组件混合显示。自定义节点的挂载与显示依赖于[自定义占位节点](arkts-user-defined-place-holder.md)。当前，自定义节点涵盖三类对象：[FrameNode](../harmonyos-references/js-apis-arkui-framenode.md)、[RenderNode](../harmonyos-references/js-apis-arkui-rendernode.md)和[BuilderNode](../harmonyos-references/js-apis-arkui-buildernode.md)。FrameNode表示单个自定义组件节点，RenderNode表示为更轻量级的渲染节点，而BuilderNode对象赋予了创建、更新系统组件及其组件树的能力。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/cXMgtjfmQEyRQerbI8Lwyw/zh-cn_image_0000002583478005.png?HW-CC-KV=V1&HW-CC-Date=20260427T234001Z&HW-CC-Expire=86400&HW-CC-Sign=3B5E21F4871DAB6F28ECCCDA73498306323A35351009CFC861B9F92086CCFA96)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/mnVyZYZ3RuKDMGkB55ip0Q/zh-cn_image_0000002589244303.png?HW-CC-KV=V1&HW-CC-Date=20260429T052816Z&HW-CC-Expire=86400&HW-CC-Sign=E790765A87BA6F26BB6190B8D001E0A527316CDBE235F52548FB000B3072748B)
 
 ## 基本概念
 

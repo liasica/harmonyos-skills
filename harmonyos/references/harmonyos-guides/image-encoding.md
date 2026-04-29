@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-encodin
 title: 使用ImagePacker完成图片编码
 breadcrumb: 指南 > 媒体 > Image Kit（图片处理服务） > 图片开发指导(ArkTS) > 图片编码 > 使用ImagePacker完成图片编码
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:46:15+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:046cc1f94f173e423fb88e0b208a90e6f2bea6bee1eaacf7c52b2406448c5492
+scraped_at: 2026-04-29T13:35:12+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:d4f500106dcf9e58a8a150a9af3ca424204f031d53dec1d80c2729c6f584bb5c
 ---
 
 图片编码指将PixelMap压缩成不同格式的图片文件，用于保存和传输。
@@ -23,7 +23,7 @@ content_hash: sha256:046cc1f94f173e423fb88e0b208a90e6f2bea6bee1eaacf7c52b2406448
 1. 导入相关模块包。
 
    ```
-   1. // 导入相关模块包。
+   1. // 导入相关模块。
    2. import { image } from '@kit.ImageKit';
    3. import { BusinessError } from '@kit.BasicServicesKit';
    4. import { common } from '@kit.AbilityKit';
@@ -102,7 +102,7 @@ content_hash: sha256:046cc1f94f173e423fb88e0b208a90e6f2bea6bee1eaacf7c52b2406448
      3. let packOpts : image.PackingOption = { format: 'image/jpeg', quality: 95 };
      4. const path : string = context.cacheDir + '/pixel_map.jpg';
      5. try {
-     6. let file = fs.openSync(path, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE);
+     6. let file = fileIo.openSync(path, fileIo.OpenMode.CREATE | fileIo.OpenMode.READ_WRITE);
      7. await imagePackerApi.packToFile(pixelMap, file.fd, packOpts);
      8. } catch (error) {
      9. console.error('Failed to pack the pixelMap to file. And the error is: ' + error);
@@ -119,7 +119,7 @@ content_hash: sha256:046cc1f94f173e423fb88e0b208a90e6f2bea6bee1eaacf7c52b2406448
      3. let packOpts : image.PackingOption = { format: 'image/jpeg', quality: 95 };
      4. const filePath : string = context.cacheDir + '/image_source.jpg';
      5. try {
-     6. let file = fs.openSync(filePath, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE);
+     6. let file = fileIo.openSync(filePath, fileIo.OpenMode.CREATE | fileIo.OpenMode.READ_WRITE);
      7. await imagePackerApi.packToFile(imageSource, file.fd, packOpts);
      8. } catch (error) {
      9. console.error('Failed to pack the imageSource to file. And the error is: ' + error);

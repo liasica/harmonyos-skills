@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-securi
 title: 安全控件通用属性
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 安全 > 安全控件通用属性
 category: harmonyos-references
-scraped_at: 2026-04-28T08:02:25+08:00
+scraped_at: 2026-04-29T13:52:48+08:00
 doc_updated_at: 2026-04-03
-content_hash: sha256:bc2370ca15eddaff3bf2cd9355ba89ca57caceb8378b05a20d9bb7f2054e9313
+content_hash: sha256:763e2a28e91c8085fe7e9c9e90d1d2a6edd556c4c543e3ae71fc25c8ce0533fc
 ---
 
 安全控件的基础属性，用于设置安全控件通用的属性。
@@ -1000,7 +1000,7 @@ PhonePC/2in1TabletTVWearable
 43. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/tD6L60fDTn6cOyTm6tAbOQ/zh-cn_image_0000002583440119.png?HW-CC-KV=V1&HW-CC-Date=20260428T000224Z&HW-CC-Expire=86400&HW-CC-Sign=CDDDC985D2F03E31212C0549EBBC509839A96B54BD0B3738ED1C6C43139450E8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/LZc0z3LwRYyNOc-dHHxGyQ/zh-cn_image_0000002589246407.png?HW-CC-KV=V1&HW-CC-Date=20260429T055247Z&HW-CC-Expire=86400&HW-CC-Sign=53EA45A7CD91668124040438806EC152C86C6E27964713A349858245BB3BB216)
 
 ### 示例2
 
@@ -1072,7 +1072,7 @@ PhonePC/2in1TabletTVWearable
 63. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/BSUc65N6Sci56vSxpgjRcQ/zh-cn_image_0000002552960074.png?HW-CC-KV=V1&HW-CC-Date=20260428T000224Z&HW-CC-Expire=86400&HW-CC-Sign=1D56A582ADC96937C47D4DBC0F49BB49367A8C4D39E77246BFA55B6F16122130)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/6HVUWbsPSf2gEcGWHDLT9A/zh-cn_image_0000002558766600.png?HW-CC-KV=V1&HW-CC-Date=20260429T055247Z&HW-CC-Expire=86400&HW-CC-Sign=15AFE86376C859F0EF1299E7FD2ACAD037726DBC63534F4D7FC5D5AD3CBBE709)
 
 ### 示例3
 
@@ -1413,7 +1413,7 @@ PhonePC/2in1TabletTVWearable
 332. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/WPVwrZ2LS_qzrGIJYoehJg/zh-cn_image_0000002583480075.jpg?HW-CC-KV=V1&HW-CC-Date=20260428T000224Z&HW-CC-Expire=86400&HW-CC-Sign=6CD1779574BEB2303EDE3A8935A2E27CFF66FB65F139F7CBDE00A74B2364C4C5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/uT1YILu5T6-GNVOpRYBqpA/zh-cn_image_0000002558606940.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T055247Z&HW-CC-Expire=86400&HW-CC-Sign=E1B7FCD72EB0F9FB72190237F31331651B5FC42C4D0894910E5A10C724E9FE4F)
 
 ### 示例4
 
@@ -1479,4 +1479,4 @@ PhonePC/2in1TabletTVWearable
 57. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/hnio7eOCSY2WVlLevZeaLA/zh-cn_image_0000002552800426.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000224Z&HW-CC-Expire=86400&HW-CC-Sign=7D71E0799FCE64F977101C357AA9B5FA2C8201A8CB535B4CE88234607DA0E674)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/ltPhjYEQRwKRfeh0973DGw/zh-cn_image_0000002589326467.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055247Z&HW-CC-Expire=86400&HW-CC-Sign=F4012DD1B18A2132BAD82F4A8868868120B23C0FB144A7C3715B0F5895701F64)

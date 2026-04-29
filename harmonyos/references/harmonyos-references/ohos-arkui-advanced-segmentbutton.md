@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: SegmentButton
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > SegmentButton
 category: harmonyos-references
-scraped_at: 2026-04-28T08:02:39+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:645b0a8b4facff35e86ee8a431d6c93e647f4ac7cdfe007a84fe8e1056c0f4db
+scraped_at: 2026-04-29T13:53:02+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:fd179913120848986034ba5c525d06b7753c7721d27a93a2709c58d1198a8a1c
 ---
 
 分段按钮组件包含页签类分段按钮、胶囊类单选分段按钮和胶囊类多选分段按钮。
@@ -52,16 +52,17 @@ SegmentButton({ options: SegmentButtonOptions, selectedIndexes: number[], onItem
 
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
 
+说明
+
+* 分段按钮不支持[通用属性](ts-component-general-attributes.md)。分段按钮使用当前区域可使用的最大宽度作为组件宽度，并且根据按钮个数平均分配每个按钮宽度；分段按钮高度根据按钮内容（文本及图片）自动适应，其最小高度为28vp。
+* @Prop装饰的属性为可选参数，仅当与@Require装饰器联合使用时，才必须在构造时传入对应参数。
+
 | 名称 | 类型 | 必填 | 装饰器类型 | 说明 |
 | --- | --- | --- | --- | --- |
 | options | [SegmentButtonOptions](ohos-arkui-advanced-segmentbutton.md#segmentbuttonoptions) | 是 | @ObjectLink | 分段按钮选项。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
 | selectedIndexes | number[] | 是 | @Link | 分段按钮的选中项编号，第一项的编号为0，之后顺序增加。  **说明：**  selectedIndexes使用[@Link装饰器：父子双向同步](../harmonyos-guides/arkts-link.md)，仅支持有效的按钮编号（第一个按钮编号为0，之后按顺序累加），如没有选中项可传入空数组[]。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
 | onItemClicked13+ | Callback<number> | 否 | - | 当分段按钮选项被点击时，触发的回调函数接收被点击的选项下标作为参数。若不传入此参数，则点击时不触发回调。  **元服务API：** 从API version 13开始，该接口支持在元服务中使用。 |
-| maxFontScale14+ | number | [Resource](ts-types.md#resource) | 是 | @Prop | 分段按钮选项文字的最大字体放大倍数。  取值范围：[1, 2]  当设置的值小于1时，按值为1处理，设置的值大于2时，按值为2处理。  **元服务API：** 从API version 14开始，该接口支持在元服务中使用。 |
-
-说明
-
-分段按钮不支持[通用属性](ts-component-general-attributes.md)。分段按钮使用当前区域可使用的最大宽度作为组件宽度，并且根据按钮个数平均分配每个按钮宽度；分段按钮高度根据按钮内容（文本及图片）自动适应，其最小高度为28vp。
+| maxFontScale14+ | number | [Resource](ts-types.md#resource) | 否 | @Prop | 分段按钮选项文字的最大字体放大倍数。  取值范围：[1, 2]  当设置的值小于1时，按值为1处理，设置的值大于2时，按值为2处理。  **元服务API：** 从API version 14开始，该接口支持在元服务中使用。 |
 
 ## SegmentButtonOptions
 
@@ -807,7 +808,7 @@ PhonePC/2in1TabletTVWearable
 89. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/ciidpK4MRYW_jlL-Ki1fkA/zh-cn_image_0000002552960122.png?HW-CC-KV=V1&HW-CC-Date=20260428T000238Z&HW-CC-Expire=86400&HW-CC-Sign=E2492AFB946511D1352FFC73F8E44F013DA2D4AA05BEF503BC638FD2F1D15D61)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/cPH-8l7dSRKcKyfSqIKrVg/zh-cn_image_0000002558606988.png?HW-CC-KV=V1&HW-CC-Date=20260429T055301Z&HW-CC-Expire=86400&HW-CC-Sign=95EC0FCBDE10316608B81005A70318742B6F9E3769132D8DED01594896364141)
 
 ### 示例2（设置分段按钮样式）
 
@@ -915,7 +916,7 @@ PhonePC/2in1TabletTVWearable
 99. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/-N2N5F8pQ7axM6ZYkczJ4w/zh-cn_image_0000002583480123.png?HW-CC-KV=V1&HW-CC-Date=20260428T000238Z&HW-CC-Expire=86400&HW-CC-Sign=E2CB0F117791C763C308D6F2980975E8030830C1E642E09E21615EB5C34963ED)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/PNt6tA0CTf6mdibyXn2QxQ/zh-cn_image_0000002589326515.png?HW-CC-KV=V1&HW-CC-Date=20260429T055301Z&HW-CC-Expire=86400&HW-CC-Sign=3068D9984E3DC50AD502EA0F383D3D59D5A4FD46D99F1DF7E4BE0DF568EB917F)
 
 ### 示例3（分段按钮数组处理）
 
@@ -992,7 +993,7 @@ PhonePC/2in1TabletTVWearable
 68. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/kG1g3O0RTyKBiyN0FF2C3Q/zh-cn_image_0000002552800474.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000238Z&HW-CC-Expire=86400&HW-CC-Sign=FF1DCCB4007FB2F58A576D4953B3525157C110E759BD498FF42F01C8CEDAE67B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/-EnJ7AQYQC-OrP1xBUOYiQ/zh-cn_image_0000002589246457.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055301Z&HW-CC-Expire=86400&HW-CC-Sign=A40F4A5C8E341F816E905B4E4BFEC38AB12F51C5A861ACB5050707F230A233A5)
 
 ### 示例4（设置镜像效果）
 
@@ -1102,7 +1103,7 @@ PhonePC/2in1TabletTVWearable
 101. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/AQ0IpecMTcWYAY4mli9qiA/zh-cn_image_0000002583440169.png?HW-CC-KV=V1&HW-CC-Date=20260428T000238Z&HW-CC-Expire=86400&HW-CC-Sign=67247DA6F0E781C6E72773E8E6B2A70106AA3FEFE93886700FC24D97DB5B93CC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/kXrvnSiHT46cngbxSQyTxQ/zh-cn_image_0000002558766650.png?HW-CC-KV=V1&HW-CC-Date=20260429T055301Z&HW-CC-Expire=86400&HW-CC-Sign=E325CDC9E329E5443642E2DC8B5B33AAD3D7D3413DBD98144C4C0993CFC20CA5)
 
 ### 示例5（设置无障碍朗读）
 
@@ -1292,4 +1293,4 @@ PhonePC/2in1TabletTVWearable
 36. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/SbTUucfaSaqOit3aGZB9fg/zh-cn_image_0000002552960124.png?HW-CC-KV=V1&HW-CC-Date=20260428T000238Z&HW-CC-Expire=86400&HW-CC-Sign=97E02CA84851FC792EE7A14608BDCEF99075CBF2DE2DCEB2BB8BE66B6CD8D840)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/N_2TY8LARQmthc2KIq90wg/zh-cn_image_0000002558606990.png?HW-CC-KV=V1&HW-CC-Date=20260429T055301Z&HW-CC-Expire=86400&HW-CC-Sign=21C6C8B74D6FD0D06A0083E35A39C1E1FE7C072ED78116B203AFB8662C1DE64F)

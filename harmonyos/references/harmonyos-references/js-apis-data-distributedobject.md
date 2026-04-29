@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-d
 title: @ohos.data.distributedDataObject (分布式数据对象)
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > ArkTS API > @ohos.data.distributedDataObject (分布式数据对象)
 category: harmonyos-references
-scraped_at: 2026-04-28T07:59:09+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:08c245c3fa84ee834ddc5b1e9909d918eb262f9c06475722931e10b09249a295
+scraped_at: 2026-04-29T13:49:24+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:f7ea95c64eed677c3d67ab9fb1c943a1d7de969a4d6560a7ebc881fb10e8c825
 ---
 
 本模块提供管理基本数据对象的相关能力，包括创建、查询、删除、修改、订阅等；同时支持相同应用多设备间的分布式数据对象协同能力。分布式数据对象处理数据时，不会解析用户数据的内容，存储路径安全性较低，不建议传输个人敏感数据和隐私数据。
@@ -280,6 +280,11 @@ setSessionId(callback: AsyncCallback<void>): void
 
 退出所有已加入的session，使用callback方式异步回调。
 
+**需要权限：**
+
+* API版本20+：不需要权限
+* API版本9-19：ohos.permission.DISTRIBUTED\_DATASYNC
+
 **系统能力：** SystemCapability.DistributedDataManager.DataObject.DistributedObject
 
 **参数：**
@@ -332,7 +337,7 @@ setSessionId(sessionId?: string): Promise<void>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<void> | Promise对象。 |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 

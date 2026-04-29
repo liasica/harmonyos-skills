@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-project-o
 title: 工程介绍
 breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 工程介绍
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:54:35+08:00
+scraped_at: 2026-04-29T13:44:33+08:00
 doc_updated_at: 2026-01-15
-content_hash: sha256:0d72c077a5d55ddec35b98a376fbe111d3f82376595a833f5371b0cc627a773c
+content_hash: sha256:02d259e6a73e26f076924eda1ecdc445f14276f411752d844243462c9f5f796f
 ---
 
 ## 应用程序包基础知识
@@ -18,4 +18,4 @@ DevEco Studio工程目录结构提供工程视图和Ohos视图。工程视图（
 
 工程创建或打开后，默认显示工程视图，如果要切换到Ohos视图，在左上角单击**Project** > **Ohos**进行切换**。**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/aMW-FjwVRda5aNOYRVJ_7Q/zh-cn_image_0000002561833257.png?HW-CC-KV=V1&HW-CC-Date=20260427T235434Z&HW-CC-Expire=86400&HW-CC-Sign=9744E82503C89095E824AB65D8A1E7D11DD72FD07010EFB47A31B573BC938E4D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/VzkpKC66QBGmBnibKwY3MA/zh-cn_image_0000002561833257.png?HW-CC-KV=V1&HW-CC-Date=20260429T054432Z&HW-CC-Expire=86400&HW-CC-Sign=0D1FAE86AD7626111A499D9E9A3DF5B39A23CBE96FFFDAF7270252D09A745E63)

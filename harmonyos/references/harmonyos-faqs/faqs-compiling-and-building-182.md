@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: 推包调试报错“Error message:cannot find record '&XXX/src/main/ets/YYY&x.y.z', please check the request path.'ZZZ.abc'.”
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 推包调试报错“Error message:cannot find record '&XXX/src/main/ets/YYY&x.y.z', please check the request path.'ZZZ.abc'.”
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:29:46+08:00
+scraped_at: 2026-04-29T14:21:01+08:00
 doc_updated_at: 2026-03-17
-content_hash: sha256:98c8ef554acad9cc26d6474011c2db343d3244a76b1e923d0afc91abda1c4ab3
+content_hash: sha256:2b7c05ac31204334561cc1b25dcf2b46bd6f9149c5e8f1d9432f223484417dac
 ---
 
 **问题现象**
 
 在使用DevEco Studio推包到设备进行调试时，如果遇到jscrash报错，FaultLog中显示“Error message: cannot find record '&XXX/src/main/ets/YYY&x.y.z'，请检查请求路径 'ZZZ.abc'”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/iihUbdnrRS6of-ztdpKFyw/zh-cn_image_0000002251128405.png?HW-CC-KV=V1&HW-CC-Date=20260428T002945Z&HW-CC-Expire=86400&HW-CC-Sign=4124BD4CB1ADD2FBEDDBA71197FD30CD558B0BF41E0C092262C89D96196CB26E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/iihUbdnrRS6of-ztdpKFyw/zh-cn_image_0000002251128405.png?HW-CC-KV=V1&HW-CC-Date=20260429T062100Z&HW-CC-Expire=86400&HW-CC-Sign=5C60428B57D1F56AFD87FD671A5A3009EDE119D6B78CF92A7F4661E69DC8953A)
 
 **问题原因**
 
@@ -62,7 +62,7 @@ content_hash: sha256:98c8ef554acad9cc26d6474011c2db343d3244a76b1e923d0afc91abda1
 
 1）在工程根目录下新增plugin.ts文件。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/o7415WO_SVSWPKjpkvxQMQ/zh-cn_image_0000002215928680.png?HW-CC-KV=V1&HW-CC-Date=20260428T002945Z&HW-CC-Expire=86400&HW-CC-Sign=8196C2465A03F0028176D994F6BAB0078135D611CABD9C3A41786899AA0611EF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/o7415WO_SVSWPKjpkvxQMQ/zh-cn_image_0000002215928680.png?HW-CC-KV=V1&HW-CC-Date=20260429T062100Z&HW-CC-Expire=86400&HW-CC-Sign=388AD73334C0DC1D093C52197CB9C6B25224EA7D5055BF95A97D305D013AD93F)
 
 plugin.ts文件内容：
 
@@ -198,7 +198,7 @@ plugin.ts文件内容：
 
 2）在工程级hvigorfile.ts文件中增加两个插件，并执行Sync。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/KRhx6Pz6Q1OV4rIi7t47MA/zh-cn_image_0000002216088460.png?HW-CC-KV=V1&HW-CC-Date=20260428T002945Z&HW-CC-Expire=86400&HW-CC-Sign=BB29067591F7DB6014AD4DEE9AACBD637F133036C31C95137222DFF1E88F4962)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/KRhx6Pz6Q1OV4rIi7t47MA/zh-cn_image_0000002216088460.png?HW-CC-KV=V1&HW-CC-Date=20260429T062100Z&HW-CC-Expire=86400&HW-CC-Sign=0FA729DA9FEE7747C4F10CD91137EE0749AC70B5BBE32F2513ACAFE3027841FF)
 
 hvigorfile.ts文件内容：
 
@@ -220,4 +220,4 @@ hvigorfile.ts文件内容：
 1. hvigorw --stop-daemon
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/k1oo4dLHTyq7TKpMiLe5cA/zh-cn_image_0000002251048357.png?HW-CC-KV=V1&HW-CC-Date=20260428T002945Z&HW-CC-Expire=86400&HW-CC-Sign=9EA37D559090DCC945390F7E70B03537C892C4D1E055DD705DA177EDB2359A3B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/k1oo4dLHTyq7TKpMiLe5cA/zh-cn_image_0000002251048357.png?HW-CC-KV=V1&HW-CC-Date=20260429T062100Z&HW-CC-Expire=86400&HW-CC-Sign=6FBBDE5A622B0EE339EF61E55C041B8C50D1036A9CE40F501CD4AE7B4DC6CFF6)

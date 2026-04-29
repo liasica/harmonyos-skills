@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 模拟点击检测
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 业务风险检测 > 模拟点击检测
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:43:00+08:00
+scraped_at: 2026-04-29T13:31:41+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:314b5367688dc7665b6ca1d833d927bcbfedcb2a7ea80ac2663efa7afdba2f38
+content_hash: sha256:a7d66a356b143f382c72ea595a4982750c1b309a9071bf21d97969266f738622
 ---
 
 ## 场景介绍
@@ -22,7 +22,7 @@ content_hash: sha256:314b5367688dc7665b6ca1d833d927bcbfedcb2a7ea80ac2663efa7afdb
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/7E1xL9X4R3C4-4vYWbLY4g/zh-cn_image_0000002552798752.png?HW-CC-KV=V1&HW-CC-Date=20260427T234259Z&HW-CC-Expire=86400&HW-CC-Sign=BCD8DAFC646B1ED456F9C9D0842CD086AD7A4BDF55DB91F69912F6ADAA195758)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/8BMpAeW4QI2-IZncJJ1CKg/zh-cn_image_0000002558764900.png?HW-CC-KV=V1&HW-CC-Date=20260429T053139Z&HW-CC-Expire=86400&HW-CC-Sign=43BC18F16FA4E048F962A4EFCDB8C66702C04BEED15CB93D7635FE5AB0B30698)
 
 **流程说明：**
 

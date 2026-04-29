@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/account-a
 title: authentication (华为账号应用统一认证服务)
 breadcrumb: API参考 > 应用服务 > Account Kit（华为账号服务） > ArkTS API > authentication (华为账号应用统一认证服务)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:16:05+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:3edeb1bda429ff8c0a50be37ac1aea13e0b2aca00a73863ce334e26be6d91c41
+scraped_at: 2026-04-29T14:06:43+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:27f3cd597f0ae06c9367aa15cbbe363ff09f2d50928b2300e7d776da571fdc89
 ---
 
 本模块提供Account Kit（华为账号服务）认证能力，包括账号登录、授权、取消授权等功能。应用可以使用该能力实现应用账号的登录注册、获取华为账号登录状态、手机号一致性校验状态、用户授权信息等。
@@ -177,7 +177,7 @@ getHuaweiIDState(request: StateRequest): Promise<StateResult>
 6. const stateRequest: authentication.StateRequest = {
 7. idType: authentication.IdType.UNION_ID,
 8. idValue: '<可通过华为账号登录接口获取>' // 该值可以通过华为账号登录接口获取
-9. }
+9. };
 10. try {
 11. // 执行获取华为账号登录状态请求，并处理结果
 12. new authentication.HuaweiIDProvider().getHuaweiIDState(stateRequest).then((data: authentication.StateResult) => {
@@ -186,7 +186,7 @@ getHuaweiIDState(request: StateRequest): Promise<StateResult>
 15. // 处理state
 16. }).catch((error: BusinessError) => {
 17. dealAllError(error);
-18. })
+18. });
 19. } catch (error) {
 20. dealAllError(error);
 21. }
@@ -256,7 +256,7 @@ getMobileNumberConsistency(request: ConsistencyRequest): Promise<ConsistencyResu
 7. idType: authentication.IdType.UNION_ID,
 8. idValue: '<可通过华为账号登录接口获取>', // 该值可以通过华为账号登录接口获取
 9. mobileNumber: '+86xxxxxxxxxxx' // 通过华为账号一键登录功能获取到的明文手机号
-10. }
+10. };
 11. try {
 12. // 执行获取手机号一致性状态请求，并处理结果
 13. new authentication.HuaweiIDProvider().getMobileNumberConsistency(consistencyRequest)
@@ -267,7 +267,7 @@ getMobileNumberConsistency(request: ConsistencyRequest): Promise<ConsistencyResu
 18. })
 19. .catch((err: BusinessError) => {
 20. dealAllError(err);
-21. })
+21. });
 22. } catch (error) {
 23. dealAllError(error);
 24. }
@@ -312,7 +312,7 @@ PhonePC/2in1TabletTVWearable
 5. // 默认值为true，若账号未登录则强制拉起账号登录页
 6. loginRequest.forceLogin = true;
 7. loginRequest.idTokenSignAlgorithm = authentication.IdTokenSignAlgorithm.PS256; // 默认为PS256
-8. loginRequest.state = util.generateRandomUUID(); // 建议使用generateRandomUUID生成state
+8. loginRequest.state = util.generateRandomUUID(); // 建议使用generateRandomUUID生成state，可用于一致性比对，防止跨站攻击
 ```
 
 ## IdTokenSignAlgorithm
@@ -364,7 +364,7 @@ Account Kit登录请求响应对象，解析响应结果可得到OpenID、UnionI
 | **名称** | **类型** | **只读** | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
 | data | [LoginWithHuaweiIDCredential](account-api-authentication.md#loginwithhuaweiidcredential) | 是 | 是 | 登录结果数据，用于获取或关联华为账号相关信息。包含openID、unionID、authorizationCode、idToken字段。 |
-| state | string | 是 | 是 | 响应体中返回的state，账号服务将该字段与请求体中传入的state比较，防止跨站攻击。字符包含“0-9”、“a-z”、“A-Z”、英文点号、英文冒号、斜杠、下划线等，长度限制1-255。校验规则^[0-9a-zA-Z:\/\.\-\_]{1,255}$。 |
+| state | string | 是 | 是 | 响应体中返回的state，账号服务将该字段与请求体中传入的state比较，防止跨站攻击。字符包含“0-9”、“a-z”、“A-Z”、英文点号、英文冒号、斜杠、下划线等，长度限制1-255。校验规则^[0-9a-zA-Z:/\.\-\_]{1,255}$。 |
 
 **示例：**
 
@@ -379,7 +379,7 @@ Account Kit登录请求响应对象，解析响应结果可得到OpenID、UnionI
 8. // 默认值为true，若账号未登录则强制拉起账号登录页
 9. loginRequest.forceLogin = true;
 10. loginRequest.idTokenSignAlgorithm = authentication.IdTokenSignAlgorithm.PS256;
-11. loginRequest.state = util.generateRandomUUID(); // 建议使用generateRandomUUID生成state
+11. loginRequest.state = util.generateRandomUUID(); // 建议使用generateRandomUUID生成state，可用于一致性比对，防止跨站攻击
 
 13. // 执行登录请求，并处理结果
 14. try {
@@ -393,54 +393,55 @@ Account Kit登录请求响应对象，解析响应结果可得到OpenID、UnionI
 22. const loginWithHuaweiIDResponse = data as authentication.LoginWithHuaweiIDResponse;
 23. const state = loginWithHuaweiIDResponse.state;
 24. if (state && loginRequest.state !== state) {
-25. hilog.error(0x0000, 'testTag', `Failed to login. The state is different, response state: ${state}`);
-26. return;
-27. }
-28. hilog.info(0x0000, 'testTag', 'Succeeded in login.');
-29. const loginWithHuaweiIDCredential = loginWithHuaweiIDResponse?.data;
-30. const code = loginWithHuaweiIDCredential?.authorizationCode;
-31. const idToken = loginWithHuaweiIDCredential?.idToken;
-32. // 开发者处理code, idToken
-33. });
-34. } catch (error) {
-35. dealAllError(error);
-36. }
+25. // state不一致，可能为跨站攻击，需重新登录
+26. hilog.error(0x0000, 'testTag', `Failed to login. The state is different, response state: ${state}`);
+27. return;
+28. }
+29. hilog.info(0x0000, 'testTag', 'Succeeded in login.');
+30. const loginWithHuaweiIDCredential = loginWithHuaweiIDResponse?.data;
+31. const code = loginWithHuaweiIDCredential?.authorizationCode;
+32. const idToken = loginWithHuaweiIDCredential?.idToken;
+33. // 开发者处理code, idToken
+34. });
+35. } catch (error) {
+36. dealAllError(error);
+37. }
 
-38. // 错误处理
-39. function dealAllError(error: BusinessError<Object>): void {
-40. hilog.error(0x0000, 'testTag', `Failed to login. Code: ${error.code}, message: ${error.message}`);
-41. // 在应用登录涉及UI交互场景下，建议按照如下错误码指导提示用户
-42. if (error.code === ErrorCode.ERROR_CODE_LOGIN_OUT) {
-43. // 用户未登录华为账号，请登录华为账号并重试或者尝试使用其他方式登录
-44. } else if (error.code === ErrorCode.ERROR_CODE_NETWORK_ERROR) {
-45. // 网络异常，请检查当前网络状态并重试或者尝试使用其他方式登录
-46. } else if (error.code === ErrorCode.ERROR_CODE_INTERNAL_ERROR) {
-47. // 登录失败，请尝试使用其他方式登录
-48. } else if (error.code === ErrorCode.ERROR_CODE_USER_CANCEL) {
-49. // 用户取消授权
-50. } else if (error.code === ErrorCode.ERROR_CODE_SYSTEM_SERVICE) {
-51. // 系统服务异常，请稍后重试或者尝试使用其他方式登录
-52. } else if (error.code === ErrorCode.ERROR_CODE_REQUEST_REFUSE) {
-53. // 重复请求，应用无需处理
-54. } else {
-55. // 应用登录失败，请尝试使用其他方式登录
-56. }
+39. // 错误处理
+40. function dealAllError(error: BusinessError<Object>): void {
+41. hilog.error(0x0000, 'testTag', `Failed to login. Code: ${error.code}, message: ${error.message}`);
+42. // 在应用登录涉及UI交互场景下，建议按照如下错误码指导提示用户
+43. if (error.code === ErrorCode.ERROR_CODE_LOGIN_OUT) {
+44. // 用户未登录华为账号，请登录华为账号并重试或者尝试使用其他方式登录
+45. } else if (error.code === ErrorCode.ERROR_CODE_NETWORK_ERROR) {
+46. // 网络异常，请检查当前网络状态并重试或者尝试使用其他方式登录
+47. } else if (error.code === ErrorCode.ERROR_CODE_INTERNAL_ERROR) {
+48. // 登录失败，请尝试使用其他方式登录
+49. } else if (error.code === ErrorCode.ERROR_CODE_USER_CANCEL) {
+50. // 用户取消授权
+51. } else if (error.code === ErrorCode.ERROR_CODE_SYSTEM_SERVICE) {
+52. // 系统服务异常，请稍后重试或者尝试使用其他方式登录
+53. } else if (error.code === ErrorCode.ERROR_CODE_REQUEST_REFUSE) {
+54. // 重复请求，应用无需处理
+55. } else {
+56. // 应用登录失败，请尝试使用其他方式登录
 57. }
+58. }
 
-59. export enum ErrorCode {
-60. // 账号未登录
-61. ERROR_CODE_LOGIN_OUT = 1001502001,
-62. // 网络错误
-63. ERROR_CODE_NETWORK_ERROR = 1001502005,
-64. // 内部错误
-65. ERROR_CODE_INTERNAL_ERROR = 1001502009,
-66. // 用户取消授权
-67. ERROR_CODE_USER_CANCEL = 1001502012,
-68. // 系统服务异常
-69. ERROR_CODE_SYSTEM_SERVICE = 12300001,
-70. // 重复请求
-71. ERROR_CODE_REQUEST_REFUSE = 1001500002
-72. }
+60. export enum ErrorCode {
+61. // 账号未登录
+62. ERROR_CODE_LOGIN_OUT = 1001502001,
+63. // 网络错误
+64. ERROR_CODE_NETWORK_ERROR = 1001502005,
+65. // 内部错误
+66. ERROR_CODE_INTERNAL_ERROR = 1001502009,
+67. // 用户取消授权
+68. ERROR_CODE_USER_CANCEL = 1001502012,
+69. // 系统服务异常
+70. ERROR_CODE_SYSTEM_SERVICE = 12300001,
+71. // 重复请求
+72. ERROR_CODE_REQUEST_REFUSE = 1001500002
+73. }
 ```
 
 ## LoginWithHuaweiIDCredential
@@ -477,7 +478,7 @@ Account Kit登录成功返回的凭据，用于获取用户相关信息和关联
 8. // 默认值为true，若账号未登录则强制拉起账号登录页
 9. loginRequest.forceLogin = true;
 10. loginRequest.idTokenSignAlgorithm = authentication.IdTokenSignAlgorithm.PS256;
-11. loginRequest.state = util.generateRandomUUID(); // 建议使用generateRandomUUID生成state
+11. loginRequest.state = util.generateRandomUUID(); // 建议使用generateRandomUUID生成state，可用于一致性比对，防止跨站攻击
 
 13. // 执行登录请求，并处理结果
 14. try {
@@ -491,56 +492,57 @@ Account Kit登录成功返回的凭据，用于获取用户相关信息和关联
 22. const loginWithHuaweiIDResponse = data as authentication.LoginWithHuaweiIDResponse;
 23. const state = loginWithHuaweiIDResponse.state;
 24. if (state && loginRequest.state !== state) {
-25. hilog.error(0x0000,
-26. 'testTag', `Failed to login. The state is different, response state: ${state}`);
-27. return;
-28. }
-29. hilog.info(0x0000, 'testTag', 'Succeeded in login.');
+25. // state不一致，可能为跨站攻击，需重新登录
+26. hilog.error(0x0000,
+27. 'testTag', `Failed to login. The state is different, response state: ${state}`);
+28. return;
+29. }
+30. hilog.info(0x0000, 'testTag', 'Succeeded in login.');
 
-31. const loginWithHuaweiIDCredential = loginWithHuaweiIDResponse?.data;
-32. const code = loginWithHuaweiIDCredential?.authorizationCode;
-33. const idToken = loginWithHuaweiIDCredential?.idToken;
-34. // 开发者处理code, idToken
-35. });
-36. } catch (error) {
-37. dealAllError(error);
-38. }
+32. const loginWithHuaweiIDCredential = loginWithHuaweiIDResponse?.data;
+33. const code = loginWithHuaweiIDCredential?.authorizationCode;
+34. const idToken = loginWithHuaweiIDCredential?.idToken;
+35. // 开发者处理code, idToken
+36. });
+37. } catch (error) {
+38. dealAllError(error);
+39. }
 
-40. // 错误处理
-41. function dealAllError(error: BusinessError<Object>): void {
-42. hilog.error(0x0000, 'testTag', `Failed to login. Code: ${error.code}, message: ${error.message}`);
-43. // 在应用登录涉及UI交互场景下，建议按照如下错误码指导提示用户
-44. if (error.code === ErrorCode.ERROR_CODE_LOGIN_OUT) {
-45. // 用户未登录华为账号，请登录华为账号并重试或者尝试使用其他方式登录
-46. } else if (error.code === ErrorCode.ERROR_CODE_NETWORK_ERROR) {
-47. // 网络异常，请检查当前网络状态并重试或者尝试使用其他方式登录
-48. } else if (error.code === ErrorCode.ERROR_CODE_INTERNAL_ERROR) {
-49. // 登录失败，请尝试使用其他方式登录
-50. } else if (error.code === ErrorCode.ERROR_CODE_USER_CANCEL) {
-51. // 用户取消授权
-52. } else if (error.code === ErrorCode.ERROR_CODE_SYSTEM_SERVICE) {
-53. // 系统服务异常，请稍后重试或者尝试使用其他方式登录
-54. } else if (error.code === ErrorCode.ERROR_CODE_REQUEST_REFUSE) {
-55. // 重复请求，应用无需处理
-56. } else {
-57. // 应用登录失败，请尝试使用其他方式登录
-58. }
+41. // 错误处理
+42. function dealAllError(error: BusinessError<Object>): void {
+43. hilog.error(0x0000, 'testTag', `Failed to login. Code: ${error.code}, message: ${error.message}`);
+44. // 在应用登录涉及UI交互场景下，建议按照如下错误码指导提示用户
+45. if (error.code === ErrorCode.ERROR_CODE_LOGIN_OUT) {
+46. // 用户未登录华为账号，请登录华为账号并重试或者尝试使用其他方式登录
+47. } else if (error.code === ErrorCode.ERROR_CODE_NETWORK_ERROR) {
+48. // 网络异常，请检查当前网络状态并重试或者尝试使用其他方式登录
+49. } else if (error.code === ErrorCode.ERROR_CODE_INTERNAL_ERROR) {
+50. // 登录失败，请尝试使用其他方式登录
+51. } else if (error.code === ErrorCode.ERROR_CODE_USER_CANCEL) {
+52. // 用户取消授权
+53. } else if (error.code === ErrorCode.ERROR_CODE_SYSTEM_SERVICE) {
+54. // 系统服务异常，请稍后重试或者尝试使用其他方式登录
+55. } else if (error.code === ErrorCode.ERROR_CODE_REQUEST_REFUSE) {
+56. // 重复请求，应用无需处理
+57. } else {
+58. // 应用登录失败，请尝试使用其他方式登录
 59. }
+60. }
 
-61. export enum ErrorCode {
-62. // 账号未登录
-63. ERROR_CODE_LOGIN_OUT = 1001502001,
-64. // 网络错误
-65. ERROR_CODE_NETWORK_ERROR = 1001502005,
-66. // 内部错误
-67. ERROR_CODE_INTERNAL_ERROR = 1001502009,
-68. // 用户取消授权
-69. ERROR_CODE_USER_CANCEL = 1001502012,
-70. // 系统服务异常
-71. ERROR_CODE_SYSTEM_SERVICE = 12300001,
-72. // 重复请求
-73. ERROR_CODE_REQUEST_REFUSE = 1001500002
-74. }
+62. export enum ErrorCode {
+63. // 账号未登录
+64. ERROR_CODE_LOGIN_OUT = 1001502001,
+65. // 网络错误
+66. ERROR_CODE_NETWORK_ERROR = 1001502005,
+67. // 内部错误
+68. ERROR_CODE_INTERNAL_ERROR = 1001502009,
+69. // 用户取消授权
+70. ERROR_CODE_USER_CANCEL = 1001502012,
+71. // 系统服务异常
+72. ERROR_CODE_SYSTEM_SERVICE = 12300001,
+73. // 重复请求
+74. ERROR_CODE_REQUEST_REFUSE = 1001500002
+75. }
 ```
 
 ## AuthorizationWithHuaweiIDRequest
@@ -577,7 +579,7 @@ PhonePC/2in1TabletTVWearable
 5. authRequest.scopes = ['profile']; // 元服务可传supportAtomicService值为true，以使用profile授权能力
 6. authRequest.permissions = ['idtoken'];
 7. authRequest.forceAuthorization = true;
-8. authRequest.state = util.generateRandomUUID(); // 建议使用generateRandomUUID生成state
+8. authRequest.state = util.generateRandomUUID(); // 建议使用generateRandomUUID生成state，可用于一致性比对，防止跨站攻击
 9. authRequest.idTokenSignAlgorithm = authentication.IdTokenSignAlgorithm.PS256;
 ```
 
@@ -616,7 +618,7 @@ PhonePC/2in1TabletTVWearable
 9. authRequest.scopes = ['openid'];
 10. authRequest.permissions = ['idtoken', 'serviceauthcode'];
 11. authRequest.forceAuthorization = true;
-12. authRequest.state = util.generateRandomUUID(); // 建议使用generateRandomUUID生成state
+12. authRequest.state = util.generateRandomUUID(); // 建议使用generateRandomUUID生成state，可用于一致性比对，防止跨站攻击
 13. authRequest.idTokenSignAlgorithm = authentication.IdTokenSignAlgorithm.PS256;
 
 15. // 执行授权请求，并处理结果
@@ -631,50 +633,51 @@ PhonePC/2in1TabletTVWearable
 24. const authorizationWithHuaweiIDResponse = data as authentication.AuthorizationWithHuaweiIDResponse;
 25. const state = authorizationWithHuaweiIDResponse.state;
 26. if (state && authRequest.state !== state) {
-27. hilog.error(0x0000, 'testTag', `Failed to authorize. The state is different, response state: ${state}`);
-28. return;
-29. }
-30. hilog.info(0x0000, 'testTag', 'Succeeded in authentication.');
-31. const authorizationWithHuaweiIDCredential = authorizationWithHuaweiIDResponse?.data;
-32. const idToken = authorizationWithHuaweiIDCredential?.idToken;
-33. const code = authorizationWithHuaweiIDCredential?.authorizationCode;
-34. // 开发者处理idToken, code等信息
-35. });
-36. } catch (error) {
-37. dealAllError(error);
-38. }
+27. // state不一致，可能为跨站攻击，需重新授权
+28. hilog.error(0x0000, 'testTag', `Failed to authorize. The state is different, response state: ${state}`);
+29. return;
+30. }
+31. hilog.info(0x0000, 'testTag', 'Succeeded in authentication.');
+32. const authorizationWithHuaweiIDCredential = authorizationWithHuaweiIDResponse?.data;
+33. const idToken = authorizationWithHuaweiIDCredential?.idToken;
+34. const code = authorizationWithHuaweiIDCredential?.authorizationCode;
+35. // 开发者处理idToken, code等信息
+36. });
+37. } catch (error) {
+38. dealAllError(error);
+39. }
 
-40. // 错误处理
-41. function dealAllError(error: BusinessError<Object>): void {
-42. hilog.error(0x0000, 'testTag', `Failed to obtain userInfo. Code: ${error.code}, message: ${error.message}`);
-43. // 在涉及UI交互场景下，建议按照如下错误码指导提示用户
-44. if (error.code === ErrorCode.ERROR_CODE_LOGIN_OUT) {
-45. // 用户未登录华为账号，请登录华为账号并重试
-46. } else if (error.code === ErrorCode.ERROR_CODE_NETWORK_ERROR) {
-47. // 网络异常，请检查当前网络状态并重试
-48. } else if (error.code === ErrorCode.ERROR_CODE_USER_CANCEL) {
-49. // 用户取消授权
-50. } else if (error.code === ErrorCode.ERROR_CODE_SYSTEM_SERVICE) {
-51. // 系统服务异常，请稍后重试
-52. } else if (error.code === ErrorCode.ERROR_CODE_REQUEST_REFUSE) {
-53. // 重复请求，应用无需处理
-54. } else {
-55. // 获取用户信息失败，请稍后重试
-56. }
+41. // 错误处理
+42. function dealAllError(error: BusinessError<Object>): void {
+43. hilog.error(0x0000, 'testTag', `Failed to obtain userInfo. Code: ${error.code}, message: ${error.message}`);
+44. // 在涉及UI交互场景下，建议按照如下错误码指导提示用户
+45. if (error.code === ErrorCode.ERROR_CODE_LOGIN_OUT) {
+46. // 用户未登录华为账号，请登录华为账号并重试
+47. } else if (error.code === ErrorCode.ERROR_CODE_NETWORK_ERROR) {
+48. // 网络异常，请检查当前网络状态并重试
+49. } else if (error.code === ErrorCode.ERROR_CODE_USER_CANCEL) {
+50. // 用户取消授权
+51. } else if (error.code === ErrorCode.ERROR_CODE_SYSTEM_SERVICE) {
+52. // 系统服务异常，请稍后重试
+53. } else if (error.code === ErrorCode.ERROR_CODE_REQUEST_REFUSE) {
+54. // 重复请求，应用无需处理
+55. } else {
+56. // 获取用户信息失败，请稍后重试
 57. }
+58. }
 
-59. export enum ErrorCode {
-60. // 账号未登录
-61. ERROR_CODE_LOGIN_OUT = 1001502001,
-62. // 网络错误
-63. ERROR_CODE_NETWORK_ERROR = 1001502005,
-64. // 用户取消授权
-65. ERROR_CODE_USER_CANCEL = 1001502012,
-66. // 系统服务异常
-67. ERROR_CODE_SYSTEM_SERVICE = 12300001,
-68. // 重复请求
-69. ERROR_CODE_REQUEST_REFUSE = 1001500002
-70. }
+60. export enum ErrorCode {
+61. // 账号未登录
+62. ERROR_CODE_LOGIN_OUT = 1001502001,
+63. // 网络错误
+64. ERROR_CODE_NETWORK_ERROR = 1001502005,
+65. // 用户取消授权
+66. ERROR_CODE_USER_CANCEL = 1001502012,
+67. // 系统服务异常
+68. ERROR_CODE_SYSTEM_SERVICE = 12300001,
+69. // 重复请求
+70. ERROR_CODE_REQUEST_REFUSE = 1001500002
+71. }
 ```
 
 ## AuthorizationWithHuaweiIDCredential
@@ -715,7 +718,7 @@ Account Kit授权成功返回的凭据，用于获取用户相关信息（头像
 9. authRequest.scopes = ['openid'];
 10. authRequest.permissions = ['idtoken', 'serviceauthcode'];
 11. authRequest.forceAuthorization = true;
-12. authRequest.state = util.generateRandomUUID(); // 建议使用generateRandomUUID生成state
+12. authRequest.state = util.generateRandomUUID(); // 建议使用generateRandomUUID生成state，可用于一致性比对，防止跨站攻击
 13. authRequest.idTokenSignAlgorithm = authentication.IdTokenSignAlgorithm.PS256;
 
 15. // 执行授权请求，并处理结果
@@ -730,50 +733,51 @@ Account Kit授权成功返回的凭据，用于获取用户相关信息（头像
 24. const authorizationWithHuaweiIDResponse = data as authentication.AuthorizationWithHuaweiIDResponse;
 25. const state = authorizationWithHuaweiIDResponse.state;
 26. if (state && authRequest.state !== state) {
-27. hilog.error(0x0000, 'testTag', `Failed to authorize. The state is different, response state: ${state}`);
-28. return;
-29. }
-30. hilog.info(0x0000, 'testTag', 'Succeeded in authentication.');
-31. const authorizationWithHuaweiIDCredential = authorizationWithHuaweiIDResponse?.data;
-32. const idToken = authorizationWithHuaweiIDCredential?.idToken;
-33. const code = authorizationWithHuaweiIDCredential?.authorizationCode;
-34. // 开发者处理idToken, code等信息
-35. });
-36. } catch (error) {
-37. dealAllError(error);
-38. }
+27. // state不一致，可能为跨站攻击，需重新授权
+28. hilog.error(0x0000, 'testTag', `Failed to authorize. The state is different, response state: ${state}`);
+29. return;
+30. }
+31. hilog.info(0x0000, 'testTag', 'Succeeded in authentication.');
+32. const authorizationWithHuaweiIDCredential = authorizationWithHuaweiIDResponse?.data;
+33. const idToken = authorizationWithHuaweiIDCredential?.idToken;
+34. const code = authorizationWithHuaweiIDCredential?.authorizationCode;
+35. // 开发者处理idToken, code等信息
+36. });
+37. } catch (error) {
+38. dealAllError(error);
+39. }
 
-40. // 错误处理
-41. function dealAllError(error: BusinessError<Object>): void {
-42. hilog.error(0x0000, 'testTag', `Failed to obtain userInfo. Code: ${error.code}, message: ${error.message}`);
-43. // 在涉及UI交互场景下，建议按照如下错误码指导提示用户
-44. if (error.code === ErrorCode.ERROR_CODE_LOGIN_OUT) {
-45. // 用户未登录华为账号，请登录华为账号并重试
-46. } else if (error.code === ErrorCode.ERROR_CODE_NETWORK_ERROR) {
-47. // 网络异常，请检查当前网络状态并重试
-48. } else if (error.code === ErrorCode.ERROR_CODE_USER_CANCEL) {
-49. // 用户取消授权
-50. } else if (error.code === ErrorCode.ERROR_CODE_SYSTEM_SERVICE) {
-51. // 系统服务异常，请稍后重试
-52. } else if (error.code === ErrorCode.ERROR_CODE_REQUEST_REFUSE) {
-53. // 重复请求，应用无需处理
-54. } else {
-55. // 获取用户信息失败，请稍后重试
-56. }
+41. // 错误处理
+42. function dealAllError(error: BusinessError<Object>): void {
+43. hilog.error(0x0000, 'testTag', `Failed to obtain userInfo. Code: ${error.code}, message: ${error.message}`);
+44. // 在涉及UI交互场景下，建议按照如下错误码指导提示用户
+45. if (error.code === ErrorCode.ERROR_CODE_LOGIN_OUT) {
+46. // 用户未登录华为账号，请登录华为账号并重试
+47. } else if (error.code === ErrorCode.ERROR_CODE_NETWORK_ERROR) {
+48. // 网络异常，请检查当前网络状态并重试
+49. } else if (error.code === ErrorCode.ERROR_CODE_USER_CANCEL) {
+50. // 用户取消授权
+51. } else if (error.code === ErrorCode.ERROR_CODE_SYSTEM_SERVICE) {
+52. // 系统服务异常，请稍后重试
+53. } else if (error.code === ErrorCode.ERROR_CODE_REQUEST_REFUSE) {
+54. // 重复请求，应用无需处理
+55. } else {
+56. // 获取用户信息失败，请稍后重试
 57. }
+58. }
 
-59. export enum ErrorCode {
-60. // 账号未登录
-61. ERROR_CODE_LOGIN_OUT = 1001502001,
-62. // 网络错误
-63. ERROR_CODE_NETWORK_ERROR = 1001502005,
-64. // 用户取消授权
-65. ERROR_CODE_USER_CANCEL = 1001502012,
-66. // 系统服务异常
-67. ERROR_CODE_SYSTEM_SERVICE = 12300001,
-68. // 重复请求
-69. ERROR_CODE_REQUEST_REFUSE = 1001500002
-70. }
+60. export enum ErrorCode {
+61. // 账号未登录
+62. ERROR_CODE_LOGIN_OUT = 1001502001,
+63. // 网络错误
+64. ERROR_CODE_NETWORK_ERROR = 1001502005,
+65. // 用户取消授权
+66. ERROR_CODE_USER_CANCEL = 1001502012,
+67. // 系统服务异常
+68. ERROR_CODE_SYSTEM_SERVICE = 12300001,
+69. // 重复请求
+70. ERROR_CODE_REQUEST_REFUSE = 1001500002
+71. }
 ```
 
 ## CancelAuthorizationRequest
@@ -803,7 +807,7 @@ PhonePC/2in1TabletTVWearable
 2. import { util } from '@kit.ArkTS';
 
 4. const cancelRequest = new authentication.HuaweiIDProvider().createCancelAuthorizationRequest();
-5. cancelRequest.state = util.generateRandomUUID(); // 建议使用generateRandomUUID生成state
+5. cancelRequest.state = util.generateRandomUUID(); // 建议使用generateRandomUUID生成state，可用于一致性比对，防止跨站攻击
 ```
 
 ## CancelAuthorizationResponse
@@ -838,7 +842,7 @@ PhonePC/2in1TabletTVWearable
 
 6. // 创建取消授权请求，并设置参数
 7. const cancelRequest = new authentication.HuaweiIDProvider().createCancelAuthorizationRequest();
-8. cancelRequest.state = util.generateRandomUUID(); // 建议使用generateRandomUUID生成state
+8. cancelRequest.state = util.generateRandomUUID(); // 建议使用generateRandomUUID生成state，可用于一致性比对，防止跨站攻击
 
 10. // 执行取消授权请求，并处理结果
 11. try {
@@ -852,50 +856,51 @@ PhonePC/2in1TabletTVWearable
 19. const cancelAuthorizationResponse = data as authentication.CancelAuthorizationResponse;
 20. const state = cancelAuthorizationResponse.state;
 21. if (state && cancelRequest.state !== state) {
-22. hilog.error(0x0000, 'testTag', `Failed to cancel. The state is different, response state: ${state}`);
-23. return;
-24. }
-25. hilog.info(0x0000, 'testTag', 'Succeeded in canceling.');
-26. });
-27. } catch (error) {
-28. dealAllError(error);
-29. }
+22. // state不一致，可能为跨站攻击，需重新授权
+23. hilog.error(0x0000, 'testTag', `Failed to cancel. The state is different, response state: ${state}`);
+24. return;
+25. }
+26. hilog.info(0x0000, 'testTag', 'Succeeded in canceling.');
+27. });
+28. } catch (error) {
+29. dealAllError(error);
+30. }
 
-31. // 错误处理
-32. function dealAllError(error: BusinessError<Object>): void {
-33. hilog.error(0x0000, 'testTag', `Failed to cancel. Code: ${error.code}, message: ${error.message}`);
-34. // 在应用登录涉及UI交互场景下，建议按照如下错误码指导提示用户
-35. if (error.code === ErrorCode.ERROR_CODE_LOGIN_OUT) {
-36. // 用户未登录华为账号，请登录华为账号并重试或者尝试使用其他方式登录
-37. } else if (error.code === ErrorCode.ERROR_CODE_NETWORK_ERROR) {
-38. // 网络异常，请检查当前网络状态并重试或者尝试使用其他方式登录
-39. } else if (error.code === ErrorCode.ERROR_CODE_INTERNAL_ERROR) {
-40. // 登录失败，请尝试使用其他方式登录
-41. } else if (error.code === ErrorCode.ERROR_CODE_USER_CANCEL) {
-42. // 用户取消授权
-43. } else if (error.code === ErrorCode.ERROR_CODE_SYSTEM_SERVICE) {
-44. // 系统服务异常，请稍后重试或者尝试使用其他方式登录
-45. } else if (error.code === ErrorCode.ERROR_CODE_REQUEST_REFUSE) {
-46. // 重复请求，应用无需处理
-47. } else {
-48. // 应用登录失败，请尝试使用其他方式登录
-49. }
+32. // 错误处理
+33. function dealAllError(error: BusinessError<Object>): void {
+34. hilog.error(0x0000, 'testTag', `Failed to cancel. Code: ${error.code}, message: ${error.message}`);
+35. // 在应用登录涉及UI交互场景下，建议按照如下错误码指导提示用户
+36. if (error.code === ErrorCode.ERROR_CODE_LOGIN_OUT) {
+37. // 用户未登录华为账号，请登录华为账号并重试或者尝试使用其他方式登录
+38. } else if (error.code === ErrorCode.ERROR_CODE_NETWORK_ERROR) {
+39. // 网络异常，请检查当前网络状态并重试或者尝试使用其他方式登录
+40. } else if (error.code === ErrorCode.ERROR_CODE_INTERNAL_ERROR) {
+41. // 登录失败，请尝试使用其他方式登录
+42. } else if (error.code === ErrorCode.ERROR_CODE_USER_CANCEL) {
+43. // 用户取消授权
+44. } else if (error.code === ErrorCode.ERROR_CODE_SYSTEM_SERVICE) {
+45. // 系统服务异常，请稍后重试或者尝试使用其他方式登录
+46. } else if (error.code === ErrorCode.ERROR_CODE_REQUEST_REFUSE) {
+47. // 重复请求，应用无需处理
+48. } else {
+49. // 应用登录失败，请尝试使用其他方式登录
 50. }
+51. }
 
-52. export enum ErrorCode {
-53. // 账号未登录
-54. ERROR_CODE_LOGIN_OUT = 1001502001,
-55. // 网络错误
-56. ERROR_CODE_NETWORK_ERROR = 1001502005,
-57. // 内部错误
-58. ERROR_CODE_INTERNAL_ERROR = 1001502009,
-59. // 用户取消授权
-60. ERROR_CODE_USER_CANCEL = 1001502012,
-61. // 系统服务异常
-62. ERROR_CODE_SYSTEM_SERVICE = 12300001,
-63. // 重复请求
-64. ERROR_CODE_REQUEST_REFUSE = 1001500002
-65. }
+53. export enum ErrorCode {
+54. // 账号未登录
+55. ERROR_CODE_LOGIN_OUT = 1001502001,
+56. // 网络错误
+57. ERROR_CODE_NETWORK_ERROR = 1001502005,
+58. // 内部错误
+59. ERROR_CODE_INTERNAL_ERROR = 1001502009,
+60. // 用户取消授权
+61. ERROR_CODE_USER_CANCEL = 1001502012,
+62. // 系统服务异常
+63. ERROR_CODE_SYSTEM_SERVICE = 12300001,
+64. // 重复请求
+65. ERROR_CODE_REQUEST_REFUSE = 1001500002
+66. }
 ```
 
 ## AuthenticationErrorCode
@@ -1026,7 +1031,7 @@ executeRequest(request: AuthenticationRequest, callback: AsyncCallback<Authentic
 9. authRequest.scopes = ['openid'];
 10. authRequest.permissions = ['idtoken', 'serviceauthcode'];
 11. authRequest.forceAuthorization = true;
-12. authRequest.state = util.generateRandomUUID(); // 建议使用generateRandomUUID生成state
+12. authRequest.state = util.generateRandomUUID(); // 建议使用generateRandomUUID生成state，可用于一致性比对，防止跨站攻击
 13. authRequest.idTokenSignAlgorithm = authentication.IdTokenSignAlgorithm.PS256;
 
 15. // 执行授权请求，并处理结果
@@ -1041,50 +1046,51 @@ executeRequest(request: AuthenticationRequest, callback: AsyncCallback<Authentic
 24. const authorizationWithHuaweiIDResponse = data as authentication.AuthorizationWithHuaweiIDResponse;
 25. const state = authorizationWithHuaweiIDResponse.state;
 26. if (state && authRequest.state !== state) {
-27. hilog.error(0x0000, 'testTag', `Failed to authorize. The state is different, response state: ${state}`);
-28. return;
-29. }
-30. hilog.info(0x0000, 'testTag', 'Succeeded in authentication.');
-31. const authorizationWithHuaweiIDCredential = authorizationWithHuaweiIDResponse?.data;
-32. const idToken = authorizationWithHuaweiIDCredential?.idToken;
-33. const code = authorizationWithHuaweiIDCredential?.authorizationCode;
-34. // 开发者处理idToken, code等信息
-35. });
-36. } catch (error) {
-37. dealAllError(error);
-38. }
+27. // state不一致，可能为跨站攻击，需重新授权
+28. hilog.error(0x0000, 'testTag', `Failed to authorize. The state is different, response state: ${state}`);
+29. return;
+30. }
+31. hilog.info(0x0000, 'testTag', 'Succeeded in authentication.');
+32. const authorizationWithHuaweiIDCredential = authorizationWithHuaweiIDResponse?.data;
+33. const idToken = authorizationWithHuaweiIDCredential?.idToken;
+34. const code = authorizationWithHuaweiIDCredential?.authorizationCode;
+35. // 开发者处理idToken, code等信息
+36. });
+37. } catch (error) {
+38. dealAllError(error);
+39. }
 
-40. // 错误处理
-41. function dealAllError(error: BusinessError<Object>): void {
-42. hilog.error(0x0000, 'testTag', `Failed to obtain userInfo. Code: ${error.code}, message: ${error.message}`);
-43. // 在涉及UI交互场景下，建议按照如下错误码指导提示用户
-44. if (error.code === ErrorCode.ERROR_CODE_LOGIN_OUT) {
-45. // 用户未登录华为账号，请登录华为账号并重试
-46. } else if (error.code === ErrorCode.ERROR_CODE_NETWORK_ERROR) {
-47. // 网络异常，请检查当前网络状态并重试
-48. } else if (error.code === ErrorCode.ERROR_CODE_USER_CANCEL) {
-49. // 用户取消授权
-50. } else if (error.code === ErrorCode.ERROR_CODE_SYSTEM_SERVICE) {
-51. // 系统服务异常，请稍后重试
-52. } else if (error.code === ErrorCode.ERROR_CODE_REQUEST_REFUSE) {
-53. // 重复请求，应用无需处理
-54. } else {
-55. // 获取用户信息失败，请稍后重试
-56. }
+41. // 错误处理
+42. function dealAllError(error: BusinessError<Object>): void {
+43. hilog.error(0x0000, 'testTag', `Failed to obtain userInfo. Code: ${error.code}, message: ${error.message}`);
+44. // 在涉及UI交互场景下，建议按照如下错误码指导提示用户
+45. if (error.code === ErrorCode.ERROR_CODE_LOGIN_OUT) {
+46. // 用户未登录华为账号，请登录华为账号并重试
+47. } else if (error.code === ErrorCode.ERROR_CODE_NETWORK_ERROR) {
+48. // 网络异常，请检查当前网络状态并重试
+49. } else if (error.code === ErrorCode.ERROR_CODE_USER_CANCEL) {
+50. // 用户取消授权
+51. } else if (error.code === ErrorCode.ERROR_CODE_SYSTEM_SERVICE) {
+52. // 系统服务异常，请稍后重试
+53. } else if (error.code === ErrorCode.ERROR_CODE_REQUEST_REFUSE) {
+54. // 重复请求，应用无需处理
+55. } else {
+56. // 获取用户信息失败，请稍后重试
 57. }
+58. }
 
-59. export enum ErrorCode {
-60. // 账号未登录
-61. ERROR_CODE_LOGIN_OUT = 1001502001,
-62. // 网络错误
-63. ERROR_CODE_NETWORK_ERROR = 1001502005,
-64. // 用户取消授权
-65. ERROR_CODE_USER_CANCEL = 1001502012,
-66. // 系统服务异常
-67. ERROR_CODE_SYSTEM_SERVICE = 12300001,
-68. // 重复请求
-69. ERROR_CODE_REQUEST_REFUSE = 1001500002
-70. }
+60. export enum ErrorCode {
+61. // 账号未登录
+62. ERROR_CODE_LOGIN_OUT = 1001502001,
+63. // 网络错误
+64. ERROR_CODE_NETWORK_ERROR = 1001502005,
+65. // 用户取消授权
+66. ERROR_CODE_USER_CANCEL = 1001502012,
+67. // 系统服务异常
+68. ERROR_CODE_SYSTEM_SERVICE = 12300001,
+69. // 重复请求
+70. ERROR_CODE_REQUEST_REFUSE = 1001500002
+71. }
 ```
 
 ### executeRequest
@@ -1148,7 +1154,7 @@ executeRequest(request: AuthenticationRequest): Promise<AuthenticationResponse>
 9. authRequest.scopes = ['openid'];
 10. authRequest.permissions = ['idtoken', 'serviceauthcode'];
 11. authRequest.forceAuthorization = true;
-12. authRequest.state = util.generateRandomUUID(); // 建议使用generateRandomUUID生成state
+12. authRequest.state = util.generateRandomUUID(); // 建议使用generateRandomUUID生成state，可用于一致性比对，防止跨站攻击
 13. authRequest.idTokenSignAlgorithm = authentication.IdTokenSignAlgorithm.PS256;
 
 15. // 执行授权请求，并处理结果
@@ -1159,52 +1165,53 @@ executeRequest(request: AuthenticationRequest): Promise<AuthenticationResponse>
 20. const authorizationWithHuaweiIDResponse = data as authentication.AuthorizationWithHuaweiIDResponse;
 21. const state = authorizationWithHuaweiIDResponse.state;
 22. if (state && authRequest.state !== state) {
-23. hilog.error(0x0000, 'testTag', `Failed to authorize. The state is different, response state: ${state}`);
-24. return;
-25. }
-26. hilog.info(0x0000, 'testTag', 'Succeeded in authentication.');
-27. const authorizationWithHuaweiIDCredential = authorizationWithHuaweiIDResponse?.data;
-28. const idToken = authorizationWithHuaweiIDCredential?.idToken;
-29. const code = authorizationWithHuaweiIDCredential?.authorizationCode;
-30. // 开发者处理idToken, code等信息
-31. }).catch((err: BusinessError) => {
-32. dealAllError(err);
-33. });
-34. } catch (error) {
-35. dealAllError(error);
-36. }
+23. // state不一致，可能为跨站攻击，需重新授权
+24. hilog.error(0x0000, 'testTag', `Failed to authorize. The state is different, response state: ${state}`);
+25. return;
+26. }
+27. hilog.info(0x0000, 'testTag', 'Succeeded in authentication.');
+28. const authorizationWithHuaweiIDCredential = authorizationWithHuaweiIDResponse?.data;
+29. const idToken = authorizationWithHuaweiIDCredential?.idToken;
+30. const code = authorizationWithHuaweiIDCredential?.authorizationCode;
+31. // 开发者处理idToken, code等信息
+32. }).catch((err: BusinessError) => {
+33. dealAllError(err);
+34. });
+35. } catch (error) {
+36. dealAllError(error);
+37. }
 
-38. // 错误处理
-39. function dealAllError(error: BusinessError): void {
-40. hilog.error(0x0000, 'testTag', `Failed to obtain userInfo. Code: ${error.code}, message: ${error.message}`);
-41. // 在涉及UI交互场景下，建议按照如下错误码指导提示用户
-42. if (error.code === ErrorCode.ERROR_CODE_LOGIN_OUT) {
-43. // 用户未登录华为账号，请登录华为账号并重试
-44. } else if (error.code === ErrorCode.ERROR_CODE_NETWORK_ERROR) {
-45. // 网络异常，请检查当前网络状态并重试
-46. } else if (error.code === ErrorCode.ERROR_CODE_USER_CANCEL) {
-47. // 用户取消授权
-48. } else if (error.code === ErrorCode.ERROR_CODE_SYSTEM_SERVICE) {
-49. // 系统服务异常，请稍后重试
-50. } else if (error.code === ErrorCode.ERROR_CODE_REQUEST_REFUSE) {
-51. // 重复请求，应用无需处理
-52. } else {
-53. // 获取用户信息失败，请稍后重试
-54. }
+39. // 错误处理
+40. function dealAllError(error: BusinessError): void {
+41. hilog.error(0x0000, 'testTag', `Failed to obtain userInfo. Code: ${error.code}, message: ${error.message}`);
+42. // 在涉及UI交互场景下，建议按照如下错误码指导提示用户
+43. if (error.code === ErrorCode.ERROR_CODE_LOGIN_OUT) {
+44. // 用户未登录华为账号，请登录华为账号并重试
+45. } else if (error.code === ErrorCode.ERROR_CODE_NETWORK_ERROR) {
+46. // 网络异常，请检查当前网络状态并重试
+47. } else if (error.code === ErrorCode.ERROR_CODE_USER_CANCEL) {
+48. // 用户取消授权
+49. } else if (error.code === ErrorCode.ERROR_CODE_SYSTEM_SERVICE) {
+50. // 系统服务异常，请稍后重试
+51. } else if (error.code === ErrorCode.ERROR_CODE_REQUEST_REFUSE) {
+52. // 重复请求，应用无需处理
+53. } else {
+54. // 获取用户信息失败，请稍后重试
 55. }
+56. }
 
-57. export enum ErrorCode {
-58. // 账号未登录
-59. ERROR_CODE_LOGIN_OUT = 1001502001,
-60. // 网络错误
-61. ERROR_CODE_NETWORK_ERROR = 1001502005,
-62. // 用户取消授权
-63. ERROR_CODE_USER_CANCEL = 1001502012,
-64. // 系统服务异常
-65. ERROR_CODE_SYSTEM_SERVICE = 12300001,
-66. // 重复请求
-67. ERROR_CODE_REQUEST_REFUSE = 1001500002
-68. }
+58. export enum ErrorCode {
+59. // 账号未登录
+60. ERROR_CODE_LOGIN_OUT = 1001502001,
+61. // 网络错误
+62. ERROR_CODE_NETWORK_ERROR = 1001502005,
+63. // 用户取消授权
+64. ERROR_CODE_USER_CANCEL = 1001502012,
+65. // 系统服务异常
+66. ERROR_CODE_SYSTEM_SERVICE = 12300001,
+67. // 重复请求
+68. ERROR_CODE_REQUEST_REFUSE = 1001500002
+69. }
 ```
 
 ## AuthenticationRequest
@@ -1317,7 +1324,7 @@ PhonePC/2in1TabletTVWearable
 4. const request: authentication.StateRequest = {
 5. idType: authentication.IdType.UNION_ID,
 6. idValue: '<可通过华为账号登录接口获取>' // 该值可以通过华为账号登录接口获取
-7. }
+7. };
 ```
 
 ## StateResult
@@ -1349,7 +1356,7 @@ PhonePC/2in1TabletTVWearable
 6. const stateRequest: authentication.StateRequest = {
 7. idType: authentication.IdType.UNION_ID,
 8. idValue: '<可通过华为账号登录接口获取>' // 该值可以通过华为账号登录接口获取
-9. }
+9. };
 10. try {
 11. // 执行获取华为账号登录状态请求，并处理结果
 12. new authentication.HuaweiIDProvider().getHuaweiIDState(stateRequest).then((data: authentication.StateResult) => {
@@ -1358,7 +1365,7 @@ PhonePC/2in1TabletTVWearable
 15. // 处理state
 16. }).catch((err: BusinessError) => {
 17. dealAllError(err);
-18. })
+18. });
 19. } catch (error) {
 20. dealAllError(error);
 21. }
@@ -1415,7 +1422,7 @@ PhonePC/2in1TabletTVWearable
 5. idType: authentication.IdType.UNION_ID,
 6. idValue: '<可通过华为账号登录接口获取>', // 该值可以通过华为账号登录接口获取
 7. mobileNumber: '+86xxxxxxxxxxx' // 通过华为账号一键登录功能获取到的明文手机号
-8. }
+8. };
 ```
 
 ## ConsistencyResult
@@ -1446,7 +1453,7 @@ PhonePC/2in1TabletTVWearable
 7. idType: authentication.IdType.UNION_ID,
 8. idValue: '<可通过华为账号登录接口获取>', // 该值可以通过华为账号登录接口获取
 9. mobileNumber: '+86xxxxxxxxxxx' // 通过华为账号一键登录功能获取到的明文手机号
-10. }
+10. };
 11. try {
 12. // 执行获取手机号一致性状态请求，并处理结果
 13. new authentication.HuaweiIDProvider().getMobileNumberConsistency(consistencyRequest)
@@ -1457,7 +1464,7 @@ PhonePC/2in1TabletTVWearable
 18. })
 19. .catch((err: BusinessError) => {
 20. dealAllError(err);
-21. })
+21. });
 22. } catch (error) {
 23. dealAllError(error);
 24. }

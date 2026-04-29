@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/push-msg-
 title: 消息频控
 breadcrumb: API参考 > 应用服务 > Push Kit（推送服务） > REST API > 场景化消息 > 消息频控
 category: harmonyos-references
-scraped_at: 2026-04-28T08:18:33+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:15f6b328f589da8d622b79ec5d841e166610b57fce84c1cc5c2c4091c3183455
+scraped_at: 2026-04-29T14:09:10+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:b6ea826bbfa2931595805373218392e4fc6f7e9d5130d220f1e36e208b899db1
 ---
 
 Push Kit消息频控包括场景化消息频控、设备消息频控、测试消息频控和消息推送速率管控，当超过了某个频控规则限制会返回对应的[回执状态码](../harmonyos-guides/push-msg-receipt.md#回执状态码)。
@@ -16,9 +16,9 @@ Push Kit消息频控包括场景化消息频控、设备消息频控、测试消
 
 ## 场景化消息频控
 
-为了给用户提供更好的体验，营造清朗网络空间，华为推送服务根据不同的[推送场景](../harmonyos-guides/push-scenes-send.md)，设置了多条频控规则。
+为了给用户提供更好的体验，营造清朗网络空间，华为Push Kit根据不同的[推送场景](../harmonyos-guides/push-scenes-send.md)，设置了多条频控规则。
 
-若场景化消息超出对应的频控规则限制，推送服务将向您的回执服务器返回**256结果码**，详情请参考[回执状态码](../harmonyos-guides/push-msg-receipt.md#回执状态码)。
+若场景化消息超出对应的频控规则限制，Push Kit将向您的回执服务器返回**256结果码**，详情请参考[回执状态码](../harmonyos-guides/push-msg-receipt.md#回执状态码)。
 
 具体频控规则见下表：
 
@@ -30,19 +30,19 @@ Push Kit消息频控包括场景化消息频控、设备消息频控、测试消
 
 ## 设备消息频控
 
-除了单个场景的次数限制外，推送服务还对单个设备下的单个应用一天内所能接收的所有消息总量进行了限制，系统会根据现网使用场景和流量进行管控，不合理的使用场景系统会进行频控，并且推送服务将向您的回执服务器返回**102结果码**，详情请参考[回执状态码](../harmonyos-guides/push-msg-receipt.md#回执状态码)。
+除了单个场景的次数限制外，Push Kit还对单个设备下的单个应用一天内所能接收的所有消息总量进行了限制，系统会根据现网使用场景和流量进行管控，不合理的使用场景系统会进行频控，并且Push Kit将向您的回执服务器返回**102结果码**，详情请参考[回执状态码](../harmonyos-guides/push-msg-receipt.md#回执状态码)。
 
 ## 测试消息频控
 
 为了方便开发者测试消息，您可以设置pushOptions.[testMessage](push-scenariozed-api-request-param.md#pushoptions)为true，发送测试消息。
 
-每个项目每日可推送总共1000条测试消息（非设备级，所有设备共用1000条）且不受[场景化消息频控](push-msg-freq-control.md#场景化消息频控)。若项目当天已推送超过1000条测试消息，则会进行消息限流（限流直到次日后恢复），并且推送服务将向您的回执服务器返回**256结果码**，详情请参考[回执状态码](../harmonyos-guides/push-msg-receipt.md#回执状态码)。
+每个项目每日可推送总共1000条测试消息（非设备级，所有设备共用1000条）且不受[场景化消息频控](push-msg-freq-control.md#场景化消息频控)。若项目当天已推送超过1000条测试消息，则会进行消息限流（限流直到次日后恢复），并且Push Kit将向您的回执服务器返回**256结果码**，详情请参考[回执状态码](../harmonyos-guides/push-msg-receipt.md#回执状态码)。
 
 ## 消息推送速率管控
 
 消息推送速率是指应用QPS（每秒推送的设备个数），当应用QPS超过阈值时请求会返回[HTTP响应码](push-scenariozed-api-response.md#http响应码) 503。应用QPS与应用类型相关，并且随着应用在华为终端上的月活跃用户人数增加而增长，您可以登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)查询到应用QPS阈值，查询路径：“开发与服务 > 推送服务 > 配置 > 选择应用”，选择需要查看的应用，下方即可查到对应的QPS阈值。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/Dv_4fbvdQuC2fppnlRJ_hg/zh-cn_image_0000002552801260.png?HW-CC-KV=V1&HW-CC-Date=20260428T001831Z&HW-CC-Expire=86400&HW-CC-Sign=1845E61C26C14DD9CD707927B3C1A2109CEA18A8F516AC31DAE76A1F8850EB29)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/E9TBmWfoQlCfjvAp1f4e3w/zh-cn_image_0000002589247243.png?HW-CC-KV=V1&HW-CC-Date=20260429T060909Z&HW-CC-Expire=86400&HW-CC-Sign=22B92F6C6184F3F1BA82EFAD7C2F268D61D8E4A1DA29E02F484F76CF16CA4BD1)
 
 说明
 

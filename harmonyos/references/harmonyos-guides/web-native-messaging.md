@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-native-me
 title: 使用WebNativeMessagingExtensionAbility组件实现浏览器扩展和应用通信场景
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 使用WebNativeMessagingExtensionAbility组件实现浏览器扩展和应用通信场景
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:41:07+08:00
+scraped_at: 2026-04-29T13:29:31+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:c597a7166e96815c770ef713d6b249dca482bc278f2539cdfcedcc7866972d06
+content_hash: sha256:06e842bb11a13d33059d7b273e3fbf5223db5b2a2242c9bd54b64081b54c36a6
 ---
 
 ## 概述
@@ -16,7 +16,7 @@ content_hash: sha256:c597a7166e96815c770ef713d6b249dca482bc278f2539cdfcedcc78669
 
 浏览器扩展通过[WebExtensions runtime API](https://developer.mozilla.org/zh-CN/docs/Mozilla/Add-ons/WebExtensions/API/runtime)连接WebNativeMessagingExtensionAbility，双方通信是通过共享pipe文件描述符后调用IO接口实现。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/0pRWDre4QN6sRqvrLffLiA/zh-cn_image_0000002583438293.png?HW-CC-KV=V1&HW-CC-Date=20260427T234105Z&HW-CC-Expire=86400&HW-CC-Sign=33A4F7C110178A344472BDB1DCC50B037499EAC459882DDC654001F2565451F1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/JsFYnZqSTsSjptRtTJZWLw/zh-cn_image_0000002558605084.png?HW-CC-KV=V1&HW-CC-Date=20260429T052929Z&HW-CC-Expire=86400&HW-CC-Sign=72882719BD9048AAC220BEDDA2F9FDBE96B85EA411B3F1D1D5CC800253A53B2A)
 
 说明
 
@@ -43,7 +43,7 @@ WebNativeMessagingExtensionAbility组件当前仅支持2in1设备。
 
 ### 整体流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/oH8u3dp8RdCxlGTVAvXjUA/zh-cn_image_0000002552958248.png?HW-CC-KV=V1&HW-CC-Date=20260427T234105Z&HW-CC-Expire=86400&HW-CC-Sign=9A130013154C70C7F878FA09C00687B72611CC92BBA95949BDF2953B64AC064B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/VzeK4dOyTx6oAxnv7-j4gw/zh-cn_image_0000002589324609.png?HW-CC-KV=V1&HW-CC-Date=20260429T052929Z&HW-CC-Expire=86400&HW-CC-Sign=9D78DFFF213BDA05D4F16B636D2C228CE201B562C1DA44A6158242F0785C9FE9)
 
 * **流程：**
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/toybox
 title: toybox
 breadcrumb: 指南 > 系统 > 调测调优 > 调试命令 > 命令行工具 > toybox
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:45:28+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:09e105d5ccc6241124b2e848034ccba80e41d893537b870fe8d0c75c684823bc
+scraped_at: 2026-04-29T13:34:24+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:c4e9dad810224a9fdd2782e946020ba9beb05f2ba7c7ed45ab1513284c4002c4
 ---
 
 toybox 是一个轻量级的Linux命令行工具集合，它将常用的Linux命令行工具合并到一个单独的可执行文件中。
@@ -252,7 +252,7 @@ toybox的执行方式有两种：
 | expand | 根据输入参数将制表符展开为空格。  usage: expand [-t TABLIST] [FILE...] |
 | fallocate | 让文件系统给文件预留空间。  usage: fallocate [-o OFFSET] -l SIZE FILE |
 | file | 检查给定的文件并描述其内容类型。  usage: file [-bhLs] [FILE...] |
-| find | 在目录中搜索匹配的文件。  usage: find [-HL] [DIR...] [[/topic/body/section/table/tgroup/tbody/row/entry/p/options {""}) ] (options] |
+| find | 在目录中搜索匹配的文件。  usage: find [-HL] [DIR...] [<options>] |
 | flock | 管理文件锁（advisory lock）。  usage: flock [-sxun] fd |
 | fmt | 将输入重新格式化为给定行长的换行，保留现有的缩进级别，写入标准输出设备。  usage: fmt [-w WIDTH] [FILE...] |
 | gunzip | 解压文件。如果没有文件，则从标准输入设备解压到标准输出设备。成功后，输入文件将被删除并替换为新的没有.gz后缀的文件。  usage: gunzip [-cfkt] [FILE...] |

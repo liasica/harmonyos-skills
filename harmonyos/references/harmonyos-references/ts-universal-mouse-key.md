@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 鼠标事件
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用事件 > 基础输入事件 > 鼠标事件
 category: harmonyos-references
-scraped_at: 2026-04-28T08:00:53+08:00
+scraped_at: 2026-04-29T13:51:05+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:54a05d18348ca57f79730d42bb9db348a0626635aaf950c793fdeddf9360d70e
+content_hash: sha256:cab1346a36d221f24ddd0a2a3a18f8fa389f696b9dce5480608ef429b0dfbdf1
 ---
 
 在鼠标的单个动作触发多个事件时，事件的顺序是固定的，鼠标事件默认冒泡。
@@ -164,4 +164,4 @@ PhonePC/2in1TabletTVWearable
 
 鼠标点击时：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/5LYnE2P2T5OoIbH0SqXHLQ/zh-cn_image_0000002583479463.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000052Z&HW-CC-Expire=86400&HW-CC-Sign=D459C1C9673B85D3EAC58CF977EC69DF24E6CEB61B5DFBF62C7A25735F5E5941)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/JNvN6TD5SpCRSEolGo0SXw/zh-cn_image_0000002558606326.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055103Z&HW-CC-Expire=86400&HW-CC-Sign=C7FF565AB843ED4B4E9A47BD4DCDDF1D807FF4A3BF64BA16B461655B5B7017A2)

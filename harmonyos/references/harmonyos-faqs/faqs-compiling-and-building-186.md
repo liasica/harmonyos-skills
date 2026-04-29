@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: 报错“ENOENT: no such file or directory, uv_cwd”
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 报错“ENOENT: no such file or directory, uv_cwd”
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:29:48+08:00
+scraped_at: 2026-04-29T14:21:06+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:380f0550642d505b6af0c526715061dd4959339fddb01a4d9885a61bae37f4ac
+content_hash: sha256:c7cb467ac57b00b979b88876da24e2dc423c378a9d0742a4be68a604bfa1c430
 ---
 
 **问题现象**
 
 先构建一次项目，然后强制删除项目后手动恢复再重新构建，出现类似如下报错：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/xYeXm0dQTp2GpEvvY3XErg/zh-cn_image_0000002342994341.png?HW-CC-KV=V1&HW-CC-Date=20260428T002946Z&HW-CC-Expire=86400&HW-CC-Sign=3C1E44878A8545CF63A1F267A0EA32105A420275D86B1B361D038339D461493F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/xYeXm0dQTp2GpEvvY3XErg/zh-cn_image_0000002342994341.png?HW-CC-KV=V1&HW-CC-Date=20260429T062104Z&HW-CC-Expire=86400&HW-CC-Sign=7A90058BEE5BB912E3E5CA04FFCDC8C559C427FCE6AACBB5E67BD2662DD79AC5)
 
 **问题原因**
 

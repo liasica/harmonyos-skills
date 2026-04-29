@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-repo
 title: ohpm-repo restore
 breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 相关命令 > ohpm-repo restore
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:54:42+08:00
+scraped_at: 2026-04-29T13:44:41+08:00
 doc_updated_at: 2026-01-15
-content_hash: sha256:da8f7e22ed36b7654002c3ee2ed77619e4c2e0451b6a4138501b294424c30a75
+content_hash: sha256:2cf0b717824f460c4b63adc969bfc21e54e0685560459ce03e133924b1e3e9fe
 ---
 
 将ohpm-repo pack打包产物替换<deploy\_root>目录下相应文件，重启服务。
@@ -52,4 +52,4 @@ content_hash: sha256:da8f7e22ed36b7654002c3ee2ed77619e4c2e0451b6a4138501b294424c
 
 结果示例：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/nhxzIWqITE-JL4e-22agjw/zh-cn_image_0000002561831217.png?HW-CC-KV=V1&HW-CC-Date=20260427T235441Z&HW-CC-Expire=86400&HW-CC-Sign=ACEB9D353E8658F27709CB782B05B46A50B040621FAA9854221011F173235487 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/Hs-aAkTuSbGfnca7QLancQ/zh-cn_image_0000002561831217.png?HW-CC-KV=V1&HW-CC-Date=20260429T054439Z&HW-CC-Expire=86400&HW-CC-Sign=F75FDF2A508C076292E2988683A9A054FF8CFEF38AE34934AAAB319BC25B0904 "点击放大")

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pdf-pdfview-a
 title: 批注
 breadcrumb: 指南 > 应用服务 > PDF Kit（PDF服务） > PdfView预览组件 > 批注
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:50:24+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:623cd3ecad844e307e6a2d8e7d539197155e7ff8462d7fd604b972765fd6de28
+scraped_at: 2026-04-29T13:39:47+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:15d440e5695c125ecd7ae11188ca0ee4be8adbac15b33cf4d4a275b628c7317b
 ---
 
 进入批注模式，目前支持高亮、下划线和删除线类型批注。
@@ -33,7 +33,7 @@ content_hash: sha256:623cd3ecad844e307e6a2d8e7d539197155e7ff8462d7fd604b972765fd
 
 9. aboutToAppear(): void {
 10. // 确保沙箱目录有input.pdf文档
-11. let filePath = this.context.filesDir + '/input.pdf';
+11. let filePath = this.context.resourceDir + '/input.pdf';
 12. (async () => {
 13. let loadResult: pdfService.ParseResult = await this.pdfController.loadDocument(filePath);
 14. if (pdfService.ParseResult.PARSE_SUCCESS === loadResult) {

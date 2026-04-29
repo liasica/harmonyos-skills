@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/share-har
 title: harmonyShare（华为分享）
 breadcrumb: API参考 > 应用服务 > Share Kit（分享服务） > ArkTS API > harmonyShare（华为分享）
 category: harmonyos-references
-scraped_at: 2026-04-28T08:18:42+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:262e12cba7d8f3a2fdb146d64fcb75b39383a436942b003db638d02508a8eff6
+scraped_at: 2026-04-29T14:09:20+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:4b83aa7397a9c5f1993609e56398ec7decf6a86d01c0fba32f803219680ae678
 ---
 
 本模块提供华为分享的事件注册。
@@ -241,7 +241,7 @@ receive(receiveUri: string, callback: ReceiveCallback): Promise<void>
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| receiveUri | string | 是 | 沙箱接收时，存放数据的目录（必须真实存在）。  \*\*说明：\*\*Share Kit会在传输开始前获取此目录的授权，在数据传输完成后自动撤销授权，建议使用已存在的空文件夹，保护信息安全。 |
+| receiveUri | string | 是 | 沙箱接收时，存放数据的目录（必须真实存在）。  **说明：** Share Kit会在传输开始前获取此目录的授权，在数据传输完成后自动撤销授权，建议使用已存在的空文件夹，保护信息安全。 |
 | callback | [ReceiveCallback](share-harmony-share.md#receivecallback) | 是 | 沙箱接收的回调。 |
 
 **返回值：**

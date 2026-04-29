@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/app-compati
 title: 应用集成三方库（har包）的兼容性指导
 breadcrumb: 版本说明 > 应用兼容性说明 > 应用开发中的兼容性场景开发指导 > 应用集成三方库（har包）的兼容性指导
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:37:18+08:00
+scraped_at: 2026-04-29T13:25:21+08:00
 doc_updated_at: 2026-01-21
-content_hash: sha256:856677edafd12c159e16e28e75ad221db4e4691794ea045b0ea333792a93b75e
+content_hash: sha256:e783b0b80c05631c0d8e0a12c495c5029354abf6044ac6f1421840df290bd36a
 ---
 
 在应用开发过程中，会依赖大量的三方库，应用hap和三方库har之间因为SDK版本属性字段的版本差异，会存在各种兼容性问题。
@@ -28,7 +28,7 @@ content_hash: sha256:856677edafd12c159e16e28e75ad221db4e4691794ea045b0ea333792a9
 
 （3）因为在应用集成三方库的时候，最终打包到应用中的targetSdkVersion字段值会填写为应用的值，则为了让三方库被应用集成后的行为一致，需要进行一些适配。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/cnitJJoXQ-yHWu1NicdyYA/zh-cn_image_0000002409845612.png?HW-CC-KV=V1&HW-CC-Date=20260427T233717Z&HW-CC-Expire=86400&HW-CC-Sign=7F10F16667776715C45D45D62F51FF04E0331ACE3533F672B2624F6EF797AC8C "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/cnitJJoXQ-yHWu1NicdyYA/zh-cn_image_0000002409845612.png?HW-CC-KV=V1&HW-CC-Date=20260429T052520Z&HW-CC-Expire=86400&HW-CC-Sign=34DE46FB4DB2174234CB4B379D2D348AA6C6612445589393AB66812194F73C16 "点击放大")
 
 ```
 1. import bundleManager from '@ohos.bundle.bundleManager';

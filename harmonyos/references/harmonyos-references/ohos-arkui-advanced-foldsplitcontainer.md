@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: FoldSplitContainer
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > FoldSplitContainer
 category: harmonyos-references
-scraped_at: 2026-04-28T08:02:37+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:b63a44df81f938f25eb096e0b6ccca58c5fdfff59f64ad7bfe88010e0cdf1d4a
+scraped_at: 2026-04-29T13:53:00+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:c524a58e69f293fdeb61f5bcd5de8639be11e529cf8290c28828d7a9e7dd9bbc
 ---
 
 FoldSplitContainer分栏布局，实现折叠屏二分栏、三分栏在展开态、悬停态以及折叠态的区域控制。
@@ -37,7 +37,7 @@ FoldSplitContainer({primary: Callback<void>, secondary: Callback<void>, extra?: 
 
 实现折叠屏二分栏、三分栏在展开态、悬停态以及折叠态的区域控制的分栏布局。
 
-**装饰器类型：**@Component
+**装饰器类型：**[@Component](../harmonyos-guides/arkts-create-custom-components.md#component)
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -45,13 +45,13 @@ FoldSplitContainer({primary: Callback<void>, secondary: Callback<void>, extra?: 
 
 | 名称 | 类型 | 必填 | 装饰器类型 | 说明 |
 | --- | --- | --- | --- | --- |
-| primary | Callback<void> | 是 | @BuilderParam | 主要区域回调函数。 |
-| secondary | Callback<void> | 是 | @BuilderParam | 次要区域回调函数。 |
-| extra | Callback<void> | 否 | @BuilderParam | 扩展区域回调函数，不传入的情况，没有对应区域。 |
-| expandedLayoutOptions | [ExpandedRegionLayoutOptions](ohos-arkui-advanced-foldsplitcontainer.md#expandedregionlayoutoptions) | 是 | @Prop | 展开态布局信息。 |
-| hoverModeLayoutOptions | [HoverModeRegionLayoutOptions](ohos-arkui-advanced-foldsplitcontainer.md#hovermoderegionlayoutoptions) | 是 | @Prop | 悬停态布局信息。 |
-| foldedLayoutOptions | [FoldedRegionLayoutOptions](ohos-arkui-advanced-foldsplitcontainer.md#foldedregionlayoutoptions) | 是 | @Prop | 折叠态布局信息。 |
-| animationOptions | [AnimateParam](ts-explicit-animation.md#animateparam对象说明) | null | 否 | @Prop | 设置动画效果相关的参数，null表示关闭动效。 |
+| primary | Callback<void> | 是 | [@BuilderParam](../harmonyos-guides/arkts-builderparam.md) | 主要区域回调函数。 |
+| secondary | Callback<void> | 是 | [@BuilderParam](../harmonyos-guides/arkts-builderparam.md) | 次要区域回调函数。 |
+| extra | Callback<void> | 否 | [@BuilderParam](../harmonyos-guides/arkts-builderparam.md) | 扩展区域回调函数，不传入的情况，没有对应区域。 |
+| expandedLayoutOptions | [ExpandedRegionLayoutOptions](ohos-arkui-advanced-foldsplitcontainer.md#expandedregionlayoutoptions) | 是 | [@Prop](../harmonyos-guides/arkts-prop.md) | 展开态布局信息。 |
+| hoverModeLayoutOptions | [HoverModeRegionLayoutOptions](ohos-arkui-advanced-foldsplitcontainer.md#hovermoderegionlayoutoptions) | 是 | [@Prop](../harmonyos-guides/arkts-prop.md) | 悬停态布局信息。 |
+| foldedLayoutOptions | [FoldedRegionLayoutOptions](ohos-arkui-advanced-foldsplitcontainer.md#foldedregionlayoutoptions) | 是 | [@Prop](../harmonyos-guides/arkts-prop.md) | 折叠态布局信息。 |
+| animationOptions | [AnimateParam](ts-explicit-animation.md#animateparam对象说明) | null | 否 | [@Prop](../harmonyos-guides/arkts-prop.md) | 设置动画效果相关的参数，null表示关闭动效。 |
 | onHoverStatusChange | [OnHoverStatusChangeHandler](ohos-arkui-advanced-foldsplitcontainer.md#onhoverstatuschangehandler) | 否 | - | 折叠屏进入或退出悬停模式时触发的回调函数。 |
 
 ## ExpandedRegionLayoutOptions
@@ -210,18 +210,20 @@ PhonePC/2in1TabletTVWearable
 26. build() {
 27. RelativeContainer() {
 28. FoldSplitContainer({
-29. primary: () => {
-30. this.privateRegion()
-31. },
-32. secondary: () => {
-33. this.secondaryRegion()
-34. }
-35. })
+29. // 主要区域回调函数
+30. primary: () => {
+31. this.privateRegion()
+32. },
+33. // 次要区域回调函数
+34. secondary: () => {
+35. this.secondaryRegion()
 36. }
-37. .height('100%')
-38. .width('100%')
-39. }
-40. }
+37. })
+38. }
+39. .height('100%')
+40. .width('100%')
+41. }
+42. }
 ```
 
 | 折叠态 | 展开态 | 悬停态 |
@@ -271,30 +273,33 @@ PhonePC/2in1TabletTVWearable
 36. build() {
 37. RelativeContainer() {
 38. FoldSplitContainer({
-39. primary: () => {
-40. this.privateRegion()
-41. },
-42. secondary: () => {
-43. this.secondaryRegion()
-44. },
-45. extra: () => {
-46. this.extraRegion()
-47. }
-48. })
-49. }
-50. .height('100%')
-51. .width('100%')
+39. // 主要区域回调函数
+40. primary: () => {
+41. this.privateRegion()
+42. },
+43. // 次要区域回调函数
+44. secondary: () => {
+45. this.secondaryRegion()
+46. },
+47. // 扩展区域回调函数
+48. extra: () => {
+49. this.extraRegion()
+50. }
+51. })
 52. }
-53. }
+53. .height('100%')
+54. .width('100%')
+55. }
+56. }
 ```
 
 | 折叠态 | 展开态 | 悬停态 |
 | --- | --- | --- |
 |  |  |  |
 
-### 示例3（展开态布局信息）
+### 示例3 （FoldSplitContainer折叠态、悬停态、展开态各项配置行为展示）
 
-该示例通过配置ExpandedRegionLayoutOptions实现折叠屏展开态的布局信息。
+该示例通过配置ExpandedRegionLayoutOptions实现折叠屏折叠态、悬停态、展开态布局信息的配置。示例代码中this.MajorRegion()，this.MinorRegion()，this.ExtraRegion()组件划分出来的主要区域，次要区域和扩展区域。这些区域使用Region为封装的区域组件（Region）实现， 其中RadioOptions为封装的切换单选框组件，SwitchOption为封装的切换开关组件。
 
 ```
 1. import {
@@ -402,291 +407,300 @@ PhonePC/2in1TabletTVWearable
 103. @Entry
 104. @Component
 105. struct Index {
-106. @State expandedRegionLayoutOptions: ExpandedRegionLayoutOptions = {
-107. horizontalSplitRatio: PresetSplitRatio.LAYOUT_3V2,
-108. verticalSplitRatio: PresetSplitRatio.LAYOUT_1V1,
-109. isExtraRegionPerpendicular: true,
-110. extraRegionPosition: ExtraRegionPosition.TOP
-111. };
-112. @State foldingRegionLayoutOptions: HoverModeRegionLayoutOptions = {
-113. horizontalSplitRatio: PresetSplitRatio.LAYOUT_3V2,
-114. showExtraRegion: false,
-115. extraRegionPosition: ExtraRegionPosition.TOP
-116. };
-117. @State foldedRegionLayoutOptions: FoldedRegionLayoutOptions = {
-118. verticalSplitRatio: PresetSplitRatio.LAYOUT_1V1
-119. };
+106. // 展开态布局配置
+107. @State expandedRegionLayoutOptions: ExpandedRegionLayoutOptions = {
+108. horizontalSplitRatio: PresetSplitRatio.LAYOUT_3V2,
+109. verticalSplitRatio: PresetSplitRatio.LAYOUT_1V1,
+110. isExtraRegionPerpendicular: true,
+111. extraRegionPosition: ExtraRegionPosition.TOP
+112. };
+113. // 悬停态布局配置
+114. @State foldingRegionLayoutOptions: HoverModeRegionLayoutOptions = {
+115. horizontalSplitRatio: PresetSplitRatio.LAYOUT_3V2,
+116. showExtraRegion: false,
+117. extraRegionPosition: ExtraRegionPosition.TOP
+118. };
+119. // 折叠态布局配置
+120. @State foldedRegionLayoutOptions: FoldedRegionLayoutOptions = {
+121. verticalSplitRatio: PresetSplitRatio.LAYOUT_1V1
+122. };
 
-121. @Builder
-122. MajorRegion() {
-123. Region({
-124. title: "折叠态配置",
-125. compBackgroundColor: "rgba(255, 0, 0, 0.1)",
-126. }) {
-127. Column({ space: 4 }) {
-128. RadioOption({
-129. label: "折叠态垂直高度比",
-130. value: this.foldedRegionLayoutOptions.verticalSplitRatio,
-131. options: [
-132. {
-133. label: "1:1",
-134. value: PresetSplitRatio.LAYOUT_1V1,
-135. onChecked: () => {
-136. this.foldedRegionLayoutOptions.verticalSplitRatio = PresetSplitRatio.LAYOUT_1V1
-137. }
-138. },
-139. {
-140. label: "2:3",
-141. value: PresetSplitRatio.LAYOUT_2V3,
-142. onChecked: () => {
-143. this.foldedRegionLayoutOptions.verticalSplitRatio = PresetSplitRatio.LAYOUT_2V3
-144. }
-145. },
-146. {
-147. label: "3:2",
-148. value: PresetSplitRatio.LAYOUT_3V2,
-149. onChecked: () => {
-150. this.foldedRegionLayoutOptions.verticalSplitRatio = PresetSplitRatio.LAYOUT_3V2
-151. }
-152. },
-153. {
-154. label: "未定义",
-155. value: undefined,
-156. onChecked: () => {
-157. this.foldedRegionLayoutOptions.verticalSplitRatio = undefined
-158. }
-159. }
-160. ]
-161. })
+124. @Builder
+125. // 主要区域自定义组件
+126. MajorRegion() {
+127. Region({
+128. title: "折叠态配置",
+129. compBackgroundColor: "rgba(255, 0, 0, 0.1)",
+130. }) {
+131. Column({ space: 4 }) {
+132. RadioOption({
+133. label: "折叠态垂直高度比",
+134. value: this.foldedRegionLayoutOptions.verticalSplitRatio,
+135. options: [
+136. {
+137. label: "1:1",
+138. value: PresetSplitRatio.LAYOUT_1V1,
+139. onChecked: () => {
+140. this.foldedRegionLayoutOptions.verticalSplitRatio = PresetSplitRatio.LAYOUT_1V1
+141. }
+142. },
+143. {
+144. label: "2:3",
+145. value: PresetSplitRatio.LAYOUT_2V3,
+146. onChecked: () => {
+147. this.foldedRegionLayoutOptions.verticalSplitRatio = PresetSplitRatio.LAYOUT_2V3
+148. }
+149. },
+150. {
+151. label: "3:2",
+152. value: PresetSplitRatio.LAYOUT_3V2,
+153. onChecked: () => {
+154. this.foldedRegionLayoutOptions.verticalSplitRatio = PresetSplitRatio.LAYOUT_3V2
+155. }
+156. },
+157. {
+158. label: "未定义",
+159. value: undefined,
+160. onChecked: () => {
+161. this.foldedRegionLayoutOptions.verticalSplitRatio = undefined
 162. }
-163. .constraintSize({ minHeight: "100%" })
-164. }
-165. }
+163. }
+164. ]
+165. })
+166. }
+167. .constraintSize({ minHeight: "100%" })
+168. }
+169. }
 
-167. @Builder
-168. MinorRegion() {
-169. Region({
-170. title: "悬停态配置",
-171. compBackgroundColor: "rgba(0, 255, 0, 0.1)"
-172. }) {
-173. Column({ space: 4 }) {
-174. RadioOption({
-175. label: "悬停态水平宽度比",
-176. value: this.foldingRegionLayoutOptions.horizontalSplitRatio,
-177. options: [
-178. {
-179. label: "1:1",
-180. value: PresetSplitRatio.LAYOUT_1V1,
-181. onChecked: () => {
-182. this.foldingRegionLayoutOptions.horizontalSplitRatio = PresetSplitRatio.LAYOUT_1V1
-183. }
-184. },
-185. {
-186. label: "2:3",
-187. value: PresetSplitRatio.LAYOUT_2V3,
-188. onChecked: () => {
-189. this.foldingRegionLayoutOptions.horizontalSplitRatio = PresetSplitRatio.LAYOUT_2V3
-190. }
-191. },
-192. {
-193. label: "3:2",
-194. value: PresetSplitRatio.LAYOUT_3V2,
-195. onChecked: () => {
-196. this.foldingRegionLayoutOptions.horizontalSplitRatio = PresetSplitRatio.LAYOUT_3V2
-197. }
-198. },
-199. {
-200. label: "未定义",
-201. value: undefined,
-202. onChecked: () => {
-203. this.foldingRegionLayoutOptions.horizontalSplitRatio = undefined
-204. }
-205. },
-206. ]
-207. })
+171. @Builder
+172. // 次要区域自定义组件
+173. MinorRegion() {
+174. Region({
+175. title: "悬停态配置",
+176. compBackgroundColor: "rgba(0, 255, 0, 0.1)"
+177. }) {
+178. Column({ space: 4 }) {
+179. RadioOption({
+180. label: "悬停态水平宽度比",
+181. value: this.foldingRegionLayoutOptions.horizontalSplitRatio,
+182. options: [
+183. {
+184. label: "1:1",
+185. value: PresetSplitRatio.LAYOUT_1V1,
+186. onChecked: () => {
+187. this.foldingRegionLayoutOptions.horizontalSplitRatio = PresetSplitRatio.LAYOUT_1V1
+188. }
+189. },
+190. {
+191. label: "2:3",
+192. value: PresetSplitRatio.LAYOUT_2V3,
+193. onChecked: () => {
+194. this.foldingRegionLayoutOptions.horizontalSplitRatio = PresetSplitRatio.LAYOUT_2V3
+195. }
+196. },
+197. {
+198. label: "3:2",
+199. value: PresetSplitRatio.LAYOUT_3V2,
+200. onChecked: () => {
+201. this.foldingRegionLayoutOptions.horizontalSplitRatio = PresetSplitRatio.LAYOUT_3V2
+202. }
+203. },
+204. {
+205. label: "未定义",
+206. value: undefined,
+207. onChecked: () => {
+208. this.foldingRegionLayoutOptions.horizontalSplitRatio = undefined
+209. }
+210. },
+211. ]
+212. })
 
-209. SwitchOption({
-210. label: "悬停态是否显示扩展区",
-211. value: this.foldingRegionLayoutOptions.showExtraRegion,
-212. onChange: (checked) => {
-213. this.foldingRegionLayoutOptions.showExtraRegion = checked;
-214. }
-215. })
+214. SwitchOption({
+215. label: "悬停态是否显示扩展区",
+216. value: this.foldingRegionLayoutOptions.showExtraRegion,
+217. onChange: (checked) => {
+218. this.foldingRegionLayoutOptions.showExtraRegion = checked;
+219. }
+220. })
 
-217. if (this.foldingRegionLayoutOptions.showExtraRegion) {
-218. RadioOption({
-219. label: "悬停态扩展区位置",
-220. value: this.foldingRegionLayoutOptions.extraRegionPosition,
-221. options: [
-222. {
-223. label: "顶部",
-224. value: ExtraRegionPosition.TOP,
-225. onChecked: () => {
-226. this.foldingRegionLayoutOptions.extraRegionPosition = ExtraRegionPosition.TOP
-227. }
-228. },
-229. {
-230. label: "底部",
-231. value: ExtraRegionPosition.BOTTOM,
-232. onChecked: () => {
-233. this.foldingRegionLayoutOptions.extraRegionPosition = ExtraRegionPosition.BOTTOM
-234. }
-235. },
-236. {
-237. label: "未定义",
-238. value: undefined,
-239. onChecked: () => {
-240. this.foldingRegionLayoutOptions.extraRegionPosition = undefined
-241. }
-242. },
-243. ]
-244. })
-245. }
+222. if (this.foldingRegionLayoutOptions.showExtraRegion) {
+223. RadioOption({
+224. label: "悬停态扩展区位置",
+225. value: this.foldingRegionLayoutOptions.extraRegionPosition,
+226. options: [
+227. {
+228. label: "顶部",
+229. value: ExtraRegionPosition.TOP,
+230. onChecked: () => {
+231. this.foldingRegionLayoutOptions.extraRegionPosition = ExtraRegionPosition.TOP
+232. }
+233. },
+234. {
+235. label: "底部",
+236. value: ExtraRegionPosition.BOTTOM,
+237. onChecked: () => {
+238. this.foldingRegionLayoutOptions.extraRegionPosition = ExtraRegionPosition.BOTTOM
+239. }
+240. },
+241. {
+242. label: "未定义",
+243. value: undefined,
+244. onChecked: () => {
+245. this.foldingRegionLayoutOptions.extraRegionPosition = undefined
 246. }
-247. .constraintSize({ minHeight: "100%" })
-248. }
-249. }
+247. },
+248. ]
+249. })
+250. }
+251. }
+252. .constraintSize({ minHeight: "100%" })
+253. }
+254. }
 
-251. @Builder
-252. ExtraRegion() {
-253. Region({
-254. title: "展开态配置",
-255. compBackgroundColor: "rgba(0, 0, 255, 0.1)"
-256. }) {
-257. Column({ space: 4 }) {
-258. RadioOption({
-259. label: "展开态水平宽度比",
-260. value: this.expandedRegionLayoutOptions.horizontalSplitRatio,
-261. options: [
-262. {
-263. label: "1:1",
-264. value: PresetSplitRatio.LAYOUT_1V1,
-265. onChecked: () => {
-266. this.expandedRegionLayoutOptions.horizontalSplitRatio = PresetSplitRatio.LAYOUT_1V1
-267. }
-268. },
-269. {
-270. label: "2:3",
-271. value: PresetSplitRatio.LAYOUT_2V3,
-272. onChecked: () => {
-273. this.expandedRegionLayoutOptions.horizontalSplitRatio = PresetSplitRatio.LAYOUT_2V3
-274. }
-275. },
-276. {
-277. label: "3:2",
-278. value: PresetSplitRatio.LAYOUT_3V2,
-279. onChecked: () => {
-280. this.expandedRegionLayoutOptions.horizontalSplitRatio = PresetSplitRatio.LAYOUT_3V2
-281. }
-282. },
-283. {
-284. label: "未定义",
-285. value: undefined,
-286. onChecked: () => {
-287. this.expandedRegionLayoutOptions.horizontalSplitRatio = undefined
-288. }
-289. },
-290. ]
-291. })
+256. @Builder
+257. // 扩展区域自定义组件
+258. ExtraRegion() {
+259. Region({
+260. title: "展开态配置",
+261. compBackgroundColor: "rgba(0, 0, 255, 0.1)"
+262. }) {
+263. Column({ space: 4 }) {
+264. RadioOption({
+265. label: "展开态水平宽度比",
+266. value: this.expandedRegionLayoutOptions.horizontalSplitRatio,
+267. options: [
+268. {
+269. label: "1:1",
+270. value: PresetSplitRatio.LAYOUT_1V1,
+271. onChecked: () => {
+272. this.expandedRegionLayoutOptions.horizontalSplitRatio = PresetSplitRatio.LAYOUT_1V1
+273. }
+274. },
+275. {
+276. label: "2:3",
+277. value: PresetSplitRatio.LAYOUT_2V3,
+278. onChecked: () => {
+279. this.expandedRegionLayoutOptions.horizontalSplitRatio = PresetSplitRatio.LAYOUT_2V3
+280. }
+281. },
+282. {
+283. label: "3:2",
+284. value: PresetSplitRatio.LAYOUT_3V2,
+285. onChecked: () => {
+286. this.expandedRegionLayoutOptions.horizontalSplitRatio = PresetSplitRatio.LAYOUT_3V2
+287. }
+288. },
+289. {
+290. label: "未定义",
+291. value: undefined,
+292. onChecked: () => {
+293. this.expandedRegionLayoutOptions.horizontalSplitRatio = undefined
+294. }
+295. },
+296. ]
+297. })
 
-293. RadioOption({
-294. label: "展开态垂直高度比",
-295. value: this.expandedRegionLayoutOptions.verticalSplitRatio,
-296. options: [
-297. {
-298. label: "1:1",
-299. value: PresetSplitRatio.LAYOUT_1V1,
-300. onChecked: () => {
-301. this.expandedRegionLayoutOptions.verticalSplitRatio = PresetSplitRatio.LAYOUT_1V1
-302. }
-303. },
-304. {
-305. label: "2:3",
-306. value: PresetSplitRatio.LAYOUT_2V3,
-307. onChecked: () => {
-308. this.expandedRegionLayoutOptions.verticalSplitRatio = PresetSplitRatio.LAYOUT_2V3
-309. }
-310. },
-311. {
-312. label: "3:2",
-313. value: PresetSplitRatio.LAYOUT_3V2,
-314. onChecked: () => {
-315. this.expandedRegionLayoutOptions.verticalSplitRatio = PresetSplitRatio.LAYOUT_3V2
-316. }
-317. },
-318. {
-319. label: "未定义",
-320. value: undefined,
-321. onChecked: () => {
-322. this.expandedRegionLayoutOptions.verticalSplitRatio = undefined
-323. }
-324. }
-325. ]
-326. })
+299. RadioOption({
+300. label: "展开态垂直高度比",
+301. value: this.expandedRegionLayoutOptions.verticalSplitRatio,
+302. options: [
+303. {
+304. label: "1:1",
+305. value: PresetSplitRatio.LAYOUT_1V1,
+306. onChecked: () => {
+307. this.expandedRegionLayoutOptions.verticalSplitRatio = PresetSplitRatio.LAYOUT_1V1
+308. }
+309. },
+310. {
+311. label: "2:3",
+312. value: PresetSplitRatio.LAYOUT_2V3,
+313. onChecked: () => {
+314. this.expandedRegionLayoutOptions.verticalSplitRatio = PresetSplitRatio.LAYOUT_2V3
+315. }
+316. },
+317. {
+318. label: "3:2",
+319. value: PresetSplitRatio.LAYOUT_3V2,
+320. onChecked: () => {
+321. this.expandedRegionLayoutOptions.verticalSplitRatio = PresetSplitRatio.LAYOUT_3V2
+322. }
+323. },
+324. {
+325. label: "未定义",
+326. value: undefined,
+327. onChecked: () => {
+328. this.expandedRegionLayoutOptions.verticalSplitRatio = undefined
+329. }
+330. }
+331. ]
+332. })
 
-328. SwitchOption({
-329. label: "展开态扩展区是否上下贯穿",
-330. value: this.expandedRegionLayoutOptions.isExtraRegionPerpendicular,
-331. onChange: (checked) => {
-332. this.expandedRegionLayoutOptions.isExtraRegionPerpendicular = checked;
-333. }
-334. })
+334. SwitchOption({
+335. label: "展开态扩展区是否上下贯穿",
+336. value: this.expandedRegionLayoutOptions.isExtraRegionPerpendicular,
+337. onChange: (checked) => {
+338. this.expandedRegionLayoutOptions.isExtraRegionPerpendicular = checked;
+339. }
+340. })
 
-336. if (!this.expandedRegionLayoutOptions.isExtraRegionPerpendicular) {
-337. RadioOption({
-338. label: "展开态扩展区位置",
-339. value: this.expandedRegionLayoutOptions.extraRegionPosition,
-340. options: [
-341. {
-342. label: "顶部",
-343. value: ExtraRegionPosition.TOP,
-344. onChecked: () => {
-345. this.expandedRegionLayoutOptions.extraRegionPosition = ExtraRegionPosition.TOP
-346. }
-347. },
-348. {
-349. label: "底部",
-350. value: ExtraRegionPosition.BOTTOM,
-351. onChecked: () => {
-352. this.expandedRegionLayoutOptions.extraRegionPosition = ExtraRegionPosition.BOTTOM
-353. }
-354. },
-355. {
-356. label: "未定义",
-357. value: undefined,
-358. onChecked: () => {
-359. this.expandedRegionLayoutOptions.extraRegionPosition = undefined
-360. }
-361. },
-362. ]
-363. })
-364. }
-365. }
-366. .constraintSize({ minHeight: "100%" })
-367. }
-368. }
+342. if (!this.expandedRegionLayoutOptions.isExtraRegionPerpendicular) {
+343. RadioOption({
+344. label: "展开态扩展区位置",
+345. value: this.expandedRegionLayoutOptions.extraRegionPosition,
+346. options: [
+347. {
+348. label: "顶部",
+349. value: ExtraRegionPosition.TOP,
+350. onChecked: () => {
+351. this.expandedRegionLayoutOptions.extraRegionPosition = ExtraRegionPosition.TOP
+352. }
+353. },
+354. {
+355. label: "底部",
+356. value: ExtraRegionPosition.BOTTOM,
+357. onChecked: () => {
+358. this.expandedRegionLayoutOptions.extraRegionPosition = ExtraRegionPosition.BOTTOM
+359. }
+360. },
+361. {
+362. label: "未定义",
+363. value: undefined,
+364. onChecked: () => {
+365. this.expandedRegionLayoutOptions.extraRegionPosition = undefined
+366. }
+367. },
+368. ]
+369. })
+370. }
+371. }
+372. .constraintSize({ minHeight: "100%" })
+373. }
+374. }
 
-370. build() {
-371. Column() {
-372. FoldSplitContainer({
-373. primary: () => {
-374. this.MajorRegion()
-375. },
-376. secondary: () => {
-377. this.MinorRegion()
-378. },
-379. extra: () => {
-380. this.ExtraRegion()
-381. },
-382. expandedLayoutOptions: this.expandedRegionLayoutOptions,
-383. hoverModeLayoutOptions: this.foldingRegionLayoutOptions,
-384. foldedLayoutOptions: this.foldedRegionLayoutOptions,
-385. })
-386. }
-387. .width("100%")
-388. .height("100%")
-389. }
-390. }
+376. build() {
+377. Column() {
+378. FoldSplitContainer({
+379. // 主要区域回调函数
+380. primary: () => {
+381. this.MajorRegion()
+382. },
+383. // 次要区域回调函数
+384. secondary: () => {
+385. this.MinorRegion()
+386. },
+387. // 扩展区域回调函数
+388. extra: () => {
+389. this.ExtraRegion()
+390. },
+391. expandedLayoutOptions: this.expandedRegionLayoutOptions,
+392. hoverModeLayoutOptions: this.foldingRegionLayoutOptions,
+393. foldedLayoutOptions: this.foldedRegionLayoutOptions,
+394. })
+395. }
+396. .width("100%")
+397. .height("100%")
+398. }
+399. }
 ```
 
 | 折叠态 | 展开态 | 悬停态 |

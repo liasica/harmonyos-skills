@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 显隐控制
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 基础属性 > 显隐控制
 category: harmonyos-references
-scraped_at: 2026-04-28T08:01:00+08:00
+scraped_at: 2026-04-29T13:51:13+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:937fbbb4016a2bc84fceed4045487d5c361b6713f970d06a06037316b2f198ac
+content_hash: sha256:7e20df72c3b6dec04a3b41c8ab4c2461e2909d89e181fd96b080e09a2e102e4b
 ---
 
 控制组件是否可见。
@@ -71,4 +71,4 @@ PhonePC/2in1TabletTVWearable
 22. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/ySn4IrvZSeuQz4tsIDjf5w/zh-cn_image_0000002552959476.png?HW-CC-KV=V1&HW-CC-Date=20260428T000059Z&HW-CC-Expire=86400&HW-CC-Sign=1EC7D2B35CFD6F416A6FB7CD4586FA92C0025165ED7BA41ACA04A427EE967059)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/D0o7mhrRQBiTzkytwpTh_g/zh-cn_image_0000002558765998.png?HW-CC-KV=V1&HW-CC-Date=20260429T055112Z&HW-CC-Expire=86400&HW-CC-Sign=88E4A0A3C99BA93FCD76C2421E4B01E3B059172E10C87B1B33234DB1BBD291EC)

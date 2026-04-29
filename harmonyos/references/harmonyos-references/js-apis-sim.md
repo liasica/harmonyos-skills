@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-s
 title: @ohos.telephony.sim (SIM卡管理)
 breadcrumb: API参考 > 系统 > 网络 > Telephony Kit（蜂窝通信服务） > ArkTS API > @ohos.telephony.sim (SIM卡管理)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:09:20+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:1dca040e026de36454f226ce27c68c6d14ce126cf487159e0a3bda8c5dd8e005
+scraped_at: 2026-04-29T14:00:00+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:048345b215760b867b7080840c84f63c4d5e81245ca5a2e14d68fa9016c7df6e
 ---
 
 SIM卡管理模块提供了SIM卡管理的基础能力，包括获取指定卡槽SIM卡的ISO国家码、归属PLMN号、服务提供商名称、SIM卡状态、卡类型、是否插卡、是否激活等。
@@ -187,7 +187,7 @@ hasOperatorPrivileges(slotId: number, callback: AsyncCallback<boolean>): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | slotId | number | 是 | 卡槽ID。  - 0：卡槽1。  - 1：卡槽2。 |
-| callback | AsyncCallback<boolean> | 是 | 回调函数。 返回检查应用(调用者)是否已被授予运营商权限。  - true:授权。  - false：未授权。 |
+| callback | AsyncCallback<boolean> | 是 | 回调函数。 返回检查应用（调用者）是否已被授予运营商权限。  - true:授权。  - false：未授权（未插入SIM卡或停用）。 |
 
 **错误码：**
 
@@ -232,7 +232,7 @@ hasOperatorPrivileges(slotId: number): Promise<boolean>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<boolean> | 以Promise形式返回检查应用(调用者)是否已被授予运营商权限。 |
+| Promise<boolean> | 以Promise形式返回检查应用(调用者)是否已被授予运营商权限。  - true:授权。  - false：未授权（未插入SIM卡或停用）。 |
 
 **错误码：**
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/graphics-
 title: ArkTS API错误码
 breadcrumb: API参考 > 图形 > Graphics Accelerate Kit（图形加速服务） > ArkTS API > ArkTS API错误码
 category: harmonyos-references
-scraped_at: 2026-04-28T08:15:39+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:139669e7df3532682bcc776b3b28ffbbd266476aab6b92a8caf7b938d0a9563b
+scraped_at: 2026-04-29T14:06:16+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:6bb4cda2879c456d53326d3ad72adf68a3def02e0020bae8263133caa413ac04
 ---
 
 说明
@@ -120,7 +120,7 @@ The application task queue is full.
 
 **处理步骤**
 
-请在任务队列有空间后再提交任务。
+请在任务队列有空间后再提交任务，等待当前下载任务执行完成。
 
 ## 1016600005 资源加速ExtensionAbility方法执行超时
 

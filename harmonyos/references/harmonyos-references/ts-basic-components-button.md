@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: Button
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 按钮与选择 > Button
 category: harmonyos-references
-scraped_at: 2026-04-28T08:01:41+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:3774a257c0d63bde5de25fd0dbc249add5ade30808b23322f123376395c43580
+scraped_at: 2026-04-29T13:51:57+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:3372ef6407b421e8a012f02bb257538597be179ba00ab007122ed89e967cac59
 ---
 
 按钮组件，可快速创建不同样式的按钮。
@@ -428,7 +428,7 @@ Button组件的label文本及其字体样式。
 | maxFontSize | number | [ResourceStr](ts-types.md#resourcestr) | 否 | 是 | 设置label文本最大显示字号。需配合minFontSize以及maxLines或布局大小限制使用。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
 | heightAdaptivePolicy | [TextHeightAdaptivePolicy](ts-appendix-enums.md#textheightadaptivepolicy10) | 否 | 是 | 设置label文本自适应高度的方式。  默认值：TextHeightAdaptivePolicy.MAX\_LINES\_FIRST  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
 | font | [Font](ts-types.md#font) | 否 | 是 | 设置label文本字体样式。  默认值：  {  size:'16.0fp',  weight:FontWeight.Medium,  style:FontStyle.Normal,  family:'HarmonyOS Sans'  }  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
-| textAlign23+ | [TextAlign](ts-appendix-enums.md#textalign) | 否 | 是 | 设置label文本在水平方向上的对齐方式。当使用子节点的Text组件设置label时，此属性不生效，实际的文本对齐方式由子节点Text组件的textAlign属性决定。  Wearable设备默认值为TextAlign.Center，其他设备默认值为TextAlign.Start。  **元服务API：** 从API version 23开始，该接口支持在元服务中使用。 |
+| textAlign23+ | [TextAlign](ts-appendix-enums.md#textalign) | 否 | 是 | 设置label文本在水平方向上的对齐方式，label文本被截断时生效。当使用子节点的Text组件设置label时，此属性不生效，实际的文本对齐方式由子节点Text组件的textAlign属性决定。  Wearable设备默认值为TextAlign.Center，其他设备默认值为TextAlign.Start。  **元服务API：** 从API version 23开始，该接口支持在元服务中使用。 |
 
 ## ButtonStyleMode11+枚举说明
 
@@ -587,7 +587,7 @@ PhonePC/2in1TabletTVWearable
 53. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/1yPooOl0QsC3Lpmsog1LgA/zh-cn_image_0000002552959692.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000139Z&HW-CC-Expire=86400&HW-CC-Sign=839F8FBCA3E1097EBF02C7254227D660F48E61B6818063F251EB751051A28C55)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/85VBxrQ3QRu08liVE-XN3g/zh-cn_image_0000002558766214.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055151Z&HW-CC-Expire=86400&HW-CC-Sign=966E96578FFAA3FC3843094BB9FC1A06141197972DB26A6C8C2330378329C3AA)
 
 ### 示例2 （为按钮添加渲染控制）
 
@@ -619,7 +619,7 @@ PhonePC/2in1TabletTVWearable
 23. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/ruBqMgKqTr6NM6oznOEbAg/zh-cn_image_0000002583479693.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000139Z&HW-CC-Expire=86400&HW-CC-Sign=834D56036524251E3D0E507E47785AC45801E61B404EE0A7318987E71E04837E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/_OTr5QypRjeyFbVC2owGHA/zh-cn_image_0000002558606556.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055151Z&HW-CC-Expire=86400&HW-CC-Sign=CEE8383F9C28F8383F7AE77649E428C08C78F664AA22373ABE3E11C79D4D1CD8)
 
 ### 示例3 （设置按钮文本样式）
 
@@ -661,7 +661,7 @@ PhonePC/2in1TabletTVWearable
 33. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/ZF6gi0LEQeOxvYmH3BTKUA/zh-cn_image_0000002552800044.png?HW-CC-KV=V1&HW-CC-Date=20260428T000139Z&HW-CC-Expire=86400&HW-CC-Sign=EDDBCB015E0E3D76B9EF811F8D31C91B7D30CA30AF02AE78B87C15E93D6FC710)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/QJ2sCKrZRY6TF4UTJgRn3A/zh-cn_image_0000002589326083.png?HW-CC-KV=V1&HW-CC-Date=20260429T055151Z&HW-CC-Expire=86400&HW-CC-Sign=6EFC2006540D2638CFCE8D3A23417FBD99B72FE3C228B0E74291864A62DD0B5E)
 
 ### 示例4（设置不同尺寸按钮的重要程度）
 
@@ -700,7 +700,7 @@ PhonePC/2in1TabletTVWearable
 30. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/MvgeWYuQTmG8Pyt5a3T_TQ/zh-cn_image_0000002583439739.jpeg?HW-CC-KV=V1&HW-CC-Date=20260428T000139Z&HW-CC-Expire=86400&HW-CC-Sign=8CDBC6A13686F7BDAF7D20C16131D8E3F1A0E484D8C0FA0EF177FCC836CA7B08)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/ZcNVd1tLTrm6Qg_c4GHN7w/zh-cn_image_0000002589246025.jpeg?HW-CC-KV=V1&HW-CC-Date=20260429T055151Z&HW-CC-Expire=86400&HW-CC-Sign=4377952B1BDFAC2D5560567E77C62E74C1746E4A2E05FBBE36FB2B1EF7D8EC15)
 
 ### 示例5（设置按钮的角色）
 
@@ -730,7 +730,7 @@ PhonePC/2in1TabletTVWearable
 21. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/TRUaTxBRR6G7RTqwXxPU_w/zh-cn_image_0000002552959694.jpeg?HW-CC-KV=V1&HW-CC-Date=20260428T000139Z&HW-CC-Expire=86400&HW-CC-Sign=D8C05761BE364BDC145E5CE50961925BF2C93F4A5447C294246072EBEE9B503F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/9fYcfZsFQOycmU2lDgGfrQ/zh-cn_image_0000002558766216.jpeg?HW-CC-KV=V1&HW-CC-Date=20260429T055151Z&HW-CC-Expire=86400&HW-CC-Sign=2CDBF5A5D4AABD098B8B3083FB503FF77BB09B59C5C737CD3F5439A533936B67)
 
 ### 示例6（设置自定义样式按钮）
 
@@ -801,7 +801,7 @@ PhonePC/2in1TabletTVWearable
 62. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/bSzz_Ip8SXOc_9jx2adhrQ/zh-cn_image_0000002583479695.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000139Z&HW-CC-Expire=86400&HW-CC-Sign=6C55D3F186105BAE56C409604968C9ACFA66A791ED69F50B3346E7A1E8E6BBE2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/5LIqlnUYTUefOA4nybNeTQ/zh-cn_image_0000002558606558.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055151Z&HW-CC-Expire=86400&HW-CC-Sign=13C475EC09FFF25004C0FAF0931B74C4BA7DB72706BFFD819F0BE860E8B949AF)
 
 ### 示例7（设置圆角矩形按钮）
 
@@ -843,7 +843,7 @@ PhonePC/2in1TabletTVWearable
 33. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/Zebtv7gcRr2UTenQzvD7YA/zh-cn_image_0000002552800046.jpeg?HW-CC-KV=V1&HW-CC-Date=20260428T000139Z&HW-CC-Expire=86400&HW-CC-Sign=9630FB931150D85EB86BC2C1C05EE99E5869469307DDEC2217CD201C54F1D73B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/RnEWgQD9S5CYGJoswZgicQ/zh-cn_image_0000002589326085.jpeg?HW-CC-KV=V1&HW-CC-Date=20260429T055151Z&HW-CC-Expire=86400&HW-CC-Sign=0A566B8EB53707F9838B1CC9A1A83C6ED21AF6FCAAAF30DA5D948863790193E8)
 
 ### 示例8（设置label文本水平对齐方式）
 
@@ -869,4 +869,4 @@ PhonePC/2in1TabletTVWearable
 15. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/aw8r7yPiRqSCNVbek0PjEQ/zh-cn_image_0000002583439741.jpeg?HW-CC-KV=V1&HW-CC-Date=20260428T000139Z&HW-CC-Expire=86400&HW-CC-Sign=753C8B94D20C6375FB599C8C8052B93CE67E34C1F95B7299CAC963EB54476397)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/_dX4yBEMTrOk7wbsRosV1A/zh-cn_image_0000002589246027.jpeg?HW-CC-KV=V1&HW-CC-Date=20260429T055151Z&HW-CC-Expire=86400&HW-CC-Sign=847E844977B08E85CB7E2D1B2964F74686D1B0DEC9114A639D6FC1C112FB40DC)

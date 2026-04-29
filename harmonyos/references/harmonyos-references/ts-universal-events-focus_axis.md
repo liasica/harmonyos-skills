@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 焦点轴事件
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用事件 > 基础输入事件 > 焦点轴事件
 category: harmonyos-references
-scraped_at: 2026-04-28T08:00:54+08:00
+scraped_at: 2026-04-29T13:51:06+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:6eb4b8e3e5dde04b42734ae88ff7db7b762b46359361fd8eb8122aa73b25e153
+content_hash: sha256:6db344360892d883c1a5ba2543d9e0a0ef1f0cd7fd1277a5ad599fa6d1d529d9
 ---
 
 焦点轴事件是指在与游戏手柄交互时，通过十字按键或者操作杆上报的轴事件，此轴事件通过获得焦点的组件分发并回调给应用。若组件默认可获焦，如Button，则不需要额外设置属性。若组件在默认情况下不可获焦，如Text和Image，可以通过将[focusable](ts-universal-attributes-focus.md#focusable)属性设置为true来启用焦点轴事件。
@@ -102,4 +102,4 @@ PhonePC/2in1TabletTVWearable
 
 游戏手柄摇杆移动时：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/0ZFHP-b5R1G7rd7vtvsewQ/zh-cn_image_0000002552799816.png?HW-CC-KV=V1&HW-CC-Date=20260428T000053Z&HW-CC-Expire=86400&HW-CC-Sign=AE8A3CEBAFAEE115608BAEE2CD7CE2E85853DBDC24F9D9614DF8938D3A9F2B0B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/4RO1jyBmT-W6QJffRckZKw/zh-cn_image_0000002589325855.png?HW-CC-KV=V1&HW-CC-Date=20260429T055105Z&HW-CC-Expire=86400&HW-CC-Sign=1FC9125D19122AE28C21419EC4DE352AF5102AF4F423016A869550CE8E21F236)

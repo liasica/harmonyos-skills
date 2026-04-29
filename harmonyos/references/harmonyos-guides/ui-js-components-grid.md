@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-compone
 title: 栅格布局
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 常见组件开发指导 > 栅格布局
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:40:31+08:00
+scraped_at: 2026-04-29T13:28:52+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:b33a8906b22bc0799fabf74363176f28a979563990bf45c187ec65df17a171de
+content_hash: sha256:264c17471c5541e634576137bef2732f52037e878538335c26697f3e70517f56
 ---
 
 栅格布局容器根节点，使用grid-row与grid-col进行栅格布局。API具体描述请参考[grid-container](../harmonyos-references/js-components-grid-container.md)。
@@ -37,7 +37,7 @@ content_hash: sha256:b33a8906b22bc0799fabf74363176f28a979563990bf45c187ec65df17a
 8. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/tGiMii3NRSOq7Cyne9E4gA/zh-cn_image_0000002552798488.png?HW-CC-KV=V1&HW-CC-Date=20260427T234030Z&HW-CC-Expire=86400&HW-CC-Sign=AFBE7563F60B9F13A9C7DCE4AAF57A313F38B0EBA3D140DA07A10D59E5500FA7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/boJVN_LJTMujJ9h5Os-aow/zh-cn_image_0000002558764628.png?HW-CC-KV=V1&HW-CC-Date=20260429T052851Z&HW-CC-Expire=86400&HW-CC-Sign=D3BAF1A5A42A13271631C940D521C703FC69CC0957AA9248540174EEC915F6E5)
 
 说明
 
@@ -106,7 +106,7 @@ grid-container仅支持grid-row为子组件。
 29. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/1J3NVeEJQEqwmX3NE7CqGA/zh-cn_image_0000002583438183.gif?HW-CC-KV=V1&HW-CC-Date=20260427T234030Z&HW-CC-Expire=86400&HW-CC-Sign=08E8907B50BEB86381723B8926B1A3127B484DF446E426DAA9B5BB1D10A2B478)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/cFCQEMzbSRy8o3-bLz_NaA/zh-cn_image_0000002558604972.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052851Z&HW-CC-Expire=86400&HW-CC-Sign=EE4C7495D239EB3FC762A4AA9522CDCD9987DB0E58DEA8971F28C2942D773068)
 
 ## 添加grid-col
 
@@ -162,7 +162,7 @@ grid-container仅支持grid-row为子组件。
 13. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/LkmSjPxlTa2MLy_LESKIrA/zh-cn_image_0000002552958138.png?HW-CC-KV=V1&HW-CC-Date=20260427T234030Z&HW-CC-Expire=86400&HW-CC-Sign=8C4089A647A66165CAF7DC50CA4240072C701635D1F3F0BD87B5289ACC24388C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/_aVqZM9LQtSnsYg5kWlISQ/zh-cn_image_0000002589324499.png?HW-CC-KV=V1&HW-CC-Date=20260429T052851Z&HW-CC-Expire=86400&HW-CC-Sign=B37A520A110FA05D8B513431E715E0AB856186681ED2128026D27C6AD25FA1B1)
 
 说明
 
@@ -237,4 +237,4 @@ grid-row仅支持grid-col为子组件，只能在grid-col组件中添加填充�
 26. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/zuYCOYN8TTi0kNyIT5FVlg/zh-cn_image_0000002583478139.gif?HW-CC-KV=V1&HW-CC-Date=20260427T234030Z&HW-CC-Expire=86400&HW-CC-Sign=CE7E78742121502A9D2D801900BE55936B91B4BA10722B5CABB30A4563BA9FC9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/2j0MvD1qQze2BOoQURiXJg/zh-cn_image_0000002589244437.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052851Z&HW-CC-Expire=86400&HW-CC-Sign=26980450CFE82BFBF54ED1EC5A0D22B6F18E291C09CC635C73EB9D686DEC460F)

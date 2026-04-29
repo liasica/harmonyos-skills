@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-increment
 title: 增量调试
 breadcrumb: 指南 > 编写与调试应用 > 应用调试 > 代码调试 > 增量调试
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:56:52+08:00
+scraped_at: 2026-04-29T13:46:48+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:ba6f3f4a698decf169b5c60cb380308cf35127ed47717e5e776345fe93d324b6
+content_hash: sha256:6cc33e492f97f3248a2611d385dd66834d5f1c9e93bab991a852310f4b3b83da
 ---
 
 对于大型应用来说，每次修改代码后需要重新构建、推包、安装，整个流程耗时较长。针对该场景，在DevEco Studio和命令行场景中分别提供增量运行调试功能，支持开发者在真机上调试应用时，修改代码后，会识别出代码差异，构建增量包，增量运行调试时只推送增量包，减少大型应用调试推包时间。
@@ -18,12 +18,12 @@ C++代码增量调试支持API Version 11及以上版本Stage模型的工程；A
 
 ### 调试C++代码
 
-1. 在工具栏中，选择调试的设备，并单击**Run**![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/2agpq9DRRgGIqM1qgvy3fQ/zh-cn_image_0000002561833247.png?HW-CC-KV=V1&HW-CC-Date=20260427T235651Z&HW-CC-Expire=86400&HW-CC-Sign=79DF10520D73C678FA17F9E32E7073F8444DDC9086B5091DD895202B91BABFC4)或**Debug** ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/g91YKMD7QTK2ag4mdGRmVA/zh-cn_image_0000002530753334.png?HW-CC-KV=V1&HW-CC-Date=20260427T235651Z&HW-CC-Expire=86400&HW-CC-Sign=5F583BED0811774468F439446E991D0B940894FD48C2135E4AA6D30CEE29E472)启动工程。
-2. 在修改完代码后，点击**Apply Changes**![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/B0UJD0XuTyu6wGwQhZjVSw/zh-cn_image_0000002530913316.png?HW-CC-KV=V1&HW-CC-Date=20260427T235651Z&HW-CC-Expire=86400&HW-CC-Sign=0BDA5EA5ED1DADD77B9B146933CAA3AF063A49FB28EC37BED05FE526D23B2B16)推送增量包安装至设备。
+1. 在工具栏中，选择调试的设备，并单击**Run**![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/E-qzKXGSRPCSOcGX2YknLg/zh-cn_image_0000002561833247.png?HW-CC-KV=V1&HW-CC-Date=20260429T054647Z&HW-CC-Expire=86400&HW-CC-Sign=BBC48103297430193BAC5751E799E8EBE7265D906620900609C64389A1D3D4B5)或**Debug** ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/OCimhXtpTniqAyPO0fMOPQ/zh-cn_image_0000002530753334.png?HW-CC-KV=V1&HW-CC-Date=20260429T054647Z&HW-CC-Expire=86400&HW-CC-Sign=2A78329D27B663886CD6106DF9A04691BD3E50A6ED44F326143D03CF1C06FAC0)启动工程。
+2. 在修改完代码后，点击**Apply Changes**![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/QrQ-ImUASfaxyPykpKNwUg/zh-cn_image_0000002530913316.png?HW-CC-KV=V1&HW-CC-Date=20260429T054647Z&HW-CC-Expire=86400&HW-CC-Sign=5CCB6EDD2E15BAC2AD996FC03420033BFF60C0F89EC07DF283BDE1907FAF03F2)推送增量包安装至设备。
 
    点击Apply Changes按钮后，DevEco Studio启动构建的增量构建任务，构建出增量包hqf。增量包构建完成后，将推送安装至设备。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/5qgcgtsFSlGd0XH8x0HlmA/zh-cn_image_0000002561753255.png?HW-CC-KV=V1&HW-CC-Date=20260427T235651Z&HW-CC-Expire=86400&HW-CC-Sign=7C712EDE707055B8B35CF540D807B3160BC5AC8E1721491A595AEF3DD6C3C28E)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/3RhHer1gTFSagMVpj0XFBg/zh-cn_image_0000002561753255.png?HW-CC-KV=V1&HW-CC-Date=20260429T054647Z&HW-CC-Expire=86400&HW-CC-Sign=B287669374AA0FB8E678DD7CEED4987E8D8513E940783903B16D25457C35ECB0)
 
    说明
 
@@ -33,15 +33,15 @@ C++代码增量调试支持API Version 11及以上版本Stage模型的工程；A
 
 从DevEco Studio 5.1.0 Release版本开始支持增量调试rawfile资源。
 
-1. 在工具栏中，选择调试的设备，并单击**Run**![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/elObSu81Qfi9DVOTw0J5kA/zh-cn_image_0000002561833249.png?HW-CC-KV=V1&HW-CC-Date=20260427T235651Z&HW-CC-Expire=86400&HW-CC-Sign=95085C5B9E2BEB4E01214B75ACC9E09596AF0A5CCCAE263CD14B9C6DC7F30641)或**Debug** ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/-eeO9JoeSr2x48tFx7x6hQ/zh-cn_image_0000002561833255.png?HW-CC-KV=V1&HW-CC-Date=20260427T235651Z&HW-CC-Expire=86400&HW-CC-Sign=BE14110B84EBF2915D50520937A326FA0AD40BCFD9584B45FE56CE8912B5FD2B)启动工程。
+1. 在工具栏中，选择调试的设备，并单击**Run**![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/AwJILa3kQpuFIq-a6Xl6Ew/zh-cn_image_0000002561833249.png?HW-CC-KV=V1&HW-CC-Date=20260429T054647Z&HW-CC-Expire=86400&HW-CC-Sign=FE8183210C3150D101BC62EB5DEC7B7261779DC99BE1473C03644F3A29C71B7D)或**Debug** ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/jywkYIgESUi2mtmYlWb_8g/zh-cn_image_0000002561833255.png?HW-CC-KV=V1&HW-CC-Date=20260429T054647Z&HW-CC-Expire=86400&HW-CC-Sign=3DABAB8C9CBC40CDAA4ECE0AE0E191AB327B917E2C1904DBBC00B4B6ED336597)启动工程。
 2. 在工程的资源resources文件目录下的resfile或rawfile目录下，新增或者修改资源文件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/f2wOIg03SbOodESO2g2gpw/zh-cn_image_0000002530913330.png?HW-CC-KV=V1&HW-CC-Date=20260427T235651Z&HW-CC-Expire=86400&HW-CC-Sign=FEE4BF060E90237DDD97B79444E90625502A03974CBB759BF476371FC7E13913)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/0DQRMTOrR92dgsMVSNx4XQ/zh-cn_image_0000002530913330.png?HW-CC-KV=V1&HW-CC-Date=20260429T054647Z&HW-CC-Expire=86400&HW-CC-Sign=54B5B68185F48D44502CCF265A23026182E35A6313BE690D9605CE7B8BA63EB1)
 
    说明
 
    当前对rawfile/resfile资源的增量调试，仅支持代码中直接调用的资源文件。
-3. 点击**Apply Changes**![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/XA_S80zESiuNtDgvRqIJiA/zh-cn_image_0000002530753324.png?HW-CC-KV=V1&HW-CC-Date=20260427T235651Z&HW-CC-Expire=86400&HW-CC-Sign=BF07DA2E55B04935444F55D023A38ABC905267F1FAC6625DA730CE467E4263F6)推送增量包安装至设备。
+3. 点击**Apply Changes**![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/hAUfH7cvQOah3lyVZXFCkQ/zh-cn_image_0000002530753324.png?HW-CC-KV=V1&HW-CC-Date=20260429T054647Z&HW-CC-Expire=86400&HW-CC-Sign=76ADE74B6C10F1B4D1E863D3C6EC694C6F10950CE7F798B3676E9994D8AF38FA)推送增量包安装至设备。
 
    点击Apply Changes按钮后，DevEco Studio启动构建的增量构建任务，构建出增量包hqf。增量包构建完成后，将推送安装至设备。
 
@@ -110,7 +110,7 @@ C++代码增量调试支持API Version 11及以上版本Stage模型的工程；A
 
 ### 通过SDK工具构建hqf包
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/pAgPL65dSk2izbxT-gzQCQ/zh-cn_image_0000002530913312.png?HW-CC-KV=V1&HW-CC-Date=20260427T235651Z&HW-CC-Expire=86400&HW-CC-Sign=C4478F75C77E7F5660A8B298226E2BB0AE01FB96FC06BDCBD4A9C20FEFB53CFB "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/qc9Ecdm9SkCPMbces4lGHQ/zh-cn_image_0000002530913312.png?HW-CC-KV=V1&HW-CC-Date=20260429T054647Z&HW-CC-Expire=86400&HW-CC-Sign=0941BF73A50D9DCEC1C49E927B7871DFCDBB810E511BA9290E7D4CF24757ED3C "点击放大")
 
 1. 全量编译应用并安装到设备。
 
@@ -120,7 +120,7 @@ C++代码增量调试支持API Version 11及以上版本Stage模型的工程；A
    ```
 2. 开发者通过独立的构建流程，识别出希望构建增量hqf包的so，根据ABI编译环境（可查看build-profile.json5的[abiFilters](ide-hvigor-cpp.md#section0721057575)字段），汇总到某一目录下，例如汇总在change\_test目录下，编译环境是arm64-v8a，示例如下。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/_vp7W5WnT4mmDUyqQ7AHag/zh-cn_image_0000002530753326.png?HW-CC-KV=V1&HW-CC-Date=20260427T235651Z&HW-CC-Expire=86400&HW-CC-Sign=132DE9FEB0CE1FC6E1256AE639D9D083CFE4A1E261C7E661CDC4989CC3673D48)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/SG3-1SpXTXGTqIokTurhNw/zh-cn_image_0000002530753326.png?HW-CC-KV=V1&HW-CC-Date=20260429T054647Z&HW-CC-Expire=86400&HW-CC-Sign=59A93D6DD51EB9F2C24EDF68B8D20E9CCA908B618A9BFCC9E69446DC084A23CD)
 3. （可选）进行资源文件修改。如果修改了HAP/HSP模块的rawfile或resfile目录下的资源文件，则需要在对应模块的build/default/intermediates/patch/default目录下新建changedFileList.json并写入修改的文件；如果修改了HAR模块的资源文件，则需要在依赖该HAR的模块下写入修改的文件，示例如下。
 
    ```

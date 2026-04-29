@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/agc-harmonyos
 title: 开发流程
 breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > 端云一体化开发 > 开发端云工程 > 开发云侧工程 > 开发云对象 > 开发流程
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:55:03+08:00
+scraped_at: 2026-04-29T13:45:01+08:00
 doc_updated_at: 2026-01-21
-content_hash: sha256:bf88d8db231309d4e282b26001fc44ef915040a5fcb2aeb20e42910b3e2c9cdf
+content_hash: sha256:bcff4c86b46845bcb5b8f84f69753c26cc1fc1602d32fc36198899548849b5d4
 ---
 
 除去传统的云函数，您还可在端云一体化云侧工程下开发云对象。云对象是一种特殊的云函数，本质是对云函数的一种封装，客户端可通过导入一个云对象来直接使用这个对象的方法，为您提供在端侧直接调用云侧代码的开发体验。相比普通云函数方式，云对象代码更精简、逻辑更清晰，大多数场景下推荐使用云对象代替传统云函数。开发流程大致如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/CZWJLOjFRbKvdtvIQVy4eg/zh-cn_image_0000002314475725.png?HW-CC-KV=V1&HW-CC-Date=20260427T235501Z&HW-CC-Expire=86400&HW-CC-Sign=C55EE3CE99EA456EEDBAB87F925AE0B35BD9A625C829D5E8CEFBEA49F5780A29 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/_oXnywoQSjCFcKwEGQClnQ/zh-cn_image_0000002314475725.png?HW-CC-KV=V1&HW-CC-Date=20260429T054500Z&HW-CC-Expire=86400&HW-CC-Sign=9431DB8A710EE0914EAB6433D2B4F91EA823C0689DE4906E07D12780C15408EA "点击放大")
 
 1. [创建云对象](agc-harmonyos-clouddev-createcloudobj.md)：您可直接在DevEco Studio创建云对象。
 2. [开发云对象](agc-harmonyos-clouddev-cloudobj-coding.md)：云对象创建完成后，您便可以开始编写云对象业务代码了。

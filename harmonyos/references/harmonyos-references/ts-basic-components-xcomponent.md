@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: XComponent
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 渲染绘制 > XComponent
 category: harmonyos-references
-scraped_at: 2026-04-28T08:02:14+08:00
+scraped_at: 2026-04-29T13:52:38+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:a1dc2e45809755e59bb6822e1c0e4df66384be38d8498028d2468277d5807ce0
+content_hash: sha256:dae8ac9a79e7df0669cdc63e40b427dd5d81b5fc4e001ab8d8c79c24b9991366
 ---
 
 提供用于图形绘制和媒体数据写入的Surface，XComponent负责将其嵌入到视图中，支持应用自定义Surface位置和大小。具体指南请参考[自定义渲染 (XComponent)文档](../harmonyos-guides/napi-xcomponent-guidelines.md)。
@@ -889,7 +889,7 @@ PhonePC/2in1TabletTVWearable
 118. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/dVcrK-coTGGWYum6OHhyXQ/zh-cn_image_0000002583440063.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000212Z&HW-CC-Expire=86400&HW-CC-Sign=DE39470ECBA29E0194BB6228C0814AC8C5B8196637CA33FA8825F8C21F54F4FC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/k08tDenkSbmnZVqfmNZtJA/zh-cn_image_0000002589246351.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055152Z&HW-CC-Expire=86400&HW-CC-Sign=9B0AAFE508495B3E1A5646C053A939364DE856407F3DAE11F0D75475CF1BB363)
 
 ### 示例2（在surface旋转过程中锁定）
 
@@ -1001,7 +1001,7 @@ PhonePC/2in1TabletTVWearable
 41. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/fgXWm2FWT1Sx-5Cew6nOBg/zh-cn_image_0000002552960018.png?HW-CC-KV=V1&HW-CC-Date=20260428T000212Z&HW-CC-Expire=86400&HW-CC-Sign=D9E4444617504BD02879C6FE00E9BAAA54BDFFD99A659E039B82AD617EBC774C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/8iH43IkjTdORF-20BmUxrw/zh-cn_image_0000002558766544.png?HW-CC-KV=V1&HW-CC-Date=20260429T055152Z&HW-CC-Expire=86400&HW-CC-Sign=B8D3D125DE98C75353C2B5B01DF308129F0EDE4544D86A98515D9C981F3E153E)
 
 ### 示例4（XComponent实现沉浸式效果）
 
@@ -1050,7 +1050,7 @@ PhonePC/2in1TabletTVWearable
 40. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/WHwFm5AaQuiozICPm4fP9w/zh-cn_image_0000002583480019.jpeg?HW-CC-KV=V1&HW-CC-Date=20260428T000212Z&HW-CC-Expire=86400&HW-CC-Sign=BD89F29068D6937EF88669D9A11917D8596657229673FA2097E7E145577240B7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/Yca4TFhYQx2hFKbvD6RAsA/zh-cn_image_0000002558606884.jpeg?HW-CC-KV=V1&HW-CC-Date=20260429T055152Z&HW-CC-Expire=86400&HW-CC-Sign=7E936E953706D5EB184D11B32F79FA24094BD3ADBA752213CA0BB79CF2463AE6)
 
 ### 示例5（设置XComponent持有Surface在渲染时是否需要被视为不透明）
 
@@ -1152,4 +1152,4 @@ PhonePC/2in1TabletTVWearable
 89. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/V7IJJH1vRk-n6BAcfzMGKg/zh-cn_image_0000002552800370.jpeg?HW-CC-KV=V1&HW-CC-Date=20260428T000212Z&HW-CC-Expire=86400&HW-CC-Sign=E8B7B68D46B2C91AC1A37935EC602AABCE68561AE95D236B391178BD30C19EC0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/vdAx2FEuQ_eLXbOqEvdQjQ/zh-cn_image_0000002589326411.jpeg?HW-CC-KV=V1&HW-CC-Date=20260429T055152Z&HW-CC-Expire=86400&HW-CC-Sign=B764DBC6C8C530837F13E903A58074693376766BA56287AE2CD80C08C7BE1C00)

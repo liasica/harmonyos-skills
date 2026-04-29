@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-commi
 title: 算子调试概述
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > 自定义算子开发 > 算子调试调优 > 算子调试概述
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:51:28+08:00
+scraped_at: 2026-04-29T13:41:12+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:e0c93fca58f8b998d3a1e3564d3608ef56b66aa9a279b723847976eb9e680a92
+content_hash: sha256:7f96e0cee465ca867842901bb29e5cf17a2b13846d51201693508c430c9e7ce4
 ---
 
 ## 工具介绍
@@ -65,7 +65,7 @@ content_hash: sha256:e0c93fca58f8b998d3a1e3564d3608ef56b66aa9a279b723847976eb9e6
 
 **图1** 基于命令行的工具运行流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/vY-m8bIpTBmpAn_aqqY4yg/zh-cn_image_0000002552799600.png?HW-CC-KV=V1&HW-CC-Date=20260427T235127Z&HW-CC-Expire=86400&HW-CC-Sign=2ED2D74D34A30ED5D04BF2E9DF9B910130C42CF5DAFF804D102F8F92A797E3F5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/VGOT9PGkQwiJ0wLfnnSz6A/zh-cn_image_0000002558606094.png?HW-CC-KV=V1&HW-CC-Date=20260429T054110Z&HW-CC-Expire=86400&HW-CC-Sign=1AF145FDED1F9425D60543B66031F1B932B747A5D0F1F061A6832223D6C9F6A7)
 
 1. 准备环境：使用本工具进行算子调测前，请先完成基础环境搭建，详细操作参见[环境准备](cannkit-environment-preparation.md)。
 2. 准备数据：准备好bin格式的输入数据和标杆数据文件，该数据是调测工具的必要输入。

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arengine-get-
 title: 获取深度估计信息（ArkTS）
 breadcrumb: 指南 > 图形 > AR Engine（AR引擎服务） > 深度估计 > 获取深度估计信息（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:46:55+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:bae7799cbfeaf784a1faa6c2e4e6d92ff5f33b8f991aa06f359b763afcb3b047
+scraped_at: 2026-04-29T13:35:56+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:b76146dacb33a7f53032c393b95a7325b2e0fc8d40027ecf5340087a784e0d6f
 ---
 
 本章节给出了关键开发步骤，完整代码可以参考[示例代码](https://gitcode.com/HarmonyOS_Samples/arengine_samplecode_clientdemo_arkts)。
@@ -75,8 +75,8 @@ content_hash: sha256:bae7799cbfeaf784a1faa6c2e4e6d92ff5f33b8f991aa06f359b763afcb
 19. .height('100%')
 20. .width('100%')
 21. .alignRules({
-22. center: { anchor: "__container__", align: VerticalAlign.Center },
-23. middle: { anchor: "__container__", align: HorizontalAlign.Center }
+22. center: { anchor: '__container__', align: VerticalAlign.Center },
+23. middle: { anchor: '__container__', align: HorizontalAlign.Center }
 24. })
 
 26. // 在屏幕上显示中心点、深度估计值及置信度
@@ -102,8 +102,8 @@ content_hash: sha256:bae7799cbfeaf784a1faa6c2e4e6d92ff5f33b8f991aa06f359b763afcb
 46. .alignItems(HorizontalAlign.Center)
 47. .margin({ bottom: 10 })
 48. .alignRules({
-49. bottom: { anchor: "__container__", align: VerticalAlign.Bottom },
-50. middle: { anchor: "__container__", align: HorizontalAlign.Center }
+49. bottom: { anchor: '__container__', align: VerticalAlign.Bottom },
+50. middle: { anchor: '__container__', align: HorizontalAlign.Center }
 51. })
 52. }
 53. }
@@ -140,14 +140,14 @@ content_hash: sha256:bae7799cbfeaf784a1faa6c2e4e6d92ff5f33b8f991aa06f359b763afcb
 84. depthMode: arEngine.ARDepthMode.AUTOMATIC,
 85. meshMode: arEngine.ARMeshMode.DISABLED,
 86. focusMode: arEngine.ARFocusMode.AUTO
-87. }
+87. };
 88. viewContext.init().then(() => {
 89. this.arContext = viewContext;
 90. console.info('Succeeded in initializing ARView.');
 91. }).catch((err: BusinessError) => {
 92. console.error(`Failed to init ARView. Code is ${err.code}, message is ${err.message}`);
-93. })
-94. })
+93. });
+94. });
 95. }
 
 97. private renderDepthMsg(): void {
@@ -157,7 +157,7 @@ content_hash: sha256:bae7799cbfeaf784a1faa6c2e4e6d92ff5f33b8f991aa06f359b763afcb
 101. }
 102. this.depthDistance = centerDistance.toFixed(4);
 103. this.depthConfidence = centerConfidence;
-104. }, this.delayInterval)
+104. }, this.delayInterval);
 105. }
 
 107. private stopARView(): void {

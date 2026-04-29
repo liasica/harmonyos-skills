@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/xengine-k
 title: XEG_NNGIDescription
 breadcrumb: API参考 > 图形 > XEngine Kit（GPU加速引擎服务） > C API > 头文件和结构体 > 结构体 > XEG_NNGIDescription
 category: harmonyos-references
-scraped_at: 2026-04-28T08:16:01+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:4719ba0090558219542225980b7355b1c08514c458268c7d79016a812cca1cb9
+scraped_at: 2026-04-29T14:06:40+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:2d8703b86ac0a3c6370546ee3aa91ab3b37d142075cfb044212ffb468e48d050
 ---
 
 ## 概述
@@ -45,7 +45,7 @@ PhonePC/2in1TabletTV
 | VkImageView [trainingInputBaseColorMetallicImage](xengine-kit-xeg-nngidescription.md#traininginputbasecolormetallicimage) | 训练输入基础颜色图像，不能为空，格式必须是至少3通道数据，RGB通道分别存储红绿蓝分量，忽略alpha通道信息。其分辨率和[XEG\_NNGICreateInfo](xengine-kit-xeg-nngicreateinfo.md)中trainingSize的分辨率保持一致。 |
 | VkImageView [trainingInputGIImage](xengine-kit-xeg-nngidescription.md#traininginputgiimage) | 训练输入GI图像，不能为空，格式必须是至少3通道数据，RGB通道分别存储红绿蓝分量的辐射度值，忽略alpha通道信息。该训练图像的GI结果的质量越高，推理输出的GI结果的质量就越高。其分辨率和[XEG\_NNGICreateInfo](xengine-kit-xeg-nngicreateinfo.md)中trainingSize的分辨率保持一致。 |
 | VkAabbPositionsKHR [sceneAabb](xengine-kit-xeg-nngidescription.md#sceneaabb) | 渲染包围盒范围。 |
-| bool [isSceneUnbounded](xengine-kit-xeg-nngidescription.md#issceneunbounded) = false | 渲染场景是否无界，当前只支持false。 |
+| bool [isSceneUnbounded](xengine-kit-xeg-nngidescription.md#issceneunbounded) = false | 渲染场景是否无界，true表示场景无边界，false表示场景有边界，当前只支持false。 |
 | float [spatialScaleFactor](xengine-kit-xeg-nngidescription.md#spatialscalefactor) = 0 | 场景缩放因子，对于有界场景，无需设置，XEngine根据sceneAabb计算该值，对于无界场景，建议设置为平均深度。 |
 
 ## 结构体成员变量说明

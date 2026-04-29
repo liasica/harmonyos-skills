@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-custom-
 title: 自定义组件冻结功能（V2）
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式基本语法 > 自定义组件 > 自定义组件冻结 > 自定义组件冻结功能（V2）
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:38:58+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:5e6a10ba7e925d3cb0fb7fc22e162ab3084b48223572cf82f829e99dee0ad8f4
+scraped_at: 2026-04-29T13:27:05+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:e009eea5a6235b1f45dc46063e967a0066fca9250f67cdd9109d18c89fa3c107
 ---
 
 当@ComponentV2装饰的自定义组件处于非激活状态时，状态变量将不响应更新，即[@Monitor](arkts-new-monitor.md)不会调用，状态变量关联的节点不会刷新。该冻结机制在复杂UI场景下能显著优化性能，避免非激活组件因状态变量更新进行无效刷新，从而减少资源消耗。通过freezeWhenInactive属性来决定是否使用冻结功能，不传参数时默认不使用。支持的场景有：[页面路由](../harmonyos-references/js-apis-router.md)、[TabContent](../harmonyos-references/ts-container-tabcontent.md)、[Navigation](../harmonyos-references/ts-basic-components-navigation.md)、[Repeat](../harmonyos-references/ts-rendering-control-repeat.md)。
@@ -34,7 +34,7 @@ content_hash: sha256:5e6a10ba7e925d3cb0fb7fc22e162ab3084b48223572cf82f829e99dee0
 
 图示如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/gVNI6ko6SXugENAfIpVd3w/zh-cn_image_0000002552957560.png?HW-CC-KV=V1&HW-CC-Date=20260427T233855Z&HW-CC-Expire=86400&HW-CC-Sign=740D32744C9AA7FE8D8A9D6FE1405F16334E4D3032D53F1D30BBE92E90948C8B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/b3ii7OXyS0mu4KL4UFEtHw/zh-cn_image_0000002589323919.png?HW-CC-KV=V1&HW-CC-Date=20260429T052703Z&HW-CC-Expire=86400&HW-CC-Sign=20DAE4976D8750BB981312FF6DEACA58C3905766E5FF652B119DAFD171605173)
 
 页面1：
 
@@ -70,16 +70,17 @@ content_hash: sha256:5e6a10ba7e925d3cb0fb7fc22e162ab3084b48223572cf82f829e99dee0
 29. .onClick(() => {
 30. this.bookTest.name = 'The Old Man and the Sea';
 31. })
-32. Button('go to next page').fontSize(25)
-33. .onClick(() => {
-34. this.getUIContext().getRouter().pushUrl({ url: 'pages/freeze/template1/Page2' });
-35. setTimeout(() => {
-36. this.bookTest = new Book(`Jane Austen's Pride and Prejudice`);
-37. }, 1000)
-38. })
-39. }
+32. // 点击Button，路由跳转到页面2
+33. Button('go to next page').fontSize(25)
+34. .onClick(() => {
+35. this.getUIContext().getRouter().pushUrl({ url: 'pages/freeze/template1/Page2' });
+36. setTimeout(() => {
+37. this.bookTest = new Book(`Jane Austen's Pride and Prejudice`);
+38. }, 1000)
+39. })
 40. }
 41. }
+42. }
 ```
 
 [Page1.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/FreezeV2/entry/src/main/ets/pages/freeze/template1/Page1.ets#L15-L57)
@@ -93,13 +94,14 @@ content_hash: sha256:5e6a10ba7e925d3cb0fb7fc22e162ab3084b48223572cf82f829e99dee0
 4. build() {
 5. Column() {
 6. Text('This is the page2').fontSize(25)
-7. Button('Back')
-8. .onClick(() => {
-9. this.getUIContext().getRouter().back();
-10. })
-11. }
+7. // 点击Button，路由跳转回页面1
+8. Button('Back')
+9. .onClick(() => {
+10. this.getUIContext().getRouter().back();
+11. })
 12. }
 13. }
+14. }
 ```
 
 [Page2.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/FreezeV2/entry/src/main/ets/pages/freeze/template1/Page2.ets#L15-L29)
@@ -112,11 +114,11 @@ content_hash: sha256:5e6a10ba7e925d3cb0fb7fc22e162ab3084b48223572cf82f829e99dee0
 
 Trace如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/LcYUJS8qR02s_wFpXK_Tpw/zh-cn_image_0000002583437615.png?HW-CC-KV=V1&HW-CC-Date=20260427T233855Z&HW-CC-Expire=86400&HW-CC-Sign=A4B2C033EEA50F4280AA4886448BF7A013A1428E4C1097AD6B8A41D73D42BFB0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/FXXdWN-BT7GOfzL0xfzq6Q/zh-cn_image_0000002558604404.png?HW-CC-KV=V1&HW-CC-Date=20260429T052703Z&HW-CC-Expire=86400&HW-CC-Sign=5B871486818992C674192F1DD25B2981976E23ADEC3D979D95A4A946D0A98814)
 
 3.点击Back，页面2被销毁，页面1的状态由inactive变为active。状态变量bookTest的更新被观察到，@Monitor中注册的方法onMessageChange被调用，对应的Text显示内容改变。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/pWj3jbwBSuOECfc-29z3oQ/zh-cn_image_0000002552957570.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233855Z&HW-CC-Expire=86400&HW-CC-Sign=0758578BCE53A99CC6D63CD5B9C3BF002BB0D41D2D81995EB57428CEBFCA0FE6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/F52SNu1YStWr6SUyyv57mg/zh-cn_image_0000002589323929.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052703Z&HW-CC-Expire=86400&HW-CC-Sign=156D294A6AC2F2643635BCF7AE17C423F6CDF488BFA4412FF90203223DBFC415)
 
 ### TabContent
 
@@ -126,7 +128,7 @@ Trace如下：
 
 图示如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/ObVClrnxSoaOIyQFEs_Jmg/zh-cn_image_0000002583477561.png?HW-CC-KV=V1&HW-CC-Date=20260427T233855Z&HW-CC-Expire=86400&HW-CC-Sign=FC20690F8BCC5E183D267BC4C01501079F298622F59C414A3660C9FECEB0D425)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/nRF7Us-pRlafcF1q--xZDg/zh-cn_image_0000002589243859.png?HW-CC-KV=V1&HW-CC-Date=20260429T052703Z&HW-CC-Expire=86400&HW-CC-Sign=571908BE4F90B94C2064D1FF15A6D6328C096D3F9C1FC1366D64DCDDEA2F9A5B)
 
 ```
 1. import { hilog } from '@kit.PerformanceAnalysisKit';
@@ -142,40 +144,41 @@ Trace如下：
 11. build() {
 12. Row() {
 13. Column() {
-14. Button('change message').onClick(() => {
-15. this.message++;
-16. })
+14. // 点击Button修改message，可见的TabContent触发onMessageUpdated回调
+15. Button('change message').onClick(() => {
+16. this.message++;
+17. })
 
-18. Tabs() {
-19. ForEach(this.data, (item: number) => {
-20. TabContent() {
-21. FreezeChild({ message: this.message, index: item })
-22. }.tabBar(`tab${item}`)
-23. }, (item: number) => item.toString())
-24. }
+19. Tabs() {
+20. ForEach(this.data, (item: number) => {
+21. TabContent() {
+22. FreezeChild({ message: this.message, index: item })
+23. }.tabBar(`tab${item}`)
+24. }, (item: number) => item.toString())
 25. }
-26. .width('100%')
-27. }
-28. .height('100%')
-29. }
+26. }
+27. .width('100%')
+28. }
+29. .height('100%')
 30. }
+31. }
 
-32. @ComponentV2({ freezeWhenInactive: true })
-33. struct FreezeChild {
-34. @Param message: number = 0;
-35. @Param index: number = 0;
+33. @ComponentV2({ freezeWhenInactive: true })
+34. struct FreezeChild {
+35. @Param message: number = 0;
+36. @Param index: number = 0;
 
-37. @Monitor('message')
-38. onMessageUpdated(mon: IMonitor) {
-39. hilog.info(DOMAIN, 'testTag', `FreezeChild message callback func ${this.message}, index: ${this.index}`);
-40. }
+38. @Monitor('message')
+39. onMessageUpdated(mon: IMonitor) {
+40. hilog.info(DOMAIN, 'testTag', `FreezeChild message callback func ${this.message}, index: ${this.index}`);
+41. }
 
-42. build() {
-43. Text('message' + `${this.message}, index: ${this.index}`)
-44. .fontSize(50)
-45. .fontWeight(FontWeight.Bold)
-46. }
+43. build() {
+44. Text('message' + `${this.message}, index: ${this.index}`)
+45. .fontSize(50)
+46. .fontWeight(FontWeight.Bold)
 47. }
+48. }
 ```
 
 [TabContentTest.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/FreezeV2/entry/src/main/ets/pages/freeze/template2/TabContentTest.ets#L15-L63)
@@ -188,7 +191,7 @@ Trace如下：
 
 3.再次点击change message更改message的值，仅当前显示的TabContent子组件中@Monitor注册的方法onMessageUpdated被触发。其他inactive的TabContent组件不会触发@Monitor。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/BPR7aSu1RWCv4SMKUOijEg/zh-cn_image_0000002552797912.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233855Z&HW-CC-Expire=86400&HW-CC-Sign=94FC0BDFBC9DDCC40358C93058AD10C575E654E051E5838C0FCCFCD02F52DAC5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/2cPdyz4gQeiu2VC53zU-0Q/zh-cn_image_0000002558764052.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052703Z&HW-CC-Expire=86400&HW-CC-Sign=F70B76D5EF4DE3DD89FDDED5E0B3DD9489C63592C5641A1F26DD957075C3D8BF)
 
 ### Navigation
 
@@ -379,7 +382,7 @@ Trace如下：
 
 10.再次点击Back Page回到初始页，此时，无任何触发。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/7FNB_Xq1R7CsIVCXiai00A/zh-cn_image_0000002552957562.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233855Z&HW-CC-Expire=86400&HW-CC-Sign=D0C5DFB6C2F9170C25643D998710586B3E1B348F17DF66A2E679B431CB4AD3DA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/jr2eS2jwS-KlIWKBGCXbnw/zh-cn_image_0000002589323921.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052703Z&HW-CC-Expire=86400&HW-CC-Sign=97401409797EB5BF029C693650A8C929B21C624A473A9779127C80F176798382)
 
 ### Repeat
 
@@ -468,7 +471,7 @@ Repeat从API version 18开始支持自定义组件冻结。
 
 开启组件冻结（freezeWhenInactive: true），只有剩余节点中@Monitor装饰的方法onBgColorChange被触发，如示例中屏上的5个节点会刷新并打印5条日志，缓存池中的节点则不会。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/5w07DmJiRYWnejI5N_g-Kg/zh-cn_image_0000002583477571.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233855Z&HW-CC-Expire=86400&HW-CC-Sign=B48B50859A78A6484EE6726AF77786F2CB4C0A359C6854DC65F751CFBEEF093A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/u91SusSSSZy4huDGJkepkA/zh-cn_image_0000002589243869.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052703Z&HW-CC-Expire=86400&HW-CC-Sign=A9D24DB339B6507CD74216239C0FCE72B1027F937B132FDE873E7D6F611795AF)
 
 ```
 1. import { hilog } from '@kit.PerformanceAnalysisKit';
@@ -499,7 +502,7 @@ Repeat从API version 18开始支持自定义组件冻结。
 
 不开启组件冻结（freezeWhenInactive: false，当未指定freezeWhenInactive参数时默认不开启组件冻结），剩余节点和缓存池节点中@Monitor装饰的方法onBgColorChange都会被触发，即会有7个节点会刷新并打印7条日志。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/V0SKuJHSSQSrY55y98_ydA/zh-cn_image_0000002552797922.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233855Z&HW-CC-Expire=86400&HW-CC-Sign=4F544C2C01608890C84C5F55BF591ABD185E44595BFFE344CC2656F2CF272853)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/2ncOjXSYRo2aA7dvW8_lmQ/zh-cn_image_0000002558764062.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052703Z&HW-CC-Expire=86400&HW-CC-Sign=50EF802A3AE17BD45CE3A65C07B9E6882408F1CD00313620C1CEE652FFF13226)
 
 ### 仅子组件开启组件冻结
 
@@ -530,42 +533,43 @@ Repeat从API version 18开始支持自定义组件冻结。
 22. Navigation(this.pageInfo) {
 23. Child()
 
-25. Button('Go to next page').fontSize(30)
-26. .onClick(() => {
-27. this.pageInfo.pushPathByName('PageB', null);
-28. })
-29. }
+25. // 点击Button，跳转页面至PageB
+26. Button('Go to next page').fontSize(30)
+27. .onClick(() => {
+28. this.pageInfo.pushPathByName('PageB', null);
+29. })
 30. }
 31. }
 32. }
+33. }
 
-34. @ComponentV2({ freezeWhenInactive: true })
-35. export struct Child {
-36. @Local bookTest: Book = new Book(`A Midsummer Night's Dream`);
+35. @ComponentV2({ freezeWhenInactive: true })
+36. export struct Child {
+37. @Local bookTest: Book = new Book(`A Midsummer Night's Dream`);
 
-38. @Monitor('bookTest.name')
-39. onMessageChange(monitor: IMonitor) {
-40. hilog.info(DOMAIN, 'testTag', `The book name change from ${monitor.value()?.before} to ${monitor.value()?.now}`);
-41. }
+39. @Monitor('bookTest.name')
+40. onMessageChange(monitor: IMonitor) {
+41. hilog.info(DOMAIN, 'testTag', `The book name change from ${monitor.value()?.before} to ${monitor.value()?.now}`);
+42. }
 
-43. textUpdate(): number {
-44. hilog.info(DOMAIN, 'testTag', 'The text is update');
-45. return 25;
-46. }
+44. textUpdate(): number {
+45. hilog.info(DOMAIN, 'testTag', 'The text is update');
+46. return 25;
+47. }
 
-48. build() {
-49. Column() {
-50. Text(`The book name is ${this.bookTest.name}`).fontSize(this.textUpdate())
+49. build() {
+50. Column() {
+51. Text(`The book name is ${this.bookTest.name}`).fontSize(this.textUpdate())
 
-52. Button('change BookName')
-53. .onClick(() => {
-54. setTimeout(() => {
-55. this.bookTest = new Book(`Jane Austen's Pride and Prejudice`);
-56. }, 3000);
-57. })
-58. }
+53. Button('change BookName')
+54. .onClick(() => {
+55. setTimeout(() => {
+56. this.bookTest = new Book(`Jane Austen's Pride and Prejudice`);
+57. }, 3000);
+58. })
 59. }
 60. }
+61. }
 ```
 
 [PageA.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/FreezeV2/entry/src/main/ets/pages/freeze/template5/PageA.ets#L15-L76)
@@ -586,16 +590,17 @@ Repeat从API version 18开始支持自定义组件冻结。
 13. Column() {
 14. Text('This is the PageB')
 
-16. Button('Back').fontSize(30)
-17. .onClick(() => {
-18. this.pathStack.pop();
-19. })
-20. }
-21. }.onReady((context: NavDestinationContext) => {
-22. this.pathStack = context.pathStack;
-23. })
-24. }
+16. // 点击Button，页面跳转回PageA
+17. Button('Back').fontSize(30)
+18. .onClick(() => {
+19. this.pathStack.pop();
+20. })
+21. }
+22. }.onReady((context: NavDestinationContext) => {
+23. this.pathStack = context.pathStack;
+24. })
 25. }
+26. }
 ```
 
 [PageB.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/FreezeV2/entry/src/main/ets/pages/freeze/template5/PageB.ets#L16-L42)
@@ -767,46 +772,47 @@ Repeat从API version 18开始支持自定义组件冻结。
 135. build() {
 136. NavDestination() {
 137. Column() {
-138. TabsComponent()
+138. // NavDestination中创建TabContent
+139. TabsComponent()
 
-140. Button('Next Page', { stateEffect: true, type: ButtonType.Capsule })
-141. .width('80%')
-142. .height(40)
-143. .margin(20)
-144. .onClick(() => {
-145. this.pageInfo.pushPathByName('pageTwo', null);
-146. })
-147. }.width('100%').height('100%')
-148. }.title('pageOne')
-149. .onBackPressed(() => {
-150. this.pageInfo.pop();
-151. return true;
-152. })
-153. }
+141. Button('Next Page', { stateEffect: true, type: ButtonType.Capsule })
+142. .width('80%')
+143. .height(40)
+144. .margin(20)
+145. .onClick(() => {
+146. this.pageInfo.pushPathByName('pageTwo', null);
+147. })
+148. }.width('100%').height('100%')
+149. }.title('pageOne')
+150. .onBackPressed(() => {
+151. this.pageInfo.pop();
+152. return true;
+153. })
 154. }
+155. }
 
-156. @Component
-157. struct PageTwoStack2 {
-158. @Consume('pageInfo') pageInfo: NavPathStack;
+157. @Component
+158. struct PageTwoStack2 {
+159. @Consume('pageInfo') pageInfo: NavPathStack;
 
-160. build() {
-161. NavDestination() {
-162. Column() {
-163. Button('Back Page', { stateEffect: true, type: ButtonType.Capsule })
-164. .width('80%')
-165. .height(40)
-166. .margin(20)
-167. .onClick(() => {
-168. this.pageInfo.pop();
-169. })
-170. }.width('100%').height('100%')
-171. }.title('pageTwo')
-172. .onBackPressed(() => {
-173. this.pageInfo.pop();
-174. return true;
-175. })
-176. }
+161. build() {
+162. NavDestination() {
+163. Column() {
+164. Button('Back Page', { stateEffect: true, type: ButtonType.Capsule })
+165. .width('80%')
+166. .height(40)
+167. .margin(20)
+168. .onClick(() => {
+169. this.pageInfo.pop();
+170. })
+171. }.width('100%').height('100%')
+172. }.title('pageTwo')
+173. .onBackPressed(() => {
+174. this.pageInfo.pop();
+175. return true;
+176. })
 177. }
+178. }
 ```
 
 [MyNavigationTestStack.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/FreezeV2/entry/src/main/ets/pages/freeze/template6/MyNavigationTestStack.ets#L15-L193)
@@ -958,4 +964,4 @@ API version 21及之前版本，如下面示例所示，FreezeBuildNode中使用
 
 点击change，改变message的值，当前正在显示的TabContent组件中@Monitor注册的方法onMessageChange被触发。未显示的TabContent中的BuilderNode节点下组件的@Monitor方法onMessageChange也被触发，并没有被冻结。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/u_wUzVZmQdefLVM42r0qUQ/zh-cn_image_0000002552797920.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233855Z&HW-CC-Expire=86400&HW-CC-Sign=A6A83FCD0E099B63EA74C8C93E1E4F4C9BD6CF5DFD309D5028CED35918065331)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/7NwxxWuPT8-xObXLbsZmnQ/zh-cn_image_0000002558764060.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052703Z&HW-CC-Expire=86400&HW-CC-Sign=117B726487286E8F1EDBD4BD1A49023F77DC23D03615736C0C9F720BC5348901)

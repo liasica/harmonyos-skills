@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-lite-c
 title: image
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Lite） > 基础组件 > image
 category: harmonyos-references
-scraped_at: 2026-04-28T08:03:28+08:00
+scraped_at: 2026-04-29T13:53:52+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:cb0bdff4ff532c583aaf8286038181669fd577ad170293f86a38ea213690265a
+content_hash: sha256:32cae98ffdb3ae2d3fe481879afb618e5e706c81b6346ed20eb419fad706db36
 ---
 
 图片组件，用来渲染展示图片。
@@ -85,4 +85,4 @@ PhonePC/2in1TabletTVWearableLite Wearable
 8. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/W1d7TsPXTyWHOUcxld2XJQ/zh-cn_image_0000002552960408.png?HW-CC-KV=V1&HW-CC-Date=20260428T000326Z&HW-CC-Expire=86400&HW-CC-Sign=E6D7F96E175D3644A6E3E68D5A05F7771CFCFFF19CCEE3B78C30930E674B7F32)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/vnSa_b6mQb6UaB7aO5asww/zh-cn_image_0000002558607274.png?HW-CC-KV=V1&HW-CC-Date=20260429T055351Z&HW-CC-Expire=86400&HW-CC-Sign=E657EF4F6FA1668FF1012F51A944D75953622573D5C5BB05D0CBBCB7F2F6EA60)

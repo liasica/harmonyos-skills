@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scan-faq-10
 title: 自定义界面扫码如何连续扫码（customScan.rescan）
 breadcrumb: 指南 > 媒体 > Scan Kit（统一扫码服务） > Scan Kit常见问题 > 自定义界面扫码如何连续扫码（customScan.rescan）
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:46:45+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:99007ad1905776bdc30fc25bd771c69f35bd2479ef8fdda563c1ea837598ec8a
+scraped_at: 2026-04-29T13:35:45+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:3d1aee1cf69e23b0318237f5f3071ba8aa270137ce2bb074a842e2fc198b777b
 ---
 
 **问题现象**
@@ -41,9 +41,10 @@ customScan.[rescan](../harmonyos-references/scan-customscan-api.md#customscanres
 20. } catch (err) {
 21. hilog.error(0x0001, '[Scan Sample]', `Failed to rescan. Code: ${err.code}, message: ${err.message}`);
 22. }
-23. }
+23. };
 
 25. build() {
-26. }
+26. // do something
 27. }
+28. }
 ```

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/desktop-quick
 title: 应用接入快捷栏
 breadcrumb: 指南 > 系统 > 基础功能 > Desktop Extension Kit（桌面拓展服务） > 应用接入快捷栏
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:44:26+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:f712f72033f830512d91d84d1059e7b5a3e6b09c178df463483745938c6abbde
+scraped_at: 2026-04-29T13:33:19+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:2b3424ae9aba73d4029d4f957054861c7d55be168cd69ec0babafcf9e349e134
 ---
 
 从6.0.2(22)开始，支持应用接入快捷栏。
@@ -14,11 +14,11 @@ content_hash: sha256:f712f72033f830512d91d84d1059e7b5a3e6b09c178df463483745938c6
 
 快捷栏指的是PC/2in1设备的屏幕底部的图标区域，具体如下图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/j9Aj-Q1HTA6tlLot-HfKng/zh-cn_image_0000002583478449.png?HW-CC-KV=V1&HW-CC-Date=20260427T234425Z&HW-CC-Expire=86400&HW-CC-Sign=636D310DF947C77B0BDD84479EEF1637AFAA891523F5CBF1802A74BBB267E89A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/FLPMPMc4RfCSzvFYQCidfA/zh-cn_image_0000002558605292.png?HW-CC-KV=V1&HW-CC-Date=20260429T053318Z&HW-CC-Expire=86400&HW-CC-Sign=4591C2703E39ABB62D06988ABB5A0BED3360497F30CD482351CE28B695256C8B)
 
 应用接入快捷栏之后，快捷栏的应用图标菜单会显示应用自定义的菜单项，应用可以添加、删除、更新、查询菜单项，具体效果如下图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/HLD20KVsSaSLrgs6TB_Ckw/zh-cn_image_0000002552798800.png?HW-CC-KV=V1&HW-CC-Date=20260427T234425Z&HW-CC-Expire=86400&HW-CC-Sign=52F08676BA37F878F5E0D849B60F0110847A5373643069597F3506F864C95277)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/gvjRiOQBSc232r86du7HZg/zh-cn_image_0000002589324817.png?HW-CC-KV=V1&HW-CC-Date=20260429T053318Z&HW-CC-Expire=86400&HW-CC-Sign=473B86747ABBC9A4E914406DD01E67FF22850C80B7EE3E98C896F736A15B66E9)
 
 ## 接口说明
 
@@ -26,7 +26,7 @@ content_hash: sha256:f712f72033f830512d91d84d1059e7b5a3e6b09c178df463483745938c6
 
 说明
 
-DeskTop Extension Kit相关API仅在2in1设备上生效。
+Desktop Extension Kit相关API仅在2in1设备上生效。
 
 **表1** 应用接入快捷栏菜单相关功能接口介绍
 
@@ -41,9 +41,9 @@ DeskTop Extension Kit相关API仅在2in1设备上生效。
 | [updateQuickTask](../harmonyos-references/desktop-quickbar-extension-manager.md#quickbarmanagerupdatequicktask)(context: common.Context, task: QuickTask): Promise<void> | 更新快捷栏菜单任务。 |
 | [deleteQuickTask](../harmonyos-references/desktop-quickbar-extension-manager.md#quickbarmanagerdeletequicktask)(context: common.Context, taskId: number): Promise<void> | 删除快捷栏菜单任务。 |
 | [addQuickBarGroup](../harmonyos-references/desktop-quickbar-extension-manager.md#quickbarmanageraddquickbargroup)(context: common.Context, group: QuickBarGroup): Promise<void> | 增加快捷栏分组。 |
-| [deleteQuickBarGroup](../harmonyos-references/desktop-quickbar-extension-manager.md#quickbarmanagerdeletequickbargroup)(context: common.Context, , groupKey: string): Promise<void> | 删除快捷栏分组。 |
-| [getQuickBarGroup](../harmonyos-references/desktop-quickbar-extension-manager.md#quickbarmanagergetquickbargroups)(context: common.Context): Promise<QuickBarGroup[]> | 获取所有分组信息。 |
-| [setWindowToGroup](../harmonyos-references/desktop-quickbar-extension-manager.md#quickbarmanagersetwindowtogroup)(context: common.Context, , windowId:string, groupKey?: string): Promise<void> | 给分组增加窗口。 |
+| [deleteQuickBarGroup](../harmonyos-references/desktop-quickbar-extension-manager.md#quickbarmanagerdeletequickbargroup)(context: common.Context, groupKey: string): Promise<void> | 删除快捷栏分组。 |
+| [getQuickBarGroups](../harmonyos-references/desktop-quickbar-extension-manager.md#quickbarmanagergetquickbargroups)(context: common.Context): Promise<QuickBarGroup[]> | 获取所有分组信息。 |
+| [setWindowToGroup](../harmonyos-references/desktop-quickbar-extension-manager.md#quickbarmanagersetwindowtogroup)(context: common.Context, windowid:string, groupKey?: string): Promise<void> | 给分组增加窗口。 |
 
 ## 快捷栏菜单分组
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: Hyperlink
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 文本与输入 > Hyperlink
 category: harmonyos-references
-scraped_at: 2026-04-28T08:01:53+08:00
+scraped_at: 2026-04-29T13:52:13+08:00
 doc_updated_at: 2026-04-13
-content_hash: sha256:33e4b250a6303c362102da9a077b03a429f977cd80f1d15f43e2a0c1557c7f66
+content_hash: sha256:b15b81b6d5cb08a2920f7133e8289e03168056566fd0b9e1927cf278e26fd3cf
 ---
 
 超链接组件，组件宽高范围内点击实现跳转。
@@ -99,4 +99,4 @@ PhonePC/2in1TabletTVWearable
 22. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/MhhM8QJGQRica2C8jwVsBw/zh-cn_image_0000002552800170.png?HW-CC-KV=V1&HW-CC-Date=20260428T000152Z&HW-CC-Expire=86400&HW-CC-Sign=E9A215E49E0102627507C10CDD7290F9646E0847B355DB7E3ACFC73F40288D37)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/X0ma9TnIRFaMBN70W-ZwRw/zh-cn_image_0000002589326209.png?HW-CC-KV=V1&HW-CC-Date=20260429T055209Z&HW-CC-Expire=86400&HW-CC-Sign=1C26F5DCFB18E55A51CB965F0247778E8C7E91B27E9C3410302570C9DBB97212)

@@ -1,10 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/obtain-supported-authentication-capabilities
 title: 查询支持的认证能力
+breadcrumb: 指南 > 系统 > 安全 > User Authentication Kit（用户认证服务） > 用户身份认证开发指导 > 查询支持的认证能力
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:43:38+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:8e5d2844036ea6d087b252c40e60ac608a96bcd5bcdb0a84413f3332677f2b1a
+scraped_at: 2026-04-29T13:32:24+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:0b698190e460eaa76102232148f038f5080f942d0a44c01510c73c5faa5ecb05
 ---
 
 不同的设备对于认证能力（人脸、指纹、口令）的支持性各有差异，开发者在发起认证前应当先查询当前设备支持的用户认证能力。
@@ -31,7 +32,7 @@ content_hash: sha256:8e5d2844036ea6d087b252c40e60ac608a96bcd5bcdb0a84413f3332677
 2. try {
 3. // 查询认证能力是否支持
 4. userAuth.getAvailableStatus(userAuth.UserAuthType.FACE, userAuth.AuthTrustLevel.ATL3);
-5. Logger.info('current auth trust level is supported');
+5. Logger.info('current auth trust level is supported.');
 6. return true;
 7. } catch (error) {
 8. const err: BusinessError = error as BusinessError;

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/bytecode-obfu
 title: ArkGuard字节码混淆开启指南
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS编译工具链 > ArkGuard字节码混淆工具 > ArkGuard字节码混淆开启指南
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:38:52+08:00
+scraped_at: 2026-04-29T13:26:59+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:ebe2711e46afbe6dd23e34e7ba4e40ecc69d0bbe4b820674490f113cfc4cf4a0
+content_hash: sha256:26fefbfcbb5dbd872aa540645f5d5debd5ea58430bfbc6ca1be97f4183c4739c
 ---
 
 注意
@@ -181,7 +181,7 @@ content_hash: sha256:ebe2711e46afbe6dd23e34e7ba4e40ecc69d0bbe4b820674490f113cfc4
 * origin目录：混淆前的modules.abc文件。
 * 配置信息文件：config.json，该文件记录了混淆的配置项和白名单列表。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/6_FLzaj-S62-d3JOxP7Iqw/zh-cn_image_0000002583437593.png?HW-CC-KV=V1&HW-CC-Date=20260427T233850Z&HW-CC-Expire=86400&HW-CC-Sign=6DD64FC00C3B5C9E9AD0F6AEE58AA8391000F2CEBCE41194F5273F9BE856053A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/g1E1NTg_RUy7AjZY4NFi0g/zh-cn_image_0000002558604382.png?HW-CC-KV=V1&HW-CC-Date=20260429T052657Z&HW-CC-Expire=86400&HW-CC-Sign=DC6CE844A9CC3F12C053E15BFFD3A290E60FA18EA4F6E761E515AC45A5D2EC64)
 
 ## 报错栈还原
 
@@ -189,4 +189,4 @@ content_hash: sha256:ebe2711e46afbe6dd23e34e7ba4e40ecc69d0bbe4b820674490f113cfc4
 
 反混淆工具需要使用应用编译过程中生成的sourceMaps.json文件以及混淆名称映射文件nameCache.json文件，因此请本地备份它们；为方便问题定位，建议备份release目录。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/P1WaLPp6QH6-XyVPXQ8GTg/zh-cn_image_0000002552957548.png?HW-CC-KV=V1&HW-CC-Date=20260427T233850Z&HW-CC-Expire=86400&HW-CC-Sign=EB16EFFD9023E49D39B491D85CDFA14DF5C1E1809F2B674CD841EA00213F8DB2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/fOnj2X7WTRKgUK0zcrrv_g/zh-cn_image_0000002589323907.png?HW-CC-KV=V1&HW-CC-Date=20260429T052657Z&HW-CC-Expire=86400&HW-CC-Sign=9C928A4BA8D13C093562042D6AD2F81D442529FDBAF818E2654B13FBA2C6D635)

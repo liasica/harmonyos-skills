@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-animat
 title: 相机基础动效(ArkTS)
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用基础能力(ArkTS) > 相机基础动效(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:46:00+08:00
+scraped_at: 2026-04-29T13:34:58+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:204f54aa4320498efe80606ef56de5390f51ddbb8565752312b1061d4900cb9a
+content_hash: sha256:6e7eb1647296f7fb2144f41908861df3a19fe0ac088c046afda28cfb26d1bc02
 ---
 
 在使用相机过程中，当遇到相机模式切换、前后置镜头切换等场景时，会不可避免地出现预览流替换。为优化用户体验，可合理使用动效过渡。本文主要介绍如何使用预览流截图，并通过ArkUI提供的[animateToImmediately](../harmonyos-references/arkts-apis-uicontext-uicontext.md#animatetoimmediately23)接口触发显式动画功能，实现下方三种核心场景动效。
@@ -14,17 +14,17 @@ content_hash: sha256:204f54aa4320498efe80606ef56de5390f51ddbb8565752312b1061d490
 
   图片为从录像模式切换为拍照模式的效果。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/hTNMbC0fTza7ekrfk18-Tg/zh-cn_image_0000002583438613.gif?HW-CC-KV=V1&HW-CC-Date=20260427T234558Z&HW-CC-Expire=86400&HW-CC-Sign=2DBA41E9049E2725FD374E891F186E3E81F589D7709D047617CAEBA281B5170B)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/ii7HuZBLTLSBu0-LcXaLFA/zh-cn_image_0000002589244873.gif?HW-CC-KV=V1&HW-CC-Date=20260429T053457Z&HW-CC-Expire=86400&HW-CC-Sign=8542FFDFF1CB73093373500DA524A8CE60941ADC759632DDD4F6DA093D2B93FC)
 * 前后置切换动效，使用预览流截图做翻转模糊动效过渡。
 
   图片为从前置相机切换为后置相机的效果。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/ycbnb09wS_G9X5DeGRWC3Q/zh-cn_image_0000002552958568.gif?HW-CC-KV=V1&HW-CC-Date=20260427T234558Z&HW-CC-Expire=86400&HW-CC-Sign=B249437440160E583E99F393AA9EB9D762F70F2040096484F982AEF7DEDF6DD5)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/K4rnEp_1QnS8zZRxx-6AtQ/zh-cn_image_0000002558765068.gif?HW-CC-KV=V1&HW-CC-Date=20260429T053457Z&HW-CC-Expire=86400&HW-CC-Sign=8D7F6754CEDB99655856F7449B9ADC7F6DA81EFEC597388FB90BBC3757E08A8C)
 * 拍照闪黑动效，使用闪黑组件覆盖预览流实现闪黑动效过渡。
 
   图片为点击完成拍摄的效果。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/csDR5JE0RTKBVYD9dVdRCw/zh-cn_image_0000002583478569.gif?HW-CC-KV=V1&HW-CC-Date=20260427T234558Z&HW-CC-Expire=86400&HW-CC-Sign=FEB529CF83E943FB2E95F5C85980DDECDF562DAAC99CB013E3DCBD60D91F3D31)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/KXymBP9FQ8-k6Bn3I8UQVw/zh-cn_image_0000002558605412.gif?HW-CC-KV=V1&HW-CC-Date=20260429T053457Z&HW-CC-Expire=86400&HW-CC-Sign=59FA88E7B325E5E0CE8BDBBAC7D439BF69BB9BE541CE522DE8F986D39E0D18D7)
 
 ## 闪黑动效
 

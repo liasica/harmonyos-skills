@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (WebviewController)
 breadcrumb: API参考 > 应用框架 > ArkWeb（方舟Web） > ArkTS API > @ohos.web.webview (Webview) > Class (WebviewController)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:05:08+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:5ffdf390e4c4870ca5634198d1c535bc3dbe4b878291f88fb609987408b4f637
+scraped_at: 2026-04-29T13:55:34+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:2e6cd0387c38da00b4b9798409485c8ebe5f594d301732dc3a10d2c0492e96a3
 ---
 
 通过WebviewController可以控制Web组件各种行为（包括页面导航、生命周期状态、JavaScript交互等行为）。一个WebviewController对象只能控制一个Web组件，且必须在Web组件和WebviewController绑定后，才能调用WebviewController上的方法（静态方法除外）。
@@ -5065,7 +5065,7 @@ static prefetchResource(request: RequestInfo, additionalHeaders?: Array<WebHeade
 | request | [RequestInfo](arkts-apis-webview-i.md#requestinfo12) | 是 | 预获取请求的信息。 |
 | additionalHeaders | Array<[WebHeader](arkts-apis-webview-i.md#webheader)> | 否 | 预获取请求的附加HTTP请求头。  传入undefined或null会抛出异常错误码401。 |
 | cacheKey | string | 否 | 用于后续查询预获取资源缓存的key。仅支持字母和数字，未传入或传入空则取默认值url作为key。  传入undefined或null会抛出异常错误码401。 |
-| cacheValidTime | number | 否 | 预获取资源缓存的有效期。  取值范围：(0, 2147483647]。  默认值：300秒。  单位：秒。  传入undefined或null会抛出异常错误码401。 |
+| cacheValidTime | number | 否 | 预获取资源缓存的有效期。  取值范围：(0, 2147483647]。  默认值：300s。  单位：s。  传入undefined或null会抛出异常错误码401。 |
 
 **错误码：**
 
@@ -8712,7 +8712,7 @@ PhonePC/2in1TabletTVWearable
 
 setUrlTrustList(urlTrustList: string): void
 
-设置当前web的url白名单，只有白名单内的url才能允许加载/跳转，否则将拦截并弹出告警页。
+设置Web的URL白名单，只有白名单内的URL才能允许加载/跳转，否则将拦截并弹出告警页。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -10190,7 +10190,7 @@ getBlanklessInfoWithKey(key: string): BlanklessInfo
 * 持久缓存容量：默认大小为30MB（约30页），可以通过接口[setBlanklessLoadingCacheCapacity](arkts-apis-webview-webviewcontroller.md#setblanklessloadingcachecapacity20)设置缓存容量，具体见该接口说明。超过容量时根据LRU（Least Recently Used，淘汰不常用缓存的策略）机制更新缓存。自动清理超过7天的持久缓存数据，缓存清除后第三次加载页面开始有优化效果。
 * 如果发现快照相似度（即[BlanklessInfo](arkts-apis-webview-i.md#blanklessinfo20)中的similarity）极低，请确认key值是否传递正确。
 * 调用本接口后，将启用页面加载快照检测及生成过渡帧计算，会产生一定的资源开销。
-* 启用无白屏加载的页面会带来一定的资源开销，开销的大小与Web组件的分辨率相关。假设分辨率的宽度和高度分别为：w, h。页面在打开阶段会增加峰值内存，增加约12wh B，页面打开后内存回收，不影响稳态内存。增加固态应用缓存的大小，每个页面增加的缓存约w\*h/10 B，缓存位于应用缓存的位置。
+* 启用无白屏加载的页面会带来一定的资源开销，开销的大小与Web组件的分辨率相关。假设分辨率的宽度和高度分别为：w, h。页面在打开阶段会增加峰值内存，增加约12 \* w \* h B，页面打开后内存回收，不影响稳态内存。增加固态应用缓存的大小，每个页面增加的缓存约w \* h / 10 B，缓存位于应用缓存的位置。
 * 请在module.json5中添加权限: ohos.permission.INTERNET和ohos.permission.GET\_NETWORK\_INFO，具体权限的添加方法请参考[在配置文件中声明权限](../harmonyos-guides/declare-permissions.md#在配置文件中声明权限)。
 
 **系统能力：** SystemCapability.Web.Webview.Core

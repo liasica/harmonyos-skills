@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: popup
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 容器组件 > popup
 category: harmonyos-references
-scraped_at: 2026-04-28T08:02:57+08:00
+scraped_at: 2026-04-29T13:53:20+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:d0548ff09e78ac8f0f927aff5733a84c7c2fc02832bf9916bb6cae108664a303
+content_hash: sha256:f5e1a3f313bb82fecf3442fbe668aed9acc3824e15bf49bfc505158f045950eb
 ---
 
 说明
@@ -143,4 +143,4 @@ PhonePC/2in1TabletTVWearable
 16. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/Ulc0Ch_yS46x4ZcDXWdkWw/zh-cn_image_0000002583440229.png?HW-CC-KV=V1&HW-CC-Date=20260428T000256Z&HW-CC-Expire=86400&HW-CC-Sign=CDE5B2CA589A759D8E9BE024E96FBA2D0EEB9FDD93BE190553AC123EE3E200D6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/2egw9wKRTBiPdFEO5Rz-ow/zh-cn_image_0000002558766710.png?HW-CC-KV=V1&HW-CC-Date=20260429T055319Z&HW-CC-Expire=86400&HW-CC-Sign=2B2EF92492E105498FEEBFAC641FE13532245AC28D9F022C38DE45CF746FD26E)

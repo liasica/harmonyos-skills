@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pdf-pdfview-o
 title: 打开和保存PDF文档
 breadcrumb: 指南 > 应用服务 > PDF Kit（PDF服务） > PdfView预览组件 > 打开和保存PDF文档
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:50:23+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:31b646c4b0f1ae41b919993e8b03777ee8640d6e8a5c4c30f3f5e8d6f8f7dad9
+scraped_at: 2026-04-29T13:39:47+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:ae197e8123328e26835455cdeb8eadb16cf439a958506dd3b4d3991ad228252d
 ---
 
 ## 场景介绍
@@ -39,8 +39,8 @@ content_hash: sha256:31b646c4b0f1ae41b919993e8b03777ee8640d6e8a5c4c30f3f5e8d6f8f
 9. private loadResult: pdfService.ParseResult = pdfService.ParseResult.PARSE_ERROR_FORMAT;
 
 11. aboutToAppear(): void {
-12. // 确保沙箱目录有input.pdf文档
-13. let filePath = this.context.filesDir + '/input.pdf';
+12. // 确保在工程目录src/main/resources/resfile里存在input.pdf文档
+13. let filePath = this.context.resourceDir + '/input.pdf';
 14. (async () => {
 15. this.loadResult = await this.controller.loadDocument(filePath);
 16. })()

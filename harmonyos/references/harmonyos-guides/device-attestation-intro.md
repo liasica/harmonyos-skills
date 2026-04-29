@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/device-attest
 title: 应用真实性证明简介
 breadcrumb: 指南 > 系统 > 安全 > Universal Keystore Kit（密钥管理服务） > 本地密钥管理 > 应用真实性证明 > 应用真实性证明简介
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:43:25+08:00
+scraped_at: 2026-04-29T13:32:09+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:604779f3e124ee54fb910a7e950e3b7741e940c1ce47c926d61acb6fc5db6bf3
+content_hash: sha256:446301af2109aba22abaf9a1fb10dd4419e48be10c36127a58d46db09cbc839a
 ---
 
 您可以利用应用真实性证明能力在服务器验证来自应用的请求，具体包括验证请求是否源自真实应用、真实设备，以及请求内容是否未经篡改。
@@ -25,7 +25,7 @@ content_hash: sha256:604779f3e124ee54fb910a7e950e3b7741e940c1ce47c926d61acb6fc5d
 
 您的应用可以通过调用Universal Keystore Kit相关接口，并在您的服务器上完成对应的校验，以验证应用请求的真实性。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/3glv9DVXQFS813U9yjLIOA/zh-cn_image_0000002583478413.png?HW-CC-KV=V1&HW-CC-Date=20260427T234324Z&HW-CC-Expire=86400&HW-CC-Sign=35049ADCCDD8627B9FBFC0DE8A123BF68D48FF75CD71D41A96D41C4188D37F38)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/UUUGrkqLRoOOm2hbQhf5Qg/zh-cn_image_0000002589244717.png?HW-CC-KV=V1&HW-CC-Date=20260429T053208Z&HW-CC-Expire=86400&HW-CC-Sign=E149E3F0DFB716980184F5B90B607E1BD3B1EBD4A89E76E523D2482ECE92B287)
 
 本文介绍如何在您的应用和应用服务器上验证应用请求真实性，使用过程为：
 

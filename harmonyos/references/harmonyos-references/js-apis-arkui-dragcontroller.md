@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: @ohos.arkui.dragController (DragController)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.arkui.dragController (DragController)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:00:17+08:00
+scraped_at: 2026-04-29T13:50:31+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:cacf32e25fa6f287d5b7fd29bddae6bb31b1b96128166f8e0e8acf940d176690
+content_hash: sha256:3617a54479543c144be470cdaa79d346dcce306eb65d0602ae3fc3a133a879e8
 ---
 
 本模块提供发起主动拖拽的能力，当应用接收到触摸或长按等事件时可以主动发起拖拽的动作，并在其中携带拖拽信息。
@@ -141,7 +141,7 @@ executeDrag(custom: CustomBuilder | DragItemInfo, dragInfo: DragInfo,callback:As
 74. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/6PI6C38MSImO9YGMsMFOFQ/zh-cn_image_0000002552799752.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000015Z&HW-CC-Expire=86400&HW-CC-Sign=6B0F65DD13ECB085F7D04F2B8BD0E11E90FC1E330A4435D95ED06E5B0EA2565C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/JnwiURbURJK4aoQxCGrNoQ/zh-cn_image_0000002589325791.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055029Z&HW-CC-Expire=86400&HW-CC-Sign=5B06BB5CA25E80F675BC7FF62B4B64BB0BB76C4145D3E4359121D89C09F6AAD5)
 
 ## dragController.executeDrag(deprecated)
 
@@ -295,7 +295,7 @@ executeDrag(custom: CustomBuilder | DragItemInfo, dragInfo: DragInfo): Promise<D
 104. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/4PHNcyB8SAizieGfYKiGDw/zh-cn_image_0000002583439447.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000015Z&HW-CC-Expire=86400&HW-CC-Sign=460414EBF0FB7D908F756126817ACDF104F8AC18B69DC929364DBD02A5356A62)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/5yt51sUsQvKeeQC7-PHx0A/zh-cn_image_0000002589245733.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055029Z&HW-CC-Expire=86400&HW-CC-Sign=BB89D35C185FB14CE05BC33CEE93B44673A58F4BEC19D4EA5483A04931FF1DB0)
 
 ## DragInfo
 
@@ -464,7 +464,7 @@ createDragAction(customArray: Array<CustomBuilder | DragItemInfo>, dragInfo: Dra
 101. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/yUsx_ef6SVy_WkIHR56V1w/zh-cn_image_0000002552959402.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000015Z&HW-CC-Expire=86400&HW-CC-Sign=B4CD1166CCC846BC6F4BDFC5D7F29383FD2627F3C719B7F83B41ACC3B4172D6C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/wnGDL-PuQVeq4e9CE5Dqsw/zh-cn_image_0000002558765922.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055029Z&HW-CC-Expire=86400&HW-CC-Sign=7BC3438F247126879F6852022FF6096237E5021AD2371F8233D5C976827C23BE)
 
 ## DragAction11+
 
@@ -743,7 +743,7 @@ startDrag(): Promise<void>
 167. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/IZa8Yj3mRVqMX8cB6GR13g/zh-cn_image_0000002583479403.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000015Z&HW-CC-Expire=86400&HW-CC-Sign=964FD8C566A2C79040DEDF5DE4E730EF2BE39F31F2C715AF623B5A33CACE61EB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/ZPO7hs-JRiyg_GFTqEiEqw/zh-cn_image_0000002558606266.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055029Z&HW-CC-Expire=86400&HW-CC-Sign=DE22E93D889A7BB332F98FFBD50DA66FAE1E91BA15571C919D3EB7395737EFA0)
 
 ### on('statusChange')11+
 
@@ -1219,7 +1219,7 @@ animate(options: AnimationOptions, handler: () => void): void
    97. }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/cpFyhXLFQm6jVvvwwUZxLw/zh-cn_image_0000002552799754.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000015Z&HW-CC-Expire=86400&HW-CC-Sign=3B7E55A530809C7952A630DD57B885EC4F585B7AC9A5ED50005B4A94591C99CC)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/iC4zXP70QDGFFshn5hN03g/zh-cn_image_0000002589325793.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055029Z&HW-CC-Expire=86400&HW-CC-Sign=516A0B2EF4A7E9000666EB0208F604F723676B66F54A3F9026DCC1B98BD4BE68)
 
 ## DragStartRequestStatus18+
 

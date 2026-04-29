@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: ScrollBar
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 滚动与滑动 > ScrollBar
 category: harmonyos-references
-scraped_at: 2026-04-28T08:01:33+08:00
+scraped_at: 2026-04-29T13:51:49+08:00
 doc_updated_at: 2026-03-27
-content_hash: sha256:a0219a9c6fcaf96b8f0d40f7317e2f374517b07a3e9bfa5d73a9c8a1d285025a
+content_hash: sha256:f3372fcad7f420eb2cb6a15dc56822d62e17bbe5fe62213ccbc95078ed7f283e
 ---
 
 滚动条组件ScrollBar，用于配合可滚动组件使用，如[ArcList](ts-container-arclist.md)、[List](ts-container-list.md)、[Grid](ts-container-grid.md)、[Scroll](ts-container-scroll.md)、[WaterFlow](ts-container-waterflow.md)。
@@ -177,7 +177,7 @@ PhonePC/2in1TabletTVWearable
 41. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/7lBS2QKFTUuhiy963a9C2A/zh-cn_image_0000002552959652.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000132Z&HW-CC-Expire=86400&HW-CC-Sign=879041731D079916E7DBBC5C1CE9A7EDCE709297E647E7FB1860D12EF6C61577)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/Fhb1gYr6RI2Td5z6X1C6PQ/zh-cn_image_0000002558766174.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055146Z&HW-CC-Expire=86400&HW-CC-Sign=B1E31A98BB2884B3F3E836AC1CBC4315C9AF6F7D26C3A9E23BD27DC0075585B1)
 
 ## 示例2（不设置子节点）
 
@@ -226,7 +226,7 @@ PhonePC/2in1TabletTVWearable
 38. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/ngNnZSOBQeGYzxGFNEBz3Q/zh-cn_image_0000002583479653.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000132Z&HW-CC-Expire=86400&HW-CC-Sign=9C5032C6ED148D90151B0463998E887E1CCF1F2465D3BF864E9BBDD3CC7AF507)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/zL9R4d7fRDS7cTRWHDYqRQ/zh-cn_image_0000002558606516.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055146Z&HW-CC-Expire=86400&HW-CC-Sign=62C505F4AD38BDF21EE14687F508EE674BBC65A4CAE88EA2C5B552F202AA862B)
 
 ## 示例3（支持嵌套滚动）
 
@@ -300,4 +300,4 @@ PhonePC/2in1TabletTVWearable
 63. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/XdIN0tnmRLeRKHhXTYaSZw/zh-cn_image_0000002552800004.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000132Z&HW-CC-Expire=86400&HW-CC-Sign=60BFC544F1389E174FE6FB91E74D7F2D68DA7EDF342FFA59B4F545B18343D20E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/Gt1_70owSI2NW3n5e8CexQ/zh-cn_image_0000002589326043.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055146Z&HW-CC-Expire=86400&HW-CC-Sign=37FAD537EAA9F5E499ABD831B1D6D2FE57B32A56E3B4F39B094C9BF420A2BA0A)

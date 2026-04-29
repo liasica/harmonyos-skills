@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: Slider
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 按钮与选择 > Slider
 category: harmonyos-references
-scraped_at: 2026-04-28T08:01:46+08:00
+scraped_at: 2026-04-29T13:52:05+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:b9164036e07641102bbb4fdde7735a5370e93c15b32eecc50333fedef776955b
+content_hash: sha256:f814c46e7eb8f830afbeed1a5eb7e6b4d42cc3fc79ac9f6dd863ddc37b6f456e
 ---
 
 滑动条组件，通常用于快速调节设置值，如音量调节、亮度调节等应用场景。
@@ -1138,7 +1138,7 @@ PhonePC/2in1TabletTVWearable
 172. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/hC2YTO7vRCyPgsF3iztDbQ/zh-cn_image_0000002552800078.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000144Z&HW-CC-Expire=86400&HW-CC-Sign=80BDAE0CE4463FBD6D7E3F8A3EB17A2104550B7E316787720E6DA0B6F7E45323)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/Z4o-l-JSR5uD3DL2eBQCTw/zh-cn_image_0000002589326117.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055203Z&HW-CC-Expire=86400&HW-CC-Sign=156BD313D50DF33BF6DF25DB159DEC5AA1A77F3B241EBE40B3CE50C21129F9FE)
 
 ### 示例2（设置滑动条样式）
 
@@ -1193,7 +1193,7 @@ PhonePC/2in1TabletTVWearable
 46. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/_LvrwAj8SJG_REEhdmtBRA/zh-cn_image_0000002583439773.png?HW-CC-KV=V1&HW-CC-Date=20260428T000144Z&HW-CC-Expire=86400&HW-CC-Sign=DFC3AA08E69F1E28A3DBE18DF687EE4D1B0549FF194BF1C2F8989CEEAA799BF5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/vMM3DZ0MRCCqd7teb9c2Sw/zh-cn_image_0000002589246059.png?HW-CC-KV=V1&HW-CC-Date=20260429T055203Z&HW-CC-Expire=86400&HW-CC-Sign=4F9EEEEE2301638CC64C8D060C0372CFF04B0369BD154086CFDCB5187D1548D4)
 
 ### 示例3（自定义滑动条）
 
@@ -1311,7 +1311,7 @@ PhonePC/2in1TabletTVWearable
 110. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/DkekV5NeTtijwGt2xv6V7Q/zh-cn_image_0000002552959728.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000144Z&HW-CC-Expire=86400&HW-CC-Sign=6A26D7053829D16AD5C50F1999BE69E16D5643419B8EDA687840BAD5E09521A8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/FWtA1mQcQ12RijJqEEeCTQ/zh-cn_image_0000002558766250.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055203Z&HW-CC-Expire=86400&HW-CC-Sign=D48184D7BECCE5DBE5C6178A409C876CD89B362140639B1849915F350A332F9B)
 
 ### 示例4（设置滑动条渐变色）
 
@@ -1394,7 +1394,7 @@ PhonePC/2in1TabletTVWearable
 74. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/dROBkOfkSLmA_DbGpTKHyA/zh-cn_image_0000002583479729.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000144Z&HW-CC-Expire=86400&HW-CC-Sign=D4333D7E86F1F8336C7E24AE6D3293816CE6530A608DA8A751E1ECB7B41BE828)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/fQIHYEtWT72PtH2GK2AaXQ/zh-cn_image_0000002558606592.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055203Z&HW-CC-Expire=86400&HW-CC-Sign=B99A2E61CA7AEB08628F7172F748CBDF3166639BFE627BC12816566DCFEB247E)
 
 ### 示例5（滑动条设置前后缀内容）
 
@@ -1611,7 +1611,7 @@ PhonePC/2in1TabletTVWearable
 208. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/FbH7QnoNQ8SsJst_ku0E9g/zh-cn_image_0000002552800080.jpeg?HW-CC-KV=V1&HW-CC-Date=20260428T000144Z&HW-CC-Expire=86400&HW-CC-Sign=03C8EF582359B4218D4D576C3EA18D74FAC237A3966FFD26F6A099C2E29EB637)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/bX5LM3VuQNu2TQlpXJTlPQ/zh-cn_image_0000002589326119.jpeg?HW-CC-KV=V1&HW-CC-Date=20260429T055203Z&HW-CC-Expire=86400&HW-CC-Sign=130919A3BA847A769975399347B86ADDBDED3AAB158C0C5FE8C4B78E6688DB28)
 
 ### 示例6（滑动条设置刻度点无障碍文本）
 
@@ -1679,7 +1679,7 @@ PhonePC/2in1TabletTVWearable
 59. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/aOW0ypzJTsqmHDLtSD392A/zh-cn_image_0000002583439775.png?HW-CC-KV=V1&HW-CC-Date=20260428T000144Z&HW-CC-Expire=86400&HW-CC-Sign=4AE98A3CF6969EEDB3FE17F7E4FF7E30EA51C20ED93F804E019A14441BB0B26E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/GymUn7dyREasww9vNrXzPw/zh-cn_image_0000002589246061.png?HW-CC-KV=V1&HW-CC-Date=20260429T055203Z&HW-CC-Expire=86400&HW-CC-Sign=91C1A3355CD938EE7697711F06DC2B1044DDB28F6FF508221033D53A6868F8CB)
 
 ### 示例7（设置滑动条的双向绑定）
 
@@ -1712,7 +1712,7 @@ PhonePC/2in1TabletTVWearable
 24. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/udCiEjzwQCeBaaRmuh5JDA/zh-cn_image_0000002552959730.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000144Z&HW-CC-Expire=86400&HW-CC-Sign=C76BEF54F2CCB662534C08C69176263A41280A08B2CDDBC99C4DF8AD97553039)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/THA_W4ukTAOj66dTxhPckA/zh-cn_image_0000002558766252.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055203Z&HW-CC-Expire=86400&HW-CC-Sign=34D3F0F23B76FC0E23012EDA10221E3F5FCC03490DCD0E0E078036291ADDB886)
 
 ### 示例8（滑块设置渐变色）
 
@@ -1831,7 +1831,7 @@ PhonePC/2in1TabletTVWearable
 110. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/KWWXzLDxQaqc33zUpktK-g/zh-cn_image_0000002583479731.png?HW-CC-KV=V1&HW-CC-Date=20260428T000144Z&HW-CC-Expire=86400&HW-CC-Sign=DFBE744A44B2585F5614F29045D4170EC9E48EEB50EC91B2D52F33D5ED98A7C2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/tlX3MQmrSPaCJ4IIb29w_A/zh-cn_image_0000002558606594.png?HW-CC-KV=V1&HW-CC-Date=20260429T055203Z&HW-CC-Expire=86400&HW-CC-Sign=4B4026B074358F522F2ED1E68DB126243262AC2549629DBC9EC7C25CD1EC707B)
 
 ### 示例9（设置滑轨的背景颜色）
 
@@ -1875,4 +1875,4 @@ PhonePC/2in1TabletTVWearable
 33. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/-o6Hgf82RhSdXoJnUM9oVQ/zh-cn_image_0000002552800082.png?HW-CC-KV=V1&HW-CC-Date=20260428T000144Z&HW-CC-Expire=86400&HW-CC-Sign=461EB8B87B1750377BB9E08073CF541DF12B053FFB9BD2DBA2E8CAFD1C3283CD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/imeGKUkgTsONFDFhUU9wSQ/zh-cn_image_0000002589326121.png?HW-CC-KV=V1&HW-CC-Date=20260429T055203Z&HW-CC-Expire=86400&HW-CC-Sign=51CE97F4D22F0DE6A0497185FE8AB2CBF5578C06F1259F021359B6D41F2E24C6)

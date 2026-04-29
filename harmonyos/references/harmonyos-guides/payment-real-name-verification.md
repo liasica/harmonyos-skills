@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/payment-real-
 title: 实名信息验证/授权场景
 breadcrumb: 指南 > 应用服务 > Payment Kit（鸿蒙支付服务） > 用户身份验证服务 > 实名信息验证/授权场景
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:50:12+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:cbb4c85c002534afe753d0230871ac9b373ea9e897a729a333f51b50204b3f84
+scraped_at: 2026-04-29T13:39:34+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:34ac425b02e448c3987224bea4e3dee0cb22feb0e816441c3581fd093f974045
 ---
 
 ## 场景介绍
@@ -18,7 +18,7 @@ content_hash: sha256:cbb4c85c002534afe753d0230871ac9b373ea9e897a729a333f51b50204
 
 实名信息验证授权页面展示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/KYLTQz3vSBOdcZMmT--UPQ/zh-cn_image_0000002583439139.png?HW-CC-KV=V1&HW-CC-Date=20260427T235011Z&HW-CC-Expire=86400&HW-CC-Sign=4AD2665035A5F1D2DADAA4614869CAF093AEFD42D0D4A37B47B5101148F01DBF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/vmTb-MgPQ2qIGTacO7JoQw/zh-cn_image_0000002589325465.png?HW-CC-KV=V1&HW-CC-Date=20260429T053933Z&HW-CC-Expire=86400&HW-CC-Sign=DFC52518609C839FB8DBDE99FF04C95B6C84850853BC25F7D004CCB68377DBB4)
 
 ## 接入流程
 
@@ -33,7 +33,7 @@ content_hash: sha256:cbb4c85c002534afe753d0230871ac9b373ea9e897a729a333f51b50204
 
 开发者通过接入Payment Kit实名信息验证授权能力，可以简便快捷地实现用户实名信息验证或获取用户授权后的实名信息（可二选一）。具体接入流程如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/75YgsHJnTpmd-yzkTDwCTA/zh-cn_image_0000002552959094.png?HW-CC-KV=V1&HW-CC-Date=20260427T235011Z&HW-CC-Expire=86400&HW-CC-Sign=EBBB5AD6D32F9D3F7F6202512BC499A40156730C08FD0A4ABE2FD158301E6AD3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/WoS5DVI5T6-PZPf_ZOgkVQ/zh-cn_image_0000002589245403.png?HW-CC-KV=V1&HW-CC-Date=20260429T053933Z&HW-CC-Expire=86400&HW-CC-Sign=D202D869D77D4FFC12FE4524A6A57EAFD715163E122643CC0956522C728F8342)
 
 ### 实名信息验证
 
@@ -41,7 +41,7 @@ content_hash: sha256:cbb4c85c002534afe753d0230871ac9b373ea9e897a729a333f51b50204
 2. 开发者服务端请求Payment Kit服务端[实名信息预验证](../harmonyos-references/payment-api-common-verification-preverify.md)接口获取预验证ID（preVerifyId）。
 3. Payment Kit服务端返回预验证ID给开发者服务端。
 4. 开发者服务端返回预验证信息给开发者客户端。
-5. 开发者客户端使用预验证ID调用[startRealNameVerification](../harmonyos-references/payment-realnameservice.md#realnameservicestartrealnameverification)接口拉起实名信息验证页面。
+5. 开发者客户端使用预验证ID调用[startRealNameVerification](../harmonyos-references/payment-realnameservice.md#startrealnameverification)接口拉起实名信息验证页面。
 6. Payment Kit客户端展示验证信息。
 7. 用户同意授权实名信息校验，Payment Kit客户端请求Payment Kit服务端处理校验。
 8. Payment Kit服务端完成校验处理并返回校验结果给Payment Kit客户端展示给用户。
@@ -53,7 +53,7 @@ content_hash: sha256:cbb4c85c002534afe753d0230871ac9b373ea9e897a729a333f51b50204
 
 ### 实名信息授权
 
-1. 开发者客户端如需要获取用户实名信息，可调用[startRealNameAuth](../harmonyos-references/payment-realnameservice.md#realnameservicestartrealnameauth)接口拉起实名信息授权页面。
+1. 开发者客户端如需要获取用户实名信息，可调用[startRealNameAuth](../harmonyos-references/payment-realnameservice.md#startrealnameauth)接口拉起实名信息授权页面。
 2. Payment Kit客户端给用户展示实名信息授权页面。
 3. 用户同意获取实名信息授权，Payment Kit客户端请求Payment Kit服务端校验授权处理
 4. Payment Kit服务端完成校验处理并返回授权校验结果给Payment Kit客户端展示给用户。
@@ -66,7 +66,7 @@ content_hash: sha256:cbb4c85c002534afe753d0230871ac9b373ea9e897a729a333f51b50204
 
 ## 接口说明
 
-拉起用户实名信息验证授权页面接口。具体API说明详见[接口文档](../harmonyos-references/payment-realnameservice.md#realnameservicestartrealnameverification)。
+拉起用户实名信息验证授权页面接口。具体API说明详见[接口文档](../harmonyos-references/payment-realnameservice.md#startrealnameverification)。
 
 | 接口名 | 描述 |
 | --- | --- |
@@ -183,7 +183,7 @@ content_hash: sha256:cbb4c85c002534afe753d0230871ac9b373ea9e897a729a333f51b50204
    ```
 2. **拉起实名信息验证（端侧开发）**
 
-   开发者客户端使用后端服务返回的预验证ID作为参数调用[startRealNameVerification](../harmonyos-references/payment-realnameservice.md#realnameservicestartrealnameverification)接口拉起用户实名信息验证页面。当接口通过.then()方法返回时，则表示当前接口请求成功，通过.catch()方法返回表示接口请求失败。当此次请求有异常时，可通过**error.code**获取错误码，错误码相关信息请参见[错误码](../harmonyos-references/payment-error-code.md)。示例代码如下：
+   开发者客户端使用后端服务返回的预验证ID作为参数调用[startRealNameVerification](../harmonyos-references/payment-realnameservice.md#startrealnameverification)接口拉起用户实名信息验证页面。当接口通过.then()方法返回时，则表示当前接口请求成功，通过.catch()方法返回表示接口请求失败。当此次请求有异常时，可通过**error.code**获取错误码，错误码相关信息请参见[错误码](../harmonyos-references/payment-error-code.md)。示例代码如下：
 
    ```
    1. import { BusinessError } from '@kit.BasicServicesKit';
@@ -231,7 +231,7 @@ content_hash: sha256:cbb4c85c002534afe753d0230871ac9b373ea9e897a729a333f51b50204
 
 1. **拉起实名信息授权（端侧开发）**
 
-   开发者客户端调用[startRealNameAuth](../harmonyos-references/payment-realnameservice.md#realnameservicestartrealnameauth)接口拉起用户实名信息授权页面。当接口通过.then()方法返回时，则表示当前接口请求成功，通过.catch()方法返回表示接口请求失败。当此次请求有异常时，可通过**error.code**获取错误码，错误码相关信息请参见[错误码](../harmonyos-references/payment-error-code.md)。示例代码如下：
+   开发者客户端调用[startRealNameAuth](../harmonyos-references/payment-realnameservice.md#startrealnameauth)接口拉起用户实名信息授权页面。当接口通过.then()方法返回时，则表示当前接口请求成功，通过.catch()方法返回表示接口请求失败。当此次请求有异常时，可通过**error.code**获取错误码，错误码相关信息请参见[错误码](../harmonyos-references/payment-error-code.md)。示例代码如下：
 
    ```
    1. import { BusinessError } from '@kit.BasicServicesKit';

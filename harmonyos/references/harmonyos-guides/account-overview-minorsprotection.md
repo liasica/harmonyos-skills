@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-overv
 title: 概述
 breadcrumb: 指南 > 应用服务 > Account Kit（华为账号服务） > 未成年人模式 > 概述
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:48:01+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:4a7127a20fdaa46d2aefb0a591ee3edcd51dc6f01cfe725005d7eef3a6345bf9
+scraped_at: 2026-04-29T13:36:54+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:0b3b99d1af3670fc728e898efd59d352ccdfdf84469bce4e56d9acd85449ebba
 ---
 
 未成年人模式用于帮助应用与系统联动，提供未成年人网络保护。应用通过接入Account Kit提供的[未成年人模式能力](../harmonyos-references/account-api-minorsprotection.md)与系统联动，可快速实现自动切换未成年人模式状态，简化了家长用户的设置步骤，为未成年人提供安全、健康的网络环境。
@@ -80,10 +80,10 @@ content_hash: sha256:4a7127a20fdaa46d2aefb0a591ee3edcd51dc6f01cfe725005d7eef3a63
 
 说明
 
-针对上述场景，建议先调用[canIUse](../harmonyos-references/syscap.md#判断-api-是否可以使用)接口和[supportMinorsMode](../harmonyos-references/account-api-minorsprotection.md#supportminorsmode)接口来判断当前设备环境是否支持系统的未成年人模式，否则在不支持的设备环境上调用未成年人模式相关接口，可能会造成程序崩溃：
+针对上述场景，建议先调用[canIUse](../harmonyos-references/syscap.md#使用caniuse判断syscap是否可调用)接口和[supportMinorsMode](../harmonyos-references/account-api-minorsprotection.md#supportminorsmode)接口来判断当前设备环境是否支持系统的未成年人模式，否则在不支持的设备环境上调用未成年人模式相关接口，可能会造成程序崩溃：
 
-1. 当[canIUse](../harmonyos-references/syscap.md#判断-api-是否可以使用)接口和[supportMinorsMode](../harmonyos-references/account-api-minorsprotection.md#supportminorsmode)接口返回均为true时，表明该设备支持系统的未成年人模式，应用可通过本章节描述的相关能力，与系统进行未成年人模式联动。
-2. 当[canIUse](../harmonyos-references/syscap.md#判断-api-是否可以使用)接口或[supportMinorsMode](../harmonyos-references/account-api-minorsprotection.md#supportminorsmode)接口返回为false时，表明该设备暂未支持系统的未成年人模式以及相关联动能力，应用需构建自己的未成年人模式或关闭应用的未成年人模式入口。
+1. 当[canIUse](../harmonyos-references/syscap.md#使用caniuse判断syscap是否可调用)接口和[supportMinorsMode](../harmonyos-references/account-api-minorsprotection.md#supportminorsmode)接口返回均为true时，表明该设备支持系统的未成年人模式，应用可通过本章节描述的相关能力，与系统进行未成年人模式联动。
+2. 当[canIUse](../harmonyos-references/syscap.md#使用caniuse判断syscap是否可调用)接口或[supportMinorsMode](../harmonyos-references/account-api-minorsprotection.md#supportminorsmode)接口返回为false时，表明该设备暂未支持系统的未成年人模式以及相关联动能力，应用需构建自己的未成年人模式或关闭应用的未成年人模式入口。
 
 ## 接入规范
 
@@ -93,17 +93,29 @@ content_hash: sha256:4a7127a20fdaa46d2aefb0a591ee3edcd51dc6f01cfe725005d7eef3a63
 
    通过在工程中entry模块的module.json5文件中module属性下配置metadata字段并且配置minors\_mode值为"1"，表示当前应用已接入未成年人模式，如果开发者没有配置相关字段，或配置值不为"1"，则表示该应用不支持未成年人模式，当系统开启未成年人模式时，不支持未成年人模式的应用会被默认禁用。
 
-   json "module": { "name": "<name>", "type": "entry", "description": "<description>", "mainElement": "<mainElement>", "deviceTypes": [], "pages": "<pages>", "abilities": [], "metadata": [ { "name": "minors\_mode", "value": "1" } ], "extensionAbilities": [] }
+   ```
+   1. "module": {
+   2. "name": "<name>",
+   3. "type": "entry",
+   4. "description": "<description>",
+   5. "mainElement": "<mainElement>",
+   6. "deviceTypes": [],
+   7. "pages": "<pages>",
+   8. "abilities": [],
+   9. "metadata": [
+   10. {
+   11. "name": "minors_mode",
+   12. "value": "1"
+   13. }
+   14. ],
+   15. "extensionAbilities": []
+   16. }
+   ```
 
-   > **注意：**
+   注意
 
-   >
-
-   > 1. 开发者如果声明应用支持未成年人模式，则建议接入系统提供的未成年人模式，跟随系统状态进行切换，并提供适龄内容。不能随同系统切换而切换的，应用责任自负。开发者需确保应用提供的未成年人模式内容符合相关法律法规及监管要求。因违反规定而导致的一切后果由开发者自行负责。
-
-   >
-
-   > 2. 如果开发者修改过该应用在健康使用设备中的管控规则，则以修改过的最新规则为准。
+   1. 开发者如果声明应用支持未成年人模式，则建议接入系统提供的未成年人模式，跟随系统状态进行切换，并提供适龄内容。不能随同系统切换而切换的，应用责任自负。开发者需确保应用提供的未成年人模式内容符合相关法律法规及监管要求。因违反规定而导致的一切后果由开发者自行负责。
+   2. 如果开发者修改过该应用在健康使用设备中的管控规则，则以修改过的最新规则为准。
 2. 应用需主动跟随系统切换未成年人模式的状态。（用户操作关闭应用的未成年人模式场景除外）
 3. 开发者需为未成年人提供分龄内容服务，并打造专属内容池，获取系统中未成年人的年龄段信息作为分级依据，推荐适龄内容，保障未成年人接触的信息内容适龄，同时应用也需屏蔽未成年人不可使用的功能。
 
@@ -111,6 +123,6 @@ content_hash: sha256:4a7127a20fdaa46d2aefb0a591ee3edcd51dc6f01cfe725005d7eef3a63
 
 ## 用户体验设计
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/SezGjG2QR5W3q7TehEEWkQ/zh-cn_image_0000002583478759.png?HW-CC-KV=V1&HW-CC-Date=20260427T234801Z&HW-CC-Expire=86400&HW-CC-Sign=572FEDCE0E69D1EAE1C6436F1BD039BB95B3D80ECC433910E1864BC5CDD294F2 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/5bm6WOFITqO284iipAGS4w/zh-cn_image_0000002558605602.png?HW-CC-KV=V1&HW-CC-Date=20260429T053653Z&HW-CC-Expire=86400&HW-CC-Sign=E953E54D0DA0A0E638A4A9CEEC935D9789463CCD82C6E38AA6D18A559593A1DA "点击放大")
 
 当应用开启未成年人模式后，建议应用主页样式参考以上UX设计，保障用户体验的一致性。

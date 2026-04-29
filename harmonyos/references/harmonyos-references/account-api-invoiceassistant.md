@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/account-a
 title: invoiceAssistant (华为账号发票助手服务)
 breadcrumb: API参考 > 应用服务 > Account Kit（华为账号服务） > ArkTS API > invoiceAssistant (华为账号发票助手服务)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:16:06+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:eb20e3cb51a5aa8705756f64b0335a8173fa9e7d0ee0557187f685ccc1ecc78b
+scraped_at: 2026-04-29T14:06:44+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:5479e236c36d4c42e3800d28e6fb7bb241b2a3a16f8d006bf7daadfac05e78d4
 ---
 
 本模块提供Account Kit的发票助手能力。
@@ -141,7 +141,7 @@ selectInvoiceTitle(context: common.Context): Promise<InvoiceTitle>
 23. })
 24. .catch((error: BusinessError<Object>) => {
 25. dealAllError(error);
-26. })
+26. });
 27. } catch (error) {
 28. dealAllError(error);
 29. }

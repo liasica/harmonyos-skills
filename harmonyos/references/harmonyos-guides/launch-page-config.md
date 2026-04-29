@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/launch-page-c
 title: 配置应用启动页
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 窗口管理 > 应用启动页的配置与使用 > 配置应用启动页
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:40:46+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:0fe3d4d2762843d1dc3fadeb7f411a5645226c084703685cfdc3b04329fc153c
+scraped_at: 2026-04-29T13:29:10+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:8886fec48965170d3c81a781325ad4721d9aa1ab3b3617b5bec4c1419e7ee4bf
 ---
 
 ## 启动页的分类和实现方式
@@ -40,7 +40,7 @@ content_hash: sha256:0fe3d4d2762843d1dc3fadeb7f411a5645226c084703685cfdc3b04329f
 
 **图1** 默认启动页示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/7F7tIzugTxCnngojg4fc_A/zh-cn_image_0000002552798552.png?HW-CC-KV=V1&HW-CC-Date=20260427T234045Z&HW-CC-Expire=86400&HW-CC-Sign=F336E446716101AEF6B5D86C7FF26C86EFC422891A94ED8DB8EECF5DFC417084)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/lFuvSZa0SIe3CFk4YbucgQ/zh-cn_image_0000002558764692.png?HW-CC-KV=V1&HW-CC-Date=20260429T052909Z&HW-CC-Expire=86400&HW-CC-Sign=DD10385ECE806104C5E7D316FD78026A4653A7F78E32EB1ACD41EB40C164C444)
 
 开发者可以根据应用需要，配置使用自定义设计的图标资源和颜色资源。
 
@@ -63,7 +63,7 @@ startWindow字段提供了增强的启动页配置能力，可用于元素更复
    1. "startWindow": "$profile:start_window",
    ```
 
-   [module.json5](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/StartWindow/EnhancedStartingWindow/entry/src/main/module.json5#L39-L66)
+   [module.json5](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/StartWindow/EnhancedStartingWindow/entry/src/main/module.json5#L39-L36)
 2. 配置二级json文件的具体字段。启动页资源主要在上、下两个区域进行展示，如果对应区域的资源未配置，则留空，其他区域的位置和尺寸不受影响。
 
    具体可配置字段、各字段含义及增强启动页示意图请见下文。
@@ -81,7 +81,7 @@ startWindow字段提供了增强的启动页配置能力，可用于元素更复
 
 **图2** 增强启动页示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/1oZk-_wRTZ-gvWKY6Lq9Kw/zh-cn_image_0000002583438247.png?HW-CC-KV=V1&HW-CC-Date=20260427T234045Z&HW-CC-Expire=86400&HW-CC-Sign=158A5D158664EA048BF9767D4F13E566FDC25F8AB877CB3FED9794B864D273DB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/gNYhvTIMTwCyBXH07f2dug/zh-cn_image_0000002558605038.png?HW-CC-KV=V1&HW-CC-Date=20260429T052909Z&HW-CC-Expire=86400&HW-CC-Sign=F77D9811F2B39FBB01D6B86C6FCCB35022E0B0693335418ECE1656ECE8AA352F)
 
 示例如下：
 

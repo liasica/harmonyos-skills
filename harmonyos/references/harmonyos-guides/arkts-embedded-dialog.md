@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-embedde
 title: 页面级弹出框
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用弹窗 > 弹出框 (Dialog) > 页面级弹出框
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:39:44+08:00
+scraped_at: 2026-04-29T13:27:54+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:665a7f3a88990588367a7baf57884e37b5eef6a9c9d6a461a5e621a49e15eacd
+content_hash: sha256:f74d05665f56ee2b087339d5c125fd1e2970d8c981feb8836158293a786606c0
 ---
 
 ArkUI的弹出框默认设置为全局级别，弹窗节点作为页面根节点的子节点，显示层级高于应用中的所有路由/导航页面。当页面内进行路由跳转时，如果应用未主动调用close方法关闭弹出框，弹出框不会自动关闭，并且会在下一个跳转页面上继续显示。
@@ -191,7 +191,7 @@ ArkUI的弹出框默认设置为全局级别，弹窗节点作为页面根节点
 
 [Next.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/DialogProject/entry/src/main/ets/pages/customdialog/pageleveldialogbox/Next.ets#L16-L38)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/ZiaRfo_sSG6CX3U-ZGQMkA/zh-cn_image_0000002583437953.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233942Z&HW-CC-Expire=86400&HW-CC-Sign=653082C6C65C8D343EA4CCA0049DE86079EEEA0E20330DF5360B045C1EB12556)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/AfWdqZ2kR6uRH7ckIoDG4Q/zh-cn_image_0000002558604742.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052753Z&HW-CC-Expire=86400&HW-CC-Sign=EFA62CA0293764EFF12C06D515480958B7C0E24614AA8A4DCB9DB828B28EA30E)
 
 下述示例为基于Navigation导航模式下的页面级弹出框。使用本示例前需要参考[Navigation使用NavDestination作为导航页](../harmonyos-references/ts-basic-components-navigation.md#示例16navigation使用navdestination作为导航页)文档完成Index首页和router\_map.json的创建与配置。并使用下述示例代码中的PageLevelDialogInNavigation和PageLevelDialogInNavigationTestTwo组件替换Navigation参考文档中的PageHome和PageOne组件。
 
@@ -293,4 +293,4 @@ ArkUI的弹出框默认设置为全局级别，弹窗节点作为页面根节点
 95. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/GWLIBDwTRG-t6OMIZwnShA/zh-cn_image_0000002552957908.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233942Z&HW-CC-Expire=86400&HW-CC-Sign=A0680FC855A0BA32887B0F3C868EDB4A4E4944505CDDEDC2BDE95A38E05DD5FC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/94baSOxiTg6c9hSXWHa11w/zh-cn_image_0000002589324267.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052753Z&HW-CC-Expire=86400&HW-CC-Sign=117114C2FA2922365F2F3A76C2E8A2A53345C948B4CBDDB38F34470F0D95D5DA)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: @ohos.arkui.componentSnapshot (组件截图)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.arkui.componentSnapshot (组件截图)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:00:16+08:00
+scraped_at: 2026-04-29T13:50:29+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:74c8cc203751c33a099e102a0017a5f74b75c3713f20aaeea47fd60ffa9c5bb0
+content_hash: sha256:d58547d4939c1e14fa4396d6755d15ce48e63cde969ae5ea26b9dae50bc18a51
 ---
 
 本模块提供获取组件截图的能力，包括已加载的组件的截图和没有加载的组件的截图。组件截图只能够截取组件大小的区域，如果组件的绘制超出了它的区域，或子组件的绘制超出了父组件的区域，这些在组件区域外绘制的内容不会在截图中呈现。兄弟节点堆叠在组件区域内，截图不会显示兄弟组件。
@@ -111,7 +111,7 @@ get(id: string, callback: AsyncCallback<image.PixelMap>, options?: SnapshotOptio
 38. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/pXTt80VvQjG9MLaF2vdVHw/zh-cn_image_0000002552799750.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000015Z&HW-CC-Expire=86400&HW-CC-Sign=8CBE47365D0553B972C76F88279C014D029541E3423E98DD1C249F4ABE02F7A8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/dnuDKCpZQBq4QIHCvU_t0Q/zh-cn_image_0000002589325789.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055027Z&HW-CC-Expire=86400&HW-CC-Sign=53647B3629981E8C069B256F782A0B580D4291C619E8C4F9F2868579FC7EAA3A)
 
 ## componentSnapshot.get(deprecated)
 
@@ -199,7 +199,7 @@ get(id: string, options?: SnapshotOptions): Promise<image.PixelMap>
 37. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/RJ462nuARNmZR4nr8v7OuQ/zh-cn_image_0000002552799750.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000015Z&HW-CC-Expire=86400&HW-CC-Sign=B11A04FDEE317F3B1CFB5D891DF7189AD411825BEA03D0AAD10EDE9DABA3CEAE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/igcO0Go_T1KGenMLDSHxxQ/zh-cn_image_0000002589325789.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055027Z&HW-CC-Expire=86400&HW-CC-Sign=4BEA1FFB230B5A1C427DAD2AD4D73ED7D984C03429760E9FBA9A9FF7B8622F1F)
 
 ## componentSnapshot.createFromBuilder(deprecated)
 
@@ -307,7 +307,7 @@ createFromBuilder(builder: CustomBuilder, callback: AsyncCallback<image.PixelMap
 57. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/1lFuE4kXRT-alxG_YHK1XA/zh-cn_image_0000002583439445.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000015Z&HW-CC-Expire=86400&HW-CC-Sign=4CE34AC7B4D4597A17F1FB203EC360D2296C26932EEDF71C3A57FF163DFCAE4D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/G_oTHCvBTCWPJwdjaj_9BQ/zh-cn_image_0000002589245731.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055027Z&HW-CC-Expire=86400&HW-CC-Sign=064C7F9CDFEFF24365379F5409DDC96807593E1AB124F9B2B6987F98436807C3)
 
 ## componentSnapshot.createFromBuilder(deprecated)
 
@@ -418,7 +418,7 @@ createFromBuilder(builder: CustomBuilder, delay?: number, checkImageStatus?: boo
 55. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/2gCVOaG4QZ2PGdSrkZU-Cg/zh-cn_image_0000002583439445.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000015Z&HW-CC-Expire=86400&HW-CC-Sign=501B287735D29C2B3902743C259AC220378DC78D5633F9ED3B93B126F8AFEF84)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/FedRTtRuQF-eVEa06T846Q/zh-cn_image_0000002589245731.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055027Z&HW-CC-Expire=86400&HW-CC-Sign=FE75DC6D92FEA60003060AD53622C6C7D4D6FA3893551EDC6F8947AB4F98AD32)
 
 ## componentSnapshot.getSync12+
 
@@ -506,7 +506,7 @@ getSync(id: string, options?: SnapshotOptions): image.PixelMap
 37. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/Ya2iJgbaQ4OI-oc-zFoNjQ/zh-cn_image_0000002552799750.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000015Z&HW-CC-Expire=86400&HW-CC-Sign=16D9D86457D1B6FDB97A4D32F9E28E645544A3ABF59F728F713F48627522BACB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/He5Zd6jcRk6QXNVQfZ9n6Q/zh-cn_image_0000002589325789.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055027Z&HW-CC-Expire=86400&HW-CC-Sign=91EC7F02B69CD3949B0DFE7F28E7DD86567503925914C375EFA9689002CEC5E8)
 
 ## SnapshotOptions12+
 
@@ -584,7 +584,7 @@ PhonePC/2in1TabletTVWearable
 42. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/hKwNpCt4Qu65NcPvY3Uo4Q/zh-cn_image_0000002552799750.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000015Z&HW-CC-Expire=86400&HW-CC-Sign=28BEC996ED2FE66A115B8EB9D204C50B467D210CDFC167CE77DED536CB9D5BD1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/hnI1VPmISniu16SGwaANkg/zh-cn_image_0000002589325789.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055027Z&HW-CC-Expire=86400&HW-CC-Sign=1B226E0D4126170D37D9DA361C53F7FF4C88A44B2A54CC3A18BD0BF62B6B7839)
 
 ## DynamicRangeModeOptions23+
 
@@ -647,7 +647,7 @@ PhonePC/2in1TabletTVWearable
 41. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/8LfUKVlxS_ObAHncjrQaCA/zh-cn_image_0000002552799750.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000015Z&HW-CC-Expire=86400&HW-CC-Sign=70B32FC0B2AA37404B8CE813F2F3242E9438FAAC23CF2DA6FA054F64A5CAD5B4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/upxbZyN1Tj6Kgz5T5MNVSQ/zh-cn_image_0000002589325789.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055027Z&HW-CC-Expire=86400&HW-CC-Sign=1870B0375C2EC0B64D8E69A8D5E8DF2B4B903FC37F5D7D72CD29C2DE695AFDBF)
 
 ## SnapshotRegionType15+
 
@@ -765,4 +765,4 @@ PhonePC/2in1TabletTVWearable
 56. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/OPORJaDCRqGxOpCxvJjvzQ/zh-cn_image_0000002552959400.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000015Z&HW-CC-Expire=86400&HW-CC-Sign=FB90E2C793D8E62C49E8DE9A0A7EF6E20B114409A88F2B3B1458B4BDB0F5BFD7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/gofn1j2QQzaDShv9YWB1Tg/zh-cn_image_0000002558765920.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055027Z&HW-CC-Expire=86400&HW-CC-Sign=96463165FEEC87A4E1ABBDDAB0D4F8AC68D41D3B36069A3F43E93F4AB39EAFCB)

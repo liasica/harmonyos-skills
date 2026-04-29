@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/multi-window-
 title: 应用声明支持智慧多窗
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 窗口管理 > 智慧多窗应用开发指南 > 应用适配智慧多窗 > 应用声明支持智慧多窗
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:40:45+08:00
+scraped_at: 2026-04-29T13:29:08+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:9b139810c621f331fb47b11b9ffa94342ce038a8e6e4d44fb7e84e711d00ce35
+content_hash: sha256:08bc5977ec94c80f3c467cdb61bf1922ac64d3dbe65bbb923fd535863216dcc3
 ---
 
 当应用需要智慧多窗的能力时，可以通过在[module.json5配置文件](module-configuration-file.md)中对应标签添加相关字段声明支持。
@@ -138,11 +138,11 @@ supportWindowMode缺省值为["fullscreen", "split", "floating"]。
 
 图1 启动左侧分屏
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/PzLV3DUUTdOQHKcHgRXzgg/zh-cn_image_0000002583478197.gif?HW-CC-KV=V1&HW-CC-Date=20260427T234044Z&HW-CC-Expire=86400&HW-CC-Sign=B839AAEA423D6CD66E7F52EDF54D344FCA74C8706CEE157B678DC3EA9946B375)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/5KB-v2PSR8yJqos4ClDdkg/zh-cn_image_0000002589244495.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052906Z&HW-CC-Expire=86400&HW-CC-Sign=E69A56475E4DBA81BBFBC27CFD6571338E61B80E61476EB5A1A9A2711FCFF6C2)
 
 图2 启动右侧分屏
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/uB6ml3bjSR2ciHzZ1u1WvQ/zh-cn_image_0000002552798548.gif?HW-CC-KV=V1&HW-CC-Date=20260427T234044Z&HW-CC-Expire=86400&HW-CC-Sign=CED15C64F2F92EB0E104F25FCA0130B2FC7E05F6D5A754BC15B26C0E053364F3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/28nyTG_3SZKxL5kZs2JveQ/zh-cn_image_0000002558764688.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052906Z&HW-CC-Expire=86400&HW-CC-Sign=BCAFF6A04DEF83AAC94CDA8BEC8209CCC21F27EA252F35C0288375C226BBDE67)
 
 ## 应用内多窗
 

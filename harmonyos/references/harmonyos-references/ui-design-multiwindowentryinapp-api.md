@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design
 title: MultiWindowEntryInAPP
 breadcrumb: API参考 > 应用框架 > UI Design Kit（UI设计套件） > ArkTS组件 > MultiWindowEntryInAPP
 category: harmonyos-references
-scraped_at: 2026-04-28T08:06:44+08:00
+scraped_at: 2026-04-29T13:57:14+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:7b6ae5e433e618c6312a20cb66851d809cddee9a8b46773b4423a81add2fa2c4
+content_hash: sha256:191755c4c26e89beb05c6ec837268b012e1ce35e4dbe731c350307fe41351c0b
 ---
 
 说明
@@ -214,4 +214,4 @@ PhonePC/2in1TabletTV
 36. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/yJDj3bsJRzOuhyrxdWVISw/zh-cn_image_0000002552960532.jpg?HW-CC-KV=V1&HW-CC-Date=20260428T000642Z&HW-CC-Expire=86400&HW-CC-Sign=F0083F6249E55B0563616917A52072631B4C64F5937EFCF4EB5ABB608427A57C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/xXetDIE4RHOhw76UbJSufQ/zh-cn_image_0000002558607398.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T055712Z&HW-CC-Expire=86400&HW-CC-Sign=40848F45CFA13108F4BB4CC2B5FC5DAF8D4F5EC71783C2038ECD0FED425672D0)

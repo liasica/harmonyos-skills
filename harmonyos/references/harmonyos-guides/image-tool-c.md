@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-tool-c
 title: 使用Image_NativeModule编辑图片Exif信息
 breadcrumb: 指南 > 媒体 > Image Kit（图片处理服务） > 图片开发指导(C/C++) > 图片编辑和处理 > 使用Image_NativeModule编辑图片Exif信息
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:46:21+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:6176acd94f2fdb9d0a0656fb72d2c5c6b8c159abd777adcfdcf24122a8dba772
+scraped_at: 2026-04-29T13:35:18+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:e554f5d806ce2cbd56ec68952ebe4b70f46d24f1ce46a0528679fca165027924
 ---
 
 Image Kit提供图片Exif信息的读取与编辑能力。
@@ -164,7 +164,7 @@ Exif信息的读取与编辑相关C API接口的详细介绍请参见[OH\_ImageS
    61. OH_LOG_INFO(LOG_APP, "ModifyImageProperty value: %{public}s.", setValue.data);
 
    63. Image_ErrorCode errCode = OH_ImageSourceNative_ModifyImageProperty(g_thisImageSource->source, &setKey, &setValue);
-   64. return ReturnErrorCode(env, errCode, "OH_ImageSourceNative_ModifyImageProperty");
+   64. return GetJsResult(env, errCode);
    65. }
    ```
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: @ohos.app.form.formBindingData (卡片数据绑定类)
 breadcrumb: API参考 > 应用框架 > Form Kit（卡片开发服务） > ArkTS API > @ohos.app.form.formBindingData (卡片数据绑定类)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:06:00+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:f6c89f06eabe41f3bf0d8ec69875fb0b7a7e5f01cb032cd9926f1c1cbd6c57a3
+scraped_at: 2026-04-29T13:56:30+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:3cd8a5cb58397d61cb9cf2fa6fbf85c570249d1fb772695f763ada9fd0f6ae76
 ---
 
 卡片数据绑定模块提供卡片数据绑定的能力。包括FormBindingData对象的创建、相关信息的描述。
@@ -70,7 +70,7 @@ createFormBindingData(obj?: Object | string): FormBindingData
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| obj | Object | string | 否 | 卡片要展示的数据。可以是包含若干键值对的Object或者 json 格式的字符串。其中图片数据以'formImages'作为标识，内容为图片标识与图片文件描述符的键值对{'formImages': {'key1': fd1, 'key2': fd2}}。  **说明：** 在[卡片刷新](../harmonyos-guides/arkts-ui-widget-interaction-overview.md)过程中，卡片UI通过@LocalStorageProp接收卡片数据时，FormBindingData对象会序列化，即卡片数据会转换成string类型。从API version 20开始，如果卡片刷新的数据通过共享内存更新，刷新数据总大小不超过10MB，刷新图片数量不超过20张，API version 19及之前的版本，图片文件数量上限为5张，每张限制内存2MB，超出限制的图片会显示异常。 |
+| obj | Object | string | 否 | 卡片要展示的数据。可以是包含若干键值对的Object或者 json 格式的字符串。其中图片数据以'formImages'作为标识，内容为图片标识与图片文件描述符的键值对{'formImages': {'key1': fd1, 'key2': fd2}}。  **说明：** 在[卡片刷新](../harmonyos-guides/arkts-ui-widget-interaction-overview.md)过程中，卡片UI通过[@LocalStorageProp](../harmonyos-guides/arkts-localstorage.md#localstorageprop)接收卡片数据时，FormBindingData对象会序列化，即卡片数据会转换成string类型。从API version 20开始，如果卡片刷新的数据通过共享内存更新，刷新数据总大小不超过10MB，刷新图片数量不超过20张，API version 19及之前的版本，图片文件数量上限为5张，每张限制内存2MB，超出限制的图片会显示异常。 |
 
 **返回值：**
 

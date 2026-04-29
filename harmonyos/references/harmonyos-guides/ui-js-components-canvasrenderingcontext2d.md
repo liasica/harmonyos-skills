@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-compone
 title: CanvasRenderingContext2D对象
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 常见组件开发指导 > Canvas开发指导 > CanvasRenderingContext2D对象
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:40:31+08:00
+scraped_at: 2026-04-29T13:28:52+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:3ecf295854887447d2b71085967e67c2fb3ff4e69307120ec3a885f9201be91c
+content_hash: sha256:b56db47946184401d31b1ebeed59f828bef2f9e979ccf92e3c979ecdb647cf25
 ---
 
 使用CanvasRenderingContext2D在Canvas画布组件上进行绘制，绘制对象可以是图形、文本、线段、图片等。具体请参考[CanvasRenderingContext2D对象](../harmonyos-references/js-components-canvas-canvasrenderingcontext2d.md)。
@@ -206,7 +206,7 @@ content_hash: sha256:3ecf295854887447d2b71085967e67c2fb3ff4e69307120ec3a885f9201
 149. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/6IEWgPmpQSi3MbDrJ8DMWQ/zh-cn_image_0000002552958132.gif?HW-CC-KV=V1&HW-CC-Date=20260427T234029Z&HW-CC-Expire=86400&HW-CC-Sign=EA5A12CD8F5F96933F00B1D28F6186BDF253467499249F7F6EE703DF9CDAC2B9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/G0Ba2lgHQfm0yIEf_6dKAA/zh-cn_image_0000002589324493.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052850Z&HW-CC-Expire=86400&HW-CC-Sign=B8568EFA6E1F4944631E354B0C1A8FEAD9A2575480EDADD842D40573F29EB090)
 
 ## 画边框
 
@@ -301,7 +301,7 @@ content_hash: sha256:3ecf295854887447d2b71085967e67c2fb3ff4e69307120ec3a885f9201
 46. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/T3NNgb-NQZWstSnFciJegg/zh-cn_image_0000002583478133.gif?HW-CC-KV=V1&HW-CC-Date=20260427T234029Z&HW-CC-Expire=86400&HW-CC-Sign=F1B78342DC2845F7807766BBED7CF4B4ECEFFF5033EFC8107B45765E7DE5A072)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/T7OyVEArQiyh0EClQVPAAg/zh-cn_image_0000002589244431.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052850Z&HW-CC-Expire=86400&HW-CC-Sign=773B126CAF37EDFEA4D3700EB51BCE3389120852983D1BC021CF944607773BD1)
 
 ## 填充渐变色
 
@@ -426,7 +426,7 @@ content_hash: sha256:3ecf295854887447d2b71085967e67c2fb3ff4e69307120ec3a885f9201
 76. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/eEXnoM2ETsuNpjB13Zg-LA/zh-cn_image_0000002552798484.gif?HW-CC-KV=V1&HW-CC-Date=20260427T234029Z&HW-CC-Expire=86400&HW-CC-Sign=CF1027465E9ECA4A58CDC738E086696BE512348747680FCCB4415B5CE5B90FEF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/02sJtSGaTaeDvestfwwGNw/zh-cn_image_0000002558764624.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052850Z&HW-CC-Expire=86400&HW-CC-Sign=04F6B4901E7F9D8E891083D1D7AA5E3F32877E72B98FD98DAF297750560CAC80)
 
 ## 填充文字
 
@@ -556,7 +556,7 @@ content_hash: sha256:3ecf295854887447d2b71085967e67c2fb3ff4e69307120ec3a885f9201
 83. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/-XQMxklWTiOAsVjW0ixnJA/zh-cn_image_0000002583438179.gif?HW-CC-KV=V1&HW-CC-Date=20260427T234029Z&HW-CC-Expire=86400&HW-CC-Sign=9F326453BE4BAF3364029BEB2DA9C0957CB338580C3C68EEC8E4D7E0F32F0666)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/SG4-68F6TviSj0hGfH-AOA/zh-cn_image_0000002558604968.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052850Z&HW-CC-Expire=86400&HW-CC-Sign=D5C5C46DBFE5730515423F99DF1DF9AF847E4B76078B263086D8208679664386)
 
 说明
 
@@ -732,7 +732,7 @@ ltr布局模式下start和left一致，rtl布局模式下start和right一致。
 104. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/KHgeCby1SoWAdPKZlR2uHw/zh-cn_image_0000002552958134.gif?HW-CC-KV=V1&HW-CC-Date=20260427T234029Z&HW-CC-Expire=86400&HW-CC-Sign=093543BF69798B6FB834EE9FBA6ED692D796F5CF62C00740C50E6098ADF21658)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/aVql2FcyQACVUj6GDjexJg/zh-cn_image_0000002589324495.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052850Z&HW-CC-Expire=86400&HW-CC-Sign=52EC7C46D784AF32527B85702780FD8C0128D028F0D0A9B8FA0D549AF4E952CC)
 
 说明
 
@@ -831,4 +831,4 @@ save方法可对画笔样式进行存储，restore可对存储的画笔进行恢
 29. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/Q2ZOjos1Sp2Am7a0R241Jw/zh-cn_image_0000002583478135.gif?HW-CC-KV=V1&HW-CC-Date=20260427T234029Z&HW-CC-Expire=86400&HW-CC-Sign=065813A4B1841BC85F313ABBA51D9DADA0E87445C8CB7BD5067C90B60E91A5FB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/gibNXkElTpK9CixKgy6ZPA/zh-cn_image_0000002589244433.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052850Z&HW-CC-Expire=86400&HW-CC-Sign=84E58C98B718A2EE65F6BA2DC035EEEDFA2CB5C67BA43B07E79D0792487C715D)

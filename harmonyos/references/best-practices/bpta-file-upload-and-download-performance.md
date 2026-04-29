@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-file-uploa
 title: 文件上传下载优化
 breadcrumb: 最佳实践 > 性能 > 性能场景优化案例 > 资源与存储优化 > 文件上传下载优化
 category: best-practices
-scraped_at: 2026-04-28T08:22:34+08:00
+scraped_at: 2026-04-29T14:13:38+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:d73e1578fd270284a08c32842304d3cf37a910c601783ee71f5c48a74b71d98d
+content_hash: sha256:1c5e306166884a827ecce3fc8634a53c5d35bd63981ad02aa4e3781e357f1219
 ---
 
 ## 概述
@@ -34,7 +34,7 @@ content_hash: sha256:d73e1578fd270284a08c32842304d3cf37a910c601783ee71f5c48a74b7
 使用request模块执行下载的任务，具有四种运行状态：初始任务、就绪任务、挂起任务、待网任务。可以通过create()创建任务，start()开始任务，pause()挂起任务，resume()恢复任务，remove()移除任务，stop()停止任务，任务结果有final-failed任务失败，final-completed下载完成，recoverable-failed重试失败，并支持查询任务状态，具体流程如下图所示：
 
 **图1** 模块流程图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/XokroGxVRj-RQRsmXO_OAA/zh-cn_image_0000002229451197.png?HW-CC-KV=V1&HW-CC-Date=20260428T002232Z&HW-CC-Expire=86400&HW-CC-Sign=166096DCDA557E1789843E532BBA31E17663002EFF8712BED209FDBB99DBA98C "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/XokroGxVRj-RQRsmXO_OAA/zh-cn_image_0000002229451197.png?HW-CC-KV=V1&HW-CC-Date=20260429T061336Z&HW-CC-Expire=86400&HW-CC-Sign=002AC140B060384171D3D699FA75FB222C2687345FB3084D1CE73BC8B20ACDB6 "点击放大")
 
 ## 常见场景和解决方案
 
@@ -70,7 +70,7 @@ content_hash: sha256:d73e1578fd270284a08c32842304d3cf37a910c601783ee71f5c48a74b7
 | 100 | 5276 | 3906 |
 
 **图2** 上传数量和耗时对比图表  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/5-15CJeJSS6fYyvPQ7GyYg/zh-cn_image_0000002193851324.png?HW-CC-KV=V1&HW-CC-Date=20260428T002232Z&HW-CC-Expire=86400&HW-CC-Sign=CF722D51CA2445C9F9B8772D68933FF66DD5D9934BF586DEF1348D5A61D44C2F "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/5-15CJeJSS6fYyvPQ7GyYg/zh-cn_image_0000002193851324.png?HW-CC-KV=V1&HW-CC-Date=20260429T061336Z&HW-CC-Expire=86400&HW-CC-Sign=6FD82E828FF6615712F3C4697F512AA7593ABE484AAD77F40489CE5ADEC69430 "点击放大")
 
 由于上传耗时受网络状态影响较大，结果取多次测量的最小值。尽管如此，数据仍显示优化前的耗时呈线性增长，而压缩优化后的耗时在上传文件数量较少时变化不明显，甚至因额外的压缩处理而增加耗时。然而，随着上传照片数量的增加，优化后的耗时与优化前的差距逐渐增大，优化效果更加显著。
 
@@ -159,7 +159,7 @@ content_hash: sha256:d73e1578fd270284a08c32842304d3cf37a910c601783ee71f5c48a74b7
 本文使用request模块中的**request.agent****()**任务托管接口，自动实现暂停、继续、重试等操作，无需手动分片和记录分片信息。流程图如下：
 
 **图3** 断点续传上传流程图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/rlkNpHtyRriydcPEA6-0xA/zh-cn_image_0000002193851312.png?HW-CC-KV=V1&HW-CC-Date=20260428T002232Z&HW-CC-Expire=86400&HW-CC-Sign=66EB2B612CE04BF9911EAFD4ABB3F091EF5313B7A98AB84DDAFBDC7B341BB009 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/rlkNpHtyRriydcPEA6-0xA/zh-cn_image_0000002193851312.png?HW-CC-KV=V1&HW-CC-Date=20260429T061336Z&HW-CC-Expire=86400&HW-CC-Sign=085DA4BC37CE26BCFFABA0250B066A666FC33E66683562870A23603FDC00E791 "点击放大")
 
 1. 导入相关模块:
 
@@ -372,7 +372,7 @@ Range语法如下:
 
 以具体场景为例，下图是常见的多文件下载列表：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/1_KB7mDARg-FaGSq9mXlEA/zh-cn_image_0000002229451201.png?HW-CC-KV=V1&HW-CC-Date=20260428T002232Z&HW-CC-Expire=86400&HW-CC-Sign=A24E3A5EB72753A8A824DE1C5FA314B10E93D88E415EDE76E170CC4E7F5A2B54 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/1_KB7mDARg-FaGSq9mXlEA/zh-cn_image_0000002229451201.png?HW-CC-KV=V1&HW-CC-Date=20260429T061336Z&HW-CC-Expire=86400&HW-CC-Sign=9E7D57E4FD8E00082976988C06EC3A2E5C9286FB080F961EA2925B8B08BD5048 "点击放大")
 
 进入页面后，点击“全部开始”按钮，启动所有文件的下载任务。点击“全部暂停”按钮，暂停所有文件的下载任务。再次点击“全部开始”按钮，可重新启动未完成的下载任务。下载完成的文件将保存在应用的缓存路径下。如果下载失败，通常是因为网络不稳定，点击“全部开始”按钮可重新下载。
 

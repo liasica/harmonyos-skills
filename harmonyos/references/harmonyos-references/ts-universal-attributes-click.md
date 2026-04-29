@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 点击控制
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 已停止维护的组件与接口 > 点击控制
 category: harmonyos-references
-scraped_at: 2026-04-28T08:02:52+08:00
+scraped_at: 2026-04-29T13:53:13+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:91f68d74e784f88b9f311bb7d87caa677d5728658b6ec037a540cbac17ca8cd5
+content_hash: sha256:c6be77671531a062fb27d4cec7f1699a548f9dbe928df604f14a17830074a694
 ---
 
 设置组件是否可以响应点击事件、触摸事件等手指交互事件。
@@ -72,4 +72,4 @@ PhonePC/2in1TabletTVWearable
 25. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/gSjwWIB1RdCZjTFUZalfFw/zh-cn_image_0000002552960166.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000250Z&HW-CC-Expire=86400&HW-CC-Sign=0ABA13E60842A8B011406C8CA4F1C5BB6B817C29E597250935FD96307D4355D6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/cL-VbhY6SbeA_Lyz8p6SZQ/zh-cn_image_0000002558607032.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055312Z&HW-CC-Expire=86400&HW-CC-Sign=B0E38C84BC9C6A7B27AA4D48C6FC210E760A9946CAFBAA561F3C7FFCE4E4F019)

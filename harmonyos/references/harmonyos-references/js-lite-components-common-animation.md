@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-lite-c
 title: 动画样式
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Lite） > 组件通用信息 > 动画样式
 category: harmonyos-references
-scraped_at: 2026-04-28T08:03:26+08:00
+scraped_at: 2026-04-29T13:53:45+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:735330bcece9a1c8e031d26f4fe66731d01acff86c0d44d71a77792f8afda279
+content_hash: sha256:f2232ea1a7aeecb690058123515cb3a65fa7e8e94b3b4f85b018873d1ba16d7d
 ---
 
 组件支持通过style或css设置动态的旋转、平移及缩放效果。
@@ -55,7 +55,7 @@ content_hash: sha256:735330bcece9a1c8e031d26f4fe66731d01acff86c0d44d71a77792f8af
 9. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/K--y-Fg5TEKvCcyp8vjqSg/zh-cn_image_0000002552960404.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000324Z&HW-CC-Expire=86400&HW-CC-Sign=34A43E29E61A59D61366436CB4D4A60BC1AAE3C1E273E90CA3F04CEBFC0D3A7D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/SBesjR5GTjKfXNzijBMjmA/zh-cn_image_0000002558607270.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055344Z&HW-CC-Expire=86400&HW-CC-Sign=BC0830B33BAFEC96B2B49C69E93D9ECCE169410173753CC7AB0580512CD3876E)
 
 说明
 

@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ads-publisher
 title: 原生广告
 breadcrumb: 指南 > 应用服务 > Ads Kit（广告服务） > 流量变现服务开发 > 原生广告
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:48:10+08:00
+scraped_at: 2026-04-29T13:37:03+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:f21bddc5c27b6ee3794cb595b53dfb24680390b730090f5b3eb6b3eae23ae79a
+content_hash: sha256:9adce0a78faa97f6f0b17c36c7545e0e0afec2f841faff9a14cc8fa868cb4009
 ---
 
 ## 场景介绍
 
 原生广告是与应用内容融于一体的广告，通过“和谐”的内容呈现广告信息，在不破坏用户体验的前提下，为用户提供有价值的信息，展示形式包含图片和视频，支持您自由定制界面。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/terlHWL3S7ipFi3nLLJVcg/zh-cn_image_0000002552799116.png?HW-CC-KV=V1&HW-CC-Date=20260427T234809Z&HW-CC-Expire=86400&HW-CC-Sign=2896AE390FF8E373E479106FFBACA5D555532F6B0797DCDAA6A4DDC7D8E05792)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/JbYeIxNKTYeveHfJ5XRdSQ/zh-cn_image_0000002589325135.png?HW-CC-KV=V1&HW-CC-Date=20260429T053702Z&HW-CC-Expire=86400&HW-CC-Sign=CA1F18941F4F16F665B9379AB66F9A63D0787E6695ED23A0AF5AB9A9A08E7044)
 
 ## 约束与限制
 

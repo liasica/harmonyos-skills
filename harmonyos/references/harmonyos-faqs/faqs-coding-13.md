@@ -3,18 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-coding-13
 title: DevEco Studio上使用生成NAPI功能时， 提示“Unsupported parameter type.”或 “Unsupported return type.”错误
 breadcrumb: FAQ > DevEco Studio > 代码编辑 > DevEco Studio上使用生成NAPI功能时， 提示“Unsupported parameter type.”或 “Unsupported return type.”错误
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:29:03+08:00
+scraped_at: 2026-04-29T14:20:16+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:62fbe439c8f5c4eaa362c9f75ba1b277e1c04367743a28ca84bbdd999767a566
+content_hash: sha256:5e4aa14abda550d4b5bb69904637170d3e517206ab06f6053dae40c5d4a9bcdf
 ---
 
 **问题现象**
 
 右键单击函数， 在弹出的菜单中依次选择 Generate... > NAPI， 生成胶水代码报错。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/ZL_CzMeBTweNlukmJcVAdQ/zh-cn_image_0000002229604265.png?HW-CC-KV=V1&HW-CC-Date=20260428T002902Z&HW-CC-Expire=86400&HW-CC-Sign=9DEFEFDB68A9D755F91E512517BB0CFDFF5BA7E8EA40C1864457D6CEC9A81D31)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/ZL_CzMeBTweNlukmJcVAdQ/zh-cn_image_0000002229604265.png?HW-CC-KV=V1&HW-CC-Date=20260429T062014Z&HW-CC-Expire=86400&HW-CC-Sign=D52590939F1EF5229E3724183AA548C67B7F2B201272B6D18B815017FC2B67EA)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/uhkzfBgJT_Gv9z2ihTxD_Q/zh-cn_image_0000002194318496.png?HW-CC-KV=V1&HW-CC-Date=20260428T002902Z&HW-CC-Expire=86400&HW-CC-Sign=1F70C868EA18906806BFC1CDE1194FD4CCC5B2BAB027E2D23A26562640F22EB9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/uhkzfBgJT_Gv9z2ihTxD_Q/zh-cn_image_0000002194318496.png?HW-CC-KV=V1&HW-CC-Date=20260429T062014Z&HW-CC-Expire=86400&HW-CC-Sign=486FCAF08CABACAC43FC45CD49C4DCD25571BAB2FEF281DAF279D23DDD1C4AA9)
 
 **解决措施**
 

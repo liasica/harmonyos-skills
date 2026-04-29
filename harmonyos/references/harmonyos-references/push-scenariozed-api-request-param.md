@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/push-scen
 title: 请求体参数说明
 breadcrumb: API参考 > 应用服务 > Push Kit（推送服务） > REST API > 场景化消息 > 请求体参数说明
 category: harmonyos-references
-scraped_at: 2026-04-28T08:18:32+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:04763b5c13a66e8948af0a3fa107e61cbaf3c873302746fce848261d5618e42f
+scraped_at: 2026-04-29T14:09:10+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:c8dc2adf564ad3ba291ef0031d1941bbb6e129f5bb44e266f76d2e0a4b432459
 ---
 
 ## pushOptions
@@ -40,12 +40,12 @@ content_hash: sha256:04763b5c13a66e8948af0a3fa107e61cbaf3c873302746fce848261d561
 | category | 是 | String | 通知消息类型。完成[申请通知消息自分类权益](../harmonyos-guides/push-apply-right.md#申请通知消息自分类权益)后，用于标识消息类型，不同的通知消息类型影响消息展示和提醒方式。取值如下：  **服务与通讯类**  · IM：即时聊天  · VOIP：语音通话邀请、视频通话邀请  · MISS\_CALL：未接通话消息提醒  · SUBSCRIPTION：订阅  · TRAVEL：出行  · HEALTH：健康  · WORK：工作事项提醒  · ACCOUNT：账号动态  · EXPRESS：订单&物流  · FINANCE：财务  · DEVICE\_REMINDER：设备提醒  · MAIL：邮件  · PLAY\_VOICE：语音播报  **说明：**  PLAY\_VOICE（语音播报）消息仅可发送push-type为2的语音播报消息。  2：语音播报消息  **资讯营销类**  · MARKETING：新闻、内容推荐、社交动态、产品促销、财经动态、生活资讯、调研、功能推荐、运营活动（仅对内容进行标识，不会加快消息发送），统称为资讯营销类消息。  **说明：**  · 若您仅需发送MARKETING（资讯营销类）消息，则无需申请通知消息自分类权益。MARKETING消息与其他分类的通知消息存在不同的频控策略，详情请参见[通知消息推送数量管理规则](../harmonyos-guides/push-apply-right.md#通知消息推送数量管理规则)。若消息被频控，请参考[频控FAQ](../harmonyos-guides/push-faq-5.md)进行问题排查。 |
 | title | 是 | String | 通知消息标题。（注意消息体大小限制，详情参见[使用约束](push-scenariozed-api-intro.md#使用约束)） |
 | body | 是 | String | 通知消息内容。（注意消息体大小限制，详情参见[使用约束](push-scenariozed-api-intro.md#使用约束)） |
-| image | 否 | String | 通知右侧大图标URL，URL使用的协议必须是HTTPS协议。（消息体大小限制，详情参见[使用约束](push-scenariozed-api-intro.md#使用约束)）。  **说明：**  · Wearable不支持右侧大图标样式。  · 支持图片格式为PNG、JPG、JPEG、BMP，图片像素的总字节数不超过192KB，若超过则图片不展示。  · 6.1.0(23)版本新增支持WEBP格式图片。 |
-| overlayIcon | 否 | String | 通知重叠图标URL，URL使用的协议必须是HTTPS协议。（注意消息体大小限制，详情参见[使用约束](push-scenariozed-api-intro.md#使用约束)。）  **说明：**  · 支持图片格式为PNG、JPG、JPEG、BMP、WEBP，图片像素的总字节数不超过192KB，若超过则图片不展示。  · 仅当category为IM或VOIP或MISS\_CALL时，消息生效。  · 起始版本：6.1.0(23) |
+| image | 否 | String | 通知右侧大图标URL，URL使用的协议必须是HTTPS协议。（注意消息体大小限制，详情参见[使用约束](push-scenariozed-api-intro.md#使用约束)）  **说明：**  · Wearable不支持右侧大图标样式。  · 支持图片格式为PNG、JPG、JPEG、BMP，图片像素的总字节数不超过192KB，若超过则图片不展示。  · 6.1.0(23)版本新增支持WEBP格式图片。 |
+| overlayIcon | 否 | String | 通知重叠图标URL，URL使用的协议必须是HTTPS协议。（注意消息体大小限制，详情参见[使用约束](push-scenariozed-api-intro.md#使用约束)）  **说明：**  · 支持图片格式为PNG、JPG、JPEG、BMP、WEBP，图片像素的总字节数不超过192KB，若超过则图片不展示。  · 仅当category为IM或VOIP或MISS\_CALL时，消息生效。  · **起始版本：** 6.1.0(23) |
 | style | 否 | Integer | 通知消息样式：  0：普通通知（**默认值**）  1：大文本样式  3：多行文本样式（使用场景请参见[开发指南](../harmonyos-guides/push-send-alert.md#多行文本样式)）  **说明：**  · style=1 大文本样式将要废弃，建议直接使用 style=0 普通通知。  · Wearable不支持大文本样式和多行文本样式。 |
 | bigTitle | 否 | String | 大文本样式的标题，当style为1时必选。设置bigTitle后通知栏展示时，使用bigTitle而不用title。（注意消息体大小限制，详情参见[使用约束](push-scenariozed-api-intro.md#使用约束)）  **说明：**  · 此字段将要废弃，建议直接使用title字段。  · Wearable不支持大文本样式。 |
 | bigBody | 否 | String | 大文本样式的内容，当style为1时必选。设置bigBody后通知栏展示时，使用bigBody而不用body。（注意消息体大小限制，详情参见[使用约束](push-scenariozed-api-intro.md#使用约束)）  **说明：**  · 此字段将要废弃，建议直接使用body字段。  · Wearable不支持大文本样式。 |
-| notifyId | 否 | Integer | 每条消息在通知显示时的唯一标识。不携带或者设置-1时，推送服务自动为每条消息生成一个唯一标识；不同的通知消息可以拥有相同的notifyId，实现新消息覆盖旧消息功能。若要用于消息撤回则必填，且范围为[0, 2147483647]，即非负值。详情请参见[消息撤回](push-msg-revoke.md)。 |
+| notifyId | 否 | Integer | 每条消息在通知显示时的唯一标识。不携带或者设置-1时，Push Kit自动为每条消息生成一个唯一标识；不同的通知消息可以拥有相同的notifyId，实现新消息覆盖旧消息功能。若要用于消息撤回则必填，且范围为[0, 2147483647]，即非负值。详情请参见[消息撤回](push-msg-revoke.md)。 |
 | appMessageId | 否 | String | 应用消息的唯一标识，不携带时默认无appMessageId。长度范围为[1,64]，支持大小写字母、数字、+、/、=、-、\_和空白字符。  **说明：**  · 当同一appMessageId的应用消息通过多个渠道（Push Kit、近场通讯、应用自己拉取或发送本地通知）触达时，目标终端只展示有效期内最早的一条，有效期**默认为24小时**。  · 区别于notifyId,notifyId作用机制是新消息覆盖旧消息。特别地，notifyId和appMessageId均相同时，展示旧消息。 |
 | profileId | 否 | String | 应用内账号id匿名标识，最大长度为64。 |
 | inboxContent | 否 | Array [String] | 多行文本样式的内容，当style为3时，本字段必填，最多支持3条内容，每条最大长度1024且无法完全展示时以“...”截断。  **说明：**  Wearable不支持多行文本样式。 |
@@ -54,7 +54,7 @@ content_hash: sha256:04763b5c13a66e8948af0a3fa107e61cbaf3c873302746fce848261d561
 | sound | 否 | String | 自定义消息通知铃声。此处设置的铃声文件必须放在应用的/resources/rawfile路径下。例如设置为**alert.mp3**，对应应用本地的**​/resources/rawfile/alert.mp3** 文件。支持的文件格式包括MP3、WAV、MPEG等，如果不设置，则用默认系统铃声。  当请求不携带**soundDuration**字段时，建议铃声时长不超过30秒，若超过30秒则截断处理；当请求携带**soundDuration**字段时，详情请参见**soundDuration**字段说明。  **说明：**  Wearable、TV、PC/2in1不支持自定义铃声。 |
 | soundDuration | 否 | Integer | 自定义消息通知铃声时长。需要配合sound字段使用，只有当请求同时携带sound字段，soundDuration字段才会生效。仅支持数字，单位为秒，取值范围 [1, 60]。  sound字段传入的自定义消息通知铃声会播放至soundDuration字段值后停止，若自定义消息通知铃声对应的时长不足soundDuration字段值则会循环播放，在达到soundDuration字段值后停止。 |
 | foregroundShow | 否 | Boolean | 应用在前台时是否展示通知消息。**默认为true**，表示前后台都展示。  · true：默认值，应用在前后台都展示通知消息，此时[receiveMessage](push-pushservice.md#pushservicereceivemessage)不会被触发，无法获取消息数据。  · false：应用只在后台展示通知消息；应用在前台时，通知消息将不会展示，但可以通过[receiveMessage](push-pushservice.md#pushservicereceivemessage)接收通知消息自行完成业务处理，详情请参见[应用在前台时处理通知消息](../harmonyos-guides/push-send-alert.md#应用在前台时处理通知消息)。 |
-| priorityScene | 否 | String | 消息的优先通知类型。取值如下：  · PRIMARY\_CONTACT：重要联系人消息  · AT\_ME：@我  · URGENT\_MESSAGE：加急消息  · SCHEDULE\_REMINDER：日程待办提醒  说明：  发送优先通知消息需要开通[优先通知权益](../harmonyos-guides/priority-notification-permission-guidelines.md)。 |
+| priorityScene | 否 | String | 消息的优先通知类型。取值如下：  · PRIMARY\_CONTACT：重要联系人消息  · AT\_ME：@我  · URGENT\_MESSAGE：加急消息  · SCHEDULE\_REMINDER：日程待办提醒  **说明：**  发送优先通知消息需要开通[优先通知权益](../harmonyos-guides/priority-notification-permission-guidelines.md)。 |
 
 ### ClickAction
 
@@ -88,7 +88,7 @@ content_hash: sha256:04763b5c13a66e8948af0a3fa107e61cbaf3c873302746fce848261d561
 | 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
 | notification | 是 | [Notification](push-scenariozed-api-request-param.md#notification) Object | 通知消息结构体，详情请参见[Notification](push-scenariozed-api-request-param.md#notification)结构体。  **说明：**  notification.category必填，且取值为“PLAY\_VOICE”，发送语音播报消息前请先申请推送语音播报消息权益，请参见[申请推送语音播报消息权益](../harmonyos-guides/push-apply-right.md#申请推送语音播报消息权益)。 |
-| extraData | 是 | String | 语音播报消息的额外数据。（注意消息体大小限制，详情参见[使用约束](push-scenariozed-api-intro.md#使用约束)）。  extraData数据获取请参见[示例代码](https://gitcode.com/HarmonyOS_Samples/push-kit-sample-code-clientdemo-arkts/blob/master/entry/src/main/ets/entryability/RemoteNotificationExtAbility.ets)。 |
+| extraData | 是 | String | 语音播报消息的额外数据。（注意消息体大小限制，详情参见[使用约束](push-scenariozed-api-intro.md#使用约束)）。  extraData数据获取请参见[示例代码](https://gitcode.com/HarmonyOS_Samples/push-kit-sample-code-clientdemo-arkts/blob/master/entry/src/main/ets/entryability/RemoteNotificationExtAbility.ets) |
 
 ## FormUpdatePayload 卡片刷新消息
 
@@ -144,7 +144,7 @@ content_hash: sha256:04763b5c13a66e8948af0a3fa107e61cbaf3c873302746fce848261d561
 | 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
 | activityId | 是 | Integer | 实况窗唯一标识，取值范围为[-2147483648, 2147483647]，由开发者自行生成。对应Live View Kit中的[id](liveview-liveviewmanager.md#section411410371767)字段。  **说明：**  若发送的activityId对应的实况窗不存在（更新或结束实况窗的场景中），将限制使用该activityId发送实况窗消息24小时。 |
-| operation | 是 | Integer | 实况窗消息操作类型：  0：表示创建实况窗消息，仅允许event值为FLIGHT、TAXI、TRAIN，详情见[创建实况窗约束](push-scenariozed-api-request-param.md#创建实况窗约束)。  1：表示更新实况窗消息（确保activityId对应的实况窗存在）  2：表示结束实况窗消息（确保activityId对应的实况窗存在）  4：表示增加延迟触发创建实况窗消息（仅每个实况活动1个围栏）  6：表示增加延迟触发结束实况窗消息（仅每个实况活动1个围栏）  更新和结束实况窗时，对于非必选字段，若无特殊说明和默认值，则不携带时默认继承上一次的状态。 |
+| operation | 是 | Integer | 实况窗消息操作类型：  0：表示创建实况窗消息，仅允许event值为FLIGHT、TAXI、TRAIN、EXPRESS、CHECK\_IN，详情见[创建实况窗约束](push-scenariozed-api-request-param.md#创建实况窗约束)。  1：表示更新实况窗消息（确保activityId对应的实况窗存在）  2：表示结束实况窗消息（确保activityId对应的实况窗存在）  4：表示增加延迟触发创建实况窗消息（仅每个实况活动1个围栏）  6：表示增加延迟触发结束实况窗消息（仅每个实况活动1个围栏）  更新和结束实况窗时，对于非必选字段，若无特殊说明和默认值，则不携带时默认继承上一次的状态。 |
 | event | 是 | String | 业务场景取值，必须为以下内容之一：  · TAXI：出行打车  · DELIVERY：即时配送（外卖、生鲜）  · FLIGHT：航班  · TRAIN：高铁/火车  · QUEUE：排队  · PICK\_UP：取餐  · SCORE：赛事比分  · RENT：共享租赁  · TIMER：计时  · WORKOUT：运动锻炼  · NAVIGATION：导航  · EXPRESS：快递  · CHECK\_IN：打卡  使用对应场景需要申请权益，详情请参见[开通实况窗权益](../harmonyos-guides/liveview-formal-authority.md)，完成权益的申请。  **说明：**  当创建实况窗消息（operation取值为0）时，event取值仅允许为FLIGHT、TAXI、TRAIN、EXPRESS、CHECK\_IN。 |
 | status | 否 | String | 表示实况窗消息状态。  当operation为0，或operation为1且更新的实况窗为通过REST API创建的实况窗时必填。  status的取值范围根据场景类型而定，详情见[Status取值范围](push-scenariozed-api-request-param.md#status取值范围)。  消息体中占位符{{status}}的使用，参见[支持携带占位符的字段](push-scenariozed-api-request-param.md#支持携带占位符的字段)，满足要求时将替换字段中的占位符为[目标值](push-scenariozed-api-request-param.md#status取值范围)。 |
 | title | 否 | String | 可选，当系统不支持实况窗通知时，展示在通知栏的标题。（注意消息体大小限制，详情参见[使用约束](push-scenariozed-api-intro.md#使用约束)） |
@@ -158,7 +158,7 @@ content_hash: sha256:04763b5c13a66e8948af0a3fa107e61cbaf3c873302746fce848261d561
 
 创建实况窗的消息示例请参见[创建实况窗消息](push-scenariozed-api-request-example.md#创建实况窗消息)。
 
-1. 允许通过REST API创建实况窗的event：FLIGHT、TAXI、TRAIN。
+1. 允许通过REST API创建实况窗的event：FLIGHT、TAXI、TRAIN、EXPRESS、CHECK\_IN。
 2. 12小时内不允许通过REST API创建同一个activityId的实况窗。
 3. 对于不同的event类型，创建实况窗时，对布局类型（activityData.notificationData.[type](push-scenariozed-api-request-param.md#notificationdata)）和必填字段，有以下场景约束：
 
@@ -167,6 +167,8 @@ content_hash: sha256:04763b5c13a66e8948af0a3fa107e61cbaf3c873302746fce848261d561
    | FLIGHT | 左右文本模板类型 | [status](push-scenariozed-api-request-param.md#liveviewpayload-实况窗消息)  activityData.notificationData.[keywords](push-scenariozed-api-request-param.md#notificationdata) | [status](push-scenariozed-api-request-param.md#liveviewpayload-实况窗消息) |
    | TAXI | 进度可视化类型  强调文本模板类型  左右文本模板类型  赛事类型 | [status](push-scenariozed-api-request-param.md#liveviewpayload-实况窗消息) | [status](push-scenariozed-api-request-param.md#liveviewpayload-实况窗消息) |
    | TRAIN | 左右文本模板类型 | [status](push-scenariozed-api-request-param.md#liveviewpayload-实况窗消息)  activityData.notificationData.[keywords](push-scenariozed-api-request-param.md#notificationdata) | [status](push-scenariozed-api-request-param.md#liveviewpayload-实况窗消息) |
+   | EXPRESS | 进度可视化类型  强调文本模板类型  左右文本模板类型  赛事类型 | 无 | 无 |
+   | CHECK\_IN | 进度可视化类型  强调文本模板类型  左右文本模板类型  赛事类型 | 无 | 无 |
 4. 对于不同的布局类型（activityData.notificationData.[type](push-scenariozed-api-request-param.md#notificationdata)），需要在[支持携带占位符的字段](push-scenariozed-api-request-param.md#支持携带占位符的字段)中**填入至少一次[status](push-scenariozed-api-request-param.md#liveviewpayload-实况窗消息)的占位符{{status}}** ；如果该event下[keywords](push-scenariozed-api-request-param.md#notificationdata)字段也必填，则也需要在[支持携带占位符的字段](push-scenariozed-api-request-param.md#支持携带占位符的字段)中**填入至少一次相应的占位符**，占位符具体请参见[keywords](push-scenariozed-api-request-param.md#notificationdata)字段描述。
 5. 通过REST API创建的实况窗，在更新时必须同时满足status和keywords要求。通过Live View Kit（实况窗服务）创建的实况窗，在REST API更新时可以不填写status和keywords字段，若开发者选择填写则需满足status和keywords要求。
 

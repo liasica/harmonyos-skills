@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pdf-pdfview-p
 title: 设置PDF文档预览效果
 breadcrumb: 指南 > 应用服务 > PDF Kit（PDF服务） > PdfView预览组件 > 设置PDF文档预览效果
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:50:24+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:2c3dcdb83bcfa543d9dab5833dfbc47ed5c3c6f6d710d13c4af03cf080f63cdf
+scraped_at: 2026-04-29T13:39:47+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:105ac4a4c52286b4d367084b60ce2f927f133b4e0fbaabd69b51fbe7d9db40ba
 ---
 
 pdfViewManager为PDF文档提供了丰富的预览特性。
@@ -16,7 +16,7 @@ pdfViewManager为PDF文档提供了丰富的预览特性。
 
 **图1**：提供了双页预览布局，页面宽度适配和连续滚动的预览方式
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/ZBmGmrZhTNyTuu4bOZe8lQ/zh-cn_image_0000002552959104.jpg?HW-CC-KV=V1&HW-CC-Date=20260427T235022Z&HW-CC-Expire=86400&HW-CC-Sign=E1F1D0F27621698114B1D7A7236240D765F69A806CE4F4F38895B5F4EA5A03BB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/2eVTW2OZSpW6NmXldhsMag/zh-cn_image_0000002589245413.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053946Z&HW-CC-Expire=86400&HW-CC-Sign=9A85E3D4ADC02FA3EE349D4A03F6CACAB9A85503FD9825F29DE413E6B98533CB)
 
 ## 接口说明
 
@@ -47,8 +47,8 @@ pdfViewManager为PDF文档提供了丰富的预览特性。
 8. private loadResult: pdfService.ParseResult = pdfService.ParseResult.PARSE_ERROR_FORMAT;
 
 10. aboutToAppear(): void {
-11. // 确保沙箱目录有input.pdf文档
-12. let filePath = this.context.filesDir + '/input.pdf';
+11. // 确保在工程目录src/main/resources/resfile里存在input.pdf文档
+12. let filePath = this.context.resourceDir + '/input.pdf';
 13. (async () => {
 14. this.loadResult = await this.controller.loadDocument(filePath);
 15. // 注意：这里刚加载文档，请不要在这里立即设置PDF文档的预览方法。

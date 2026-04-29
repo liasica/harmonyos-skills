@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: SymbolSpan
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 文本与输入 > SymbolSpan
 category: harmonyos-references
-scraped_at: 2026-04-28T08:01:52+08:00
+scraped_at: 2026-04-29T13:52:12+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:aeb79a26b68aa6a6efe65e5810cd8f68a0e48c607957247fa0ca695fe998a4b7
+content_hash: sha256:2f7e1813c43386c1d3845a65b2c63e61c8574bd3ba71db6fda374ae57bd119f0
 ---
 
 作为Text组件的子组件，用于显示图标小符号的组件。
@@ -150,7 +150,7 @@ renderingStrategy(value: SymbolRenderingStrategy)
 
 不同渲染策略效果可参考以下示意图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/0bsGGP9kQEmAaOk09z0brQ/zh-cn_image_0000002552959816.png?HW-CC-KV=V1&HW-CC-Date=20260428T000149Z&HW-CC-Expire=86400&HW-CC-Sign=F3932EEE7BCD4116008466C9DE5704CD8C4BA5B07AEA9FF6D3312B57865F8E27)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/a4jOKaY_T0qJ_5rYTLfjLw/zh-cn_image_0000002558766338.png?HW-CC-KV=V1&HW-CC-Date=20260429T055208Z&HW-CC-Expire=86400&HW-CC-Sign=738EEAEE92C3669AE99997856AF7583B0857388036F4CEC98596BD5640C74EE6)
 
 ### effectStrategy
 
@@ -309,7 +309,7 @@ PhonePC/2in1TabletTVWearable
 98. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/fJuOI55zQgiZp3nknhtODw/zh-cn_image_0000002583479817.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000149Z&HW-CC-Expire=86400&HW-CC-Sign=EE362202AC62E7E7E7D1109F4DB61BEC9CB7C4D3F1072F34F26C89D0297759E2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/ecKLHiiYQsuqxwtSBi159Q/zh-cn_image_0000002558606680.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055208Z&HW-CC-Expire=86400&HW-CC-Sign=CB15C4F990DA462BAA9EC23AA08D70CDD054575C69788BF5572AE595A0B11173)
 
 ### 示例2（设置动态属性）
 
@@ -343,4 +343,4 @@ PhonePC/2in1TabletTVWearable
 25. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/JjlYMhS5Q2G8ohKbDk9mgA/zh-cn_image_0000002552800168.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000149Z&HW-CC-Expire=86400&HW-CC-Sign=ABDA511E1324C8A716431248A0D4B23A65ACD963AEDA241DCC734EF5A00680ED)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/d2QObBM0T1SYQPS88PO2Fg/zh-cn_image_0000002589326207.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055208Z&HW-CC-Expire=86400&HW-CC-Sign=CD01B47F5D88B711FDCC2CBE5980EFD669DD2DC06747631C0918F817F1EFB586)

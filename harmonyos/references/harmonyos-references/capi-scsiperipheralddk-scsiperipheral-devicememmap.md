@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-scsi
 title: ScsiPeripheral_DeviceMemMap
 breadcrumb: API参考 > 系统 > 硬件 > Driver Development Kit（驱动开发服务） > C API > 结构体 > ScsiPeripheral_DeviceMemMap
 category: harmonyos-references
-scraped_at: 2026-04-28T08:10:47+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:07ad3adda51f79bc0a3a8742d0b36438689cd7f32386b41383bf7b2829367044
+scraped_at: 2026-04-29T14:01:27+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:ea73ea37fff2e50e2c789db92e9074419cf9a32f18f8491ef4c36336b17b2287
 ---
 
 ```
@@ -16,7 +16,7 @@ content_hash: sha256:07ad3adda51f79bc0a3a8742d0b36438689cd7f32386b41383bf7b28293
 
 PC/2in1
 
-通过调用OH\_ScsiPeripheral\_CreateDeviceMemMap创建的设备内存映射。使用该设备内存映射的缓冲区可以提供更好的性能。
+通过调用[OH\_ScsiPeripheral\_CreateDeviceMemMap](capi-scsi-peripheral-api-h.md#oh_scsiperipheral_createdevicememmap)创建的设备内存映射。使用该设备内存映射的缓冲区可以提供更好的性能。
 
 **起始版本：** 18
 

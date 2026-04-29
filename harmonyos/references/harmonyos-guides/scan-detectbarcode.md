@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scan-detectba
 title: 识别本地图片
 breadcrumb: 指南 > 媒体 > Scan Kit（统一扫码服务） > 图像识码 > 识别本地图片
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:46:42+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:3ea6ee4fde00a38f3de94a79442f15d7aea3de1e0b39391b949faf9a227025ac
+scraped_at: 2026-04-29T13:35:41+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:0051db4dc8cbeba68299e361169dc877a31c5dc3a74d647629da228856fd61ef
 ---
 
 ## 基本概念
@@ -18,7 +18,7 @@ content_hash: sha256:3ea6ee4fde00a38f3de94a79442f15d7aea3de1e0b39391b949faf9a227
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/AUlfZsbkTpe4emFE04yU1A/zh-cn_image_0000002583438659.png?HW-CC-KV=V1&HW-CC-Date=20260427T234641Z&HW-CC-Expire=86400&HW-CC-Sign=1D126A14DB8A3A9AC22BEDEE8B21BA34104C53E10AC27D3D90A934B3D18799C1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/b6tVCtZpR3u3ZCGU4T8XOA/zh-cn_image_0000002589244919.png?HW-CC-KV=V1&HW-CC-Date=20260429T053540Z&HW-CC-Expire=86400&HW-CC-Sign=656D5CACA589495286B5F33D3DB73E565C51DFD54D0339BFAEB83E719D73C97B)
 
 1. 用户向开发者的应用发起图片识码请求。
 2. 应用通过调用Scan Kit的decode接口启动图片识码。
@@ -76,8 +76,8 @@ content_hash: sha256:3ea6ee4fde00a38f3de94a79442f15d7aea3de1e0b39391b949faf9a227
      17. // 定义识码参数options
      18. let options: scanBarcode.ScanOptions = {
      19. scanTypes: [scanCore.ScanType.ALL],
-     20. enableMultiMode: true,
-     21. }
+     20. enableMultiMode: true
+     21. };
      22. // 通过picker拉起图库的图片
      23. let photoOption = new photoAccessHelper.PhotoSelectOptions();
      24. photoOption.MIMEType = photoAccessHelper.PhotoViewMIMETypes.IMAGE_TYPE;
@@ -102,8 +102,8 @@ content_hash: sha256:3ea6ee4fde00a38f3de94a79442f15d7aea3de1e0b39391b949faf9a227
      43. }).catch((err: BusinessError) => {
      44. hilog.error(0x0001, '[Scan Sample]',
      45. `Failed to select a photo. Code: ${err.code}, message: ${err.message}`);
-     46. })
-     47. });
+     46. });
+     47. })
      48. }
      49. .width('100%')
      50. .height('100%')
@@ -136,7 +136,7 @@ content_hash: sha256:3ea6ee4fde00a38f3de94a79442f15d7aea3de1e0b39391b949faf9a227
      19. scanTypes: [scanCore.ScanType.ALL],
      20. enableMultiMode: true,
      21. enableAlbum: true
-     22. }
+     22. };
      23. // 通过选择模式拉起photoPicker界面，用户可以选择一个图片
      24. let photoOption = new photoAccessHelper.PhotoSelectOptions();
      25. photoOption.MIMEType = photoAccessHelper.PhotoViewMIMETypes.IMAGE_TYPE;
@@ -164,8 +164,8 @@ content_hash: sha256:3ea6ee4fde00a38f3de94a79442f15d7aea3de1e0b39391b949faf9a227
      47. }).catch((err: BusinessError) => {
      48. hilog.error(0x0001, '[Scan Sample]',
      49. `Failed to select a photo. Code: ${err.code}, message: ${err.message}`);
-     50. })
-     51. });
+     50. });
+     51. })
      52. }
      53. .width('100%')
      54. .height('100%')

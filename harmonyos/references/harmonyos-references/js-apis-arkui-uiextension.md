@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: @ohos.arkui.uiExtension (uiExtension)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.arkui.uiExtension (uiExtension)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:00:29+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:a268a92dcda9206ab3e128aaaf05b70cf33d5262a5461b16b0349a74bf3d6ec8
+scraped_at: 2026-04-29T13:50:41+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:d280e370c270a618b9a943224475076e175f05fae2a48a5587045b3b449cfcac
 ---
 
 用于[EmbeddedUIExtensionAbility](../harmonyos-guides/embeddeduiextensionability.md)（或[UIExtensionAbility](js-apis-app-ability-uiextensionability.md#uiextensionability)）中获取宿主应用的窗口信息或对应的[EmbeddedComponent](ts-container-embedded-component.md)组件的信息。
 
 说明
 
-从API version 12开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
+* 从API version 12开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 
 ## 导入模块
 
@@ -46,7 +46,7 @@ PhonePC/2in1TabletTVWearable
 
 getWindowAvoidArea(type: window.AvoidAreaType): window.AvoidArea
 
-获取宿主应用窗口内容规避的区域；如系统栏区域、刘海屏区域、手势区域、软键盘区域等与宿主窗口内容重叠时，需要宿主窗口内容避让的区域。
+获取宿主应用窗口内容避让的区域；如系统栏区域、刘海屏区域、手势区域、软键盘区域等与宿主窗口内容重叠时，需要宿主窗口内容避让的区域。
 
 **系统能力**：SystemCapability.ArkUI.ArkUI.Full
 
@@ -75,7 +75,7 @@ getWindowAvoidArea(type: window.AvoidAreaType): window.AvoidArea
 **示例：**
 
 ```
-1. // ExtensionProvider.ts
+1. // ExtensionProvider.ets
 2. import { EmbeddedUIExtensionAbility, UIExtensionContentSession, Want } from '@kit.AbilityKit';
 3. import { window } from '@kit.ArkUI';
 
@@ -95,7 +95,7 @@ PhonePC/2in1TabletTVWearable
 
 on(type: 'avoidAreaChange', callback: Callback<AvoidAreaInfo>): void
 
-注册系统避让区变化的监听。
+注册宿主应用窗口避让区变化的监听。
 
 **系统能力**：SystemCapability.ArkUI.ArkUI.Full
 
@@ -119,7 +119,7 @@ on(type: 'avoidAreaChange', callback: Callback<AvoidAreaInfo>): void
 **示例：**
 
 ```
-1. // ExtensionProvider.ts
+1. // ExtensionProvider.ets
 2. import { EmbeddedUIExtensionAbility, UIExtensionContentSession, Want } from '@kit.AbilityKit';
 3. import { uiExtension } from '@kit.ArkUI';
 
@@ -140,7 +140,7 @@ PhonePC/2in1TabletTVWearable
 
 off(type: 'avoidAreaChange', callback?: Callback<AvoidAreaInfo>): void
 
-注销系统避让区变化的监听。
+注销宿主应用窗口避让区变化的监听。
 
 **系统能力**：SystemCapability.ArkUI.ArkUI.Full
 
@@ -164,7 +164,7 @@ off(type: 'avoidAreaChange', callback?: Callback<AvoidAreaInfo>): void
 **示例：**
 
 ```
-1. // ExtensionProvider.ts
+1. // ExtensionProvider.ets
 2. import { EmbeddedUIExtensionAbility, UIExtensionContentSession } from '@kit.AbilityKit';
 
 4. export default class EntryAbility extends EmbeddedUIExtensionAbility {
@@ -206,7 +206,7 @@ on(type: 'windowSizeChange', callback: Callback<window.Size>): void
 **示例：**
 
 ```
-1. // ExtensionProvider.ts
+1. // ExtensionProvider.ets
 2. import { EmbeddedUIExtensionAbility, UIExtensionContentSession, Want } from '@kit.AbilityKit';
 3. import { window } from '@kit.ArkUI';
 
@@ -215,7 +215,7 @@ on(type: 'windowSizeChange', callback: Callback<window.Size>): void
 7. const extensionWindow = session.getUIExtensionWindowProxy();
 8. // 注册组件（EmbeddedComponent或UIExtensionComponent）大小变化的监听
 9. extensionWindow.on('windowSizeChange', (size: window.Size) => {
-10. console.info(`The avoid area of the host window is: ${JSON.stringify(size)}.`);
+10. console.info(`The size of the component is: ${JSON.stringify(size)}.`);
 11. });
 12. }
 13. }
@@ -251,7 +251,7 @@ off(type: 'windowSizeChange', callback?: Callback<window.Size>): void
 **示例：**
 
 ```
-1. // ExtensionProvider.ts
+1. // ExtensionProvider.ets
 2. import { EmbeddedUIExtensionAbility, UIExtensionContentSession } from '@kit.AbilityKit';
 
 4. export default class EntryAbility extends EmbeddedUIExtensionAbility {
@@ -297,7 +297,7 @@ on(type: 'rectChange', reasons: number, callback: Callback<RectChangeOptions>): 
 **示例：**
 
 ```
-1. // ExtensionProvider.ts
+1. // ExtensionProvider.ets
 2. import { EmbeddedUIExtensionAbility, UIExtensionContentSession, Want } from '@kit.AbilityKit';
 3. import { uiExtension } from '@kit.ArkUI';
 
@@ -345,7 +345,7 @@ off(type: 'rectChange', callback?: Callback<RectChangeOptions>): void
 **示例：**
 
 ```
-1. // ExtensionProvider.ts
+1. // ExtensionProvider.ets
 2. import { EmbeddedUIExtensionAbility, UIExtensionContentSession } from '@kit.AbilityKit';
 
 4. export default class EntryAbility extends EmbeddedUIExtensionAbility {
@@ -399,7 +399,7 @@ createSubWindowWithOptions(name: string, subWindowOptions: window.SubWindowOptio
 **示例：**
 
 ```
-1. // ExtensionProvider.ts
+1. // ExtensionProvider.ets
 2. import { EmbeddedUIExtensionAbility, UIExtensionContentSession, Want } from '@kit.AbilityKit';
 3. import { window } from '@kit.ArkUI';
 4. import { BusinessError } from '@kit.BasicServicesKit';
@@ -483,7 +483,7 @@ createSubWindowWithOptions(name: string, subWindowConfig: window.SubWindowOption
 **示例：**
 
 ```
-1. // ExtensionProvider.ts
+1. // ExtensionProvider.ets
 2. import { EmbeddedUIExtensionAbility, UIExtensionContentSession, Want } from '@kit.AbilityKit';
 3. import { window } from '@kit.ArkUI';
 4. import { BusinessError } from '@kit.BasicServicesKit';
@@ -564,7 +564,7 @@ occupyEvents(eventFlags: number): Promise<void>
 **示例：**
 
 ```
-1. // ExtensionProvider.ts
+1. // ExtensionProvider.ets
 2. import { EmbeddedUIExtensionAbility, UIExtensionContentSession, Want } from '@kit.AbilityKit';
 3. import { uiExtension } from '@kit.ArkUI';
 4. import { BusinessError } from '@kit.BasicServicesKit';

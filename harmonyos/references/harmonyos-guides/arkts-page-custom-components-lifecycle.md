@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-page-cu
 title: 自定义组件生命周期
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式基本语法 > 自定义组件 > 自定义组件生命周期
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:38:54+08:00
+scraped_at: 2026-04-29T13:27:01+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:2a9b8a42f71e2aa45d3b78ea4a87ba59c5389a0949bb81d2d013e58ca4d279bf
+content_hash: sha256:e377094ccaadab73fdeaa287ce73d58949754016ea237f87ff75355ec40d9779
 ---
 
 自定义组件生命周期，即用[@Component](arkts-create-custom-components.md#component)或[@ComponentV2](arkts-create-custom-components.md#componentv2)装饰的自定义组件的生命周期，提供以下生命周期接口：
@@ -20,7 +20,7 @@ content_hash: sha256:2a9b8a42f71e2aa45d3b78ea4a87ba59c5389a0949bb81d2d013e58ca4d
 
 自定义组件生命周期流程如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/teKS8QaTR42iZq_l8MEN1A/zh-cn_image_0000002552797904.png?HW-CC-KV=V1&HW-CC-Date=20260427T233853Z&HW-CC-Expire=86400&HW-CC-Sign=10664CC2457AC85528FA9BAEF78B4B420CF840C1484C3D20509045C74C5B0E75)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/2iwq94k_Qz23KHvyohDimw/zh-cn_image_0000002558764044.png?HW-CC-KV=V1&HW-CC-Date=20260429T052701Z&HW-CC-Expire=86400&HW-CC-Sign=E4D88A8D7A92265BF0AE4331D086F804A184FC9DA6B7B6C0F56CFC57B12FC86D)
 
 根据上面的流程图，接下来从自定义组件的初始创建、重新渲染和删除来详细说明。
 
@@ -163,4 +163,4 @@ content_hash: sha256:2a9b8a42f71e2aa45d3b78ea4a87ba59c5389a0949bb81d2d013e58ca4d
 
 当showChild为默认值true时，该示例的生命周期流程图如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/xWqIS96jREePMh4xwJI7cQ/zh-cn_image_0000002583437599.png?HW-CC-KV=V1&HW-CC-Date=20260427T233853Z&HW-CC-Expire=86400&HW-CC-Sign=A044485EB773DE267208099D469435DE75A8E30B6A53AAF4531F7BBE75BC8777)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/mYDQaGX2QkqJiakU_T7k2Q/zh-cn_image_0000002558604388.png?HW-CC-KV=V1&HW-CC-Date=20260429T052701Z&HW-CC-Expire=86400&HW-CC-Sign=567B6AA1E84A7567016D3F7514A904EB16E0E277414A756572A1B996F185B167)

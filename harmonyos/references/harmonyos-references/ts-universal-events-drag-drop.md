@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 拖拽事件
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用事件 > 交互响应事件 > 拖拽事件
 category: harmonyos-references
-scraped_at: 2026-04-28T08:00:56+08:00
+scraped_at: 2026-04-29T13:51:09+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:fe0a2ff6f21ea17663185c78e01319ee3bc6a6b0c254077c9a8b0845d8c56a53
+content_hash: sha256:291db1089658e188b21d713021fedecc1a7bbbaad5582e450513a779e312244e
 ---
 
 拖拽事件是指在用户界面中，当用户拖动某个对象（如文件、控件或元素）时触发的一系列事件。这些事件允许开发者自定义拖拽行为，实现诸如拖放、调整位置等功能。
@@ -1189,7 +1189,7 @@ PhonePC/2in1TabletTVWearable
 195. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/8vD_DSMHT1CV0adACZ9aVw/zh-cn_image_0000002552959466.png?HW-CC-KV=V1&HW-CC-Date=20260428T000054Z&HW-CC-Expire=86400&HW-CC-Sign=60072FCB32ABA47E6D8EE5B78FB03E227EFD5DE2E6A068C20ED92072155B1FC8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/d5jjnpnBTBin4qYunB171Q/zh-cn_image_0000002558765986.png?HW-CC-KV=V1&HW-CC-Date=20260429T055107Z&HW-CC-Expire=86400&HW-CC-Sign=0A88AD3D1DECFA051702A88941E432E5F076E53CBE70A0239603B833EA33A40F)
 
 ### 示例2（自定义落位动效）
 
@@ -1274,7 +1274,7 @@ PhonePC/2in1TabletTVWearable
 76. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/1NPyjaOMRUaNvHaaYKDv3Q/zh-cn_image_0000002583479467.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000054Z&HW-CC-Expire=86400&HW-CC-Sign=9CAF2830384697B4943560C64BA62830A561353EE542A5123348DDE44D3EEEF4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/7rprE33QQB2qM2Ptwhq5Rg/zh-cn_image_0000002558606330.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055107Z&HW-CC-Expire=86400&HW-CC-Sign=2AFF1BCFAC1E008886789835AEBB31627BB9E835F8EF8518B5BC849CFDC028AA)
 
 ### 示例3（拖拽异步获取数据）
 
@@ -1582,7 +1582,7 @@ PhonePC/2in1TabletTVWearable
 171. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/-7MhpM1QSsuPooj-SAag_g/zh-cn_image_0000002552799818.png?HW-CC-KV=V1&HW-CC-Date=20260428T000054Z&HW-CC-Expire=86400&HW-CC-Sign=A7B062A9508062A96C7E29AC80ADFC6DE4CABE4D73F928B4E31EEA55F87E6EAF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/gtIBg9sBRtixBeFnzCaP2A/zh-cn_image_0000002589325857.png?HW-CC-KV=V1&HW-CC-Date=20260429T055107Z&HW-CC-Expire=86400&HW-CC-Sign=D70ABCA994A6A919815752B6598B434AB9644683E556A3CA5434CFF8D6854442)
 
 ### 示例5（获取包名和是否是跨设备）
 
@@ -1665,7 +1665,7 @@ PhonePC/2in1TabletTVWearable
 74. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/c1_Q2ipHRya7UjNzsTlT4g/zh-cn_image_0000002583439513.png?HW-CC-KV=V1&HW-CC-Date=20260428T000054Z&HW-CC-Expire=86400&HW-CC-Sign=623985D3B29EACBBB9FF8E5A49B73FE30F401469E6424D81C1EDC745864F859F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/Rz30_3jORJqugvzVneBmmQ/zh-cn_image_0000002589245799.png?HW-CC-KV=V1&HW-CC-Date=20260429T055107Z&HW-CC-Expire=86400&HW-CC-Sign=FBC92864FBCC610748B49CEF8A8D009221A5091912D00BAF8CC696292250DBD6)
 
 ### 示例6（拖拽支持悬停检测）
 
@@ -1750,7 +1750,7 @@ PhonePC/2in1TabletTVWearable
 76. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/ej0-imYCQJ6q9hQDYOondw/zh-cn_image_0000002552959468.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000054Z&HW-CC-Expire=86400&HW-CC-Sign=7E0308A539EBF0831C7CEA729D318E1F0D67F38FE9F07C48109BFDE04841964B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/ZMM3hr4lQKSxNckMVqCO4Q/zh-cn_image_0000002558765988.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055107Z&HW-CC-Expire=86400&HW-CC-Sign=D714A4DEA3AFE73690E5458DB87041850389C4F5695671696914AC7805FFE159)
 
 ### 示例7（拖起方延迟提供数据）
 
@@ -1901,4 +1901,4 @@ PhonePC/2in1TabletTVWearable
 142. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/AaYzV8pSTlConwZcJU0z5w/zh-cn_image_0000002583479469.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000054Z&HW-CC-Expire=86400&HW-CC-Sign=5A0FF51CF1CCE10359CA2827D1FB5CF1E3E110437D2CD39A0AFB186C17D7B25F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/_6sUW1R1SYWDbjDNA-E1FA/zh-cn_image_0000002558606332.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055107Z&HW-CC-Expire=86400&HW-CC-Sign=4F22554715AD1418DAE3B81FF8FE2E598B88B2089D341473BC8ED24BED6D9D89)

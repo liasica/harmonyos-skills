@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-d
 title: @ohos.data.preferences (用户首选项)
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > ArkTS API > @ohos.data.preferences (用户首选项)
 category: harmonyos-references
-scraped_at: 2026-04-28T07:59:12+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:d320b92fe95ac51a9a4e3ea242a5966ea405929482ed54d53a7e220a70ca9b6a
+scraped_at: 2026-04-29T13:49:24+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:786fd4ea6e088a1b6d4d1aff53581875c1adb43433bb3c5eb7c2bcd9c5b18dce
 ---
 
 用户首选项为应用提供Key-Value键值型的数据处理能力，支持应用持久化轻量级数据，并对其修改和查询。
@@ -58,7 +58,7 @@ getPreferences(context: Context, name: string, callback: AsyncCallback<Preferenc
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用上下文。  FA模型的应用Context定义见[Context](js-apis-inner-app-context.md)。  Stage模型的应用Context定义见[Context](js-apis-inner-application-context.md)。 |
-| name | string | 是 | Preferences实例的名称。 |
+| name | string | 是 | Preferences实例的名称。名称长度需大于零且小于等于255字节，名称中不能包含'/'且不能以'/'结尾。 |
 | callback | AsyncCallback<[Preferences](js-apis-data-preferences.md#preferences)> | 是 | 回调函数。当获取Preferences实例成功，err为undefined，返回Preferences实例；否则err为错误对象。 |
 
 **错误码：**
@@ -131,7 +131,7 @@ getPreferences(context: Context, name: string): Promise<Preferences>
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用上下文。  FA模型的应用Context定义见[Context](js-apis-inner-app-context.md)。  Stage模型的应用Context定义见[Context](js-apis-inner-application-context.md)。 |
-| name | string | 是 | Preferences实例的名称。 |
+| name | string | 是 | Preferences实例的名称。名称长度需大于零且小于等于255字节，名称中不能包含'/'且不能以'/'结尾。 |
 
 **返回值：**
 
@@ -441,7 +441,7 @@ deletePreferences(context: Context, name: string, callback: AsyncCallback<void>)
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用上下文。  FA模型的应用Context定义见[Context](js-apis-inner-app-context.md)。  Stage模型的应用Context定义见[Context](js-apis-inner-application-context.md)。 |
-| name | string | 是 | Preferences实例的名称。 |
+| name | string | 是 | Preferences实例的名称。名称长度需大于零且小于等于255字节，名称中不能包含'/'且不能以'/'结尾。 |
 | callback | AsyncCallback<void> | 是 | 回调函数。当移除成功，err为undefined，否则为错误对象。 |
 
 **错误码：**
@@ -515,7 +515,7 @@ deletePreferences(context: Context, name: string): Promise<void>
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用上下文。  FA模型的应用Context定义见[Context](js-apis-inner-app-context.md)。  Stage模型的应用Context定义见[Context](js-apis-inner-application-context.md)。 |
-| name | string | 是 | Preferences实例的名称。 |
+| name | string | 是 | Preferences实例的名称。名称长度需大于零且小于等于255字节，名称中不能包含'/'且不能以'/'结尾。 |
 
 **返回值：**
 
@@ -755,7 +755,7 @@ removePreferencesFromCache(context: Context, name: string, callback: AsyncCallba
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用上下文。  FA模型的应用Context定义见[Context](js-apis-inner-app-context.md)。  Stage模型的应用Context定义见[Context](js-apis-inner-application-context.md)。 |
-| name | string | 是 | Preferences实例的名称。 |
+| name | string | 是 | Preferences实例的名称。名称长度需大于零且小于等于255字节，名称中不能包含'/'且不能以'/'结尾。 |
 | callback | AsyncCallback<void> | 是 | 回调函数。当移除成功，err为undefined，否则为错误对象。 |
 
 **错误码：**
@@ -829,7 +829,7 @@ removePreferencesFromCache(context: Context, name: string): Promise<void>
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用上下文。  FA模型的应用Context定义见[Context](js-apis-inner-app-context.md)。  Stage模型的应用Context定义见[Context](js-apis-inner-application-context.md)。 |
-| name | string | 是 | Preferences实例的名称。 |
+| name | string | 是 | Preferences实例的名称。名称长度需大于零且小于等于255字节，名称中不能包含'/'且不能以'/'结尾。 |
 
 **返回值：**
 
@@ -906,7 +906,7 @@ removePreferencesFromCacheSync(context: Context, name: string): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用上下文。  FA模型的应用Context定义见[Context](js-apis-inner-app-context.md)。  Stage模型的应用Context定义见[Context](js-apis-inner-application-context.md)。 |
-| name | string | 是 | Preferences实例的名称。 |
+| name | string | 是 | Preferences实例的名称。名称长度需大于零且小于等于255字节，名称中不能包含'/'且不能以'/'结尾。 |
 
 **错误码：**
 

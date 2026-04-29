@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/complex-drawi
 title: 复杂绘制效果（C/C++）
 breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 图形绘制与显示 > 绘制效果 > 复杂绘制效果（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:47:11+08:00
+scraped_at: 2026-04-29T13:36:10+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:7f80fc2b27045f7016c0b495e6ddbbbae4fa9c97776b898aefd83f22902e3e6e
+content_hash: sha256:4e9a3bc92dc19d7740604f8c5da40759c07026995646dc4ee086a49512dcc183
 ---
 
 除了基础填充颜色、描边颜色和一些样式设置的绘制效果外，还支持通过画刷和画笔实现更多复杂的绘制效果。比如：
@@ -54,7 +54,7 @@ content_hash: sha256:7f80fc2b27045f7016c0b495e6ddbbbae4fa9c97776b898aefd83f22902
 
 [sample\_graphics.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/Drawing/NDKGraphicsDraw/entry/src/main/cpp/samples/sample_graphics.cpp#L604-L631)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/2q9aPf6YSFGIpBMmrcAnSA/zh-cn_image_0000002583438695.png?HW-CC-KV=V1&HW-CC-Date=20260427T234710Z&HW-CC-Expire=86400&HW-CC-Sign=52A405BF1610F6D38919D71E5CD356F32EA9023635FC517974813DB34EEE65FC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/c_2LKACMQ7WX8gb3AyT75A/zh-cn_image_0000002589244955.png?HW-CC-KV=V1&HW-CC-Date=20260429T053608Z&HW-CC-Expire=86400&HW-CC-Sign=1BB2E15F54862527A4B37B4C7793F2231DC11349EED7D2F25C147B6B1C28B4D8)
 
 ## 路径效果
 
@@ -157,7 +157,7 @@ content_hash: sha256:7f80fc2b27045f7016c0b495e6ddbbbae4fa9c97776b898aefd83f22902
 
 此例绘制的具有线性渐变着色器效果的矩形如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/rAwqNzTbSDOweLO4QlVqQQ/zh-cn_image_0000002552799002.png?HW-CC-KV=V1&HW-CC-Date=20260427T234710Z&HW-CC-Expire=86400&HW-CC-Sign=31E8EE7382C349E9D200ABF7DB111AA48A733AD3CD0F7DE17267E59E5DA5E3D5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/zIfBCdmLSXma4OFO1JIqDQ/zh-cn_image_0000002589325021.png?HW-CC-KV=V1&HW-CC-Date=20260429T053608Z&HW-CC-Expire=86400&HW-CC-Sign=B099E64E15FB19F0BBA8C1D21A4303B2CE44CDA96629B0CBC30B5CD5A97CF46D)
 
 ### 径向渐变着色器效果
 
@@ -201,7 +201,7 @@ content_hash: sha256:7f80fc2b27045f7016c0b495e6ddbbbae4fa9c97776b898aefd83f22902
 
 此例绘制的具有径向渐变着色器效果的矩形如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/Zqv7nGzBQ66f3bQqat7WMA/zh-cn_image_0000002583438697.png?HW-CC-KV=V1&HW-CC-Date=20260427T234710Z&HW-CC-Expire=86400&HW-CC-Sign=F0F19248225BC7B90EC0A641809C3A46FB7912DEFAC470BF68736E6D85223E9F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/FBtRerBcRLqq0uysUhqTtg/zh-cn_image_0000002589244957.png?HW-CC-KV=V1&HW-CC-Date=20260429T053608Z&HW-CC-Expire=86400&HW-CC-Sign=19935C0A928841D7264A2C635B2E0984629EEA8D444957E5F9DEA936BE48C563)
 
 ### 扇形渐变着色器效果
 
@@ -243,7 +243,7 @@ content_hash: sha256:7f80fc2b27045f7016c0b495e6ddbbbae4fa9c97776b898aefd83f22902
 
 此例绘制的具有扇形渐变着色器效果的矩形如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/uYAWqvWkRoi8KEWgkqKuDA/zh-cn_image_0000002552958652.png?HW-CC-KV=V1&HW-CC-Date=20260427T234710Z&HW-CC-Expire=86400&HW-CC-Sign=D9DD891132CFF7B84A0A8752AAED90BF280596B17218F08EEB1D8AD2CA28420D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/cAfso2AAQjyypSKMuQDkXw/zh-cn_image_0000002558765152.png?HW-CC-KV=V1&HW-CC-Date=20260429T053608Z&HW-CC-Expire=86400&HW-CC-Sign=8596976F7DFB25EAA6BEB4B40146116CA4DBE8D65A5CA6176DDA72A7D65EAFD8)
 
 ## 滤波器效果
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 悬浮态效果
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 交互属性 > 悬浮态效果
 category: harmonyos-references
-scraped_at: 2026-04-28T08:01:11+08:00
+scraped_at: 2026-04-29T13:51:24+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:663f0bc1ee7f36cd11c847d284838fb47e931c14692b9d2b182c1d330991aeea
+content_hash: sha256:2553f4de45b31635c3f65dce92888abf136e08809b8f381ac9c02555e0e57d83
 ---
 
 设置组件的鼠标悬浮态显示效果。
@@ -91,4 +91,4 @@ PhonePC/2in1TabletTVWearable
 44. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/sjSqKMuBQ9qlhDvlqDou6A/zh-cn_image_0000002552959542.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000110Z&HW-CC-Expire=86400&HW-CC-Sign=768CB38B6DF9DDD79B0216074FF70EA1787BB4227D67BEEA3D14500125A11006)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/oOomFIE0T26SLVI_iWB4kg/zh-cn_image_0000002558766064.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055122Z&HW-CC-Expire=86400&HW-CC-Sign=92AFCC3195AFB19EB4B8F355758865F990BC47673F693B0C1872988B613A701D)

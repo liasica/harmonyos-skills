@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/dataaugme
 title: retrieval（智慧化数据平台）
 breadcrumb: API参考 > 应用框架 > Data Augmentation Kit（数据增强服务） > ArkTS API > retrieval（智慧化数据平台）
 category: harmonyos-references
-scraped_at: 2026-04-28T08:05:56+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:336b7894931237e5a48d8c9a22f99028e9a0fd19ea43f246b179aeb189b31f4e
+scraped_at: 2026-04-29T13:56:26+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:55cb478770f0265c5e26a63e5b71b1711f9a1d0118dac61a8f8bb313834a36ec
 ---
 
 智慧数据平台（ArkData Intelligence Platform，AIP）提供端侧的数据智慧化能力，实现数据和AI智能在端侧闭环。作为端侧智慧化能力底座，将支持以下能力：
@@ -104,8 +104,11 @@ getRetriever(config: RetrievalConfig): Promise<Retriever>
 50. }
 
 52. build() {
-53. }
-54. }
+53. Column() {
+54. Text('test')
+55. }
+56. }
+57. }
 ```
 
 ## RetrievalConfig
@@ -459,8 +462,11 @@ retrieveRdb(query: string, condition: RetrievalCondition): Promise<RdbRecords>
 220. }
 
 222. build() {
-223. }
-224. }
+223. Column() {
+224. Text('test')
+225. }
+226. }
+227. }
 ```
 
 ## RetrievalCondition

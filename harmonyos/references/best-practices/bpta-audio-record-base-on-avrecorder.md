@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-audio-reco
 title: 基于AVRecorder录制格式化音频（C++）
 breadcrumb: 最佳实践 > 媒体 > 音频和视频 > 音频录制系列开发实践 > 基于AVRecorder录制格式化音频（C++）
 category: best-practices
-scraped_at: 2026-04-28T08:20:39+08:00
+scraped_at: 2026-04-29T14:11:28+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:45c7aa39aa75d3eabf0f5ccb2f955e69a1f085d97f6522f0e321d90a552904c9
+content_hash: sha256:85abd14358d8ba8426fe965548ec6432c4dac2e6fb2159ebc647e44f7a571e44
 ---
 
 ## 概述
@@ -14,7 +14,7 @@ AVRecorder提供了Native API，可以快速实现音频录制，支持m4a、mp3
 
 基于AVRecorder录制格式化音频（C++）实现的功能效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/fdQn-ZtCRsqu773o1ds5og/zh-cn_image_0000002524221070.gif?HW-CC-KV=V1&HW-CC-Date=20260428T002038Z&HW-CC-Expire=86400&HW-CC-Sign=05B05EC9DD4A59EA0A1FEDF3EDF3C6BAECD345D507946D38CB2216A9A1D1EC24 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/fdQn-ZtCRsqu773o1ds5og/zh-cn_image_0000002524221070.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061127Z&HW-CC-Expire=86400&HW-CC-Sign=4C3901DBAB0182AA177CD6BCB2FB32C99621F66BFB4B0DCFFB3D5EA3D2EEFB73 "点击放大")
 
 本文的主要内容如下：
 
@@ -28,7 +28,7 @@ AVRecorder提供了Native API，可以快速实现音频录制，支持m4a、mp3
 
 **图1** 录制状态变化示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/6xgOFtmYROa7VIdKVrPZ2g/zh-cn_image_0000002555340939.jpg?HW-CC-KV=V1&HW-CC-Date=20260428T002038Z&HW-CC-Expire=86400&HW-CC-Sign=EEF760E50044C7A3EA1EC49178F1DA6CA804EEB004C5C9BE4342F9D181892563 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/6xgOFtmYROa7VIdKVrPZ2g/zh-cn_image_0000002555340939.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T061127Z&HW-CC-Expire=86400&HW-CC-Sign=6788630C5B555017D4D58615422EE5031B696E9739918811D2D2F0637155409B "点击放大")
 
 ### 开发步骤
 

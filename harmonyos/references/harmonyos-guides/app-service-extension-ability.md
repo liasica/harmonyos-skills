@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-service-e
 title: 使用AppServiceExtensionAbility组件实现后台服务
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > Stage模型开发指导 > Stage模型应用组件 > ExtensionAbility组件 > 使用AppServiceExtensionAbility组件实现后台服务
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:37:43+08:00
+scraped_at: 2026-04-29T13:25:45+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:925dc20df7377c444575baff9cc6f53f134dd7ef69c7447701c48d2d1f11129d
+content_hash: sha256:a34851e401dd16023e356701c34f3cdfdad2175555050469ea0547a604362fb3
 ---
 
 ## 概述
@@ -60,7 +60,7 @@ AppServiceExtensionAbility组件当前仅支持2in1设备。
 1. 在工程Module对应的ets目录下，右键选择“New > Directory”，新建一个目录并命名为myappserviceextability。
 2. 在myappserviceextability目录，右键选择“New > ArkTS File”，新建一个文件并命名为MyAppServiceExtAbility.ets。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/9MsWuAPYQdO6uSgY8vN2Tw/zh-cn_image_0000002583437539.png?HW-CC-KV=V1&HW-CC-Date=20260427T233742Z&HW-CC-Expire=86400&HW-CC-Sign=D89533E814F60385E664E2C0951529161ED2DB04BFB5345A705A9C4DD69F8823)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/8vFHZuQmT0yWUWmnbd4umw/zh-cn_image_0000002589323853.png?HW-CC-KV=V1&HW-CC-Date=20260429T052544Z&HW-CC-Expire=86400&HW-CC-Sign=652449803260CAAE24818BFBDEB3CA127DBCCCF1FE61477AB3A91A890317C986)
 
    其目录结构如下所示：
 

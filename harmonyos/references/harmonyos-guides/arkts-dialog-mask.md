@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-dialog-
 title: 弹出框蒙层控制
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用弹窗 > 弹出框 (Dialog) > 弹出框蒙层控制
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:39:45+08:00
+scraped_at: 2026-04-29T13:27:56+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:b741a7645f71c03131e6dda8ff3b5042b6a4fb4b5e489d7a3f2186c5215513fa
+content_hash: sha256:796bfc5cad7c9f20e0d18430d00069b32e012091a7f16e61118334538106a527
 ---
 
 开发者对弹出框的定制不仅限于弹出框里的内容，对弹出框蒙层的定制需求也逐渐增加。本文介绍ArkUI弹出框的蒙层控制，包括点击蒙层时是否消失、蒙层区域、蒙层颜色和蒙层动画等特性。
@@ -95,7 +95,7 @@ ArkUI提供多种弹出框，不同类型的弹出框具备不同的蒙层定制
 
 [CustomDialogControl.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/DialogProject/entry/src/main/ets/pages/maskdialog/CustomDialogControl.ets#L27-L169)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/y6lWz9AoTxuJr4056Xtz_A/zh-cn_image_0000002552957910.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233943Z&HW-CC-Expire=86400&HW-CC-Sign=9500552EA2AEFB03E4FE25B1D9D2479D9CEC25D8EC5CB55851F71A0AD8A353E9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/pRX0d8tbRWOYdPdHYAx1wQ/zh-cn_image_0000002589324269.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052754Z&HW-CC-Expire=86400&HW-CC-Sign=2F67C45928FB23FA74E14671E0BC3170580C2158B00F191713C45EC28E5E7010)
 
 设置isModal为false，将默认的模态弹出框变为非模态弹出框。
 
@@ -128,7 +128,7 @@ ArkUI提供多种弹出框，不同类型的弹出框具备不同的蒙层定制
 
 [CustomDialogControl.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/DialogProject/entry/src/main/ets/pages/maskdialog/CustomDialogControl.ets#L36-L168)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/a7f0iSiBRkaLxTzOMBQvyA/zh-cn_image_0000002583477911.png?HW-CC-KV=V1&HW-CC-Date=20260427T233943Z&HW-CC-Expire=86400&HW-CC-Sign=EE112CFF060A54501802AC7143BFED4729C3D16FFE2A1A6027E83E11AB9EC77F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/Oh7IRATKQQ-7zXv5kL1AtA/zh-cn_image_0000002589244209.png?HW-CC-KV=V1&HW-CC-Date=20260429T052754Z&HW-CC-Expire=86400&HW-CC-Sign=D69B75F8ADF27FCB8EC8C9B9F9109F6EE1812BA604B103992640A6C276EAC690)
 
 ## 弹出框蒙层样式控制
 
@@ -171,7 +171,7 @@ ArkUI提供多种弹出框，不同类型的弹出框具备不同的蒙层定制
 
 [CustomDialogControl.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/DialogProject/entry/src/main/ets/pages/maskdialog/CustomDialogControl.ets#L45-L167)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/d-Qa41Q2TaWEIpyedFTADw/zh-cn_image_0000002552798262.png?HW-CC-KV=V1&HW-CC-Date=20260427T233943Z&HW-CC-Expire=86400&HW-CC-Sign=62283785413F4F39815002718E00E3959142127F5282C48884E3735048150D59)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/uYGrpywvSdeqlIpKs0PJNQ/zh-cn_image_0000002558764402.png?HW-CC-KV=V1&HW-CC-Date=20260429T052754Z&HW-CC-Expire=86400&HW-CC-Sign=99796869DD2420B6CDFECBCB32F2DC103B19A55D7FDAFAFC1A2E558389BE9D91)
 
 在levelMode为LevelMode.EMBEDDED下，展示不同immersiveMode对蒙层在导航栏和状态栏的延伸效果。
 
@@ -207,7 +207,7 @@ ArkUI提供多种弹出框，不同类型的弹出框具备不同的蒙层定制
 
 [CustomDialogControl.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/DialogProject/entry/src/main/ets/pages/maskdialog/CustomDialogControl.ets#L23-L170)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/aUNlo1seTM6G5Eey6MGw5Q/zh-cn_image_0000002583437957.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233943Z&HW-CC-Expire=86400&HW-CC-Sign=42BC30C6DC5DF90F9C88403C98A4498A6AB6151F00F55E562C8EDFD34EE5E5B4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/yqyrB7faTy6Q6sGH1iocyg/zh-cn_image_0000002558604746.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052754Z&HW-CC-Expire=86400&HW-CC-Sign=4E4A671BC6331F409396D363E9E7C6E5F1E9D99BCF01583A9CE32D0ED22C5DD4)
 
 ## 弹出框蒙层动画控制
 
@@ -244,7 +244,7 @@ ArkUI提供多种弹出框，不同类型的弹出框具备不同的蒙层定制
 
 [CustomDialogControl.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/DialogProject/entry/src/main/ets/pages/maskdialog/CustomDialogControl.ets#L60-L166)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/LM9b71I5QG66o_eNG4P2aw/zh-cn_image_0000002552957912.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233943Z&HW-CC-Expire=86400&HW-CC-Sign=9F8024936BE00E70C7F7964CED91E289E149CD58ABC012830A7AA80ACC1AB66D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/1sQ67MQ2RmiVap3Syn6skA/zh-cn_image_0000002589324271.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052754Z&HW-CC-Expire=86400&HW-CC-Sign=794E37351C34E14DC984C9B1DE86DD1628F90D462C16CBD6F02CBA6AFC38304E)
 
 设置maskTransition，实现弹出框中蒙层单独的动画定制能力。
 
@@ -265,7 +265,7 @@ ArkUI提供多种弹出框，不同类型的弹出框具备不同的蒙层定制
 
 [CustomDialogControl.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/DialogProject/entry/src/main/ets/pages/maskdialog/CustomDialogControl.ets#L142-L155)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/m_3yPgzUQHub2l6BLukbXg/zh-cn_image_0000002583477913.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233943Z&HW-CC-Expire=86400&HW-CC-Sign=93D5C02582A5BE9F550FC7895704F9FA0CE61513E61B93F00A844DC1C63F3BD5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/dAjVSEi6TKmBCnGEFJ3VBQ/zh-cn_image_0000002589244211.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052754Z&HW-CC-Expire=86400&HW-CC-Sign=AB3CC59D62959E2C67203E4BFD83EFE2040E9268330FF70E7AC309870663C74D)
 
 [CustomDialog](arkts-common-components-custom-dialog.md)虽然不支持transition接口，但与之对应的openAnimation和closeAnimation接口在动画的打开和关闭时可进行定制，示例代码如下：
 
@@ -330,7 +330,7 @@ ArkUI提供多种弹出框，不同类型的弹出框具备不同的蒙层定制
 
 [CustomDialogAnimation.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/DialogProject/entry/src/main/ets/pages/maskdialog/CustomDialogAnimation.ets#L16-L73)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/Fw98gno0RWahrNHq3I5dKg/zh-cn_image_0000002552798264.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233943Z&HW-CC-Expire=86400&HW-CC-Sign=A79B1F18BFDA702F5D1F59EF550D155220321B8AAFE8DEB9DAEF133B0DD827BF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/JTgloCzbRCudL2IVa2Tj1w/zh-cn_image_0000002558764404.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052754Z&HW-CC-Expire=86400&HW-CC-Sign=5EFD19D74F33B5DB023310B45212B420A599952B6325FF2C7AE317F32549FC4A)
 
 ## 完整示例
 
@@ -454,4 +454,4 @@ ArkUI提供多种弹出框，不同类型的弹出框具备不同的蒙层定制
 
 [CustomDialogControl.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/DialogProject/entry/src/main/ets/pages/maskdialog/CustomDialogControl.ets#L16-L172)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/2QzX0tKGSCq1wOA07Wxb-A/zh-cn_image_0000002583437959.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233943Z&HW-CC-Expire=86400&HW-CC-Sign=A6F8E12B6370D5CE52CCCD738A2AB9F55F6C7B5D2E1E3C1FCEA0B366F286EDBA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/2YlvCAdCTPCQw2zg-PxGGw/zh-cn_image_0000002558604748.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052754Z&HW-CC-Expire=86400&HW-CC-Sign=BEDD05820314C0DD6795CED0950F06C44DEB09D1DF27318565D48BE196FB3C3C)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-developmen
 title: 环境检查时显示ohpm registry access不通过
 breadcrumb: FAQ > DevEco Studio > 环境准备 > 环境检查时显示ohpm registry access不通过
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:28:54+08:00
+scraped_at: 2026-04-29T14:20:06+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:d48f8f4eaaa89257c79d53458dc67d60802d81075ecf9834c72c493105df7d04
+content_hash: sha256:75fdaac32493fc534fa7016d800caae573bca8063f0753c2cbdf0f61fccd83dd
 ---
 
 ohpm registry access不通过可能有以下几种情况：
@@ -14,7 +14,7 @@ ohpm registry access不通过可能有以下几种情况：
 
 registry地址校验连接不通过，详细信息提示“check whether the ohpm repository is correctly set”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/8yTX2egOReCPj8iWsPjKTQ/zh-cn_image_0000002324320444.png?HW-CC-KV=V1&HW-CC-Date=20260428T002853Z&HW-CC-Expire=86400&HW-CC-Sign=D36E6651582EA78BAE9F6D6B682C7EFEF5A6F6375912D7BFBEBDBB899DE8B9C0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/8yTX2egOReCPj8iWsPjKTQ/zh-cn_image_0000002324320444.png?HW-CC-KV=V1&HW-CC-Date=20260429T062005Z&HW-CC-Expire=86400&HW-CC-Sign=CB6D8B4287210C0952EE06B6F5AF62D42F5935909B38042821ADBFED1D6F9305)
 
 **解决措施**
 
@@ -52,13 +52,13 @@ registry地址校验连接不通过，详细信息提示“check whether the ohp
 
      执行结果如下图所示，则说明代理设置成功。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/_xw4MEIyTKGdTJvSJixspA/zh-cn_image_0000002358358913.png?HW-CC-KV=V1&HW-CC-Date=20260428T002853Z&HW-CC-Expire=86400&HW-CC-Sign=FFF6CD79B100741FC76009CCF14A09DAEA4DA4353AA0B829E027F5792D226FDF)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/_xw4MEIyTKGdTJvSJixspA/zh-cn_image_0000002358358913.png?HW-CC-KV=V1&HW-CC-Date=20260429T062005Z&HW-CC-Expire=86400&HW-CC-Sign=0E04FDAB90C96B927F0DDCA0B3274A74157C1276AB5319A41652CDC29FA4CDB1)
 
 **问题现象****2**
 
 registry证书地址校验不通过，详细信息提示“UNABLE\_TO\_VERIFY\_LEAF\_SIGNATURE”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/7dvCMQBXQSG5gvxL9moJvA/zh-cn_image_0000002358279041.png?HW-CC-KV=V1&HW-CC-Date=20260428T002853Z&HW-CC-Expire=86400&HW-CC-Sign=49ADDAD04BED834F77D9445BA9F8F816767892452063651F046D2D78986BCEA4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/7dvCMQBXQSG5gvxL9moJvA/zh-cn_image_0000002358279041.png?HW-CC-KV=V1&HW-CC-Date=20260429T062005Z&HW-CC-Expire=86400&HW-CC-Sign=5CFD547A21DF1A1A282690ECBCE269C9ACE3B8AE2EB500D9309B6662D2FFAA74)
 
 **解决措施**
 

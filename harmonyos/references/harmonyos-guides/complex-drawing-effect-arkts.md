@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/complex-drawi
 title: 复杂绘制效果（ArkTS）
 breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 图形绘制与显示 > 绘制效果 > 复杂绘制效果（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:47:11+08:00
+scraped_at: 2026-04-29T13:36:09+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:4b5bb816308c67d166fec5247329bdd9f48e5f6248a3607e85535064e546d140
+content_hash: sha256:980a32823844b870dbb2d325ce2be71aa58268317a33c88d391f6303798026f1
 ---
 
 除了基础填充颜色、描边颜色和一些样式设置的绘制效果外，还支持通过画刷和画笔实现更多复杂的绘制效果。比如：
@@ -57,7 +57,7 @@ content_hash: sha256:4b5bb816308c67d166fec5247329bdd9f48e5f6248a3607e85535064e54
 
 [ComplexEffect.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/Drawing/ArkTSGraphicsDraw/entry/src/main/ets/drawing/pages/ComplexEffect.ets#L61-L84)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/w9WW9ZA5R8KK4FwVKilRNA/zh-cn_image_0000002552798994.png?HW-CC-KV=V1&HW-CC-Date=20260427T234710Z&HW-CC-Expire=86400&HW-CC-Sign=A4A553DAA43D70BDE7C47F2213401393F0B5C648D05C4CC30AFF1628AC300AAC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/xYq8bU4SQieOibQUaAEGYA/zh-cn_image_0000002589325013.png?HW-CC-KV=V1&HW-CC-Date=20260429T053608Z&HW-CC-Expire=86400&HW-CC-Sign=A4635029C6B4E584E9851FDD50C358D46ABE899407F0FC4D0199926A23D0D942)
 
 ## 路径效果
 
@@ -152,7 +152,7 @@ content_hash: sha256:4b5bb816308c67d166fec5247329bdd9f48e5f6248a3607e85535064e54
 
 [ComplexEffect.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/Drawing/ArkTSGraphicsDraw/entry/src/main/ets/drawing/pages/ComplexEffect.ets#L116-L138)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/KVNzCJGUSNmqn7YnUBhfHg/zh-cn_image_0000002583478645.png?HW-CC-KV=V1&HW-CC-Date=20260427T234710Z&HW-CC-Expire=86400&HW-CC-Sign=7728CC8A39EEE628408EB39F9252047AF81D6ADB036B54EEE16D1405B2CBF4E4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/4IfPWPG1T0uA30CBlitkfg/zh-cn_image_0000002558605488.png?HW-CC-KV=V1&HW-CC-Date=20260429T053608Z&HW-CC-Expire=86400&HW-CC-Sign=5FCAD3E56D08C4895104BF95F452A06496E3ACA29D9062855A84DED2EF8C0DA3)
 
 ### 径向渐变着色器效果
 
@@ -187,7 +187,7 @@ content_hash: sha256:4b5bb816308c67d166fec5247329bdd9f48e5f6248a3607e85535064e54
 
 [ComplexEffect.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/Drawing/ArkTSGraphicsDraw/entry/src/main/ets/drawing/pages/ComplexEffect.ets#L142-L163)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/fjxGCo4cQS2bELmdiwGFmg/zh-cn_image_0000002552798996.jpg?HW-CC-KV=V1&HW-CC-Date=20260427T234710Z&HW-CC-Expire=86400&HW-CC-Sign=367E6E28C401D7AB08DA2F69DD9E4714BA2E6E72BE311C0F2E8695591A719818)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/eyGIkkO6Qwiz5hT0Bc58uQ/zh-cn_image_0000002589325015.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053608Z&HW-CC-Expire=86400&HW-CC-Sign=1457750469F56BA2DBBFECAF2317E71616E17C41177395907E400CFCB763208B)
 
 ### 扇形渐变着色器效果
 
@@ -222,7 +222,7 @@ content_hash: sha256:4b5bb816308c67d166fec5247329bdd9f48e5f6248a3607e85535064e54
 
 [ComplexEffect.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/Drawing/ArkTSGraphicsDraw/entry/src/main/ets/drawing/pages/ComplexEffect.ets#L167-L188)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/DvTIUPySQEmefw9Y5iaNjQ/zh-cn_image_0000002583438691.jpg?HW-CC-KV=V1&HW-CC-Date=20260427T234710Z&HW-CC-Expire=86400&HW-CC-Sign=B6A6467E0F49F868BEFBABC1FE4FD73CF7912AEF9389038CBFB74B8E8CA98136)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/rXglfkq2SNannyjRxNSzJQ/zh-cn_image_0000002589244951.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053608Z&HW-CC-Expire=86400&HW-CC-Sign=8B783E8DDF21E9CBB996E3EA27FC8C79641CF1B236D0BC58FDFBA9AD6D31BE89)
 
 ## 滤波器效果
 

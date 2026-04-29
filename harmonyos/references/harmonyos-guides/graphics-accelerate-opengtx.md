@@ -3,22 +3,22 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/graphics-acce
 title: OpenGTX功能开发
 breadcrumb: 指南 > 图形 > Graphics Accelerate Kit（图形加速服务） > 游戏渲染加速服务 > OpenGTX功能开发
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:47:27+08:00
+scraped_at: 2026-04-29T13:36:28+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:897c46e48512534449a8b56bd4cb075717aa7e88fc9a976c93d41909ea413045
+content_hash: sha256:ac8e2eff4afb1b9500cb22d05d7d20a4f1d9d252290622c720791cbfd631eeef
 ---
 
 ## 概述
 
 OpenGTX是GPU Turbo X的开放式入口，根据游戏开发者主动提供的游戏过程中的关键信息，使能LTPO（动态帧率/刷新率）等游戏加速方案，助力游戏开发者打造高画质、高流畅、低功耗极致体验。LTPO通过动态感知游戏渲染状态、游戏场景、设备状态等关键信息，动态调整游戏的帧率/刷新率以及设备的SOC/DDR频率。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/yi3X6EsvQDuOE7EWKOez_g/zh-cn_image_0000002583438759.png?HW-CC-KV=V1&HW-CC-Date=20260427T234726Z&HW-CC-Expire=86400&HW-CC-Sign=77A573B659AAB2DD098662879EA5158E94F577ED962A98DB457D91A0C028FC18)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/jdbAAhh7TQ2joZBzrNXtJw/zh-cn_image_0000002589245019.png?HW-CC-KV=V1&HW-CC-Date=20260429T053627Z&HW-CC-Expire=86400&HW-CC-Sign=FD83811D3098897BF089EEA2ECF66B569E51B7FD416A663346EBB44CD714B31D)
 
 ## 业务流程
 
 LTPO的主要业务流程如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/9-_nIbU9RIC5beVmVhEhYg/zh-cn_image_0000002552958714.png?HW-CC-KV=V1&HW-CC-Date=20260427T234726Z&HW-CC-Expire=86400&HW-CC-Sign=BE6A84642EB6F8F2CC0B2B4CB9AF040CAB802D9E35F94D0B8AAA4C4AA4C8CE7A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/3cr7M4ZTQ5q0eQutqgQNTg/zh-cn_image_0000002558765214.png?HW-CC-KV=V1&HW-CC-Date=20260429T053627Z&HW-CC-Expire=86400&HW-CC-Sign=FA8EEC63995AA7F7522A80A133CD4AF1898A6F43439B8907CCA609BA1C068CCA)
 
 1. 用户进入游戏。
 2. 游戏应用调用[HMS\_OpenGTX\_CreateContext](../harmonyos-references/_graphics_accelerate.md#hms_opengtx_createcontext)接口创建OpenGTX上下文实例。

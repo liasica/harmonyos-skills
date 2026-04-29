@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-playing-pc
 title: 基于AudioRender播放PCM音频
 breadcrumb: 最佳实践 > 媒体 > 音频和视频 > 音频播放系列开发实践 > 基于AudioRender播放PCM音频
 category: best-practices
-scraped_at: 2026-04-28T08:20:37+08:00
+scraped_at: 2026-04-29T14:11:26+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:36709df35b7c377c7779042b7dd4aaabe6ee807b5ec78a7afca75970dfe8ec37
+content_hash: sha256:b301d203ada0c8330680250c49151fd6b091e5cfbb5a221ed674eb4e7600e800
 ---
 
 ## 概述
@@ -14,7 +14,7 @@ AudioRender是用于音频播放的ArkTS API，仅支持PCM格式的音频。指
 
 本文是音频播放系列文章的第1篇，实现的功能效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/vZKu1DSCRsWB0AIHpBILqw/zh-cn_image_0000002555217465.gif?HW-CC-KV=V1&HW-CC-Date=20260428T002028Z&HW-CC-Expire=86400&HW-CC-Sign=F7BD41023F3BEFC25F1A5FFF9DCF05E344F41983273F9C4730AAC2F83F74DFF9 "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/lYqDm5pJTCC9fQj4aZO0xQ/zh-cn_image_0000002524217568.gif?HW-CC-KV=V1&HW-CC-Date=20260428T002028Z&HW-CC-Expire=86400&HW-CC-Sign=7F37CDB8568E9B7EB843EF2E4A8059FC9327ABB9515FAB7C2D07719010E705A0 "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/PmfDkYGwQiaZKxiRuMoOGg/zh-cn_image_0000002555337437.gif?HW-CC-KV=V1&HW-CC-Date=20260428T002028Z&HW-CC-Expire=86400&HW-CC-Sign=630B58CDBD12AB57B198F5411225FBAEA9ED9653554ACDB10DE6C806AF2547A4 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/vZKu1DSCRsWB0AIHpBILqw/zh-cn_image_0000002555217465.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061115Z&HW-CC-Expire=86400&HW-CC-Sign=581E967C57169B7D224BFC95B599DCC1D493E843CC4F2D0F5B11087A5BCC4150 "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/lYqDm5pJTCC9fQj4aZO0xQ/zh-cn_image_0000002524217568.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061115Z&HW-CC-Expire=86400&HW-CC-Sign=40F78E83B45CB85F784BCC9E47A6A2BDE8E0FD687FBED14F65A927D2577E7F09 "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/PmfDkYGwQiaZKxiRuMoOGg/zh-cn_image_0000002555337437.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061115Z&HW-CC-Expire=86400&HW-CC-Sign=317C336D0A80CAFE7466CA66EE71E5FECB76EC43D82E69B62AD52462C3E310E9 "点击放大")
 
 ## 场景分析
 
@@ -37,7 +37,7 @@ AudioRender是用于音频播放的ArkTS API，仅支持PCM格式的音频。指
 
 通过[AudioRenderer](../harmonyos-references/arkts-apis-audio-audiorenderer.md)实现基础的音频播放控制能力，包括音频资源加载、播放、暂停、停止及退出等操作。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/SAB9MwSQRTC3oImNkqQGMg/zh-cn_image_0000002524057574.gif?HW-CC-KV=V1&HW-CC-Date=20260428T002028Z&HW-CC-Expire=86400&HW-CC-Sign=71C34E364E5CF8BABD6E1DA78EE1855175D817A98F1D2DDEF94BD58A0D8F9B3F "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/SAB9MwSQRTC3oImNkqQGMg/zh-cn_image_0000002524057574.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061115Z&HW-CC-Expire=86400&HW-CC-Sign=C2E29D061212759F13EA4A0F1CB6ACC0E0FF3750B2DB706F20416AD0F057F7F8 "点击放大")
 
 ### 实现原理
 
@@ -242,7 +242,7 @@ AudioRender是用于音频播放的ArkTS API，仅支持PCM格式的音频。指
 
 通过点击或拖动进度条精准跳转到指定时间进行播放。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/qhxk1iNgQPiqWX6Am9z9FQ/zh-cn_image_0000002555217467.gif?HW-CC-KV=V1&HW-CC-Date=20260428T002028Z&HW-CC-Expire=86400&HW-CC-Sign=E7A3B10E1D4B5DB3F3307344620C5391B358817B5E0B33E35CB6ED238417898D "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/qhxk1iNgQPiqWX6Am9z9FQ/zh-cn_image_0000002555217467.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061115Z&HW-CC-Expire=86400&HW-CC-Sign=CF21701C74C062A19C94B8D8C45303AEF00AB953D326603B81C6998ADAAAC8A7 "点击放大")
 
 ### 实现原理
 
@@ -357,7 +357,7 @@ AudioRender是用于音频播放的ArkTS API，仅支持PCM格式的音频。指
 
 通过界面按钮快捷切换音频播放静音模式，实现一键开启或关闭静音模式。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/rd5SpDPdTqa1Zj3xAGXMoQ/zh-cn_image_0000002524217570.gif?HW-CC-KV=V1&HW-CC-Date=20260428T002028Z&HW-CC-Expire=86400&HW-CC-Sign=336CD71B1E5B8DC0B24794E6126D66214105CB0C020D26559C0EF8EEB91782F7 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/rd5SpDPdTqa1Zj3xAGXMoQ/zh-cn_image_0000002524217570.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061115Z&HW-CC-Expire=86400&HW-CC-Sign=66C5D4F8AB4588148E232A3C678410D400DAC28EE2983F3FA2B4DFC2CA508CAF "点击放大")
 
 ### 实现原理
 
@@ -386,7 +386,7 @@ AudioRender是用于音频播放的ArkTS API，仅支持PCM格式的音频。指
 
 点击上一首或下一首或歌单列表中的歌曲进行不同歌曲播放。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/gY4iikxHTKSVQ2Gr1dsYgw/zh-cn_image_0000002555337439.gif?HW-CC-KV=V1&HW-CC-Date=20260428T002028Z&HW-CC-Expire=86400&HW-CC-Sign=4A952DDE0955BB7DBCABD01C34AE98790412DAC7C887F330AE7693C9400CF95D "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/gY4iikxHTKSVQ2Gr1dsYgw/zh-cn_image_0000002555337439.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061115Z&HW-CC-Expire=86400&HW-CC-Sign=8E8878AF4420EE0BB226FB81184E4B5AF22A6625384486C8536A5094973175AC "点击放大")
 
 ### 实现原理
 
@@ -453,7 +453,7 @@ AudioRender是用于音频播放的ArkTS API，仅支持PCM格式的音频。指
 
 滑动倍速调节面板调节播放速度。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/3Lb2LLR9Q0aW4w574GzLhw/zh-cn_image_0000002524057576.gif?HW-CC-KV=V1&HW-CC-Date=20260428T002028Z&HW-CC-Expire=86400&HW-CC-Sign=AB99FE2B56E514752527ABEC1DF21A352D7AF44A30567F78C2DAE09502FA4070 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/3Lb2LLR9Q0aW4w574GzLhw/zh-cn_image_0000002524057576.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061115Z&HW-CC-Expire=86400&HW-CC-Sign=CAA5F3C90599AF9DFEFDD9979FA93B25C7E1C1F45434F4AE25CDBAE7414E4C1A "点击放大")
 
 ### 实现原理
 
@@ -516,7 +516,7 @@ AudioRender是用于音频播放的ArkTS API，仅支持PCM格式的音频。指
 
 滑动音量调节面板调节播放音量。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/hsbsHkM5TWqnj0TJYNDkmQ/zh-cn_image_0000002555217469.gif?HW-CC-KV=V1&HW-CC-Date=20260428T002028Z&HW-CC-Expire=86400&HW-CC-Sign=0B32D0628FAD897EB7D59CB7E597574B99901EDCF5C1D54AB3B1FD2B3F4050AA "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/hsbsHkM5TWqnj0TJYNDkmQ/zh-cn_image_0000002555217469.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061115Z&HW-CC-Expire=86400&HW-CC-Sign=1DB9588596A2BEACB25A6280480D25084C203FBE68DB524319FFA3A43F346554 "点击放大")
 
 ### 实现原理
 
@@ -574,7 +574,7 @@ AudioRender是用于音频播放的ArkTS API，仅支持PCM格式的音频。指
 
 通过播控中心，控制播放、暂停、切换上一首或者下一首音频。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/7Ho3fkvySGafU2GrJjZ35A/zh-cn_image_0000002524217572.gif?HW-CC-KV=V1&HW-CC-Date=20260428T002028Z&HW-CC-Expire=86400&HW-CC-Sign=A368B0607AFB2EE238929FF7780BA83653BB66555216F1B767EAEAD5293FDBE4 "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/h2BO_boERsGkNsmR4L3PEw/zh-cn_image_0000002555337441.gif?HW-CC-KV=V1&HW-CC-Date=20260428T002028Z&HW-CC-Expire=86400&HW-CC-Sign=56EE679520149D86B330108A88178D2AD3354CAE15F8D2192123F99116134C6C "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/YS4eCKaHT925JwktUX7nMQ/zh-cn_image_0000002524057578.gif?HW-CC-KV=V1&HW-CC-Date=20260428T002028Z&HW-CC-Expire=86400&HW-CC-Sign=129912239D91D3A53ED0E144276F14C882D751B315442B2A94AD63E0BEC43B39 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/7Ho3fkvySGafU2GrJjZ35A/zh-cn_image_0000002524217572.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061115Z&HW-CC-Expire=86400&HW-CC-Sign=A2033CEC0FD2131D0742DD6593391601772A33BC3644ED425BB4282272902BDB "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/h2BO_boERsGkNsmR4L3PEw/zh-cn_image_0000002555337441.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061115Z&HW-CC-Expire=86400&HW-CC-Sign=01A3A8D0ABFC275CAF5BA6A2FD23CD3B4CC5E419F3470A8ACF09E7CA6DF5BD5A "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/YS4eCKaHT925JwktUX7nMQ/zh-cn_image_0000002524057578.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061115Z&HW-CC-Expire=86400&HW-CC-Sign=AF72C1503948CD1BD641605F6FCAE93EA5911D432D9F4659BF9CCCF7C673CEDD "点击放大")
 
 ### 实现原理
 
@@ -776,7 +776,7 @@ AudioRender是用于音频播放的ArkTS API，仅支持PCM格式的音频。指
 
 音频切换到后台播放。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/R_86KepbRSW5PzGKaxzPmg/zh-cn_image_0000002555217471.gif?HW-CC-KV=V1&HW-CC-Date=20260428T002028Z&HW-CC-Expire=86400&HW-CC-Sign=6BC1E3D2919A6D4C2EAA4F44ECC373E6D469A24BFD2F64F226EE1AA54FE3823A "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/R_86KepbRSW5PzGKaxzPmg/zh-cn_image_0000002555217471.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061115Z&HW-CC-Expire=86400&HW-CC-Sign=EAB95F327AD4F636776E9EA36AF97686D67522041AF98BAF0FF8F71403978E2B "点击放大")
 
 ### 实现原理
 
@@ -911,7 +911,7 @@ AudioRender是用于音频播放的ArkTS API，仅支持PCM格式的音频。指
 
 用户在应用内播放后，上滑结束应用进程，再进入播控中心，点击播放键拉起应用播放，或者点击历史歌单拉起应用播放，播控中心正确显示当前播放信息及播放状态。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/vcTR7LQDTWG_XBslFZhyyQ/zh-cn_image_0000002524217574.gif?HW-CC-KV=V1&HW-CC-Date=20260428T002028Z&HW-CC-Expire=86400&HW-CC-Sign=B9A3049504A07E3FD00D2BC9EF7F6610856CA964C70E819817B79E2D9FEF25EE "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/0QUS654NREypzlibleSSqQ/zh-cn_image_0000002555337449.gif?HW-CC-KV=V1&HW-CC-Date=20260428T002028Z&HW-CC-Expire=86400&HW-CC-Sign=23F2A0C955CBBC7E3BBB9715EF5DC42B97AE91F2DC3DA5BC32581D9490F8E97D "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/vcTR7LQDTWG_XBslFZhyyQ/zh-cn_image_0000002524217574.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061115Z&HW-CC-Expire=86400&HW-CC-Sign=C7FFEFF520459E0AD33376D991034A34DB494E3116CBED8ACF48FD87DFEF562D "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/0QUS654NREypzlibleSSqQ/zh-cn_image_0000002555337449.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061115Z&HW-CC-Expire=86400&HW-CC-Sign=09DE17E4EB6C393305613D6E25EEFFE5322C32ED0931130C51AEBC212006AA82 "点击放大")
 
 ### 实现原理
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-motion
 title: 路径动画 (motionPath)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 动画 > 路径动画 (motionPath)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:02:19+08:00
+scraped_at: 2026-04-29T13:52:42+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:f9c7736affc084d89abb8a4e0daba393f5201ebc3c23a49a26115de2b3b9feda
+content_hash: sha256:b22e3fe34605e07a8f04559efbfc0062409c53d25bbd62c52fb8a603ceba920c
 ---
 
 设置组件进行位移动画时的运动路径。
@@ -87,4 +87,4 @@ PhonePC/2in1TabletTVWearable
 23. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/WiZ3nP54T7OPx2lm_5olcg/zh-cn_image_0000002552800380.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000217Z&HW-CC-Expire=86400&HW-CC-Sign=0AE3847B89348F37ACE2386EBB37A4734AE71436CF02275DAAF882FFD8EF0C7A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/g2qWye7oSfyBZqDJ-xjr4w/zh-cn_image_0000002589326421.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055241Z&HW-CC-Expire=86400&HW-CC-Sign=AF9B30BC96479C0719F7989BDA6645CF0114AFC40ACA933C99F55984BC53172A)

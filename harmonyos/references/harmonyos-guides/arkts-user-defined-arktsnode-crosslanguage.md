@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-user-de
 title: 设置自定义节点跨语言属性
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用自定义能力 > 自定义节点 > 设置自定义节点跨语言属性
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:40:04+08:00
+scraped_at: 2026-04-29T13:28:19+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:2f7bd24f02da2d00ff5032df6076218ccb35046e86cc2f77a6c0c6129ae37d97
+content_hash: sha256:600742ecd2152e8640d79163ba2394915a22492e4cbff8d85014f05435e8fccf
 ---
 
 ## 概述
@@ -391,7 +391,7 @@ ArkUI支持在前端使用ArkTS语言创建命令式节点，即[FrameNode](../h
    ```
 5. 运行程序，在ArkTS侧点击按钮，设置当前attributeSetting为true，在Native侧点击按钮，设置ArkTS侧Scroll组件滚动条的颜色和粗细属性。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/MciDMGEvTmCj5BJ7M1JxWA/zh-cn_image_0000002583478017.gif?HW-CC-KV=V1&HW-CC-Date=20260427T234002Z&HW-CC-Expire=86400&HW-CC-Sign=06827213606AB7DE2D0C1FFF588333D065E0BD496CFC79F1B78D48F5BA80696B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/J4AX8vFiRPmQLWnxMyUn-Q/zh-cn_image_0000002589244315.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052817Z&HW-CC-Expire=86400&HW-CC-Sign=C3A26371351CE1FDD671DC0CEB5D2C919F90D21E14DA3D168AE205A9322C9085)
 
 ## 支持跨语言设置属性的节点类型
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cancel-authen
 title: 认证过程中取消认证
 breadcrumb: 指南 > 系统 > 安全 > User Authentication Kit（用户认证服务） > 用户身份认证开发指导 > 认证过程中取消认证
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:43:38+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:97d37ae903353483bfa2224742159a19e27c2c55acee523936640b1f9d97ac20
+scraped_at: 2026-04-29T13:32:25+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:5c2ba2238626b09e5ff0a104bca3ba55182cd94a47b6e952d95f345a976ba0db
 ---
 
 统一用户认证框架提供了cancel接口，当应用在认证过程中，需要取消认证时可调用该接口。
@@ -33,11 +33,11 @@ content_hash: sha256:97d37ae903353483bfa2224742159a19e27c2c55acee523936640b1f9d9
 2. // ...
 3. // 启动认证
 4. userAuthInstance.start();
-5. Logger.info('auth start successfully');
+5. Logger.info('auth start successfully.');
 6. // ...
 7. // 取消认证
 8. userAuthInstance.cancel();
-9. Logger.info('auth cancel successfully');
+9. Logger.info('auth cancel successfully.');
 10. // ...
 11. }
 
@@ -63,7 +63,7 @@ content_hash: sha256:97d37ae903353483bfa2224742159a19e27c2c55acee523936640b1f9d9
 32. };
 33. // 获取认证对象
 34. const userAuthInstance = userAuth.getUserAuthInstance(authParam, widgetParam);
-35. Logger.info('get userAuth instance successfully');
+35. Logger.info('get userAuth instance successfully.');
 36. this.handleAuthResultAndCanceling(userAuthInstance, ResultIndex.CANCEL);
 37. } catch (error) {
 38. const err: BusinessError = error as BusinessError;

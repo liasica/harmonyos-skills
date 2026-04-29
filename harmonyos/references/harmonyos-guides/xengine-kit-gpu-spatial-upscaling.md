@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/xengine-kit-g
 title: 空域GPU超分
 breadcrumb: 指南 > 图形 > XEngine Kit（GPU加速引擎服务） > 空域GPU超分
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:47:53+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:6e63f9d89e76a0d721bce438aca47e19251950928d5e288f3a3895077972e533
+scraped_at: 2026-04-29T13:36:42+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:7741efb7ba4aced1300a83996af8a1873fa0884813bebe993c56ddd37f700791
 ---
 
 XEngine Kit提供空域GPU超分能力，其基于单帧输入图像，使用空间邻域信息实现超采样，开销较小同时收益可观，建议使用超分倍率为[1.2, 1.5]。
@@ -38,7 +38,7 @@ XEngine Kit提供空域GPU超分能力，其基于单帧输入图像，使用空
 
 * 下面是基于GLES图形API平台集成空域GPU超分的主要业务流程
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/EAhKYx97QN2X_ZHzWxx9lw/zh-cn_image_0000002552799086.jpg?HW-CC-KV=V1&HW-CC-Date=20260427T234752Z&HW-CC-Expire=86400&HW-CC-Sign=91E5EE085A7B7535303881601B5DB7FC55DD94D9EDA2943D1CD29C4C6F506B40)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/Dy8YteK7Txa4mYwKHnLhSA/zh-cn_image_0000002589325105.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053641Z&HW-CC-Expire=86400&HW-CC-Sign=1A3F7977BD330E8B6B22DFAC5B12CF26F5D74D2F2546C00B88D51AF2019FA748)
 
 1. 用户在进入游戏初始化场景时调用HMS\_XEG\_GetString接口查询XEngine支持的特性，当查询接口返回支持的特性列表中包含空域GPU超分时代表可以使用此特性。
 2. 调用HMS\_XEG\_SpatialUpscaleParameter接口配置超分参数。
@@ -50,7 +50,7 @@ XEngine Kit提供空域GPU超分能力，其基于单帧输入图像，使用空
 
 * 下面是基于Vulkan图形API平台集成空域GPU超分的主要业务流程
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/Np1W4flPQKG5ubjWue8ofg/zh-cn_image_0000002583438781.jpg?HW-CC-KV=V1&HW-CC-Date=20260427T234752Z&HW-CC-Expire=86400&HW-CC-Sign=753725614D315D55D82BF60F6B7AA34CDEEC4A69B478C019FF9DC178865420EF)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/PTMIzRMYSraJSDZDw_WeWA/zh-cn_image_0000002589245041.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053641Z&HW-CC-Expire=86400&HW-CC-Sign=6B99F6B2E5696B4AE6275A92C5CC52E3DF3D8EDE4073BCF95DD77C80DBBD2F1E)
 
 1. 用户在进入游戏初始化场景时调用HMS\_XEG\_EnumerateDeviceExtensionProperties接口查询XEngine支持的特性，当查询接口返回支持的特性列表中包含空域GPU超分时代表可以使用此特性。
 2. 此时调用HMS\_XEG\_CreateSpatialUpscale接口创建超分实例。
@@ -94,21 +94,21 @@ XEngine Kit提供空域GPU超分能力，其基于单帧输入图像，使用空
 
   ```
   1. find_library(
-  2. # Sets the name of the path variable.
+  2. # 设置路径变量的名称。
   3. xengine-lib
-  4. # Specifies the name of the NDK library that you want CMake to locate.
+  4. # 指定希望CMake定位的NDK库的名称。
   5. xengine
   6. )
   7. find_library(
-  8. # Sets the name of the path variable.
+  8. # 设置路径变量的名称。
   9. EGL-lib
-  10. # Specifies the name of the NDK library that you want CMake to locate.
+  10. # 指定希望CMake定位的NDK库的名称。
   11. EGL
   12. )
   13. find_library(
-  14. # Sets the name of the path variable.
+  14. # 设置路径变量的名称。
   15. GLES-lib
-  16. # Specifies the name of the NDK library that you want CMake to locate.
+  16. # 指定希望CMake定位的NDK库的名称。
   17. GLESv3
   18. )
 
@@ -120,15 +120,15 @@ XEngine Kit提供空域GPU超分能力，其基于单帧输入图像，使用空
 
   ```
   1. find_library(
-  2. # Sets the name of the path variable.
+  2. # 设置路径变量的名称。
   3. xengine-lib
-  4. # Specifies the name of the NDK library that you want CMake to locate.
+  4. # 指定希望CMake定位的NDK库的名称。
   5. xengine
   6. )
   7. find_library(
-  8. # Sets the name of the path variable.
+  8. # 设置路径变量的名称。
   9. Vulkan-lib
-  10. # Specifies the name of the NDK library that you want CMake to locate.
+  10. # 指定希望CMake定位的NDK库的名称。
   11. vulkan
   12. )
 

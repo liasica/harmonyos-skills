@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-thread-pri
 title: 高负载场景线程优先级设置
 breadcrumb: 最佳实践 > NDK开发 > 高负载场景线程优先级设置
 category: best-practices
-scraped_at: 2026-04-28T08:20:55+08:00
+scraped_at: 2026-04-29T14:11:49+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:1311b9687442ca6f2870316af9de865cab8186ad093498ef3f0f0a3381b19356
+content_hash: sha256:ceb1a34e3d343acd2b9ee1e264a2c1c91bb657da11a96aa6249c9a69e76a1fcf
 ---
 
 ## 概述
@@ -30,7 +30,7 @@ content_hash: sha256:1311b9687442ca6f2870316af9de865cab8186ad093498ef3f0f0a3381b
 
 下面是一个在高负载情况下，配置了不同QoS等级的两个关键线程完成相同计算任务所花时间的对比图，从界面的运行结果可以看到在高负载情况下，配置了高优先级的线程执行完计算所花的时间更少一些。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/uC43GoUVRMOGUweGx4mj8g/zh-cn_image_0000002193851680.gif?HW-CC-KV=V1&HW-CC-Date=20260428T002054Z&HW-CC-Expire=86400&HW-CC-Sign=4C47FCF7D225C54A81639CF3F23184C72ECEDF96A59E4B6CECC4A87F80E033FB "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/uC43GoUVRMOGUweGx4mj8g/zh-cn_image_0000002193851680.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061147Z&HW-CC-Expire=86400&HW-CC-Sign=52144212F69FC64BF97BEC367A96B009907453BC2663BE8F4C789B5C9486428B "点击放大")
 
 具体实现步骤如下：
 
@@ -178,7 +178,7 @@ content_hash: sha256:1311b9687442ca6f2870316af9de865cab8186ad093498ef3f0f0a3381b
 
 计算线程（线程id：39260）设置低QoS等级trace图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/9v7X3XzOSxqZmHJ-WAwLwg/zh-cn_image_0000002193851672.png?HW-CC-KV=V1&HW-CC-Date=20260428T002054Z&HW-CC-Expire=86400&HW-CC-Sign=74E857AB9D5972371F59AF63C0301516386CA19F13CC1CABAFE81DE0210B5F56 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/9v7X3XzOSxqZmHJ-WAwLwg/zh-cn_image_0000002193851672.png?HW-CC-KV=V1&HW-CC-Date=20260429T061147Z&HW-CC-Expire=86400&HW-CC-Sign=E867E4852E1E41AC808CDE1B955C0CD095B1D580003C4BFDB8CBF2091BA2A19D "点击放大")
 
 如上图所示，计算线程执行完计算任务耗时726.8毫秒。
 
@@ -213,7 +213,7 @@ content_hash: sha256:1311b9687442ca6f2870316af9de865cab8186ad093498ef3f0f0a3381b
 
 计算线程（线程id：39204）设置高QoS等级trace图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/_KZ1umIDQOaKqOOrf7R-xA/zh-cn_image_0000002193851676.png?HW-CC-KV=V1&HW-CC-Date=20260428T002054Z&HW-CC-Expire=86400&HW-CC-Sign=76B2B214DB1993321FA8107B52DAC5FD1B5D22ABB9A0F6B96F1C64BE340E23B8 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/_KZ1umIDQOaKqOOrf7R-xA/zh-cn_image_0000002193851676.png?HW-CC-KV=V1&HW-CC-Date=20260429T061147Z&HW-CC-Expire=86400&HW-CC-Sign=612E19837BFAE725966B4D84F38FFA99AE0FF8197BEB1204EBD04D571501A102 "点击放大")
 
 如上图所示，计算线程执行完计算任务耗时323.9毫秒。
 

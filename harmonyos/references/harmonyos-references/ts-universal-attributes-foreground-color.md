@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 前景色设置
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 视效与模糊 > 前景色设置
 category: harmonyos-references
-scraped_at: 2026-04-28T08:01:07+08:00
+scraped_at: 2026-04-29T13:51:20+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:8d6ce88a8c067a3d2bb40cbb327c10a77da99529afb5ea7cd6959f9c6d8b5b5e
+content_hash: sha256:53875092afa270f71fabdf3059b01506b012dd0d3fa6b2bdccabd85beacf16b4
 ---
 
 设置组件的前景色。与背景色相对应，前景色会影响绘制组件内容的颜色。主要影响文字的颜色、形状绘制组件的填充色。
@@ -86,7 +86,7 @@ PhonePC/2in1TabletTVWearable
 13. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/DWmkNBl2TSCdC8uvrG4J8w/zh-cn_image_0000002552799870.png?HW-CC-KV=V1&HW-CC-Date=20260428T000105Z&HW-CC-Expire=86400&HW-CC-Sign=99EFDC3B2D02D89E66B2FD79ECA29BDBFB86CF7C73C3896ED1CEB683F2A7CBA7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/5V0O7JuoSBOKhA_kyeg7kw/zh-cn_image_0000002589325909.png?HW-CC-KV=V1&HW-CC-Date=20260429T055118Z&HW-CC-Expire=86400&HW-CC-Sign=014AA268748FC4E40655C2B418363F7AB57BE48BCD70D467D64D6FB163FD72D5)
 
 ### 示例2（设置前景色为组件背景色反色）
 
@@ -110,7 +110,7 @@ PhonePC/2in1TabletTVWearable
 15. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/HJK_PfqRRDyNzbJrCFFlVg/zh-cn_image_0000002583439565.png?HW-CC-KV=V1&HW-CC-Date=20260428T000105Z&HW-CC-Expire=86400&HW-CC-Sign=D52F96E17BB4BC2B8984651CAB518D20EBC4432C39447CFCA5523C9AC2CE7353)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/4BwjAlueS2iTDzz6aVPuuw/zh-cn_image_0000002589245851.png?HW-CC-KV=V1&HW-CC-Date=20260429T055118Z&HW-CC-Expire=86400&HW-CC-Sign=7708A2DC094C20A56A69C4B2A4A72B839DC6ABD919399D3E152087FEBC6E2CE1)
 
 ### 示例3（前景色未继承父组件）
 
@@ -131,4 +131,4 @@ PhonePC/2in1TabletTVWearable
 12. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/YqgwNvKtT16GFuP-K11AsQ/zh-cn_image_0000002552959520.png?HW-CC-KV=V1&HW-CC-Date=20260428T000105Z&HW-CC-Expire=86400&HW-CC-Sign=65FCC21FE00E8DFD5CA3D10AB595C13FB9824BB8D1B838653734888DD8E439D6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/V0tJH74LRJuLPAyzN5GzUg/zh-cn_image_0000002558766042.png?HW-CC-KV=V1&HW-CC-Date=20260429T055118Z&HW-CC-Expire=86400&HW-CC-Sign=56350ADF8F9B6C514CFFBF4B5265C58AAB65F266665B5FAECD70DC4A5E17DF0F)

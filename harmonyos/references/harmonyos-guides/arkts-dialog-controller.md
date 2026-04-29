@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-dialog-
 title: 弹出框控制器
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用弹窗 > 弹出框 (Dialog) > 弹出框控制器
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:39:45+08:00
+scraped_at: 2026-04-29T13:27:56+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:d8fa9670080653df0b0a573a9903bb7d26cb90a98d96dd240b9506f82c6f0bec
+content_hash: sha256:7af28186353e8b22b9941146439639483a5aa948d5775c5bf665ebbf6f414973
 ---
 
 ArkUI的弹出框控制器在绑定弹出框后，可提供对弹出框的操作能力，当前支持关闭功能。可以将控制器传入弹出框内容区域后进行操作。
@@ -499,4 +499,4 @@ ArkUI的弹出框控制器在绑定弹出框后，可提供对弹出框的操作
 
 [DialogController.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/DialogProject/entry/src/main/ets/pages/customdialog/dialogcontroller/DialogController.ets#L16-L261)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/HCroYMaiSquZzayWHdYyWw/zh-cn_image_0000002552798260.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233943Z&HW-CC-Expire=86400&HW-CC-Sign=3172728BE5626D7AD16CE5EFB79CEF6611959C035E1702D621748DFEE0417968)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/_P5OJmU-QjqEQgKRhscc1Q/zh-cn_image_0000002558764400.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052754Z&HW-CC-Expire=86400&HW-CC-Sign=0B1359B804BABDEF78FD721F1C321183E3D055173B8C969BDBC54C6BE0159D07)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hmaf-introduc
 title: Agent Framework Kit简介
 breadcrumb: 指南 > AI > Agent Framework Kit（智能体框架服务） > Agent Framework Kit简介
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:51:14+08:00
+scraped_at: 2026-04-29T13:40:51+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:9278b49cd1e8d8f95eabf3d32f4c419b06b6ef93206d77959e403b16fe775034
+content_hash: sha256:8faaac1f25e61a981ced946704d459f3e09e85390d8d3a77fdc5689236a5120f
 ---
 
 Agent Framework Kit（智能体框架服务）提供了拉起指定智能体的能力。
@@ -18,7 +18,7 @@ Agent Framework Kit主要包含Function组件。
 
 * Agent Framework Kit 通过标准化组件，满足应用在不同场景、不同界面下的智能体入口诉求。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/MwSvLv30SqGfnO4Bxe5QVw/zh-cn_image_0000002583479207.png?HW-CC-KV=V1&HW-CC-Date=20260427T235113Z&HW-CC-Expire=86400&HW-CC-Sign=E04B3457997E618A3367538FE291F770EFB72D870F3A1ED0027BCD37F67B5DB5)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/kwKOmvmERGWIIED0xFzGSg/zh-cn_image_0000002552799558.png?HW-CC-KV=V1&HW-CC-Date=20260427T235113Z&HW-CC-Expire=86400&HW-CC-Sign=8ED3BCA14DBCBB49DD0D051A6132A029306AAA052BBFA4B0BCEDE97F57CB997D)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/DYtjgcPVQW-ulXUrLjbGrw/zh-cn_image_0000002558765708.png?HW-CC-KV=V1&HW-CC-Date=20260429T054051Z&HW-CC-Expire=86400&HW-CC-Sign=F0419B9B0D1256542CEFF3CE7B08364A4E26093B10D974C528112661153D3BA7)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/Y0ciHWSLSp6FxpOJKozGag/zh-cn_image_0000002558606052.png?HW-CC-KV=V1&HW-CC-Date=20260429T054051Z&HW-CC-Expire=86400&HW-CC-Sign=E698A1AD1E38C58F908FCF7EACA1E5F7E6D81CA2D91BBEBFB4A5127F48BDEFDF)
 
 ## 约束与限制
 

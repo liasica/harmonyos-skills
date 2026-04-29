@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-dyntrajec
 title: 动态轨迹
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 在地图上绘制 > 动态轨迹
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:49:51+08:00
+scraped_at: 2026-04-29T13:39:13+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:9ae39bca05930a523fb813d27e2b2a39a434c8cb6a334ea9c2df88012fc13c51
+content_hash: sha256:cc15605c2986219bf3fba85045b0329c687c11c4fee0956e1c3aa013ebf24194
 ---
 
 ## 场景介绍
 
 本章节将向您介绍如何在地图上绘制动态轨迹。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/tlsY4MaZQXKp9_7rsPkKZg/zh-cn_image_0000002552799394.gif?HW-CC-KV=V1&HW-CC-Date=20260427T234950Z&HW-CC-Expire=86400&HW-CC-Sign=E83E5F48F4A9BCC3767304325B0873D87F492A3276760A8DCA57F0D06F7D4A59 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/h43izq_mSVuOKQPACAfvKQ/zh-cn_image_0000002589325415.gif?HW-CC-KV=V1&HW-CC-Date=20260429T053910Z&HW-CC-Expire=86400&HW-CC-Sign=A22CCE96C5F1AC441CFCC96BDE578710DC65C3F8D7D370C70BB237E97DC102C9 "点击放大")
 
 ## 接口说明
 

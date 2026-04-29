@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 交易信息密码认证
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 数字盾服务 > 交易信息密码认证
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:42:57+08:00
+scraped_at: 2026-04-29T13:31:34+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:7d630d57e882784b9a8b6dcf81d1ce9dac29d68c8fb9d511825093ad1a99fa35
+content_hash: sha256:1a7791a6413ca619b9f0b652ac16d8c5854c84952b0b00fffc2c9483d2892ec3
 ---
 
 ## 场景介绍
@@ -18,7 +18,7 @@ content_hash: sha256:7d630d57e882784b9a8b6dcf81d1ce9dac29d68c8fb9d511825093ad1a9
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/amQaJyweSl6tAiV4MAB3og/zh-cn_image_0000002552798744.jpg?HW-CC-KV=V1&HW-CC-Date=20260427T234256Z&HW-CC-Expire=86400&HW-CC-Sign=95390AAE4BC0C6D43BE114BC46BD4EAA9E83914EA6C1EF4E77C7DEFFE3862DAB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/2l7gn10IRoW9SyXB9b2IDw/zh-cn_image_0000002558764892.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053133Z&HW-CC-Expire=86400&HW-CC-Sign=2027D2510B1C5ACB9777A0A44AF4F695C9CDB042770319EF2E7E1C771BD9102E)
 
 ## 接口说明
 
@@ -37,15 +37,15 @@ content_hash: sha256:7d630d57e882784b9a8b6dcf81d1ce9dac29d68c8fb9d511825093ad1a9
 
 **图1** 无翻页密码认证
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/ouflp1QURoCzQwVlWAND3g/zh-cn_image_0000002583438439.png?HW-CC-KV=V1&HW-CC-Date=20260427T234256Z&HW-CC-Expire=86400&HW-CC-Sign=A78B071B3DEF430528348DBD733F2803E44F9AA2BC402B1B2B98332D4E7AB424)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/n9Jw_7ySRfmO7VMzomvXhA/zh-cn_image_0000002558605236.png?HW-CC-KV=V1&HW-CC-Date=20260429T053133Z&HW-CC-Expire=86400&HW-CC-Sign=20C770E138C2F5401D01F46A969346C2CA808212FC3542E9DBEA8383C80DDCC5)
 
 **图2** 翻页密码认证-1
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/_RFGB-pjREmL2Tnjye7g1w/zh-cn_image_0000002552958394.png?HW-CC-KV=V1&HW-CC-Date=20260427T234256Z&HW-CC-Expire=86400&HW-CC-Sign=CF9D92315E62140923E61560C29A78B309F05B39B708F970D0EE2AA7E9A6362A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/9rp0ec1dTLKRYSEmCaA-jg/zh-cn_image_0000002589324761.png?HW-CC-KV=V1&HW-CC-Date=20260429T053133Z&HW-CC-Expire=86400&HW-CC-Sign=DBCAE7A248978C3959F0A65E0A342A4BF95DCFE0BEF8440C59585BEB4788ECB7)
 
 **图3** 翻页密码认证-2
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/BUIHynOaQSmJb8RWadIapw/zh-cn_image_0000002583478395.png?HW-CC-KV=V1&HW-CC-Date=20260427T234256Z&HW-CC-Expire=86400&HW-CC-Sign=535F4A89DD30934A2267F6C1F7986323D551A593F13C0E39322A0EB63EA6BB76)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/_zq-AO8LSjONrl1ccjcpAQ/zh-cn_image_0000002589244699.png?HW-CC-KV=V1&HW-CC-Date=20260429T053133Z&HW-CC-Expire=86400&HW-CC-Sign=A73DACC23AE0A78B98BF29BE7E451FE016C57D770A57127B527158205E8BAE46)
 
 交易信息格式说明如下：
 

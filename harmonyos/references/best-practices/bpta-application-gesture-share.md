@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-applicatio
 title: 隔空传送快速分享
 breadcrumb: 最佳实践 > 自由流转 > 多端协同 > 隔空传送快速分享
 category: best-practices
-scraped_at: 2026-04-28T08:21:46+08:00
+scraped_at: 2026-04-29T14:12:54+08:00
 doc_updated_at: 2026-04-01
-content_hash: sha256:f9960c0741b895bc59b84981bd2288c7cb7ee4228a5171f3e0f58812b0472849
+content_hash: sha256:5d05723a7a9738451611b04b73ee19cc67def4212f354038874adc748071b7a6
 ---
 
 ## 概述
@@ -21,7 +21,7 @@ content_hash: sha256:f9960c0741b895bc59b84981bd2288c7cb7ee4228a5171f3e0f58812b04
 
 ### 关键技术
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/r-cNet0WT4STuu1MawqxnA/zh-cn_image_0000002464125198.jpg?HW-CC-KV=V1&HW-CC-Date=20260428T002139Z&HW-CC-Expire=86400&HW-CC-Sign=726E7B83C82D77EDBB778FF821FCA84510860FC84038A3E75D275FE727E7AB8E "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/r-cNet0WT4STuu1MawqxnA/zh-cn_image_0000002464125198.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T061244Z&HW-CC-Expire=86400&HW-CC-Sign=2FBD4FF3CBA233896BC2E1ECD2AF8E49BBDBE4E73B2F7D79D60C32FD69578B5B "点击放大")
 
 隔空传送基于分享服务，允许用户通过简单的“一抓一放”手势实现跨设备分享，当前支持手机、平板、PC，使用体验无差异，应用接入只需监听harmonyShare.on('gesturesShare')方法。
 
@@ -35,7 +35,7 @@ content_hash: sha256:f9960c0741b895bc59b84981bd2288c7cb7ee4228a5171f3e0f58812b04
 
 ### 开发流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/9-doG1tXTOWdf5BIC3LDng/zh-cn_image_0000002497324205.jpg?HW-CC-KV=V1&HW-CC-Date=20260428T002139Z&HW-CC-Expire=86400&HW-CC-Sign=1D037E30F2775857314568687E0D598D6BF5923AA4BFD020C4274A482AB75C23 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/9-doG1tXTOWdf5BIC3LDng/zh-cn_image_0000002497324205.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T061244Z&HW-CC-Expire=86400&HW-CC-Sign=C5659BB9CBB3A404DA12DA5E4B1E4745487E11D1CC69AD13D1858CEF1C65F057 "点击放大")
 
 1. **分享注册监听与取消监听**：在分享页面的生命周期函数（如aboutToAppear或onPageShow）中，注册 harmonyShare.on('gesturesShare') 事件监听，以监听隔空传送事件。当页面即将隐藏或应用退至后台时，通过harmonyShare.off('gesturesShare')取消该监听。
 2. **构建分享数据**：定义需要分享的数据[SharedData](../harmonyos-references/share-system-share.md#section816451553012)。

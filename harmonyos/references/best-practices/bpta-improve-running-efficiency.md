@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-improve-ru
 title: 运行效率提高
 breadcrumb: 最佳实践 > 性能 > 性能优化 > 运行效率提高
 category: best-practices
-scraped_at: 2026-04-28T08:22:27+08:00
+scraped_at: 2026-04-29T14:13:28+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:f1cf163ba6e57f09703ae348d0c96b739e79c88e3d96c2df061b1c8261474150
+content_hash: sha256:576dedc39e4e5e666d854fe5fd1b8db27f1dbd354f298086df4fd54111f4570e
 ---
 
 在开发过程中，优化影响性能的代码片段，以提高运行效率。以下实践总结了一些高性能的写法和建议：
@@ -161,7 +161,7 @@ oh-package.json如下增加模块依赖library包：
 
 [oh-package.json5](https://gitcode.com/HarmonyOS_Samples/BestPracticeSnippets/blob/master/ArkTSModuleHighPerformanceSegment/ExpandImportPath/entry/oh-package.json5#L9-L12)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/EaRiwCp0SRu499VKpI9_UQ/zh-cn_image_0000002515417448.png?HW-CC-KV=V1&HW-CC-Date=20260428T002226Z&HW-CC-Expire=86400&HW-CC-Sign=DCC7963C204409A33092D33980A86B0D0903E4EA6F5B52BC493CAFDAF4E4FDDE "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/EaRiwCp0SRu499VKpI9_UQ/zh-cn_image_0000002515417448.png?HW-CC-KV=V1&HW-CC-Date=20260429T061326Z&HW-CC-Expire=86400&HW-CC-Sign=F79CED203D2A83DB0317C66F6CBED6AAF6BCBE312C326CE13F7920D5085A37A9 "点击放大")
 
 **使用路径展开**
 
@@ -202,4 +202,4 @@ oh-package.json如下增加模块依赖library包：
 
 [Index.ets](https://gitcode.com/HarmonyOS_Samples/BestPracticeSnippets/blob/master/ArkTSModuleHighPerformanceSegment/ExpandImportPath/entry/src/main/ets/pages/Index.ets#L2-L31)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/p60HjOxKSCWDsklACp4SZw/zh-cn_image_0000002515577362.png?HW-CC-KV=V1&HW-CC-Date=20260428T002226Z&HW-CC-Expire=86400&HW-CC-Sign=E4C66F22AEB459CCE6F50B2996C9BCA4E94AEE77F75F99CC3F61734DA3DD0D00 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/p60HjOxKSCWDsklACp4SZw/zh-cn_image_0000002515577362.png?HW-CC-KV=V1&HW-CC-Date=20260429T061326Z&HW-CC-Expire=86400&HW-CC-Sign=1DBB216746C402390F3246392317972B56E59F094E16F38562507413A12D06C3 "点击放大")

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-app-debugg
 title: 如何解决调试启动时，一直卡在Waiting for application to come online notification的问题
 breadcrumb: FAQ > DevEco Studio > 应用调试 > 如何解决调试启动时，一直卡在Waiting for application to come online notification的问题
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:30:07+08:00
+scraped_at: 2026-04-29T14:21:24+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:bb7e8600a3993679b44f94c33b754fd4a739ce09958147c1383aa37690fb49b0
+content_hash: sha256:b2073afa106f00d7e6ec3d894ce66b23640448738dc3a3088ca68199aa65c8bf
 ---
 
 这种情况可能是由以下条件触发的：
@@ -26,7 +26,7 @@ content_hash: sha256:bb7e8600a3993679b44f94c33b754fd4a739ce09958147c1383aa37690f
 
   首先，执行hdc track-jpid命令检查应用是否已启动。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/-RMtvbo8TPeNiIgQOQLPDQ/zh-cn_image_0000002194158768.png?HW-CC-KV=V1&HW-CC-Date=20260428T003006Z&HW-CC-Expire=86400&HW-CC-Sign=AF99F5A71D7E084E2FCBEAC30DD9D291769CC0DFCB3740954E8BCF19C2F05822)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/-RMtvbo8TPeNiIgQOQLPDQ/zh-cn_image_0000002194158768.png?HW-CC-KV=V1&HW-CC-Date=20260429T062123Z&HW-CC-Expire=86400&HW-CC-Sign=53726DD899DA4DC82A015E85C6A7E09011C7AAC531E4649D18DE39D6298DB8C8)
 
   如果列表中没有对应的应用进程，开发者可以通过以下步骤检查应用是否存在：首先，使用hdc shell连接到设备，然后执行ps -ef | grep bundleName命令。
 
@@ -34,7 +34,7 @@ content_hash: sha256:bb7e8600a3993679b44f94c33b754fd4a739ce09958147c1383aa37690f
 
   应用可能为release版本。使用hdc shell bm dump -n bundleName > aa.txt查看debug值是否为true。如果debug值为false，则设备上的应用为release版本。建议清理工程并重新进行debug打包。如果问题仍然存在，说明应用未成功覆盖安装。请首先判断当前需要调试的应用是否为预置应用。如果是预置应用，建议进行OTA升级。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/IR70HDBVRk6E9GxrJFnhcA/zh-cn_image_0000002229604145.png?HW-CC-KV=V1&HW-CC-Date=20260428T003006Z&HW-CC-Expire=86400&HW-CC-Sign=B4212473A652C595CB2F4DEC3C1BDE256EBAD5C5E1E582ABC62555D8784091B6 "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/IR70HDBVRk6E9GxrJFnhcA/zh-cn_image_0000002229604145.png?HW-CC-KV=V1&HW-CC-Date=20260429T062123Z&HW-CC-Expire=86400&HW-CC-Sign=AA6DDD17ABCD1E0E0FE5CAFAFA16E0B8ABDC9E0888C21D92C5105AEC7818B74B "点击放大")
 
   **build mode：**None/debug打出的包均为debug包
 * hvigor 版本不配套

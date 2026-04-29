@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pdf-add-water
 title: 添加、删除水印
 breadcrumb: 指南 > 应用服务 > PDF Kit（PDF服务） > pdfService能力 > 添加、删除水印
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:50:23+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:a924473a50b081f8f3cca26d0df6fb287e46ef91d4536265c8dd906c3d873c6a
+scraped_at: 2026-04-29T13:39:45+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:ff24f54dad3c1775ee5e5b6ea8e1dc6f810e0458b3d108a269abc27abe0a7e39
 ---
 
 对指定页面添加水印，包括文本水印或图片水印。
@@ -13,7 +13,7 @@ content_hash: sha256:a924473a50b081f8f3cca26d0df6fb287e46ef91d4536265c8dd906c3d8
 * 文本水印可以设置字体、大小、旋转，位置等属性。
 * 图片水印可以设置缩放、旋转、透明度和位置等属性。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/gYzdSSS-RnWAkjaGShRC3g/zh-cn_image_0000002552799454.png?HW-CC-KV=V1&HW-CC-Date=20260427T235022Z&HW-CC-Expire=86400&HW-CC-Sign=6061BA882A01770254F5C226359EF41EC17EA2A63F964EE8B42A0D4FE79642F9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/jR1Km9m_T2esGNhpWFampQ/zh-cn_image_0000002558605948.png?HW-CC-KV=V1&HW-CC-Date=20260429T053944Z&HW-CC-Expire=86400&HW-CC-Sign=DFA6147E8FBDA838CA842484A2D059536088B0EC5BC0F8977191D51FB557CCFB)
 
 ## 接口说明
 
@@ -57,8 +57,8 @@ content_hash: sha256:a924473a50b081f8f3cca26d0df6fb287e46ef91d4536265c8dd906c3d8
 11. build() {
 12. Column() {
 13. Button('addTextWatermark').onClick(async () => {
-14. // 确保沙箱目录有input.pdf文档
-15. let filePath = this.context.filesDir + '/input.pdf';
+14. // 确保在工程目录src/main/resources/resfile里有input.pdf文档
+15. let filePath = this.context.resourceDir + '/input.pdf';
 16. let res = this.pdfDocument.loadDocument(filePath);
 17. if (res === pdfService.ParseResult.PARSE_SUCCESS) {
 18. let wminfo: pdfService.TextWatermarkInfo = new pdfService.TextWatermarkInfo();

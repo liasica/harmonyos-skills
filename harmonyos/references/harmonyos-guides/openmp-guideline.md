@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/openmp-guidel
 title: OpenMP应用构建和运行指南
 breadcrumb: 指南 > NDK开发 > 代码开发 > OpenMP支持 > OpenMP应用构建和运行指南
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:54:29+08:00
+scraped_at: 2026-04-29T13:44:26+08:00
 doc_updated_at: 2026-03-17
-content_hash: sha256:17f33184a78ca7e719f41d07db6cb3b73c6d3728b67d6ce18c2cc7be3c2c26c1
+content_hash: sha256:33dacf041a88da317a363361c128086916ffa5e78b2e964af666e504a29c10a8
 ---
 
 HarmonyOS NDK中提供了OpenMP的动态库和静态库文件，支持开发者在Native应用中使用OpenMP。本文用于指导开发者在[DevEco Studio](https://developer.huawei.com/consumer/cn/deveco-studio/)中调用库文件使用OpenMP的并行化能力，更详细的使用示例和API标准请查看官方文档[clang-OpenMPSupport](https://clang.llvm.org/docs/OpenMPSupport.html)。
@@ -155,10 +155,10 @@ OpenMP库的引入可以通过静态链接和动态链接两种方式实现。
 
 运行前请检查设备连接并配置好[Signature](../harmonyos-guides-V5/ide-signing-V5.md)信息。直接点击右上角运行按钮，应用启动后设备进入“Hello OpenMP”界面，点击“Hello OpenMP”标签，打开DevEco Studio下方“Log”查看页面，即可看到并行打印的“Hello OpenMP！”消息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/yQRfdWX4TNG1_ou87J4_vQ/zh-cn_image_0000002552959386.png?HW-CC-KV=V1&HW-CC-Date=20260427T235428Z&HW-CC-Expire=86400&HW-CC-Sign=DA678F30AE5F9CCF97853B4CAEA57069A4C40AC90E8A9596F951F3A203629373)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/24IFrg46TneK30SNwtRclg/zh-cn_image_0000002589245699.png?HW-CC-KV=V1&HW-CC-Date=20260429T054425Z&HW-CC-Expire=86400&HW-CC-Sign=868C8035F3DF18A2B71DA18A59C2CFE404B8C9D92FFBA3A6B88EF1CB91E2EB5F)
 
 注意
 
 OpenMP程序运行时，HiLog中会输出“dlopen\_impl load library header failed for libarcher.so”的报错信息（如下图）。该报错信息中提到的libarcher.so，在OpenMP程序开启Tsan检测时才需要使用。目前HarmonyOS未支持OpenMP程序的Tsan检测能力，因此该错误信息可忽略，不影响程序正常运行。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/vvetcES0RGWfxRcmw-CtnA/zh-cn_image_0000002583479387.png?HW-CC-KV=V1&HW-CC-Date=20260427T235428Z&HW-CC-Expire=86400&HW-CC-Sign=835BC3B3207058FF8DFF6EDC9FB3506B681E5B7C5AADAE1B8C0D34E9BA255E2B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/NHUR9GAqQ2u8bpaHuaGTJw/zh-cn_image_0000002558765888.png?HW-CC-KV=V1&HW-CC-Date=20260429T054425Z&HW-CC-Expire=86400&HW-CC-Sign=100B42DFA78EB6E28509FAB97B44088715194175040A194EF1052D92BB81A7ED)

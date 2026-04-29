@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-imag
 title: image_source_native.h
 breadcrumb: API参考 > 媒体 > Image Kit（图片处理服务） > C API > 头文件 > image_source_native.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:13:18+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:38675a3733aad9c5da1a83d762c38a2fb0de1f98a14980ad74bf18353d6d3835
+scraped_at: 2026-04-29T14:03:54+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:d97b1cb9c245fa099170fd0e0022e08d701018d4ef1479c7019dbd2311e20471
 ---
 
 ## 概述
@@ -59,7 +59,7 @@ PhonePC/2in1TabletTVWearable
 | [Image\_ErrorCode OH\_ImageSourceInfo\_GetWidth(OH\_ImageSource\_Info \*info, uint32\_t \*width)](capi-image-source-native-h.md#oh_imagesourceinfo_getwidth) | 获取图片的宽。对于没有width标签的SVG图片，返回默认值0。 |
 | [Image\_ErrorCode OH\_ImageSourceInfo\_GetHeight(OH\_ImageSource\_Info \*info, uint32\_t \*height)](capi-image-source-native-h.md#oh_imagesourceinfo_getheight) | 获取图片的高。对于没有height标签的SVG图片，返回默认值0。 |
 | [Image\_ErrorCode OH\_ImageSourceInfo\_GetDynamicRange(OH\_ImageSource\_Info \*info, bool \*isHdr)](capi-image-source-native-h.md#oh_imagesourceinfo_getdynamicrange) | 获取图片是否为高动态范围的信息。 |
-| [Image\_ErrorCode OH\_ImageSourceInfo\_GetMimeType(OH\_ImageSource\_Info \*info, Image\_MimeType \*mimeType)](capi-image-source-native-h.md#oh_imagesourceinfo_getmimetype) | 获取图片源的MIME类型。 |
+| [Image\_ErrorCode OH\_ImageSourceInfo\_GetMimeType(OH\_ImageSource\_Info \*info, Image\_MimeType \*mimetype)](capi-image-source-native-h.md#oh_imagesourceinfo_getmimetype) | 获取图片源的MIME类型。 |
 | [Image\_ErrorCode OH\_ImageSourceInfo\_Release(OH\_ImageSource\_Info \*info)](capi-image-source-native-h.md#oh_imagesourceinfo_release) | 释放OH\_ImageSource\_Info指针。调用该接口之后，与OH\_ImageSourceInfo结构体相关的属性均会被释放。因此在调用该接口前，请务必确认相关属性已不再被需要或对相关属性已完成深拷贝操作。 |
 | [Image\_ErrorCode OH\_DecodingOptions\_Create(OH\_DecodingOptions \*\*options)](capi-image-source-native-h.md#oh_decodingoptions_create) | 创建OH\_DecodingOptions指针。 |
 | [Image\_ErrorCode OH\_DecodingOptions\_GetPixelFormat(OH\_DecodingOptions \*options, int32\_t \*pixelFormat)](capi-image-source-native-h.md#oh_decodingoptions_getpixelformat) | 获取pixel格式。 |
@@ -307,7 +307,7 @@ PhonePC/2in1TabletTVWearable
 PhonePC/2in1TabletTVWearable
 
 ```
-1. Image_ErrorCode OH_ImageSourceInfo_GetMimeType(OH_ImageSource_Info *info, Image_MimeType *mimeType)
+1. Image_ErrorCode OH_ImageSourceInfo_GetMimeType(OH_ImageSource_Info *info, Image_MimeType *mimetype)
 ```
 
 **描述**

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-custom
 title: 自定义组件的自定义布局
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 自定义组件 > 自定义组件的自定义布局
 category: harmonyos-references
-scraped_at: 2026-04-28T08:02:30+08:00
+scraped_at: 2026-04-29T13:52:55+08:00
 doc_updated_at: 2026-03-27
-content_hash: sha256:be5a95beddf27c651dba13841b6b350d5dbbd0658aba14e7af421050d5e20574
+content_hash: sha256:489571db4ee82f1fe43495722eede0959dbfff443a6eb58e92bbbd4fc0e706cd
 ---
 
 自定义组件的自定义布局通过数据计算的方式布局自定义组件内的子组件。
@@ -536,7 +536,7 @@ PhonePC/2in1TabletTVWearable
 64. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/-ERBwH8fR2aYyxi3O1z-og/zh-cn_image_0000002552800442.png?HW-CC-KV=V1&HW-CC-Date=20260428T000229Z&HW-CC-Expire=86400&HW-CC-Sign=194B0626FF642EC7852BB62A7AB59B31C0650416053976EAC4DC1AC450E65665)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/iR4thR_HQLKhNsrleUS_RQ/zh-cn_image_0000002589326483.png?HW-CC-KV=V1&HW-CC-Date=20260429T055253Z&HW-CC-Expire=86400&HW-CC-Sign=997C12E76A54F1C2E8D992A00E9B603C56F6CB582AF1B8564AE7B8E8BCC5611C)
 
 ### 示例2（判断是否参与布局计算）
 
@@ -639,7 +639,7 @@ PhonePC/2in1TabletTVWearable
 94. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/TxJSovitSPGdGseoJ-UENg/zh-cn_image_0000002583440137.png?HW-CC-KV=V1&HW-CC-Date=20260428T000229Z&HW-CC-Expire=86400&HW-CC-Sign=80B1B12FA0A478F01D494D91DC5BDA4593A4F5AA771300E60AA1677D03C50893)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/girYRkJYSrWsGKZk01Bqfw/zh-cn_image_0000002589246425.png?HW-CC-KV=V1&HW-CC-Date=20260429T055253Z&HW-CC-Expire=86400&HW-CC-Sign=403E9B66EA32A6C088A2CAB47B58C9881ED81ACA9655FCC343D1588384EB4ED3)
 
 ### 示例3（获取子组件FrameNode并设置相关属性）
 
@@ -715,7 +715,7 @@ PhonePC/2in1TabletTVWearable
 67. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/5-mhhfV8ScOdmYVkHdeT8g/zh-cn_image_0000002552960092.jpg?HW-CC-KV=V1&HW-CC-Date=20260428T000229Z&HW-CC-Expire=86400&HW-CC-Sign=9F9D3837850076AD918AF7F0F721F69BBA94F24B31F67F11D5E4EB99056EAFC7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/jhxNLH91Q92k3ChfSbLDGQ/zh-cn_image_0000002558766618.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T055253Z&HW-CC-Expire=86400&HW-CC-Sign=91686BF17714B162451FB0B20E420ABE20A90FAEF99218D65EE53173A7151827)
 
 ### 示例4（子组件超过父组件大小约束）
 
@@ -789,4 +789,4 @@ PhonePC/2in1TabletTVWearable
 65. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/tlzU02b3SEOSD58SVWghZw/zh-cn_image_0000002583480093.jpg?HW-CC-KV=V1&HW-CC-Date=20260428T000229Z&HW-CC-Expire=86400&HW-CC-Sign=426F51C319D209937FCF13646B7F226D15F24E71D8B3DF1720457BE45EDC755D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/C_s5dVPcRKyGcMfu2pslHg/zh-cn_image_0000002558606958.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T055253Z&HW-CC-Expire=86400&HW-CC-Sign=190D845B2D20A98BCAE30A2153784113D8FBAB5DEE562389FB72113E5D7F41B8)

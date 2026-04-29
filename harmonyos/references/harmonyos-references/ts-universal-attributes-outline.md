@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 外描边设置
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 视效与模糊 > 外描边设置
 category: harmonyos-references
-scraped_at: 2026-04-28T08:01:08+08:00
+scraped_at: 2026-04-29T13:51:20+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:1c09a658153a3914b9c015bfb08bf82c35127973656dcf804fe5c8ba0e84070d
+content_hash: sha256:2c2a86223aa42bcc9d525a4381014bb178d908416476c6f1c6ca1637af1de184
 ---
 
 设置组件外描边（outline）样式。外描边绘制在组件的外侧，不影响布局，不会占用组件本身大小。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/IbvgKM6qSv-XFr0wvBp2YQ/zh-cn_image_0000002552799872.png?HW-CC-KV=V1&HW-CC-Date=20260428T000106Z&HW-CC-Expire=86400&HW-CC-Sign=5D594E1C17DD2E8801AE16FFD68025850263AE340B6166A46B38881D38702EF7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/RPBsor5vSSC7IReznr1i-Q/zh-cn_image_0000002589325911.png?HW-CC-KV=V1&HW-CC-Date=20260429T054819Z&HW-CC-Expire=86400&HW-CC-Sign=C195EC311770D6802BBA85AC7F626E0A995BB4896E6BE38ECC2096650C9F6F29)
 
 说明
 
@@ -343,7 +343,7 @@ PhonePC/2in1TabletTVWearable
 38. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/oLgnxv79TTeTbznV8OfwSg/zh-cn_image_0000002583439567.png?HW-CC-KV=V1&HW-CC-Date=20260428T000106Z&HW-CC-Expire=86400&HW-CC-Sign=78BA3EFC45D2BB64B5C1D94F71A0BCA4EDDE7CD4611B5270B97EB6A4C7AB4BEC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/voo24nPrRVGncJ6_SB8Eng/zh-cn_image_0000002589245853.png?HW-CC-KV=V1&HW-CC-Date=20260429T054819Z&HW-CC-Expire=86400&HW-CC-Sign=04A08719DD3C40FFE34D2F6D18DD0C1230C0DBD3956DC41D7C4B687347AF9EFF)
 
 ### 示例2（使用LocalizedEdgeColors类型）
 
@@ -393,8 +393,8 @@ PhonePC/2in1TabletTVWearable
 
 从左至右显示语言示例图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/Xxqxj7e_SVizDJkSYq2rYw/zh-cn_image_0000002552959522.png?HW-CC-KV=V1&HW-CC-Date=20260428T000106Z&HW-CC-Expire=86400&HW-CC-Sign=27091EBBCE9ABF2E8428E47DB5079091D641C439FB7FC4BD884E74D4F340680E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/Nql3Pq3NQp6yba2OeEF4GA/zh-cn_image_0000002558766044.png?HW-CC-KV=V1&HW-CC-Date=20260429T054819Z&HW-CC-Expire=86400&HW-CC-Sign=5C9792098568C9D5DEF18EE03E6D92D01A1B2BC75ECAB934E35EABF0CAC8E6A7)
 
 从右至左显示语言示例图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/BNfmy56NQDelnx5UXm9w1A/zh-cn_image_0000002583479523.png?HW-CC-KV=V1&HW-CC-Date=20260428T000106Z&HW-CC-Expire=86400&HW-CC-Sign=37F4311861360D616C6E95EB5D938FF447791D20307846EDE46E0FB5C7888B87)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/7eOZa6EcSsmeGxm1BTfDBw/zh-cn_image_0000002558606386.png?HW-CC-KV=V1&HW-CC-Date=20260429T054819Z&HW-CC-Expire=86400&HW-CC-Sign=9A4137D25A3996A8DE5D4B649662AD606F63EF9E69D0992E59297BA426F314A4)

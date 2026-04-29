@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-file
 title: @ohos.file.PhotoPickerComponent (PhotoPicker组件)
 breadcrumb: API参考 > 媒体 > Media Library Kit（媒体文件管理服务） > ArkTS组件 > @ohos.file.PhotoPickerComponent (PhotoPicker组件)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:14:19+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:b9429910c3a96817acb95a9b8e73c40dab4093a2077959675d3173b0b3e6a2cd
+scraped_at: 2026-04-29T14:04:55+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:d4aefb16c0f71e5eebb3e0967b4534e54cb4929a00c5fa46fe1e4e529b2b216e
 ---
 
 应用可以在布局中嵌入PhotoPicker组件，通过此组件，应用无需申请权限，即可实现媒体文件选择功能。在用户选择媒体文件后，应用即可访问用户选中的图片或视频文件。仅包含读权限。
@@ -598,7 +598,7 @@ PhonePC/2in1TabletTV
 | width | number | 否 | 是 | 图片、视频的宽（单位：像素）。  当[ItemType](ohos-file-photopickercomponent.md#itemtype)为THUMBNAIL时支持，否则为空。  **元服务API**：从API version 12开始，该接口支持在元服务中使用。 |
 | height | number | 否 | 是 | 图片、视频的高（单位：像素）。  当[ItemType](ohos-file-photopickercomponent.md#itemtype)为THUMBNAIL时支持，否则为空。  **元服务API**：从API version 12开始，该接口支持在元服务中使用。 |
 | size | number | 否 | 是 | 图片、视频的大小（单位：字节）。  当[ItemType](ohos-file-photopickercomponent.md#itemtype)为THUMBNAIL时支持，否则为空。  **模型约束**：此接口仅可在Stage模型下使用。  **元服务API**：从API version 12开始，该接口支持在元服务中使用。 |
-| duration | number | 否 | 是 | 视频的时长（单位：毫秒），图片/动态图片时返回-1。  当[ItemType](ohos-file-photopickercomponent.md#itemtype)为THUMBNAIL时支持，否则为空。  **元服务API**：从API version 12开始，该接口支持在元服务中使用。 |
+| duration | number | 否 | 是 | 视频的持续时间（单位：毫秒）。  当[ItemType](ohos-file-photopickercomponent.md#itemtype)为THUMBNAIL时支持，否则为空。  **元服务API**：从API version 12开始，该接口支持在元服务中使用。 |
 | photoSubType21+ | [photoAccessHelper.PhotoSubtype](arkts-apis-photoaccesshelper-e.md#photosubtype12) | 否 | 是 | 图片类型，包括DEFAULT、MOVING\_PHOTO和BURST。  非特殊类型图片默认为DEFAULT（0）。  **元服务API**：从API version 21开始，该接口支持在元服务中使用。 |
 | dynamicRangeType21+ | [photoAccessHelper.DynamicRangeType](arkts-apis-photoaccesshelper-e.md#dynamicrangetype12) | 否 | 是 | 媒体文件动态范围模型，包括HDR和SDR。  对于movingPhoto专指封面图片的动态范围类型。  **元服务API**：从API version 21开始，该接口支持在元服务中使用。 |
 | orientation21+ | number | 否 | 是 | 图片/视频方向信息。  1.“TOP-left”，图像未旋转。  2.“TOP-right”，镜像水平翻转。  3.“Bottom-right”，图像旋转180°。  4.“Bottom-left”，镜像垂直翻转。  5.“Left-top”，先镜像水平翻转，再顺时针旋转270°。  6.“Right-top”，顺时针旋转90°。  7.“Right-bottom”，先镜像水平翻转，再顺时针旋转90°。  8.“Left-bottom”，顺时针旋转270°。  携带镜像信息的图片无论旋转与否其宽高属性都与原图保持一致，无镜像信息的图片其宽高属性会更新为旋转后的结果。  **元服务API**：从API version 21开始，该接口支持在元服务中使用。 |
@@ -992,7 +992,7 @@ PhonePC/2in1TabletTV
 | SQUARE\_RATIO | 0 | 1:1比例显示。 |
 | ORIGINAL\_SIZE\_RATIO | 1 | 原图宽高比显示。 |
 
-## 示例
+## 示例一（PhotoPickerComponent组件的使用）
 
 PhonePC/2in1TabletTV
 
@@ -1214,4 +1214,238 @@ PhonePC/2in1TabletTV
 215. }
 216. }
 217. }
+```
+
+## 示例二（使用PhotoPickerComponent实现抽屉组件效果）
+
+PhonePC/2in1TabletTV
+
+从API version 23开始，可以通过[PickerOptions](ohos-file-photopickercomponent.md#pickeroptions)的isSlidingSupported、[PhotoPickerComponent](ohos-file-photopickercomponent.md#photopickercomponent)的onScrollStopAtStart和onScrollStopAtEnd回调来实现抽屉效果。
+
+```
+1. // xxx.ets
+2. import { display } from '@kit.ArkUI';
+3. import { PhotoPickerComponent, PickerController, PickerOptions } from '@kit.MediaLibraryKit';
+4. const enum DrawerState {
+5. // 展开状态。
+6. Expanding,
+7. // 收缩状态。
+8. Collapsing,
+9. // 滑动状态。
+10. Sliding
+11. }
+
+13. @Entry
+14. @Component
+15. struct Drawer {
+16. @State pickerController: PickerController = new PickerController();
+17. private pickerOptions: PickerOptions = new PickerOptions();
+18. // 屏幕高度，单位为vp。
+19. @State screenHeight: number = 0;
+20. // 抽屉高度，单位为vp。
+21. @State drawerHeight: number = 0;
+22. // 抽屉的偏移量，单位为vp。
+23. @State offsetY: number = 0;
+24. // 抽屉是否展开。
+25. @State isExpanded: boolean = false;
+26. // 拖拽起始位置，单位为vp。
+27. private startY: number = 0;
+28. // 当前拖拽的偏移量，单位为vp。
+29. private currentOffset: number = 0;
+30. // 自定义抽屉高度在整个屏幕的占比。
+31. private drawerRatio: number = 0.8;
+32. // 自定义初始化时隐藏抽屉的占比。
+33. private hideRatio: number = 0.8;
+34. // 初始化为收缩状态。
+35. private drawerState: DrawerState = DrawerState.Collapsing;
+36. // 手势响应阈值，判断手势是否为向下。
+37. private pullingDownThreshold: number = -5;
+
+39. aboutToAppear(): void {
+40. // 获取屏幕高度。
+41. this.screenHeight = px2vp(display.getDefaultDisplaySync().height);
+42. // 获取抽屉高度，示例为屏幕高度的0.8倍，可自定义修改。
+43. this.drawerHeight = this.screenHeight * this.drawerRatio;
+44. // 初始时抽屉在底部（隐藏高度），示例为隐藏抽屉的0.8倍。
+45. this.offsetY = this.drawerHeight * this.hideRatio;
+46. // 初始化时Picker不支持滑动。
+47. this.pickerOptions.isSlidingSupported = false;
+48. // 无边缘回弹。
+49. this.pickerOptions.edgeEffect = EdgeEffect.None;
+50. // 不展示搜索框。
+51. this.pickerOptions.isSearchSupported = false;
+52. }
+
+54. private scrollStopAtStart() {
+55. // 状态变更为展开状态，同时设置宫格不能滑动。
+56. this.drawerState = DrawerState.Expanding;
+57. this.pickerController.updatePickerOptions({
+58. isSlidingSupported: false
+59. })
+60. }
+
+62. private toggleDrawer() {
+63. if (this.isExpanded) {
+64. this.hideDrawer();
+65. } else {
+66. this.showDrawer();
+67. }
+68. }
+
+70. private hideDrawer() {
+71. animateTo({
+72. duration: 300,
+73. curve: Curve.EaseOut,
+74. onFinish: () => {
+75. this.isExpanded = false;
+76. }
+77. }, () => {
+78. this.drawerState = DrawerState.Collapsing;
+79. this.offsetY = this.drawerHeight * 0.8;
+80. })
+81. }
+
+83. private showDrawer() {
+84. animateTo({
+85. duration: 300,
+86. curve: Curve.EaseOut,
+87. onFinish: () => {
+88. this.isExpanded = true;
+89. }
+90. }, () => {
+91. this.drawerState = DrawerState.Expanding;
+92. this.offsetY = 0;
+93. })
+94. }
+
+96. build() {
+97. RelativeContainer() {
+98. // 主内容区域。
+99. Column() {
+100. Text('主页面内容')
+101. .fontSize(24)
+102. .fontWeight(FontWeight.Bold)
+103. .margin({ bottom: 20 })
+
+105. Text('这是一个使用RelativeContainer实现的底部抽屉效果')
+106. .fontSize(16)
+107. .fontColor('#666')
+108. .margin({ bottom: 30 })
+109. .textAlign(TextAlign.Center)
+110. .width('80%')
+
+112. Button(this.isExpanded ? '收起抽屉' : '展开抽屉')
+113. .onClick(() => {
+114. this.toggleDrawer();
+115. })
+116. }
+117. .width('100%')
+118. .padding(20)
+119. .alignItems(HorizontalAlign.Center)
+120. .backgroundColor('#f5f5f5')
+121. .borderRadius(10)
+122. .alignRules({
+123. top: { anchor: '__container__', align: VerticalAlign.Top },
+124. left: { anchor: '__container__', align: HorizontalAlign.Start },
+125. right: { anchor: '__container__', align: HorizontalAlign.End },
+126. })
+127. .height('100%')
+
+129. if (this.isExpanded) {
+130. Column()
+131. .width('100%')
+132. .height('100%')
+133. .backgroundColor('#80000000')
+134. .alignRules({
+135. top: { anchor: '__container__', align: VerticalAlign.Top },
+136. left: { anchor: '__container__', align: HorizontalAlign.Start },
+137. right: { anchor: '__container__', align: HorizontalAlign.End },
+138. bottom: { anchor: '__container__', align: VerticalAlign.Bottom },
+139. })
+140. .onClick(() => {
+141. this.hideDrawer();
+142. })
+143. }
+
+145. Column() {
+146. Row()
+147. .width(50)
+148. .height(5)
+149. .backgroundColor('#CCC')
+150. .borderRadius(3)
+151. .margin({ top: 12, bottom: 8 })
+
+153. Text('抽屉菜单')
+154. .fontSize(18)
+155. .fontWeight(FontWeight.Medium)
+156. .margin({ bottom: 10 })
+
+158. Divider()
+159. .width('90%')
+160. .margin({ bottom: 10 })
+
+162. PhotoPickerComponent({
+163. pickerOptions: this.pickerOptions,
+164. pickerController: this.pickerController,
+165. onScrollStopAtStart: this.scrollStopAtStart
+166. })
+167. .layoutWeight(1)
+168. .width('100%')
+169. }
+170. .width('100%')
+171. .height(this.drawerHeight)
+172. .backgroundColor(Color.White)
+173. .borderRadius({ topLeft: 20, topRight: 20 })
+174. .shadow({ radius: 10, color: '#33000000' })
+175. .alignRules({
+176. left: { anchor: '__container__', align: HorizontalAlign.Start },
+177. right: { anchor: '__container__', align: HorizontalAlign.End },
+178. bottom: { anchor: '__container__', align: VerticalAlign.Bottom },
+179. })
+180. .translate({ y: this.offsetY })
+181. .gesture(
+182. PanGesture({ direction: PanDirection.Vertical })
+183. // 记录抽屉开始拖拽的位置。
+184. .onActionStart((event: GestureEvent) => {
+185. this.startY = event.fingerList[0].globalY || 0;
+186. this.currentOffset = this.offsetY;
+187. })
+188. .onActionUpdate((event: GestureEvent) => {
+189. // 如果是Picker滑动状态，不改变抽屉的高度，直接返回。
+190. if (this.drawerState === DrawerState.Sliding) {
+191. return;
+192. }
+193. // 如果抽屉的状态是展开或者收缩则需要通过手势来进一步改变抽屉状态。
+194. // 计算移动距离。
+195. const deltaY = event.fingerList[0].globalY - this.startY || 0;
+196. // 当抽屉处于展开状态且用户向下滑动时，开启宫格滑动功能并将抽屉状态切换为滑动状态。
+197. if (this.drawerState === DrawerState.Expanding && deltaY < this.pullingDownThreshold) {
+198. this.pickerController.updatePickerOptions({
+199. isSlidingSupported: true
+200. })
+201. this.drawerState = DrawerState.Sliding
+202. }
+203. let newOffset = this.currentOffset + deltaY;
+204. if (newOffset < 0) {
+205. newOffset = 0;
+206. }
+207. this.offsetY = newOffset;
+208. })
+209. .onActionEnd(()=>{
+210. // 手势结束，根据位置自动展开或收起。
+211. if (this.offsetY > this.drawerHeight / 2) {
+212. // 滑动超过抽屉高度一半，抽屉状态置为收缩状态。
+213. this.hideDrawer();
+214. } else {
+215. // 滑动不到抽屉高度一半，抽屉状态置为展开状态。
+216. this.showDrawer();
+217. }
+218. })
+219. )
+220. }
+221. .width('100%')
+222. .height('100%')
+223. .backgroundColor('#E0E0E0')
+224. }
+225. }
 ```

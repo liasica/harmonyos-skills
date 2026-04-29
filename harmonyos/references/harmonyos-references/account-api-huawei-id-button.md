@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/account-a
 title: LoginWithHuaweiIDButton (华为账号Button登录组件)
 breadcrumb: API参考 > 应用服务 > Account Kit（华为账号服务） > ArkTS组件 > LoginWithHuaweiIDButton (华为账号Button登录组件)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:16:07+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:ebf06936022ddbd47f56b26ba5dd86a526c92921b3c1e3fcc9f479878c5e53b7
+scraped_at: 2026-04-29T14:06:45+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:1220160d8108dc87072918b3f36be0c58cd53e62ed17b913acbe1794d565aab5
 ---
 
 本模块提供LoginWithHuaweiIDButton组件，应用通过集成该组件完成华为账号登录功能。
@@ -170,7 +170,7 @@ build(): void
 108. .fontColor($r('sys.color.ohos_id_color_text_primary'))
 109. .constraintSize({ maxWidth: '100%' })
 110. .margin({
-111. top: 12,
+111. top: 12
 112. })
 
 114. Text('应用描述')
@@ -180,7 +180,7 @@ build(): void
 118. .fontWeight(FontWeight.Regular)
 119. .constraintSize({ maxWidth: '100%' })
 120. .margin({
-121. top: 8,
+121. top: 8
 122. })
 123. }.margin({
 124. top: 100

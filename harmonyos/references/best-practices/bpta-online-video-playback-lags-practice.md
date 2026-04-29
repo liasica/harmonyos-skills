@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-online-vid
 title: 在线视频播放卡顿优化
 breadcrumb: 最佳实践 > 媒体 > 音频和视频 > 在线视频播放卡顿优化
 category: best-practices
-scraped_at: 2026-04-28T08:20:44+08:00
+scraped_at: 2026-04-29T14:11:34+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:466e961af7302939c997458598f63e4cdb94f48b1479c606532e3e12b1248391
+content_hash: sha256:1b0dd8211223fec906c18c14de2199fea5512e679d584926a87de515f3ad90e6
 ---
 
 ## 概述
@@ -22,7 +22,7 @@ content_hash: sha256:466e961af7302939c997458598f63e4cdb94f48b1479c606532e3e12b12
 对于缓冲区而言，下载线程是生产端，读取线程则是消费端。生产端将数据写入到缓冲区中，消费端则从缓冲区读取数据，下面将介绍下缓冲区中的几个水位线概念。
 
 **图1** 缓冲区原理图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/V2vc-wMoQyunfKHrmeJwZA/zh-cn_image_0000002340616897.png?HW-CC-KV=V1&HW-CC-Date=20260428T002040Z&HW-CC-Expire=86400&HW-CC-Sign=CA28CCBAF9725B2121E0EC9ECC19F7A06F39B9504EEA856E0C79FA68F49A7F4B "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/V2vc-wMoQyunfKHrmeJwZA/zh-cn_image_0000002340616897.png?HW-CC-KV=V1&HW-CC-Date=20260429T061132Z&HW-CC-Expire=86400&HW-CC-Sign=FC4810490F45ED659B814DDC723005540EAD74E490991CE055D3ED5BCE0628DD "点击放大")
 
 如上图所示：
 
@@ -57,7 +57,7 @@ AVPlayer的缓冲区工作原理如下：
 传统的.mp4或.flv视频格式以单个文件为单位，包含完整的视频和音轨数据。这些格式在视频较短时表现良好，但当视频较长时，处理弱网络环境的能力较差，且在切换分辨率时需要重新加载整个视频资源，用户会明显感受到卡顿。相比之下，流媒体协议（例如HLS或DASH）基于分片加载和播放视频，可以动态调整不同的码率，从而在弱网络条件下表现更佳，且在码率切换时能提供更流畅的用户体验。以下将简要介绍视频流多码率切换的流程。
 
 **图2** 多码率流切换示例图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/ggkoNDx4SUuylO669790yg/zh-cn_image_0000002306657730.png?HW-CC-KV=V1&HW-CC-Date=20260428T002040Z&HW-CC-Expire=86400&HW-CC-Sign=27ECA25B5B48E51516C467ED064FD86D9B20E96CC47979113BA03E2705F3DDD3 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/ggkoNDx4SUuylO669790yg/zh-cn_image_0000002306657730.png?HW-CC-KV=V1&HW-CC-Date=20260429T061132Z&HW-CC-Expire=86400&HW-CC-Sign=DE41EB2288FBB677C4E5F589BB109936DFD68AAA26924629FBBDE3314ACB26E3 "点击放大")
 
 如上图所示：
 
@@ -143,7 +143,7 @@ AVPlayer的缓冲区工作原理如下：
 
 **图3** 视频卡顿率折线图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/sYanv6DZRMazpzdwEqNLjw/zh-cn_image_0000002525758808.png?HW-CC-KV=V1&HW-CC-Date=20260428T002040Z&HW-CC-Expire=86400&HW-CC-Sign=399542B4303FA990D21BB3BCB4C733A646F42018EA7FCD39710E0B2E6AC4931F "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/sYanv6DZRMazpzdwEqNLjw/zh-cn_image_0000002525758808.png?HW-CC-KV=V1&HW-CC-Date=20260429T061132Z&HW-CC-Expire=86400&HW-CC-Sign=775358B25CBFC99C4E11BBEA584BC2AC6976F411CA95FB156FEF64C0B9E572CA "点击放大")
 
 从实验数据可以看出，当媒体文件大小超过可设置的缓冲区最大值时，缓冲区越大，视频卡顿率越低，将缓冲区设置为最大值20MB，可最大程度减少视频卡顿。
 
@@ -164,7 +164,7 @@ AVPlayer的缓冲区工作原理如下：
 AVPlayer当前默认支持HLS/DASH视频流的码率自适应调节，但此功能会在调用一次setBitrate()后完全失效，此后需要开发者手动管理码率切换，建议自行设计码率切换策略。下面是一个基于AVPlayer实现的码率调整策略示例。
 
 **图4** 码率调整策略示例流程图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/r4guWzfrTx2oE-gVeM6r7w/zh-cn_image_0000002306817474.png?HW-CC-KV=V1&HW-CC-Date=20260428T002040Z&HW-CC-Expire=86400&HW-CC-Sign=3B4AAD7981E8BB68EB7715AD6F51221E05DFAC8D3CC506CA86612878712D6630 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/r4guWzfrTx2oE-gVeM6r7w/zh-cn_image_0000002306817474.png?HW-CC-KV=V1&HW-CC-Date=20260429T061132Z&HW-CC-Expire=86400&HW-CC-Sign=99569A02F7CE6FE0E5F171762A078FBF86A3F8E4F12C04613AC816C87A7B034F "点击放大")
 
 1. 注册码率信息相关回调，包括on('availableBitrates')、on('bitrateDone')、on('videoSizeChange')。
 

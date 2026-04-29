@@ -3,20 +3,20 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-previewer-
 title: 预览告警“There are properties not initialized”
 breadcrumb: FAQ > DevEco Studio > 界面预览 > 预览告警“There are properties not initialized”
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:29:06+08:00
+scraped_at: 2026-04-29T14:20:18+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:789c13d92ee72954b9bb2ad26f8fc0cb33375c0d8deaaccac3bc69f6cbe9e959
+content_hash: sha256:ee491566e45092bebb69d01f60c915df550e4dacc5476175c937a7ea409e72ed
 ---
 
 **问题现象**
 
 启动预览后，预览窗口白屏，并显示错误信息：“Preview failed. View details in the PreviewerLog window.”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/2uvQOuqZSdKVwafCxMaejw/zh-cn_image_0000002194317976.png?HW-CC-KV=V1&HW-CC-Date=20260428T002904Z&HW-CC-Expire=86400&HW-CC-Sign=BAAA2D3D775F248F1D2D4F9B9B8D406620D937936958AB6234D350EE8875CAD8 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/2uvQOuqZSdKVwafCxMaejw/zh-cn_image_0000002194317976.png?HW-CC-KV=V1&HW-CC-Date=20260429T062017Z&HW-CC-Expire=86400&HW-CC-Sign=AD532E37755565C2FAC77693E03EC211BBD3EDB8FBA43148E9A974B95499DD75 "点击放大")
 
 此时下方PreviewLog窗口出现告警信息：“There are properties not initialized.”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/JxaYAw2LTOOUnSBG5WLkWQ/zh-cn_image_0000002194158356.png?HW-CC-KV=V1&HW-CC-Date=20260428T002904Z&HW-CC-Expire=86400&HW-CC-Sign=9E1E566C8B87867C96E9E6D58FF09600A1FBF9D2C33B4038F219AE6C947F617A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/JxaYAw2LTOOUnSBG5WLkWQ/zh-cn_image_0000002194158356.png?HW-CC-KV=V1&HW-CC-Date=20260429T062017Z&HW-CC-Expire=86400&HW-CC-Sign=8214017C7830EA266DEE1610F55346CBB4BE8E0AC8C91F2A710D0F14CB023AEA)
 
 **解决措施**
 

@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/health-config
 title: 配置Client ID
 breadcrumb: 指南 > 应用服务 > Health Service Kit（运动健康服务） > 开发接入 > 开发准备 > 配置Client ID
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:49:10+08:00
+scraped_at: 2026-04-29T13:38:19+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:9b6476973a1ebd29612a83251a96000ca37a32ed224036c66a4eb887e9d03b7d
+content_hash: sha256:4a9248d9901d47c6d3d1aef58cf17ab819a4cddacb2ada6c25feac0f0611d32e
 ---
 
 1. 登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)平台，在“开发与服务”中选择目标应用，获取“项目设置 > 常规 > 应用”的Client ID。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/XpkYsXHpR1K5gELXewhIiw/zh-cn_image_0000002583478913.png?HW-CC-KV=V1&HW-CC-Date=20260427T234909Z&HW-CC-Expire=86400&HW-CC-Sign=F662CE68DED58FFB284BC93BF50D2C8B1FB15BE88D188DB05B1D4D35132DAF46)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/tmjWuX2JRkqTOYM8jdbFEw/zh-cn_image_0000002558605756.png?HW-CC-KV=V1&HW-CC-Date=20260429T053818Z&HW-CC-Expire=86400&HW-CC-Sign=C9BA57FB6DA2F1ED597C206BE8CC0FAE7BCDF5FFC1AFBC5EB406B1FDC5496EBC)
 2. 在工程中entry模块的module.json5文件中，新增metadata，配置name为client\_id，value为上一步获取的Client ID的值，如下所示：
 
    ```

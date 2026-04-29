@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-color-e
 title: 色彩
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用动画 > 动画效果 > 色彩
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:39:59+08:00
+scraped_at: 2026-04-29T13:28:16+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:b3663837642285b4f50dafe7beede185f98b403c92978c6a05ebf1daafc15fae
+content_hash: sha256:df78a6fb73f0a000e1daa5aa85b62ea012a90ae548732ed0a88254815fb9cf9a
 ---
 
 ## 色彩
@@ -109,7 +109,7 @@ content_hash: sha256:b3663837642285b4f50dafe7beede185f98b403c92978c6a05ebf1daafc
 
 [LinearGradientEffect.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/GradientEffect/entry/src/main/ets/homePage/LinearGradientEffect.ets#L16-L101)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/wnY5OKCPSYOItxO4ZRGz_A/zh-cn_image_0000002583438047.png?HW-CC-KV=V1&HW-CC-Date=20260427T233958Z&HW-CC-Expire=86400&HW-CC-Sign=C2ED73818BB16E47F6CEAEC3DECA90CDDFCD82D75ED9FAEC19FE4546461695AB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/-5_KEWx_Q6eucHW3bFF-SQ/zh-cn_image_0000002558604836.png?HW-CC-KV=V1&HW-CC-Date=20260429T052815Z&HW-CC-Expire=86400&HW-CC-Sign=C800E6AE4BD99F613040D254D135F80C2450B2B77804FAB4953F58489B94B7B6)
 
 ## 为组件添加角度渐变效果
 
@@ -224,7 +224,7 @@ content_hash: sha256:b3663837642285b4f50dafe7beede185f98b403c92978c6a05ebf1daafc
 
 [DirectionGradientEffect.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/GradientEffect/entry/src/main/ets/homePage/DirectionGradientEffect.ets#L16-L123)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/cr91GNc3S7CMjNfK1KWNaQ/zh-cn_image_0000002552958002.png?HW-CC-KV=V1&HW-CC-Date=20260427T233958Z&HW-CC-Expire=86400&HW-CC-Sign=146C1FFB2B93C401D0F66E8F835F7DC64F4CE0397D0D178663921F1B9B5CDAB8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/_XFSWXyCQCm938KiQN1Kkg/zh-cn_image_0000002589324361.png?HW-CC-KV=V1&HW-CC-Date=20260429T052815Z&HW-CC-Expire=86400&HW-CC-Sign=B28F0E444BA2CAA23C45696B248814AEEC861E4FC910BA62BD41CAA03A4ED404)
 
 ## 为组件添加径向渐变效果
 
@@ -333,4 +333,4 @@ content_hash: sha256:b3663837642285b4f50dafe7beede185f98b403c92978c6a05ebf1daafc
 
 [RadialGradientEffect.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/GradientEffect/entry/src/main/ets/homePage/RadialGradientEffect.ets#L16-L117)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/XpkI_GnhQVqwRBCYi3Td_A/zh-cn_image_0000002583478003.png?HW-CC-KV=V1&HW-CC-Date=20260427T233958Z&HW-CC-Expire=86400&HW-CC-Sign=D2C988080D733187D6A52A9A29B4C112C0DF0F51A256BD06B2E83C4F48E101DB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/OWTMjlR9SMG09HNP-jTq3A/zh-cn_image_0000002589244301.png?HW-CC-KV=V1&HW-CC-Date=20260429T052815Z&HW-CC-Expire=86400&HW-CC-Sign=DDEBA547D5A8437AC2BA22C4BDFE6F8FEA23A6508F04D8F80682DA130FDFD9B2)

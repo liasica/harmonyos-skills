@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-ddk-
 title: ddk_api.h
 breadcrumb: API参考 > 系统 > 硬件 > Driver Development Kit（驱动开发服务） > C API > 头文件 > ddk_api.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:10:41+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:327d313f56a2c1a8610c99d5702fd3da58222fde4a814ed0d59918d25bcb4777
+scraped_at: 2026-04-29T14:01:23+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:65fd11226519506ae06dd1328e70a17423101c008633a324a48fa8cc7dd36de9
 ---
 
 ## 概述
@@ -34,8 +34,8 @@ PC/2in1
 
 | 名称 | 描述 |
 | --- | --- |
-| [DDK\_RetCode OH\_DDK\_CreateAshmem(const uint8\_t \*name, uint32\_t size, DDK\_Ashmem \*\*ashmem)](capi-ddk-api-h.md#oh_ddk_createashmem) | 创建共享内存。为了防止资源泄漏，通过调用**OH\_DDK\_DestroyAshmem**接口来销毁不再需要的共享内存。 |
-| [DDK\_RetCode OH\_DDK\_MapAshmem(DDK\_Ashmem \*ashmem, const uint8\_t ashmemMapType)](capi-ddk-api-h.md#oh_ddk_mapashmem) | 映射创建的共享内存到用户空间。通过调用**OH\_DDK\_UnmapAshmem**接口取消映射不需要的共享内存。 |
+| [DDK\_RetCode OH\_DDK\_CreateAshmem(const uint8\_t \*name, uint32\_t size, DDK\_Ashmem \*\*ashmem)](capi-ddk-api-h.md#oh_ddk_createashmem) | 创建共享内存。为了防止资源泄漏，通过调用[OH\_DDK\_DestroyAshmem](capi-ddk-api-h.md#oh_ddk_destroyashmem)接口来销毁不再需要的共享内存。 |
+| [DDK\_RetCode OH\_DDK\_MapAshmem(DDK\_Ashmem \*ashmem, const uint8\_t ashmemMapType)](capi-ddk-api-h.md#oh_ddk_mapashmem) | 映射创建的共享内存到用户空间。通过调用[OH\_DDK\_UnmapAshmem](capi-ddk-api-h.md#oh_ddk_unmapashmem)接口取消映射不需要的共享内存。 |
 | [DDK\_RetCode OH\_DDK\_UnmapAshmem(DDK\_Ashmem \*ashmem)](capi-ddk-api-h.md#oh_ddk_unmapashmem) | 取消映射共享内存。 |
 | [DDK\_RetCode OH\_DDK\_DestroyAshmem(DDK\_Ashmem \*ashmem)](capi-ddk-api-h.md#oh_ddk_destroyashmem) | 销毁共享内存。 |
 
@@ -53,7 +53,7 @@ PC/2in1
 
 **描述**
 
-创建共享内存。为了防止资源泄漏，通过调用**OH\_DDK\_DestroyAshmem**接口来销毁不再需要的共享内存。
+创建共享内存。为了防止资源泄漏，通过调用[OH\_DDK\_DestroyAshmem](capi-ddk-api-h.md#oh_ddk_destroyashmem)接口来销毁不再需要的共享内存。
 
 **起始版本：** 12
 
@@ -81,7 +81,7 @@ PC/2in1
 
 **描述**
 
-映射创建的共享内存到用户空间。通过调用**OH\_DDK\_UnmapAshmem**接口取消映射不需要的共享内存。
+映射创建的共享内存到用户空间。通过调用[OH\_DDK\_UnmapAshmem](capi-ddk-api-h.md#oh_ddk_unmapashmem)接口取消映射不需要的共享内存。
 
 **起始版本：** 12
 
@@ -96,7 +96,7 @@ PC/2in1
 
 | 类型 | 说明 |
 | --- | --- |
-| [DDK\_RetCode](capi-ddk-types-h.md#ddk_retcode) | [DDK\_SUCCESS](capi-ddk-types-h.md#ddk_retcode) 调用接口成功。  [DDK\_NULL\_PTR](capi-ddk-types-h.md#ddk_retcode) 入参ashmem为空指针。  [DDK\_FAILURE](capi-ddk-types-h.md#ddk_retcode) 共享内存的文件描述符无效。  [DDK\_INVALID\_OPERATION](capi-ddk-types-h.md#ddk_retcode) 调用接口MapAshmem失败. |
+| [DDK\_RetCode](capi-ddk-types-h.md#ddk_retcode) | [DDK\_SUCCESS](capi-ddk-types-h.md#ddk_retcode) 调用接口成功。  [DDK\_NULL\_PTR](capi-ddk-types-h.md#ddk_retcode) 入参ashmem为空指针。  [DDK\_FAILURE](capi-ddk-types-h.md#ddk_retcode) 共享内存的文件描述符无效。  [DDK\_INVALID\_OPERATION](capi-ddk-types-h.md#ddk_retcode) 调用接口MapAshmem失败。 |
 
 ### OH\_DDK\_UnmapAshmem()
 

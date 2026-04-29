@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scenario-mult
 title: 组合场景
 breadcrumb: 指南 > 应用框架 > Accessibility Kit（无障碍服务） > 提升应用的无障碍体验 > 提升屏幕朗读无障碍体验 > 组合场景
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:38:07+08:00
+scraped_at: 2026-04-29T13:26:09+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:c8cc388ecab6392a79569bb305e23d62b5b8dc094b158b2bb67322cb5f343d60
+content_hash: sha256:671f09fa05185c3405812f9fc182212b6d5970e5cc934cf00adf0f1127eba379
 ---
 
 ## 设计场景
 
 在一些场景中，一个功能上完整的UI对象可能是由若干个更小的UI组件组合而成的。若每一个小的UI组件都可以获焦并朗读，则会造成信息冗余和效率降低。同时由于可聚焦的组件过多过细，也会影响触摸浏览时走焦的性能体验。在这种情况下，将它们在功能或语义上聚合成一个自然组并作为一个独立可获焦的UI元素来向视障用户表达内容更加合理，且更加高效。总体原则是：对于表示同一个对象信息的多个组件，需要进行组合标注，对外只暴露一个无障碍焦点。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/lOtTtjPxSh6XtyOp7-n_bA/zh-cn_image_0000002583437561.png?HW-CC-KV=V1&HW-CC-Date=20260427T233806Z&HW-CC-Expire=86400&HW-CC-Sign=588A905EB15B4C1A00D5ECF25F12959FC761168E6422E1B9B6BEDC78DB9592C6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/yp2vYTiMS3etstNjwqp5iQ/zh-cn_image_0000002589323875.png?HW-CC-KV=V1&HW-CC-Date=20260429T052608Z&HW-CC-Expire=86400&HW-CC-Sign=2AB467AD44B786FBF5CB02013DCB531743F74C9C785E62E6900E621831EB9B8D)
 
 ## 开发实例
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-drawin
 title: Ellipse
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 图形绘制 > Ellipse
 category: harmonyos-references
-scraped_at: 2026-04-28T08:02:12+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:35f22e63b2d6d72b81f77ce773abeb24a2813ef38c3f86ac723031d24602c527
+scraped_at: 2026-04-29T13:52:35+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:b22ce27eb9c04a4da2ebb599d819b541e99380a3005c8b3e746165f959a8ac90
 ---
 
 椭圆绘制组件。
@@ -25,6 +25,8 @@ PhonePC/2in1TabletTVWearable
 PhonePC/2in1TabletTVWearable
 
 Ellipse(options?: EllipseOptions)
+
+用于绘制椭圆的构造函数。
 
 **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
 
@@ -314,7 +316,7 @@ PhonePC/2in1TabletTVWearable
 18. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/Gjvl_KoWRsKFqXKfMN95Kg/zh-cn_image_0000002552800356.png?HW-CC-KV=V1&HW-CC-Date=20260428T000209Z&HW-CC-Expire=86400&HW-CC-Sign=B367561A903D0C13DFA584DEFDB29502333A68BAE8344758D90E237515BD5BD1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/XTNUyOcSSeKTLSP6YYZzwg/zh-cn_image_0000002589326397.png?HW-CC-KV=V1&HW-CC-Date=20260429T055232Z&HW-CC-Expire=86400&HW-CC-Sign=951A10D6D7C8A6B5853DA18D5E9A484D0506585BD8740DC4852F9F6736D45E33)
 
 ### 示例2（宽和高使用不同参数类型绘制椭圆）
 
@@ -338,7 +340,7 @@ width、height属性分别使用不同的长度类型绘制椭圆。
 15. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/oK8MwI1LRN-Dwn9wQqO4Ng/zh-cn_image_0000002583440051.png?HW-CC-KV=V1&HW-CC-Date=20260428T000209Z&HW-CC-Expire=86400&HW-CC-Sign=243AA2D28F7E3D86A45BABD6D1E340A6D3777B5B5FF58978A53542A90B495CF8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/a3Ok8LwkRLuzguXrxxlrdA/zh-cn_image_0000002589246339.png?HW-CC-KV=V1&HW-CC-Date=20260429T055232Z&HW-CC-Expire=86400&HW-CC-Sign=6988BE445F572A6709626D78BB58FAC1B5E3DCA0C5AB1D3CB3BC86F7565087B1)
 
 ### 示例3（使用attributeModifier动态设置Ellipse组件的属性）
 
@@ -376,4 +378,4 @@ width、height属性分别使用不同的长度类型绘制椭圆。
 29. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/QyA-NzqDS9mjJh_IfHCBEQ/zh-cn_image_0000002552960006.png?HW-CC-KV=V1&HW-CC-Date=20260428T000209Z&HW-CC-Expire=86400&HW-CC-Sign=7A5844A48AE864FFB7D9EE58BDEC038FB9E9C3510BFA454830A40194923DF20C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/beKAB8WXSzq_pTIrZH2ueg/zh-cn_image_0000002558766532.png?HW-CC-KV=V1&HW-CC-Date=20260429T055232Z&HW-CC-Expire=86400&HW-CC-Sign=A74C9A9666138EFD4234864F95115014FE9B41C1C25D221AA54D7D25BE1BD24A)

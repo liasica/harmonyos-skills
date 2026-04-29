@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-usb-
 title: usb_serial_api.h
 breadcrumb: API参考 > 系统 > 硬件 > Driver Development Kit（驱动开发服务） > C API > 头文件 > usb_serial_api.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:10:43+08:00
-doc_updated_at: 2026-03-30
-content_hash: sha256:e16d837ee6fe985ff47837972642bb8a947f993e647777f0025303a7568f8a53
+scraped_at: 2026-04-29T14:01:25+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:5791db8bc8925325703189418e1724d314d7a61992d580636db23a4198c13265
 ---
 
 ## 概述
@@ -214,7 +214,7 @@ PC/2in1
 
 | 类型 | 说明 |
 | --- | --- |
-| int32\_t | [USB\_SERIAL\_DDK\_SUCCESS](capi-usb-serial-types-h.md#usbserial_ddkretcode) 调用接口成功。  [USB\_SERIAL\_DDK\_NO\_PERM](capi-usb-serial-types-h.md#usbserial_ddkretcode) 权限校验失败。  [USB\_SERIAL\_DDK\_INVALID\_PARAMETER](capi-usb-serial-types-h.md#usbserial_ddkretcode) 参数检查失败。可能原因：1. dev为空指针;  2. buff为空指针; 3. bufferSize等于0; 4. bytesWritten为空指针。  [USB\_SERIAL\_DDK\_INIT\_ERROR](capi-usb-serial-types-h.md#usbserial_ddkretcode) 未初始化DDK。  [USB\_SERIAL\_DDK\_SERVICE\_ERROR](capi-usb-serial-types-h.md#usbserial_ddkretcode) DDK服务通信失败。  [USB\_SERIAL\_DDK\_MEMORY\_ERROR](capi-usb-serial-types-h.md#usbserial_ddkretcode) buff地址无效。  [USB\_SERIAL\_DDK\_IO\_ERROR](capi-usb-serial-types-h.md#usbserial_ddkretcode) DDK发生I/O错误。  [USB\_SERIAL\_DDK\_INVALID\_OPERATION](capi-usb-serial-types-h.md#usbserial_ddkretcode) 无效操作。 |
+| int32\_t | [USB\_SERIAL\_DDK\_SUCCESS](capi-usb-serial-types-h.md#usbserial_ddkretcode) 调用接口成功。  [USB\_SERIAL\_DDK\_NO\_PERM](capi-usb-serial-types-h.md#usbserial_ddkretcode) 权限校验失败。  [USB\_SERIAL\_DDK\_INVALID\_PARAMETER](capi-usb-serial-types-h.md#usbserial_ddkretcode) 参数检查失败。可能原因：1. dev为空指针;  2. buff为空指针; 3. bufferSize等于0; 4. bytesWritten为空指针。  [USB\_SERIAL\_DDK\_INIT\_ERROR](capi-usb-serial-types-h.md#usbserial_ddkretcode) 未初始化DDK。  [USB\_SERIAL\_DDK\_SERVICE\_ERROR](capi-usb-serial-types-h.md#usbserial_ddkretcode) DDK服务通信失败。  [USB\_SERIAL\_DDK\_IO\_ERROR](capi-usb-serial-types-h.md#usbserial_ddkretcode) DDK发生I/O错误。  [USB\_SERIAL\_DDK\_INVALID\_OPERATION](capi-usb-serial-types-h.md#usbserial_ddkretcode) 无效操作。 |
 
 ### OH\_UsbSerial\_SetBaudRate()
 

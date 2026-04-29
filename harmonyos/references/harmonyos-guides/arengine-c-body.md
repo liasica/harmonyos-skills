@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arengine-c-bo
 title: 人体跟踪与骨骼关键点识别（C/C++）
 breadcrumb: 指南 > 图形 > AR Engine（AR引擎服务） > 人体骨骼点识别与跟踪 > 人体跟踪与骨骼关键点识别（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:46:57+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:987f9370f1c91fff99a012c65c51eb15d4c082e06064a60a14933c299f63dc34
+scraped_at: 2026-04-29T13:35:58+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:8f83d2fed8ea61817db10934f29f768a28a28003853a7496a108d924fe77b271
 ---
 
 ## 约束与限制
@@ -216,10 +216,10 @@ content_hash: sha256:987f9370f1c91fff99a012c65c51eb15d4c082e06064a60a14933c299f6
 170. .height(this.uiContext.px2vp(this.displayHeight))
 171. .visibility(this.showPage ? Visibility.Visible : Visibility.None)
 172. .alignRules({
-173. center: { anchor: "__container__", align: VerticalAlign.Center },
-174. middle: { anchor: "__container__", align: HorizontalAlign.Center }
+173. center: { anchor: '__container__', align: VerticalAlign.Center },
+174. middle: { anchor: '__container__', align: HorizontalAlign.Center }
 175. })
-176. this.drawBodyPerception()
+176. this.drawBodyPerception();
 177. }
 178. .width('100%')
 179. .height('100%')

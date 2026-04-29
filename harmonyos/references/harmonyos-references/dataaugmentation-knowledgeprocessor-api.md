@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/dataaugme
 title: knowledgeProcessor（知识加工）
 breadcrumb: API参考 > 应用框架 > Data Augmentation Kit（数据增强服务） > ArkTS API > knowledgeProcessor（知识加工）
 category: harmonyos-references
-scraped_at: 2026-04-28T08:05:56+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:afbd37eb0952001af85392a40ee24b524283645b5a393b6a90822f19de1f6375
+scraped_at: 2026-04-29T13:56:26+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:fe7d3264fde220edf020306b4fb6f64dd57ed81c72bf4f231ece962c54e91c2b
 ---
 
 本模块提供获取知识加工对象（KnowledgeProcessor）以及获取知识加工状态（ProcessorStatus）的能力。
@@ -98,7 +98,7 @@ PhonePC/2in1Tablet
 
 cleanKnowledgeData(context: common.BaseContext, config: KnowledgeProcessorConfig): Promise<void>
 
-根据入参中的知识加工配置获取对应知识库信息，将对应知识库进行清空。
+根据入参中的知识加工配置获取对应知识库信息，将对应知识库进行清空。使用promise异步回调。
 
 在schema升级场景下，首次开库或调用[getKnowledgeProcessor](dataaugmentation-knowledgeprocessor-api.md#getknowledgeprocessor)接口前调用cleanKnowledgeData接口，其他场景调用可能会导致知识库数据丢失或者数据损坏。
 
@@ -112,6 +112,12 @@ cleanKnowledgeData(context: common.BaseContext, config: KnowledgeProcessorConfig
 | --- | --- | --- | --- |
 | context | [common.BaseContext](js-apis-inner-application-basecontext.md) | 是 | 知识加工对象的上下文。 |
 | config | [KnowledgeProcessorConfig](dataaugmentation-knowledgeprocessor-api.md#knowledgeprocessorconfig) | 是 | 知识加工配置。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 无返回结果的Promise对象。 |
 
 **错误码：**
 
@@ -285,11 +291,23 @@ PhonePC/2in1Tablet
 
 startProcess(config: KnowledgeProcessConfig): Promise<void>
 
-根据入参的配置，启动知识加工。
+根据入参的配置，启动知识加工。使用promise异步回调。
 
 **系统能力：** SystemCapability.DataAugmentation.KnowledgeProcessor
 
 **起始版本：** 6.1.0(23)
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| config | [KnowledgeProcessConfig](dataaugmentation-knowledgeprocessor-api.md#knowledgeprocessconfig) | 是 | 知识加工配置。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 无返回结果的Promise对象。 |
 
 **错误码：**
 
@@ -342,11 +360,17 @@ PhonePC/2in1Tablet
 
 stopProcess(): Promise<void>
 
-停止当前知识加工。
+停止当前知识加工。使用promise异步回调。
 
 **系统能力：** SystemCapability.DataAugmentation.KnowledgeProcessor
 
 **起始版本：** 6.1.0(23)
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 无返回结果的Promise对象。 |
 
 **示例：**
 

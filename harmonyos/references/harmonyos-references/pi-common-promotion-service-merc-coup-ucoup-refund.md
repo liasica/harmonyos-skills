@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/pi-common
 title: 申请退券
 breadcrumb: API参考 > 应用服务 > Payment Kit（鸿蒙支付服务） > REST API > 通用接口 > 运营工具 > 商家券 > 用户券 > 申请退券
 category: harmonyos-references
-scraped_at: 2026-04-28T08:18:16+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:72bdb3a61bab8b92e78ac61eeac026404d45b48d6b488ed7e058661bc1071e6e
+scraped_at: 2026-04-29T14:08:56+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:58faa3c5fd6306861eaf46d7223cd109a10514cdae1cc5d3467fcf93b29ab001
 ---
 
 ## 功能介绍
 
-商户可以在退款之后调用此退券API，调用成功后，券恢复到用户的卡包里面，并且在有效期内可退回到激活态，券可正常再被使用。已失效的优惠券在退券时将被标记为失效状态，无法再次使用。
+商户可以在退款之后调用此退券API，调用成功后，券恢复到用户的卡包里面，并且在有效期内可退回到激活态，券可正常再被使用。如果退券时，券已不在有效期内，则券的状态被更新为失效态，不可再被使用。
 
 ## 接口原型
 

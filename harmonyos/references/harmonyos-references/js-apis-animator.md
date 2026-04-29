@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: @ohos.animator (动画)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.animator (动画)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:00:17+08:00
+scraped_at: 2026-04-29T13:50:29+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:6c0ded2fbaf9497a6b2c23af1268693a3172ddd819600d8337a1bf28ccd71d0c
+content_hash: sha256:4312c09b32febb9290d8f32c60c69ad28b8a9c6be2691a5d6580c5157f31a686
 ---
 
 本模块提供组件动画效果，包括定义动画、启动动画和以相反的顺序播放动画等。
@@ -989,7 +989,7 @@ PhonePC/2in1TabletTVWearable
 79. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/zj_4WU-mRFi-T-P1sjpBow/zh-cn_image_0000002583439443.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000015Z&HW-CC-Expire=86400&HW-CC-Sign=F5C1CEAD70AC6ADCDAF55A33C26A976277791B618D7350C608A1CBA162ABA13C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/kq-5sLXlQmqEX6K6SFgFow/zh-cn_image_0000002589245729.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055027Z&HW-CC-Expire=86400&HW-CC-Sign=EA75623EC05699FC2F7E979C611974D573D85E2BC884270D059C0CE1C8B33879)
 
 ### 基于ArkTS扩展的声明式开发范式
 
@@ -1161,7 +1161,7 @@ PhonePC/2in1TabletTVWearable
 161. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/4aRSNKGeQz-w9-hGw3ZASw/zh-cn_image_0000002552959398.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000015Z&HW-CC-Expire=86400&HW-CC-Sign=FB5640613BC859CC1E179F2BBFD3E9C7674285426194B988040CEC4508CC0238)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/6020n9acQPGqkKxbIq9L-g/zh-cn_image_0000002558765918.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055027Z&HW-CC-Expire=86400&HW-CC-Sign=0915E39D723886642238E2FA121444FD4466CDB1D14001F4FF9D8733319A676F)
 
 ### 位移动画示例（简易入参）
 
@@ -1262,4 +1262,4 @@ PhonePC/2in1TabletTVWearable
 94. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/GbDiTL17RC2mpgSOGKtAVw/zh-cn_image_0000002583479399.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000015Z&HW-CC-Expire=86400&HW-CC-Sign=D92794E8C014D4CC3F8CC3938FE0990F4A1C71D6AFFD1DA6CA5AE0CAC82AF876)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/mahUTBfrS0GV2Fs4lM6Gjg/zh-cn_image_0000002558606262.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055027Z&HW-CC-Expire=86400&HW-CC-Sign=1D058B90BC2ACDD158ECB85EDAE4AAD9DA478C102D527C0B706EB36DF94F35A6)

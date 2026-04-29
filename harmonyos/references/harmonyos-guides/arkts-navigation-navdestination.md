@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-navigat
 title: Navigation子页面
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 设置组件导航和页面路由 > 组件导航(Navigation) (推荐) > Navigation子页面
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:39:26+08:00
+scraped_at: 2026-04-29T13:27:37+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:8d1db94106412cbd0fc9e22c0909633e84967e266855b7f17f32180928685a71
+content_hash: sha256:36672bd52c6e1e7f2d54479b6af5b92fe18a83ac0c9f6d466a94cfc7efe0a82e
 ---
 
 [NavDestination](../harmonyos-references/ts-basic-components-navdestination.md)是Navigation子页面的根容器，用于承载子页面的特殊属性和生命周期。NavDestination可以配置独立的标题栏、菜单栏与工具栏等属性，使用方法与Navigation一致。NavDestination还支持通过mode属性设置不同的显示模式，以适应不同页面的需求。
@@ -81,7 +81,7 @@ NavDestination提供了两种类型。
 
   [PageDisplayType.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/NavigationSample/entry/src/main/ets/pages/navigation/template1/PageDisplayType.ets#L15-L71)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/Tbt7efjgRSacccfTlXuf1g/zh-cn_image_0000002552957682.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233925Z&HW-CC-Expire=86400&HW-CC-Sign=55B6B35D80C5E9C7B4C8437DD1F7848F9263397D03CEF2CA68736218A5095761)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/vAzRwE5vSRmlG81__rFivA/zh-cn_image_0000002589324041.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052735Z&HW-CC-Expire=86400&HW-CC-Sign=109F8AD72B0987BEC80CC64B45BE959B654DF2779914EAFAE4F7953B15FB2FA3)
 
 ## 页面生命周期
 
@@ -89,7 +89,7 @@ NavDestination提供了两种类型。
 
 生命周期时序如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/iCJEA28eRH6HMHapDjm4Lw/zh-cn_image_0000002583477683.png?HW-CC-KV=V1&HW-CC-Date=20260427T233925Z&HW-CC-Expire=86400&HW-CC-Sign=4970A71E171A3E21CACC17E6C59F7E2F755515B6D91F4767044499903697649F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/rQYiFtOoR9y2rN3q9U9hJQ/zh-cn_image_0000002589243981.png?HW-CC-KV=V1&HW-CC-Date=20260429T052735Z&HW-CC-Expire=86400&HW-CC-Sign=2FDBB7798EE20F10DC3A241C640E0882C0FF19C012E3C84F8A80D4F95FA3CE9C)
 
 * **[aboutToAppear](../harmonyos-references/ts-custom-component-lifecycle.md#abouttoappear)**：在创建自定义组件后，执行其build()函数之前执行（NavDestination创建之前），允许在该方法中改变状态变量，更改将在后续执行build()函数中生效。
 * **[onWillAppear](../harmonyos-references/ts-basic-components-navdestination.md#onwillappear12)**：NavDestination创建后，挂载到组件树之前执行，在该方法中更改状态变量会在当前帧显示生效。

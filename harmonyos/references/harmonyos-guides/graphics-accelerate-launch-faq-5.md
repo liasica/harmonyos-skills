@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/graphics-acce
 title: 日志中频繁打印BusinessError: The Worker instance is not running, maybe worker is terminated when PostMessage错误信息，应该如何排查？
 breadcrumb: 指南 > 图形 > Graphics Accelerate Kit（图形加速服务） > Graphics Accelerate Kit常见问题 > 游戏启动加速服务 > 日志中频繁打印BusinessError: The Worker instance is not running, maybe worker is terminated when PostMessage错误信息，应该如何排查？
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:47:49+08:00
+scraped_at: 2026-04-29T13:36:40+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:5a943a6d646bb089578f76c25b1fc139bf6f0e8bfa2dd03912c69afd8e742e58
+content_hash: sha256:ee13c62c05b81334ab356a7271259cfe7745db6955125313c1b01f2b2a7a1a5f
 ---
 
 该错误通常是由于Worker线程崩溃或被终止导致。
@@ -16,7 +16,7 @@ content_hash: sha256:5a943a6d646bb089578f76c25b1fc139bf6f0e8bfa2dd03912c69afd8e7
 1. TuanjieMainWorker Error TypeError: undefined is not callable entry|entry|1.0.0|src/main/ets/workers/TuanjieMainWorkerHandler.ts
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/rtaojtLZTC2d6NUAZGrquQ/zh-cn_image_0000002552799084.png?HW-CC-KV=V1&HW-CC-Date=20260427T234748Z&HW-CC-Expire=86400&HW-CC-Sign=7918A7EFAFF15F5E38225922BF3E52B8BB44A41D12E815FAB336275862FB9138)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/IFqMbhNaRNKvPnLef-ACfw/zh-cn_image_0000002589325103.png?HW-CC-KV=V1&HW-CC-Date=20260429T053639Z&HW-CC-Expire=86400&HW-CC-Sign=4AA5B8E6C16CC9C26CABF5F07CE0E3CBDF8A3766FA9FBC0D9A573DA994C642C2)
 
 根据worker.onerror日志排查，确认是否同时存在以下情况：
 

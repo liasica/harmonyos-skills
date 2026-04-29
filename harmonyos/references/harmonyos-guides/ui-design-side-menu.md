@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-design-sid
 title: 侧边栏菜单样式
 breadcrumb: 指南 > 应用框架 > UI Design Kit（UI设计套件） > 侧边栏菜单样式
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:41:53+08:00
+scraped_at: 2026-04-29T13:30:22+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:ecbd02b97de270792a39997a32e5cdb622a5ed75b6636bf79d32198bec301be3
+content_hash: sha256:52d35960e8c95a62dff9113f6d4f7a0aa6cdaa9e913fb2cd44afd59471d656dc
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:ecbd02b97de270792a39997a32e5cdb622a5ed75b6636bf79d32198bec3
 
 [HdsSideMenu](../harmonyos-references/ui-design-hdssidemenu.md)提供一种菜单栏样式组件。设置侧边栏对应的一级菜单和二级菜单，并显示其新消息数量。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/uLUaOv7UQH2E_AsUzh6ZqA/zh-cn_image_0000002552958340.png?HW-CC-KV=V1&HW-CC-Date=20260427T234152Z&HW-CC-Expire=86400&HW-CC-Sign=43C3856B9A4D1EE76A91FEB69EB0499A8D3621CE2A103DA84786C985C2C2EB30)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/FEwuP1AxSRG577i4S-7RWQ/zh-cn_image_0000002589324707.png?HW-CC-KV=V1&HW-CC-Date=20260429T053021Z&HW-CC-Expire=86400&HW-CC-Sign=D77D1BFCE50EC0902D7609C5F452F9466BD01AAEEA8308B40C10F770157E3FAA)
 
 ## 开发步骤
 

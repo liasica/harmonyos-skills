@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-create-
 title: 设置浮层（OverlayManager）
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用弹窗 > 设置浮层（OverlayManager）
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:39:48+08:00
+scraped_at: 2026-04-29T13:28:00+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:a9237a5b0c465c30fa9d01fa64e2ffaf78589c25e561be7ab586cc53a0b8b3fb
+content_hash: sha256:5baa48f11ec5eb4805a2547400176a13e1b62d23ebee0a9aa19b447b1ceb91c6
 ---
 
 浮层（OverlayManager）用于在页面（Page）之上展示自定义的UI内容，位于Dialog、Popup、Menu、BindSheet、BindContentCover和Toast等组件之下，展示范围为当前窗口的安全区内，适用于常驻悬浮等场景。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/XIenDOlZRP-FK7rspJO72g/zh-cn_image_0000002552957926.png?HW-CC-KV=V1&HW-CC-Date=20260427T233946Z&HW-CC-Expire=86400&HW-CC-Sign=E246B58184FCCCC22CE0150197190361BE36358CE2B64B2DB9FF14785A871E1F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/dhcFI2sDTiqroLYZxCaVqA/zh-cn_image_0000002589324285.png?HW-CC-KV=V1&HW-CC-Date=20260429T052759Z&HW-CC-Expire=86400&HW-CC-Sign=9D9E9AEE53D83B9748C215BE38C55BFB1AC2C0B8603710F2C132BD09BFC76951)
 
 可以通过使用[UIContext](../harmonyos-references/arkts-apis-uicontext-uicontext.md)中的[getOverlayManager](../harmonyos-references/arkts-apis-uicontext-uicontext.md#getoverlaymanager12)方法获取当前UI上下文关联的[OverlayManager](../harmonyos-references/arkts-apis-uicontext-overlaymanager.md)对象，再通过该对象调用对应方法。
 
@@ -144,7 +144,7 @@ content_hash: sha256:a9237a5b0c465c30fa9d01fa64e2ffaf78589c25e561be7ab586cc53a0b
 
 [OverlayManagerComponent.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/DialogProject/entry/src/main/ets/pages/OverlayManager/OverlayManagerComponent.ets#L16-L136)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/6N49GYYWRgaidfOZmC58aQ/zh-cn_image_0000002583477927.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233946Z&HW-CC-Expire=86400&HW-CC-Sign=4EA01A47B483BEE72B480600A4CE92B4C107AAACCBA983929591E97F4808ACF2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/rDj-E1EIQZ6KXAKaiIBU7g/zh-cn_image_0000002589244225.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052759Z&HW-CC-Expire=86400&HW-CC-Sign=48512132D992C6E75B7847E6CD2BEAAC3E116EBE9B510BD6C8763CAFE03C05AE)
 
 显示一个始终在屏幕左侧的悬浮球，点击可以弹出alertDialog弹窗。
 
@@ -220,7 +220,7 @@ content_hash: sha256:a9237a5b0c465c30fa9d01fa64e2ffaf78589c25e561be7ab586cc53a0b
 
 [OverlayManagerAlertDialog.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/DialogProject/entry/src/main/ets/pages/OverlayManager/OverlayManagerAlertDialog.ets#L16-L91)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/607cA3-1RoKsdeCfUqI1_w/zh-cn_image_0000002552798278.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233946Z&HW-CC-Expire=86400&HW-CC-Sign=DD70C7320E3D3821DEBF23EF440EA1D56F674F0A1961833184507E2BC2A7578E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/NTbrXnWjRuOOD9L1Vw3PVA/zh-cn_image_0000002558764418.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052759Z&HW-CC-Expire=86400&HW-CC-Sign=ECD5A88F6B9A2ADFDB108253AEBE93432BFCC21088B71ED54BC08E27CEB1251B)
 
 从API version 18开始，可以通过调用UIContext中getOverlayManager方法获取OverlayManager对象，并利用该对象在指定层级上新增指定节点（[addComponentContentWithOrder](../harmonyos-references/arkts-apis-uicontext-overlaymanager.md#addcomponentcontentwithorder18)），层次高的浮层会覆盖在层级低的浮层之上。
 
@@ -322,4 +322,4 @@ content_hash: sha256:a9237a5b0c465c30fa9d01fa64e2ffaf78589c25e561be7ab586cc53a0b
 
 [OverlayManagerWithOrder.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/DialogProject/entry/src/main/ets/pages/OverlayManager/OverlayManagerWithOrder.ets#L16-L117)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/2emZFDI7Qw-4ud6esJEVMA/zh-cn_image_0000002583437973.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233946Z&HW-CC-Expire=86400&HW-CC-Sign=98E4A1F036754043E17E25C8B7209E1D5171BBD59B893607AFBD00E814AE44C4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/u8XKBk7mQyGScqL81ia2Pw/zh-cn_image_0000002558604762.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052759Z&HW-CC-Expire=86400&HW-CC-Sign=B5D38FCE1288E6BE15BF9C40B4FB32C95F95D873BC75D2EC8A420995191032ED)

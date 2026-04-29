@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/payment-a
 title: 实名信息授权结果查询
 breadcrumb: API参考 > 应用服务 > Payment Kit（鸿蒙支付服务） > REST API > 通用接口 > 实名信息验证与授权 > 实名信息授权结果查询
 category: harmonyos-references
-scraped_at: 2026-04-28T08:18:14+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:b7bbbfff79fe5e4811ed34ce39fcd59e3b8c63a5fe5753f205586de6463cad6c
+scraped_at: 2026-04-29T14:08:53+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:ac82e75b19de0b0265122f06fcccda25f0fbbdcd459d72131a7a57a96a0e65e7
 ---
 
 ## 功能介绍
@@ -40,7 +40,7 @@ content_hash: sha256:b7bbbfff79fe5e4811ed34ce39fcd59e3b8c63a5fe5753f205586de6463
 
 | 参数 | 是否必选 | 类型 | 说明 |
 | --- | --- | --- | --- |
-| realNameAuthId | 是 | String | 实名信息授权ID。[应用端接口](payment-realnameservice.md#realnameservicestartrealnameauth)用户授权实名信息时返回的授权ID，长度范围为1-10。 |
+| realNameAuthId | 是 | String | 实名信息授权ID。[应用端接口](payment-realnameservice.md#startrealnameauth)用户授权实名信息时返回的授权ID，长度范围为1-10。 |
 | openId | 是 | String | 用户对外展示的ID（获取方式请参见[获取用户信息](account-api-get-user-info-overview.md)）。长度范围为1-512。 |
 
 ## 请求示例

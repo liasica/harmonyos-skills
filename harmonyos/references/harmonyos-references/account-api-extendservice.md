@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/account-a
 title: extendService (华为账号增强服务)
 breadcrumb: API参考 > 应用服务 > Account Kit（华为账号服务） > ArkTS API > extendService (华为账号增强服务)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:16:05+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:ccc5de00e8c2012328bb36cc26caf9f447b8e298768f930d70954d7fdcf64be5
+scraped_at: 2026-04-29T14:06:44+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:a6cfd87a5ea6fb19b9bd105c20889c67a52304123239c06125a515d24d5eb260
 ---
 
 本模块提供Account Kit的增强能力，包括身份验证、跳转账号中心等功能。
@@ -98,7 +98,7 @@ PhonePC/2in1TabletTVWearable
 8. sceneId: '<触发身份认证的场景ID>', // 触发身份验证的场景ID
 9. riskLevel: extendService.RiskLevel.LOW,
 10. nonce: util.generateRandomUUID() // 建议使用generateRandomUUID生成nonce
-11. }
+11. };
 ```
 
 ## VerifyResult
@@ -134,7 +134,7 @@ PhonePC/2in1TabletTVWearable
 10. sceneId: '<触发身份认证的场景ID>', // 触发身份验证的场景ID
 11. riskLevel: extendService.RiskLevel.LOW,
 12. nonce: util.generateRandomUUID() // 建议使用generateRandomUUID生成nonce
-13. }
+13. };
 
 15. // 执行身份验证请求，并处理结果
 16. try {
@@ -237,7 +237,7 @@ verifyAccount(context: common.Context, request: VerifyRequest, callback: AsyncCa
 10. sceneId: '<触发身份认证的场景ID>', // 触发身份验证的场景ID，通过配置申请获取
 11. riskLevel: extendService.RiskLevel.LOW,
 12. nonce: util.generateRandomUUID() // 建议使用generateRandomUUID生成nonce
-13. }
+13. };
 
 15. // 执行身份验证请求，并处理结果
 16. try {
@@ -321,7 +321,7 @@ verifyAccount(context: common.Context, request: VerifyRequest): Promise<VerifyRe
 10. sceneId: '<触发身份认证的场景ID>', // 触发身份验证的场景ID，通过配置申请获取
 11. riskLevel: extendService.RiskLevel.LOW,
 12. nonce: util.generateRandomUUID() // 建议使用generateRandomUUID生成nonce
-13. }
+13. };
 
 15. // 此示例为代码片段，实际需在自定义组件实例中使用，并传入有效的Context上下文对象
 16. // 执行身份验证请求，并处理结果
@@ -332,7 +332,7 @@ verifyAccount(context: common.Context, request: VerifyRequest): Promise<VerifyRe
 21. // 开发者处理verifyToken
 22. }).catch((error: BusinessError) => {
 23. dealAllError(error);
-24. })
+24. });
 
 26. // 错误处理
 27. function dealAllError(error: BusinessError): void {
@@ -459,7 +459,7 @@ startAccountCenter(context: common.Context): Promise<void>
 8. hilog.info(0x0000, 'testTag', 'Succeeded in starting account center');
 9. }).catch((error: BusinessError<Object>) => {
 10. dealAllError(error);
-11. })
+11. });
 
 13. // 错误处理
 14. function dealAllError(error: BusinessError<Object>): void {

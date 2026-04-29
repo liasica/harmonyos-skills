@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ime-kit-secur
 title: 输入法安全模式介绍
 breadcrumb: 指南 > 应用框架 > IME Kit（输入法开发服务） > 输入法安全模式介绍
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:41:37+08:00
+scraped_at: 2026-04-29T13:30:05+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:3fd803dba156d960a99be2375892260e4d8ceef1c7d6559e7a037b26c9aa4208
+content_hash: sha256:509e864c6a14a9a419e15fae79adf611f4416ceeaf2d26a507869717610933a9
 ---
 
 为了保护用户数据安全，系统增加了输入法安全模式功能，包括基础模式和完整体验模式。在基础模式下，输入法扩展无法调用任何可能涉及访问或泄漏用户隐私数据的系统能力；而在完整体验模式下，则没有该限制。
@@ -40,7 +40,7 @@ content_hash: sha256:3fd803dba156d960a99be2375892260e4d8ceef1c7d6559e7a037b26c9a
 
    **图1** 共享沙箱
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/SxTed27FTnK-lH8OsC-uxQ/zh-cn_image_0000002552798668.png?HW-CC-KV=V1&HW-CC-Date=20260427T234136Z&HW-CC-Expire=86400&HW-CC-Sign=72786A11CE842CF896F549F7658160A45AD4902DED0967006F15A934FC31C54D)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/KiMJpBLtSfWQP4LhJGr1Yg/zh-cn_image_0000002558764816.png?HW-CC-KV=V1&HW-CC-Date=20260429T053003Z&HW-CC-Expire=86400&HW-CC-Sign=9208D2EA6FDC37A42ADF7D61CE1B750BE318A92A81C0AB5C6AC212D09C7D7E70)
 3. 共享沙箱的配置流程。
 
    当应用主入口的[profile](../app/agc-help-add-releaseprofile-0000001914714796.md)和输入法扩展的[dataGroupIds](module-configuration-file.md#extensionabilities标签)中包含相同的data-group-id时，他们就可以使用这个data-group-id对应的共享沙箱。
@@ -68,7 +68,7 @@ content_hash: sha256:3fd803dba156d960a99be2375892260e4d8ceef1c7d6559e7a037b26c9a
    2. 待您收到data-group-id申请成功的邮件回复后，重新生成[应用的profile](../app/agc-help-add-releaseprofile-0000001914714796.md)，新生成的profile里面包含本次申请到的data-group-id；并使用DevEco Studio[配置工程的签名信息](ide-publish-app.md#section280162182818)，将新的profile配置到工程中。
    3. 按照data-group-id申请成功的回复邮件指导，获取到您本次申请到的data-group-id，并在InputMethodExtensionAbility所在的module.json5中配置[dataGroupIds](module-configuration-file.md#extensionabilities标签)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/IqA-GgUXTL2AFysMDs4SqQ/zh-cn_image_0000002583438363.png?HW-CC-KV=V1&HW-CC-Date=20260427T234136Z&HW-CC-Expire=86400&HW-CC-Sign=62827226649053EC47ED94D7E13BB3A42466B47FEA732FB28F143283C4C2B958)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/kipd467XSIW9ZTDMuVl8uA/zh-cn_image_0000002558605160.png?HW-CC-KV=V1&HW-CC-Date=20260429T053003Z&HW-CC-Expire=86400&HW-CC-Sign=B7CB53E1574B64680001EF22D40BAF54A32A6A33E7010F60448EDC07049A3BE5)
 4. 共享沙箱使用流程。
 
    a. 分别在输入法扩展和应用主入口通过[getGroupDir](../harmonyos-references/js-apis-inner-application-context.md#getgroupdir10)获取共享沙箱路径。

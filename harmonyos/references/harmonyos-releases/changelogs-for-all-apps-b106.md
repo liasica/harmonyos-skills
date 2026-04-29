@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/changelogs-
 title: OS平台API行为的变更
 breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.0.1(13) > OS平台能力 > OS平台行为变更说明 > HarmonyOS 5.0.1(13) Beta3引入的行为变更 > OS平台API行为的变更
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:35:58+08:00
+scraped_at: 2026-04-29T13:23:53+08:00
 doc_updated_at: 2026-01-21
-content_hash: sha256:f46453046b5a477334e225b0a73ea568bf624a1c976dd3e04e96e39f47316e13
+content_hash: sha256:f7304fe81e5e1d52b096c7fa48c604b05d033119d7b756a8791778709927d9d4
 ---
 
 ## Ability Kit
@@ -131,19 +131,19 @@ convertToJSObject(xml: string, options?: ConvertOptions): Object;
 
 当开发者使用的是源码HAR时使用router.getState()方法获取的是**相对路径**。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/SqXjFLW3RnS_Mt_j9xS53g/zh-cn_image_0000002082259974.png?HW-CC-KV=V1&HW-CC-Date=20260427T233557Z&HW-CC-Expire=86400&HW-CC-Sign=9B59FBD8A8FA790AAF4E18F37B6F7F615DD77BC2CEEA64F7768DBE01981E8429)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/SqXjFLW3RnS_Mt_j9xS53g/zh-cn_image_0000002082259974.png?HW-CC-KV=V1&HW-CC-Date=20260429T052352Z&HW-CC-Expire=86400&HW-CC-Sign=F76F45BA0DBD83DB1ACE81D3CFD85D4757B651F80A268CB4FC504A72305EAA47)
 
 通过router.getState()方法获取的path信息为"../../../../library/src/main/ets/components/"。
 
 当开发者把源码HAR升级为字节码HAR时，通过router.getState()方法获取的path信息为"/\_\_harDefaultPagePath\_\_"，不能获取正确的name和path值。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/W301q5mLQAe6UuWt00Kmhw/zh-cn_image_0000002082105210.png?HW-CC-KV=V1&HW-CC-Date=20260427T233557Z&HW-CC-Expire=86400&HW-CC-Sign=1894398860A57ECB61976F66F73E68041CB2796C12A15280903CDFE52C8B3826)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/W301q5mLQAe6UuWt00Kmhw/zh-cn_image_0000002082105210.png?HW-CC-KV=V1&HW-CC-Date=20260429T052352Z&HW-CC-Expire=86400&HW-CC-Sign=904E1972F6E497E2A8A56A2A0E709877E9E55F510FF333556FEB3B6B9A487F54)
 
 变更后：
 
 当开发者把源码HAR升级为字节码HAR时使用router.getState()方法获取的是**绝对路径**。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/gNAOMUrPSR-L2bD8CSdOVg/zh-cn_image_0000002117819161.png?HW-CC-KV=V1&HW-CC-Date=20260427T233557Z&HW-CC-Expire=86400&HW-CC-Sign=EFF5BA06A7B14553DF6DC82ABE179957357CBBDA2C22312E7E879A05D58BBF78)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/gNAOMUrPSR-L2bD8CSdOVg/zh-cn_image_0000002117819161.png?HW-CC-KV=V1&HW-CC-Date=20260429T052352Z&HW-CC-Expire=86400&HW-CC-Sign=11C86426619275EAA31B49D8C3D85F9EADB94937B5C01A07F1DC04E6752611CC)
 
 通过router.getState()方法获取的path信息为"library/src/main/ets/components/"。
 
@@ -153,19 +153,19 @@ convertToJSObject(xml: string, options?: ConvertOptions): Object;
 
 当开发者使用的是中间码HAR时使用router.getState()方法获取的是**相对路径**。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/u0kSU6PZRXiD2ZTpAp9xlg/zh-cn_image_0000002117784217.png?HW-CC-KV=V1&HW-CC-Date=20260427T233557Z&HW-CC-Expire=86400&HW-CC-Sign=3D6651CD54C600C5B2A4C0478D079C9E0D56690E22A7E304C6AFF8DCBF0C62C4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/u0kSU6PZRXiD2ZTpAp9xlg/zh-cn_image_0000002117784217.png?HW-CC-KV=V1&HW-CC-Date=20260429T052352Z&HW-CC-Expire=86400&HW-CC-Sign=4C7A5A59EB02BCA9C30FEC769EC8D47C0EDCDBF8B29D46412AB47CA27D084A1F)
 
 通过router.getState()方法获取的path信息为"../../../../ + 哈希值 + library/src/main/ets/components/"。
 
 当开发者把中间码HAR升级为字节码HAR时，通过router.getState()方法获取的path信息为"/\_\_harDefaultPagePath\_\_"，不能获取正确的name和path值。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/KG14Xr6LROCkP7AibMlRZQ/zh-cn_image_0000002082105210.png?HW-CC-KV=V1&HW-CC-Date=20260427T233557Z&HW-CC-Expire=86400&HW-CC-Sign=7B976195FEF7208034652FA572299AD1D94E924046C31FB38205A3D304100B41)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/KG14Xr6LROCkP7AibMlRZQ/zh-cn_image_0000002082105210.png?HW-CC-KV=V1&HW-CC-Date=20260429T052352Z&HW-CC-Expire=86400&HW-CC-Sign=F368748F79AF914A89572155D48BF52036118CC72B0195FFE3233D989C8B5678)
 
 变更后：
 
 当开发者把中间码HAR升级为字节码HAR时使用router.getState()方法获取的是**绝对路径**。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/IUpUVHKFSpO0AwNTEeucug/zh-cn_image_0000002117819161.png?HW-CC-KV=V1&HW-CC-Date=20260427T233557Z&HW-CC-Expire=86400&HW-CC-Sign=BB82459C913B3D7C50D9A64CF2F49770675EE724F2064DB814814C6A9CE9070B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/IUpUVHKFSpO0AwNTEeucug/zh-cn_image_0000002117819161.png?HW-CC-KV=V1&HW-CC-Date=20260429T052352Z&HW-CC-Expire=86400&HW-CC-Sign=7C4883CB52572022090F93A3A5500A6AC9E47A323C9903FC46E886DFB5EC294F)
 
 通过router.getState()方法获取的path信息为"library/src/main/ets/components/"。
 

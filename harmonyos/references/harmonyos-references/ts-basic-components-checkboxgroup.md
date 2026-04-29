@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: CheckboxGroup
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 按钮与选择 > CheckboxGroup
 category: harmonyos-references
-scraped_at: 2026-04-28T08:01:42+08:00
+scraped_at: 2026-04-29T13:51:59+08:00
 doc_updated_at: 2026-04-08
-content_hash: sha256:409ca07849b2ff321a25ef99f099b799efc845c599b9f36e00a507e5fcdea5c0
+content_hash: sha256:c048b915d92e4d4b058e30f1883a97afa9ef7245707917a42d4be40e0df1228b
 ---
 
 多选框群组，用于控制多选框全选或者不全选状态。
@@ -470,7 +470,7 @@ PhonePC/2in1TabletTVWearable
 54. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/BHHHSdTCRwSzzgc_CtUEDw/zh-cn_image_0000002583479701.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000141Z&HW-CC-Expire=86400&HW-CC-Sign=5C161BCEEA4318D253D6587DF911D1F534B05B8AB328D5F24DC947EE5E34C7D9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/885_XCUaQyKTu1bbHQbaRg/zh-cn_image_0000002558606564.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055156Z&HW-CC-Expire=86400&HW-CC-Sign=39CE9BF255603BC3CBC5ABD47489A5BA41EED2EE862E726728B439679779D82D)
 
 ### 示例2（自定义勾选样式）
 
@@ -549,7 +549,7 @@ PhonePC/2in1TabletTVWearable
 70. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/HhTznvlNQAmesxqQmswHbA/zh-cn_image_0000002552800052.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000141Z&HW-CC-Expire=86400&HW-CC-Sign=B319B58A7D5E32FC2F98BCD34D7847E8C777E609FE7B90F05F575655F6A14859)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/Vgzdc1HqQ0-XJ_HzHUQxzA/zh-cn_image_0000002589326091.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055156Z&HW-CC-Expire=86400&HW-CC-Sign=865FB59F86ECB1A5DF1E33222ECD642303CBA2FA02D9D24E84840D91FE232830)
 
 ### 示例3（自定义多选框样式）
 
@@ -669,7 +669,7 @@ PhonePC/2in1TabletTVWearable
 111. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/tA4BNEqWSIOLdlLXSmXsdg/zh-cn_image_0000002583439747.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000141Z&HW-CC-Expire=86400&HW-CC-Sign=4315798369182343E106640BC23046203C04D142B99655E1A074FCE92D05B39B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/kmjofPQ_RHS-vNUMuZCMcg/zh-cn_image_0000002589246033.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055156Z&HW-CC-Expire=86400&HW-CC-Sign=D3CF42687378DE9FA117050B1E1C7E37BD4DFF88D35A3B33B10D5B2AAA9142E5)
 
 ### 示例4（设置全选）
 
@@ -826,4 +826,4 @@ PhonePC/2in1TabletTVWearable
 149. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/faV0TWTcTKSAfpeLN1R6GA/zh-cn_image_0000002552959702.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000141Z&HW-CC-Expire=86400&HW-CC-Sign=1F721C93C1B5D898A036837873EFFC86F8C07D6DBE93380338753B272DBC6D71)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/bJQ6npmISZqXK5HNk8_1Dw/zh-cn_image_0000002558766224.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055156Z&HW-CC-Expire=86400&HW-CC-Sign=9AB7F7D23C482294CE18CC7FB8FEAB36925FE3ECF8903A1B1CA6E375ADA2D0D2)

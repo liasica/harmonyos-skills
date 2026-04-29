@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/unittest-guid
 title: 单元测试框架使用指导
 breadcrumb: 指南 > 应用测试 > 单元测试和UI测试 > 自动化测试框架使用指导 > 单元测试框架使用指导
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:57:52+08:00
+scraped_at: 2026-04-29T13:48:00+08:00
 doc_updated_at: 2026-04-21
-content_hash: sha256:14d93e2889519c81b3b887e0c89e8ff2b175250e6e4845e3661cffe0583afaa1
+content_hash: sha256:f817a568f9dc536fc21d739ae7b2ca75b07f9eee9920456bbe9cb847009f0b73
 ---
 
 ## 概述
@@ -28,7 +28,7 @@ content_hash: sha256:14d93e2889519c81b3b887e0c89e8ff2b175250e6e4845e3661cffe0583
 
 **图1.单元测试框架主要功能**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/6kBtbrVlQx6EE9Tn80YCqQ/zh-cn_image_0000002581217681.png?HW-CC-KV=V1&HW-CC-Date=20260427T235750Z&HW-CC-Expire=86400&HW-CC-Sign=8CF8CDD9D61FF7B80B45B57ACA072CFC4365EE68643C9F9EC6AE886BC276B52E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/6kBtbrVlQx6EE9Tn80YCqQ/zh-cn_image_0000002581217681.png?HW-CC-KV=V1&HW-CC-Date=20260429T054759Z&HW-CC-Expire=86400&HW-CC-Sign=C2E6782C3D21C1BA1A2BF98F84611405F942B89EF3ED701726628D8005A80308)
 
 ## 单元测试框架发布方式
 
@@ -108,13 +108,13 @@ content_hash: sha256:14d93e2889519c81b3b887e0c89e8ff2b175250e6e4845e3661cffe0583
 
 下面给出测试类级别即测试文件执行示例，其他请参考[运行模式](ide-instrument-test.md#section1574003717165)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/dbxiE2wrSymGulvpkNDlMA/zh-cn_image_0000002550777586.png?HW-CC-KV=V1&HW-CC-Date=20260427T235750Z&HW-CC-Expire=86400&HW-CC-Sign=374C31D8CE4F2C9261F1CAEA6A403AD1ABEDBBB8E2E0717AC4F10CEF16F3E4CE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/dbxiE2wrSymGulvpkNDlMA/zh-cn_image_0000002550777586.png?HW-CC-KV=V1&HW-CC-Date=20260429T054759Z&HW-CC-Expire=86400&HW-CC-Sign=9F866DF4CB8FD5FA5037280017E793B4A723A5B882F3472CD7F4BBACDD68A93E)
 
 * 查看测试结果
 
 测试执行后可直接在DevEco Studio中查看测试结果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/S2Rhpp8lTE2tTr4uCHnPxQ/zh-cn_image_0000002581377645.png?HW-CC-KV=V1&HW-CC-Date=20260427T235750Z&HW-CC-Expire=86400&HW-CC-Sign=66AF126AF449B55CDD90F81A844F6D1CAA05AAEB4F8D57FF57FB4C13D0633A50)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/S2Rhpp8lTE2tTr4uCHnPxQ/zh-cn_image_0000002581377645.png?HW-CC-KV=V1&HW-CC-Date=20260429T054759Z&HW-CC-Expire=86400&HW-CC-Sign=2D7D01F676E5D96E262B55A27BAA758A4D926BF5B7A8990A1025C8CC8617B132)
 
 * 查看测试用例覆盖率
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: 编译报错“Cannot find module XXX or its corresponding type declarations”
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 编译报错“Cannot find module XXX or its corresponding type declarations”
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:29:08+08:00
+scraped_at: 2026-04-29T14:20:22+08:00
 doc_updated_at: 2026-03-17
-content_hash: sha256:4dde597f2733c5730e8379622e38d310af18afd6542ca0e98d38e8ece22f50b5
+content_hash: sha256:93a95e16e2366b2dfda7aa7e79034695b1299875765f6412ccb16135b3c87608
 ---
 
 * **场景一：**
@@ -22,12 +22,12 @@ content_hash: sha256:4dde597f2733c5730e8379622e38d310af18afd6542ca0e98d38e8ece22
 
   1. 在对应cpp目录下新建types/libxxx目录，并在该目录下新增index.d.ts用于声明native文件的类型符号；新增oh-package.json5配置文件用于校验工具的模块查询。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/0nywl8TURKqy3mE5AIixYg/zh-cn_image_0000002229604373.png?HW-CC-KV=V1&HW-CC-Date=20260428T002907Z&HW-CC-Expire=86400&HW-CC-Sign=FFA956221A8DA047DA22F01712D77D4E06D15A3A9EBEA471C92DC87DD467187F)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/0nywl8TURKqy3mE5AIixYg/zh-cn_image_0000002229604373.png?HW-CC-KV=V1&HW-CC-Date=20260429T062021Z&HW-CC-Expire=86400&HW-CC-Sign=12E6A96021BC4A0A52FD028C224EABD1709D7B3B4790944FFADE83DB272DB109)
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/BPTvHjBVR-y-gT4Qhi9hrw/zh-cn_image_0000002194158980.png?HW-CC-KV=V1&HW-CC-Date=20260428T002907Z&HW-CC-Expire=86400&HW-CC-Sign=EFB09AF072195CE7AB0F7672726D462BA1B040E6155D72328F87EF739FFB7D0B)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/BPTvHjBVR-y-gT4Qhi9hrw/zh-cn_image_0000002194158980.png?HW-CC-KV=V1&HW-CC-Date=20260429T062021Z&HW-CC-Expire=86400&HW-CC-Sign=D4B07185FE7202BFE45E9494C29CBB758D29E66DD24C29F8470F1AE8ACF081AB)
   2. 在native文件引用的模块内的oh-package.json5中添加native文件的本地依赖，并根据DevEco Studio提示点击\*\*Sync Now\*\*同步工程，下图以entry模块引用native文件为例。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/3qbSwyLgSFW_oOxbxgPHmA/zh-cn_image_0000002194318572.png?HW-CC-KV=V1&HW-CC-Date=20260428T002907Z&HW-CC-Expire=86400&HW-CC-Sign=702F5D2125107BB63C4D6738B3A3B2DF50EDC2358A3230BD1499A088B42614CC)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/3qbSwyLgSFW_oOxbxgPHmA/zh-cn_image_0000002194318572.png?HW-CC-KV=V1&HW-CC-Date=20260429T062021Z&HW-CC-Expire=86400&HW-CC-Sign=05363A069462F99CBA5DF258C59DF917B887516B742CC74B6CEB1B46B347B5D5)
 
 * **场景二：**
 
@@ -35,7 +35,7 @@ content_hash: sha256:4dde597f2733c5730e8379622e38d310af18afd6542ca0e98d38e8ece22
 
   API 11 Stage模板工程编译失败，提示“Cannot find module '@kit.xxx' or its corresponding type declarations”。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/ug8AYAWVQZeHe7s-QN7svg/zh-cn_image_0000002229758849.png?HW-CC-KV=V1&HW-CC-Date=20260428T002907Z&HW-CC-Expire=86400&HW-CC-Sign=EF22E95F2AAEF25AEAEA928A487CEF0F23E647DB73AB29AA20DB726A8D9096D4)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/ug8AYAWVQZeHe7s-QN7svg/zh-cn_image_0000002229758849.png?HW-CC-KV=V1&HW-CC-Date=20260429T062021Z&HW-CC-Expire=86400&HW-CC-Sign=BFF445C0111C1E059FCA5D0CB2F17C1B4B149D39DA1242F12E64BF589F47C5B5)
 
   **问题原因**
 
@@ -53,7 +53,7 @@ content_hash: sha256:4dde597f2733c5730e8379622e38d310af18afd6542ca0e98d38e8ece22
 
   引用第三方包，构建失败，提示“Cannot find module 'xxx' or its corresponding type declarations”。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/hV3j4xkNRpejYzfDKeOeqw/zh-cn_image_0000002229758853.png?HW-CC-KV=V1&HW-CC-Date=20260428T002907Z&HW-CC-Expire=86400&HW-CC-Sign=2A0CE6D05B828ADCDA311D86F3745480D4657618F3EECB28490902C801B30AD9)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/hV3j4xkNRpejYzfDKeOeqw/zh-cn_image_0000002229758853.png?HW-CC-KV=V1&HW-CC-Date=20260429T062021Z&HW-CC-Expire=86400&HW-CC-Sign=22C518EB5993A3F04011E8DF2FD822706EED9D984C538E212C958968834E4E6C)
 
   **解决措施**
 
@@ -66,30 +66,30 @@ content_hash: sha256:4dde597f2733c5730e8379622e38d310af18afd6542ca0e98d38e8ece22
 
   例如：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/msRhOhtESMOs2DJDvfJemw/zh-cn_image_0000002194158984.png?HW-CC-KV=V1&HW-CC-Date=20260428T002907Z&HW-CC-Expire=86400&HW-CC-Sign=1E656886FF0B340DD389C2E8D29B8342FCBC2D3A912A52D7D75BD00466E1ADF0)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/msRhOhtESMOs2DJDvfJemw/zh-cn_image_0000002194158984.png?HW-CC-KV=V1&HW-CC-Date=20260429T062021Z&HW-CC-Expire=86400&HW-CC-Sign=768822355E765329FA1F571A67400E37A5CBE764D12308E9219B9D415034AFAA)
 
   代码中这样引用
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/N6JgifJ9QkC8HNeTDKJLHQ/zh-cn_image_0000002229758861.png?HW-CC-KV=V1&HW-CC-Date=20260428T002907Z&HW-CC-Expire=86400&HW-CC-Sign=D05A4B874D56C9C7D19B40E16388861C80A44D7079030D294046D4A5D94AE637)这样引用会找不到模块，导致报错。
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/N6JgifJ9QkC8HNeTDKJLHQ/zh-cn_image_0000002229758861.png?HW-CC-KV=V1&HW-CC-Date=20260429T062021Z&HW-CC-Expire=86400&HW-CC-Sign=BA55FE6FFEA014A39F0AD6272D2B41C1E62170219B90E1F4222BDC82F083A992)这样引用会找不到模块，导致报错。
 
   **解决措施**
 
   修改引用方式，采用推荐的方式。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/x-WmboZXS9ysOFn9vjcewA/zh-cn_image_0000002194158972.png?HW-CC-KV=V1&HW-CC-Date=20260428T002907Z&HW-CC-Expire=86400&HW-CC-Sign=172E14FA8E1265043C2E4C4416F318040B9C0063F9CAAF83556001072FAFB879)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/x-WmboZXS9ysOFn9vjcewA/zh-cn_image_0000002194158972.png?HW-CC-KV=V1&HW-CC-Date=20260429T062021Z&HW-CC-Expire=86400&HW-CC-Sign=E6EE5FFC61B5FB34A11D03069F87D6AD042D6A7B9B7CCD5B1D8B6BC29B1AE6A9)
 * **场景五：**
 
   **问题现象**
 
   被引用模块oh-package.json5配置有误，执行了ohpm install 并且成功地安装了依赖，但是还报错模块找不到。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/z9vVSX6iQ0m41azj9PwGeg/zh-cn_image_0000002194158976.png?HW-CC-KV=V1&HW-CC-Date=20260428T002907Z&HW-CC-Expire=86400&HW-CC-Sign=42D500A319F62C72268C0DE57F21D8A1D4494A825EB24D8E2FD177243A73F72D)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/z9vVSX6iQ0m41azj9PwGeg/zh-cn_image_0000002194158976.png?HW-CC-KV=V1&HW-CC-Date=20260429T062021Z&HW-CC-Expire=86400&HW-CC-Sign=D24C4FBE5551011B20B96EA5A258F3971A07BF82F3343C5932A10A18C820BDDA)
 
   被引用模块的 oh-package.json5 中配置了错误的types字段。
 
   该字段优先于main字段。 如果 types 字段配置的不存在，就会报错模块找不到。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/RqN-TOi9TLaHXKg0EmWg1A/zh-cn_image_0000002229604353.png?HW-CC-KV=V1&HW-CC-Date=20260428T002907Z&HW-CC-Expire=86400&HW-CC-Sign=2E4A1F6AABFBED04C18E3DEB048E099AD63F15FF6AAF0357F79972F3FBC1DFD1)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/RqN-TOi9TLaHXKg0EmWg1A/zh-cn_image_0000002229604353.png?HW-CC-KV=V1&HW-CC-Date=20260429T062021Z&HW-CC-Expire=86400&HW-CC-Sign=D867B99CB94A160EFF7BBD065C8A20CE95B411900A01E9B2D1B7A5C25AE0ACFB)
 
   **解决措施**
 
@@ -120,7 +120,7 @@ content_hash: sha256:4dde597f2733c5730e8379622e38d310af18afd6542ca0e98d38e8ece22
 
   Stage模板工程编译构建失败，提示“Cannot find module '@bundle:rollup\_plugin\_ignore\_empty\_module\_placeholder' or its corresponding type declarations”。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/9i2FoN5KSQO7jE2kcz_FfQ/zh-cn_image_0000002229758841.png?HW-CC-KV=V1&HW-CC-Date=20260428T002907Z&HW-CC-Expire=86400&HW-CC-Sign=13CF47CCBD798940FE658E80210A80BA20996E2D2BDE2C623252BE3CD8341724)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/9i2FoN5KSQO7jE2kcz_FfQ/zh-cn_image_0000002229758841.png?HW-CC-KV=V1&HW-CC-Date=20260429T062021Z&HW-CC-Expire=86400&HW-CC-Sign=B872582345507A98B611E47C65048549C64A24344C2175FAD22DDCE2076A15A8)
 
   **解决措施**
 
@@ -128,14 +128,14 @@ content_hash: sha256:4dde597f2733c5730e8379622e38d310af18afd6542ca0e98d38e8ece22
 
   1. 在build目录搜索`rollup\_plugin\_ignore\_empty\_module\_placeholder`定位问题模块。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/nDr8vPz7RHehPvyxEjT3zA/zh-cn_image_0000002194158956.png?HW-CC-KV=V1&HW-CC-Date=20260428T002907Z&HW-CC-Expire=86400&HW-CC-Sign=A3686EC348701F31B2DC6A966A11081CD3EB4DDCB9FE75CFBAFDBC717222CC05)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/nDr8vPz7RHehPvyxEjT3zA/zh-cn_image_0000002194158956.png?HW-CC-KV=V1&HW-CC-Date=20260429T062021Z&HW-CC-Expire=86400&HW-CC-Sign=8028F83448C555CAE4B2D97A82A4B833F86D1226D886628FF09D33350893E7B2)
 
      在输入栏中输入“rollup\_plugin\_ignore\_empty\_module\_placeholder”，找到问题模块的中间文件。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/T8rq9CEYTzi8tOZvBV_ZUw/zh-cn_image_0000002194158964.png?HW-CC-KV=V1&HW-CC-Date=20260428T002907Z&HW-CC-Expire=86400&HW-CC-Sign=5055C6A638353325AD8E30EE0E069DD815060B126E842D247040453E718E8185)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/T8rq9CEYTzi8tOZvBV_ZUw/zh-cn_image_0000002194158964.png?HW-CC-KV=V1&HW-CC-Date=20260429T062021Z&HW-CC-Expire=86400&HW-CC-Sign=4C61D987558E84A53FEFB0248BF9E31FB829BFC5145261A22A348B70B6BB95E1)
   2. 在引用类型文件中通过添加type显式声明符号类型。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/26kSvc89SbOoT4hxR6-nzw/zh-cn_image_0000002229758865.png?HW-CC-KV=V1&HW-CC-Date=20260428T002907Z&HW-CC-Expire=86400&HW-CC-Sign=4BBC0D6F863B43F9D6DDB8439826C0F1B001B0FA01A89F5BCBF799B5AE076F46)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/26kSvc89SbOoT4hxR6-nzw/zh-cn_image_0000002229758865.png?HW-CC-KV=V1&HW-CC-Date=20260429T062021Z&HW-CC-Expire=86400&HW-CC-Sign=E79C7FEF634C442CA19DC432BF06DE9624D7AEE017AE256EBBB9E850C6EF11B3)
   3. 同时排查是否从d.ts/d.ets中引用值类型符号。禁止在声明文件中声明值变量。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/ZpJMwK_BTJC6wp8Wzo6_7g/zh-cn_image_0000002194158968.png?HW-CC-KV=V1&HW-CC-Date=20260428T002907Z&HW-CC-Expire=86400&HW-CC-Sign=3724DED8F3D57DDADBB4BA34BB2B3BC548ED6B915680FA351EFEE9D68F4DDB80)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/ZpJMwK_BTJC6wp8Wzo6_7g/zh-cn_image_0000002194158968.png?HW-CC-KV=V1&HW-CC-Date=20260429T062021Z&HW-CC-Expire=86400&HW-CC-Sign=8050FC871CE1A6EA68652203F87060C5A4B5868D794110CE5EFF904EFD9C4FC3)

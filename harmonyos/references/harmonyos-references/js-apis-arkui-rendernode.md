@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: RenderNode
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > arkui > RenderNode
 category: harmonyos-references
-scraped_at: 2026-04-28T08:00:40+08:00
+scraped_at: 2026-04-29T13:50:54+08:00
 doc_updated_at: 2026-03-27
-content_hash: sha256:367b5df6a88a36ee3267b3df7f8fffd5de56509b6104a6413b9d1031ce5e302b
+content_hash: sha256:28efda6d531cec2077091dbb094811f07a97f436cb5b4582a128b34fef628156
 ---
 
 提供自绘制渲染节点RenderNode，支持开发者通过C API进行开发，完成自定义绘制需求。
@@ -1943,7 +1943,7 @@ get shadowElevation(): number
 39. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/sr-JhwXDTc-3mmqaDZJ3TA/zh-cn_image_0000002552959456.jpg?HW-CC-KV=V1&HW-CC-Date=20260428T000035Z&HW-CC-Expire=86400&HW-CC-Sign=CA4DBEAF6B2C413CB52C8B451DE8EDE8E886E97D3FC394745DCE432E6509F7FF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/BVK3w8UcQKqh2lKspbt13w/zh-cn_image_0000002558765976.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T055047Z&HW-CC-Expire=86400&HW-CC-Sign=555DFB66583B3EEE6D1A4121E850FE1665B24EED80A28E87321556853F9C4879)
 
 ### shadowRadius
 
@@ -2027,7 +2027,7 @@ get shadowRadius(): number
 45. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/fADzuLoGTY-uDnR8eUFuBg/zh-cn_image_0000002583479457.jpg?HW-CC-KV=V1&HW-CC-Date=20260428T000035Z&HW-CC-Expire=86400&HW-CC-Sign=E0B8ACE383657A57FC0F906D7875CABE339A962E2AA257479CC7081A34671CAA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/o22D1sLpQpWe9wEhqmctsg/zh-cn_image_0000002558606320.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T055047Z&HW-CC-Expire=86400&HW-CC-Sign=09FF9945B28965DECD0EC36137ECC4C5F411D01E28617065167D7685AD137AA4)
 
 ### draw
 
@@ -2879,7 +2879,7 @@ set markNodeGroup(isNodeGroup: boolean)
 
 标记是否优先绘制节点及其子节点。若设置为true，则透明度等属性将在节点绘制完毕后再进行合成。设置效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/XgZ2Zt9kTTe2jBqR5WcuFQ/zh-cn_image_0000002552799808.png?HW-CC-KV=V1&HW-CC-Date=20260428T000035Z&HW-CC-Expire=86400&HW-CC-Sign=7D078706B9FF30952909BDC5748C5A5C86C803F55F4E466F901A49E898ACB056)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/6ojwtezrRFSmVIbFKXNa5w/zh-cn_image_0000002589325847.png?HW-CC-KV=V1&HW-CC-Date=20260429T055047Z&HW-CC-Expire=86400&HW-CC-Sign=F27991A400CBF352E7D1DC591D8049687599949458517A0C5ADE03016864DDF5)
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -3154,4 +3154,4 @@ isDisposed(): boolean
 74. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/k_TucOFGReOTfjCwB8wn6g/zh-cn_image_0000002583439503.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000035Z&HW-CC-Expire=86400&HW-CC-Sign=87E2975C357F75603FD04226551CC9750D5A74BBF6EDA10B97D0DEEA4A68B3CE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/WswcRlwkS7SwvYKNy7HWEQ/zh-cn_image_0000002589245789.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055047Z&HW-CC-Expire=86400&HW-CC-Sign=713C85328158E5DFDC1D46EDB92397B46D91B38028579A7473EF219CB6ED731F)

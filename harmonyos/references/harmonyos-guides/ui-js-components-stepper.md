@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-compone
 title: stepper开发指导
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 常见组件开发指导 > 容器组件 > stepper开发指导
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:40:25+08:00
+scraped_at: 2026-04-29T13:28:46+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:3b9d5c81d77a7e8225eaa129a6895222ab9ac108a174983387ed84291aea7ad6
+content_hash: sha256:8cdd22f41fdba7e2067b9371b993b3614fbca08e13b15f59d0e57ba2cef68ad2
 ---
 
 当一个任务需要多个步骤时，可以使用stepper组件展示当前进展。具体用法请参考[stepper API](../harmonyos-references/js-components-container-stepper.md)。
@@ -45,7 +45,7 @@ content_hash: sha256:3b9d5c81d77a7e8225eaa129a6895222ab9ac108a174983387ed84291ae
 14. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/HOBF08DyR_SQEo6llzcjZg/zh-cn_image_0000002552798442.gif?HW-CC-KV=V1&HW-CC-Date=20260427T234024Z&HW-CC-Expire=86400&HW-CC-Sign=54855A136B9CFB457BA70E3D5D02E924E93DC617809C58DE4B55DD0EA4125A13)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/yqwnn6XzRRmlVGPIhxFfBw/zh-cn_image_0000002558764582.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052845Z&HW-CC-Expire=86400&HW-CC-Sign=FAAEBEB8E201CE0E6610895C29AD0B4835C071275EC718287C9B75B459C7E48F)
 
 ## 设置index属性
 
@@ -83,7 +83,7 @@ content_hash: sha256:3b9d5c81d77a7e8225eaa129a6895222ab9ac108a174983387ed84291ae
 12. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/YmFf12aFRDGCbjqiar5cQw/zh-cn_image_0000002583438137.gif?HW-CC-KV=V1&HW-CC-Date=20260427T234024Z&HW-CC-Expire=86400&HW-CC-Sign=A46F5F8D76527EF9B289284EF7497C61FDA8B579F9CA967577690E5EBFBBA668)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/z89Duq5CQIyipGrz3YmRkQ/zh-cn_image_0000002558604926.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052845Z&HW-CC-Expire=86400&HW-CC-Sign=09E46CEF6CFC7072D55CD13E822CD894B1E393474BC3B247E9FBE60A6D7990D5)
 
 通过设置label属性，自定义stepper-item的提示按钮。
 
@@ -144,7 +144,7 @@ content_hash: sha256:3b9d5c81d77a7e8225eaa129a6895222ab9ac108a174983387ed84291ae
 19. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/oMfG73iQQLKaEKEY6FzcFg/zh-cn_image_0000002552958092.gif?HW-CC-KV=V1&HW-CC-Date=20260427T234024Z&HW-CC-Expire=86400&HW-CC-Sign=56F78F95DF8AD4C624A41CA44651D2324343953822FE5694510734316AB9E7B5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/7hD6jfYeQv-TZyKJseyPUQ/zh-cn_image_0000002589324451.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052845Z&HW-CC-Expire=86400&HW-CC-Sign=A9F42E905BAFE4C9B1F149A86BC9DD5094C1E7559EFB7D533B98490000311CA8)
 
 ## 设置样式
 
@@ -188,7 +188,7 @@ stepper组件默认填充父容器，通过border和background-color设置边框
 22. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/ZBriUQ4iR6yh6gbrz3T6Og/zh-cn_image_0000002583478093.png?HW-CC-KV=V1&HW-CC-Date=20260427T234024Z&HW-CC-Expire=86400&HW-CC-Sign=7938D33552299269123FC196D2162883862AAFEAC9500C5BC921A0E291109D46)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/fehPHHvOQOOCbMiOrrqesQ/zh-cn_image_0000002589244391.png?HW-CC-KV=V1&HW-CC-Date=20260429T052845Z&HW-CC-Expire=86400&HW-CC-Sign=B144528E8465F07653DF58B6531EB844D9943B05E7D9A2B8110F5888CF557EB9)
 
 ## 添加事件
 
@@ -288,4 +288,4 @@ stepper分别添加finish，change，next，back，skip事件。
 39. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/9sZnLetbTqygyp9bJkDyJQ/zh-cn_image_0000002552798444.gif?HW-CC-KV=V1&HW-CC-Date=20260427T234024Z&HW-CC-Expire=86400&HW-CC-Sign=5E1A9F06D89CDC6FEDDCC33E11920E1DF7D8990D64A0BDA7167F9D9D34476EB1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/kpp_kOlYS528AIKyARvOxQ/zh-cn_image_0000002558764584.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052845Z&HW-CC-Expire=86400&HW-CC-Sign=2C25DBFA275501022E1BF39E10A90710C45AB5A3A67E841AF935E92D0A71FD9A)

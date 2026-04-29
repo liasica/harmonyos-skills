@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-usbd
 title: UsbDdkInterface
 breadcrumb: API参考 > 系统 > 硬件 > Driver Development Kit（驱动开发服务） > C API > 结构体 > UsbDdkInterface
 category: harmonyos-references
-scraped_at: 2026-04-28T08:10:51+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:84003ffc7d7503c5cc502c7900b5907249403956e67253f9a3216399dd2a6627
+scraped_at: 2026-04-29T14:01:32+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:75b17d10f1191502ad571c3e4a26f2f4c0d36ac21394303775e9635536f2817e
 ---
 
 ```
@@ -35,4 +35,4 @@ PC/2in1
 | 名称 | 描述 |
 | --- | --- |
 | uint8\_t numAltsetting | 接口的备用设置数量。 |
-| struct UsbDdkInterfaceDescriptor\* altsetting | 接口的备用设置。 |
+| [struct UsbDdkInterfaceDescriptor](capi-usbddk-usbddkinterfacedescriptor.md)\* altsetting | 接口的备用设置。 |

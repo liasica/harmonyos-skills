@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/build-with-nd
 title: 在NDK工程中使用预构建库
 breadcrumb: 指南 > NDK开发 > 构建NDK工程 > 在NDK工程中使用预构建库
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:53:57+08:00
+scraped_at: 2026-04-29T13:43:54+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:9396158ef165b960f2601d5fd0ebf85133393fe528e824f5639c2b9c22de74db
+content_hash: sha256:ee0b42af8399a16cee4922e79d83064bab771776cb7f4e46f6e9abce55f0f832
 ---
 
 在NDK工程中，可以通过CMake语法规则引入并使用预构建库。在引用预构建库时，模块libs目录中的预构建库，以及在CMakeLists.txt编译脚本中声明的预构建库都会被打包。
@@ -20,7 +20,7 @@ content_hash: sha256:9396158ef165b960f2601d5fd0ebf85133393fe528e824f5639c2b9c22d
 
 可以通过直接将预构建的库文件复制到项目文件中, 来使用预构建库。例如在项目中需要使用预构建库libavcodec\_ffmpeg.so，其开发态存放路径如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/C25Ka6PAR9eThcs-2gBSVA/zh-cn_image_0000002552959360.png?HW-CC-KV=V1&HW-CC-Date=20260427T235356Z&HW-CC-Expire=86400&HW-CC-Sign=CFD99A90ECCC2771B1FF182851C1EA16A89C215E50387CB22111D8872653D5B0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/_uA_U-W-SEaE1n4r18P7AQ/zh-cn_image_0000002589245671.png?HW-CC-KV=V1&HW-CC-Date=20260429T054353Z&HW-CC-Expire=86400&HW-CC-Sign=15C3170D9B397C518A5205B8F37874410510473EF2B0E4828B3C6649F1223421)
 
 在模块的CMakeLists.txt编译脚本中通过add\_library添加所需的预构建库，并声明预构建库路径等信息后，可以在target\_link\_libraries中声明链接该预构建库，脚本示例如下所示：
 
@@ -46,7 +46,7 @@ content_hash: sha256:9396158ef165b960f2601d5fd0ebf85133393fe528e824f5639c2b9c22d
 
 当在HAR中使用预构建库时，当前编译的库和链接所需预构建库会打包到HAR中的libs目录下，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/LRkyIwQ_SVuRLHJxQje6yA/zh-cn_image_0000002583479361.png?HW-CC-KV=V1&HW-CC-Date=20260427T235356Z&HW-CC-Expire=86400&HW-CC-Sign=DC3CF73FF7E4469AEBC1BC80A59EDBCD37D6C9FC1D007011C4555352AEB6EF10)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/KZHmuST6Saemd75MffF_yg/zh-cn_image_0000002558765862.png?HW-CC-KV=V1&HW-CC-Date=20260429T054353Z&HW-CC-Expire=86400&HW-CC-Sign=007C7B0ED4D5BBA95FF09DBD010270CA73EB7166F06707EA34B3D12E4A49F3A4)
 
 ### 预构建库的SONAME问题
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/get-familiar
 title: 快速上手
 breadcrumb: 指南 > 应用测试 > 专项测试 > DevEco Testing > 快速上手
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:57:54+08:00
+scraped_at: 2026-04-29T13:48:04+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:57a395edf770e2b59f6829e2559bb3c95770122eafebd7c42e7ab5c19a022fd8
+content_hash: sha256:b48122ab9a21dce4f6b1f56360ae5709a2ca33caece3f994d5c53e134e445a4b
 ---
 
 DevEco Testing是一款专项集成测试工具，提供了多项测试能力。DevEco Testing将测试能力以测试服务卡片的形式呈现给用户，无需复杂的配置，即可一键执行测试任务，同时提供了测试报告和分析，辅助开发者发现应用和产品问题，提升应用质量。
@@ -50,7 +50,7 @@ DevEco Testing是一款专项集成测试工具，提供了多项测试能力。
 
 选择应用时，支持选择测试设备上已安装的应用或者安装新的应用，即在测试设备上安装新的应用包。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/pZ4bujm2R8eHyNSB4bTUpg/zh-cn_image_0000002535542241.png?HW-CC-KV=V1&HW-CC-Date=20260427T235753Z&HW-CC-Expire=86400&HW-CC-Sign=16154176F34987A5152110CE786CA43E128469B4EB0F8FB91DDD038CB3E14428 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/pZ4bujm2R8eHyNSB4bTUpg/zh-cn_image_0000002535542241.png?HW-CC-KV=V1&HW-CC-Date=20260429T054802Z&HW-CC-Expire=86400&HW-CC-Sign=8DD4F60161D658798A2020EC88CF69359B6F9A7CC9164BD0503936401DE64467 "点击放大")
 
 注意
 
@@ -58,17 +58,17 @@ Q1：HarmonyOS 5.0及以上版本设备已连接，DevEco Testing为什么无法
 
 A1：请在cmd窗口中执行hdc list targets，确认设备正常连接。正常连接如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/KbX0pJpWTJuZyDSXtFFr9g/zh-cn_image_0000002510820560.png?HW-CC-KV=V1&HW-CC-Date=20260427T235753Z&HW-CC-Expire=86400&HW-CC-Sign=E0E78C8DCA25429E7DEF979A116A87A471C107A5AAD8CC11BBBE9DB7261A34BB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/KbX0pJpWTJuZyDSXtFFr9g/zh-cn_image_0000002510820560.png?HW-CC-KV=V1&HW-CC-Date=20260429T054802Z&HW-CC-Expire=86400&HW-CC-Sign=0130B7C818F2A0B3FA6F22D9E8E8E16892AD0A4C9ECF3419B1DC7DB14754058F)
 
 如返回为空，则表示USB连接没有建立，需排查PC机USB驱动、USB线缆连接、手机是否开启USB调试模式。
 
 若hdc list targets能识别到设备，DevEco Testing未识别到设备，请将DevEco Testing安装路径中的hdc路径配置至PATH环境变量中，即可正常识别。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/l_LaKnQUSwWSokyuSOzj7g/zh-cn_image_0000002492343694.png?HW-CC-KV=V1&HW-CC-Date=20260427T235753Z&HW-CC-Expire=86400&HW-CC-Sign=7128BEF198B7E28840BDA19168920ED88F2235E9DEC97D889B7FCD93D8FB602C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/l_LaKnQUSwWSokyuSOzj7g/zh-cn_image_0000002492343694.png?HW-CC-KV=V1&HW-CC-Date=20260429T054802Z&HW-CC-Expire=86400&HW-CC-Sign=6ABC777999C959C8A1852518C823DC68FE251CFCE6A1CDD50FD233F59704ECA2)
 
 **测试任务**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/yEzDA_m7Q7WY6WBYEsyY5g/zh-cn_image_0000002535862401.png?HW-CC-KV=V1&HW-CC-Date=20260427T235753Z&HW-CC-Expire=86400&HW-CC-Sign=FDED2F0C362E889EBB61F954ECF717668B43C4EEC0A073E41C25579ABC5846EC "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/yEzDA_m7Q7WY6WBYEsyY5g/zh-cn_image_0000002535862401.png?HW-CC-KV=V1&HW-CC-Date=20260429T054802Z&HW-CC-Expire=86400&HW-CC-Sign=1A96E2B3CE5BCDF950729D4FD49D13F3367B9EB9568A78D0AE5A527A5E685486 "点击放大")
 
 1、用户在DevEco Testing工具导航栏 —【测试任务】中可以查看当前正在执行和历史执行的测试任务。用户可通过顶部操作栏，按任务名/备注、服务类型、任务状态筛选测试任务。
 
@@ -94,12 +94,12 @@ DevEco Testing执行测试任务结束后会生成测试报告，测试报告整
 
 1、测试报告概览包含应用信息、参数配置、执行日志等，可点击查询相关信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/Oi5gJXoVRsOhTl3sB5BEuw/zh-cn_image_0000002492503690.png?HW-CC-KV=V1&HW-CC-Date=20260427T235753Z&HW-CC-Expire=86400&HW-CC-Sign=F9A8DAFD52043EC0146B138DF80C99E71CE3CD83825777DD3A3138927F122F9D "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/Oi5gJXoVRsOhTl3sB5BEuw/zh-cn_image_0000002492503690.png?HW-CC-KV=V1&HW-CC-Date=20260429T054802Z&HW-CC-Expire=86400&HW-CC-Sign=1BF90F8480BF04BAD2CAF1654AAE72B487FF95E8F21CC613647CF1EEFA179625 "点击放大")
 
 2、不同的测试服务报告详情不同，以下图的应用上架预检（本地）为例，测试报告详情由应用信息、测试总览、各项检测数据组成。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/rCapTSGATEWECSx2H4sRrw/zh-cn_image_0000002492343700.png?HW-CC-KV=V1&HW-CC-Date=20260427T235753Z&HW-CC-Expire=86400&HW-CC-Sign=3C31CF1FA5030AD2D2699FD066A24F5BB23A03D005AEE1A83BEA651A0847AA08 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/rCapTSGATEWECSx2H4sRrw/zh-cn_image_0000002492343700.png?HW-CC-KV=V1&HW-CC-Date=20260429T054802Z&HW-CC-Expire=86400&HW-CC-Sign=AE30DDD8B37E6AB1C352834C851D540C9EEB953B44CC1EFB9ADB11CFB2340BE8 "点击放大")
 
 3、测试报告支持手动备注，方便测试人员标记任务，并提供报告导出功能，点击报告页面“打开目录”按钮，可导出html格式的报告文件。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/0df_Wk1pTDuoj9zzkeky8Q/zh-cn_image_0000002569032989.png?HW-CC-KV=V1&HW-CC-Date=20260427T235753Z&HW-CC-Expire=86400&HW-CC-Sign=DCF487AB744B4B36DC5F5CE2AA37B044E082335F38303B1443D648FEDA085873 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/0df_Wk1pTDuoj9zzkeky8Q/zh-cn_image_0000002569032989.png?HW-CC-KV=V1&HW-CC-Date=20260429T054802Z&HW-CC-Expire=86400&HW-CC-Sign=2062BDECDDEEA4C83A4D3C57D28CDE21579011A8BFC72D49E6A89A77FF16521A "点击放大")

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-smartwatch
 title: 智能穿戴导航协同
 breadcrumb: 最佳实践 > 自由流转 > 典型全场景协同开发案例 > 智能穿戴导航协同
 category: best-practices
-scraped_at: 2026-04-28T08:21:45+08:00
+scraped_at: 2026-04-29T14:12:54+08:00
 doc_updated_at: 2026-04-01
-content_hash: sha256:f9055835f40200f897f56d6fbd44c67444a4302e27dddff35c65d6490eab0deb
+content_hash: sha256:c7cda243b997d4480b3d36a21c2701ebc4800ee5627df72a64ef82973743cbe1
 ---
 
 ## 概述
@@ -47,7 +47,7 @@ content_hash: sha256:f9055835f40200f897f56d6fbd44c67444a4302e27dddff35c65d6490ea
 
 ### 实现方案
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/MciEBTUHQYaFzduOoLMJmQ/zh-cn_image_0000002353086117.jpg?HW-CC-KV=V1&HW-CC-Date=20260428T002141Z&HW-CC-Expire=86400&HW-CC-Sign=30EFD06B148A8FFAC3F8A3F9363B940ED6856BEE853E92A60E9F79645A1EFFC9 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/MciEBTUHQYaFzduOoLMJmQ/zh-cn_image_0000002353086117.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T061246Z&HW-CC-Expire=86400&HW-CC-Sign=2C4683F92A0EF8C9D8B9258925EEB7383C9FC0C71E8E6790045FEBE3F7472C60 "点击放大")
 
 ## 界面开发
 
@@ -90,7 +90,7 @@ content_hash: sha256:f9055835f40200f897f56d6fbd44c67444a4302e27dddff35c65d6490ea
 **地图点击（目的地标记）：**
 
 **图1** 地图点击操作时序图   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/pbsmQ_aRQzyg7tYelGB6Xw/zh-cn_image_0000002318967344.jpg?HW-CC-KV=V1&HW-CC-Date=20260428T002141Z&HW-CC-Expire=86400&HW-CC-Sign=73B1163733AA8700C8AF0E1EDF0CC51E6DD04F50EBF4EF81058579EB8BBA79EF "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/pbsmQ_aRQzyg7tYelGB6Xw/zh-cn_image_0000002318967344.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T061246Z&HW-CC-Expire=86400&HW-CC-Sign=3CDAC5AA2B2E602CFDE6047FA496DF1C4D3706A66BE188D9A6E6B2AC0CA35D3F "点击放大")
 
 开发步骤如下：
 

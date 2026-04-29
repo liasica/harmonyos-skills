@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 布局约束
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 布局与边框 > 布局约束
 category: harmonyos-references
-scraped_at: 2026-04-28T08:01:05+08:00
+scraped_at: 2026-04-29T13:51:16+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:a69a558317eafa14b7f8d68df220222252c47b8cebb8609b244043495eb8c1cc
+content_hash: sha256:de17ba9d5e73dc8c2c88ccc63737837614718ca2647c90efa85b745febaa56c5
 ---
 
 通过组件的宽高比和显示优先级约束组件显示效果。
@@ -135,11 +135,11 @@ PhonePC/2in1TabletTVWearable
 
 **图1** 竖屏显示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/cV5G25iATEOdab2ReVlZiw/zh-cn_image_0000002552959494.png?HW-CC-KV=V1&HW-CC-Date=20260428T000102Z&HW-CC-Expire=86400&HW-CC-Sign=E6CFC81276F232858DF8B26F9DA2671BC8388476F4671E62D8EF255CF9D43DE2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/Y5FuE0K9QWi2iZECdXguRw/zh-cn_image_0000002558766016.png?HW-CC-KV=V1&HW-CC-Date=20260429T055114Z&HW-CC-Expire=86400&HW-CC-Sign=D74B6605B531F53972D38396FC25BECF299CCFC88056F21F8A0B9A322C9BFA1E)
 
 **图2** 横屏显示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/sCO9Rp4zRwyK9pZRWvGZrw/zh-cn_image_0000002583479495.png?HW-CC-KV=V1&HW-CC-Date=20260428T000102Z&HW-CC-Expire=86400&HW-CC-Sign=0581E04BF58570B4F52CD6F5B24F92C3B221B8E9085956640211FE0FAB0BB7AC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/WdY9PXIGQGa0m8FhBUb3LA/zh-cn_image_0000002558606358.png?HW-CC-KV=V1&HW-CC-Date=20260429T055114Z&HW-CC-Expire=86400&HW-CC-Sign=18F56FDBC5FA29803C9769B9E9A863AFCA0A869CB0B791C0758E5B6E2FCBD392)
 
 ### 示例2（设置组件显示优先级）
 
@@ -203,4 +203,4 @@ PhonePC/2in1TabletTVWearable
 
 横屏显示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/vg_6-FyeQrSMiR6DE6xBjg/zh-cn_image_0000002552799846.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000102Z&HW-CC-Expire=86400&HW-CC-Sign=4E6EF0857EB7467A7BB54A0B72A3071FADBEAB242DA7B7F6C441042FA7CDA8F6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/hlYTcNggTBqC7n9AfGvbiA/zh-cn_image_0000002589325885.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055114Z&HW-CC-Expire=86400&HW-CC-Sign=9B9F2CEC26E67CB5F0923262A6BC80580C4F08FB32E3D850C4CB613DD32298C7)

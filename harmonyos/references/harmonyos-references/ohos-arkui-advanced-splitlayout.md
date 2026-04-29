@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: SplitLayout
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > SplitLayout
 category: harmonyos-references
-scraped_at: 2026-04-28T08:02:41+08:00
+scraped_at: 2026-04-29T13:53:03+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:2c87a8f7ae0df9eab41dfa7374a625f82ac582f0e32c952aad2efa8d69cfe143
+content_hash: sha256:8df5b7f5db107c9ee0ab985ca60432187bd3a3898fe07c92c097b9258182b129
 ---
 
 上下结构布局介绍了常用的页面布局样式。主要分为上下文本和上下图文两种类型。
@@ -93,12 +93,12 @@ PhonePC/2in1TabletTVWearable
 
 小于等于600vp布局：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/DgmSnDq0SUSkNt5Me5nLJQ/zh-cn_image_0000002552800480.png?HW-CC-KV=V1&HW-CC-Date=20260428T000239Z&HW-CC-Expire=86400&HW-CC-Sign=BBF0ED9BC570E0C72863955CBE81145E141A4906E0B1BC83B4DE41D195B29BB6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/bsX4t19tSKWfjzdckNDMDg/zh-cn_image_0000002589246463.png?HW-CC-KV=V1&HW-CC-Date=20260429T055302Z&HW-CC-Expire=86400&HW-CC-Sign=367AF959FC03571FDC7EFA53FE0836C7242D5C04E71DD38C6A18F026BB29A376)
 
 大于600vp且小于等于840vp的布局：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/Wf31ArsGRIGdcepSXHqFIg/zh-cn_image_0000002583440175.png?HW-CC-KV=V1&HW-CC-Date=20260428T000239Z&HW-CC-Expire=86400&HW-CC-Sign=FA10DC91370942EDEEDD23DD54B3C4E7005966375362FA27A5F3791D407B64FC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/IxTmxQ9ZSHWWtvN8Psie8g/zh-cn_image_0000002558766656.png?HW-CC-KV=V1&HW-CC-Date=20260429T055302Z&HW-CC-Expire=86400&HW-CC-Sign=B64C75A63E69BB155DC02CC97C9E905DF5D875623869D571D9BD708DA9F31EA4)
 
 大于840vp布局：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/3ukMoMmvTKGbZLYLSpeXkA/zh-cn_image_0000002552960130.png?HW-CC-KV=V1&HW-CC-Date=20260428T000239Z&HW-CC-Expire=86400&HW-CC-Sign=49B9BF7EB9CE3211F19BB359663CAE927E59BE0C297C9FA5D7EC77712BACF8E3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/XxOKskj8QvG5h5NYCxPNvQ/zh-cn_image_0000002558606996.png?HW-CC-KV=V1&HW-CC-Date=20260429T055302Z&HW-CC-Expire=86400&HW-CC-Sign=9B7D520A9BF4DDC89EA57622B8F7480487FCC6BBD507C31585E73C611E7A8D38)

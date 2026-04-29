@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 按键事件
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用事件 > 基础输入事件 > 按键事件
 category: harmonyos-references
-scraped_at: 2026-04-28T08:00:54+08:00
+scraped_at: 2026-04-29T13:51:06+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:2588b547b49e53455324ea15991f017ac5da60901bebf169694bfeb6f5632b37
+content_hash: sha256:e30dd0aa2ab4c7283beabd9f91591e2700436c647a41b8cd80aaa66f0f0422be
 ---
 
 按键事件是指组件与物理键盘、遥控器等按键设备交互时触发的事件，适用于所有可获焦组件，例如Button。对于默认不可获焦的组件，如Text，Image等，可以将[focusable](ts-universal-attributes-focus.md#focusable)属性设置为true后使用按键事件。
@@ -224,7 +224,7 @@ PhonePC/2in1TabletTVWearable
 27. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/Ot1iDLE7SmWkswTzMKvpKw/zh-cn_image_0000002583439509.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000053Z&HW-CC-Expire=86400&HW-CC-Sign=5366851258B023F64383E8DE2CF139C29B0887F3501A93033C9E1A7EB6C77C5A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/eslrh4VfTAKaUwE0_Z8E_g/zh-cn_image_0000002589245795.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055104Z&HW-CC-Expire=86400&HW-CC-Sign=796585502E24F4384E29D5FE3468B89305A44958415E6F3109CF740C6124F085)
 
 ### 示例2（获取Unicode码值）
 
@@ -268,7 +268,7 @@ PhonePC/2in1TabletTVWearable
 35. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/4E3R-BpfTj6W2YwHkRgz4w/zh-cn_image_0000002552959464.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000053Z&HW-CC-Expire=86400&HW-CC-Sign=E33F27B45C7DE297FD0CEB9B7A1F6A9A67327AD67FE66FE84034FA5A0548915D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/n_4IhczyQReAVK8tvJzjZg/zh-cn_image_0000002558765984.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055104Z&HW-CC-Expire=86400&HW-CC-Sign=18DF91B19E3BA5FE780C91D24371C151051486D2326C2F8C97E9982E98BDD0C9)
 
 ### 示例3（触发onKeyPreIme回调）
 
@@ -372,4 +372,4 @@ PhonePC/2in1TabletTVWearable
 54. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/2og8FAF7SqC42ieI6F1ibA/zh-cn_image_0000002583479465.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000053Z&HW-CC-Expire=86400&HW-CC-Sign=92EAE7343268E857A81C7AB99E4CAAC4E1917ED251316FE97FD2088CC74B9633)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/hUY0jMTUQkKgl7daRlSyGw/zh-cn_image_0000002558606328.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055104Z&HW-CC-Expire=86400&HW-CC-Sign=96841B309ADBA5B1F387F5EEE63CDDB5638A9F0CAB1B9FB549FE2B85E51ED9EB)

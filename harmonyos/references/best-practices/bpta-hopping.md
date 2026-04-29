@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-hopping
 title: 自由流转概述
 breadcrumb: 最佳实践 > 自由流转 > 自由流转概述
 category: best-practices
-scraped_at: 2026-04-28T08:21:35+08:00
+scraped_at: 2026-04-29T14:12:38+08:00
 doc_updated_at: 2026-04-01
-content_hash: sha256:d3f1e2355c85fb1f34aa26723a5a8f3d5605d479ed2ea9baaea9951cd44fab7a
+content_hash: sha256:2a86a6031ec3cb120c0d54775129a1826dd1d5f305246e275a00a9fb628aac48
 ---
 
 ## 概述
@@ -44,7 +44,7 @@ content_hash: sha256:d3f1e2355c85fb1f34aa26723a5a8f3d5605d479ed2ea9baaea9951cd44
 
 自由流转依赖于鸿蒙系统提供的分布式运行环境，底层依托分布式软总线，解决设备发现、连接、组网等痛点，打通1+8+N互联互通能力，对外提供硬件、数据、应用三个维度的跨设备访问能力，应用开发只需遵循框架并适配应用层提供的指定的API，就能实现设备之间的跨端迁移和多端协同。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/I4ZhAVTnRlq4nSXmR8I5xg/zh-cn_image_0000002564391897.png?HW-CC-KV=V1&HW-CC-Date=20260428T002134Z&HW-CC-Expire=86400&HW-CC-Sign=DEED92F2E6E4D082684B1C074E31BD7E6EDBB0D159E62383C4FBF233A4714184 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/I4ZhAVTnRlq4nSXmR8I5xg/zh-cn_image_0000002564391897.png?HW-CC-KV=V1&HW-CC-Date=20260429T061236Z&HW-CC-Expire=86400&HW-CC-Sign=793511012D8BE32D343BFC491F33793D483EBC3F630F79810052018685F532D4 "点击放大")
 
 ### 特性
 

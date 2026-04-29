@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-content-s
 title: Web页面显示内容滚动
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 管理网页交互 > Web页面显示内容滚动
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:40:56+08:00
+scraped_at: 2026-04-29T13:29:19+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:029d2f87830a7e3c722d3b818212513c479f4d7fcd747db6cf66287774a05e53
+content_hash: sha256:ef0d018379c2fcf53f2d37c24ed378db9086b96551dce7c846f96ce955ae6675
 ---
 
 当Web页面的内容高度或宽度超过可视区域时，页面才能滚动。Web页面滚动有多种方式，包括使用外接设备、ArkTS侧接口调用和JS侧接口调用。
@@ -130,4 +130,4 @@ content_hash: sha256:029d2f87830a7e3c722d3b818212513c479f4d7fcd747db6cf66287774a
   ```
 * 效果展示：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/2l_Cp7zzT7SExwRQX61nsQ/zh-cn_image_0000002583438261.gif?HW-CC-KV=V1&HW-CC-Date=20260427T234054Z&HW-CC-Expire=86400&HW-CC-Sign=9C13403B82AC2C0E93AD9EB1E72B324878FE50447285BCC5062B9E9C8482E2FF)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/00qQG4goQ7KgcSwrHOyPdg/zh-cn_image_0000002558605052.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052918Z&HW-CC-Expire=86400&HW-CC-Sign=1ED73BB1BD3CA1681D862608005156FA53D2F471DCC35F4F50EF03ADB8DA9A11)

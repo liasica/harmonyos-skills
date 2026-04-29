@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: TimePicker
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 按钮与选择 > TimePicker
 category: harmonyos-references
-scraped_at: 2026-04-28T08:01:45+08:00
+scraped_at: 2026-04-29T13:52:01+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:1ee6904e8cce7442c7c3765316032fec0f7d20cef8196d72f535dba7af831473
+content_hash: sha256:26ffdadded2b24d7b6f00c46ec816162a219e537f6e503637894394fb3485fa6
 ---
 
 滑动选择时间的组件。
@@ -601,7 +601,7 @@ PhonePC/2in1TabletTVWearable
 21. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/k66SkqBNQW2NT0Hl8YMf3g/zh-cn_image_0000002583439761.png?HW-CC-KV=V1&HW-CC-Date=20260428T000142Z&HW-CC-Expire=86400&HW-CC-Sign=2913FD9F4202449B037DFD329EE7F648BF7B6FBFB7A99AEE9D51F127628DBCEE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/LqOWjVHWRKuDHc6QvD7TdA/zh-cn_image_0000002589246047.png?HW-CC-KV=V1&HW-CC-Date=20260429T055158Z&HW-CC-Expire=86400&HW-CC-Sign=9771C1374783088D62827920FB5877B431ABA521CA0952FD6A628FDD5AE15F84)
 
 ### 示例2（切换小时制）
 
@@ -641,7 +641,7 @@ PhonePC/2in1TabletTVWearable
 31. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/1fHkvhegQCmBy8U9KJtKqA/zh-cn_image_0000002552959716.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000142Z&HW-CC-Expire=86400&HW-CC-Sign=53921B9A6778E1F0EA0E206849C77B6552E509F7383B9B94C87703541D2B6457)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/359tN295QiWKy3xiPLedVg/zh-cn_image_0000002558766238.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055158Z&HW-CC-Expire=86400&HW-CC-Sign=93ACCB85BAA79035668BE9A3C4300BBBFE274A2A2254F08C03765FEECCFE9F60)
 
 ### 示例3（设置时间格式）
 
@@ -672,7 +672,7 @@ PhonePC/2in1TabletTVWearable
 22. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/OE1BhCaTTGyXA3AHwjIMYA/zh-cn_image_0000002583479717.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000142Z&HW-CC-Expire=86400&HW-CC-Sign=A6DDF30FFDFB54CEF46206286C43042056951848B276F046A112773523E01022)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/ite82PeaTzWxkN4Jk0DhoQ/zh-cn_image_0000002558606580.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055158Z&HW-CC-Expire=86400&HW-CC-Sign=D610708FA978E3EE4F82EABBD5A74965B89ABC59F8F69BD5A9B31E0A26EB2FA4)
 
 ### 示例4（设置循环滚动）
 
@@ -713,7 +713,7 @@ PhonePC/2in1TabletTVWearable
 32. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/VcXDy9SSTM-DKeDQLtoddQ/zh-cn_image_0000002552800068.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000142Z&HW-CC-Expire=86400&HW-CC-Sign=FC9CDEDA327F18A9A6062FF58B8E71901331E07B99ECA2108A1B63868D1AE42D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/fr3S5qm3Qs2j-cMdIqY8Jg/zh-cn_image_0000002589326107.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055158Z&HW-CC-Expire=86400&HW-CC-Sign=95E7AC33C5F331A8A3471074DD47BE29597715792FA535A365BB2071B56575FB)
 
 ### 示例5（设置时间选择组件的起始时间）
 
@@ -745,7 +745,7 @@ PhonePC/2in1TabletTVWearable
 23. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/O7ORf5rjT42FL7Sk6dlNew/zh-cn_image_0000002583439763.png?HW-CC-KV=V1&HW-CC-Date=20260428T000142Z&HW-CC-Expire=86400&HW-CC-Sign=8542650ABA305E597B9541407601C7ACD8E313A504E8CD2D2B70B6659C398826)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/PZfwJ7aLQEyTWRF1SyjOaw/zh-cn_image_0000002589246049.png?HW-CC-KV=V1&HW-CC-Date=20260429T055158Z&HW-CC-Expire=86400&HW-CC-Sign=46B4FB19B86076BC29D1E539AB8D6E3F4550C333A561A23279892052D18F40E0)
 
 ### 示例6（设置时间选择组件的结束时间）
 
@@ -777,7 +777,7 @@ PhonePC/2in1TabletTVWearable
 23. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/ZM3cQw9HQrOibsfH0tRbGA/zh-cn_image_0000002552959718.png?HW-CC-KV=V1&HW-CC-Date=20260428T000142Z&HW-CC-Expire=86400&HW-CC-Sign=C3BE2873B087188F7ED29D0A6C2649FF08A1F1E922F6EA35D7452EC52FE8E747)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/9S-nwByaSYCbnW4wWB2Qww/zh-cn_image_0000002558766240.png?HW-CC-KV=V1&HW-CC-Date=20260429T055158Z&HW-CC-Expire=86400&HW-CC-Sign=CF46AF2E3C84C1F7DF8A209AAD6E85FB4AD6DFC8FF416BC0238B8C57E5AAA78C)
 
 ### 示例7（设置上午下午跟随时间联动）
 
@@ -810,4 +810,4 @@ PhonePC/2in1TabletTVWearable
 22. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/_5wEUjUhQZysLeDu16QCkw/zh-cn_image_0000002583479719.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000142Z&HW-CC-Expire=86400&HW-CC-Sign=9059D27F3A81232D7427750F950EDBA4FEA0D82C3578ACBB5F560CA2AE393B37)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/Av5-40j0SlO9cB4HGCHwvg/zh-cn_image_0000002558606582.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055158Z&HW-CC-Expire=86400&HW-CC-Sign=1ED6DCA75C8606D33441519ABDAE3816E69AE2F822538E48DE4F7FC744A3DE9F)

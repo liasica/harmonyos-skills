@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-app-runnin
 title: 在本地模拟器中卸载应用显示成功，但实际未卸载成功
 breadcrumb: FAQ > DevEco Studio > 应用运行 > 在本地模拟器中卸载应用显示成功，但实际未卸载成功
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:29:56+08:00
+scraped_at: 2026-04-29T14:21:12+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:525eb0a7a409a5aae1ef159de3a0bcf94fd183a992fa8564d496bc4f25419380
+content_hash: sha256:43d42a66eba271d7e63c478765f918c7c2d0cb372ef546298bbce87f1d8f1492
 ---
 
 **问题现象**
@@ -21,4 +21,4 @@ content_hash: sha256:525eb0a7a409a5aae1ef159de3a0bcf94fd183a992fa8564d496bc4f254
 * 方式一：及时删除本地模拟器中不再使用的文件。可以通过hdc shell [COMMAND]命令删除相关文件，更多关于hdc命令使用指导请参考[hdc](../harmonyos-guides/hdc.md)。
 * 方式二：删除本地模拟器，然后重新创建。如果使用本地模拟器推送大文件或应用，建议在创建时适当增加模拟器的内部存储空间。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/2rK33YNYTauAYtWCOz6nCQ/zh-cn_image_0000002194318364.png?HW-CC-KV=V1&HW-CC-Date=20260428T002955Z&HW-CC-Expire=86400&HW-CC-Sign=D0015EC3D2CF6C195967EC92A9EACFC28224CA396489E6294FB04A3F4635514F "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/2rK33YNYTauAYtWCOz6nCQ/zh-cn_image_0000002194318364.png?HW-CC-KV=V1&HW-CC-Date=20260429T062111Z&HW-CC-Expire=86400&HW-CC-Sign=5ABA701D7F954074E75B002926DF892C8547C34819A16FC4EDFA3A31534A1817 "点击放大")

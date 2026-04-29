@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-servic
 title: text
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > JS服务卡片UI组件 > 基础组件 > text
 category: harmonyos-references
-scraped_at: 2026-04-28T08:03:41+08:00
+scraped_at: 2026-04-29T13:54:03+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:27d944fc94f5239b74c04197863cd47578f96a15929c683482bc8c1e0ff4ce8c
+content_hash: sha256:b471ce870a6af5d12bcb935d095a742d277609aaa4a579f1f0f2272fad255b5b
 ---
 
 文本，用于呈现一段信息。
@@ -117,4 +117,4 @@ PhonePC/2in1TabletTVWearable
 
 **4\*4卡片**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/UBHvD_HDSxKfsWQCtCH1SQ/zh-cn_image_0000002583480433.png?HW-CC-KV=V1&HW-CC-Date=20260428T000340Z&HW-CC-Expire=86400&HW-CC-Sign=199DB7773C785DA4D8DCFF6BFB4C65CBE36055DDCC7A99C75319AA2892551B24)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/XrFG9puvQyC_Uy6BlOQiHw/zh-cn_image_0000002589326827.png?HW-CC-KV=V1&HW-CC-Date=20260429T055402Z&HW-CC-Expire=86400&HW-CC-Sign=5BDA3A9B1105AC253FAC3D0FE80A32CD4B1B420640C510C86DC4C482467012D3)

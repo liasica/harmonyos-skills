@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/component-sta
 title: 组件启动规则（Stage模型）
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > Stage模型开发指导 > Stage模型应用组件 > 组件启动规则（Stage模型）
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:37:45+08:00
+scraped_at: 2026-04-29T13:25:47+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:a53d91bcbaedc1573d4c1da37d9b1b947b2fa291e94aff24d26a97640afc13e1
+content_hash: sha256:ce55110d96826d58027d70264a29f91953c3e34d6c901809b067d9ed17706c2a
 ---
 
 启动组件是指一切启动或连接应用组件的行为：
@@ -50,7 +50,7 @@ content_hash: sha256:a53d91bcbaedc1573d4c1da37d9b1b947b2fa291e94aff24d26a97640af
 
 下图中的BACKGROUND权限是指ohos.permission.START\_ABILITIES\_FROM\_BACKGROUND，CALL权限是指ohos.permission.ABILITY\_BACKGROUND\_COMMUNICATION。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/9qVoWuTdSDuZGipT9ZnPcg/zh-cn_image_0000002552957498.png?HW-CC-KV=V1&HW-CC-Date=20260427T233744Z&HW-CC-Expire=86400&HW-CC-Sign=06245F9EFC9C6C408A7337A0CEB109B3F66D025DC0A38310A8DC5AE18BDB11CC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/ptUbUAk-SAOVS0_P7d7lLg/zh-cn_image_0000002589243795.png?HW-CC-KV=V1&HW-CC-Date=20260429T052546Z&HW-CC-Expire=86400&HW-CC-Sign=3F54425DE21E011A420BD0C6CF0AE155678B35CE123CA27690818542C0073CB5)
 
 ## 分布式跨设备组件启动规则
 
@@ -64,4 +64,4 @@ content_hash: sha256:a53d91bcbaedc1573d4c1da37d9b1b947b2fa291e94aff24d26a97640af
 
 下图中的BACKGROUND权限是指ohos.permission.START\_ABILITIES\_FROM\_BACKGROUND，DATASYNC权限是指ohos.permission.DISTRIBUTED\_DATASYNC。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/svKX7YvBToq9ZyNYye7quA/zh-cn_image_0000002583477499.png?HW-CC-KV=V1&HW-CC-Date=20260427T233744Z&HW-CC-Expire=86400&HW-CC-Sign=F647292F52DE0E6D4A8E1F2860F1A3EA19A762CADAFD549161127B80E185BE96)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/EgW6ih1xQQeI_Lc7DL7Ewg/zh-cn_image_0000002558763990.png?HW-CC-KV=V1&HW-CC-Date=20260429T052546Z&HW-CC-Expire=86400&HW-CC-Sign=368F0DBB41FA0029E30D37535D510A26A199E60BEA851F0CEF8D254F32150132)

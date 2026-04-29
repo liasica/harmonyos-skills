@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-bas
 title: Class (WebContextMenuParam)
 breadcrumb: API参考 > 应用框架 > ArkWeb（方舟Web） > ArkTS 组件 > Web > Class (WebContextMenuParam)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:05:20+08:00
-doc_updated_at: 2026-04-13
-content_hash: sha256:4070b3974d5b1fc2375fc7e8ba7557bc09dd1abf24b0d37b572c855cc8be1d18
+scraped_at: 2026-04-29T13:55:49+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:d2f3c2222860028101b22d8b1a74d6d9ef2310661690dc73cac26567792bb4e3
 ---
 
 实现长按页面元素或鼠标右键弹出来的菜单信息。示例代码参考[onContextMenuShow事件](arkts-basic-components-web-events.md#oncontextmenushow9)。
@@ -40,7 +40,7 @@ x(): number
 
 | 类型 | 说明 |
 | --- | --- |
-| number | 显示正常返回非负整数，否则返回-1。  单位：vp（虚拟像素）。 |
+| number | 显示正常返回非负整数，否则返回-1。  单位：px（物理像素）。 |
 
 ## y9+
 
@@ -56,7 +56,7 @@ y(): number
 
 | 类型 | 说明 |
 | --- | --- |
-| number | 显示正常返回非负整数，否则返回-1。  单位：vp（虚拟像素）。 |
+| number | 显示正常返回非负整数，否则返回-1。  单位：px（物理像素）。 |
 
 ## getLinkUrl9+
 
@@ -232,7 +232,7 @@ getPreviewWidth(): number
 
 | 类型 | 说明 |
 | --- | --- |
-| number | 预览图的宽。  单位：vp（虚拟像素）。 |
+| number | 预览图的宽。  单位：px（物理像素）。 |
 
 ## getPreviewHeight13+
 
@@ -248,7 +248,7 @@ getPreviewHeight(): number
 
 | 类型 | 说明 |
 | --- | --- |
-| number | 预览图的高。  单位：vp（虚拟像素）。 |
+| number | 预览图的高。  单位：px（物理像素）。 |
 
 ## getContextMenuMediaType22+
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/push-detail-r
 title: 通知内容管理细则
 breadcrumb: 指南 > 应用服务 > Push Kit（推送服务） > 附录 > 通知内容管理细则
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:50:37+08:00
+scraped_at: 2026-04-29T13:40:01+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:5012694c8825c87638606b022722615519f6433c099d3915ba8093e836404e94
+content_hash: sha256:cff5c0d8721b2f6fd83c9406a238f48cb46d51a5aa1d0f99e1e221c0816ed5b4
 ---
 
 ## 目的
@@ -20,7 +20,7 @@ content_hash: sha256:5012694c8825c87638606b022722615519f6433c099d3915ba8093e8364
 
 推送各元素的定义：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/ZMBXbIaPQkmJt6ZGZ0mnVQ/zh-cn_image_0000002583439187.png?HW-CC-KV=V1&HW-CC-Date=20260427T235036Z&HW-CC-Expire=86400&HW-CC-Sign=26BE4B12B527DD312764890EB5F88AFA10876D0BA65B316B284C19E025B6E09C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/r89rz6oOSlWXKEHhraDH1A/zh-cn_image_0000002589325513.png?HW-CC-KV=V1&HW-CC-Date=20260429T054000Z&HW-CC-Expire=86400&HW-CC-Sign=567FDF87A42CD21E279554EA5E470B480577F886B4111B9F1D40C5E5AF983A34)
 
 * 消息框：消息推送的整体边框、背景、布局样式。
 * 推送文字：通知标题、文本内容部分出现的所有文字。

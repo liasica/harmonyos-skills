@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: @ohos.accessibility (辅助功能)
 breadcrumb: API参考 > 应用框架 > Accessibility Kit（无障碍服务） > ArkTS API > @ohos.accessibility (辅助功能)
 category: harmonyos-references
-scraped_at: 2026-04-28T07:59:05+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:09d5d5538cd442674d90c372d6d188900187735e935a6ecafbd7990e80eeb238
+scraped_at: 2026-04-29T13:49:19+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:b80686b19d213ac6115877a6f62c652e4fde4ca8091d30dd506868b2ae0de9d5
 ---
 
 本模块提供辅助应用查询能力，包括获取辅助应用列表、获取辅助应用启用状态、获取无障碍字幕配置等。
@@ -259,7 +259,9 @@ on(type: 'enableChange', callback: Callback<boolean>): void;
 
 说明
 
-从API version 8开始支持，从API version 12开始废弃。系统不再开放相关功能。
+* 注册监听的callback参数应使用具名函数而非匿名函数，否则每次调用时会创建一个新的底层对象，引起内存泄漏问题。
+* 调用此方法后，务必在对象生命周期结束前使用[off('enableChange')](js-apis-accessibility.md#offenablechangedeprecated)取消监听，否则可能会导致崩溃。
+* 从API version 8开始支持，从API version 12开始废弃。系统不再开放相关功能。
 
 **系统能力**：SystemCapability.BarrierFree.Accessibility.Hearing
 
@@ -313,7 +315,9 @@ on(type: 'styleChange', callback: Callback<CaptionsStyle>): void;
 
 说明
 
-从API version 8开始支持，从API version 12开始废弃。系统不再开放相关功能。
+* 注册监听的callback参数应使用具名函数而非匿名函数，否则每次调用时会创建一个新的底层对象，引起内存泄漏问题。
+* 调用此方法后，务必在对象生命周期结束前使用[off('styleChange')](js-apis-accessibility.md#offstylechangedeprecated)取消监听，否则可能会导致崩溃。
+* 从API version 8开始支持，从API version 12开始废弃。系统不再开放相关功能。
 
 **系统能力**：SystemCapability.BarrierFree.Accessibility.Hearing
 
@@ -1073,6 +1077,11 @@ on(type: 'accessibilityStateChange', callback: Callback<boolean>): void
 
 监听辅助应用启用状态变化事件，使用callback异步回调。如需获取系统内辅助应用信息，推荐使用[accessibility.getAccessibilityExtensionListSync](js-apis-accessibility.md#accessibilitygetaccessibilityextensionlistsync12)。
 
+说明
+
+* 注册监听的callback参数应使用具名函数而非匿名函数，否则每次调用时会创建一个新的底层对象，引起内存泄漏问题。
+* 调用此方法后，务必在对象生命周期结束前使用[accessibility.off('accessibilityStateChange')](js-apis-accessibility.md#accessibilityoffaccessibilitystatechange)取消监听，否则可能会导致崩溃。
+
 **卡片能力：** 从API version 23开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 23开始，该接口支持在元服务中使用。
@@ -1151,6 +1160,11 @@ on(type: 'touchGuideStateChange', callback: Callback<boolean>): void
 
 监听触摸浏览功能启用状态变化事件，使用callback异步回调。如需获取系统内辅助应用信息，推荐使用[accessibility.getAccessibilityExtensionListSync](js-apis-accessibility.md#accessibilitygetaccessibilityextensionlistsync12)。
 
+说明
+
+* 注册监听的callback参数应使用具名函数而非匿名函数，否则每次调用时会创建一个新的底层对象，引起内存泄漏问题。
+* 调用此方法后，务必在对象生命周期结束前使用[accessibility.off('touchGuideStateChange')](js-apis-accessibility.md#accessibilityofftouchguidestatechange)取消监听，否则可能会导致崩溃。
+
 **卡片能力：** 从API version 23开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 23开始，该接口支持在元服务中使用。
@@ -1193,6 +1207,11 @@ on(type: 'screenReaderStateChange', callback: Callback<boolean>): void
 
 监听屏幕朗读功能启用状态变化事件，使用callback异步回调。
 
+说明
+
+* 注册监听的callback参数应使用具名函数而非匿名函数，否则每次调用时会创建一个新的底层对象，引起内存泄漏问题。
+* 调用此方法后，务必在对象生命周期结束前使用[accessibility.off('screenReaderStateChange')](js-apis-accessibility.md#accessibilityoffscreenreaderstatechange18)取消监听，否则可能会导致崩溃。
+
 **卡片能力：** 从API version 23开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 23开始，该接口支持在元服务中使用。
@@ -1231,6 +1250,11 @@ PhonePC/2in1TabletWearable
 on(type: 'touchModeChange', callback: Callback<string>): void
 
 监听触摸浏览功能下的单击/双击操作模式变化事件，使用callback异步回调。
+
+说明
+
+* 注册监听的callback参数应使用具名函数而非匿名函数，否则每次调用时会创建一个新的底层对象，引起内存泄漏问题。
+* 调用此方法后，务必在对象生命周期结束前使用[accessibility.off('touchModeChange')](js-apis-accessibility.md#accessibilityofftouchmodechange20)取消监听，否则可能会导致崩溃。
 
 **卡片能力：** 从API version 23开始，该接口支持在ArkTS卡片中使用。
 
@@ -1285,6 +1309,11 @@ onAnimationReduceStateChange(callback: Callback<boolean>): void
 
 监听减弱动效功能启用状态变化事件。使用callback异步回调。
 
+说明
+
+* 注册监听的callback参数应使用具名函数而非匿名函数，否则每次调用时会创建一个新的底层对象，引起内存泄漏问题。
+* 调用此方法后，务必在对象生命周期结束前使用[accessibility.offAnimationReduceStateChange](js-apis-accessibility.md#accessibilityoffanimationreducestatechange23)取消监听，否则可能会导致崩溃。
+
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力**：SystemCapability.BarrierFree.Accessibility.Core
@@ -1327,6 +1356,11 @@ onFlashReminderStateChange(callback: Callback<boolean>): void
 
 监听闪烁提醒功能启用状态变化事件。使用callback异步回调。
 
+说明
+
+* 注册监听的callback参数应使用具名函数而非匿名函数，否则每次调用时会创建一个新的底层对象，引起内存泄漏问题。
+* 调用此方法后，务必在对象生命周期结束前使用[accessibility.offFlashReminderStateChange](js-apis-accessibility.md#accessibilityoffflashreminderstatechange23)取消监听，否则可能会导致崩溃。
+
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力**：SystemCapability.BarrierFree.Accessibility.Core
@@ -1368,6 +1402,11 @@ PhonePC/2in1TabletWearable
 onAudioMonoStateChange(callback: Callback<boolean>): void
 
 监听单声道音频功能启用状态变化事件。使用callback异步回调。
+
+说明
+
+* 注册监听的callback参数应使用具名函数而非匿名函数，否则每次调用时会创建一个新的底层对象，引起内存泄漏问题。
+* 调用此方法后，务必在对象生命周期结束前使用[accessibility.offAudioMonoStateChange](js-apis-accessibility.md#accessibilityoffaudiomonostatechange23)取消监听，否则可能会导致崩溃。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 

@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-interac
 title: 支持鼠标输入事件
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 添加交互响应 > 输入设备与事件 > 支持鼠标输入事件
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:39:51+08:00
+scraped_at: 2026-04-29T13:28:03+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:49512602f704161efe70f728bc67ab1a3aff740f175f026e293b778521dfb009
+content_hash: sha256:8bd0b1e95a0d3285f521b8a11e3050d1c68a6dae367a092bd7656baa7db38269
 ---
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/CbYGN2-rRfeHtbZBBcChJQ/zh-cn_image_0000002583477945.png?HW-CC-KV=V1&HW-CC-Date=20260427T233950Z&HW-CC-Expire=86400&HW-CC-Sign=547D54233D83D5EC346C7BD94C593B39876998AA965B19E864B40A2F441B01C8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/OzNQdli8Qh6C8lbN7yQXOA/zh-cn_image_0000002589244243.png?HW-CC-KV=V1&HW-CC-Date=20260429T052801Z&HW-CC-Expire=86400&HW-CC-Sign=A0495C552415E7E1137731ABB7AFB0C9E66BAE1B1BE7B3A03B4899E5FF4939A3)
 
 鼠标设备是2in1类型设备必不可少的输入设备，其特点是可以通过按键达成点击或滑动操作，也可以通过滚轮触发滑动，另外还有一些按键，这些分别通过MouseEvent及AxisEvent上报给应用。
 
@@ -99,7 +99,7 @@ content_hash: sha256:49512602f704161efe70f728bc67ab1a3aff740f175f026e293b778521d
 
    右键点击时：button = 2（MouseButton.Right的枚举值），按下时：action = 1（MouseAction.Press的枚举值），抬起时：action = 2（MouseAction.Release的枚举值）。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/s14bH37vTsuXfNVNyHf4Pg/zh-cn_image_0000002552798296.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233950Z&HW-CC-Expire=86400&HW-CC-Sign=C3806B3337C6C45025D1D6C8B91700DFD05BB9B1ABBD5E6C0644A663B1A3F89C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/yWtR4aHfQWaBKxMEspqERg/zh-cn_image_0000002558764436.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052801Z&HW-CC-Expire=86400&HW-CC-Sign=5C05F6497ADBBE057439A7CDB0E042241F41544854EEF54DE9080A9C7D3FA2FB)
 
 如果需要阻止鼠标事件冒泡，可以通过调用stopPropagation方法进行设置。
 
@@ -157,7 +157,7 @@ content_hash: sha256:49512602f704161efe70f728bc67ab1a3aff740f175f026e293b778521d
 
 [StopPropagation.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/InterAction/entry/src/main/ets/pages/stopPropagation/StopPropagation.ets#L16-L66)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/goAcJWvsQVq-JWwuKevDaw/zh-cn_image_0000002583437991.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233950Z&HW-CC-Expire=86400&HW-CC-Sign=0A05B1EAADFDCA13DD3CF9BC87F0BF4DC4DB8A3B5FDF838BE07B05ED4A97AC53)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/twm7F2J2SUmahRltq1qF_g/zh-cn_image_0000002558604780.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052801Z&HW-CC-Expire=86400&HW-CC-Sign=44A50DB2AEE3DE7BA33E77383602F81D9F78DF2633E2C2EFCE051025AD41EBCD)
 
 在子组件（Button）的onMouse中，通过回调参数event调用stopPropagation回调方法（如上）即可阻止Button子组件的鼠标事件冒泡到父组件Column上。
 
@@ -207,7 +207,7 @@ content_hash: sha256:49512602f704161efe70f728bc67ab1a3aff740f175f026e293b778521d
 
 当鼠标从Button内移动到Button外的瞬间，回调响应，isHover值等于false，又将组件变成了初始的样式。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/_wo61B5sRp2gAHmdz7z5EQ/zh-cn_image_0000002552957946.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233950Z&HW-CC-Expire=86400&HW-CC-Sign=E49F277A7DF1368024C4E50C53AAC7F612A8695DC3FE2868940DB0B0D79E7FFA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/abXr3GgKR6iYT4XzHNVg7Q/zh-cn_image_0000002589324305.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052801Z&HW-CC-Expire=86400&HW-CC-Sign=8E5BBE1C8A921F26AA282451F22334407C124423A1D64AE80ACC2AB9251ACDBB)
 
 ## 处理鼠标按键
 
@@ -344,7 +344,7 @@ content_hash: sha256:49512602f704161efe70f728bc67ab1a3aff740f175f026e293b778521d
 
 [MouseButton.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/InterAction/entry/src/main/ets/pages/MouseButton/MouseButton.ets#L16-L142)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/e208rXOMSjmAcHsKqdSnNA/zh-cn_image_0000002583477947.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233950Z&HW-CC-Expire=86400&HW-CC-Sign=69D25F6D32714EA54CF7FD26E15CB2E78D91C540EACAFC32C0C6DB1105D28CCB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/bWp-8Z-dSva-dL6Irm76TQ/zh-cn_image_0000002589244245.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052801Z&HW-CC-Expire=86400&HW-CC-Sign=03C553D97DF77705079C1C3C58FC6361C11EF83734B49373E3A3FE55DC401A85)
 
 ## 处理滚轮
 
@@ -492,4 +492,4 @@ content_hash: sha256:49512602f704161efe70f728bc67ab1a3aff740f175f026e293b778521d
 
 [MouseWheel.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/InterAction/entry/src/main/ets/pages/MouseWheel/MouseWheel.ets#L16-L75)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/S6mulMUdT6eVDTtNSZ4PYQ/zh-cn_image_0000002552798298.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233950Z&HW-CC-Expire=86400&HW-CC-Sign=67EC27FE93AC31BA49580E5375E2BB0FAF5C33991660BE2C0F2DA0D84A8B9D2D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/h45KTAuVTiC33bJGvZXXMA/zh-cn_image_0000002558764438.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052801Z&HW-CC-Expire=86400&HW-CC-Sign=A2A0C27B290928D7A2C355862E59261D651A57F40278B3B028E59D003EB9AA01)

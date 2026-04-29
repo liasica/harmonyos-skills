@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 组件区域变化事件
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用事件 > 组件变化事件 > 组件区域变化事件
 category: harmonyos-references
-scraped_at: 2026-04-28T08:00:58+08:00
+scraped_at: 2026-04-29T13:51:12+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:be5aa2df1d9df7551e7796751b4156aa141258c02465a1b9c92714114545521e
+content_hash: sha256:8be670040ab947bab301e547e114415e14a9aecf6e9dab6c4b9080e1654c04aa
 ---
 
 组件区域变化事件指组件显示的尺寸、位置等发生变化时触发的事件。
@@ -80,4 +80,4 @@ PhonePC/2in1TabletTVWearable
 25. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/0zp9Rt6ZTJ2Xm8pG7drtlw/zh-cn_image_0000002552959474.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000057Z&HW-CC-Expire=86400&HW-CC-Sign=642C3B3B3DB0DF50BADAC7F69600C69452E6527BA7776D15378BC5DEC01CD8EE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/HieugruiT16JZUjL-0ienQ/zh-cn_image_0000002558765996.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055110Z&HW-CC-Expire=86400&HW-CC-Sign=84FF2D031D463122F3A40801E6B484D86FDE9B31CE91763485599915518DE744)

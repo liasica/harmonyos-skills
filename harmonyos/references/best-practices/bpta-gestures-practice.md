@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-gestures-p
 title: 手势事件冲突解决方案
 breadcrumb: 最佳实践 > 手势与导航 > 手势事件冲突解决方案
 category: best-practices
-scraped_at: 2026-04-28T08:20:00+08:00
+scraped_at: 2026-04-29T14:10:36+08:00
 doc_updated_at: 2026-03-17
-content_hash: sha256:4013fe768e07ed7a4693ba5f2d1fbfe24b6d112ebd178d1ccc6afff4535301b9
+content_hash: sha256:402ff75f8f015f122ab1ffc67f599649ec5667058c4a61970ceba42a4137dd2b
 ---
 
 ## 概述
@@ -43,23 +43,23 @@ ArkUI事件响应链收集，根据右子树（按组件布局的先后层级）
 
 其中A是最外层组件，B和D是A的子组件，C是B的子组件，E是D的子组件。界面效果示例以及组件树结构图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/A2wxJS2LTFql9SKsEi9hhw/zh-cn_image_0000002229451165.png?HW-CC-KV=V1&HW-CC-Date=20260428T001957Z&HW-CC-Expire=86400&HW-CC-Sign=D3838E5ADD035DD423059731DC00F49F3D9FD761457C5FC663B1DB37AB3D01EC "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/A2wxJS2LTFql9SKsEi9hhw/zh-cn_image_0000002229451165.png?HW-CC-KV=V1&HW-CC-Date=20260429T061034Z&HW-CC-Expire=86400&HW-CC-Sign=C63685C61F819BD814674DD53CD3501F6541C8E5E5C6D8BA4B1F53921711D418 "点击放大")
 
 用户触摸的动作如果发生在组件C上，事件响应链收集的流程如下，根据右子树（按组件布局的先后层级）优先的后序遍历流程，因为触摸点不在右边的树上，所以事件会从左边树的C节点开始往上传，触摸事件（onTouch事件）是冒泡事件默认会向上一直传递下去，直到被消费或者丢弃，允许多个组件同时触发。最终收集到的响应链是C->B->A。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/EfMxAPGITI--KINNAA_skg/zh-cn_image_0000002193851268.png?HW-CC-KV=V1&HW-CC-Date=20260428T001957Z&HW-CC-Expire=86400&HW-CC-Sign=88E53F5FDA5F317CBF47847E116C5E462F8D2DB929946451364FFB2B15027CA6 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/EfMxAPGITI--KINNAA_skg/zh-cn_image_0000002193851268.png?HW-CC-KV=V1&HW-CC-Date=20260429T061034Z&HW-CC-Expire=86400&HW-CC-Sign=745ED7455A581105EF358E5CA0CD8D61B1A38077ECCF37DA5B5FD6003D4AEBCF "点击放大")
 
 用户触摸的动作如果发生在组件E上，事件响应链收集的流程如下，根据右子树优先的后序遍历流程，所以事件会从右边树的D节点开始往上传。虽然触摸点在组件D和组件B的交集上，但组件D的[hitTestBehavior](../harmonyos-references/ts-universal-attributes-hit-test-behavior.md)属性默认为HitTestMode.Default，D组件收集到事件后会阻塞兄弟节点（组件B），所以没有收集组件A的左子树，最终收集到的响应链是E->D->A。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/X_yyXGZxSMWIGEYMWYk93A/zh-cn_image_0000002194010868.png?HW-CC-KV=V1&HW-CC-Date=20260428T001957Z&HW-CC-Expire=86400&HW-CC-Sign=0D0C5CF28F9C273877A00608C166FA3955BDEDDF4A1A3284C57A6078EB3E93D1 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/X_yyXGZxSMWIGEYMWYk93A/zh-cn_image_0000002194010868.png?HW-CC-KV=V1&HW-CC-Date=20260429T061034Z&HW-CC-Expire=86400&HW-CC-Sign=323671B85EB7A77F4646B5BD0DCF01517976243BEE75A34E51BBA16CFBC73509 "点击放大")
 
 上面介绍的事件响应链是系统默认的行为，如果需要改变响应的成员，比如触摸组件E的时候，希望把事件传递给B，该怎么实现呢？开发者可以通过设置D组件的hitTestMode属性为HitTestMode.None或者HitTestMode.Transparent来实现，比如设置为HitTestMode.Transparent，那么组件D自身进行触摸测试，同时不阻塞兄弟及父组件。最终收集到的响应链是E->D->B->A。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/MbyUiaTLSSW15tOaMh_ASQ/zh-cn_image_0000002194010860.png?HW-CC-KV=V1&HW-CC-Date=20260428T001957Z&HW-CC-Expire=86400&HW-CC-Sign=DEE31FED83F7CE95D2125F2F183A5D3EE67D5527E216AD054DBCA5CDFB081B98 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/MbyUiaTLSSW15tOaMh_ASQ/zh-cn_image_0000002194010860.png?HW-CC-KV=V1&HW-CC-Date=20260429T061034Z&HW-CC-Expire=86400&HW-CC-Sign=2893B352192D32221A6383725476D07282F53B7D31BC719C6875AAFA619D47F1 "点击放大")
 
 又例如触摸E组件的时候，只希望E响应触摸事件，不让其它组件响应触摸事件。可以通过[stopPropagation](../harmonyos-references/ts-universal-events-touch.md#touchevent对象说明)来阻止事件冒泡，阻止触摸事件往上传递；也可以通过设置E组件的hitTestMode属性为HitTestMode.Block来实现，那么最终收集到的响应链成员只有组件E。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/2d0g_go8RUiuhMWjO_4isA/zh-cn_image_0000002229451161.png?HW-CC-KV=V1&HW-CC-Date=20260428T001957Z&HW-CC-Expire=86400&HW-CC-Sign=6B0794505F50FA543B268E37894A627A1E915C31B25F4970AEB6AA256AEB2EBB "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/2d0g_go8RUiuhMWjO_4isA/zh-cn_image_0000002229451161.png?HW-CC-KV=V1&HW-CC-Date=20260429T061034Z&HW-CC-Expire=86400&HW-CC-Sign=A279E1FC03F6678C3277EA148AACF9BB86A93D6172EA5E6B8230774D1EF9A2D5 "点击放大")
 
 除了hitTestMode和stopPropagation，影响事件响应链的更多因素可以参考：[触摸测试控制](../harmonyos-references/ts-universal-attributes-hit-test-behavior.md)。
 
@@ -86,7 +86,7 @@ ArkUI事件响应链收集，根据右子树（按组件布局的先后层级）
 
 **图1** 手势响应优先级（从左至右，优先级由高到低）
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/_B4gsWR_QKSmXA0mOHnF2A/zh-cn_image_0000002193851288.png?HW-CC-KV=V1&HW-CC-Date=20260428T001957Z&HW-CC-Expire=86400&HW-CC-Sign=2FC844ACE35D74C0CBD03055270ADE45C5A88C033D79C72EAE1486D0758482E6 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/_B4gsWR_QKSmXA0mOHnF2A/zh-cn_image_0000002193851288.png?HW-CC-KV=V1&HW-CC-Date=20260429T061034Z&HW-CC-Expire=86400&HW-CC-Sign=D0249EDFEFCA05893526C2B24119D802F902DD0933A92B2D4C8BDFB5B8EC85E8 "点击放大")
 
 ### 手势响应控制
 
@@ -108,7 +108,7 @@ ArkUI事件响应链收集，根据右子树（按组件布局的先后层级）
 
 **图2** 手势响应优先级（从左至右，优先级由高到低）
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/iCX5hks_SNiHOOjkQQKKjg/zh-cn_image_0000002194010864.png?HW-CC-KV=V1&HW-CC-Date=20260428T001957Z&HW-CC-Expire=86400&HW-CC-Sign=3BF1819DFBD2B96E2F0ABE61C2A1B3C034B6E8137DD6C21BCB4AE81BC5711DDB "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/iCX5hks_SNiHOOjkQQKKjg/zh-cn_image_0000002194010864.png?HW-CC-KV=V1&HW-CC-Date=20260429T061034Z&HW-CC-Expire=86400&HW-CC-Sign=6336864F9AED3EC83BC0EF57401BF686B6B064C0C443B460F039752D6382B3D6 "点击放大")
 
 **GestureMask枚举说明**
 

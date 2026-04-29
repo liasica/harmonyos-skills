@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-count
 title: CountBitsCntSameAsSignBit
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > AscendC API > 基础API > 标量计算 > CountBitsCntSameAsSignBit
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:51:39+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:b7635fa5ca22cf2b1baf087b98e620fe90aab56ff4ea51439a6113b0ebcf6bef
+scraped_at: 2026-04-29T13:41:23+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:267c3037c4ee1aab8756c74fee2df4f85bcd68d8c4f32e274181744e3855bf85
 ---
 
 ## 功能说明
 
-计算一个uint64\_t类型数字的二进制中，从最高数值位开始与符号位相同的连续比特位的个数。
+计算一个int64\_t类型数字的二进制中，从最高数值位开始与符号位相同的连续比特位的个数。
 
 当输入是-1（比特位全1）或者0（比特位全0）时，返回-1。
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-audio-reco
 title: 基于AVRecorder录制格式化音频（ArkTS）
 breadcrumb: 最佳实践 > 媒体 > 音频和视频 > 音频录制系列开发实践 > 基于AVRecorder录制格式化音频（ArkTS）
 category: best-practices
-scraped_at: 2026-04-28T08:20:39+08:00
+scraped_at: 2026-04-29T14:11:28+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:c0aea27812800465d7d67661f6dcc467f30b5a22a7eabdb41896880005bdd3e5
+content_hash: sha256:76a3e67f3c35ecc05e4ab3833cb30bbdf722c895918656fcf0676bd4bb58d49c
 ---
 
 ## 概述
@@ -14,7 +14,7 @@ AVRecorder集成了音频输入录制、音频编码和媒体封装的功能，�
 
 基于AVRecorder录制格式化音频（ArkTS）实现的功能效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/RIYVxnGXSAi80mE_vqXkew/zh-cn_image_0000002524061074.gif?HW-CC-KV=V1&HW-CC-Date=20260428T002038Z&HW-CC-Expire=86400&HW-CC-Sign=FBF2B2F7758C8E5C02CFC81286DDB0EF46985CDED91E81A081B0D1E381D568CD "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/RIYVxnGXSAi80mE_vqXkew/zh-cn_image_0000002524061074.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061127Z&HW-CC-Expire=86400&HW-CC-Sign=1548D2FC1EF97DAC7D18F3F9B6617D83B8F5F0384E16478AC44776889112AD3B "点击放大")
 
 本文的主要内容如下：
 
@@ -30,7 +30,7 @@ AVRecorder提供了开始录制、暂停录制、恢复录制、停止录制、�
 
 **图1** 录制状态变化示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/Q4g4KXTRS-ms-9R358kvkA/zh-cn_image_0000002555220983.png?HW-CC-KV=V1&HW-CC-Date=20260428T002038Z&HW-CC-Expire=86400&HW-CC-Sign=3224073E114A3074453FBC97D1BC3316BA6815D33D6D1005323A2802906BA66A "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/Q4g4KXTRS-ms-9R358kvkA/zh-cn_image_0000002555220983.png?HW-CC-KV=V1&HW-CC-Date=20260429T061127Z&HW-CC-Expire=86400&HW-CC-Sign=7DF5C6E6752CCE4C339D7ED1F1B5F05AFA4692A5E1C6310B77D47B3D752B90BA "点击放大")
 
 ### 开发步骤
 

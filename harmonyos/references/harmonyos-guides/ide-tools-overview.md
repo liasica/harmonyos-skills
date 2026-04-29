@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-tools-ove
 title: 工具概述
 breadcrumb: 指南 > 开发环境搭建 > 工具概述
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:54:33+08:00
+scraped_at: 2026-04-29T13:44:32+08:00
 doc_updated_at: 2026-03-17
-content_hash: sha256:d9eb0910a366c71ef10c1c4f59f756d42e20b56d69a0b5f909c77421739b593b
+content_hash: sha256:b80ea8a6bdee6d28f47e414ec0e12e4eb52a720d80139dbdc19dd2513e1ee002
 ---
 
 ## HarmonyOS应用/元服务开发
@@ -28,7 +28,7 @@ HUAWEI DevEco Studio（获取工具请单击[链接下载](https://developer.hua
 
 开发一个应用/元服务流程如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/M9HKDRrHRhuG3YViHIGsSQ/zh-cn_image_0000002561753617.png?HW-CC-KV=V1&HW-CC-Date=20260427T235402Z&HW-CC-Expire=86400&HW-CC-Sign=CADE8E5DC09841741BDC2E9B1AA01F9786A080C1694EEFBC283221529AB4B5D6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/M5TBJ0w3Sq2CLGat-Iv_YA/zh-cn_image_0000002561753617.png?HW-CC-KV=V1&HW-CC-Date=20260429T054419Z&HW-CC-Expire=86400&HW-CC-Sign=E5E8D02E5B68AE23883EFF016B2D8F5D3A3038A4D30A25BAE0B9E71FC171F39B)
 
 **一、开发准备**
 

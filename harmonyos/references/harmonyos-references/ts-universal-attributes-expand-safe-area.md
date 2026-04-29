@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 安全区域
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 布局与边框 > 安全区域
 category: harmonyos-references
-scraped_at: 2026-04-28T08:01:04+08:00
+scraped_at: 2026-04-29T13:51:17+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:8e63d59e0e3c09861f8427b6d32540672552865bc2edfa963aa55c0f32f10cad
+content_hash: sha256:8b8b14ec4732053a1a1fdeb80d7f8ea990c393c594630224ef891531434a5c0e
 ---
 
 安全区域是指页面的显示区域，默认情况下开发者开发的界面都布局在安全区域内，不与系统设置的避让区比如状态栏、导航栏区域重叠。提供属性方法允许开发者设置组件绘制内容突破安全区域的限制，通过[expandSafeArea](ts-universal-attributes-expand-safe-area.md#expandsafearea)属性支持组件不改变布局情况下扩展其绘制区域至安全区外，通过设置[setKeyboardAvoidMode](ts-universal-attributes-expand-safe-area.md#setkeyboardavoidmode11)来配置虚拟键盘弹出时页面的避让模式。页面中有标题栏等文字不希望和避让区重叠时，建议对组件设置expandSafeArea属性实现沉浸式效果，也可直接通过窗口接口[setWindowLayoutFullScreen](arkts-apis-window-window.md#setwindowlayoutfullscreen9)实现全屏沉浸式效果。
@@ -246,7 +246,7 @@ PhonePC/2in1TabletTVWearable
 19. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/tW1TrxBRTHC-LBfHQ2oS3Q/zh-cn_image_0000002552959496.png?HW-CC-KV=V1&HW-CC-Date=20260428T000102Z&HW-CC-Expire=86400&HW-CC-Sign=43A3E803E8234B23884D1B9D8BFB901BAB9E5A819F2BDA9468D69432548095C4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/lToDiVNaTsGXDalFodd57Q/zh-cn_image_0000002558766018.png?HW-CC-KV=V1&HW-CC-Date=20260429T055115Z&HW-CC-Expire=86400&HW-CC-Sign=849B9F5C49F4FDF51DA81EE5EB7B7D3C858F86DAC3252624C52027E0CABB95E1)
 
 ### 示例2（同时设置固定宽高和expandSafeArea属性）
 
@@ -278,7 +278,7 @@ PhonePC/2in1TabletTVWearable
 
 如下图：Column组件扩展至了顶部状态栏[SafeAreaEdge.TOP]，未扩展至底部导航条[SafeAreaEdge.BOTTOM]，扩展后的组件高度维持设置值不变。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/SY6Wsz10RiCaEAckE01FzQ/zh-cn_image_0000002583479497.png?HW-CC-KV=V1&HW-CC-Date=20260428T000102Z&HW-CC-Expire=86400&HW-CC-Sign=21A2686AA7DB8CA441059E1D5AF5855F5C42FF94A1C313ADCED54AA454D613ED)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/YcuAN5YMQhWD_EorkY5FdQ/zh-cn_image_0000002558606360.png?HW-CC-KV=V1&HW-CC-Date=20260429T055115Z&HW-CC-Expire=86400&HW-CC-Sign=7862254779D6CAF4A34027DB9010C6DF396C319E331D3E7DD6BB3CF05682B1B7)
 
 ### 示例3（键盘避让时固定背景图位置）
 
@@ -322,7 +322,7 @@ PhonePC/2in1TabletTVWearable
 35. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/KV7p0Jj-Q9OYlxHjjGtSYw/zh-cn_image_0000002552799848.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000102Z&HW-CC-Expire=86400&HW-CC-Sign=7A5A495914D54120062B0BED31B17DBC38CCEC165EF500F42620106EFF9C03BC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/l_1ToHTbTwOmm16v5t1E_Q/zh-cn_image_0000002589325887.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055115Z&HW-CC-Expire=86400&HW-CC-Sign=1D1801784C39408DB06E107F1259BC85AF897E2A49F479DC0577D2D2707F8ABD)
 
 ### 示例4（设置键盘避让模式为压缩）
 
@@ -376,7 +376,7 @@ PhonePC/2in1TabletTVWearable
 23. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/9ZiPHDLxQ_uLSA6GgCL3xw/zh-cn_image_0000002583439543.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000102Z&HW-CC-Expire=86400&HW-CC-Sign=6CF4B71F2EA880C5A0970E89E5036AD56A1B7C3B8E3BE52B39B879E7F0DFD5C6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/F7LtSKspR9mPvQeKv3C5oQ/zh-cn_image_0000002589245829.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055115Z&HW-CC-Expire=86400&HW-CC-Sign=00D3015B8DD38C3F61B91BBB7AF5610EC8955053AAC6BAD831F6E93C1B56228E)
 
 ### 示例5（设置键盘避让模式为上抬）
 
@@ -430,7 +430,7 @@ PhonePC/2in1TabletTVWearable
 23. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/9YPy3ZX2QNCVoeEuMo1YDw/zh-cn_image_0000002552959498.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000102Z&HW-CC-Expire=86400&HW-CC-Sign=AB0F6830A222CFF0EEF3099AF63508F98111AABC5A0166F778D78DC80E1AB542)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/FmuwJwy1RZaMjKN7SHfhHw/zh-cn_image_0000002558766020.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055115Z&HW-CC-Expire=86400&HW-CC-Sign=73C87527F0584EB02905E39279893DF85E290DC7B2CBA4214C714F5FEFEC46D5)
 
 ### 示例6（切换避让模式）
 
@@ -489,7 +489,7 @@ PhonePC/2in1TabletTVWearable
 50. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/E1O-E792S3ekVgQYhu2keg/zh-cn_image_0000002583479499.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000102Z&HW-CC-Expire=86400&HW-CC-Sign=BCC20C299B2F5D214B2E8DF27A57A867A70DEBAE23556A8904459922E3F5A581)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/EOhCqxMXR72uCJ-w3JEUng/zh-cn_image_0000002558606362.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055115Z&HW-CC-Expire=86400&HW-CC-Sign=9D902537702B810F901C27EB1CE4B61BFED7A3723065302EDCA38BFE7D8A7156)
 
 ### 示例7（滚动类容器扩展安全区）
 
@@ -555,7 +555,7 @@ PhonePC/2in1TabletTVWearable
 57. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/yuaY27cMSIu5WR1FQxsT9A/zh-cn_image_0000002552799850.png?HW-CC-KV=V1&HW-CC-Date=20260428T000102Z&HW-CC-Expire=86400&HW-CC-Sign=B0898451614CE27819BBFE90B57E237CCBFF5300E64ACD747A5C17438AD61711)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/Fke-XfuJTICekup9gSpbhg/zh-cn_image_0000002589325889.png?HW-CC-KV=V1&HW-CC-Date=20260429T055115Z&HW-CC-Expire=86400&HW-CC-Sign=D1F16AD3670C2238FBB9D079079F9A4B7010FB3D6DA04FFBD2DC69D934A6775E)
 
 ### 示例8（ignoreLayoutSafeArea延伸组件布局范围）
 
@@ -596,7 +596,7 @@ PhonePC/2in1TabletTVWearable
 32. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/Lf7MrMXvSvabNGSNlZkq4Q/zh-cn_image_0000002583439545.jpg?HW-CC-KV=V1&HW-CC-Date=20260428T000102Z&HW-CC-Expire=86400&HW-CC-Sign=AF53FAE20F7720DD347C379C53DE1116385F680108A2728DCAC3E82AA90A786F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/6GoDWee2RtSXqQ1nNIDtUw/zh-cn_image_0000002589245831.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T055115Z&HW-CC-Expire=86400&HW-CC-Sign=54E6E703026500E232904DA4ED14B24BAD9921ED9B97836E23F4808666DDBF01)
 
 ### 示例9（ignoreLayoutSafeArea配合LayoutPolicy.matchParent延伸组件布局范围）
 
@@ -635,7 +635,7 @@ PhonePC/2in1TabletTVWearable
 30. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/xQn9hIidRaCP28MVlrZkTQ/zh-cn_image_0000002552959500.jpg?HW-CC-KV=V1&HW-CC-Date=20260428T000102Z&HW-CC-Expire=86400&HW-CC-Sign=5904E61C1CB5460E0BB3675E33E87271E2FC55CB42A148882AA31DF1EFDE6D53)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/Zo_X1NHGSnSU4WgWD8Zohw/zh-cn_image_0000002558766022.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T055115Z&HW-CC-Expire=86400&HW-CC-Sign=3FAFFB90BDAC36152EFD742F2B70E4212C02355B233046BF4F44DD09BFA2EDC5)
 
 ### 示例10（expandSafeArea与ignoreLayoutSafeArea的区别）
 
@@ -709,4 +709,4 @@ PhonePC/2in1TabletTVWearable
 65. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/_8JcWCMbQQ2iTEL7FkxIVQ/zh-cn_image_0000002583479501.jpg?HW-CC-KV=V1&HW-CC-Date=20260428T000102Z&HW-CC-Expire=86400&HW-CC-Sign=ECC64BF170A23AD971508716332B4F669DCB43A28240C9E7583D23B2FAA6A412)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/MreRD-5HR7eHOIED2lLufg/zh-cn_image_0000002558606364.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T055115Z&HW-CC-Expire=86400&HW-CC-Sign=718837ABE52329920E8B0FA9BF0265D12EE17F45BACFD781F9AA2770FC050B89)

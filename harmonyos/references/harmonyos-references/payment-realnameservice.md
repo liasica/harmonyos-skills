@@ -3,16 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/payment-r
 title: realNameService(身份验证服务)
 breadcrumb: API参考 > 应用服务 > Payment Kit（鸿蒙支付服务） > ArkTS API > realNameService(身份验证服务)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:17:40+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:b66f3209ca1f1caa47d1caa68382264f9ca0704d22dbdf419b3c0f104dab964c
+scraped_at: 2026-04-29T14:08:21+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:959878050cff26d5dd82ec5830170bfe65d3cb8287a65437ae6df27d64856647
 ---
 
 本模块提供身份验证服务，包括“实名信息验证”、“实名信息授权”和“人脸核身实人验证”三种功能。
 
 **模型约束：** 本模块接口仅可在Stage模型下使用。
 
-**元服务API**： 从版本5.1.1(19)开始，该接口支持在元服务中使用。
+**元服务API：** 从版本5.1.1(19)开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Payment.RealNameService
 
 **起始版本：** 5.1.1(19)
 
@@ -24,7 +26,7 @@ PhoneTablet
 1. import { realNameService } from '@kit.PaymentKit';
 ```
 
-## realNameService.startRealNameVerification
+## startRealNameVerification
 
 PhoneTablet
 
@@ -70,6 +72,8 @@ startRealNameVerification(context: common.UIAbilityContext | common.UIExtensionC
 
 **示例**：
 
+示例中的context的获取方式请参见[获取UIAbility的上下文信息](../harmonyos-guides/uiability-usage.md#获取uiability的上下文信息)
+
 ```
 1. import { BusinessError } from '@kit.BasicServicesKit';
 2. import { realNameService } from '@kit.PaymentKit';
@@ -80,36 +84,32 @@ startRealNameVerification(context: common.UIAbilityContext | common.UIExtensionC
 7. struct Index {
 8. context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
 9. requestStartRealNameVerificationPromise() {
-10. // use your own preVerifyId
+10. // 请使用开发者真实的预验证ID（preVerifyId）
 11. let preVerifyId = '';
 12. realNameService.startRealNameVerification(this.context, preVerifyId)
 13. .then((verifyResultId: string) => {
-14. // verify success
+14. // 验证成功
 15. console.info(`succeeded in verifying, verifyResultId: ${verifyResultId}`);
 16. })
-17. .catch((error: BusinessError) => {
-18. // failed to verify
-19. console.error(`failed to verify, error.code: ${error.code}, error.message: ${error.message}`);
-20. });
-21. }
+17. }
 
-23. build() {
-24. Column() {
-25. Button('requestStartRealNameVerificationPromise')
-26. .type(ButtonType.Capsule)
-27. .width('50%')
-28. .margin(20)
-29. .onClick(() => {
-30. this.requestStartRealNameVerificationPromise();
-31. })
+19. build() {
+20. Column() {
+21. Button('requestStartRealNameVerificationPromise')
+22. .type(ButtonType.Capsule)
+23. .width('50%')
+24. .margin(20)
+25. .onClick(() => {
+26. this.requestStartRealNameVerificationPromise();
+27. })
+28. }
+29. .width('100%')
+30. .height('100%')
+31. }
 32. }
-33. .width('100%')
-34. .height('100%')
-35. }
-36. }
 ```
 
-## realNameService.startRealNameAuth
+## startRealNameAuth
 
 PhoneTablet
 
@@ -151,6 +151,8 @@ startRealNameAuth(context: common.UIAbilityContext | common.UIExtensionContext):
 
 **示例**：
 
+示例中的context的获取方式请参见[获取UIAbility的上下文信息](../harmonyos-guides/uiability-usage.md#获取uiability的上下文信息)
+
 ```
 1. import { BusinessError } from '@kit.BasicServicesKit';
 2. import { realNameService } from '@kit.PaymentKit';
@@ -163,32 +165,28 @@ startRealNameAuth(context: common.UIAbilityContext | common.UIExtensionContext):
 9. requestStartRealNameAuthPromise() {
 10. realNameService.startRealNameAuth(this.context)
 11. .then((realNameAuthId: string) => {
-12. // authorize success
+12. // 授权成功
 13. console.info(`succeeded in authorizing, realNameAuthId: ${realNameAuthId}`);
 14. })
-15. .catch((error: BusinessError) => {
-16. // failed to authorise
-17. console.error(`failed to authorise, error.code: ${error.code}, error.message: ${error.message}`);
-18. });
-19. }
+15. }
 
-21. build() {
-22. Column() {
-23. Button('requestStartRealNameAuthPromise')
-24. .type(ButtonType.Capsule)
-25. .width('50%')
-26. .margin(20)
-27. .onClick(() => {
-28. this.requestStartRealNameAuthPromise();
-29. })
+17. build() {
+18. Column() {
+19. Button('requestStartRealNameAuthPromise')
+20. .type(ButtonType.Capsule)
+21. .width('50%')
+22. .margin(20)
+23. .onClick(() => {
+24. this.requestStartRealNameAuthPromise();
+25. })
+26. }
+27. .width('100%')
+28. .height('100%')
+29. }
 30. }
-31. .width('100%')
-32. .height('100%')
-33. }
-34. }
 ```
 
-## realNameService.startFaceVerification
+## startFaceVerification
 
 PhoneTablet
 
@@ -236,6 +234,8 @@ startFaceVerification(context: common.UIAbilityContext | common.UIExtensionConte
 
 **示例**：
 
+示例中的context的获取方式请参见[获取UIAbility的上下文信息](../harmonyos-guides/uiability-usage.md#获取uiability的上下文信息)
+
 ```
 1. import { BusinessError } from '@kit.BasicServicesKit';
 2. import { realNameService } from '@kit.PaymentKit';
@@ -246,31 +246,27 @@ startFaceVerification(context: common.UIAbilityContext | common.UIExtensionConte
 7. struct Index {
 8. context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
 9. requestStartFaceVerificationPromise() {
-10. // use your own preVerifyId
+10. // 请使用开发者真实的预验证ID（preVerifyId）
 11. let preVerifyId = '';
 12. realNameService.startFaceVerification(this.context, preVerifyId)
 13. .then((verifyResultId:string ) => {
-14. // face verification success
+14. // 人脸验证成功
 15. console.info(`succeeded in face verifying, verifyResultId: ${verifyResultId}`);
 16. })
-17. .catch((error: BusinessError) => {
-18. // failed to face verification
-19. console.error(`failed to face verification, error.code: ${error.code}, error.message: ${error.message}`);
-20. });
-21. }
+17. }
 
-23. build() {
-24. Column() {
-25. Button('requestStartFaceVerificationPromise')
-26. .type(ButtonType.Capsule)
-27. .width('50%')
-28. .margin(20)
-29. .onClick(() => {
-30. this.requestStartFaceVerificationPromise();
-31. })
+19. build() {
+20. Column() {
+21. Button('requestStartFaceVerificationPromise')
+22. .type(ButtonType.Capsule)
+23. .width('50%')
+24. .margin(20)
+25. .onClick(() => {
+26. this.requestStartFaceVerificationPromise();
+27. })
+28. }
+29. .width('100%')
+30. .height('100%')
+31. }
 32. }
-33. .width('100%')
-34. .height('100%')
-35. }
-36. }
 ```

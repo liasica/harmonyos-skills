@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: Popup
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > Popup
 category: harmonyos-references
-scraped_at: 2026-04-28T08:02:38+08:00
+scraped_at: 2026-04-29T13:53:01+08:00
 doc_updated_at: 2026-04-08
-content_hash: sha256:b808a2187b0f2551c63f81d66ce151a41dfbdc86e17fa843a267020edbd02006
+content_hash: sha256:98e93254d2852d24142ac94f9ba1825fe6e0b61c65dc01b5da9d87c15d251a6e
 ---
 
 Popup是用于显示特定样式气泡。
@@ -200,7 +200,7 @@ PhonePC/2in1TabletTVWearable
 61. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/Ji0J9EAkT16rqJb1DIOtog/zh-cn_image_0000002552800470.png?HW-CC-KV=V1&HW-CC-Date=20260428T000237Z&HW-CC-Expire=86400&HW-CC-Sign=E1945C7CFC9BD07589269528658EB68DD7E963B0A6EBCA810C08EDE1C8829FB4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/rGQtmNB1RUGmEz77DMbLZQ/zh-cn_image_0000002589246453.png?HW-CC-KV=V1&HW-CC-Date=20260429T054912Z&HW-CC-Expire=86400&HW-CC-Sign=A7091219948F0A606BB0DA9E845E5C1E661F45E3D10D8EEB25FB3413EE87B086)
 
 ### 示例 2（设置镜像效果）
 
@@ -275,7 +275,7 @@ PhonePC/2in1TabletTVWearable
 66. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/XE2LldzlSHG7BFhBjXEs7g/zh-cn_image_0000002583440165.png?HW-CC-KV=V1&HW-CC-Date=20260428T000237Z&HW-CC-Expire=86400&HW-CC-Sign=6E3764FB88251D40F14E85EAC1290BAED9D3E09BD36DCBF203DE7FFE41BC3F0C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/uXIWcsHEQGqGtgBfEl5xyg/zh-cn_image_0000002558766646.png?HW-CC-KV=V1&HW-CC-Date=20260429T054912Z&HW-CC-Expire=86400&HW-CC-Sign=8D10A1530BDCF1804ABAE31674A7780604704E93404E3A89A49514E2FAAA1705)
 
 ### 示例3（设置自定义宽度）
 
@@ -342,4 +342,4 @@ PhonePC/2in1TabletTVWearable
 58. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/aissCkaIT1i4JfOAaU3izg/zh-cn_image_0000002552960120.png?HW-CC-KV=V1&HW-CC-Date=20260428T000237Z&HW-CC-Expire=86400&HW-CC-Sign=78C5BD16FB7846ED0B9B95D6BD93311AC60DD4FC955A50FCABDCA0547B9DD0F9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/uownckouT9WT0Ci_3peXqQ/zh-cn_image_0000002558606986.png?HW-CC-KV=V1&HW-CC-Date=20260429T054912Z&HW-CC-Expire=86400&HW-CC-Sign=1568B8329729003A20F2CA04E011E189631ABF5A9182FA549F6CC7091614EDCC)

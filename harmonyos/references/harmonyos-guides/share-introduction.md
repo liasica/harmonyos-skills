@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/share-introdu
 title: Share Kit简介
 breadcrumb: 指南 > 应用服务 > Share Kit（分享服务） > Share Kit简介
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:50:58+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:c2c82621f03452d197a45bf0530c4153107c007a2e66e8def0d0494c5efa35e4
+scraped_at: 2026-04-29T13:40:32+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:85983076a4105d0182000798eb3222a32a8be8e391f23c9c7e2e1bf100bc26bc
 ---
 
 Share Kit（分享服务）为应用提供文本、图片、视频等内容跨应用、跨端分享能力。
@@ -21,15 +21,15 @@ Share Kit（分享服务）提供的[SampleCode示例工程](https://gitcode.com
 
 **图1** 手机分享面板效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/LvBQfw-VS0-riEszwGyJwQ/zh-cn_image_0000002552799526.png?HW-CC-KV=V1&HW-CC-Date=20260427T235056Z&HW-CC-Expire=86400&HW-CC-Sign=8A8DC2DDB4966C64FDD7DD46D089D3A9C412BE41B98F8AA299125F3FE60BA644)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/8K00mYmnQzSr402zcF9fyw/zh-cn_image_0000002558606020.png?HW-CC-KV=V1&HW-CC-Date=20260429T054030Z&HW-CC-Expire=86400&HW-CC-Sign=71BB3787FF6C6CC05AB4F6229509DDF85386D1AFEBE9F1F4CE65DEC0BB00C3CB)
 
 **图2** 手机碰一碰跨端发起华为分享效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/kCcjFUjbRomq5hIvLHpnvQ/zh-cn_image_0000002583439221.gif?HW-CC-KV=V1&HW-CC-Date=20260427T235056Z&HW-CC-Expire=86400&HW-CC-Sign=0D62B34F449FC08A40969B2D15A6F24ABD2C737D58A3652002077D352AF3E707)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/f95_r6NwQKKGxBTZDTPN7g/zh-cn_image_0000002589325547.gif?HW-CC-KV=V1&HW-CC-Date=20260429T054030Z&HW-CC-Expire=86400&HW-CC-Sign=FF06C7BE0B321DCAB97A1B3B4A60C463D371D35453D62CF27ED7DB86756BBB60)
 
 **图3** 手机与PC/2in1设备碰一碰分享效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/bA0-ax4nRMS6a4O3ij6Mzw/zh-cn_image_0000002552959176.gif?HW-CC-KV=V1&HW-CC-Date=20260427T235056Z&HW-CC-Expire=86400&HW-CC-Sign=E1FA69F3D4DC522353FFA73EA9D040CA6AA0BAA5F1B223D045594CF1D1027CCB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/4yB9K9ztQd2W8jxf5WLa6Q/zh-cn_image_0000002589245485.gif?HW-CC-KV=V1&HW-CC-Date=20260429T054030Z&HW-CC-Expire=86400&HW-CC-Sign=9CFB461A6EE7824309D975FE9F27F9A6916B64E9970C5401A66BDE054EFB5153)
 
 ## 基本概念
 
@@ -62,7 +62,7 @@ Share Kit（分享服务）提供的[SampleCode示例工程](https://gitcode.com
 
 **图4** 分享运行机制
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/UKrml_LPTxCiP3Ov70umjw/zh-cn_image_0000002583479177.png?HW-CC-KV=V1&HW-CC-Date=20260427T235056Z&HW-CC-Expire=86400&HW-CC-Sign=29DA155DAC305255F4C0619064A23D20DA260CF98A965BEB009F03FBE47A40E8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/TznkgdWGRc-xdgtAzRW-8Q/zh-cn_image_0000002558765678.png?HW-CC-KV=V1&HW-CC-Date=20260429T054030Z&HW-CC-Expire=86400&HW-CC-Sign=0303AE3318CA4302223F5A9417F9DE1921D4469B2AA3E13C818E6AF5988E859E)
 
 | 应用类型 | 相关逻辑 |
 | --- | --- |
@@ -87,4 +87,4 @@ Share Kit（分享服务）提供的[SampleCode示例工程](https://gitcode.com
 
 本Kit支持模拟器。
 
-模拟器与真机存在通用差异，详情请参见“[模拟器与真机的差异](ide-emulator-specification.md#section38231424133213)”。
+模拟器与真机存在通用差异，详情请参见“[模拟器与真机的差异](ide-emulator-specification.md)”。

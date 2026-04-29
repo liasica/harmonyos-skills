@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pipwindow-typ
 title: 使用typeNode实现画中画功能开发（ArkTS）
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 窗口管理 > 在应用程序中使用画中画功能 > 使用typeNode实现画中画功能开发（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:40:44+08:00
+scraped_at: 2026-04-29T13:29:06+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:d0bd388d8e7a8323cc78794699459d9bb33001d19fa0f6e8740bfb32b33f515b
+content_hash: sha256:d5e8cf478e962fd8a5250afa438977c65ecd04104095c03cc5879b06ce26d03a
 ---
 
 说明
@@ -483,7 +483,7 @@ content_hash: sha256:d0bd388d8e7a8323cc78794699459d9bb33001d19fa0f6e8740bfb32b33
 
 以上示例代码对应的示意图如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/KboHQEDqR3upeaQTtPZ2Gg/zh-cn_image_0000002552958180.gif?HW-CC-KV=V1&HW-CC-Date=20260427T234042Z&HW-CC-Expire=86400&HW-CC-Sign=020A0DFF77F7A9A7291C64BA90CE29044EDD6204626BBFC831459E4F727CBCEE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/dFz3oNNOSDCC6SYosL3f9A/zh-cn_image_0000002589324541.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052903Z&HW-CC-Expire=86400&HW-CC-Sign=D57F19283FB9F799EC3394791CB04A820E72B7ADBEF125EC4F1A9DD9BE87AE7E)
 
 ## 应用使用router导航时通过typeNode实现画中画功能
 
@@ -965,7 +965,7 @@ content_hash: sha256:d0bd388d8e7a8323cc78794699459d9bb33001d19fa0f6e8740bfb32b33
 
 以上示例代码对应的示意图如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/HM5-mS9GRnilzmmYJoqYkA/zh-cn_image_0000002552798530.gif?HW-CC-KV=V1&HW-CC-Date=20260427T234042Z&HW-CC-Expire=86400&HW-CC-Sign=252EDDD0662EED190BF26E475B7D7721A674CB5EC5D4EE5DFC3D33B0D934EEBB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/LqdWzU3RR46zMfACWsDihg/zh-cn_image_0000002558764670.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052903Z&HW-CC-Expire=86400&HW-CC-Sign=D651059D9F46F0ECA51309DD8C4FC4AF27C39395CE416700D7E41650B1BC9AD3)
 
 ## 应用使用Navigation导航时通过typeNode实现画中画功能
 
@@ -1450,7 +1450,7 @@ content_hash: sha256:d0bd388d8e7a8323cc78794699459d9bb33001d19fa0f6e8740bfb32b33
 
 以上示例代码对应的示意图如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/sTMvYPHwRZuoiT2ZEipJag/zh-cn_image_0000002552798530.gif?HW-CC-KV=V1&HW-CC-Date=20260427T234042Z&HW-CC-Expire=86400&HW-CC-Sign=09C5A4F443895AFCDFAF3BB048509548F73DEA0AA65B7350891618A2413DAB32)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/g9ZmpRSATpqgId61ebM1eQ/zh-cn_image_0000002558764670.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052903Z&HW-CC-Expire=86400&HW-CC-Sign=18CE9DC1AE2F29DEEF564CE2893FF04022754627D4E3CEEAA472FEDCC815D9C4)
 
 ## 应用使用单界面Ability时通过typeNode实现画中画功能
 
@@ -1868,4 +1868,4 @@ content_hash: sha256:d0bd388d8e7a8323cc78794699459d9bb33001d19fa0f6e8740bfb32b33
 
 以上示例代码对应的示意图如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/QiWtzUsATqSjkzwQeXTpDw/zh-cn_image_0000002552798530.gif?HW-CC-KV=V1&HW-CC-Date=20260427T234042Z&HW-CC-Expire=86400&HW-CC-Sign=2293549A69A8B7B250F1273C39F8700FAADF01E400C9A7144DC560DA8DA94810)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/bU_nkrOvQc2MS4oYTJhllw/zh-cn_image_0000002558764670.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052903Z&HW-CC-Expire=86400&HW-CC-Sign=8C448A4A97FD021BEBAC3E32ED11457074738313E5F661C4EE2B3B0C7766FF49)

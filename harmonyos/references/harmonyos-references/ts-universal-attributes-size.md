@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 尺寸设置
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 布局与边框 > 尺寸设置
 category: harmonyos-references
-scraped_at: 2026-04-28T08:01:04+08:00
+scraped_at: 2026-04-29T13:51:15+08:00
 doc_updated_at: 2026-03-23
-content_hash: sha256:a35af0dd6ec7f45b97e62ed02140aa56ecfea7ace89e32a82daa34f27539d284
+content_hash: sha256:5722bad09ff4b20a8a3b09bdb6de0f49f506666a0492d0c27ed37f0a2ab26028
 ---
 
 设置组件的宽高、边距。
@@ -444,7 +444,7 @@ PhonePC/2in1TabletTVWearable
 90. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/MCoKyf0YRKqV10mWBY4AAg/zh-cn_image_0000002583439533.png?HW-CC-KV=V1&HW-CC-Date=20260428T000102Z&HW-CC-Expire=86400&HW-CC-Sign=37386FC14593E4A95CC216D717C69650CB3E9CE595752521290EB1AC92CF64F5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/zdyr7y6pQN6MHVFVmyH6eQ/zh-cn_image_0000002589245819.png?HW-CC-KV=V1&HW-CC-Date=20260429T055114Z&HW-CC-Expire=86400&HW-CC-Sign=F14A629041340D990AF6564A0806F9F8418E9DC563EC420AF11E63DD7B8F2256)
 
 ### 示例2（LocalizedPadding和LocalizedMargin类型的使用）
 
@@ -496,11 +496,11 @@ PhonePC/2in1TabletTVWearable
 
 从左至右显示语言示例图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/btw3nS5WTj6qVmQ-7OwbCA/zh-cn_image_0000002552959488.png?HW-CC-KV=V1&HW-CC-Date=20260428T000102Z&HW-CC-Expire=86400&HW-CC-Sign=3096A5F554ADC99E06146ED2C421FB08F3318044EE24D8B4E8C64C549F846757)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/BxM_8NhKT6SeZEdZpo4_YQ/zh-cn_image_0000002558766010.png?HW-CC-KV=V1&HW-CC-Date=20260429T055114Z&HW-CC-Expire=86400&HW-CC-Sign=CD6FF98E13BC4A49D39A913236098514B847E70FB645525EAF17A2286DD23820)
 
 从右至左显示语言示例图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/42Dy7cKgSZmW0GuZWAHP-A/zh-cn_image_0000002583479489.png?HW-CC-KV=V1&HW-CC-Date=20260428T000102Z&HW-CC-Expire=86400&HW-CC-Sign=755F58F03CA1E8D1A9C68A17FB89D8A6268B5EF1347BDCD836A20878CA5DF94B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/crfQJwW0T8yJ86STuVfMFA/zh-cn_image_0000002558606352.png?HW-CC-KV=V1&HW-CC-Date=20260429T055114Z&HW-CC-Expire=86400&HW-CC-Sign=301AC16EF88CA98722572A76B36B17B48733E4BB350187B764A89DF31D15BCE7)
 
 ### 示例3（设置组件级安全区）
 
@@ -534,7 +534,7 @@ PhonePC/2in1TabletTVWearable
 25. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/LO16PvTZTpSIQp9_99TbLg/zh-cn_image_0000002552799840.png?HW-CC-KV=V1&HW-CC-Date=20260428T000102Z&HW-CC-Expire=86400&HW-CC-Sign=E0DB52F0A0F37531FB70CB9164643FE7ADFF62328651B27A8A6D373B8CCA5EEE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/vmYfCzzARCOcNz496mG4cQ/zh-cn_image_0000002589325879.png?HW-CC-KV=V1&HW-CC-Date=20260429T055114Z&HW-CC-Expire=86400&HW-CC-Sign=A097FA774F8F30B0D3613B65B22DC6C502ECB3BA62D52D56CDBC0BA0AC80A779)
 
 ### 示例4（使用attributeModifier动态设置安全区）
 
@@ -579,7 +579,7 @@ PhonePC/2in1TabletTVWearable
 36. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/gijnkbQCRgiUi9wCJY7jAg/zh-cn_image_0000002583439535.png?HW-CC-KV=V1&HW-CC-Date=20260428T000102Z&HW-CC-Expire=86400&HW-CC-Sign=776C4F2AD72847A558FEA9AE79CC12169C1F5F433D8139392EF3C8CA9DBF1506)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/-_9fwWkJQRSj1VJdV6ftag/zh-cn_image_0000002589245821.png?HW-CC-KV=V1&HW-CC-Date=20260429T055114Z&HW-CC-Expire=86400&HW-CC-Sign=4472BFFE991052E34ED6AA8F57A07B729CE6EF9A1F0217F78C7F68AE91D2ECED)
 
 ### 示例5（设置布局策略）
 
@@ -636,4 +636,4 @@ PhonePC/2in1TabletTVWearable
 48. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/Si-x3fHHSfyA3VWIwaaEdg/zh-cn_image_0000002552959490.jpg?HW-CC-KV=V1&HW-CC-Date=20260428T000102Z&HW-CC-Expire=86400&HW-CC-Sign=A8AD6D82F709EF658BF4884F5919D4AC8B11128776E9B503F323BAEBAA5E5283)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/xNsDM84QRxiMtENTareFYg/zh-cn_image_0000002558766012.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T055114Z&HW-CC-Expire=86400&HW-CC-Sign=87BA1A91C4983A355BB9B036B97339D307B56C4CB3F0478795E6299D8E83C70A)

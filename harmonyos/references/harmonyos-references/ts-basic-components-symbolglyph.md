@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: SymbolGlyph
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 文本与输入 > SymbolGlyph
 category: harmonyos-references
-scraped_at: 2026-04-28T08:01:53+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:5c73e5470fddd264058100f72e413cd888fc4b902bbc64f7aac2c010759a5b4a
+scraped_at: 2026-04-29T13:52:13+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:e4d62bf52d389702de861caa16ea9201d2e68c75cf0179cf55dc69021f01fddf
 ---
 
 显示图标小符号的组件。相关资源可参考[系统图标](../design-guides/system-icons-0000001929854962.md)。
@@ -150,7 +150,7 @@ renderingStrategy(value: SymbolRenderingStrategy)
 
 不同渲染策略效果可参考以下示意图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/LhFEkUvBTYyo4zvpbQrixQ/zh-cn_image_0000002552959816.png?HW-CC-KV=V1&HW-CC-Date=20260428T000150Z&HW-CC-Expire=86400&HW-CC-Sign=C898219CDD5B8815461DD6FC39577C9340A8883FD8615A2F38F2D1E1F671FFCE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/Kw7XpkjATGej2kgntVQkYA/zh-cn_image_0000002558766338.png?HW-CC-KV=V1&HW-CC-Date=20260429T055208Z&HW-CC-Expire=86400&HW-CC-Sign=A44AFAA9CACAB28DC503C7B9FA8BF6FE1E29D7BD70A8A51BDC27405CC694D704)
 
 ### effectStrategy
 
@@ -589,8 +589,8 @@ PhonePC/2in1TabletTVWearable
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | SINGLE | 0 | 单色模式（默认值）。  可以设置一个或者多个颜色，默认为黑色。  当设置多个颜色时，仅生效第一个颜色。 |
-| MULTIPLE\_COLOR | 1 | 多色模式。  最多可以设置三个颜色。当只设置一个颜色时，修改symbol图标的第一层颜色，其他颜色保持默认颜色。  颜色设置顺序与图标分层顺序匹配，当颜色数量大于图标分层时，多余的颜色不生效。  仅支持设置颜色，设置透明度设置不生效。 |
-| MULTIPLE\_OPACITY | 2 | 分层模式。  默认为黑色，可以设置一个或者多个颜色。当设置多个颜色时，仅生效第一个颜色。  不透明度与图层相关，symbol图标的第一层透明度为100%、第二层透明度为50%、第三层透明度为20%。 |
+| MULTIPLE\_COLOR | 1 | 多色模式。  最多可以设置三个颜色。当只设置一个颜色时，修改symbol图标的第一层颜色，其他颜色保持默认颜色。  颜色设置顺序与图标分层顺序匹配，当颜色数量大于图标分层时，多余的颜色不生效。 |
+| MULTIPLE\_OPACITY | 2 | 分层模式。  默认为黑色，可以设置一个或者多个颜色。当设置多个颜色时，仅生效第一个颜色。  不透明度与图层相关，symbol通用图标的默认第一层透明度为100%、第二层透明度为50%、第三层透明度为20%。当设置的颜色包含透明度时，设置的透明度与每个图层的默认透明度进行叠加。 |
 
 ## SymbolEffect12+对象说明
 
@@ -776,7 +776,7 @@ PhonePC/2in1TabletTVWearable
 80. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/jL6l_ExUSJ6qaowbQLnjmQ/zh-cn_image_0000002583439863.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000150Z&HW-CC-Expire=86400&HW-CC-Sign=948751020B62E5FB87B5C95DCCF9505074E888F0141CF829EBCF78C522245599)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/_ghKFWWiQkqHZ7Fwx2bFYg/zh-cn_image_0000002589246149.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055208Z&HW-CC-Expire=86400&HW-CC-Sign=6BC9792C3AE1010EFFBB96CFEE32F416CA7314956CF502E940712178D5AB769A)
 
 ### 示例2（设置动效和阴影）
 
@@ -880,7 +880,7 @@ PhonePC/2in1TabletTVWearable
 95. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/4aPoQAFpSyaCa4FoKCQbQA/zh-cn_image_0000002552959818.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000150Z&HW-CC-Expire=86400&HW-CC-Sign=E10E0C965A019D47247D852398179AFC85B16E88DB72F9FEB18F9FB3798E375C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/zaPNiWCnT9-Jo_gl2Ey4dg/zh-cn_image_0000002558766340.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055208Z&HW-CC-Expire=86400&HW-CC-Sign=A2BE90CCB406FF79C93F548ECA076C0DDB97393E650382421AE1560301FB48EB)
 
 ### 示例3（设置颜色渐变）
 
@@ -1021,4 +1021,4 @@ PhonePC/2in1TabletTVWearable
 132. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/0NYD-4G1TmSJuimhn8Dx1A/zh-cn_image_0000002583479819.jpeg?HW-CC-KV=V1&HW-CC-Date=20260428T000150Z&HW-CC-Expire=86400&HW-CC-Sign=19F1BA172F0AC460DAFF8A420751E2767B74BA46533D081E4023B1DB1DFC124E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/bmts0TcpQ7GspNiGtS3vkw/zh-cn_image_0000002558606682.jpeg?HW-CC-KV=V1&HW-CC-Date=20260429T055208Z&HW-CC-Expire=86400&HW-CC-Sign=13FE1647AD65267910409B80726A9C76920CB8E61E40412A209E37B91A1D83E1)

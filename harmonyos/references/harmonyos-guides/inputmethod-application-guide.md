@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/inputmethod-a
 title: 实现一个输入法应用
 breadcrumb: 指南 > 应用框架 > IME Kit（输入法开发服务） > 实现一个输入法应用
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:41:36+08:00
+scraped_at: 2026-04-29T13:30:05+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:c5845aa5c20d74aa3951a6db69d65f78b9706e24f506d2c4dd522a98361bf626
+content_hash: sha256:2848b268e296d242d74d64d115f5944d1309e1bc617b691bffdeb62d21a0e261
 ---
 
 [InputMethodExtensionAbility](../harmonyos-references/js-apis-inputmethod-extension-ability.md)提供了onCreate()和onDestroy()生命周期回调，根据需要重写对应的回调方法。InputMethodExtensionAbility的生命周期如下：
@@ -73,7 +73,7 @@ content_hash: sha256:c5845aa5c20d74aa3951a6db69d65f78b9706e24f506d2c4dd522a98361
    [InputMethodService.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/InputMethod/KikaInputMethod/entry/src/main/ets/InputMethodExtensionAbility/InputMethodService.ets#L16-L40)
 2. KeyboardController.ets文件。KeyboardController中除创建输入法窗口，设置输入法事件监听，实现文本插入、删除之外，还可以获取[输入法键盘与系统面板的偏移区域](../harmonyos-references/js-apis-inputmethodengine.md#getsystempanelcurrentinsets21)，输入法系统面板在不同设备上存在差异，当设备有系统面板时，输入法软键盘相对系统面板的偏移区域如图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/sG6OMuHvSJ-QRqXDQQOGPA/zh-cn_image_0000002583438361.png?HW-CC-KV=V1&HW-CC-Date=20260427T234135Z&HW-CC-Expire=86400&HW-CC-Sign=C43E7B4D22AC7FEC7CBECD8E49F7E905CFF81D2D50E69C37B645E42B475E8ABD)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/O6RH9-AGSq-fFA2ltTpaTA/zh-cn_image_0000002558605158.png?HW-CC-KV=V1&HW-CC-Date=20260429T053003Z&HW-CC-Expire=86400&HW-CC-Sign=763565B3DBD23BB66E1B00196F0C78DD7E8D4DE1D864B1C0D1EE500E0ADBC4EF)
 
    ```
    1. class KeyboardController {
@@ -965,4 +965,4 @@ content_hash: sha256:c5845aa5c20d74aa3951a6db69d65f78b9706e24f506d2c4dd522a98361
 
 ## 示例效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/-MLhGLyUTT6j8e8TNtdmGA/zh-cn_image_0000002552958316.png?HW-CC-KV=V1&HW-CC-Date=20260427T234135Z&HW-CC-Expire=86400&HW-CC-Sign=12292EABFF81E62338D42972D60FED9FFACF479717F1CC7AC698EFDDC77F96A6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/t6Q1eu7bTo-KSbXrMPd01g/zh-cn_image_0000002589324683.png?HW-CC-KV=V1&HW-CC-Date=20260429T053003Z&HW-CC-Expire=86400&HW-CC-Sign=84D58A8D82C05E334A9552BFB111ED6E70BE1CB45D4157003FEC4D296F84B8C9)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-blur-ef
 title: 模糊
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用动画 > 动画效果 > 模糊
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:40:00+08:00
+scraped_at: 2026-04-29T13:28:17+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:f076e447f71511043fb36f6f98207147ffe016d482b6f07535d20f8d8b247a99
+content_hash: sha256:0c02fe11732f202e247a095a98562c4aa09b4a3728a54fce894a415285d87548
 ---
 
 动画效果可以丰富界面的细节，提升UI界面的真实感和品质感。例如，模糊和阴影效果可以让物体看起来更加立体，使得动画更加生动。ArkUI提供了丰富的效果接口，开发者可快速打造出精致、个性化的效果。本章主要介绍常用的模糊、阴影和色彩效果等接口。
@@ -52,7 +52,7 @@ content_hash: sha256:f076e447f71511043fb36f6f98207147ffe016d482b6f07535d20f8d8b2
 
 [BlurEffectsExample.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/Animation/entry/src/main/ets/pages/animationBlur/template1/BlurEffectsExample.ets#L15-L37)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/yAqHQSQYQBSdaihiYlEPaw/zh-cn_image_0000002583477999.png?HW-CC-KV=V1&HW-CC-Date=20260427T233958Z&HW-CC-Expire=86400&HW-CC-Sign=22BBA88159BAE0DEB01E4BCDBDE25AFD3F3F6CDE1D351EB5EC0AFDEAB507B3A9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/YYrLmNjvSGiz4gvo99kwpQ/zh-cn_image_0000002589244297.png?HW-CC-KV=V1&HW-CC-Date=20260429T052814Z&HW-CC-Expire=86400&HW-CC-Sign=955050F6DE2F51845CDD9803CFFAC49A61D845467D264F93EECDF7F81DDB97E0)
 
 ## 使用blur为组件添加内容模糊
 
@@ -116,7 +116,7 @@ content_hash: sha256:f076e447f71511043fb36f6f98207147ffe016d482b6f07535d20f8d8b2
 
 [Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/Animation/entry/src/main/ets/pages/animationBlur/template2/Index.ets#L15-L71)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/SnPv4YBgREazbXW_cGp-Vg/zh-cn_image_0000002552798350.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233958Z&HW-CC-Expire=86400&HW-CC-Sign=D176A1767669D366788DCA0EA6BAF74E6B7269D58C6C6C47A958D1844946C270)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/qRauI5DHRr-YPgkvV4u_BA/zh-cn_image_0000002558764490.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052814Z&HW-CC-Expire=86400&HW-CC-Sign=7E34CA64537670BCA5602EB6E7F1F51522C7DC6068FD88586886705AA2A09BCB)
 
 ## 使用backgroundBlurStyle为组件添加背景模糊效果
 
@@ -388,7 +388,7 @@ content_hash: sha256:f076e447f71511043fb36f6f98207147ffe016d482b6f07535d20f8d8b2
 
 [BackDropBlurStyleDemo.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/Animation/entry/src/main/ets/pages/animationBlur/template3/BackDropBlurStyleDemo.ets#L15-L279)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/SO-OuJZfRXCxJfQJUSOD1w/zh-cn_image_0000002583438045.png?HW-CC-KV=V1&HW-CC-Date=20260427T233958Z&HW-CC-Expire=86400&HW-CC-Sign=6E720EA5A539E90D4490108EFD826E4127A2DB45DB280882637BC4E063BC7C01)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/90koVDljRk2HOySyn9FNHQ/zh-cn_image_0000002558604834.png?HW-CC-KV=V1&HW-CC-Date=20260429T052814Z&HW-CC-Expire=86400&HW-CC-Sign=6D79308251A3603746FE0CE9069D5B5DC366AB80F9D0C908CABA4FEC51394D3A)
 
 ## 使用foregroundBlurStyle为组件添加内容模糊效果
 
@@ -658,7 +658,7 @@ content_hash: sha256:f076e447f71511043fb36f6f98207147ffe016d482b6f07535d20f8d8b2
 
 [ForegroundBlurStyleDemo.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/Animation/entry/src/main/ets/pages/animationBlur/template4/ForegroundBlurStyleDemo.ets#L15-L277)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/sUWX15O3SVykfiyE05O-pQ/zh-cn_image_0000002552958000.png?HW-CC-KV=V1&HW-CC-Date=20260427T233958Z&HW-CC-Expire=86400&HW-CC-Sign=295435454E95DB3CEA3A85CB3EA245CB1172984307A89AAC84A44AD8D8604257)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/mAwoeLXaSuK4OOeTwHY05g/zh-cn_image_0000002589324359.png?HW-CC-KV=V1&HW-CC-Date=20260429T052814Z&HW-CC-Expire=86400&HW-CC-Sign=9B3A6AD67D6FBB8D6E171D35A703E511E3DFBAEAC0707F781818711387D38D3F)
 
 ## 使用motionBlur为组件添加运动模糊效果
 
@@ -706,4 +706,4 @@ content_hash: sha256:f076e447f71511043fb36f6f98207147ffe016d482b6f07535d20f8d8b2
 
 [MotionBlurTest.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/Animation/entry/src/main/ets/pages/animationBlur/template5/MotionBlurTest.ets#L15-L55)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/1ZpJgjjiSIao6Yfq9LX7Wg/zh-cn_image_0000002583478001.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233958Z&HW-CC-Expire=86400&HW-CC-Sign=1694860F8CDEA4E542E874A43B68E50E35BD1520E3646648F1A508522055DB64)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/bEKT_1HkQEmQ8LfxaEevHg/zh-cn_image_0000002589244299.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052814Z&HW-CC-Expire=86400&HW-CC-Sign=5B99587226F15314BAB1B8E558844FDB4591667E67A73A9244640F3B9BFC28DC)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-compone
 title: form开发指导
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 常见组件开发指导 > 容器组件 > form开发指导
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:40:25+08:00
+scraped_at: 2026-04-29T13:28:46+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:69bc0c58ee7bdd5f7a82c860edbde7d77206b7c23982c2141718e301428cec90
+content_hash: sha256:8fd97382b6e0fc0a6026dd1052f5007557f441c29ec724bb58313c0ce4603241
 ---
 
 form是一个表单容器，支持容器内[Input](../harmonyos-references/js-components-basic-input.md)组件内容的提交和重置。具体用法请参考[form API](../harmonyos-references/js-components-container-form.md)。
@@ -35,7 +35,7 @@ form是一个表单容器，支持容器内[Input](../harmonyos-references/js-co
 9. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/JtT8vwOdR_6zb5qL9rHUGQ/zh-cn_image_0000002552798440.png?HW-CC-KV=V1&HW-CC-Date=20260427T234023Z&HW-CC-Expire=86400&HW-CC-Sign=D262D1F6EE004339BFBD1BCB10BC6DFFB5F9BE394F543EF62E26AB08F6045BC4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/OkDcKopSTNOhHV9yOXZ-zw/zh-cn_image_0000002558764580.png?HW-CC-KV=V1&HW-CC-Date=20260429T052845Z&HW-CC-Expire=86400&HW-CC-Sign=B24390356381059D2AD63480D83CE873D108D9DC45DA83E23D9D2A4DDFBDB8DD)
 
 ## 实现表单缩放
 
@@ -72,7 +72,7 @@ form是一个表单容器，支持容器内[Input](../harmonyos-references/js-co
 15. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/pvrVe_-ySzCg7jhZkuFhbQ/zh-cn_image_0000002583438135.gif?HW-CC-KV=V1&HW-CC-Date=20260427T234023Z&HW-CC-Expire=86400&HW-CC-Sign=F148E39F2CF6930040E9A3778E3A8C375C42C8351285DD0289E251D13898D5C9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/K05xqZTkQoei5wYc0uMXRA/zh-cn_image_0000002558604924.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052845Z&HW-CC-Expire=86400&HW-CC-Sign=BF25F8C2EA25B66F3CFFD27CA65DBB9B28F9D1F24942587E332207E087B8B5B0)
 
 ## 添加响应事件
 
@@ -134,7 +134,7 @@ form是一个表单容器，支持容器内[Input](../harmonyos-references/js-co
 14. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/ms3FOsTpSwC7t_bKjWYg4w/zh-cn_image_0000002552958090.gif?HW-CC-KV=V1&HW-CC-Date=20260427T234023Z&HW-CC-Expire=86400&HW-CC-Sign=95311531ABA8EF6DDCB026A703E0CC48B21BFB837B9E9C7AE82923D350E3E723)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/RHPiZZY2SQGft6ajv5BF_w/zh-cn_image_0000002589324449.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052845Z&HW-CC-Expire=86400&HW-CC-Sign=3F9A33E3E2F96A052BB34C5FC25A9F8AA3994ED6FA4B8C9E32B5747F827D6F77)
 
 ## 场景示例
 
@@ -213,4 +213,4 @@ form是一个表单容器，支持容器内[Input](../harmonyos-references/js-co
 14. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/1M7KtFrOTXGaoSRWyPypiw/zh-cn_image_0000002583478091.gif?HW-CC-KV=V1&HW-CC-Date=20260427T234023Z&HW-CC-Expire=86400&HW-CC-Sign=750BFE1EC7476AD88B5EBCED4879813747AF2F556722B6927EB925F96486B11C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/JR3-drAnR6evui8aVzBFbw/zh-cn_image_0000002589244389.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052845Z&HW-CC-Expire=86400&HW-CC-Sign=5A63BAB412D6934890F1931174CB656527A9F8B28019405AC622A701298BDC0F)

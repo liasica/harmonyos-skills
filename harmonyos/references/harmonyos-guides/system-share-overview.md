@@ -3,27 +3,27 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/system-share-
 title: 概述
 breadcrumb: 指南 > 应用服务 > Share Kit（分享服务） > 系统分享 > 概述
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:50:58+08:00
+scraped_at: 2026-04-29T13:40:32+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:8de7b8a52ffbf08eadcfa322699bcde434769c180eb75307739b374af069d4e9
+content_hash: sha256:a039d8cdd34115af6f16b24c6b22c0878c9517d8bc1885195f5479ff092b58e1
 ---
 
 ## 场景介绍
 
 在手机设备中，分享框通过模态弹窗方式被拉起，效果如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/kFOg8VmbRZ6H5VwVGZJtMA/zh-cn_image_0000002583439223.png?HW-CC-KV=V1&HW-CC-Date=20260427T235057Z&HW-CC-Expire=86400&HW-CC-Sign=D4063BB87524CF9AFA4D2252E036A81BC1F53EE16D0C2EE29447E727CF14D710)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/AzOpAQxIRASd6KC07wC_MQ/zh-cn_image_0000002589325549.png?HW-CC-KV=V1&HW-CC-Date=20260429T054031Z&HW-CC-Expire=86400&HW-CC-Sign=A669540EB14CC10EAC1AFCF4A68B127C85A15B448E0F4CED7DC411BAFEE696A4)
 
 在2in1设备上分享框通过Popup形式展示，效果如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/gCB8OoKATNuF9h2VFsZzYw/zh-cn_image_0000002552959178.png?HW-CC-KV=V1&HW-CC-Date=20260427T235057Z&HW-CC-Expire=86400&HW-CC-Sign=4D9ABC02DD4337726AC9EC9EB13D53BDDB7A287071F824540E3A37B14BFAF937)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/gPxz_p4hSIaUvo-pz4KdqQ/zh-cn_image_0000002589245487.png?HW-CC-KV=V1&HW-CC-Date=20260429T054031Z&HW-CC-Expire=86400&HW-CC-Sign=0275C265720D0DBFB6DC1FA88FA55B451C2A30E49B350AF13A6AEC216A306E75)
 
 1. 宿主应用可以分享一段文本、一个文件或一条备忘录到其他应用。
 2. 宿主应用可以分享多个内容，如文本、图片等到其他应用。
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/VPSepnJRQBezhLadAg-JBg/zh-cn_image_0000002583479179.png?HW-CC-KV=V1&HW-CC-Date=20260427T235057Z&HW-CC-Expire=86400&HW-CC-Sign=7A5CD9071FA5922E84E6D8100D67D68636AE507D712D6BD28E4DD8FB85DE484D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/aXA83XVoRBeN3acqnmHTKw/zh-cn_image_0000002558765680.png?HW-CC-KV=V1&HW-CC-Date=20260429T054031Z&HW-CC-Expire=86400&HW-CC-Sign=6053268C679327D9879009534188F58FD0564C8BDBD9EBF4CC31A149735B5D2E)
 
 流程说明：
 

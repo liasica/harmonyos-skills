@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/gameservi
 title: ArkTS API错误码
 breadcrumb: API参考 > 应用服务 > Game Service Kit（游戏服务） > ArkTS API > ArkTS API错误码
 category: harmonyos-references
-scraped_at: 2026-04-28T08:16:44+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:e2c2157c5a5843eef382c0213631d4511ea44a8fafb81c591c959e70429448c6
+scraped_at: 2026-04-29T14:07:28+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:060a1b89b69089ffa57c37a57474730bc302ec486486391dceff3f83cf8caa3f
 ---
 
 说明
@@ -89,6 +89,7 @@ System internal error.
 
 * [unionLogin](gameservice-gameplayer.md#gameplayerunionlogin)登录接口的入参accountIcon总大小超过35KB。
 * 接口中的入参context不符合要求。
+* 使用模拟器调测Game Service Kit接口。
 
 **处理步骤**
 
@@ -98,7 +99,8 @@ System internal error.
    ```
    1. let context = this.getUIContext()?.getHostContext() as common.UIAbilityContext;
    ```
-3. 通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/add/101704353566310877?level2=101704353626565886&level3=101704354579010004)提交问题，华为工程师会及时处理。
+3. 排查是否使用模拟器调测接口。Game Service Kit接口不支持使用模拟器进行调测。
+4. 通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/add/101704353566310877?level2=101704353626565886&level3=101704354579010004)提交问题，华为工程师会及时处理。
 
 ## 1002000002 网络错误
 

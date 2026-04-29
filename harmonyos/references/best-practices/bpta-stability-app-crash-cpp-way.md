@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: CppCrash类问题分析方法
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 应用异常退出类问题分析方法 > CppCrash类问题分析方法
 category: best-practices
-scraped_at: 2026-04-28T08:22:58+08:00
+scraped_at: 2026-04-29T14:14:10+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:b59770cf3480c0046c0fc64f43c527c0c58e9e0988c229e193952a0bf7d54347
+content_hash: sha256:6575c8b71e941c5f1fc46e0ee3c73d332e8805cedda01c9c83f6e5d4919a7d6e
 ---
 
 本文分为[获取日志](bpta-stability-app-crash-cpp-way.md#section7724104184817)、[分析步骤](bpta-stability-app-crash-cpp-way.md#section33392833014)、[CppCrash常见问题分类与原因](bpta-stability-app-crash-cpp-way.md#section253684811495)三个小节，重点介绍如何获取CppCrash日志、如何查看日志以及如何分析问题。开发者可阅读[应用崩溃类问题检测方法](bpta-stability-runtime-crash-detection.md)了解系统检测CppCrash问题的原理和机制。开发者还可以参考[CppCrash类问题案例](bpta-scenario-stability-cppcrash.md)，结合实际案例分析CppCrash类问题。
@@ -70,7 +70,7 @@ CppCrash日志中Signal会携带崩溃时访问的地址，如非法访问地址
 
    在应用开发场景，对于应用自身的动态库，生成的cppcrash调用栈可直接跳转到代码行处，支持Native栈帧和JS栈帧，无需开发者自行进行解行号操作。对于部分未能解析跳转到对应行号的栈帧，可参考方式二解析。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/RP7Auw-xTZ6Cw-Ejez8p9w/zh-cn_image_0000002404125229.png?HW-CC-KV=V1&HW-CC-Date=20260428T002257Z&HW-CC-Expire=86400&HW-CC-Sign=2D1B76FD2CEF865B72118D8AA439960FC052B0AC371F17C35199F41D1B0A67E5)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/RP7Auw-xTZ6Cw-Ejez8p9w/zh-cn_image_0000002404125229.png?HW-CC-KV=V1&HW-CC-Date=20260429T061409Z&HW-CC-Expire=86400&HW-CC-Sign=AA4F5F76892CD3C668AA404BEDA50567E31F694EE42D5CDDCFF4022C84D8BFF4)
 2. 通过SDK llvm-addr2line 工具定位行号。
    1. 获取符号表。
 
@@ -127,7 +127,7 @@ CppCrash日志中Signal会携带崩溃时访问的地址，如非法访问地址
 
 在分析CppCrash日志内容和定位行号后，回到代码中检视上下文，分析具体是什么业务逻辑导致崩溃。借助hilog提供的崩溃现场日志分析业务场景，找出代码中的可疑点。如下图所示，hello.cpp中的48行是一个空指针解引用的代码问题。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/EfhzK6CPQFaLa9MlRNnwIg/zh-cn_image_0000002370405684.png?HW-CC-KV=V1&HW-CC-Date=20260428T002257Z&HW-CC-Expire=86400&HW-CC-Sign=4EE9621DD6F0D9A920C7A17AF370ADF805B30C4D6C5B15C80DC39A61D7AF3B72)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/EfhzK6CPQFaLa9MlRNnwIg/zh-cn_image_0000002370405684.png?HW-CC-KV=V1&HW-CC-Date=20260429T061409Z&HW-CC-Expire=86400&HW-CC-Sign=858412155AC1A1CDD24C5B1A78962369108E6CE1C2B5D8D48F30E4EA12D34206)
 
 本场景是一个故障构造的应用，实际场景需要结合具体业务进行分析。
 

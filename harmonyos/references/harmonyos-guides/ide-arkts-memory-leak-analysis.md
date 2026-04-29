@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-arkts-mem
 title: 案例：ArkTS内存泄漏分析
 breadcrumb: 指南 > 优化应用性能 > 内存泄露：Snapshot分析 > 案例：ArkTS内存泄漏分析
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:57:33+08:00
+scraped_at: 2026-04-29T13:47:43+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:3584b6aad27ee6f169bf83540141adbcd137aee3b7dbdef4dfa97fb821063b43
+content_hash: sha256:172c50b0c4d56b8c81d4992a5fb583b431c3c9924f529b065bad77e21381defa
 ---
 
 本案例介绍如何判断应用存在ArkTS泄漏，以及如何通过快照对比找出ArkTS内存泄漏的原因。
@@ -16,7 +16,7 @@ content_hash: sha256:3584b6aad27ee6f169bf83540141adbcd137aee3b7dbdef4dfa97fb8210
 
    监控Memory用到变化。当在一段时间内应用内存没有明显增加或者在内存上涨后又逐渐回落至正常水平，则基本可以排除应用存在内存问题；反之，在一段时间内不断上涨且无回落或者内存占用明显增长超出预期，那么则可初步判断应用可能存在内存问题。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/NcGqCAvUTZWgmX1zhtGmRg/zh-cn_image_0000002561833153.png?HW-CC-KV=V1&HW-CC-Date=20260427T235732Z&HW-CC-Expire=86400&HW-CC-Sign=413F608823F341951EE6C3302E6E5A48C8CB35E8D4E193A39C18CE43E25EEA81 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/8jRCYSUyT3mAc2cKD4ag1w/zh-cn_image_0000002561833153.png?HW-CC-KV=V1&HW-CC-Date=20260429T054732Z&HW-CC-Expire=86400&HW-CC-Sign=C1EE7F43DE6B1044A3209C0F5CB65C5B2CEE9174E54C2A2EA9189A27F072DD86 "点击放大")
 2. 当从实时监控页面初步判断应用可能存在内存问题后，通过[深度录制](deep-recording.md)抓取应用内存在问题场景下的详细数据，初步定界问题出现的位置。Memory泳道存在Allocation或Snapshot模板中，使用Allocation或Snapshot模板录制均可。
 3. 以Allocation模板为例，创建模板后，将模板中的其余泳道去除勾选，仅录制Memory泳道的数据。
 
@@ -24,15 +24,15 @@ content_hash: sha256:3584b6aad27ee6f169bf83540141adbcd137aee3b7dbdef4dfa97fb8210
 
    其余泳道会抓取内存分配、内存对象等数据，为避免额外开销和影响分析，建议先排除录制。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/kXV9RqN5QY2-uhPeSaGa4Q/zh-cn_image_0000002530913220.png?HW-CC-KV=V1&HW-CC-Date=20260427T235732Z&HW-CC-Expire=86400&HW-CC-Sign=A2141808D4EFA5616B2F64C0747C679C71589F1148E97A2167C0A75CEE691ABD)
-4. 点击三角按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/06Ex7YDRSMC7taUiCLC4WQ/zh-cn_image_0000002561833127.png?HW-CC-KV=V1&HW-CC-Date=20260427T235732Z&HW-CC-Expire=86400&HW-CC-Sign=3C70890326222B68ABFE575E1384C1D33E8BB0270FAAC24047C5253112D5E1C5)即开始录制。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/0aYamnkzSoCo5xxESAE35A/zh-cn_image_0000002530913220.png?HW-CC-KV=V1&HW-CC-Date=20260429T054732Z&HW-CC-Expire=86400&HW-CC-Sign=A9CB160C17CD060E831A849CA936C8BEAECF91A90F9A65C0EE1FCFFB4D7CEFF3)
+4. 点击三角按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/e-RuamP8TEO6d6vmRHU_dw/zh-cn_image_0000002561833127.png?HW-CC-KV=V1&HW-CC-Date=20260429T054732Z&HW-CC-Expire=86400&HW-CC-Sign=D504A4469FF07889CB2F773EAF812032D08213DE09CAB854B9E86EEBDDA6ABE3)即开始录制。
 5. 录制过程中，不断操作应用在问题场景的功能，将问题放大，便于快速定界问题点。
 6. 点击下图中方块按钮或者左侧停止按钮结束录制。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/vVhYGMxNQgWSnZMNuY2iFg/zh-cn_image_0000002561753143.png?HW-CC-KV=V1&HW-CC-Date=20260427T235732Z&HW-CC-Expire=86400&HW-CC-Sign=4923D3EAAC7A9E3D7FB676C14042631DAE36699E48E2F38EF833689910B93343 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/47b-y7YJSKWthydyoyVt0Q/zh-cn_image_0000002561753143.png?HW-CC-KV=V1&HW-CC-Date=20260429T054732Z&HW-CC-Expire=86400&HW-CC-Sign=F470194C05FA318178D04CA7A919FAD5A3B7307AC09987AD5C7E15C11E1AFBA2 "点击放大")
 7. 录制完成后，展开Memory泳道，其中ArkTS Heap表示方舟虚拟机内存，这部分内存受到方舟虚拟机的管控。当ArkTS Heap有明显的上涨，说明在方舟虚拟机内的堆内存上可能存在内存泄漏，可以使用Snapshot模板进行下一步分析。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/BNLJjck_SJCTyqcxJcAGrg/zh-cn_image_0000002561753137.png?HW-CC-KV=V1&HW-CC-Date=20260427T235732Z&HW-CC-Expire=86400&HW-CC-Sign=F2E5C2EA1A4DDF4A62A4BC7EA6A986DCC3C1B8E177BCCD89B3DB3F64C3226F0F "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/ecRkuz-5T3mtWopcwhpjPQ/zh-cn_image_0000002561753137.png?HW-CC-KV=V1&HW-CC-Date=20260429T054732Z&HW-CC-Expire=86400&HW-CC-Sign=2E67FFD8A0DB4732D981E8A65E88E3CB81198774049796B4917A1DD727E77E51 "点击放大")
 
 ## 使用Snapshot模板分析ArkTS内存问题
 
@@ -49,28 +49,28 @@ content_hash: sha256:3584b6aad27ee6f169bf83540141adbcd137aee3b7dbdef4dfa97fb8210
 1. 连接设备后启动应用，点击应用选择框选择需要录制的应用，选择**Snapshot**模板，点击Create Session或双击Snapshot图标即可创建一个Snapshot的录制模板。
 2. 创建模板后，点击三角按钮即开始录制。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/z8057CLLT1a5HRKkwrhsXQ/zh-cn_image_0000002561833155.png?HW-CC-KV=V1&HW-CC-Date=20260427T235732Z&HW-CC-Expire=86400&HW-CC-Sign=1207985AE41E3A1EAF6FD138CC42E71948DC5B2E7071002D0FDC8F0B93AF7CA6 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/Pt2T726jRTWNUTTSPxl3RQ/zh-cn_image_0000002561833155.png?HW-CC-KV=V1&HW-CC-Date=20260429T054732Z&HW-CC-Expire=86400&HW-CC-Sign=983B9AF3CE10C8633B8DD09B61983C53D905C7DCC01CC29A1B59B73D0C6B8C6E "点击放大")
 3. 待右侧泳道全部显示recording后则表明正在录制中。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/STaMU9_NTEmrO2_PcHQP9g/zh-cn_image_0000002530913210.png?HW-CC-KV=V1&HW-CC-Date=20260427T235732Z&HW-CC-Expire=86400&HW-CC-Sign=115E7254E7529947BE0D7378760534E4D7B739BA105EACB72CFBE18D79D7C20B "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/ZBnVE1pkTtODxoCGB1K2NA/zh-cn_image_0000002530913210.png?HW-CC-KV=V1&HW-CC-Date=20260429T054732Z&HW-CC-Expire=86400&HW-CC-Sign=EBCD4AA5C11D9652953478A5DF145BEC4BC499439B15B5F0954DD7217C715339 "点击放大")
 4. 拍摄第一次堆快照作为基准（点击图中①处拍摄按钮，待②处显示出紫色条块表示快照拍摄完成）。
 
    说明
 
    方舟虚拟机提供了在获取快照前自动GC（Garbage Collection，对堆内存进行垃圾回收）的能力，因此拍摄快照之前不用主动触发GC。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/vWkKpy9tQRiUxCsAxSKODg/zh-cn_image_0000002561833121.png?HW-CC-KV=V1&HW-CC-Date=20260427T235732Z&HW-CC-Expire=86400&HW-CC-Sign=AA94386A1BE8546B21521DAC17FF6C9B8E7B0BB6A239B85A426467AF9AD7ED19 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/tY1EnKSuRmOuI1MOInNoGg/zh-cn_image_0000002561833121.png?HW-CC-KV=V1&HW-CC-Date=20260429T054732Z&HW-CC-Expire=86400&HW-CC-Sign=B9B0C03C1D5620D4E99F5931374828A3DE3ED45EFE87A4AE4A980B018DC5E8FC "点击放大")
 5. 多次触发内存泄漏操作。可以操作5，7，11等这种特殊的次数。比如操作了5次对比两个快照发现有很多创建了5次没释放的场景，则可能存在内存泄漏，再操作7次，如果创建了7次那就可以确认发生了泄漏。
 6. 拍摄第二次堆快照。
 7. 点击下图中方块按钮或者左侧停止按钮结束录制。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/RF6mY8tjTVWdZg1FQWb-WA/zh-cn_image_0000002530753210.png?HW-CC-KV=V1&HW-CC-Date=20260427T235732Z&HW-CC-Expire=86400&HW-CC-Sign=6C7CC5217FEF56AAA35516526DFA87779B07E1DB9E38EDA61D29D909110F0203 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/wKxfGB9LQ1SQrq90L--y7A/zh-cn_image_0000002530753210.png?HW-CC-KV=V1&HW-CC-Date=20260429T054732Z&HW-CC-Expire=86400&HW-CC-Sign=A0FE7A2DD84FFDF23B9E6B632D4B5ED1C9F1F4AD048FE626E4420774EC41E677 "点击放大")
 
 ### 分析ArkTS Heap
 
 1. 在每次拍摄堆快照之前，虚拟机都会触发GC，所以理论上堆快照内存在的对象都是当前虚拟机已经无法GC掉的对象。我们可以将两个堆快照进行比较，来查看哪些对象是在触发问题场景时新增了且不能释放的。切换到窗口下方详情区域的“Comparison”页签，将两次快照进行对比。图中数据的含义是以Snapshot2作为基准，Snapshot2对比Snapshot1的数据变化量。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/rywR7gkGTEWlEM2hsNFPlw/zh-cn_image_0000002530753208.png?HW-CC-KV=V1&HW-CC-Date=20260427T235732Z&HW-CC-Expire=86400&HW-CC-Sign=394532BFBDF624A4109C3D2F6116205DFE215D9C6832D918EAC2B1BF0AD87D5E "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/bc3r8MA8Tw-gWX85BgS9Vw/zh-cn_image_0000002530753208.png?HW-CC-KV=V1&HW-CC-Date=20260429T054732Z&HW-CC-Expire=86400&HW-CC-Sign=3833B6E37A3E117E6BAF35798E29103ABDC76A2FB8DD01C4D6EF6BCBCEC1DB55 "点击放大")
 2. 优先寻找与触发内存泄漏操作次数强相关、与业务代码强相关的Constructor，首先来分析这些对象是否正常。主要是按照Distance逐渐减小的方式找引用链，可以从references里面一层层去寻找，排查引用链上的可疑对象（一般指与业务代码关联的对象）。
 
    说明
@@ -85,7 +85,7 @@ content_hash: sha256:3584b6aad27ee6f169bf83540141adbcd137aee3b7dbdef4dfa97fb8210
 
 目前所有JSArray展开后为数组里的各个元素：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/EWF7uBMDRU6oXXFQHFaqfQ/zh-cn_image_0000002530753220.png?HW-CC-KV=V1&HW-CC-Date=20260427T235732Z&HW-CC-Expire=86400&HW-CC-Sign=F20B905FAF40E177E7E12D4BAD828E9D9EB2F8E295D8C8031FBA0F7432D5F79A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/kuvKLpzHTEeShk6uBfVT8w/zh-cn_image_0000002530753220.png?HW-CC-KV=V1&HW-CC-Date=20260429T054732Z&HW-CC-Expire=86400&HW-CC-Sign=A20BE95A9710F8BD233C9169D8822FD4014D1869B3F7A581CB73D1ED66393436)
 
 其中\_\_proto\_\_：原型对象，所有数组的\_\_proto\_\_应该是一致的；length：内置属性访问器，可以访问数组长度。
 
@@ -105,7 +105,7 @@ content_hash: sha256:3584b6aad27ee6f169bf83540141adbcd137aee3b7dbdef4dfa97fb8210
 
 JSObject展开后为内部的各个属性如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/X8J-56LpQRe_g19qVmTMjQ/zh-cn_image_0000002530913202.png?HW-CC-KV=V1&HW-CC-Date=20260427T235732Z&HW-CC-Expire=86400&HW-CC-Sign=9E0A7D58355031DB15C5A5D47C35F2EC147A6B967F25C063646483FBC2DAA639)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/X0e2RC1iQHeS0_OzY4TpOg/zh-cn_image_0000002530913202.png?HW-CC-KV=V1&HW-CC-Date=20260429T054732Z&HW-CC-Expire=86400&HW-CC-Sign=5C2B6A2EE92C232841050C54323A9FB13F456D7196A9ECE4FCE604E3296B1F5B)
 
 以下通过具体代码来介绍下实例化对象、声明对象、构造函数间的关系：
 
@@ -148,7 +148,7 @@ JSObject展开后为内部的各个属性如下：
 
 采集到的snapshot数据如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/Gkk3YZ61Q_y3GS9rMSBb7A/zh-cn_image_0000002530753228.png?HW-CC-KV=V1&HW-CC-Date=20260427T235732Z&HW-CC-Expire=86400&HW-CC-Sign=D52E111F2BE2F0C5D5EE729BC462E408438B1F7D6109A1C9238BC5706720BDF8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/PqaNVPx0RdSKmu0wrIgr-w/zh-cn_image_0000002530753228.png?HW-CC-KV=V1&HW-CC-Date=20260429T054732Z&HW-CC-Expire=86400&HW-CC-Sign=D91BC3C40CF3A99B2E8DBCD610FFF281D23944E4FC5500C78F8CDD8740A49295)
 
 202169对象对应的是People，其主要声明了对象的属性和方法。
 
@@ -158,29 +158,29 @@ JSObject展开后为内部的各个属性如下：
 
 目前所有JSFunction都在(closure)标签中，展开即可看到所有JSFunction：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/rPgVSZBZRP6nP2JbrddBtg/zh-cn_image_0000002561833131.png?HW-CC-KV=V1&HW-CC-Date=20260427T235732Z&HW-CC-Expire=86400&HW-CC-Sign=0DBF4FBB9D705A7D25D036EBA686165A7FA6488D6BC0B32BD1D54A50A6EC9AC6 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/B6B-1RwcRFevVFMiY5UpOA/zh-cn_image_0000002561833131.png?HW-CC-KV=V1&HW-CC-Date=20260429T054732Z&HW-CC-Expire=86400&HW-CC-Sign=5A96E415E39ABBAD54A9C53CB96A12D6E2F763D2BD6595A4BC9A23C15F85142B "点击放大")
 
 每个函数展开后为函数内的各个属性：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/brd44dS_Sr6XxBQwySje7g/zh-cn_image_0000002530753234.png?HW-CC-KV=V1&HW-CC-Date=20260427T235732Z&HW-CC-Expire=86400&HW-CC-Sign=358FAE0A1BE78486BA6C7BF4BCEE97CA38E1A3C59892BDF2164C06E8AE8337EE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/xR8TSVn9Sleq9vLK_mO2MA/zh-cn_image_0000002530753234.png?HW-CC-KV=V1&HW-CC-Date=20260429T054732Z&HW-CC-Expire=86400&HW-CC-Sign=CB844BFE6CE769B119672361EA0FC7F364A2C01376891FBA7BB72CAEA8AD9888)
 
 其中HomeObject表示父类对象，即该方法属于哪个对象；\_proto\_表示原型对象；LexicalEnv表示该函数的闭包上下文；name是内置属性访问器，可获取函数名；FunctionExtraInfo表示额外信息，比如一些napi接口会在这里记录函数地址；ProtoOrHClass表示原型或者隐藏类。
 
 如果函数显示为anonymous()，则表示为匿名函数；如果函数显示为JSFunction()，则表示该函数可能为框架层函数，创建函数的时候未设置函数名。对于这两种函数名不可见的情况，可以通过查看其引用来间接确认其名称：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/Z5PapSeES9GB67W25ypvmw/zh-cn_image_0000002530753230.png?HW-CC-KV=V1&HW-CC-Date=20260427T235732Z&HW-CC-Expire=86400&HW-CC-Sign=7FE8583866B0B27ECD3AE712E5AA7F351C9703FAE8069816F163F223AADC8AC4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/X2pSNoYIS1ixe_ONKN_HyQ/zh-cn_image_0000002530753230.png?HW-CC-KV=V1&HW-CC-Date=20260429T054732Z&HW-CC-Expire=86400&HW-CC-Sign=D4A981B9C65110EF022DDA20A330EEB7434CABFD970FFA358FC439E98439DB0E)
 
 **ArkInternalConstantPool**
 
 虚拟机创建的常量池，ArkTS代码层面不可见，涉及到的字符串常量会在(array)标签中展示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/lZnvLlV9Simj8XhO1ZG0fA/zh-cn_image_0000002530913204.png?HW-CC-KV=V1&HW-CC-Date=20260427T235732Z&HW-CC-Expire=86400&HW-CC-Sign=42ADC4FCEB2F9299B661C59D3A9EBB9555A3327C6EB4B482031D2C48CBE6973C "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/aOaHIVqLRju964JAFh_KkA/zh-cn_image_0000002530913204.png?HW-CC-KV=V1&HW-CC-Date=20260429T054732Z&HW-CC-Expire=86400&HW-CC-Sign=276C68AABF6327438AC2262FB4FA8D306CD05053432FB59C6AFAD7024265635E "点击放大")
 
 **LexicalEnv**
 
 闭包变量上下文；闭包是一个链状结构，如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/SKNh0D1qQ5uI2X5ErIuPNw/zh-cn_image_0000002561833139.png?HW-CC-KV=V1&HW-CC-Date=20260427T235732Z&HW-CC-Expire=86400&HW-CC-Sign=8180C5DA773AB6DA14753ED65A39AC224B30E2218CE4E38B7940E35AC564CDE5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/9gQIVnqgQImd8qrTcis3PA/zh-cn_image_0000002561833139.png?HW-CC-KV=V1&HW-CC-Date=20260429T054732Z&HW-CC-Expire=86400&HW-CC-Sign=473FC8F47A52B0BFA5C65318E2821D0BA6730DD29FE69DDF9FCAB9F48625252B)
 
 733这个节点本身是一个闭包数组，其中0号元素是调用者（或者再往上的调用者，以此类推）的闭包；1号元素存储的是调试信息；2号及以后的元素存储的就是闭包传递的变量，上例传递了一个变量。
 
@@ -192,7 +192,7 @@ JSObject展开后为内部的各个属性如下：
 
 DevEco Studio 6.1.0 Release版本新增，位于(handle)标签中，用于管理JS对象生命周期的引用句柄（napi\_value）。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/dBTqYUkRSveRRPa3qK6ZyA/zh-cn_image_0000002531842516.png?HW-CC-KV=V1&HW-CC-Date=20260427T235732Z&HW-CC-Expire=86400&HW-CC-Sign=85F86446C70E48E2D2A269A1A1A4F429811F8885E5C88CF04B31638FD5CEEF55)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/jkej3nI-QAqna2R2k2--Iw/zh-cn_image_0000002531842516.png?HW-CC-KV=V1&HW-CC-Date=20260429T054732Z&HW-CC-Expire=86400&HW-CC-Sign=455F3F531975E8FD3CA31000876EC3EF8BE4ABA5FD0C47DAEF5D96713CE1830F)
 
 **GlobalHandleRoot**
 
@@ -221,16 +221,16 @@ DevEco Studio 6.1.0 Release版本新增，位于(handle)标签中，允许用户
 
 对于声明对象，可以通过constructor属性来确定对象名称。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/ouNZ67LlQKqXXuHLnXV49w/zh-cn_image_0000002530913208.png?HW-CC-KV=V1&HW-CC-Date=20260427T235732Z&HW-CC-Expire=86400&HW-CC-Sign=47361647F611C92D050719142005D479655995DFE8820DEEBECD3A721D9DF371)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/-qqZ2zSsQ56fK-54poQLvg/zh-cn_image_0000002530913208.png?HW-CC-KV=V1&HW-CC-Date=20260429T054732Z&HW-CC-Expire=86400&HW-CC-Sign=6395D3F3A201148E8B8ADCF961C409F805CD9899201B64EA0F1BF7CE7BF9E914)
 
 对于实例化对象，一般没有constructor，则需要展开\_\_proto\_\_属性后查找constructor；
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/w2hw0mtvQIqlfpwxruqzUQ/zh-cn_image_0000002530913216.png?HW-CC-KV=V1&HW-CC-Date=20260427T235732Z&HW-CC-Expire=86400&HW-CC-Sign=8FC62A0ADB403126D1A83E045145EE14E34BE9BEFBC86A66A20E790705D51F88)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/occTU7xeSWS2AkttKkmvpw/zh-cn_image_0000002530913216.png?HW-CC-KV=V1&HW-CC-Date=20260429T054732Z&HW-CC-Expire=86400&HW-CC-Sign=75D140DB36B4AC532A849B95D5022E3C6082D68C2DE902D971D8E81A8741BD9F)
 
 若对象里有一些标志性属性，可以通过在代码里搜索属性名称来找到具体是哪个对象。
 
 如果对象间有继承关系，则可以继续展开\_\_proto\_\_：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/zMfLcjOJRza8iJPr5ORtDA/zh-cn_image_0000002561833143.png?HW-CC-KV=V1&HW-CC-Date=20260427T235732Z&HW-CC-Expire=86400&HW-CC-Sign=7B7A8824B37323A7270B420B79FB195EEAF596283C2C7FB6D4250090846F0A9B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/BFYUL0GeTNeYFgW4tEoMsQ/zh-cn_image_0000002561833143.png?HW-CC-KV=V1&HW-CC-Date=20260429T054732Z&HW-CC-Expire=86400&HW-CC-Sign=CC4C01949F1EA1C9ECCF1E7AD255E352BE6AA569A22C39505088176C3B89EA8F)
 
 如上图则表明Man对象继承自People对象。

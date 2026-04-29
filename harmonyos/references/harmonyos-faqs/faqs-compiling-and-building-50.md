@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: 如何解决自定义组件struct内不支持定义成员变量get/set方法的问题
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 如何解决自定义组件struct内不支持定义成员变量get/set方法的问题
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:29:18+08:00
+scraped_at: 2026-04-29T14:20:31+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:b82f315d8877194fdf1e3589809075fd8858ddf54c58de20ab5162d7572a9a9d
+content_hash: sha256:90e1943dc57de0a60de36abac1a36006cb44b75a7fbecc9335aae207a37e2d4d
 ---
 
 **问题现象**
 
 运行DevEco Studio的build编译构建功能后，产物中不会生成get/set方法的代码逻辑。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/FL9_BnmTTJa8soA9nN_DwQ/zh-cn_image_0000002229758625.png?HW-CC-KV=V1&HW-CC-Date=20260428T002916Z&HW-CC-Expire=86400&HW-CC-Sign=B9582CF1332C4DD4D9CB2952F75E19C1FCA97BCB98C900567E150B726E8AAD14)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/FL9_BnmTTJa8soA9nN_DwQ/zh-cn_image_0000002229758625.png?HW-CC-KV=V1&HW-CC-Date=20260429T062030Z&HW-CC-Expire=86400&HW-CC-Sign=3CBFB111C2B95AF356D073F7655C6AAAA094481AEAE5449FF57AFDB35E63B17C)
 
 错误示例如下：
 

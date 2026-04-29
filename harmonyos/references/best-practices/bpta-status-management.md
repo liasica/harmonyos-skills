@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-status-man
 title: 状态管理最佳实践
 breadcrumb: 最佳实践 > 声明式语法 > 状态管理最佳实践
 category: best-practices
-scraped_at: 2026-04-28T08:19:55+08:00
+scraped_at: 2026-04-29T14:10:34+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:2eb10a57a5493cfbe2c8b66b791e83ee55288b32aa96c0f30ddb0f483c942d53
+content_hash: sha256:6663e42d5a9853318e3579010d43f046d6bfd4ffc2b30fe66d10aa08b7112802
 ---
 
 ## 概述
@@ -14,7 +14,7 @@ content_hash: sha256:2eb10a57a5493cfbe2c8b66b791e83ee55288b32aa96c0f30ddb0f483c9
 
 **图1** ArkUI的MVVM模式
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/K4YrEaFERzm1Ly6dID4isw/zh-cn_image_0000002428028998.png?HW-CC-KV=V1&HW-CC-Date=20260428T001950Z&HW-CC-Expire=86400&HW-CC-Sign=82B5127ED94E44A098A99C8EDDA3597257192AE2CBEF5457414C0C201FD52A30 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/K4YrEaFERzm1Ly6dID4isw/zh-cn_image_0000002428028998.png?HW-CC-KV=V1&HW-CC-Date=20260429T061031Z&HW-CC-Expire=86400&HW-CC-Sign=034306982BB953F036B787830F76FFE817FD723931E4BA3A7076F746A8B04134 "点击放大")
 
 ArkUI提供了一系列装饰器实现ViewModel的能力，如[@Prop](../harmonyos-guides/arkts-prop.md)、[@Link](../harmonyos-guides/arkts-link.md)、[@Provide](../harmonyos-guides/arkts-provide-and-consume.md)、[LocalStorage](../harmonyos-guides/arkts-localstorage.md)等。当自定义组件内变量被装饰器装饰时变为状态变量，状态变量的改变会引起UI的渲染刷新。
 
@@ -203,7 +203,7 @@ ArkUI提供了一系列装饰器实现ViewModel的能力，如[@Prop](../harmony
 组件内独享的状态的生命周期和组件同步，状态的定义和更新都在组件内，组件销毁，状态也随即消失。常见于界面UI元素数据，比如当前按钮是否可用、文字是否高亮等。组件内独享的状态使用[@State装饰器](../harmonyos-guides/arkts-state.md)，被@State装饰器修饰后状态的修改只会触发当前组件实例的重新渲染。如下图主题列表上单个主题组件内使用@State修饰主题是否被选中的变量，当在界面点击主题时在组件内直接修改状态值。此时，只有当前主题的组件实例会重新渲染，其他主题组件不会重新渲染。
 
 **图2** HMOS世界App主题选择交互图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/hztNpdWCTmudVfZtaiwubA/zh-cn_image_0000002193850696.png?HW-CC-KV=V1&HW-CC-Date=20260428T001950Z&HW-CC-Expire=86400&HW-CC-Sign=ADA1B17DB2EB8E27A66C43BB67D2519839D288B90D1E9E65E8D53C56933041C1 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/hztNpdWCTmudVfZtaiwubA/zh-cn_image_0000002193850696.png?HW-CC-KV=V1&HW-CC-Date=20260429T061031Z&HW-CC-Expire=86400&HW-CC-Sign=7E22225948B0E0E5175825A5971C32335C54371A372AD0D1299B52889C2DEAC0 "点击放大")
 
 **组件间需要共享的状态**
 
@@ -212,16 +212,16 @@ ArkUI提供了一系列装饰器实现ViewModel的能力，如[@Prop](../harmony
 * 父子组件间共享状态：如下图，”父组件”和其子组件”子组件A”、”子组件B”共享状态loading。
 
   **图3** 父子组件间共享状态场景  
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/cJmQ9iR-RCKN5fppua4eGA/zh-cn_image_0000002229336085.jpg?HW-CC-KV=V1&HW-CC-Date=20260428T001950Z&HW-CC-Expire=86400&HW-CC-Sign=5F6A7694CF9F4BF2C029B822DFF05EA91B334B89D11F2C10489137D9A6E33107 "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/cJmQ9iR-RCKN5fppua4eGA/zh-cn_image_0000002229336085.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T061031Z&HW-CC-Expire=86400&HW-CC-Sign=3EE7C21067196F4434DEF71ACF3E0B63CD7A50F69FE552D4D7ECEB58B023593E "点击放大")
 
 * 不同子树上组件间共享状态：如下图，祖先组件的左子树上”孙子组件AAA”和右子树上”孙子组件BAA”共享状态loading。
 
   **图4** 不同子树上组件间状态共享场景  
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/nFAyH7s2RTWW_AF9O6VygQ/zh-cn_image_0000002229336109.jpg?HW-CC-KV=V1&HW-CC-Date=20260428T001950Z&HW-CC-Expire=86400&HW-CC-Sign=8CC1F35D55ADDC2EE1B65BB831558DDA51BCD0B885756BCBCA4D9474BFC7220C "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/nFAyH7s2RTWW_AF9O6VygQ/zh-cn_image_0000002229336109.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T061031Z&HW-CC-Expire=86400&HW-CC-Sign=3E06FB7C98D998F508A6083CF8A54AD172F71DBB9BDE61DB3F8296F182697692 "点击放大")
 * 不同组件树间共享状态：如下图，组件树A内”子组件AA”和组件树B内”孙子组件BAA”共享状态loading。
 
   **图5** 不同组件树间共享状态的场景  
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/t5FdnRjUS16kO_Ls51GfNg/zh-cn_image_0000002483580622.png?HW-CC-KV=V1&HW-CC-Date=20260428T001950Z&HW-CC-Expire=86400&HW-CC-Sign=D6F3C7F4414DFBD954CCCD0C57BE7F58D23DFBEA54B8BB2F40A06652D0009284 "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/t5FdnRjUS16kO_Ls51GfNg/zh-cn_image_0000002483580622.png?HW-CC-KV=V1&HW-CC-Date=20260429T061031Z&HW-CC-Expire=86400&HW-CC-Sign=101329B97E3E380F382866C3635DDD0B25618A3BD037BD3B18CB486D6B8FC32A "点击放大")
 
 对于上述三种场景，ArkUI提供了[@State+@Prop](../harmonyos-guides/arkts-prop.md#父组件state到子组件prop简单数据类型同步)、[@State+@Link](../harmonyos-guides/arkts-link.md#简单类型和类对象类型的link)、[@State+@Observed+@ObjectLink](../harmonyos-guides/arkts-observed-and-objectlink.md)、[@Provide+@Consume](../harmonyos-guides/arkts-provide-and-consume.md)、[AppStorage](../harmonyos-guides/arkts-appstorage.md)、[LocalStorage](../harmonyos-guides/arkts-localstorage.md)六种装饰器组合以解决不同范围内的组件间状态共享。按照共享范围能力从小到大，各装饰器组合的共享范围能力和生命周期如下：
 
@@ -239,9 +239,9 @@ ArkUI提供了一系列装饰器实现ViewModel的能力，如[@Prop](../harmony
 以“[HMOS世界App](https://gitcode.com/harmonyos_samples/hmosworld)”中路由状态为例，其“探索”Tab和“我的”Tab界面组件如下：
 
 **图6** HMOS世界App界面组件示意图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/CCmJtnrSTLWvVWAr6kUR6w/zh-cn_image_0000002229450585.png?HW-CC-KV=V1&HW-CC-Date=20260428T001950Z&HW-CC-Expire=86400&HW-CC-Sign=588CAA6DBFB1588E1734C49D383879A28AA2899A2F8C62A7288A80460622EFA6 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/CCmJtnrSTLWvVWAr6kUR6w/zh-cn_image_0000002229450585.png?HW-CC-KV=V1&HW-CC-Date=20260429T061031Z&HW-CC-Expire=86400&HW-CC-Sign=0764C5D5A89AB5E37CA089AC12DE831BFA9BA608F8E981CAFADACDDFF569FA17 "点击放大")
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/SkAEDSJ3T0GtnjwmSAogig/zh-cn_image_0000002229450573.png?HW-CC-KV=V1&HW-CC-Date=20260428T001950Z&HW-CC-Expire=86400&HW-CC-Sign=954168F5DD31D228FB79D434EBB9B0FD4D4564BF92CE0A4D6304251B01851CC7 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/SkAEDSJ3T0GtnjwmSAogig/zh-cn_image_0000002229450573.png?HW-CC-KV=V1&HW-CC-Date=20260429T061031Z&HW-CC-Expire=86400&HW-CC-Sign=6F25FCD6FE0E8EFD8FC13899986A4B6609D2C2077ADCC05345CBE5CE1F8077F2 "点击放大")
 
 * “MainPage”是主页面，该页面有2个子组件“MineView”和“DiscoverView”。
 * “MineView”是“我的”Tab对应的内容视图组件，“CollectedResourceView”是该组件内展示收藏列表的视图组件，“ResourceListView”是“CollectedResourceView”的子组件。
@@ -251,26 +251,26 @@ ArkUI提供了一系列装饰器实现ViewModel的能力，如[@Prop](../harmony
 
 **图7** @State+@Prop当前组件设计图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/AHWlbaKhRYWf7dpddtuP-w/zh-cn_image_0000002229336125.jpg?HW-CC-KV=V1&HW-CC-Date=20260428T001950Z&HW-CC-Expire=86400&HW-CC-Sign=656B4CDC807DB1EB2A58AE12FC9EB55BC977737E419A1DB9CE11032E28A9E71E "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/AHWlbaKhRYWf7dpddtuP-w/zh-cn_image_0000002229336125.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T061031Z&HW-CC-Expire=86400&HW-CC-Sign=2CB179CFE88AF5BA546CDBBE49D40E9C00CFA0C84309E322D2CAB6C8D7440F3B "点击放大")
 
 可以看到，为了实现“ResourceListView”组件和“DiscoverView”组件共享状态，将状态定义在两者的最近公共祖先“MainPage”组件上。对公共祖先到两个需要共享路由状态的组件路径上的所有组件使用@Prop装饰器接收“appNavigationStack”参数，层层传递，直到两个需要共享状态的组件。
 
 若此时产品需要新增功能，该功能要求在“DiscoverView”组件的后代“ActionButtonView”组件上新增对路由信息的判断逻辑。此时开发者需修改上述各个组件设计如下图所示：
 
 **图8** @State+@Prop新增功能后组件设计图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/Q-9YwzTlQxy3m8gEmqRc8Q/zh-cn_image_0000002194010292.jpg?HW-CC-KV=V1&HW-CC-Date=20260428T001950Z&HW-CC-Expire=86400&HW-CC-Sign=2025994252B818A89AE23D39FBC891A692DF1776FB04BB539BD255BFA173C105 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/Q-9YwzTlQxy3m8gEmqRc8Q/zh-cn_image_0000002194010292.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T061031Z&HW-CC-Expire=86400&HW-CC-Sign=E1EF85962DBF810985720A388A1439C7722EECDE07C1B5810E67348CF6D7E37E "点击放大")
 
 可以看到，新功能的逻辑原本只是在“ActionButtonView”这一个组件中使用，开发者却需要修改从“DiscoverView”组件到“ActionButtonView”组件路径上3个组件的结构。若当业务后续再次变更为无需使用该状态时，也同样需要修改多个组件。这显然不是很好的实现方案。
 
 此时使用@Provide+@Consume方案更为合理。同样是“ResourceListView”组件和“DiscoverView”组件共享状态，此方案各组件设计如下：
 
 **图9** 使用@Provide+@Consume方式当前各组件设计  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/DCG432pBTaCPg8N-2jly6w/zh-cn_image_0000002194010312.jpg?HW-CC-KV=V1&HW-CC-Date=20260428T001950Z&HW-CC-Expire=86400&HW-CC-Sign=206C16C5A69589534353898DA370060D0B31AAA6F10760FEB0E061A2D19CCC34 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/DCG432pBTaCPg8N-2jly6w/zh-cn_image_0000002194010312.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T061031Z&HW-CC-Expire=86400&HW-CC-Sign=661368B9CD1C4DCA0787679C0986DF7685751A505BC3579DDAC0646D422964C3 "点击放大")
 
 通过在最顶部组件“MainPage”中注入key值为“appNavigationStack”的路由信息状态，其后代组件均可以通过@Consume装饰器获取该状态值。当业务变动需要“DiscoverView”的后代“ActionButtonView”组件也共享路由信息时，此方案只需在组件“ActionButtonView”上使用@Consume装饰器直接获取路由信息状态，而无需修改其他组件。此时各组件设计如下：
 
 **图10** 使用@Provide+@Consume方式业务变动后各组件设计  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/tG-YlVGiQXurh1r4TtC92Q/zh-cn_image_0000002229450605.jpg?HW-CC-KV=V1&HW-CC-Date=20260428T001950Z&HW-CC-Expire=86400&HW-CC-Sign=D35B1D05CD5C739F2AF757890A7B151466D3E68A2E1F5C1694C4A7A2BB116EBF "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/tG-YlVGiQXurh1r4TtC92Q/zh-cn_image_0000002229450605.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T061031Z&HW-CC-Expire=86400&HW-CC-Sign=BF0DC45C1FB26CBA68559CECF7D49C4A6FDF65C7E6E7414BEAEC3BFAE4DB30BA "点击放大")
 
 因此当共享状态的组件间跨层级较深时，或共享的信息对于整个组件树是“全局”的存在时，选择@Provide+@Consume的装饰器组合代替层层传递的方式，能够提升代码的可维护性和可拓展性。
 
@@ -280,7 +280,7 @@ ArkUI提供了一系列装饰器实现ViewModel的能力，如[@Prop](../harmony
 
 **图11** @State+@Prop、@State+@Link和@State+@Observed+@ObjectLink装饰器方案区别
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/V40bRCGMQDO1L3eEE9eGKg/zh-cn_image_0000002229450565.jpg?HW-CC-KV=V1&HW-CC-Date=20260428T001950Z&HW-CC-Expire=86400&HW-CC-Sign=924BB0392310FE18F459EF41BC6CBFDA2306BA9DAE53FF4F1D7CCAEF4A5A2DFC "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/V40bRCGMQDO1L3eEE9eGKg/zh-cn_image_0000002229450565.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T061031Z&HW-CC-Expire=86400&HW-CC-Sign=465251FE33EE896D9126540DB046F06953815E49D69C099BEFA7C22AB4D94DD1 "点击放大")
 
 1. @State+@Prop组合方案：
    * @Prop装饰器支持接收Object、class、string、number、boolean、enum类型，以及这些类型的数组。
@@ -329,9 +329,9 @@ ArkUI提供了一系列装饰器实现ViewModel的能力，如[@Prop](../harmony
 对AppStorage的使用，以“HMOS世界App”中共享用户信息和用户收藏信息为例，描述如何拆分状态存储。用户信息和用户收藏信息涉及的模块和界面展示如下：
 
 **图12** “HMOS世界App”中点赞高亮状态和用户信息组件视图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/6okBX_4rTlOZqcqYmNnz3A/zh-cn_image_0000002193850732.png?HW-CC-KV=V1&HW-CC-Date=20260428T001950Z&HW-CC-Expire=86400&HW-CC-Sign=D898767F175A96CF5D695A7EF758B442E52B393DAC8405151A1B4629999E23A3 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/6okBX_4rTlOZqcqYmNnz3A/zh-cn_image_0000002193850732.png?HW-CC-KV=V1&HW-CC-Date=20260429T061031Z&HW-CC-Expire=86400&HW-CC-Sign=CB853EA6BF2B04C353E32F990524154FFBA41E7311C8F7FC8FDECB648CA6D5BC "点击放大")
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/HcKWHbx2RtOYp6tJ5riq5w/zh-cn_image_0000002229450577.png?HW-CC-KV=V1&HW-CC-Date=20260428T001950Z&HW-CC-Expire=86400&HW-CC-Sign=D32652461CA7C3BB02F14E88CAD5D4E31A5F031C0B1222E595007097B7817186 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/HcKWHbx2RtOYp6tJ5riq5w/zh-cn_image_0000002229450577.png?HW-CC-KV=V1&HW-CC-Date=20260429T061031Z&HW-CC-Expire=86400&HW-CC-Sign=32F6FCD3E6A3127320B4E17CFA02DFE5D18C8ED9C1168129C625AD09B5C63EE6 "点击放大")
 
 * “我的”模块顶部有展示用户信息的组件“UserInfoView”，底部有展示用户收藏列表，列表卡片上需要高亮展示用户是否点赞了当前文章。
 * “探索”模块首页展示技术文章列表，列表卡片上同样需要展示用户是否点赞了当前文章。
@@ -546,7 +546,7 @@ ArkUI提供了一系列装饰器实现ViewModel的能力，如[@Prop](../harmony
 如在“HMOS世界App”的探索模块首页上点击资讯卡片、文章卡片或顶部轮播图时，都会跳转到详情页，交互效果如下：
 
 **图13** “HMOS世界App”的探索模块首页上各组件跳转详情页交互  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/MZbvGsQUReu3ocTQWHEmeQ/zh-cn_image_0000002229336089.png?HW-CC-KV=V1&HW-CC-Date=20260428T001950Z&HW-CC-Expire=86400&HW-CC-Sign=C234013D63C242CD87E88D8FC83BCF5540C57E91A68E0551FEA4747D0A3FC7D2 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/MZbvGsQUReu3ocTQWHEmeQ/zh-cn_image_0000002229336089.png?HW-CC-KV=V1&HW-CC-Date=20260429T061031Z&HW-CC-Expire=86400&HW-CC-Sign=21454667ED8523690B12E4598F6FCB4DAD884F9AB193EC3D3B4756FAEB62C2C0 "点击放大")
 
 上述的三个组件共享全局路由信息，当发生界面点击交互时，三个组件的逻辑均为根据设备信息修改路由状态实现跳转到详情页。将三个组件处理跳转的逻辑集中到父组件上处理。实现代码如下：
 
@@ -712,7 +712,7 @@ ArkUI提供了一系列装饰器实现ViewModel的能力，如[@Prop](../harmony
 
 上述示例中，每个ListItemComponent组件点击Text后会将当前点击的列表项下标index赋值给currentIndex，@Link装饰的状态变量currentIndex变化后，父组件Index和所有ListItemComponent组件中的Index值都会同步发生改变。然后，在所有ListItemComponent组件中，根据列表项下标index与currentIndex的差值的绝对值是否小于等于1来决定Text的颜色，如果满足条件，则文本显示为红色，否则显示为蓝色，下面是运行效果图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/iCZJbLeMSk-N7Avkgq7OrQ/zh-cn_image_0000002229450581.gif?HW-CC-KV=V1&HW-CC-Date=20260428T001950Z&HW-CC-Expire=86400&HW-CC-Sign=743850B3700B83503D7DCF62CE6900D11A070DBF98BDC955752966481A7F1C2E "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/iCZJbLeMSk-N7Avkgq7OrQ/zh-cn_image_0000002229450581.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061031Z&HW-CC-Expire=86400&HW-CC-Sign=A42A03557C10C3E4DB36EF74009BCF96ACCFCDFE11734743F2ACD7AD30B73846 "点击放大")
 
 可以看到每次点击后即使其中部分Text组件的颜色并没有发生改变，所有的Text组件也都会刷新。这是由于ListItemComponent组件中的Text组件直接关联了currentIndex，而不是根据currentIndex计算得到的颜色。
 
@@ -783,7 +783,7 @@ ArkUI提供了一系列装饰器实现ViewModel的能力，如[@Prop](../harmony
 
 上述代码中，ListItemComponent组件中的状态变量currentIndex使用@Watch装饰，Text组件直接关联新的状态变量color。当currentIndex发生变化时，会触发onCurrentIndexUpdate方法，在其中将表达式的运算结果赋值给状态变量color。只有color的值发生变化时，Text组件才会重新渲染，运行效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/igf_0ofWQDKtKFoflYHvyg/zh-cn_image_0000002193850736.gif?HW-CC-KV=V1&HW-CC-Date=20260428T001950Z&HW-CC-Expire=86400&HW-CC-Sign=0D53C5C120A1E7EFF3CDFBBCC03B70A5F56F914412BAC96698BA4B51F9C5A0C6 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/igf_0ofWQDKtKFoflYHvyg/zh-cn_image_0000002193850736.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061031Z&HW-CC-Expire=86400&HW-CC-Sign=3DA7E19605EFB9A902FF00BD8E36B9E44CCCCCB48BCB90750C35B1B90FB1504B "点击放大")
 
 被依赖的数据源仅在父子或兄弟关系的组件中传递时，可以参考上述示例，使用@State/@Link/@Watch装饰器进行状态管理，实现组件的精准刷新。
 

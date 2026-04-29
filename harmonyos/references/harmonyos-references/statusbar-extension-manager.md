@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/statusbar
 title: statusBarManager（状态栏管理服务）
 breadcrumb: API参考 > 系统 > 基础功能 > Desktop Extension Kit（桌面拓展服务） > ArkTS API > statusBarManager（状态栏管理服务）
 category: harmonyos-references
-scraped_at: 2026-04-28T08:10:01+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:9b7b10fd53bb7bcfc37c70a4e5be4adb3a727e7e1f9836268a1a9185fb82c399
+scraped_at: 2026-04-29T14:00:43+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:f9e4036d1aae898357cfac38b0491c1fe914c19002f7abedcff9c9e6e02d25be
 ---
 
 本模块为应用提供接入状态栏的能力。应用可以通过接入相应的API，可快速在状态栏显示应用及下拉面板，实现对应用的管理；用户可以通过直接操作状态栏图标完成一些应用操作。
@@ -902,7 +902,7 @@ PC/2in1
 
 on(type: 'statusBarIconClick', callback: Callback<emitter.EventData>): void
 
-监听状态栏图标点击事件。
+监听状态栏图标点击事件。使用callback异步回调。
 
 **系统能力：** SystemCapability.PCService.StatusBarManager
 
@@ -923,7 +923,7 @@ on(type: 'statusBarIconClick', callback: Callback<emitter.EventData>): void
 3. let data = eventData.data;
 4. if (data) {
 5. switch (data['iconClickType']) {
-6. case 'leftClickType':
+6. case 'leftClick':
 7. // 自定义左键点击业务
 8. break;
 9. default:
@@ -942,7 +942,7 @@ PC/2in1
 
 off(type: 'statusBarIconClick', callback?: Callback<emitter.EventData>): void
 
-注销状态栏图标点击事件。
+注销状态栏图标点击事件。使用callback异步回调。
 
 **系统能力：** SystemCapability.PCService.StatusBarManager
 
@@ -963,7 +963,7 @@ off(type: 'statusBarIconClick', callback?: Callback<emitter.EventData>): void
 3. let data = eventData.data;
 4. if (data) {
 5. switch (data['iconClickType']) {
-6. case 'leftClickType':
+6. case 'leftClick':
 7. // 自定义左键点击业务
 8. break;
 9. default:
@@ -984,7 +984,7 @@ PC/2in1
 
 on(type: 'rightMenuClick', callback: Callback<emitter.EventData>): void
 
-监听状态栏图标右键菜单点击事件。
+监听状态栏图标右键菜单点击事件。使用callback异步回调。
 
 **系统能力：** SystemCapability.PCService.StatusBarManager
 
@@ -1019,7 +1019,7 @@ PC/2in1
 
 off(type: 'rightMenuClick', callback?: Callback<emitter.EventData>): void
 
-注销状态栏图标右键菜单点击事件。
+注销状态栏图标右键菜单点击事件。使用callback异步回调。
 
 **系统能力：** SystemCapability.PCService.StatusBarManager
 
@@ -1057,7 +1057,7 @@ PC/2in1
 
 updateStatusBarHoverTips(context: common.Context, hoverTips: string): Promise<void>
 
-更新状态栏图标hover时显示内容。
+更新状态栏图标hover时显示内容。使用promise异步回调。
 
 **系统能力：** SystemCapability.PCService.StatusBarManager
 
@@ -1072,7 +1072,7 @@ updateStatusBarHoverTips(context: common.Context, hoverTips: string): Promise<vo
 
 **返回值：**
 
-| 参数名 | 说明 |
+| 类型 | 说明 |
 | --- | --- |
 | Promise<void> | Promise对象，无返回结果。 |
 

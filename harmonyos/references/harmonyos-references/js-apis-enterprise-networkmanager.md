@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-e
 title: @ohos.enterprise.networkManager（网络管理）
 breadcrumb: API参考 > 系统 > 基础功能 > MDM Kit（企业设备管理服务） > ArkTS API > @ohos.enterprise.networkManager（网络管理）
 category: harmonyos-references
-scraped_at: 2026-04-28T08:10:28+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:59457b77d16c47fec9fd28de6427b437be15b896b00e9c59c7fdf0e05af2d602
+scraped_at: 2026-04-29T14:01:12+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:870f13f3df94629412d42a6da46cffb66d475f7dfb30ec3b6e91b71c0a0705f6
 ---
 
 本模块提供设备网络管理能力，包括查询设备IP地址、MAC地址信息等。
@@ -1535,7 +1535,7 @@ API version 21及之前版本，仅支持IPv4。从API version 22开始，支持
 | action | [Action](js-apis-enterprise-networkmanager.md#action) | 否 | 是 | 接收或者丢弃数据包。  添加防火墙过滤规则时必填；  移除防火墙时非必填，当值为空时，表示清空所有的匹配[Action](js-apis-enterprise-networkmanager.md#action)规则的链，且srcAddr，destAddr，srcPort，destPort，appUid也必须传入空值。 |
 | protocol | [Protocol](js-apis-enterprise-networkmanager.md#protocol) | 否 | 是 | 网络协议。当值为ALL或者ICMP时，设置srcPort与destPort无效。 |
 | family22+ | number | 否 | 是 | IP协议版本。支持取值为1或2，取值为1表示IPv4，取值为2表示IPv6。 |
-| logType23+ | [LogType](js-apis-enterprise-networkmanager.md#logtype23) | 否 | 是 | 日志类型，当前仅支持配置NFLOG类型，该参数仅支持PC/2in1设备。  添加防火墙过滤规则时，此参数非必填。若填写，仅在丢弃或拒绝数据包时生效。生效后，在访问被过滤目的地址时，会记录网络数据包日志，并向上层提供可查询的日志信息，可以通过[订阅安全审计数据](devicesecurity-securityaudit-api.md#section10996135475216)获取。  移除防火墙过滤规则时，当清空某条链时非必填，不影响整条链的清空；当移除单条规则时，是否填写必须与该规则一致，否则可能导致过滤规则已经移除，但是日志还在记录的问题；相同过滤规则移除时必须按添加时的顺序移除。  获取防火墙过滤规则时，仅日志生效的场景可以获取到logType字段。 |
+| logType23+ | [LogType](js-apis-enterprise-networkmanager.md#logtype23) | 否 | 是 | 日志类型，当前仅支持配置NFLOG类型，该参数仅支持PC/2in1设备。  添加防火墙过滤规则时，此参数非必填。若填写，仅在丢弃或拒绝数据包时生效。生效后，在访问被过滤目的地址时，会记录网络数据包日志，并向上层提供可查询的日志信息，可以通过[订阅安全审计数据](devicesecurity-securityaudit-api.md#onauditeventoccur)获取。  移除防火墙过滤规则时，当清空某条链时非必填，不影响整条链的清空；当移除单条规则时，是否填写必须与该规则一致，否则可能导致过滤规则已经移除，但是日志还在记录的问题；相同过滤规则移除时必须按添加时的顺序移除。  获取防火墙过滤规则时，仅日志生效的场景可以获取到logType字段。 |
 
 ## DomainFilterRule
 
@@ -1556,7 +1556,7 @@ API version 21及之前版本，仅支持IPv4。从API version 22开始，支持
 | action | [Action](js-apis-enterprise-networkmanager.md#action) | 否 | 是 | 接收或者丢弃数据包。  添加域名过滤规则时必填；  移除域名过滤规则时非必填，当值为空时，表示清空所有的匹配[Action](js-apis-enterprise-networkmanager.md#action)规则的链，且domainName，appUid也必须传入空值。 |
 | direction15+ | [Direction](js-apis-enterprise-networkmanager.md#direction) | 否 | 是 | 规则链。  添加域名过滤规则时非必填；当值设为输出链或输入链时，实际效果为输出链。设为转发链时，appUid需设置为空，否则会报401错误码。  移除域名过滤规则时非必填，当值为空时，表示清空所有的[Direction](js-apis-enterprise-networkmanager.md#direction)链，且domainName，appUid也必须传入空值。 |
 | family22+ | number | 否 | 是 | IP协议版本。支持取值为1或2，取值为1表示IPv4，取值为2表示IPv6。 |
-| logType23+ | [LogType](js-apis-enterprise-networkmanager.md#logtype23) | 否 | 是 | 日志类型，当前仅支持配置NFLOG类型，该参数仅支持PC/2in1设备。  添加域名过滤规则时，此参数非必填。若填写，仅在丢弃或拒绝数据包时生效。生效后，在访问被过滤域名时，会记录网络数据包日志，并向上层提供可查询的日志信息，可以通过[订阅安全审计数据](devicesecurity-securityaudit-api.md#section10996135475216)获取。  移除域名过滤规则时，当清空某条链时非必填，不影响整条链的清空；当移除单条规则时，是否填写必须与该规则一致，否则可能导致过滤规则已经移除，但是日志还在记录的问题；相同过滤规则移除时必须按添加时的顺序移除。  获取域名过滤规则时，仅日志生效的场景可以获取到logType字段。 |
+| logType23+ | [LogType](js-apis-enterprise-networkmanager.md#logtype23) | 否 | 是 | 日志类型，当前仅支持配置NFLOG类型，该参数仅支持PC/2in1设备。  添加域名过滤规则时，此参数非必填。若填写，仅在丢弃或拒绝数据包时生效。生效后，在访问被过滤域名时，会记录网络数据包日志，并向上层提供可查询的日志信息，可以通过[订阅安全审计数据](devicesecurity-securityaudit-api.md#onauditeventoccur)获取。  移除域名过滤规则时，当清空某条链时非必填，不影响整条链的清空；当移除单条规则时，是否填写必须与该规则一致，否则可能导致过滤规则已经移除，但是日志还在记录的问题；相同过滤规则移除时必须按添加时的顺序移除。  获取域名过滤规则时，仅日志生效的场景可以获取到logType字段。 |
 
 ## Direction
 

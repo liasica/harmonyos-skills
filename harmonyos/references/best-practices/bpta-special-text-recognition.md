@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-special-te
 title: 特殊文本识别跳转
 breadcrumb: 最佳实践 > 应用框架 > 程序框架 > 特殊文本识别跳转
 category: best-practices
-scraped_at: 2026-04-28T08:20:11+08:00
+scraped_at: 2026-04-29T14:10:50+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:12f689cf7c986e74e0eec16e3627e3e53e3e389c0a605b20b0a2b9a45767f587
+content_hash: sha256:22d8df39dff0a08ca3ac16fb3850523b91b5777b77ec025df564d3c8bbc5e82d
 ---
 
 ## 概述
@@ -14,7 +14,7 @@ content_hash: sha256:12f689cf7c986e74e0eec16e3627e3e53e3e389c0a605b20b0a2b9a4576
 
 以社交应用场景为例，当用户在聊天过程中收到包含特殊文本的消息时，系统会自动识别这些内容并渲染为可点击的链接。用户点击后，即可快速完成如打开网页、跳转应用详情、拨打电话、写邮件等操作，极大提升了用户体验和操作效率。
 
-[](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/13/v3/b8mRey7YSO63BxFusfW-lg/zh-cn_media_0000002284820694.mp4?HW-CC-KV=V1&HW-CC-Date=20260428T002008Z&HW-CC-Expire=86400&HW-CC-Sign=5A09E9C54619E9CA7CB7F9C7228D06527E3200D28A90A85D5DFF7E78F9B675A2)
+[](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/13/v3/b8mRey7YSO63BxFusfW-lg/zh-cn_media_0000002284820694.mp4?HW-CC-KV=V1&HW-CC-Date=20260429T061048Z&HW-CC-Expire=86400&HW-CC-Sign=2E5925D735187FBB2589DAB9741100F85F873F7C919D6361838DA2237371E98B)
 
 Video Player is loading.
 
@@ -163,7 +163,7 @@ Text组件提供了[enableDataDetector](../harmonyos-references/ts-basic-compone
 
    实现效果如下图所示。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/XwIcsGVMR3Ctdz0VVlPM8Q/zh-cn_image_0000002319470057.png?HW-CC-KV=V1&HW-CC-Date=20260428T002008Z&HW-CC-Expire=86400&HW-CC-Sign=AE75C06AF7DBC3C298FDD5DF76FCD3F09C4DC49E988BBC5FE82B8F303B2D3A12 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/XwIcsGVMR3Ctdz0VVlPM8Q/zh-cn_image_0000002319470057.png?HW-CC-KV=V1&HW-CC-Date=20260429T061048Z&HW-CC-Expire=86400&HW-CC-Sign=98137DF39F2C87BAB1A946B64B8FBB8B6DD9F1D995682C15418ED1A7B05278FC "点击放大")
 3. 启用特殊文本识别。
 
    在Text组件上启用[enableDataDetector](../harmonyos-references/ts-basic-components-text.md#enabledatadetector11)属性，即可实现对一段文字中的链接、日期、电话号码、地址、邮箱等特殊文本进行自动识别并标记。
@@ -178,7 +178,7 @@ Text组件提供了[enableDataDetector](../harmonyos-references/ts-basic-compone
 
    分别传入包含标准HTTP/HTTPS链接、App Linking链接、日期、电话号码、地址、邮箱等文字内容到TextLink组件中，均以可交互形式显示。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/u80X7QNgRRinfl7zoIhkrg/zh-cn_image_0000002284820702.png?HW-CC-KV=V1&HW-CC-Date=20260428T002008Z&HW-CC-Expire=86400&HW-CC-Sign=D1B65D1CB160C912A4BBEBB20AB4E9707655E407557421B34ECE2E634E19B69E "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/u80X7QNgRRinfl7zoIhkrg/zh-cn_image_0000002284820702.png?HW-CC-KV=V1&HW-CC-Date=20260429T061048Z&HW-CC-Expire=86400&HW-CC-Sign=0F14DF78C7208CFBEC91BEFB7CE20E949EF69DBC7E472E81C8275A01D1C8C383 "点击放大")
 
 ## 示例代码
 

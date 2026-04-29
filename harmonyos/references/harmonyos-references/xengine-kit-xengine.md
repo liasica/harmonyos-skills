@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/xengine-k
 title: XEngine
 breadcrumb: API参考 > 图形 > XEngine Kit（GPU加速引擎服务） > C API > 模块 > XEngine
 category: harmonyos-references
-scraped_at: 2026-04-28T08:15:54+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:29540a3e8b3ed4e008649160a5d21c269e21125b6747a134674ab46aff5d4291
+scraped_at: 2026-04-29T14:06:33+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:a2f045dd3f284ce7b63857354d0c1317c8da06f4a6df88baa959ffffa7789aa6
 ---
 
 ## 概述
@@ -773,7 +773,7 @@ PhonePC/2in1TabletTV
 PhonePC/2in1TabletTV
 
 ```
-1. typedef void(VKAPI_PTR * PFN_HMS_XEG_CmdDispatchAdaptiveVRS) (VkCommandBuffer commandBuffer, XEG_AdaptiveVRS xegAdaptiveVRS, XEG_AdaptiveVRSDescription *pXegAdaptiveVRSDescription)
+1. typedef void(VKAPI_PTR *PFN_HMS_XEG_CmdDispatchAdaptiveVRS) (VkCommandBuffer commandBuffer, XEG_AdaptiveVRS xegAdaptiveVRS, XEG_AdaptiveVRSDescription *pXegAdaptiveVRSDescription)
 ```
 
 **描述**
@@ -795,7 +795,7 @@ PhonePC/2in1TabletTV
 PhonePC/2in1TabletTV
 
 ```
-1. typedef VkResult(VKAPI_PTR * PFN_HMS_XEG_CmdRadixSortHPS) (VkCommandBuffer commandBuffer, XEG_HPS hps, const XEG_HPSRadixSortDescription *pDescription)
+1. typedef VkResult(VKAPI_PTR *PFN_HMS_XEG_CmdRadixSortHPS) (VkCommandBuffer commandBuffer, XEG_HPS hps, const XEG_HPSRadixSortDescription *pDescription)
 ```
 
 **描述**
@@ -821,7 +821,7 @@ PhonePC/2in1TabletTV
 PhonePC/2in1TabletTV
 
 ```
-1. typedef VkResult(VKAPI_PTR * PFN_HMS_XEG_CmdRenderRTGI) (VkCommandBuffer commandBuffer, XEG_RTGI rtGI, const void *pDescription)
+1. typedef VkResult(VKAPI_PTR *PFN_HMS_XEG_CmdRenderRTGI) (VkCommandBuffer commandBuffer, XEG_RTGI rtGI, const void *pDescription)
 ```
 
 **描述**
@@ -847,7 +847,7 @@ PhonePC/2in1TabletTV
 PhonePC/2in1TabletTV
 
 ```
-1. typedef VkResult VKAPI_ATTR* PFN_HMS_XEG_CmdRenderRTReflection(VkCommandBuffer commandBuffer, XEG_RTReflection rtReflection, const void *pDescription)
+1. typedef VkResult VKAPI_ATTR *PFN_HMS_XEG_CmdRenderRTReflection(VkCommandBuffer commandBuffer, XEG_RTReflection rtReflection, const void *pDescription)
 ```
 
 **描述**
@@ -869,7 +869,7 @@ PhonePC/2in1TabletTV
 PhonePC/2in1TabletTV
 
 ```
-1. typedef VkResult(VKAPI_PTR * PFN_HMS_XEG_CmdRenderRTVisibleMask) (VkCommandBuffer commandBuffer, XEG_RTVisibleMask rtVisibleMask, const void *pDescription)
+1. typedef VkResult(VKAPI_PTR *PFN_HMS_XEG_CmdRenderRTVisibleMask) (VkCommandBuffer commandBuffer, XEG_RTVisibleMask rtVisibleMask, const void *pDescription)
 ```
 
 **描述**
@@ -895,7 +895,7 @@ VkResult类型的错误码，值为VK\_SUCCESS时表示执行成功。
 PhonePC/2in1TabletTV
 
 ```
-1. typedef void(VKAPI_PTR * PFN_HMS_XEG_CmdRenderSpatialUpscale) (VkCommandBuffer commandBuffer, XEG_SpatialUpscale xegSpatialUpscale, XEG_SpatialUpscaleDescription *pXegSpatialUpscaleDescription)
+1. typedef void(VKAPI_PTR *PFN_HMS_XEG_CmdRenderSpatialUpscale) (VkCommandBuffer commandBuffer, XEG_SpatialUpscale xegSpatialUpscale, XEG_SpatialUpscaleDescription *pXegSpatialUpscaleDescription)
 ```
 
 **描述**
@@ -917,7 +917,7 @@ PhonePC/2in1TabletTV
 PhonePC/2in1TabletTV
 
 ```
-1. typedef void(VKAPI_ATTR * PFN_HMS_XEG_CmdRenderTemporalUpscale) (VkCommandBuffer commandBuffer, XEG_TemporalUpscale temporalUpscale, XEG_TemporalUpscaleDescription *pDescription)
+1. typedef void(VKAPI_ATTR *PFN_HMS_XEG_CmdRenderTemporalUpscale) (VkCommandBuffer commandBuffer, XEG_TemporalUpscale temporalUpscale, XEG_TemporalUpscaleDescription *pDescription)
 ```
 
 **描述**
@@ -939,7 +939,7 @@ PhonePC/2in1TabletTV
 PhonePC/2in1TabletTV
 
 ```
-1. typedef VkResult(VKAPI_PTR * PFN_HMS_XEG_CmdSetSynchronization) (VkCommandBuffer commandBuffer, const void *xegHandle)
+1. typedef VkResult(VKAPI_PTR *PFN_HMS_XEG_CmdSetSynchronization) (VkCommandBuffer commandBuffer, const void *xegHandle)
 ```
 
 **描述**
@@ -964,7 +964,7 @@ PhonePC/2in1TabletTV
 PhonePC/2in1TabletTV
 
 ```
-1. typedef VkResult(VKAPI_PTR * PFN_HMS_XEG_CreateAdaptiveVRS) (VkDevice device, const XEG_AdaptiveVRSCreateInfo *pXegAdaptiveVRSCreateInfo, XEG_AdaptiveVRS *pXegAdaptiveVRS)
+1. typedef VkResult(VKAPI_PTR *PFN_HMS_XEG_CreateAdaptiveVRS) (VkDevice device, const XEG_AdaptiveVRSCreateInfo *pXegAdaptiveVRSCreateInfo, XEG_AdaptiveVRS *pXegAdaptiveVRS)
 ```
 
 **描述**
@@ -990,7 +990,7 @@ PhonePC/2in1TabletTV
 PhonePC/2in1TabletTV
 
 ```
-1. typedef VkResult(VKAPI_PTR * PFN_HMS_XEG_CreateHPS) (VkDevice device, const XEG_HPSCreateInfo *pCreateInfo, XEG_HPS *pHps)
+1. typedef VkResult(VKAPI_PTR *PFN_HMS_XEG_CreateHPS) (VkDevice device, const XEG_HPSCreateInfo *pCreateInfo, XEG_HPS *pHps)
 ```
 
 **描述**
@@ -1016,7 +1016,7 @@ PhonePC/2in1TabletTV
 PhonePC/2in1TabletTV
 
 ```
-1. typedef VkResult(VKAPI_PTR * PFN_HMS_XEG_CreateRTGI) (VkDevice device, const void *pCreateInfo, XEG_RTGI *pRtGI)
+1. typedef VkResult(VKAPI_PTR *PFN_HMS_XEG_CreateRTGI) (VkDevice device, const void *pCreateInfo, XEG_RTGI *pRtGI)
 ```
 
 **描述**
@@ -1042,7 +1042,7 @@ PhonePC/2in1TabletTV
 PhonePC/2in1TabletTV
 
 ```
-1. typedef VkResult(VKAPI_ATTR * PFN_HMS_XEG_CreateRTReflection) (VkDevice device, const void *pCreateInfo, XEG_RTReflection *pRtReflection)
+1. typedef VkResult(VKAPI_ATTR *PFN_HMS_XEG_CreateRTReflection) (VkDevice device, const void *pCreateInfo, XEG_RTReflection *pRtReflection)
 ```
 
 **描述**
@@ -1068,7 +1068,7 @@ PhonePC/2in1TabletTV
 PhonePC/2in1TabletTV
 
 ```
-1. typedef VkResult(VKAPI_PTR * PFN_HMS_XEG_CreateRTVisibleMask) (VkDevice device, const void *pCreateInfo, XEG_RTVisibleMask *pRTVisibleMask)
+1. typedef VkResult(VKAPI_PTR *PFN_HMS_XEG_CreateRTVisibleMask) (VkDevice device, const void *pCreateInfo, XEG_RTVisibleMask *pRTVisibleMask)
 ```
 
 **描述**
@@ -1094,7 +1094,7 @@ VkResult类型的错误码，值为VK\_SUCCESS时表示创建成功。
 PhonePC/2in1TabletTV
 
 ```
-1. typedef VkResult(VKAPI_PTR * PFN_HMS_XEG_CreateSpatialUpscale) (VkDevice device, const XEG_SpatialUpscaleCreateInfo *pXegSpatialUpscaleCreateInfo, XEG_SpatialUpscale *pXegSpatialUpscale)
+1. typedef VkResult(VKAPI_PTR *PFN_HMS_XEG_CreateSpatialUpscale) (VkDevice device, const XEG_SpatialUpscaleCreateInfo *pXegSpatialUpscaleCreateInfo, XEG_SpatialUpscale *pXegSpatialUpscale)
 ```
 
 **描述**
@@ -1120,7 +1120,7 @@ PhonePC/2in1TabletTV
 PhonePC/2in1TabletTV
 
 ```
-1. typedef VkResult(VKAPI_ATTR * PFN_HMS_XEG_CreateTemporalUpscale) (VkDevice device, XEG_TemporalUpscaleCreateInfo *pTemporalUpscaleInfo, XEG_TemporalUpscale *pTemporalUpscale)
+1. typedef VkResult(VKAPI_ATTR *PFN_HMS_XEG_CreateTemporalUpscale) (VkDevice device, XEG_TemporalUpscaleCreateInfo *pTemporalUpscaleInfo, XEG_TemporalUpscale *pTemporalUpscale)
 ```
 
 **描述**
@@ -1146,7 +1146,7 @@ PhonePC/2in1TabletTV
 PhonePC/2in1TabletTV
 
 ```
-1. typedef void(VKAPI_PTR * PFN_HMS_XEG_DestroyAdaptiveVRS) (XEG_AdaptiveVRS xegAdaptiveVRS)
+1. typedef void(VKAPI_PTR *PFN_HMS_XEG_DestroyAdaptiveVRS) (XEG_AdaptiveVRS xegAdaptiveVRS)
 ```
 
 **描述**
@@ -1166,7 +1166,7 @@ PhonePC/2in1TabletTV
 PhonePC/2in1TabletTV
 
 ```
-1. typedef void(VKAPI_PTR * PFN_HMS_XEG_DestroyHPS) (XEG_HPS hps)
+1. typedef void(VKAPI_PTR *PFN_HMS_XEG_DestroyHPS) (XEG_HPS hps)
 ```
 
 **描述**
@@ -1186,7 +1186,7 @@ PhonePC/2in1TabletTV
 PhonePC/2in1TabletTV
 
 ```
-1. typedef void(VKAPI_PTR * PFN_HMS_XEG_DestroyRTGI) (XEG_RTGI rtGI)
+1. typedef void(VKAPI_PTR *PFN_HMS_XEG_DestroyRTGI) (XEG_RTGI rtGI)
 ```
 
 **描述**
@@ -1206,7 +1206,7 @@ PhonePC/2in1TabletTV
 PhonePC/2in1TabletTV
 
 ```
-1. typedef void VKAPI_ATTR* PFN_HMS_XEG_DestroyRTReflection(XEG_RTReflection rtReflection)
+1. typedef void VKAPI_ATTR *PFN_HMS_XEG_DestroyRTReflection(XEG_RTReflection rtReflection)
 ```
 
 **描述**
@@ -1226,7 +1226,7 @@ PhonePC/2in1TabletTV
 PhonePC/2in1TabletTV
 
 ```
-1. typedef void(VKAPI_PTR * PFN_HMS_XEG_DestroyRTVisibleMask) (XEG_RTVisibleMask rtVisibleMask)
+1. typedef void(VKAPI_PTR *PFN_HMS_XEG_DestroyRTVisibleMask) (XEG_RTVisibleMask rtVisibleMask)
 ```
 
 **描述**
@@ -1246,7 +1246,7 @@ PhonePC/2in1TabletTV
 PhonePC/2in1TabletTV
 
 ```
-1. typedef void(VKAPI_PTR * PFN_HMS_XEG_DestroySpatialUpscale) (XEG_SpatialUpscale xegSpatialUpscale)
+1. typedef void(VKAPI_PTR *PFN_HMS_XEG_DestroySpatialUpscale) (XEG_SpatialUpscale xegSpatialUpscale)
 ```
 
 **描述**
@@ -1266,7 +1266,7 @@ PhonePC/2in1TabletTV
 PhonePC/2in1TabletTV
 
 ```
-1. typedef void(VKAPI_ATTR * PFN_HMS_XEG_DestroyTemporalUpscale) (XEG_TemporalUpscale temporalUpscale)
+1. typedef void(VKAPI_ATTR *PFN_HMS_XEG_DestroyTemporalUpscale) (XEG_TemporalUpscale temporalUpscale)
 ```
 
 **描述**
@@ -1313,7 +1313,7 @@ PhonePC/2in1TabletTV
 PhonePC/2in1TabletTV
 
 ```
-1. typedef VkResult(VKAPI_PTR * PFN_HMS_XEG_EnumerateDeviceExtensionProperties) (VkPhysicalDevice physicalDevice, uint32_t *pPropertyCount, XEG_ExtensionProperties *pProperties)
+1. typedef VkResult(VKAPI_PTR *PFN_HMS_XEG_EnumerateDeviceExtensionProperties) (VkPhysicalDevice physicalDevice, uint32_t *pPropertyCount, XEG_ExtensionProperties *pProperties)
 ```
 
 **描述**

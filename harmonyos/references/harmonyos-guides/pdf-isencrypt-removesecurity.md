@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pdf-isencrypt
 title: 判断PDF文档是否加密及删除加密
 breadcrumb: 指南 > 应用服务 > PDF Kit（PDF服务） > pdfService能力 > 判断PDF文档是否加密及删除加密
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:50:21+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:46c56461d0c53d1c4765527b2a946b99d9dddd880b38218965b57adb92a3e5bd
+scraped_at: 2026-04-29T13:39:45+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:643271b5c98ebe6fc2e6d3c87624c90ddeae7ec48ad2e20379eb8957562d4aac
 ---
 
 PDF Kit支持判断PDF文档是否加密及删除PDF加密锁。
@@ -36,8 +36,8 @@ PDF Kit支持判断PDF文档是否加密及删除PDF加密锁。
 11. Column() {
 12. // 判断文档是否加密，并删除加密
 13. Button('isEncryptedAndRemoveSecurity').onClick(async () => {
-14. // 确保沙箱目录有input.pdf文档
-15. let filePath = this.context.filesDir + '/input.pdf';
+14. // 确保在工程目录src/main/resources/resfile里有input.pdf文档
+15. let filePath = this.context.resourceDir + '/input.pdf';
 16. let isEncrypt = this.pdfDocument.isEncrypted(filePath);
 17. if (isEncrypt) {
 18. let hasRemoveEncrypt = this.pdfDocument.removeSecurity();

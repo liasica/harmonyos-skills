@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-mutable
 title: mutableBuilder：实现全局@Builder动态更新
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式基本语法 > 组件扩展 > mutableBuilder：实现全局@Builder动态更新
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:38:58+08:00
-doc_updated_at: 2026-03-12
-content_hash: sha256:eccb6177e21508fa33a6779e5ff19127ea32ec220efb60435c1f9c204b11c0ba
+scraped_at: 2026-04-29T13:27:07+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:84a114697e76fde575a05c4752fdd210ad9c30119a2223f2907fba351e921759
 ---
 
 当在一个自定义组件内使用多个全局[@Builder](arkts-builder.md)函数实现UI的不同效果时，代码维护将变得非常困难，且页面不够整洁。此时，可以使用[wrapBuilder](arkts-wrapbuilder.md)封装全局@Builder。但是wrapBuilder不支持动态切换@Builder，引入[mutableBuilder](../harmonyos-references/ts-universal-mutablebuilder.md)实现全局@Builder的动态切换。
@@ -216,7 +216,7 @@ mutableBuilder是一个模板函数，返回一个[MutableBuilder](../harmonyos-
 
 点击Button，可将textBuilder动态更改为buttonBuilder，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/9W6NvrJHTqSQq299YvxN2w/zh-cn_image_0000002583437627.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233856Z&HW-CC-Expire=86400&HW-CC-Sign=61EF283409F2952CC879391FB6F0DB268B8F7EA611E9DDA1B87D271E8D1AEBEF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/1NDpWqXzSkGPOzX43C0C3g/zh-cn_image_0000002558604416.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052705Z&HW-CC-Expire=86400&HW-CC-Sign=FA57764DCC3585E445BFF875E0ADC2BACE6F32E95C37D19728AB4FB87600DB0D)
 
 ## 使用mutableBuilder显示弹出菜单
 
@@ -251,12 +251,13 @@ mutableBuilder是一个模板函数，返回一个[MutableBuilder](../harmonyos-
 26. .borderRadius(10)
 27. .backgroundColor(0xFFFFFF)
 28. }
-29. .bindMenu(this.mutableBuilderMenu.builder)
-30. }, (item: number) => JSON.stringify(item))
-31. }
+29. // 使用mutableBuilder显示弹出菜单
+30. .bindMenu(this.mutableBuilderMenu.builder)
+31. }, (item: number) => JSON.stringify(item))
 32. }
 33. }
 34. }
+35. }
 ```
 
 ## 观察mutableBuilder中@Builder的变化
@@ -317,6 +318,6 @@ mutableBuilder对应的@Builder函数中可使用[MutableBinding](../harmonyos-r
 
 点击Button，可将textBuilder动态切换为buttonBuilder。点击buttonBuilder，this.message会自动加B，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/yes9N6XGSmiUSywX_RwoRw/zh-cn_image_0000002552957582.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233856Z&HW-CC-Expire=86400&HW-CC-Sign=DB37A565BCFFF7FB6AE8124B84D4A7840F92359C188D84806C332F04C5059FB3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/jutSO5BCRIeyUv3T-WbBKA/zh-cn_image_0000002589323941.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052705Z&HW-CC-Expire=86400&HW-CC-Sign=CC0A8DA40495DB1F3EDB37B13F58DA3FF3D6C2E711E45693762EAABC536B6B64)
 
 点击Button将textBuilder动态切换为buttonBuilder时，@Monitor会监听到全局@Builder的变化，并打印日志@Builder change. is buttonBuilder: true。

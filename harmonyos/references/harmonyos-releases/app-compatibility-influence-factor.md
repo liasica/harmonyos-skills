@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/app-compati
 title: 影响应用兼容性的关键信息
 breadcrumb: 版本说明 > 应用兼容性说明 > 影响应用兼容性的关键信息
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:37:17+08:00
+scraped_at: 2026-04-29T13:25:19+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:0eae197ff89ab1d71c11d156156966b930b748b89b4f92ea07f2403f75d104af
+content_hash: sha256:9580e931ab3150ddc477b351c8961e11b1e34bc042f7b3294dcd3854b2b70f81
 ---
 
 ## 应用开发过程使用的SDK版本
@@ -50,7 +50,7 @@ content_hash: sha256:0eae197ff89ab1d71c11d156156966b930b748b89b4f92ea07f2403f75d
 
   关于本机的进入方式如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/YmgWkyr7SUu6GFNE7b8d-g/zh-cn_image_0000002379286636.png?HW-CC-KV=V1&HW-CC-Date=20260427T233715Z&HW-CC-Expire=86400&HW-CC-Sign=20B48EE1ED68C2806B8913B7D6649E06B119ACA977E7D047D3553F3694E8D9B2 "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/lOF-d7QbQOeEJDAUYUpzKw/zh-cn_image_0000002412806157.png?HW-CC-KV=V1&HW-CC-Date=20260427T233715Z&HW-CC-Expire=86400&HW-CC-Sign=6A5890186154154AB78EF75EBCE0207FD80F0B276B52F261DD43F42D582EA257 "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/OYXOtqghQnKCmMIYGXK0Mg/zh-cn_image_0000002379126760.png?HW-CC-KV=V1&HW-CC-Date=20260427T233715Z&HW-CC-Expire=86400&HW-CC-Sign=461618F475F6458B0CE05FD763F20D9A81B70D6A7ECE297B5CB6ADE84A6A3F0D "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/YmgWkyr7SUu6GFNE7b8d-g/zh-cn_image_0000002379286636.png?HW-CC-KV=V1&HW-CC-Date=20260429T052518Z&HW-CC-Expire=86400&HW-CC-Sign=4F7EBDB587E5E792898033F42BBBA0F6A207AE584B0624FC21C5A1B5652B3DBA "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/lOF-d7QbQOeEJDAUYUpzKw/zh-cn_image_0000002412806157.png?HW-CC-KV=V1&HW-CC-Date=20260429T052518Z&HW-CC-Expire=86400&HW-CC-Sign=65E16B09D8FFCAA0FD39FDA9E338E426C6B40F48AC3365B6B9EC9976554F6E1E "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/OYXOtqghQnKCmMIYGXK0Mg/zh-cn_image_0000002379126760.png?HW-CC-KV=V1&HW-CC-Date=20260429T052518Z&HW-CC-Expire=86400&HW-CC-Sign=86E6FF09E1926FF718E9B70696B6BD2A452BB0FE47E12DF82B947C6D418FFDB9 "点击放大")
 
   注意：上述界面的API版本的取值是从deviceInfo的distributionOSApiName和sdkApiVersion属性组合而成。
 * **【方式二】**可通过以下hdc命令来查询设备ROM的API版本号。
@@ -91,7 +91,7 @@ content_hash: sha256:0eae197ff89ab1d71c11d156156966b930b748b89b4f92ea07f2403f75d
 
 当用户设备的API版本低于应用包中的minAPIVersion时，该应用仍可在该设备的应用市场推荐页被展示，或通过搜索被查看到。但当用户点击安装此应用时，会提示此应用“无法安装”并给出所需要的系统版本要求（如下图所示）。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/tnjXdWi7QYmSGDgxiSTM5A/zh-cn_image_0000002515801291.png?HW-CC-KV=V1&HW-CC-Date=20260427T233715Z&HW-CC-Expire=86400&HW-CC-Sign=1818E98CFE0A66AB07DAA43EBEF79944AED8696E05CED7B41E86E44542C6CE5C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/tnjXdWi7QYmSGDgxiSTM5A/zh-cn_image_0000002515801291.png?HW-CC-KV=V1&HW-CC-Date=20260429T052518Z&HW-CC-Expire=86400&HW-CC-Sign=B310F966677DADD27179774D8B6B5A116FFC1A7431DD39E7D1356E509F924AD4)
 
 ### 对API的行为变更进行API版本隔离
 

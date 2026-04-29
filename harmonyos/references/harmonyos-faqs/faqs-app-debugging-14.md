@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-app-debugg
 title: 运行时提示“TypeError：Cannot read property xxx of undefined”错误
 breadcrumb: FAQ > DevEco Studio > 应用调试 > 运行时提示“TypeError：Cannot read property xxx of undefined”错误
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:30:07+08:00
+scraped_at: 2026-04-29T14:21:23+08:00
 doc_updated_at: 2026-03-25
-content_hash: sha256:3974899ceee6c88f5a360967a3fcafdb4f7fd772f04159e39958fed890681d6f
+content_hash: sha256:9ef2033488c2c809831377b839f729083a9d8e2a32cb0d37bf107f4bb1f81a24
 ---
 
 **问题现象**
@@ -59,7 +59,7 @@ content_hash: sha256:3974899ceee6c88f5a360967a3fcafdb4f7fd772f04159e39958fed8906
      2. ls
      ```
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/Wsh-BNyDQ1iMVqZ8wgppXg/zh-cn_image_0000002434852810.png?HW-CC-KV=V1&HW-CC-Date=20260428T003005Z&HW-CC-Expire=86400&HW-CC-Sign=307E6147DB1EEBF79E757EDD37643FE359806F7D1D5F6A7099F8298E14B2E238)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/Wsh-BNyDQ1iMVqZ8wgppXg/zh-cn_image_0000002434852810.png?HW-CC-KV=V1&HW-CC-Date=20260429T062122Z&HW-CC-Expire=86400&HW-CC-Sign=C02F74F9C0F30B5F5D93F2A13FC0059641B3DD0D6D7E6C5FF2B2CA8C4382F803)
      + 存在lib64文件夹：则“abiFilters”参数中需要包含arm64-v8a类型。
      + 不存在lib64文件夹：则“abiFilters”参数中需要包含armeabi类型。
    * 若返回结果为armeabi/arm64-v8a/x86/x86\_64中的一个或多个，需要在“abiFilters”参数中**至少包含返回结果中的一个ABI**类型。

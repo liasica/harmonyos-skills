@@ -1,10 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/agc-harmonyos-clouddev-invokeclouddatabase
 title: 在端侧访问云数据库
+breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > 端云一体化开发 > 开发端云工程 > 开发端侧工程 > 在端侧调用云侧代码 > 在端侧访问云数据库
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:55:08+08:00
-doc_updated_at: 2026-04-22
-content_hash: sha256:45485ce5f13d2c6999551e25e4680030798b4bcd7036b797475f4f5f0c27b918
+scraped_at: 2026-04-29T13:45:04+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:6ff179974d3bbc9a56cd17ec083429b63bd725e4eee3f367bd447f17c4c88a47
 ---
 
 ## 前提条件
@@ -16,7 +17,7 @@ content_hash: sha256:45485ce5f13d2c6999551e25e4680030798b4bcd7036b797475f4f5f0c2
 
   云数据库部署成功后，DevEco Studio将自动从云侧下载云数据库的schema文件至“AppScope/resources/rawfile/schema.json”路径，该文件是云数据库端侧API必须引入的配置文件。
 
-  如果后续又在本地工程修改了对象类型，请重新部署云数据库，DevEco Studio将自动更新schema.json文件；如果后续在AGC云侧修改了对象类型，您需[手动从AGC控制台导出schema.json文件](../AppGallery-connect-Guides/agc-clouddb-agcconsole-objecttypes-0000001127675459.md#section1558018208151)，拷贝至本地工程的“AppScope/resources/rawfile”目录下。否则，可能导致schema.json文件中的对象类型和代码中的对象类型不一致，端侧访问云数据库时提示[1008230002](../harmonyos-references/cloudfoundation-arkts-error-code.md#section1008230002-云数据库schema配置错误)错误。
+  如果后续又在本地工程修改了对象类型，请重新部署云数据库，DevEco Studio将自动更新schema.json文件；如果后续在AGC云侧修改了对象类型，您需[手动从AGC控制台导出schema.json文件](../AppGallery-connect-Guides/agc-clouddb-agcconsole-objecttypes-0000001127675459.md#section1558018208151)，拷贝至本地工程的“AppScope/resources/rawfile”目录下。否则，可能导致schema.json文件中的对象类型和代码中的对象类型不一致，端侧访问云数据库时提示[1008230002](../harmonyos-references/errorcode-cloudfoundation.md#section1008230002-云数据库schema配置错误)错误。
 
 * 检查您的角色拥有的对象类型操作权限。如果未[配置AccessToken](../harmonyos-references/cloudfoundation-cloudcommon.md#getaccesstoken)，需要给World角色添加Upsert和Delete权限。
 
@@ -26,7 +27,7 @@ content_hash: sha256:45485ce5f13d2c6999551e25e4680030798b4bcd7036b797475f4f5f0c2
 
 参考[生成Client Model](agc-harmonyos-clouddev-modelclass.md#section1037851593420)生成云数据库对象类型的端侧模型，如下图初始化代码中的Client Model示例“ets/pages/CloudDb/Post.ts”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/MBNStfIdSk2oI2bUA9AW8g/zh-cn_image_0000002295988348.png?HW-CC-KV=V1&HW-CC-Date=20260427T235507Z&HW-CC-Expire=86400&HW-CC-Sign=36DEABDAA20CAC2237AF056C2C3179F7A50AD99960A2A911405F7062FA37EE74)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/d5yA_-2_QDqo83BwgvPzrQ/zh-cn_image_0000002295988348.png?HW-CC-KV=V1&HW-CC-Date=20260429T054503Z&HW-CC-Expire=86400&HW-CC-Sign=9BCCC81254842713BF21A6B1476E7E3ADDD902503789732CC9E89FB58533A9A2)
 
 ## 访问数据库
 

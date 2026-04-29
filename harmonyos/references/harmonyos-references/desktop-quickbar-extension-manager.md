@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/desktop-q
 title: quickBarManager（快捷栏管理服务）
 breadcrumb: API参考 > 系统 > 基础功能 > Desktop Extension Kit（桌面拓展服务） > ArkTS API > quickBarManager（快捷栏管理服务）
 category: harmonyos-references
-scraped_at: 2026-04-28T08:10:01+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:4ae80df3d1b5e5fd0f5bcb36504c816b99ebbf7a767f1cbee93d91993806c74a
+scraped_at: 2026-04-29T14:00:43+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:605b1c25be222a3ebf2e43e3efab9ddfaac6aee24c5360f933632bdfa52578e3
 ---
 
 本模块为应用提供接入快捷栏能力。应用可以通过接入相应的API，可自定义应用在快捷栏右键菜单。
@@ -106,7 +106,7 @@ PC/2in1
 
 addCustomCategory(context: common.Context, categoryName: string): Promise<CustomCategory>
 
-添加快捷栏分组。添加一个分组后才可以往分组里添加任务，最多可以添加三个分组。
+添加快捷栏分组。添加一个分组后才可以往分组里添加任务，最多可以添加三个分组。使用promise异步回调。
 
 **系统能力：** SystemCapability.PCService.QuickBarManager
 
@@ -163,7 +163,7 @@ PC/2in1
 
 addQuickTask(context: common.Context, categoryId: number, taskInfo: QuickTaskInfo): Promise<QuickTask>
 
-添加快捷栏任务。打开应用图标在快捷栏的右键菜单，即可看到添加后对应的菜单项。
+添加快捷栏任务。打开应用图标在快捷栏的右键菜单，即可看到添加后对应的菜单项。使用promise异步回调。
 
 **系统能力：** SystemCapability.PCService.QuickBarManager
 
@@ -248,7 +248,7 @@ PC/2in1
 
 getCustomCategories(context: common.Context): Promise<CustomCategory[]>
 
-获取在快捷栏定义的所有分组。
+获取在快捷栏定义的所有分组。使用promise异步回调。
 
 **系统能力：** SystemCapability.PCService.QuickBarManager
 
@@ -302,7 +302,7 @@ PC/2in1
 
 getTasksFromCategory(context: common.Context, categoryId: number): Promise<QuickTask[]>
 
-获取某个快捷栏分组下的所有任务信息。
+获取某个快捷栏分组下的所有任务信息。使用promise异步回调。
 
 **系统能力：** SystemCapability.PCService.QuickBarManager
 
@@ -361,7 +361,7 @@ PC/2in1
 
 updateCustomCategory(context: common.Context, category: CustomCategory): Promise<void>
 
-更新快捷栏分组。
+更新快捷栏分组。使用promise异步回调。
 
 **系统能力：** SystemCapability.PCService.QuickBarManager
 
@@ -388,7 +388,7 @@ updateCustomCategory(context: common.Context, category: CustomCategory): Promise
 | --- | --- |
 | 1020210002 | Duplicate category name. |
 | 1020210003 | Category not found. |
-| 1020210008 | The string length exceeds the threshold |
+| 1020210008 | The string length exceeds the threshold. |
 
 **示例：**
 
@@ -421,7 +421,7 @@ PC/2in1
 
 updateQuickTask(context: common.Context, task: QuickTask): Promise<void>
 
-更新快捷栏任务。
+更新快捷栏任务。使用promise异步回调。
 
 **系统能力：** SystemCapability.PCService.QuickBarManager
 
@@ -447,7 +447,7 @@ updateQuickTask(context: common.Context, task: QuickTask): Promise<void>
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1020210004 | Quick task not found. |
-| 1020210008 | The string length exceeds the threshold |
+| 1020210008 | The string length exceeds the threshold. |
 | 1020210009 | Invalid parameter. |
 
 **示例：**
@@ -508,7 +508,7 @@ PC/2in1
 
 deleteQuickTask(context: common.Context, taskId: number): Promise<void>
 
-删除快捷栏任务。
+删除快捷栏任务。使用promise异步回调。
 
 **系统能力：** SystemCapability.PCService.QuickBarManager
 
@@ -563,7 +563,7 @@ PC/2in1
 
 deleteCustomCategory(context: common.Context, categoryId: number): Promise<void>
 
-删除快捷栏分组，其下的所有任务也会随着一起删除。
+删除快捷栏分组，其下的所有任务也会随着一起删除。使用promise异步回调。
 
 **系统能力：** SystemCapability.PCService.QuickBarManager
 
@@ -618,7 +618,7 @@ PC/2in1
 
 addQuickBarGroup(context: common.Context, group: QuickBarGroup): Promise<void>
 
-增加快捷栏分组。
+增加快捷栏分组。增加分组后才能设置分组的窗口信息。使用promise异步回调。
 
 **系统能力：** SystemCapability.PCService.QuickBarManager
 
@@ -635,7 +635,7 @@ addQuickBarGroup(context: common.Context, group: QuickBarGroup): Promise<void>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<void> | 无返回值的Promise对象。 |
+| Promise<void> | Promise对象，无返回值。 |
 
 **错误码：**
 
@@ -676,7 +676,7 @@ PC/2in1
 
 deleteQuickBarGroup(context: common.Context, groupKey: string): Promise<void>
 
-增加快捷栏分组。
+删除快捷栏分组。使用promise异步回调。
 
 **系统能力：** SystemCapability.PCService.QuickBarManager
 
@@ -693,7 +693,7 @@ deleteQuickBarGroup(context: common.Context, groupKey: string): Promise<void>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<void> | 无返回值的Promise对象。 |
+| Promise<void> | Promise对象，无返回值。 |
 
 **错误码：**
 
@@ -722,7 +722,7 @@ PC/2in1
 
 getQuickBarGroups(context: common.Context): Promise<QuickBarGroup[]>
 
-获取所有分组信息。
+获取所有分组信息。使用promise异步回调。
 
 **系统能力：** SystemCapability.PCService.QuickBarManager
 
@@ -767,7 +767,7 @@ PC/2in1
 
 setWindowToGroup(context: common.Context, windowid: string, groupKey?: string): Promise<void>
 
-设置分组信息。
+设置分组的窗口信息。使用promise异步回调。
 
 **系统能力：** SystemCapability.PCService.QuickBarManager
 
@@ -785,7 +785,7 @@ setWindowToGroup(context: common.Context, windowid: string, groupKey?: string): 
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<void> | 无返回值的Promise对象。 |
+| Promise<void> | Promise对象，无返回值。 |
 
 **错误码：**
 

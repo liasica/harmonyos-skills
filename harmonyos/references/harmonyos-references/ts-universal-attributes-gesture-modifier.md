@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 动态手势设置
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 动态属性与自定义 > 动态手势设置
 category: harmonyos-references
-scraped_at: 2026-04-28T08:01:17+08:00
+scraped_at: 2026-04-29T13:51:31+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:e0faa54a6cfbcc28f95c131f0a357442aca20ba7db0938b6be19d4c75abe32e9
+content_hash: sha256:c1309ce98d6b2dae818efaeb5c735c05f50f391906864b1924454e2c46a58a72
 ---
 
 动态设置组件绑定的手势，支持在属性设置时使用if/else语法。
@@ -135,7 +135,7 @@ PhonePC/2in1TabletTVWearable
 54. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/lmF-ESgcS6iY7qwQfPrvyA/zh-cn_image_0000002583439621.png?HW-CC-KV=V1&HW-CC-Date=20260428T000115Z&HW-CC-Expire=86400&HW-CC-Sign=82479EB836948204158EB5391D1D783AB005BFAAA470447C1EB0F3DDCB4E7227)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/Op2qec52TNmxgJ1L2ZhcEA/zh-cn_image_0000002589245907.png?HW-CC-KV=V1&HW-CC-Date=20260429T055129Z&HW-CC-Expire=86400&HW-CC-Sign=5624FA8BF090BB34D470E3EF2773998CBCFCB5DAAF9AFFB90095CD641EE2A2B6)
 
 ### 示例2（动态绑定手势组）
 
@@ -213,4 +213,4 @@ PhonePC/2in1TabletTVWearable
 69. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/11OotjBxQQCrJiTrHkZQdg/zh-cn_image_0000002552959576.png?HW-CC-KV=V1&HW-CC-Date=20260428T000115Z&HW-CC-Expire=86400&HW-CC-Sign=11F941AD009693C276C5984B0502B0523B03F4370BC44AE19B8000E7A3AF4557)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/xktKY22PQWuLORZmOezmPg/zh-cn_image_0000002558766098.png?HW-CC-KV=V1&HW-CC-Date=20260429T055129Z&HW-CC-Expire=86400&HW-CC-Sign=D8B934E47AB7CAE8101150F003361224D0D33F44F17B7D2C1B93233E423B0E0E)

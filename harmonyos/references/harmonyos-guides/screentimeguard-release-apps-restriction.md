@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/screentimegua
 title: 解除应用访问限制
 breadcrumb: 指南 > 应用服务 > Screen Time Guard Kit（屏幕时间守护服务） > 应用访问限制 > 解除应用访问限制
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:50:57+08:00
+scraped_at: 2026-04-29T13:40:30+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:b9e5b0f9bb299337ef523839f29bb863f28e82c5e0680812679f20912b147459
+content_hash: sha256:6f23c06992f208322f9458020af376898cb2fae9629db79b1b0b270ed399580f
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:b9e5b0f9bb299337ef523839f29bb863f28e82c5e0680812679f20912b1
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/yYJi1GKDTGW73kSO9NFKPQ/zh-cn_image_0000002583479175.png?HW-CC-KV=V1&HW-CC-Date=20260427T235056Z&HW-CC-Expire=86400&HW-CC-Sign=93319F01F521B78CB662AB768692E67B05D366530E47B3845E50E3ECC307EDB6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/_PbuEXiSQtCEuXsEJyQOWg/zh-cn_image_0000002558765676.png?HW-CC-KV=V1&HW-CC-Date=20260429T054030Z&HW-CC-Expire=86400&HW-CC-Sign=10CC7EB02D850F941599AD7868F7A392D4CBD0152B6C6CD29BEF25BD7FBCD0CD)
 
 流程说明：
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-camera
 title: 更改地图位置
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 地图交互 > 更改地图位置
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:49:48+08:00
+scraped_at: 2026-04-29T13:39:07+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:99748c221ce37ad8939bece607c52fb32c18f676d428fdfce5d8a6958c11d9ce
+content_hash: sha256:6d32142106b42c7cd870fa3ccffd224c669e497cc722392ba984850efb5a1cd7
 ---
 
 ## 场景介绍
@@ -16,11 +16,11 @@ content_hash: sha256:99748c221ce37ad8939bece607c52fb32c18f676d428fdfce5d8a6958c1
 
 **图1** 相机移动前
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/cc2UVyTcR6SwZK-BFuZHGg/zh-cn_image_0000002583479025.jpg?HW-CC-KV=V1&HW-CC-Date=20260427T234947Z&HW-CC-Expire=86400&HW-CC-Sign=72317253F533D0CD1AC61A81250CA072223EB19B0E3D4CB9E64D67DD46A68677 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/FpejiyFhQ5-pBdGn_QVowA/zh-cn_image_0000002558605870.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053901Z&HW-CC-Expire=86400&HW-CC-Sign=D6607E91F63F3A482E745B41D00996DDC7354AE149571707524B92A870E26419 "点击放大")
 
 **图2** 相机移动后
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/vJch2bheQ2-hnljweDPKbQ/zh-cn_image_0000002552799376.jpg?HW-CC-KV=V1&HW-CC-Date=20260427T234947Z&HW-CC-Expire=86400&HW-CC-Sign=819F403345CD4846067E5CE9EB5F077C78B5FD33FAAD46C697B3441F45724051 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/mR3AyB_XRfCKHkFUPS57MA/zh-cn_image_0000002589325397.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053901Z&HW-CC-Expire=86400&HW-CC-Sign=706D54734C118FBB694BD0EF58360E4AD7AA85288A3DD3FC6F41AC3CEB24302E "点击放大")
 
 ## 接口说明
 
@@ -80,11 +80,11 @@ content_hash: sha256:99748c221ce37ad8939bece607c52fb32c18f676d428fdfce5d8a6958c1
 
    **图3** 相机移动前
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/L80EJPbTTGG3tZTr6Ay4Pw/zh-cn_image_0000002583439071.jpg?HW-CC-KV=V1&HW-CC-Date=20260427T234947Z&HW-CC-Expire=86400&HW-CC-Sign=966A75584F215DE229A2D1FD967B57ACF1C0A060147D6FB627A13E83765D4972 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/LyikYVkTTq2mUfMHWSF6jw/zh-cn_image_0000002589245335.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053901Z&HW-CC-Expire=86400&HW-CC-Sign=F1A193B4FE013B81433B806744C2757FCEF441C722801C5E1013AFA31949DE02 "点击放大")
 
    **图4** 相机移动后
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/nuQ1qTOZRIWq90ZYpTl2Ow/zh-cn_image_0000002552959026.jpg?HW-CC-KV=V1&HW-CC-Date=20260427T234947Z&HW-CC-Expire=86400&HW-CC-Sign=33EBD7F5D44A0001825B0036894463873179535DB76BFE83A23A95D156BD60AB "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/6fGQlN6QRZSoE47eAernPA/zh-cn_image_0000002558765528.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053901Z&HW-CC-Expire=86400&HW-CC-Sign=49F7A6AEB9FAA1A6414B895BED48A5309C91C95D2D456E85A2C0E7A1A5E7B15D "点击放大")
 4. 您还可以通过以下方式创建[CameraUpdate](../harmonyos-references/map-map-cameraupdate.md)对象。
 
    ```

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/payment-a
 title: 实名信息验证结果查询
 breadcrumb: API参考 > 应用服务 > Payment Kit（鸿蒙支付服务） > REST API > 通用接口 > 实名信息验证与授权 > 实名信息验证结果查询
 category: harmonyos-references
-scraped_at: 2026-04-28T08:18:14+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:b08f82be7b41142022b977427c4ca796acf1c0f78236d7bf4236aa65fc1b2adf
+scraped_at: 2026-04-29T14:08:52+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:060d21e24bfc892fc8ba6dbe69619f919975a748d9d9fe125f8e1afc0b1894ca
 ---
 
 ## 功能介绍
@@ -40,7 +40,7 @@ content_hash: sha256:b08f82be7b41142022b977427c4ca796acf1c0f78236d7bf4236aa65fc1
 
 | 参数 | 是否必选 | 类型 | 说明 |
 | --- | --- | --- | --- |
-| verifyResultId | 是 | String | 实名信息验证ID。[应用端接口](payment-realnameservice.md#realnameservicestartrealnameverification)返回的用户实名信息验证ID。 |
+| verifyResultId | 是 | String | 实名信息验证ID。[应用端接口](payment-realnameservice.md#startrealnameverification)返回的用户实名信息验证ID。 |
 | openId | 是 | String | 用户对外展示的ID（获取方式请参见[获取用户信息](account-api-get-user-info-overview.md)）。长度范围为1-512。 |
 
 ## 请求示例

@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scenario-medi
 title: 插画/视频/动画的播报场景
 breadcrumb: 指南 > 应用框架 > Accessibility Kit（无障碍服务） > 提升应用的无障碍体验 > 提升屏幕朗读无障碍体验 > 插画/视频/动画的播报场景
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:38:07+08:00
+scraped_at: 2026-04-29T13:26:09+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:7befb50b3527d58fa48cf8b4a409fc5889649cf983ace82d98b6300d54fe1051
+content_hash: sha256:96f8f1f4cab521a85f6b7791a8a310bfa9356bdc2c922e1364b3e13ae87b6c62
 ---
 
 ## 开发实例1
 
 如下图，插画信息有一定提示作用，插画和对应的功能介绍应该组合在一起，当焦点落到插画或者包含插画的符合控件时，需要朗读出对应的功能描述。建议插画和功能介绍作为一个组合使用一个焦点朗读。它可以借助“accessibilityGroup(true)”属性来实现。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/O2N2xNIuTlOVG5p0tadZOg/zh-cn_image_0000002583477517.png?HW-CC-KV=V1&HW-CC-Date=20260427T233806Z&HW-CC-Expire=86400&HW-CC-Sign=214EA877A6BAD361F2513DD39A3F26E2F27F8A8CAF262B6CC7CAF49E5907BC99)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/Vd5gS-QQR2WVeD8cPFdLnA/zh-cn_image_0000002558764008.png?HW-CC-KV=V1&HW-CC-Date=20260429T052608Z&HW-CC-Expire=86400&HW-CC-Sign=A0BE3CD9E91C8E1C13D7599DDD77C1469E94C3FF56F812F1FE336E312BF5B411)
 
 ```
 1. @Entry
@@ -58,7 +58,7 @@ content_hash: sha256:7befb50b3527d58fa48cf8b4a409fc5889649cf983ace82d98b6300d54f
 * 列表/网格控件，每个item应提供item包含的元素的所有信息。
 * 建议朗读列表每一项的所有嵌套元素的组合信息。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/UpEUjOcGQgKa8zownYcqcg/zh-cn_image_0000002552797868.png?HW-CC-KV=V1&HW-CC-Date=20260427T233806Z&HW-CC-Expire=86400&HW-CC-Sign=D85DB4FBDE782532C212069A14D07F7A9ACEF415B510F55AB73EEFDDC7C2516B)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/fXVBiX8xT6uh1zCqmCD0cw/zh-cn_image_0000002558604352.png?HW-CC-KV=V1&HW-CC-Date=20260429T052608Z&HW-CC-Expire=86400&HW-CC-Sign=707276AB9B4AD0AEE6F0D29DBFD65BAA153E49472561A45427ED5D79E4EADA6F)
 
   它可以借助“accessibilityGroup(true)”属性来实现：
 

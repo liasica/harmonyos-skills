@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 工具栏设置
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 其他 > 工具栏设置
 category: harmonyos-references
-scraped_at: 2026-04-28T08:01:19+08:00
+scraped_at: 2026-04-29T13:51:33+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:4b2034d7ceedc2e999853ad7556f826fa5e4da43c208a9ab15c0379eacd71fe2
+content_hash: sha256:d0a8df7e4fb6d8a56a1a4d4ba27584af03befac48d55fe9a8fdb0ef1a0165c5b
 ---
 
 设置组件对应的工具栏。
@@ -167,4 +167,4 @@ PhonePC/2in1TabletTVWearable
 104. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/eFPPIeq6R8Wjwg3UiJ7WGA/zh-cn_image_0000002552799930.png?HW-CC-KV=V1&HW-CC-Date=20260428T000118Z&HW-CC-Expire=86400&HW-CC-Sign=F611A61CBCBC2778ADA11190EA62FE23D610EEDA11F07FDB8B22220DE8AF06EF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/3ms6EZ2fQLG6qcwLuybRDQ/zh-cn_image_0000002589325969.png?HW-CC-KV=V1&HW-CC-Date=20260429T055132Z&HW-CC-Expire=86400&HW-CC-Sign=A9EF9187F203889E8C8F63B312701583BFAEEE66DABAA36942A4EE90D2CD398F)

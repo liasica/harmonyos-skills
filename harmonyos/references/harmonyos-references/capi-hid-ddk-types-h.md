@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-hid-
 title: hid_ddk_types.h
 breadcrumb: API参考 > 系统 > 硬件 > Driver Development Kit（驱动开发服务） > C API > 头文件 > hid_ddk_types.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:10:41+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:6c5d8ebcc46acc88269f21896fa1507f90e80d29a1e10279b64853e330e6dac0
+scraped_at: 2026-04-29T14:01:24+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:faeb8d6df58b224cca1b4cc0410c0aee20acea340ce29e585ad3f1f3baa57a29
 ---
 
 ## 概述
@@ -205,7 +205,7 @@ PC/2in1
 | HID\_KEY\_SEMICOLON = 39 | 键; |
 | HID\_KEY\_APOSTROPHE = 40 | 键' |
 | HID\_KEY\_SPACE = 57 | 键空格 |
-| HID\_KEY\_SLASH = 53 | 键 |
+| HID\_KEY\_SLASH = 53 | 键/ |
 | HID\_KEY\_COMMA = 51 | 键, |
 | HID\_KEY\_PERIOD = 52 | 键. |
 | HID\_KEY\_RIGHT\_SHIFT = 54 | 键右shift |
@@ -219,8 +219,8 @@ PC/2in1
 | HID\_KEY\_NUMPAD\_7 = 71 | 数字键7 |
 | HID\_KEY\_NUMPAD\_8 = 72 | 数字键8 |
 | HID\_KEY\_NUMPAD\_9 = 73 | 数字键9 |
-| HID\_KEY\_NUMPAD\_DIVIDE = 70 | 数字键 |
-| HID\_KEY\_NUMPAD\_MULTIPLY = 55 | 数字键 |
+| HID\_KEY\_NUMPAD\_DIVIDE = 70 | 数字小键盘上的斜杠键（/） |
+| HID\_KEY\_NUMPAD\_MULTIPLY = 55 | 数字小键盘上的星号键（\*） |
 | HID\_KEY\_NUMPAD\_SUBTRACT = 74 | 数字键- |
 | HID\_KEY\_NUMPAD\_ADD = 78 | 数字键+ |
 | HID\_KEY\_NUMPAD\_DOT = 83 | 数字键. |

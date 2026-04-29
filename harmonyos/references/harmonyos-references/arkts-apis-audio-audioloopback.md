@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (AudioLoopback)
 breadcrumb: API参考 > 媒体 > Audio Kit（音频服务） > ArkTS API > @ohos.multimedia.audio (音频管理) > Interface (AudioLoopback)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:11:43+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:4a7b4045aea2b3f007819607a7228654dae82c9558bb6e79c78cb3e3571dc839
+scraped_at: 2026-04-29T14:02:23+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:b7e31be5a70aad418bea87d337d2d50b23c1d5fdcf2902b96d2805f1cd46df96
 ---
 
 提供音频返听的相关接口。
@@ -85,7 +85,7 @@ setVolume(volume: number): Promise<void>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 6800101 | Parameter verification failed, form 0.0 to 1.0. |
+| 6800101 | Parameter verification failed, from 0.0 to 1.0. |
 
 **示例：**
 

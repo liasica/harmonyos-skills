@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/start-authent
 title: 发起认证
 breadcrumb: 指南 > 系统 > 安全 > User Authentication Kit（用户认证服务） > 用户身份认证开发指导 > 发起认证
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:43:38+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:7469938c54dc9ebc176f5539ad99c02c3e2992dc4ff3c8e2073e1fce9a920f4c
+scraped_at: 2026-04-29T13:32:25+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:c7be6a60ab699f245a83d01efcc5c47cd58abf9bd026652e83c99af871db326f
 ---
 
 应用发起身份认证请求，获取身份认证结果，以访问受保护的系统、服务或应用的功能和数据，包括用户个人数据。
@@ -30,7 +30,7 @@ content_hash: sha256:7469938c54dc9ebc176f5539ad99c02c3e2992dc4ff3c8e2073e1fce9a9
 
 认证控件的样式如图所示，通过[WidgetParam](../harmonyos-references/js-apis-useriam-userauth.md#widgetparam10)配置对应参数。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/FIyhKlOpR2mIpUtxIrlU7w/zh-cn_image_0000002552798768.png?HW-CC-KV=V1&HW-CC-Date=20260427T234337Z&HW-CC-Expire=86400&HW-CC-Sign=F39AE1A785CDF20F99A98EB69EADFCDF00F76904E21DF16F264CA6E6948EF64F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/lMHSDD6bSMSwzWALSUjT0w/zh-cn_image_0000002558764916.png?HW-CC-KV=V1&HW-CC-Date=20260429T053224Z&HW-CC-Expire=86400&HW-CC-Sign=B4DCF1CCD4C70A639BA3459457440C774F7A00DE3F429CE6D22CFFAEA6BB658E)
 
 * 标注1：用户认证界面的标题（WidgetParam.title），不支持传空字串，最大长度为500字符。应用可在此配置符合场景的字符串，建议传入认证目的，例如用于支付、登录应用等。
 * 标注2：当生物认证失败后，将显示一个按钮。点击该按钮，可以从生物认证切换到其他口令认证类型（AuthParam.authType）。
@@ -79,12 +79,12 @@ content_hash: sha256:7469938c54dc9ebc176f5539ad99c02c3e2992dc4ff3c8e2073e1fce9a9
 16. };
 17. // 获取认证对象
 18. const userAuthInstance = userAuth.getUserAuthInstance(authParam, widgetParam);
-19. Logger.info('get userAuth instance successfully');
+19. Logger.info('get userAuth instance successfully.');
 20. // 订阅认证结果
 21. userAuthInstance.on('result', {
 22. onResult: (result: userAuth.UserAuthResult) => {
 23. try {
-24. Logger.info('userAuthInstance callback');
+24. Logger.info('userAuthInstance callback.');
 25. this.result[ResultIndex.EXAMPLE_1] = (`${result.result}`);
 26. // 可在认证结束或其他业务需要场景，取消订阅认证结果。
 27. userAuthInstance.off('result');
@@ -96,7 +96,7 @@ content_hash: sha256:7469938c54dc9ebc176f5539ad99c02c3e2992dc4ff3c8e2073e1fce9a9
 33. });
 34. // 启动认证
 35. userAuthInstance.start();
-36. Logger.info('auth start successfully');
+36. Logger.info('auth start successfully.');
 37. } catch (error) {
 38. const err: BusinessError = error as BusinessError;
 39. Logger.error(`auth failed, code is ${err?.code}, message is ${err?.message}`);
@@ -134,12 +134,12 @@ content_hash: sha256:7469938c54dc9ebc176f5539ad99c02c3e2992dc4ff3c8e2073e1fce9a9
 21. };
 22. // 获取认证对象
 23. const userAuthInstance = userAuth.getUserAuthInstance(authParam, widgetParam);
-24. Logger.info('get userAuth instance successfully');
+24. Logger.info('get userAuth instance successfully.');
 25. // 订阅认证结果
 26. userAuthInstance.on('result', {
 27. onResult: (result: userAuth.UserAuthResult) => {
 28. try {
-29. Logger.info('userAuthInstance callback');
+29. Logger.info('userAuthInstance callback.');
 30. this.result[ResultIndex.EXAMPLE_2] = (`${result.result}`);
 31. // 可在认证结束或其他业务需要场景，取消订阅认证结果。
 32. userAuthInstance.off('result');
@@ -151,7 +151,7 @@ content_hash: sha256:7469938c54dc9ebc176f5539ad99c02c3e2992dc4ff3c8e2073e1fce9a9
 38. });
 39. // 启动认证
 40. userAuthInstance.start();
-41. Logger.info('auth start successfully');
+41. Logger.info('auth start successfully.');
 42. } catch (error) {
 43. const err: BusinessError = error as BusinessError;
 44. Logger.error(`auth failed, code is ${err?.code}, message is ${err?.message}`);
@@ -189,12 +189,12 @@ content_hash: sha256:7469938c54dc9ebc176f5539ad99c02c3e2992dc4ff3c8e2073e1fce9a9
 21. };
 22. // 获取认证对象
 23. const userAuthInstance = userAuth.getUserAuthInstance(authParam, widgetParam);
-24. Logger.info('get userAuth instance successfully');
+24. Logger.info('get userAuth instance successfully.');
 25. // 订阅认证结果
 26. userAuthInstance.on('result', {
 27. onResult: (result: userAuth.UserAuthResult) => {
 28. try {
-29. Logger.info('userAuthInstance callback');
+29. Logger.info('userAuthInstance callback.');
 30. this.result[ResultIndex.EXAMPLE_3] = (`${result.result}`);
 31. // 可在认证结束或其他业务需要场景，取消订阅认证结果。
 32. userAuthInstance.off('result');
@@ -206,7 +206,7 @@ content_hash: sha256:7469938c54dc9ebc176f5539ad99c02c3e2992dc4ff3c8e2073e1fce9a9
 38. });
 39. // 启动认证
 40. userAuthInstance.start();
-41. Logger.info('auth start successfully');
+41. Logger.info('auth start successfully.');
 42. } catch (error) {
 43. const err: BusinessError = error as BusinessError;
 44. Logger.error(`auth failed, code is ${err?.code}, message is ${err?.message}`);
@@ -244,12 +244,12 @@ content_hash: sha256:7469938c54dc9ebc176f5539ad99c02c3e2992dc4ff3c8e2073e1fce9a9
 17. };
 18. // 获取认证对象
 19. const userAuthInstance = userAuth.getUserAuthInstance(authParam, widgetParam);
-20. Logger.info('get userAuth instance successfully');
+20. Logger.info('get userAuth instance successfully.');
 21. // 订阅认证结果
 22. userAuthInstance.on('result', {
 23. onResult: (result: userAuth.UserAuthResult) => {
 24. try {
-25. Logger.info('userAuthInstance callback');
+25. Logger.info('userAuthInstance callback.');
 26. this.result[ResultIndex.EXAMPLE_4] = (`${result.result}`);
 27. // 可在认证结束或其他业务需要场景，取消订阅认证结果。
 28. userAuthInstance.off('result');
@@ -261,7 +261,7 @@ content_hash: sha256:7469938c54dc9ebc176f5539ad99c02c3e2992dc4ff3c8e2073e1fce9a9
 34. });
 35. // 启动认证
 36. userAuthInstance.start();
-37. Logger.info('auth start successfully');
+37. Logger.info('auth start successfully.');
 38. } catch (error) {
 39. const err: BusinessError = error as BusinessError;
 40. Logger.error(`auth failed, code is ${err?.code}, message is ${err?.message}`);

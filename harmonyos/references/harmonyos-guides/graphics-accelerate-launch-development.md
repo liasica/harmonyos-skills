@@ -1,15 +1,16 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/graphics-accelerate-launch-development
 title: 实现游戏启动加速
+breadcrumb: 指南 > 图形 > Graphics Accelerate Kit（图形加速服务） > 游戏启动加速服务 > 秒级启动 > 实现游戏启动加速
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:47:44+08:00
+scraped_at: 2026-04-29T13:36:33+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:efb2c52f7018c1210be2130f75c62b5b2abbc8002da0079923d416147487cdb5
+content_hash: sha256:1462c00b87ddca60ab82c63d4bd8b378be35f979e0cab4836cc4549dfd65ae51
 ---
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/IxTZCKD-RJK0NZkzRCwCwQ/zh-cn_image_0000002583438775.png?HW-CC-KV=V1&HW-CC-Date=20260427T234742Z&HW-CC-Expire=86400&HW-CC-Sign=4DC52FB03E25C605759C826E42D521F25EF4C7D2107455E1229710AC31E5B0ED)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/60OZ566jRKSvwXRX_r9JWQ/zh-cn_image_0000002589245035.png?HW-CC-KV=V1&HW-CC-Date=20260429T053632Z&HW-CC-Expire=86400&HW-CC-Sign=BC8CA1670FCE1E979F99BD46EAD6001CB371A17EF5E25A20C5FBEA3DB76A9B99)
 
 1. 用户启动游戏。
 2. 游戏在onCreate生命周期中调用[setSupportedProcessCache](../harmonyos-references/js-apis-inner-application-applicationcontext.md#applicationcontextsetsupportedprocesscache12)接口，设置游戏支持缓存后快速启动。
@@ -33,7 +34,7 @@ content_hash: sha256:efb2c52f7018c1210be2130f75c62b5b2abbc8002da0079923d41614748
 
 ## 生命周期
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/kRIdq7dKQwim-U_G6iQWxw/zh-cn_image_0000002552958730.png?HW-CC-KV=V1&HW-CC-Date=20260427T234742Z&HW-CC-Expire=86400&HW-CC-Sign=0CC13474F9EE2C25EA27AE8EAC62EEC87F15F8B2AEE2F41F32A7BC116448A59B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/5oGfEVfSSXOB1ONL52FBfA/zh-cn_image_0000002558765230.png?HW-CC-KV=V1&HW-CC-Date=20260429T053632Z&HW-CC-Expire=86400&HW-CC-Sign=BC9378ABFE4D7B8D0E2EAAC7C2A3765A8CCB5434EB97BC1CC23C1C0BBCF24891)
 
 * 游戏冷启动场景
 

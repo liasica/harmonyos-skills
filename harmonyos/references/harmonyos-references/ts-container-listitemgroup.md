@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: ListItemGroup
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 滚动与滑动 > ListItemGroup
 category: harmonyos-references
-scraped_at: 2026-04-28T08:01:29+08:00
+scraped_at: 2026-04-29T13:51:44+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:a78d6f01a0ee01886ecfafc5f1600333210b57d16301ead18ff8440592581c78
+content_hash: sha256:77cd4453fb63879601cfadd1a7cd9ef6bee2623fb45e4a08a9c1cd5852bd8258
 ---
 
 该组件用来展示列表item分组，宽度默认充满[List](ts-container-list.md)组件，必须配合List组件来使用。
@@ -296,7 +296,7 @@ ListDataSource实现了LazyForEach数据源接口[IDataSource](ts-rendering-cont
 72. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/YNOHr-MVRGuzYl-EtARIsA/zh-cn_image_0000002583479617.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000127Z&HW-CC-Expire=86400&HW-CC-Sign=FCF000699730B1043F695638C09051287A5FBFAFBC157FC5B01BDE5F394D4FB2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/7rLg9IAlRzGlVp5HvQCsfQ/zh-cn_image_0000002558606480.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055141Z&HW-CC-Expire=86400&HW-CC-Sign=D7150C8951A08BC31A1F19F8DAC2A4417B1D3A735A212BD23A0A2388FF5DF997)
 
 ### 示例2（设置卡片样式）
 
@@ -358,7 +358,7 @@ ListDataSource实现了LazyForEach数据源接口[IDataSource](ts-rendering-cont
 53. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/MiQKcdmyRr-xkgKV4o0jbg/zh-cn_image_0000002552799968.jpeg?HW-CC-KV=V1&HW-CC-Date=20260428T000127Z&HW-CC-Expire=86400&HW-CC-Sign=1C7775733AD214E7FE38FD0100B5AAC8FF14C480D51B6EEA6D89EC21DACBD54B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/XITlSSYySgONh2FQBzphxw/zh-cn_image_0000002589326007.jpeg?HW-CC-KV=V1&HW-CC-Date=20260429T055141Z&HW-CC-Expire=86400&HW-CC-Sign=43AD19CED47AB9CC37B5D9EC32D2DF5C8789EB46789C38A66CCAAD004605D786)
 
 ### 示例3（设置Header/Footer）
 
@@ -496,7 +496,7 @@ ListDataSource说明及完整代码参考[示例1设置吸顶/吸底](ts-contain
 127. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/8SLDmWv8TCa6edPwT-ZHoA/zh-cn_image_0000002583439663.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000127Z&HW-CC-Expire=86400&HW-CC-Sign=3128F8F273D0AC149D6D1C73865FAE4A07EEBCB3150CD9161BAF0ACCA62E3BA0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/pTXMSczZTde2R1Ln36HQpw/zh-cn_image_0000002589245949.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055141Z&HW-CC-Expire=86400&HW-CC-Sign=7499918EA74849BF4018DDCCF6FA5D84C2382E77EED0802CB09A0E151B52F2F0)
 
 ### 示例4（设置多列布局）
 
@@ -660,4 +660,4 @@ ListDataSource说明及完整代码参考[示例1设置吸顶/吸底](ts-contain
 153. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/YX5pWP3GRzuNsnY0Dzu1Pw/zh-cn_image_0000002552959618.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000127Z&HW-CC-Expire=86400&HW-CC-Sign=A11CD031DFF7B26EC05096716A381C8B16D37D446CCC2BADCEFEFB9E2C67873B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/kQC-6IdMSCOQ45G9LoETDw/zh-cn_image_0000002558766140.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055141Z&HW-CC-Expire=86400&HW-CC-Sign=B78EED3DB5BAE46FE7F9AB0517404227761F31424DF442F241F160CA2A0094E1)

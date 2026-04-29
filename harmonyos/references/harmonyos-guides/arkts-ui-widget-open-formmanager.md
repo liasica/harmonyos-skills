@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-widg
 title: 应用内拉起卡片管理加桌
 breadcrumb: 指南 > 应用框架 > Form Kit（卡片开发服务） > ArkTS卡片开发（推荐） > ArkTS卡片提供方开发指导 > 应用内请求卡片加桌 > 应用内拉起卡片管理加桌
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:41:32+08:00
+scraped_at: 2026-04-29T13:29:59+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:ffde48e93e3deda4e067ddf0b7e83077e8e9ec792bd187c67bd7eaddf3401648
+content_hash: sha256:b866f69051e0e86dcad22f4088fde277fefad3acc22eba919aa50129c00b98cc
 ---
 
 从API version 18开始，Form Kit提供在应用内将ArkTS卡片添加到桌面的能力，以方便用户后续便捷查看信息或快速进入应用。
@@ -78,4 +78,4 @@ content_hash: sha256:ffde48e93e3deda4e067ddf0b7e83077e8e9ec792bd187c67bd7eaddf34
    ```
 3. 用户可在卡片管理页面，点击“添加至桌面”或者“添加至负一屏”，此时在桌面或者负一屏即可看到新添加的卡片。结果示例如下。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/ijZhEjHZQkmTTV2_Cjj4wg/zh-cn_image_0000002552958300.gif?HW-CC-KV=V1&HW-CC-Date=20260427T234130Z&HW-CC-Expire=86400&HW-CC-Sign=DDE62663BEAE72CB1EEE09F24F8FCE75F1E77442B1AAE98AD34BC2B7639BE151)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/YrFwASLwSpuXCRNMHQbmyg/zh-cn_image_0000002589324667.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052957Z&HW-CC-Expire=86400&HW-CC-Sign=63839DA13C0E5B295876EB7E8E58F42C9793F1C36B4D9EE7F39092AABE126E15)

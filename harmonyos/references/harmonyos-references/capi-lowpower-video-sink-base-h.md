@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-lowp
 title: lowpower_video_sink_base.h
 breadcrumb: API参考 > 媒体 > Media Kit（媒体服务） > C API > 头文件 > lowpower_video_sink_base.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:13:56+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:169a77145b1be02511325fcaf7bb5aea0097065093a0a9407c309fbf5ff31c00
+scraped_at: 2026-04-29T14:04:33+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:ad59a98d5c74fbbcbbae04ffd94185a6a9dc752fd5844c05f9035da8bd0d6a87
 ---
 
 ## 概述
@@ -119,7 +119,7 @@ LowPowerVideoSink到达目标点时调用该方法，包含在[OH\_LowPowerVideo
 | 参数项 | 描述 |
 | --- | --- |
 | [OH\_LowPowerVideoSink](capi-lowpowervideosink-oh-lowpowervideosink.md)\* sink | 指向OH\_LowPowerVideoSink实例的指针。 |
-| const int64\_t targetPts | 目标点的pts。 |
+| const int64\_t targetPts | 目标点的pts。单位为微秒。 |
 | const bool isTimeout | 表示等待目标点是否超时。若为true，表示等待目标点超时；若为false，则表示未超时。 |
 | void\* userData | 用户执行回调所依赖的数据。 |
 

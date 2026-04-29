@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ndk-loading-l
 title: 使用列表
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (基于NDK构建UI) > 构建布局 > 使用列表
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:40:15+08:00
+scraped_at: 2026-04-29T13:28:32+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:12591e237b2747cb2117a02a9a195703c7f9c2edf5ac25ac028882cd3d5ad2f3
+content_hash: sha256:cfa6fd271aecd1c158e97019738e72292e7b5bd7a35dc037f8ce3ac05ff357d9
 ---
 
 ArkUI开发框架在NDK接口提供了列表组件，使用列表可以轻松高效地显示结构化、可滚动的信息。列表组件支持控制滚动位置、支持分组显示内容、支持使用[NodeAdapter](ndk-loading-long-list.md#nodeadapter介绍)实现懒加载以提升列表创建性能。
@@ -27,7 +27,7 @@ NDK提供了NodeAdapter对象替代ArkTS侧的[LazyForEach](../harmonyos-referen
 * 设置了NodeAdapter属性的节点，不支持直接通过[addChild](../harmonyos-references/capi-arkui-nativemodule-arkui-nativenodeapi-1.md#addchild)等接口添加子组件。子组件完全由NodeAdapter管理，使用属性方法设置NodeAdapter时，会判断父组件是否已经存在子节点，如果父组件已经存在子节点，则设置NodeAdapter操作失败，返回错误码。
 * NodeAdapter通过相关事件通知开发者按需生成组件，类似组件事件机制，开发者使用NodeAdapter时要注册[事件监听器](../harmonyos-references/capi-native-node-h.md#oh_arkui_nodeadapter_registereventreceiver)，在监听器事件中处理逻辑，相关事件通过[ArkUI\_NodeAdapterEventType](../harmonyos-references/capi-native-node-h.md#arkui_nodeadaptereventtype)定义。另外NodeAdapter不会主动释放不在屏幕内显示的组件对象，开发者需要在[NODE\_ADAPTER\_EVENT\_ON\_REMOVE\_NODE\_FROM\_ADAPTER](../harmonyos-references/capi-native-node-h.md#arkui_nodeadaptereventtype)事件中进行组件对象的释放，或者进行缓存复用。下图展示了典型列表滑动场景下的事件触发机制：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/MfDY4OJ7QSO3BjsFLzqfDw/zh-cn_image_0000002552958064.png?HW-CC-KV=V1&HW-CC-Date=20260427T234014Z&HW-CC-Expire=86400&HW-CC-Sign=E7E52966A3A6E0853D338D946E264F392BFACFF777A9F38AD6055E8A19930F4F)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/froNv7xgTmmHIMI__3RK_Q/zh-cn_image_0000002589324423.png?HW-CC-KV=V1&HW-CC-Date=20260429T052831Z&HW-CC-Expire=86400&HW-CC-Sign=D20073AF7C5BD84B703448E0A7597E65A6344A2F1CE34B00FA6D3358039528FD)
 
 以下示例提供了懒加载适配器的实现方法，仅包含主要步骤，完整代码请参考[NdkCreateList](https://gitcode.com/openharmony/applications_app_samples/tree/master/code/DocsSample/ArkUISample/NativeType/NdkCreateList)。
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/pdf-arkts
 title: PdfView（PDF预览组件）
 breadcrumb: API参考 > 应用服务 > PDF Kit（PDF服务） > ArkTS组件 > PdfView（PDF预览组件）
 category: harmonyos-references
-scraped_at: 2026-04-28T08:18:21+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:b23b61e086ac94f16108039ea7979629943dc5b6ecf6d5a8095245640a57b6ad
+scraped_at: 2026-04-29T14:09:01+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:e5a4348e0a103e664304a1231462bf890bf26fb800de952759a3957af3f2969d
 ---
 
 本模块提供PdfView组件，HarmonyOS应用通过集成该组件完成PDF文件的预览功能。
@@ -35,10 +35,10 @@ PhonePC/2in1Tablet
 | 参数名 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | controller | pdfViewManager.[PdfController](pdf-arkts-pdfviewmanage.md#pdfcontroller) | 否 | 否 | PdfView组件控制器。 |
-| pageLayout | pdfService.[PageLayout](pdf-arkts-pdfservice.md#pagelayout) | 否 | 否 | 页面布局显示模式。 |
-| isContinuous | boolean | 否 | 否 | 是否连续预览，true：是，false：否。 |
-| showScroll | boolean | 否 | 否 | 是否显示滚动条，true：显示，false：隐藏。 |
-| pageFit | pdfService.[PageFit](pdf-arkts-pdfservice.md#pagefit) | 否 | 否 | 页面适配模式。 |
+| pageLayout | pdfService.[PageLayout](pdf-arkts-pdfservice.md#pagelayout) | 否 | 是 | 页面布局显示模式，默认值：LAYOUT\_SINGLE。 |
+| isContinuous | boolean | 否 | 是 | 是否连续预览，true：是，false：否。默认值：false。 |
+| showScroll | boolean | 否 | 是 | 是否显示滚动条，true：显示，false：隐藏。默认值：false。 |
+| pageFit | pdfService.[PageFit](pdf-arkts-pdfservice.md#pagefit) | 否 | 是 | 页面适配模式，默认值：FIT\_NONE。 |
 
 ### build
 

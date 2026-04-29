@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design
 title: HdsNavDestination
 breadcrumb: API参考 > 应用框架 > UI Design Kit（UI设计套件） > ArkTS组件 > HdsNavDestination
 category: harmonyos-references
-scraped_at: 2026-04-28T08:06:41+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:78b95bda158d55a4d3761d7ae26b72aaca55cc841f3d990413cf03974971ff66
+scraped_at: 2026-04-29T13:57:14+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:95d7a2e45844e141c9a4afc874ac39006ed801a62015b06294014eb1409f7bb4
 ---
 
 作为子页面的根容器，用于显示[HdsNavigation](ui-design-hdsnavigation.md)的内容区，默认支持标题栏随内容区滚动的动态模糊样式。6.0.0(20)版本以后，推荐使用[bindToScrollable](ui-design-hdsnavdestination.md#bindtoscrollable)、[bindToNestedScrollable](ui-design-hdsnavdestination.md#bindtonestedscrollable)属性绑定导航组件和可滚动容器组件后，再使用导航组件滚动相关的功能，从而获得更优的体验。如滚动生效动态模糊样式，标题栏随内容区滚动动态显隐功能等。
@@ -14,7 +14,7 @@ content_hash: sha256:78b95bda158d55a4d3761d7ae26b72aaca55cc841f3d990413cf0397497
 
 说明
 
-* HdsNavDestination组件必须配合HdsNavigation使用，作为HdsNavigation目的页面的根节点，单独使用只能作为普通容器组件，不具备路由相关属性能力。
+* HdsNavDestination组件推荐配合HdsNavigation使用，作为HdsNavigation目的页面的根节点。如果单独使用HdsNavDestination，只能作为普通容器组件，不具备路由相关属性能力。
 * 如果路由栈中间页面的生命周期发生变化，跳转之前的栈顶Destination的生命周期(onWillShow, onShown, onHidden, onWillDisappear)与跳转之后的栈顶Destination的生命周期(onWillShow, onShown, onHidden, onWillDisappear)均在最后触发。
 * 不支持在HdsNavDestination上添加zIndex属性，会覆盖掉系统设置的层级，可能导致出现显示异常。
 
@@ -406,7 +406,7 @@ PhonePC/2in1TabletTV
 
 withTheme(value: WithThemeOptions)
 
-设置HdsNavDestination的[WithTheme](ts-container-with-theme.md)能力。
+设置HdsNavDestination的[WithTheme](ts-container-with-theme.md)能力。使用本功能时，需确保HdsNavDestination组件与对应的[HdsNavigation](ui-design-hdsnavigation.md)组件配置的[WithTheme](ts-container-with-theme.md)属性保持一致。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -762,6 +762,6 @@ PhonePC/2in1TabletTV
 96. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/44ML8eGmSj2u31Y_6pua5g/zh-cn_image_0000002552800876.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000639Z&HW-CC-Expire=86400&HW-CC-Sign=F8A2E947D222DDA694363DA0707CE131E6374F536B717C8BC03361701BBF9AEF "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/GBoF-FrFQGy7ZB0AlqKzcQ/zh-cn_image_0000002589246859.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055710Z&HW-CC-Expire=86400&HW-CC-Sign=993AB31B8D8961D829BF083E2963198BE90AFE7B71AB7695135F15A9D551683D "点击放大")
 
 HdsNavDestination更多示例可以参考HdsNavigation[示例](ui-design-hdsnavigation.md#示例)。

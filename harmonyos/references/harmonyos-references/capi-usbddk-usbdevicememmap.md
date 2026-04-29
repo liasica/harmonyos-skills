@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-usbd
 title: UsbDeviceMemMap
 breadcrumb: API参考 > 系统 > 硬件 > Driver Development Kit（驱动开发服务） > C API > 结构体 > UsbDeviceMemMap
 category: harmonyos-references
-scraped_at: 2026-04-28T08:10:52+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:1ab3c6909da73a60e0da8540c77fad02730f2cdfba42d1987e07fd7bab75e070
+scraped_at: 2026-04-29T14:01:32+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:8d0238f829e7feb5a13214cff6ed8a84760552bdef49886651e3eb599716056f
 ---
 
 ```
@@ -16,7 +16,7 @@ content_hash: sha256:1ab3c6909da73a60e0da8540c77fad02730f2cdfba42d1987e07fd7bab7
 
 PC/2in1
 
-设备内存映射，通过OH\_Usb\_CreateDeviceMemMap创建设备内存映射，使用内存映射后的缓冲区，可提升数据传输性能。
+设备内存映射，通过[OH\_Usb\_CreateDeviceMemMap](capi-usb-ddk-api-h.md#oh_usb_createdevicememmap)创建设备内存映射，使用内存映射后的缓冲区，可提升数据传输性能。
 
 **起始版本：** 10
 

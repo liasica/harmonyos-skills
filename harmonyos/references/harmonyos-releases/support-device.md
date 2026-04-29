@@ -1,18 +1,19 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/support-device
 title: 各版本支持设备型号清单
-breadcrumb: 版本说明 > 各版本支持设备型号清单
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:37:20+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:abf9adf97d2b19dc49941472ba2dd10571d1ac71ac74d5b218d16af085007a2d
+scraped_at: 2026-04-29T13:25:24+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:7cd14ed7348e0086c2c7e156d5aa152c61b2574081b635562fd80698cde40a9c
 ---
 
 ## 6.1.0(23)
 
 说明
 
-以下设备为HarmonyOS 6.1.0(23)开发者套件版本发布时同步配套的设备信息，其他设备型号将逐步配套。
+以下设备为HarmonyOS 6.1.0(23)开发者套件版本发布时同步配套的设备信息，其他设备型号将逐步配套更新。
+
+除首发的新品外，其他支持的设备清单也可参考[HarmonyOS 6.1 支持机型](https://consumer.huawei.com/cn/support/harmonyos/models-6/)。
 
 ### Phone
 
@@ -74,6 +75,10 @@ content_hash: sha256:abf9adf97d2b19dc49941472ba2dd10571d1ac71ac74d5b218d16af0850
 | nova 15 Ultra | SLY-AL00 |
 | nova Flip系列 | nova Flip | PSD-AL00 |
 | nova Flip S | PSD-AL80 |
+| 畅享 70X系列 | 畅享 70X 尊享版 | BRE-AL80a |
+| 畅享 90系列 | 畅享 90 Plus | JUY-AL50 |
+| 畅享 90m Plus | JUY-AL50 |
+| 畅享 90 Pro Max | CHZ-AL00 |
 
 ### Tablet
 
@@ -102,6 +107,24 @@ content_hash: sha256:abf9adf97d2b19dc49941472ba2dd10571d1ac71ac74d5b218d16af0850
 | MNT-W72C |
 | MateBook Fold 非凡大师 | HPR-W72 |
 | MateBook Pro | HAD-W32 |
+
+### Wearable
+
+HUAWEI WATCH Ultimate 2 非凡探索
+
+HUAWEI WATCH ULTIMATE DESIGN 非凡大师 紫金款
+
+HUAWEI WATCH 5
+
+### Lite Wearable
+
+HUAWEI WATCH GT 6
+
+HUAWEI WATCH GT 6 Pro
+
+HUAWEI WATCH FIT 4
+
+HUAWEI WATCH FIT 4 Pro
 
 ## 6.0.2(22)
 
@@ -218,11 +241,11 @@ content_hash: sha256:abf9adf97d2b19dc49941472ba2dd10571d1ac71ac74d5b218d16af0850
 
 ### Wearable
 
-WATCH 5系列
+HUAWEI WATCH 5
 
-WATCH Ultimate 2
+HUAWEI WATCH Ultimate 2
 
-WATCH ULTIMATE DESIGN
+HUAWEI WATCH ULTIMATE DESIGN
 
 ## 6.0.0(20)
 
@@ -336,11 +359,11 @@ WATCH ULTIMATE DESIGN
 
 ### Wearable
 
-WATCH 5
+HUAWEI WATCH 5
 
 ### Lite Wearable
 
-Watch FIT系列：FIT 4、FIT 4 Pro
+HUAWEI Watch FIT系列：FIT 4、FIT 4 Pro
 
 ## 5.0.5(17)
 
@@ -403,4 +426,4 @@ Watch FIT系列：FIT 4、FIT 4 Pro
 
 ### Lite Wearable
 
-Watch GT 5系列
+HUAWEI Watch GT 5系列

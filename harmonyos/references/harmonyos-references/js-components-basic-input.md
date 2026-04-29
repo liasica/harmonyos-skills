@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: input
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 基础组件 > input
 category: harmonyos-references
-scraped_at: 2026-04-28T08:03:00+08:00
+scraped_at: 2026-04-29T13:53:24+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:8536def92ff8023e7b72d73053a54c95f994a80cba3ef18aeb50e510718bad14
+content_hash: sha256:76d3ea0e34c0771980ef9c36c73dda93234fad73506b113df85c43c3c95aee67
 ---
 
 说明
@@ -166,7 +166,7 @@ PhonePC/2in1TabletTVWearable
    21. }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/FWpkGo0hQMas5pWy38vf3Q/zh-cn_image_0000002583480191.png?HW-CC-KV=V1&HW-CC-Date=20260428T000300Z&HW-CC-Expire=86400&HW-CC-Sign=4FDC95FBA2122CABC9D6BDF37616507D274CD3DF59123BA6274EB0D8512F49D6)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/YbbI8f_0QT2vYsrgsNyWOg/zh-cn_image_0000002589326583.png?HW-CC-KV=V1&HW-CC-Date=20260429T055322Z&HW-CC-Expire=86400&HW-CC-Sign=91D39771CB17CCA2F7B443AEB8008174774D102089A60EDF519B1E9EAD697749)
 2. type为button
 
    ```
@@ -188,7 +188,7 @@ PhonePC/2in1TabletTVWearable
    9. }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/3FqJFyO4RBavzsFCeC_d-w/zh-cn_image_0000002552800542.png?HW-CC-KV=V1&HW-CC-Date=20260428T000300Z&HW-CC-Expire=86400&HW-CC-Sign=7765CFDA7BCC5F7F0E65F4939A786CFB4AFE0F77E72BA2A878312044F45FDDC7)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/FIpWyIhHRsy9zgTlAXWdTg/zh-cn_image_0000002589246525.png?HW-CC-KV=V1&HW-CC-Date=20260429T055322Z&HW-CC-Expire=86400&HW-CC-Sign=37E636BCCD72D775E29892BA324CF39CE7A66C10872B106E99D24DD2C56D672E)
 3. type为checkbox
 
    ```
@@ -221,7 +221,7 @@ PhonePC/2in1TabletTVWearable
    10. }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/RqYowiKwRVWRfSSXAXzP6A/zh-cn_image_0000002583440237.png?HW-CC-KV=V1&HW-CC-Date=20260428T000300Z&HW-CC-Expire=86400&HW-CC-Sign=00C5744493D7458737F691EBC9A5013408F4F9CB358147BCDC737F2D88CC6A6A)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/O903t6kPRNCggMTrVGRUDg/zh-cn_image_0000002558766718.png?HW-CC-KV=V1&HW-CC-Date=20260429T055322Z&HW-CC-Expire=86400&HW-CC-Sign=015E72E6B9ADAD83070FEE55040E99D524FAAE28950D8CE3C5540F6C29890CEC)
 4. type为radio
 
    ```
@@ -258,4 +258,4 @@ PhonePC/2in1TabletTVWearable
    12. }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/JFI1qe2kRyCPZEokxoNXhg/zh-cn_image_0000002552960192.png?HW-CC-KV=V1&HW-CC-Date=20260428T000300Z&HW-CC-Expire=86400&HW-CC-Sign=75C10BD640BA27923B93FFC00EB5C8CFC3B6E746B7FDD4F02C08C867622F8B5C)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/1A7iKzazTHWQwHxKk4I5CQ/zh-cn_image_0000002558607058.png?HW-CC-KV=V1&HW-CC-Date=20260429T055322Z&HW-CC-Expire=86400&HW-CC-Sign=4EE8CD57530E6D832618A227975193DF684C3804C45BAECB1803A66BA4ADDECB)

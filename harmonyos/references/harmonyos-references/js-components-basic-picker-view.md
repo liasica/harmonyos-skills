@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: picker-view
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 基础组件 > picker-view
 category: harmonyos-references
-scraped_at: 2026-04-28T08:03:03+08:00
+scraped_at: 2026-04-29T13:53:25+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:093f85d8082b3ebc9d0aa4f39cae96d9a8f3beb9787b03a071e485a369ad7d68
+content_hash: sha256:d4c20abff2e79dc6edbd6fb92ad5a3e223ce0c389e28716841dc5c8aa8251a92
 ---
 
 说明
@@ -201,7 +201,7 @@ PhonePC/2in1TabletTVWearable
 12. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/Jo_uTIXSShqOfqLU4MOzIw/zh-cn_image_0000002583480195.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000301Z&HW-CC-Expire=86400&HW-CC-Sign=64B22E265F11E25A2181BD78B688B655A20B2D23F85E71BB6039182D26C0D9C3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/588bZUkDQf6XX2Lz8am7gQ/zh-cn_image_0000002589326587.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055324Z&HW-CC-Expire=86400&HW-CC-Sign=F0B5E230AA50DB03A016FBEDC80E9FAD0B63A224585DF4B0BFC931D9098BB44D)
 
 ### 时间选择器
 
@@ -261,7 +261,7 @@ PhonePC/2in1TabletTVWearable
 25. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/n3_roYVtR5O1-UdqmAwxag/zh-cn_image_0000002552800546.png?HW-CC-KV=V1&HW-CC-Date=20260428T000301Z&HW-CC-Expire=86400&HW-CC-Sign=1D7E86A2591DA12F7EB80B6A37B45F2FB41ADB674DDAEF6FFFEBA9CAD69C1739 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/_95TOubfR5y1usa8Dgd2Sw/zh-cn_image_0000002589246529.png?HW-CC-KV=V1&HW-CC-Date=20260429T055324Z&HW-CC-Expire=86400&HW-CC-Sign=CEAA2BB9A973129F05F61A84AB76F541A4FABAAC1A0F1DD21584F354643673ED "点击放大")
 
 ### 日期选择器
 
@@ -305,7 +305,7 @@ PhonePC/2in1TabletTVWearable
 9. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/wWtPKjuBRYiJ3d1zazYtiA/zh-cn_image_0000002583440241.png?HW-CC-KV=V1&HW-CC-Date=20260428T000301Z&HW-CC-Expire=86400&HW-CC-Sign=23F95BCBBEF8B6AF206C0C635B214DC970BE533C1284159632B00E14914483C5 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/_4oY88DbSTevU5KqW15-GA/zh-cn_image_0000002558766722.png?HW-CC-KV=V1&HW-CC-Date=20260429T055324Z&HW-CC-Expire=86400&HW-CC-Sign=E9CA91587E10F3B6CA02876C73BB748F7FF6E9EF098CE31B6B469C9A3EF50A79 "点击放大")
 
 ### 日期时间选择器
 
@@ -349,7 +349,7 @@ PhonePC/2in1TabletTVWearable
 9. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/qGpz1btMRZ6QPlio9wtTHQ/zh-cn_image_0000002552960196.png?HW-CC-KV=V1&HW-CC-Date=20260428T000301Z&HW-CC-Expire=86400&HW-CC-Sign=4B62FB5CB0209D5DAB83175694F1C463180A81ED38B6617C82AB3B423407C4FA "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/3jTFyt4QTkmBaEAWeiervw/zh-cn_image_0000002558607062.png?HW-CC-KV=V1&HW-CC-Date=20260429T055324Z&HW-CC-Expire=86400&HW-CC-Sign=354B8930894862652E69CE1C4C361BD7B5AD610021314CFB2C70481521ACCCC2 "点击放大")
 
 ### 多列文本选择器
 
@@ -398,4 +398,4 @@ PhonePC/2in1TabletTVWearable
 14. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/DP1MylW_R-SOw2-NWEgBNg/zh-cn_image_0000002583480197.png?HW-CC-KV=V1&HW-CC-Date=20260428T000301Z&HW-CC-Expire=86400&HW-CC-Sign=962A1CB7D288CB846898262CDB55CCC7D0104999FD7475197C5372F4B62C6143 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/NQ0Wcv5HSe6nSJ-wWca2gQ/zh-cn_image_0000002589326589.png?HW-CC-KV=V1&HW-CC-Date=20260429T055324Z&HW-CC-Expire=86400&HW-CC-Sign=1A16293B957606019B7F036798C589E23D4E7DD00D4DCD9227520476F644EEE8 "点击放大")

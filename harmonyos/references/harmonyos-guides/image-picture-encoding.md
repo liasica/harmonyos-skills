@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-picture
 title: 使用ImagePacker完成多图对象编码
 breadcrumb: 指南 > 媒体 > Image Kit（图片处理服务） > 图片开发指导(ArkTS) > 图片编码 > 使用ImagePacker完成多图对象编码
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:46:15+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:e6509bed57c259039ebb07147d1db550d6518e5781b692a0726390378348171e
+scraped_at: 2026-04-29T13:35:12+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:d6f7d479551b8f0b4e5d0cb9eb3cba6cd930d47c7ba6d30c8135e7257adcd2cf
 ---
 
 图片编码指将[Picture](../harmonyos-references/arkts-apis-image-picture.md)对象编码成不同格式的图片文件（当前仅支持编码为JPEG 和 HEIF 格式），用于后续处理，如保存、传输等。
@@ -17,7 +17,7 @@ content_hash: sha256:e6509bed57c259039ebb07147d1db550d6518e5781b692a072639037834
 1. 导入相关模块包。
 
    ```
-   1. // 导入相关模块包。
+   1. // 导入相关模块。
    2. import { image } from '@kit.ImageKit';
    3. import { BusinessError } from '@kit.BasicServicesKit';
    4. import { common } from '@kit.AbilityKit';
@@ -70,7 +70,7 @@ content_hash: sha256:e6509bed57c259039ebb07147d1db550d6518e5781b692a072639037834
      1. async function packToFile(picture: image.Picture, packOpts: image.PackingOption, context: Context) {
      2. try {
      3. const path : string = context.cacheDir + '/picture.jpg';
-     4. let file = fs.openSync(path, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE);
+     4. let file = fileIo.openSync(path, fileIo.OpenMode.CREATE | fileIo.OpenMode.READ_WRITE);
      5. const imagePackerApi = image.createImagePacker();
      6. await imagePackerApi.packToFile(picture, file.fd, packOpts);
      7. } catch (error) {

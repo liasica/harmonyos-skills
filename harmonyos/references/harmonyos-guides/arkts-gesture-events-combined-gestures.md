@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-gesture
 title: 组合手势
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 添加交互响应 > 添加手势响应 > 组合手势
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:39:55+08:00
+scraped_at: 2026-04-29T13:28:05+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:974a9355d216c56487d107dfc263480803490a9edbbde1d57a4914914c9f530c
+content_hash: sha256:b3c50ab4de5e54b0d7621fca76fbb198c7eef7af74b1b99dc568ed6a48515172
 ---
 
 组合手势由多种单一手势组合而成，通过在[GestureGroup](../harmonyos-references/ts-combined-gestures.md#接口)中使用不同的[GestureMode](../harmonyos-references/ts-combined-gestures.md#gesturemode枚举说明)来声明该组合手势的类型，支持[顺序识别](arkts-gesture-events-combined-gestures.md#顺序识别)、[并行识别](arkts-gesture-events-combined-gestures.md#并行识别)和[互斥识别](arkts-gesture-events-combined-gestures.md#互斥识别)三种类型。
@@ -105,7 +105,7 @@ content_hash: sha256:974a9355d216c56487d107dfc263480803490a9edbbde1d57a4914914c9
 
 [Sequence.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/GestureGroup/entry/src/main/ets/pages/Sequence.ets#L15-L91)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/ZVhjhhF9Re6WNE4MHWctdA/zh-cn_image_0000002583438005.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233953Z&HW-CC-Expire=86400&HW-CC-Sign=13BD284AA28BCD11EF1107560BC338AAFFF27CDF0420863AB19C02D63CB95619)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/G4qFy9scQQ-Htmn3KMtgNQ/zh-cn_image_0000002558604794.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052804Z&HW-CC-Expire=86400&HW-CC-Sign=7186A9D8B14F7B10D0E107AD2799C3D1AD41081D2CEBB03F82BFFD1D0C96D5F3)
 
 说明
 
@@ -152,7 +152,7 @@ content_hash: sha256:974a9355d216c56487d107dfc263480803490a9edbbde1d57a4914914c9
 
 [Parallel.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/GestureGroup/entry/src/main/ets/pages/Parallel.ets#L16-L47)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/E7oO98f6SmKt1o6oOF8RLA/zh-cn_image_0000002552957960.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233953Z&HW-CC-Expire=86400&HW-CC-Sign=E33851CC4982E668DFA10958C5EC8958AB8A9D54155AB31F88F0351AC8932D70)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/q-NmOzWNRnKJryP1u4V7Dw/zh-cn_image_0000002589324319.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052804Z&HW-CC-Expire=86400&HW-CC-Sign=0BB2ED20C1B5F2D5656F246B1B711615EA0A5D221FFA8FC92BED4E1E5AC380AF)
 
 说明
 
@@ -202,7 +202,7 @@ content_hash: sha256:974a9355d216c56487d107dfc263480803490a9edbbde1d57a4914914c9
 
 [Exclusive.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/GestureGroup/entry/src/main/ets/pages/Exclusive.ets#L16-L47)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/NP-24REZRL-SU8hYuf_4Vg/zh-cn_image_0000002583477961.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233953Z&HW-CC-Expire=86400&HW-CC-Sign=772AA1A59462F1CE3F13CAE66874B8D7A3D73876EE195F6A9AE7A8DD2710A550)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/NjTeKcNTQou7tXqCTVbigw/zh-cn_image_0000002589244259.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052804Z&HW-CC-Expire=86400&HW-CC-Sign=4B79861C6EF7684B94C2F0409B4E2310DF978EA6D89D5BBF4D70424D66AEC3DB)
 
 说明
 
@@ -280,4 +280,4 @@ content_hash: sha256:974a9355d216c56487d107dfc263480803490a9edbbde1d57a4914914c9
 
 [SceneExample.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/GestureGroup/entry/src/main/ets/pages/SceneExample.ets#L16-L78)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/o1UDTd90TtaKkPS-pkjc7Q/zh-cn_image_0000002552798312.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233953Z&HW-CC-Expire=86400&HW-CC-Sign=84EF15043AA736F8A5EB261FBAC99855F2A396CEAA5067681A74B30A9E6A06E7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/TMBXx69TQPmVkgDRDOqFuA/zh-cn_image_0000002558764452.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052804Z&HW-CC-Expire=86400&HW-CC-Sign=28E9FED5E718CC4D75411D4018E3FA92B4EC8C352F0DAEC59827878A2652319F)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 动态属性设置
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 动态属性与自定义 > 动态属性设置
 category: harmonyos-references
-scraped_at: 2026-04-28T08:01:16+08:00
+scraped_at: 2026-04-29T13:51:31+08:00
 doc_updated_at: 2026-04-02
-content_hash: sha256:2fee1d60c263cabd5c26ea79bebbf92ebfa0de04942f75db7af94a1b1982a40a
+content_hash: sha256:dbb870e3798a6b574410fe9eff34c85fbc26ba6248f71e37421064fa70c52ead
 ---
 
 动态设置组件的属性，支持开发者在属性设置时使用if/else语法，且根据需要使用多态样式设置属性。
@@ -243,7 +243,7 @@ PhonePC/2in1TabletTVWearable
 33. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/qm-oUDAkQUqSro8S9Vk4cQ/zh-cn_image_0000002552959572.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000114Z&HW-CC-Expire=86400&HW-CC-Sign=49685FAEA79F386C82C6BFD7166CFC15638A039F36970998C4843D53F9AC0C32)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/_TNJnVPQQDuArOjm6nzFKw/zh-cn_image_0000002558766094.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055129Z&HW-CC-Expire=86400&HW-CC-Sign=477EB92A4818FF6271A526391D3CB7D4022809083EF10DD9E2E0A2AB4B232416)
 
 ### 示例2（组件绑定Modifier实现按压态效果）
 
@@ -280,7 +280,7 @@ PhonePC/2in1TabletTVWearable
 28. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/wO1QiuUQTrmhrPq7MxFsSA/zh-cn_image_0000002552959572.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000114Z&HW-CC-Expire=86400&HW-CC-Sign=6F74D8971C7FF06C9CE17C61E0928007FE39CDD76395B07C181808643A2D9EFA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/4kACcR0kS6mM_RN4Q9iGiA/zh-cn_image_0000002558766094.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055129Z&HW-CC-Expire=86400&HW-CC-Sign=91F382221F5D62B53152AC1797033CF08CA4BD0783B065FCE1772B401B8F4535)
 
 ### 示例3（自定义Modifier不支持感知@State装饰的状态数据变化）
 
@@ -337,7 +337,7 @@ PhonePC/2in1TabletTVWearable
 48. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/X0TjBGHeSSWYtQQYxIAeiQ/zh-cn_image_0000002583479573.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000114Z&HW-CC-Expire=86400&HW-CC-Sign=6DD46023C6F9C4229525337EDAD48B313A00E287A2E33C8CA6303D0294794E44)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/5Ff0i2kkSdCAclqRaxoSlg/zh-cn_image_0000002558606436.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055129Z&HW-CC-Expire=86400&HW-CC-Sign=89DBC7376BA90DD93E06B004B8DD2E2A3EC1F8D86E1188881F8D6AD053189652)
 
 ### 示例4（Modifier和自定义Modifier的属性同时生效）
 
@@ -402,7 +402,7 @@ PhonePC/2in1TabletTVWearable
 56. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/yBBc0pfARM2CPVbXFqa21Q/zh-cn_image_0000002552799924.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000114Z&HW-CC-Expire=86400&HW-CC-Sign=3000D1B8B197C732A3E0032DF36EF69B40FC08DA25D53280F240667E7CBE5EB0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/ItYamWpUQXmNBNFPLQoryQ/zh-cn_image_0000002589325963.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055129Z&HW-CC-Expire=86400&HW-CC-Sign=711226CA85B013C11953413AE654DC7DDCA84762CD526DD1DA212DFF8AB2A208)
 
 ### 示例5（组件绑定Modifier获焦样式）
 
@@ -447,7 +447,7 @@ PhonePC/2in1TabletTVWearable
 36. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/DVXZYcFaSyaXcT1u6I0qDA/zh-cn_image_0000002583439619.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000114Z&HW-CC-Expire=86400&HW-CC-Sign=A4490883BE31F4F6B41FDA2FCA9721CE1659017621FE3B52BBD14CCEA2323AF6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/siyo_mmnQAWy1-tipwXwdQ/zh-cn_image_0000002589245905.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055129Z&HW-CC-Expire=86400&HW-CC-Sign=4C8A2583454CCA77D41AC5A8D49B70DE374DF58CACE205593538CC3D4BC40026)
 
 ### 示例6（组件绑定Modifier禁用状态的样式）
 
@@ -486,7 +486,7 @@ PhonePC/2in1TabletTVWearable
 30. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/JnP4ClmyQFaWcGfsBhx0kw/zh-cn_image_0000002552959574.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000114Z&HW-CC-Expire=86400&HW-CC-Sign=35FC28AA59D3C917F0F2A0231359F1AC2EA000A063E700117E9E593A1DD567B7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/WTNdLlqhSGezWpsfDM-vWA/zh-cn_image_0000002558766096.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055129Z&HW-CC-Expire=86400&HW-CC-Sign=1E312D7C2BF3CFB07C0AC5FF794C937061FCC54A2E34C33BA56FA19801CE0603)
 
 ### 示例7（组件绑定Modifier选中状态样式）
 
@@ -533,7 +533,7 @@ PhonePC/2in1TabletTVWearable
 38. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/16cBltPOSOGCoV0hbG6dvw/zh-cn_image_0000002583479575.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000114Z&HW-CC-Expire=86400&HW-CC-Sign=D15CAE4A67AD015604DB091168D61CADDBD8CE1425739F6E251087343F74867E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/BSDXvl3NSZeH4uSpASATDQ/zh-cn_image_0000002558606438.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055129Z&HW-CC-Expire=86400&HW-CC-Sign=BC19D17F975DDC0AE972EAC4AAFE0B7EC455E4EDC97A7872956532818BD9E5E8)
 
 ### 示例8（自定义组件绑定Modifier实现按压态效果）
 
@@ -583,4 +583,4 @@ PhonePC/2in1TabletTVWearable
 41. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/mMW7GKruTKu7gIWg3lHc-w/zh-cn_image_0000002552799926.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000114Z&HW-CC-Expire=86400&HW-CC-Sign=23B4F977A07797C2D57F5166912455E029B4956273C03D06828C7BE8CB6DAAAB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/FGkMXorKTHCDaiLHI54bmA/zh-cn_image_0000002589325965.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055129Z&HW-CC-Expire=86400&HW-CC-Sign=8EC9EFF584C041E0100AD699DBFAFA0D8266679F71E86D1C7ADB1A0DCBDD6D61)

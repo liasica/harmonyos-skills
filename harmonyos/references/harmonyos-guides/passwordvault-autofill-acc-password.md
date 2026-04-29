@@ -1,10 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/passwordvault-autofill-acc-password
 title: 账号密码填充
+breadcrumb: 指南 > 系统 > 安全 > 密码自动填充服务 > 应用接入密码保险箱 > 自动填充 > 账号密码填充
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:42:08+08:00
+scraped_at: 2026-04-29T13:30:40+08:00
 doc_updated_at: 2026-03-20
-content_hash: sha256:5dcea5c54409add2c7bfbccebd5b79b4495c218c339d69f8b198561ea1ff5231
+content_hash: sha256:c87631a0a25445b83b00a9528d9f5f78f2f73411d53813abd93f25d2de5a1d61
 ---
 
 密码保险箱可以在登录或修改密码时，自动填充已保存的用户名和密码。
@@ -21,7 +22,7 @@ content_hash: sha256:5dcea5c54409add2c7bfbccebd5b79b4495c218c339d69f8b198561ea1f
 
 ## 登录
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/K0uTsBtuSs-FdsjGyHODRA/zh-cn_image_0000002552798714.png?HW-CC-KV=V1&HW-CC-Date=20260427T234206Z&HW-CC-Expire=86400&HW-CC-Sign=46C1D084EF11A363BDF7BEE523E3FD71CDCE73C614356FA7E6C5D9AE6DE7DC60)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/Ci4ifwCMQgSxtFnGYVTgtA/zh-cn_image_0000002558764862.png?HW-CC-KV=V1&HW-CC-Date=20260429T053038Z&HW-CC-Expire=86400&HW-CC-Sign=5E33DCEDDE29BA0EB8977E83D308F3F40BEE93DA7FFF37525822E20AB34F466B)
 
 示例代码如下：
 
@@ -119,7 +120,7 @@ content_hash: sha256:5dcea5c54409add2c7bfbccebd5b79b4495c218c339d69f8b198561ea1f
 
 ## 修改密码
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/S77sRQOuSF6-oVtz09AeZg/zh-cn_image_0000002583438409.png?HW-CC-KV=V1&HW-CC-Date=20260427T234206Z&HW-CC-Expire=86400&HW-CC-Sign=F44C83F1EA171203CCC319B2DDABBA6DE10B46B7D189F90C3703C29C8D6236BD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/STZmOrm0RP-FUNN5YJmSTQ/zh-cn_image_0000002558605206.png?HW-CC-KV=V1&HW-CC-Date=20260429T053038Z&HW-CC-Expire=86400&HW-CC-Sign=4D9737608854E7BCB3A27A309C7EE532BCF451537ABE21203A3E8012AAD4EA38)
 
 示例代码如下：
 

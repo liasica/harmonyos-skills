@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scan-faq-15
 title: 自定义界面扫码如何实现扫码框
 breadcrumb: 指南 > 媒体 > Scan Kit（统一扫码服务） > Scan Kit常见问题 > 自定义界面扫码如何实现扫码框
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:46:46+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:22799a51eac5e741a23073e2221541002f2a18c2bff85f06fd2a74b1162d35ae
+scraped_at: 2026-04-29T13:35:48+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:ffd89ef1482cb4e4fa82a1edff39ccbcfe4c3729b48d4f6c75c0e6a98cf25db5
 ---
 
 **问题现象**
@@ -36,7 +36,7 @@ content_hash: sha256:22799a51eac5e741a23073e2221541002f2a18c2bff85f06fd2a74b1162
 13. top: (cameraHeight - scanBoxHeight) / 2,
 14. right: (cameraWidth + scanBoxWidth) / 2,
 15. bottom: (cameraHeight + scanBoxHeight) / 2
-16. }
+16. };
 
 18. // 设置ViewControl参数
 19. let viewControl: customScan.ViewControl = {

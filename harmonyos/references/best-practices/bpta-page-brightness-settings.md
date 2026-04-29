@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-page-brigh
 title: 页面亮度设置
 breadcrumb: 最佳实践 > 主题与样式 > 页面亮度设置
 category: best-practices
-scraped_at: 2026-04-28T08:20:03+08:00
+scraped_at: 2026-04-29T14:10:44+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:fd6dab54313ff05aee52ef8c315977d922819646a6441f3fb0e84ea28dfd498c
+content_hash: sha256:24f17a1a777be5f1c8d53e1ea896685f8fbda3f8dd3f3a426736cd10e30354fe
 ---
 
 ## 概述
@@ -148,7 +148,7 @@ content_hash: sha256:fd6dab54313ff05aee52ef8c315977d922819646a6441f3fb0e84ea28df
 
 **图1** 视频播放页面
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/ZXW2IYNCTu2Dk9RBvM_44A/zh-cn_image_0000002229451573.gif?HW-CC-KV=V1&HW-CC-Date=20260428T001957Z&HW-CC-Expire=86400&HW-CC-Sign=8CE50F56648E9D896221132AE113FCD9436A597B337A1F0E16AF2B55C7A55283 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/ZXW2IYNCTu2Dk9RBvM_44A/zh-cn_image_0000002229451573.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061037Z&HW-CC-Expire=86400&HW-CC-Sign=7735B9E71F7FC7FC7A24C365CB885D99E38DF73B45408011599C47448AE67874 "点击放大")
 
 注：录屏无法录制亮度变化，以真机为准。
 
@@ -263,7 +263,7 @@ content_hash: sha256:fd6dab54313ff05aee52ef8c315977d922819646a6441f3fb0e84ea28df
 
 **图2** 付款码页面
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/oLyhR7LdSjOLR7vQWUfeOw/zh-cn_image_0000002193851700.gif?HW-CC-KV=V1&HW-CC-Date=20260428T001957Z&HW-CC-Expire=86400&HW-CC-Sign=3A18C59DAD1E2F2F48EE842F0FFDC9AAD8D64DDE6AB0A91E2FD7EDE1195634C7 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/oLyhR7LdSjOLR7vQWUfeOw/zh-cn_image_0000002193851700.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061037Z&HW-CC-Expire=86400&HW-CC-Sign=87CDD470AFEEF715A46F67D07BB50455583D3344770EF024AA0D36C5451F13EA "点击放大")
 
 注：录屏无法录制亮度变化，以真机为准。
 

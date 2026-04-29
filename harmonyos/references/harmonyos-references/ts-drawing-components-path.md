@@ -1,10 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-drawing-components-path
 title: Path
+breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 图形绘制 > Path
 category: harmonyos-references
-scraped_at: 2026-04-28T08:02:13+08:00
-doc_updated_at: 2026-04-02
-content_hash: sha256:61a2a641ccff51664566b3890e82b72d83e32c21580bdec57e6886969e58a79c
+scraped_at: 2026-04-29T13:52:39+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:01b749f1b023761a452dcd43c523a972bbe1cddc54e6f9a4de8f1e4176119cd6
 ---
 
 路径绘制组件，根据绘制路径生成封闭的自定义形状。
@@ -26,6 +27,8 @@ PhonePC/2in1TabletTVWearable
 PhonePC/2in1TabletTVWearable
 
 Path(options?: PathOptions)
+
+用于描述Path组件绘制属性。
 
 **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
 
@@ -417,7 +420,7 @@ PhonePC/2in1TabletTVWearable
 76. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/QStGn2VFTLGipms-Wxb7og/zh-cn_image_0000002552960012.png?HW-CC-KV=V1&HW-CC-Date=20260428T000212Z&HW-CC-Expire=86400&HW-CC-Sign=24D936C50F0A7AF5A25F81EA2B7C1E149666EA034E204F899AB1AD732AD4F6A5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/t2jjPSNBQGe7UdajGPMRlA/zh-cn_image_0000002558766538.png?HW-CC-KV=V1&HW-CC-Date=20260429T055236Z&HW-CC-Expire=86400&HW-CC-Sign=AEF4DD1144CEF878745B6C07E16F4D42612E52A9F6BB1A431BF23863F2A28DE7)
 
 ### 示例2（使用不同参数类型绘制路径）
 
@@ -454,7 +457,7 @@ width、height、commands属性分别使用不同的长度类型绘制图形。
 28. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/GvCVy4_2QWaudLw51imIBQ/zh-cn_image_0000002583480013.png?HW-CC-KV=V1&HW-CC-Date=20260428T000212Z&HW-CC-Expire=86400&HW-CC-Sign=140EC1EA9223C8BBAE6CB01F29A758CFB371984F91F4B880289EF72E39956B79)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/x-EZff5RTI-v4hVsl8I6EQ/zh-cn_image_0000002558606878.png?HW-CC-KV=V1&HW-CC-Date=20260429T055236Z&HW-CC-Expire=86400&HW-CC-Sign=519DC248BC2666C4B0814FC2F5673DCC0FFDB289CA474E842CA9BD88AF61B28C)
 
 ### 示例3（使用attributeModifier动态设置Path组件的属性）
 
@@ -495,4 +498,4 @@ width、height、commands属性分别使用不同的长度类型绘制图形。
 32. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/IJu40BJ-Q6y0U7MGvK5ZVg/zh-cn_image_0000002552800364.png?HW-CC-KV=V1&HW-CC-Date=20260428T000212Z&HW-CC-Expire=86400&HW-CC-Sign=8152F768A57C4D37177359442CE788FABD7BEFED9426891368B712232AA30214)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/oSb7UvfTQneidHhUH0WdKA/zh-cn_image_0000002589326405.png?HW-CC-KV=V1&HW-CC-Date=20260429T055236Z&HW-CC-Expire=86400&HW-CC-Sign=B12ABA5C454514505CB6E759B25F49BC8CE0E6FF65109563EBC20B5F13B36131)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 组件内容模糊
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 视效与模糊 > 组件内容模糊
 category: harmonyos-references
-scraped_at: 2026-04-28T08:01:08+08:00
+scraped_at: 2026-04-29T13:51:20+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:a97b0a5f97a7958d8a79fb7c2c8b6379335842ad8d828af512d74837cd0fe93d
+content_hash: sha256:71bece246a45852479129465b29809d1278ff5feccc509edf09d09fb9c6660ff
 ---
 
 为当前组件添加内容模糊效果。
@@ -195,4 +195,4 @@ PhonePC/2in1TabletTVWearable
 18. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/z5iJ-WKDSdWaW-iMaJZRRg/zh-cn_image_0000002583439569.png?HW-CC-KV=V1&HW-CC-Date=20260428T000107Z&HW-CC-Expire=86400&HW-CC-Sign=EB497FCA09DA59F8F56DB4FA47D118FEB1CA0AF7A652065FDE51DD8EC09442AD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/oHbfI1tkQnasCNz-85p6aA/zh-cn_image_0000002589245855.png?HW-CC-KV=V1&HW-CC-Date=20260429T055119Z&HW-CC-Expire=86400&HW-CC-Sign=988B9AC96B2BF6F70C1562C5AEBA3AFFC6CFC0ED4EFF146473124FC55F706DB8)

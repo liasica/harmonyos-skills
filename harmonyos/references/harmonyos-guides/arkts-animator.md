@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-animato
 title: 帧动画（ohos.animator）
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用动画 > 帧动画（ohos.animator）
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:39:59+08:00
+scraped_at: 2026-04-29T13:28:16+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:ebaf4b7c7a1218c2a65a7301f1dd095dc94ffbdbbfc537c07be72b4df4f8e040
+content_hash: sha256:f4206feef56fded3c5b1f97508329b636e34d814c70ded9a1231ecd05176ebe0
 ---
 
 帧动画具备逐帧回调的特性，便于开发者在每一帧中处理需调整的属性。通过向应用提供[AnimatorResult](../harmonyos-references/js-apis-animator.md#animatorresult)的onFrame属性逐帧回调，帧动画使开发者能够在应用的每一帧设置属性值，从而实现组件属性值变化的自然过渡，营造出动画效果。帧动画接口详情可参考[@ohos.animator (动画)](../harmonyos-references/js-apis-animator.md)。
@@ -19,9 +19,9 @@ content_hash: sha256:ebaf4b7c7a1218c2a65a7301f1dd095dc94ffbdbbfc537c07be72b4df4f
 
 如图所示，帧动画在动画过程中即可实时响应，而属性动画按最终状态响应。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/M6JDbqXWSOqX6LNdI45LsQ/zh-cn_image_0000002552798354.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233959Z&HW-CC-Expire=86400&HW-CC-Sign=A6CA3BF9B3E2F5D553AFCE1BBCF8B8411AF8346C7709324DAA5F9FA0978EFBEE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/bTVEPvziTPW40J6KbEeSDQ/zh-cn_image_0000002558764494.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052815Z&HW-CC-Expire=86400&HW-CC-Sign=D374A44ECB75E20E9FADC13869773371A9DACDF9383C5A79868C10D6597E1F8D)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/VbIdoeeXQHO9PnCmILAarQ/zh-cn_image_0000002583438049.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233959Z&HW-CC-Expire=86400&HW-CC-Sign=FA8D344E8F6EFA01177D8CB8CA91CD559B41FD91F5CE0A7F36694BEEC0F0F2C0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/kP640CcuSNmft8r2V-A4IA/zh-cn_image_0000002558604838.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052815Z&HW-CC-Expire=86400&HW-CC-Sign=9F454F1C8F98747A672378ED7A3B950ECCBD2E52FA573FFC7DAB0EE54C551457)
 
 ## 使用帧动画实现动画效果
 
@@ -262,4 +262,4 @@ content_hash: sha256:ebaf4b7c7a1218c2a65a7301f1dd095dc94ffbdbbfc537c07be72b4df4f
 
 [Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/Animation/entry/src/main/ets/pages/animator/template3/Index.ets#L15-L112)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/urmFcCW4Slme9ABiJmtsEw/zh-cn_image_0000002552958004.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233959Z&HW-CC-Expire=86400&HW-CC-Sign=02006FA40C70D79DBF13F9B792B0AD4A4AF267CAAA7537AFEB7AECCFE3CBD30B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/tuePB_9DTx619XqIgoikcQ/zh-cn_image_0000002589324363.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052815Z&HW-CC-Expire=86400&HW-CC-Sign=665992176505155217316ABC8E77FEA2264CFCB2DC2BC255994F9B7BF99898E8)

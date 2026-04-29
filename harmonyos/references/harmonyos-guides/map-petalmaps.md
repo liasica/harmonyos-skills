@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-petalmaps
 title: 通过地图应用实现导航等能力
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 通过地图应用实现导航等能力
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:49:55+08:00
+scraped_at: 2026-04-29T13:39:18+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:bc5267e060a4664c15038a7761c87f0a3c173de433d8bb08dd01b2c351b5b970
+content_hash: sha256:58eaae35e2b925294b5c50fbe7c0061e14e4f411b4f7f89def97820d411b64c1
 ---
 
 ## 场景介绍
@@ -67,7 +67,7 @@ content_hash: sha256:bc5267e060a4664c15038a7761c87f0a3c173de433d8bb08dd01b2c351b
 
 **图1** 打开地图应用首页
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/Tu36bt00RTSWBfvhy5FXzg/zh-cn_image_0000002552799402.jpg?HW-CC-KV=V1&HW-CC-Date=20260427T234954Z&HW-CC-Expire=86400&HW-CC-Sign=FE05AA06EF9FA78A364BEF2347D6635223F874F7558AAE076A4EEDA6B0F06948 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/aU5Txby2Sbuh7uZKcTG7HA/zh-cn_image_0000002589325423.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053721Z&HW-CC-Expire=86400&HW-CC-Sign=A9791BA60D3C43313487AEB833554E017F157B8CF963C70467A99FF93FC3A5DE "点击放大")
 
 ### 打开地图应用进行地点搜索
 
@@ -86,7 +86,7 @@ content_hash: sha256:bc5267e060a4664c15038a7761c87f0a3c173de433d8bb08dd01b2c351b
 
 **图2** 打开地图应用进行地点搜索
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/caJNoDkDTs-8EdLQkLFy9A/zh-cn_image_0000002583439097.jpg?HW-CC-KV=V1&HW-CC-Date=20260427T234954Z&HW-CC-Expire=86400&HW-CC-Sign=5465F81F362F238CF7F1DD123CF63141D14C3B77B5D8121898B5F77351B5B752 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/M3YMu6wkS0SaPKr-4BrZ9w/zh-cn_image_0000002589245361.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053721Z&HW-CC-Expire=86400&HW-CC-Sign=9CAED17A41E5BE5F57D598F8B372E28A43044A3F58A0110C547D0F0C9A103DE4 "点击放大")
 
 ### 打开地图应用查看地点详情
 
@@ -109,7 +109,7 @@ content_hash: sha256:bc5267e060a4664c15038a7761c87f0a3c173de433d8bb08dd01b2c351b
 
 **图3** 打开地图应用查看地点详情
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/e__lx-bsRsSU2scPmFVRDw/zh-cn_image_0000002552959052.jpg?HW-CC-KV=V1&HW-CC-Date=20260427T234954Z&HW-CC-Expire=86400&HW-CC-Sign=795AC63F01E4AD63F3CB9A0D805225BD2E384D5C17722FE48FA9326AECE0BB50 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/LTNOnX6aTriPCl1zxzavbw/zh-cn_image_0000002558765554.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053721Z&HW-CC-Expire=86400&HW-CC-Sign=B1E5CC2A568A880496B04D8DE02BAC9625754966AEB8D80C68C512EB8D57A98B "点击放大")
 
 ### 打开地图应用规划路线
 
@@ -131,7 +131,7 @@ content_hash: sha256:bc5267e060a4664c15038a7761c87f0a3c173de433d8bb08dd01b2c351b
 
 **图4** 打开地图应用规划路线
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/_MbkdbswQI-CH16pEduM1A/zh-cn_image_0000002583479053.jpg?HW-CC-KV=V1&HW-CC-Date=20260427T234954Z&HW-CC-Expire=86400&HW-CC-Sign=E9C0A00F2CC5DBD36FA2CEB7E56079324061288E9334F840FCBAEA7002BA5952 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/qT9pxkY_R2WBxkc564C2Zg/zh-cn_image_0000002558605898.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053721Z&HW-CC-Expire=86400&HW-CC-Sign=67CA74F63C9B82B9DE098A25163F32F40171B0058CA454603E832F73902CBA8E "点击放大")
 
 ### 打开地图应用进行导航
 
@@ -153,7 +153,7 @@ content_hash: sha256:bc5267e060a4664c15038a7761c87f0a3c173de433d8bb08dd01b2c351b
 
 **图5** 打开地图应用进行导航
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/BishgdOXTb-_up3AzZkLTg/zh-cn_image_0000002552799404.jpg?HW-CC-KV=V1&HW-CC-Date=20260427T234954Z&HW-CC-Expire=86400&HW-CC-Sign=0A2C38B2992D7A7614E1616D48C714F943EA296A518627D4F4E2632334131851 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/LAZkn1v7QImKxGE3VPbcng/zh-cn_image_0000002589325425.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053721Z&HW-CC-Expire=86400&HW-CC-Sign=8EA5E36886C15D8C4E19619A6A9D7EC0BADE6C8E4E97C5CCF687EC68360385C1 "点击放大")
 
 ### 打开地图应用打车页面
 
@@ -175,4 +175,4 @@ content_hash: sha256:bc5267e060a4664c15038a7761c87f0a3c173de433d8bb08dd01b2c351b
 
 **图6** 打开地图应用进行打车
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/BRIqfZ_ERiqJHwaSMTFcSg/zh-cn_image_0000002583439099.jpg?HW-CC-KV=V1&HW-CC-Date=20260427T234954Z&HW-CC-Expire=86400&HW-CC-Sign=A8A8F48258B76E0254EC89D40A308980407A1E28B05C1584B0DC1C435AC2285C "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/G0x82PPCSqyACE9g2RxcbA/zh-cn_image_0000002589245363.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053721Z&HW-CC-Expire=86400&HW-CC-Sign=3A799BA7E66B214AF5D2BA281C4BD934D1172D3FB6D656578CA1E69E866C03C1 "点击放大")

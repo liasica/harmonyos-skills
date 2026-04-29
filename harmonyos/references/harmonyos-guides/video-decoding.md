@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/video-decodin
 title: 视频解码
 breadcrumb: 指南 > 媒体 > AVCodec Kit（音视频编解码服务） > 音视频编解码 > 视频解码
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:45:44+08:00
+scraped_at: 2026-04-29T13:34:42+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:8dbeb3483bf9652b90a8278be2a02cf9a1443f93d9eb46bbf8013f6891d92ab0
+content_hash: sha256:c4d2909f5642a971f3ce84c1468725a44753e4572c20ad5242883f1be339f64d
 ---
 
 开发者可以调用本模块的Native API接口，完成视频解码，即将媒体数据解码成YUV文件或送显。
@@ -65,7 +65,7 @@ content_hash: sha256:8dbeb3483bf9652b90a8278be2a02cf9a1443f93d9eb46bbf8013f6891d
 
 如下为状态机调用关系图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/m31sHnV7Rdy7MkV1VAzMTg/zh-cn_image_0000002552958544.png?HW-CC-KV=V1&HW-CC-Date=20260427T234543Z&HW-CC-Expire=86400&HW-CC-Sign=1E8F4FEE8917BDC1A6935C58766C0D9DACAF1DB33C4F7B5623B6E04B9889ACF2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/ffUmDfz_QayOy6BEK5cvuQ/zh-cn_image_0000002558765044.png?HW-CC-KV=V1&HW-CC-Date=20260429T053440Z&HW-CC-Expire=86400&HW-CC-Sign=DECE02100CDB6A7A5FEEB4181EE0796427E01938E9BCFAE0D2838ECE77B09ECC)
 
 1. 有两种方式可以使解码器进入Initialized状态：
 
@@ -95,7 +95,7 @@ content_hash: sha256:8dbeb3483bf9652b90a8278be2a02cf9a1443f93d9eb46bbf8013f6891d
 * 虚线表示可选。
 * 实线表示必选。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/EOlYhzCxRiiUjVMDOFJ6OQ/zh-cn_image_0000002583478551.png?HW-CC-KV=V1&HW-CC-Date=20260427T234543Z&HW-CC-Expire=86400&HW-CC-Sign=1F7A57471C6E1C4343338A774A495BA54C7C993B50C4431A5AEDB75C2C8B750A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/IZJgZ0XHTE6MMkC21GR7-Q/zh-cn_image_0000002558605394.png?HW-CC-KV=V1&HW-CC-Date=20260429T053440Z&HW-CC-Expire=86400&HW-CC-Sign=72BBE6806477C4A8ED06CEEA41E698823B535615BD1E6A7ADB136643C3D49100)
 
 ### 在 CMake 脚本中链接动态库
 
@@ -1178,7 +1178,7 @@ content_hash: sha256:8dbeb3483bf9652b90a8278be2a02cf9a1443f93d9eb46bbf8013f6891d
     * OH\_MD\_KEY\_VIDEO\_STRIDE表示wStride；
     * OH\_MD\_KEY\_VIDEO\_SLICE\_HEIGHT表示hStride。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/Z7oL28PXR7SVJ3SNRMzIUw/zh-cn_image_0000002552798902.png?HW-CC-KV=V1&HW-CC-Date=20260427T234543Z&HW-CC-Expire=86400&HW-CC-Sign=21126352C1533871516FEAE8ACCEB62AC97A72C476633996C7E09F1BFD1464DD)
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/Deu4MmdZSNyUUDptCunvEA/zh-cn_image_0000002589324921.png?HW-CC-KV=V1&HW-CC-Date=20260429T053440Z&HW-CC-Expire=86400&HW-CC-Sign=CD8C8E84E58EA9BA4372E00EDECDD85A6AD429B6449EA2189E8F63CD8253A321)
 
     添加头文件。
 

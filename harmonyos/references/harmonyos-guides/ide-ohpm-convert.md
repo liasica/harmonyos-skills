@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-conv
 title: ohpm convert
 breadcrumb: 指南 > 命令行工具 > 三方依赖管理工具（ohpm） > 常用命令 > ohpm convert
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:57:45+08:00
+scraped_at: 2026-04-29T13:47:55+08:00
 doc_updated_at: 2026-04-22
-content_hash: sha256:d88a57c2746e65e0d14d1d5400a445a5b088626da7da995ae245715ab9f2cfa6
+content_hash: sha256:4ba5e61a85ca913a03ae64bc8d6139e8a1d0eabe6b238c3e7c4c66a685f2ae62
 ---
 
 将npm三方库转换为ohpm三方库。因为语法差异，转换时仅对文件进行格式转换，不修改原npm包的代码逻辑。若HAR包在转换后出现代码不兼容的报错，开发者需修改原npm包的代码做适配。
@@ -98,13 +98,13 @@ ohpm convert命令仅保留npm包中package.json配置文件中的name、version
 8. ohpm INFO: Converted packages are saved to the "C:\Users\xxxxx\Desktop\convert_1712127991590" directory.
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/5hs4_HwtSN2ee4_5tc-Elg/zh-cn_image_0000002561833683.png?HW-CC-KV=V1&HW-CC-Date=20260427T235744Z&HW-CC-Expire=86400&HW-CC-Sign=F256B22C0E2FDF9200FEF2DE4BB5EACB2EF92A2BB6F7994D3B3C5E1BB1328D17 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/zanbUNf6QL2CauH8MzRSTg/zh-cn_image_0000002561833683.png?HW-CC-KV=V1&HW-CC-Date=20260429T054754Z&HW-CC-Expire=86400&HW-CC-Sign=D139D5B3442B9F4E5B3BBF95DE035EC7B3A8A3A4B76066BB6F5B675EA3570245 "点击放大")
 
 **转换本地node\_modules目录中的包**
 
 执行npm install uuid后，转换本地node\_modules目录中的包，执行以下命令：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/be0J1qLmSiGkNO_IwlsaNg/zh-cn_image_0000002561753703.png?HW-CC-KV=V1&HW-CC-Date=20260427T235744Z&HW-CC-Expire=86400&HW-CC-Sign=4F2562B739EDBD027AB690F0829840E3D73C1CDD25D0F1B03918A0E5FBF3924B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/GNmZI-QWSRK6iKrLKrv1Tg/zh-cn_image_0000002561753703.png?HW-CC-KV=V1&HW-CC-Date=20260429T054754Z&HW-CC-Expire=86400&HW-CC-Sign=4E0FAEAC0AB3DB1631B06C9DC69E0EBB51E5F04C35F2D3F59ECDF2B6D08C8F26)
 
 ```
 1. ohpm convert C:\Users\xxxxx\Desktop\uuidInstallDir\node_modules
@@ -120,4 +120,4 @@ ohpm convert命令仅保留npm包中package.json配置文件中的name、version
 5. ohpm INFO: Converted packages are saved to the "C:\Users\xxxxx\Desktop\convert_1712128912583" directory.
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/7cllvYI7SgKeIRC_BLvvmA/zh-cn_image_0000002530913760.png?HW-CC-KV=V1&HW-CC-Date=20260427T235744Z&HW-CC-Expire=86400&HW-CC-Sign=F0671A36ED844A572ABB9AD6503E02203BA68227576B39510AB12F9C5CF4F79B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/JyxZ210KRumDC693HHJ2kg/zh-cn_image_0000002530913760.png?HW-CC-KV=V1&HW-CC-Date=20260429T054754Z&HW-CC-Expire=86400&HW-CC-Sign=8447E91286A1FA7637CE29A890A604DFD46797031F58D7D51ED3DDEF925A29B4)

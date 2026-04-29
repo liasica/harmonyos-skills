@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-developmen
 title: 如何在命令行使用ohpm
 breadcrumb: FAQ > DevEco Studio > 环境准备 > 如何在命令行使用ohpm
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:28:54+08:00
+scraped_at: 2026-04-29T14:20:05+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:a7302bf5bb16478c8bbbec5fc4aaef1a86874a8f7a73e592d28bc2df1550c7b8
+content_hash: sha256:550e18d00599e4f7f89cdcfc5d589b1ed771d650d547d40de046a6370524bf5f
 ---
 
 注意
@@ -22,10 +22,10 @@ ohpm 默认解压路径为：DevEco Studio 中默认安装位置：<DevEco Studi
 
 1. 在Windows系统中，右键点击“此电脑”选择“属性”，进入“高级系统设置”，点击“环境变量”，在“系统变量”中找到“Path”，点击“编辑”，添加ohpm工具包解压后的bin目录。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/HwMjfs5VSmqqzis_Z16eMw/zh-cn_image_0000002229604141.png?HW-CC-KV=V1&HW-CC-Date=20260428T002853Z&HW-CC-Expire=86400&HW-CC-Sign=D9A026012DA184B7B2FB9951BBAA7C6025E345271602D5754B0773A1A1E30889 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/HwMjfs5VSmqqzis_Z16eMw/zh-cn_image_0000002229604141.png?HW-CC-KV=V1&HW-CC-Date=20260429T062004Z&HW-CC-Expire=86400&HW-CC-Sign=C2B573C143AFE43B1F681615CC3B55B193204BD872A897A966C69AE51518A267 "点击放大")
 2. 添加变量后，重开命令行窗口，执行ohpm -v查看ohpm版本号，终端输出版本号信息（如1.0.0）即为成功。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/oCw5BvUJQyGgiEXBSHZDOQ/zh-cn_image_0000002194318368.png?HW-CC-KV=V1&HW-CC-Date=20260428T002853Z&HW-CC-Expire=86400&HW-CC-Sign=757DA16855456F768D50C9287D2949C2E9E3D62FF4088DC3B4C66B21D58B1619)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/oCw5BvUJQyGgiEXBSHZDOQ/zh-cn_image_0000002194318368.png?HW-CC-KV=V1&HW-CC-Date=20260429T062004Z&HW-CC-Expire=86400&HW-CC-Sign=58125772344AAC84570889FADA459A643562C249990BC7F1241B4346606674ED)
 
 **问题现象2**
 
@@ -57,4 +57,4 @@ ohpm 默认解压路径为：DevEco Studio 中默认安装位置：<DevEco Studi
    1. ohpm -v
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/06r0HA0GTvSBAi1FHEw0Og/zh-cn_image_0000002194318372.png?HW-CC-KV=V1&HW-CC-Date=20260428T002853Z&HW-CC-Expire=86400&HW-CC-Sign=5C1D7105ECAF4FD6E76B27A8058496BD204842FFB001E45F7A07A384600BD229)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/06r0HA0GTvSBAi1FHEw0Og/zh-cn_image_0000002194318372.png?HW-CC-KV=V1&HW-CC-Date=20260429T062004Z&HW-CC-Expire=86400&HW-CC-Sign=76A0408E6D44EEF13B7C5BAF29B3467B3F750F84A71A0EE479C2DFB5497798A1)

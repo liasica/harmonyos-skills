@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-lazy-im
 title: 延迟加载（lazy import）
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS运行时 > ArkTS模块化 > 延迟加载（lazy import）
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:38:45+08:00
+scraped_at: 2026-04-29T13:26:51+08:00
 doc_updated_at: 2026-03-23
-content_hash: sha256:8b82d0e2efd3e03d36f7b7add8a9e3e7c94565601c86844ec5bacda7e938fda5
+content_hash: sha256:9cab61f06312b9126d5e99f7f0fe1f6062759cf5ceb7452bdca64dd23149fa65
 ---
 
 随着应用程序功能的扩展，冷启动时间显著增加，主要是因为启动初期加载了大量未实际执行的模块。这不仅延长了应用的初始化时间，还浪费了资源。需要精简加载流程，剔除非必需的文件执行，优化冷启动性能，确保用户体验流畅。
@@ -334,7 +334,7 @@ lazy-import 相较于动态加载的优势：
 
 子线程文件名：data/app/el2/100/base/com.example.myapplication/files/com.example.myapplication\_18089\_redundant\_file.txt
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/MnWKtYVCRBSnID5s32hLFg/zh-cn_image_0000002583437587.png?HW-CC-KV=V1&HW-CC-Date=20260427T233843Z&HW-CC-Expire=86400&HW-CC-Sign=FD029D3D2D5A97F0F5B9031649E633E140B01B5FB2892784C2AF2C9FE246D735)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/rqKJEdjrQFKw-7McdjWu-Q/zh-cn_image_0000002558604376.png?HW-CC-KV=V1&HW-CC-Date=20260429T052649Z&HW-CC-Expire=86400&HW-CC-Sign=27E7A975A486AE77D91B09DAF3233AD7EC72318E354053082928FD7D914B7206)
 
 ### 检测原理
 
@@ -528,7 +528,7 @@ A文件执行过程完成了变量定义赋值并进行导出，对应A文件的
 20. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/JxcGEhDtRQOW9jneGQoIiA/zh-cn_image_0000002552957542.png?HW-CC-KV=V1&HW-CC-Date=20260427T233843Z&HW-CC-Expire=86400&HW-CC-Sign=C747AD553E1988F26BA719F4A4F0A81B09E91FF9DA5DFEB391C9EFA03A86B6A8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/M5DbCuFWRPWg8BKl1lU9Qg/zh-cn_image_0000002589323901.png?HW-CC-KV=V1&HW-CC-Date=20260429T052649Z&HW-CC-Expire=86400&HW-CC-Sign=5240B32E48888070AE60FFC02B23D44B0EE2FAE354311013461C9A327E222885)
 
 通过抓取Trace图查看调用栈，可以发现应用在冷启动时加载了A文件。
 
@@ -547,7 +547,7 @@ A文件执行过程完成了变量定义赋值并进行导出，对应A文件的
    ```
 4. 对上述示例代码获取到的文件进行分析。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/TwK-a0suRdGPOHo0_-PWpQ/zh-cn_image_0000002583477543.png?HW-CC-KV=V1&HW-CC-Date=20260427T233843Z&HW-CC-Expire=86400&HW-CC-Sign=FA31E41E5157D4DAD0E0FBEF3E5D51E78914DAA39040BC69B72B5BB8D43B5623)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/sm0FOPyHQOWZ5YRmm6PM_Q/zh-cn_image_0000002589243841.png?HW-CC-KV=V1&HW-CC-Date=20260429T052649Z&HW-CC-Expire=86400&HW-CC-Sign=966B45BA2F7F2AD3F8079BE426A2F3813E831731C16AD921A4B85192834A72EA)
 
 **修改方式**
 
@@ -576,7 +576,7 @@ A文件执行过程完成了变量定义赋值并进行导出，对应A文件的
 20. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/7N5JTzHdTqat-jcBZi1xRw/zh-cn_image_0000002552797894.png?HW-CC-KV=V1&HW-CC-Date=20260427T233843Z&HW-CC-Expire=86400&HW-CC-Sign=27A4C928EAF7178D275DAC9DF0BFC2DD3572C136BE3E4E6F3AC70F10CA519378)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/IzIz5dgvRWW-XXLB5BRZog/zh-cn_image_0000002558764034.png?HW-CC-KV=V1&HW-CC-Date=20260429T052649Z&HW-CC-Expire=86400&HW-CC-Sign=2B146F290B51FAC7911384CF652A8ECC208D7251050289732A62315FBD0D29DB)
 
 通过抓取Trace图查看调用栈可以发现，使用lazy-import标识后，应用在冷启动时不再加载A文件。
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-map-t
 title: TileOverlay
 breadcrumb: API参考 > 应用服务 > Map Kit（地图服务） > ArkTS API > map（地图显示功能） > TileOverlay
 category: harmonyos-references
-scraped_at: 2026-04-28T08:17:19+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:a971ec714b53d0ba677ab9a686ebd6ee7a1cf71f1c3fe190b295cb98efc4871e
+scraped_at: 2026-04-29T14:08:01+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:5a8a4c2a7524c842ccb79faa22c75aa02e98a38f5064d765f691ca00a7107ad4
 ---
 
 ## 导入模块
@@ -20,7 +20,7 @@ PhonePC/2in1TabletWearable
 
 PhonePC/2in1TabletWearable
 
-瓦片图层，继承[BaseOverlay](map-map-baseoverlay.md)。瓦片图层是一种基于[BaseOverlay](map-map-baseoverlay.md)实现的地图覆盖层，用于展示自定义瓦片图片。
+瓦片图层，继承[BaseOverlay](map-map-baseoverlay.md)。瓦片图层是一种基于[BaseOverlay](map-map-baseoverlay.md)实现的地图覆盖层，用于展示自定义瓦片。
 
 说明
 

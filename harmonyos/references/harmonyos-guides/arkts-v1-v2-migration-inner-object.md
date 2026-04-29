@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-v1-v2-m
 title: 内置对象的迁移
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理V1-V2迁移指导 > 状态管理V1向V2迁移场景 > 内置对象的迁移
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:39:17+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:bb473eec1787e1923c662d0a3ffe9236ade3e96d175d18a4cd5f769c5be96091
+scraped_at: 2026-04-29T13:27:27+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:eb90019c75b9bdc17cd0bcb65b539a46bed977ce037b315afea331bbbb44bf9f
 ---
 
 本文档主要介绍组件内置对象从V1向V2的迁移，涉及如下装饰器。
@@ -158,47 +158,48 @@ V1：
 29. Column() {
 30. Text(`${this.arr.length}`)
 
-32. Button('push option').onClick(() => {
-33. let section: SectionOptions = {
-34. itemsCount: 1,
-35. crossCount: 1,
-36. };
-37. this.sections.push(section);
-38. this.arr.push(100);
-39. })
+32. // @State装饰sections，可以观察到调用WaterFlowSections接口带来的变化
+33. Button('push option').onClick(() => {
+34. let section: SectionOptions = {
+35. itemsCount: 1,
+36. crossCount: 1,
+37. };
+38. this.sections.push(section);
+39. this.arr.push(100);
+40. })
 
-41. Button('splice option').onClick(() => {
-42. let section: SectionOptions = {
-43. itemsCount: 8,
-44. crossCount: 2,
-45. };
-46. this.sections.splice(0, this.arr.length, [section]);
-47. this.arr = new Array(8).fill(10);
-48. })
+42. Button('splice option').onClick(() => {
+43. let section: SectionOptions = {
+44. itemsCount: 8,
+45. crossCount: 2,
+46. };
+47. this.sections.splice(0, this.arr.length, [section]);
+48. this.arr = new Array(8).fill(10);
+49. })
 
-50. Button('update option').onClick(() => {
-51. let section: SectionOptions = {
-52. itemsCount: 8,
-53. crossCount: 2,
-54. };
-55. this.sections.update(1, section);
-56. this.arr = new Array(16).fill(1);
-57. })
+51. Button('update option').onClick(() => {
+52. let section: SectionOptions = {
+53. itemsCount: 8,
+54. crossCount: 2,
+55. };
+56. this.sections.update(1, section);
+57. this.arr = new Array(16).fill(1);
+58. })
 
-59. WaterFlow({ scroller: this.scroller, sections: this.sections }) {
-60. ForEach(this.arr, (item: number) => {
-61. FlowItem() {
-62. Text(`${item}`)
-63. .border({ width: 1 })
-64. .backgroundColor(this.colors[item % 6])
-65. .height(30)
-66. .width(50)
-67. }
-68. })
-69. }
+60. WaterFlow({ scroller: this.scroller, sections: this.sections }) {
+61. ForEach(this.arr, (item: number) => {
+62. FlowItem() {
+63. Text(`${item}`)
+64. .border({ width: 1 })
+65. .backgroundColor(this.colors[item % 6])
+66. .height(30)
+67. .width(50)
+68. }
+69. })
 70. }
 71. }
 72. }
+73. }
 ```
 
 [InternalOtherMigrationsWaterFlowV1.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/internalmigrate/InternalOtherMigrationsWaterFlowV1.ets#L15-L88)
@@ -325,14 +326,15 @@ V1：
 21. Button('Button')
 22. .attributeModifier(this.modifier)
 23. .onClick(() => {
-24. this.modifier.isDark = !this.modifier.isDark;
-25. })
-26. }
-27. .width('100%')
-28. }
-29. .height('100%')
-30. }
+24. // 在状态管理V1中，可以通过@State装饰观察modifier的变化
+25. this.modifier.isDark = !this.modifier.isDark;
+26. })
+27. }
+28. .width('100%')
+29. }
+30. .height('100%')
 31. }
+32. }
 ```
 
 [InternalattributeModifierV1.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/internalmigrate/InternalattributeModifierV1.ets#L15-L47)
@@ -572,39 +574,40 @@ V1：
 32. Button($r('app.string.EntryAbility_label'))
 33. .margin(10)
 34. .onClick(() => {
-35. hilog.info(DOMAIN, 'testTag', 'Modifier', 'onClick');
-36. this.index++;
-37. if (this.index % 2 === 1) {
-38. (this.modifier as MyModifier).setGroup1();
-39. hilog.info(DOMAIN, 'testTag', 'Modifier', 'setGroup1');
-40. } else {
-41. (this.modifier as MyModifier).setGroup2();
-42. hilog.info(DOMAIN, 'testTag', 'Modifier', 'setGroup2');
-43. }
-44. })
-45. }
+35. // 通过点击改变index数值，动态设置Text的属性类
+36. hilog.info(DOMAIN, 'testTag', 'Modifier', 'onClick');
+37. this.index++;
+38. if (this.index % 2 === 1) {
+39. (this.modifier as MyModifier).setGroup1();
+40. hilog.info(DOMAIN, 'testTag', 'Modifier', 'setGroup1');
+41. } else {
+42. (this.modifier as MyModifier).setGroup2();
+43. hilog.info(DOMAIN, 'testTag', 'Modifier', 'setGroup2');
+44. }
+45. })
 46. }
 47. }
+48. }
 
-49. @Entry
-50. @Component
-51. struct Index {
-52. @State myModifier: TextModifier = new MyModifier().width(100).height(100).margin(10);
-53. index: number = 0;
+50. @Entry
+51. @Component
+52. struct Index {
+53. @State myModifier: TextModifier = new MyModifier().width(100).height(100).margin(10);
+54. index: number = 0;
 
-55. build() {
-56. Column() {
-57. MyImage1({ modifier: this.myModifier })
+56. build() {
+57. Column() {
+58. MyImage1({ modifier: this.myModifier })
 
-59. Button('replace whole')
-60. .margin(10)
-61. .onClick(() => {
-62. this.myModifier = new MyModifier().backgroundColor(Color.Orange);
-63. })
-64. }
-65. .width('100%')
-66. }
+60. Button('replace whole')
+61. .margin(10)
+62. .onClick(() => {
+63. this.myModifier = new MyModifier().backgroundColor(Color.Orange);
+64. })
+65. }
+66. .width('100%')
 67. }
+68. }
 ```
 
 [InternalModuleModifierV1.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/internalmigrate/InternalModuleModifierV1.ets#L15-L83)

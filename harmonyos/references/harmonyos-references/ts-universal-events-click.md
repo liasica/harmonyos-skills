@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 点击事件
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用事件 > 交互响应事件 > 点击事件
 category: harmonyos-references
-scraped_at: 2026-04-28T08:00:55+08:00
+scraped_at: 2026-04-29T13:51:09+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:e3a9179a3aad0216a2efdf32f5eddc4cd3b93f4e7308059cf30a46effc99be29
+content_hash: sha256:9f3e83c2ea4f92d4c879abe2e7fc311c919f4fec84af6c0a38733f520bbd3840
 ---
 
 组件被点击时触发的事件。
@@ -181,4 +181,4 @@ PhonePC/2in1TabletTVWearable
 29. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/J0JLVDy1TZel82od9XbwGw/zh-cn_image_0000002583439511.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000053Z&HW-CC-Expire=86400&HW-CC-Sign=6333F2090813F1E024F3EFDD3C22EAD6EF409DBF1280202B6C1D1E8B426DBD2D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/fCInChibTTiFn5XjhI4rtQ/zh-cn_image_0000002589245797.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055107Z&HW-CC-Expire=86400&HW-CC-Sign=FAD2E750EC64B50D31F7189CC4B1C711712249BEFBFCDA030DA6D255E8A7C754)

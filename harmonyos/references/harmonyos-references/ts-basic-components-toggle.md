@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: Toggle
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 按钮与选择 > Toggle
 category: harmonyos-references
-scraped_at: 2026-04-28T08:01:41+08:00
+scraped_at: 2026-04-29T13:51:58+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:74b20a2aee6d4f0a11e7b3e0c248454aed01b79642fb8cde3dcb18b4048e42c1
+content_hash: sha256:78f7f88edeb48e74fe7647f4259b935da8e6db202377c96c4169fb7db879e8f2
 ---
 
 组件提供勾选框样式、状态按钮样式和开关样式。
@@ -294,7 +294,7 @@ PhonePC/2in1TabletTVWearable
 61. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/7s0N__11TtqvEDO_plD9LQ/zh-cn_image_0000002552959696.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000139Z&HW-CC-Expire=86400&HW-CC-Sign=ACA6816F9733F22E4EF8D2A575D5AA6C01BB003D2533A9C2E3BF3CFFD1D4EB19)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/n0ZmVArqTOunSxy-1sHOOA/zh-cn_image_0000002558766218.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055153Z&HW-CC-Expire=86400&HW-CC-Sign=3FB5F1EF7F2750A72372EF3F3F5742A10455C7E78BB043E63C53085E655DC6BD)
 
 ### 示例2（自定义开关类型的样式）
 
@@ -336,7 +336,7 @@ PhonePC/2in1TabletTVWearable
 33. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/_efZzZ1aRD6cTd2jDvaFlA/zh-cn_image_0000002583479697.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000139Z&HW-CC-Expire=86400&HW-CC-Sign=9A1D793B6E020A12DE9595C1B4F2AD3A7EFEFEF43705C3D8BD26D470BE82CF8E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/k-z-ewD-Tzy4YRqImZML4w/zh-cn_image_0000002558606560.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055153Z&HW-CC-Expire=86400&HW-CC-Sign=2315447932A82D801C945BC7D2ED6EF177996A266C58144653B3A54712AC524A)
 
 ### 示例3（自定义Toggle样式）
 
@@ -392,4 +392,4 @@ PhonePC/2in1TabletTVWearable
 47. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/NM09DOpISr6M-xIMH4fK7A/zh-cn_image_0000002552800048.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000139Z&HW-CC-Expire=86400&HW-CC-Sign=28B26F4FF8944049D880E634639D0A4DF549F6BD8B8362280A1780139FABEA43)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/6krXMNM8SeOqKKjQMaVLPw/zh-cn_image_0000002589326087.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055153Z&HW-CC-Expire=86400&HW-CC-Sign=467C66D9F49F8F4221FA07EA1606A2260E04B54D117ABEE7B4386DF8186ED16D)

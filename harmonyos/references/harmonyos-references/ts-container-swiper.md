@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: Swiper
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 滚动与滑动 > Swiper
 category: harmonyos-references
-scraped_at: 2026-04-28T08:01:32+08:00
+scraped_at: 2026-04-29T13:51:48+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:c4107c20d5f461d5f5563731639c060c9a395e9ce507a07c81624b99a28e6f99
+content_hash: sha256:bf0c0149517dc9014437592ae8fe530819bba601fa2e5236b77410d47949d07f
 ---
 
 滑块视图容器，提供子组件滑动轮播显示的能力。
@@ -2289,7 +2289,7 @@ PhonePC/2in1TabletTVWearable
 129. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/TOSSW2JjQQaWA2lIuQL6CQ/zh-cn_image_0000002552799990.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000130Z&HW-CC-Expire=86400&HW-CC-Sign=A975EFAC59D3FF6FFC75E3C7E08E2E66AA58EE603CC4D621E6322A5463E40268)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/sDj0MU2WTh-nyb45gIxLJQ/zh-cn_image_0000002589326029.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055030Z&HW-CC-Expire=86400&HW-CC-Sign=7950BEC7441CC9136ADE8FCE50B84B3A0624E09941C9ED56A1D6CDCA1836E662)
 
 ### 示例2（设置数字指示器）
 
@@ -2376,7 +2376,7 @@ PhonePC/2in1TabletTVWearable
 78. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/FPF1cMQMQiytlf6OESK1zg/zh-cn_image_0000002583439685.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000130Z&HW-CC-Expire=86400&HW-CC-Sign=94147CF45655DD16C61A91AEEAD2ED17C547E801C44AB9F06642A681F1500558)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/MoyfNvtvTLOvCjEFVF-S7g/zh-cn_image_0000002589245971.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055030Z&HW-CC-Expire=86400&HW-CC-Sign=0324C5C33948FF0B328658B3B8916BBA34005F289B2A2ED2485BA6E39E73D6A8)
 
 ### 示例3（设置按组翻页）
 
@@ -2463,7 +2463,7 @@ PhonePC/2in1TabletTVWearable
 78. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/Z_RZH-1mRxeshSCMbbUxqA/zh-cn_image_0000002552959640.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000130Z&HW-CC-Expire=86400&HW-CC-Sign=EFFA8A663FF66B76F65C5CE873C900DDBD3934AE8C74311D0431A12C736E2F4A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/PXpgMu6tSoGuBForMXiRYg/zh-cn_image_0000002558766162.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055030Z&HW-CC-Expire=86400&HW-CC-Sign=B0832574F5F8242FE48F0EDE5772AD726CC6911EFE7633D055D9F5D861153C2F)
 
 ### 示例4（设置自定义页面切换动画）
 
@@ -2599,7 +2599,7 @@ PhonePC/2in1TabletTVWearable
 96. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/kBdFH58HQW2DIdWl5Z4LGg/zh-cn_image_0000002583479641.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000130Z&HW-CC-Expire=86400&HW-CC-Sign=F01897452A85EAEF603201C46109D5EE47934198415BC4622F8D6A1542EDE969)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/QLZrTr8QT9CIjq5DAUC1gw/zh-cn_image_0000002558606504.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055030Z&HW-CC-Expire=86400&HW-CC-Sign=5F654C86A9052A130449735AE3F5DC2B9F4DC9C623FA52945C92142637D5C8D1)
 
 ### 示例5（设置圆点导航点超长显示）
 
@@ -2695,7 +2695,7 @@ PhonePC/2in1TabletTVWearable
 87. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/SqWYEBGQTrixqFEfWGMFKw/zh-cn_image_0000002552799992.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000130Z&HW-CC-Expire=86400&HW-CC-Sign=3EEE8FBCC2EF5215DE293F3A056BCCA2E01C7E607369BBAA3CEBF4A2EF1709A0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/PbZObJF7SLSveR-aOR5gYA/zh-cn_image_0000002589326031.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055030Z&HW-CC-Expire=86400&HW-CC-Sign=5F3185BAB09DA6C67089ADE3D5952BE8C83BBFCFDC41295DD11D42D024B4324B)
 
 ### 示例6（预加载子节点）
 
@@ -2875,7 +2875,7 @@ PhonePC/2in1TabletTVWearable
 100. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/LW6fDGbRR9awnTUmiqFkhA/zh-cn_image_0000002583439687.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000130Z&HW-CC-Expire=86400&HW-CC-Sign=835215FAC9BDB0C9A683FB8166A720DF6206BB4FB951B84C01CECCBAD2BFF400)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/7_Pigw7SSTiaDwNQetNtuA/zh-cn_image_0000002589245973.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055030Z&HW-CC-Expire=86400&HW-CC-Sign=C9962918D2054FCA666175DD5D0C1908F1F09753CC78069DCC4A0F58EAFF8F10)
 
 ### 示例8（滑动行为拦截事件）
 
@@ -2964,7 +2964,7 @@ PhonePC/2in1TabletTVWearable
 80. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/S7RVDE8YQc2FPZ9L-9-ZWw/zh-cn_image_0000002552959642.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000130Z&HW-CC-Expire=86400&HW-CC-Sign=CB5C565E9F1F5CCFA09DAF11043D10DC4B5ED6F9273F11998D034F26A51C3365)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/7cnvBIZaTC6GWdp4-QcCMA/zh-cn_image_0000002558766164.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055030Z&HW-CC-Expire=86400&HW-CC-Sign=7368DA79B1B229D7EDC9B001F6A2CEC17CAFB6732A41A81D187DABB1AEC4206A)
 
 ### 示例9（演示导航点space与bottom）
 
@@ -3068,7 +3068,7 @@ PhonePC/2in1TabletTVWearable
 95. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/Gdda4ADCQR266x8jikbxxQ/zh-cn_image_0000002583479643.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000130Z&HW-CC-Expire=86400&HW-CC-Sign=B4D0D4AEB5017AD6FA4C8B1D2C8E11550315A073828A9F0CDC7FF291398B5E67)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/21vf81zNRgmXffcimM-waA/zh-cn_image_0000002558606506.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055030Z&HW-CC-Expire=86400&HW-CC-Sign=F1F88CC18833522C2EF92CF5733BA9CFD193E7CF70E33E643444D73408145EA5)
 
 ### 示例10（Swiper组件基于断点配置显示个数）
 
@@ -3132,11 +3132,11 @@ PhonePC/2in1TabletTVWearable
 
 Swiper宽度属于[sm](../harmonyos-guides/arkts-layout-development-grid-layout.md#栅格容器断点)及更小的断点区间时显示1列。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/sTktOXYmQ2mtp3a76dHM0w/zh-cn_image_0000002552799994.jpg?HW-CC-KV=V1&HW-CC-Date=20260428T000130Z&HW-CC-Expire=86400&HW-CC-Sign=FF1C7570CD828035D5FE4D5F30D96259C108385D82EB8369ABD1725E288267B4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/FM3F-_Y_QfOKRIjpIHUhgQ/zh-cn_image_0000002589326033.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T055030Z&HW-CC-Expire=86400&HW-CC-Sign=9CEA6E7958C1B1482FFFC692F68A7DF7D68FD79DEEE063DB68F092E50967889B)
 
 Swiper宽度属于[md](../harmonyos-guides/arkts-layout-development-grid-layout.md#栅格容器断点)断点区间时显示2列。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/qE-5Je8YRjSF3VqlVxx2lw/zh-cn_image_0000002583439689.jpg?HW-CC-KV=V1&HW-CC-Date=20260428T000130Z&HW-CC-Expire=86400&HW-CC-Sign=787B38873CA5D9F7522FBBF940A4401BF07D12C629F0B41AA8DA547293FFEBC9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/0Ny9gb9SSK2RT7C6JlMOSA/zh-cn_image_0000002589245975.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T055030Z&HW-CC-Expire=86400&HW-CC-Sign=C2A592273148B54EB7BA3F3EA50A91FABFEEC4A28320666269A996FE45C89E14)
 
 ### 示例11（Swiper组件模拟拖拽）
 
@@ -3200,4 +3200,4 @@ Swiper宽度属于[md](../harmonyos-guides/arkts-layout-development-grid-layout.
 53. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/jMv1gGB0Sfe59rkymi-Cew/zh-cn_image_0000002552959644.gif?HW-CC-KV=V1&HW-CC-Date=20260428T000130Z&HW-CC-Expire=86400&HW-CC-Sign=63FE416FD601DB0C002BA12BD63214E199B866D5EA8A6A934772D2DB90D86C85)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/q5SHIgajQY6M29gyrZUrrA/zh-cn_image_0000002558766166.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055030Z&HW-CC-Expire=86400&HW-CC-Sign=652CCD02C98E499429013F2BAC9E6A3200C695A497B03DC07C1DE8FD46F4AE8B)

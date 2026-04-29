@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-tsan
 title: 使用TSan检测线程错误
 breadcrumb: 指南 > 编写与调试应用 > 日志与故障分析 > 故障分析 > 使用TSan检测线程错误
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:56:59+08:00
+scraped_at: 2026-04-29T13:46:55+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:53fbd047a622ccb192e4619bb9090dc55e1dc7456b66d5a70256fe7c89f47407
+content_hash: sha256:76891c17c26a9e3cc8fc58d5832c32e8a037bbbf3b90cec12363322b7db3079d
 ---
 
 TSan（ThreadSanitizer）是一个检测数据竞争的工具。它包含一个编译器插桩模块和一个运行时库。TSan开启后，会使性能降低5到15倍，同时使内存占用率提高5到10倍。关于TSan的检测原理请参考[TSan](../best-practices/bpta-stability-tsan-detection.md)。
@@ -24,10 +24,10 @@ TSan（ThreadSanitizer）是一个检测数据竞争的工具。它包含一个�
 
 1. 点击**Run > Edit Configurations >** **Diagnostics**，勾选**Thread Sanitizer**。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/PPc8gEXDTp2eEy1qCciRvQ/zh-cn_image_0000002530753432.png?HW-CC-KV=V1&HW-CC-Date=20260427T235658Z&HW-CC-Expire=86400&HW-CC-Sign=00E20C20BAEC9F50F879A5F83755C7EDAF2929F00397A273F6E0A50C853A7225)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/J8DuI76OSR2YgAi9wf_YOA/zh-cn_image_0000002530753432.png?HW-CC-KV=V1&HW-CC-Date=20260429T054654Z&HW-CC-Expire=86400&HW-CC-Sign=59A6AA11F8294B16F5662A59F6E8BC6B0B5211E868B6D17577315A19D42F4DD5)
 2. 如果有引用本地library，需在library模块的build-profile.json5文件中，配置arguments字段值为“-DOHOS\_ENABLE\_TSAN=ON”，表示以TSan模式编译so文件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/dGOYwo6qSSehrskRqb5IDw/zh-cn_image_0000002561833357.png?HW-CC-KV=V1&HW-CC-Date=20260427T235658Z&HW-CC-Expire=86400&HW-CC-Sign=BA80FC2B2BC59F159E93E7EC99CD687078ED20C933489D8CBCE9B882F684F12A)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/L8LyO0DZTmWPQCxd-vRC7A/zh-cn_image_0000002561833357.png?HW-CC-KV=V1&HW-CC-Date=20260429T054654Z&HW-CC-Expire=86400&HW-CC-Sign=B4F748B197C5292AE7B2AD542DFA239F5DC01C49E35828D9EFEFDD87BC30E904)
 
 ### 方式二
 
@@ -37,7 +37,7 @@ TSan（ThreadSanitizer）是一个检测数据竞争的工具。它包含一个�
    1. "tsanEnabled": true
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/xe0noCoORTiT5xAlkG6N9w/zh-cn_image_0000002561753375.png?HW-CC-KV=V1&HW-CC-Date=20260427T235658Z&HW-CC-Expire=86400&HW-CC-Sign=F975431BDA67AD00BF80E89472C0BB6FAE3C7BBE7FE209A3B781AAB6757AD641)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/uE-oepu7R9G2-dXowXyWTA/zh-cn_image_0000002561753375.png?HW-CC-KV=V1&HW-CC-Date=20260429T054654Z&HW-CC-Expire=86400&HW-CC-Sign=65D92336C524DA828743316EB9E37389235AD401DB8162C31F1F5A55C4062500)
 2. 设置模块级构建TSan插桩。
 
    在需要开启TSan的模块中，通过添加构建参数开启TSan检测插桩，在对应模块的模块级build-profile.json5中添加命令参数：
@@ -46,7 +46,7 @@ TSan（ThreadSanitizer）是一个检测数据竞争的工具。它包含一个�
    1. "arguments": "-DOHOS_ENABLE_TSAN=ON"
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/jN8ERONEQVWFlgOVYf4I8Q/zh-cn_image_0000002561753371.png?HW-CC-KV=V1&HW-CC-Date=20260427T235658Z&HW-CC-Expire=86400&HW-CC-Sign=A6DFAE37E6424102A62E5F9E294CCFE3AF0D105E93F7596F15C077BEC0FA8C87)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/6Et7N0TRTPaiziSZZIU3_w/zh-cn_image_0000002561753371.png?HW-CC-KV=V1&HW-CC-Date=20260429T054654Z&HW-CC-Expire=86400&HW-CC-Sign=3A115A4284F123C7B72D00110D9A725CAF62041526507AA3AE4E661B2D296388)
 
 ## 使用TSan
 
@@ -57,7 +57,7 @@ TSan（ThreadSanitizer）是一个检测数据竞争的工具。它包含一个�
 
    当前使用call\_once接口会存在TSan误报的现象，开发者可以在调用该接口的函数前添加\_\_attribute\_\_((no\_sanitize("thread")))来屏蔽该问题。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/cJ1UnK30QvShOpEiI8HoFA/zh-cn_image_0000002530753434.png?HW-CC-KV=V1&HW-CC-Date=20260427T235658Z&HW-CC-Expire=86400&HW-CC-Sign=5CFE219EBA4686EE4C0E920145B6C6C04B64BA6808FFEF9343924D5E886C7F18)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/kqh6klepQlC8aAsxsVk4Eg/zh-cn_image_0000002530753434.png?HW-CC-KV=V1&HW-CC-Date=20260429T054654Z&HW-CC-Expire=86400&HW-CC-Sign=88C697A366219E83AA78528671EB5C3018AD55A022EAB8EDCDD98E4F67956FB9)
 3. 如果是release应用，本地无工程代码，可以使用AnalyzeStackTrace功能，提供要解析堆栈的so，解析结果为源码地址。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/oBKai-6HSvuKS9p6PJwAjQ/zh-cn_image_0000002530913430.png?HW-CC-KV=V1&HW-CC-Date=20260427T235658Z&HW-CC-Expire=86400&HW-CC-Sign=0E8C7EC1F820F5E6FB233925E293E62BA3B5D2320532393E62827B3C5659395C "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/u88WkQ1ERNiHpL5yreGdMg/zh-cn_image_0000002530913430.png?HW-CC-KV=V1&HW-CC-Date=20260429T054654Z&HW-CC-Expire=86400&HW-CC-Sign=6C7D109C0D0D4B8187ED02EF985D3208E1DB0B3BD04617ACA6262857DE690E8B "点击放大")

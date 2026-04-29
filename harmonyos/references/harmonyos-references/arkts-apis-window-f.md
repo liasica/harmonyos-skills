@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Functions
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > 窗口管理 > @ohos.window (窗口) > Functions
 category: harmonyos-references
-scraped_at: 2026-04-28T08:00:43+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:8e1021d7acae2e3faed3d033740e504a5d94633aca5fd44fbea91e804ac3eef0
+scraped_at: 2026-04-29T13:50:57+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:90c96dfcb12098d338041c12e117d288e10dd6f2cc8af2e83eeb4a3fd05d23cd
 ---
 
 说明
@@ -191,7 +191,7 @@ findWindow(name: string): Window
 
 | 类型 | 说明 |
 | --- | --- |
-| [Window](arkts-apis-window-window.md) | 当前查找的窗口对象。如果查找指定名称对应的窗口不存在，则返回对象为空。 |
+| [Window](arkts-apis-window-window.md) | 当前查找的窗口对象。如果查找指定名称对应的窗口不存在，则返回1300002错误码。 |
 
 **错误码：**
 
@@ -793,13 +793,14 @@ getVisibleWindowInfo(): Promise<Array<WindowInfo>>
 14. console.info(`abilityName:${windowInfo.abilityName}`);
 15. console.info(`bundleName:${windowInfo.bundleName}`);
 16. console.info(`isFocused:${windowInfo.isFocused}`);
-17. })
-18. }).catch((err: BusinessError) => {
-19. console.error('Failed to getWindowInfo. Cause: ' + JSON.stringify(err));
-20. });
-21. } catch (exception) {
-22. console.error(`Failed to get visible window info. Cause code: ${exception.code}, message: ${exception.message}`);
-23. }
+17. console.info(`globalDisplayRect:${JSON.stringify(windowInfo.globalDisplayRect)}`);
+18. })
+19. }).catch((err: BusinessError) => {
+20. console.error('Failed to getWindowInfo. Cause: ' + JSON.stringify(err));
+21. });
+22. } catch (exception) {
+23. console.error(`Failed to get visible window info. Cause code: ${exception.code}, message: ${exception.message}`);
+24. }
 ```
 
 ## window.getGlobalWindowMode20+

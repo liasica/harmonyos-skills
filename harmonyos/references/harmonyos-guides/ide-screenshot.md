@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-screensho
 title: 截屏
 breadcrumb: 指南 > 编写与调试应用 > 应用调试 > 截屏
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:56:55+08:00
+scraped_at: 2026-04-29T13:46:52+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:4160b760d18f79649bcdc9836af9d4341277380b52b987ffc9c2b887a1c43182
+content_hash: sha256:8bad14fd6f00559af3dda93b85a10b03cd167d95aa674717b003602cccfd68d3
 ---
 
 在调试过程中，可以通过多种方式截取屏幕截图。
@@ -14,14 +14,14 @@ content_hash: sha256:4160b760d18f79649bcdc9836af9d4341277380b52b987ffc9c2b887a1c
 
 1. 连接真机设备或模拟器，并在其中运行应用。
 2. 在DevEco Studio底部切换到**Log**页签。
-3. 点击左侧工具栏中![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/GQfApdDwRfynpueovuG4Tg/zh-cn_image_0000002561833341.png?HW-CC-KV=V1&HW-CC-Date=20260427T235653Z&HW-CC-Expire=86400&HW-CC-Sign=E1CFC4634D3A6FBF94B004010B4127EC5182DA441785A3D211AE6B30D5A0083B)，即可截取屏幕截图。
+3. 点击左侧工具栏中![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/eQKYLPdwS_6b_1mXU_5c1w/zh-cn_image_0000002561833341.png?HW-CC-KV=V1&HW-CC-Date=20260429T054649Z&HW-CC-Expire=86400&HW-CC-Sign=EC6A110296002BEF5B40E92C1AFF76FF602C47A01D2FEEEF84CF8E8186F43290)，即可截取屏幕截图。
 
    截图的图片将直接显示在DevEco Studio中。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/0gtSVfeGTN6u2cOhFC-2Yg/zh-cn_image_0000002530913418.png?HW-CC-KV=V1&HW-CC-Date=20260427T235653Z&HW-CC-Expire=86400&HW-CC-Sign=69C1F86728C469849842535F1A28CD05A9A3E5FBB9B54B8D00809425CE3AF6A1)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/jneHmqj7Rn2RBmrbpvtGrQ/zh-cn_image_0000002530913418.png?HW-CC-KV=V1&HW-CC-Date=20260429T054649Z&HW-CC-Expire=86400&HW-CC-Sign=77F6FA1882EF3B1D7E96A12441B2B0E06397CEC3505CD7E2E9B7D46AA61DEAEF)
 4. （可选）在图片显示区域右击，选择**Copy Path/Reference...**可以查看截屏的本地存储路径或者在菜单栏下方查看本地存储路径。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/S4ee5NdAQ-mTIu7CdQiJeg/zh-cn_image_0000002530913412.png?HW-CC-KV=V1&HW-CC-Date=20260427T235653Z&HW-CC-Expire=86400&HW-CC-Sign=19166528DA9069CCCD6A883134DA9997ABE42EF533F74B2A00B88221039992A1)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/Ak9SNRNIQ1eOs47__C5Ozg/zh-cn_image_0000002530913412.png?HW-CC-KV=V1&HW-CC-Date=20260429T054649Z&HW-CC-Expire=86400&HW-CC-Sign=B5E3EEE5D181AB51C1C08D4C546EEEE133638C8123935DD9B82DCDDBDB82D99A)
 
 ## 通过命令行方式截屏
 
@@ -44,7 +44,7 @@ wukong是系统稳定性测试工具，通过指定参数-p可以实现截图功
 
 命令执行效果如下图所示，其中Report currentTestDir为结果存储路径，包含截屏图片。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/vZggJUBWTbmSoQymaODWOg/zh-cn_image_0000002530753420.png?HW-CC-KV=V1&HW-CC-Date=20260427T235653Z&HW-CC-Expire=86400&HW-CC-Sign=95AFCE6F8246EA141EC11FFFD5ACB265C458BA98F83BBC8E0167DA4247BCEC7F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/yScHWXLhTqCzGOw8RAxeGA/zh-cn_image_0000002530753420.png?HW-CC-KV=V1&HW-CC-Date=20260429T054649Z&HW-CC-Expire=86400&HW-CC-Sign=EB4A6F3973C89FB0E81D2D8A12C8587AEFEEE8675ADED33F1293BEE489DC4ED7)
 
 通过hdc命令可以将该路径文件发送到本地，例如发送到当前执行hdc命令的目录。
 

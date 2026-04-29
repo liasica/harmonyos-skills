@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/iap-error
 title: ArkTS API错误码
 breadcrumb: API参考 > 应用服务 > IAP Kit（应用内支付服务） > ArkTS API > ArkTS API错误码
 category: harmonyos-references
-scraped_at: 2026-04-28T08:16:54+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:05c64f0553d64adfe1a6b6aa52c030cb3f637d7c64c9aa03cd45143d1bbfce29
+scraped_at: 2026-04-29T14:07:38+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:2cbe3f08774867d1b092b52a424b227fffa8f8981252bf6b743413e833e715db
 ---
 
 说明
@@ -74,8 +74,8 @@ The application is not authorized.
 
 **处理步骤**
 
-1. 请参考[配置应用身份信息](../harmonyos-guides/iap-config-app-identity-info.md)、[添加公钥指纹](../harmonyos-guides/application-dev-overview.md#section1726913517284)章节进行检查。
-2. 请参考[配置签名信息](../harmonyos-guides/application-dev-overview.md#section42841246144813)检查是否使用了自动签名方式，请使用手动签名方式。
+1. 请参考[配置应用身份信息](../harmonyos-guides/iap-config-app-identity-info.md)、[添加公钥指纹](../harmonyos-guides/application-dev-overview.md#条件必选添加公钥指纹)章节进行检查。
+2. 请参考[配置签名信息](../harmonyos-guides/application-dev-overview.md#配置签名信息)检查是否使用了自动签名方式，请使用手动签名方式。
 3. 需要使用华为应用内支付功能的应用必须[开启和激活应用内购买服务](../harmonyos-guides/iap-enable-in-app-purchases.md)。
 
 ## 1001860003 无效的商品信息
@@ -202,7 +202,7 @@ Failed to purchase a product because the user already owns the product.
 * 若商品为消耗型商品或非续期订阅商品，检查商品是否发货，确认发货成功之后调用[finishPurchase](iap-iap.md#iapfinishpurchase)接口完成购买，下次可正常购买。
 * 若商品为非消耗型商品或自动续期订阅商品，已经购买则不能再次购买。
 
-## 1001860052 由于未拥有该商品，发货失败
+## 1001860052 由于未支付该商品，发货失败
 
 PhonePC/2in1TabletTVWearable
 
@@ -212,7 +212,7 @@ The purchase cannot be finished because the user has not paid for it.
 
 **错误描述**
 
-由于未拥有该商品，发货失败。
+由于未支付该商品，发货失败。
 
 **可能原因**
 

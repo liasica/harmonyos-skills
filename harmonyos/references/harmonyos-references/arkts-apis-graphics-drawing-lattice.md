@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (Lattice)
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > ArkTS API > @ohos.graphics.drawing (绘制模块) > Class (Lattice)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:14:39+08:00
+scraped_at: 2026-04-29T14:05:16+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:358b064b55bbb97e8feb0d05bdc8c12589a7efcec04c2f08593e28905452e60f
+content_hash: sha256:7291f527bfbab598f3531a83aec8a541c87a8bef2d4f7f4af503a6539236781d
 ---
 
 矩形网格对象。该对象用于将图片按照矩形网格进行划分。
@@ -76,7 +76,7 @@ static createImageLattice(xDivs: Array<number>, yDivs: Array<number>, fXCount: n
 10. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/heNp92RLRbGzso1C-m70IQ/zh-cn_image_0000002552801214.png?HW-CC-KV=V1&HW-CC-Date=20260428T001437Z&HW-CC-Expire=86400&HW-CC-Sign=17A329CED20F9992C6D2FE9B3B9376EB4766D1192DC28A88C4800501062A51A9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/NbMVN0OkRA6yaDH53HPtcQ/zh-cn_image_0000002589247197.png?HW-CC-KV=V1&HW-CC-Date=20260429T060514Z&HW-CC-Expire=86400&HW-CC-Sign=9B14EAAC165AA7BC500AC42CA6D996D672D9DEF24DFDE5158528022AC32054C0)
 
 ## createImageLattice18+
 

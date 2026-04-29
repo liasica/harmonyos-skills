@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/appfreeze-gui
 title: AppFreeze（应用冻屏）检测
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 故障检测 > AppFreeze（应用冻屏）检测
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:44:58+08:00
+scraped_at: 2026-04-29T13:33:53+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:92e6bce7d223a5efb32919808348873dfb37f5f845bb20be4e4cc8b6d9a1d0ed
+content_hash: sha256:843d110d1e057fd1a9a47f97ec6832e00840b5ec1b26a572dc28a7930034d94b
 ---
 
 ## 简介
@@ -41,7 +41,7 @@ AppFreeze检测仅对[release版本应用](performance-analysis-kit-terminology.
 
 **图1**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/PIXVqI7hSeauA1Q1wNoaDQ/zh-cn_image_0000002583438535.png?HW-CC-KV=V1&HW-CC-Date=20260427T234457Z&HW-CC-Expire=86400&HW-CC-Sign=E02B7EBECA83225875DEC3F1A5DE568AA7EE72CA38BDB10F403AF3DEA2333233)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/oIq_kh25QtOiuTaTjZKOrQ/zh-cn_image_0000002589244795.png?HW-CC-KV=V1&HW-CC-Date=20260429T053352Z&HW-CC-Expire=86400&HW-CC-Sign=A827E28708F6CA3E402578E86F535EC0F4E1BBB1901516269AC230BD8DF5CEC0)
 
 ### APP\_INPUT\_BLOCK 用户输入响应超时
 
@@ -53,7 +53,7 @@ AppFreeze检测仅对[release版本应用](performance-analysis-kit-terminology.
 
 **图2**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/ivgDANK-SoyIIAcpO3hnGg/zh-cn_image_0000002552958490.png?HW-CC-KV=V1&HW-CC-Date=20260427T234457Z&HW-CC-Expire=86400&HW-CC-Sign=28F7A1D61F72CFAD82B8E4E1DCD3072745AC602E944B5D1677320F738724C52E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/zX-eXqQWSLO1MwzOWE15cg/zh-cn_image_0000002558764990.png?HW-CC-KV=V1&HW-CC-Date=20260429T053352Z&HW-CC-Expire=86400&HW-CC-Sign=C84471751A4E72141189579CA7AC9CDDB049DEB93A278DB3A43C45E7BB1D35A8)
 
 ## 日志获取
 

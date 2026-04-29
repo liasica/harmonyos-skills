@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/devicesec
 title: TrustedAuthentication （数字盾服务）
 breadcrumb: API参考 > 系统 > 安全 > Device Security Kit（设备安全服务） > ArkTS API > ArkTS API错误码 > TrustedAuthentication （数字盾服务）
 category: harmonyos-references
-scraped_at: 2026-04-28T08:07:16+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:fdf549ca2606854337da9f9f152ace7cb207035edd8d1cadb332f26a7c38b5e3
+scraped_at: 2026-04-29T13:57:44+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:514284ef4b26897999008f1adbcbae4d055d6724cfc361b5dc773dc56a911feb
 ---
 
 说明
@@ -118,7 +118,7 @@ Phone
 
 **错误信息**
 
-secure image process failed.
+Check input confirm text failed.
 
 **错误描述**
 
@@ -138,7 +138,7 @@ Phone
 
 **错误信息**
 
-the input image format is invalid.
+Unsupported custom image.
 
 **错误描述**
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-lowp
 title: lowpower_audio_sink_base.h
 breadcrumb: API参考 > 媒体 > Media Kit（媒体服务） > C API > 头文件 > lowpower_audio_sink_base.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:13:55+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:e1e012e89301c2e154e3177275a34cd04b5c0de9bc8b8f00750b3ca1acee5597
+scraped_at: 2026-04-29T14:04:33+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:1bab30e19c5169a96e97d3fed7a80825b85e94503ad5c2472c4e06088ddd0790
 ---
 
 ## 概述
@@ -96,7 +96,7 @@ LowPowerAudioSink进度更新时调用该方法。
 | 参数项 | 描述 |
 | --- | --- |
 | [OH\_LowPowerAudioSink](capi-lowpoweraudiosink-oh-lowpoweraudiosink.md)\* sink | 指向OH\_LowPowerAudioSink实例的指针。 |
-| int64\_t currentPosition | 返回服务当前播放的进度值。 |
+| int64\_t currentPosition | 返回服务当前播放的进度值。单位为毫秒。 |
 | void\* userData | 用户自定义数据。 |
 
 ### OH\_LowPowerAudioSink\_OnDataNeeded()

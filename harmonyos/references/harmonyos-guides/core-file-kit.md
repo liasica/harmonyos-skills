@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/core-file-kit
 title: Core File Kit（文件基础服务）
 breadcrumb: 指南 > 应用框架 > Core File Kit（文件基础服务）
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:41:10+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:c5264c44b7ab85b865b8fe0751aa516d2720a1ab55b1e100441a6f85abd2ec01
+scraped_at: 2026-04-29T13:29:34+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:5b3da152c2db04f43df0b65389595f4620cde197271e71c164c588639af53590
 ---
 
 * **[Core File Kit简介](core-file-kit-intro.md)**
@@ -13,3 +13,4 @@ content_hash: sha256:c5264c44b7ab85b865b8fe0751aa516d2720a1ab55b1e100441a6f85abd
 * **[用户文件](user-files.md)**
 * **[分布式文件系统](distributed-fs.md)**
 * **[端云文件协同](cloud-sync-file.md)**
+* **[文件基础服务开发实践](bpta-file-management.md)**

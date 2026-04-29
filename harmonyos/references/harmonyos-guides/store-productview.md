@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/store-product
 title: 应用市场推荐
 breadcrumb: 指南 > 应用服务 > AppGallery Kit（应用市场服务） > 应用市场推荐
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:48:17+08:00
+scraped_at: 2026-04-29T13:37:11+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:9b3bdc1e2ee32641236ef53f7831048a0fb3ac48ddcae64cee508a8b5d018fcf
+content_hash: sha256:e518e454a6cd28af54dfce8926e10e7316d7a39ca7f160f6c32f4ffb9a6f4eb6
 ---
 
 ## 场景介绍
@@ -35,13 +35,13 @@ content_hash: sha256:9b3bdc1e2ee32641236ef53f7831048a0fb3ac48ddcae64cee508a8b5d0
   1. 您可使用Deep Linking链接的方式拉起应用市场写评论页，通过拼接应用市场Deep Linking链接，在应用中调用或网页中点击Deep Linking链接在应用详情页拉起写评论页，用户可以在页面内进行评分与评论；
   2. 您可使用App Linking链接的方式拉起应用市场写评论页，通过拼接应用市场App Linking链接，在应用中调用或网页中点击App Linking链接在应用详情页拉起写评论页，用户可以在页面内进行评分与评论。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/hYpVgXe3RVG7CBFFY1-K4w/zh-cn_image_0000002583438821.png?HW-CC-KV=V1&HW-CC-Date=20260427T234816Z&HW-CC-Expire=86400&HW-CC-Sign=1F6831DA174910396976D55DE4EA706B12A77680F77F77E30E50AB90E378ED38)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/D0gDIYPtRtadSRXgwZehcw/zh-cn_image_0000002589245081.png?HW-CC-KV=V1&HW-CC-Date=20260429T053709Z&HW-CC-Expire=86400&HW-CC-Sign=3DC94E134A5FDDE7ACAFDFD98D6C7624F38B26751F216BDCA6223784BCCBAEEA)
 
 ## 业务流程
 
 ### 元服务卡片加桌&应用详情页展示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/hIMroFzsSkGyftI5Cjw1jA/zh-cn_image_0000002552958776.png?HW-CC-KV=V1&HW-CC-Date=20260427T234816Z&HW-CC-Expire=86400&HW-CC-Sign=18471107821133F1DF8C67BB43BB1AFF67C631A3FD8BF23C7A10D792035E6DAF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/rLO-Fkf7Rz24G7XL1VaQeg/zh-cn_image_0000002558765276.png?HW-CC-KV=V1&HW-CC-Date=20260429T053709Z&HW-CC-Expire=86400&HW-CC-Sign=EEC69FAF8DF82F37B0746F8E894CB917ED4ECE9DB1C43228902F03E13A16FDD1)
 
 1. 用户使用打开应用详情页功能；
 2. 应用调用AppGallery Kit的loadProduct接口；
@@ -50,7 +50,7 @@ content_hash: sha256:9b3bdc1e2ee32641236ef53f7831048a0fb3ac48ddcae64cee508a8b5d0
 
 ### 应用内快捷方式加桌
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/ApcZpITHQXCR8pUZiETGcQ/zh-cn_image_0000002583478777.png?HW-CC-KV=V1&HW-CC-Date=20260427T234816Z&HW-CC-Expire=86400&HW-CC-Sign=8E5E19F5E859E0369CECC15B6A82672B96542D06A69A5F549FDE07CECF2A0A98)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/GWsIYy15Qrqiw5F9hs1tUw/zh-cn_image_0000002558605620.png?HW-CC-KV=V1&HW-CC-Date=20260429T053709Z&HW-CC-Expire=86400&HW-CC-Sign=CB9D195800436CD532D3470FC7C2EB33EFCDAE2ED40FD33E05A914EAE54D0CE2)
 
 1. 应用预先调用checkPinShortcutPermitted接口检查是否允许快捷方式加桌；
 2. AppGallery Kit获取应用传入的快捷方式信息并生成检查结果；
@@ -65,7 +65,7 @@ content_hash: sha256:9b3bdc1e2ee32641236ef53f7831048a0fb3ac48ddcae64cee508a8b5d0
 
 ### 通过Deep Linking拉起写评论页
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/JbvdlBEGQBS4FTyLddRqZA/zh-cn_image_0000002552799128.png?HW-CC-KV=V1&HW-CC-Date=20260427T234816Z&HW-CC-Expire=86400&HW-CC-Sign=336DA8E926906E1A895CEA39996D7FA369D8E6C4A21E3D2522E79CC6F82D4A98)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/sMJKy9mnQRay-zIrRAY6BQ/zh-cn_image_0000002589325147.png?HW-CC-KV=V1&HW-CC-Date=20260429T053709Z&HW-CC-Expire=86400&HW-CC-Sign=90DAEEB9D7E2A4E4C1A101B54BAB71704DCA49F44E63C39ECE4481412C7AB29F)
 
 1. 用户使用某应用时，存在跳转应用市场内针对该应用进行评分与评论的诉求；
 2. 应用通过拼接应用市场Deep Linking链接直接跳转写评论页面；
@@ -75,7 +75,7 @@ content_hash: sha256:9b3bdc1e2ee32641236ef53f7831048a0fb3ac48ddcae64cee508a8b5d0
 
 ### 通过App Linking拉起写评论页
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/JI7GjrnkSBWgF0rhIIiCUA/zh-cn_image_0000002583438823.png?HW-CC-KV=V1&HW-CC-Date=20260427T234816Z&HW-CC-Expire=86400&HW-CC-Sign=5FD299A3BD68802F62B2E571FDEC7FBF7ADE8E0BDAF01685B4184EF22B4637E1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/uKXxvcdMTM67jeUNMNlN8A/zh-cn_image_0000002589245083.png?HW-CC-KV=V1&HW-CC-Date=20260429T053709Z&HW-CC-Expire=86400&HW-CC-Sign=CFB91B9C9FA81C02613752501EE725B0697C77CC0FB27DEE20E7D675488D349E)
 
 1. 用户使用某应用时，存在跳转应用市场内针对该应用进行评分与评论的诉求；
 2. 应用通过拼接应用市场App Linking链接直接跳转写评论页面；

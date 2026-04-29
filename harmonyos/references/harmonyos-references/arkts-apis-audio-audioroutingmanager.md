@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (AudioRoutingManager)
 breadcrumb: API参考 > 媒体 > Audio Kit（音频服务） > ArkTS API > @ohos.multimedia.audio (音频管理) > Interface (AudioRoutingManager)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:11:38+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:5d38a01a2000417226cd3c1432d1071b7e678c8c87f4a3588f92a48ad954bd3c
+scraped_at: 2026-04-29T14:02:20+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:b8c09787ede2c8f05e87a9d1c2c7cf72a65d01375601403dcb95a5630465bcce
 ---
 
 音频路由管理。
@@ -167,7 +167,7 @@ on(type: 'micBlockStatusChanged', callback: Callback<DeviceBlockStatusInfo>): vo
 
 监听麦克风堵塞状态变化事件。使用callback异步回调。
 
-使用此功能前，请查询设备是否支持检测。应用在使用麦克风录音时，若麦克风堵塞状态发生变化，将触发该事件。目前此检测功能仅支持麦克风位于本地设备上。
+使用此功能前，请使用[isMicBlockDetectionSupported](arkts-apis-audio-audioroutingmanager.md#ismicblockdetectionsupported13)查询设备是否支持检测。应用在使用麦克风录音时，若麦克风堵塞状态发生变化，将触发该事件。目前此检测功能仅支持麦克风位于本地设备上。
 
 **系统能力：** SystemCapability.Multimedia.Audio.Device
 

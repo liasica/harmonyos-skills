@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scan-faq-17
 title: 自定义界面扫码如何增加重试机制
 breadcrumb: 指南 > 媒体 > Scan Kit（统一扫码服务） > Scan Kit常见问题 > 自定义界面扫码如何增加重试机制
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:46:46+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:62e8e0b49422b29b8f62ee1c63adc77a4b683a7c0c4117ba0591592ce7a280ef
+scraped_at: 2026-04-29T13:35:47+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:ad337ac481dbd72fd9012d61028f8a36b2f746abc409a814b2fa493c0ac51bbf
 ---
 
 **问题现象**
@@ -31,7 +31,7 @@ content_hash: sha256:62e8e0b49422b29b8f62ee1c63adc77a4b683a7c0c4117ba0591592ce7a
 8. @State viewControl: customScan.ViewControl = {
 9. width: 1080,
 10. height: 1080,
-11. surfaceId: ''
+11. surfaceId: '' // XComponent组件生成id
 12. };
 13. private retryScanTimes = 0;
 14. private options: scanBarcode.ScanOptions = {
@@ -49,11 +49,11 @@ content_hash: sha256:62e8e0b49422b29b8f62ee1c63adc77a4b683a7c0c4117ba0591592ce7a
 26. this.retryCamera(err);
 27. }
 28. } else {
-29. hilog.info(0x0001, '[Scan Sample]', `customScan start callbackScan result size: ${data.length}`)
+29. hilog.info(0x0001, '[Scan Sample]', `customScan start callbackScan result size: ${data.length}`);
 30. }
 31. // 识码处理逻辑
 32. // ...
-33. }
+33. };
 
 35. // 重启相机流
 36. retryCamera(err: BusinessError) {
@@ -68,7 +68,7 @@ content_hash: sha256:62e8e0b49422b29b8f62ee1c63adc77a4b683a7c0c4117ba0591592ce7a
 45. this.startCamera();
 46. hilog.info(0x0001, '[Scan Sample]', 'Retry camera end.');
 47. clearTimeout(timeId);
-48. }, 100)
+48. }, 100);
 49. }
 50. }
 
@@ -84,7 +84,7 @@ content_hash: sha256:62e8e0b49422b29b8f62ee1c63adc77a4b683a7c0c4117ba0591592ce7a
 61. hilog.error(0x0001, '[Scan Sample]',
 62. `Failed to customScan->start. Code: ${err.code}, message: ${err.message}`);
 63. }
-64. } catch (error) {
+64. } catch (err) {
 65. hilog.error(0x0001, '[Scan Sample]',
 66. `Failed to customScan->init. Code: ${err.code}, message: ${err.message}`);
 67. }
@@ -109,6 +109,7 @@ content_hash: sha256:62e8e0b49422b29b8f62ee1c63adc77a4b683a7c0c4117ba0591592ce7a
 86. }
 
 88. build() {
-89. }
+89. // do something
 90. }
+91. }
 ```

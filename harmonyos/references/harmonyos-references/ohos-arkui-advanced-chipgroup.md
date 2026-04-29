@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: ChipGroup
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > ChipGroup
 category: harmonyos-references
-scraped_at: 2026-04-28T08:02:34+08:00
+scraped_at: 2026-04-29T13:52:58+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:1545825304a9403d0a757c536522b7b467196b8757e72573326967df6df15399
+content_hash: sha256:c979b0ce528c2aebcc6a4c3bfcb14b727277f58b1559b01a536e4b02f5493a5b
 ---
 
 ChipGroup组件提供操作块群组，用于文件或资源内容的分类等场景。
@@ -348,7 +348,7 @@ PhonePC/2in1TabletTVWearable
 65. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/zbjiyZuzRMKOyZzaBSgztw/zh-cn_image_0000002552800448.png?HW-CC-KV=V1&HW-CC-Date=20260428T000233Z&HW-CC-Expire=86400&HW-CC-Sign=7A203E9C0B30889BCFF2C878F2FFDE473310C31C950868D3099EF08A3E6AEF03)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/P06r74yfRP-fKyu4_M1PEg/zh-cn_image_0000002589326489.png?HW-CC-KV=V1&HW-CC-Date=20260429T055256Z&HW-CC-Expire=86400&HW-CC-Sign=B562E3C17267B7BE33C1FFE2FD40FD4EF8E792DA6FE219F9A669D30FD497FC54)
 
 ### 示例2（有最右侧的builder）
 
@@ -445,7 +445,7 @@ PhonePC/2in1TabletTVWearable
 88. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/kEsfP3G8TViaYlzQ7dK6Lw/zh-cn_image_0000002583440143.png?HW-CC-KV=V1&HW-CC-Date=20260428T000233Z&HW-CC-Expire=86400&HW-CC-Sign=2198DB7A843072FDEC2221D7C889F9C022427FE8D167E16DCF670A98F7AA8EED)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/IfTR_MKXQ3m8J2me7YHU2A/zh-cn_image_0000002589246431.png?HW-CC-KV=V1&HW-CC-Date=20260429T055256Z&HW-CC-Expire=86400&HW-CC-Sign=54FD1129D6DDA48F30DD49C34BE0CA3F7B8325F061B5515EAEDB28EF2367BE4A)
 
 ### 示例3（设置Symbol类型图标）
 
@@ -546,7 +546,7 @@ PhonePC/2in1TabletTVWearable
 92. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/kJXgjkkxQ0eQ0Iq-TTgfBQ/zh-cn_image_0000002552960098.png?HW-CC-KV=V1&HW-CC-Date=20260428T000233Z&HW-CC-Expire=86400&HW-CC-Sign=9B7CDF5281BF2DA48F6F0818D91717989048210EE2BAFCFBA79CB46FF1151938)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/Nr11aJx7R0qFDWOF03SwOQ/zh-cn_image_0000002558766624.png?HW-CC-KV=V1&HW-CC-Date=20260429T055256Z&HW-CC-Expire=86400&HW-CC-Sign=D05C15575345C322F564FF885D3C8CD633681F67DBD2A9146A555A083758B309)
 
 ### 示例4（单选时无障碍朗读）
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: URL检测
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 安全检测 > URL检测
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:42:54+08:00
+scraped_at: 2026-04-29T13:31:30+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:a214e555bc1537dd6f6e0f01a51807b4352a3da70dd3836a813901fa288a3dae
+content_hash: sha256:9edb332fdf53dd9bc3656cd8a2c58a9888c41d2480ad99489eae592cf4ee4771
 ---
 
 ## 场景介绍
@@ -21,7 +21,7 @@ content_hash: sha256:a214e555bc1537dd6f6e0f01a51807b4352a3da70dd3836a813901fa288
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/AiaXNRcyRDugePcT9r_XuA/zh-cn_image_0000002552958386.png?HW-CC-KV=V1&HW-CC-Date=20260427T234253Z&HW-CC-Expire=86400&HW-CC-Sign=DCB3676546EBBB5156749589C68CB2ADD1DDB67436AB634146CA53733CB8AA77)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/RyqZztyvRnqWIhAUyN6kMA/zh-cn_image_0000002589324753.png?HW-CC-KV=V1&HW-CC-Date=20260429T053129Z&HW-CC-Expire=86400&HW-CC-Sign=5CA01A7904F38746D03B018E916ED6728C87F475BC6FD7CBF8E0921A3FB30FB9)
 
 **流程说明：**
 

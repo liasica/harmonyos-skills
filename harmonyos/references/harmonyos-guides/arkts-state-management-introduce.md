@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-state-m
 title: 状态管理原理介绍
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理原理介绍
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:39:01+08:00
+scraped_at: 2026-04-29T13:27:09+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:71033c573fb43c2f517c84042ce641306ec9c48e0daf15987e62c638ba70fdaf
+content_hash: sha256:fe7c62cec0b1cf371d69cdf1f6c3b7af5dbf675ba594eed0cf84f61708980346
 ---
 
 本文将介绍状态管理的基本原理。状态管理的核心逻辑是处理状态变量、自定义组件和系统组件之间的绑定关系。其工作流程可以概括为两个核心阶段：收集依赖和触发更新。
@@ -75,7 +75,7 @@ content_hash: sha256:71033c573fb43c2f517c84042ce641306ec9c48e0daf15987e62c638ba7
 
 UI渲染的流程主要有以下几个步骤：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/02PqsFIPQ6GiaWk7pSfolg/zh-cn_image_0000002583437635.png?HW-CC-KV=V1&HW-CC-Date=20260427T233859Z&HW-CC-Expire=86400&HW-CC-Sign=40E3B913E5C6B02C21D7F153E2EEC16354198BE23FBE66BF6CF9A9F15FA9EE9E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/Vf2tab52T-uPL06eYk-i7g/zh-cn_image_0000002558604424.png?HW-CC-KV=V1&HW-CC-Date=20260429T052708Z&HW-CC-Expire=86400&HW-CC-Sign=0D7061B7E129D9844B074A1687F3FD1CB4421A994F700BC8D869F327F6B19320)
 
 1. 事件触发状态变量发生改变，执行状态变量的set方法，将自定义组件和系统组件标脏，并请求一个刷新信号。
 2. 刷新脏节点：刷新标脏的自定义组件和系统组件。
@@ -83,7 +83,7 @@ UI渲染的流程主要有以下几个步骤：
 
 同样以上述示例代码为例，使用DevEco Studio的[Profiler工具](ui-inspector-profiler.md#状态管理profiler调优能力)，点击Button1，抓取状态变量的变化打点，trace如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/_j7PTBN3TAu8Gq-d_2uPpw/zh-cn_image_0000002552957590.png?HW-CC-KV=V1&HW-CC-Date=20260427T233859Z&HW-CC-Expire=86400&HW-CC-Sign=C005CCE5F90C8B307335A5E8D7776DE95D8259663DCC929410E51F835A8DCACB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/1lmNRuxtSGaUmtNa1Ufh4w/zh-cn_image_0000002589323949.png?HW-CC-KV=V1&HW-CC-Date=20260429T052708Z&HW-CC-Expire=86400&HW-CC-Sign=73D0F1E534782B5F29AA90ECCCA4B59396FDFB15D0A6158BF39365C53E92C33B)
 
 对上图中的标记点进行逐一介绍：
 
@@ -97,7 +97,7 @@ UI渲染的流程主要有以下几个步骤：
 
 其中，状态管理的基本流程如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/Mzv1yAXIS-e7_Uap53PqVA/zh-cn_image_0000002583477591.png?HW-CC-KV=V1&HW-CC-Date=20260427T233859Z&HW-CC-Expire=86400&HW-CC-Sign=47DDBBDD8CAF1E8571C3A4F12E3B1986CA07539DB17A9E9CE0DFA6D06203BCDD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/8oARJ4DFTkaoE3d_N_WZ7A/zh-cn_image_0000002589243889.png?HW-CC-KV=V1&HW-CC-Date=20260429T052708Z&HW-CC-Expire=86400&HW-CC-Sign=52FFEE4C5CF7B53F0390985AA4AFED7BF518531FA76ECECF6353E10055489E5B)
 
 状态管理循环执行两大步骤：收集依赖和触发更新。收集状态变量与组件之间的依赖关系。当状态变量发生变化时，执行标脏，刷新对应的UI，同时更新依赖关系。
 

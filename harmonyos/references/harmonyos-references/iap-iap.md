@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/iap-iap
 title: IAP
 breadcrumb: API参考 > 应用服务 > IAP Kit（应用内支付服务） > ArkTS API > IAP
 category: harmonyos-references
-scraped_at: 2026-04-28T08:16:54+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:a74faad32e3ae051f3f7df34e22743e3721eb2ccf1149e4abaaa9429c5270bb6
+scraped_at: 2026-04-29T14:07:37+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:9a8819507f8ab1bdf7225f92d12957b46a42f3f0cbfc0c1ced235b2fa6143e09
 ---
 
 本模块提供应用内支付的能力。
@@ -104,7 +104,7 @@ PhonePC/2in1TabletTVWearable
 | FREE\_TRIAL | 1 | 免费试用。 |
 | PAY\_AS\_YOU\_GO | 2 | 随用随付。 |
 | PAY\_UP\_FRONT | 3 | 提前支付。 |
-| SINGLE\_PROMOTION | 5 | 单次优惠（暂不支持），仅适用于消耗型/非消耗型/非续期订阅商品。  该属性不支持Wearable、TV设备。  **元服务API：** 从版本5.0.5(17)开始，该接口支持在元服务中使用。  **起始版本：** 5.0.5(17) |
+| SINGLE\_PROMOTION | 5 | 单次优惠，仅适用于消耗型/非消耗型/非续期订阅商品。  **元服务API：** 从版本5.0.5(17)开始，该接口支持在元服务中使用。  **起始版本：** 5.0.5(17) |
 
 ## OfferType
 
@@ -234,7 +234,7 @@ queryEnvironmentStatus(context: common.Context): Promise<void>
 
 **错误码**：
 
-以下错误码的详细介绍请参见[ArkTS API错误码](iap-error-code.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](iap-error-code.md)和[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -297,7 +297,7 @@ queryEnvironmentStatus(context: common.Context, callback: AsyncCallback<void>): 
 
 **错误码**：
 
-以下错误码的详细介绍请参见[ArkTS API错误码](iap-error-code.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](iap-error-code.md)和[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -367,7 +367,7 @@ queryProducts(context: common.UIAbilityContext, parameter: QueryProductsParamete
 
 **错误码**：
 
-以下错误码的详细介绍请参见[ArkTS API错误码](iap-error-code.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](iap-error-code.md)和[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -439,7 +439,7 @@ queryProducts(context: common.UIAbilityContext, parameter: QueryProductsParamete
 
 **错误码**：
 
-以下错误码的详细介绍请参见[ArkTS API错误码](iap-error-code.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](iap-error-code.md)和[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -520,7 +520,7 @@ queryProducts(context: common.UIAbilityContext, productIds: string[]): Promise<A
 
 **错误码**：
 
-以下错误码的详细介绍请参见[ArkTS API错误码](iap-error-code.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](iap-error-code.md)和[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -595,7 +595,7 @@ purchase(context: common.UIAbilityContext, parameter: PurchaseParameter): Promis
 
 **错误码**：
 
-以下错误码的详细介绍请参见[ArkTS API错误码](iap-error-code.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](iap-error-code.md)和[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -632,7 +632,7 @@ purchase(context: common.UIAbilityContext, parameter: PurchaseParameter): Promis
 16. }
 17. iap.purchase(this.getUIContext().getHostContext() as common.UIAbilityContext, parameter).then((data: iap.PurchaseResult) => {
 18. // 请求成功
-19. console.info('Succeeded in purchasing.');
+19. console.info(`Succeeded in purchasing. data: ${data.inAppPurchaseData}`);
 20. }).catch((err: BusinessError) => {
 21. // 请求失败
 22. console.error(`Failed to purchase. Code is ${err.code}, message is ${err.message}`);
@@ -673,7 +673,7 @@ purchase(context: common.UIAbilityContext, parameter: PurchaseParameter, callbac
 
 **错误码**：
 
-以下错误码的详细介绍请参见[ArkTS API错误码](iap-error-code.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](iap-error-code.md)和[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -715,7 +715,7 @@ purchase(context: common.UIAbilityContext, parameter: PurchaseParameter, callbac
 21. return;
 22. }
 23. // 请求成功
-24. console.info('Succeeded in purchasing.');
+24. console.info(`Succeeded in purchasing. data: ${data.inAppPurchaseData}`);
 25. });
 26. }
 
@@ -756,7 +756,7 @@ createPurchase(context: common.UIAbilityContext, parameter: PurchaseParameter): 
 
 **错误码**：
 
-以下错误码的详细介绍请参见[ArkTS API错误码](iap-error-code.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](iap-error-code.md)和[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -835,7 +835,7 @@ createPurchase(context: common.UIAbilityContext, parameter: PurchaseParameter, c
 
 **错误码**：
 
-以下错误码的详细介绍请参见[ArkTS API错误码](iap-error-code.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](iap-error-code.md)和[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -923,7 +923,7 @@ consumePurchase(context: common.UIAbilityContext, parameter: ConsumePurchasePara
 
 **错误码**：
 
-以下错误码的详细介绍请参见[ArkTS API错误码](iap-error-code.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](iap-error-code.md)和[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -955,7 +955,7 @@ consumePurchase(context: common.UIAbilityContext, parameter: ConsumePurchasePara
 12. }
 13. iap.consumePurchase(this.getUIContext().getHostContext() as common.UIAbilityContext, parameter).then((data: iap.ConsumeResult) => {
 14. // 请求成功
-15. console.info('Succeeded in consuming purchase.');
+15. console.info(`Succeeded in consuming purchases. data: ${data.consumedPurchaseData}`);
 16. }).catch((err: BusinessError) => {
 17. // 请求失败
 18. console.error(`Failed to consume purchase. Code is ${err.code}, message is ${err.message}`);
@@ -994,7 +994,7 @@ consumePurchase(context: common.UIAbilityContext, parameter: ConsumePurchasePara
 
 **错误码**：
 
-以下错误码的详细介绍请参见[ArkTS API错误码](iap-error-code.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](iap-error-code.md)和[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1031,7 +1031,7 @@ consumePurchase(context: common.UIAbilityContext, parameter: ConsumePurchasePara
 17. return;
 18. }
 19. // 请求成功
-20. console.info('Succeeded in consuming purchase.');
+20. console.info(`Succeeded in consuming purchases. data: ${data.consumedPurchaseData}`);
 21. });
 22. }
 
@@ -1070,7 +1070,7 @@ finishPurchase(context: common.UIAbilityContext, parameter: FinishPurchaseParame
 
 **错误码**：
 
-以下错误码的详细介绍请参见[ArkTS API错误码](iap-error-code.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](iap-error-code.md)和[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1142,7 +1142,7 @@ finishPurchase(context: common.UIAbilityContext, parameter: FinishPurchaseParame
 
 **错误码**：
 
-以下错误码的详细介绍请参见[ArkTS API错误码](iap-error-code.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](iap-error-code.md)和[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1230,7 +1230,7 @@ queryOwnedPurchases(context: common.UIAbilityContext, parameter: QueryPurchasesP
 
 **错误码**：
 
-以下错误码的详细介绍请参见[ArkTS API错误码](iap-error-code.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](iap-error-code.md)和[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1261,7 +1261,7 @@ queryOwnedPurchases(context: common.UIAbilityContext, parameter: QueryPurchasesP
 11. }
 12. iap.queryOwnedPurchases(this.getUIContext().getHostContext() as common.UIAbilityContext, parameter).then((data: iap.QueryPurchasesResult) => {
 13. // 请求成功
-14. console.info('Succeeded in querying owned purchases.');
+14. console.info(`Succeeded in querying owned purchases. data len: ${data.productList?.length}`);
 15. }).catch((err: BusinessError) => {
 16. // 请求失败
 17. console.error(`Failed to query owned purchases. Code is ${err.code}, message is ${err.message}`);
@@ -1305,7 +1305,7 @@ queryOwnedPurchases(context: common.UIAbilityContext, parameter: QueryPurchasesP
 
 **错误码**：
 
-以下错误码的详细介绍请参见[ArkTS API错误码](iap-error-code.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](iap-error-code.md)和[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1341,7 +1341,7 @@ queryOwnedPurchases(context: common.UIAbilityContext, parameter: QueryPurchasesP
 16. return;
 17. }
 18. // 请求成功
-19. console.info('Succeeded in querying owned purchases.');
+19. console.info(`Succeeded in querying owned purchases. data len: ${data.productList?.length}`);
 20. });
 21. }
 
@@ -1382,7 +1382,7 @@ queryPurchaseRecords(context: common.UIAbilityContext, parameter: QueryPurchases
 
 **错误码**：
 
-以下错误码的详细介绍请参见[ArkTS API错误码](iap-error-code.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](iap-error-code.md)和[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1409,7 +1409,7 @@ queryPurchaseRecords(context: common.UIAbilityContext, parameter: QueryPurchases
 11. }
 12. iap.queryPurchaseRecords(this.getUIContext().getHostContext() as common.UIAbilityContext, parameter).then((data: iap.QueryPurchasesResult) => {
 13. // 请求成功
-14. console.info('Succeeded in querying purchase records.');
+14. console.info(`Succeeded in querying purchase records. data len: ${data.productList?.length}`);
 15. }).catch((err: BusinessError) => {
 16. // 请求失败
 17. console.error(`Failed to query purchase records. Code is ${err.code}, message is ${err.message}`);
@@ -1448,7 +1448,7 @@ queryPurchaseRecords(context: common.UIAbilityContext, parameter: QueryPurchases
 
 **错误码**：
 
-以下错误码的详细介绍请参见[ArkTS API错误码](iap-error-code.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](iap-error-code.md)和[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1480,7 +1480,7 @@ queryPurchaseRecords(context: common.UIAbilityContext, parameter: QueryPurchases
 16. return;
 17. }
 18. // 请求成功
-19. console.info('Succeeded in querying purchase records.');
+19. console.info(`Succeeded in querying purchase records. data len: ${data.productList?.length}`);
 20. });
 21. }
 
@@ -1524,7 +1524,7 @@ queryPurchases(context: common.UIAbilityContext, parameter: QueryPurchasesParame
 
 **错误码**：
 
-以下错误码的详细介绍请参见[ArkTS API错误码](iap-error-code.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](iap-error-code.md)和[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1594,7 +1594,7 @@ queryPurchases(context: common.UIAbilityContext, parameter: QueryPurchasesParame
 
 **错误码**：
 
-以下错误码的详细介绍请参见[ArkTS API错误码](iap-error-code.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](iap-error-code.md)和[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1671,7 +1671,7 @@ showManagedSubscriptions(context: common.Context, uiParameter: UIWindowParameter
 
 **错误码**：
 
-以下错误码的详细介绍请参见[ArkTS API错误码](iap-error-code.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](iap-error-code.md)和[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1742,7 +1742,7 @@ isSandboxActivated(context: common.Context): Promise<boolean>
 
 **错误码**：
 
-以下错误码的详细介绍请参见[ArkTS API错误码](iap-error-code.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](iap-error-code.md)和[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1803,7 +1803,7 @@ createRefundRequest(context: common.Context, purchaseOrderId: string): Promise<v
 
 | **参数名** | **类型** | 必填 | **说明** |
 | --- | --- | --- | --- |
-| context | common.[Context](js-apis-inner-application-context.md) | 是 | 上下文。 |
+| context | common.[Context](js-apis-inner-application-context.md) | 是 | 上下文。建议使用[UIAbilityContext](js-apis-inner-application-uiabilitycontext.md)。 |
 | purchaseOrderId | string | 是 | 具体一笔订单中对应的购买订单号ID。最大长度256。 |
 
 **返回值：**
@@ -1814,7 +1814,7 @@ createRefundRequest(context: common.Context, purchaseOrderId: string): Promise<v
 
 **错误码**：
 
-以下错误码的详细介绍请参见[ArkTS API错误码](iap-error-code.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](iap-error-code.md)和[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1883,7 +1883,7 @@ showManagedInvoices(context: common.Context, purchaseOrderId: string): Promise<v
 
 | **参数名** | **类型** | 必填 | **说明** |
 | --- | --- | --- | --- |
-| context | common.[Context](js-apis-inner-application-context.md) | 是 | 上下文。 |
+| context | common.[Context](js-apis-inner-application-context.md) | 是 | 上下文。建议使用[UIAbilityContext](js-apis-inner-application-uiabilitycontext.md)。 |
 | purchaseOrderId | string | 是 | 具体一笔订单中对应的购买订单号ID。最大长度256。 |
 
 **返回值：**
@@ -1894,7 +1894,7 @@ showManagedInvoices(context: common.Context, purchaseOrderId: string): Promise<v
 
 **错误码**：
 
-以下错误码的详细介绍请参见[ArkTS API错误码](iap-error-code.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](iap-error-code.md)和[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2071,7 +2071,7 @@ PhonePC/2in1TabletTVWearable
 
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
-| productId | string | 否 | 否 | 待支付的商品ID。商品ID来源于开发者在[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)中配置商品信息时设置的“商品ID”，具体请参见[配置商品信息](../harmonyos-guides/iap-config-product.md)。 |
+| productId | string | 否 | 否 | 待支付的商品ID。每个产品ID必须在当前应用中存在且唯一。商品ID来源于开发者在[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)中配置商品信息时设置的“商品ID”，具体请参见[配置商品信息](../harmonyos-guides/iap-config-product.md)。 |
 | productType | [ProductType](iap-iap.md#producttype) | 否 | 否 | 需要查询的商品类型。  - CONSUMABLE：消耗型商品  - NONCONSUMABLE：非消耗型商品  - AUTORENEWABLE：自动续期订阅商品  - NONRENEWABLE：非续期订阅商品 |
 | developerPayload | string | 否 | 是 | 商户侧保留信息。  若该字段有值，在支付成功后的回调结果中会原样返回给应用。  **说明：** 该参数长度限制为[0, 256]。如超过长度限制，在支付成功后将返回被截断的数据。建议在发起请求前自行验证字段长度，避免非预期截断。 |
 | reservedInfo | string | 否 | 是 | 要求JSON String格式，商户可以将额外需要传入的字段以key-value的形式设置在JSON String中，并通过该参数传入。  例如：let reservedInfo = "{\"key1\":\"value1\",\"key2\":\"value2\"}";  **说明：** 该字段为预留字段，可选传入，开发者暂时无需关注。 |

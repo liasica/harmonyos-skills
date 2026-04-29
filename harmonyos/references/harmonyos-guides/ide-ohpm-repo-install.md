@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-repo
 title: ohpm-repo install
 breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 相关命令 > ohpm-repo install
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:54:40+08:00
+scraped_at: 2026-04-29T13:44:39+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:0bb53ec7424673749178d7442e81b3a6e9c42cc665cd32a876bfec3e2fbbced4
+content_hash: sha256:6009653f15f6a0bb54e6e834a9f221de569b3d86ccd0696ddb3015ab15589da0
 ---
 
 安装ohpm-repo服务。
@@ -67,7 +67,7 @@ content_hash: sha256:0bb53ec7424673749178d7442e81b3a6e9c42cc665cd32a876bfec3e2fb
 
 结果示例：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/_e0Fb6fPSXuo-67kWvbacw/zh-cn_image_0000002530911294.png?HW-CC-KV=V1&HW-CC-Date=20260427T235439Z&HW-CC-Expire=86400&HW-CC-Sign=3BA7347C8E6C5784B3D8509DC68302AC5AC3B920BC5B01A8AACED193D0B1AFAF "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/eMpDi5xPTNSLKyXsjvyLAQ/zh-cn_image_0000002530911294.png?HW-CC-KV=V1&HW-CC-Date=20260429T054438Z&HW-CC-Expire=86400&HW-CC-Sign=8BF6F4016269B172CA751A30D832C1D2319FD2C94D138AC9134E1857BF61B1CD "点击放大")
 
 ## 注意
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: @ohos.app.form.formProvider (formProvider)
 breadcrumb: API参考 > 应用框架 > Form Kit（卡片开发服务） > ArkTS API > @ohos.app.form.formProvider (formProvider)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:06:01+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:1d768c1914560a4f940781e746d665ea6ecd30f08daa3d05f8cbb600204dfa20
+scraped_at: 2026-04-29T13:56:31+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:3aae45c1f7150103e832890823dda646d91ac8ca3aaf5bbdfe27eb662bac5044
 ---
 
 formProvider模块提供了获取卡片信息、更新卡片、设置卡片更新时间等能力。
@@ -349,7 +349,7 @@ getFormsInfo(filter: formInfo.FormInfoFilter, callback: AsyncCallback<Array<form
 2. import { BusinessError } from '@kit.BasicServicesKit';
 
 4. const filter: formInfo.FormInfoFilter = {
-5. // get info of forms belong to module entry.
+5. // 获取指定module的卡片信息
 6. moduleName: 'entry'
 7. };
 8. try {

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-continue
 title: 内容编辑多设备协同
 breadcrumb: 最佳实践 > 自由流转 > 典型全场景协同开发案例 > 内容编辑多设备协同
 category: best-practices
-scraped_at: 2026-04-28T08:21:46+08:00
+scraped_at: 2026-04-29T14:12:54+08:00
 doc_updated_at: 2026-04-01
-content_hash: sha256:09209269c3f61f443e95b5232834d1ddeff830f9c73643fac5cd7b2a326287e7
+content_hash: sha256:bf1fef42896056dda64dbac0cdc9b2a5b9420b6e8ec466906f9c134210563967
 ---
 
 ## 概述
@@ -21,7 +21,7 @@ content_hash: sha256:09209269c3f61f443e95b5232834d1ddeff830f9c73643fac5cd7b2a326
 
 ## 用户体验
 
-[](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/f4/v3/yCqhMop2TDuQZMiTtfc7rQ/zh-cn_media_0000002311815932.mp4?HW-CC-KV=V1&HW-CC-Date=20260428T002141Z&HW-CC-Expire=86400&HW-CC-Sign=6E4E5939C6E45126AE17FF1977C4DD24E05E6ACEE18D17FC59B80A29240F0062)
+[](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/f4/v3/yCqhMop2TDuQZMiTtfc7rQ/zh-cn_media_0000002311815932.mp4?HW-CC-KV=V1&HW-CC-Date=20260429T061247Z&HW-CC-Expire=86400&HW-CC-Sign=0F608C3C49FFE927F0A361E2B7AFB1FE168B1C27E631979C473255E4B495158D)
 
 Video Player is loading.
 
@@ -91,7 +91,7 @@ End of dialog window.
 
 **实现效果**
 
-[](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/fa/v3/qyQZk3ksQ5KjAAgDpNdaSQ/zh-cn_media_0000002345894753.mp4?HW-CC-KV=V1&HW-CC-Date=20260428T002141Z&HW-CC-Expire=86400&HW-CC-Sign=B0A9F50880E2F7848C8AF366774624803723309A3C2125398C07401EC02FDFE6)
+[](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/fa/v3/qyQZk3ksQ5KjAAgDpNdaSQ/zh-cn_media_0000002345894753.mp4?HW-CC-KV=V1&HW-CC-Date=20260429T061247Z&HW-CC-Expire=86400&HW-CC-Sign=91887D2A2AC31AECC0A902F6E1FFE7AD2CC172B290C3C5E870B1D90E7B6EFE81)
 
 Video Player is loading.
 
@@ -143,7 +143,7 @@ End of dialog window.
 2. 系统将自动唤醒远端设备上的相机、图库或扫描功能，进入相应的界面。
 3. 使用远端设备完成拍照或选择图片并确认，远端拍摄状态信息实时回传到本端，并将数据插入到本端设备的应用中。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/IKDm136aST6HeiKqU_8qDg/zh-cn_image_0000002345774957.jpg?HW-CC-KV=V1&HW-CC-Date=20260428T002141Z&HW-CC-Expire=86400&HW-CC-Sign=9A0CB8D5AECF2AF4034B7E31FE3F427D69B62BED4B4352F8DE101E31B235E4A1 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/IKDm136aST6HeiKqU_8qDg/zh-cn_image_0000002345774957.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T061247Z&HW-CC-Expire=86400&HW-CC-Sign=DE5AE2ACF8E59B7E16AA032667566E8A89E710607A6989920729C0A7A7E1E109 "点击放大")
 
 **关键技术**
 
@@ -236,7 +236,7 @@ End of dialog window.
 
 **实现效果**
 
-[](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/0f/v3/QGEBWJdDRbyVkYClriYWqA/zh-cn_media_0000002311975752.mp4?HW-CC-KV=V1&HW-CC-Date=20260428T002141Z&HW-CC-Expire=86400&HW-CC-Sign=14E785A2E2A5D31BA268A5D83B0AE1E22BA082945DDA2660A2AEE28A9B7D0602)
+[](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/0f/v3/QGEBWJdDRbyVkYClriYWqA/zh-cn_media_0000002311975752.mp4?HW-CC-KV=V1&HW-CC-Date=20260429T061247Z&HW-CC-Expire=86400&HW-CC-Sign=3B19516E3BCFF9E89D9E9C4AE5AE9D073967534AB6BF60BAA6AFA0988A784B18)
 
 Video Player is loading.
 
@@ -246,7 +246,7 @@ Play
 
 Current Time 0:00
 
-Loaded: 7.27%
+Loaded: 9.40%
 
 0:00
 
@@ -288,7 +288,7 @@ End of dialog window.
 2. 在此过程中，系统自动处理跨设备的数据传输，开发者无需介入。
 3. 当用户释放鼠标时，触发拖拽松手事件，远端应用处理接收到的拖拽数据，并将其写入远端编辑页面。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/265rxrkSQL2KPQj2jj20wg/zh-cn_image_0000002311815960.jpg?HW-CC-KV=V1&HW-CC-Date=20260428T002141Z&HW-CC-Expire=86400&HW-CC-Sign=CF5E033B68C8D51D4002F77293EECD71FDEA7FBEC710E59583829574CD2DC7A2 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/265rxrkSQL2KPQj2jj20wg/zh-cn_image_0000002311815960.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T061247Z&HW-CC-Expire=86400&HW-CC-Sign=C3194948E4194935395A926D8D9709D3F7812A1EDF438E6EBA46D265EB06FB28 "点击放大")
 
 **关键技术**
 
@@ -391,7 +391,7 @@ End of dialog window.
 
 **实现效果**
 
-[](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/a9/v3/hspMydF5S2uTvIAtZCwyog/zh-cn_media_0000002345894765.mp4?HW-CC-KV=V1&HW-CC-Date=20260428T002141Z&HW-CC-Expire=86400&HW-CC-Sign=A6D6F10247BDF381CAD800FF2B768ADF209B6343C6F39F082E979C562219A525)
+[](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/a9/v3/hspMydF5S2uTvIAtZCwyog/zh-cn_media_0000002345894765.mp4?HW-CC-KV=V1&HW-CC-Date=20260429T061247Z&HW-CC-Expire=86400&HW-CC-Sign=AF5997CC8D70C62048C014C74AD928B098A99658B93BD19E6BA073FF87E0A875)
 
 Video Player is loading.
 
@@ -445,7 +445,7 @@ End of dialog window.
 
 3. 用户在远端读取系统剪贴板内容，粘贴来自本端的数据。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/t9X9ior0RUmHO-SLQwPQcA/zh-cn_image_0000002345774965.jpg?HW-CC-KV=V1&HW-CC-Date=20260428T002141Z&HW-CC-Expire=86400&HW-CC-Sign=B48C101826006042CC34ED8618F73D2D98BD477CDCE8E8F3B310376547D83970 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/t9X9ior0RUmHO-SLQwPQcA/zh-cn_image_0000002345774965.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T061247Z&HW-CC-Expire=86400&HW-CC-Sign=91E990F1CA762CC2E4F7D90EC8AF281C4EE4C82CB0959516B8B72CA29146FE6D "点击放大")
 
 **关键技术**
 
@@ -519,7 +519,7 @@ End of dialog window.
 
 **实现效果**
 
-[](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/27/v3/wOJ_1Z7XR2i9mqctKKD_1A/zh-cn_media_0000002311975768.mp4?HW-CC-KV=V1&HW-CC-Date=20260428T002141Z&HW-CC-Expire=86400&HW-CC-Sign=073790D82CBBF2B2278533DB13E181613DCCA72CE6849C12D5590E8D71B01D0A)
+[](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/27/v3/wOJ_1Z7XR2i9mqctKKD_1A/zh-cn_media_0000002311975768.mp4?HW-CC-KV=V1&HW-CC-Date=20260429T061247Z&HW-CC-Expire=86400&HW-CC-Sign=06553C444D66674DC9BF30DF7E337976FA1689135EFEA416D66C2A631BBFC72C)
 
 Video Player is loading.
 
@@ -573,7 +573,7 @@ End of dialog window.
 
 场景核心在于应用接续的过程中如何传递数据。对于文字信息可使用分布式数据对象保存，对于图片可以拷贝到分布式文件目录下，使用分布式数据资产作为分布式数据对象的根属性保存。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/z4VZL0bXT5-ACjxRjUlIww/zh-cn_image_0000002311815980.png?HW-CC-KV=V1&HW-CC-Date=20260428T002141Z&HW-CC-Expire=86400&HW-CC-Sign=54DA4946F5A2ABDBB1322A903D3713079EDD6AD1DCDC8C208BE3B31F88240F04 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/z4VZL0bXT5-ACjxRjUlIww/zh-cn_image_0000002311815980.png?HW-CC-KV=V1&HW-CC-Date=20260429T061247Z&HW-CC-Expire=86400&HW-CC-Sign=E6100D5985EA6FAFA7474CDD11EBC4812E12007CAB193A6ECB79AACD2401AFB1 "点击放大")
 
 **关键技术**
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arengine-c-im
 title: 图像跟踪（C/C++）
 breadcrumb: 指南 > 图形 > AR Engine（AR引擎服务） > 图像跟踪 > 图像跟踪（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:46:59+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:e069ef276d5bcfa8e00cda0fcad3603b2b689a0935d7107dc1b565c7b2654424
+scraped_at: 2026-04-29T13:36:01+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:f95a1a76f8d4f96998828a6f555eccc546212f6bb83ae89f350b2a056748973c
 ---
 
 本章节给出了关键开发步骤，完整代码可以参考[示例代码](https://gitcode.com/harmonyos_samples/arengine_-sample-code_-clientdemo_cpp)。
@@ -34,7 +34,6 @@ content_hash: sha256:e069ef276d5bcfa8e00cda0fcad3603b2b689a0935d7107dc1b565c7b26
 | [HMS\_AREngine\_ARCamera\_GetPose](../harmonyos-references/arengine-capi-arengine.md#hms_arengine_arcamera_getpose) | 获取当前相机对象在AR世界空间中的位姿。 |
 | [HMS\_AREngine\_ARAugmentedImageDatabase\_Create](../harmonyos-references/arengine-capi-arengine.md#hms_arengine_araugmentedimagedatabase_create) | 创建一个空的跟踪图像数据。 |
 | [HMS\_AREngine\_ARAugmentedImageDatabase\_AddImage](../harmonyos-references/arengine-capi-arengine.md#hms_arengine_araugmentedimagedatabase_addimage) | 将图像添加到图像数据库并输出对应图像的索引。 |
-| [HMS\_AREngine\_ARSession\_GetAllTrackables](../harmonyos-references/arengine-capi-arengine.md#hms_arengine_arsession_getalltrackables) | 获取所有指定类型的可跟踪对象集合。 |
 | [HMS\_AREngine\_ARTrackableList\_GetSize](../harmonyos-references/arengine-capi-arengine.md#hms_arengine_artrackablelist_getsize) | 获取此列表中的可跟踪对象的数量。 |
 | [HMS\_AREngine\_ARAugmentedImage\_GetCenterPose](../harmonyos-references/arengine-capi-arengine.md#hms_arengine_araugmentedimage_getcenterpose) | 获取跟踪图像中心点在世界坐标系中的位姿信息。 |
 | [HMS\_AREngine\_ARAugmentedImage\_GetExtendX](../harmonyos-references/arengine-capi-arengine.md#hms_arengine_araugmentedimage_getextendx) | 获取图像的中心点为坐标原点，物理图像的宽度（单位为米），得到X轴上的估计值。 |
@@ -242,7 +241,7 @@ content_hash: sha256:e069ef276d5bcfa8e00cda0fcad3603b2b689a0935d7107dc1b565c7b26
 117. .hideToolBar(true)
 118. }
 
-120. private ShowDialog(msg: string): void {
+120. private showDialog(msg: string): void {
 121. this.getUIContext().showAlertDialog({
 122. title: '警告',
 123. message: msg,
@@ -295,7 +294,7 @@ content_hash: sha256:e069ef276d5bcfa8e00cda0fcad3603b2b689a0935d7107dc1b565c7b26
 170. emitter.on('checkAddImageResult', () => {
 171. if (this.imageAddNumbers === 0 && this.isUpdate) {
 172. this.showPage = false;
-173. this.ShowDialog('请添加有效图片');
+173. this.showDialog('请添加有效图片');
 174. }
 175. emitter.off('addImage');
 176. this.isImageAddComplete = true;
@@ -435,7 +434,7 @@ content_hash: sha256:e069ef276d5bcfa8e00cda0fcad3603b2b689a0935d7107dc1b565c7b26
 56. let imageCountInDatabase: number = arEngineDemo.getImageCount(this.xComponentId);
 57. console.info(`ImageCountInDatabase: ${imageCountInDatabase}.`);
 58. if (imageCountInDatabase <= 0) {
-59. this.ShowDialog('请添加有效图片');
+59. this.showDialog('请添加有效图片');
 60. }
 61. })
 62. .onWillDisappear(() => {
@@ -459,7 +458,7 @@ content_hash: sha256:e069ef276d5bcfa8e00cda0fcad3603b2b689a0935d7107dc1b565c7b26
 80. .hideToolBar(true)
 81. }
 
-83. ShowDialog(msg: string): void {
+83. showDialog(msg: string): void {
 84. this.getUIContext().showAlertDialog({
 85. title: '警告',
 86. message: msg,

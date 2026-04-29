@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: 编译报错“Duplicated files found in module entry. This may cause unexpected errors at runtime”
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 编译报错“Duplicated files found in module entry. This may cause unexpected errors at runtime”
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:29:29+08:00
+scraped_at: 2026-04-29T14:20:43+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:6720c2b19b4ac9287c6b06279073ad08cc69938fd53a9c704d2c4da7f441c5a0
+content_hash: sha256:edcf61e6d61129aa4a5e064582cf076073c98fa0dec5e789bee00c2b6d66ba80
 ---
 
 **问题现象**
 
 编译构建时，报错“Duplicated files found in module entry. This may cause unexpected errors at runtime”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/D1FR-ZAzRLyLscBwFKyBlg/zh-cn_image_0000002229603833.png?HW-CC-KV=V1&HW-CC-Date=20260428T002928Z&HW-CC-Expire=86400&HW-CC-Sign=1A1FB3F3F7FC67925D630FAB24CEDF0EC8668DABBA6A91F8F4B79701856FC38C "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/D1FR-ZAzRLyLscBwFKyBlg/zh-cn_image_0000002229603833.png?HW-CC-KV=V1&HW-CC-Date=20260429T062041Z&HW-CC-Expire=86400&HW-CC-Sign=EE1DAF11453186BF1E7E0800A390A4B22DD437FEDE4A7369086EDCCC51759C4E "点击放大")
 
 **解决措施**
 

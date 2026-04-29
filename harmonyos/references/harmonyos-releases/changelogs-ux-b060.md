@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/changelogs-
 title: UX样式或效果的变更
 breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.0.0(12) > OS平台能力 > 接口行为变更说明 > HarmonyOS NEXT Developer Beta5引入的接口行为变更 > UX样式或效果的变更
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:36:11+08:00
+scraped_at: 2026-04-29T13:24:09+08:00
 doc_updated_at: 2026-01-21
-content_hash: sha256:523301724c101491889e238fd4195516607829bdc5f8beef380393c0d3d8011b
+content_hash: sha256:226f1426415bc4321c609f8a0b80a0260a20dff84be98903dffc4d4c66189bba
 ---
 
 ## 移动窗口布局模式瀑布流行为变更
@@ -117,11 +117,11 @@ UX规格变更
 
 变更前：RichEditor非用户手动点击收起键盘按钮收起键盘时，触发组件失焦，关闭菜单，复位选中区。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/XWkiOBOWSzGQwa1DTJzdpQ/zh-cn_image_0000002027415465.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233610Z&HW-CC-Expire=86400&HW-CC-Sign=C796C702F0AE177302F59AFBD8DBFA0AEE4F690320DE39811664A6872A30CD99)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/XWkiOBOWSzGQwa1DTJzdpQ/zh-cn_image_0000002027415465.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052408Z&HW-CC-Expire=86400&HW-CC-Sign=1B7051B0A728799EFB099E728DB2C86A2B0758EFD4CFAE7EFD5D6B0FEC4B298A)
 
 变更后：RichEditor非用户手动点击收起键盘按钮收起键盘时，仅小窗模式下触发组件失焦，其他场景不触发组件失焦，不关闭菜单，不复位选中区。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/oDNEoch8SaiswtPeEuRXMg/zh-cn_image_0000002027334989.gif?HW-CC-KV=V1&HW-CC-Date=20260427T233610Z&HW-CC-Expire=86400&HW-CC-Sign=B058918ED456D9DD535D0FFD7F4B063A40F146B972BBB1265C45833E2C5D2DC5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/oDNEoch8SaiswtPeEuRXMg/zh-cn_image_0000002027334989.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052408Z&HW-CC-Expire=86400&HW-CC-Sign=9FDD1C037C2793D0EDC0E98D32C9812A6982565CB211CDA35377BB56BBDD299B)
 
 **起始API Level**
 
@@ -203,7 +203,7 @@ UX默认行为变更，无需适配。可以通过[promptAction中ShowToastOptio
 
 在适老化场景，Menu集成保存控件“保存图片”，由于字体的尺寸增大，保存控件的实际布局宽度会大于所设定宽度，可能会出现截断情况。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/6bXy4Z_2TiCZjpBhiR28Dw/zh-cn_image_0000002027415469.png?HW-CC-KV=V1&HW-CC-Date=20260427T233610Z&HW-CC-Expire=86400&HW-CC-Sign=E1CFACA63F8C59F3819BBB600A00FD5D947577EBBCC4E47F4216142185CBB836)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/6bXy4Z_2TiCZjpBhiR28Dw/zh-cn_image_0000002027415469.png?HW-CC-KV=V1&HW-CC-Date=20260429T052408Z&HW-CC-Expire=86400&HW-CC-Sign=EFAEF683204E082BD694DCD4D5C6D1521F47334F5BBC5FFBD76525B0BB2DF032)
 
 变更后：
 
@@ -213,7 +213,7 @@ UX默认行为变更，无需适配。可以通过[promptAction中ShowToastOptio
 
 变更后，在相同的参数条件下，安全控件完整显示的最小宽度超过所设定的宽度，按钮文本信息会自动换行，控件高度会自适应增大，以保证安全控件显示的完整性。换行后，组件的高度增大，如果布局不满足实际要求，需要根据实际需要对安全控件的宽度和高度做调整。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/sgYEzHanRNq-qkUdk2trQg/zh-cn_image_0000002027334993.png?HW-CC-KV=V1&HW-CC-Date=20260427T233610Z&HW-CC-Expire=86400&HW-CC-Sign=8AAE32F673DFA34D34EAB225F56E310B8079522994D5817CBFF961495486A02A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/sgYEzHanRNq-qkUdk2trQg/zh-cn_image_0000002027334993.png?HW-CC-KV=V1&HW-CC-Date=20260429T052408Z&HW-CC-Expire=86400&HW-CC-Sign=BD7AA39A5ABEAE41751A28DA80EB4B198DB0341D954F311C66BBAE58F8A3BCC5)
 
 **起始API Level**
 

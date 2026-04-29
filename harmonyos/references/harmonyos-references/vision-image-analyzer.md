@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/vision-im
 title: visionImageAnalyzer（AI识图控件）
 breadcrumb: API参考 > AI > Vision Kit（场景化视觉服务） > ArkTS API > visionImageAnalyzer（AI识图控件）
 category: harmonyos-references
-scraped_at: 2026-04-28T08:19:15+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:dd913baa54bed646ad1bd4fb7b40f41e856d9c2045a84455c6f40a94dcefb0ed
+scraped_at: 2026-04-29T14:09:52+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:68831bcd51322f9660ff51d6a8e0f97867302f2d5aa807f5faacdef5d183eca9
 ---
 
 AI识图是通过聚合OCR（Optical Character Recognition）、主体分割、实体识别、多目标识别等AI能力，提供场景化的文本识别、主体分割、识图搜索功能。
@@ -579,7 +579,7 @@ getSubject(point: visionBase.Point): Promise<Subject | null>
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| point | [visionBase.Point](core-vision-vision-base-api.md#section1465431712919) | 是 | 相对于图片左上角位置点位（px）。 |
+| point | [visionBase.Point](core-vision-vision-base-api.md#point) | 是 | 相对于图片左上角位置点位（px）。 |
 
 **返回值：**
 

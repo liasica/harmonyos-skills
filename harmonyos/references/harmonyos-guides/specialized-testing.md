@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/specialized-t
 title: 专项测试
 breadcrumb: 指南 > 应用测试 > 专项测试 > DevEco Testing > 专项测试
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:57:56+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:e7eca4c31f9a9239f757003b0bdc2000118567ded0810deef850d0bc6d5ecef2
+scraped_at: 2026-04-29T13:48:11+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:3750374355fe20f6423de87d3b6e28cb33b9fe86a076d69e3effe0f26e83e266
 ---
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/NqSqtB1zTbu0Hk9GAcFRdw/zh-cn_image_0000002503713790.png?HW-CC-KV=V1&HW-CC-Date=20260427T235754Z&HW-CC-Expire=86400&HW-CC-Sign=0EBDE737F46C2AC7737FE2AC1FEDC71B669457A54EFC3E5E928CA9564968510D "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/Y1g35nk4R0KStk7-pQ01TA/zh-cn_image_0000002503713790.png?HW-CC-KV=V1&HW-CC-Date=20260429T054805Z&HW-CC-Expire=86400&HW-CC-Sign=9DFB722261C6A65F8B7135EFC1507CD376C7CB556E44A842616921B0452E2906 "点击放大")
 
 ## 性能基础质量测试
 
@@ -42,7 +42,7 @@ content_hash: sha256:e7eca4c31f9a9239f757003b0bdc2000118567ded0810deef850d0bc6d5
 
 打开DevEco Testing客户端-专项测试-性能基础质量测试卡片，在任务创建界面按需配置任务参数，点击创建任务后开始测试。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/juF2R-H1SmGyB7zVyUvTwg/zh-cn_image_0000002524503459.png?HW-CC-KV=V1&HW-CC-Date=20260427T235754Z&HW-CC-Expire=86400&HW-CC-Sign=04587A5C92BC1315FAA83F973B576568EFA68EE5EA4129BA6A3C6492DD0EB681 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/92aeY_1URQ-ADrXrlWBpjw/zh-cn_image_0000002524503459.png?HW-CC-KV=V1&HW-CC-Date=20260429T054805Z&HW-CC-Expire=86400&HW-CC-Sign=B3123224FA96B88FADC1FF8A18B009A54BDF21CCEBC48CDAE526D3EBA5ED6D5C "点击放大")
 
 性能基础质量测试支持选择已安装的应用，或选择待测应用的安装包后进行测试。
 
@@ -58,31 +58,31 @@ content_hash: sha256:e7eca4c31f9a9239f757003b0bdc2000118567ded0810deef850d0bc6d5
 
 （1）已安装的应用
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/T0Qs65FjRuOHxR6-Op2DRw/zh-cn_image_0000002492343774.png?HW-CC-KV=V1&HW-CC-Date=20260427T235754Z&HW-CC-Expire=86400&HW-CC-Sign=5EDBBDD3DC4B4498E7B4554194DAFC1E3DCE58D419D3A93764ECBEE52BCF05CB "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/dZYhi-jaSgCSIxi6kJbQoA/zh-cn_image_0000002492343774.png?HW-CC-KV=V1&HW-CC-Date=20260429T054805Z&HW-CC-Expire=86400&HW-CC-Sign=7C9C24820929799DC23113CC08B3D206418DEDE13723ECCB7629857EDB0C974C "点击放大")
 
 （2）安装新的应用
 
 点击按钮，在弹窗中选择应用安装包，支持.hap、.zip格式安装包。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/Z-xUCnBXSymQ5S2wSEEuDA/zh-cn_image_0000002524623413.png?HW-CC-KV=V1&HW-CC-Date=20260427T235754Z&HW-CC-Expire=86400&HW-CC-Sign=B441E29463A531C6813B0D390CB4EE21104B438669945B2143ED9DC587F05F4B "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/h_--FWghSRqAp4sAfJYznw/zh-cn_image_0000002524623413.png?HW-CC-KV=V1&HW-CC-Date=20260429T054805Z&HW-CC-Expire=86400&HW-CC-Sign=D5FEA34E614867175898CB77A584C3D6E8D1A51B41C1C5EA5F27D30D46D40920 "点击放大")
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/KOYVNQEtSDmXC4kkjzUrRg/zh-cn_image_0000002492343792.png?HW-CC-KV=V1&HW-CC-Date=20260427T235754Z&HW-CC-Expire=86400&HW-CC-Sign=4C93B8F6BF916DF681BF164FEC418F74230C09B4F75C4441A865BA14E00AA383 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/HmeTDHiHSsafE2CI8SriUw/zh-cn_image_0000002492343792.png?HW-CC-KV=V1&HW-CC-Date=20260429T054805Z&HW-CC-Expire=86400&HW-CC-Sign=E9A4C7B6A42791544A79564BFEAFD77D45934021797FFEC16E752F518F41E316 "点击放大")
 
 **启动测试次数**
 
 执行冷启动操作的次数，自动化测试过程中会重复执行应用冷启动和退出操作，用来评估应用启动的性能。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/2qsJSmmoT0iPJJMuH4cXIQ/zh-cn_image_0000002492503686.png?HW-CC-KV=V1&HW-CC-Date=20260427T235754Z&HW-CC-Expire=86400&HW-CC-Sign=5087DA49010280867A4ED0D4AE6A13A6469F894AFB3DD501105BF91EEE040B52)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/uSangE4KQVSrPjES2adYRQ/zh-cn_image_0000002492503686.png?HW-CC-KV=V1&HW-CC-Date=20260429T054805Z&HW-CC-Expire=86400&HW-CC-Sign=1571D6958C08C8CDE208F253AD6BD60244BB9095167874C0251B337949532652)
 
 **遍历时长**
 
 应用内点击、滑动等操作的总执行时长，用户可根据需求自定义遍历时长，默认为1小时，最大支持120分钟。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/0uJpghi_T-2LQR3lZJlh1w/zh-cn_image_0000002524503423.png?HW-CC-KV=V1&HW-CC-Date=20260427T235754Z&HW-CC-Expire=86400&HW-CC-Sign=DF418A276AA068CF280EC099830B37F4F4FEE1E7750CCE43B99301F6E9BB7D5E "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/aX-wdV6iTvKEwECMLjmRZA/zh-cn_image_0000002524503423.png?HW-CC-KV=V1&HW-CC-Date=20260429T054805Z&HW-CC-Expire=86400&HW-CC-Sign=A18EB243CC04878621731B865DE8C84793258A4C167D8A84927C6D807D729999 "点击放大")
 
 **高级配置**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/BZno1_0NQj2oU3L_yINyzw/zh-cn_image_0000002524503461.png?HW-CC-KV=V1&HW-CC-Date=20260427T235754Z&HW-CC-Expire=86400&HW-CC-Sign=6D0B16BC2006BB1180B63AEBABBC34E791E90ED272B439B08CFD513FDBF5F967)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/HkFS0zVTQFixgcoC1e0x0g/zh-cn_image_0000002524503461.png?HW-CC-KV=V1&HW-CC-Date=20260429T054805Z&HW-CC-Expire=86400&HW-CC-Sign=CA099F0286402FFE638489D4115937A2145A066F736782373C22C7101D27DB7C)
 
 **检测标准**
 
@@ -104,7 +104,7 @@ content_hash: sha256:e7eca4c31f9a9239f757003b0bdc2000118567ded0810deef850d0bc6d5
 
 **测试执行**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/EvwRPzCFT_OGHg06lhcYig/zh-cn_image_0000002535546833.png?HW-CC-KV=V1&HW-CC-Date=20260427T235754Z&HW-CC-Expire=86400&HW-CC-Sign=FDF0A6B466F14ACBA198377AAD4925480DC261CB5E8BE4355CD0A23D1D612885 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/6P4CZU_8TtSmvtv7fcOWfA/zh-cn_image_0000002535546833.png?HW-CC-KV=V1&HW-CC-Date=20260429T054805Z&HW-CC-Expire=86400&HW-CC-Sign=68E2E93C9343AF11659CC744F95A7BC07B216114E94C235CFE9378693F9024A1 "点击放大")
 
 **①：**实时显示任务的整体进度。
 
@@ -114,7 +114,7 @@ content_hash: sha256:e7eca4c31f9a9239f757003b0bdc2000118567ded0810deef850d0bc6d5
 
 **查看报告**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/do0pVrS_Te-Pj-MSSyx8hw/zh-cn_image_0000002492343780.png?HW-CC-KV=V1&HW-CC-Date=20260427T235754Z&HW-CC-Expire=86400&HW-CC-Sign=E1505E0A5868B6666A7093C292630AAD5F39BA3808952BCCA02C54DFDD5F7023 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/IeknnBnBTlu9gfeDnRqIiw/zh-cn_image_0000002492343780.png?HW-CC-KV=V1&HW-CC-Date=20260429T054805Z&HW-CC-Expire=86400&HW-CC-Sign=542D475224B007D34BC4129AD15F708BCEA46E5FBCD09178881026B6B1007B64 "点击放大")
 
 **基础信息**
 
@@ -127,14 +127,14 @@ content_hash: sha256:e7eca4c31f9a9239f757003b0bdc2000118567ded0810deef850d0bc6d5
 
 **整体评估**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/k3_WoSoLSfKDJzfsZ4KemA/zh-cn_image_0000002524503443.png?HW-CC-KV=V1&HW-CC-Date=20260427T235754Z&HW-CC-Expire=86400&HW-CC-Sign=0EB1B11947C68319AA3EB39630A6E4088FC860D71ABE42A90DC6E4AFDB9E0DC0 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/3M_dtMhASWGeffWJQOfpNw/zh-cn_image_0000002524503443.png?HW-CC-KV=V1&HW-CC-Date=20260429T054805Z&HW-CC-Expire=86400&HW-CC-Sign=BE0F8ED26F34461096A161A8A7E9D90DCA74B3931D3A9F18504DB6B78FE38A75 "点击放大")
 
 整体评估报告部分会展示本次的测试结论，包括如下部分：
 
 * 测试结论：描述本次测试的结论，包括遍历时长、执行操作次数、发现问题数。
 * 报告对比：一键跳转到性能测试报告对比工具，从概览、指标达标率等多维度进行报告对比。
 * 性能报告自动分析：一键跳转到性能报告自动分析服务，对该报告中发现的问题进行自动分析。
-* 导出IDE体检文件：支持生成体检文件导入到DevEco Studio中进行问题分析定位。详细操作指导请查看[导入DevEco Testing的检测报告进行诊断](ide-app-analyzer.md#section19550112715455)。
+* 导出IDE体检文件：支持生成体检文件导入到DevEco Studio中进行问题分析定位。详细操作指导请查看[导入DevEco Testing的检测报告进行诊断](ide-app-analyzer-testing.md)。
 * 问题分布环形图：呈现本次任务发现的总问题数以及各指标性能问题的分布情况。
 * 操作类型和问题表单：统计遍历过程中，启动、点击、滑动、观看的操作次数，以及对应指标发现的问题数。
 * 一般体验：为了帮助提前识别可能影响应用日常使用的性能体验问题，将所有体验问题进行过滤，聚焦于明显影响用户体验的严重问题，问题数会比所有体验问题少。
@@ -142,16 +142,16 @@ content_hash: sha256:e7eca4c31f9a9239f757003b0bdc2000118567ded0810deef850d0bc6d5
 
 整体评估表格中的红色数字表示当前体验标准下的问题次数，支持点击查看问题步骤列表。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/xQUlZqMJQUaz1A02cRL7hQ/zh-cn_image_0000002492503740.png?HW-CC-KV=V1&HW-CC-Date=20260427T235754Z&HW-CC-Expire=86400&HW-CC-Sign=D4522D6589FD48433C6195C98453C6C5EB4235B515238CE698243CDB1794FB99 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/WUVnzc70SEuhK1802ozgfA/zh-cn_image_0000002492503740.png?HW-CC-KV=V1&HW-CC-Date=20260429T054805Z&HW-CC-Expire=86400&HW-CC-Sign=BCAFC7D175BC126C6B49CDA8BD1BD3AB68110E651E94629D6C8A53C961062C50 "点击放大")
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/Hku1q3_YTq6PKD9l6AFTew/zh-cn_image_0000002492343768.png?HW-CC-KV=V1&HW-CC-Date=20260427T235754Z&HW-CC-Expire=86400&HW-CC-Sign=1FAFDE01CB6B4A55B3A0153257FAFFF59A15498CB548D2ED45F589A83D15BC06 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/p1FdbDPPRX-uqDpBtFh3PA/zh-cn_image_0000002492343768.png?HW-CC-KV=V1&HW-CC-Date=20260429T054805Z&HW-CC-Expire=86400&HW-CC-Sign=3DB2479710F2519C6D12D27D68196639B1B1D491C2830D5FE715813B5F5FD90A "点击放大")
 
 * 维测数据：点击打开按钮，自动打开该操作的数据文件夹，汇总当前操作的trace、视频、图片等维测数据，协助用户进行问题定位。
 * 查看详情：点击展开按钮，呈现该操作的帧图片集，点击视频时间数字，能直接定位到具体的图片。
 
 **遍历统计**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/M1Pswu1CS2eMInzyZJ7Brw/zh-cn_image_0000002492503764.png?HW-CC-KV=V1&HW-CC-Date=20260427T235754Z&HW-CC-Expire=86400&HW-CC-Sign=00070AF379791A3E5DC28DB2A4C10E16E5D17D37A747654A6C001F9CA470D30B "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/3qf4uQywRHqzTREUoRt36Q/zh-cn_image_0000002492503764.png?HW-CC-KV=V1&HW-CC-Date=20260429T054805Z&HW-CC-Expire=86400&HW-CC-Sign=C59BF27974C5029F0C19C781CD889287C55AFA1E7B872D54B03F4806696761A0 "点击放大")
 
 **遍历统计会展示应用遍历过程中的操作步骤信息，包括如下信息：**
 
@@ -164,7 +164,7 @@ content_hash: sha256:e7eca4c31f9a9239f757003b0bdc2000118567ded0810deef850d0bc6d5
 
 **资源数据**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/pr4U47F2ROqFXRc0Ece_gQ/zh-cn_image_0000002492503770.png?HW-CC-KV=V1&HW-CC-Date=20260427T235754Z&HW-CC-Expire=86400&HW-CC-Sign=22CF797BA51C6FA9793EC098B72D6CF65114CF7670B5318B0A6D02B412690E77 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/5IE65YqwQKiQCSCyZkeadQ/zh-cn_image_0000002492503770.png?HW-CC-KV=V1&HW-CC-Date=20260429T054805Z&HW-CC-Expire=86400&HW-CC-Sign=D8131061C0EA41D89DE515066A8168E1B97D15CA4BCA0B257BC955F6100A7D37 "点击放大")
 
 资源数据报告部分呈现的是应用在遍历过程中的资源占用情况。
 
@@ -178,7 +178,7 @@ content_hash: sha256:e7eca4c31f9a9239f757003b0bdc2000118567ded0810deef850d0bc6d5
 
 * 应用启动测试：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/UQ1LM6ChTMCYkVJ_ArvoHw/zh-cn_image_0000002503552638.png?HW-CC-KV=V1&HW-CC-Date=20260427T235754Z&HW-CC-Expire=86400&HW-CC-Sign=DAD3D87C86DA69AD1D27EFAD20F6D728E90A7FEFDC457C87D3E1F221A3A92825 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/0IfQljy0TEqNvhcYzfjSvg/zh-cn_image_0000002503552638.png?HW-CC-KV=V1&HW-CC-Date=20260429T054805Z&HW-CC-Expire=86400&HW-CC-Sign=749A73D50A91CC40686CF8EDEA97DA3899C82182166D405BD5B7F6982F89A92E "点击放大")
 
 展示应用启动测试的步骤信息，包括操作前后截图、测试数据以及维测数据。
 
@@ -190,7 +190,7 @@ content_hash: sha256:e7eca4c31f9a9239f757003b0bdc2000118567ded0810deef850d0bc6d5
 
 * 应用内遍历测试：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/bTzgpP_uSv2i-OQNyYyJPw/zh-cn_image_0000002503712596.png?HW-CC-KV=V1&HW-CC-Date=20260427T235754Z&HW-CC-Expire=86400&HW-CC-Sign=2F1BDF2247B42A9ADAC59BDA14ECB417CF27711E81B89531259C3DDC9C2F5281 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/FCBhqpF_QPCJXeKJSs0yLw/zh-cn_image_0000002503712596.png?HW-CC-KV=V1&HW-CC-Date=20260429T054805Z&HW-CC-Expire=86400&HW-CC-Sign=1405B818AF31BBAEBE5916255C1D70F7F50391C0A77EB011F41604637D54EB92 "点击放大")
 
 展示应用内进行遍历操作的步骤信息，包括操作前后截图、测试数据以及维测数据。
 
@@ -204,7 +204,7 @@ content_hash: sha256:e7eca4c31f9a9239f757003b0bdc2000118567ded0810deef850d0bc6d5
 
 对于超标的检测结果，可以通过点击超标项，查看该步骤的详细信息，展示内容如下图所示（以响应时延为例）。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/Op2X2S3WRNqzGjAFRI_fVw/zh-cn_image_0000002492343720.png?HW-CC-KV=V1&HW-CC-Date=20260427T235754Z&HW-CC-Expire=86400&HW-CC-Sign=11CBA1E45ED449992B828AA8730CC1E3A5367A7568977F3A0CBD0314FFCA3B32 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/WYlwnpX-To2kt2uoaJgghQ/zh-cn_image_0000002492343720.png?HW-CC-KV=V1&HW-CC-Date=20260429T054805Z&HW-CC-Expire=86400&HW-CC-Sign=73C30B56AC080B918C0261F2655E6D07A600E26BFFBB96683BEE7F46AC2F12D1 "点击放大")
 
 测试值：表示该步骤的响应时延测试值。
 
@@ -220,17 +220,17 @@ content_hash: sha256:e7eca4c31f9a9239f757003b0bdc2000118567ded0810deef850d0bc6d5
 
 点击打开按钮跳转到问题步骤对应的资源文件目录。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/22c8DrsDRmSyt4KJlF5y7A/zh-cn_image_0000002524623399.png?HW-CC-KV=V1&HW-CC-Date=20260427T235754Z&HW-CC-Expire=86400&HW-CC-Sign=B157790EAC98E4716188D7514B5FCF5F0B962DE8A308DA55CECDFA528380155A "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/JUy_gtPyRDS4UCXdj6IgbQ/zh-cn_image_0000002524623399.png?HW-CC-KV=V1&HW-CC-Date=20260429T054805Z&HW-CC-Expire=86400&HW-CC-Sign=772DA16363C396D57AE302FA92BB695C6845535A8F90B6DD62295544316A97C2 "点击放大")
 
 用户可查看步骤执行全过程的图片和视频，如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/O8l8ZRhGSbu1t08a7JUhCQ/zh-cn_image_0000002492503752.png?HW-CC-KV=V1&HW-CC-Date=20260427T235754Z&HW-CC-Expire=86400&HW-CC-Sign=804A408265EBF3DB52B53E55B6BFA9C733E609E2F791BCF610CF7AF49942969F "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/iYmr_aHTTqOF8WCPPZnUDw/zh-cn_image_0000002492503752.png?HW-CC-KV=V1&HW-CC-Date=20260429T054805Z&HW-CC-Expire=86400&HW-CC-Sign=3BA3D613E8C8F4D9DB5FA901C3689575F000B8BA8BE9685B748C9E11A86D70A0 "点击放大")
 
 **perfdata数据**
 
 可使用[DevEco Studio](https://developer.huawei.com/consumer/cn/download/deveco-studio) 5.0.3.300及以上版本中的场景化调优工具DevEco Profiler打开及查看该文件，内含步骤执行过程中的trace打点和调用栈信息，也可使用压缩软件解压为单个的trace文件和调用栈文件，解压后的文件可使用[SmartPerf](https://gitcode.com/openharmony/developtools_smartperf_host)工具打开。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/tJFqL1dlT3WM8gPyLwaCDQ/zh-cn_image_0000002492343718.png?HW-CC-KV=V1&HW-CC-Date=20260427T235754Z&HW-CC-Expire=86400&HW-CC-Sign=04F5916D0ED85DBD3AD852E1E7CF316C1ADBB80CC9D8EF6A75839728A647D826 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/o8M804HxSyGbETYn30CGGQ/zh-cn_image_0000002492343718.png?HW-CC-KV=V1&HW-CC-Date=20260429T054805Z&HW-CC-Expire=86400&HW-CC-Sign=971570B772C9066BBF9C366590AB6EC4FCFC32D95435FF8D050C5B6ADED35215 "点击放大")
 
 说明
 
@@ -262,7 +262,7 @@ content_hash: sha256:e7eca4c31f9a9239f757003b0bdc2000118567ded0810deef850d0bc6d5
 
 打开DevEco Testing客户端-专项测试-场景化性能测试卡片，在任务创建界面按需配置任务参数，点击创建任务后开始测试。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/cF_MswNmSS6TXvhXpv_h0w/zh-cn_image_0000002492352024.png?HW-CC-KV=V1&HW-CC-Date=20260427T235754Z&HW-CC-Expire=86400&HW-CC-Sign=BE85767FA44C907A66ED62B26D3833B2C3D98FB5C7A1B815639B1D718945E945 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/29KYjc4cSfGztMPIrUPAAg/zh-cn_image_0000002492352024.png?HW-CC-KV=V1&HW-CC-Date=20260429T054805Z&HW-CC-Expire=86400&HW-CC-Sign=5F0DA5926BA0B38D5E71A16D017E7B22717753493BB607450C482920211A2A9D "点击放大")
 
 **配置项说明**
 
@@ -270,7 +270,7 @@ content_hash: sha256:e7eca4c31f9a9239f757003b0bdc2000118567ded0810deef850d0bc6d5
 
 用例可重复执行多轮提升测试结果的可靠性，最多测试10轮。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/mSujxibuRdKYWNdBTiV1uA/zh-cn_image_0000002524511721.png?HW-CC-KV=V1&HW-CC-Date=20260427T235754Z&HW-CC-Expire=86400&HW-CC-Sign=A20AB8905A431BCF2B4C0E81C70A0AE050E1CAA339EAF9A4C978CD5E4373D9B6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/JcZeSH_gR666vGbeNbn1rg/zh-cn_image_0000002524511721.png?HW-CC-KV=V1&HW-CC-Date=20260429T054805Z&HW-CC-Expire=86400&HW-CC-Sign=D57196F06DAC460C8F1D3EBE0CF0D737FA5C7CA0FDF6587056810E7A94CAD42A)
 
 **用例工程路径**
 
@@ -278,13 +278,13 @@ content_hash: sha256:e7eca4c31f9a9239f757003b0bdc2000118567ded0810deef850d0bc6d5
 
 如果已有用例脚本，可点击创建工程模板，将脚本文件存放到工程根目录的testcases目录下，用例工程路径请选择工程根目录。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/2s4qjCNgR_iBKEkoIoc64Q/zh-cn_image_0000002492511990.png?HW-CC-KV=V1&HW-CC-Date=20260427T235754Z&HW-CC-Expire=86400&HW-CC-Sign=DE72224E1185CB7E183BCE50AD16F029E0D3BA725E4D849A25523E07CB0D0040)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/B0npeeXaSRCK3x39pSj7zw/zh-cn_image_0000002492511990.png?HW-CC-KV=V1&HW-CC-Date=20260429T054805Z&HW-CC-Expire=86400&HW-CC-Sign=CE5EC3460389AAC4B91F7E549D76D7ABE22D788D84B39B93B68B3049A8B107A3)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/yC66dW8bQuab-wp1U6ijpg/zh-cn_image_0000002524631695.png?HW-CC-KV=V1&HW-CC-Date=20260427T235754Z&HW-CC-Expire=86400&HW-CC-Sign=2B58735F8142AA911F0241734F7588F3116FCC7F99203769067194B7A44C59E4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/C_CcBtICTZeTNTjoASREdg/zh-cn_image_0000002524631695.png?HW-CC-KV=V1&HW-CC-Date=20260429T054805Z&HW-CC-Expire=86400&HW-CC-Sign=FEE101259EBD404585631AEADCC7A9AD42353EE881EE84F1EB0BE6355CC02138)
 
 **高级配置**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/8xJ1KA6NQ5WgggmYz1IclQ/zh-cn_image_0000002492352026.png?HW-CC-KV=V1&HW-CC-Date=20260427T235754Z&HW-CC-Expire=86400&HW-CC-Sign=954BCAEF42656573E56F1E1856BD5380BB4C2E95F6007EC2E4CC6373CE1177FC "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/9oNgOmpqSyyx4Yap9qvvlA/zh-cn_image_0000002492352026.png?HW-CC-KV=V1&HW-CC-Date=20260429T054805Z&HW-CC-Expire=86400&HW-CC-Sign=8A54BA9087B00BCAED6DD69EF686F28D256D2F3A01600219DD595AA7F8079E66 "点击放大")
 
 **检测标准、****指标监控**
 
@@ -300,7 +300,7 @@ content_hash: sha256:e7eca4c31f9a9239f757003b0bdc2000118567ded0810deef850d0bc6d5
 
 所有用例按照顺序和轮次依次执行，并行分析；任务完成后，会自动生成报告页面。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/rn2nEGgKRJWBrhmO8Q7xSQ/zh-cn_image_0000002524511723.png?HW-CC-KV=V1&HW-CC-Date=20260427T235754Z&HW-CC-Expire=86400&HW-CC-Sign=F84DE44131DC2CD51E0504DB4ABFF9CD10DA26E552BC1B78E8774DBB774C56A4 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/JuLUpHxXSIutkYjZfVFlgQ/zh-cn_image_0000002524511723.png?HW-CC-KV=V1&HW-CC-Date=20260429T054805Z&HW-CC-Expire=86400&HW-CC-Sign=B0A1A54D6FAA1C59A5387246271CD37A20856818AF9CB46E8492ADF75E4C4B68 "点击放大")
 
 ①：实时显示任务的整体进度。
 
@@ -312,7 +312,7 @@ content_hash: sha256:e7eca4c31f9a9239f757003b0bdc2000118567ded0810deef850d0bc6d5
 
 测试完成后，自动生成测试报告。报告包含基础信息、整体评估、资源数据、用例详情等。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/QH5xBEugQgmB8VBTTxl5_g/zh-cn_image_0000002492511992.png?HW-CC-KV=V1&HW-CC-Date=20260427T235754Z&HW-CC-Expire=86400&HW-CC-Sign=F2EB27F48F8A3C0930BADD1EBD3FD4FCA2D95DAA14041E5CE0CB5C4D407A836D "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/xt7PEu9mSXuDya51ExCx2w/zh-cn_image_0000002492511992.png?HW-CC-KV=V1&HW-CC-Date=20260429T054805Z&HW-CC-Expire=86400&HW-CC-Sign=43D6EE8EBBE7F7201E1E5C852411E8231FBD5AD3AC64C68835DE26EBB1DB7160 "点击放大")
 
 **基础信息**
 
@@ -328,14 +328,14 @@ content_hash: sha256:e7eca4c31f9a9239f757003b0bdc2000118567ded0810deef850d0bc6d5
 
 **整体评估**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/LazRU9bzRyi0sKkjb7CWFg/zh-cn_image_0000002524631697.png?HW-CC-KV=V1&HW-CC-Date=20260427T235754Z&HW-CC-Expire=86400&HW-CC-Sign=4400B9F98623AB85040BEAA8BA0A8DF98EC7446AC1C7685F338C5A4FBEB0DB1C "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/8eaW6lvJS3eZbmn5V7Qm7g/zh-cn_image_0000002524631697.png?HW-CC-KV=V1&HW-CC-Date=20260429T054805Z&HW-CC-Expire=86400&HW-CC-Sign=70CCD96257BEE0EE616E4448E5C6619D048E71BB2828A9E0BE0EBD545EC19640 "点击放大")
 
 整体评估包括如下部分：
 
 * 测试结论：描述本次测试的结论，包括执行用例个数、轮数、操作次数及发现问题数。
 * 报告对比：一键跳转到报告对比工具，从概览、指标优劣化、用例对比详情等多维度进行报告对比。
 * 性能报告自动分析：一键跳转到性能报告自动分析服务，对该报告中发现的问题进行自动分析。
-* 导出IDE体检文件：支持生成体检文件导入到DevEco Studio中进行问题分析定位。详细操作指导请查看[导入DevEco Testing的检测报告进行诊断](ide-app-analyzer.md#section19550112715455)。
+* 导出IDE体检文件：支持生成体检文件导入到DevEco Studio中进行问题分析定位。详细操作指导请查看[导入DevEco Testing的检测报告进行诊断](ide-app-analyzer-testing.md)。
 * 问题分布环形图：呈现本次任务发现的总问题数以及各指标性能问题的分布情况。
 * 用户场景和问题分布表单：执行状态表示用例场景多轮执行的状态，用例场景展示的是脚本中定义的场景用例名称，后面几列为对应指标发现的问题数。
 * 一般体验：为了帮助提前识别可能影响应用日常使用的性能体验问题，将所有体验问题进行过滤，聚焦于明显影响用户体验的严重问题，问题数会比所有体验问题少。
@@ -350,11 +350,11 @@ content_hash: sha256:e7eca4c31f9a9239f757003b0bdc2000118567ded0810deef850d0bc6d5
 
 整体评估表格中的红色数字是当前体验标准下的问题次数，支持点击查看问题步骤列表：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/mb5wvryfTnKatamCeEKBqw/zh-cn_image_0000002492352028.png?HW-CC-KV=V1&HW-CC-Date=20260427T235754Z&HW-CC-Expire=86400&HW-CC-Sign=C379E451F6AC0FAF40438F1FF93D1132A2AE72F2F9168E403058947143141158)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/GTEB4KJNTM-3r_SyqD6fkQ/zh-cn_image_0000002492352028.png?HW-CC-KV=V1&HW-CC-Date=20260429T054805Z&HW-CC-Expire=86400&HW-CC-Sign=758556F3B406ED8B5F9FED003CA64BB358C098BADC6F1287BBF40953C0E85004)
 
 展开后呈现问题的详细信息：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/F5tbQlZkQlGjAEaC76dy5Q/zh-cn_image_0000002524511725.png?HW-CC-KV=V1&HW-CC-Date=20260427T235754Z&HW-CC-Expire=86400&HW-CC-Sign=ED481C5A6F85B3E30BA26B393CAE4FBB5CB268E957A819382DAF6D5B6E94A934 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/Rrhm-050Th6D_9kfbD5MVg/zh-cn_image_0000002524511725.png?HW-CC-KV=V1&HW-CC-Date=20260429T054805Z&HW-CC-Expire=86400&HW-CC-Sign=020BE8980813F27B57EC34E6BCA2EFE8B973BE60E1C494EF6C234E6383AA9858 "点击放大")
 
 维测数据：点击打开按钮，自动打开该操作的数据文件夹，汇总当前操作的trace、视频、图片等维测数据，协助用户进行问题定位。
 
@@ -362,7 +362,7 @@ content_hash: sha256:e7eca4c31f9a9239f757003b0bdc2000118567ded0810deef850d0bc6d5
 
 **资源数据**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/UyHQivDISqiZNC8vkujomw/zh-cn_image_0000002492511994.png?HW-CC-KV=V1&HW-CC-Date=20260427T235754Z&HW-CC-Expire=86400&HW-CC-Sign=10ACEBD7EA62ACED6A0A15A5D2174443FA870E6DDB6F0BCBA3F8C79471778811 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/Eh952N1aT62bQgeoSTUEpg/zh-cn_image_0000002492511994.png?HW-CC-KV=V1&HW-CC-Date=20260429T054805Z&HW-CC-Expire=86400&HW-CC-Sign=7E8D1BDC53A3EB6C3F21A139D3814C3A12266B32A2E3C1622CE613613D1FAD4E "点击放大")
 
 资源数据报告部分呈现的是应用在遍历过程中的资源占用情况。
 
@@ -373,7 +373,7 @@ content_hash: sha256:e7eca4c31f9a9239f757003b0bdc2000118567ded0810deef850d0bc6d5
 
 用例详情会展示用例的执行轮次和执行步骤的信息，整体呈现内容如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/kRA2bNRrSQOD2f8qYEG3Fw/zh-cn_image_0000002524631699.png?HW-CC-KV=V1&HW-CC-Date=20260427T235754Z&HW-CC-Expire=86400&HW-CC-Sign=B9CF213F92B101C238A6975608A83F163257D7638F11AB3DF708DAD05CDD7761 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/MXLDT3IzQauBmHip3RZDkw/zh-cn_image_0000002524631699.png?HW-CC-KV=V1&HW-CC-Date=20260429T054805Z&HW-CC-Expire=86400&HW-CC-Sign=FA051FD90BFAE0DB3109BBAD2D5886A394276D96A488E43A2B9500AF03142244 "点击放大")
 
 OH\_XXXX：代表用例名称，由脚本进行指定。
 
@@ -383,17 +383,17 @@ OH\_XXXX：代表用例名称，由脚本进行指定。
 
 点击步骤左侧的箭头，展开该步骤的详细轮次信息，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/WeB8HFulSheaytbG5PDPow/zh-cn_image_0000002492352030.png?HW-CC-KV=V1&HW-CC-Date=20260427T235754Z&HW-CC-Expire=86400&HW-CC-Sign=959855F1105D847412A58E8109D245F2045B8A035B9E0F434A3AAF9635274C5B "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/4ksXGDzWQ32_TH9NzYyF-w/zh-cn_image_0000002492352030.png?HW-CC-KV=V1&HW-CC-Date=20260429T054805Z&HW-CC-Expire=86400&HW-CC-Sign=C6E930CEA9EF8BFA3C24E19C01729670E0B149E89006FEB411616C2A652544D8 "点击放大")
 
 操作前&操作后：展示该步骤操作前后的信息，用户可以通过前后截图了解操作的场景。
 
 指标项：展示每轮的指标检测结果信息，如果测试值超标，字体标红显示，支持点击查看问题详情。若不涉及，则显示“-”。
 
-维测数据：点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/yln7yC5FTmKiPA3QMmWC0Q/zh-cn_image_0000002524511727.png?HW-CC-KV=V1&HW-CC-Date=20260427T235754Z&HW-CC-Expire=86400&HW-CC-Sign=B178ECE99CD10DD40742E82A2F449DDE38AFE506501C00D7465A0188AA8939B1) 按钮，自动打开该操作的数据文件夹，汇总当前操作的trace、视频、图片等维测数据，协助用户进行问题定位。若该步骤所有测试数据都达到标准，则不会出现该按钮。
+维测数据：点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/wTKaNEIVTXmU6ArcRHqslg/zh-cn_image_0000002524511727.png?HW-CC-KV=V1&HW-CC-Date=20260429T054805Z&HW-CC-Expire=86400&HW-CC-Sign=A34CE8C348D2D86E1119D2899C9B9AE67D783EB8B33F5821433424BFC53314FA) 按钮，自动打开该操作的数据文件夹，汇总当前操作的trace、视频、图片等维测数据，协助用户进行问题定位。若该步骤所有测试数据都达到标准，则不会出现该按钮。
 
 对于超标的检测结果，可以通过点击超标项，查看该步骤的详细信息，展示内容如下图所示（以滑动占位符加载指数详情为例）：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/89VvAz2hRwGTQJNMy5USCQ/zh-cn_image_0000002492511996.png?HW-CC-KV=V1&HW-CC-Date=20260427T235754Z&HW-CC-Expire=86400&HW-CC-Sign=E392E843FB97C70864394B8550319D9FA9A7EA72BD397FC4B9C21DCAAA816F31 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/O3MWjk0TQH-EWZlzTHHBeQ/zh-cn_image_0000002492511996.png?HW-CC-KV=V1&HW-CC-Date=20260429T054805Z&HW-CC-Expire=86400&HW-CC-Sign=0555799E17F42FC14031D28BC17D974E8D263EC82B0F1485142AED660F9C2891 "点击放大")
 
 开始时间：从3299这一帧开始，页面中出现占位符。
 
@@ -407,17 +407,17 @@ OH\_XXXX：代表用例名称，由脚本进行指定。
 
 点击打开按钮可以跳转到问题步骤对应的资源文件目录。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/Vs8XOeXJQquROta5uYyNvg/zh-cn_image_0000002524631701.png?HW-CC-KV=V1&HW-CC-Date=20260427T235754Z&HW-CC-Expire=86400&HW-CC-Sign=A8B65F2270DCC02F47BD5C81CF31F6B29513002DF7640CB3A4572E28CA22CC3B "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/Y7PJFwl3TKe2a6gl-PtnJw/zh-cn_image_0000002524631701.png?HW-CC-KV=V1&HW-CC-Date=20260429T054805Z&HW-CC-Expire=86400&HW-CC-Sign=F88992BADDCDB07186F44FC635642790E1E7F2BBD54E379A3656CD5679F0B0D2 "点击放大")
 
 测试步骤执行全过程的图片和视频如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/2VvJT8MfT52uwSFj9qDRsQ/zh-cn_image_0000002492352032.png?HW-CC-KV=V1&HW-CC-Date=20260427T235754Z&HW-CC-Expire=86400&HW-CC-Sign=21A467D83F90429C5049D6B64679980E5AC046727792DC9E572EF966B25A5B38 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/i4RbuXjeRr-098_mo0XGtQ/zh-cn_image_0000002492352032.png?HW-CC-KV=V1&HW-CC-Date=20260429T054805Z&HW-CC-Expire=86400&HW-CC-Sign=DA02FBF96415F0D8686E63FD02DD355C552F4C793245D56170134A1931CD033A "点击放大")
 
 **perfdata****数据**
 
 可使用[DevEco Studio](https://developer.huawei.com/consumer/cn/download/deveco-studio) 5.0.3.300及以上版本中的场景化调优工具DevEco Profiler打开及查看该文件，内含步骤执行过程中的trace打点和调用栈信息，也可使用压缩软件解压为单个的trace文件和调用栈文件，解压后的文件可使用[SmartPerf](https://gitcode.com/openharmony/developtools_smartperf_host)工具打开。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/e0EUXjCSQyKNmWsPI-4ygw/zh-cn_image_0000002524511729.png?HW-CC-KV=V1&HW-CC-Date=20260427T235754Z&HW-CC-Expire=86400&HW-CC-Sign=E062CB3D00A95B63F2C8C6CADBF6360A253636F7818291DCBB9A20153DCBBA7C "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/DujPrNPsQOOD6Cyx-3ZBhg/zh-cn_image_0000002524511729.png?HW-CC-KV=V1&HW-CC-Date=20260429T054805Z&HW-CC-Expire=86400&HW-CC-Sign=796051EDB071A4179ABC0454D2F40AED59FE3940E4C1B0B2BBCBA7365526C9DF "点击放大")
 
 说明
 
@@ -433,7 +433,7 @@ OH\_XXXX：代表用例名称，由脚本进行指定。
 
 进入DevEco Testing客户端，在左侧菜单栏选择“专项测试”，点击“稳定性基础质量测试”服务卡片，即进入任务创建界面。用户按需配置任务参数，点击创建任务即开始测试。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/p1iINxOmTBCM8KiWg7zRvQ/zh-cn_image_0000002538034024.png?HW-CC-KV=V1&HW-CC-Date=20260427T235754Z&HW-CC-Expire=86400&HW-CC-Sign=166783630B62D8AD4BE330607FDA5D312EB45C8AB615678D891C9CAD43E4B26E "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/CsqnjX9ERxeWnJRicCEjCg/zh-cn_image_0000002538034024.png?HW-CC-KV=V1&HW-CC-Date=20260429T054805Z&HW-CC-Expire=86400&HW-CC-Sign=2CD3991791AF66BE9D30E96A1D2A03ED45492CA04A92C03E8D7BF53CE5F9F4E1 "点击放大")
 
 任务名称：用于标识任务，工具会根据时间生成默认任务名，支持自定义修改。
 
@@ -455,7 +455,7 @@ OH\_XXXX：代表用例名称，由脚本进行指定。
 
 **控件黑名单**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/Y_bK8jORQNKFoEAWrAsmIA/zh-cn_image_0000002538194210.png?HW-CC-KV=V1&HW-CC-Date=20260427T235754Z&HW-CC-Expire=86400&HW-CC-Sign=088524F63400BE3B3F43B92E31653ABB19E646C6776098D6FCE874AD1D978218 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/Oc393zdWS5KQmgfk-gFn3w/zh-cn_image_0000002538194210.png?HW-CC-KV=V1&HW-CC-Date=20260429T054805Z&HW-CC-Expire=86400&HW-CC-Sign=A373F15966FAE3D7EB691B9D8815C4689361967B09A5EB5DCE9487A334D72F73 "点击放大")
 
 控件黑名单通过指定控件的关键字（控件感知语义或layout中控件text属性值）和控件Xpath进行正则匹配识别黑名单控件；黑名单控件在遍历中不会进行操作；屏蔽的黑名单控件在遍历过程中会在应用页面中置灰。
 
@@ -463,13 +463,13 @@ OH\_XXXX：代表用例名称，由脚本进行指定。
 
 2、XPath：可以通过Uiviewer工具或已有的遍历图谱文件获取控件的XPath。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/FKuX-foGRPeV3pphWiBT3g/zh-cn_image_0000002568914377.png?HW-CC-KV=V1&HW-CC-Date=20260427T235754Z&HW-CC-Expire=86400&HW-CC-Sign=71FC3FE1FCE5D0F6B315C4EBE3EDCE8D0803392C689D628420B5CBDC488B8C48 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/p3xSBRttQu2Qna_0Po9xQQ/zh-cn_image_0000002568914377.png?HW-CC-KV=V1&HW-CC-Date=20260429T054805Z&HW-CC-Expire=86400&HW-CC-Sign=7B8B764BB9C5BA8BCFB27438FC621FC060E2568F6E4AE80BFF70729BEF05CAE8 "点击放大")
 
 说明
 
 **1、关于控件黑名单中“XPath”信息也可以通过探索测试报告中的遍历地图获取**：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/avwM9qc0Rc-qqdLRwKziVQ/zh-cn_image_0000002569034393.png?HW-CC-KV=V1&HW-CC-Date=20260427T235754Z&HW-CC-Expire=86400&HW-CC-Sign=BB3714AB9FBAE653173C44126C79B65D3279E5FD10A5D52127CDF8D2F41DA7DE "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/tnqioOCfRI2VUUYrBCPgog/zh-cn_image_0000002569034393.png?HW-CC-KV=V1&HW-CC-Date=20260429T054805Z&HW-CC-Expire=86400&HW-CC-Sign=47B77484151CC8BB0438EEEFA5A3CACD9319B6842FB91D2A1684CB9D461BB9F6 "点击放大")
 
 点击遍历地图中的关联线条；即可在右侧查看该跳转事件详情。
 
@@ -477,7 +477,7 @@ OH\_XXXX：代表用例名称，由脚本进行指定。
 
 创建任务后，将会跳转到执行页，进入测试环境初始化阶段。待测试环境初始化完成，待测应用被启动。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/QeS_ujlWTH-s120b4S7ARA/zh-cn_image_0000002524503425.png?HW-CC-KV=V1&HW-CC-Date=20260427T235754Z&HW-CC-Expire=86400&HW-CC-Sign=443F7267EB32E114E4D5396B180603367B16D952DA182FD4435B199EAEAE8318 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/PHQuDhtFQOWnD28aomBZiw/zh-cn_image_0000002524503425.png?HW-CC-KV=V1&HW-CC-Date=20260429T054805Z&HW-CC-Expire=86400&HW-CC-Sign=19FBCA24953FE130B3EA3759929E54C069C6F46C47AD9170CA0675DE9D6C1A32 "点击放大")
 
 测试过程中，在测试页面可以看到测试进度、检测状态、实时投屏及执行日志。
 
@@ -487,15 +487,15 @@ OH\_XXXX：代表用例名称，由脚本进行指定。
 
 任务信息中，可查看当前应用信息、任务执行时长及详细的环境参数（配置信息及环境信息），点击打开目录按钮支持导出 html 的报告文件。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/C3-BqCSmTICsx5J3o7Qtuw/zh-cn_image_0000002524503497.png?HW-CC-KV=V1&HW-CC-Date=20260427T235754Z&HW-CC-Expire=86400&HW-CC-Sign=248E8C3FDBE07339256F24C96A56F05439E8AC692BCF8868950E59F4F0BC76A5 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/-5lhQ8FDQey9zHgeyoeE4A/zh-cn_image_0000002524503497.png?HW-CC-KV=V1&HW-CC-Date=20260429T054805Z&HW-CC-Expire=86400&HW-CC-Sign=B5FE0C46FDD2555E0662B4BBE8F16EF531A0DE5816F6366E62AF7D87AA61D8F2 "点击放大")
 
 测试概览中，包含结果统计及检测规则，可直观查看本次任务中，测试项检测结果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/UyKyGRGxR9Cw78_Vj4d3OQ/zh-cn_image_0000002492503702.png?HW-CC-KV=V1&HW-CC-Date=20260427T235754Z&HW-CC-Expire=86400&HW-CC-Sign=B565EE4E52234F7475B6A501F8B6201B770E8B241BE49ACE48C8CC0B115E729C "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/KGZjun4kQ_CcPU8yt99lEw/zh-cn_image_0000002492503702.png?HW-CC-KV=V1&HW-CC-Date=20260429T054805Z&HW-CC-Expire=86400&HW-CC-Sign=25B5CC228D798AD9D1AB23838CB8FDCC99EB2B4074B0C32BBF0374916067ADBF "点击放大")
 
 检测不通过或检测异常的规则项，点击查看详情即可查看异常问题详情，包含检测项概览、测试截图、问题列表。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/DPi4Z5cSRvKSUMgSU6dkhQ/zh-cn_image_0000002492503694.png?HW-CC-KV=V1&HW-CC-Date=20260427T235754Z&HW-CC-Expire=86400&HW-CC-Sign=BC272D9211CB209C7ECFEF24F11C2F0BB8DD3A20C3D6CD9F823A507AA2B39C20 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/8AOyM0-oSrK6cCm1fo-EVQ/zh-cn_image_0000002492503694.png?HW-CC-KV=V1&HW-CC-Date=20260429T054805Z&HW-CC-Expire=86400&HW-CC-Sign=B8FC767E5064EDD1FF0C88B27CE8707AA70446AE11356C37197F9D4F6B27D334 "点击放大")
 
 点击查看按钮，支持查看测试过程中的日志，用户可结合问题描述及日志详情进一步分析。
 
@@ -513,7 +513,7 @@ OH\_XXXX：代表用例名称，由脚本进行指定。
 
 打开DevEco Testing客户端-专项测试-性能指标监控测试卡片，在任务创建界面按需配置任务参数，点击创建任务后开始测试。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/GxLhqhzDRzWll_QhofLM7Q/zh-cn_image_0000002524623373.png?HW-CC-KV=V1&HW-CC-Date=20260427T235754Z&HW-CC-Expire=86400&HW-CC-Sign=3F522AD6555A900C5C37C14565D8765E760848999663A9FBD1029551957B0AE3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/Py8kxRWjQp6pmDsdp4P-Ig/zh-cn_image_0000002524623373.png?HW-CC-KV=V1&HW-CC-Date=20260429T054805Z&HW-CC-Expire=86400&HW-CC-Sign=59BD519A702EF43FD014D89E8D127218FD65DDE4F96BB90B12673D1EC5289914)
 
 任务名称：用于标识任务，根据时间生成默认任务名，支持自定义任务名称。
 
@@ -531,23 +531,23 @@ OH\_XXXX：代表用例名称，由脚本进行指定。
 
 创建任务后，跳转到执行页，执行测试环境初始化操作。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/Ez7Gl2IuQ1mJ7Gr1lSPNSA/zh-cn_image_0000002492503718.png?HW-CC-KV=V1&HW-CC-Date=20260427T235754Z&HW-CC-Expire=86400&HW-CC-Sign=FEA1A7D1CB4363FDC0135FFDCEBE2F65DF38B837CB4D9576BBCB40E2667CFADB "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/gzf17TUxTAKuxnVYkV1Q_Q/zh-cn_image_0000002492503718.png?HW-CC-KV=V1&HW-CC-Date=20260429T054805Z&HW-CC-Expire=86400&HW-CC-Sign=0D956A947D8C6DFE51BC028E19DEB72C3E145873D85A89F48A163DBDF4E3F55B "点击放大")
 
 等待测试环境初始化完成后，待测应用启动，自动跳转至监控页面，并启动监控，在手工测试场景准备好后，点击右上角的开始图标按钮，出现“开始采集”标识线，开始统计分析数据。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/U3yjvlSnQ5mtv8PzPYnqLg/zh-cn_image_0000002524503453.png?HW-CC-KV=V1&HW-CC-Date=20260427T235754Z&HW-CC-Expire=86400&HW-CC-Sign=66440D10CECD3DC5270854CD0F6587D3BF6CD4AA0384A73BCD8497BF82BAC2E6 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/UnRfIQwkSRiOWflx5E5N3w/zh-cn_image_0000002524503453.png?HW-CC-KV=V1&HW-CC-Date=20260429T054805Z&HW-CC-Expire=86400&HW-CC-Sign=570EFF54E375FFCC04483556B27199063B61210368294F02452168110DD2E982 "点击放大")
 
 开始采集后，点击开始图标右侧的“记录”图标，可标识场景，并提示“场景开始”。待测场景结束后，再次点击，完成标识场景。概览中单独计算被标识的场景数据。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/FD0sTgLTTCC7ppqPbqNF8w/zh-cn_image_0000002524503491.png?HW-CC-KV=V1&HW-CC-Date=20260427T235754Z&HW-CC-Expire=86400&HW-CC-Sign=052F184412792932539DA24E4CA7D5D78325B99C5413934F142CDC0BAEE90BE5 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/YQrWB42HSUu_aii0pk9T5w/zh-cn_image_0000002524503491.png?HW-CC-KV=V1&HW-CC-Date=20260429T054805Z&HW-CC-Expire=86400&HW-CC-Sign=05124B838344129EF520DB722199B8998309A4E49B276763E59A96DDC832F4F7 "点击放大")
 
 在测试过程中，可随时点击“采集 trace”按钮，采集连续30 秒的 trace 信息，单次任务只保留最近10 个 trace 文件。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/tISdbHWsReWrZ0_CDjv6yg/zh-cn_image_0000002524503479.jpg?HW-CC-KV=V1&HW-CC-Date=20260427T235754Z&HW-CC-Expire=86400&HW-CC-Sign=CF585B2EA8E9DE1B237DF2B5F33412A64224593A17E84F1AC0B47AF59D3A4482 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/0OLmZAvsQkePOcxf0R3F6g/zh-cn_image_0000002524503479.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T054805Z&HW-CC-Expire=86400&HW-CC-Sign=5B007E47923C1348B67426CC527CE20724D7EA9AF162625557261CE3B71B6BCE "点击放大")
 
 结束采集。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/cKJfMfdoQii_eauEuk7Y4A/zh-cn_image_0000002492503708.jpg?HW-CC-KV=V1&HW-CC-Date=20260427T235754Z&HW-CC-Expire=86400&HW-CC-Sign=4BD5B93A744D9F30D804402EE3E4F75A77DF7252639A1D1C16B587174DAD7BAE "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/VkXkLk1qRyaZ1R0tjsvIKw/zh-cn_image_0000002492503708.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T054805Z&HW-CC-Expire=86400&HW-CC-Sign=17AD03DD194B1AFFF3E3ED628E860E7A61A90CD80155EA6D30B33DEE0E6C4B0D "点击放大")
 
 **查看报告**
 
@@ -555,7 +555,7 @@ OH\_XXXX：代表用例名称，由脚本进行指定。
 
 指标数据：包括 FPS、设备 CPU/GPU 的频率、负载监控等信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/M0MkeLqlQaCVUccfYg9EOQ/zh-cn_image_0000002524503401.png?HW-CC-KV=V1&HW-CC-Date=20260427T235754Z&HW-CC-Expire=86400&HW-CC-Sign=B257C68D036C6065452075377A115468F28F31DDA2D2C76F9B6EB12CF66F3AC5 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/mJKdIwfbQkqOjwFxLWOOWA/zh-cn_image_0000002524503401.png?HW-CC-KV=V1&HW-CC-Date=20260429T054805Z&HW-CC-Expire=86400&HW-CC-Sign=3ECECA89B8AD332722C27BEE7961686BB440689F5C64316A86216F599C673312 "点击放大")
 
 指标数据介绍：
 
@@ -577,7 +577,7 @@ GPU 负载：GPU 的当前负载。
 
 Trace：可以通过报告底部的"打开Trace文件"按钮跳转到trace文件目录。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/UQ_YJk6ZQ6-dJsxUBGw6wQ/zh-cn_image_0000002492503700.png?HW-CC-KV=V1&HW-CC-Date=20260427T235754Z&HW-CC-Expire=86400&HW-CC-Sign=4240AF9A36819A824534A96C709FC97A9ED76C457B68151169BC07A253D67E1E "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/yFz3dqIoTsy-O-XEkiVG6Q/zh-cn_image_0000002492503700.png?HW-CC-KV=V1&HW-CC-Date=20260429T054805Z&HW-CC-Expire=86400&HW-CC-Sign=D2EA89989E732C592B874211BA6C61F21D29F61F18389F7FF9031D65594EC856 "点击放大")
 
 说明
 
@@ -591,11 +591,11 @@ Trace：可以通过报告底部的"打开Trace文件"按钮跳转到trace文件
 
 报告包含任务信息、执行结果、检测规则。支持查看当前应用信息、任务执行时长，及详细的环境参数（配置信息及环境信息），支持导出 html 的报告文件。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/24Tp64tJRu2_Y-9mqyWcfQ/zh-cn_image_0000002524503465.png?HW-CC-KV=V1&HW-CC-Date=20260427T235754Z&HW-CC-Expire=86400&HW-CC-Sign=FA95B00ABB567862B766B407417E79DC90CADF390874239DEB6AD05A4E4C75F5 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/EGAHmE3AQ-u4BV8vd-NPEQ/zh-cn_image_0000002524503465.png?HW-CC-KV=V1&HW-CC-Date=20260429T054805Z&HW-CC-Expire=86400&HW-CC-Sign=E5E89725B1228D6FD2413A816C63F9A1B935026FE882E858017EFEEF3CFC35B5 "点击放大")
 
 对于检测不通过及检测异常的规则项，点击查看详情即可查看异常问题详情，包含检测项概览、测试截图、问题列表。对于异常问题，可根据测试截图、问题描述，针对性优化异常问题。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/ShPXuBAkRMeuCcn62FjoJA/zh-cn_image_0000002524503505.png?HW-CC-KV=V1&HW-CC-Date=20260427T235754Z&HW-CC-Expire=86400&HW-CC-Sign=C1AC3C041E4A44655DB614D8207A215868C75179EF4BBA2172531FBBCD9B5766 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/aWapHue4QbmLh7NgYCcbeg/zh-cn_image_0000002524503505.png?HW-CC-KV=V1&HW-CC-Date=20260429T054805Z&HW-CC-Expire=86400&HW-CC-Sign=4FB734BA4F6E64D61DDDAD1DFC03102AD3AA1D321E1DE6ECD5AB6FC9E8085501 "点击放大")
 
 说明
 
@@ -609,13 +609,13 @@ Trace：可以通过报告底部的"打开Trace文件"按钮跳转到trace文件
 
 安全基础质量测试报告如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/YrBErbhrRcebUFNJfF9b2w/zh-cn_image_0000002492352192.png?HW-CC-KV=V1&HW-CC-Date=20260427T235754Z&HW-CC-Expire=86400&HW-CC-Sign=C73E7C0C88B9613AD5E4427A3BE6E3C087109A01B73741A4808F04B6F6975063 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/lExVZumARryYYH2hprxcrQ/zh-cn_image_0000002492352192.png?HW-CC-KV=V1&HW-CC-Date=20260429T054805Z&HW-CC-Expire=86400&HW-CC-Sign=D20CA1CF33DFFF50E699F02D85CAA601BAC25D990EB0C307EA14A18D25173E45 "点击放大")
 
 在测试报告中，包含执行结果、问题统计及检测规则。用户可直观查看本次任务中的测试项检测结果。
 
 对于检测不通过的规则项，点击查看详情即可查看异常问题详情，包含执行设备信息、执行过程信息和问题列表；问题列表中有序号、问题描述和修复指南。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/-7NGTYRvQ9asHBr4VeJA8A/zh-cn_image_0000002524511907.png?HW-CC-KV=V1&HW-CC-Date=20260427T235754Z&HW-CC-Expire=86400&HW-CC-Sign=F39988B4D7B348734131236806C8C30E63818D745ACEB53DB1D54263E1B79A2E "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/D-BBuQ4UQJWfN6tdW1sAcg/zh-cn_image_0000002524511907.png?HW-CC-KV=V1&HW-CC-Date=20260429T054805Z&HW-CC-Expire=86400&HW-CC-Sign=5C791CD0285980AA743617CD4105C9760B3E6E457D72D546FB390AE3CE2654AB "点击放大")
 
 说明
 
@@ -627,9 +627,9 @@ Trace：可以通过报告底部的"打开Trace文件"按钮跳转到trace文件
 
 测试完成后，自动生成测试报告。报告包含任务信息、执行结果、问题统计、检测规则。支持查看当前应用信息、任务执行时长及详细的环境参数，点击打开目录按钮可导出 html 格式报告。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/xbkjU979SKG-eLmFrWFWzQ/zh-cn_image_0000002492343802.png?HW-CC-KV=V1&HW-CC-Date=20260427T235754Z&HW-CC-Expire=86400&HW-CC-Sign=CCFC425CFB39069133CEFD688D1B94DB4C60723C16EABBCBA0DEB554B3F2C96D "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/d9AStg6aQf-9u4vErWrX4Q/zh-cn_image_0000002492343802.png?HW-CC-KV=V1&HW-CC-Date=20260429T054805Z&HW-CC-Expire=86400&HW-CC-Sign=B753E99DF95B7E9D9E70A47BB98ABAE13CAFACF55E6013DB52A4763946EE8D95 "点击放大")
 
-检测不通过的规则项，点击查看按钮查看问题详情，包含执行设备信息、执行过程信息、测试截图、问题列表等。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/7-BILx0sTpe44YOFkc3lUA/zh-cn_image_0000002524623463.png?HW-CC-KV=V1&HW-CC-Date=20260427T235754Z&HW-CC-Expire=86400&HW-CC-Sign=2481B9F07598D9BFD9C35CED493F8A320C7D72CB927187702ABCE47AC016F5D9 "点击放大")
+检测不通过的规则项，点击查看按钮查看问题详情，包含执行设备信息、执行过程信息、测试截图、问题列表等。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/JLycZ--FT0izWbO-McXzGw/zh-cn_image_0000002524623463.png?HW-CC-KV=V1&HW-CC-Date=20260429T054805Z&HW-CC-Expire=86400&HW-CC-Sign=4392565A201E66E82710F45D2AEFA70F7BB546E67FACA48ACFC7C726B3C86FBC "点击放大")
 
 说明
 
@@ -641,11 +641,11 @@ Trace：可以通过报告底部的"打开Trace文件"按钮跳转到trace文件
 
 测试完成后，自动生成测试报告。报告包含任务信息、执行结果、问题统计、检测规则。支持查看当前应用信息、任务执行时长及详细的环境参数，支持导出 html 格式报告。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/W-zmWSqRQkmEfC68njXMtg/zh-cn_image_0000002524623477.png?HW-CC-KV=V1&HW-CC-Date=20260427T235754Z&HW-CC-Expire=86400&HW-CC-Sign=23A0AD77FB2315E4D16B384633DD5F63CAB6864AA29531D5F8A3C0476C7AFFB1 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/4axnhDpZRqC-oC_YPtmECQ/zh-cn_image_0000002524623477.png?HW-CC-KV=V1&HW-CC-Date=20260429T054805Z&HW-CC-Expire=86400&HW-CC-Sign=8E8593FFC84E6F4C7812F2136956A464F55F476D7DCCD85DA8A5D54E3B6183B6 "点击放大")
 
 检测不通过的规则项，点击查看按钮查看问题详情，包含执行设备信息、执行过程信息、测试截图、问题列表等。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/HmhVIhKiQlmYihWrnbhblw/zh-cn_image_0000002524623445.png?HW-CC-KV=V1&HW-CC-Date=20260427T235754Z&HW-CC-Expire=86400&HW-CC-Sign=0D1B7C51BCC1DB5FB9BC4CFE41B8CD5797DEA5E160DBB324E3A8E5D7E3FDE7F3 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/U2Aa4ck7S1iTf2uTmtrulg/zh-cn_image_0000002524623445.png?HW-CC-KV=V1&HW-CC-Date=20260429T054805Z&HW-CC-Expire=86400&HW-CC-Sign=8B798E72ED33DDCBB1417E5FE58963EA2692F0DB5FA130F6EA537FE85FEBF0AF "点击放大")
 
 说明
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/onlineauthent
 title: SOTER免密身份认证
 breadcrumb: 指南 > 系统 > 安全 > Online Authentication Kit（在线认证服务） > SOTER免密身份认证
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:43:10+08:00
+scraped_at: 2026-04-29T13:31:51+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:4cfc46016fa3b89728209b6b983920ecfb57f91c1e2a486bf352ba73d881ddae
+content_hash: sha256:92e77b4db098ebaeb0c5601914e2d70920f514cead32b1ac1d40e2896a51bb0b
 ---
 
 ## 场景介绍
@@ -48,7 +48,7 @@ SOTER旨在提供一套生物认证平台和标准，使得业务可以采用设
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/aDs063c7SuaaKLMwmAegJw/zh-cn_image_0000002583438453.png?HW-CC-KV=V1&HW-CC-Date=20260427T234309Z&HW-CC-Expire=86400&HW-CC-Sign=7074C9017394093BBA1E4C847486CC38B4565C597AEE86CD65CF398D6537045C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/-cPr2MfzRdKkzMrArjBE3Q/zh-cn_image_0000002558605250.png?HW-CC-KV=V1&HW-CC-Date=20260429T053150Z&HW-CC-Expire=86400&HW-CC-Sign=DA8A29FE12CF32A306509AF8E878D8E24D9AA3B9EB23A505534020228404AB99)
 
 ## 接口说明
 
