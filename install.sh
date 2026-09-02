@@ -8,7 +8,7 @@
 #
 # 行为：
 #   1. 把 https://github.com/liasica/harmonyos-skills 克隆/更新到本机
-#   2. 检测 Claude Code / Gemini CLI / OpenAI Codex CLI / GitHub Copilot CLI / OpenCode
+#   2. 检测 Claude Code / Gemini CLI / OpenAI Codex CLI / GitHub Copilot CLI / Cursor / OpenCode
 #   3. 把 <repo>/harmonyos symlink 到各 CLI 的 skills 目录
 
 set -euo pipefail
@@ -22,10 +22,10 @@ ANSI_YELLOW=$'\033[33m'
 ANSI_RED=$'\033[31m'
 ANSI_RESET=$'\033[0m'
 
-log()  { printf "%s» %s%s\n" "${ANSI_BOLD}" "$*" "${ANSI_RESET}"; }
-ok()   { printf "%s✓ %s%s\n" "${ANSI_GREEN}" "$*" "${ANSI_RESET}"; }
-warn() { printf "%s! %s%s\n" "${ANSI_YELLOW}" "$*" "${ANSI_RESET}"; }
-err()  { printf "%s✗ %s%s\n" "${ANSI_RED}" "$*" "${ANSI_RESET}" >&2; }
+log()  { printf "%s>> %s%s\n" "${ANSI_BOLD}" "$*" "${ANSI_RESET}"; }
+ok()   { printf "%s[ok] %s%s\n" "${ANSI_GREEN}" "$*" "${ANSI_RESET}"; }
+warn() { printf "%s[!] %s%s\n" "${ANSI_YELLOW}" "$*" "${ANSI_RESET}"; }
+err()  { printf "%s[x] %s%s\n" "${ANSI_RED}" "$*" "${ANSI_RESET}" >&2; }
 
 require_cmd() {
   command -v "$1" >/dev/null 2>&1 || { err "需要 $1，未找到。先安装 $1 后重试。"; exit 1; }
@@ -42,7 +42,7 @@ elif [ -d "${DEFAULT_DIR}/.git" ]; then
   git -C "${DEFAULT_DIR}" pull --ff-only --quiet || warn "git pull 失败，使用现有版本"
   REPO_DIR="${DEFAULT_DIR}"
 else
-  log "Cloning ${REPO_URL} → ${DEFAULT_DIR}"
+  log "Cloning ${REPO_URL} -> ${DEFAULT_DIR}"
   mkdir -p "$(dirname "${DEFAULT_DIR}")"
   git clone --depth=1 "${REPO_URL}" "${DEFAULT_DIR}" --quiet
   REPO_DIR="${DEFAULT_DIR}"
@@ -67,7 +67,7 @@ link_to() {
     rm -rf "$target"
   fi
   ln -s "$SKILL_DIR" "$target"
-  ok "${label}: ${target} → ${SKILL_DIR}"
+  ok "${label}: ${target} -> ${SKILL_DIR}"
   INSTALLED=$((INSTALLED + 1))
 }
 
@@ -76,16 +76,9 @@ if [ -d "$HOME/.claude" ] || command -v claude >/dev/null 2>&1; then
   link_to "$HOME/.claude/skills/harmonyos" "Claude Code"
 fi
 
-# === Gemini CLI ===
-if command -v gemini >/dev/null 2>&1; then
-  log "Gemini CLI: 通过 extension 安装"
-  if gemini extensions install "${REPO_URL}" 2>/dev/null; then
-    ok "Gemini CLI: extension installed"
-    INSTALLED=$((INSTALLED + 1))
-  else
-    warn "Gemini extensions install 失败，回退 symlink"
-    link_to "$HOME/.gemini/skills/harmonyos" "Gemini CLI (symlink fallback)"
-  fi
+# === Gemini CLI ===（用户级 skills 目录 ~/.gemini/skills/）
+if command -v gemini >/dev/null 2>&1 || [ -d "$HOME/.gemini" ]; then
+  link_to "$HOME/.gemini/skills/harmonyos" "Gemini CLI"
 fi
 
 # === OpenAI Codex CLI ===
@@ -119,6 +112,7 @@ else
 fi
 
 echo ""
-log "Skill 路径: ${SKILL_DIR}"
-log "更新文档:   cd ${REPO_DIR}/scraper && uv run python -m scripts.sync"
-log "卸载:       rm \"\$HOME/.<cli>/skills/harmonyos\"  +  rm -rf \"${REPO_DIR}\""
+log "Skill 路径：${SKILL_DIR}"
+log "更新文档：  ${REPO_DIR}/scraper/sync.sh"
+log "MCP 服务：  uv run ${REPO_DIR}/mcp/server.py（客户端配置见 README「MCP 服务」）"
+log "卸载：      rm \"\$HOME/.<cli>/skills/harmonyos\"  +  rm -rf \"${REPO_DIR}\""
