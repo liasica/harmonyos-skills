@@ -40,7 +40,7 @@ jobs:
   sync:
     name: Sync docs and publish release
     runs-on: ubuntu-latest
-    timeout-minutes: 330
+    timeout-minutes: 60
     env:
       TZ: Asia/Shanghai
     steps:
@@ -55,9 +55,7 @@ jobs:
 
       - name: Install dependencies
         working-directory: scraper
-        run: |
-          uv sync
-          uv run playwright install --with-deps chromium
+        run: uv sync
 
       # 定时触发时 inputs 为空：等同 root=all、limit 为空、publish=true
       - name: Resolve run parameters
