@@ -5,7 +5,7 @@ breadcrumb: API参考 > AI > Neural Network Runtime Kit（Neural Network运行�
 category: harmonyos-references
 scraped_at: 2026-04-29T14:09:46+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:be43a8c04af0d77aebd0aede1a0033ac0cf451cd9701016be1f41dfd635a51ae
+content_hash: sha256:b726fd3284131fa8536126477c54047ba2462ea970c10d908b7a4337e0406e0b
 ---
 
 ```
@@ -20,17 +20,17 @@ PhonePC/2in1TabletTV
 
 在量化的场景中，32位浮点型数据根据以下公式量化为定点数据：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/nOjUryZ8QNS1u9zw1fIy8A/zh-cn_image_0000002589247245.png?HW-CC-KV=V1&HW-CC-Date=20260429T060945Z&HW-CC-Expire=86400&HW-CC-Sign=86D616F24CE3F335B09D295B1835A82CF33332D52C0996394F534C0BE7A7EA91)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/nOjUryZ8QNS1u9zw1fIy8A/zh-cn_image_0000002589247245.png)
 
 其中s和z是量化参数，在OH\_NN\_QuantParam中通过scale和zeroPoint保存，r是浮点数，q是量化后的结果，q\_min是量化后下界，q\_max是量化后的上界，计算方式如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/givau3ZCQpyEGl-Ia6E8cQ/zh-cn_image_0000002558767438.png?HW-CC-KV=V1&HW-CC-Date=20260429T060945Z&HW-CC-Expire=86400&HW-CC-Sign=9FA436DBC46710F449772A430F45F97002BAEB568F25C24471088091C902F4D3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/givau3ZCQpyEGl-Ia6E8cQ/zh-cn_image_0000002558767438.png)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/pQt9yAuLThGPcAiUhp2XRw/zh-cn_image_0000002558607780.png?HW-CC-KV=V1&HW-CC-Date=20260429T060945Z&HW-CC-Expire=86400&HW-CC-Sign=2FF32C311FFC697E9E1A06F0B51658EF216858E3747E19BD7D0C7FBAF134E5B1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/pQt9yAuLThGPcAiUhp2XRw/zh-cn_image_0000002558607780.png)
 
 clamp函数定义如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/rmSXjBL4TySiDX6T5Q81Cw/zh-cn_image_0000002589327307.png?HW-CC-KV=V1&HW-CC-Date=20260429T060945Z&HW-CC-Expire=86400&HW-CC-Sign=CCFF10E2DF3300A7D1070733795CDB448428F26C34C07D341736A9EB6B419077)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/rmSXjBL4TySiDX6T5Q81Cw/zh-cn_image_0000002589327307.png)
 
 **起始版本：** 9
 

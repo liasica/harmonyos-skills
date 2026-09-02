@@ -5,7 +5,7 @@ breadcrumb: 指南 > 系统 > 硬件 > Sensor Service Kit（传感器服务） >
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:33:41+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:e7ed509e583a8f04d5b133ec8f9cec180396733894cfb41ea5cedbc8bb3f6dac
+content_hash: sha256:3a02b0a2c8f1ef248f32372aa8387c4ad5d2150a8b248280d755f563efd4e535
 ---
 
 ## 场景介绍
@@ -38,7 +38,7 @@ content_hash: sha256:e7ed509e583a8f04d5b133ec8f9cec180396733894cfb41ea5cedbc8bb3
 
 1. 新建一个Native C++工程。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/_oYFmKaHSqaKn3vQxROGMQ/zh-cn_image_0000002558605326.png?HW-CC-KV=V1&HW-CC-Date=20260429T053340Z&HW-CC-Expire=86400&HW-CC-Sign=44741CED72A0C86907CA1AAE38352E1831058FEEA9EAC3FD1EFE2E7C569D9019)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/_oYFmKaHSqaKn3vQxROGMQ/zh-cn_image_0000002558605326.png)
 2. 控制设备上的振动器，需要申请权限ohos.permission.VIBRATE。具体配置方式请参考[声明权限](declare-permissions.md)。
 
    ```

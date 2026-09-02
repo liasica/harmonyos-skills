@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:51:21+08:00
 doc_updated_at: 2026-03-23
-content_hash: sha256:e51352c2e9e2d0d0855d9e65b0858054427b328b5c6e05325c5072765d51f61a
+content_hash: sha256:ea3488fd21378432204b02f0046bffcf4e984a152c857ec8b79a87fe8ef9dcef
 ---
 
 设置组件由缩放大小或位移变化引起的运动过程中的动态模糊效果。需要与动画的[AnimateParam](ts-explicit-animation.md#animateparam对象说明)的onFinish参数配合使用。
@@ -165,4 +165,4 @@ PhonePC/2in1TabletTVWearable
 43. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/lELUvOz9Q-CkyeJsF7R3vA/zh-cn_image_0000002558766046.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055120Z&HW-CC-Expire=86400&HW-CC-Sign=85CA6A03A1AD5422970D6617932F27E63C8C21761A112AF6B171D54650F0BFAB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/lELUvOz9Q-CkyeJsF7R3vA/zh-cn_image_0000002558766046.gif)

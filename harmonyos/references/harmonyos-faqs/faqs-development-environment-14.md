@@ -5,14 +5,14 @@ breadcrumb: FAQ > DevEco Studio > 环境准备 > 自动签名时提示“The sig
 category: harmonyos-faqs
 scraped_at: 2026-04-29T14:20:08+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:74504e49e7c472b959f7ded5c1238ff7989e90a81fb78a4e47ace14ce7c1712a
+content_hash: sha256:b01b47f85b63224ca61df610ee485664831c1e0357449dd5186bb29bbe46b699
 ---
 
 **问题描述**
 
 自动生成签名失败。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/6A1mcvQvSxeBXszE8cAVRw/zh-cn_image_0000002229604309.png?HW-CC-KV=V1&HW-CC-Date=20260429T062007Z&HW-CC-Expire=86400&HW-CC-Sign=3E72C99FDF7353FAF9F787015C8DC8E0A9EB348F42A0C920434FF9F77B09AA63)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/6A1mcvQvSxeBXszE8cAVRw/zh-cn_image_0000002229604309.png)
 
 **解决方案**
 

@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:51:20+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:5ee6ea047340cb806a120fea6586f1705fe4743a87059ccc04eafaef406fafb5
+content_hash: sha256:2014c8d7d726bd8ecc7eadc5bbc0848f2813e7d8f5b61cf9003da991a80a4fb0
 ---
 
 设置组件的前景属性。
@@ -82,4 +82,4 @@ PhonePC/2in1TabletTVWearable
 
 radius表示模糊半径，数值越大，效果越模糊。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/CNTfN37rSZGwggphEgf9UA/zh-cn_image_0000002558606384.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T055118Z&HW-CC-Expire=86400&HW-CC-Sign=83870400D1B5B40722C133DAAE333E5BB76312DE1B75331266C1CE51ACCA30EF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/CNTfN37rSZGwggphEgf9UA/zh-cn_image_0000002558606384.jpg)

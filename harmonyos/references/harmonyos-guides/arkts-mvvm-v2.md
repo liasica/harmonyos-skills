@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:27:11+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:1f96e6ae6899ccf8377da94df14950830a21cc947e6128362179ed541caeb22e
+content_hash: sha256:76afb624e088892ddea4b238f2e4f133b2f3c11fbe27a064fc13ad4818836d37
 ---
 
 ## 概述
@@ -1020,7 +1020,7 @@ JSON文件存放在src/main/resources/rawfile/defaultTasks.json路径下。
 
 ### 效果图展示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/ZKxkHgGaRd-5wFKcK1_RIA/zh-cn_image_0000002589243893.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052709Z&HW-CC-Expire=86400&HW-CC-Sign=FCF1A395954CC5C6091505F44445A6D9A9F04FDE729719C8E12D6658646B226E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/ZKxkHgGaRd-5wFKcK1_RIA/zh-cn_image_0000002589243893.gif)
 
 ## 重构代码以符合MVVM架构
 

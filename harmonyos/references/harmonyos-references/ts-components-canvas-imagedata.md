@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:52:30+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:39abac27f4097371778b6038d17ade78109e9d95b852044b191a4b5744dc6126
+content_hash: sha256:1b3bee61d9e43f3d264067c7952974d4f8cf971c6a072f952bf40aadd2d8a906
 ---
 
 ImageData对象可以存储canvas渲染的像素数据。
@@ -115,4 +115,4 @@ PhonePC/2in1TabletTVWearable
 25. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/ulzIKuyLRpeUCpHh8NZvkQ/zh-cn_image_0000002558606826.png?HW-CC-KV=V1&HW-CC-Date=20260429T055229Z&HW-CC-Expire=86400&HW-CC-Sign=8909D7FC14C8355E0800F8166EDC58679B3E817D961BF222604826ADC86C7213)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/ulzIKuyLRpeUCpHh8NZvkQ/zh-cn_image_0000002558606826.png)

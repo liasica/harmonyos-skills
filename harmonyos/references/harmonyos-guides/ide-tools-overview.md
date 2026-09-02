@@ -5,7 +5,7 @@ breadcrumb: 指南 > 开发环境搭建 > 工具概述
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:44:32+08:00
 doc_updated_at: 2026-03-17
-content_hash: sha256:b80ea8a6bdee6d28f47e414ec0e12e4eb52a720d80139dbdc19dd2513e1ee002
+content_hash: sha256:55d68a53b620d4baad16ee59740d99badf50909f057ca13ff3430251b9589b1d
 ---
 
 ## HarmonyOS应用/元服务开发
@@ -28,7 +28,7 @@ HUAWEI DevEco Studio（获取工具请单击[链接下载](https://developer.hua
 
 开发一个应用/元服务流程如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/M5TBJ0w3Sq2CLGat-Iv_YA/zh-cn_image_0000002561753617.png?HW-CC-KV=V1&HW-CC-Date=20260429T054419Z&HW-CC-Expire=86400&HW-CC-Sign=E5E8D02E5B68AE23883EFF016B2D8F5D3A3038A4D30A25BAE0B9E71FC171F39B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/M5TBJ0w3Sq2CLGat-Iv_YA/zh-cn_image_0000002561753617.png)
 
 **一、开发准备**
 

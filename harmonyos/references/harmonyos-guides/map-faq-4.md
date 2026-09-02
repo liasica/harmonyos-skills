@@ -5,14 +5,14 @@ breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > Map Kit常见问
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:39:21+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:ebd339d97c4247b59b9f127de3d70348c7de1afb972ca53c538270dde89e4954
+content_hash: sha256:29da7b75a3a6285f47cbb622a1d8dd2afcd54812ebd45777a471bff1dda24ded
 ---
 
 **现象描述**
 
 Map Kit地图Logo不可见。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/LCPL3o4KRUKO-OFQnQiRmA/zh-cn_image_0000002558765558.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053919Z&HW-CC-Expire=86400&HW-CC-Sign=2B11D117EFD10FD6FF473F7165406EDEE5C720DBB2E03BAAB25D392CAB19CDB8 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/LCPL3o4KRUKO-OFQnQiRmA/zh-cn_image_0000002558765558.jpg "点击放大")
 
 **可能原因**
 
@@ -147,4 +147,4 @@ Map Kit无法隐藏地图Logo，用户可通过调整地图组件的边距或布
 
 展示效果如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/0LEwYHxiREqhf-6Jm-kFyw/zh-cn_image_0000002558605902.gif?HW-CC-KV=V1&HW-CC-Date=20260429T053919Z&HW-CC-Expire=86400&HW-CC-Sign=EE93101231F369E7C5A6C19E9D3AAAA4E88516C7BF487407EA73F0713DCA980C "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/0LEwYHxiREqhf-6Jm-kFyw/zh-cn_image_0000002558605902.gif "点击放大")

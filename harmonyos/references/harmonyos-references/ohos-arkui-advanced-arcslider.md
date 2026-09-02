@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:52:05+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:4d00985f456ba06ac1f3ed2011aebe91b4131b604c519d1db95e2943611cfbaa
+content_hash: sha256:69061415b2f8b54dac6f22431debff55d1f5360414847a94ac409783426620bf
 ---
 
 弧形滑动条组件，通常用于在圆形屏幕的穿戴设备中快速调节设置值，如音量调节、亮度调节等应用场景。
@@ -433,4 +433,4 @@ PhonePC/2in1TabletTVWearable
 57. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/FXYH_KTtQqCMa1tX0g7FHA/zh-cn_image_0000002558606596.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055203Z&HW-CC-Expire=86400&HW-CC-Sign=6E0F6380C9B33FF969F686D0CE669027D540A1704FDEB22DBC11A49FFFBB672A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/FXYH_KTtQqCMa1tX0g7FHA/zh-cn_image_0000002558606596.gif)

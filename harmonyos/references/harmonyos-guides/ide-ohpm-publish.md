@@ -5,7 +5,7 @@ breadcrumb: 指南 > 命令行工具 > 三方依赖管理工具（ohpm） > 常�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:47:52+08:00
 doc_updated_at: 2026-04-22
-content_hash: sha256:67696221db76a363a7d0b4dd233b3d04e09e6f88631dee322f8904a49a9369bc
+content_hash: sha256:bf8ebc866f40b96a236c06199078c0d5ad5ea212452c4ae3333ab9b310824a0b
 ---
 
 发布一个三方库。
@@ -168,4 +168,4 @@ content_hash: sha256:67696221db76a363a7d0b4dd233b3d04e09e6f88631dee322f8904a49a9
 
 结果示例：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/vYjkEj5wTLeWt5dMAA5eMw/zh-cn_image_0000002561832663.png?HW-CC-KV=V1&HW-CC-Date=20260429T054751Z&HW-CC-Expire=86400&HW-CC-Sign=33902AC7D1B97F0C59993865FDA43BFE55FA32C6B082A6E534C2B58CC52456E5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/vYjkEj5wTLeWt5dMAA5eMw/zh-cn_image_0000002561832663.png)

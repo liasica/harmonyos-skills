@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:28:46+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:8fd97382b6e0fc0a6026dd1052f5007557f441c29ec724bb58313c0ce4603241
+content_hash: sha256:f61d094a97a2e943028cc6378b8875f01176a13c66290701a09f43ad0e3407b5
 ---
 
 form是一个表单容器，支持容器内[Input](../harmonyos-references/js-components-basic-input.md)组件内容的提交和重置。具体用法请参考[form API](../harmonyos-references/js-components-container-form.md)。
@@ -35,7 +35,7 @@ form是一个表单容器，支持容器内[Input](../harmonyos-references/js-co
 9. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/OkDcKopSTNOhHV9yOXZ-zw/zh-cn_image_0000002558764580.png?HW-CC-KV=V1&HW-CC-Date=20260429T052845Z&HW-CC-Expire=86400&HW-CC-Sign=B24390356381059D2AD63480D83CE873D108D9DC45DA83E23D9D2A4DDFBDB8DD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/OkDcKopSTNOhHV9yOXZ-zw/zh-cn_image_0000002558764580.png)
 
 ## 实现表单缩放
 
@@ -72,7 +72,7 @@ form是一个表单容器，支持容器内[Input](../harmonyos-references/js-co
 15. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/K05xqZTkQoei5wYc0uMXRA/zh-cn_image_0000002558604924.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052845Z&HW-CC-Expire=86400&HW-CC-Sign=BF25F8C2EA25B66F3CFFD27CA65DBB9B28F9D1F24942587E332207E087B8B5B0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/K05xqZTkQoei5wYc0uMXRA/zh-cn_image_0000002558604924.gif)
 
 ## 添加响应事件
 
@@ -134,7 +134,7 @@ form是一个表单容器，支持容器内[Input](../harmonyos-references/js-co
 14. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/RHPiZZY2SQGft6ajv5BF_w/zh-cn_image_0000002589324449.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052845Z&HW-CC-Expire=86400&HW-CC-Sign=3F9A33E3E2F96A052BB34C5FC25A9F8AA3994ED6FA4B8C9E32B5747F827D6F77)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/RHPiZZY2SQGft6ajv5BF_w/zh-cn_image_0000002589324449.gif)
 
 ## 场景示例
 
@@ -213,4 +213,4 @@ form是一个表单容器，支持容器内[Input](../harmonyos-references/js-co
 14. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/JR3-drAnR6evui8aVzBFbw/zh-cn_image_0000002589244389.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052845Z&HW-CC-Expire=86400&HW-CC-Sign=5A63BAB412D6934890F1931174CB656527A9F8B28019405AC622A701298BDC0F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/JR3-drAnR6evui8aVzBFbw/zh-cn_image_0000002589244389.gif)

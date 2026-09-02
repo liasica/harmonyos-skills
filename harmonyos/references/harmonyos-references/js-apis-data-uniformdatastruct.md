@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-data-uniformdatastruct
-title: @ohos.data.uniformDataStruct (标准化数据结构)
+title: "@ohos.data.uniformDataStruct (标准化数据结构)"
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > ArkTS API > @ohos.data.uniformDataStruct (标准化数据结构)
 category: harmonyos-references
 scraped_at: 2026-04-28T07:59:20+08:00

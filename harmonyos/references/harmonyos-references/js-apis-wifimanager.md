@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-wifimanager
-title: @ohos.wifiManager (WLAN)
+title: "@ohos.wifiManager (WLAN)"
 breadcrumb: API参考 > 系统 > 网络 > Connectivity Kit（短距通信服务） > ArkTS API > @ohos.wifiManager (WLAN)
 category: harmonyos-references
 scraped_at: 2026-04-28T08:08:03+08:00

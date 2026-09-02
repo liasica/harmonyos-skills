@@ -5,7 +5,7 @@ breadcrumb: 最佳实践 > 自由流转 > 多端协同 > 碰一碰链接分享
 category: best-practices
 scraped_at: 2026-04-29T14:12:52+08:00
 doc_updated_at: 2026-04-01
-content_hash: sha256:8808f987d8d173cdb279912660d6aa9ad96b6d3a52008c46a45e8488e824d2a5
+content_hash: sha256:d5e52181c00f143a117687bada7a0e4cb263ae451ff62c89506b47ff100ac93a
 ---
 
 ## 概述
@@ -14,7 +14,7 @@ content_hash: sha256:8808f987d8d173cdb279912660d6aa9ad96b6d3a52008c46a45e8488e82
 
 本文以视频分享场景为例，详细介绍碰一碰快速分享视频的原理与开发步骤。
 
-[](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/2a/v3/17x10pf-QrOuHaEmV4VDGw/zh-cn_media_0000002306538056.mp4?HW-CC-KV=V1&HW-CC-Date=20260429T061240Z&HW-CC-Expire=86400&HW-CC-Sign=6A5258D76B67ADCCD998DA692E1424DD168D0C43223AB5B2FDDBC7F34844BB74)
+[](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/2a/v3/17x10pf-QrOuHaEmV4VDGw/zh-cn_media_0000002306538056.mp4)
 
 Video Player is loading.
 
@@ -66,19 +66,19 @@ End of dialog window.
 
 系统直接拉起目标应用视频播放页面播放视频，无需经过浏览器中转，实现一键直达，极大提高便捷度和转化率。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/LzbrStyzTuqfSN1_2j9bDg/zh-cn_image_0000002307668620.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061240Z&HW-CC-Expire=86400&HW-CC-Sign=0A11BD4103F77C26FFC10DB2D400E9A2FABA1D9A029BECEAA439268BCE79DA46 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/LzbrStyzTuqfSN1_2j9bDg/zh-cn_image_0000002307668620.gif "点击放大")
 
 ### 场景二：目标应用未安装，已配置直达应用市场
 
 当对端未安装目标应用且开发者配置了[直达应用市场](../harmonyos-guides/applinking-direct-to-ag.md)功能时，将直接跳转到应用市场的应用详情页。安装完成后，首次打开应用将通过[延迟链接](../harmonyos-guides/applinking-deferredlink.md)功能自动跳转到视频播放页面，无需用户重新搜索或操作。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/RoejT1FcRRa6_mf5JN_iMQ/zh-cn_image_0000002340377337.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061240Z&HW-CC-Expire=86400&HW-CC-Sign=461009C66A2E89EA9DAF7A7564DD927CDF9E4AB0661086C8D3490D84EA05E0F2 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/RoejT1FcRRa6_mf5JN_iMQ/zh-cn_image_0000002340377337.gif "点击放大")
 
 ### 场景三：目标应用未安装，未配置直达应用市场（有Web页面）
 
 对端收到分享的视频链接之后，系统通过浏览器打开Web页面，用户可直接查看内容。在Web页面可提供“下载”按钮，引导用户安装应用获取更佳体验，安装后仍可通过[延迟链接](../harmonyos-guides/applinking-deferredlink.md)直达原内容。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/r6k7ReNYSUy8s6VR4F2fGg/zh-cn_image_0000002341667937.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061240Z&HW-CC-Expire=86400&HW-CC-Sign=7460628F1D76AC3429374CDAF26D97C49CF9BC2B48EA0A66307A35F5225E07E2 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/r6k7ReNYSUy8s6VR4F2fGg/zh-cn_image_0000002341667937.gif "点击放大")
 
 说明
 
@@ -90,11 +90,11 @@ End of dialog window.
 
 碰一碰视频分享后对端跳转目标应用的流程图如下，对端无论是否安装视频应用，用户都能获得连贯流畅的体验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/3fCRh4iFT0mU0NoLrK6M0w/zh-cn_image_0000002306538072.png?HW-CC-KV=V1&HW-CC-Date=20260429T061240Z&HW-CC-Expire=86400&HW-CC-Sign=AF1CDE359A670A113755B9D3AA28950FB5C18DBCD5840BCF5F482B6D9FF57529 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/3fCRh4iFT0mU0NoLrK6M0w/zh-cn_image_0000002306538072.png "点击放大")
 
 碰一碰视频分享时序图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/N0w0DP5xRlK3x9rxeIPhsw/zh-cn_image_0000002306378348.png?HW-CC-KV=V1&HW-CC-Date=20260429T061240Z&HW-CC-Expire=86400&HW-CC-Sign=BCADB831AB7CABF1AF34C536E9DD2608DD270972E7D216D2097EB753B6FC1C0C "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/N0w0DP5xRlK3x9rxeIPhsw/zh-cn_image_0000002306378348.png "点击放大")
 
 说明
 
@@ -414,7 +414,7 @@ thumbnailUri仅支持沙箱文件URI或用户文件URI。若需将网络图片�
 
 卡片效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/D9cWbqHZRA-jhQX3E0ZO9w/zh-cn_image_0000002340377341.png?HW-CC-KV=V1&HW-CC-Date=20260429T061240Z&HW-CC-Expire=86400&HW-CC-Sign=C912F105C46FDFC780BE55037A1550A2351940C0E8BCC15237CB285D3235F00D "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/D9cWbqHZRA-jhQX3E0ZO9w/zh-cn_image_0000002340377341.png "点击放大")
 
 ### 对端跳转处理
 
@@ -556,11 +556,11 @@ thumbnailUri仅支持沙箱文件URI或用户文件URI。若需将网络图片�
 
    为提升用户未安装应用时的体验，可配置[直达应用市场](../harmonyos-guides/applinking-direct-to-ag.md)功能，引导用户下载安装应用。配置完成后，当对端收到源端分享的App Linking链接时，若设备未安装目标应用，系统将直接跳转至应用市场的应用详情页，支持一键下载安装。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/BpkkL53dSTSYMUmELxOr7Q/zh-cn_image_0000002340497529.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061240Z&HW-CC-Expire=86400&HW-CC-Sign=E9F2810DB5CCCEF391CB37230CCA219F97C98287E6DAC6089CF720D0814241D2 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/BpkkL53dSTSYMUmELxOr7Q/zh-cn_image_0000002340497529.gif "点击放大")
 
    同时，需要实现[延迟链接](../harmonyos-guides/applinking-deferredlink.md)功能，确保安装后首次启动可直达内容。安装完应用之后，开发者可以在用户首次打开应用时，使用延迟链接，直接跳转到视频播放页面，这一流程不仅优化了用户体验，还有助于提升链接的转化率。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/WfMoeo_VTli_VK4xI1_pgQ/zh-cn_image_0000002306538076.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061240Z&HW-CC-Expire=86400&HW-CC-Sign=EF8AFAD91299BE978D1A450EA52482049E12B433FE413B6150DF681366B77512 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/WfMoeo_VTli_VK4xI1_pgQ/zh-cn_image_0000002306538076.gif "点击放大")
 
    通过[deferredLink.popDeferredLink()](../harmonyos-references/applinking-deferredlink-api.md#section15555111210233)接口获取原始App Linking链接，并根据解析该链接直接跳转至视频播放页面。
 
@@ -595,7 +595,7 @@ thumbnailUri仅支持沙箱文件URI或用户文件URI。若需将网络图片�
 
    当应用未安装且未配置直达应用市场时，系统会打开浏览器加载视频播放Web页面来播放视频，保证应用在未安装的情况下也能体验播放视频功能，特别是与[延迟链接](../harmonyos-guides/applinking-deferredlink.md)结合使用，详细请参见[Web页面开发与部署（可选）](bpta-social-share.md#section157709544229)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/bDlYdkZ1TQe0KA-Fbm55Ow/zh-cn_image_0000002306378360.png?HW-CC-KV=V1&HW-CC-Date=20260429T061240Z&HW-CC-Expire=86400&HW-CC-Sign=40613516C916849032680D3EAC0A572ABF3558D6F71D21B110DE38BCE4CEB26A "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/bDlYdkZ1TQe0KA-Fbm55Ow/zh-cn_image_0000002306378360.png "点击放大")
 
 ## 常见问题
 

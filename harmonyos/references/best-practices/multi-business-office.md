@@ -5,7 +5,7 @@ breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 >
 category: best-practices
 scraped_at: 2026-04-29T14:12:21+08:00
 doc_updated_at: 2026-03-26
-content_hash: sha256:ac17b6af6b2e0875f01b51bd7778b740f032f8181ed67617193c51de0d34a7c2
+content_hash: sha256:89609edbfbf73ee58e68060c8b675d5ac218c1f33772e6107277ae859a8ca5cf
 ---
 
 ## 概述
@@ -38,7 +38,7 @@ content_hash: sha256:ac17b6af6b2e0875f01b51bd7778b740f032f8181ed67617193c51de0d3
 
 本示例中的商务办公应用包含入口、备忘录、笔记汇总、笔记、日历等页面。以平板端为例，应用的基本业务逻辑如下所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/-QJaTpWrRlSOIvo1GE4ARw/zh-cn_image_0000002229337365.png?HW-CC-KV=V1&HW-CC-Date=20260429T061210Z&HW-CC-Expire=86400&HW-CC-Sign=D84A6CE1E5EDA26AB5595798ECCA407C53BABCCF0369719F520A410F7D13A45A "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/-QJaTpWrRlSOIvo1GE4ARw/zh-cn_image_0000002229337365.png "点击放大")
 
 ## 架构设计
 

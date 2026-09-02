@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > �
 category: harmonyos-references
 scraped_at: 2026-04-29T13:53:50+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:a2980729208cefccb1b878deb27ce905e2430500c7fc7914236ecc0d63558d0b
+content_hash: sha256:f13144dbc11338a10f7e253dbcec601d82d269e5bdca11d524c9b6d6160e54bb
 ---
 
 堆叠容器，子组件按照顺序依次入栈，后一个子组件覆盖前一个子组件。
@@ -109,4 +109,4 @@ PhonePC/2in1TabletTVWearableLite Wearable
 28. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/hu6RMZXJSLuROG-VofjI0g/zh-cn_image_0000002558607272.png?HW-CC-KV=V1&HW-CC-Date=20260429T055349Z&HW-CC-Expire=86400&HW-CC-Sign=C84C71C4339F3CAA24B07E4715A6F514177D0D87726F1415E103A1F555BB4B83)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/hu6RMZXJSLuROG-VofjI0g/zh-cn_image_0000002558607272.png)

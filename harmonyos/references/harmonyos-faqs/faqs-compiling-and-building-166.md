@@ -5,7 +5,7 @@ breadcrumb: FAQ > DevEco Studio > 编译构建 > 编译报错“byteCodeHar not 
 category: harmonyos-faqs
 scraped_at: 2026-04-29T14:21:00+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:ab86e26eaef0728bd36b8214509b7b456352a036fe8acd029c3ad175bfc64d58
+content_hash: sha256:bba4c193d7ef04b3eb87b2e0192698e2d411092377b1cbcd850f4a6436061cb4
 ---
 
 **错误描述**
@@ -16,13 +16,13 @@ content_hash: sha256:ab86e26eaef0728bd36b8214509b7b456352a036fe8acd029c3ad175bfc
 
 当HAR模块的build-profile.json5文件中的byteCodeHar字段配置为true时，工程级build-profile.json5文件中的useNormalizedOHMUrl字段未配置为true。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/AbnliVEeSiO_VD9OZl4n_A/zh-cn_image_0000002194318416.png?HW-CC-KV=V1&HW-CC-Date=20260429T062059Z&HW-CC-Expire=86400&HW-CC-Sign=90B09716E2E64DBA82A7AB467B1206E94068F91607F732589D3730EE1A7107CF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/AbnliVEeSiO_VD9OZl4n_A/zh-cn_image_0000002194318416.png)
 
 **解决措施**
 
 当HAR模块的build-profile.json5文件中byteCodeHar字段配置为true时，工程级build-profile.json5文件中的useNormalizedOHMUrl字段也必须配置为true。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/WnJPRKIlQVSYODdmV8rxQg/zh-cn_image_0000002308297297.png?HW-CC-KV=V1&HW-CC-Date=20260429T062059Z&HW-CC-Expire=86400&HW-CC-Sign=0DDB2EB491E41C0E40E749E39C57B045CE26B364E967F65F25954B4B94F5B7EE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/WnJPRKIlQVSYODdmV8rxQg/zh-cn_image_0000002308297297.png)
 
 **参考链接**
 

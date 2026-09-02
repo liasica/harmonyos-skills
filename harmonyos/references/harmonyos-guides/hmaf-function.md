@@ -5,20 +5,20 @@ breadcrumb: 指南 > AI > Agent Framework Kit（智能体框架服务） > 通�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:40:52+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:a4162fe3c3f87def01a205748eace312a2416d5f41d8e0bc4e5941e8aaf5abfa
+content_hash: sha256:714d34d7ab9cbbddfc9335b67b230c3b92bd19cfe6c66725b6c7d3bfef98c7c1
 ---
 
 ## 场景介绍
 
 * Function组件分为图标组件和按钮组件，无标题时默认显示图标组件，有标题时默认显示按钮组件。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/wJNym3f6RjGTIxDQFWZRrw/zh-cn_image_0000002589325579.png?HW-CC-KV=V1&HW-CC-Date=20260429T054050Z&HW-CC-Expire=86400&HW-CC-Sign=134DB6D332108DE842A407024491C6D0631B5B0AA7BD7E670408F0F464116C22)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/wJNym3f6RjGTIxDQFWZRrw/zh-cn_image_0000002589325579.png)
 * Function图标组件效果：综合型入口。不带用户意图，可作为应用内智能体主入口。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/Ln33v-peSzS1dsHuXy-1sA/zh-cn_image_0000002589245517.png?HW-CC-KV=V1&HW-CC-Date=20260429T054050Z&HW-CC-Expire=86400&HW-CC-Sign=200CE83032BA3AEA663121F78A9EE95515652FC669E35D3780A61034FDB53287)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/Ln33v-peSzS1dsHuXy-1sA/zh-cn_image_0000002589245517.png)
 * Function按钮组件：允许应用自定义功能描述的组件。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/15su13K5RCCWHJLBq7XL1A/zh-cn_image_0000002558765710.png?HW-CC-KV=V1&HW-CC-Date=20260429T054050Z&HW-CC-Expire=86400&HW-CC-Sign=9A2FCA6341E52601208EA22231BB2ABFEAB92CED7F0AB1518A27D87E9C152416)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/15su13K5RCCWHJLBq7XL1A/zh-cn_image_0000002558765710.png)
 
 ## 开发前准备
 

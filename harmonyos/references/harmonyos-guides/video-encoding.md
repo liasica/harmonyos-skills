@@ -5,7 +5,7 @@ breadcrumb: 指南 > 媒体 > AVCodec Kit（音视频编解码服务） > 音视
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:34:40+08:00
 doc_updated_at: 2026-04-02
-content_hash: sha256:3a0f94b12ae0bffadc15426ea00b2918b79845dad114f89e12f2291e7a0be4c5
+content_hash: sha256:6b951ff1e50adc916439d23a3873d85b48e885b9d3a7e926cb1b7b2bc1ff91ee
 ---
 
 开发者可以调用本模块的Native API接口，完成视频编码，即将未压缩的视频数据压缩成视频码流。
@@ -54,7 +54,7 @@ content_hash: sha256:3a0f94b12ae0bffadc15426ea00b2918b79845dad114f89e12f2291e7a0
 
 如下为状态机调用关系图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/1lMuuPJTSI-P2x3J4BhLKw/zh-cn_image_0000002558765044.png?HW-CC-KV=V1&HW-CC-Date=20260429T053438Z&HW-CC-Expire=86400&HW-CC-Sign=C36A2295E7523D14C6A2C3DF7153BE0B6A973064BF4B9A3E1124CA193DDF8F65)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/1lMuuPJTSI-P2x3J4BhLKw/zh-cn_image_0000002558765044.png)
 
 1. 有两种方式可以使编码器进入Initialized状态：
 
@@ -84,7 +84,7 @@ content_hash: sha256:3a0f94b12ae0bffadc15426ea00b2918b79845dad114f89e12f2291e7a0
 * 虚线表示可选。
 * 实线表示必选。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/SBRWlT08Shi7sDWJ9qg4ZQ/zh-cn_image_0000002558605388.png?HW-CC-KV=V1&HW-CC-Date=20260429T053438Z&HW-CC-Expire=86400&HW-CC-Sign=0A9A8DD1EED1D56E6EC3E24CA153591EF80793C5D540136F2D0847207499E1A4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/SBRWlT08Shi7sDWJ9qg4ZQ/zh-cn_image_0000002558605388.png)
 
 ### 在 CMake 脚本中链接动态库
 
@@ -890,7 +890,7 @@ content_hash: sha256:3a0f94b12ae0bffadc15426ea00b2918b79845dad114f89e12f2291e7a0
    * OH\_MD\_KEY\_VIDEO\_STRIDE表示wStride；
    * OH\_MD\_KEY\_VIDEO\_SLICE\_HEIGHT表示hStride。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/QJv59bBGQp2xLqsi1_lhHA/zh-cn_image_0000002589324915.png?HW-CC-KV=V1&HW-CC-Date=20260429T053438Z&HW-CC-Expire=86400&HW-CC-Sign=97DF4676A71FC9960FE57F1B8B6889A28F69CE714737C18B1610ABCF1EC618DA)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/QJv59bBGQp2xLqsi1_lhHA/zh-cn_image_0000002589324915.png)
 
    添加头文件。
 

@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 管理网页加载�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:29:24+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:160f73e037a8f3bf88d4db3b8e8f5f2a310fbafa5a3ba40b02640794a0fdac8a
+content_hash: sha256:26c9abe2c1a527533a966a93c8c63a67467d4f0846dad88717ada11924ed782c
 ---
 
 页面加载是Web组件的基本功能。根据页面加载数据来源可以分为三种常用场景，包括加载网络页面、加载本地页面、加载HTML格式的富文本数据。
@@ -74,7 +74,7 @@ content_hash: sha256:160f73e037a8f3bf88d4db3b8e8f5f2a310fbafa5a3ba40b02640794a0f
 
   **图1** 资源文件路径
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/GELXxaf2RE-JPVGCGrjKUw/zh-cn_image_0000002558605062.png?HW-CC-KV=V1&HW-CC-Date=20260429T052923Z&HW-CC-Expire=86400&HW-CC-Sign=994A54CAD6645A4B557B3710F254A7E90226488FC1A9650140BDAE5BB23CD2C9)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/GELXxaf2RE-JPVGCGrjKUw/zh-cn_image_0000002558605062.png)
 * 应用侧代码。
 
   ```

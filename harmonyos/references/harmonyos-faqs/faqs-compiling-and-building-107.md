@@ -5,14 +5,14 @@ breadcrumb: FAQ > DevEco Studio > 编译构建 > 编译报错“Duplicated files
 category: harmonyos-faqs
 scraped_at: 2026-04-29T14:20:43+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:edcf61e6d61129aa4a5e064582cf076073c98fa0dec5e789bee00c2b6d66ba80
+content_hash: sha256:06da041ad45f19f885a4a96b9017e065917b75460258dc55221aa09c4bbac9aa
 ---
 
 **问题现象**
 
 编译构建时，报错“Duplicated files found in module entry. This may cause unexpected errors at runtime”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/D1FR-ZAzRLyLscBwFKyBlg/zh-cn_image_0000002229603833.png?HW-CC-KV=V1&HW-CC-Date=20260429T062041Z&HW-CC-Expire=86400&HW-CC-Sign=EE1DAF11453186BF1E7E0800A390A4B22DD437FEDE4A7369086EDCCC51759C4E "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/D1FR-ZAzRLyLscBwFKyBlg/zh-cn_image_0000002229603833.png "点击放大")
 
 **解决措施**
 

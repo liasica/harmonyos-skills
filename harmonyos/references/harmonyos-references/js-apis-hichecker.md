@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-hichecker
-title: @ohos.hichecker (检测模式)
+title: "@ohos.hichecker (检测模式)"
 breadcrumb: API参考 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > ArkTS API > @ohos.hichecker (检测模式)
 category: harmonyos-references
 scraped_at: 2026-04-28T08:11:15+08:00

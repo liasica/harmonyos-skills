@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:28:52+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:264c17471c5541e634576137bef2732f52037e878538335c26697f3e70517f56
+content_hash: sha256:824a5ed627e478efacf1ea6a6e2b51f7b12af766ba9ba7ff934cdba286f21819
 ---
 
 栅格布局容器根节点，使用grid-row与grid-col进行栅格布局。API具体描述请参考[grid-container](../harmonyos-references/js-components-grid-container.md)。
@@ -37,7 +37,7 @@ content_hash: sha256:264c17471c5541e634576137bef2732f52037e878538335c26697f3e705
 8. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/boJVN_LJTMujJ9h5Os-aow/zh-cn_image_0000002558764628.png?HW-CC-KV=V1&HW-CC-Date=20260429T052851Z&HW-CC-Expire=86400&HW-CC-Sign=D3BAF1A5A42A13271631C940D521C703FC69CC0957AA9248540174EEC915F6E5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/boJVN_LJTMujJ9h5Os-aow/zh-cn_image_0000002558764628.png)
 
 说明
 
@@ -106,7 +106,7 @@ grid-container仅支持grid-row为子组件。
 29. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/cFCQEMzbSRy8o3-bLz_NaA/zh-cn_image_0000002558604972.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052851Z&HW-CC-Expire=86400&HW-CC-Sign=EE4C7495D239EB3FC762A4AA9522CDCD9987DB0E58DEA8971F28C2942D773068)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/cFCQEMzbSRy8o3-bLz_NaA/zh-cn_image_0000002558604972.gif)
 
 ## 添加grid-col
 
@@ -162,7 +162,7 @@ grid-container仅支持grid-row为子组件。
 13. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/_aVqZM9LQtSnsYg5kWlISQ/zh-cn_image_0000002589324499.png?HW-CC-KV=V1&HW-CC-Date=20260429T052851Z&HW-CC-Expire=86400&HW-CC-Sign=B37A520A110FA05D8B513431E715E0AB856186681ED2128026D27C6AD25FA1B1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/_aVqZM9LQtSnsYg5kWlISQ/zh-cn_image_0000002589324499.png)
 
 说明
 
@@ -237,4 +237,4 @@ grid-row仅支持grid-col为子组件，只能在grid-col组件中添加填充�
 26. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/2j0MvD1qQze2BOoQURiXJg/zh-cn_image_0000002589244437.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052851Z&HW-CC-Expire=86400&HW-CC-Sign=26980450CFE82BFBF54ED1EC5A0D22B6F18E291C09CC635C73EB9D686DEC460F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/2j0MvD1qQze2BOoQURiXJg/zh-cn_image_0000002589244437.gif)

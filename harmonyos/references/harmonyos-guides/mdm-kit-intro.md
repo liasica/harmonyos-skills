@@ -5,7 +5,7 @@ breadcrumb: 指南 > 系统 > 基础功能 > MDM Kit（企业设备管理服务�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:33:26+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:9811cf192b0096e6442f04b984dfc0e9c518e8272a62f00b1f7a1a8fe2a6d18f
+content_hash: sha256:29abab825fd8dd5c8d5f001e8b3c70acc66396ca2eba86514e546b27380fb36e
 ---
 
 ## 业务介绍
@@ -21,7 +21,7 @@ MDM Kit（企业设备管理服务）为企业MDM（Mobile Device Management）�
 
 框架层和服务层提供了enterprise\_device\_management部件和enterprise\_device\_management\_ext部件，enterprise\_device\_management部件提供了设备管理应用程序框架和基本设备管理能力，enterprise\_device\_management\_ext部件为HarmonyOS NEXT设备提供扩展的企业设备管理能力。设备管理应用通过[EnterpriseAdminExtensionAbility](mdm-kit-admin.md)来调用MDM Kit中的接口，实现管理设备的意图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/zPJ62dKmTPi6iWdRyDBeMg/zh-cn_image_0000002558764960.png?HW-CC-KV=V1&HW-CC-Date=20260429T053325Z&HW-CC-Expire=86400&HW-CC-Sign=D584C1C6DF793632EDBF9EA4EF5880711BBC8DACEC0538B3921014B662FB76DB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/zPJ62dKmTPi6iWdRyDBeMg/zh-cn_image_0000002558764960.png)
 
 ## 约束与限制
 

@@ -5,16 +5,16 @@ breadcrumb: 指南 > 系统 > 硬件 > Car Kit（车服务） > 开发准备
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:33:28+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:d62431dc793c53e9608f2091d67a891369d6ffc130fc6cf9017f020cd46edd89
+content_hash: sha256:2c4210c2b7836bb0b78fbe83d06de62f561abbf84f40985d0ea78f140a4c3afc
 ---
 
 应用在使用Car Kit能力前，开发者需要完成的配置：配置编译模式、配置权限、配置能力。
 
 ## 配置编译模式
 
-在打包应用时，请在DevEco Studio中，点击右上角![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/_1_ObhKjTv20vrJDf-2O7w/zh-cn_image_0000002589244771.png?HW-CC-KV=V1&HW-CC-Date=20260429T053327Z&HW-CC-Expire=86400&HW-CC-Sign=30CDE01AFD5BED559A9A35FDDD15C2A6DF0FB31BF5C232F4F7E4D2313C58ED76)图标，将编译模式修改为“release”，然后点击右下角的“Apply”即可。
+在打包应用时，请在DevEco Studio中，点击右上角![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/_1_ObhKjTv20vrJDf-2O7w/zh-cn_image_0000002589244771.png)图标，将编译模式修改为“release”，然后点击右下角的“Apply”即可。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/SwNvxjUkT_2sGs39heTawQ/zh-cn_image_0000002558764966.png?HW-CC-KV=V1&HW-CC-Date=20260429T053327Z&HW-CC-Expire=86400&HW-CC-Sign=5442CF52583932CE75AF0352D9FD6A957441D82DE7A043BE2ECCACE85686CC5D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/SwNvxjUkT_2sGs39heTawQ/zh-cn_image_0000002558764966.png)
 
 ## 配置权限
 

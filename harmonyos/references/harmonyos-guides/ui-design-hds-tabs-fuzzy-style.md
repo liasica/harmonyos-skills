@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > UI Design Kit（UI设计套件） > 底部�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:30:22+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:603b6dbe2cce3fa1bf12f80a9da55a4d94d3a7a7fe2d6d7b15137b5898ad114c
+content_hash: sha256:9ac10199e742aaf9fe6aca154b0b8381d532f07072037a3936aea172b3f50070
 ---
 
 ## 场景介绍
@@ -16,10 +16,10 @@ content_hash: sha256:603b6dbe2cce3fa1bf12f80a9da55a4d94d3a7a7fe2d6d7b15137b5898a
 
 * 直接模糊
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/oXH7-khDQdGTsMsLcL4M4Q/zh-cn_image_0000002589324709.png?HW-CC-KV=V1&HW-CC-Date=20260429T053021Z&HW-CC-Expire=86400&HW-CC-Sign=4636361F7F242C0D4836DFE7EC95CB1DFD8AB60A61B1F4D15DFE5B1CF5EAF683)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/oXH7-khDQdGTsMsLcL4M4Q/zh-cn_image_0000002589324709.png)
 * 渐变模糊
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/OoSoetZIRlCupyZDPvSzTA/zh-cn_image_0000002589244647.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053021Z&HW-CC-Expire=86400&HW-CC-Sign=8BDDAF550A2048DDA7F05F1A7D04E9119210C6794D1B9D7C2F784499C2038DFC)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/OoSoetZIRlCupyZDPvSzTA/zh-cn_image_0000002589244647.jpg)
 
 ## 约束条件
 

@@ -5,7 +5,7 @@ breadcrumb: FAQ > 应用框架开发 > UI框架 > 方舟UI框架（ArkUI） > �
 category: harmonyos-faqs
 scraped_at: 2026-04-29T14:16:11+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:c8628bbb266b292af0a47817e3788eb3d3517eb7b3be2249ef82dc760781a4bc
+content_hash: sha256:a13e3b18eb74f4a4a02287a14f7256a5b1d526630626eefc196d4f763136d948
 ---
 
 1. 字体管理中[@ohos.font (注册自定义字体)](../harmonyos-references/js-apis-font.md)。
@@ -59,4 +59,4 @@ content_hash: sha256:c8628bbb266b292af0a47817e3788eb3d3517eb7b3be2249ef82dc76078
 
 效果如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/xguF_tpOSSCNgzsuLxmTlQ/zh-cn_image_0000002194158888.png?HW-CC-KV=V1&HW-CC-Date=20260429T061610Z&HW-CC-Expire=86400&HW-CC-Sign=3E9412415365D00347E1EBF243E34AA08A972751B789477823A192CB2707716F "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/xguF_tpOSSCNgzsuLxmTlQ/zh-cn_image_0000002194158888.png "点击放大")

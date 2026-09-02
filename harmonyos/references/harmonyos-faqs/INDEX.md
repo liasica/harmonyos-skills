@@ -1,6 +1,6 @@
 # FAQ（harmonyos-faqs）
 
-共 1651 篇文档。
+共 1650 篇文档。
 
 - [如何获取系统时间戳](faq-basics-service-kit-1.md)
 - [如何获取系统版本号](faq-basics-service-kit-10.md)
@@ -74,7 +74,6 @@
 - [开发非UI功能，使用ts开发而非ets开发对应用有哪些影响（内存、CPU、hap大小等方面）](faqs-ability-98.md)
 - [如何判断App的启动来源](faqs-ability-99.md)
 - [程序框架（Ability）](faqs-ability-kit.md)
-- [多设备场景](faqs-ability-kit.md)
 - [程序框架](faqs-ability.md)
 - [权限申请被拒绝后，再次申请权限，是否出现申请权限弹窗](faqs-access-control-1.md)
 - [在系统设置修改了应用权限，应用能否监听到权限变化](faqs-access-control-10.md)

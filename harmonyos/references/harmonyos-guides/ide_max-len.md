@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_max-len
-title: @hw-stylistic/max-len
+title: "@hw-stylistic/max-len"
 category: harmonyos-guides
 scraped_at: 2026-04-28T07:56:28+08:00
 doc_updated_at: 2026-01-15

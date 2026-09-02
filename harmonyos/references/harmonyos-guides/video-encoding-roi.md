@@ -5,7 +5,7 @@ breadcrumb: 指南 > 媒体 > AVCodec Kit（音视频编解码服务） > 音视
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:34:41+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:b658da04038989fbccd90f7045036bb14981330ac685f25eaeeb8992a5595106
+content_hash: sha256:e8445cd1247f3e952832f26803706aaf7679e569d4cb5639df8458ecb9947fcb
 ---
 
 ## 基础概念
@@ -57,7 +57,7 @@ ROI视频编码适用于因网络带宽限制导致码率不能满足视频画�
 
 **图1：ROI坐标和最大允许面积占比示意图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/z3yLPkHWSkG34DpovkoBlg/zh-cn_image_0000002558605392.png?HW-CC-KV=V1&HW-CC-Date=20260429T053440Z&HW-CC-Expire=86400&HW-CC-Sign=52967B868C984F243159CB68A45B73E56463033A5A55FBC0FC19E0725FD0AFAF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/z3yLPkHWSkG34DpovkoBlg/zh-cn_image_0000002558605392.png)
 
 ## 生效机制说明
 
@@ -102,7 +102,7 @@ ROI信息需与相机视频帧信息严格对齐。实际应用中，若两个�
 
 **图2：NativeBuffer元数据接口配置ROI流程图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/xfB2hcvpSt2cUmbRSEO-Zw/zh-cn_image_0000002589324919.png?HW-CC-KV=V1&HW-CC-Date=20260429T053440Z&HW-CC-Expire=86400&HW-CC-Sign=006F7A707A8D5505DB9A6DBCC707C76BC215F63AAF0373BD4FEBFA95F297F661)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/xfB2hcvpSt2cUmbRSEO-Zw/zh-cn_image_0000002589324919.png)
 
 详细开发步骤如下：
 
@@ -348,7 +348,7 @@ ROI信息需与相机视频帧信息严格对齐。实际应用中，若两个�
 
 **图3：编码输入参数回调接口配置ROI流程图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/aOVOWLiBRkee92-WawFq1Q/zh-cn_image_0000002589244855.png?HW-CC-KV=V1&HW-CC-Date=20260429T053440Z&HW-CC-Expire=86400&HW-CC-Sign=C1F154AE2C09B29EE1544014BB99B944904AF4E149FB87589C3533457BFAE78E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/aOVOWLiBRkee92-WawFq1Q/zh-cn_image_0000002589244855.png)
 
 详细开发步骤如下：
 
@@ -510,7 +510,7 @@ ROI信息需与相机视频帧信息严格对齐。实际应用中，若两个�
 
 **图4：编码输入Buffer回调接口配置ROI流程图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/_HdDsCAPSG-3O3ZSNDqPUg/zh-cn_image_0000002558765050.png?HW-CC-KV=V1&HW-CC-Date=20260429T053440Z&HW-CC-Expire=86400&HW-CC-Sign=8C0684E5E3D25D768CA44A1C20AB682D4A1C13B43707C5A3E82061371A85B661)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/_HdDsCAPSG-3O3ZSNDqPUg/zh-cn_image_0000002558765050.png)
 
 准备步骤同[Surface模式下通过编码输入回调接口配置ROI](video-encoding-roi.md#surface模式下通过编码输入回调接口配置roi)步骤1-4，此处仅说明配置差异。
 

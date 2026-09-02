@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hp-ffrt-no-use-std
-title: @performance/hp-ffrt-no-use-std
+title: "@performance/hp-ffrt-no-use-std"
 breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 性能规则@performance > @performance/hp-ffrt-no-use-std
 category: harmonyos-guides
 scraped_at: 2026-04-28T07:56:11+08:00

@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_hp-arkui-no-stringify-lazyforeach-key
-title: @performance/hp-arkui-no-stringify-in-lazyforeach-key-generator
+title: "@performance/hp-arkui-no-stringify-in-lazyforeach-key-generator"
 breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 性能规则@performance > @performance/hp-arkui-no-stringify-in-lazyforeach-key-generator
 category: harmonyos-guides
 scraped_at: 2026-04-28T07:56:05+08:00

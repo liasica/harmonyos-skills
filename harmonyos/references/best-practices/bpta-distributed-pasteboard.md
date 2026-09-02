@@ -5,7 +5,7 @@ breadcrumb: 最佳实践 > 自由流转 > 多端协同 > 跨设备剪贴板常�
 category: best-practices
 scraped_at: 2026-04-29T14:12:41+08:00
 doc_updated_at: 2026-04-01
-content_hash: sha256:0226fd0650d1edb65e0f4b3d7b0ac1878d9e3ceb9255cfccf755b46b2edeb31e
+content_hash: sha256:2e23356aa114012258fe739d0dcf55bd5070e0d0fafafdda664e76e0d0379777
 ---
 
 ## 概述
@@ -43,7 +43,7 @@ content_hash: sha256:0226fd0650d1edb65e0f4b3d7b0ac1878d9e3ceb9255cfccf755b46b2ed
 
 用户在任意应用（如短信、浏览器等）中复制包含特定标识的文本（如活动口令、订单号或链接等），随后打开目标应用（如商城应用、服务应用），应用能自动识别复制文本中预设的关键字或编码。应用在校验关键字格式、时效性或用户权限通过后，弹窗或直接跳转至关联的活动页面、订单详情页或其他特定功能模块。例如用户复制短信中的活动链接，打开商城应用后自动跳转至促销活动页，无需手动搜索或点击多级菜单。
 
-[](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/29/v3/ZipMcLnaQz2U9rF5Sb7IuA/zh-cn_media_0000002429043485.mp4?HW-CC-KV=V1&HW-CC-Date=20260429T061240Z&HW-CC-Expire=86400&HW-CC-Sign=A37BFA3E92E6CCE353CEE8DA4DA8ED7E729E5FACBE910D072A4A8FEEEA5D3510)
+[](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/29/v3/ZipMcLnaQz2U9rF5Sb7IuA/zh-cn_media_0000002429043485.mp4)
 
 Video Player is loading.
 
@@ -165,7 +165,7 @@ End of dialog window.
 
 随着富文本数据接入不同设备，为了使复制的数据能够被更多的设备B识别，设备A需要将同一份数据的多种样式存入剪贴板中。如设备A图文混排的富文本数据可以按[纯文本类型（'text/plain'）](../harmonyos-references/js-apis-pasteboard.md#常量)、包含文字样式及图片的[HTML类型（'text/html'）](../harmonyos-references/js-apis-pasteboard.md#常量)、[纯图片类型（'pixelMap'）](../harmonyos-references/js-apis-pasteboard.md#常量)等多种类型存入剪贴板。设备B选择需要的类型读取对应类型的数据，然后实现粘贴操作。剪贴板支持的数据类型请参考[@ohos.pasteboard (剪贴板)](../harmonyos-references/js-apis-pasteboard.md#常量)。
 
-[](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/e4/v3/Z0feEUAmRlaijgzVxJe8tg/zh-cn_media_0000002429163385.mp4?HW-CC-KV=V1&HW-CC-Date=20260429T061240Z&HW-CC-Expire=86400&HW-CC-Sign=76DC6B3DA8CE406904A9939E8FDC0F6F813BAA752A58C50526540FB7CF3C9525)
+[](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/e4/v3/Z0feEUAmRlaijgzVxJe8tg/zh-cn_media_0000002429163385.mp4)
 
 Video Player is loading.
 
@@ -342,7 +342,7 @@ End of dialog window.
 
 允许文件粘贴时，通常需要使用进度条将抽象进程转化为可视化的动态变化，帮助用户快速理解了解当前进展。
 
-[](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/f1/v3/tpDeT9fWReukKsKTZhBCRg/zh-cn_media_0000002395443772.mp4?HW-CC-KV=V1&HW-CC-Date=20260429T061240Z&HW-CC-Expire=86400&HW-CC-Sign=299D698F52C7F25497D84ED883E1CCFBB81E6AB29A5476EB0BDA2720068580D9)
+[](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/f1/v3/tpDeT9fWReukKsKTZhBCRg/zh-cn_media_0000002395443772.mp4)
 
 Video Player is loading.
 

@@ -5,14 +5,14 @@ breadcrumb: 指南 > 图形 > Graphics Accelerate Kit（图形加速服务） > 
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:36:34+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:0b03119f039e12a0d737319b804712077b82a997b59a381381a09525975d134a
+content_hash: sha256:d98589414dfb75f59868a5eb632e7b5986078f71c0a8453e6bd6f4d959c6a622
 ---
 
 **现象描述**
 
 以团结引擎URP管线为例，ABR对DrawOpaqueObjects绑定的Buffer进行分辨率调整时会引起SSAO shadow效果异常。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/jEy7T_WRSZ2N5dW5ijLbxA/zh-cn_image_0000002558765232.png?HW-CC-KV=V1&HW-CC-Date=20260429T053633Z&HW-CC-Expire=86400&HW-CC-Sign=373F8BE0283B1B0D90E4966701D825F3121153FDC648A46B01FE64386A57A197)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/jEy7T_WRSZ2N5dW5ijLbxA/zh-cn_image_0000002558765232.png)
 
 **原因分析**
 
@@ -26,7 +26,7 @@ content_hash: sha256:0b03119f039e12a0d737319b804712077b82a997b59a381381a09525975
 
     在URP资产中勾选“After Opaque”：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/4LsnTCl3T5-N5_knTTcbNg/zh-cn_image_0000002558605576.png?HW-CC-KV=V1&HW-CC-Date=20260429T053633Z&HW-CC-Expire=86400&HW-CC-Sign=AA1CAA6C52D11DFB34CFE4E589C8C9E2CC728222A7773E914359302386224360)
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/4LsnTCl3T5-N5_knTTcbNg/zh-cn_image_0000002558605576.png)
   + **方案2**：获取实时的ABR Buffer分辨率因子，并根据Buffer分辨率因子对相关渲染数据进行同步调整。
 
     SSAO的shader会根据scaledScreenParams参数进行计算，该变量与渲染分辨率相关，在集成ABR后，scaledScreenParams需要根据实时的ABR Buffer分辨率因子调整。

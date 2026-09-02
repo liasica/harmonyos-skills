@@ -5,7 +5,7 @@ breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.1.0(18) > OS平台能力 >
 category: harmonyos-releases
 scraped_at: 2026-04-29T13:22:45+08:00
 doc_updated_at: 2026-02-09
-content_hash: sha256:64536c4958ca9a1c1685b660ec051e86b1e5548a8a1f97cb93f4e71d35e949be
+content_hash: sha256:d14e1ed4849f9141ed118c6fa4c8dc73fe6493b2451b4a4e9824421f67701c67
 ---
 
 ## ArkTS
@@ -206,7 +206,7 @@ getKeyboardAvoidMode
 * 变更前：在XComponent组件上使用renderFit接口，使用部分fit模式的显示效果不符合预期。
 * 变更后：XComponent组件上使用renderFit接口后，可以正确显示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/GMd5rSfBT3yywGJPLEJsVQ/zh-cn_image_0000002295394565.png?HW-CC-KV=V1&HW-CC-Date=20260429T052243Z&HW-CC-Expire=86400&HW-CC-Sign=AE62D385E80C9F4DC1094DD4BC0F4812C175EE28A31B28E837E765A38E813FB2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/GMd5rSfBT3yywGJPLEJsVQ/zh-cn_image_0000002295394565.png)
 
 **起始API Level**
 
@@ -253,7 +253,7 @@ getKeyboardAvoidMode
 
 在白名单的内置组件属性与自定义组件重名时，编译拦截报错。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/YcqoScOgSOC4uBnwOnSiVg/zh-cn_image_0000002260714460.png?HW-CC-KV=V1&HW-CC-Date=20260429T052243Z&HW-CC-Expire=86400&HW-CC-Sign=E8C063E329D74F9FB4249F5399C1839BE5E6B58E7D312E986327F5C718A1EDCD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/YcqoScOgSOC4uBnwOnSiVg/zh-cn_image_0000002260714460.png)
 
 **起始API Level**
 

@@ -5,7 +5,7 @@ breadcrumb: 最佳实践 > 图形 > GPU加速 > 马良GPU渲染优化
 category: best-practices
 scraped_at: 2026-04-29T14:11:48+08:00
 doc_updated_at: 2026-03-19
-content_hash: sha256:489900ee5e9a2791abf264c100072f80e616d6b6a6a416ae54219d67bcddcfdc
+content_hash: sha256:5b81aff4c02a18d1ddbba0122a41a91831aa35cc27322373f801df1764594fa9
 ---
 
 ## 概述
@@ -17,7 +17,7 @@ content_hash: sha256:489900ee5e9a2791abf264c100072f80e616d6b6a6a416ae54219d67bcd
 
 图形渲染的基本流程如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/nJh1V0BCQ3WO8OLNiLmwww/zh-cn_image_0000002229450553.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T060923Z&HW-CC-Expire=86400&HW-CC-Sign=0FD5660C532A48C40628B53067A2DB172912C885AB651D41C5DCEBB0C3A892F2 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/nJh1V0BCQ3WO8OLNiLmwww/zh-cn_image_0000002229450553.jpg "点击放大")
 
 说明
 
@@ -41,7 +41,7 @@ vkAllocateMemory为了避免分配的内存没有真正被渲染线程使用，�
 
 根据资源需求，选择最为匹配的内存类型进行内存分配，相同类型的memory按照用户实际需求一次分配大块size用于不同类型的资源（比如index buffer、vertex buffer及uniform buffer），可以提升内存申请的效率。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/01mdVWFMSXaw4hhyLlELfw/zh-cn_image_0000002229336081.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T060923Z&HW-CC-Expire=86400&HW-CC-Sign=ED5A0D54DDA26476C0FFBFFFD900C97F762107F1EF77A843F97E0512CC34A6E4 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/01mdVWFMSXaw4hhyLlELfw/zh-cn_image_0000002229336081.jpg "点击放大")
 
 * vkFreeMemory一定要与vkAllocateMemory成对使用，避免内存泄漏。
 * 绑定的memory资源尽量分时复用。
@@ -981,7 +981,7 @@ Vulkan提供了多种不同的同步原语供App使用，用户可以用这些�
 
 Job的执行顺序如下图所示，可见graphics jobs之间存在较大空隙，compute和graphics jobs为串行执行。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/CtlwF1Q3ThKq9pf7giEM6Q/zh-cn_image_0000002194010276.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T060923Z&HW-CC-Expire=86400&HW-CC-Sign=3989A3154A2CCFF263074B67B475497A2829BD6707341026EC59B1B62C84975A "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/CtlwF1Q3ThKq9pf7giEM6Q/zh-cn_image_0000002194010276.jpg "点击放大")
 
 为了避免以上情况出现，compute执行时，尽量让可以并行的graphics任务与compute同时执行。API序列如下所示：
 
@@ -1004,7 +1004,7 @@ Job的执行顺序如下图所示，可见graphics jobs之间存在较大空隙�
 
 Job的执行顺序如下图所示，此时compute和graphics jobs可以并发执行。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/Lvoh_N65ReipKlRM1uaq4Q/zh-cn_image_0000002193850692.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T060923Z&HW-CC-Expire=86400&HW-CC-Sign=7454AB00C8DAB80EBFBE4CB6DF7AEDFC0D8F05FDA47E97F6765E7B3D423F1CD3 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/Lvoh_N65ReipKlRM1uaq4Q/zh-cn_image_0000002193850692.jpg "点击放大")
 
 **【不推荐】**
 

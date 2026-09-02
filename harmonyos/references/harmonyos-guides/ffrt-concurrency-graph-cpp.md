@@ -5,7 +5,7 @@ breadcrumb: 指南 > 系统 > 基础功能 > Function Flow Runtime Kit（任务�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:33:22+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:3ced5c50a1f8c7bd8aa4fba4fab93d0ee66407d0e2779a887bbcabc9bcb574f0
+content_hash: sha256:4b3b9c4f0aa1ae4df2b75e9cd0656ca2029769f169149a72c5a76da7c9a66b5c
 ---
 
 ## 概述
@@ -65,7 +65,7 @@ FFRT在运行时可动态构建任务之间的基于生产者/消费者的数据
 5. task5(OUT A);
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/jCku-y3xTzWSMT8VaRxuXQ/zh-cn_image_0000002589244763.png?HW-CC-KV=V1&HW-CC-Date=20260429T053321Z&HW-CC-Expire=86400&HW-CC-Sign=6EAB3FA383B538FCAAE95281450B5EA214C4CDD73E820FD1A3EE010852ADC22A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/jCku-y3xTzWSMT8VaRxuXQ/zh-cn_image_0000002589244763.png)
 
 为表述方便，本文中的数据流图均以圆圈表示Task，方块表示数据。
 
@@ -79,7 +79,7 @@ FFRT在运行时可动态构建任务之间的基于生产者/消费者的数据
 
 用户上传视频到流媒体平台，处理步骤包含：视频解析A、视频转码B、视频缩略图生成C、视频水印添加D和视频发布E，其中步骤B和步骤C可以并行执行。任务流程如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/x-ie3Xn5SzC82MHckjEEOw/zh-cn_image_0000002558764958.png?HW-CC-KV=V1&HW-CC-Date=20260429T053321Z&HW-CC-Expire=86400&HW-CC-Sign=9C86ADAB39BBCF49E88F7B033F5FB5CB32A40A8155D53AF5222042DFEBE6DC2E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/x-ie3Xn5SzC82MHckjEEOw/zh-cn_image_0000002558764958.png)
 
 借助FFRT提供了图依赖并发范式，可以描述任务依赖关系，同时并行化上述视频处理流程，代码如下所示：
 
@@ -173,7 +173,7 @@ FFRT在运行时可动态构建任务之间的基于生产者/消费者的数据
 
 各个任务在FFRT内部形成了一棵调用树：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/nIOY78UiSUyEwwKRSnYayQ/zh-cn_image_0000002558605302.png?HW-CC-KV=V1&HW-CC-Date=20260429T053321Z&HW-CC-Expire=86400&HW-CC-Sign=B0818AC153D3CD19A80476D51C03F538C2E2DD4210C131ACDBE2D2FC1B6F652A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/nIOY78UiSUyEwwKRSnYayQ/zh-cn_image_0000002558605302.png)
 
 ## 接口说明
 

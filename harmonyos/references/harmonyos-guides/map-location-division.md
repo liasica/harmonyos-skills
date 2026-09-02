@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 地图Picker > �
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:39:18+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:058c360ff360bd3ef527d92c1693a967420ebce55f254e50aca3d11f008e9f19
+content_hash: sha256:801bd7f53927430ed72f261141c449f83e70472305da462b2b8bca42e860fe9c
 ---
 
 ## 场景介绍
@@ -20,19 +20,19 @@ content_hash: sha256:058c360ff360bd3ef527d92c1693a967420ebce55f254e50aca3d11f008
 
 **图1** 选择国家
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/PFvB3fyGSXa8qxFbGKXY7A/zh-cn_image_0000002589325421.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053916Z&HW-CC-Expire=86400&HW-CC-Sign=908CF3A92B50DA3C3A9FBB1C2DBDEB32FE86FD20085FA10588C606074C7A8650 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/PFvB3fyGSXa8qxFbGKXY7A/zh-cn_image_0000002589325421.jpg "点击放大")
 
 **图2** 选择省市
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/AcK91eAJTBWcTMTLd6YO6A/zh-cn_image_0000002589245359.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053916Z&HW-CC-Expire=86400&HW-CC-Sign=DABF97CEE1D67709E667B15A8A71D9FDB8A34AA59F3C6184A73382064B946270 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/AcK91eAJTBWcTMTLd6YO6A/zh-cn_image_0000002589245359.jpg "点击放大")
 
 **图3** 搜索地区
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/AAMP0revTN-bnJOs6KvZWQ/zh-cn_image_0000002558765552.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053916Z&HW-CC-Expire=86400&HW-CC-Sign=2451C05A238C68D6BF20C64AED87F65740C59DC1602DD018D945CDFBF8D53B2A "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/AAMP0revTN-bnJOs6KvZWQ/zh-cn_image_0000002558765552.jpg "点击放大")
 
 **图4** 子窗拉起区划控件
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/sAb2cUFjQTC26Nl8xKMg6w/zh-cn_image_0000002558605896.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053916Z&HW-CC-Expire=86400&HW-CC-Sign=C3E8BD8CBAA3AF2006546812F5040C4A76A7973F35995C0A30D59097479D9F31 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/sAb2cUFjQTC26Nl8xKMg6w/zh-cn_image_0000002558605896.jpg "点击放大")
 
 ## 约束与限制
 

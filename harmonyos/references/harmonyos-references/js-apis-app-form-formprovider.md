@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-form-formprovider
-title: @ohos.app.form.formProvider (formProvider)
+title: "@ohos.app.form.formProvider (formProvider)"
 breadcrumb: API参考 > 应用框架 > Form Kit（卡片开发服务） > ArkTS API > @ohos.app.form.formProvider (formProvider)
 category: harmonyos-references
 scraped_at: 2026-04-29T13:56:31+08:00

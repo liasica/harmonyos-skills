@@ -5,7 +5,7 @@ breadcrumb: 最佳实践 > 媒体 > 相机 > 相机预览花屏解决方案
 category: best-practices
 scraped_at: 2026-04-29T14:11:07+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:e39c4eac8abe4cf13f492b82b612b0a7cd17433c81fa7e95ab49cd56cf79f5ac
+content_hash: sha256:c419415da5187821b5f2689638f80ef9cb5b56b3806efc9ba3e7dba6706aa6c5
 ---
 
 ## 概述
@@ -26,7 +26,7 @@ stride在不同的平台底层上报的值不同，开发者需根据实际业�
 
 **图1** 需正确处理stride
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/YaOVAqkmTvSy4nZAGgEujg/zh-cn_image_0000002194011680.png?HW-CC-KV=V1&HW-CC-Date=20260429T061105Z&HW-CC-Expire=86400&HW-CC-Sign=62D4749F00F08A18CF292F46F4AE73112D317192C99698B9C68CA7C04E6DF57A "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/YaOVAqkmTvSy4nZAGgEujg/zh-cn_image_0000002194011680.png "点击放大")
 
 如果开发者根据width和height数据去处理像素数据，即把0x00-0x09地址的数据当做像素去处理，就会出现解析了错误的像素数据的问题，并且使用了无效的像素0x03，0x07，会导致图片无法正常显示导致“相机花屏”现象。因此，要根据stride值处理预览数据流，去除无效的像素后送显，才能获取正确的预览流图像。
 

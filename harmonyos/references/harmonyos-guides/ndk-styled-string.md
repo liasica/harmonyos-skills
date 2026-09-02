@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (基于
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:28:33+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:1c838c30574578184ff5977fe91210c435e0dcab154b56519934f88dfc5effd3
+content_hash: sha256:e200358297bb9696f3c845127e9afb603ca8f256d4d939ea285d43900e454a0d
 ---
 
 部分框架或应用具备自研的文字排版能力，在移植时，这些能力会被对接到[方舟2D图形服务的文本引擎](complex-text-c.md)。为了避免开发者重复开发文本组件，Text组件提供了接口[NODE\_TEXT\_CONTENT\_WITH\_STYLED\_STRING](../harmonyos-references/capi-native-node-h.md#arkui_nodeattributetype)，可以直接渲染方舟文本引擎生成的文本。
@@ -18,7 +18,7 @@ content_hash: sha256:1c838c30574578184ff5977fe91210c435e0dcab154b56519934f88dfc5
 
 下图展示了 NODE\_TEXT\_CONTENT\_WITH\_STYLED\_STRING 接口的主要使用流程。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/lNmX-SPJTtutMfBHcM39nA/zh-cn_image_0000002589324425.png?HW-CC-KV=V1&HW-CC-Date=20260429T052832Z&HW-CC-Expire=86400&HW-CC-Sign=AB90666152EA71C5D45C2D518D90D6C7242B005C7E67E1F51E486CC475808761)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/lNmX-SPJTtutMfBHcM39nA/zh-cn_image_0000002589324425.png)
 
 ## 创建Text组件
 
@@ -256,4 +256,4 @@ Text组件提供[OH\_ArkUI\_StyledString\_Destroy](../harmonyos-references/capi-
 
 [manager.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/StyledStringNDK/entry/src/main/cpp/manager.cpp#L15-L126)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/OnT2kiPkRiGfGiUFjdFJIg/zh-cn_image_0000002589244365.png?HW-CC-KV=V1&HW-CC-Date=20260429T052832Z&HW-CC-Expire=86400&HW-CC-Sign=FBC834F66513BB7E7E9135267A2B945AA1367F4244BB72A884CB493DB67CBA09)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/OnT2kiPkRiGfGiUFjdFJIg/zh-cn_image_0000002589244365.png)

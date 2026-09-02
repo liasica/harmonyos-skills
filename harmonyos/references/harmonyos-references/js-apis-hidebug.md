@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-hidebug
-title: @ohos.hidebug (Debug调试)
+title: "@ohos.hidebug (Debug调试)"
 breadcrumb: API参考 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > ArkTS API > @ohos.hidebug (Debug调试)
 category: harmonyos-references
 scraped_at: 2026-04-28T08:11:15+08:00

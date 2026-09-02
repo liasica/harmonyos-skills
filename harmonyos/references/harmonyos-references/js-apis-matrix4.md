@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-matrix4
-title: @ohos.matrix4 (矩阵变换)
+title: "@ohos.matrix4 (矩阵变换)"
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.matrix4 (矩阵变换)
 category: harmonyos-references
 scraped_at: 2026-04-29T13:50:43+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:a2274472aff51dcc80ed0039f4cb7bf38cc504efbc685d1cd6bf4ed636ecd8af
+content_hash: sha256:c23c78bafd5c2f471220aeb0bd04cc69b8a55adecdebae35954d40fa9dcf4cf5
 ---
 
 用于对组件进行[图形变换](ts-universal-attributes-transformation.md)的各种操作，为组件提供矩阵变换能力，支持对图形进行平移、旋转和缩放等。
@@ -214,7 +214,7 @@ Matrix的拷贝函数，可以拷贝一份当前的矩阵对象。
 31. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/pF3XtEWwSrCYq0VYmJdDXg/zh-cn_image_0000002558765938.png?HW-CC-KV=V1&HW-CC-Date=20260429T055041Z&HW-CC-Expire=86400&HW-CC-Sign=BE33611BC727022BE83AF3585CD93C584EC0F627BEB104D02D5EE2E745783D7F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/pF3XtEWwSrCYq0VYmJdDXg/zh-cn_image_0000002558765938.png)
 
 ### combine
 
@@ -272,7 +272,7 @@ Matrix的叠加函数，可以将两个矩阵的效果叠加起来生成一个�
 27. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/yKEFTDQdTTuZ0uHXaFODTA/zh-cn_image_0000002558606282.png?HW-CC-KV=V1&HW-CC-Date=20260429T055041Z&HW-CC-Expire=86400&HW-CC-Sign=B0509DAF199191585C66A18E8D31AE7C7D6A4259A5B0AFF0B09C5FFBFBBD5B50)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/yKEFTDQdTTuZ0uHXaFODTA/zh-cn_image_0000002558606282.png)
 
 ### invert
 
@@ -369,7 +369,7 @@ Matrix的平移函数，可以为当前矩阵增加x轴/y轴/z轴平移效果。
 17. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/U4AYMcdXRJWmdSlulSBdbw/zh-cn_image_0000002589325809.png?HW-CC-KV=V1&HW-CC-Date=20260429T055041Z&HW-CC-Expire=86400&HW-CC-Sign=AA28F7FE3F945F6AE6D64908C62BD954219097D777783D08EF0A671CF955654B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/U4AYMcdXRJWmdSlulSBdbw/zh-cn_image_0000002589325809.png)
 
 ### scale
 
@@ -424,7 +424,7 @@ Matrix的缩放函数，可以为当前矩阵增加x轴/y轴/z轴缩放效果。
 24. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/Ip3YFK7BQxibMLqlSmm8Kg/zh-cn_image_0000002589245751.png?HW-CC-KV=V1&HW-CC-Date=20260429T055041Z&HW-CC-Expire=86400&HW-CC-Sign=D1E8A0B15086D4D1E39E8AB59C518FA965F2303D262DC66D8434715BFC9ADA54)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/Ip3YFK7BQxibMLqlSmm8Kg/zh-cn_image_0000002589245751.png)
 
 ### skew12+
 
@@ -477,7 +477,7 @@ Matrix的倾斜函数，可以为当前矩阵增加x轴/y轴倾斜效果。会�
 21. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/rm8KdoQ0TiiaKCxEgEN1DA/zh-cn_image_0000002558765940.jpeg?HW-CC-KV=V1&HW-CC-Date=20260429T055041Z&HW-CC-Expire=86400&HW-CC-Sign=9D162D0C6A24CDA3910F4958AB9763D2C714FCB4FDA309652F76C1C12E972494)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/rm8KdoQ0TiiaKCxEgEN1DA/zh-cn_image_0000002558765940.jpeg)
 
 ### rotate
 
@@ -531,7 +531,7 @@ Matrix的旋转函数，可以为当前矩阵增加x轴/y轴/z轴旋转效果。
 23. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/HFno5GtSSZ-IG-ouC-PXzg/zh-cn_image_0000002558606284.png?HW-CC-KV=V1&HW-CC-Date=20260429T055041Z&HW-CC-Expire=86400&HW-CC-Sign=D7F05E58183904DE272012EECECB0DFDBDCC7F875E233749B0F1B750D87E74C3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/HFno5GtSSZ-IG-ouC-PXzg/zh-cn_image_0000002558606284.png)
 
 ### transformPoint
 
@@ -594,7 +594,7 @@ Matrix的坐标点转换函数，可以将当前的变换效果作用到一个�
 32. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/k-b2BYMSQVK-7KDVr0zrYA/zh-cn_image_0000002589325811.png?HW-CC-KV=V1&HW-CC-Date=20260429T055041Z&HW-CC-Expire=86400&HW-CC-Sign=2D01457178D41C4212C4FCFA036A53435FCD354B0FC520AAAB0557756C90C668)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/k-b2BYMSQVK-7KDVr0zrYA/zh-cn_image_0000002589325811.png)
 
 ### setPolyToPoly12+
 
@@ -653,7 +653,7 @@ setPolyToPoly(options: PolyToPolyOptions): Matrix4Transit
 24. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/XXfftaWgR86yfHLWDztFkg/zh-cn_image_0000002589245753.png?HW-CC-KV=V1&HW-CC-Date=20260429T055041Z&HW-CC-Expire=86400&HW-CC-Sign=79254DBF893594A15D6204770E92FBB414714630A0E23947D55C96A480D9D257)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/XXfftaWgR86yfHLWDztFkg/zh-cn_image_0000002589245753.png)
 
 ## TranslateOption
 
@@ -792,7 +792,7 @@ Matrix的拷贝函数，可以拷贝一份当前的矩阵对象。
 26. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/9c3CuuJXTiuCW7t0Wcn9VQ/zh-cn_image_0000002558765942.png?HW-CC-KV=V1&HW-CC-Date=20260429T055041Z&HW-CC-Expire=86400&HW-CC-Sign=AF2F076CE6135F24AC76703ECD3948DC53AD78FDA90D75DAA856EFEB8A155374)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/9c3CuuJXTiuCW7t0Wcn9VQ/zh-cn_image_0000002558765942.png)
 
 ## matrix4.invert(deprecated)
 

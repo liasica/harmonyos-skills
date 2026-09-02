@@ -5,7 +5,7 @@ breadcrumb: FAQ > DevEco Studio > 编译构建 > 如何获取BuildProfile中的�
 category: harmonyos-faqs
 scraped_at: 2026-04-29T14:20:37+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:b457289625e130fec433c37955175be053b4a07d90ad24d14cc1773a2b2e2279
+content_hash: sha256:aa65b582b6bfbc0396e3e94a78a26ba2a6af466fec1a58a3c965ea64e1e99be0
 ---
 
 生成 BuildProfile 文件后，可以通过相对路径在代码中引入该文件。例如，在 HAR 模块的 Index.ets 文件中使用该文件：
@@ -26,7 +26,7 @@ content_hash: sha256:b457289625e130fec433c37955175be053b4a07d90ad24d14cc1773a2b2
 
 [Index.ets](https://gitcode.com/HarmonyOS_Samples/faqsnippets/blob/master/CompilingAndBuilding/library/Index.ets#L8-L11)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/RyJwmuxVTYOddqyp5ZzF7w/zh-cn_image_0000002229604169.png?HW-CC-KV=V1&HW-CC-Date=20260429T062036Z&HW-CC-Expire=86400&HW-CC-Sign=362216D085729FD2980A89F8D67B991A4546C405E083F82935A5F793E3DEBF66 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/RyJwmuxVTYOddqyp5ZzF7w/zh-cn_image_0000002229604169.png "点击放大")
 
 **参考链接**
 

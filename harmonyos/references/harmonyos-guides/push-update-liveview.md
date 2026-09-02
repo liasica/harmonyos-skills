@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用服务 > Push Kit（推送服务） > 推送场景化
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:39:56+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:2e04a7488a3ceeb260f3612d37c4d420c1ff917f777aa98b8e0e54d3b396e137
+content_hash: sha256:d8f9e810bbc0127d66cea1f9b42947c522cd8f10724b3d0646d4608aa7f95d84
 ---
 
 ## 场景介绍
@@ -30,7 +30,7 @@ content_hash: sha256:2e04a7488a3ceeb260f3612d37c4d420c1ff917f777aa98b8e0e54d3b39
 
 **通过Live View Kit创建实况窗，Push Kit更新与结束实况窗**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/Iw24kPXdSH-BD4F43ySosQ/zh-cn_image_0000002589325497.png?HW-CC-KV=V1&HW-CC-Date=20260429T053954Z&HW-CC-Expire=86400&HW-CC-Sign=E54633C195FD1BC7D5BC7C93F97D382469A95D81B7DA4C1085D3A080C97883F8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/Iw24kPXdSH-BD4F43ySosQ/zh-cn_image_0000002589325497.png)
 
 1. 使用Push Kit，获取Push Token。
 2. 使用Live View Kit创建实况窗成功后，开发者需要将实况窗id、pushToken、实况窗场景event以及业务服务的相关的状态属性保存到业务服务端。
@@ -38,7 +38,7 @@ content_hash: sha256:2e04a7488a3ceeb260f3612d37c4d420c1ff917f777aa98b8e0e54d3b39
 
 **通过Push Kit创建、更新、结束实况窗**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/fTAKhdK_Q1eIDg5KOYObMw/zh-cn_image_0000002589245435.png?HW-CC-KV=V1&HW-CC-Date=20260429T053954Z&HW-CC-Expire=86400&HW-CC-Sign=9D1A15271877EEBC8797EC191912449BFC4EEA058318595C1FB6AAA80EDE6A46)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/fTAKhdK_Q1eIDg5KOYObMw/zh-cn_image_0000002589245435.png)
 
 1. 使用Push Kit，获取Push Token。
 2. 将Push Token保存到业务的服务端。
@@ -46,7 +46,7 @@ content_hash: sha256:2e04a7488a3ceeb260f3612d37c4d420c1ff917f777aa98b8e0e54d3b39
 
 **实况窗更新效果示例图：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/6jzzjir3Q9ePTED-GmodgQ/zh-cn_image_0000002558765628.png?HW-CC-KV=V1&HW-CC-Date=20260429T053954Z&HW-CC-Expire=86400&HW-CC-Sign=779A94EA21502026F0DCCFFC6EE7777580F6A85E49E12C2539201B1F937F61AE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/6jzzjir3Q9ePTED-GmodgQ/zh-cn_image_0000002558765628.png)
 
 说明
 

@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-param
-title: @Param：组件外部输入
+title: "@Param：组件外部输入"
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理（V2） > 管理组件拥有的状态 > @Param：组件外部输入
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:27:17+08:00

@@ -5,7 +5,7 @@ breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 >
 category: best-practices
 scraped_at: 2026-04-29T14:12:20+08:00
 doc_updated_at: 2026-03-19
-content_hash: sha256:78a303fd088fdbe94191745bb0353a577a3a8f1969dd382915dd031e5f88b7d7
+content_hash: sha256:73917071da77f157a62c2c55a3e5fb188cceb4fe854defb1066a56f75be1a659
 ---
 
 在页面开发过程中，经常需要用到颜色、字体、间距、图片等资源，在不同的设备或配置中，这些资源的值可能不同。有两种方式处理：
@@ -87,7 +87,7 @@ base目录与限定词目录下面可以创建资源组目录，用于存放特�
 
 在代码中通过 "$r('app.type.name')" 的形式使用应用资源，并分别在默认设备和平板上查看代码的运行效果，可以发现同一资源在不同设备上的取值不同。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/Bd74pDC4SzSzIBPArFD0qw/zh-cn_image_0000002321308262.png?HW-CC-KV=V1&HW-CC-Date=20260429T061208Z&HW-CC-Expire=86400&HW-CC-Sign=92327A809E3D30F6433B0B214C78545D23A968DEAD484B929AACAEB810E80989 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/Bd74pDC4SzSzIBPArFD0qw/zh-cn_image_0000002321308262.png "点击放大")
 
 ```
 1. @Entry

@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:27:42+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:969e443d8417712974a13c943e8d1a9152983b698308896ef8778086252f8ab4
+content_hash: sha256:347603d0a80d0cb17fe3b5f50e4fb0411408ec4dd1ccf121cd51541cbd464a37
 ---
 
 ## 概述
@@ -114,7 +114,7 @@ content_hash: sha256:969e443d8417712974a13c943e8d1a9152983b698308896ef8778086252
 
   [GridLayoutReference.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/gridlayout/GridLayoutReference.ets#L15-L48)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/jc_Xc08_Rky1hxjcSbs9oA/zh-cn_image_0000002589324097.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052739Z&HW-CC-Expire=86400&HW-CC-Sign=E26BABA072AAC1AD95446E8D5B884B5EC510C86A13B313E5E216F2C0057F6CD1)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/jc_Xc08_Rky1hxjcSbs9oA/zh-cn_image_0000002589324097.gif)
 
 ### 布局的总列数
 
@@ -150,11 +150,11 @@ GridRow中通过columns设置栅格布局的总列数。
 
   API version 20之前布局显示：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/-28TfmS3QKaXfkA0T4jrdQ/zh-cn_image_0000002589244037.png?HW-CC-KV=V1&HW-CC-Date=20260429T052739Z&HW-CC-Expire=86400&HW-CC-Sign=185385DE8A39C117C1B7B4C8423EBA8F3BF29F0B0AE28F3A6EFF88216F97FE04)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/-28TfmS3QKaXfkA0T4jrdQ/zh-cn_image_0000002589244037.png)
 
   API version 20及以后布局显示（以sm设备为例，默认栅格列数为4）：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/_kPdpw1tSom5VuffNa-Qcw/zh-cn_image_0000002558764230.png?HW-CC-KV=V1&HW-CC-Date=20260429T052739Z&HW-CC-Expire=86400&HW-CC-Sign=18CC2BB49B12478B8257A1703098F0F3C1380B27DA6A0EC94E4030C9AEDEB837)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/_kPdpw1tSom5VuffNa-Qcw/zh-cn_image_0000002558764230.png)
 
 columns支持number和[GridRowColumnOption](../harmonyos-references/ts-container-gridrow.md#gridrowcolumnoption)两种类型, 可按两种方式设置栅格布局的总列数。
 
@@ -230,7 +230,7 @@ columns支持number和[GridRowColumnOption](../harmonyos-references/ts-container
 
   [GridLayoutColumnsToEight.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/gridlayout/GridLayoutColumnsToEight.ets#L15-L42)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/naHlr342SJ6TDhW7akdTzw/zh-cn_image_0000002558604574.png?HW-CC-KV=V1&HW-CC-Date=20260429T052739Z&HW-CC-Expire=86400&HW-CC-Sign=0B1AEE8ED36A56BB970B2809403BB2C6D5B21F4E03063D9A24D6EF7AF032CC6E)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/naHlr342SJ6TDhW7akdTzw/zh-cn_image_0000002558604574.png)
 * 当columns类型为[GridRowColumnOption](../harmonyos-references/ts-container-gridrow.md#gridrowcolumnoption)时，支持下面6种不同尺寸（xs，sm，md，lg，xl，xxl）设备的栅格列数设置，不同尺寸的设备支持配置不同的栅格列数。
 
   ```
@@ -266,11 +266,11 @@ columns支持number和[GridRowColumnOption](../harmonyos-references/ts-container
 
   API version 20之前布局显示（xs设备未配置栅格列数，取默认列数12）：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/JJfxow1IRtGzFJsmsdCjew/zh-cn_image_0000002589324099.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052739Z&HW-CC-Expire=86400&HW-CC-Sign=0F1B504F145416E0813EA052659890CDCE77214322EE950D17A283E9D943B625)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/JJfxow1IRtGzFJsmsdCjew/zh-cn_image_0000002589324099.gif)
 
   API version 20及以后布局显示（xs设备继承sm设备栅格列数）：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/HdL7PBp6RzSY_XNtaEU8cg/zh-cn_image_0000002589244039.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052739Z&HW-CC-Expire=86400&HW-CC-Sign=1BF35A5855FD1B926BAC46AB4AE7A3C02CCFCB564560C0729258926C17F619B7)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/HdL7PBp6RzSY_XNtaEU8cg/zh-cn_image_0000002589244039.gif)
 
   仅部分设置sm、md的栅格列数，未配置的xs、lg、xl、xxl设备根据[栅格列数补全](../harmonyos-references/ts-container-gridrow.md#gridrowcolumnoption)取默认值。
 
@@ -286,7 +286,7 @@ columns支持number和[GridRowColumnOption](../harmonyos-references/ts-container
 
   [GridLayoutDirectionRow.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/gridlayout/GridLayoutDirectionRow.ets#L21-L23)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/q7ZyLxW-S42snuX7M0HJtw/zh-cn_image_0000002558764232.png?HW-CC-KV=V1&HW-CC-Date=20260429T052739Z&HW-CC-Expire=86400&HW-CC-Sign=A4F5312EB83E917F359B1F7E82CCF1D14C801BA9D93B6E7A564EA9E229948685)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/q7ZyLxW-S42snuX7M0HJtw/zh-cn_image_0000002558764232.png)
 * 子组件从右往左排列。
 
   ```
@@ -295,7 +295,7 @@ columns支持number和[GridRowColumnOption](../harmonyos-references/ts-container
 
   [GridLayoutDirectionRowReverse.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/gridlayout/GridLayoutDirectionRowReverse.ets#L21-L23)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/b5wLp0gxSBm2JIfEU3k8sQ/zh-cn_image_0000002558604576.png?HW-CC-KV=V1&HW-CC-Date=20260429T052739Z&HW-CC-Expire=86400&HW-CC-Sign=3F7FFA538D76BA1FAD1C26C1E0450E9177D81354726C3E057B40BD869AC97813)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/b5wLp0gxSBm2JIfEU3k8sQ/zh-cn_image_0000002558604576.png)
 
 ### 子组件间距
 
@@ -309,7 +309,7 @@ GridRow中通过[gutter](../harmonyos-references/ts-container-gridrow.md#gridrow
 
   [GridLayoutGutterToNumber.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/gridlayout/GridLayoutGutterToNumber.ets#L21-L23)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/AbviaL8zSC6SL8kvQs0yfQ/zh-cn_image_0000002589324101.png?HW-CC-KV=V1&HW-CC-Date=20260429T052739Z&HW-CC-Expire=86400&HW-CC-Sign=7851E102F9E70E80CD8E19E61CB70BA7EB046BA3EC86DA2881EAFA0963EC362B)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/AbviaL8zSC6SL8kvQs0yfQ/zh-cn_image_0000002589324101.png)
 * 当gutter类型为[GutterOption](../harmonyos-references/ts-container-gridrow.md#gutteroption)时，单独设置栅格子组件水平垂直边距，x属性为水平方向间距，y为垂直方向间距。
 
   ```
@@ -318,7 +318,7 @@ GridRow中通过[gutter](../harmonyos-references/ts-container-gridrow.md#gridrow
 
   [GridLayoutGutterOption.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/gridlayout/GridLayoutGutterOption.ets#L21-L23)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/OBqwkZDCSR6LlzPz8YDs5w/zh-cn_image_0000002589244041.png?HW-CC-KV=V1&HW-CC-Date=20260429T052739Z&HW-CC-Expire=86400&HW-CC-Sign=65DB5CB3DFF3636D7E36F65C096E78B66DC362E3357A27481B2BFA554262CABB)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/OBqwkZDCSR6LlzPz8YDs5w/zh-cn_image_0000002589244041.png)
 
 ## 子组件GridCol
 
@@ -408,7 +408,7 @@ span支持number和[GridColColumnOption](../harmonyos-references/ts-container-gr
 
   [GridColSpanToNumber.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/gridlayout/GridColSpanToNumber.ets#L15-L37)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/EJnIg883TO2Rv3Giw-VWJA/zh-cn_image_0000002558764234.png?HW-CC-KV=V1&HW-CC-Date=20260429T052739Z&HW-CC-Expire=86400&HW-CC-Sign=EE7E2BEC184AD211040A04E0728E59CD18698680BC979467AFE7A06EB2BD4678)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/EJnIg883TO2Rv3Giw-VWJA/zh-cn_image_0000002558764234.png)
 * 当span类型为GridColColumnOption时，支持6种不同尺寸（xs，sm，md，lg，xl，xxl）设备中子组件所占列数设置，不同尺寸的设备下子组件支持配置不同列数。若仅部分设置sm、md的列数，未配置的xs、lg、xl、xxl设备根据[列数补全](../harmonyos-references/ts-container-gridcol.md#gridcolcolumnoption)取默认值。
 
   ```
@@ -453,7 +453,7 @@ span支持number和[GridColColumnOption](../harmonyos-references/ts-container-gr
 
   [GridColSpanToOption.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/gridlayout/GridColSpanToOption.ets#L15-L36)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/9HbIlUppTfa23JFlFsDWTg/zh-cn_image_0000002558604578.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052739Z&HW-CC-Expire=86400&HW-CC-Sign=C9CB57F4943BE0EB81B42D6966E95D1A8C36BCBE3104720D9B173EABB5EA2719)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/9HbIlUppTfa23JFlFsDWTg/zh-cn_image_0000002558604578.gif)
 
 ### offset
 
@@ -490,7 +490,7 @@ span支持number和[GridColColumnOption](../harmonyos-references/ts-container-gr
 
   [GridColOffsetToNumber.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/gridlayout/GridColOffsetToNumber.ets#L15-L36)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/oK7_8P4pSjyIzE0esAR6mA/zh-cn_image_0000002589324103.png?HW-CC-KV=V1&HW-CC-Date=20260429T052739Z&HW-CC-Expire=86400&HW-CC-Sign=D4D5DFFDD58E4CF1FD26E418782CDBAB72D7974558BB5CD5B383D9E6B8E8D66B)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/oK7_8P4pSjyIzE0esAR6mA/zh-cn_image_0000002589324103.png)
 
   在lg及以上尺寸的设备上，栅格分成12列，每一个子组件占1列，偏移2列，每个子组件及间距共占3列，1行放4个子组件。
 * 当offset类型为GridColColumnOption时，支持6种不同尺寸（xs，sm，md，lg，xl，xxl）设备中子组件所占列数设置，各个尺寸下数值可不同。
@@ -538,7 +538,7 @@ span支持number和[GridColColumnOption](../harmonyos-references/ts-container-gr
 
   [GridColOffsetToOption.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/gridlayout/GridColOffsetToOption.ets#L15-L38)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/wFSTrr2KSWO361kDXBdKUg/zh-cn_image_0000002589244043.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052739Z&HW-CC-Expire=86400&HW-CC-Sign=D17F35F62CA1A8D8B9556C1BA9C30450C86A8534D6DEC17FA54997940E7071F3)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/wFSTrr2KSWO361kDXBdKUg/zh-cn_image_0000002589244043.gif)
 
 ### order
 
@@ -578,7 +578,7 @@ span支持number和[GridColColumnOption](../harmonyos-references/ts-container-gr
 
   [GridColOrderToNumber.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/gridlayout/GridColOrderToNumber.ets#L20-L46)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/wJhTMzZjR6yq9v2uTOqthg/zh-cn_image_0000002558764236.png?HW-CC-KV=V1&HW-CC-Date=20260429T052739Z&HW-CC-Expire=86400&HW-CC-Sign=93DE2D994504B71A9C0DC3B442EF8E23D50A9C030187C36ED8C3BD80949D7F8B)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/wJhTMzZjR6yq9v2uTOqthg/zh-cn_image_0000002558764236.png)
 * 当order类型为GridColColumnOption时，支持6种不同尺寸（xs，sm，md，lg，xl，xxl）设备中子组件排序次序设置。在xs设备中，子组件排列顺序为1234；sm为2341，md为3412，lg为2431。
 
   ```
@@ -627,7 +627,7 @@ span支持number和[GridColColumnOption](../harmonyos-references/ts-container-gr
 
   [GridColOrderToOption.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/gridlayout/GridColOrderToOption.ets#L15-L57)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/7XG9cSSrR_qhIrgg8wRyVA/zh-cn_image_0000002558604580.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052739Z&HW-CC-Expire=86400&HW-CC-Sign=20A60808D1D82CCF278DA1FC637109CFE4CC05CFD649F13A894B0617DF382084)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/7XG9cSSrR_qhIrgg8wRyVA/zh-cn_image_0000002558604580.gif)
 
 ## 栅格组件的嵌套使用
 
@@ -674,6 +674,6 @@ span支持number和[GridColColumnOption](../harmonyos-references/ts-container-gr
 
 [GridRowExample.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/gridlayout/GridRowExample.ets#L15-L50)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/niS5oNr0T16867QeLVYccQ/zh-cn_image_0000002589324105.png?HW-CC-KV=V1&HW-CC-Date=20260429T052739Z&HW-CC-Expire=86400&HW-CC-Sign=EF5E7C9C3A4CBFADD74E4493F1955B49DA5635170D9E9387CBB490EEC6DEDF05)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/niS5oNr0T16867QeLVYccQ/zh-cn_image_0000002589324105.png)
 
 综上所述，栅格组件提供了丰富的自定义能力，功能非常灵活和强大。只需要明确栅格在不同断点下的[columns](../harmonyos-references/ts-container-gridrow.md#gridrowoptions对象说明)、[margin](../harmonyos-references/ts-universal-attributes-size.md#margin)、[gutter](../harmonyos-references/ts-container-gridrow.md#gridrowoptions对象说明)及[span](../harmonyos-references/ts-container-gridcol.md#gridcoloptions对象说明)等参数，即可确定最终布局，无需关心具体的设备类型及设备状态（如横竖屏）等。

@@ -5,7 +5,7 @@ breadcrumb: 指南 > 系统 > 安全 > User Authentication Kit（用户认证服
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:32:26+08:00
 doc_updated_at: 2026-03-20
-content_hash: sha256:9ddefa518a2f8b2629073c3f61019eb1c8f81506c32051d446d42e735bac5e4a
+content_hash: sha256:65b0bde3e9b3676a173d47398c98a532c57562f99445705d70b0ac6134c2dffb
 ---
 
 提供应用界面上展示的人脸、指纹认证图标，功能包括：
@@ -24,7 +24,7 @@ content_hash: sha256:9ddefa518a2f8b2629073c3f61019eb1c8f81506c32051d446d42e735ba
 
 以指纹认证为例，控件使用效果如图所示。应用集成嵌入式用户身份认证控件后，用户点击左图中的指纹图标（即嵌入式用户身份认证控件），系统将自动拉起右图中的系统身份认证控件，完成身份认证。开发者无需通过接口发起身份认证请求，简化了认证流程。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/RwIp2Y3aSqmSvJ1fikI5vg/zh-cn_image_0000002589324785.png?HW-CC-KV=V1&HW-CC-Date=20260429T053225Z&HW-CC-Expire=86400&HW-CC-Sign=A900A5D59C45C1EC105137F7E068E667D5481135456B927B711B850AAC89B6A3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/RwIp2Y3aSqmSvJ1fikI5vg/zh-cn_image_0000002589324785.png)
 
 ## 示例
 

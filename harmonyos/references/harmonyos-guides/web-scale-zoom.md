@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 管理网页交互 >
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:29:23+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:633e61e1d2c301cfcce96f82e07410046f4521c6418615a8c02a6d99c7e42c54
+content_hash: sha256:775fe77db79a3aeeabb2f3b232e93c892c3bbca17ad8997ec1bf6b2c5dd20f27
 ---
 
 Web组件支持手势缩放、鼠标滚轮、键盘缩放，以方便用户调整到舒适的显示大小。并对应用提供监听、控制页面缩放比例的功能，以便应用实现个性化的视觉效果。
@@ -219,7 +219,7 @@ zoom基于当前网页比例进行缩放，入参要求大于0，当入参为1�
 
 [ControlZoomByInput.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkWeb/WebManagementZooming/entry/src/main/ets/pages/ControlZoomByInput.ets#L15-L45)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/TkCmB2l8Rr2eC8iqMCeXjw/zh-cn_image_0000002589244519.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052921Z&HW-CC-Expire=86400&HW-CC-Sign=3E5025659A69E3B02F98F463E4ADE328415A25A50D89E88BF95CAE36D1E5317E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/TkCmB2l8Rr2eC8iqMCeXjw/zh-cn_image_0000002589244519.gif)
 
 ### 缩放页面到目标比例:
 
@@ -272,4 +272,4 @@ zoom基于当前网页比例进行缩放，入参要求大于0，当入参为1�
 
 [ControlZoomToFixedRatio.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkWeb/WebManagementZooming/entry/src/main/ets/pages/ControlZoomToFixedRatio.ets#L15-L54)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/42U3dtb1Rq2XAK9-BMPDig/zh-cn_image_0000002558764712.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052921Z&HW-CC-Expire=86400&HW-CC-Sign=1418D5226065FA52C89C8099958C8808232DA5BB5AF9CEFA51340A43C10AEA32)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/42U3dtb1Rq2XAK9-BMPDig/zh-cn_image_0000002558764712.gif)

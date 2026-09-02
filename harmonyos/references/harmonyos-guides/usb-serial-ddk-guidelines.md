@@ -5,7 +5,7 @@ breadcrumb: 指南 > 系统 > 硬件 > Driver Development Kit（驱动开发服�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:33:32+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:442a818e50a15ab9c71dfde4530048ddbe6908fdc123b72a6ce8fe0d824420d4
+content_hash: sha256:a3508b838c9e1e0f5ece9dab1e3856cfc49fe243808e0c4e7f8670a84f10bce0
 ---
 
 ## 简介
@@ -41,7 +41,7 @@ content_hash: sha256:442a818e50a15ab9c71dfde4530048ddbe6908fdc123b72a6ce8fe0d824
 
 **图1** USBSerialDDK调用原理
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/QgXRJxfjR9uKbnVzSaEnmA/zh-cn_image_0000002589244779.png?HW-CC-KV=V1&HW-CC-Date=20260429T053331Z&HW-CC-Expire=86400&HW-CC-Sign=9E6DD44B0E8CE7463A488C7782F5C9C2BAAE18AF4D53F93FB0AD418E493617B1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/QgXRJxfjR9uKbnVzSaEnmA/zh-cn_image_0000002589244779.png)
 
 ### 约束与限制
 

@@ -5,7 +5,7 @@ breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > 音频编创 > 实�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:34:37+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:c2f3f800dc3f0a47deabbaa6e36ee4a9af0e4cd4e2ab1531f5e42dfcb9f80c7d
+content_hash: sha256:ab17a2228ec5a3ef4aaf5f811a8eb8944ba3ecc00c11e8e21eff6e37b4132455
 ---
 
 从API version 22开始，[OHAudioSuite](../harmonyos-references/capi-ohaudiosuite.md)给开发者提供音频实时渲染能力，即音频实时播放时可进行自定义音效（仅支持均衡器节点）。例如，可以使用均衡器中预置的音效，改变音乐的风格。
@@ -41,7 +41,7 @@ content_hash: sha256:c2f3f800dc3f0a47deabbaa6e36ee4a9af0e4cd4e2ab1531f5e42dfcb9f
 
 **图1**：实时播放示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/JnxoWRGUQWKKf2tCI8wILQ/zh-cn_image_0000002558765038.png?HW-CC-KV=V1&HW-CC-Date=20260429T053436Z&HW-CC-Expire=86400&HW-CC-Sign=79D0CF87103A39C66B56E6A7B68F1A1EC8C9941563EB0B56138FD75170078E97)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/JnxoWRGUQWKKf2tCI8wILQ/zh-cn_image_0000002558765038.png)
 
 开发者可以通过以下步骤来实现一个简单的均衡器效果节点实时播放功能。
 

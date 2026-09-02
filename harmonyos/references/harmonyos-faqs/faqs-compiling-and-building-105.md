@@ -5,12 +5,12 @@ breadcrumb: FAQ > DevEco Studio > 编译构建 > 编译报错“no such file or 
 category: harmonyos-faqs
 scraped_at: 2026-04-29T14:20:42+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:a6fdbd98986c18d71f5cb91f34a833411663df78d97ac256740e2f9b0edbcc9c
+content_hash: sha256:6d88f40c51aa460b336e5d9f511211b9c0b3d9f4e0e69f99cd3874179a56106b
 ---
 
 **问题现象**
 
-DevEco Studio编译时出现错误，提示“no such file or directory, realpath 'xxx'”错误信息。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/gNbAz-BLRuOdk2ppG_YPgQ/zh-cn_image_0000002229758637.png?HW-CC-KV=V1&HW-CC-Date=20260429T062041Z&HW-CC-Expire=86400&HW-CC-Sign=55E75F4A7C655193228A9765B2ABD6AA02950F643F175373312CF367B4DE7EC9)
+DevEco Studio编译时出现错误，提示“no such file or directory, realpath 'xxx'”错误信息。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/gNbAz-BLRuOdk2ppG_YPgQ/zh-cn_image_0000002229758637.png)
 
 **解决措施**
 

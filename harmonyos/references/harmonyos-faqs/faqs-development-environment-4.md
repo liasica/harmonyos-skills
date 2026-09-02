@@ -5,14 +5,14 @@ breadcrumb: FAQ > DevEco Studio > 环境准备 > 下载HarmonyOS SDK时提示网
 category: harmonyos-faqs
 scraped_at: 2026-04-29T14:20:04+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:6d1d170def337f1ac6f208608c81d543d56a1f859f7eb0e9d73875f3c982eeb3
+content_hash: sha256:7d441934a1786f61afbfa3da094c72380156b51067b86e5afac5f5152b924769
 ---
 
 **问题现象**
 
 网络连接正常，但下载HarmonyOS SDK时提示网络连接错误。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/l60gc28TQ1W0Uyj5rv3iBw/zh-cn_image_0000002229758633.png?HW-CC-KV=V1&HW-CC-Date=20260429T062003Z&HW-CC-Expire=86400&HW-CC-Sign=8D3C1119B080BC796A43AEBA0E09574CACEC4C3B06679EA7504F411AE96F39B7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/l60gc28TQ1W0Uyj5rv3iBw/zh-cn_image_0000002229758633.png)
 
 **解决措施**
 

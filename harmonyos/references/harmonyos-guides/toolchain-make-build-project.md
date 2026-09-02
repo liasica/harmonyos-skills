@@ -5,7 +5,7 @@ breadcrumb: 指南 > NDK开发 > 编译工具链 > Make构建工程配置Harmony
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:44:30+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:f262b4461b3838b250b42b707406f61bdc4970c127734943ecd7bb8c6ade9139
+content_hash: sha256:91f6a2942f06bec3cf0e6ad5effdb4e1bbcb6bdaaa6c667e43b552e4dcbc7de5
 ---
 
 ## 概述
@@ -47,7 +47,7 @@ Makefile是Make工具的配置文件，用于描述项目的构建规则和依�
 
    通过分析源库的Makefile文件可知，以下几个内容需要进行重新配置：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/Q9S1n4X_QOeJZ20mVl6RZQ/zh-cn_image_0000002589245717.png?HW-CC-KV=V1&HW-CC-Date=20260429T054428Z&HW-CC-Expire=86400&HW-CC-Sign=E27E4C76B396C8C5BEE969E0BF604369CBD4C518072940A5C8EE0F4AB8740381)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/Q9S1n4X_QOeJZ20mVl6RZQ/zh-cn_image_0000002589245717.png)
 
    **a. 编译命令配置。**
 

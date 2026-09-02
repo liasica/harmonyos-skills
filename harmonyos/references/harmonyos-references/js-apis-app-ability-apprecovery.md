@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-apprecovery
-title: @ohos.app.ability.appRecovery (应用故障恢复)
+title: "@ohos.app.ability.appRecovery (应用故障恢复)"
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > 通用能力的接口(推荐) > @ohos.app.ability.appRecovery (应用故障恢复)
 category: harmonyos-references
 scraped_at: 2026-04-28T07:58:30+08:00

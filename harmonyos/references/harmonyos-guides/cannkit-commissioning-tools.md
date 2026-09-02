@@ -5,7 +5,7 @@ breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:41:12+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:7f96e0cee465ca867842901bb29e5cf17a2b13846d51201693508c430c9e7ce4
+content_hash: sha256:d62664b160aea5210fd43c8bd6a605fd641a21517bd71e7593fb72634a05b74a
 ---
 
 ## 工具介绍
@@ -65,7 +65,7 @@ content_hash: sha256:7f96e0cee465ca867842901bb29e5cf17a2b13846d51201693508c430c9
 
 **图1** 基于命令行的工具运行流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/VGOT9PGkQwiJ0wLfnnSz6A/zh-cn_image_0000002558606094.png?HW-CC-KV=V1&HW-CC-Date=20260429T054110Z&HW-CC-Expire=86400&HW-CC-Sign=1AF145FDED1F9425D60543B66031F1B932B747A5D0F1F061A6832223D6C9F6A7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/VGOT9PGkQwiJ0wLfnnSz6A/zh-cn_image_0000002558606094.png)
 
 1. 准备环境：使用本工具进行算子调测前，请先完成基础环境搭建，详细操作参见[环境准备](cannkit-environment-preparation.md)。
 2. 准备数据：准备好bin格式的输入数据和标杆数据文件，该数据是调测工具的必要输入。

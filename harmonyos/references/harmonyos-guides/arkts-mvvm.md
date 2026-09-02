@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:27:10+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:f514e5db0f93fca7a602c65d352a00ebc283cb2fcf625a246a62f780018cf972
+content_hash: sha256:a7d3fe8598cedcd13f15fc4eb794e29bd369062b11c6412a740de4b8b262c515
 ---
 
 当开发者掌握了状态管理的基本概念后，通常会尝试开发自己的应用，在应用开发初期，如果未能精心规划项目结构，随着项目扩展和复杂化，状态变量的增多将导致组件间关系变得错综复杂。此时，开发新功能可能引起连锁反应，维护成本也会增加。为此，本文旨在介绍MVVM模式以及ArkUI的UI开发模式与MVVM的关系，指导开发者如何设计项目结构，以便在产品迭代和升级时能更轻松地开发和维护。
@@ -31,7 +31,7 @@ ArkUI的UI开发模式就属于MVVM模式，通过对MVVM概念的基本介绍�
 
 ArkUI的UI开发模式即是MVVM模式，而状态变量在MVVM模式中扮演着ViewModel的角色，向上刷新UI，向下更新数据，整体框架如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/zEorDJXuT-yJNn2LOf5BmA/zh-cn_image_0000002558604426.png?HW-CC-KV=V1&HW-CC-Date=20260429T052708Z&HW-CC-Expire=86400&HW-CC-Sign=B97C4AD18250068265568FDD0D52036858D55B103BFD9347B4BC668FC92CBA69)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/zEorDJXuT-yJNn2LOf5BmA/zh-cn_image_0000002558604426.png)
 
 ### 分层说明
 
@@ -144,7 +144,7 @@ ViewModel层数据，是提供某个页面上使用的数据，它可能是整�
 
 效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/6pQRW6CeSzO7Cd94pxjoTg/zh-cn_image_0000002589323951.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052708Z&HW-CC-Expire=86400&HW-CC-Sign=93ACF1BC3F5286FCC3C8C6A8217DB48735A245C82604E8B58F0E178FD45EEA3A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/6pQRW6CeSzO7Cd94pxjoTg/zh-cn_image_0000002589323951.gif)
 
 ### @Prop、@Link的作用
 
@@ -286,7 +286,7 @@ ViewModel层数据，是提供某个页面上使用的数据，它可能是整�
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/dQURmpgPQlCqa7y5l0FebA/zh-cn_image_0000002589243891.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052708Z&HW-CC-Expire=86400&HW-CC-Sign=6BF52CABC0C639B6E82023CBAF2CB9BAD1B61C4FB21264B02643AFD6636B8D00)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/dQURmpgPQlCqa7y5l0FebA/zh-cn_image_0000002589243891.gif)
 
 ### 循环渲染组件
 
@@ -423,7 +423,7 @@ ViewModel层数据，是提供某个页面上使用的数据，它可能是整�
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/UViOtEBkQD2kUByFU26gAQ/zh-cn_image_0000002558764084.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052708Z&HW-CC-Expire=86400&HW-CC-Sign=58C3ECFD13E99AB34BD7DEC8876DBDCE2769CE5F284F90AD197B56A83BD5DB75)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/UViOtEBkQD2kUByFU26gAQ/zh-cn_image_0000002558764084.gif)
 
 ### @Builder方法
 
@@ -571,7 +571,7 @@ ViewModel层数据，是提供某个页面上使用的数据，它可能是整�
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/SWGOMExzSJabi05yVcNwCQ/zh-cn_image_0000002558604428.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052708Z&HW-CC-Expire=86400&HW-CC-Sign=CEE7FFE8483CF2AB7C14BDA0B49517A6CC804040C71A8CC22ABA384588CB2B34)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/SWGOMExzSJabi05yVcNwCQ/zh-cn_image_0000002558604428.gif)
 
 ### 总结
 
@@ -971,4 +971,4 @@ MVVM模式拆分后的代码结构更加清晰，模块职责更明确。新页�
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/chJUKj_-TBOs0rA9K1zcUA/zh-cn_image_0000002589323953.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052708Z&HW-CC-Expire=86400&HW-CC-Sign=0F9D285F1A20D82C2892AA591B8539E5B22C6A3AB31E77CF93A080A4459F89D1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/chJUKj_-TBOs0rA9K1zcUA/zh-cn_image_0000002589323953.gif)

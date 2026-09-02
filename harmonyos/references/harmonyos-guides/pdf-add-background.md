@@ -5,12 +5,12 @@ breadcrumb: 指南 > 应用服务 > PDF Kit（PDF服务） > pdfService能力 > 
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:39:46+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:9db24920155b86e207db62346e545d93c1f8f2ceac605a54a0172fd87a08f499
+content_hash: sha256:e8be0a7f2b37d2806ca436bb30d64b749216e8e052668954dd52288fc555dd19
 ---
 
 对指定页面添加背景图片或背景颜色，并设置大小、旋转、透明度和位置等属性，支持图片格式：PNG、BMP、JPEG。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/9uB7J9H8Q0K9zhYil7OJTA/zh-cn_image_0000002589325475.png?HW-CC-KV=V1&HW-CC-Date=20260429T053945Z&HW-CC-Expire=86400&HW-CC-Sign=E808262CE9E6D59A478A825155DFF5C6EE7D6E967B5BC30BC81ABDEB00C7738E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/9uB7J9H8Q0K9zhYil7OJTA/zh-cn_image_0000002589325475.png)
 
 ## 接口说明
 

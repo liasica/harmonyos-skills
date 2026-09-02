@@ -5,7 +5,7 @@ breadcrumb: 指南 > 编写与调试应用 > 开发自测试 > 应用与元服�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:47:03+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:3d094fe1ea251222d41119a52978c401616519ffb4530d9dbd8248f817ca6665
+content_hash: sha256:ad7e6de4a5bf0378adf3f02429f41ce767c0d428d94a3b04816d0958fad61c32
 ---
 
 ## DevEco Studio 6.0.1 Beta1及以上版本
@@ -44,7 +44,7 @@ content_hash: sha256:3d094fe1ea251222d41119a52978c401616519ffb4530d9dbd8248f817c
 
 点击后，经过1600ms后截图，检测图片是否存在白块。白块检测逻辑为：AppAnalyzer通过真实应用训练的白块检测AI模型，进行页面白块识别。例如：如下左图输入到白块检测AI模型后，可以识别到白块位置，如下右图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/QM6uChpqQ2aHqR5LSiZ3qw/zh-cn_image_0000002530753280.png?HW-CC-KV=V1&HW-CC-Date=20260429T054702Z&HW-CC-Expire=86400&HW-CC-Sign=4583EADF0221705D4F48CB48C5981B4A665505F43A75272C4413A3E1D0BD5672)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/foDWcpv1QB2O5OAfhc838w/zh-cn_image_0000002561833195.png?HW-CC-KV=V1&HW-CC-Date=20260429T054702Z&HW-CC-Expire=86400&HW-CC-Sign=7CF4A361E6DC9644A92834E07E0072A18BC66B42734AFED49A8DBE7F0065E24E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/QM6uChpqQ2aHqR5LSiZ3qw/zh-cn_image_0000002530753280.png)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/foDWcpv1QB2O5OAfhc838w/zh-cn_image_0000002561833195.png)
 
 ### 计算逻辑
 

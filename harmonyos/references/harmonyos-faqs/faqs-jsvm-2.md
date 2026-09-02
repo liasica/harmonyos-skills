@@ -5,14 +5,14 @@ breadcrumb: FAQ > 应用框架开发 > NDK开发 > JSVM > 如何自排查_Bool�
 category: harmonyos-faqs
 scraped_at: 2026-04-29T14:16:05+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:38c6c849a46e25a232a5f7f01cf63e87164d681ce381ae4591c9a31b7721f6bd
+content_hash: sha256:2c4230d655bdfef930993cfd095d8c00657dd84daeea0aa95fd7060f59ff3a4d
 ---
 
 **问题现象**
 
 构建HAP工程时，编译工具报错：“error: unknown type name '\_Bool'”，找不到\_Bool类型错误，如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/G0VpZIXhQASMo1moL0BwFg/zh-cn_image_0000002229603937.png?HW-CC-KV=V1&HW-CC-Date=20260429T061605Z&HW-CC-Expire=86400&HW-CC-Sign=E6ACB8B6C831F93CE896BF70AA666B078A46CFF0F9EF303558EB2D662D419BA0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/G0VpZIXhQASMo1moL0BwFg/zh-cn_image_0000002229603937.png)
 
 **可能原因**
 

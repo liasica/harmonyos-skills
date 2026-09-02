@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-cert
-title: @ohos.security.cert (证书模块)
+title: "@ohos.security.cert (证书模块)"
 breadcrumb: API参考 > 系统 > 安全 > Device Certificate Kit（设备证书服务） > ArkTS API > @ohos.security.cert (证书模块)
 category: harmonyos-references
 scraped_at: 2026-04-28T08:07:41+08:00

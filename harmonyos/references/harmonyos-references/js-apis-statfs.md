@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-statfs
-title: @ohos.statfs (statfs)
+title: "@ohos.statfs (statfs)"
 breadcrumb: API参考 > 应用框架 > Core File Kit（文件基础服务） > ArkTS API > 已停止维护的接口 > @ohos.statfs (statfs)
 category: harmonyos-references
 scraped_at: 2026-04-28T08:05:47+08:00

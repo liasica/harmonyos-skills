@@ -5,20 +5,20 @@ breadcrumb: 指南 > 图形 > Graphics Accelerate Kit（图形加速服务） > 
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:36:28+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:ac8e2eff4afb1b9500cb22d05d7d20a4f1d9d252290622c720791cbfd631eeef
+content_hash: sha256:52723a7bd7ac7eaaf42fba6abec71cc7367866b505a3ea6f9ca43ce2e2b49d79
 ---
 
 ## 概述
 
 OpenGTX是GPU Turbo X的开放式入口，根据游戏开发者主动提供的游戏过程中的关键信息，使能LTPO（动态帧率/刷新率）等游戏加速方案，助力游戏开发者打造高画质、高流畅、低功耗极致体验。LTPO通过动态感知游戏渲染状态、游戏场景、设备状态等关键信息，动态调整游戏的帧率/刷新率以及设备的SOC/DDR频率。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/jdbAAhh7TQ2joZBzrNXtJw/zh-cn_image_0000002589245019.png?HW-CC-KV=V1&HW-CC-Date=20260429T053627Z&HW-CC-Expire=86400&HW-CC-Sign=FD83811D3098897BF089EEA2ECF66B569E51B7FD416A663346EBB44CD714B31D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/jdbAAhh7TQ2joZBzrNXtJw/zh-cn_image_0000002589245019.png)
 
 ## 业务流程
 
 LTPO的主要业务流程如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/3cr7M4ZTQ5q0eQutqgQNTg/zh-cn_image_0000002558765214.png?HW-CC-KV=V1&HW-CC-Date=20260429T053627Z&HW-CC-Expire=86400&HW-CC-Sign=FA8EEC63995AA7F7522A80A133CD4AF1898A6F43439B8907CCA609BA1C068CCA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/3cr7M4ZTQ5q0eQutqgQNTg/zh-cn_image_0000002558765214.png)
 
 1. 用户进入游戏。
 2. 游戏应用调用[HMS\_OpenGTX\_CreateContext](../harmonyos-references/_graphics_accelerate.md#hms_opengtx_createcontext)接口创建OpenGTX上下文实例。

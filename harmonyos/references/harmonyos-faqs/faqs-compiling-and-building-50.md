@@ -5,14 +5,14 @@ breadcrumb: FAQ > DevEco Studio > 编译构建 > 如何解决自定义组件stru
 category: harmonyos-faqs
 scraped_at: 2026-04-29T14:20:31+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:90e1943dc57de0a60de36abac1a36006cb44b75a7fbecc9335aae207a37e2d4d
+content_hash: sha256:a88ecef3b58b87379fe974eba245a4e184435aba50ecbe96e0a66d81b51d61e6
 ---
 
 **问题现象**
 
 运行DevEco Studio的build编译构建功能后，产物中不会生成get/set方法的代码逻辑。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/FL9_BnmTTJa8soA9nN_DwQ/zh-cn_image_0000002229758625.png?HW-CC-KV=V1&HW-CC-Date=20260429T062030Z&HW-CC-Expire=86400&HW-CC-Sign=3CBFB111C2B95AF356D073F7655C6AAAA094481AEAE5449FF57AFDB35E63B17C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/FL9_BnmTTJa8soA9nN_DwQ/zh-cn_image_0000002229758625.png)
 
 错误示例如下：
 

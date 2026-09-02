@@ -5,7 +5,7 @@ breadcrumb: 指南 > 媒体 > Media Kit（媒体服务） > 媒体开发指导(C
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:35:27+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:b3b487e74f33a214e3b7c50cff841784a78ff7c30657267da1aa074ae2bffb49
+content_hash: sha256:53296c3a2de4f964db9a5cab439169739edf2797ad8a3fce30a02eaf218b05e8
 ---
 
 从API version 20开始，使用LPP（low power player）播放器可以通过低功耗实现从媒体源到渲染的视频通路能力。本指南通过播放本地视频的示例，讲解如何使用LowPowerPlayer播放视频。
@@ -18,7 +18,7 @@ LowPowerPlayer播放器不支持纯视频和纯音频播放。纯音频低功耗
 
 **图1** 播放状态变化示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/ibcd1bSjQGKT7NLOS23loQ/zh-cn_image_0000002589324969.png?HW-CC-KV=V1&HW-CC-Date=20260429T053526Z&HW-CC-Expire=86400&HW-CC-Sign=603E7F0E59DF42107B649D8E25BF56B0219CBB01E6D277CDEEF02C3671B7F880)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/ibcd1bSjQGKT7NLOS23loQ/zh-cn_image_0000002589324969.png)
 
 播放流程包含：创建（created）、初始化（initialized）、就绪（ready）、解码（decoding）和渲染（rendering）五个阶段。
 

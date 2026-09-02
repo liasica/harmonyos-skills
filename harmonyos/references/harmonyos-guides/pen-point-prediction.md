@@ -5,7 +5,7 @@ breadcrumb: 指南 > 系统 > 硬件 > Pen Kit（手写笔服务） > 手写功�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:33:35+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:89b35d1a6042e80eb534dae76279a717f9ff97ea57d2aa518ec01dceeeb6cbe8
+content_hash: sha256:66b22c165e6418b3ef275bc317025e130d9e5236e7af2e8ef35227a0a20fe28a
 ---
 
 接入报点预测功能，可以优化应用中手写效果的绘制跟手性，提升应用中手写笔书写场景的跟手体验。
@@ -14,7 +14,7 @@ content_hash: sha256:89b35d1a6042e80eb534dae76279a717f9ff97ea57d2aa518ec01dceeeb
 
 在应用的自定义界面中，获取到界面的触摸事件，通过调用报点预测的接口，可以得到预测的下一个报点的位置信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/ajpklpn1RvuZBRR7x2WLsg/zh-cn_image_0000002589244783.png?HW-CC-KV=V1&HW-CC-Date=20260429T053334Z&HW-CC-Expire=86400&HW-CC-Sign=26370F205707A4152C4836A101B48F1BEAF6F9F4003D44B54176A2D6320ABBAC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/ajpklpn1RvuZBRR7x2WLsg/zh-cn_image_0000002589244783.png)
 
 ## 接口说明
 

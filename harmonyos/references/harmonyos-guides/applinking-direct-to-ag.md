@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用服务 > App Linking Kit（应用链接服务） > �
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:37:32+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:4675e5b9e2623d8ca782c2eb18800ab89c16f35a37dbe1786dc8aca6a0ee526e
+content_hash: sha256:60ecc2e4a9703580e7428dc4c24b5e60060564f92c2881f0915483c38a17dea9
 ---
 
 ## 场景介绍
@@ -45,10 +45,10 @@ content_hash: sha256:4675e5b9e2623d8ca782c2eb18800ab89c16f35a37dbe1786dc8aca6a0e
 
       只有[在AGC创建关联的网址域名](app-linking-startupapp.md#在agc为应用创建关联的网址域名)状态为“成功”时，才支持配置直达应用市场链接。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/nQsdFmcrQaO6ZYosYeWZHg/zh-cn_image_0000002558605648.png?HW-CC-KV=V1&HW-CC-Date=20260429T053730Z&HW-CC-Expire=86400&HW-CC-Sign=01BFAB8F91D69BB6F7C90368151993A53A7674FC14F0E948BA59C059D956EE03)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/nQsdFmcrQaO6ZYosYeWZHg/zh-cn_image_0000002558605648.png)
    4. 在配置页面，下拉选择与该域名关联的在架应用，为应用配置直达应用市场链接。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/aPDW5AxNRs6KnR1hUFbVSQ/zh-cn_image_0000002589325175.png?HW-CC-KV=V1&HW-CC-Date=20260429T053730Z&HW-CC-Expire=86400&HW-CC-Sign=730B9E34EBB565424BD3F0ABCE01F295ED0919E1AA19E4BCE44974199C13DDE5)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/aPDW5AxNRs6KnR1hUFbVSQ/zh-cn_image_0000002589325175.png)
 
       * 可以点击“添加应用”为多个应用配置直达链接，当该域名下关联的在架应用全部配置后，无法再添加应用。
       * 可以根据以下规则配置直达链接。
@@ -79,7 +79,7 @@ content_hash: sha256:4675e5b9e2623d8ca782c2eb18800ab89c16f35a37dbe1786dc8aca6a0e
 
       链接配置成功后，一般需要24~48小时才能生效，请耐心等待。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/aMH8GUgeRXC7Zke2qqsEjA/zh-cn_image_0000002589245111.png?HW-CC-KV=V1&HW-CC-Date=20260429T053730Z&HW-CC-Expire=86400&HW-CC-Sign=0924EC0327685E2E23368C8576A8A598C6864F1C06F4A0D7D174277DE8BE7D48)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/aMH8GUgeRXC7Zke2qqsEjA/zh-cn_image_0000002589245111.png)
 2. 验证应用被拉起效果。
 
    * 方式一：将直达应用市场链接地址存入备忘录中，并点击验证该链接是否可以拉起应用。

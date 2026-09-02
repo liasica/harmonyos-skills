@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-mechanicmanager
-title: @ohos.distributedHardware.mechanicManager (机械体控制模块)
+title: "@ohos.distributedHardware.mechanicManager (机械体控制模块)"
 breadcrumb: API参考 > 系统 > 硬件 > Mechanic Kit（机械设备管理服务） > ArkTS API > @ohos.distributedHardware.mechanicManager (机械体控制模块)
 category: harmonyos-references
 scraped_at: 2026-04-28T08:11:11+08:00

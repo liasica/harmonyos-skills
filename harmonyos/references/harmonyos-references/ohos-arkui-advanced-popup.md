@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:53:01+08:00
 doc_updated_at: 2026-04-08
-content_hash: sha256:98e93254d2852d24142ac94f9ba1825fe6e0b61c65dc01b5da9d87c15d251a6e
+content_hash: sha256:3d13b0697b4248e8073963b0309efb6f342025ee11e78fccde651256b8e48dbe
 ---
 
 Popup是用于显示特定样式气泡。
@@ -200,7 +200,7 @@ PhonePC/2in1TabletTVWearable
 61. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/rGQtmNB1RUGmEz77DMbLZQ/zh-cn_image_0000002589246453.png?HW-CC-KV=V1&HW-CC-Date=20260429T054912Z&HW-CC-Expire=86400&HW-CC-Sign=A7091219948F0A606BB0DA9E845E5C1E661F45E3D10D8EEB25FB3413EE87B086)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/rGQtmNB1RUGmEz77DMbLZQ/zh-cn_image_0000002589246453.png)
 
 ### 示例 2（设置镜像效果）
 
@@ -275,7 +275,7 @@ PhonePC/2in1TabletTVWearable
 66. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/uXIWcsHEQGqGtgBfEl5xyg/zh-cn_image_0000002558766646.png?HW-CC-KV=V1&HW-CC-Date=20260429T054912Z&HW-CC-Expire=86400&HW-CC-Sign=8D10A1530BDCF1804ABAE31674A7780604704E93404E3A89A49514E2FAAA1705)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/uXIWcsHEQGqGtgBfEl5xyg/zh-cn_image_0000002558766646.png)
 
 ### 示例3（设置自定义宽度）
 
@@ -342,4 +342,4 @@ PhonePC/2in1TabletTVWearable
 58. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/uownckouT9WT0Ci_3peXqQ/zh-cn_image_0000002558606986.png?HW-CC-KV=V1&HW-CC-Date=20260429T054912Z&HW-CC-Expire=86400&HW-CC-Sign=1568B8329729003A20F2CA04E011E189631ABF5A9182FA549F6CC7091614EDCC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/uownckouT9WT0Ci_3peXqQ/zh-cn_image_0000002558606986.png)

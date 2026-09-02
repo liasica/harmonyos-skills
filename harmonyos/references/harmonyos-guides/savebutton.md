@@ -5,7 +5,7 @@ breadcrumb: 指南 > 系统 > 安全 > 程序访问控制 > 使用安全控件 >
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:30:37+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:6452dba322a0baa18822ea30507e9fc6dc66a1107156747d2b34f03d77245585
+content_hash: sha256:e19666d4205127ac90884ec889f640bc52693deccf2ab4de2a71c32021e9e095
 ---
 
 保存控件允许用户通过点击按钮临时获取存储权限，无需权限弹框确认。
@@ -16,7 +16,7 @@ content_hash: sha256:6452dba322a0baa18822ea30507e9fc6dc66a1107156747d2b34f03d772
 
 保存控件效果如图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/2FeUf-KRTzClf3wqDsLwnQ/zh-cn_image_0000002558605202.png?HW-CC-KV=V1&HW-CC-Date=20260429T053036Z&HW-CC-Expire=86400&HW-CC-Sign=0A7135FC6B99DA08A3251A19BDBB50D623F1AEA46355009E06697A85F812E27E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/2FeUf-KRTzClf3wqDsLwnQ/zh-cn_image_0000002558605202.png)
 
 ## 约束与限制
 

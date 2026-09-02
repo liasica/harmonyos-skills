@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:28:50+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:fbde6638e3ef709e8d577dfd5505efcd75341f4709f0d481e0f422e519a22266
+content_hash: sha256:36ad6dd9225223016817ea3bf4f081ee43f338f43e0f3120579515ff1661efe3
 ---
 
 提供菜单组件，作为临时性弹出窗口，用于展示用户可执行的操作，具体用法请参考[menu](../harmonyos-references/js-components-basic-menu.md)。
@@ -42,7 +42,7 @@ content_hash: sha256:fbde6638e3ef709e8d577dfd5505efcd75341f4709f0d481e0f422e519a
 13. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/YdWuppZORq-F9BfRiiCxjw/zh-cn_image_0000002589244421.png?HW-CC-KV=V1&HW-CC-Date=20260429T052849Z&HW-CC-Expire=86400&HW-CC-Sign=BA0E8199CA2D3DB73943BECA8A9621B9FCB77B2077A7955B8173923C064BE709)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/YdWuppZORq-F9BfRiiCxjw/zh-cn_image_0000002589244421.png)
 
 说明
 
@@ -96,7 +96,7 @@ content_hash: sha256:fbde6638e3ef709e8d577dfd5505efcd75341f4709f0d481e0f422e519a
 28. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/g4RF3RzFTVi1osaxJZUM_Q/zh-cn_image_0000002558764614.png?HW-CC-KV=V1&HW-CC-Date=20260429T052849Z&HW-CC-Expire=86400&HW-CC-Sign=7C926764C64C3F1DB770E094B1624D7F339DE621CAC55FF3959E3845A826F7B5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/g4RF3RzFTVi1osaxJZUM_Q/zh-cn_image_0000002558764614.png)
 
 ## 绑定事件
 
@@ -160,4 +160,4 @@ content_hash: sha256:fbde6638e3ef709e8d577dfd5505efcd75341f4709f0d481e0f422e519a
 12. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/xU4pYZFBQTmCL9OK99djFg/zh-cn_image_0000002558604958.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052849Z&HW-CC-Expire=86400&HW-CC-Sign=F2A09EC01B82DC2CCFB686E9D497678FB1E63BFC4A2B0116732FAB9D614E7FA2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/xU4pYZFBQTmCL9OK99djFg/zh-cn_image_0000002558604958.gif)

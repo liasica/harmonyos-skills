@@ -5,7 +5,7 @@ breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.0.1(13) > OS平台能力 >
 category: harmonyos-releases
 scraped_at: 2026-04-29T13:23:53+08:00
 doc_updated_at: 2026-01-21
-content_hash: sha256:53483d6207b9ba667adcbf5b7e744e5eae76741e3ca13b764c6f990a2767eac0
+content_hash: sha256:c17be5ff5725dc3d98f9032eaef9cd1d21b5bc65210b246b7d954b9733abb6cd
 ---
 
 ## ArkUI
@@ -344,7 +344,7 @@ Openharmony SDK目录下toolchains/modulecheck/app.json scheme文件。
 
 升级SDK版本后，如果DevEco Studio编辑器中提示如下报错，请按照新规则修改应用的bundleName。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/QGgNIY2gTAG4putVXu5_DQ/zh-cn_image_0000002143569014.png?HW-CC-KV=V1&HW-CC-Date=20260429T052352Z&HW-CC-Expire=86400&HW-CC-Sign=04047DDD44FE87661D74954D14178FF376E59745B8C169D60F64D9F00BC350EA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/QGgNIY2gTAG4putVXu5_DQ/zh-cn_image_0000002143569014.png)
 
 ## 工具
 

@@ -5,20 +5,20 @@ breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > ArkT
 category: harmonyos-references
 scraped_at: 2026-04-29T14:05:17+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:15be76f08475975813e5889657bcec06de910531f823beb397310d5f2594f9c6
+content_hash: sha256:2edf81900fbf1daa8ef82084ae50c35b7b9755c9f31425c35733335884ed7a20
 ---
 
 矩阵对象。
 
 表示为3\*3的矩阵，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/FFAvTjC4TDe-mMOfcFj7Sw/zh-cn_image_0000002558767390.png?HW-CC-KV=V1&HW-CC-Date=20260429T060514Z&HW-CC-Expire=86400&HW-CC-Sign=EEE7ACF5971D8308DE64AC350749AC887E5654EFFB391D2C1C1ED9F08D5E1AEA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/FFAvTjC4TDe-mMOfcFj7Sw/zh-cn_image_0000002558767390.png)
 
 矩阵中的元素从左到右，从上到下分别表示水平缩放系数、水平倾斜系数、水平位移系数、垂直倾斜系数、垂直缩放系数、垂直位移系数、X轴透视系数、Y轴透视系数、透视缩放系数。
 
 设(x1, y1)为源坐标点，(x2, y2)为源坐标点通过矩阵变换后的坐标点，则两个坐标点的关系如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/9ABxUOr6Q2auwpohQr3lPQ/zh-cn_image_0000002558607732.png?HW-CC-KV=V1&HW-CC-Date=20260429T060514Z&HW-CC-Expire=86400&HW-CC-Sign=E7017391ACB7BFE41F77A8318A478EA7D3EB8DA112191F112ED38A0525B08040)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/9ABxUOr6Q2auwpohQr3lPQ/zh-cn_image_0000002558607732.png)
 
 说明
 
@@ -1040,7 +1040,7 @@ mapRect(dst: common2D.Rect, src: common2D.Rect): boolean
 
 将目标矩形设置为源矩形通过矩阵变换后的图形的外接矩形。如下图所示，蓝色矩形为源矩形，假设黄色矩形为源矩形通过矩阵变换形成的图形，此时黄色矩形的边不与坐标轴平行，无法使用矩形对象表示，因此，将目标矩形设置为黄色矩形的外接矩形，即黑色矩形。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/eZ-0EnbYSbS0phsrkiQzyQ/zh-cn_image_0000002589327259.png?HW-CC-KV=V1&HW-CC-Date=20260429T060514Z&HW-CC-Expire=86400&HW-CC-Sign=DBD479A906110697685C6E01C8422E2C15307165C4E62F4DDB3B05F5AA36A52A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/eZ-0EnbYSbS0phsrkiQzyQ/zh-cn_image_0000002589327259.png)
 
 **系统能力：** SystemCapability.Graphics.Drawing
 

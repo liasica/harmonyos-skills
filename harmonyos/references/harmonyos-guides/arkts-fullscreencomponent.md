@@ -5,12 +5,12 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:28:29+08:00
 doc_updated_at: 2026-04-17
-content_hash: sha256:eb1bdcaab934aee258b5ecda0de2c1de5fa3d6e6120b82c56d7801cc40f6e700
+content_hash: sha256:e6b1966214126a0efba9826201f6be2dbbd0b649ac8505f683830485acab6cd1
 ---
 
 FullScreenLaunchComponent允许开发者以全屏方式拉起元服务，使得应用能够提供更友好的用户体验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/TfWZjcc7RJSSbGoCxQS-8g/zh-cn_image_0000002558764550.png?HW-CC-KV=V1&HW-CC-Date=20260429T052826Z&HW-CC-Expire=86400&HW-CC-Sign=3ED37CEF3BA3E85471734B3CADAB363ED7378CCEEF8BEAFAFAAFDB7C6EEA24FC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/TfWZjcc7RJSSbGoCxQS-8g/zh-cn_image_0000002558764550.png)
 
 ## 基本概念
 
@@ -27,7 +27,7 @@ FullScreenLaunchComponent提供的一种全屏启动元服务的能力。需要�
 
 跳出式运行元服务是指，非组件化的方式拉起EmbeddableUIAbility，交互体验接近独立窗口。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/_3fmLwKdTcOpfiEDRvkNbA/zh-cn_image_0000002558604894.png?HW-CC-KV=V1&HW-CC-Date=20260429T052826Z&HW-CC-Expire=86400&HW-CC-Sign=E640281FD567942A3131706381E83231EAC9D607AFD457C86A48F7692B71E2C1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/_3fmLwKdTcOpfiEDRvkNbA/zh-cn_image_0000002558604894.png)
 
 ## 能力范围
 

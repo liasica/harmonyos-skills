@@ -1,7 +1,7 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-performance-analysis-kit-71
-title: cd到SDK下toolchains目录，执行hdc list targets，错误提示command not found: hdc
-breadcrumb: FAQ > 应用质量 > 技术质量 > 运维 > cd到SDK下toolchains目录，执行hdc list targets，错误提示command not found: hdc
+title: "cd到SDK下toolchains目录，执行hdc list targets，错误提示command not found: hdc"
+breadcrumb: "FAQ > 应用质量 > 技术质量 > 运维 > cd到SDK下toolchains目录，执行hdc list targets，错误提示command not found: hdc"
 category: harmonyos-faqs
 scraped_at: 2026-04-28T08:23:25+08:00
 doc_updated_at: 2026-03-10

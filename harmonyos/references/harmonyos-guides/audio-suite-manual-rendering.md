@@ -5,7 +5,7 @@ breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > 音频编创 > 离�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:34:36+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:3a9b43da175d47bea19b627f3ce268fa76f0acd798f5257e91a92cc7421a7768
+content_hash: sha256:a2dfc805a8568db62108bbb70c6a74fd99b4eb5e8b9a3e24ce4215a8dfd89e41
 ---
 
 从API version 22开始，[OHAudioSuite](../harmonyos-references/capi-ohaudiosuite.md)给开发者提供音频离线编辑能力，允许在非实时播放场景下对音频数据进行处理，开发者可以组合多个音频节点实现复杂的音频处理流程。
@@ -49,7 +49,7 @@ content_hash: sha256:3a9b43da175d47bea19b627f3ce268fa76f0acd798f5257e91a92cc7421
 
 **图1**：基础离线编辑示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/AtoammMSScq9RnkNtrCxiA/zh-cn_image_0000002558605380.png?HW-CC-KV=V1&HW-CC-Date=20260429T053435Z&HW-CC-Expire=86400&HW-CC-Sign=C515B011A0E98802AD116389066D923D899886386CE26A1531AD9755B6F677DA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/AtoammMSScq9RnkNtrCxiA/zh-cn_image_0000002558605380.png)
 
 1. 创建引擎和管线。
 
@@ -207,7 +207,7 @@ content_hash: sha256:3a9b43da175d47bea19b627f3ce268fa76f0acd798f5257e91a92cc7421
 
 **图2**：音源分离编辑示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/CaDjEoYeRKeCPvHhUEw4ow/zh-cn_image_0000002589324907.png?HW-CC-KV=V1&HW-CC-Date=20260429T053435Z&HW-CC-Expire=86400&HW-CC-Sign=2ED54931A05D7EBE2DE334AC02FD84798E195E5E2919610C63F07E181107AC87)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/CaDjEoYeRKeCPvHhUEw4ow/zh-cn_image_0000002589324907.png)
 
 示例代码如下：
 
@@ -384,7 +384,7 @@ content_hash: sha256:3a9b43da175d47bea19b627f3ce268fa76f0acd798f5257e91a92cc7421
 
 **图3**：级联编辑示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/b0G_XkuaQgSFdIzQydV37A/zh-cn_image_0000002589244843.png?HW-CC-KV=V1&HW-CC-Date=20260429T053435Z&HW-CC-Expire=86400&HW-CC-Sign=CB89044001956678EBF2D8D42210E67A6DCB0A5927A50B5628F7F347DDF748F7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/b0G_XkuaQgSFdIzQydV37A/zh-cn_image_0000002589244843.png)
 
 示例代码如下：
 

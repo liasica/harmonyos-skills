@@ -5,14 +5,14 @@ breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:41:05+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:3b519fe1c3f6539add88e4d8c47178222b41e8ffc41a500c4da63e1160bdfba5
+content_hash: sha256:e10d767f022784a3993fe7bf3f85382a13a275bca01700403c1b7b104f17f34a
 ---
 
 AscendC基于硬件抽象架构进行编程， 屏蔽不同硬件之间的差异。
 
 **图1** 硬件架构抽象
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/bQqlbIYpRSuRQtXw_sjN5w/zh-cn_image_0000002589325601.png?HW-CC-KV=V1&HW-CC-Date=20260429T054104Z&HW-CC-Expire=86400&HW-CC-Sign=0EEBB8597D580E9EA7F26BFF0D7FF75F1B51BD82799448241C8A76DE190A9C7A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/bQqlbIYpRSuRQtXw_sjN5w/zh-cn_image_0000002589325601.png)
 
 AI Core中包含**计算单元、存储单元、搬运单元**等核心组件。
 

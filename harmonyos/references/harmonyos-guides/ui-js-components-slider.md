@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:28:49+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:f3493d953412e567b534a2b8295977bce99de1ef1a82484c09444436026c9681
+content_hash: sha256:67181a59e9ebca1fe948d23d688eb7dde6e808cec31079f2169c72303ce661e3
 ---
 
 slider为滑动条组件，用来快速调节音量、亮度等。具体用法请参考[slider](../harmonyos-references/js-components-basic-slider.md)。
@@ -33,7 +33,7 @@ slider为滑动条组件，用来快速调节音量、亮度等。具体用法�
 9. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/a6f2-uMIS1mew3J61UlpXQ/zh-cn_image_0000002589244413.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052848Z&HW-CC-Expire=86400&HW-CC-Sign=88D7CCD6B10FCAE7F98C2C9F751990790FC8444D2003C96E4B42BFAFD3623B03)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/a6f2-uMIS1mew3J61UlpXQ/zh-cn_image_0000002589244413.gif)
 
 ## 设置样式和属性
 
@@ -63,7 +63,7 @@ slider组件通过color、selected-color、block-color样式分别为滑动条�
 14. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/6Gko_oQuTRSoPd-hDGK7CA/zh-cn_image_0000002558764606.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052848Z&HW-CC-Expire=86400&HW-CC-Sign=BB5F0C9A7FF04036AD9EE2DED3D18B4E5E9CF5538F307F0C1C773CD1E7BF1EC2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/6Gko_oQuTRSoPd-hDGK7CA/zh-cn_image_0000002558764606.gif)
 
 通过添加min、max、value、step、mode属性分别为滑动条设置最小值、最大值、初始值、滑动步长和滑动条样式。
 
@@ -86,7 +86,7 @@ slider组件通过color、selected-color、block-color样式分别为滑动条�
 9. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/NMIIpo2oRg-LG3qCXNOqMQ/zh-cn_image_0000002558604950.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052848Z&HW-CC-Expire=86400&HW-CC-Sign=0565455B5B2F319A2C0DB185493697810D4FAF229F956795C574D58C324F8308)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/NMIIpo2oRg-LG3qCXNOqMQ/zh-cn_image_0000002558604950.gif)
 
 说明
 
@@ -145,7 +145,7 @@ mode属性为滑动条样式，可选值为：
 21. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/XgbWUHFDT9GJOIgWNQeIvw/zh-cn_image_0000002589324477.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052848Z&HW-CC-Expire=86400&HW-CC-Sign=1FEACBDDD78EEDCC6E47EAECC948A2DDA64B868235705F7BEDFD6EE96E9CBF82)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/XgbWUHFDT9GJOIgWNQeIvw/zh-cn_image_0000002589324477.gif)
 
 ## 场景示例
 
@@ -200,4 +200,4 @@ mode属性为滑动条样式，可选值为：
 12. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/1wTpB9IJQIq-tzGzSrbbbQ/zh-cn_image_0000002589244415.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052848Z&HW-CC-Expire=86400&HW-CC-Sign=048EAC978B5F8A4710B71BA2BF2B99CDF6F46319ADF796D02E424B1AE08F8EC7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/1wTpB9IJQIq-tzGzSrbbbQ/zh-cn_image_0000002589244415.gif)

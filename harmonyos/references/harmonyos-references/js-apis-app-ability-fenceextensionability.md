@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-fenceextensionability
-title: @ohos.app.ability.FenceExtensionAbility (FenceExtensionAbility)
+title: "@ohos.app.ability.FenceExtensionAbility (FenceExtensionAbility)"
 breadcrumb: API参考 > 应用服务 > Location Kit（位置服务） > ArkTS API > @ohos.app.ability.FenceExtensionAbility (FenceExtensionAbility)
 category: harmonyos-references
 scraped_at: 2026-04-28T08:17:04+08:00

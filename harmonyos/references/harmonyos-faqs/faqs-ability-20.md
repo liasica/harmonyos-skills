@@ -5,7 +5,7 @@ breadcrumb: FAQ > 应用框架开发 > 程序框架 > 程序框架（Ability） 
 category: harmonyos-faqs
 scraped_at: 2026-04-29T14:14:59+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:79aaf9114b532934f1f8bab13f4f0bb7e396949e8fbb159c0a2ca4af6a6ce2e9
+content_hash: sha256:531ec41e4c98b9ed9fd95749d50e330fbbbc5df50dbdd6598a95fa186d07d810
 ---
 
 **原因**
@@ -16,7 +16,7 @@ content_hash: sha256:79aaf9114b532934f1f8bab13f4f0bb7e396949e8fbb159c0a2ca4af6a6
 
 单击Run > Edit Configurations，设置指定模块的HAP安装方式，勾选“Keep Application Data”，表示采用覆盖安装方式，保留应用和服务的缓存数据。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/k_2dzaRfSfyreUHTJ1GYLw/zh-cn_image_0000002194318612.png?HW-CC-KV=V1&HW-CC-Date=20260429T061458Z&HW-CC-Expire=86400&HW-CC-Sign=195985B5AB378CE7E7AC3659F8A73DAC3700338CA0F8D4C9E4951D7A025611D7 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/k_2dzaRfSfyreUHTJ1GYLw/zh-cn_image_0000002194318612.png "点击放大")
 
 **参考链接**
 

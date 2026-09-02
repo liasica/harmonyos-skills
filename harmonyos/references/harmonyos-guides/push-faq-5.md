@@ -5,14 +5,14 @@ breadcrumb: 指南 > 应用服务 > Push Kit（推送服务） > Push Kit常见�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:40:00+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:2bd0eadbc1b56118d58a62eb824d409848dca8a982a031dbe13817becf93a703
+content_hash: sha256:737c67b55f19176ba464b6a24c2c96a1fb37059437333e474da9a50ba10b6812
 ---
 
 为了给用户提供更好的消息通知体验，营造清朗网络空间，Push Kit设置了多条频控规则。若消息超出规则限制，超出的消息将会被**丢弃**，直到**次日恢复**。
 
 ## 通知消息被频控的可能原因
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/W-k63RE_Q2ezoqhPKJROCQ/zh-cn_image_0000002589245449.png?HW-CC-KV=V1&HW-CC-Date=20260429T053958Z&HW-CC-Expire=86400&HW-CC-Sign=5F816E078E5623265C200FFAD015577BCF60F788A68A9DFEDBD3A5E3E3C08A0B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/W-k63RE_Q2ezoqhPKJROCQ/zh-cn_image_0000002589245449.png)
 
 具体规则如下：
 

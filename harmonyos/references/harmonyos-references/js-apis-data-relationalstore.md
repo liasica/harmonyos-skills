@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-data-relationalstore
-title: @ohos.data.relationalStore (关系型数据库)
+title: "@ohos.data.relationalStore (关系型数据库)"
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > ArkTS API > @ohos.data.relationalStore (关系型数据库)
 category: harmonyos-references
 scraped_at: 2026-04-28T07:59:13+08:00

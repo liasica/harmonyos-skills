@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用测试 > 单元测试和UI测试 > 应用UI测试（�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:48:03+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:a213f634e5849cdaed944f4e4242e2a40d6f11ec126786b66d808663230eda74
+content_hash: sha256:933f2e85300874e76b786d315405a40e7b3af4e3853af6d93d4c8e2a6412bf95
 ---
 
 ## 框架概述
@@ -81,7 +81,7 @@ Mac系统使用UiViewer功能时，需在设置面板中手动指定hdc路径，
 
 Ⅰ. 访问华为开发者联盟官网[下载页面](https://developer.huawei.com/consumer/cn/download/deveco-testing-hypium)下载DevEco Testing Hypium安装包，下载后解压该安装包，找到其中的hypium-pycharm-plugin-6.1.0.210.zip（该版本号仅做示例，请以实际版本号为准），此文件为插件的安装包，无需再进行解压。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/ko2mWStoRTuKGJxduSI23w/zh-cn_image_0000002524503481.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T054800Z&HW-CC-Expire=86400&HW-CC-Sign=70B0775C0135A4719E6FDF7AD2A7AF98FCA45105A412CA8BED81DE21FBBF873C "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/ko2mWStoRTuKGJxduSI23w/zh-cn_image_0000002524503481.jpg "点击放大")
 
 Ⅱ. 打开PyCharm后，点击File -> Settings -> Plugin -> 齿轮图标 -> Install Plugin from Disk。在弹出的文件选择器中，选择第一步下载的hypium-pycharm-plugin-6.1.0.210.zip（该版本号仅做示例，请以实际版本号为准）离线安装包，完成安装。安装完成后，重启PyCharm即可使用新安装的Deveco Testing Hypium插件。
 
@@ -89,23 +89,23 @@ Mac系统使用UiViewer功能时，需在设置面板中手动指定hdc路径，
 
 在6.0及以后的版本中，DevEco Testing Hypium插件在下载包中的名称由“DevEcoTesting-Hypium”修改为“hypium-pycharm-plugin”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/Oy9KctX6QCG29N0dLb3mAQ/zh-cn_image_0000002524503499.png?HW-CC-KV=V1&HW-CC-Date=20260429T054800Z&HW-CC-Expire=86400&HW-CC-Sign=273EBC344F35B99158D3016D59F6F00DC4AE50F275B3C59511140B890DFB49FC "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/Oy9KctX6QCG29N0dLb3mAQ/zh-cn_image_0000002524503499.png "点击放大")
 
 安装完成后在Plugins界面可以看到DevEcoTesting-Hypium插件。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/nFWn-milS2iNQiemwFooCg/zh-cn_image_0000002492503710.png?HW-CC-KV=V1&HW-CC-Date=20260429T054800Z&HW-CC-Expire=86400&HW-CC-Sign=6086511EA88DB8B5BE0385CE34AB5DCF505348A324487650DC1FC976857ACA33)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/nFWn-milS2iNQiemwFooCg/zh-cn_image_0000002492503710.png)
 
 * **插件功能**
 
 PyCharm有三个主要的开发功能区，如下图所示。DevEco Testing Hypium插件在不同的开发功能区提供了对应的用例开发辅助功能，在PyCharm的设置面板中提供了插件的设置功能，在PyCharm的工程新建面板中提供了用例工程模板创建功能，下文分区域介绍这些功能。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/VfJoRMP7SDmL6ptqFTo1ww/zh-cn_image_0000002524623423.png?HW-CC-KV=V1&HW-CC-Date=20260429T054800Z&HW-CC-Expire=86400&HW-CC-Sign=1BEA48892BF85D8278100F7AA57EABE096472721D5D4E52ABAB614D59988E018 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/VfJoRMP7SDmL6ptqFTo1ww/zh-cn_image_0000002524623423.png "点击放大")
 
 **Ⅰ. 项目文件区域**
 
 在项目文件区域右键点击项目目录或者文件，选择 DevEco Testing Hypium，弹出对应的功能菜单。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/ttjJGrnNQse8vJskPuxv_Q/zh-cn_image_0000002524623427.png?HW-CC-KV=V1&HW-CC-Date=20260429T054800Z&HW-CC-Expire=86400&HW-CC-Sign=3CE714CEC723C60662F36A1DD91386C910C4B5999483909AF6CBE48B2F30EE77)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/ttjJGrnNQse8vJskPuxv_Q/zh-cn_image_0000002524623427.png)
 
 功能菜单根据选择的目录和文件不同存在区别，详细参见下表：
 
@@ -142,7 +142,7 @@ UiViewer插件当前仅支持USB连接本地设备调测和本地模拟器进行
 
 设备选择界面如下图所示， 若首次进入该界面，或设备状态发生变化，需点击“刷新”按钮以更新设备列表。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/EZFoBEm2Td2mIRPqrWoaSw/zh-cn_image_0000002558763237.png?HW-CC-KV=V1&HW-CC-Date=20260429T054800Z&HW-CC-Expire=86400&HW-CC-Sign=C31CD55C18268B14CC33500EABD1D28CE471493EA57B8FFEBBB362302851CA64)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/EZFoBEm2Td2mIRPqrWoaSw/zh-cn_image_0000002558763237.png)
 
 设备信息说明见下表：
 
@@ -162,7 +162,7 @@ UiViewer插件当前仅支持USB连接本地设备调测和本地模拟器进行
 
 **单设备投屏界面**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/Ig6r2XbwQYatRjWy3uO5bQ/zh-cn_image_0000002492343770.png?HW-CC-KV=V1&HW-CC-Date=20260429T054800Z&HW-CC-Expire=86400&HW-CC-Sign=D0C18AE46F9A565946C30E575F51BB7F52862E3F655BFDFFF91DE25E7C3DCA0F "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/Ig6r2XbwQYatRjWy3uO5bQ/zh-cn_image_0000002492343770.png "点击放大")
 
 **功能说明：**
 
@@ -217,19 +217,19 @@ UiViewer插件当前仅支持USB连接本地设备调测和本地模拟器进行
 
 当需要对某一设备进行控件查看时，插件将自动退出双设备投屏模式，切换至单设备控件查看界面，以确保控件信息的准确展示与操作体验。完成控件查看后，用户可手动返回双设备投屏视图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/PW3WjNY9Q_uJZYawm0zepQ/zh-cn_image_0000002492503742.png?HW-CC-KV=V1&HW-CC-Date=20260429T054800Z&HW-CC-Expire=86400&HW-CC-Sign=D60F98C9FD8B3C975F475731368A84751282CE795679904F8B5559F962C6903A "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/PW3WjNY9Q_uJZYawm0zepQ/zh-cn_image_0000002492503742.png "点击放大")
 
 **执行结果报告展示功能**
 
 使用“一键执行当前用例”功能完成测试用例执行后，插件将在控制台旁边自动生成执行结果标签。点击该标签，即可查看本次用例执行过程中各步骤的截图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/kZjI84XbTMaPzi6zCpn3Nw/zh-cn_image_0000002524623411.png?HW-CC-KV=V1&HW-CC-Date=20260429T054800Z&HW-CC-Expire=86400&HW-CC-Sign=F554C88344B184AD0F6518F20F7A306F9F92FE49616254818A75B45B88CFD8BD "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/kZjI84XbTMaPzi6zCpn3Nw/zh-cn_image_0000002524623411.png "点击放大")
 
 **Ⅳ. 设置面板区**
 
 打开PyCharm设置面板，选中左侧的DevEco Testing Hypium选项，可以进入DevEco Testing Hypium的设置面板，如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/5olAfwL2R8qvXsXM7zjaXQ/zh-cn_image_0000002553106760.png?HW-CC-KV=V1&HW-CC-Date=20260429T054800Z&HW-CC-Expire=86400&HW-CC-Sign=8B180A3F59B90B1648A630E73B47AC2184377F5847F863B2637E79F153A37B4C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/5olAfwL2R8qvXsXM7zjaXQ/zh-cn_image_0000002553106760.png)
 
 各个配置项的详细说明见下表：
 
@@ -251,17 +251,17 @@ UiViewer插件当前仅支持USB连接本地设备调测和本地模拟器进行
 
 在PyCharm顶部点击File -> New Project 进入模板工程创建面板。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/gaBGYeHJSpaS52WXTKofiw/zh-cn_image_0000002524623425.png?HW-CC-KV=V1&HW-CC-Date=20260429T054800Z&HW-CC-Expire=86400&HW-CC-Sign=3B56D42990A6A44286461AE342A414339CD236E7E88734BDE5EC5EF2A1E16A4B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/gaBGYeHJSpaS52WXTKofiw/zh-cn_image_0000002524623425.png)
 
 点击左侧的DevEco Testing Hypium，可以创建Hypium用例模板工程。共有两种类型的Hypium模板工程，分别对应单设备和双设备的测试场景。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/rvQU2eeqQDCoqxm1Rg2R1Q/zh-cn_image_0000002524623429.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T054800Z&HW-CC-Expire=86400&HW-CC-Sign=4BC64FA47A5BC93B7B85BC2DC43DFBE2200A32257469E8CA770765DCB2CB81BB "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/rvQU2eeqQDCoqxm1Rg2R1Q/zh-cn_image_0000002524623429.jpg "点击放大")
 
 选择对应模板，配置工程路径以及Python环境参数，点击Create即可创建Hypium测试用例工程。工程目录中包含一个模板用例和一个模板配置文件user\_config.xml。
 
 以单设备工程为例，创建完成后的界面如下图所示。连接被测设备后，可右键点击模板用例文件代码编辑区域“执行hypium用例”来运行当前用例。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/L0jRR24LQVWD-xF84e2-GA/zh-cn_image_0000002492503754.png?HW-CC-KV=V1&HW-CC-Date=20260429T054800Z&HW-CC-Expire=86400&HW-CC-Sign=0280899382479BCD360A57881ADC9416EF6AFC3A4A760627D12B9A0AA51A487D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/L0jRR24LQVWD-xF84e2-GA/zh-cn_image_0000002492503754.png)
 
 ## 测试脚本开发快速入门
 
@@ -696,7 +696,7 @@ Hypium测试框架提供了两大类API来支持用例的编写：设备相关AP
 
 通过 DevEco Testing Hypium插件中的 UiViewer 工具，可以查看界面控件的各项属性，有助于在后续测试用例开发中准确定位控件。具体使用方法请参考本文档的**“安装向导 -> DevEco Testing Hypium插件安装及使用方法**“小节。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/-KuqTZQXRVmw6TH9rNFMRw/zh-cn_image_0000002524623459.png?HW-CC-KV=V1&HW-CC-Date=20260429T054800Z&HW-CC-Expire=86400&HW-CC-Sign=02669D2151535570CE103303643FDDB25D8FD4E8A32D3E1EAECF3554C5F1C0DC "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/-KuqTZQXRVmw6TH9rNFMRw/zh-cn_image_0000002524623459.png "点击放大")
 
 * **控件查找**
 
@@ -793,7 +793,7 @@ BY选择器支持链式调用，允许用户指定多个控件属性进行联合
 
 相对位置通常和控件的属性结合使用来定位控件，以下图场景为例，界面上存在多个按钮，用户需要点击显示通知图标之后的按钮，定位方式如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/VvDZowtlTX6-tAkNhJ2JCQ/zh-cn_image_0000002524623441.png?HW-CC-KV=V1&HW-CC-Date=20260429T054800Z&HW-CC-Expire=86400&HW-CC-Sign=7706C148BA642C63332EDF37A74D9665FB6B9212F82697B863364A72E66965FD "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/VvDZowtlTX6-tAkNhJ2JCQ/zh-cn_image_0000002524623441.png "点击放大")
 
 1. 首先选择一个可以通过属性唯一定位的锚点控件。例如**BY.text("显示通知图标")**
 2. 然后找到需要操作的目标控件，选择该控件的一个不唯一属性，通常为type属性。例如**BY.type("Button")**
@@ -835,7 +835,7 @@ XPath不能和其他属性匹配一起使用，通过XPath查找控件相比单�
 
 在如下场景中，用户需要找到红框标识的图标，然而该图标没有唯一定位的属性，推荐使用XPath语法描述该控件相对其他可定位控件的路径关系来定位该控件。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/HT0v78onSxCZqfksyhW-tQ/zh-cn_image_0000002492503760.png?HW-CC-KV=V1&HW-CC-Date=20260429T054800Z&HW-CC-Expire=86400&HW-CC-Sign=3DC9EE305F2B15226AF3E1DDAD46BA85364B633523B5EEAF824510C42E727975 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/HT0v78onSxCZqfksyhW-tQ/zh-cn_image_0000002492503760.png "点击放大")
 
 该页面上，“可用 WLAN”是一个固定的可唯一定位的文本，用户可以首先通过XPath定位到该文本**//\*[@text='可用 WLAN']**，然后定位到该文本控件所在的List控件**/ancestor::List**，然后从该List控件开始找到对应的Image控件**/ListItemGroup/ListItem[1]//Text/following::Image**。
 
@@ -864,7 +864,7 @@ XPath不能和其他属性匹配一起使用，通过XPath查找控件相比单�
 
 以如下场景为例，界面上存在多个Button，用户需要点击第2个特定的Button或点击所有Button时，可以使用**driver.find\_all\_components**。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/MNVAIoyHQd-YGK2spjEyhw/zh-cn_image_0000002524503477.png?HW-CC-KV=V1&HW-CC-Date=20260429T054800Z&HW-CC-Expire=86400&HW-CC-Sign=51429CF020863E7144173C87C9E6E71B022CB8651F821D22A0D0051D7C6A3CBC "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/MNVAIoyHQd-YGK2spjEyhw/zh-cn_image_0000002524503477.png "点击放大")
 
 **示例代码**
 
@@ -884,7 +884,7 @@ XPath不能和其他属性匹配一起使用，通过XPath查找控件相比单�
 
 以如下场景为例，若红框中的控件没有可以唯一定位的属性，也无法通过与附近控件的相对位置定位，用户可以尝试使用图片匹配的方式定位控件，定位方式如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/V-w8xEhwQz-TmnxtJpFK7A/zh-cn_image_0000002524623447.png?HW-CC-KV=V1&HW-CC-Date=20260429T054800Z&HW-CC-Expire=86400&HW-CC-Sign=09F100C821217636938DCD7044E58BB2B98C3232A21EDE08C656B585B7B48A38 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/V-w8xEhwQz-TmnxtJpFK7A/zh-cn_image_0000002524623447.png "点击放大")
 
 1. 截取红框中图片保存到为template.jpeg（文件名根据需要定义）。
 2. 调用driver.touch\_image，传入template.jpeg图片的路径。
@@ -922,11 +922,11 @@ python -m pip install opencv-python
 
 以下图场景为例，如果红框中的控件无法通过上述方式定位，用户可以采用比例坐标的方式点击。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/VmZ8ii9IQlSHwRvCrM7Hug/zh-cn_image_0000002524503469.png?HW-CC-KV=V1&HW-CC-Date=20260429T054800Z&HW-CC-Expire=86400&HW-CC-Sign=5A126F658AA1795F83EA92181DD2F7DC0DC033D6D188BEA8B2156B77D555D1A9 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/VmZ8ii9IQlSHwRvCrM7Hug/zh-cn_image_0000002524503469.png "点击放大")
 
 用户可以通过 UiViewer 工具的控件查看模式获取控件的比例坐标。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/A3Xc9ZZvSuuOBoBftHE5ZQ/zh-cn_image_0000002492343782.png?HW-CC-KV=V1&HW-CC-Date=20260429T054800Z&HW-CC-Expire=86400&HW-CC-Sign=EA2CBF6D18227A89138FDDA8339C4E6BAED894DCAC4021316F0993F02ED792C0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/A3Xc9ZZvSuuOBoBftHE5ZQ/zh-cn_image_0000002492343782.png)
 
 ```
 1. # 点击屏幕上(0.52 * 屏幕宽度, 0.98 * 屏幕高度)的位置。

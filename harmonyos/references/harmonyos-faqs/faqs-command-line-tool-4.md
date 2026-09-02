@@ -1,7 +1,7 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-command-line-tool-4
-title: ohpm-repo使用mysqlDB插件连mysql时，报错“decrypt data failed. error: Unsupported state or unable to authenticate data”
-breadcrumb: FAQ > DevEco Studio > 命令行工具 > ohpm-repo使用mysqlDB插件连mysql时，报错“decrypt data failed. error: Unsupported state or unable to authenticate data”
+title: "ohpm-repo使用mysqlDB插件连mysql时，报错“decrypt data failed. error: Unsupported state or unable to authenticate data”"
+breadcrumb: "FAQ > DevEco Studio > 命令行工具 > ohpm-repo使用mysqlDB插件连mysql时，报错“decrypt data failed. error: Unsupported state or unable to authenticate data”"
 category: harmonyos-faqs
 scraped_at: 2026-04-28T08:30:22+08:00
 doc_updated_at: 2026-03-10

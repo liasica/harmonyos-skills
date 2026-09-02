@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:53:11+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:ee3845c198534b948966d28d3964f0f09745aca478bcf2416f721612f306c6d4
+content_hash: sha256:b2d320441c717e454101067bad29857e57c788828fab2f08086d6116d3afd79f
 ---
 
 说明
@@ -962,11 +962,11 @@ PhonePC/2in1TabletTVWearable
 
 以水平方向Bias为例，其值为组件到左锚点的距离 Dstart与组件到水平方向锚点间总距离 Dstart + Dend的比值。镜像语言下，Dstart为组件到右锚点的距离。下图中Dwidth表示组件宽度。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/eKvt3FWuT9SVAaehuGLAsg/zh-cn_image_0000002558607008.png?HW-CC-KV=V1&HW-CC-Date=20260429T055309Z&HW-CC-Expire=86400&HW-CC-Sign=4F9B3FC61671AF7072866020D6220242F18638A0A831078274FB82D1453CEB3A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/eKvt3FWuT9SVAaehuGLAsg/zh-cn_image_0000002558607008.png)
 
 竖直方向同理，其值为组件到上锚点的距离Dtop与组件到竖直方向锚点间总距离Dtop + Dbottom的比值。下图中Dheight表示组件高度。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/kPByJW77TQGhzxSSd0e3Kw/zh-cn_image_0000002589326535.png?HW-CC-KV=V1&HW-CC-Date=20260429T055309Z&HW-CC-Expire=86400&HW-CC-Sign=BA1E3E9AA87DD296589132FF198B4D0CBC5F5B9F1D572F57D21C4A129266F774)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/kPByJW77TQGhzxSSd0e3Kw/zh-cn_image_0000002589326535.png)
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 

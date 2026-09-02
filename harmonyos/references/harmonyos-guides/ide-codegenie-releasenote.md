@@ -5,7 +5,7 @@ breadcrumb: 指南 > 使用AI智能辅助编程 > 版本说明
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:45:08+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:4dd5f676700f2adcf1ff0ba354ee8c9d111f71f21a03d3c00e2a3b34f6265035
+content_hash: sha256:819f192061b39052184f37dd154f0d198d268553085deb06da3f0bafa6c326be
 ---
 
 ## 6.1.0.830
@@ -85,7 +85,7 @@ content_hash: sha256:4dd5f676700f2adcf1ff0ba354ee8c9d111f71f21a03d3c00e2a3b34f62
 ### 增强特性
 
 * HarmonyOS Ask智能体可读取和修改工程代码，以及在问答区编译验证。
-* 删除对话框中用于上下文定位的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/BbHdkgx-RxCCxFPn7xtTQA/zh-cn_image_0000002530753628.png?HW-CC-KV=V1&HW-CC-Date=20260429T054507Z&HW-CC-Expire=86400&HW-CC-Sign=59150CA6CADDE8DA22F6DF0DAE34863F8758481A2609CDB63870A7D7D3C06BA3)图标，可直接对选中的代码段或代码文件分析。
+* 删除对话框中用于上下文定位的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/BbHdkgx-RxCCxFPn7xtTQA/zh-cn_image_0000002530753628.png)图标，可直接对选中的代码段或代码文件分析。
 * 智能问答和代码生成能力增强，更加高效理解用户意图。
 
 ## 6.0.1.246

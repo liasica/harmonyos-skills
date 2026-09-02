@@ -1,7 +1,7 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-package-structure-65
-title: 使用发布证书进行调试时出现安装错误: Install Failed: error: failed to install bundle.
-breadcrumb: FAQ > 应用框架开发 > 程序包结构 > 使用发布证书进行调试时出现安装错误: Install Failed: error: failed to install bundle.
+title: "使用发布证书进行调试时出现安装错误: Install Failed: error: failed to install bundle."
+breadcrumb: "FAQ > 应用框架开发 > 程序包结构 > 使用发布证书进行调试时出现安装错误: Install Failed: error: failed to install bundle."
 category: harmonyos-faqs
 scraped_at: 2026-04-28T08:23:38+08:00
 doc_updated_at: 2026-03-17

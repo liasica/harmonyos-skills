@@ -5,7 +5,7 @@ breadcrumb: 指南 > AI > Core Vision Kit（基础视觉服务） > 多目标识
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:43:28+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:67c5345497e2b116bb290206cd630531ff7a86afbb9234c4516b7748f8663f93
+content_hash: sha256:8a2d68bdc303af9e693a78323f8bd24a80ab94cf2f4d722d10f164cea681e785
 ---
 
 ## 适用场景
@@ -14,7 +14,7 @@ content_hash: sha256:67c5345497e2b116bb290206cd630531ff7a86afbb9234c4516b7748f86
 
 效果如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/jINgs2teQM-kABvMsiZBjg/zh-cn_image_0000002589245619.png?HW-CC-KV=V1&HW-CC-Date=20260429T054327Z&HW-CC-Expire=86400&HW-CC-Sign=BBFF44B659DA233D146D159EA14373D19F7681545E6848EBEADFF82308E634F0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/jINgs2teQM-kABvMsiZBjg/zh-cn_image_0000002589245619.png)
 
 ## 约束与限制
 

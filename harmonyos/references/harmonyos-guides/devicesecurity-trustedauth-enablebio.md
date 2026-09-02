@@ -5,7 +5,7 @@ breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:31:35+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:a1a18103f41978371c68d20b28d83c58e0a498cad3bea7aaff96c1e0f83764f6
+content_hash: sha256:bfeb51867429f66e61840f4bfefb6c635ee808a077585eb55f393f654a829143
 ---
 
 ## 场景介绍
@@ -18,7 +18,7 @@ content_hash: sha256:a1a18103f41978371c68d20b28d83c58e0a498cad3bea7aaff96c1e0f83
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/UUicxttkTl2SxkoCgfi4sQ/zh-cn_image_0000002558764894.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053133Z&HW-CC-Expire=86400&HW-CC-Sign=0DD05E7193902BC8232C12F974AE47ACA31C0CF12D466259D138FC93964FD1E8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/UUicxttkTl2SxkoCgfi4sQ/zh-cn_image_0000002558764894.jpg)
 
 ## 接口说明
 
@@ -33,7 +33,7 @@ content_hash: sha256:a1a18103f41978371c68d20b28d83c58e0a498cad3bea7aaff96c1e0f83
 
 如图表示开通人脸认证时对应的UI界面示例，当密码认证通过后，则会拉起系统人脸认证界面进行人脸信息绑定。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/sl5NoNnbTKuGsWREZYThOA/zh-cn_image_0000002558605238.png?HW-CC-KV=V1&HW-CC-Date=20260429T053133Z&HW-CC-Expire=86400&HW-CC-Sign=24F89D923CACD994D78492919CD1CCC84EA63C75E15CF930AA3172F69B6B519B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/sl5NoNnbTKuGsWREZYThOA/zh-cn_image_0000002558605238.png)
 
 ## 开发步骤
 

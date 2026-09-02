@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > Web组件的生命�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:29:14+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:4fe51f2e31bc71364cecd7c8376b1e999ef9143bf203bfedf6da9dd2e7a8538e
+content_hash: sha256:041071846dceeac97c5a9781bc4db18b3269cbce2b71990d0d3b790c84bd234a
 ---
 
 ## 概述
@@ -22,7 +22,7 @@ Web页面保活可以参考[使用离线Web组件](web-offline-mode.md)。
 
 **图1** Web组件网页正常加载过程中的回调事件
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/nF2wrMCTS4ucpz6bwby4Ww/zh-cn_image_0000002589244505.png?HW-CC-KV=V1&HW-CC-Date=20260429T052912Z&HW-CC-Expire=86400&HW-CC-Sign=DFE4F1F30392B37C21B5F0AB6B7B60092AB959CF9F78361DB4E6CA31190678C8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/nF2wrMCTS4ucpz6bwby4Ww/zh-cn_image_0000002589244505.png)
 
 ## Web组件网页正常加载过程所涉及的状态说明
 

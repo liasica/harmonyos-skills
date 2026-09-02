@@ -5,7 +5,7 @@ breadcrumb: 指南 > 图形 > XEngine Kit（GPU加速引擎服务） > 空域GPU
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:36:42+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:7741efb7ba4aced1300a83996af8a1873fa0884813bebe993c56ddd37f700791
+content_hash: sha256:cdf0fc9df60d09f7eae8d891a2bb5fcf10e0c34c17d9fcc749e04383b7a22898
 ---
 
 XEngine Kit提供空域GPU超分能力，其基于单帧输入图像，使用空间邻域信息实现超采样，开销较小同时收益可观，建议使用超分倍率为[1.2, 1.5]。
@@ -38,7 +38,7 @@ XEngine Kit提供空域GPU超分能力，其基于单帧输入图像，使用空
 
 * 下面是基于GLES图形API平台集成空域GPU超分的主要业务流程
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/Dy8YteK7Txa4mYwKHnLhSA/zh-cn_image_0000002589325105.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053641Z&HW-CC-Expire=86400&HW-CC-Sign=1A3F7977BD330E8B6B22DFAC5B12CF26F5D74D2F2546C00B88D51AF2019FA748)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/Dy8YteK7Txa4mYwKHnLhSA/zh-cn_image_0000002589325105.jpg)
 
 1. 用户在进入游戏初始化场景时调用HMS\_XEG\_GetString接口查询XEngine支持的特性，当查询接口返回支持的特性列表中包含空域GPU超分时代表可以使用此特性。
 2. 调用HMS\_XEG\_SpatialUpscaleParameter接口配置超分参数。
@@ -50,7 +50,7 @@ XEngine Kit提供空域GPU超分能力，其基于单帧输入图像，使用空
 
 * 下面是基于Vulkan图形API平台集成空域GPU超分的主要业务流程
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/PTMIzRMYSraJSDZDw_WeWA/zh-cn_image_0000002589245041.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053641Z&HW-CC-Expire=86400&HW-CC-Sign=6B99F6B2E5696B4AE6275A92C5CC52E3DF3D8EDE4073BCF95DD77C80DBBD2F1E)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/PTMIzRMYSraJSDZDw_WeWA/zh-cn_image_0000002589245041.jpg)
 
 1. 用户在进入游戏初始化场景时调用HMS\_XEG\_EnumerateDeviceExtensionProperties接口查询XEngine支持的特性，当查询接口返回支持的特性列表中包含空域GPU超分时代表可以使用此特性。
 2. 此时调用HMS\_XEG\_CreateSpatialUpscale接口创建超分实例。

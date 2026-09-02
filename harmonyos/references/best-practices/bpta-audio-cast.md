@@ -5,7 +5,7 @@ breadcrumb: 最佳实践 > 自由流转 > 多端协同 > 音频投播
 category: best-practices
 scraped_at: 2026-04-29T14:12:44+08:00
 doc_updated_at: 2026-04-01
-content_hash: sha256:682c81b512a95d05659c9ab851fb2a5a711d3b8ae0ffb4caae56038d18637dc6
+content_hash: sha256:193287758519510e248a5c43c80c7a1122e233feaa47d35ca1e83fe13297338f
 ---
 
 ## 概述
@@ -30,7 +30,7 @@ content_hash: sha256:682c81b512a95d05659c9ab851fb2a5a711d3b8ae0ffb4caae56038d186
 
 **图1** 音频投播流程体验视频
 
-[](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/b9/v3/gvmGdOPJTZqrt5sSFklhuw/zh-cn_media_0000002421894784.mp4?HW-CC-KV=V1&HW-CC-Date=20260429T061239Z&HW-CC-Expire=86400&HW-CC-Sign=7095DAD584D7E712C32550767F152F4E0564CAD1B67F1288BC01E6D64EAEC5E6)
+[](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/b9/v3/gvmGdOPJTZqrt5sSFklhuw/zh-cn_media_0000002421894784.mp4)
 
 Video Player is loading.
 
@@ -100,7 +100,7 @@ End of dialog window.
 投播功能的实现基于AVSession媒体会话和AVCastController投播控制器的协同工作，系统通过AVSession建立设备连接，由AVCastController向Cast+服务发送控制指令。开发者需要聚焦两个核心环节——通过AVSession实现监听设备连接，以及使用AVCastController控制远端播放并同步状态，详见[运作机制](../harmonyos-guides/distributed-playback-overview.md#运作机制)。
 
 **图6** 音视频投播运作机制示意图   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/dvKpX43-S_-02cEqHQi7ig/zh-cn_image_0000002422054660.png?HW-CC-KV=V1&HW-CC-Date=20260429T061239Z&HW-CC-Expire=86400&HW-CC-Sign=5D54F4FC612E9E89048415F550FEFD0429D4B8CC29F050E83C1E1EB96B5CEC36 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/dvKpX43-S_-02cEqHQi7ig/zh-cn_image_0000002422054660.png "点击放大")
 
 ## 模块设计
 
@@ -113,14 +113,14 @@ End of dialog window.
 实现音频投播功能，建议参考如下流程接入，其中本端音频的播放和控制可参考[使用AVPlayer播放音频](../harmonyos-guides/using-avplayer-for-playback.md)、[音频播放交互场景](bpta-audio-interaction-practice.md)、[使用AudioRenderer开发音频播放功能](../harmonyos-guides/using-audiorenderer-for-playback.md)等方案根据功能诉求自行实现，本文将从接入播控中心开始进行详细介绍。
 
 **图7** 接入音频投播流程图   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/mPkL_mTgSVuyDdflk304Fw/zh-cn_image_0000002455573521.png?HW-CC-KV=V1&HW-CC-Date=20260429T061239Z&HW-CC-Expire=86400&HW-CC-Sign=8F5CC50D5346CB450F7ED4BD323FB1DE2027F7296C394E5AE2727E0E83682333 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/mPkL_mTgSVuyDdflk304Fw/zh-cn_image_0000002455573521.png "点击放大")
 
 ## 接入播控中心
 
 [音视频播控服务](../harmonyos-guides/avsession-overview.md)用于统一管理系统中所有音视频行为，开发者须接入播控中心才能实现投播功能。播控中心不仅能控制本端设备的播放，还能控制远端设备的播放。
 
 **图8** 播控中心控制音频播放   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/PcZrGXy_T2-J_2f8U3kyzw/zh-cn_image_0000002455453641.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061239Z&HW-CC-Expire=86400&HW-CC-Sign=6BEC4967BD260C79D746D8D52050E2CD59F2530568B5E9322550E4AB1802DF6A "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/PcZrGXy_T2-J_2f8U3kyzw/zh-cn_image_0000002455453641.gif "点击放大")
 
 本应用与系统播控中心通过媒体会话AVSession进行信息交互。创建并初始化媒体会话实例后，应用需要通过[setAVMetaData()](../harmonyos-references/arkts-apis-avsession-avsession.md#setavmetadata10)接口设置会话元数据，同时使用[setAVPlaybackState()](../harmonyos-references/arkts-apis-avsession-avsession.md#setavplaybackstate10)接口主动向播控中心同步当前播放状态，并通过on('controlCommand')注册事件监听实时响应播控中心的音频操作事件，最终实现本应用与播控中心的双向状态同步，确保两端数据的一致性。下面为应用接入播控中心的简要开发流程。
 
@@ -241,7 +241,7 @@ End of dialog window.
 
 **图9** 本端播放的音频投播到远端
 
-[](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/e0/v3/PU1OkzSJQ1iNKaPYrUxXaQ/zh-cn_media_0000002421894824.mp4?HW-CC-KV=V1&HW-CC-Date=20260429T061239Z&HW-CC-Expire=86400&HW-CC-Sign=029FC4D35B1CD34459D58808223CA01408D7820C143F52F0A882EA5517634679)
+[](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/e0/v3/PU1OkzSJQ1iNKaPYrUxXaQ/zh-cn_media_0000002421894824.mp4)
 
 Video Player is loading.
 
@@ -290,7 +290,7 @@ End of dialog window.
 **时序图**
 
 **图10** 创建投播时序图   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/BKOjv4PsTZeYJQiFmN6fVQ/zh-cn_image_0000002422054684.png?HW-CC-KV=V1&HW-CC-Date=20260429T061239Z&HW-CC-Expire=86400&HW-CC-Sign=B211CAC4457F07BA8972DD6B8853CAA3F3E03FDF470392629CFF6C38201A4DD0 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/BKOjv4PsTZeYJQiFmN6fVQ/zh-cn_image_0000002422054684.png "点击放大")
 
 **开发步骤**
 
@@ -306,7 +306,7 @@ End of dialog window.
 2. 在音频播放页绘制投播组件[AVCastPicker](../harmonyos-references/ohos-multimedia-avcastpicker.md#avcastpicker)，用于拉起半模态弹窗选择投播设备。
 
    **图11** 发起投播界面   
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/KpyjzlASRM6bAc5995K19Q/zh-cn_image_0000002455573541.png?HW-CC-KV=V1&HW-CC-Date=20260429T061239Z&HW-CC-Expire=86400&HW-CC-Sign=FD8B598961B935879F1F513AFCB6CE83E4E9963AB41C49778ECF2222690D5659 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/KpyjzlASRM6bAc5995K19Q/zh-cn_image_0000002455573541.png "点击放大")
 
    ```
    1. AVCastPicker({
@@ -377,7 +377,7 @@ End of dialog window.
 
 **图12** 本端控制远端音频播放
 
-[](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/6c/v3/7VxwzRoRToqM68DpZyawHA/zh-cn_media_0000002455453669.mp4?HW-CC-KV=V1&HW-CC-Date=20260429T061239Z&HW-CC-Expire=86400&HW-CC-Sign=9DCD1E875E4DDD84A3954D1D8B22F7332BEC10B8C79015675453440DE517425F)
+[](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/6c/v3/7VxwzRoRToqM68DpZyawHA/zh-cn_media_0000002455453669.mp4)
 
 Video Player is loading.
 
@@ -426,7 +426,7 @@ End of dialog window.
 **时序图**
 
 **图13** 本端控制远端音频播放时序图   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/bt1PSWzRQSSJDy_0D8Rp5g/zh-cn_image_0000002421894848.png?HW-CC-KV=V1&HW-CC-Date=20260429T061239Z&HW-CC-Expire=86400&HW-CC-Sign=BFDAD9202229757E5D7122D94330808744A860544836942D8062432DE7A1892F "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/bt1PSWzRQSSJDy_0D8Rp5g/zh-cn_image_0000002421894848.png "点击放大")
 
 **开发步骤**
 
@@ -476,7 +476,7 @@ End of dialog window.
 
 **图14** 远端音频状态回传本端
 
-[](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/96/v3/xyOzZCP_SUCKwYT_i3OEVQ/zh-cn_media_0000002422054696.mp4?HW-CC-KV=V1&HW-CC-Date=20260429T061239Z&HW-CC-Expire=86400&HW-CC-Sign=F0BBD10239391001B73D4790C8C35C6D5089FDEA04A4F4C97F37C16EA420535B)
+[](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/96/v3/xyOzZCP_SUCKwYT_i3OEVQ/zh-cn_media_0000002422054696.mp4)
 
 Video Player is loading.
 
@@ -525,7 +525,7 @@ End of dialog window.
 **时序图**
 
 **图15** 远端音频状态回传本端时序图   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/SRFPw0fTTCm7KDxaDHadaw/zh-cn_image_0000002455573553.png?HW-CC-KV=V1&HW-CC-Date=20260429T061239Z&HW-CC-Expire=86400&HW-CC-Sign=DD771D27DABF9EF3551DC71EB05C00B9B782E1EF2F721C119942BE3E7A98B96D "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/SRFPw0fTTCm7KDxaDHadaw/zh-cn_image_0000002455573553.png "点击放大")
 
 **开发步骤**
 
@@ -613,7 +613,7 @@ End of dialog window.
 **时序图**
 
 **图16** 切换投播音质时序图   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/_V4zy8A-QxqEEsQrO3OPNw/zh-cn_image_0000002455453673.png?HW-CC-KV=V1&HW-CC-Date=20260429T061239Z&HW-CC-Expire=86400&HW-CC-Sign=7FBAD5A0F8A437E33D48FA088C108DBC2EB376A4129F9E26E67E53FD9831B8B2 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/_V4zy8A-QxqEEsQrO3OPNw/zh-cn_image_0000002455453673.png "点击放大")
 
 投播过程中，当用户触发音质切换功能时，开发者只需根据对应音质重新设置不同的投播资源即可实现音质的切换，无需断开投播连接。设置资源的具体方法可参考[创建投播](bpta-audio-cast.md#section148446619451)。
 

@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-uitest
-title: @ohos.UiTest
+title: "@ohos.UiTest"
 breadcrumb: API参考 > 系统 > 调测调优 > Test Kit（应用测试服务） > ArkTS API > @ohos.UiTest
 category: harmonyos-references
 scraped_at: 2026-04-28T08:11:34+08:00

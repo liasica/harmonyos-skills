@@ -5,7 +5,7 @@ breadcrumb: 指南 > 系统 > 安全 > 密码自动填充服务 > 应用与网�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:30:41+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:1b6005fda5fe4d054158f96cc1b97a4a7732d8f99bf78dc1fc2a745429b7e1cd
+content_hash: sha256:f2bca18b6a23df16c30f5a377e67120876c71ef504dc9eae2335fb79d73605b7
 ---
 
 ## 简介
@@ -16,7 +16,7 @@ content_hash: sha256:1b6005fda5fe4d054158f96cc1b97a4a7732d8f99bf78dc1fc2a745429b
 
 同时，选择密码时也会将关联网站/应用的密码展示为推荐密码。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/oLcanldoRzaqoaNAu02LxQ/zh-cn_image_0000002558764872.png?HW-CC-KV=V1&HW-CC-Date=20260429T053040Z&HW-CC-Expire=86400&HW-CC-Sign=80EAFDF7C7928CB14D3E49CB7FFA0EC593A8E20C8656BE5D6B4B261804E73734)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/oLcanldoRzaqoaNAu02LxQ/zh-cn_image_0000002558764872.png)
 
 ## 适用场景
 
@@ -24,7 +24,7 @@ content_hash: sha256:1b6005fda5fe4d054158f96cc1b97a4a7732d8f99bf78dc1fc2a745429b
 
 ## 接入方式
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/LMbpOm5dQcqSoiBtTDSf0Q/zh-cn_image_0000002558605216.png?HW-CC-KV=V1&HW-CC-Date=20260429T053040Z&HW-CC-Expire=86400&HW-CC-Sign=37CD7DCF6FF298B17A070DE1CFC5514CE23F74EA7D3648E746BF94FB9712BB61)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/LMbpOm5dQcqSoiBtTDSf0Q/zh-cn_image_0000002558605216.png)
 
 应用及网页接入App Linking后绑定关联关系，密码保险箱将基于这个关系完成识别。
 

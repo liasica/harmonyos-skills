@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:51:14+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:c225bacc6be38babc0cb4a80dfb60fbe29f3e63f255e44613f7b6ee79e25876b
+content_hash: sha256:bd846114128b7ad45e9872d178cafe4f565ebefe4db9d79e7c7d15b6737c1b10
 ---
 
 组件的Z序，设置同一容器中兄弟组件的堆叠顺序。
@@ -77,11 +77,11 @@ PhonePC/2in1TabletTVWearable
 
 Stack容器内子组件不设置zIndex的效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/LcO9ybjISBqMcT6B1UwCxg/zh-cn_image_0000002589245815.png?HW-CC-KV=V1&HW-CC-Date=20260429T055112Z&HW-CC-Expire=86400&HW-CC-Sign=9F89E3B835B3028548426942C08BACEEAB251547F3F031F801647320795D1D40)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/LcO9ybjISBqMcT6B1UwCxg/zh-cn_image_0000002589245815.png)
 
 Stack容器子组件设置zIndex后的效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/5qPcQFl-T9qjJTfna0SWUQ/zh-cn_image_0000002558766006.png?HW-CC-KV=V1&HW-CC-Date=20260429T055112Z&HW-CC-Expire=86400&HW-CC-Sign=5D210D1BBBA8CF7032E34A577578C0646305A8E58897C3AAB5FC9B3A83B1DCC4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/5qPcQFl-T9qjJTfna0SWUQ/zh-cn_image_0000002558766006.png)
 
 ### 示例2（动态修改zIndex属性）
 
@@ -118,15 +118,15 @@ Stack容器子组件设置zIndex后的效果。
 
 不点击Button修改zIndex值的效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/Mi0rVT4NTIuYnU96itdgWg/zh-cn_image_0000002558606348.png?HW-CC-KV=V1&HW-CC-Date=20260429T055112Z&HW-CC-Expire=86400&HW-CC-Sign=EA4EFB7E1FA4E2E9E0A31ADCEBE7C802589726378283E6F69832552B5E02C52C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/Mi0rVT4NTIuYnU96itdgWg/zh-cn_image_0000002558606348.png)
 
 点击Button动态修改zIndex，使Text1和Text2的zIndex相等，因为在点击Button前的层级顺序上根据zIndex进行稳定排序，层级顺序不发生改变。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/YFRoTOGVT6W1GFa_43-mSA/zh-cn_image_0000002589325875.png?HW-CC-KV=V1&HW-CC-Date=20260429T055112Z&HW-CC-Expire=86400&HW-CC-Sign=F6788EF457A79B1023FF183B45DF2483C0A7A87187FE6E2084153D211179EE24)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/YFRoTOGVT6W1GFa_43-mSA/zh-cn_image_0000002589325875.png)
 
 点击Button动态修改zIndex，使Text2的zIndex大于Text1，层级顺序发生改变。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/YRvcavFmSE6fcSxbw7tPig/zh-cn_image_0000002589245817.png?HW-CC-KV=V1&HW-CC-Date=20260429T055112Z&HW-CC-Expire=86400&HW-CC-Sign=F0A8EF87620F98774251663F8F47212EE612620F1D9F7CAD758947FF3CC6D21B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/YRvcavFmSE6fcSxbw7tPig/zh-cn_image_0000002589245817.png)
 
 ### 示例3（设置不同容器内组件的zIndex属性）
 
@@ -162,4 +162,4 @@ Stack容器子组件设置zIndex后的效果。
 27. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/qhVruAH-S0i68QJdQ8d8Ow/zh-cn_image_0000002558766008.png?HW-CC-KV=V1&HW-CC-Date=20260429T055112Z&HW-CC-Expire=86400&HW-CC-Sign=2947278A25430D1961499CAB09CF3F9DE512A2A5D6388FFB2AFECD5932C7DA85)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/qhVruAH-S0i68QJdQ8d8Ow/zh-cn_image_0000002558766008.png)

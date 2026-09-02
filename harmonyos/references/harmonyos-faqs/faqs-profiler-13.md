@@ -5,14 +5,14 @@ breadcrumb: FAQ > DevEco Studio > 性能分析 > 在macOS上使用Profiler录制
 category: harmonyos-faqs
 scraped_at: 2026-04-29T14:21:34+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:78cb09e15b2c2d9cdc089e3e331029461100307c58afe5bb80cf53720120dd1e
+content_hash: sha256:9ab5ed9b59097e53768d5549f36183f200f6f5a3d17de7ca0817efabac4335b2
 ---
 
 **问题现象**
 
 在macOS上使用Profiler录制数据时，可能必现trace相关泳道显示“No Data”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/6aceKO6bS5KwEMOiNB97jw/zh-cn_image_0000002516464433.png?HW-CC-KV=V1&HW-CC-Date=20260429T062133Z&HW-CC-Expire=86400&HW-CC-Sign=1735EDAFE587614FD64B871C545ABDA86EB3CF20A5C31714772B22D42A89DEB2 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/6aceKO6bS5KwEMOiNB97jw/zh-cn_image_0000002516464433.png "点击放大")
 
 **问题原因**
 

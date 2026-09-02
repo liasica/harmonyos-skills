@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-autoadcomponent
-title: @ohos.advertising.AutoAdComponent (轮播广告展示组件)
+title: "@ohos.advertising.AutoAdComponent (轮播广告展示组件)"
 breadcrumb: API参考 > 应用服务 > Ads Kit（广告服务） > ArkTS组件 > @ohos.advertising.AutoAdComponent (轮播广告展示组件)
 category: harmonyos-references
 scraped_at: 2026-04-29T14:06:57+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:86c46bd435e732c50b59cd3c8a62de649e20011e7b304c8aafa33dd4ae63decf
+content_hash: sha256:fbc972b515be3c8e7acc9ae674fe37ab182f0d321929748adc5705d60521d6d2
 ---
 
 本模块提供展示轮播广告的能力。
@@ -120,7 +120,7 @@ PhonePC/2in1Tablet
 
 **效果图：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/mQgIpDsYSjqDBYP2N4ASTw/zh-cn_image_0000002558605608.png?HW-CC-KV=V1&HW-CC-Date=20260429T060656Z&HW-CC-Expire=86400&HW-CC-Sign=806793C52B56DD90F7A9E6580E28079D6D651D001AD055B5F77F078A5730816C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/mQgIpDsYSjqDBYP2N4ASTw/zh-cn_image_0000002558605608.png)
 
 ### build
 

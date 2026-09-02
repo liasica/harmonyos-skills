@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:28:50+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:6ffcde741fef4d39bde3f035d913c630cebb6000894fad16b7509bed6eec2e22
+content_hash: sha256:695b2cfbd26f8a888df2149456a452ac4ea78601681ee45ef93d844b2d060ad4
 ---
 
 生成并显示二维码，具体用法请参考[qrcode](../harmonyos-references/js-components-basic-qrcode.md)。
@@ -33,7 +33,7 @@ content_hash: sha256:6ffcde741fef4d39bde3f035d913c630cebb6000894fad16b7509bed6ee
 9. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/qp90LKqSSQa72OJodLbElQ/zh-cn_image_0000002589324487.png?HW-CC-KV=V1&HW-CC-Date=20260429T052850Z&HW-CC-Expire=86400&HW-CC-Sign=7C10B05A50D436D113CA1E3AF6F82D9D4551A93FB7F0C14740461A89313E4F67)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/qp90LKqSSQa72OJodLbElQ/zh-cn_image_0000002589324487.png)
 
 说明
 
@@ -82,7 +82,7 @@ qrcode组件在创建的时候value的值为必填项。
 10. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/Dk7rs50mQSyvdeslgnGR1g/zh-cn_image_0000002589244425.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052850Z&HW-CC-Expire=86400&HW-CC-Sign=9F7633C8C823DC9DD4976EB61A0FA6811F40D9F139BC02DD1B5475363CD21D88)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/Dk7rs50mQSyvdeslgnGR1g/zh-cn_image_0000002589244425.gif)
 
 ## 设置样式
 
@@ -112,7 +112,7 @@ qrcode组件在创建的时候value的值为必填项。
 14. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/68h6HEzbTlqH-aEJiOpc9Q/zh-cn_image_0000002558764618.png?HW-CC-KV=V1&HW-CC-Date=20260429T052850Z&HW-CC-Expire=86400&HW-CC-Sign=E157D5E090F841CE339271E3F9B046555261A5C030165E25357BF11AB769A84D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/68h6HEzbTlqH-aEJiOpc9Q/zh-cn_image_0000002558764618.png)
 
 说明
 
@@ -159,4 +159,4 @@ qrcode组件在创建的时候value的值为必填项。
 9. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/IOREHO4cS0-Z7f7rWeMZmQ/zh-cn_image_0000002558604962.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052850Z&HW-CC-Expire=86400&HW-CC-Sign=EB30CAA8B8D8FAD1B81C95C03769A81E6D558C2F6069A77C1B9EAEA54B634911)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/IOREHO4cS0-Z7f7rWeMZmQ/zh-cn_image_0000002558604962.gif)

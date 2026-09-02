@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-battery-info
-title: @ohos.batteryInfo (电量信息)
+title: "@ohos.batteryInfo (电量信息)"
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > ArkTS API > 设备管理 > @ohos.batteryInfo (电量信息)
 category: harmonyos-references
 scraped_at: 2026-04-28T08:09:27+08:00

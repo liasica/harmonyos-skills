@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-device-info
-title: @ohos.deviceInfo (设备信息)
+title: "@ohos.deviceInfo (设备信息)"
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > ArkTS API > 设备管理 > @ohos.deviceInfo (设备信息)
 category: harmonyos-references
 scraped_at: 2026-04-28T08:09:30+08:00

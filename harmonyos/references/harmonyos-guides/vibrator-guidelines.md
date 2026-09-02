@@ -5,7 +5,7 @@ breadcrumb: 指南 > 系统 > 硬件 > Sensor Service Kit（传感器服务） >
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:33:41+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:435992a119422f32fea02993a5d61c887c7d2924c98ed1fae3f9d09478bc6734
+content_hash: sha256:b2b5190437d1446e5ceb60f7cf4a3158458c120c926f6174a836735530504b5f
 ---
 
 ## 场景介绍
@@ -160,7 +160,7 @@ JSON文件共包含3个属性。
 
 1. 新建一个工程。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/rvV9tGW8TfyB2nswxiDw9g/zh-cn_image_0000002558764982.png?HW-CC-KV=V1&HW-CC-Date=20260429T053340Z&HW-CC-Expire=86400&HW-CC-Sign=7164C96AE162BF950670F402AEE1FBEF9DDF184E4E10A9F6B68C1DCD9099CB19)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/rvV9tGW8TfyB2nswxiDw9g/zh-cn_image_0000002558764982.png)
 2. 配置权限，具体配置方式请参考[声明权限](declare-permissions.md)。
 
    ```

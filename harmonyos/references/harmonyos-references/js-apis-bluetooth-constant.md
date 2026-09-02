@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-bluetooth-constant
-title: @ohos.bluetooth.constant (蓝牙constant模块)
+title: "@ohos.bluetooth.constant (蓝牙constant模块)"
 breadcrumb: API参考 > 系统 > 网络 > Connectivity Kit（短距通信服务） > ArkTS API > @ohos.bluetooth.constant (蓝牙constant模块)
 category: harmonyos-references
 scraped_at: 2026-04-28T08:07:57+08:00

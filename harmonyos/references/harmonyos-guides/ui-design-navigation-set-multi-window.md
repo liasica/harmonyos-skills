@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > UI Design Kit（UI设计套件） > 组件�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:30:21+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:ec0d98207b15f741afb85d39c9183d35c9d96c6aeba5cc2b0e351bc8af25512a
+content_hash: sha256:292596074edf819b265724ebaa81e648afba0e6b16523e3e0b324966a9e55fc9
 ---
 
 ## 场景介绍
@@ -78,4 +78,4 @@ content_hash: sha256:ec0d98207b15f741afb85d39c9183d35c9d96c6aeba5cc2b0e351bc8af2
    40. }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/QJZ2-qUcT2K2orpHDY_rCQ/zh-cn_image_0000002558764836.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053020Z&HW-CC-Expire=86400&HW-CC-Sign=F0BD1079B0125F77B81E9A48B0D7F3EB0BDCAB7CD06B2E5C554FB41EB509A0B0)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/QJZ2-qUcT2K2orpHDY_rCQ/zh-cn_image_0000002558764836.jpg)

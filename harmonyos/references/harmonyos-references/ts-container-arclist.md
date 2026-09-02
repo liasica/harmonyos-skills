@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:51:44+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:e32c5d693a0901f76b274cdff59764cd8a3d58025137a8f1ec959e417026b246
+content_hash: sha256:bb9feee493aca836b8c470bc1ea9102210778821f0765012c00010b0a2be0802
 ---
 
 弧形列表包含一系列列表项。适合连续、多行呈现同类数据，例如图片和文本。
@@ -557,4 +557,4 @@ PhonePC/2in1TabletTVWearable
 74. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/v_qOJIacQYyhX3sDDfl-1A/zh-cn_image_0000002558606482.png?HW-CC-KV=V1&HW-CC-Date=20260429T055141Z&HW-CC-Expire=86400&HW-CC-Sign=7713F0C2672E23C04F90BB92C37C1CBD7E73570114AEAAF3DFA06182227C7684)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/v_qOJIacQYyhX3sDDfl-1A/zh-cn_image_0000002558606482.png)

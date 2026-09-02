@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:51:49+08:00
 doc_updated_at: 2026-03-27
-content_hash: sha256:f3372fcad7f420eb2cb6a15dc56822d62e17bbe5fe62213ccbc95078ed7f283e
+content_hash: sha256:9f857d82c0772b5ddd0fae4a769020c7b3297afcfd1b85ac72cd370081c02675
 ---
 
 滚动条组件ScrollBar，用于配合可滚动组件使用，如[ArcList](ts-container-arclist.md)、[List](ts-container-list.md)、[Grid](ts-container-grid.md)、[Scroll](ts-container-scroll.md)、[WaterFlow](ts-container-waterflow.md)。
@@ -177,7 +177,7 @@ PhonePC/2in1TabletTVWearable
 41. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/Fhb1gYr6RI2Td5z6X1C6PQ/zh-cn_image_0000002558766174.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055146Z&HW-CC-Expire=86400&HW-CC-Sign=B1E31A98BB2884B3F3E836AC1CBC4315C9AF6F7D26C3A9E23BD27DC0075585B1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/Fhb1gYr6RI2Td5z6X1C6PQ/zh-cn_image_0000002558766174.gif)
 
 ## 示例2（不设置子节点）
 
@@ -226,7 +226,7 @@ PhonePC/2in1TabletTVWearable
 38. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/zL9R4d7fRDS7cTRWHDYqRQ/zh-cn_image_0000002558606516.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055146Z&HW-CC-Expire=86400&HW-CC-Sign=62C505F4AD38BDF21EE14687F508EE674BBC65A4CAE88EA2C5B552F202AA862B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/zL9R4d7fRDS7cTRWHDYqRQ/zh-cn_image_0000002558606516.gif)
 
 ## 示例3（支持嵌套滚动）
 
@@ -300,4 +300,4 @@ PhonePC/2in1TabletTVWearable
 63. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/Gt1_70owSI2NW3n5e8CexQ/zh-cn_image_0000002589326043.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055146Z&HW-CC-Expire=86400&HW-CC-Sign=37FAD537EAA9F5E499ABD831B1D6D2FE57B32A56E3B4F39B094C9BF420A2BA0A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/Gt1_70owSI2NW3n5e8CexQ/zh-cn_image_0000002589326043.gif)

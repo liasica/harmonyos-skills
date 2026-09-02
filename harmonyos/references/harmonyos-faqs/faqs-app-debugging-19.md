@@ -5,14 +5,14 @@ breadcrumb: FAQ > DevEco Studio > 应用调试 > 运行时提示“Hdc server po
 category: harmonyos-faqs
 scraped_at: 2026-04-29T14:21:24+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:7c13fdbba5428997f371fc2aec2a444777dc88e80e6f9f58268dc5c3b8c6f44c
+content_hash: sha256:32fbd6c1c449b0b86201ef4412ae1add06f81f3b1f42fa214f9ac98d0a90c8e2
 ---
 
 **问题现象**
 
 在设备中运行HAP时，提示“Hdc server port XXXX已被使用。请配置环境变量‘OHOS\_HDC\_SERVER\_PORT’并重启DevEco Studio。”
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/00fk2zPiQtqGNpvP2XtuWw/zh-cn_image_0000002229758497.png?HW-CC-KV=V1&HW-CC-Date=20260429T062123Z&HW-CC-Expire=86400&HW-CC-Sign=3CCCF590E8F32FA9C4C66ED08EA2FE7DC422222603DFB57CC1093C881D4DB29D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/00fk2zPiQtqGNpvP2XtuWw/zh-cn_image_0000002229758497.png)
 
 **解决措施**
 
@@ -22,10 +22,10 @@ HDC的默认端口8710导致服务无法启动。解决方法如下：
 
 1. 运行CMD命令行工具，输入“netstat -ano | findstr *端口号*”，查询占用端口号的进程PID。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/nuAKMheFS8-JJOho4VdDRQ/zh-cn_image_0000002194158624.png?HW-CC-KV=V1&HW-CC-Date=20260429T062123Z&HW-CC-Expire=86400&HW-CC-Sign=1EA5A7D1663CCFCFD92250583600736B403C78958380665B277894F4806D43AC)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/nuAKMheFS8-JJOho4VdDRQ/zh-cn_image_0000002194158624.png)
 2. 打开任务管理器，选择详细信息页，查看PID对应的应用。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/mDw2htStSGCf99Wp_eNzYg/zh-cn_image_0000002194318240.png?HW-CC-KV=V1&HW-CC-Date=20260429T062123Z&HW-CC-Expire=86400&HW-CC-Sign=8C45EFAA9D2A6BB23C6FF61825618F119E7B068735C13A1D2142096644926825)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/mDw2htStSGCf99Wp_eNzYg/zh-cn_image_0000002194318240.png)
 3. 结束掉对应应用后，重启DevEco Studio。
 
 方式二：为HDC端口号设置其他的环境变量。
@@ -34,7 +34,7 @@ HDC的默认端口8710导致服务无法启动。解决方法如下：
 
   在**此电脑 > 属性 > 高级系统设置 > 高级 > 环境变量**中，添加变量名OHOS\_HDC\_SERVER\_PORT，变量值设置为任意未占用的端口，例如7035。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/XrpLSW3ERyC3hg-06zeQiw/zh-cn_image_0000002194318236.png?HW-CC-KV=V1&HW-CC-Date=20260429T062123Z&HW-CC-Expire=86400&HW-CC-Sign=FEF77E2E70B01385258CF9471B23CE90C0D4C26F97316D9BEBF77B00D10098C0)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/XrpLSW3ERyC3hg-06zeQiw/zh-cn_image_0000002194318236.png)
 
   环境变量配置完成后，关闭并重启DevEco Studio。
 * macOS环境变量设置方法：

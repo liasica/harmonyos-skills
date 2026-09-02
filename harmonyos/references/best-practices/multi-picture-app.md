@@ -5,7 +5,7 @@ breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 >
 category: best-practices
 scraped_at: 2026-04-29T14:12:35+08:00
 doc_updated_at: 2026-03-26
-content_hash: sha256:bde4d5c1b23bf7ab88ca6830258ccd8ca98edbcdfbe783ab27de5e7477fa9283
+content_hash: sha256:34f36da1465126f0021ef6ae4b06c681be4eb3322ef6ab918087df20f8c22b73
 ---
 
 ## 概述
@@ -49,7 +49,7 @@ HarmonyOS的分层架构主要包括三个层次：产品定制层、基础特�
 
 * 相册页的两个基础区域及其实现方案如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/Uwdey7ciT1yDjXi46hF-Yg/zh-cn_image_0000002194009916.png?HW-CC-KV=V1&HW-CC-Date=20260429T061224Z&HW-CC-Expire=86400&HW-CC-Sign=18ED910C46D5662BAD67150E62EF5E8F2E947F0093AE1C0420D767484BCC5A3E "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/Uwdey7ciT1yDjXi46hF-Yg/zh-cn_image_0000002194009916.png "点击放大")
 
 相册页的2个基础区域介绍及实现方案如下表所示：
 
@@ -93,7 +93,7 @@ HarmonyOS的分层架构主要包括三个层次：产品定制层、基础特�
 
 * 将大图预览页划分为4个区域，效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/904E5PH6R0GfJVTDQf7iuQ/zh-cn_image_0000002194009904.png?HW-CC-KV=V1&HW-CC-Date=20260429T061224Z&HW-CC-Expire=86400&HW-CC-Sign=90D0E8BFCDD9FF385193FD5F635B3BA5D8C9096EC4F35D4E47FA9CEC6C5D6950 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/904E5PH6R0GfJVTDQf7iuQ/zh-cn_image_0000002194009904.png "点击放大")
 
 大图预览页的4个基础区域及其实现方案如下表所示：
 
@@ -116,9 +116,9 @@ HarmonyOS的分层架构主要包括三个层次：产品定制层、基础特�
 
 * 图片编辑页划分为3个区域，效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/2ST3LhuNSJ65Na987PMgcA/zh-cn_image_0000002502028274.png?HW-CC-KV=V1&HW-CC-Date=20260429T061224Z&HW-CC-Expire=86400&HW-CC-Sign=6507930003704321A8AE823E620A8601BC53465D0919EF21203B2BD7DD1AADBE "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/2ST3LhuNSJ65Na987PMgcA/zh-cn_image_0000002502028274.png "点击放大")
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/isOak9SyQEWXzXP34YzOsQ/zh-cn_image_0000002501868592.png?HW-CC-KV=V1&HW-CC-Date=20260429T061224Z&HW-CC-Expire=86400&HW-CC-Sign=8287DC227CC6220D46137A7F47C7A9C414242BBD5DCBB7548FE166A6382885D0 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/isOak9SyQEWXzXP34YzOsQ/zh-cn_image_0000002501868592.png "点击放大")
 
 * 区域2与区域3使用[Flex](../harmonyos-references/ts-container-flex.md)组件实现左右摆放与上下摆放的切换
 

@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用服务 > Payment Kit（鸿蒙支付服务） > 用户
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:39:34+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:952f5524c0587206de60edcda9db64177d559e81cdcb0608be4d3955863ef4b6
+content_hash: sha256:b13d45a99351c9d9a03d0feaf8a84b9ccdaa75f3ca7a9ff0f205e15d9b464c45
 ---
 
 ## 场景介绍
@@ -18,7 +18,7 @@ content_hash: sha256:952f5524c0587206de60edcda9db64177d559e81cdcb0608be4d3955863
 
 人脸核身实人验证页面展示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/Hj9KL8QCQ76oH-ypUa_T1w/zh-cn_image_0000002558765596.png?HW-CC-KV=V1&HW-CC-Date=20260429T053933Z&HW-CC-Expire=86400&HW-CC-Sign=116AC83AE452352C3A3FAFC72116B111F2EAE9820A791B10E88076F0E2741096)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/Hj9KL8QCQ76oH-ypUa_T1w/zh-cn_image_0000002558765596.png)
 
 ## 约束与限制
 
@@ -43,7 +43,7 @@ content_hash: sha256:952f5524c0587206de60edcda9db64177d559e81cdcb0608be4d3955863
 
 开发者通过接入人脸核身实人验证能力，可以简便快捷的实现用户信息验证及本人操作的验证。具体接入流程如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/qWV9-_1hSv6bSLhFJl9MVQ/zh-cn_image_0000002558605940.png?HW-CC-KV=V1&HW-CC-Date=20260429T053933Z&HW-CC-Expire=86400&HW-CC-Sign=6F27F6D1597456CC9DED5E3088E895ACC07143CDC7C4A6EF0B30B64F6DC19E81)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/qWV9-_1hSv6bSLhFJl9MVQ/zh-cn_image_0000002558605940.png)
 
 1. 开发者客户端收集用户实名信息加密后请求开发者服务端发起人脸核身实人预验证。
 2. 开发者服务端请求Payment Kit服务端[人脸核身实人预验证](../harmonyos-references/payment-api-common-face-verifactaion-preverify.md)接口获取预验证ID（preVerifyId）。

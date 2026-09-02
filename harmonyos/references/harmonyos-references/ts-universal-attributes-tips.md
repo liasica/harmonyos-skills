@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:51:28+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:4221877d1034166fd1420476ecd8fb3f369f84807dd21ab12f9b1b21ea5bbdd3
+content_hash: sha256:45d0a59b9b7a16d2956006f096cec26ac1e877a61a9191efce08c8c96d706bd1
 ---
 
 为组件绑定Tips悬浮气泡，当鼠标悬浮在组件上时，自动显示提示信息；鼠标离开组件时，悬浮气泡自动隐藏。
@@ -112,7 +112,7 @@ PhonePC/2in1TabletTVWearable
 18. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/bv5gcQjeTtaoCFzRYtHnEQ/zh-cn_image_0000002589325941.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055126Z&HW-CC-Expire=86400&HW-CC-Sign=13D1AE920F068B4A5242B1D20DD054888363A2F606CC2FE9C577F056531B213A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/bv5gcQjeTtaoCFzRYtHnEQ/zh-cn_image_0000002589325941.gif)
 
 ### 示例2（多个悬浮气泡的显示和消失）
 
@@ -151,4 +151,4 @@ PhonePC/2in1TabletTVWearable
 31. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/gLRJGZynQluyNKHHQMNvgA/zh-cn_image_0000002589245883.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055126Z&HW-CC-Expire=86400&HW-CC-Sign=3DEC4187DEC44D9302BB38CE7CB968A6E2C58C09616F8FA909C712B8489EBBA9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/gLRJGZynQluyNKHHQMNvgA/zh-cn_image_0000002589245883.gif)

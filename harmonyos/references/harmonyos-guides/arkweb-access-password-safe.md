@@ -5,7 +5,7 @@ breadcrumb: 指南 > 系统 > 安全 > 密码自动填充服务 > 网页接入�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:30:41+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:b1c103458b0bf101926f523203e4aba374ee61cd45052572fd66c7fe7130e445
+content_hash: sha256:8e890930910174be6d102075d39b143f6f481c321ecdaae3678e2a50c1d2954d
 ---
 
 网页中的登录表单，登录成功后，用户可将用户名和密码保存到系统密码保险箱中。再次打开该网页时，密码保险箱可以提供用户名、密码的自动填充。
@@ -16,21 +16,21 @@ content_hash: sha256:b1c103458b0bf101926f523203e4aba374ee61cd45052572fd66c7fe713
 
 1. 在网站中输入用户名、密码，登录成功后，ArkWeb会提示将用户名和密码保存到密码保险箱中。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/dSQr6KvPSQKa8O93Qja4kQ/zh-cn_image_0000002558764864.png?HW-CC-KV=V1&HW-CC-Date=20260429T053040Z&HW-CC-Expire=86400&HW-CC-Sign=3DF596E152A62442FB0CA2BACF26A0E001A1E15DAB3ABF59D1C7DB17529E3FFB)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/dSQr6KvPSQKa8O93Qja4kQ/zh-cn_image_0000002558764864.png)
 2. 再次打开相同的网站，点击用户名或者密码框中时，会弹出密码保险箱的填充提示。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/DbD5nk_PR3-vD75V9_XI2A/zh-cn_image_0000002558605208.png?HW-CC-KV=V1&HW-CC-Date=20260429T053040Z&HW-CC-Expire=86400&HW-CC-Sign=BB389EAEAD7A323A6DA3BB78440E7BCC9486E31412C90F26A148A9798ECDD135)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/ppdvjRcITJ6MBNcdWohQMg/zh-cn_image_0000002589324733.png?HW-CC-KV=V1&HW-CC-Date=20260429T053040Z&HW-CC-Expire=86400&HW-CC-Sign=6B8742494ACA621390C98101B2BB31D42BE5AC1DB566677B20D6DDBC312007E7)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/DbD5nk_PR3-vD75V9_XI2A/zh-cn_image_0000002558605208.png)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/ppdvjRcITJ6MBNcdWohQMg/zh-cn_image_0000002589324733.png)
 3. 可以选择提示框中的用户名，通过认证，就能直接在网页中填入之前保存的用户名、密码。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/cOQX2az1R1a7Vn-_wplvjQ/zh-cn_image_0000002589244671.png?HW-CC-KV=V1&HW-CC-Date=20260429T053040Z&HW-CC-Expire=86400&HW-CC-Sign=274D648C0B78502B4A6FF8358D61A55D2EE26043C73FACDCB15FDE31B3EA354E)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/cOQX2az1R1a7Vn-_wplvjQ/zh-cn_image_0000002589244671.png)
 4. 点击“使用其他账号”，选择密码保险箱中保存的其他账号。认证后在网页中填入选择的用户名、密码。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/uztaVQAdRWS8xXDkDP083Q/zh-cn_image_0000002558764866.png?HW-CC-KV=V1&HW-CC-Date=20260429T053040Z&HW-CC-Expire=86400&HW-CC-Sign=FDEF3320A2C4490E12FB49182B7D62B489615F1C7722295C0F1B4655413A4A98)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/TUp2BZjER-qijOJbXfz0TQ/zh-cn_image_0000002558605210.png?HW-CC-KV=V1&HW-CC-Date=20260429T053040Z&HW-CC-Expire=86400&HW-CC-Sign=86A2CED42FDA778EFCF22EB080BD42124A6344E81642689E7B51AAB89E81AA85)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/AVQZokAeR_KLGqGibWcZhg/zh-cn_image_0000002589324735.png?HW-CC-KV=V1&HW-CC-Date=20260429T053040Z&HW-CC-Expire=86400&HW-CC-Sign=EF32878C08432091D6886F3DD07EA974683D08E36D06E08D1B677C8F53AD45FE)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/uztaVQAdRWS8xXDkDP083Q/zh-cn_image_0000002558764866.png)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/TUp2BZjER-qijOJbXfz0TQ/zh-cn_image_0000002558605210.png)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/AVQZokAeR_KLGqGibWcZhg/zh-cn_image_0000002589324735.png)
 5. 点击“手动输入”或者提示框之外的地方，会弹出小艺输入法，会提示可用于密码填充的用户名和钥匙图标。
 
    点击用户名可触发在网页中填入用户名、密码；点击钥匙图标，进入选择账号的界面。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/FKn3_NjXS9yMqQOVB6biSw/zh-cn_image_0000002589244673.png?HW-CC-KV=V1&HW-CC-Date=20260429T053040Z&HW-CC-Expire=86400&HW-CC-Sign=81A97F914858C2F91CC9A216333C1C06C17E8ED866C8AC903AD4083F41065888)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/Ae_uUFTnSiaDCU6E9gUu8w/zh-cn_image_0000002558764868.png?HW-CC-KV=V1&HW-CC-Date=20260429T053040Z&HW-CC-Expire=86400&HW-CC-Sign=0A75F1967667DD5B189403B481FE00B772D9534608CBB1D2FF9C5AD21C33A6BD)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/02nXiZcDRlileCc1LR6dbw/zh-cn_image_0000002558605212.png?HW-CC-KV=V1&HW-CC-Date=20260429T053040Z&HW-CC-Expire=86400&HW-CC-Sign=83CE5A913A96ED82DFC9196A1B822CB16807F3DE27136AF964556B8CCAE64803)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/FKn3_NjXS9yMqQOVB6biSw/zh-cn_image_0000002589244673.png)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/Ae_uUFTnSiaDCU6E9gUu8w/zh-cn_image_0000002558764868.png)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/02nXiZcDRlileCc1LR6dbw/zh-cn_image_0000002558605212.png)
 
 ## 2in1使用场景
 
@@ -38,16 +38,16 @@ content_hash: sha256:b1c103458b0bf101926f523203e4aba374ee61cd45052572fd66c7fe713
 
 1. 在网站中输入用户名、密码，登陆成功后，ArkWeb会提示将用户名和密码保存到密码保险箱中。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/mv60o6X2RkyUq0_nThrIUA/zh-cn_image_0000002589324737.png?HW-CC-KV=V1&HW-CC-Date=20260429T053040Z&HW-CC-Expire=86400&HW-CC-Sign=84AEE5B1AD491CA0C9E3D11E05B4DFD49EF4E38DC34286E1F19405DEC369AD27)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/mv60o6X2RkyUq0_nThrIUA/zh-cn_image_0000002589324737.png)
 2. 再次打开相同的网站，点击用户名或者密码框中时，会弹出密码保险箱的下拉框。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/1Cl5deJcSqiP52VJKlK_6w/zh-cn_image_0000002589244675.png?HW-CC-KV=V1&HW-CC-Date=20260429T053040Z&HW-CC-Expire=86400&HW-CC-Sign=252032075A82233E32FB514B81808995D476BD29B3E488E3499E894341FD9EBB)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/1Cl5deJcSqiP52VJKlK_6w/zh-cn_image_0000002589244675.png)
 3. 选择下拉框中的用户名，通过认证，就能直接在网页中填入之前保存的用户名、密码。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/aXcyjnpxQ9mDSAr903N2Dg/zh-cn_image_0000002558764870.png?HW-CC-KV=V1&HW-CC-Date=20260429T053040Z&HW-CC-Expire=86400&HW-CC-Sign=CE8041D7890A41EFA3D6B656EA32B8712372E7644D715F290F34D1A402F057F5)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/aXcyjnpxQ9mDSAr903N2Dg/zh-cn_image_0000002558764870.png)
 4. 也可以点击下拉框中的“使用其他账号”，选择密码保险箱中保存的其他账号。认证后在网页中填入选择的用户名、密码。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/hN9t0pBbS9WHX-atiuKclw/zh-cn_image_0000002558605214.png?HW-CC-KV=V1&HW-CC-Date=20260429T053040Z&HW-CC-Expire=86400&HW-CC-Sign=E853604374CD7D12823A6394613E10CAEA9D8AB0BCEB45B917641C88664391E7)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/hN9t0pBbS9WHX-atiuKclw/zh-cn_image_0000002558605214.png)
 
 ## 网页密码保存规格
 
@@ -137,11 +137,11 @@ ArkWeb使用Chromium智能算法，自动识别网页中的用户名、密码元
 
 【案例1】：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/yszWyKRcSt6Wcn_Y5SLNjA/zh-cn_image_0000002589324739.png?HW-CC-KV=V1&HW-CC-Date=20260429T053040Z&HW-CC-Expire=86400&HW-CC-Sign=64FE0923346E92D481D270682BCE59F86306466B1B64561369C4F6A942B8EE6F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/yszWyKRcSt6Wcn_Y5SLNjA/zh-cn_image_0000002589324739.png)
 
 【案例2】：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/9gTV9wnMR2SpNqGH7yoEaA/zh-cn_image_0000002589244677.png?HW-CC-KV=V1&HW-CC-Date=20260429T053040Z&HW-CC-Expire=86400&HW-CC-Sign=E3537249892AAACDA78BF65B9FE95C1FC038FE47A216B1AFCADAF1700B5B4B44)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/9gTV9wnMR2SpNqGH7yoEaA/zh-cn_image_0000002589244677.png)
 
 ### 不支持自动填充的密码登录表单类型
 

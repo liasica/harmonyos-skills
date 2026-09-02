@@ -5,10 +5,10 @@ breadcrumb: 指南 > 应用服务 > Health Service Kit（运动健康服务） >
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:38:18+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:aa8b63b6a51f19efecc14005df6dd5122250197b7671f5fd3a0ce187019d1f5e
+content_hash: sha256:b51ba24556b089c908ff24d17ea02128d3ebd1dfa20dc97d401e5062ab0b458e
 ---
 
-当前提供如下Health Service Kit数据，开发者可申请对应数据权限进行应用开发。开放等级中，![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/S2orkmqgRX-O2XEjg_bH5g/zh-cn_image_0000002589325277.png?HW-CC-KV=V1&HW-CC-Date=20260429T053817Z&HW-CC-Expire=86400&HW-CC-Sign=DC9CA5A18B11F2ED2842A34C4DA901164E8C03D3B8344476C9DED4AD16D06E7C)表示该数据权限为高阶数据，暂不对个人开发者开放。如需使用，请使用企业账号重新注册并申请权限；![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/cDv0O7_bQvOQGx1-C7rICg/zh-cn_image_0000002589245213.png?HW-CC-KV=V1&HW-CC-Date=20260429T053817Z&HW-CC-Expire=86400&HW-CC-Sign=CBCC4CA2FEBD778C9CEEF289CB6F33521119940AC2D206690CA41B84D9A4F993)表示该数据权限为基础数据，个人及企业开发者均可申请查询/使用。
+当前提供如下Health Service Kit数据，开发者可申请对应数据权限进行应用开发。开放等级中，![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/S2orkmqgRX-O2XEjg_bH5g/zh-cn_image_0000002589325277.png)表示该数据权限为高阶数据，暂不对个人开发者开放。如需使用，请使用企业账号重新注册并申请权限；![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/cDv0O7_bQvOQGx1-C7rICg/zh-cn_image_0000002589245213.png)表示该数据权限为基础数据，个人及企业开发者均可申请查询/使用。
 
 说明
 

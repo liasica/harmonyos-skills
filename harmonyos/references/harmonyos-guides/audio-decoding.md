@@ -5,7 +5,7 @@ breadcrumb: 指南 > 媒体 > AVCodec Kit（音视频编解码服务） > 音视
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:34:39+08:00
 doc_updated_at: 2026-04-13
-content_hash: sha256:a990d3c8331763dcbe2cd5e69ff0653a2ebb1e161a5a853dae362d02f7e4363f
+content_hash: sha256:31fb9ab9d07ab3c0ad31da86a5984b6dba769dcedfcaa78752cfc954c09af762
 ---
 
 开发者可以调用本模块的Native API接口，完成音频解码，即将媒体数据解码为PCM码流。
@@ -41,7 +41,7 @@ content_hash: sha256:a990d3c8331763dcbe2cd5e69ff0653a2ebb1e161a5a853dae362d02f7e
 * 虚线表示可选。
 * 实线表示必选。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/0pmpm-K2RFuHPTNyzcYdsQ/zh-cn_image_0000002589324911.png?HW-CC-KV=V1&HW-CC-Date=20260429T053438Z&HW-CC-Expire=86400&HW-CC-Sign=2F612F5751B2AB0DB9AD714C2A2C2124A050E43A66858FA3A5ED8FF74E7FF566)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/0pmpm-K2RFuHPTNyzcYdsQ/zh-cn_image_0000002589324911.png)
 
 ### 在 CMake 脚本中链接动态库
 
@@ -251,11 +251,11 @@ content_hash: sha256:a990d3c8331763dcbe2cd5e69ff0653a2ebb1e161a5a853dae362d02f7e
 
    配置选项key值说明：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/1HTNF6DdSHeh8rZVEST9VA/zh-cn_image_0000002589324913.png?HW-CC-KV=V1&HW-CC-Date=20260429T053438Z&HW-CC-Expire=86400&HW-CC-Sign=473B6DCDBAFA4856CCA5230878C9E8A5A4A536123A8DE9A61BCE7ED59A22E19A)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/1HTNF6DdSHeh8rZVEST9VA/zh-cn_image_0000002589324913.png)
 
    各音频解码类型参数范围说明：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/J0aQC7ODRQusyJlSytGF1w/zh-cn_image_0000002589244849.png?HW-CC-KV=V1&HW-CC-Date=20260429T053438Z&HW-CC-Expire=86400&HW-CC-Sign=1A7C5A447EB9DB2AEA26347EEE92CA5446A06C86B0503E2DA50254313D88CA14)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/J0aQC7ODRQusyJlSytGF1w/zh-cn_image_0000002589244849.png)
 
    从API version 20开始，支持[采样率范围](../harmonyos-references/capi-native-avcapability-h.md#oh_avcapability_getaudiosupportedsamplerateranges)能力查询，以下几种音频解码类型支持对范围内的任意采样率进行解码：
 

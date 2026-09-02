@@ -5,12 +5,12 @@ breadcrumb: 最佳实践 > 稳定性 > 稳定性运维 > APM能力建设
 category: best-practices
 scraped_at: 2026-04-29T14:14:20+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:1eb59afe53990a065a1a05cdd767f869c47368206fa2740ece8227f1c917d87f
+content_hash: sha256:fd28f376a04bd11a085da4d9733c9e3dcbfafd7eab1d98d19e3d7c4bf2b92eaa
 ---
 
 APM作为应用性能管理平台，可线上监控应用质量。系统提供采集质量数据的能力，开发者可以收集这类数据构建APM平台。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/XF6ej_mmTRO34aJ-ddH6dA/zh-cn_image_0000002404125277.png?HW-CC-KV=V1&HW-CC-Date=20260429T061418Z&HW-CC-Expire=86400&HW-CC-Sign=6CF9170FFEF80D302AE5BB1F3D9B2D74ACC1E896F18B38EF86C4BC7F52970F5B "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/XF6ej_mmTRO34aJ-ddH6dA/zh-cn_image_0000002404125277.png "点击放大")
 
 本文主要介绍如何通过HiAppEvent订阅接口采集系统事件。其中，系统事件是指应用运行期间，应用进程发生的性能、功耗、稳定性等故障，HiAppEvent会将这些故障通过事件返回给开发者。
 
@@ -52,7 +52,7 @@ external\_log返回的路径是沙箱目录，非真实物理路径，应用有�
 
 原理如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/tDkdu7JGQRSvLqCklEv4Dg/zh-cn_image_0000002382129722.png?HW-CC-KV=V1&HW-CC-Date=20260429T061418Z&HW-CC-Expire=86400&HW-CC-Sign=29AA5D23FA5BF0C78E0D801F497B45BDD19B0AB6F25A307CFD27E82687C48886 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/tDkdu7JGQRSvLqCklEv4Dg/zh-cn_image_0000002382129722.png "点击放大")
 
 说明
 
@@ -103,7 +103,7 @@ HiAppEvent提供setEventParam()接口可以在系统事件中添加自定义参�
 
 以崩溃采集为例，可参考如下设计：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/QhAfFGiKR-q27XjDO8WfAg/zh-cn_image_0000002404045473.png?HW-CC-KV=V1&HW-CC-Date=20260429T061418Z&HW-CC-Expire=86400&HW-CC-Sign=9734E632ABDBCFA9BC388073C3CA93E61DED10817E63771435EC1528ED057E84)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/QhAfFGiKR-q27XjDO8WfAg/zh-cn_image_0000002404045473.png)
 
 1. APM代码早于业务代码。
 2. 应用启动阶段注册ErrorManager，可以捕获JS异常，发生JsError崩溃时进程不会退出。参考[如何使用ErrorManager捕获异常](../harmonyos-faqs-V5/faqs-arkts-81-V5.md)。

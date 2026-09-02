@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-data-storage
-title: @ohos.data.storage (轻量级存储)
+title: "@ohos.data.storage (轻量级存储)"
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > ArkTS API > 已停止维护的接口 > @ohos.data.storage (轻量级存储)
 category: harmonyos-references
 scraped_at: 2026-04-28T07:59:24+08:00

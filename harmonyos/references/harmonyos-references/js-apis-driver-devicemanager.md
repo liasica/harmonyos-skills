@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-driver-devicemanager
-title: @ohos.driver.deviceManager (外设管理)
+title: "@ohos.driver.deviceManager (外设管理)"
 breadcrumb: API参考 > 系统 > 硬件 > Driver Development Kit（驱动开发服务） > ArkTS API > @ohos.driver.deviceManager (外设管理)
 category: harmonyos-references
 scraped_at: 2026-04-29T14:01:19+08:00

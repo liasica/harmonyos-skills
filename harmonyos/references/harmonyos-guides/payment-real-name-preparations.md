@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用服务 > Payment Kit（鸿蒙支付服务） > 开发
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:39:30+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:e6ad8e1aa1fbbde41e22a60ac21ab75df9116038a1d3abeb734f1bfda7bff85f
+content_hash: sha256:fafcb386d0fe4ea2b5db7d4197697e1fe8b6ccd6e9dba4f402ce08130be6a6c2
 ---
 
 如不涉及身份验证服务接入，可跳过该章节。
@@ -18,17 +18,17 @@ content_hash: sha256:e6ad8e1aa1fbbde41e22a60ac21ab75df9116038a1d3abeb734f1bfda7b
 
 开启身份验证服务相关权限开关时，开发者需签署一份“开发者协议”，开发者同意协议并提交申请资料后需要等待审核（审核周期一般在1-3个工作日）通过后才能使用相关服务。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/9DE0PWRzSS2eFMQZhxRuhw/zh-cn_image_0000002589325455.png?HW-CC-KV=V1&HW-CC-Date=20260429T053929Z&HW-CC-Expire=86400&HW-CC-Sign=651FBDD96F668A0A3222780F15BC33916504FF9C4B6B25B89702F84393020291)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/9DE0PWRzSS2eFMQZhxRuhw/zh-cn_image_0000002589325455.png)
 
 ## 上传开发者公钥及下载华为公钥
 
 开发者可登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)，在“鸿蒙支付服务 > 身份验证服务”菜单中的“公钥管理”页签下完成开发者证书的上传以及华为公钥证书下载。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/qC3KSw9TTKC7EI-7_oMZvg/zh-cn_image_0000002589245393.png?HW-CC-KV=V1&HW-CC-Date=20260429T053929Z&HW-CC-Expire=86400&HW-CC-Sign=93A7A4B15B1D8688D3F91677A204BF10E9EAD4216BD2FB5D5CE984B5A29DD618)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/qC3KSw9TTKC7EI-7_oMZvg/zh-cn_image_0000002589245393.png)
 
 证书使用如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/0dEgChByQxe0Xv3rE5ToGg/zh-cn_image_0000002558765586.png?HW-CC-KV=V1&HW-CC-Date=20260429T053929Z&HW-CC-Expire=86400&HW-CC-Sign=A51697A6579D790EE3D747F0267C6CD8E146E97EA4C2D3E5E3532FB1BD96F044)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/0dEgChByQxe0Xv3rE5ToGg/zh-cn_image_0000002558765586.png)
 
 证书说明如下：
 

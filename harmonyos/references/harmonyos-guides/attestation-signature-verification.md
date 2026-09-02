@@ -5,7 +5,7 @@ breadcrumb: 指南 > 系统 > 安全 > Universal Keystore Kit（密钥管理服�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:32:10+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:0688054b09b89f02993d5fad84e09537acfa8dd84ed56cbb664b2fbf16145f41
+content_hash: sha256:a566f2f838a95b0c95e9d3220cd125ef42a36f0f933e9140fad91167f20c3604
 ---
 
 ## 概述
@@ -16,7 +16,7 @@ content_hash: sha256:0688054b09b89f02993d5fad84e09537acfa8dd84ed56cbb664b2fbf161
 
 **图1** 签名验签识别真实请求流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/G4kzU5coRwmkcH2l9Y0Jcg/zh-cn_image_0000002589244719.png?HW-CC-KV=V1&HW-CC-Date=20260429T053209Z&HW-CC-Expire=86400&HW-CC-Sign=CA3DDBE44470006336685CF3738A869C8198B754EB471A50FD8AFE5781262D2C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/G4kzU5coRwmkcH2l9Y0Jcg/zh-cn_image_0000002589244719.png)
 
 ### 签名验签识别真实请求流程
 

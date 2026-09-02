@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-dlppermission
-title: @ohos.dlpPermission (数据防泄漏)
+title: "@ohos.dlpPermission (数据防泄漏)"
 breadcrumb: API参考 > 系统 > 安全 > Data Protection Kit（数据保护服务） > ArkTS API > @ohos.dlpPermission (数据防泄漏)
 category: harmonyos-references
 scraped_at: 2026-04-29T13:57:36+08:00

@@ -5,7 +5,7 @@ breadcrumb: 指南 > 使用AI智能辅助编程 > 自定义智能体配置 > 记
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:45:15+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:939b269ef8715bd8014c8d150a7e23c799b97d5d92d5d28058006fb0c39471c6
+content_hash: sha256:2fc114868f62a1c9efdaf94a2009cbec91adc7b58b1b00e727eeae84d465a309
 ---
 
 ## 功能介绍
@@ -27,12 +27,12 @@ CodeGenie搭载长期记忆功能，在应用开发过程中，会学习和提�
 
 ## 操作步骤
 
-1. 点击界面右上方**Settings**![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/AQXod1vgQ061x1S9hR4SCA/zh-cn_image_0000002530913008.png?HW-CC-KV=V1&HW-CC-Date=20260429T054514Z&HW-CC-Expire=86400&HW-CC-Sign=3A41279FBC24EEDEB502F61548177E72DD86A9269B684A7F1C1668A2C1FB112E)按钮，选择**Memory**，进入配置页面。
+1. 点击界面右上方**Settings**![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/AQXod1vgQ061x1S9hR4SCA/zh-cn_image_0000002530913008.png)按钮，选择**Memory**，进入配置页面。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/tp1c9PHuTlusd88MNnPuXA/zh-cn_image_0000002544419464.png?HW-CC-KV=V1&HW-CC-Date=20260429T054514Z&HW-CC-Expire=86400&HW-CC-Sign=F29DC53FBB313FBED9D1D7C3FA89A8D7E809690B3F7CE67117DF4A7B13F4A022)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/tp1c9PHuTlusd88MNnPuXA/zh-cn_image_0000002544419464.png)
 2. 点击Memory后开关，开启和关闭记忆。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/JlYTl2i9T0Cnnhnj8YIn_A/zh-cn_image_0000002574940769.png?HW-CC-KV=V1&HW-CC-Date=20260429T054514Z&HW-CC-Expire=86400&HW-CC-Sign=07154400A5277B628C56428AD834BC51C86F1D68C64B4E8C4C8D4C281A4DFE35)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/JlYTl2i9T0Cnnhnj8YIn_A/zh-cn_image_0000002574940769.png)
 3. 在**Memory List**（记忆列表）下展示所有记忆，包括**Global**（记录用户相关信息）、**Project**（记录项目相关信息）。将鼠标悬浮在记忆上会显示具体信息，以及出现编辑、删除按钮，方便开发者管理记忆。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/a77q0VFkRp-5Trbq99NiUw/zh-cn_image_0000002547833062.png?HW-CC-KV=V1&HW-CC-Date=20260429T054514Z&HW-CC-Expire=86400&HW-CC-Sign=577D0C59F7A437B7ABFA61008BB997FAE51829C84D585024C88F97F5F4279FC9 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/a77q0VFkRp-5Trbq99NiUw/zh-cn_image_0000002547833062.png "点击放大")

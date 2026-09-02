@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-once
-title: @Once：初始化同步一次
+title: "@Once：初始化同步一次"
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理（V2） > 管理组件拥有的状态 > @Once：初始化同步一次
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:27:18+08:00

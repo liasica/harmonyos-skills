@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-system-sensor
-title: @system.sensor (传感器)
+title: "@system.sensor (传感器)"
 breadcrumb: API参考 > 系统 > 硬件 > Sensor Service Kit（传感器服务） > ArkTS API > @system.sensor (传感器)
 category: harmonyos-references
 scraped_at: 2026-04-28T08:11:03+08:00

@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > Stage�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:25:51+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:1ac6873c6ab2d73df0f3ea499dc7ee3d559b6370df99d299216f82e18a792199
+content_hash: sha256:e7a07719def905c9b94ceb1d20e7fad13512e7a8253e0bf1cee7b2302d038aba
 ---
 
 ## 场景介绍
@@ -188,4 +188,4 @@ content_hash: sha256:1ac6873c6ab2d73df0f3ea499dc7ee3d559b6370df99d299216f82e18a7
 
    **图1** 拉起目标应用演示
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/i3rWdfHxRaCkEKkCo7raWg/zh-cn_image_0000002558763994.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052550Z&HW-CC-Expire=86400&HW-CC-Sign=9E6F9F66518FAD962B9FFB7A7BC27112DF7739407B6B48F491D6E0E6A49CB31A)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/i3rWdfHxRaCkEKkCo7raWg/zh-cn_image_0000002558763994.gif)

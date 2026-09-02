@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用服务 > Health Service Kit（运动健康服务） >
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:38:31+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:1c301631dc7b8e39212b52cd4786210a630888510d4b4dd2056c2dc12fb7bedc
+content_hash: sha256:ff0474153c66213c77e7f15b739a538e1e02ebd875d39976625df4b48376988e
 ---
 
 完成[申请运动健康服务](health-apply.md)后，审核通过的权限为测试权限，有100个用户数量的限制。为解除用户数的限制，应用开发完成后，在上架之前，请按照以下步骤提交验证申请，以获取正式权限。完成验证后，您的应用可支持正式大规模商用。
@@ -14,12 +14,12 @@ content_hash: sha256:1c301631dc7b8e39212b52cd4786210a630888510d4b4dd2056c2dc12fb
 
 1. 登录[开发者联盟网站](https://developer.huawei.com/consumer/cn/)，进入“管理中心”，在应用服务中，单击**Health Service Kit**卡片。如果无“Health Service Kit”卡片，请单击右上角“自定义桌面”添加卡片。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/Iz7lx44tRDaVYm6p_dhE_A/zh-cn_image_0000002558765414.png?HW-CC-KV=V1&HW-CC-Date=20260429T053830Z&HW-CC-Expire=86400&HW-CC-Sign=4303E04A19284C30997021568BF20CA932FA7A47A711D093FDC685B1D96A9554)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/Iz7lx44tRDaVYm6p_dhE_A/zh-cn_image_0000002558765414.png)
 2. 单击“申请验证”按钮，选择验证的权限，提交审核材料由专家组进行评审，审批周期约为15个工作日，请耐心等待。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/6lbYL5_1TSegRJilu24Yxg/zh-cn_image_0000002558605758.png?HW-CC-KV=V1&HW-CC-Date=20260429T053830Z&HW-CC-Expire=86400&HW-CC-Sign=FE8F35E5B6AFE45D87B04D4C916116C7E4F70399CCC3BE3F335BB1B4C746B5F7)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/6lbYL5_1TSegRJilu24Yxg/zh-cn_image_0000002558605758.png)
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/qpzhq3PrRg-TrRPkyF4hOw/zh-cn_image_0000002589325285.png?HW-CC-KV=V1&HW-CC-Date=20260429T053830Z&HW-CC-Expire=86400&HW-CC-Sign=04576E3274E5A35DC96DF3FAF68E1DE597910D77097C8F5B9622C2254EC96769)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/qpzhq3PrRg-TrRPkyF4hOw/zh-cn_image_0000002589325285.png)
 
    审核结果会出现以下两种类型，将以短信和邮件的形式通知您。
 

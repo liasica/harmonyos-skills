@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用服务 > PDF Kit（PDF服务） > PdfView预览组件
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:39:47+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:105ac4a4c52286b4d367084b60ce2f927f133b4e0fbaabd69b51fbe7d9db40ba
+content_hash: sha256:2eb1489603749ef6e6d9dd53b714931c71831aa021114f540f24e9cd283afee2
 ---
 
 pdfViewManager为PDF文档提供了丰富的预览特性。
@@ -16,7 +16,7 @@ pdfViewManager为PDF文档提供了丰富的预览特性。
 
 **图1**：提供了双页预览布局，页面宽度适配和连续滚动的预览方式
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/2eVTW2OZSpW6NmXldhsMag/zh-cn_image_0000002589245413.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053946Z&HW-CC-Expire=86400&HW-CC-Sign=9A85E3D4ADC02FA3EE349D4A03F6CACAB9A85503FD9825F29DE413E6B98533CB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/2eVTW2OZSpW6NmXldhsMag/zh-cn_image_0000002589245413.jpg)
 
 ## 接口说明
 

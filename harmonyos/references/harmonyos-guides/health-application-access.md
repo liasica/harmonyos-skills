@@ -5,10 +5,10 @@ breadcrumb: 指南 > 应用服务 > Health Service Kit（运动健康服务） >
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:38:17+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:e2915561b1be41a5dc1781f2e3c6cfce353fe2651490e9255dbb2f1e030629a4
+content_hash: sha256:6e3db3f7211aac5604d62a55d3a1d49f5ceb9209ae1249d460842b8bf53509aa
 ---
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/PVT6hGolQ8yD_kOcu_coEw/zh-cn_image_0000002558605750.png?HW-CC-KV=V1&HW-CC-Date=20260429T053816Z&HW-CC-Expire=86400&HW-CC-Sign=62467B806E2DC9C5EA40F86A144A33835EB7B24165750ABE4822B349DBC79C30)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/PVT6hGolQ8yD_kOcu_coEw/zh-cn_image_0000002558605750.png)
 
 | 步骤 | 说明 |
 | --- | --- |

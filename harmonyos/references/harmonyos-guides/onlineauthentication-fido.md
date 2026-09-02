@@ -5,7 +5,7 @@ breadcrumb: 指南 > 系统 > 安全 > Online Authentication Kit（在线认证�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:31:51+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:0685ec52a726813b2b4fe393a70c57ca15ba57a3f73b658ace03776142625340
+content_hash: sha256:dd362d3dad1093f31ef61787061e02dc45e6e070d4ae39bc6723ffa49d2081a6
 ---
 
 ## 场景介绍
@@ -52,7 +52,7 @@ content_hash: sha256:0685ec52a726813b2b4fe393a70c57ca15ba57a3f73b658ace037761426
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/6JY4jFkqTfKTJggDVCuimA/zh-cn_image_0000002589244711.png?HW-CC-KV=V1&HW-CC-Date=20260429T053150Z&HW-CC-Expire=86400&HW-CC-Sign=A74BB13739BE83BB4441781047E35B39C5968AD15FDFB32BFFFD15E03DDD11FB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/6JY4jFkqTfKTJggDVCuimA/zh-cn_image_0000002589244711.png)
 
 ## 接口说明
 

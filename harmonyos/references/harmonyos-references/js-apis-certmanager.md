@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-certmanager
-title: @ohos.security.certManager (证书管理模块)
+title: "@ohos.security.certManager (证书管理模块)"
 breadcrumb: API参考 > 系统 > 安全 > Device Certificate Kit（设备证书服务） > ArkTS API > @ohos.security.certManager (证书管理模块)
 category: harmonyos-references
 scraped_at: 2026-04-29T13:58:03+08:00

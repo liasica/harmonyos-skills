@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:52:48+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:fafcf2280f6fc98ce2f61c50e9f5ed5d429e90ceb52af9c9fa8b59d3a4407e73
+content_hash: sha256:0c18642a3519b91b56a29a920d23d3fe7fbcfa27537044c0a34d5398185870f7
 ---
 
 提供静态卡片交互组件，用于静态卡片内部和卡片提供方应用间的交互，当前支持router、message和call三种类型的事件。
@@ -138,7 +138,7 @@ PhonePC/2in1TabletTVWearable
 58. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/kKamFc7RTIGN1rs2Hs0otA/zh-cn_image_0000002589326465.png?HW-CC-KV=V1&HW-CC-Date=20260429T055247Z&HW-CC-Expire=86400&HW-CC-Sign=DC29585EB32281D53EADD36D9F7C0C89DD901FF59A8759AA460F1B125B60ED69)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/kKamFc7RTIGN1rs2Hs0otA/zh-cn_image_0000002589326465.png)
 
 **待跳转应用 [module.json5](../harmonyos-guides/module-configuration-file.md#skills标签) uris 配置示例：**
 

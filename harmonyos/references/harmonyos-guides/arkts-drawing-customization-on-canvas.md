@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:28:20+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:c7b07dda14dfc738b8188b5a64e5175f0680145ba1db222cd400cb9a11f1dbc6
+content_hash: sha256:1f5b5f3e9d85cf8ed9e2284ce226e370378e087ddc74f8124c49274690ca451e
 ---
 
 [Canvas](../harmonyos-references/ts-components-canvas-canvas.md)提供画布组件，用于自定义绘制图形，开发者使用[CanvasRenderingContext2D](../harmonyos-references/ts-canvasrenderingcontext2d.md)对象和[OffscreenCanvasRenderingContext2D](../harmonyos-references/ts-offscreencanvasrenderingcontext2d.md)对象在Canvas组件上进行绘制，绘制对象可以是基础形状、文本、图片等。
@@ -45,7 +45,7 @@ content_hash: sha256:c7b07dda14dfc738b8188b5a64e5175f0680145ba1db222cd400cb9a11f
 
 [CanvasRenderingContext2D.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/CustomCanvas/entry/src/main/ets/pages/canvas/CanvasRenderingContext2D.ets#L15-L40)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/V1lRhSiNR5GV6YPqBVxLbw/zh-cn_image_0000002558764508.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T052818Z&HW-CC-Expire=86400&HW-CC-Sign=A263684E39097F8E79601DFF648A0F763E2507875A95C2083B5AB2E59ABB7685)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/V1lRhSiNR5GV6YPqBVxLbw/zh-cn_image_0000002558764508.jpg)
 
 * 离屏绘制是指将需要绘制的内容先绘制在缓存区，再将其转换成图片，一次性绘制到Canvas上，加快了绘制速度。过程为：
 
@@ -87,7 +87,7 @@ content_hash: sha256:c7b07dda14dfc738b8188b5a64e5175f0680145ba1db222cd400cb9a11f
 
 [OffScreenDrawing.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/CustomCanvas/entry/src/main/ets/pages/canvas/OffScreenDrawing.ets#L19-L48)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/HiTuzr-UT5WkA5im93XLjg/zh-cn_image_0000002558764508.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T052818Z&HW-CC-Expire=86400&HW-CC-Sign=5C0D9F607E5BD38DFF2AE8384E4ACAFFAF4CA6CAF6C9CC99154A530321EF5EA5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/HiTuzr-UT5WkA5im93XLjg/zh-cn_image_0000002558764508.jpg)
 
 说明
 
@@ -120,7 +120,7 @@ onReady(event: () => void)是Canvas组件初始化完成时的事件回调，调
 
 [InitCanvasComponent.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/CustomCanvas/entry/src/main/ets/pages/canvas/InitCanvasComponent.ets#L23-L32)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/ajHx0-8QS8ioIp5Aol8BOw/zh-cn_image_0000002558604852.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T052818Z&HW-CC-Expire=86400&HW-CC-Sign=488A7A1A796CBB07939622BB3108BE329C33190C04C6629944BADB57C0F5D988)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/ajHx0-8QS8ioIp5Aol8BOw/zh-cn_image_0000002558604852.jpg)
 
 ## 画布组件绘制方式
 
@@ -143,7 +143,7 @@ onReady(event: () => void)是Canvas组件初始化完成时的事件回调，调
 
 [CanvasComponentDrawingMethod.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/CustomCanvas/entry/src/main/ets/pages/canvas/CanvasComponentDrawingMethod.ets#L27-L38)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/I1rz5ytlTK-e_dUeSIyynw/zh-cn_image_0000002589324377.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T052818Z&HW-CC-Expire=86400&HW-CC-Sign=A09B760C60CF8263208F089A3126C00A7F5543F2612E87AD00C6F9639E52F612)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/I1rz5ytlTK-e_dUeSIyynw/zh-cn_image_0000002589324377.jpg)
 
 * 先单独定义path2D对象构造理想的路径，再通过调用CanvasRenderingContext2D对象和OffscreenCanvasRenderingContext2D对象的[stroke](../harmonyos-references/ts-offscreencanvasrenderingcontext2d.md#stroke-1)接口或者[fill](../harmonyos-references/ts-offscreencanvasrenderingcontext2d.md#fill-1)接口进行绘制，具体使用可以参考[Path2D](../harmonyos-references/ts-components-canvas-path2d.md)对象。
 
@@ -161,7 +161,7 @@ onReady(event: () => void)是Canvas组件初始化完成时的事件回调，调
 
 [CanvasComponentDrawingMethod.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/CustomCanvas/entry/src/main/ets/pages/canvas/CanvasComponentDrawingMethod.ets#L42-L52)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/Hx4HkQmPQpSIU_7Pd9kDVw/zh-cn_image_0000002589244317.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T052818Z&HW-CC-Expire=86400&HW-CC-Sign=C88B8F862231D1164E5C05CC7CF92B8133A095FA3634E997BAD13D9AC1F7079A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/Hx4HkQmPQpSIU_7Pd9kDVw/zh-cn_image_0000002589244317.jpg)
 
 ## 画布组件常用方法
 
@@ -192,7 +192,7 @@ OffscreenCanvasRenderingContext2D对象和CanvasRenderingContext2D对象提供�
 18. })
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/Jpq5K50wTOud8yt7FczS3Q/zh-cn_image_0000002558764510.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T052818Z&HW-CC-Expire=86400&HW-CC-Sign=D5D1536A865DF24E16D3C318F1F50BCF876929CB739A85400722210EC2AF97F2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/Jpq5K50wTOud8yt7FczS3Q/zh-cn_image_0000002558764510.jpg)
 
 * 绘制文本。
 
@@ -217,7 +217,7 @@ OffscreenCanvasRenderingContext2D对象和CanvasRenderingContext2D对象提供�
 
 [CanvasComponentText.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/CustomCanvas/entry/src/main/ets/pages/canvas/CanvasComponentText.ets#L23-L38)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/oM2qAnf5S0Km-1kJfvzSqA/zh-cn_image_0000002558604854.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T052818Z&HW-CC-Expire=86400&HW-CC-Sign=A4DDAEE29DA150C832AEBC0FE1C9D61347CE4B7AC75087370F3EA8457480599A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/oM2qAnf5S0Km-1kJfvzSqA/zh-cn_image_0000002558604854.jpg)
 
 * 绘制文本边框。
 
@@ -263,7 +263,7 @@ OffscreenCanvasRenderingContext2D对象和CanvasRenderingContext2D对象提供�
 
 [CanvasComponentTextBorder.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/CustomCanvas/entry/src/main/ets/pages/canvas/CanvasComponentTextBorder.ets#L15-L51)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/lyjQ3P3-Sx2qCRNerbRNPQ/zh-cn_image_0000002589324379.png?HW-CC-KV=V1&HW-CC-Date=20260429T052818Z&HW-CC-Expire=86400&HW-CC-Sign=89B64AF88CAEC23BAAA2DF95F1CFFCEC6E98B42C993D7371E54064F9A9FA6170)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/lyjQ3P3-Sx2qCRNerbRNPQ/zh-cn_image_0000002589324379.png)
 
 * 使用自定义字体绘制文本。
 
@@ -301,7 +301,7 @@ OffscreenCanvasRenderingContext2D对象和CanvasRenderingContext2D对象提供�
 
 [CanvasComponentCustomFontsDrawText.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/CustomCanvas/entry/src/main/ets/pages/canvas/CanvasComponentCustomFontsDrawText.ets#L15-L43)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/WuvVwTFIRMS8GZXjc3oaEg/zh-cn_image_0000002589244319.jpeg?HW-CC-KV=V1&HW-CC-Date=20260429T052818Z&HW-CC-Expire=86400&HW-CC-Sign=63C3E61115616092C4C043D7911D415B15DAE7D1800A1ED409E7D4EEBB1480D3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/WuvVwTFIRMS8GZXjc3oaEg/zh-cn_image_0000002589244319.jpeg)
 
 * 绘制图片和图像像素信息处理。
 
@@ -344,7 +344,7 @@ OffscreenCanvasRenderingContext2D对象和CanvasRenderingContext2D对象提供�
 
 [CanvasComponentDrawingPictureAndImagePixel.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/CustomCanvas/entry/src/main/ets/pages/canvas/CanvasComponentDrawingPictureAndImagePixel.ets#L15-L48)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/xnGE9md1SFCr6niK9qP3Rg/zh-cn_image_0000002558764512.png?HW-CC-KV=V1&HW-CC-Date=20260429T052818Z&HW-CC-Expire=86400&HW-CC-Sign=9F4D727C44524D8BB06397B7BDA68B9EF993154D62BBD6BAA93362544D111819)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/xnGE9md1SFCr6niK9qP3Rg/zh-cn_image_0000002558764512.png)
 
 * 其他方法。
 
@@ -370,7 +370,7 @@ OffscreenCanvasRenderingContext2D对象和CanvasRenderingContext2D对象提供�
 
 [CanvasComponentOtherMethods.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/CustomCanvas/entry/src/main/ets/pages/canvas/CanvasComponentOtherMethods.ets#L23-L39)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/FjpOjQHkQpW3Ma38Rn6J0g/zh-cn_image_0000002558604856.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T052818Z&HW-CC-Expire=86400&HW-CC-Sign=F7AF2C9F5CC9BFF89076018B1E4EA4145D5FC40BC2D8C30FCE9196A66DC92C7A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/FjpOjQHkQpW3Ma38Rn6J0g/zh-cn_image_0000002558604856.jpg)
 
 ## 使用状态变量驱动画布刷新
 
@@ -412,7 +412,7 @@ OffscreenCanvasRenderingContext2D对象和CanvasRenderingContext2D对象提供�
 
 [CanvasContentUpdate.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/CustomCanvas/entry/src/main/ets/pages/canvas/CanvasContentUpdate.ets#L15-L47)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/nU1YaJeLSluLf4Ir6pD7Ew/zh-cn_image_0000002589324381.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052818Z&HW-CC-Expire=86400&HW-CC-Sign=CEE4B293EF272983B195C4096394DE5E130DAB460238652E6EE2BF66A9E17359)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/nU1YaJeLSluLf4Ir6pD7Ew/zh-cn_image_0000002589324381.gif)
 
 ## 控制在画布组件不可见时不进行绘制
 
@@ -485,7 +485,7 @@ OffscreenCanvasRenderingContext2D对象和CanvasRenderingContext2D对象提供�
   62. }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/UUa_TO6-RRO8vpiVp_Tb-Q/zh-cn_image_0000002589244321.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052818Z&HW-CC-Expire=86400&HW-CC-Sign=7F260108C1572F861D7B250AC09F94BCD989F3C98E9A00D8FDF72264D8D017EB)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/UUa_TO6-RRO8vpiVp_Tb-Q/zh-cn_image_0000002589244321.gif)
 * 从API version 17开始，使用[onVisibleAreaApproximateChange](../harmonyos-references/ts-universal-component-visible-area-change-event.md#onvisibleareaapproximatechange17)接口监听Canvas组件可见性。
 
   ```
@@ -550,7 +550,7 @@ OffscreenCanvasRenderingContext2D对象和CanvasRenderingContext2D对象提供�
   59. }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/mGFitTn-TRaeySsWUdiiJA/zh-cn_image_0000002558764514.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052818Z&HW-CC-Expire=86400&HW-CC-Sign=80FE5C4DC5831D074FAE2E0CDB0B83C1C5034533800F7527496615D2DB9ACD95)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/mGFitTn-TRaeySsWUdiiJA/zh-cn_image_0000002558764514.gif)
 
 ## 场景示例
 
@@ -586,7 +586,7 @@ OffscreenCanvasRenderingContext2D对象和CanvasRenderingContext2D对象提供�
 
 [DrawingRegularBaseShape.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/CustomCanvas/entry/src/main/ets/pages/canvas/DrawingRegularBaseShape.ets#L15-L41)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/JX0EYJPGR1WlgPdGCjdCGg/zh-cn_image_0000002558604858.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T052818Z&HW-CC-Expire=86400&HW-CC-Sign=9FEAAF6A810E6275B03B99F5F241D9BDF82AD92306FC60D83D4CA5A5A47A809F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/JX0EYJPGR1WlgPdGCjdCGg/zh-cn_image_0000002558604858.jpg)
 
 * 绘制不规则图形。
 
@@ -628,7 +628,7 @@ OffscreenCanvasRenderingContext2D对象和CanvasRenderingContext2D对象提供�
 
 [DrawIrregularFigures.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/CustomCanvas/entry/src/main/ets/pages/canvas/DrawIrregularFigures.ets#L15-L49)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/5LGl9miYThG3hqFLfUAWPw/zh-cn_image_0000002589324383.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T052818Z&HW-CC-Expire=86400&HW-CC-Sign=449EABB1F3E4392F2924F9CD430C7CB7C18685C260D0F9BA1C143A8F77A8B61B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/5LGl9miYThG3hqFLfUAWPw/zh-cn_image_0000002589324383.jpg)
 
 * 绘制可拖动的光标。
 
@@ -823,7 +823,7 @@ OffscreenCanvasRenderingContext2D对象和CanvasRenderingContext2D对象提供�
 
 [DrawDraggableCursor.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/CustomCanvas/entry/src/main/ets/pages/canvas/DrawDraggableCursor.ets#L15-L200)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/wgsJch4-TAiJUNuUMQCnmg/zh-cn_image_0000002589244323.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052818Z&HW-CC-Expire=86400&HW-CC-Sign=02037A508AFD1F773C34D75551A2F38E18544E486C5BD623DC11779A86D7F25F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/wgsJch4-TAiJUNuUMQCnmg/zh-cn_image_0000002589244323.gif)
 
 ## 示例代码
 

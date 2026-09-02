@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用服务 > Scenario Fusion Kit（融合场景服务） 
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:40:20+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:f5407ce77f462337f80e5bc9b9b0a6d7a1fcbc13c5d1162ad76cf52387c81377
+content_hash: sha256:d534ef3bd8d43a573c75854105a0ba33bbfbe5118545017e7d1d9c5cda3fe425
 ---
 
 说明
@@ -24,7 +24,7 @@ content_hash: sha256:f5407ce77f462337f80e5bc9b9b0a6d7a1fcbc13c5d1162ad76cf52387c
 
 ## 效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/oZwy8ozLSG-NSTOTJhthOQ/zh-cn_image_0000002558765662.png?HW-CC-KV=V1&HW-CC-Date=20260429T054019Z&HW-CC-Expire=86400&HW-CC-Sign=2BA07DFEF4FE09D2D9A2F2080B4AF2DC6FD9ED3976489E7B57F3FA3D5BDD593D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/oZwy8ozLSG-NSTOTJhthOQ/zh-cn_image_0000002558765662.png)
 
 ## 示例代码
 

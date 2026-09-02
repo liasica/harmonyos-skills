@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-multimedia-movingphotoview
-title: @ohos.multimedia.movingphotoview (动态照片)
+title: "@ohos.multimedia.movingphotoview (动态照片)"
 breadcrumb: API参考 > 媒体 > Media Library Kit（媒体文件管理服务） > ArkTS组件 > @ohos.multimedia.movingphotoview (动态照片)
 category: harmonyos-references
 scraped_at: 2026-04-29T14:04:56+08:00
 doc_updated_at: 2026-03-20
-content_hash: sha256:736d5521ee9d57a77aa628041dea3713616e486c38950348c118ffe8d173fcea
+content_hash: sha256:a9c06d39ad81c1a7bd599ba510e6546e540ddd93867d4ab466b463a8682d2c73
 ---
 
 用于播放动态照片文件并控制其播放状态的组件。
@@ -533,7 +533,7 @@ PhonePC/2in1TabletTV
 143. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/5KUzYMrbT6KmH44H9HWNAg/zh-cn_image_0000002558767382.gif?HW-CC-KV=V1&HW-CC-Date=20260429T060454Z&HW-CC-Expire=86400&HW-CC-Sign=BBC077C15EB00F4EC607AE70DF8561E17FD653394F7F7044B5EADDD78E0C6361)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/5KUzYMrbT6KmH44H9HWNAg/zh-cn_image_0000002558767382.gif)
 
 ## 示例2：在元服务中使用动态照片
 
@@ -631,7 +631,7 @@ PhonePC/2in1TabletTV
 89. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/OvohNYXmQWKgWVs8GGWrPg/zh-cn_image_0000002558607724.gif?HW-CC-KV=V1&HW-CC-Date=20260429T060454Z&HW-CC-Expire=86400&HW-CC-Sign=E5D2D225E212B4192DE6D5F69616B74E19485171D6C0F3D7B2125E199FC8A2C9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/OvohNYXmQWKgWVs8GGWrPg/zh-cn_image_0000002558607724.gif)
 
 ## 示例3：图像分析功能使用
 
@@ -789,4 +789,4 @@ PhonePC/2in1TabletTV
 149. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/3ou3SlMXSFSWwDJqi8oVew/zh-cn_image_0000002589327251.gif?HW-CC-KV=V1&HW-CC-Date=20260429T060454Z&HW-CC-Expire=86400&HW-CC-Sign=A025A19E1C6E4745ECB2E28321F77840E71737C5C5E2F10B4B444B5C781EEDD8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/3ou3SlMXSFSWwDJqi8oVew/zh-cn_image_0000002589327251.gif)

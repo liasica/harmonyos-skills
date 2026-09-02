@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用服务 > Account Kit（华为账号服务） > 未成
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:36:54+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:0b3b99d1af3670fc728e898efd59d352ccdfdf84469bce4e56d9acd85449ebba
+content_hash: sha256:959dfcba448fa50df418cfe7aea5f560a890092abf7dc896644d4988c0bbd6e5
 ---
 
 未成年人模式用于帮助应用与系统联动，提供未成年人网络保护。应用通过接入Account Kit提供的[未成年人模式能力](../harmonyos-references/account-api-minorsprotection.md)与系统联动，可快速实现自动切换未成年人模式状态，简化了家长用户的设置步骤，为未成年人提供安全、健康的网络环境。
@@ -123,6 +123,6 @@ content_hash: sha256:0b3b99d1af3670fc728e898efd59d352ccdfdf84469bce4e56d9acd8544
 
 ## 用户体验设计
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/5bm6WOFITqO284iipAGS4w/zh-cn_image_0000002558605602.png?HW-CC-KV=V1&HW-CC-Date=20260429T053653Z&HW-CC-Expire=86400&HW-CC-Sign=E953E54D0DA0A0E638A4A9CEEC935D9789463CCD82C6E38AA6D18A559593A1DA "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/5bm6WOFITqO284iipAGS4w/zh-cn_image_0000002558605602.png "点击放大")
 
 当应用开启未成年人模式后，建议应用主页样式参考以上UX设计，保障用户体验的一致性。

@@ -5,7 +5,7 @@ breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-rep
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:44:51+08:00
 doc_updated_at: 2026-01-15
-content_hash: sha256:2c9519c0bcb6fd9be213e3090ec2510838f8373ba502377382bd4654a4482727
+content_hash: sha256:93f652f33b5cf73fc8e015dc2c27942cf7142b9ea9c5e8593def2fb37f7ef814
 ---
 
 如需将ohpm-repo版本2.X.X/5.X.X版本升级到更高版本，可参考此文档。
@@ -28,7 +28,7 @@ content_hash: sha256:2c9519c0bcb6fd9be213e3090ec2510838f8373ba502377382bd4654a44
    * 若想在其他目录使用ohpm-repo，请将对应版本ohpm-repo工具包解压目录中bin目录的路径配置到[系统环境变量](ide-ohpm-repo-faq.md#section24117279211)path中。
 2. 下载并解压工具包：下载新版本的ohpm-repo私仓工具包，并解压（请解压到一个空文件夹中）。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/VwDigy01T26vLg6fUHwJuA/zh-cn_image_0000002530911554.png?HW-CC-KV=V1&HW-CC-Date=20260429T054449Z&HW-CC-Expire=86400&HW-CC-Sign=C91B07D54C6CCF2D9D5A7D3181E82106158D1F41550AE4570036B94D900F6782)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/VwDigy01T26vLg6fUHwJuA/zh-cn_image_0000002530911554.png)
 3. 安装完成之后，进入ohpm-repo私仓工具包解压目录下的bin目录，执行如下命令：
 
    ```
@@ -58,7 +58,7 @@ content_hash: sha256:2c9519c0bcb6fd9be213e3090ec2510838f8373ba502377382bd4654a44
 
      结果示例：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/Uf48ulcrSqWRm2kFxPYeqw/zh-cn_image_0000002561831481.png?HW-CC-KV=V1&HW-CC-Date=20260429T054449Z&HW-CC-Expire=86400&HW-CC-Sign=F58566FE80BA85C9C8C880BE035EB76A3D5B0EA8335844741284EEC46D9B232A "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/Uf48ulcrSqWRm2kFxPYeqw/zh-cn_image_0000002561831481.png "点击放大")
    * 刷新环境变量：安装成功后，必须根据给出的提示信息刷新环境变量，Windows系统和Linux/Mac 系统，有不同处理方式：
      + Windows系统： 关闭当前窗口，重新开启一个窗口。
      + Linux/Mac系统：
@@ -75,7 +75,7 @@ content_hash: sha256:2c9519c0bcb6fd9be213e3090ec2510838f8373ba502377382bd4654a44
 
      结果示例：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/jrxE4Zs4QtOxF9e3qwMvqw/zh-cn_image_0000002530751558.png?HW-CC-KV=V1&HW-CC-Date=20260429T054449Z&HW-CC-Expire=86400&HW-CC-Sign=D950010207920627734A3EB5FC12784BFC5AB31BD427557791D802D04BD8F739 "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/jrxE4Zs4QtOxF9e3qwMvqw/zh-cn_image_0000002530751558.png "点击放大")
 
      说明
 

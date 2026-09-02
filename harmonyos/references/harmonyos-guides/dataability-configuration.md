@@ -5,14 +5,14 @@ breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > FA模�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:26:03+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:28842bb714c5551992d7dd7ec2d1336921efdc94f8eaee86fd87c30badb469c2
+content_hash: sha256:195fb793d0a10148a8c562cc8a3902f6608ee8438225d75d39080d517749b02d
 ---
 
 ## URI介绍
 
 DataAbility的提供方和使用方都通过URI（Uniform Resource Identifier）来标识一个具体的数据，例如数据库中的某个表或磁盘上的某个文件。此处的URI仍基于URI通用标准，格式如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/DyaI41ziSFeltBx8ZgwXvg/zh-cn_image_0000002558764004.png?HW-CC-KV=V1&HW-CC-Date=20260429T052602Z&HW-CC-Expire=86400&HW-CC-Sign=99153F88A658945567AD56554731381FF301E70FD49D0080FFBF6D318E77FF72)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/DyaI41ziSFeltBx8ZgwXvg/zh-cn_image_0000002558764004.png)
 
 * scheme：协议方案名，固定为"dataability"，代表Data Ability所使用的协议类型。
 * authority：设备ID。如果为跨设备场景，则为目标设备的ID；如果为本地设备场景，则不需要填写。

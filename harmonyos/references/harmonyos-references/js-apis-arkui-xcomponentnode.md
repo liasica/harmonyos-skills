@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > �
 category: harmonyos-references
 scraped_at: 2026-04-29T13:51:03+08:00
 doc_updated_at: 2026-03-27
-content_hash: sha256:0e96ca024e0ee317dcc74e5900b154c9da01af12d0bf193ff80768ba039f42ae
+content_hash: sha256:448d201373e4b790dde7e66d9f0fa7dbb351c3b9c6efadf85a0ebf1e39293f61
 ---
 
 提供XComponent节点XComponentNode，表示组件树中的[XComponent](ts-basic-components-xcomponent.md)组件，用于[EGL](egl.md)/[OpenGL ES](opengles.md)和媒体数据写入，并支持动态修改节点渲染类型。
@@ -173,4 +173,4 @@ PhonePC/2in1TabletTVWearable
 48. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/3_0_IuNaQHuTA-EpQCRTcA/zh-cn_image_0000002589245793.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T055102Z&HW-CC-Expire=86400&HW-CC-Sign=5380B43CA47E6C95A4D1EC652BBB9F103993C5C7C935EDDF624D794990CBEA9A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/3_0_IuNaQHuTA-EpQCRTcA/zh-cn_image_0000002589245793.jpg)

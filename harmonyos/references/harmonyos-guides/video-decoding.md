@@ -5,7 +5,7 @@ breadcrumb: 指南 > 媒体 > AVCodec Kit（音视频编解码服务） > 音视
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:34:42+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:c4d2909f5642a971f3ce84c1468725a44753e4572c20ad5242883f1be339f64d
+content_hash: sha256:fe85788eda79222030c6778df78fa6808aedf52778f943013f7ab06deefb34d1
 ---
 
 开发者可以调用本模块的Native API接口，完成视频解码，即将媒体数据解码成YUV文件或送显。
@@ -65,7 +65,7 @@ content_hash: sha256:c4d2909f5642a971f3ce84c1468725a44753e4572c20ad5242883f1be33
 
 如下为状态机调用关系图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/ffUmDfz_QayOy6BEK5cvuQ/zh-cn_image_0000002558765044.png?HW-CC-KV=V1&HW-CC-Date=20260429T053440Z&HW-CC-Expire=86400&HW-CC-Sign=DECE02100CDB6A7A5FEEB4181EE0796427E01938E9BCFAE0D2838ECE77B09ECC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/ffUmDfz_QayOy6BEK5cvuQ/zh-cn_image_0000002558765044.png)
 
 1. 有两种方式可以使解码器进入Initialized状态：
 
@@ -95,7 +95,7 @@ content_hash: sha256:c4d2909f5642a971f3ce84c1468725a44753e4572c20ad5242883f1be33
 * 虚线表示可选。
 * 实线表示必选。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/IZJgZ0XHTE6MMkC21GR7-Q/zh-cn_image_0000002558605394.png?HW-CC-KV=V1&HW-CC-Date=20260429T053440Z&HW-CC-Expire=86400&HW-CC-Sign=72BBE6806477C4A8ED06CEEA41E698823B535615BD1E6A7ADB136643C3D49100)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/IZJgZ0XHTE6MMkC21GR7-Q/zh-cn_image_0000002558605394.png)
 
 ### 在 CMake 脚本中链接动态库
 
@@ -1178,7 +1178,7 @@ content_hash: sha256:c4d2909f5642a971f3ce84c1468725a44753e4572c20ad5242883f1be33
     * OH\_MD\_KEY\_VIDEO\_STRIDE表示wStride；
     * OH\_MD\_KEY\_VIDEO\_SLICE\_HEIGHT表示hStride。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/Deu4MmdZSNyUUDptCunvEA/zh-cn_image_0000002589324921.png?HW-CC-KV=V1&HW-CC-Date=20260429T053440Z&HW-CC-Expire=86400&HW-CC-Sign=CD8C8E84E58EA9BA4372E00EDECDD85A6AD429B6449EA2189E8F63CD8253A321)
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/Deu4MmdZSNyUUDptCunvEA/zh-cn_image_0000002589324921.png)
 
     添加头文件。
 

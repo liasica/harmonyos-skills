@@ -5,7 +5,7 @@ breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 图形�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:36:11+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:76fa83e23098b3aea0baf255984d86c0e35368524b483ff4b99c224a98551c22
+content_hash: sha256:34e780505680317a1288dea1e7b7ec1a048846d8d8615b828462ac6ee23614a4
 ---
 
 ## 场景介绍
@@ -78,7 +78,7 @@ content_hash: sha256:76fa83e23098b3aea0baf255984d86c0e35368524b483ff4b99c224a985
 
 效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/VcdUtDaeRy-AJcokKQ2MTw/zh-cn_image_0000002589244969.png?HW-CC-KV=V1&HW-CC-Date=20260429T053610Z&HW-CC-Expire=86400&HW-CC-Sign=E40FFEC56BA4FDBB1EB553755E34F52DF21BAE5605B79058C048952FC9DFB4D6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/VcdUtDaeRy-AJcokKQ2MTw/zh-cn_image_0000002589244969.png)
 
 ## 绘制圆弧
 
@@ -115,7 +115,7 @@ content_hash: sha256:76fa83e23098b3aea0baf255984d86c0e35368524b483ff4b99c224a985
 
 效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/O1s6YGleSya7_ewjenUWJg/zh-cn_image_0000002558765164.png?HW-CC-KV=V1&HW-CC-Date=20260429T053610Z&HW-CC-Expire=86400&HW-CC-Sign=94F40C865FA176CB8963CAD5ACDE09073DE7997049D4C617761F559B1696438E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/O1s6YGleSya7_ewjenUWJg/zh-cn_image_0000002558765164.png)
 
 ## 绘制圆
 
@@ -151,7 +151,7 @@ content_hash: sha256:76fa83e23098b3aea0baf255984d86c0e35368524b483ff4b99c224a985
 
 效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/cLZ4g8U_RN6boZIEZY5ytw/zh-cn_image_0000002558605508.png?HW-CC-KV=V1&HW-CC-Date=20260429T053610Z&HW-CC-Expire=86400&HW-CC-Sign=110819EDDFDFF25741EBE87519A46EFB46554D7521536E7DF1EDF09CAE312A71)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/cLZ4g8U_RN6boZIEZY5ytw/zh-cn_image_0000002558605508.png)
 
 ## 绘制路径
 
@@ -218,7 +218,7 @@ content_hash: sha256:76fa83e23098b3aea0baf255984d86c0e35368524b483ff4b99c224a985
 
 效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/-eXTgbYXRj2_bLcOwHyERg/zh-cn_image_0000002589325035.png?HW-CC-KV=V1&HW-CC-Date=20260429T053610Z&HW-CC-Expire=86400&HW-CC-Sign=45583540D67F577EE894124F53E32B93765C5092268445854B6AC2C323F7139F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/-eXTgbYXRj2_bLcOwHyERg/zh-cn_image_0000002589325035.png)
 
 ## 绘制区域
 
@@ -260,7 +260,7 @@ content_hash: sha256:76fa83e23098b3aea0baf255984d86c0e35368524b483ff4b99c224a985
 
 效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/iVZI6ib7QZ6Fg_CQ7TpAoA/zh-cn_image_0000002589244963.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053610Z&HW-CC-Expire=86400&HW-CC-Sign=5D64CACE264517DFE7959301E1A96256FB32B00BE134C1574C861E553A61F64F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/iVZI6ib7QZ6Fg_CQ7TpAoA/zh-cn_image_0000002589244963.jpg)
 
 ## 绘制矩形
 
@@ -289,7 +289,7 @@ content_hash: sha256:76fa83e23098b3aea0baf255984d86c0e35368524b483ff4b99c224a985
 
 效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/idjyIRTjRIq3wTty_KK1nw/zh-cn_image_0000002589244971.png?HW-CC-KV=V1&HW-CC-Date=20260429T053610Z&HW-CC-Expire=86400&HW-CC-Sign=D6211F377BF3094BB106CA34FFBCD033281969E75792C880744573A1073CC831)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/idjyIRTjRIq3wTty_KK1nw/zh-cn_image_0000002589244971.png)
 
 ## 绘制圆角矩形
 
@@ -326,7 +326,7 @@ content_hash: sha256:76fa83e23098b3aea0baf255984d86c0e35368524b483ff4b99c224a985
 
 效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/VqNid7tUTqqgS2riy-0ScQ/zh-cn_image_0000002558765166.png?HW-CC-KV=V1&HW-CC-Date=20260429T053610Z&HW-CC-Expire=86400&HW-CC-Sign=F187F25E87C6AACCA0AE237F22E7850E5AF7429B019B822C8614538D5084B69E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/VqNid7tUTqqgS2riy-0ScQ/zh-cn_image_0000002558765166.png)
 
 ## 示例代码
 

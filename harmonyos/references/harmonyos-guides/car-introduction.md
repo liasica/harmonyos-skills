@@ -5,12 +5,12 @@ breadcrumb: 指南 > 系统 > 硬件 > Car Kit（车服务） > Car Kit简介
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:33:28+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:c540215de46f01c8ad6d7c0c43d908e5d4c81146003b565c7bc858a6e980453c
+content_hash: sha256:81ca63b86d0dac53fceb59a5ea36900c834bba413679d6865cb97161a83def68
 ---
 
 Car Kit（车服务）为开发者提供一套便捷接入出行服务的能力，开发者通过集成Car Kit，可以轻松实现在手机与鸿蒙智行车机之间无缝传递导航信息、通过超级桌面在鸿蒙智行车机上使用手机上的应用、通过HiCar在认证车机上使用手机上的应用等功能，为用户提供更加良好的出行体验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/aZFDfC-AQEaw4hr7LuGFWw/zh-cn_image_0000002558605308.png?HW-CC-KV=V1&HW-CC-Date=20260429T053327Z&HW-CC-Expire=86400&HW-CC-Sign=466A5DEA0E01000546268DF414D315C8E26F8FC73FC51123B6F860E4EA1D929B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/aZFDfC-AQEaw4hr7LuGFWw/zh-cn_image_0000002558605308.png)
 
 ## 场景介绍
 
@@ -39,7 +39,7 @@ Car Kit为华为手机用户提供驾驶鸿蒙智行车辆的出行场景和驾�
 
 ## 实现原理
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/27qhfet-SHCV4N_1K81UZw/zh-cn_image_0000002589324833.png?HW-CC-KV=V1&HW-CC-Date=20260429T053327Z&HW-CC-Expire=86400&HW-CC-Sign=D8C4D03268B706358DD9BDBE564A0803AF9142B743628AD21296E5C20C47BBD3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/27qhfet-SHCV4N_1K81UZw/zh-cn_image_0000002589324833.png)
 
 Car Kit处于HarmonyOS的框架层，作为生态应用和系统应用之间的桥梁。
 

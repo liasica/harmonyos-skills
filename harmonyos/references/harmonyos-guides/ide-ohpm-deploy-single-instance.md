@@ -5,7 +5,7 @@ breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-rep
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:44:43+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:9483001be62876d587f8c0f5a9e54b4c122b166db53dd27d200b2a0cc7ee0e97
+content_hash: sha256:651723e8efa6d55010caeeed9ee139fea468297498f6bfa1ea360b11c6036f9c
 ---
 
 说明
@@ -18,7 +18,7 @@ ohpm-repo私仓不允许在Linux或macOS系统中使用root用户启动，请使
 2. 下载ohpm-repo工具包，[点击链接获取](https://developer.huawei.com/consumer/cn/download/ohpm-repo)**。**
 3. 解压ohpm-repo私仓工具包。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/mi9ZRd_kTyeYA7vM9QwaFQ/zh-cn_image_0000002530911284.png?HW-CC-KV=V1&HW-CC-Date=20260429T054442Z&HW-CC-Expire=86400&HW-CC-Sign=7580657DFB049CCE9489DF040D83AE8749ABF52C80D40BCFE91613355C3792B6)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/mi9ZRd_kTyeYA7vM9QwaFQ/zh-cn_image_0000002530911284.png)
 
 4. 请将ohpm-repo工具包解压目录中bin目录的路径配置到[系统环境变量](ide-ohpm-repo-faq.md#section24117279211)path中，执行如下查询命令:
 

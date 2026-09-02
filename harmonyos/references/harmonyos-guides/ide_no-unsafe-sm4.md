@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_no-unsafe-sm4
-title: @security/no-unsafe-sm4
+title: "@security/no-unsafe-sm4"
 category: harmonyos-guides
 scraped_at: 2026-04-28T07:55:57+08:00
 doc_updated_at: 2026-01-15

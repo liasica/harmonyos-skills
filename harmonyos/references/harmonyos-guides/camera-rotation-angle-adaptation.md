@@ -5,12 +5,12 @@ breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:35:00+08:00
 doc_updated_at: 2026-04-10
-content_hash: sha256:7195722feeec1d675d779fcdbcfb1549adc55d3b9ac4eaa763d31885faafdc09
+content_hash: sha256:040e6b6d127963cc33e197936743aaf7412be42288cb3f4f5cc7b0a134c36b57
 ---
 
 屏幕处于不同的屏幕状态时，原始图像需旋转不同的角度，以确保图像在合适的方向显示，效果如图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/d_xSUgSVTwqeMjo0KICH9A/zh-cn_image_0000002589244877.png?HW-CC-KV=V1&HW-CC-Date=20260429T053459Z&HW-CC-Expire=86400&HW-CC-Sign=D19A95F332CB0F276A394D953AC3A30E87E7D4188832A2BE7BCC7D21D1092225)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/d_xSUgSVTwqeMjo0KICH9A/zh-cn_image_0000002589244877.png)
 
 本开发指导将指导开发者在预览、拍照、录像等不同场景下，如何适配相机的旋转角度。
 

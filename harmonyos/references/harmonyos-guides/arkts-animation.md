@@ -5,12 +5,12 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:28:08+08:00
 doc_updated_at: 2026-03-17
-content_hash: sha256:75beb0753131fb40a51624eb0ac226a4b02d4adbdc0bce6af70b21792a4288b7
+content_hash: sha256:9a9d1df490954f0d468d45cf14534cbf77c2e05f18777ef4d134d4d2ff978e7f
 ---
 
 UI（用户界面）是用户与设备进行交互的界面，包含各种可视化组件（如按钮、列表等）。属性作为接口，用于控制组件的行为，属性值的变化会引起UI的变化。动画可在UI发生改变时，添加流畅的过渡效果，使属性值从起始状态逐渐变化到终点状态，避免因瞬间变化造成的突兀感，保持用户的视觉焦点。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/uNsRpYuaSSWtpjiM4Norjw/zh-cn_image_0000002558604814.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052806Z&HW-CC-Expire=86400&HW-CC-Sign=4DCA13F0FE9D8919E084B17026E2E401730D04686C3572C608591CCEF8F09A4B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/uNsRpYuaSSWtpjiM4Norjw/zh-cn_image_0000002558604814.gif)
 
 动画的目的包括：
 

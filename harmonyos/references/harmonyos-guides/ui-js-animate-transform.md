@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:28:55+08:00
 doc_updated_at: 2026-03-23
-content_hash: sha256:491691c419d524f467aec3979d2c900592cd4a1d1c4f99491a2bada78e5115c3
+content_hash: sha256:8cce436cae5ad369c2b7f59bc3db3b46d7938a89542dfa83aa17d47c73aa04d2
 ---
 
 设置transform属性对组件进行旋转、缩放、移动和倾斜。
@@ -96,7 +96,7 @@ content_hash: sha256:491691c419d524f467aec3979d2c900592cd4a1d1c4f99491a2bada78e5
 64. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/4LJt9l7DRW2RFeEW4R98DA/zh-cn_image_0000002589244441.png?HW-CC-KV=V1&HW-CC-Date=20260429T052854Z&HW-CC-Expire=86400&HW-CC-Sign=E82DF825F1C8B5D8DBA5AFF94E5A1AADE6304FEF4E6AADAF17413C33E635A6AF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/4LJt9l7DRW2RFeEW4R98DA/zh-cn_image_0000002589244441.png)
 
 ## 设置平移动画
 
@@ -174,7 +174,7 @@ content_hash: sha256:491691c419d524f467aec3979d2c900592cd4a1d1c4f99491a2bada78e5
 61. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/S9zOkA1ZRdOfDTytz2Skyw/zh-cn_image_0000002558764634.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052854Z&HW-CC-Expire=86400&HW-CC-Sign=A7577D878C822C4BF75DAB29C623114ACE95F9A9AEA411CE82C11E3C22900A3E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/S9zOkA1ZRdOfDTytz2Skyw/zh-cn_image_0000002558764634.gif)
 
 ## 设置旋转动画
 
@@ -306,7 +306,7 @@ content_hash: sha256:491691c419d524f467aec3979d2c900592cd4a1d1c4f99491a2bada78e5
 104. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/7Gwzjh3cS_qeW_n4GWSsiw/zh-cn_image_0000002558604978.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052854Z&HW-CC-Expire=86400&HW-CC-Sign=14A6C4C20D21B20405C6D959B2E937769A43BCD8853483D0C1796404ADE3BEEA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/7Gwzjh3cS_qeW_n4GWSsiw/zh-cn_image_0000002558604978.gif)
 
 说明
 
@@ -418,7 +418,7 @@ transform-origin变换对象的原点位置，如果仅设置一个值，另一�
 82. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/uo1cC7jsSnOitp5GBJ-OMA/zh-cn_image_0000002589324505.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052854Z&HW-CC-Expire=86400&HW-CC-Sign=EE3B77FD48D4126ADFF2C03DA7134EC66763DB5F8755610ECF93B886A9F2A0A0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/uo1cC7jsSnOitp5GBJ-OMA/zh-cn_image_0000002589324505.gif)
 
 说明
 
@@ -466,7 +466,7 @@ matrix是一个参数为六个值的矩阵，6个值分别代表：scaleX, skewY
 28. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/ESj7catJT06UtjtJ_cl8pw/zh-cn_image_0000002589244443.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052854Z&HW-CC-Expire=86400&HW-CC-Sign=AE24BD89D382191FD51C084DB3F22E4B472A70165124D84DAEBF0E802FE1810C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/ESj7catJT06UtjtJ_cl8pw/zh-cn_image_0000002589244443.gif)
 
 ## 整合transform属性
 
@@ -575,7 +575,7 @@ transform可以设置多个值并且多个值可同时设置，下面案例中�
 89. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/YoAZnEZ_SL2PzdzDtMz0WA/zh-cn_image_0000002558764636.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052854Z&HW-CC-Expire=86400&HW-CC-Sign=CED1F25CC10486EA4A3B397F8FB8E2141C92A627AD20C6263874AEEAE2EA8279)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/YoAZnEZ_SL2PzdzDtMz0WA/zh-cn_image_0000002558764636.gif)
 
 说明
 

@@ -5,7 +5,7 @@ breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 >
 category: best-practices
 scraped_at: 2026-04-29T14:12:35+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:a15efa8fd1479a6c9db97b0ed047a5d964f9d0e071ebd1bd719032ef55d763f7
+content_hash: sha256:427c50b2440af989748723d1a735a17a33ca0ca1bcf23f22d69de68b58070630
 ---
 
 ## 概述
@@ -233,7 +233,7 @@ XComponent持有一个Surface，该Surface的默认位置及大小与XComponent�
 
 为了获得更好的游戏体验，游戏应用不仅需要设置沉浸式界面，还需要扩展布局并隐藏避让区，即隐藏状态栏和导航条（示意图所示的导航条在真实使用场景下已隐藏）。界面元素示意图如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/65owQBqkTX-Y4KWfvxoaYw/zh-cn_image_0000002276709524.png?HW-CC-KV=V1&HW-CC-Date=20260429T061225Z&HW-CC-Expire=86400&HW-CC-Sign=4604BAA271D4606184EABE22393F7705E8895840D88CE22BC02945E8482F3560 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/65owQBqkTX-Y4KWfvxoaYw/zh-cn_image_0000002276709524.png "点击放大")
 
 在这样的场景下，挖孔区（即摄像头区域）可能会遮挡部分页面信息或用户操作按钮。因此，为了优化用户体验，操作按钮需要移动到挖孔区的另一侧，同时避免侧边出现大量留白，需要获取挖孔区域并进行相应的避让设计。具体步骤分为以下三步：
 

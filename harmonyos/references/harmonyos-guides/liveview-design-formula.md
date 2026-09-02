@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用服务 > Live View Kit（实况窗服务） > 实况�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:38:53+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:08358581436a4128023ae6e4f4971365e9c176d10655e0df2555a986afeead5f
+content_hash: sha256:de62a59038f882d3fb2fda78badae9d4bcb20071dde66152c79bf8360572e29c
 ---
 
 应用发送的实况窗需遵循实况窗设计规范，不符合设计规范的方案将不被予以开通正式权限。同时若应用实况窗上线后出现违反实况窗设计规范的行为，将被视为[违规](liveview-introduction.md#违规处罚)。
@@ -133,7 +133,7 @@ content_hash: sha256:08358581436a4128023ae6e4f4971365e9c176d10655e0df2555a986afe
 
 在计划出发前1个小时，开始展示实况窗通知。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/BaJSjc41QcehDjhNJ_rpSQ/zh-cn_image_0000002589325339.png?HW-CC-KV=V1&HW-CC-Date=20260429T053846Z&HW-CC-Expire=86400&HW-CC-Sign=5F0525B9DE5C43BA5346050A706960785EB29643F4CCB4B032A73D6E1D9CB0A4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/BaJSjc41QcehDjhNJ_rpSQ/zh-cn_image_0000002589325339.png)
 
 | **建议展示的关键信息** | **主要特殊场景考虑** | **建议设置提醒的关键节点** |
 | --- | --- | --- |
@@ -145,7 +145,7 @@ content_hash: sha256:08358581436a4128023ae6e4f4971365e9c176d10655e0df2555a986afe
 
 共享租赁场景及关键节点可以按照如下流程梳理：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/ZFzzaigWS8ynfCzCjgQvDw/zh-cn_image_0000002589245277.png?HW-CC-KV=V1&HW-CC-Date=20260429T053846Z&HW-CC-Expire=86400&HW-CC-Sign=1D72EB2B4380BBF1E57C7F67FA87B9A0C075DC4D82ED001462B7C84F10893B87)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/ZFzzaigWS8ynfCzCjgQvDw/zh-cn_image_0000002589245277.png)
 
 | **建议展示的关键信息** | **主要特殊场景考虑** | **建议设置提醒的关键节点** |
 | --- | --- | --- |

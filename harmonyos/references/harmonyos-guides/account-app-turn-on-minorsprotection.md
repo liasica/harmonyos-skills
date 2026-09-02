@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用服务 > Account Kit（华为账号服务） > 未成
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:36:55+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:f05bff98901fb6d9b22b22421aec797669d2b7e9086d79c5fbfd128e79782d19
+content_hash: sha256:878e8a18c7f637d5c604983309af3d2c6835f9d6d6a7cc5f1a19fab9a563a724
 ---
 
 ## 场景介绍
@@ -16,7 +16,7 @@ content_hash: sha256:f05bff98901fb6d9b22b22421aec797669d2b7e9086d79c5fbfd128e797
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/dPXIJsUIQAOLZeDwl47i9g/zh-cn_image_0000002589245065.png?HW-CC-KV=V1&HW-CC-Date=20260429T053654Z&HW-CC-Expire=86400&HW-CC-Sign=14944D4F0C73A0734BDF97824298EAF4EE5F37B94014BA4540B4D072A16317EE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/dPXIJsUIQAOLZeDwl47i9g/zh-cn_image_0000002589245065.png)
 
 流程说明：
 

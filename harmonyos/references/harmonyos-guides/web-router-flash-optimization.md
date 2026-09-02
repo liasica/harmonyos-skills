@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > Web渲染和布局 >
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:29:17+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:d441e4fc0acaf0da184c3cef760e3797e1cdcbc5283d8803860171b99c400629
+content_hash: sha256:295382eb2ee8a583ad21b5bc1d876b2959ef071438bbd9d15c437e1b6fe95d47
 ---
 
 应用使用[Navigation](../harmonyos-references/ts-basic-components-navigation.md)等路由策略导航至Web组件页面时，在网页加载过程中，页面底部可能出现闪烁现象，这会影响用户体验。
@@ -14,7 +14,7 @@ content_hash: sha256:d441e4fc0acaf0da184c3cef760e3797e1cdcbc5283d8803860171b99c4
 
 使用Navigation等路由策略导航至Web组件页面时，通常根据网页的回调通知判断是否隐藏系统导航栏。若决定隐藏，Web组件布局会进行调整。这一布局调整过程可简化为如下四个阶段：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/08YqBU3OTKeNhnP0Sz3Q_w/zh-cn_image_0000002589324573.png?HW-CC-KV=V1&HW-CC-Date=20260429T052915Z&HW-CC-Expire=86400&HW-CC-Sign=04B31A0B84FEB67D9A4084CC12E9F1238A2D832399A8817F1B6E3612125ED646)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/08YqBU3OTKeNhnP0Sz3Q_w/zh-cn_image_0000002589324573.png)
 
 图中四个状态的说明（从左至右）：
 

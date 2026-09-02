@@ -5,7 +5,7 @@ breadcrumb: 指南 > AI > Core Vision Kit（基础视觉服务） > 主体分割
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:43:28+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:0a56d937aa4d6d53f1d363a23c335f7ff4e44bc05c4b08ed74410eec8b33d67f
+content_hash: sha256:cbfc831ac9353d75ec209cde122df1c869d3d90bcd90f4bb101136afabda8446
 ---
 
 ## 适用场景
@@ -19,7 +19,7 @@ content_hash: sha256:0a56d937aa4d6d53f1d363a23c335f7ff4e44bc05c4b08ed74410eec8b3
 
 效果如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/pxlXsdMkRZiSt8mDjOPsOQ/zh-cn_image_0000002589325679.png?HW-CC-KV=V1&HW-CC-Date=20260429T054327Z&HW-CC-Expire=86400&HW-CC-Sign=86301BF25FFC0D731EBDCE3F0913CC2B99B8AB944DEADC60D5B7A652E0AD519A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/pxlXsdMkRZiSt8mDjOPsOQ/zh-cn_image_0000002589325679.png)
 
 ## 约束与限制
 

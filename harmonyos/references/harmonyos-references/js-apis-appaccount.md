@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-appaccount
-title: @ohos.account.appAccount (应用账号管理)
+title: "@ohos.account.appAccount (应用账号管理)"
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > ArkTS API > 账号管理 > @ohos.account.appAccount (应用账号管理)
 category: harmonyos-references
 scraped_at: 2026-04-28T08:09:26+08:00

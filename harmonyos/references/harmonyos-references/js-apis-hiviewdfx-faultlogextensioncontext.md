@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-hiviewdfx-faultlogextensioncontext
-title: @ohos.hiviewdfx.FaultLogExtensionContext (故障延迟通知上下文)
+title: "@ohos.hiviewdfx.FaultLogExtensionContext (故障延迟通知上下文)"
 breadcrumb: API参考 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > ArkTS API > @ohos.hiviewdfx.FaultLogExtensionContext (故障延迟通知上下文)
 category: harmonyos-references
 scraped_at: 2026-04-28T08:11:18+08:00

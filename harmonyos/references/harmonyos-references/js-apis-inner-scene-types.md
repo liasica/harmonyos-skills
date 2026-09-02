@@ -5,7 +5,7 @@ breadcrumb: API参考 > 图形 > ArkGraphics 3D（方舟3D图形） > ArkTS API 
 category: harmonyos-references
 scraped_at: 2026-04-29T14:06:13+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:0bd41bad6ed412d3ee0f63b615f57b1a5a5b5dcd5c2cc7cd79afabc7db2595b8
+content_hash: sha256:1d0dc176ae2b810943d2305ef22cbbf035b71b5df2020ae526fe98fb0430bcc3
 ---
 
 本模块提供3D图形中常用的数据类型。
@@ -250,7 +250,7 @@ PhonePC/2in1TabletTVWearable
 
 以radius=0.5，height=1，segmentCount=20为例，生成圆柱体的网格以及UV布局如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/Nd5krR9cSI25YWHyLGUMWw/zh-cn_image_0000002589327293.png?HW-CC-KV=V1&HW-CC-Date=20260429T060612Z&HW-CC-Expire=86400&HW-CC-Sign=3D2F980118D31F45BCA6D05C86C50420F7722F29014AE93F870615DE628ACFEB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/Nd5krR9cSI25YWHyLGUMWw/zh-cn_image_0000002589327293.png)
 
 ## Mat4x423+
 

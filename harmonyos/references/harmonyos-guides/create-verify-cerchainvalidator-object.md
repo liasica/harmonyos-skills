@@ -5,14 +5,14 @@ breadcrumb: 指南 > 系统 > 安全 > Device Certificate Kit（设备证书服�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:31:24+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:aeaafb284690b93c27e29e9102f5005fb88badcf5bd14d76e2c127cfb9c85dc2
+content_hash: sha256:7848368041a7d9cbaad2c04107736544f23d72d3e034b5dc769ff81c500dae42
 ---
 
 证书链是由一组证书组成的证书集合，以图中样例证书文件为例，即可放在一个证书链中。
 
 样例中可以看到GlobalSign自签名了证书，GlobalSign也签发了GlobalSign RSA OV SSL CA 2018的证书，GlobalSign RSA OV SSL CA 2018又签发了第三级证书。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/SAEB_kLTSheawmZKOMLaDQ/zh-cn_image_0000002558764878.png?HW-CC-KV=V1&HW-CC-Date=20260429T053123Z&HW-CC-Expire=86400&HW-CC-Sign=53C0780AFCC6FCA0CE9A967EF3C890A96F8C9BBE79C021C77E3635C8BE2D9829)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/SAEB_kLTSheawmZKOMLaDQ/zh-cn_image_0000002558764878.png)
 
 开发者可以参考示例将已有的多个证书构建出证书链数据。
 

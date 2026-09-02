@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-ability-ability
-title: @ohos.ability.ability (Ability模块)
+title: "@ohos.ability.ability (Ability模块)"
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > FA模型能力的接口 > @ohos.ability.ability (Ability模块)
 category: harmonyos-references
 scraped_at: 2026-04-28T07:58:25+08:00

@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-form-liveformextensionability
-title: @ohos.app.form.LiveFormExtensionAbility (LiveFormExtensionAbility)
+title: "@ohos.app.form.LiveFormExtensionAbility (LiveFormExtensionAbility)"
 breadcrumb: API参考 > 应用框架 > Form Kit（卡片开发服务） > ArkTS API > @ohos.app.form.LiveFormExtensionAbility (LiveFormExtensionAbility)
 category: harmonyos-references
 scraped_at: 2026-04-28T08:06:01+08:00

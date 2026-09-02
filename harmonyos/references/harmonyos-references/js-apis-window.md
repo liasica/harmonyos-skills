@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-window
-title: @ohos.window (窗口)
+title: "@ohos.window (窗口)"
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > 窗口管理 > @ohos.window (窗口)
 category: harmonyos-references
 scraped_at: 2026-04-28T08:00:42+08:00

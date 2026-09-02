@@ -5,7 +5,7 @@ breadcrumb: 指南 > 图形 > Graphics Accelerate Kit（图形加速服务） > 
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:36:27+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:0c0b35cb8c5f30164819eba5d8fe222ff13b739e4d88b5d9d8be30097a1135d3
+content_hash: sha256:b5450cfcee7bd11a29c7d22a66a7d0d75c72e767d7a9d6d3d1ae58c2fe673280
 ---
 
 ## 业务流程
@@ -16,7 +16,7 @@ content_hash: sha256:0c0b35cb8c5f30164819eba5d8fe222ff13b739e4d88b5d9d8be30097a1
 
   开发阶段，开发者需要使用系统的图形驱动库提供的OpenGL ES接口，在期望被标记的物体绘制前后添加上开始标记指令和结束标记指令。运行阶段，基于OpenGL ES的Transform Feedback（变换反馈）特性，被标记的所有Draw Call处理的顶点数据将被缓存，再通过顶点匹配、运动估计、屏幕空间投影等过程，得到高精度运动向量，最终绘制出预测帧。运行阶段流程如下图所示：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/tFSUxwFJSJufGnl77a1fgA/zh-cn_image_0000002589245015.png?HW-CC-KV=V1&HW-CC-Date=20260429T053625Z&HW-CC-Expire=86400&HW-CC-Sign=91405361FD4D120496FFD9B79CD54354AB820461EE8D1F0053178D7F46112E3A)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/tFSUxwFJSJufGnl77a1fgA/zh-cn_image_0000002589245015.png)
 * 顶点标记原则
 
   被标记的物体能在运动估计阶段得到更高精度的运动向量图（MV，Motion Vector），但需要付出额外的性能代价，开发者需要在这之间做出平衡。**建议只标记画面中相对场景运动的物体**，因为相对场景运动的物体的顶点数量较少，但运动预测却最为困难，这样的标记方式能以少量的性能代价换取较明显的超帧画质收益。

@@ -5,7 +5,7 @@ breadcrumb: 指南 > 系统 > 网络 > Service Collaboration Kit（协同服务�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:33:02+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:8a702d5f1ccf3a2252506f897fa75face2d7e5a2a98db36fc82c3407ff388d20
+content_hash: sha256:1710f6cc1659c649da777fd3e91ed6a1200dc2391ce1f8a21c8ebec1e6d60e1e
 ---
 
 对于API 6.0.0(20)之前版本，仅支持匹配跨端拍照、文档扫描、图库选择器。API 6.0.0(20)及之后版本，支持匹配跨端拍照、文档扫描、图库选择器、视频选择器、图片和视频选择器；从API 6.1.0(23)开始，TV、手机、平板或2in1设备可调用具备如下能力的远程设备：支持拍照、扫描及图库（图片与视频）能力的手机和平板，支持图库（图片与视频）能力的2in1设备。
@@ -20,13 +20,13 @@ content_hash: sha256:8a702d5f1ccf3a2252506f897fa75face2d7e5a2a98db36fc82c3407ff3
 
 如果同一组网下有多台手机或平板设备，用户可以选择不同的设备进行拍摄。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/28bkL_6uSHamqW7_rDwEDQ/zh-cn_image_0000002589244737.gif?HW-CC-KV=V1&HW-CC-Date=20260429T053141Z&HW-CC-Expire=86400&HW-CC-Sign=325E1B7CDE10A4DDE7F43CA230991D563506485B7369970A362FBEA2AB2963B8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/28bkL_6uSHamqW7_rDwEDQ/zh-cn_image_0000002589244737.gif)
 
 ## 运作机制
 
 基于分布式协同框架面向跨设备拍照的业务场景，为您提供了[createCollaborationServiceMenuItems](../harmonyos-references/servicecollaboration-collaborationservice.md#createcollaborationservicemenuitems)（相机设备列表组件）和[CollaborationServiceStateDialog](../harmonyos-references/servicecollaboration-collaborationservice.md#collaborationservicestatedialog)（远端相机状态弹窗组件）两个组件。应用只需要调用这两个组件，即可完成跨端拍照，无需关注分布式场景下数据传输、指令控制等具体细节。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/aoRoTzWjQU6xxmy3pSjWcA/zh-cn_image_0000002558764932.png?HW-CC-KV=V1&HW-CC-Date=20260429T053141Z&HW-CC-Expire=86400&HW-CC-Sign=110E6CD37EB7C25585925E89B96978BF22EE0B7D84980EBC4564D3561723C921)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/aoRoTzWjQU6xxmy3pSjWcA/zh-cn_image_0000002558764932.png)
 
 跨设备互通-拍照的具体流程如上图所示。
 

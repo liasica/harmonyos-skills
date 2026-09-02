@@ -5,16 +5,16 @@ breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:41:32+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:24c482eb9e739ad7aac56ad59d0961dbb6cb6b5c6964ddd95554e43f7f2efc26
+content_hash: sha256:33fc09cb1a1aa857a453f21e579020324a5fdcdad9166f4cbbcab57fe0d1396a
 ---
 
 ## 功能说明
 
 按元素做逻辑回归Sigmoid，计算公式如下，其中PAR表示矢量计算单元一个迭代能够处理的元素个数 ：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/FH-nvyi6SYqJ3cLVkjTueQ/zh-cn_image_0000002589245601.png?HW-CC-KV=V1&HW-CC-Date=20260429T054131Z&HW-CC-Expire=86400&HW-CC-Sign=322290EF7DD7F22B0557A8CFF5CD1159CA25171937E1B72F944B947F42FD94BC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/FH-nvyi6SYqJ3cLVkjTueQ/zh-cn_image_0000002589245601.png)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/9ihHQZOoSwuOOGQtUPFZUA/zh-cn_image_0000002558765792.png?HW-CC-KV=V1&HW-CC-Date=20260429T054131Z&HW-CC-Expire=86400&HW-CC-Sign=B2363E133347CC7D8FEE911EC8E97EC97907DF5D372DA0F721D9C7A0D7D1CA83)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/9ihHQZOoSwuOOGQtUPFZUA/zh-cn_image_0000002558765792.png)
 
 ## 函数原型
 

@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:51:34+08:00
 doc_updated_at: 2026-04-10
-content_hash: sha256:8e3cb14a549bdb3cedc20b60e0e9d1fff3000895937840d72ee1da318352ae18
+content_hash: sha256:1950784671e3042308f63d6981e303afdaab08a260aa9969afe21fa11bc032d2
 ---
 
 为组件绑定不同类型的手势事件，并设置事件的响应方法。
@@ -200,7 +200,7 @@ PhonePC/2in1TabletTVWearable
 51. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/NdN4xIrkT6uu3a1wGOa9cA/zh-cn_image_0000002589245911.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055132Z&HW-CC-Expire=86400&HW-CC-Sign=9C71E1E5ABC3F7073369B78EFDDEA048165560C4238C572447A79076BC2A7770)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/NdN4xIrkT6uu3a1wGOa9cA/zh-cn_image_0000002589245911.gif)
 
 ### 示例2（实时监测参与滑动手势的有效触点数量）
 
@@ -271,4 +271,4 @@ PhonePC/2in1TabletTVWearable
 62. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/BhILHiTiSkG0lloAX1PswA/zh-cn_image_0000002558766102.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055132Z&HW-CC-Expire=86400&HW-CC-Sign=F506183229A59DD4E9902FA0F1E9351EE479A00AD71CE84B58C2EBAB6B622426)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/BhILHiTiSkG0lloAX1PswA/zh-cn_image_0000002558766102.gif)

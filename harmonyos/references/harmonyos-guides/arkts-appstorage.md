@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:27:16+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:e7d3f14186c3a44797ee3edf01be7b3586a80d7499c8ed38c68debdc9f3f98a8
+content_hash: sha256:cfc22c59a349762620e338c7758e48ecc41d509ddc327e1342d5c05618e6543b
 ---
 
 在阅读本文档前，建议提前阅读：[状态管理概述](arkts-state-management-overview.md)，从而对状态管理框架中AppStorage的定位有一个宏观了解。
@@ -58,7 +58,7 @@ AppStorage中的属性可以被双向同步，并具有不同的功能，比如�
 
 **图1** @StorageProp初始化规则图示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/n6u_e_dPSH2_3-duDNv63A/zh-cn_image_0000002558604446.png?HW-CC-KV=V1&HW-CC-Date=20260429T052715Z&HW-CC-Expire=86400&HW-CC-Sign=51C393C4D748D022EB9A133CBF64E21B24D576E099C9DB662D793DEF05B84D7E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/n6u_e_dPSH2_3-duDNv63A/zh-cn_image_0000002558604446.png)
 
 ### 观察变化和行为表现
 
@@ -104,7 +104,7 @@ AppStorage中的属性可以被双向同步，并具有不同的功能，比如�
 
 **图2** @StorageLink初始化规则图示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/XK9gNBcXQTu7MXUxrsosdw/zh-cn_image_0000002589323971.png?HW-CC-KV=V1&HW-CC-Date=20260429T052715Z&HW-CC-Expire=86400&HW-CC-Sign=94A09092C9DDEF0CDF2CC2A5385DD2CFCAE4AD4A5804A0F63F9E811F29CDE934)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/XK9gNBcXQTu7MXUxrsosdw/zh-cn_image_0000002589323971.png)
 
 ### 观察变化和行为表现
 

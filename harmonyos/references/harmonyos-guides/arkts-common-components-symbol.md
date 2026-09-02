@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:27:47+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:e7464c35c4ba39168320ca152e4ec78d55eb8543d4db69c2c68443726bcff41c
+content_hash: sha256:787ea826a4c4a991203c4118b334bb87a88936c9f1c815420c776f412f08e920
 ---
 
 SymbolGlyph是图标小符号组件，便于使用精美的图标，如渲染多色图标和使用动效图标。SymbolSpan作为Text组件的子组件，可在文本中穿插显示图标小符号。具体用法请参考[SymbolGlyph](../harmonyos-references/ts-basic-components-symbolglyph.md)和[SymbolSpan](../harmonyos-references/ts-basic-components-symbolspan.md)组件的API文档。
@@ -25,7 +25,7 @@ SymbolGlyph通过$r引用Resource资源来创建，目前仅支持系统预置�
 
 [CreatSymbolGlyph.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/symbol/CreatSymbolGlyph.ets#L25-L30)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/v7BgfyP8Ta6tGcOIrW1Ohw/zh-cn_image_0000002589324193.png?HW-CC-KV=V1&HW-CC-Date=20260429T052744Z&HW-CC-Expire=86400&HW-CC-Sign=FE7B079AE79B2B6E39336124332BB29D0837CCE60732D1682C63D74C872B9EF5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/v7BgfyP8Ta6tGcOIrW1Ohw/zh-cn_image_0000002589324193.png)
 
 ## 添加到文本中
 
@@ -45,7 +45,7 @@ SymbolGlyph通过$r引用Resource资源来创建，目前仅支持系统预置�
 
   [SymbolAddToText.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/symbol/SymbolAddToText.ets#L30-L36)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/ilFkIHbaSyS7mic7acPZUQ/zh-cn_image_0000002589244133.png?HW-CC-KV=V1&HW-CC-Date=20260429T052744Z&HW-CC-Expire=86400&HW-CC-Sign=FFB3DF226FB77CE11878F3870AD2DF32782B39FB2CBF6843267CFFB172442C08)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/ilFkIHbaSyS7mic7acPZUQ/zh-cn_image_0000002589244133.png)
 * 通过[fontSize](../harmonyos-references/ts-basic-components-symbolspan.md#fontsize)属性设置SymbolSpan的大小。
 
   ```
@@ -84,7 +84,7 @@ SymbolGlyph通过$r引用Resource资源来创建，目前仅支持系统预置�
 
   [SymbolAddToText.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/symbol/SymbolAddToText.ets#L42-L74)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/1qTbyIKcQeuk-89gp5GxeQ/zh-cn_image_0000002558764326.png?HW-CC-KV=V1&HW-CC-Date=20260429T052744Z&HW-CC-Expire=86400&HW-CC-Sign=F8ACB911ABDDF82DB87D9E815721AED98C67AD3615E9735B0F0A9F0F0D12EAA5)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/1qTbyIKcQeuk-89gp5GxeQ/zh-cn_image_0000002558764326.png)
 * 通过[fontWeight](../harmonyos-references/ts-basic-components-symbolspan.md#fontweight)属性设置SymbolSpan组件的粗细。
 
   ```
@@ -120,7 +120,7 @@ SymbolGlyph通过$r引用Resource资源来创建，目前仅支持系统预置�
 
   [SymbolAddToText.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/symbol/SymbolAddToText.ets#L80-L109)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/_1psRd7cT8m2_1MxhQV5NQ/zh-cn_image_0000002558604670.png?HW-CC-KV=V1&HW-CC-Date=20260429T052744Z&HW-CC-Expire=86400&HW-CC-Sign=F23813DE6423558B808673CC460575EBE4AF1439F8D67F199FB04356E65FA605)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/_1psRd7cT8m2_1MxhQV5NQ/zh-cn_image_0000002558604670.png)
 * 通过[fontColor](../harmonyos-references/ts-basic-components-symbolspan.md#fontcolor)属性设置SymbolSpan的颜色。
 
   ```
@@ -156,7 +156,7 @@ SymbolGlyph通过$r引用Resource资源来创建，目前仅支持系统预置�
 
   [SymbolAddToText.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/symbol/SymbolAddToText.ets#L115-L144)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/crd0ZfCSQRm5eJGUsWywvg/zh-cn_image_0000002589324195.png?HW-CC-KV=V1&HW-CC-Date=20260429T052744Z&HW-CC-Expire=86400&HW-CC-Sign=BFC70CCA5BFAED5D2CC9DC5A5D678784C74326CFFC3BE3637D7846A2B5674885)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/crd0ZfCSQRm5eJGUsWywvg/zh-cn_image_0000002589324195.png)
 * 通过[renderingStrategy](../harmonyos-references/ts-basic-components-symbolspan.md#renderingstrategy)属性设置SymbolSpan的渲染策略。
 
   ```
@@ -198,7 +198,7 @@ SymbolGlyph通过$r引用Resource资源来创建，目前仅支持系统预置�
 
   [SymbolAddToText.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/symbol/SymbolAddToText.ets#L150-L185)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/1T0mPZjLRI-uAmcQlq1jwQ/zh-cn_image_0000002589244135.png?HW-CC-KV=V1&HW-CC-Date=20260429T052744Z&HW-CC-Expire=86400&HW-CC-Sign=3F363DBFC486908BC4726F40DA75C403313A8DAAA07B33BD9E57A8AE2FAE04E6)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/1T0mPZjLRI-uAmcQlq1jwQ/zh-cn_image_0000002589244135.png)
 * 通过[effectStrategy](../harmonyos-references/ts-basic-components-symbolspan.md#effectstrategy)属性设置SymbolSpan的动效策略。
 
   ```
@@ -237,7 +237,7 @@ SymbolGlyph通过$r引用Resource资源来创建，目前仅支持系统预置�
 
   [SymbolAddToText.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/symbol/SymbolAddToText.ets#L192-L224)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/CBzkWVvnQdCfEIhLEEc7cw/zh-cn_image_0000002558764328.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052744Z&HW-CC-Expire=86400&HW-CC-Sign=42ED397958246DDF13DAEBF6B9466F1E19CEE849F38DEC335E95E68665160E28)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/CBzkWVvnQdCfEIhLEEc7cw/zh-cn_image_0000002558764328.gif)
 * SymbolSpan不支持通用事件。
 
 ## 自定义图标动效
@@ -271,7 +271,7 @@ SymbolGlyph通过$r引用Resource资源来创建，目前仅支持系统预置�
 
   [SymbolCustomIconAnimation.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/symbol/SymbolCustomIconAnimation.ets#L42-L55)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/2WCnWj6JSh2F8EhEzRhjEw/zh-cn_image_0000002558604672.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052744Z&HW-CC-Expire=86400&HW-CC-Sign=369DE0C41E95B4FEE054C7E55C4ACCC2FC4B47FB127B7DCC7FA6C76AFD7D0B47)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/2WCnWj6JSh2F8EhEzRhjEw/zh-cn_image_0000002558604672.gif)
 * 通过设置SymbolEffect属性，可以同时指定SymbolGlyph的动画效果策略及其播放触发条件。
 
   ```
@@ -297,7 +297,7 @@ SymbolGlyph通过$r引用Resource资源来创建，目前仅支持系统预置�
 
   [SymbolCustomIconAnimation.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/symbol/SymbolCustomIconAnimation.ets#L60-L73)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/w51aR2u9R5Og4kwuCs7R-Q/zh-cn_image_0000002589324197.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052744Z&HW-CC-Expire=86400&HW-CC-Sign=F6669B13BD893B7EA3E64B55FF63EDA59CF5AE5D53F35454AF87AD31820A92CD)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/w51aR2u9R5Og4kwuCs7R-Q/zh-cn_image_0000002589324197.gif)
 * 从API version 20开始，支持通过设置SymbolEffect属性为[ReplaceSymbolEffect](../harmonyos-references/ts-basic-components-symbolglyph.md#replacesymboleffect12)，设置[ReplaceEffectType](../harmonyos-references/ts-basic-components-symbolglyph.md#replaceeffecttype20枚举说明)为ReplaceEffectType.SLASH\_OVERLAY，可以指定SymbolGlyph的禁用动画效果及其播放触发条件。
 
   ```
@@ -326,7 +326,7 @@ SymbolGlyph通过$r引用Resource资源来创建，目前仅支持系统预置�
 
   [SymbolCustomIconAnimation.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/symbol/SymbolCustomIconAnimation.ets#L79-L93)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/augs3ikLRCKAcoIsm7qasA/zh-cn_image_0000002589244137.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052744Z&HW-CC-Expire=86400&HW-CC-Sign=C3C9F2076FE268CF309207AE8555EBAACF5FDCDB0CB22539F087DD2545A51F7B)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/augs3ikLRCKAcoIsm7qasA/zh-cn_image_0000002589244137.gif)
 * 从API version 20开始，支持通过设置SymbolEffect属性为[ReplaceSymbolEffect](../harmonyos-references/ts-basic-components-symbolglyph.md#replacesymboleffect12)，设置[ReplaceEffectType](../harmonyos-references/ts-basic-components-symbolglyph.md#replaceeffecttype20枚举说明)为ReplaceEffectType.CROSS\_FADE，可以指定SymbolGlyph的快速替换动画效果及其播放触发条件。
 
   ```
@@ -353,7 +353,7 @@ SymbolGlyph通过$r引用Resource资源来创建，目前仅支持系统预置�
 
   [SymbolCustomIconAnimation.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/symbol/SymbolCustomIconAnimation.ets#L99-L112)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/DLXfihIlQp2HSd2XUk-ESQ/zh-cn_image_0000002558764330.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052744Z&HW-CC-Expire=86400&HW-CC-Sign=8A857AFDBE6F326F1FA8E413DA764CAECA2E218B7276444F6764470B656A664A)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/DLXfihIlQp2HSd2XUk-ESQ/zh-cn_image_0000002558764330.gif)
 
 ## 设置阴影和渐变色
 
@@ -390,7 +390,7 @@ SymbolGlyph通过$r引用Resource资源来创建，目前仅支持系统预置�
 
   [SymbolShadowAndColor.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/symbol/SymbolShadowAndColor.ets#L47-L61)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/Q6qgafXuQUySaYA0VJ3Riw/zh-cn_image_0000002558604674.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052744Z&HW-CC-Expire=86400&HW-CC-Sign=35DFC8E6FB4B2A59FBA226974E167C06EB0564536E16E5C4A782B7440690884C)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/Q6qgafXuQUySaYA0VJ3Riw/zh-cn_image_0000002558604674.gif)
 * 从API version 20开始，支持通过[shaderStyle](../harmonyos-references/ts-basic-components-symbolglyph.md#shaderstyle20)接口实现了symbolGlyph组件显示渐变色效果。
 
   ```
@@ -419,7 +419,7 @@ SymbolGlyph通过$r引用Resource资源来创建，目前仅支持系统预置�
 
   [SymbolShadowAndColor.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/symbol/SymbolShadowAndColor.ets#L64-L75)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/Ip2DKPDqR1W3sPoGGt5dFQ/zh-cn_image_0000002589324199.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T052744Z&HW-CC-Expire=86400&HW-CC-Sign=E3C9752FDD84110B3D9828BFCDBAB46DDC7B343D22529BF169CC004F792739D4)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/Ip2DKPDqR1W3sPoGGt5dFQ/zh-cn_image_0000002589324199.jpg)
 
 ## 添加事件
 
@@ -442,7 +442,7 @@ SymbolGlyph组件可以添加通用事件，例如绑定[onClick](../harmonyos-r
 
 [SymbolAddEvent.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/symbol/SymbolAddEvent.ets#L29-L36)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/DTywtjjNRUCA7vNeALvvDQ/zh-cn_image_0000002589244139.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052744Z&HW-CC-Expire=86400&HW-CC-Sign=D2183BA5801020400DCC0237FDF8956675293AAD632F6CEB926890BCCA251519)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/DTywtjjNRUCA7vNeALvvDQ/zh-cn_image_0000002589244139.gif)
 
 ## 场景示例
 
@@ -672,4 +672,4 @@ SymbolGlyph组件可以添加通用事件，例如绑定[onClick](../harmonyos-r
 
 [SymbolSceneExample.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/symbol/SymbolSceneExample.ets#L18-L234)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/eY7kOd65RPim9YCeQANjOQ/zh-cn_image_0000002558764332.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052744Z&HW-CC-Expire=86400&HW-CC-Sign=76F7538FE8F1D8D57990A9F0EA23EF678C860951523FD658583F166DD629ABE5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/eY7kOd65RPim9YCeQANjOQ/zh-cn_image_0000002558764332.gif)

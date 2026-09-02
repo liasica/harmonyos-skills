@@ -5,7 +5,7 @@ breadcrumb: 指南 > 命令行工具 > 堆栈解析工具（hstack）
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:47:48+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:f40f33d26623e039193993fe26521f7135969a7c242974e629f0d03b95f6ab7c
+content_hash: sha256:42467b44b2511d90efe9157ee4f4cd6138f10bd6efec80647905d002ecf05490
 ---
 
 ## 简介
@@ -46,23 +46,23 @@ options: 可选配置，请参考[表hstack命令行配置](ide-command-line-hst
 2. 本工具依赖Node环境，需要[将Node.js配置到环境变量中](ide-command-line-building-app.md#section159168531288)。
 3. 如果需要对C++文件产生的异常进行解析，则需要将SDK中的native\llvm\bin目录配置到环境变量中，变量名设置为“ADDR2LINE\_PATH”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/9AE05iIKRUudcyydr9FIUw/zh-cn_image_0000002561752979.png?HW-CC-KV=V1&HW-CC-Date=20260429T054747Z&HW-CC-Expire=86400&HW-CC-Sign=098C0198DBAFE3A6FB6D1E0454C7D58D52BF0ACD5CFE06FAE7A2D90A00B90FB0)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/9AE05iIKRUudcyydr9FIUw/zh-cn_image_0000002561752979.png)
 
 ## 使用示例
 
 1. 将应用产生的crash文件归档到crashDir目录下（或者-c指定一条crash堆栈），关于堆栈的获取方式请参考[崩溃检测](fault-detection-overview.md)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/8HXD7THfTmuXcKcFzvVOcw/zh-cn_image_0000002561832965.png?HW-CC-KV=V1&HW-CC-Date=20260429T054747Z&HW-CC-Expire=86400&HW-CC-Sign=2EC1A5C94D181DAF29F8EF4A5155D4E24ED649E4B9617D70F7C5EF4A57131D37)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/8HXD7THfTmuXcKcFzvVOcw/zh-cn_image_0000002561832965.png)
 2. 使用-o指定输出目录，当不指定时，会输出至-i指定的crashDir目录下（通过-c输入为crash堆栈时，可以使用-o指定一个输出文件，或不指定，直接将结果输出至控制台）。
 3. 使用-s指定工程对应sourceMap文件归档目录（可选，与shared object文件归档目录至少提供一项）。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/4JkjV3x5Q2yuB36upppwYg/zh-cn_image_0000002530753056.png?HW-CC-KV=V1&HW-CC-Date=20260429T054747Z&HW-CC-Expire=86400&HW-CC-Sign=CC59C4243B2E7F0D71006BC34271EC9E6C642319EAA4E1A69F46EE1147DF35E5)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/4JkjV3x5Q2yuB36upppwYg/zh-cn_image_0000002530753056.png)
 4. 使用--so指定shared object文件归档目录（可选，与sourceMap归档目录至少提供一项）。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/j0dkGOGESwa6pOSFDiT7wg/zh-cn_image_0000002530753050.png?HW-CC-KV=V1&HW-CC-Date=20260429T054747Z&HW-CC-Expire=86400&HW-CC-Sign=DD386405768D1BFBD118F81D38D2F24C7FC26251479E2F200584D34329139736)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/j0dkGOGESwa6pOSFDiT7wg/zh-cn_image_0000002530753050.png)
 5. 使用-n指定nameCache文件归档目录（可选）。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/9vbHtE3AR822wym9OkVrbQ/zh-cn_image_0000002561752993.png?HW-CC-KV=V1&HW-CC-Date=20260429T054747Z&HW-CC-Expire=86400&HW-CC-Sign=C96C52A11596117C52CFC25A26C9F2F46B02F9A8DAF1EB99AEC561A1CA9157CF)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/9vbHtE3AR822wym9OkVrbQ/zh-cn_image_0000002561752993.png)
 6. 执行以下命令，可将release应用crash堆栈解析为源码对应堆栈。
 
    ```
@@ -72,13 +72,13 @@ options: 可选配置，请参考[表hstack命令行配置](ide-command-line-hst
    4. hstack -c "at anonymous (entry|entry|1.0.0|src/main/ets/pages/Index.ts:401:1)" -o D:\outputDir\out.txt -s D:\sourcemapDir --so D:\soDir -n D:\nameCacheDir
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/ZWcMTnl7Q2O8AqxKod8maQ/zh-cn_image_0000002530753040.png?HW-CC-KV=V1&HW-CC-Date=20260429T054747Z&HW-CC-Expire=86400&HW-CC-Sign=ADB7564C45FF89FEA198EF9C9556F3B2991060B7F1B5E2CC370B1E0E5BB9AFEE)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/ZWcMTnl7Q2O8AqxKod8maQ/zh-cn_image_0000002530753040.png)
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/PPds2_IhQiGFdbhDiu8vbQ/zh-cn_image_0000002532098826.png?HW-CC-KV=V1&HW-CC-Date=20260429T054747Z&HW-CC-Expire=86400&HW-CC-Sign=2DAB4566F0E5A9EC8EC5A9A5E2FAF4EA58D34F4247EBCFB0947D19E44E34182F "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/PPds2_IhQiGFdbhDiu8vbQ/zh-cn_image_0000002532098826.png "点击放大")
 
    如果是指定crash文件归档目录，解析完成后，outputDir目录下会生成对应的解析结果，文件以原始crash文件名加“\_”前缀进行命名。crash堆栈中的C++日志以及ArkTS日志均已解析为源码对应的文件路径以及行列号，结果如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/v7QzNYr6S7-Zy5SJ-BIZkg/zh-cn_image_0000002561752987.png?HW-CC-KV=V1&HW-CC-Date=20260429T054747Z&HW-CC-Expire=86400&HW-CC-Sign=82C8D0CDC91851276CCFA0959A6A164C4CB3FD7C022BB48DA70EFD341CAABC1D)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/v7QzNYr6S7-Zy5SJ-BIZkg/zh-cn_image_0000002561752987.png)
 
    在构建Release应用时，so文件是默认不包含符号表信息的，如果需要在构建Release应用时生成包含符号表的so文件，需要在工程的模块级build-profile.json5文件的buildOption属性中，配置如下信息：
 

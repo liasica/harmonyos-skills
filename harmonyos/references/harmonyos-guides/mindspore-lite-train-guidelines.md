@@ -5,7 +5,7 @@ breadcrumb: 指南 > AI > MindSpore Lite Kit（昇思推理框架服务） > 模
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:43:46+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:67246d6ae43d7825ee4b3f2e0672d62fd331c07fca6fea237f8f8b31d0522758
+content_hash: sha256:db50d5a7779411ef061c52d002fb89703c9bd30556737a4bebe94b9955c657b7
 ---
 
 ## 场景介绍
@@ -39,7 +39,7 @@ MindSpore Lite是一款AI引擎，它提供了面向不同硬件设备AI模型�
 
 **图 1** 使用MindSpore Lite进行模型训练的开发流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/VldiDHXHR7C_HQYlBN6fyA/zh-cn_image_0000002589325717.png?HW-CC-KV=V1&HW-CC-Date=20260429T054345Z&HW-CC-Expire=86400&HW-CC-Sign=EEFCE062B42A1542C13BB765BD0B25B6ED794141123270C11216D1CC2DD83636)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/VldiDHXHR7C_HQYlBN6fyA/zh-cn_image_0000002589325717.png)
 
 进入主要流程之前需要先引用相关的头文件，并编写函数生成随机的输入，具体如下：
 

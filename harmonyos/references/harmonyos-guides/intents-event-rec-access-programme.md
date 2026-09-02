@@ -5,14 +5,14 @@ breadcrumb: 指南 > AI > Intents Kit（意图框架服务） > 事件推荐方�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:43:32+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:07dfdde998150fd9d013ea4e41a7e630d639c525834186a000ca8fd8da5288ad
+content_hash: sha256:8c4b9aa9d330e2d9e0ed37f4c06c00a6cdb52495432d4eb17eef627bdbf4518f
 ---
 
 ## 方案概述
 
 当开发者有事件想要通知到用户时，可通过应用/元服务的云侧服务器向智慧分发平台推送事件内容（意图共享）。系统通过智慧决策判断事件发生的条件，在满足条件时，向用户推荐事件提醒卡片，当用户点击卡片后，可跳转到应用/元服务的详情页查看事件详情（意图调用）。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/TaLYFCLAS4u30fHwolBdGg/zh-cn_image_0000002589245627.png?HW-CC-KV=V1&HW-CC-Date=20260429T054331Z&HW-CC-Expire=86400&HW-CC-Sign=819AE613BD5C85B73DBED3BC64044A1A8142BFAD74E6677952BF95F31121A522)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/TaLYFCLAS4u30fHwolBdGg/zh-cn_image_0000002589245627.png)
 
 ## 流程图
 
@@ -21,7 +21,7 @@ content_hash: sha256:07dfdde998150fd9d013ea4e41a7e630d639c525834186a000ca8fd8da5
 3. 华为内部会根据事件和具体场景制定事件服务推出规则和时机。
 4. 在满足制定规则场景下展示对应用户事件，增加服务曝光率。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/-jcCO2nZRJSNDmlxyFkAiw/zh-cn_image_0000002558765818.png?HW-CC-KV=V1&HW-CC-Date=20260429T054331Z&HW-CC-Expire=86400&HW-CC-Sign=0AB6B95D991AC765A106A31D359B8BBB4DBF631F3FFD449F50F219A04CE4BB99)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/-jcCO2nZRJSNDmlxyFkAiw/zh-cn_image_0000002558765818.png)
 
 ## 意图注册
 

@@ -5,7 +5,7 @@ breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 >
 category: best-practices
 scraped_at: 2026-04-29T14:12:35+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:13091cdd2b1ffaac4f870bf0c4b77cf724d7ec1ea96a62cfd6e1d51238075bdb
+content_hash: sha256:b112d88207a3fd27f53b4412701ea7756497fd77f9986a54042c7b5aae726f65
 ---
 
 ## 概述
@@ -32,7 +32,7 @@ HarmonyOS的分层架构主要包括三个层次：产品定制层、基础特�
 
 浏览页是短视频应用的主要功能页面，用于播放短视频。下图是浏览页在平板设备上的典型UX效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/jEGX8EAHQDuqcZXcsVZCnA/zh-cn_image_0000002193851876.png?HW-CC-KV=V1&HW-CC-Date=20260429T061231Z&HW-CC-Expire=86400&HW-CC-Sign=EEA509E261ED1AEFEC6034C279A5264155B02C84869ECC00E12CB0CC428D566D "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/jEGX8EAHQDuqcZXcsVZCnA/zh-cn_image_0000002193851876.png "点击放大")
 
 页面分为两个部分：页签栏和视频播放部分。页签栏在平板等大屏设备上以侧边栏形式呈现，在手机、折叠屏上以底部栏形式呈现。视频播放部分用于渲染视频播放和显示视频介绍。其实现方案如下表所示：
 
@@ -51,7 +51,7 @@ HarmonyOS的分层架构主要包括三个层次：产品定制层、基础特�
 
 短视频应用的视频分为多个页签推送，除了推送用户关注的博主视频，还提供随机推荐和同城推荐。用于切换的页签栏位于视频上方。下图是推荐页在折叠屏设备上的典型UX效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/tX-NymeWSwSAofoev9DwBw/zh-cn_image_0000002193851860.png?HW-CC-KV=V1&HW-CC-Date=20260429T061231Z&HW-CC-Expire=86400&HW-CC-Sign=55A1C84A54693705B2AC830C77512E9BFD8320FDC1D3DC3329A46C648935C7D9 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/tX-NymeWSwSAofoev9DwBw/zh-cn_image_0000002193851860.png "点击放大")
 
 实现方案如下表所示：
 
@@ -67,7 +67,7 @@ HarmonyOS的分层架构主要包括三个层次：产品定制层、基础特�
 
 评论页供用户发表意见和互动，下图显示其在折叠屏设备上的UX效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/H9AjmiqNTkeT0NPnu7cRYw/zh-cn_image_0000002229337253.png?HW-CC-KV=V1&HW-CC-Date=20260429T061231Z&HW-CC-Expire=86400&HW-CC-Sign=CF42336AC1881A950700DB17B35A164CD1F81D706E27BDF68BB2829C765C8EF5 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/H9AjmiqNTkeT0NPnu7cRYw/zh-cn_image_0000002229337253.png "点击放大")
 
 评论页以组件形式在浏览、推荐页上呈现。在手机等小屏设备上，以半模态形式展示；在折叠屏、平板上，以侧边栏形式展示。实现方案如下表所示：
 
@@ -86,7 +86,7 @@ HarmonyOS的分层架构主要包括三个层次：产品定制层、基础特�
 
 分享页支持用户通过不同渠道分享喜欢的视频。下图是分享页在手机设备上的典型UX效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/XcWizSQdSGSwJc84AY-XLQ/zh-cn_image_0000002229451749.png?HW-CC-KV=V1&HW-CC-Date=20260429T061231Z&HW-CC-Expire=86400&HW-CC-Sign=C9A23297A6682F2A421B761BE5138D0B1F2A8C5FA799F207A63031EF697D9CCE "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/XcWizSQdSGSwJc84AY-XLQ/zh-cn_image_0000002229451749.png "点击放大")
 
 分享页同样以组件的形式在浏览/推荐页上呈现，在手机等小屏设备上以半模态的形式展示，而在折叠屏、平板上以自定义弹框的形式展示。其实现方案如下表所示：
 
@@ -105,7 +105,7 @@ HarmonyOS的分层架构主要包括三个层次：产品定制层、基础特�
 
 个人作品页展示了用户投稿的内容，下图是该页面在手机设备上的典型UX效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/poVioZWfR7WKQDogVLrL4w/zh-cn_image_0000002229337249.png?HW-CC-KV=V1&HW-CC-Date=20260429T061231Z&HW-CC-Expire=86400&HW-CC-Sign=D922E6DFEEF3891540449C4BB20AE4CDEF346E995409E553CC686F2554B2C115 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/poVioZWfR7WKQDogVLrL4w/zh-cn_image_0000002229337249.png "点击放大")
 
 个人作品页在手机设备上使用Grid的折行能力实现作品列表的展示，而在折叠屏、平板上嵌入到侧边栏中展示。其实现方案如下表所示：
 

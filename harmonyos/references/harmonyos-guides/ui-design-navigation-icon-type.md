@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > UI Design Kit（UI设计套件） > 组件�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:30:20+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:380ed129abde3b7203fe16cf16cf31a88eea7caae3860cd1bb3460d9d5ced7ee
+content_hash: sha256:bbc86bc7d80ba7162f75eb7b740f3ad7683fcad8964f405dcedec941ee090200
 ---
 
 ## 场景介绍
@@ -20,7 +20,7 @@ content_hash: sha256:380ed129abde3b7203fe16cf16cf31a88eea7caae3860cd1bb3460d9d5c
 
 单字图标([TextStyleMode.SINGLE\_CHARACTER](../harmonyos-references/ui-design-hdsnavigation.md#textstylemode))：适用于需要节省空间的紧凑布局，常用于快速操作入口，建议仅在单个文字或字母的场景使用。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/dAWdpWESRjaVIkWzOKiSqA/zh-cn_image_0000002589244641.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053019Z&HW-CC-Expire=86400&HW-CC-Sign=55583C23738FEADBC473086789A795BB8B630BB1490EE638EF87F54937F45F63 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/dAWdpWESRjaVIkWzOKiSqA/zh-cn_image_0000002589244641.jpg "点击放大")
 
 ## 开发步骤
 

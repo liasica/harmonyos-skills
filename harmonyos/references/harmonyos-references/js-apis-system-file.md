@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-system-file
-title: @system.file (文件存储)
+title: "@system.file (文件存储)"
 breadcrumb: API参考 > 应用框架 > Core File Kit（文件基础服务） > ArkTS API > 已停止维护的接口 > @system.file (文件存储)
 category: harmonyos-references
 scraped_at: 2026-04-28T08:05:47+08:00

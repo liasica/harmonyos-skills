@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:27:16+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:4ab83467d81e9b8724ed5b33b8d4a1e0f17a3b4a5e9096e1fb2cedeb397b8e2b
+content_hash: sha256:cfbeb85a73486d06f696c259b2c4d3f31c9eac89e282273b1d0732f87b572511
 ---
 
 PersistentStorage是应用程序中的可选单例对象。此对象的作用是持久化存储选定的AppStorage属性，以确保这些属性在应用程序重新启动时的值与应用程序关闭时的值相同。
@@ -119,7 +119,7 @@ PersistentStorage和UI实例相关联，持久化操作需要在UI实例初始�
 
   **图1** PersistProp初始化流程
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/AfGy7U7-QgmC0CFzsE9yGQ/zh-cn_image_0000002589243911.png?HW-CC-KV=V1&HW-CC-Date=20260429T052715Z&HW-CC-Expire=86400&HW-CC-Sign=E796E3EB098FBD3D030E2FD0AB65445E4A81D6D5BF8276BA64F86A95DF14CB71)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/AfGy7U7-QgmC0CFzsE9yGQ/zh-cn_image_0000002589243911.png)
 * 触发点击事件后：
 
   1. 状态变量@StorageLink('aProp') aProp改变，触发Text组件重新刷新。

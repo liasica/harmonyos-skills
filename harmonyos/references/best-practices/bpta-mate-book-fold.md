@@ -5,7 +5,7 @@ breadcrumb: 最佳实践 > 多端设备体验提升 > 电脑 > MateBook Fold折�
 category: best-practices
 scraped_at: 2026-04-29T14:13:01+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:9e39dcff7ae4a8cf2d7d99498d4b825fcdc73c8a7587ef0ac5199e92f2ebd7f8
+content_hash: sha256:dfda73ddd1cd082fff42105a4355016b9494c25994f98e540291c4fd5c8ada5c
 ---
 
 ## 概述
@@ -20,7 +20,7 @@ HarmonyOS折叠电脑MateBook Fold，凭借其独特的折叠设计、全屏触�
 
 当磁吸键盘贴附在下屏时，设备进入半折叠态（唤起全尺寸键盘），此时下屏无法使用。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/V5onPisXQp-oXMPSljdLqw/zh-cn_image_0000002419750993.png?HW-CC-KV=V1&HW-CC-Date=20260429T061258Z&HW-CC-Expire=86400&HW-CC-Sign=B78BA05B6042F12BE973FD9EEEFFC7F1C7411CE8AE9C0B399067DF9347F0DCA6 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/V5onPisXQp-oXMPSljdLqw/zh-cn_image_0000002419750993.png "点击放大")
 
 ## 硬件说明
 
@@ -68,7 +68,7 @@ HarmonyOS折叠电脑MateBook Fold，凭借其独特的折叠设计、全屏触�
 
   [Display](../harmonyos-references/js-apis-display.md#display)对象中包含屏幕宽高，屏幕可用区域宽高等重要信息，对应的Display区域如下图所示。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/CYgn_IvhQQKhtYGscT9ZnA/zh-cn_image_0000002386071972.png?HW-CC-KV=V1&HW-CC-Date=20260429T061258Z&HW-CC-Expire=86400&HW-CC-Sign=27CD85143286D1116C352832194CA8532EC460A562BDDBCEC9E2FFBE5BC1C47F "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/CYgn_IvhQQKhtYGscT9ZnA/zh-cn_image_0000002386071972.png "点击放大")
 
   | API | 说明 |
   | --- | --- |

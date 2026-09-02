@@ -1,6 +1,6 @@
 # API 参考（harmonyos-references）
 
-共 4273 篇文档。
+共 4272 篇文档。
 
 - [AppServiceExtensionContext (应用后台服务扩展组件上下文)](-apis-inner-application-appserviceextensioncontext.md)
 - [EmbeddableUIAbilityContext](-apis-inner-application-embeddableuiabilitycontext.md)
@@ -2080,7 +2080,6 @@
 - [recoveryKey（企业恢复密钥）](dataguard-recoverykey.md)
 - [ArkUI_NodeAttributeType（导航类组件相关属性）](de-h-nodeattributetype-navigationrelatedcomponents.md)
 - [quickBarManager（快捷栏管理服务）](desktop-quickbar-extension-manager.md)
-- [开发说明](development-intro-api.md)
 - [开发说明](development-intro-api.md)
 - [Device Certificate Kit（设备证书服务）](device-certificate-api.md)
 - [错误码](device-certificate-arkts-errcode.md)

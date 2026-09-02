@@ -5,12 +5,12 @@ breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 工程模板介绍
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:44:34+08:00
 doc_updated_at: 2026-01-15
-content_hash: sha256:7b8809c55403ac9a8cc56f5bd6f8d8e5bf13c978ffd52f6b2c0487b880c8cfab
+content_hash: sha256:99d8689ebe26fc072e301db4b2ddcfc3b5dd44e46a7ffb6db4601a184b59afd2
 ---
 
 DevEco Studio支持多种品类的应用/元服务开发，预置丰富的工程模板，可以根据工程向导轻松创建适应于各类设备的工程，并自动生成对应的代码和资源模板。同时，DevEco Studio还提供了多种编程语言供开发者进行应用/元服务开发，包括ArkTS、JS和C/C++。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/Uk4mydgdRm-cYTrVLNQM4w/zh-cn_image_0000002561752659.png?HW-CC-KV=V1&HW-CC-Date=20260429T054433Z&HW-CC-Expire=86400&HW-CC-Sign=3BF7B85932714ECB700915082455780FB1973BB9E5FAF6F283E4DF72749A3C21)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/Uk4mydgdRm-cYTrVLNQM4w/zh-cn_image_0000002561752659.png)
 
 工程模板支持的开发语言及模板说明如下表所示：
 

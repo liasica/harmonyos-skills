@@ -5,7 +5,7 @@ breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 >
 category: best-practices
 scraped_at: 2026-04-29T14:12:31+08:00
 doc_updated_at: 2026-03-26
-content_hash: sha256:9c1c8d753b5098c2f9b9e8af4d5d4e1bb885c1054802fc395fff98e3bba853c9
+content_hash: sha256:309cb473bb2d99193c649b138d349b36c29b8bc259bc98727def92f16c563202
 ---
 
 ## 概述
@@ -28,15 +28,15 @@ HarmonyOS的分层架构主要包括三个层次：产品定制层、基础特�
 
 银行理财应用包含以下设计要点：[弹窗](multi-financial-app.md#section7407927311)、[延伸布局](multi-financial-app.md#section279819344216)、[分栏](multi-financial-app.md#section1796912148314)、[底部/侧边页签](multi-video-app.md#zh-cn_topic_0000001744653537_li1226615201361)、[列表重复布局](multi-community-app.md#zh-cn_topic_0000001758831130_li118141522111817)。底部/侧边页签、列表重复布局在其他的“一多”案例中有详细的介绍，本案例以弹窗和延伸布局以及分栏为重点进行介绍。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/hFAWsO6sQwGOGH4XODMBWQ/zh-cn_image_0000002194010120.png?HW-CC-KV=V1&HW-CC-Date=20260429T061221Z&HW-CC-Expire=86400&HW-CC-Sign=F592CDEB9F0BBC8B4952ECF8842C66FEF7C8F215AB0766733DCBC981DA0FBFFD "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/hFAWsO6sQwGOGH4XODMBWQ/zh-cn_image_0000002194010120.png "点击放大")
 
 弹窗使用自定义弹窗CustomDialog实现，首次打开应用时通过CustomDialogController类显示自定义弹窗。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/gpx2BBs5Rqm7FwHMo_J8Zw/zh-cn_image_0000002229335949.png?HW-CC-KV=V1&HW-CC-Date=20260429T061221Z&HW-CC-Expire=86400&HW-CC-Sign=205AF90D8DCA9643393968CD5571CA8379CB53893A6F46950AD99022B3741627 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/gpx2BBs5Rqm7FwHMo_J8Zw/zh-cn_image_0000002229335949.png "点击放大")
 
 使用list组件实现产品专题页面中的稳健增长信息。通过设置不同断点下的列数，实现延伸布局，以便在大屏上显示更多信息，提升屏幕交互效率。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/UxXEorN2RQu0Xto8kaMLRw/zh-cn_image_0000002229335945.png?HW-CC-KV=V1&HW-CC-Date=20260429T061221Z&HW-CC-Expire=86400&HW-CC-Sign=6E4011B5CDCDA26C89DEEEF13DEB0CA7FDB7F0A9E25625B5D54040561A21BC88 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/UxXEorN2RQu0Xto8kaMLRw/zh-cn_image_0000002229335945.png "点击放大")
 
 产品详情页面使用 Navigation 实现分栏效果。在手机上，内容单栏显示；在平板等大屏设备上，内容分栏显示，左侧为导航区，右侧为内容区。点击“稳健增长”下的内容可控制右侧内容区的信息展示。
 

@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-stream
-title: @ohos.util.stream (数据流基类stream)
+title: "@ohos.util.stream (数据流基类stream)"
 breadcrumb: API参考 > 应用框架 > ArkTS（方舟编程语言） > ArkTS API > @ohos.util.stream (数据流基类stream)
 category: harmonyos-references
 scraped_at: 2026-04-28T08:00:11+08:00

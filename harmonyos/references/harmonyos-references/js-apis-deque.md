@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-deque
-title: @ohos.util.Deque (线性容器Deque)
+title: "@ohos.util.Deque (线性容器Deque)"
 breadcrumb: API参考 > 应用框架 > ArkTS（方舟编程语言） > ArkTS API > @ohos.util.Deque (线性容器Deque)
 category: harmonyos-references
 scraped_at: 2026-04-28T08:00:08+08:00

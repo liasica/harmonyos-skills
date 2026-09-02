@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-media
-title: @ohos.multimedia.media (媒体服务)
+title: "@ohos.multimedia.media (媒体服务)"
 breadcrumb: API参考 > 媒体 > Media Kit（媒体服务） > ArkTS API > @ohos.multimedia.media (媒体服务)
 category: harmonyos-references
 scraped_at: 2026-04-28T08:13:41+08:00

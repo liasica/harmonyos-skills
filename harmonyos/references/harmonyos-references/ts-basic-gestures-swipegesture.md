@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:51:36+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:1bc923641f34538f4996948a21054a2fce9c1b04a7836071a4a57fbe6c478365
+content_hash: sha256:e393ace9a77057daac6e36e447baafa901398506877bfc81c442c954493f85db
 ---
 
 用于触发快滑手势，滑动速度需大于速度阈值，默认最小速度为100vp/s。
@@ -137,4 +137,4 @@ PhonePC/2in1TabletTVWearable
 31. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/QMJsXEfoQmSlm7Vip6E4kQ/zh-cn_image_0000002558606448.png?HW-CC-KV=V1&HW-CC-Date=20260429T055135Z&HW-CC-Expire=86400&HW-CC-Sign=C2B1A33DD6AB7CA468E5507E9F19FFD0F12FB1E3C1EE729C1F00AAFFBED25ADB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/QMJsXEfoQmSlm7Vip6E4kQ/zh-cn_image_0000002558606448.png)

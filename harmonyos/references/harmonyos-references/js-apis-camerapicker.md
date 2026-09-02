@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-camerapicker
-title: @ohos.multimedia.cameraPicker (相机选择器)
+title: "@ohos.multimedia.cameraPicker (相机选择器)"
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > ArkTS API > @ohos.multimedia.cameraPicker (相机选择器)
 category: harmonyos-references
 scraped_at: 2026-04-28T08:12:42+08:00

@@ -5,7 +5,7 @@ breadcrumb: 指南 > 图形 > XEngine Kit（GPU加速引擎服务） > 光线追
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:36:44+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:6247fdd5e93bffaa88902d520f70e72543a574cea3ae02f038bf240e02e3d107
+content_hash: sha256:04792d2ca19649ed59bf5799e8d35f2477f4bdef6610f6b63fd39465a1f092b1
 ---
 
 从6.0.0(20) 版本开始，新增光线追踪反射特性。
@@ -32,7 +32,7 @@ XEngine Kit提供光线追踪反射（Ray-Traced Reflections）渲染能力。�
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/vRLMrd9DTBGwE927KN-0sQ/zh-cn_image_0000002589245045.png?HW-CC-KV=V1&HW-CC-Date=20260429T053643Z&HW-CC-Expire=86400&HW-CC-Sign=DE58B3449765EBAACF61E3E735C7882C42AF3CE7ACA907ECFBCA1B7EEA9588EF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/vRLMrd9DTBGwE927KN-0sQ/zh-cn_image_0000002589245045.png)
 
 1. 用户进入光线追踪反射适用的游戏场景。
 2. 游戏应用调用HMS\_XEG\_CreateRTReflection接口创建光线追踪反射实例。如果光线追踪反射创建失败，直接调用后处理并送显当前帧即可。

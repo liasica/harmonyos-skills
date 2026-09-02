@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:28:41+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:03157565d99ec2964df002935bc2e2d743a8dabe1e22541a8aa3ce247b1fa734
+content_hash: sha256:146551b291610daa44700d77210aac637735f577d2b2c6fc5bf13bbdc4b04824
 ---
 
 CSS是描述[HML](js-framework-syntax-hml.md)页面结构的样式语言。所有组件均存在系统默认样式，也可在页面CSS样式文件中对组件、页面自定义不同的样式。请参考[通用样式](../harmonyos-references/js-components-common-styles.md)了解兼容JS的类Web开发范式支持的组件样式。
@@ -118,7 +118,7 @@ css选择器用于选择需要添加样式的元素，支持的选择器如下�
 
 以上样式运行效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/cuQUeH-NSn2GwqurH5-Yug/zh-cn_image_0000002589244377.png?HW-CC-KV=V1&HW-CC-Date=20260429T052840Z&HW-CC-Expire=86400&HW-CC-Sign=44839D2CDC7FFE70B8221BEE85D4376955F59F89489F0725ABFC51151DDF0FC2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/cuQUeH-NSn2GwqurH5-Yug/zh-cn_image_0000002589244377.png)
 
 其中“.container text”将“标题”和“内容”设置为蓝色，而“.container > text”直接后代选择器将“标题”设置为红色。2者优先级相同，但直接后代选择器声明顺序靠后，将前者样式覆盖（优先级计算见[选择器优先级](js-framework-syntax-css.md#选择器优先级)）。
 

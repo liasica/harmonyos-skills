@@ -5,7 +5,7 @@ breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > Audio Kit简介
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:34:26+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:5ca9c9a2f08e5deefdd6950d6832ce6522ad6a03af1aab627095a3d3c5384fcd
+content_hash: sha256:b6fcb629ed527ca3c9c67101ea58498f31d37ea02352687977599f05d07d1320
 ---
 
 Audio Kit（音频服务）旨在提供场景化的音频播放和录制接口，助力开发者迅速构建音频高清采集及沉浸式播放能力。
@@ -28,7 +28,7 @@ Audio Kit（音频服务）旨在提供场景化的音频播放和录制接口�
 
 开发者可以利用Audio Kit的接口，使用音频系统提供的播放、录音及音频策略管理能力，进而访问相应的音频硬件。音频架构定义了系统如何封装和管理音频硬件能力。音频架构图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/qEVrU06nTJqr1OnwcICylQ/zh-cn_image_0000002558605370.png?HW-CC-KV=V1&HW-CC-Date=20260429T053425Z&HW-CC-Expire=86400&HW-CC-Sign=A2CE420F6C0A4A22C40B83EB1D1C77E8CD0B424EB98F22C912DCC8F3308E6F2C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/qEVrU06nTJqr1OnwcICylQ/zh-cn_image_0000002558605370.png)
 
 **Application**
 

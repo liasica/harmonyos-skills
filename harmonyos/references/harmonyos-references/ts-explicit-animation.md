@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:52:41+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:416d12dd6327a2e61079c77430ac422c6f2279673eb08c64234c565a30d173d7
+content_hash: sha256:795e12d41b14fd3fe309aa8c0f87a1591bda8556f9f59e4b5d1e3e61f0d697bf
 ---
 
 提供全局animateTo显式动画接口来指定由于闭包代码导致的状态变化插入过渡动效。同属性动画，对于改变布局类属性（如宽高）的动画，内容通常会直接跳转到最终状态，例如文字或[Canvas](ts-components-canvas-canvas.md)中的内容。如果希望内容跟随宽高变化，可以使用[renderFit](ts-universal-attributes-renderfit.md#renderfit)属性进行配置。
@@ -224,7 +224,7 @@ PhonePC/2in1TabletTVWearable
 70. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/YUnOjE4xQgKj96iioz3m0Q/zh-cn_image_0000002589326415.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055240Z&HW-CC-Expire=86400&HW-CC-Sign=6F0F0801F0844257908AA9019EAAF09A90971ECD5F40B8EF82B9FDB44E86E604)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/YUnOjE4xQgKj96iioz3m0Q/zh-cn_image_0000002589326415.gif)
 
 ### 示例2（动画执行结束后组件消失）
 
@@ -277,4 +277,4 @@ PhonePC/2in1TabletTVWearable
 44. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/V7JaPs5-QBqUJjQxNqYE6g/zh-cn_image_0000002589246357.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055240Z&HW-CC-Expire=86400&HW-CC-Sign=20C81319C2CE49E39BFE34F64D104591A551E7C277D5E3D56635AEEA146FE67E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/V7JaPs5-QBqUJjQxNqYE6g/zh-cn_image_0000002589246357.gif)

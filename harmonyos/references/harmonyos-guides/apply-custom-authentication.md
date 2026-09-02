@@ -5,7 +5,7 @@ breadcrumb: 指南 > 系统 > 安全 > User Authentication Kit（用户认证服
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:32:25+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:cee5a5f3736a7cac8a2ca3f70e6a90db77be3f26fbcfe59178bb7fd3b4fe7926
+content_hash: sha256:6f0ca7ea8d19645dcbcfbb822152325a86a4e91676ee6df71c554cc3eb2ee31d
 ---
 
 若开发者定义了自定义认证方式，则用户进行生物认证失败点击导航按钮时，统一用户认证框架会结束系统认证流程并通知调用者拉起自定义认证界面。
@@ -16,7 +16,7 @@ content_hash: sha256:cee5a5f3736a7cac8a2ca3f70e6a90db77be3f26fbcfe59178bb7fd3b4f
 
 当用户点击该按钮，发起认证的业务应用便会收到统一用户认证框架返回的一个特殊认证结果，提示业务系统认证结束，需要拉起业务自定义的认证界面。这样，用户在点击“使用支付密码”按钮后，便会看到系统认证控件消失，显示出业务自定义的支付密码认证界面。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/w3n6neZsQ2K61tM4Te4vdw/zh-cn_image_0000002558605260.png?HW-CC-KV=V1&HW-CC-Date=20260429T053224Z&HW-CC-Expire=86400&HW-CC-Sign=B12984847EA45C5E45371418831A4B2847FBC4ABDD101706FBBF09FD96DC6F8C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/w3n6neZsQ2K61tM4Te4vdw/zh-cn_image_0000002558605260.png)
 
 如图所示，框选区域为WidgetParam.navigationButtonText字段。开发者可配置此字段，引导用户从生物认证切换到应用自定义的业务密码认证。
 

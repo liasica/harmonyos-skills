@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-system-brightness
-title: @system.brightness (屏幕亮度)
+title: "@system.brightness (屏幕亮度)"
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > ArkTS API > 已停止维护的接口 > @system.brightness (屏幕亮度)
 category: harmonyos-references
 scraped_at: 2026-04-28T08:09:42+08:00

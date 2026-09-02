@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:28:57+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:aeecdf702e5f014f5290ca11efa5b2427bf1baa669f9aff68eb358f3bb6d7396
+content_hash: sha256:ba16592b5f601db5e39ab8d89ab2f939f3a80cac022554731ff047bb118844d5
 ---
 
 ## 场景介绍
@@ -318,4 +318,4 @@ WebGL的全称为Web Graphics Library（网页图形库），主要用于交互�
 
 最终实现效果示意如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/NBKMUAQZQsKGE85e9h5cUQ/zh-cn_image_0000002558604986.png?HW-CC-KV=V1&HW-CC-Date=20260429T052856Z&HW-CC-Expire=86400&HW-CC-Sign=84D54580B8C121B9F225484809B62B8517E6761670B27B20D10E1173470B59F8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/NBKMUAQZQsKGE85e9h5cUQ/zh-cn_image_0000002558604986.png)

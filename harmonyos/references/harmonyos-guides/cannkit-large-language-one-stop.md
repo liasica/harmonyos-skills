@@ -5,7 +5,7 @@ breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 模型优
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:40:54+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:2af8e3eb6c04feae8c3873ff299843369dab942bc3d0160d7b55ad4b0c73a8bd
+content_hash: sha256:2019b09c4d35b392c3c6bacb1dbe1e6ac0fe26865fccbc47761c4a5ce6f81905
 ---
 
 ## 简介
@@ -208,7 +208,7 @@ config.yaml用于模型量化配置，开发者可根据实际需要进行配置
 
 量化完成后，开发者可进行量化仿真推理，通过对比量化模型与原始浮点模型的输出结果，来评估量化模型精度是否满足要求。量化仿真推理工程可参考[qwen2模型量化仿真推理demo](cannkit-large-language-one-stop.md#qwen2模型量化仿真推理demo)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/4xm41lCMSSe-tKKB90yRXw/zh-cn_image_0000002558606054.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T054053Z&HW-CC-Expire=86400&HW-CC-Sign=C0F3AFD5B61BA846876A788EECDBEE802403C619E6D3FD9D1FC1D16CB2CDFECF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/4xm41lCMSSe-tKKB90yRXw/zh-cn_image_0000002558606054.jpg)
 
 ### 插件方法
 

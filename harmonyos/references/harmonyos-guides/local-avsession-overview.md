@@ -5,14 +5,14 @@ breadcrumb: 指南 > 媒体 > AVSession Kit（音视频播控服务） > 本地�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:34:47+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:c805e61f80d0b28620a20265bd9206f21ab47c59dde5365a82ce783feefac6e7
+content_hash: sha256:1c5a4327c62f02d28640619a2ddba2b1c9be0eab12dd56d93ad9b43f3f5820ff
 ---
 
 ## 交互过程
 
 本地媒体会话的数据源均在设备本地，交互过程如图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/7rysBJ9TRiWmdyS_TUttjQ/zh-cn_image_0000002589244859.png?HW-CC-KV=V1&HW-CC-Date=20260429T053446Z&HW-CC-Expire=86400&HW-CC-Sign=B0DAFCFE53A4AF5CB8AC15A50927FAEF2AD09CABC1813251BB8F7004424D3898)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/7rysBJ9TRiWmdyS_TUttjQ/zh-cn_image_0000002589244859.png)
 
 此过程中涉及两大角色，媒体会话提供方和媒体会话控制方。
 

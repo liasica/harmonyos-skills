@@ -5,7 +5,7 @@ breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:34:58+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:6e7eb1647296f7fb2144f41908861df3a19fe0ac088c046afda28cfb26d1bc02
+content_hash: sha256:113a97e2739acbb990f709d084bac5a1aee08202abfada438a46d80657c2b56b
 ---
 
 在使用相机过程中，当遇到相机模式切换、前后置镜头切换等场景时，会不可避免地出现预览流替换。为优化用户体验，可合理使用动效过渡。本文主要介绍如何使用预览流截图，并通过ArkUI提供的[animateToImmediately](../harmonyos-references/arkts-apis-uicontext-uicontext.md#animatetoimmediately23)接口触发显式动画功能，实现下方三种核心场景动效。
@@ -14,17 +14,17 @@ content_hash: sha256:6e7eb1647296f7fb2144f41908861df3a19fe0ac088c046afda28cfb26d
 
   图片为从录像模式切换为拍照模式的效果。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/ii7HuZBLTLSBu0-LcXaLFA/zh-cn_image_0000002589244873.gif?HW-CC-KV=V1&HW-CC-Date=20260429T053457Z&HW-CC-Expire=86400&HW-CC-Sign=8542FFDFF1CB73093373500DA524A8CE60941ADC759632DDD4F6DA093D2B93FC)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/ii7HuZBLTLSBu0-LcXaLFA/zh-cn_image_0000002589244873.gif)
 * 前后置切换动效，使用预览流截图做翻转模糊动效过渡。
 
   图片为从前置相机切换为后置相机的效果。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/K4rnEp_1QnS8zZRxx-6AtQ/zh-cn_image_0000002558765068.gif?HW-CC-KV=V1&HW-CC-Date=20260429T053457Z&HW-CC-Expire=86400&HW-CC-Sign=8D7F6754CEDB99655856F7449B9ADC7F6DA81EFEC597388FB90BBC3757E08A8C)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/K4rnEp_1QnS8zZRxx-6AtQ/zh-cn_image_0000002558765068.gif)
 * 拍照闪黑动效，使用闪黑组件覆盖预览流实现闪黑动效过渡。
 
   图片为点击完成拍摄的效果。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/KXymBP9FQ8-k6Bn3I8UQVw/zh-cn_image_0000002558605412.gif?HW-CC-KV=V1&HW-CC-Date=20260429T053457Z&HW-CC-Expire=86400&HW-CC-Sign=59FA88E7B325E5E0CE8BDBBAC7D439BF69BB9BE541CE522DE8F986D39E0D18D7)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/KXymBP9FQ8-k6Bn3I8UQVw/zh-cn_image_0000002558605412.gif)
 
 ## 闪黑动效
 

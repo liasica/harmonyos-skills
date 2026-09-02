@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:52:38+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:dae8ac9a79e7df0669cdc63e40b427dd5d81b5fc4e001ab8d8c79c24b9991366
+content_hash: sha256:ddce2256f03043c4706ee5fbb319c5c8eb91f85d1464d669a4947c34d642bbc4
 ---
 
 提供用于图形绘制和媒体数据写入的Surface，XComponent负责将其嵌入到视图中，支持应用自定义Surface位置和大小。具体指南请参考[自定义渲染 (XComponent)文档](../harmonyos-guides/napi-xcomponent-guidelines.md)。
@@ -889,7 +889,7 @@ PhonePC/2in1TabletTVWearable
 118. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/k08tDenkSbmnZVqfmNZtJA/zh-cn_image_0000002589246351.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055152Z&HW-CC-Expire=86400&HW-CC-Sign=9B0AAFE508495B3E1A5646C053A939364DE856407F3DAE11F0D75475CF1BB363)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/k08tDenkSbmnZVqfmNZtJA/zh-cn_image_0000002589246351.gif)
 
 ### 示例2（在surface旋转过程中锁定）
 
@@ -1001,7 +1001,7 @@ PhonePC/2in1TabletTVWearable
 41. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/8iH43IkjTdORF-20BmUxrw/zh-cn_image_0000002558766544.png?HW-CC-KV=V1&HW-CC-Date=20260429T055152Z&HW-CC-Expire=86400&HW-CC-Sign=B8D3D125DE98C75353C2B5B01DF308129F0EDE4544D86A98515D9C981F3E153E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/8iH43IkjTdORF-20BmUxrw/zh-cn_image_0000002558766544.png)
 
 ### 示例4（XComponent实现沉浸式效果）
 
@@ -1050,7 +1050,7 @@ PhonePC/2in1TabletTVWearable
 40. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/Yca4TFhYQx2hFKbvD6RAsA/zh-cn_image_0000002558606884.jpeg?HW-CC-KV=V1&HW-CC-Date=20260429T055152Z&HW-CC-Expire=86400&HW-CC-Sign=7E936E953706D5EB184D11B32F79FA24094BD3ADBA752213CA0BB79CF2463AE6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/Yca4TFhYQx2hFKbvD6RAsA/zh-cn_image_0000002558606884.jpeg)
 
 ### 示例5（设置XComponent持有Surface在渲染时是否需要被视为不透明）
 
@@ -1152,4 +1152,4 @@ PhonePC/2in1TabletTVWearable
 89. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/vdAx2FEuQ_eLXbOqEvdQjQ/zh-cn_image_0000002589326411.jpeg?HW-CC-KV=V1&HW-CC-Date=20260429T055152Z&HW-CC-Expire=86400&HW-CC-Sign=B764DBC6C8C530837F13E903A58074693376766BA56287AE2CD80C08C7BE1C00)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/vdAx2FEuQ_eLXbOqEvdQjQ/zh-cn_image_0000002589326411.jpeg)

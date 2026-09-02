@@ -5,7 +5,7 @@ breadcrumb: 最佳实践 > 媒体 > 音频和视频 > 基于系统能力获取�
 category: best-practices
 scraped_at: 2026-04-29T14:11:38+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:6d7d02d432d1df948420d179befa4346e36c564e70db40eb2c498dec464642e9
+content_hash: sha256:a274278f2f211d6c84faec048e9d415808455850de7451c5aa4f220e44ddf671
 ---
 
 ## 概述
@@ -89,7 +89,7 @@ content_hash: sha256:6d7d02d432d1df948420d179befa4346e36c564e70db40eb2c498dec464
 
 ### 实现效果
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/XxnCh5QKTku5oubOIIc11g/zh-cn_image_0000002229450885.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061134Z&HW-CC-Expire=86400&HW-CC-Sign=D27A3E4D02C6C8B63AB8C4E3A3EBA85AE986A9D54514149FE2B0506738FE799D "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/XxnCh5QKTku5oubOIIc11g/zh-cn_image_0000002229450885.gif "点击放大")
 
 ## 选取视频帧作为缩略图
 
@@ -180,7 +180,7 @@ HarmonyOS提供视频缩略图获取类[AVImageGenerator](../harmonyos-reference
 
 ### 实现效果
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/maWFcknERlqIbc-V0cc0Qw/zh-cn_image_0000002194010608.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061134Z&HW-CC-Expire=86400&HW-CC-Sign=0EA8803CF8DF94CB03995FAB260E18C0DE4275A309A7A462C93664404E1E7A05 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/maWFcknERlqIbc-V0cc0Qw/zh-cn_image_0000002194010608.gif "点击放大")
 
 ## 常见问题
 

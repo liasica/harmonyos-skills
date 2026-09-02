@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 处理网页内容 >
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:29:31+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:9f57db417514ecbd76cf8e546223a8c6a53017a396309fd040b55c5d4a045a8a
+content_hash: sha256:7e3524e5dbb8c1d4cf7ac997317d2cafcae07b64d9a963bf65106fed7cd0d8a1
 ---
 
 菜单作为用户交互的关键组件，其作用是构建清晰的导航体系，通过结构化布局展示功能入口，使用户能够迅速找到目标内容或执行操作。作为人机交互的重要枢纽，它显著提升了Web组件的可访问性和用户体验，是应用设计中必不可少的部分。Web组件菜单类型包括[文本选中菜单](web-menu.md#文本选中菜单)、[上下文菜单](web-menu.md#上下文菜单)和[自定义菜单](web-menu.md#自定义菜单)，应用可根据具体需求灵活选择。
@@ -112,7 +112,7 @@ Web组件的文本选中菜单是一种通过自定义元素实现的上下文�
 11. </html>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/SpEJL684To28qwIXE8dsbA/zh-cn_image_0000002558605072.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052929Z&HW-CC-Expire=86400&HW-CC-Sign=224BE8DA549509492F6750E35F86D38BABF4C26BA19C0255C287BC2EA9E948FE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/SpEJL684To28qwIXE8dsbA/zh-cn_image_0000002558605072.gif)
 
 ## 上下文菜单
 
@@ -262,7 +262,7 @@ Web组件的文本选中菜单是一种通过自定义元素实现的上下文�
 11. </html>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/h5o6AxfXQ3eG-8niGQL6DQ/zh-cn_image_0000002589324597.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052929Z&HW-CC-Expire=86400&HW-CC-Sign=DF4FC008CFCCB198E89E653FC626A98D9C31ABFE3C59B2E2A20175EB5F11A53A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/h5o6AxfXQ3eG-8niGQL6DQ/zh-cn_image_0000002589324597.gif)
 
 ## 自定义菜单
 
@@ -371,7 +371,7 @@ Web组件的文本选中菜单是一种通过自定义元素实现的上下文�
 12. </html>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/OpbVfQ0VRxOmcxdtUc4qyQ/zh-cn_image_0000002589244535.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052929Z&HW-CC-Expire=86400&HW-CC-Sign=1B1FC2DD43DF2BD6D13DAF4DC3CCFEB0C6D843D3ECD194786CB7E772824D925B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/OpbVfQ0VRxOmcxdtUc4qyQ/zh-cn_image_0000002589244535.gif)
 
 自API version 20起，支持绑定长按超链接菜单。可以为图片和链接绑定不同的自定义菜单。
 
@@ -573,7 +573,7 @@ html示例
 19. </html>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/fMaTnotCTV2PJ08RCkptPA/zh-cn_image_0000002558764730.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052929Z&HW-CC-Expire=86400&HW-CC-Sign=15174075BDE63C9F8A1A0BC761E2710975A3E40B6A21758CF69A97C4CE70D794)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/fMaTnotCTV2PJ08RCkptPA/zh-cn_image_0000002558764730.gif)
 
 ## Web菜单保存图片
 
@@ -726,7 +726,7 @@ html示例
 17. </html>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/vr9MrGAMQ7u0JTu-sviBRQ/zh-cn_image_0000002558605074.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052929Z&HW-CC-Expire=86400&HW-CC-Sign=1DFEEA2DC0FFDED67ACB0BE04521FF25F0575029F0D429202F9D13DCEA72A2A1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/vr9MrGAMQ7u0JTu-sviBRQ/zh-cn_image_0000002558605074.gif)
 
 ## Web菜单获取选中文本
 
@@ -825,7 +825,7 @@ Web组件的[editMenuOptions](../harmonyos-references/arkts-basic-components-web
 41. </html>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/Uj-V0eerRBex3IW4exxSxw/zh-cn_image_0000002589324599.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052929Z&HW-CC-Expire=86400&HW-CC-Sign=282050B7FC73ED211F937305D33E8CDF8575877E410F22EC22DA05628616E4FC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/Uj-V0eerRBex3IW4exxSxw/zh-cn_image_0000002589324599.gif)
 
 ## 常见问题
 
@@ -880,7 +880,7 @@ Web组件的[editMenuOptions](../harmonyos-references/arkts-basic-components-web
 11. </html>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/wXrtQZeISDyaI03Zx8EmNA/zh-cn_image_0000002589244537.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052929Z&HW-CC-Expire=86400&HW-CC-Sign=3A6D088B9EC100DDCCBA26D2606CC509CCB4F25721751AA7A438BDD42EC5AA3C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/wXrtQZeISDyaI03Zx8EmNA/zh-cn_image_0000002589244537.gif)
 
 ### 出现选区时手柄菜单不显示
 
@@ -1030,4 +1030,4 @@ Web组件的[editMenuOptions](../harmonyos-references/arkts-basic-components-web
 54. </html>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/28tLWEGfRO2MRbNZBHuH8g/zh-cn_image_0000002558764732.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052929Z&HW-CC-Expire=86400&HW-CC-Sign=AEFB51D5AFA5714A0A3736AA8F0C4D3A2E65D87E2109E3A6328D378FDE51D7DB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/28tLWEGfRO2MRbNZBHuH8g/zh-cn_image_0000002558764732.gif)

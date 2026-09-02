@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:51:17+08:00
 doc_updated_at: 2026-04-10
-content_hash: sha256:9da382427083d9811ff2df3ee0043891d8335ad9fdc781bd33c22b3db6adddad
+content_hash: sha256:6909abc2c2ba2f12d43ff670db7ce42fa8831fb722a1d074772c294f492019f2
 ---
 
 可以灵活排列、对齐和分配容器内的子组件空间，使元素根据可用空间扩展或收缩，以满足不同屏幕尺寸下的响应式布局。
@@ -216,4 +216,4 @@ PhonePC/2in1TabletTVWearable
 84. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/kAw2WQ5jSfK50oKWBiELOQ/zh-cn_image_0000002589245827.png?HW-CC-KV=V1&HW-CC-Date=20260429T055115Z&HW-CC-Expire=86400&HW-CC-Sign=77F0DE3EABFCA7B9C5FBE35853FF5D68177DBD901F26E49D59008A29E0A8B8FF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/kAw2WQ5jSfK50oKWBiELOQ/zh-cn_image_0000002589245827.png)

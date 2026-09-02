@@ -5,14 +5,14 @@ breadcrumb: 指南 > 应用服务 > Reader Kit（阅读服务） > 书籍内容�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:40:02+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:14dbe1a09059acd5e62e47cbade95f0d9381902775611f8879ad75ca9ce8fda3
+content_hash: sha256:dd3e0b01013ef855bde23486bb6292874ca6e8c59bcc14402e4176cf4ec73365
 ---
 
 当应用需要展示书籍目录列表时，开发者可通过解析能力获取目录节点列表，实现目录列表中章节名称按顺序、层级的展示。当用户点击目录节点时，开发者也需要获取目录位置及资源信息，用于跳转到指定位置。
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/S_wDmsQ8Siq8kc67SmeBSA/zh-cn_image_0000002558765644.png?HW-CC-KV=V1&HW-CC-Date=20260429T054002Z&HW-CC-Expire=86400&HW-CC-Sign=50AEAF51C1E83D8B5A4DF5E1E9B758C964D28CF708D495747535879ECB82BD56)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/S_wDmsQ8Siq8kc67SmeBSA/zh-cn_image_0000002558765644.png)
 
 ## 接口说明
 

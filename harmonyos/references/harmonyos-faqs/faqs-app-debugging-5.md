@@ -5,14 +5,14 @@ breadcrumb: FAQ > DevEco Studio > 应用调试 > HarmonyOS应用自动化签名�
 category: harmonyos-faqs
 scraped_at: 2026-04-29T14:21:22+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:5a461130e6a0042341ff2c0f3fff5e4c5ed53db302ffd13c18dfdc570ea79e20
+content_hash: sha256:6379c47c1c19c2b120beb65061177cfe543aaab4cc03376392fef425e3352501
 ---
 
 **问题现象**
 
 在对HarmonyOS应用工程中，勾选“Automatically generate signature”时，提示“Unsupported restricted ACL permission exist in the configuration”报错信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/xYnhr2ggQFO_FOE9gqW5Fw/zh-cn_image_0000002250504069.png?HW-CC-KV=V1&HW-CC-Date=20260429T062121Z&HW-CC-Expire=86400&HW-CC-Sign=3F960E7CFEC77B3E294D4968E4C5AEDB627F755D8C9D456CFB49D7DF71708643)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/xYnhr2ggQFO_FOE9gqW5Fw/zh-cn_image_0000002250504069.png)
 
 **解决措施**
 

@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:28:49+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:9094a33a514daeef415373fd4c5e9535100174531faa903aaca91abaed8c3b2b
+content_hash: sha256:81be0292c2fcd089d7c6b7081f198f30547d08e35b0fe1a340f203224427c2d3
 ---
 
 image-animator组件为图片帧动画播放器。具体用法请参考[image-animator](../harmonyos-references/js-components-basic-image-animator.md)。
@@ -53,7 +53,7 @@ image-animator组件为图片帧动画播放器。具体用法请参考[image-an
 13. };
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/NaKtC2o7QqKiOoZtNj3vTw/zh-cn_image_0000002589324469.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052848Z&HW-CC-Expire=86400&HW-CC-Sign=596B7F986D5013DA59C938DB02B3240A8EF2000A16C9472015BFADAA50AB21B8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/NaKtC2o7QqKiOoZtNj3vTw/zh-cn_image_0000002589324469.gif)
 
 ## 设置image-animator组件属性
 
@@ -132,7 +132,7 @@ image-animator组件为图片帧动画播放器。具体用法请参考[image-an
 49. };
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/pz0ihiqrRTuUs1zcdq1JCA/zh-cn_image_0000002589244409.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052848Z&HW-CC-Expire=86400&HW-CC-Sign=CE3AC13073437D53701FC5DF1867F6D9EF91A4EF89E4E1B2274E979FB8647C96)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/pz0ihiqrRTuUs1zcdq1JCA/zh-cn_image_0000002589244409.gif)
 
 说明
 
@@ -217,7 +217,7 @@ image-animator组件为图片帧动画播放器。具体用法请参考[image-an
 45. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/nLNzWZdkSC6zakhKVOymZQ/zh-cn_image_0000002558764602.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052848Z&HW-CC-Expire=86400&HW-CC-Sign=F03994A87743869664E82E56BDD0FAD05A4F0F7EC043E510789988203918D02A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/nLNzWZdkSC6zakhKVOymZQ/zh-cn_image_0000002558764602.gif)
 
 ## 场景示例
 
@@ -322,4 +322,4 @@ image-animator组件通过调用start、pause、stop和resume方法控制图片�
 46. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/qs8r7MB8RNia5a6gpwzwoA/zh-cn_image_0000002558604946.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052848Z&HW-CC-Expire=86400&HW-CC-Sign=D287952EFEA50F7EB3B435B598B7839C1252325FC5F13C414EB473DC882476FA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/qs8r7MB8RNia5a6gpwzwoA/zh-cn_image_0000002558604946.gif)

@@ -5,7 +5,7 @@ breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.0.0(12) > OS平台能力 >
 category: harmonyos-releases
 scraped_at: 2026-04-29T13:24:12+08:00
 doc_updated_at: 2026-01-21
-content_hash: sha256:1dd5a5f663c6fe98409cd2e0b248d8e05e85f5624a0ee66c37f249f94440ab6f
+content_hash: sha256:93984d10c512471717dc7486ec166874159fb58fe668db8e5365f9d11454cbd7
 ---
 
 ## TextInput、TextArea 设置TextAlign.Center且显示PlaceHolder文字时，光标位置的变更
@@ -182,11 +182,11 @@ popupPosition属性设置为undefined时应该重置为默认值，但当前实�
 
 API version 12之前，popupPosition属性设置为undefined时会保持现有状态，提示弹窗位置不发生变化。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/iw5DsVr-RzqmwQVlxtbQyQ/zh-cn_image_0000001987151785.png?HW-CC-KV=V1&HW-CC-Date=20260429T052410Z&HW-CC-Expire=86400&HW-CC-Sign=57F8ED1A6B5EA4F5D7381180217C323E0487EDC616216E91567D6B46DE6071D6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/iw5DsVr-RzqmwQVlxtbQyQ/zh-cn_image_0000001987151785.png)
 
 API version 12及以后，popupPosition属性设置为undefined时会重置为默认值，提示弹窗位置会发生变化。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/0zjPVPjrTMatFz54l8CApg/zh-cn_image_0000001953232366.png?HW-CC-KV=V1&HW-CC-Date=20260429T052410Z&HW-CC-Expire=86400&HW-CC-Sign=712E3B0D5F584EF97BF2CA4E25AD7B3B7667B783E897E8F92D01DD7CE1AED660)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/0zjPVPjrTMatFz54l8CApg/zh-cn_image_0000001953232366.png)
 
 **变更的接口/组件**
 
@@ -553,11 +553,11 @@ List组件的constraintSize接口。
 
 API version 12之前：autoCollapse属性默认值为false，当AlphabetIndexer组件高度不足时，不会折叠显示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/gVhJRN-CQAevX9oJlhgsoA/zh-cn_image_0000001987311653.png?HW-CC-KV=V1&HW-CC-Date=20260429T052410Z&HW-CC-Expire=86400&HW-CC-Sign=A6540C46AA9579C73550828F17B683262485AF5562AD9722C5DCA6855B37A707)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/gVhJRN-CQAevX9oJlhgsoA/zh-cn_image_0000001987311653.png)
 
 API version 12及之后：autoCollapse属性默认值为true，当AlphabetIndexer组件高度不足时，会折叠显示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/63yzc1hfQH-At4LMOjsXog/zh-cn_image_0000001987151797.png?HW-CC-KV=V1&HW-CC-Date=20260429T052410Z&HW-CC-Expire=86400&HW-CC-Sign=2373E639E59E961DAEA4C8E756946E1DB3A4727094C1611449E42BE62CD125F3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/63yzc1hfQH-At4LMOjsXog/zh-cn_image_0000001987151797.png)
 
 **变更的接口/组件**
 

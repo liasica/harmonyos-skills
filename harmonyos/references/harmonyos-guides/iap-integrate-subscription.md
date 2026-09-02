@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用服务 > IAP Kit（应用内支付服务） > 商品�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:38:38+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:39164832f2ae0a53ad68afa07683b7a8df1cb9efe4c595ebca678a268c7e42d0
+content_hash: sha256:f7f3f43b058f3a9c61e1ce5a7277ed2bdd59411538153d40e512234ca6b8967b
 ---
 
 ## 约束与限制
@@ -18,7 +18,7 @@ content_hash: sha256:39164832f2ae0a53ad68afa07683b7a8df1cb9efe4c595ebca678a268c7
 
 如下业务流程对于单机应用同样适用。在单机应用中，应用服务器和应用客户端的交互放在应用客户端完成，应用服务器和IAP服务器交互的部分可不处理。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/Ctp120yjQsqaF7f7uBuRGw/zh-cn_image_0000002558605772.png?HW-CC-KV=V1&HW-CC-Date=20260429T053837Z&HW-CC-Expire=86400&HW-CC-Sign=0378BA60BD500DD9AF3574349D7BEAE957A7A8E9C05739E7567C5D47F9DA42BB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/Ctp120yjQsqaF7f7uBuRGw/zh-cn_image_0000002558605772.png)
 
 **展示商品**
 

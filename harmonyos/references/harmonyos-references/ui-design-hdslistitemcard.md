@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > UI Design Kit（UI设计套件） > ArkTS
 category: harmonyos-references
 scraped_at: 2026-04-29T13:57:14+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:34dce76bc78dd6a2353f9f443c8a56dc2abec67302c572786cfb666c9203a5d2
+content_hash: sha256:a99c7d4131c11156e550fad6a53eca23221fa19dceb8a1c83dbaa2be0460e98c
 ---
 
 本模块提供一个HdsListItemCard组件，提升视觉体验，统一组件风格样式，应用使用HdsListItemCard组件实现多设备上的系统列表样式。
@@ -1913,4 +1913,4 @@ PhonePC/2in1TabletTVWearable
 113. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/jiAMp5sxSuCUIrXw2rKl9w/zh-cn_image_0000002589246865.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T055712Z&HW-CC-Expire=86400&HW-CC-Sign=36E433049A1F886F6F7D8D0AD0A35DFB329EABF6789D39A3E94390DA3A82DFC2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/jiAMp5sxSuCUIrXw2rKl9w/zh-cn_image_0000002589246865.jpg)

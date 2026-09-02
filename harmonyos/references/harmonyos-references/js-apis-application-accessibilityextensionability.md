@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-application-accessibilityextensionability
-title: @ohos.application.AccessibilityExtensionAbility (辅助功能扩展能力)
+title: "@ohos.application.AccessibilityExtensionAbility (辅助功能扩展能力)"
 breadcrumb: API参考 > 应用框架 > Accessibility Kit（无障碍服务） > ArkTS API > @ohos.application.AccessibilityExtensionAbility (辅助功能扩展能力)
 category: harmonyos-references
 scraped_at: 2026-04-28T07:59:06+08:00

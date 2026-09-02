@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用服务 > Share Kit（分享服务） > 碰一碰分�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:40:39+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:5f6206c0304ef16e26c4dc60d8de809f3340740ddcef28861074aeb92d580a20
+content_hash: sha256:3fa137f6222edba504f94506c453bba5295601e5e90843e81ead30b1ebb47a31
 ---
 
 ## 注册碰一碰事件
@@ -16,10 +16,10 @@ content_hash: sha256:5f6206c0304ef16e26c4dc60d8de809f3340740ddcef28861074aeb92d5
 
 * 文本提示**可碰一碰分享至 HarmonyOS 5 及以上版本手机**。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/hroyLWphQNu2ZLV3a-OarA/zh-cn_image_0000002558606028.png?HW-CC-KV=V1&HW-CC-Date=20260429T054038Z&HW-CC-Expire=86400&HW-CC-Sign=1CA9BBD4A54B7F8ECB0E6AED5C2E8EE5A4C72148CAF42E73C831EA3949A259D1)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/hroyLWphQNu2ZLV3a-OarA/zh-cn_image_0000002558606028.png)
 * 动图提示**可碰一碰分享**。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/mYANkso5Qb6s64nsFL2Nog/zh-cn_image_0000002589325555.png?HW-CC-KV=V1&HW-CC-Date=20260429T054038Z&HW-CC-Expire=86400&HW-CC-Sign=EF06440ADEAEFA17389F4BD294B228B85388B6E2B4CF6F5254CD3338F5C8C5FF)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/mYANkso5Qb6s64nsFL2Nog/zh-cn_image_0000002589325555.png)
 
   Share Kit提供统一的动图资源文件以方便应用接入。
 
@@ -208,7 +208,7 @@ content_hash: sha256:5f6206c0304ef16e26c4dc60d8de809f3340740ddcef28861074aeb92d5
 
 效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/Nphv7lvURyi-ubC-gUZTxQ/zh-cn_image_0000002589325559.png?HW-CC-KV=V1&HW-CC-Date=20260429T054038Z&HW-CC-Expire=86400&HW-CC-Sign=998E9F026F01E822C0234BE3679F0D74280BF6C21A37CF1039C9AC063A08121A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/Nphv7lvURyi-ubC-gUZTxQ/zh-cn_image_0000002589325559.png)
 
 示例代码：
 

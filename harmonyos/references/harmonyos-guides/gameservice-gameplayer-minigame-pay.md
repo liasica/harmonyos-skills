@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用服务 > Game Service Kit（游戏服务） > 基础�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:38:10+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:ec57763f56806911335e401f198d629cbf35996e92c389852c29cda55240bf5a
+content_hash: sha256:a88bb1f8606efb2bd032314ac5c33e9657980eb5e78fceb716ebdd58ae1cfa78
 ---
 
 小游戏接入基础游戏服务的小游戏支付API后，支持在小游戏内提供付费商品，玩家可以在小游戏内进行购买。
@@ -18,7 +18,7 @@ content_hash: sha256:ec57763f56806911335e401f198d629cbf35996e92c389852c29cda5524
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/-U5wyzfIQjOrjTZkhsviqQ/zh-cn_image_0000002558605742.png?HW-CC-KV=V1&HW-CC-Date=20260429T053809Z&HW-CC-Expire=86400&HW-CC-Sign=26971BFEB2BD6388983D5D7309CCC5AB1272D5558B7EAD026E38EF7042118ED8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/-U5wyzfIQjOrjTZkhsviqQ/zh-cn_image_0000002558605742.png)
 
 1. 玩家在小游戏内购买商品。
 2. 小游戏调用[miniGamePay](../harmonyos-references/gameservice-gameplayer.md#gameplayerminigamepay)向Game Service Kit发起支付请求。

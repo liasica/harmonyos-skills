@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-hiappevent
-title: @ohos.hiAppEvent (应用打点)
+title: "@ohos.hiAppEvent (应用打点)"
 breadcrumb: API参考 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > ArkTS API > 已停止维护的接口 > @ohos.hiAppEvent (应用打点)
 category: harmonyos-references
 scraped_at: 2026-04-28T08:11:18+08:00

@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:52:13+08:00
 doc_updated_at: 2026-04-08
-content_hash: sha256:b813c963fa50e5547963d336bd04157e9e8e2af923a2a175af870ad48787df0f
+content_hash: sha256:f5807b8379ef796d322a22cace50a14ee8828c41c6b301af0ae47c7250c43a9b
 ---
 
 富文本组件，解析并显示HTML格式文本。
@@ -170,7 +170,7 @@ PhonePC/2in1TabletTVWearable
 51. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/foE2p36lQoKPs0piV_IVZA/zh-cn_image_0000002589246151.png?HW-CC-KV=V1&HW-CC-Date=20260429T055209Z&HW-CC-Expire=86400&HW-CC-Sign=1917C5AED4332D99B8D063F6ED156E27307FD53761233AA4F77F9D0D4EDED9F8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/foE2p36lQoKPs0piV_IVZA/zh-cn_image_0000002589246151.png)
 
 加载本地资源文件。
 

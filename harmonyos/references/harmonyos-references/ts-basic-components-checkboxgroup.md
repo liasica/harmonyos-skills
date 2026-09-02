@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:51:59+08:00
 doc_updated_at: 2026-04-08
-content_hash: sha256:c048b915d92e4d4b058e30f1883a97afa9ef7245707917a42d4be40e0df1228b
+content_hash: sha256:d07e817cfc99ab5e9e3d990fa12b1c7597dd261c1f4ba02426c05dba3da80a11
 ---
 
 多选框群组，用于控制多选框全选或者不全选状态。
@@ -470,7 +470,7 @@ PhonePC/2in1TabletTVWearable
 54. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/885_XCUaQyKTu1bbHQbaRg/zh-cn_image_0000002558606564.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055156Z&HW-CC-Expire=86400&HW-CC-Sign=39CE9BF255603BC3CBC5ABD47489A5BA41EED2EE862E726728B439679779D82D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/885_XCUaQyKTu1bbHQbaRg/zh-cn_image_0000002558606564.gif)
 
 ### 示例2（自定义勾选样式）
 
@@ -549,7 +549,7 @@ PhonePC/2in1TabletTVWearable
 70. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/Vgzdc1HqQ0-XJ_HzHUQxzA/zh-cn_image_0000002589326091.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055156Z&HW-CC-Expire=86400&HW-CC-Sign=865FB59F86ECB1A5DF1E33222ECD642303CBA2FA02D9D24E84840D91FE232830)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/Vgzdc1HqQ0-XJ_HzHUQxzA/zh-cn_image_0000002589326091.gif)
 
 ### 示例3（自定义多选框样式）
 
@@ -669,7 +669,7 @@ PhonePC/2in1TabletTVWearable
 111. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/kmjofPQ_RHS-vNUMuZCMcg/zh-cn_image_0000002589246033.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055156Z&HW-CC-Expire=86400&HW-CC-Sign=D3CF42687378DE9FA117050B1E1C7E37BD4DFF88D35A3B33B10D5B2AAA9142E5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/kmjofPQ_RHS-vNUMuZCMcg/zh-cn_image_0000002589246033.gif)
 
 ### 示例4（设置全选）
 
@@ -826,4 +826,4 @@ PhonePC/2in1TabletTVWearable
 149. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/bJQ6npmISZqXK5HNk8_1Dw/zh-cn_image_0000002558766224.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055156Z&HW-CC-Expire=86400&HW-CC-Sign=9AB7F7D23C482294CE18CC7FB8FEAB36925FE3ECF8903A1B1CA6E375ADA2D0D2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/bJQ6npmISZqXK5HNk8_1Dw/zh-cn_image_0000002558766224.gif)

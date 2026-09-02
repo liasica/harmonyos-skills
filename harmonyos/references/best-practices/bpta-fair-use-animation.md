@@ -5,7 +5,7 @@ breadcrumb: 最佳实践 > 动画与转场 > 动画使用指导
 category: best-practices
 scraped_at: 2026-04-29T14:10:37+08:00
 doc_updated_at: 2026-03-19
-content_hash: sha256:bdd24bad3fb2f7ed9be8ebfa03d569f3f2c12c21ba43f2f25c5a412d4b1d1102
+content_hash: sha256:ffe831745b587f22a5726838e85a56f17e4048cc88842c358b7bf73063ad8475
 ---
 
 ## 概述
@@ -33,7 +33,7 @@ HarmonyOS系统为开发者提供了丰富的动画能力，在实际开发过�
 
 **图1** 合理使用动画
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/JsrjW384RUelwlZDLtwsJw/zh-cn_image_0000002229451841.png?HW-CC-KV=V1&HW-CC-Date=20260429T061035Z&HW-CC-Expire=86400&HW-CC-Sign=B1AC24CE98B35AB3DC5D66513096F94049F8ED485B77978D822C498D97EB2084 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/JsrjW384RUelwlZDLtwsJw/zh-cn_image_0000002229451841.png "点击放大")
 
 ### 动效场景设计
 
@@ -46,7 +46,7 @@ HarmonyOS系统为开发者提供了丰富的动画能力，在实际开发过�
 特征动效是指在用户界面中突出某个特定元素的动画效果。通过特征动效，可以吸引用户的注意力，提升用户体验。例如，在一个应用程序中，当用户点击”下载”按钮时，渐变显示出进度条并动态加载(如下图所示)。
 
 **图2** 点击特征动效示意  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/eWob5PE9RuikL-DOncvNxQ/zh-cn_image_0000002229337393.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061035Z&HW-CC-Expire=86400&HW-CC-Sign=265C5329703DFFDFE42C2BE0DABF7B3B73F99B2D1562EE032FBF35E095AEA3C1 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/eWob5PE9RuikL-DOncvNxQ/zh-cn_image_0000002229337393.gif "点击放大")
 
 **转场动效**
 
@@ -55,7 +55,7 @@ HarmonyOS系统为开发者提供了丰富的动画能力，在实际开发过�
 HarmonyOS系统为开发者提供了丰富的转场动效库，使开发者能够轻松实现各种转场动画效果。开发者可以根据具体需求，在应用的不同场景中应用这些转场动效，以提升用户体验和界面的吸引力。需要注意的是，为了最佳的用户体验，开发者应根据界面的功能和特点，合理选择转场动效，并遵循动效的使用准则，以确保转场动效在视觉和交互上的一致性。
 
 **图3** 转场动效示意  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/TLSuJKtmQku_TkOHfeYNfw/zh-cn_image_0000002229451885.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061035Z&HW-CC-Expire=86400&HW-CC-Sign=DE0EED286EC619520D7A639B0AE3474F59543C0CA3CED136BB343DB3C432A95D "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/TLSuJKtmQku_TkOHfeYNfw/zh-cn_image_0000002229451885.gif "点击放大")
 
 **手势动效**
 
@@ -68,7 +68,7 @@ HarmonyOS系统为开发者提供了丰富的转场动效库，使开发者能�
 * 拖拽：拖拽手势是指手指按下同时进行移动的动作，动效设计了对象通过拖拽行为进行状态转换的整个过程，以确保用户操作的连贯性和流畅性。
 
 **图4** 手势动效示意  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/lamQYETiSwCh2MDwC5Z1ww/zh-cn_image_0000002194011548.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061035Z&HW-CC-Expire=86400&HW-CC-Sign=4B56626BA96D562B71E64789C9539CA56E84DC1E48A0473246A900252CD3F3F5 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/lamQYETiSwCh2MDwC5Z1ww/zh-cn_image_0000002194011548.gif "点击放大")
 
 **微动效**
 
@@ -76,7 +76,7 @@ HarmonyOS系统为开发者提供了丰富的转场动效库，使开发者能�
 
 **图5** 微动效示意
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/VXUOJ3xKShyKlocUPeroHQ/zh-cn_image_0000002193851976.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061035Z&HW-CC-Expire=86400&HW-CC-Sign=8AB63F18E3D763471F0E2C65B15249783F8CACF02DC95D59D8A085B77EED704E "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/VXUOJ3xKShyKlocUPeroHQ/zh-cn_image_0000002193851976.gif "点击放大")
 
 **插画动效**
 
@@ -85,7 +85,7 @@ HarmonyOS系统为开发者提供了丰富的转场动效库，使开发者能�
 通过动画的方式丰富视觉元素所要表达的信息，可以引导解读功能信息并串联前后画面，便于用户理解，也使画面表现更富有生命力。
 
 **图6** 插画动效示意  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/QrxUNtnuSj-UoW5ih6tyaw/zh-cn_image_0000002229337377.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061035Z&HW-CC-Expire=86400&HW-CC-Sign=A20998F8970AE808A3B6447E8DE75664E2960639B0BA61EA901BC4F3222073E1 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/QrxUNtnuSj-UoW5ih6tyaw/zh-cn_image_0000002229337377.gif "点击放大")
 
 ### 动画能力选型
 
@@ -119,7 +119,7 @@ HarmonyOS系统为开发者提供了丰富的转场动效库，使开发者能�
 在本场景中，圆形按钮上会依次出现多个水波状圆环，这些圆环从中心向外进行扩散，进而凸显功能，实现效果如图所示。
 
 **图7** 使用显式动画实现水波纹动效  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/wlEjGr12Qa-xbJT-EPT6UA/zh-cn_image_0000002229451877.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061035Z&HW-CC-Expire=86400&HW-CC-Sign=C6A123C467495F23CABDE50590649EB3A273751E3CFA065C065147E644269429 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/wlEjGr12Qa-xbJT-EPT6UA/zh-cn_image_0000002229451877.gif "点击放大")
 
 * 实现原理
 
@@ -248,7 +248,7 @@ HarmonyOS系统为开发者提供了丰富的转场动效库，使开发者能�
 如图所示，在本场景中，在登录页面前需要勾选相关的协议，如果未勾选相关协议，提示框将会通过左右移动进行提示。
 
 **图8** 使用关键帧动画实现左右移动提示  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/AVKcgYKVTYS5Ue_kk0g1QA/zh-cn_image_0000002229451869.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061035Z&HW-CC-Expire=86400&HW-CC-Sign=DE1E4F7BC173A74CCF162B13A310B3F5CA6CD74422EE02D4B29E18A42D510297 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/AVKcgYKVTYS5Ue_kk0g1QA/zh-cn_image_0000002229451869.gif "点击放大")
 
 * 实现原理
 
@@ -322,7 +322,7 @@ HarmonyOS系统为开发者提供了丰富的转场动效库，使开发者能�
 在本场景中，页面主要分为标题和列表两个部分，当向下滑动列表时，标题会跟随下滑手势扩展显示详细信息，其实现效果如下所示。
 
 **图9** 使用属性动画实现手势动效  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/TtqO0sidQOeeW-5c7mN1bQ/zh-cn_image_0000002229451845.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061035Z&HW-CC-Expire=86400&HW-CC-Sign=467BFECD28CCB66AB941C4243150EB93792A3A75775F6E72525299C159264335 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/TtqO0sidQOeeW-5c7mN1bQ/zh-cn_image_0000002229451845.gif "点击放大")
 
 * 实现原理
 
@@ -503,7 +503,7 @@ HarmonyOS系统为开发者提供了丰富的转场动效库，使开发者能�
 针对同一界面多个按钮同时缩放的场景（如下图所示），分别用自定义动画、属性动画、显式动画实现。
 
 **图10** 同一界面多个按钮同时缩放示意图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/sq4YkuS-T76t4XhbjaWcmw/zh-cn_image_0000002229337385.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061035Z&HW-CC-Expire=86400&HW-CC-Sign=0C4B5A305BA29A833655A3FE647D9003CF956023D54F815BF5C66F08510CD352 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/sq4YkuS-T76t4XhbjaWcmw/zh-cn_image_0000002229337385.gif "点击放大")
 
 **自定义动画**
 
@@ -783,7 +783,7 @@ HarmonyOS系统为开发者提供了丰富的转场动效库，使开发者能�
 针对同一界面多个图片同时缩放并位移的场景（如下图所示），分别通过改变布局属性、改变图形变换属性实现。
 
 **图11** 同一界面多个图片同时缩放并位移示意图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/KwFYoab3Q3O4d8VPitOwMA/zh-cn_image_0000002193852008.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061035Z&HW-CC-Expire=86400&HW-CC-Sign=B816D6ABF7F3712182675918D7F24BF6B043553CF76CF84C02C67425377B308E "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/KwFYoab3Q3O4d8VPitOwMA/zh-cn_image_0000002193852008.gif "点击放大")
 
 **改变布局属性**
 
@@ -1019,7 +1019,7 @@ HarmonyOS系统为开发者提供了丰富的转场动效库，使开发者能�
 针对多个相同组件同时修改多个属性的场景（如下图所示），分别使用多个animateTo闭包和一个animateTo闭包实现。
 
 **图12** 多个相同组件同时修改多个属性示意图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/fmB7iaNET6yuk0wcEjwlNQ/zh-cn_image_0000002229337397.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061035Z&HW-CC-Expire=86400&HW-CC-Sign=726615795417BA8B5EC05A943FB71EBDF6C01D756424E2E3C63AAE190574AD53 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/fmB7iaNET6yuk0wcEjwlNQ/zh-cn_image_0000002229337397.gif "点击放大")
 
 **代码实现**
 
@@ -1229,14 +1229,14 @@ HarmonyOS系统为开发者提供了丰富的转场动效库，使开发者能�
 针对多个相同组件修改多个属性进行动画的场景（如下图所示），分别使用在多个animateTo之间更新状态变量、在animateTo之前显式指定属性初值、在animateTo之前使用原始状态实现。
 
 **图13** 多个相同组件修改多个属性示意图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/Hn7e_gogQumrC2KuNG3jVw/zh-cn_image_0000002193851988.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061035Z&HW-CC-Expire=86400&HW-CC-Sign=8FB27189CA4F36108ACEB146BBC1F01A4147EF66752DFF5948A3F9015BC9286B "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/Hn7e_gogQumrC2KuNG3jVw/zh-cn_image_0000002193851988.gif "点击放大")
 
 **在多个animateTo之间更新状态变量**
 
 如果多个animateTo之间存在状态更新，会导致执行下一个animateTo之前又存在需要更新的脏节点，可能造成冗余更新，其动画更新流程如下图所示：
 
 **图14** 多个animateTo之间更新状态变量更新流程  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/S7WROQY5QOS-BGk9K1cL2A/zh-cn_image_0000002229337361.png?HW-CC-KV=V1&HW-CC-Date=20260429T061035Z&HW-CC-Expire=86400&HW-CC-Sign=C10044D03BC25F1BE0B8DC3DE7EE16FF1E2BB7A15F36BA58DBA12DF737FE6DF3 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/S7WROQY5QOS-BGk9K1cL2A/zh-cn_image_0000002229337361.png "点击放大")
 
 在第一个animateTo前，重新设置了w属性，所以Row组件需要更新一次。在第一个animateTo的动画闭包中，改变了w属性，所以Row组件又需要更新一次并对比产生宽高动画。第二个animateTo前，重新设置了color属性，所以Row组件又需要更新一次。在第二个animateTo的动画闭包中，改变了color属性，所以Row组件再更新一次并产生了背景色动画。Row组件总共更新了4次属性。
 
@@ -1323,7 +1323,7 @@ HarmonyOS系统为开发者提供了丰富的转场动效库，使开发者能�
 在animateTo之前显式的指定所有需要动画的属性初值，统一更新到节点中，然后再做动画，其动画更新流程如下图所示：
 
 **图15** animateTo之前显式指定属性初值更新流程  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/SWQ2C8s3QuSgdjL_JHZvbw/zh-cn_image_0000002194011564.png?HW-CC-KV=V1&HW-CC-Date=20260429T061035Z&HW-CC-Expire=86400&HW-CC-Sign=3091093C967EE50ED5C10F18AF4C91952702E84E5E97F64A2477ED53AFB28D82 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/SWQ2C8s3QuSgdjL_JHZvbw/zh-cn_image_0000002194011564.png "点击放大")
 
 在第一个animateTo之前，重新设置了w和color属性，所以Row需要更新一次。在第一个animateTo的动画闭包中，改变了w属性，所以Row组件需要更新一次并对比产生宽高动画。在第二个animateTo之前，由于没有执行额外的语句，不存在需要更新的脏状态变量和脏节点，无需更新。在第二个animateTo的动画闭包中，改变了color属性，所以Row组件再更新一次并产生了背景色动画。Row组件总共更新了3次属性。
 
@@ -1408,7 +1408,7 @@ HarmonyOS系统为开发者提供了丰富的转场动效库，使开发者能�
 在animateTo之前使用原始状态，让动画从原始状态过渡到指定状态，其动画更新流程如下图所示：
 
 **图16** animateTo之前使用原始状态更新流程  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/QhldDjf8S4qBxgxVZOVxqA/zh-cn_image_0000002229337381.png?HW-CC-KV=V1&HW-CC-Date=20260429T061035Z&HW-CC-Expire=86400&HW-CC-Sign=C647C49F352ABF85E15972C04BA9EC7416F0F88C3619B42F617F79F21FB79920 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/QhldDjf8S4qBxgxVZOVxqA/zh-cn_image_0000002229337381.png "点击放大")
 
 在第一个animateTo之前，不存在需要更新的脏状态变量和脏节点，无需更新。在第一个animateTo的动画闭包中，改变了w属性，所以Row组件需要更新一次并对比产生宽高动画。在第二个animateTo之前，由于也没有执行额外的语句，不存在需要更新的脏状态变量和脏节点，无需更新。在第二个animateTo的动画闭包中，改变了color属性，所以Row组件再更新一次并产生了背景色动画。Row组件总共更新了2次属性。
 
@@ -1511,7 +1511,7 @@ renderGroup是组件通用方法，它代表了渲染绘制的一个组合。其
 首次绘制组件时，若组件被标记为启用renderGroup状态，将对组件和其子组件进行离屏绘制，将绘制结果进行缓存。此后当需要重新绘制组件时，就会优先使用缓存而不必重新绘制，从而降低绘制负载，优化渲染性能。组件渲染流程图如下所示：
 
 **图17** 组件渲染流程图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/1kCfuMkXRS25kc78YBNdvA/zh-cn_image_0000002229451865.png?HW-CC-KV=V1&HW-CC-Date=20260429T061035Z&HW-CC-Expire=86400&HW-CC-Sign=03989EC584A165970CFC3BC6D4204436D3CA10B6E84A680E1510E998C3643687 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/1kCfuMkXRS25kc78YBNdvA/zh-cn_image_0000002229451865.png "点击放大")
 
 在进行缓存更新时，需要满足以下三个条件：
 
@@ -1526,7 +1526,7 @@ renderGroup是组件通用方法，它代表了渲染绘制的一个组合。其
 
 具体缓存管理流程图如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/328a2f-7TMKeWyRttxXpnA/zh-cn_image_0000002194011572.png?HW-CC-KV=V1&HW-CC-Date=20260429T061035Z&HW-CC-Expire=86400&HW-CC-Sign=0D2F9610C2AB226E05E21072F9815B9A83DD99145C98A09945F6821D821CCE4D "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/328a2f-7TMKeWyRttxXpnA/zh-cn_image_0000002194011572.png "点击放大")
 
 说明
 
@@ -1540,7 +1540,7 @@ renderGroup是组件通用方法，它代表了渲染绘制的一个组合。其
 此案例在同一个页面下使用了固定的图片和文本内容，并且每个组件统一使用旋转和缩放的动效，并且重复使用了60个这样的组件。
 
 **图18** renderGroup案例实现图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/dHi5rAyCTL-Po5yvopH6NA/zh-cn_image_0000002229451857.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061035Z&HW-CC-Expire=86400&HW-CC-Sign=6E9E391A347B69C8244BE0511AFDC5D2D46A65E31F2C9D9C202F21BFFC3B7D20 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/dHi5rAyCTL-Po5yvopH6NA/zh-cn_image_0000002229451857.gif "点击放大")
 
 **代码实现**
 

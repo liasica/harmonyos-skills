@@ -5,7 +5,7 @@ breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:41:32+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:ae99b04ae2d9edbd061727de71bdf5fe20a9facc85195b95aef11c01251b68a7
+content_hash: sha256:b9ca02b59ed03e35e3893249144b7903afbf2b18ac2f7584b0bfdfb471a23754
 ---
 
 ## Broadcast
@@ -27,7 +27,7 @@ content_hash: sha256:ae99b04ae2d9edbd061727de71bdf5fe20a9facc85195b95aef11c01251
 
 **图1** Broadcast算法框图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/ZrcSHB1bQNOOQHvMQFNWuQ/zh-cn_image_0000002558606136.png?HW-CC-KV=V1&HW-CC-Date=20260429T054131Z&HW-CC-Expire=86400&HW-CC-Sign=C7841570049DE753EAFE4FA5C012AD0C7E87743CEC07B2277D6CECACF662D241)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/ZrcSHB1bQNOOQHvMQFNWuQ/zh-cn_image_0000002558606136.png)
 
 计算过程分为如下几步，均在Vector上进行：
 

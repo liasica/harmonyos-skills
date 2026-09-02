@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 窗口管理 > �
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:29:08+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:08bc5977ec94c80f3c467cdb61bf1922ac64d3dbe65bbb923fd535863216dcc3
+content_hash: sha256:ca9a8235da9e7b45ccb31b4f60fb4bed09ad8d7bbe200c0f0cd0a8e1fc1f6929
 ---
 
 当应用需要智慧多窗的能力时，可以通过在[module.json5配置文件](module-configuration-file.md)中对应标签添加相关字段声明支持。
@@ -138,11 +138,11 @@ supportWindowMode缺省值为["fullscreen", "split", "floating"]。
 
 图1 启动左侧分屏
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/5KB-v2PSR8yJqos4ClDdkg/zh-cn_image_0000002589244495.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052906Z&HW-CC-Expire=86400&HW-CC-Sign=E69A56475E4DBA81BBFBC27CFD6571338E61B80E61476EB5A1A9A2711FCFF6C2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/5KB-v2PSR8yJqos4ClDdkg/zh-cn_image_0000002589244495.gif)
 
 图2 启动右侧分屏
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/28nyTG_3SZKxL5kZs2JveQ/zh-cn_image_0000002558764688.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052906Z&HW-CC-Expire=86400&HW-CC-Sign=BCAFF6A04DEF83AAC94CDA8BEC8209CCC21F27EA252F35C0288375C226BBDE67)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/28nyTG_3SZKxL5kZs2JveQ/zh-cn_image_0000002558764688.gif)
 
 ## 应用内多窗
 

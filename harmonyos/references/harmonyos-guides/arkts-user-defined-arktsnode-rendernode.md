@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:28:19+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:104903202411a4d8f2898f51aa9871ab1c9443d3cac3b2d055e00a001efe2885
+content_hash: sha256:bec6aa8a6ee63c215ef5982a3fd9381f928097766cc65caedc05b5d6734897f1
 ---
 
 ## 概述
@@ -583,7 +583,7 @@ RenderNode中可以设置渲染相关的属性，包括：[backgroundColor](../h
 
 [CustomDrawCanvas.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/NativeType/CustomRenderNode/entry/src/main/ets/pages/CustomDrawCanvas.ets#L16-L163)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/zzFlXtRQSQSQD6yEG6vXWw/zh-cn_image_0000002558764500.png?HW-CC-KV=V1&HW-CC-Date=20260429T052817Z&HW-CC-Expire=86400&HW-CC-Sign=86C0C42217C71CC3B11D21B5C53DD348CC430AF0234F936E7F9A3A42B8AF3AA7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/zzFlXtRQSQSQD6yEG6vXWw/zh-cn_image_0000002558764500.png)
 
 **Node-API调用示例：**
 

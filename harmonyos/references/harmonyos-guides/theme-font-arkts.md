@@ -5,7 +5,7 @@ breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 文本 
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:36:14+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:47015ca489837abf4f9408e89c0e120b208fc0f4e139118897a19715fa7cf1ef
+content_hash: sha256:6d2911b5d99a9e600d8a00e9d0cf48591ab97d013fd268e79d828d034572258d
 ---
 
 ## 场景介绍
@@ -16,7 +16,7 @@ content_hash: sha256:47015ca489837abf4f9408e89c0e120b208fc0f4e139118897a19715fa7
 
 **图1** 主题字体的切换和使用
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/x8odoA5AQ2-jlHNLmiFBQA/zh-cn_image_0000002558765170.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053613Z&HW-CC-Expire=86400&HW-CC-Sign=57CFB761F1BF7FF9B46170F6DD5382CCDA237B2EA7FFE89CAAAC1721F38E969A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/x8odoA5AQ2-jlHNLmiFBQA/zh-cn_image_0000002558765170.jpg)
 
 针对主题字的切换使用，应用方应确保订阅主题字体变更事件，当接收到字体变更事件后，由应用方主动调用页面刷新才能实现主题字的切换，否则主题字只能在重启应用后才生效。
 
@@ -177,8 +177,8 @@ content_hash: sha256:47015ca489837abf4f9408e89c0e120b208fc0f4e139118897a19715fa7
 
 **图2** 主题字体1的效果
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/0X9EJBGJRRSbjBVRrypQuQ/zh-cn_image_0000002558605514.png?HW-CC-KV=V1&HW-CC-Date=20260429T053613Z&HW-CC-Expire=86400&HW-CC-Sign=3BBAFAD1F81AD89C0264E78AD28F86A576154FA3C7FA0BA4DF7060DDABFC4688)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/0X9EJBGJRRSbjBVRrypQuQ/zh-cn_image_0000002558605514.png)
 
 **图3** 主题字体2的效果
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/GXPIoXnfT66mk-ogaDxMGA/zh-cn_image_0000002589325041.png?HW-CC-KV=V1&HW-CC-Date=20260429T053613Z&HW-CC-Expire=86400&HW-CC-Sign=49362728B06DBEA244C75D7F09FCA63F6BAAC1229F2F00BB090327E1772F687A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/GXPIoXnfT66mk-ogaDxMGA/zh-cn_image_0000002589325041.png)

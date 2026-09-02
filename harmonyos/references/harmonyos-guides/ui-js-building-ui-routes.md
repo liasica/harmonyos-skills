@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:28:45+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:7873695a2a61daf932cb6cca7ffe6cf45ff0f363f20fa575c4a297560ca7d0c1
+content_hash: sha256:db1c76094207fce4845faf5a2fcf03cdd375312ced200c948dfb482055d6d339
 ---
 
 很多应用由多个页面组成，比如用户可以从音乐列表页面点击歌曲，跳转到该歌曲的播放界面。开发者需要通过页面路由将这些页面串联起来，按需实现跳转。
@@ -85,4 +85,4 @@ index和detail这两个页面均包含一个text组件和button组件：text组�
 
 运行效果如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/005wiEpyTWCeadK9wKC0Jw/zh-cn_image_0000002589244383.png?HW-CC-KV=V1&HW-CC-Date=20260429T052844Z&HW-CC-Expire=86400&HW-CC-Sign=80E788057CD753B32CA6C2A64C98DDD20C712701D3DE871ABC63BF217F362FD4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/005wiEpyTWCeadK9wKC0Jw/zh-cn_image_0000002589244383.png)

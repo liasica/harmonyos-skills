@@ -5,10 +5,10 @@ breadcrumb: 指南 > 应用测试 > 专项测试 > DevEco Testing > 回归测试
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:48:11+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:dfaca188d9806572c759cdea12cfb49aa5191d90229e1bcc8c138a8d25c11f4a
+content_hash: sha256:215ddb11e6c5db031d5bb715bd1b33c7443e7a2bcd6950f7fbe67510c7bb3f28
 ---
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/W5TTh-tgRYakIlHteTleOw/zh-cn_image_0000002492343756.png?HW-CC-KV=V1&HW-CC-Date=20260429T054805Z&HW-CC-Expire=86400&HW-CC-Sign=85D088C7AFA236C1C0101DD59B4F96C51C83FBED46CF839FDCAEAA3B4FB0585D "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/W5TTh-tgRYakIlHteTleOw/zh-cn_image_0000002492343756.png "点击放大")
 
 ## 回归测试
 
@@ -85,9 +85,9 @@ content_hash: sha256:dfaca188d9806572c759cdea12cfb49aa5191d90229e1bcc8c138a8d25c
 
 **步骤四：**在根目录下右键选择“DevEco Testing Hypium”-“生成测试服务包”，出现下图弹窗，选择“回归测试”，用户需填写待测试应用的名称及测试场景，信息填写完毕后点击“OK”即可在指定目录下查看测试包。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/3VO3n43XSJOw4bRa_zp1ag/zh-cn_image_0000002524503447.png?HW-CC-KV=V1&HW-CC-Date=20260429T054805Z&HW-CC-Expire=86400&HW-CC-Sign=7E5CCC4B61FF8A9CF3A8F89BD7237811F2F6D05C4D73A082266BF4C15795968C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/3VO3n43XSJOw4bRa_zp1ag/zh-cn_image_0000002524503447.png)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/uy1G_mN9S4aThGblOrEcdA/zh-cn_image_0000002492343754.png?HW-CC-KV=V1&HW-CC-Date=20260429T054805Z&HW-CC-Expire=86400&HW-CC-Sign=0A8C119CA9445BE39C42565F89BBA74998B08CE442994BCEE0A1B60941FFFAA5 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/uy1G_mN9S4aThGblOrEcdA/zh-cn_image_0000002492343754.png "点击放大")
 
 生成回归测试测试包，打包好的测试包支持在回归测试服务中本地执行。
 
@@ -95,7 +95,7 @@ content_hash: sha256:dfaca188d9806572c759cdea12cfb49aa5191d90229e1bcc8c138a8d25c
 
 进入DevEco Testing客户端，在左侧菜单栏选择“回归测试”，点击“回归测试”服务卡片，即进入任务创建界面。按需配置任务参数，点击创建任务即开始测试。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/IMtENkGHTgKMTyesx3pE4Q/zh-cn_image_0000002492343752.png?HW-CC-KV=V1&HW-CC-Date=20260429T054805Z&HW-CC-Expire=86400&HW-CC-Sign=71A1EDABF2CC9661682602F7A6F7D6DD272A246EC315BCBF1854B2F4D0BF7CDF "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/IMtENkGHTgKMTyesx3pE4Q/zh-cn_image_0000002492343752.png "点击放大")
 
 配置服务参数：
 
@@ -109,7 +109,7 @@ content_hash: sha256:dfaca188d9806572c759cdea12cfb49aa5191d90229e1bcc8c138a8d25c
 
 **测试包详情：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/tj4O3I_MQCOEIQp1DTaPIw/zh-cn_image_0000002538035122.png?HW-CC-KV=V1&HW-CC-Date=20260429T054805Z&HW-CC-Expire=86400&HW-CC-Sign=E9C17C0E84E04E80540D1E7703140004031DBE12AE7CB14B067B7301D18467A6 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/tj4O3I_MQCOEIQp1DTaPIw/zh-cn_image_0000002538035122.png "点击放大")
 
 点击查看测试包详情，即可查看测试包基本信息。
 
@@ -119,13 +119,13 @@ content_hash: sha256:dfaca188d9806572c759cdea12cfb49aa5191d90229e1bcc8c138a8d25c
 
 任务创建后即进入测试执行页面，测试过程中，在测试页面可以看到设备实时投屏、设备截图、测试步骤结果上报以及指标数据上报。执行过程中如果脚本执行失败，任务会立刻停止，生成的报告中仅包含任务失败前的数据信息。手动停止查看报告时，报告中仅包含报告停止前的数据信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/VLjr82mhTKeuPwqVagz_fw/zh-cn_image_0000002492343750.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T054805Z&HW-CC-Expire=86400&HW-CC-Sign=80F1307444DAD6560C43ADCF7E9528001215CC68DC10FA4FB8C85A096F0D5A59 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/VLjr82mhTKeuPwqVagz_fw/zh-cn_image_0000002492343750.jpg "点击放大")
 
 **查看报告**
 
 测试完成后，将自动跳转到报告界面。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/2sMDw4qDTpG-Jez0j_VXhg/zh-cn_image_0000002492343758.png?HW-CC-KV=V1&HW-CC-Date=20260429T054805Z&HW-CC-Expire=86400&HW-CC-Sign=72420843854A6788843399E317DB87DB02E17AD08C96CF39AD2C749A683BD5D2 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/2sMDw4qDTpG-Jez0j_VXhg/zh-cn_image_0000002492343758.png "点击放大")
 
 任务信息：在报告的最上方可查看本次任务的应用信息，运行时间，环境参数和执行日志，点击“打开目录”按钮，可以导出html格式的报告文件。
 

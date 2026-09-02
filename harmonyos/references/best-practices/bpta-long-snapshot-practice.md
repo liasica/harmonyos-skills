@@ -5,7 +5,7 @@ breadcrumb: 最佳实践 > 媒体 > 图片 > 长截图
 category: best-practices
 scraped_at: 2026-04-29T14:11:14+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:9f84e9b6892e323e44aa020ba06713c9ce4f7027d967c84ba6cdd9dcde8fb947
+content_hash: sha256:b7ed2f9414dd927a16160cdbb356abe483e958e512902bb1a92d892098f111f0
 ---
 
 ## 概述
@@ -21,13 +21,13 @@ List组件和Web组件实现长截图功能的原理相同，均可以通过模�
 长截图拼接原理如下，将每次滚动新进入屏幕的内容裁剪后，拼接到之前的屏幕截图，依次类推。
 
 **图1** 长截图拼接原理图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/F6a1FplgTlq2XFdAX-Jutg/zh-cn_image_0000002229449985.png?HW-CC-KV=V1&HW-CC-Date=20260429T061108Z&HW-CC-Expire=86400&HW-CC-Sign=2A056C724BF2B9BAAC89914D97E6F39CE9D3756EF075374F1B41FC45B4B3014B "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/F6a1FplgTlq2XFdAX-Jutg/zh-cn_image_0000002229449985.png "点击放大")
 
 长截图主要流程如下：
 
 **图2** 滚动长截图流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/AijPXT5yRbWzO6CuNyxatQ/zh-cn_image_0000002407557206.png?HW-CC-KV=V1&HW-CC-Date=20260429T061108Z&HW-CC-Expire=86400&HW-CC-Sign=61FFAAA7C58AE350DC0D7A1147FC634FDD999A5DC4E8F4267FD90B293667D04F "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/AijPXT5yRbWzO6CuNyxatQ/zh-cn_image_0000002407557206.png "点击放大")
 
 说明
 
@@ -47,7 +47,7 @@ List、Scroll、Grid、WaterFlow等滚动组件均是通过Scroller来控制组�
 
 点击“一键截图”，会生成整个列表的长截图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/bf8YXChhRTmsfw2FiBPpCg/zh-cn_image_0000002193850120.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061108Z&HW-CC-Expire=86400&HW-CC-Sign=CC910501CEA27B579630A0D6AA3340EA8548DCCFE682B22F18E5878963B72AEF "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/bf8YXChhRTmsfw2FiBPpCg/zh-cn_image_0000002193850120.gif "点击放大")
 
 **开发流程**
 
@@ -648,7 +648,7 @@ List、Scroll、Grid、WaterFlow等滚动组件均是通过Scroller来控制组�
 
 点击“滚动截图”按钮后，列表将自动滚动。点击列表中的任意条目时，滚动会立即停止，并开始截取从滚动开始到停止这段时间内的数据截图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/egZs3tB8TpSua6Kniy2eqw/zh-cn_image_0000002193850136.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061108Z&HW-CC-Expire=86400&HW-CC-Sign=42A36D98E04BE30D5D6B4DE78AF95CA902287F3C2EF60600DDFBE22C0CC8E0E5 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/egZs3tB8TpSua6Kniy2eqw/zh-cn_image_0000002193850136.gif "点击放大")
 
 **功能实现**
 
@@ -947,7 +947,7 @@ Web组件的长截图功能与之前介绍的滚动组件长截图在使用场�
 
 点击“截图”按钮即可完成整个网页的长截图，并可将截图保存至相册。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/h3Z7dMCPQnKa_zrGtAEp5g/zh-cn_image_0000002522310291.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061108Z&HW-CC-Expire=86400&HW-CC-Sign=8BEF4474674BA992FD8B0BE1F3989403403826657FB2DF696DC39B819C6AF381 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/h3Z7dMCPQnKa_zrGtAEp5g/zh-cn_image_0000002522310291.gif "点击放大")
 
 ### 功能实现
 

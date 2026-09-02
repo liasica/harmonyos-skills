@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-application-formerror
-title: @ohos.application.formError (formError)
+title: "@ohos.application.formError (formError)"
 breadcrumb: API参考 > 应用框架 > Form Kit（卡片开发服务） > 已停止维护的接口 > @ohos.application.formError (formError)
 category: harmonyos-references
 scraped_at: 2026-04-28T08:06:04+08:00

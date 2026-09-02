@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-awareness-metadatabinding
-title: @ohos.multimodalAwareness.metadataBinding (记忆链接)
+title: "@ohos.multimodalAwareness.metadataBinding (记忆链接)"
 breadcrumb: API参考 > 系统 > 硬件 > Multimodal Awareness Kit（多模态融合感知服务） > ArkTS API > @ohos.multimodalAwareness.metadataBinding (记忆链接)
 category: harmonyos-references
 scraped_at: 2026-04-28T08:10:56+08:00

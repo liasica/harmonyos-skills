@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:52:13+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:e4d62bf52d389702de861caa16ea9201d2e68c75cf0179cf55dc69021f01fddf
+content_hash: sha256:3ca1f50a08fa899ebc1c62c5767acb609a35dbedfcc0b5853f8950c7f1243bc5
 ---
 
 显示图标小符号的组件。相关资源可参考[系统图标](../design-guides/system-icons-0000001929854962.md)。
@@ -150,7 +150,7 @@ renderingStrategy(value: SymbolRenderingStrategy)
 
 不同渲染策略效果可参考以下示意图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/Kw7XpkjATGej2kgntVQkYA/zh-cn_image_0000002558766338.png?HW-CC-KV=V1&HW-CC-Date=20260429T055208Z&HW-CC-Expire=86400&HW-CC-Sign=A44AFAA9CACAB28DC503C7B9FA8BF6FE1E29D7BD70A8A51BDC27405CC694D704)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/Kw7XpkjATGej2kgntVQkYA/zh-cn_image_0000002558766338.png)
 
 ### effectStrategy
 
@@ -776,7 +776,7 @@ PhonePC/2in1TabletTVWearable
 80. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/_ghKFWWiQkqHZ7Fwx2bFYg/zh-cn_image_0000002589246149.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055208Z&HW-CC-Expire=86400&HW-CC-Sign=6BC9792C3AE1010EFFBB96CFEE32F416CA7314956CF502E940712178D5AB769A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/_ghKFWWiQkqHZ7Fwx2bFYg/zh-cn_image_0000002589246149.gif)
 
 ### 示例2（设置动效和阴影）
 
@@ -880,7 +880,7 @@ PhonePC/2in1TabletTVWearable
 95. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/zaPNiWCnT9-Jo_gl2Ey4dg/zh-cn_image_0000002558766340.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055208Z&HW-CC-Expire=86400&HW-CC-Sign=A2BE90CCB406FF79C93F548ECA076C0DDB97393E650382421AE1560301FB48EB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/zaPNiWCnT9-Jo_gl2Ey4dg/zh-cn_image_0000002558766340.gif)
 
 ### 示例3（设置颜色渐变）
 
@@ -1021,4 +1021,4 @@ PhonePC/2in1TabletTVWearable
 132. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/bmts0TcpQ7GspNiGtS3vkw/zh-cn_image_0000002558606682.jpeg?HW-CC-KV=V1&HW-CC-Date=20260429T055208Z&HW-CC-Expire=86400&HW-CC-Sign=13FE1647AD65267910409B80726A9C76920CB8E61E40412A209E37B91A1D83E1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/bmts0TcpQ7GspNiGtS3vkw/zh-cn_image_0000002558606682.jpeg)

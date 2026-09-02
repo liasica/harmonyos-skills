@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:27:33+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:8bf49de19b5d3583c736bf1f0750a31fd5601d943f82587c00efbf0a7af83c16
+content_hash: sha256:f3cd7c87284c59a1ebb0c80a91f894d427ab267a810094605720f74febd188ed
 ---
 
 ArkTS提供了渲染控制能力。条件渲染可根据应用状态，使用if、else和else if渲染相应的UI内容。
@@ -67,7 +67,7 @@ ArkTS提供了渲染控制能力。条件渲染可根据应用状态，使用if�
 
 [IfRendering.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/RenderingControl/entry/src/main/ets/pages/RenderingIf/IfRendering.ets#L16-L43)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/rvdtQ32HSkSMAE-RjQrUyw/zh-cn_image_0000002589324001.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052731Z&HW-CC-Expire=86400&HW-CC-Sign=E26F34D1528109B1FBE522A71576C403D424FAA9022442DEFA1C9FF6B4E5C9AE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/rvdtQ32HSkSMAE-RjQrUyw/zh-cn_image_0000002589324001.gif)
 
 if语句的每个分支都包含一个构建函数。此类构建函数必须创建一个或多个子组件。在初始渲染时，if语句会执行构建函数，并将生成的子组件添加到其父组件中。
 
@@ -127,7 +127,7 @@ if语句的每个分支都包含一个构建函数。此类构建函数必须创
 
 [IfElseRendering.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/RenderingControl/entry/src/main/ets/pages/RenderingIf/IfElseRendering.ets#L16-L57)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/bW_p9ijgQriVwaaw6U-XTA/zh-cn_image_0000002589243941.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052731Z&HW-CC-Expire=86400&HW-CC-Sign=496382BFE153EC9FE36900852B8092797AA00BAF689457BBAAF0B562FC709A63)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/bW_p9ijgQriVwaaw6U-XTA/zh-cn_image_0000002589243941.gif)
 
 **初次渲染**：创建CounterView子组件（label为 'CounterView #positive'），其状态变量counter初始值为0。
 
@@ -191,7 +191,7 @@ CounterView（label为 'CounterView #positive'）和CounterView（label为 'Coun
 
 [KeepCounter.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/RenderingControl/entry/src/main/ets/pages/RenderingIf/KeepCounter.ets#L16-L59)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/xDfvdfMNS2muuqA7at0lqw/zh-cn_image_0000002558764134.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052731Z&HW-CC-Expire=86400&HW-CC-Sign=D1B47048606B70644DAEAC16B01D74515215AC2E8EB622862A85F6E17B7C67FA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/xDfvdfMNS2muuqA7at0lqw/zh-cn_image_0000002558764134.gif)
 
 此处，@State counter变量归父组件所有。因此，当KeepCounterView组件实例被删除时，该变量不会被销毁。KeepCounterView组件通过[@Link](arkts-link.md)装饰器引用状态。状态必须从子级移动到其父级（或父级的父级），以避免在条件内容或重复内容被销毁时丢失状态。
 
@@ -251,4 +251,4 @@ CounterView（label为 'CounterView #positive'）和CounterView（label为 'Coun
 
 [NestedIf.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/RenderingControl/entry/src/main/ets/pages/RenderingIf/NestedIf.ets#L16-L64)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/_e-BtywpToWA_DrIsXPxuA/zh-cn_image_0000002558604478.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052731Z&HW-CC-Expire=86400&HW-CC-Sign=23BD907B8BE2BA33D6DB03AE0009E913DCAA1A92B06B41E68BAD83A8D2A79479)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/_e-BtywpToWA_DrIsXPxuA/zh-cn_image_0000002558604478.gif)

@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:28:17+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:0c02fe11732f202e247a095a98562c4aa09b4a3728a54fce894a415285d87548
+content_hash: sha256:52e5e645d0b52c327c1e5c8e00f74b7b900291aebd20d38565aa57106a4636ac
 ---
 
 动画效果可以丰富界面的细节，提升UI界面的真实感和品质感。例如，模糊和阴影效果可以让物体看起来更加立体，使得动画更加生动。ArkUI提供了丰富的效果接口，开发者可快速打造出精致、个性化的效果。本章主要介绍常用的模糊、阴影和色彩效果等接口。
@@ -52,7 +52,7 @@ content_hash: sha256:0c02fe11732f202e247a095a98562c4aa09b4a3728a54fce894a415285d
 
 [BlurEffectsExample.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/Animation/entry/src/main/ets/pages/animationBlur/template1/BlurEffectsExample.ets#L15-L37)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/YYrLmNjvSGiz4gvo99kwpQ/zh-cn_image_0000002589244297.png?HW-CC-KV=V1&HW-CC-Date=20260429T052814Z&HW-CC-Expire=86400&HW-CC-Sign=955050F6DE2F51845CDD9803CFFAC49A61D845467D264F93EECDF7F81DDB97E0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/YYrLmNjvSGiz4gvo99kwpQ/zh-cn_image_0000002589244297.png)
 
 ## 使用blur为组件添加内容模糊
 
@@ -116,7 +116,7 @@ content_hash: sha256:0c02fe11732f202e247a095a98562c4aa09b4a3728a54fce894a415285d
 
 [Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/Animation/entry/src/main/ets/pages/animationBlur/template2/Index.ets#L15-L71)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/qRauI5DHRr-YPgkvV4u_BA/zh-cn_image_0000002558764490.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052814Z&HW-CC-Expire=86400&HW-CC-Sign=7E34CA64537670BCA5602EB6E7F1F51522C7DC6068FD88586886705AA2A09BCB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/qRauI5DHRr-YPgkvV4u_BA/zh-cn_image_0000002558764490.gif)
 
 ## 使用backgroundBlurStyle为组件添加背景模糊效果
 
@@ -388,7 +388,7 @@ content_hash: sha256:0c02fe11732f202e247a095a98562c4aa09b4a3728a54fce894a415285d
 
 [BackDropBlurStyleDemo.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/Animation/entry/src/main/ets/pages/animationBlur/template3/BackDropBlurStyleDemo.ets#L15-L279)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/90koVDljRk2HOySyn9FNHQ/zh-cn_image_0000002558604834.png?HW-CC-KV=V1&HW-CC-Date=20260429T052814Z&HW-CC-Expire=86400&HW-CC-Sign=6D79308251A3603746FE0CE9069D5B5DC366AB80F9D0C908CABA4FEC51394D3A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/90koVDljRk2HOySyn9FNHQ/zh-cn_image_0000002558604834.png)
 
 ## 使用foregroundBlurStyle为组件添加内容模糊效果
 
@@ -658,7 +658,7 @@ content_hash: sha256:0c02fe11732f202e247a095a98562c4aa09b4a3728a54fce894a415285d
 
 [ForegroundBlurStyleDemo.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/Animation/entry/src/main/ets/pages/animationBlur/template4/ForegroundBlurStyleDemo.ets#L15-L277)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/mAwoeLXaSuK4OOeTwHY05g/zh-cn_image_0000002589324359.png?HW-CC-KV=V1&HW-CC-Date=20260429T052814Z&HW-CC-Expire=86400&HW-CC-Sign=9B3A6AD67D6FBB8D6E171D35A703E511E3DFBAEAC0707F781818711387D38D3F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/mAwoeLXaSuK4OOeTwHY05g/zh-cn_image_0000002589324359.png)
 
 ## 使用motionBlur为组件添加运动模糊效果
 
@@ -706,4 +706,4 @@ content_hash: sha256:0c02fe11732f202e247a095a98562c4aa09b4a3728a54fce894a415285d
 
 [MotionBlurTest.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/Animation/entry/src/main/ets/pages/animationBlur/template5/MotionBlurTest.ets#L15-L55)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/bEKT_1HkQEmQ8LfxaEevHg/zh-cn_image_0000002589244299.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052814Z&HW-CC-Expire=86400&HW-CC-Sign=5B99587226F15314BAB1B8E558844FDB4591667E67A73A9244640F3B9BFC28DC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/bEKT_1HkQEmQ8LfxaEevHg/zh-cn_image_0000002589244299.gif)

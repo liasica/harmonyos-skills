@@ -5,7 +5,7 @@ breadcrumb: 指南 > NDK开发 > 代码开发 > 使用Node-API实现ArkTS/JS与C
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:44:04+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:bf9760bf7c0f0058ce8eb5e977dc3871d36a0328c23b1ef3a3938ca51865c7cc
+content_hash: sha256:d7828e9445ab30f1e910770eaa9f9b3fdb6b7adb3a8f2fc722dd57a986730ceb
 ---
 
 ## 场景介绍
@@ -21,11 +21,11 @@ napi\_queue\_async\_work接口使用uv\_queue\_work能力，并管理回调中na
 
 异步调用支持callback和Promise两种方式，选择哪种方式由开发者决定。以下是两种方式的示例代码：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/YgjiPm8GTbqMrFRodIUGPg/zh-cn_image_0000002558606216.png?HW-CC-KV=V1&HW-CC-Date=20260429T054403Z&HW-CC-Expire=86400&HW-CC-Sign=378565A2EA1C5397D0500F0239057838CE958FF7E9EAEFC288D86B0FACBD42B5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/YgjiPm8GTbqMrFRodIUGPg/zh-cn_image_0000002558606216.png)
 
 ## 使用Promise方式示例
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/36VPtzhiQmGFZvjPKKeJ2w/zh-cn_image_0000002589325743.png?HW-CC-KV=V1&HW-CC-Date=20260429T054403Z&HW-CC-Expire=86400&HW-CC-Sign=D7DE2482DE50236B786112657B148C57FEC1C49A0A992147FE72B6F446951591)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/36VPtzhiQmGFZvjPKKeJ2w/zh-cn_image_0000002589325743.png)
 
 1. CMakeLists.txt配置
 
@@ -156,7 +156,7 @@ napi\_queue\_async\_work接口使用uv\_queue\_work能力，并管理回调中na
 
 ## 使用callback方式示例
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/fGCoShzpREet-WgvuSE68A/zh-cn_image_0000002589245683.png?HW-CC-KV=V1&HW-CC-Date=20260429T054403Z&HW-CC-Expire=86400&HW-CC-Sign=D2F4464C669A56A29DB68C89A7A11B778EF71626ABF1AB41D65E61770048F3AB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/fGCoShzpREet-WgvuSE68A/zh-cn_image_0000002589245683.png)
 
 1. 使用napi\_create\_async\_work创建异步任务，并使用napi\_queue\_async\_work将异步任务加入队列，等待执行。
 

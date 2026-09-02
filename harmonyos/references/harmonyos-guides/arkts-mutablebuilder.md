@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:27:07+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:84a114697e76fde575a05c4752fdd210ad9c30119a2223f2907fba351e921759
+content_hash: sha256:8f8b8fb45c85cddd3a40c162513a577410da7ba46e1d285d76995bf52571d631
 ---
 
 当在一个自定义组件内使用多个全局[@Builder](arkts-builder.md)函数实现UI的不同效果时，代码维护将变得非常困难，且页面不够整洁。此时，可以使用[wrapBuilder](arkts-wrapbuilder.md)封装全局@Builder。但是wrapBuilder不支持动态切换@Builder，引入[mutableBuilder](../harmonyos-references/ts-universal-mutablebuilder.md)实现全局@Builder的动态切换。
@@ -216,7 +216,7 @@ mutableBuilder是一个模板函数，返回一个[MutableBuilder](../harmonyos-
 
 点击Button，可将textBuilder动态更改为buttonBuilder，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/1NDpWqXzSkGPOzX43C0C3g/zh-cn_image_0000002558604416.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052705Z&HW-CC-Expire=86400&HW-CC-Sign=FA57764DCC3585E445BFF875E0ADC2BACE6F32E95C37D19728AB4FB87600DB0D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/1NDpWqXzSkGPOzX43C0C3g/zh-cn_image_0000002558604416.gif)
 
 ## 使用mutableBuilder显示弹出菜单
 
@@ -318,6 +318,6 @@ mutableBuilder对应的@Builder函数中可使用[MutableBinding](../harmonyos-r
 
 点击Button，可将textBuilder动态切换为buttonBuilder。点击buttonBuilder，this.message会自动加B，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/jutSO5BCRIeyUv3T-WbBKA/zh-cn_image_0000002589323941.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052705Z&HW-CC-Expire=86400&HW-CC-Sign=CC0A8DA40495DB1F3EDB37B13F58DA3FF3D6C2E711E45693762EAABC536B6B64)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/jutSO5BCRIeyUv3T-WbBKA/zh-cn_image_0000002589323941.gif)
 
 点击Button将textBuilder动态切换为buttonBuilder时，@Monitor会监听到全局@Builder的变化，并打印日志@Builder change. is buttonBuilder: true。

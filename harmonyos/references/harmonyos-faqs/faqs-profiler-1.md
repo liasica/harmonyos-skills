@@ -5,7 +5,7 @@ breadcrumb: FAQ > DevEco Studio > 性能分析 > Profiler分析任务录制失�
 category: harmonyos-faqs
 scraped_at: 2026-04-29T14:21:28+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:51ddda4909c29cedf652858a54964e68c2a78935538eacfb22bac41e805b6537
+content_hash: sha256:8d727438157f83b793c7a23201512fbe6eaaaa96d6f0813da66324e336f81558
 ---
 
 **问题现象**
@@ -16,7 +16,7 @@ content_hash: sha256:51ddda4909c29cedf652858a54964e68c2a78935538eacfb22bac41e805
 
 * Session列表中任务显示异常图标。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/MsswAGj1Q8itdVWWrkO5vQ/zh-cn_image_0000002194318540.png?HW-CC-KV=V1&HW-CC-Date=20260429T062128Z&HW-CC-Expire=86400&HW-CC-Sign=9CE62E5B40E68B2C1350A5F7918B01B125E109CB69157FBD4776F273C7801EAE)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/MsswAGj1Q8itdVWWrkO5vQ/zh-cn_image_0000002194318540.png)
 
 **解决措施**
 

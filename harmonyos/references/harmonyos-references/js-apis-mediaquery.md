@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-mediaquery
-title: @ohos.mediaquery (媒体查询)
+title: "@ohos.mediaquery (媒体查询)"
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.mediaquery (媒体查询)
 category: harmonyos-references
 scraped_at: 2026-04-29T13:50:46+08:00
 doc_updated_at: 2026-03-27
-content_hash: sha256:4aa46126e9e6325e002120cb422fa75f0b978b2f2f61385ece82c49492630e9a
+content_hash: sha256:11c0b122ee9d021b75d1c908bc274471ee9e488427104ee9486c501f0407972b
 ---
 
 提供根据不同媒体类型定义不同的样式。
@@ -209,4 +209,4 @@ PhonePC/2in1TabletTVWearable
 37. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/NYRrdzJ2RP6ra9c-8hcd5w/zh-cn_image_0000002558606286.png?HW-CC-KV=V1&HW-CC-Date=20260429T055044Z&HW-CC-Expire=86400&HW-CC-Sign=7EF4D6843A1FA12CC235F1C5ED16333B89438254A74DF54F100DFBDBEE414B8C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/NYRrdzJ2RP6ra9c-8hcd5w/zh-cn_image_0000002558606286.png)

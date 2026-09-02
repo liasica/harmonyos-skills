@@ -5,12 +5,12 @@ breadcrumb: 指南 > 应用服务 > Wallet Kit（钱包服务） > 数字车钥�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:40:45+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:400ce9bd069d42e8f7dd80c9c40c298a21048e30491dbe8575bd28a9cd912277
+content_hash: sha256:8c1861bc36f7cc22c7f3d25c0c1811b0f891326ee64432ba76b112cdb7018709
 ---
 
 数字车钥匙开通完成后，车主APP可以通过车控指令远程控制车辆的开门等操作。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/TX8n9KWYTwqsfRLwgXyEIA/zh-cn_image_0000002589325575.png?HW-CC-KV=V1&HW-CC-Date=20260429T054044Z&HW-CC-Expire=86400&HW-CC-Sign=9770997D0BFF43621282D46ACD9A1C022B36EAAC14E14D6229A8E6F6AA24E073)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/TX8n9KWYTwqsfRLwgXyEIA/zh-cn_image_0000002589325575.png)
 
 典型的交互流程如下:
 

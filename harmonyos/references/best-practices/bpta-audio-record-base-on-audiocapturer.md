@@ -5,7 +5,7 @@ breadcrumb: 最佳实践 > 媒体 > 音频和视频 > 音频录制系列开发�
 category: best-practices
 scraped_at: 2026-04-29T14:11:28+08:00
 doc_updated_at: 2026-03-17
-content_hash: sha256:879186fa4b2385da8e84152f1ec5f3f9f9a5a2b14444281f6ea34ebcaaa48948
+content_hash: sha256:7541d10467b13d3e9dde79f0ee738331063a4f2afcb40059f31abc0d833c5012
 ---
 
 ## 概述
@@ -14,7 +14,7 @@ AudioCapturer是用于音频录制的ArkTS API，仅支持录制PCM格式，可�
 
 基于AudioCapturer录制PCM音频（ArkTS）实现的功能效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/UlDyp8Q5TKixpxvKRY409Q/zh-cn_image_0000002524061072.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061123Z&HW-CC-Expire=86400&HW-CC-Sign=3959CCA03BDF539C912630FBC76A787C5FA3B5ACD568DD47D5722E4637408311 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/UlDyp8Q5TKixpxvKRY409Q/zh-cn_image_0000002524061072.gif "点击放大")
 
 本文的主要内容如下：
 
@@ -28,7 +28,7 @@ AudioCapturer可以录制PCM（Pulse Code Modulation）音频数据，能够快�
 
 **图1** AudioCapturer状态变化示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/i11zL9JzT368OISEwfV9Xw/zh-cn_image_0000002555220981.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T061123Z&HW-CC-Expire=86400&HW-CC-Sign=EEB55C7E3CD4F6E07E8B510FEF457AAC70F692F8DEE61EE06915616A37F74BF6 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/i11zL9JzT368OISEwfV9Xw/zh-cn_image_0000002555220981.jpg "点击放大")
 
 ### 开发步骤
 

@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用服务 > Call Service Kit（通话服务） > 去电�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:37:38+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:00f4ae4512be16aa2f3b19db70294e9e47dbd11550106f7b9efc7fbdc466daf7
+content_hash: sha256:00a0eaf8fe94beffa4150ff45606edd126c7c4c61167a445f446ee02a606c1e6
 ---
 
 ## 场景介绍
@@ -30,7 +30,7 @@ content_hash: sha256:00f4ae4512be16aa2f3b19db70294e9e47dbd11550106f7b9efc7fbdc46
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/sWyPEyMJTK-8KLisbAbhCA/zh-cn_image_0000002589245141.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053737Z&HW-CC-Expire=86400&HW-CC-Sign=01FCCD4C371576FC66A2DC828BDC23C5B8FC742538CB6E7686B641DB1548EB94)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/sWyPEyMJTK-8KLisbAbhCA/zh-cn_image_0000002589245141.jpg)
 
 ## 接口说明
 

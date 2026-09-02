@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:27:51+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:14c6a90d1830a6e1a021c9f57c1c755de8f7ed731adcaef94a2525126511dd7f
+content_hash: sha256:8c341831c98ede681de37d159e8c7b0b8333ed739ba2c1a2e4f0e2f41069a2a3
 ---
 
 Radio是单选框组件，通常用于提供相应的用户交互选择项，同一组的Radio中只有一个可以被选中。具体用法请参考[Radio](../harmonyos-references/ts-basic-components-radio.md)。
@@ -31,7 +31,7 @@ Radio支持设置选中状态和非选中状态的样式。
 
 [RadioButton.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ChooseComponent/entry/src/main/ets/pages/radio/RadioButton.ets#L34-L39)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/GchjfInxSkS6eFFFhPD7Lg/zh-cn_image_0000002558604718.png?HW-CC-KV=V1&HW-CC-Date=20260429T052750Z&HW-CC-Expire=86400&HW-CC-Sign=944787ABC751860325450047696BB86D04B3C7F69F2E8F05DC26A7D8DA53D8BF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/GchjfInxSkS6eFFFhPD7Lg/zh-cn_image_0000002558604718.png)
 
 ## 添加事件
 
@@ -120,4 +120,4 @@ Radio支持设置选中状态和非选中状态的样式。
 
 [RadioSample.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ChooseComponent/entry/src/main/ets/pages/radio/RadioSample.ets#L16-L76)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/-d591WanSLOise_uAzwEvA/zh-cn_image_0000002589324243.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052750Z&HW-CC-Expire=86400&HW-CC-Sign=50C33DDFBDD1122BF80920D97F933A1DA344A4C9F337EF8AAE53721A37FD5456)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/-d591WanSLOise_uAzwEvA/zh-cn_image_0000002589324243.gif)

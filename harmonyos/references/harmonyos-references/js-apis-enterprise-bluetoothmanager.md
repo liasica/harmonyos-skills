@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-enterprise-bluetoothmanager
-title: @ohos.enterprise.bluetoothManager（蓝牙管理）
+title: "@ohos.enterprise.bluetoothManager（蓝牙管理）"
 breadcrumb: API参考 > 系统 > 基础功能 > MDM Kit（企业设备管理服务） > ArkTS API > @ohos.enterprise.bluetoothManager（蓝牙管理）
 category: harmonyos-references
 scraped_at: 2026-04-29T14:01:09+08:00

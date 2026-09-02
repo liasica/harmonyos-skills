@@ -5,7 +5,7 @@ breadcrumb: 指南 > AI > Speech Kit（场景化语音服务） > 朗读控件
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:43:49+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:278b2c6d534732aa2614ed697ab54b7ff5444c78a516c9aa8fcc760e33dd8b68
+content_hash: sha256:33f8982bc50f11fa7ae194d5ec38c7c9149e5164fd9761cd600ce4105ca1fac7
 ---
 
 ## 适用场景
@@ -14,7 +14,7 @@ content_hash: sha256:278b2c6d534732aa2614ed697ab54b7ff5444c78a516c9aa8fcc760e33d
 
 本章节将向您介绍如何使用朗读组件，效果如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/ao9tUI0DTxOuUzOUmIZnTw/zh-cn_image_0000002558606196.png?HW-CC-KV=V1&HW-CC-Date=20260429T054017Z&HW-CC-Expire=86400&HW-CC-Sign=2F53D530AE2DF1DA2F5ADEDDF57A0A93599C7C71A236D0E7FE23E8D4689FAD5D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/ao9tUI0DTxOuUzOUmIZnTw/zh-cn_image_0000002558606196.png)
 
 ## 接口说明
 

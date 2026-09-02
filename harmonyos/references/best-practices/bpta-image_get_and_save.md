@@ -5,14 +5,14 @@ breadcrumb: 最佳实践 > 媒体 > 图片 > 图片获取与保存实践
 category: best-practices
 scraped_at: 2026-04-29T14:11:14+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:7d91505fb3235a6a9620bccbb81492dfe1af3d3f96ce9ba73c74fe53aaf062f4
+content_hash: sha256:efcfe8670402567f86e9443d19e5f83b1a46976872696c30b0f10d516a3d8c82
 ---
 
 ## 概述
 
 应用在业务流程中常需要获取设备图片用于编辑、分享等操作，可能还需要读取图片信息、将图像保存到本地等。本文介绍了HarmonyOS上几种常见的获取图片的方式、获取后读取图片信息、以及将图片保存在本地的操作，可供开发者学习和参考。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/O08BNudHRsq_39y7-tTqzA/zh-cn_image_0000002194009696.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061108Z&HW-CC-Expire=86400&HW-CC-Sign=8F8F9ABCAD9F8E0A3F2B78BEC392F4B41783846BBECB8FAC63FF1B31B858FB75)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/O08BNudHRsq_39y7-tTqzA/zh-cn_image_0000002194009696.gif)
 
 ## 获取图片
 

@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-serialmanager
-title: @ohos.usbManager.serial (串口管理)
+title: "@ohos.usbManager.serial (串口管理)"
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > ArkTS API > 设备管理 > @ohos.usbManager.serial (串口管理)
 category: harmonyos-references
 scraped_at: 2026-04-28T08:09:29+08:00

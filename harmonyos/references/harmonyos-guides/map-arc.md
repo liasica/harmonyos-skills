@@ -5,14 +5,14 @@ breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 在地图上绘�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:39:10+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:8147dd759ba0043776753fb429df9b50ecb07ed5af0f3d8ed2169134c4abb120
+content_hash: sha256:f8e3d132eb8664dcd7c450609450da32422e9d34375c4f7afc08c029749dfbd8
 ---
 
 ## 场景介绍
 
 本章节将向您介绍如何在地图上绘制弧线，通过[MapArcParams](../harmonyos-references/map-common.md#maparcparams)类设置弧线的位置、宽度、颜色等参数。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/Wl09QgbKTWeHostP573a1g/zh-cn_image_0000002589245345.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053903Z&HW-CC-Expire=86400&HW-CC-Sign=38D73BC7BE228F552226703D94AD1B705CF0E6C8706D6E0F35288D1D7C6BBA99 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/Wl09QgbKTWeHostP573a1g/zh-cn_image_0000002589245345.jpg "点击放大")
 
 ## 接口说明
 
@@ -113,4 +113,4 @@ content_hash: sha256:8147dd759ba0043776753fb429df9b50ecb07ed5af0f3d8ed2169134c4a
    74. }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/89c11aTORiKFt_1HbtSR3w/zh-cn_image_0000002558765538.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053903Z&HW-CC-Expire=86400&HW-CC-Sign=B43484BC61FFCC5268D37A7181BEFDAC814E0997E6ACC56123F1F406F6FC0517 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/89c11aTORiKFt_1HbtSR3w/zh-cn_image_0000002558765538.jpg "点击放大")

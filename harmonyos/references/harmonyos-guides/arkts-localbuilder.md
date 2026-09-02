@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-localbuilder
-title: @LocalBuilder装饰器： 维持组件关系
+title: "@LocalBuilder装饰器： 维持组件关系"
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式基本语法 > 组件扩展 > @LocalBuilder装饰器： 维持组件关系
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:27:07+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:122f6892b92f21de36a619868b838fb4759190d9c6fb0bc171a550773b24198e
+content_hash: sha256:e303780314d5d03390607613dcf69eb1819eee4af5e3336fa8497491fcafe741
 ---
 
 当开发者使用局部@Builder进行引用数据传递时，需要考虑组件的父子关系。然而在使用.bind(this)的方式更改函数调用上下文后，会出现组件的父子关系与状态管理的父子关系不一致的问题。为了解决这一问题，引入@LocalBuilder装饰器。@LocalBuilder拥有和局部@Builder相同的功能，且比局部@Builder能够更好的确定组件的父子关系和状态管理的父子关系。
@@ -51,7 +51,7 @@ content_hash: sha256:122f6892b92f21de36a619868b838fb4759190d9c6fb0bc171a550773b2
 
 跨组件传递局部@Builder函数时，会使用.bind(this)更改函数上下文，但这可能会导致组件的父子关系与状态管理的父子关系不一致。而@LocalBuilder无论是否使用.bind(this)，都不会改变组件的父子关系，即@LocalBuilder中定义组件所属的父组件是确定的，无法被改变。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/OAG4OQsYSHyOK-bMKim2Eg/zh-cn_image_0000002589323935.png?HW-CC-KV=V1&HW-CC-Date=20260429T052705Z&HW-CC-Expire=86400&HW-CC-Sign=7CBAB39B1AE34306131F227AE83F9F7DDBC9FFACF902D1CF649640FC8FB80AC6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/OAG4OQsYSHyOK-bMKim2Eg/zh-cn_image_0000002589323935.png)
 
 说明
 
@@ -569,7 +569,7 @@ bind()方法创建一个新的函数，称为绑定函数，当调用者绑定bi
 
 [ProblemUINotRefreshPositive.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/localBuilder/ProblemUINotRefreshPositive.ets#L15-L58)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/aTQkVnwsRXir-Qnla6DFdA/zh-cn_image_0000002589243875.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052705Z&HW-CC-Expire=86400&HW-CC-Sign=372830F806AD52EDD9D728AF6B1BF2F77531A9BC0E314F7178F6913DCD076109)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/aTQkVnwsRXir-Qnla6DFdA/zh-cn_image_0000002589243875.gif)
 
 ### @LocalBuilder函数在参数处直接调用出现布局错乱
 
@@ -609,7 +609,7 @@ bind()方法创建一个新的函数，称为绑定函数，当调用者绑定bi
 29. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/xQvw1BeEQWG5jLlWX7nWIQ/zh-cn_image_0000002558764068.png?HW-CC-KV=V1&HW-CC-Date=20260429T052705Z&HW-CC-Expire=86400&HW-CC-Sign=824C2440261F18543B752F2715E3DB6714B01246761FBD9643021BCDF793D442)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/xQvw1BeEQWG5jLlWX7nWIQ/zh-cn_image_0000002558764068.png)
 
 【正例】
 
@@ -647,4 +647,4 @@ bind()方法创建一个新的函数，称为绑定函数，当调用者绑定bi
 29. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/Gf0RtI3DSIyc2zX3kY0u_Q/zh-cn_image_0000002558604412.png?HW-CC-KV=V1&HW-CC-Date=20260429T052705Z&HW-CC-Expire=86400&HW-CC-Sign=487F69D1AB3096E8F7BFCB9D3EC356FFDC6D410DCDAD2D359828CA081E2771E4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/Gf0RtI3DSIyc2zX3kY0u_Q/zh-cn_image_0000002558604412.png)

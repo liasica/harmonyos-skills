@@ -5,7 +5,7 @@ breadcrumb: FAQ > DevEco Studio > 编译构建 > 编译报错“The type of targ
 category: harmonyos-faqs
 scraped_at: 2026-04-29T14:20:53+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:c3f01615110ad91c94f6c4374f0c89243d5f9ff0bb38864392dd79296793b0af
+content_hash: sha256:04c3cdec7c8b0a18681175852c457438c5cfa0816e8543b5aaa653e493f0dfb7
 ---
 
 **错误描述**
@@ -16,7 +16,7 @@ content_hash: sha256:c3f01615110ad91c94f6c4374f0c89243d5f9ff0bb38864392dd7929679
 
 指定target设备的类型与模块配置的设备类型不匹配。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/bTKPbsMNQyWsO2RLaT_D2A/zh-cn_image_0000002194158392.png?HW-CC-KV=V1&HW-CC-Date=20260429T062052Z&HW-CC-Expire=86400&HW-CC-Sign=A4DDFFC032AE995195AFFC8F44EC85D7EBFAF5B4CD78F820B144CFB155760B3E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/bTKPbsMNQyWsO2RLaT_D2A/zh-cn_image_0000002194158392.png)
 
 **解决措施**
 

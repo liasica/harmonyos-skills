@@ -5,7 +5,7 @@ breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 应用冻屏类问题�
 category: best-practices
 scraped_at: 2026-04-29T14:14:10+08:00
 doc_updated_at: 2026-03-17
-content_hash: sha256:0b484c8e9320bcc53ad73ecc01880888273ac1b2f6dfddd4262adbebd09a4abf
+content_hash: sha256:d3c31c96783ff363c346216bb72de36a659acd1704173fb8fe32498673fd5b2f
 ---
 
 ## 概述
@@ -61,7 +61,7 @@ content_hash: sha256:0b484c8e9320bcc53ad73ecc01880888273ac1b2f6dfddd4262adbebd09
 
 ## 问题分类
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/BzsPWpEGT5WSUUntIAzQMw/zh-cn_image_0000002370565528.png?HW-CC-KV=V1&HW-CC-Date=20260429T061408Z&HW-CC-Expire=86400&HW-CC-Sign=1BCE87D30573DC5B1D999C3B9DBF0254ADEA288B249E76CAAF3CE779A2743C28)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/BzsPWpEGT5WSUUntIAzQMw/zh-cn_image_0000002370565528.png)
 
 总结栈顶在方舟的应用冻屏（AppFreeze）问题根因以及每种问题的典型特征，归纳如下：
 
@@ -117,9 +117,9 @@ content_hash: sha256:0b484c8e9320bcc53ad73ecc01880888273ac1b2f6dfddd4262adbebd09
 
 3S栈：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/-aFCAAtBT8mXL1nAVjW6VA/zh-cn_image_0000002404125189.png?HW-CC-KV=V1&HW-CC-Date=20260429T061408Z&HW-CC-Expire=86400&HW-CC-Sign=36CEDBF028150C4709C99BB4E2AB23B6F476252593A5A93628E9DE1BFA27F82E)6S栈：
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/-aFCAAtBT8mXL1nAVjW6VA/zh-cn_image_0000002404125189.png)6S栈：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/qn3E_yNtQuCHXK9ObeZxOA/zh-cn_image_0000002370405648.png?HW-CC-KV=V1&HW-CC-Date=20260429T061408Z&HW-CC-Expire=86400&HW-CC-Sign=BC0072243B234EB8BCFCB306D679709440CBC5001D6014B511B701C22BDCD69C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/qn3E_yNtQuCHXK9ObeZxOA/zh-cn_image_0000002370405648.png)
 
 解决方案：下面是应用findXXXList接口的伪代码示例，该接口的功能是返回[start,end]区间中缺失消息组成的列表，当indexList很大时，循环遍历查找将非常耗时，可能造成应用appfreeze。伙伴侧的规避方案是设置一个定时器做超时检测，当for循环代码执行超时后则直接跳出循环，避免发生应用冻屏（AppFreeze）。
 
@@ -143,11 +143,11 @@ content_hash: sha256:0b484c8e9320bcc53ad73ecc01880888273ac1b2f6dfddd4262adbebd09
 
 该案例主线程的trace如下，从trace可以看出，应用在频繁调用某个接口。打开其中一小段发现是在频繁调用反序列化接口，每段反序列化的时间1us以上。反序列化接口在应用跨线程传输数据时调用，如调用Work的PostMessage接口或TaskPool的execute接口。由此可确认，该freeze问题发生的根因是应用频繁跨线程传输数据导致。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/b_HTc4xVQsKREggBmbA0JA/zh-cn_image_0000002404045353.png?HW-CC-KV=V1&HW-CC-Date=20260429T061408Z&HW-CC-Expire=86400&HW-CC-Sign=20553A7A0E9398B1B42AE0C99B571E753B3EB86D0A60E6A37E59D586AF0C270C "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/b_HTc4xVQsKREggBmbA0JA/zh-cn_image_0000002404045353.png "点击放大")
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/VnwfiMICT4afFx2kOBrycw/zh-cn_image_0000002370565532.png?HW-CC-KV=V1&HW-CC-Date=20260429T061408Z&HW-CC-Expire=86400&HW-CC-Sign=EB4D02C44D2B26B5F83DB553C221558C47588D2B3C92B52E402A91F34337042B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/VnwfiMICT4afFx2kOBrycw/zh-cn_image_0000002370565532.png)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/l8u8xHG0R7O-jbv5KzSypA/zh-cn_image_0000002404125193.png?HW-CC-KV=V1&HW-CC-Date=20260429T061408Z&HW-CC-Expire=86400&HW-CC-Sign=E8263D90A2F5C05ECBE577190F024A3D18274668B9F8A3FCB3CFCADB512B456D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/l8u8xHG0R7O-jbv5KzSypA/zh-cn_image_0000002404125193.png)
 
 解决方案：减少同一时间段频繁跨线程传输数据的操作。
 
@@ -155,7 +155,7 @@ content_hash: sha256:0b484c8e9320bcc53ad73ecc01880888273ac1b2f6dfddd4262adbebd09
 
 该案例应用freeze堆栈栈顶在执行正则操作，从trace中可以看出，主线程一直在执行正则匹配导致超时freeze。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/p009-TdWTWK6X3pn91JEPA/zh-cn_image_0000002370405652.png?HW-CC-KV=V1&HW-CC-Date=20260429T061408Z&HW-CC-Expire=86400&HW-CC-Sign=34FFE62DFE65DD07997CD16BBEEB16396634F27F03B849115381F9CAAEF29034 "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/RiEwUILDQQOleRnqzQgwPw/zh-cn_image_0000002404045357.png?HW-CC-KV=V1&HW-CC-Date=20260429T061408Z&HW-CC-Expire=86400&HW-CC-Sign=AD2FCF4F8FDD30DD4EA906113B752688248C0284534818904FB75A0A004D5B1C "点击放大")解决方案：
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/p009-TdWTWK6X3pn91JEPA/zh-cn_image_0000002370405652.png "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/RiEwUILDQQOleRnqzQgwPw/zh-cn_image_0000002404045357.png "点击放大")解决方案：
 
 1. 优化正则匹配的逻辑，避免超长字符串的正则匹配；
 2. 将耗时操作放到taskpool线程执行，不阻塞主线程。
@@ -166,25 +166,25 @@ content_hash: sha256:0b484c8e9320bcc53ad73ecc01880888273ac1b2f6dfddd4262adbebd09
 
 结合trace分析：trace中显示的是GC的循环调用，但每次GC在running中的占比并不高，也符合GC调用的规律，因此确认不是GC的问题。可能是未插桩的running状态导致未响应，无法进一步定位问题。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/5B6dAeMvTXmVWvv4tijpjA/zh-cn_image_0000002370565536.png?HW-CC-KV=V1&HW-CC-Date=20260429T061408Z&HW-CC-Expire=86400&HW-CC-Sign=0179DF301FFEFCF99331B765EB433B2D1484253591292970A7B620D4A7893A6E)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/KUW8fq3KQwCfOTZYRo_76Q/zh-cn_image_0000002404125201.png?HW-CC-KV=V1&HW-CC-Date=20260429T061408Z&HW-CC-Expire=86400&HW-CC-Sign=9D8BDBE58884B07C66F4C4B4ADB1EEFC507DA5426230A736A3993152867BE607)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/5B6dAeMvTXmVWvv4tijpjA/zh-cn_image_0000002370565536.png)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/KUW8fq3KQwCfOTZYRo_76Q/zh-cn_image_0000002404125201.png)
 
 此时结合HiLog日志分析，HiLog搜索崩溃线程28040，崩溃时间点在06:44:16，卡了6s。推测大概是在06:44:10附近出现问题。
 
 进一步观察HiLog日志发现，应用一直在调用融合搜索FusionSearch，和应用对齐后，确认问题是应用循环调用FusionSearch接口导致。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/WbAfIYiIQxqa54rn_wD8ng/zh-cn_image_0000002370405656.png?HW-CC-KV=V1&HW-CC-Date=20260429T061408Z&HW-CC-Expire=86400&HW-CC-Sign=34F770359B2E51B4B23DCECF8816BFA5D501AE0606C7850438E5607D1E4E9CEC)**案例五：应用内存泄漏导致频繁GC**
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/WbAfIYiIQxqa54rn_wD8ng/zh-cn_image_0000002370405656.png)**案例五：应用内存泄漏导致频繁GC**
 
 该案例的trace如下，可以看到主线程一直在触发GC，几乎占满了整个线程。在应用内存正常时（远小于应用js内存上限），每次GC后都会根据存活对象大小适当提升GC的阈值，从而防止频繁的GC触发。而当应用发生内存泄漏时，应用占用的js内存可能一直处于OOM的边缘，GC阈值调整的空间则非常有限（GC阈值不能超过js内存上限），可能就会出现频繁GC的现象。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/sh13GTCyTHCBPBHtQuYINw/zh-cn_image_0000002404045361.png?HW-CC-KV=V1&HW-CC-Date=20260429T061408Z&HW-CC-Expire=86400&HW-CC-Sign=C8BE9B996D489F58B09BC81BE6B77E027AAAA640C333D314B14FCD7DA0937558)为了进一步验证上述猜想，结合GC日志做进一步分析。从日志可以看出，应用分配的ArrayBuffer内存已经达到1.4G，且GC仍无法释放，再加上NativeBindingSize，总的内存大小已经接近3G。根据虚拟机的GC内存触发策略，当Native内存超过2G后，每次分配都会尝试去触发GC。
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/sh13GTCyTHCBPBHtQuYINw/zh-cn_image_0000002404045361.png)为了进一步验证上述猜想，结合GC日志做进一步分析。从日志可以看出，应用分配的ArrayBuffer内存已经达到1.4G，且GC仍无法释放，再加上NativeBindingSize，总的内存大小已经接近3G。根据虚拟机的GC内存触发策略，当Native内存超过2G后，每次分配都会尝试去触发GC。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/9L9eur91TKiOGRNuVoW9zA/zh-cn_image_0000002370565548.png?HW-CC-KV=V1&HW-CC-Date=20260429T061408Z&HW-CC-Expire=86400&HW-CC-Sign=4BFB2268DFC26C22950FF1F73E6E55F6202BA07D9956AE43430E412CA3002014)解决方案：通过上面分析，该问题实际就由freeze问题转换成了内存泄漏问题。应用内存泄漏一般可以分为两种：一种是js内存泄漏，另一种是Native内存泄漏。对于js内存泄漏，可以同HeapSnapshot工具生成内存快照，辅助问题定位，参考文档[ArkTS内存泄漏分析：Snapshot分析](../harmonyos-guides/ide-insight-session-snapshot.md)。对于Native内存泄漏，DevEco Profiler提供了基础的内存场景分析Allocation，参考文档[Native内存泄漏分析：Allocation分析](../harmonyos-guides/ide-insight-session-allocations.md)。
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/9L9eur91TKiOGRNuVoW9zA/zh-cn_image_0000002370565548.png)解决方案：通过上面分析，该问题实际就由freeze问题转换成了内存泄漏问题。应用内存泄漏一般可以分为两种：一种是js内存泄漏，另一种是Native内存泄漏。对于js内存泄漏，可以同HeapSnapshot工具生成内存快照，辅助问题定位，参考文档[ArkTS内存泄漏分析：Snapshot分析](../harmonyos-guides/ide-insight-session-snapshot.md)。对于Native内存泄漏，DevEco Profiler提供了基础的内存场景分析Allocation，参考文档[Native内存泄漏分析：Allocation分析](../harmonyos-guides/ide-insight-session-allocations.md)。
 
 **案例六：应用内存泄漏触发OOM Dump**
 
 该问题的典型freeze栈如下，其中有一个js线程（主线程或taskpool、worker线程）触发了OOM的dump，堆栈显示调用DumpHeapSnapshotBeforeOOM接口。该问题发生的原因是某个js线程的虚拟机内存超过了设定的上限（主线程448MB，worker、taskpool线程768MB），这种一般是应用内存泄漏导致，解决方案同案例五。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/1_YByCnPTPCP1kzfLHCPlw/zh-cn_image_0000002404125205.png?HW-CC-KV=V1&HW-CC-Date=20260429T061408Z&HW-CC-Expire=86400&HW-CC-Sign=9E7BBA47C693FB2263A73E3DD94A22877CA15B63BE8F2BC90F24FD0256B96AE4)**案例七：高优先级任务过多**
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/1_YByCnPTPCP1kzfLHCPlw/zh-cn_image_0000002404125205.png)**案例七：高优先级任务过多**
 
 原理：
 
@@ -198,9 +198,9 @@ THREAD\_BLOCK\_6S的检测机制为watchdog向主线程队列中每隔3s抛一�
 
 一般来说，这三者的任务数总量相加超过400，应用就有发生freeze的风险，需要应用侧进行整改，减少高优先级任务数量
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/ivdbqbmuR4ecz9yF5O1VOg/zh-cn_image_0000002370405664.png?HW-CC-KV=V1&HW-CC-Date=20260429T061408Z&HW-CC-Expire=86400&HW-CC-Sign=FA10E1EBAF5EE226B8DF38D5A5B80CB18B4A81427695E44C0FC5DF7D04A2FE23)High Priority Event的数量过多
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/ivdbqbmuR4ecz9yF5O1VOg/zh-cn_image_0000002370405664.png)High Priority Event的数量过多
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/FMbIfOdYStuJqr7QUXO22Q/zh-cn_image_0000002404045381.png?HW-CC-KV=V1&HW-CC-Date=20260429T061408Z&HW-CC-Expire=86400&HW-CC-Sign=12806CFC201B73B6F1846596BA794B29FDE46E4B1575DCFD5BADAD217CB3CB51)Immediate Priority Event的数量过多。
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/FMbIfOdYStuJqr7QUXO22Q/zh-cn_image_0000002404045381.png)Immediate Priority Event的数量过多。
 
 **案例八：加密应用**
 
@@ -210,9 +210,9 @@ THREAD\_BLOCK\_6S的检测机制为watchdog向主线程队列中每隔3s抛一�
 
 解决方案：一般由加密应用hdc install安装方式引起，从应用市场重新安装即可解决
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/f3W5eBheQeyWUGt_pwoKUQ/zh-cn_image_0000002370565564.png?HW-CC-KV=V1&HW-CC-Date=20260429T061408Z&HW-CC-Expire=86400&HW-CC-Sign=BF90C7BF113570E77283EDB9D27E04E200EAD6C3D10DDC512627FCC333712CE8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/f3W5eBheQeyWUGt_pwoKUQ/zh-cn_image_0000002370565564.png)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/EDOvxt4BTg2QPl_F6rpFYw/zh-cn_image_0000002404125213.png?HW-CC-KV=V1&HW-CC-Date=20260429T061408Z&HW-CC-Expire=86400&HW-CC-Sign=C311EAC367FD9DB9FBC34116989FB2F05652A8AB5497C1DE92D4BE142FA491AF)后续观察kernel stack，发现代码逻辑进入内核的代码，且等锁。
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/EDOvxt4BTg2QPl_F6rpFYw/zh-cn_image_0000002404125213.png)后续观察kernel stack，发现代码逻辑进入内核的代码，且等锁。
 
 ### 调度问题案例分析
 
@@ -220,13 +220,13 @@ THREAD\_BLOCK\_6S的检测机制为watchdog向主线程队列中每隔3s抛一�
 
 调度问题的典型特征是trace中freeze前有大段的runnable状态。下图是hiviewx应用appfreeze问题的trace，从trace中可以看出，问题发生前应用的所有线程都处于调度不到的状态，而此时主线程正好在触发方舟虚拟机的GC，因此freeze栈顶会挂在方舟的GC里。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/7r2rcEckRZCoSEOOHjHmNQ/zh-cn_image_0000002370405668.png?HW-CC-KV=V1&HW-CC-Date=20260429T061408Z&HW-CC-Expire=86400&HW-CC-Sign=D74463B5E50656EFDF3D4EA4405F554939B2A7DD29E35FBBAFE32542F661A599)进一步分析日志，发现此时整机CPU负载达到60%以上，而hiviewx为后台应用，且GC线程本身优先级较低，在高负载场景下，无法调度到CPU资源，导致执行超时。
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/7r2rcEckRZCoSEOOHjHmNQ/zh-cn_image_0000002370405668.png)进一步分析日志，发现此时整机CPU负载达到60%以上，而hiviewx为后台应用，且GC线程本身优先级较低，在高负载场景下，无法调度到CPU资源，导致执行超时。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/FRrDiv3YTCSnxKNHLpX2kQ/zh-cn_image_0000002404045397.png?HW-CC-KV=V1&HW-CC-Date=20260429T061408Z&HW-CC-Expire=86400&HW-CC-Sign=694756A14C89E9507648D5566B328A4CD9D4B327A13A3E8DB9C7F55DC7ACE182 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/FRrDiv3YTCSnxKNHLpX2kQ/zh-cn_image_0000002404045397.png "点击放大")
 
 解决方案：该问题GC触发的原因是虚拟机判断进程处于空闲场景触发的IdleGC，对于CPU高负载场景，可以选择不触发IdleGC。判定空闲场景通知做GC任务前，先获取当前的cpu使用率，高于50%的cpu使用率就放弃当次任务通知。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/dnKj1JLmSIukhnZ-2lQ22Q/zh-cn_image_0000002370565576.png?HW-CC-KV=V1&HW-CC-Date=20260429T061408Z&HW-CC-Expire=86400&HW-CC-Sign=4DE3284A4FD111C1D219D63AAED6AF746E49218CFE499D6C580AE49330D63ED4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/dnKj1JLmSIukhnZ-2lQ22Q/zh-cn_image_0000002370565576.png)
 
 ### 系统库问题案例分析
 
@@ -242,17 +242,17 @@ Beta用户使用网页在线表格编辑突然卡死，表格点击没反应。
 
 3S栈：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/MoyhUrMzS92LNjRXpMnBnQ/zh-cn_image_0000002404125217.png?HW-CC-KV=V1&HW-CC-Date=20260429T061408Z&HW-CC-Expire=86400&HW-CC-Sign=46B63BC7FCE8DFF90D4E5C8A0BE86BE30E0902E483E9E541F883EE980AD3B623)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/MoyhUrMzS92LNjRXpMnBnQ/zh-cn_image_0000002404125217.png)
 
 6S栈：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/dKZoFgqPRZ-PZe8L8hpAkQ/zh-cn_image_0000002370405672.png?HW-CC-KV=V1&HW-CC-Date=20260429T061408Z&HW-CC-Expire=86400&HW-CC-Sign=974DEDA0F622464363603ABE782E8457A7504E178C94359DF314414BADF8A024)从3s和6s栈可以看出，栈顶都是在libark\_jsruntime.so但栈顶不同。由于无法提供trace，只能根据堆栈和日志分析。
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/dKZoFgqPRZ-PZe8L8hpAkQ/zh-cn_image_0000002370405672.png)从3s和6s栈可以看出，栈顶都是在libark\_jsruntime.so但栈顶不同。由于无法提供trace，只能根据堆栈和日志分析。
 
 通过继续查看堆栈可以发现libark\_jsruntime.so下面的调用栈3S和6S是相同的，然后跳过libark\_jsruntime.so，发现下面在调arkui的深拷贝(getDeepCopyOfObjectRecursive);
 
 然后再看对应时间点得日志，可以看到在appfreeze之前的一段时间一直在做GC操作，这说明是应用一直在执行JS逻辑，再结合崩溃栈看，应用是在做一个很大的对象的深拷贝，导致耗时产生了appfreeze。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/wtC62Dl-SkOdHdYrItkAew/zh-cn_image_0000002404045401.png?HW-CC-KV=V1&HW-CC-Date=20260429T061408Z&HW-CC-Expire=86400&HW-CC-Sign=EC3F2445B2C933571AD37006C64279F4481BD95E6AD9C340460BA43D5BE0A976)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/wtC62Dl-SkOdHdYrItkAew/zh-cn_image_0000002404045401.png)
 
 解决方案：用@prop修饰子组件时，当父组件刷新时子组件对象会进行深拷贝，当子组件很复杂时可能导致拷贝超时，应用排查后改用@ObjectLink修饰，避免深拷贝的开销。
 
@@ -264,9 +264,9 @@ Beta用户使用网页在线表格编辑突然卡死，表格点击没反应。
 
 3S栈
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/J7qUhnPBQZGI8zLmEGNbLw/zh-cn_image_0000002370565580.png?HW-CC-KV=V1&HW-CC-Date=20260429T061408Z&HW-CC-Expire=86400&HW-CC-Sign=44DB87B255F2A00F334DAF59E107AB5AC88301F8C6679BF571332401BE99DD9D)6S栈
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/J7qUhnPBQZGI8zLmEGNbLw/zh-cn_image_0000002370565580.png)6S栈
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/VfDQADm5Ro2PYbepw015vQ/zh-cn_image_0000002404125221.png?HW-CC-KV=V1&HW-CC-Date=20260429T061408Z&HW-CC-Expire=86400&HW-CC-Sign=6DC360DF1D71BD8658F369530AFA2D4EFE079BE2DE76979E9483770A1505B92E)定位过程：
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/VfDQADm5Ro2PYbepw015vQ/zh-cn_image_0000002404125221.png)定位过程：
 
 主线程3S和6S栈相同且一直显示在wait，这种问题一般发生在主线程需要等待其他线程唤醒，而其他线程发生死锁，导致主线程一直wait不到，最终产生冻屏。因此，首先需要确认主线程在等什么线程唤醒，然后再去看对应线程是否存在死锁问题。对于该问题场景，主线程是在UpdateState，说明有其他线程发起了SuspendAll任务去触发SharedGC，而SharedGC又需要等所有线程都走到Suspend状态，初步怀疑是有其他work/taskpool线程发生死锁，导致无法走到Suspend状态。查看堆栈中其他线程的状态，发现18544线程持锁发起了SuspendAll(AllocateWithExpand接口中持有了allocateLock\_)，而18545线程调用TryAllocate接口又会等allocateLock\_锁，从而导致死锁。
 
@@ -286,11 +286,11 @@ Beta用户使用网页在线表格编辑突然卡死，表格点击没反应。
 
 线程18544持有着锁allocateLock\_，同时它要等待所有线程（包括18545）挂起，SuspendAll任务才能完成。但线程18545需要先获得锁allocateLock\_才能继续执行并进入可挂起状态。这就导致了循环等待：18544等18545挂起，18545等18544释放锁。典型的死锁场景。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/m-1Xh5xIT4KkjtcNpD-0sw/zh-cn_image_0000002370405676.png?HW-CC-KV=V1&HW-CC-Date=20260429T061408Z&HW-CC-Expire=86400&HW-CC-Sign=272E17DE75393D2BEEBEA0BAD12791A04FBCC61DE8AC6EF24F7FC3B35ED07A7D "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/2sR9EfDyQQWmD_1FJgh3Xw/zh-cn_image_0000002404045405.png?HW-CC-KV=V1&HW-CC-Date=20260429T061408Z&HW-CC-Expire=86400&HW-CC-Sign=C9EAB01F4D9BBB98FD16EFA4763222CB0F38A2DA6CACC36875C8CD08FB0E50C9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/m-1Xh5xIT4KkjtcNpD-0sw/zh-cn_image_0000002370405676.png "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/2sR9EfDyQQWmD_1FJgh3Xw/zh-cn_image_0000002404045405.png)
 
 解决方案：开发者在写多线程代码时，一定要管理好锁的状态，防止不同线程间发生死锁。对于上述案例，修改方案是不要在持锁状态下发起SuspendAll，修改如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/M_gIpvBNTySpD0JO8Re67g/zh-cn_image_0000002370565584.png?HW-CC-KV=V1&HW-CC-Date=20260429T061408Z&HW-CC-Expire=86400&HW-CC-Sign=2E3656C576B1EDB9D3DAE38DF62DD24C6E81E1C70080820BAE2EFA6071DDC68C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/M_gIpvBNTySpD0JO8Re67g/zh-cn_image_0000002370565584.png)
 
 ### IO问题案例分析
 
@@ -298,13 +298,13 @@ Beta用户使用网页在线表格编辑突然卡死，表格点击没反应。
 
 问题背景：应用启动时发生freeze卡死，瞬时栈:
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/Q970jsVmRTOVbV3rvWQ9cg/zh-cn_image_0000002404125225.png?HW-CC-KV=V1&HW-CC-Date=20260429T061408Z&HW-CC-Expire=86400&HW-CC-Sign=A696E65E687C1572C10A78847672AE22971280F04C239A425176E812517A4F96)定位过程：
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/Q970jsVmRTOVbV3rvWQ9cg/zh-cn_image_0000002404125225.png)定位过程：
 
 瞬时栈相关调用为vm加载abc接口。
 
 通过trace信息看到主线程主要耗时在IO操作：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/FFgzGXWhS8C5oiQlsfLO5A/zh-cn_image_0000002370405680.png?HW-CC-KV=V1&HW-CC-Date=20260429T061408Z&HW-CC-Expire=86400&HW-CC-Sign=0C54F8D7EB9BEA8C695096A9891311D0E38B473E5ECD738DC9921F4A15377F3D)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/DI3LDBowSTO2uU3rmc5zBQ/zh-cn_image_0000002404045409.png?HW-CC-KV=V1&HW-CC-Date=20260429T061408Z&HW-CC-Expire=86400&HW-CC-Sign=12D7B94745C5ECBD95B81A1FB2A0E07DA1A369DA5230C6CB8525DA550C8E571C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/FFgzGXWhS8C5oiQlsfLO5A/zh-cn_image_0000002370405680.png)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/DI3LDBowSTO2uU3rmc5zBQ/zh-cn_image_0000002404045409.png)
 
 分析方法
 
@@ -322,7 +322,7 @@ IO行为判断不要完全通过trace上的显示io/non-io，要通过唤醒关�
 
 解决方案：在原本的应用安装流程中，会经历三次hap包的拷贝，导致IO写入量很大，包管理子系统最终的优化方案是优化最后一次hap包拷贝的耗时，将copy改为rename。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/8D1Um5j3T8Kr64KzEglXlA/zh-cn_image_0000002370565588.png?HW-CC-KV=V1&HW-CC-Date=20260429T061408Z&HW-CC-Expire=86400&HW-CC-Sign=8CAA5FEE08191750D2B94B23FDD457024391AC4DB18A1DA7DEDED09AAC8905D1 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/8D1Um5j3T8Kr64KzEglXlA/zh-cn_image_0000002370565588.png "点击放大")
 
 安装流程
 

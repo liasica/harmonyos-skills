@@ -5,18 +5,18 @@ breadcrumb: FAQ > DevEco Studio > 界面预览 > 预览告警“@Consume/@Link d
 category: harmonyos-faqs
 scraped_at: 2026-04-29T14:20:18+08:00
 doc_updated_at: 2026-03-17
-content_hash: sha256:0b334177e47e11880d2c56f8c2254684343c08af83379ad9e2b29577faf76322
+content_hash: sha256:11488a5b55eea95d2a5c41b5e1803ac97fe9e8419ffb69755ed4be76edf62d36
 ---
 
 **问题现象**
 
 启动预览后，预览窗口显示白屏，上方出现错误信息：“Preview failed. View details in the PreviewerLog window.”
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/ADbZQS2XSNaDFSITqh7Mvw/zh-cn_image_0000002194317968.png?HW-CC-KV=V1&HW-CC-Date=20260429T062017Z&HW-CC-Expire=86400&HW-CC-Sign=9F6ACED411BD3222B78C9884866C49500D2513202D6789A04608C32B401E7840 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/ADbZQS2XSNaDFSITqh7Mvw/zh-cn_image_0000002194317968.png "点击放大")
 
 此时，PreviewerLog 窗口显示如下告警信息：“@Consume/@Link 装饰的属性 \_<propertyName>\_未初始化。”
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/7yKLU940R0qsQXGs6aNxcw/zh-cn_image_0000002194158348.png?HW-CC-KV=V1&HW-CC-Date=20260429T062017Z&HW-CC-Expire=86400&HW-CC-Sign=F5FDED8A3FE4FEAFA915146A88E10E2DCE254BC641DC08BAF184C2C06740A998)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/7yKLU940R0qsQXGs6aNxcw/zh-cn_image_0000002194158348.png)
 
 **解决措施**
 

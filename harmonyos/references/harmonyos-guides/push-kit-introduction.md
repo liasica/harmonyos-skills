@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用服务 > Push Kit（推送服务） > Push Kit简介
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:39:50+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:ade5718750bb534c10cac9297aa4b7b6c8d5ae3167143ee993c5082df598093e
+content_hash: sha256:54da2a1afafa64904ff9255a8419a6c0aa88aca0419d3b23729d8bc22c0935aa
 ---
 
 Push Kit（推送服务）是华为提供的消息推送平台，建立了从云端到终端的消息推送通道。所有HarmonyOS应用可通过集成Push Kit，实现向应用实时推送消息，使消息易见，构筑良好的用户关系，提升用户的感知度和活跃度。
@@ -30,7 +30,7 @@ Push Kit（推送服务）是华为提供的消息推送平台，建立了从云
 
 推送消息指的是应用**通过Push Kit发送的**，在华为终端设备上显示的通知消息。显示场景主要包括通知中心、锁屏、横幅、桌面图标角标与通知图标。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/UXBmcHZNQkm0etwLkesUXQ/zh-cn_image_0000002589245415.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053950Z&HW-CC-Expire=86400&HW-CC-Sign=D7775747BB07B7EEDC6B103DFD203787D2872523FA25F67F7CA3F26B24AD366B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/UXBmcHZNQkm0etwLkesUXQ/zh-cn_image_0000002589245415.jpg)
 
 有关各场景的详细说明请参见[通知提示场景](../design-guides/system-features-notification-0000001793074217.md#section162699204401)。
 
@@ -49,7 +49,7 @@ Push Kit支持以下消息类型：
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/kB9cabESTSyn0ktRaPLrkQ/zh-cn_image_0000002558765608.png?HW-CC-KV=V1&HW-CC-Date=20260429T053950Z&HW-CC-Expire=86400&HW-CC-Sign=C6CC65B9B5DBBF381118A8942F60613088FE804C20834AEFB46EC3978F778B69)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/kB9cabESTSyn0ktRaPLrkQ/zh-cn_image_0000002558765608.png)
 
 使用Push Kit的主要业务流程如下：
 

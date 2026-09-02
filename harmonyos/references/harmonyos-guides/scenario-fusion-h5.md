@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用服务 > Scenario Fusion Kit（融合场景服务） 
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:40:19+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:3c61bceb292a591bc432d540693367fdbb72d7f581d3aa11b0cd49f098cf09bb
+content_hash: sha256:c084fa54683304c531039c8a8ecca1c4bae6e2479b0a8d9c0c818cc0be44fb74
 ---
 
 本章节介绍在ArkWeb的Web组件加载H5文件如何实现智能填充功能。
@@ -18,7 +18,7 @@ content_hash: sha256:3c61bceb292a591bc432d540693367fdbb72d7f581d3aa11b0cd49f098c
 
 ## 效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/TmZm-_4kTFqYcsZmGTrEPA/zh-cn_image_0000002558765660.png?HW-CC-KV=V1&HW-CC-Date=20260429T054018Z&HW-CC-Expire=86400&HW-CC-Sign=461564D1725E8B8657B400708D993DAB1FCD212C0D5446622D0EAEC1AB3B27D6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/TmZm-_4kTFqYcsZmGTrEPA/zh-cn_image_0000002558765660.png)
 
 ## 示例代码一
 

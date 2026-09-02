@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_no-inferrable-types
-title: @typescript-eslint/no-inferrable-types
+title: "@typescript-eslint/no-inferrable-types"
 breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/no-inferrable-types
 category: harmonyos-guides
 scraped_at: 2026-04-28T07:55:34+08:00

@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-prefetcher
-title: @ohos.arkui.Prefetcher (Prefetching)
+title: "@ohos.arkui.Prefetcher (Prefetching)"
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.arkui.Prefetcher (Prefetching)
 category: harmonyos-references
 scraped_at: 2026-04-29T13:50:32+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:9f84d211673b6afc4e698eda8513731aee004e4009cf7304016141f1a4b64451
+content_hash: sha256:a3f34581b2ee5ebe70a528973555a1c6b36003824a04dd38bd6060851e96b659
 ---
 
 配合LazyForEach，为List、Grid、WaterFlow和Swiper等容器组件滑动浏览时提供内容预加载能力，提升用户浏览体验。
@@ -447,7 +447,7 @@ PhonePC/2in1TabletTVWearable
 
 演示效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/MKLByu2gRD-u81IRXo_xLQ/zh-cn_image_0000002589245735.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055030Z&HW-CC-Expire=86400&HW-CC-Sign=4ABD3F9CF392179DFB338964185F4CCD8201E38111674DEDF16F88E8F172D6CC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/MKLByu2gRD-u81IRXo_xLQ/zh-cn_image_0000002589245735.gif)
 
 ## 补充说明
 

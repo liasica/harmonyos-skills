@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-web-webnativemessagingextensionmanager
-title: @ohos.web.webNativeMessagingExtensionManager (Web Native Messaging Extension Manager)
+title: "@ohos.web.webNativeMessagingExtensionManager (Web Native Messaging Extension Manager)"
 breadcrumb: API参考 > 应用框架 > ArkWeb（方舟Web） > ArkTS API > @ohos.web.webNativeMessagingExtensionManager (Web Native Messaging Extension Manager)
 category: harmonyos-references
 scraped_at: 2026-04-28T08:05:13+08:00

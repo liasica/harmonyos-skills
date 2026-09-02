@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > Stage�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:25:53+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:2b1623f52c988718d3bc27ff71bdbd7e65f5a4e0d361b8e6ba7f1d59a9053084
+content_hash: sha256:dbb15f9c356cbfb7c0a7feb054008fba1568e2cfc6399a7bbaf169b66da59dbc
 ---
 
 ## 使用场景
@@ -70,7 +70,7 @@ mailto协议标准格式如下：
 
 实现效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/h3D6rDN4SxWQxR3vgH3uXQ/zh-cn_image_0000002589243803.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052552Z&HW-CC-Expire=86400&HW-CC-Sign=E2906189BC5704E1CA13F5592DC1A43C4B8FC8AD4BFDF67923AA63371876ED9C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/h3D6rDN4SxWQxR3vgH3uXQ/zh-cn_image_0000002589243803.gif)
 
 ### 从应用拉起
 
@@ -99,7 +99,7 @@ mailto协议标准格式如下：
 
 实现效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/-wLnrddOTc6sv0twPnGaLQ/zh-cn_image_0000002558763998.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052552Z&HW-CC-Expire=86400&HW-CC-Sign=F5F77A95FB24ABD4E00967C73B82D77225B8A3DEDE62304915FDAB4A2F4D916A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/-wLnrddOTc6sv0twPnGaLQ/zh-cn_image_0000002558763998.gif)
 
 ## 目标方开发步骤
 

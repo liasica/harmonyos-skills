@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 在地图上绘�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:39:13+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:579baff9dbe5c6f044e161b29acc84b467e77d7ba68805f7caa7b016d70e4320
+content_hash: sha256:ffb014dba565a741c85c79af976eb919a319a919e17da800b24d705d6513654c
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:579baff9dbe5c6f044e161b29acc84b467e77d7ba68805f7caa7b016d70
 
 6.0.0(20)开始，支持矢量图层功能。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/mY24xpt7SGioiz1AG1Bn-g/zh-cn_image_0000002589325417.gif?HW-CC-KV=V1&HW-CC-Date=20260429T053532Z&HW-CC-Expire=86400&HW-CC-Sign=F37EEF1F7E769BFFC860FAAA6278BA2502BA76D553D04E62DA98C55C94C8067A "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/mY24xpt7SGioiz1AG1Bn-g/zh-cn_image_0000002589325417.gif "点击放大")
 
 ## 接口说明
 

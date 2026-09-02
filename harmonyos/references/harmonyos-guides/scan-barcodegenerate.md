@@ -5,7 +5,7 @@ breadcrumb: 指南 > 媒体 > Scan Kit（统一扫码服务） > 码图生成 > 
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:35:42+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:5e51e22cbd8c6451fde136b72cbf076683f40fb0e488a6f348832e8b173e0061
+content_hash: sha256:934f16ca2509143ffb595d50b18eaabc33adedf8cfcca47b4fde08d3206f0989
 ---
 
 ## 基本概念
@@ -24,7 +24,7 @@ content_hash: sha256:5e51e22cbd8c6451fde136b72cbf076683f40fb0e488a6f348832e8b173
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/23jC5i2fTCu1NA0JdTPD7Q/zh-cn_image_0000002558605458.png?HW-CC-KV=V1&HW-CC-Date=20260429T053541Z&HW-CC-Expire=86400&HW-CC-Sign=756D12148225934AC0D9EEA212B10F6FD31EC57EC63BAE086475655B1BCC985E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/23jC5i2fTCu1NA0JdTPD7Q/zh-cn_image_0000002558605458.png)
 
 1. 用户向应用发起生成码图请求后，输入需要生成的码图信息，包括码图的类型、宽高等。
 2. 应用通过调用Scan Kit的createBarcode接口启动码图生成能力。

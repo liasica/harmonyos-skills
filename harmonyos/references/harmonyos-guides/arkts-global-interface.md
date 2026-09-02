@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:28:26+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:db269404c277eed31d4e4dc55345747331099b836ed04823db2dda0a8abb6b29
+content_hash: sha256:7199c22c602b84dab430c0b6ae81b5d3ae9e266988caf1dfb4f54f696de8454d
 ---
 
 本文主要介绍了多UI实例涉及的概念，以及使用[UIContext](../harmonyos-references/arkts-apis-uicontext-uicontext.md)的方法替换全局接口的原因，并提供了相应的替换方案。
@@ -29,7 +29,7 @@ content_hash: sha256:db269404c277eed31d4e4dc55345747331099b836ed04823db2dda0a8ab
 
 **图1** 调用作用域原理图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/GZ5zeVdfSlSDrzls3zrSyQ/zh-cn_image_0000002589324415.png?HW-CC-KV=V1&HW-CC-Date=20260429T052602Z&HW-CC-Expire=86400&HW-CC-Sign=3158B814661E2388F8308F020CD47905EAC1BED1206360B14EF5EC150B1D260C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/GZ5zeVdfSlSDrzls3zrSyQ/zh-cn_image_0000002589324415.png)
 
 ## UI上下文不明确
 
@@ -45,7 +45,7 @@ UI上下文不明确是指调用ArkUI全局接口时，调用点无法明确识�
 
 **图2** 多实例关系图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/HYt73d2zQQ2yjj2bJTIF2Q/zh-cn_image_0000002589244355.png?HW-CC-KV=V1&HW-CC-Date=20260429T052602Z&HW-CC-Expire=86400&HW-CC-Sign=BB5CBC698AE8FF6749FA6FEDA98844EECB6CD3A31C77D6AABFC7A45A687B810C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/HYt73d2zQQ2yjj2bJTIF2Q/zh-cn_image_0000002589244355.png)
 
 ## UIContext接口替换全局接口的关系
 

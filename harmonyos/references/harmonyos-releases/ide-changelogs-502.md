@@ -5,7 +5,7 @@ breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.0.2(14) > DevEco Studio > 
 category: harmonyos-releases
 scraped_at: 2026-04-29T13:23:51+08:00
 doc_updated_at: 2026-01-21
-content_hash: sha256:bfe1b2218a1cff6bc731c683de0506e26ac14950477d678b7fd9bc2c27b82566
+content_hash: sha256:4a5fb8c1fb7edb7f95a578dd598ab41616ae92cb4ec1fb542cddf4542e673c1f
 ---
 
 ## 5.0.5.315至5.0.7.100
@@ -18,7 +18,7 @@ content_hash: sha256:bfe1b2218a1cff6bc731c683de0506e26ac14950477d678b7fd9bc2c27b
 
 如果历史工程的工程级build-profile.json5文件中signingConfigs下的name字段为空字符串，编译时会报错。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/q9xMcN28Tiyh7so6Yxvf2g/zh-cn_image_0000002336615601.png?HW-CC-KV=V1&HW-CC-Date=20260429T052350Z&HW-CC-Expire=86400&HW-CC-Sign=C653180FB6AB9B3580016B1CD05FE47F57D17BC774B4CDB11D8C0750D12DA993)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/q9xMcN28Tiyh7so6Yxvf2g/zh-cn_image_0000002336615601.png)
 
 **适配指导**
 

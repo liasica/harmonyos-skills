@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:51:50+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:f07d240b84bb23eb68d51a0ece816b6e5598736e534f51534edc9c9c9261a8dd
+content_hash: sha256:6fc65a87761f9e9f5de22084e82318e66e7ad9ead986ddad865bab2e6ad7499d
 ---
 
 弧形滚动条组件ArcScrollBar，用于配合可滚动组件使用，如[ArcList](ts-container-arclist.md)、[List](ts-container-list.md)、[Grid](ts-container-grid.md)、[Scroll](ts-container-scroll.md)、[WaterFlow](ts-container-waterflow.md)。
@@ -103,4 +103,4 @@ PhonePC/2in1TabletTVWearable
 35. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/oTgThHv_TAWj0UfxAuxDwQ/zh-cn_image_0000002558606522.png?HW-CC-KV=V1&HW-CC-Date=20260429T055147Z&HW-CC-Expire=86400&HW-CC-Sign=30E406B94EA7FEDD15B09064CA6FDBAAC783573FCB2A5289435E879E4BE7B976)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/oTgThHv_TAWj0UfxAuxDwQ/zh-cn_image_0000002558606522.png)

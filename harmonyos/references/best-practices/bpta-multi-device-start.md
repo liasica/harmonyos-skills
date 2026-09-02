@@ -5,7 +5,7 @@ breadcrumb: 最佳实践 > 一次开发，多端部署 > 从一个例子开始
 category: best-practices
 scraped_at: 2026-04-29T14:11:53+08:00
 doc_updated_at: 2026-03-26
-content_hash: sha256:d263c43ca9149bc71918d0ea1679c929cd5b70464031e5094843be857ae696ef
+content_hash: sha256:b9f7cff7021646ba9edc1506d7552bcea0fc90bf70e8e1627fcfe399ff76d61c
 ---
 
 本章通过一个天气应用，介绍一多应用的整体开发过程，包括UX设计、工程管理及调试、页面开发等。
@@ -14,7 +14,7 @@ content_hash: sha256:d263c43ca9149bc71918d0ea1679c929cd5b70464031e5094843be857ae
 
 本示例中的天气应用包含主页、管理城市和添加城市三个页面，其中主页中又包含菜单和更新间隔两个弹窗，基本业务逻辑如下所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/IFgY6LudQ3my6tXgSnTLXg/zh-cn_image_0000002417910860.png?HW-CC-KV=V1&HW-CC-Date=20260429T061149Z&HW-CC-Expire=86400&HW-CC-Sign=8B0D34ABCFCA3C7291D67DB14E0143594402E695E883C96270151E93BAE177F0 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/IFgY6LudQ3my6tXgSnTLXg/zh-cn_image_0000002417910860.png "点击放大")
 
 “一多”建议从最初的设计阶段开始就拉通多设备综合考虑。考虑实际智能终端设备种类繁多，设计师无法针对每种具体设备各自出一份UX设计图。“一多”建议从设备应用窗口宽度和窗口高宽比两个维度，将设备划分类别。
 
@@ -71,17 +71,17 @@ content_hash: sha256:d263c43ca9149bc71918d0ea1679c929cd5b70464031e5094843be857ae
 
 一多应用的工程创建过程，与传统应用并无较大差异。只需在工程创建过程中，注意在“Device Type”选项中勾选所有该应用期望运行的目标设备类型，保证后续该应用可以在所有目标设备上正确安装即可。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/5VCBPiSXQ0mlK1CZ9rw0zQ/zh-cn_image_0000002552894591.png?HW-CC-KV=V1&HW-CC-Date=20260429T061149Z&HW-CC-Expire=86400&HW-CC-Sign=D6A1F6F128AF4E852EA86F39A38CA49DE33D35DF93D0E317FC658C0925EBBB97 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/5VCBPiSXQ0mlK1CZ9rw0zQ/zh-cn_image_0000002552894591.png "点击放大")
 
 ### 预览调试
 
 在代码开发过程中，可以开启预览器，并打开“Multi-profile preview”开关，实时观察应用在不同设备下的表现。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/Bie-rgQzR6C86ZMpFikGQw/zh-cn_image_0000002355145441.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T061149Z&HW-CC-Expire=86400&HW-CC-Sign=A878FEFD36746F55C8B1C7289F6020EB30D84DF47EE272191C5BCCA4C7EDF5F0 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/Bie-rgQzR6C86ZMpFikGQw/zh-cn_image_0000002355145441.jpg "点击放大")
 
 特别的，还可以点击“+ New Profile”按钮，新增自定义预览器。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/bRpT0agqTkGPAOEgoqaNzQ/zh-cn_image_0000002321146750.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T061149Z&HW-CC-Expire=86400&HW-CC-Sign=C9A7262AF5416D26F00045862F18A6D979B3E8B0AA03D518ADD8F6E3A644D5D5 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/bRpT0agqTkGPAOEgoqaNzQ/zh-cn_image_0000002321146750.jpg "点击放大")
 
 ## 页面开发
 
@@ -91,7 +91,7 @@ content_hash: sha256:d263c43ca9149bc71918d0ea1679c929cd5b70464031e5094843be857ae
 
 * 将天气主页划分为9个基础区域，如：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/zLSo6eQcSVu_OHmPUk_AJg/zh-cn_image_0000002355265301.png?HW-CC-KV=V1&HW-CC-Date=20260429T061149Z&HW-CC-Expire=86400&HW-CC-Sign=C13887A88FA80F1DAAC6B17D601E4C9696D13B9572E73E02EDC0B713D08456B7 "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/zLSo6eQcSVu_OHmPUk_AJg/zh-cn_image_0000002355265301.png "点击放大")
 * 基础区域9仅在大设备上显示（需要在大设备上展开侧边导航栏），基础区域1-8虽然在各设备上始终展示但其尺寸及区域内的布局基本保持不变（区域8需要向下滑动设备至底部，下方示例图不做展示），可以结合[自适应布局](bpta-multi-device-adaptive-layout.md)能力以[自定义组件](../harmonyos-guides/arkts-create-custom-components.md)的形式分别实现这9个基础区域。
 
   |  | 小设备 | 中设备 | 大设备 |

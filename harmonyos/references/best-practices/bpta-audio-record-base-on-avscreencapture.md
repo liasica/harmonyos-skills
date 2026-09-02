@@ -5,7 +5,7 @@ breadcrumb: 最佳实践 > 媒体 > 音频和视频 > 音频录制系列开发�
 category: best-practices
 scraped_at: 2026-04-29T14:11:28+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:24bdc63a2f8f3826d627d45a074fd9ed0472402bd17e35cfe2d47b6803b088c0
+content_hash: sha256:f41f7f0871d121c25ebf6a2994eac9e004f604479e4fa63be1494db07d8aa38c
 ---
 
 ## 概述
@@ -14,7 +14,7 @@ AVScreenCapture具备采集设备内部音频和麦克风音频的能力，可�
 
 基于AVScreenCapture录制音频实现的功能效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/a1I8CT1OTa-wE1Wb4EuOyQ/zh-cn_image_0000002524061076.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061127Z&HW-CC-Expire=86400&HW-CC-Sign=57C9BD5BD08335DFA66528E2CEBB9CD088FD4D2C791C1A6B2BDFB8C5D2A4A342 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/a1I8CT1OTa-wE1Wb4EuOyQ/zh-cn_image_0000002524061076.gif "点击放大")
 
 本文的主要内容如下：
 

@@ -5,7 +5,7 @@ breadcrumb: 指南 > 基础入门 > 开发基础知识 > 应用程序包基础�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:25:28+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:303ae477925189a1df3c6fd9cd420f09bc1132158241e89dd55391b7c62445c9
+content_hash: sha256:e976ce94d27e76159e702b1657d087c663eefebe71b67e77e0923745a6364720
 ---
 
 基于[FA模型](application-configuration-file-overview-fa.md)开发的应用，其应用程序包结构如下图应用程序包结构（FA模型）所示。开发者需要熟悉应用程序包结构相关的基本概念。
@@ -25,4 +25,4 @@ FA模型与Stage模型的内部文件的存放位置不同。FA模型中，所�
 
 **图1** 应用程序包结构（FA模型）
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/TsGZW-DhTPaJF0B66V9SwQ/zh-cn_image_0000002589323835.png?HW-CC-KV=V1&HW-CC-Date=20260429T052527Z&HW-CC-Expire=86400&HW-CC-Sign=B64D572D4F97324A0F0575D9BBAB7B06026CBDA6142BA8D3F75C92876F226BFF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/TsGZW-DhTPaJF0B66V9SwQ/zh-cn_image_0000002589323835.png)

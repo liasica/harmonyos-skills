@@ -5,7 +5,7 @@ breadcrumb: 指南 > NDK开发 > 代码开发 > 使用Node-API实现ArkTS/JS与C
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:43:58+08:00
 doc_updated_at: 2026-04-10
-content_hash: sha256:eed5d6c1d30fea5483e60001546623eec37b11970d43c16d797a1d31990178e0
+content_hash: sha256:406936e4d39f74ff4b8fab749801a180370e0104d435fcff4d3aeafc8532b67a
 ---
 
 ## 获取JS传入参数及其数量
@@ -348,11 +348,11 @@ nm\_register\_func对应的函数需要加上修饰符static，防止与其他�
 
 图一
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/jScxi_BkQ8i5z2aX8FfnUA/zh-cn_image_0000002589325741.png?HW-CC-KV=V1&HW-CC-Date=20260429T054356Z&HW-CC-Expire=86400&HW-CC-Sign=553470553828786FBFD5445DDF9C05D643998CABB837D7CB241B59A21C35D80B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/jScxi_BkQ8i5z2aX8FfnUA/zh-cn_image_0000002589325741.png)
 
 图二
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/QGzxhXMqS46i37SwvYuNcQ/zh-cn_image_0000002589245681.png?HW-CC-KV=V1&HW-CC-Date=20260429T054356Z&HW-CC-Expire=86400&HW-CC-Sign=809F0BD36E1220213D2CDCF83370D92E9BDC5622B58CBCEF5531D9C1402743E1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/QGzxhXMqS46i37SwvYuNcQ/zh-cn_image_0000002589245681.png)
 
 **正确示例**：
 

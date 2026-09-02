@@ -5,7 +5,7 @@ breadcrumb: 指南 > AI > Neural Network Runtime Kit（Neural Network运行时�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:43:48+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:9bd90ade8043192f0c243a77dcfdda7bc07004a63738bcb4d19cdf530b6d5292
+content_hash: sha256:475b49008f84220cf4e07bc473ae83194e03455841ed62c139b068751c77d36b
 ---
 
 ## 使用场景
@@ -32,7 +32,7 @@ AI推理框架和应用开发者也可以无需调用NNRt构图接口，直接�
 
 **图1** Neural Network Runtime架构图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/Ij_lfG1ZQ3yHtm_XvN_qSg/zh-cn_image_0000002589245661.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T054347Z&HW-CC-Expire=86400&HW-CC-Sign=7FB53D947F4D79CD78009B9D38DE6C1AAAC23F1B25510E47AC314E752B4FDACD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/Ij_lfG1ZQ3yHtm_XvN_qSg/zh-cn_image_0000002589245661.jpg)
 
 ## 亮点特征
 

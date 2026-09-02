@@ -1,6 +1,6 @@
 # 指南（harmonyos-guides）
 
-共 4852 篇文档。
+共 4851 篇文档。
 
 - [使用ECC压缩/非压缩公钥格式转换(C/C++)](-convert-compressed-or-uncompressed-ecc-pubkey-ndk.md)
 - [ArkTS卡片编辑概述](-ui-widget-event-formeditextensionability-overview.md)
@@ -216,7 +216,6 @@
 - [应用配置文件（Stage模型）](application-configuration-file-stage.md)
 - [FA模型的Context](application-context-fa.md)
 - [应用上下文Context](application-context-stage.md)
-- [应用开发导读](application-dev-guide.md)
 - [应用开发导读](application-dev-guide.md)
 - [应用开发准备](application-dev-overview.md)
 - [应用模型](application-models.md)

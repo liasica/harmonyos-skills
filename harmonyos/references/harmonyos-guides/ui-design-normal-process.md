@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > UI Design Kit（UI设计套件） > 图标�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:30:18+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:dcd83340b9014b1a8ee7ce6abe3eba1a8b947bcd14660f9262441a2517d1b0e2
+content_hash: sha256:4344a8e008c8b6c3d236c28085d234b54571efe4d6ae401c08d2a29e5c52e22f
 ---
 
 ## 场景介绍
@@ -20,7 +20,7 @@ content_hash: sha256:dcd83340b9014b1a8ee7ce6abe3eba1a8b947bcd14660f9262441a2517d
 
 ## 开发步骤
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/5t-IRBAASci2Uxs4_kIasw/zh-cn_image_0000002589324699.png?HW-CC-KV=V1&HW-CC-Date=20260429T053017Z&HW-CC-Expire=86400&HW-CC-Sign=BDE941C4C8E534A3F1C4A82EE79E8C5D142771B7B527E305500DFA2725826646)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/5t-IRBAASci2Uxs4_kIasw/zh-cn_image_0000002589324699.png)
 
 1. 在entry/src/main/resources/base/media下，配置一张图片资源normal\_icon.png。
 2. 将图标处理的相关类添加至工程。

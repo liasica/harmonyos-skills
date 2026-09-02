@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:28:45+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:8b8212b706a342d05f2178c66aabb9b598a5fb37dc195acd1abb68432315c587
+content_hash: sha256:adda325d066570fd3905061bdf87e3bf4663497c96bb4beaf794b64e2705346b
 ---
 
 dialog组件用于创建自定义弹窗，通常用来展示用户当前需要或用户必须关注的信息或操作。具体用法请参考[dialog API](../harmonyos-references/js-components-container-dialog.md)。
@@ -69,7 +69,7 @@ dialog组件用于创建自定义弹窗，通常用来展示用户当前需要�
 7. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/G5m89Rt5RsS26IYOF5nMgg/zh-cn_image_0000002558604922.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052844Z&HW-CC-Expire=86400&HW-CC-Sign=F9570B5E0ADC29CAC9F02473ACA6DA230AAB1B0D42988CD8E44F4E3ECEB08AF0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/G5m89Rt5RsS26IYOF5nMgg/zh-cn_image_0000002558604922.gif)
 
 ## 设置弹窗响应
 
@@ -145,7 +145,7 @@ dialog组件用于创建自定义弹窗，通常用来展示用户当前需要�
 21. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/luQRQQ1MSZuJXOlWlxGg1Q/zh-cn_image_0000002589324447.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052844Z&HW-CC-Expire=86400&HW-CC-Sign=C8213C5EC258235D0DD15A09DAAE1E9D959D97A3F8BB6D367C88F29B64E7230C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/luQRQQ1MSZuJXOlWlxGg1Q/zh-cn_image_0000002589324447.gif)
 
 说明
 
@@ -310,4 +310,4 @@ dialog组件用于创建自定义弹窗，通常用来展示用户当前需要�
 50. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/pLmg2mncSe2Y20Lc-F9FPg/zh-cn_image_0000002589244387.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052844Z&HW-CC-Expire=86400&HW-CC-Sign=13C8A1D9A2A91095FBC3F8D8DB7939EA5EDB0331121D564E8C610851CFB859CE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/pLmg2mncSe2Y20Lc-F9FPg/zh-cn_image_0000002589244387.gif)

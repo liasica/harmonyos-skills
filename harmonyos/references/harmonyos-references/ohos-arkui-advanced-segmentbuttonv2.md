@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:53:03+08:00
 doc_updated_at: 2026-03-27
-content_hash: sha256:a36edeb673c54823a611640d8e45646c3470b05d63663178c0e67b9e619f9a41
+content_hash: sha256:a859a219a77d07e5c3fde0cf81266917a2c299583de9738d5da45f4280bcd01f
 ---
 
 分段按钮组件用于创建页签型、单选或多选的胶囊型分段按钮。
@@ -618,7 +618,7 @@ PhonePC/2in1TabletTVWearable
 129. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/x-PJqjoRT7eznc0wGOJ-qg/zh-cn_image_0000002589326517.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055301Z&HW-CC-Expire=86400&HW-CC-Sign=3A62B9D175BB881FA80898029EA04920032A7AB20090FC801CD6570299C5C46A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/x-PJqjoRT7eznc0wGOJ-qg/zh-cn_image_0000002589326517.gif)
 
 ### 示例 2（单选的胶囊型分段按钮）
 
@@ -748,7 +748,7 @@ PhonePC/2in1TabletTVWearable
 121. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/_ifW52ntRtew2YmYPMpUSg/zh-cn_image_0000002589246459.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055301Z&HW-CC-Expire=86400&HW-CC-Sign=143337B4BEB643749F1EA6D8C1890F490FD641DF00D2D21D68FC525BD0AA8D5B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/_ifW52ntRtew2YmYPMpUSg/zh-cn_image_0000002589246459.gif)
 
 ### 示例 3（多选的胶囊型分段按钮）
 
@@ -878,7 +878,7 @@ PhonePC/2in1TabletTVWearable
 121. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/_NTy39tSRvGnEY8CANLi1g/zh-cn_image_0000002558766652.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055301Z&HW-CC-Expire=86400&HW-CC-Sign=FF4F57159454D1889869FE3F955F02B4AAA31C8B4CD6BC402B89B7B612006A3D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/_NTy39tSRvGnEY8CANLi1g/zh-cn_image_0000002558766652.gif)
 
 ### 示例4（分段按钮Modifier的基本用法）
 
@@ -973,4 +973,4 @@ PhonePC/2in1TabletTVWearable
 86. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/bYOzBgF7SniX_uBlk_si0w/zh-cn_image_0000002558606992.png?HW-CC-KV=V1&HW-CC-Date=20260429T055301Z&HW-CC-Expire=86400&HW-CC-Sign=6AFD8A6403FC42B006791C8CFD51C2067C4854A37C0B9D8E52A832907E0A0BDA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/bYOzBgF7SniX_uBlk_si0w/zh-cn_image_0000002558606992.png)

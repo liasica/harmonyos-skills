@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arraylist
-title: @ohos.util.ArrayList (线性容器ArrayList)
+title: "@ohos.util.ArrayList (线性容器ArrayList)"
 breadcrumb: API参考 > 应用框架 > ArkTS（方舟编程语言） > ArkTS API > @ohos.util.ArrayList (线性容器ArrayList)
 category: harmonyos-references
 scraped_at: 2026-04-28T08:00:08+08:00

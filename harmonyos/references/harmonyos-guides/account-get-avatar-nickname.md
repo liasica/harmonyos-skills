@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用服务 > Account Kit（华为账号服务） > 获取
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:36:51+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:551b1eb3efcdb029d43c0795cf7e11eb0004b8ca2035b55bc1af20197fd32087
+content_hash: sha256:2de820a48b8412ef765731b920828dc24add16a8dcdaea411440321851e05737
 ---
 
 ## 场景介绍
@@ -14,11 +14,11 @@ content_hash: sha256:551b1eb3efcdb029d43c0795cf7e11eb0004b8ca2035b55bc1af20197fd
 
 **图1** 手机端获取头像昵称（请以实际效果为准）
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/yFGc80jBTqWhojIxKlqLDg/zh-cn_image_0000002558605596.png?HW-CC-KV=V1&HW-CC-Date=20260429T053650Z&HW-CC-Expire=86400&HW-CC-Sign=E5CFAD9CA6C3B2569D3063A33C418C3BEAA78A37E3E42FDA1183EA9085491D8F "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/yFGc80jBTqWhojIxKlqLDg/zh-cn_image_0000002558605596.png "点击放大")
 
 **图2** Wearable设备获取头像昵称（请以实际效果为准）
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/_V7YP2mVQGyK7NRv4AjqMw/zh-cn_image_0000002589325123.png?HW-CC-KV=V1&HW-CC-Date=20260429T053650Z&HW-CC-Expire=86400&HW-CC-Sign=7133B5F80E099F5F219E759AD74C3DB28DA75D1FEC11E768E3F819AA2F50A850 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/_V7YP2mVQGyK7NRv4AjqMw/zh-cn_image_0000002589325123.png "点击放大")
 
 ## 约束与限制
 
@@ -26,7 +26,7 @@ content_hash: sha256:551b1eb3efcdb029d43c0795cf7e11eb0004b8ca2035b55bc1af20197fd
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/ezMTgQWPRA-6UxFB1FIQWg/zh-cn_image_0000002589245059.png?HW-CC-KV=V1&HW-CC-Date=20260429T053650Z&HW-CC-Expire=86400&HW-CC-Sign=1A261B6CD7A5428B4F7587B4BA1D27CA4ED712D4BE567556D49141BB9260B178)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/ezMTgQWPRA-6UxFB1FIQWg/zh-cn_image_0000002589245059.png)
 
 流程说明：
 

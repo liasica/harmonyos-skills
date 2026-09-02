@@ -5,7 +5,7 @@ breadcrumb: 指南 > 系统 > 安全 > 密码自动填充服务 > 密码自动�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:30:38+08:00
 doc_updated_at: 2026-04-02
-content_hash: sha256:1d875851ef8507693b934d51cc1e8e83f43e34dcd79f84f5ecf63a14212acb59
+content_hash: sha256:5b7c5161e06b1b0d9a25c596e8b23c411fd427ff8381e867c7d39bcc81db2c14
 ---
 
 ## 功能简介
@@ -36,7 +36,7 @@ content_hash: sha256:1d875851ef8507693b934d51cc1e8e83f43e34dcd79f84f5ecf63a14212
 
 **图1** 密码保险箱功能架构图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/6I9_iYeQSJOa2UVLbJAgIg/zh-cn_image_0000002589324727.png?HW-CC-KV=V1&HW-CC-Date=20260429T053037Z&HW-CC-Expire=86400&HW-CC-Sign=52075804D09B53936E928861CBEBA6721EA1B0D709BD6F0B27F9E624E3005AAA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/6I9_iYeQSJOa2UVLbJAgIg/zh-cn_image_0000002589324727.png)
 
 ## 模拟器支持情况
 

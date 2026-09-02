@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS�
 category: harmonyos-guides
 scraped_at: 2026-04-28T07:39:19+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:2bc14b420cdb4a81e9b988189a7474fc009dbca178abdf5c4d6847ee3dc3f25f
+content_hash: sha256:1d0d27b669ee682e450743e3957a2da76a10a1c819494c3f07e953708713dbde
 ---
 
 ## 概述
@@ -108,7 +108,7 @@ content_hash: sha256:2bc14b420cdb4a81e9b988189a7474fc009dbca178abdf5c4d6847ee3dc
 
 开发者在使用这两个接口混用V1V2时，可遵循下图逻辑。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/JM1v2WX5SVmLxlgJG9Kosw/zh-cn_image_0000002583477633.png?HW-CC-KV=V1&HW-CC-Date=20260427T233916Z&HW-CC-Expire=86400&HW-CC-Sign=4E09E20319980672F51B3AD036DF5E6328E1C3C91396217982456CA0F45C5ACA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/JM1v2WX5SVmLxlgJG9Kosw/zh-cn_image_0000002583477633.png)
 
 ## V1中使用V2的自定义组件
 

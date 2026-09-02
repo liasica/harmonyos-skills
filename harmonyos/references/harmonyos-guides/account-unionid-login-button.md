@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用服务 > Account Kit（华为账号服务） > 登录
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:36:49+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:4b65830cbd92ca466a69493f936565dcffeb1f569428dd63479cf6944b6d66b6
+content_hash: sha256:d54b9c3c03d825cecd4730945a779d5c3d3ae071bfc707dfcf74913505f9573e
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:4b65830cbd92ca466a69493f936565dcffeb1f569428dd63479cf6944b6
 
 华为账号登录按钮包含文本、标志和文本、标志三种样式，以满足应用对界面风格一致性和灵活性的要求。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/mkJFIHhTReWtwr9AdKtbmg/zh-cn_image_0000002558605594.png?HW-CC-KV=V1&HW-CC-Date=20260429T053647Z&HW-CC-Expire=86400&HW-CC-Sign=CE3B822BA5186219B733191C51DE47182EAF0EEE3213073ECC67334E6267C0B9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/mkJFIHhTReWtwr9AdKtbmg/zh-cn_image_0000002558605594.png)
 
 ## 约束与限制
 
@@ -22,13 +22,13 @@ content_hash: sha256:4b65830cbd92ca466a69493f936565dcffeb1f569428dd63479cf6944b6
 
 ## 用户体验设计
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/zHPEIdLcSU-HCmB_Ay18YQ/zh-cn_image_0000002589325121.png?HW-CC-KV=V1&HW-CC-Date=20260429T053647Z&HW-CC-Expire=86400&HW-CC-Sign=4E3217CD6DD0BEE7CFCE2F2AAD36089A22A0C7D3F61A1D127EACEE26E18B954A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/zHPEIdLcSU-HCmB_Ay18YQ/zh-cn_image_0000002589325121.png)
 
 账号登录按钮的用户体验和UX设计需符合[【华为账号登录】按钮](../design-guides/id-0000001880001344.md#section2624430102713)规范，不符合规范的UX设计可能会对应用上架和用户体验带来影响。
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/bpsBrJwRSY2nWBYtpR6huw/zh-cn_image_0000002589245057.png?HW-CC-KV=V1&HW-CC-Date=20260429T053647Z&HW-CC-Expire=86400&HW-CC-Sign=AFB3E03AB78878724995A82E72B5AFF348F0EDE10D6AF54CF9C06AE5E5135649)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/bpsBrJwRSY2nWBYtpR6huw/zh-cn_image_0000002589245057.png)
 
 流程说明：
 

@@ -5,12 +5,12 @@ breadcrumb: 指南 > 应用服务 > IAP Kit（应用内支付服务） > 商品�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:38:38+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:347ccfba0a1f48bd2fc115d796fecf442d24ccb8a6725ce9b12ad9dc43013e30
+content_hash: sha256:7bcd686633be1d0e8c9bc49d3d219033d4f5504fd353b8dc21c04743d6131f3e
 ---
 
 订阅是指用户在购买自动续期订阅商品后，可以在一段时间访问App的增值功能或内容，并且会在订阅周期结束后自动续期（自动购买下一期服务）的能力。如果期间用户取消订阅，则订阅在当期结束后将不再自动续期。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/-1B-QvrUQrielikJaNVPkg/zh-cn_image_0000002589245231.png?HW-CC-KV=V1&HW-CC-Date=20260429T053837Z&HW-CC-Expire=86400&HW-CC-Sign=2CE898E86A5BB9F1E2EB5F3203E38D878BF3CF562546F2C64FC03BABB777EE04)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/-1B-QvrUQrielikJaNVPkg/zh-cn_image_0000002589245231.png)
 
 ## 配置自动续期订阅商品
 
@@ -55,13 +55,13 @@ content_hash: sha256:347ccfba0a1f48bd2fc115d796fecf442d24ccb8a6725ce9b12ad9dc430
 
 具体订阅状态的变化如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/dYQ79lG3QYGehav4-hVEEg/zh-cn_image_0000002558765426.png?HW-CC-KV=V1&HW-CC-Date=20260429T053837Z&HW-CC-Expire=86400&HW-CC-Sign=835972B9DD4465998636A196D3C7263A466C75F6FD97D069301C35B875D2F117)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/dYQ79lG3QYGehav4-hVEEg/zh-cn_image_0000002558765426.png)
 
 ## 让用户管理订阅
 
 应用可以通过[iap.showManagedSubscriptions](../harmonyos-references/iap-iap.md#iapshowmanagedsubscriptions)接口跳转到订阅页或订阅详情页，让用户管理订阅。用户亦可通过"设置">"华为账号">"付款与账单">"订阅"路径进入订阅页管理订阅。包括查看订阅、取消订阅、切换订阅、恢复订阅等。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/_d7u1o8tTLSGH4uzeqbLPQ/zh-cn_image_0000002558605770.png?HW-CC-KV=V1&HW-CC-Date=20260429T053837Z&HW-CC-Expire=86400&HW-CC-Sign=1B8E804D84D0239AEA5605D023FA209C14664B42D385923D3B51BE5B318E6526) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/0w0J_RziTNWhrQwr9aZOcQ/zh-cn_image_0000002589325297.png?HW-CC-KV=V1&HW-CC-Date=20260429T053837Z&HW-CC-Expire=86400&HW-CC-Sign=A0A25BD4CE0F77AF6E9362D2FEAE79704DE81220DF765CB923C2D8AACF29CA8C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/_d7u1o8tTLSGH4uzeqbLPQ/zh-cn_image_0000002558605770.png) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/0w0J_RziTNWhrQwr9aZOcQ/zh-cn_image_0000002589325297.png)
 
 ## 订阅续期处理
 
@@ -69,7 +69,7 @@ content_hash: sha256:347ccfba0a1f48bd2fc115d796fecf442d24ccb8a6725ce9b12ad9dc430
 
 在订阅周期结束前24小时，IAP服务器会尝试向用户发起扣款以完成自动续期订阅商品的续期。若扣费失败，IAP服务器会在一定期限内重新尝试扣费，从而恢复订阅。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/KWQuwvkoRSyy327FCsNVjA/zh-cn_image_0000002589245233.png?HW-CC-KV=V1&HW-CC-Date=20260429T053837Z&HW-CC-Expire=86400&HW-CC-Sign=8B1E8A0E30A76A5F2D59272185566AFE6649688E8DA23E4B4E0334B4234A0637)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/KWQuwvkoRSyy327FCsNVjA/zh-cn_image_0000002589245233.png)
 
 说明
 
@@ -113,7 +113,7 @@ content_hash: sha256:347ccfba0a1f48bd2fc115d796fecf442d24ccb8a6725ce9b12ad9dc430
      2. 用户正在享受或者下周期即将享受挽留促销时，挽留促销不可再次使用。
      3. 开发者设置了商品涨价且用户尚未同意涨价时，挽留促销不可使用。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/C_ppTYA-RWmEQQ4C8CqkpA/zh-cn_image_0000002558765428.png?HW-CC-KV=V1&HW-CC-Date=20260429T053837Z&HW-CC-Expire=86400&HW-CC-Sign=252B0CC60C13CF325B238E6A8BA80CBB76FB9A4C37B0AF6FF6E6044DF899137E)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/C_ppTYA-RWmEQQ4C8CqkpA/zh-cn_image_0000002558765428.png)
 
 设置促销时，除了要选择促销类型，还需为每项促销选择以下任一一种付费模式。
 

@@ -5,7 +5,7 @@ breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:41:20+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:2d75b958a8720cadd1a4594c9c402fc6b26905869f20cacd11632b963d873525
+content_hash: sha256:fa13cba294004a7ee46077d4187e7d4a772118ca43d68bfa142ee28222141e58
 ---
 
 AscendC提供一组类库API，开发者使用标准C++语法和类库API进行编程。AscendC编程类库API示意图如下所示，分为：
@@ -25,7 +25,7 @@ AscendC提供一组类库API，开发者使用标准C++语法和类库API进行�
 
   进行AscendC算子Host侧编程时，需要使用基础数据结构和API，请参考[gert命名空间](cannkit-anchorinstanceinfo-introduction.md)，完成算子开发后，需要使用Runtime API完成算子的调用。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/TJSa_syqQsWiCk4_DW5hcw/zh-cn_image_0000002589325629.png?HW-CC-KV=V1&HW-CC-Date=20260429T054119Z&HW-CC-Expire=86400&HW-CC-Sign=7E5707F5AA2CA9581F0579D5EE271A87376266177727A40F26BB252C0A517DC6)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/TJSa_syqQsWiCk4_DW5hcw/zh-cn_image_0000002589325629.png)
 
 ## Kernel API-基础API
 

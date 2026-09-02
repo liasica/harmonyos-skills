@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 管理网页交互 >
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:29:20+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:d369f9700f0d33997bfccbfa9d5b9491e317659999b6791b7cb4a2c9391bc2d0
+content_hash: sha256:99fc7d2dcc77c7e74ad7e19be8cd3afdc905e7f4a6f7c56ee59dfaef3e2b882f
 ---
 
 在移动端或支持触控的Web应用中，用户通过触摸屏与页面交互，Web组件支持了常见的手势识别，例如长按、滑动、点击等，以支持丰富的用户交互体验。
@@ -86,7 +86,7 @@ ArkUI提供了[手势绑定](arkts-gesture-events-binding.md)，Web组件有独�
 
 [DistinguishTwoGesture.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkWeb/WebGestureInteraction/entry/src/main/ets/pages/DistinguishTwoGesture.ets#L15-L52)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/d127PP1JSSKON45lWQAVOA/zh-cn_image_0000002589324581.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052919Z&HW-CC-Expire=86400&HW-CC-Sign=F50A5C1F3B82E4EFA7A57DF46F7021811109027CDAEA1B0534271CFF461BD0CA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/d127PP1JSSKON45lWQAVOA/zh-cn_image_0000002589324581.gif)
 
 ## Web组件的手势拦截
 

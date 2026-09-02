@@ -5,7 +5,7 @@ breadcrumb: 指南 > 媒体 > Scan Kit（统一扫码服务） > 图像识码 > 
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:35:41+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:0051db4dc8cbeba68299e361169dc877a31c5dc3a74d647629da228856fd61ef
+content_hash: sha256:e38df140100bfc782fb2eda3f18676426c0fee8d0afefbf917155f5bcc70f2e5
 ---
 
 ## 基本概念
@@ -18,7 +18,7 @@ content_hash: sha256:0051db4dc8cbeba68299e361169dc877a31c5dc3a74d647629da228856f
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/b6tVCtZpR3u3ZCGU4T8XOA/zh-cn_image_0000002589244919.png?HW-CC-KV=V1&HW-CC-Date=20260429T053540Z&HW-CC-Expire=86400&HW-CC-Sign=656D5CACA589495286B5F33D3DB73E565C51DFD54D0339BFAEB83E719D73C97B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/b6tVCtZpR3u3ZCGU4T8XOA/zh-cn_image_0000002589244919.png)
 
 1. 用户向开发者的应用发起图片识码请求。
 2. 应用通过调用Scan Kit的decode接口启动图片识码。

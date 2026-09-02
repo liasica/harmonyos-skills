@@ -5,7 +5,7 @@ breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > ArkT
 category: harmonyos-references
 scraped_at: 2026-04-29T14:05:23+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:97fb69a1765599e22b0818750935f85a6f1c5c0312605b3c7231883f503e8f73
+content_hash: sha256:69314695ffa83142df2514ba4be8442fee9cca9edc9f2b2a3f9274d959fe5fb6
 ---
 
 说明
@@ -217,7 +217,7 @@ PhonePC/2in1TabletTVWearable
 
 说明
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/8vn0b4dJTEm_sqJ8kpdj3A/zh-cn_image_0000002589327277.png?HW-CC-KV=V1&HW-CC-Date=20260429T060520Z&HW-CC-Expire=86400&HW-CC-Sign=6C5858AC84A07F7E655831810C69B9857BD3FFD401F2AC1D148282170B2439EA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/8vn0b4dJTEm_sqJ8kpdj3A/zh-cn_image_0000002589327277.png)
 
 如图所示圆环为路径，箭头指示路径的方向，p为区域内任意一点，蓝色线条为点p出发的射线，黑色箭头所指为对应填充规则下使用蓝色填充路径的结果。WINDING填充规则下，射线与路径的交点计数为2，不为0，点p被涂色；EVEN\_ODD填充规则下，射线与路径的相交次数为2，是偶数，点p不被涂色。
 

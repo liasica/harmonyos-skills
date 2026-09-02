@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:28:07+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:004eb7d4e68dd6eb31721576c7d7500907b5c795dbfe911424b61b5cf06e0dd5
+content_hash: sha256:c16c3b1457f4f924964ee35fbf9f8e11c5e12d06f1166f112909569bd3a121d3
 ---
 
 统一拖拽提供了一种通过鼠标或手势触屏传递数据的机制，即从一个组件位置拖出（drag）数据并将其拖入（drop）到另一个组件位置，以触发响应。在这一过程中，拖出方提供数据，而拖入方负责接收和处理数据。这一操作使用户能够便捷地移动、复制或删除指定内容。
@@ -29,7 +29,7 @@ content_hash: sha256:004eb7d4e68dd6eb31721576c7d7500907b5c795dbfe911424b61b5cf06
 
 手势拖拽（手指/手写笔）触发拖拽流程：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/I9gmL4BuTme8LW0yq0AMyg/zh-cn_image_0000002589324323.png?HW-CC-KV=V1&HW-CC-Date=20260429T052806Z&HW-CC-Expire=86400&HW-CC-Sign=8ADA7BCE61A1B752C12970042165EDBD124172BD82B1FA7472199D5EEAB80A64)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/I9gmL4BuTme8LW0yq0AMyg/zh-cn_image_0000002589324323.png)
 
 ### ​鼠标拖拽
 
@@ -90,7 +90,7 @@ content_hash: sha256:004eb7d4e68dd6eb31721576c7d7500907b5c795dbfe911424b61b5cf06
 
 拖拽背板图当前支持设置透明度、圆角、阴影和模糊，具体用法见[拖拽控制](../harmonyos-references/ts-universal-attributes-drag-drop.md)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/g5u7O9LFS1a-zgH5en0VVw/zh-cn_image_0000002589244263.png?HW-CC-KV=V1&HW-CC-Date=20260429T052806Z&HW-CC-Expire=86400&HW-CC-Sign=FD8397028E294891FC0BE0B44A2C4187B0F8C6DBAC6830E82AD1F123991C368E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/g5u7O9LFS1a-zgH5en0VVw/zh-cn_image_0000002589244263.png)
 
 **约束限制：**
 
@@ -494,7 +494,7 @@ content_hash: sha256:004eb7d4e68dd6eb31721576c7d7500907b5c795dbfe911424b61b5cf06
 
 [DefaultDrag.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/EventProject/entry/src/main/ets/pages/drag/DefaultDrag.ets#L16-L233)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/3lQU6BPsQVGJHFGVocIYEA/zh-cn_image_0000002558764456.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052806Z&HW-CC-Expire=86400&HW-CC-Sign=DCF75C40A2BE3ECD8A305BEF133222D58AEA5875023D6B3E2EB31FC9F7276ABD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/3lQU6BPsQVGJHFGVocIYEA/zh-cn_image_0000002558764456.gif)
 
 ### 多选拖拽适配
 
@@ -729,7 +729,7 @@ content_hash: sha256:004eb7d4e68dd6eb31721576c7d7500907b5c795dbfe911424b61b5cf06
 
 [GridExample.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/EventProject/entry/src/main/ets/pages/grid/GridExample.ets#L15-L106)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/xJ65UXaITReTPYScVbJ8-Q/zh-cn_image_0000002558604800.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052806Z&HW-CC-Expire=86400&HW-CC-Sign=5C408DFFBCD89BCEA3F5ADB0CF7F48CCB1F191A46FCB6EE138445EF306D97E87)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/xJ65UXaITReTPYScVbJ8-Q/zh-cn_image_0000002558604800.gif)
 
 ### 适配自定义落位动效
 
@@ -889,7 +889,7 @@ content_hash: sha256:004eb7d4e68dd6eb31721576c7d7500907b5c795dbfe911424b61b5cf06
 
 [DropAnimationExample.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/EventProject/entry/src/main/ets/pages/drop/DropAnimationExample.ets#L16-L129)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/yutmWfPYRPOX7mNkqd1krQ/zh-cn_image_0000002589324325.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052806Z&HW-CC-Expire=86400&HW-CC-Sign=D0E0A99E50304A263B545F3295775F4793B06EDD4691B90C1F45E6553F4CC941)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/yutmWfPYRPOX7mNkqd1krQ/zh-cn_image_0000002589324325.gif)
 
 ### 处理大批量数据
 
@@ -1196,7 +1196,7 @@ content_hash: sha256:004eb7d4e68dd6eb31721576c7d7500907b5c795dbfe911424b61b5cf06
 
 [GridExamples.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/EventProject/entry/src/main/ets/pages/grid/GridExamples.ets#L15-L204)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/w6DNWb2yTjOZm1K19GNBqw/zh-cn_image_0000002589244265.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052806Z&HW-CC-Expire=86400&HW-CC-Sign=4D8CB317E68CDDF0DC9D83B1B5739C92B1EC11ACC0734C4E16F940A5D430E39B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/w6DNWb2yTjOZm1K19GNBqw/zh-cn_image_0000002589244265.gif)
 
 ## 支持悬停检测
 
@@ -1211,7 +1211,7 @@ Spring Loading，即拖拽悬停检测（又叫弹簧加载）是拖拽操作的
 
 除了实现视图切换跳转功能，该能力也可用于特定视图的激活。例如，在用户将一段文本拖拽至按钮上停留后，可激活一个文本输入框。用户随后可将所拖拽文本移动至该输入框上方释放，触发搜索结果展示，实现单手高效完成整个操作。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/fBenqTh8RXuJ_o137W9xUg/zh-cn_image_0000002558764458.png?HW-CC-KV=V1&HW-CC-Date=20260429T052806Z&HW-CC-Expire=86400&HW-CC-Sign=5AB87910B2A09ECE3F88071116EDE612BE62C28B073B1722B506AF79306759F9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/fBenqTh8RXuJ_o137W9xUg/zh-cn_image_0000002558764458.png)
 
 ### 触发原理
 
@@ -1219,7 +1219,7 @@ Spring Loading，即拖拽悬停检测（又叫弹簧加载）是拖拽操作的
 
 Spring Loading的整个过程包含三个阶段：悬停检测 -> 回调通知 -> 结束。在结束之前，如果用户重新开始移动，会自动中断Spring Loading，并通知应用取消。如果在悬停检测期间移动，且尚未进入Spring Loading状态，则不会触发取消通知。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/8cgcXXcGSaGOc7OGGiI-1w/zh-cn_image_0000002558604802.png?HW-CC-KV=V1&HW-CC-Date=20260429T052806Z&HW-CC-Expire=86400&HW-CC-Sign=A8CFE3E47BB42789CF27CB77D99F5A9BEB8EB534A872F2E21D799A1D86602ADC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/8cgcXXcGSaGOc7OGGiI-1w/zh-cn_image_0000002558604802.png)
 
 应用通过回调接收当前的状态，动态改变UI显示，从而达到用户提醒的效果。
 
@@ -1568,7 +1568,7 @@ configuration参数必须在检测开始前准备就绪。系统一旦启动Spri
 
 [SpringLoading.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/EventProject/entry/src/main/ets/pages/springloading/SpringLoading.ets#L16-L215)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/h6aE8WepS5SgM7fi8-jJiw/zh-cn_image_0000002589324327.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052806Z&HW-CC-Expire=86400&HW-CC-Sign=057A27F06B6B4FD9745A7A824B06FC8058DC8278D199FA0728F59A5B9F152866)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/h6aE8WepS5SgM7fi8-jJiw/zh-cn_image_0000002589324327.gif)
 
 ## 示例代码
 

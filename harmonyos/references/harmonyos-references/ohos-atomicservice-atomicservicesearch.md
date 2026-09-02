@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:52:52+08:00
 doc_updated_at: 2026-03-26
-content_hash: sha256:4f5653b002f7d182ca6839011c5433c2b55b5580f650d48c2a478cc9fec1d56d
+content_hash: sha256:a7e382b8ca68c25892f3eca49e66a3eb49564a4e6665c713728cebc252835237
 ---
 
 AtomicServiceSearch为开发者提供满足定制化需求的功能，内容包括默认显示的搜索区、可自定义的选择区和功能区（最多两个）。
@@ -332,7 +332,7 @@ PhonePC/2in1TabletTVWearable
 43. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/YxL8MBuSS1KwK5KnJtDY7w/zh-cn_image_0000002558766606.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055250Z&HW-CC-Expire=86400&HW-CC-Sign=FD48715A317F48D248B5E31874675A8714C0A48977704220DF61AC55B98175D3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/YxL8MBuSS1KwK5KnJtDY7w/zh-cn_image_0000002558766606.gif)
 
 ### 示例2（AtomicServiceSearch添加功能位）
 
@@ -379,7 +379,7 @@ PhonePC/2in1TabletTVWearable
 38. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/LECY41ROS5yWDKQgGnsLJA/zh-cn_image_0000002558606946.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055250Z&HW-CC-Expire=86400&HW-CC-Sign=CC24FE8E2C063F3F41F193FBC9E3D0BAD0C734702BD750C242BA8E90D89F760F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/LECY41ROS5yWDKQgGnsLJA/zh-cn_image_0000002558606946.gif)
 
 ### 示例3（AtomicServiceSearch添加选择区及功能位）
 
@@ -445,7 +445,7 @@ PhonePC/2in1TabletTVWearable
 57. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/KmvRYgiDQ2GDlcqVPo5e8w/zh-cn_image_0000002589326473.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055250Z&HW-CC-Expire=86400&HW-CC-Sign=EB1B576202E320C9EAC102B96A4A698194378D7C4CABCBEE4860E020211B8EB6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/KmvRYgiDQ2GDlcqVPo5e8w/zh-cn_image_0000002589326473.gif)
 
 ### 示例4（search回调事件）
 
@@ -578,7 +578,7 @@ PhonePC/2in1TabletTVWearable
 120. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/Fx6kkQx4TLqXjk8ATjV_ig/zh-cn_image_0000002589246415.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055250Z&HW-CC-Expire=86400&HW-CC-Sign=41BF5699D713973E9EA6A6F61D01C355F0A0A2E952AB70934427F0818E5CF034)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/Fx6kkQx4TLqXjk8ATjV_ig/zh-cn_image_0000002589246415.gif)
 
 ### 示例5（AtomicServiceSearch修改样式）
 
@@ -699,7 +699,7 @@ PhonePC/2in1TabletTVWearable
 112. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/yvFuH4zOQACino5p5FRuuA/zh-cn_image_0000002558766608.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055250Z&HW-CC-Expire=86400&HW-CC-Sign=A2EFE31DCEE3DE5DD4E9686BC859ACFECDE711EB84E989331DF1F3AB40844682)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/yvFuH4zOQACino5p5FRuuA/zh-cn_image_0000002558766608.gif)
 
 ### 示例6（通过controller实现光标位置的设置）
 
@@ -752,7 +752,7 @@ PhonePC/2in1TabletTVWearable
 44. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/SvRVg76jRPqI0tTwqTCzaQ/zh-cn_image_0000002558606948.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055250Z&HW-CC-Expire=86400&HW-CC-Sign=118F13BBE3485A36D859D3599E15D64F0D49BC8C7F4B35CD33FEDE3EA06BE267)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/SvRVg76jRPqI0tTwqTCzaQ/zh-cn_image_0000002558606948.gif)
 
 ### 示例7（设置输入法回车键类型）
 
@@ -795,7 +795,7 @@ PhonePC/2in1TabletTVWearable
 34. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/PulRPZkqSP2DKaVcmQkgSQ/zh-cn_image_0000002589326475.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055250Z&HW-CC-Expire=86400&HW-CC-Sign=95E841FB82129CADA59F03BD091B2EB3317526BA6CCEAA13FA6D5BB364B25EDA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/PulRPZkqSP2DKaVcmQkgSQ/zh-cn_image_0000002589326475.gif)
 
 ### 示例8（设置文字特性效果）
 
@@ -851,7 +851,7 @@ PhonePC/2in1TabletTVWearable
 47. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/2R6njaj8Qq2UTPIbuCI7lA/zh-cn_image_0000002589246417.png?HW-CC-KV=V1&HW-CC-Date=20260429T055250Z&HW-CC-Expire=86400&HW-CC-Sign=C444287B813F36E786FEF1992F3A86CC7711AAF530194B651A62977FDFBA38D5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/2R6njaj8Qq2UTPIbuCI7lA/zh-cn_image_0000002589246417.png)
 
 ### 示例9（设置文本自适应）
 
@@ -891,7 +891,7 @@ PhonePC/2in1TabletTVWearable
 31. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/uChWH0ofSfy2BH09S4RFQQ/zh-cn_image_0000002558766610.png?HW-CC-KV=V1&HW-CC-Date=20260429T055250Z&HW-CC-Expire=86400&HW-CC-Sign=236E0C41AFA400B88A5C9679D6479D2DC7740E199C5A35F3CAB1130F844FC4F6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/uChWH0ofSfy2BH09S4RFQQ/zh-cn_image_0000002558766610.png)
 
 ### 示例10（文本扩展自定义菜单）
 
@@ -964,7 +964,7 @@ PhonePC/2in1TabletTVWearable
 64. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/fU2QZ9XKQLe4qynzc8HLBw/zh-cn_image_0000002558606950.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055250Z&HW-CC-Expire=86400&HW-CC-Sign=F67EC540237D6830595A5E14E4D8107206A6F31A5F2FFDE71CB2C5CA699562B3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/fU2QZ9XKQLe4qynzc8HLBw/zh-cn_image_0000002558606950.gif)
 
 ### 示例11（设置文本水平对齐/光标样式/选中背景色）
 
@@ -1005,7 +1005,7 @@ PhonePC/2in1TabletTVWearable
 32. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/Hq4hhN1MS7SM37afGBk0oQ/zh-cn_image_0000002589326477.png?HW-CC-KV=V1&HW-CC-Date=20260429T055250Z&HW-CC-Expire=86400&HW-CC-Sign=8CEE1FE98779A19B3B2FB631E61EAA0C5CA8BF5494806D52142F86BCF7D0E311)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/Hq4hhN1MS7SM37afGBk0oQ/zh-cn_image_0000002589326477.png)
 
 ### 示例12（对输入的文本进行过滤）
 
@@ -1048,4 +1048,4 @@ PhonePC/2in1TabletTVWearable
 34. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/ThuaSxVPTy6poSgZLI_zVg/zh-cn_image_0000002589246419.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055250Z&HW-CC-Expire=86400&HW-CC-Sign=9B2A0725C17CFEF796DD2E5F8FCD7B909AC29B44F32D11357BF3F012EC94BF0C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/ThuaSxVPTy6poSgZLI_zVg/zh-cn_image_0000002589246419.gif)

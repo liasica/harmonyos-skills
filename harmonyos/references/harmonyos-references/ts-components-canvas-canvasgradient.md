@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:52:24+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:903142b5edb5f990f9774aded241f9499660b1a4b1bdfd513187f50645fc2f06
+content_hash: sha256:d90388e0ef4843940f8d2644b904027f7af17df77d21bd950903dbd94b5842f3
 ---
 
 渐变对象。
@@ -68,7 +68,7 @@ addColorStop(offset: number, color: string): void
 26. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/Dlc_4CbeRuixP3qEGNoWZQ/zh-cn_image_0000002589246261.png?HW-CC-KV=V1&HW-CC-Date=20260429T055223Z&HW-CC-Expire=86400&HW-CC-Sign=F152EF33BAA439811CA9AB733EE67858B03947B310A15FFF6589C00A4CC5AB9B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/Dlc_4CbeRuixP3qEGNoWZQ/zh-cn_image_0000002589246261.png)
 
 ## addColorStop20+
 
@@ -159,4 +159,4 @@ addColorStop(offset: number, color: string | ColorMetrics): void
 49. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/JoWyed96QtiZtsvH8oj81Q/zh-cn_image_0000002558766454.png?HW-CC-KV=V1&HW-CC-Date=20260429T055223Z&HW-CC-Expire=86400&HW-CC-Sign=8A5D1EEEF3151DB56FE2A5D68F5C194E9884DF41DB4DB1D96E025F37DB718921)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/JoWyed96QtiZtsvH8oj81Q/zh-cn_image_0000002558766454.png)

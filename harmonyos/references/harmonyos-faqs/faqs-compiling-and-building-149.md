@@ -5,7 +5,7 @@ breadcrumb: FAQ > DevEco Studio > 编译构建 > 编译报错“The 'tag' keywor
 category: harmonyos-faqs
 scraped_at: 2026-04-29T14:20:56+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:926f0fb74cf207563dd33dae49233ba03602eb5d99fcb278ac41e138db9225ed
+content_hash: sha256:db9fa6a32e649a3b9c98ec6f01f228d5895d384ef28f3b670489b9753f8766ab
 ---
 
 **错误描述**
@@ -16,7 +16,7 @@ oh-package.json5文件中的version字段不能包含tag标签。
 
 使用parameterFile参数化配置版本号时，oh-package.json5文件中的version字段不能包含tag标签。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/5Zdw4K39TUOZHHiG3-sGNg/zh-cn_image_0000002229604173.png?HW-CC-KV=V1&HW-CC-Date=20260429T062054Z&HW-CC-Expire=86400&HW-CC-Sign=91CB31465519B252CFF1AB9AB3F78B84A52E7EB9C77FC1C3C6EB22E046C864EF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/5Zdw4K39TUOZHHiG3-sGNg/zh-cn_image_0000002229604173.png)
 
 **解决措施**
 

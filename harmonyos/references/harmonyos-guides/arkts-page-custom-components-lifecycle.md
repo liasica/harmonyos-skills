@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:27:01+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:e377094ccaadab73fdeaa287ce73d58949754016ea237f87ff75355ec40d9779
+content_hash: sha256:091c6eebbabe2bcec9c5827d1409abfba4b5778422d5e7cf760be2b4d29e9073
 ---
 
 自定义组件生命周期，即用[@Component](arkts-create-custom-components.md#component)或[@ComponentV2](arkts-create-custom-components.md#componentv2)装饰的自定义组件的生命周期，提供以下生命周期接口：
@@ -20,7 +20,7 @@ content_hash: sha256:e377094ccaadab73fdeaa287ce73d58949754016ea237f87ff75355ec40
 
 自定义组件生命周期流程如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/2iwq94k_Qz23KHvyohDimw/zh-cn_image_0000002558764044.png?HW-CC-KV=V1&HW-CC-Date=20260429T052701Z&HW-CC-Expire=86400&HW-CC-Sign=E4D88A8D7A92265BF0AE4331D086F804A184FC9DA6B7B6C0F56CFC57B12FC86D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/2iwq94k_Qz23KHvyohDimw/zh-cn_image_0000002558764044.png)
 
 根据上面的流程图，接下来从自定义组件的初始创建、重新渲染和删除来详细说明。
 
@@ -163,4 +163,4 @@ content_hash: sha256:e377094ccaadab73fdeaa287ce73d58949754016ea237f87ff75355ec40
 
 当showChild为默认值true时，该示例的生命周期流程图如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/mYDQaGX2QkqJiakU_T7k2Q/zh-cn_image_0000002558604388.png?HW-CC-KV=V1&HW-CC-Date=20260429T052701Z&HW-CC-Expire=86400&HW-CC-Sign=567B6AA1E84A7567016D3F7514A904EB16E0E277414A756572A1B996F185B167)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/mYDQaGX2QkqJiakU_T7k2Q/zh-cn_image_0000002558604388.png)

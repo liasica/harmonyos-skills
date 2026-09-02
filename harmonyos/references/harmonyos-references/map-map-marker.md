@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用服务 > Map Kit（地图服务） > ArkTS API > m
 category: harmonyos-references
 scraped_at: 2026-04-29T14:07:54+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:878b8d1b54b8ca85b9317902a908a2729fd49e96bfc5ac3bb717d9ffb4c06367
+content_hash: sha256:59a9274350ba66093118cd1f688ede8b309d6ed8d2b31ae714da81701322870b
 ---
 
 ## 导入模块
@@ -421,7 +421,7 @@ setMarkerAnchor(anchorU: number, anchorV: number): void
 
 设置标记的锚点位置。锚点是标记图标接触地图平面的点，图标的左顶点为（0, 0）点，右顶点为（1, 0）点，左底点为（0, 1）点，右底点为（1, 1）点。例如，在标记X（0.5, 0.3）处的锚点坐标如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/apgSao7SRLu-h4kw0aBARg/zh-cn_image_0000002558607768.png?HW-CC-KV=V1&HW-CC-Date=20260429T060752Z&HW-CC-Expire=86400&HW-CC-Sign=E03C18402698AAFA2CE7DAE475C5C773BF6CA5A58E73430E5EFE592014E808F4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/apgSao7SRLu-h4kw0aBARg/zh-cn_image_0000002558607768.png)
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 

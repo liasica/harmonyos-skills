@@ -5,16 +5,16 @@ breadcrumb: FAQ > DevEco Studio > 代码编辑 > DevEco Studio上使用生成NAP
 category: harmonyos-faqs
 scraped_at: 2026-04-29T14:20:16+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:5e4aa14abda550d4b5bb69904637170d3e517206ab06f6053dae40c5d4a9bcdf
+content_hash: sha256:56c1f6fb07758df90fe441513f0c3d48c48d6c37da1678d7ef2bf501dab5fc11
 ---
 
 **问题现象**
 
 右键单击函数， 在弹出的菜单中依次选择 Generate... > NAPI， 生成胶水代码报错。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/ZL_CzMeBTweNlukmJcVAdQ/zh-cn_image_0000002229604265.png?HW-CC-KV=V1&HW-CC-Date=20260429T062014Z&HW-CC-Expire=86400&HW-CC-Sign=D52590939F1EF5229E3724183AA548C67B7F2B201272B6D18B815017FC2B67EA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/ZL_CzMeBTweNlukmJcVAdQ/zh-cn_image_0000002229604265.png)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/uhkzfBgJT_Gv9z2ihTxD_Q/zh-cn_image_0000002194318496.png?HW-CC-KV=V1&HW-CC-Date=20260429T062014Z&HW-CC-Expire=86400&HW-CC-Sign=486FCAF08CABACAC43FC45CD49C4DCD25571BAB2FEF281DAF279D23DDD1C4AA9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/uhkzfBgJT_Gv9z2ihTxD_Q/zh-cn_image_0000002194318496.png)
 
 **解决措施**
 

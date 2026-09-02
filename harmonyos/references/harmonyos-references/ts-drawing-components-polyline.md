@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:52:36+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:977133a40f0431548424e570e41dd8c1e655774a912da1839fd3afb8f53a98f3
+content_hash: sha256:0871e4695aef73f9f93932308db6665d85adcb870b1188c52462b9f32c41829d
 ---
 
 折线绘制组件。
@@ -345,7 +345,7 @@ PhonePC/2in1TabletTVWearable
 27. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/y5KxwYPfQNOIPpRqZuBATg/zh-cn_image_0000002589326401.png?HW-CC-KV=V1&HW-CC-Date=20260429T055235Z&HW-CC-Expire=86400&HW-CC-Sign=14706DD9335F83725DED8300A2309061570A5B3F143243C770DC6C52BD3A669D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/y5KxwYPfQNOIPpRqZuBATg/zh-cn_image_0000002589326401.png)
 
 ### 示例2（宽和高使用不同参数类型绘制折线）
 
@@ -379,7 +379,7 @@ width、height属性分别使用不同的长度类型绘制图形。
 25. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/fcN83SYIQeG9ZtaBtdNlNw/zh-cn_image_0000002589246343.png?HW-CC-KV=V1&HW-CC-Date=20260429T055235Z&HW-CC-Expire=86400&HW-CC-Sign=E21377C1DFF6F1AF5B5612019DAEA617B6754BFA2E4286736D2B06156A600BD5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/fcN83SYIQeG9ZtaBtdNlNw/zh-cn_image_0000002589246343.png)
 
 ### 示例3（使用attributeModifier动态设置Polyline组件的属性）
 
@@ -422,4 +422,4 @@ width、height属性分别使用不同的长度类型绘制图形。
 34. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/g7uOBgU6QeCj2IgjSAiL8Q/zh-cn_image_0000002558766536.png?HW-CC-KV=V1&HW-CC-Date=20260429T055235Z&HW-CC-Expire=86400&HW-CC-Sign=F16A5C5254AD0559BC2953BFE4FEF5C2BB4F0C35584F6D4959FDE26BAF72B52B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/g7uOBgU6QeCj2IgjSAiL8Q/zh-cn_image_0000002558766536.png)

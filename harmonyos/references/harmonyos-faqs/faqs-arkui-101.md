@@ -5,7 +5,7 @@ breadcrumb: FAQ > 应用框架开发 > UI框架 > 方舟UI框架（ArkUI） > �
 category: harmonyos-faqs
 scraped_at: 2026-04-29T14:16:27+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:5fd30825df8bdfe655d6c0791110d65b12bcdf55926007db3eb54fbb76d057cc
+content_hash: sha256:4dc0094bd199c04b9e039d03f1215892d0fa1406298a44ce32759d2a7bcac824
 ---
 
 **问题现象**
@@ -95,7 +95,7 @@ content_hash: sha256:5fd30825df8bdfe655d6c0791110d65b12bcdf55926007db3eb54fbb76d
 
 效果如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/fWpDSuUvSSSXLvn6bScSiw/zh-cn_image_0000002229758693.png?HW-CC-KV=V1&HW-CC-Date=20260429T061625Z&HW-CC-Expire=86400&HW-CC-Sign=3810FECF54A48163EE5B3501D79D9FAD8DF52524BBDCE24FF2E936680DD4BAC8 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/fWpDSuUvSSSXLvn6bScSiw/zh-cn_image_0000002229758693.png "点击放大")
 
 **参考链接**
 

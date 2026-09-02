@@ -5,7 +5,7 @@ breadcrumb: 指南 > 编写与调试应用 > 使用模拟器运行应用 > 使�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:46:37+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:476f46cd61c5f1eb65a09731ca525fca05782b67c86131a82968700c5fc4c353
+content_hash: sha256:7723a399d0934d4f5bebe76825d2b4441b79771577a8960e3bb802de3dd3551b
 ---
 
 * 安装应用程序包
@@ -21,4 +21,4 @@ content_hash: sha256:476f46cd61c5f1eb65a09731ca525fca05782b67c86131a82968700c5fc
 
   从DevEco Studio 6.1.0 Beta2版本开始，使用API 21及以上的镜像时，上传的图片类文件将保存在图库中。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/pLoC6vdgTcqp4CSO9KP4jA/zh-cn_image_0000002530911066.gif?HW-CC-KV=V1&HW-CC-Date=20260429T054636Z&HW-CC-Expire=86400&HW-CC-Sign=5A5282EACAED48D2D4AAB2F3D89DABB34195F709B62721A2F9F994BC819B4929 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/pLoC6vdgTcqp4CSO9KP4jA/zh-cn_image_0000002530911066.gif "点击放大")

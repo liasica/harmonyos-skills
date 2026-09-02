@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-provider-and-consumer
-title: @Provider装饰器和@Consumer装饰器：跨组件层级双向同步
+title: "@Provider装饰器和@Consumer装饰器：跨组件层级双向同步"
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理（V2） > 管理组件拥有的状态 > @Provider装饰器和@Consumer装饰器：跨组件层级双向同步
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:27:18+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:5a6b10a65e4abbaf69c92613df6099aafcab363fbd1409e5460140d26c719a1b
+content_hash: sha256:0fd1cfbeb9c9067ae143fdf4f814d88e49cd5199ced2e19fb412a574e6902142
 ---
 
 @Provider和@Consumer用于跨组件层级数据双向同步，可以使得开发者不用拘泥于组件层级。
@@ -30,7 +30,7 @@ content_hash: sha256:5a6b10a65e4abbaf69c92613df6099aafcab363fbd1409e5460140d26c7
 
 @Consumer，即数据消费方，可以通过绑定同样的key获取其最近父节点的@Provider的数据，当查找不到@Provider的数据时，使用本地默认值。图示如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/pgeMax3wSMmcKF_qcPdxmA/zh-cn_image_0000002558764108.png?HW-CC-KV=V1&HW-CC-Date=20260429T052717Z&HW-CC-Expire=86400&HW-CC-Sign=421FCE7D2B38F44265544509E720EC67C428F27F3D1B9FCE65F41907438253AD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/pgeMax3wSMmcKF_qcPdxmA/zh-cn_image_0000002558764108.png)
 
 @Provider和@Consumer装饰的数据类型需要一致。
 

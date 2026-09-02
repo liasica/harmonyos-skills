@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_hp-arkui-combine-same-arg-animateto
-title: @performance/hp-arkui-combine-same-arg-animateto
+title: "@performance/hp-arkui-combine-same-arg-animateto"
 breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 性能规则@performance > @performance/hp-arkui-combine-same-arg-animateto
 category: harmonyos-guides
 scraped_at: 2026-04-28T07:56:03+08:00

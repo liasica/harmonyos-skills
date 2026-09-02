@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:27:38+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:da65fde33049796bba74657ad0bf9b042c0fcfbbb6c2b7c33c4a14ea950a3a12
+content_hash: sha256:334ae99d6961e701d79f073a004f96c229c24d4ab3a74dbba97e7f2c0208ed8b
 ---
 
 鉴于组件导航（[Navigation](../harmonyos-references/ts-basic-components-navigation.md)）支持更丰富的动效、一次开发多端部署能力和更灵活的栈操作。本文主要从页面跳转、动效和生命周期等方面介绍如何从Router切换到Navigation。
@@ -437,7 +437,7 @@ Router页面[生命周期](arkts-routing.md#生命周期)为@Entry页面中的�
 
 其生命周期时序如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/0LjX2NH5RKe0Qmf6vqVl9A/zh-cn_image_0000002589324051.png?HW-CC-KV=V1&HW-CC-Date=20260429T052737Z&HW-CC-Expire=86400&HW-CC-Sign=DBB8BCC91C3930F68C53AA2AFBAAC27900C12A860FF286FB502FD950C99CE86B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/0LjX2NH5RKe0Qmf6vqVl9A/zh-cn_image_0000002589324051.png)
 
 Navigation作为路由容器，其生命周期承载在NavDestination组件上，以组件事件的形式开放。
 

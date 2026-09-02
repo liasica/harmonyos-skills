@@ -5,14 +5,14 @@ breadcrumb: 指南 > 系统 > 硬件 > Car Kit（车服务） > 获取HiCar连�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:33:30+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:68f3f3419b2d5e3025d9299973973e4fd8f6e49548137898b34d7fde0341a492
+content_hash: sha256:e5a1c2b254eea198baaed8321c0a81e3edb7c3f5f6b289d8cd8e4905a57954b5
 ---
 
 ## 场景介绍
 
 生态应用可以通过主动获取智慧出行连接状态接口来获取HiCar的连接状态（如：判断应用是否在HiCar上拉起）。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/CBrGGl-fQgenYKWfLi-xyQ/zh-cn_image_0000002558764970.png?HW-CC-KV=V1&HW-CC-Date=20260429T053329Z&HW-CC-Expire=86400&HW-CC-Sign=24A1640280C2EE13BC7EA6027DCA6AB487F0B5C53FDD2576A056315F55E35005)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/CBrGGl-fQgenYKWfLi-xyQ/zh-cn_image_0000002558764970.png)
 
 ## 接口说明
 

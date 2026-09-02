@@ -5,14 +5,14 @@ breadcrumb: FAQ > DevEco Studio > 编译构建 > 编译报错“In the form_conf
 category: harmonyos-faqs
 scraped_at: 2026-04-29T14:20:29+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:7e3c9f4a3b2adbe51a2eed7f4db0e2dc2b130eb9bfa72debfa2fdb8855780be5
+content_hash: sha256:4cb2bd9eeb4b55abe950f59b634da5a07abb8e3e94fa8976203bfc09eaec25f8
 ---
 
 **问题现象**
 
 在form\_config.json文件中，如果updateEnabled字段的值为true，则updateDuration和scheduleUpdateTime字段不能同时为空。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/2ByqwFnTR2uosRU2nTcEdg/zh-cn_image_0000002229758573.png?HW-CC-KV=V1&HW-CC-Date=20260429T062028Z&HW-CC-Expire=86400&HW-CC-Sign=6304E655E65E2767E15E35C72A6F31E4765B02E4B80A848CCD5A797CE6875110 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/2ByqwFnTR2uosRU2nTcEdg/zh-cn_image_0000002229758573.png "点击放大")
 
 **问题原因**
 

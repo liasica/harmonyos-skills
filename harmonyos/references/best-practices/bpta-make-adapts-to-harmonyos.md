@@ -5,7 +5,7 @@ breadcrumb: 最佳实践 > 编译构建 > Make构建工程配置HarmonyOS编译�
 category: best-practices
 scraped_at: 2026-04-29T14:14:21+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:61efd1c80dac6c2136b2b73b2272d3d8215573928aa06ba1edbd44424676aab8
+content_hash: sha256:6f1fe5ebccfaa6f766a77705faf0437406ed50f4c22da720bc844068acde5c7a
 ---
 
 ## 概述
@@ -47,7 +47,7 @@ Makefile是Make工具的配置文件，用于描述项目的构建规则和依�
 
    通过分析源库的Makefile文件可知，以下几个内容需要进行重新配置：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/Tb9gfJ4nTze6OkXhNzkOvg/zh-cn_image_0000002229451177.png?HW-CC-KV=V1&HW-CC-Date=20260429T061420Z&HW-CC-Expire=86400&HW-CC-Sign=F56960A18F9A48CFBFE1C8916B3011E0BB54E945011FFD7A193B05372053BFB3)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/Tb9gfJ4nTze6OkXhNzkOvg/zh-cn_image_0000002229451177.png)
 
    1. 编译命令配置。
 

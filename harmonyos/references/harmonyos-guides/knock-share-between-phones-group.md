@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用服务 > Share Kit（分享服务） > 碰一碰分�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:40:39+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:c025d6a228d15e28390f092f59ac37534642ae59e02c98feffe7d163b3520b49
+content_hash: sha256:d79f908233338602a432d75316e0629b63fa302d3cd49d0e363aafbfc2054761
 ---
 
 ## 注册碰一碰事件
@@ -14,11 +14,11 @@ content_hash: sha256:c025d6a228d15e28390f092f59ac37534642ae59e02c98feffe7d163b35
 
 **图1** 横屏应用示例
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/NZ3g_Xq1Qi2V0i9CvNiuxA/zh-cn_image_0000002589245497.png?HW-CC-KV=V1&HW-CC-Date=20260429T054038Z&HW-CC-Expire=86400&HW-CC-Sign=4FCF0305DA3EE0F766A5E1BAB856E25FE3B9C106496954BFA3A88B4AAE78B9DD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/NZ3g_Xq1Qi2V0i9CvNiuxA/zh-cn_image_0000002589245497.png)
 
 **图2** 竖屏应用示例
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/bHMF68ysTRuc_6PTpFDiiA/zh-cn_image_0000002558765690.png?HW-CC-KV=V1&HW-CC-Date=20260429T054038Z&HW-CC-Expire=86400&HW-CC-Sign=F14B2DA292DA0490B02D630CCC8C1536EE4C96AE47401320074112D76B059FFD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/bHMF68ysTRuc_6PTpFDiiA/zh-cn_image_0000002558765690.png)
 
 ## 注册单向分享能力
 

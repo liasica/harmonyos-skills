@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-resource-manager
-title: @ohos.resourceManager (资源管理)
+title: "@ohos.resourceManager (资源管理)"
 breadcrumb: API参考 > 应用框架 > Localization Kit（本地化开发服务） > ArkTS API > @ohos.resourceManager (资源管理)
 category: harmonyos-references
 scraped_at: 2026-04-28T08:06:30+08:00

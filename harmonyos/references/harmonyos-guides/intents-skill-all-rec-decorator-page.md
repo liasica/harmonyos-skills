@@ -5,7 +5,7 @@ breadcrumb: 指南 > AI > Intents Kit（意图框架服务） > 技能调用方�
 category: harmonyos-guides
 scraped_at: 2026-04-28T07:53:40+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:e6139f751996aee9db36cc6040ba116a169574bc42ad2fb705169b90b1825ca6
+content_hash: sha256:449e59fb0cf92f53123e5413e1c5fad42ef69082733575029932c11392dbcf0a
 ---
 
 开发者使用@InsightIntentPage装饰器进行基于Page的意图声明，可快速将已有的Page页面接入意图框架，以购买电影票的意图为例，详细说明如下：
@@ -90,28 +90,28 @@ content_hash: sha256:e6139f751996aee9db36cc6040ba116a169574bc42ad2fb705169b90b18
 
    1. 打开CodeGenie插件：在DevEco Studio右侧边栏点击CodeGenie或输入快捷键Alt/Option+U，可以进入DevEco CodeGenie。若使用非最新版本的DevEco Studio，可通过[下载中心](https://developer.huawei.com/consumer/cn/download/deveco-codegenie)获取并使用相关功能，具体请参考[插件获取及安装](ide-codegenie.md#section18337533718)。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/ARSHp_HsQnus3WCUwrhHRw/zh-cn_image_0000002583439369.png?HW-CC-KV=V1&HW-CC-Date=20260427T235337Z&HW-CC-Expire=86400&HW-CC-Sign=DE118BA01ED084E190F6BF9137EF565060BC93B32F65FED09ADDD413487B5A46)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/ARSHp_HsQnus3WCUwrhHRw/zh-cn_image_0000002583439369.png)
    2. 框选想要接入意图框架功能的代码。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/QnFN8oAHR--EZds4FjvX4w/zh-cn_image_0000002552959324.png?HW-CC-KV=V1&HW-CC-Date=20260427T235337Z&HW-CC-Expire=86400&HW-CC-Sign=DC8545084F7AAA3815A2B7C6063670B00F7723D49F20FE3AE1358300CA1AA0E0)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/QnFN8oAHR--EZds4FjvX4w/zh-cn_image_0000002552959324.png)
    3. 在选中的代码块上右键CodeGenie > Insight Intent > 选择适合的装饰器。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/ZNi-3uCtSAaR_EpusagWVg/zh-cn_image_0000002583479325.png?HW-CC-KV=V1&HW-CC-Date=20260427T235337Z&HW-CC-Expire=86400&HW-CC-Sign=51E9FC9FBF21152AAFE9365F3F514A726CF26DC8DE63F5D150AC6A1EC6FE515B)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/ZNi-3uCtSAaR_EpusagWVg/zh-cn_image_0000002583479325.png)
    4. 在DevEco CodeGenie对话框中对意图定义，功能，参数等进行描述。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/NK6d3cLvQ3CH74KwRiuQ3A/zh-cn_image_0000002552799676.png?HW-CC-KV=V1&HW-CC-Date=20260427T235337Z&HW-CC-Expire=86400&HW-CC-Sign=FF82B3E893404E3C085B60178CE3C1F3DF4D3B5CDE56A90541AFF80349D47AF1)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/NK6d3cLvQ3CH74KwRiuQ3A/zh-cn_image_0000002552799676.png)
    5. 回车或者点击发送按钮，即可生成对应的装饰器内容。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/5Ut3sgFUTcWVL6Y1IsJxlg/zh-cn_image_0000002583439371.png?HW-CC-KV=V1&HW-CC-Date=20260427T235337Z&HW-CC-Expire=86400&HW-CC-Sign=6511B87446CCADBF37650B448D0F30D6DE8A8D2E39890ED4EF44EC1C8010DFC5)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/5Ut3sgFUTcWVL6Y1IsJxlg/zh-cn_image_0000002583439371.png)
    6. 将光标放置于要插入装饰器的位置，点击插入图标，即可在对应位置插入装饰器。
 
       插入前：
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/kMvNx4jLQty7x4LQr6QVAA/zh-cn_image_0000002552959326.png?HW-CC-KV=V1&HW-CC-Date=20260427T235337Z&HW-CC-Expire=86400&HW-CC-Sign=FDA350B81A1CD7F0EF76BA59DD5F7FB9DAE0C042EDED971DDA336E4722E84A7B)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/kMvNx4jLQty7x4LQr6QVAA/zh-cn_image_0000002552959326.png)
 
       插入后：
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/R-h4hd3VRH-Q1Iqf_tkvFw/zh-cn_image_0000002583479327.png?HW-CC-KV=V1&HW-CC-Date=20260427T235337Z&HW-CC-Expire=86400&HW-CC-Sign=7A34D09FF1BEC1CE3096FEBF8ED79D70427229AA40D0FD78C5456E6655B6A2EF)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/R-h4hd3VRH-Q1Iqf_tkvFw/zh-cn_image_0000002583479327.png)
 4. 装饰器的使用约束和说明：
 
    * 仅支持Navigation页面架构跳转。

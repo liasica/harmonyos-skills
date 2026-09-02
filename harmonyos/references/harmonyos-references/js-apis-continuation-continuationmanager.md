@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-continuation-continuationmanager
-title: @ohos.continuation.continuationManager (流转/协同管理)
+title: "@ohos.continuation.continuationManager (流转/协同管理)"
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > Stage模型能力的接口 > @ohos.continuation.continuationManager (流转/协同管理)
 category: harmonyos-references
 scraped_at: 2026-04-28T07:58:25+08:00

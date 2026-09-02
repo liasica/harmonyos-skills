@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-object-creation-check
-title: @performance/object-creation-check（已下线）
+title: "@performance/object-creation-check（已下线）"
 breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 性能规则@performance > @performance/object-creation-check（已下线）
 category: harmonyos-guides
 scraped_at: 2026-04-28T07:56:16+08:00

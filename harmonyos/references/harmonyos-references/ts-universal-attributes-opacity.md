@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:51:18+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:fd2c3f41dcd046b2b8e81b8fed3a0af0a81c3c97f7afffa7b1d13c334fbc649b
+content_hash: sha256:cb98d73fb3d21def254bf45199490609298e4c6505d846c64c5848b5dcc04159
 ---
 
 设置组件的透明度。
@@ -96,4 +96,4 @@ PhonePC/2in1TabletTVWearable
 21. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/KHRwWEVJTWKYiox4gjDeKQ/zh-cn_image_0000002558766028.png?HW-CC-KV=V1&HW-CC-Date=20260429T055117Z&HW-CC-Expire=86400&HW-CC-Sign=713B3A161854FEB261FBA969802E1C14C19329C9117DBE347985220108917054)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/KHRwWEVJTWKYiox4gjDeKQ/zh-cn_image_0000002558766028.png)

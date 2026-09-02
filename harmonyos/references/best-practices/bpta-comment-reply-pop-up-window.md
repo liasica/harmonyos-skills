@@ -5,7 +5,7 @@ breadcrumb: 最佳实践 > 布局与弹窗 > 评论回复弹窗
 category: best-practices
 scraped_at: 2026-04-29T14:10:25+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:19b4193f637c234a2ea00e7c48681b86e656838622740f8257d7b804b1196a68
+content_hash: sha256:34c5a671914978ecd2248160c9e3b12acfd46e93207d9617f9ab260c7090e234
 ---
 
 ## 概述
@@ -18,7 +18,7 @@ content_hash: sha256:19b4193f637c234a2ea00e7c48681b86e656838622740f8257d7b804b11
 
 **图1** 效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/peKQhsm2S8-JyFwn-q9T7g/zh-cn_image_0000002229337549.png?HW-CC-KV=V1&HW-CC-Date=20260429T061023Z&HW-CC-Expire=86400&HW-CC-Sign=B17A6C0FDDFA3A82DECE7A58F8EE46E8D6669DAA5062F6FAA60506FB93FA1FF8 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/peKQhsm2S8-JyFwn-q9T7g/zh-cn_image_0000002229337549.png "点击放大")
 
 为方便阅读，下面表格对本文常出现的模块名称进行说明：
 
@@ -58,7 +58,7 @@ content_hash: sha256:19b4193f637c234a2ea00e7c48681b86e656838622740f8257d7b804b11
 
   [PromptAction.openCustomDialog](../harmonyos-references/arkts-apis-uicontext-promptaction.md#opencustomdialog12)与自定义弹窗呈现效果相同，不再赘述。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/rbSrUtYuSeKQCJOtRzIEdQ/zh-cn_image_0000002193852164.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061023Z&HW-CC-Expire=86400&HW-CC-Sign=7F49813F8016026B8019BC5511E622DD1DD714DE6B3C91DBD25319F176912377 "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/rbSrUtYuSeKQCJOtRzIEdQ/zh-cn_image_0000002193852164.gif "点击放大")
 * [bindSheet半模态弹窗](../harmonyos-references/ts-universal-attributes-sheet-transition.md#bindsheet)
 
   方案优势：
@@ -71,7 +71,7 @@ content_hash: sha256:19b4193f637c234a2ea00e7c48681b86e656838622740f8257d7b804b11
   1. 设置高度自适应后，bindSheet内部的Scroll依然生效，在bindSheet内部可滚动。
   2. 设置dragBar为false时，bindSheet依然可以上下拖动，松手后回到原位，但此过程会暴露软键盘下方的表情面板区域。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/J6uboLZDTc6Lnkm9Djhc4g/zh-cn_image_0000002194011744.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061023Z&HW-CC-Expire=86400&HW-CC-Sign=5BE303188D2C28DA7368A50267176BB4CF8719AEE53878F04E195674814D3111 "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/J6uboLZDTc6Lnkm9Djhc4g/zh-cn_image_0000002194011744.gif "点击放大")
 * [Navigation Dialog](../harmonyos-guides/arkts-navigation-navigation.md#页面显示类型)
 
   方案优势：
@@ -110,7 +110,7 @@ Navigation Dialog在z轴的层级较低，评论模块如果基于该方案实�
 
 在视频页面点击消息按钮，弹出评论列表页面弹窗。在评论列表页点击写评论按钮，弹出评论模块弹窗。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/bh0W3cIaQy-WavdX_4NqYQ/zh-cn_image_0000002229337541.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061023Z&HW-CC-Expire=86400&HW-CC-Sign=575ED50E89F4A314FB9B62D8A6692804876E184CFDAF956144CA396072270F3A "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/bh0W3cIaQy-WavdX_4NqYQ/zh-cn_image_0000002229337541.gif "点击放大")
 
 基于Navigation的弹窗方案，Navigation的mode属性需要设置为NavigationMode.Stack。弹窗需要全屏显示，Navigation则需要添加在最外层组件上。
 
@@ -176,7 +176,7 @@ Navigation Dialog在z轴的层级较低，评论模块如果基于该方案实�
 
 点击编辑区域表情按钮，软键盘切换为表情面板，表情按钮图标变成键盘图标。再次点击，表情面板切换回软键盘，按钮图标由键盘变回表情。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/kbAGwMkEScGYkT-ZdSHGsw/zh-cn_image_0000002193852160.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061023Z&HW-CC-Expire=86400&HW-CC-Sign=91F69E5A6C62F51EFBCD0FDCDD15FB7E1ACA6C374C1C411462D776C88B0E91F1 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/kbAGwMkEScGYkT-ZdSHGsw/zh-cn_image_0000002193852160.gif "点击放大")
 
 本文选择自定义键盘来控制软键盘和表情面板的切换。通过设置[RichEditor.customKeyboard](../harmonyos-references/ts-basic-components-richeditor.md#customkeyboard)为表情面板组件的构建函数EmojiKeyboard，来展示表情面板，设置该属性为undefined，则展示默认软键盘。通过这种方式在软键盘与表情面板切换时也无需手动进行richEditor焦点的处理。
 
@@ -300,7 +300,7 @@ Navigation Dialog在z轴的层级较低，评论模块如果基于该方案实�
 
   在软键盘上方常用表情列表点击表情图片，或者切换到表情面板点击表情图片，会在编辑区域光标后方添加对应的表情内容。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/cRjRZ1bCSK-zwQtS03xnSA/zh-cn_image_0000002194011748.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061023Z&HW-CC-Expire=86400&HW-CC-Sign=0D0F1E9CDB9A40A89C20E53418BE0460F720EB3C98EBF84F2BB0A079D5E6887C "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/cRjRZ1bCSK-zwQtS03xnSA/zh-cn_image_0000002194011748.gif "点击放大")
 
   在表情面板或常用表情列表中点击表情时可通过[RichEditorController.addImageSpan](../harmonyos-references/ts-basic-components-richeditor.md#addimagespan)在编辑区域进行添加图片表情，注意需要设置offset属性为当前光标位置，当前光标的位置可通过[RichEditorController.getCaretOffset](../harmonyos-references/ts-basic-components-richeditor.md#getcaretoffset10)获取。这样使得表情在当前光标后添加，否则默认在内容的最后方添加，后文类似的添加操作都遵循此规则。
 
@@ -321,7 +321,7 @@ Navigation Dialog在z轴的层级较低，评论模块如果基于该方案实�
 
   点击编辑区域@按钮，或在软键盘输入@符号，会展示好友列表。点击好友列表中好友头像，会在编辑区域添加@好友内容。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/ygZVY7iVSWO0CCcCb-7Ayg/zh-cn_image_0000002229452041.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061023Z&HW-CC-Expire=86400&HW-CC-Sign=1AF7C182EDC21A04BA74AA5687A012BFCE651C3F5416BBD6C480DBCA62800474 "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/ygZVY7iVSWO0CCcCb-7Ayg/zh-cn_image_0000002229452041.gif "点击放大")
 
   点击@按钮时，通过[RichEditorController.addTextSpan](../harmonyos-references/ts-basic-components-richeditor.md#addtextspan)添加@符号，并显示好友列表。同时需要监听[RichEditor.aboutToIMEInput](../harmonyos-references/ts-basic-components-richeditor.md#abouttoimeinput)事件 ，该事件在输入内容前触发回调，在回调中获取要输入的内容，如果输入的内容为@，则相当于点击了@按钮的效果，这样统一了点击@按钮和键盘输入@的逻辑，方便后续一些细节的处理。
 
@@ -369,7 +369,7 @@ Navigation Dialog在z轴的层级较低，评论模块如果基于该方案实�
 
   点击软键盘删除按钮，如果要编辑区域光标前删除的内容是builderSpan（@好友）且没有被选中，则进行选中，否则直接删除光标前的内容。选中内容会作为整体删除。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/olIQZ6GYS1u6gUfrbm6Rbw/zh-cn_image_0000002229452037.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061023Z&HW-CC-Expire=86400&HW-CC-Sign=96F4432BABF9A8E0AD019D0165DED860D582EE46E4A9F0D88A15E75ADEEEDA0E "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/olIQZ6GYS1u6gUfrbm6Rbw/zh-cn_image_0000002229452037.gif "点击放大")
 
   监听[RichEditor.aboutToDelete](../harmonyos-references/ts-basic-components-richeditor.md#abouttodelete)事件，可通过回调中返回false阻止编辑区域默认的删除行为。在第一次删除builderSpan（@好友）的时候，先使用[RichEditorController.setSelection](../harmonyos-references/ts-basic-components-richeditor.md#setselection11)对整体进行选中，再次点击删除键时选中内容在RichEditor中会默认被整体删除。
 
@@ -396,7 +396,7 @@ Navigation Dialog在z轴的层级较低，评论模块如果基于该方案实�
 
   在编辑区域输入文字、表情、@好友内容，点击发送按钮，获取编辑区域内容，并弹窗展示内容以及@好友中好友的相关信息。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/4VSutCynQhGAfoAaK9dbiw/zh-cn_image_0000002229337545.png?HW-CC-KV=V1&HW-CC-Date=20260429T061023Z&HW-CC-Expire=86400&HW-CC-Sign=259A5485F405B54472D046DEA3FE95E62917BE6577362849622F366C67F7B7A9 "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/4VSutCynQhGAfoAaK9dbiw/zh-cn_image_0000002229337545.png "点击放大")
 
   可以通过[RichEditorController.getSpans](../harmonyos-references/ts-basic-components-richeditor.md#getspans)来获取编辑区域所有的内容，获取到的内容在getSpans方法的返回值中表现为[RichEditorTextSpanResult](../harmonyos-references/ts-basic-components-richeditor.md#richeditortextspanresult)和[RichEditorImageSpanResult](../harmonyos-references/ts-basic-components-richeditor.md#richeditorimagespanresult)两种类型。上文中提到过文字、图片表情、@好友三种内容与这两种类型的对应关系如下表：
 

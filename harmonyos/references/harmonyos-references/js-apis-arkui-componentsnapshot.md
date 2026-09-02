@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-componentsnapshot
-title: @ohos.arkui.componentSnapshot (组件截图)
+title: "@ohos.arkui.componentSnapshot (组件截图)"
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.arkui.componentSnapshot (组件截图)
 category: harmonyos-references
 scraped_at: 2026-04-29T13:50:29+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:d58547d4939c1e14fa4396d6755d15ce48e63cde969ae5ea26b9dae50bc18a51
+content_hash: sha256:6d652524504980877e23081b542056c8813d1c4148e1e1e9598c8191ca205be6
 ---
 
 本模块提供获取组件截图的能力，包括已加载的组件的截图和没有加载的组件的截图。组件截图只能够截取组件大小的区域，如果组件的绘制超出了它的区域，或子组件的绘制超出了父组件的区域，这些在组件区域外绘制的内容不会在截图中呈现。兄弟节点堆叠在组件区域内，截图不会显示兄弟组件。
@@ -111,7 +111,7 @@ get(id: string, callback: AsyncCallback<image.PixelMap>, options?: SnapshotOptio
 38. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/dnuDKCpZQBq4QIHCvU_t0Q/zh-cn_image_0000002589325789.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055027Z&HW-CC-Expire=86400&HW-CC-Sign=53647B3629981E8C069B256F782A0B580D4291C619E8C4F9F2868579FC7EAA3A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/dnuDKCpZQBq4QIHCvU_t0Q/zh-cn_image_0000002589325789.gif)
 
 ## componentSnapshot.get(deprecated)
 
@@ -199,7 +199,7 @@ get(id: string, options?: SnapshotOptions): Promise<image.PixelMap>
 37. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/igcO0Go_T1KGenMLDSHxxQ/zh-cn_image_0000002589325789.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055027Z&HW-CC-Expire=86400&HW-CC-Sign=4BEA1FFB230B5A1C427DAD2AD4D73ED7D984C03429760E9FBA9A9FF7B8622F1F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/igcO0Go_T1KGenMLDSHxxQ/zh-cn_image_0000002589325789.gif)
 
 ## componentSnapshot.createFromBuilder(deprecated)
 
@@ -307,7 +307,7 @@ createFromBuilder(builder: CustomBuilder, callback: AsyncCallback<image.PixelMap
 57. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/G_oTHCvBTCWPJwdjaj_9BQ/zh-cn_image_0000002589245731.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055027Z&HW-CC-Expire=86400&HW-CC-Sign=064C7F9CDFEFF24365379F5409DDC96807593E1AB124F9B2B6987F98436807C3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/G_oTHCvBTCWPJwdjaj_9BQ/zh-cn_image_0000002589245731.gif)
 
 ## componentSnapshot.createFromBuilder(deprecated)
 
@@ -418,7 +418,7 @@ createFromBuilder(builder: CustomBuilder, delay?: number, checkImageStatus?: boo
 55. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/FedRTtRuQF-eVEa06T846Q/zh-cn_image_0000002589245731.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055027Z&HW-CC-Expire=86400&HW-CC-Sign=FE75DC6D92FEA60003060AD53622C6C7D4D6FA3893551EDC6F8947AB4F98AD32)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/FedRTtRuQF-eVEa06T846Q/zh-cn_image_0000002589245731.gif)
 
 ## componentSnapshot.getSync12+
 
@@ -506,7 +506,7 @@ getSync(id: string, options?: SnapshotOptions): image.PixelMap
 37. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/He5Zd6jcRk6QXNVQfZ9n6Q/zh-cn_image_0000002589325789.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055027Z&HW-CC-Expire=86400&HW-CC-Sign=91EC7F02B69CD3949B0DFE7F28E7DD86567503925914C375EFA9689002CEC5E8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/He5Zd6jcRk6QXNVQfZ9n6Q/zh-cn_image_0000002589325789.gif)
 
 ## SnapshotOptions12+
 
@@ -584,7 +584,7 @@ PhonePC/2in1TabletTVWearable
 42. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/hnI1VPmISniu16SGwaANkg/zh-cn_image_0000002589325789.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055027Z&HW-CC-Expire=86400&HW-CC-Sign=1B226E0D4126170D37D9DA361C53F7FF4C88A44B2A54CC3A18BD0BF62B6B7839)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/hnI1VPmISniu16SGwaANkg/zh-cn_image_0000002589325789.gif)
 
 ## DynamicRangeModeOptions23+
 
@@ -647,7 +647,7 @@ PhonePC/2in1TabletTVWearable
 41. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/upxbZyN1Tj6Kgz5T5MNVSQ/zh-cn_image_0000002589325789.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055027Z&HW-CC-Expire=86400&HW-CC-Sign=1870B0375C2EC0B64D8E69A8D5E8DF2B4B903FC37F5D7D72CD29C2DE695AFDBF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/upxbZyN1Tj6Kgz5T5MNVSQ/zh-cn_image_0000002589325789.gif)
 
 ## SnapshotRegionType15+
 
@@ -765,4 +765,4 @@ PhonePC/2in1TabletTVWearable
 56. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/gofn1j2QQzaDShv9YWB1Tg/zh-cn_image_0000002558765920.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055027Z&HW-CC-Expire=86400&HW-CC-Sign=96463165FEEC87A4E1ABBDDAB0D4F8AC68D41D3B36069A3F43E93F4AB39EAFCB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/gofn1j2QQzaDShv9YWB1Tg/zh-cn_image_0000002558765920.gif)

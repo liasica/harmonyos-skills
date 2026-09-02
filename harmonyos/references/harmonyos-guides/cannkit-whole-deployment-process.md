@@ -5,10 +5,10 @@ breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 端侧部
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:40:58+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:2e4c6247e77b200bf86c5069a70f2d54dbb8cbe680ee73f01b347809650936b0
+content_hash: sha256:7b625a209dec9b4e0fa1737b6e53fcf346d1147649f1939665693b4571a5f2fb
 ---
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/ZhzQtHlPQiShLxi7tZcC7Q/zh-cn_image_0000002558606064.png?HW-CC-KV=V1&HW-CC-Date=20260429T054057Z&HW-CC-Expire=86400&HW-CC-Sign=53BBF033EDA3D24042D737F3F17B8424330C1811B3AB578B4E5A52A2F9445CC5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/ZhzQtHlPQiShLxi7tZcC7Q/zh-cn_image_0000002558606064.png)
 
 ## 离线模型转换
 

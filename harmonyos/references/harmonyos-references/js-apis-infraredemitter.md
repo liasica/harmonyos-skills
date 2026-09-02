@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-infraredemitter
-title: @ohos.multimodalInput.infraredEmitter (红外管理)
+title: "@ohos.multimodalInput.infraredEmitter (红外管理)"
 breadcrumb: API参考 > 系统 > 基础功能 > Input Kit（多模输入服务） > ArkTS API > @ohos.multimodalInput.infraredEmitter (红外管理)
 category: harmonyos-references
 scraped_at: 2026-04-28T08:10:15+08:00

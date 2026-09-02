@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > UI Design Kit（UI设计套件） > ArkTS
 category: harmonyos-references
 scraped_at: 2026-04-29T13:57:14+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:8da3b72578d720cbb54e18bae5bfcac6546ddba35671ead41963db4ec09654af
+content_hash: sha256:a8559b6f2afae7cccdd57bad712ebb4d03ad8e063f82dade6bc3fd6f4da67571
 ---
 
 HdsVisualComponent组件承载复杂视效实现，应用开发者通过HdsVisualComponent选择具体视效场景完成复杂视效的开发。
@@ -311,4 +311,4 @@ PhonePC/2in1TabletTV
 32. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/JHHTflxbQNKory1wqHeaZQ/zh-cn_image_0000002558767058.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055313Z&HW-CC-Expire=86400&HW-CC-Sign=5476CD2F850ACCBD41011054C74CB8D69793E940568EE031D3DD2A87ADBA37BA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/JHHTflxbQNKory1wqHeaZQ/zh-cn_image_0000002558767058.gif)

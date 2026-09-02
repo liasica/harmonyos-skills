@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-prop
-title: @Prop装饰器：父子单向同步
+title: "@Prop装饰器：父子单向同步"
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理（V1） > 管理组件拥有的状态 > @Prop装饰器：父子单向同步
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:27:11+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:352d2e2e280626de05469904d39a1262470aced0ee7805507a3370c989a2be4c
+content_hash: sha256:1de11979d9bd98e23a60e459c9099c54a1088534df596b89217d50ac3c04461a
 ---
 
 @Prop装饰的变量可以和父组件建立单向同步关系。
@@ -46,7 +46,7 @@ content_hash: sha256:352d2e2e280626de05469904d39a1262470aced0ee7805507a3370c989a
 
 初始化规则图示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/BjDu5NugRaWMfJKwYBkTBg/zh-cn_image_0000002558764090.png?HW-CC-KV=V1&HW-CC-Date=20260429T052710Z&HW-CC-Expire=86400&HW-CC-Sign=4A75CA2089CFC0968CEEC3064665AF168B9F3E40AABA4DA74554386ABDC80D33)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/BjDu5NugRaWMfJKwYBkTBg/zh-cn_image_0000002558764090.png)
 
 ## 观察变化和行为表现
 
@@ -558,7 +558,7 @@ ParentComponent的状态变量countDownStartValue的变化将重置CountDownComp
 
 @Observed装饰的类的实例会被不透明的代理对象包装，此代理可以检测到包装对象内的所有属性更改。如果发生这种情况，此时，代理通知@Prop，@Prop对象值被更新。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/sEz7ojpHQg-G9kC2BwTF3A/zh-cn_image_0000002558604434.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052710Z&HW-CC-Expire=86400&HW-CC-Sign=0619ACEBD40F336627EBCFB302B522FA6C1C4A535D8047519C42C7304E5B9D1E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/sEz7ojpHQg-G9kC2BwTF3A/zh-cn_image_0000002558604434.gif)
 
 ### @Prop本地初始化不和父组件同步
 
@@ -634,7 +634,7 @@ ParentComponent的状态变量countDownStartValue的变化将重置CountDownComp
 
 [PageSeven.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/Prop/entry/src/main/ets/pages/PageSeven.ets#L16-L78)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/8NV59O0NR8enCJ4_O9G6SQ/zh-cn_image_0000002589323959.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052710Z&HW-CC-Expire=86400&HW-CC-Sign=2A8AF0C61DC8B06E0391D53B9C9F85BE06FA1394FE47679A61251BCD2CB3F1D0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/8NV59O0NR8enCJ4_O9G6SQ/zh-cn_image_0000002589323959.gif)
 
 ### @Prop嵌套场景
 
@@ -747,7 +747,7 @@ ParentComponent的状态变量countDownStartValue的变化将重置CountDownComp
 
 [PageNine.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/Prop/entry/src/main/ets/pages/PageNine.ets#L36-L114)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/bZyE4593SUGeVIiKKhxLhQ/zh-cn_image_0000002589243899.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052710Z&HW-CC-Expire=86400&HW-CC-Sign=1F247E4DF9F3B988B4DFDFFCCA8EA056A5E755195B622E47CDD788EF7ED44015)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/bZyE4593SUGeVIiKKhxLhQ/zh-cn_image_0000002589243899.gif)
 
 ### 装饰Array类型变量
 

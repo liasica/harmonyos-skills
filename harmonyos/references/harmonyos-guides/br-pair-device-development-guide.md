@@ -5,7 +5,7 @@ breadcrumb: 指南 > 系统 > 网络 > Connectivity Kit（短距通信服务） 
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:32:28+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:76b90e1d4b90fbf5edd1d61248458bdcaba73345e653e7448c4d3b20b5f617dc
+content_hash: sha256:98228d2f4c777d5b30ef6c49f755daae38ae17aeab27ef4b1b3f6cde424f237f
 ---
 
 ## 简介
@@ -55,7 +55,7 @@ content_hash: sha256:76b90e1d4b90fbf5edd1d61248458bdcaba73345e653e7448c4d3b20b5f
 
 配对过程中，系统会弹出对话框。不同配对类型，对话框样式可能不一样，其中“确认配对密钥（Confirm Passkey）”模式如下图1。若用户同意授权，才能配对成功。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/hOSScrsITJqwsPFnyDuVaQ/zh-cn_image_0000002558764920.png?HW-CC-KV=V1&HW-CC-Date=20260429T053227Z&HW-CC-Expire=86400&HW-CC-Sign=1538629D75F90B7032FA7966424D62A562C1E85AD89EB9E70ED28AF0DC9FF181)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/hOSScrsITJqwsPFnyDuVaQ/zh-cn_image_0000002558764920.png)
 
 **图1** 蓝牙配对请求对话框
 

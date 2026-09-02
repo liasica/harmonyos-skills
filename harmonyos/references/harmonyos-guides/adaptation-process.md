@@ -5,14 +5,14 @@ breadcrumb: 指南 > 应用框架 > Core File Kit（文件基础服务） > 应�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:29:42+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:e643220162369a7c7e1079e43f771437bdcba9ba53d19ecdb8d57486598c5320
+content_hash: sha256:6b34a958b10c9bf4e9d267f9c6c78a8d9f36b4dc621fef56be46f612689c232b
 ---
 
 适配流程包括：适配准备、应用适配、开发者自验证、应用上架和端到端验证。
 
 **图1** 适配流程图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/l9VBkVN5QJqpvHbvwmuqiQ/zh-cn_image_0000002589244565.png?HW-CC-KV=V1&HW-CC-Date=20260429T052940Z&HW-CC-Expire=86400&HW-CC-Sign=AFEBD7625917E74BED728BF8612CD7EFB67CC9CF95023777DC733C8DC2C8125F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/l9VBkVN5QJqpvHbvwmuqiQ/zh-cn_image_0000002589244565.png)
 
 ## 适配准备阶段
 
@@ -30,7 +30,7 @@ content_hash: sha256:e643220162369a7c7e1079e43f771437bdcba9ba53d19ecdb8d57486598
 
 后续HarmonyOS应用通过访问HarmonyOS应用沙箱获取应用的数据。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/5UiLhV3BTLuUSB2eNH6-cA/zh-cn_image_0000002558764760.png?HW-CC-KV=V1&HW-CC-Date=20260429T052940Z&HW-CC-Expire=86400&HW-CC-Sign=41AAC159BEC4A78D5947F65BF436317249A72EA485564908288F643DB5219B63)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/5UiLhV3BTLuUSB2eNH6-cA/zh-cn_image_0000002558764760.png)
 
 备份恢复目录如下表中所示：
 

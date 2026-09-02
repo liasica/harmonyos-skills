@@ -1,6 +1,6 @@
 # 最佳实践（best-practices）
 
-共 447 篇文档。
+共 446 篇文档。
 
 - [PC/2in1异形窗口](bpta-2in1-window-shape.md)
 - [水印添加](bpta-add-watermark.md)
@@ -61,7 +61,6 @@
 - [图像模糊高效使用](bpta-background-blur.md)
 - [应用退后台禁止使用传感器问题分析](bpta-background-sensors-baned-analysis.md)
 - [长列表加载丢帧优化](bpta-best-practices-long-list.md)
-- [最佳实践概览](bpta-best-practices-overview.md)
 - [最佳实践概览](bpta-best-practices-overview.md)
 - [低功耗蓝牙基础使用](bpta-bluetooth-low-energy.md)
 - [基于Buffer模式进行视频转码](bpta-buffer-mode-transcoding.md)

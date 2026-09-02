@@ -4,7 +4,7 @@ title: 基于函数的装饰器方案
 category: harmonyos-guides
 scraped_at: 2026-04-28T07:53:40+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:b5a79c0b3d706c409be339d480983faf33c9450856fb3a05321a13a1bd02a5f6
+content_hash: sha256:11dce3c6aa8fe48de0ced8614c7f1e9730a2fab640cc90e4d35b37bb9db40ef9
 ---
 
 开发者使用@InsightIntentFunction和@InsightIntentFunctionMethod装饰器进行基于函数的意图声明，可快速将已有的函数功能接入意图框架，以购买电影票的意图为例，详细说明如下：
@@ -71,28 +71,28 @@ content_hash: sha256:b5a79c0b3d706c409be339d480983faf33c9450856fb3a05321a13a1bd0
 
    1. 打开CodeGenie插件：在DevEco Studio右侧边栏点击CodeGenie或输入快捷键Alt/Option+U，可以进入DevEco CodeGenie。若使用非最新版本的DevEco Studio，可通过[下载中心](https://developer.huawei.com/consumer/cn/download/deveco-codegenie)获取并使用相关功能，具体请参考[插件获取及安装](ide-codegenie.md#section18337533718)。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/l9heM5QASBuDyjsLYoXyzg/zh-cn_image_0000002552799678.png?HW-CC-KV=V1&HW-CC-Date=20260427T235337Z&HW-CC-Expire=86400&HW-CC-Sign=9BBC8FD3A2EEEA03566AE4C7CD79BDAE7FD70836A33ADC7DA0C9DA8CE28B5AED)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/l9heM5QASBuDyjsLYoXyzg/zh-cn_image_0000002552799678.png)
    2. 框选想要接入意图框架功能的代码。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/J4OvdUBeSfaikDgNnJ4DRg/zh-cn_image_0000002583439373.png?HW-CC-KV=V1&HW-CC-Date=20260427T235337Z&HW-CC-Expire=86400&HW-CC-Sign=05E2A6DCDE7A7839071C54E9C25506E4CF4D8C429B04E8480212B798E39D9B30)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/J4OvdUBeSfaikDgNnJ4DRg/zh-cn_image_0000002583439373.png)
    3. 在选中的代码块上右键CodeGenie > Insight Intent > 选择适合的装饰器。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/K6QRpi3XQWmPHUta2wZvSA/zh-cn_image_0000002552959328.png?HW-CC-KV=V1&HW-CC-Date=20260427T235337Z&HW-CC-Expire=86400&HW-CC-Sign=9117AF0CC62F27D988B91589C3B8CBDA3CBD84419AD1180C4A75D5E72B658E4C)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/K6QRpi3XQWmPHUta2wZvSA/zh-cn_image_0000002552959328.png)
    4. 在DevEco CodeGenie对话框中对意图定义，功能，参数等进行描述。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/va5HURULTHetGDnTDgh2-Q/zh-cn_image_0000002583479329.png?HW-CC-KV=V1&HW-CC-Date=20260427T235337Z&HW-CC-Expire=86400&HW-CC-Sign=45DEB48B18AEFF9B330108BCFEC721E433F894C427C162853EDC8259EEFE83D8)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/va5HURULTHetGDnTDgh2-Q/zh-cn_image_0000002583479329.png)
    5. 回车或者点击发送按钮，即可生成对应的装饰器内容。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/AYLTWKOEShCW_reuBSUKuA/zh-cn_image_0000002552799680.png?HW-CC-KV=V1&HW-CC-Date=20260427T235337Z&HW-CC-Expire=86400&HW-CC-Sign=8BC65484DBB6B41F59552B1575AB1D5A456C0EDDF150EC63D7E03AF7E537B8BB)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/AYLTWKOEShCW_reuBSUKuA/zh-cn_image_0000002552799680.png)
    6. 将光标放置于要插入装饰器的位置，点击插入图标，即可在对应位置插入装饰器。
 
    插入前：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/QtQP2cFWRXuS1apXx6XzOQ/zh-cn_image_0000002583439375.png?HW-CC-KV=V1&HW-CC-Date=20260427T235337Z&HW-CC-Expire=86400&HW-CC-Sign=24545AD23D1D610C5FDB050A0A3D5760D8E79D2234C56E401A72C00CEADB1C57)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/QtQP2cFWRXuS1apXx6XzOQ/zh-cn_image_0000002583439375.png)
 
    插入后：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/xroMPHyjT56LyAtepN0e8Q/zh-cn_image_0000002552959330.png?HW-CC-KV=V1&HW-CC-Date=20260427T235337Z&HW-CC-Expire=86400&HW-CC-Sign=37559158C5597D6A6A892EC133B166CC744363F72CC6B7A2B688191536D01FD5)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/xroMPHyjT56LyAtepN0e8Q/zh-cn_image_0000002552959330.png)
 
    装饰器的使用约束和说明：
 

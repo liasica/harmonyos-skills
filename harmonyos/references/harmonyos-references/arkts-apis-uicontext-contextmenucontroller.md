@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > U
 category: harmonyos-references
 scraped_at: 2026-04-29T13:50:34+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:fb4ede747d0fce19fa2973eb8975f68c4c6412a10c8a59dda4b7f2605bd10562
+content_hash: sha256:bf4864ad5a18c311f3cf93841412b7965376c617f27c02572c623e70375b18fb
 ---
 
 提供控制菜单关闭的能力。
@@ -77,4 +77,4 @@ close(): void
 42. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/-Pmct7Z7S_KqXJbac8wqcA/zh-cn_image_0000002558765926.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055033Z&HW-CC-Expire=86400&HW-CC-Sign=6596FCC30A27E66A4D108D8895256A212D9FB31036A41B8B0E89D793355EF7C6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/-Pmct7Z7S_KqXJbac8wqcA/zh-cn_image_0000002558765926.gif)

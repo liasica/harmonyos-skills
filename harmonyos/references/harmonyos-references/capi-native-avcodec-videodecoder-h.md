@@ -5,7 +5,7 @@ breadcrumb: API参考 > 媒体 > AVCodec Kit（音视频编解码服务） > C A
 category: harmonyos-references
 scraped_at: 2026-04-29T14:02:43+08:00
 doc_updated_at: 2026-04-17
-content_hash: sha256:b990f046160df1a8a85905ee4b9ac79ecd1b74f91eb66f31b8f04b287378782f
+content_hash: sha256:058b450e6bc4521aea17acf86145d39261556d4f8f64654b59644ffa7b80e6c2
 ---
 
 ## 概述
@@ -28,9 +28,9 @@ PhonePC/2in1TabletTVWearable
 
 接口在每个版本的支持情况以及在解码过程中可以调用的情况，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/Bt4pgnSPQ4Cl1JU7ta7cLw/zh-cn_image_0000002558767380.png?HW-CC-KV=V1&HW-CC-Date=20260429T060242Z&HW-CC-Expire=86400&HW-CC-Sign=291AA0706FA5FE0BC0BB7546FAFFB29A98295DA57CB305A762C80D2A1D003F7C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/Bt4pgnSPQ4Cl1JU7ta7cLw/zh-cn_image_0000002558767380.png)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/lF-GYqcbQ2S5AX6OgGO4Pw/zh-cn_image_0000002558607722.png?HW-CC-KV=V1&HW-CC-Date=20260429T060242Z&HW-CC-Expire=86400&HW-CC-Sign=CFF3FF76AB1A25542F72D0FEAE8FC83A182376DB69AAC96AE2CA25FFF14EF4AA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/lF-GYqcbQ2S5AX6OgGO4Pw/zh-cn_image_0000002558607722.png)
 
 ## 汇总
 

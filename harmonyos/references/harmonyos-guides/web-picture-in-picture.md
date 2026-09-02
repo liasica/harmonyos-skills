@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 使用网页多媒�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:29:27+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:2cdf8a69c765f647b5f45ba4b3244035773ded3f1ea46204ff4e3dfc99c722c4
+content_hash: sha256:c0666a7ee526726f48856f6fba4aded5c2d8e1474fd9b6c8d0e75d7757054cd8
 ---
 
 Web组件提供画中画功能支持，应用可利用W3C标准的Picture-in-Picture API在网页中创建浮动窗口以播放视频，使用户在浏览其他网页或与其他应用交互时，可通过该画中画窗口继续观看视频。
@@ -100,7 +100,7 @@ HTMLVideoElement的enterpictureinpicture事件在HTMLVideoElement成功进入画
 
   播放控制包含暂停，播放，前进/后退（默认显示前进/后退UI控件，若原视频不支持前进后退，单击无响应）。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/hEEjaWRrTBK-yOURcAebxw/zh-cn_image_0000002589324593.png?HW-CC-KV=V1&HW-CC-Date=20260429T052926Z&HW-CC-Expire=86400&HW-CC-Sign=7FF7A4E46D564F72F103526C0A62938C8DD396985239E4BFA4D0C593F7821B3A)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/hEEjaWRrTBK-yOURcAebxw/zh-cn_image_0000002589324593.png)
 
 ## 完整示例
 

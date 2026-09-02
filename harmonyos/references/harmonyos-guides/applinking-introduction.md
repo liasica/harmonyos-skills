@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用服务 > App Linking Kit（应用链接服务） > Ap
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:37:32+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:e7aa5f9806a10ba9e04b78e4568a28b753326c5c88148a9e4f32a4ad4a90de3d
+content_hash: sha256:408dcd405db4c60837fa04ac33777e0c7f3e399b430ee8dea556f848fc4f1fbd
 ---
 
 App Linking Kit（应用链接服务）提供了一系列增强的链接特性。
@@ -30,19 +30,19 @@ App Linking Kit（应用链接服务）提供了一系列增强的链接特性�
 
 随着全场景智慧生活的不断演进，跨设备内容分享已成为用户的核心需求之一。传统分享方式普遍存在操作繁琐（需手动选择设备或应用）、依赖特定网络环境、传输效率低等问题，影响了用户体验。HarmonyOS提供的[Share Kit（分享服务）](share-introduction.md)结合App Linking Kit技术，能够实现内容的快速跨设备分享，直达目标应用，无需依赖第三方应用中转，提供高效、便捷、无缝的分享体验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/1dGWHh8KR92bJzSCQR3Aag/zh-cn_image_0000002558765298.gif?HW-CC-KV=V1&HW-CC-Date=20260429T053729Z&HW-CC-Expire=86400&HW-CC-Sign=7529C6533D435EAB5AAF84976325D303BC2D609D056491B3258A14A298BD7ECD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/1dGWHh8KR92bJzSCQR3Aag/zh-cn_image_0000002558765298.gif)
 
 ### 游戏碰一碰快速组队
 
 在《多乐中国象棋》这款组队竞技类游戏中，玩家只需轻轻碰触两台设备，即可实现秒速组队，省去了传统邀请流程中的繁琐操作，一步直达指定页面。与传统的通信软件邀请流程相比，操作步骤大幅减少。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/zGROEeaBQ7KLWvQqWMN1cg/zh-cn_image_0000002558605642.gif?HW-CC-KV=V1&HW-CC-Date=20260429T053729Z&HW-CC-Expire=86400&HW-CC-Sign=BC9184E23404931EFC50A9F0C53470E621236D905C91F39AB2EB07F2B2176835)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/zGROEeaBQ7KLWvQqWMN1cg/zh-cn_image_0000002558605642.gif)
 
 ### 通过扫码使服务快速触达用户
 
 美团App结合App Linking技术，实现用户无需打开App，通过系统扫码即可直接解锁共享单车。在负一屏、控制中心、系统相机中均可解锁，相比打开App扫码，操作入口增加了3倍，一步扫码直达，操作效率提升了30%以上。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/jiHwYkB2SNa1wKO0RshCWA/zh-cn_image_0000002589325169.gif?HW-CC-KV=V1&HW-CC-Date=20260429T053729Z&HW-CC-Expire=86400&HW-CC-Sign=14C69D643F7369569C0C65FDAEB10579D83B0606A93BE4C51CB2652312C50F2A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/jiHwYkB2SNa1wKO0RshCWA/zh-cn_image_0000002589325169.gif)
 
 ## 约束与限制
 

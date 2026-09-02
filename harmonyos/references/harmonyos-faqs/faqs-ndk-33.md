@@ -5,7 +5,7 @@ breadcrumb: FAQ > 应用框架开发 > NDK开发 > NDK开发 > 如何通过AKI�
 category: harmonyos-faqs
 scraped_at: 2026-04-29T14:15:51+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:61dc1c065678ba1414db3068a3c97d3dfc5810ba1a953dc6dfde115185716954
+content_hash: sha256:d32e90292982459d9eeb96f9fc1d0b1d0d80b5927c38ebc469556c9dbe20bd0e
 ---
 
 ArkTS与C/C++之间交互，涉及到跨语言调用中数据转换，以及跨线程交互等内容。沿用Node-API标准实现，支持的Node-API接口可参见[Node-API支持的数据类型和接口](../harmonyos-guides/napi-data-types-interfaces.md)。
@@ -42,7 +42,7 @@ ArkTS与C/C++之间交互，涉及到跨语言调用中数据转换，以及跨�
 
    在右上角同步工程。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/IK8JOxziQn6iH747Tv2aRg/zh-cn_image_0000002229604253.png?HW-CC-KV=V1&HW-CC-Date=20260429T061550Z&HW-CC-Expire=86400&HW-CC-Sign=F5631516E48BC9D95D40A7E8278D968AE04D0586BA5771C4AB9F63A4124DF69A)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/IK8JOxziQn6iH747Tv2aRg/zh-cn_image_0000002229604253.png)
 2. 在napi\_init.cpp文件中定义业务，并将业务接口导出给 ArkTS。
 
    ```

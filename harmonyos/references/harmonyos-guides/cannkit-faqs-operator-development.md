@@ -5,7 +5,7 @@ breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:41:20+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:9b4bf15638293e506c2e8ca46f616b465f530c83b2ba1f54c48a5cb041a33c56
+content_hash: sha256:154b6cf650064532281522ca68023c92dd8d9f1c5953b9365961130427f9eff5
 ---
 
 ## 核函数运行验证时算子存在精度问题
@@ -336,7 +336,7 @@ opc编译方式下，kernel编译报错，如图1所示。
 
 **图1** 报错样例
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/65FkQix8Q3qxbL4WAqEh0g/zh-cn_image_0000002558606100.png?HW-CC-KV=V1&HW-CC-Date=20260429T054118Z&HW-CC-Expire=86400&HW-CC-Sign=3363D32C95617D67D735D6561A5FADE61074301A14886D173108889983B502F7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/65FkQix8Q3qxbL4WAqEh0g/zh-cn_image_0000002558606100.png)
 
 ### 可能的原因
 
@@ -362,7 +362,7 @@ Kernel代码实现有误，导致编译失败。
 
       **图2** NPU编译命令
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/_l1DpRYUQJWOo_T8LEfx_A/zh-cn_image_0000002589325627.png?HW-CC-KV=V1&HW-CC-Date=20260429T054118Z&HW-CC-Expire=86400&HW-CC-Sign=A410B043D461A32DC7BD0182B20D90E8B24116FA7B6BE0E4DCAF917498D9F134)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/_l1DpRYUQJWOo_T8LEfx_A/zh-cn_image_0000002589325627.png)
 
 ## NPU编译失败提示RuntimeError: Cannot get compiling bash file! Maybe template json does not match
 
@@ -372,7 +372,7 @@ opc编译方式下，kernel编译报错，如图3所示。
 
 **图3** 报错样例
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/oxHBH5IAT_ePg-p7bx23Bw/zh-cn_image_0000002589245567.png?HW-CC-KV=V1&HW-CC-Date=20260429T054118Z&HW-CC-Expire=86400&HW-CC-Sign=B0EC10286E95EE6410E53F27DF47E05134440A574025F4E27BAE1A2177F5DDC6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/oxHBH5IAT_ePg-p7bx23Bw/zh-cn_image_0000002589245567.png)
 
 ### 可能的原因
 
@@ -441,7 +441,7 @@ CPU/Simulator的Kernel执行失败，导致输出路径下无输出文件生成�
 
 **图4** 报错样例
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/0okVyNpgRVyvxiDsxAuPyQ/zh-cn_image_0000002558765758.png?HW-CC-KV=V1&HW-CC-Date=20260429T054118Z&HW-CC-Expire=86400&HW-CC-Sign=F3E067C71F225219D976A820A09066B72B55257696C9F8DB5C1E8499F4AAD466)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/0okVyNpgRVyvxiDsxAuPyQ/zh-cn_image_0000002558765758.png)
 
 ### 处理方案
 
@@ -474,7 +474,7 @@ CPU/Simulator调测生成的精度比对结果文件出现“Failed”，部分�
 
 **图5** 精度比对结果文件
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/DQwfMxhcTWaa9Mxrxk5lBg/zh-cn_image_0000002558606102.png?HW-CC-KV=V1&HW-CC-Date=20260429T054118Z&HW-CC-Expire=86400&HW-CC-Sign=2CFC5E6390F6959BB8D17EA5CEA97B046325BBD480D1791B09F78C77E6C4BE77)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/DQwfMxhcTWaa9Mxrxk5lBg/zh-cn_image_0000002558606102.png)
 
 ### 可能的原因
 

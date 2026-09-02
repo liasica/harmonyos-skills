@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:53:01+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:0f1ca643dc3f7acc7bdef97c0b47b810cb502dcf6b832de2ec2ca0d30e2ae0e9
+content_hash: sha256:b98e0aeab2829e907ba5a978373749c8cdba00390429e6755b371a41fabb25f6
 ---
 
 全屏启动元服务组件，当被拉起方授权使用方可以嵌入式运行元服务时，使用方全屏嵌入式运行元服务；未授权时，使用方跳出式拉起元服务。
@@ -262,4 +262,4 @@ FullScreenLaunchComponent组件需要由使用方调用。在提供方完成本�
 92. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/i1gyABsDQxufVfz4hAQrNA/zh-cn_image_0000002558606984.png?HW-CC-KV=V1&HW-CC-Date=20260429T055259Z&HW-CC-Expire=86400&HW-CC-Sign=BD0FD890F3781D5A4E7EA33E58E5A590EC044A1EADAEC11A5E3A4574CB8C99FD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/i1gyABsDQxufVfz4hAQrNA/zh-cn_image_0000002558606984.png)

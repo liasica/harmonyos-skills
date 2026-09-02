@@ -5,14 +5,14 @@ breadcrumb: FAQ > DevEco Studio > 环境准备 > 导入Sample时，提示连接G
 category: harmonyos-faqs
 scraped_at: 2026-04-29T14:20:04+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:6a472edd57b374c39bd17211cb0bc12ac87cfb9041b0a2698e508addd459a6ba
+content_hash: sha256:f5facffce6497fa31ce466aa45646cbc306a93858f915956b75b2deebedaadb2
 ---
 
 **问题现象**
 
 导入Sample时，如果连接gitee.com的443端口超时，会提示“Failed to connect to gitee.com port 443: Time out”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/GimEzGRrSRSnpGFte_qmGw/zh-cn_image_0000002229758801.png?HW-CC-KV=V1&HW-CC-Date=20260429T062003Z&HW-CC-Expire=86400&HW-CC-Sign=6D67952EF77720CB84C804038A0804CEA4275CF92171C10D1ED32BAB175F60AD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/GimEzGRrSRSnpGFte_qmGw/zh-cn_image_0000002229758801.png)
 
 **解决措施**
 

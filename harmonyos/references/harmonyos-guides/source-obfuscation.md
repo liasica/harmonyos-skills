@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS编译�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:26:56+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:a7f1f7c471caebb28637da88bc047276e15e7d5bfb4a854e2f5c46592e58c2a3
+content_hash: sha256:f3a7134661747be06bf9997dea48fcd9b7a5885c598e2e4294a5af06f2b0592a
 ---
 
 ## 术语清单
@@ -102,7 +102,7 @@ ArkGuard支持名称混淆、代码压缩和注释删除的基础混淆功能，
 
 下图为应用编译的简要流程图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/xrwAXIOMRZeywfGbBXZIVw/zh-cn_image_0000002558764036.png?HW-CC-KV=V1&HW-CC-Date=20260429T052655Z&HW-CC-Expire=86400&HW-CC-Sign=CDC1352253004BBAEE6FAD9A24894191321A3AF137FD71A5B88C926CF8A89685)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/xrwAXIOMRZeywfGbBXZIVw/zh-cn_image_0000002558764036.png)
 
 开发者可以在模块的build-profile.json5配置文件中开启混淆功能，详细参考[ArkGuard混淆开启指南](source-obfuscation-guide.md)，从而在编译打包的过程中自动对源码进行混淆处理。
 
@@ -1505,7 +1505,7 @@ filepath仅支持相对路径，./和../为相对于混淆配置文件所在目�
 
 模块级oh\_modules和工程级oh\_modules在DevEco Studio中的目录结构如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/njPtlXN9RJmeQoYefWeDQw/zh-cn_image_0000002558604380.png?HW-CC-KV=V1&HW-CC-Date=20260429T052655Z&HW-CC-Expire=86400&HW-CC-Sign=59EB1EE4FA8374C1C366912B5BFFEEFEB5EB1FB1D74D2F3BB3784CF06715840C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/njPtlXN9RJmeQoYefWeDQw/zh-cn_image_0000002558604380.png)
 
 **使用该选项时，需要注意以下事项：**
 

@@ -5,7 +5,7 @@ breadcrumb: 指南 > 基础入门 > 开发基础知识 > 典型场景的开发�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:25:34+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:3f058eee612e6142f3d4b178b1bd9a3159d3fc0fc5e68a60fb65314745196ed3
+content_hash: sha256:82514be10925d1631fc58f0aaf9d5f3749fe654183553216aa9f2ed272df8a9c
 ---
 
 本页面提供应用图标和名称的配置指导。应用图标分为单层图标和分层图标。单层图标包含一个图片，分层图标包含前景图和背景图。图标规范详见[图标资源规范](../design-guides/application-icon-0000001953444009.md#section634668113212)，图标和名称配置约束详见[图标和名称配置](application-component-configuration-stage.md#应用图标和名称配置)。
@@ -18,7 +18,7 @@ content_hash: sha256:3f058eee612e6142f3d4b178b1bd9a3159d3fc0fc5e68a60fb653147451
 
 效果图如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/9kC2iqaHQRmw_Q2Y923cdA/zh-cn_image_0000002589243777.png?HW-CC-KV=V1&HW-CC-Date=20260429T052533Z&HW-CC-Expire=86400&HW-CC-Sign=FB1EB3C694FBD433852C2378A1F7819F79ED3770C10F19C22AAF8B820C3F4B46)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/9kC2iqaHQRmw_Q2Y923cdA/zh-cn_image_0000002589243777.png)
 
 ## 配置优先级和生成策略
 

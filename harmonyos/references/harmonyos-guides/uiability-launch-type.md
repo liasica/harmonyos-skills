@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > Stage�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:25:45+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:910106cfecc003f6a821c6aa913968658642562118d6685f44e6c2d91a74b745
+content_hash: sha256:6eb4a2556a62664355fea728a4a294a4539204c56b588ae48b64f65035bf3c19
 ---
 
 [UIAbility](../harmonyos-references/js-apis-app-ability-uiability.md)的启动模式是指UIAbility实例在启动时的不同呈现状态。针对不同的业务场景，系统提供了三种启动模式：
@@ -26,7 +26,7 @@ singleton启动模式为单实例模式，也是默认情况下的启动模式�
 
 **图1** 单实例模式演示效果
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/ULTAccxOQbugz_m6CtmUug/zh-cn_image_0000002558604324.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052542Z&HW-CC-Expire=86400&HW-CC-Sign=237444D2978291B51C02FDE7BE90BDE01393E1616E2B8618EF7A80BECB0C72C6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/ULTAccxOQbugz_m6CtmUug/zh-cn_image_0000002558604324.gif)
 
 说明
 
@@ -58,7 +58,7 @@ multiton启动模式为多实例模式，每次调用[startAbility()](../harmony
 
 **图2** 多实例模式演示效果
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/yi6X_wC7SLqGrPV_0BY2-Q/zh-cn_image_0000002589323849.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052542Z&HW-CC-Expire=86400&HW-CC-Sign=3746BEF3000D7E3FDB6E2039058D469DD92B22C5BE5C1DA7ACA67DA2DBFF95BF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/yi6X_wC7SLqGrPV_0BY2-Q/zh-cn_image_0000002589323849.gif)
 
 multiton启动模式的开发使用，在[module.json5配置文件](module-configuration-file.md)中的launchType字段配置为multiton即可。
 
@@ -86,7 +86,7 @@ specified启动模式为指定实例模式，针对一些特殊场景使用（�
 
 **图3** 指定实例启动模式原理
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/ROb9fCMrTj6hL5JgdwvJHw/zh-cn_image_0000002589243787.png?HW-CC-KV=V1&HW-CC-Date=20260429T052542Z&HW-CC-Expire=86400&HW-CC-Sign=B44AF7C646BD512D9B151359B74F4351AE9772E34E3D383EEFAEA5598C6F59D7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/ROb9fCMrTj6hL5JgdwvJHw/zh-cn_image_0000002589243787.png)
 
 假设应用有两个[UIAbility](../harmonyos-references/js-apis-app-ability-uiability.md)实例，即EntryAbility和SpecifiedAbility。EntryAbility以specified模式启动SpecifiedAbility。基本原理如下：
 
@@ -98,7 +98,7 @@ specified启动模式为指定实例模式，针对一些特殊场景使用（�
 
 **图4** 指定实例模式演示效果
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/9PEUTzzwSOWWYcsRgrw3YA/zh-cn_image_0000002558763982.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052542Z&HW-CC-Expire=86400&HW-CC-Sign=7F8AC6EA06BA2B0B8A5A668390F9B840AD1E5029147E64D5D48C1D82DC8C30D3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/9PEUTzzwSOWWYcsRgrw3YA/zh-cn_image_0000002558763982.gif)
 
 1. 在SpecifiedAbility中，需要将[module.json5配置文件](module-configuration-file.md)的launchType字段配置为specified。
 

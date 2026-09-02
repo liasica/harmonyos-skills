@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > U
 category: harmonyos-references
 scraped_at: 2026-04-29T13:50:33+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:9ce87258c996e51909a1aec20ce66912085951d609b17651d944318ed87cf3dd
+content_hash: sha256:c2ace1fc8b4e896a1f9a04926507f90285a93a30f26e7efb252b978b532707b6
 ---
 
 提供获取组件截图的能力，包括已加载的组件的截图和没有加载的组件的截图。
@@ -94,7 +94,7 @@ get(id: string, callback: AsyncCallback<image.PixelMap>, options?: componentSnap
 38. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/ZPVS6K8jTe-Q3YhRElvHIw/zh-cn_image_0000002589245737.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055031Z&HW-CC-Expire=86400&HW-CC-Sign=4BD322DF5D62DC5CF51F697354C29402603C45902FDBC4A9B4148FAF7BB4FC98)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/ZPVS6K8jTe-Q3YhRElvHIw/zh-cn_image_0000002589245737.gif)
 
 ## get12+
 

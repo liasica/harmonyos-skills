@@ -5,7 +5,7 @@ breadcrumb: 最佳实践 > 稳定性 > 稳定性检测 > 开发态稳定性检�
 category: best-practices
 scraped_at: 2026-04-29T14:14:04+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:c45b13767bfda41a678d02dd400908006329e7e3d2f59e8f69a081437b6cd462
+content_hash: sha256:02eddc7bd23d480c719b7a2decb743cab3bcdeee5a86bbdbaaa65f7e6bf562d5
 ---
 
 ## 方舟多线程检测
@@ -112,7 +112,7 @@ content_hash: sha256:c45b13767bfda41a678d02dd400908006329e7e3d2f59e8f69a081437b6
 
   点击**Run > Edit Configurations >** **Diagnostics**，勾选**Multi Thread Check**。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/AGGVkOlrQJqY4oDaRBj9_g/zh-cn_image_0000002404045317.png?HW-CC-KV=V1&HW-CC-Date=20260429T061403Z&HW-CC-Expire=86400&HW-CC-Sign=189E246F10C57C145040A58EEA078DB1F21CD7AAB8D1A59AE4BAF4FF84A90071)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/AGGVkOlrQJqY4oDaRBj9_g/zh-cn_image_0000002404045317.png)
 
 * **方式二**
 
@@ -131,4 +131,4 @@ content_hash: sha256:c45b13767bfda41a678d02dd400908006329e7e3d2f59e8f69a081437b6
 
 若fatal信息为Fatal: ecma\_vm cannot run in multi-thread! thread:20296 currentThread:19953，则发生了多线程安全问题，意为：当前线程号为19953，而使用的js thread是20296创建出来的，跨线程使用VM。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/g81gELANSRSfV3kF7j-9Pg/zh-cn_image_0000002504986012.png?HW-CC-KV=V1&HW-CC-Date=20260429T061403Z&HW-CC-Expire=86400&HW-CC-Sign=469171CD1F151229F8E369FFCBECE258A4A9CC1ECED69227D060E2E03C8EE58C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/g81gELANSRSfV3kF7j-9Pg/zh-cn_image_0000002504986012.png)

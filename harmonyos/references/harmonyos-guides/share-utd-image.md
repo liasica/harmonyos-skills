@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用服务 > Share Kit（分享服务） > 系统分享 >
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:40:36+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:b710a5642b9efc90e44cd85f8a3f8aa6ba3417eeb3aff3a308f0cfacef8dd9cc
+content_hash: sha256:e34bb71915934d30f21bc6c1e5cc377033e02a4f6d19ef2f7c8bf494f2353764
 ---
 
 图片类型分享支持将一张或多张图片分享到目标设备/目标应用。
@@ -13,7 +13,7 @@ content_hash: sha256:b710a5642b9efc90e44cd85f8a3f8aa6ba3417eeb3aff3a308f0cfacef8
 * 目标设备接收时，图片会保存到图库中。
 * 目标应用接收时，可便捷的处理图片内容。例如：将一张图片分享给畅连，发送给畅连好友。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/BEaJalffRMeckfaUnFAXEQ/zh-cn_image_0000002558765682.png?HW-CC-KV=V1&HW-CC-Date=20260429T054035Z&HW-CC-Expire=86400&HW-CC-Sign=3B81FC7C5743C435EB1A8A19A5D172DF12824A6FC5A4706E5C14C18E625C8B7B)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/BEaJalffRMeckfaUnFAXEQ/zh-cn_image_0000002558765682.png)
 
 ## 开发步骤
 

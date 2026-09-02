@@ -5,7 +5,7 @@ breadcrumb: FAQ > DevEco Studio > 编译构建 > 编译报错“In FormExtension
 category: harmonyos-faqs
 scraped_at: 2026-04-29T14:21:00+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:d7181642946e332c519a77717d38a0b62f9e60150f1b40a968852f213f769400
+content_hash: sha256:26e487cd41c3d6012302b977fddfd4aaed262eac92644aa72689c4c4f295fd37
 ---
 
 **错误描述**
@@ -16,7 +16,7 @@ content_hash: sha256:d7181642946e332c519a77717d38a0b62f9e60150f1b40a968852f213f7
 
 module.json5中type为form的ExtensionAbility中的metadata缺少name为ohos.extension.form的对象值，或者缺少resource字段。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/-mOvw_i9Qcq6_uwvsfSlWw/zh-cn_image_0000002229758517.png?HW-CC-KV=V1&HW-CC-Date=20260429T062059Z&HW-CC-Expire=86400&HW-CC-Sign=784E1F81B2A3A352AF7E3D7558AABAB813FBDF602C49BD0272EDA4B4E6521337)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/-mOvw_i9Qcq6_uwvsfSlWw/zh-cn_image_0000002229758517.png)
 
 **解决措施**
 

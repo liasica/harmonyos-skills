@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-multimedia-avvolumepanel
-title: @ohos.multimedia.avVolumePanel (音量面板)
+title: "@ohos.multimedia.avVolumePanel (音量面板)"
 breadcrumb: API参考 > 媒体 > Audio Kit（音频服务） > ArkTS组件 > @ohos.multimedia.avVolumePanel (音量面板)
 category: harmonyos-references
 scraped_at: 2026-04-28T08:11:44+08:00

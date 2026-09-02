@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:27:51+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:409c65b024a27de94e3dab1ee70b6551b60da79653dfe35318a20750f9cef676
+content_hash: sha256:1da2550bcbbe774ecf08753186fa35ed202f5c0eaa23e6be163e114d53983765
 ---
 
 Button是按钮组件，通常用于响应用户的点击操作，其类型包括胶囊按钮、圆形按钮、普通按钮、圆角矩形按钮。Button作为容器使用时可以通过添加子组件实现包含文字、图片等元素的按钮。具体用法请参考[Button](../harmonyos-references/ts-basic-components-button.md)。
@@ -32,7 +32,7 @@ Button通过调用接口来创建，接口调用有以下两种形式：
 
   [CreateButton.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ChooseComponent/entry/src/main/ets/pages/button/CreateButton.ets#L36-L42)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/m6y-fybrRfajmSdHAKjQrg/zh-cn_image_0000002589324233.png?HW-CC-KV=V1&HW-CC-Date=20260429T052750Z&HW-CC-Expire=86400&HW-CC-Sign=9F71A37E89FDDDD4EF207BD72164FEF45E416805FC1688CCB5F1670FCE4BF959)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/m6y-fybrRfajmSdHAKjQrg/zh-cn_image_0000002589324233.png)
 * 通过[ButtonOptions](../harmonyos-references/ts-basic-components-button.md#buttonoptions对象说明)创建包含子组件的按钮。以ButtonOptions中的type和stateEffect为例。
 
   ```
@@ -53,7 +53,7 @@ Button通过调用接口来创建，接口调用有以下两种形式：
 
   [CreateButton.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ChooseComponent/entry/src/main/ets/pages/button/CreateButton.ets#L59-L67)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/FT9u_pCDQBesm7Gz1Qvegw/zh-cn_image_0000002589244173.png?HW-CC-KV=V1&HW-CC-Date=20260429T052750Z&HW-CC-Expire=86400&HW-CC-Sign=2324657095BD55D4ECF73C381F60597D3856282AD1C8EB5F28658A0BDF52C9D2)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/FT9u_pCDQBesm7Gz1Qvegw/zh-cn_image_0000002589244173.png)
 
 ## 设置按钮类型
 
@@ -72,7 +72,7 @@ Button有四种可选类型，分别为胶囊类型（Capsule）、圆形按钮�
 
   [SetButtonType.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ChooseComponent/entry/src/main/ets/pages/button/SetButtonType.ets#L39-L44)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/CM2zT3sNSyiscGNuBzZHMw/zh-cn_image_0000002558764366.png?HW-CC-KV=V1&HW-CC-Date=20260429T052750Z&HW-CC-Expire=86400&HW-CC-Sign=DAF699E56EA1961E03BCCB6608712DF1C5268B7622516F9EF0C260F8C4BF9D7C)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/CM2zT3sNSyiscGNuBzZHMw/zh-cn_image_0000002558764366.png)
 * 圆形按钮。
 
   此类型按钮为圆形，不支持通过borderRadius属性重新设置圆角。
@@ -86,7 +86,7 @@ Button有四种可选类型，分别为胶囊类型（Capsule）、圆形按钮�
 
   [SetButtonType.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ChooseComponent/entry/src/main/ets/pages/button/SetButtonType.ets#L57-L62)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/hToGXkVMR36SR3DYcqQ5aA/zh-cn_image_0000002558604710.png?HW-CC-KV=V1&HW-CC-Date=20260429T052750Z&HW-CC-Expire=86400&HW-CC-Sign=5ED429936BD788E9FC8A44BC1C932E942478C32052C3D634ECCC2B04D5820F5E)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/hToGXkVMR36SR3DYcqQ5aA/zh-cn_image_0000002558604710.png)
 * 普通按钮。
 
   此类型的按钮默认圆角为0，支持通过borderRadius属性重新设置圆角。
@@ -101,7 +101,7 @@ Button有四种可选类型，分别为胶囊类型（Capsule）、圆形按钮�
 
   [SetButtonType.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ChooseComponent/entry/src/main/ets/pages/button/SetButtonType.ets#L74-L80)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/AoqJ8sldRZSqtbo7HUZCoQ/zh-cn_image_0000002589324235.png?HW-CC-KV=V1&HW-CC-Date=20260429T052750Z&HW-CC-Expire=86400&HW-CC-Sign=B8CCDA5AEB886461DA06B241763D73AEBA0AAC38CCEDE30E2C67282D7F2B78F8)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/AoqJ8sldRZSqtbo7HUZCoQ/zh-cn_image_0000002589324235.png)
 * 圆角矩形按钮。
 
   当[controlSize](../harmonyos-references/ts-basic-components-button.md#controlsize11)为NORMAL时，默认圆角大小为20vp，[controlSize](../harmonyos-references/ts-basic-components-button.md#controlsize11)为SMALL时，圆角大小为14vp，支持通过borderRadius属性重新设置圆角。
@@ -115,7 +115,7 @@ Button有四种可选类型，分别为胶囊类型（Capsule）、圆形按钮�
 
   [SetButtonType.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ChooseComponent/entry/src/main/ets/pages/button/SetButtonType.ets#L90-L95)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/BN9deoiBRiWEzxTAPNVJvg/zh-cn_image_0000002558764366.png?HW-CC-KV=V1&HW-CC-Date=20260429T052750Z&HW-CC-Expire=86400&HW-CC-Sign=1ABFBA5CFDE309AE7C39CEB4ED9B553AF7D13CC6D08E2DCBD4C55461C4D9B5D5)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/BN9deoiBRiWEzxTAPNVJvg/zh-cn_image_0000002558764366.png)
 
 ## 自定义样式
 
@@ -131,7 +131,7 @@ Button有四种可选类型，分别为胶囊类型（Capsule）、圆形按钮�
 
   [ButtonCustomStyle.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ChooseComponent/entry/src/main/ets/pages/button/ButtonCustomStyle.ets#L40-L44)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/ekd7eptBTPKsUQARz_sC-g/zh-cn_image_0000002589244175.png?HW-CC-KV=V1&HW-CC-Date=20260429T052750Z&HW-CC-Expire=86400&HW-CC-Sign=8D619C2D58176811B56FDE6E7355139E58854D2A106271B39E902BADE7FBEABC)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/ekd7eptBTPKsUQARz_sC-g/zh-cn_image_0000002589244175.png)
 * 设置文本样式。
 
   通过添加文本样式设置按钮文本的展示样式。
@@ -145,7 +145,7 @@ Button有四种可选类型，分别为胶囊类型（Capsule）、圆形按钮�
 
   [ButtonCustomStyle.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ChooseComponent/entry/src/main/ets/pages/button/ButtonCustomStyle.ets#L58-L63)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/v4Ex0vcNQHuxfgDeaGW40A/zh-cn_image_0000002558764368.png?HW-CC-KV=V1&HW-CC-Date=20260429T052750Z&HW-CC-Expire=86400&HW-CC-Sign=8F3726B71CFBE6C65D9A9FA6C15034319E7356F07D4CB38608AB944F8F87E38B)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/v4Ex0vcNQHuxfgDeaGW40A/zh-cn_image_0000002558764368.png)
 * 设置背景颜色。
 
   添加backgroundColor属性设置按钮的背景颜色。
@@ -156,7 +156,7 @@ Button有四种可选类型，分别为胶囊类型（Capsule）、圆形按钮�
 
   [ButtonCustomStyle.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ChooseComponent/entry/src/main/ets/pages/button/ButtonCustomStyle.ets#L74-L76)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/BpEbymLASN6GNyyGoMMigg/zh-cn_image_0000002558604712.png?HW-CC-KV=V1&HW-CC-Date=20260429T052750Z&HW-CC-Expire=86400&HW-CC-Sign=E0F0CCDE08F4DEEBFDDAB154917F625CA61A9DA9B81C30D5280524B9D0C16A89)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/BpEbymLASN6GNyyGoMMigg/zh-cn_image_0000002558604712.png)
 * 创建功能型按钮。
 
   创建删除操作的按钮。
@@ -170,7 +170,7 @@ Button有四种可选类型，分别为胶囊类型（Capsule）、圆形按钮�
 
   [ButtonCustomStyle.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ChooseComponent/entry/src/main/ets/pages/button/ButtonCustomStyle.ets#L83-L88)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/Cer3_oDZRJSxDfAnAbVtcg/zh-cn_image_0000002589324237.png?HW-CC-KV=V1&HW-CC-Date=20260429T052750Z&HW-CC-Expire=86400&HW-CC-Sign=DB4A456F01A27E0229B83CD559A8AB270A549E09480491617552864ACFBEE315)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/Cer3_oDZRJSxDfAnAbVtcg/zh-cn_image_0000002589324237.png)
 
 ## 添加事件
 
@@ -316,7 +316,7 @@ Button组件通常用于触发某些操作，可以绑定onClick事件来响应�
 
   [ButtonCaseTouch.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ChooseComponent/entry/src/main/ets/pages/button/ButtonCaseTouch.ets#L17-L138)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/BNsoS-b8SyWW3BgWxqYiVA/zh-cn_image_0000002589244177.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052750Z&HW-CC-Expire=86400&HW-CC-Sign=480D197AB811C35D309B11BEDA15EA4B5BB3325C43745B0CF1855970DE0A1B14)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/BNsoS-b8SyWW3BgWxqYiVA/zh-cn_image_0000002589244177.gif)
 * 用于提交表单。
 
   在用户登录/注册页面，使用按钮进行登录或注册操作。
@@ -345,7 +345,7 @@ Button组件通常用于触发某些操作，可以绑定onClick事件来响应�
 
   [ButtonCaseLogin.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ChooseComponent/entry/src/main/ets/pages/button/ButtonCaseLogin.ets#L17-L45)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/yBB-KCvsQKuWb7znTHez1g/zh-cn_image_0000002558764370.png?HW-CC-KV=V1&HW-CC-Date=20260429T052750Z&HW-CC-Expire=86400&HW-CC-Sign=2FE5AE843AC984EF98244FEFEF77D49389AC663C17DCB1160E75E478D029194F)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/yBB-KCvsQKuWb7znTHez1g/zh-cn_image_0000002558764370.png)
 * 悬浮按钮。
 
   在可以滑动的界面，滑动时按钮始终保持悬浮状态。
@@ -398,4 +398,4 @@ Button组件通常用于触发某些操作，可以绑定onClick事件来响应�
 
   [HoverButtonExample.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ChooseComponent/entry/src/main/ets/pages/button/HoverButtonExample.ets#L16-L60)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/GzvfkdsRQ6mcD1D3Kk0NZw/zh-cn_image_0000002558604714.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052750Z&HW-CC-Expire=86400&HW-CC-Sign=6D5A806BCAAE7DB329EA821FABD07A2BEFEAF2871E064659767B128B72791DA9)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/GzvfkdsRQ6mcD1D3Kk0NZw/zh-cn_image_0000002558604714.gif)

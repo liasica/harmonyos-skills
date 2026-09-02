@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用服务 > IAP Kit（应用内支付服务） > IAP Kit
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:38:33+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:c40baf9be9bc6c4587347c050431a6940ad7028921c3b7c33766b0dea3922a7d
+content_hash: sha256:35d699d08598104c788d6e7b1dd98a0a547f452ffd42a902a870d972f27d40ce
 ---
 
 IAP Kit（应用内支付服务）为开发者提供便捷的应用内支付体验和简便的接入流程，让开发者聚焦应用本身的业务能力，助力开发者商业变现。开发者应用可通过使用IAP Kit提供的系统级支付API快速启动IAP收银台，即可实现应用内支付。
@@ -44,7 +44,7 @@ IAP Kit（应用内支付服务）为开发者提供便捷的应用内支付体�
 
 在TV设备拉起支付收银台页面为扫码支付页，参考示例如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/v0AvCGK-TV6IGQ12GI64Jw/zh-cn_image_0000002558605764.png?HW-CC-KV=V1&HW-CC-Date=20260429T053832Z&HW-CC-Expire=86400&HW-CC-Sign=68AD8B80867D47058183F7C06524107BE64375BB1C943C40E69C734C69B0D74F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/v0AvCGK-TV6IGQ12GI64Jw/zh-cn_image_0000002558605764.png)
 
 ### 支持的国家/地区
 

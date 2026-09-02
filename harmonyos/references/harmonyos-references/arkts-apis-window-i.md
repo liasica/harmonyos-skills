@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > �
 category: harmonyos-references
 scraped_at: 2026-04-29T13:50:58+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:41309b46c8aa1bf4a0291b4a688e4362385c4185b47c3b8af92556af0c55c6e8
+content_hash: sha256:1bc8e183351b37912e45ee2a46593efde305dfe6da0b54da7bd2fcfdbf80cfee
 ---
 
 说明
@@ -151,7 +151,7 @@ PhonePC/2in1TabletTVWearable
 
 示意图展示了leftRect、topRect、rightRect、bottomRect的含义。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/Eu3GlLKAQA6zB4cu24kTYA/zh-cn_image_0000002558765980.png?HW-CC-KV=V1&HW-CC-Date=20260429T055055Z&HW-CC-Expire=86400&HW-CC-Sign=D3ABB439015EE2F0929E39DD025AC2E318D0837EA6B059DC4DE9C89A1DCA66EF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/Eu3GlLKAQA6zB4cu24kTYA/zh-cn_image_0000002558765980.png)
 
 ## UIEnvAvoidAreaVP23+
 

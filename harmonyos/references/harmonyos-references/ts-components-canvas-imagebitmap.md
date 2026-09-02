@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:52:34+08:00
 doc_updated_at: 2026-04-10
-content_hash: sha256:3c23112d83c76c610ab8c96b8062eea08552a1e628d451100236774c84cc5816
+content_hash: sha256:8b79e7bb37cd2b845c983d4063dec443356b6df6f1f8b25a5a351938dafea440
 ---
 
 ImageBitmap对象可以存储canvas渲染的像素数据。从API version 11开始，当应用创建[Worker线程](../harmonyos-guides/worker-introduction.md)，支持使用postMessage将ImageBitmap实例传到Worker中进行绘制，并使用onmessage接收Worker线程发送的绘制结果进行显示。
@@ -160,7 +160,7 @@ PhonePC/2in1TabletTVWearable
 24. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/JrRkbaloT-qH8pg4giViMg/zh-cn_image_0000002589326361.png?HW-CC-KV=V1&HW-CC-Date=20260429T055229Z&HW-CC-Expire=86400&HW-CC-Sign=D5E264E5D1D26DC2B678C07E34973558E8FBBC709240D3952344AE1A2D8565D7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/JrRkbaloT-qH8pg4giViMg/zh-cn_image_0000002589326361.png)
 
 ### 示例2（创建ImageBitmap）
 
@@ -199,7 +199,7 @@ DevEco Studio的预览器不支持getPixelMap接口，不支持显示PixelMap绘
 26. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/nFydDftySxmPYrWwA7OPdw/zh-cn_image_0000002589246303.png?HW-CC-KV=V1&HW-CC-Date=20260429T055229Z&HW-CC-Expire=86400&HW-CC-Sign=7B948DC6C2FAB65DBEE9660EBA06857DBC3559DB81D1A6C721EBB7C382CD9EA9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/nFydDftySxmPYrWwA7OPdw/zh-cn_image_0000002589246303.png)
 
 ### 示例3（支持并发线程绘制）
 
@@ -262,4 +262,4 @@ Worker线程在onmessage中接收到主线程postMessage发送的ImageBitmap，�
 14. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/tft_9VtZTSO_3weAqdYmdQ/zh-cn_image_0000002589326361.png?HW-CC-KV=V1&HW-CC-Date=20260429T055229Z&HW-CC-Expire=86400&HW-CC-Sign=B1B7D9058D56E26B6087ACB51E25FF16A574BF04425AD7B81CAF1D46527421FB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/tft_9VtZTSO_3weAqdYmdQ/zh-cn_image_0000002589326361.png)

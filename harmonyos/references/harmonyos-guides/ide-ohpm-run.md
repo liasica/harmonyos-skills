@@ -5,7 +5,7 @@ breadcrumb: 指南 > 命令行工具 > 三方依赖管理工具（ohpm） > 常�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:47:54+08:00
 doc_updated_at: 2026-04-22
-content_hash: sha256:4bb0c8fb28b7f1567fbaaf1b1619cd8a799ab0ee5012d101c5ecd744f7384456
+content_hash: sha256:96afdeae3a95ef4ba94f6d41487f26a9e2bb201dae2d0e737b1797508dcd56d3
 ---
 
 执行用户自定义脚本。
@@ -123,7 +123,7 @@ content_hash: sha256:4bb0c8fb28b7f1567fbaaf1b1619cd8a799ab0ee5012d101c5ecd744f73
 
 执行结果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/Oanp0VfySRKjtOUbJStHLA/zh-cn_image_0000002530913100.png?HW-CC-KV=V1&HW-CC-Date=20260429T054753Z&HW-CC-Expire=86400&HW-CC-Sign=59C16C7D997CCE4C9BAA1D8ED3B46D98D0EE1B09BAE785823D14A0CC03801403 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/Oanp0VfySRKjtOUbJStHLA/zh-cn_image_0000002530913100.png "点击放大")
 
 ### 失败示例
 
@@ -135,7 +135,7 @@ content_hash: sha256:4bb0c8fb28b7f1567fbaaf1b1619cd8a799ab0ee5012d101c5ecd744f73
 
 执行结果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/59HOtoD3TlGDZjrGuimYkA/zh-cn_image_0000002530753106.png?HW-CC-KV=V1&HW-CC-Date=20260429T054753Z&HW-CC-Expire=86400&HW-CC-Sign=320C952192512A1FF0E75D2B1CB0DC489A6DC9E168E4FB7099E0A70197F8A651 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/59HOtoD3TlGDZjrGuimYkA/zh-cn_image_0000002530753106.png "点击放大")
 
 ### 逻辑符(&&、||)使用示例
 
@@ -147,4 +147,4 @@ content_hash: sha256:4bb0c8fb28b7f1567fbaaf1b1619cd8a799ab0ee5012d101c5ecd744f73
 
 执行结果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/E9is5ljCSb-GNqK5WLGtXw/zh-cn_image_0000002561833025.png?HW-CC-KV=V1&HW-CC-Date=20260429T054753Z&HW-CC-Expire=86400&HW-CC-Sign=1FB022B568DDAE23CE55FDC1630A65C4B917565AEC2337AF880DCADD1DB02803 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/E9is5ljCSb-GNqK5WLGtXw/zh-cn_image_0000002561833025.png "点击放大")

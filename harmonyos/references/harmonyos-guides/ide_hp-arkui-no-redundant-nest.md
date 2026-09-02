@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_hp-arkui-no-redundant-nest
-title: @performance/hp-arkui-remove-redundant-nest-container
+title: "@performance/hp-arkui-remove-redundant-nest-container"
 breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 性能规则@performance > @performance/hp-arkui-remove-redundant-nest-container
 category: harmonyos-guides
 scraped_at: 2026-04-28T07:56:06+08:00

@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:27:40+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:ebbc3ecc2da765ac49b377005568cdf2cf6884a9799fb1f4880dfb88505e170e
+content_hash: sha256:4bcd18cbbf6cdf4b21c3e6dcfc3404473f3544ef47d6b669f485a9b914d64ecf
 ---
 
 ## 概述
@@ -16,7 +16,7 @@ content_hash: sha256:ebbc3ecc2da765ac49b377005568cdf2cf6884a9799fb1f4880dfb88505
 
 **图1** 主轴为水平方向的Flex容器示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/sAuP89_3QNujeHPpV7hTSA/zh-cn_image_0000002589244013.png?HW-CC-KV=V1&HW-CC-Date=20260429T052738Z&HW-CC-Expire=86400&HW-CC-Sign=FFA341DF240A3B032D219C24F19E9CD4661F6E3E1978961992E9E5D026F866C6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/sAuP89_3QNujeHPpV7hTSA/zh-cn_image_0000002589244013.png)
 
 ## 基本概念
 
@@ -29,7 +29,7 @@ content_hash: sha256:ebbc3ecc2da765ac49b377005568cdf2cf6884a9799fb1f4880dfb88505
 
 **图2** 弹性布局方向图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/x1kw1pe6S8W8iNEIik9opA/zh-cn_image_0000002558764206.png?HW-CC-KV=V1&HW-CC-Date=20260429T052738Z&HW-CC-Expire=86400&HW-CC-Sign=4B975C68FC99E6197F7B723A78829E6A7C20D968EFC369D7C53E196A76CFD7B2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/x1kw1pe6S8W8iNEIik9opA/zh-cn_image_0000002558764206.png)
 
 * FlexDirection.Row（默认值）：主轴为水平方向，子元素从起始端沿着水平方向开始排布。
 
@@ -47,7 +47,7 @@ content_hash: sha256:ebbc3ecc2da765ac49b377005568cdf2cf6884a9799fb1f4880dfb88505
 
   [FlexDirectionRow.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/flexlayout/FlexDirectionRow.ets#L20-L30)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/s0Etgnb5TrCGhTkxDOB3sQ/zh-cn_image_0000002558604550.png?HW-CC-KV=V1&HW-CC-Date=20260429T052738Z&HW-CC-Expire=86400&HW-CC-Sign=80D5C91767B9CFD9B29843FA6C1A63AA2421343CBD32E38E1E70E48C76A94D51)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/s0Etgnb5TrCGhTkxDOB3sQ/zh-cn_image_0000002558604550.png)
 * FlexDirection.RowReverse：主轴为水平方向，子元素从终点端沿着FlexDirection.Row相反的方向开始排布。
 
   ```
@@ -64,7 +64,7 @@ content_hash: sha256:ebbc3ecc2da765ac49b377005568cdf2cf6884a9799fb1f4880dfb88505
 
   [FlexDirectionRowReverse.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/flexlayout/FlexDirectionRowReverse.ets#L20-L30)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/jUllqCWAT1egbiM9HNQ8Ww/zh-cn_image_0000002589324075.png?HW-CC-KV=V1&HW-CC-Date=20260429T052738Z&HW-CC-Expire=86400&HW-CC-Sign=3B4D695B5E9860A5685E3331F4D6DF6C18EF974ADAE49A2710BEC84C7140FA9A)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/jUllqCWAT1egbiM9HNQ8Ww/zh-cn_image_0000002589324075.png)
 * FlexDirection.Column：主轴为垂直方向，子元素从起始端沿着垂直方向开始排布。
 
   ```
@@ -81,7 +81,7 @@ content_hash: sha256:ebbc3ecc2da765ac49b377005568cdf2cf6884a9799fb1f4880dfb88505
 
   [FlexDirectionColumn.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/flexlayout/FlexDirectionColumn.ets#L20-L30)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/V26mEahWQR21vrivzTyeTw/zh-cn_image_0000002589244015.png?HW-CC-KV=V1&HW-CC-Date=20260429T052738Z&HW-CC-Expire=86400&HW-CC-Sign=A6743D17EF4C7BCC0BC4D4842BE705C5D1E0D729B2BCCDDC3D4A718D35C85C6F)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/V26mEahWQR21vrivzTyeTw/zh-cn_image_0000002589244015.png)
 * FlexDirection.ColumnReverse：主轴为垂直方向，子元素从终点端沿着FlexDirection.Column相反的方向开始排布。
 
   ```
@@ -98,7 +98,7 @@ content_hash: sha256:ebbc3ecc2da765ac49b377005568cdf2cf6884a9799fb1f4880dfb88505
 
   [FlexDirectionColumnReverse.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/flexlayout/FlexDirectionColumnReverse.ets#L20-L30)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/HcDpsSX2QhqL5ikkBGBv2Q/zh-cn_image_0000002558764208.png?HW-CC-KV=V1&HW-CC-Date=20260429T052738Z&HW-CC-Expire=86400&HW-CC-Sign=1F8A02FED855A0B0B4E2273EE9FF6203C80799AB6F00DFD3C53DA3A009C3CD81)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/HcDpsSX2QhqL5ikkBGBv2Q/zh-cn_image_0000002558764208.png)
 
 ## 布局换行
 
@@ -119,7 +119,7 @@ content_hash: sha256:ebbc3ecc2da765ac49b377005568cdf2cf6884a9799fb1f4880dfb88505
 
   [FlexWrapNoWrap.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/flexlayout/FlexWrapNoWrap.ets#L20-L29)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/N20TKJOgTe2mLzenoAGvmQ/zh-cn_image_0000002558604552.png?HW-CC-KV=V1&HW-CC-Date=20260429T052738Z&HW-CC-Expire=86400&HW-CC-Sign=9EA8A9321B84363A6958BE86CF0397B93001E47BD33CB90EFC940897AD32A3C6)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/N20TKJOgTe2mLzenoAGvmQ/zh-cn_image_0000002558604552.png)
 * FlexWrap.Wrap：换行，每一行子元素按照主轴方向排列。
 
   ```
@@ -135,7 +135,7 @@ content_hash: sha256:ebbc3ecc2da765ac49b377005568cdf2cf6884a9799fb1f4880dfb88505
 
   [FlexWrapWrap.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/flexlayout/FlexWrapWrap.ets#L20-L29)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/luYggbs6Re6lx9Y0O3qUqw/zh-cn_image_0000002589324077.png?HW-CC-KV=V1&HW-CC-Date=20260429T052738Z&HW-CC-Expire=86400&HW-CC-Sign=0000F62951D473A945555E81E751EAEDE0A4736D810B9DE70B75179AA4B07E48)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/luYggbs6Re6lx9Y0O3qUqw/zh-cn_image_0000002589324077.png)
 * FlexWrap.WrapReverse：换行，每一行子元素按照主轴反方向排列。
 
   ```
@@ -151,13 +151,13 @@ content_hash: sha256:ebbc3ecc2da765ac49b377005568cdf2cf6884a9799fb1f4880dfb88505
 
   [FlexWrapWrapReverse.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/flexlayout/FlexWrapWrapReverse.ets#L20-L29)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/ot_3frkpRyad8iiACt12KQ/zh-cn_image_0000002589244017.png?HW-CC-KV=V1&HW-CC-Date=20260429T052738Z&HW-CC-Expire=86400&HW-CC-Sign=3A650577EA7B17B13E99B4793BF75F681AB5E2A0FAC5172B1ED51E713304D9AA)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/ot_3frkpRyad8iiACt12KQ/zh-cn_image_0000002589244017.png)
 
 ## 主轴对齐方式
 
 通过[justifyContent](../harmonyos-references/ts-container-flex.md#flexoptions对象说明)参数设置子元素在主轴方向的对齐方式。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/74PXR4mITWqCuIvGGBZFeQ/zh-cn_image_0000002558764210.png?HW-CC-KV=V1&HW-CC-Date=20260429T052738Z&HW-CC-Expire=86400&HW-CC-Sign=BD8CFDEF262697C5874C8CEB87EE95A2A0DA114429CA75E5A0A38F97A3301F5C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/74PXR4mITWqCuIvGGBZFeQ/zh-cn_image_0000002558764210.png)
 
 * FlexAlign.Start（默认值）：子元素在主轴方向起始端对齐， 第一个子元素与父元素边沿对齐，其他元素与前一个元素对齐。
 
@@ -174,7 +174,7 @@ content_hash: sha256:ebbc3ecc2da765ac49b377005568cdf2cf6884a9799fb1f4880dfb88505
 
   [FlexAlignStart.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/flexlayout/FlexAlignStart.ets#L20-L78)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/3r-fqYWvT0m11hc2khV9fQ/zh-cn_image_0000002558604554.png?HW-CC-KV=V1&HW-CC-Date=20260429T052738Z&HW-CC-Expire=86400&HW-CC-Sign=08D370D2C7261195785B47E27A927869A9B6E9E4F4F9D490BDDE442453ED5D40)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/3r-fqYWvT0m11hc2khV9fQ/zh-cn_image_0000002558604554.png)
 * FlexAlign.Center：子元素在主轴方向居中对齐。
 
   ```
@@ -190,7 +190,7 @@ content_hash: sha256:ebbc3ecc2da765ac49b377005568cdf2cf6884a9799fb1f4880dfb88505
 
   [FlexAlignCenter.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/flexlayout/FlexAlignCenter.ets#L20-L29)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/BLK5aKiWSNW7ZsAqf07shg/zh-cn_image_0000002589324079.png?HW-CC-KV=V1&HW-CC-Date=20260429T052738Z&HW-CC-Expire=86400&HW-CC-Sign=284FCE3509844478678F3A8C210C7D4D580AE7A677DDE4497C10FED0FBE55999)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/BLK5aKiWSNW7ZsAqf07shg/zh-cn_image_0000002589324079.png)
 * FlexAlign.End：子元素在主轴方向终点端对齐，最后一个子元素与父元素边沿对齐，其他元素与后一个元素对齐。
 
   ```
@@ -206,7 +206,7 @@ content_hash: sha256:ebbc3ecc2da765ac49b377005568cdf2cf6884a9799fb1f4880dfb88505
 
   [FlexAlignEnd.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/flexlayout/FlexAlignEnd.ets#L20-L29)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/yXvAru78SL6eB95TtCNjcA/zh-cn_image_0000002589244019.png?HW-CC-KV=V1&HW-CC-Date=20260429T052738Z&HW-CC-Expire=86400&HW-CC-Sign=1177A66706C774902F0F6199D41D69696228DD325265A1921F34645B8E42C2EE)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/yXvAru78SL6eB95TtCNjcA/zh-cn_image_0000002589244019.png)
 * FlexAlign.SpaceBetween：Flex主轴方向均匀分配弹性元素，相邻子元素之间距离相同。第一个子元素和最后一个子元素与父元素边沿对齐。
 
   ```
@@ -222,7 +222,7 @@ content_hash: sha256:ebbc3ecc2da765ac49b377005568cdf2cf6884a9799fb1f4880dfb88505
 
   [FlexAlignSpaceBetween.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/flexlayout/FlexAlignSpaceBetween.ets#L20-L29)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/qpvP7TMUSPC4pOQkr0fibg/zh-cn_image_0000002558764212.png?HW-CC-KV=V1&HW-CC-Date=20260429T052738Z&HW-CC-Expire=86400&HW-CC-Sign=E547037F40C9FEEEC707E27C2CB75121DDD19E7FD16E0A2DC1A840FEDAC90A1C)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/qpvP7TMUSPC4pOQkr0fibg/zh-cn_image_0000002558764212.png)
 * FlexAlign.SpaceAround：Flex主轴方向均匀分配弹性元素，相邻子元素之间距离相同。第一个子元素到主轴起始端的距离和最后一个子元素到主轴终点端的距离是相邻元素之间距离的一半。
 
   ```
@@ -238,7 +238,7 @@ content_hash: sha256:ebbc3ecc2da765ac49b377005568cdf2cf6884a9799fb1f4880dfb88505
 
   [FlexAlignSpaceAround.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/flexlayout/FlexAlignSpaceAround.ets#L20-L29)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/wMBPOkLvQc-Inc4MZLHHGw/zh-cn_image_0000002558604556.png?HW-CC-KV=V1&HW-CC-Date=20260429T052738Z&HW-CC-Expire=86400&HW-CC-Sign=EBABB64B442650238B391F94177130CA7981B35C0A3D80FC09019F72274BB48A)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/wMBPOkLvQc-Inc4MZLHHGw/zh-cn_image_0000002558604556.png)
 * FlexAlign.SpaceEvenly：Flex主轴方向元素等间距布局，相邻子元素之间的间距、第一个子元素与主轴起始端的间距、最后一个子元素到主轴终点端的间距均相等。
 
   ```
@@ -254,7 +254,7 @@ content_hash: sha256:ebbc3ecc2da765ac49b377005568cdf2cf6884a9799fb1f4880dfb88505
 
   [FlexAlignSpaceEvenly.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/flexlayout/FlexAlignSpaceEvenly.ets#L20-L29)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/k1H2OOSdRrGlugqRLyfzHA/zh-cn_image_0000002589324081.png?HW-CC-KV=V1&HW-CC-Date=20260429T052738Z&HW-CC-Expire=86400&HW-CC-Sign=556BE8D5AFBB37C1A8321E59515F35E94D4B4CA113588FA8DCF2C6EBF220A625)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/k1H2OOSdRrGlugqRLyfzHA/zh-cn_image_0000002589324081.png)
 
 ## 交叉轴对齐方式
 
@@ -279,7 +279,7 @@ content_hash: sha256:ebbc3ecc2da765ac49b377005568cdf2cf6884a9799fb1f4880dfb88505
 
   [FlexItemAlignAuto.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/flexlayout/FlexItemAlignAuto.ets#L20-L29)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/xNCFOhAQQ-qwZhuCmknpxA/zh-cn_image_0000002589244021.png?HW-CC-KV=V1&HW-CC-Date=20260429T052738Z&HW-CC-Expire=86400&HW-CC-Sign=05867A5092B758307E30855684928BBEA91ADBAFF37EB55C55A08627C93DA4FF)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/xNCFOhAQQ-qwZhuCmknpxA/zh-cn_image_0000002589244021.png)
 * ItemAlign.Start：交叉轴方向首部对齐。
 
   ```
@@ -295,7 +295,7 @@ content_hash: sha256:ebbc3ecc2da765ac49b377005568cdf2cf6884a9799fb1f4880dfb88505
 
   [FlexItemAlignStart.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/flexlayout/FlexItemAlignStart.ets#L20-L155)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/cVpBuAd9Ra-SQyhZjSjJgw/zh-cn_image_0000002558764214.png?HW-CC-KV=V1&HW-CC-Date=20260429T052738Z&HW-CC-Expire=86400&HW-CC-Sign=AFF628A6CE904655733B29AEFAE17349E91136CCBB559147ECFA1097C03601ED)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/cVpBuAd9Ra-SQyhZjSjJgw/zh-cn_image_0000002558764214.png)
 * ItemAlign.Center：交叉轴方向居中对齐。
 
   ```
@@ -311,7 +311,7 @@ content_hash: sha256:ebbc3ecc2da765ac49b377005568cdf2cf6884a9799fb1f4880dfb88505
 
   [FlexItemAlignCenter.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/flexlayout/FlexItemAlignCenter.ets#L20-L29)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/W1tq7d8VTrOhRKgujYf7hw/zh-cn_image_0000002558604558.png?HW-CC-KV=V1&HW-CC-Date=20260429T052738Z&HW-CC-Expire=86400&HW-CC-Sign=B90E2EABDDCBE253A98CCF9D298F62F8C8C0F93457DC7AECD4B9DFF59967C39C)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/W1tq7d8VTrOhRKgujYf7hw/zh-cn_image_0000002558604558.png)
 * ItemAlign.End：交叉轴方向底部对齐。
 
   ```
@@ -327,7 +327,7 @@ content_hash: sha256:ebbc3ecc2da765ac49b377005568cdf2cf6884a9799fb1f4880dfb88505
 
   [FlexItemAlignEnd.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/flexlayout/FlexItemAlignEnd.ets#L20-L29)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/MkPkfr1qTCO0wbwOpF7v9A/zh-cn_image_0000002589324083.png?HW-CC-KV=V1&HW-CC-Date=20260429T052738Z&HW-CC-Expire=86400&HW-CC-Sign=4CBB582DF9EA1E0DD94AFD01B88BC67E114634E4C9665553E71F26979B21AB92)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/MkPkfr1qTCO0wbwOpF7v9A/zh-cn_image_0000002589324083.png)
 * ItemAlign.Stretch：交叉轴方向拉伸填充，在未设置尺寸时，拉伸到容器尺寸。元素在Flex容器中，沿交叉轴方向拉伸填充。容器为Flex且设置[FlexWrap](../harmonyos-references/ts-appendix-enums.md#flexwrap)为FlexWrap.Wrap或FlexWrap.WrapReverse时，元素拉伸到与当前行或列交叉轴长度最长的元素尺寸。其余情况下，无论元素尺寸是否设置，均拉伸到容器尺寸。
 
   ```
@@ -343,7 +343,7 @@ content_hash: sha256:ebbc3ecc2da765ac49b377005568cdf2cf6884a9799fb1f4880dfb88505
 
   [FlexItemAlignStretch.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/flexlayout/FlexItemAlignStretch.ets#L20-L29)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/Ku6YUKlRQiiQLbnMLafMMQ/zh-cn_image_0000002589244023.png?HW-CC-KV=V1&HW-CC-Date=20260429T052738Z&HW-CC-Expire=86400&HW-CC-Sign=EA924EF9CE8EBEAF1AB9F9FCE4612F2B032C53F7D1BB9EE4B6D2FA218F3B2703)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/Ku6YUKlRQiiQLbnMLafMMQ/zh-cn_image_0000002589244023.png)
 * ItemAlign.Baseline：交叉轴方向文本基线对齐。
 
   ```
@@ -359,7 +359,7 @@ content_hash: sha256:ebbc3ecc2da765ac49b377005568cdf2cf6884a9799fb1f4880dfb88505
 
   [FlexItemAlignBaseline.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/flexlayout/FlexItemAlignBaseline.ets#L20-L29)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/__MlbswgSMmvH_5krzWWKA/zh-cn_image_0000002558764216.png?HW-CC-KV=V1&HW-CC-Date=20260429T052738Z&HW-CC-Expire=86400&HW-CC-Sign=5E9BFE1664E62DB5C938F276224ADAEF16863D5DB524C7384C9A18852696904E)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/__MlbswgSMmvH_5krzWWKA/zh-cn_image_0000002558764216.png)
 
 ### 子元素设置交叉轴对齐
 
@@ -388,7 +388,7 @@ content_hash: sha256:ebbc3ecc2da765ac49b377005568cdf2cf6884a9799fb1f4880dfb88505
 
 [FlexAlignSelf.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/flexlayout/FlexAlignSelf.ets#L20-L39)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/jtsgx8APT9aaLteyHkF81A/zh-cn_image_0000002558604560.png?HW-CC-KV=V1&HW-CC-Date=20260429T052738Z&HW-CC-Expire=86400&HW-CC-Sign=D53D37BB5030E4FAAC0D6FFB0F7D329E58B2027B99C79664C7C47181E2D10629)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/jtsgx8APT9aaLteyHkF81A/zh-cn_image_0000002558604560.png)
 
 上例中，Flex容器中alignItems设置交叉轴子元素的对齐方式为居中，子元素自身设置了alignSelf属性的情况，覆盖父组件的alignItems值，表现为alignSelf的定义。
 
@@ -413,7 +413,7 @@ content_hash: sha256:ebbc3ecc2da765ac49b377005568cdf2cf6884a9799fb1f4880dfb88505
 
   [FlexAlignCenterFlexAlignStart.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/flexlayout/FlexAlignCenterFlexAlignStart.ets#L20-L36)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/GOQRg1TdSpefkHNpe3OPwQ/zh-cn_image_0000002589324085.png?HW-CC-KV=V1&HW-CC-Date=20260429T052738Z&HW-CC-Expire=86400&HW-CC-Sign=3A12B271EB996B791A02902238AD390DEB3951C25D2C5FDC2DB8BE6A22DEA42B)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/GOQRg1TdSpefkHNpe3OPwQ/zh-cn_image_0000002589324085.png)
 * FlexAlign.Center：子元素各行在交叉轴方向居中对齐。
 
   ```
@@ -431,7 +431,7 @@ content_hash: sha256:ebbc3ecc2da765ac49b377005568cdf2cf6884a9799fb1f4880dfb88505
 
   [FlexAlignCenterFlexAlignCenter.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/flexlayout/FlexAlignCenterFlexAlignCenter.ets#L20-L31)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/r81nxSg2QLuooiTplLDDfA/zh-cn_image_0000002589244025.png?HW-CC-KV=V1&HW-CC-Date=20260429T052738Z&HW-CC-Expire=86400&HW-CC-Sign=6FD07E578D711DC815A6D4FF04E24355E7B25249949FBE6E5C078200527F2BCA)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/r81nxSg2QLuooiTplLDDfA/zh-cn_image_0000002589244025.png)
 * FlexAlign.End：子元素各行与交叉轴终点对齐。
 
   ```
@@ -449,7 +449,7 @@ content_hash: sha256:ebbc3ecc2da765ac49b377005568cdf2cf6884a9799fb1f4880dfb88505
 
   [FlexAlignCenterFlexAlignEnd.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/flexlayout/FlexAlignCenterFlexAlignEnd.ets#L20-L31)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/7zUAW8D2RLmsLO8TW6GOxw/zh-cn_image_0000002558764218.png?HW-CC-KV=V1&HW-CC-Date=20260429T052738Z&HW-CC-Expire=86400&HW-CC-Sign=1D86E7E36409027BA8E62E90A2815E7BC9723076ED7933DF387799CD4EEC7C30)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/7zUAW8D2RLmsLO8TW6GOxw/zh-cn_image_0000002558764218.png)
 * FlexAlign.SpaceBetween：子元素各行与交叉轴两端对齐，各行间垂直间距平均分布。
 
   ```
@@ -467,7 +467,7 @@ content_hash: sha256:ebbc3ecc2da765ac49b377005568cdf2cf6884a9799fb1f4880dfb88505
 
   [FlexAlignCenterFlexAlignSpaceBetween.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/flexlayout/FlexAlignCenterFlexAlignSpaceBetween.ets#L20-L31)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/u2PmA-BZSVuds4bOJ-pJNQ/zh-cn_image_0000002558604562.png?HW-CC-KV=V1&HW-CC-Date=20260429T052738Z&HW-CC-Expire=86400&HW-CC-Sign=E614496DF359B7599B760FC60459E6520C30F001ACD543CB674544293EA995AF)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/u2PmA-BZSVuds4bOJ-pJNQ/zh-cn_image_0000002558604562.png)
 * FlexAlign.SpaceAround：子元素各行间距相等，是元素首尾行与交叉轴两端距离的两倍。
 
   ```
@@ -485,7 +485,7 @@ content_hash: sha256:ebbc3ecc2da765ac49b377005568cdf2cf6884a9799fb1f4880dfb88505
 
   [FlexAlignCenterFlexAlignSpaceAround.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/flexlayout/FlexAlignCenterFlexAlignSpaceAround.ets#L20-L31)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/ts-pAcFEQ0agIA_hePMwIA/zh-cn_image_0000002589324087.png?HW-CC-KV=V1&HW-CC-Date=20260429T052738Z&HW-CC-Expire=86400&HW-CC-Sign=2FA8EF959A43487C3A0B62512BCB9D6305A7330F6CE256ADEE5334F5670468F0)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/ts-pAcFEQ0agIA_hePMwIA/zh-cn_image_0000002589324087.png)
 * FlexAlign.SpaceEvenly: 子元素各行间距，子元素首尾行与交叉轴两端距离都相等。
 
   ```
@@ -503,7 +503,7 @@ content_hash: sha256:ebbc3ecc2da765ac49b377005568cdf2cf6884a9799fb1f4880dfb88505
 
   [FlexAlignCenterFlexAlignSpaceEvenly.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/flexlayout/FlexAlignCenterFlexAlignSpaceEvenly.ets#L20-L31)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/2EofXzxsRVeKN0zGK06mzw/zh-cn_image_0000002589244027.png?HW-CC-KV=V1&HW-CC-Date=20260429T052738Z&HW-CC-Expire=86400&HW-CC-Sign=35E8E2ACD8430AFCBA813459B8F5F5A2428EF4C34FB060DE2ED4FD0ED2BCFE02)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/2EofXzxsRVeKN0zGK06mzw/zh-cn_image_0000002589244027.png)
 
 ## 自适应拉伸
 
@@ -538,7 +538,7 @@ content_hash: sha256:ebbc3ecc2da765ac49b377005568cdf2cf6884a9799fb1f4880dfb88505
 
   [FlexBasis.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/flexlayout/FlexBasis.ets#L20-L43)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/ljeLz2lDQEuaRRDNJb1okA/zh-cn_image_0000002558764220.png?HW-CC-KV=V1&HW-CC-Date=20260429T052738Z&HW-CC-Expire=86400&HW-CC-Sign=3D207B6D17D544F005C68A2E47D47D37D203603215782356480DA30E3291CE73)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/ljeLz2lDQEuaRRDNJb1okA/zh-cn_image_0000002558764220.png)
 * [flexGrow](../harmonyos-references/ts-universal-attributes-flex-layout.md#flexgrow)：设置父容器的剩余空间分配给此属性所在组件的比例，用于分配父组件的剩余空间。
 
   ```
@@ -563,7 +563,7 @@ content_hash: sha256:ebbc3ecc2da765ac49b377005568cdf2cf6884a9799fb1f4880dfb88505
 
   [FlexGrow.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/flexlayout/FlexGrow.ets#L20-L38)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/KANmfjkPStyjsh3Y2BrCoA/zh-cn_image_0000002558604564.png?HW-CC-KV=V1&HW-CC-Date=20260429T052738Z&HW-CC-Expire=86400&HW-CC-Sign=133822CABC7D574F2A9A64649D1D21DBBD460B5ADDFFB64359E9D40A7D9C8549)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/KANmfjkPStyjsh3Y2BrCoA/zh-cn_image_0000002558604564.png)
 
   父容器宽度360vp，三个子元素原始宽度均为100vp，左右padding为20vp，总和320vp，剩余空间40vp根据flexGrow值的占比分配给子元素，未设置flexGrow的子元素不参与分配。
 
@@ -593,7 +593,7 @@ content_hash: sha256:ebbc3ecc2da765ac49b377005568cdf2cf6884a9799fb1f4880dfb88505
 
   [FlexShrink.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/flexlayout/FlexShrink.ets#L20-L39)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/sJnp8tQkSwKydfCR5r0q_g/zh-cn_image_0000002589324089.png?HW-CC-KV=V1&HW-CC-Date=20260429T052738Z&HW-CC-Expire=86400&HW-CC-Sign=DCA3AD027F2508DF45DF8C70BD9D6DC7E2F1F3A9AFAA6D8AF2FBA65C9490FD51)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/sJnp8tQkSwKydfCR5r0q_g/zh-cn_image_0000002589324089.png)
 
   父容器宽度400vp，三个子元素原始宽度为200vp，左右padding为20vp，父容器给子元素的布局空间为380vp，超出父容器空间220vp。
 
@@ -631,4 +631,4 @@ content_hash: sha256:ebbc3ecc2da765ac49b377005568cdf2cf6884a9799fb1f4880dfb88505
 
 [FlexExample.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/flexlayout/FlexExample.ets#L15-L39)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/9EZOCdbxTlSd8dgmtrcqng/zh-cn_image_0000002589244029.png?HW-CC-KV=V1&HW-CC-Date=20260429T052738Z&HW-CC-Expire=86400&HW-CC-Sign=2BD17F159A322942C5E5A77DAF973063139CA2D57807B5B52BAD54473AF31C5E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/9EZOCdbxTlSd8dgmtrcqng/zh-cn_image_0000002589244029.png)

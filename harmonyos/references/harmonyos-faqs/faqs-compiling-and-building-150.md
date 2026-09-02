@@ -5,7 +5,7 @@ breadcrumb: FAQ > DevEco Studio > 编译构建 > 编译报错“module.json5 fil
 category: harmonyos-faqs
 scraped_at: 2026-04-29T14:20:56+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:fbfe5811ea85ab625fcd984c327e36049e6c8ba5fa93cb6dd3ada06718098af4
+content_hash: sha256:5a3f5485046b1189fa026d420190bfbdf5a8a21f37f785e3ecc3dd869a56b242
 ---
 
 **错误描述**
@@ -16,7 +16,7 @@ content_hash: sha256:fbfe5811ea85ab625fcd984c327e36049e6c8ba5fa93cb6dd3ada067180
 
 模块下的module.json5文件缺失。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/n6Ha62LKS-SmG8UqLW07wQ/zh-cn_image_0000002229604093.png?HW-CC-KV=V1&HW-CC-Date=20260429T062055Z&HW-CC-Expire=86400&HW-CC-Sign=BFF92F1B94271C9C214D6188EEA83F1316AA923CD342C6DA919EF8F26A1415F1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/n6Ha62LKS-SmG8UqLW07wQ/zh-cn_image_0000002229604093.png)
 
 **解决措施**
 

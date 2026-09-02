@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > �
 category: harmonyos-references
 scraped_at: 2026-04-29T13:53:53+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:4f98e265a7d5ed3dae0182b538441e9e1183c247beafea99e862e7738c947393
+content_hash: sha256:21a5d4b3e9780aa978806f7f2fa6fa15c0d0449c4f3c1e1d37242e8d41180569
 ---
 
 生成并显示二维码。
@@ -133,4 +133,4 @@ PhonePC/2in1TabletTVWearableLite Wearable
 29. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/g_djG9X_RMygkPEKQmvt2Q/zh-cn_image_0000002558607278.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055352Z&HW-CC-Expire=86400&HW-CC-Sign=41CA7E538BC14EE36CA4D1C55F3079A46D6204BAF65F7120B21FEDF13C980FA1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/g_djG9X_RMygkPEKQmvt2Q/zh-cn_image_0000002558607278.gif)

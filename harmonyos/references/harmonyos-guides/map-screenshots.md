@@ -5,14 +5,14 @@ breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 地图交互 > �
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:39:07+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:5fa09f1c7c0c9f86dc1c4ee25649534edd207be617b6bee6fc3675684901628c
+content_hash: sha256:ccd7f20a08a78b65f7946b2894e784134d2056c9e53cbfb8aced3306580f15d9
 ---
 
 本章节将向您介绍如何实现地图截图功能。
 
 地图截图指对当前屏幕显示区域进行截屏，支持对地图、覆盖物、Logo进行屏幕截图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/v_GgJ7P5QYqyOSNoiXVI7A/zh-cn_image_0000002558605872.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053813Z&HW-CC-Expire=86400&HW-CC-Sign=EE0EE7C0D6985CB4749DB9D4CB5F91FB05BA5854D89CF75AA4A048276902C9A8 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/v_GgJ7P5QYqyOSNoiXVI7A/zh-cn_image_0000002558605872.jpg "点击放大")
 
 ## 接口说明
 

@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:52:35+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:04404089e428ac288458969c0f594d64e9fd50fd62573b14811f55c5ee9f9c31
+content_hash: sha256:de9df8d78dd9fff29001b63b7b064e6f4e32544a66dbfd682db13ea56341df5f
 ---
 
 用于绘制圆形的组件。
@@ -313,7 +313,7 @@ PhonePC/2in1TabletTVWearable
 19. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/VAQaed1HSDuItjbOkoplYg/zh-cn_image_0000002589246337.png?HW-CC-KV=V1&HW-CC-Date=20260429T055231Z&HW-CC-Expire=86400&HW-CC-Sign=3C2ACEE44CA4B6C1868F60CBCF1785A9B9418FFBE4473E09201DA2F8B26B28D0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/VAQaed1HSDuItjbOkoplYg/zh-cn_image_0000002589246337.png)
 
 ### 示例2（宽和高使用不同参数类型绘制圆）
 
@@ -337,7 +337,7 @@ width、height属性分别使用不同的长度类型绘制圆。
 15. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/warq-8fETvuJXfM2lTozHA/zh-cn_image_0000002558766530.png?HW-CC-KV=V1&HW-CC-Date=20260429T055231Z&HW-CC-Expire=86400&HW-CC-Sign=15AD54802FD1FB5A220782AC3F020C49267C85F0E02CA14F148FF48A18B2751C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/warq-8fETvuJXfM2lTozHA/zh-cn_image_0000002558766530.png)
 
 ### 示例3（使用attributeModifier动态设置Circle组件的属性）
 
@@ -375,4 +375,4 @@ width、height属性分别使用不同的长度类型绘制圆。
 29. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/6cHFFEc4SXW1sYlvAnM7oA/zh-cn_image_0000002558606870.png?HW-CC-KV=V1&HW-CC-Date=20260429T055231Z&HW-CC-Expire=86400&HW-CC-Sign=81783963F654DE1C373E9820CEDEBE17B68143815019F4B326913130909CD795)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/6cHFFEc4SXW1sYlvAnM7oA/zh-cn_image_0000002558606870.png)

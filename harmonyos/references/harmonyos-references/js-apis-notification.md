@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-notification
-title: @ohos.notification (Notification模块)
+title: "@ohos.notification (Notification模块)"
 breadcrumb: API参考 > 应用服务 > Notification Kit（用户通知服务） > ArkTS API > 已停止维护的接口 > @ohos.notification (Notification模块)
 category: harmonyos-references
 scraped_at: 2026-04-28T08:17:37+08:00

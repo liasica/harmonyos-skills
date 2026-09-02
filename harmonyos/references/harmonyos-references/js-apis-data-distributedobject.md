@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-data-distributedobject
-title: @ohos.data.distributedDataObject (分布式数据对象)
+title: "@ohos.data.distributedDataObject (分布式数据对象)"
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > ArkTS API > @ohos.data.distributedDataObject (分布式数据对象)
 category: harmonyos-references
 scraped_at: 2026-04-29T13:49:24+08:00

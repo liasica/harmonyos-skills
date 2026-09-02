@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:51:59+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:0dfac3c0f276fc5eddb3f30d729b9577a83007bea37db9118a496e18a87f3471
+content_hash: sha256:c184b56f0a95b0baa15dd25890761e0876063eed7be201702dfeb1da8fb1ba49
 ---
 
 日历选择器组件，提供下拉日历弹窗，可以让用户选择日期。
@@ -278,7 +278,7 @@ PhonePC/2in1TabletTVWearable
 22. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/pwH84JJHTlyl8xiejhM7qw/zh-cn_image_0000002558606570.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055156Z&HW-CC-Expire=86400&HW-CC-Sign=B7D3D5A3983CEBEB07EB1FDBA22D2B60E3F911306DB7938B4A0F7E4DB17E1AFA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/pwH84JJHTlyl8xiejhM7qw/zh-cn_image_0000002558606570.gif)
 
 ### 示例2（设置开始日期和结束日期）
 
@@ -311,7 +311,7 @@ PhonePC/2in1TabletTVWearable
 22. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/YJ-4xtYuQ1Kx0vTr4bXrpQ/zh-cn_image_0000002589326097.png?HW-CC-KV=V1&HW-CC-Date=20260429T055156Z&HW-CC-Expire=86400&HW-CC-Sign=9BB7521CC3DE667DCD0E2BE0A72D0B97AFD0E12E13C35A93F7B7ECF1B9015474)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/YJ-4xtYuQ1Kx0vTr4bXrpQ/zh-cn_image_0000002589326097.png)
 
 ### 示例3（设置日历选择器在系统当前日期时，保持高亮显示和禁用日期区间）
 
@@ -345,4 +345,4 @@ PhonePC/2in1TabletTVWearable
 23. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/fOAPhaQKQr-a1wXCF_80qg/zh-cn_image_0000002589246039.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055156Z&HW-CC-Expire=86400&HW-CC-Sign=FA41EE3381D8B5C6F53C6FB57178CB16DD381B908F4BA85966131966E7A346E0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/fOAPhaQKQr-a1wXCF_80qg/zh-cn_image_0000002589246039.gif)

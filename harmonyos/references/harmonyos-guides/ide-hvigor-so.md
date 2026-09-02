@@ -5,7 +5,7 @@ breadcrumb: 指南 > 构建应用 > 配置构建流程 > 预构建库快速链�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:47:14+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:64efc4c03ff877a33a88fc421e1729c67c57821c7b53933fbb393764d807475d
+content_hash: sha256:e57946f038c3f60fa6dacd86897b619ca625f64244f227a84ff7a292dc2be839
 ---
 
 在工程中使用依赖模块时，如果希望使用依赖模块中native相关的so库与接口文件（.h/.hpp），Hvigor提供了快速链接功能。
@@ -40,7 +40,7 @@ content_hash: sha256:64efc4c03ff877a33a88fc421e1729c67c57821c7b53933fbb393764d80
 4. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/8bYtJN9URNm1Ubp0ieLgKg/zh-cn_image_0000002561752915.png?HW-CC-KV=V1&HW-CC-Date=20260429T054712Z&HW-CC-Expire=86400&HW-CC-Sign=1368CCD4DF3C99C5DE9972B32CCEB9E7CEEFAF700B5284D7B4C1302639D623DA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/8bYtJN9URNm1Ubp0ieLgKg/zh-cn_image_0000002561752915.png)
 
 在工程的CMakeLists.txt脚本中声明链接：
 

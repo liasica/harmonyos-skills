@@ -5,7 +5,7 @@ breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > 引用�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:44:36+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:3197fb3d13fde67b5e4aacc599ce19978cebdfb75a242e36a1dd31298d8fbd8d
+content_hash: sha256:af180d7aac2427097412f88410e1e729e96b4589ef7db954bc2576c181055bd8
 ---
 
 引用三方HAR，包括从仓库进行安装、从本地文件夹和本地压缩包中进行安装三种方式。
@@ -131,14 +131,14 @@ content_hash: sha256:3197fb3d13fde67b5e4aacc599ce19978cebdfb75a242e36a1dd31298d8
 1. 在菜单栏点击**Tools >** **OHPM Index**，进入OpenHarmony开源中心仓。
 2. 在左侧搜索框可查询三方包名称，或点击目录树，根据分类查看不同分类下推荐的依赖包信息。选定所需要安装的三方包，点击右上角蓝色按钮**Install**进行安装。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/ab32t8o_RgK9SeIJn_DRlQ/zh-cn_image_0000002530752906.png?HW-CC-KV=V1&HW-CC-Date=20260429T054435Z&HW-CC-Expire=86400&HW-CC-Sign=100C145B14E676AC137CA419DC6946B9827D49C2C5FD9A4A5DF2CBBFABECA77D)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/ab32t8o_RgK9SeIJn_DRlQ/zh-cn_image_0000002530752906.png)
 3. 安装过程中，如出现下方弹窗，点击**Add**按钮，将OpenHarmony中心仓地址添加到.ohpmrc文件中。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/BO6s2Y6zTQKwg77RUZQtbQ/zh-cn_image_0000002561752847.png?HW-CC-KV=V1&HW-CC-Date=20260429T054435Z&HW-CC-Expire=86400&HW-CC-Sign=262F5D765941FDF4CB537DB3A463BFBEC91969F8BB6D465D4594DDDB87FE83E1)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/BO6s2Y6zTQKwg77RUZQtbQ/zh-cn_image_0000002561752847.png)
 4. 三方包安装完成后，在工程级oh-package.json5文件中可以看到已安装的三方包名称及版本信息，oh\_modules中将同时添加该三方包。
-5. 点击页面左上角![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/BQkCZ6weTqq3HAGH17heDw/zh-cn_image_0000002561752839.png?HW-CC-KV=V1&HW-CC-Date=20260429T054435Z&HW-CC-Expire=86400&HW-CC-Sign=5CBA37BE97A2782973698F035838462A66B30A17995E917941005BB13787D6D7)图标，展示当前已安装的三方包信息。若当前三方包非最新版本，可以点击右上角**Update**按钮，更新至最新版本；点击**Delete**按钮，可以删除当前已安装的三方包。
+5. 点击页面左上角![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/BQkCZ6weTqq3HAGH17heDw/zh-cn_image_0000002561752839.png)图标，展示当前已安装的三方包信息。若当前三方包非最新版本，可以点击右上角**Update**按钮，更新至最新版本；点击**Delete**按钮，可以删除当前已安装的三方包。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/XK_8lNooTvKlUvfLIZBdZw/zh-cn_image_0000002530912898.png?HW-CC-KV=V1&HW-CC-Date=20260429T054435Z&HW-CC-Expire=86400&HW-CC-Sign=D9D0E628553352D8E36870FD8C6CA776904DEDF067B03E16B9A316BAB8420BF2)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/XK_8lNooTvKlUvfLIZBdZw/zh-cn_image_0000002530912898.png)
 6. 若对于已使用的三方包依赖存在推荐的同类三方包，可点击编辑界面中黄色灯泡图标，在弹框中选择**Replace selected with recommended library**，将当前依赖替换为推荐的三方包依赖；或选择**Replace all with recommended libraries**，一键替换当前文件中所有同类推荐三方包。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/U0W1hPR0R8Gj6e9bPcAvFg/zh-cn_image_0000002586191491.png?HW-CC-KV=V1&HW-CC-Date=20260429T054435Z&HW-CC-Expire=86400&HW-CC-Sign=E2898A967A3CC186B9AC06501FF6E3531A6258518C7948DADD10F0AAC0F80F67)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/U0W1hPR0R8Gj6e9bPcAvFg/zh-cn_image_0000002586191491.png)

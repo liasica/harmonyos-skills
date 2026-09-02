@@ -5,7 +5,7 @@ breadcrumb: 指南 > 系统 > 基础功能 > Input Kit（多模输入服务） >
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:33:24+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:7cb2dd4d1b2d3812fff80bb9aa0dc4ddd61023a969e56d21faa53de9a36e0dd3
+content_hash: sha256:b2457edddbb64e7a3e3449a451b8ded03c44140f9c210a2651a5eb06cefec14c
 ---
 
 ## 功能介绍
@@ -18,4 +18,4 @@ Input Kit除了提供基础的输入事件服务之外，还提供了获取输�
 
 多模输入能力作为系统为应用提供的一种基础服务，通过处理上报的输入设备驱动事件，完成输入事件管理、接收、预处理、分发，通过inner SDK与JSkit上报应用，具体运行机制如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/2rzLTZapSKqrrd-PevezuQ/zh-cn_image_0000002589244765.png?HW-CC-KV=V1&HW-CC-Date=20260429T053322Z&HW-CC-Expire=86400&HW-CC-Sign=0C5A7D6AE65D9E917A101266AF33F5A4A7462B3CB10E36C496E31C2CE2937DFE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/2rzLTZapSKqrrd-PevezuQ/zh-cn_image_0000002589244765.png)

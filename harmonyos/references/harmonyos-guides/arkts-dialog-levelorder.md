@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:27:55+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:965f851bae98eff6cddf5fb5177690f279fc458bdc8a9154c5d5a41787b1ba73
+content_hash: sha256:ddbd00885ef228ac64184bb6ff45f2bb92ffcd02403fc1214ad8c4399f10c650
 ---
 
 ArkUI的弹出框节点都是直接挂载在根节点上，会根据层级从小到大依次挂载。根节点下，右边的弹出框节点会覆盖显示在左边的弹出框节点上，新创建的弹出框节点会根据层级大小插入到对应的位置，同一层级大小的弹窗节点按照创建的先后顺序进行挂载。
@@ -158,4 +158,4 @@ ArkUI的弹出框节点都是直接挂载在根节点上，会根据层级从小
 
 [DialogBoxLayer.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/DialogProject/entry/src/main/ets/pages/customdialog/dialogboxlayermanagement/DialogBoxLayer.ets#L16-L95)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/9m2oR8pQQUOLa1U8SP-u9Q/zh-cn_image_0000002589244207.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052754Z&HW-CC-Expire=86400&HW-CC-Sign=65D88A6EFD5FF8949DDA066A1F2D63B8ACB646FD44F76C85D451C36BF8B9306F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/9m2oR8pQQUOLa1U8SP-u9Q/zh-cn_image_0000002589244207.gif)

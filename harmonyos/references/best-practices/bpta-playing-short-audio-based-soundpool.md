@@ -5,7 +5,7 @@ breadcrumb: 最佳实践 > 媒体 > 音频和视频 > 音频播放系列开发�
 category: best-practices
 scraped_at: 2026-04-29T14:11:27+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:b8ebafedf9453679bb97caaef69816cb6496b53c2dd5f27372b8d9a029c39e18
+content_hash: sha256:936aec6886b3eb6ec9338da4c66f9144d740949e3f66c39469bb61ef316dab6d
 ---
 
 ## 概述
@@ -14,7 +14,7 @@ SoundPool提供短音频的播放能力，当需要播放一些急促简短的�
 
 本文是音频播放系列文章的第5篇，实现的功能效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/h3rJ1uK_QEODhmloe2yhyw/zh-cn_image_0000002555337527.png?HW-CC-KV=V1&HW-CC-Date=20260429T061119Z&HW-CC-Expire=86400&HW-CC-Sign=E632B788C0E2109A313789BCB18C063A7334DD82111399F282B7B85AE540AF19 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/h3rJ1uK_QEODhmloe2yhyw/zh-cn_image_0000002555337527.png "点击放大")
 
 ## 规格与限制
 

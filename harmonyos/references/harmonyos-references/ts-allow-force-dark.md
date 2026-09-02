@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:51:15+08:00
 doc_updated_at: 2026-03-23
-content_hash: sha256:fef9a1b6b8ae10b0d363ca042ec89dabc7ed390c42abdb7931a955f002771701
+content_hash: sha256:07d1deb17fae74f4726963d688afe0f2f3a0b6015387723ae83a517774816b22
 ---
 
 设置组件是否使用反色能力，反色能力是在深浅色切换时自动对颜色值进行反色或变换，开发者可以通过主动设置不启用反色算法，以保持在深浅色切换时的原有逻辑。
@@ -81,4 +81,4 @@ PhonePC/2in1TabletTVWearable
 31. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/SPOVnMMETiujT_AA1HgNwg/zh-cn_image_0000002589325877.png?HW-CC-KV=V1&HW-CC-Date=20260429T055114Z&HW-CC-Expire=86400&HW-CC-Sign=86D19A86CF2F8DF76A1F82AF1038A31D02DEFE190929F504D34145FEBFDC1B1D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/SPOVnMMETiujT_AA1HgNwg/zh-cn_image_0000002589325877.png)

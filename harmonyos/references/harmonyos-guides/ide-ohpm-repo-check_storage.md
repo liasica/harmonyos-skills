@@ -5,7 +5,7 @@ breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-rep
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:44:41+08:00
 doc_updated_at: 2026-01-15
-content_hash: sha256:de512477ddc8c3cd42b3f0831d97a68de1d69455ba193504ba2f3b9a1b0fe788
+content_hash: sha256:8c56a2dd1defcdbeac3ee52bbc48a6bbd099df6eca1ff8f5ba79c2bb7d5ad1c7
 ---
 
 检查sftp中存储包的完整性。
@@ -59,4 +59,4 @@ content_hash: sha256:de512477ddc8c3cd42b3f0831d97a68de1d69455ba193504ba2f3b9a1b0
 
 结果示例：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/azinPanJTmyGGrMRJ_Qumg/zh-cn_image_0000002530911340.png?HW-CC-KV=V1&HW-CC-Date=20260429T054440Z&HW-CC-Expire=86400&HW-CC-Sign=C534730C95B09CC77A5C19CFABA2D0F37DA96F5253A73BE33DBC023A1AC782D9 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/azinPanJTmyGGrMRJ_Qumg/zh-cn_image_0000002530911340.png "点击放大")

@@ -5,14 +5,14 @@ breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 工程目录结构介�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:44:34+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:3dc95cf744fbf0c1c62618c66584bdee5a5ca0771e6be35fad4f100cf92fe299
+content_hash: sha256:9ea13bc4ed2e2a96bd71694df20223fa34a285402b0e8546bc9bb29e0c0f6f7f
 ---
 
 ## ArkTS工程目录结构（Stage模型）
 
 ArkTS Stage模型支持API Version 10及以上版本，其工程目录结构如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/cjDjse9iRqOzaGTP_7LH7Q/zh-cn_image_0000002583649849.png?HW-CC-KV=V1&HW-CC-Date=20260429T054433Z&HW-CC-Expire=86400&HW-CC-Sign=0C89648F8127467CD184B5ABB2F3FAE7570A0C84C1BD93048F45C0F399C5105A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/cjDjse9iRqOzaGTP_7LH7Q/zh-cn_image_0000002583649849.png)
 
 * **AppScope > app.json5**：应用的全局配置信息。
 * **entry：**应用/元服务模块，编译构建生成一个HAP。
@@ -46,7 +46,7 @@ ArkTS Stage模型支持API Version 10及以上版本，其工程目录结构如�
 
 C++ Stage模型支持API Version 10以上版本，支持使用ArkTS和C++进行开发，其工程目录结构如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/LyCtuL38SQu1k2E4b4V8Mw/zh-cn_image_0000002561832763.png?HW-CC-KV=V1&HW-CC-Date=20260429T054433Z&HW-CC-Expire=86400&HW-CC-Sign=48C2A44AA35D8B408CA9B86E514FDCA18B057A314E8FE3DE3FEA52795D15C99D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/LyCtuL38SQu1k2E4b4V8Mw/zh-cn_image_0000002561832763.png)
 
 * **entry**：应用模块，编译构建生成一个HAP。
   + **src > main > cpp > types**：用于存放C++的API接口描述文件
@@ -79,7 +79,7 @@ C++ Stage模型支持API Version 10以上版本，支持使用ArkTS和C++进行�
 
 JS工程只支持FA模型，其工程目录结构如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/ThQ6Xu4WROSuZNmIlROxhA/zh-cn_image_0000002561832761.png?HW-CC-KV=V1&HW-CC-Date=20260429T054433Z&HW-CC-Expire=86400&HW-CC-Sign=DA12D70FE9100D680F82D73B7A326B43A30EA9364A09BF2C5B7BF6E303F18D97)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/ThQ6Xu4WROSuZNmIlROxhA/zh-cn_image_0000002561832761.png)
 
 * **entry：**应用/元服务模块，编译构建生成一个HAP。
   + **src > main > js**：用于存放js源码。

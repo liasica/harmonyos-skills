@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > Background Tasks Kit（后台任务开发服
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:29:33+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:c2723f3da2ab43f4206f71025f6717173e946f729ead268e53b88240dfa207ff
+content_hash: sha256:949c8d5cac4229a606c9e60b0a118d9297c4a430e99a2a25e4b1076111a6df0f
 ---
 
 ## 概述
@@ -21,7 +21,7 @@ content_hash: sha256:c2723f3da2ab43f4206f71025f6717173e946f729ead268e53b88240dfa
 
   **图1** 短时任务配额计算原理图
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/remjlXiSRr69JgNDR6IfaA/zh-cn_image_0000002558764750.png?HW-CC-KV=V1&HW-CC-Date=20260429T052932Z&HW-CC-Expire=86400&HW-CC-Sign=FA16624108BDFCF79E5DECB1A216A0B19E6D6F2F1C7E18AC5A856EAFF2AFF4B2)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/remjlXiSRr69JgNDR6IfaA/zh-cn_image_0000002558764750.png)
 
   说明
 

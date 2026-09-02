@@ -5,7 +5,7 @@ breadcrumb: 指南 > NDK开发 > 代码开发 > 使用Node-API实现ArkTS/JS与C
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:44:06+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:02b689bbe90a40bc775268c52e86c39256afe81c64595268b011200d72e26fa1
+content_hash: sha256:8c7411d46d6a10d02757b3a99be97d54b79aa5c4147fa1e5e7dba2244eda0822
 ---
 
 Node-API中的napi\_load\_module\_with\_info接口的功能是进行模块的加载，当模块加载出来之后，可以使用函数napi\_get\_property获取模块导出的变量，也可以使用napi\_get\_named\_property获取模块导出的函数，该函数可以在[新创建的ArkTS基础运行时环境](use-napi-ark-runtime.md)中使用，即napi\_create\_ark\_runtime接口创建的运行时环境。
@@ -50,7 +50,7 @@ Node-API中的napi\_load\_module\_with\_info接口的功能是进行模块的加
 
 1. 在模块加载过程中，若出现包内未找到对应文件或build-profile.json5配置错误等问题，返回错误码napi\_generic\_failure，并打印报错日志。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/XSop2l3KRLe87AlSkbV2Jg/zh-cn_image_0000002558765874.png?HW-CC-KV=V1&HW-CC-Date=20260429T054405Z&HW-CC-Expire=86400&HW-CC-Sign=61561C8B09EB884D0CEAD1D899BD7CD1853A3044932194805424E6EA2CD4C381)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/XSop2l3KRLe87AlSkbV2Jg/zh-cn_image_0000002558765874.png)
 2. 系统侧发生非预期行为导致加载模块无法正常执行，将抛出cppcrash。
 
 ## 使用示例

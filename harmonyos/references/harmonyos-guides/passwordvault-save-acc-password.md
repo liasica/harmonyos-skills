@@ -5,7 +5,7 @@ breadcrumb: 指南 > 系统 > 安全 > 密码自动填充服务 > 应用接入�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:30:38+08:00
 doc_updated_at: 2026-03-20
-content_hash: sha256:8a60adebdcb07cd5ed2d3ad7e9b2fd2e1bace3ab927a5b9c03859be7cd20a046
+content_hash: sha256:c2ee961a111e75d79425aded208409f3ca6ce3bb59fbf86b33efe9d47a9a1987
 ---
 
 密码保险箱在应用的登录、注册、修改密码等场景中具备自动保存用户名和密码的能力。
@@ -14,7 +14,7 @@ content_hash: sha256:8a60adebdcb07cd5ed2d3ad7e9b2fd2e1bace3ab927a5b9c03859be7cd2
 
 当应用界面触发账号密码自动保存时，若密码保险箱中不存在同应用下的相同账号，系统将弹出账号密码保存提示框，用户点击“保存密码”按钮后，本次使用的账号和密码将被保存至密码保险箱。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/cOdAdGGqRNiOqrWycE7z5w/zh-cn_image_0000002589244665.png?HW-CC-KV=V1&HW-CC-Date=20260429T053037Z&HW-CC-Expire=86400&HW-CC-Sign=E42112FFC11A81CD1BB499A7BD430D5F68D3511A11BCEFE21F20F404EBA34CA5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/cOdAdGGqRNiOqrWycE7z5w/zh-cn_image_0000002589244665.png)
 
 当应用触发账号登录或注册时，均可触发保存功能，以下分别介绍两种布局的标准适配场景。
 
@@ -37,7 +37,7 @@ content_hash: sha256:8a60adebdcb07cd5ed2d3ad7e9b2fd2e1bace3ab927a5b9c03859be7cd2
 
 ## 账号密码登录
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/pVdAtr6_RhqhSv1Ucjwycw/zh-cn_image_0000002558764860.png?HW-CC-KV=V1&HW-CC-Date=20260429T053037Z&HW-CC-Expire=86400&HW-CC-Sign=E1D960B8DF56C04568A55A06F83C532DFBAE5401D0EF6F04F0738EC5469E3CAD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/pVdAtr6_RhqhSv1Ucjwycw/zh-cn_image_0000002558764860.png)
 
 示例代码如下：
 
@@ -135,7 +135,7 @@ content_hash: sha256:8a60adebdcb07cd5ed2d3ad7e9b2fd2e1bace3ab927a5b9c03859be7cd2
 
 ## 账号密码注册
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/qoor2vIcRJOf42KWsbM5Cw/zh-cn_image_0000002558605204.png?HW-CC-KV=V1&HW-CC-Date=20260429T053037Z&HW-CC-Expire=86400&HW-CC-Sign=2FA444D27DF491DB55A4CAF52DBF0B25AB6060ABBE689A8BB0BA5EF5FFDCEDF6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/qoor2vIcRJOf42KWsbM5Cw/zh-cn_image_0000002558605204.png)
 
 示例代码如下：
 

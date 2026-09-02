@@ -1,7 +1,7 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-appstoragev2
-title: AppStorageV2: 应用全局UI状态存储
-breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理（V2） > 管理应用拥有的状态 > AppStorageV2: 应用全局UI状态存储
+title: "AppStorageV2: 应用全局UI状态存储"
+breadcrumb: "指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理（V2） > 管理应用拥有的状态 > AppStorageV2: 应用全局UI状态存储"
 category: harmonyos-guides
 scraped_at: 2026-04-28T07:39:12+08:00
 doc_updated_at: 2026-04-20

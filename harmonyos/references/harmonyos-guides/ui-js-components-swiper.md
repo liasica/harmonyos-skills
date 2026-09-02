@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:28:47+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:104913328c62d13b9da9817beec7b764946b2db5fd3258fb61bc856e050ab366
+content_hash: sha256:572262b53e3a6ca7db6277c114ade336ef556c95b39a050f0536abca7c0bc325
 ---
 
 swiper为滑动容器，提供切换显示子组件的能力。具体用法请参考[swiper](../harmonyos-references/js-components-container-swiper.md)。
@@ -58,7 +58,7 @@ swiper为滑动容器，提供切换显示子组件的能力。具体用法请�
 24. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/No9fN1PqSI-ABDinvlKsIg/zh-cn_image_0000002558604930.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052846Z&HW-CC-Expire=86400&HW-CC-Sign=02A4E7E68ECA330CB6FE9F8E4948350F0F38902450AB51B09C5A6AB0601D5FA6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/No9fN1PqSI-ABDinvlKsIg/zh-cn_image_0000002558604930.gif)
 
 说明
 
@@ -115,7 +115,7 @@ swiper组件支持除<list>之外的子组件。
 23. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/aP9CJxhNTYOug7bnMPYe_w/zh-cn_image_0000002589324455.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052846Z&HW-CC-Expire=86400&HW-CC-Sign=8A65A1331775B4047717B5E98FD84D7975B7BAA1DC34546AB1866ED52AC24530)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/aP9CJxhNTYOug7bnMPYe_w/zh-cn_image_0000002589324455.gif)
 
 说明
 
@@ -177,7 +177,7 @@ swiper组件支持除<list>之外的子组件。
 30. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/PVtt7yrTQ2KxNn18ojqvKg/zh-cn_image_0000002589244395.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052846Z&HW-CC-Expire=86400&HW-CC-Sign=3A1AA6C35F9807815FCE07EE15DBBE4ED39ECDF54F1643F7833C033D979C5BDD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/PVtt7yrTQ2KxNn18ojqvKg/zh-cn_image_0000002589244395.gif)
 
 ## 绑定事件
 
@@ -275,7 +275,7 @@ swiper组件支持除<list>之外的子组件。
 19. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/zosNAcLgSMCtUM2zw4z3QQ/zh-cn_image_0000002558764588.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052846Z&HW-CC-Expire=86400&HW-CC-Sign=C09AF7784BBA27AB143CDB7D98928F117F3993E3DA0DD3BD0192CE28097B9B2A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/zosNAcLgSMCtUM2zw4z3QQ/zh-cn_image_0000002558764588.gif)
 
 ## 场景示例
 
@@ -352,4 +352,4 @@ swiper组件支持除<list>之外的子组件。
 18. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/DHjHWzZiTiGIvresDNHicg/zh-cn_image_0000002558604932.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052846Z&HW-CC-Expire=86400&HW-CC-Sign=72A7F7F2F6AD64A72753C55258FEF77E5D6902B9B66839DB86CA2A68996C0AEE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/DHjHWzZiTiGIvresDNHicg/zh-cn_image_0000002558604932.gif)

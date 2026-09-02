@@ -5,7 +5,7 @@ breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-rep
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:44:40+08:00
 doc_updated_at: 2026-01-15
-content_hash: sha256:03fbdabb915776b46a9951c10b3b0d98093cf385ba2962517c9db5008005e9b5
+content_hash: sha256:dbd6f07eb0b6d07cc6a40c5973897bb2d5462f5561bb4eb3502f92e6017c626f
 ---
 
 对键入的密码类型字符串进行加密。
@@ -39,4 +39,4 @@ content_hash: sha256:03fbdabb915776b46a9951c10b3b0d98093cf385ba2962517c9db500800
 
 结果示例：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/sNH4mPdWTK2V5TFHyMcc2A/zh-cn_image_0000002561831189.png?HW-CC-KV=V1&HW-CC-Date=20260429T054438Z&HW-CC-Expire=86400&HW-CC-Sign=F9DE3DAC235298D90989120F3B2616C1F7961878521173E03E02F1B55AA066D0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/sNH4mPdWTK2V5TFHyMcc2A/zh-cn_image_0000002561831189.png)

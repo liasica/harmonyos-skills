@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:51:37+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:7326c8264a832f4b180143e6bbc2f29c722fe51233edf3c85dc3ac2f674881ed
+content_hash: sha256:c61734828d7adfe282b27a1b7fdfdf87dcd0681ceba612badee3b11c6ed27bc5
 ---
 
 为组件提供自定义手势判定能力。开发者可根据需要，在手势识别期间，决定是否响应手势。
@@ -205,7 +205,7 @@ PhonePC/2in1TabletTVWearable
 88. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/I9KhgbvLSYOao_RW1hMjCQ/zh-cn_image_0000002558766108.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055136Z&HW-CC-Expire=86400&HW-CC-Sign=A4E36028EC0520B025416FC25ED9B41F9A85F80CDFB6AF189AC1203E00FDE98D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/I9KhgbvLSYOao_RW1hMjCQ/zh-cn_image_0000002558766108.gif)
 
 ### 示例2（自定义区域手势判定）
 
@@ -283,7 +283,7 @@ PhonePC/2in1TabletTVWearable
 69. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/VDcZuRwXQYuN4Q9qfvvT-A/zh-cn_image_0000002558606450.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055136Z&HW-CC-Expire=86400&HW-CC-Sign=ADEEC10F73168E5C46992A1902E5CAC5CDBFF37E5EDABFCE15DDE2B1E7A797DA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/VDcZuRwXQYuN4Q9qfvvT-A/zh-cn_image_0000002558606450.gif)
 
 ### 示例3（实时监测参与手势的有效触点的数量及其简要信息）
 
@@ -369,4 +369,4 @@ PhonePC/2in1TabletTVWearable
 78. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/UEXIkHAaRI25XdMBxrEHLQ/zh-cn_image_0000002589325977.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055136Z&HW-CC-Expire=86400&HW-CC-Sign=350E7F6719D0B2C5769A385A4528E3BB3CC709AEDB8E036D05B99DF8A0CF2236)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/UEXIkHAaRI25XdMBxrEHLQ/zh-cn_image_0000002589325977.gif)

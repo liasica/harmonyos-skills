@@ -5,14 +5,14 @@ breadcrumb: 指南 > 应用服务 > Reader Kit（阅读服务） > 书籍内容�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:40:06+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:92291fae6a61acb65996ac170c56b3a4fb04347c90ef6434d5ac537a4bec3680
+content_hash: sha256:7c38a154fdbb41ab624c871ec9d34df50ef87bdd3e61d9a57b9cced806a255f7
 ---
 
 Reader Kit的交互能力已经集成了手指点击和触摸滑动翻页，如果开发者需要增加其它翻页场景时（如：耳机播控翻页），可使用手动翻页接口实现自定义翻页场景。
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/AUnC9-MbRD2GLL59cDmjEg/zh-cn_image_0000002558765646.png?HW-CC-KV=V1&HW-CC-Date=20260429T054005Z&HW-CC-Expire=86400&HW-CC-Sign=40FC7EAB0C5C8E843528C258425285860C2C23276A948A4CE988E2AFC8E2EB82)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/AUnC9-MbRD2GLL59cDmjEg/zh-cn_image_0000002558765646.png)
 
 ## 接口说明
 

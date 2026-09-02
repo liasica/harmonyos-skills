@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-reusablev2
-title: @ReusableV2装饰器：V2组件复用
+title: "@ReusableV2装饰器：V2组件复用"
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式基本语法 > 自定义组件 > 自定义组件复用 > @ReusableV2装饰器：V2组件复用
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:27:04+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:fb9ff1c395eb8bbf9444e58ed651fdd9bf125c0b7f1d0c15e871d7d8f374ac25
+content_hash: sha256:729ef19b53b6218c774cfba55518f49dca9395d414426798d30196f71d728f36
 ---
 
 为了降低反复创建销毁自定义组件带来的性能开销，开发者可以使用@ReusableV2装饰[@ComponentV2](arkts-create-custom-components.md#componentv2)装饰的自定义组件，达成组件复用的效果。
@@ -288,7 +288,7 @@ reuse、ReuseOptions、ReuseIdCallback的接口说明参考API文档：[复用�
 
 倘若该复用组件下有子组件时，会在回收和复用时递归调用子组件的aboutToRecycle和aboutToReuse（与子组件是否被标记复用无关），直到遍历完所有的孩子组件。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/B35wy1WWTI6lwF7kcoUuXQ/zh-cn_image_0000002558604390.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052702Z&HW-CC-Expire=86400&HW-CC-Sign=9BB17743B1601ACEC496ACA41AF1D1497EAAEC56972E391115844B0AA7E6FE2B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/B35wy1WWTI6lwF7kcoUuXQ/zh-cn_image_0000002558604390.gif)
 
 ## 复用阶段的冻结
 
@@ -376,7 +376,7 @@ reuse、ReuseOptions、ReuseIdCallback的接口说明参考API文档：[复用�
 3. 点击Change value按钮，UI无变化，@Monitor不触发且onRender方法不被回调。
 4. 点击Reuse/Recycle按钮，此时调用aboutToReuse回调并输出aboutToReuse的日志，@Monitor触发并输出日志info.age change且onRender方法回调输出info.age onRender，UI发生变化。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/YYIJzmClT4C4mjtRkOCQ2g/zh-cn_image_0000002589323915.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052702Z&HW-CC-Expire=86400&HW-CC-Sign=68F27217B9AA1F74C5F8551757B5532454CEF52A46A8659BFFB377C688808FE9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/YYIJzmClT4C4mjtRkOCQ2g/zh-cn_image_0000002589323915.gif)
 
 如果去掉aboutToReuse方法中的自增操作，则上述第四步不会触发@Monitor回调。
 
@@ -565,7 +565,7 @@ reuse、ReuseOptions、ReuseIdCallback的接口说明参考API文档：[复用�
 
 开发者可以尝试点击各个变量，并点击Recycle/Reuse按钮查看复用后的重置情况。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/IgOblbwiRpeorActmCPuIg/zh-cn_image_0000002589243855.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052702Z&HW-CC-Expire=86400&HW-CC-Sign=663604B8892E650FDD6C95BB5ACEB44FB5500323BFBA99F5F85396EDCABDA65B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/IgOblbwiRpeorActmCPuIg/zh-cn_image_0000002589243855.gif)
 
 需要注意的是，上面的例子中noDecoInfo未被重置，如果存在监听noDecoInfo.age的@Monitor，因为noDecoInfo本身未产生变化，所以该@Monitor也不会被重置，因此在后续第一次更改noDecoInfo.age时，IMonitorValue的before值将不会被重置，仍是复用前的值。
 
@@ -645,7 +645,7 @@ reuse、ReuseOptions、ReuseIdCallback的接口说明参考API文档：[复用�
 2. 点击Recycle/Reuse两次，UI刷新为noDecoInfo.age: 35，@Monitor触发并输出日志age change from 31 to 35。
 3. 点击noDecoInfo.age: 35，UI刷新为noDecoInfo.age: 36，@Monitor触发并输出日志age change from 35 to 36。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/IMYJosT8Ty6z1iYmgHAb1g/zh-cn_image_0000002558764048.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052702Z&HW-CC-Expire=86400&HW-CC-Sign=C678D2F85122014F980BCFD98843318C6B79AA0F8B3019C42400071EBB25DA16)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/IMYJosT8Ty6z1iYmgHAb1g/zh-cn_image_0000002558764048.gif)
 
 由于冻结机制的存在，在aboutToRecycle中赋值不会被@Monitor观察到。而在经历完变量重置后，变量又会被赋予新的值，因此对于组件内状态变量来说，在aboutToRecycle中赋值不会有明显的效果；而常量（例如上面的noDecoInfo）由于冻结机制的存在，在aboutToRecycle中更改age也不会被观察到，并且因为不会被重置，所以相关的@Monitor也不会被重置，即这里的age值本身未被重置，也就不会重置与之绑定的@Monitor。最终表现出来的现象即：第二步回调的@Monitor中，monitor.value()?.before得到的值为31，而非age的初始值30。
 
@@ -706,7 +706,7 @@ reuse、ReuseOptions、ReuseIdCallback的接口说明参考API文档：[复用�
 
 [ComponentIfPage.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ReusableV2/entry/src/main/ets/view/ComponentIfPage.ets#L15-L53)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/vJPyblU8RgC9JcNia8rkUw/zh-cn_image_0000002558604392.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052702Z&HW-CC-Expire=86400&HW-CC-Sign=BF8AB3FC973372462352D5182A59C9EFFA1AF407D11110DB492B233A06025BE7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/vJPyblU8RgC9JcNia8rkUw/zh-cn_image_0000002558604392.gif)
 
 ### 在Repeat组件中使用
 
@@ -788,7 +788,7 @@ Repeat组件懒加载场景中，将会优先使用Repeat组件的缓存池，�
 
 [RepeatPage.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ReusableV2/entry/src/main/ets/view/RepeatPage.ets#L15-L77)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/FbqS0JnRSwC39ekDxyZulQ/zh-cn_image_0000002589323917.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052702Z&HW-CC-Expire=86400&HW-CC-Sign=A412CB29DB8BA2F6C718451AB0B671BBA164B9026DA0FDB8E231C19A93F9EB9D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/FbqS0JnRSwC39ekDxyZulQ/zh-cn_image_0000002589323917.gif)
 
 ### 在Repeat组件非懒加载场景的each属性中使用
 
@@ -874,7 +874,7 @@ Repeat组件非懒加载场景中，会在删除/创建子树时触发回收/复
 
 [ComponentEachPage.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ReusableV2/entry/src/main/ets/view/ComponentEachPage.ets#L15-L78)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/De_HRjFVRdWI6xBgR03bjg/zh-cn_image_0000002589243857.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052702Z&HW-CC-Expire=86400&HW-CC-Sign=B5F02635E0F15EABB9168E17700A70EB602F52F41A434A4AAE8B2303283E9CAA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/De_HRjFVRdWI6xBgR03bjg/zh-cn_image_0000002589243857.gif)
 
 ### 在ForEach组件中使用
 
@@ -939,7 +939,7 @@ Repeat组件非懒加载场景中，会在删除/创建子树时触发回收/复
 
 [ComponentForEachPage.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ReusableV2/entry/src/main/ets/view/ComponentForEachPage.ets#L15-L59)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/VhiNOr68RrWE_u71su6T-w/zh-cn_image_0000002558764050.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052702Z&HW-CC-Expire=86400&HW-CC-Sign=80172BEE5C6A259485EB986C0088BB8B3AAD517AD5A43BE6074A47ABE922AA18)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/VhiNOr68RrWE_u71su6T-w/zh-cn_image_0000002558764050.gif)
 
 ### 在LazyForEach组件中使用
 
@@ -1109,4 +1109,4 @@ Repeat组件非懒加载场景中，会在删除/创建子树时触发回收/复
 
 [LazyForEachPage.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ReusableV2/entry/src/main/ets/view/LazyForEachPage.ets#L15-L164)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/8_-tdgj6RB214UcZnXjo7A/zh-cn_image_0000002558604394.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052702Z&HW-CC-Expire=86400&HW-CC-Sign=18D273732060155F73EE12BC8416CE90EF0B5B0F33E57A78CBA33930C861EBC7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/8_-tdgj6RB214UcZnXjo7A/zh-cn_image_0000002558604394.gif)

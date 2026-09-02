@@ -5,7 +5,7 @@ breadcrumb: 指南 > 图形 > AR Engine（AR引擎服务） > AR Engine常见问
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:36:03+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:715254ff6881f6e323d3e9361d4c91b853947998732fd440f20a808babb81bc5
+content_hash: sha256:7f47847b5f3f16574c395dc8e0e6dca099671e277592ef983e114e5084be0169
 ---
 
 ## 现象描述
@@ -14,7 +14,7 @@ content_hash: sha256:715254ff6881f6e323d3e9361d4c91b853947998732fd440f20a808babb
 
 **图1** 重复纹理的地板
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/6-DBUP2lTi2f1WvVOpIuww/zh-cn_image_0000002558605472.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053601Z&HW-CC-Expire=86400&HW-CC-Sign=26C2C72E3DB5DCD342974327D0DD1D73DE286A152FE13EE3886E242CB8D6732C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/6-DBUP2lTi2f1WvVOpIuww/zh-cn_image_0000002558605472.jpg)
 
 ## 可能原因
 
@@ -28,4 +28,4 @@ AR Engine通过获取到的加速度计传感器和磁力计传感器的信息�
 
 **计算运动速度**：x,y,z为在t时刻的位姿数据的位移量。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/D9TAwtY-Rym7JQ_zhOhFGQ/zh-cn_image_0000002589324999.png?HW-CC-KV=V1&HW-CC-Date=20260429T053601Z&HW-CC-Expire=86400&HW-CC-Sign=453811B67F28DE3211F774B07245C5318FEA6FEAC7C1BEC5A1088ADE4A518BD1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/D9TAwtY-Rym7JQ_zhOhFGQ/zh-cn_image_0000002589324999.png)

@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:28:46+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:11936da668d22bb5facec66900e1cdd179c4cd6b115809cdde81056b792534f1
+content_hash: sha256:641c1d23fd22826a60274dcef59001d4f42500363e8305115f6f9ed7825e3c38
 ---
 
 tabs是一种常见的界面导航结构。通过页签容器，用户可以快捷地访问应用的不同模块。具体用法请参考[tabs API](../harmonyos-references/js-components-container-tabs.md)。
@@ -54,7 +54,7 @@ tabs是一种常见的界面导航结构。通过页签容器，用户可以快�
 17. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/9O3xqwnoR0aYcTmHM30wAw/zh-cn_image_0000002558604928.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052845Z&HW-CC-Expire=86400&HW-CC-Sign=C72AFB3CF8B02EF8FFA5D920E7279A9B054565A00D41B48FBEB20EB62244A402)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/9O3xqwnoR0aYcTmHM30wAw/zh-cn_image_0000002558604928.gif)
 
 ## 设置样式
 
@@ -108,7 +108,7 @@ tabs是一种常见的界面导航结构。通过页签容器，用户可以快�
 25. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/mCoR__8xS4mIVHoHoeJHNQ/zh-cn_image_0000002589324453.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052845Z&HW-CC-Expire=86400&HW-CC-Sign=C72F596C6FBF323FFB28A3F8E7E53CCDBDEBEA07528878E72BA1235BE64CB7FD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/mCoR__8xS4mIVHoHoeJHNQ/zh-cn_image_0000002589324453.gif)
 
 ## 显示页签索引
 
@@ -146,7 +146,7 @@ tabs是一种常见的界面导航结构。通过页签容器，用户可以快�
 9. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/jwQub8sYR_G2-TW3N3cp0g/zh-cn_image_0000002589244393.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052845Z&HW-CC-Expire=86400&HW-CC-Sign=A6DE60236CDE9A15F8A926939BFF01BC6F04B225932B8C50683B70BD41ED7012)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/jwQub8sYR_G2-TW3N3cp0g/zh-cn_image_0000002589244393.gif)
 
 说明
 
@@ -264,4 +264,4 @@ tabs子组件仅支持一个[<tab-bar>](../harmonyos-references/js-components-co
 39. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/i50OUtPbS8WS_C5_TZpPWw/zh-cn_image_0000002558764586.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052845Z&HW-CC-Expire=86400&HW-CC-Sign=81F94C0E2B584C9435125279AD2B0A8BD41A81F24AFB045F751295C2EB08B739)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/i50OUtPbS8WS_C5_TZpPWw/zh-cn_image_0000002558764586.gif)

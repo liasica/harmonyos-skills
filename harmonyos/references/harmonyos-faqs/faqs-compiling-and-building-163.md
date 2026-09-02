@@ -5,7 +5,7 @@ breadcrumb: FAQ > DevEco Studio > 编译构建 > 编译报错“The permission u
 category: harmonyos-faqs
 scraped_at: 2026-04-29T14:20:59+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:25e27512ba1817e2c1589b991cd6718073c3cb6f2b7c4e9b1bff1120c161ee12
+content_hash: sha256:66cd1af796cd16a27a39a1da354d39bf0dc9fc002a6b0aff95a2b39e80bfb5e9
 ---
 
 **错误描述**
@@ -16,7 +16,7 @@ requestPermissions下的权限必须是SDK中预定义的值，或在definePermi
 
 在module.json5文件的requestPermissions中配置name时，使用了不存在的权限名称或者使用了当前版本不支持的权限。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/6jIfHrezThqs8pBNXHNg-w/zh-cn_image_0000002229604097.png?HW-CC-KV=V1&HW-CC-Date=20260429T062058Z&HW-CC-Expire=86400&HW-CC-Sign=A66D2B56DB387E304CBEFB2C4EE594759BF498A07B80E5CC354A0A734BA4A050)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/6jIfHrezThqs8pBNXHNg-w/zh-cn_image_0000002229604097.png)
 
 **解决措施**
 

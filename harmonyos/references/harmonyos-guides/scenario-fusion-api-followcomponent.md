@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用服务 > Scenario Fusion Kit（融合场景服务） 
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:40:16+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:0b602812f676c021e35841f223741459282cc8c2341abd7d299afa303a5d22af
+content_hash: sha256:3978b2160ded0a5b7e5ca7a8f13c510eedf287a54f5911f97375edaf23cc06d2
 ---
 
 ## 场景介绍
@@ -17,7 +17,7 @@ Scenario Fusion Kit提供服务号关注组件功能，调用该接口可以在�
 * 用户关注服务号成功，按钮会变为已关注并置灰，在1.5秒后关注组件会自动消失。
 * 用户关注服务号失败，则会出现错误提示。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/YNJyR5HKShGfSkMA3hGZOw/zh-cn_image_0000002589325517.png?HW-CC-KV=V1&HW-CC-Date=20260429T054014Z&HW-CC-Expire=86400&HW-CC-Sign=41BABA3957DDA20166620C331976573BC9DEEF3EDF311D66C25F75759A5260E3) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/71-M3ukcRsaGHbRzUupvlA/zh-cn_image_0000002589245455.png?HW-CC-KV=V1&HW-CC-Date=20260429T054014Z&HW-CC-Expire=86400&HW-CC-Sign=6EFF6230A3C997D18FC6A826AAA315AC6CF4657EC9E9A6166539AAA417127D71)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/YNJyR5HKShGfSkMA3hGZOw/zh-cn_image_0000002589325517.png) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/71-M3ukcRsaGHbRzUupvlA/zh-cn_image_0000002589245455.png)
 
 ## 前提条件
 

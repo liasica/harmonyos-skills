@@ -5,7 +5,7 @@ breadcrumb: FAQ > 应用框架开发 > NDK开发 > NDK开发 > 如何在ArkTS侧
 category: harmonyos-faqs
 scraped_at: 2026-04-29T14:15:50+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:a13a053ca3855e731b31203a6ebe40fd34ea02645da3708c478865bf12d7d00d
+content_hash: sha256:1dadff432bc6acc46e798f50273a7da90baab0484e96ab98c2fcad06d7a802ee
 ---
 
 **解决措施**
@@ -14,10 +14,10 @@ content_hash: sha256:a13a053ca3855e731b31203a6ebe40fd34ea02645da3708c478865bf12d
 
 1. 将so文件移动到libs文件夹下对应架构的目录。如果在纯ArkTS工程中，还需将编译三方库时生成的libc++\\_xxx.so移动到该目录。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/xF2DoqUGRmOqYT0Nt_TC9Q/zh-cn_image_0000002194318516.png?HW-CC-KV=V1&HW-CC-Date=20260429T061549Z&HW-CC-Expire=86400&HW-CC-Sign=B01486CAAC14050A76F1B12EAC481327E4668AF339AD49D137F36A801BA09159 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/xF2DoqUGRmOqYT0Nt_TC9Q/zh-cn_image_0000002194318516.png "点击放大")
 2. 在src/main/cpp/types目录下创建新目录，并将Index.d.ts和oh-package.json5文件移动到该目录下。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/zApv2AXWR0CeIpUZ5OmM-g/zh-cn_image_0000002229604289.png?HW-CC-KV=V1&HW-CC-Date=20260429T061549Z&HW-CC-Expire=86400&HW-CC-Sign=1CEB3167E7AA6F336F3D65FA56F18F16925C394D20B1F985E4E1176D9FFA67B0 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/zApv2AXWR0CeIpUZ5OmM-g/zh-cn_image_0000002229604289.png "点击放大")
 3. 在模块级的oh-package.json5文件中声明该 so 库的根目录路径。
 
    ```
@@ -61,7 +61,7 @@ content_hash: sha256:a13a053ca3855e731b31203a6ebe40fd34ea02645da3708c478865bf12d
 
 运行结果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/3VvAKFIGRWWgnvrhW9rMnw/zh-cn_image_0000002229758785.png?HW-CC-KV=V1&HW-CC-Date=20260429T061549Z&HW-CC-Expire=86400&HW-CC-Sign=FBB6F100A3A868055FC0B3CAF98BB9348C30129B2FEA745B47AA1AD14E2AEC19 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/3VvAKFIGRWWgnvrhW9rMnw/zh-cn_image_0000002229758785.png "点击放大")
 
 **参考链接**
 

@@ -5,7 +5,7 @@ breadcrumb: 指南 > 系统 > 基础功能 > Function Flow Runtime Kit（任务�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:33:22+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:a198b794fd7aad5597fb424c68420ee95f0a506b8f2f3e409f1465d81652b084
+content_hash: sha256:a35394cc6fdf7c4e32c4435a9e5d2f687abf23a04f3aac04c64ff904af163cb0
 ---
 
 ## 概述
@@ -17,7 +17,7 @@ content_hash: sha256:a198b794fd7aad5597fb424c68420ee95f0a506b8f2f3e409f1465d8165
 
 为解决以上问题，Job Partner并发范式应运而生。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/hgRyW9pgS4eqgWswlCMsvA/zh-cn_image_0000002558605300.png?HW-CC-KV=V1&HW-CC-Date=20260429T053321Z&HW-CC-Expire=86400&HW-CC-Sign=C4C18E872F5F9C9CFD6FD6C9EAFA3482FB227F11D3933CDF413CD752FABB3B3D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/hgRyW9pgS4eqgWswlCMsvA/zh-cn_image_0000002558605300.png)
 
 Job Partner并发范式中定义原先的线程为master线程，并支持动态管理partner线程（伙伴线程）。它有两个特性：
 

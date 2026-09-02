@@ -5,7 +5,7 @@ breadcrumb: FAQ > 应用框架开发 > UI框架 > 方舟UI框架（ArkUI） > �
 category: harmonyos-faqs
 scraped_at: 2026-04-29T14:16:15+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:581cbcc2b645594f9eda1464d8fb8addc679fdbd607e4a88ccf68a7a15b2f1f2
+content_hash: sha256:007ae540e403f752e70d5aa6b8159f2a1119a0607786cfcf63971e551b4ff37f
 ---
 
 可通过[List](../harmonyos-references/ts-container-list.md)组件的sticky属性配合ListItemGroup组件来实现。通过给List组件设置sticky属性为StickyStyle.Header/StickyStyle.Footer。可参考如下代码：
@@ -92,4 +92,4 @@ content_hash: sha256:581cbcc2b645594f9eda1464d8fb8addc679fdbd607e4a88ccf68a7a15b
 
 效果如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/MnB8eI8xTz-6Q5YwVQ-z9g/zh-cn_image_0000002530800653.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061612Z&HW-CC-Expire=86400&HW-CC-Sign=DD08DB00AC5C502308231DA0C678707C06B124E56DA44889D76DEB0E1B009FF0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/MnB8eI8xTz-6Q5YwVQ-z9g/zh-cn_image_0000002530800653.gif)

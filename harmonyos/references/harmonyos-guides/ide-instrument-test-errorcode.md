@@ -5,7 +5,7 @@ breadcrumb: 指南 > 编写与调试应用 > 开发自测试 > 测试框架 > �
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:47:00+08:00
 doc_updated_at: 2026-01-23
-content_hash: sha256:92cc363f7231e498303cec5688124dae98714d2ddbfa0f98c09a1b8451b79efd
+content_hash: sha256:c6ecb61c40650a41bb88189a6fbe69dd08d40ed10fb1e448d22503a2d118d3d0
 ---
 
 ## 00501001 测试套件名称含有变量
@@ -156,7 +156,7 @@ Current test case XXX not found in the test file.
 * 选择要运行的测试用例，重新运行。
 * 在运行配置窗口修改Method name。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/L_fgH7tWRdi2SVvTfGVH9A/zh-cn_image_0000002530912706.png?HW-CC-KV=V1&HW-CC-Date=20260429T054659Z&HW-CC-Expire=86400&HW-CC-Sign=A0BDDE17182C9DACD9A658550F869EF03E5BFED5B1C159B62870B2BADA504ED5)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/L_fgH7tWRdi2SVvTfGVH9A/zh-cn_image_0000002530912706.png)
 
 ## 00502002 找不到测试用例
 
@@ -210,7 +210,7 @@ The current file does not have any function registered in the list file.
 
 在List.test.ets文件中注册函数，示例如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/WyakvcRaQEiunJG2fLvqcg/zh-cn_image_0000002561832635.png?HW-CC-KV=V1&HW-CC-Date=20260429T054659Z&HW-CC-Expire=86400&HW-CC-Sign=B7DA56C402CF1389CB8A508DDA4BF2ACAAE577324CDB6615460665A789B733CB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/WyakvcRaQEiunJG2fLvqcg/zh-cn_image_0000002561832635.png)
 
 ## 00502005 测试包中的所有函数都没有在List.test.ets文件中注册
 
@@ -230,7 +230,7 @@ The current package does not have any function registered in the list file.
 
 在List.test.ets文件中注册函数，示例如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/ZRb2trAOQeCWTUcDb9lDJg/zh-cn_image_0000002561752657.png?HW-CC-KV=V1&HW-CC-Date=20260429T054659Z&HW-CC-Expire=86400&HW-CC-Sign=0DF20C679DAABF199CA06348DF812BEA81077845325AE5A68C201F6FBB8727EE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/ZRb2trAOQeCWTUcDb9lDJg/zh-cn_image_0000002561752657.png)
 
 ## 00502006 函数没有在List.test.ets文件中注册
 
@@ -250,7 +250,7 @@ The function where the suite XXX is located is not registered in the ''List.test
 
 在List.test.ets文件中注册函数，示例如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/L78pDBYYT5KBEf3x3tVG4A/zh-cn_image_0000002530752714.png?HW-CC-KV=V1&HW-CC-Date=20260429T054659Z&HW-CC-Expire=86400&HW-CC-Sign=7007AA59E4A5789A22F9EC9F04E7C3006782904D9B15AEB95BE0C61F926E0F13)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/L78pDBYYT5KBEf3x3tVG4A/zh-cn_image_0000002530752714.png)
 
 ## 00502007 测试文件中找不到测试套件
 

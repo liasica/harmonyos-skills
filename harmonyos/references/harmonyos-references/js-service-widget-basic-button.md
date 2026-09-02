@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > JS
 category: harmonyos-references
 scraped_at: 2026-04-29T13:54:00+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:2d5bc03d17002e7f59c95891fe86ed79353531a92036632353f5c2887abd9ac0
+content_hash: sha256:28276e9db3251d2a98d778a419f04c12a38e9888162ec4d2aa08f967d594d0aa
 ---
 
 按钮组件，包括胶囊按钮、圆形按钮和文本按钮。
@@ -102,4 +102,4 @@ PhonePC/2in1TabletTVWearable
 
 **4\*4卡片**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/eS_NLnWdS2uohH0T3-Zgjg/zh-cn_image_0000002589246761.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T055359Z&HW-CC-Expire=86400&HW-CC-Sign=79B0F3C9FC75ACAAFC82AB2190D2C51CA3F523776600F35CD96D5AFB362F40C4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/eS_NLnWdS2uohH0T3-Zgjg/zh-cn_image_0000002589246761.jpg)

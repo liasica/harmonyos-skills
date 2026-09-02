@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-request-cachedownload
-title: @ohos.request.cacheDownload (缓存下载)
+title: "@ohos.request.cacheDownload (缓存下载)"
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > ArkTS API > 数据文件处理 > @ohos.request.cacheDownload (缓存下载)
 category: harmonyos-references
 scraped_at: 2026-04-28T08:09:33+08:00

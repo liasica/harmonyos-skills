@@ -5,7 +5,7 @@ breadcrumb: 指南 > 基础入门 > 开发基础知识 > 应用程序包常见�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:25:35+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:1cc2d2acd02b0a906fcd52407212f63e0269aa7928666d211cf5a706d377e31c
+content_hash: sha256:411655d0c1cad3e45c5e983b8bf60a9c617fed2c2ef84c3167b74fb1e039477a
 ---
 
 ## 如何获取签名信息中的指纹信息
@@ -42,7 +42,7 @@ content_hash: sha256:1cc2d2acd02b0a906fcd52407212f63e0269aa7928666d211cf5a706d37
 3. bm dump -n com.example.myapplication | grep fingerprint
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/56coLL5CRbiskAAyrGZV0A/zh-cn_image_0000002558604316.png?HW-CC-KV=V1&HW-CC-Date=20260429T052534Z&HW-CC-Expire=86400&HW-CC-Sign=68AF60D0628DBA3F41873E77DA6A03567D47BCB0D12E05F8ACDE89AFF3BB57A7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/56coLL5CRbiskAAyrGZV0A/zh-cn_image_0000002558604316.png)
 
 * 通过.cer证书文件获取，可以参考[APP备案FAQ](../app/50130.md)中HarmonyOS应用/元服务如何获取公钥和签名信息，指纹信息使用哈希算法SHA-1生成。
 * 通过keytool工具获取，详情参考[生成签名证书指纹](../AppGallery-connect-Guides/appgallerykit-preparation-game-0000001055356911.md#section147011294331)，使用哈希算法SHA-256生成。
@@ -88,7 +88,7 @@ appIdentifier是[Profile文件](../app/agc-help-release-profile-0000002248341090
 3. bm dump -n com.example.myapplication | grep appIdentifier
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/VoQPPlYWRuSNBdW0ist8ow/zh-cn_image_0000002589323841.png?HW-CC-KV=V1&HW-CC-Date=20260429T052534Z&HW-CC-Expire=86400&HW-CC-Sign=B7FEFDF3EA298509DFF72482B92F56C63EA6E92100C99C4070429D1AD2B92CCA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/VoQPPlYWRuSNBdW0ist8ow/zh-cn_image_0000002589323841.png)
 
 ## 什么是appId
 
@@ -126,7 +126,7 @@ appId是应用的唯一标识，由包名、下划线和证书公钥的Base64编
 3. bm dump -n ohos.app.hap.myapplication |grep '"appId":'
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/RHNx3TsQQj6zCdY_bVUU_w/zh-cn_image_0000002589243779.png?HW-CC-KV=V1&HW-CC-Date=20260429T052534Z&HW-CC-Expire=86400&HW-CC-Sign=C9FA6CB54336B6EC61AC590980202E3E52C3023C1A647E718DC79A3B304BDD90)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/RHNx3TsQQj6zCdY_bVUU_w/zh-cn_image_0000002589243779.png)
 
 ## 应用的uid
 

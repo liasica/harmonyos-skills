@@ -5,14 +5,14 @@ breadcrumb: 指南 > 系统 > 硬件 > Car Kit（车服务） > 获取HiCar连�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:33:30+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:b09b74238d4a397274f69683ae6a2fff43fbe3ae68eeb0ec27136711685b58a9
+content_hash: sha256:d98e4389a0a0ffe189d500f49aebda82df8a28cf79c402465627ee0ca0e2f759
 ---
 
 ## 场景介绍
 
 生态应用可以通过监听智慧出行连接状态接口获取连接信息，适配HiCar业务（如：应用流转）。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/HsfUwFsAQo6YWAr_uwd_Cw/zh-cn_image_0000002558605314.png?HW-CC-KV=V1&HW-CC-Date=20260429T053329Z&HW-CC-Expire=86400&HW-CC-Sign=B77779958DE63E13F336965D853570070B778F7FA1A1C648F66721F520EBD64B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/HsfUwFsAQo6YWAr_uwd_Cw/zh-cn_image_0000002558605314.png)
 
 ## 接口说明
 
@@ -25,7 +25,7 @@ content_hash: sha256:b09b74238d4a397274f69683ae6a2fff43fbe3ae68eeb0ec27136711685
 
 ## 开发流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/FxuaMyL8Rvu4pLKfEkqIBw/zh-cn_image_0000002589324839.png?HW-CC-KV=V1&HW-CC-Date=20260429T053329Z&HW-CC-Expire=86400&HW-CC-Sign=D5C58008F9F3279D31129A986AAFC4619BA47A31E3ED176CF7F9CDBCA304005C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/FxuaMyL8Rvu4pLKfEkqIBw/zh-cn_image_0000002589324839.png)
 
 ## 开发步骤
 

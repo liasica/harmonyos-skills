@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:52:20+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:80a4f97233fe982b1a20bbbfc4a7f135d73498a07f80054ae55e421a0a88c24c
+content_hash: sha256:93d1b18808632e13903609f971cf911f87580b93f67836bec5c438f0b8ee47c4
 ---
 
 数据面板组件，用于将多个数据占比情况使用占比图进行展示。
@@ -315,7 +315,7 @@ PhonePC/2in1TabletTVWearable
 47. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/DjinMxuXRlSj5pXaRYQX6A/zh-cn_image_0000002589326295.png?HW-CC-KV=V1&HW-CC-Date=20260429T055217Z&HW-CC-Expire=86400&HW-CC-Sign=AF5FD8C367C9696A6102FE9E2B01E445DF9517023AFCB7DBE2B69909731EBB18)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/DjinMxuXRlSj5pXaRYQX6A/zh-cn_image_0000002589326295.png)
 
 ### 示例2（设置渐变色和阴影）
 
@@ -374,7 +374,7 @@ PhonePC/2in1TabletTVWearable
 50. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/6KRJppE8QXuGFnzvlp6Dtg/zh-cn_image_0000002589246237.png?HW-CC-KV=V1&HW-CC-Date=20260429T055217Z&HW-CC-Expire=86400&HW-CC-Sign=6D98CA1C18AB46618F45E17127DC2B21BB157828B8B50733E0BDBB787D8F5C46)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/6KRJppE8QXuGFnzvlp6Dtg/zh-cn_image_0000002589246237.png)
 
 ### 示例3（设置关闭动画和阴影）
 
@@ -428,7 +428,7 @@ PhonePC/2in1TabletTVWearable
 45. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/ap9Bbj65SJ2-4IATiVeAvA/zh-cn_image_0000002558766430.png?HW-CC-KV=V1&HW-CC-Date=20260429T055217Z&HW-CC-Expire=86400&HW-CC-Sign=6D132729038501DB116A5E4B9B99E6195D068AD0330BB2A06C47DAD896A14EE2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/ap9Bbj65SJ2-4IATiVeAvA/zh-cn_image_0000002558766430.png)
 
 ### 示例4（设置定制内容区）
 
@@ -514,4 +514,4 @@ PhonePC/2in1TabletTVWearable
 77. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/Z9F60hztSzuerunUFC61Hw/zh-cn_image_0000002558606770.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T055217Z&HW-CC-Expire=86400&HW-CC-Sign=DF04E00B7616943751F5E94AA75A89200545614BEE2A9899FD9C53C7574CFB84)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/Z9F60hztSzuerunUFC61Hw/zh-cn_image_0000002558606770.jpg)

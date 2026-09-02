@@ -5,7 +5,7 @@ breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:34:59+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:1cc86fee0cab372dc225db7bc3e68bf92dc8f98607e5b5bfa76075a6251d8ec6
+content_hash: sha256:421bd8e2c6b4e1d21558886950e917073a04c9c82e0bc3a601e2d3f6cd289965
 ---
 
 从API version 20开始，相机框架通过相机控制器，为应用在直播场景提供美颜、虚化等能力。
@@ -51,10 +51,10 @@ content_hash: sha256:1cc86fee0cab372dc225db7bc3e68bf92dc8f98607e5b5bfa76075a6251
    ```
 5. 使能相机控制器后，可以在状态栏看到新增的视频效果图标。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/Wc9KCnDuR3CTeDAW01L-yw/zh-cn_image_0000002558605414.png?HW-CC-KV=V1&HW-CC-Date=20260429T053458Z&HW-CC-Expire=86400&HW-CC-Sign=47DE4996B18FDC93CBF0F4E5585B6AA38D555FA7375A52349EFEA2B7402C2762)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/Wc9KCnDuR3CTeDAW01L-yw/zh-cn_image_0000002558605414.png)
 6. 点击视频效果图标，在弹出的二级页面中，用户可调节控制器支持的效果，如图所示为美颜和背景虚化。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/F_q1C-UFRFy8RYuzQSuFXQ/zh-cn_image_0000002589324941.png?HW-CC-KV=V1&HW-CC-Date=20260429T053458Z&HW-CC-Expire=86400&HW-CC-Sign=90F2186B453B62279D61B1621B04B34FF954B25836FBF0806A374541175B9B8A)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/F_q1C-UFRFy8RYuzQSuFXQ/zh-cn_image_0000002589324941.png)
 
 ## 状态监听
 

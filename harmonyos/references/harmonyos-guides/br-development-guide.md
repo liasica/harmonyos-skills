@@ -5,7 +5,7 @@ breadcrumb: 指南 > 系统 > 网络 > Connectivity Kit（短距通信服务） 
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:32:28+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:d61f98cf178aae0cb05e4a6961ba4de27fcad9399a86d0bc248a0ef445ba6e6d
+content_hash: sha256:5d1d2c1bbd4f075474b0bb41c1afa127ecef62280586138dc86195dc2d2cd900
 ---
 
 ## 简介
@@ -80,7 +80,7 @@ content_hash: sha256:d61f98cf178aae0cb05e4a6961ba4de27fcad9399a86d0bc248a0ef445b
 
 系统弹出对话框并提示应用“想要开启蓝牙”，如下图1。若用户同意授权，将开启蓝牙。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/wFGosIv0REGtiME-qtRUGw/zh-cn_image_0000002589324787.png?HW-CC-KV=V1&HW-CC-Date=20260429T053226Z&HW-CC-Expire=86400&HW-CC-Sign=8B574DA72ADD2F445ECF5DC5E3C3681943C19AC6512597F6F475C3D7FBA5CFB6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/wFGosIv0REGtiME-qtRUGw/zh-cn_image_0000002589324787.png)
 
 **图1** 开启蓝牙对话框
 
@@ -103,7 +103,7 @@ content_hash: sha256:d61f98cf178aae0cb05e4a6961ba4de27fcad9399a86d0bc248a0ef445b
 
 系统弹出对话框并提示应用“想要关闭蓝牙”，如下图2。若用户同意授权，将关闭蓝牙。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/M4OJVJ8CQ5yWT1CGwFCphg/zh-cn_image_0000002589244725.png?HW-CC-KV=V1&HW-CC-Date=20260429T053226Z&HW-CC-Expire=86400&HW-CC-Sign=515948FB661392F1CB1868048EE73D4035E7A7195B02817C222F18DA3094522F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/M4OJVJ8CQ5yWT1CGwFCphg/zh-cn_image_0000002589244725.png)
 
 **图2** 关闭蓝牙对话框
 

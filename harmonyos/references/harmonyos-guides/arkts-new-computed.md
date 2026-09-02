@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-computed
-title: @Computed装饰器：计算属性
+title: "@Computed装饰器：计算属性"
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理（V2） > 管理数据对象的状态 > @Computed装饰器：计算属性
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:27:19+08:00

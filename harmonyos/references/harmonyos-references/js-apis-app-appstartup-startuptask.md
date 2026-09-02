@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-appstartup-startuptask
-title: @ohos.app.appstartup.StartupTask (启动框架任务)
+title: "@ohos.app.appstartup.StartupTask (启动框架任务)"
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > Stage模型能力的接口 > @ohos.app.appstartup.StartupTask (启动框架任务)
 category: harmonyos-references
 scraped_at: 2026-04-28T07:58:24+08:00

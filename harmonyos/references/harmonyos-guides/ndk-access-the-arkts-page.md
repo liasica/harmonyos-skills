@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (基于
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:28:30+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:d8db6e13373a415829cf03c96cd355596de2e3be0769851b87735d4db59ba00e
+content_hash: sha256:9d75ed92433ad2fd1914c67ee29516d9fe22eab5c10200184a6e700d4dd3628a
 ---
 
 ## 占位组件
@@ -167,7 +167,7 @@ NDK提供的UI组件能力如组件创建、树操作、属性设置、事件注
 
 **图1** Native文本列表
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/ZNn7N0WnTVi9ptPvxYN4Fw/zh-cn_image_0000002558604896.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052828Z&HW-CC-Expire=86400&HW-CC-Sign=4D6FBB9CB83D96A453F3E01A82B0EA998D242B5CB954BCE2398FCE7AD6A25A48)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/ZNn7N0WnTVi9ptPvxYN4Fw/zh-cn_image_0000002558604896.gif)
 
 1. 在ArkTS页面上声明用于Native页面挂载的占位组件，并在页面创建时通知Native侧创建文本列表。
 

@@ -5,7 +5,7 @@ breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:34:54+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:feef08bee9f0a31b322f0d3f5785e60f723fac1d8554170cedca250c2d41f33b
+content_hash: sha256:50670910a5d69b1beaf4b1995f8b5cc41d14efb4da44c20b1ae597e40e695b27
 ---
 
 在开发相机应用时，需要先[申请相关权限](camera-preparation.md)。
@@ -27,7 +27,7 @@ content_hash: sha256:feef08bee9f0a31b322f0d3f5785e60f723fac1d8554170cedca250c2d4
 
 双路方案调用流程图建议如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/lMl8NEUKSW28eC4hCMDcQw/zh-cn_image_0000002589244871.png?HW-CC-KV=V1&HW-CC-Date=20260429T053453Z&HW-CC-Expire=86400&HW-CC-Sign=A666F956635BF6038E5310FA66F23F8BF05C4CCE32ABDB8D06B8D7740A4C1542)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/lMl8NEUKSW28eC4hCMDcQw/zh-cn_image_0000002589244871.png)
 
 ## 开发步骤
 

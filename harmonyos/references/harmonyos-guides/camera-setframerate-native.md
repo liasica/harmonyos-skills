@@ -5,7 +5,7 @@ breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:35:09+08:00
 doc_updated_at: 2026-03-17
-content_hash: sha256:093f8977cbd0631e20c98a9815e39c4c57f5bc7289753bdff59f051697272173
+content_hash: sha256:c5e94e002b1dba69b18bc29897d8a693a673b421eb2b78aefe14e33aecf9d177
 ---
 
 动态调整帧率是直播、视频等场景下控制预览效果的重要能力之一。应用可通过此能力，显式地控制流输出帧率，以适应不同帧率下的业务目标。
@@ -22,7 +22,7 @@ content_hash: sha256:093f8977cbd0631e20c98a9815e39c4c57f5bc7289753bdff59f0516972
 
 流程图如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/IHbQRm23SQKtu5Z4uXBYwA/zh-cn_image_0000002589244889.png?HW-CC-KV=V1&HW-CC-Date=20260429T053508Z&HW-CC-Expire=86400&HW-CC-Sign=591A819217AA4EBADDC6A246B8BE9C12D185441A4CE25A824FF6677FA6B3AF8F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/IHbQRm23SQKtu5Z4uXBYwA/zh-cn_image_0000002589244889.png)
 
 与普通的[预览](native-camera-preview.md)流程相比，动态调整预览帧率的注意点如图上标识：
 

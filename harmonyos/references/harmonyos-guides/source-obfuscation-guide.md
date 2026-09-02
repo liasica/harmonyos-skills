@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS编译�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:26:56+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:0890fe0ce6c87a9a3f032413213c86ab6d3a13c082ff7351bce7abba7d9cd05e
+content_hash: sha256:38fca1b3a59e1889a40e9e3b213c8f3bbc2898fc125c5275364dac3bce0a2b90
 ---
 
 ## 开启源码混淆
@@ -172,7 +172,7 @@ content_hash: sha256:0890fe0ce6c87a9a3f032413213c86ab6d3a13c082ff7351bce7abba7d9
   + 名称映射表文件：nameCache.json，该文件记录了源码名称混淆的映射关系。
   + 系统API白名单文件：systemApiCache.json，该文件记录了SDK中的接口与属性名称，工程源码中与其重名的元素不会被混淆。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/u4ws63ZiQcCURi_3dHX_Hw/zh-cn_image_0000002589323905.png?HW-CC-KV=V1&HW-CC-Date=20260429T052655Z&HW-CC-Expire=86400&HW-CC-Sign=5A390A93338963148C3115A515C6BE2F57403E82D3D646C75A019CE7DAB2BB5B)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/u4ws63ZiQcCURi_3dHX_Hw/zh-cn_image_0000002589323905.png)
 
 ## 报错栈还原
 
@@ -184,4 +184,4 @@ content_hash: sha256:0890fe0ce6c87a9a3f032413213c86ab6d3a13c082ff7351bce7abba7d9
 
 * 源代码映射信息文件：sourceMaps.map，该文件记录了压缩/转换后的代码到原始源代码之间的映射关系。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/NTReNsB5QF6rWKq2OocMNQ/zh-cn_image_0000002589243845.png?HW-CC-KV=V1&HW-CC-Date=20260429T052655Z&HW-CC-Expire=86400&HW-CC-Sign=9B15701B12F26E9528033D381E3B3A320E4DC08BE6E8A31206EE8FAE78BC2C99)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/NTReNsB5QF6rWKq2OocMNQ/zh-cn_image_0000002589243845.png)

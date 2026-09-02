@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-data-commontype
-title: @ohos.data.commonType (数据通用类型)
+title: "@ohos.data.commonType (数据通用类型)"
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > ArkTS API > @ohos.data.commonType (数据通用类型)
 category: harmonyos-references
 scraped_at: 2026-04-28T07:59:07+08:00

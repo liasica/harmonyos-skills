@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > UI Design Kit（UI设计套件） > 底部�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:30:23+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:45889b0966dc3dc606017a80eaf6ee6ca61197175a89ced1f985588ae05bb812
+content_hash: sha256:49056726c508181481fdd4bfcba1edc96724f42565603123689fcbdb4b77469a
 ---
 
 ## 场景介绍
@@ -16,7 +16,7 @@ content_hash: sha256:45889b0966dc3dc606017a80eaf6ee6ca61197175a89ced1f985588ae05
 
 页签栏悬浮样式如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/tm3tn5HaS1uhNst-wuFfXw/zh-cn_image_0000002558764844.png?HW-CC-KV=V1&HW-CC-Date=20260429T053022Z&HW-CC-Expire=86400&HW-CC-Sign=AAC39F0F6B96BF8A9C7742992C0E189EE86724B261917D4D464AF0FAF8B43EBE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/tm3tn5HaS1uhNst-wuFfXw/zh-cn_image_0000002558764844.png)
 
 ## 迷你栏
 
@@ -24,11 +24,11 @@ content_hash: sha256:45889b0966dc3dc606017a80eaf6ee6ca61197175a89ced1f985588ae05
 
 迷你栏的折叠样式如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/IEbNMm4nTly7DP7YYF4EXQ/zh-cn_image_0000002558605188.png?HW-CC-KV=V1&HW-CC-Date=20260429T053022Z&HW-CC-Expire=86400&HW-CC-Sign=5891A63127E1BBD198B7402368E633DC31E1F71095B9244A53D9992A91D1B067)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/IEbNMm4nTly7DP7YYF4EXQ/zh-cn_image_0000002558605188.png)
 
 迷你栏的展开样式如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/O7JeWuNzRvKtIwAHZz7r6Q/zh-cn_image_0000002589324713.png?HW-CC-KV=V1&HW-CC-Date=20260429T053022Z&HW-CC-Expire=86400&HW-CC-Sign=8A7E21A9230140B6A8899F2F5177D31598A195E5B8BA255E343F3914D30B6EBC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/O7JeWuNzRvKtIwAHZz7r6Q/zh-cn_image_0000002589324713.png)
 
 ## 开发步骤
 

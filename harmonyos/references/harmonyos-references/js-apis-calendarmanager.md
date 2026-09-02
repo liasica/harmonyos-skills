@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-calendarmanager
-title: @ohos.calendarManager (日程管理能力)
+title: "@ohos.calendarManager (日程管理能力)"
 category: harmonyos-references
 scraped_at: 2026-04-28T08:16:26+08:00
 doc_updated_at: 2026-04-20

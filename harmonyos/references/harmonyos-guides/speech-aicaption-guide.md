@@ -5,7 +5,7 @@ breadcrumb: 指南 > AI > Speech Kit（场景化语音服务） > AI字幕控件
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:43:49+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:3621b623b87faf9101d346de6ab10bdcf49d58c46a033ac3dd459da173677e98
+content_hash: sha256:34d4e20a6c48acacc4685203c62189df524a706c76abace009bdd81f6748e45d
 ---
 
 ## 适用场景
@@ -14,7 +14,7 @@ AI字幕控件应用广泛，例如在用户不熟悉音频源语言或者静音
 
 本章节将向您介绍如何使用AI字幕组件[AICaptionComponent](../harmonyos-references/speech-aicaptioncomponent.md)和[AICaptionController](../harmonyos-references/speech-aicaptioncomponent.md#aicaptioncontroller)展示AI字幕，效果如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/P22hiEK7RWqxZwROZZtMZA/zh-cn_image_0000002589325723.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T054348Z&HW-CC-Expire=86400&HW-CC-Sign=2274A57B8191EB07DCC7ABB18FEEFA8DFACA897A825F876D074FBF6737508DC9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/P22hiEK7RWqxZwROZZtMZA/zh-cn_image_0000002589325723.jpg)
 
 ## 接口说明
 

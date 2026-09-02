@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > Core File Kit（文件基础服务） > 应�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:29:43+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:db758023c64230339dfc215fdcfe364c82a3bc4c5ab80935794ebcfa37676a01
+content_hash: sha256:63e28b1a15e9d1607c19e1f12b0dd1b02a3280e1b796f364234a1adccd5cb349
 ---
 
 ## 区分升级场景和克隆场景
@@ -86,7 +86,7 @@ content_hash: sha256:db758023c64230339dfc215fdcfe364c82a3bc4c5ab80935794ebcfa376
 
 为解决该问题，系统提供数据迁移公共目录文件继承方案，支持应用将记录的HarmonyOS公共媒体库文件URI或者路径转换为对应的HarmonyOS NEXT公共媒体库文件URI或者路径，并且返回对应文件类型。当应用需要在HarmonyOS NEXT中访问公共媒体库中的文件时，可以使用转换后的HarmonyOS NEXT公共媒体库文件URI或者路径，通过HarmonyOS NEXT提供的公共媒体库API进行授权访问。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/ARaupraWQPyNJU2x0zM7PA/zh-cn_image_0000002589244577.png?HW-CC-KV=V1&HW-CC-Date=20260429T052941Z&HW-CC-Expire=86400&HW-CC-Sign=E1CA655EA95C503405A087BF15E84527ED8B08BCE1CD8EADE3578ADDEB9168EE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/ARaupraWQPyNJU2x0zM7PA/zh-cn_image_0000002589244577.png)
 
 ### 代码实现
 

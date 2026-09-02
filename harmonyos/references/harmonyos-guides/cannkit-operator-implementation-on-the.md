@@ -5,7 +5,7 @@ breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:41:09+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:f5f14a5860702e274fd65c7d03c496e76ef20a4a8fe72e9dfacc1586ca429413
+content_hash: sha256:f40fb015885088e26e2c15c721c0c0ac24029b13eb716815977020d7fd385906
 ---
 
 在[算子实现](cannkit-operator-implementation-overview.md)章节已经介绍了kernel侧算子核心的实现方法，本章节侧重于介绍接入DDK框架时编程模式和API的使用。
@@ -72,7 +72,7 @@ content_hash: sha256:f5f14a5860702e274fd65c7d03c496e76ef20a4a8fe72e9dfacc1586ca4
 
 在核函数所有输出的最后增加一个GM\_ADDR类型的输出参数，并在核函数计算完成后，将输出shape信息写入到该出参中。shape信息的排布格式如下，大小为**n \* (8 + 1)**，每个元素的数据类型为**uint64\_t**。其中n表示待刷新shape信息的输出个数，每个输出的shape信息都通过第1个元素来保存实际的shape维度(dim)，后续的8个元素来保存具体每个维度的shape信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/kAJBeCrgTOymjoFhH1pv-A/zh-cn_image_0000002558606092.png?HW-CC-KV=V1&HW-CC-Date=20260429T054108Z&HW-CC-Expire=86400&HW-CC-Sign=D84B927D2D9C19515F132F9DC803834FE7B0FA39C3CF9F5A5171B1F766FF94AA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/kAJBeCrgTOymjoFhH1pv-A/zh-cn_image_0000002558606092.png)
 
 说明
 

@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > FA模�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:26:05+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:135ce5c5354dc66b8d99b5f0cdcba99511cf0f5558e2ea4566194e7b6d85b479
+content_hash: sha256:340edb6dec4c28bfab5dc340f8e7e7bb0f19628e6edd57880662729300d61dcd
 ---
 
 启动组件是指一切启动或连接应用组件的行为：
@@ -55,7 +55,7 @@ content_hash: sha256:135ce5c5354dc66b8d99b5f0cdcba99511cf0f5558e2ea4566194e7b6d8
 * 启动PageAbility。
 * 启动ServiceAbility或DataAbility。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/BtSZHqLtRO-A7msKSFeETA/zh-cn_image_0000002558604348.png?HW-CC-KV=V1&HW-CC-Date=20260429T052604Z&HW-CC-Expire=86400&HW-CC-Sign=1DE026B3BEB5340D58C8B532CFD5D2EB627190A7608E5816E32526DC697C8D9F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/BtSZHqLtRO-A7msKSFeETA/zh-cn_image_0000002558604348.png)
 
 ## 分布式跨设备组件启动规则
 
@@ -64,4 +64,4 @@ content_hash: sha256:135ce5c5354dc66b8d99b5f0cdcba99511cf0f5558e2ea4566194e7b6d8
 * 启动PageAbility。
 * 启动ServiceAbility。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/exytk9gkQtmsX9zVgeOewQ/zh-cn_image_0000002589323873.png?HW-CC-KV=V1&HW-CC-Date=20260429T052604Z&HW-CC-Expire=86400&HW-CC-Sign=F20E77223E69A614B42BE790A74AE730C1E55E09F891DDF1860D65EAD8BFCD56)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/exytk9gkQtmsX9zVgeOewQ/zh-cn_image_0000002589323873.png)

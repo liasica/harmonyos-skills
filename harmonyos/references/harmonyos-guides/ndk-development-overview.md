@@ -5,7 +5,7 @@ breadcrumb: 指南 > NDK开发 > NDK开发导读
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:43:52+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:bba6900dc87ebaa90b459b42fb1b314bd067f2bf7b4b63ead9b547a225a73486
+content_hash: sha256:1cd62d123d7b6f24c130614462d30821a57f72ca9deb191f12adeb80badd8a87
 ---
 
 NDK（Native Development Kit）是HarmonyOS SDK提供的Native API、相应编译脚本和编译工具链的集合，方便开发者使用C或C++语言实现应用的关键功能。NDK只覆盖了HarmonyOS一些基础的底层能力，如C运行时基础库libc、图形库、窗口系统、多媒体、压缩库、面向ArkTS/JS与C跨语言的Node-API等，没有提供ArkTS/JS API的完整能力。
@@ -53,7 +53,7 @@ NDK（Native Development Kit）是HarmonyOS SDK提供的Native API、相应编�
 
 * build目录：放置预定义的toolchain脚本文件[hmos.toolchain.cmake](build-with-ndk-overview.md#hmostoolchaincmake简介)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/d7BlKi7DQ_avcmMOkfpT1A/zh-cn_image_0000002589245665.png?HW-CC-KV=V1&HW-CC-Date=20260429T054350Z&HW-CC-Expire=86400&HW-CC-Sign=FC0AE31E7AC3D6243BA0F5FF28B0B8373BD3D25BF52C9D08FBAE5638354CAE37)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/d7BlKi7DQ_avcmMOkfpT1A/zh-cn_image_0000002589245665.png)
 
   CMake编译时需要读取该文件中的默认值，比如编译器架构、C++库链接方式等，因此在编译时会通过CMAKE\_TOOLCHAIN\_FILE指出该文件的路径，便于CMake在编译时定位到该文件。
 * build-tools文件夹：放置NDK提供的编译工具
@@ -67,7 +67,7 @@ NDK（Native Development Kit）是HarmonyOS SDK提供的Native API、相应编�
   ```
 * llvm文件夹：放置NDK提供的编译器
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/-GoIavSIQMm-aNBaqTWFBw/zh-cn_image_0000002558765856.png?HW-CC-KV=V1&HW-CC-Date=20260429T054350Z&HW-CC-Expire=86400&HW-CC-Sign=7C308412071A46A1D271A1395F52BD3EF0964EDB7BABA68471CE32FC5FBFC2D3)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/-GoIavSIQMm-aNBaqTWFBw/zh-cn_image_0000002558765856.png)
 
 ## NDK常用模块
 

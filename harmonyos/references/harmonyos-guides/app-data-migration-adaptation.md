@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > Core File Kit（文件基础服务） > 应�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:29:42+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:3872cec817b223659537bdd3483abd7071e7f5f23e8103670d3c96d8ad7e9125
+content_hash: sha256:8e8ada45f44efb0f6280409d6525724d537a2afa24c623d655571cdff246626b
 ---
 
 ## 环境准备
@@ -36,10 +36,10 @@ content_hash: sha256:3872cec817b223659537bdd3483abd7071e7f5f23e8103670d3c96d8ad7
 
 1. 在**entry/src/main/ets/**目录下，点击 **New > Directory** 创建**backupExtension**目录。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/DeT649esRISDuREGyz-yQA/zh-cn_image_0000002558605104.png?HW-CC-KV=V1&HW-CC-Date=20260429T052941Z&HW-CC-Expire=86400&HW-CC-Sign=681127002D7810B2874FD66A8D06DA99807385C585324060DCAC494C15DA3F64)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/DeT649esRISDuREGyz-yQA/zh-cn_image_0000002558605104.png)
 2. 点击**entry/src/main/ets/backupExtension/**目录，点击 **New > File** 创建**BackupExtension.ets**文件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/QDydwwCxQBWcxjVLASeplQ/zh-cn_image_0000002589324629.png?HW-CC-KV=V1&HW-CC-Date=20260429T052941Z&HW-CC-Expire=86400&HW-CC-Sign=254C743BCE46696365627A69433D8C4EAEE63AB99BD6FA9C4070183DAEFBC551)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/QDydwwCxQBWcxjVLASeplQ/zh-cn_image_0000002589324629.png)
 3. 参考示例代码实现BackupExtensionAbility，应用的数据转换和迁移逻辑，请在指定位置填充实现。
 
    终端设备从HarmonyOS升级到HarmonyOS NEXT中，会将原有APK应用沙箱目录中文件放置到HarmonyOS备份恢复目录。对应关系详见[APK应用沙箱目录与备份恢复目录映射关系](app-data-migration-adaptation.md#apk应用沙箱目录与备份恢复目录映射关系)。

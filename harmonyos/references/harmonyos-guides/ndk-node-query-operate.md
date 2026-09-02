@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (基于
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:28:36+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:36d2809402181f2a2c86ef429cd6b36de09d8094510ceedc9835d17153f17eef
+content_hash: sha256:a86edbe19d5c2325f10e4149baddbb3b28d3d6e862cd69f472416aa1d4f627b2
 ---
 
 NDK提供一系列节点查询、遍历、操作能力，通过使用以下接口，开发者可以高效地访问和操控节点。
@@ -489,7 +489,7 @@ uniqueId是系统分配的唯一标识的节点Id。
    [NativeEntry.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/NdkNodeQueryOperate/entry/src/main/cpp/NativeEntry.cpp#L23-L97)
 4. 运行程序，点击按钮，Stack节点会移动到目标位置。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/PkuRU4P7Shq7neZLV9_78w/zh-cn_image_0000002589324431.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052834Z&HW-CC-Expire=86400&HW-CC-Sign=3569E90BFAF2FC8219E2CE430B94AE506FE874CE06580DE399C6852C6FA1DF15)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/PkuRU4P7Shq7neZLV9_78w/zh-cn_image_0000002589324431.gif)
 
 ## 在当前即时帧触发节点属性更新
 
@@ -687,7 +687,7 @@ uniqueId是系统分配的唯一标识的节点Id。
    [napi\_init.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/NdkNodeQueryOperate/entry/src/main/cpp/napi_init.cpp#L18-L122)
 4. 运行程序，点击按钮，切换图片正常展示。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/Px9Nqj8nRHqBJoYpQvq9-w/zh-cn_image_0000002589244371.png?HW-CC-KV=V1&HW-CC-Date=20260429T052834Z&HW-CC-Expire=86400&HW-CC-Sign=D8BB7868F4E5F07A643A6533CB0A35319941924D1750C7E1AE42944B66DCB384)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/Px9Nqj8nRHqBJoYpQvq9-w/zh-cn_image_0000002589244371.png)
 
 ## 用不同的展开模式获取对应下标的子节点
 
@@ -1157,4 +1157,4 @@ NDK支持通过不同的展开方式获取目标节点下的有效节点信息�
    ```
 4. 运行程序，点击change text visibility后打印text是否在渲染树上。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/_EDl_fhRTICme_2QKbf5jA/zh-cn_image_0000002558764564.png?HW-CC-KV=V1&HW-CC-Date=20260429T052834Z&HW-CC-Expire=86400&HW-CC-Sign=E43F4C4BF2829A7DEEE809D6651ED99C1795130CB98B4030BB4A00C542E8E125)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/_EDl_fhRTICme_2QKbf5jA/zh-cn_image_0000002558764564.png)

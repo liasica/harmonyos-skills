@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-system-fetch
-title: @system.fetch (数据请求)
+title: "@system.fetch (数据请求)"
 breadcrumb: API参考 > 系统 > 网络 > Network Kit（网络服务） > 已停止维护的接口 > @system.fetch (数据请求)
 category: harmonyos-references
 scraped_at: 2026-04-28T08:08:43+08:00

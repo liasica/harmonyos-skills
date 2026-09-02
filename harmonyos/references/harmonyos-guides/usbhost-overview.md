@@ -5,7 +5,7 @@ breadcrumb: 指南 > 系统 > 基础功能 > Basic Services Kit（基础服务�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:33:10+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:93d7b5d57ae60694c8074ebad37d7df876673b97986ffe1066ecbe6ed095d16b
+content_hash: sha256:d2e4f6d7381bd4702250049d1d3a6d5d95f172608505912592d22cdaff29c501
 ---
 
 ## 基本概念
@@ -20,7 +20,7 @@ USB服务系统包含USB API、USB Service、USB HAL。
 
 **图1** USB服务运作机制
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/AruNOFb0Rmey87doavKuNw/zh-cn_image_0000002589324815.png?HW-CC-KV=V1&HW-CC-Date=20260429T053309Z&HW-CC-Expire=86400&HW-CC-Sign=4FC280682651BADC950B33BC1D057297C07F68B3C00D1FDDFB089C79412855DB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/AruNOFb0Rmey87doavKuNw/zh-cn_image_0000002589324815.png)
 
 * USB API：提供USB的基础API，主要包含查询USB设备列表、批量数据传输、控制命令传输、权限控制等。
 * USB Service：主要实现HAL层数据的接收、解析、分发以及对设备的管理等。

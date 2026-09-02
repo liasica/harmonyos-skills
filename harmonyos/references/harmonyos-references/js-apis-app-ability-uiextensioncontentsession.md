@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-uiextensioncontentsession
-title: @ohos.app.ability.UIExtensionContentSession (UIExtensionAbility界面操作类)
+title: "@ohos.app.ability.UIExtensionContentSession (UIExtensionAbility界面操作类)"
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > Stage模型能力的接口 > @ohos.app.ability.UIExtensionContentSession (UIExtensionAbility界面操作类)
 category: harmonyos-references
 scraped_at: 2026-04-28T07:58:22+08:00

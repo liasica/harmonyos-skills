@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:27:29+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:bc28f8a4d4d63dd785d59c53723c7bf36d266cee8007172521799074c52c32c4
+content_hash: sha256:6140f1b01499f28919a5ade8224aca2c4e554e62a7bec0d4718430bb2f731aaa
 ---
 
 本文档主要介绍组件循环渲染从V1向V2的迁移，涉及如下渲染控制组件。
@@ -330,7 +330,7 @@ LazyForEach根据数据源循环渲染子组件。
 
 运行后界面如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/o69-CAHkTKGzNKiKvmOkqg/zh-cn_image_0000002589323987.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052726Z&HW-CC-Expire=86400&HW-CC-Sign=40DFA86FBFCC68A71C3BC6CBFDE8A57672847758E1FCCE6DF8D79C526DECE578)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/o69-CAHkTKGzNKiKvmOkqg/zh-cn_image_0000002589323987.gif)
 
 ### 数据更新操作
 
@@ -538,7 +538,7 @@ LazyForEach根据数据源循环渲染子组件。
 
 运行后界面如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/uqfWBUDaQ1G-KswwEQZPkA/zh-cn_image_0000002589243927.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052726Z&HW-CC-Expire=86400&HW-CC-Sign=374B12B4FB759B3550846B1796D446A7E4B7B4ECF8A0C95AF9326F8D6680B18C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/uqfWBUDaQ1G-KswwEQZPkA/zh-cn_image_0000002589243927.gif)
 
 ### 修改数据子属性
 
@@ -671,7 +671,7 @@ Repeat需要和状态管理V2一起使用，状态管理V2提供了[@ObservedV2�
 
 运行后界面如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/885TUuR_RkqBjWqEcoJLiA/zh-cn_image_0000002558764120.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052726Z&HW-CC-Expire=86400&HW-CC-Sign=0084AC94417513B6D3BEFA92678D2CEB7F294DBB6130C8AACF932F745AB08A83)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/885TUuR_RkqBjWqEcoJLiA/zh-cn_image_0000002558764120.gif)
 
 ### 状态管理V2观测组件内部状态
 
@@ -825,7 +825,7 @@ Repeat本身支持与状态管理V2联合使用，将LazyForEach相关代码修�
 
 运行后界面如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/j7myAGuvQjyefY888Kmv_A/zh-cn_image_0000002558604464.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052726Z&HW-CC-Expire=86400&HW-CC-Sign=9632952640E0B11EC19E4223475A778280FB7A798CC060496CD7F74169BD8A07)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/j7myAGuvQjyefY888Kmv_A/zh-cn_image_0000002558604464.gif)
 
 ### 状态管理V2观测组件外部输入
 
@@ -963,7 +963,7 @@ Repeat本身支持与状态管理V2联合使用，将LazyForEach相关代码修�
 
 运行后界面如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/N2nx0VZWReCburRACH7KJw/zh-cn_image_0000002589323989.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052726Z&HW-CC-Expire=86400&HW-CC-Sign=812E0306E27C1370B009A1166BE7AFBBE1C0BA8A79FEA74BF9DEEE2995CAF2B1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/N2nx0VZWReCburRACH7KJw/zh-cn_image_0000002589323989.gif)
 
 ### 拖拽排序
 
@@ -1091,7 +1091,7 @@ Repeat具有与LazyForEach相同的onMove属性。将LazyForEach相关代码修�
 
 运行后界面如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/vh5Co8fDST-Oua2NOaxvMw/zh-cn_image_0000002589243929.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052726Z&HW-CC-Expire=86400&HW-CC-Sign=099364C57B3A6CBA94464D981FDF41D43EBFEA862E3E7A8F03AFB92BDEACBC53)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/vh5Co8fDST-Oua2NOaxvMw/zh-cn_image_0000002589243929.gif)
 
 ### 组件复用
 
@@ -1306,7 +1306,7 @@ Repeat本身具备复用能力，且默认开启。将LazyForEach相关代码迁
 
 运行后界面如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/kQdf7tY1TSSUzbrgl75qPw/zh-cn_image_0000002558764122.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052726Z&HW-CC-Expire=86400&HW-CC-Sign=4C43847204D8BBCAF8078B32EAC7FFB4F4C1828451A4ED7675008A1923590E64)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/kQdf7tY1TSSUzbrgl75qPw/zh-cn_image_0000002558764122.gif)
 
 ### 模板渲染
 
@@ -1632,7 +1632,7 @@ Repeat本身具备模板渲染能力，开发者可以通过[templateId](../harm
 
 运行后界面如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/GMwDtGr7RAa0S0mIvJ5t7Q/zh-cn_image_0000002558604466.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052726Z&HW-CC-Expire=86400&HW-CC-Sign=6BB8B7B8EF20A6E2EE3ECE018C330384C40FD988AD5381B333480B677997B2E4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/GMwDtGr7RAa0S0mIvJ5t7Q/zh-cn_image_0000002558604466.gif)
 
 ## BasicDataSource示例代码
 

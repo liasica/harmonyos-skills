@@ -5,12 +5,12 @@ breadcrumb: 指南 > 系统 > 安全 > 密码自动填充服务 > 应用接入�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:30:39+08:00
 doc_updated_at: 2026-03-20
-content_hash: sha256:7479b63c8adb65ba5cb0302a71be5a913ea602a25c7ab989511aa895f4686d86
+content_hash: sha256:fc02f6a8be9d531a72a00be89b0358a5ef25e77720388ce60d346b76d3dc7bc2
 ---
 
 应用界面触发账号密码自动保存时，若密码保险箱中已存在同应用下与本次使用账号相同的账号，则弹出密码更新提示框，用户点击更新按钮，即可更新密码保险箱内对应账号的密码。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/JlDnPyidRna4DfAElQtoGg/zh-cn_image_0000002589324729.png?HW-CC-KV=V1&HW-CC-Date=20260429T053038Z&HW-CC-Expire=86400&HW-CC-Sign=DC06B41AB32A171B537AD9DF9702DCE07E7EBB920746EDF66280E2BB7308E53E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/JlDnPyidRna4DfAElQtoGg/zh-cn_image_0000002589324729.png)
 
 应用触发修改密码或使用已经保存过的账号手动登录时，均会触发密码更新功能。
 
@@ -20,7 +20,7 @@ content_hash: sha256:7479b63c8adb65ba5cb0302a71be5a913ea602a25c7ab989511aa895f46
 
 ## 修改账号密码
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/umZM2GHfSeO8REg8VPjjnQ/zh-cn_image_0000002589244667.png?HW-CC-KV=V1&HW-CC-Date=20260429T053038Z&HW-CC-Expire=86400&HW-CC-Sign=F3B8F9281EA73ED9974496318E0ED2C12BAC72A2F95B308295A72EBBA0570D57)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/umZM2GHfSeO8REg8VPjjnQ/zh-cn_image_0000002589244667.png)
 
 示例代码如下：
 

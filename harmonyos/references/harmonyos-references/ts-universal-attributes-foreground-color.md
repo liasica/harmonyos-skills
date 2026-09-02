@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:51:20+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:53875092afa270f71fabdf3059b01506b012dd0d3fa6b2bdccabd85beacf16b4
+content_hash: sha256:cc9f061856593186892ae156e48c23e831298ab0aad3e2b7a8d2fa70f4906818
 ---
 
 设置组件的前景色。与背景色相对应，前景色会影响绘制组件内容的颜色。主要影响文字的颜色、形状绘制组件的填充色。
@@ -86,7 +86,7 @@ PhonePC/2in1TabletTVWearable
 13. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/5V0O7JuoSBOKhA_kyeg7kw/zh-cn_image_0000002589325909.png?HW-CC-KV=V1&HW-CC-Date=20260429T055118Z&HW-CC-Expire=86400&HW-CC-Sign=014AA268748FC4E40655C2B418363F7AB57BE48BCD70D467D64D6FB163FD72D5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/5V0O7JuoSBOKhA_kyeg7kw/zh-cn_image_0000002589325909.png)
 
 ### 示例2（设置前景色为组件背景色反色）
 
@@ -110,7 +110,7 @@ PhonePC/2in1TabletTVWearable
 15. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/4BwjAlueS2iTDzz6aVPuuw/zh-cn_image_0000002589245851.png?HW-CC-KV=V1&HW-CC-Date=20260429T055118Z&HW-CC-Expire=86400&HW-CC-Sign=7708A2DC094C20A56A69C4B2A4A72B839DC6ABD919399D3E152087FEBC6E2CE1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/4BwjAlueS2iTDzz6aVPuuw/zh-cn_image_0000002589245851.png)
 
 ### 示例3（前景色未继承父组件）
 
@@ -131,4 +131,4 @@ PhonePC/2in1TabletTVWearable
 12. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/V0tJH74LRJuLPAyzN5GzUg/zh-cn_image_0000002558766042.png?HW-CC-KV=V1&HW-CC-Date=20260429T055118Z&HW-CC-Expire=86400&HW-CC-Sign=56350ADF8F9B6C514CFFBF4B5265C58AAB65F266665B5FAECD70DC4A5E17DF0F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/V0tJH74LRJuLPAyzN5GzUg/zh-cn_image_0000002558766042.png)

@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用服务 > Payment Kit（鸿蒙支付服务） > 数字
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:39:32+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:93acb9183d13109e77159a0eaee849344307778ef6d36600c810c15ade2df1b9
+content_hash: sha256:6d610b7116738b22544fcc718f58ed11d94d9046be2e3da7dffb782f1444dd88
 ---
 
 说明
@@ -23,7 +23,7 @@ content_hash: sha256:93acb9183d13109e77159a0eaee849344307778ef6d36600c810c15ade2
 
 数字人民币收银台展示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/7YoL41WbRMqte9OPiUHN2w/zh-cn_image_0000002558605934.png?HW-CC-KV=V1&HW-CC-Date=20260429T053931Z&HW-CC-Expire=86400&HW-CC-Sign=D180D12E3EF6278EC5FA7B5B607DD75E51B2708774A7DE8AE4E6723BDD8C8433)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/7YoL41WbRMqte9OPiUHN2w/zh-cn_image_0000002558605934.png)
 
 ## 接入流程
 
@@ -38,7 +38,7 @@ content_hash: sha256:93acb9183d13109e77159a0eaee849344307778ef6d36600c810c15ade2
 
 开发者接入数字人民币支付服务，可以快速实现应用的数字人民币支付能力。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/ot8-_tQuTEm65B3_bD3UAA/zh-cn_image_0000002589325461.png?HW-CC-KV=V1&HW-CC-Date=20260429T053931Z&HW-CC-Expire=86400&HW-CC-Sign=153C2742AA7ACF66C774293E78F914A0E315A2C7CE146B471CABBACED59E1BD4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/ot8-_tQuTEm65B3_bD3UAA/zh-cn_image_0000002589325461.png)
 
 1. 商户客户端请求商户服务器创建商品订单。
 2. 商户服务器按照商户模式（运营机构商户或受理服务机构商户）调用运营机构或受理服务机构提供的下单接口到数字人民币服务端下单，接口详情请参照商户合作的[运营机构或受理服务机构提供的开发指引](payment-faq-27.md)。

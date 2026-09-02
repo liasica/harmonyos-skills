@@ -5,7 +5,7 @@ breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 文本 
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:36:14+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:145b9dc17074c349ced3a00188243a2a16e993286599a3692a05033ac3b49ad7
+content_hash: sha256:d3c694eb755c0dbdc3acb9a563d22c6300966319dd8b9d340f0f55da0088216c
 ---
 
 ## 场景介绍
@@ -99,7 +99,7 @@ content_hash: sha256:145b9dc17074c349ced3a00188243a2a16e993286599a3692a05033ac3b
 
    以下打印的示例为应用设备系统对应的部分系统字体配置信息情况，不同设备系统配置信息可能不同，此处仅示意。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/v9KFyWDTS4mhyxyzyKlraA/zh-cn_image_0000002558605518.png?HW-CC-KV=V1&HW-CC-Date=20260429T053613Z&HW-CC-Expire=86400&HW-CC-Sign=75500956BF6CB37B8C3CC1B13DEE2D7A1E19D45A3B85E01B3AE5D8FFC9371644)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/v9KFyWDTS4mhyxyzyKlraA/zh-cn_image_0000002558605518.png)
 5. 如若后续不再需要系统字体的系统配置信息时，则释放其占用的内存。
 
    ```

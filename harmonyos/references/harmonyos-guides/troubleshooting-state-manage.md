@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:27:33+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:aef95058233c61b5196ad2f7a006a59e57144533c659e2ea29475b948173403d
+content_hash: sha256:c23d69db99d3163cc1d62e7b448589dba468ad0c1150003180777d7175abff62
 ---
 
 在声明式UI编程框架中，状态管理的主要职责是：当状态变量改变时，触发其关联组件的刷新。所以在使用状态变量的过程中，最常见的问题就是组件不刷新。本文主要针对开发者在使用状态变量时遇到的不刷新问题，阐述以下两个方面。
@@ -136,7 +136,7 @@ content_hash: sha256:aef95058233c61b5196ad2f7a006a59e57144533c659e2ea29475b94817
 * 日志提示inner is not observed object。
 * ArkUI State泳道没有状态变量变化的上报信息。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/WJ5WLERtQpCyVSEq-0RbBw/zh-cn_image_0000002589323999.png?HW-CC-KV=V1&HW-CC-Date=20260429T052731Z&HW-CC-Expire=86400&HW-CC-Sign=5CA11F3B40B926BC608478A3B550459036F0C0494A46FF4247C70310B5AA501F)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/WJ5WLERtQpCyVSEq-0RbBw/zh-cn_image_0000002589323999.png)
 
 需要注意，并非所有的类对象都需要被@Observed装饰。[@State](arkts-state.md)装饰器会默认对复杂对象包装第一层代理，而对嵌套对象，则需要在内层对象的类声明上增加@Observed装饰。
 
@@ -199,7 +199,7 @@ content_hash: sha256:aef95058233c61b5196ad2f7a006a59e57144533c659e2ea29475b94817
 * 日志提示inner is observed object。
 * ArkUI State泳道有状态变量变化的上报信息。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/vtpIZDc9RvGQpc8A-Y0q_g/zh-cn_image_0000002589243939.png?HW-CC-KV=V1&HW-CC-Date=20260429T052731Z&HW-CC-Expire=86400&HW-CC-Sign=4E44B2FDBC63ACF163F566CCB77BC6F8DB08A7D4A6074A307DABBA56B5DF646B)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/vtpIZDc9RvGQpc8A-Y0q_g/zh-cn_image_0000002589243939.png)
 
 **状态管理V2**
 
@@ -262,7 +262,7 @@ content_hash: sha256:aef95058233c61b5196ad2f7a006a59e57144533c659e2ea29475b94817
 
 基于上面的示例，观察ArkUI State泳道，有两次状态变量的变化上报，即this.info.value和this.info.numberArr。count不是@Trace装饰的，所以不会被观察到变化，也不会在Profiler上报状态变量的变化。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/jHBHxfj5Rt6h4792tp7CgA/zh-cn_image_0000002558764132.png?HW-CC-KV=V1&HW-CC-Date=20260429T052731Z&HW-CC-Expire=86400&HW-CC-Sign=C38D95900933AD5CD84700386E7FCCF6BFC94DCFDA8C2E49BA1E28525C1D0A14)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/jHBHxfj5Rt6h4792tp7CgA/zh-cn_image_0000002558764132.png)
 
 ### 第四步：数据源和被同步的对象是否有关联关系
 

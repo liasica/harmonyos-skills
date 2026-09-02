@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > IME Kit（输入法开发服务） > 在自�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:30:05+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:58059606542501c27ee5a47382e0caff511964076ff3aa691331d7dd41acc981
+content_hash: sha256:a292c7b756e9cac62dda2e03478c8f0595c20b4af40d2f92449c9d44a647ac26
 ---
 
 在输入法框架中，可以通过[getController](../harmonyos-references/js-apis-inputmethod.md#inputmethodgetcontroller9)方法获取到[InputMethodController](../harmonyos-references/js-apis-inputmethod.md#inputmethodcontroller)实例来绑定输入法并监听输入法应用的各种操作，比如插入、删除、选择、光标移动等。这样就可以在自绘编辑框中使用输入法，并实现更加灵活和自由的编辑操作。
@@ -131,4 +131,4 @@ content_hash: sha256:58059606542501c27ee5a47382e0caff511964076ff3aa691331d7dd41a
 
 ## 示例效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/rZnyMhXWQmCR0qdFFT2D9w/zh-cn_image_0000002589244621.png?HW-CC-KV=V1&HW-CC-Date=20260429T053004Z&HW-CC-Expire=86400&HW-CC-Sign=DBE5F81C5025B909C81CA7DE0BE5CA8CCF5C067F1B32AB86B29F0ACEA7EE1F4F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/rZnyMhXWQmCR0qdFFT2D9w/zh-cn_image_0000002589244621.png)

@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:52:20+08:00
 doc_updated_at: 2026-03-23
-content_hash: sha256:b7f7f411f604e0cfebdeac8366d7a22742e24dac23d68aa7c3949d2ed9a7225c
+content_hash: sha256:01f740c44cc324b0eafc9cc35258b2967263efbdfa0fe29540cb67263898a0f8
 ---
 
 用于显示加载动效的组件。
@@ -164,7 +164,7 @@ PhonePC/2in1TabletTVWearable
 13. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/wL2PoNGbSqKbegnchABHqw/zh-cn_image_0000002558766436.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055218Z&HW-CC-Expire=86400&HW-CC-Sign=16AB1692B432C88AADB01FC210FFDD059BBB41597BA87A57850C98993E403879)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/wL2PoNGbSqKbegnchABHqw/zh-cn_image_0000002558766436.gif)
 
 ### 示例2（设置定制内容区）
 
@@ -315,4 +315,4 @@ PhonePC/2in1TabletTVWearable
 143. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/mKskHLmUTvuUDE6VwlEeiw/zh-cn_image_0000002558606776.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055218Z&HW-CC-Expire=86400&HW-CC-Sign=E795DD18156915DDDDEC384A6F4D61592287BAE2C4B59D78A9538615C29D5BAF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/mKskHLmUTvuUDE6VwlEeiw/zh-cn_image_0000002558606776.gif)

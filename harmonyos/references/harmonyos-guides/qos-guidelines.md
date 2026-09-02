@@ -5,7 +5,7 @@ breadcrumb: 指南 > NDK开发 > 代码开发 > 线程调度 > QoS 开发指导
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:44:27+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:c15b83c93161870fe167fd0069f9847098d871da85637a4acdd3dc7b3d71fb0e
+content_hash: sha256:d67c3cb1a3bde68093fc581a220f8b507eba2fdcdcfaa2876df6f153e748be23
 ---
 
 ## 场景介绍
@@ -76,7 +76,7 @@ QoS等级更高的任务相对等级更低的可能被分配更多的CPU时间�
 
 **优化前**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/E-PKu0FdRoy-YG8pp-_8dw/zh-cn_image_0000002589325759.png?HW-CC-KV=V1&HW-CC-Date=20260429T054426Z&HW-CC-Expire=86400&HW-CC-Sign=8F73E17A2FEC0D8E1D3DEF59B9E3D7D5301C546F11F1DC7A90862C4EE47C8872)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/E-PKu0FdRoy-YG8pp-_8dw/zh-cn_image_0000002589325759.png)
 
 线程1和线程2是某程序的两个关键线程，线程1在运行时会触发新任务线程2，等线程2执行完后会唤醒线程1继续执行。在未标记这两个线程的QoS等级之前，其优先执行顺序低于线程3和线程4；此时线程1和线程2的执行效果如上图所示：
 
@@ -86,7 +86,7 @@ QoS等级更高的任务相对等级更低的可能被分配更多的CPU时间�
 
 **优化后**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/1p6__qhITR6A3nj24pvMrg/zh-cn_image_0000002589245701.png?HW-CC-KV=V1&HW-CC-Date=20260429T054426Z&HW-CC-Expire=86400&HW-CC-Sign=5ABF5C72B0169597F7F8D29738EB6473532107A7A737FB6558D2096DEAF87F1F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/1p6__qhITR6A3nj24pvMrg/zh-cn_image_0000002589245701.png)
 
 合理标记线程1和线程2的QoS等级后，两个线程的执行优化效果如上图所示：
 

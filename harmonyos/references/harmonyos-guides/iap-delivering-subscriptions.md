@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用服务 > IAP Kit（应用内支付服务） > 商品�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:38:38+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:bfb8f7fce13080f4d96f497061a30b5fa469516de9a984f3886d05737dfebae5
+content_hash: sha256:14ece948d132db3112bccf1a80fec5944f2c7ed43ee7eb8c5653a04417e5a228
 ---
 
 ## 对生效中的订阅发放权益
@@ -20,7 +20,7 @@ content_hash: sha256:bfb8f7fce13080f4d96f497061a30b5fa469516de9a984f3886d05737df
 
 ### 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/qiL9jJvdQvOsYvXkV4NLxA/zh-cn_image_0000002589325299.png?HW-CC-KV=V1&HW-CC-Date=20260429T053837Z&HW-CC-Expire=86400&HW-CC-Sign=21D557430906340F86EDF6EFCAC7FCF6BE0839E650767E86133583A988F4CA5C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/qiL9jJvdQvOsYvXkV4NLxA/zh-cn_image_0000002589325299.png)
 
 1. 应用客户端向IAP Kit发起[queryPurchases](../harmonyos-references/iap-iap.md#iapquerypurchases)请求，查询用户生效中的订阅列表。
 2. IAP Kit返回[PurchaseData](../harmonyos-references/iap-data-model.md#purchasedata)列表。[PurchaseData](../harmonyos-references/iap-data-model.md#purchasedata)为JWS格式的字符串，承载了相关的订阅信息。
@@ -159,7 +159,7 @@ content_hash: sha256:bfb8f7fce13080f4d96f497061a30b5fa469516de9a984f3886d05737df
 
 ### 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/gV_SjJhlRyu4EORmAmU5Aw/zh-cn_image_0000002589245235.png?HW-CC-KV=V1&HW-CC-Date=20260429T053837Z&HW-CC-Expire=86400&HW-CC-Sign=915D1C967D935EF4F8B354C87888CD574610FCEC52B489B02F215BE13F713D14)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/gV_SjJhlRyu4EORmAmU5Aw/zh-cn_image_0000002589245235.png)
 
 1. 应用客户端向IAP Kit发起[queryPurchases](../harmonyos-references/iap-iap.md#iapquerypurchases)请求，查询用户已购买但未确认发货的订阅列表。
 2. IAP Kit返回[PurchaseData](../harmonyos-references/iap-data-model.md#purchasedata)列表。[PurchaseData](../harmonyos-references/iap-data-model.md#purchasedata)为JWS格式的字符串，承载了相关的订阅信息。

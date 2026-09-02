@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-geolocationmanager
-title: @ohos.geoLocationManager (位置服务)
+title: "@ohos.geoLocationManager (位置服务)"
 breadcrumb: API参考 > 应用服务 > Location Kit（位置服务） > ArkTS API > @ohos.geoLocationManager (位置服务)
 category: harmonyos-references
 scraped_at: 2026-04-28T08:17:04+08:00

@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:28:05+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:e58bc5a7b3829db9d4625bf38b15616513dd4406e39f2273698a6cf452dd234e
+content_hash: sha256:46d926cc9fd727409df7b10a72a342386b6b1731625cb62221fa15597adfd763
 ---
 
 表冠事件从API version 18开始支持，是指通过旋转表冠触发的事件，通过硬件采样频率上报旋转角度的变化。
@@ -107,4 +107,4 @@ content_hash: sha256:e58bc5a7b3829db9d4625bf38b15616513dd4406e39f2273698a6cf452d
 34. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/HiZ5a24UTRW3jNhRvfWjnA/zh-cn_image_0000002589244253.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052804Z&HW-CC-Expire=86400&HW-CC-Sign=10000F3B4CEC77AB499149995C0EEC99B3ED98B6B62CE3ECE91598503E0F0013)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/HiZ5a24UTRW3jNhRvfWjnA/zh-cn_image_0000002589244253.gif)

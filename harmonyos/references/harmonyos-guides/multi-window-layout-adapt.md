@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 窗口管理 > �
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:29:09+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:d8c6f295b6e3b578361b092a3ed00afacfdcf8a156954185d867e8496b039fc8
+content_hash: sha256:e616b9bc8199ca8ca480560d97c174a0ff1639518d7b99bcecf6599b9eee9c52
 ---
 
 ## 应用布局适配智慧多窗的意义
@@ -31,7 +31,7 @@ content_hash: sha256:d8c6f295b6e3b578361b092a3ed00afacfdcf8a156954185d867e8496b0
 
 目前支持两种分屏样式：“上下分屏”和“左右分屏”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/kZd3F0SNQjGy8H0b8I-a0Q/zh-cn_image_0000002558605034.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T052907Z&HW-CC-Expire=86400&HW-CC-Sign=39C0E450B83C8B827AAE476018D87A363A2EF029514563EED1CA408D02C7583B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/kZd3F0SNQjGy8H0b8I-a0Q/zh-cn_image_0000002558605034.jpg)
 
 分屏比例指的是分屏下两应用间尺寸的比例，调整分屏比例会调整应用窗口的大小。
 
@@ -114,4 +114,4 @@ content_hash: sha256:d8c6f295b6e3b578361b092a3ed00afacfdcf8a156954185d867e8496b0
 24. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/vLpaStk_Q1WtT11mskOvqA/zh-cn_image_0000002589324559.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052907Z&HW-CC-Expire=86400&HW-CC-Sign=224170AE267526BC794D62053C93F6236810B742F6CD35C8D46585ABABB9B0B7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/vLpaStk_Q1WtT11mskOvqA/zh-cn_image_0000002589324559.gif)

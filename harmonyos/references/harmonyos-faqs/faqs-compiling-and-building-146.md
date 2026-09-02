@@ -5,7 +5,7 @@ breadcrumb: FAQ > DevEco Studio > 编译构建 > 编译报错“Invalid form nam
 category: harmonyos-faqs
 scraped_at: 2026-04-29T14:20:55+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:34f3af1530ba6cd658da734219b43cdd7b9900086cbea26bd71bfc0bd329666e
+content_hash: sha256:2226bdc4d070b6a2876ae6cfa8ca0e98130efcf412e3bdab77a7e336a59b974d
 ---
 
 **错误描述**
@@ -16,7 +16,7 @@ content_hash: sha256:34f3af1530ba6cd658da734219b43cdd7b9900086cbea26bd71bfc0bd32
 
 在insight\_intent.json中配置意图框架时，formName必须是form\_config.json中已配置的forms之一。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/yJLudJiSQQ-ro0eRJ3iOww/zh-cn_image_0000002194158436.png?HW-CC-KV=V1&HW-CC-Date=20260429T062053Z&HW-CC-Expire=86400&HW-CC-Sign=07EB032F499185DB540C2F420C597A2B3A7644000749BA62857817F42E63654B "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/yJLudJiSQQ-ro0eRJ3iOww/zh-cn_image_0000002194158436.png "点击放大")
 
 **解决措施**
 

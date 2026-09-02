@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-neterrorlist
-title: @ohos.web.netErrorList (ArkWeb网络协议栈错误列表)
+title: "@ohos.web.netErrorList (ArkWeb网络协议栈错误列表)"
 breadcrumb: API参考 > 应用框架 > ArkWeb（方舟Web） > ArkTS API > @ohos.web.netErrorList (ArkWeb网络协议栈错误列表)
 category: harmonyos-references
 scraped_at: 2026-04-28T08:05:12+08:00

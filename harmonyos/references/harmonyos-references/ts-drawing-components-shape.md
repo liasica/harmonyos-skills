@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:52:38+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:a6f60f5d8bd7a2e96e078646f625295770bc6c934d89b48faba9670049f3e72d
+content_hash: sha256:ef4a6a4f7592cd141ab49ef9a6d83bfcc315244dc0aa831e2a321b2389e45703
 ---
 
 绘制组件的父组件，父组件中会描述所有绘制组件均支持的通用属性。
@@ -504,7 +504,7 @@ PhonePC/2in1TabletTVWearable
 150. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/8ICRIxlTRbOsMJdz3mTGOg/zh-cn_image_0000002589246349.png?HW-CC-KV=V1&HW-CC-Date=20260429T055236Z&HW-CC-Expire=86400&HW-CC-Sign=BD3EF6870472FEBAC318FFEEC1357B16EF9DFF99800BC03014408D4E4268E119)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/8ICRIxlTRbOsMJdz3mTGOg/zh-cn_image_0000002589246349.png)
 
 ### 示例2（使用不同参数类型绘制图形）
 
@@ -547,7 +547,7 @@ PhonePC/2in1TabletTVWearable
 34. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/SIfECWgATW2YhM8G0yFmEg/zh-cn_image_0000002558766542.png?HW-CC-KV=V1&HW-CC-Date=20260429T055236Z&HW-CC-Expire=86400&HW-CC-Sign=C0DA402C42C16BFF3887A4FA1D21EAC0227EF9919D503BEA972E7CEDE821ED65)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/SIfECWgATW2YhM8G0yFmEg/zh-cn_image_0000002558766542.png)
 
 ### 示例3（使用attributeModifier动态设置Shape组件的属性）
 
@@ -591,7 +591,7 @@ PhonePC/2in1TabletTVWearable
 35. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/ryCaNMwDR66Ko3sZYP9lmA/zh-cn_image_0000002558606882.png?HW-CC-KV=V1&HW-CC-Date=20260429T055236Z&HW-CC-Expire=86400&HW-CC-Sign=9E9CF1321FF6196E3892ADB8E4A694E9DC1F065D76513E4841205554092EDFC9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/ryCaNMwDR66Ko3sZYP9lmA/zh-cn_image_0000002558606882.png)
 
 ### 示例4（使用mesh实现图像局部扭曲）
 
@@ -632,4 +632,4 @@ PhonePC/2in1TabletTVWearable
 32. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/rKbyHX1zRGuykgFsbrMQDA/zh-cn_image_0000002589326409.png?HW-CC-KV=V1&HW-CC-Date=20260429T055236Z&HW-CC-Expire=86400&HW-CC-Sign=D6A06BEEFE200DCEA967D9B29CF6FF447150DCFAE006FC0F3F4D649259567602)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/rKbyHX1zRGuykgFsbrMQDA/zh-cn_image_0000002589326409.png)

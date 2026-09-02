@@ -5,7 +5,7 @@ breadcrumb: 最佳实践 > 多端设备体验提升 > 手机 > 双折叠应用�
 category: best-practices
 scraped_at: 2026-04-29T14:12:56+08:00
 doc_updated_at: 2026-04-27
-content_hash: sha256:02bde97154a22d9fc0ba6157d5356b675703b70dac65637e9908faeccf8a766b
+content_hash: sha256:c321d3c94b8bc7e78988f6eb3923a918606d45eb5c14be86137f90a7343cbd95
 ---
 
 ## 概述
@@ -177,7 +177,7 @@ content_hash: sha256:02bde97154a22d9fc0ba6157d5356b675703b70dac65637e9908faeccf8
 * 折叠态下，左右分屏仅支持横屏，上下分屏仅支持竖屏。左右分屏仅支持1:1分屏。
 * 展开态下，设备仅支持1:1分屏。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/7a_Yzm_LQ8WTSkTGVRvOZg/zh-cn_image_0000002419627141.png?HW-CC-KV=V1&HW-CC-Date=20260429T061251Z&HW-CC-Expire=86400&HW-CC-Sign=5D423142BE747FD0C06D4147DD8A779D6940F9E47373FBF173FDBF66FD468D61 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/7a_Yzm_LQ8WTSkTGVRvOZg/zh-cn_image_0000002419627141.png "点击放大")
 
 悬浮窗一般用于阅读新闻资讯、购物等场景，应用可根据需要在双折叠上实现竖向悬浮窗和横向悬浮窗，双折叠悬浮窗口参数如下（以Mate X5为例）。应用界面适配悬浮窗可参考[悬浮窗口模式适配](bpta-multi-device-window-mode.md#section8433735123611)。
 
@@ -199,7 +199,7 @@ content_hash: sha256:02bde97154a22d9fc0ba6157d5356b675703b70dac65637e9908faeccf8
 
 设备在不同旋转状态下悬浮窗参数一致。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/mOxj_kr2SDiPefLmft4kDQ/zh-cn_image_0000002386067908.png?HW-CC-KV=V1&HW-CC-Date=20260429T061251Z&HW-CC-Expire=86400&HW-CC-Sign=3CBCDA53B842E0187231A8D37EA2A835ECBF5AA9D2B5CF66C0D6751AA70A3E4E "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/mOxj_kr2SDiPefLmft4kDQ/zh-cn_image_0000002386067908.png "点击放大")
 
 ### 适配设备显示方向
 
@@ -218,7 +218,7 @@ content_hash: sha256:02bde97154a22d9fc0ba6157d5356b675703b70dac65637e9908faeccf8
 
 建议双折叠展开态界面支持横竖屏旋转，展开态界面有足够的空间来适应变化前后的横竖屏布局，无论横屏还是竖屏，窗口均有足够的显示区域，具体适配逻辑可参考[为应用配置旋转策略](bpta-multi-device-window-direction.md#section714419371037)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/8ZliRNyARIKgN0H9-M47Nw/zh-cn_image_0000002419746985.png?HW-CC-KV=V1&HW-CC-Date=20260429T061251Z&HW-CC-Expire=86400&HW-CC-Sign=E26588CBEFDE87653F3D4BE84217D5656D09FB0EA78DC23735C7E22F8995D61A "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/8ZliRNyARIKgN0H9-M47Nw/zh-cn_image_0000002419746985.png "点击放大")
 
 双折叠推荐的旋转逻辑如下。
 
@@ -231,7 +231,7 @@ content_hash: sha256:02bde97154a22d9fc0ba6157d5356b675703b70dac65637e9908faeccf8
 
 不同窗口模式和窗口方向下的沉浸式实现，参考窗口沉浸式的[实现沉浸式效果](bpta-multi-device-window-immersive.md#section180431120426)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/MWYs9J9cQmm324roiEf8Vw/zh-cn_image_0000002386227816.png?HW-CC-KV=V1&HW-CC-Date=20260429T061251Z&HW-CC-Expire=86400&HW-CC-Sign=20D3BD1C4B4F80310A090FD48E5426FE261E41117BCD48D0FAD3C442A43BC335 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/MWYs9J9cQmm324roiEf8Vw/zh-cn_image_0000002386227816.png "点击放大")
 
 ## 界面开发
 
@@ -243,13 +243,13 @@ content_hash: sha256:02bde97154a22d9fc0ba6157d5356b675703b70dac65637e9908faeccf8
 
 双折叠展开态纵向断点为md，屏幕比例近似1:1，呈现出对称且均衡的视觉效果，横向分辨率超过600vp，是典型的大方形屏。大方形屏非常适合多任务处理、内容分屏展示以及创作类应用，能够显著提升用户的操作效率与交互体验。大方形屏的布局设计与实现可参考[大方形屏](bpta-multi-device-screen-layout.md#section12921201325714)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/VlE-e4WeRZqAgf6QR1v1og/zh-cn_image_0000002386227852.png?HW-CC-KV=V1&HW-CC-Date=20260429T061251Z&HW-CC-Expire=86400&HW-CC-Sign=F41F9F054C5E7B937977E0D23A251324EFAE19532DB766B0E8D1E8EFC3BC7A93 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/VlE-e4WeRZqAgf6QR1v1og/zh-cn_image_0000002386227852.png "点击放大")
 
 ### 适配设备悬停态
 
 双折叠的悬停态可以在桌面平稳放置，实现免手持体验，常用于视频通话、播放视频、拍照和听歌等不需要频繁交互的场景。这种状态下，应用需要对中间折痕区域进行避让，并且对上下两个界面进行悬停适配，重新布局。悬停态的实现方案可参考[折叠屏悬停态](bpta-folded-hover.md)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/yjlSyXOQQrmnAnRkWCO6Zg/zh-cn_image_0000002419627209.png?HW-CC-KV=V1&HW-CC-Date=20260429T061251Z&HW-CC-Expire=86400&HW-CC-Sign=DBD07E1ABC49A970E223D7B5E9F7BE155D866AC75607C8FFA988E1C1439706B8 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/yjlSyXOQQrmnAnRkWCO6Zg/zh-cn_image_0000002419627209.png "点击放大")
 
 ### 适配应用界面开合连续
 
@@ -300,7 +300,7 @@ display提供了折叠状态监听的接口，这些接口建议使用在某些�
 
 对于双折叠开合连续使用场景，应用在完成折叠状态切换操作后，需确保[List](../harmonyos-references/ts-container-list.md)组件、[WaterFlow](../harmonyos-references/ts-container-waterflow.md)组件以及 [Scroll](../harmonyos-references/ts-container-scroll.md)组件等可滑动组件的阅读焦点不发生偏移。目前，这些组件依据折叠状态改变前的滑动偏移量来维持阅读焦点位置，然而，由于折叠状态切换前后，组件内部高度可能发生变化，即便滑动相同的偏移量，也难以达成阅读焦点不偏移的目标。因此，有必要针对上述可滑动组件采取特殊处理措施。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/bmGx1myPTv6cw73AMvk_wA/zh-cn_image_0000002386067952.png?HW-CC-KV=V1&HW-CC-Date=20260429T061251Z&HW-CC-Expire=86400&HW-CC-Sign=BD770F84891EAEBBC64D0A22B18D31103724AD5CDE72003FD4ECC2C2AB0A0809 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/bmGx1myPTv6cw73AMvk_wA/zh-cn_image_0000002386067952.png "点击放大")
 
 * List组件
 
@@ -405,7 +405,7 @@ display提供了折叠状态监听的接口，这些接口建议使用在某些�
 
 购物比价类应用可以在双折叠上展示更丰富的信息，例如可以使用分屏能力同时浏览两个商品的内容，方便用户进行对比。详细开发方案可参考[多设备购物比价界面](multi-shopping-price-comparison.md)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/nICOMkjISrq1mOThbFDsBA/zh-cn_image_0000002419747037.png?HW-CC-KV=V1&HW-CC-Date=20260429T061251Z&HW-CC-Expire=86400&HW-CC-Sign=852C8835E130B291C1CD8FEE2DA284E2D692B3AE19F3E6EB309C35C2BFB22D80 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/nICOMkjISrq1mOThbFDsBA/zh-cn_image_0000002419747037.png "点击放大")
 
 更多垂域案例可参考[多设备界面开发案例](bpta-multi-device-ui-development.md)。
 

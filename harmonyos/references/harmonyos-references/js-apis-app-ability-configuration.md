@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-configuration
-title: @ohos.app.ability.Configuration (环境变量)
+title: "@ohos.app.ability.Configuration (环境变量)"
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > 通用能力的接口(推荐) > @ohos.app.ability.Configuration (环境变量)
 category: harmonyos-references
 scraped_at: 2026-04-28T07:58:31+08:00

@@ -5,7 +5,7 @@ breadcrumb: 最佳实践 > 网络 > 应用网络重连
 category: best-practices
 scraped_at: 2026-04-29T14:11:05+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:481e9a16f9777310a776c273284c1ce8f97e907a403351c6dd20b71289a54119
+content_hash: sha256:efc4e1d47fc8515d9ae9ee533afc759f2c9d42230ca8763ef9ef2095e8092232
 ---
 
 ## 概述
@@ -274,7 +274,7 @@ RCP超时重连的实现与HTTP的实现步骤类似，RCP超时重连的代码�
 无网络切换有网络后重连下载效果图如下。
 
 **图1** 无网络切换有网络后重连下载  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/p_sDlc3-TCKlIHDN_8R3Fg/zh-cn_image_0000002194011536.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061103Z&HW-CC-Expire=86400&HW-CC-Sign=B8CCC1CCEA6BD85E214FED1DEABE2A3AEB5A73A2B8F3FDACD7314D4960D4E6B1 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/p_sDlc3-TCKlIHDN_8R3Fg/zh-cn_image_0000002194011536.gif "点击放大")
 
 ## 应用前后台切换后重连
 
@@ -334,7 +334,7 @@ RCP超时重连的实现与HTTP的实现步骤类似，RCP超时重连的代码�
 前后台切换网络重连实现效果如下：
 
 **图2** 应用前后台切换后重连下载  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/9kkg5Dz3RUmUMVajmu5SqA/zh-cn_image_0000002229337333.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061103Z&HW-CC-Expire=86400&HW-CC-Sign=2EEA49A773BFDF9DBAB9B625ABF905D803E740287E7F83909CB77E179642A2FA "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/9kkg5Dz3RUmUMVajmu5SqA/zh-cn_image_0000002229337333.gif "点击放大")
 
 ## 示例代码
 

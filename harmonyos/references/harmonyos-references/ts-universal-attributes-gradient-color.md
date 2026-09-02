@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:51:20+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:cdf33725c665b18ec9c097a188816a9735b2d8ef2ec6b8999c7374923de76e9b
+content_hash: sha256:d28849df374a13fdbc6a49b2d718c6324b15c1622e98648fc36aa203b829511d
 ---
 
 设置组件的颜色渐变效果。
@@ -295,7 +295,7 @@ PhonePC/2in1TabletTVWearable
 28. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/d-o6xkHaQi-TuA_qAQnO3w/zh-cn_image_0000002589245849.png?HW-CC-KV=V1&HW-CC-Date=20260429T055118Z&HW-CC-Expire=86400&HW-CC-Sign=302F545D33B446548CAC5C00F8DDF03729BDAF5631EBB8889C58346B005D8FA3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/d-o6xkHaQi-TuA_qAQnO3w/zh-cn_image_0000002589245849.png)
 
 ### 示例2（颜色按旋转角度渐变）
 
@@ -358,7 +358,7 @@ PhonePC/2in1TabletTVWearable
 54. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/2dDEgzmkSmqLe2ay3tykRA/zh-cn_image_0000002558766040.png?HW-CC-KV=V1&HW-CC-Date=20260429T055118Z&HW-CC-Expire=86400&HW-CC-Sign=F5E9F7B3B12CCD4A430D6983A737A4DF86CBA92A0FE27DC8E80FFDD1EC620F5C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/2dDEgzmkSmqLe2ay3tykRA/zh-cn_image_0000002558766040.png)
 
 ### 示例3（颜色按径向渐变）
 
@@ -397,4 +397,4 @@ PhonePC/2in1TabletTVWearable
 30. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/Zf3zJkmUSFmZzmViOkBPKQ/zh-cn_image_0000002558606382.png?HW-CC-KV=V1&HW-CC-Date=20260429T055118Z&HW-CC-Expire=86400&HW-CC-Sign=8A89DF142377119814C24777CAB093C77B517148D774417A559BDE54FDDF81EB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/Zf3zJkmUSFmZzmViOkBPKQ/zh-cn_image_0000002558606382.png)

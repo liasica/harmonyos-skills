@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:28:16+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:f4206feef56fded3c5b1f97508329b636e34d814c70ded9a1231ecd05176ebe0
+content_hash: sha256:8d715c03d8c6da667f907f6046a96428fc87cf36996570d61a45cea5ae42c432
 ---
 
 帧动画具备逐帧回调的特性，便于开发者在每一帧中处理需调整的属性。通过向应用提供[AnimatorResult](../harmonyos-references/js-apis-animator.md#animatorresult)的onFrame属性逐帧回调，帧动画使开发者能够在应用的每一帧设置属性值，从而实现组件属性值变化的自然过渡，营造出动画效果。帧动画接口详情可参考[@ohos.animator (动画)](../harmonyos-references/js-apis-animator.md)。
@@ -19,9 +19,9 @@ content_hash: sha256:f4206feef56fded3c5b1f97508329b636e34d814c70ded9a1231ecd0517
 
 如图所示，帧动画在动画过程中即可实时响应，而属性动画按最终状态响应。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/bTVEPvziTPW40J6KbEeSDQ/zh-cn_image_0000002558764494.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052815Z&HW-CC-Expire=86400&HW-CC-Sign=D374A44ECB75E20E9FADC13869773371A9DACDF9383C5A79868C10D6597E1F8D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/bTVEPvziTPW40J6KbEeSDQ/zh-cn_image_0000002558764494.gif)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/kP640CcuSNmft8r2V-A4IA/zh-cn_image_0000002558604838.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052815Z&HW-CC-Expire=86400&HW-CC-Sign=9F454F1C8F98747A672378ED7A3B950ECCBD2E52FA573FFC7DAB0EE54C551457)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/kP640CcuSNmft8r2V-A4IA/zh-cn_image_0000002558604838.gif)
 
 ## 使用帧动画实现动画效果
 
@@ -262,4 +262,4 @@ content_hash: sha256:f4206feef56fded3c5b1f97508329b636e34d814c70ded9a1231ecd0517
 
 [Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/Animation/entry/src/main/ets/pages/animator/template3/Index.ets#L15-L112)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/tuePB_9DTx619XqIgoikcQ/zh-cn_image_0000002589324363.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052815Z&HW-CC-Expire=86400&HW-CC-Sign=665992176505155217316ABC8E77FEA2264CFCB2DC2BC255994F9B7BF99898E8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/tuePB_9DTx619XqIgoikcQ/zh-cn_image_0000002589324363.gif)

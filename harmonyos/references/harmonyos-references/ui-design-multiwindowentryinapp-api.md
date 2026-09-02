@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > UI Design Kit（UI设计套件） > ArkTS
 category: harmonyos-references
 scraped_at: 2026-04-29T13:57:14+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:191755c4c26e89beb05c6ec837268b012e1ce35e4dbe731c350307fe41351c0b
+content_hash: sha256:97014fada42993a0655326399a77067a32aa94e8739266e682225f8944b04d20
 ---
 
 说明
@@ -214,4 +214,4 @@ PhonePC/2in1TabletTV
 36. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/xXetDIE4RHOhw76UbJSufQ/zh-cn_image_0000002558607398.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T055712Z&HW-CC-Expire=86400&HW-CC-Sign=40848F45CFA13108F4BB4CC2B5FC5DAF8D4F5EC71783C2038ECD0FED425672D0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/xXetDIE4RHOhw76UbJSufQ/zh-cn_image_0000002558607398.jpg)

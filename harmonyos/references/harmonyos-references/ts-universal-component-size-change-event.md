@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:51:12+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:49b0b1b15e5254f0d3535a864ed8bfe893897c8473c158ce015ae52e96a70842
+content_hash: sha256:bd4d3430c00f5b3782e77f5f033e265b91c69394fc55fa07974170aacb4cd3b1
 ---
 
 该事件指组件显示的尺寸发生变化时触发的事件。
@@ -102,4 +102,4 @@ PhonePC/2in1TabletTVWearable
 25. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/P9w9wjn6SBerpkoPs-e_NA/zh-cn_image_0000002558606338.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055111Z&HW-CC-Expire=86400&HW-CC-Sign=ED5DA7B4610F8AB73B801B2FF0B105456C5256C5FA03B88E3BA811195BB5455F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/P9w9wjn6SBerpkoPs-e_NA/zh-cn_image_0000002558606338.gif)

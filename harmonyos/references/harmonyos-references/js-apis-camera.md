@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-camera
-title: @ohos.multimedia.camera (相机管理)
+title: "@ohos.multimedia.camera (相机管理)"
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > ArkTS API > @ohos.multimedia.camera (相机管理)
 category: harmonyos-references
 scraped_at: 2026-04-28T08:12:31+08:00

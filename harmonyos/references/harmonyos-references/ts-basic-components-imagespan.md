@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:52:09+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:d7b94187b8be49e753cb6bdecd46eaba928171b5f83ab575722c853a934720df
+content_hash: sha256:29da924014bfb464f7efe157d5097f5255beb464532dba1f14b606cb3e715c2c
 ---
 
 [Text](ts-basic-components-text.md)、[ContainerSpan](ts-basic-components-containerspan.md)组件的子组件，用于显示行内图片。
@@ -270,7 +270,7 @@ PhonePC/2in1TabletTVWearable
 43. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/cABHg2KNQnCE313aDQcKIw/zh-cn_image_0000002558606676.png?HW-CC-KV=V1&HW-CC-Date=20260429T055206Z&HW-CC-Expire=86400&HW-CC-Sign=5F9B4A2804E31A60D86CBD45EB94703391B459520EE552E3C512AE3B94C37820)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/cABHg2KNQnCE313aDQcKIw/zh-cn_image_0000002558606676.png)
 
 ### 示例2（设置背景样式）
 
@@ -299,7 +299,7 @@ PhonePC/2in1TabletTVWearable
 20. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/5_mi70iXToeOzbk6b6c6DA/zh-cn_image_0000002589326203.png?HW-CC-KV=V1&HW-CC-Date=20260429T055206Z&HW-CC-Expire=86400&HW-CC-Sign=531AD590E13866B46A33321862BAB5942AF54BDC68D7EF087F9B9EB1B8307019)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/5_mi70iXToeOzbk6b6c6DA/zh-cn_image_0000002589326203.png)
 
 ### 示例3（为图片添加事件）
 
@@ -375,7 +375,7 @@ PhonePC/2in1TabletTVWearable
 38. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/bpQXhKylQ2GXbFbV-_8EaA/zh-cn_image_0000002589246145.png?HW-CC-KV=V1&HW-CC-Date=20260429T055206Z&HW-CC-Expire=86400&HW-CC-Sign=8EB1F5E952931461DF1E6D64144AE2E5AD298FE3D29658B102106E1E6D11C3AD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/bpQXhKylQ2GXbFbV-_8EaA/zh-cn_image_0000002589246145.png)
 
 ### 示例5（设置加载占位图）
 
@@ -442,7 +442,7 @@ PhonePC/2in1TabletTVWearable
 58. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/dOgyjBpXTRScOlq4eMuUkA/zh-cn_image_0000002558766336.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055206Z&HW-CC-Expire=86400&HW-CC-Sign=503CCA68C773E76007690B1E20E97638C3300DC0B39C8A7F1001296A2624A16F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/dOgyjBpXTRScOlq4eMuUkA/zh-cn_image_0000002558766336.gif)
 
 ### 示例6（使用supportSvg2属性时，SVG图片的显示效果）
 
@@ -483,4 +483,4 @@ PhonePC/2in1TabletTVWearable
 32. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/pP8DyQIaQgan1yxTuTUAlg/zh-cn_image_0000002558606678.png?HW-CC-KV=V1&HW-CC-Date=20260429T055206Z&HW-CC-Expire=86400&HW-CC-Sign=95D2A989E355E4A915D146575A6802621954F13B0B46DC1D472418817A92871C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/pP8DyQIaQgan1yxTuTUAlg/zh-cn_image_0000002558606678.png)

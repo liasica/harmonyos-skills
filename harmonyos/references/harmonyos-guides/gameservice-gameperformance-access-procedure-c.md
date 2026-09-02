@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用服务 > Game Service Kit（游戏服务） > 游戏�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:38:12+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:708b74405b19e53a5f511cc32b3bc0100729736af5cf85edcf76b74a3334c4bb
+content_hash: sha256:6d25765baaca2e117bfca83433f4756d88379f9cf85aa5e0de336d08665065e0
 ---
 
 游戏场景感知包括：
@@ -15,7 +15,7 @@ content_hash: sha256:708b74405b19e53a5f511cc32b3bc0100729736af5cf85edcf76b74a333
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/izv98oAnTQKu_Fc3Mcb46g/zh-cn_image_0000002558765400.png?HW-CC-KV=V1&HW-CC-Date=20260429T053811Z&HW-CC-Expire=86400&HW-CC-Sign=85C79EC45CBE67715FACFFF86C10B29D0399FC3CECDF2CFB73013E1159E4C12C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/izv98oAnTQKu_Fc3Mcb46g/zh-cn_image_0000002558765400.png)
 
 1. 游戏启动后调用[HMS\_GamePerformance\_Init](../harmonyos-references/gameservice-game-performance.md#hms_gameperformance_init)接口对游戏场景感知进行初始化。
 2. 初始化成功后，游戏调用[HMS\_GamePerformance\_RegisterThermalLevelChangedCallback](../harmonyos-references/gameservice-game-performance.md#hms_gameperformance_registerthermallevelchangedcallback)接口注册设备状态变化事件监听，订阅设备状态变化通知。

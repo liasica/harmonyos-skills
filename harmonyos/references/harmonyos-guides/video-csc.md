@@ -5,7 +5,7 @@ breadcrumb: 指南 > 媒体 > Media Kit（媒体服务） > 媒体开发指导(C
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:35:31+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:574ad7453d700e66fe1beb60de46cd2cc8f82303b467bad3140949fe96118109
+content_hash: sha256:19b1baa240dbf1050e56bc61183cca450489cdbbf864ef29a67d61fd7fdc7631
 ---
 
 开发者可以调用本模块提供的[C API接口](../harmonyos-references/capi-videoprocessing.md)，实现HDR2SDR、HDR2HDR、SDR2SDR、SDR2HDR的色彩空间转换。
@@ -14,17 +14,17 @@ content_hash: sha256:574ad7453d700e66fe1beb60de46cd2cc8f82303b467bad3140949fe961
 
 * **视频编辑**
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/IMcReP5aTZyRRRmYKjRhJA/zh-cn_image_0000002589324973.png?HW-CC-KV=V1&HW-CC-Date=20260429T053530Z&HW-CC-Expire=86400&HW-CC-Sign=ABA8A694839CACFC79F767D2003D24C29FC0C55119D46ACF9E984C05328D5EA8)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/IMcReP5aTZyRRRmYKjRhJA/zh-cn_image_0000002589324973.png)
 * **视频分享**
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/jOWS_wpLQ86M12IUPZcbsA/zh-cn_image_0000002589244909.png?HW-CC-KV=V1&HW-CC-Date=20260429T053530Z&HW-CC-Expire=86400&HW-CC-Sign=E3DD11BAE59CACD5F9E4F03D4EA55E1C01CD0CD844F6B806E96C1DF01A6B27E9)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/jOWS_wpLQ86M12IUPZcbsA/zh-cn_image_0000002589244909.png)
 * **视频直播**
 
   **支持以下场景使用：**
 
   使用HDR Vivid视频直播连麦，且对端不支持HDR Vivid视频录制场景。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/W3wo6_YBTJqMllbDZx0ZkQ/zh-cn_image_0000002558765104.png?HW-CC-KV=V1&HW-CC-Date=20260429T053530Z&HW-CC-Expire=86400&HW-CC-Sign=134972A65E971609CD59DE9C54C7F7A8DA303AE0CD78D51E8F8D0BD45292CFD1)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/W3wo6_YBTJqMllbDZx0ZkQ/zh-cn_image_0000002558765104.png)
 
 ## 规格说明
 

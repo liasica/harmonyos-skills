@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > UI Design Kit（UI设计套件） > 即时�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:30:23+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:0a907dfd4af828f504e167afb714e5fe727ed441b538d9dcf9307bf148293616
+content_hash: sha256:4fb18b05f77d8cbee1ee79a5c8fa8243014914bcd2f152f0abad481b4b1b1d89
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:0a907dfd4af828f504e167afb714e5fe727ed441b538d9dcf9307bf1482
 
 [HdsSnackBar](../harmonyos-references/ui-design-hdssnackbar.md)支持常驻通知弹窗。当应用开发者需要常驻通知提醒弹窗时，可以通过HdsSnackBar的show方法显示HdsSnackBar弹窗，设置duration是-1表示常驻弹窗。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/nmibcyRxRJio_zscWk8kJg/zh-cn_image_0000002589244651.gif?HW-CC-KV=V1&HW-CC-Date=20260429T053022Z&HW-CC-Expire=86400&HW-CC-Sign=FFA749CB634A8B59421F9AD7BD60E55F4A531CAE566E28D749A350371FCDDDF5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/nmibcyRxRJio_zscWk8kJg/zh-cn_image_0000002589244651.gif)
 
 ## 开发步骤
 

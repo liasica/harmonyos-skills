@@ -5,7 +5,7 @@ breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 图形�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:36:09+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:980a32823844b870dbb2d325ce2be71aa58268317a33c88d391f6303798026f1
+content_hash: sha256:64835f6821ccc778bde57eac9ec27e0aa5a3654f9f813dc483f33cb5b66323c4
 ---
 
 除了基础填充颜色、描边颜色和一些样式设置的绘制效果外，还支持通过画刷和画笔实现更多复杂的绘制效果。比如：
@@ -57,7 +57,7 @@ content_hash: sha256:980a32823844b870dbb2d325ce2be71aa58268317a33c88d391f6303798
 
 [ComplexEffect.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/Drawing/ArkTSGraphicsDraw/entry/src/main/ets/drawing/pages/ComplexEffect.ets#L61-L84)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/xYq8bU4SQieOibQUaAEGYA/zh-cn_image_0000002589325013.png?HW-CC-KV=V1&HW-CC-Date=20260429T053608Z&HW-CC-Expire=86400&HW-CC-Sign=A4635029C6B4E584E9851FDD50C358D46ABE899407F0FC4D0199926A23D0D942)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/xYq8bU4SQieOibQUaAEGYA/zh-cn_image_0000002589325013.png)
 
 ## 路径效果
 
@@ -152,7 +152,7 @@ content_hash: sha256:980a32823844b870dbb2d325ce2be71aa58268317a33c88d391f6303798
 
 [ComplexEffect.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/Drawing/ArkTSGraphicsDraw/entry/src/main/ets/drawing/pages/ComplexEffect.ets#L116-L138)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/4IfPWPG1T0uA30CBlitkfg/zh-cn_image_0000002558605488.png?HW-CC-KV=V1&HW-CC-Date=20260429T053608Z&HW-CC-Expire=86400&HW-CC-Sign=5FCAD3E56D08C4895104BF95F452A06496E3ACA29D9062855A84DED2EF8C0DA3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/4IfPWPG1T0uA30CBlitkfg/zh-cn_image_0000002558605488.png)
 
 ### 径向渐变着色器效果
 
@@ -187,7 +187,7 @@ content_hash: sha256:980a32823844b870dbb2d325ce2be71aa58268317a33c88d391f6303798
 
 [ComplexEffect.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/Drawing/ArkTSGraphicsDraw/entry/src/main/ets/drawing/pages/ComplexEffect.ets#L142-L163)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/eyGIkkO6Qwiz5hT0Bc58uQ/zh-cn_image_0000002589325015.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053608Z&HW-CC-Expire=86400&HW-CC-Sign=1457750469F56BA2DBBFECAF2317E71616E17C41177395907E400CFCB763208B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/eyGIkkO6Qwiz5hT0Bc58uQ/zh-cn_image_0000002589325015.jpg)
 
 ### 扇形渐变着色器效果
 
@@ -222,7 +222,7 @@ content_hash: sha256:980a32823844b870dbb2d325ce2be71aa58268317a33c88d391f6303798
 
 [ComplexEffect.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/Drawing/ArkTSGraphicsDraw/entry/src/main/ets/drawing/pages/ComplexEffect.ets#L167-L188)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/rXglfkq2SNannyjRxNSzJQ/zh-cn_image_0000002589244951.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053608Z&HW-CC-Expire=86400&HW-CC-Sign=8B783E8DDF21E9CBB996E3EA27FC8C79641CF1B236D0BC58FDFBA9AD6D31BE89)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/rXglfkq2SNannyjRxNSzJQ/zh-cn_image_0000002589244951.jpg)
 
 ## 滤波器效果
 

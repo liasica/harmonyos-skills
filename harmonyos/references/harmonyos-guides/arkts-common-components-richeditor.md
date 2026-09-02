@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:27:46+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:89401a1e402db64d4051a1abfcb54e97649cda864648c468d341982725c6cf4d
+content_hash: sha256:235bffaa4fea93abc44a04c533a8254823efc01b48cc73a522eb7db8fb60aa5a
 ---
 
 RichEditor是支持图文混排和文本交互式编辑的组件，通常用于响应用户对图文混合内容的输入操作，例如可以输入图文的评论区。具体用法参考[RichEditor](../harmonyos-references/ts-basic-components-richeditor.md)组件的API文档。
@@ -18,7 +18,7 @@ RichEditor是支持图文混排和文本交互式编辑的组件，通常用于�
 
 下图展示了组件元素的构成。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/bo-oEjmbQHWU5hnK9cn1YQ/zh-cn_image_0000002558764312.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T052743Z&HW-CC-Expire=86400&HW-CC-Sign=81DE195C54A8C37A132FABDDE9701F5B7E3FBEA34AADE41AB16B4CD4A054E5EE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/bo-oEjmbQHWU5hnK9cn1YQ/zh-cn_image_0000002558764312.jpg)
 
 组件的元素构成包括：
 
@@ -86,7 +86,7 @@ RichEditor是支持图文混排和文本交互式编辑的组件，通常用于�
 
 [CreateRichEditor.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/richEditor/CreateRichEditor.ets#L17-L111)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/Sy0acW7MR5e69o7l7AMOXA/zh-cn_image_0000002558604656.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052743Z&HW-CC-Expire=86400&HW-CC-Sign=3BCD30CBFF3540708646A73512C81A1CBC12A3EBE42E5A9FC5BBCAD8791EED29)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/Sy0acW7MR5e69o7l7AMOXA/zh-cn_image_0000002558604656.gif)
 
 ### 创建基于Span进行内容管理的RichEditor组件
 
@@ -135,7 +135,7 @@ RichEditor是支持图文混排和文本交互式编辑的组件，通常用于�
 
 [CreateRichEditor.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/richEditor/CreateRichEditor.ets#L16-L112)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/ew-Dt18gQ9GPSBXojKcv-w/zh-cn_image_0000002589324181.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052743Z&HW-CC-Expire=86400&HW-CC-Sign=FEC9DB6278306F87F1FACB07CF528033E04F592D7AE533FBB2C1555079C38E51)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/ew-Dt18gQ9GPSBXojKcv-w/zh-cn_image_0000002589324181.gif)
 
 ## 添加内容
 
@@ -191,7 +191,7 @@ RichEditor是支持图文混排和文本交互式编辑的组件，通常用于�
 
 [AddTextContent.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/richEditor/AddTextContent.ets#L19-L70)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/sNDTgngeQ5ah4S2etLAgvg/zh-cn_image_0000002589244121.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052743Z&HW-CC-Expire=86400&HW-CC-Sign=8FC14E45A65FCEC38B7AF7069C9879971A5E8EAA5196700DB72EBBED101A9DD4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/sNDTgngeQ5ah4S2etLAgvg/zh-cn_image_0000002589244121.gif)
 
 ### 添加图片内容
 
@@ -235,7 +235,7 @@ RichEditor是支持图文混排和文本交互式编辑的组件，通常用于�
 
 [AddImageContent.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/richEditor/AddImageContent.ets#L19-L70)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/Yyi8f4TXR6-Jo831IxzlAQ/zh-cn_image_0000002558764314.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052743Z&HW-CC-Expire=86400&HW-CC-Sign=C13F3FCE4F6807349D998B849624356C0439D493FA8B492C5218A1593BDA52BE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/Yyi8f4TXR6-Jo831IxzlAQ/zh-cn_image_0000002558764314.gif)
 
 ### 添加@Builder装饰器修饰的内容
 
@@ -305,7 +305,7 @@ RichEditor是支持图文混排和文本交互式编辑的组件，通常用于�
 
 [AddBuilderDecoratorContent.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/richEditor/AddBuilderDecoratorContent.ets#L19-L83)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/4ichfG_XSjK5uc_d76IsDQ/zh-cn_image_0000002558604658.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052743Z&HW-CC-Expire=86400&HW-CC-Sign=CBCFD1B642D8C83C7E8E80444B11858373032F06C0C856A7564C77C65CF0BF5D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/4ichfG_XSjK5uc_d76IsDQ/zh-cn_image_0000002558604658.gif)
 
 ### 添加SymbolSpan内容
 
@@ -349,7 +349,7 @@ Symbol内容暂不支持手势、复制、拖拽处理。
 
 [AddSymbolSpanContent.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/richEditor/AddSymbolSpanContent.ets#L20-L71)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/uhLZpOI6RLSw4-c5wcIarQ/zh-cn_image_0000002589324183.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052743Z&HW-CC-Expire=86400&HW-CC-Sign=00CD567EFB9DB5F3C380499ED7ACCC548280DB78BD62F70F213433EB34051385)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/uhLZpOI6RLSw4-c5wcIarQ/zh-cn_image_0000002589324183.gif)
 
 ## 管理内容
 
@@ -404,7 +404,7 @@ Symbol内容暂不支持手势、复制、拖拽处理。
 
 [GetGraphicInfoInComponent.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/richEditor/GetGraphicInfoInComponent.ets#L15-L78)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/cNw9uNjwT-eKQnEPIXzrdg/zh-cn_image_0000002589244123.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052743Z&HW-CC-Expire=86400&HW-CC-Sign=A5E2781CDBDE6641917495BDFA07EC032AE18F1C09585C10F38F7A75B67432CB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/cNw9uNjwT-eKQnEPIXzrdg/zh-cn_image_0000002589244123.gif)
 
 ### 设置无输入时的提示文本
 
@@ -433,7 +433,7 @@ Symbol内容暂不支持手势、复制、拖拽处理。
 
 [SetAttributes.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/richEditor/SetAttributes.ets#L204-L243)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/b_Ag3GW_RZqJQaIoucpJhQ/zh-cn_image_0000002558764316.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052743Z&HW-CC-Expire=86400&HW-CC-Sign=774357C827A8007F25726A9C0BC13C804CB98967C14F0B64BF28C1352C866871)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/b_Ag3GW_RZqJQaIoucpJhQ/zh-cn_image_0000002558764316.gif)
 
 ### 设置最大长度
 
@@ -451,7 +451,7 @@ Symbol内容暂不支持手势、复制、拖拽处理。
 
 [SetAttributes.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/richEditor/SetAttributes.ets#L294-L326)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/VAFVRof6SMGQi-ZYvLMD1g/zh-cn_image_0000002558604660.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052743Z&HW-CC-Expire=86400&HW-CC-Sign=6C1D49BC860D2BA1B91818D4C65332E777020C52632F99AAB19A3C84BACFB84C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/VAFVRof6SMGQi-ZYvLMD1g/zh-cn_image_0000002558604660.gif)
 
 ## 事件回调
 
@@ -514,7 +514,7 @@ Symbol内容暂不支持手势、复制、拖拽处理。
 
 [AddEvent.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/richEditor/AddEvent.ets#L109-L179)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/er9pqp_gRZ6C5ZIwaSQwKg/zh-cn_image_0000002589324185.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052743Z&HW-CC-Expire=86400&HW-CC-Sign=AF0845255C433B5858D1E9B3ECDD0063AEA4F73E68BE64F5F1D7C02CE7948B05)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/er9pqp_gRZ6C5ZIwaSQwKg/zh-cn_image_0000002589324185.gif)
 
 ### 添加输入法输入内容前和完成输入后可触发的回调
 
@@ -572,7 +572,7 @@ Symbol内容暂不支持手势、复制、拖拽处理。
 
 [AddEvent.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/richEditor/AddEvent.ets#L184-L252)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/6r6tl87-QoirNe2zVYcU7A/zh-cn_image_0000002589244125.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052743Z&HW-CC-Expire=86400&HW-CC-Sign=CE3A88FF0AA719698CF2FC106FBA64DDB59805A5106F5AA23995385AA310CD24)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/6r6tl87-QoirNe2zVYcU7A/zh-cn_image_0000002589244125.gif)
 
 ### 添加完成粘贴前可触发的回调
 
@@ -752,7 +752,7 @@ Symbol内容暂不支持手势、复制、拖拽处理。
 
 [AddEvent.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/richEditor/AddEvent.ets#L410-L466)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/MpvVNBCOReCI6Et_5SH_1g/zh-cn_image_0000002558764318.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052743Z&HW-CC-Expire=86400&HW-CC-Sign=E399B36788FBCC3DC7382FA5ED5E9E424DDAFB87E0FA946FDDD0B6E96E321EE9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/MpvVNBCOReCI6Et_5SH_1g/zh-cn_image_0000002558764318.gif)
 
 更多事件使用请参考[RichEditor事件](../harmonyos-references/ts-basic-components-richeditor.md#事件)。
 
@@ -787,7 +787,7 @@ Symbol内容暂不支持手势、复制、拖拽处理。
 
 [SetAttributes.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/richEditor/SetAttributes.ets#L158-L199)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/O6nuu-P1TzOzOwQiPb4tmQ/zh-cn_image_0000002558604662.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052743Z&HW-CC-Expire=86400&HW-CC-Sign=D8A40104B5340BC6D3F4CDAF538759EE7987DD76893F3697C5DB397FCC2753DC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/O6nuu-P1TzOzOwQiPb4tmQ/zh-cn_image_0000002558604662.gif)
 
 ### 添加组件内容选择区域或编辑状态下光标位置改变时可触发的回调
 
@@ -831,7 +831,7 @@ Symbol内容暂不支持手势、复制、拖拽处理。
 
 [AddEvent.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/richEditor/AddEvent.ets#L51-L104)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/5BYoD_VGQq60gX8MT8cK1g/zh-cn_image_0000002589324187.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052743Z&HW-CC-Expire=86400&HW-CC-Sign=4DC7054DFB283065C31E4B10F4014BE2CEABD50BBADD92F05ACBB35C46244F21)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/5BYoD_VGQq60gX8MT8cK1g/zh-cn_image_0000002589324187.gif)
 
 ### 设置内容选中区范围
 
@@ -870,7 +870,7 @@ Symbol内容暂不支持手势、复制、拖拽处理。
 
 [BackplaneHighlighting.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/richEditor/BackplaneHighlighting.ets#L20-L66)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/DsUavnPgQli6S0PrKZsQ0A/zh-cn_image_0000002589244127.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052743Z&HW-CC-Expire=86400&HW-CC-Sign=0473BACCCCB967A6D687E335829373D6CD41A3C2B4311DA745B46F8542E3051F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/DsUavnPgQli6S0PrKZsQ0A/zh-cn_image_0000002589244127.gif)
 
 ## 菜单配置
 
@@ -970,7 +970,7 @@ Symbol内容暂不支持手势、复制、拖拽处理。
 
 [SetAttributes.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/richEditor/SetAttributes.ets#L582-L683)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/pxqxzUocRIqNFDM33hJg2w/zh-cn_image_0000002558764320.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052743Z&HW-CC-Expire=86400&HW-CC-Sign=0A4031CE68354E44075E86FD5300FCCA216F6E6F4B157D0C3AD8EB5207B0646C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/pxqxzUocRIqNFDM33hJg2w/zh-cn_image_0000002558764320.gif)
 
 ### 屏蔽系统服务类菜单项
 
@@ -1026,7 +1026,7 @@ Symbol内容暂不支持手势、复制、拖拽处理。
 
 [DisableSystemServiceMenu.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/richEditor/DisableSystemServiceMenu.ets#L16-L75)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/BUy-5heMRCquV10kSvp3UA/zh-cn_image_0000002558604664.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052743Z&HW-CC-Expire=86400&HW-CC-Sign=4C43DB66C7F4035D4DC58FC675A17093820FF5A0EF640CC0EE550482CB55B0A9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/BUy-5heMRCquV10kSvp3UA/zh-cn_image_0000002558604664.gif)
 
 通过[disableMenuItems](../harmonyos-references/arkts-apis-uicontext-textmenucontroller.md#disablemenuitems20)可以屏蔽富文本选择菜单内指定的系统服务菜单项。
 
@@ -1079,7 +1079,7 @@ Symbol内容暂不支持手势、复制、拖拽处理。
 
 [DisableMenuItem.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/richEditor/DisableMenuItem.ets#L16-L74)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/EBXmEP8FQ2CySCzDzt6vCQ/zh-cn_image_0000002589324189.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052743Z&HW-CC-Expire=86400&HW-CC-Sign=DD75C2E16DF994CDA234B5534D40FEA41F1E3189E0F2D56042DE48D7DD60EB80)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/EBXmEP8FQ2CySCzDzt6vCQ/zh-cn_image_0000002589324189.gif)
 
 ### 设置自定义选择菜单
 
@@ -1163,7 +1163,7 @@ Symbol内容暂不支持手势、复制、拖拽处理。
 
 [SetAttributes.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/richEditor/SetAttributes.ets#L70-L153)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/kFVZCWosSg-qVoReZ4j4gA/zh-cn_image_0000002589244129.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052743Z&HW-CC-Expire=86400&HW-CC-Sign=54C1AA5A0D6E78002E9354143603B06E050755BC88A19D451C20F112081A6D10)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/kFVZCWosSg-qVoReZ4j4gA/zh-cn_image_0000002589244129.gif)
 
 ## 布局配置
 
@@ -1208,7 +1208,7 @@ Symbol内容暂不支持手势、复制、拖拽处理。
 
 [SetAttributes.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/richEditor/SetAttributes.ets#L248-L289)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/jvPoJjGxQe6qtkBaXFXA9g/zh-cn_image_0000002558764322.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052743Z&HW-CC-Expire=86400&HW-CC-Sign=AE887578DC45A8673CA3DA929290715AE11F9BEB379488E32B119A91D77F8D97)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/jvPoJjGxQe6qtkBaXFXA9g/zh-cn_image_0000002558764322.gif)
 
 ## 样式设置
 
@@ -1259,7 +1259,7 @@ Symbol内容暂不支持手势、复制、拖拽处理。
 
 [SetUserPresetTextStyles.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/richEditor/SetUserPresetTextStyles.ets#L16-L77)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/C7QJmdKJR2SG8PpE5XtxWw/zh-cn_image_0000002558604666.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052743Z&HW-CC-Expire=86400&HW-CC-Sign=904DBC181329453B14F916AF008F91C020769FC6A922DC662D4029AD155EA43F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/C7QJmdKJR2SG8PpE5XtxWw/zh-cn_image_0000002558604666.gif)
 
 ### 设置装饰线
 
@@ -1290,7 +1290,7 @@ Symbol内容暂不支持手势、复制、拖拽处理。
 
 [SetAttributes.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/richEditor/SetAttributes.ets#L360-L403)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/_gRYSeqMTlq9LEjfFL4SaQ/zh-cn_image_0000002589324191.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T052743Z&HW-CC-Expire=86400&HW-CC-Sign=E4A08299D3FB87A36534F65540AF918E51A39C16B164184BFE09656A8871AF72)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/_gRYSeqMTlq9LEjfFL4SaQ/zh-cn_image_0000002589324191.jpg)
 
 通过[DecorationOptions](../harmonyos-references/ts-universal-styled-string.md#decorationoptions20)中的enableMultiType设置多装饰线，比如同时设置下划线和中划线。
 
@@ -1344,7 +1344,7 @@ Symbol内容暂不支持手势、复制、拖拽处理。
 
 [SetAttributes.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/richEditor/SetAttributes.ets#L419-L463)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/ES5d-nWCTxuEYWKiUoJMSg/zh-cn_image_0000002589244131.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T052743Z&HW-CC-Expire=86400&HW-CC-Sign=610559A94771E2A0B7BF70656F44E500C70D34DC48D88B98BADF5E3A53F4B9B8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/ES5d-nWCTxuEYWKiUoJMSg/zh-cn_image_0000002589244131.jpg)
 
 ### 设置垂直居中
 
@@ -1381,7 +1381,7 @@ Symbol内容暂不支持手势、复制、拖拽处理。
 
 [SetAttributes.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/richEditor/SetAttributes.ets#L472-L522)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/2XNEju5GS-mKLn_S3WsvyQ/zh-cn_image_0000002558764324.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T052743Z&HW-CC-Expire=86400&HW-CC-Sign=2384B0D2047340F75517787C539654E26DFA51FB66F4D351BB83C00CBD65DA66)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/2XNEju5GS-mKLn_S3WsvyQ/zh-cn_image_0000002558764324.jpg)
 
 ### 设置中西文自动间距
 
@@ -1410,7 +1410,7 @@ Symbol内容暂不支持手势、复制、拖拽处理。
 
 [SetAttributes.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/richEditor/SetAttributes.ets#L525-L580)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/IYhlllz8ReKqgkU7xI26wQ/zh-cn_image_0000002558604668.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052743Z&HW-CC-Expire=86400&HW-CC-Sign=4B10BA6E2EABDCAF9372C49C6F34C0ADBC6928C232F9938091C1AC80300D58E8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/IYhlllz8ReKqgkU7xI26wQ/zh-cn_image_0000002558604668.gif)
 
 ## 示例代码
 

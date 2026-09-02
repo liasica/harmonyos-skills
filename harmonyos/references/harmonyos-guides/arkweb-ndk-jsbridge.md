@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 在应用中使用�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:29:18+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:add98b7db6a57a16560e306d3cdc44f98ab670609da3b588a841e0ae2d2e9f65
+content_hash: sha256:61061130159d5cdac9682aebcf16be58fac4fbb7f9a807a7be1ebd313fe7cfdd
 ---
 
 本指导适用于ArkWeb应用侧与前端网页通信场景，开发者可根据应用架构选择使用ArkWeb Native接口完成业务通信机制（以下简称Native JSBridge）。
@@ -16,13 +16,13 @@ content_hash: sha256:add98b7db6a57a16560e306d3cdc44f98ab670609da3b588a841e0ae2d2
 
 应用使用ArkTS、C++语言混合开发，或本身应用架构较贴近于小程序架构，自带C++侧环境，推荐使用ArkWeb在Native侧提供的[ArkWeb\_ControllerAPI](../harmonyos-references/capi-web-arkweb-controllerapi.md)、[ArkWeb\_ComponentAPI](../harmonyos-references/capi-web-arkweb-componentapi.md)实现JSBridge功能。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/Uo-ZZQhGQ1eNT9buxd9QFw/zh-cn_image_0000002558764704.png?HW-CC-KV=V1&HW-CC-Date=20260429T052916Z&HW-CC-Expire=86400&HW-CC-Sign=0ED2DE6B92D281CFE737B5DA2D596B87E2C28A940458CC48C6C8E1DE64FB54F5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/Uo-ZZQhGQ1eNT9buxd9QFw/zh-cn_image_0000002558764704.png)
 
 上图展示了具有普遍适用性的小程序的通用架构。在这一架构中，逻辑层依赖于应用程序自带的JavaScript运行时，该运行时在一个已有的C++环境中运行。通过Native接口，逻辑层能够直接在C++环境中与视图层（其中ArkWeb充当渲染器）进行通信，无需回退至ArkTS环境使用ArkTS JSBridge接口。
 
 左图是使用ArkTS JSBridge接口构建小程序的方案，如红框所示，应用需要先调用到ArkTS环境，再调用到C++环境。右图是使用Native JSBridge接口构建小程序的方案，不需要ArkTS环境和C++环境的切换，执行效率更高。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/GOE7WJtcS8KDcZAigeHrWg/zh-cn_image_0000002558605050.png?HW-CC-KV=V1&HW-CC-Date=20260429T052916Z&HW-CC-Expire=86400&HW-CC-Sign=9CA85FC360A007E6764FB96664EFB44A98C4784838BABA0BA669A677062D0765)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/GOE7WJtcS8KDcZAigeHrWg/zh-cn_image_0000002558605050.png)
 
 Native JSBridge方案解决了ArkTS环境的冗余切换，同时允许回调在非UI线程上运行，避免造成UI阻塞。
 

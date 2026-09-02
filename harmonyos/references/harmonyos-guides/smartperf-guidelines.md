@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用测试 > 专项测试 > 命令行工具 > HiSmartPerf
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:48:04+08:00
 doc_updated_at: 2026-04-21
-content_hash: sha256:fad1537bb4fdf9d0fc0c9caebd39be74e7d7933cfc6421c252fd48493fab3f64
+content_hash: sha256:7e2d41e59deac2326486f93e2b85af6e7eabbefdb0073c14ffbaa40819f0cc4b
 ---
 
 ## 工具简介
@@ -25,7 +25,7 @@ HiSmartPerf Device是一款性能功耗测试工具，支持监测性能、功�
 
 下图展示了HiSmartPerf Device工具的主要功能组成。Device hap端设置好采集项和采集参数后，启动应用，FPS、RAM、Trace等指标通过消息发送给Device daemon端，Device daemon端进行数据采集、数据持久化和数据分析，将生成的报告回传给Device hap端，Device hap端进行可视化显示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/gFLY_pzwSBeOdWt0-jFwjw/zh-cn_image_0000002581377647.png?HW-CC-KV=V1&HW-CC-Date=20260429T054800Z&HW-CC-Expire=86400&HW-CC-Sign=44D37925EC324003EB2C99B39EA1226A829E5B03EB93B5F7F161C04F2EE0FB97)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/gFLY_pzwSBeOdWt0-jFwjw/zh-cn_image_0000002581377647.png)
 
 ## 约束与限制
 

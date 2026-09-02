@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-launcherbundlemanager
-title: @ohos.bundle.launcherBundleManager (launcherBundleManager模块)
+title: "@ohos.bundle.launcherBundleManager (launcherBundleManager模块)"
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > 通用能力的接口(推荐) > @ohos.bundle.launcherBundleManager (launcherBundleManager模块)
 category: harmonyos-references
 scraped_at: 2026-04-28T07:58:34+08:00

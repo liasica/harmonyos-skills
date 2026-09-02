@@ -5,7 +5,7 @@ breadcrumb: 指南 > 媒体 > Ringtone Kit（铃声服务） > Ringtone Kit简�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:35:39+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:ca250126ec3dac9e82cc19fd7cbb35ddd17ff2c4b42ff8f6d22bb0b0af46246d
+content_hash: sha256:e74646dfcaed4b10cc63bdb53ef730514ea8e4296d5c19b3de79f2d167630add
 ---
 
 Ringtone Kit（铃声服务）是一个用于设置铃声的工具库。通过使用Ringtone Kit，开发者可以在HarmonyOS应用中提供铃声设置的功能，为用户提供简单一致、安全高品质的铃声设置体验。
@@ -20,7 +20,7 @@ Ringtone Kit支持将音频文件设置成多种铃声类型，满足各类铃�
 
 铃声设置组件效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/h_99r260RyG_XVFNDcc-Aw/zh-cn_image_0000002558765110.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053538Z&HW-CC-Expire=86400&HW-CC-Sign=D4241EC9585FFA295B6E6AE58285CF7B097EA5C3B7E600452566C50D6617DA4E "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/h_99r260RyG_XVFNDcc-Aw/zh-cn_image_0000002558765110.jpg "点击放大")
 
 ## 约束与限制
 

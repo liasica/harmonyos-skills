@@ -5,7 +5,7 @@ breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 文本 
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:36:13+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:d9adcec566641bd0a7dd59b26a579464393231cb2399ca0905b5b932fd5c2e66
+content_hash: sha256:06e66dbb8ff5d20a398c6c87a852e5726269611f890ce076c3567893fc5a6edf
 ---
 
 ## 场景介绍
@@ -110,6 +110,6 @@ content_hash: sha256:d9adcec566641bd0a7dd59b26a579464393231cb2399ca0905b5b932fd5
 
 ## 效果展示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/sqENOuooRa6_-Q8CnC5dxQ/zh-cn_image_0000002589244977.png?HW-CC-KV=V1&HW-CC-Date=20260429T053612Z&HW-CC-Expire=86400&HW-CC-Sign=655981257DEEDA17196469EEB91732DE81E90BEFE6D0CEFCD144E39000AC8285)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/sqENOuooRa6_-Q8CnC5dxQ/zh-cn_image_0000002589244977.png)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/0gvkgjT8RCGinQm9PBhBkg/zh-cn_image_0000002558765172.png?HW-CC-KV=V1&HW-CC-Date=20260429T053612Z&HW-CC-Expire=86400&HW-CC-Sign=FE400A5C8C5371F9E5B76BF52ADAC49412E9BB8A0DEBDEED82CA68E659AFE4CD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/0gvkgjT8RCGinQm9PBhBkg/zh-cn_image_0000002558765172.png)

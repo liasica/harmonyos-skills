@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-file-cloudsyncmanager
-title: @ohos.file.cloudSyncManager (端云同步管理能力)
+title: "@ohos.file.cloudSyncManager (端云同步管理能力)"
 breadcrumb: API参考 > 应用框架 > Core File Kit（文件基础服务） > ArkTS API > @ohos.file.cloudSyncManager (端云同步管理能力)
 category: harmonyos-references
 scraped_at: 2026-04-28T08:05:42+08:00

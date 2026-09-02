@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用服务 > Preview Kit（文件预览服务） > Previe
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:39:49+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:d97df7046ab6ad8e17c07827d23e4adcdcd48aa2b7a21cc4ea2f311e0516787d
+content_hash: sha256:8634593d3e85af70f8f0172691cef3c7d4573f79b01831ddceb9db6b29f190a0
 ---
 
 Preview Kit（文件预览服务）为应用提供便捷的文件快速预览和文件打开加速能力。
@@ -74,7 +74,7 @@ Preview Kit支持图片、视频、音频、文本、html进行查看，表中�
 
 ## 文件预览基本概念
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/oIdzREMvQQWigUG-k6Ik1g/zh-cn_image_0000002589325477.png?HW-CC-KV=V1&HW-CC-Date=20260429T053948Z&HW-CC-Expire=86400&HW-CC-Sign=3E85E1AE049498AB057ADFF0086242EBAFDEB30C4A83AE1EBB7434ABE3DA0D9C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/oIdzREMvQQWigUG-k6Ik1g/zh-cn_image_0000002589325477.png)
 
 * 模态窗：和父窗口绑定，模态窗存在时父窗口不可移动，不可操作，模态窗永远置于父窗口前面。
 * 应用窗：应用窗口，可以通过AMS启动。

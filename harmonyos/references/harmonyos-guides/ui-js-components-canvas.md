@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:28:51+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:b640f6f183f46b31d4249f2992a957b85ca9737d0a6854466a792b6a679702ad
+content_hash: sha256:1f4186578e093c0d4dd4c08ffc144a8ce0585c5a0babe4dcb1e9a2f70d647ec9
 ---
 
 Canvas组件提供画布，用于自定义绘制图形。具体用法请参考[CanvasRenderingContext2D对象](../harmonyos-references/js-components-canvas-canvasrenderingcontext2d.md)。
@@ -37,7 +37,7 @@ Canvas组件提供画布，用于自定义绘制图形。具体用法请参考[C
 13. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/LfARArMFQqK-EtFORxrTXg/zh-cn_image_0000002589244429.png?HW-CC-KV=V1&HW-CC-Date=20260429T052850Z&HW-CC-Expire=86400&HW-CC-Sign=DE3022FD9A3AAA3D8D5A667EFD3B2CB8FFF3EC0965CFADCB7815948BEE4FF10B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/LfARArMFQqK-EtFORxrTXg/zh-cn_image_0000002589244429.png)
 
 说明
 
@@ -74,7 +74,7 @@ Canvas组件设置宽（width）、高（height）、背景色（background-colo
 16. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/yiqBJtB6SC6Yoyu-iVv-Ug/zh-cn_image_0000002558764622.png?HW-CC-KV=V1&HW-CC-Date=20260429T052850Z&HW-CC-Expire=86400&HW-CC-Sign=D64BA846A9AA7A1037BE8BB1D976B830D11D8E9E1B8CDDD6D80A565700F44F0F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/yiqBJtB6SC6Yoyu-iVv-Ug/zh-cn_image_0000002558764622.png)
 
 ## 添加事件
 
@@ -143,7 +143,7 @@ promptAction相关接口参考[弹窗](../harmonyos-references/js-apis-promptact
 19. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/v62KX6NBRFqya11VPgt2ww/zh-cn_image_0000002558604966.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052850Z&HW-CC-Expire=86400&HW-CC-Sign=F57D6AB1E9283BF5141F86E87F31418FC12500B379579FA01BDC2AE5A5ED9CB4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/v62KX6NBRFqya11VPgt2ww/zh-cn_image_0000002558604966.gif)
 
 说明
 

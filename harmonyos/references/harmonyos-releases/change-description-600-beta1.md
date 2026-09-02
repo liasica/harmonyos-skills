@@ -5,7 +5,7 @@ breadcrumb: 版本说明 > HarmonyOS 6.0.0(20) > DevEco Studio > 变更说明
 category: harmonyos-releases
 scraped_at: 2026-04-29T13:22:28+08:00
 doc_updated_at: 2026-01-21
-content_hash: sha256:9f45d94d6f55a0120fd545fd401ec8aa90bfc783264bedf3a2ac0c7599f80bec
+content_hash: sha256:eab4ca0c09dbb22a827ffba796682b7734f579feaf92d986daa0fb8f64a33499
 ---
 
 ## DevEco Studio 6.0.0 Beta3引入的变更
@@ -117,7 +117,7 @@ DevEco Studio 6.0.0 Beta1版本适配IntelliJ 2024.3.3底座升级后，语言�
 
 如果ArkUI-X工程是使用DevEco Studio 6.0.0 Beta1以下版本创建的，升级到Beta1及以上版本，编译会失败，并提示Could not open settings generic class cache for settings file。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/PT5p_etyQ5KCkoWfFhs10w/zh-cn_image_0000002391137566.png?HW-CC-KV=V1&HW-CC-Date=20260429T052226Z&HW-CC-Expire=86400&HW-CC-Sign=B7319DDAFFCFF4282261DB977FFD051C9FAB1CC628CAB9813BD2F1DC1A51D4FC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/PT5p_etyQ5KCkoWfFhs10w/zh-cn_image_0000002391137566.png)
 
 **适配指导**
 
@@ -133,4 +133,4 @@ DevEco Studio 6.0.0 Beta1版本适配IntelliJ 2024.3.3底座升级后，语言�
 
   如果本地有jdk17，可以在gradle.properties中通过org.gradle.java.home变量指定使用jdk17。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/UCtfLw7ySKC0AcfIIcNI7w/zh-cn_image_0000002457140953.png?HW-CC-KV=V1&HW-CC-Date=20260429T052226Z&HW-CC-Expire=86400&HW-CC-Sign=EF9B963B8298B47338686D8E339DCEE13526B396116AD706D6426863247507BA)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/UCtfLw7ySKC0AcfIIcNI7w/zh-cn_image_0000002457140953.png)

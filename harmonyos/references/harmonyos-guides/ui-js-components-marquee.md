@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:28:50+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:c37cfd02d6c0934101280c8d43ce52ccd204f1c4f40362f57f1c31b7b17be374
+content_hash: sha256:295cee2049c4e205412fb8e89e2f2b7881bb473372a434707eeec05109c11978
 ---
 
 marquee为跑马灯组件，用于展示一段单行滚动的文字。具体用法请参考[marquee](../harmonyos-references/js-components-basic-marquee.md)。
@@ -33,7 +33,7 @@ marquee为跑马灯组件，用于展示一段单行滚动的文字。具体用�
 9. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/LQSIy0pHTOqI9A1nlhmK0Q/zh-cn_image_0000002589324485.png?HW-CC-KV=V1&HW-CC-Date=20260429T052849Z&HW-CC-Expire=86400&HW-CC-Sign=4514F5D4DB46D9036B2A2248B87E40A31A9E14D8A70B52B99455D371BFA9EF1D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/LQSIy0pHTOqI9A1nlhmK0Q/zh-cn_image_0000002589324485.png)
 
 ## 设置属性和样式
 
@@ -70,7 +70,7 @@ marquee通过color和font-weight属性设置跑马灯中文本的颜色、字体
 21. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/7qOUs0nwSMiDBXZx39Kfbg/zh-cn_image_0000002589244423.png?HW-CC-KV=V1&HW-CC-Date=20260429T052849Z&HW-CC-Expire=86400&HW-CC-Sign=A20043A41BAE5730372B243EAE453A299C24A8C82CC6F252EBFF9F16697CBFE3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/7qOUs0nwSMiDBXZx39Kfbg/zh-cn_image_0000002589244423.png)
 
 通过scrollamount、loop和direction属性实现跑马灯滚动时移动的最大长度、滚动次数和文字滚动方向。
 
@@ -148,7 +148,7 @@ marquee通过color和font-weight属性设置跑马灯中文本的颜色、字体
 
 当loop的值小于等于零时，跑马灯marquee将连续滚动。如果loop未指定，则默认为-1。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/SoZ6qaGBQ5eIplTtL6UXVw/zh-cn_image_0000002558764616.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052849Z&HW-CC-Expire=86400&HW-CC-Sign=7E1F51BFA58C7439F927F0D6109744359B56371A481ACFC4D4335323750C741A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/SoZ6qaGBQ5eIplTtL6UXVw/zh-cn_image_0000002558764616.gif)
 
 ## 场景示例
 
@@ -229,4 +229,4 @@ marquee通过color和font-weight属性设置跑马灯中文本的颜色、字体
 25. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/rOJIvspRS7uV9jFp10V_vg/zh-cn_image_0000002558604960.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052849Z&HW-CC-Expire=86400&HW-CC-Sign=B3032AE422E14135F890E31FDC046E867D1D900C3F123FC268B6A7B1EE2A0194)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/rOJIvspRS7uV9jFp10V_vg/zh-cn_image_0000002558604960.gif)

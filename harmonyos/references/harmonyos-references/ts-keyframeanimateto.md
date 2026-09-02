@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:52:41+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:2063aa2bbe75e9862152700dd97daeb9c536afb683cf2cd23072cede17bb5b66
+content_hash: sha256:69948f35fb6c520a1902fa8c6e3117bfcacd8503cfeb3e463806a607ce84560e
 ---
 
 在[UIContext](arkts-apis-uicontext-uicontext.md)中提供keyframeAnimateTo接口来指定若干个关键帧状态，实现分段的动画。同属性动画，布局类改变宽高的动画，内容都是直接到终点状态，例如文字、[Canvas](ts-components-canvas-canvas.md)的内容等，如果要内容跟随宽高变化，可以使用[renderFit](ts-universal-attributes-renderfit.md)属性配置。
@@ -126,4 +126,4 @@ PhonePC/2in1TabletTVWearable
 55. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/4rjbf1JITDmUCnHxANE0xA/zh-cn_image_0000002558766550.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055240Z&HW-CC-Expire=86400&HW-CC-Sign=82BF88AB42F70E88359EFABCCD5B0AABE8A076E65E2FD4DB3D3A9B251C3128BE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/4rjbf1JITDmUCnHxANE0xA/zh-cn_image_0000002558766550.gif)

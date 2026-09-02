@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-backgroundprocessmanager
-title: @ohos.resourceschedule.backgroundProcessManager (后台子进程管控)
+title: "@ohos.resourceschedule.backgroundProcessManager (后台子进程管控)"
 breadcrumb: API参考 > 应用框架 > Background Tasks Kit（后台任务开发服务） > ArkTS API > @ohos.resourceschedule.backgroundProcessManager (后台子进程管控)
 category: harmonyos-references
 scraped_at: 2026-04-28T08:05:34+08:00

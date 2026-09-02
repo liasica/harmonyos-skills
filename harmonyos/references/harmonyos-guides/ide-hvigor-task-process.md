@@ -5,7 +5,7 @@ breadcrumb: 指南 > 构建应用 > 概述 > 构建任务说明
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:47:08+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:ba323fae94a2e9a14bce92288d0e198c6f5b4628cb17a80e66b147e8beb60b8a
+content_hash: sha256:abb93d77d7cce76265ed858bf09ea01af3a7f508a0712f00a9910377ac8b5678
 ---
 
 本章节将对构建的任务进行说明，可以更直观地了解到构建的任务流程。
@@ -14,15 +14,15 @@ content_hash: sha256:ba323fae94a2e9a14bce92288d0e198c6f5b4628cb17a80e66b147e8beb
 
 ### HAP基础任务流程图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/pW6GgFocTFueEP4eNFmiyg/zh-cn_image_0000002561832935.png?HW-CC-KV=V1&HW-CC-Date=20260429T054707Z&HW-CC-Expire=86400&HW-CC-Sign=4CB55980E62D8C1BF7509CD9513DA23C6DA424F6D485F7985E7FFE4C5759EC3C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/pW6GgFocTFueEP4eNFmiyg/zh-cn_image_0000002561832935.png)
 
 ### HSP基础任务流程图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/nbUPRGXHR9WtPTAZE2A_hg/zh-cn_image_0000002561752947.png?HW-CC-KV=V1&HW-CC-Date=20260429T054707Z&HW-CC-Expire=86400&HW-CC-Sign=3BB606EF0B5BB50EFDCE5BCDB90D846344C707BD1C0DE56C4331987E255371CA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/nbUPRGXHR9WtPTAZE2A_hg/zh-cn_image_0000002561752947.png)
 
 ### HAR基础任务流程图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/yxiNrPO8SM-nx26SqpVSaw/zh-cn_image_0000002530753016.png?HW-CC-KV=V1&HW-CC-Date=20260429T054707Z&HW-CC-Expire=86400&HW-CC-Sign=2556E9A8EB4C7A06B7AF513F2520517F1632C65740CB3EFC5D13C92A3CB08601)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/yxiNrPO8SM-nx26SqpVSaw/zh-cn_image_0000002530753016.png)
 
 ## 使用命令查看任务
 
@@ -34,7 +34,7 @@ content_hash: sha256:ba323fae94a2e9a14bce92288d0e198c6f5b4628cb17a80e66b147e8beb
 
 获取任务树时会根据工程中的模块将模块中注册的任务以下图形式输出：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/Q8pIMbpnRkqKFa2Yoi2NpQ/zh-cn_image_0000002530913002.png?HW-CC-KV=V1&HW-CC-Date=20260429T054707Z&HW-CC-Expire=86400&HW-CC-Sign=9663CF17DBFC05F37A24AB906C82E698C2D2AA8107F8EF6AFB6B1291872CD200)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/Q8pIMbpnRkqKFa2Yoi2NpQ/zh-cn_image_0000002530913002.png)
 
 执行顺序举例说明：如图所示，assembleHap依赖CollectDebugSymbol，CollectDebugSymbol依赖于PackageHap；则任务执行顺序为PackageHap->CollectDebugSymbol->assembleHap。
 

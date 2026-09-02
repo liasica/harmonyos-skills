@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:51:08+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:dc64ee035c8c837f3f7f6e46eef8ac9ad588e970c132992f62eee68a32d390d2
+content_hash: sha256:a3477d13c65437432a71436bdbe3d5f75c7d3a036567657d475a00691bdf309f
 ---
 
 光标滑动或手写笔在屏幕上悬浮移动扫过组件时触发。
@@ -129,11 +129,11 @@ PhonePC/2in1TabletTVWearable
 
 未悬浮时的文本内容与背景颜色：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/38inCwr4TjGMWh4b0-PtMA/zh-cn_image_0000002589245801.png?HW-CC-KV=V1&HW-CC-Date=20260429T055107Z&HW-CC-Expire=86400&HW-CC-Sign=BF9C7C2D2846392AAF8B781FB04EC8FCC01BB0D72EE1DBF57A438FEB5E997B14)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/38inCwr4TjGMWh4b0-PtMA/zh-cn_image_0000002589245801.png)
 
 手写笔悬浮时改变文本内容与背景颜色：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/qpTPVpKrQsqvh0ZFootY3A/zh-cn_image_0000002558765992.png?HW-CC-KV=V1&HW-CC-Date=20260429T055107Z&HW-CC-Expire=86400&HW-CC-Sign=E704EDDC795A16C92EC2A2E979B267E0CA40205A52315AE98F0EF3CD14E713E1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/qpTPVpKrQsqvh0ZFootY3A/zh-cn_image_0000002558765992.png)
 
 ### 示例2（使用onHoverMove）
 
@@ -166,4 +166,4 @@ PhonePC/2in1TabletTVWearable
 
 手写笔悬浮在Button组件上时，UI不断刷新笔尖的位置信息：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/RWItx-vBRy-byt7hf4oHhg/zh-cn_image_0000002558606334.png?HW-CC-KV=V1&HW-CC-Date=20260429T055107Z&HW-CC-Expire=86400&HW-CC-Sign=B502D0A5FE84FD609BD8A00514F16C72E458CC86ACB4A2A9B7F5EA365C8178ED)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/RWItx-vBRy-byt7hf4oHhg/zh-cn_image_0000002558606334.png)

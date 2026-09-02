@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 在地图上绘�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:39:11+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:4c505b6bcbd6217e39f77519a4047e009ec5185dbf6e90c12c296789386008e8
+content_hash: sha256:f0637becbcf1498882f0e8af9883de902b206e85841b711c6d7de9a46cb58806
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:4c505b6bcbd6217e39f77519a4047e009ec5185dbf6e90c12c296789386
 
 覆盖物，是一种位于底图和底图标注层之间的特殊Overlay，该图层不会遮挡地图标注信息。通过[ImageOverlayParams](../harmonyos-references/map-common.md#imageoverlayparams)类来设置，开发者可以通过[ImageOverlayParams](../harmonyos-references/map-common.md#imageoverlayparams)类设置一张图片，该图片可随地图的平移、缩放、旋转等操作做相应的变换。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/LSqmlX6tS0qhVQMt0--f8g/zh-cn_image_0000002558765544.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053910Z&HW-CC-Expire=86400&HW-CC-Sign=94F0B2BB85BF26E16A8657540B0AFDE4AB261606A9C35873721EF94E1CBEAC18 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/LSqmlX6tS0qhVQMt0--f8g/zh-cn_image_0000002558765544.jpg "点击放大")
 
 ## 接口说明
 

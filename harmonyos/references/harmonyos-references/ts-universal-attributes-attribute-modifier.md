@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:51:31+08:00
 doc_updated_at: 2026-04-02
-content_hash: sha256:dbb870e3798a6b574410fe9eff34c85fbc26ba6248f71e37421064fa70c52ead
+content_hash: sha256:e1573bb35bf6272076de09842040ff3f347dbf2d56fe7a9633780dace3f5ba0c
 ---
 
 动态设置组件的属性，支持开发者在属性设置时使用if/else语法，且根据需要使用多态样式设置属性。
@@ -243,7 +243,7 @@ PhonePC/2in1TabletTVWearable
 33. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/_TNJnVPQQDuArOjm6nzFKw/zh-cn_image_0000002558766094.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055129Z&HW-CC-Expire=86400&HW-CC-Sign=477EB92A4818FF6271A526391D3CB7D4022809083EF10DD9E2E0A2AB4B232416)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/_TNJnVPQQDuArOjm6nzFKw/zh-cn_image_0000002558766094.gif)
 
 ### 示例2（组件绑定Modifier实现按压态效果）
 
@@ -280,7 +280,7 @@ PhonePC/2in1TabletTVWearable
 28. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/4kACcR0kS6mM_RN4Q9iGiA/zh-cn_image_0000002558766094.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055129Z&HW-CC-Expire=86400&HW-CC-Sign=91F382221F5D62B53152AC1797033CF08CA4BD0783B065FCE1772B401B8F4535)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/4kACcR0kS6mM_RN4Q9iGiA/zh-cn_image_0000002558766094.gif)
 
 ### 示例3（自定义Modifier不支持感知@State装饰的状态数据变化）
 
@@ -337,7 +337,7 @@ PhonePC/2in1TabletTVWearable
 48. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/5Ff0i2kkSdCAclqRaxoSlg/zh-cn_image_0000002558606436.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055129Z&HW-CC-Expire=86400&HW-CC-Sign=89DBC7376BA90DD93E06B004B8DD2E2A3EC1F8D86E1188881F8D6AD053189652)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/5Ff0i2kkSdCAclqRaxoSlg/zh-cn_image_0000002558606436.gif)
 
 ### 示例4（Modifier和自定义Modifier的属性同时生效）
 
@@ -402,7 +402,7 @@ PhonePC/2in1TabletTVWearable
 56. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/ItYamWpUQXmNBNFPLQoryQ/zh-cn_image_0000002589325963.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055129Z&HW-CC-Expire=86400&HW-CC-Sign=711226CA85B013C11953413AE654DC7DDCA84762CD526DD1DA212DFF8AB2A208)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/ItYamWpUQXmNBNFPLQoryQ/zh-cn_image_0000002589325963.gif)
 
 ### 示例5（组件绑定Modifier获焦样式）
 
@@ -447,7 +447,7 @@ PhonePC/2in1TabletTVWearable
 36. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/siyo_mmnQAWy1-tipwXwdQ/zh-cn_image_0000002589245905.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055129Z&HW-CC-Expire=86400&HW-CC-Sign=4C8A2583454CCA77D41AC5A8D49B70DE374DF58CACE205593538CC3D4BC40026)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/siyo_mmnQAWy1-tipwXwdQ/zh-cn_image_0000002589245905.gif)
 
 ### 示例6（组件绑定Modifier禁用状态的样式）
 
@@ -486,7 +486,7 @@ PhonePC/2in1TabletTVWearable
 30. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/WTNdLlqhSGezWpsfDM-vWA/zh-cn_image_0000002558766096.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055129Z&HW-CC-Expire=86400&HW-CC-Sign=1E312D7C2BF3CFB07C0AC5FF794C937061FCC54A2E34C33BA56FA19801CE0603)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/WTNdLlqhSGezWpsfDM-vWA/zh-cn_image_0000002558766096.gif)
 
 ### 示例7（组件绑定Modifier选中状态样式）
 
@@ -533,7 +533,7 @@ PhonePC/2in1TabletTVWearable
 38. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/BSDXvl3NSZeH4uSpASATDQ/zh-cn_image_0000002558606438.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055129Z&HW-CC-Expire=86400&HW-CC-Sign=BC19D17F975DDC0AE972EAC4AAFE0B7EC455E4EDC97A7872956532818BD9E5E8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/BSDXvl3NSZeH4uSpASATDQ/zh-cn_image_0000002558606438.gif)
 
 ### 示例8（自定义组件绑定Modifier实现按压态效果）
 
@@ -583,4 +583,4 @@ PhonePC/2in1TabletTVWearable
 41. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/FGkMXorKTHCDaiLHI54bmA/zh-cn_image_0000002589325965.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055129Z&HW-CC-Expire=86400&HW-CC-Sign=8EC9EFF584C041E0100AD699DBFAFA0D8266679F71E86D1C7ADB1A0DCBDD6D61)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/FGkMXorKTHCDaiLHI54bmA/zh-cn_image_0000002589325965.gif)

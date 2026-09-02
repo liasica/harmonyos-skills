@@ -5,7 +5,7 @@ breadcrumb: 指南 > AI > Core Vision Kit（基础视觉服务） > 通用文字
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:43:28+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:d126da907c12a1c9848032959fc1feb91791989bb9e80011767bfd366ec64646
+content_hash: sha256:763a808a11ac49e7a83dcaea4951f752526c81c41140e4e3ad7836d46624c667
 ---
 
 ## 适用场景
@@ -18,7 +18,7 @@ content_hash: sha256:d126da907c12a1c9848032959fc1feb91791989bb9e80011767bfd366ec
 
 效果如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/TzDVXq8xTsyiapIRS3BRYA/zh-cn_image_0000002589325677.png?HW-CC-KV=V1&HW-CC-Date=20260429T054327Z&HW-CC-Expire=86400&HW-CC-Sign=BEA4E46C467E19733CA7C46FE8CD3A9BA41F88E74DA70921FA0139AA9D722D9E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/TzDVXq8xTsyiapIRS3BRYA/zh-cn_image_0000002589325677.png)
 
 ## 约束与限制
 

@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:51:41+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:2d8a388f3c293eb95f645689060ccfe372cc1b59ef705c85f89e43efca051f12
+content_hash: sha256:86f7e2b22201f1d3ffa1ab9ad9a0dc4157e892390ecd0530246f87a24bf5f31d
 ---
 
 栅格布局可以为布局提供规律性的结构，解决多尺寸多设备的动态布局问题，保证不同设备上各个模块的布局一致性。
@@ -195,7 +195,7 @@ PhonePC/2in1TabletTVWearable
 * 新一行的Offset加上子组件的span超过总列数时，将下一个子组件在新的一行放置。
 * 例：Item1: GridCol({ span: 6 })， Item2: GridCol({ span: 8, offset:11 })。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/i7d_2nspTAy9KYD1CgrNxQ/zh-cn_image_0000002589325991.png?HW-CC-KV=V1&HW-CC-Date=20260429T055139Z&HW-CC-Expire=86400&HW-CC-Sign=D3DD18D3D40E099FB3067087CC7E32036A59A0C3A91204CA0FB3DA8897F4DCA5)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/i7d_2nspTAy9KYD1CgrNxQ/zh-cn_image_0000002589325991.png)
 
 **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
 
@@ -304,7 +304,7 @@ PhonePC/2in1TabletTVWearable
 29. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/AaMwOkQLSxi91vEoH16J3g/zh-cn_image_0000002589245933.png?HW-CC-KV=V1&HW-CC-Date=20260429T055139Z&HW-CC-Expire=86400&HW-CC-Sign=A02C5517BB8A3E36F3DE24CCC2EAAB5B7CFEE33265CF3CE46D37CF811CD01F74)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/AaMwOkQLSxi91vEoH16J3g/zh-cn_image_0000002589245933.png)
 
 ### 示例2（AlignItems的基本用法）
 
@@ -372,4 +372,4 @@ PhonePC/2in1TabletTVWearable
 59. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/89-nZ09AS-yOCPelXB29_w/zh-cn_image_0000002558766124.png?HW-CC-KV=V1&HW-CC-Date=20260429T055139Z&HW-CC-Expire=86400&HW-CC-Sign=992C8594C22E19C8047B694EE961E50CDB382707E406C83FB1A5826EE61D30AE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/89-nZ09AS-yOCPelXB29_w/zh-cn_image_0000002558766124.png)

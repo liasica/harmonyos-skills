@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > Form Kit（卡片开发服务） > ArkTS卡�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:29:59+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:b866f69051e0e86dcad22f4088fde277fefad3acc22eba919aa50129c00b98cc
+content_hash: sha256:3c9a11e679b9708143ccd3e24620f20e9ec6d01a7861e0baf4a68fcc5433b723
 ---
 
 从API version 18开始，Form Kit提供在应用内将ArkTS卡片添加到桌面的能力，以方便用户后续便捷查看信息或快速进入应用。
@@ -78,4 +78,4 @@ content_hash: sha256:b866f69051e0e86dcad22f4088fde277fefad3acc22eba919aa50129c00
    ```
 3. 用户可在卡片管理页面，点击“添加至桌面”或者“添加至负一屏”，此时在桌面或者负一屏即可看到新添加的卡片。结果示例如下。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/YrFwASLwSpuXCRNMHQbmyg/zh-cn_image_0000002589324667.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052957Z&HW-CC-Expire=86400&HW-CC-Sign=63839DA13C0E5B295876EB7E8E58F42C9793F1C36B4D9EE7F39092AABE126E15)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/YrFwASLwSpuXCRNMHQbmyg/zh-cn_image_0000002589324667.gif)

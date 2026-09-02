@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (基于
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:28:36+08:00
 doc_updated_at: 2026-04-10
-content_hash: sha256:dd225c2b7796f3c9fc33ed4b5e1a2c905c3cd8c4c3160228c27b92eb6f5214f5
+content_hash: sha256:4c9223400812775f3838375aa0ede6f32e7a5f044abbbe6e8c4aafc3f6d632b7
 ---
 
 ## 概述
@@ -176,7 +176,7 @@ content_hash: sha256:dd225c2b7796f3c9fc33ed4b5e1a2c905c3cd8c4c3160228c27b92eb6f5
 
 点击CreateNodeTree按钮触发在多个非UI线程并行创建Button组件，之后在UI线程将创建完成的Button组件挂载到UI主树上，使组件显示在页面上。点击DisposeNodeTree按钮将已创建的组件从UI主树上卸载并销毁，清空页面。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/n21SIOvdTJeFElpGy_kXqQ/zh-cn_image_0000002558604908.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052835Z&HW-CC-Expire=86400&HW-CC-Sign=77560FB5CCEDEB6B55B5EB15E99AFA26E283B1804C6A841EC5EB897FE7FA5DAB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/n21SIOvdTJeFElpGy_kXqQ/zh-cn_image_0000002558604908.gif)
 
 示例主要展示了如何获取和使用多线程NDK接口，并使用[OH\_ArkUI\_PostAsyncUITask](../harmonyos-references/capi-native-node-h.md#oh_arkui_postasyncuitask)、[OH\_ArkUI\_PostUITask](../harmonyos-references/capi-native-node-h.md#oh_arkui_postuitask)和[OH\_ArkUI\_PostUITaskAndWait](../harmonyos-references/capi-native-node-h.md#oh_arkui_postuitaskandwait)等接口将组件创建和属性设置等任务分发到多线程并行执行。
 

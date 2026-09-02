@@ -5,7 +5,7 @@ breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 >
 category: best-practices
 scraped_at: 2026-04-29T14:12:22+08:00
 doc_updated_at: 2026-03-26
-content_hash: sha256:be3e3178486d923d2f81c6aa249ed50dc92f2639c0db766cb86fb24724a59be2
+content_hash: sha256:7b94edb1db8fed59ff108d20a454c2424105c4faaf4c294091336b79ac93e092
 ---
 
 ## 概述
@@ -149,7 +149,7 @@ HarmonyOS的分层架构包括产品定制层、基础特性层和公共能力�
 
 商品详情页在大屏设备上提供分屏功能，满足用户同时查看两个商品详细参数进行比价的需求。分屏功能通过创建新的UIAbility并设置窗口显示为分屏模式实现。分屏后，左右屏幕的宽度比例为1:1。折叠屏上的效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/sRafgrwHTBucJAZxgffCtA/zh-cn_image_0000002194010156.png?HW-CC-KV=V1&HW-CC-Date=20260429T061211Z&HW-CC-Expire=86400&HW-CC-Sign=9CEBDDA5DD9B25E4677DB5023D53DD33EA5815F0A26BFE6EF2C4605F8F2DE31F "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/sRafgrwHTBucJAZxgffCtA/zh-cn_image_0000002194010156.png "点击放大")
 
 创建新的UIAbility时，在phone目录下创建SecondAbility.ets文件，并注册与EntryAbility相同的UIAbility生命周期回调。下一步，在phone目录下的module.json5配置文件中，修改abilities属性以注册SecondAbility。具体可参考源码。启动分屏时，调用UIAbilityContext的StartAbility接口，设置窗口模式为分屏并启动SecondAbility。关闭分屏时，调用UIAbilityContext的terminateSelf接口。
 
@@ -176,7 +176,7 @@ HarmonyOS的分层架构包括产品定制层、基础特性层和公共能力�
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/q8N0jQRkRAWmZpkzj0DlcQ/zh-cn_image_0000002229335973.png?HW-CC-KV=V1&HW-CC-Date=20260429T061211Z&HW-CC-Expire=86400&HW-CC-Sign=55939A00AD806E90619F8C7E1BCF37DAD1251CBA6B2B1C82A189C1FC079BBC43 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/q8N0jQRkRAWmZpkzj0DlcQ/zh-cn_image_0000002229335973.png "点击放大")
 
 ```
 1. SideBarContainer() {

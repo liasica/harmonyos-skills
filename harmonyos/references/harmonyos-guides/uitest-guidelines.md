@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用测试 > 单元测试和UI测试 > 自动化测试框
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:48:01+08:00
 doc_updated_at: 2026-04-21
-content_hash: sha256:645c8142829a67656c6ac2356897b03652616d5c4e9c5c3bfda8db0bf83ba0fc
+content_hash: sha256:37f6bbe4a2dae1e1e19403b643a6732c3c9016b23f69414afdeac9a713578e70
 ---
 
 ## 概述
@@ -24,7 +24,7 @@ UITest支持采用ArkTS API与命令行两种方式，为界面自动化测试�
 
 支持通过命令行直接实现多元化测试操作，包括获取当前界面截图、获取控件树、录制界面操作流程、便捷注入UI模拟事件等。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/b4jT_BDYRm2jYFQ0eMiKjg/zh-cn_image_0000002550617948.png?HW-CC-KV=V1&HW-CC-Date=20260429T054759Z&HW-CC-Expire=86400&HW-CC-Sign=DBBC0E56CFC2DD6ABF5A36A4B69A05466E95445B3140326C8D7D50B3D25C613A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/b4jT_BDYRm2jYFQ0eMiKjg/zh-cn_image_0000002550617948.png)
 
 UITest分为客户端和服务端。
 

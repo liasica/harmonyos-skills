@@ -5,14 +5,14 @@ breadcrumb: 最佳实践 > 性能 > 性能分析 > 分析内存占用问题 > �
 category: best-practices
 scraped_at: 2026-04-29T14:13:23+08:00
 doc_updated_at: 2026-03-19
-content_hash: sha256:a2802fd92c236408a9e826ccf71e228b44a2f22e876ed06a5f1a932731b4c102
+content_hash: sha256:6056d52eb2b2b0361f7b1d1b909d4b09697fb1fdd1444496116f094eca660138
 ---
 
 ## 基本概念
 
 **内存组成关系图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/JUAAt4E7TcOOkk0ZCrsKqg/zh-cn_image_0000002404124981.png?HW-CC-KV=V1&HW-CC-Date=20260429T061322Z&HW-CC-Expire=86400&HW-CC-Sign=719C46FD6C7891C8DAA5FC538E92820AAF8DCBFEC3471745F4E96835C2E2AE10 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/JUAAt4E7TcOOkk0ZCrsKqg/zh-cn_image_0000002404124981.png "点击放大")
 
 上图展示了内存基础的组成部分（RSS，PSS，VSS，物理内存，Swap）之间的关系, 下表对内存各组成部分进行详细介绍。
 
@@ -47,7 +47,7 @@ content_hash: sha256:a2802fd92c236408a9e826ccf71e228b44a2f22e876ed06a5f1a932731b
 
 **应用内存组成图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/QRrKcVouRumz2ReQhHQQqw/zh-cn_image_0000002370405428.png?HW-CC-KV=V1&HW-CC-Date=20260429T061322Z&HW-CC-Expire=86400&HW-CC-Sign=4F7FF37DF94AB5CD19D2B4F3DAFC0D748D53AFDE9273B6D0CD01B6AF2D90F038 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/QRrKcVouRumz2ReQhHQQqw/zh-cn_image_0000002370405428.png "点击放大")
 
 上图展示了应用进程映射的虚拟内存空间基本的组成部分，下表对内存各组成部分进行详细介绍。
 

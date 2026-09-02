@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:51:09+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:291db1089658e188b21d713021fedecc1a7bbbaad5582e450513a779e312244e
+content_hash: sha256:2e6333bc5a3defcce35f88987e8f4c710628cf490f7dd2e48aa6b8c63bfbff5b
 ---
 
 拖拽事件是指在用户界面中，当用户拖动某个对象（如文件、控件或元素）时触发的一系列事件。这些事件允许开发者自定义拖拽行为，实现诸如拖放、调整位置等功能。
@@ -1189,7 +1189,7 @@ PhonePC/2in1TabletTVWearable
 195. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/d5jjnpnBTBin4qYunB171Q/zh-cn_image_0000002558765986.png?HW-CC-KV=V1&HW-CC-Date=20260429T055107Z&HW-CC-Expire=86400&HW-CC-Sign=0A88AD3D1DECFA051702A88941E432E5F076E53CBE70A0239603B833EA33A40F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/d5jjnpnBTBin4qYunB171Q/zh-cn_image_0000002558765986.png)
 
 ### 示例2（自定义落位动效）
 
@@ -1274,7 +1274,7 @@ PhonePC/2in1TabletTVWearable
 76. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/7rprE33QQB2qM2Ptwhq5Rg/zh-cn_image_0000002558606330.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055107Z&HW-CC-Expire=86400&HW-CC-Sign=2AFF1BCFAC1E008886789835AEBB31627BB9E835F8EF8518B5BC849CFDC028AA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/7rprE33QQB2qM2Ptwhq5Rg/zh-cn_image_0000002558606330.gif)
 
 ### 示例3（拖拽异步获取数据）
 
@@ -1582,7 +1582,7 @@ PhonePC/2in1TabletTVWearable
 171. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/gtIBg9sBRtixBeFnzCaP2A/zh-cn_image_0000002589325857.png?HW-CC-KV=V1&HW-CC-Date=20260429T055107Z&HW-CC-Expire=86400&HW-CC-Sign=D70ABCA994A6A919815752B6598B434AB9644683E556A3CA5434CFF8D6854442)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/gtIBg9sBRtixBeFnzCaP2A/zh-cn_image_0000002589325857.png)
 
 ### 示例5（获取包名和是否是跨设备）
 
@@ -1665,7 +1665,7 @@ PhonePC/2in1TabletTVWearable
 74. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/Rz30_3jORJqugvzVneBmmQ/zh-cn_image_0000002589245799.png?HW-CC-KV=V1&HW-CC-Date=20260429T055107Z&HW-CC-Expire=86400&HW-CC-Sign=FBC92864FBCC610748B49CEF8A8D009221A5091912D00BAF8CC696292250DBD6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/Rz30_3jORJqugvzVneBmmQ/zh-cn_image_0000002589245799.png)
 
 ### 示例6（拖拽支持悬停检测）
 
@@ -1750,7 +1750,7 @@ PhonePC/2in1TabletTVWearable
 76. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/ZMM3hr4lQKSxNckMVqCO4Q/zh-cn_image_0000002558765988.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055107Z&HW-CC-Expire=86400&HW-CC-Sign=D714A4DEA3AFE73690E5458DB87041850389C4F5695671696914AC7805FFE159)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/ZMM3hr4lQKSxNckMVqCO4Q/zh-cn_image_0000002558765988.gif)
 
 ### 示例7（拖起方延迟提供数据）
 
@@ -1901,4 +1901,4 @@ PhonePC/2in1TabletTVWearable
 142. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/_6sUW1R1SYWDbjDNA-E1FA/zh-cn_image_0000002558606332.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055107Z&HW-CC-Expire=86400&HW-CC-Sign=4F22554715AD1418DAE3B81FF8FE2E598B88B2089D341473BC8ED24BED6D9D89)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/_6sUW1R1SYWDbjDNA-E1FA/zh-cn_image_0000002558606332.gif)

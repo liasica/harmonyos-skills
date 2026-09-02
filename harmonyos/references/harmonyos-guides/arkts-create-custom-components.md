@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:27:01+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:c0639dcedbe9bd6ec6b1ecea322b5e215cef73920217aa0c13c10014c5163111
+content_hash: sha256:653cf51025cbcbebc49101ff5805c75264d2d7b3d19dae6c56e428f06043c793
 ---
 
 在ArkUI中，UI显示的内容均为组件，由框架直接提供的称为系统组件，由开发者定义的称为自定义组件。进行UI界面开发时，不仅要组合使用系统组件，还需考虑代码的可复用性、业务逻辑与UI的分离，以及后续版本的演进等因素。因此，将UI和部分业务逻辑封装成自定义组件是不可或缺的能力。
@@ -522,7 +522,7 @@ build()函数用于定义自定义组件的声明式UI描述，自定义组件�
 
   在ArkUI状态管理中，状态驱动UI更新。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/Id3fYeEGT6O3ETNcsd7xsg/zh-cn_image_0000002589243851.png?HW-CC-KV=V1&HW-CC-Date=20260429T052700Z&HW-CC-Expire=86400&HW-CC-Sign=541A4F3E1033512C6BDD98212B6A10FCC1B724223880F8FD65FA6EE4721F0113)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/Id3fYeEGT6O3ETNcsd7xsg/zh-cn_image_0000002589243851.png)
 
   所以，不能在自定义组件的build()或@Builder方法里直接改变状态变量，这可能会造成循环渲染的风险。Text('${this.count++}')在全量更新或最小化更新会产生不同的影响：
 

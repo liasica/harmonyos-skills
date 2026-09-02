@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > U
 category: harmonyos-references
 scraped_at: 2026-04-29T13:50:54+08:00
 doc_updated_at: 2026-04-02
-content_hash: sha256:64bed07c7c21b233eed3c70fd02c81e23d83ca85dc9647266051d740c5f8351d
+content_hash: sha256:db3036db5eba40ad2902264132b06cae47b1daf79ff6e63aaa26c849e948c534
 ---
 
 将属性直接设置给组件，无需标记为状态变量即可直接触发UI更新。
@@ -157,7 +157,7 @@ AttributeUpdater首次设置给组件时提供的样式。
 46. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/sIVjFaRQQLaHFObdM72q1Q/zh-cn_image_0000002558765978.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055047Z&HW-CC-Expire=86400&HW-CC-Sign=29187236888BEDE6F44979C9BA914BB3C80A0F42F2E1439F42E97520F44F8D65)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/sIVjFaRQQLaHFObdM72q1Q/zh-cn_image_0000002558765978.gif)
 
 ### attribute
 
@@ -214,7 +214,7 @@ get attribute(): T | undefined
 30. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/y0_ub02NQQm8k0BgPQ8M5g/zh-cn_image_0000002558606322.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055047Z&HW-CC-Expire=86400&HW-CC-Sign=6A6CB4913DB6E1C567A529844C95E0AACCECB048C29DD16E15B8053BC9067FEE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/y0_ub02NQQm8k0BgPQ8M5g/zh-cn_image_0000002558606322.gif)
 
 ### 属性
 
@@ -265,7 +265,7 @@ PhonePC/2in1TabletTVWearable
 30. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/51WEnFJaR3yxMA7ivDpFcg/zh-cn_image_0000002589325849.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055047Z&HW-CC-Expire=86400&HW-CC-Sign=E09FC836F27535E75B576804AB365D66552133EEB7C5B4ECF3866A89C4200333)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/51WEnFJaR3yxMA7ivDpFcg/zh-cn_image_0000002589325849.gif)
 
 ### onComponentChanged
 
@@ -334,4 +334,4 @@ onComponentChanged(component: T): void
 44. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/fT6ECJgySPev7xFlaQn-Ww/zh-cn_image_0000002589245791.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055047Z&HW-CC-Expire=86400&HW-CC-Sign=D3D20C99EA2933BB07007CAC239A62C5E2F276FE1F35EA24052784269B79FB34)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/fT6ECJgySPev7xFlaQn-Ww/zh-cn_image_0000002589245791.gif)

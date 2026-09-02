@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用服务 > Account Kit（华为账号服务） > 获取
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:36:53+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:59118daa370b0bbb7735f7b2c9bda6070b1c0c44e7475cfe75593221e877bf62
+content_hash: sha256:fbe051f33006f976b4487cf00795018a2668845352acd9ea687712da0e405302
 ---
 
 ## 场景介绍
@@ -18,15 +18,15 @@ content_hash: sha256:59118daa370b0bbb7735f7b2c9bda6070b1c0c44e7475cfe75593221e87
 
 **图1** 手机端快速验证手机号（请以实际效果为准）
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/DAGeVhTDT2ersA3G4gKO8g/zh-cn_image_0000002558765254.png?HW-CC-KV=V1&HW-CC-Date=20260429T053651Z&HW-CC-Expire=86400&HW-CC-Sign=6D78FA0DAAA4E30C8B16B68B0D187B39A23D785E293CA7951B158FC3B1FDBD60 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/DAGeVhTDT2ersA3G4gKO8g/zh-cn_image_0000002558765254.png "点击放大")
 
 **图2** Wearable设备快速验证手机号（请以实际效果为准）
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/tcft1iwLTsWUCXSTqeBjxQ/zh-cn_image_0000002558605598.png?HW-CC-KV=V1&HW-CC-Date=20260429T053651Z&HW-CC-Expire=86400&HW-CC-Sign=53AFC5399D2A33456C6634D8DFF7ACA15D8AD7C28A1AA86E560FF80555A00165 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/tcft1iwLTsWUCXSTqeBjxQ/zh-cn_image_0000002558605598.png "点击放大")
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/YM9LjdHMQY-2UgRI1tQ0cQ/zh-cn_image_0000002589325125.png?HW-CC-KV=V1&HW-CC-Date=20260429T053651Z&HW-CC-Expire=86400&HW-CC-Sign=C3B21E18BB1C5F4B987EBD39A400C6C0C0FF2CF5C28EF363F543572B4C746FB9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/YM9LjdHMQY-2UgRI1tQ0cQ/zh-cn_image_0000002589325125.png)
 
 流程说明：
 

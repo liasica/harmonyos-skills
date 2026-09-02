@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用服务 > Push Kit（推送服务） > 端云调试 > 
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:39:57+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:df192121b384754029518db0b59db20cc39a299ecf6f58a954a06d740dcd6080
+content_hash: sha256:014ecec44b23b910b9ae3636fa0545941e4c378c01e431911b462165e007746e
 ---
 
 [推送场景化消息](push-scenes-send.md)章节中囊括了Push Kit的所有推送场景，每个推送场景的开发可大致分为两大步骤：
@@ -17,7 +17,7 @@ content_hash: sha256:df192121b384754029518db0b59db20cc39a299ecf6f58a954a06d740dc
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/3J3DfsZRTLyWe70DqSalIA/zh-cn_image_0000002589245437.png?HW-CC-KV=V1&HW-CC-Date=20260429T053956Z&HW-CC-Expire=86400&HW-CC-Sign=9BC5D0811DD4293BD590CE2532A647CD507EEC6775F3079C18400AB8A827A35D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/3J3DfsZRTLyWe70DqSalIA/zh-cn_image_0000002589245437.png)
 
 Push Kit云侧主要业务流程如下：
 

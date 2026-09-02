@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用服务 > AppGallery Kit（应用市场服务） > 应
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:37:12+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:2c735f5a04d8f654067b2f700d4556872be7149e9ee0069be365fdb5fc5f9c13
+content_hash: sha256:5d9d08d60bad10b038e0abed67d5eaace987c2e64a13f9189eedb99d8a798a5e
 ---
 
 应用归因服务是华为提供的不依赖用户标识符的端侧归因能力。
@@ -14,7 +14,7 @@ content_hash: sha256:2c735f5a04d8f654067b2f700d4556872be7149e9ee0069be365fdb5fc5
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/PjgkBbdcQm6m03zw5CuGzw/zh-cn_image_0000002589325151.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053711Z&HW-CC-Expire=86400&HW-CC-Sign=971A962599B664D92FD83B2E69F79B3CFD60CCAA7903529525B61CA11BC801F8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/PjgkBbdcQm6m03zw5CuGzw/zh-cn_image_0000002589325151.jpg)
 
 业务流程中各任务描述如下：
 

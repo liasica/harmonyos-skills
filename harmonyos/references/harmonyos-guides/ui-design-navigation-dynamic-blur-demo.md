@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > UI Design Kit（UI设计套件） > 组件�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:30:21+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:448f2714a304258f51fcdae0f4a960cdb6090e2133c9bf8a7014e94b7228e4b1
+content_hash: sha256:c29c3dfc2ddf2ada80a2425b154d36bc3279f81896d669ac4fb3d16de10765ab
 ---
 
 1. 在首页创建一级导航，适用于需要构建具有导航结构的主界面，支持动态标题栏样式切换与页面跳转功能。通过titleBar接口设置导航栏的内容和样式，包括标题、菜单项、返回按钮等元素。通过pushPath路由方法跳转至二级导航页面。
@@ -366,4 +366,4 @@ content_hash: sha256:448f2714a304258f51fcdae0f4a960cdb6090e2133c9bf8a7014e94b722
    17. }
    ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/WVa9erlDRuKnelFmRTTXPg/zh-cn_image_0000002558605180.gif?HW-CC-KV=V1&HW-CC-Date=20260429T053020Z&HW-CC-Expire=86400&HW-CC-Sign=1BA322BF96047E62B6705484EE6B3C6CC8404BFA2B52B2294C3A444F131C3CD8 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/WVa9erlDRuKnelFmRTTXPg/zh-cn_image_0000002558605180.gif "点击放大")

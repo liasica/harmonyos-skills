@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-queue
-title: @ohos.util.Queue (线性容器Queue)
+title: "@ohos.util.Queue (线性容器Queue)"
 breadcrumb: API参考 > 应用框架 > ArkTS（方舟编程语言） > ArkTS API > @ohos.util.Queue (线性容器Queue)
 category: harmonyos-references
 scraped_at: 2026-04-28T08:00:10+08:00

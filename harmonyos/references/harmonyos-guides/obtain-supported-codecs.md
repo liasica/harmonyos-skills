@@ -5,7 +5,7 @@ breadcrumb: 指南 > 媒体 > AVCodec Kit（音视频编解码服务） > 音视
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:34:39+08:00
 doc_updated_at: 2026-03-20
-content_hash: sha256:8c1afaf2088eda49a30d0a58ef088b2692a3f71a93316bf48ba815d29aae5ed8
+content_hash: sha256:35574994b34f3e02c28106f188349b189739c93e401667565c02159bb586ae3f
 ---
 
 因来源、编解码协议及设备能力的不同，导致不同设备上可用的编解码器及其能力存在差异。
@@ -528,7 +528,7 @@ SQR码控模式示例如下。
 
 根据视频高度计算最大视频宽度的公式如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/-Kcl-3BSQuO6uANjk2Pd6A/zh-cn_image_0000002558765040.png?HW-CC-KV=V1&HW-CC-Date=20260429T053437Z&HW-CC-Expire=86400&HW-CC-Sign=F96E3B98DEB746A9CB9A25CD9BD5C6EAB73087AD5D4A6DF3623840F16DD0EC3E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/-Kcl-3BSQuO6uANjk2Pd6A/zh-cn_image_0000002558765040.png)
 
 MaxMBsPerFrameLevelLimits表示协议限定的编解码器最大每帧宏块数，MaxMBsPerFrameSubmit表示编解码器上报的最大每帧宏块数，实际能力取这两者的最小值。
 
@@ -636,7 +636,7 @@ MaxMBsPerFrameLevelLimits表示协议限定的编解码器最大每帧宏块数�
 
 根据视频的宽度和高度，计算最大帧率的公式如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/_OqnoJVJRYuP8nQ3RK4LMA/zh-cn_image_0000002558605384.png?HW-CC-KV=V1&HW-CC-Date=20260429T053437Z&HW-CC-Expire=86400&HW-CC-Sign=C71DA7258E7E5B100DA95AF7D16F6B147CF82993E6F9BA3A479D736C3C156E1A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/_OqnoJVJRYuP8nQ3RK4LMA/zh-cn_image_0000002558605384.png)
 
 MaxMBsPerSecondLevelLimits表示协议限定的编解码器最大每秒宏块数，MaxMBsPerSecondSubmit表示编解码器上报的最大每秒宏块数，实际能力取这两者的最小值。
 

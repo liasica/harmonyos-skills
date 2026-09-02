@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:28:11+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:e63e6fd76ed71dc37b4858efd1d4deb976d43f96e8d641becdd5b2c27038fa05
+content_hash: sha256:67b9b3bb15761e925b88c0fc1055e1875443ad198d103287821706df38ad79bd
 ---
 
 模态转场是新的界面覆盖在旧的界面上，旧的界面不消失的一种转场方式。
@@ -259,7 +259,7 @@ content_hash: sha256:e63e6fd76ed71dc37b4858efd1d4deb976d43f96e8d641becdd5b2c2703
 
 [BindContentCoverDemo.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/Animation/entry/src/main/ets/pages/modalTransition/template1/BindContentCoverDemo.ets#L16-L209)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/65IjgJuYRmeDTVCg2hto9w/zh-cn_image_0000002558604818.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052809Z&HW-CC-Expire=86400&HW-CC-Sign=F15D881ED8E5653D8145A462E34D5AAD3E1F3B14E8D8E00BA3A79432FBE65A9E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/65IjgJuYRmeDTVCg2hto9w/zh-cn_image_0000002558604818.gif)
 
 ## 使用bindSheet构建半模态转场效果
 
@@ -378,7 +378,7 @@ content_hash: sha256:e63e6fd76ed71dc37b4858efd1d4deb976d43f96e8d641becdd5b2c2703
 
 [BindSheetDemo.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/Animation/entry/src/main/ets/pages/modalTransition/template2/BindSheetDemo.ets#L16-L124)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/UWuooijPRYGPEX6pj6kWfQ/zh-cn_image_0000002589324343.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052809Z&HW-CC-Expire=86400&HW-CC-Sign=37D7E804AD7F0EEB2395B5D7603558039B1C3515B1B317F2AA8EBE5310A6D304)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/UWuooijPRYGPEX6pj6kWfQ/zh-cn_image_0000002589324343.gif)
 
 ## 使用bindMenu实现菜单弹出效果
 
@@ -436,7 +436,7 @@ content_hash: sha256:e63e6fd76ed71dc37b4858efd1d4deb976d43f96e8d641becdd5b2c2703
 
 [BindMenuDemo.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/Animation/entry/src/main/ets/pages/modalTransition/template3/BindMenuDemo.ets#L16-L65)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/BCi2PWGLRiqCtEPsAHmjhQ/zh-cn_image_0000002589244283.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052809Z&HW-CC-Expire=86400&HW-CC-Sign=4512BACDA2B3877CA476ACFF20E410F1C339681E5A2E26637FF211A5A25D9F74)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/BCi2PWGLRiqCtEPsAHmjhQ/zh-cn_image_0000002589244283.gif)
 
 ## 使用bindContextMenu实现菜单弹出效果
 
@@ -519,7 +519,7 @@ content_hash: sha256:e63e6fd76ed71dc37b4858efd1d4deb976d43f96e8d641becdd5b2c2703
 
 [BindContextMenuDemo.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/Animation/entry/src/main/ets/pages/modalTransition/template4/BindContextMenuDemo.ets#L16-L88)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/526mFTneSA6PkvU_1G_C8g/zh-cn_image_0000002558764476.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052809Z&HW-CC-Expire=86400&HW-CC-Sign=C2AF996F11CF8215E150FC98B9CCDF7668809FFF2051D530A10F9C969BFDD6A7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/526mFTneSA6PkvU_1G_C8g/zh-cn_image_0000002558764476.gif)
 
 ## 使用bindPopup实现气泡弹窗效果
 
@@ -583,7 +583,7 @@ content_hash: sha256:e63e6fd76ed71dc37b4858efd1d4deb976d43f96e8d641becdd5b2c2703
 
 [BindPopupDemo.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/Animation/entry/src/main/ets/pages/modalTransition/template5/BindPopupDemo.ets#L16-L69)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/DqfRUFfATKmbXco5fd64uA/zh-cn_image_0000002558604820.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052809Z&HW-CC-Expire=86400&HW-CC-Sign=31148AB7E1500B16FDD40AAE4AB18DD1543CDEB636E34F827A8C623015F47ABA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/DqfRUFfATKmbXco5fd64uA/zh-cn_image_0000002558604820.gif)
 
 ## 使用if实现模态转场
 
@@ -791,4 +791,4 @@ content_hash: sha256:e63e6fd76ed71dc37b4858efd1d4deb976d43f96e8d641becdd5b2c2703
 
 [ModalTransitionWithIf.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/Animation/entry/src/main/ets/pages/modalTransition/template6/ModalTransitionWithIf.ets#L16-L213)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/AU8iR0czTfi3cXWRhvRRpQ/zh-cn_image_0000002589324345.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052809Z&HW-CC-Expire=86400&HW-CC-Sign=6F30FEF96ED69A7B2EDD0313876259C7789FF078095C4F62BFE960A8E13A809C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/AU8iR0czTfi3cXWRhvRRpQ/zh-cn_image_0000002589324345.gif)

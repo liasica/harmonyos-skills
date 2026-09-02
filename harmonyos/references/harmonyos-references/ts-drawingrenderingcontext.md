@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:52:35+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:d2d02774fc9dfd49d5d7a3522cdad7dbfe3eb90aef516564cdcd41452dc65679
+content_hash: sha256:5caa86c07ad511f1167c5aed0efc5452860be6a7a64e8af2f6ece0b2134eda1f
 ---
 
 DrawingRenderingContext对象与Canvas组件绑定后，可在Canvas组件上进行绘制，绘制对象可以是形状、文本、图片等。
@@ -171,11 +171,11 @@ PhonePC/2in1TabletTVWearable
 
 图1 绘制圆心为(200, 200)，半径为100的圆，填充色为RGBA(39, 135, 217, 255)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/mSqwP2ChQBCBsSjGzwKuGg/zh-cn_image_0000002589246301.png?HW-CC-KV=V1&HW-CC-Date=20260429T055230Z&HW-CC-Expire=86400&HW-CC-Sign=7A9D26D165081A23403F1AA9478341C9A90E3BF93AC55CFCD7EF17125F2859CF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/mSqwP2ChQBCBsSjGzwKuGg/zh-cn_image_0000002589246301.png)
 
 图2 点击Clear按钮清空画布
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/bJZT-CB6THKaVKQkQud7GA/zh-cn_image_0000002558766494.png?HW-CC-KV=V1&HW-CC-Date=20260429T055230Z&HW-CC-Expire=86400&HW-CC-Sign=6C6E7A2C9713DAA64F21FB24083F85DEEDBC831A9FBE19645499DF0E51AEFB17)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/bJZT-CB6THKaVKQkQud7GA/zh-cn_image_0000002558766494.png)
 
 ### 示例2（绘制文本）
 
@@ -214,4 +214,4 @@ PhonePC/2in1TabletTVWearable
 30. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/zMX_2pnoSUavxLHg1MmJiA/zh-cn_image_0000002558606834.png?HW-CC-KV=V1&HW-CC-Date=20260429T055230Z&HW-CC-Expire=86400&HW-CC-Sign=3B65BB5144C3992A29B685AC5A2598C477813A9DA881115FC17002E304F833BB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/zMX_2pnoSUavxLHg1MmJiA/zh-cn_image_0000002558606834.png)

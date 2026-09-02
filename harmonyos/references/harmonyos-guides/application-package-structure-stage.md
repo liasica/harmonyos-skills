@@ -5,7 +5,7 @@ breadcrumb: 指南 > 基础入门 > 开发基础知识 > 应用程序包基础�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:25:27+08:00
 doc_updated_at: 2026-04-10
-content_hash: sha256:d6a2c61355bb05960af842f3afc93e24a1e2e5078a7e637408ee213d955d2a54
+content_hash: sha256:9e8cce99e21c776bcd1a93d0918c296b48935c3811e4347f4260b7a0eecad9db
 ---
 
 为了让开发者能对应用程序包在不同阶段的形态有更加清晰的认知，分别对开发态、编译态、发布态的应用程序结构展开介绍。
@@ -16,7 +16,7 @@ content_hash: sha256:d6a2c61355bb05960af842f3afc93e24a1e2e5078a7e637408ee213d955
 
 **图1** 项目工程结构示意图（以实际为准）
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/KJyPM8VwQb6ZRxUuzrA_pg/zh-cn_image_0000002589243771.png?HW-CC-KV=V1&HW-CC-Date=20260429T052526Z&HW-CC-Expire=86400&HW-CC-Sign=856FBF514278A4EF227D18FFA460A7208414B04F79BD75D2F79FAC8FDF45841F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/KJyPM8VwQb6ZRxUuzrA_pg/zh-cn_image_0000002589243771.png)
 
 说明
 
@@ -38,7 +38,7 @@ content_hash: sha256:d6a2c61355bb05960af842f3afc93e24a1e2e5078a7e637408ee213d955
 
 **图2** 开发态与编译态的工程结构视图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/BEN3ueKhSz6o_XjphWVdig/zh-cn_image_0000002558763966.png?HW-CC-KV=V1&HW-CC-Date=20260429T052526Z&HW-CC-Expire=86400&HW-CC-Sign=639E38CBCCFF4C96B0DE827140F7250E4F8820274F79CACAF4A0E3F0EEC2A1E4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/BEN3ueKhSz6o_XjphWVdig/zh-cn_image_0000002558763966.png)
 
 从开发态到编译态，Module文件变更如下：
 
@@ -59,4 +59,4 @@ content_hash: sha256:d6a2c61355bb05960af842f3afc93e24a1e2e5078a7e637408ee213d955
 
 **图3** 编译发布与上架部署流程图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/x9SDuWinTQC3bbPR8s--ig/zh-cn_image_0000002558604310.png?HW-CC-KV=V1&HW-CC-Date=20260429T052526Z&HW-CC-Expire=86400&HW-CC-Sign=8EECF2FB951D2E28DBD15557C85EA8ADC2C10BAEBE63A8805D133136623419E4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/x9SDuWinTQC3bbPR8s--ig/zh-cn_image_0000002558604310.png)

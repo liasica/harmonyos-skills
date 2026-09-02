@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:28:45+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:6055a9c0ee22a5ecb3a2c37f3a4ec931b8dcfae94ec8a759a0bccdeb64a3bd6f
+content_hash: sha256:d05af6ba47a5cfcc506302162504001c1afb3df6d6e55592a8923afb6f0cfec9
 ---
 
 list是用来显示列表的组件，包含一系列相同宽度的列表项，适合连续、多行地呈现同类数据。具体用法请参考[list API](../harmonyos-references/js-components-container-list.md)。
@@ -42,7 +42,7 @@ list是用来显示列表的组件，包含一系列相同宽度的列表项，�
 13. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/EtJtINm6TnqBwmypQqjrDA/zh-cn_image_0000002558764576.png?HW-CC-KV=V1&HW-CC-Date=20260429T052844Z&HW-CC-Expire=86400&HW-CC-Sign=0D4241F47D9A2BD0027270CE0116CB04CBCB62DE8E1E37748F62EC8CE64D902C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/EtJtINm6TnqBwmypQqjrDA/zh-cn_image_0000002558764576.png)
 
 说明
 
@@ -85,7 +85,7 @@ list是用来显示列表的组件，包含一系列相同宽度的列表项，�
 15. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/3Qi1qrTbQxOZ35s1erEZVg/zh-cn_image_0000002558604920.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052844Z&HW-CC-Expire=86400&HW-CC-Sign=62D1E8F124D11CD6830683C1B6053238878C370BB6229F9F941FAC9949A282E1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/3Qi1qrTbQxOZ35s1erEZVg/zh-cn_image_0000002558604920.gif)
 
 ## 添加侧边索引栏
 
@@ -113,7 +113,7 @@ list是用来显示列表的组件，包含一系列相同宽度的列表项，�
 10. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/MsMS8D0FRXCmGFb_qMiUcg/zh-cn_image_0000002589324445.png?HW-CC-KV=V1&HW-CC-Date=20260429T052844Z&HW-CC-Expire=86400&HW-CC-Sign=9357C82299F7D73BCAF3BD50C0CF360D54CF27052AC208BB88A36FF65D779752)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/MsMS8D0FRXCmGFb_qMiUcg/zh-cn_image_0000002589324445.png)
 
 说明
 
@@ -195,7 +195,7 @@ list是用来显示列表的组件，包含一系列相同宽度的列表项，�
 28. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/nKjwNLksRlmDpSptT750og/zh-cn_image_0000002589244385.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052844Z&HW-CC-Expire=86400&HW-CC-Sign=4B7D13C2BA201B99A98AFDC57F01DD549B778C27670C9793B8DFA7F9DBBFD59D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/nKjwNLksRlmDpSptT750og/zh-cn_image_0000002589244385.gif)
 
 说明
 
@@ -306,4 +306,4 @@ list是用来显示列表的组件，包含一系列相同宽度的列表项，�
 38. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/F2lzmYT3RveZCVsUie3ytA/zh-cn_image_0000002558764578.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052844Z&HW-CC-Expire=86400&HW-CC-Sign=2A9E9AA6824A0A4D9A1117339A8DB9FB391F17184E5420B24CCAA7BADDE0CE31)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/F2lzmYT3RveZCVsUie3ytA/zh-cn_image_0000002558764578.gif)

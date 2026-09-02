@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-type
-title: @Type装饰器：标记类属性的类型
+title: "@Type装饰器：标记类属性的类型"
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理（V2） > 管理数据对象的状态 > @Type装饰器：标记类属性的类型
 category: harmonyos-guides
 scraped_at: 2026-04-28T07:39:10+08:00

@@ -5,7 +5,7 @@ breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 >
 category: best-practices
 scraped_at: 2026-04-29T14:12:03+08:00
 doc_updated_at: 2026-03-19
-content_hash: sha256:58b0ad58fab06819382aefaacf8e9156fffc856ba39f000a3ab9e052ce40b36b
+content_hash: sha256:5f97787d3ed0ccf13df990f2e925516b344892003be4ce627a743c453d844ddb
 ---
 
 HarmonyOS基于“一次开发，多端部署”的理念设计了响应式布局，旨在帮助开发者高效构建适应不同设备的应用界面。系统通过统一的UI框架、响应式布局能力——断点和栅格，让应用页面能够根据代码的差异化实现自动适应从手机、折叠屏、平板到PC/2in1等各种终端形态。
@@ -272,7 +272,7 @@ HarmonyOS基于“一次开发，多端部署”的理念设计了响应式布�
 
 对于聊天页面的双栏路由模式切换，开发者可以抽象为：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/SjbQvD6lQ-K1uh25AYapnw/zh-cn_image_0000002509292755.png?HW-CC-KV=V1&HW-CC-Date=20260429T060943Z&HW-CC-Expire=86400&HW-CC-Sign=CB510B824E77322A59B8B047159233A1ADA3A10C495D65D728F68B5B579B77EB "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/SjbQvD6lQ-K1uh25AYapnw/zh-cn_image_0000002509292755.png "点击放大")
 
 **示例代码**
 
@@ -380,7 +380,7 @@ HarmonyOS基于“一次开发，多端部署”的理念设计了响应式布�
 
 对于邮箱页面的一多分栏变化，开发者可以抽象为：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/T6ScMH7aSQyt90QbZc9mMw/zh-cn_image_0000002509132789.png?HW-CC-KV=V1&HW-CC-Date=20260429T060943Z&HW-CC-Expire=86400&HW-CC-Sign=4CFC29A990E0993247A0E4076857AD0148189D74A903BAFE84382D703B75B95C "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/T6ScMH7aSQyt90QbZc9mMw/zh-cn_image_0000002509132789.png "点击放大")
 
 **示例代码**
 
@@ -446,7 +446,7 @@ HarmonyOS基于“一次开发，多端部署”的理念设计了响应式布�
 
 在三分栏的单栏布局中，通常展示的重点是Navigation的内容区。但在某些场景下，内容区的优先级低于导航区，例如日历日程功能。在这种情况下，单栏布局会优先展示日历（即Navigation的导航区）。效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/QL3DQlPTRsylBj7Ne_aOrg/zh-cn_image_0000002509292759.png?HW-CC-KV=V1&HW-CC-Date=20260429T060943Z&HW-CC-Expire=86400&HW-CC-Sign=0BEE06D75AEA54445A17A13E6C143E75F96A51AC63ADEFF8B3E4D7EE2B4EC293 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/QL3DQlPTRsylBj7Ne_aOrg/zh-cn_image_0000002509292759.png "点击放大")
 
 日历日程分为三个层级，账户信息->日历->日程，开发者通常在单栏显示日历，双栏显示日历、日程，三栏显示账户信息、日历、日程。日历日程页面与邮箱页面的主要区别在于，日历日程页面的单栏页面重点显示Navigation导航栏，邮箱页面的单栏重点显示Navigation内容区。
 

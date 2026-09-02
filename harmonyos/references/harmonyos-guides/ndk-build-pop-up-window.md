@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (基于
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:28:33+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:786477fa0370912661b901cc4a8a2b07854492ab76f6da6390f3bd8c51438fab
+content_hash: sha256:f642d3e744625f7cd307563aa3b444f2a6021a609daf4fa5976c5269a7a61bda
 ---
 
 可以通过创建弹窗控制器和创建自定义弹窗的内容对象两种方法显示自定义弹窗，设置其样式和内容。
@@ -310,7 +310,7 @@ content_hash: sha256:786477fa0370912661b901cc4a8a2b07854492ab76f6da6390f3bd8c514
 
      [nativedialogdemo.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/NativeDialogSample/entry/src/main/cpp/customdialog/nativedialogdemo.cpp#L289-L312)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/qBpzcxAwSzSOCEGqlaoatw/zh-cn_image_0000002558604902.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052832Z&HW-CC-Expire=86400&HW-CC-Sign=A6D6101C447B23EC3E227CDE9FBE6030D3E9A2BD464F2B7CF91BA59A8B54AEFF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/qBpzcxAwSzSOCEGqlaoatw/zh-cn_image_0000002558604902.gif)
 
 ## 弹窗的生命周期
 

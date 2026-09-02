@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:27:56+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:9e5439b4e5ea3dd0f4cbc613b187ecb718c3f2f8b1d947c3982972efafef0a7e
+content_hash: sha256:9fd285f7aff8b7ccfc23d258c96f71c21d119a8b630d12cc079aaeaef56b6ee4
 ---
 
 Menu是菜单接口，一般用于鼠标右键弹窗、点击弹窗等。具体用法请参考[菜单控制](../harmonyos-references/ts-universal-attributes-menu.md)。
@@ -32,7 +32,7 @@ Menu是菜单接口，一般用于鼠标右键弹窗、点击弹窗等。具体�
 
 [CreateDefaultMenu.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/DialogProject/entry/src/main/ets/pages/Menu/CreateDefaultMenu.ets#L25-L35)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/YTH5PsDPSGuFy6l1-qak7g/zh-cn_image_0000002589324273.png?HW-CC-KV=V1&HW-CC-Date=20260429T052755Z&HW-CC-Expire=86400&HW-CC-Sign=2D61A13DB72FA4E06BEF3A8044CE90F277BB7028D1F60D73D0925D6EF54B597B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/YTH5PsDPSGuFy6l1-qak7g/zh-cn_image_0000002589324273.png)
 
 ## 创建自定义样式的菜单
 
@@ -136,7 +136,7 @@ Menu是菜单接口，一般用于鼠标右键弹窗、点击弹窗等。具体�
 
 [BuilderCustomMenu.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/DialogProject/entry/src/main/ets/pages/Menu/BuilderCustomMenu.ets#L99-L102)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/WhOLLrr-Ro-0Dqg9aUNWdA/zh-cn_image_0000002589244213.png?HW-CC-KV=V1&HW-CC-Date=20260429T052755Z&HW-CC-Expire=86400&HW-CC-Sign=60D08ADE25BE6B6DBFA39EBF044A7F94759B6A32D6FDB138774CFE1AB216D6CB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/WhOLLrr-Ro-0Dqg9aUNWdA/zh-cn_image_0000002589244213.png)
 
 ## 创建支持右键或长按的菜单
 
@@ -262,7 +262,7 @@ Menu是菜单接口，一般用于鼠标右键弹窗、点击弹窗等。具体�
 
 [SupportAvoidCentralAxisMenu.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/DialogProject/entry/src/main/ets/pages/Menu/SupportAvoidCentralAxisMenu.ets#L16-L93)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/fF-3Ax1zQw-1jjgqfvLCfA/zh-cn_image_0000002558764406.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052755Z&HW-CC-Expire=86400&HW-CC-Sign=49EF7207D6119465629209605919AE10A40A242C5CBEDE3C2804365D234A7A04)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/fF-3Ax1zQw-1jjgqfvLCfA/zh-cn_image_0000002558764406.gif)
 
 ## 控制子窗菜单的事件透传
 
@@ -313,7 +313,7 @@ Menu是菜单接口，一般用于鼠标右键弹窗、点击弹窗等。具体�
 
 [EventTransSubWindowMenu.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/DialogProject/entry/src/main/ets/pages/Menu/EventTransSubWindowMenu.ets#L15-L59)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/jo567o9fQaOEfVH65cREyA/zh-cn_image_0000002558604750.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052755Z&HW-CC-Expire=86400&HW-CC-Sign=79E76EE8A468B9609B46C51720F74347D55C696FC98BC71AFF540243C6C6E941)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/jo567o9fQaOEfVH65cREyA/zh-cn_image_0000002558604750.gif)
 
 ## 基于绑定组件指定位置弹出菜单
 
@@ -372,4 +372,4 @@ Menu是菜单接口，一般用于鼠标右键弹窗、点击弹窗等。具体�
 
 [BindComponentMenu.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/DialogProject/entry/src/main/ets/pages/Menu/BindComponentMenu.ets#L15-L59)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/W4jAcmFHQoqmFpYBNjQ6vw/zh-cn_image_0000002589324275.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052755Z&HW-CC-Expire=86400&HW-CC-Sign=48888F860DBC307717735ED53759ED95445A8AF68DF5D29AB75EF46EAF84497D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/W4jAcmFHQoqmFpYBNjQ6vw/zh-cn_image_0000002589324275.gif)

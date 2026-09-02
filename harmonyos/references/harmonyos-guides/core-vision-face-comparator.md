@@ -5,7 +5,7 @@ breadcrumb: 指南 > AI > Core Vision Kit（基础视觉服务） > 人脸比对
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:43:28+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:c2d916a79aeb246036791530f761a5fccd95ec25727b912cab4090c83c373ed6
+content_hash: sha256:ef3098bf84cf069348358fc11dcb4b50a970cb827fd9e18995441b52ec5276ff
 ---
 
 ## 适用场景
@@ -14,7 +14,7 @@ content_hash: sha256:c2d916a79aeb246036791530f761a5fccd95ec25727b912cab4090c83c3
 
 效果如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/WHeSEHc0RjKn35uGmGJ1Lg/zh-cn_image_0000002558606152.png?HW-CC-KV=V1&HW-CC-Date=20260429T054327Z&HW-CC-Expire=86400&HW-CC-Sign=78F23A1AE836A62D8A2FD183730A9AB9679F9570EC9DAF3EC03E99957626806A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/WHeSEHc0RjKn35uGmGJ1Lg/zh-cn_image_0000002558606152.png)
 
 ## 约束与限制
 

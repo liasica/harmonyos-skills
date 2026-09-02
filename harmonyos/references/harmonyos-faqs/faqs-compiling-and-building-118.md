@@ -5,14 +5,14 @@ breadcrumb: FAQ > DevEco Studio > 编译构建 > 编译报错“The path XX is n
 category: harmonyos-faqs
 scraped_at: 2026-04-29T14:20:45+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:5ef9bfcbfc31d2da204dabf6d9baaf040a737e5d1180f5b3d23311e7857090b7
+content_hash: sha256:b8eacf74de4c8e8242e6f6fd4b84870f11c577f37330c4ebeaa1320f3c8b5c1e
 ---
 
 **问题现象**
 
 在Mac上，通过打开DMG文件中的DevEco Studio图标启动DevEco Studio时，如果构建报错“The path XX is not writable. please choose a new location”，请选择一个新的位置。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/g2YlPHR7SrunzWHIMCAaAg/zh-cn_image_0000002229604193.png?HW-CC-KV=V1&HW-CC-Date=20260429T062044Z&HW-CC-Expire=86400&HW-CC-Sign=AECA4AAD4CFF704C0A25BA8742578B97318FBDB9934A469DC9FD8F9824DAEDC3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/g2YlPHR7SrunzWHIMCAaAg/zh-cn_image_0000002229604193.png)
 
 **问题原因**
 

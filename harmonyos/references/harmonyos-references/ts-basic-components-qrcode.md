@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:52:22+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:e8ce30ba8cead26d65286496b79703aa38f91d40131330f64770c1099d42f250
+content_hash: sha256:e29e6a2ca6f0c0069e73916e02f2517806574e3fbb99d2a7d8b6c0b2d741a2d4
 ---
 
 用于显示单个二维码的组件。
@@ -149,7 +149,7 @@ PhonePC/2in1TabletTVWearable
 25. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/ixjPrcsqTYa8ni8PqjH5Ww/zh-cn_image_0000002589326309.png?HW-CC-KV=V1&HW-CC-Date=20260429T055221Z&HW-CC-Expire=86400&HW-CC-Sign=5B4A5526CB74AD3BD2BDA21C497A8C7CB5B88320C1E3F59FCF8C4DA77A0A3520)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/ixjPrcsqTYa8ni8PqjH5Ww/zh-cn_image_0000002589326309.png)
 
 ### 示例2（设置背景颜色为透明）
 
@@ -175,4 +175,4 @@ PhonePC/2in1TabletTVWearable
 17. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/K0xIqF-hTUKtkj8VoAArhQ/zh-cn_image_0000002589246251.png?HW-CC-KV=V1&HW-CC-Date=20260429T055221Z&HW-CC-Expire=86400&HW-CC-Sign=095AD51D131DD254384936A0D8337474E0F5CE46E71BC1383B38A8241DB4F546)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/K0xIqF-hTUKtkj8VoAArhQ/zh-cn_image_0000002589246251.png)

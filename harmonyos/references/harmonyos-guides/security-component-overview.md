@@ -5,7 +5,7 @@ breadcrumb: 指南 > 系统 > 安全 > 程序访问控制 > 使用安全控件 >
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:30:37+08:00
 doc_updated_at: 2026-03-20
-content_hash: sha256:ff81308dcd20679071ca6d8f284de8971f4bfc3f9b5d78116830c44ba2687560
+content_hash: sha256:a797b892b15d3d1f4e80d28550fd249c451032fdeffdf573c49d170c975224ab
 ---
 
 安全控件是系统提供的一组ArkUI基础组件，包括保存控件和粘贴控件。它们可以作为一种“特殊的按钮”融入应用页面，实现用户“点击即许可”的设计思路。
@@ -43,7 +43,7 @@ content_hash: sha256:ff81308dcd20679071ca6d8f284de8971f4bfc3f9b5d78116830c44ba26
 
 开发者调用接口时，运作流程如图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/v72xN9R_QxqR2KoW6cMlqQ/zh-cn_image_0000002589244663.png?HW-CC-KV=V1&HW-CC-Date=20260429T053036Z&HW-CC-Expire=86400&HW-CC-Sign=5DB309F592A374AF4D2A2D4AB8AED1183841D9ED139B5E617E5F0E65AB6515E6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/v72xN9R_QxqR2KoW6cMlqQ/zh-cn_image_0000002589244663.png)
 
 1. 应用开发者在ETS文件中集成安全控件，通过JS引擎解析后，在ArkUI框架中生成具体的控件。
 2. 安全控件注册控件信息到安全控件管理服务，安全控件管理服务检查控件信息的合法性。

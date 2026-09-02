@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > Form Kit（卡片开发服务） > ArkTS卡�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:29:57+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:9ba9aeec57f7bbc1070e310efcd42a0d06336632f27971dfe1c16398f7a67baa
+content_hash: sha256:02dec8b50a27546fe3a68b27558e5a609adcdd411fb631a9bf1d8288222f8c90
 ---
 
 本文主要提供主动刷新的开发指导，刷新流程请参考[主动刷新概述](arkts-ui-widget-interaction-overview.md#主动刷新)。
@@ -189,7 +189,7 @@ content_hash: sha256:9ba9aeec57f7bbc1070e310efcd42a0d06336632f27971dfe1c16398f7a
 
 ### 运行结果
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/Anbu2hmFTQ6O_kTUicxBSA/zh-cn_image_0000002558764794.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052954Z&HW-CC-Expire=86400&HW-CC-Sign=B289170C85351814E02EEA77F76D1158C402825F2634FAE2268312574EA1E27D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/Anbu2hmFTQ6O_kTUicxBSA/zh-cn_image_0000002558764794.gif)
 
 ## 卡片提供方批量请求刷新卡片内容
 
@@ -353,4 +353,4 @@ content_hash: sha256:9ba9aeec57f7bbc1070e310efcd42a0d06336632f27971dfe1c16398f7a
 
 ### 运行结果
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/mx2W6NRtS-aCdn1QrhpryQ/zh-cn_image_0000002558605138.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052954Z&HW-CC-Expire=86400&HW-CC-Sign=62578189E087F61D895561338FD13212786E6F837B9E05FD14E0D79EEC061C63)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/mx2W6NRtS-aCdn1QrhpryQ/zh-cn_image_0000002558605138.gif)

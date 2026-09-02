@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:52:20+08:00
 doc_updated_at: 2026-04-10
-content_hash: sha256:8dfba3bad3d0ef8940067e3ab0c80bc2f9c6784c4ce8cb2da89122b78bf7d3a3
+content_hash: sha256:157dc590c58b92a5c7d87c58e1bd98879503f88bbecf1bed6edc1100fdd80844
 ---
 
 可以与容器组件联动用于按逻辑结构快速定位容器显示区域的组件。
@@ -767,7 +767,7 @@ PhonePC/2in1TabletTVWearable
 107. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/WyBgvw3ERA6qaygpi5zBfw/zh-cn_image_0000002589326291.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055215Z&HW-CC-Expire=86400&HW-CC-Sign=DF2BD71D57B9012A956D29C3272C3E9200864E40E9CF2221345FBB76F76C7575)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/WyBgvw3ERA6qaygpi5zBfw/zh-cn_image_0000002589326291.gif)
 
 ### 示例2（开启自适应折叠模式）
 
@@ -909,7 +909,7 @@ PhonePC/2in1TabletTVWearable
 133. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/3VccQO-0TfuVGlkcJcRFKQ/zh-cn_image_0000002589246233.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055215Z&HW-CC-Expire=86400&HW-CC-Sign=409809156A68F5224C07BFD15674FE272C8AEDBB36E1E6A464F1D029516A27C5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/3VccQO-0TfuVGlkcJcRFKQ/zh-cn_image_0000002589246233.gif)
 
 ### 示例3（设置提示弹窗背景模糊材质）
 
@@ -1040,4 +1040,4 @@ PhonePC/2in1TabletTVWearable
 122. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/tF816-bqS4Gco8jr0MEQlA/zh-cn_image_0000002558766426.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055215Z&HW-CC-Expire=86400&HW-CC-Sign=364957F92C41BAC40511421F1C5F63B65A0099929E44DEC3DADF7804B32EA947)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/tF816-bqS4Gco8jr0MEQlA/zh-cn_image_0000002558766426.gif)

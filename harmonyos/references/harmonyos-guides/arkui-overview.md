@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > ArkUI简介
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:26:59+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:053cb5cd62ece7b165c5c07272193b3d4369c9a63e92282692c48aeb8cfce556
+content_hash: sha256:06ff393ebc9279c6afc67ae8dfcdd87b377eb097542aa38052f28a0926b7542e
 ---
 
 ArkUI（方舟UI框架）为应用的UI开发提供了完整的基础设施，包括简洁的UI语法、丰富的UI功能（组件、布局、动画以及交互事件），以及实时界面预览工具等，可以支持开发者进行可视化界面开发。
@@ -30,7 +30,7 @@ ArkUI（方舟UI框架）为应用的UI开发提供了完整的基础设施，�
 
   **图1** 方舟UI框架示意图
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/wxJUvEI0QvKeAUsb3uClgg/zh-cn_image_0000002589243849.png?HW-CC-KV=V1&HW-CC-Date=20260429T052658Z&HW-CC-Expire=86400&HW-CC-Sign=3AB1C369462E6EBB76B726F4562B75A74B26068A40F5C72990E312194F299A69)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/wxJUvEI0QvKeAUsb3uClgg/zh-cn_image_0000002589243849.png)
 
 ## 不同应用类型支持的开发范式
 

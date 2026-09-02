@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用服务 > AppGallery Kit（应用市场服务） > 图
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:37:15+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:5dc191100b992d396bc9a700901843c2ee9641734ceb05de7ab44aab3da73a35
+content_hash: sha256:1d68833b38254748d272fc243672fb2a253284d55b6a61c766097722f2c1cc83
 ---
 
 AppGallery Kit为使用动态图标的应用客户端提供查询动态图标信息、切换动态图标、恢复默认图标功能。
@@ -28,7 +28,7 @@ AppGallery Kit为使用动态图标的应用客户端提供查询动态图标信
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/y0u3lsmmQPiZDA8NyijKNw/zh-cn_image_0000002589245099.png?HW-CC-KV=V1&HW-CC-Date=20260429T053714Z&HW-CC-Expire=86400&HW-CC-Sign=8D3AC8A334914BA6C8374B5AB8C97D97E3F105B8A350E25A3022DB527A097C07)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/y0u3lsmmQPiZDA8NyijKNw/zh-cn_image_0000002589245099.png)
 
 ### 查询动态图标信息
 

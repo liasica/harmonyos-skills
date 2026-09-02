@@ -5,7 +5,7 @@ breadcrumb: 指南 > 图形 > Graphics Accelerate Kit（图形加速服务） > 
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:36:33+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:2045543f3ff752e91bcfb374b87f6d620a78e003a8355b5f88705ab8db5034e9
+content_hash: sha256:c2c798f334958d66573127f11d788449d61dd1f5e0e63c2f7a1be239f77383b1
 ---
 
 由于外插模式需要标记模板缓冲（Stencil Buffer）的第8位用于区分静态物体和动态物体，即静态物体模板值第8位标记成0，动态物体模板值第8位标记成1，模板缓冲的低7位模板值开发者可自行设置。如果标记错误或漏标记，可能会在动态物体边缘产生严重的拖影现象。
@@ -14,19 +14,19 @@ content_hash: sha256:2045543f3ff752e91bcfb374b87f6d620a78e003a8355b5f88705ab8db5
 
 Demo中运动角色出现头身分离等严重拖影现象，角色头部向右偏。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/qlwWQsMeSwGg9IHxPnSVcw/zh-cn_image_0000002558605574.png?HW-CC-KV=V1&HW-CC-Date=20260429T053632Z&HW-CC-Expire=86400&HW-CC-Sign=A4DDB0D19B2B728B37B4F9599E30E4E9CE283E453B96987F156D538B477FFF14)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/qlwWQsMeSwGg9IHxPnSVcw/zh-cn_image_0000002558605574.png)
 
 **原因分析**
 
 通过抓帧查看模板缓冲中的模板值，发现头发区域模板值为0，身体区域模板值为0x80。由于角色头、身均属于运动目标区域，应该将所有运动物体区域的模板值第8位标记为1。错误的头部区域模板值导致超帧效果出现头身分离的严重拖影现象。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/_sMcNPmWQD2u1vTCIRF6Bg/zh-cn_image_0000002589325101.png?HW-CC-KV=V1&HW-CC-Date=20260429T053632Z&HW-CC-Expire=86400&HW-CC-Sign=07A9FE5F0B18731CFFE6ED521E15888F7D972379E948408CAB478B35DF3CF81B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/_sMcNPmWQD2u1vTCIRF6Bg/zh-cn_image_0000002589325101.png)
 
 **处理步骤**
 
 基于分析结论，造成头身分离拖影现象的主要原因是运动区域模板值未统一标记为1xxx xxxx。因此将运动角色头发和面部区域的模板值统一改为0x80，保持和身体模板值一致，头身分离的拖影现象消失，效果如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/aitik_tKQjC6au_6NfeWaw/zh-cn_image_0000002589245037.png?HW-CC-KV=V1&HW-CC-Date=20260429T053632Z&HW-CC-Expire=86400&HW-CC-Sign=614238F09E190ACFB77C74644C8BC6762931068D012DDCA7FB55D5F4FD01A4DD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/aitik_tKQjC6au_6NfeWaw/zh-cn_image_0000002589245037.png)
 
 **代码示例**
 

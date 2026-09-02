@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:52:54+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:7bccae3302222d81720725bb1ac38e633bfd072bb1d2059277e4418de1d627c8
+content_hash: sha256:2c0183cba711a44c1f94c5c19eebd433ec122e2d8a7b7076b0afbb87ca4247f2
 ---
 
 自定义组件的生命周期回调函数用于通知用户该自定义组件的生命周期，这些回调函数是私有的，在运行时由开发框架在特定的时间进行调用，不能从应用程序中手动调用这些回调函数。不要在多个窗口复用同一个自定义组件节点，其生命周期可能会紊乱。
@@ -160,7 +160,7 @@ onBackPress?(): void | boolean
 33. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/_rCPdwKeQrWLYR5CccDdoQ/zh-cn_image_0000002589246423.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055253Z&HW-CC-Expire=86400&HW-CC-Sign=0B227252E2D9383E2E0A7557743C8638CEB754A2ECA614FD5E02C84B2111561A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/_rCPdwKeQrWLYR5CccDdoQ/zh-cn_image_0000002589246423.gif)
 
 ## onNewParam19+
 
@@ -568,7 +568,7 @@ V1：
 66. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/o7zqNq4bSuuH5FpLswG-nw/zh-cn_image_0000002558766616.png?HW-CC-KV=V1&HW-CC-Date=20260429T055253Z&HW-CC-Expire=86400&HW-CC-Sign=29977077D78E2374EA39D08A0D8ABE38D967775445DFE5F7B2724B88C0C6C235)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/o7zqNq4bSuuH5FpLswG-nw/zh-cn_image_0000002558766616.png)
 
 V2：
 
@@ -641,7 +641,7 @@ V2：
 66. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/tG_tjAABSyqjT6fy2jqWoA/zh-cn_image_0000002558606956.png?HW-CC-KV=V1&HW-CC-Date=20260429T055253Z&HW-CC-Expire=86400&HW-CC-Sign=A2608461CC38442A3EDC18D7384318E934C3DCE477BDC5E412BD947BA375CA6F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/tG_tjAABSyqjT6fy2jqWoA/zh-cn_image_0000002558606956.png)
 
 ## pageTransition9+
 

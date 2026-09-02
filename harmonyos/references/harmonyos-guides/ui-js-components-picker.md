@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:28:48+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:d07775ad625431aa1d79403d0aed1b789b9612c339c7bbc2674dd53558b49d14
+content_hash: sha256:3416686d4fb0b052f82205a9c65d6b22d28df2e59823b66ee477c43043cd7aae
 ---
 
 picker是滑动选择器组件，类型支持普通选择器、日期选择器、时间选择器、时间日期选择器和多列文本选择器。具体用法请参考[picker](../harmonyos-references/js-components-basic-picker.md)。
@@ -33,7 +33,7 @@ picker是滑动选择器组件，类型支持普通选择器、日期选择器�
 9. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/S7miCPMZRAufXGCAD0UiEQ/zh-cn_image_0000002558604940.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052846Z&HW-CC-Expire=86400&HW-CC-Sign=7E0047D7A00A192AEF3831D1BB0CE93CC8E2643038DE51326408505C607CE12D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/S7miCPMZRAufXGCAD0UiEQ/zh-cn_image_0000002558604940.gif)
 
 ## 设置picker类型
 
@@ -73,7 +73,7 @@ picker是滑动选择器组件，类型支持普通选择器、日期选择器�
 8. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/zFnL4OHyQIuEH1hx1_ufsw/zh-cn_image_0000002589324465.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052846Z&HW-CC-Expire=86400&HW-CC-Sign=AC2948F19CE5706C93F38476AB164AFE6B13B4FF96ACA5190AA6F14E487CF6A0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/zFnL4OHyQIuEH1hx1_ufsw/zh-cn_image_0000002589324465.gif)
 
 说明
 
@@ -108,7 +108,7 @@ picker组件的hours属性用于设置时间显示格式，支持12小时制和2
 14. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/gl8Uv5N4Rmq_zms02sEPFg/zh-cn_image_0000002589244405.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052846Z&HW-CC-Expire=86400&HW-CC-Sign=A5B1319E76E5B34DE9F35104912CE183BBEDC7F75535670FA50A1A3E8EA2E501)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/gl8Uv5N4Rmq_zms02sEPFg/zh-cn_image_0000002589244405.gif)
 
 说明
 
@@ -165,7 +165,7 @@ picker组件的hours属性用于设置时间显示格式，支持12小时制和2
 16. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/sDkl-Wx7TGKQR4M128O7Pw/zh-cn_image_0000002558764598.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052846Z&HW-CC-Expire=86400&HW-CC-Sign=3D3E7E5C34BC8AC761404189813D6741C702684F212DB78F90B2738FFFED0BC8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/sDkl-Wx7TGKQR4M128O7Pw/zh-cn_image_0000002558764598.gif)
 
 ## 场景示例
 
@@ -292,4 +292,4 @@ picker组件的hours属性用于设置时间显示格式，支持12小时制和2
 46. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/qzfZVktGSoGyNEsqAhTufQ/zh-cn_image_0000002558604942.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052846Z&HW-CC-Expire=86400&HW-CC-Sign=30C6CC2C4B6E51EEB08AA550C7211E338C750209D9E5BA81F9A3D35B5FAE09D3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/qzfZVktGSoGyNEsqAhTufQ/zh-cn_image_0000002558604942.gif)

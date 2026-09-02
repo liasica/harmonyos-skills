@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-cardemulation
-title: @ohos.nfc.cardEmulation (标准NFC-cardEmulation)
+title: "@ohos.nfc.cardEmulation (标准NFC-cardEmulation)"
 breadcrumb: API参考 > 系统 > 网络 > Connectivity Kit（短距通信服务） > ArkTS API > @ohos.nfc.cardEmulation (标准NFC-cardEmulation)
 category: harmonyos-references
 scraped_at: 2026-04-28T08:08:00+08:00

@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > Form Kit（卡片开发服务） > ArkTS卡�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:30:01+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:7500477830969512b958645d71d8d94672fcc5ee97e49342bf03f59b8a351b28
+content_hash: sha256:a657220257193483878c7ab27e9b474f37a90d82bb687cda2d49b92e10fa54f6
 ---
 
 从API version 20开始，支持互动卡片。互动卡片提供卡片动效能力，例如卡片破框动效，丰富信息提醒、浅层交互功能，显著提升用户体验。
@@ -20,7 +20,7 @@ content_hash: sha256:7500477830969512b958645d71d8d94672fcc5ee97e49342bf03f59b8a3
 
 **图1** 趣味交互类型互动卡片样例
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/l2tFzxDyQwe-sIFNClm4Ww/zh-cn_image_0000002558605150.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052959Z&HW-CC-Expire=86400&HW-CC-Sign=2803873317B1ACFB86B82049528C4A4BDB276F61AD82345CC4F7752B8F0DC9A2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/l2tFzxDyQwe-sIFNClm4Ww/zh-cn_image_0000002558605150.gif)
 
 ### 场景动效类型
 

@@ -1,16 +1,16 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-and-building-41
-title: 编译时DevEco Studio报错App Launch: To run and debug the Harmony device, configure the HarmonyOS runtime
-breadcrumb: FAQ > DevEco Studio > 编译构建 > 编译时DevEco Studio报错App Launch: To run and debug the Harmony device, configure the HarmonyOS runtime
+title: "编译时DevEco Studio报错App Launch: To run and debug the Harmony device, configure the HarmonyOS runtime"
+breadcrumb: "FAQ > DevEco Studio > 编译构建 > 编译时DevEco Studio报错App Launch: To run and debug the Harmony device, configure the HarmonyOS runtime"
 category: harmonyos-faqs
 scraped_at: 2026-04-29T14:20:29+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:68d9a8368f8d00a0235674c6dda9fde876aae1edf7b3be57dfa25acbe774909d
+content_hash: sha256:95de8ff7428a60ea02beaf6eead0afeb0e8e122c6e88f133bda5f13e2de9f9c7
 ---
 
 **问题现象**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/sG9UYE1gSvelFqXDRthy7Q/zh-cn_image_0000002229604181.png?HW-CC-KV=V1&HW-CC-Date=20260429T062028Z&HW-CC-Expire=86400&HW-CC-Sign=FAD4592AD39F35706365EA63E09881D6A5BBBD5B447124898F23F0BE31E17B38)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/sG9UYE1gSvelFqXDRthy7Q/zh-cn_image_0000002229604181.png)
 
 **解决措施**
 

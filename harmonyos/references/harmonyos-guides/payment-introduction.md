@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用服务 > Payment Kit（鸿蒙支付服务） > Paymen
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:39:26+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:c9c6cf776d44de4ea41ab100b413cf556f1077a547e18815d72b0c7c963c71d8
+content_hash: sha256:e8f0082fdfc0333b53a00a8510444c15b623c69b5a8bf20130bd6b637c244aab
 ---
 
 Payment Kit（鸿蒙支付服务）提供了方便、安全和快捷的支付方式，开发者在开发的商户应用/元服务中接入支付服务便捷且快速。
@@ -83,23 +83,23 @@ Payment Kit支持的支付能力如下：
 
 华为支付接入顺序如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/MrJYWrqXSh2wlnBTHMbFQw/zh-cn_image_0000002589325441.png?HW-CC-KV=V1&HW-CC-Date=20260429T053925Z&HW-CC-Expire=86400&HW-CC-Sign=CD6ACD79E2E1A562291A3C1F2C045F02922D493A9396B8663A60381385931772)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/MrJYWrqXSh2wlnBTHMbFQw/zh-cn_image_0000002589325441.png)
 
 [数字人民币支付](payment-digital-cny-pay.md)接入顺序如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/0SHkZgl-T7SdXh3KcSh3VQ/zh-cn_image_0000002589245379.png?HW-CC-KV=V1&HW-CC-Date=20260429T053925Z&HW-CC-Expire=86400&HW-CC-Sign=E94D23BC35DCC4BAD1B3443B58E75BEB5E4AC707BCC620C91519F86F2887B5E8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/0SHkZgl-T7SdXh3KcSh3VQ/zh-cn_image_0000002589245379.png)
 
 通用收银台[混合支付场景](payment-common-pay-mix.md)接入顺序如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/ieT7qGrmSuiy0pmMb-Xx8Q/zh-cn_image_0000002558765572.png?HW-CC-KV=V1&HW-CC-Date=20260429T053925Z&HW-CC-Expire=86400&HW-CC-Sign=F556AF057511C8CFC4DEB46D7EDC59DF83B78BF33E85A7A115CF44E388B079B2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/ieT7qGrmSuiy0pmMb-Xx8Q/zh-cn_image_0000002558765572.png)
 
 通用收银台[纯外部支付场景](payment-common-pay-external.md)接入顺序如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/vlqA1ucxRKC0j65TVgLdSA/zh-cn_image_0000002558605916.png?HW-CC-KV=V1&HW-CC-Date=20260429T053925Z&HW-CC-Expire=86400&HW-CC-Sign=E7F8E101E3D98ACFBF5AE3B4C7527890B60D8BFE991648E8575C70ACF04447B8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/vlqA1ucxRKC0j65TVgLdSA/zh-cn_image_0000002558605916.png)
 
 用户身份验证服务、人脸核身实人验证接入顺序如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/Kpvrb5uUSdirIoTaGt8TkA/zh-cn_image_0000002589325443.png?HW-CC-KV=V1&HW-CC-Date=20260429T053925Z&HW-CC-Expire=86400&HW-CC-Sign=44A22C60CA64B5DB145EC737E7B981EA61E493CA7BDBC9E71CE4F551B797C8FF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/Kpvrb5uUSdirIoTaGt8TkA/zh-cn_image_0000002589325443.png)
 
 ## 约束与限制
 

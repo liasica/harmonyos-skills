@@ -5,7 +5,7 @@ breadcrumb: 指南 > 系统 > 硬件 > Driver Development Kit（驱动开发服�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:33:30+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:734e8ddb94fdd46f7f0d533c8c2c27aeb0d235f4b28628c25f40ccb4a5160e00
+content_hash: sha256:64264a08f7a2b6d5e2dbdfcfe71be9e312497ae78ddabc217198f93223473d3c
 ---
 
 Driver Development Kit（驱动开发套件）为外设驱动开发者提供高效、安全、丰富的扩展外设驱动开发解决方案ArkTS-API和C-API，支持外设驱动开发者为消费者带来外设即插即用的极致体验。
@@ -46,7 +46,7 @@ HDF扩展驱动框架为扩展外设驱动开发，提供稳定统一的外设�
 
 **图1** 扩展外设驱动原理图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/4nRT-hFAS4CeuQB4b6qe2w/zh-cn_image_0000002589244777.png?HW-CC-KV=V1&HW-CC-Date=20260429T053330Z&HW-CC-Expire=86400&HW-CC-Sign=4552EA63D27BB612D2732A2456B1D3D67478FD682DB8FC581299FFD0251E16BE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/4nRT-hFAS4CeuQB4b6qe2w/zh-cn_image_0000002589244777.png)
 
 ### 运作流程
 
@@ -54,13 +54,13 @@ HDF扩展驱动框架为扩展外设驱动开发，提供稳定统一的外设�
 
 **图2** 非标外设与对应扩展外设驱动应用匹配的时序图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/T1wX5dG7Tz6rgzM9R78NTQ/zh-cn_image_0000002558764972.png?HW-CC-KV=V1&HW-CC-Date=20260429T053330Z&HW-CC-Expire=86400&HW-CC-Sign=787C719857AAA8D1BB8373849CF7FB3B72CDC46CB8EDB93E30D2617CB887ED7F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/T1wX5dG7Tz6rgzM9R78NTQ/zh-cn_image_0000002558764972.png)
 
 用户使用扩展外设驱动客户端时，扩展外设驱动客户端与扩展外设驱动的绑定流程如图3所示。
 
 **图3** 扩展外设驱动客户端与扩展外设驱动绑定的时序图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/KOsFFcL_S2ykPrdwBknq7g/zh-cn_image_0000002558605316.png?HW-CC-KV=V1&HW-CC-Date=20260429T053330Z&HW-CC-Expire=86400&HW-CC-Sign=919009A5DE17CC91654F888655B0DD25C7B2875AED2E4A26DBDD6888C2736263)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/KOsFFcL_S2ykPrdwBknq7g/zh-cn_image_0000002558605316.png)
 
 ## 约束与限制
 

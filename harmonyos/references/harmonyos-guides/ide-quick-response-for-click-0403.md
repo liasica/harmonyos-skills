@@ -5,7 +5,7 @@ breadcrumb: 指南 > 编写与调试应用 > 开发自测试 > 应用与元服�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:47:04+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:b6eb34ea1bae3b359d75d83f74bdc8df173ef4f8de70f9414e6a1a387122f86f
+content_hash: sha256:9c6b74c34a109f98782d41c502a4e5d872269edc6ef98a19582ea552a3217396
 ---
 
 ## 规则详情
@@ -30,7 +30,7 @@ content_hash: sha256:b6eb34ea1bae3b359d75d83f74bdc8df173ef4f8de70f9414e6a1a38712
   H:APP\_TABS\_FLING
 * 备注：由于trace的响应时延小于用户实际感知的时延，所以目前点击类算法会补偿20ms。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/XKA786f5RyWJAdUSgIhB4A/zh-cn_image_0000002530913286.png?HW-CC-KV=V1&HW-CC-Date=20260429T054703Z&HW-CC-Expire=86400&HW-CC-Sign=573B523DB1ED57A0B834A8979265EAC4B8B6DF8D8BC2E65053CE2539CF4B9791)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/XKA786f5RyWJAdUSgIhB4A/zh-cn_image_0000002530913286.png)
 
 ## 计算逻辑
 

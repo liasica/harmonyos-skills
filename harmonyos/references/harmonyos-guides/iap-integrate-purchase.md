@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用服务 > IAP Kit（应用内支付服务） > 商品�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:38:37+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:9d4706593090228f52e8984d16c64fcf4d4d1e5cf5cd56002fd3eaca6bd399ac
+content_hash: sha256:a22b869170a7664137a8dd67dc468dd4705c0190b0532f5bb3019fa2a8075873
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:9d4706593090228f52e8984d16c64fcf4d4d1e5cf5cd56002fd3eaca6bd
 
 在接入消耗型/非消耗型商品购买能力前，需要提前[配置商品信息](iap-config-product.md)。用户在应用内购买时，应用拉起IAP Kit的收银台，收银台处会展示商品名称、商品价格等信息，用户根据需求完成商品购买。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/-G0bON6vR_agewMPE5udkQ/zh-cn_image_0000002558765424.png?HW-CC-KV=V1&HW-CC-Date=20260429T053501Z&HW-CC-Expire=86400&HW-CC-Sign=8027FE385B8E83F1F68C7DCEDADE895FCB3FE489D85515CCF40D92348B195E30)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/-G0bON6vR_agewMPE5udkQ/zh-cn_image_0000002558765424.png)
 
 ## 提供优惠
 
@@ -37,7 +37,7 @@ content_hash: sha256:9d4706593090228f52e8984d16c64fcf4d4d1e5cf5cd56002fd3eaca6bd
 
 如下业务流程对于单机应用同样适用。在单机应用中，应用服务器和应用客户端的交互放在应用客户端完成，应用服务器和IAP服务器交互的部分可不处理。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/VeGSM57ETP-wsUNLiPxScw/zh-cn_image_0000002558605768.png?HW-CC-KV=V1&HW-CC-Date=20260429T053501Z&HW-CC-Expire=86400&HW-CC-Sign=D01FE82FA861EA905FE26741CD26E365C923AAA257CCAF153D97B1581C161F7C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/VeGSM57ETP-wsUNLiPxScw/zh-cn_image_0000002558605768.png)
 
 **展示商品**
 

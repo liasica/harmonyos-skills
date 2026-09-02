@@ -5,7 +5,7 @@ breadcrumb: FAQ > DevEco Studio > 编译构建 > 编译报错“Invalid tag 'xxx
 category: harmonyos-faqs
 scraped_at: 2026-04-29T14:20:55+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:b864ec9763c2aa0e663137adf93a732bd6ab5138a32457482b1dc9a38ca00c09
+content_hash: sha256:fed36a9998d7dfe0ed72c3acd4aa1be183b4d3bbea8741c4ca38462a4b8c431a
 ---
 
 **错误描述**
@@ -16,7 +16,7 @@ content_hash: sha256:b864ec9763c2aa0e663137adf93a732bd6ab5138a32457482b1dc9a38ca
 
 在项目根目录的oh-package.json5文件中定义parameterFile参数配置文件的配置版本号时，使用的tag标签包含不符合要求的字符。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/xcSiXKFtRBKaj7rDpDQkxQ/zh-cn_image_0000002229758505.png?HW-CC-KV=V1&HW-CC-Date=20260429T062054Z&HW-CC-Expire=86400&HW-CC-Sign=7ED9F9B3D2F0C11599BA6B46F33E9B19DB152D7DF6A28D7FE4A8DC48A860916B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/xcSiXKFtRBKaj7rDpDQkxQ/zh-cn_image_0000002229758505.png)
 
 **解决措施**
 

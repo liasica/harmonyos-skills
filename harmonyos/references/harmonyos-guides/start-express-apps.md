@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > Stage�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:25:53+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:8eeedee071d84318d44289fbaddce43b21db0c792375ed5f6b16ae10667b8c5b
+content_hash: sha256:59114031e046dc627797c38b90c52c09d7c56865dc9a082f03a59997e0643ebb
 ---
 
 本章节介绍如何拉起快递类应用扩展面板。
@@ -76,7 +76,7 @@ startAbilityByType接口中type字段为express，支持查询快递意图，对
 
    效果示例图：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/9_0ouS-WQMig0NXRMyF-PQ/zh-cn_image_0000002589243805.png?HW-CC-KV=V1&HW-CC-Date=20260429T052552Z&HW-CC-Expire=86400&HW-CC-Sign=20ADF2B6267816DF7153EDC1CD175E754C9073BEC73914592CD48FC4895ECCAC)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/9_0ouS-WQMig0NXRMyF-PQ/zh-cn_image_0000002589243805.png)
 
 ## 目标方开发步骤
 

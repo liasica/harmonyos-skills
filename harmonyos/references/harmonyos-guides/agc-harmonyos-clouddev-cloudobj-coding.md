@@ -5,7 +5,7 @@ breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > 端云�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:45:01+08:00
 doc_updated_at: 2026-01-21
-content_hash: sha256:969aca54124b05c7ab94c29f26f0376a15bbcf03ddf02902a3a90021e4901408
+content_hash: sha256:5efb6b48017ae1f76557ad6d1bf8979a06bf00cd228683ddab1ab91ef1b39cb0
 ---
 
 云对象创建完成后，您便可以直接在云对象中编写需要实现的方法。例如，通过云对象实现add与subtract两个方法。
@@ -23,7 +23,7 @@ content_hash: sha256:969aca54124b05c7ab94c29f26f0376a15bbcf03ddf02902a3a90021e49
    8. }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/wENWXiT4Si2Oba5cUs5QcA/zh-cn_image_0000002179338600.png?HW-CC-KV=V1&HW-CC-Date=20260429T054500Z&HW-CC-Expire=86400&HW-CC-Sign=38188679C9913E84438E1E3625B985DC5D60CC01A027F487306B54CF5F24D5BD)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/wENWXiT4Si2Oba5cUs5QcA/zh-cn_image_0000002179338600.png)
 
    注意
 
@@ -41,8 +41,8 @@ content_hash: sha256:969aca54124b05c7ab94c29f26f0376a15bbcf03ddf02902a3a90021e49
 
    右击“package.json”文件，选择“Run 'npm install'”菜单，也可以实现依赖包安装。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/rcxs25jEQcK6xJHTR0KSrg/zh-cn_image_0000002425894173.png?HW-CC-KV=V1&HW-CC-Date=20260429T054500Z&HW-CC-Expire=86400&HW-CC-Sign=1A26BA1E11F73D795B5228B22A660EF24BE3AB45C73340B844547614B68F4221)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/rcxs25jEQcK6xJHTR0KSrg/zh-cn_image_0000002425894173.png)
 
    所有安装的依赖包都会存储在当前云对象的“node\_modules”目录下。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/Kjp6XYZrQwmQyNZJ8xqeug/zh-cn_image_0000002425974957.png?HW-CC-KV=V1&HW-CC-Date=20260429T054500Z&HW-CC-Expire=86400&HW-CC-Sign=AB0F6FFFCD9CF43361E27CA4F0CE4D54B81BB179D654E5CBC0AF98E657B0FC3D)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/Kjp6XYZrQwmQyNZJ8xqeug/zh-cn_image_0000002425974957.png)

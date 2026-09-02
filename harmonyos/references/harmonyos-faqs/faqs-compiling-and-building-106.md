@@ -4,7 +4,7 @@ title: 编译过程内存过高
 category: harmonyos-faqs
 scraped_at: 2026-04-29T14:20:42+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:ecc853a1ba89ca361b31debc5d7ec9ffda5acdddf1d92b0bbd9f133691b1e709
+content_hash: sha256:1ba5d67fd6f099754f65f74f6c1c665fd4d2fb8dbdec0ffc06522933f1325581
 ---
 
 **问题现象**
@@ -43,7 +43,7 @@ content_hash: sha256:ecc853a1ba89ca361b31debc5d7ec9ffda5acdddf1d92b0bbd9f133691b
 * 如果上述修改未能达到预期效果，可以尝试使用非并行模式执行编译。
   + 在菜单栏中依次点击“File > Settings > Build, Execution, Deployment > Build Tools > Hvigor”，取消勾选“Execute tasks in parallel mode”。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/urfqROBTRvW9dk58fCShLA/zh-cn_image_0000002229758673.png?HW-CC-KV=V1&HW-CC-Date=20260429T062041Z&HW-CC-Expire=86400&HW-CC-Sign=8763CD4E28B0E95FA3DD61A6BAE0FD7229149E9F7FEAF468496DB6C133ACD061)
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/urfqROBTRvW9dk58fCShLA/zh-cn_image_0000002229758673.png)
   + 在命令行最后添加--no-parallel，示例：
 
     ```

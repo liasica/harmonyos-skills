@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > �
 category: harmonyos-references
 scraped_at: 2026-04-29T13:53:25+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:b0b9cfd39e1db5692afa2c0a99622da81fa00b8c35b3b8e039f91be589161b9a
+content_hash: sha256:6b036c11e84399611ccdc8e290322ce0d8d1f0c640c25fd9e5afce3f37bb73d6
 ---
 
 一种块状的入口，可包含图片和文本，常用于展示收件人。例如，邮件收件人或信息收件人。
@@ -93,4 +93,4 @@ PhonePC/2in1TabletTVWearable
 10. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/7liC6qOeSuOmHMpp72C9Vw/zh-cn_image_0000002589246531.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055324Z&HW-CC-Expire=86400&HW-CC-Sign=4387EB6D7D124271DC8C9A810CDEB82423AB78312B35E596B10D063F20F7619A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/7liC6qOeSuOmHMpp72C9Vw/zh-cn_image_0000002589246531.gif)

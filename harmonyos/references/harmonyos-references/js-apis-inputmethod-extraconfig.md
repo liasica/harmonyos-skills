@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inputmethod-extraconfig
-title: @ohos.inputMethod.ExtraConfig (输入法扩展信息)
+title: "@ohos.inputMethod.ExtraConfig (输入法扩展信息)"
 breadcrumb: API参考 > 应用框架 > IME Kit（输入法开发服务） > ArkTS API > @ohos.inputMethod.ExtraConfig (输入法扩展信息)
 category: harmonyos-references
 scraped_at: 2026-04-28T08:06:09+08:00

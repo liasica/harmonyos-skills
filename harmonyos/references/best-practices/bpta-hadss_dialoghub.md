@@ -5,7 +5,7 @@ breadcrumb: 最佳实践 > 布局与弹窗 > 基于DialogHub的通用弹窗
 category: best-practices
 scraped_at: 2026-04-29T14:10:32+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:dcf55b8f5a72a7c87e5f6cf0e2f37ee8b3499d1d8f84b51b52ffc293b488b4be
+content_hash: sha256:f6ac0530d36e45c6e628e53ba7fc71be25506854bc4a1deda9e4340b49a265d5
 ---
 
 ## 概述
@@ -223,7 +223,7 @@ DialogHub作为ArkUI弹窗能力的解决方案，提供了以下功能特性：
 
 [CommonExamples.ets](https://gitcode.com/harmonyos_samples/DialogHub/blob/master/entry/src/main/ets/pages/CommonExamples.ets#L143-L155)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/zkCJhIw0RuSewJhIBjagFQ/zh-cn_image_0000002194011644.png?HW-CC-KV=V1&HW-CC-Date=20260429T061023Z&HW-CC-Expire=86400&HW-CC-Sign=B7F260CA6E501673053677F6478171FD12456932D19864BE720E082BFE85B84E "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/zkCJhIw0RuSewJhIBjagFQ/zh-cn_image_0000002194011644.png "点击放大")
 
 ### 指定位置弹窗的非模态弹窗
 
@@ -251,7 +251,7 @@ DialogHub作为ArkUI弹窗能力的解决方案，提供了以下功能特性：
 
 [CommonExamples.ets](https://gitcode.com/harmonyos_samples/DialogHub/blob/master/entry/src/main/ets/pages/CommonExamples.ets#L171-L192)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/qAwFs2soSSqBhP8L2xLzLA/zh-cn_image_0000002229451969.png?HW-CC-KV=V1&HW-CC-Date=20260429T061023Z&HW-CC-Expire=86400&HW-CC-Sign=B4713B33EDE790D2DCAEDC98FA81099DE4E66FF9E06ADF9FD23E3C5B688CC1FB "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/qAwFs2soSSqBhP8L2xLzLA/zh-cn_image_0000002229451969.png "点击放大")
 
 ### 会定时消失且带弹出动效的弹窗
 
@@ -292,7 +292,7 @@ DialogHub作为ArkUI弹窗能力的解决方案，提供了以下功能特性：
 
   [CommonExamples.ets](https://gitcode.com/harmonyos_samples/DialogHub/blob/master/entry/src/main/ets/pages/CommonExamples.ets#L212-L238)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/BoVCrFypTtiOPJ1HbXeaBQ/zh-cn_image_0000002229451937.png?HW-CC-KV=V1&HW-CC-Date=20260429T061023Z&HW-CC-Expire=86400&HW-CC-Sign=09E9354882CB4E5B9E54717CA2E10CF453A774A926A93F7852A7870772F9264D "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/BoVCrFypTtiOPJ1HbXeaBQ/zh-cn_image_0000002229451937.png "点击放大")
 
 ### 会避让键盘的弹窗
 
@@ -319,7 +319,7 @@ requestFocusWhenShow配置为true，弹窗显示时，弹窗自动获焦。
 
 [CommonExamples.ets](https://gitcode.com/harmonyos_samples/DialogHub/blob/master/entry/src/main/ets/pages/CommonExamples.ets#L262-L280)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/KEk8Y30iTkSkga4qq2Bn8g/zh-cn_image_0000002193852076.png?HW-CC-KV=V1&HW-CC-Date=20260429T061023Z&HW-CC-Expire=86400&HW-CC-Sign=75DC4DD1ECDF52FBD5D98F5B29F4089C0B35876FD5F1E3D4837ABCC47D53F08A "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/Dq1nNK5YRM2l1cx_1ZUYaA/zh-cn_image_0000002193852080.png?HW-CC-KV=V1&HW-CC-Date=20260429T061023Z&HW-CC-Expire=86400&HW-CC-Sign=9E9E7DA372B3DF54367BA9F0257F9EA8D391086C7064F9F33DF45526D67E5D7B "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/KEk8Y30iTkSkga4qq2Bn8g/zh-cn_image_0000002193852076.png "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/Dq1nNK5YRM2l1cx_1ZUYaA/zh-cn_image_0000002193852080.png "点击放大")
 
 ### 指向选定组件的带箭头弹窗
 
@@ -354,7 +354,7 @@ setConfig()中preferPlacement可配置箭头偏向。
 
 [CommonExamples.ets](https://gitcode.com/harmonyos_samples/DialogHub/blob/master/entry/src/main/ets/pages/CommonExamples.ets#L294-L318)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/o9UgOvA9ROehFFDcetIVvA/zh-cn_image_0000002194011660.png?HW-CC-KV=V1&HW-CC-Date=20260429T061023Z&HW-CC-Expire=86400&HW-CC-Sign=DD8E1EE1205892927EC975A50EC84489B6BED6CB340005C2CAC6657FB00445D6 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/o9UgOvA9ROehFFDcetIVvA/zh-cn_image_0000002194011660.png "点击放大")
 
 ### 点击蒙层自动关闭的弹窗
 
@@ -370,7 +370,7 @@ setConfig()中preferPlacement可配置箭头偏向。
 
 [CommonExamples.ets](https://gitcode.com/harmonyos_samples/DialogHub/blob/master/entry/src/main/ets/pages/CommonExamples.ets#L366-L382)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/LUIdpaZESRSekZkfDu94JQ/zh-cn_image_0000002229337453.png?HW-CC-KV=V1&HW-CC-Date=20260429T061023Z&HW-CC-Expire=86400&HW-CC-Sign=842734DC67066B24DEE8762222FF153F86CD9257ABB516CAC08649A0181A80EC "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/LUIdpaZESRSekZkfDu94JQ/zh-cn_image_0000002229337453.png "点击放大")
 
 ### 可主动关闭的弹窗
 
@@ -399,7 +399,7 @@ setConfig()中preferPlacement可配置箭头偏向。
 
 [CommonExamples.ets](https://gitcode.com/harmonyos_samples/DialogHub/blob/master/entry/src/main/ets/pages/CommonExamples.ets#L398-L415)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/Lx16Ga3RRp2Cn8b6190-6A/zh-cn_image_0000002229451961.png?HW-CC-KV=V1&HW-CC-Date=20260429T061023Z&HW-CC-Expire=86400&HW-CC-Sign=EC240B2482241D88AA8EA6B2049C49BB8F3B21E424BB97F2D39ADE038ADD16E3 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/Lx16Ga3RRp2Cn8b6190-6A/zh-cn_image_0000002229451961.png "点击放大")
 
 ### 能够动态调整高度的底部弹窗
 
@@ -442,7 +442,7 @@ setConfig()中preferPlacement可配置箭头偏向。
 
 sheet类型弹窗须调用setComponentTargetId(targetCompId)以实现页面级弹窗，并且保证绑定的组件id存在。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/HbFGnvpAQQGQKhdW_W9GCg/zh-cn_image_0000002229337473.png?HW-CC-KV=V1&HW-CC-Date=20260429T061023Z&HW-CC-Expire=86400&HW-CC-Sign=CC306667D8BAABF516D49901F0C63B088BD8B6A292B4CBEF1C5B3884D7854938 "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/4qFaLAysRr-MXtiyJSn8Og/zh-cn_image_0000002194011664.png?HW-CC-KV=V1&HW-CC-Date=20260429T061023Z&HW-CC-Expire=86400&HW-CC-Sign=C1FC6DCF568CF758C7520535B74D3CE7A03AA25B875709D703CB19B662B0A1CD "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/HbFGnvpAQQGQKhdW_W9GCg/zh-cn_image_0000002229337473.png "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/4qFaLAysRr-MXtiyJSn8Og/zh-cn_image_0000002194011664.png "点击放大")
 
 ### 应用感知弹窗的打开、关闭
 
@@ -471,7 +471,7 @@ sheet类型弹窗须调用setComponentTargetId(targetCompId)以实现页面级�
 
   [CommonExamples.ets](https://gitcode.com/harmonyos_samples/DialogHub/blob/master/entry/src/main/ets/pages/CommonExamples.ets#L78-L79)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/n5pRgLpFT_inxpH9Adekag/zh-cn_image_0000002229337477.png?HW-CC-KV=V1&HW-CC-Date=20260429T061023Z&HW-CC-Expire=86400&HW-CC-Sign=EECDF06BE7A0FB3375BCEEE80AD9BC83F6D3DA563DFEFB008250141F620A1899 "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/Idb5AmTRSfabM3GleNk_KA/zh-cn_image_0000002229337469.png?HW-CC-KV=V1&HW-CC-Date=20260429T061023Z&HW-CC-Expire=86400&HW-CC-Sign=94630F12A6188C71944DF10B9827EBC4AE3E62D5FAF6688C0E8CF39D4DDB3E0E "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/n5pRgLpFT_inxpH9Adekag/zh-cn_image_0000002229337477.png "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/Idb5AmTRSfabM3GleNk_KA/zh-cn_image_0000002229337469.png "点击放大")
 
 ## 弹窗与周边的交互
 
@@ -526,7 +526,7 @@ sheet类型弹窗须调用setComponentTargetId(targetCompId)以实现页面级�
 
 [Index.ets](https://gitcode.com/harmonyos_samples/DialogHub/blob/master/entry/src/main/ets/pages/Index.ets#L33-L36)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/L-c7oyYNR8WbP4J33G0tGg/zh-cn_image_0000002193852068.png?HW-CC-KV=V1&HW-CC-Date=20260429T061023Z&HW-CC-Expire=86400&HW-CC-Sign=305D0085193B694AA383961C726B0E5ED7DEC3C05BDE52EDB4D496BCFEB80A25 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/L-c7oyYNR8WbP4J33G0tGg/zh-cn_image_0000002193852068.png "点击放大")
 
 ### 需要向页面返回数据的弹窗
 
@@ -552,7 +552,7 @@ sheet类型弹窗须调用setComponentTargetId(targetCompId)以实现页面级�
 
 [OperableExample.ets](https://gitcode.com/harmonyos_samples/DialogHub/blob/master/entry/src/main/ets/pages/OperableExample.ets#L298-L312)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/T4brIh47SFuldbXQRm5uyw/zh-cn_image_0000002193852084.png?HW-CC-KV=V1&HW-CC-Date=20260429T061023Z&HW-CC-Expire=86400&HW-CC-Sign=AED348225AFB09E0C915E42ECB3E6B96E6191E7E90363D32CB75D7204C781ED9 "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/lZlDrvq-RnG6x2o831pYfw/zh-cn_image_0000002229451965.png?HW-CC-KV=V1&HW-CC-Date=20260429T061023Z&HW-CC-Expire=86400&HW-CC-Sign=9B870D0E958731E186AC208402F2E2532F2C417269D21BF02A02D7BB9409B963 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/T4brIh47SFuldbXQRm5uyw/zh-cn_image_0000002193852084.png "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/lZlDrvq-RnG6x2o831pYfw/zh-cn_image_0000002229451965.png "点击放大")
 
 ### 父页面刷新正在展示的弹窗内容
 
@@ -581,7 +581,7 @@ sheet类型弹窗须调用setComponentTargetId(targetCompId)以实现页面级�
 
 [OperableExample.ets](https://gitcode.com/harmonyos_samples/DialogHub/blob/master/entry/src/main/ets/pages/OperableExample.ets#L328-L345)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/YT7SMfXxQV-truqlTbYHwA/zh-cn_image_0000002229337481.png?HW-CC-KV=V1&HW-CC-Date=20260429T061023Z&HW-CC-Expire=86400&HW-CC-Sign=697045930369DA9BBA5B7EC85303445ECDF32AB9C24AA8B0BCB20A26ECCCFA71 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/YT7SMfXxQV-truqlTbYHwA/zh-cn_image_0000002229337481.png "点击放大")
 
 ### 页面需要感知当前页面是否存在弹窗
 
@@ -618,7 +618,7 @@ Navigation：将pageInfos传入弹窗Builder，然后在弹窗里进行push页�
 
 [OperableExample.ets](https://gitcode.com/harmonyos_samples/DialogHub/blob/master/entry/src/main/ets/pages/OperableExample.ets#L405-L412)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/VSJKnGbSSISEQcS1IhpsVw/zh-cn_image_0000002194011656.png?HW-CC-KV=V1&HW-CC-Date=20260429T061023Z&HW-CC-Expire=86400&HW-CC-Sign=39C9175F2390B82163F86B468B94245678F938227DB427993499945E26E78FAF "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/VSJKnGbSSISEQcS1IhpsVw/zh-cn_image_0000002194011656.png "点击放大")
 
 ### 折叠屏展开态不同位置的弹窗
 
@@ -639,7 +639,7 @@ Navigation：将pageInfos传入弹窗Builder，然后在弹窗里进行push页�
 
 [OperableExample.ets](https://gitcode.com/harmonyos_samples/DialogHub/blob/master/entry/src/main/ets/pages/OperableExample.ets#L532-L539)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/mCPm0K22SnqX0Z9WCDjM6g/zh-cn_image_0000002229451949.png?HW-CC-KV=V1&HW-CC-Date=20260429T061023Z&HW-CC-Expire=86400&HW-CC-Sign=3F11022B78CDA65B9BC0DA50F8D6ACEDB5ADF0766E25E4CCECF593B2BD786D7F "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/mCPm0K22SnqX0Z9WCDjM6g/zh-cn_image_0000002229451949.png "点击放大")
 
 弹窗在右半屏：
 
@@ -656,7 +656,7 @@ Navigation：将pageInfos传入弹窗Builder，然后在弹窗里进行push页�
 
 [OperableExample.ets](https://gitcode.com/harmonyos_samples/DialogHub/blob/master/entry/src/main/ets/pages/OperableExample.ets#L555-L562)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/Eg7vQ2KFRdmSmdig6O4Fxw/zh-cn_image_0000002229337445.png?HW-CC-KV=V1&HW-CC-Date=20260429T061023Z&HW-CC-Expire=86400&HW-CC-Sign=2F3AE074568D45A124A905FAFF3000AE54728AD06FA083C05A78FDF3062D2DB0 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/Eg7vQ2KFRdmSmdig6O4Fxw/zh-cn_image_0000002229337445.png "点击放大")
 
 ## 弹窗内容复用场景
 

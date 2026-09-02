@@ -5,7 +5,7 @@ breadcrumb: 最佳实践 > 媒体 > 音频和视频 > 音频播放系列开发�
 category: best-practices
 scraped_at: 2026-04-29T14:11:26+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:58eae5e67cc9722959e077ad8468f5e5f841be4fdc5f6f4f9a2777b5bb07d35f
+content_hash: sha256:1c5d65885e68f050a09bea05e343a0adf3da33442581bdb7f40364d6419da4ae
 ---
 
 ## 概述
@@ -14,7 +14,7 @@ AVPlayer可以用于播放格式化音频，支持WAV、MP3和FLAC等格式的�
 
 本文是音频播放系列文章的第3篇，实现的功能效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/0cLNulyGTp-siXBS5-satg/zh-cn_image_0000002555217523.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061117Z&HW-CC-Expire=86400&HW-CC-Sign=68EA5AA76D570E9347EA00355085EAEE9B601EB7E910CD15B086F1779A1EFD1E "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/iP7Gx5DaQC6sKzwQ1btQpA/zh-cn_image_0000002524217626.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061117Z&HW-CC-Expire=86400&HW-CC-Sign=CDC0C34E6E4DE3E071CD415466CCB63B6B7509B7B7FC81E12346382BB09CDE57 "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/Qb9gW75XSdiU4IcO0KszHQ/zh-cn_image_0000002555337497.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061117Z&HW-CC-Expire=86400&HW-CC-Sign=191EDDA0B8EC8049891613A3EE542D9707989996107D7CC9180CBFC149DE7189 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/0cLNulyGTp-siXBS5-satg/zh-cn_image_0000002555217523.gif "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/iP7Gx5DaQC6sKzwQ1btQpA/zh-cn_image_0000002524217626.gif "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/Qb9gW75XSdiU4IcO0KszHQ/zh-cn_image_0000002555337497.gif "点击放大")
 
 ## 场景分析
 
@@ -36,7 +36,7 @@ AVPlayer可以用于播放格式化音频，支持WAV、MP3和FLAC等格式的�
 
 通过[AVPlayer](../harmonyos-references/arkts-apis-media-avplayer.md)实现核心音频播放控制能力，包括音频资源加载、播放、暂停、停止及退出等操作。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/9JHS2aU7TfiUizuXoJcpvQ/zh-cn_image_0000002524057632.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061117Z&HW-CC-Expire=86400&HW-CC-Sign=F343392AC2A30C6F959AA16F661DA7F70A7FA59E0EE3B4AF6253831EDC8A54AE "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/9JHS2aU7TfiUizuXoJcpvQ/zh-cn_image_0000002524057632.gif "点击放大")
 
 ### 实现原理
 
@@ -250,7 +250,7 @@ AVPlayer可以用于播放格式化音频，支持WAV、MP3和FLAC等格式的�
 
 通过点击或拖动进度条精准跳转到指定时间进行播放。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/fEepHfQbSISdlOeAEvhNpA/zh-cn_image_0000002555217525.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061117Z&HW-CC-Expire=86400&HW-CC-Sign=F18CEE6998413B3360D2496CA8D0EAD097700608CD61B0F400DD52B37AA3E5B0 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/fEepHfQbSISdlOeAEvhNpA/zh-cn_image_0000002555217525.gif "点击放大")
 
 ### 实现原理
 
@@ -278,7 +278,7 @@ AVPlayer可以用于播放格式化音频，支持WAV、MP3和FLAC等格式的�
 
 通过界面按钮快捷切换音频播放静音状态，实现一键开启或关闭静音。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/_u5xKVUhT2eCKeOe5ow5zw/zh-cn_image_0000002524217628.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061117Z&HW-CC-Expire=86400&HW-CC-Sign=32DC369CE170AB3BDA434E73729EC74B9996BC412FB9BECD5AA3E85F6401E965 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/_u5xKVUhT2eCKeOe5ow5zw/zh-cn_image_0000002524217628.gif "点击放大")
 
 ### 实现原理
 
@@ -307,7 +307,7 @@ AVPlayer可以用于播放格式化音频，支持WAV、MP3和FLAC等格式的�
 
 点击上一首或下一首或歌单列表中的歌曲进行不同歌曲播放。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/_H1d5BcFSa-Y8951GaosLA/zh-cn_image_0000002555337501.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061117Z&HW-CC-Expire=86400&HW-CC-Sign=1F74524B47BF932064ACB13B684F7FDC9E045AB9F4585478F659A401C0F30BE2 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/_H1d5BcFSa-Y8951GaosLA/zh-cn_image_0000002555337501.gif "点击放大")
 
 ### 实现原理
 
@@ -355,7 +355,7 @@ AVPlayer可以用于播放格式化音频，支持WAV、MP3和FLAC等格式的�
 
 滑动倍速调节面板调节播放速度。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/B4keWH74RIOZCpI1oPW2dw/zh-cn_image_0000002524057634.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061117Z&HW-CC-Expire=86400&HW-CC-Sign=78FBE1DCF44CA6F1678B2C04CDDE1ACC8D601AC0D95751C9140BFDCF0D6BA658 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/B4keWH74RIOZCpI1oPW2dw/zh-cn_image_0000002524057634.gif "点击放大")
 
 ### 实现原理
 
@@ -407,7 +407,7 @@ AVPlayer可以用于播放格式化音频，支持WAV、MP3和FLAC等格式的�
 
 滑动音量调节面板调节播放音量。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/jMD0BDBiQKm09viuLxp0aQ/zh-cn_image_0000002555217531.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061117Z&HW-CC-Expire=86400&HW-CC-Sign=94D3769FB49E60382EB3CBDD5D08C890F380A03FCA9BC84EC2E1E57169267005 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/jMD0BDBiQKm09viuLxp0aQ/zh-cn_image_0000002555217531.gif "点击放大")
 
 ### 实现原理
 

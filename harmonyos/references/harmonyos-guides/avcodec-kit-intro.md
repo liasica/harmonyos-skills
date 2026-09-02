@@ -5,7 +5,7 @@ breadcrumb: 指南 > 媒体 > AVCodec Kit（音视频编解码服务） > AVCode
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:34:38+08:00
 doc_updated_at: 2026-04-02
-content_hash: sha256:4c5303b3a0dc5da4ae11a062f3cfcec3729d858ef56302fcd3bda46b5f661641
+content_hash: sha256:77c9bd83208af302937da9b92c2a2e89cc48ef29f31b9af156a1339ab8f17cdb
 ---
 
 AVCodec Kit（Audio & Video Codec Kit，音视频编解码，封装解析）是媒体系统中的音视频的编解码、媒体文件的解析、封装、媒体数据输入等原子能力。
@@ -54,7 +54,7 @@ AVCodec Kit（Audio & Video Codec Kit，音视频编解码，封装解析）是�
 
   视频编解码的逻辑如图所示。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/bJXOMzQdQgaGrNd-uO-sHQ/zh-cn_image_0000002558605382.png?HW-CC-KV=V1&HW-CC-Date=20260429T053437Z&HW-CC-Expire=86400&HW-CC-Sign=1B7DDCCFA65DA4F2912B8CF5D3B0C0D58247B8693F57B950C8CF998607F22DF7)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/bJXOMzQdQgaGrNd-uO-sHQ/zh-cn_image_0000002558605382.png)
 
   具体开发指导请参考[视频解码Surface模式](video-decoding.md#surface模式)、[视频编码Surface模式](video-encoding.md#surface模式)。
 * 音频编解码
@@ -65,7 +65,7 @@ AVCodec Kit（Audio & Video Codec Kit，音视频编解码，封装解析）是�
 
   音频编解码逻辑如图所示。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/u6CeTzqjQqaIk_MtyD7_LQ/zh-cn_image_0000002589324909.png?HW-CC-KV=V1&HW-CC-Date=20260429T053437Z&HW-CC-Expire=86400&HW-CC-Sign=7B5C8A6EBC55D59AC20035F8A009EECAC9967CC4A0C3EF3B26E4340393DCF7AA)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/u6CeTzqjQqaIk_MtyD7_LQ/zh-cn_image_0000002589324909.png)
 
   具体开发指导请参考[音频解码](audio-decoding.md)、[音频编码](audio-encoding.md)。
 * 文件解析封装
@@ -76,7 +76,7 @@ AVCodec Kit（Audio & Video Codec Kit，音视频编解码，封装解析）是�
 
   文件封装解封装逻辑如图所示。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/gHus7p1RTW2m9ZS8FCzf2w/zh-cn_image_0000002589244845.png?HW-CC-KV=V1&HW-CC-Date=20260429T053437Z&HW-CC-Expire=86400&HW-CC-Sign=76F23F66D98DCB6781D1E0651899C95FEC96882046D375BEAE9CF09BA3EB61AC)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/gHus7p1RTW2m9ZS8FCzf2w/zh-cn_image_0000002589244845.png)
 
   具体开发指导请参考[媒体数据解析](audio-video-demuxer.md)、[媒体数据封装](audio-video-muxer.md)。
 

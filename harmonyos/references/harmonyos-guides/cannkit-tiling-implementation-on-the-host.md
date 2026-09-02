@@ -5,7 +5,7 @@ breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:41:09+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:e7464edd4de33819467fb636494b81bf03b397496c659150a44af426014f5b4b
+content_hash: sha256:70f23dc20c39de307dd995ab2ad01ee860fb88c2e60378ccd530ca74cc303f52
 ---
 
 在[算子实现](cannkit-operator-implementation-overview.md)章节已经介绍了host侧tiling核心的实现方法，本章节侧重于介绍接入DDK框架时编程模式和API的使用。
@@ -16,7 +16,7 @@ Tiling实现完成后，获取到的Tiling切分算法相关参数，会传递�
 
 **图1** Tiling实现的输入输出
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/MPFqyYOfTJeX_YFJXJu54Q/zh-cn_image_0000002589325619.png?HW-CC-KV=V1&HW-CC-Date=20260429T054108Z&HW-CC-Expire=86400&HW-CC-Sign=FA49134167B778ECEEB434388AF1E78C20093659EDDB5C108A3378424B4C85A9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/MPFqyYOfTJeX_YFJXJu54Q/zh-cn_image_0000002589325619.png)
 
 如上图所示，Tiling实现即为根据算子shape等信息来确定切分算法相关参数的过程，这里的算子shape等信息可以理解为是**Tiling实现的输入**，切分算法相关参数可以理解为是**Tiling实现的输出**。输入和输出都通过Tiling函数的参数（TilingContext\* context上下文结构）来承载。也就是说，开发者可以从上下文结构中获取算子的输入、输出以及属性信息，也就是**Tiling实现的输入**，经过Tiling计算后，获取到TilingData数据结构（切分算法相关参数）、BlockDim变量、用于选择不同的kernel实现分支的TilingKey、算子workspace的大小，也就是**Tiling实现的输出**，并将这些输出设置到上下文结构中。
 
@@ -165,7 +165,7 @@ Tiling实现开发的流程图如下。
 
 **图2** Tiling开发流程图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/uWd3zrrzS8KFo3qVQIsDaA/zh-cn_image_0000002589245559.png?HW-CC-KV=V1&HW-CC-Date=20260429T054108Z&HW-CC-Expire=86400&HW-CC-Sign=E1BA85D4E44E0405865D57A539CAD7194DA6376BC4CE7D0F19F3C8E4FA173CCA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/uWd3zrrzS8KFo3qVQIsDaA/zh-cn_image_0000002589245559.png)
 
 下面将从一个简单的Add算子为例介绍Tiling的实现流程。本样例中待处理数据的Shape大小可以平均分配到每个核上，并且可以对齐到一个datablock(32B)的大小。
 

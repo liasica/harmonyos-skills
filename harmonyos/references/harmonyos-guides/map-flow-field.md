@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 在地图上绘�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:39:15+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:8d01f16117f3b368d1422f3d4a10f5b1d882cd76c289eeafd0fe84ffc2a368a3
+content_hash: sha256:bd763a897e443a1109f096568602f6f892312d90e122bb02788c61489ab68996
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:8d01f16117f3b368d1422f3d4a10f5b1d882cd76c289eeafd0fe84ffc2a
 
 6.0.0(20)开始，支持流场图层功能。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/UObK8LwqR56GAylkzqkuOg/zh-cn_image_0000002589245355.gif?HW-CC-KV=V1&HW-CC-Date=20260429T053911Z&HW-CC-Expire=86400&HW-CC-Sign=B8D690EDA8D9FE7B440B445AB0FC62C2714B98EE7D4B781077FE15E514AE9DB6 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/UObK8LwqR56GAylkzqkuOg/zh-cn_image_0000002589245355.gif "点击放大")
 
 ## 接口说明
 

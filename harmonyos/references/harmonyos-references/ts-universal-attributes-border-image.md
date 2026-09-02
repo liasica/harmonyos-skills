@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:51:17+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:a5853400460d830ae8db03259103473e4b8e74ec190d66cc0bfdcfb5fd4df840
+content_hash: sha256:e0e8a7580380f370587e8dc9ebc406be98c32cafbc320d8c2eb516d83d6ae07f
 ---
 
 设置组件的图片边框样式。
@@ -130,7 +130,7 @@ PhonePC/2in1TabletTVWearable
 26. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/mi0oRxGYSCG25MBitlIFqw/zh-cn_image_0000002558606368.png?HW-CC-KV=V1&HW-CC-Date=20260429T055116Z&HW-CC-Expire=86400&HW-CC-Sign=1516B0782ED2B40BCB056A2CE69C37C980C5F5B8EFEEBCB3D72C7CB6B5A2B299)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/mi0oRxGYSCG25MBitlIFqw/zh-cn_image_0000002558606368.png)
 
 ### 示例2（动态调整属性值）
 
@@ -230,7 +230,7 @@ PhonePC/2in1TabletTVWearable
 91. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/APAdiqTDTVqpmsj7wDVSdg/zh-cn_image_0000002589325895.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055116Z&HW-CC-Expire=86400&HW-CC-Sign=050D2D7034D0D9097B2471868C1DDC9DBD102ADF486EE474A023024052B3604D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/APAdiqTDTVqpmsj7wDVSdg/zh-cn_image_0000002589325895.gif)
 
 ### 示例3（使用LocalizedEdgeWidths类型值）
 
@@ -390,4 +390,4 @@ PhonePC/2in1TabletTVWearable
 
 显示语言示例图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/uryCBHjxRgi7gmndx4B7vg/zh-cn_image_0000002589245837.png?HW-CC-KV=V1&HW-CC-Date=20260429T055116Z&HW-CC-Expire=86400&HW-CC-Sign=C07B4D424D84FE340C11DC7E3EB334D5692E682F6B86569FD78CC839D0A311E2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/uryCBHjxRgi7gmndx4B7vg/zh-cn_image_0000002589245837.png)

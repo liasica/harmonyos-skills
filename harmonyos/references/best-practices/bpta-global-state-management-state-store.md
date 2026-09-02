@@ -5,7 +5,7 @@ breadcrumb: 最佳实践 > 声明式语法 > 基于StateStore的全局状态管�
 category: best-practices
 scraped_at: 2026-04-29T14:10:34+08:00
 doc_updated_at: 2026-03-17
-content_hash: sha256:1435741c8d69083e868debd7f4bb0101c9fcdcd917994351fb045c048512a8ad
+content_hash: sha256:d1c1bc9ddfae9baa49a7db822b5863e71a1afdeb7a32a000d68d9d6c0f35c0f9
 ---
 
 ## 概述
@@ -28,15 +28,15 @@ StateStore提供了下列功能特性：
 
 **图1** 待办列表效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/voWPrqBNSYaapGq3hfQSVQ/zh-cn_image_0000002194011108.png?HW-CC-KV=V1&HW-CC-Date=20260429T061033Z&HW-CC-Expire=86400&HW-CC-Sign=17D24421442892B035BFF39F64F0A5A33474336C17178F653926D45DD31B4A21 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/voWPrqBNSYaapGq3hfQSVQ/zh-cn_image_0000002194011108.png "点击放大")
 
 新增和删除功能按钮分别位于两个兄弟组件中。在开发时，父组件需要维护一个listDatas列表，并通过@Link装饰器实现数据的双向同步，从而实现兄弟组件之间的状态同步。删除功能和新增功能逻辑分别由两个子组件处理，但是这两个组件都需要引入与UI渲染无关的listDatas数据，造成了状态与UI的高耦合。使得状态管理变得复杂，难以维护和扩展。组件结构图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/U5wkspZ0TD-eBFmK9ou2bw/zh-cn_image_0000002194011116.png?HW-CC-KV=V1&HW-CC-Date=20260429T061033Z&HW-CC-Expire=86400&HW-CC-Sign=BA9688D9B6C7E11A6B16AF5B7E42086021986481F664D09EAD4F0CC65165A59A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/U5wkspZ0TD-eBFmK9ou2bw/zh-cn_image_0000002194011116.png)
 
 引入StateStore库后，开发者可以将listDatas数据存储在全局仓库（Store）中，组件从Store中获取数据进行UI渲染，并通过向Store发送事件来更新数据。这样，状态更新逻辑被集中管理，组件无需额外引入状态进行逻辑处理，从而实现了状态与UI的低耦合。组件结构图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/561ATwz0SI2v1swUOKy1hg/zh-cn_image_0000002194011104.png?HW-CC-KV=V1&HW-CC-Date=20260429T061033Z&HW-CC-Expire=86400&HW-CC-Sign=A2CF293AFD45067334A0A9124C03B2E52AC824B980A75FDE023B2D40DA6E04B2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/561ATwz0SI2v1swUOKy1hg/zh-cn_image_0000002194011104.png)
 
 ## 实现原理
 
@@ -52,7 +52,7 @@ StateStore基于ArkUI的状态管理特性（[@Observed](../harmonyos-guides/ark
 
 **图2** **运行原理图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/1B87Pc-yRTmQEo0DFeh94A/zh-cn_image_0000002194011124.png?HW-CC-KV=V1&HW-CC-Date=20260429T061033Z&HW-CC-Expire=86400&HW-CC-Sign=BF55441CD3E84EC3E1B8634060951791FD71F5E694BEC815F35EA6BFDD0D888B "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/1B87Pc-yRTmQEo0DFeh94A/zh-cn_image_0000002194011124.png "点击放大")
 
 **核心概念解释**
 
@@ -115,7 +115,7 @@ StateStore基于ArkUI的状态管理特性（[@Observed](../harmonyos-guides/ark
 
 **图3** **效果图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/WkSBmcJ2T663bfF9RvkOTA/zh-cn_image_0000002194011120.png?HW-CC-KV=V1&HW-CC-Date=20260429T061033Z&HW-CC-Expire=86400&HW-CC-Sign=B76117376BC8CDF82B3DA3F3ECE2F08D2DDA1310729808D461254F66D8C24581 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/WkSBmcJ2T663bfF9RvkOTA/zh-cn_image_0000002194011120.png "点击放大")
 
 ### 开发步骤
 
@@ -308,7 +308,7 @@ StateStore基于ArkUI的状态管理特性（[@Observed](../harmonyos-guides/ark
 
 **图4** **效果图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/FejRzYljRZi_zQrOVR6kdA/zh-cn_image_0000002229336913.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061033Z&HW-CC-Expire=86400&HW-CC-Sign=CE247CC73472E6ACC9E0D0806EDCBEEF90A36D9F78D3B6AA86732EE78FF9B421)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/FejRzYljRZi_zQrOVR6kdA/zh-cn_image_0000002229336913.gif)
 
 上图效果图中，用户点击同步数据库按钮，子线程去读写数据库，同时更新进度条。
 
@@ -448,11 +448,11 @@ StateStore基于ArkUI的状态管理特性（[@Observed](../harmonyos-guides/ark
 在本节中，我们将通过日志埋点场景，展示如何利用中间件优雅地扩展状态管理功能。
 
 **图5** **日志效果图**  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/Geg8XI7HTcuUk8YDCopINQ/zh-cn_image_0000002194011100.png?HW-CC-KV=V1&HW-CC-Date=20260429T061033Z&HW-CC-Expire=86400&HW-CC-Sign=831461131D56DC92C05370E8B7D8FA6A7622A264D025BCD9F23D36782FB3AED8 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/Geg8XI7HTcuUk8YDCopINQ/zh-cn_image_0000002194011100.png "点击放大")
 
 **图6** **中间件执行流程图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/e5LzjdBKSSKpowHgPsburg/zh-cn_image_0000002229451401.png?HW-CC-KV=V1&HW-CC-Date=20260429T061033Z&HW-CC-Expire=86400&HW-CC-Sign=6C043861E05C767427E5815B9B609D4A51573E8513C46FC16EC682A5745B9E2A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/e5LzjdBKSSKpowHgPsburg/zh-cn_image_0000002229451401.png)
 
 ### 开发步骤
 

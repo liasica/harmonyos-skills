@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 窗口管理 > �
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:29:02+08:00
 doc_updated_at: 2026-04-02
-content_hash: sha256:6d036572e87c24cff75358a673766be9abb66b76b65fe48d443612371109f0bc
+content_hash: sha256:2c55df3f4f698be1acf65d6a2d5ec3b58fe2f65bee40bf97345b050931047884
 ---
 
 ## 窗口模块的定义
@@ -45,7 +45,7 @@ content_hash: sha256:6d036572e87c24cff75358a673766be9abb66b76b65fe48d44361237110
 * **分屏**：应用主窗口启动时占据屏幕的某个部分，当前支持二分屏。两个分屏窗口之间具有分界线，可通过拖拽分界线调整两个部分的窗口尺寸。
 * **自由窗口**：自由窗口的大小和位置可自由改变。同一个屏幕上可同时显示多个自由窗口，这些自由窗口按照打开或者获取焦点的顺序在Z轴排布。当自由窗口被点击或触摸时，将导致其Z轴高度提升，并获取焦点。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/8O16MR3IRvO8nOriioDrDw/zh-cn_image_0000002558605010.png?HW-CC-KV=V1&HW-CC-Date=20260429T052901Z&HW-CC-Expire=86400&HW-CC-Sign=F175302F319CB71442FB8E58882E1B6CB2C4AF04D832F2944A99BC083D05A861)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/8O16MR3IRvO8nOriioDrDw/zh-cn_image_0000002558605010.png)
 
 针对窗口模式的适配开发指导，具体可参考[窗口模式最佳实践](../best-practices/bpta-multi-device-window-mode.md)。
 
@@ -63,7 +63,7 @@ content_hash: sha256:6d036572e87c24cff75358a673766be9abb66b76b65fe48d44361237110
 
 在Stage模型下，一个UIAbility对应一个WindowStage，一个WindowStage对应一个应用主窗口，UIAbility、WindowStage和应用主窗口三者之间的关系如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/MrKSsG22RWW7A3ws8NEEtg/zh-cn_image_0000002589324535.png?HW-CC-KV=V1&HW-CC-Date=20260429T052901Z&HW-CC-Expire=86400&HW-CC-Sign=81B81B583CD45AFB7C3BBC343C92B646C040C6CA91B3122410B04AF353040190)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/MrKSsG22RWW7A3ws8NEEtg/zh-cn_image_0000002589324535.png)
 
 每个UIAbility实例都会与一个WindowStage类实例绑定，该类起到了应用进程内窗口管理器的作用。它包含一个主窗口，也就是说UIAbility实例通过WindowStage持有了一个主窗口，该主窗口为ArkUI提供了绘制区域，可以加载不同的ArkUI页面。
 
@@ -95,7 +95,7 @@ RESUMED和PAUSED状态分别在窗口切换至前台和切换至后台时触发�
 
 应用主窗口生命周期事件流转关系如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/FctL_VOuRe-WraKRThCe5g/zh-cn_image_0000002589244473.png?HW-CC-KV=V1&HW-CC-Date=20260429T052901Z&HW-CC-Expire=86400&HW-CC-Sign=4C9CE5F2C3F0FFECFD035F2EC428B0098923CDBD17DA15132DF4103308AF197C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/FctL_VOuRe-WraKRThCe5g/zh-cn_image_0000002589244473.png)
 
 **特殊场景**：存在应用被系统管控的场景，会导致应用在启动过程中或RESUMED状态下，进入PAUSED状态，并触发回调通知。
 

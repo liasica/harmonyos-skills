@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:27:33+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:f761055968302047f0495a74f6715891125645ef445cfe9fad591e28964df625
+content_hash: sha256:85736f8348d722c23f00c30c39fc373eedb606f1cac7dda9102a87cd4a6ce3c9
 ---
 
 大型应用中需要封装大量的数据对象，数据对象内部状态变量的使用极大地影响开发者的开发效率，本文将介绍数据对象状态管理的常见问题及解决方案。
@@ -326,7 +326,7 @@ content_hash: sha256:f761055968302047f0495a74f6715891125645ef445cfe9fad591e28964
 
 上述代码运行效果如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/qVsEzLFhQraZmz0xHMgixg/zh-cn_image_0000002589323995.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052731Z&HW-CC-Expire=86400&HW-CC-Sign=48D182269027FF8782CAD634C6C1B7E67A3D60935513F9F405FD500D06534A5F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/qVsEzLFhQraZmz0xHMgixg/zh-cn_image_0000002589323995.gif)
 
 页面内通过ForEach显示了20条信息，当点击某一条信息中age的Text组件时，可以通过日志发现其他的19条信息中age的Text组件也进行了刷新(这体现在日志上，所有的age的Text组件都打出了日志)，但实际上其他19条信息的age的数值并没有改变，也就是说其他19个Text组件并不需要刷新。
 
@@ -449,7 +449,7 @@ content_hash: sha256:f761055968302047f0495a74f6715891125645ef445cfe9fad591e28964
 
 上述代码的运行效果如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/b1-1y0DjRuOySUwkkYCwyQ/zh-cn_image_0000002589243935.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052731Z&HW-CC-Expire=86400&HW-CC-Sign=AE558D7C6ECA1DDF767F5999B47EDDC6AB94A371748FABDA8BC7D2B4C046E64B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/b1-1y0DjRuOySUwkkYCwyQ/zh-cn_image_0000002589243935.gif)
 
 修改后的代码使用对象数组代替了原有的多个属性数组，能够避免数组的“冗余刷新”的情况。这是因为对于数组来说，对象内的变化是无法感知的，数组只能观测数组项层级的变化，例如新增数据项，修改数据项（普通数组是直接修改数据项的值，在对象数组的场景下是整个对象被重新赋值，改变某个数据项对象中的属性不会被观测到）、删除数据项等。这意味着当改变对象内的某个属性时，对于数组来说，对象是没有变化的，也就不会去刷新。在当前状态管理的观测能力中，除了数组嵌套对象的场景外，对象嵌套对象的场景也是无法观测到变化的，这一部分内容将在[使用多属性类对象导致冗余刷新](arkts-state-management-faq-inner-class.md#使用多属性类对象导致冗余刷新)中讲到。同时修改代码时使用了自定义组件与ForEach的结合，这一部分内容将在[ForEach和对象数组结合使用导致UI不刷新](arkts-state-management-faq-inner-component.md#foreach和对象数组结合使用导致ui不刷新)讲到。
 
@@ -638,11 +638,11 @@ content_hash: sha256:f761055968302047f0495a74f6715891125645ef445cfe9fad591e28964
 
 上述代码的运行效果如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/h8bXlIVbRBqYXtaSt0Awtg/zh-cn_image_0000002558764128.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052731Z&HW-CC-Expire=86400&HW-CC-Sign=07C17A2F19EB7B7A6A70DE9BD3A8116A4D6684B7FD5C0EFA86A670E09DCB36C2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/h8bXlIVbRBqYXtaSt0Awtg/zh-cn_image_0000002558764128.gif)
 
 优化前点击move按钮的脏节点更新[耗时](ui-inspector-profiler.md#trace调试能力)如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/-Xy8QqbQTKaE0lWsJJyzog/zh-cn_image_0000002558604472.png?HW-CC-KV=V1&HW-CC-Date=20260429T052731Z&HW-CC-Expire=86400&HW-CC-Sign=E9F9669A377C7E0B8E64A85B7C828AEC3BFFAD509D42B98F58F12D8B802E5881)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/-Xy8QqbQTKaE0lWsJJyzog/zh-cn_image_0000002558604472.png)
 
 在上面的示例中，UiStyle定义了多个属性，并且这些属性分别被多个组件关联。当点击任意一个按钮更改其中的某些属性时，会导致所有这些关联uiStyle的组件进行刷新，虽然它们其实并不需要进行刷新（因为组件的属性都没有改变）。通过定义的一系列isRender函数，可以观察到这些组件的刷新。当点击“move”按钮进行平移动画时，由于translateY的值的多次改变，会导致每一次都存在“冗余刷新”的问题，这对应用的性能有着很大的负面影响。
 
@@ -890,11 +890,11 @@ content_hash: sha256:f761055968302047f0495a74f6715891125645ef445cfe9fad591e28964
 
 [StateArrayPrecise.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/statemanagementproject/entry/src/main/ets/pages/statemanagementguide/StateArrayPrecise.ets#L15-L249)
 
-上述代码的运行效果如下。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/PwfECJgTR1-8nVlJ6RoYQQ/zh-cn_image_0000002589323997.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052731Z&HW-CC-Expire=86400&HW-CC-Sign=209302A143F71BEC0E4C93543F1196A6F2071BECFD5FD604947801510DC5288E)
+上述代码的运行效果如下。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/PwfECJgTR1-8nVlJ6RoYQQ/zh-cn_image_0000002589323997.gif)
 
 优化后点击move按钮的脏节点更新耗时如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/blIjGmCSR-Ko80cEyCcpvA/zh-cn_image_0000002589243937.png?HW-CC-KV=V1&HW-CC-Date=20260429T052731Z&HW-CC-Expire=86400&HW-CC-Sign=51A014DE2DB9B42CA9341068651083ACBD1DBFC8F6FB3055E9549F114B317EE6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/blIjGmCSR-Ko80cEyCcpvA/zh-cn_image_0000002589243937.png)
 
 修改后的代码将原来的大类中的十五个属性拆成了八个小类，并且在绑定的组件上也做了相应的适配。属性拆分遵循以下几点原则：
 
@@ -1238,7 +1238,7 @@ content_hash: sha256:f761055968302047f0495a74f6715891125645ef445cfe9fad591e28964
 
 上述代码运行效果如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/g2Pl2IxeRsmichwqpiGDXQ/zh-cn_image_0000002558764130.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052731Z&HW-CC-Expire=86400&HW-CC-Sign=B0833C8458EE701C680ACFA4A2240764834F3D3BD39A6FB7F23239973C293CCE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/g2Pl2IxeRsmichwqpiGDXQ/zh-cn_image_0000002558764130.gif)
 
 上述代码维护了一个ChildList类型的数据源，点击"X"按钮删除一些数据后再点击Recover进行恢复ChildList，发现再次点击"X"按钮进行删除时，UI并没有刷新，同时也没有打印出“CompList ChildList change”的日志。
 
@@ -1425,7 +1425,7 @@ content_hash: sha256:f761055968302047f0495a74f6715891125645ef445cfe9fad591e28964
 
 上述代码运行效果如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/ATJ3mglyQbOggbEwPa_2CQ/zh-cn_image_0000002558604474.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052731Z&HW-CC-Expire=86400&HW-CC-Sign=4B012B21D3439BF12E404493071C98C2B4590B65AB23756F7A256967BBC2D57E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/ATJ3mglyQbOggbEwPa_2CQ/zh-cn_image_0000002558604474.gif)
 
 核心的修改点是将原本Child[]类型的tempList修改为具有被观测能力的ChildList类。
 

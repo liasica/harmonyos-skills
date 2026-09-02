@@ -5,14 +5,14 @@ breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > 音频播放 > 推�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:34:28+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:0aa3d7cd6a4e1305b5487bbe555ecee1241257c97126a863e20a55080394e2e9
+content_hash: sha256:dd0ede4226a30518b55a073f7641ca47f22813fd8a423ce5cdae018b7e70801e
 ---
 
 OHAudio是系统在API version 10中引入的一套C API，此API在设计上实现归一，同时支持普通音频通路和低时延通路。仅支持PCM格式，适用于依赖Native层实现音频输出功能的场景。
 
 OHAudio音频播放状态变化示意图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/2R6s-bCbTSK8NZIUvS2DQw/zh-cn_image_0000002589324897.png?HW-CC-KV=V1&HW-CC-Date=20260429T053427Z&HW-CC-Expire=86400&HW-CC-Sign=DAC4147F283597DB0FC441747C1085F612E362601C5AF10A728563334C97EBB7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/2R6s-bCbTSK8NZIUvS2DQw/zh-cn_image_0000002589324897.png)
 
 ## 使用入门
 

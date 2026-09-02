@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-autostartupmanager
-title: @ohos.app.ability.autoStartupManager (开机自启管理能力)
+title: "@ohos.app.ability.autoStartupManager (开机自启管理能力)"
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > Stage模型能力的接口 > @ohos.app.ability.autoStartupManager (开机自启管理能力)
 category: harmonyos-references
 scraped_at: 2026-04-28T07:58:24+08:00

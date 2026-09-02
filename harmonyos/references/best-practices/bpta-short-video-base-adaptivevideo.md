@@ -5,7 +5,7 @@ breadcrumb: 最佳实践 > 行业场景解决方案 > 影音娱乐 > 基于adapt
 category: best-practices
 scraped_at: 2026-04-29T14:13:11+08:00
 doc_updated_at: 2026-03-17
-content_hash: sha256:7f68b79a67f698ea14d7ca9a98c9cb076cc930836dc2ed3fc3e76944c1912bc4
+content_hash: sha256:1d1a626142e4f247303be657b43ff2f1f681f805d89ee926c1cf08a1a3c43ea5
 ---
 
 ## 概述
@@ -45,11 +45,11 @@ adaptive\_video提供短视频自适应沉浸的能力，以降低开发者在�
 | 8 | 9:20 <= x < 9:18 | 窗口高度减去底部导航栏高度、后，视频自适应放大至撑满剩余区域  状态栏沉浸、底部tab不沉浸 |
 | 9 | x > 9:18 | 视频自适应放大至撑满剩余区域  状态栏沉浸、底部tab根据视频区域大小决定是否沉浸 |
 
-按照上述沉浸规则进行适配后，视频宽高比处于9:16区间的短视频在窗口宽为320vp至840vp设备上的沉浸效果图如下（红色部分为视频显示区域）![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/x7G30tPIQmqyG-9z6PR21g/zh-cn_image_0000002414407980.png?HW-CC-KV=V1&HW-CC-Date=20260429T061304Z&HW-CC-Expire=86400&HW-CC-Sign=30831B62DE730DB847EE1C62B60F3D91D78D21AF328649CC4B8B1462E9F2F9A3 "点击放大")视频宽高比处于9:16区间的短视频在完整断点区间上的沉浸效果图如下（红色部分为视频显示区域）：
+按照上述沉浸规则进行适配后，视频宽高比处于9:16区间的短视频在窗口宽为320vp至840vp设备上的沉浸效果图如下（红色部分为视频显示区域）![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/x7G30tPIQmqyG-9z6PR21g/zh-cn_image_0000002414407980.png "点击放大")视频宽高比处于9:16区间的短视频在完整断点区间上的沉浸效果图如下（红色部分为视频显示区域）：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/p2FGtAgbR5-18Tx82HsP-w/zh-cn_image_0000002414250984.png?HW-CC-KV=V1&HW-CC-Date=20260429T061304Z&HW-CC-Expire=86400&HW-CC-Sign=C79DBA15D8FDEAD5CF3A7650C418CD06A3C9C6BE355E15B22ABB5C480DA24A2A "点击放大")视频宽高比处于非9:16区间的短视频在窗口宽为320vp以上设备的沉浸效果如下（虚线框内为视频可能显示的区域）：
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/p2FGtAgbR5-18Tx82HsP-w/zh-cn_image_0000002414250984.png "点击放大")视频宽高比处于非9:16区间的短视频在窗口宽为320vp以上设备的沉浸效果如下（虚线框内为视频可能显示的区域）：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/06-KEPY7QlSJWkfdBiZ4Kg/zh-cn_image_0000002447769801.png?HW-CC-KV=V1&HW-CC-Date=20260429T061304Z&HW-CC-Expire=86400&HW-CC-Sign=571A3C5D0BFCDDA9E0A738F8D07EC451ED4C8215FAF4809ED7C51CAAFF753CED "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/06-KEPY7QlSJWkfdBiZ4Kg/zh-cn_image_0000002447769801.png "点击放大")
 
 ### 开发步骤
 
@@ -173,7 +173,7 @@ adaptive\_video提供短视频自适应旋转的能力，降低开发者在多�
 * 设备类型：2in1/PC、车机、TV不支持旋转，其他类型设备支持旋转。
 * 屏幕区间：根据应用窗口宽高计算设备所在的屏幕区间。计算规则如下图，屏幕区间由应用窗口宽（图中横轴，单位为vp）和窗口宽高比（图中纵轴）计算得到，例如，设备Mate60（竖向）的屏幕区间为：Small\_Portrait。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/_no2Q3h9TCSJd0KvXejHEg/zh-cn_image_0000002358013417.png?HW-CC-KV=V1&HW-CC-Date=20260429T061304Z&HW-CC-Expire=86400&HW-CC-Sign=01CB4AC3E220CBDE2DC7BAEB4AFBD5E8A0E36044CDF009DCACC2E95A3B51462E "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/_no2Q3h9TCSJd0KvXejHEg/zh-cn_image_0000002358013417.png "点击放大")
 * 视频类型：根据视频宽高判定：横向视频（宽>高）、竖向视频（宽≤高）。
 * 屏幕方向：根据[重力传感器](../harmonyos-references/js-apis-sensor.md#gravity9)判定：0：竖屏，1：反向横屏，2：反向竖屏， 3：横屏。
 

@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:51:27+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:8a49fcd366d1b227fd14d5900910cd96154e73c44b92493ec528482b511f0e94
+content_hash: sha256:2c71fce173a9b79fe5367360cdf795291b4c75a53583e94dad55f7f10f7a46f4
 ---
 
 设置组件不同状态下的样式。
@@ -192,7 +192,7 @@ PhonePC/2in1TabletTVWearable
 97. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/jykaxAGpR_uYOXY3jzke6A/zh-cn_image_0000002589245877.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055126Z&HW-CC-Expire=86400&HW-CC-Sign=B8D43EA4EB3D1BF547FBBD1F73D66947785CD112F116879BD03288381FB07969)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/jykaxAGpR_uYOXY3jzke6A/zh-cn_image_0000002589245877.gif)
 
 ### 示例2（设置Radio多态样式）
 
@@ -258,7 +258,7 @@ PhonePC/2in1TabletTVWearable
 57. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/dXQxFeVMQLapfR_zePdaJQ/zh-cn_image_0000002558766068.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055126Z&HW-CC-Expire=86400&HW-CC-Sign=C75B057B56D2EBB285E1020E6A1DD243FE2AEEC892B03A6ED3906202633586C6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/dXQxFeVMQLapfR_zePdaJQ/zh-cn_image_0000002558766068.gif)
 
 ### 示例3（设置Builder多态样式）
 
@@ -319,4 +319,4 @@ PhonePC/2in1TabletTVWearable
 52. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/s8AHkfpYQiqUswFHoTxqWA/zh-cn_image_0000002558606410.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055126Z&HW-CC-Expire=86400&HW-CC-Sign=F5626C1C72FA7229D03D8AFFCE7385AF2DD4A836BDF94EFDAFB901A1C8F20E95)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/s8AHkfpYQiqUswFHoTxqWA/zh-cn_image_0000002558606410.gif)

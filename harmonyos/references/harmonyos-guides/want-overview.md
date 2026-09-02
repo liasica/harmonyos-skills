@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > Stage�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:25:47+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:df294b15b3362afc3f07f1842575ec3d754e0f9bebf29e0f19379732e30980af
+content_hash: sha256:6fbddbb38ea5e06b887020e4df046c2a34d3510da4fb5b70745e33120bc3aef9
 ---
 
 ## Want的定义与用途
@@ -16,7 +16,7 @@ content_hash: sha256:df294b15b3362afc3f07f1842575ec3d754e0f9bebf29e0f19379732e30
 
 **图1** Want用法示意
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/gkhr4f5LRlKfWt_s7jPtog/zh-cn_image_0000002589243791.png?HW-CC-KV=V1&HW-CC-Date=20260429T052545Z&HW-CC-Expire=86400&HW-CC-Sign=8F54868AC07838C856310519B917A7AE0AC407C75737D0055F6BC322158D4CFB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/gkhr4f5LRlKfWt_s7jPtog/zh-cn_image_0000002589243791.png)
 
 ## Want的类型
 

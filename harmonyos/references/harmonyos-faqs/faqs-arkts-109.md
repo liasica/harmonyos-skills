@@ -5,7 +5,7 @@ breadcrumb: FAQ > 应用框架开发 > ArkTS语言 > 方舟编程语言（ArkTS�
 category: harmonyos-faqs
 scraped_at: 2026-04-29T14:15:28+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:d9aaf7e9375db5148126830f3ab576389e595ee5e568ac5a68426f92dbc318b9
+content_hash: sha256:069c317993651462546b01a85989210b593d9142145faa24c05b928dfc070f67
 ---
 
 napi\_module结构体包含模块注册所需的信息，具体定义如下：
@@ -26,4 +26,4 @@ napi\_module结构体包含模块注册所需的信息，具体定义如下：
 
 在requireNapi中，loadNativeModule加载模块，会先通过FindNativeModuleByCache在缓存中寻找目标module，如果在缓存中找到，使用GetNativeModulePath拼接so路径，最后用LoadModuleLibrary打开so；如果没有在缓存中找到，则要先查找dlopen打开对应so，打开so后，native中的extern "C" \_\_attribute\_\_((constructor)) void RegisterModule(void)函数进行NativeModule加载，然后完成static napi\_value Init(napi\_env env, napi\_value export)中的实际注册动作，返回一个js对象export，该js对象上挂载了开发者提供的native方法，以便于开发者在js侧调用。模块加载流程简介如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/oFA6N4nzRxy8siCfhhKwAg/zh-cn_image_0000002229604001.png?HW-CC-KV=V1&HW-CC-Date=20260429T061527Z&HW-CC-Expire=86400&HW-CC-Sign=5CD1BF641AD16AFC386567850A17A4DB0F4A04606FAC018A55D81BB791AB450A "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/oFA6N4nzRxy8siCfhhKwAg/zh-cn_image_0000002229604001.png "点击放大")

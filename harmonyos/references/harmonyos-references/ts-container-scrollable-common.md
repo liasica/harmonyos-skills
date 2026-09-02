@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:51:51+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:2ce31c53b2bfdba4436b0841bf218f7c8bf66babc445dfb5e6e549ca9fb912f5
+content_hash: sha256:b4e65372b2afff62906272a4551e092c9b36430f4ff605fbe4e4bf724ab17032
 ---
 
 滚动组件通用属性和事件目前只支持[List](ts-container-list.md)、[Grid](ts-container-grid.md)、[Scroll](ts-container-scroll.md)和[WaterFlow](ts-container-waterflow.md)组件。
@@ -866,7 +866,7 @@ PhonePC/2in1TabletTVWearable
 
 下图是组件配置了边距属性后的示意图，可理解每种枚举对应的裁剪区域。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/kcbPVpplTFWYXLdA2D_o-A/zh-cn_image_0000002589326049.png?HW-CC-KV=V1&HW-CC-Date=20260429T055148Z&HW-CC-Expire=86400&HW-CC-Sign=FD8502C28174CA588B5FEF399F170E1D24A29E5C0B700A998DC4DAD083E5BEAD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/kcbPVpplTFWYXLdA2D_o-A/zh-cn_image_0000002589326049.png)
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1339,7 +1339,7 @@ ListDataSource说明及完整代码参考[示例1添加滚动事件](ts-containe
 58. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/9Ns2LhdlTASKi0MUgBSy9A/zh-cn_image_0000002558606468.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055148Z&HW-CC-Expire=86400&HW-CC-Sign=0788E1F6B052889674407FF5658ABD5DE70EB3CBCAE2F6765D787836EB6D03C5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/9Ns2LhdlTASKi0MUgBSy9A/zh-cn_image_0000002558606468.gif)
 
 ### 示例2（设置边缘渐隐）
 
@@ -1384,7 +1384,7 @@ ListDataSource说明及完整代码参考[示例1添加滚动事件](ts-containe
 34. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/j8OxEY_5Rt6M7rYT74kjDw/zh-cn_image_0000002589245939.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055148Z&HW-CC-Expire=86400&HW-CC-Sign=1E848ADEA3D6940651DED65D6B4BA8C205C039AC0F2A9D9054020801B3DA7150)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/j8OxEY_5Rt6M7rYT74kjDw/zh-cn_image_0000002589245939.gif)
 
 ### 示例3（设置裁剪区域）
 
@@ -1445,7 +1445,7 @@ ListDataSource说明及完整代码参考[示例1添加滚动事件](ts-containe
 52. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/G-WpYzqAQJKC3w0gmiYnPw/zh-cn_image_0000002589245991.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055148Z&HW-CC-Expire=86400&HW-CC-Sign=8C682D321AD875095E71B100E7DD1F720066CC53B9B717B1097313791DCF28C1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/G-WpYzqAQJKC3w0gmiYnPw/zh-cn_image_0000002589245991.gif)
 
 ### 示例4（设置滚动条边距）
 
@@ -1502,4 +1502,4 @@ ListDataSource说明及完整代码参考[示例1添加滚动事件](ts-containe
 46. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/myJuzSoXS6GK-KiP_vR6hw/zh-cn_image_0000002558766182.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055148Z&HW-CC-Expire=86400&HW-CC-Sign=E0E1FB9DC96200DEBBAA55A7A570AD541AFE3C3AE60383A0F326171A4237ED92)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/myJuzSoXS6GK-KiP_vR6hw/zh-cn_image_0000002558766182.gif)

@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:51:31+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:f12443cc08615f4204a2f9491a95893662231cc7773e85daa3c85b82af47ed6c
+content_hash: sha256:7afae661658ae2ae70866b45edfa3cd68b3873bc7f8f99b1baf82505f9bf87df
 ---
 
 通过bindSheet属性为组件绑定半模态页面，在组件插入时可通过设置自定义或默认的内置高度确定半模态大小。
@@ -439,7 +439,7 @@ PhonePC/2in1TabletTVWearable
 65. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/ohNCX2P6QQOUwnq1932HKA/zh-cn_image_0000002558766088.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055128Z&HW-CC-Expire=86400&HW-CC-Sign=E90E2AB0C03705DA70C7133ECFF0CC3AAC5042CAC7AC55E450917C73A51BC4DC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/ohNCX2P6QQOUwnq1932HKA/zh-cn_image_0000002558766088.gif)
 
 ### 示例2（设置三个不同高度的挡位）
 
@@ -492,7 +492,7 @@ PhonePC/2in1TabletTVWearable
 40. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/E7uB2212S1CTtcANciABbA/zh-cn_image_0000002558606430.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055128Z&HW-CC-Expire=86400&HW-CC-Sign=6B0808F6A9900701AC5D9E6E9FCB0A22DCB0B02C5FA828F396C04C9AE8C65917)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/E7uB2212S1CTtcANciABbA/zh-cn_image_0000002558606430.gif)
 
 ### 示例3（使用边框宽度和颜色）
 
@@ -548,11 +548,11 @@ bindSheet属性的borderWidth、borderColor属性值使用LocalizedEdgeWidths类
 
 从左至右显示语言模式示例图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/PuJftiycQGef1P1OkgpLgA/zh-cn_image_0000002589325957.png?HW-CC-KV=V1&HW-CC-Date=20260429T055128Z&HW-CC-Expire=86400&HW-CC-Sign=269C9574C96CA10792332A1910F0BBC3C1F2A481F40F082BA031B60D89A99C30)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/PuJftiycQGef1P1OkgpLgA/zh-cn_image_0000002589325957.png)
 
 从右至左显示语言模式示例图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/H4Xd2BFzSledZpkVgfY07Q/zh-cn_image_0000002589245899.png?HW-CC-KV=V1&HW-CC-Date=20260429T055128Z&HW-CC-Expire=86400&HW-CC-Sign=EDCEF43E9FDDCD9EE6E5EF121EC483BC3D341584B00B61C3AD682FFA8364980F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/H4Xd2BFzSledZpkVgfY07Q/zh-cn_image_0000002589245899.png)
 
 ### 示例4（使用关闭回调函数）
 
@@ -605,7 +605,7 @@ bindSheet注册onWillDismiss与onWillSpringBackWhenDismiss。
 44. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/kZ8xD_SZS5ujUSTOE0a-NA/zh-cn_image_0000002558766090.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055128Z&HW-CC-Expire=86400&HW-CC-Sign=F11FBD224B6F79C812406F28F5C40881489AC2142317D838F316190A9B19D5C8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/kZ8xD_SZS5ujUSTOE0a-NA/zh-cn_image_0000002558766090.gif)
 
 ### 示例5（设置内容区刷新时机）
 
@@ -658,11 +658,11 @@ ScrollSizeMode.CONTINUOUS 持续更新内容适合detents多挡位切换场景�
 
 跟手触发挡位切换时，松手才触发面板内容高度刷新
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/lOGh-HBaR4i84JIr_Nflrw/zh-cn_image_0000002558606432.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055128Z&HW-CC-Expire=86400&HW-CC-Sign=AA7583AB228CECB25C1F7722C855F823B6C5B16C7774F7E09014E88099D5F377)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/lOGh-HBaR4i84JIr_Nflrw/zh-cn_image_0000002558606432.gif)
 
 跟手触发挡位切换时，跟手时期就会触发面板内容高度刷新
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/KBdFUYRwRteZo_jR5iU8yQ/zh-cn_image_0000002589325959.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055128Z&HW-CC-Expire=86400&HW-CC-Sign=C5A5BCB6D2F5143FB886AABE726A6AADDF3C87F06A1DD55C3D091A539B88B017)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/KBdFUYRwRteZo_jR5iU8yQ/zh-cn_image_0000002589325959.gif)
 
 ### 示例6（设置压缩模态内容）
 
@@ -779,7 +779,7 @@ ScrollSizeMode.CONTINUOUS 持续更新内容适合detents多挡位切换场景�
 108. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/ouKT22OORCSMzWXzENS0IA/zh-cn_image_0000002589245901.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055128Z&HW-CC-Expire=86400&HW-CC-Sign=B3FBB8A86AEFAB60C608F0DA073361A07947DC3B5290410B399543895972F208)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/ouKT22OORCSMzWXzENS0IA/zh-cn_image_0000002589245901.gif)
 
 ### 示例7（镜像场景下如何设置圆角属性）
 
@@ -832,11 +832,11 @@ ScrollSizeMode.CONTINUOUS 持续更新内容适合detents多挡位切换场景�
 
 从左至右显示语言模式示例图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/IMgU-7CXQ2CBQiLx22506g/zh-cn_image_0000002558766092.png?HW-CC-KV=V1&HW-CC-Date=20260429T055128Z&HW-CC-Expire=86400&HW-CC-Sign=8A40CEAA49CA3D450AB072DBD53FDD956D155886D5C8E36C2241642A62E69498)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/IMgU-7CXQ2CBQiLx22506g/zh-cn_image_0000002558766092.png)
 
 从右至左显示语言模式示例图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/NrQ4IA39RluOCo9Anyi-zA/zh-cn_image_0000002558606434.png?HW-CC-KV=V1&HW-CC-Date=20260429T055128Z&HW-CC-Expire=86400&HW-CC-Sign=3149669F75F22021CF7BCE71F0D41A81F94F1A535E0F8F75AB871C3919AB02BE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/NrQ4IA39RluOCo9Anyi-zA/zh-cn_image_0000002558606434.png)
 
 ### 示例8（半模态Side侧边样式）
 
@@ -938,7 +938,7 @@ ScrollSizeMode.CONTINUOUS 持续更新内容适合detents多挡位切换场景�
 94. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/95hBR_m6Rf6bPwvMHE2kbw/zh-cn_image_0000002589325961.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055128Z&HW-CC-Expire=86400&HW-CC-Sign=D8B0014D356C59DD494493E4664E17F2C7311EED9947BAC16DEA8FFCF3AC03F5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/95hBR_m6Rf6bPwvMHE2kbw/zh-cn_image_0000002589325961.gif)
 
 ### 示例9（半模态ContentCover全屏样式）
 
@@ -1001,4 +1001,4 @@ ScrollSizeMode.CONTINUOUS 持续更新内容适合detents多挡位切换场景�
 54. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/-t1tG46mQryBlgYQ-Nbymw/zh-cn_image_0000002589245903.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055128Z&HW-CC-Expire=86400&HW-CC-Sign=486F35050998983F469B28F6519533F6BABEA6003E7F8F269DD13728C4FC384A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/-t1tG46mQryBlgYQ-Nbymw/zh-cn_image_0000002589245903.gif)

@@ -5,7 +5,7 @@ breadcrumb: 最佳实践 > 自由流转 > 典型全场景协同开发案例 > �
 category: best-practices
 scraped_at: 2026-04-29T14:12:54+08:00
 doc_updated_at: 2026-04-01
-content_hash: sha256:bf1fef42896056dda64dbac0cdc9b2a5b9420b6e8ec466906f9c134210563967
+content_hash: sha256:08791b903201b36c08653a908775c3be5c8f8bca2a8f364734c3ac21d90870f4
 ---
 
 ## 概述
@@ -21,7 +21,7 @@ content_hash: sha256:bf1fef42896056dda64dbac0cdc9b2a5b9420b6e8ec466906f9c1342105
 
 ## 用户体验
 
-[](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/f4/v3/yCqhMop2TDuQZMiTtfc7rQ/zh-cn_media_0000002311815932.mp4?HW-CC-KV=V1&HW-CC-Date=20260429T061247Z&HW-CC-Expire=86400&HW-CC-Sign=0F608C3C49FFE927F0A361E2B7AFB1FE168B1C27E631979C473255E4B495158D)
+[](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/f4/v3/yCqhMop2TDuQZMiTtfc7rQ/zh-cn_media_0000002311815932.mp4)
 
 Video Player is loading.
 
@@ -91,7 +91,7 @@ End of dialog window.
 
 **实现效果**
 
-[](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/fa/v3/qyQZk3ksQ5KjAAgDpNdaSQ/zh-cn_media_0000002345894753.mp4?HW-CC-KV=V1&HW-CC-Date=20260429T061247Z&HW-CC-Expire=86400&HW-CC-Sign=91887D2A2AC31AECC0A902F6E1FFE7AD2CC172B290C3C5E870B1D90E7B6EFE81)
+[](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/fa/v3/qyQZk3ksQ5KjAAgDpNdaSQ/zh-cn_media_0000002345894753.mp4)
 
 Video Player is loading.
 
@@ -143,7 +143,7 @@ End of dialog window.
 2. 系统将自动唤醒远端设备上的相机、图库或扫描功能，进入相应的界面。
 3. 使用远端设备完成拍照或选择图片并确认，远端拍摄状态信息实时回传到本端，并将数据插入到本端设备的应用中。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/IKDm136aST6HeiKqU_8qDg/zh-cn_image_0000002345774957.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T061247Z&HW-CC-Expire=86400&HW-CC-Sign=DE5AE2ACF8E59B7E16AA032667566E8A89E710607A6989920729C0A7A7E1E109 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/IKDm136aST6HeiKqU_8qDg/zh-cn_image_0000002345774957.jpg "点击放大")
 
 **关键技术**
 
@@ -236,7 +236,7 @@ End of dialog window.
 
 **实现效果**
 
-[](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/0f/v3/QGEBWJdDRbyVkYClriYWqA/zh-cn_media_0000002311975752.mp4?HW-CC-KV=V1&HW-CC-Date=20260429T061247Z&HW-CC-Expire=86400&HW-CC-Sign=3B19516E3BCFF9E89D9E9C4AE5AE9D073967534AB6BF60BAA6AFA0988A784B18)
+[](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/0f/v3/QGEBWJdDRbyVkYClriYWqA/zh-cn_media_0000002311975752.mp4)
 
 Video Player is loading.
 
@@ -288,7 +288,7 @@ End of dialog window.
 2. 在此过程中，系统自动处理跨设备的数据传输，开发者无需介入。
 3. 当用户释放鼠标时，触发拖拽松手事件，远端应用处理接收到的拖拽数据，并将其写入远端编辑页面。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/265rxrkSQL2KPQj2jj20wg/zh-cn_image_0000002311815960.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T061247Z&HW-CC-Expire=86400&HW-CC-Sign=C3194948E4194935395A926D8D9709D3F7812A1EDF438E6EBA46D265EB06FB28 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/265rxrkSQL2KPQj2jj20wg/zh-cn_image_0000002311815960.jpg "点击放大")
 
 **关键技术**
 
@@ -391,7 +391,7 @@ End of dialog window.
 
 **实现效果**
 
-[](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/a9/v3/hspMydF5S2uTvIAtZCwyog/zh-cn_media_0000002345894765.mp4?HW-CC-KV=V1&HW-CC-Date=20260429T061247Z&HW-CC-Expire=86400&HW-CC-Sign=AF5997CC8D70C62048C014C74AD928B098A99658B93BD19E6BA073FF87E0A875)
+[](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/a9/v3/hspMydF5S2uTvIAtZCwyog/zh-cn_media_0000002345894765.mp4)
 
 Video Player is loading.
 
@@ -445,7 +445,7 @@ End of dialog window.
 
 3. 用户在远端读取系统剪贴板内容，粘贴来自本端的数据。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/t9X9ior0RUmHO-SLQwPQcA/zh-cn_image_0000002345774965.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T061247Z&HW-CC-Expire=86400&HW-CC-Sign=91E990F1CA762CC2E4F7D90EC8AF281C4EE4C82CB0959516B8B72CA29146FE6D "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/t9X9ior0RUmHO-SLQwPQcA/zh-cn_image_0000002345774965.jpg "点击放大")
 
 **关键技术**
 
@@ -519,7 +519,7 @@ End of dialog window.
 
 **实现效果**
 
-[](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/27/v3/wOJ_1Z7XR2i9mqctKKD_1A/zh-cn_media_0000002311975768.mp4?HW-CC-KV=V1&HW-CC-Date=20260429T061247Z&HW-CC-Expire=86400&HW-CC-Sign=06553C444D66674DC9BF30DF7E337976FA1689135EFEA416D66C2A631BBFC72C)
+[](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/27/v3/wOJ_1Z7XR2i9mqctKKD_1A/zh-cn_media_0000002311975768.mp4)
 
 Video Player is loading.
 
@@ -573,7 +573,7 @@ End of dialog window.
 
 场景核心在于应用接续的过程中如何传递数据。对于文字信息可使用分布式数据对象保存，对于图片可以拷贝到分布式文件目录下，使用分布式数据资产作为分布式数据对象的根属性保存。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/z4VZL0bXT5-ACjxRjUlIww/zh-cn_image_0000002311815980.png?HW-CC-KV=V1&HW-CC-Date=20260429T061247Z&HW-CC-Expire=86400&HW-CC-Sign=E6100D5985EA6FAFA7474CDD11EBC4812E12007CAB193A6ECB79AACD2401AFB1 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/z4VZL0bXT5-ACjxRjUlIww/zh-cn_image_0000002311815980.png "点击放大")
 
 **关键技术**
 

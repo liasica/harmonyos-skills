@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:53:05+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:6a2588d2df2ebea93b22cf13eff60a59f731dc71a0b0ddcb519b8b49da66e9e2
+content_hash: sha256:4ad1f5dfa6e66216848fa6d9cf91436bdae6cd2c6d1fddbf04271947c05583ce
 ---
 
 页签型标题栏，用于页面之间的切换。仅一级页面适用。
@@ -190,7 +190,7 @@ PhonePC/2in1TabletTVWearable
 86. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/ea5VohlFTzmPhqdu_kRPqw/zh-cn_image_0000002558607002.png?HW-CC-KV=V1&HW-CC-Date=20260429T055304Z&HW-CC-Expire=86400&HW-CC-Sign=04EF9B6DDB7E2F369BB869DEBFD7A04A19DECCDC5FA4A2AA504E282AD8D4D8D7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/ea5VohlFTzmPhqdu_kRPqw/zh-cn_image_0000002558607002.png)
 
 ### 示例2（右侧自定义按钮播报）
 
@@ -298,7 +298,7 @@ PhonePC/2in1TabletTVWearable
 99. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/nDNvy-T1R6eq0S13D9qKmw/zh-cn_image_0000002589326529.png?HW-CC-KV=V1&HW-CC-Date=20260429T055304Z&HW-CC-Expire=86400&HW-CC-Sign=E72279452A0FB81F31843EC7B441BD829E86103D1AA5BC50BFE1A7634A587DAA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/nDNvy-T1R6eq0S13D9qKmw/zh-cn_image_0000002589326529.png)
 
 ### 示例3（设置Symbol类型图标）
 
@@ -413,4 +413,4 @@ PhonePC/2in1TabletTVWearable
 106. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/wjgnUINIRoqa_qbQyp0-0A/zh-cn_image_0000002589246471.png?HW-CC-KV=V1&HW-CC-Date=20260429T055304Z&HW-CC-Expire=86400&HW-CC-Sign=B2AAFB7593B5E361BE56E27184D28EB6365713DA5171EAE0CEDB9F603E31DBAD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/wjgnUINIRoqa_qbQyp0-0A/zh-cn_image_0000002589246471.png)

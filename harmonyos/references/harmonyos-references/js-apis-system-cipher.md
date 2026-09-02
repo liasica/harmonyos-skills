@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-system-cipher
-title: @system.cipher (加密算法)
+title: "@system.cipher (加密算法)"
 breadcrumb: API参考 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > ArkTS API > 已停止维护的接口 > @system.cipher (加密算法)
 category: harmonyos-references
 scraped_at: 2026-04-28T08:06:50+08:00

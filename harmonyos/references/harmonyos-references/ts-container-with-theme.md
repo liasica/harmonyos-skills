@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:52:52+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:42ac7410830c57be37883af32b3706414b38d751b79900f9a3032ddef8c6ea1d
+content_hash: sha256:e515a15df6f3575020eea725e999d26f4cdd0ca7091631e2215bd5acfacf66a9
 ---
 
 WithTheme组件用于设置应用局部页面自定义主题风格，可设置子组件深浅色模式和自定义配色。
@@ -91,7 +91,7 @@ PhonePC/2in1TabletTVWearable
 
 设置局部深浅色时，需要添加dark.json资源文件，深浅色模式才会生效。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/coBNzoXqSvKJpnSlD4EZKw/zh-cn_image_0000002589326469.png?HW-CC-KV=V1&HW-CC-Date=20260429T055250Z&HW-CC-Expire=86400&HW-CC-Sign=A33EBA94C93137706D57AFF9651C3EBA78A0A6C9A3FAE1D2937747483E27474F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/coBNzoXqSvKJpnSlD4EZKw/zh-cn_image_0000002589326469.png)
 
 dark.json数据示例：
 
@@ -162,7 +162,7 @@ dark.json数据示例：
 51. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/pRLfTcORTDOZxZ4ZWZ2eCA/zh-cn_image_0000002589246411.png?HW-CC-KV=V1&HW-CC-Date=20260429T055250Z&HW-CC-Expire=86400&HW-CC-Sign=0D53DCA7A92971FF958E31279CBB3A0A79CAE1C8ED925C93BE7D0C512ADAFDF1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/pRLfTcORTDOZxZ4ZWZ2eCA/zh-cn_image_0000002589246411.png)
 
 ### 示例2（自定义WithTheme作用域内组件缺省配色）
 
@@ -248,4 +248,4 @@ dark.json数据示例：
 79. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/sLZanZgBSk-kf-_098vKag/zh-cn_image_0000002558766604.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055250Z&HW-CC-Expire=86400&HW-CC-Sign=1D49BB84816FC0FCFE5FCC677EB82E8D1EA96D2F0B17C0E4CB147116AF19249A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/sLZanZgBSk-kf-_098vKag/zh-cn_image_0000002558766604.gif)

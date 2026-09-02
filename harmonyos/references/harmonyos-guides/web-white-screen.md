@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > Web调试维测 > �
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:29:32+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:eebc3be2b6e0d06e995ca66f8fcb2965790be8540f1137e550684a78fb45dc85
+content_hash: sha256:abc2ead098f7a01dd5111f724a4820890e35c85f7ec4b1c7008961164cab0f8e
 ---
 
 Web页面出现白屏的原因众多，本文列举了若干常见白屏问题的排查步骤，供开发者快速定位。
@@ -108,7 +108,7 @@ Web页面出现白屏的原因众多，本文列举了若干常见白屏问题�
 
    （3）网络里面是否有资源加载时间特别长等。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/mpMn_H0yTimuc6i0Vfsv4A/zh-cn_image_0000002558764748.png?HW-CC-KV=V1&HW-CC-Date=20260429T052931Z&HW-CC-Expire=86400&HW-CC-Sign=D63432E13058A6BA136F40740BF41517ADAFFC28D22535C220BB3CE7C268002E)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/mpMn_H0yTimuc6i0Vfsv4A/zh-cn_image_0000002558764748.png)
 2. 检查控制台，确认是否存在因MixedContent策略或CORS策略导致的异常，或JS错误等。可参考[解决Web组件本地资源跨域问题](web-cross-origin.md)。为了提高安全性，ArkWeb内核禁止file协议和resource协议访问跨域请求。因此，在使用Web组件加载本地离线资源的时候，Web组件会拦截file协议和resource协议的跨域访问。Web组件无法访问本地跨域资源时，DevTools控制台会显示报错信息：
 
    ```
@@ -415,7 +415,7 @@ Web组件提供了自适应页面布局的能力，详情见 [Web组件大小自
 
 下面说明一下Web组件网络加载过程中的关键日志，正常情况下一个Web组件的加载过程应该包含这些关键节点：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/7UbEyRX6SQePFS6gVG1gjA/zh-cn_image_0000002558605092.png?HW-CC-KV=V1&HW-CC-Date=20260429T052931Z&HW-CC-Expire=86400&HW-CC-Sign=EE803811140BE4FA797F3983D07AABD36E246F35BA888F64B0A4D365F4FB33B5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/7UbEyRX6SQePFS6gVG1gjA/zh-cn_image_0000002558605092.png)
 
 | 日志关键字 | 说明 |
 | --- | --- |

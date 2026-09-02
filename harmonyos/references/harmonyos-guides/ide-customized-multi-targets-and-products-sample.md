@@ -5,7 +5,7 @@ breadcrumb: 指南 > 构建应用 > 配置构建流程 > 配置多目标产物 >
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:47:13+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:1fa7985f0eb029ebce9a6f28dcbe1b5e7c6697850357c1f3ed4cc4bc719c4df3
+content_hash: sha256:c036bb9537251d9759e135e17639a892105e8a26b50d27111099732d90dd4973
 ---
 
 某对外发布应用共有两个版本：
@@ -16,7 +16,7 @@ content_hash: sha256:1fa7985f0eb029ebce9a6f28dcbe1b5e7c6697850357c1f3ed4cc4bc719
 
 可以看出在Community版本与Ultimate版本之间，部分功能存在重合，同时也存在某些特定功能，所以期望通过一次开发以实现差异化，根据不同配置完成多种特定运行环境的开发、预览、打包、调试等功能。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/DOMMLGaKQTa_0wtB6emTmw/zh-cn_image_0000002530913126.png?HW-CC-KV=V1&HW-CC-Date=20260429T054712Z&HW-CC-Expire=86400&HW-CC-Sign=5829871AAF673CA9EF4131E9A22FB10C416AA1B8C177C0D482B2D6C6F9F5FF5D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/DOMMLGaKQTa_0wtB6emTmw/zh-cn_image_0000002530913126.png)
 
 1. 两个不同版本的软件，可能存在差异：如不同的应用标题、应用图标、版本声明。我们可以在工程级build-profile.json5->app{}->products[]中，可以对两种不同的外发版本进行差异化定制，新增两个product：Community和Ultimate。根据已支持的字段进行定制修改。
 
@@ -172,8 +172,8 @@ content_hash: sha256:1fa7985f0eb029ebce9a6f28dcbe1b5e7c6697850357c1f3ed4cc4bc719
 
 例：用户需要构建Ultimate版本的且具有vip特性的应用，可以选择product：Ultimate，target：vip，apply之后执行构建。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/Z3J56G7zTzCK2E4HzwsrIw/zh-cn_image_0000002561753063.png?HW-CC-KV=V1&HW-CC-Date=20260429T054712Z&HW-CC-Expire=86400&HW-CC-Sign=A8EC060EF3D3FA0D8A71567AFC8061AE5E3161ACC490CD0ED16A707150D75839)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/Z3J56G7zTzCK2E4HzwsrIw/zh-cn_image_0000002561753063.png)
 
 查看构建产物
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/Clq62gtAQBi82BObeQHtTw/zh-cn_image_0000002561753065.png?HW-CC-KV=V1&HW-CC-Date=20260429T054712Z&HW-CC-Expire=86400&HW-CC-Sign=73562C4B51BAEB85A7080178F807B268A796C17339CD005463E6271886102477)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/Clq62gtAQBi82BObeQHtTw/zh-cn_image_0000002561753065.png)

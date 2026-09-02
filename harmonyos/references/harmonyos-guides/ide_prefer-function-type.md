@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_prefer-function-type
-title: @typescript-eslint/prefer-function-type
+title: "@typescript-eslint/prefer-function-type"
 breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/prefer-function-type
 category: harmonyos-guides
 scraped_at: 2026-04-28T07:55:44+08:00

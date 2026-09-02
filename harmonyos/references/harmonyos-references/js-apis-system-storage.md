@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-system-storage
-title: @system.storage (数据存储)
+title: "@system.storage (数据存储)"
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > ArkTS API > 已停止维护的接口 > @system.storage (数据存储)
 category: harmonyos-references
 scraped_at: 2026-04-28T07:59:24+08:00

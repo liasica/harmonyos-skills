@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:52:24+08:00
 doc_updated_at: 2026-04-02
-content_hash: sha256:0ce8940183ea9782e632f60fb4e4b869d8c5922ba0d719dd67117c87f4a4de3f
+content_hash: sha256:4323a7edd82332eba439c2a5d4b01b1cb827cc81e359d24a6e2752c18a7b8b24
 ---
 
 一个Object对象，使用[createPattern](ts-canvasrenderingcontext2d.md#createpattern)方法创建，通过指定图像和重复方式创建图片填充的模板。
@@ -98,4 +98,4 @@ PhonePC/2in1TabletTVWearable
 47. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/C8wdRjMPS_eDAJlr7abcyg/zh-cn_image_0000002558606794.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055223Z&HW-CC-Expire=86400&HW-CC-Sign=780CD0C6162D00BBCC55DE4CF562D66339E467AA9DD9396443320642FDF4ADEF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/C8wdRjMPS_eDAJlr7abcyg/zh-cn_image_0000002558606794.gif)

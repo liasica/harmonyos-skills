@@ -5,7 +5,7 @@ breadcrumb: 指南 > 系统 > 安全 > Universal Keystore Kit（密钥管理服�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:31:56+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:88f2c8304e852e750bba4fb53c7acb90e68527e06167f46c0b4886b686a3e89b
+content_hash: sha256:238efea121e0cf0435e2a0c0c5c3f6a08473123cffdb39c875f7790ecdeb089f
 ---
 
 如果业务在HUKS外部生成密钥（比如应用间协商生成、服务器端生成），业务可以将密钥导入到HUKS中由HUKS进行管理。密钥一旦导入到HUKS中，在密钥的生命周期内，其明文仅在安全环境中进行访问操作，不会传递出安全环境。
@@ -37,7 +37,7 @@ content_hash: sha256:88f2c8304e852e750bba4fb53c7acb90e68527e06167f46c0b4886b686a
 
 下图为安全导入密钥开发时序图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/aUXf7evQSEaIMbqlmAsuww/zh-cn_image_0000002558764910.png?HW-CC-KV=V1&HW-CC-Date=20260429T053155Z&HW-CC-Expire=86400&HW-CC-Sign=ACC9B19CFEBF285C779C9C7B158E81E46791F5321AD7A65DB40962AB3C49EBC4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/aUXf7evQSEaIMbqlmAsuww/zh-cn_image_0000002558764910.png)
 
 根据开发流程，在安全导入密钥过程中，需要依次调用HUKS的能力包括：
 
@@ -90,7 +90,7 @@ content_hash: sha256:88f2c8304e852e750bba4fb53c7acb90e68527e06167f46c0b4886b686a
 
 下图为数字信封导入密钥开发时序图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/VF-JEuvIRPuL8KzwGVx2_A/zh-cn_image_0000002558605254.png?HW-CC-KV=V1&HW-CC-Date=20260429T053155Z&HW-CC-Expire=86400&HW-CC-Sign=13E837A79818F62E7DB61A4A53EFFAE2CC014AA296384144A8264C04F89D14AA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/VF-JEuvIRPuL8KzwGVx2_A/zh-cn_image_0000002558605254.png)
 
 根据业务流程，导入数字信封时需要调用HUKS的能力。
 

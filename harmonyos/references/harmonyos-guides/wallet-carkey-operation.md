@@ -5,12 +5,12 @@ breadcrumb: 指南 > 应用服务 > Wallet Kit（钱包服务） > 数字车钥�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:40:44+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:a6a316ddfb1c614aabd74e1767d111a4d57b33b2af32b6b691977baa8d9fe1a6
+content_hash: sha256:0819af98ea01505cb06e250eedcba0e9fa03ffd9c2fec96d13c935de3cb4d544
 ---
 
 钥匙开通分为添加钥匙和激活钥匙两步，整体交互流程图如下。相关接口定义请参照[钱包服务API](../harmonyos-references/wallet-walletpass.md)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/mu3lMPXoSMmB8Ocm56Engw/zh-cn_image_0000002558765700.png?HW-CC-KV=V1&HW-CC-Date=20260429T054043Z&HW-CC-Expire=86400&HW-CC-Sign=9C424EAB68065FF75AF44984F9598687FEFEDEC1E0069E340B99644C43E1018A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/mu3lMPXoSMmB8Ocm56Engw/zh-cn_image_0000002558765700.png)
 
 1. 车主APP调用[queryPass](../harmonyos-references/wallet-walletpass.md#querypass)接口检查当前设备车钥匙的开通情况。
 2. 如果[queryPass](../harmonyos-references/wallet-walletpass.md#querypass)接口返回[1010220501 查询卡券不存在](../harmonyos-references/wallet-error-code.md#section1010220501-查询卡券不存在)，则调用[canAddPass](../harmonyos-references/wallet-walletpass.md#canaddpass)接口检查当前设备是否支持添加车钥匙。
@@ -222,10 +222,10 @@ content_hash: sha256:a6a316ddfb1c614aabd74e1767d111a4d57b33b2af32b6b691977baa8d9
 
 1. 使用Intellij IDEA打开[钱包服务-服务端卡片开通](https://gitcode.com/harmonyos_samples/wallet-kit-sample-code-severdemo-java)的示例代码，没有请先下载Intellij IDEA的当前最新版本。示例代码和工具下载完成后，目录结构如下，我们需要关注下图框出来几个文件：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/zzK8V0H7QjeWvB9LN6vOsA/zh-cn_image_0000002558606044.png?HW-CC-KV=V1&HW-CC-Date=20260429T054043Z&HW-CC-Expire=86400&HW-CC-Sign=3687DE5166FBBAFDC57FE99364D4353070626834499BBF42794EADEECBA82814)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/zzK8V0H7QjeWvB9LN6vOsA/zh-cn_image_0000002558606044.png)
 2. 打开resources/release.config.properties文件，替换真实的应用数据。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/7bhy5CpoTPaRnvdTm4R_Lw/zh-cn_image_0000002589325571.png?HW-CC-KV=V1&HW-CC-Date=20260429T054043Z&HW-CC-Expire=86400&HW-CC-Sign=542CF67401D7C31EAFEFC792FF49C36937386C3C11D76A4EA52E562A4FF3D86D)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/7bhy5CpoTPaRnvdTm4R_Lw/zh-cn_image_0000002589325571.png)
 
    | 需替换的参数 | 参数说明 |
    | --- | --- |
@@ -235,24 +235,24 @@ content_hash: sha256:a6a316ddfb1c614aabd74e1767d111a4d57b33b2af32b6b691977baa8d9
    | servicePrivateKey | [创建Wallet Kit服务](wallet-preparations.md)步骤5生成的私钥 |
 3. 打开resources/data/StdCarKeyModel.json文件，替换真实的应用数据，详细见[预置模板](../harmonyos-references/wallet-rest-api-carkey.md#预置模板)的请求参数。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/FqSkWFfnTB-gp44QLHf5uw/zh-cn_image_0000002558765702.png?HW-CC-KV=V1&HW-CC-Date=20260429T054043Z&HW-CC-Expire=86400&HW-CC-Sign=5BD861F25322E8EDC3D5923AED904D73A344C1BC083D39B50FC94D80D11011A4)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/FqSkWFfnTB-gp44QLHf5uw/zh-cn_image_0000002558765702.png)
 4. 打开stdcarkey/StdCarKeyModelTest.java文件，运行createStdCarKeyModel方法，可看到控制台如下输出，详细见[预置模板](../harmonyos-references/wallet-rest-api-carkey.md#预置模板)的响应参数。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/e9XD0kh5TomueCOlP2qCjw/zh-cn_image_0000002558606046.png?HW-CC-KV=V1&HW-CC-Date=20260429T054043Z&HW-CC-Expire=86400&HW-CC-Sign=658180F4DAE85993F387C8FBC21ADA7DC1B9AA9E4BA1DA29EBF321F6CBF35A78)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/e9XD0kh5TomueCOlP2qCjw/zh-cn_image_0000002558606046.png)
 5. 打开resources/data/StdCarKeyInstance.json文件，替换真实的应用数据，详细见[申请钥匙卡片](../harmonyos-references/wallet-rest-api-carkey.md#申请钥匙卡片)的请求参数。
 6. 打开stdcarkey/StdCarKeyInstanceTest.java文件，运行addStdCarKeyInstance方法，可看到控制台如下输出，详细见[申请钥匙卡片](../harmonyos-references/wallet-rest-api-carkey.md#申请钥匙卡片)的响应参数。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/DKYAgnsISLadu3F5zUHh9A/zh-cn_image_0000002589325573.png?HW-CC-KV=V1&HW-CC-Date=20260429T054043Z&HW-CC-Expire=86400&HW-CC-Sign=17032D96392A392AE91A5470797EA1998A2B1475408423965B37EDB229332F6F)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/DKYAgnsISLadu3F5zUHh9A/zh-cn_image_0000002589325573.png)
 
 ## 车主服务器激活卡片
 
 1. 使用 Intellij IDEA打开[钱包服务-服务端卡片激活](https://gitcode.com/harmonyos_samples/wallet-kit-sample-code-severdemo-nfc-java)的示例代码。示例代码和工具下载完成后，解决工程配置等问题后，Constants类中替换SERVER\_PUBLIC\_KEY和SERVER\_SECRET\_KEY为您在[创建Wallet Kit服务](wallet-preparations.md)步骤5生成的公钥和私钥，直接打开PassesController这个类。
 2. [设备认证](../harmonyos-references/wallet-rest-api-public.md#设备认证)对应类中的register方法，通过此方法进行设备认证。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/8OWecx6oTL67QZj8W9wJKQ/zh-cn_image_0000002589245511.png?HW-CC-KV=V1&HW-CC-Date=20260429T054043Z&HW-CC-Expire=86400&HW-CC-Sign=5C8A7B85C4EC75A6C38D7C04915D413E31209C215C7807FDB1F5C15EADF56C0A)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/8OWecx6oTL67QZj8W9wJKQ/zh-cn_image_0000002589245511.png)
 3. [获取个人化数据Token](../harmonyos-references/wallet-rest-api-public.md#获取个人化数据token)对应类中的requestToken方法，通过此方法获取个人化数据Token。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/ASZf74VyRPChC3mV3wvybQ/zh-cn_image_0000002558765704.png?HW-CC-KV=V1&HW-CC-Date=20260429T054043Z&HW-CC-Expire=86400&HW-CC-Sign=A12ADDC46263D96BF5B141E3AA8AB9C6E8528AC4C3AAD15EC108892C422F843C)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/ASZf74VyRPChC3mV3wvybQ/zh-cn_image_0000002558765704.png)
 4. [获取个人化数据](../harmonyos-references/wallet-rest-api-public.md#获取个人化数据)对应类中的getPersonalInfo方法，重点看dealWithPersonalizeDataRequest中的getDevicePassData这个方法，查看ICCECarKeyDevicePassUnit的generatePassData方法，通过这些方法获取个人化数据。再深入打开里面的getPersonalizeData方法，根据此接口的说明进行生成。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/Ut_itJfcQ9Sw3XoDEGwB2A/zh-cn_image_0000002558606048.png?HW-CC-KV=V1&HW-CC-Date=20260429T054043Z&HW-CC-Expire=86400&HW-CC-Sign=F67CFA22F1D55FCACEFCF08AF6DE3E412BE30FBEA1328B2A9161DC50DB2B873B)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/Ut_itJfcQ9Sw3XoDEGwB2A/zh-cn_image_0000002558606048.png)

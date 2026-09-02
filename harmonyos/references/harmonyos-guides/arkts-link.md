@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-link
-title: @Link装饰器：父子双向同步
+title: "@Link装饰器：父子双向同步"
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理（V1） > 管理组件拥有的状态 > @Link装饰器：父子双向同步
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:27:15+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:de29897ba0cdc3dfb5309927c0aa270791bcc22df00b83e3f080b25ff36b3b83
+content_hash: sha256:aed7b40451c489e055ca807b9f3b7ce449ab262b23bd2d311de27eb033b959dc
 ---
 
 子组件中被@Link装饰的变量与其父组件中对应的数据源建立双向数据绑定。
@@ -42,7 +42,7 @@ content_hash: sha256:de29897ba0cdc3dfb5309927c0aa270791bcc22df00b83e3f080b25ff36
 
 **图1** 初始化规则示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/1BTv6K7TT06OYAza9a_xXg/zh-cn_image_0000002558764092.png?HW-CC-KV=V1&HW-CC-Date=20260429T052713Z&HW-CC-Expire=86400&HW-CC-Sign=CF91EB83665877FD37D23E5128C859008D870CFFDD9CD891D5B48C1B6F181713)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/1BTv6K7TT06OYAza9a_xXg/zh-cn_image_0000002558764092.png)
 
 ## 观察变化和行为表现
 
@@ -336,7 +336,7 @@ content_hash: sha256:de29897ba0cdc3dfb5309927c0aa270791bcc22df00b83e3f080b25ff36
 
 [UsingLinkwithPrimitiveandClassTypes.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ComponentStateManagement/entry/src/main/ets/pages/LinkDecorator/UsingLinkwithPrimitiveandClassTypes.ets#L16-L99)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/1NYfFlWISnadhXSLTKcUiA/zh-cn_image_0000002558604436.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052713Z&HW-CC-Expire=86400&HW-CC-Sign=BE411DC394F66C9462A28682E86CEEA44D25FF858C424891A16278DBD4C53BB8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/1NYfFlWISnadhXSLTKcUiA/zh-cn_image_0000002558604436.gif)
 
 ### 数组类型的@Link
 
@@ -393,7 +393,7 @@ content_hash: sha256:de29897ba0cdc3dfb5309927c0aa270791bcc22df00b83e3f080b25ff36
 50. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/OmM9dKRbT_Kol3K8jSTDUA/zh-cn_image_0000002589323961.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052713Z&HW-CC-Expire=86400&HW-CC-Sign=574C766D0F860DF810FE32C02662163840A34CEA6858259A5511538FE3714447)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/OmM9dKRbT_Kol3K8jSTDUA/zh-cn_image_0000002589323961.gif)
 
 状态管理框架可以观察到数组元素的添加、删除和替换。在该示例中，@State和@Link的类型均为number[]，不支持将@Link定义成number类型（@Link item : number），并用@State数组中的每个数据项在父组件中创建子组件。如需使用这种场景，可以参考[@Prop](arkts-prop.md)和[@Observed](arkts-observed-and-objectlink.md)。
 

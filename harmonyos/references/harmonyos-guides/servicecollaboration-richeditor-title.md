@@ -5,7 +5,7 @@ breadcrumb: 指南 > 系统 > 网络 > Service Collaboration Kit（协同服务�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:33:03+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:a63ecce9a48844c6eb6d66acf1a13616d98ea137f9ab8516c7f8db25f3f51048
+content_hash: sha256:e49d265b2bc16062d6e4d56632ce808ef7f04f7429b1e458342377c638e38ce2
 ---
 
 富文本控件[RichEditor](../harmonyos-references/ts-basic-components-richeditor.md)已集成跨设备互通能力。在平板或2in1设备上，用户可通过其右键菜单调用手机的相机、扫描及图库（访问图片）功能。
@@ -79,19 +79,19 @@ content_hash: sha256:a63ecce9a48844c6eb6d66acf1a13616d98ea137f9ab8516c7f8db25f3f
 
 1.在富文本区域右键。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/2Y7H-g_DSYyntiO_UYqkKw/zh-cn_image_0000002589324807.png?HW-CC-KV=V1&HW-CC-Date=20260429T053302Z&HW-CC-Expire=86400&HW-CC-Sign=AC93C687F4EF8CBDCFFB58CF630F9B44D57303A0EA3FEAEC328947ED5E528AC5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/2Y7H-g_DSYyntiO_UYqkKw/zh-cn_image_0000002589324807.png)
 
 2.选择想要使用的能力。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/Y1l16z9kT6CSD7mhlsvGuQ/zh-cn_image_0000002589244745.png?HW-CC-KV=V1&HW-CC-Date=20260429T053302Z&HW-CC-Expire=86400&HW-CC-Sign=AB0F67B6EE14F80E00F92735EB0A5F58A722284DD3EC660BC9C37F0FA7621A6F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/Y1l16z9kT6CSD7mhlsvGuQ/zh-cn_image_0000002589244745.png)
 
 3.等待对端设备拍照回传。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/v8uBfXT5T1qYY8qJOyvIHw/zh-cn_image_0000002558764940.png?HW-CC-KV=V1&HW-CC-Date=20260429T053302Z&HW-CC-Expire=86400&HW-CC-Sign=4506531A87078FC5233E0BD85E1B15902D05E852422EA7D8D7D5E915B00C1942)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/v8uBfXT5T1qYY8qJOyvIHw/zh-cn_image_0000002558764940.png)
 
 4.图片回传后，在光标后面已嵌入一张图片。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/ul3ilMP6RcKGOgmE5LUekA/zh-cn_image_0000002558605284.png?HW-CC-KV=V1&HW-CC-Date=20260429T053302Z&HW-CC-Expire=86400&HW-CC-Sign=BFFD192A67C8D1097DE4108E044DEB2DE5328A595679FFE0D70A2563D4511137)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/ul3ilMP6RcKGOgmE5LUekA/zh-cn_image_0000002558605284.png)
 
 ## 关闭富文本跨设备互通能力
 

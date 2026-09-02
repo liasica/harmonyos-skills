@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:53:03+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:7c0973921f407af94fea69b19b0664d12fb78eb219edb0b1969366069e1d0def
+content_hash: sha256:464a0a30d0e14e9ddebb28e8a0e317c09df7bebb8ad11785ed4c59c192c01132
 ---
 
 文本选择菜单，适用于[RichEditor](ts-basic-components-richeditor.md)组件通过[bindSelectionMenu](ts-basic-components-richeditor.md#bindselectionmenu)或[Text](ts-basic-components-text.md)组件通过[bindSelectionMenu](ts-basic-components-text.md#bindselectionmenu11)绑定自定义文本选择菜单，建议绑定鼠标右键或者鼠标选中方式弹出，不支持作为普通组件单独使用。
@@ -470,7 +470,7 @@ PhonePC/2in1TabletTVWearable
 
 系统暂未预置加粗、斜体等图标，示例代码使用本地资源图标，开发者使用时需自行替换editorMenuOptions中icon项的资源。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/zqbthCjpR3u85_kX8hNMng/zh-cn_image_0000002558606994.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055301Z&HW-CC-Expire=86400&HW-CC-Sign=9AF8F9175DCB18D08B62491CC79ACEEB3F4053F41EBD6A58B0648FD5A4545BB7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/zqbthCjpR3u85_kX8hNMng/zh-cn_image_0000002558606994.gif)
 
 ### 示例2（设置Symbol类型图标）
 
@@ -801,4 +801,4 @@ PhonePC/2in1TabletTVWearable
 322. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/1v9Z5sU-Sg6vPog4o4qzXg/zh-cn_image_0000002589326521.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T055301Z&HW-CC-Expire=86400&HW-CC-Sign=8764386DF032C7127FCFF2227EC5820D69A8A81EEEC659D73D758FDCFA7FE10C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/1v9Z5sU-Sg6vPog4o4qzXg/zh-cn_image_0000002589326521.jpg)

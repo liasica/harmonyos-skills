@@ -5,7 +5,7 @@ breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 图形�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:36:11+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:dc89360357b7489667d4d9542dd018a7e5c13d61e0e097fca4bc3f5f31d00ecc
+content_hash: sha256:e1e2152df58fcce9e7e911edefa763b80e6a8598660b6c5754ccf8e3e31bb9f1
 ---
 
 位图是一种用于在内存中存储和表示图像的数据结构，它是一个未经过压缩的像素集合，而JPEG或PNG等图片是压缩格式的，两者并不相同。如果需要将JPEG或PNG绘制到屏幕上，需要先解码成位图格式，具体可参考[图片处理服务（Image Kit）](image-overview.md)图片解码相关章节。
@@ -108,7 +108,7 @@ content_hash: sha256:dc89360357b7489667d4d9542dd018a7e5c13d61e0e097fca4bc3f5f31d
 
    绘制效果如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/2vYSGpq2TRSg5TPdY-Hq1A/zh-cn_image_0000002558605510.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053610Z&HW-CC-Expire=86400&HW-CC-Sign=C2C4A2BF004438ADFD837C984A89C87E5E0FE2F36267BF0752EEB74C4B0F2D7C)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/2vYSGpq2TRSg5TPdY-Hq1A/zh-cn_image_0000002558605510.jpg)
 
 ## 示例代码
 

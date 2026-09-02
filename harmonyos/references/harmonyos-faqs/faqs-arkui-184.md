@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-184
-title: @Watch是否有粘性的概念
+title: "@Watch是否有粘性的概念"
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 方舟UI框架（ArkUI） > @Watch是否有粘性的概念
 category: harmonyos-faqs
 scraped_at: 2026-04-28T08:25:47+08:00

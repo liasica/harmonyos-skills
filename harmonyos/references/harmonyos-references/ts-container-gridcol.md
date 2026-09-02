@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:51:40+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:a5fc914c422ad59781e41b1d92427851cbce0af37332a0620773231e6c047676
+content_hash: sha256:99576df62ef28808e8bd0666eec46f5d8eb17fb95b62656977daab4810a5c3a2
 ---
 
 栅格子组件，必须作为栅格容器组件([GridRow](ts-container-gridrow.md))的子组件使用。
@@ -214,4 +214,4 @@ GridCol的基本用法示例。
 36. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/vIzja-QiQpWxU00Pmz2sQQ/zh-cn_image_0000002589245933.png?HW-CC-KV=V1&HW-CC-Date=20260429T055138Z&HW-CC-Expire=86400&HW-CC-Sign=4378F29E7FDF443642DE13D78211DF0CB60EF353C2C39B1715EF90FCF786EE45)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/vIzja-QiQpWxU00Pmz2sQQ/zh-cn_image_0000002589245933.png)

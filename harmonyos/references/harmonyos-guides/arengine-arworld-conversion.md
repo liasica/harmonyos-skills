@@ -5,7 +5,7 @@ breadcrumb: 指南 > 图形 > AR Engine（AR引擎服务） > 命中检测 > 命
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:35:52+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:fe39b9e1f986188f9708d7ba7d7fdd93a42378755c72a6b60f830d66d3a8c7c5
+content_hash: sha256:0469c987306111c07ce2a80ed3bbd45b35e3104fde60cace9cf1006692ea8b06
 ---
 
 AR Engine通过命中检测（Hit Testing）技术，将终端设备屏幕上的兴趣点映射为现实环境中的兴趣点。命中检测以现实环境中的兴趣点为源，发出一条射线连接到摄像头所在位置，返回射线与平面、稀疏点云、Mesh的交点。
@@ -16,4 +16,4 @@ AR Engine通过命中检测（Hit Testing）技术，将终端设备屏幕上的
 
 **图1** 命中检测示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/E5ejLLZhQ12QcIV5_qIK1w/zh-cn_image_0000002589324991.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053551Z&HW-CC-Expire=86400&HW-CC-Sign=BEA328F0DEC63E805F3F917443EDF559777EA7B4DABE86CF0FCB8E4F8A7A2263)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/E5ejLLZhQ12QcIV5_qIK1w/zh-cn_image_0000002589324991.jpg)

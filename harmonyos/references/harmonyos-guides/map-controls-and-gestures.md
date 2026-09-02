@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 地图交互 > �
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:39:07+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:23baf67e90092316250707bf60d4def1ca8b2ac8263ed64d1b337d7f5f67d317
+content_hash: sha256:ee6c51a2041e99da20e6bf4caaad28e194a53dfa006134ea46dc49d1674454ad
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:23baf67e90092316250707bf60d4def1ca8b2ac8263ed64d1b337d7f5f6
 
 Map Kit提供了多种手势供用户与地图之间进行交互，如缩放、滚动、旋转和倾斜。这些手势默认开启，如果想要关闭某些手势，可以通过[MapComponentController](../harmonyos-references/map-map-mapcomponentcontroller.md)类提供的接口来控制手势的开关。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/EGEhFspvR_OFdM5Hp_59qA/zh-cn_image_0000002558765526.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053900Z&HW-CC-Expire=86400&HW-CC-Sign=F6E496E92B4062E369DD5F211F854CB44558998E3720DA1E1123359EEF79A469 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/EGEhFspvR_OFdM5Hp_59qA/zh-cn_image_0000002558765526.jpg "点击放大")
 
 ## 接口说明
 

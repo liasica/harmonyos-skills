@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-enterprise-restrictions
-title: @ohos.enterprise.restrictions （限制类策略）
+title: "@ohos.enterprise.restrictions （限制类策略）"
 breadcrumb: API参考 > 系统 > 基础功能 > MDM Kit（企业设备管理服务） > ArkTS API > @ohos.enterprise.restrictions （限制类策略）
 category: harmonyos-references
 scraped_at: 2026-04-28T08:10:29+08:00

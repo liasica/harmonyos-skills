@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-net-sharing
-title: @ohos.net.sharing (网络共享管理)
+title: "@ohos.net.sharing (网络共享管理)"
 breadcrumb: API参考 > 系统 > 网络 > Network Kit（网络服务） > ArkTS API > @ohos.net.sharing (网络共享管理)
 category: harmonyos-references
 scraped_at: 2026-04-28T08:08:23+08:00

@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:51:41+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:799df296fa866c390be8eb3fc1def60103d6d7f73cb495e5932be61205364de2
+content_hash: sha256:82aa9fa19b6d4f294dd0672d1340f8776974214323978beee4a4600e8fcc2c7e
 ---
 
 堆叠容器，子组件按照顺序依次入栈，后一个子组件覆盖前一个子组件。
@@ -117,4 +117,4 @@ Stack的alignContent设置为Alignment.Bottom条件下子组件显示效果。
 11. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/v6kTTo7eR1WFix3LhWohNw/zh-cn_image_0000002589245927.png?HW-CC-KV=V1&HW-CC-Date=20260429T055139Z&HW-CC-Expire=86400&HW-CC-Sign=9A53DD2F7B2AACD3A6EE4CE3C06E4919650A444D5611748C9EBD99E71505A1F1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/v6kTTo7eR1WFix3LhWohNw/zh-cn_image_0000002589245927.png)

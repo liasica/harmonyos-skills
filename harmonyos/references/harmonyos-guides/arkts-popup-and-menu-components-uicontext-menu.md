@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:27:58+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:5d6454d35b6cb251bd71a0ef11d4a9a5cc65c494418c65a5cf43da49a0a3a0e0
+content_hash: sha256:500714bbe7027a919d313928172b700229549e3730e87965f0db0dd23f03eaf9
 ---
 
 [菜单控制 (Menu)](arkts-popup-and-menu-components-menu.md)在使用时依赖绑定UI组件，否则无法使用。从API version 18开始，可以通过使用全局接口[openMenu](../harmonyos-references/arkts-apis-uicontext-promptaction.md#openmenu18)的方式，在无UI组件的场景下直接或封装使用，例如在事件回调中使用或封装后对外提供能力。
@@ -29,7 +29,7 @@ content_hash: sha256:5d6454d35b6cb251bd71a0ef11d4a9a5cc65c494418c65a5cf43da49a0a
 
 [GlobalOpenMenu.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/DialogProject/entry/src/main/ets/pages/Menu/globalmenusindependentofuicomponents/GlobalOpenMenu.ets#L108-L119)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/g-JzsiPUReCVyNVvx-mPtw/zh-cn_image_0000002589244215.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052756Z&HW-CC-Expire=86400&HW-CC-Sign=24696FA408E81DB65C4505A9081AA2518B9AD2BFD757AAE971402E54BE082726)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/g-JzsiPUReCVyNVvx-mPtw/zh-cn_image_0000002589244215.gif)
 
 ### 创建ComponentContent
 
@@ -181,7 +181,7 @@ content_hash: sha256:5d6454d35b6cb251bd71a0ef11d4a9a5cc65c494418c65a5cf43da49a0a
 
 [GlobalOpenMenu.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/DialogProject/entry/src/main/ets/pages/Menu/globalmenusindependentofuicomponents/GlobalOpenMenu.ets#L123-L134)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/QKO8ixNPQ-C7-vWBLzCd0w/zh-cn_image_0000002589244215.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052756Z&HW-CC-Expire=86400&HW-CC-Sign=CDC532C17768EE5987BE454D46F5F75F94872F92C271DEF7FAEC0C5943E912E4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/QKO8ixNPQ-C7-vWBLzCd0w/zh-cn_image_0000002589244215.gif)
 
 ## 关闭菜单
 
@@ -200,7 +200,7 @@ content_hash: sha256:5d6454d35b6cb251bd71a0ef11d4a9a5cc65c494418c65a5cf43da49a0a
 
 [GlobalOpenMenu.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/DialogProject/entry/src/main/ets/pages/Menu/globalmenusindependentofuicomponents/GlobalOpenMenu.ets#L138-L147)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/kZAZw4zSTl2_6vvIcl7usA/zh-cn_image_0000002589244215.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052756Z&HW-CC-Expire=86400&HW-CC-Sign=18F3B21506DEA033D983DE00E3EDF345D72210FCC6240E1F2970EFBF1C07A046)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/kZAZw4zSTl2_6vvIcl7usA/zh-cn_image_0000002589244215.gif)
 
 说明
 

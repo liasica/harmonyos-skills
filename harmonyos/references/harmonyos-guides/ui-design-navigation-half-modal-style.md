@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > UI Design Kit（UI设计套件） > 组件�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:30:20+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:6b9dcd0f3b6fb37e9555bf950ffd6989c4e00e42c2718c57f9a1bed86634a221
+content_hash: sha256:b76161bffffb7a7478df4ed32f18fec4f3fe324be24a962b972389cfcc3e6e10
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:6b9dcd0f3b6fb37e9555bf950ffd6989c4e00e42c2718c57f9a1bed8663
 
 用于半模态弹窗中使用导航组件场景。通过设置[HdsNavigationTitleMode](../harmonyos-references/ui-design-hdsnavigation.md#hdsnavigationtitlemode)为MODAL可以实现标题栏半模态样式及动态模糊。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/UU9Q-sxyRWCP_lB727k4KQ/zh-cn_image_0000002589324703.gif?HW-CC-KV=V1&HW-CC-Date=20260429T053019Z&HW-CC-Expire=86400&HW-CC-Sign=A577F3A79EC7AB35A66A5886F2E6C017B96C7621AAD0F0FE0596B016F3347002 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/UU9Q-sxyRWCP_lB727k4KQ/zh-cn_image_0000002589324703.gif "点击放大")
 
 ## 开发步骤
 

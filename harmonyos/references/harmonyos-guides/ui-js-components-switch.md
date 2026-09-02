@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:28:49+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:cdd6f7d6f5b3f53a1151f7bfe6540cb2f4a6c3a058dc08ae607c5d26b97a27cd
+content_hash: sha256:674d3a8f47cb376f601b78a6980661b768b444aaa3d48b1ad76fb1003a52ea04
 ---
 
 switch为开关选择器，切换开启或关闭状态。具体用法请参考[switch](../harmonyos-references/js-components-basic-switch.md)。
@@ -29,7 +29,7 @@ switch为开关选择器，切换开启或关闭状态。具体用法请参考[s
 5. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/3VJyQiuZTtKCcP3VAdcjyA/zh-cn_image_0000002589244417.png?HW-CC-KV=V1&HW-CC-Date=20260429T052848Z&HW-CC-Expire=86400&HW-CC-Sign=A92A04768019FDB767B42AB43D16A7C1A19D230BFADBDF14D39581DC6D831088)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/3VJyQiuZTtKCcP3VAdcjyA/zh-cn_image_0000002589244417.png)
 
 ## 添加属性和方法
 
@@ -78,7 +78,7 @@ switch组件通过textoff和showtext属性设置文本选中和未选中时的�
 15. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/eKSQtkIsR7-Os-msH4m3uw/zh-cn_image_0000002558764610.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052848Z&HW-CC-Expire=86400&HW-CC-Sign=D7CC0FC77C9F3DE80E891F29F69B359C5E4022AEDBE01AFBF94FA66130874CA3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/eKSQtkIsR7-Os-msH4m3uw/zh-cn_image_0000002558764610.gif)
 
 说明
 
@@ -187,4 +187,4 @@ switch组件通过textoff和showtext属性设置文本选中和未选中时的�
 22. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/LXdoyQ1AQmq6X6E0KD-gfA/zh-cn_image_0000002558604954.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052848Z&HW-CC-Expire=86400&HW-CC-Sign=31038BA220C9E5070EF84F0F9A7734DCE1472826D1B7EF92E04B723EA816AC9E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/LXdoyQ1AQmq6X6E0KD-gfA/zh-cn_image_0000002558604954.gif)

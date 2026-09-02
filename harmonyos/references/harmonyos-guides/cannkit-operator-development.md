@@ -5,7 +5,7 @@ breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:41:01+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:a235daac0f2c2788060d983c32f8ff961305501caea2f4c987b812c86bbc758d
+content_hash: sha256:5ebd8e0e4945bb1647f5fbc374a8c8b452ebe1c6cc25c7aa53a911fc4a9406bb
 ---
 
 本节以一个简单算子为例，带开发者体验从算子工程创建、代码编写、编译部署到运行验证的开发全流程，让开发者对算子开发工程有个宏观的认识，此处我们以输入是动态shape的Add算子实现为例，为了与内置Add算子区分，定义算子类型为AddCustom。
@@ -115,7 +115,7 @@ DDK软件包中提供了工程创建工具msOpGen，开发者可以输入算子�
 
 **图1** 核函数调用关系图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/F75iGJHRRNS_eod3wOI-8g/zh-cn_image_0000002589245535.png?HW-CC-KV=V1&HW-CC-Date=20260429T054100Z&HW-CC-Expire=86400&HW-CC-Sign=1C39BB3376D59B83CB69D645E1CA9AC6574AE8830FBFA3F6781D6A10AAB6FB84)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/F75iGJHRRNS_eod3wOI-8g/zh-cn_image_0000002589245535.png)
 
 由此可见除了Init函数完成初始化外，Process中完成了对流水任务 **：** 搬入、计算、搬出的调用，开发者可以重点关注三个流水任务的实现。
 

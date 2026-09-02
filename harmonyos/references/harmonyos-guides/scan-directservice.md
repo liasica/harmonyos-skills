@@ -5,7 +5,7 @@ breadcrumb: 指南 > 媒体 > Scan Kit（统一扫码服务） > 接入“扫码
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:35:42+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:af4808932b577405b79d4ef1faf6878106803885ceb66e5a93cb90e57fd81e6e
+content_hash: sha256:28a416d02809f898dd93352534b63048274fba093e56114555a1d5ce1cebc001
 ---
 
 说明
@@ -24,7 +24,7 @@ content_hash: sha256:af4808932b577405b79d4ef1faf6878106803885ceb66e5a93cb90e57fd
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/uWCeeWeiQpmC3j-oFjbxlQ/zh-cn_image_0000002558605454.png?HW-CC-KV=V1&HW-CC-Date=20260429T053539Z&HW-CC-Expire=86400&HW-CC-Sign=6487A62367D54A481978128A5C51A932756D5A3FDC5635B169F971C5AA7A043C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/uWCeeWeiQpmC3j-oFjbxlQ/zh-cn_image_0000002558605454.png)
 
 1. 开发者参考App Linking指导完成域名注册。
 2. 用户通过HarmonyOS扫码入口发起扫码请求。
@@ -118,7 +118,7 @@ content_hash: sha256:af4808932b577405b79d4ef1faf6878106803885ceb66e5a93cb90e57fd
 
 集成效果，以美团单车场景为例：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/4pmQXj1URCO1XHbNBzrgNg/zh-cn_image_0000002589324981.gif?HW-CC-KV=V1&HW-CC-Date=20260429T053539Z&HW-CC-Expire=86400&HW-CC-Sign=3F4A095CB020AC42489FF7FA638BF324BAAD85496D54236E907E60E41C8DFF8F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/4pmQXj1URCO1XHbNBzrgNg/zh-cn_image_0000002589324981.gif)
 
 ## 开发后验证
 

@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-graphics-common2d
-title: @ohos.graphics.common2D (2D图形通用数据类型)
+title: "@ohos.graphics.common2D (2D图形通用数据类型)"
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > ArkTS API > @ohos.graphics.common2D (2D图形通用数据类型)
 category: harmonyos-references
 scraped_at: 2026-04-28T08:14:36+08:00

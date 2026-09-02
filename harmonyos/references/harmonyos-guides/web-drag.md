@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 管理网页交互 >
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:29:23+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:20a58a82af57d4d6d7c9a493ebb54ee0c493735297a4a4ce35394aa62eb39ec0
+content_hash: sha256:2d6425104aff42ff230cae855b3704e847e905ad43eea29b1d3ad6d2a77c9c5c
 ---
 
 ArkWeb的拖拽功能使应用能够在网页中实现元素的拖放，用户可以长按可拖拽的元素，将其拖至可放置的元素上，然后松手完成放置。ArkWeb在网页内容中的拖拽功能满足H5标准。
@@ -209,11 +209,11 @@ H5示例:
 103. </html>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/HU039GzMTU2HF5r7uYy2YA/zh-cn_image_0000002558764714.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052921Z&HW-CC-Expire=86400&HW-CC-Sign=F741219630223B4A22C19046D51A72569A2DFF47A37592255785D8BE5078FB5D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/HU039GzMTU2HF5r7uYy2YA/zh-cn_image_0000002558764714.gif)
 
 日志打印：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/_En3sgbcT0-pGCNsYH_eAA/zh-cn_image_0000002558605060.png?HW-CC-KV=V1&HW-CC-Date=20260429T052921Z&HW-CC-Expire=86400&HW-CC-Sign=A1D0D4970B0D8A30B5D047220136ED1EC54000CAE380B4CBC8C0AD32A9210342)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/_En3sgbcT0-pGCNsYH_eAA/zh-cn_image_0000002558605060.png)
 
 ## 常见问题
 
@@ -318,7 +318,7 @@ H5示例1:
 59. </html>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/AqCXdGhBQNGDrA2YcjC4Sw/zh-cn_image_0000002589324585.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052921Z&HW-CC-Expire=86400&HW-CC-Sign=702576A9E7C24E13F5B8F07AD919877745C5F4561980323E502A1422EF96C790)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/AqCXdGhBQNGDrA2YcjC4Sw/zh-cn_image_0000002589324585.gif)
 
 html示例2:
 
@@ -355,7 +355,7 @@ html示例2:
 30. </html>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/ZNwNiGBMTfuSSK2Mc_7i0g/zh-cn_image_0000002589244523.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052921Z&HW-CC-Expire=86400&HW-CC-Sign=788DA9D949CA9B7B1BFC1BC2B624007AD58E889650FFDBBBFE6FA9441F7CCF75)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/ZNwNiGBMTfuSSK2Mc_7i0g/zh-cn_image_0000002589244523.gif)
 
 ArkTS示例:
 

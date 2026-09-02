@@ -5,7 +5,7 @@ breadcrumb: 指南 > 系统 > 硬件 > Driver Development Kit（驱动开发服�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:33:33+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:4d21967f8c85d2beab5091731ade87790239ac2ef401fe8bcd7aad788d7c8073
+content_hash: sha256:5940da17588f79f2023f734f96f49872ec0f37d7e2bd89037317111893f9ec49
 ---
 
 ## 简介
@@ -49,7 +49,7 @@ ScsiPeripheralDDK支持SPC（SCSI Primary Commands）、SBC（SCSI Block Command
 
 **图1** ScsiPeripheralDDK调用原理
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/SkBFn98bROevndy_fbgWsA/zh-cn_image_0000002589244779.png?HW-CC-KV=V1&HW-CC-Date=20260429T053331Z&HW-CC-Expire=86400&HW-CC-Sign=4D94FDE874C4E55EE2D61DD4B191D7910CC85F5B470B994B51BA22C82C87F065)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/SkBFn98bROevndy_fbgWsA/zh-cn_image_0000002589244779.png)
 
 ### 约束与限制
 

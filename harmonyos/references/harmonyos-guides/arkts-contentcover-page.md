@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:27:59+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:885006cd55b824919bf17af599fa63f54802ad8b82420230b42186404f2ee80c
+content_hash: sha256:28c0b2340cb71a977eeb3ab32f01b5cc6c95d2abc6263c791d098c9eaa70da93
 ---
 
 [全模态页面（bindContentCover）](../harmonyos-references/ts-universal-attributes-modal-transition.md#bindcontentcover)是全屏模态形式的弹窗交互页面，完全覆盖底层父视图。适用于查看大图，全屏查看文稿等场景。
@@ -246,4 +246,4 @@ content_hash: sha256:885006cd55b824919bf17af599fa63f54802ad8b82420230b42186404f2
 
 [BindContentCoverDemo.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/BindSheet/entry/src/main/ets/pages/bindContentCover/template6/BindContentCoverDemo.ets#L15-L224)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/kE-tOomYSHifM7xULqHdIQ/zh-cn_image_0000002589324283.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052758Z&HW-CC-Expire=86400&HW-CC-Sign=1307CFE2BC048943F9B54C2FB7393F78163505C52F80CDE89C315BD1E8F17175)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/kE-tOomYSHifM7xULqHdIQ/zh-cn_image_0000002589324283.gif)

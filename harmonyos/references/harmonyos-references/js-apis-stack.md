@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-stack
-title: @ohos.util.Stack (线性容器Stack)
+title: "@ohos.util.Stack (线性容器Stack)"
 breadcrumb: API参考 > 应用框架 > ArkTS（方舟编程语言） > ArkTS API > @ohos.util.Stack (线性容器Stack)
 category: harmonyos-references
 scraped_at: 2026-04-28T08:00:11+08:00

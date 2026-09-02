@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > JS
 category: harmonyos-references
 scraped_at: 2026-04-29T13:54:03+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:acd5905ccc47beb44425baa35e3828a61f9cba7fb041d518771b4096cf617981
+content_hash: sha256:6cacad34f41ba9565e8d4da87c7b078e800252f7c123f7b64df5ab6aeb0b61b4
 ---
 
 分隔器组件，分隔不同内容块/内容元素。可用于列表或界面布局。
@@ -91,4 +91,4 @@ PhonePC/2in1TabletTVWearable
 
 **4\*4卡片**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/g8WPXGeOSU6aqsicKwHkTg/zh-cn_image_0000002589326825.png?HW-CC-KV=V1&HW-CC-Date=20260429T055401Z&HW-CC-Expire=86400&HW-CC-Sign=28F91B0BD2652A0267974ED5969392E184E2ECABAB5FB0D461BA24A57D3D1CA0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/g8WPXGeOSU6aqsicKwHkTg/zh-cn_image_0000002589326825.png)

@@ -5,7 +5,7 @@ breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-rep
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:44:39+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:6009653f15f6a0bb54e6e834a9f221de569b3d86ccd0696ddb3015ab15589da0
+content_hash: sha256:766239bc29c75d39c376f26bbe316fb889d94f2fccb8a565a6d4bc578c778dc8
 ---
 
 安装ohpm-repo服务。
@@ -67,7 +67,7 @@ content_hash: sha256:6009653f15f6a0bb54e6e834a9f221de569b3d86ccd0696ddb3015ab155
 
 结果示例：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/eMpDi5xPTNSLKyXsjvyLAQ/zh-cn_image_0000002530911294.png?HW-CC-KV=V1&HW-CC-Date=20260429T054438Z&HW-CC-Expire=86400&HW-CC-Sign=8BF6F4016269B172CA751A30D832C1D2319FD2C94D138AC9134E1857BF61B1CD "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/eMpDi5xPTNSLKyXsjvyLAQ/zh-cn_image_0000002530911294.png "点击放大")
 
 ## 注意
 

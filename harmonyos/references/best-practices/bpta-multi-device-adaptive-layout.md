@@ -5,7 +5,7 @@ breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 >
 category: best-practices
 scraped_at: 2026-04-29T14:12:07+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:d21ad6ca2cf8b7963d6ef8cffe907d0159985a48a8b694356d22501c666b3a7d
+content_hash: sha256:102c5da6eb436fe721e1d9b314e0e9fe3f5e8617e63c68913104c5c1a00b7182
 ---
 
 针对常见的开发场景，方舟开发框架提炼了七种自适应布局能力，这些布局可以独立使用，也可多种布局叠加使用。
@@ -54,7 +54,7 @@ content_hash: sha256:d21ad6ca2cf8b7963d6ef8cffe907d0159985a48a8b694356d22501c666
 * 当父容器的尺寸大于700vp时，父容器中多余的空间全部分配给中间内容区。
 * 当父容器的尺寸小于700vp时，左右两侧的留白区按照“1:1”的比例收缩（即平均分配父容器的不足空间）。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/IHhZSvIXTHiMbsIkJQYnKA/zh-cn_image_0000002355147005.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061156Z&HW-CC-Expire=86400&HW-CC-Sign=43A30C8402B7A16C0448474B1C32E580DF67EE5EA2CCE881C7652115A3AA7F99)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/IHhZSvIXTHiMbsIkJQYnKA/zh-cn_image_0000002355147005.gif)
 
 ```
 1. @Entry
@@ -117,7 +117,7 @@ content_hash: sha256:d21ad6ca2cf8b7963d6ef8cffe907d0159985a48a8b694356d22501c666
 
 文字和开关的尺寸固定，仅有中间空白区域（Blank组件）随父容器尺寸变化而伸缩。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/iw6dkuLCS4WwQk1iE6uS-Q/zh-cn_image_0000002321148306.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061156Z&HW-CC-Expire=86400&HW-CC-Sign=FB0FD4333510E06E79022F15E4BD75680EF03E64228261A274750683CD32F9D1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/iw6dkuLCS4WwQk1iE6uS-Q/zh-cn_image_0000002321148306.gif)
 
 ```
 1. @Entry
@@ -186,7 +186,7 @@ content_hash: sha256:d21ad6ca2cf8b7963d6ef8cffe907d0159985a48a8b694356d22501c666
 
 父容器尺寸变化过程中，图标及文字的尺寸不变，图标间的间距及图标离左右边缘的距离同时均等改变。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/FLGUvCaaROSemSrcF82_mg/zh-cn_image_0000002355266889.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061156Z&HW-CC-Expire=86400&HW-CC-Sign=5F74FA8F86838847FACD13FEEA866C59D37E07ADE7D17B9E41ED13E1E09F24CC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/FLGUvCaaROSemSrcF82_mg/zh-cn_image_0000002355266889.gif)
 
 ```
 1. @Entry
@@ -291,7 +291,7 @@ layoutWeight存在使用限制，所以实际使用过程中大多通过将子�
 
 将三个按钮的.layoutWeight(1)分别替换为.width('33%')、.width('34%')、.width('33%')，也可以实现与当前同样的显示效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/sRcMUoYfSkCXrGHbN5EyCA/zh-cn_image_0000002321308190.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061156Z&HW-CC-Expire=86400&HW-CC-Sign=4EAE1B38CC396A7C5042FEB065349478D15533B463ED999C73582DFD850AEBDF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/sRcMUoYfSkCXrGHbN5EyCA/zh-cn_image_0000002321308190.gif)
 
 ```
 1. @Entry
@@ -378,7 +378,7 @@ layoutWeight存在使用限制，所以实际使用过程中大多通过将子�
 
 为方便查看效果，示例中特意给Column组件加了边框。可以看到Column组件随着其Flex父组件尺寸变化而缩放的过程中，始终保持预设的宽高比，其中的图片也始终正常显示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/PNm0wsOMSXyyW-0XsIkWZg/zh-cn_image_0000002355147069.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061156Z&HW-CC-Expire=86400&HW-CC-Sign=1DBD393A675A4D776584BA95B4B5D281903D0868865A7792439BBF515BB94587)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/PNm0wsOMSXyyW-0XsIkWZg/zh-cn_image_0000002355147069.gif)
 
 ```
 1. @Entry
@@ -471,7 +471,7 @@ layoutWeight存在使用限制，所以实际使用过程中大多通过将子�
 
 分别通过List组件实现及通过Scroll组件配合Row组件实现。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/zil54D1WRJi8ohu38_7FMQ/zh-cn_image_0000002321148358.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061156Z&HW-CC-Expire=86400&HW-CC-Sign=6250B832068E559C42993FC2875EEE91A1D5BDD6ACD56BA4788D016FA84F3A88)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/zil54D1WRJi8ohu38_7FMQ/zh-cn_image_0000002321148358.gif)
 
 （1）通过List组件实现。
 
@@ -624,7 +624,7 @@ layoutWeight存在使用限制，所以实际使用过程中大多通过将子�
 
 父容器尺寸发生变化时，其子元素按照预设的优先级显示或隐藏。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/JXHFhPI9SMi2MYZXNQEvSg/zh-cn_image_0000002355266913.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061156Z&HW-CC-Expire=86400&HW-CC-Sign=B2E3B66D6EF5B0B7985AD0EDA61FD6051D6277EF96B4EE1EAE66952D6AD76519)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/JXHFhPI9SMi2MYZXNQEvSg/zh-cn_image_0000002355266913.gif)
 
 ```
 1. @Entry
@@ -732,7 +732,7 @@ layoutWeight存在使用限制，所以实际使用过程中大多通过将子�
 
 父容器中的图片尺寸固定，当父容器尺寸发生变化，其中的内容做自适应换行。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/G8uPvcyhRJGSrdwh0X-c1A/zh-cn_image_0000002321308202.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061156Z&HW-CC-Expire=86400&HW-CC-Sign=EABF8B5C97E2420634460C59073E306403560D96388BF0062169F783BBE926C9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/G8uPvcyhRJGSrdwh0X-c1A/zh-cn_image_0000002321308202.gif)
 
 ```
 1. @Entry

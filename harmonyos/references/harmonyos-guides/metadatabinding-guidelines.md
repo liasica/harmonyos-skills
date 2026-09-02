@@ -5,7 +5,7 @@ breadcrumb: 指南 > 系统 > 硬件 > Multimodal Awareness Kit（多模态融�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:33:35+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:466fff404d4d09cc6b85c59bb8d448e85eec09c9efe825c61361ffce568d96d6
+content_hash: sha256:fcaa197bad927575160e742b40ef2440b9be250c9dfc4ed1ef26c594b08b4a39
 ---
 
 ## 概述
@@ -20,7 +20,7 @@ MetadataBinding（记忆链接）指由第三方应用提供[鸿蒙App Linking�
 
 ## 演示示例
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/Xe3ksyNaRH6YVHDLfNQCOQ/zh-cn_image_0000002558764974.gif?HW-CC-KV=V1&HW-CC-Date=20260429T053333Z&HW-CC-Expire=86400&HW-CC-Sign=79ABA2281B20B677DC031B71CFD52FC29B001CD22C75F20762D63F7DA3E0AA43)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/Xe3ksyNaRH6YVHDLfNQCOQ/zh-cn_image_0000002558764974.gif)
 
 ## 接口说明
 

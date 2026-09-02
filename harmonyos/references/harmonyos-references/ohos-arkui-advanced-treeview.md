@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:53:07+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:dca8d5ac2e8b17bab7035b82b5721142bb5069ad8272f8b185e35713e36fdfb8
+content_hash: sha256:d48e6dc0a98da9a667398ab4e921d8f91d737fc751e8ac6f731d0aa509261b37
 ---
 
 树视图作为一种分层显示的列表，适合显示嵌套结构。拥有父列表项和子列表项，可展开或折叠。
@@ -453,7 +453,7 @@ PhonePC/2in1TabletTVWearable
 108. }}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/26UdJdy4SJqcp_OZuyvBTA/zh-cn_image_0000002589326531.png?HW-CC-KV=V1&HW-CC-Date=20260429T055305Z&HW-CC-Expire=86400&HW-CC-Sign=42C8AA1404ABFA8CBB422D1C3316A05BB6E152A62B4EC403B2CCC6A668026B85)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/26UdJdy4SJqcp_OZuyvBTA/zh-cn_image_0000002589326531.png)
 
 ### 示例2（设置Symbol类型图标）
 
@@ -579,4 +579,4 @@ PhonePC/2in1TabletTVWearable
 117. }}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/UaFKawynRd-d6jy9A4Zilw/zh-cn_image_0000002589246473.png?HW-CC-KV=V1&HW-CC-Date=20260429T055305Z&HW-CC-Expire=86400&HW-CC-Sign=9A9194E65D1B560EEF598EB48CEDE7B775C926F728A9DD9FC6E35574674878F5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/UaFKawynRd-d6jy9A4Zilw/zh-cn_image_0000002589246473.png)

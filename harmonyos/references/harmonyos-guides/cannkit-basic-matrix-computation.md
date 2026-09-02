@@ -5,7 +5,7 @@ breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:43:00+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:13c6ca1bf18bd80465fc68c9bfa74271e6ba6845c1093312223fe4760da11e7e
+content_hash: sha256:f98491fa6f616e042a6b67f148f35dd8fcbbf8f666fc55544fbff6c1e1c63eb0
 ---
 
 KirinX90/Kirin9030处理器不支持结构化稀疏功能，并且Mmad左矩阵分形结构在Kirin9030有差异。
@@ -19,7 +19,7 @@ KirinX90/Kirin9030处理器不支持结构化稀疏功能，并且Mmad左矩阵�
 
 Mmad左矩阵分形格式变换修改适配方案：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/q-RV9QpDQVSRIJKh2IcSvA/zh-cn_image_0000002558765794.png?HW-CC-KV=V1&HW-CC-Date=20260429T054300Z&HW-CC-Expire=86400&HW-CC-Sign=4EE967ADC8556F6B17BF2E273679A5CA1DEDCCFAA6DDDC52C1E6408EEA37DE15)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/q-RV9QpDQVSRIJKh2IcSvA/zh-cn_image_0000002558765794.png)
 
 ```
 1. // 示例代码

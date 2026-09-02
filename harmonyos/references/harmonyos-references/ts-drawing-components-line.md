@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:52:36+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:2200d22d7009146ef1d71672fca4fee77322531392cc9337b17d363a35d625c1
+content_hash: sha256:1a2d4d9c105450cb8488f6a0c3a9bc7b35455524ef1b28d32f7f0abf1ce2c18c
 ---
 
 直线绘制组件。
@@ -387,7 +387,7 @@ PhonePC/2in1TabletTVWearable
 47. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/MLgmk-MZQfmv3RZBGy3Fsw/zh-cn_image_0000002558606872.png?HW-CC-KV=V1&HW-CC-Date=20260429T055234Z&HW-CC-Expire=86400&HW-CC-Sign=508079E144B25E2F1EF428A399526537935864B35D8075F6F8FAB7A022705639)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/MLgmk-MZQfmv3RZBGy3Fsw/zh-cn_image_0000002558606872.png)
 
 ### 示例2（边框端点绘制）
 
@@ -436,7 +436,7 @@ PhonePC/2in1TabletTVWearable
 40. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/c-HTsZpGRkmzt7w0iQqOzA/zh-cn_image_0000002589326399.png?HW-CC-KV=V1&HW-CC-Date=20260429T055234Z&HW-CC-Expire=86400&HW-CC-Sign=B4F340889E4DCB374781B70F16A2F97D0655E92C992FC15A0E9A762A9C5619B1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/c-HTsZpGRkmzt7w0iQqOzA/zh-cn_image_0000002589326399.png)
 
 ### 示例3（边框间隙绘制）
 
@@ -497,7 +497,7 @@ PhonePC/2in1TabletTVWearable
 52. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/Z9riZmNiTZii4T2V1b-ycQ/zh-cn_image_0000002589246341.png?HW-CC-KV=V1&HW-CC-Date=20260429T055234Z&HW-CC-Expire=86400&HW-CC-Sign=A250F929FC44F82B7545D595905F7A8B812FA9C36B6006A34E0D1B460B80AB25)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/Z9riZmNiTZii4T2V1b-ycQ/zh-cn_image_0000002589246341.png)
 
 ### 示例4（宽和高使用不同参数类型绘制直线）
 
@@ -539,7 +539,7 @@ width、height属性分别使用不同的长度类型绘制直线。
 33. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/BLgBG2njT6GdeMRWtDgm1g/zh-cn_image_0000002558766534.png?HW-CC-KV=V1&HW-CC-Date=20260429T055234Z&HW-CC-Expire=86400&HW-CC-Sign=EFE2B7675D993A7C6A86A511A579B6B8FC80542700CA90A8503AF081AD1DBC4E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/BLgBG2njT6GdeMRWtDgm1g/zh-cn_image_0000002558766534.png)
 
 ### 示例5（使用attributeModifier动态设置Line组件的属性）
 
@@ -577,4 +577,4 @@ width、height属性分别使用不同的长度类型绘制直线。
 29. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/A20RYVjLR9qvfNddyVnccA/zh-cn_image_0000002558606874.png?HW-CC-KV=V1&HW-CC-Date=20260429T055234Z&HW-CC-Expire=86400&HW-CC-Sign=7E3135FF21AE7438F59D4786747AB06DEB9E10541D869612D3A026B8DDC9FEEF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/A20RYVjLR9qvfNddyVnccA/zh-cn_image_0000002558606874.png)

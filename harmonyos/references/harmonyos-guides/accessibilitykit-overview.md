@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > Accessibility Kit（无障碍服务） > Acc
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:26:07+08:00
 doc_updated_at: 2026-04-03
-content_hash: sha256:a3d3af629c4d54de481760535b73a5a1b61e214aa1bde8a99ca34433c0190f45
+content_hash: sha256:80d6baa4a33eb22ea0cf2193f3190009e13519345be888d4ed53db8068fd2803
 ---
 
 ## 概述
@@ -14,7 +14,7 @@ Accessibility（信息无障碍）指的是确保任何人在任何情况下都�
 
 所以，无论是开发新的应用，还是对已有应用的更新，都应该考虑到无障碍需求，让应用能够被更多的人所使用。Accessibility Kit（无障碍服务）则为应用更好的适配无障碍，开放了必要的能力，如为组件添加无障碍焦点、无障碍朗读文本等。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/sNZyvNXnR_KjrvQbhfFwNQ/zh-cn_image_0000002558764006.png?HW-CC-KV=V1&HW-CC-Date=20260429T052606Z&HW-CC-Expire=86400&HW-CC-Sign=D18E3D9A0CDEE41E492E36925037651D4BC2ADEB9498E23D8F2D161F81C3A181)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/sNZyvNXnR_KjrvQbhfFwNQ/zh-cn_image_0000002558764006.png)
 
 * **系统服务：** 系统针对不同的障碍人群和障碍场景，提供了多种辅助服务能力，如屏幕朗读、大字体、高对比度文字、色彩校正、颜色反转、单声道音频、音量平衡、屏幕触控等。
 * **开放能力：** 基于系统服务，为应用提供了无障碍开放能力，如屏幕朗读开启状态的查询，无障碍朗读文本的设置、主动播报等。

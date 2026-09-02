@@ -5,14 +5,14 @@ breadcrumb: 指南 > 媒体 > Image Kit（图片处理服务） > 图片开发�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:35:17+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:b67121a1ef23586a394a04ff813bd8941224635d9057a17003a56bd9ecba6336
+content_hash: sha256:3f5559481e528bdd0287161dedcb1d93de60f98317f9e08a873a807eb431713a
 ---
 
 调用者可以调用本模块提供的[C API接口](../harmonyos-references/capi-imageprocessing.md)，实现HDR图片动态元数据生成。
 
 该能力常用于图片编辑中，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/VjjruabaQq-kAqH3t01qTw/zh-cn_image_0000002558765090.png?HW-CC-KV=V1&HW-CC-Date=20260429T053516Z&HW-CC-Expire=86400&HW-CC-Sign=68836C1B7E9A494C3F82536EA89BD763A727588253CC03D0F7CF8DAC866371A4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/VjjruabaQq-kAqH3t01qTw/zh-cn_image_0000002558765090.png)
 
 ## 规格说明
 

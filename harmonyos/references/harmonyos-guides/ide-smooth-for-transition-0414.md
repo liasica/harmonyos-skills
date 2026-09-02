@@ -5,7 +5,7 @@ breadcrumb: 指南 > 编写与调试应用 > 开发自测试 > 应用与元服�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:47:04+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:f35694c4b3a3acf59fd92cbbbf119e2641b54a253edfc1fdc691158575a2e7e6
+content_hash: sha256:dfde238222d98031c69b2707b3e89ddad92e1e7c75aaec6e15bc906de6db03ba
 ---
 
 ## 规则详情
@@ -29,20 +29,20 @@ content_hash: sha256:f35694c4b3a3acf59fd92cbbbf119e2641b54a253edfc1fdc691158575a
 
   H:APP\_TABS\_FLING
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/1nfcuIf4ShuUwtqFFW2Fig/zh-cn_image_0000002561832987.png?HW-CC-KV=V1&HW-CC-Date=20260429T054704Z&HW-CC-Expire=86400&HW-CC-Sign=709C23FCFFD3D4882AD694DC1DC28994AA543D9148D605D56EC8882CF396E93C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/1nfcuIf4ShuUwtqFFW2Fig/zh-cn_image_0000002561832987.png)
 
 * 总时长(s)：【最后一个“H:Waiting for Present Fence xxxx” 时间（如图标记2）】 - 【第一个“H:Waiting for Present Fence xxxx” 时间（如图标记1）】。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/nmg6GEzzRYiuElQHC1nytQ/zh-cn_image_0000002561832979.png?HW-CC-KV=V1&HW-CC-Date=20260429T054704Z&HW-CC-Expire=86400&HW-CC-Sign=9F2CA05126495DAB8ED1B7C8135C9EEEE2F5DBE48EA27D7DBF319EBD7BC221F7)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/nmg6GEzzRYiuElQHC1nytQ/zh-cn_image_0000002561832979.png)
 
 * 每帧时长(ms)：1000ms / 刷新率。
 * 刷新率：在泳道范围内查找关键词H:RSHardwareThread::CommitAndReleaseLayers rate，如下图：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/_9YC7cOiTtG1nXVrVWoTvg/zh-cn_image_0000002530753064.png?HW-CC-KV=V1&HW-CC-Date=20260429T054704Z&HW-CC-Expire=86400&HW-CC-Sign=D8F2D967AF2DC599C52E708F8444B73694679939D52E8669B2AD2872480EBEBA)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/_9YC7cOiTtG1nXVrVWoTvg/zh-cn_image_0000002530753064.png)
 
 * 每帧渲染实际耗时(ms)：【下一个H:Waiting for Present Fence xxxx的起始时间】 - 【当前H:Waiting for Present Fence xxxx的起始时间】如下图 【标记2 - 标记1】。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/yddfByB5RwOyOmCLiVS9vw/zh-cn_image_0000002561832985.png?HW-CC-KV=V1&HW-CC-Date=20260429T054704Z&HW-CC-Expire=86400&HW-CC-Sign=1E88592279AC6CFBC376F2A7994049B913B9A7B58C4173898311A683FA0EE37D)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/yddfByB5RwOyOmCLiVS9vw/zh-cn_image_0000002561832985.png)
 
 * 每帧丢帧时间(ms)：max（【每帧渲染实际耗时(ms)】- 【每帧时长(ms)】 \* 1.5, 0）；即每帧耗时大于标准耗时1.5倍时则判定为丢帧。
 

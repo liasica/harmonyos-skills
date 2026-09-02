@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-vcard
-title: @ohos.telephony.vcard (VCard模块)
+title: "@ohos.telephony.vcard (VCard模块)"
 breadcrumb: API参考 > 系统 > 网络 > Telephony Kit（蜂窝通信服务） > ArkTS API > @ohos.telephony.vcard (VCard模块)
 category: harmonyos-references
 scraped_at: 2026-04-28T08:09:20+08:00

@@ -5,7 +5,7 @@ breadcrumb: 指南 > 系统 > 调测调优 > 调试命令 > 扫描工具
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:34:19+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:f600fe70761da2aeae9f9e79e731eeaf3c5b3733f08a351248166348055a5e2a
+content_hash: sha256:93990e302701b66ded30fa7db0a12c81084ca2b48bc21ce514e918bd22ccafc6
 ---
 
 ## 简介
@@ -20,7 +20,7 @@ content_hash: sha256:f600fe70761da2aeae9f9e79e731eeaf3c5b3733f08a351248166348055
 
 扫描工具app\_check\_tool.jar需要从SDK路径下的toolchains目录中获取。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/eM3ufJQeQ16B8TzDmx5LTg/zh-cn_image_0000002558765022.png?HW-CC-KV=V1&HW-CC-Date=20260429T053417Z&HW-CC-Expire=86400&HW-CC-Sign=3E83BE081831AAD9EEDD478FB2EE82E480746CD90EA66596458466BAF84C1507)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/eM3ufJQeQ16B8TzDmx5LTg/zh-cn_image_0000002558765022.png)
 
 ## 约束与限制
 

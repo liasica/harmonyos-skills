@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > UI Design Kit（UI设计套件） > ArkTS
 category: harmonyos-references
 scraped_at: 2026-04-29T13:57:09+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:549ce47df2ad5c956e0aee1e35d0373bf2ea9dbdd3fe3c2d9240a808a7603414
+content_hash: sha256:fd6737006037354951cf73a334e674669e0ef3007af5c574f7c698432c1a615e
 ---
 
 本模块提供自定义Symbol图标资源与动效参数资源注册加载能力。
@@ -87,4 +87,4 @@ registerSymbol(ttfSrc: resourceManager.Resource, jsonSrc: resourceManager.Resour
 24. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/mW_dmRwRSXWZ_Q9-02qpwA/zh-cn_image_0000002558607384.png?HW-CC-KV=V1&HW-CC-Date=20260429T055708Z&HW-CC-Expire=86400&HW-CC-Sign=C6311B76D3380693072A656994C8F0B1A7CDF6BB67C97BFEAFBCAB8040300999)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/mW_dmRwRSXWZ_Q9-02qpwA/zh-cn_image_0000002558607384.png)

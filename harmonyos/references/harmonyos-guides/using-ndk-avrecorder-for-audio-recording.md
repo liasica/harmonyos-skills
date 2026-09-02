@@ -5,7 +5,7 @@ breadcrumb: 指南 > 媒体 > Media Kit（媒体服务） > 媒体开发指导(C
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:35:28+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:8804d7fd9a5c05f156af2a3b1fb88b74cfe4af76abe8394d6bfc1a26b3d1a6ef
+content_hash: sha256:d683af7f9b4cc19994b888d09c2f732087cc8e1908cc0addfc982262a133a255
 ---
 
 AVRecorder支持开发音频或视频单独录制，集成了音频捕获，音频编码，视频编码，音视频封装功能，适用于实现简单音视频录制并直接得到本地媒体文件的场景。
@@ -16,7 +16,7 @@ AVRecorder支持开发音频或视频单独录制，集成了音频捕获，音�
 
 **图1** 录制状态变化示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/jI6V18VETdKruY55PRY-Fg/zh-cn_image_0000002558765096.png?HW-CC-KV=V1&HW-CC-Date=20260429T053527Z&HW-CC-Expire=86400&HW-CC-Sign=5B63D6001C5C22FC3B2390ED3970A6BBBA60116369A81E4412BD1E159205EBD2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/jI6V18VETdKruY55PRY-Fg/zh-cn_image_0000002558765096.png)
 
 状态的详细说明请参考[AVRecorderState](../harmonyos-references/arkts-apis-media-t.md#avrecorderstate9)。
 

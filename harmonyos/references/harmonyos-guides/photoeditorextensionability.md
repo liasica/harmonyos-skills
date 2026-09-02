@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > Stage�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:25:53+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:333400c0d8f8580596f39b9d46c3394750362f603df513f48e3fae5888e91efd
+content_hash: sha256:78eced826ac1129d6340b25b65db9eeb4556bdff8ec748c3ede6b131529d09cd
 ---
 
 ## 使用场景
@@ -14,7 +14,7 @@ content_hash: sha256:333400c0d8f8580596f39b9d46c3394750362f603df513f48e3fae5888e
 
 流程示意图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/2auwm_iBRhGDZ62qXyNbRA/zh-cn_image_0000002558764000.png?HW-CC-KV=V1&HW-CC-Date=20260429T052552Z&HW-CC-Expire=86400&HW-CC-Sign=83F97E6C9EDCD1ABC14152EC493A1D3583E35415BAAA2A656AAC0D3568F96584)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/2auwm_iBRhGDZ62qXyNbRA/zh-cn_image_0000002558764000.png)
 
 例如：用户在图库App中选择编辑图片时，图库App可以通过startAbilityByType拉起图片编辑类应用扩展面板。用户可以从已实现PhotoEditorExtensionAbility应用中选择一款，并进行图片编辑。
 

@@ -5,7 +5,7 @@ breadcrumb: 最佳实践 > 应用框架 > ArkWeb > Web组件拦截能力的使�
 category: best-practices
 scraped_at: 2026-04-29T14:11:04+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:16924bb81f19d5fb4843262921f68171fb233ba7b3944047879ee533ce4596bc
+content_hash: sha256:89270bfadf00e86c3f8b24311a75dee326aad5e5806e7544a66d244fac94f42a
 ---
 
 ## 概述
@@ -79,7 +79,7 @@ ArkWeb提供了多种拦截能力，使开发者能够监控、修改和记录�
 Web组件在加载URL前会触发[onLoadIntercept()](../harmonyos-references/arkts-basic-components-web-events.md#onloadintercept10)回调，用于判断是否拦截此次请求。基于该回调，可以实现[请求重定向](bpta-web-interceptor.md#section103591931490)或[页面白名单配置](bpta-web-interceptor.md#section1367693510110)功能。
 
 **图1** 基于onLoadIntercept()的请求拦截流程图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/HaRqoWahTa-aTMjWFqjKrA/zh-cn_image_0000002547943201.png?HW-CC-KV=V1&HW-CC-Date=20260429T061102Z&HW-CC-Expire=86400&HW-CC-Sign=7DCB978CF07EA39000A72E0CE7E1F9FA5A695B72DB4A7E8F3D8D3F4A60CD5B72 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/HaRqoWahTa-aTMjWFqjKrA/zh-cn_image_0000002547943201.png "点击放大")
 
 ### 请求重定向
 
@@ -88,7 +88,7 @@ Web组件在加载URL前会触发[onLoadIntercept()](../harmonyos-references/ark
 **运行效果**
 
 **图2** 请求重定向  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/rbhFB4rDQx6UU05yaCm8Pg/zh-cn_image_0000002522768321.png?HW-CC-KV=V1&HW-CC-Date=20260429T061102Z&HW-CC-Expire=86400&HW-CC-Sign=BB5FEAFAE2CF143898BFAAD3851C0BC4AE6664554D687DD0CF49AF1278FA2E87 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/rbhFB4rDQx6UU05yaCm8Pg/zh-cn_image_0000002522768321.png "点击放大")
 
 **实现原理**
 
@@ -181,7 +181,7 @@ Web组件在加载URL前会触发[onLoadIntercept()](../harmonyos-references/ark
 **运行效果**
 
 **图3** 页面白名单配置  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/QzJYsq4wT6aHT-oEo5Fngw/zh-cn_image_0000002490848542.png?HW-CC-KV=V1&HW-CC-Date=20260429T061102Z&HW-CC-Expire=86400&HW-CC-Sign=44F2B2E8C63115218B3898BAB139F7443DF354F2E49D8F0CCB0803BFAFB7E4AB "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/QzJYsq4wT6aHT-oEo5Fngw/zh-cn_image_0000002490848542.png "点击放大")
 
 **实现原理**
 
@@ -317,7 +317,7 @@ Web组件在加载URL前会触发[onLoadIntercept()](../harmonyos-references/ark
 Web组件在加载URL之前会触发[onInterceptRequest()](../harmonyos-references/arkts-basic-components-web-events.md#oninterceptrequest9)回调，用于判断是否拦截此次请求并返回自定义响应数据。基于该回调，可以实现[本地资源替换](bpta-web-interceptor.md#section29637307122)或[自定义资源加载策略](bpta-web-interceptor.md#section766911191316)。
 
 **图4** 基于onInterceptRequest()的请求拦截流程图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/16JEe1SZRl2tr9vDPbuVVA/zh-cn_image_0000002522888281.png?HW-CC-KV=V1&HW-CC-Date=20260429T061102Z&HW-CC-Expire=86400&HW-CC-Sign=8A53111EBAE932E5A37E7BE445A83CCEC5D203D2908EF7724E88BECE13E86375 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/16JEe1SZRl2tr9vDPbuVVA/zh-cn_image_0000002522888281.png "点击放大")
 
 ### 本地资源替换
 
@@ -326,7 +326,7 @@ Web组件在加载URL之前会触发[onInterceptRequest()](../harmonyos-referenc
 **运行效果**
 
 **图5** 本地资源替换  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/10HizdEGRrKTfL3rzHgMrA/zh-cn_image_0000002490688570.png?HW-CC-KV=V1&HW-CC-Date=20260429T061102Z&HW-CC-Expire=86400&HW-CC-Sign=7EDA214FB09EBBC2CED2895F8559A0522F916AD216EBB6924AF89CC065D45923 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/10HizdEGRrKTfL3rzHgMrA/zh-cn_image_0000002490688570.png "点击放大")
 
 **实现原理**
 
@@ -483,10 +483,10 @@ Web组件在加载URL之前会触发[onInterceptRequest()](../harmonyos-referenc
 **运行效果**
 
 **图6** Wi-Fi网络环境下加载图片资源  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/q91TP8THT2C1dLoiaQ0aCQ/zh-cn_image_0000002522768323.png?HW-CC-KV=V1&HW-CC-Date=20260429T061102Z&HW-CC-Expire=86400&HW-CC-Sign=EECF57AACE6548358A9E08B604600B85792F7D94CADC783C94756FB424167FE6 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/q91TP8THT2C1dLoiaQ0aCQ/zh-cn_image_0000002522768323.png "点击放大")
 
 **图7** 非Wi-Fi网络环境下加载本地占位图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/4C7RsAmGTC-ZUWZn4blRrA/zh-cn_image_0000002490848546.png?HW-CC-KV=V1&HW-CC-Date=20260429T061102Z&HW-CC-Expire=86400&HW-CC-Sign=DEE5B65D6F3C48CDCADE78CCB9DA3E62B4E12558A73D4C8F7344F218E6BF931F "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/4C7RsAmGTC-ZUWZn4blRrA/zh-cn_image_0000002490848546.png "点击放大")
 
 **实现原理**
 
@@ -608,7 +608,7 @@ Web组件在加载URL之前会触发[onInterceptRequest()](../harmonyos-referenc
 为当前Web组件设置[WebSchemeHandler](../harmonyos-references/arkts-apis-webview-webschemehandler.md)，可以拦截指定协议的请求，获得请求信息并返回自定义响应数据。基于[WebSchemeHandler](../harmonyos-references/arkts-apis-webview-webschemehandler.md)机制，可以实现[配置公共请求头](bpta-web-interceptor.md#section736313281410)等场景。
 
 **图8** 基于WebSchemeHandler的请求拦截流程图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/iVJE2InsQvm8PYxuWrlcTA/zh-cn_image_0000002522888283.png?HW-CC-KV=V1&HW-CC-Date=20260429T061102Z&HW-CC-Expire=86400&HW-CC-Sign=5000AAFF5F7C379C0C0DBFCD45985D90400288AA2835AEC45C5E4B230984C02D "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/iVJE2InsQvm8PYxuWrlcTA/zh-cn_image_0000002522888283.png "点击放大")
 
 ### 配置公共请求头
 
@@ -617,7 +617,7 @@ Web组件在加载URL之前会触发[onInterceptRequest()](../harmonyos-referenc
 **运行效果**
 
 **图9** 配置公共请求头  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/kN39XqXNTtaufv_NIVGr6w/zh-cn_image_0000002490688572.png?HW-CC-KV=V1&HW-CC-Date=20260429T061102Z&HW-CC-Expire=86400&HW-CC-Sign=9D35BFF915F8567F914AE813D823BE292708D501CE1620F25860A788603A0DA1 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/kN39XqXNTtaufv_NIVGr6w/zh-cn_image_0000002490688572.png "点击放大")
 
 **实现原理**
 

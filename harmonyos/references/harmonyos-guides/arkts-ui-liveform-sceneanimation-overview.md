@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > Form Kit（卡片开发服务） > ArkTS卡�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:30:01+08:00
 doc_updated_at: 2026-04-17
-content_hash: sha256:89f24e1c6c3d30ab64ddf28c5a169e01b5d6d9623ec36d2b58cc915723d9828d
+content_hash: sha256:d609e24b850344c4f8364050ea3bcfea474b12531f81466127bfe136c8f3f098
 ---
 
 从API version 20开始，场景动效类型互动卡片支持在特定场景下触发互动卡片的特有效果。例如，开发者可以选择将动效渲染区域扩展到卡片自身的渲染区域之外，营造“破框”效果。
@@ -20,11 +20,11 @@ content_hash: sha256:89f24e1c6c3d30ab64ddf28c5a169e01b5d6d9623ec36d2b58cc915723d
 
 **图1** 互动卡片状态切换说明
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/s3YegW2ZTpW9uXriqCQ66Q/zh-cn_image_0000002558605152.png?HW-CC-KV=V1&HW-CC-Date=20260429T053000Z&HW-CC-Expire=86400&HW-CC-Sign=25BDA5AA98720E1AC4D7432FCE2E2471F2EFFE9C9F435430E052D0EB1768AB88)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/s3YegW2ZTpW9uXriqCQ66Q/zh-cn_image_0000002558605152.png)
 
 **图2** 互动卡片动效触发流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/siVlklF7Qtmp-oqRB_2y9A/zh-cn_image_0000002589324677.png?HW-CC-KV=V1&HW-CC-Date=20260429T053000Z&HW-CC-Expire=86400&HW-CC-Sign=73D18AAF7C7D74D113EDF8FE1FA9E34DC89A0E5C9C3B8187A81875B6B5AAE958)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/siVlklF7Qtmp-oqRB_2y9A/zh-cn_image_0000002589324677.png)
 
 ## 实现原理
 
@@ -32,13 +32,13 @@ content_hash: sha256:89f24e1c6c3d30ab64ddf28c5a169e01b5d6d9623ec36d2b58cc915723d
 
 **图3** 点击触发互动卡片动效时序图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/a9TuxAjwS96L1FoX4dKvcw/zh-cn_image_0000002589244615.png?HW-CC-KV=V1&HW-CC-Date=20260429T053000Z&HW-CC-Expire=86400&HW-CC-Sign=F1035A1BB4D74E2FA245C5A46B7C0BA396117E91B064C3E77FA3774A44194637)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/a9TuxAjwS96L1FoX4dKvcw/zh-cn_image_0000002589244615.png)
 
 定时定点刷新互动卡片动效的时序图如下。
 
 **图4** 定时定点触发互动卡片动效时序图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/E3svXnjfQ3-K9Wah35Cg-Q/zh-cn_image_0000002558764810.png?HW-CC-KV=V1&HW-CC-Date=20260429T053000Z&HW-CC-Expire=86400&HW-CC-Sign=81746C1CE27B9AB8D2B13D6BFD36783B58352C3DF1AD078B628833527410C60D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/E3svXnjfQ3-K9Wah35Cg-Q/zh-cn_image_0000002558764810.png)
 
 ## 约束和限制
 
@@ -63,7 +63,7 @@ content_hash: sha256:89f24e1c6c3d30ab64ddf28c5a169e01b5d6d9623ec36d2b58cc915723d
 
 **图5** 互动卡片动效区域申请规则说明
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/Fd92N2bySUKL1CR3hF5lCA/zh-cn_image_0000002558605154.png?HW-CC-KV=V1&HW-CC-Date=20260429T053000Z&HW-CC-Expire=86400&HW-CC-Sign=A8566E80952B0ED7004DA9484A748CFFFCDE1F52FEFB50F567EBD86D1299402B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/Fd92N2bySUKL1CR3hF5lCA/zh-cn_image_0000002558605154.png)
 
 例如：某设备上一个2\*2卡片宽度为158vp，高度为158vp。对应上图则有：
 

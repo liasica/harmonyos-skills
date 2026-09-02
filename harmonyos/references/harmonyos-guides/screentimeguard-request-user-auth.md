@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用服务 > Screen Time Guard Kit（屏幕时间守护�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:40:26+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:fada548c049feac1d69b6a4bb96be549598ed2ec6286c46581846bc5dc01ea2f
+content_hash: sha256:5c02fd18c56598a21b089c538a3959508f3fa21b5648128f3ed4912647166817
 ---
 
 ## 场景介绍
@@ -14,11 +14,11 @@ Screen Time Guard Kit支持对用户设备的时间管理和应用限制，因�
 
 ## 用户体验设计
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/LrWZqq3USwKApDe99xsUSg/zh-cn_image_0000002589325535.png?HW-CC-KV=V1&HW-CC-Date=20260429T054025Z&HW-CC-Expire=86400&HW-CC-Sign=184A99B9503A9BB158B5DD1B48145E30676144C7E3A518F792C782B78A8A1C39)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/LrWZqq3USwKApDe99xsUSg/zh-cn_image_0000002589325535.png)
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/QDk--hLWQRa8pXpWq-Jxag/zh-cn_image_0000002589245473.png?HW-CC-KV=V1&HW-CC-Date=20260429T054025Z&HW-CC-Expire=86400&HW-CC-Sign=E24CA10BEBF6294B5C8C3DC2E91457D5D9F427BE9CAA0CD79C99B3EB8D35FF0C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/QDk--hLWQRa8pXpWq-Jxag/zh-cn_image_0000002589245473.png)
 
 流程说明：
 

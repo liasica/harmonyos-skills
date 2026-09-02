@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > Form Kit（卡片开发服务） > ArkTS卡�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:30:01+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:15e82628b603b791ce36b1418d49dbf86ee7a8ae9dc8e2542b67989a353558ab
+content_hash: sha256:88295828327921539b3414be9ca4cb2d37b97a76e00729f8bdfc9db198705c95
 ---
 
 ## ArkTS卡片开发是否支持V2装饰器？如何从V1到V2迁移？
@@ -28,11 +28,11 @@ ArkTS卡片白屏问题定位请参考[服务卡片显示问题定位指导](htt
 
 导入particleAbility、audio、camera、media、backgroundTaskManager后应用崩溃，FaultLog指向相关调用行。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/Ha_DDZeOQu6_rSpOm9qNtg/zh-cn_image_0000002589244617.png?HW-CC-KV=V1&HW-CC-Date=20260429T053000Z&HW-CC-Expire=86400&HW-CC-Sign=7F113A0F466BFFF61EE946A89A6E56954D6E6BBD82B766E37A529FDD69D87D7C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/Ha_DDZeOQu6_rSpOm9qNtg/zh-cn_image_0000002589244617.png)
 
 报错对应的代码行如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/O30bZJ4nSL-HKRFffCCFug/zh-cn_image_0000002558764812.png?HW-CC-KV=V1&HW-CC-Date=20260429T053000Z&HW-CC-Expire=86400&HW-CC-Sign=95F1B0D8068E8550BA0A4E972139E49655491BCD716D3ADFDF3D2D46DB38728D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/O30bZJ4nSL-HKRFffCCFug/zh-cn_image_0000002558764812.png)
 
 ### 原因
 

@@ -5,7 +5,7 @@ breadcrumb: FAQ > 应用框架开发 > ArkTS语言 > 方舟编程语言（ArkTS�
 category: harmonyos-faqs
 scraped_at: 2026-04-29T14:15:33+08:00
 doc_updated_at: 2026-04-08
-content_hash: sha256:eed222d32b42ee83b33d789cef2ba3559a4707ac7b1db20023113a6a807d8ea7
+content_hash: sha256:c4c8d7d1e6f6176b5dc8356df209a998905295681805d42213bcd521a0d2fa8f
 ---
 
 **问题现象**
@@ -20,15 +20,15 @@ content_hash: sha256:eed222d32b42ee83b33d789cef2ba3559a4707ac7b1db20023113a6a807
 
 在Windows上，可以打开事件管理器，找到Windows日志中的应用程序日志，查看对应的时间。如果找到es2abc.exe的崩溃日志，并且异常代码为0xc00000fd，表示该程序因栈溢出而崩溃。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/4Df9B5FkQtyMQqBBiS4XOA/zh-cn_image_0000002229604157.png?HW-CC-KV=V1&HW-CC-Date=20260429T061532Z&HW-CC-Expire=86400&HW-CC-Sign=4877C82F28DD5D5AAD5EC11D6AD1DF8EAA58C834B0E3B33AF1B3D92908CD8A50)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/4Df9B5FkQtyMQqBBiS4XOA/zh-cn_image_0000002229604157.png)
 
 在mac上，可以进入控制台，点击崩溃报告，找到es2abc,双击查看崩溃日志。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/KnaB8JfLROSgKyNgfzyvww/zh-cn_image_0000002194318388.png?HW-CC-KV=V1&HW-CC-Date=20260429T061532Z&HW-CC-Expire=86400&HW-CC-Sign=FF7822295B56B5B1E0A9E0B1FECAAAB6AC4B384CD70C6520AEF676C416E3A9C7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/KnaB8JfLROSgKyNgfzyvww/zh-cn_image_0000002194318388.png)
 
 如果出现下图中所示，调用栈出现大量反复的调用相同的函数，那么极有可能是出现了大量递归导致栈溢出。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/rQQx3KhtSou6WlFBo4BioA/zh-cn_image_0000002194158780.png?HW-CC-KV=V1&HW-CC-Date=20260429T061532Z&HW-CC-Expire=86400&HW-CC-Sign=A359260E705517F6FE4CDDE36F1C5BE665F0EB3D108398590A4D8A251C8C2756)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/rQQx3KhtSou6WlFBo4BioA/zh-cn_image_0000002194158780.png)
 
 **解决措施**
 

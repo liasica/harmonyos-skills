@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > U
 category: harmonyos-references
 scraped_at: 2026-04-29T13:50:48+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:0b6adc47d968012e1a655b6980102145a4a68a153b44c5d2d10824b607646cdd
+content_hash: sha256:8391d3d49bab7c7c64ad8a1a383be5f3bb8f5d9c21f1fd0a84baecbc877c712b
 ---
 
 自定义节点相关属性定义的详细信息。
@@ -346,7 +346,7 @@ get canvas(): drawing.Canvas
 42. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/YzAfUsc_SNivg8fCONIpYA/zh-cn_image_0000002558606312.png?HW-CC-KV=V1&HW-CC-Date=20260429T055046Z&HW-CC-Expire=86400&HW-CC-Sign=D5E9823D87F231E1DDEB050C9C10A3BB2D93F7892FA78F0D66C97622C25D8323)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/YzAfUsc_SNivg8fCONIpYA/zh-cn_image_0000002558606312.png)
 
 ## Edges<T>12+
 
@@ -641,7 +641,7 @@ static resource(value: Resource): LengthMetrics
 39. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/oePaQ9LOQj62LFsCzPXOYw/zh-cn_image_0000002589325839.png?HW-CC-KV=V1&HW-CC-Date=20260429T055046Z&HW-CC-Expire=86400&HW-CC-Sign=C841B9AC38666A3461B86EEE6A60C1FD012C5B02958314CC57B41C2C770BBD9F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/oePaQ9LOQj62LFsCzPXOYw/zh-cn_image_0000002589325839.png)
 
 ## ColorMetrics12+
 
@@ -949,7 +949,7 @@ get alpha(): number
 53. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/3Psol7vXQjCVeAXDy-Gz7Q/zh-cn_image_0000002589245781.png?HW-CC-KV=V1&HW-CC-Date=20260429T055046Z&HW-CC-Expire=86400&HW-CC-Sign=E0EAE3C95F98F17A8AF66273EFB4B9ED865DDF2357EAE01F6C90B4D22344E625)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/3Psol7vXQjCVeAXDy-Gz7Q/zh-cn_image_0000002589245781.png)
 
 ## Corners<T>12+
 
@@ -1163,7 +1163,7 @@ setRectShape(rect: Rect): void
 47. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/aOhIV802Qzq8Xixy6DreHw/zh-cn_image_0000002558765970.png?HW-CC-KV=V1&HW-CC-Date=20260429T055046Z&HW-CC-Expire=86400&HW-CC-Sign=8C78CF2A7377206ABA3E1514B6A4C2E9DEAF1D273B76331D39499EF846EB9A12)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/aOhIV802Qzq8Xixy6DreHw/zh-cn_image_0000002558765970.png)
 
 ### setRoundRectShape12+
 
@@ -1234,7 +1234,7 @@ setRoundRectShape(roundRect: RoundRect): void
 46. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/xZHf1CTZRRq2WwNz1twHHA/zh-cn_image_0000002558606314.png?HW-CC-KV=V1&HW-CC-Date=20260429T055046Z&HW-CC-Expire=86400&HW-CC-Sign=214D0EF085B9478A82BBF3C5D6A421F0E74F47A20B7A8F4741A323CBF6B68F03)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/xZHf1CTZRRq2WwNz1twHHA/zh-cn_image_0000002558606314.png)
 
 ### setCircleShape12+
 
@@ -1301,7 +1301,7 @@ setCircleShape(circle: Circle): void
 42. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/D3wKwk81Tf6pnqVKgRYryg/zh-cn_image_0000002589325841.png?HW-CC-KV=V1&HW-CC-Date=20260429T055046Z&HW-CC-Expire=86400&HW-CC-Sign=6F45D7A9AFF5576B91CB347E8047C43FE0B34ADEEC2DCA92B04BFEB58AD14B45)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/D3wKwk81Tf6pnqVKgRYryg/zh-cn_image_0000002589325841.png)
 
 ### setOvalShape12+
 
@@ -1363,7 +1363,7 @@ setOvalShape(oval: Rect): void
 37. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/I-fRPys6SZ60130C0Hx4Yg/zh-cn_image_0000002589245783.png?HW-CC-KV=V1&HW-CC-Date=20260429T055046Z&HW-CC-Expire=86400&HW-CC-Sign=F29BDC551CD80D58060C745D73081831C219F19A6470D80B492A6489E32A8D63)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/I-fRPys6SZ60130C0Hx4Yg/zh-cn_image_0000002589245783.png)
 
 ### setCommandPath12+
 
@@ -1430,7 +1430,7 @@ setCommandPath(path: CommandPath): void
 43. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/hS-W9LUVRZWbGRY4C3ys_g/zh-cn_image_0000002558765972.png?HW-CC-KV=V1&HW-CC-Date=20260429T055046Z&HW-CC-Expire=86400&HW-CC-Sign=E1423D229904C39A17570E950C226E3E8A6338C25E90067BF5A271E99F49BD11)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/hS-W9LUVRZWbGRY4C3ys_g/zh-cn_image_0000002558765972.png)
 
 ## ShapeClip12+
 
@@ -1527,7 +1527,7 @@ setRectShape(rect: Rect): void
 54. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/RsxUMXM0Qsal5z4YUNLQ8Q/zh-cn_image_0000002558606316.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055046Z&HW-CC-Expire=86400&HW-CC-Sign=4606F20029BB7CFF9E958286357FB9D613583B67C4D9DD64593D07D3AB7DA7E9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/RsxUMXM0Qsal5z4YUNLQ8Q/zh-cn_image_0000002558606316.gif)
 
 ### setRoundRectShape12+
 
@@ -1887,7 +1887,7 @@ edgeColors(all: number): Edges<number>
 35. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/puY5ZejSR92lcHLrz9ilXA/zh-cn_image_0000002589325843.png?HW-CC-KV=V1&HW-CC-Date=20260429T055046Z&HW-CC-Expire=86400&HW-CC-Sign=ADD759D7ED50F3CDEED8643229A4A5EDFA6A0AC3E4A5C6C95AA49A3E3DE24E2D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/puY5ZejSR92lcHLrz9ilXA/zh-cn_image_0000002589325843.png)
 
 ## edgeWidths12+
 
@@ -1962,7 +1962,7 @@ edgeWidths(all: number): Edges<number>
 45. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/rN2nxdvUQMuuwXmr2JlRMA/zh-cn_image_0000002589245785.png?HW-CC-KV=V1&HW-CC-Date=20260429T055046Z&HW-CC-Expire=86400&HW-CC-Sign=932DD6F780404706B0A440FCFA53B164FF957DD24AEC93FE179A501387F0D82C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/rN2nxdvUQMuuwXmr2JlRMA/zh-cn_image_0000002589245785.png)
 
 ## borderStyles12+
 
@@ -2043,7 +2043,7 @@ borderStyles(all: BorderStyle): Edges<BorderStyle>
 51. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/Ybd1j07RTb23FLter2zZOg/zh-cn_image_0000002558765974.png?HW-CC-KV=V1&HW-CC-Date=20260429T055046Z&HW-CC-Expire=86400&HW-CC-Sign=9BE7F97D8C2C97BCCB1966AE35E434CC22267164ECA4ADAB590325C9481E709B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/Ybd1j07RTb23FLter2zZOg/zh-cn_image_0000002558765974.png)
 
 ## borderRadiuses12+
 
@@ -2112,4 +2112,4 @@ borderRadiuses(all: number): BorderRadiuses
 39. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/GevMDGoWQh-1SRn_V_Fyew/zh-cn_image_0000002558606318.png?HW-CC-KV=V1&HW-CC-Date=20260429T055046Z&HW-CC-Expire=86400&HW-CC-Sign=4B27CBE0A42852B8C73DAA8FDD51A3184DC115200B53437615A967757D0F0B54)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/GevMDGoWQh-1SRn_V_Fyew/zh-cn_image_0000002558606318.png)

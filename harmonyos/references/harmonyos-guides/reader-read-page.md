@@ -5,14 +5,14 @@ breadcrumb: 指南 > 应用服务 > Reader Kit（阅读服务） > 书籍内容�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:40:03+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:11f41872f547c574ceb936e95aabd357383278855c64025924e36fe38c281334
+content_hash: sha256:f4b311b23da955d0729d19aa5396666bb77f5658921f8df68d23b0c1b3e9e916
 ---
 
 Reader Kit提供的阅读页组件ReadPageComponent，支持对标准的txt和富文本内容（html+css）按仿真和横滑方式进行分页排版的能力、支持翻页阅读过程中所需要的进度和行为感知能力。利用ReadPageComponent，开发者可快速实现书籍阅读的能力。
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/rpihZQfqSHijL17TjO_ivA/zh-cn_image_0000002558605988.png?HW-CC-KV=V1&HW-CC-Date=20260429T054002Z&HW-CC-Expire=86400&HW-CC-Sign=C0CB66879D00A969EA78FEEA27559B34297F82DF5ED94DA067529F9B3BA50928)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/rpihZQfqSHijL17TjO_ivA/zh-cn_image_0000002558605988.png)
 
 ## 接口说明
 

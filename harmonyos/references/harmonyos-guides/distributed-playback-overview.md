@@ -5,7 +5,7 @@ breadcrumb: 指南 > 媒体 > AVSession Kit（音视频播控服务） > 分布�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:34:49+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:043f094111deb58ddba517cf4dbb2763861e0b80038c957d29d180464485ff04
+content_hash: sha256:5af58d0e701c35186fd071d4c57b9ad08fecc5eb21b6e3e8e9bbbad36eeda51a
 ---
 
 使用媒体播控，可以简单高效地将音视频投放到其他HarmonyOS设备上播放，如在手机上播放的音视频，可以投到2in1设备上继续播放。
@@ -35,7 +35,7 @@ HarmonyOS提供了统一的应用内音视频投播功能设计，通过使用�
 
 ## 运作机制
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/urGSMGaKS0-Yo-tKToqpFQ/zh-cn_image_0000002558765054.png?HW-CC-KV=V1&HW-CC-Date=20260429T053448Z&HW-CC-Expire=86400&HW-CC-Sign=A9638CD45B8FE588797562EB10CA5A41F7E526845FC4374965B89464D73ACE4A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/urGSMGaKS0-Yo-tKToqpFQ/zh-cn_image_0000002558765054.png)
 
 * **发现和连接设备**
 

@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:28:54+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:f3b527cd3cb5528a4034b0524876155959ef5d50e90470f4c9a1cef216d3d3c7
+content_hash: sha256:46efa1cd875f551dc04d2e4f25b95cbd1454ffd3a3a98040d3a473908f0bd732
 ---
 
 svg组件可以用来绘制常见图形和线段，如矩形（<rect>）、圆形（<circle>）、线条(<line>）等，具体支持图形样式还请参考[svg](../harmonyos-references/js-components-svg.md)组件。
@@ -42,4 +42,4 @@ svg组件可以用来绘制常见图形和线段，如矩形（<rect>）、圆�
 9. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/xZKezZGgRSq_VeQqWn3NVg/zh-cn_image_0000002589324501.png?HW-CC-KV=V1&HW-CC-Date=20260429T052853Z&HW-CC-Expire=86400&HW-CC-Sign=A64588EFB1337A10F02F12A9B1DD141311F641A7C5984B3A53AA6E9FD0A6FC96)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/xZKezZGgRSq_VeQqWn3NVg/zh-cn_image_0000002589324501.png)

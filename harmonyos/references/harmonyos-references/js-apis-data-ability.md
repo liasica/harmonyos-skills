@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-data-ability
-title: @ohos.data.dataAbility (DataAbility谓词)
+title: "@ohos.data.dataAbility (DataAbility谓词)"
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > ArkTS API > @ohos.data.dataAbility (DataAbility谓词)
 category: harmonyos-references
 scraped_at: 2026-04-29T13:49:21+08:00

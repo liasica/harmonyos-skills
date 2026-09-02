@@ -5,7 +5,7 @@ breadcrumb: 指南 > 系统 > 网络 > Remote Communication Kit（远场通信�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:33:01+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:4d975083613163d6349e499887718a6a0f585f963d2a858b58c32c1577f2fde4
+content_hash: sha256:3e8c620715cef98f1c2811b84a375442ba666428b4452cfc3d4a3d848633ed09
 ---
 
 ## 约束与限制
@@ -83,7 +83,7 @@ content_hash: sha256:4d975083613163d6349e499887718a6a0f585f963d2a858b58c32c1577f
 
 下面，我们将通过图片、时间线及一段示例代码，详细解析请求过程中的关键时间点。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/36tHe4aLQZ6TPpQ1QxY2tA/zh-cn_image_0000002589324799.png?HW-CC-KV=V1&HW-CC-Date=20260429T053259Z&HW-CC-Expire=86400&HW-CC-Sign=C9AF2FB37940341B98C789BF8278A5428CF8140CB567CFD938DEAC09C741FBFE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/36tHe4aLQZ6TPpQ1QxY2tA/zh-cn_image_0000002589324799.png)
 
 从图中可以看到HTTP请求过程的基本过程，并且有一些关键的时间点，下面将以时间线的方式对其进行说明：
 

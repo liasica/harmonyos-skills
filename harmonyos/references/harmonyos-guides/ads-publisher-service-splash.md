@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用服务 > Ads Kit（广告服务） > 流量变现服�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:37:04+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:319540ab628c29a2defbd279bfb68ab60457063a8af07e0e2c4528b3d30bc317
+content_hash: sha256:670bf679c3bcdf4596fb90b3e52bf97da1063e66410e0a0b8bbe4823b11bfd52
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:319540ab628c29a2defbd279bfb68ab60457063a8af07e0e2c4528b3d30
 
 开屏广告分为全屏开屏广告、半屏开屏广告，其中全屏开屏广告展示形式为广告铺满整个页面；半屏开屏广告展示形式会根据媒体页面自定义布局渲染广告、icon和版权信息，一般情况下建议将icon和版权信息展示在广告下方。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/QbvEqtRoQIGI7iaLlyucdw/zh-cn_image_0000002558605612.png?HW-CC-KV=V1&HW-CC-Date=20260429T053703Z&HW-CC-Expire=86400&HW-CC-Sign=F4D68787068D78CCE7FE047C2C03D1ADCDED1C21DFBE7D426990815694408A08)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/QbvEqtRoQIGI7iaLlyucdw/zh-cn_image_0000002558605612.png)
 
 ## 约束与限制
 

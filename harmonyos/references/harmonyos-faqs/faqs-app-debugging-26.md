@@ -5,7 +5,7 @@ breadcrumb: FAQ > DevEco Studio > 应用调试 > 如何使用DevEco Studio进行
 category: harmonyos-faqs
 scraped_at: 2026-04-29T14:21:25+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:7b8b9507f780534e66df43dade85c823776e56cde690fac62c0fbf7540b52a46
+content_hash: sha256:85f3d1678646a0bf57e37a4fce625a26783ac6d5aaa5393406f67f712ca7dd3c
 ---
 
 **问题现象**
@@ -20,4 +20,4 @@ DevEco Studio进行ArkTS/JS + Native混合调试时需要配置DevEco Studio的�
 
 选择配置项：Run/Debug Configurations > Debugger > Dual(ArkTS/JS + Native)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/bmpyspC2QIGmbhrao67yCA/zh-cn_image_0000002229604041.png?HW-CC-KV=V1&HW-CC-Date=20260429T062124Z&HW-CC-Expire=86400&HW-CC-Sign=269965175487CC9E3B446A6A5A0EBC6EF2D69A54F54F8CA72A229A37734038C9 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/bmpyspC2QIGmbhrao67yCA/zh-cn_image_0000002229604041.png "点击放大")

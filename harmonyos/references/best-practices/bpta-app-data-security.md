@@ -5,7 +5,7 @@ breadcrumb: 最佳实践 > 应用安全 > 应用数据安全
 category: best-practices
 scraped_at: 2026-04-29T14:13:15+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:7a394491af888bdfc74d5b077f62c3079b49f0519cc9046ca8e81e4280c48230
+content_hash: sha256:6f931f77cdb5d7eca8f4128fcf0636c47d9f2915d1d214d5284d7c6d3b5dd32c
 ---
 
 ## 概述
@@ -34,7 +34,7 @@ HarmonyOS安全能力以分级安全为架构基础，构建安全应用生态�
 
 根据设备安全能力，如是否有TEE和安全存储芯片等，将设备安全等级分为SL1、SL2、SL3、SL4和SL5五个等级。例如，智能穿戴设备通常为低安全的SL1设备，手机和平板通常为高安全的设备。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/QC0vdIfVSdKGsqwWDocOHw/zh-cn_image_0000002229450445.png?HW-CC-KV=V1&HW-CC-Date=20260429T061312Z&HW-CC-Expire=86400&HW-CC-Sign=B74F2C1082626AF052FD4A7370A0A021D17FABC804A11A02BF0C356CEACE7445 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/QC0vdIfVSdKGsqwWDocOHw/zh-cn_image_0000002229450445.png "点击放大")
 
 设备从SL1到SL5分级，在完整性保护、加密及数据保护、权限及访问控制、可信执行环境和漏洞防利用这几个维度对应的安全能力要求逐渐提高。
 
@@ -63,7 +63,7 @@ HarmonyOS安全能力以分级安全为架构基础，构建安全应用生态�
 
 除了对数据进行内容分类，开发者还需遵守相关法律法规，例如通用数据保护条例（GDPR）和个人信息保护法，以保护用户隐私和数据安全。具体的数据分类图如图1所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/wExQRlZ4QKa9MydpQqmwSw/zh-cn_image_0000002229335969.png?HW-CC-KV=V1&HW-CC-Date=20260429T061312Z&HW-CC-Expire=86400&HW-CC-Sign=FC8E046C57C362F7AB4DEF351038785054E8E094CC412DB8C42BDF3A9146DBFB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/wExQRlZ4QKa9MydpQqmwSw/zh-cn_image_0000002229335969.png)
 
 按照个人数据分类分级规范要求，可将数据分为S1、S2、S3、S4四个安全等级。
 
@@ -161,7 +161,7 @@ HarmonyOS安全能力以分级安全为架构基础，构建安全应用生态�
 程序的场景包含三个页面：体检列表页、数据录入页和数据详情页。页面如下：
 
 **图1** 场景设计图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/vYwutxF9RpG5PIvFOL0Vcw/zh-cn_image_0000002193850580.png?HW-CC-KV=V1&HW-CC-Date=20260429T061312Z&HW-CC-Expire=86400&HW-CC-Sign=DFC9C7BACB9F1ACD2773B4BE9ECDC710FCDF46EF23793617F87928E22C3742D9 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/vYwutxF9RpG5PIvFOL0Vcw/zh-cn_image_0000002193850580.png "点击放大")
 
 ### 场景开发
 

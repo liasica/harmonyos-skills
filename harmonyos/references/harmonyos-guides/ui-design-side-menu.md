@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > UI Design Kit（UI设计套件） > 侧边�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:30:22+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:52d35960e8c95a62dff9113f6d4f7a0aa6cdaa9e913fb2cd44afd59471d656dc
+content_hash: sha256:9269c4fa08189a978142077548e8b62f9efe795721f01f0466be67bf6cf5c0b1
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:52d35960e8c95a62dff9113f6d4f7a0aa6cdaa9e913fb2cd44afd59471d
 
 [HdsSideMenu](../harmonyos-references/ui-design-hdssidemenu.md)提供一种菜单栏样式组件。设置侧边栏对应的一级菜单和二级菜单，并显示其新消息数量。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/FEwuP1AxSRG577i4S-7RWQ/zh-cn_image_0000002589324707.png?HW-CC-KV=V1&HW-CC-Date=20260429T053021Z&HW-CC-Expire=86400&HW-CC-Sign=D77D1BFCE50EC0902D7609C5F452F9466BD01AAEEA8308B40C10F770157E3FAA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/FEwuP1AxSRG577i4S-7RWQ/zh-cn_image_0000002589324707.png)
 
 ## 开发步骤
 

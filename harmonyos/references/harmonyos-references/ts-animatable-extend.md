@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:52:56+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:1105ffa76e91ade0ff6c74be772302714136ee882d02160a589361a9972f0578
+content_hash: sha256:79923ff2cc614171a33855ca1346277bb5a895f3604d870ae02212cd94b040f3
 ---
 
 @AnimatableExtend装饰器用于自定义可动画的属性方法，该装饰器内定义的函数在动画过程中会被逐帧调用，直到动画结束。该装饰器的常见用途有：
@@ -174,7 +174,7 @@ PhonePC/2in1TabletTVWearable
 23. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/U3bXTbBlQgylsjV0rBYAFQ/zh-cn_image_0000002589326485.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055254Z&HW-CC-Expire=86400&HW-CC-Sign=EB42A70B5B688A7F94082127CF584D731D7F642FB216E555F12EAEADB67F8D7D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/U3bXTbBlQgylsjV0rBYAFQ/zh-cn_image_0000002589326485.gif)
 
 ### 示例2（折线的动画效果）
 
@@ -301,4 +301,4 @@ PhonePC/2in1TabletTVWearable
 118. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/NnfvSUkkR7GZTPfUUlbQ0w/zh-cn_image_0000002589246427.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055254Z&HW-CC-Expire=86400&HW-CC-Sign=78551A73CA78D2BD43AAAB4973B835096BB7A7DF5A20EC7C6A6486E6E17AA38F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/NnfvSUkkR7GZTPfUUlbQ0w/zh-cn_image_0000002589246427.gif)

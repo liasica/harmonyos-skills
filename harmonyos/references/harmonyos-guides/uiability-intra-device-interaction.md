@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > Stage�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:25:44+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:e54578e9d0776354769913aa3eb2b9716da91bd0c94842f3e589a94ee91f1ea3
+content_hash: sha256:7795e6e0a773ed462ed7000390bd7520ec3d98d0981ba66e8f8880674a781790
 ---
 
 [UIAbility](../harmonyos-references/js-apis-app-ability-uiability.md)是系统调度的最小单元。在设备内的功能模块之间跳转时，会涉及到启动特定的UIAbility，包括应用内的其他UIAbility、或者其他应用的UIAbility（例如启动三方支付UIAbility）。
@@ -458,7 +458,7 @@ UIAbility的启动分为两种情况：UIAbility冷启动和UIAbility热启动�
 
 图1 目标UIAbility热启动
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/T9eSctGfTBeyr9ZZ7e7_nA/zh-cn_image_0000002558604326.png?HW-CC-KV=V1&HW-CC-Date=20260429T052543Z&HW-CC-Expire=86400&HW-CC-Sign=44030390D369CB2DFB857908D69F699101ACAAA6332C1E9BB2592C17E49C66A7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/T9eSctGfTBeyr9ZZ7e7_nA/zh-cn_image_0000002558604326.png)
 
 开发步骤如下所示。
 

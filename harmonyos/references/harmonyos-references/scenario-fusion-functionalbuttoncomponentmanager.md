@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用服务 > Scenario Fusion Kit（融合场景服务�
 category: harmonyos-references
 scraped_at: 2026-04-29T14:09:17+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:753b0eb7f1a2a1cf19dd9686694186a5589615cd68af0ca6a27644216928ef8a
+content_hash: sha256:c486e5330c8ab23bbde26edf8865dc3a39227dc12d4e7c7f3ddfb9cf24aa7911
 ---
 
 本模块提供Button组件的逻辑管理，辅助HarmonyOS应用和元服务通过Button组件完成相应功能。
@@ -3251,4 +3251,4 @@ PhonePC/2in1TabletTV
 44. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/EX5-QstxQt2sjRivHn3hJw/zh-cn_image_0000002589327305.png?HW-CC-KV=V1&HW-CC-Date=20260429T060915Z&HW-CC-Expire=86400&HW-CC-Sign=E8BF129B4315AEB64BB0DACAC60ED57F45967D4E0F0504BABE6490876A61885E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/EX5-QstxQt2sjRivHn3hJw/zh-cn_image_0000002589327305.png)

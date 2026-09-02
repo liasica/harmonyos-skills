@@ -5,7 +5,7 @@ breadcrumb: 最佳实践 > 应用框架 > 输入法 > 自定义键盘
 category: best-practices
 scraped_at: 2026-04-29T14:11:02+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:213927209785cfdaf1a3421325e0bc73a1591e1d2e84fd60cb534720ca155c52
+content_hash: sha256:eb32482d9c1f31e7a8f9637829b0c8ddea2dda3cf8f4075d419098cc97d9daee
 ---
 
 ## 概述
@@ -53,7 +53,7 @@ content_hash: sha256:213927209785cfdaf1a3421325e0bc73a1591e1d2e84fd60cb534720ca1
 以Grid方式实现数字键盘布局示例：
 
 **图1**   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/lBsLTpQfS7O8c_LaWwjmDQ/zh-cn_image_0000002194010308.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061100Z&HW-CC-Expire=86400&HW-CC-Sign=B589FA0235203C95D020D8B4C4FD76588EE29D154A1E6E9CB735A6D3FA8836F9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/lBsLTpQfS7O8c_LaWwjmDQ/zh-cn_image_0000002194010308.gif)
 
 ```
 1. @Component
@@ -103,7 +103,7 @@ content_hash: sha256:213927209785cfdaf1a3421325e0bc73a1591e1d2e84fd60cb534720ca1
 输入控件（TextArea、TextInput、RichEditor、Search）支持通过[customKeyboard](../harmonyos-references/ts-basic-components-textinput.md#customkeyboard10)属性绑定自定义键盘布局。绑定自定义键盘后，输入控件获取焦点时，不会拉起系统键盘，而是加载指定的自定义键盘。本文后续以TextInput控件为例进行介绍。
 
 **图2**   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/bLjKjKmAR0C1XnUy7f6b0Q/zh-cn_image_0000002229336101.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061100Z&HW-CC-Expire=86400&HW-CC-Sign=33CCAE19D3EE5DD09B902BAE39FC0D5EA490E6BA1A26FEB8DC51CD981B1C86BE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/bLjKjKmAR0C1XnUy7f6b0Q/zh-cn_image_0000002229336101.gif)
 
 代码示例如下：
 
@@ -302,7 +302,7 @@ onBlur代表失去焦点,当输入组件失去焦点,会被调用, 此时设为i
 自定义键盘可以拦截手势事件，通过对状态变量的修改，实现文本的输入。
 
 **图3**   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/T2t9cbxOTZmnauRvtsczBA/zh-cn_image_0000002194010304.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061100Z&HW-CC-Expire=86400&HW-CC-Sign=FB3691F36CE99D9BDE4EF1BC1CD389305DAB2EDCCA10B86A9FE02FCD45E08E7A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/T2t9cbxOTZmnauRvtsczBA/zh-cn_image_0000002194010304.gif)
 
 以英文键盘为例，监听EnglishButton的onClick事件，修改状态变量。
 
@@ -352,7 +352,7 @@ onBlur代表失去焦点,当输入组件失去焦点,会被调用, 此时设为i
 通过监听TextInput的[onTextSelectionChange](../harmonyos-references/ts-basic-components-textinput.md#ontextselectionchange10)生命周期，获取初始光标位置，文本输入后，调用TextInputController的[caretPosition](../harmonyos-references/ts-basic-components-textinput.md#caretposition8)方法，设置最终光标位置。
 
 **图4**   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/WicpjOocTzWLW0bXdh4pCA/zh-cn_image_0000002229336093.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061100Z&HW-CC-Expire=86400&HW-CC-Sign=EE000514D3190401727AFCA53FEB76C5E14CF9C1FB7451B8986F0F2B2FAC973B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/WicpjOocTzWLW0bXdh4pCA/zh-cn_image_0000002229336093.gif)
 
 获取光标位置：
 
@@ -391,7 +391,7 @@ onBlur代表失去焦点,当输入组件失去焦点,会被调用, 此时设为i
 开发者也可以通过TextInputController的[stopEditing](../harmonyos-references/ts-basic-components-textinput.md#stopediting10)方法控制键盘关闭，下面的自定义键盘示例中，点击确认按键关闭自定义键盘。
 
 **图5**   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/DR6OqHQtRUOGEa39-gpZLw/zh-cn_image_0000002229336097.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061100Z&HW-CC-Expire=86400&HW-CC-Sign=8255109A3F82F37CB06E9CEF6591A588CC84C4C8FCFD99BFDA61A48971FA7CC2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/DR6OqHQtRUOGEa39-gpZLw/zh-cn_image_0000002229336097.gif)
 
 ```
 1. onInput(value: string | Resource): string {
@@ -417,7 +417,7 @@ onBlur代表失去焦点,当输入组件失去焦点,会被调用, 此时设为i
 Tab栏点击“123”、“ABC”按钮，this.isCustomKeyboardAttach为true，TextInput绑定自定义键盘；点击“中文”按钮，this.isCustomKeyboardAttach为false，切换系统键盘。
 
 **图6**   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/_1OYNlhaRoe7Mnt7SUGFLw/zh-cn_image_0000002193850728.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061100Z&HW-CC-Expire=86400&HW-CC-Sign=8F4811E805DC73786811560EF727F1EF20B15E8534AD6791A4242028EBD7454B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/_1OYNlhaRoe7Mnt7SUGFLw/zh-cn_image_0000002193850728.gif)
 
 ```
 1. TextInput({
@@ -438,7 +438,7 @@ Tab栏点击“123”、“ABC”按钮，this.isCustomKeyboardAttach为true，T
 为了确保输入框不被自定义键盘挡住，系统默认提供了输入框避让自定义键盘的能力。在TextInput组件的customKeyboard属性设置[supportAvoidance](../harmonyos-references/ts-basic-components-richeditor.md#keyboardoptions12)为true，开启系统提供的自定义键盘避让功能。键盘的避让机制和常见问题的解决方法，可以参考[软键盘布局适配场景介绍](bpta-keyboard-layout-adapt.md#section08221814182316)。
 
 **图7**   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/LaUyxdTrRoeiNXddwnI8SA/zh-cn_image_0000002229450589.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061100Z&HW-CC-Expire=86400&HW-CC-Sign=2786374E1C4A7BDD5A4138AA29FA85B0BD6F8DD6E58536A107440118E32B9673)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/LaUyxdTrRoeiNXddwnI8SA/zh-cn_image_0000002229450589.gif)
 
 ```
 1. // entry/src/main/ets/view/TextInputComponent.ets
@@ -460,7 +460,7 @@ Tab栏点击“123”、“ABC”按钮，this.isCustomKeyboardAttach为true，T
 开发者需要监听自定义键盘根节点的onAreaChange生命周期，获取自定义键盘的高度，根据实际场景设置布局的避让。
 
 **图8**   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/Ftk4MecRQSGh6KVwd06uOg/zh-cn_image_0000002193850704.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061100Z&HW-CC-Expire=86400&HW-CC-Sign=4755FB2DB9C2EFF8B85CDABE2C3A3E7E83C10AA565C3AA734C476731F1A149EA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/Ftk4MecRQSGh6KVwd06uOg/zh-cn_image_0000002193850704.gif)
 
 监听自定义键盘布局的onAreaChange生命周期，通过newValue.height获取自定义键盘弹出时的高度，根据实际业务场景计算布局避让高度avoidHeight。
 

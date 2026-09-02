@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:28:52+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:9a0c8dbca538bcdc32f62e686b04435d813da6fc9a3a7f7ff593223c9df2518c
+content_hash: sha256:edae91bbbfd8c4a589a45f9512ec20cf42b08f10a7f97c871e24f29dab1ec9aa
 ---
 
 使用OffscreenCanvas在离屏Canvas画布组件上进行绘制，绘制对象可以是矩形、文本、图片等。 离屏，即GPU在当前缓冲区以外新开辟的一个缓冲区。具体请参考[OffscreenCanvasRenderingContext2D对象](../harmonyos-references/js-offscreencanvasrenderingcontext2d.md)。
@@ -96,7 +96,7 @@ content_hash: sha256:9a0c8dbca538bcdc32f62e686b04435d813da6fc9a3a7f7ff593223c9df
 36. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/lK_RDNlKRNmvaWHXP3H6jQ/zh-cn_image_0000002589324497.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052851Z&HW-CC-Expire=86400&HW-CC-Sign=4D93373F9C7C32BEFCA8CD243777557E247DDE516096039F932123C0E0D2058E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/lK_RDNlKRNmvaWHXP3H6jQ/zh-cn_image_0000002589324497.gif)
 
 ## 判断位置
 
@@ -199,4 +199,4 @@ content_hash: sha256:9a0c8dbca538bcdc32f62e686b04435d813da6fc9a3a7f7ff593223c9df
 42. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/byRjpSywRwGlI0wWvnDvBg/zh-cn_image_0000002589244435.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052851Z&HW-CC-Expire=86400&HW-CC-Sign=F50304D042E91B3C3B526B503370626E6B4A64485E1B4CA1DE53BC399E5AEA6C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/byRjpSywRwGlI0wWvnDvBg/zh-cn_image_0000002589244435.gif)

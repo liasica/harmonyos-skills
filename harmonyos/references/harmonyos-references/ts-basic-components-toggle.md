@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:51:58+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:78f7f88edeb48e74fe7647f4259b935da8e6db202377c96c4169fb7db879e8f2
+content_hash: sha256:3162355f11ee613fc9e032f72e7eda227142c2a736f8f512dba5fd58ff885f21
 ---
 
 组件提供勾选框样式、状态按钮样式和开关样式。
@@ -294,7 +294,7 @@ PhonePC/2in1TabletTVWearable
 61. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/n0ZmVArqTOunSxy-1sHOOA/zh-cn_image_0000002558766218.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055153Z&HW-CC-Expire=86400&HW-CC-Sign=3FB5F1EF7F2750A72372EF3F3F5742A10455C7E78BB043E63C53085E655DC6BD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/n0ZmVArqTOunSxy-1sHOOA/zh-cn_image_0000002558766218.gif)
 
 ### 示例2（自定义开关类型的样式）
 
@@ -336,7 +336,7 @@ PhonePC/2in1TabletTVWearable
 33. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/k-z-ewD-Tzy4YRqImZML4w/zh-cn_image_0000002558606560.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055153Z&HW-CC-Expire=86400&HW-CC-Sign=2315447932A82D801C945BC7D2ED6EF177996A266C58144653B3A54712AC524A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/k-z-ewD-Tzy4YRqImZML4w/zh-cn_image_0000002558606560.gif)
 
 ### 示例3（自定义Toggle样式）
 
@@ -392,4 +392,4 @@ PhonePC/2in1TabletTVWearable
 47. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/6krXMNM8SeOqKKjQMaVLPw/zh-cn_image_0000002589326087.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055153Z&HW-CC-Expire=86400&HW-CC-Sign=467C66D9F49F8F4221FA07EA1606A2260E04B54D117ABEE7B4386DF8186ED16D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/6krXMNM8SeOqKKjQMaVLPw/zh-cn_image_0000002589326087.gif)

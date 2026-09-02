@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:51:08+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:bdf770bf608becede6197a9c34b136eda53c63c3cd96bbfbe4a7159c0c6a666c
+content_hash: sha256:872f5e5e4e6ec59b9cecc90a5105d577a49dcba815fa55aaf0050fb44dba3dbf
 ---
 
 在处理触屏事件时，ArkUI会在触屏事件触发前进行按压点和组件区域的[触摸测试](../harmonyos-guides/arkts-interaction-basic-principles.md#触摸测试)，收集需要响应触屏事件的组件，再基于触摸测试结果分发相应的触屏事件。在父节点，可以通过onChildTouchTest决定子节点的触摸测试方式，影响子组件的触摸测试，从而影响后续的触屏事件分发。具体影响参考[TouchTestStrategy](ts-universal-attributes-on-child-touch-test.md#touchteststrategy11枚举说明)枚举说明。
@@ -192,7 +192,7 @@ PhonePC/2in1TabletTVWearable
 66. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/H876hI8zTciu955VDYAbnA/zh-cn_image_0000002558765994.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055107Z&HW-CC-Expire=86400&HW-CC-Sign=AE69CD87D8452D9C581CBC867144AD40D7340A447E85AEF0ABF53F84BBE74BE5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/H876hI8zTciu955VDYAbnA/zh-cn_image_0000002558765994.gif)
 
 ### 示例2（设置事件派发策略为FORWARD）
 
@@ -267,7 +267,7 @@ PhonePC/2in1TabletTVWearable
 66. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/JOsvndPFQCmZObtm4OFzEA/zh-cn_image_0000002558606336.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055107Z&HW-CC-Expire=86400&HW-CC-Sign=B364DF0C021006AF1A5391A7948926DFBA7A299B8711E871E29472EAE86A0658)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/JOsvndPFQCmZObtm4OFzEA/zh-cn_image_0000002558606336.gif)
 
 ### 示例3（设置事件派发策略为DEFAULT）
 
@@ -337,4 +337,4 @@ PhonePC/2in1TabletTVWearable
 61. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/Ygr8xUcJSGur0KTHOBtiKQ/zh-cn_image_0000002589325863.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055107Z&HW-CC-Expire=86400&HW-CC-Sign=741DD0CC362D26A71BEC1FF78A92AE9E9C034AB26C923E3D9DB80C837B128238)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/Ygr8xUcJSGur0KTHOBtiKQ/zh-cn_image_0000002589325863.gif)

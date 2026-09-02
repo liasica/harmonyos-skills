@@ -5,7 +5,7 @@ breadcrumb: FAQ > DevEco Studio > 环境准备 > 如何配置DevEco Studio的代
 category: harmonyos-faqs
 scraped_at: 2026-04-29T14:20:04+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:3b3c14563a6ba78cc020340f1eb121d7d5c0b591af3ee6aeca111f474ec932da
+content_hash: sha256:4093c029812dad01d8a817eb3b13723b5e050e6748323e3a3cf1aafa2c49b6eb
 ---
 
 DevEco Studio开发环境依赖于网络环境，需要连接上网络才能确保工具的正常使用。
@@ -23,5 +23,5 @@ DevEco Studio开发环境依赖于网络环境，需要连接上网络才能确�
      + **Password**：访问代理服务器的密码。
      + **Remember**：勾选，记住密码。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/Qkqo3S1pTxyNWWH0dO5uMg/zh-cn_image_0000002229603741.png?HW-CC-KV=V1&HW-CC-Date=20260429T062004Z&HW-CC-Expire=86400&HW-CC-Sign=A653A8FA14DE9A8C92857B804B4FA69517ECD4D886A9799216CAD94722E8FE3C)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/Qkqo3S1pTxyNWWH0dO5uMg/zh-cn_image_0000002229603741.png)
 3. 配置完成后，点击“Check connection”，输入网络地址，检查网络连通性。提示“Connection successful”表示代理设置成功。点击“OK”按钮完成配置。

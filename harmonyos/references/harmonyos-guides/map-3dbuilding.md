@@ -5,14 +5,14 @@ breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 在地图上绘�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:39:11+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:2e803722ac2261feebca5340ca0aca92b2a36f1f3bc650dcc4f09372fba9ff4f
+content_hash: sha256:d0884d0cab9e8f29dd5428e0a92d401fbbacab740a1afafda2e9016f7655a464
 ---
 
 ## 场景介绍
 
 本章节将向您介绍如何在地图上绘制3D建筑。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/df8p_kE0SW27dwpTbRo_JQ/zh-cn_image_0000002558605888.gif?HW-CC-KV=V1&HW-CC-Date=20260429T053804Z&HW-CC-Expire=86400&HW-CC-Sign=5999D2559BFFD9015B26DE135BEBBBAB38E0DF2A1BEEEAA9789DD228A4B050F2 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/df8p_kE0SW27dwpTbRo_JQ/zh-cn_image_0000002558605888.gif "点击放大")
 
 ## 接口说明
 

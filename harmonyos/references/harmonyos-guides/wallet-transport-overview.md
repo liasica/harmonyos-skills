@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用服务 > Wallet Kit（钱包服务） > 接入交通�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:40:45+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:a1114c08f2325d57c961ec3a74dcc901769f375d899d1573cfeb067dee439ce5
+content_hash: sha256:8220b9e7aec1aebe83760ac4b0d061bcef72457fb14a438953ed8c9a48ed3584
 ---
 
 Wallet Kit中的交通卡服务提供了开通新卡、在线充值、卡片更新和删卡的开放能力。由于交通卡的实际发行方是交通卡公司，所以开发者的app想要实现上述功能，需要：
@@ -19,7 +19,7 @@ Wallet Kit中的交通卡服务提供了开通新卡、在线充值、卡片更�
 
 ## 整体架构
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/t2as6BlDRMaoaDzcOGmlDA/zh-cn_image_0000002589245513.png?HW-CC-KV=V1&HW-CC-Date=20260429T054044Z&HW-CC-Expire=86400&HW-CC-Sign=A2361DC5CF56869C96279704584A33F6F1E2DC47F93728D212D928146C0AAFFB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/t2as6BlDRMaoaDzcOGmlDA/zh-cn_image_0000002589245513.png)
 
 * **角色分工：**
 

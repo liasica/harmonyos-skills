@@ -5,14 +5,14 @@ breadcrumb: FAQ > DevEco Studio > 编译构建 > 推包调试报错“Error mess
 category: harmonyos-faqs
 scraped_at: 2026-04-29T14:21:01+08:00
 doc_updated_at: 2026-03-17
-content_hash: sha256:2b7c05ac31204334561cc1b25dcf2b46bd6f9149c5e8f1d9432f223484417dac
+content_hash: sha256:702a8641e1968a1993a4eb51f725665751c1686b73cab0fb20c87c64370d3754
 ---
 
 **问题现象**
 
 在使用DevEco Studio推包到设备进行调试时，如果遇到jscrash报错，FaultLog中显示“Error message: cannot find record '&XXX/src/main/ets/YYY&x.y.z'，请检查请求路径 'ZZZ.abc'”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/iihUbdnrRS6of-ztdpKFyw/zh-cn_image_0000002251128405.png?HW-CC-KV=V1&HW-CC-Date=20260429T062100Z&HW-CC-Expire=86400&HW-CC-Sign=5C60428B57D1F56AFD87FD671A5A3009EDE119D6B78CF92A7F4661E69DC8953A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/iihUbdnrRS6of-ztdpKFyw/zh-cn_image_0000002251128405.png)
 
 **问题原因**
 
@@ -62,7 +62,7 @@ content_hash: sha256:2b7c05ac31204334561cc1b25dcf2b46bd6f9149c5e8f1d9432f2234844
 
 1）在工程根目录下新增plugin.ts文件。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/o7415WO_SVSWPKjpkvxQMQ/zh-cn_image_0000002215928680.png?HW-CC-KV=V1&HW-CC-Date=20260429T062100Z&HW-CC-Expire=86400&HW-CC-Sign=388AD73334C0DC1D093C52197CB9C6B25224EA7D5055BF95A97D305D013AD93F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/o7415WO_SVSWPKjpkvxQMQ/zh-cn_image_0000002215928680.png)
 
 plugin.ts文件内容：
 
@@ -198,7 +198,7 @@ plugin.ts文件内容：
 
 2）在工程级hvigorfile.ts文件中增加两个插件，并执行Sync。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/KRhx6Pz6Q1OV4rIi7t47MA/zh-cn_image_0000002216088460.png?HW-CC-KV=V1&HW-CC-Date=20260429T062100Z&HW-CC-Expire=86400&HW-CC-Sign=0FA729DA9FEE7747C4F10CD91137EE0749AC70B5BBE32F2513ACAFE3027841FF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/KRhx6Pz6Q1OV4rIi7t47MA/zh-cn_image_0000002216088460.png)
 
 hvigorfile.ts文件内容：
 
@@ -220,4 +220,4 @@ hvigorfile.ts文件内容：
 1. hvigorw --stop-daemon
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/k1oo4dLHTyq7TKpMiLe5cA/zh-cn_image_0000002251048357.png?HW-CC-KV=V1&HW-CC-Date=20260429T062100Z&HW-CC-Expire=86400&HW-CC-Sign=6FBBDE5A622B0EE339EF61E55C041B8C50D1036A9CE40F501CD4AE7B4DC6CFF6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/k1oo4dLHTyq7TKpMiLe5cA/zh-cn_image_0000002251048357.png)

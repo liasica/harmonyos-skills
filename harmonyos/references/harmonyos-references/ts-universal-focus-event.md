@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:51:08+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:8f8f2e60957075b576acc8e6536bcf59157a13ff19ed27bb32b257052d0e4e5a
+content_hash: sha256:bbd98a1b3e61ae63bf3c5eae2431e07d79e632cf796cdd01c85183c961868007
 ---
 
 焦点事件指页面焦点在可获焦组件间移动时触发的事件，组件可使用焦点事件来处理相关逻辑。
@@ -125,4 +125,4 @@ PhonePC/2in1TabletTVWearable
 50. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/dIsz70yZTb2NEr06GcJDBQ/zh-cn_image_0000002589325859.png?HW-CC-KV=V1&HW-CC-Date=20260429T055107Z&HW-CC-Expire=86400&HW-CC-Sign=8E9EF6E137718D77B6568DD3CFB317E999512464E3B5F4DE35C0D9FAC2E46AA1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/dIsz70yZTb2NEr06GcJDBQ/zh-cn_image_0000002589325859.png)

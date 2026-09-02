@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:28:16+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:df78a6fb73f0a000e1daa5aa85b62ea012a90ae548732ed0a88254815fb9cf9a
+content_hash: sha256:cefef4674fe5fc22017506f4661c744cfb689b5b40004dd7ed40471c68e22372
 ---
 
 ## 色彩
@@ -109,7 +109,7 @@ content_hash: sha256:df78a6fb73f0a000e1daa5aa85b62ea012a90ae548732ed0a88254815fb
 
 [LinearGradientEffect.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/GradientEffect/entry/src/main/ets/homePage/LinearGradientEffect.ets#L16-L101)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/-5_KEWx_Q6eucHW3bFF-SQ/zh-cn_image_0000002558604836.png?HW-CC-KV=V1&HW-CC-Date=20260429T052815Z&HW-CC-Expire=86400&HW-CC-Sign=C800E6AE4BD99F613040D254D135F80C2450B2B77804FAB4953F58489B94B7B6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/-5_KEWx_Q6eucHW3bFF-SQ/zh-cn_image_0000002558604836.png)
 
 ## 为组件添加角度渐变效果
 
@@ -224,7 +224,7 @@ content_hash: sha256:df78a6fb73f0a000e1daa5aa85b62ea012a90ae548732ed0a88254815fb
 
 [DirectionGradientEffect.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/GradientEffect/entry/src/main/ets/homePage/DirectionGradientEffect.ets#L16-L123)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/_XFSWXyCQCm938KiQN1Kkg/zh-cn_image_0000002589324361.png?HW-CC-KV=V1&HW-CC-Date=20260429T052815Z&HW-CC-Expire=86400&HW-CC-Sign=B28F0E444BA2CAA23C45696B248814AEEC861E4FC910BA62BD41CAA03A4ED404)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/_XFSWXyCQCm938KiQN1Kkg/zh-cn_image_0000002589324361.png)
 
 ## 为组件添加径向渐变效果
 
@@ -333,4 +333,4 @@ content_hash: sha256:df78a6fb73f0a000e1daa5aa85b62ea012a90ae548732ed0a88254815fb
 
 [RadialGradientEffect.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/GradientEffect/entry/src/main/ets/homePage/RadialGradientEffect.ets#L16-L117)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/OWTMjlR9SMG09HNP-jTq3A/zh-cn_image_0000002589244301.png?HW-CC-KV=V1&HW-CC-Date=20260429T052815Z&HW-CC-Expire=86400&HW-CC-Sign=DDEBA547D5A8437AC2BA22C4BDFE6F8FEA23A6508F04D8F80682DA130FDFD9B2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/OWTMjlR9SMG09HNP-jTq3A/zh-cn_image_0000002589244301.png)

@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-reminderagentmanager
-title: @ohos.reminderAgentManager (后台代理提醒)
+title: "@ohos.reminderAgentManager (后台代理提醒)"
 breadcrumb: API参考 > 应用框架 > Background Tasks Kit（后台任务开发服务） > ArkTS API > @ohos.reminderAgentManager (后台代理提醒)
 category: harmonyos-references
 scraped_at: 2026-04-29T13:56:02+08:00

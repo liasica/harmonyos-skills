@@ -5,7 +5,7 @@ breadcrumb: 指南 > 系统 > 安全 > User Authentication Kit（用户认证服
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:32:24+08:00
 doc_updated_at: 2026-04-10
-content_hash: sha256:70cf51102617250cef36192fa0a1a86d5d536c60e7d608d9aa6a08c1e7e26fdf
+content_hash: sha256:f82efa4fbb5473b2c3c438a6e740322de4f8080a0cb1faeb8960d1358ba9ccaf
 ---
 
 User Authentication Kit（用户认证服务）提供了基于用户在设备本地注册的锁屏口令、人脸和指纹来认证用户身份的能力。
@@ -16,7 +16,7 @@ User Authentication Kit（用户认证服务）提供了基于用户在设备本
 
 用户身份认证可用于各种鉴权场景，如应用内账号登录、支付认证等。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/QS5hmjurQT-DQZSY5gvPGQ/zh-cn_image_0000002589324783.png?HW-CC-KV=V1&HW-CC-Date=20260429T053223Z&HW-CC-Expire=86400&HW-CC-Sign=6973D96430762A9E3E181CF267F10C258AC1353B8A0E521C16856E555AEF682A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/QS5hmjurQT-DQZSY5gvPGQ/zh-cn_image_0000002589324783.png)
 
 ## 亮点/特征
 
@@ -53,7 +53,7 @@ User Authentication Kit（用户认证服务）提供了基于用户在设备本
 
 统一用户认证框架架构如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/xXw-wyKXQ5aF0ONiwOQxFA/zh-cn_image_0000002589244721.png?HW-CC-KV=V1&HW-CC-Date=20260429T053223Z&HW-CC-Expire=86400&HW-CC-Sign=431C9B931DA6CB661CAE968871780E56A7E03D2672B359BD04DE51BB8CB127DC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/xXw-wyKXQ5aF0ONiwOQxFA/zh-cn_image_0000002589244721.png)
 
 用户认证框架主要包括四个部分：
 

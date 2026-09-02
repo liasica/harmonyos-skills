@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 处理网页内容 >
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:29:31+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:68a617711ae3ae076974ede34cb695ebf1ce1b6af192046ca7935bac5674d09c
+content_hash: sha256:c1470418eec0cce4f5dee175da75a041a9b46bc02d7bdc323a25801f1c641550
 ---
 
 从API version 20开始，ArkWeb提供了H5页面内的文本分词识别功能，支持文本分词高亮、分词长按预览及文本选择菜单扩展等。这些功能需将[enableDataDetector](../harmonyos-references/arkts-basic-components-web-attributes.md#enabledatadetector20)设置为true，默认为false。
@@ -83,13 +83,13 @@ Web组件内的H5页面加载完成后，自动识别并高亮标注页面内的
 
 点击实体文本，弹出对应的操作菜单，如下图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/toNkYJGoQ-C_21enwduByA/zh-cn_image_0000002589244539.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052929Z&HW-CC-Expire=86400&HW-CC-Sign=5208AEC608106A87A3892ED4284CFA59026FCF13E2712D0C9627D7287F1E849E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/toNkYJGoQ-C_21enwduByA/zh-cn_image_0000002589244539.gif)
 
 鼠标右键点击、鼠标拖拽将触发超链接的默认行为。
 
 接口[dataDetectorConfig](../harmonyos-references/arkts-basic-components-web-attributes.md#datadetectorconfig20)未被使用，或其参数[TextDataDetectorConfig](../harmonyos-references/ts-text-common.md#textdatadetectorconfig11对象说明)的enablePreviewMenu设置为false时，长按、拖拽将触发超链接的默认行为，如下图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/5eylrQBeQpS_JIjo77Jg1A/zh-cn_image_0000002558764734.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052929Z&HW-CC-Expire=86400&HW-CC-Sign=B12674A914D613FA2AAFE36CEE12663D322785C538149496BF8508EBB6107B4F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/5eylrQBeQpS_JIjo77Jg1A/zh-cn_image_0000002558764734.gif)
 
 页面文本元素的计算样式存在user-select:none时，实体菜单中“选择文本”的选项无效，但在[copyOptions](../harmonyos-references/arkts-basic-components-web-attributes.md#copyoptions11)不为CopyOptions.None时，仍可以复制实体文本。
 
@@ -113,7 +113,7 @@ Web组件内的H5页面加载完成后，自动识别并高亮标注页面内的
 
 在[copyOptions](../harmonyos-references/arkts-basic-components-web-attributes.md#copyoptions11)不为CopyOptions.None时，长按被高亮的实体文本，会弹出预览菜单，如下图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/AmWpek19TK29gs9vNhYr5g/zh-cn_image_0000002558605078.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052929Z&HW-CC-Expire=86400&HW-CC-Sign=383A3739D7D27E46495E76BBF5708A1EFA7F23CEEB76E088FAB2A9C08CB2002C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/AmWpek19TK29gs9vNhYr5g/zh-cn_image_0000002558605078.gif)
 
 通过[bindSelectionMenu](../harmonyos-references/arkts-basic-components-web-attributes.md#bindselectionmenu13)绑定的[自定义菜单](web-menu.md#自定义菜单)与分词长按预览菜单互不影响。长按被高亮的分词超链接不会弹出自定义超链接菜单，长按普通超链接也不会弹出分词预览菜单。
 
@@ -127,6 +127,6 @@ Web组件内的H5页面加载完成后，自动识别并高亮标注页面内的
 * 选中文本中仅包含一个匹配识别类型的实体（可通过[dataDetectorConfig](../harmonyos-references/arkts-basic-components-web-attributes.md#datadetectorconfig20)配置支持的识别类型）。
 * 不处于“全选”操作状态下的文本。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/eXu0k9EzStWc48yVfAWOrw/zh-cn_image_0000002589324603.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052929Z&HW-CC-Expire=86400&HW-CC-Sign=E96A074E91CFD05D39BD0606E563861B43295E71D8769207D42BF329AEC6CD17)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/eXu0k9EzStWc48yVfAWOrw/zh-cn_image_0000002589324603.gif)
 
 AI菜单项的出现与是否选中高亮的实体文本无关，只要满足上述条件，AI菜单项就会显示。

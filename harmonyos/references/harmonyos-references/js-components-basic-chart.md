@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > �
 category: harmonyos-references
 scraped_at: 2026-04-29T13:53:23+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:65c204537dd6075ddf345bbfdc86ceb62dcdd9bd96f77cc74050b045198877ca
+content_hash: sha256:e46f34bb9331259583159e39cd9ed96ae0285c89db4ae208aaa8b60c4a774553
 ---
 
 说明
@@ -271,7 +271,7 @@ PhonePC/2in1TabletTVWearable
    49. }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/jfIqNL5QT5qdtvzhWDaNqg/zh-cn_image_0000002589246521.png?HW-CC-KV=V1&HW-CC-Date=20260429T055321Z&HW-CC-Expire=86400&HW-CC-Sign=C829DE4E97E46A4F24CAF333F776B17E66C7087737D1A6F2339C66A4586A8AA6)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/jfIqNL5QT5qdtvzhWDaNqg/zh-cn_image_0000002589246521.png)
 2. 柱状图
 
    ```
@@ -339,7 +339,7 @@ PhonePC/2in1TabletTVWearable
    32. }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/kW2UzCfXQJ61o3BxbiOmVA/zh-cn_image_0000002558766714.png?HW-CC-KV=V1&HW-CC-Date=20260429T055321Z&HW-CC-Expire=86400&HW-CC-Sign=EB37A07D9D6189EA2307697943FA8A230BEAC58F73F270A864244C6235F270F4)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/kW2UzCfXQJ61o3BxbiOmVA/zh-cn_image_0000002558766714.png)
 3. 量规图
 
    ```
@@ -368,7 +368,7 @@ PhonePC/2in1TabletTVWearable
    14. }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/WgSrQDyHQDywo2vGKtuQog/zh-cn_image_0000002558607054.png?HW-CC-KV=V1&HW-CC-Date=20260429T055321Z&HW-CC-Expire=86400&HW-CC-Sign=C999E9B4042EE46F49122BF1A86EC8E631955A2B3E6FA1C7B08B8C713A22B4F7)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/WgSrQDyHQDywo2vGKtuQog/zh-cn_image_0000002558607054.png)
 4. 进度类、加载类、占比类圆形图表
 
    ```
@@ -444,4 +444,4 @@ PhonePC/2in1TabletTVWearable
    35. }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/jzFiH97OSTe9tEY3c2Imcw/zh-cn_image_0000002589326581.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055321Z&HW-CC-Expire=86400&HW-CC-Sign=6EBC172C968CFDFC6521609F9C9B9175BC2CAC7F94180722CAF06D471CCF2292)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/jzFiH97OSTe9tEY3c2Imcw/zh-cn_image_0000002589326581.gif)

@@ -5,14 +5,14 @@ breadcrumb: FAQ > DevEco Studio > 应用调试 > HarmonyOS应用自动化签名�
 category: harmonyos-faqs
 scraped_at: 2026-04-29T14:21:22+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:94c15500a97df97a5ae7520fe7fd2c9860c802c7d8ac44d98b7fee858eb70e8e
+content_hash: sha256:d7b60a6b2d82f6135d63f1e7013c9e4cfa53d7ac66bf1a6fddbaca9e1ca8ddce
 ---
 
 **问题现象**
 
 使用自动化签名功能对HarmonyOS进行签名时，提示“Provision number exceeds limit”信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/8ZLcW0aURtmjsitbsX8IEQ/zh-cn_image_0000002194318424.png?HW-CC-KV=V1&HW-CC-Date=20260429T062121Z&HW-CC-Expire=86400&HW-CC-Sign=6D8DC6AB7606D8E233BB5480CA50E60E0FCE5D4F49F947D858878D47A34DDAD8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/8ZLcW0aURtmjsitbsX8IEQ/zh-cn_image_0000002194318424.png)
 
 **解决措施**
 

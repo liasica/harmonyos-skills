@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkData（方舟数据管理） > 同应用�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:26:19+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:2fe60a0b528ca67181e01f978833f8053155e5b70700be49fc62ebb4d1c0f5de
+content_hash: sha256:575e1b7f3943fe749cac4ba8598ee9287886da0b9102b9e0f338fc838e575e4d
 ---
 
 ## 场景介绍
@@ -26,7 +26,7 @@ content_hash: sha256:2fe60a0b528ca67181e01f978833f8053155e5b70700be49fc62ebb4d1c
 
 ### 数据跨设备同步机制
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/J-Oqib71TLGeGcXLjBDiGA/zh-cn_image_0000002558764016.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T052617Z&HW-CC-Expire=86400&HW-CC-Sign=C86F2AEB4C466AAEFB11C5EA5F15F93D833AFCCD7DA22E3AC64D6C29B0A075B3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/J-Oqib71TLGeGcXLjBDiGA/zh-cn_image_0000002558764016.jpg)
 
 业务将数据写入关系型数据库后，向数据管理服务发起同步请求。
 
@@ -51,7 +51,7 @@ content_hash: sha256:2fe60a0b528ca67181e01f978833f8053155e5b70700be49fc62ebb4d1c
 
 需要注意的是，该模式下不支持对其他设备同步过来的数据进行修改。这一限制旨在保障数据一致性与同步逻辑的稳定性。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/_4LmzemiTCa4cVpl3PFi0A/zh-cn_image_0000002558604360.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T052617Z&HW-CC-Expire=86400&HW-CC-Sign=C57DD913D59F968E663CFE0CDBCF3A60C2989DF6D348517FF24473B791267C30)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/_4LmzemiTCa4cVpl3PFi0A/zh-cn_image_0000002558604360.jpg)
 
 **单版本表模式**
 
@@ -59,7 +59,7 @@ content_hash: sha256:2fe60a0b528ca67181e01f978833f8053155e5b70700be49fc62ebb4d1c
 
 使用单版本表模式跨设备同步，需要配置schema文件，指定所需同步列以及解冲突列；单版本表模式同步数据支持修改对端设备同步过来的数据。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/dOeTf0qjR-yVeX45yLf2Rg/zh-cn_image_0000002589323885.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T052617Z&HW-CC-Expire=86400&HW-CC-Sign=0A4A1FB7C926A92E4336707FD7969DD228C96FD92F5E61CF1BA6330D86192F70)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/dOeTf0qjR-yVeX45yLf2Rg/zh-cn_image_0000002589323885.jpg)
 
 ## 约束限制
 

@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > �
 category: harmonyos-references
 scraped_at: 2026-04-29T13:53:43+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:98b8d61cefd9618dff4d6c9f0156febfbab0e4459955799a2593693476bdf443
+content_hash: sha256:a47224fb7678e52a9d3158ca1ff56492900a71569a995cbb538f44daf4a0bdc1
 ---
 
 ## 目录结构
@@ -16,7 +16,7 @@ JS FA应用的JS模块(entry/src/main/js/module)的典型开发目录结构如�
 
 **图1** 目录结构
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/BCvaR3NrQ8m29Aes9u5V9Q/zh-cn_image_0000002558607196.png?HW-CC-KV=V1&HW-CC-Date=20260429T055340Z&HW-CC-Expire=86400&HW-CC-Sign=19F73B69B23706B935E3CC94FC28352A23E80BD5DB976C983AF12BA5336FCB59)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/BCvaR3NrQ8m29Aes9u5V9Q/zh-cn_image_0000002558607196.png)
 
 目录结构中文件分类如下：
 

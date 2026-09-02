@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:52:58+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:c979b0ce528c2aebcc6a4c3bfcb14b727277f58b1559b01a536e4b02f5493a5b
+content_hash: sha256:a88526d30c5104e86ba0819248463341d02333bc2f3c443c92dd25930352627c
 ---
 
 ChipGroup组件提供操作块群组，用于文件或资源内容的分类等场景。
@@ -348,7 +348,7 @@ PhonePC/2in1TabletTVWearable
 65. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/P06r74yfRP-fKyu4_M1PEg/zh-cn_image_0000002589326489.png?HW-CC-KV=V1&HW-CC-Date=20260429T055256Z&HW-CC-Expire=86400&HW-CC-Sign=B562E3C17267B7BE33C1FFE2FD40FD4EF8E792DA6FE219F9A669D30FD497FC54)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/P06r74yfRP-fKyu4_M1PEg/zh-cn_image_0000002589326489.png)
 
 ### 示例2（有最右侧的builder）
 
@@ -445,7 +445,7 @@ PhonePC/2in1TabletTVWearable
 88. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/IfTR_MKXQ3m8J2me7YHU2A/zh-cn_image_0000002589246431.png?HW-CC-KV=V1&HW-CC-Date=20260429T055256Z&HW-CC-Expire=86400&HW-CC-Sign=54FD1129D6DDA48F30DD49C34BE0CA3F7B8325F061B5515EAEDB28EF2367BE4A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/IfTR_MKXQ3m8J2me7YHU2A/zh-cn_image_0000002589246431.png)
 
 ### 示例3（设置Symbol类型图标）
 
@@ -546,7 +546,7 @@ PhonePC/2in1TabletTVWearable
 92. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/Nr11aJx7R0qFDWOF03SwOQ/zh-cn_image_0000002558766624.png?HW-CC-KV=V1&HW-CC-Date=20260429T055256Z&HW-CC-Expire=86400&HW-CC-Sign=D05C15575345C322F564FF885D3C8CD633681F67DBD2A9146A555A083758B309)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/Nr11aJx7R0qFDWOF03SwOQ/zh-cn_image_0000002558766624.png)
 
 ### 示例4（单选时无障碍朗读）
 

@@ -5,7 +5,7 @@ breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:41:13+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:129c405a10906c37604229e718cab1553d6c2bff64ba3c2508eac25274d780f4
+content_hash: sha256:fa95a20224d44602ae93bdcd2486f54b8976c4faed3542a2b530813337356001
 ---
 
 ## CAModel性能仿真
@@ -141,7 +141,7 @@ Kirin9020/KirinX90暂不支持使用该方法进行调优。
 
    **图1** 仿真打点示意图
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/JC2iuUXkTXqO2nLseKdbXQ/zh-cn_image_0000002589325621.png?HW-CC-KV=V1&HW-CC-Date=20260429T054112Z&HW-CC-Expire=86400&HW-CC-Sign=782CF51ED0A29CB332E63C93C6CA0505D449379BABACC6F4E154F88BD59E60B4)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/JC2iuUXkTXqO2nLseKdbXQ/zh-cn_image_0000002589325621.png)
 
 ### Trace接口说明
 

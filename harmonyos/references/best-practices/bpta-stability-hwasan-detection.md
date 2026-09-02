@@ -5,7 +5,7 @@ breadcrumb: 最佳实践 > 稳定性 > 稳定性检测 > 开发态稳定性检�
 category: best-practices
 scraped_at: 2026-04-29T14:14:00+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:788cc12594a3d0b789a2231815ef8f9791d372dafcc6bfc00908bd5b62292524
+content_hash: sha256:35eaa28a436e11f0d6baedd1ea0a39111de72cf9303f6e41a48ba6d23b72e4fc
 ---
 
 HWASan的能力概述和检测原理可参考[地址越界检测能力概述](bpta-stability-address-sanitizer-overview.md)以及[HWASan检测原理](bpta-stability-address-sanitizer-principle.md#section187526511146)，适用于开发态调试压测场景。
@@ -77,7 +77,7 @@ HWASAN\_OPTIONS支持在“app.json5”中配置，也支持在“Run/Debug Conf
 
 点击**Run > Edit Configurations >****Diagnostics**，勾选**Hardware-Assisted Address Sanitizer**开启检测。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/MjyT0mm8Sf6RUe6tm6DQ2w/zh-cn_image_0000002370565424.png?HW-CC-KV=V1&HW-CC-Date=20260429T061359Z&HW-CC-Expire=86400&HW-CC-Sign=520B9308FC7472FDC3D589128AAC733065A3569CB286E44811F24D2ABFF8A8BE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/MjyT0mm8Sf6RUe6tm6DQ2w/zh-cn_image_0000002370565424.png)
 
 **流水线场景**
 
@@ -87,7 +87,7 @@ HWASAN\_OPTIONS支持在“app.json5”中配置，也支持在“Run/Debug Conf
    1. "hwasanEnabled": true
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/kH3ty3PqRhiykWRxYXGQfA/zh-cn_image_0000002404125093.png?HW-CC-KV=V1&HW-CC-Date=20260429T061359Z&HW-CC-Expire=86400&HW-CC-Sign=8417A2F592E4ECE2513BA189CF523B0D0B617A90E7D6B224C2532CF466EC02C3)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/kH3ty3PqRhiykWRxYXGQfA/zh-cn_image_0000002404125093.png)
 2. 在hvigorw命令后加上**-p** **ohos-enable-hwasan=true**的选项，执行hvigorw命令，更多options参考[hvigorw文档](../harmonyos-guides/ide-hvigor-commandline.md)。
 
    ```
@@ -104,14 +104,14 @@ HWASAN\_OPTIONS支持在“app.json5”中配置，也支持在“Run/Debug Conf
    1. "hwasanEnabled": true
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/uS8lGJYzSOaHhEQ84lIAWw/zh-cn_image_0000002370405544.png?HW-CC-KV=V1&HW-CC-Date=20260429T061359Z&HW-CC-Expire=86400&HW-CC-Sign=7C7EE42571AB2626AFE0D9DC25806FD6C32166538DF9D92D985DBF140F00B027)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/uS8lGJYzSOaHhEQ84lIAWw/zh-cn_image_0000002370405544.png)
 2. 在需要使能HWASan的模块中，通过添加构建参数开启HWASan检测插桩，在对应模块的模块级build-profile.json5中添加命令参数。
 
    ```
    1. "arguments": "-DOHOS_ENABLE_HWASAN=ON"
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/bXk2KrtHT8aQT4MbutoqxA/zh-cn_image_0000002404045257.png?HW-CC-KV=V1&HW-CC-Date=20260429T061359Z&HW-CC-Expire=86400&HW-CC-Sign=20327AF87D2FC2AD606EE2FF94E8E028063FC86897E39D0587D5BBFF119BA282)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/bXk2KrtHT8aQT4MbutoqxA/zh-cn_image_0000002404045257.png)
 
 **流水线场景**
 
@@ -159,7 +159,7 @@ HWASAN\_OPTIONS支持在“app.json5”中配置，也支持在“Run/Debug Conf
 1. 运行或调试当前应用。
 2. 当程序出现内存错误时，弹出HWASan log信息，点击信息中的链接即可跳转至引起内存错误的代码处。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/IcN7KlEXRWKuwG7u0C941A/zh-cn_image_0000002370565428.png?HW-CC-KV=V1&HW-CC-Date=20260429T061359Z&HW-CC-Expire=86400&HW-CC-Sign=CAFCA16B2132CCFA059C3DE6692EC959F0C0FCC3D298E77A577CB227DDD27DF7)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/IcN7KlEXRWKuwG7u0C941A/zh-cn_image_0000002370565428.png)
 
 ## HWASan异常检测类型
 
@@ -223,7 +223,7 @@ Cause: stack tag-mismatch
 
 如果有工程代码，直接开启HWASan检测，debug模式运行后复现该错误，可以触发HWASan，直接点击堆栈中的超链接定位到代码行，能看到错误代码的位置。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/6vT6xml9SSeXmN_qRdMvsw/zh-cn_image_0000002505468708.png?HW-CC-KV=V1&HW-CC-Date=20260429T061359Z&HW-CC-Expire=86400&HW-CC-Sign=A883E0C9DCA40C4E8682A3A9BB6C6684362BFBA9E3A4C25C35C36F6900D79437)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/6vT6xml9SSeXmN_qRdMvsw/zh-cn_image_0000002505468708.png)
 
 **优化建议**
 
@@ -279,7 +279,7 @@ Cause: heap-buffer-overflow
 
 如果有工程代码，直接开启HWASan检测，debug模式运行后复现该错误，可以触发HWASan，直接点击堆栈中的超链接定位到代码行，能看到错误代码的位置。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/eXT9iEjdReiIIUNZADe6rw/zh-cn_image_0000002537308659.png?HW-CC-KV=V1&HW-CC-Date=20260429T061359Z&HW-CC-Expire=86400&HW-CC-Sign=E0441DDB3A872FF50A7D0149CE765A26924C686A8F7C49CE09F45FF822E1A43F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/eXT9iEjdReiIIUNZADe6rw/zh-cn_image_0000002537308659.png)
 
 **修改方法**
 
@@ -340,7 +340,7 @@ Cause: use-after-free
 
 如果有工程代码，直接开启ASan检测，debug模式运行后复现该错误，可以触发ASan，直接点击堆栈中的超链接定位到代码行，能看到错误代码的位置。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/eZ8K21YMQdWnLYh5mH1rAQ/zh-cn_image_0000002505469052.png?HW-CC-KV=V1&HW-CC-Date=20260429T061359Z&HW-CC-Expire=86400&HW-CC-Sign=8BBC1470B8EA82C494034977B4D404FB4BB9308C9B08E4ADDED5B00427E682FF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/eZ8K21YMQdWnLYh5mH1rAQ/zh-cn_image_0000002505469052.png)
 
 **修改方法**
 

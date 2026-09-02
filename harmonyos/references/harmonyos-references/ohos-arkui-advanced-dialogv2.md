@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:52:58+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:be4ba500cb6bba68fe50474e7ff55379bedf00f8257b9896b2de964081fe2f68
+content_hash: sha256:d7bbdabd9f4cd60c6382686280c1a7f6481d73c1e42fff052beb315c013de3e0
 ---
 
 弹出框是一种模态窗口，通常用于在保持当前的上下文环境时，临时展示用户需关注的信息或待处理的操作，用户在模态弹出框内完成上述交互任务。模态弹出框需要用户进行交互才能够退出模态模式。
@@ -390,7 +390,7 @@ PhonePC/2in1TabletTVWearable
 58. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/sfqfkTjERvW59kG-nFCmTQ/zh-cn_image_0000002558766628.png?HW-CC-KV=V1&HW-CC-Date=20260429T055257Z&HW-CC-Expire=86400&HW-CC-Sign=5CC2A1E04123B4118FE72287433E9A8A66D145F66EF52F70754AA263DDE5FC15)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/sfqfkTjERvW59kG-nFCmTQ/zh-cn_image_0000002558766628.png)
 
 ### 示例2（纯列表弹出框）
 
@@ -459,7 +459,7 @@ PhonePC/2in1TabletTVWearable
 60. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/psgAmIIyTZeen1UvPiolSA/zh-cn_image_0000002558606934.png?HW-CC-KV=V1&HW-CC-Date=20260429T055257Z&HW-CC-Expire=86400&HW-CC-Sign=C4B7A24658D786524774F122D739F4520615E443182529BAA871BE58F57BB8C8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/psgAmIIyTZeen1UvPiolSA/zh-cn_image_0000002558606934.png)
 
 ### 示例3（文本与勾选弹出框）
 
@@ -526,7 +526,7 @@ PhonePC/2in1TabletTVWearable
 58. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/ziRIFWIFRfKdEJ1ZR-xscw/zh-cn_image_0000002589326461.png?HW-CC-KV=V1&HW-CC-Date=20260429T055257Z&HW-CC-Expire=86400&HW-CC-Sign=4506380B41A1E8FCAFD6DE33DBEF31F4C543D54B3BE45E76186E41A6E502EB43)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/ziRIFWIFRfKdEJ1ZR-xscw/zh-cn_image_0000002589326461.png)
 
 ### 示例4（纯文本弹出框）
 
@@ -585,7 +585,7 @@ PhonePC/2in1TabletTVWearable
 50. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/5jaq7IlQQtmKswq6dYyBuQ/zh-cn_image_0000002589246403.png?HW-CC-KV=V1&HW-CC-Date=20260429T055257Z&HW-CC-Expire=86400&HW-CC-Sign=8208D444A9B72A1978E392A2AF8482C9BDEB008B14712231779301ED54084951)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/5jaq7IlQQtmKswq6dYyBuQ/zh-cn_image_0000002589246403.png)
 
 ### 示例5（进度加载类弹出框）
 
@@ -629,7 +629,7 @@ PhonePC/2in1TabletTVWearable
 35. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/lnsQC2ojRReBgAsUklStIw/zh-cn_image_0000002558766596.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055257Z&HW-CC-Expire=86400&HW-CC-Sign=D5DC50D28CFAB92A7F746B3407647C3DA73E594CC260548BFFCEC5015E9C2994)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/lnsQC2ojRReBgAsUklStIw/zh-cn_image_0000002558766596.gif)
 
 ### 示例6（自定义主题风格弹出框）
 
@@ -688,7 +688,7 @@ PhonePC/2in1TabletTVWearable
 50. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/aVfAuPoyTyyIczEZYjphtQ/zh-cn_image_0000002558606968.png?HW-CC-KV=V1&HW-CC-Date=20260429T055257Z&HW-CC-Expire=86400&HW-CC-Sign=EF78C1C725208FD7B600F0AEFD6BF4E58DB3BE9C930B43D0B8BFC4943C2A2CEF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/aVfAuPoyTyyIczEZYjphtQ/zh-cn_image_0000002558606968.png)
 
 ### 示例7（自定义内容弹出框）
 
@@ -748,7 +748,7 @@ PhonePC/2in1TabletTVWearable
 51. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/HtnEOoH-Sha0go8hi6c_cA/zh-cn_image_0000002589326495.png?HW-CC-KV=V1&HW-CC-Date=20260429T055257Z&HW-CC-Expire=86400&HW-CC-Sign=5298B5360081A0BB91E12034DF8BD36607B7D077808C47CB68137471CC8831D6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/HtnEOoH-Sha0go8hi6c_cA/zh-cn_image_0000002589326495.png)
 
 ### 示例8（跟手弹出框）
 
@@ -805,4 +805,4 @@ PhonePC/2in1TabletTVWearable
 48. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/EeeEkHKtTAWB4jTcTIV-KA/zh-cn_image_0000002589246437.png?HW-CC-KV=V1&HW-CC-Date=20260429T055257Z&HW-CC-Expire=86400&HW-CC-Sign=429C58CCAB310ACF8183318D80C8AA7A8E7615725AD542D41572BFF5729F996F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/EeeEkHKtTAWB4jTcTIV-KA/zh-cn_image_0000002589246437.png)

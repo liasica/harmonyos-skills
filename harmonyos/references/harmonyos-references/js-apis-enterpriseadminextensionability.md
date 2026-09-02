@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-enterpriseadminextensionability
-title: @ohos.enterprise.EnterpriseAdminExtensionAbility（企业设备管理扩展能力）
+title: "@ohos.enterprise.EnterpriseAdminExtensionAbility（企业设备管理扩展能力）"
 breadcrumb: API参考 > 系统 > 基础功能 > MDM Kit（企业设备管理服务） > ArkTS API > @ohos.enterprise.EnterpriseAdminExtensionAbility（企业设备管理扩展能力）
 category: harmonyos-references
 scraped_at: 2026-04-29T14:01:13+08:00

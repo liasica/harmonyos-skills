@@ -5,12 +5,12 @@ breadcrumb: 指南 > 应用服务 > PDF Kit（PDF服务） > pdfService能力 > 
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:39:45+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:9b3f61c3016d913a377dca469875646e946e716617fd7d346cb222241656dcbc
+content_hash: sha256:919706fc733fbef51f75bd9984ed470b9e6df188d003ef923de76d35dfb23ad9
 ---
 
 PDF Kit支持对指定页面添加、删除页眉页脚。页眉页脚信息包含文字、日期和页码等相关内容，并可设置字体大小、颜色和间距等相关样式，具体属性参考[HeaderFooterInfo](../harmonyos-references/pdf-arkts-pdfservice.md#headerfooterinfo)。如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/QU2gl8DQRnSUbcvt5rl1cg/zh-cn_image_0000002558765604.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053944Z&HW-CC-Expire=86400&HW-CC-Sign=D7D6E30155B67329B8F4F3544A1607DB8A3252CDB2D88088D4A203D67E685144)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/QU2gl8DQRnSUbcvt5rl1cg/zh-cn_image_0000002558765604.jpg)
 
 ## 接口说明
 

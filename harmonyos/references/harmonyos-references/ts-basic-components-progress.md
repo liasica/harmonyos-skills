@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:52:22+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:7010c4e3599d32f86f2efe517eca80a75b2f232a4de87488e41d789f9243b619
+content_hash: sha256:1567693e13426a7b00a9eaf1db529d13eaafd443c71fcf8d06c6aeea44db3ccc
 ---
 
 进度条组件，用于显示内容加载或操作处理等进度。
@@ -463,7 +463,7 @@ PhonePC/2in1TabletTVWearable
 55. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/F2_qdjimTWGNI79yWzIA5w/zh-cn_image_0000002558606778.png?HW-CC-KV=V1&HW-CC-Date=20260429T055221Z&HW-CC-Expire=86400&HW-CC-Sign=65F1D00A95EA96948AF199361605035C595047B2938387BB0CD967281F8F37BB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/F2_qdjimTWGNI79yWzIA5w/zh-cn_image_0000002558606778.png)
 
 ### 示例2（设置环形进度条属性）
 
@@ -493,7 +493,7 @@ PhonePC/2in1TabletTVWearable
 21. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/RJzHqlwcQ-mmRZ0aSLvASw/zh-cn_image_0000002589326305.png?HW-CC-KV=V1&HW-CC-Date=20260429T055221Z&HW-CC-Expire=86400&HW-CC-Sign=F67ECEE08F0E5975EC2BA12CFB755EA509364805028C1E87AD93D92BF70BA388)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/RJzHqlwcQ-mmRZ0aSLvASw/zh-cn_image_0000002589326305.png)
 
 ### 示例3（设置环形进度条动画）
 
@@ -520,7 +520,7 @@ PhonePC/2in1TabletTVWearable
 18. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/CxgCnKAFRPmeLCnto640zQ/zh-cn_image_0000002589246247.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055221Z&HW-CC-Expire=86400&HW-CC-Sign=DA36B311AE6A9DBDC2F228347471AE7544B39CF7F1B5A9BB5BBAFB988F219491)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/CxgCnKAFRPmeLCnto640zQ/zh-cn_image_0000002589246247.gif)
 
 ### 示例4（设置胶囊形进度条属性）
 
@@ -550,7 +550,7 @@ PhonePC/2in1TabletTVWearable
 21. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/obbrEsr9QkOZeMQenYvChw/zh-cn_image_0000002558766440.png?HW-CC-KV=V1&HW-CC-Date=20260429T055221Z&HW-CC-Expire=86400&HW-CC-Sign=52194A65D07BE8D91A62E2508627F22E106AE987E4523E8ECD2D6FA17A67253D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/obbrEsr9QkOZeMQenYvChw/zh-cn_image_0000002558766440.png)
 
 ### 示例5（设置进度平滑动效）
 
@@ -592,7 +592,7 @@ PhonePC/2in1TabletTVWearable
 33. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/CPC1qaIDS2q2e3lSnYtMOQ/zh-cn_image_0000002558606780.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055221Z&HW-CC-Expire=86400&HW-CC-Sign=B7AAF70DCB186375A8FA17FFEE47B0CA73E8423C03D158C0D7796148007B1E5B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/CPC1qaIDS2q2e3lSnYtMOQ/zh-cn_image_0000002558606780.gif)
 
 ### 示例6（设置定制内容区）
 
@@ -673,7 +673,7 @@ PhonePC/2in1TabletTVWearable
 72. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/bUs4aPbJQiqlMcmQCll3Cg/zh-cn_image_0000002589326307.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055221Z&HW-CC-Expire=86400&HW-CC-Sign=11B7EBF6EE609AD266C99C9341C2577FF046A512BC2526777809F4F8B0BF093E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/bUs4aPbJQiqlMcmQCll3Cg/zh-cn_image_0000002589326307.gif)
 
 ### 示例7（设置隐私隐藏）
 
@@ -710,7 +710,7 @@ PhonePC/2in1TabletTVWearable
 28. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/hUHj6uEaRPqm1hOn_ze1Xw/zh-cn_image_0000002589246249.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055221Z&HW-CC-Expire=86400&HW-CC-Sign=76047DCAF79B55B1F1EEF6CE6C36F1133767A14D7AB6508CF873452623A06861)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/hUHj6uEaRPqm1hOn_ze1Xw/zh-cn_image_0000002589246249.gif)
 
 ### 示例8（设置Capsule进度条圆角半径）
 
@@ -747,7 +747,7 @@ PhonePC/2in1TabletTVWearable
 26. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/VQqstHXzR46-BlJUcybkLQ/zh-cn_image_0000002558766442.png?HW-CC-KV=V1&HW-CC-Date=20260429T055221Z&HW-CC-Expire=86400&HW-CC-Sign=35C690E5EA9DF3FC5CCAD8EF8B9FCC1B4635DDBAC1A7A9B2D88C7A567B5B8018)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/VQqstHXzR46-BlJUcybkLQ/zh-cn_image_0000002558766442.png)
 
 ### 示例9（设置线性进度条和胶囊进度条属性）
 
@@ -779,4 +779,4 @@ PhonePC/2in1TabletTVWearable
 23. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/T_M0RBOqR-WOXbBRWGzSqQ/zh-cn_image_0000002558606782.png?HW-CC-KV=V1&HW-CC-Date=20260429T055221Z&HW-CC-Expire=86400&HW-CC-Sign=274C75EECB6D8A0561FBC4B734328E9F8C1CF8436E2FFFA74560C7AB74E82F31)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/T_M0RBOqR-WOXbBRWGzSqQ/zh-cn_image_0000002558606782.png)

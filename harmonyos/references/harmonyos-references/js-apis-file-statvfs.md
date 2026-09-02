@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-file-statvfs
-title: @ohos.file.statvfs (文件系统空间统计)
+title: "@ohos.file.statvfs (文件系统空间统计)"
 breadcrumb: API参考 > 应用框架 > Core File Kit（文件基础服务） > ArkTS API > @ohos.file.statvfs (文件系统空间统计)
 category: harmonyos-references
 scraped_at: 2026-04-28T08:05:45+08:00

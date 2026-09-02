@@ -5,7 +5,7 @@ breadcrumb: 指南 > 编写与调试应用 > 使用模拟器运行应用 > 离�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:46:39+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:80836a065ef62c813ad303cb18f6b0f79b9cd7bb2387fe57178849b3abeb8614
+content_hash: sha256:48919bd15a7a57bf5938404a00fba8bfcecc0b2a1fe6d80f2e61b655508715a0
 ---
 
 如果开发者所使用的电脑处于完全无网络的离线环境中，需要先在一台可访问网络的电脑上准备好DevEco Studio并下载模拟器镜像，将DevEco Studio和模拟器镜像文件拷贝到无网络电脑中。
@@ -27,4 +27,4 @@ content_hash: sha256:80836a065ef62c813ad303cb18f6b0f79b9cd7bb2387fe57178849b3abe
    拷贝镜像时，在无网络电脑新建存放镜像的目录，如D:\No-network\Sdk，在此目录下新建镜像子文件夹路径system-image\HarmonyOS-xxx\phone\_all\_x86，将有网络电脑phone\_all\_x86下的所有文件拷贝到该路径下。
 2. 在无网络电脑上创建模拟器，注意创建时将镜像路径更改为上个步骤的路径，如D:\No-network\Sdk，具体可参考[创建模拟器](ide-emulator-create.md)，创建成功后即可使用模拟器。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/l0ORJI6eSYWJmwuQwOqHbg/zh-cn_image_0000002530751070.png?HW-CC-KV=V1&HW-CC-Date=20260429T054637Z&HW-CC-Expire=86400&HW-CC-Sign=CB6CC97F57B569E0F887165F4516A320527E58498F86A2C5AF424BA62BB3F5FB)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/l0ORJI6eSYWJmwuQwOqHbg/zh-cn_image_0000002530751070.png)

@@ -5,14 +5,14 @@ breadcrumb: FAQ > 应用框架开发 > UI框架 > 方舟UI框架（ArkUI） > Te
 category: harmonyos-faqs
 scraped_at: 2026-04-29T14:17:56+08:00
 doc_updated_at: 2026-03-25
-content_hash: sha256:eab0fec30e805871c56c3e4866cc1764ae8c1767fd083db2a1fbdae3ed81b8bd
+content_hash: sha256:bbc7b72c05b451a4857422675964f38994e4283a7796cc150e07db4a96acd4b1
 ---
 
 **问题描述**
 
 在使用TextInput、TextArea等文本输入类组件时，系统会默认生成编辑选项，如拍照输入、全选等气泡内容，如果希望隐藏该内容，如何实现？
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/uHcHNkPkSKy8DYMsmafRoA/zh-cn_image_0000002414012249.png?HW-CC-KV=V1&HW-CC-Date=20260429T061754Z&HW-CC-Expire=86400&HW-CC-Sign=C1286213E8A19C52836C45725A236EF39420436EC08C5E54991DC71E0DFA6395)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/uHcHNkPkSKy8DYMsmafRoA/zh-cn_image_0000002414012249.png)
 
 **解决措施**
 
@@ -57,7 +57,7 @@ content_hash: sha256:eab0fec30e805871c56c3e4866cc1764ae8c1767fd083db2a1fbdae3ed8
 
 实现效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/0P1YHppyR0STsAxPIqEdWg/zh-cn_image_0000002414026269.png?HW-CC-KV=V1&HW-CC-Date=20260429T061754Z&HW-CC-Expire=86400&HW-CC-Sign=E2E6F2AB7E4503661E9E9AF119EFDFA2642A16A95547332D5DB3DF7F28501D1B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/0P1YHppyR0STsAxPIqEdWg/zh-cn_image_0000002414026269.png)
 
 方案二：如果想隐藏该组件上所有的弹出气泡，包括复制、粘贴、全选、拍摄输入等，可以利用selectionMenuHidden属性隐藏系统文本选择菜单，示例代码如下：
 

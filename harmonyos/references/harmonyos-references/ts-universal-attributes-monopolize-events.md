@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:51:26+08:00
 doc_updated_at: 2026-04-08
-content_hash: sha256:100332a226c4c23e06c5990500e8fc215b3efcd6c650602d2724c66bc0963052
+content_hash: sha256:ff65ed67b7461dfbb2a870d7abacfe1c5f3ff98e48080dcbdd9ad44467f11243
 ---
 
 设置组件是否独占事件，事件范围包括组件自带的事件和开发者自定义的点击、触摸、手势事件。
@@ -120,4 +120,4 @@ PhonePC/2in1TabletTVWearable
 71. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/oxlAgrw5T7WecSbKhKW7Eg/zh-cn_image_0000002558766066.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055125Z&HW-CC-Expire=86400&HW-CC-Sign=D1E4F563BDAACF83CAA47C7126314E22B10A19ACED337D9A12148C8266458BF3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/oxlAgrw5T7WecSbKhKW7Eg/zh-cn_image_0000002558766066.gif)

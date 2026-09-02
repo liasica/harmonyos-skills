@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:51:12+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:8498f53b23b33b60fed484363574a00adf315fb0c8d501dbbb32e8c5a61302bb
+content_hash: sha256:6eab775d72af4f1473c709be720b4d974068c1db01b25c43d13d7a36228c7bab
 ---
 
 组件可见区域变化事件是组件在屏幕中的显示区域面积变化时触发的事件，提供了判断组件是否完全或部分显示在屏幕中的能力，适用于广告曝光埋点之类的场景。
@@ -358,7 +358,7 @@ PhonePC/2in1TabletTVWearable
 96. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/YnV51iPZSlijAwKrNHD-mw/zh-cn_image_0000002589325865.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055111Z&HW-CC-Expire=86400&HW-CC-Sign=3FE3B0825ADF1E85C9F06BEE9EBDBCBFE84DF50231E0BCD50247F994636B9414)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/YnV51iPZSlijAwKrNHD-mw/zh-cn_image_0000002589325865.gif)
 
 ### 示例3 (设置measureFromViewport子组件超出父组件显示)
 
@@ -471,4 +471,4 @@ PhonePC/2in1TabletTVWearable
 104. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/U_VI3nFRQlKhQ1xz_VNPkQ/zh-cn_image_0000002589245807.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T055111Z&HW-CC-Expire=86400&HW-CC-Sign=B242699FF2F71676921814FFD82F2DC8A456120F281143CFB154CD628B93A949)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/U_VI3nFRQlKhQ1xz_VNPkQ/zh-cn_image_0000002589245807.jpg)

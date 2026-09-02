@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-i18n
-title: @ohos.i18n (国际化-I18n)
+title: "@ohos.i18n (国际化-I18n)"
 breadcrumb: API参考 > 应用框架 > Localization Kit（本地化开发服务） > ArkTS API > @ohos.i18n (国际化-I18n)
 category: harmonyos-references
 scraped_at: 2026-04-28T08:06:26+08:00

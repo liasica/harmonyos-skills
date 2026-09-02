@@ -5,7 +5,7 @@ breadcrumb: 指南 > 系统 > 调测调优 > 调试命令 > hdc
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:34:18+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:661b5afa9d3d2ba603d7a5dc24c1f858f66856d796ebf21e82614ddd2a734dca
+content_hash: sha256:271f4a204e0ec94e060ce68b905c261e0b49b18ab7ac1a721e10186a24a3fc28
 ---
 
 hdc（HarmonyOS Device Connector）是提供给开发人员的命令行调试工具，用于与设备进行交互调试、数据传输、日志查看以及应用安装等操作。该工具支持在Windows/Linux/MacOS系统上运行，为开发者提供高效，便捷的设备调试能力。
@@ -20,7 +20,7 @@ hdc包含三部分：
 
 如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/N-3SU2k7Q7C71E870jxb4Q/zh-cn_image_0000002589324871.png?HW-CC-KV=V1&HW-CC-Date=20260429T053415Z&HW-CC-Expire=86400&HW-CC-Sign=2F236D71EA52D909AFEEE13B6F0B911D3439692FCEC2241F6A22D9993C99DB85)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/N-3SU2k7Q7C71E870jxb4Q/zh-cn_image_0000002589324871.png)
 
 说明
 
@@ -393,7 +393,7 @@ TCP调试功能尚未稳定，建议仅在测试环境中使用。
 
 远程连接场景指客户端（通常是开发者使用的本地电脑）通过网络与服务器（通常是连接了调试设备的服务器或开发机）建立连接，实现客户端对目标设备的远程调试，控制和管理。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/fd77Jw6TRYCDfUmnOOBY9g/zh-cn_image_0000002589244807.png?HW-CC-KV=V1&HW-CC-Date=20260429T053415Z&HW-CC-Expire=86400&HW-CC-Sign=F6DF5C585DE5B52A3BCF3C7D0CBDFFEA20699D157D3DEB6E1E64146C00462604)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/fd77Jw6TRYCDfUmnOOBY9g/zh-cn_image_0000002589244807.png)
 
 远程连接使用-s参数来指定服务器的网络参数，包括地址和端口号，该设置只在当前命令执行期间有效，命令格式如下：
 
@@ -1723,7 +1723,7 @@ Linux和MacOS系统非管理员角色运行hdc后，使用USB方式连接设备�
 
 hdc文件传输命令执行出现乱码，如使用file recv从设备端发送带有中文名称的文件到本地，报错提示[Fail]Error opening file: no such file or directory, path:XXXXX，其中path显示中文乱码。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/kgs6n1sVSAqjwpkfOqAtHw/zh-cn_image_0000002558765002.png?HW-CC-KV=V1&HW-CC-Date=20260429T053415Z&HW-CC-Expire=86400&HW-CC-Sign=58BE4EB3D7F34A605A81CB3733D90FE10DA9B5C1D99E21BA10AC6EA08CA6B5A9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/kgs6n1sVSAqjwpkfOqAtHw/zh-cn_image_0000002558765002.png)
 
 **可能原因&解决方法**
 
@@ -1737,7 +1737,7 @@ hdc文件传输命令执行出现乱码，如使用file recv从设备端发送�
 
 使用hdc list targets命令查询已连接设备，连接设备标识后显示Unauthorized。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/h9LB9v9nSKuNRFKCIYx7Ig/zh-cn_image_0000002558605346.png?HW-CC-KV=V1&HW-CC-Date=20260429T053415Z&HW-CC-Expire=86400&HW-CC-Sign=D871EA11C4EE84F6D46E7FC2A398AB9D1EB46E976892522B0E9912C0D010E57A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/h9LB9v9nSKuNRFKCIYx7Ig/zh-cn_image_0000002558605346.png)
 
 **可能原因&解决方法**
 

@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkts-decimal
-title: @arkts.math.Decimal (高精度数学库Decimal)
+title: "@arkts.math.Decimal (高精度数学库Decimal)"
 breadcrumb: API参考 > 应用框架 > ArkTS（方舟编程语言） > ArkTS API > @arkts.math.Decimal (高精度数学库Decimal)
 category: harmonyos-references
 scraped_at: 2026-04-28T07:59:58+08:00

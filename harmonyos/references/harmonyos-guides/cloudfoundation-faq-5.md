@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用服务 > Cloud Foundation Kit（云开发服务） > 
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:37:55+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:29aea51226b23c2d152714873c8947687e6161d6e9414ef89de6f2327cad4108
+content_hash: sha256:b17cd054da490e52d6f2057fde9dfe3df5f32d02702b6b99dbc3f62d6e52f666
 ---
 
 预加载的日志进程为“clouddevelopproxy”，日志过滤选择“No filters”。
@@ -14,17 +14,17 @@ content_hash: sha256:29aea51226b23c2d152714873c8947687e6161d6e9414ef89de6f2327ca
 
 * 场景一：系统服务在应用安装期间预加载数据成功
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/YddaTIh8SuGQSh0mzc240g/zh-cn_image_0000002558765380.png?HW-CC-KV=V1&HW-CC-Date=20260429T053754Z&HW-CC-Expire=86400&HW-CC-Sign=3A50B07DC8A614C7AAB4CD593E80CB8A46F6D6E8326D553C941BA769C3B17BF5)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/YddaTIh8SuGQSh0mzc240g/zh-cn_image_0000002558765380.png)
 
   预加载数据成功时日志会提示：http onSuccess code: 200，并且提示预加载的数据大小：get rsp data, len 47（单位为字节）。
 * 场景二：应用调用getPrefetchResult接口获取预加载数据成功
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/PhlmgU7jTjmEOg0dLK1gZw/zh-cn_image_0000002558605724.png?HW-CC-KV=V1&HW-CC-Date=20260429T053754Z&HW-CC-Expire=86400&HW-CC-Sign=44D37ACCB5FAEDDEDA9355A790DAB988DFA127AD0646CAFD963E1444E214CFAF)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/PhlmgU7jTjmEOg0dLK1gZw/zh-cn_image_0000002558605724.png)
 
   数据获取成功时，无Error级别日志，会提示OnGetPreloadCache: end status:0。
 * 场景三：应用调用getPrefetchResult接口获取预加载数据失败
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/ChpZXErCRuKSIOKQ6FKY1A/zh-cn_image_0000002589325251.png?HW-CC-KV=V1&HW-CC-Date=20260429T053754Z&HW-CC-Expire=86400&HW-CC-Sign=0B94359B2417CC8F03E6BB807B32E1DBF7DBB42575D900C790E6D5D885F1F3AC)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/ChpZXErCRuKSIOKQ6FKY1A/zh-cn_image_0000002589325251.png)
 
   **问题现象**
 

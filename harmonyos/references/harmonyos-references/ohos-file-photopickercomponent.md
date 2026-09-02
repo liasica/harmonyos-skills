@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-file-photopickercomponent
-title: @ohos.file.PhotoPickerComponent (PhotoPicker组件)
+title: "@ohos.file.PhotoPickerComponent (PhotoPicker组件)"
 breadcrumb: API参考 > 媒体 > Media Library Kit（媒体文件管理服务） > ArkTS组件 > @ohos.file.PhotoPickerComponent (PhotoPicker组件)
 category: harmonyos-references
 scraped_at: 2026-04-29T14:04:55+08:00

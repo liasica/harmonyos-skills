@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-application-abilitydelegatorregistry
-title: @ohos.application.abilityDelegatorRegistry (AbilityDelegatorRegistry)
+title: "@ohos.application.abilityDelegatorRegistry (AbilityDelegatorRegistry)"
 breadcrumb: API参考 > 系统 > 调测调优 > Test Kit（应用测试服务） > ArkTS API > 已停止维护的接口 > @ohos.application.abilityDelegatorRegistry (AbilityDelegatorRegistry)
 category: harmonyos-references
 scraped_at: 2026-04-28T08:11:35+08:00

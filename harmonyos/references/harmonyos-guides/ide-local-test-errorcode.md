@@ -5,7 +5,7 @@ breadcrumb: 指南 > 编写与调试应用 > 开发自测试 > 测试框架 > �
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:47:00+08:00
 doc_updated_at: 2026-01-15
-content_hash: sha256:b518d135f91a21c74bd2299059a66d782f8f98963d8d67ddbf8df5c9ac76515c
+content_hash: sha256:dc7f2401be9e6de7ee0f6b48031eb3c70dcd5944f2db88e920f1353816d2307a
 ---
 
 ## 00521001 测试用例名称存在非法字符
@@ -155,7 +155,7 @@ The function where the method XXX is located is not registered in the 'List.test
 
 在List.test.ets文件中注册函数，示例如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/nau5cS27Rm-U9W7cI0R4hQ/zh-cn_image_0000002561833179.png?HW-CC-KV=V1&HW-CC-Date=20260429T054659Z&HW-CC-Expire=86400&HW-CC-Sign=7818744C514DDE02F6FB728A1DF252A77DEFB132A531D022F08341238A7A29A3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/nau5cS27Rm-U9W7cI0R4hQ/zh-cn_image_0000002561833179.png)
 
 ## 00522002 函数未在List.test.ets文件中注册
 
@@ -175,7 +175,7 @@ The function where the suite XXX is located is not registered in the ''List.test
 
 在List.test.ets文件中注册函数，示例如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/qKOrniJcQ6qSMoE-oiJWjQ/zh-cn_image_0000002530913254.png?HW-CC-KV=V1&HW-CC-Date=20260429T054659Z&HW-CC-Expire=86400&HW-CC-Sign=54C3D3BFA7A9466FF71CDC749657CDAEE011E7F985BC9DAC049F7D5A462FB81C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/qKOrniJcQ6qSMoE-oiJWjQ/zh-cn_image_0000002530913254.png)
 
 ## 00522005 文件中所有函数都没有在List.test.ets文件中注册
 
@@ -195,7 +195,7 @@ None of the functions in the file XXX have been registered in the 'List.test.ets
 
 在List.test.ets文件中注册函数，示例如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/v9dkOrkmTQWxFOK2iu2Cnw/zh-cn_image_0000002561753195.png?HW-CC-KV=V1&HW-CC-Date=20260429T054659Z&HW-CC-Expire=86400&HW-CC-Sign=55952A24096BC4D3457FF26A7F1374E10911363E559308C39756DC7A6536214D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/v9dkOrkmTQWxFOK2iu2Cnw/zh-cn_image_0000002561753195.png)
 
 ## 00522006 测试文件中找不到测试用例
 
@@ -216,7 +216,7 @@ Current test case XXX not found in the test file.
 * 选择要运行的测试用例，重新运行。
 * 在运行配置窗口修改Method name。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/ULQJHeCRTymGYLRuEL4cYw/zh-cn_image_0000002561833175.png?HW-CC-KV=V1&HW-CC-Date=20260429T054659Z&HW-CC-Expire=86400&HW-CC-Sign=019AE601A7B481B0B9062F611C85626D164462D11DFDE8F53B0C5648BDC01088)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/ULQJHeCRTymGYLRuEL4cYw/zh-cn_image_0000002561833175.png)
 
 ## 00522007 找不到任何测试用例
 

@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:51:25+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:f295ce58a763d370f7d6ddd0acc4042de4486624605744e8cd4b8f92023dc6e2
+content_hash: sha256:a0858fa1408eb4f63af3d651c77b2b3f17308e5ad5adf51257e54374ceac3d4b
 ---
 
 用于决定在组件的宽高动画过程中，如何将动画最终的组件内容绘制在组件上。
@@ -125,4 +125,4 @@ PhonePC/2in1TabletTVWearable
 42. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/N9snSbWHQOa9syfeWpH25A/zh-cn_image_0000002589325915.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055123Z&HW-CC-Expire=86400&HW-CC-Sign=EB83033BAA36E44B5DF4344A819DEC1A8C7C9CCDEE14C3D8DC25905670D38BCA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/N9snSbWHQOa9syfeWpH25A/zh-cn_image_0000002589325915.gif)

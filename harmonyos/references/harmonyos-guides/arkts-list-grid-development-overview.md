@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:27:42+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:71276e565f1e41365de3e14c0225e999328cf0a5314753ad8c2045d91b03cf31
+content_hash: sha256:5cb0707b89e311751f90724ac0a54e450a94491f96c535cf52a3cd23f260c333
 ---
 
 许多应用存在滚动展示同类项目集合的需求，例如显示图片、视频、音乐、新闻、商品等。此类场景可以根据项目排列方式分别选择[List](arkts-layout-development-create-list.md)、[Grid](arkts-layout-development-create-grid.md)、[WaterFlow](arkts-layout-development-create-waterflow.md)实现，在圆形屏幕推荐使用[ArcList](arkts-layout-development-create-arclist.md)。
@@ -16,7 +16,7 @@ List适合单列和多列宽度相同的场景，如通讯录、音乐列表、�
 
 直播评论、即时聊天等应用场景需要在列表底部插入数据时，内容应自动向上滚动，以展示新插入的节点，此功能可通过配置[List从尾部开始布局](../harmonyos-references/ts-container-list.md#stackfromend19)实现。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/q6jnBg3TTAijp4JBpNTUlw/zh-cn_image_0000002558764254.png?HW-CC-KV=V1&HW-CC-Date=20260429T052740Z&HW-CC-Expire=86400&HW-CC-Sign=91CD4A63FCEF3624B6464861AFF146145A294BF1BDF016809DD3AAFBCD6AF0DD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/q6jnBg3TTAijp4JBpNTUlw/zh-cn_image_0000002558764254.png)
 
 ## 网格
 
@@ -24,7 +24,7 @@ List适合单列和多列宽度相同的场景，如通讯录、音乐列表、�
 
 对于部分项目占用多行或多列的场景，可以通过在创建Grid时传入合适的[GridLayoutOptions](../harmonyos-references/ts-container-grid.md#gridlayoutoptions10对象说明)来实现。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/5ztpjM3wQYCgA9KmUZwc-w/zh-cn_image_0000002558604598.png?HW-CC-KV=V1&HW-CC-Date=20260429T052740Z&HW-CC-Expire=86400&HW-CC-Sign=287F27EE6F356FFD7389710625EC36D262D1672EF8E6CF706E1887B8DE7E33F2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/5ztpjM3wQYCgA9KmUZwc-w/zh-cn_image_0000002558604598.png)
 
 ## 瀑布流
 
@@ -32,13 +32,13 @@ List适合单列和多列宽度相同的场景，如通讯录、音乐列表、�
 
 同一个页面内有不同列数分段混合布局的场景，可以通过设置[WaterFlowSections](../harmonyos-references/ts-container-waterflow.md#waterflowoptions对象说明)实现。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/d3dfL_VmSfidE62diNBE1Q/zh-cn_image_0000002589324123.png?HW-CC-KV=V1&HW-CC-Date=20260429T052740Z&HW-CC-Expire=86400&HW-CC-Sign=FC8AAB1928CC5BA009AE56F795F8B7CAF7C954D46B895481F4A6CDDC864EEF5A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/d3dfL_VmSfidE62diNBE1Q/zh-cn_image_0000002589324123.png)
 
 ## 弧形列表
 
 弧形列表是一种专为圆形屏幕设备设计的特殊列表，支持列表项在接近屏幕上下两端自动缩放的效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/0d-aCN2gQTGGiosYdR5jeg/zh-cn_image_0000002589244063.png?HW-CC-KV=V1&HW-CC-Date=20260429T052740Z&HW-CC-Expire=86400&HW-CC-Sign=AC7D592693420D7F85BE122A19D573A061FD510C3349FD8DD23376A3DBC80EC8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/0d-aCN2gQTGGiosYdR5jeg/zh-cn_image_0000002589244063.png)
 
 ## 能力对比
 

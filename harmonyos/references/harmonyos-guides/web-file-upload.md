@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 管理网页文件�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:29:26+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:f6835ce34c3ff5ca8b50bbfeef15be090892101828a540c3f58df16ac19566cf
+content_hash: sha256:3b9e10e9733761e9860fd3881a21aea7b054345d73112a60ca08da85d984829c
 ---
 
 Web组件支持前端页面选择文件上传功能，应用开发者可以使用[onShowFileSelector()](../harmonyos-references/arkts-basic-components-web-events.md#onshowfileselector9)接口来处理前端页面文件上传的请求，如果应用开发者不做任何处理，ArkWeb会提供默认行为来处理前端页面文件上传的请求。应用开发者也可以通过获取到的前端数据，自定义拉起Picker。
@@ -70,7 +70,7 @@ Web组件支持前端页面选择文件上传功能，应用开发者可以使�
   13. </html>
   ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/uT0bsHk1Tbica_I_m1MobA/zh-cn_image_0000002589324589.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052925Z&HW-CC-Expire=86400&HW-CC-Sign=95CEBB7F6EE0056905875EDE27411908C2972987314B553D68D381967E154898)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/uT0bsHk1Tbica_I_m1MobA/zh-cn_image_0000002589324589.gif)
 
 ## 使用onShowFileSelector拉起图库
 
@@ -131,7 +131,7 @@ Web组件支持前端页面选择文件上传功能，应用开发者可以使�
   13. </html>
   ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/eyVCZv5oSUeB2vPn-TSOMQ/zh-cn_image_0000002589244527.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052925Z&HW-CC-Expire=86400&HW-CC-Sign=2C35D5E91E10579E95065D687CEDF42E454474415080F1E67CA2443B5BC0DC88)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/eyVCZv5oSUeB2vPn-TSOMQ/zh-cn_image_0000002589244527.gif)
 
 ## 使用onShowFileSelector拉起相机
 
@@ -229,7 +229,7 @@ HTML页面代码
 35. </html>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/rbbOLmHTRl2qr9gyMBJP8A/zh-cn_image_0000002558764720.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052925Z&HW-CC-Expire=86400&HW-CC-Sign=D915084D4BAF7E14E2DF077B4037B068F248AEDA39B9D9FFF1055C6888F12DD6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/rbbOLmHTRl2qr9gyMBJP8A/zh-cn_image_0000002558764720.gif)
 
 ## 使用ArkWeb默认的方式处理文件上传请求
 
@@ -324,7 +324,7 @@ HTML页面代码
 16. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/VII1DqElR3O1K595zYwL0Q/zh-cn_image_0000002558605066.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052925Z&HW-CC-Expire=86400&HW-CC-Sign=F5570D300B677940F898A2F9DBBFFEAC1C96CF68E3AEF502009EC02DEFDE58F2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/VII1DqElR3O1K595zYwL0Q/zh-cn_image_0000002558605066.gif)
 
 ## 自定义处理JS接口拉起的文件请求
 
@@ -476,7 +476,7 @@ index.html代码。
 82. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/HrP0ql2dQ7CBJWt4NMnsGg/zh-cn_image_0000002589324591.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052925Z&HW-CC-Expire=86400&HW-CC-Sign=5ED49A9F91619DA41D8FE58F38E5B998CB47458BD38FACF77FF09D914B4A6805)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/HrP0ql2dQ7CBJWt4NMnsGg/zh-cn_image_0000002589324591.gif)
 
 样例以HTML中的showSaveFilePicker()配合ArkTS中documentViewPicker.save()方法为例。
 

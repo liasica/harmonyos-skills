@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-file-recentphotocomponent
-title: @ohos.file.RecentPhotoComponent (最近图片组件)
+title: "@ohos.file.RecentPhotoComponent (最近图片组件)"
 breadcrumb: API参考 > 媒体 > Media Library Kit（媒体文件管理服务） > ArkTS组件 > @ohos.file.RecentPhotoComponent (最近图片组件)
 category: harmonyos-references
 scraped_at: 2026-04-28T08:14:20+08:00

@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > UI Design Kit（UI设计套件） > ArkTS
 category: harmonyos-references
 scraped_at: 2026-04-29T13:57:14+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:b58774bf950bb63c3358dc090521b0daaf3a4a2983841c428c92ed55f283bc10
+content_hash: sha256:bf5f648741d4913f620603813a554c08b6cae0c4621c502d65cc24ea1e2ef8ef
 ---
 
 该组件可设置ListItem的横滑动效，可以承载HdsListItemCard组件。
@@ -406,4 +406,4 @@ PhonePC/2in1TabletTV
 
 效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/6Mqkv-YWQveQPezyTAITsg/zh-cn_image_0000002589326925.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055329Z&HW-CC-Expire=86400&HW-CC-Sign=A21444A0DA2ED53F9B4BCD60FB96FD99B41840393C103315819EBE426ECF2ADF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/6Mqkv-YWQveQPezyTAITsg/zh-cn_image_0000002589326925.gif)

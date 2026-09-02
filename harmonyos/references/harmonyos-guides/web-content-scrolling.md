@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 管理网页交互 >
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:29:19+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:ef0d018379c2fcf53f2d37c24ed378db9086b96551dce7c846f96ce955ae6675
+content_hash: sha256:3c2c4fce717247ea33581265a0ef12c60511ff1b99d2589e60bd53f8b729aca8
 ---
 
 当Web页面的内容高度或宽度超过可视区域时，页面才能滚动。Web页面滚动有多种方式，包括使用外接设备、ArkTS侧接口调用和JS侧接口调用。
@@ -130,4 +130,4 @@ content_hash: sha256:ef0d018379c2fcf53f2d37c24ed378db9086b96551dce7c846f96ce955a
   ```
 * 效果展示：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/00qQG4goQ7KgcSwrHOyPdg/zh-cn_image_0000002558605052.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052918Z&HW-CC-Expire=86400&HW-CC-Sign=1ED73BB1BD3CA1681D862608005156FA53D2F471DCC35F4F50EF03ADB8DA9A11)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/00qQG4goQ7KgcSwrHOyPdg/zh-cn_image_0000002558605052.gif)

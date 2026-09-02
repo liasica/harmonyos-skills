@@ -5,7 +5,7 @@ breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:34:57+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:cd1fbd847c836a9d12eca2c3c721d81a5bab9a3baea455675340210f27998d03
+content_hash: sha256:bf3efe01d2a062b309aadaf4a56775b9baa0c7e529bc76a9ca1c7c721d661b13
 ---
 
 在开发相机应用时，需要先[申请相关权限](camera-preparation.md)。
@@ -18,7 +18,7 @@ content_hash: sha256:cd1fbd847c836a9d12eca2c3c721d81a5bab9a3baea455675340210f279
 
 在获取到相机支持的输出流能力后，开始创建拍照流，开发流程如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/-MuObe5ZQnGrTgO02l-StQ/zh-cn_image_0000002589324937.png?HW-CC-KV=V1&HW-CC-Date=20260429T053455Z&HW-CC-Expire=86400&HW-CC-Sign=C6B92158DD6D9CD19CA3CF68EC9171DD0C2A9DAC85633301013677F37BF263ED)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/-MuObe5ZQnGrTgO02l-StQ/zh-cn_image_0000002589324937.png)
 
 ## 完整示例
 

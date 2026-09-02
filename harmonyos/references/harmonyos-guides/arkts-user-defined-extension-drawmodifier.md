@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:28:20+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:2d04c8979181b768abd8c97c1acb575ff6bfdee58c1343eb5dc42c8bb0273529
+content_hash: sha256:836a3aeed30cb9a5d4d313c08998d90becaf0b782c37dd4400781bf44c276b97
 ---
 
 ## 概述
@@ -33,7 +33,7 @@ content_hash: sha256:2d04c8979181b768abd8c97c1acb575ff6bfdee58c1343eb5dc42c8bb02
 
 DrawModifier可设置遮罩层前景（drawOverlay）、前景（drawForeground）、内容前景（drawFront）、内容（drawContent）和内容背景（drawBehind）的绘制方法，开发者需要重载这些方法，并通过[Canvas](arkts-drawing-customization-on-canvas.md)的接口进行自定义绘制。自定义绘制层级图如下所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/8xFdZRh5TUy3F_vZQadQ1A/zh-cn_image_0000002558764516.png?HW-CC-KV=V1&HW-CC-Date=20260429T052818Z&HW-CC-Expire=86400&HW-CC-Sign=2ADDF0E9708F6223555D6B7E75DD74AA9A2C8774CC882C1AF318BA40297C664C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/8xFdZRh5TUy3F_vZQadQ1A/zh-cn_image_0000002558764516.png)
 
 DrawModifier还提供主动触发重绘的方法invalidate，该接口开发者无需也无法重载，调用会触发所绑定组件的重绘。
 
@@ -252,7 +252,7 @@ DrawModifier还提供主动触发重绘的方法invalidate，该接口开发者�
 
 [DrawFrontDrawContentDrawBehind.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/DrawModifier/entry/src/main/ets/pages/DrawFrontDrawContentDrawBehind.ets#L16-L215)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/BYk-DpDdQSepBc67zCrW2g/zh-cn_image_0000002558604860.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052818Z&HW-CC-Expire=86400&HW-CC-Sign=A2F38AF04B5CF230B2D2166B8325BB0C35FC3E73668B343CD5BEB0FC203B477B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/BYk-DpDdQSepBc67zCrW2g/zh-cn_image_0000002558604860.gif)
 
 ## 通过drawForeground进行自定义绘制
 
@@ -319,7 +319,7 @@ DrawModifier还提供主动触发重绘的方法invalidate，该接口开发者�
 
 [DrawForeground.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/DrawModifier/entry/src/main/ets/pages/DrawForeground.ets#L16-L73)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/CvVAWmxiTqyzqf39eOZ_qQ/zh-cn_image_0000002589324385.png?HW-CC-KV=V1&HW-CC-Date=20260429T052818Z&HW-CC-Expire=86400&HW-CC-Sign=5FA1CB6BA08D7854D77AB3FF3096BFA4DD1E8774F4FA769C1F88A9B40A28E1CC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/CvVAWmxiTqyzqf39eOZ_qQ/zh-cn_image_0000002589324385.png)
 
 ## 调整自定义绘制Canvas的变换矩阵
 
@@ -444,4 +444,4 @@ DrawModifier还提供主动触发重绘的方法invalidate，该接口开发者�
 
 [Canvas.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/DrawModifier/entry/src/main/ets/pages/Canvas.ets#L16-L122)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/1TEvykwRSf6tazUzek-xtg/zh-cn_image_0000002589244325.png?HW-CC-KV=V1&HW-CC-Date=20260429T052818Z&HW-CC-Expire=86400&HW-CC-Sign=43DFF0AA9990FC64B49CD10554E304246F28CADBAF8680DBEDE1E4E0CD7A3580)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/1TEvykwRSf6tazUzek-xtg/zh-cn_image_0000002589244325.png)

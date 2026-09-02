@@ -1,7 +1,7 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-and-building-113
-title: 编译报错“Init keystore failed: parseAlgParameters failed: ObjectIdentifier()”
-breadcrumb: FAQ > DevEco Studio > 编译构建 > 编译报错“Init keystore failed: parseAlgParameters failed: ObjectIdentifier()”
+title: "编译报错“Init keystore failed: parseAlgParameters failed: ObjectIdentifier()”"
+breadcrumb: "FAQ > DevEco Studio > 编译构建 > 编译报错“Init keystore failed: parseAlgParameters failed: ObjectIdentifier()”"
 category: harmonyos-faqs
 scraped_at: 2026-04-28T08:29:31+08:00
 doc_updated_at: 2026-03-17

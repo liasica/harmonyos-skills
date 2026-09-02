@@ -5,14 +5,14 @@ breadcrumb: 指南 > 图形 > Graphics Accelerate Kit（图形加速服务） > 
 category: harmonyos-guides
 scraped_at: 2026-04-28T07:47:28+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:de1b1b8a54b63a2c1716325549b38f109f8111b704abda470cad364589e09634
+content_hash: sha256:250f15dddece14a56c9e23d9ba666fd4565e5ca55cdb4bb585189d46336540f4
 ---
 
 用户在应用市场安装游戏后、或更新游戏后、设备满足闲时条件时，在游戏未启动状态下，若检测到该游戏有资源包需要更新，将使用**系统下载器**（游戏资源加速服务）自动下载资源包。
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/DFoGey39QgWZW355vxRFKQ/zh-cn_image_0000002552799068.png?HW-CC-KV=V1&HW-CC-Date=20260427T234727Z&HW-CC-Expire=86400&HW-CC-Sign=50A942ED015DD458F977454CAF811B670DC0C21DD3471CD7F217ADE950490689)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/DFoGey39QgWZW355vxRFKQ/zh-cn_image_0000002552799068.png)
 
 1. 用户在应用市场安装游戏后、用户在应用市场更新游戏后、系统检测到用户设备符合闲时条件时，游戏资源加速服务开启资源包后台下载。
 2. 游戏资源加速服务从AppGallery Connect获取相关资源下载配置信息，例如下载类型、CDN类型、 manifestUrl、域名白名单等。具体资源下载配置信息请参见[发布资源包下载任务](graphics-accelerate-assetdownload-release.md)。

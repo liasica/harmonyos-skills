@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > Background Tasks Kit（后台任务开发服
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:29:32+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:f8f938c1441bf694c471e81a02c400aae89cfe7616f24edbd0c4f376e24a7788
+content_hash: sha256:c79cb0554770a4f3f174a3a95cf4dc4b7947dcce85d807d16e3303fe4aaf361a
 ---
 
 ## 功能介绍
@@ -31,7 +31,7 @@ Background Tasks Kit提供了规范内受约束的后台任务，包括短时任
 
   **图1** 后台任务类型选择
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/RVAkp0emTLyEPTNAsIpIYw/zh-cn_image_0000002589244555.png?HW-CC-KV=V1&HW-CC-Date=20260429T052932Z&HW-CC-Expire=86400&HW-CC-Sign=3CCB60F35FEBC20998727DB4A2661B9144069007474AD745046ADAB7625415BC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/RVAkp0emTLyEPTNAsIpIYw/zh-cn_image_0000002589244555.png)
 
 说明
 

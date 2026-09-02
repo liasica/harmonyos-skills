@@ -5,7 +5,7 @@ breadcrumb: 指南 > 媒体 > AVCodec Kit（音视频编解码服务） > 音视
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:34:39+08:00
 doc_updated_at: 2026-04-13
-content_hash: sha256:e7d3ba98a07f7e396ea29e2d74571047c45bdb5a16fd353b49b940c402532328
+content_hash: sha256:9c6a33d9d1347702fefc02077b3c95ef4e61d1e8864d6ab458c3d2b35240ee65
 ---
 
 从API version 20开始，支持音频解码同步模式。
@@ -37,7 +37,7 @@ content_hash: sha256:e7d3ba98a07f7e396ea29e2d74571047c45bdb5a16fd353b49b940c4025
 * 虚线表示可选。
 * 实线表示必选。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/kjYWanGKRducWzqZR3eEJA/zh-cn_image_0000002558605386.png?HW-CC-KV=V1&HW-CC-Date=20260429T053438Z&HW-CC-Expire=86400&HW-CC-Sign=87EE4C92E2655726556634C8D2144EE0B955CFDCF0C063CF6C9710782E765E9B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/kjYWanGKRducWzqZR3eEJA/zh-cn_image_0000002558605386.png)
 
 ### 在 CMake 脚本中链接动态库
 
@@ -141,11 +141,11 @@ content_hash: sha256:e7d3ba98a07f7e396ea29e2d74571047c45bdb5a16fd353b49b940c4025
 
    配置选项key值说明：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/abVF0ylfQjGvdUt7Sm8_8Q/zh-cn_image_0000002589324913.png?HW-CC-KV=V1&HW-CC-Date=20260429T053438Z&HW-CC-Expire=86400&HW-CC-Sign=BF85CAD445F4A54C788ABF9CAD10C927522ED60E28F3F1AB3999A3E68B875E20)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/abVF0ylfQjGvdUt7Sm8_8Q/zh-cn_image_0000002589324913.png)
 
    各音频解码类型参数范围说明：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/t0h-d7nLSV-kNYu2fxLEyA/zh-cn_image_0000002589244849.png?HW-CC-KV=V1&HW-CC-Date=20260429T053438Z&HW-CC-Expire=86400&HW-CC-Sign=836A7FC78BB557070F7C3B8017F5F7AA99C7209A2A5599EF8FF0B34C59158C6E)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/t0h-d7nLSV-kNYu2fxLEyA/zh-cn_image_0000002589244849.png)
 
    从API version 20开始，支持[采样率范围](../harmonyos-references/capi-native-avcapability-h.md#oh_avcapability_getaudiosupportedsamplerateranges)能力查询，以下几种音频解码类型支持对范围内的任意采样率进行解码：
 

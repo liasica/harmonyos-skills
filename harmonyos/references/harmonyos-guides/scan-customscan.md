@@ -5,7 +5,7 @@ breadcrumb: 指南 > 媒体 > Scan Kit（统一扫码服务） > 自定义界面
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:35:41+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:8cceb56af61de8ad1f9b924a07ed0f3fe5ee5ee702db351c3fce6ec0b77ef455
+content_hash: sha256:ab2ccf0b8173a6c6da5d6ae10a7cbda4e5f33b629df16d6e6dedc91e55924a25
 ---
 
 ## 基本概念
@@ -24,7 +24,7 @@ content_hash: sha256:8cceb56af61de8ad1f9b924a07ed0f3fe5ee5ee702db351c3fce6ec0b77
 
 扫码页面UX设计规范：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/M5XxZIO-Q0iM5PjbpqF2tw/zh-cn_image_0000002558605456.png?HW-CC-KV=V1&HW-CC-Date=20260429T053540Z&HW-CC-Expire=86400&HW-CC-Sign=72C823C50B50146B7C4C2DEA4292A3383CDE5B2E006AEA57111D3F9E6CAA53C1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/M5XxZIO-Q0iM5PjbpqF2tw/zh-cn_image_0000002558605456.png)
 
 说明
 
@@ -38,7 +38,7 @@ YUV（相机预览流图像数据）适合于扫码和识物的综合识别场�
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/Sz9twQHCTWKFxTkfOglzBg/zh-cn_image_0000002589324983.png?HW-CC-KV=V1&HW-CC-Date=20260429T053540Z&HW-CC-Expire=86400&HW-CC-Sign=BEABF746B364BA29ACD2D313E43B8AE394481491EF2B7B6D5FFF268E11A9571C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/Sz9twQHCTWKFxTkfOglzBg/zh-cn_image_0000002589324983.png)
 
 1. **发起请求：** 用户向开发者的应用发起扫码请求，应用拉起已定义好的扫码界面。
 2. **申请授权：** 应用需要向用户申请相机权限授权。若未同意授权，则无法使用此功能。

@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:27:15+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:8981f433fe130cca14ff90a9f11610882b633f1e8d7921a20004d9125ab98b86
+content_hash: sha256:369ec56fbbbd4f694cec957b4e1ed6c151c2796cb4f205b81ce3debef41b27d7
 ---
 
 LocalStorage是页面级的UI状态存储，通过@Entry装饰器接收的参数可以在页面内共享同一个LocalStorage实例。LocalStorage支持[UIAbility](uiability-overview.md)实例内多个页面间状态共享。
@@ -67,7 +67,7 @@ LocalStorage根据与@Component装饰的组件的同步类型不同，提供了�
 | 初始化子节点 | 支持，可用于初始化[@State](arkts-state.md)、[@Link](arkts-link.md)、[@Prop](arkts-prop.md)、[@Provide](arkts-provide-and-consume.md)。 |
 | 是否支持组件外访问 | 否。 |
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/yqH3dx22SUSEKlW0bkXGOA/zh-cn_image_0000002558604444.png?HW-CC-KV=V1&HW-CC-Date=20260429T052714Z&HW-CC-Expire=86400&HW-CC-Sign=734CBB62A80018353C64479C6BC2995295EA0B47068563E0EF726ACB63827875)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/yqH3dx22SUSEKlW0bkXGOA/zh-cn_image_0000002558604444.png)
 
 **图1** @LocalStorageProp初始化规则图示
 
@@ -89,7 +89,7 @@ LocalStorage根据与@Component装饰的组件的同步类型不同，提供了�
 
 **LocalStorage与@LocalStorageProp数据同步如下图所示**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/4XCL5zyATwCjlNd8POVJkQ/zh-cn_image_0000002589323969.png?HW-CC-KV=V1&HW-CC-Date=20260429T052714Z&HW-CC-Expire=86400&HW-CC-Sign=856444A96984895BD4498459A22AE019DD35957AD75E08BBAD32AEA1F4EEDD43)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/4XCL5zyATwCjlNd8POVJkQ/zh-cn_image_0000002589323969.png)
 
 **图2** LocalStorage与@LocalStorageProp数据同步图示
 
@@ -123,7 +123,7 @@ LocalStorage根据与@Component装饰的组件的同步类型不同，提供了�
 | 初始化子节点 | 支持，可用于初始化@State、@Link、@Prop、@Provide。 |
 | 是否支持组件外访问 | 否。 |
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/rBvPrBNhSD2iRtkQI_4KqQ/zh-cn_image_0000002589243909.png?HW-CC-KV=V1&HW-CC-Date=20260429T052714Z&HW-CC-Expire=86400&HW-CC-Sign=5E0A7DEDF197A457D16A12CB442066E0D4D7B936179403F7F0E25E90BC773D19)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/rBvPrBNhSD2iRtkQI_4KqQ/zh-cn_image_0000002589243909.png)
 
 **图3** @LocalStorageLink初始化规则图示
 
@@ -145,7 +145,7 @@ LocalStorage根据与@Component装饰的组件的同步类型不同，提供了�
 
 **LocalStorage与@LocalStorageLink数据同步如下图所示**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/_IXT_YMxT7GhB3A0i8LdiA/zh-cn_image_0000002558764102.png?HW-CC-KV=V1&HW-CC-Date=20260429T052714Z&HW-CC-Expire=86400&HW-CC-Sign=EA684CE95F10CC32838718CCDF43D7E895D06591123D728227E4CC5DDC02E1F9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/_IXT_YMxT7GhB3A0i8LdiA/zh-cn_image_0000002558764102.png)
 
 **图4** LocalStorage与@LocalStorageLink数据同步图示
 

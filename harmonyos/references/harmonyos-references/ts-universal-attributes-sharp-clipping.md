@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:51:19+08:00
 doc_updated_at: 2026-03-23
-content_hash: sha256:ebb80e8c33b1fbe89799639737339239a23a063863ff7089bb78fe72263f5fae
+content_hash: sha256:8626eab3837b01d40bf1a7522c588d1ca262f29566175a60790e7747093b2222
 ---
 
 用于对组件进行裁剪、遮罩处理。
@@ -500,7 +500,7 @@ PhonePC/2in1TabletTVWearable
 39. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/YTJpGID4QFifx9iHeTQDmA/zh-cn_image_0000002558606380.png?HW-CC-KV=V1&HW-CC-Date=20260429T055118Z&HW-CC-Expire=86400&HW-CC-Sign=F0780711851681F60015DEBFFC3F7411AE402C74F2DD71958B3854D6B811A4B4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/YTJpGID4QFifx9iHeTQDmA/zh-cn_image_0000002558606380.png)
 
 ### 示例2（实现组件遮罩）
 
@@ -570,4 +570,4 @@ PhonePC/2in1TabletTVWearable
 61. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/T_pbstZLQfKAT3oxXbBkiw/zh-cn_image_0000002589325907.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055118Z&HW-CC-Expire=86400&HW-CC-Sign=03256E37CC30D32454E8197C4FC2A59F789E3652E435163A64673E70814287AB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/T_pbstZLQfKAT3oxXbBkiw/zh-cn_image_0000002589325907.gif)

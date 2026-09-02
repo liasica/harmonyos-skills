@@ -5,7 +5,7 @@ breadcrumb: 最佳实践 > 稳定性 > 稳定性案例 > 应用冻屏类问题�
 category: best-practices
 scraped_at: 2026-04-29T14:14:19+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:7120186302747d43ecff28241ed3dda4f5582180f1252eed2b7d13855d629561
+content_hash: sha256:7ec1de3087d8a3628c33e1e6da851ab3fd1cb35c553130880f2ba119eaa5d9ac
 ---
 
 ## ThreadBlock类问题案例-未正确使用锁
@@ -370,15 +370,15 @@ APP\_INPUT\_BLOCK 事件上报时间为 **14:40:59:440**。
 
 首先找到上报APP\_INPUT\_BLOCK的时间点，大约在13:40:59.448。事件上报完后，dfx将卡死的scb杀掉。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/W8e3JkksR9aRCrUDL1PPQw/zh-cn_image_0000002370565628.png?HW-CC-KV=V1&HW-CC-Date=20260429T061417Z&HW-CC-Expire=86400&HW-CC-Sign=F305A5B7C406B962457B5C04A14585C16CC14D6762B6965CEC28FA8C85C912BE)往前推6s左右，可以看到在14:40:53.498左右，有一个点击事件发给了scb。
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/W8e3JkksR9aRCrUDL1PPQw/zh-cn_image_0000002370565628.png)往前推6s左右，可以看到在14:40:53.498左右，有一个点击事件发给了scb。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/g1QosMI2Rkyq5aiA5ArJLA/zh-cn_image_0000002404125265.png?HW-CC-KV=V1&HW-CC-Date=20260429T061417Z&HW-CC-Expire=86400&HW-CC-Sign=0F2FBB7C9628E6C29F8B22622D6AB294D8F0C36B067BB25EDA094E809AC9507A)这之间的6s存在大量的scb日志，判断是在进行更新渲染。
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/g1QosMI2Rkyq5aiA5ArJLA/zh-cn_image_0000002404125265.png)这之间的6s存在大量的scb日志，判断是在进行更新渲染。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/GGVPianXT-iMfqUTdJ4XLg/zh-cn_image_0000002411349608.png?HW-CC-KV=V1&HW-CC-Date=20260429T061417Z&HW-CC-Expire=86400&HW-CC-Sign=8809372539E80C6C58DB8F25C2A4EB5E8EA0337F9D2187859DF44FA8CDBF1D54)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/GGVPianXT-iMfqUTdJ4XLg/zh-cn_image_0000002411349608.png)
 
 查看对应时间点的trace：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/mlVHz85xSXeSqt80h4P9FA/zh-cn_image_0000002404045457.png?HW-CC-KV=V1&HW-CC-Date=20260429T061417Z&HW-CC-Expire=86400&HW-CC-Sign=A85ADB2CBDFBCD9845EDB78E02846801E3860D71BA6EFFCF7F36F64B3C4DBDC6)发现scb主线程被占满，非常繁忙。耗时较长的任务是**CustomNodeUpdate SwiperPage**，后续需排查该组件里为何一直在刷新。
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/mlVHz85xSXeSqt80h4P9FA/zh-cn_image_0000002404045457.png)发现scb主线程被占满，非常繁忙。耗时较长的任务是**CustomNodeUpdate SwiperPage**，后续需排查该组件里为何一直在刷新。
 
 对应领域排查后发现：swiperPage上将themeStyle加入到了key里面，key变化就会触发控件新建流程。
 
@@ -553,7 +553,7 @@ LIFECYCLE\_TIMEOUT 上报时间为**10:04:59:965**；相隔约2.5s，符合预�
 
 查看对应时间点的流水信息：进程调用datashare加载云图后卡死，与堆栈信息吻合。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/b91V_falTP--6biYOy06gw/zh-cn_image_0000002370565632.png?HW-CC-KV=V1&HW-CC-Date=20260429T061417Z&HW-CC-Expire=86400&HW-CC-Sign=63D7CABF0BE3707B3A4899618B36CECD5CAB99107C28D67E746E7A3525EEC180)查看具体代码：
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/b91V_falTP--6biYOy06gw/zh-cn_image_0000002370565632.png)查看具体代码：
 
 在循环中同步加载fileUri是不合理的，当弱网环境或者同时加载大量数据时，极易出现卡死情况，应用侧需进行整改。
 

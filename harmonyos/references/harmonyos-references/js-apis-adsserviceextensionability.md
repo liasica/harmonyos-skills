@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-adsserviceextensionability
-title: @ohos.advertising.AdsServiceExtensionAbility(广告扩展服务)
+title: "@ohos.advertising.AdsServiceExtensionAbility(广告扩展服务)"
 breadcrumb: API参考 > 应用服务 > Ads Kit（广告服务） > ArkTS API > @ohos.advertising.AdsServiceExtensionAbility(广告扩展服务)
 category: harmonyos-references
 scraped_at: 2026-04-29T14:06:56+08:00

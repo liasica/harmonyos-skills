@@ -5,7 +5,7 @@ breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 >
 category: best-practices
 scraped_at: 2026-04-29T14:12:22+08:00
 doc_updated_at: 2026-03-26
-content_hash: sha256:e22495840998c36cd06571ff06cd7864911f070951dfd809aec43fcc37a7911b
+content_hash: sha256:da31c4b86bfe2e0327ff2658735d490e22932604d965abd0c43e45d62e8c1884
 ---
 
 ## 概述
@@ -20,13 +20,13 @@ content_hash: sha256:e22495840998c36cd06571ff06cd7864911f070951dfd809aec43fcc37a
 
 音乐应用以播放页为重点进行介绍。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/0HKV8fXvTsSbSbm2oRbvvA/zh-cn_image_0000002471180817.png?HW-CC-KV=V1&HW-CC-Date=20260429T061211Z&HW-CC-Expire=86400&HW-CC-Sign=02BDB7A77158B055A084222C3E6EBED8B5DE48882DF884F0264C83E437BCF51E "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/0HKV8fXvTsSbSbm2oRbvvA/zh-cn_image_0000002471180817.png "点击放大")
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/PwiPPWPbQOKjkOJR2FCvQg/zh-cn_image_0000002437742432.png?HW-CC-KV=V1&HW-CC-Date=20260429T061211Z&HW-CC-Expire=86400&HW-CC-Sign=D76F7ACD3AE8A75D0155AAA38FC27DA4E5767BD959FB893EA4B581A8F0694C24 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/PwiPPWPbQOKjkOJR2FCvQg/zh-cn_image_0000002437742432.png "点击放大")
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/bX47A6eQR7m1r-pPpb_GJw/zh-cn_image_0000002471220981.png?HW-CC-KV=V1&HW-CC-Date=20260429T061211Z&HW-CC-Expire=86400&HW-CC-Sign=EB22527B01B401B8B94146C9256D4F72E555B064E5A3756A725833AE4898E7F3 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/bX47A6eQR7m1r-pPpb_GJw/zh-cn_image_0000002471220981.png "点击放大")
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/1x3amcxjTPObN50yKQy6fA/zh-cn_image_0000002437582588.png?HW-CC-KV=V1&HW-CC-Date=20260429T061211Z&HW-CC-Expire=86400&HW-CC-Sign=9F03F9CDC064DF7B37CC20C42AEA38442E471AB56249A79FDE8814C47655087D "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/1x3amcxjTPObN50yKQy6fA/zh-cn_image_0000002437582588.png "点击放大")
 
 |  | sm | md | lg | 智能穿戴 |
 | --- | --- | --- | --- | --- |
@@ -133,7 +133,7 @@ HarmonyOS的分层架构包括产品定制层、基础特性层和公共能力�
 
 ### 首页
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/uAFFSSwiQrmi3iC3ak8okQ/zh-cn_image_0000002437582592.png?HW-CC-KV=V1&HW-CC-Date=20260429T061211Z&HW-CC-Expire=86400&HW-CC-Sign=35CCAEFAC90686AB80DC209D5E8AE6E1742998C62AD979C51151DAC86EA2F6A1 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/uAFFSSwiQrmi3iC3ak8okQ/zh-cn_image_0000002437582592.png "点击放大")
 
 | 区域编号 | 简介 | 实现方案 |
 | --- | --- | --- |
@@ -216,7 +216,7 @@ HarmonyOS的分层架构包括产品定制层、基础特性层和公共能力�
 
 ### 歌单页
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/of2n0TWCSeequSIg2MHKOQ/zh-cn_image_0000002471180829.png?HW-CC-KV=V1&HW-CC-Date=20260429T061211Z&HW-CC-Expire=86400&HW-CC-Sign=837D45B3B7512C582880C7E485300BAF7D055B956CC48A981939EBA101A5EB2F "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/of2n0TWCSeequSIg2MHKOQ/zh-cn_image_0000002471180829.png "点击放大")
 
 | 区域编号 | 简介 | 实现方案 |
 | --- | --- | --- |
@@ -271,7 +271,7 @@ HarmonyOS的分层架构包括产品定制层、基础特性层和公共能力�
 
 ### 歌曲列表页
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/DfRe75jRSxyPYikMhx23Jw/zh-cn_image_0000002437742444.png?HW-CC-KV=V1&HW-CC-Date=20260429T061211Z&HW-CC-Expire=86400&HW-CC-Sign=357E0D323B8900C8C6CC9822FB266D070FB0FA1A1D8A3690B19FEE4BFEC1DB37 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/DfRe75jRSxyPYikMhx23Jw/zh-cn_image_0000002437742444.png "点击放大")
 
 | 区域编号 | 简介 | 实现方案 |
 | --- | --- | --- |
@@ -328,7 +328,7 @@ HarmonyOS的分层架构包括产品定制层、基础特性层和公共能力�
 
 ### 播放页
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/cJYk1pHtSXmYuebTTLEUyQ/zh-cn_image_0000002471220997.png?HW-CC-KV=V1&HW-CC-Date=20260429T061211Z&HW-CC-Expire=86400&HW-CC-Sign=0E3CE291A50A067433B7E328895D82DB8ED8D811177C81E040066E6F245C308F "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/cJYk1pHtSXmYuebTTLEUyQ/zh-cn_image_0000002471220997.png "点击放大")
 
 | 区域编号 | 简介 | 实现方案 |
 | --- | --- | --- |

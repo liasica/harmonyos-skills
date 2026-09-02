@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > FA模�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:25:59+08:00
 doc_updated_at: 2026-03-23
-content_hash: sha256:7538421059bfae6e9740325ad13092c0e55b4768d3f2af2b577887ec01f5367c
+content_hash: sha256:0b5727772df99c0eb65b4d2970504274fe1d672b76e833c4ff6b4299b2e1de04
 ---
 
 ## 概述
@@ -14,7 +14,7 @@ PageAbility生命周期是PageAbility被调度到INACTIVE、ACTIVE、BACKGROUND�
 
 **图1** PageAbility生命周期流转
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/MqXrg7XSSlSvy_7qnhNLRg/zh-cn_image_0000002589323871.png?HW-CC-KV=V1&HW-CC-Date=20260429T052558Z&HW-CC-Expire=86400&HW-CC-Sign=38271319919B12C6DC8FAF1CB79856E32C2704DFE0E549ED5D65C7D699E19E13)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/MqXrg7XSSlSvy_7qnhNLRg/zh-cn_image_0000002589323871.png)
 
 **表1** PageAbility生命周期状态说明
 
@@ -45,7 +45,7 @@ PageAbility生命周期回调与生命周期状态的关系如下图所示。
 
 **图2** PageAbility生命周期回调与生命周期状态的关系
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/DmXSVOAJTFKLO3TerdcXcQ/zh-cn_image_0000002589243809.png?HW-CC-KV=V1&HW-CC-Date=20260429T052558Z&HW-CC-Expire=86400&HW-CC-Sign=91271E1A57E4ACE65CFC0BF6B04843CEBA84D71350C32E604F37C0C433515B41)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/DmXSVOAJTFKLO3TerdcXcQ/zh-cn_image_0000002589243809.png)
 
 说明
 

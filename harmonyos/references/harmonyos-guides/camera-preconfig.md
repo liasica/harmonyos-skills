@@ -5,7 +5,7 @@ breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:35:01+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:f5f14e1e29373f27e778bcce4b31d1df9a7d3820a8d44a85b661d04ec5b22dab
+content_hash: sha256:2cf1fb67004e5173f37bdd9e8d78d6c38fb711bfed0c4cab1e290de0646bf355
 ---
 
 相机预配置（Preconfig），对常用的场景和分辨率进行了预配置集成，可简化开发相机应用流程，提高应用的开发效率。
@@ -16,7 +16,7 @@ content_hash: sha256:f5f14e1e29373f27e778bcce4b31d1df9a7d3820a8d44a85b661d04ec5b
 
 在开发相机应用时，需要先[申请相关权限](camera-preparation.md)。以拍照（PhotoSession）为例，相机预配置（Preconfig）开发流程与[通用流程](camera-shooting-case.md)开发，存在以下差异：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/UPqFp2MfSNqIlG8m5CIiXA/zh-cn_image_0000002558765082.png?HW-CC-KV=V1&HW-CC-Date=20260429T053500Z&HW-CC-Expire=86400&HW-CC-Sign=B1A0509ECD9FF3B7D50520D9C1B730A40EABAD203EC377BA161760658389223E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/UPqFp2MfSNqIlG8m5CIiXA/zh-cn_image_0000002558765082.png)
 
 **其他相关能力：**
 

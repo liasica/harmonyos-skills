@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-data-datasharepredicates
-title: @ohos.data.dataSharePredicates (数据共享谓词)
+title: "@ohos.data.dataSharePredicates (数据共享谓词)"
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > ArkTS API > @ohos.data.dataSharePredicates (数据共享谓词)
 category: harmonyos-references
 scraped_at: 2026-04-28T07:59:09+08:00

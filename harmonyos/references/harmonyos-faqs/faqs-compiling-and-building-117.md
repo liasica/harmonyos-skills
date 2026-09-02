@@ -5,7 +5,7 @@ breadcrumb: FAQ > DevEco Studio > 编译构建 > CPP编译报错“A 'unknown ty
 category: harmonyos-faqs
 scraped_at: 2026-04-29T14:20:45+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:09c1c982f2aad36e7e34ed9c4f659a6e2b21454b22e99cc6d4ae1b82c65bff2b
+content_hash: sha256:58ce05f71aa36e8f413773e43978755a7632e9c5b6306d0e5f17dbeeddbbc32a
 ---
 
 **问题现象**
@@ -107,7 +107,7 @@ Ninja 默认生成 .ninja\_log文件，其中包含构建过程的详细信息�
 
 7.如果报错接口是系统API，查询该接口在当前版本是否可用。例如OH\_AudioWorkgroup\_AddCurrentThread从API 20开始支持。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/jsEBzD9gTluysyYZh2aCew/zh-cn_image_0000002350221468.png?HW-CC-KV=V1&HW-CC-Date=20260429T062044Z&HW-CC-Expire=86400&HW-CC-Sign=B84F55F7A9B3E313BB44A1F78864B77407B9A3B04FF5D2B17A44EB2AABC59918)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/jsEBzD9gTluysyYZh2aCew/zh-cn_image_0000002350221468.png)
 
 **结论**
 

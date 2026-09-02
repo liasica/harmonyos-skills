@@ -5,12 +5,12 @@ breadcrumb: 指南 > 系统 > 安全 > Universal Keystore Kit（密钥管理服�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:32:11+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:b16184b086b6ae26aedbe026c95b9d6e4010aae288fbb90be66f0fbad18b3159
+content_hash: sha256:6ef011d2db80c974102c9f00f9775963fc29bfe79251214ba6140329bd074f3d
 ---
 
 本文档提供了验证应用请求真实性的集成设计方案实践。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/DD1NWPU7QWSRgcxwrrZayA/zh-cn_image_0000002558764914.png?HW-CC-KV=V1&HW-CC-Date=20260429T053209Z&HW-CC-Expire=86400&HW-CC-Sign=9737FE7526F8F0317B19F7D49D3AC6FC22430FA189CB32C990ADBF7F40FD4BCC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/DD1NWPU7QWSRgcxwrrZayA/zh-cn_image_0000002558764914.png)
 
 ## 创建密钥确立可信凭证流程
 

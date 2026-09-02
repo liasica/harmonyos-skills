@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-immersive-effect-check
-title: @cross-device-app-dev/immersive-effect-check
+title: "@cross-device-app-dev/immersive-effect-check"
 breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 一次开发多端部署规则@cross-device-app-dev > @cross-device-app-dev/immersive-effect-check
 category: harmonyos-guides
 scraped_at: 2026-04-28T07:56:24+08:00

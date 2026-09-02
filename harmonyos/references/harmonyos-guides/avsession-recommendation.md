@@ -5,7 +5,7 @@ breadcrumb: 指南 > 媒体 > AVSession Kit（音视频播控服务） > 播控�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:34:51+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:9b34e75dc553f3e847696d05549757de9f19e7acaae6f283683aa874f29630d3
+content_hash: sha256:4ba8931dca3c49a5c5a9f5ea4e7a8761f9bbfc15fb73c1cf99765daec91a75db
 ---
 
 ## 播控特性简介
@@ -16,7 +16,7 @@ content_hash: sha256:9b34e75dc553f3e847696d05549757de9f19e7acaae6f283683aa874f29
 
 同时，将基于用户的听歌偏好进行内容精准推荐，推荐的内容源需要三方应用通过云侧接口捐赠给播控中心。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/-sk9HPZzTHa2-OQzLCmvbQ/zh-cn_image_0000002558765064.png?HW-CC-KV=V1&HW-CC-Date=20260429T053450Z&HW-CC-Expire=86400&HW-CC-Sign=45F42FE0320701FF61F3CCC59FA99A4295E255ACE920BBDACFDFC14DFE6A0593)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/-sk9HPZzTHa2-OQzLCmvbQ/zh-cn_image_0000002558765064.png)
 
 ## 推荐资源位分配原则
 

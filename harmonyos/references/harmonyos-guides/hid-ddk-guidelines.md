@@ -5,7 +5,7 @@ breadcrumb: 指南 > 系统 > 硬件 > Driver Development Kit（驱动开发服�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:33:32+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:4de575de99a59627190b9a4299810626f4f319d755bcfb10cd568464e50a0fa6
+content_hash: sha256:b00d600f5d3675073dde92b39cfd3d9815cccca8dcc54a8fe77a25652f232e4f
 ---
 
 ## 简介
@@ -31,7 +31,7 @@ HidDdk（HID Driver Development Kit）是为开发者提供的HID设备驱动程
 
 **图1** HidDdk调用原理
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/ykNSUTyfQz2f8ljM7RENdQ/zh-cn_image_0000002589244779.png?HW-CC-KV=V1&HW-CC-Date=20260429T053331Z&HW-CC-Expire=86400&HW-CC-Sign=E687E1BDF4C844C0007A89D4855666BB3D6467437A86AF1195FC0499D7DE4C45)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/ykNSUTyfQz2f8ljM7RENdQ/zh-cn_image_0000002589244779.png)
 
 ## 约束与限制
 

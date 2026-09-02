@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:51:16+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:de17ba9d5e73dc8c2c88ccc63737837614718ca2647c90efa85b745febaa56c5
+content_hash: sha256:f644b1c69ab6f35e0e0b4e23c0f7f47497a6efc643954aab1e178b80d459a5e7
 ---
 
 通过组件的宽高比和显示优先级约束组件显示效果。
@@ -135,11 +135,11 @@ PhonePC/2in1TabletTVWearable
 
 **图1** 竖屏显示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/Y5FuE0K9QWi2iZECdXguRw/zh-cn_image_0000002558766016.png?HW-CC-KV=V1&HW-CC-Date=20260429T055114Z&HW-CC-Expire=86400&HW-CC-Sign=D74B6605B531F53972D38396FC25BECF299CCFC88056F21F8A0B9A322C9BFA1E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/Y5FuE0K9QWi2iZECdXguRw/zh-cn_image_0000002558766016.png)
 
 **图2** 横屏显示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/WdY9PXIGQGa0m8FhBUb3LA/zh-cn_image_0000002558606358.png?HW-CC-KV=V1&HW-CC-Date=20260429T055114Z&HW-CC-Expire=86400&HW-CC-Sign=18F56FDBC5FA29803C9769B9E9A863AFCA0A869CB0B791C0758E5B6E2FCBD392)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/WdY9PXIGQGa0m8FhBUb3LA/zh-cn_image_0000002558606358.png)
 
 ### 示例2（设置组件显示优先级）
 
@@ -203,4 +203,4 @@ PhonePC/2in1TabletTVWearable
 
 横屏显示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/hlYTcNggTBqC7n9AfGvbiA/zh-cn_image_0000002589325885.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055114Z&HW-CC-Expire=86400&HW-CC-Sign=9B9F2CEC26E67CB5F0923262A6BC80580C4F08FB32E3D850C4CB613DD32298C7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/hlYTcNggTBqC7n9AfGvbiA/zh-cn_image_0000002589325885.gif)

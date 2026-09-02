@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用测试 > 专项测试 > DevEco Testing > 常见问题
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:48:06+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:bbfd21a1a4249fe3ca1bef328ef9ce8d6fb0a903cf6f7b800083f316ce542f84
+content_hash: sha256:d9f0f7021c004f6e224bbcc6161a6b68d7522509ed16e8521cc166479421dab8
 ---
 
 **Q1：执行过程中，设备断连重连后，任务能否继续执行？**
@@ -31,7 +31,7 @@ A4：请确认Mac版DevEco Testing客户端是否按照以下步骤安装：
 
 步骤1：DevEco Testing 客户端下载完成后将出现下图弹框。将下载的 DevEco\_Testing\_for\_App 文件拖拽至 Applications 文件夹。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/eH6jSLInSG-ssc2EKbmelw/zh-cn_image_0000002524623351.png?HW-CC-KV=V1&HW-CC-Date=20260429T054805Z&HW-CC-Expire=86400&HW-CC-Sign=FA3DC819A6C8041EA7315295A085C7D74FFDB07464CE160AF7CE40689BDB8BC1 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/eH6jSLInSG-ssc2EKbmelw/zh-cn_image_0000002524623351.png "点击放大")
 
 步骤2：在启动台找到 DevEco Testing 图标则表示 DevEco Testing 已正常安装。
 
@@ -41,6 +41,6 @@ A5：点击取消报错弹框，进入客户端设置选项，关闭"开启登�
 
 **Q6：Mac版本客户端如果覆盖安装后，报错****“‘DecEco\_Testing\_for\_App’ 已损坏，无法打开。你应该将它移到废纸篓。”****，如何解决？**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/C2TENNhfQcOMTjBy8xoJBA/zh-cn_image_0000002537783290.png?HW-CC-KV=V1&HW-CC-Date=20260429T054805Z&HW-CC-Expire=86400&HW-CC-Sign=29D45CBD428168AD3D1B046B07F28C9A1971DB1AC2F7E1F5FFEC1D4C707AFCFC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/C2TENNhfQcOMTjBy8xoJBA/zh-cn_image_0000002537783290.png)
 
 更多问题详见[FAQ](../harmonyos-faqs/faqs-deveco-testing.md)

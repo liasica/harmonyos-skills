@@ -5,7 +5,7 @@ breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 端侧部
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:40:58+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:66b65bff351c2f561f54f1a839a9c3fb911e4491ff488f307e2002c6c9dfee74
+content_hash: sha256:fa5b05a4de6beb0dba73b345d60e1b05da0ed638e5f346fd278940a53f965cdb
 ---
 
 ## 基本概念
@@ -16,7 +16,7 @@ content_hash: sha256:66b65bff351c2f561f54f1a839a9c3fb911e4491ff488f307e2002c6c9d
 
 模型推理的主要开发流程如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/8SrxQ3WdSiKtY_bAxUR__w/zh-cn_image_0000002589325591.png?HW-CC-KV=V1&HW-CC-Date=20260429T054057Z&HW-CC-Expire=86400&HW-CC-Sign=A1D74CA7BE4B8B870E715950372978C23814EA819AC16BCA6E0F0A22F8EBC428)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/8SrxQ3WdSiKtY_bAxUR__w/zh-cn_image_0000002589325591.png)
 
 ## 接口说明
 

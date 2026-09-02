@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-settings
-title: @ohos.settings (设置数据项名称)
+title: "@ohos.settings (设置数据项名称)"
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > ArkTS API > 其他 > @ohos.settings (设置数据项名称)
 category: harmonyos-references
 scraped_at: 2026-04-28T08:09:39+08:00

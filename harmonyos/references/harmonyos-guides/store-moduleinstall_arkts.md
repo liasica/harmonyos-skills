@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用服务 > AppGallery Kit（应用市场服务） > 产
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:37:11+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:7d5e20f8daa23a0f85d95aaf2137dc127fc18f3dd27d34d467bd47349bc50ade
+content_hash: sha256:a93050b0530ed938c28026eabd05d285785f9af3ce497bc82e6cfe5e706ea455
 ---
 
 ## 场景介绍
@@ -18,7 +18,7 @@ content_hash: sha256:7d5e20f8daa23a0f85d95aaf2137dc127fc18f3dd27d34d467bd47349bc
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/2Tvnqln8Sv2JdewYV35nXg/zh-cn_image_0000002558765278.png?HW-CC-KV=V1&HW-CC-Date=20260429T053709Z&HW-CC-Expire=86400&HW-CC-Sign=09B7B120AF3D4F8F9D6E0F1867185CA493B10FB3C1A85BCB8A53D4DA447B1CDE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/2Tvnqln8Sv2JdewYV35nXg/zh-cn_image_0000002558765278.png)
 
 1. 用户下载A应用的基础包。
 2. 用户使用增强功能。
@@ -338,7 +338,7 @@ entry中主要实现如下：
 
 运行结果效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/eNT1mk4_SsmdkTUHFngx6g/zh-cn_image_0000002558605622.gif?HW-CC-KV=V1&HW-CC-Date=20260429T053709Z&HW-CC-Expire=86400&HW-CC-Sign=09C964C0DAA4635FEA3F89394815C394D4A3A9AF73EF652B88A447B981553ADD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/eNT1mk4_SsmdkTUHFngx6g/zh-cn_image_0000002558605622.gif)
 
 ### 接入调试功能
 
@@ -352,5 +352,5 @@ entry中主要实现如下：
 2. 打开[开发者调试模式](ide-developer-mode.md#section530763213432)：进入设置 -> 机型 -> 关于手机，连续点击软件版本7次，弹出“开启“开发者模式””，点击“确认开启”。
 3. [访问设备沙箱路径](ide-device-file-explorer.md#section48216711204)，在[应用el2级别加密数据目录](app-sandbox-directory.md#应用沙箱路径和真实物理路径的对应关系)下，创建cache/moduleinstall/<ModuleName>目录（这里<ModuleName>是AModulelib），将模块调试包AModulelib.hsp上传至对应模块目录下（请确保模块调试包文件应有读写权限）。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/-7QqDmlcRe2CYap-BYhxTw/zh-cn_image_0000002589325149.png?HW-CC-KV=V1&HW-CC-Date=20260429T053709Z&HW-CC-Expire=86400&HW-CC-Sign=7D7773AB2114292707545AC46222912A5E491E776E149D7AD1A8E2789BE6BE11)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/-7QqDmlcRe2CYap-BYhxTw/zh-cn_image_0000002589325149.png)
 4. 按照[创建按需加载的请求实例](store-moduleinstall_arkts.md#创建按需加载的请求实例)、[请求按需加载的接口](store-moduleinstall_arkts.md#请求按需加载模块)或[使用动态模块](store-moduleinstall_arkts.md#使用动态模块)，无需改动参数即可安装好模块调试包。监听到安装成功后，对应模块目录下的文件会被自动删除。

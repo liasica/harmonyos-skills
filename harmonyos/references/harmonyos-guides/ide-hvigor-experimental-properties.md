@@ -5,7 +5,7 @@ breadcrumb: 指南 > 构建应用 > 提升构建效率 > 性能优化实验特�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:47:20+08:00
 doc_updated_at: 2026-04-22
-content_hash: sha256:f4f5e58b71e4b4822b838aada4f7906ebf37deafd4829978c939073d55bd1476
+content_hash: sha256:48051779c245d0bfef1296309ea9f16f706ce5bcad60d7d02058413cbb1bed8a
 ---
 
 为了打造更敏捷流畅的使用体验，新版本的Hvigor带来了一系列的编译构建性能优化实验特性，这些优化特性将显著提高工程的编译速度，降低峰值内存占用等。由于部分优化方案仍处于试验性阶段，您可能在这些特性中体验到效率的提升，也可能在特定场景中遇到待完善的问题，因此，这些特性提供了开关，用户可以根据业务需求开启后使用。
@@ -136,17 +136,17 @@ content_hash: sha256:f4f5e58b71e4b4822b838aada4f7906ebf37deafd4829978c939073d55b
 1. 按照以上方式开启开关**Enable ohpm execution by hvigor**。
 2. 在工程级build-profile.json5的module字段下，添加工程中不存在的模块，如testModule。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/3a1eJOx1Q8SoS-TGha25ew/zh-cn_image_0000002561752967.png?HW-CC-KV=V1&HW-CC-Date=20260429T054719Z&HW-CC-Expire=86400&HW-CC-Sign=9B8B16352A08483DA30F239EF984DCD62A66BF67A7FAD1804611712160E7484F)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/3a1eJOx1Q8SoS-TGha25ew/zh-cn_image_0000002561752967.png)
 3. 调用excludeNodeByName方法，排除不存在的模块testModule。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/4qeZjMP6SFeSjlx0j0XGPA/zh-cn_image_0000002530753032.png?HW-CC-KV=V1&HW-CC-Date=20260429T054719Z&HW-CC-Expire=86400&HW-CC-Sign=1DBF66BEDBC262E3C50DE95DC37DD8890E9AEDB0A9CEF321069502EF9D9CC13D)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/4qeZjMP6SFeSjlx0j0XGPA/zh-cn_image_0000002530753032.png)
 4. 执行构建成功。
 
 **使用场景二**
 
 调用[setDependenciesOpt](ide-build-expanding-context.md#section18789410129)、[setOverrides](ide-build-expanding-context.md#section469812496459)等方法动态修改oh-package.json5中的依赖信息后，执行sync或build等操作时，DevEco Studio会执行两次ohpm install操作，开启开关后，Hvigor仅执行一次ohpm install，可提升构建的效率。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/339NbAuFQEeiQnKktmSt6w/zh-cn_image_0000002561832949.png?HW-CC-KV=V1&HW-CC-Date=20260429T054719Z&HW-CC-Expire=86400&HW-CC-Sign=DB7566FA91E7FE4F527C4359AB85338B2F47A657743A0914CB419C3B33FCD722)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/339NbAuFQEeiQnKktmSt6w/zh-cn_image_0000002561832949.png)
 
 ## 通过IClang提升C++增量编译效率
 

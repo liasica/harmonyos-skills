@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:52:55+08:00
 doc_updated_at: 2026-03-27
-content_hash: sha256:489571db4ee82f1fe43495722eede0959dbfff443a6eb58e92bbbd4fc0e706cd
+content_hash: sha256:a318992e307bb7511c68a68dd9d4e9a8fbb7f1b10c9f55e0f47a4e821e3ed032
 ---
 
 自定义组件的自定义布局通过数据计算的方式布局自定义组件内的子组件。
@@ -536,7 +536,7 @@ PhonePC/2in1TabletTVWearable
 64. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/iR4thR_HQLKhNsrleUS_RQ/zh-cn_image_0000002589326483.png?HW-CC-KV=V1&HW-CC-Date=20260429T055253Z&HW-CC-Expire=86400&HW-CC-Sign=997C12E76A54F1C2E8D992A00E9B603C56F6CB582AF1B8564AE7B8E8BCC5611C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/iR4thR_HQLKhNsrleUS_RQ/zh-cn_image_0000002589326483.png)
 
 ### 示例2（判断是否参与布局计算）
 
@@ -639,7 +639,7 @@ PhonePC/2in1TabletTVWearable
 94. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/girYRkJYSrWsGKZk01Bqfw/zh-cn_image_0000002589246425.png?HW-CC-KV=V1&HW-CC-Date=20260429T055253Z&HW-CC-Expire=86400&HW-CC-Sign=403E9B66EA32A6C088A2CAB47B58C9881ED81ACA9655FCC343D1588384EB4ED3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/girYRkJYSrWsGKZk01Bqfw/zh-cn_image_0000002589246425.png)
 
 ### 示例3（获取子组件FrameNode并设置相关属性）
 
@@ -715,7 +715,7 @@ PhonePC/2in1TabletTVWearable
 67. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/jhxNLH91Q92k3ChfSbLDGQ/zh-cn_image_0000002558766618.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T055253Z&HW-CC-Expire=86400&HW-CC-Sign=91686BF17714B162451FB0B20E420ABE20A90FAEF99218D65EE53173A7151827)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/jhxNLH91Q92k3ChfSbLDGQ/zh-cn_image_0000002558766618.jpg)
 
 ### 示例4（子组件超过父组件大小约束）
 
@@ -789,4 +789,4 @@ PhonePC/2in1TabletTVWearable
 65. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/C_s5dVPcRKyGcMfu2pslHg/zh-cn_image_0000002558606958.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T055253Z&HW-CC-Expire=86400&HW-CC-Sign=190D845B2D20A98BCAE30A2153784113D8FBAB5DEE562389FB72113E5D7F41B8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/C_s5dVPcRKyGcMfu2pslHg/zh-cn_image_0000002558606958.jpg)

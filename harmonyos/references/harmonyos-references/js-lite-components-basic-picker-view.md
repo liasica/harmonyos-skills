@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > �
 category: harmonyos-references
 scraped_at: 2026-04-29T13:53:53+08:00
 doc_updated_at: 2026-04-02
-content_hash: sha256:49a8a7e655c1f71988a058cb5d25525e51c9ae02d9d3ef22d1622a6dc8f9e574
+content_hash: sha256:c19b4c8d3187c56d149155b0a6d7cd0356ca7aa04636e35728f4efb95729982f
 ---
 
 嵌入页面的滑动选择器。
@@ -160,4 +160,4 @@ PhonePC/2in1TabletTVWearableLite Wearable
 27. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/95JFXngjR9yisqrC7o3yww/zh-cn_image_0000002589246745.png?HW-CC-KV=V1&HW-CC-Date=20260429T055351Z&HW-CC-Expire=86400&HW-CC-Sign=AD0FE355737DBB8215313AE9688D71F868135E9A555132FAC2B73133A7D7E7F0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/95JFXngjR9yisqrC7o3yww/zh-cn_image_0000002589246745.png)

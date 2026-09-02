@@ -5,7 +5,7 @@ breadcrumb: 指南 > 编写与调试应用 > 附录 > 配置代理
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:47:06+08:00
 doc_updated_at: 2026-01-15
-content_hash: sha256:ced3f7072ac0b825317beb44f73745b05f8993f79214ec97f394b62543aaa588
+content_hash: sha256:9f43ea5a3448fe5a265811d35f0425d940558130dd9904207d6e61a89519f738
 ---
 
 DevEco Studio开发环境依赖于网络环境，需要连接上网络才能确保工具的正常使用。
@@ -16,7 +16,7 @@ DevEco Studio开发环境依赖于网络环境，需要连接上网络才能确�
 
 为了您开发应用/元服务的良好体验，DevEco Studio提供了开发环境诊断的功能，帮助您识别开发环境是否完备。您可以在欢迎页面单击**Diagnose**进行诊断。如果您已经打开了工程开发界面，也可以在菜单栏单击**Help > Diagnostic Tools > Diagnose Development Environment**进行诊断。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/Pk-NM-6TRD-9xrfkrSR_zQ/zh-cn_image_0000002561752921.png?HW-CC-KV=V1&HW-CC-Date=20260429T054705Z&HW-CC-Expire=86400&HW-CC-Sign=5B4ED537251D43AB45D7E25F4CDCC07A908F21C6652FAE669F24CFF6D82A8DA6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/Pk-NM-6TRD-9xrfkrSR_zQ/zh-cn_image_0000002561752921.png)
 
 DevEco Studio开发环境诊断项包括电脑的配置、网络的连通情况等。如果检测结果为未通过，请根据检查项的描述和修复建议进行处理。
 
@@ -32,7 +32,7 @@ DevEco Studio开发环境诊断项包括电脑的配置、网络的连通情况�
      + **Password**：访问代理服务器的密码。
      + **Remember**：勾选，记住密码。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/2oqMwk97TKOQjvk7lLZY_Q/zh-cn_image_0000002530752980.png?HW-CC-KV=V1&HW-CC-Date=20260429T054705Z&HW-CC-Expire=86400&HW-CC-Sign=55DB9E708F6C360A7016FD3057ECE7E8BA2298ED0ABE985191124CA5788DAD33)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/2oqMwk97TKOQjvk7lLZY_Q/zh-cn_image_0000002530752980.png)
 2. 配置完成后，单击**Check connection**，输入网络地址（如：https://developer.huawei.com），检查网络连通性。提示“Connection successful”表示代理设置成功。
 
 ## 配置NPM代理
@@ -41,7 +41,7 @@ Hvigor、ohpm在初始化时需要从npm仓库下载依赖，如果需要代理�
 
 1. 进入*C:\Users\用户名*目录，打开**.npmrc**文件。如果该目录下没有**.npmrc**文件，请新建一个。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/4s94dwQwTuq0ZpolaN8onA/zh-cn_image_0000002530752986.png?HW-CC-KV=V1&HW-CC-Date=20260429T054705Z&HW-CC-Expire=86400&HW-CC-Sign=4ED6309E5612112F873ADD3A54E0B107A4A79431B6927EBE7CC170E62309CCB4)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/4s94dwQwTuq0ZpolaN8onA/zh-cn_image_0000002530752986.png)
 2. 修改npm仓库信息，示例如下所示：
 
    ```
@@ -85,7 +85,7 @@ Hvigor、ohpm在初始化时需要从npm仓库下载依赖，如果需要代理�
 
    执行结果如下图所示，则说明代理设置成功。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/FDfXwlxmSdm2XPcwjUlMcA/zh-cn_image_0000002561832899.png?HW-CC-KV=V1&HW-CC-Date=20260429T054705Z&HW-CC-Expire=86400&HW-CC-Sign=4F55B8C0F615590420AE8DDF847F25AA81E2F4417105142FD9130D3B1DBA1D9F)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/FDfXwlxmSdm2XPcwjUlMcA/zh-cn_image_0000002561832899.png)
 
 ## 配置OHPM代理
 
@@ -111,7 +111,7 @@ Hvigor、ohpm在初始化时需要从npm仓库下载依赖，如果需要代理�
 
 **填写**并**勾选**以上信息后，点击**OK**。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/XFre-lP_QL2HFpeupa7xkA/zh-cn_image_0000002530912972.png?HW-CC-KV=V1&HW-CC-Date=20260429T054705Z&HW-CC-Expire=86400&HW-CC-Sign=D1B0F6C9A44421792EC80F7F5FCE12A6C59D81851641AA15FA5F35B7295D1C76)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/XFre-lP_QL2HFpeupa7xkA/zh-cn_image_0000002530912972.png)
 
 说明：ohpm默认校验registry仓库地址证书。如果环境检查中ohpm registry access出现'SELF\_SIGNED\_CERT\_IN\_CHAIN'或'UNABLE\_TO\_VERIFY\_LEAF\_SIGNATURE'等证书校验错误时，请查看[FAQ-问题现象2](../harmonyos-faqs/faqs-development-environment-10.md)解决证书校验错误问题。
 
@@ -160,4 +160,4 @@ Hvigor、ohpm在初始化时需要从npm仓库下载依赖，如果需要代理�
 
    执行结果如下图所示，则说明代理设置成功。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/xuNqa7YDSSOnkwf7GAX9rw/zh-cn_image_0000002561832903.png?HW-CC-KV=V1&HW-CC-Date=20260429T054705Z&HW-CC-Expire=86400&HW-CC-Sign=A60FD5DB321966226443C2423C822EE2D048EA8B27FD6AF6EBA73742A359B488)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/xuNqa7YDSSOnkwf7GAX9rw/zh-cn_image_0000002561832903.png)

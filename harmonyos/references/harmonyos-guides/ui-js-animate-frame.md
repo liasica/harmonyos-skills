@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:28:56+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:4658dc62a595b0a5680c69c04298500584b918edcc620c9f6b3b26559cd97802
+content_hash: sha256:859846d13b664245cdffebf923b6f8dba501b5d2424866e50a59ba62f28f0b39
 ---
 
 ## 请求动画帧
@@ -101,7 +101,7 @@ runframe在调用requestAnimationFrame时传入带有timestamp参数的回调函
 51. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/I-55slynSSm5Ub-8gZckYA/zh-cn_image_0000002589324511.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052855Z&HW-CC-Expire=86400&HW-CC-Sign=6518A6CD3C95E27D32836235D81E14DAF89DECB1C0A481DFCAEA2B6117D53415)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/I-55slynSSm5Ub-8gZckYA/zh-cn_image_0000002589324511.gif)
 
 说明
 
@@ -190,7 +190,7 @@ requestAnimationFrame函数在调用回调函数时在第一个参数位置传�
 43. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/YUHRJ5yyRMK_q6jjQDvOrw/zh-cn_image_0000002589244449.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052855Z&HW-CC-Expire=86400&HW-CC-Sign=1E43EC552FD38617277699F68FC612957C62A004E85B300CA134A5833208D7AD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/YUHRJ5yyRMK_q6jjQDvOrw/zh-cn_image_0000002589244449.gif)
 
 说明
 

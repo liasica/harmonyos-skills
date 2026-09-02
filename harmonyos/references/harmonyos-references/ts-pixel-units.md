@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:53:11+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:1fea9dd018cd7b2642cc8ea5125d196087e3e0cd36891ef7638f9dcad86ebbd0
+content_hash: sha256:5383639fa8b0993d9f374304c2b76ff228ecbb9a4409cb2e3bc50629f27885a4
 ---
 
 ArkUI为开发者提供4种像素单位，采用vp为基准数据单位。
@@ -293,4 +293,4 @@ PhonePC/2in1TabletTVWearable
 79. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/f45AK30lSyyymAqSG_5hNw/zh-cn_image_0000002589246477.png?HW-CC-KV=V1&HW-CC-Date=20260429T055310Z&HW-CC-Expire=86400&HW-CC-Sign=61C68DFEC24E8A8876B3E3F74E087DDA15E7E2BFB8ECFBBA77FCD91EFBF9D3F8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/f45AK30lSyyymAqSG_5hNw/zh-cn_image_0000002589246477.png)

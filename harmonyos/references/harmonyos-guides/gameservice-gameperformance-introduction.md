@@ -5,14 +5,14 @@ breadcrumb: 指南 > 应用服务 > Game Service Kit（游戏服务） > 游戏�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:38:11+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:b5d011100a4eece5c4c55355f0b65bab16da211b911732b729846dabc163a63d
+content_hash: sha256:6726d6df6f9e09e7fcb689282b1e0d68fc54ad415363c1a34392b627ffeab984
 ---
 
 ## 功能说明
 
 游戏场景感知提供API接口，帮助开发者快速实现游戏与系统的交互，开发者通过游戏场景感知，可以完成向系统发送游戏信息以及从系统获取设备状态信息两大动作。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/issnlSaqTO63zTsAJCoQUA/zh-cn_image_0000002589325269.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053810Z&HW-CC-Expire=86400&HW-CC-Sign=615EC919816BFC8F04E413C06A2BCD5DDA9B081E4516CE1DD467070927364D0F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/issnlSaqTO63zTsAJCoQUA/zh-cn_image_0000002589325269.jpg)
 
 ## 场景介绍
 

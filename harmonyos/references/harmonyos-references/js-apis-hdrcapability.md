@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-hdrcapability
-title: @ohos.graphics.hdrCapability (HDR能力)
+title: "@ohos.graphics.hdrCapability (HDR能力)"
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > ArkTS API > @ohos.graphics.hdrCapability (HDR能力)
 category: harmonyos-references
 scraped_at: 2026-04-28T08:14:44+08:00

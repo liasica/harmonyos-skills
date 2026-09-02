@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用服务 > Scenario Fusion Kit（融合场景服务） 
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:40:18+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:e6ac3c484dc2b8ce8a1e3ff2ea551d61a39a3b20b9a66c66f9923d950a8696d7
+content_hash: sha256:ed06c904c6af056b374e5cc0f051a8ac68cf481c2f4851ef934291b4fbabdf42
 ---
 
 从5.1.0(18)开始，支持智能填充的推荐车牌号场景。
@@ -18,7 +18,7 @@ content_hash: sha256:e6ac3c484dc2b8ce8a1e3ff2ea551d61a39a3b20b9a66c66f9923d950a8
 
 ## 效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/6xKuOaknQ7CFKs0X1AasVw/zh-cn_image_0000002589245467.png?HW-CC-KV=V1&HW-CC-Date=20260429T054017Z&HW-CC-Expire=86400&HW-CC-Sign=4784CBE00FEF9E0EB49101446F028A7C6F04DC70D745D1EC19A0BC8575B46489)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/6xKuOaknQ7CFKs0X1AasVw/zh-cn_image_0000002589245467.png)
 
 ## 示例代码
 

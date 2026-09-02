@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用服务 > Notification Kit（用户通知服务） > �
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:39:26+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:5e0e9e783486a209e87d53cc060d0ff4474162ba39624adde651e59bc3e05663
+content_hash: sha256:96f6e56e4080a480dc64c50cbc98fc2c160146e2fbb1b1a7738f05af3792381a
 ---
 
 ## 使用场景
@@ -16,11 +16,11 @@ content_hash: sha256:5e0e9e783486a209e87d53cc060d0ff4474162ba39624adde651e59bc3e
 
 “设置 > 通知和状态栏 > XX应用”页面
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/2cPaFg49SKuwxDX1sjPBaw/zh-cn_image_0000002558765570.png?HW-CC-KV=V1&HW-CC-Date=20260429T053925Z&HW-CC-Expire=86400&HW-CC-Sign=B0278C46E9DA781D13A1EC035D5E267C3647FE74380C476AD6FAC1485B48F76E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/2cPaFg49SKuwxDX1sjPBaw/zh-cn_image_0000002558765570.png)
 
 通知中心页面
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/1wMOtcQqQhKst7QDKwaP4Q/zh-cn_image_0000002558605914.png?HW-CC-KV=V1&HW-CC-Date=20260429T053925Z&HW-CC-Expire=86400&HW-CC-Sign=D4352C434039D8F9EF4C7D8744F1661A477C9473CAA36A36F215B78A074B1931)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/1wMOtcQqQhKst7QDKwaP4Q/zh-cn_image_0000002558605914.png)
 
 ## 开发准备
 

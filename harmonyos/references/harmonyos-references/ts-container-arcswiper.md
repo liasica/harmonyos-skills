@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:51:49+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:0385790b0fae535cbbfe8e2c9bde191e895a5d229dfa86d06e53089c8ab0ba41
+content_hash: sha256:43cc0a38b2118e5b2e50b7c281364417aa6d651673c0ea30756ef0be534ff3c8
 ---
 
 弧形滑块视图容器，提供子组件滑动轮播显示的能力。
@@ -817,7 +817,7 @@ PhonePC/2in1TabletTVWearable
 117. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/T_MZCXk3S4u0NyT-n1gSkA/zh-cn_image_0000002558606508.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055145Z&HW-CC-Expire=86400&HW-CC-Sign=8BAE3E9394FC3FE70D9654B74CCB224CEDE4482344D46DD7437F90880ED77491)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/T_MZCXk3S4u0NyT-n1gSkA/zh-cn_image_0000002558606508.gif)
 
 ### 示例2（设置ArcSwiper自定义页面切换动画）
 
@@ -881,4 +881,4 @@ PhonePC/2in1TabletTVWearable
 55. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/bSY2C3I5R6qUZ28PnlJ4wA/zh-cn_image_0000002589326035.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055145Z&HW-CC-Expire=86400&HW-CC-Sign=9EDB1DA436B88FD6C5D542F127AC580D991B81598548E6139E531AB64FA7DF75)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/bSY2C3I5R6qUZ28PnlJ4wA/zh-cn_image_0000002589326035.gif)

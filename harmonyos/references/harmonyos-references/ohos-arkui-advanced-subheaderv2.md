@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:53:06+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:7593f3842c33fba9dcbef1a1d9b02017e241aea2ae4d9d5e200aebec5ba3be07
+content_hash: sha256:f22029472844a0cfcdde8b37ecb062f2d5d0f91afeb72b5d2b3c0cc625773bb3
 ---
 
 子标题，用于列表项或内容项顶部，将该列表或内容划分为一个区块，子标题名称用来概括该区块内容。
@@ -427,7 +427,7 @@ PhonePC/2in1TabletTVWearable
 51. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/SKtOzkV2S7WVQcs-Twem3Q/zh-cn_image_0000002589326523.png?HW-CC-KV=V1&HW-CC-Date=20260429T055304Z&HW-CC-Expire=86400&HW-CC-Sign=3DC272BD4318C92CC167E0AFECF1893EC98DB70B5C46A17F835450BED347798B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/SKtOzkV2S7WVQcs-Twem3Q/zh-cn_image_0000002589326523.png)
 
 ### 示例2（双行文本内容型子标题）
 
@@ -479,7 +479,7 @@ PhonePC/2in1TabletTVWearable
 43. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/hYTKyRukREi62ukJzEMlpA/zh-cn_image_0000002589246465.png?HW-CC-KV=V1&HW-CC-Date=20260429T055304Z&HW-CC-Expire=86400&HW-CC-Sign=DAE326512075C5ADA8D1D3B628839C74BC818EE43EFA8E09042A5DBB4A988AC2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/hYTKyRukREi62ukJzEMlpA/zh-cn_image_0000002589246465.png)
 
 ### 示例3（spinner型内容型子标题）
 
@@ -557,7 +557,7 @@ PhonePC/2in1TabletTVWearable
 69. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/V2Hf3bq7SqG2UcW20_nHnQ/zh-cn_image_0000002558766658.png?HW-CC-KV=V1&HW-CC-Date=20260429T055304Z&HW-CC-Expire=86400&HW-CC-Sign=63BDF406B9FF2B479C1437DC84DB86E3915A9C665CAF59EC0EB635AC95E9E34C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/V2Hf3bq7SqG2UcW20_nHnQ/zh-cn_image_0000002558766658.png)
 
 ### 示例4（设置左侧symbol图标）
 
@@ -601,7 +601,7 @@ PhonePC/2in1TabletTVWearable
 35. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/7lNsbD21T3mzcpbH06fJWg/zh-cn_image_0000002558606998.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055304Z&HW-CC-Expire=86400&HW-CC-Sign=2DCF2045CE9DBB282174C6B5E060D6D5EACF2CABA41C5FCDC24EF29389CF4273)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/7lNsbD21T3mzcpbH06fJWg/zh-cn_image_0000002558606998.gif)
 
 ### 示例5（设置右侧symbol图标）
 
@@ -687,7 +687,7 @@ PhonePC/2in1TabletTVWearable
 77. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/XaZXnfhDRaKdI5B8dWxNqg/zh-cn_image_0000002589326525.png?HW-CC-KV=V1&HW-CC-Date=20260429T055304Z&HW-CC-Expire=86400&HW-CC-Sign=403D74550FA23BA53DE50EC62D6DC18542EE950E7780262D663EFC9D1E5F1AEE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/XaZXnfhDRaKdI5B8dWxNqg/zh-cn_image_0000002589326525.png)
 
 ### 示例6（自定义标题内容）
 
@@ -745,7 +745,7 @@ PhonePC/2in1TabletTVWearable
 49. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/CWccBlj3Q1un0Ja6gMNsAg/zh-cn_image_0000002589246467.png?HW-CC-KV=V1&HW-CC-Date=20260429T055304Z&HW-CC-Expire=86400&HW-CC-Sign=8827EBDDE2A664DE380293A19823CCC7E93543CFD8A6132624B5CCA023601E12)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/CWccBlj3Q1un0Ja6gMNsAg/zh-cn_image_0000002589246467.png)
 
 ### 示例7（自定义标题样式）
 
@@ -796,7 +796,7 @@ PhonePC/2in1TabletTVWearable
 42. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/3l4LC84nQ5uuGZ8q2tzhgA/zh-cn_image_0000002589246469.png?HW-CC-KV=V1&HW-CC-Date=20260429T055304Z&HW-CC-Expire=86400&HW-CC-Sign=715099DBD72231F16DEF945766169AA2276847069A42D1D70073C46D36B90EE4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/3l4LC84nQ5uuGZ8q2tzhgA/zh-cn_image_0000002589246469.png)
 
 ### 示例8（右侧按钮自定义播报）
 
@@ -896,7 +896,7 @@ PhonePC/2in1TabletTVWearable
 91. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/p3cKFfuxREa34EyQCqyYLQ/zh-cn_image_0000002558607000.png?HW-CC-KV=V1&HW-CC-Date=20260429T055304Z&HW-CC-Expire=86400&HW-CC-Sign=1FB0276B4C2E4453FED76CC0D93C493D976DABAD00C02C7D2570E0EB3BE7E3BE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/p3cKFfuxREa34EyQCqyYLQ/zh-cn_image_0000002558607000.png)
 
 ### 示例9（右侧按钮设置默认获焦）
 
@@ -958,4 +958,4 @@ PhonePC/2in1TabletTVWearable
 51. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/bqW1Pa7kTEScZIhPFSqRaw/zh-cn_image_0000002589326527.png?HW-CC-KV=V1&HW-CC-Date=20260429T055304Z&HW-CC-Expire=86400&HW-CC-Sign=0038AA60DC264D820101FD00BF13E22E19F7D2D484B74FE9DDECBD71DC7518A7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/bqW1Pa7kTEScZIhPFSqRaw/zh-cn_image_0000002589326527.png)

@@ -5,7 +5,7 @@ breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-rep
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:44:41+08:00
 doc_updated_at: 2026-01-15
-content_hash: sha256:2cf0b717824f460c4b63adc969bfc21e54e0685560459ce03e133924b1e3e9fe
+content_hash: sha256:e4a4f6981608f09ff3798fdc35ca12a8b4bae2aa7ec45370f1b3744ab89d7cee
 ---
 
 将ohpm-repo pack打包产物替换<deploy\_root>目录下相应文件，重启服务。
@@ -52,4 +52,4 @@ content_hash: sha256:2cf0b717824f460c4b63adc969bfc21e54e0685560459ce03e133924b1e
 
 结果示例：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/Hs-aAkTuSbGfnca7QLancQ/zh-cn_image_0000002561831217.png?HW-CC-KV=V1&HW-CC-Date=20260429T054439Z&HW-CC-Expire=86400&HW-CC-Sign=F75FDF2A508C076292E2988683A9A054FF8CFEF38AE34934AAAB319BC25B0904 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/Hs-aAkTuSbGfnca7QLancQ/zh-cn_image_0000002561831217.png "点击放大")

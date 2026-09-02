@@ -5,7 +5,7 @@ breadcrumb: 最佳实践 > 自由流转 > 多端协同 > 统一拖拽
 category: best-practices
 scraped_at: 2026-04-29T14:12:52+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:64a4ab1e186821ddb8bd5e1ca3d770eabddaf3579782ef0cd2d74518fe8b1973
+content_hash: sha256:97194f8f506688bec44a5c70ea5e8beb483c3291d584fd56bbf6d099e31ec007
 ---
 
 ## 概述
@@ -165,7 +165,7 @@ content_hash: sha256:64a4ab1e186821ddb8bd5e1ca3d770eabddaf3579782ef0cd2d74518fe8
 **运行效果**
 
 **图1** 拖拽图片增加水印  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/NMye_NrIQcir7dg_t7m5pQ/zh-cn_image_0000002315615638.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061239Z&HW-CC-Expire=86400&HW-CC-Sign=0FF7D2BD1C7686F2B24277569ACA0DF6DF19949052A2AEE1A808EAD18BDF069C "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/NMye_NrIQcir7dg_t7m5pQ/zh-cn_image_0000002315615638.gif "点击放大")
 
 **实现原理**
 
@@ -293,7 +293,7 @@ content_hash: sha256:64a4ab1e186821ddb8bd5e1ca3d770eabddaf3579782ef0cd2d74518fe8
 **运行效果**
 
 **图2** 自定义拖拽背板  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/7Egk3hUhRdSjhpjpk39_3g/zh-cn_image_0000002349574333.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061239Z&HW-CC-Expire=86400&HW-CC-Sign=7335167E05552518A37C99D4C506D518868BD05C9854FFBFBE3DE50A43A490CD "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/7Egk3hUhRdSjhpjpk39_3g/zh-cn_image_0000002349574333.gif "点击放大")
 
 **实现原理**
 
@@ -391,7 +391,7 @@ content_hash: sha256:64a4ab1e186821ddb8bd5e1ca3d770eabddaf3579782ef0cd2d74518fe8
 **运行效果**
 
 **图3** AI识别拖拽内容  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/LhPsxYUZQC-VsLosjQI4ow/zh-cn_image_0000002349614541.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061239Z&HW-CC-Expire=86400&HW-CC-Sign=45FBA8933EBA89399BA4B1083346FFC9906607E34C79C11F117B81A2649B0600 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/LhPsxYUZQC-VsLosjQI4ow/zh-cn_image_0000002349614541.gif "点击放大")
 
 **实现原理**
 
@@ -545,7 +545,7 @@ content_hash: sha256:64a4ab1e186821ddb8bd5e1ca3d770eabddaf3579782ef0cd2d74518fe8
 **运行效果**
 
 **图4** 在线图片拖拽  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/gsP-GRmIQniTk7Pam6O81Q/zh-cn_image_0000002315775454.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061239Z&HW-CC-Expire=86400&HW-CC-Sign=326DE311B5547D832C06208AE3971BA8E35C90507E3D9751620FD04C477385E2 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/gsP-GRmIQniTk7Pam6O81Q/zh-cn_image_0000002315775454.gif "点击放大")
 
 **使用说明**
 
@@ -666,7 +666,7 @@ content_hash: sha256:64a4ab1e186821ddb8bd5e1ca3d770eabddaf3579782ef0cd2d74518fe8
 **运行效果**
 
 **图5** 本地视频拖拽  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/5ncRH5DgRV6wpnDf1-Z0MA/zh-cn_image_0000002315615654.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061239Z&HW-CC-Expire=86400&HW-CC-Sign=B34CA709C5C5C484A23D2BEA830BB6C114B9A12092F3E5D915D81B6DF0AAC8BC "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/5ncRH5DgRV6wpnDf1-Z0MA/zh-cn_image_0000002315615654.gif "点击放大")
 
 **实现原理**
 
@@ -782,7 +782,7 @@ content_hash: sha256:64a4ab1e186821ddb8bd5e1ca3d770eabddaf3579782ef0cd2d74518fe8
 **运行效果如下所示**
 
 **图6** Text组件图文混排拖拽  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/davBtnSjShGw1jdBVsCWVg/zh-cn_image_0000002349574337.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061239Z&HW-CC-Expire=86400&HW-CC-Sign=95808B58979D05956DCB86D70F964D6140A8BFE493B86B7DB95A713EAF9DD773 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/davBtnSjShGw1jdBVsCWVg/zh-cn_image_0000002349574337.gif "点击放大")
 
 **实现原理**
 
@@ -843,7 +843,7 @@ content_hash: sha256:64a4ab1e186821ddb8bd5e1ca3d770eabddaf3579782ef0cd2d74518fe8
 **运行效果展示**
 
 **图7** RichEditor组件图文混排拖拽  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/wJsK6zBEQp-T1AwAKggXTA/zh-cn_image_0000002349614553.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061239Z&HW-CC-Expire=86400&HW-CC-Sign=9B1517EAF94BE104A65F2AB4A629DADD02B1AC80E08590E86AA4E62E42FD8D1C "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/wJsK6zBEQp-T1AwAKggXTA/zh-cn_image_0000002349614553.gif "点击放大")
 
 **实现原理**
 
@@ -931,7 +931,7 @@ RichEditor组件默认具备拖出的能力，并且支持交互式编辑，在�
 **运行效果如下所示**
 
 **图8** 多Entry图文混排拖拽  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/VrKJkVyzRIqAtJEy7PvWEg/zh-cn_image_0000002315775466.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061239Z&HW-CC-Expire=86400&HW-CC-Sign=F6091633336C5AA534B549FE8E5A25FEF7BD2264188F75C405A22A06632B3D4E "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/VrKJkVyzRIqAtJEy7PvWEg/zh-cn_image_0000002315775466.gif "点击放大")
 
 **实现原理**
 
@@ -1191,7 +1191,7 @@ RichEditor组件默认具备拖出的能力，并且支持交互式编辑，在�
 **运行效果如下图所示**
 
 **图9** 分屏拖拽  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/27DhmxyQRs-pyz4Ox5P7fw/zh-cn_image_0000002315615670.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061239Z&HW-CC-Expire=86400&HW-CC-Sign=97F3EB3895AB87CEDF0A248C3A2555688A9C9E03BC75A8CCC0135AE4EDB83AEB "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/27DhmxyQRs-pyz4Ox5P7fw/zh-cn_image_0000002315615670.gif "点击放大")
 
 ## 跨设备拖拽
 
@@ -1204,7 +1204,7 @@ RichEditor组件默认具备拖出的能力，并且支持交互式编辑，在�
 **结果展示**
 
 **图10** 跨设备拖拽效果展示  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/77Tldp5bQs2WNG1NHddt0w/zh-cn_image_0000002349574349.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061239Z&HW-CC-Expire=86400&HW-CC-Sign=129704C2ACAB476F99232FC7BAD75872F497001EF1EE60E3B9AC06B200E0A121 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/77Tldp5bQs2WNG1NHddt0w/zh-cn_image_0000002349574349.gif "点击放大")
 
 ## 拖入小艺和中转站
 
@@ -1217,10 +1217,10 @@ RichEditor组件默认具备拖出的能力，并且支持交互式编辑，在�
 **运行效果如下图所示**
 
 **图11** 将数据拖入小艺  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/lPNNnwdFQKixoZCY_LgisA/zh-cn_image_0000002349614565.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061239Z&HW-CC-Expire=86400&HW-CC-Sign=4A495F16729A2ACEB551DAD34161D5A6306812317BB8AA5B9787B7110EF40479 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/lPNNnwdFQKixoZCY_LgisA/zh-cn_image_0000002349614565.gif "点击放大")
 
 **图12** 将数据拖入中转站  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/aUPV5lF1TLSfMVdM9neTcg/zh-cn_image_0000002315775482.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061239Z&HW-CC-Expire=86400&HW-CC-Sign=142F4E3ECE5A5AFE853D9C3C4394256076EBD405A870AB43CB590F50A8F00E0B "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/aUPV5lF1TLSfMVdM9neTcg/zh-cn_image_0000002315775482.gif "点击放大")
 
 ## 常见问题
 

@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:51:40+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:f40a2ebae457424ed0d189a46b9ae9c56c2d8be6988834f7a4891b4ef3582288
+content_hash: sha256:ee334799918072770b8bc544a3ad06386117f1efa17a475a9e5ec1011707f2dc
 ---
 
 Flex是以弹性方式布局子组件的容器组件，能够高效地排列、对齐子元素并分配剩余空间。
@@ -159,7 +159,7 @@ PhonePC/2in1TabletTVWearable
 58. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/Pdho5hfqQaG1MjCl_tmjaw/zh-cn_image_0000002558766112.png?HW-CC-KV=V1&HW-CC-Date=20260429T055138Z&HW-CC-Expire=86400&HW-CC-Sign=E08CE23464C8B2B1D0ADEAF348EEBAA82B137270F7F107749BBCB0A2013E1FB7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/Pdho5hfqQaG1MjCl_tmjaw/zh-cn_image_0000002558766112.png)
 
 ### 示例2（子组件单/多行排列）
 
@@ -209,7 +209,7 @@ PhonePC/2in1TabletTVWearable
 41. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/Ky_5eJoQTniCshx2FfJIbA/zh-cn_image_0000002558606454.png?HW-CC-KV=V1&HW-CC-Date=20260429T055138Z&HW-CC-Expire=86400&HW-CC-Sign=B7DCBDDBE56BBED685427B53BE62D05CEC137B63CCB9048C7C437A665D6410DC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/Ky_5eJoQTniCshx2FfJIbA/zh-cn_image_0000002558606454.png)
 
 ### 示例3（子组件在主轴上的对齐格式）
 
@@ -262,7 +262,7 @@ PhonePC/2in1TabletTVWearable
 44. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/ylxOTyNVQQaLyAoRryoAaA/zh-cn_image_0000002589325981.png?HW-CC-KV=V1&HW-CC-Date=20260429T055138Z&HW-CC-Expire=86400&HW-CC-Sign=89679608EE187D43D41F66DCBD60970D29C30F9F82536B577AAD72172931023B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/ylxOTyNVQQaLyAoRryoAaA/zh-cn_image_0000002589325981.png)
 
 ### 示例4（子组件在交叉轴上的对齐方式）
 
@@ -315,7 +315,7 @@ PhonePC/2in1TabletTVWearable
 44. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/80cnstCMRuaB24yw2Wd4Bg/zh-cn_image_0000002589245923.png?HW-CC-KV=V1&HW-CC-Date=20260429T055138Z&HW-CC-Expire=86400&HW-CC-Sign=B905E071CA22F6C5B80409CD77404F2389490FCB7ED3C5BD021DAE442E6949B5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/80cnstCMRuaB24yw2Wd4Bg/zh-cn_image_0000002589245923.png)
 
 ### 示例5（多行内容的对齐方式）
 
@@ -380,7 +380,7 @@ PhonePC/2in1TabletTVWearable
 56. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/IAFeeOfHR8eWUgoPO-IAyQ/zh-cn_image_0000002558766114.png?HW-CC-KV=V1&HW-CC-Date=20260429T055138Z&HW-CC-Expire=86400&HW-CC-Sign=6B37898EB4F36EEBB45D3F574ACE86DCD684FF05E40CCE5E98A217EDD749538E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/IAFeeOfHR8eWUgoPO-IAyQ/zh-cn_image_0000002558766114.png)
 
 ### 示例6（子组件单/多行排列时的主/交叉轴间距）
 
@@ -431,7 +431,7 @@ PhonePC/2in1TabletTVWearable
 42. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/CNxJnfG5SIq60DPVcu5cnw/zh-cn_image_0000002558606456.png?HW-CC-KV=V1&HW-CC-Date=20260429T055138Z&HW-CC-Expire=86400&HW-CC-Sign=45EE237821067698A89799C026D2DE251EA997EE28C0B84DA72BCE8842FE886D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/CNxJnfG5SIq60DPVcu5cnw/zh-cn_image_0000002558606456.png)
 
 ### 示例7（宽度自适应的Flex容器）
 
@@ -487,4 +487,4 @@ PhonePC/2in1TabletTVWearable
 47. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/2dmGwwkORY-qjlrw-wkfWA/zh-cn_image_0000002589325983.png?HW-CC-KV=V1&HW-CC-Date=20260429T055138Z&HW-CC-Expire=86400&HW-CC-Sign=557184BCD402527D0542A5685D77AFC13AFF8734C98B3B1CCC5DAA97623FEB25)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/2dmGwwkORY-qjlrw-wkfWA/zh-cn_image_0000002589325983.png)

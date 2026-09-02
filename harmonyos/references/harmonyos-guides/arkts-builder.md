@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-builder
-title: @Builder装饰器：自定义构建函数
+title: "@Builder装饰器：自定义构建函数"
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式基本语法 > 组件扩展 > @Builder装饰器：自定义构建函数
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:27:06+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:61fef45267b305ca285ed5e1b2f91d63afae499a0ef03b55832b43aada1e460c
+content_hash: sha256:ccc479d507df88bcff2df0a6df52901a0f837d16155bf725356aa8543aa43239
 ---
 
 ArkUI提供轻量的UI元素复用机制@Builder，其内部UI结构固定，仅与使用方进行数据传递。开发者可将重复使用的UI元素抽象成函数，在build函数中调用。
@@ -291,7 +291,7 @@ ArkUI提供轻量的UI元素复用机制@Builder，其内部UI结构固定，仅
 
 示例效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/C5YXH3UgTXSal12zdMT9Xg/zh-cn_image_0000002558604406.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052703Z&HW-CC-Expire=86400&HW-CC-Sign=F75DC873850D3226728017BB5C386192B498F880A66898C35ADF89F743C684B2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/C5YXH3UgTXSal12zdMT9Xg/zh-cn_image_0000002558604406.gif)
 
 ### 全局自定义构建函数
 
@@ -389,7 +389,7 @@ ArkUI提供轻量的UI元素复用机制@Builder，其内部UI结构固定，仅
 
 示例效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/qxAHiABeSa2xaOpWbZZQlw/zh-cn_image_0000002589323931.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052703Z&HW-CC-Expire=86400&HW-CC-Sign=C78DD02052EC1D0B2F6831DD04DDA80098EC1C871374B337E1F53A6BA230456A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/qxAHiABeSa2xaOpWbZZQlw/zh-cn_image_0000002589323931.gif)
 
 ### 修改装饰器修饰的变量触发UI刷新
 
@@ -449,7 +449,7 @@ ArkUI提供轻量的UI元素复用机制@Builder，其内部UI结构固定，仅
 
 示例效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/6NFUM0-_T8Gl7DRT4cZabA/zh-cn_image_0000002589243871.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052703Z&HW-CC-Expire=86400&HW-CC-Sign=B32422AF5AFE8A68E2EB21D454F44F3C59C9964CF8E0D30A11F4F395B329FCC7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/6NFUM0-_T8Gl7DRT4cZabA/zh-cn_image_0000002589243871.gif)
 
 ### 将@Builder装饰的函数当作CustomBuilder类型使用
 
@@ -516,7 +516,7 @@ ArkUI提供轻量的UI元素复用机制@Builder，其内部UI结构固定，仅
 
 示例效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/vU4gNtejTZCk2P1nDshEgw/zh-cn_image_0000002558764064.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052703Z&HW-CC-Expire=86400&HW-CC-Sign=0F631445BA04494559FAAD7439FFBFF570F975543D8CFAA57FC51860F931B502)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/vU4gNtejTZCk2P1nDshEgw/zh-cn_image_0000002558764064.gif)
 
 ### 多层@Builder函数嵌套
 
@@ -662,7 +662,7 @@ ArkUI提供轻量的UI元素复用机制@Builder，其内部UI结构固定，仅
 
 示例效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/yr__zmDNRdK0VOzsltvnyg/zh-cn_image_0000002558604408.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052703Z&HW-CC-Expire=86400&HW-CC-Sign=6EE26AB8747819B65FB07B639D4854C20285B63183EBD91D42623AED1EF72C2C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/yr__zmDNRdK0VOzsltvnyg/zh-cn_image_0000002558604408.gif)
 
 ### @Builder函数联合V2装饰器
 
@@ -764,7 +764,7 @@ ArkUI提供轻量的UI元素复用机制@Builder，其内部UI结构固定，仅
 
 示例效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/-a0LYWWHTq-q5J9hzJefuw/zh-cn_image_0000002589323933.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052703Z&HW-CC-Expire=86400&HW-CC-Sign=83D24AB7417023511F13FAD6F26F0C1E604E765F787270D0E1053FBCB6F52034)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/-a0LYWWHTq-q5J9hzJefuw/zh-cn_image_0000002589323933.gif)
 
 当通过引用传递方式向@Builder传递参数时，若参数为[@Local](arkts-new-local.md)装饰的对象，对该对象进行整体赋值会触发@Builder中UI刷新。
 
@@ -856,7 +856,7 @@ ArkUI提供轻量的UI元素复用机制@Builder，其内部UI结构固定，仅
 
 示例效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/Gn5gAfw-Q72fXZg5RkEcUA/zh-cn_image_0000002589243873.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052703Z&HW-CC-Expire=86400&HW-CC-Sign=93A0B797486AF1CA54F0509F1858D58BBC80BD27D28E160F26A9A2481988B669)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/Gn5gAfw-Q72fXZg5RkEcUA/zh-cn_image_0000002589243873.gif)
 
 ### 跨组件复用的全局@Builder
 
@@ -962,7 +962,7 @@ ArkUI提供轻量的UI元素复用机制@Builder，其内部UI结构固定，仅
 
 示例效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/FFnGFCH1T06K-MZSMaQ6Dg/zh-cn_image_0000002558764066.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052703Z&HW-CC-Expire=86400&HW-CC-Sign=D8E2C08F0A990C3743647DB106E28B3AB2059781FEF6122C913DC14F6B271899)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/FFnGFCH1T06K-MZSMaQ6Dg/zh-cn_image_0000002558764066.gif)
 
 ### @Builder支持状态变量刷新
 
@@ -1086,7 +1086,7 @@ ArkUI提供轻量的UI元素复用机制@Builder，其内部UI结构固定，仅
 
 示例效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/cvCSDMc1S2W-CBN-jYChvw/zh-cn_image_0000002558604410.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052703Z&HW-CC-Expire=86400&HW-CC-Sign=FBF07F1D3CBE5E38275464F04E9E68F74E72C334F08CCA645EA45861C9CEB914)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/cvCSDMc1S2W-CBN-jYChvw/zh-cn_image_0000002558604410.gif)
 
 ## 常见问题
 

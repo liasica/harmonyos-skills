@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用服务 > Share Kit（分享服务） > 系统分享 >
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:40:37+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:ac8bce15bf987ae9dd253b53a9c6ae53498d6ef69ab374aff42f70860f937f11
+content_hash: sha256:50c7133bca16488a81e40a544b2ee21467607d21452511c7255104d2297ca43e
 ---
 
 视频类型分享支持将一个或多个视频分享到目标设备/目标应用。
@@ -13,7 +13,7 @@ content_hash: sha256:ac8bce15bf987ae9dd253b53a9c6ae53498d6ef69ab374aff42f70860f9
 * 目标设备接收时，视频会保存到图库中。
 * 目标应用接收时，可便捷地处理视频内容。例如：将一个视频分享给畅连，发送给畅连好友。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/1DzKvM_SSimcQ4NIz8zBNg/zh-cn_image_0000002558606026.png?HW-CC-KV=V1&HW-CC-Date=20260429T054035Z&HW-CC-Expire=86400&HW-CC-Sign=D3011483EA8CD7B17D4222BB4268516FB8C86A3573A8BC956C20247A5FDD643E)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/1DzKvM_SSimcQ4NIz8zBNg/zh-cn_image_0000002558606026.png)
 
 ## 开发步骤
 

@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:52:39+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:01b749f1b023761a452dcd43c523a972bbe1cddc54e6f9a4de8f1e4176119cd6
+content_hash: sha256:20d1ec06fe9e99d42f9cb27066f9b2eae0c4289e6a80648d0bb9be6d88fd0a7f
 ---
 
 路径绘制组件，根据绘制路径生成封闭的自定义形状。
@@ -420,7 +420,7 @@ PhonePC/2in1TabletTVWearable
 76. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/t2jjPSNBQGe7UdajGPMRlA/zh-cn_image_0000002558766538.png?HW-CC-KV=V1&HW-CC-Date=20260429T055236Z&HW-CC-Expire=86400&HW-CC-Sign=AEF4DD1144CEF878745B6C07E16F4D42612E52A9F6BB1A431BF23863F2A28DE7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/t2jjPSNBQGe7UdajGPMRlA/zh-cn_image_0000002558766538.png)
 
 ### 示例2（使用不同参数类型绘制路径）
 
@@ -457,7 +457,7 @@ width、height、commands属性分别使用不同的长度类型绘制图形。
 28. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/x-EZff5RTI-v4hVsl8I6EQ/zh-cn_image_0000002558606878.png?HW-CC-KV=V1&HW-CC-Date=20260429T055236Z&HW-CC-Expire=86400&HW-CC-Sign=519DC248BC2666C4B0814FC2F5673DCC0FFDB289CA474E842CA9BD88AF61B28C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/x-EZff5RTI-v4hVsl8I6EQ/zh-cn_image_0000002558606878.png)
 
 ### 示例3（使用attributeModifier动态设置Path组件的属性）
 
@@ -498,4 +498,4 @@ width、height、commands属性分别使用不同的长度类型绘制图形。
 32. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/oSb7UvfTQneidHhUH0WdKA/zh-cn_image_0000002589326405.png?HW-CC-KV=V1&HW-CC-Date=20260429T055236Z&HW-CC-Expire=86400&HW-CC-Sign=B12ABA5C454514505CB6E759B25F49BC8CE0E6FF65109563EBC20B5F13B36131)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/oSb7UvfTQneidHhUH0WdKA/zh-cn_image_0000002589326405.png)

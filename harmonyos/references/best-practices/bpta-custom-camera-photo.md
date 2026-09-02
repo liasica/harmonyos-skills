@@ -5,7 +5,7 @@ breadcrumb: 最佳实践 > 媒体 > 相机 > 自定义相机拍照
 category: best-practices
 scraped_at: 2026-04-29T14:11:13+08:00
 doc_updated_at: 2026-04-01
-content_hash: sha256:f933663e05ea24c440e65789cc02260bac102593b82ff47bf7d5336510bf8d9a
+content_hash: sha256:5ab9fa07617007dbe12c15e7c6e153a71dc20dc76ffb85226c1fcf2c9fc42ca2
 ---
 
 ## 概述
@@ -20,13 +20,13 @@ content_hash: sha256:f933663e05ea24c440e65789cc02260bac102593b82ff47bf7d5336510b
 
 基础拍照功能是自定义相机应用的重要功能，用户在切换到拍照模式后可实时预览取景画面，并通过快门按钮快速拍摄照片，此外用户还可以设置不同的拍照参数，应用会将拍到的画面保存为图片。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/NoEnru-iQrKcrWio3yi-AA/zh-cn_image_0000002537329329.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061106Z&HW-CC-Expire=86400&HW-CC-Sign=00397D5E43F7618939997FB17A534BCAEA89C93F9DB243047F6F7E3641CA228C "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/NoEnru-iQrKcrWio3yi-AA/zh-cn_image_0000002537329329.gif "点击放大")
 
 ### 开发步骤
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/6YCVRA2lQ7KSiEuxjC_sgw/zh-cn_image_0000002537449307.png?HW-CC-KV=V1&HW-CC-Date=20260429T061106Z&HW-CC-Expire=86400&HW-CC-Sign=1D353DDAAE7FF3B6F9D3400324EAFC4C905DD0DCB9B14A3BCD7A90534A89D661 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/6YCVRA2lQ7KSiEuxjC_sgw/zh-cn_image_0000002537449307.png "点击放大")
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/N6Krmn-WTfWrCbh-89mR6Q/zh-cn_image_0000002505649392.png?HW-CC-KV=V1&HW-CC-Date=20260429T061106Z&HW-CC-Expire=86400&HW-CC-Sign=C3C10BEAAB176D7E30F2D9E6400C8099CC2D215E92F0049DB362BEEA16AED50F "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/N6Krmn-WTfWrCbh-89mR6Q/zh-cn_image_0000002505649392.png "点击放大")
 
 详细的API说明请参考[@ohos.multimedia.camera (相机管理)](../harmonyos-references/js-apis-camera.md)。
 
@@ -235,11 +235,11 @@ content_hash: sha256:f933663e05ea24c440e65789cc02260bac102593b82ff47bf7d5336510b
 
 分段式拍照是一项能够显著提升用户体验的功能。应用程序可在第一阶段以较快速度获取预览级或经过初步处理的图片，优先展示给用户，从而有效减少等待时间，优化交互体验。随后，在后台或系统空闲时，再补充上传全质量照片，以满足后续处理或长期存档的需求。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/rd0Rn3OtQTCMImm_aYB1bA/zh-cn_image_0000002537449309.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061106Z&HW-CC-Expire=86400&HW-CC-Sign=433B3D560F4DE44BAEA0809F96923D82310A94FF914BB96008EAD68CF82F1700 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/rd0Rn3OtQTCMImm_aYB1bA/zh-cn_image_0000002537449309.gif "点击放大")
 
 分段式拍照是指在应用下发拍照任务后，系统按阶段上报不同质量的图片。在一阶段，系统快速上报低质量图，应用通过[on('photoAssetAvailable')](../harmonyos-references/arkts-apis-camera-photooutput.md#onphotoassetavailable12)接口会收到一个PhotoAsset对象，通过该对象可调用媒体库接口，读取图片或落盘图片。在二阶段，分段式子服务会根据系统压力以及定制化场景进行调度，将后处理好的原图回传给媒体库，替换低质量图。设置拍照photoAssetAvailable的回调来获取photoAsset。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/x3W-YNN3QCyb4X2eiTo-fg/zh-cn_image_0000002505649404.png?HW-CC-KV=V1&HW-CC-Date=20260429T061106Z&HW-CC-Expire=86400&HW-CC-Sign=3E32336A71C6770FC552FAB98EA7AA27E4574E2A11E14B2E4F532327B82EA69B "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/x3W-YNN3QCyb4X2eiTo-fg/zh-cn_image_0000002505649404.png "点击放大")
 
 ```
 1. // Save camera photo
@@ -340,7 +340,7 @@ HDR Vivid是UWA认证的动态HDR视频标准，能够拍摄出层次更丰富�
 
 ## 拍摄动图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/LdlQ7VlQTBCJ0vBOUm6PLg/zh-cn_image_0000002505489572.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061106Z&HW-CC-Expire=86400&HW-CC-Sign=12685F56E7CE4A3B951B98F0330597EDCCA2B4DA9493F0067C6C00B97027789A "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/LdlQ7VlQTBCJ0vBOUm6PLg/zh-cn_image_0000002505489572.gif "点击放大")
 
 动图拍摄是一项能够记录照片前后短时动态画面的功能，为用户带来更具临场感与故事性的拍摄体验。在进行动图拍摄前，需首先通过[isMovingPhotoSupported()](../harmonyos-references/arkts-apis-camera-photooutput.md#ismovingphotosupported12)接口判断设备是否支持该功能。
 

@@ -5,7 +5,7 @@ breadcrumb: 指南 > 图形 > XEngine Kit（GPU加速引擎服务） > 空域AI�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:36:43+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:b53661aac4d0ca5d09dce655769d16ea7197bd89b02a67d7d4432fc7279da349
+content_hash: sha256:74ed5647d132a6f6aace67b3f9dc4baf053a4f95aa6584ab592327d868dc47ad
 ---
 
 XEngine Kit提供空域AI超分能力，基于单帧图像使用AI推理生成滤波参数进行超采样，通过GPU、NPU协同工作，实现比空域GPU超分更好的画质，建议超分倍率在1.5倍以下时使用。
@@ -31,7 +31,7 @@ XEngine Kit提供空域AI超分能力，基于单帧图像使用AI推理生成�
 
 * 下面是基于GLES图形API平台集成空域GPU超分的主要业务流程
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/BhB53NiCT02ojDaCa7UDmg/zh-cn_image_0000002589325107.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053642Z&HW-CC-Expire=86400&HW-CC-Sign=545E4D2FDAE35FF9DE78FCA4B70C290D382BE43C7B61D0CD6A3EE21FD7D24074)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/BhB53NiCT02ojDaCa7UDmg/zh-cn_image_0000002589325107.jpg)
 
 1. 用户在进入游戏初始化场景时调用HMS\_XEG\_GetString接口查询XEngine支持的特性，当查询接口返回支持的特性列表中包含空域AI超分时代表可以使用此特性。
 2. 初始化场景，空域AI超分的输入纹理需要使用OH\_NativeBuffer来创建。

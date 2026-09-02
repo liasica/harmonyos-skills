@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:51:17+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:e1558bab4ddd05eaeddde904ab90b9f865cd89ed0c55b32698b5b1ff5b74e312
+content_hash: sha256:0b544a3eb92509957d27e9a18b2cb69b3cb73811ef361a48aaea0b1ab61eb054
 ---
 
 设置组件边框样式。
@@ -251,7 +251,7 @@ PhonePC/2in1TabletTVWearable
 65. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/H6-WeMKGQTm1XNoyvH89XA/zh-cn_image_0000002558766024.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055116Z&HW-CC-Expire=86400&HW-CC-Sign=B290885429C5D303C5E9186F0254172114259B35B69DEE649A5B5837F94E51E9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/H6-WeMKGQTm1XNoyvH89XA/zh-cn_image_0000002558766024.gif)
 
 ### 示例2（边框宽度类型和边框颜色）
 
@@ -329,11 +329,11 @@ border属性的width、radius、color属性值使用LocalizedEdgeWidths类型和
 
 从左至右显示语言示例图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/XK6leMFKT-Sc0WazE-uR3Q/zh-cn_image_0000002558606366.png?HW-CC-KV=V1&HW-CC-Date=20260429T055116Z&HW-CC-Expire=86400&HW-CC-Sign=9B47A1C8266EFC5B9D23013887CAA9B9093873B8CDF9C21F6334232FD7FB9FBD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/XK6leMFKT-Sc0WazE-uR3Q/zh-cn_image_0000002558606366.png)
 
 从右至左显示语言示例图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/msrq0SYQRWqGd7-XwbY9lQ/zh-cn_image_0000002589325893.png?HW-CC-KV=V1&HW-CC-Date=20260429T055116Z&HW-CC-Expire=86400&HW-CC-Sign=BEF503BBC504741FFE8EA05CD6D9A84B3782B2BA3E5E767A34BDD3B0FBCFA6BC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/msrq0SYQRWqGd7-XwbY9lQ/zh-cn_image_0000002589325893.png)
 
 ### 示例3（设置离屏圆角）
 
@@ -412,7 +412,7 @@ border属性的width、radius、color属性值使用LocalizedEdgeWidths类型和
 
 设置在线绘制模式（上方）以及离屏绘制模式（下方）的示例图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/4LLh1eVmQTWFo3BH9GQ11A/zh-cn_image_0000002589245835.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T055116Z&HW-CC-Expire=86400&HW-CC-Sign=DB269679F37F7CA9A0E6F813397CE84505A4EAAABB82AF6C080B0396F1197E05)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/4LLh1eVmQTWFo3BH9GQ11A/zh-cn_image_0000002589245835.jpg)
 
 ### 示例4（设置异形圆角）
 
@@ -445,4 +445,4 @@ border属性的width、radius、color属性值使用LocalizedEdgeWidths类型和
 24. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/jsYyE0UIQSOhR0LNlJBFnA/zh-cn_image_0000002558766026.png?HW-CC-KV=V1&HW-CC-Date=20260429T055116Z&HW-CC-Expire=86400&HW-CC-Sign=BDA21368C291FB28F99D22D5957E006D6760F90AE1D5412C68679951482C99C9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/jsYyE0UIQSOhR0LNlJBFnA/zh-cn_image_0000002558766026.png)

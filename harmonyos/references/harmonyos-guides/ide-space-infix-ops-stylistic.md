@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-space-infix-ops-stylistic
-title: @hw-stylistic/space-infix-ops
+title: "@hw-stylistic/space-infix-ops"
 category: harmonyos-guides
 scraped_at: 2026-04-28T07:56:32+08:00
 doc_updated_at: 2026-01-15

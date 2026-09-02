@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:53:13+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:c6be77671531a062fb27d4cec7f1699a548f9dbe928df604f14a17830074a694
+content_hash: sha256:c1bbaec608833301476f82b6359f57788c1c6d4f29f83e6f6e56bcaafbbe8723
 ---
 
 设置组件是否可以响应点击事件、触摸事件等手指交互事件。
@@ -72,4 +72,4 @@ PhonePC/2in1TabletTVWearable
 25. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/cL-VbhY6SbeA_Lyz8p6SZQ/zh-cn_image_0000002558607032.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055312Z&HW-CC-Expire=86400&HW-CC-Sign=B0E38C84BC9C6A7B27AA4D48C6FC210E760A9946CAFBAA561F3C7FFCE4E4F019)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/cL-VbhY6SbeA_Lyz8p6SZQ/zh-cn_image_0000002558607032.gif)

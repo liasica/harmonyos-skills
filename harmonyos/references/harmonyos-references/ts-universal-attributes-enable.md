@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:51:25+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:5ba7c13c9d0801c743235efe90ae6912ff2dae218148de7d010581db15e701fc
+content_hash: sha256:e9cbf862fedf8c89a4f0b6f0988f51d429793f1b9b112749ce1f64c96e090f76
 ---
 
 组件可交互状态下响应[点击事件](ts-universal-events-click.md)、[触摸事件](ts-universal-events-touch.md)、[拖拽事件](ts-universal-events-drag-drop.md)、[按键事件](ts-universal-events-key.md)、[焦点事件](ts-universal-focus-event.md)、[鼠标事件](ts-universal-mouse-key.md)、[轴事件](ts-universal-events-axis.md)、[悬浮事件](ts-universal-events-hover.md)、[无障碍悬浮事件](ts-universal-accessibility-hover-event.md)、[手势事件](ts-gesture-settings.md)、[焦点轴事件](ts-universal-events-focus_axis.md)和[表冠事件](ts-universal-events-crown.md)。
@@ -65,4 +65,4 @@ PhonePC/2in1TabletTVWearable
 14. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/-cWtFkLtSS-JrZC95z0BrA/zh-cn_image_0000002589245857.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055123Z&HW-CC-Expire=86400&HW-CC-Sign=1A63E8788FDE68F81DF5F383A12403345AAF211320AE1388CDBDB8F070CC6E22)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/-cWtFkLtSS-JrZC95z0BrA/zh-cn_image_0000002589245857.gif)

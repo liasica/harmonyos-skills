@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > U
 category: harmonyos-references
 scraped_at: 2026-04-29T13:50:36+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:2fca7589a97620746d7da183d126ce0fb47dfd71fd1f5ee66298cdf15ece7aef
+content_hash: sha256:b91af9c40f9f46bacb625c0f145dc8db92f30ca73c8aedf64e988a649f489334
 ---
 
 提供文本宽度、高度等相关计算。
@@ -240,7 +240,7 @@ measureTextSize(options: MeasureOptions): SizeOptions
 104. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/aWNWeyQvQayMz7wYYt2HVg/zh-cn_image_0000002558606274.png?HW-CC-KV=V1&HW-CC-Date=20260429T055034Z&HW-CC-Expire=86400&HW-CC-Sign=3520FD59B65DEDCA9DA158D56CE7A158A1CC1589AFE281EE7C23703EC8D1C659)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/aWNWeyQvQayMz7wYYt2HVg/zh-cn_image_0000002558606274.png)
 
 ## getParagraphs20+
 
@@ -470,4 +470,4 @@ getParagraphs(styledString: StyledString, options?: TextLayoutOptions): Array<Pa
 198. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/PZRMfXHlSmmzw5_gvsfwcA/zh-cn_image_0000002589325801.png?HW-CC-KV=V1&HW-CC-Date=20260429T055034Z&HW-CC-Expire=86400&HW-CC-Sign=687D4B044C36D4C22E5BB5A31F248DF67FD3535EF97230EDF19DDAD2A1DB9919)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/PZRMfXHlSmmzw5_gvsfwcA/zh-cn_image_0000002589325801.png)

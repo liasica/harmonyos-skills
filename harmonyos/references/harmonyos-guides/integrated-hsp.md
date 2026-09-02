@@ -5,7 +5,7 @@ breadcrumb: 指南 > 基础入门 > 开发基础知识 > 典型场景的开发�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:25:35+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:cb7050a4db44f2c4099c42666ee1cfab9f96c6ef3e5b1125d5bbc9a9d1a81d0d
+content_hash: sha256:cca2f73ee498bd53071ed180edec43621ccfad01dc885dcc0f851f607da8649e
 ---
 
 集成态HSP是应用内HSP的中间编译产物，用于解决使用方的bundleName和签名之间的强耦合问题。
@@ -88,7 +88,7 @@ HSP只能给bundleName一样的工程使用，集成态HSP可以给不同的bund
 
    (2) 配置release模式。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/cWsfBdbcTDup7ja5H7JYGw/zh-cn_image_0000002558763972.png?HW-CC-KV=V1&HW-CC-Date=20260429T052534Z&HW-CC-Expire=86400&HW-CC-Sign=A1D4C6158ACE5DC19570E97EBA25642E4CEE0FC957C2A08910A89F313D01783F)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/cWsfBdbcTDup7ja5H7JYGw/zh-cn_image_0000002558763972.png)
 
    (3) 选择library目录，执行Build -> Make Module 'library'。
 

@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > �
 category: harmonyos-references
 scraped_at: 2026-04-29T13:53:31+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:8e0e0d05071ace687bac70cffaf3348b04715fd27ed47638c427f20a44d69359
+content_hash: sha256:01039e4fbfd5a324fd0910d2eb5bf05934e408a7afa04e1eb21a1fe58e51e496
 ---
 
 说明
@@ -54,4 +54,4 @@ addColorStop(offset: number, color: string): void
 13. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/dTZAmbDPScqokRBlArOavQ/zh-cn_image_0000002589246565.png?HW-CC-KV=V1&HW-CC-Date=20260429T055330Z&HW-CC-Expire=86400&HW-CC-Sign=5782BD35B0DB2170A454ECED059A84E424CC79F1E85A0AD7334734FBC91D8A53)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/dTZAmbDPScqokRBlArOavQ/zh-cn_image_0000002589246565.png)

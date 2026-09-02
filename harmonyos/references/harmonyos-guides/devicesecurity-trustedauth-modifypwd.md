@@ -5,7 +5,7 @@ breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:31:33+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:d7ae47e0fa2ccf7ec7b7b5a586e4bbadd7364821bd07d5631c9e458b5b4daecf
+content_hash: sha256:388dc75eb945934e8cc989925cb1d61d0875fcdfedc0e5977e6ff01df41e5c90
 ---
 
 ## 场景介绍
@@ -18,7 +18,7 @@ content_hash: sha256:d7ae47e0fa2ccf7ec7b7b5a586e4bbadd7364821bd07d5631c9e458b5b4
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/pGvrXBcYQ8qWodwbV4ZXYQ/zh-cn_image_0000002589244695.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053132Z&HW-CC-Expire=86400&HW-CC-Sign=17FD60E422CA1371B8B50AB90188BF79C12471D28720E0030EA860CA2C86FD7E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/pGvrXBcYQ8qWodwbV4ZXYQ/zh-cn_image_0000002589244695.jpg)
 
 ## 接口说明
 
@@ -34,11 +34,11 @@ content_hash: sha256:d7ae47e0fa2ccf7ec7b7b5a586e4bbadd7364821bd07d5631c9e458b5b4
 
 **图1** 旧密码认证
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/u10Cnz4nRoev1gYzeDaXTg/zh-cn_image_0000002558764890.png?HW-CC-KV=V1&HW-CC-Date=20260429T053132Z&HW-CC-Expire=86400&HW-CC-Sign=89AC82D75E6422FFEFA6653DE0D849F5F23532FD02BD01255DBE7FEB9C00725C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/u10Cnz4nRoev1gYzeDaXTg/zh-cn_image_0000002558764890.png)
 
 **图2** 新密码设置
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/8GDPItY2RYOhrjnbILfHUg/zh-cn_image_0000002558605234.png?HW-CC-KV=V1&HW-CC-Date=20260429T053132Z&HW-CC-Expire=86400&HW-CC-Sign=3EEF80AF3532BC2F99C577BC1E1A46735EE9364E6E9786B587F4CDF8959B0E12)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/8GDPItY2RYOhrjnbILfHUg/zh-cn_image_0000002558605234.png)
 
 ## 开发步骤
 

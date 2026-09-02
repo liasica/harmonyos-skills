@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > UI Design Kit（UI设计套件） > 组件�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:30:20+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:c494fb8e951550db84cbe8a533b56a5e2aeb7eb04930d7e3e592a5a452ce7007
+content_hash: sha256:a29cfabab0d1ad4e5c6e70fd1b2d4e75008a1ed5628bb5905e88f6dab823ca90
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:c494fb8e951550db84cbe8a533b56a5e2aeb7eb04930d7e3e592a5a452c
 
 当应用开发者需要在导航组件菜单项右上角附加消息提醒时，可以通过设置标题栏菜单中的[badge](../harmonyos-references/ui-design-hdsnavigation.md#hdsnavigationbadgeiconoptions)属性，实现信息提醒能力。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/9Q3JDZwlS32h40XEf1Icow/zh-cn_image_0000002589324701.png?HW-CC-KV=V1&HW-CC-Date=20260429T053019Z&HW-CC-Expire=86400&HW-CC-Sign=708B68233AF7ABE8D53A49A7733CF2059DB8374D136435D97B4A2C6DB26EDAEB "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/9Q3JDZwlS32h40XEf1Icow/zh-cn_image_0000002589324701.png "点击放大")
 
 ## 开发步骤
 

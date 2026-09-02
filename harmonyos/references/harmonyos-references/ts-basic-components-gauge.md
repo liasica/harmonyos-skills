@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:52:20+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:1a8b2348722bc264d4147c2bb67d2de52fc015a9b713aa0f0b668001ba1d3f91
+content_hash: sha256:bf17f3f0272c6339b116504c49fb4fb5ac118e6e5af221780b52d4fd69c6cf12
 ---
 
 数据量规图表组件，用于将数据展示为环形图表。
@@ -396,7 +396,7 @@ PhonePC/2in1TabletTVWearable
 60. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/JpqyfJCmQjai3f2oUpQjTQ/zh-cn_image_0000002589326297.png?HW-CC-KV=V1&HW-CC-Date=20260429T055217Z&HW-CC-Expire=86400&HW-CC-Sign=4E62D99786729EF6E09A2EB66448EF6FE8A8D150267B9A30363C43E7537EBC1C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/JpqyfJCmQjai3f2oUpQjTQ/zh-cn_image_0000002589326297.png)
 
 ### 示例2（设置单色量规图）
 
@@ -440,7 +440,7 @@ PhonePC/2in1TabletTVWearable
 35. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/hZBQm44ERQOQW3JWohQJMQ/zh-cn_image_0000002589246239.png?HW-CC-KV=V1&HW-CC-Date=20260429T055217Z&HW-CC-Expire=86400&HW-CC-Sign=5E1675DA4731091EC71486BD325F2765E670EFF7C7FB505A3B0DFDCB25D1B41D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/hZBQm44ERQOQW3JWohQJMQ/zh-cn_image_0000002589246239.png)
 
 ### 示例3（设置定制说明区）
 
@@ -502,7 +502,7 @@ PhonePC/2in1TabletTVWearable
 53. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/qEPQqrU8QoCbL0szO-QVbQ/zh-cn_image_0000002558766432.png?HW-CC-KV=V1&HW-CC-Date=20260429T055217Z&HW-CC-Expire=86400&HW-CC-Sign=1E40D0E32A370EF2C754C399BE5519393B8DF11B7975156599DC9D49717893A0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/qEPQqrU8QoCbL0szO-QVbQ/zh-cn_image_0000002558766432.png)
 
 ### 示例4（设置辅助区）
 
@@ -557,7 +557,7 @@ PhonePC/2in1TabletTVWearable
 46. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/AnlUh6wfSceVQURyzGYP7g/zh-cn_image_0000002558606772.png?HW-CC-KV=V1&HW-CC-Date=20260429T055217Z&HW-CC-Expire=86400&HW-CC-Sign=80E2BB1ACE4F3354FF9699FA178977401E7280A57C4CCE144F72B4ED43383A1A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/AnlUh6wfSceVQURyzGYP7g/zh-cn_image_0000002558606772.png)
 
 ### 示例5（设置最大最小值）
 
@@ -599,7 +599,7 @@ PhonePC/2in1TabletTVWearable
 33. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/kRYLdCY2TCii3U0D-QhWFA/zh-cn_image_0000002589326299.png?HW-CC-KV=V1&HW-CC-Date=20260429T055217Z&HW-CC-Expire=86400&HW-CC-Sign=DF3681B380B273BB0A98701CF0FB702E05F2E5A63F689CB69B3BB4A3326571B3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/kRYLdCY2TCii3U0D-QhWFA/zh-cn_image_0000002589326299.png)
 
 ### 示例6（设置指针）
 
@@ -647,7 +647,7 @@ PhonePC/2in1TabletTVWearable
 39. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/r52CpyRES92uZsavs42egg/zh-cn_image_0000002589246241.png?HW-CC-KV=V1&HW-CC-Date=20260429T055217Z&HW-CC-Expire=86400&HW-CC-Sign=641A4CFB8C8474C61A8C1A07F82E7D6FBDB93EC11E00E60A3BD13D8AA86A3A40)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/r52CpyRES92uZsavs42egg/zh-cn_image_0000002589246241.png)
 
 ### 示例7（设置起止角度）
 
@@ -687,7 +687,7 @@ PhonePC/2in1TabletTVWearable
 31. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/iygslJbDRtWECJduOGYoZQ/zh-cn_image_0000002558766434.png?HW-CC-KV=V1&HW-CC-Date=20260429T055217Z&HW-CC-Expire=86400&HW-CC-Sign=8EA0C8D1FBC4BE6946E25609E03BE571EBCCFDB68AA2A7281EEF69576353A18A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/iygslJbDRtWECJduOGYoZQ/zh-cn_image_0000002558766434.png)
 
 ### 示例8（设置定制内容区）
 
@@ -770,7 +770,7 @@ PhonePC/2in1TabletTVWearable
 74. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/Rr10KU1aRXKOY3-H_qcl2w/zh-cn_image_0000002558606774.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055217Z&HW-CC-Expire=86400&HW-CC-Sign=42AC824F3BBB76FBA82BA27C83BD42ACB7DDFEE1C5FF2EDFF47AE7C1E9A5EE4C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/Rr10KU1aRXKOY3-H_qcl2w/zh-cn_image_0000002558606774.gif)
 
 ### 示例9（设置隐私隐藏）
 
@@ -801,7 +801,7 @@ PhonePC/2in1TabletTVWearable
 22. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/pRML3uXhQLumYys9DJtVZQ/zh-cn_image_0000002589326301.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055217Z&HW-CC-Expire=86400&HW-CC-Sign=CB41B5318B5D6B5C74EBBDA03806C4E9240B76CE2B34F4D97C0B4C4036293758)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/pRML3uXhQLumYys9DJtVZQ/zh-cn_image_0000002589326301.gif)
 
 ### 示例10（设置自定义指针）
 
@@ -836,4 +836,4 @@ PhonePC/2in1TabletTVWearable
 5. </svg>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/77iGdxzRTq6QuQLYLXrQQg/zh-cn_image_0000002589246243.png?HW-CC-KV=V1&HW-CC-Date=20260429T055217Z&HW-CC-Expire=86400&HW-CC-Sign=EF9054ED32585CFA384E5491B4B8925D7CDF2C77EF5391123E195646DC210AC6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/77iGdxzRTq6QuQLYLXrQQg/zh-cn_image_0000002589246243.png)

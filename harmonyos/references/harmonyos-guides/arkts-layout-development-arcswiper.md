@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:27:50+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:f40acbce75b44248380ef4265b7dba9fdee817613b66196a724088df6816ebbe
+content_hash: sha256:f48dc83a2f0bbe4b8a348756e54deb22d88bc0ee5d25798fbc0714a81d7ea0b4
 ---
 
 ArcSwiper是弧形轮播组件，在圆形屏幕场景下使用，提供弧形轮播显示能力。具体用法请参考[ArcSwiper](../harmonyos-references/ts-container-arcswiper.md)。
@@ -59,7 +59,7 @@ ArcSwiper提供了默认的弧形导航点样式，导航点默认显示在ArcSw
 
   [ArcSwiperStyles.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ScrollableComponent/entry/src/main/ets/pages/arcSwiper/ArcSwiperStyles.ets#L36-L59)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/BcO4ypvASzGS2YXT8PQoNg/zh-cn_image_0000002558764362.png?HW-CC-KV=V1&HW-CC-Date=20260429T052749Z&HW-CC-Expire=86400&HW-CC-Sign=922AE1126349EA17452985B6329089C7D3F3BCF3FF30BE7345E5A32032364F27)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/BcO4ypvASzGS2YXT8PQoNg/zh-cn_image_0000002558764362.png)
 * 自定义导航点样式
 
   导航点位于ArcSwiper组件6点钟方向，导航点颜色设为红色，被选中导航点颜色为蓝色。
@@ -78,7 +78,7 @@ ArcSwiper提供了默认的弧形导航点样式，导航点默认显示在ArcSw
 
   [ArcSwiperStyles.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ScrollableComponent/entry/src/main/ets/pages/arcSwiper/ArcSwiperStyles.ets#L63-L94)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/zOgE3hW6Tv-kEedq_CX3Jg/zh-cn_image_0000002558604706.png?HW-CC-KV=V1&HW-CC-Date=20260429T052749Z&HW-CC-Expire=86400&HW-CC-Sign=854A0A0D6125830AD0625D23EBFCB5B683F95D9E7DFE8695A0782DD878B6B76E)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/zOgE3hW6Tv-kEedq_CX3Jg/zh-cn_image_0000002558604706.png)
 
 ## 控制页面切换方式
 
@@ -157,7 +157,7 @@ ArcSwiper支持滑动手指、点击导航点、旋转表冠和控制控制器�
 
   [ArcSwiperToggle.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ScrollableComponent/entry/src/main/ets/pages/arcSwiper/ArcSwiperToggle.ets#L16-L143)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/yi-WYyV-SiKHhQ1Ij9ahTA/zh-cn_image_0000002589324231.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052749Z&HW-CC-Expire=86400&HW-CC-Sign=8BA6D7AA0E634F9956AAC1C6A795FEDCD0AB089B9F161C70FB73AE5C89B84F43)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/yi-WYyV-SiKHhQ1Ij9ahTA/zh-cn_image_0000002589324231.gif)
 * 旋转表冠翻页。
 
   ArcSwiper在获得焦点时能够响应旋转表冠的操作，用户可以通过旋转表冠来滑动ArcSwiper，从而浏览数据。
@@ -210,7 +210,7 @@ ArcSwiper支持水平和垂直方向上进行轮播，主要通过[vertical](../
 
   [ArcSwiperHorizontal.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ScrollableComponent/entry/src/main/ets/pages/arcSwiper/ArcSwiperHorizontal.ets#L31-L58)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/ovcMzPnhRgW-17m5k8uXdQ/zh-cn_image_0000002558764362.png?HW-CC-KV=V1&HW-CC-Date=20260429T052749Z&HW-CC-Expire=86400&HW-CC-Sign=3121F6252F12DD9C66A6F3E648B5AB12B0C45AA16BE7F527F8F919D8E989CDC8)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/ovcMzPnhRgW-17m5k8uXdQ/zh-cn_image_0000002558764362.png)
 * 设置垂直方向轮播，导航点设为3点钟方向。
 
   ```
@@ -224,7 +224,7 @@ ArcSwiper支持水平和垂直方向上进行轮播，主要通过[vertical](../
 
   [ArcSwiperVertical.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ScrollableComponent/entry/src/main/ets/pages/arcSwiper/ArcSwiperVertical.ets#L34-L62)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/5Kiw4w8OQcCcuOIHzwmG3g/zh-cn_image_0000002589244171.png?HW-CC-KV=V1&HW-CC-Date=20260429T052749Z&HW-CC-Expire=86400&HW-CC-Sign=D86410263EFDC2DA45A07124E58B583FE417D1B06E1CA7158090D74251FF9F69)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/5Kiw4w8OQcCcuOIHzwmG3g/zh-cn_image_0000002589244171.png)
 
 ## 自定义切换动画
 
@@ -295,7 +295,7 @@ ArcSwiper支持通过[customContentTransition](../harmonyos-references/ts-contai
 
 [ArcSwiperAction.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ScrollableComponent/entry/src/main/ets/pages/arcSwiper/ArcSwiperAction.ets#L16-L93)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/OYVow7YET5ylX7AdERi0Ng/zh-cn_image_0000002558764364.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052749Z&HW-CC-Expire=86400&HW-CC-Sign=B8203074AEE6B798737BDA537D7F975694F5F1DA7B85C8BE02C1ECA7EA8A341F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/OYVow7YET5ylX7AdERi0Ng/zh-cn_image_0000002558764364.gif)
 
 ## 实现侧滑返回
 
@@ -359,4 +359,4 @@ ArcSwiper的滑动事件会与侧滑返回冲突，可以通过[onGestureRecogni
 
 [ArcSwiperSideSlip.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ScrollableComponent/entry/src/main/ets/pages/arcSwiper/ArcSwiperSideSlip.ets#L16-L86)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/Bsq63anJSQ606k3dl4-EJg/zh-cn_image_0000002558604708.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052749Z&HW-CC-Expire=86400&HW-CC-Sign=6339438635EF36E9FAA73AE672107D5D0CF5CACF9FF3C0EB69F3D7A0A0731428)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/Bsq63anJSQ606k3dl4-EJg/zh-cn_image_0000002558604708.gif)

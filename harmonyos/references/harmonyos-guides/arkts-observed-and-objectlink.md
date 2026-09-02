@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-observed-and-objectlink
-title: @Observed装饰器和@ObjectLink装饰器：嵌套类对象属性变化
+title: "@Observed装饰器和@ObjectLink装饰器：嵌套类对象属性变化"
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理（V1） > 管理组件拥有的状态 > @Observed装饰器和@ObjectLink装饰器：嵌套类对象属性变化
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:27:14+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:da3e4a33e6dc0218e4523d863f6f4a7b902e8745966b04ccb2b1aadf3a025285
+content_hash: sha256:a47ceb531e97a3ef6679e5fcf40e3c3e057c8f228de57442eaf6c84e40a4629b
 ---
 
 上文所述的装饰器（包括[@State](arkts-state.md)、[@Prop](arkts-prop.md)、[@Link](arkts-link.md)、[@Provide和@Consume](arkts-provide-and-consume.md)装饰器）仅能观察到第一层的变化，但是在实际应用开发中，应用会根据开发需要，封装自己的数据模型。对于多层嵌套的情况，比如二维数组、对象数组、嵌套类场景，无法观察到第二层的属性变化。因此，为了实现对嵌套数据结构中深层属性变化的观察，引入了@Observed和@ObjectLink装饰器。
@@ -67,7 +67,7 @@ content_hash: sha256:da3e4a33e6dc0218e4523d863f6f4a7b902e8745966b04ccb2b1aadf3a0
 
 **图1** 初始化规则图示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/jb_mThRvQpqS9K8F_hvgtw/zh-cn_image_0000002589323963.png?HW-CC-KV=V1&HW-CC-Date=20260429T052712Z&HW-CC-Expire=86400&HW-CC-Sign=DD421B9A3CD2E0402BE6DF6494E0BA5E4713E460DC6A03EC7FC48E5241381B55)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/jb_mThRvQpqS9K8F_hvgtw/zh-cn_image_0000002589323963.png)
 
 ## 观察变化和行为表现
 
@@ -426,7 +426,7 @@ API version 19之前，如果需要观察嵌套场景的变化，如嵌套类，
 
 [NestedObject.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/arktsobservedandobjectlink/entry/src/main/ets/pages/objectLinkusagescenarios/NestedObject.ets#L15-L79)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/5-vIhCk8T5CQW7kwzvJRLA/zh-cn_image_0000002589243903.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052712Z&HW-CC-Expire=86400&HW-CC-Sign=91DDDDBEC5E50C6EE5365C6CA44E49F3E3289CE28E2630F862EEE8BB0D2F6216)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/5-vIhCk8T5CQW7kwzvJRLA/zh-cn_image_0000002589243903.gif)
 
 上述示例中：
 
@@ -537,7 +537,7 @@ NextID是用来在[ForEach循环渲染](arkts-rendering-control-foreach.md)过�
 
 [ObjectArray.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/arktsobservedandobjectlink/entry/src/main/ets/pages/objectLinkusagescenarios/ObjectArray.ets#L15-L107)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/TA8aTVCxSUejNzMUPwTi0Q/zh-cn_image_0000002558764096.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052712Z&HW-CC-Expire=86400&HW-CC-Sign=9BBCC1E972329FE082D48A117C8444DEC2364D050B0A725D9229793A9ED15A1B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/TA8aTVCxSUejNzMUPwTi0Q/zh-cn_image_0000002558764096.gif)
 
 * this.arrA[Math.floor(this.arrA.length/2)] = new Info(..) ：该状态变量的改变触发2次更新：
 
@@ -698,7 +698,7 @@ API version 19及以后，@ObjectLink也可以被[makeV1Observed](../harmonyos-r
 
 [CompleteExampleTwoDimensionalArray.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/arktsobservedandobjectlink/entry/src/main/ets/pages/objectLinkusagescenarios/CompleteExampleTwoDimensionalArray.ets#L15-L73)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/aCKIneXRQoSmdimR06PCeg/zh-cn_image_0000002558604440.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052712Z&HW-CC-Expire=86400&HW-CC-Sign=00674AF346B5AFE35673FF6D3341C16145AE7DC5DA6BB525D4EFBD7B4493856B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/aCKIneXRQoSmdimR06PCeg/zh-cn_image_0000002558604440.gif)
 
 ### 继承Map类
 
@@ -796,7 +796,7 @@ API version 19及以后，@ObjectLink也可以被[makeV1Observed](../harmonyos-r
 
 [InheritFromMapClass.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/arktsobservedandobjectlink/entry/src/main/ets/pages/objectLinkusagescenarios/InheritFromMapClass.ets#L15-L99)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/7ZzNl04DQP6Ddv_ttQFCIw/zh-cn_image_0000002589323965.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052712Z&HW-CC-Expire=86400&HW-CC-Sign=A5287C03E36D37D747DC80AF778C6247A1D5C240A04C55500E0AD4DBC6DDCC36)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/7ZzNl04DQP6Ddv_ttQFCIw/zh-cn_image_0000002589323965.gif)
 
 ### 继承Set类
 
@@ -886,7 +886,7 @@ API version 19及以后，@ObjectLink也可以被[makeV1Observed](../harmonyos-r
 
 [InheritFromSetClass.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/arktsobservedandobjectlink/entry/src/main/ets/pages/objectLinkusagescenarios/InheritFromSetClass.ets#L15-L91)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/qShI7X5qRRGNkPMQDFTE7w/zh-cn_image_0000002589243905.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052712Z&HW-CC-Expire=86400&HW-CC-Sign=30326E951397455A66F049290D1D98A41F6C9DFE9E9EC5E98504BBBD240D44B3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/qShI7X5qRRGNkPMQDFTE7w/zh-cn_image_0000002589243905.gif)
 
 ### ObjectLink支持联合类型
 
@@ -982,7 +982,7 @@ API version 19及以后，@ObjectLink也可以被[makeV1Observed](../harmonyos-r
 
 [ObjectLinkSupportsUnionTypes.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/arktsobservedandobjectlink/entry/src/main/ets/pages/objectLinkusagescenarios/ObjectLinkSupportsUnionTypes.ets#L15-L102)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/50cWy7oWTzqJeVeHgiqwFA/zh-cn_image_0000002558764098.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052712Z&HW-CC-Expire=86400&HW-CC-Sign=CE554D18B19646A6B1198A675A153D612C6BC5F80F6277F2AA75870A9E3B1FCC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/50cWy7oWTzqJeVeHgiqwFA/zh-cn_image_0000002558764098.gif)
 
 ## 常见问题
 
@@ -1558,7 +1558,7 @@ incrSubCounter和setSubCounter都是同一个SubCounter的函数。在第一个�
 
 上面的示例关系如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/b2u59-lMQDWcYkikHlMkTw/zh-cn_image_0000002558604442.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T052712Z&HW-CC-Expire=86400&HW-CC-Sign=C424A039F55D7838ACFABD0D2F9D7EA2BD678D55E95DF590FB231E242FFCA9AA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/b2u59-lMQDWcYkikHlMkTw/zh-cn_image_0000002558604442.jpg)
 
 ### 在@Observed装饰类的构造函数中延时更改成员变量
 
@@ -1842,7 +1842,7 @@ incrSubCounter和setSubCounter都是同一个SubCounter的函数。在第一个�
 30. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/D6wKNCppT6qrm9g-_CvDQA/zh-cn_image_0000002589323967.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052712Z&HW-CC-Expire=86400&HW-CC-Sign=F508B919397CFB704EC356FCEF0B9F319219297D7B2D9C877F1F66F7D1FF5B97)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/D6wKNCppT6qrm9g-_CvDQA/zh-cn_image_0000002589323967.gif)
 
 ### LazyForEach和@ObjectLink一起使用时，替换数组数据后UI不刷新
 
@@ -2127,4 +2127,4 @@ incrSubCounter和setSubCounter都是同一个SubCounter的函数。在第一个�
 140. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/fOC1X8uNTyeLsL_NkcoA3g/zh-cn_image_0000002589243907.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052712Z&HW-CC-Expire=86400&HW-CC-Sign=BA19A854B0A68EC6197FB2C7AF5710BEC493FE69CB11C4F9CB70A4734B063028)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/fOC1X8uNTyeLsL_NkcoA3g/zh-cn_image_0000002589243907.gif)

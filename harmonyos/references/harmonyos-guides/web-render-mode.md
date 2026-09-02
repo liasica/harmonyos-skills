@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > Web渲染和布局 >
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:29:15+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:ba1d91d46ba06b95b30a7935aedd83bea5748fd66d2057457d3e9deb5d53951a
+content_hash: sha256:1bab10c72dae69983d9afea488d748c2b375864557d3d509d951ea04ec4543c4
 ---
 
 Web组件提供了两种可配置的渲染模式，能够根据不同的容器大小进行适配，从而满足使用场景中对容器尺寸的需求。
@@ -21,7 +21,7 @@ Web组件提供了两种可配置的渲染模式，能够根据不同的容器�
 
 **图一 异步渲染模式场景**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/21qu5l-9T02C_Or-FUpwGQ/zh-cn_image_0000002558764700.png?HW-CC-KV=V1&HW-CC-Date=20260429T052915Z&HW-CC-Expire=86400&HW-CC-Sign=EBB50118F2B42516060C77ADADEAEEBB78CECF35586AEC7F1277AB8E948E46C0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/21qu5l-9T02C_Or-FUpwGQ/zh-cn_image_0000002558764700.png)
 
 ## 同步渲染模式
 
@@ -34,7 +34,7 @@ Web组件提供了两种可配置的渲染模式，能够根据不同的容器�
 
 **图二 同步渲染模式场景**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/Wswv2tFVQUOHW0iWQtGwig/zh-cn_image_0000002558605046.png?HW-CC-KV=V1&HW-CC-Date=20260429T052915Z&HW-CC-Expire=86400&HW-CC-Sign=3A57BC97A425476FB43B10EB1392CE6049626C1BBFBA61497BEF9CB4E02C8D07)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/Wswv2tFVQUOHW0iWQtGwig/zh-cn_image_0000002558605046.png)
 
 ## 示例代码
 

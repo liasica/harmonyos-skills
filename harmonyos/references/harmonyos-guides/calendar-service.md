@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用服务 > Calendar Kit（日历服务） > 注册并�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:37:35+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:d0d50bfc998aba2f8ea401ac25c192b6ee7f0b8f1239fac0b532b20b883f6aae
+content_hash: sha256:e2f2b06941fb32c5cd919714b5ebbb6ae526f1f2c8d0405e04eb919b6d4699f3
 ---
 
 ## 场景介绍
@@ -20,24 +20,24 @@ Calendar Kit提供日程一键服务功能，比如一键入会、一键追剧�
 
    选择团队账号，点击编辑，为对应的账号添加权限。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/zD1DFdLUSEyqLFP4nCZdRA/zh-cn_image_0000002558605658.png?HW-CC-KV=V1&HW-CC-Date=20260429T053733Z&HW-CC-Expire=86400&HW-CC-Sign=F31AA24A9C364EF7510D7A1F0C9DE671AE721AA32846A02B881920F9A3B06CED)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/zD1DFdLUSEyqLFP4nCZdRA/zh-cn_image_0000002558605658.png)
 
    确认对应的信息后，点击下一步。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/fOyJCEAMSvChZ7dekDty0g/zh-cn_image_0000002589325185.png?HW-CC-KV=V1&HW-CC-Date=20260429T053733Z&HW-CC-Expire=86400&HW-CC-Sign=D86BDC4059F39AF657B73ED3D8A3D30FBAA32B04FD452CF7EB63991446AF98ED)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/fOyJCEAMSvChZ7dekDty0g/zh-cn_image_0000002589325185.png)
 
    勾选小艺开放平台管理员，选择下一步。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/Yf_y4EYsQQy63uKP_6zj4w/zh-cn_image_0000002589245121.png?HW-CC-KV=V1&HW-CC-Date=20260429T053733Z&HW-CC-Expire=86400&HW-CC-Sign=20839E371908E4A5BC974140177BC72944ADFF572461FD36418934969124F565)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/Yf_y4EYsQQy63uKP_6zj4w/zh-cn_image_0000002589245121.png)
 2. 登录成功后，在侧边栏菜单中**生态服务**下选择**智慧服务**，点击进入**小艺开放平台**。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/zNFO3TQjTXWif0R50vWIsg/zh-cn_image_0000002558765316.png?HW-CC-KV=V1&HW-CC-Date=20260429T053733Z&HW-CC-Expire=86400&HW-CC-Sign=E75AA4415A35DF594A4A2F9488226D98F3F0FC6D47C7126D15CD17B243BBB210)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/zNFO3TQjTXWif0R50vWIsg/zh-cn_image_0000002558765316.png)
 3. 进入页面后，选择右侧**资源管理**，点击选择**其他服务**。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/akIIQc_4RGe5UkLm2r9l7A/zh-cn_image_0000002558605660.png?HW-CC-KV=V1&HW-CC-Date=20260429T053733Z&HW-CC-Expire=86400&HW-CC-Sign=6A69B6070B068A06F6C30DFB5F73BBB69B5329E3B3076FFB8ECE59F571A6950E)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/akIIQc_4RGe5UkLm2r9l7A/zh-cn_image_0000002558605660.png)
 4. 进入页面后，点击右侧**创建服务**按钮。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/_Ri4kq1OSsKctBOkJ8twuQ/zh-cn_image_0000002589325187.png?HW-CC-KV=V1&HW-CC-Date=20260429T053733Z&HW-CC-Expire=86400&HW-CC-Sign=F381BA3D70157F3703523A5E420041FB7EDAFE81192978C73F5D0A53EF20F0A3)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/_Ri4kq1OSsKctBOkJ8twuQ/zh-cn_image_0000002589325187.png)
 5. 选择服务模型。
 
    选择**自定义模型**，填写**服务名称**、**服务分类**、**默认语言**，点击**创建**按钮。
@@ -48,7 +48,7 @@ Calendar Kit提供日程一键服务功能，比如一键入会、一键追剧�
 
    **默认语言**：由开发者根据业务选择配置。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/Rc1QXGKJTUKyEMI95eNkCw/zh-cn_image_0000002589245123.png?HW-CC-KV=V1&HW-CC-Date=20260429T053733Z&HW-CC-Expire=86400&HW-CC-Sign=AB78A66108A3E32B9B929488C3B58E614D06D6F9190D52D83F83F99118287EB0)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/Rc1QXGKJTUKyEMI95eNkCw/zh-cn_image_0000002589245123.png)
 6. 创建完成后，填写服务的**基本信息**，点击**保存**按钮。
 
    **服务分类**：选择实用工具/日历。
@@ -57,24 +57,24 @@ Calendar Kit提供日程一键服务功能，比如一键入会、一键追剧�
 
    **服务分级**：由开发者根据业务选择配置。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/TTYQmd-OQ9ejSNRJmFhVRw/zh-cn_image_0000002558765318.png?HW-CC-KV=V1&HW-CC-Date=20260429T053733Z&HW-CC-Expire=86400&HW-CC-Sign=F813983C46F4D32D6DCF31A1FE9D33C8805D2B2C86AF4AE54513C8719AE0EE88)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/TTYQmd-OQ9ejSNRJmFhVRw/zh-cn_image_0000002558765318.png)
 7. 填写**服务呈现信息**，点击**保存**按钮。
 
    此页面必填字段均由开发者根据业务选择配置。建议在服务预览处上传用户界面示意图。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/qZRG85RySFaNtQVUzmifIQ/zh-cn_image_0000002558605662.png?HW-CC-KV=V1&HW-CC-Date=20260429T053733Z&HW-CC-Expire=86400&HW-CC-Sign=5B9035DDF0C86C5C3E797D2149B24279D2F02551DADE9D08B4AD0E752B57E7E6)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/qZRG85RySFaNtQVUzmifIQ/zh-cn_image_0000002558605662.png)
 8. 进入**配置**，选择**新增用户意图**。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/NPytmvSsRk-mnXJm1S7ZAQ/zh-cn_image_0000002589325189.png?HW-CC-KV=V1&HW-CC-Date=20260429T053733Z&HW-CC-Expire=86400&HW-CC-Sign=832318A68447E5AAC859918DF7EE16A31933FBCA07034CF7A9F0C43ADB84DD74)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/NPytmvSsRk-mnXJm1S7ZAQ/zh-cn_image_0000002589325189.png)
 9. 配置意图。
 
    1. 设置**意图标识**、**意图名称**和**意图分类**，勾选一键服务。意图分类选择“查日历”。
    2. 勾选一键服务之后，选择**服务类型**（请与Calendar Kit提供的日程服务类型[ServiceType](../harmonyos-references/js-apis-calendarmanager.md#servicetype)一致），点击**添加关联**按钮，输入**app包名**及**app名称**（请确保app包名及app名称准确匹配，否则一键服务无法生效）。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/HX_3Nuo3QBuJIJ_faK7OwA/zh-cn_image_0000002589245125.png?HW-CC-KV=V1&HW-CC-Date=20260429T053733Z&HW-CC-Expire=86400&HW-CC-Sign=C746F98F9A7AB37A815E8F36F0B4DD1ACC4C563FB1840D4FDD0F536CBA6FCE0A)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/HX_3Nuo3QBuJIJ_faK7OwA/zh-cn_image_0000002589245125.png)
 10. 配置意图的**实现类型**，选择**APK/RPK/FA/H5 link**，选择**新增实现**，点击**配置**按钮。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/tXXvPOs8QGmQrfL4DDLQyA/zh-cn_image_0000002558765320.png?HW-CC-KV=V1&HW-CC-Date=20260429T053733Z&HW-CC-Expire=86400&HW-CC-Sign=FF30528C8737F0DC413F426C900E971F11E4FB082D2A019769A39C68D2C71926)
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/tXXvPOs8QGmQrfL4DDLQyA/zh-cn_image_0000002558765320.png)
 11. 进入新增实现页面，填写**基本信息**和**配置方式**后，选择**保存**。
 
     1. 填写基本信息。实现名称由开发者根据业务自定义，推荐使用“应用名+一键服务类型”命名。
@@ -90,16 +90,16 @@ Calendar Kit提供日程一键服务功能，比如一键入会、一键追剧�
 
        其他必填字段，由开发者根据业务自行配置。
 
-       ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/y_XU4c0FTze6s3VFmGpUqQ/zh-cn_image_0000002558605664.png?HW-CC-KV=V1&HW-CC-Date=20260429T053733Z&HW-CC-Expire=86400&HW-CC-Sign=9CC168ECD647A64D512D8245A9D4524F4BBA83C1EB39B3CBF123963B5188BA6E)
+       ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/y_XU4c0FTze6s3VFmGpUqQ/zh-cn_image_0000002558605664.png)
 
-       ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/PGeautyiStqQzEBhZb1VXg/zh-cn_image_0000002589325191.png?HW-CC-KV=V1&HW-CC-Date=20260429T053733Z&HW-CC-Expire=86400&HW-CC-Sign=204E342002893EA6DF00DFABF0254818E7552B6E4296B9074E21426C4A1C3AFC)
+       ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/PGeautyiStqQzEBhZb1VXg/zh-cn_image_0000002589325191.png)
 12. 完成以上所有配置后，切换到**发布**模块，点击**上架**按钮，等待后台审核后，完成意图发布。
 
 说明
 
 若已完成上架的服务，支持根据上文步骤再次调整修改，修改完成后，点击**升级**。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/xe9J1sCcQJCk3z8wGOsOOA/zh-cn_image_0000002589245127.png?HW-CC-KV=V1&HW-CC-Date=20260429T053733Z&HW-CC-Expire=86400&HW-CC-Sign=B4CB98EE99AAA23BDB6FECEC3F1FC64DC37ADB4ADB541429D31A965EA1A76D60)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/xe9J1sCcQJCk3z8wGOsOOA/zh-cn_image_0000002589245127.png)
 
 ## 客户端添加一键服务日程
 

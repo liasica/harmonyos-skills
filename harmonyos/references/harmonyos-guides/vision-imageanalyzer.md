@@ -5,7 +5,7 @@ breadcrumb: 指南 > AI > Vision Kit（场景化视觉服务） > AI识图
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:43:51+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:24cdfd69999e25ff991154fb426023fcc3189c700718fa643207d5260dc1a3f2
+content_hash: sha256:2815dde908cf54cab6d0bb233b75d48724967c16fe8b4b0721cfce411f46514c
 ---
 
 ## 场景介绍
@@ -34,7 +34,7 @@ AI识图是通过聚合OCR（Optical Character Recognition）、主体分割、�
 
 **图1** AI识图示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/QWrhkEZcQNqaDj74QkSyoA/zh-cn_image_0000002589325725.png?HW-CC-KV=V1&HW-CC-Date=20260429T054156Z&HW-CC-Expire=86400&HW-CC-Sign=3452D8656F1AC0F14E35D001063FF6BC7AB3924AC5C721655FFEDE4E00F34D6C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/QWrhkEZcQNqaDj74QkSyoA/zh-cn_image_0000002589325725.png)
 
 ## 约束与限制
 

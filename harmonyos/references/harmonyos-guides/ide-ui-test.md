@@ -5,7 +5,7 @@ breadcrumb: 指南 > 编写与调试应用 > 开发自测试 > 测试框架 > �
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:47:00+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:8f695b4c6c0edf4e5f69e35bf477794923e4aafe740e5f8ab52c58966c660096
+content_hash: sha256:0f014335d7a92a44f0f237974a0dc32d02414d0344c855c0d14b355cfbeb708c
 ---
 
 DevEco Studio支持黑盒覆盖率测试，不需要开发测试用例，将编译插桩的HAP包推到设备上，然后对该应用/元服务模拟用户操作，测试完成后可生成覆盖率报告，当前仅支持Stage模型。
@@ -26,7 +26,7 @@ DevEco Studio支持黑盒覆盖率测试，不需要开发测试用例，将编�
 
 该功能从DevEco Studio 5.1.0 Release版本开始支持。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/8jSaf12gQoiAJXNgWSeMIw/zh-cn_image_0000002530752874.png?HW-CC-KV=V1&HW-CC-Date=20260429T054657Z&HW-CC-Expire=86400&HW-CC-Sign=B88D6F1322D07AB9CBF81363B153FCACD8DEC6E8B7EDCAC50B669F6C376B89F0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/8jSaf12gQoiAJXNgWSeMIw/zh-cn_image_0000002530752874.png)
 
 coverage-filter.json5文件包含以下参数。
 
@@ -68,8 +68,8 @@ coverage-filter.json5文件包含以下参数。
      + 调试场景下，该配置不生效，运行的是未插桩的应用。
      + attach调试和等待调试场景下，该配置会导致断点不准确，建议取消该配置。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/WfmUkJdlTMaKAk6ehEeJuA/zh-cn_image_0000002530752878.png?HW-CC-KV=V1&HW-CC-Date=20260429T054657Z&HW-CC-Expire=86400&HW-CC-Sign=BD03C5235981F1E6CDBF4670316D0C98D111E34DD195C9CEE10F24DC7D026A4B)
-  2. 点击工具栏![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/slysgH1eQTSAq1sc38PAkg/zh-cn_image_0000002561752825.png?HW-CC-KV=V1&HW-CC-Date=20260429T054657Z&HW-CC-Expire=86400&HW-CC-Sign=6330485E9245C62F8361BADC52C015B3C1FB8B233165D1824FDB7A2E4CE04D0A)，DevEco Studio会启动编译插桩，并推包安装到设备上。
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/WfmUkJdlTMaKAk6ehEeJuA/zh-cn_image_0000002530752878.png)
+  2. 点击工具栏![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/slysgH1eQTSAq1sc38PAkg/zh-cn_image_0000002561752825.png)，DevEco Studio会启动编译插桩，并推包安装到设备上。
 * **方式二：通过命令行进行编译与安装**
   1. 执行hvigor插桩编译命令，编译后在{projectPath}/{moduleName}/.test/default/intermediates/ohosTest路径下会生成init\_coverage.json文件，供后续生成覆盖率报告使用。
 
@@ -78,7 +78,7 @@ coverage-filter.json5文件包含以下参数。
      ```
 
      + moduleName：执行测试的模块。
-     + targetName/productName：当前生效的target/product，可以通过点击DevEco Studio右上方![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/LlaY8oiAT9qE7a886r4edg/zh-cn_image_0000002561752809.png?HW-CC-KV=V1&HW-CC-Date=20260429T054657Z&HW-CC-Expire=86400&HW-CC-Sign=CEE03C745C7477ACFF0A469333FEECFA9532B68ED0B27CA6FB6578DA19F4D187)图标进行查看。
+     + targetName/productName：当前生效的target/product，可以通过点击DevEco Studio右上方![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/LlaY8oiAT9qE7a886r4edg/zh-cn_image_0000002561752809.png)图标进行查看。
 
      说明
 
@@ -151,7 +151,7 @@ coverage-filter.json5文件包含以下参数。
    在多模块相互跳转的场景下，需要取各模块的init\_coverage.json文件路径，与bjc\_cov\_yyyyMMdd\_HHmmss\_SSS.json文件通过#拼接生成coverageFile参数。
 3. 在本地找到报告文件路径并在浏览器中打开，查看代码覆盖率详情，关于覆盖率的计算方式请参考[查看覆盖率报告](ide-ui-test.md#section10394362109)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/oWiS-uMfQ-uzDKjE_sB93A/zh-cn_image_0000002530752880.png?HW-CC-KV=V1&HW-CC-Date=20260429T054657Z&HW-CC-Expire=86400&HW-CC-Sign=10CB1245ABB1E88A243C0BFD8069C1998D0DA31AE84E518276D9E5AB64092CF5)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/oWiS-uMfQ-uzDKjE_sB93A/zh-cn_image_0000002530752880.png)
 
 ## 查看覆盖率报告
 
@@ -166,7 +166,7 @@ coverage-filter.json5文件包含以下参数。
 
 * 行覆盖率（Lines）：每个可执行代码行是否都已执行。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/DoOD2_C-TBq-JlOzABrDqA/zh-cn_image_0000002530912884.png?HW-CC-KV=V1&HW-CC-Date=20260429T054657Z&HW-CC-Expire=86400&HW-CC-Sign=A3EFBF365D38ADC17895E7EAF02D0B06E7E4E24C5C605CB41DBE5999FA6A7F02)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/DoOD2_C-TBq-JlOzABrDqA/zh-cn_image_0000002530912884.png)
 
 以下是关于三个测量维度的细节说明：
 
@@ -241,7 +241,7 @@ coverage-filter.json5文件包含以下参数。
   + 绿色：语句/函数覆盖。
   + Nx：表示当前可执行代码行被执行了N次。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/QdAOlp4oRSyoOD1Q2NRrQg/zh-cn_image_0000002561832805.png?HW-CC-KV=V1&HW-CC-Date=20260429T054657Z&HW-CC-Expire=86400&HW-CC-Sign=3C75F8E8726E94AF60D2E91E3B16E8B34DF0C63C2F50E12C79BEDE1AA450C927)
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/QdAOlp4oRSyoOD1Q2NRrQg/zh-cn_image_0000002561832805.png)
 * **通过注释语法忽略指定代码**
 
   代码中的某些分支可能很难、甚至无法测试，DevEco Studio提供了instrument ignore \* 语法来进行忽略，使得某些代码不计入覆盖率。
@@ -378,7 +378,7 @@ coverage-filter.json5文件包含以下参数。
 
     - 如果方法内没有任何实现，是个空方法，则regions数组只有一个元素，即方法对应的代码区域，示例如下。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/z9MVRJahQpOWtpn2dKERTQ/zh-cn_image_0000002530912892.png?HW-CC-KV=V1&HW-CC-Date=20260429T054657Z&HW-CC-Expire=86400&HW-CC-Sign=B650B6AAC6C49C1526EE2DFCEFA2B40312B1FE8F06DB9A33E3FEC3D415B6BCD0)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/z9MVRJahQpOWtpn2dKERTQ/zh-cn_image_0000002530912892.png)
 
       ```
       1. {
@@ -402,7 +402,7 @@ coverage-filter.json5文件包含以下参数。
       ```
     - 如果方法内只有一个代码区域，则regions数组有两个元素，示例如下。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/DjXzyOHdTIOuBfyuNg3LQw/zh-cn_image_0000002530752892.png?HW-CC-KV=V1&HW-CC-Date=20260429T054657Z&HW-CC-Expire=86400&HW-CC-Sign=D71EA958A728F114DAFE53E89D532F1B462675C708531625D6144406EBCEFD66)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/DjXzyOHdTIOuBfyuNg3LQw/zh-cn_image_0000002530752892.png)
 
       ```
       1. {
@@ -438,7 +438,7 @@ coverage-filter.json5文件包含以下参数。
       ```
     - 如果方法内存在多个代码区域，则每新增一个代码区域，regions数组就增加一个元素，示例如下。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/2BEE0kF0RcmWY4-SCngOHg/zh-cn_image_0000002561832813.png?HW-CC-KV=V1&HW-CC-Date=20260429T054657Z&HW-CC-Expire=86400&HW-CC-Sign=76C589F82222FC0A9AE2ADC7829BE18C8CBA2E8C796243D78CE83E208BCC2155)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/2BEE0kF0RcmWY4-SCngOHg/zh-cn_image_0000002561832813.png)
 
       ```
       1. {
@@ -512,7 +512,7 @@ coverage-filter.json5文件包含以下参数。
 
     **示例一：**调用eeee(2)。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/2a6px50pT4eJGpaOgrgxhQ/zh-cn_image_0000002530752884.png?HW-CC-KV=V1&HW-CC-Date=20260429T054657Z&HW-CC-Expire=86400&HW-CC-Sign=CD01F3F163EA807DBEFE95118C7C796B1FA2E3F50F57A4A0C20B86C70E8DF578)
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/2a6px50pT4eJGpaOgrgxhQ/zh-cn_image_0000002530752884.png)
 
     ```
     1. {
@@ -596,7 +596,7 @@ coverage-filter.json5文件包含以下参数。
 
     **示例二：**调用bbb(2)和bbb(-1)，该方法触发两次。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/p4LEVgcfRka3TsvdlqPLwQ/zh-cn_image_0000002530912866.png?HW-CC-KV=V1&HW-CC-Date=20260429T054657Z&HW-CC-Expire=86400&HW-CC-Sign=89249545379A5E82E6178F2F5905E80774449F952B3DBF0834419FE8E0E4D287)
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/p4LEVgcfRka3TsvdlqPLwQ/zh-cn_image_0000002530912866.png)
 
     branches的0号元素，对应12行，trueCount和falseCount都为1，表示该行触发了两次，一次满足条件，一次不满条件。
 
@@ -657,7 +657,7 @@ coverage-filter.json5文件包含以下参数。
 
   exeLine记录了所有可执行行的行号，示例如下。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/X-HCnADaTOicd0ud_ZbgfA/zh-cn_image_0000002530752896.png?HW-CC-KV=V1&HW-CC-Date=20260429T054657Z&HW-CC-Expire=86400&HW-CC-Sign=A22CD8953E7824361713C0351C76816D9E5EB891A004D8CA0E7D56D2E3DFCA58)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/X-HCnADaTOicd0ud_ZbgfA/zh-cn_image_0000002530752896.png)
 
   生成的exeLine为：
 

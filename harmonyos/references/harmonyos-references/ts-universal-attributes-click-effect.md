@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:51:21+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:b1be0e93d1934b501749e6b85b33b3a47227c374e19bedf923a5eb652a740707
+content_hash: sha256:d6126fa9252a9b756ae5916119e09df8f5f161fce3e0be3242d1fa1a6019c2ad
 ---
 
 设置组件点击时的回弹效果。
@@ -153,4 +153,4 @@ PhonePC/2in1TabletTVWearable
 67. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/SNaMyonGQUSoK1XjkOI64Q/zh-cn_image_0000002558606388.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055120Z&HW-CC-Expire=86400&HW-CC-Sign=CFF33D46FC9AF4A089803E040B8D066BDC226294CF0240334D08A801AB2AF8F3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/SNaMyonGQUSoK1XjkOI64Q/zh-cn_image_0000002558606388.gif)

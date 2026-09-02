@@ -5,7 +5,7 @@ breadcrumb: 指南 > 基础入门 > 开发基础知识 > 应用程序包基础�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:25:30+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:f6a2f64e2e31453129ac4d12d5cbfed199cd05b5b227a8d95b9bf7cb78222c13
+content_hash: sha256:9175ea35276ace84b37d78c5e631fdc6d1141991d234460a0efafaec7a1d838e
 ---
 
 本章节介绍应用程序包的安装卸载流程和两种更新方式。
@@ -16,13 +16,13 @@ content_hash: sha256:f6a2f64e2e31453129ac4d12d5cbfed199cd05b5b227a8d95b9bf7cb782
 
 **图1** 应用程序包安装和卸载流程（开发者）
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/qNTFe7G6TaKBALv4l4QWbg/zh-cn_image_0000002589243773.png?HW-CC-KV=V1&HW-CC-Date=20260429T052529Z&HW-CC-Expire=86400&HW-CC-Sign=F63A263AEC05FE65367D765C6DC59BE183C03449961F4680D1451442F581A2EB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/qNTFe7G6TaKBALv4l4QWbg/zh-cn_image_0000002589243773.png)
 
 应用上架应用市场后，终端设备用户可在设备上通过应用市场安装应用。
 
 **图2** 应用程序包安装和卸载流程（终端设备用户）
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/_Kn-paEzS9GYPElizQkuNg/zh-cn_image_0000002558763968.png?HW-CC-KV=V1&HW-CC-Date=20260429T052529Z&HW-CC-Expire=86400&HW-CC-Sign=F3C19F7A36F671D4076B05661868DE1F00368E05CE83916F5095DB07D99E6F9D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/_Kn-paEzS9GYPElizQkuNg/zh-cn_image_0000002558763968.png)
 
 ## 应用程序包的更新
 

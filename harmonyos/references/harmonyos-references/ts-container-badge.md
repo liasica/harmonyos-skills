@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:52:20+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:0de9e167b05d2b4dd720bebc84f710728c1547d49b55392d5816e6842e78b87d
+content_hash: sha256:e7dda8dd5ce190ba4560eae8b2e56ddbaf75771b6a7fb23ec1d554f4f5640bc1
 ---
 
 信息标记组件，可以附加在单个组件上用于信息提醒的容器组件。
@@ -339,7 +339,7 @@ PhonePC/2in1TabletTVWearable
 150. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/rkec-47CSEaO0SSTkPR_ww/zh-cn_image_0000002589326293.png?HW-CC-KV=V1&HW-CC-Date=20260429T055216Z&HW-CC-Expire=86400&HW-CC-Sign=D8B823B6FE52442C786747C58034B30B38CEB56669334BB6B6491254364862EC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/rkec-47CSEaO0SSTkPR_ww/zh-cn_image_0000002589326293.png)
 
 ### 示例2（设置数字控制标记显隐）
 
@@ -377,7 +377,7 @@ PhonePC/2in1TabletTVWearable
 29. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/wCaf7KCRQ9C5g6pehu_7gg/zh-cn_image_0000002589246235.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055216Z&HW-CC-Expire=86400&HW-CC-Sign=ED96220C882AEB5DC26C22171C6855097F0534EC864D23A202DB99FD0C7685B3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/wCaf7KCRQ9C5g6pehu_7gg/zh-cn_image_0000002589246235.gif)
 
 ### 示例3（设置外描边和文本延伸方式）
 
@@ -427,4 +427,4 @@ PhonePC/2in1TabletTVWearable
 41. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/LF6VSgXtTqSE5H04iKZ5Uw/zh-cn_image_0000002558766428.png?HW-CC-KV=V1&HW-CC-Date=20260429T055216Z&HW-CC-Expire=86400&HW-CC-Sign=B1CDAAB4833B20C2BC0345127AB55B0881CB8FDF6F452024A81D9E2AD6579A50)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/LF6VSgXtTqSE5H04iKZ5Uw/zh-cn_image_0000002558766428.png)

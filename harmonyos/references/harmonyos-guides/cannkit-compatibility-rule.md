@@ -5,14 +5,14 @@ breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:42:59+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:a5ba15085d4284264383f69b2da68ecfe43e9415122cb96972b78e7dec08d216
+content_hash: sha256:a8f666bb845c01ab239290547a0ab35daa090b83ac8b0e546b7c6cf2bb29facf
 ---
 
 总体兼容性策略见表1 Ascend C API兼容策略，兼容性范围不包含编译器BuiltIn API、Ascend C内部实现接口等。若开发者希望在新平台运行其它平台开发的Ascend C程序，需要在新平台重新编译并运行，并可能需要根据迁移指导进行代码调整。
 
 **图1** Ascend C API层次结构
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/vuRDt6NISc6RynsfcCTbQA/zh-cn_image_0000002589245603.png?HW-CC-KV=V1&HW-CC-Date=20260429T054258Z&HW-CC-Expire=86400&HW-CC-Sign=002227C2518AA5C5677320E96A8F814C04DD39D5049B11A33AAFA2F8E25DC7C0 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/vuRDt6NISc6RynsfcCTbQA/zh-cn_image_0000002589245603.png "点击放大")
 
 **表1** Ascend C API兼容策略
 

@@ -5,7 +5,7 @@ breadcrumb: 指南 > 系统 > 网络 > Network Kit（网络服务） > 访问网
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:32:42+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:539df0fdcf8eb7db78d9b024bcd7c0796d69778daf370459e27664c48142cc2b
+content_hash: sha256:3f1e27dc518dd82614f047a673e9ac833f65866ac66ee7fa3cdfe8b9e60d2921
 ---
 
 ## 场景介绍
@@ -347,7 +347,7 @@ ConnectWebsocket函数接收一个WebSocket URL并尝试连接，连接成功返
 
 注意：如图所示，在add\_library中的entry是工程自动生成的modename，若要做修改，需和步骤3中.nm\_modname保持一致。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/FVSb2I2mSzGw2_jMdyA2Fg/zh-cn_image_0000002589324791.png?HW-CC-KV=V1&HW-CC-Date=20260429T053240Z&HW-CC-Expire=86400&HW-CC-Sign=FF499CE276668374D58C6449FA149B1C555A6BE8CAE6BA4B1388C7296298EB0C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/FVSb2I2mSzGw2_jMdyA2Fg/zh-cn_image_0000002589324791.png)
 
 7、调用WebSocket C API接口要求应用拥有ohos.permission.INTERNET权限，在module.json5中的requestPermissions项添加该权限。
 
@@ -359,7 +359,7 @@ ConnectWebsocket函数接收一个WebSocket URL并尝试连接，连接成功返
 
 2、运行工程，设备上会弹出以下图片所示界面：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/miIVATpcSxOmv4e5OkPA-A/zh-cn_image_0000002589244729.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053240Z&HW-CC-Expire=86400&HW-CC-Sign=46DDA7BB9D54F82F5C278A311578C14D5424BC6F5142CEDE070B10A55009B166)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/miIVATpcSxOmv4e5OkPA-A/zh-cn_image_0000002589244729.jpg)
 
 简要说明：
 
@@ -368,6 +368,6 @@ ConnectWebsocket函数接收一个WebSocket URL并尝试连接，连接成功返
 * 在Content输入框里输入要发送给服务器的内容，点击Send按钮发送。如果服务器返回消息，会触发onMessage回调，打印日志。
 * 点击Close按钮，WebSocket连接释放，可以重新输入新的WebSocket URL。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/5v0mCTIfSxyIEDhWETdZaA/zh-cn_image_0000002558764924.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053240Z&HW-CC-Expire=86400&HW-CC-Sign=C3E517A2B94769EE6D24A2C221BB66893F638CEBB95B4527FB383E211794F91A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/5v0mCTIfSxyIEDhWETdZaA/zh-cn_image_0000002558764924.jpg)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/xckpkfhKQUGjBjNOfNUBHw/zh-cn_image_0000002558605268.png?HW-CC-KV=V1&HW-CC-Date=20260429T053240Z&HW-CC-Expire=86400&HW-CC-Sign=926BB3E227B0EC73A9AC4079C4E309C6EA9A8951C420FC63AEAA2145CE17D33A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/xckpkfhKQUGjBjNOfNUBHw/zh-cn_image_0000002558605268.png)

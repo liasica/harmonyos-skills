@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > Stage�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:25:52+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:ec20b54fcf9bf0534dfbf5162745d802c84d5fb4d0f8523cf43fb9964d3fd5bc
+content_hash: sha256:fc4f2edfd8ff3a6dc91a4355130632b140254c0051f313bb25e6ec2a6938c0ce
 ---
 
 ## uris标签说明
@@ -70,7 +70,7 @@ content_hash: sha256:ec20b54fcf9bf0534dfbf5162745d802c84d5fb4d0f8523cf43fb9964d3
    | PrimaryContactMgmt | 从API version 23开始，新增支持该字段。指示社交通讯类应用“重要联系人列表”的设置功能。使用场景详见[优先通知权益申请](priority-notification-permission-guidelines.md)。 |
 2. 指定类型的应用被拉起时免跳转弹框：正常情况下，拉起指定类型的应用时，都会弹出确认是否打开应用的弹窗。如果您的应用有向其他应用提供登录/分享/支付的功能，可以在应用中声明对应的LinkFeature（取值参见下表）。应用通过上架审核后，当其他应用拉起您的应用时将不再弹窗提示。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/OCCeslPNT5O5IuZJ2Jx8kQ/zh-cn_image_0000002558604338.png?HW-CC-KV=V1&HW-CC-Date=20260429T052550Z&HW-CC-Expire=86400&HW-CC-Sign=343935B10D3D39A5470A92F675FE1975020177297524D6EB718BA7939DE1F6AC)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/OCCeslPNT5O5IuZJ2Jx8kQ/zh-cn_image_0000002558604338.png)
 
    | 值 | 说明 |
    | --- | --- |
@@ -121,7 +121,7 @@ content_hash: sha256:ec20b54fcf9bf0534dfbf5162745d802c84d5fb4d0f8523cf43fb9964d3
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/cr_2r8i9SK-7t-H8dXr03g/zh-cn_image_0000002589323863.png?HW-CC-KV=V1&HW-CC-Date=20260429T052550Z&HW-CC-Expire=86400&HW-CC-Sign=B41F53D803C3CEA37F320618FA14DF9761A70E86421735FB931398CB8B46D1FD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/cr_2r8i9SK-7t-H8dXr03g/zh-cn_image_0000002589323863.png)
 
 ### 指定类型的应用被拉起时免跳转弹框
 

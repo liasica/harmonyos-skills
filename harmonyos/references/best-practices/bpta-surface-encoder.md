@@ -5,7 +5,7 @@ breadcrumb: 最佳实践 > 媒体 > 音频和视频 > 基于Surface模式进行�
 category: best-practices
 scraped_at: 2026-04-29T14:11:36+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:e1aed9725c11b9f029a7901bddf0921d66aa32296d00e9d0f29cf5ead837a402
+content_hash: sha256:61ef762da6c787710a715b0fe1f247e590d4591f6b2b110b55bf2821252b2100
 ---
 
 ## 概述
@@ -28,7 +28,7 @@ Surface分为生产者ProducerSurface和消费者ConsumerSurface。NativeWindow�
 
 Surface轮转流程如下所示，生产者先申请到一块Buffer，填充数据后将Buffer返回给BufferQueue。在触发回调函数后，通知消费者Buffer已经被生产者填充好数据。之后，消费者可以获取填充好数据的Buffer，直到不再需要该Buffer后，释放对应的Buffer。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/XHZP7B6RQHSV9w4q_Ix3aw/zh-cn_image_0000002493276208.png?HW-CC-KV=V1&HW-CC-Date=20260429T061133Z&HW-CC-Expire=86400&HW-CC-Sign=36A2C5BB1D3F2BC09F4CFFEF8709122256BFE15F51B352AECD60345DDEE2BFE1 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/XHZP7B6RQHSV9w4q_Ix3aw/zh-cn_image_0000002493276208.png "点击放大")
 
 视频编码器提供了获取NativeWindow的接口，通过NativeWindow可以将相机产生的数据与视频编码器进行对接。视频编码器作为消费者，将Buffer数据进行消费编码，从而实现视频编码的操作。下面我们将通过相机录制和屏幕录制，介绍基于Surface模式进行视频编码。
 
@@ -50,7 +50,7 @@ Surface模式是通过NativeWindow包含的Surface传递录屏数据进行视频
 6. 创建并启动编码输出子线程。
 7. 将从编码器中获取的NativeWindow对象设置给AVScreenCapture，启动屏幕录制。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/u-2w3L_qSX-Oor28AsY8XA/zh-cn_image_0000002465431712.png?HW-CC-KV=V1&HW-CC-Date=20260429T061133Z&HW-CC-Expire=86400&HW-CC-Sign=3AD6B3CA5AA1D89C9A7CCAB292CF6097B18DE2E4A8EE1ABE05AEA535ACE5B5CF "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/u-2w3L_qSX-Oor28AsY8XA/zh-cn_image_0000002465431712.png "点击放大")
 
 ### 开发步骤
 
@@ -315,7 +315,7 @@ Surface模式是通过NativeWindow包含的Surface传递录屏数据进行视频
 5. 启动视频编码器。
 6. 创建并启动编码输出子线程。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/QJfWe3ZcSqCbkqLFEFFixw/zh-cn_image_0000002498550729.png?HW-CC-KV=V1&HW-CC-Date=20260429T061133Z&HW-CC-Expire=86400&HW-CC-Sign=6A6EFD09E8830777706FDB5AB3A5B3FE092BB44C503C1AB7254B2FCD1D0519C1 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/QJfWe3ZcSqCbkqLFEFFixw/zh-cn_image_0000002498550729.png "点击放大")
 
 ### 开发步骤
 

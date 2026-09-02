@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > UI Design Kit（UI设计套件） > 组件�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:30:20+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:9efe5d64aed4efa3025e4132b44c50e0cd03ccbd80b34d8dfcd32f1c126bc3c3
+content_hash: sha256:d88c9f91423b1f242b6ddd074efc6ed1e599b6ddfc9098d6a0e43fee209a68fa
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:9efe5d64aed4efa3025e4132b44c50e0cd03ccbd80b34d8dfcd32f1c126
 
 用于实现标题栏在特定条件下自动显示或隐藏的效果，适用于需要节省屏幕空间的应用界面。当应用开发者需要动态隐藏标题栏时，可通过使用[dynamicHideTitleBar](../harmonyos-references/ui-design-hdsnavigation.md#dynamichidetitlebar)属性实现该功能。在设置动态隐藏标题栏的前提下，才可进一步设置隐藏状态栏。隐藏状态栏表现为状态栏内容区颜色为透明，状态栏区域无模糊。仅在隐藏标题栏区域后，执行隐藏状态栏。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/eLgds5VjTgC-_gmICIbS7Q/zh-cn_image_0000002558605178.gif?HW-CC-KV=V1&HW-CC-Date=20260429T053019Z&HW-CC-Expire=86400&HW-CC-Sign=10F6388272EA6BE153A088C85013433707A5B2458E792B3125A7763E4247FC95 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/eLgds5VjTgC-_gmICIbS7Q/zh-cn_image_0000002558605178.gif "点击放大")
 
 ## 开发步骤
 

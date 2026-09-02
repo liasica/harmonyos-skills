@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:51:14+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:eb5835e7b1380d17e4239ae25a0f0ddc58682a465548290a1296862bf8107719
+content_hash: sha256:92635da05cd9f24aaeb12415975ebaaba708e175d839bc9f490f11c5bf15b3e7
 ---
 
 用于对组件内容进行隐私遮罩处理。
@@ -84,4 +84,4 @@ PhonePC/2in1TabletTVWearable
 37. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/XCQEurlsTgKkmrh0oodrgA/zh-cn_image_0000002558606350.png?HW-CC-KV=V1&HW-CC-Date=20260429T055113Z&HW-CC-Expire=86400&HW-CC-Sign=807CA46E8C252C6AF02CC6B1ABA63FA2C2CBB064E18B39B5126E31E87AA6C28C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/XCQEurlsTgKkmrh0oodrgA/zh-cn_image_0000002558606350.png)

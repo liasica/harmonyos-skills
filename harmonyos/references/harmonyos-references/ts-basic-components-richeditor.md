@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:52:11+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:495158dc3b5ede812ef8af4cb81f80dbe8990907c475866d311709bf8a843e47
+content_hash: sha256:03a75377c995857fa4f2a021342508e4d619c2fd9c8bb538016f2aa98229acdb
 ---
 
 支持图文混排和文本交互式编辑的组件。
@@ -2691,7 +2691,7 @@ PhonePC/2in1TabletTVWearable
 169. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/BihLGlT5TwSQdMYWnnc8yQ/zh-cn_image_0000002589326167.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055206Z&HW-CC-Expire=86400&HW-CC-Sign=80633B525BDF507DCA822BBEB9D0CC6CA1DF61E63BF26721CDE117F738F3C30C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/BihLGlT5TwSQdMYWnnc8yQ/zh-cn_image_0000002589326167.gif)
 
 ### 示例2（绑定自定义键盘）
 
@@ -2742,7 +2742,7 @@ PhonePC/2in1TabletTVWearable
 42. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/0ZOFabOdRViXumOANqZ53w/zh-cn_image_0000002589246109.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055206Z&HW-CC-Expire=86400&HW-CC-Sign=F44AF50AFF4615CF2E62F612A17599C8312FECCFE7C23E33C0052DE250533E95)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/0ZOFabOdRViXumOANqZ53w/zh-cn_image_0000002589246109.gif)
 
 ### 示例3（绑定自定义菜单）
 
@@ -3273,7 +3273,7 @@ PhonePC/2in1TabletTVWearable
 
 系统暂未预置加粗、斜体等图标，示例代码使用系统默认图标，开发者使用时需自行替换iconArr中的资源。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/lFiQ2LmqSG6AruLny0aI7A/zh-cn_image_0000002558766300.png?HW-CC-KV=V1&HW-CC-Date=20260429T055206Z&HW-CC-Expire=86400&HW-CC-Sign=D2B5E5568EBBE16C40131397D625A95594FA3F514788D63EFE693052A0EA8151)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/lFiQ2LmqSG6AruLny0aI7A/zh-cn_image_0000002558766300.png)
 
 ### 示例4（更新图片样式）
 
@@ -3517,7 +3517,7 @@ PhonePC/2in1TabletTVWearable
 235. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/WtqShwTNRamlaz30qnUZ4A/zh-cn_image_0000002558606642.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055206Z&HW-CC-Expire=86400&HW-CC-Sign=FDDC12160784379347949E6091FB6E1E7AEBB3AC099813D67416660028AFE876)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/WtqShwTNRamlaz30qnUZ4A/zh-cn_image_0000002558606642.gif)
 
 ### 示例5（Span绑定手势事件）
 
@@ -3613,7 +3613,7 @@ PhonePC/2in1TabletTVWearable
 87. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/LJuQbX3dRKC26bzK2FStTw/zh-cn_image_0000002589326169.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055206Z&HW-CC-Expire=86400&HW-CC-Sign=2D806C7817F4136795C882F12890A3E6FAEA3A8CF00CA6FA526B130A72214680)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/LJuQbX3dRKC26bzK2FStTw/zh-cn_image_0000002589326169.gif)
 
 ### 示例6（更新和获取段落样式）
 
@@ -3710,7 +3710,7 @@ PhonePC/2in1TabletTVWearable
 88. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/z5kplW0GRfiDbdK6YVKEYw/zh-cn_image_0000002589246111.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055206Z&HW-CC-Expire=86400&HW-CC-Sign=9D82E377F013FDB5EA1E4ACE623F3B5D01E421A17243E7263BFC68A81229D4AC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/z5kplW0GRfiDbdK6YVKEYw/zh-cn_image_0000002589246111.gif)
 
 ### 示例7（更新预设样式与缩进）
 
@@ -3979,7 +3979,7 @@ PhonePC/2in1TabletTVWearable
 260. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/d74vIcG1T0-YiBIpHpkh_g/zh-cn_image_0000002558766302.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055206Z&HW-CC-Expire=86400&HW-CC-Sign=A76B15EB22A3B0DBE61337197B010D370F02734B8E54E00EAE1C022DEF5D12FE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/d74vIcG1T0-YiBIpHpkh_g/zh-cn_image_0000002558766302.gif)
 
 ### 示例8（设置文本字重与阴影）
 
@@ -4063,7 +4063,7 @@ PhonePC/2in1TabletTVWearable
 75. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/bNuA22THRsC3LkE1hzCQ5Q/zh-cn_image_0000002558606644.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055206Z&HW-CC-Expire=86400&HW-CC-Sign=44F457C4D9D690B2464A581ECFACA669548858931DDBF3614FDE549E27A8671E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/bNuA22THRsC3LkE1hzCQ5Q/zh-cn_image_0000002558606644.gif)
 
 ### 示例9（添加用户自定义布局Span）
 
@@ -4371,7 +4371,7 @@ PhonePC/2in1TabletTVWearable
 299. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/gD3JXxnRRsiTzW5kIx-9mg/zh-cn_image_0000002589326171.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055206Z&HW-CC-Expire=86400&HW-CC-Sign=E7497AD01D12CC9611809BAD1E828D7A9962998FAC03B60C0BBD5F22D3B54428)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/gD3JXxnRRsiTzW5kIx-9mg/zh-cn_image_0000002589326171.gif)
 
 ### 示例10（使用和管理组件内的BuilderSpan）
 
@@ -4717,7 +4717,7 @@ PhonePC/2in1TabletTVWearable
 337. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/7QsI3rlqRD6QDSInRjGlYQ/zh-cn_image_0000002589246113.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055206Z&HW-CC-Expire=86400&HW-CC-Sign=45ED8E397E6F4DADF38608294EC88BF00C03A9CDAE702E57C2F2D3256B6C8FB5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/7QsI3rlqRD6QDSInRjGlYQ/zh-cn_image_0000002589246113.gif)
 
 ### 示例11（设置文本识别配置）
 
@@ -4820,7 +4820,7 @@ PhonePC/2in1TabletTVWearable
 28. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/9nD-7-rdT6WSkr0pdzgDtw/zh-cn_image_0000002558766304.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055206Z&HW-CC-Expire=86400&HW-CC-Sign=40C23960023CC6094C04D6BB2875095FBDA08D6E2331EC6729706FC937B3D1D3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/9nD-7-rdT6WSkr0pdzgDtw/zh-cn_image_0000002558766304.gif)
 
 ### 示例13（设置行高和字符间距）
 
@@ -4944,7 +4944,7 @@ PhonePC/2in1TabletTVWearable
 115. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/G5L5j4K8TFa6H0jccj5Syw/zh-cn_image_0000002558606646.png?HW-CC-KV=V1&HW-CC-Date=20260429T055206Z&HW-CC-Expire=86400&HW-CC-Sign=77A214BC25DCB811563061A57A74564EB73D2C7679EDE870E73207F0D0811EA3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/G5L5j4K8TFa6H0jccj5Syw/zh-cn_image_0000002558606646.png)
 
 ### 示例14（自定义粘贴事件）
 
@@ -4977,7 +4977,7 @@ PhonePC/2in1TabletTVWearable
 24. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/01mnu-8qTEqWGuHgxQqPzg/zh-cn_image_0000002589326173.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055206Z&HW-CC-Expire=86400&HW-CC-Sign=E8A19F85EA6ED5C01818FD7D430C6328AA55A53DD08D6BB8C344F8AFABC782B6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/01mnu-8qTEqWGuHgxQqPzg/zh-cn_image_0000002589326173.gif)
 
 ### 示例15（配置文字特性效果）
 
@@ -5026,7 +5026,7 @@ PhonePC/2in1TabletTVWearable
 40. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/N_djJPLIT6O5BO4MgVdGxA/zh-cn_image_0000002589246115.png?HW-CC-KV=V1&HW-CC-Date=20260429T055206Z&HW-CC-Expire=86400&HW-CC-Sign=6F44BA48D1DBCDC37DDDA96917DA573EB3EA3DE1071FA6D27A38EA2B765EFE66)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/N_djJPLIT6O5BO4MgVdGxA/zh-cn_image_0000002589246115.png)
 
 ### 示例16（自定义键盘避让）
 
@@ -5110,7 +5110,7 @@ PhonePC/2in1TabletTVWearable
 75. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/kDiCYxqZQ4Wxzh2QgavLNg/zh-cn_image_0000002558766306.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055206Z&HW-CC-Expire=86400&HW-CC-Sign=8600C4C2A8843254A279F1C35B613EEA3D1C7A629546325E01F75E04357C2CD2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/kDiCYxqZQ4Wxzh2QgavLNg/zh-cn_image_0000002558766306.gif)
 
 ### 示例17（查看编辑状态）
 
@@ -5150,7 +5150,7 @@ PhonePC/2in1TabletTVWearable
 31. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/PFdm524CRf-eTdNPwP5S9A/zh-cn_image_0000002558606648.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055206Z&HW-CC-Expire=86400&HW-CC-Sign=4D512AB251D7A769109302AB0EB04A9408C3F8BC061B5C5DAE96D1FE9010469E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/PFdm524CRf-eTdNPwP5S9A/zh-cn_image_0000002558606648.gif)
 
 ### 示例18（配置文本变化回调）
 
@@ -5272,7 +5272,7 @@ PhonePC/2in1TabletTVWearable
 26. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/Co1OYzDcRLGAqCiBMIXjpQ/zh-cn_image_0000002589326175.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055206Z&HW-CC-Expire=86400&HW-CC-Sign=B2D90872724DA6DB6F4593A78ACD5335A08962C7C749A66093F8BE05CC44C285)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/Co1OYzDcRLGAqCiBMIXjpQ/zh-cn_image_0000002589326175.gif)
 
 ### 示例20（设置段落折行规则）
 
@@ -5351,7 +5351,7 @@ PhonePC/2in1TabletTVWearable
 70. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/wN9iquxiRZekots4TRROsw/zh-cn_image_0000002589246117.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055206Z&HW-CC-Expire=86400&HW-CC-Sign=DBE5D16E741B8424A2A16AACD61FA1C089CD90EAF17CA6673E77C30D236805D3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/wN9iquxiRZekots4TRROsw/zh-cn_image_0000002589246117.gif)
 
 ### 示例21（属性字符串基本功能）
 
@@ -5551,7 +5551,7 @@ PhonePC/2in1TabletTVWearable
 191. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/HBrzkypbQj689Hlnnq8Ycw/zh-cn_image_0000002558766308.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055206Z&HW-CC-Expire=86400&HW-CC-Sign=D9644806046636A7219E987D7D7D9E01E1CFA85587F9BC0E82143BD07F8C447B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/HBrzkypbQj689Hlnnq8Ycw/zh-cn_image_0000002558766308.gif)
 
 ### 示例22（获取布局信息）
 
@@ -5622,7 +5622,7 @@ PhonePC/2in1TabletTVWearable
 62. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/y3OiRyiZSeGUhzgzI8d94A/zh-cn_image_0000002558606650.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055206Z&HW-CC-Expire=86400&HW-CC-Sign=B3A9816281C921AF0620AFDAE922233819383DA1FDDC9D59CBA2B1FED4076170)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/y3OiRyiZSeGUhzgzI8d94A/zh-cn_image_0000002558606650.gif)
 
 ### 示例23（设置系统默认菜单扩展项）
 
@@ -5718,7 +5718,7 @@ PhonePC/2in1TabletTVWearable
 87. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/twJi466yRFq-3aVa-7Ct9g/zh-cn_image_0000002589326177.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055206Z&HW-CC-Expire=86400&HW-CC-Sign=179619A0D94EF021BE5E8F2D0BE16A7780BF06B8BC07A5BB04CB593ADAA51545)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/twJi466yRFq-3aVa-7Ct9g/zh-cn_image_0000002589326177.gif)
 
 ### 示例24（组件部分常用属性）
 
@@ -5811,7 +5811,7 @@ PhonePC/2in1TabletTVWearable
 82. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/cnCtfF8DRFGc_m53glYG7g/zh-cn_image_0000002589246119.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055206Z&HW-CC-Expire=86400&HW-CC-Sign=1EC9CE960E42D9BE62B5CCD90E20E7F90ABD175FC8DFC2E16A86FCE86010F1A3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/cnCtfF8DRFGc_m53glYG7g/zh-cn_image_0000002589246119.gif)
 
 ### 示例25（获取光标相对组件位置的矩形）
 
@@ -5865,7 +5865,7 @@ PhonePC/2in1TabletTVWearable
 45. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/Qw-RaO4lSmO1u4Q73ErdOA/zh-cn_image_0000002558766310.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055206Z&HW-CC-Expire=86400&HW-CC-Sign=E1D420FEFCCE00054956363A765A52C2BB7419A9EBB45B22EBF0F49D9830D92E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/Qw-RaO4lSmO1u4Q73ErdOA/zh-cn_image_0000002558766310.gif)
 
 ### 示例26（设置最大行数和最大字符数）
 
@@ -5967,7 +5967,7 @@ PhonePC/2in1TabletTVWearable
 93. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/97kE3ZzBQbePFei-moX-xg/zh-cn_image_0000002558606652.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055206Z&HW-CC-Expire=86400&HW-CC-Sign=FB1234806BF9CA254E2BBBD737EE11F38F1EFC46E83794E5CD4BD4A559427CDD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/97kE3ZzBQbePFei-moX-xg/zh-cn_image_0000002558606652.gif)
 
 ### 示例27（文本设置Url样式）
 
@@ -6009,7 +6009,7 @@ PhonePC/2in1TabletTVWearable
 33. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/k5MZIx2HRFeHqU_8NSx9AQ/zh-cn_image_0000002589326179.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055206Z&HW-CC-Expire=86400&HW-CC-Sign=77FF47FCF2A8252BFC23EA153341DD2BE4BC73583126C61F6D8C37DA3ACF3975)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/k5MZIx2HRFeHqU_8NSx9AQ/zh-cn_image_0000002589326179.gif)
 
 ### 示例28（开启带样式的撤销还原能力）
 
@@ -6149,7 +6149,7 @@ PhonePC/2in1TabletTVWearable
 131. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/5VS-sVHNTp6Qk0FQuKNcpg/zh-cn_image_0000002589246121.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055206Z&HW-CC-Expire=86400&HW-CC-Sign=A673BF1B453D840AC076DCF9431E30D36CF486BA6C6274F983FA9176C1F77E61)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/5VS-sVHNTp6Qk0FQuKNcpg/zh-cn_image_0000002589246121.gif)
 
 ### 示例29（文本设置预设段落样式）
 
@@ -6373,7 +6373,7 @@ PhonePC/2in1TabletTVWearable
 121. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/LcwNN0KxQlauCzRqMV7H0g/zh-cn_image_0000002558766312.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055206Z&HW-CC-Expire=86400&HW-CC-Sign=984D71EA68DB21FC7821B4341040E6FFAF51A96F14B79F27DBEFE519E9C963CF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/LcwNN0KxQlauCzRqMV7H0g/zh-cn_image_0000002558766312.gif)
 
 ### 示例31（设置开启中西文自动间距）
 
@@ -6480,7 +6480,7 @@ PhonePC/2in1TabletTVWearable
 98. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/AGv-nIzsQQuRfzsTCvS5TA/zh-cn_image_0000002558606654.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055206Z&HW-CC-Expire=86400&HW-CC-Sign=24A720471A5530C7B6639C885A55E05468DDD532144D46673A9250096CFB9536)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/AGv-nIzsQQuRfzsTCvS5TA/zh-cn_image_0000002558606654.gif)
 
 ### 示例32（设置文本选择的AI菜单）
 
@@ -6512,7 +6512,7 @@ PhonePC/2in1TabletTVWearable
 23. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/VE3uyejxRniOMsCNVzqxEw/zh-cn_image_0000002589326181.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055206Z&HW-CC-Expire=86400&HW-CC-Sign=8FA1948AE07EF9D2EFEE825227CBE1D2C98555F285056CCF55F06B220286C43B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/VE3uyejxRniOMsCNVzqxEw/zh-cn_image_0000002589326181.gif)
 
 ### 示例33（设置监听输入法绑定事件）
 
@@ -6566,7 +6566,7 @@ PhonePC/2in1TabletTVWearable
 45. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/H6BXDzQBTsutf0rvbIWSJw/zh-cn_image_0000002589246123.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055206Z&HW-CC-Expire=86400&HW-CC-Sign=1A35DC38A0F853041F61831C9ABDB7B3ED00A2A8A415FD4E4E630FA095A105DF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/H6BXDzQBTsutf0rvbIWSJw/zh-cn_image_0000002589246123.gif)
 
 ### 示例34（删除输入框文本尾部字符）
 
@@ -6623,7 +6623,7 @@ PhonePC/2in1TabletTVWearable
 48. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/svOxqdpIROGUf5VLPfVm3A/zh-cn_image_0000002558766314.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055206Z&HW-CC-Expire=86400&HW-CC-Sign=BAE9D67F084ACF6F3658B8285BFAD40497FEBCB7512BB0EF913F8B66FF29B509)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/svOxqdpIROGUf5VLPfVm3A/zh-cn_image_0000002558766314.gif)
 
 ### 示例35（优化小语种文字显示）
 
@@ -6711,7 +6711,7 @@ PhonePC/2in1TabletTVWearable
 77. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/XK7L4je9SbWJhovZe7BOjw/zh-cn_image_0000002558606656.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055206Z&HW-CC-Expire=86400&HW-CC-Sign=5FF868EC5BA81180D2409405DD07C9F4FC037D559B1B00628B5CE429BA56D9A0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/XK7L4je9SbWJhovZe7BOjw/zh-cn_image_0000002558606656.gif)
 
 ### 示例36（设置开启行首标点符号压缩）
 
@@ -6755,7 +6755,7 @@ PhonePC/2in1TabletTVWearable
 33. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/LyfoaOZHQvKnjwGm_cuBmg/zh-cn_image_0000002589326183.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055206Z&HW-CC-Expire=86400&HW-CC-Sign=AF4F8D2FE241A540493CF76B90998023DDC4CA2461DF89AD8A820382A9AA4572)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/LyfoaOZHQvKnjwGm_cuBmg/zh-cn_image_0000002589326183.gif)
 
 ### 示例37（设置拖动预览样式）
 
@@ -6787,7 +6787,7 @@ PhonePC/2in1TabletTVWearable
 21. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/sK7omFLsRKiDLrotwtmp3A/zh-cn_image_0000002589246125.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055206Z&HW-CC-Expire=86400&HW-CC-Sign=0AE82105AD01CE28404376D94BA4F6EBF2B822D9CC8EE5F90F4C5DDC4F15C16F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/sK7omFLsRKiDLrotwtmp3A/zh-cn_image_0000002589246125.gif)
 
 ### 示例38（设置单行模式）
 
@@ -6828,4 +6828,4 @@ PhonePC/2in1TabletTVWearable
 30. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/j4HxJZBjS22HHhbgm3Lj2g/zh-cn_image_0000002558766316.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055206Z&HW-CC-Expire=86400&HW-CC-Sign=D78941ED21784D1ECB63EB7485F486D4E2CD54E36CE989FC580CA536052542EC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/j4HxJZBjS22HHhbgm3Lj2g/zh-cn_image_0000002558766316.gif)

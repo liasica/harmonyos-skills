@@ -5,7 +5,7 @@ breadcrumb: FAQ > DevEco Studio > 编译构建 > 编译报错“Failed to obtain
 category: harmonyos-faqs
 scraped_at: 2026-04-29T14:20:59+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:00d69fc67b9a44a60c09ac07e26c66d12e82c1a73cb6d7f35faf448a08314924
+content_hash: sha256:7cbfe6b69cb0b148859588298d9757c6563e764f289d47cc6f53fbfba715f28d
 ---
 
 **错误描述**
@@ -16,7 +16,7 @@ content_hash: sha256:00d69fc67b9a44a60c09ac07e26c66d12e82c1a73cb6d7f35faf448a083
 
 在FA模型中，config.json文件中的module/distro/moduleType字段缺失或配置错误。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/zd7I9Wb-QzyfDrQSSXIhLw/zh-cn_image_0000002229604177.png?HW-CC-KV=V1&HW-CC-Date=20260429T062058Z&HW-CC-Expire=86400&HW-CC-Sign=CE665FF19163D605AAA68A25E6F528D7D3306BA43071D47E16CE2E5C482BB8B5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/zd7I9Wb-QzyfDrQSSXIhLw/zh-cn_image_0000002229604177.png)
 
 **解决措施**
 

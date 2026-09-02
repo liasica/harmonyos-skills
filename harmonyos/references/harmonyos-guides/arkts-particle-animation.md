@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:28:13+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:850a8212b335a83839b446d52647d0f9ce176352ade9af95dbc25550348cf04e
+content_hash: sha256:f70a9cfb58fbf21f882563e73c58869499c089a3ae1b3facfac92d36c3d35cc3
 ---
 
 [粒子动画](../harmonyos-references/ts-particle-animation.md)是通过在限定区域内随机生成大量粒子的运动，进而组合成的动画效果，通过Particle组件来实现。动画的基本构成元素为单个粒子，这些粒子可以表现为圆点或图片等形式。开发者能够通过对粒子在颜色、透明度、大小、速度、加速度、自旋角度等多个维度上的动态变化做动画，以营造特定的氛围，例如模拟下雪场景时，飘舞的雪花实际上是由一个个雪花粒子的动画效果所构成。
@@ -42,7 +42,7 @@ content_hash: sha256:850a8212b335a83839b446d52647d0f9ce176352ade9af95dbc25550348
 27. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/quArRT6UR8Sw7m2NAEIXlg/zh-cn_image_0000002589244291.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052810Z&HW-CC-Expire=86400&HW-CC-Sign=D02E22141FD7A722CA7806584CF1931C4816C1D91C082D7F4CC36B92E56A7139)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/quArRT6UR8Sw7m2NAEIXlg/zh-cn_image_0000002589244291.gif)
 
 ## 实现粒子发射器
 
@@ -63,7 +63,7 @@ content_hash: sha256:850a8212b335a83839b446d52647d0f9ce176352ade9af95dbc25550348
 12. // ...
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/pDoPM8GWTFCdZ8Eg8s_B2Q/zh-cn_image_0000002558764484.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052810Z&HW-CC-Expire=86400&HW-CC-Sign=D889B8979005085D681106B2A2A96CED88A48248033F809FD73918EC564E345B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/pDoPM8GWTFCdZ8Eg8s_B2Q/zh-cn_image_0000002558764484.gif)
 
 ## 设置粒子颜色
 
@@ -78,7 +78,7 @@ content_hash: sha256:850a8212b335a83839b446d52647d0f9ce176352ade9af95dbc25550348
 6. // ...
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/CnKppd12ROuDM60O32qeGA/zh-cn_image_0000002558604828.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052810Z&HW-CC-Expire=86400&HW-CC-Sign=F34554822706A5B0DE92277808C6B9DD9CC6CFEAEB0E4C002F4A8409EB776A60)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/CnKppd12ROuDM60O32qeGA/zh-cn_image_0000002558604828.gif)
 
 ## 粒子的生命周期
 
@@ -102,7 +102,7 @@ content_hash: sha256:850a8212b335a83839b446d52647d0f9ce176352ade9af95dbc25550348
 15. // ...
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/STXWq2ErSdy3-WGz_n6LGA/zh-cn_image_0000002589324353.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052810Z&HW-CC-Expire=86400&HW-CC-Sign=05C8AB80767419A76F857396C31FE387BF7ED717AD207BBA3FA2FCF70ABB5046)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/STXWq2ErSdy3-WGz_n6LGA/zh-cn_image_0000002589324353.gif)
 
 ## 设置粒子扰动场
 
@@ -157,4 +157,4 @@ content_hash: sha256:850a8212b335a83839b446d52647d0f9ce176352ade9af95dbc25550348
 46. // ...
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/xxW3dZ8FQxuNrDGKZARwzg/zh-cn_image_0000002589244293.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052810Z&HW-CC-Expire=86400&HW-CC-Sign=788D5AFCF48A643450CE960A598E0531C6331AC42EAB1998E8494CB4D786AF66)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/xxW3dZ8FQxuNrDGKZARwzg/zh-cn_image_0000002589244293.gif)

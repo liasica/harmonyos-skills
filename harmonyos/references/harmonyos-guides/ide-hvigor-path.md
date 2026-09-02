@@ -5,7 +5,7 @@ breadcrumb: 指南 > 构建应用 > 配置构建流程 > 自定义.hvigor目录�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:47:16+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:405f91f395af519d1f049d486c6367f35ec73e17fb9bf8e85802d1eb1e0ab9e2
+content_hash: sha256:0e26a1e466aa9d172a7cdb122ba8408d7ce624ee6665aad5e50ebaf14c7f8965
 ---
 
 .hvigor目录默认位于用户目录下：
@@ -30,7 +30,7 @@ content_hash: sha256:405f91f395af519d1f049d486c6367f35ec73e17fb9bf8e85802d1eb1e0
 
   变量值：自定义存放.hvigor目录的绝对路径。如D:\HvigorUserHome
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/_L82EhMSSj-q5dHlIWCHIQ/zh-cn_image_0000002530913062.png?HW-CC-KV=V1&HW-CC-Date=20260429T054714Z&HW-CC-Expire=86400&HW-CC-Sign=F55ED55C1C38C1103F050A606D8877EA912299AA9B5AB32A989A527541D87BA7)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/_L82EhMSSj-q5dHlIWCHIQ/zh-cn_image_0000002530913062.png)
 * macOS环境变量设置方法：
 
   在macOS上为DevEco Studio设置环境变量需要使用launchd来设置。

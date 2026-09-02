@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:28:14+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:c39b3a4b67e77713eeb4a31240a2609a405056ae962823bb8d695b2713844f2d
+content_hash: sha256:8c921eb1e9154cc8c3097d93ea5e1d64e72a13b840734f2b438eb39427a4e8b0
 ---
 
 阻尼弹簧曲线（以下简称弹簧曲线）对应的阻尼弹簧系统中，偏离平衡位置的物体一方面受到弹簧形变产生的反向作用力，被迫发生振动。另一方面，阻尼的存在为物体振动提供阻力。除阻尼为0的特殊情况，物体在振动过程中振幅不断减小，且最终趋于0，其轨迹对应的动画曲线自然连续。
@@ -143,4 +143,4 @@ ArkUI提供了四种阻尼弹簧曲线接口。
 
 [SpringCurve.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/Animation/entry/src/main/ets/pages/springCurve/template1/SpringCurve.ets#L16-L111)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/36fMrQ4aQJGcOSTp5TeyvA/zh-cn_image_0000002558764488.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052812Z&HW-CC-Expire=86400&HW-CC-Sign=D7BD51767B48AEBFB1E317A4DB076DFDA2F023DD21E22030527980CAF39A1B3E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/36fMrQ4aQJGcOSTp5TeyvA/zh-cn_image_0000002558764488.gif)

@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > JS
 category: harmonyos-references
 scraped_at: 2026-04-29T13:54:02+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:47c901430d9411634974b159ce5d37cdbede660c054e220c7c32319fe9da592c
+content_hash: sha256:916d0bf0642b1d173766f117222d0cbac85aede5e8e341860b6846bb605afbe4
 ---
 
 图表组件，用于呈现线形图、柱状图、量规图界面。
@@ -263,7 +263,7 @@ PhonePC/2in1TabletTVWearable
    64. }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/UuZ8IXcHRiaHjfVLg4SNJg/zh-cn_image_0000002558607294.png?HW-CC-KV=V1&HW-CC-Date=20260429T055401Z&HW-CC-Expire=86400&HW-CC-Sign=4EF2B8FAA560B4A012224CEE39D13A89364E75A4DAC07D47F2F07409B109B214)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/UuZ8IXcHRiaHjfVLg4SNJg/zh-cn_image_0000002558607294.png)
 2. 柱状图
 
    ```
@@ -330,7 +330,7 @@ PhonePC/2in1TabletTVWearable
    31. }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/69Hj0LkkRW-pWigWWwz5Bw/zh-cn_image_0000002589326823.png?HW-CC-KV=V1&HW-CC-Date=20260429T055401Z&HW-CC-Expire=86400&HW-CC-Sign=04FE0E2A3EC977C985F39C724035CC465B092B6EE6E4383A542B7D4BFBB34F3E)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/69Hj0LkkRW-pWigWWwz5Bw/zh-cn_image_0000002589326823.png)
 3. 量规图
 
    ```
@@ -359,4 +359,4 @@ PhonePC/2in1TabletTVWearable
    14. }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/o9EbHlTgRQ-u0YWHk3pmwg/zh-cn_image_0000002589246763.png?HW-CC-KV=V1&HW-CC-Date=20260429T055401Z&HW-CC-Expire=86400&HW-CC-Sign=C325AF419E1BAD413736538B3BA0778BF40AEB719BB68F8933B21EAB9CB1C768)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/o9EbHlTgRQ-u0YWHk3pmwg/zh-cn_image_0000002589246763.png)

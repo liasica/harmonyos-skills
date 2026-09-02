@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-observer
-title: @ohos.arkui.observer (无感监听)
+title: "@ohos.arkui.observer (无感监听)"
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.arkui.observer (无感监听)
 category: harmonyos-references
 scraped_at: 2026-04-28T08:00:18+08:00

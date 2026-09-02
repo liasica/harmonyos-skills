@@ -5,7 +5,7 @@ breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 >
 category: best-practices
 scraped_at: 2026-04-29T14:12:34+08:00
 doc_updated_at: 2026-03-26
-content_hash: sha256:e64c5db77e3d546e1eae8c3df38e1ebad14782acf3f30168b6237784a8ce02cc
+content_hash: sha256:e1827b8f07187946e2f6a59364e4533cb56b82007dba9c5a796158bd8be9138c
 ---
 
 ## 概述
@@ -32,7 +32,7 @@ HarmonyOS的分层架构包括产品定制层、基础特性层和公共能力�
 
 即时通讯应用包含聊天、通讯录和社交圈等交互功能。聊天页采用分栏布局设计，以下为聊天页的业务逻辑。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/ZWewUaNrQe-6EgkW0LQLiw/zh-cn_image_0000002194010816.png?HW-CC-KV=V1&HW-CC-Date=20260429T061223Z&HW-CC-Expire=86400&HW-CC-Sign=9182B440F29E457D98C6BEA95FA77E5C3BAD4FA7D02F670226B6B2DD110FF52E "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/ZWewUaNrQe-6EgkW0LQLiw/zh-cn_image_0000002194010816.png "点击放大")
 
 一多即时通讯场景包含以下设计能力：[侧边导航](multi-video-app.md#zh-cn_topic_0000001744653537_li1226615201361)、[分栏](multi-financial-app.md#section1796912148314)。
 

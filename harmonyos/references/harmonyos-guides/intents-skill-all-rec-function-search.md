@@ -5,14 +5,14 @@ breadcrumb: 指南 > AI > Intents Kit（意图框架服务） > 本地搜索方�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:43:39+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:636fe116e250499c1a2f590965363d7207eb2f9c847cb5ac782373c7ffa3f8e7
+content_hash: sha256:6b913c7f2c7cd61a7a273696a3ed6025a98e696b15fd4cff2f38adcf801523f2
 ---
 
 ## 方案概述
 
 从5.1.0(18)开始，新增功能搜索接入方案，可通过该方案实现快速打开应用内功能页面。开发者将应用内的功能在意图声明文件中声明，并实现对应的意图调用，即可实现用户在小艺搜索入口直接搜索到应用内功能，点击后可直接拉起应用，直达功能页面。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/pkv-Y894TzOUtTbbwDoH7A/zh-cn_image_0000002558765840.png?HW-CC-KV=V1&HW-CC-Date=20260429T054337Z&HW-CC-Expire=86400&HW-CC-Sign=D24CAEFB3DA90D2581A55E9FCEE978B23D1142A02EF0CFECA946C60F836FCE79)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/pkv-Y894TzOUtTbbwDoH7A/zh-cn_image_0000002558765840.png)
 
 **意图名称：跳转App功能页 JumpFunctionPage（端侧前台意图调用）**
 

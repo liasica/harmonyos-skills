@@ -5,7 +5,7 @@ breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 模型优
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:40:54+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:d31c8b445b6cdf625466ad82fd8940b33eecf8e631528a206d9e18168fa59a79
+content_hash: sha256:d72672e2e39ae95839916c31f92baa8b6c27d83f742334bab39a0dbe7cab5570
 ---
 
 ## 简介
@@ -16,7 +16,7 @@ content_hash: sha256:d31c8b445b6cdf625466ad82fd8940b33eecf8e631528a206d9e18168fa
 
 PTQ和QAT是两种量化参数优化策略，PTQ使用推理工程即可完成量化校准，QAT需要结合训练工程来进行量化感知训练。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/C5UDqQ-oQF-iiK1FTtMwvw/zh-cn_image_0000002589325581.png?HW-CC-KV=V1&HW-CC-Date=20260429T054053Z&HW-CC-Expire=86400&HW-CC-Sign=FBA64D0FDB80C5E27E2633C73A8112FB98342CE619C3F17059351E4B8A319ACC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/C5UDqQ-oQF-iiK1FTtMwvw/zh-cn_image_0000002589325581.png)
 
 ## 接口使用说明
 

@@ -5,7 +5,7 @@ breadcrumb: 最佳实践 > 媒体 > 音频和视频 > 基于Video播放视频系
 category: best-practices
 scraped_at: 2026-04-29T14:11:31+08:00
 doc_updated_at: 2026-04-27
-content_hash: sha256:f397d815d6c86ce3cd9709aaa8551b8876ec67ae447110b9d0362b32af1c6651
+content_hash: sha256:0986fafc2c180fdeaaa2ab8b4630557853dcff4fedb7d5c03b98480023359ff3
 ---
 
 ## 概述
@@ -33,7 +33,7 @@ Video组件可用于播放视频文件并控制其播放状态。本文针对市
 
 通过Video组件实现视频基础播放控制能力，包括播放视频、暂停播放等操作。实现效果如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/cX8J3JLRRiejlJYwicBJgg/zh-cn_image_0000002555237888.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061128Z&HW-CC-Expire=86400&HW-CC-Sign=3028F3B6107937A41EA6FFB2CEFC866CFFD9F4EFD5FF5E0492422E5580C531B4 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/cX8J3JLRRiejlJYwicBJgg/zh-cn_image_0000002555237888.gif "点击放大")
 
 ### 实现原理
 
@@ -41,7 +41,7 @@ Video组件可用于播放视频文件并控制其播放状态。本文针对市
 
 Video组件的接口和状态变化关系如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/HpgE3rYsSRufLBV_jGagJQ/zh-cn_image_0000002555078262.png?HW-CC-KV=V1&HW-CC-Date=20260429T061128Z&HW-CC-Expire=86400&HW-CC-Sign=B69540AFD87EF70178367A005487D0A81CDC537DCE40789F799241FA433A5790 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/HpgE3rYsSRufLBV_jGagJQ/zh-cn_image_0000002555078262.png "点击放大")
 
 ### 开发步骤
 
@@ -60,7 +60,7 @@ Video组件和Video控制器的基础使用请参考：[视频播放 (Video)](..
 
 长视频未播放时，显示视频资源的首帧画面或特定画面。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/c_F5dnRUTTqIUTo70opp2w/zh-cn_image_0000002585797859.png?HW-CC-KV=V1&HW-CC-Date=20260429T061128Z&HW-CC-Expire=86400&HW-CC-Sign=B1A37AB2EFD4E92239FD85876BBD20758100E0D2B5678AED34FA687EBF5725F2 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/c_F5dnRUTTqIUTo70opp2w/zh-cn_image_0000002585797859.png "点击放大")
 
 ### 实现原理
 
@@ -103,7 +103,7 @@ previewUri使用示例请参考：[视频播放基础用法](../harmonyos-refere
 
 播放视频时，可通过点击全屏图标按钮实现全屏播放，或通过旋转设备进行横竖屏切换。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/KTNw5fcTRXy5tXEPO7ctng/zh-cn_image_0000002585677821.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061128Z&HW-CC-Expire=86400&HW-CC-Sign=FF2BF6789B18FB9C23CCF1C0168124E31F260E1787B6E29D2146C9F73BC41DBD "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/KTNw5fcTRXy5tXEPO7ctng/zh-cn_image_0000002585677821.gif "点击放大")
 
 ### 实现原理
 
@@ -202,7 +202,7 @@ previewUri使用示例请参考：[视频播放基础用法](../harmonyos-refere
 
 通过点击或拖动自定义进度条，实现视频跳转至指定时间进行播放功能。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/IeOH_SHNQtaY9Ms-nLnHmA/zh-cn_image_0000002555237890.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061128Z&HW-CC-Expire=86400&HW-CC-Sign=9024595F5050ADE9A6BF2811652C96B8DA03494C377E70E940F1DD158B69FB36 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/IeOH_SHNQtaY9Ms-nLnHmA/zh-cn_image_0000002555237890.gif "点击放大")
 
 ### 实现原理
 
@@ -248,7 +248,7 @@ Video组件自带的控制栏由[controls](../harmonyos-references/ts-media-comp
 
 播放视频时，向下滑动视频列表，Video组件从页面消失后，视频以小窗口模式进行播放，同时用户可以进行其它操作，提升使用体验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/tX45XibeR5-R4qQREWS3SA/zh-cn_image_0000002555078264.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061128Z&HW-CC-Expire=86400&HW-CC-Sign=0619E12092854AED3DDA46C93944D414461C90DF444F525DEA450C7C7D8AD660 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/tX45XibeR5-R4qQREWS3SA/zh-cn_image_0000002555078264.gif "点击放大")
 
 ### 实现原理
 
@@ -334,7 +334,7 @@ Video组件不支持视频以画中画模式播放，如需使用画中画模式
 
 视频横屏时，通过点击按钮选择预设播放速度，实现视频倍速（1.0、1.25、1.75或2.0速度）播放。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/FbT4wShfSB6l4f_c0dXTHw/zh-cn_image_0000002585797861.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061128Z&HW-CC-Expire=86400&HW-CC-Sign=095E8F634DC7C5F61A5FFC89C3466A0DC1F07FA8B654242FCC9606230D1824E0 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/FbT4wShfSB6l4f_c0dXTHw/zh-cn_image_0000002585797861.gif "点击放大")
 
 ### 实现原理
 
@@ -406,7 +406,7 @@ Video组件支持通过[currentProgressRate](../harmonyos-references/ts-media-co
 
 视频横屏时，长按屏幕可实现2倍速播放，离手后视频恢复至默认1倍速播放。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/1cbuuehLStuRi_zMUUWDIA/zh-cn_image_0000002585677825.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061128Z&HW-CC-Expire=86400&HW-CC-Sign=B40C1D2B1236583AB717F2334BFCEC469F28FB6EDF03604BE50C5EFD9D7AAB5B "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/1cbuuehLStuRi_zMUUWDIA/zh-cn_image_0000002585677825.gif "点击放大")
 
 ### 实现原理
 
@@ -450,7 +450,7 @@ Video组件支持通过[currentProgressRate](../harmonyos-references/ts-media-co
 
 视频播放结束后，立即重新开始播放，以实现无缝循环播放的效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/ZeaNPgAPTvSkeguy3KEP3A/zh-cn_image_0000002555237894.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061128Z&HW-CC-Expire=86400&HW-CC-Sign=E557BBFAFFEF57F778DF9893506C20C770E3034DA99E34D924460AC7B841D1A9 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/ZeaNPgAPTvSkeguy3KEP3A/zh-cn_image_0000002555237894.gif "点击放大")
 
 ### 实现原理
 
@@ -481,7 +481,7 @@ Video组件的[loop](../harmonyos-references/ts-media-components-video.md#loop)�
 
 滑动调节音量是视频应用中的常见交互：在播放界面左侧上下滑动，即可快速调节音量，无需中断观看，从而提升用户的观看体验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/e5YLykdRTTWpBqUitWxc2A/zh-cn_image_0000002555078268.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061128Z&HW-CC-Expire=86400&HW-CC-Sign=20DF251FBFDA12FACAB191ED010B6EDD4A413147FE202A584376842AF925A659 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/e5YLykdRTTWpBqUitWxc2A/zh-cn_image_0000002555078268.gif "点击放大")
 
 ### 实现原理
 
@@ -539,7 +539,7 @@ Video组件的[loop](../harmonyos-references/ts-media-components-video.md#loop)�
 
 Video组件播放视频时，可以通过控制中心，实现视频的播放、暂停、切换视频、跳转播放、点击拉起应用等功能。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/HGabfaAeTlu0ndacbuWVLQ/zh-cn_image_0000002585797863.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061128Z&HW-CC-Expire=86400&HW-CC-Sign=F231B727DCDB9F7C5DB6054363BC27068763CBD6A0435BA011B1AC316518E7B7 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/HGabfaAeTlu0ndacbuWVLQ/zh-cn_image_0000002585797863.gif "点击放大")
 
 ### 实现原理
 

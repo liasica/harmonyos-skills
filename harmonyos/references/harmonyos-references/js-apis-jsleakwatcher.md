@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-jsleakwatcher
-title: @ohos.hiviewdfx.jsLeakWatcher (ArkTS泄漏检测)
+title: "@ohos.hiviewdfx.jsLeakWatcher (ArkTS泄漏检测)"
 breadcrumb: API参考 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > ArkTS API > @ohos.hiviewdfx.jsLeakWatcher (ArkTS泄漏检测)
 category: harmonyos-references
 scraped_at: 2026-04-28T08:11:18+08:00

@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用服务 > Game Controller Kit（游戏控制器服务�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:38:06+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:04ecde7df3924dfe4f201138bb65f25dcb8276cb6610f652dcb7295647409459
+content_hash: sha256:bab44bc066fd5ccbcc28b73801645c33e7677a99411b23550fdee394e32a27b1
 ---
 
 说明
@@ -20,7 +20,7 @@ Game Controller Kit提供游戏手柄轴事件和按键事件的监听能力。�
 
 Game Controller Kit支持的手柄键位参考图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/aptWQERiTOq4Qqm_mLJzhg/zh-cn_image_0000002589325253.png?HW-CC-KV=V1&HW-CC-Date=20260429T053805Z&HW-CC-Expire=86400&HW-CC-Sign=A1E6DA59C84D2E5ACF6C2BC1E02A4BBB7D7E4F93B2389361087F46CF4EC26275)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/aptWQERiTOq4Qqm_mLJzhg/zh-cn_image_0000002589325253.png)
 
 ## 接口说明
 

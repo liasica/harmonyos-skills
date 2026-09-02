@@ -5,7 +5,7 @@ breadcrumb: 指南 > 系统 > 安全 > Online Authentication Kit（在线认证�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:31:51+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:92e77b4db098ebaeb0c5601914e2d70920f514cead32b1ac1d40e2896a51bb0b
+content_hash: sha256:934b101e7a8bb720a8fbc18da2546d16850b346c118f23bf022dbd74c386e508
 ---
 
 ## 场景介绍
@@ -48,7 +48,7 @@ SOTER旨在提供一套生物认证平台和标准，使得业务可以采用设
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/-cPr2MfzRdKkzMrArjBE3Q/zh-cn_image_0000002558605250.png?HW-CC-KV=V1&HW-CC-Date=20260429T053150Z&HW-CC-Expire=86400&HW-CC-Sign=DA8A29FE12CF32A306509AF8E878D8E24D9AA3B9EB23A505534020228404AB99)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/-cPr2MfzRdKkzMrArjBE3Q/zh-cn_image_0000002558605250.png)
 
 ## 接口说明
 

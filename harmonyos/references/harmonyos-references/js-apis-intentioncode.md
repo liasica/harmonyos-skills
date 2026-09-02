@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-intentioncode
-title: @ohos.multimodalInput.intentionCode (意图事件)
+title: "@ohos.multimodalInput.intentionCode (意图事件)"
 breadcrumb: API参考 > 系统 > 基础功能 > Input Kit（多模输入服务） > ArkTS API > @ohos.multimodalInput.intentionCode (意图事件)
 category: harmonyos-references
 scraped_at: 2026-04-28T08:10:13+08:00

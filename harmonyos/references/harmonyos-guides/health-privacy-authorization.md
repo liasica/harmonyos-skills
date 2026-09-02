@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用服务 > Health Service Kit（运动健康服务） >
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:38:19+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:3cfaee7b7ebda74e786bb0997a7d69675655b317f16a976e3a9d7d6f1e6d1866
+content_hash: sha256:5654fc6ecd079688f6b754072b77cca3a1ee492b590c13f415278b907282873a
 ---
 
 ## 场景介绍
@@ -20,7 +20,7 @@ content_hash: sha256:3cfaee7b7ebda74e786bb0997a7d69675655b317f16a976e3a9d7d6f1e6
 
    "huaweischeme"为需要跳转到的运动健康App首页的scheme，页面参考如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/80h-t-5KSjuYLP-RBuOxkg/zh-cn_image_0000002589325283.png?HW-CC-KV=V1&HW-CC-Date=20260429T053818Z&HW-CC-Expire=86400&HW-CC-Sign=882837C8C7083E13E6385841B5E2A34A91CCECCEFAA9D05B389FC332C2FE4943)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/80h-t-5KSjuYLP-RBuOxkg/zh-cn_image_0000002589325283.png)
 2. 导入相关功能模块。
 
    ```

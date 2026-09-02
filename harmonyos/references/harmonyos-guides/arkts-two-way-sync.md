@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:27:24+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:d7559ccfd44002a868a42124f9f79626dd99cf08ef9aaffb9e14124bd3d23521
+content_hash: sha256:4145a6ee324f8b2cf20325b3fc742a1cc273d9868384b3617b8aad8ff7f97773
 ---
 
 $$运算符为系统组件提供TS变量的引用，使得TS变量和系统组件的内部状态保持同步。
@@ -75,4 +75,4 @@ $$运算符为系统组件提供TS变量的引用，使得TS变量和系统组�
 
 [SyncUsageExample.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/syncStateManager/SyncUsageExample.ets#L30-L52)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/_5WdgyJKSjCZdU8gQEqBSA/zh-cn_image_0000002589323981.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052723Z&HW-CC-Expire=86400&HW-CC-Sign=4E68F6A37C6D048166D5C09396A708DE74C835F1A5886C19C3A28B668603FF21)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/_5WdgyJKSjCZdU8gQEqBSA/zh-cn_image_0000002589323981.gif)

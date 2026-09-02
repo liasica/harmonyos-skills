@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-observedv2-and-trace
-title: @ObservedV2装饰器和@Trace装饰器：类属性变化观测
+title: "@ObservedV2装饰器和@Trace装饰器：类属性变化观测"
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理（V2） > 管理数据对象的状态 > @ObservedV2装饰器和@Trace装饰器：类属性变化观测
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:27:19+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:da5ffb13d8a8d523d859139c97b70cc7d9751f228132b14f24da68498cdf6885
+content_hash: sha256:1bf75bbe12fac118ef0eef0fdf2589a0d226432ec1712824d32caa7021f7d6eb
 ---
 
 为了增强状态管理框架对类对象中属性的观测能力，开发者可以使用@ObservedV2装饰器和@Trace装饰器装饰类以及类中的属性。
@@ -502,7 +502,7 @@ content_hash: sha256:da5ffb13d8a8d523d859139c97b70cc7d9751f228132b14f24da68498cd
 
 以下例子中，声明class GrandFather、Father、Uncle、Son、Cousin，继承关系如下图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/wFlmMhrrSFyltnff2_JLtg/zh-cn_image_0000002558604452.png?HW-CC-KV=V1&HW-CC-Date=20260429T052717Z&HW-CC-Expire=86400&HW-CC-Sign=E1DA2A8E382D664197C55A143D3CE2827BF0D5598B8F392F15C331115F91D3A4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/wFlmMhrrSFyltnff2_JLtg/zh-cn_image_0000002558604452.png)
 
 创建类Son和类Cousin的实例，点击Button('change Son age')和Button('change Cousin age')可以触发UI的刷新。
 
@@ -1249,4 +1249,4 @@ reflect-metadata可以通过如下命令安装。
 
 [ChildPage.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/arktsobservedv2andtrace/entry/src/main/ets/pages/faqs/ChildPage.ets#L15-L33)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/IXiSQlfSSX2pJlCre_laqA/zh-cn_image_0000002589323977.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052717Z&HW-CC-Expire=86400&HW-CC-Sign=BF62C5BC899CC7B82567FA7801D3988A7823720EB6AB22DBC687965D7637C801)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/IXiSQlfSSX2pJlCre_laqA/zh-cn_image_0000002589323977.gif)

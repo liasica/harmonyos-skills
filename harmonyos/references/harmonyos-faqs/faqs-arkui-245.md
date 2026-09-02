@@ -5,7 +5,7 @@ breadcrumb: FAQ > 应用框架开发 > UI框架 > 方舟UI框架（ArkUI） > �
 category: harmonyos-faqs
 scraped_at: 2026-04-29T14:17:03+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:0e7bc00481b6d2a587d5e92ad9dafd85ac8be534a6b38b7aa3f6645de5ee9c59
+content_hash: sha256:33e2b6771be696fde1a3d23fe76c0129b3d5b09b84905b5fee110b0abe704e6b
 ---
 
 HarmonyOS支持0x开头加八位或六位的写法。当透明度设为00时，前两位透明度不再借位，即0x00333333等于0x333333，相当于没有设置透明度，因此没有透明效果。建议使用rgba方式明确颜色。参考代码如下：
@@ -53,4 +53,4 @@ HarmonyOS支持0x开头加八位或六位的写法。当透明度设为00时，�
 
 效果如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/wllMzlluQhqlNdX10CaAag/zh-cn_image_0000002458749397.png?HW-CC-KV=V1&HW-CC-Date=20260429T061701Z&HW-CC-Expire=86400&HW-CC-Sign=DB6179442C226A847BCB1B8B52B7E6DC5DFB5A4C2CF9EFCA37CE0EAE18B8A497)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/wllMzlluQhqlNdX10CaAag/zh-cn_image_0000002458749397.png)

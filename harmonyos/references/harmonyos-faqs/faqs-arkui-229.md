@@ -1,7 +1,7 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-229
-title: 使用BuilderParam在父组件调用this的方法报错：Error message: undefined is not callable
-breadcrumb: FAQ > 应用框架开发 > UI框架 > 方舟UI框架（ArkUI） > 使用BuilderParam在父组件调用this的方法报错：Error message: undefined is not callable
+title: "使用BuilderParam在父组件调用this的方法报错：Error message: undefined is not callable"
+breadcrumb: "FAQ > 应用框架开发 > UI框架 > 方舟UI框架（ArkUI） > 使用BuilderParam在父组件调用this的方法报错：Error message: undefined is not callable"
 category: harmonyos-faqs
 scraped_at: 2026-04-28T08:25:59+08:00
 doc_updated_at: 2026-03-12

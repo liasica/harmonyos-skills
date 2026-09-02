@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用服务 > Scenario Fusion Kit（融合场景服务） 
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:40:20+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:4add14c5e2a922c42fe73bcf6617ca3774201bd64cbf7564d56ce29c0d9877cc
+content_hash: sha256:bf0c4abe0fbb77f5b82573975bb5827e04bc92ed27f9acd9567da35216bcc994
 ---
 
 说明
@@ -27,7 +27,7 @@ Taro及HarmonyOS版工程的搭建请参考官方文档[Harmony Hybrid | Taro �
 
 ## 效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/hyNhse1-TkiSjgnl2VzQ5A/zh-cn_image_0000002589245469.png?HW-CC-KV=V1&HW-CC-Date=20260429T054019Z&HW-CC-Expire=86400&HW-CC-Sign=C18E822253CEA91D6165F9EDD1673F4CD791BD1E4F0446FC7F6576693367F529)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/hyNhse1-TkiSjgnl2VzQ5A/zh-cn_image_0000002589245469.png)
 
 ## 示例代码
 

@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:52:20+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:3617b2208e14216d4939457ad76415158dacad93a7383c15bb46cd8be97afc0f
+content_hash: sha256:2ea32cb4cf87abaa4db5d0c7e8762bdb26f518ef436d947ae30bedf4dfafda24
 ---
 
 计数器组件，提供相应的增加或者减少的计数操作。
@@ -165,4 +165,4 @@ PhonePC/2in1TabletTVWearable
 36. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/goDz_BeAQkO-o7B5FHAffA/zh-cn_image_0000002558606768.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055217Z&HW-CC-Expire=86400&HW-CC-Sign=E1196F3AC1CB074881B6D5B9CBBDED610E71B4CC0823001955FDD3C500BE5F1B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/goDz_BeAQkO-o7B5FHAffA/zh-cn_image_0000002558606768.gif)

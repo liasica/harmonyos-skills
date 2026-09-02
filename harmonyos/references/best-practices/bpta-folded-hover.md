@@ -5,14 +5,14 @@ breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 >
 category: best-practices
 scraped_at: 2026-04-29T14:12:10+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:4091e3f9d9adc1b8a3dba9f3436fb6517ba8ca4fb22a87fdc617b68bf470f118
+content_hash: sha256:23fb2dc4f1fa149952b3a175775d5d0b3685a269ae35bad1de06481337d2ff83
 ---
 
 ## 概述
 
 折叠屏提供独特的手持操作体验“悬停态”，用户可以将设备半折后立在桌面上，实现免手持体验。悬停态适用于不需要频繁交互的任务，如视频通话、视频播放、拍照和听歌。进入悬停态时，中间弯折区域难以操作且显示内容会变形，建议页面内容进行折痕区避让适配。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/Js3x-k67Q7iQai8Z_9nhtw/zh-cn_image_0000002194010932.png?HW-CC-KV=V1&HW-CC-Date=20260429T061208Z&HW-CC-Expire=86400&HW-CC-Sign=3961CDD544BCF6F1D62ECF34FFFD26E534D3CFA234E6240BDEED7FB615E7F95D "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/Js3x-k67Q7iQai8Z_9nhtw/zh-cn_image_0000002194010932.png "点击放大")
 
 本文提供折叠屏悬停态的三种实现方式，并根据其特点给出各自的适用场景。
 
@@ -32,7 +32,7 @@ content_hash: sha256:4091e3f9d9adc1b8a3dba9f3436fb6517ba8ca4fb22a87fdc617b68bf47
 
 本文以视频播放类应用的全屏播放页面为例，介绍FolderStack的自定义悬停态实现。同时，以游戏界面为例，介绍FoldSplitContainer的悬停态实现。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/NCKtzeNzSEifFsluOtGz7Q/zh-cn_image_0000002193851340.png?HW-CC-KV=V1&HW-CC-Date=20260429T061208Z&HW-CC-Expire=86400&HW-CC-Sign=31947EB85360D5E240AC0516B75FC8CFE7BC42A56DB13DBEC0E7E027A0B942C7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/NCKtzeNzSEifFsluOtGz7Q/zh-cn_image_0000002193851340.png)
 
 ## 使用FolderStack组件实现悬停态
 
@@ -65,7 +65,7 @@ FolderStack需要撑满页面全屏，如果不撑满页面全屏，则只作为
 
 [HoverUseFolderStack.ets](https://gitcode.com/harmonyos_samples/FoldedHover/blob/master/entry/src/main/ets/view/hoverview/HoverUseFolderStack.ets#L44-L53)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/YZP8BuCxTJW8U6zTwjAvLQ/zh-cn_image_0000002229451233.png?HW-CC-KV=V1&HW-CC-Date=20260429T061208Z&HW-CC-Expire=86400&HW-CC-Sign=65CD337E519E725EB8F9A4D5730B2F4810BF62277FE0391A083E219E469B23D9 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/YZP8BuCxTJW8U6zTwjAvLQ/zh-cn_image_0000002229451233.png "点击放大")
 
 ## 使用FoldSplitContainer组件实现悬停态
 
@@ -75,7 +75,7 @@ FolderStack需要撑满页面全屏，如果不撑满页面全屏，则只作为
 
 FoldSplitContainer的primary和secondary参数分别设置二分栏的上下区域的布局，extra参数设置三分栏中侧栏区域的布局；通过LayoutOptions参数设置各区域分栏的比例。当设备进入悬停态时，FoldSplitContainer会自动避让折叠屏折痕区。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/C8xcT53YS0urU9qK8MuPdQ/zh-cn_image_0000002229451229.png?HW-CC-KV=V1&HW-CC-Date=20260429T061208Z&HW-CC-Expire=86400&HW-CC-Sign=FEE2AAFA2E7DC0B6D9199B6A886FF51ECB46FC8C67AC84614B2D46767D7AE4B2 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/C8xcT53YS0urU9qK8MuPdQ/zh-cn_image_0000002229451229.png "点击放大")
 
 ### 开发步骤
 
@@ -94,7 +94,7 @@ FoldSplitContainer的primary和secondary参数分别设置二分栏的上下区�
 
 [HoverUseFoldSplitContainer.ets](https://gitcode.com/harmonyos_samples/FoldedHover/blob/master/entry/src/main/ets/view/hoverview/HoverUseFoldSplitContainer.ets#L59-L66)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/L5VpoKrSSEO5jAmcPXsKAg/zh-cn_image_0000002194010928.png?HW-CC-KV=V1&HW-CC-Date=20260429T061208Z&HW-CC-Expire=86400&HW-CC-Sign=7943EF1DFFBBAAD4C6A6FC0327CC1B8FB2000C68126C6A69E9B66FB6295D929E "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/L5VpoKrSSEO5jAmcPXsKAg/zh-cn_image_0000002194010928.png "点击放大")
 
 ## 自定义实现悬停态
 
@@ -209,7 +209,7 @@ FoldSplitContainer的primary和secondary参数分别设置二分栏的上下区�
 
    [BackTitleView.ets](https://gitcode.com/harmonyos_samples/FoldedHover/blob/master/entry/src/main/ets/view/basicview/BackTitleView.ets#L29-L57)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/fLexYe1TRzi8V2u5pKkixA/zh-cn_image_0000002229451225.png?HW-CC-KV=V1&HW-CC-Date=20260429T061208Z&HW-CC-Expire=86400&HW-CC-Sign=43846BD2BB5ABC1EDC7C4741BAAC37E330915A3242EA9227317E0D805984EB30 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/fLexYe1TRzi8V2u5pKkixA/zh-cn_image_0000002229451225.png "点击放大")
 
 ## 示例代码
 

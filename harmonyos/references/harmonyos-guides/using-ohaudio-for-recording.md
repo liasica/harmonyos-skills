@@ -5,14 +5,14 @@ breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > 音频录制 > 推�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:34:31+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:abadbb08bfff52ea004b9814a60c93d4887434b07acbde7b76bf134a48c64332
+content_hash: sha256:d869cd17e67ef259441f787c726e9bbbb6eccf69e664462f1ce134f51d8f46ac
 ---
 
 OHAudio是系统在API version 10中引入的一套C API，此API在设计上实现归一，同时支持普通音频通路和低时延通路。仅支持PCM格式，适用于依赖Native层实现音频输入功能的场景。
 
 OHAudio音频录制状态变化示意图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/HwMUhZ4ATdiDHPZapbWvlg/zh-cn_image_0000002558765030.png?HW-CC-KV=V1&HW-CC-Date=20260429T053430Z&HW-CC-Expire=86400&HW-CC-Sign=48415174229ADD448C14BE1E6FF27E09085C088022D826628D6A43A4CA1C4CE1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/HwMUhZ4ATdiDHPZapbWvlg/zh-cn_image_0000002558765030.png)
 
 ## 使用入门
 

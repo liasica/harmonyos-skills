@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用服务 > App Linking Kit（应用链接服务） > �
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:37:32+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:76ecb31a7708df6ac629394708499b25f5171a72ef0e428ae499a033b9bc5b52
+content_hash: sha256:829c15aec61842bdad2079470b89ba4ca6e65563cd6fbad422c019020fc0527d
 ---
 
 ## 场景介绍
@@ -88,14 +88,14 @@ content_hash: sha256:76ecb31a7708df6ac629394708499b25f5171a72ef0e428ae499a033b9b
 2. 在项目列表中点击HarmonyOS应用所在的项目。
 3. 在左侧导航栏中选择“增长 > App Linking > 应用链接”，点击“创建”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/ttVy_BisSY-Y78Di1nAecw/zh-cn_image_0000002558605644.png?HW-CC-KV=V1&HW-CC-Date=20260429T053730Z&HW-CC-Expire=86400&HW-CC-Sign=051EBF2DB1C8A7E862AF8451E98829C5B557495ACDCDEF1A55AD6166DD346C24)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/ttVy_BisSY-Y78Di1nAecw/zh-cn_image_0000002558605644.png)
 4. 填写[建立域名与应用关联关系](app-linking-startupapp.md#建立域名与应用关联关系)的网址域名，例如：https://www.example.com。必须输入精确的域名，不可输入包含特殊字符的模糊网址。
 
    说明
 
    不可以在域名后面添加/，即不支持https://www.example.com/形式。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/KjQx2NUsRV2s0Mb5x4cyiQ/zh-cn_image_0000002589325171.png?HW-CC-KV=V1&HW-CC-Date=20260429T053730Z&HW-CC-Expire=86400&HW-CC-Sign=51E4682A60AC5C47F909FB158673A5566A9437DCF3DFB99149A436B80D259FCF)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/KjQx2NUsRV2s0Mb5x4cyiQ/zh-cn_image_0000002589325171.png)
 5. 设置完成后点击“发布”，AGC会对该网站域名的配置文件所包含的应用与本项目内的应用列表进行交集校验。
 
    说明
@@ -104,15 +104,15 @@ content_hash: sha256:76ecb31a7708df6ac629394708499b25f5171a72ef0e428ae499a033b9b
 
    例如：开发者在4月7日17:21创建了应用链接，系统会在4月8日17:30去域名服务器上重新获取配置文件，然后进行交集校验，更新发布状态。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/NKaTX7C2RgmT5Ml59-YILg/zh-cn_image_0000002589245107.png?HW-CC-KV=V1&HW-CC-Date=20260429T053730Z&HW-CC-Expire=86400&HW-CC-Sign=668217E6A0DE101B717A5947296DB4AFE1DB39E33ACEF4F92EE6A9BA2B264F48)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/NKaTX7C2RgmT5Ml59-YILg/zh-cn_image_0000002589245107.png)
 
    * 如果域名的配置文件中存在本项目中的应用，则发布成功，点击“查看”可显示该域名关联的应用信息。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/GE6X9szPREyi5jAmtQWNMQ/zh-cn_image_0000002558765302.png?HW-CC-KV=V1&HW-CC-Date=20260429T053730Z&HW-CC-Expire=86400&HW-CC-Sign=6A65DA5C1E85AE02D4613BC1C6E46AF5F33CC4648EFB40016762EB839696DAAA)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/GE6X9szPREyi5jAmtQWNMQ/zh-cn_image_0000002558765302.png)
    * 如果还在校验中，则状态为“发布中”。
    * 如果配置文件中没有包含任何本项目中的应用，则发布失败，点击“查看”可显示发布失败原因。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/NcT4TENTR9yd6EXKRuGqOw/zh-cn_image_0000002558605646.png?HW-CC-KV=V1&HW-CC-Date=20260429T053730Z&HW-CC-Expire=86400&HW-CC-Sign=D73A84E8B8C7B84FAB558D481FB5E0286C669D0FAD3B9D023CC0BB412DB0539E)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/NcT4TENTR9yd6EXKRuGqOw/zh-cn_image_0000002558605646.png)
 
 ### 在module.json5中配置关联的网址域名
 
@@ -314,7 +314,7 @@ ArkWeb深度集成了App Linking的能力，当用户在系统浏览器或者集
 
 通过系统级扫码入口扫描App Linking应用链接对应的二维码，然后查看跳转效果。以“扫码直达”服务的美团单车场景为例。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/SrBSYMwZTyWPLp6YkVixNQ/zh-cn_image_0000002589325173.gif?HW-CC-KV=V1&HW-CC-Date=20260429T053730Z&HW-CC-Expire=86400&HW-CC-Sign=4EC7F7AFF5B73B16B5911E88E08C6000C169AD9B2CB40C7BDFD10587A85D0357)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/SrBSYMwZTyWPLp6YkVixNQ/zh-cn_image_0000002589325173.gif)
 
 ## FAQ
 

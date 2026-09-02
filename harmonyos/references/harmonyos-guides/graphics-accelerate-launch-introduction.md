@@ -5,7 +5,7 @@ breadcrumb: 指南 > 图形 > Graphics Accelerate Kit（图形加速服务） > 
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:36:32+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:22fb1d07c0a59d5c75b6eab672759c7c46eef5bf547cc819c6155f66f619ea3a
+content_hash: sha256:6b12e8919602f0f587cc86e64688597bb6d5305298d3dbb9d8c772a918dd9de4
 ---
 
 秒级启动是在游戏退出时，开发者先切换场景，系统再自动为该场景制作内存镜像。在该游戏下一次无资源更新冷启动时，可以直接进入内存镜像界面，实现游戏的秒开秒进，无需再经过漫长的加载过程。
@@ -26,10 +26,10 @@ content_hash: sha256:22fb1d07c0a59d5c75b6eab672759c7c46eef5bf547cc819c6155f66f61
 
 * 加载内存镜像
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/G3adWUafTY-sOAmkS9Nwzg/zh-cn_image_0000002558605570.gif?HW-CC-KV=V1&HW-CC-Date=20260429T053630Z&HW-CC-Expire=86400&HW-CC-Sign=C3768A4D5884C311EB1FDD35DE002A00C115DDC9CD48E5AE218F08D31B9CD146)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/G3adWUafTY-sOAmkS9Nwzg/zh-cn_image_0000002558605570.gif)
 * 未加载内存镜像
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/PvVzuBk9TOe6KF_RTt1Nxg/zh-cn_image_0000002589325097.gif?HW-CC-KV=V1&HW-CC-Date=20260429T053630Z&HW-CC-Expire=86400&HW-CC-Sign=77C6F3519916E3C9E9B250272F298A182DEEF22CEAD032C471E70D406F6DA3D4)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/PvVzuBk9TOe6KF_RTt1Nxg/zh-cn_image_0000002589325097.gif)
 
 ## 快速上手体验
 

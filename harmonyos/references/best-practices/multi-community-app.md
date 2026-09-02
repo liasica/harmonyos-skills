@@ -5,7 +5,7 @@ breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 >
 category: best-practices
 scraped_at: 2026-04-29T14:12:31+08:00
 doc_updated_at: 2026-03-26
-content_hash: sha256:ed7014e9fceca5bc2bc764488475d675c513296126ab3a1f912fa7649aaf711a
+content_hash: sha256:8951d59447189a1e8282453aea773ec3f01113bee589146043c68fcbb035c8ff
 ---
 
 ## 概述
@@ -28,11 +28,11 @@ HarmonyOS的分层架构包括产品定制层、基础特性层和公共能力�
 
 热点页利用[响应式布局](bpta-multi-device-responsive-layout.md)中的[栅格](bpta-multi-device-responsive-layout.md#section1061332817545)布局能力，结合[WaterFlow](../harmonyos-references/ts-container-waterflow.md)容器，实现单列卡片变瀑布流卡片的一多布局能力。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/fqQR88doQm6Kj8xzTcOgJQ/zh-cn_image_0000002229335777.png?HW-CC-KV=V1&HW-CC-Date=20260429T061221Z&HW-CC-Expire=86400&HW-CC-Sign=90ED3402AEE27CF63DEEC9E54F249CA90350E23ECBC59E4557C707B5C19D931D "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/fqQR88doQm6Kj8xzTcOgJQ/zh-cn_image_0000002229335777.png "点击放大")
 
 在卡片详情页中，使用响应式布局的栅格布局，实现图文区域和评论区域的左右及上下布局，从而达到边看边评的图文阅读效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/4ONCaQ4OTk2uPSkdTL4EGA/zh-cn_image_0000002229335781.png?HW-CC-KV=V1&HW-CC-Date=20260429T061221Z&HW-CC-Expire=86400&HW-CC-Sign=6C3B86AB6A57B2867AD86128E38FD7F4DA0BC352A3A8E3810D13613A8C2F2283 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/4ONCaQ4OTk2uPSkdTL4EGA/zh-cn_image_0000002229335781.png "点击放大")
 
 社区评论应用包含以下一多页面布局能力：[侧边导航](multi-video-app.md#zh-cn_topic_0000001744653537_li1226615201361)、[列表重复布局](multi-community-app.md#zh-cn_topic_0000001758831130_li118141522111817)、[动态卡片](multi-community-app.md#zh-cn_topic_0000001758831130_li1420045031813)、[边看边评](multi-community-app.md#zh-cn_topic_0000001758831130_li11692132514198)。侧边导航参考多设备长视频界面[底部/侧边页签](multi-video-app.md#zh-cn_topic_0000001744653537_li1226615201361)。
 
@@ -46,7 +46,7 @@ HarmonyOS的分层架构包括产品定制层、基础特性层和公共能力�
 
 热点页提供搜索、热搜展示、信息阅读等功能，使用列表布局和动态卡片。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/rOCbUq2OQqC7eTk16chtLQ/zh-cn_image_0000002229335773.png?HW-CC-KV=V1&HW-CC-Date=20260429T061221Z&HW-CC-Expire=86400&HW-CC-Sign=FB67E5C3CE768742207ED8A9A73D7F5A8559A3EABE0957C96C604ACAF32DCA75 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/rOCbUq2OQqC7eTk16chtLQ/zh-cn_image_0000002229335773.png "点击放大")
 
 * 列表重复布局
 
@@ -138,7 +138,7 @@ HarmonyOS的分层架构包括产品定制层、基础特性层和公共能力�
 
 卡片详情区域支持图文和评论在不同设备上显示上下或左右布局。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/EEa77zlaTRK0UoQdC6c4tQ/zh-cn_image_0000002194009952.png?HW-CC-KV=V1&HW-CC-Date=20260429T061221Z&HW-CC-Expire=86400&HW-CC-Sign=9BDB81E9B675CF48190281ED930012DD03702605400A71E5051C4C106F605B5C "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/EEa77zlaTRK0UoQdC6c4tQ/zh-cn_image_0000002194009952.png "点击放大")
 
 * 边看边评
 
@@ -233,7 +233,7 @@ HarmonyOS的分层架构包括产品定制层、基础特性层和公共能力�
 
 效果如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/0pHjtpXYRWO2QtjijAIx_w/zh-cn_image_0000002229335757.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061221Z&HW-CC-Expire=86400&HW-CC-Sign=94D509F79AEE0B3FEBE858B72A169D450DDFD8A70D34E748A27AF0E3F1E95901 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/0pHjtpXYRWO2QtjijAIx_w/zh-cn_image_0000002229335757.gif "点击放大")
 
 ```
 1. @Component

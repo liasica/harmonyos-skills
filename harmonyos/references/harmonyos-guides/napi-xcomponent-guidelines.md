@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:27:53+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:5b7e799187688b41cf7486e00af84b0352e238e0e296aeeb036f1c20afdb2b72
+content_hash: sha256:626ad001eb28ce70df161cd2a541330aa50f1a64902be2588a68577dad384aee
 ---
 
 ## 概述
@@ -61,21 +61,21 @@ XComponent推荐使用两种方式获取XComponent持有Surface的生命周期�
 
   ArkTS侧onSurfaceCreated的时序如下图：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/5_T728FKR96xIsQQi0hijw/zh-cn_image_0000002558604722.png?HW-CC-KV=V1&HW-CC-Date=20260429T052751Z&HW-CC-Expire=86400&HW-CC-Sign=C9F284F40DFFE90320AAED412E376A6B8BCDD5ECDED27AEA63EE4F743DA3A167)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/5_T728FKR96xIsQQi0hijw/zh-cn_image_0000002558604722.png)
 * onSurfaceChanged回调
 
   触发时刻：Surface大小变化触发重新布局之后触发。
 
   ArkTS侧onSurfaceChanged的时序如下图：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/6Napod9_QuGV4_gAsZe2jg/zh-cn_image_0000002589324247.png?HW-CC-KV=V1&HW-CC-Date=20260429T052751Z&HW-CC-Expire=86400&HW-CC-Sign=07189377A239244527ADF8F7F8F7396ABF34ACDD6D6F6312E3F5C6DC1EF84A22)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/6Napod9_QuGV4_gAsZe2jg/zh-cn_image_0000002589324247.png)
 * onSurfaceDestroyed回调
 
   触发时刻：XComponent组件被销毁时触发，与一般ArkUI的组件销毁时机一致。
 
   ArkTS侧onSurfaceDestroyed的时序图：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/InrV-WiQTTiMMOpQ41lrAA/zh-cn_image_0000002589244187.png?HW-CC-KV=V1&HW-CC-Date=20260429T052751Z&HW-CC-Expire=86400&HW-CC-Sign=B74A428909AB1C5F7ED0F49B86BFA78D8CEEFF4CFE331E2F290DE3D797B636A9)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/InrV-WiQTTiMMOpQ41lrAA/zh-cn_image_0000002589244187.png)
 
 对于复杂的交互逻辑需跨语言开发，追求极致渲染性能或业务需求自主控制Surface的创建和销毁的，建议在Native侧使用OH\_ArkUI\_SurfaceHolder管理Surface生命周期。其生命周期触发时机如下：
 
@@ -88,21 +88,21 @@ XComponent推荐使用两种方式获取XComponent持有Surface的生命周期�
 
   Native侧OnSurfaceCreated的时序如下图：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/u_1DoVa2Sa-TWMq2lw_kqQ/zh-cn_image_0000002558764380.png?HW-CC-KV=V1&HW-CC-Date=20260429T052751Z&HW-CC-Expire=86400&HW-CC-Sign=4B9F8EC858F93AB4A8F2DCBECB2A07A968280A9768DB0964EE4F3719133617BA)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/u_1DoVa2Sa-TWMq2lw_kqQ/zh-cn_image_0000002558764380.png)
 * OnSurfaceChanged回调
 
   触发时刻：OnSurfaceCreated回调成功触发且Surface大小变化触发重新布局之后触发。
 
   Native侧OnSurfaceChanged的时序如下图：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/F1fTofLaRXKjThho5mnA8A/zh-cn_image_0000002558604724.png?HW-CC-KV=V1&HW-CC-Date=20260429T052751Z&HW-CC-Expire=86400&HW-CC-Sign=3C6E36033D3A45CA3ACCD8D8CE28B316E40267402BB235C3E36B53D11D4B9945)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/F1fTofLaRXKjThho5mnA8A/zh-cn_image_0000002558604724.png)
 * OnSurfaceDestroyed回调
 
   触发时刻：组件下树且autoInitialize=true 或者调用 OH\_ArkUI\_XComponent\_Finalize后触发。
 
   Native侧OnSurfaceDestroyed的时序图：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/7D18PE-CTJqPy674PWaNHw/zh-cn_image_0000002589324249.png?HW-CC-KV=V1&HW-CC-Date=20260429T052751Z&HW-CC-Expire=86400&HW-CC-Sign=FD3392FBCC09F6E778D17A4AEB69458F461FD5A6F8F8471F15CA56CD360DB1B0)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/7D18PE-CTJqPy674PWaNHw/zh-cn_image_0000002589324249.png)
 
 ### XComponent的开发范式
 
@@ -1654,7 +1654,7 @@ XComponent推荐使用两种方式获取XComponent持有Surface的生命周期�
 
    上述用例具体实现可参考[NativeXComponent](https://gitcode.com/openharmony/applications_app_samples/tree/master/code/DocsSample/ArkUISample/NativeXComponentSample)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/3TNJ-I3YSGuvcsXfJhrRYQ/zh-cn_image_0000002589244189.jpeg?HW-CC-KV=V1&HW-CC-Date=20260429T052751Z&HW-CC-Expire=86400&HW-CC-Sign=1DFB0510F1300394C41B3B75002FD793D9DE86F59146E0A2F737FD537DFE812A)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/3TNJ-I3YSGuvcsXfJhrRYQ/zh-cn_image_0000002589244189.jpeg)
 
 ### 在ArkTS侧使用SurfaceId进行渲染绘制
 

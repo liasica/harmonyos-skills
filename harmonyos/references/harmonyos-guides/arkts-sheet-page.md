@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:27:59+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:14efeeec589e1479bc88d565c31472616154d5c566a152225c1d745f910755d8
+content_hash: sha256:3ba77d000ec16e19939634c084a582655e940d3b3186a1279ca517f59a52b64d
 ---
 
 [半模态页面（bindSheet）](../harmonyos-references/ts-universal-attributes-sheet-transition.md#bindsheet)默认是模态形式的非全屏弹窗式交互页面，允许部分底层父视图可见，帮助用户在与半模态交互时保留其父视图环境。
@@ -121,7 +121,7 @@ content_hash: sha256:14efeeec589e1479bc88d565c31472616154d5c566a152225c1d745f910
 
 [SheetDemo.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/BindSheet/entry/src/main/ets/pages/bindSheet/template10/SheetDemo.ets#L16-L72)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/gqT85-_kSDOpruC5Lnq6ZQ/zh-cn_image_0000002589244221.png?HW-CC-KV=V1&HW-CC-Date=20260429T052757Z&HW-CC-Expire=86400&HW-CC-Sign=BDB6B96C225C08E6744E9AC03B8D04387457A7859BA5148132E95724639E52A3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/gqT85-_kSDOpruC5Lnq6ZQ/zh-cn_image_0000002589244221.png)
 
 ## 二次确认能力
 
@@ -204,7 +204,7 @@ content_hash: sha256:14efeeec589e1479bc88d565c31472616154d5c566a152225c1d745f910
 
 [OnWillDismiss\_Dismiss.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/BindSheet/entry/src/main/ets/pages/bindSheet/template11/OnWillDismiss_Dismiss.ets#L16-L86)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/IlFh_GGgSX6qZPQs8EFSQQ/zh-cn_image_0000002558764414.png?HW-CC-KV=V1&HW-CC-Date=20260429T052757Z&HW-CC-Expire=86400&HW-CC-Sign=A520D78EFC96680B33A17ED3C46C9135432A2B74E40629EEAA01156A1C32E41C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/IlFh_GGgSX6qZPQs8EFSQQ/zh-cn_image_0000002558764414.png)
 
 ## 屏蔽部分关闭行为
 
@@ -312,4 +312,4 @@ content_hash: sha256:14efeeec589e1479bc88d565c31472616154d5c566a152225c1d745f910
 
 [SheetTransitionExample.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/BindSheet/entry/src/main/ets/pages/bindSheet/template12/SheetTransitionExample.ets#L16-L79)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/1T_2-aVISEy5DgQL-DYJmw/zh-cn_image_0000002558604758.png?HW-CC-KV=V1&HW-CC-Date=20260429T052757Z&HW-CC-Expire=86400&HW-CC-Sign=A7ABCBAF044D404E4B51AB5AB6C6898DACB2859B927D7BB3AF2B13470A05A846)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/1T_2-aVISEy5DgQL-DYJmw/zh-cn_image_0000002558604758.png)

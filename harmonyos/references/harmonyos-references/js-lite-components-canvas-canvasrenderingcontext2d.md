@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > �
 category: harmonyos-references
 scraped_at: 2026-04-29T13:53:55+08:00
 doc_updated_at: 2026-03-27
-content_hash: sha256:0daa2990abb309881faed5eb49c8962d3bb0e3b482076815bc35ba8286e150ef
+content_hash: sha256:43becfea0e309a5e75835e03a7884b80b767a5f61522c2049d9c280eccda2476
 ---
 
 使用CanvasRenderingContext2D在canvas画布组件上进行绘制，绘制对象可以是矩形、文本。
@@ -33,7 +33,7 @@ content_hash: sha256:0daa2990abb309881faed5eb49c8962d3bb0e3b482076815bc35ba8286e
 10. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/ZowuRf6kTg2ljeGfqwvohA/zh-cn_image_0000002558607280.png?HW-CC-KV=V1&HW-CC-Date=20260429T055354Z&HW-CC-Expire=86400&HW-CC-Sign=7FBCFD64D5DB74641FB21CC55786D129343FDEC2A7CA1AB9093AEAC4D925A035)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/ZowuRf6kTg2ljeGfqwvohA/zh-cn_image_0000002558607280.png)
 
 ## fillRect()
 
@@ -52,7 +52,7 @@ PhonePC/2in1TabletTVWearableLite Wearable
 
 **示例：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/E-uESs8QRXyHvWzriC--Tg/zh-cn_image_0000002589326809.png?HW-CC-KV=V1&HW-CC-Date=20260429T055354Z&HW-CC-Expire=86400&HW-CC-Sign=3E04F180DA2246DC5A20B206157B724E2F03546FFEC3133977A558DA9B55B9BB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/E-uESs8QRXyHvWzriC--Tg/zh-cn_image_0000002589326809.png)
 
 ```
 1. ctx.fillRect(20, 20, 200, 150);
@@ -72,7 +72,7 @@ PhonePC/2in1TabletTVWearableLite Wearable
 
 **示例：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/UiIx7b92Sf6sepgUd5kEPQ/zh-cn_image_0000002589246749.png?HW-CC-KV=V1&HW-CC-Date=20260429T055354Z&HW-CC-Expire=86400&HW-CC-Sign=AC09D71136F5F8BB0A358628B2CE49CD74DB2766E9E4124F63D453DEED7977C8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/UiIx7b92Sf6sepgUd5kEPQ/zh-cn_image_0000002589246749.png)
 
 ```
 1. ctx.fillStyle = '#0000ff';
@@ -96,7 +96,7 @@ PhonePC/2in1TabletTVWearableLite Wearable
 
 **示例：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/qf9llpstSD-SHKF2bwKqOw/zh-cn_image_0000002558766942.png?HW-CC-KV=V1&HW-CC-Date=20260429T055354Z&HW-CC-Expire=86400&HW-CC-Sign=47E7562837D0A178C90A5B758E1F505D60304A21A7FB13045FBF31D3CF263DAE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/qf9llpstSD-SHKF2bwKqOw/zh-cn_image_0000002558766942.png)
 
 ```
 1. ctx.strokeRect(30, 30, 200, 150);
@@ -118,7 +118,7 @@ PhonePC/2in1TabletTVWearableLite Wearable
 
 **示例：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/jlsJ2HpyQQu7OMrA__ag0g/zh-cn_image_0000002558607282.png?HW-CC-KV=V1&HW-CC-Date=20260429T055354Z&HW-CC-Expire=86400&HW-CC-Sign=F067AF91428E10A663B111308FB2FE8A4CF8E80F043BA384ABCBD183B62239E9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/jlsJ2HpyQQu7OMrA__ag0g/zh-cn_image_0000002558607282.png)
 
 ```
 1. ctx.font = '35px sans-serif';
@@ -139,7 +139,7 @@ PhonePC/2in1TabletTVWearableLite Wearable
 
 **示例：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/S4bTf18NQsOhzq-Lu58JUg/zh-cn_image_0000002589326811.png?HW-CC-KV=V1&HW-CC-Date=20260429T055354Z&HW-CC-Expire=86400&HW-CC-Sign=BD7CE87D194359BB9488FA7C001F6EB1C16FD8782E75559F1694FDEFD5920602)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/S4bTf18NQsOhzq-Lu58JUg/zh-cn_image_0000002589326811.png)
 
 ```
 1. ctx.lineWidth = 5;
@@ -160,7 +160,7 @@ PhonePC/2in1TabletTVWearableLite Wearable
 
 **示例：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/CODM1RQESum8daTFxBRbRQ/zh-cn_image_0000002589246751.png?HW-CC-KV=V1&HW-CC-Date=20260429T055354Z&HW-CC-Expire=86400&HW-CC-Sign=1ECA234B4D8687307BED6E4515CEC09219CFD22AD4A01506671972B3C421188C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/CODM1RQESum8daTFxBRbRQ/zh-cn_image_0000002589246751.png)
 
 ```
 1. ctx.lineWidth = 10;
@@ -176,7 +176,7 @@ PhonePC/2in1TabletTVWearableLite Wearable
 
 **示例：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/r3vdVgB7RbCa4Gd1QvmcuQ/zh-cn_image_0000002558766944.png?HW-CC-KV=V1&HW-CC-Date=20260429T055354Z&HW-CC-Expire=86400&HW-CC-Sign=DAF43A47CABA76902B4E27F63DC845DD89EE0CC369B990D60DB5AC0FF0C7E4A1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/r3vdVgB7RbCa4Gd1QvmcuQ/zh-cn_image_0000002558766944.png)
 
 ```
 1. ctx.moveTo(25, 25);
@@ -193,7 +193,7 @@ PhonePC/2in1TabletTVWearableLite Wearable
 
 **示例：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/zW6rZ_KLRdS_7Y3L5Dpj4g/zh-cn_image_0000002558607284.png?HW-CC-KV=V1&HW-CC-Date=20260429T055354Z&HW-CC-Expire=86400&HW-CC-Sign=C0E464E748727055DC89D4AF059F5C6AEEA54ED1CA849DB43EB8510E5CFF557F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/zW6rZ_KLRdS_7Y3L5Dpj4g/zh-cn_image_0000002558607284.png)
 
 ```
 1. ctx.beginPath();
@@ -219,7 +219,7 @@ PhonePC/2in1TabletTVWearableLite Wearable
 
 **示例：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/xxJLuLv2QjSlaEDRCBlMlg/zh-cn_image_0000002589326813.png?HW-CC-KV=V1&HW-CC-Date=20260429T055354Z&HW-CC-Expire=86400&HW-CC-Sign=4C7241AB46CD0269FD00A2E0AE1302E174A06A56B402FDA5C24575077218E556)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/xxJLuLv2QjSlaEDRCBlMlg/zh-cn_image_0000002589326813.png)
 
 ```
 1. ctx.beginPath();
@@ -243,7 +243,7 @@ PhonePC/2in1TabletTVWearableLite Wearable
 
 **示例：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/m8kJNRxvTLGumamVZMfEuQ/zh-cn_image_0000002589246753.png?HW-CC-KV=V1&HW-CC-Date=20260429T055354Z&HW-CC-Expire=86400&HW-CC-Sign=3EEF6F0EF0FF8C9504F4D567DDFD285797B57290BB23F6BD60687B8B9CFCBD1C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/m8kJNRxvTLGumamVZMfEuQ/zh-cn_image_0000002589246753.png)
 
 ```
 1. ctx.beginPath();
@@ -260,7 +260,7 @@ PhonePC/2in1TabletTVWearableLite Wearable
 
 **示例：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/MwWZtQy4TYO9KsS80kNqAw/zh-cn_image_0000002558766946.png?HW-CC-KV=V1&HW-CC-Date=20260429T055354Z&HW-CC-Expire=86400&HW-CC-Sign=87FFB25E8AECA2D99E716DF4D50372BFE65C7C2ACF1A3DD3280295C9AA71AC51)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/MwWZtQy4TYO9KsS80kNqAw/zh-cn_image_0000002558766946.png)
 
 ```
 1. ctx.beginPath();
@@ -285,7 +285,7 @@ PhonePC/2in1TabletTVWearableLite Wearable
 
 **示例：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/YRlTfpMIRWGGyKA5XJ9DwA/zh-cn_image_0000002558607286.png?HW-CC-KV=V1&HW-CC-Date=20260429T055354Z&HW-CC-Expire=86400&HW-CC-Sign=FAD68D07C96F25A98EE3FE7F5F1C084C632F993C3F7ABE3B0B010B15C35B404F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/YRlTfpMIRWGGyKA5XJ9DwA/zh-cn_image_0000002558607286.png)
 
 ```
 1. ctx.font = '30px sans-serif';
@@ -306,7 +306,7 @@ PhonePC/2in1TabletTVWearableLite Wearable
 
 **示例：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/bO9TF9FgQIGr7N_YWINlgw/zh-cn_image_0000002589326815.png?HW-CC-KV=V1&HW-CC-Date=20260429T055354Z&HW-CC-Expire=86400&HW-CC-Sign=1DEAE18DBCC9821E7B1FE0FE521825469EA54044BB50BF3CFA117C3568931CB0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/bO9TF9FgQIGr7N_YWINlgw/zh-cn_image_0000002589326815.png)
 
 ```
 1. ctx.strokeStyle = '#0000ff';
@@ -344,7 +344,7 @@ PhonePC/2in1TabletTVWearableLite Wearable
 
 **示例：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/0-q_uaXXSGKzbcNe7_x-dg/zh-cn_image_0000002589246755.png?HW-CC-KV=V1&HW-CC-Date=20260429T055354Z&HW-CC-Expire=86400&HW-CC-Sign=919139CDF7E5A038E1CCCAF481EB413C4BB1898A7125F8574D409F1A8AD42962)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/0-q_uaXXSGKzbcNe7_x-dg/zh-cn_image_0000002589246755.png)
 
 ```
 1. ctx.beginPath();
@@ -369,7 +369,7 @@ PhonePC/2in1TabletTVWearableLite Wearable
 
 **示例：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/R299acfyROKlygeSMxsPvQ/zh-cn_image_0000002558766948.png?HW-CC-KV=V1&HW-CC-Date=20260429T055354Z&HW-CC-Expire=86400&HW-CC-Sign=0B0E715FBB8B848E152528B68103F1B452B9C8CB3775E42114E8636CE0CD9352)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/R299acfyROKlygeSMxsPvQ/zh-cn_image_0000002558766948.png)
 
 ```
 1. ctx.rect(20, 20, 100, 100); // Create a 100*100 rectangle at (20, 20)

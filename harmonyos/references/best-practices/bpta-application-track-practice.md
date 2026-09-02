@@ -5,7 +5,7 @@ breadcrumb: 最佳实践 > 应用框架 > ArkTS语言 > 应用埋点
 category: best-practices
 scraped_at: 2026-04-29T14:10:47+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:2098144c310ed003f23d008694cba69dd304fe062389d4255faf503ea641ed12
+content_hash: sha256:827c21a9901ef863e8109e99ea13297dc8ef28954e024c0a93420559cc0038fe
 ---
 
 ## 概述
@@ -29,7 +29,7 @@ content_hash: sha256:2098144c310ed003f23d008694cba69dd304fe062389d4255faf503ea64
 
 接下来会从（1）组件动态绑定埋点数据；（2）点击埋点方案；（3）曝光埋点方案；（4）页面埋点方案四部分介绍。整体方案使用全局无感监听能力[UIObserver](../harmonyos-references/arkts-apis-uicontext-uiobserver.md)和[setOnVisibleAreaApproximateChange](../harmonyos-references/ts-uicommonevent.md#setonvisibleareaapproximatechange)属性实现埋点功能。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/PZ6XLdRxRcK5C2ntOJ8EoA/zh-cn_image_0000002194010920.png?HW-CC-KV=V1&HW-CC-Date=20260429T061045Z&HW-CC-Expire=86400&HW-CC-Sign=D7C38E62F2CCDD4E8F65E8753BFD39EE65829FB848FBDD815E630F5226ADD809 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/PZ6XLdRxRcK5C2ntOJ8EoA/zh-cn_image_0000002194010920.png "点击放大")
 
 ### 绑定埋点数据
 

@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-connectedtag
-title: @ohos.connectedTag (有源标签)
+title: "@ohos.connectedTag (有源标签)"
 breadcrumb: API参考 > 系统 > 网络 > Connectivity Kit（短距通信服务） > ArkTS API > @ohos.connectedTag (有源标签)
 category: harmonyos-references
 scraped_at: 2026-04-28T08:07:59+08:00

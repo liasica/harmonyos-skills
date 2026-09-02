@@ -5,7 +5,7 @@ breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 端侧部
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:40:59+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:1168d6e44500c75e70eece3e1f2d1591fb7c0ec2f6cab5aeb2927dd52e7dc51c
+content_hash: sha256:aa10b8a1fe297dc786c51f59f7282657276c897f84ff00152e40ab74dfbb4f42
 ---
 
 ## 概述
@@ -18,4 +18,4 @@ content_hash: sha256:1168d6e44500c75e70eece3e1f2d1591fb7c0ec2f6cab5aeb2927dd52e7
 
 说明
 
-若size为模型输出大小，对于输出张量，建议开发者申请ION内存的大小为![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/L_Uvuox9ROaeI52fa_4ckw/zh-cn_image_0000002558606066.png?HW-CC-KV=V1&HW-CC-Date=20260429T054058Z&HW-CC-Expire=86400&HW-CC-Sign=F2DB0A8B55D13F90156D6BFC8AF9EA8EE87D43F8B37C350CC27DB31A58B7829D)。
+若size为模型输出大小，对于输出张量，建议开发者申请ION内存的大小为![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/L_Uvuox9ROaeI52fa_4ckw/zh-cn_image_0000002558606066.png)。

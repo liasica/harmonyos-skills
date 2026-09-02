@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:51:37+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:53c5b12ffb04f2f1ec3d92d1fc531c2475a347be5da6cdc24f7b0d7de390e1cc
+content_hash: sha256:9a45457e7a08fbcbdc50c63ba4c39e1eb92d2c3cda96ad69f5aa741459aff61d
 ---
 
 为组件提供手势拦截能力。开发者可根据需要，将系统内置手势和比其优先级高的手势做并行化处理，并可以动态控制手势事件的触发。
@@ -355,7 +355,7 @@ PhonePC/2in1TabletTVWearable
 158. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/s7fsOE7vQNuo77ryb_wjBw/zh-cn_image_0000002589245919.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055136Z&HW-CC-Expire=86400&HW-CC-Sign=C6D7FD58C237F830F44A7BB888E5E8E2533D0A398E07C7E6676ACFA75420F080)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/s7fsOE7vQNuo77ryb_wjBw/zh-cn_image_0000002589245919.gif)
 
 ### 示例2（嵌套场景下拦截内部容器手势）
 
@@ -447,7 +447,7 @@ PhonePC/2in1TabletTVWearable
 81. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/7D7KmyolRwK-a-40iZNoLg/zh-cn_image_0000002558766110.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055136Z&HW-CC-Expire=86400&HW-CC-Sign=FBE287C336283B892E376FE747D7E0CCE02D6BFFEAFA3A4218E083E442A2335B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/7D7KmyolRwK-a-40iZNoLg/zh-cn_image_0000002558766110.gif)
 
 ### 示例3（拦截手势获取属性）
 
@@ -531,7 +531,7 @@ PhonePC/2in1TabletTVWearable
 75. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/uaTZxnarTAq3hj4AQJ2EYg/zh-cn_image_0000002558606452.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055136Z&HW-CC-Expire=86400&HW-CC-Sign=622335C792410CB7D2559EE3E866EBEF462C1834D0B6D590047BE730560536EE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/uaTZxnarTAq3hj4AQJ2EYg/zh-cn_image_0000002558606452.gif)
 
 ### 示例4（手势触发成功时取消子组件上的Touch事件）
 
@@ -730,7 +730,7 @@ PhonePC/2in1TabletTVWearable
 190. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/R8dK-EqQQ8KBMajf7bddUA/zh-cn_image_0000002589325979.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055136Z&HW-CC-Expire=86400&HW-CC-Sign=1C71C25F168C623A1F4D3997379A3F62DA704331B341C29127FF1304C00AE064)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/R8dK-EqQQ8KBMajf7bddUA/zh-cn_image_0000002589325979.gif)
 
 ### 示例5（自定义手势识别器是否参与手势处理）
 
@@ -819,4 +819,4 @@ PhonePC/2in1TabletTVWearable
 80. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/_qBEEwCdQgCpiO8lb0CZOw/zh-cn_image_0000002589245921.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055136Z&HW-CC-Expire=86400&HW-CC-Sign=B9D9B1227F741852F8718268D94C1076E353B38ED6403A0F661F6A171DED5DD6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/_qBEEwCdQgCpiO8lb0CZOw/zh-cn_image_0000002589245921.gif)

@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > �
 category: harmonyos-references
 scraped_at: 2026-04-29T13:53:39+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:255aa2ffe8a36c7cddf3df0f78e4f8fef045f7265ccb6ae126231c517771f730
+content_hash: sha256:d27241c3786ccbc9602a425753e46e970a8cfbd1a578bb99ba08a612fe127e4e
 ---
 
 说明
@@ -101,7 +101,7 @@ PhonePC/2in1TabletTVWearable
 15. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/LhcIyv9NS4WuUMn_FaMCOg/zh-cn_image_0000002589326647.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055338Z&HW-CC-Expire=86400&HW-CC-Sign=EFAE3E8E71DA969927859CE0529BBDA66978A47986242CEFD49F9F8351CC2204)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/LhcIyv9NS4WuUMn_FaMCOg/zh-cn_image_0000002589326647.gif)
 
 动画叠加
 
@@ -156,7 +156,7 @@ PhonePC/2in1TabletTVWearable
 14. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/AVy3EL6VSBiJiok7TvNydg/zh-cn_image_0000002589246589.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055338Z&HW-CC-Expire=86400&HW-CC-Sign=AC4CA5C0C00B1E9F4158B7B4FD497FE6D7D57E451042FA30E992777DD12C561C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/AVy3EL6VSBiJiok7TvNydg/zh-cn_image_0000002589246589.gif)
 
 涉及组件示例
 
@@ -224,4 +224,4 @@ PhonePC/2in1TabletTVWearable
 14. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/Rzcd4VO2QdOUeur-qF6O0g/zh-cn_image_0000002558766782.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055338Z&HW-CC-Expire=86400&HW-CC-Sign=3D9BA988C58BAD93FBBCE615ACE2400147B7767D876157DF82C2B675A2590D91)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/Rzcd4VO2QdOUeur-qF6O0g/zh-cn_image_0000002558766782.gif)

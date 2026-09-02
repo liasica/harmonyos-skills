@@ -5,7 +5,7 @@ breadcrumb: 最佳实践 > 文档变更说明 > 最佳实践文档变更说明
 category: best-practices
 scraped_at: 2026-04-29T14:14:26+08:00
 doc_updated_at: 2026-04-13
-content_hash: sha256:a5111c18816e49d3366e26974c235b93393d7401fe2d16094e1319ff64f62c52
+content_hash: sha256:d4ff0756a8ff9be5f93e652c402bc9c000e44f65ba533846753fd6c5ebea2cc2
 ---
 
 ## 2026年4月
@@ -509,7 +509,7 @@ content_hash: sha256:a5111c18816e49d3366e26974c235b93393d7401fe2d16094e1319ff64f
 **变更效果**
 
 **图1** 最佳实践目录变更前后对比   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/71g_Cap3RyicKtfBAsy8ww/zh-cn_image_0000002307192376.png?HW-CC-KV=V1&HW-CC-Date=20260429T061421Z&HW-CC-Expire=86400&HW-CC-Sign=51D7D84146EB0D4008090B4874C8A8CE5FE5EA838DB57AACEE67FEB5877245D9 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/71g_Cap3RyicKtfBAsy8ww/zh-cn_image_0000002307192376.png "点击放大")
 
 ### 新增文档
 
@@ -706,7 +706,7 @@ content_hash: sha256:a5111c18816e49d3366e26974c235b93393d7401fe2d16094e1319ff64f
 
 **图2** 最佳实践目录变更
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/3mt6lCXUTnCbZM0DTbkruw/zh-cn_image_0000002318291885.png?HW-CC-KV=V1&HW-CC-Date=20260429T061421Z&HW-CC-Expire=86400&HW-CC-Sign=F4FA6816CE1F5888E89ADA1BAEFF030593BFB994A73F538DC596F33F153A133E "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/3mt6lCXUTnCbZM0DTbkruw/zh-cn_image_0000002318291885.png "点击放大")
 
 ### 新增文档
 
@@ -858,7 +858,7 @@ content_hash: sha256:a5111c18816e49d3366e26974c235b93393d7401fe2d16094e1319ff64f
 * 原“常见性能优化场景”章节更名为“性能场景优化案例”，修改文档标题，提升查找的准确性和效率。
 
   **图3** 最佳实践性能目录变更对比   
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/Nc3iRFF7RSWxbtbyH2moMw/zh-cn_image_0000002283692304.png?HW-CC-KV=V1&HW-CC-Date=20260429T061421Z&HW-CC-Expire=86400&HW-CC-Sign=505B3F4D2B0E5BE45EB82ACE81A016B2B3B775568D1A844EAC4BE46E427E8202 "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/Nc3iRFF7RSWxbtbyH2moMw/zh-cn_image_0000002283692304.png "点击放大")
 
 ### 新增文档
 

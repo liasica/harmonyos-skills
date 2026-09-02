@@ -5,14 +5,14 @@ breadcrumb: 指南 > 应用服务 > Health Service Kit（运动健康服务） >
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:38:17+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:27375993b71f1c0d3fa3ea1f108cddd571aea90a50bd2168727a3b9555c5cdb3
+content_hash: sha256:fc2163bcc0f27967a55d2cd340e5a37d554df65aa557e28afa69db8d14b21c9a
 ---
 
 Health Service Kit（运动健康服务）是为华为生态应用打造的基于华为账号和用户授权的运动健康数据开放平台。在获取用户授权后，开发者可以使用Health Service Kit提供的开放能力获取运动健康数据，基于多种类型数据构建运动健康领域应用与服务，为用户打造丰富、便捷、专业的运动健康场景体验。
 
 ## 业务介绍
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/D80adc8TTY-hkmVEqY19fg/zh-cn_image_0000002558765406.png?HW-CC-KV=V1&HW-CC-Date=20260429T053753Z&HW-CC-Expire=86400&HW-CC-Sign=FFB6345EF7E5CB9228A5E82C84C4DF1A56F18688D9638A443DB4C92005FB35E4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/D80adc8TTY-hkmVEqY19fg/zh-cn_image_0000002558765406.png)
 
 ## 应用服务
 

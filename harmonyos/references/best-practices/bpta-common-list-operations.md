@@ -5,7 +5,7 @@ breadcrumb: 最佳实践 > 布局与弹窗 > 常见列表操作
 category: best-practices
 scraped_at: 2026-04-29T14:10:34+08:00
 doc_updated_at: 2026-03-17
-content_hash: sha256:dc15574f0a348377a0f0feb81136f091c84c6798ccc558f1c1f5b9fd48e43aa8
+content_hash: sha256:9aadd20c486ef2c5679dea7a8af00797d992b9b4e53a90999df5e457c49b1055
 ---
 
 ## 概述
@@ -117,7 +117,7 @@ scroller.currentOffset()偏移量是相对于组件最顶端的偏移量，并�
 
 嵌套滚动是指多个滚动容器相互嵌套，并能协同工作的滚动机制。例如：在移动端应用中，一个页面整体可以垂直滚动，而其中某个子组件（如Tab内容、评论区、图片列表）也只支持独立滚动。根据滚动对象的不同，嵌套滚动主要分为Scroll组件嵌套List组件、Web组件嵌套List组件、List组件嵌套List组件等。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/KLZAyN83QXiA2wPtNU5lpw/zh-cn_image_0000002361711474.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061026Z&HW-CC-Expire=86400&HW-CC-Sign=88B8FE6E38C7211C7F73903872CE5C89B7308D682B10ACF234877918B61BCE00 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/KLZAyN83QXiA2wPtNU5lpw/zh-cn_image_0000002361711474.gif "点击放大")
 
 * [List组件与Scroll组件的嵌套滚动](../harmonyos-references/ts-container-scroll.md#示例2嵌套滚动实现方式一)
 * [Web组件与List组件嵌套](../harmonyos-guides/web-nested-scrolling.md#滚动偏移量由滚动父组件统一派发)
@@ -165,7 +165,7 @@ scroller.currentOffset()偏移量是相对于组件最顶端的偏移量，并�
 
 当List组件内容大小小于组件自身时，默认不开启滚动效果，可以设置[edgeEffect(EdgeEffect.Spring, { alwaysEnabled: true })](../harmonyos-references/ts-container-scrollable-common.md#edgeeffect11)开启滚动效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/CUgR73IKTIOEPNq3bA3Qrg/zh-cn_image_0000002395231413.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061026Z&HW-CC-Expire=86400&HW-CC-Sign=04C722B05AE215A89261859A289328008B9670D9F3298A0AFC37FA08E6FC33F1 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/CUgR73IKTIOEPNq3bA3Qrg/zh-cn_image_0000002395231413.gif "点击放大")
 
 **滚动过程中禁用滚动：**可以通过enabled(false)关闭滚动使能，但是如果是惯性滚动触发的，List仍然能依靠惯性滚动一段距离。如果想要实现禁用滚动及惯性滚动，可使用以下2种方式：
 
@@ -200,7 +200,7 @@ scroller.currentOffset()偏移量是相对于组件最顶端的偏移量，并�
 
 [LoopScrolling.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/SimpleChatList/entry/src/main/ets/pages/LoopScrolling.ets#L142-L153)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/v7BfbPoSQKe66LhKsIKP6Q/zh-cn_image_0000002361871362.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061026Z&HW-CC-Expire=86400&HW-CC-Sign=52EEA621B8FC2471394E7AB81B2D1D6FB023B7D8FF5DBB916722F199FA38D333 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/v7BfbPoSQKe66LhKsIKP6Q/zh-cn_image_0000002361871362.gif "点击放大")
 
 ## 列表排版
 
@@ -251,7 +251,7 @@ scroller.currentOffset()偏移量是相对于组件最顶端的偏移量，并�
 
 [EdgeBlur.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/SimpleChatList/entry/src/main/ets/pages/EdgeBlur.ets#L23-L50)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/HOp-8m-sSMa4o71d8pVULw/zh-cn_image_0000002395391277.png?HW-CC-KV=V1&HW-CC-Date=20260429T061026Z&HW-CC-Expire=86400&HW-CC-Sign=D288E9272CEC56F5AFFD310012CF8E21C428B74E6FF8375D32198008B7C24B6D "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/HOp-8m-sSMa4o71d8pVULw/zh-cn_image_0000002395391277.png "点击放大")
 
 **折叠展开：**列表项的折叠与展开用途广泛，常用于信息清单的展示、填写等应用场景。通过改变ListItem的状态，来控制每个列表项是否展开，并通过animation和animateTo来实现展开与折叠过程中的动效效果。具体请参见：**[折叠与展开](../harmonyos-guides/arkts-layout-development-create-list.md#折叠与展开)**
 
@@ -361,7 +361,7 @@ scroller.currentOffset()偏移量是相对于组件最顶端的偏移量，并�
 
 [ScrollLeftAndRightToRefresh.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/SimpleChatList/entry/src/main/ets/pages/ScrollLeftAndRightToRefresh.ets#L25-L76)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/0-OIb0-QQ1W_waAazjkoZw/zh-cn_image_0000002361711486.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061026Z&HW-CC-Expire=86400&HW-CC-Sign=F839DBB5F19C785B13B6F69F254A25D4839DF024D6284FE03124557E1474750C "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/0-OIb0-QQ1W_waAazjkoZw/zh-cn_image_0000002361711486.gif "点击放大")
 
 **局部数据刷新：**通过直接修改单一ListItem的数据源即可实现。
 
@@ -420,7 +420,7 @@ scroller.currentOffset()偏移量是相对于组件最顶端的偏移量，并�
 
 [MaintainVisibleAreaContent.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/SimpleChatList/entry/src/main/ets/pages/MaintainVisibleAreaContent.ets#L122-L137)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/dH0KzyDRTnKCIqo5SIvKjg/zh-cn_image_0000002395231433.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061026Z&HW-CC-Expire=86400&HW-CC-Sign=7ED63BED86696736EA60F470DBFF94CD349D07A1F4CD0303936FBE2BCA0DDA18 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/dH0KzyDRTnKCIqo5SIvKjg/zh-cn_image_0000002395231433.gif "点击放大")
 
 **方案二：**可以给List添加scroller控制器，将列表跳回至原先所在位置this.scroller.scrollToIndex，具体请参考示例：[List的下拉加载如何回滚到当前展示位置](../harmonyos-faqs/faqs-arkui-268.md)
 
@@ -448,13 +448,13 @@ scroller.currentOffset()偏移量是相对于组件最顶端的偏移量，并�
 * 支持下拉加载历史聊天记录
 * 实时新增并展示最新聊天内容
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/n9orVuUWTx2Qn59HAIERbw/zh-cn_image_0000002361871382.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061026Z&HW-CC-Expire=86400&HW-CC-Sign=E2223A4D02CA777C312397916681CA9BA033B355382B870FFB3B61788EFBD51D "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/n9orVuUWTx2Qn59HAIERbw/zh-cn_image_0000002361871382.gif "点击放大")
 
 **消息气泡**
 
 在ListItem中使用[Badge](../harmonyos-references/ts-container-badge.md)组件可实现给列表项添加标记功能。Badge是可以附加在单个组件上用于信息标记的容器组件。例如，在消息列表中，若希望在联系人头像右上角添加标记，可在实现消息列表项ListItem的联系人头像时，将头像Image组件作为Badge的子组件。在Badge组件中，count和position参数用于设置需要展示的消息数量和提示点显示位置，还可以通过style参数灵活设置标记的样式。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/GRANtCyHR-2mfY2zE766bA/zh-cn_image_0000002395391281.png?HW-CC-KV=V1&HW-CC-Date=20260429T061026Z&HW-CC-Expire=86400&HW-CC-Sign=33E15AFFA1EFD8B8B400302C7F92D54AE62D058F3352256406D15BE391C76E93 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/GRANtCyHR-2mfY2zE766bA/zh-cn_image_0000002395391281.png "点击放大")
 
 **实现方案**
 
@@ -485,7 +485,7 @@ scroller.currentOffset()偏移量是相对于组件最顶端的偏移量，并�
 
 **左滑删除/置顶**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/EA8fFsLfTRaWUoGqe7ULtQ/zh-cn_image_0000002361711502.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061026Z&HW-CC-Expire=86400&HW-CC-Sign=A76BCC44BAF22F45E46F0DF51C2092BA1448DD0A5BA046B6D465948E27BFBE12 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/EA8fFsLfTRaWUoGqe7ULtQ/zh-cn_image_0000002361711502.gif "点击放大")
 
 **实现方案**
 
@@ -544,7 +544,7 @@ scroller.currentOffset()偏移量是相对于组件最顶端的偏移量，并�
 
 **滚动后跳转到指定位置**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/MnoLSkC-Twu1rQ6NA5aNCA/zh-cn_image_0000002395231445.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061026Z&HW-CC-Expire=86400&HW-CC-Sign=82A09008E9C220E6C0B52C87B63E8BD1F5B4EBFD6AA1EDEE12D97DC179C26EC9 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/MnoLSkC-Twu1rQ6NA5aNCA/zh-cn_image_0000002395231445.gif "点击放大")
 
 **实现方案**
 
@@ -581,7 +581,7 @@ scroller.currentOffset()偏移量是相对于组件最顶端的偏移量，并�
 
 **消息列表拖拽排序**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/igh4R5biSjWHfl8AnMYsYw/zh-cn_image_0000002361871390.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061026Z&HW-CC-Expire=86400&HW-CC-Sign=63293E1521008D90ACCEC39DC58A6ED7096A1E118B4C37C4BF22F4C20E26CE48 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/igh4R5biSjWHfl8AnMYsYw/zh-cn_image_0000002361871390.gif "点击放大")
 
 **实现方案**
 
@@ -677,7 +677,7 @@ scroller.currentOffset()偏移量是相对于组件最顶端的偏移量，并�
 
 **初始化显示到底部**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/Wbg2DLcLTAWHq6mzr8_dLQ/zh-cn_image_0000002395391293.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061026Z&HW-CC-Expire=86400&HW-CC-Sign=CB68BB985450074672D165FB6594B20325C55A9EC260488B5B6CBB6B2C246D03 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/Wbg2DLcLTAWHq6mzr8_dLQ/zh-cn_image_0000002395391293.gif "点击放大")
 
 **实现方案**
 
@@ -745,7 +745,7 @@ scroller.currentOffset()偏移量是相对于组件最顶端的偏移量，并�
 
 **下拉加载更多聊天记录**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/n_0TnpxQTp2WqmQJXI7AhA/zh-cn_image_0000002361711514.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061026Z&HW-CC-Expire=86400&HW-CC-Sign=A79B81F10F84B715EE77A149DB2830CA9C72BF9DDF2EE91B9A0F2B9E7709488A "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/n_0TnpxQTp2WqmQJXI7AhA/zh-cn_image_0000002361711514.gif "点击放大")
 
 **实现方案**
 
@@ -829,7 +829,7 @@ scroller.currentOffset()偏移量是相对于组件最顶端的偏移量，并�
 
 **新增聊天记录**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/TBmxgaCYQt2HNaYRUF_Dkg/zh-cn_image_0000002395231449.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061026Z&HW-CC-Expire=86400&HW-CC-Sign=8E5B25B223243AC42F21189C81AC546E7B41F0C91279C04C7C35F5FD300C5C45 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/TBmxgaCYQt2HNaYRUF_Dkg/zh-cn_image_0000002395231449.gif "点击放大")
 
 **实现方案**
 

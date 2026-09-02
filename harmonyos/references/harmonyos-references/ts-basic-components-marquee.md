@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:52:21+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:531c74f192048922687b8701a2099f400a03d3c1490fd2871c4f1bf88720f5c7
+content_hash: sha256:51ccb8ac5623acde42c3445c5f65c228342d487df9973a80970c8b680a43484c
 ---
 
 跑马灯组件，用于滚动展示一段单行文本。仅当文本内容宽度大于等于跑马灯组件宽度时滚动，当文本内容宽度小于跑马灯组件宽度时不滚动。
@@ -342,4 +342,4 @@ PhonePC/2in1TabletTVWearable
 75. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/SAV7OX5kT2erz6l3BymLqQ/zh-cn_image_0000002589326303.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055219Z&HW-CC-Expire=86400&HW-CC-Sign=E71DABC5035419EA0B7F1006D493BF49282E00F128EA02F61E5D46633C613894)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/SAV7OX5kT2erz6l3BymLqQ/zh-cn_image_0000002589326303.gif)

@@ -5,16 +5,16 @@ breadcrumb: 指南 > 应用服务 > Game Service Kit（游戏服务） > 基础�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:38:08+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:2731d1187eee8c71f80f4b60a6cb7ffcf4eb86b7cd216cecd9b3cd3edbba4a7c
+content_hash: sha256:158c41bf34f70445bf170cba90e3ccd6fca5f1d9daa138cfbc4a4e94396cab9a
 ---
 
 网络游戏是指需要联网的游戏。
 
 接入基础游戏服务后，网络游戏支持用户在联合登录面板选择华为账号登录或游戏官方账号登录。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/gXyewQWcT0Wy06wF8XU-Yg/zh-cn_image_0000002589245189.png?HW-CC-KV=V1&HW-CC-Date=20260429T053807Z&HW-CC-Expire=86400&HW-CC-Sign=702115EBFE9ED2DF42063DCE2354346C69B15441737663BB2655438D710ABAC2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/gXyewQWcT0Wy06wF8XU-Yg/zh-cn_image_0000002589245189.png)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/pdGxB-4cQ8yJVe9sBjJLhw/zh-cn_image_0000002558765384.png?HW-CC-KV=V1&HW-CC-Date=20260429T053807Z&HW-CC-Expire=86400&HW-CC-Sign=10CC60D7226EBA5F5BD192D855F20A28234C658FDFC6E909FFCFB69307DB8EC2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/pdGxB-4cQ8yJVe9sBjJLhw/zh-cn_image_0000002558765384.png)
 
 ## 网络游戏登录场景介绍
 
@@ -38,7 +38,7 @@ content_hash: sha256:2731d1187eee8c71f80f4b60a6cb7ffcf4eb86b7cd216cecd9b3cd3edbb
 
 ### 账号关系总览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/wA9mHJapQPqbpsjUh9lygQ/zh-cn_image_0000002558605728.png?HW-CC-KV=V1&HW-CC-Date=20260429T053807Z&HW-CC-Expire=86400&HW-CC-Sign=320DECF5BEBCBC99162A3EC71AAD75340622843457E6CB3DBD5B3581A0A58776)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/wA9mHJapQPqbpsjUh9lygQ/zh-cn_image_0000002558605728.png)
 
 ## 网络游戏用户体验
 
@@ -48,7 +48,7 @@ content_hash: sha256:2731d1187eee8c71f80f4b60a6cb7ffcf4eb86b7cd216cecd9b3cd3edbb
 
 首次启动游戏时，向用户展示联合登录面板。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/ZNFYEuvvQ5SxqrgtFyw8lg/zh-cn_image_0000002558765384.png?HW-CC-KV=V1&HW-CC-Date=20260429T053807Z&HW-CC-Expire=86400&HW-CC-Sign=AA9544476AD28FF176D9C5F5ECEA6B0802EF162C405C9232E7A9DDCC378E18B0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/ZNFYEuvvQ5SxqrgtFyw8lg/zh-cn_image_0000002558765384.png)
 
 * 点击游戏官方账号，弹出游戏官方账号的登录界面，用户正确输入账号后进入游戏。
 * 点击华为账号，用户使用华为账号进入游戏，顶部展示欢迎横幅。

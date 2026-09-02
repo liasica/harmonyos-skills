@@ -5,7 +5,7 @@ breadcrumb: 最佳实践 > 行业场景解决方案 > 影音娱乐 > 在线短�
 category: best-practices
 scraped_at: 2026-04-29T14:13:09+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:cabd470a633e634b50c4de71431397189bf5232d4ef90489a4155445faa682a5
+content_hash: sha256:69dbcc9aa0cb4308d18ba46c099b21692660511f3dd55b1e2527cfe16fb8d5cb
 ---
 
 ## 概述
@@ -26,7 +26,7 @@ content_hash: sha256:cabd470a633e634b50c4de71431397189bf5232d4ef90489a4155445faa
 
 **图1** **在线短视频滑动切换效果图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/ZhkCyQXzTLq597L_kYregA/zh-cn_image_0000002229336849.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061303Z&HW-CC-Expire=86400&HW-CC-Sign=BB886D5120528E690389FF176E608C8B0C6CE3FAB1BAC398F460ED67B5256D8A "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/ZhkCyQXzTLq597L_kYregA/zh-cn_image_0000002229336849.gif "点击放大")
 
 ## 场景说明
 
@@ -97,13 +97,13 @@ AVPlayer：
 
 **图2** **功能时序图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/Rl8RVcyVQXOy3tiJQ3SP8Q/zh-cn_image_0000002193851456.png?HW-CC-KV=V1&HW-CC-Date=20260429T061303Z&HW-CC-Expire=86400&HW-CC-Sign=8D61DCB1B9370C2DE912E4E4DEA02FB1031466703BB0BE694D6BAEDE1DD43F7F "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/Rl8RVcyVQXOy3tiJQ3SP8Q/zh-cn_image_0000002193851456.png "点击放大")
 
 ### 在线短视频快速切换
 
 **图3** **实现流程图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/qV8_jpmwQLSok_oQAGyRjg/zh-cn_image_0000002229336837.png?HW-CC-KV=V1&HW-CC-Date=20260429T061303Z&HW-CC-Expire=86400&HW-CC-Sign=0819C5258B50F7352FBC088A63F8ECD4FF4F1A86A80B78598DDC21A178B4381B "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/qV8_jpmwQLSok_oQAGyRjg/zh-cn_image_0000002229336837.png "点击放大")
 
 **关键点**
 
@@ -120,7 +120,7 @@ LazyForEach懒加载可以通过设置cachedCount属性来指定缓存数量（�
 在通过Swiper切换时，会根据当前轮询滑动的窗口索引index到缓存池中找到对应的视频（prepared阶段），直接进行播放，从而提高切换性能。
 
 **图4** **视频懒加载示意图**  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/WPMhq2daQCeF506QOZ4QUg/zh-cn_image_0000002229451329.png?HW-CC-KV=V1&HW-CC-Date=20260429T061303Z&HW-CC-Expire=86400&HW-CC-Sign=C1C0DB99A01659FED2E50E058DA59464A3A745D64A645056A9E135DCFA9155E9 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/WPMhq2daQCeF506QOZ4QUg/zh-cn_image_0000002229451329.png "点击放大")
 
 **异步视频预加载**
 
@@ -129,12 +129,12 @@ LazyForEach懒加载可以通过设置cachedCount属性来指定缓存数量（�
 （1）本地播放一个短视频的耗时。
 
 **图5** **单视频加载示意图**  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/Ub6kkWIHT5C_EvT4eCa3iw/zh-cn_image_0000002229336853.png?HW-CC-KV=V1&HW-CC-Date=20260429T061303Z&HW-CC-Expire=86400&HW-CC-Sign=870DB0BAACBA6125B2E88A11C32230399AB740DA277264DE25A64FA2B54C85D8 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/Ub6kkWIHT5C_EvT4eCa3iw/zh-cn_image_0000002229336853.png "点击放大")
 
 （2）播放视频A时，提前预加载视频B。切换短视频时，可以立即播放已预加载的视频B，从而减少切换时间，提升切换性能。
 
 **图6** **异步视频预加载示意图**  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/4hlRaM3dQvCci50UGi1VXA/zh-cn_image_0000002229451333.png?HW-CC-KV=V1&HW-CC-Date=20260429T061303Z&HW-CC-Expire=86400&HW-CC-Sign=7A890D643B5E5B4C12B95BBEBB74C2B9BD86BE735D2898E915DAC6E99BCCC8A1 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/4hlRaM3dQvCci50UGi1VXA/zh-cn_image_0000002229451333.png "点击放大")
 
 **视频播放预启动接力**
 
@@ -147,7 +147,7 @@ LazyForEach懒加载可以通过设置cachedCount属性来指定缓存数量（�
 视频播放预启动接力：这种预加载机制的工作方式类似于接力赛跑。为了尽快完成接力，当第一个选手接近终点时，第二个选手会提前起跑并与第一个选手完美交接接力棒，从而减少整个接力赛的时间。短视频切换也是如此，如下图所示：
 
 **图7** **视频播放预启动接力****示意图**  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/q9CD2hg8Ry-QwwewVm77Mw/zh-cn_image_0000002229336841.png?HW-CC-KV=V1&HW-CC-Date=20260429T061303Z&HW-CC-Expire=86400&HW-CC-Sign=B746620FE81D344B83BA362045EC76E333A6BF0138916C37EF06E55F43310F87 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/q9CD2hg8Ry-QwwewVm77Mw/zh-cn_image_0000002229336841.png "点击放大")
 
 **开发步骤**
 

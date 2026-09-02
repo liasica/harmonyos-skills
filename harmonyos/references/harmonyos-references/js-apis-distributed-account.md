@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-distributed-account
-title: @ohos.account.distributedAccount (分布式账号管理)
+title: "@ohos.account.distributedAccount (分布式账号管理)"
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > ArkTS API > 账号管理 > @ohos.account.distributedAccount (分布式账号管理)
 category: harmonyos-references
 scraped_at: 2026-04-28T08:09:24+08:00

@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:28:14+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:4712cf9604aa53a31d2c8e648e6388d9c218179f328ee85320fa9e712b8f2a5a
+content_hash: sha256:e02b163c712516d121587d494acfe15840c52cbaba10f762efd7cb37e15cfaee
 ---
 
 传统曲线基于数学公式，创造形状符合开发者预期的动画曲线。以三阶贝塞尔曲线为代表，通过调整曲线控制点，可以改变曲线形状，从而带来缓入、缓出等动画效果。对于同一条传统曲线，由于不具备物理含义，其形状不会因为用户行为发生任何改变，缺少物理动画的自然感和生动感。建议优先采用物理曲线创建动画，将传统曲线作为辅助用于极少数必要场景中。
@@ -112,4 +112,4 @@ ArkUI提供了贝塞尔曲线、阶梯曲线等传统曲线接口，开发者可
 
 [CurveDemo.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/Animation/entry/src/main/ets/pages/traditionalCurve/template1/CurveDemo.ets#L16-L111)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/JOqruktyToCIMmY8uYZ7iA/zh-cn_image_0000002589244295.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052812Z&HW-CC-Expire=86400&HW-CC-Sign=F2656939DC6484EBD316A0EA7AD57EA4DC7735935E088F77705635621347E2BE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/JOqruktyToCIMmY8uYZ7iA/zh-cn_image_0000002589244295.gif)

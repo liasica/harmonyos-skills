@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:52:12+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:2f7e1813c43386c1d3845a65b2c63e61c8574bd3ba71db6fda374ae57bd119f0
+content_hash: sha256:5c458cfb0df45d1d642aaf6bfe59e12550f7b5187c6673941dc6698be4b22d48
 ---
 
 作为Text组件的子组件，用于显示图标小符号的组件。
@@ -150,7 +150,7 @@ renderingStrategy(value: SymbolRenderingStrategy)
 
 不同渲染策略效果可参考以下示意图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/a4jOKaY_T0qJ_5rYTLfjLw/zh-cn_image_0000002558766338.png?HW-CC-KV=V1&HW-CC-Date=20260429T055208Z&HW-CC-Expire=86400&HW-CC-Sign=738EEAEE92C3669AE99997856AF7583B0857388036F4CEC98596BD5640C74EE6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/a4jOKaY_T0qJ_5rYTLfjLw/zh-cn_image_0000002558766338.png)
 
 ### effectStrategy
 
@@ -309,7 +309,7 @@ PhonePC/2in1TabletTVWearable
 98. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/ecKLHiiYQsuqxwtSBi159Q/zh-cn_image_0000002558606680.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055208Z&HW-CC-Expire=86400&HW-CC-Sign=CB15C4F990DA462BAA9EC23AA08D70CDD054575C69788BF5572AE595A0B11173)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/ecKLHiiYQsuqxwtSBi159Q/zh-cn_image_0000002558606680.gif)
 
 ### 示例2（设置动态属性）
 
@@ -343,4 +343,4 @@ PhonePC/2in1TabletTVWearable
 25. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/d2QObBM0T1SYQPS88PO2Fg/zh-cn_image_0000002589326207.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055208Z&HW-CC-Expire=86400&HW-CC-Sign=CD01B47F5D88B711FDCC2CBE5980EFD669DD2DC06747631C0918F817F1EFB586)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/d2QObBM0T1SYQPS88PO2Fg/zh-cn_image_0000002589326207.gif)

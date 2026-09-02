@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:51:31+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:c1309ce98d6b2dae818efaeb5c735c05f50f391906864b1924454e2c46a58a72
+content_hash: sha256:80fcb6aa55cbe38f78499fca3510752dd9c05894f75b41a43a1e24cb619c7466
 ---
 
 动态设置组件绑定的手势，支持在属性设置时使用if/else语法。
@@ -135,7 +135,7 @@ PhonePC/2in1TabletTVWearable
 54. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/Op2qec52TNmxgJ1L2ZhcEA/zh-cn_image_0000002589245907.png?HW-CC-KV=V1&HW-CC-Date=20260429T055129Z&HW-CC-Expire=86400&HW-CC-Sign=5624FA8BF090BB34D470E3EF2773998CBCFCB5DAAF9AFFB90095CD641EE2A2B6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/Op2qec52TNmxgJ1L2ZhcEA/zh-cn_image_0000002589245907.png)
 
 ### 示例2（动态绑定手势组）
 
@@ -213,4 +213,4 @@ PhonePC/2in1TabletTVWearable
 69. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/xktKY22PQWuLORZmOezmPg/zh-cn_image_0000002558766098.png?HW-CC-KV=V1&HW-CC-Date=20260429T055129Z&HW-CC-Expire=86400&HW-CC-Sign=D8B934E47AB7CAE8101150F003361224D0D33F44F17B7D2C1B93233E423B0E0E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/xktKY22PQWuLORZmOezmPg/zh-cn_image_0000002558766098.png)

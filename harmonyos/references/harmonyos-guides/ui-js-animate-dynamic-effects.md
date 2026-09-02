@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:28:56+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:1808b10d5bceeba8dd5b08fd2bc60f4e0de0af9bf7ddb35c7a56130dc8b41b58
+content_hash: sha256:f55d56a9c792978bc4835e6f0aed49513170f08cb6f532ace99f004029c81bc1
 ---
 
 通过设置插值器来实现动画效果。
@@ -78,7 +78,7 @@ content_hash: sha256:1808b10d5bceeba8dd5b08fd2bc60f4e0de0af9bf7ddb35c7a56130dc8b
 28. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/RK63UjohRVWdupApiMnKcw/zh-cn_image_0000002558764640.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052855Z&HW-CC-Expire=86400&HW-CC-Sign=DEE45B70C8EFA7AE2E11C2CAFA09E635A6E6D7FF36997614931BFCBA00B132BF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/RK63UjohRVWdupApiMnKcw/zh-cn_image_0000002558764640.gif)
 
 说明
 
@@ -230,7 +230,7 @@ animator支持事件和接口，可以通过添加frame、cancel、repeat、fini
 76. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/MEFf4sqaTRuwzy1NE1-lAQ/zh-cn_image_0000002558604984.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052855Z&HW-CC-Expire=86400&HW-CC-Sign=CD6D4E25CE334D3CF2253CCD26A8357534E6EFCAE3958EBF10CC26994C2B1B12)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/MEFf4sqaTRuwzy1NE1-lAQ/zh-cn_image_0000002558604984.gif)
 
 说明
 

@@ -5,7 +5,7 @@ breadcrumb: 最佳实践 > 性能 > 性能检测 > 开发态性能检测
 category: best-practices
 scraped_at: 2026-04-29T14:13:19+08:00
 doc_updated_at: 2026-03-19
-content_hash: sha256:6c2569c6ffb20bc3743fbd0fbc013c21e34d6277b04c4aa2588dc94594e7ec60
+content_hash: sha256:41a5dbf23f677811c752dce8441ba244c214b5542d35927261e71402a1eef802
 ---
 
 ## 简介
@@ -18,7 +18,7 @@ content_hash: sha256:6c2569c6ffb20bc3743fbd0fbc013c21e34d6277b04c4aa2588dc94594e
 
 本文将介绍调优的方法和常用工具，帮助开发者更好地分析和解决应用程序中的性能问题，提升用户体验，实现应用程序的高效稳定运行。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/dxm1UpJkTwaNfa2tT0AkpQ/zh-cn_image_0000002416519594.png?HW-CC-KV=V1&HW-CC-Date=20260429T061317Z&HW-CC-Expire=86400&HW-CC-Sign=9069795453D9250E0A2CE52D7232DE82C4654A39B0AF90415B3BE96B1DA34F98 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/dxm1UpJkTwaNfa2tT0AkpQ/zh-cn_image_0000002416519594.png "点击放大")
 
 性能调优贯穿于HarmonyOS应用开发的整个生命周期中，开发前有性能最佳实践和指南等赋能套件让开发者快速上手学习，开发过程中有性能工具开发套件覆盖应用开发各阶段，应用开发完成上架后有专业的性能测试工具检查测试应用性能指标。目前DevEco Studio主要集成了四种性能工具，在不同的开发阶段各有侧重，主要分为性能问题检测类工具和性能问题分析类工具。本文重点介绍使用**性能问题检测类工具**来检测应用性能问题。
 
@@ -34,7 +34,7 @@ content_hash: sha256:6c2569c6ffb20bc3743fbd0fbc013c21e34d6277b04c4aa2588dc94594e
 
 在已打开的代码编辑器窗口单击右键点击Code Linter，或在工程管理窗口中鼠标选中单个或多个工程文件/目录，右键选择Code Linter > Full Linter执行代码全量检查。如图所示输入@performance，过滤性能检查结果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/WEwQXJIbSq6V_eApbUWlzw/zh-cn_image_0000002404124977.png?HW-CC-KV=V1&HW-CC-Date=20260429T061317Z&HW-CC-Expire=86400&HW-CC-Sign=C6AD8BB7C92C64F62740B2271D7D3E47F0E65AEF884B76DFA2380FDC6E5F7A5A "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/WEwQXJIbSq6V_eApbUWlzw/zh-cn_image_0000002404124977.png "点击放大")
 
 详细使用指导见：
 
@@ -73,29 +73,29 @@ content_hash: sha256:6c2569c6ffb20bc3743fbd0fbc013c21e34d6277b04c4aa2588dc94594e
 
 4、将编译模式Build Mode设置为release。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/apQAplezRsSrCcfAg8jLfA/zh-cn_image_0000002474188572.png?HW-CC-KV=V1&HW-CC-Date=20260429T061317Z&HW-CC-Expire=86400&HW-CC-Sign=7DEDB6601DFA7918FB64289EC0013396CE30169C5014D1655D2EA2A29E98B225)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/apQAplezRsSrCcfAg8jLfA/zh-cn_image_0000002474188572.png)
 
 1. 点击菜单栏Tools，选择AppAnalyzer进入AppAnalyzer页面。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/86irezopSQuD8qRg9sEKDA/zh-cn_image_0000002510905945.png?HW-CC-KV=V1&HW-CC-Date=20260429T061317Z&HW-CC-Expire=86400&HW-CC-Sign=58077776FD1C1877AD7C72763FD3EE3E55CD2DA4794693043DB0AAFE171A830A "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/86irezopSQuD8qRg9sEKDA/zh-cn_image_0000002510905945.png "点击放大")
 2. 在AppAnalyzer页面，默认选择场景化体检。以页面间转场场景为例，点击“手动性能页面间转场体检”即可进入体检界面。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/eginW_i5RQaQJhJmqnePsg/zh-cn_image_0000002510868387.png?HW-CC-KV=V1&HW-CC-Date=20260429T061317Z&HW-CC-Expire=86400&HW-CC-Sign=ED334DFABCCC262BF8D88E9C82BB4EAD043EE0DD01F661BD64E46F50BE983B22 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/eginW_i5RQaQJhJmqnePsg/zh-cn_image_0000002510868387.png "点击放大")
 3. 在准备体检时，开发者需要保持手机解锁状态，待被检测应用自动安装并运行后，即表示准备完成。然后操作手机至检测页面，点击开始按钮开始体检。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/JcfUo57eSIWHDXpZm8OsHA/zh-cn_image_0000002478830250.png?HW-CC-KV=V1&HW-CC-Date=20260429T061317Z&HW-CC-Expire=86400&HW-CC-Sign=36BEC7BB4268A228DCD182B88BD5C8129B555E6FDA725CB036CAD8784A372EE4 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/JcfUo57eSIWHDXpZm8OsHA/zh-cn_image_0000002478830250.png "点击放大")
 4. 等待界面出现“体检中，请操作手机”时，开始操作手机，等待体检工具录制和分析。操作完成后，可以点击结束按钮结束体检。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/QjR0WBVDQCS2SKaiaHIQDQ/zh-cn_image_0000002510870683.png?HW-CC-KV=V1&HW-CC-Date=20260429T061317Z&HW-CC-Expire=86400&HW-CC-Sign=09CB79E397753EC6F073F518C8130CD499BC94040B10207335E56321BADCCD31 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/QjR0WBVDQCS2SKaiaHIQDQ/zh-cn_image_0000002510870683.png "点击放大")
 5. 等待体检工具生成报告。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/AdDEiK9fTjus-Xrfn7ZHDg/zh-cn_image_0000002478830890.png?HW-CC-KV=V1&HW-CC-Date=20260429T061317Z&HW-CC-Expire=86400&HW-CC-Sign=96A1FDC9071ED27A930A31B2CF465F498B1C8771A3626F08A3E800C836255831 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/AdDEiK9fTjus-Xrfn7ZHDg/zh-cn_image_0000002478830890.png "点击放大")
 6. 查看检测结果报告，点击展开检测报告中的“页面间转场”，如果体检不为满分100，点击展开体检检测结果，若显示诊断异常（如下图中出现黄色、红色警告），则表示存在页面间转场的性能问题。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/wvHxZftNQKGkn_VNwvLBIg/zh-cn_image_0000002478831568.png?HW-CC-KV=V1&HW-CC-Date=20260429T061317Z&HW-CC-Expire=86400&HW-CC-Sign=E044721D3898BC1BBEDA0D22F966FF6BB9CF46A4A91CFA99DC3EA10F3AEFC99A "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/wvHxZftNQKGkn_VNwvLBIg/zh-cn_image_0000002478831568.png "点击放大")
 7. 检测存在故障时，开发者可通过点击“可能故障原因”，查看详细测试结果及优化建议。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/_ZMvaZx9QJ6RnNqgbzLJoA/zh-cn_image_0000002510871505.png?HW-CC-KV=V1&HW-CC-Date=20260429T061317Z&HW-CC-Expire=86400&HW-CC-Sign=AAD43643997E4FC626EFCDD182A59048D33EF8CDBD1C91B5406BA151F40E0D33 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/_ZMvaZx9QJ6RnNqgbzLJoA/zh-cn_image_0000002510871505.png "点击放大")
 
 详细使用指导见：
 
@@ -111,7 +111,7 @@ content_hash: sha256:6c2569c6ffb20bc3743fbd0fbc013c21e34d6277b04c4aa2588dc94594e
 
 **图1** Testing测试报告导入体检工具分析流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/__w9gjEURlSfqFbFPyQ3Aw/zh-cn_image_0000002416522370.png?HW-CC-KV=V1&HW-CC-Date=20260429T061317Z&HW-CC-Expire=86400&HW-CC-Sign=649F646B8605DBEF46C6C0E9C89C7ECF546F7569447118FCBD51F59230879099 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/__w9gjEURlSfqFbFPyQ3Aw/zh-cn_image_0000002416522370.png "点击放大")
 
 Testing测试报告导入体检工具分析的过程主要包括以下步骤。
 
@@ -119,32 +119,32 @@ Testing测试报告导入体检工具分析的过程主要包括以下步骤。
 
    使用DevEco Testing进行场景化性能测试，支持编写测试脚本和自定义测试场景对应用性能进行评估。具体使用方法和指导请见：[场景化性能测试](../harmonyos-guides/specialized-testing.md#section8642101711299)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/R1L9H3DDTbOEEuhEFrEypg/zh-cn_image_0000002416681522.png?HW-CC-KV=V1&HW-CC-Date=20260429T061317Z&HW-CC-Expire=86400&HW-CC-Sign=93DB05DD5E2D0CB181C14E732306F47AE314AA6463880CBBF61569519197999B "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/R1L9H3DDTbOEEuhEFrEypg/zh-cn_image_0000002416681522.png "点击放大")
 
    **查看测试结果**
 
    根据DevEco Testing检测结果，查看是否存在页面间转场等场景不达标的问题。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/jnN1TAy3QRe5Cf6ruZaXRA/zh-cn_image_0000002450160661.png?HW-CC-KV=V1&HW-CC-Date=20260429T061317Z&HW-CC-Expire=86400&HW-CC-Sign=CE7BB973C62E0CF4F56FD88870BF979565605B0D91B67D97B9EDBCAA33533DB0 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/jnN1TAy3QRe5Cf6ruZaXRA/zh-cn_image_0000002450160661.png "点击放大")
 
    **获取测试报告**
 
    点击导出IDE体检文件按钮，跳转至报告文件本地路径，获取DevEco Testing体检测试报告。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/ymUD2GQ_QcuedD-xTdFN5A/zh-cn_image_0000002416521718.png?HW-CC-KV=V1&HW-CC-Date=20260429T061317Z&HW-CC-Expire=86400&HW-CC-Sign=A3E635EEBD1C720236997BA8068922CA568C1E3015862AD105C2312DFC69A517 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/ymUD2GQ_QcuedD-xTdFN5A/zh-cn_image_0000002416521718.png "点击放大")
 2. **体检报告导入AppAnalyzer**
 
    通过DevEcoTesting发现问题后，为深入分析问题，可将获取的体检报告导入体检工具AppAnalyzer进行具体定位和优化。打开DevEcoStudio，点击AppAnalyzer图标进入AppAnalyzer页面，随后点击“体检历史”按钮，跳转至历史记录页面。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/3Q1xQX58RC2MJL4U0WIvsA/zh-cn_image_0000002478836312.png?HW-CC-KV=V1&HW-CC-Date=20260429T061317Z&HW-CC-Expire=86400&HW-CC-Sign=46B8A8FFC68D6DB79928162240FDE1AEF59ED0DACAFE9CB135BDCF834D5B05D1 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/3Q1xQX58RC2MJL4U0WIvsA/zh-cn_image_0000002478836312.png "点击放大")
 
    点击“导入报告”，即可将Testing测试诊断出的体检文件导入体检工具进行解析。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/Nact6HrTS9ytf__PrmP8vA/zh-cn_image_0000002478833510.png?HW-CC-KV=V1&HW-CC-Date=20260429T061317Z&HW-CC-Expire=86400&HW-CC-Sign=0351AE04F93D606A96FA08021A272C5534FFCF09700962CA6898DFEC87DCBECE "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/Nact6HrTS9ytf__PrmP8vA/zh-cn_image_0000002478833510.png "点击放大")
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/lEGyiTJYR6uIWfd7yMS9Uw/zh-cn_image_0000002478838010.png?HW-CC-KV=V1&HW-CC-Date=20260429T061317Z&HW-CC-Expire=86400&HW-CC-Sign=23C67E210FB81AAB17A89E4E5644F7692DAFD5C0D82517C5CEE32ACDF2F76769 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/lEGyiTJYR6uIWfd7yMS9Uw/zh-cn_image_0000002478838010.png "点击放大")
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/KyKeQgBYQm-abZGa1E8QLA/zh-cn_image_0000002510917261.png?HW-CC-KV=V1&HW-CC-Date=20260429T061317Z&HW-CC-Expire=86400&HW-CC-Sign=700F3D60A25EFB24E79E3FE8427AF5CBA78565C02C3E9C15C166B986459F53CC "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/KyKeQgBYQm-abZGa1E8QLA/zh-cn_image_0000002510917261.png "点击放大")
 
    说明
 

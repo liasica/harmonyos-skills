@@ -4,12 +4,12 @@ title: 自定义节点概述
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:28:17+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:712e009d79929cacff37a777d63caab8e13c821db83a92803cc25cedf21e9a86
+content_hash: sha256:fad81dcefebc8134587755f9f9cc7b46516a5d5801b8d641655a165163bbe3cc
 ---
 
 自定义节点是ArkUI通过接口提供的底层实体节点，具备部分基础能力，能够与系统组件混合显示。自定义节点的挂载与显示依赖于[自定义占位节点](arkts-user-defined-place-holder.md)。当前，自定义节点涵盖三类对象：[FrameNode](../harmonyos-references/js-apis-arkui-framenode.md)、[RenderNode](../harmonyos-references/js-apis-arkui-rendernode.md)和[BuilderNode](../harmonyos-references/js-apis-arkui-buildernode.md)。FrameNode表示单个自定义组件节点，RenderNode表示为更轻量级的渲染节点，而BuilderNode对象赋予了创建、更新系统组件及其组件树的能力。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/mnVyZYZ3RuKDMGkB55ip0Q/zh-cn_image_0000002589244303.png?HW-CC-KV=V1&HW-CC-Date=20260429T052816Z&HW-CC-Expire=86400&HW-CC-Sign=E790765A87BA6F26BB6190B8D001E0A527316CDBE235F52548FB000B3072748B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/mnVyZYZ3RuKDMGkB55ip0Q/zh-cn_image_0000002589244303.png)
 
 ## 基本概念
 

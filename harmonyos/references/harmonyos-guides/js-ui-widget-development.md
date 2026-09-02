@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > Form Kit（卡片开发服务） > JS卡片�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:30:02+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:1148482c73bfcf656b0a54badd9eb54f6cbe7d666e935b97c34562a17a4b923c
+content_hash: sha256:ccccbf92dcc55d3024109db62b15eb5659fcaf0098f11ec28427722ba8675c06
 ---
 
 Stage模型是从API version 9开始支持，目前主推且会长期演进的模型。该模型采用面向对象的方式，将应用组件以类接口的形式开放给开发者，可以进行派生，利于扩展能力。
@@ -371,7 +371,7 @@ FormExtensionAbility不能常驻后台，即在卡片生命周期回调函数中
 
 开发者可以使用类Web范式（HML+CSS+JSON）开发JS卡片页面。生成如下卡片页面，可以这样配置卡片页面文件：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/K3f6fRK5T86RZreO9-NO2A/zh-cn_image_0000002589324681.png?HW-CC-KV=V1&HW-CC-Date=20260429T053001Z&HW-CC-Expire=86400&HW-CC-Sign=B368B03018D3FD4A479DBEB91D6B6AA57A1151ECFB9017DD4AD708E8D28BE60B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/K3f6fRK5T86RZreO9-NO2A/zh-cn_image_0000002589324681.png)
 
 * HML：使用类Web范式的组件描述卡片的页面信息。
 

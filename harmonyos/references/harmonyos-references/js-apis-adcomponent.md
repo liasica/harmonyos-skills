@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-adcomponent
-title: @ohos.advertising.AdComponent (广告展示组件)
+title: "@ohos.advertising.AdComponent (广告展示组件)"
 breadcrumb: API参考 > 应用服务 > Ads Kit（广告服务） > ArkTS组件 > @ohos.advertising.AdComponent (广告展示组件)
 category: harmonyos-references
 scraped_at: 2026-04-29T14:06:57+08:00

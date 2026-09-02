@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:28:06+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:2eb0bb4558aced118ed4166238912ec676438f86736e96d16f1c94bc0f652dc6
+content_hash: sha256:5aca965c01998e4d30499c821b04f7cf4d25a313a73102cff23dcf0f3ff9c843
 ---
 
 手势冲突是指多个手势识别器在同一组件或重叠区域同时识别时产生竞争，导致识别结果不符合预期。常见冲突场景包括：
@@ -22,7 +22,7 @@ content_hash: sha256:2eb0bb4558aced118ed4166238912ec676438f86736e96d16f1c94bc0f6
 
 **图1** 自定义手势判定流程图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/tUyE1fb8RGaVlxsfEUeb_A/zh-cn_image_0000002558604796.png?HW-CC-KV=V1&HW-CC-Date=20260429T052804Z&HW-CC-Expire=86400&HW-CC-Sign=5CF73A3C827B72DB8E55ED9F7723EBF83F8A01B1B3B439BF1E99D3CAFB922DB0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/tUyE1fb8RGaVlxsfEUeb_A/zh-cn_image_0000002558604796.png)
 
 自定义手势判定涉及以下接口。
 
@@ -35,7 +35,7 @@ content_hash: sha256:2eb0bb4558aced118ed4166238912ec676438f86736e96d16f1c94bc0f6
 
 **图2** 示例图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/Nv2PgOzRQNat7aOpx5Sq9Q/zh-cn_image_0000002589324321.png?HW-CC-KV=V1&HW-CC-Date=20260429T052804Z&HW-CC-Expire=86400&HW-CC-Sign=BF2B69EE92F40FC4B4A10B17FD409F1757B451AFFD95DB48C7A476F400DE9DE4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/Nv2PgOzRQNat7aOpx5Sq9Q/zh-cn_image_0000002589324321.png)
 
 1. Image组件设置拖拽。
 
@@ -163,7 +163,7 @@ content_hash: sha256:2eb0bb4558aced118ed4166238912ec676438f86736e96d16f1c94bc0f6
 
    [CustomGestureDetermination.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/GestureConflict/entry/src/main/ets/Component/CustomGestures/CustomGestureDetermination.ets#L15-L78)
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/UG7wMIZwRrK8sSJTF7GPDA/zh-cn_image_0000002589244261.png?HW-CC-KV=V1&HW-CC-Date=20260429T052804Z&HW-CC-Expire=86400&HW-CC-Sign=619953D943A8B08546928FC4BEE99A75FB0D4F53587055907396AEAF7E07FEEB)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/UG7wMIZwRrK8sSJTF7GPDA/zh-cn_image_0000002589244261.png)
 
 ## 手势并行动态控制
 
@@ -171,7 +171,7 @@ content_hash: sha256:2eb0bb4558aced118ed4166238912ec676438f86736e96d16f1c94bc0f6
 
 **图3** 手势并行动态控制流程图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/WJe9q3zEQ-6CcqrbwfvwqQ/zh-cn_image_0000002558764454.png?HW-CC-KV=V1&HW-CC-Date=20260429T052804Z&HW-CC-Expire=86400&HW-CC-Sign=D12A8362682F3A9279212C836A135CCA735532A285D7F4DA7429B0FA52403787)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/WJe9q3zEQ-6CcqrbwfvwqQ/zh-cn_image_0000002558764454.png)
 
 手势并行动态控制的前提是手势识别成功，如果手势不成功则不会产生手势回调响应。
 
@@ -746,4 +746,4 @@ content_hash: sha256:2eb0bb4558aced118ed4166238912ec676438f86736e96d16f1c94bc0f6
 
 [PreventGestureRecognition.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/GestureConflict/entry/src/main/ets/Component/PreventGestureRecognition/PreventGestureRecognition.ets#L16-L256)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/OPdfm_yyRTCQzLf9rFN6kw/zh-cn_image_0000002558604798.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052804Z&HW-CC-Expire=86400&HW-CC-Sign=DBEB7A3B83B9A6ACF92FFEB4B3FA864187B3B7891CD5546F48D9E7BA7C2D10A6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/OPdfm_yyRTCQzLf9rFN6kw/zh-cn_image_0000002558604798.gif)

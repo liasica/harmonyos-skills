@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:28:51+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:f1f0ac507f85abc41d7bad496c1c44074c1181250cb591d9d421264a3d3e72f6
+content_hash: sha256:413c072ef428dd5c88667f54afe6f569d0274d30c00cab14322e76056874e632
 ---
 
 提供搜索框组件，用于提供用户搜索内容的输入区域，具体用法请参考[search](../harmonyos-references/js-components-basic-search.md)。
@@ -33,7 +33,7 @@ content_hash: sha256:f1f0ac507f85abc41d7bad496c1c44074c1181250cb591d9d421264a3d3
 9. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/Qd2L7XwYSXe6LuhXVRZQXw/zh-cn_image_0000002589324489.png?HW-CC-KV=V1&HW-CC-Date=20260429T052850Z&HW-CC-Expire=86400&HW-CC-Sign=9D4007EA6E88C37A1C4250ACF1E140A3063C4919DD477822B6E92C7EBFACAD9D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/Qd2L7XwYSXe6LuhXVRZQXw/zh-cn_image_0000002589324489.png)
 
 ## 设置属性
 
@@ -58,7 +58,7 @@ content_hash: sha256:f1f0ac507f85abc41d7bad496c1c44074c1181250cb591d9d421264a3d3
 9. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/t798Xm7FSsOrlTcncL9cuw/zh-cn_image_0000002589244427.png?HW-CC-KV=V1&HW-CC-Date=20260429T052850Z&HW-CC-Expire=86400&HW-CC-Sign=214105E7C4300945C0E86C9309F23A930BAF259FF400ECEDC7F7B2146138F1D9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/t798Xm7FSsOrlTcncL9cuw/zh-cn_image_0000002589244427.png)
 
 ## 添加样式
 
@@ -88,7 +88,7 @@ content_hash: sha256:f1f0ac507f85abc41d7bad496c1c44074c1181250cb591d9d421264a3d3
 14. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/Q8y7rlysQFO_2v02It8HQA/zh-cn_image_0000002558764620.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052850Z&HW-CC-Expire=86400&HW-CC-Sign=08D5CB353BFA41CBA81600C1FA9CF5B4FF40CF0CFCB7A7B26B0BFB0B86D2E8DA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/Q8y7rlysQFO_2v02It8HQA/zh-cn_image_0000002558764620.gif)
 
 ## 绑定事件
 
@@ -161,7 +161,7 @@ content_hash: sha256:f1f0ac507f85abc41d7bad496c1c44074c1181250cb591d9d421264a3d3
 34. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/hJw85rd8RNSCCIMtzl_mww/zh-cn_image_0000002558604964.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052850Z&HW-CC-Expire=86400&HW-CC-Sign=7C85FE9D0F7E0B9664E0A91FBFF62CB568215EDFB08F0CD8345FAFB65A9B99C3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/hJw85rd8RNSCCIMtzl_mww/zh-cn_image_0000002558604964.gif)
 
 ## 场景示例
 
@@ -247,4 +247,4 @@ content_hash: sha256:f1f0ac507f85abc41d7bad496c1c44074c1181250cb591d9d421264a3d3
 38. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/lacx7vTVTcmn_pZRzJp2Aw/zh-cn_image_0000002589324491.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052850Z&HW-CC-Expire=86400&HW-CC-Sign=B1FDF43ED35C6D73650B0DBF20E88D930410ACFCDBE8A6BFA1BA8E8DF772271A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/lacx7vTVTcmn_pZRzJp2Aw/zh-cn_image_0000002589324491.gif)

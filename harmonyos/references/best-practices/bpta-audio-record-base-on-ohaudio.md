@@ -5,7 +5,7 @@ breadcrumb: 最佳实践 > 媒体 > 音频和视频 > 音频录制系列开发�
 category: best-practices
 scraped_at: 2026-04-29T14:11:27+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:f1242aef47dde86564a556bffc340b662a606b8d8220820021c388fe820b2e05
+content_hash: sha256:f4417b1b2024c03ebc5a545fa6adb66fe52cb9f68525a903f792a8a3987af7f6
 ---
 
 ## 概述
@@ -14,7 +14,7 @@ content_hash: sha256:f1242aef47dde86564a556bffc340b662a606b8d8220820021c388fe820
 
 基于OHAudio录制PCM音频（C++）实现的功能效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/hOsaoT2WRmSf2URF14wuMg/zh-cn_image_0000002524221068.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061123Z&HW-CC-Expire=86400&HW-CC-Sign=EFA09A5E24233FD547CA6DBBC1AAD19FF49347713F4974FF1A36E043D7A28B00 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/hOsaoT2WRmSf2URF14wuMg/zh-cn_image_0000002524221068.gif "点击放大")
 
 本文的主要内容如下：
 
@@ -28,7 +28,7 @@ content_hash: sha256:f1242aef47dde86564a556bffc340b662a606b8d8220820021c388fe820
 
 **图1** OHAudio音频录制状态变化示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/L26UHEzkSlm7aBwQIOFbVA/zh-cn_image_0000002555340937.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T061123Z&HW-CC-Expire=86400&HW-CC-Sign=76AA8F23BE06B71B2DA817419ED37E8C8521366E13AF7236348CB8702D0D66CF "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/L26UHEzkSlm7aBwQIOFbVA/zh-cn_image_0000002555340937.jpg "点击放大")
 
 ### 开发步骤
 

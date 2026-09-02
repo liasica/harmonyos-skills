@@ -5,7 +5,7 @@ breadcrumb: 指南 > 系统 > 网络 > Connectivity Kit（短距通信服务） 
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:32:35+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:3a0ad16ed45b0b98bf8847bbc8e912361a7a623f16f6280dbbbd21ceebf2b018
+content_hash: sha256:d0ea7498ddf3260677ff8586722380eab16449a701df8e09a4e6335a77a4ac67
 ---
 
 ## 简介
@@ -193,7 +193,7 @@ content_hash: sha256:3a0ad16ed45b0b98bf8847bbc8e912361a7a623f16f6280dbbbd21ceebf
 
    EntryAbility中加载ets/pages/Index.ets绘制的页面，请求用户授予访问蓝牙权限。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/iCp4enuATgCFuNAQ7siwQQ/zh-cn_image_0000002589324789.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053234Z&HW-CC-Expire=86400&HW-CC-Sign=D4BA53B0A95F074C27CB1ABC6DE2DFE5DC673FB467115224DC033DDB9ADA6A62)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/iCp4enuATgCFuNAQ7siwQQ/zh-cn_image_0000002589324789.jpg)
 
    ```
    1. import { AbilityConstant, ConfigurationConstant, UIAbility, Want } from '@kit.AbilityKit';
@@ -249,7 +249,7 @@ content_hash: sha256:3a0ad16ed45b0b98bf8847bbc8e912361a7a623f16f6280dbbbd21ceebf
 
    调用注册设备等功能接口。Index.ets中输入要注册的设备蓝牙地址，注册输入的蓝牙设备，去注册输入的蓝牙设备、查询设备的绑定状态，获取本机绑定的设备列表等。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/Oh0uQlwWQWuKIyGcZC2s3A/zh-cn_image_0000002589244727.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053234Z&HW-CC-Expire=86400&HW-CC-Sign=803DF762CCBD26FC4255D8F1D020486FBFAC4607BA4E8A8EFA6E1373D00AB50E)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/Oh0uQlwWQWuKIyGcZC2s3A/zh-cn_image_0000002589244727.jpg)
 
    ```
    1. import { BusinessError } from '@kit.BasicServicesKit';

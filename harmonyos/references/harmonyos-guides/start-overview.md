@@ -5,12 +5,12 @@ breadcrumb: 指南 > 基础入门 > 快速入门 > 开发准备
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:25:26+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:0d8425da708abb517f15f854dab635ee9b42164838b96caf839e90448a91f215
+content_hash: sha256:df6e6ab8ddc5f68bee8e425575284ceeba392fb70143a70a0241af704a6e0507
 ---
 
 本文档适用于HarmonyOS应用开发的初学者。通过构建一个简单的具有页面跳转/返回功能的应用（如下图所示），快速了解工程目录的主要文件，熟悉HarmonyOS应用开发流程。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/WLUPFVvkTsyPATIwzQEHaw/zh-cn_image_0000002589243765.png?HW-CC-KV=V1&HW-CC-Date=20260429T052217Z&HW-CC-Expire=86400&HW-CC-Sign=8F0AE797FAB0EE860AC84063DB09F0F279CA5DA9305618995ED4C04EC272DD95)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/WLUPFVvkTsyPATIwzQEHaw/zh-cn_image_0000002589243765.png)
 
 在开始之前，您需要了解有关HarmonyOS应用的一些基本概念：UI框架的简单说明、应用模型的基本概念。
 

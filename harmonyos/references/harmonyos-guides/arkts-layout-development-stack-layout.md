@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:27:40+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:b66703cd66d47b2d5d16b95c57edf71ad6c265066ae5aa65bca417791248fa73
+content_hash: sha256:6183678d5b7b04ee1441b6fb7864bac18ae2fc6ebcc238cae19bb376d6078e19
 ---
 
 ## 概述
@@ -18,7 +18,7 @@ content_hash: sha256:b66703cd66d47b2d5d16b95c57edf71ad6c265066ae5aa65bca41779124
 
 **图1** 层叠布局
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/MhCg7vp3RciQ26Z8CvhRLg/zh-cn_image_0000002558604546.png?HW-CC-KV=V1&HW-CC-Date=20260429T052738Z&HW-CC-Expire=86400&HW-CC-Sign=82E7BDF4379879EF203E7B9FE00675816E1E3AD51691C87BCDCB5EE1D18A9D9D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/MhCg7vp3RciQ26Z8CvhRLg/zh-cn_image_0000002558604546.png)
 
 说明
 
@@ -49,7 +49,7 @@ Stack组件为容器组件，容器内可包含各种子元素。其中子元素
 
 [StackLayoutExample.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/stacklayout/StackLayoutExample.ets#L15-L32)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/GSZ0HvukRimR2nfuYqHaNg/zh-cn_image_0000002589324071.png?HW-CC-KV=V1&HW-CC-Date=20260429T052738Z&HW-CC-Expire=86400&HW-CC-Sign=C9404FFDA9A22543F2D3700293AE74762D59DF282CA0312BA3B4DA8066877C17)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/GSZ0HvukRimR2nfuYqHaNg/zh-cn_image_0000002589324071.png)
 
 ## 对齐方式
 
@@ -57,7 +57,7 @@ Stack组件通过[alignContent参数](../harmonyos-references/ts-container-stack
 
 **图2** Stack容器内元素的对齐方式
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/qfhX9XxwQNS58LobTlDvtw/zh-cn_image_0000002589244011.png?HW-CC-KV=V1&HW-CC-Date=20260429T052738Z&HW-CC-Expire=86400&HW-CC-Sign=3534547F70221716EC6326CF95D704CFE745852392C92BF7FB8C32915CE3B537)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/qfhX9XxwQNS58LobTlDvtw/zh-cn_image_0000002589244011.png)
 
 ```
 1. // xxx.ets
@@ -103,7 +103,7 @@ Stack容器中兄弟组件显示层级关系可以通过[Z序控制](../harmonyo
 
 [StackLayoutNozIndex.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/stacklayout/StackLayoutNozIndex.ets#L20-L37)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/jQItktHJQYqiYapa-9kKtA/zh-cn_image_0000002558764204.png?HW-CC-KV=V1&HW-CC-Date=20260429T052738Z&HW-CC-Expire=86400&HW-CC-Sign=4FECAA881392341A9334B7F69BB538BCDF3643338A1BC38383495BBB6E5E1CF5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/jQItktHJQYqiYapa-9kKtA/zh-cn_image_0000002558764204.png)
 
 上图中，最后的子元素3的尺寸大于前面的所有子元素，所以，前面两个元素完全隐藏。改变子元素1、子元素2的zIndex属性后，可以将元素展示出来。
 
@@ -128,7 +128,7 @@ Stack容器中兄弟组件显示层级关系可以通过[Z序控制](../harmonyo
 
 [StackLayoutzIndex.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/stacklayout/StackLayoutzIndex.ets#L20-L37)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/OfFBirEtQQuW-7BFdgFBTQ/zh-cn_image_0000002558604548.png?HW-CC-KV=V1&HW-CC-Date=20260429T052738Z&HW-CC-Expire=86400&HW-CC-Sign=7F92E7D318A530A7C44DFB31E357437510ADBD89963380B2319918CAAEE8C50E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/OfFBirEtQQuW-7BFdgFBTQ/zh-cn_image_0000002558604548.png)
 
 ## 场景示例
 
@@ -175,7 +175,7 @@ Stack容器中兄弟组件显示层级关系可以通过[Z序控制](../harmonyo
 
 [StackLayoutSceneExample.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/stacklayout/StackLayoutSceneExample.ets#L15-L52)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/qswuW_2STjazFp42z5yYtg/zh-cn_image_0000002589324073.png?HW-CC-KV=V1&HW-CC-Date=20260429T052738Z&HW-CC-Expire=86400&HW-CC-Sign=A4A2A27AF08EB081378023B00A4C53E16CF3473DC4E644DDA0AFAD84160E1F2A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/qswuW_2STjazFp42z5yYtg/zh-cn_image_0000002589324073.png)
 
 ## 示例代码
 

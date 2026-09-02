@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > U
 category: harmonyos-references
 scraped_at: 2026-04-29T13:50:39+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:a01b8ffeb42f47c185ac566e00331d6f5b8b874c77415e80f727c9beaef07db0
+content_hash: sha256:256341da2d82e8123863412b9764aa76ac4e1d9f468d0575ca07e4ebdb49b9e9
 ---
 
 UIContext实例对象。
@@ -475,7 +475,7 @@ isAvailable(): boolean
 55. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/_H4oOVMQTZG8fj6FcYSUFg/zh-cn_image_0000002558606276.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055036Z&HW-CC-Expire=86400&HW-CC-Sign=91016CDA5EA36FC1C85E8151F1E15E31B2EB67C22C9E9959AF22EDC385248B88)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/_H4oOVMQTZG8fj6FcYSUFg/zh-cn_image_0000002558606276.gif)
 
 ## getFont
 
@@ -862,7 +862,7 @@ animateToImmediately(param: AnimateParam, processor: Callback<void>): void
 54. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/lJsYtKSxRZmcHm_syURlqg/zh-cn_image_0000002589325803.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055036Z&HW-CC-Expire=86400&HW-CC-Sign=99D8706D5E01FE0277112F4F855BE5FEC2A9581C9225019CA1351A83E822FF11)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/lJsYtKSxRZmcHm_syURlqg/zh-cn_image_0000002589325803.gif)
 
 ## animateTo
 
@@ -1389,7 +1389,7 @@ showAlertDialog(options: AlertDialogParamWithConfirm | AlertDialogParamWithButto
 32. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/UvdqEenuTf6rN_AF0NOpoA/zh-cn_image_0000002589245745.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055036Z&HW-CC-Expire=86400&HW-CC-Sign=C894FDAE9AFD7055AC1372898DB652CAA0AE64D3CE297D4FE189508296B3A47E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/UvdqEenuTf6rN_AF0NOpoA/zh-cn_image_0000002589245745.gif)
 
 ## showActionSheet
 
@@ -1463,7 +1463,7 @@ showActionSheet(value: ActionSheetOptions): void
 49. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/VIRy23gkTpudvykCXrVmyQ/zh-cn_image_0000002558765934.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055036Z&HW-CC-Expire=86400&HW-CC-Sign=D4C99BDAF6B75A011B490DCA809AAB7E6D95FCBC86185F4F4C06897199D485FA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/VIRy23gkTpudvykCXrVmyQ/zh-cn_image_0000002558765934.gif)
 
 ## showDatePickerDialog
 
@@ -1542,7 +1542,7 @@ showDatePickerDialog(options: DatePickerDialogOptions): void
 48. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/L-llKv4DT4iNDdmd0iPFow/zh-cn_image_0000002558606278.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055036Z&HW-CC-Expire=86400&HW-CC-Sign=7BC3E62658189BE65AB0EB5E20E5667AF79272A74A8E008FE0631357F4EACDD7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/L-llKv4DT4iNDdmd0iPFow/zh-cn_image_0000002558606278.gif)
 
 ## showTimePickerDialog
 
@@ -1692,7 +1692,7 @@ showTextPickerDialog(options: TextPickerDialogOptions): void
 50. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/fcC2SKztTLCjAdZBJ_xNuA/zh-cn_image_0000002589325805.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055036Z&HW-CC-Expire=86400&HW-CC-Sign=A1D1FC5A95D7D2FA1C4C182A4AECA9927A6B726D8BA5C75D2BA96AA14D5F6E4B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/fcC2SKztTLCjAdZBJ_xNuA/zh-cn_image_0000002589325805.gif)
 
 ## showTextPickerDialog20+
 
@@ -3709,7 +3709,7 @@ bindTabsToScrollable(tabsController: TabsController, scroller: Scroller): void
 92. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/z4ZvqMBUTM6DPsKDTKxsCQ/zh-cn_image_0000002589245747.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055036Z&HW-CC-Expire=86400&HW-CC-Sign=1AB4192A721E3D482253F21023BF100E433DF2FDF7198968969CF7DAE0D38ADB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/z4ZvqMBUTM6DPsKDTKxsCQ/zh-cn_image_0000002589245747.gif)
 
 ## unbindTabsFromScrollable13+
 
@@ -4370,4 +4370,4 @@ setCustomKeyboardContinueFeature(feature: CustomKeyboardContinueFeature): void
 102. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/Lg0IIVZ_Rm-WkIWH92xUlQ/zh-cn_image_0000002558765936.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055036Z&HW-CC-Expire=86400&HW-CC-Sign=BFB5FD9BBA6666AC180CB0B1A8A2549952A2E30A0529C8E54FA6C10B5F706BBA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/Lg0IIVZ_Rm-WkIWH92xUlQ/zh-cn_image_0000002558765936.gif)

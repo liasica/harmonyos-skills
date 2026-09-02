@@ -5,7 +5,7 @@ breadcrumb: 指南 > 系统 > 基础功能 > Desktop Extension Kit（桌面拓�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:33:19+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:2b3424ae9aba73d4029d4f957054861c7d55be168cd69ec0babafcf9e349e134
+content_hash: sha256:e643f0b46a4a95f629b73eea2aba9f4f0eb51edd1d28161cc2a576a8ef288fe0
 ---
 
 从6.0.2(22)开始，支持应用接入快捷栏。
@@ -14,11 +14,11 @@ content_hash: sha256:2b3424ae9aba73d4029d4f957054861c7d55be168cd69ec0babafcf9e34
 
 快捷栏指的是PC/2in1设备的屏幕底部的图标区域，具体如下图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/FLPMPMc4RfCSzvFYQCidfA/zh-cn_image_0000002558605292.png?HW-CC-KV=V1&HW-CC-Date=20260429T053318Z&HW-CC-Expire=86400&HW-CC-Sign=4591C2703E39ABB62D06988ABB5A0BED3360497F30CD482351CE28B695256C8B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/FLPMPMc4RfCSzvFYQCidfA/zh-cn_image_0000002558605292.png)
 
 应用接入快捷栏之后，快捷栏的应用图标菜单会显示应用自定义的菜单项，应用可以添加、删除、更新、查询菜单项，具体效果如下图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/gvjRiOQBSc232r86du7HZg/zh-cn_image_0000002589324817.png?HW-CC-KV=V1&HW-CC-Date=20260429T053318Z&HW-CC-Expire=86400&HW-CC-Sign=473B86747ABBC9A4E914406DD01E67FF22850C80B7EE3E98C896F736A15B66E9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/gvjRiOQBSc232r86du7HZg/zh-cn_image_0000002589324817.png)
 
 ## 接口说明
 

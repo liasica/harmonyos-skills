@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-net-eap
-title: @ohos.net.eap (扩展认证)
+title: "@ohos.net.eap (扩展认证)"
 breadcrumb: API参考 > 系统 > 网络 > Network Kit（网络服务） > ArkTS API > @ohos.net.eap (扩展认证)
 category: harmonyos-references
 scraped_at: 2026-04-28T08:08:28+08:00

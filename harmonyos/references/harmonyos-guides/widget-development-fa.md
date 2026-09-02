@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > Form Kit（卡片开发服务） > JS卡片�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:30:06+08:00
 doc_updated_at: 2026-03-19
-content_hash: sha256:cfa20b133b368b788d7af9e1355fb939babc08bc8a557035ca89dee8ac42189d
+content_hash: sha256:1f7eb3423e4b86a298380b855334cb22873c515049fa1f4af51cf2d4238009a8
 ---
 
 FA模型从API version 7开始支持，已经不再主推。该应用模型通过导出匿名对象、固定入口文件的方式指定应用组件，开发者无法进行派生，不利于扩展能力。建议使用新的Stage模型进行开发。
@@ -416,7 +416,7 @@ FormAbility不能常驻后台，即在卡片生命周期回调函数中无法处
 
 开发者可以使用类Web范式（HML+CSS+JSON）开发JS卡片页面。生成如下卡片页面，可以这样配置卡片页面文件：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/qm5i1TLNQkOVzy8Yks9cZQ/zh-cn_image_0000002589244619.png?HW-CC-KV=V1&HW-CC-Date=20260429T053004Z&HW-CC-Expire=86400&HW-CC-Sign=E9044159D5AB46AB5C7838B61930A89FBBF98D1867BE8E0788E39FEEEFAC7AA2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/qm5i1TLNQkOVzy8Yks9cZQ/zh-cn_image_0000002589244619.png)
 
 说明
 

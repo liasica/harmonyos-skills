@@ -5,7 +5,7 @@ breadcrumb: 指南 > 系统 > 安全 > 程序访问控制 > 应用权限管控 >
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:30:36+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:472eb2738fd635248abee5be62bcdff9fd559683f12d31a38baad994fd7ea3d1
+content_hash: sha256:9075c7ed77b92bc001f78a5de2220a9c2e97ea141d7963c57d06078a02f2769e
 ---
 
 受限开放的权限通常是不允许三方应用申请的。如果有特殊场景需要使用，请提供相关申请材料到AppGallery Connect（简称为AGC）申请相应权限证书。
@@ -20,7 +20,7 @@ content_hash: sha256:472eb2738fd635248abee5be62bcdff9fd559683f12d31a38baad994fd7
 
 ## 申请步骤
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/cRYj0xM4Rjeqo-WoPKv2vg/zh-cn_image_0000002589324725.png?HW-CC-KV=V1&HW-CC-Date=20260429T053035Z&HW-CC-Expire=86400&HW-CC-Sign=C9CEFA033CDFFC8D0496DEAE932879DA68AD2624427E4939A436E87F70EFF239)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/cRYj0xM4Rjeqo-WoPKv2vg/zh-cn_image_0000002589324725.png)
 
 针对上图中的数字标注，补充说明如下：
 

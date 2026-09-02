@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:53:06+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:63f3b287d476cbd6c208b4cdf749a19e7ad4e8f94d7c275fe32a9982cea92ca9
+content_hash: sha256:7391aeb529c84e84ade9c60109b5f46bd89a01dec3eeacd091c622f7b61761b6
 ---
 
 工具栏组件，用于展示针对当前界面内容的操作选项，在界面底部显示。底部最多显示5个入口，超过则收纳入“更多”子项中，在最右侧显示。
@@ -321,7 +321,7 @@ PhonePC/2in1TabletTVWearable
 64. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/j8iDQiCdQAiBIOdxyr9GsA/zh-cn_image_0000002558766664.png?HW-CC-KV=V1&HW-CC-Date=20260429T055305Z&HW-CC-Expire=86400&HW-CC-Sign=9ECF161846F524EB38665E953EAB363250AD91C52177F5109868A7A1EDE2D24D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/j8iDQiCdQAiBIOdxyr9GsA/zh-cn_image_0000002558766664.png)
 
 ### 示例2（设置工具栏自定义样式）
 
@@ -421,7 +421,7 @@ PhonePC/2in1TabletTVWearable
 91. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/8H6TPwKxS7CJlyTubD-tMA/zh-cn_image_0000002558607004.png?HW-CC-KV=V1&HW-CC-Date=20260429T055305Z&HW-CC-Expire=86400&HW-CC-Sign=4C5CA7C5D54CB9680486F95276DB1D8979BCC6F4CA9D16565BABDDEF120B4813)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/8H6TPwKxS7CJlyTubD-tMA/zh-cn_image_0000002558607004.png)
 
 ### 示例3（设置工具栏自定义播报）
 
@@ -499,4 +499,4 @@ PhonePC/2in1TabletTVWearable
 69. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/N5OKb6gQT76GD4jW5aoPrg/zh-cn_image_0000002558766664.png?HW-CC-KV=V1&HW-CC-Date=20260429T055305Z&HW-CC-Expire=86400&HW-CC-Sign=01890BA5B69DE6EE2653DDE2D55C1AD9391BE2BF2881710C534E458CB25F2A4A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/N5OKb6gQT76GD4jW5aoPrg/zh-cn_image_0000002558766664.png)

@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-contact
-title: @ohos.contact (联系人)
+title: "@ohos.contact (联系人)"
 breadcrumb: API参考 > 应用服务 > Contacts Kit（联系人服务） > ArkTS API > @ohos.contact (联系人)
 category: harmonyos-references
 scraped_at: 2026-04-28T08:16:34+08:00

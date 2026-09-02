@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-scene
-title: @ohos.graphics.scene (ArkGraphics 3D模块)
+title: "@ohos.graphics.scene (ArkGraphics 3D模块)"
 breadcrumb: API参考 > 图形 > ArkGraphics 3D（方舟3D图形） > ArkTS API > @ohos.graphics.scene (ArkGraphics 3D模块)
 category: harmonyos-references
 scraped_at: 2026-04-28T08:15:35+08:00

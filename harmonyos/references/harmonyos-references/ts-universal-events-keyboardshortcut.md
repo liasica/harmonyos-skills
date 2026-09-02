@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:51:10+08:00
 doc_updated_at: 2026-04-08
-content_hash: sha256:86384f6be4acf5db866beb75ef4ab05a2e8ae8926c3382877d678fdd7bf854ad
+content_hash: sha256:8b8e2a1e4fe2f1d4ef69d019ef6117eb56b70ae28ab40248172e4b29fc64e958
 ---
 
 开发者可以设置组件的自定义组合键，每个组件可以设置多个组合键。
@@ -135,7 +135,7 @@ PhonePC/2in1TabletTVWearable
 37. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/KFGeVQgvS1iOe9rnLYLSTQ/zh-cn_image_0000002589325861.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055107Z&HW-CC-Expire=86400&HW-CC-Sign=C83DA1F9F1FB06E8F33A06BC2F9DE658B67B6C76B5FE258AD45BC625E35B3612)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/KFGeVQgvS1iOe9rnLYLSTQ/zh-cn_image_0000002589325861.gif)
 
 ### 示例2（快捷键的绑定和解除绑定）
 
@@ -175,4 +175,4 @@ PhonePC/2in1TabletTVWearable
 31. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/9_iYcVDvSmypcr8IaWEeAw/zh-cn_image_0000002589245803.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055107Z&HW-CC-Expire=86400&HW-CC-Sign=910B1F4CE4964938B889AB51C1D290DFA3B1C9EC5604BB6985360E04BF7B98B2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/9_iYcVDvSmypcr8IaWEeAw/zh-cn_image_0000002589245803.gif)

@@ -5,7 +5,7 @@ breadcrumb: 最佳实践 > 图形 > 图形绘制 > 基于Canvas实现录像回�
 category: best-practices
 scraped_at: 2026-04-29T14:11:45+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:fa7a32bcb580d897cea957380f9b560408a1b0e608bf3167c93164fdc7d43655
+content_hash: sha256:e7fc23603886b0ee08af346d9e0b331552a9830f137d341556b0e126ab67df70
 ---
 
 ## **概述**
@@ -30,7 +30,7 @@ TimeBarView组件采用分层绘制，依次为刻度线、中间线、视频区
 刻度线绘制主要将时间戳转换为Canvas像素坐标。例如，开发者自定义刻度间隔的宽度为intervalWidth（如intervalWidth = 10vp），相同长度的时间间隔对应10分钟，实现“固定时间对应固定像素”的精准映射，确保任意时间戳均能通过公式计算出唯一的画布坐标。
 
 **图1** 时间-像素映射示意图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/qBZAhlnbTPW9CDdLhj5DWw/zh-cn_image_0000002478758526.png?HW-CC-KV=V1&HW-CC-Date=20260429T061143Z&HW-CC-Expire=86400&HW-CC-Sign=BEAB547483CEF6E2E995A2D8D83E4E38CF458B695847D51CF8FB61A09BB7F690 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/qBZAhlnbTPW9CDdLhj5DWw/zh-cn_image_0000002478758526.png "点击放大")
 
 ### 开发流程
 
@@ -227,7 +227,7 @@ TimeBarView组件采用分层绘制，依次为刻度线、中间线、视频区
    * 边界限制：设置最小（10vp）和最大（180vp）缩放阈值，避免过度缩放。
 
    **图2** 缩放时间轴示意图  
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/6t9Z-hzJRlGnwn-xsRleDw/zh-cn_image_0000002478598550.png?HW-CC-KV=V1&HW-CC-Date=20260429T061143Z&HW-CC-Expire=86400&HW-CC-Sign=AF4B1F4CECB1C7124D4F15FAD7FDB885CE2974A385CF93F8FDFC67AAE0893EAA "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/6t9Z-hzJRlGnwn-xsRleDw/zh-cn_image_0000002478598550.png "点击放大")
 
    ```
    1. // Update per-division width
@@ -325,7 +325,7 @@ TimeBarView时间轴与视频播放联动，滑动时间轴可快速定位至目
 滑动停止时，若时间轴中线对应的时间点在录像片段有效时间内，视频立即跳转并继续播放；若处于两端录像间的空白区域，系统自动跳转至最近的录像起始时间点，避免无画面时段，提高效率。时间轴滑动存在硬性边界限制，用户试图将时间轴向右滑动至所有录像片段的最末端（即最新一段录像的结束时间）时，将无法继续拖动，防止超出录像数据范围导致播放异常。
 
 **图3** 效果图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/00lzXCe-SS-TfVJ_OabaJg/zh-cn_image_0000002510798495.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061143Z&HW-CC-Expire=86400&HW-CC-Sign=519179F1419BD05EF410E69632425D5A30B1AA1C487E11DB4A12D13A29C05A16 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/00lzXCe-SS-TfVJ_OabaJg/zh-cn_image_0000002510798495.gif "点击放大")
 
 ### 开发步骤
 

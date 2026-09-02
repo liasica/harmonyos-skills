@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > Background Tasks Kit（后台任务开发服
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:29:33+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:87dc0b16184a4688559d2c20b7d4d64f5941fe7d3025a9aa176f544262c7eccf
+content_hash: sha256:6aa9fc9b08c9f289b2126f2041dcbad9cfb70500308c0d0e25658414fcbfb5e3
 ---
 
 ## 概述
@@ -18,7 +18,7 @@ content_hash: sha256:87dc0b16184a4688559d2c20b7d4d64f5941fe7d3025a9aa176f544262c
 
 **图1** 延迟任务实现原理
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/gO47eFgoSTOsrJ-LKhHB1g/zh-cn_image_0000002558605094.png?HW-CC-KV=V1&HW-CC-Date=20260429T052932Z&HW-CC-Expire=86400&HW-CC-Sign=3340E39A31BDAC2B8C357B85337CFB558F122E90ECF5EDB53F60ACF0302ADA73)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/gO47eFgoSTOsrJ-LKhHB1g/zh-cn_image_0000002558605094.png)
 
 应用调用延迟任务接口添加、删除、查询延迟任务，延迟任务管理模块会根据任务设置的条件（通过[WorkInfo](../harmonyos-references/js-apis-resourceschedule-workscheduler.md#workinfo)参数设置，包括网络类型、充电类型、存储状态等）和系统状态（包括内存、功耗、设备温度、用户使用习惯等）统一决策调度时机。
 

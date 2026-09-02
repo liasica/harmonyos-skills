@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:28:11+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:7c21a574b5d3de06c97c286332a291dc1997446cfd00f5bbe5377f71cbd35d43
+content_hash: sha256:2c0ef17e35cc8e92db1bb4d68cf1d185aa810db50791a8120c08acd80364b46d
 ---
 
 旋转屏动画主要分为两类：[布局切换的旋转屏动画](arkts-rotation-transition-animation.md#布局切换的旋转屏动画)和[透明度变化的旋转屏动画](arkts-rotation-transition-animation.md#透明度变化的旋转屏动画)，旨在实现屏幕显示方向变化时的自然过渡。布局切换的旋转屏动画实现较为简便，例如在module.json5中配置自动旋转（或设置窗口显示方向）即可实现。而透明度变化的旋转屏动画则需在module.json5配置的基础上，预备两套视图，在屏幕旋转时，通过视图切换，使消失的视图呈现渐隐效果，新出现的视图则渐显，从而营造流畅的视觉体验。
@@ -44,7 +44,7 @@ content_hash: sha256:7c21a574b5d3de06c97c286332a291dc1997446cfd00f5bbe5377f71cbd
 
 布局切换的旋转屏动画，会对同步旋转的窗口与应用视图做大小和位置的过渡。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/kWoUzLNPQdSK61V-RJUolg/zh-cn_image_0000002589244289.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052810Z&HW-CC-Expire=86400&HW-CC-Sign=F93BBD79EEA8BD77DAB4920498439E2429FADFC77C4412F08C6BB92087FC3F92)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/kWoUzLNPQdSK61V-RJUolg/zh-cn_image_0000002589244289.gif)
 
 ## 透明度变化的旋转屏动画
 
@@ -149,4 +149,4 @@ content_hash: sha256:7c21a574b5d3de06c97c286332a291dc1997446cfd00f5bbe5377f71cbd
 
 透明度变化的旋转屏动画，会对窗口做大小和位置的过渡，并同时对应用视图做切换过渡，且为消失隐藏的应用视图做渐隐效果，对新出现的视图做渐显的效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/4tD2PalpR0iz5N5sYwkr7g/zh-cn_image_0000002558764482.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052810Z&HW-CC-Expire=86400&HW-CC-Sign=69B2ECB2AD60C4B93E10EC9190014EACC885C1BB4E9975DC51EFA809097446F6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/4tD2PalpR0iz5N5sYwkr7g/zh-cn_image_0000002558764482.gif)

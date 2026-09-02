@@ -5,7 +5,7 @@ breadcrumb: 指南 > 系统 > 硬件 > Pen Kit（手写笔服务） > 手写功�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:33:35+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:f8fec10eacb05db10a2a02a0028b1b7516bc958ec1fdc66d2900813463da096b
+content_hash: sha256:fb40b40e6f0c2220cd6c0b2601f2445be2cdc71031f26c51bbb11a4ebc694f5f
 ---
 
 接入手写套件后，可以在应用中创建手写功能界面。界面包括画布和工具栏两部分，画布部分支持手写笔和手指的书写效果绘制，工具栏部分提供多种笔刷和编辑工具，并支持对手写功能进行设置。接入手写套件后将自动开启一笔成形和报点预测功能，无需再单独接入。
@@ -20,7 +20,7 @@ content_hash: sha256:f8fec10eacb05db10a2a02a0028b1b7516bc958ec1fdc66d2900813463d
 
 在应用中创建手写功能界面，效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/vCA10_55RnG-u2zMrcQr4Q/zh-cn_image_0000002558605320.png?HW-CC-KV=V1&HW-CC-Date=20260429T053334Z&HW-CC-Expire=86400&HW-CC-Sign=C8C40057ED18C126911D1166A1C427DEB3712CF19A0896D7E39E1F8E9F707805)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/vCA10_55RnG-u2zMrcQr4Q/zh-cn_image_0000002558605320.png)
 
 1. 可以加载和显示手写文件。
 2. 可以编辑和保存手写文件。
@@ -28,7 +28,7 @@ content_hash: sha256:f8fec10eacb05db10a2a02a0028b1b7516bc958ec1fdc66d2900813463d
 
 ## 开发流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/4W-irWt4Qi2FCjuXpyTl8A/zh-cn_image_0000002589324845.png?HW-CC-KV=V1&HW-CC-Date=20260429T053334Z&HW-CC-Expire=86400&HW-CC-Sign=A3FEA32201A3A44E1066245646FCDC6A6EABAA2C3B62ADE3387565AB42C92DC5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/4W-irWt4Qi2FCjuXpyTl8A/zh-cn_image_0000002589324845.png)
 
 ## 接口说明
 

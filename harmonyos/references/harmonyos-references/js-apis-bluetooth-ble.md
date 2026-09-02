@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-bluetooth-ble
-title: @ohos.bluetooth.ble (蓝牙ble模块)
+title: "@ohos.bluetooth.ble (蓝牙ble模块)"
 breadcrumb: API参考 > 系统 > 网络 > Connectivity Kit（短距通信服务） > ArkTS API > @ohos.bluetooth.ble (蓝牙ble模块)
 category: harmonyos-references
 scraped_at: 2026-04-28T08:07:57+08:00

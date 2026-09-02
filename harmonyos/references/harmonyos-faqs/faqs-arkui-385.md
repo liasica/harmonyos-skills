@@ -5,7 +5,7 @@ breadcrumb: FAQ > 应用框架开发 > UI框架 > 方舟UI框架（ArkUI） > �
 category: harmonyos-faqs
 scraped_at: 2026-04-29T14:17:39+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:b4295a58d1c87e34951e1052756675341e58ba1b97cb6efa8fdb10851545a069
+content_hash: sha256:222b75d3c5e3d712057a559a53245f558980e77afd0d24349b511a0a7b9d59f7
 ---
 
 **问题现象**
@@ -16,7 +16,7 @@ content_hash: sha256:b4295a58d1c87e34951e1052756675341e58ba1b97cb6efa8fdb1085154
 
 由于linearGradient颜色渐变属于组件内容且绘制在背景上方，若仅对文本应用渐变，效果将作用于背景而非文字本身，其效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/hIpOfM1YRaC_7DGz1TusXA/zh-cn_image_0000002337430672.png?HW-CC-KV=V1&HW-CC-Date=20260429T061737Z&HW-CC-Expire=86400&HW-CC-Sign=98FB8420CC3A7E9C448B09864A256173E5D810AB0E1C6BF13CE3C0FC689AE72A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/hIpOfM1YRaC_7DGz1TusXA/zh-cn_image_0000002337430672.png)
 
 **解决措施**
 
@@ -56,7 +56,7 @@ content_hash: sha256:b4295a58d1c87e34951e1052756675341e58ba1b97cb6efa8fdb1085154
 
   [FontGradient.ets](https://gitcode.com/harmonyos_samples/faqsnippets/blob/abce1db5a4cf676fd100dbd3a0acd02f5bb30358/ArkUI/entry/src/main/ets/pages/FontGradient.ets#L6-L28)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/bGnOyTilS7CrqW9ghLdJSw/zh-cn_image_0000002371468633.png?HW-CC-KV=V1&HW-CC-Date=20260429T061737Z&HW-CC-Expire=86400&HW-CC-Sign=01ACFF76D6FF8F7A3410319AE702FA7F758CBA773D554C6CE70B0785C6A482FF)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/bGnOyTilS7CrqW9ghLdJSw/zh-cn_image_0000002371468633.png)
 * C-API侧，使用方案同上，使用[ArkUI\_NodeAttributeType](../harmonyos-references/capi-native-node-h.md#arkui_nodeattributetype)的NODE\_BLEND\_MODE，以及NODE\_LINEAR\_GRADIENT进行设置；
 
 2、API20及以上

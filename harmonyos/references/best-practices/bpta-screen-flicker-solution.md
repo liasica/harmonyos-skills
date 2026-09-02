@@ -5,7 +5,7 @@ breadcrumb: 最佳实践 > 性能 > 性能场景优化案例 > 专项问题解�
 category: best-practices
 scraped_at: 2026-04-29T14:13:43+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:07abe80f8bedc9e313cd6acb04170769eb6424b464fe4e4d73eb9906158767d3
+content_hash: sha256:f47b2ae5266d00101091068fe29742b5c3972fa8fbe26ea326a7ee5f1757ce30
 ---
 
 ## 概述
@@ -25,7 +25,7 @@ content_hash: sha256:07abe80f8bedc9e313cd6acb04170769eb6424b464fe4e4d73eb9906158
 
 连续点击后，图标大小会异常变化，导致闪屏。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/1s2TNslHQ8KFUVR9dqVGAA/zh-cn_image_0000002229337129.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061338Z&HW-CC-Expire=86400&HW-CC-Sign=F070323749EDFF7566FA5B91D68F0330F6A40E89BD5B41F3180B501A2E75D608 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/1s2TNslHQ8KFUVR9dqVGAA/zh-cn_image_0000002229337129.gif "点击放大")
 
 ```
 1. @Entry
@@ -141,7 +141,7 @@ content_hash: sha256:07abe80f8bedc9e313cd6acb04170769eb6424b464fe4e4d73eb9906158
 
 运行效果如下图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/zZFdat_wRI-LqVY4eEyUsw/zh-cn_image_0000002229337141.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061338Z&HW-CC-Expire=86400&HW-CC-Sign=9EFC080089001D94C411B058341C97D00648A68492FB55AD78D0294C9C151D80 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/zZFdat_wRI-LqVY4eEyUsw/zh-cn_image_0000002229337141.gif "点击放大")
 
 ### 动画过程中，Tabs页签切换场景下的闪屏问题
 
@@ -149,7 +149,7 @@ content_hash: sha256:07abe80f8bedc9e313cd6acb04170769eb6424b464fe4e4d73eb9906158
 
 滑动Tabs组件时，上方标签不能同步更新。下方内容完全切换后，标签闪动跳转，产生闪屏。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/MVYQQL77RJCISG-X2vpjWQ/zh-cn_image_0000002229451637.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061338Z&HW-CC-Expire=86400&HW-CC-Sign=9B0D0F7FC2BD311C82843FF6302BD83C138F830B3187CB99FA15000E16584440 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/MVYQQL77RJCISG-X2vpjWQ/zh-cn_image_0000002229451637.gif "点击放大")
 
 ```
 1. @Entry
@@ -387,7 +387,7 @@ TabsAnimationEvent方法如下所示。
 
 运行效果如下图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/V7AcvR0bTKyY3u2nMylyHw/zh-cn_image_0000002229337133.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061338Z&HW-CC-Expire=86400&HW-CC-Sign=7AB419BEB1DD90F15E9B86AA39084E8295E73F182637D33A48345F537D9BAC67 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/V7AcvR0bTKyY3u2nMylyHw/zh-cn_image_0000002229337133.gif "点击放大")
 
 ### 刷新过程中，ForEach键值生成函数未设置导致的闪屏问题
 
@@ -395,7 +395,7 @@ TabsAnimationEvent方法如下所示。
 
 下拉刷新时，应用卡顿，出现闪屏。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/Dti4FRgeTeqy_C4cE6g6Wg/zh-cn_image_0000002229337137.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061338Z&HW-CC-Expire=86400&HW-CC-Sign=7DEF33FEB94BD4510F12C19F0DA8E6E4D027539458188A25930332BEFAAFA097 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/Dti4FRgeTeqy_C4cE6g6Wg/zh-cn_image_0000002229337137.gif "点击放大")
 
 ```
 1. @Builder
@@ -479,7 +479,7 @@ ForEach提供了一个名为keyGenerator的参数，这是一个函数，开发�
 
 运行效果如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/R3HqzmmBQm-zQxft_so8eg/zh-cn_image_0000002194011344.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061338Z&HW-CC-Expire=86400&HW-CC-Sign=A3FF96D450E722122DD568D6B2EEA03C5D5EEE628D95FF4E0FF49B12C755A7FF "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/R3HqzmmBQm-zQxft_so8eg/zh-cn_image_0000002194011344.gif "点击放大")
 
 ## 总结
 

@@ -5,7 +5,7 @@ breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:41:08+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:4c4301c0b1e27717b14a37493e3e6cc030eae38cf2134243d7aa514d4c890f98
+content_hash: sha256:946cd99cc92fa1b343b958111c953946660542bd7de0bbdbe2fff17f215ad11e
 ---
 
 工程化算子开发是指基于自动生成的**自定义算子工程**完成算子实现、编译部署、单算子调用代码自动生成等一系列流程。
@@ -14,7 +14,7 @@ content_hash: sha256:4c4301c0b1e27717b14a37493e3e6cc030eae38cf2134243d7aa514d4c8
 
 工程化算子开发流程如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/AcNQjPhgQ0OKrHmuNnn8Fw/zh-cn_image_0000002558765748.png?HW-CC-KV=V1&HW-CC-Date=20260429T054107Z&HW-CC-Expire=86400&HW-CC-Sign=A9E93306971ED6395B0FB72142CCDE562571B8393FAA049222687E514596E5A9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/AcNQjPhgQ0OKrHmuNnn8Fw/zh-cn_image_0000002558765748.png)
 
 1. 环境准备。
 

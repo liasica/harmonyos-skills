@@ -5,7 +5,7 @@ breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-rep
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:44:55+08:00
 doc_updated_at: 2026-03-17
-content_hash: sha256:bb463ae5068e4d926c5202843521db7b06827557a0c5c161cc9b0b50cdcc4e0a
+content_hash: sha256:d5af3f8021790e5dbca9aeeb3ccdd6325d88c6e3f2e5bcab16dfe3db14537c84
 ---
 
 ohpm-repo 5.1.3版本开始支持自定义元数据规则校验，允许通过插件对oh-package.json5中部分字段开发定制化的校验规则。
@@ -20,9 +20,9 @@ ohpm-repo 5.1.3版本开始支持自定义元数据规则校验，允许通过�
 2. 根据[模板文件](ide-rule-verification-template-file.md)中的操作指示，创建三个必要模板文件：[checkField.ts](ide-rule-verification-template-file.md#section14072085013)，[CustomExtensionValidationConfig.json](ide-rule-verification-template-file.md#section1076523392)和[tsconfig.json](ide-rule-verification-template-file.md#section1613602518915)。
 3. 将文件[tsconfig.json](ide-rule-verification-template-file.md#section1613602518915)文件移动到ohpm-repo解压根目录内；建议将文件[checkField.ts](ide-rule-verification-template-file.md#section14072085013)和[CustomExtensionValidationConfig.json](ide-rule-verification-template-file.md#section1076523392)文件移动到ohpm-repo解压根目录的plugins/fieldCheckPlugin文件夹内。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/kX3ofwTcQUW7y50GMykAtQ/zh-cn_image_0000002561831175.png?HW-CC-KV=V1&HW-CC-Date=20260429T054453Z&HW-CC-Expire=86400&HW-CC-Sign=D9EF6BCD19284A02D1C59D62FC12A1753B5AB25DDC7D7837027D6CAF709BA2D1)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/kX3ofwTcQUW7y50GMykAtQ/zh-cn_image_0000002561831175.png)
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/BS7iS7JTReSz0kkVXmJ5BQ/zh-cn_image_0000002530911254.png?HW-CC-KV=V1&HW-CC-Date=20260429T054453Z&HW-CC-Expire=86400&HW-CC-Sign=33E4E41A08550CC814AD11226995A4D20F921CD1EC21ED329F7B0064F024E43B "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/BS7iS7JTReSz0kkVXmJ5BQ/zh-cn_image_0000002530911254.png "点击放大")
 
 ## 编写自定义规则校验函数文件checkField.ts
 

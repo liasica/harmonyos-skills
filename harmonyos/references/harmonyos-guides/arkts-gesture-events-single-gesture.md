@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:28:05+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:63ea3863278eef99a0e7b63fe3672ca464134013421e57e3d96750b341aaca01
+content_hash: sha256:ce22e965934ba3866f4441ff08cb82a2603a3f6e3d0699a453be38891ffba7d4
 ---
 
 ## 点击事件（onClick）
@@ -121,7 +121,7 @@ onClick与其他手势类型相同，也会参与命中测试、响应链收集�
 
 [TapGesture.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/EventProject/entry/src/main/ets/pages/singlegesture/TapGesture.ets#L16-L52)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/wTSLSpbXQ3-J5aZ5hWDhxw/zh-cn_image_0000002589244255.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052804Z&HW-CC-Expire=86400&HW-CC-Sign=CA749B0E4917DFA26D798074E46CE3CE2D4235671F6E9B8BDEA5AEB231BBF2CC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/wTSLSpbXQ3-J5aZ5hWDhxw/zh-cn_image_0000002589244255.gif)
 
 ## 长按手势（LongPressGesture）
 
@@ -178,7 +178,7 @@ onClick与其他手势类型相同，也会参与命中测试、响应链收集�
 
 [LongPressGesture.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/EventProject/entry/src/main/ets/pages/singlegesture/LongPressGesture.ets#L16-L57)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/rQ5tEGgPT2Okvk2xnffqAg/zh-cn_image_0000002558764448.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052804Z&HW-CC-Expire=86400&HW-CC-Sign=A32D10F00219E9CB8A0297A5B004573398D9DA799FF0542BD1F4FFC6C00D059D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/rQ5tEGgPT2Okvk2xnffqAg/zh-cn_image_0000002558764448.gif)
 
 ## 滑动手势（PanGesture）
 
@@ -281,7 +281,7 @@ onClick与其他手势类型相同，也会参与命中测试、响应链收集�
 
 [PanCombinationGesture.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/EventProject/entry/src/main/ets/pages/singlegesture/PanCombinationGesture.ets#L16-L95)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/r5IWmwHPR0efJSEsZw4oLQ/zh-cn_image_0000002558604792.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052804Z&HW-CC-Expire=86400&HW-CC-Sign=7F477A0ABE1A5DEFBAB633D5A9790399CCD219075CE68013C4DA87B31A6427C0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/r5IWmwHPR0efJSEsZw4oLQ/zh-cn_image_0000002558604792.gif)
 
 说明
 
@@ -355,7 +355,7 @@ onClick与其他手势类型相同，也会参与命中测试、响应链收集�
 
 [PinchGesture.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/EventProject/entry/src/main/ets/pages/singlegesture/PinchGesture.ets#L16-L68)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/FV4z6exfQsiob7ByzMWacg/zh-cn_image_0000002589324317.png?HW-CC-KV=V1&HW-CC-Date=20260429T052804Z&HW-CC-Expire=86400&HW-CC-Sign=4C934822141930B1F8D58AF58527CFA254F52B7ECEFEDDFE6BBB8C8AE467A15F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/FV4z6exfQsiob7ByzMWacg/zh-cn_image_0000002589324317.png)
 
 ## 旋转手势（RotationGesture）
 
@@ -422,7 +422,7 @@ onClick与其他手势类型相同，也会参与命中测试、响应链收集�
 
 [RotationGesture.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/EventProject/entry/src/main/ets/pages/singlegesture/RotationGesture.ets#L16-L67)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/S7t4bCMbT4GElNkWQeDeuw/zh-cn_image_0000002589244257.png?HW-CC-KV=V1&HW-CC-Date=20260429T052804Z&HW-CC-Expire=86400&HW-CC-Sign=0A59EEA6A7D27DA8117D872B8AE06A375395C0DF25E2F87C91E1122C56CD0E6C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/S7t4bCMbT4GElNkWQeDeuw/zh-cn_image_0000002589244257.png)
 
 ## 快滑手势（SwipeGesture）
 
@@ -481,7 +481,7 @@ onClick与其他手势类型相同，也会参与命中测试、响应链收集�
 
 [SwipeGesture.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/EventProject/entry/src/main/ets/pages/singlegesture/SwipeGesture.ets#L16-L59)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/-LE45bHyQ0a44UR3Ji0T9g/zh-cn_image_0000002558764450.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052804Z&HW-CC-Expire=86400&HW-CC-Sign=3BFCF0F28F046C1150CCA3CD5A8BF8DABF1232A7F045C503544F6332AC06EFCC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/-LE45bHyQ0a44UR3Ji0T9g/zh-cn_image_0000002558764450.gif)
 
 说明
 

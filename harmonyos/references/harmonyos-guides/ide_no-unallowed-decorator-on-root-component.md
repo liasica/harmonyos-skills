@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_no-unallowed-decorator-on-root-component
-title: @previewer/no-unallowed-decorator-on-root-component
+title: "@previewer/no-unallowed-decorator-on-root-component"
 breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 预览规则@previewer > @previewer/no-unallowed-decorator-on-root-component
 category: harmonyos-guides
 scraped_at: 2026-04-28T07:56:21+08:00

@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-vibrator
-title: @ohos.vibrator (振动)
+title: "@ohos.vibrator (振动)"
 breadcrumb: API参考 > 系统 > 硬件 > Sensor Service Kit（传感器服务） > ArkTS API > @ohos.vibrator (振动)
 category: harmonyos-references
 scraped_at: 2026-04-28T08:11:03+08:00

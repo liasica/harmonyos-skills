@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > �
 category: harmonyos-references
 scraped_at: 2026-04-29T13:53:15+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:c65968e11fcf9563b1b2d2d393746d93a20e99135d3ed61a5236d1be24003c18
+content_hash: sha256:e5c078149b8c24a46321e581dc30fa5b3a72ae5bf098a3fd734bc559e017d652
 ---
 
 说明
@@ -191,7 +191,7 @@ animation对象事件：
 38. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/L_fr0AZ9SimahjRdCksJ0Q/zh-cn_image_0000002589326563.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055314Z&HW-CC-Expire=86400&HW-CC-Sign=E40DCA254BAEFF4E9AB77EA1158AE18AFC4B3F896715576D4CD7DF0E9E687409)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/L_fr0AZ9SimahjRdCksJ0Q/zh-cn_image_0000002589326563.gif)
 
 ## getBoundingClientRect
 

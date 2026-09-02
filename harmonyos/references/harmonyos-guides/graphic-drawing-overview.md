@@ -5,7 +5,7 @@ breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 图形�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:36:07+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:47efef1b03cd732552d400ffc2a124bcc1f4c4199f238c11e3b1b221cf49e2d8
+content_hash: sha256:661c40ee928540703ffc1d091b14a07dfeb63a466cb5edd35a8dbdf77e17418f
 ---
 
 ## 场景介绍
@@ -16,7 +16,7 @@ content_hash: sha256:47efef1b03cd732552d400ffc2a124bcc1f4c4199f238c11e3b1b221cf4
 
 **图1** 图形绘制主要能力
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/UmoM0AYjSVa1xIcefxcvJQ/zh-cn_image_0000002558765132.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053606Z&HW-CC-Expire=86400&HW-CC-Sign=B55508C568FEC6B138E63FA3BE69A2503AF98ED2E34017C3CA3F4A1400C738A8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/UmoM0AYjSVa1xIcefxcvJQ/zh-cn_image_0000002558765132.jpg)
 
 ArkGraphics 2D基于2D图像渲染引擎为开发者提供了一系列灵活多样的图形绘制接口。主要分为画布操作、绘制效果、图元绘制几方面，各部分支持能力关键列举如上图所示，后续可能支持更多相关能力，此处不再一一呈现，具体可关注对应API参考文档。
 
@@ -24,7 +24,7 @@ ArkGraphics 2D基于2D图像渲染引擎为开发者提供了一系列灵活多�
 
 **图2** 图形绘制的实现流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/R9EtpLZbQL-WmsvIvw2skw/zh-cn_image_0000002558605476.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053606Z&HW-CC-Expire=86400&HW-CC-Sign=D9145D1019C1276852B63CEB2DC48F844D6879C2155719B816DC4A97A06D5491)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/R9EtpLZbQL-WmsvIvw2skw/zh-cn_image_0000002558605476.jpg)
 
 2D图形绘制过程和实际作画的过程是相似的，上图即以绘制经过旋转的红色填充矩形为例，提供了图形绘制的流程。主要实现流程和步骤如下：
 

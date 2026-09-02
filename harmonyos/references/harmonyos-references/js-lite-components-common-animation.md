@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > �
 category: harmonyos-references
 scraped_at: 2026-04-29T13:53:45+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:f2232ea1a7aeecb690058123515cb3a65fa7e8e94b3b4f85b018873d1ba16d7d
+content_hash: sha256:2a5234e43d52717f8b36e6340fa3f948b65736d539b9dcc5a14149bf04338a46
 ---
 
 组件支持通过style或css设置动态的旋转、平移及缩放效果。
@@ -55,7 +55,7 @@ content_hash: sha256:f2232ea1a7aeecb690058123515cb3a65fa7e8e94b3b4f85b018873d1ba
 9. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/SBesjR5GTjKfXNzijBMjmA/zh-cn_image_0000002558607270.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055344Z&HW-CC-Expire=86400&HW-CC-Sign=BC0830B33BAFEC96B2B49C69E93D9ECCE169410173753CC7AB0580512CD3876E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/SBesjR5GTjKfXNzijBMjmA/zh-cn_image_0000002558607270.gif)
 
 说明
 

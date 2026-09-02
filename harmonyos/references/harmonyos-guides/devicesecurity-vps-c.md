@@ -5,7 +5,7 @@ breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:31:43+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:b24ebf1ca6074837dc296a76c4cbb49889f8eb1b225225af4891b69443c4026e
+content_hash: sha256:d0f90137dbb8f1a9a5f02d861ca0be67dd6e6ccf73790a96fded518a266d7aeb
 ---
 
 ## 场景介绍
@@ -19,11 +19,11 @@ content_hash: sha256:b24ebf1ca6074837dc296a76c4cbb49889f8eb1b225225af4891b69443c
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/SzS3ENhDSzm1SEnAVVGoVw/zh-cn_image_0000002589324771.png?HW-CC-KV=V1&HW-CC-Date=20260429T053142Z&HW-CC-Expire=86400&HW-CC-Sign=4CF376199912F349B818B9E6939BF99C73136555D7196E731B0603D9C190BF6C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/SzS3ENhDSzm1SEnAVVGoVw/zh-cn_image_0000002589324771.png)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/lq9VvBJKTPyiEHIa6vCIDw/zh-cn_image_0000002589244709.png?HW-CC-KV=V1&HW-CC-Date=20260429T053142Z&HW-CC-Expire=86400&HW-CC-Sign=87501B4BE8420BD763A36CF7B7C309DFD7B6642630774A26E44FDE67CFE1B9C1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/lq9VvBJKTPyiEHIa6vCIDw/zh-cn_image_0000002589244709.png)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/xS85BeDqRhCrAk0d13sUtg/zh-cn_image_0000002558764904.png?HW-CC-KV=V1&HW-CC-Date=20260429T053142Z&HW-CC-Expire=86400&HW-CC-Sign=92218D8FD51C855851A11EE12468482B6CC3E91B25B79FD991873947043FE4D1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/xS85BeDqRhCrAk0d13sUtg/zh-cn_image_0000002558764904.png)
 
 **流程说明**：
 

@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-quotes-stylistic
-title: @hw-stylistic/quotes
+title: "@hw-stylistic/quotes"
 category: harmonyos-guides
 scraped_at: 2026-04-28T07:56:29+08:00
 doc_updated_at: 2026-01-15

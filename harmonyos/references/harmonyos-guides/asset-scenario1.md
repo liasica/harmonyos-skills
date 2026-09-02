@@ -5,7 +5,7 @@ breadcrumb: 指南 > 系统 > 安全 > Asset Store Kit（关键资产存储服�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:30:42+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:2efb8568864e14bd8c6d1a4dec9a69a6e37abc42d522955995bc342b0c85c1e0
+content_hash: sha256:f0558f9f1bfa8132b49e9e811853eb763c0e196018027246396a85dd8c5bfd7b
 ---
 
 说明
@@ -18,13 +18,13 @@ content_hash: sha256:2efb8568864e14bd8c6d1a4dec9a69a6e37abc42d522955995bc342b0c8
 
 用户再次打开登录界面时，应用/浏览器可以从ASSET中查询用户密码，并将其自动填充到密码输入框，用户只需点击“登录”按钮即可完成账号登录，极大地提升了用户体验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/T6v3_ekdRv6fR4SSNIb5aw/zh-cn_image_0000002589244679.png?HW-CC-KV=V1&HW-CC-Date=20260429T053041Z&HW-CC-Expire=86400&HW-CC-Sign=9D734C9322B18D0A56F81D7CAB2F0C21EEF051A008DB1EC29D07657054CF7B48)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/T6v3_ekdRv6fR4SSNIb5aw/zh-cn_image_0000002589244679.png)
 
 ## 关键流程
 
 业务调用ASSET保护密码类数据（后文统称为“关键资产”），可以参照以下流程进行开发。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/GkzVcfUESPajQmHgkbyofQ/zh-cn_image_0000002558764874.png?HW-CC-KV=V1&HW-CC-Date=20260429T053041Z&HW-CC-Expire=86400&HW-CC-Sign=DE53D797A69C8AFD68F1E6AD255C241E21B8E4EBB4D2A26CFBB4FB723647BFF4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/GkzVcfUESPajQmHgkbyofQ/zh-cn_image_0000002558764874.png)
 
 1. 业务查询符合条件的关键资产属性，根据查询成功/失败，判断关键资产是否存在。
 

@@ -5,14 +5,14 @@ breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:41:04+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:94276091ab630f7a593a770922f8f91c4fcf4417f3e47c866da28783ca94c004
+content_hash: sha256:21a4768618e0d2803fbfafb14f5b7853d09f434a869f3c45505ed150399ed46a
 ---
 
 控制单元为整个计算过程提供了指令控制，负责整个AI Core的运行。AI Core包含的控制单元如图1所示，每个模块的具体介绍请参考表1。
 
 **图1** 控制单元
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/kzmS4Ax1QHu49Gm4A3j78w/zh-cn_image_0000002589325599.png?HW-CC-KV=V1&HW-CC-Date=20260429T054103Z&HW-CC-Expire=86400&HW-CC-Sign=482671CDBAB27D67705EC5E9FCD4BDB418496AD905812380E8C33FC235E46D0A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/kzmS4Ax1QHu49Gm4A3j78w/zh-cn_image_0000002589325599.png)
 
 **表1** 控制单元及相关的指令队列介绍
 

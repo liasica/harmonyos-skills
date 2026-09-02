@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-intelligentscene
-title: @ohos.intelligentScene (情景模式)
+title: "@ohos.intelligentScene (情景模式)"
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > ArkTS API > 其他 > @ohos.intelligentScene (情景模式)
 category: harmonyos-references
 scraped_at: 2026-04-28T08:09:41+08:00

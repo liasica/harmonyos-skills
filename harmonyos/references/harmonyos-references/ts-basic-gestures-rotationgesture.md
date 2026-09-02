@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:51:35+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:b16aeb38a2a0c1313e3d701d1e0100f5d130d9177c35d98f92bb5f01feda2e65
+content_hash: sha256:e0a385d0adb2da5ecb84ea808f1a15f56f04bdc9276bc8d6c2547e2462bd1001
 ---
 
 用于触发旋转手势，最少需要2指，最多5指，最小改变度数为1度。该手势不支持通过触控板双指旋转操作触发。
@@ -198,4 +198,4 @@ PhonePC/2in1TabletTVWearable
 37. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/dRnoNfuFRaqq_iKb9DMWzA/zh-cn_image_0000002558766106.png?HW-CC-KV=V1&HW-CC-Date=20260429T055134Z&HW-CC-Expire=86400&HW-CC-Sign=66025C2D84967C80E10F4D30F88144E09628C1F5F7DDF84F0E07A4B491DFD72D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/dRnoNfuFRaqq_iKb9DMWzA/zh-cn_image_0000002558766106.png)

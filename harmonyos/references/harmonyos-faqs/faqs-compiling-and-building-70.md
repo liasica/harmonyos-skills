@@ -5,7 +5,7 @@ breadcrumb: FAQ > DevEco Studio > 编译构建 > 如何进行DevEco Studio编译
 category: harmonyos-faqs
 scraped_at: 2026-04-29T14:20:35+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:ba11e6c8212c39dbdf454730fc19ddda66a9445ad07c48bc8cfc2e9821207759
+content_hash: sha256:327a0503fc058c80111f17a346b4c9eb483110cf7b722fc827dff7a6e4e9dd4c
 ---
 
 Build Analyzer工具显示编译构建的重要信息，帮助开发者分析和排查性能问题。
@@ -13,14 +13,14 @@ Build Analyzer工具显示编译构建的重要信息，帮助开发者分析和
 构建完成后，通过以下方式打开Build Analyzer窗口：
 
 * 在底部的工具栏区域，单击Build Analyzer窗口进行查看。
-* 在左侧边栏单击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/tdXpfARhTweQkD7amOYE1g/zh-cn_image_0000002229758897.png?HW-CC-KV=V1&HW-CC-Date=20260429T062034Z&HW-CC-Expire=86400&HW-CC-Sign=CA3B7563B0F9549EDB6B4F0620EF47E6391CC076B246F47A4FF2409469B3BDF2)，打开Build Analyzer窗口。
+* 在左侧边栏单击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/tdXpfARhTweQkD7amOYE1g/zh-cn_image_0000002229758897.png)，打开Build Analyzer窗口。
 * 完成构建后首次打开Build Analyzer时，窗口显示构建分析概览，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/Kyz5mjkNSOG9stZqlB3D5w/zh-cn_image_0000002229604409.png?HW-CC-KV=V1&HW-CC-Date=20260429T062034Z&HW-CC-Expire=86400&HW-CC-Sign=1D7A1C80695A1F946EFD61754AA988D3D5BE6CC98D0DB326E5AAC77F9CC55A59 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/Kyz5mjkNSOG9stZqlB3D5w/zh-cn_image_0000002229604409.png "点击放大")
 
 如需查看构建任务时间图谱，从下拉菜单中点击Tasks，默认进入时间图谱界面。该界面分块显示构建历史记录、构建任务时长图谱、构建日志及日志详情信息，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/KlVqll1KR0S8hnI7kTiYWg/zh-cn_image_0000002194159012.png?HW-CC-KV=V1&HW-CC-Date=20260429T062034Z&HW-CC-Expire=86400&HW-CC-Sign=D4166F8478F8EAE5D3E9DDEF7D30304788D8E8D6F6D6890AB7050C328D481AEC "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/KlVqll1KR0S8hnI7kTiYWg/zh-cn_image_0000002194159012.png "点击放大")
 
 事件信息：
 

@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:52:24+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:fbd4fc5ff3797fa91b2bda036720e5fe7f718068fb91da32e2c94b0ad162baeb
+content_hash: sha256:5b425b183f642c5214fae6bd27c3e387100f714529f861664f30514bf2e9af4c
 ---
 
 提供画布组件，用于自定义绘制图形。
@@ -220,7 +220,7 @@ PhonePC/2in1TabletTVWearable
 21. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/RE3k0ExvSfqkBVuX0IUnWg/zh-cn_image_0000002589246259.png?HW-CC-KV=V1&HW-CC-Date=20260429T055223Z&HW-CC-Expire=86400&HW-CC-Sign=3D2CAFA08E228C9523380367A4D2822134D4121C756C1A966D5239E27D7BD193)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/RE3k0ExvSfqkBVuX0IUnWg/zh-cn_image_0000002589246259.png)
 
 ### 示例2（使用DrawingRenderingContext中的方法）
 
@@ -250,7 +250,7 @@ PhonePC/2in1TabletTVWearable
 21. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/ZK_w8neTS6qrNYVmUKqdtw/zh-cn_image_0000002558766452.png?HW-CC-KV=V1&HW-CC-Date=20260429T055223Z&HW-CC-Expire=86400&HW-CC-Sign=3753758D014A9D4AEA835FE4E9E3A418ECA4FF61248DB8FED3D6A17558E86456)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/ZK_w8neTS6qrNYVmUKqdtw/zh-cn_image_0000002558766452.png)
 
 ### 示例3（使用attributeModifier动态设置Canvas组件的属性及方法）
 
@@ -339,7 +339,7 @@ PhonePC/2in1TabletTVWearable
 76. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/sFi1vfb4T3qTBNPrTPKCRg/zh-cn_image_0000002558606792.png?HW-CC-KV=V1&HW-CC-Date=20260429T055223Z&HW-CC-Expire=86400&HW-CC-Sign=63C42E1C5A94D89A6FF2D7CA6FB22C3C3686BB40A9E1F23CB0253B1158348D10)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/sFi1vfb4T3qTBNPrTPKCRg/zh-cn_image_0000002558606792.png)
 
 ### 示例4（创建不缓存指令Canvas并进行绘制）
 
@@ -387,4 +387,4 @@ PhonePC/2in1TabletTVWearable
 37. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/WED6ablTRRq9ZT0A1c5pGA/zh-cn_image_0000002589326319.png?HW-CC-KV=V1&HW-CC-Date=20260429T055223Z&HW-CC-Expire=86400&HW-CC-Sign=7F09544D1D6BCA4936638B4DF9E48DB73B9818343EE4CB83618A577A5D5CCCDF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/WED6ablTRRq9ZT0A1c5pGA/zh-cn_image_0000002589326319.png)

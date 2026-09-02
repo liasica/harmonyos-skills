@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:28:42+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:b4207c6044e2296e6ff22659e77255313f5f7c4bdc415e7e0693dbae5541f26f
+content_hash: sha256:2ee14b6269c1b0c977c17773de5a03b4260c78c13bbe3af851130d8c6fc42f3f
 ---
 
 JS文件用来定义HML页面的业务逻辑，支持ECMA规范的JavaScript语言。基于JavaScript语言的动态化能力，可以使应用更加富有表现力，具备更加灵活的设计能力。下面讲述JS文件的编译和运行的支持情况。
@@ -224,7 +224,7 @@ JS文件用来定义HML页面的业务逻辑，支持ECMA规范的JavaScript语�
    21. };
    ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/CgKC9WopT62SHLCl1AWMRA/zh-cn_image_0000002558764570.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052840Z&HW-CC-Expire=86400&HW-CC-Sign=FA4E36E10D5587808A0596798CA7734200DAF91A1C1EE79BF01DD6FB97C3BE7E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/CgKC9WopT62SHLCl1AWMRA/zh-cn_image_0000002558764570.gif)
 
 ## 获取ViewModel
 
@@ -250,7 +250,7 @@ JS文件用来定义HML页面的业务逻辑，支持ECMA规范的JavaScript语�
 6. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/gcUoiNaUT5KTCiRSdGptDg/zh-cn_image_0000002558604914.png?HW-CC-KV=V1&HW-CC-Date=20260429T052840Z&HW-CC-Expire=86400&HW-CC-Sign=22600246A415CEA3DAC20937C6C6633BF53EDFE43D0B1F72B762AA5CEE712328)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/gcUoiNaUT5KTCiRSdGptDg/zh-cn_image_0000002558604914.png)
 
 自定义parent组件：
 
@@ -308,4 +308,4 @@ JS文件用来定义HML页面的业务逻辑，支持ECMA规范的JavaScript语�
 14. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/VYjNYw2UTnesgzo5xtrFdg/zh-cn_image_0000002589324439.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052840Z&HW-CC-Expire=86400&HW-CC-Sign=460F42AAD6446DE8FAECA702E54A62D250C952C86E2497068E386D6B65161612)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/VYjNYw2UTnesgzo5xtrFdg/zh-cn_image_0000002589324439.gif)

@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:28:13+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:62cd02ec4d7e3bd477be5533cac4cefb96738e3a89a27e22f7eb35dee4dc0eab
+content_hash: sha256:45347ff33e4aed844d34b21c715df44f3304a1e0125dc7dcaf78c985845faaa5
 ---
 
 共享元素转场是一种界面切换时对相同或者相似的两个元素做的一种位置和大小匹配的过渡动画效果，也称一镜到底动效。
@@ -194,7 +194,7 @@ content_hash: sha256:62cd02ec4d7e3bd477be5533cac4cefb96738e3a89a27e22f7eb35dee4d
 
 [Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/Animation/entry/src/main/ets/pages/shareTransition/template2/Index.ets#L16-L170)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/KSXF96bWR9K7gkIQrIm6iA/zh-cn_image_0000002558604822.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052810Z&HW-CC-Expire=86400&HW-CC-Sign=E0FFB9480395C8A50CE2037455DF604E2D9EA40A415CE36BA447425A9A6E022A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/KSXF96bWR9K7gkIQrIm6iA/zh-cn_image_0000002558604822.gif)
 
 ## 新建容器并跨容器迁移组件
 
@@ -579,7 +579,7 @@ content_hash: sha256:62cd02ec4d7e3bd477be5533cac4cefb96738e3a89a27e22f7eb35dee4d
 
 [PostNode.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/Animation/entry/src/main/ets/pages/shareTransition/template3/PostNode.ets#L16-L162)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/pu4Qek_oT_i_7WXj7Hnkqg/zh-cn_image_0000002589324347.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052810Z&HW-CC-Expire=86400&HW-CC-Sign=41CCFF3171C0D6FFAF18982594AD9449F8D4780A349F6B8E1CCB8568CC33E775)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/pu4Qek_oT_i_7WXj7Hnkqg/zh-cn_image_0000002589324347.gif)
 
 ### 结合Navigation使用
 
@@ -1366,7 +1366,7 @@ content_hash: sha256:62cd02ec4d7e3bd477be5533cac4cefb96738e3a89a27e22f7eb35dee4d
 
 [CustomComponent.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/Animation/entry/src/main/ets/NodeContainer/CustomComponent.ets#L15-L86)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/-D3ZbfgJRvyOswJf9-4WhQ/zh-cn_image_0000002589244287.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052810Z&HW-CC-Expire=86400&HW-CC-Sign=306F43CC8ED8A02C7527FC9EEA1991A8056185B9A157105812C0A13C9C4FBDF9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/-D3ZbfgJRvyOswJf9-4WhQ/zh-cn_image_0000002589244287.gif)
 
 ### 结合BindSheet使用
 
@@ -1916,7 +1916,7 @@ content_hash: sha256:62cd02ec4d7e3bd477be5533cac4cefb96738e3a89a27e22f7eb35dee4d
 
 [EntryAbility.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/Animation/entry/src/main/ets/entryability/EntryAbility.ets#L15-L161)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/AsR98LiaTuCtESpqqKznLQ/zh-cn_image_0000002558764480.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052810Z&HW-CC-Expire=86400&HW-CC-Sign=4D4B11B09806833E1AF26465F04AC15CC90CEE71B45E7824515CA7618996A601)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/AsR98LiaTuCtESpqqKznLQ/zh-cn_image_0000002558764480.gif)
 
 ## 使用geometryTransition共享元素转场
 
@@ -1992,7 +1992,7 @@ geometryTransition绑定两个对象的实现方式使得geometryTransition区�
 
 [IfElseGeometryTransition.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/Animation/entry/src/main/ets/pages/shareTransition/template6/IfElseGeometryTransition.ets#L15-L74)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/bj2zO0bAT5GwHnl97Zb-7w/zh-cn_image_0000002558604824.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052810Z&HW-CC-Expire=86400&HW-CC-Sign=59167B6855910939CC9B52BBFFF020CC9940215F5A250BBEE15D0223EF81AA91)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/bj2zO0bAT5GwHnl97Zb-7w/zh-cn_image_0000002558604824.gif)
 
 ### geometryTransition结合模态转场使用
 
@@ -2180,7 +2180,7 @@ geometryTransition绑定两个对象的实现方式使得geometryTransition区�
 
 效果为点击主页的头像后，弹出模态页面显示个人信息，并且两个页面之间的头像做一镜到底动效：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/Dp2dGyGcQrKfvuUhEUhhuw/zh-cn_image_0000002589324349.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052810Z&HW-CC-Expire=86400&HW-CC-Sign=5BB3CA0DBFDC551C5341366916485F64544E0133C27994A92BDF59099BD2510D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/Dp2dGyGcQrKfvuUhEUhhuw/zh-cn_image_0000002589324349.gif)
 
 ## 示例代码
 

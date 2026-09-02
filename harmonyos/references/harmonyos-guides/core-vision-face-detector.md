@@ -5,7 +5,7 @@ breadcrumb: 指南 > AI > Core Vision Kit（基础视觉服务） > 人脸检测
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:43:28+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:279d6cd74cbbf43c8ef79c5f10071ae1d722ea6ced42cdcfc42f763c60178e77
+content_hash: sha256:7379866635ca6b6cef8719fb87a94310d1b38765d81c35b980634589f7c4e13c
 ---
 
 ## 适用场景
@@ -14,7 +14,7 @@ content_hash: sha256:279d6cd74cbbf43c8ef79c5f10071ae1d722ea6ced42cdcfc42f763c601
 
 效果如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/PtTl3SN0Q4iw5DBHTzJxRA/zh-cn_image_0000002589245617.png?HW-CC-KV=V1&HW-CC-Date=20260429T054327Z&HW-CC-Expire=86400&HW-CC-Sign=29617660757828E9A1994E4939CF6296B60AEF073FFD774D9620AE091CD12F7E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/PtTl3SN0Q4iw5DBHTzJxRA/zh-cn_image_0000002589245617.png)
 
 ## 约束与限制
 
@@ -28,7 +28,7 @@ content_hash: sha256:279d6cd74cbbf43c8ef79c5f10071ae1d722ea6ced42cdcfc42f763c601
 
 以下方图片指示坐标系辅助表示人脸朝向。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/Ud8ktER3SSK-NKAbKYS1Kw/zh-cn_image_0000002558765808.png?HW-CC-KV=V1&HW-CC-Date=20260429T054327Z&HW-CC-Expire=86400&HW-CC-Sign=2073F1E3218785DFC9080C280374F049421E326409E3C3D279C310A5EE4F8BE4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/Ud8ktER3SSK-NKAbKYS1Kw/zh-cn_image_0000002558765808.png)
 
 ## 开发步骤
 

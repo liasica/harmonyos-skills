@@ -5,7 +5,7 @@ breadcrumb: 指南 > 系统 > 安全 > Universal Keystore Kit（密钥管理服�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:32:17+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:986c51c1bf06dea31a0b33e2c0b204692ccc730a4137e118fbbaa5de6b769de4
+content_hash: sha256:988b84c8b2ce876059dd057f13ee2021ce33317e47122586fa02f5dc3130f144
 ---
 
 HUKS提供统一的Ability扩展接口，驱动HAP可基于此实现外部密钥管理扩展，注册、注销自定义的硬件密钥管理模块，满足金融领域Ukey证书的浏览器双向SSL认证等场景的身份认证需求。
@@ -18,7 +18,7 @@ Ukey：USB key，基于USB接口的硬件设备，可用于存储用户私钥、
 
 应用调用接口进行身份认证的流程可参考下图，图中流程请参见图后的标注。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/gRQCWElfQX2Hk_wc5TlgPg/zh-cn_image_0000002558605258.png?HW-CC-KV=V1&HW-CC-Date=20260429T053216Z&HW-CC-Expire=86400&HW-CC-Sign=77D5FD3456F507FB8FB8C4B4D5819791179DBFDDCAC677B56DF1C479FA60F50B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/gRQCWElfQX2Hk_wc5TlgPg/zh-cn_image_0000002558605258.png)
 
 * 标注1：Ukey设备插入。
 * 标注2：驱动HAP通过Provider管理接口，注册外部密钥管理扩展能力（Ukey Extension）。

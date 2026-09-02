@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (基于
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:28:33+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:9e9ef84b4c98bad72f8a608644d7bbcb014a9f0a21510f7538479818a9b2f07a
+content_hash: sha256:066884e93e944be199fdfa25d52d74acacc5ac3b6c399eec05402e815b739ec2
 ---
 
 ## 概述
@@ -143,7 +143,7 @@ ArkUI开发框架从API version 12开始在NDK接口提供了网格组件，使�
 
 如下图在前面创建的6行\*4列的网格布局中放置了一些子组件，其中“0”占据2行4列，“1”占据2行2列，“2”占据1行2列，0和1之间有一行空行，模拟页面放置不同大小卡片和图标的场景。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/nJOK6IY3RbG9oA0XanC9sQ/zh-cn_image_0000002558764556.png?HW-CC-KV=V1&HW-CC-Date=20260429T052832Z&HW-CC-Expire=86400&HW-CC-Sign=52A2FEF582A01A2BB39924908B71D6A03253AA3FC7C483BCCD0C2B8B408BE530)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/nJOK6IY3RbG9oA0XanC9sQ/zh-cn_image_0000002558764556.png)
 
 通过[OH\_ArkUI\_GridLayoutOptions\_RegisterGetRectByIndexCallback](../harmonyos-references/capi-native-type-h.md#oh_arkui_gridlayoutoptions_registergetirregularsizebyindexcallback)给网格组件设置用于获取每一个子组件位置的回调函数，开发者可以在该回调中指定每一个子组件所在的起始行号、起始列号、占用行数和占用列数，即[ArkUI\_GridItemRect](../harmonyos-references/capi-arkui-nativemodule-arkui-griditemrect.md)。上图布局可以通过如下代码实现。
 
@@ -184,7 +184,7 @@ ArkUI开发框架从API version 12开始在NDK接口提供了网格组件，使�
 
 如下图模拟了分组展示图片或文件的场景，其中作为分组名称的子组件占据一整行，其他子组件占据1行1列。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/2WeF3U3mQ6-agj7xGZOU6w/zh-cn_image_0000002558604900.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052832Z&HW-CC-Expire=86400&HW-CC-Sign=3692CE9C1D88AA434C3E4351E68DBD6E752A77ABC67C48E38E3128A0B5F67138)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/2WeF3U3mQ6-agj7xGZOU6w/zh-cn_image_0000002558604900.gif)
 
 纵向滚动的网格布局，只需要设置列数，无需设置行数。
 

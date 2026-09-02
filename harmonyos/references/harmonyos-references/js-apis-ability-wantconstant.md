@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-ability-wantconstant
-title: @ohos.ability.wantConstant (wantConstant)
+title: "@ohos.ability.wantConstant (wantConstant)"
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > 已停止维护的接口 > @ohos.ability.wantConstant (wantConstant)
 category: harmonyos-references
 scraped_at: 2026-04-28T07:58:50+08:00

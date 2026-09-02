@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > U
 category: harmonyos-references
 scraped_at: 2026-04-29T13:50:34+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:a5b63a5878cb5d5e1e90cfb4a8d6f4eb4a25d84464dd42cfe1ec38ba4f6dab91
+content_hash: sha256:8ee2a5d318cc92724a239fd84784502464a3b83f53604d6a1ea9db7b842a5df6
 ---
 
 提供光标样式设置的能力。
@@ -58,7 +58,7 @@ restoreDefault(): void
 23. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/hAs_v0oHQyaSMfkO0KPliw/zh-cn_image_0000002558606270.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055033Z&HW-CC-Expire=86400&HW-CC-Sign=6EC582DE94F86F872D1937BEE54382195E21834DBF7A205D2BF890D370E534FA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/hAs_v0oHQyaSMfkO0KPliw/zh-cn_image_0000002558606270.gif)
 
 ## setCursor12+
 
@@ -111,4 +111,4 @@ setCursor(value: PointerStyle): void
 22. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/jSGiJ8g9SWGDAYe5ITOfsg/zh-cn_image_0000002589325797.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055033Z&HW-CC-Expire=86400&HW-CC-Sign=D6A6A7FC336685F052D4100B388BF26AC43F9C85B11B8C4ED719C0373C5DD6DD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/jSGiJ8g9SWGDAYe5ITOfsg/zh-cn_image_0000002589325797.gif)

@@ -5,7 +5,7 @@ breadcrumb: 指南 > 系统 > 安全 > User Authentication Kit（用户认证服
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:32:26+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:1f389cfbd403ddcc6e75ae13d40ad8706ae8cdeedde26c94365cbea0d0ac823a
+content_hash: sha256:5af1523f4a28abd88313b8987f9291c787619c91c8757d2e68266c9188ffb17e
 ---
 
 ## 模系统弹窗
@@ -14,7 +14,7 @@ content_hash: sha256:1f389cfbd403ddcc6e75ae13d40ad8706ae8cdeedde26c94365cbea0d0a
 
 示意图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/gNK_t1ElQ3C-YJX-0EIJgg/zh-cn_image_0000002589244723.png?HW-CC-KV=V1&HW-CC-Date=20260429T053225Z&HW-CC-Expire=86400&HW-CC-Sign=5F1A0A8DA25A8A599C6FF93A5C923C97A666D1CAB7E1DDC45F596280303742BA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/gNK_t1ElQ3C-YJX-0EIJgg/zh-cn_image_0000002589244723.png)
 
 ## 模应用弹窗
 
@@ -22,4 +22,4 @@ content_hash: sha256:1f389cfbd403ddcc6e75ae13d40ad8706ae8cdeedde26c94365cbea0d0a
 
 示意图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/fZxA9jD3SrWkGmP80xjE4A/zh-cn_image_0000002558764918.png?HW-CC-KV=V1&HW-CC-Date=20260429T053225Z&HW-CC-Expire=86400&HW-CC-Sign=2172254664FAC00003D7B934AC47F0C769A4021F5040F3FA260C6C91BCD18B62)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/fZxA9jD3SrWkGmP80xjE4A/zh-cn_image_0000002558764918.png)

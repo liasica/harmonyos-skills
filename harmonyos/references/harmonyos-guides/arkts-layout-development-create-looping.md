@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:27:51+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:64f6648ea74aa21f56b45632bf6197c38bd6c0544d1e833a6ffe3a3427e87067
+content_hash: sha256:7843e3ac1e06552784c981e22a0d67c275a93039f492a09e4cab26e5ffe9fbb7
 ---
 
 [Swiper](../harmonyos-references/ts-container-swiper.md)组件提供滑动轮播显示的能力。Swiper本身是一个容器组件，当设置了多个子组件后，可以对这些子组件进行轮播显示。通常，在一些应用首页显示推荐的内容时，需要用到轮播显示的能力。
@@ -53,7 +53,7 @@ Swiper作为一个容器组件，如果设置了自身尺寸属性，则在轮�
 
 [SwiperLoop.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ScrollableComponent/entry/src/main/ets/pages/swiper/SwiperLoop.ets#L25-L52)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/L4N8KCp7SRu30cw_yBSC-A/zh-cn_image_0000002558604698.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052750Z&HW-CC-Expire=86400&HW-CC-Sign=FF738CD36D610C9068B890D151AD24C61126CDB55CD68DAB722D80C2D10F25C1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/L4N8KCp7SRu30cw_yBSC-A/zh-cn_image_0000002558604698.gif)
 
 * loop为false
 
@@ -67,7 +67,7 @@ Swiper作为一个容器组件，如果设置了自身尺寸属性，则在轮�
 
 [SwiperLoop.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ScrollableComponent/entry/src/main/ets/pages/swiper/SwiperLoop.ets#L56-L85)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/TRvcMrH4RVWcX2DsLuntNQ/zh-cn_image_0000002589324223.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052750Z&HW-CC-Expire=86400&HW-CC-Sign=F2F59C7AEB21DDAA5492DC48EE9021F60F9BB6C46F8D9F4A5C366C67FB57BF84)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/TRvcMrH4RVWcX2DsLuntNQ/zh-cn_image_0000002589324223.gif)
 
 ## 自动轮播
 
@@ -87,7 +87,7 @@ autoPlay为true时，会自动切换播放子组件，子组件与子组件之�
 
 [SwiperAutoPlay.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ScrollableComponent/entry/src/main/ets/pages/swiper/SwiperAutoPlay.ets#L25-L56)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/04wdDZ3aQdasc-mLy9pz9g/zh-cn_image_0000002589244163.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052750Z&HW-CC-Expire=86400&HW-CC-Sign=7AC6768832037F57ABFAF6099819401BE4129F491998C318F2A713D49F4697BD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/04wdDZ3aQdasc-mLy9pz9g/zh-cn_image_0000002589244163.gif)
 
 ## 导航点样式
 
@@ -124,7 +124,7 @@ Swiper提供了默认的导航点样式和导航点箭头样式，导航点默�
 
 [SwiperIndicatorStyle.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ScrollableComponent/entry/src/main/ets/pages/swiper/SwiperIndicatorStyle.ets#L26-L49)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/cir7YEWEQJOhL8VHZittGg/zh-cn_image_0000002558764356.png?HW-CC-KV=V1&HW-CC-Date=20260429T052750Z&HW-CC-Expire=86400&HW-CC-Sign=2E2C02B82782B6476B13036E8408952D1978341671A2CD6BB2511099012AAE0F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/cir7YEWEQJOhL8VHZittGg/zh-cn_image_0000002558764356.png)
 
 * 自定义导航点样式
 
@@ -149,7 +149,7 @@ Swiper提供了默认的导航点样式和导航点箭头样式，导航点默�
 
 [SwiperIndicatorStyle.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ScrollableComponent/entry/src/main/ets/pages/swiper/SwiperIndicatorStyle.ets#L54-L92)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/kJTiPV-dQW2rqHcxirkCTw/zh-cn_image_0000002558604700.png?HW-CC-KV=V1&HW-CC-Date=20260429T052750Z&HW-CC-Expire=86400&HW-CC-Sign=24B12D7EC28DECA9E38B02D8EE862E4C3C0ED1383C89C13949B285EC83D28F20)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/kJTiPV-dQW2rqHcxirkCTw/zh-cn_image_0000002558604700.png)
 
 Swiper通过设置[displayArrow](../harmonyos-references/ts-container-swiper.md#displayarrow10)属性，可以控制导航点箭头的大小、位置、颜色，底板的大小及颜色，以及鼠标悬停时是否显示箭头。
 
@@ -165,7 +165,7 @@ Swiper通过设置[displayArrow](../harmonyos-references/ts-container-swiper.md#
 
 [SwiperIndicatorStyle.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ScrollableComponent/entry/src/main/ets/pages/swiper/SwiperIndicatorStyle.ets#L96-L125)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/gkwmKzkyTxGge9xyouZtBw/zh-cn_image_0000002589324225.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052750Z&HW-CC-Expire=86400&HW-CC-Sign=9F500C2E3D79E8A107F2C302B3740A4EFE839CC74E315A055F0C6C144C1D7A78)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/gkwmKzkyTxGge9xyouZtBw/zh-cn_image_0000002589324225.gif)
 
 * 自定义箭头样式
 
@@ -188,7 +188,7 @@ Swiper通过设置[displayArrow](../harmonyos-references/ts-container-swiper.md#
 
 [SwiperIndicatorStyle.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ScrollableComponent/entry/src/main/ets/pages/swiper/SwiperIndicatorStyle.ets#L129-L165)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/bIcYajSuS62pSwdoNuMoug/zh-cn_image_0000002589244165.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052750Z&HW-CC-Expire=86400&HW-CC-Sign=EE7C79863C305F3F84B096F1BA6B6AA5D5F648DC6133BBAA6935224DA1F697B6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/bIcYajSuS62pSwdoNuMoug/zh-cn_image_0000002589244165.gif)
 
 ## 页面切换方式
 
@@ -283,7 +283,7 @@ Swiper支持手指滑动、点击导航点和通过控制器三种方式切换�
 
 [SwiperPageSwitchMethod.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ScrollableComponent/entry/src/main/ets/pages/swiper/SwiperPageSwitchMethod.ets#L18-L117)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/8ak63NVqTTGU2I8FPDfhhw/zh-cn_image_0000002558764358.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052750Z&HW-CC-Expire=86400&HW-CC-Sign=7EB8D4FE79700F755959AA24E1933AA81AFDE6C569D7B4933C75768EFCC8AF8A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/8ak63NVqTTGU2I8FPDfhhw/zh-cn_image_0000002558764358.gif)
 
 ## 轮播方向
 
@@ -306,7 +306,7 @@ Swiper支持水平和垂直方向上进行轮播，主要通过[vertical](../har
 
 [SwiperDirection.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ScrollableComponent/entry/src/main/ets/pages/swiper/SwiperDirection.ets#L29-L63)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/bucJyUU7T3yZVcaHpW6D1A/zh-cn_image_0000002558604702.png?HW-CC-KV=V1&HW-CC-Date=20260429T052750Z&HW-CC-Expire=86400&HW-CC-Sign=4F5BDBBD0B0D94E58252A5D14D80A0A310CEBF203B031934026065455705471E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/bucJyUU7T3yZVcaHpW6D1A/zh-cn_image_0000002558604702.png)
 
 * 设置垂直方向轮播。
 
@@ -323,7 +323,7 @@ Swiper支持水平和垂直方向上进行轮播，主要通过[vertical](../har
 
 [SwiperDirection.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ScrollableComponent/entry/src/main/ets/pages/swiper/SwiperDirection.ets#L80-L114)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/yUdPJCzVRt2F0CNfNypkgA/zh-cn_image_0000002589324227.png?HW-CC-KV=V1&HW-CC-Date=20260429T052750Z&HW-CC-Expire=86400&HW-CC-Sign=F62CD66CF99AD5B5A0177C4CE1F9F482A502D221E777C6E65026B0CCE54C955E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/yUdPJCzVRt2F0CNfNypkgA/zh-cn_image_0000002589324227.png)
 
 ## 每页显示多个子页面
 
@@ -364,7 +364,7 @@ Swiper支持在一个页面内同时显示多个子组件，通过[displayCount]
 
 [SwiperMultiPage.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ScrollableComponent/entry/src/main/ets/pages/swiper/SwiperMultiPage.ets#L25-L58)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/YWeRX0CaRJaX110qurCxnA/zh-cn_image_0000002589244167.png?HW-CC-KV=V1&HW-CC-Date=20260429T052750Z&HW-CC-Expire=86400&HW-CC-Sign=F9A20F0CF9EF35374E85838CC744FA41DDC71DBE2FD2292C7F29D9D506FC938B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/YWeRX0CaRJaX110qurCxnA/zh-cn_image_0000002589244167.png)
 
 ## 自定义切换动画
 
@@ -452,7 +452,7 @@ Swiper支持通过[customContentTransition](../harmonyos-references/ts-container
 
 [SwiperCustomAnimation.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ScrollableComponent/entry/src/main/ets/pages/swiper/SwiperCustomAnimation.ets#L18-L107)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/50FPWwYBRP-deT886GV0gQ/zh-cn_image_0000002558764360.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052750Z&HW-CC-Expire=86400&HW-CC-Sign=89538302E8EF5EDA85A99ED00BFB5BB5B6A3E3F976B3C6E6D5EC60AE9E7C5C97)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/50FPWwYBRP-deT886GV0gQ/zh-cn_image_0000002558764360.gif)
 
 ## Swiper与Tabs联动
 
@@ -566,7 +566,7 @@ Swiper支持通过[customContentTransition](../harmonyos-references/ts-container
 
 [SwiperAndTabsLinkage.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ScrollableComponent/entry/src/main/ets/pages/swiper/SwiperAndTabsLinkage.ets#L19-L135)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/FAM4v6w1T667UZRu6rlZ_A/zh-cn_image_0000002558604704.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052750Z&HW-CC-Expire=86400&HW-CC-Sign=B358686508188BF31B71D49B1996E0ACF98F83573500778D43A1728EE5729046)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/FAM4v6w1T667UZRu6rlZ_A/zh-cn_image_0000002558604704.gif)
 
 ## 设置圆点导航点间距
 
@@ -729,7 +729,7 @@ Swiper支持通过[customContentTransition](../harmonyos-references/ts-container
 
 [SwiperIgnoreComponentSize.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ScrollableComponent/entry/src/main/ets/pages/swiper/SwiperIgnoreComponentSize.ets#L16-L150)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/h_25oKa8TN6JhtYFFXCoeQ/zh-cn_image_0000002589324229.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052750Z&HW-CC-Expire=86400&HW-CC-Sign=1D8FD33C4303457C9D5EB9F86AA0B9444FFC4AD447A2AB5811D34BD1947702CF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/h_25oKa8TN6JhtYFFXCoeQ/zh-cn_image_0000002589324229.gif)
 
 ## 保持可见内容位置不变
 
@@ -834,7 +834,7 @@ maintainVisibleContentPosition为true时，显示区域上方或前方插入或�
 
 [SwiperVisibleContentPosition.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ScrollableComponent/entry/src/main/ets/pages/swiper/SwiperVisibleContentPosition.ets#L21-L134)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/ZkuJy0vBR42ngElyXqsrZg/zh-cn_image_0000002589244169.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052750Z&HW-CC-Expire=86400&HW-CC-Sign=29700F9ED433473E2CC8DF57E23B063E23AE33CFE05E164BEE4170F83B787303)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/ZkuJy0vBR42ngElyXqsrZg/zh-cn_image_0000002589244169.gif)
 
 ## 示例代码
 

@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > UI Design Kit（UI设计套件） > ArkTS
 category: harmonyos-references
 scraped_at: 2026-04-29T13:57:11+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:13a1e51c6fbd76efaf1105bb906725c8d23e2b2619942ebbdf4d41ff4bbccf40
+content_hash: sha256:70ad07974feb60dbbc7b7bd8aff144a9686a4214443fde458c03422f65fb08ac
 ---
 
 本模块支持显示和隐藏的侧边栏容器，并且可以自定义侧边栏和内容区。
@@ -145,4 +145,4 @@ HdsSideBar提供侧边栏可以显示和隐藏的侧边栏容器，可以自定�
 65. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/ETA3ltjmRaqzvYs90PzL4g/zh-cn_image_0000002558767052.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055709Z&HW-CC-Expire=86400&HW-CC-Sign=C2AD54E7A7CA2FED1D54D6A1F4B0F02F86DC27DC7119EE6BC626439676530413)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/ETA3ltjmRaqzvYs90PzL4g/zh-cn_image_0000002558767052.gif)

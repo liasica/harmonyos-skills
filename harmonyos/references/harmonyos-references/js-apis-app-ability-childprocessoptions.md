@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-childprocessoptions
-title: @ohos.app.ability.ChildProcessOptions (子进程启动选项)
+title: "@ohos.app.ability.ChildProcessOptions (子进程启动选项)"
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > Stage模型能力的接口 > @ohos.app.ability.ChildProcessOptions (子进程启动选项)
 category: harmonyos-references
 scraped_at: 2026-04-28T07:58:16+08:00

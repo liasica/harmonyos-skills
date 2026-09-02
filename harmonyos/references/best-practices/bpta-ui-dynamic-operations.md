@@ -5,7 +5,7 @@ breadcrumb: 最佳实践 > 组件封装与复用 > 组件动态创建
 category: best-practices
 scraped_at: 2026-04-29T14:10:17+08:00
 doc_updated_at: 2026-03-19
-content_hash: sha256:d7b05cfa41407343704a2ed382cbe585fbb86334497315c069e9686f78c2cca6
+content_hash: sha256:2a3f275f8ff3538677e822d92f4a88fa1cd1927e137530ced171c82a39694f27
 ---
 
 ## 概述
@@ -19,7 +19,7 @@ content_hash: sha256:d7b05cfa41407343704a2ed382cbe585fbb86334497315c069e9686f78c
 如下图所示，利用组件预创建机制，可以利用动画执行过程空闲时间进行组件预创建和属性设置。在动画结束后，再进行属性和布局的更新，节省了组件创建的时间，从而加快了页面渲染。
 
 **图1** 组件预创建原理图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/2AdcseBiSrSyjKGXgrVMhw/zh-cn_image_0000002194010524.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T061016Z&HW-CC-Expire=86400&HW-CC-Sign=ED00423510BF422C265F818E0233EE2625E69DA6BB93EBFB1066760E87F7A19C "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/2AdcseBiSrSyjKGXgrVMhw/zh-cn_image_0000002194010524.jpg "点击放大")
 
 ## FrameNode自定义节点在动态布局场景下的优势
 
@@ -35,13 +35,13 @@ content_hash: sha256:d7b05cfa41407343704a2ed382cbe585fbb86334497315c069e9686f78c
 
 在动态布局类框架的更新场景中，通常存在一个由树形数据结构ViewModelA创建的UI组件树TreeA。当需要使用新的数据结构ViewModelB来更新TreeA时，尽管声明式开发范式可以实现数据驱动的自动更新，但这一过程中却伴随着大量的diff操作，如下图所示。对于ArkTS引擎而言，在对一个复杂组件树（深度超过30层，包含100至200个组件）执行diff算法时，几乎无法在120Hz的刷新率下保持满帧运行。然而，使用ArkUI的FrameNode扩展，框架能够自主掌控更新流程，实现高效的按需剪枝。特别是针对那些仅服务于少数特定业务的动态布局框架，利用这一扩展，可以实现快速的更新操作。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/QBNKkLZlRLC3_uIohOl3YA/zh-cn_image_0000002229450801.png?HW-CC-KV=V1&HW-CC-Date=20260429T061016Z&HW-CC-Expire=86400&HW-CC-Sign=1D1ECDD0263251701DECFEACBBBE51C23A3647FF825A98C3446E4EBCB8E44753 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/QBNKkLZlRLC3_uIohOl3YA/zh-cn_image_0000002229450801.png "点击放大")
 
 ### 直接操作组件树
 
 使用声明式开发范式还存在组件树结构更新操作困难的痛点，比如将组件树中的一个子树从当前子节点完整移到另一个子节点，使用声明式开发范式无法直接调整组件实例的结构关系，只能通过重新渲染整棵组件树的方式实现上述操作。而使用ArkUI的FrameNode扩展，则可以通过操作FrameNode来很方便的操控该子树，将其移植到另一个节点，这样只会进行局部渲染刷新，性能更优。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/668Jzav3Rp-9DRyD-Zpcog/zh-cn_image_0000002194010516.png?HW-CC-KV=V1&HW-CC-Date=20260429T061016Z&HW-CC-Expire=86400&HW-CC-Sign=01BFA086A79B553CDF5CA71FE8342F26B815BF6F5CE049BCEC820305A58A8E6A "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/668Jzav3Rp-9DRyD-Zpcog/zh-cn_image_0000002194010516.png "点击放大")
 
 ## 组件动态添加、更新和删除：
 
@@ -325,7 +325,7 @@ App广告有一种场景是列表流广告，即在应用的列表流中穿插�
 
 这种广告的布局和内容在开发阶段不确定（可能是图文、视频等形式中的一种），其通常是在运行阶段，依赖服务器下发的数据进行逻辑映射后，再执行布局的构建、内容的加载显示。所以在实际的开发中，应用需要使用动态创建组件的能力去实现该列表流广告。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/a9rgeep1TJ6-Eb0G3xMkUg/zh-cn_image_0000002194010508.png?HW-CC-KV=V1&HW-CC-Date=20260429T061016Z&HW-CC-Expire=86400&HW-CC-Sign=D84411C8C48191DAD81A0085A1C76CAC940F677D1917B55DEB84D34C0AD5083D "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/a9rgeep1TJ6-Eb0G3xMkUg/zh-cn_image_0000002194010508.png "点击放大")
 
 ### 实现方案
 
@@ -644,10 +644,10 @@ App广告有一种场景是列表流广告，即在应用的列表流中穿插�
 
 1. 以上示例场景在声明式开发范式下的完成时延为13.7ms（根据设备和场景不同，数据会有差异，本数据仅供参考），如下图所示。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/osw-9CQhRtqn8YuNs2-cQQ/zh-cn_image_0000002194010520.png?HW-CC-KV=V1&HW-CC-Date=20260429T061016Z&HW-CC-Expire=86400&HW-CC-Sign=5689FFD1FFECF874D976694BD471A2D702A218CC673513E7B9E85B185DEC919F "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/osw-9CQhRtqn8YuNs2-cQQ/zh-cn_image_0000002194010520.png "点击放大")
 2. 以上示例场景在FrameNode扩展模式下的完成时延为6.1ms（根据设备和场景不同，数据会有差异，本数据仅供参考），如下图所示。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/JBJDD8JWTgWWRY5be8Fb1w/zh-cn_image_0000002229450785.png?HW-CC-KV=V1&HW-CC-Date=20260429T061016Z&HW-CC-Expire=86400&HW-CC-Sign=9EDB57206C20790477DCA6F5FF168275DA65205F75B221BF3E0206A5003971EA "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/JBJDD8JWTgWWRY5be8Fb1w/zh-cn_image_0000002229450785.png "点击放大")
 
 ## 示例代码
 

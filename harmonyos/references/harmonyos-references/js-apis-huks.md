@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-huks
-title: @ohos.security.huks (通用密钥库系统)
+title: "@ohos.security.huks (通用密钥库系统)"
 breadcrumb: API参考 > 系统 > 安全 > Universal Keystore Kit（密钥管理服务） > ArkTS API > @ohos.security.huks (通用密钥库系统)
 category: harmonyos-references
 scraped_at: 2026-04-28T08:07:45+08:00

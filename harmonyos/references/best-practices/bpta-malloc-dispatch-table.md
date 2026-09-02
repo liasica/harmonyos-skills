@@ -5,7 +5,7 @@ breadcrumb: 最佳实践 > 稳定性 > 稳定性检测 > 开发态稳定性检�
 category: best-practices
 scraped_at: 2026-04-29T14:14:03+08:00
 doc_updated_at: 2026-03-19
-content_hash: sha256:7390b62956c013675791702bb47ec32a6d20f04bf6d4d680609ee6b6130cd083
+content_hash: sha256:3fc2f420f57c4b0f8e376d3b2bb47b9ee37671a88c7845b2869826a5effda751
 ---
 
 ## 概述
@@ -32,7 +32,7 @@ MallocDispatchTable简称内存分配表，提供对HarmonyOS [libc标准库](..
 
 如下图示例，开发者可使用自定义函数替换标准库函数，应用程序调用标准库函数时实际上执行的是自定义的函数。通过MallocDispatchTable里的函数指针，调用标准库函数时可以重定向到自定义的函数。MallocDispatchTable的主要功能在于将标准库函数的实现和自定义函数进行解耦。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/hIqhdykLT2mT-x44ljugjQ/zh-cn_image_0000002501437914.png?HW-CC-KV=V1&HW-CC-Date=20260429T061402Z&HW-CC-Expire=86400&HW-CC-Sign=F4E36C70E2BFD0C531B7DB5D583B2D93FADB3585E0931E6E7EF32F93E93604B8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/hIqhdykLT2mT-x44ljugjQ/zh-cn_image_0000002501437914.png)
 
 开发人员可使用提供的[OH\_HiDebug\_SetMallocDispatchTable()](../harmonyos-references/capi-hidebug-h.md#oh_hidebug_setmallocdispatchtable)接口设置libc标准库中使用的MallocDispatchTable；使用[OH\_HiDebug\_GetDefaultMallocDispatchTable()](../harmonyos-references/capi-hidebug-h.md#oh_hidebug_getdefaultmallocdispatchtable)接口获取libc中默认的MallocDispatchTable。
 

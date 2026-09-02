@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:27:35+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:e66ff7e932186bb7004ab6d0a157f9625c4de7ce3d9d7bd936a63b00f9cac3df
+content_hash: sha256:ce564e14db204a711935dad16eadfdfffe562eb00ebd82894cd62ae385ff6e4a
 ---
 
 页面是指由布局、组件、交互逻辑等构成的可视化交互单元，承载着特定功能逻辑与信息展示，是用户与应用进行操作交互的核心界面载体。一个完整的应用往往由多个页面组成，组件导航（Navigation）和页面路由（@ohos.router）均提供了应用内的页面跳转能力。
@@ -19,7 +19,7 @@ content_hash: sha256:e66ff7e932186bb7004ab6d0a157f9625c4de7ce3d9d7bd936a63b00f9c
 
 从ArkUI组件树层级上来看，原先由Router管理的page在页面栈管理节点stage的下面。Navigation作为导航容器组件，可以挂载在单个page节点下，也可以叠加、嵌套。Navigation管理了标题栏、内容区和工具栏，内容区用于显示用户自定义页面的内容，并支持页面的路由能力。Navigation的这种设计上有如下优势：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/C9PTZ-iDTsGs8wnErwwnbQ/zh-cn_image_0000002589243975.png?HW-CC-KV=V1&HW-CC-Date=20260429T052734Z&HW-CC-Expire=86400&HW-CC-Sign=A874457FBB8896161567DFBAB9ACB66EB4BCBD11AAD06B322312CCD4DAE69D81)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/C9PTZ-iDTsGs8wnErwwnbQ/zh-cn_image_0000002589243975.png)
 
 1. 接口上显式区分标题栏、内容区和工具栏，实现更加灵活的管理和UX动效能力；
 2. 显式提供路由容器概念，由开发者决定路由容器的位置，支持在全模态、半模态、弹窗中显示；

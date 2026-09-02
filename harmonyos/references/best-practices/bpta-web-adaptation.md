@@ -5,7 +5,7 @@ breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 >
 category: best-practices
 scraped_at: 2026-04-29T14:12:09+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:547ab8dbdd2b4b5f8f79052043879394076a91880917f79229fb5b175ed00da2
+content_hash: sha256:900496e5e2c079b87f3dd621ebd834f789cce0a75e0e5979722bcfe519f4ee5e
 ---
 
 ## 概述
@@ -184,7 +184,7 @@ window对象提供了resize事件注册，该事件在文档视图（窗口）�
 CSS中提供了grid布局，与[栅格布局](../harmonyos-guides/arkts-layout-development-grid-layout.md)类似，它将网页内容划分成一个一个的网格，通过任意组合不同的网格，从而做出各种各样的布局。
 
 **图1** 宫格布局示意图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/PYblJH2PTgCO9BPhx_3xuA/zh-cn_image_0000002193850828.png?HW-CC-KV=V1&HW-CC-Date=20260429T061208Z&HW-CC-Expire=86400&HW-CC-Sign=3493F8E3F9241041B31E97DE54A32F32A676C80D09F35700F638B4C24A2A13C0 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/PYblJH2PTgCO9BPhx_3xuA/zh-cn_image_0000002193850828.png "点击放大")
 
 关于宫格布局，有几个关键概念需要了解。更多详细信息，开发者可以查阅CSS Grid的相关资料。
 
@@ -239,7 +239,7 @@ CSS中提供了grid布局，与[栅格布局](../harmonyos-guides/arkts-layout-d
 
 **图2** 示例代码效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/jgtgsaI4S-Ol0lETJPY8Aw/zh-cn_image_0000002193850848.png?HW-CC-KV=V1&HW-CC-Date=20260429T061208Z&HW-CC-Expire=86400&HW-CC-Sign=0E6F54B074800758DC86286A190F62B51738BF5574C99776EC991B908BA43DDA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/jgtgsaI4S-Ol0lETJPY8Aw/zh-cn_image_0000002193850848.png)
 
 当元素个数较少时，可以通过逐个书写（如grid-template-columns: 100px 100px 100px）的方式进行排列指定。然而，当元素数量较多，例如一行有十列时，这种写法的可读性会变差。此时，可以使用repeat()函数来简化书写。该函数接收两个参数：第一个参数为重复的次数，第二个参数为要重复的值。例如，上述写法可以改写为grid-template-columns: repeat(3, 100px)，效果相同。在多列情况下，repeat()函数能显著提高代码的可读性和简洁性。
 

@@ -5,7 +5,7 @@ breadcrumb: 指南 > 系统 > 硬件 > Mechanic Kit（机械设备管理服务�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:33:41+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:b35403dd3e719e32aee822d86005726fa4b80d6f1a83724f85e4468d2977b6bc
+content_hash: sha256:a5c9216721b48d1207769708f253e04ea3ff7a910cb6cdacbb048ae4e8c63942
 ---
 
 Mechanic Kit 是机械体设备控制器提供的API集合。从API version 20起，应用可使用Mechanic Kit控制机械体设备。Mechanic Kit 提供了完整的三方机械体设备配件集成方案，满足手机与云台等设备间的交互需求。
@@ -48,7 +48,7 @@ Mechanic Kit为开发者提供全面的机械体设备操控能力，核心功�
 
 ## 运作机制
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/AIEFQKbSRg-NqztYkt3cfw/zh-cn_image_0000002589324851.png?HW-CC-KV=V1&HW-CC-Date=20260429T053341Z&HW-CC-Expire=86400&HW-CC-Sign=7322C9A807BFBB8D65D009C677B8C5DCF85EBF7E9BC3340008D285482E8607CF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/AIEFQKbSRg-NqztYkt3cfw/zh-cn_image_0000002589324851.png)
 
 图注：灰色代表暂未支持。
 

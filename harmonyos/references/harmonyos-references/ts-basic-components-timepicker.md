@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:52:01+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:26ffdadded2b24d7b6f00c46ec816162a219e537f6e503637894394fb3485fa6
+content_hash: sha256:6aa7e68481ac9a3fb658b3c5f964c4dc38d64ee759eaf6ccea9f78cfc7e26e79
 ---
 
 滑动选择时间的组件。
@@ -601,7 +601,7 @@ PhonePC/2in1TabletTVWearable
 21. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/LqOWjVHWRKuDHc6QvD7TdA/zh-cn_image_0000002589246047.png?HW-CC-KV=V1&HW-CC-Date=20260429T055158Z&HW-CC-Expire=86400&HW-CC-Sign=9771C1374783088D62827920FB5877B431ABA521CA0952FD6A628FDD5AE15F84)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/LqOWjVHWRKuDHc6QvD7TdA/zh-cn_image_0000002589246047.png)
 
 ### 示例2（切换小时制）
 
@@ -641,7 +641,7 @@ PhonePC/2in1TabletTVWearable
 31. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/359tN295QiWKy3xiPLedVg/zh-cn_image_0000002558766238.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055158Z&HW-CC-Expire=86400&HW-CC-Sign=93ACCB85BAA79035668BE9A3C4300BBBFE274A2A2254F08C03765FEECCFE9F60)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/359tN295QiWKy3xiPLedVg/zh-cn_image_0000002558766238.gif)
 
 ### 示例3（设置时间格式）
 
@@ -672,7 +672,7 @@ PhonePC/2in1TabletTVWearable
 22. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/ite82PeaTzWxkN4Jk0DhoQ/zh-cn_image_0000002558606580.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055158Z&HW-CC-Expire=86400&HW-CC-Sign=D610708FA978E3EE4F82EABBD5A74965B89ABC59F8F69BD5A9B31E0A26EB2FA4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/ite82PeaTzWxkN4Jk0DhoQ/zh-cn_image_0000002558606580.gif)
 
 ### 示例4（设置循环滚动）
 
@@ -713,7 +713,7 @@ PhonePC/2in1TabletTVWearable
 32. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/fr3S5qm3Qs2j-cMdIqY8Jg/zh-cn_image_0000002589326107.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055158Z&HW-CC-Expire=86400&HW-CC-Sign=95E7AC33C5F331A8A3471074DD47BE29597715792FA535A365BB2071B56575FB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/fr3S5qm3Qs2j-cMdIqY8Jg/zh-cn_image_0000002589326107.gif)
 
 ### 示例5（设置时间选择组件的起始时间）
 
@@ -745,7 +745,7 @@ PhonePC/2in1TabletTVWearable
 23. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/PZfwJ7aLQEyTWRF1SyjOaw/zh-cn_image_0000002589246049.png?HW-CC-KV=V1&HW-CC-Date=20260429T055158Z&HW-CC-Expire=86400&HW-CC-Sign=46B4FB19B86076BC29D1E539AB8D6E3F4550C333A561A23279892052D18F40E0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/PZfwJ7aLQEyTWRF1SyjOaw/zh-cn_image_0000002589246049.png)
 
 ### 示例6（设置时间选择组件的结束时间）
 
@@ -777,7 +777,7 @@ PhonePC/2in1TabletTVWearable
 23. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/9S-nwByaSYCbnW4wWB2Qww/zh-cn_image_0000002558766240.png?HW-CC-KV=V1&HW-CC-Date=20260429T055158Z&HW-CC-Expire=86400&HW-CC-Sign=CF46AF2E3C84C1F7DF8A209AAD6E85FB4AD6DFC8FF416BC0238B8C57E5AAA78C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/9S-nwByaSYCbnW4wWB2Qww/zh-cn_image_0000002558766240.png)
 
 ### 示例7（设置上午下午跟随时间联动）
 
@@ -810,4 +810,4 @@ PhonePC/2in1TabletTVWearable
 22. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/Av5-40j0SlO9cB4HGCHwvg/zh-cn_image_0000002558606582.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055158Z&HW-CC-Expire=86400&HW-CC-Sign=1ED6DCA75C8606D33441519ABDAE3816E69AE2F822538E48DE4F7FC744A3DE9F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/Av5-40j0SlO9cB4HGCHwvg/zh-cn_image_0000002558606582.gif)

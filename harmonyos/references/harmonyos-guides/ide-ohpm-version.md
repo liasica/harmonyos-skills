@@ -5,7 +5,7 @@ breadcrumb: 指南 > 命令行工具 > 三方依赖管理工具（ohpm） > 常�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:47:53+08:00
 doc_updated_at: 2026-04-22
-content_hash: sha256:0cee9bbc160b47bc8bc738bde34559d94354ed01754eb28cf34073ca647175b4
+content_hash: sha256:193b5c2c124a2ae730ea02def259ecc4ffd5d34fe4a08541abed5ff6dc43278a
 ---
 
 管理模块版本。
@@ -96,7 +96,7 @@ newversion 参数应为一个合法的语义化版本，命令会将当前模块
 
 结果示例：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/igHp7whlRVauCHdmmIB2dg/zh-cn_image_0000002530752894.png?HW-CC-KV=V1&HW-CC-Date=20260429T054752Z&HW-CC-Expire=86400&HW-CC-Sign=866D1086487931EC9C1CA5511558134B3ADE7D2A17A9E742CD438B0F4F7086DF "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/igHp7whlRVauCHdmmIB2dg/zh-cn_image_0000002530752894.png "点击放大")
 
 接着执行：
 
@@ -106,7 +106,7 @@ newversion 参数应为一个合法的语义化版本，命令会将当前模块
 
 结果示例：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/2rqXZhI_StWi3zS9XOXr0g/zh-cn_image_0000002561832815.png?HW-CC-KV=V1&HW-CC-Date=20260429T054752Z&HW-CC-Expire=86400&HW-CC-Sign=526942C0CC9BD7A3ADF42CFF28028DB4A3FD21F5D28E9069662C2F4B840B0B81 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/2rqXZhI_StWi3zS9XOXr0g/zh-cn_image_0000002561832815.png "点击放大")
 
 接着执行：
 
@@ -116,4 +116,4 @@ newversion 参数应为一个合法的语义化版本，命令会将当前模块
 
 结果示例：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/7EF6TUTORrqSaH3hJVR24g/zh-cn_image_0000002561832819.png?HW-CC-KV=V1&HW-CC-Date=20260429T054752Z&HW-CC-Expire=86400&HW-CC-Sign=4F53044FAB4968267F9556579F7E9418DD058ECB797C6AAD7D94CF99929A0DF3 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/7EF6TUTORrqSaH3hJVR24g/zh-cn_image_0000002561832819.png "点击放大")

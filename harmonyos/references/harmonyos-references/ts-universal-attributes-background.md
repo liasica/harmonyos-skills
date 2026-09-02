@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:51:14+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:284636f40adbc6a542d640834f33d4bcc0b58b2f628b53923697bfec1cad2ebb
+content_hash: sha256:bc70db1ec06a89eb33cb30f899708496431cf7a479b03b5d2bb6c647401d1cd5
 ---
 
 设置组件的背景样式。
@@ -789,7 +789,7 @@ PhonePC/2in1TabletTVWearable
 69. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/ovZFX15FQSCgSjUmjzRvLA/zh-cn_image_0000002558606340.png?HW-CC-KV=V1&HW-CC-Date=20260429T055112Z&HW-CC-Expire=86400&HW-CC-Sign=FA2E0D42A2320DCA6246DFF4A8881985EC74D48409634EC3E33889B26E65401B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/ovZFX15FQSCgSjUmjzRvLA/zh-cn_image_0000002558606340.png)
 
 ### 示例2（设置背景模糊样式）
 
@@ -820,7 +820,7 @@ PhonePC/2in1TabletTVWearable
 22. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/aATJ1dRtSiuUGNscdfEsyA/zh-cn_image_0000002589325867.png?HW-CC-KV=V1&HW-CC-Date=20260429T055112Z&HW-CC-Expire=86400&HW-CC-Sign=EB9BD4C2D854D2AD20F87EE4FE278205C7112B9D18094132E75167298828C02C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/aATJ1dRtSiuUGNscdfEsyA/zh-cn_image_0000002589325867.png)
 
 ### 示例3（设置组件背景）
 
@@ -855,7 +855,7 @@ PhonePC/2in1TabletTVWearable
 26. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/ME4IWHiBSTG3KeQgN922Ig/zh-cn_image_0000002589245809.png?HW-CC-KV=V1&HW-CC-Date=20260429T055112Z&HW-CC-Expire=86400&HW-CC-Sign=298E5194D9B30913C51BA74537E42A813491A94F6128A78FF8F22229958C13C5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/ME4IWHiBSTG3KeQgN922Ig/zh-cn_image_0000002589245809.png)
 
 ### 示例4（设置组件背景提亮效果）
 
@@ -890,15 +890,15 @@ PhonePC/2in1TabletTVWearable
 
 rate和lightUpDegree参数值为0.5,0.5：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/v2EoCuyjTHuydwnS1TLlcQ/zh-cn_image_0000002558766000.png?HW-CC-KV=V1&HW-CC-Date=20260429T055112Z&HW-CC-Expire=86400&HW-CC-Sign=6CEA9ED3DC740336607AAA71BCC5538C7D868CAC85FD9744B05EF7B3396FCAA3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/v2EoCuyjTHuydwnS1TLlcQ/zh-cn_image_0000002558766000.png)
 
 修改rate和lightUpDegree参数值为0.5,-0.1：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/cyZ_k8T_SEewDOmN9OY47A/zh-cn_image_0000002558606342.png?HW-CC-KV=V1&HW-CC-Date=20260429T055112Z&HW-CC-Expire=86400&HW-CC-Sign=933747FC3F529BBB6EEBD55681D64C321D8C723817A61B2A7CD7C1CC900D0402)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/cyZ_k8T_SEewDOmN9OY47A/zh-cn_image_0000002558606342.png)
 
 去掉backgroundBrightness的设置，效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/grcGxLFDTzu5v4NzEmqwAg/zh-cn_image_0000002589325869.png?HW-CC-KV=V1&HW-CC-Date=20260429T055112Z&HW-CC-Expire=86400&HW-CC-Sign=F474008F3A8F8AC12DCBAF96FE40B478C4734E513065389ABAD3581D44214EC3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/grcGxLFDTzu5v4NzEmqwAg/zh-cn_image_0000002589325869.png)
 
 ### 示例5（设置模糊属性）
 
@@ -939,7 +939,7 @@ rate和lightUpDegree参数值为0.5,0.5：
 33. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/Y95oPNxWTwmYKzCbtEInhQ/zh-cn_image_0000002589245811.png?HW-CC-KV=V1&HW-CC-Date=20260429T055112Z&HW-CC-Expire=86400&HW-CC-Sign=76AF1F7A09890369188C2D9ED0E76DC52F1AFC6F353A2DC5BF5BA9B2B28B3645)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/Y95oPNxWTwmYKzCbtEInhQ/zh-cn_image_0000002589245811.png)
 
 ### 示例6（设置文字异形模糊效果）
 
@@ -1039,7 +1039,7 @@ rate和lightUpDegree参数值为0.5,0.5：
 89. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/MswH0M-fRImddQmJDYhmLw/zh-cn_image_0000002558766002.jpeg?HW-CC-KV=V1&HW-CC-Date=20260429T055112Z&HW-CC-Expire=86400&HW-CC-Sign=79849F401526F72A733573D80DF1A05106FA04C28FDD313FD4E3E4E03722E5AF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/MswH0M-fRImddQmJDYhmLw/zh-cn_image_0000002558766002.jpeg)
 
 ### 示例7（模糊效果对比）
 
@@ -1096,7 +1096,7 @@ rate和lightUpDegree参数值为0.5,0.5：
 48. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/UAsh21itSNa4x7JuNfLdyQ/zh-cn_image_0000002558606344.png?HW-CC-KV=V1&HW-CC-Date=20260429T055112Z&HW-CC-Expire=86400&HW-CC-Sign=F50379D6F85F08DD748D1A80587695B2BE17E04E5ADAE33CB5D783D10214E793)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/UAsh21itSNa4x7JuNfLdyQ/zh-cn_image_0000002558606344.png)
 
 ### 示例8（设置P3色域背景效果）
 
@@ -1123,7 +1123,7 @@ rate和lightUpDegree参数值为0.5,0.5：
 18. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/_EJmyN5eSPWRCd2gmWmvFQ/zh-cn_image_0000002589325871.png?HW-CC-KV=V1&HW-CC-Date=20260429T055112Z&HW-CC-Expire=86400&HW-CC-Sign=2A070111AB4006EAFBBF517BF8CDBA86C58528DD6A8448933596F3B2DA7B3FC2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/_EJmyN5eSPWRCd2gmWmvFQ/zh-cn_image_0000002589325871.png)
 
 ### 示例9（设置组件背景扩展）
 
@@ -1176,4 +1176,4 @@ rate和lightUpDegree参数值为0.5,0.5：
 44. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/DBXDqp_8QFGKBfujvyrkfA/zh-cn_image_0000002589245813.png?HW-CC-KV=V1&HW-CC-Date=20260429T055112Z&HW-CC-Expire=86400&HW-CC-Sign=D544C665127EB689CC4E8A4BAECCF38EBBF200A9563767CFD3C3480DBCAFCBB9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/DBXDqp_8QFGKBfujvyrkfA/zh-cn_image_0000002589245813.png)

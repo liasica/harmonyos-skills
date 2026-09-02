@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:51:31+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:4751ffc49e642a12918dfc4864a13480ad22296aaf912b9359a83af0fdd668c9
+content_hash: sha256:5e332ebd2330b06523a7df476334c4755594ab0b0acda4605a57b20cd0dd7336
 ---
 
 当某些组件本身的绘制内容不满足需求时，可使用自定义组件绘制功能，在原有组件基础上部分绘制，或者全部自行绘制，以达到预期效果。例如：独特的按钮形状、文字和图像混合的图标等。自定义组件绘制提供了自定义绘制修改器，来实现更自由地组件绘制。
@@ -54,7 +54,7 @@ DrawModifier可设置遮罩层前景（drawOverlay）、前景（drawForeground�
 
 自定义层级示例图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/rwCxU_LuT9CBy0WQjb4Plg/zh-cn_image_0000002558606440.png?HW-CC-KV=V1&HW-CC-Date=20260429T055129Z&HW-CC-Expire=86400&HW-CC-Sign=8CFED5E651B23B70711BA3CB0FA665FB191ED42359CBABE4753FFAAC18AE4065)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/rwCxU_LuT9CBy0WQjb4Plg/zh-cn_image_0000002558606440.png)
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -459,7 +459,7 @@ PhonePC/2in1TabletTVWearable
 189. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/9ylHAaoHRYqBCOqeHjYSEA/zh-cn_image_0000002589325967.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055129Z&HW-CC-Expire=86400&HW-CC-Sign=20B68C4DAFEAEB9FFFE13CB4F04DC5AB2642D4A1BBD576B5FB102EA41851B08C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/9ylHAaoHRYqBCOqeHjYSEA/zh-cn_image_0000002589325967.gif)
 
 ### 示例2（通过DrawModifier对容器的前景进行自定义绘制）
 
@@ -524,4 +524,4 @@ PhonePC/2in1TabletTVWearable
 56. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/AMG3dnA3T56iTlgjg_Ri9Q/zh-cn_image_0000002589245909.png?HW-CC-KV=V1&HW-CC-Date=20260429T055129Z&HW-CC-Expire=86400&HW-CC-Sign=CC100DD2F21992831A21280D894662F00C7816497923B771CC557F645BD0EB05)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/AMG3dnA3T56iTlgjg_Ri9Q/zh-cn_image_0000002589245909.png)

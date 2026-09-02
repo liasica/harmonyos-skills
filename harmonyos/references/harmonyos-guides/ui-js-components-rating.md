@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:28:49+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:ae3c56c3217395e21893345e23a8647084df1d422a5f50039e552c3dd2b9cd90
+content_hash: sha256:0ed04a8d3787a80d7e098c6ec4e35cdf5221a6a888cbd914435a4465faac4e4b
 ---
 
 rating是评分组件，用于展示用户对某项内容的评价等级。具体用法请参考[rating](../harmonyos-references/js-components-basic-rating.md)。
@@ -37,7 +37,7 @@ rating是评分组件，用于展示用户对某项内容的评价等级。具�
 13. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/hLrpznGPRjiBSQrjT60DgA/zh-cn_image_0000002589324471.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052848Z&HW-CC-Expire=86400&HW-CC-Sign=28AF406FEE8F9E9FC5C9DBE7FA441464F90ABEF69D4536ADB11ABD968E8D5E59)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/hLrpznGPRjiBSQrjT60DgA/zh-cn_image_0000002589324471.gif)
 
 ## 设置评分星级
 
@@ -67,7 +67,7 @@ rating组件通过设置numstars和rating属性设置评分条的星级总数和
 13. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/0dwQY4P_TqK2xAigjM0P8A/zh-cn_image_0000002589244411.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052848Z&HW-CC-Expire=86400&HW-CC-Sign=56192BAA0CB9C02130C7FE31DDDEAAF749C56E88EE1304BEC477932783C7A23C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/0dwQY4P_TqK2xAigjM0P8A/zh-cn_image_0000002589244411.gif)
 
 ## 设置评分样式
 
@@ -111,7 +111,7 @@ rating组件通过star-background、star-foreground和star-secondary属性设置
 12. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/ENX23Dy5TtmX7E7ahnmXrQ/zh-cn_image_0000002558764604.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052848Z&HW-CC-Expire=86400&HW-CC-Sign=B5CFE8F9FCE219F68472650A5D7F4D33BF284A720C77E88E12B3281412426325)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/ENX23Dy5TtmX7E7ahnmXrQ/zh-cn_image_0000002558764604.gif)
 
 说明
 
@@ -157,7 +157,7 @@ rating组件通过star-background、star-foreground和star-secondary属性设置
 9. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/O9M5XjikTQq0cfW42FO38A/zh-cn_image_0000002558604948.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052848Z&HW-CC-Expire=86400&HW-CC-Sign=5B15B17C5EA6C0B02BD690BAA6519CD17CE800EC689B76D6FA832E32B1F48EB5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/O9M5XjikTQq0cfW42FO38A/zh-cn_image_0000002558604948.gif)
 
 ## 场景示例
 
@@ -246,4 +246,4 @@ rating组件通过star-background、star-foreground和star-secondary属性设置
 43. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/WVUF97DlRVeMWsPt1vwJnw/zh-cn_image_0000002589324473.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052848Z&HW-CC-Expire=86400&HW-CC-Sign=40CF7A68F01BF6B0517126B3FCF6B1DD966C336221AF244B862EACFA018CAA3F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/WVUF97DlRVeMWsPt1vwJnw/zh-cn_image_0000002589324473.gif)

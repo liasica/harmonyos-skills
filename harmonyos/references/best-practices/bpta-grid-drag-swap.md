@@ -5,7 +5,7 @@ breadcrumb: 最佳实践 > 布局与弹窗 > Grid网格元素拖拽交换
 category: best-practices
 scraped_at: 2026-04-29T14:10:22+08:00
 doc_updated_at: 2026-03-17
-content_hash: sha256:8fb43a5cbd18dc48a29ac4ae27bce08a0d33d036d6a2e4c22c7059601ff1ba78
+content_hash: sha256:7a10edfce38643d731021939dbebb2ae1d000f7f243660d656c523e2dd3854ed
 ---
 
 ## 概述
@@ -14,7 +14,7 @@ Grid网格元素拖拽交换功能在应用中经常会被使用，如当编辑�
 
 Grid网格布局一般由[Grid](../harmonyos-references/ts-container-grid.md)容器组件和子组件[GridItem](../harmonyos-references/ts-container-griditem.md)构建组成，Grid用于设置网格布局相关参数，GridItem定义子组件相关特征。网格布局中含有网格元素，当给Grid容器组件设置[editMode](../harmonyos-references/ts-container-grid.md#editmode8)属性为true时，可开启Grid组件的编辑模式。首先，开启编辑模式。然后，给[GridItem](../harmonyos-references/ts-container-griditem.md)组件绑定[长按](../harmonyos-references/ts-basic-gestures-longpressgesture.md)、[拖拽](../harmonyos-references/ts-basic-gestures-pangesture.md)等手势。最后，需要添加动画属性[animateTo](../harmonyos-references/arkts-apis-uicontext-uicontext.md#animateto)，并设置相应的动画效果。最终，呈现出网格元素拖拽交换的动效过程，如下示意图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/i1XqaASvSHCTuUBQMtBhwA/zh-cn_image_0000002229336469.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061018Z&HW-CC-Expire=86400&HW-CC-Sign=CEA979D94E43D70B36B4581F13A7F24BF7DEC5063D160407DACB7DE12013CA2A "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/i1XqaASvSHCTuUBQMtBhwA/zh-cn_image_0000002229336469.gif "点击放大")
 
 ## 实现原理
 
@@ -46,7 +46,7 @@ Grid组件当前支持GridItem拖拽动画，通过给Grid容器组件设置[sup
 
 示意效果图如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/0R2F-eoVT_GgdwDP0Y3mtQ/zh-cn_image_0000002194010660.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061018Z&HW-CC-Expire=86400&HW-CC-Sign=ECEF6B245E2AC96FAD4A8EA992F6BEFA9AB2EEC04AA57501468866383410F4DA "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/0R2F-eoVT_GgdwDP0Y3mtQ/zh-cn_image_0000002194010660.gif "点击放大")
 
 ### 开发步骤
 
@@ -118,7 +118,7 @@ Grid组件当前支持GridItem拖拽动画，通过给Grid容器组件设置[sup
 
 示意效果图如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/8el5KHCQQkq0dlOcMSs7qA/zh-cn_image_0000002194010668.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061018Z&HW-CC-Expire=86400&HW-CC-Sign=20DE5DF7ED610435BFEC425998DA825A9A09302F519CD8702438C423F29F4362 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/8el5KHCQQkq0dlOcMSs7qA/zh-cn_image_0000002194010668.gif "点击放大")
 
 说明
 
@@ -345,7 +345,7 @@ Grid组件当前支持GridItem拖拽动画，通过给Grid容器组件设置[sup
 
 示意效果图如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/FYQPzoOERvuc6bF4lij-cA/zh-cn_image_0000002193851080.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061018Z&HW-CC-Expire=86400&HW-CC-Sign=1FB0D25636159FD308CDCE609BA7372FD5DC2A305D1FF1C76516F2FBD16321FE "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/FYQPzoOERvuc6bF4lij-cA/zh-cn_image_0000002193851080.gif "点击放大")
 
 ### 开发步骤
 
@@ -561,7 +561,7 @@ Grid组件当前支持GridItem拖拽动画，通过给Grid容器组件设置[sup
 
 示意效果图如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/6O20-I7SQ623mEVRQGQbog/zh-cn_image_0000002421306206.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061018Z&HW-CC-Expire=86400&HW-CC-Sign=AA9B9EC14E56E54839C1FDB749625C3D51589C98F453A654074A2A0ED051F1F8 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/6O20-I7SQ623mEVRQGQbog/zh-cn_image_0000002421306206.gif "点击放大")
 
 ### 开发步骤
 

@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 窗口管理 > �
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:29:05+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:deb89cbf1248e2464a8d924c2916c3221fee32748c44ab1f5c20f6e7f813b057
+content_hash: sha256:0231a122f676a5274358ef84d2b77c720fd8afea907832c3bbe03344f61491e9
 ---
 
 本文以视频播放为例，介绍通过NDK接口实现画中画功能的基本开发步骤。
@@ -914,4 +914,4 @@ EntryAbility文件示例。
 
 以上示例代码对应的示意图如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/AzPwJp4ETG2k_83biOKpRw/zh-cn_image_0000002589244479.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052903Z&HW-CC-Expire=86400&HW-CC-Sign=DE2EFFC5933D6B9290BC9858E34F0B91A013A5338586F6633776E18C1C7A7003)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/AzPwJp4ETG2k_83biOKpRw/zh-cn_image_0000002589244479.gif)

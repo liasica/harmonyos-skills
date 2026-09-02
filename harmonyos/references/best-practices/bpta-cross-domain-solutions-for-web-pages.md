@@ -5,7 +5,7 @@ breadcrumb: 最佳实践 > 应用框架 > ArkWeb > Web页面跨域解决方案
 category: best-practices
 scraped_at: 2026-04-29T14:11:04+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:d87a85c7168b347722ea1009d382c07236c8013364ad8ac67d7f5206a87dccd4
+content_hash: sha256:0e28601ec65d512af8c7a6177366ad9fc93acdafd5635ea50fd89028faa6c3ec
 ---
 
 ## 概述
@@ -88,7 +88,7 @@ content_hash: sha256:d87a85c7168b347722ea1009d382c07236c8013364ad8ac67d7f5206a87
 * 代理请求：在WebView中设置拦截器拦截Web页面发起的跨域请求，使用[RCP请求](../harmonyos-references/remote-communication-rcp.md)代理请求到目标远程服务器。[RCP请求](../harmonyos-references/remote-communication-rcp.md)与远程服务器的通信不受浏览器限制，因此可以接收到服务器的响应结果，但将结果传回WebView时仍需配置跨域响应头来解决跨域问题。
 
   **图1** 代理请求方案流程图  
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/316LtNCkTrCjhMJETyV9VA/zh-cn_image_0000002451165758.png?HW-CC-KV=V1&HW-CC-Date=20260429T061102Z&HW-CC-Expire=86400&HW-CC-Sign=CC52BB1991935427265846938775B22E7FD443397C406939003E1FAFFC01F7A1 "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/316LtNCkTrCjhMJETyV9VA/zh-cn_image_0000002451165758.png "点击放大")
 
 ### 开发步骤
 

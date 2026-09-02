@@ -5,10 +5,10 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:28:03+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:8bd0b1e95a0d3285f521b8a11e3050d1c68a6dae367a092bd7656baa7db38269
+content_hash: sha256:787a75180a52002d2f92ffefc1406d7156e9c5eac0aa2ef6533ac8fb5d66f803
 ---
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/OzNQdli8Qh6C8lbN7yQXOA/zh-cn_image_0000002589244243.png?HW-CC-KV=V1&HW-CC-Date=20260429T052801Z&HW-CC-Expire=86400&HW-CC-Sign=A0495C552415E7E1137731ABB7AFB0C9E66BAE1B1BE7B3A03B4899E5FF4939A3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/OzNQdli8Qh6C8lbN7yQXOA/zh-cn_image_0000002589244243.png)
 
 鼠标设备是2in1类型设备必不可少的输入设备，其特点是可以通过按键达成点击或滑动操作，也可以通过滚轮触发滑动，另外还有一些按键，这些分别通过MouseEvent及AxisEvent上报给应用。
 
@@ -99,7 +99,7 @@ content_hash: sha256:8bd0b1e95a0d3285f521b8a11e3050d1c68a6dae367a092bd7656baa7db
 
    右键点击时：button = 2（MouseButton.Right的枚举值），按下时：action = 1（MouseAction.Press的枚举值），抬起时：action = 2（MouseAction.Release的枚举值）。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/yWtR4aHfQWaBKxMEspqERg/zh-cn_image_0000002558764436.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052801Z&HW-CC-Expire=86400&HW-CC-Sign=5C05F6497ADBBE057439A7CDB0E042241F41544854EEF54DE9080A9C7D3FA2FB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/yWtR4aHfQWaBKxMEspqERg/zh-cn_image_0000002558764436.gif)
 
 如果需要阻止鼠标事件冒泡，可以通过调用stopPropagation方法进行设置。
 
@@ -157,7 +157,7 @@ content_hash: sha256:8bd0b1e95a0d3285f521b8a11e3050d1c68a6dae367a092bd7656baa7db
 
 [StopPropagation.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/InterAction/entry/src/main/ets/pages/stopPropagation/StopPropagation.ets#L16-L66)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/twm7F2J2SUmahRltq1qF_g/zh-cn_image_0000002558604780.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052801Z&HW-CC-Expire=86400&HW-CC-Sign=44A50DB2AEE3DE7BA33E77383602F81D9F78DF2633E2C2EFCE051025AD41EBCD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/twm7F2J2SUmahRltq1qF_g/zh-cn_image_0000002558604780.gif)
 
 在子组件（Button）的onMouse中，通过回调参数event调用stopPropagation回调方法（如上）即可阻止Button子组件的鼠标事件冒泡到父组件Column上。
 
@@ -207,7 +207,7 @@ content_hash: sha256:8bd0b1e95a0d3285f521b8a11e3050d1c68a6dae367a092bd7656baa7db
 
 当鼠标从Button内移动到Button外的瞬间，回调响应，isHover值等于false，又将组件变成了初始的样式。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/abXr3GgKR6iYT4XzHNVg7Q/zh-cn_image_0000002589324305.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052801Z&HW-CC-Expire=86400&HW-CC-Sign=8E5BBE1C8A921F26AA282451F22334407C124423A1D64AE80ACC2AB9251ACDBB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/abXr3GgKR6iYT4XzHNVg7Q/zh-cn_image_0000002589324305.gif)
 
 ## 处理鼠标按键
 
@@ -344,7 +344,7 @@ content_hash: sha256:8bd0b1e95a0d3285f521b8a11e3050d1c68a6dae367a092bd7656baa7db
 
 [MouseButton.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/InterAction/entry/src/main/ets/pages/MouseButton/MouseButton.ets#L16-L142)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/bWp-8Z-dSva-dL6Irm76TQ/zh-cn_image_0000002589244245.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052801Z&HW-CC-Expire=86400&HW-CC-Sign=03C553D97DF77705079C1C3C58FC6361C11EF83734B49373E3A3FE55DC401A85)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/bWp-8Z-dSva-dL6Irm76TQ/zh-cn_image_0000002589244245.gif)
 
 ## 处理滚轮
 
@@ -492,4 +492,4 @@ content_hash: sha256:8bd0b1e95a0d3285f521b8a11e3050d1c68a6dae367a092bd7656baa7db
 
 [MouseWheel.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/InterAction/entry/src/main/ets/pages/MouseWheel/MouseWheel.ets#L16-L75)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/h45KTAuVTiC33bJGvZXXMA/zh-cn_image_0000002558764438.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052801Z&HW-CC-Expire=86400&HW-CC-Sign=A2A0C27B290928D7A2C355862E59261D651A57F40278B3B028E59D003EB9AA01)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/h45KTAuVTiC33bJGvZXXMA/zh-cn_image_0000002558764438.gif)

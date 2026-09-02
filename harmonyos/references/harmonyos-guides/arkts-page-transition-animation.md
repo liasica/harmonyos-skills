@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:28:14+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:24e924ab4914c7e2e5c09ebfc81f17b42b5e4a3498214330c7b3fce07a47975f
+content_hash: sha256:f32cef57d19e02df7985aed12094d8b0ddc8b16de69664a402425dd2a9fb66f6
 ---
 
 为了实现更好的转场效果，推荐使用[Navigation转场动画](arkts-navigation-animation.md)和[模态转场](arkts-modal-transition.md)。
@@ -255,7 +255,7 @@ type为RouteType.None表示对页面栈的push、pop操作均生效，type的默
 
 [pageTransitionDst1.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/Animation/entry/src/main/ets/pages/pageTransition/template3/pageTransitionDst1.ets#L15-L62)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/Dtyhsix8Q1uY3Lrzf56TeA/zh-cn_image_0000002558604826.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052809Z&HW-CC-Expire=86400&HW-CC-Sign=D15D9EB8AEEDB4367EF80C524D442EE0683FA3BBFCD7FF213F2D1586A8EE4FCD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/Dtyhsix8Q1uY3Lrzf56TeA/zh-cn_image_0000002558604826.gif)
 
 下面介绍使用了type为None的页面转场动画示例。
 
@@ -351,4 +351,4 @@ type为RouteType.None表示对页面栈的push、pop操作均生效，type的默
 
 [pageTransitionDst2.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/Animation/entry/src/main/ets/pages/pageTransition/template4/pageTransitionDst2.ets#L15-L57)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/VlOHW2GRSEua5uJZbRHnig/zh-cn_image_0000002589324351.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052809Z&HW-CC-Expire=86400&HW-CC-Sign=94A0E7968C985762271E4A6264CCB0982260A9ADE10CD2C023D4F6A73C49AD04)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/VlOHW2GRSEua5uJZbRHnig/zh-cn_image_0000002589324351.gif)

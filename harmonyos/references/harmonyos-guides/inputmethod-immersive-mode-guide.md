@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > IME Kit（输入法开发服务） > 输入�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:30:07+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:fb7b4956ea5940440a2e3ee3b7ec9431df3f14933d842e8788c1e10a46878099
+content_hash: sha256:a84de63ef2f4a9efcba1eac5fdad43af2303b38075ccbf3b065938879980b7d3
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:fb7b4956ea5940440a2e3ee3b7ec9431df3f14933d842e8788c1e10a468
 
 ## 框架原理
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/5ErKn029QsiSzl0_v0hh1A/zh-cn_image_0000002589324685.png?HW-CC-KV=V1&HW-CC-Date=20260429T053006Z&HW-CC-Expire=86400&HW-CC-Sign=E31A90BDDB0B7CB8D23AE80D17661BEF795F69DF89093EE336687790D89BA5ED)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/5ErKn029QsiSzl0_v0hh1A/zh-cn_image_0000002589324685.png)
 
 * 前台应用根据应用场景，设置应用期望的沉浸模式。
 * 输入法框架在拉起输入法应用时会将前台应用期望的沉浸模式传递给输入法应用。

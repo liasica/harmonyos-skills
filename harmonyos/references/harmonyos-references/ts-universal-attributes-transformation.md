@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:51:18+08:00
 doc_updated_at: 2026-04-10
-content_hash: sha256:d5de45da3a422c2e8f0da60a47bb52468cfd0addfc5737fbad64d3aad9b2c182
+content_hash: sha256:f89badcef01a612871094d90a82fe855ca5016bca0bfcd82251535f359de330a
 ---
 
 用于对组件进行旋转、平移、缩放、矩阵变换等操作。
@@ -419,7 +419,7 @@ PhonePC/2in1TabletTVWearable
 45. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/wpOe8FlcSp6S0oQeUf_3rA/zh-cn_image_0000002589325897.png?HW-CC-KV=V1&HW-CC-Date=20260429T055117Z&HW-CC-Expire=86400&HW-CC-Sign=8EC60DED6CD730081F5C6EB17A6DAA64BB035AB33294E728272A28748254FEA3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/wpOe8FlcSp6S0oQeUf_3rA/zh-cn_image_0000002589325897.png)
 
 ### 示例2（设置旋转视距）
 
@@ -463,7 +463,7 @@ PhonePC/2in1TabletTVWearable
 35. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/uhveTJtvQPOm0hd--gm_nw/zh-cn_image_0000002589245839.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055117Z&HW-CC-Expire=86400&HW-CC-Sign=20F46ED210D8F23EA7132A7F66908ED10F9747D641A2156EFE052A58E42AE90D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/uhveTJtvQPOm0hd--gm_nw/zh-cn_image_0000002589245839.gif)
 
 ### 示例3（按中心点旋转）
 
@@ -537,7 +537,7 @@ PhonePC/2in1TabletTVWearable
 65. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/q0tH7hcQQqeuHu1g6JzwBw/zh-cn_image_0000002558766030.png?HW-CC-KV=V1&HW-CC-Date=20260429T055117Z&HW-CC-Expire=86400&HW-CC-Sign=EEC0CD79F02E631EC174B46D0AEC2F39D11677E9E5EF6A7FB7AD7DA2273D2F5F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/q0tH7hcQQqeuHu1g6JzwBw/zh-cn_image_0000002558766030.png)
 
 ### 示例4（通过transform3D实现图形变换）
 
@@ -574,7 +574,7 @@ PhonePC/2in1TabletTVWearable
 28. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/HzCJrq4VRjCJmzWfA9Xivw/zh-cn_image_0000002558606372.png?HW-CC-KV=V1&HW-CC-Date=20260429T055117Z&HW-CC-Expire=86400&HW-CC-Sign=53397EA645FF05AD5D49A25A0E54213F8AFD0CF01758C1DFBCA12B31E00EAFD6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/HzCJrq4VRjCJmzWfA9Xivw/zh-cn_image_0000002558606372.png)
 
 ### 示例5（按各轴旋转角的方式实现旋转）
 
@@ -615,4 +615,4 @@ PhonePC/2in1TabletTVWearable
 32. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/iE1jI9RLQXOH_WaaBAnnAg/zh-cn_image_0000002589325899.png?HW-CC-KV=V1&HW-CC-Date=20260429T055117Z&HW-CC-Expire=86400&HW-CC-Sign=23D02E2A8F92C7D8D1355BD985D6AD8EFE31DFC26BB6913AA3573B981B87B063)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/iE1jI9RLQXOH_WaaBAnnAg/zh-cn_image_0000002589325899.png)

@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用服务 > Share Kit（分享服务） > Share Kit简�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:40:32+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:85983076a4105d0182000798eb3222a32a8be8e391f23c9c7e2e1bf100bc26bc
+content_hash: sha256:49fe4c26b3e09ad50a916033b60c3dce9a615ff811ae267df40d073af4658c50
 ---
 
 Share Kit（分享服务）为应用提供文本、图片、视频等内容跨应用、跨端分享能力。
@@ -21,15 +21,15 @@ Share Kit（分享服务）提供的[SampleCode示例工程](https://gitcode.com
 
 **图1** 手机分享面板效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/8K00mYmnQzSr402zcF9fyw/zh-cn_image_0000002558606020.png?HW-CC-KV=V1&HW-CC-Date=20260429T054030Z&HW-CC-Expire=86400&HW-CC-Sign=71BB3787FF6C6CC05AB4F6229509DDF85386D1AFEBE9F1F4CE65DEC0BB00C3CB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/8K00mYmnQzSr402zcF9fyw/zh-cn_image_0000002558606020.png)
 
 **图2** 手机碰一碰跨端发起华为分享效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/f95_r6NwQKKGxBTZDTPN7g/zh-cn_image_0000002589325547.gif?HW-CC-KV=V1&HW-CC-Date=20260429T054030Z&HW-CC-Expire=86400&HW-CC-Sign=FF06C7BE0B321DCAB97A1B3B4A60C463D371D35453D62CF27ED7DB86756BBB60)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/f95_r6NwQKKGxBTZDTPN7g/zh-cn_image_0000002589325547.gif)
 
 **图3** 手机与PC/2in1设备碰一碰分享效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/4yB9K9ztQd2W8jxf5WLa6Q/zh-cn_image_0000002589245485.gif?HW-CC-KV=V1&HW-CC-Date=20260429T054030Z&HW-CC-Expire=86400&HW-CC-Sign=9CFB461A6EE7824309D975FE9F27F9A6916B64E9970C5401A66BDE054EFB5153)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/4yB9K9ztQd2W8jxf5WLa6Q/zh-cn_image_0000002589245485.gif)
 
 ## 基本概念
 
@@ -62,7 +62,7 @@ Share Kit（分享服务）提供的[SampleCode示例工程](https://gitcode.com
 
 **图4** 分享运行机制
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/TznkgdWGRc-xdgtAzRW-8Q/zh-cn_image_0000002558765678.png?HW-CC-KV=V1&HW-CC-Date=20260429T054030Z&HW-CC-Expire=86400&HW-CC-Sign=0303AE3318CA4302223F5A9417F9DE1921D4469B2AA3E13C818E6AF5988E859E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/TznkgdWGRc-xdgtAzRW-8Q/zh-cn_image_0000002558765678.png)
 
 | 应用类型 | 相关逻辑 |
 | --- | --- |

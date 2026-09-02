@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:52:42+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:b22e3fe34605e07a8f04559efbfc0062409c53d25bbd62c52fb8a603ceba920c
+content_hash: sha256:33275bfb11147f668ce08327527edc64abcb3b1f1ec3f6f99f38e3df45f01947
 ---
 
 设置组件进行位移动画时的运动路径。
@@ -87,4 +87,4 @@ PhonePC/2in1TabletTVWearable
 23. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/g2qWye7oSfyBZqDJ-xjr4w/zh-cn_image_0000002589326421.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055241Z&HW-CC-Expire=86400&HW-CC-Sign=AF9B30BC96479C0719F7989BDA6645CF0114AFC40ACA933C99F55984BC53172A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/g2qWye7oSfyBZqDJ-xjr4w/zh-cn_image_0000002589326421.gif)

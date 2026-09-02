@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:51:48+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:aab654a3b1c71d8471dcaa7f4ace4d76c11b79256c7e5b7efecf411f97cd481c
+content_hash: sha256:3a5208b28da9169efae9f9693017761626bbbf04595e09ff5d964284d93cef6c
 ---
 
 该组件用于实现支持懒加载的网格布局，其父组件仅限于[WaterFlow](ts-container-waterflow.md)或[FlowItem](ts-container-flowitem.md)，并支持使用自定义组件、[NodeContainer](ts-basic-components-nodecontainer.md)组件封装后，在WaterFlow或FlowItem组件下应用。
@@ -275,4 +275,4 @@ MyDataSource实现了[LazyForEach](ts-rendering-control-lazyforeach.md)数据源
 87. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/Xbq50YwlQnOxSXQ9grx1zg/zh-cn_image_0000002589245983.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055145Z&HW-CC-Expire=86400&HW-CC-Sign=EA425BBD53343EEB7B58D4F496EDAE7087698727EE9A7A3875D4319FA0CFE4A3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/Xbq50YwlQnOxSXQ9grx1zg/zh-cn_image_0000002589245983.gif)

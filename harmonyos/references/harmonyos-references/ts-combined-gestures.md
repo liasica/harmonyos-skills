@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:51:36+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:be628daa3463d7369ecd6ce005b5f37fa20c93dda079a87a43b552119807f3a1
+content_hash: sha256:468b3548abdb516f2ecc884c009f6741e8d1f36dba5287b9a5efdc7ab816ebea
 ---
 
 手势识别组合，即两种及以上手势组合为复合手势，支持顺序识别、并发识别和互斥识别。
@@ -139,8 +139,8 @@ PhonePC/2in1TabletTVWearable
 
 按顺序首先触发长按事件：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/VI272TuZTz6D-e_pG0zN7A/zh-cn_image_0000002589325975.png?HW-CC-KV=V1&HW-CC-Date=20260429T055135Z&HW-CC-Expire=86400&HW-CC-Sign=C79F2A348BE1E3E27B9371672D8C055C3785482B97CAC0513ED18DCF568A04CE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/VI272TuZTz6D-e_pG0zN7A/zh-cn_image_0000002589325975.png)
 
 按顺序首先触发长按事件，长按事件识别结束之后，触发拖动事件，向右下方拖动：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/KbnqrO50RJ2EAGm-A8RIzQ/zh-cn_image_0000002589245917.png?HW-CC-KV=V1&HW-CC-Date=20260429T055135Z&HW-CC-Expire=86400&HW-CC-Sign=9E86923D572DEB94089B85C5D7E5D48186354017E960D0E8559F33B8B381FAFB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/KbnqrO50RJ2EAGm-A8RIzQ/zh-cn_image_0000002589245917.png)

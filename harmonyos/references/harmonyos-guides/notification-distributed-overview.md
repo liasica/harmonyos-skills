@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用服务 > Notification Kit（用户通知服务） > �
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:39:25+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:a0ec9e6019dc5edf35189e5aae0817c80afd595cb9c3e176e663abad562f9453
+content_hash: sha256:1d96263e253ae8ed6a7f5651a8e1ffea216b411816ac9b14063d25101de1c835
 ---
 
 跨设备协同通知旨在以手机为中心，实现与手表等其他设备的通知消息协同交互。典型场景如下：
@@ -22,4 +22,4 @@ content_hash: sha256:a0ec9e6019dc5edf35189e5aae0817c80afd595cb9c3e176e663abad562
 
 ## 运作机制
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/KQ14roLsScK4nz5G4jOkpw/zh-cn_image_0000002558765564.png?HW-CC-KV=V1&HW-CC-Date=20260429T053924Z&HW-CC-Expire=86400&HW-CC-Sign=A72EE6696070C58C566079CE8F4DD555E3E1B2D8A7CE8EF48F97D173E82A42CB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/KQ14roLsScK4nz5G4jOkpw/zh-cn_image_0000002558765564.png)

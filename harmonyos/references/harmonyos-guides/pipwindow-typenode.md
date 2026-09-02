@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 窗口管理 > �
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:29:06+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:d5e8cf478e962fd8a5250afa438977c65ecd04104095c03cc5879b06ce26d03a
+content_hash: sha256:c7dddab9ceff21a3d726045632aa027681a2335e8f57ae90ad5e56c5ab74a86a
 ---
 
 说明
@@ -483,7 +483,7 @@ content_hash: sha256:d5e8cf478e962fd8a5250afa438977c65ecd04104095c03cc5879b06ce2
 
 以上示例代码对应的示意图如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/dFz3oNNOSDCC6SYosL3f9A/zh-cn_image_0000002589324541.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052903Z&HW-CC-Expire=86400&HW-CC-Sign=D57F19283FB9F799EC3394791CB04A820E72B7ADBEF125EC4F1A9DD9BE87AE7E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/dFz3oNNOSDCC6SYosL3f9A/zh-cn_image_0000002589324541.gif)
 
 ## 应用使用router导航时通过typeNode实现画中画功能
 
@@ -965,7 +965,7 @@ content_hash: sha256:d5e8cf478e962fd8a5250afa438977c65ecd04104095c03cc5879b06ce2
 
 以上示例代码对应的示意图如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/LqdWzU3RR46zMfACWsDihg/zh-cn_image_0000002558764670.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052903Z&HW-CC-Expire=86400&HW-CC-Sign=D651059D9F46F0ECA51309DD8C4FC4AF27C39395CE416700D7E41650B1BC9AD3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/LqdWzU3RR46zMfACWsDihg/zh-cn_image_0000002558764670.gif)
 
 ## 应用使用Navigation导航时通过typeNode实现画中画功能
 
@@ -1450,7 +1450,7 @@ content_hash: sha256:d5e8cf478e962fd8a5250afa438977c65ecd04104095c03cc5879b06ce2
 
 以上示例代码对应的示意图如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/g9ZmpRSATpqgId61ebM1eQ/zh-cn_image_0000002558764670.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052903Z&HW-CC-Expire=86400&HW-CC-Sign=18CE9DC1AE2F29DEEF564CE2893FF04022754627D4E3CEEAA472FEDCC815D9C4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/g9ZmpRSATpqgId61ebM1eQ/zh-cn_image_0000002558764670.gif)
 
 ## 应用使用单界面Ability时通过typeNode实现画中画功能
 
@@ -1868,4 +1868,4 @@ content_hash: sha256:d5e8cf478e962fd8a5250afa438977c65ecd04104095c03cc5879b06ce2
 
 以上示例代码对应的示意图如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/bU_nkrOvQc2MS4oYTJhllw/zh-cn_image_0000002558764670.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052903Z&HW-CC-Expire=86400&HW-CC-Sign=8C448A4A97FD021BEBAC3E32ED11457074738313E5F661C4EE2B3B0C7766FF49)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/bU_nkrOvQc2MS4oYTJhllw/zh-cn_image_0000002558764670.gif)

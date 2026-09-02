@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用服务 > Live View Kit（实况窗服务） > 开发�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:38:53+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:0a66d5ed1500678fcaccb3730985a0d9e26cbeef6b0a74fd2b866d5b4914b6a1
+content_hash: sha256:808c9e9259b86baadd709d7f37f5dc77538ff98772db0fb862ab6c91cf786974
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:0a66d5ed1500678fcaccb3730985a0d9e26cbeef6b0a74fd2b866d5b491
 
 通过Push Kit更新实况窗的流程如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/N1zsrnhtRcakzSUjoQxzAA/zh-cn_image_0000002589245293.png?HW-CC-KV=V1&HW-CC-Date=20260429T053849Z&HW-CC-Expire=86400&HW-CC-Sign=A02ED19BBEBB108BBA10A592D8B4C0830764F721A45CC8221190AD3EB340213D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/N1zsrnhtRcakzSUjoQxzAA/zh-cn_image_0000002589245293.png)
 
 1. 使用Push Kit，获取Push Token。
 2. 使用Live View Kit创建实况窗成功后，开发者需要将实况窗id、pushToken、实况窗场景event以及业务服务的相关的状态属性保存到业务服务端。

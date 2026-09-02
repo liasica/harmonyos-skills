@@ -5,7 +5,7 @@ breadcrumb: 最佳实践 > 多端设备体验提升 > 电脑 > 电脑应用开�
 category: best-practices
 scraped_at: 2026-04-29T14:13:02+08:00
 doc_updated_at: 2026-03-17
-content_hash: sha256:b93b6c39f6fa36102e61e26844db0319eaf56e0c75963d1f4c3dbe779c6d4aa8
+content_hash: sha256:463754bcb247d52f879dec7f5b3e6080688be2ed22b8ff5413597ed07ba01b5f
 ---
 
 ## 概述
@@ -24,7 +24,7 @@ content_hash: sha256:b93b6c39f6fa36102e61e26844db0319eaf56e0c75963d1f4c3dbe779c6
 
 HarmonyOS电脑当前主要型号包括MateBook Pro和MateBook Fold。下文将以MateBook Pro设备为例，介绍其相关信息，MateBook Fold的相关信息可参考[MateBook Fold折叠电脑](bpta-mate-book-fold.md)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/_MtpO0q5TiOHrUAhVlg3SA/zh-cn_image_0000002443446440.png?HW-CC-KV=V1&HW-CC-Date=20260429T061258Z&HW-CC-Expire=86400&HW-CC-Sign=E1BB78C0A0CA90653AD4B9DB304A81C8147F60A4E5D29341C9490A14DAB4699F "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/mETvNA_hTCuG0EAGWsB1iQ/zh-cn_image_0000002476886425.png?HW-CC-KV=V1&HW-CC-Date=20260429T061258Z&HW-CC-Expire=86400&HW-CC-Sign=5E80AB3A0F5B8FBB0981EAEB4BF9108A8F24996C09666F4D3E2178A62C4F258D "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/_MtpO0q5TiOHrUAhVlg3SA/zh-cn_image_0000002443446440.png "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/mETvNA_hTCuG0EAGWsB1iQ/zh-cn_image_0000002476886425.png "点击放大")
 
 ## 硬件说明
 
@@ -111,11 +111,11 @@ HarmonyOS电脑当前主要型号包括MateBook Pro和MateBook Fold。下文将�
 
 下面以一个长视频案例为例，展示电脑界面适配自由窗口时的响应式变化和自适应变化场景效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/lOt82mJ7TeeaX7BWrnqHMQ/zh-cn_image_0000002476886429.png?HW-CC-KV=V1&HW-CC-Date=20260429T061258Z&HW-CC-Expire=86400&HW-CC-Sign=F9AE367C345A2B93FE589F4A0AF424577997F65D2741B6EE0AD02CDE9EF61B2B "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/lOt82mJ7TeeaX7BWrnqHMQ/zh-cn_image_0000002476886429.png "点击放大")
 
 实际效果：
 
-[](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/fa/v3/WwAhO336R-OoGNGftVgoPQ/zh-cn_media_0000002443606336.mp4?HW-CC-KV=V1&HW-CC-Date=20260429T061258Z&HW-CC-Expire=86400&HW-CC-Sign=969BC365E72167431FE7CF1006313AEA5A7F75DC189107B4A3EA6B1A6AEFCA74)
+[](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/fa/v3/WwAhO336R-OoGNGftVgoPQ/zh-cn_media_0000002443606336.mp4)
 
 Video Player is loading.
 
@@ -474,10 +474,10 @@ End of dialog window.
 
   + 如果应用支持横屏，应用以横屏窗口固定大小显示（窗口高度为屏幕高度的2/3，宽度比高度为1:1）。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/iGECMqjXRneGD51cTQaOgA/zh-cn_image_0000002495776321.png?HW-CC-KV=V1&HW-CC-Date=20260429T061258Z&HW-CC-Expire=86400&HW-CC-Sign=9D90DD8D29716C018B03CC8958CC2A597412B37F4AE2528C80255E5C65BF3178 "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/iGECMqjXRneGD51cTQaOgA/zh-cn_image_0000002495776321.png "点击放大")
   + 如果是应用仅支持竖屏，以竖屏窗口固定大小显示（窗口高度为屏幕高度的2/3，宽度比高度为9:18）。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/yEgvB272SjyeDbEeIZig_w/zh-cn_image_0000002462736818.png?HW-CC-KV=V1&HW-CC-Date=20260429T061258Z&HW-CC-Expire=86400&HW-CC-Sign=D671B53FB4132A2C0261A00DF3E5188810C8081A8434B7CA6663BF44B1B2C461 "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/yEgvB272SjyeDbEeIZig_w/zh-cn_image_0000002462736818.png "点击放大")
 
     说明
 
@@ -509,14 +509,14 @@ End of dialog window.
 
   在应用安装后，检查设置中的此应用的设置项（设置->显示和亮度->应用显示布局），将比例调整为原始比例可以退出兼容模式，以供开发者调试。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/2DOZDly_ToCMxn5Yu2LmBQ/zh-cn_image_0000002462577226.png?HW-CC-KV=V1&HW-CC-Date=20260429T061258Z&HW-CC-Expire=86400&HW-CC-Sign=4E78DFE284C23C973EE4B9BFCD37916F03D1954A75FEB8B16E0E538CC12A5F46 "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/2DOZDly_ToCMxn5Yu2LmBQ/zh-cn_image_0000002462577226.png "点击放大")
 * **兼容运行上架配置**
 
   **电脑兼容运行方式如何上架**
 
   应用上架过程中，在基本信息中，勾选“兼容分发到PC/2in1的AppGallery”选项，参考下图红圈处：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/hjsnTLSjTX-EtRQz8HdUtw/zh-cn_image_0000002495816237.png?HW-CC-KV=V1&HW-CC-Date=20260429T061258Z&HW-CC-Expire=86400&HW-CC-Sign=B966EBD0A9709E4BBB1E54658C410CFA2A2954D58D2FBA1FA55E37C6950BE141)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/hjsnTLSjTX-EtRQz8HdUtw/zh-cn_image_0000002495816237.png)
 
   说明
 
@@ -553,7 +553,7 @@ End of dialog window.
 
   电脑窗口的返回键效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/JvyR04JzSlSVBKCB-jOxlw/zh-cn_image_0000002495776325.png?HW-CC-KV=V1&HW-CC-Date=20260429T061258Z&HW-CC-Expire=86400&HW-CC-Sign=18232C882CCB11562A551C1E9E83AE0AD5E2829E5DE048B91523850BD73F8923 "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/JvyR04JzSlSVBKCB-jOxlw/zh-cn_image_0000002495776325.png "点击放大")
 
   **安全键盘的差异**
 
@@ -633,7 +633,7 @@ End of dialog window.
 
 在全屏播放视频时，长视频类应用通过横向大屏能有效提升用户的观看体验。详细开发方案可参考[多设备长视频界面](multi-video-app.md)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/v5JcW1rITjS7hdEDS1CekQ/zh-cn_image_0000002443606372.png?HW-CC-KV=V1&HW-CC-Date=20260429T061258Z&HW-CC-Expire=86400&HW-CC-Sign=E37BF5861698B3BD43A4548CCCC165BE3E57A1A8EB9DABAD14F982BABD61C9CA "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/v5JcW1rITjS7hdEDS1CekQ/zh-cn_image_0000002443606372.png "点击放大")
 
 更多垂域案例可参考[多设备界面开发案例](bpta-multi-device-ui-development.md)。
 

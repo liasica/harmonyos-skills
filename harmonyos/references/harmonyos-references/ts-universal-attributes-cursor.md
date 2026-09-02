@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:51:26+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:df8adf5f1f33991d57720b938e5f897bafbd0c44c41de4989a694f1cd73748ac
+content_hash: sha256:5ad855c42e20ee5222f2a9befa6e89fbe71d5a21b2f777dd039d6d5ff5edbaf9
 ---
 
 控制鼠标光标的显示样式。
@@ -123,8 +123,8 @@ PhonePC/2in1TabletTVWearable
 
 当鼠标悬浮在蓝色区域时，显示：向西箭头光标样式。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/leje5rNtQB257NaUqxqjng/zh-cn_image_0000002558606408.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T055125Z&HW-CC-Expire=86400&HW-CC-Sign=B87478650C58AC835FFDF93E5C2D03EBDCED360FDD778F72A4077515D3D9798F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/leje5rNtQB257NaUqxqjng/zh-cn_image_0000002558606408.jpg)
 
 当鼠标悬浮在绿色区域时，显示：向东箭头光标样式。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/rqrMKARORgSNzPkbXmBiHg/zh-cn_image_0000002589325935.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T055125Z&HW-CC-Expire=86400&HW-CC-Sign=B3EF9E725F2D729F2B988B14ED15D8D2BCDF76C49BB8454DA7A168EF20B1EB42)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/rqrMKARORgSNzPkbXmBiHg/zh-cn_image_0000002589325935.jpg)

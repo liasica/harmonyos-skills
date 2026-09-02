@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-tabs-on-change-check
-title: @performance/tabs-on-change-check
+title: "@performance/tabs-on-change-check"
 breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 性能规则@performance > @performance/tabs-on-change-check
 category: harmonyos-guides
 scraped_at: 2026-04-28T07:56:19+08:00

@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > �
 category: harmonyos-references
 scraped_at: 2026-04-29T13:53:15+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:d3bb0d9a2662080897a97618d0b0721e2efdf5fa86ba8f26a71e479e7e99bf06
+content_hash: sha256:09b2ab37fe342b77705e34e26f8804aca1f1d5e0cf984899535e82ac2e7424e9
 ---
 
 说明
@@ -109,7 +109,7 @@ content_hash: sha256:d3bb0d9a2662080897a97618d0b0721e2efdf5fa86ba8f26a71e479e7e9
 29. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/YxV7690vTdmgSfP0x5awrQ/zh-cn_image_0000002589246505.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055314Z&HW-CC-Expire=86400&HW-CC-Sign=882CEFC37CD873B266AC5197E4B6B70C482E594A7701534C4DFE36BF6E0680C0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/YxV7690vTdmgSfP0x5awrQ/zh-cn_image_0000002589246505.gif)
 
 ```
 1. <!-- xxx.hml -->
@@ -157,7 +157,7 @@ content_hash: sha256:d3bb0d9a2662080897a97618d0b0721e2efdf5fa86ba8f26a71e479e7e9
 14. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/Inof8TS8RQKbacm2W8dmRQ/zh-cn_image_0000002558766698.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055314Z&HW-CC-Expire=86400&HW-CC-Sign=F939B92AED985684398791A31FCBBD7F04A2E18B4CCBE4924BFCF580D1C144BC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/Inof8TS8RQKbacm2W8dmRQ/zh-cn_image_0000002558766698.gif)
 
 ```
 1. <!-- xxx.hml -->
@@ -215,7 +215,7 @@ content_hash: sha256:d3bb0d9a2662080897a97618d0b0721e2efdf5fa86ba8f26a71e479e7e9
 18. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/Z9Jk-LyzToO8Nh_B8TOjZg/zh-cn_image_0000002558607038.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055314Z&HW-CC-Expire=86400&HW-CC-Sign=118F3AD617B0848EDB08DF226B71783C61C81CC68EBBC1735AFE87E3F7C7F4BE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/Z9Jk-LyzToO8Nh_B8TOjZg/zh-cn_image_0000002558607038.gif)
 
 说明
 
@@ -223,4 +223,4 @@ content_hash: sha256:d3bb0d9a2662080897a97618d0b0721e2efdf5fa86ba8f26a71e479e7e9
 
 steps函数的end和start含义如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/Ku6yeWntTNO9NIlpsg5uUg/zh-cn_image_0000002589326565.png?HW-CC-KV=V1&HW-CC-Date=20260429T055314Z&HW-CC-Expire=86400&HW-CC-Sign=78E9350BCA249268FC6F9F94A304CFB7C01684E748292A3747BAD25F1D00D4CA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/Ku6yeWntTNO9NIlpsg5uUg/zh-cn_image_0000002589326565.png)

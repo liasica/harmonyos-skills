@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:51:16+08:00
 doc_updated_at: 2026-03-23
-content_hash: sha256:f8917f1add26b1a58b1675848213ff17fe1a84e6e3d2890114dca758f2490ba2
+content_hash: sha256:52fec94413b89b0dc5779c0a240139252daa5ad64e9d8fb3f508df04c50dd241
 ---
 
 组件级像素取整的目标是将像素取整功能作为组件的属性，从而在组件层面实现系统像素取整的开启或关闭。
@@ -138,8 +138,8 @@ PhonePC/2in1TabletTVWearable
 
 **图1** 使用pixelRound指导布局效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/sqaJBNPFRJmaYqsudKbobg/zh-cn_image_0000002589325891.png?HW-CC-KV=V1&HW-CC-Date=20260429T055115Z&HW-CC-Expire=86400&HW-CC-Sign=BC38B130BF42F856FA49E518BC13CA36776EEEE5875AEA0404CD153E589251EE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/sqaJBNPFRJmaYqsudKbobg/zh-cn_image_0000002589325891.png)
 
 **图2** 不使用pixelRound指导布局效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/hYF_FAf_QkyGTYXeRnOpRg/zh-cn_image_0000002589245833.png?HW-CC-KV=V1&HW-CC-Date=20260429T055115Z&HW-CC-Expire=86400&HW-CC-Sign=CAA723C7AB4A46D68CAE72E621E8CA7081587E88F94FB6E2D029EC1F14435C3D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/hYF_FAf_QkyGTYXeRnOpRg/zh-cn_image_0000002589245833.png)

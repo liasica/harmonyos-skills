@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-pasteboard
-title: @ohos.pasteboard (剪贴板)
+title: "@ohos.pasteboard (剪贴板)"
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > ArkTS API > 数据文件处理 > @ohos.pasteboard (剪贴板)
 category: harmonyos-references
 scraped_at: 2026-04-29T14:00:15+08:00

@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > JS
 category: harmonyos-references
 scraped_at: 2026-04-29T13:54:02+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:c073b21edcc99f8bbb46ebbe0b50caf1a4afd3c93ff83c827968bc46e57dd794
+content_hash: sha256:8914bfc9cf2dd0a7ebe5b15cbc25a116bda63d07de6bb0541bcb72c0ff0115f1
 ---
 
 时钟组件，用于提供时钟表盘界面。
@@ -49,7 +49,7 @@ PhonePC/2in1TabletTVWearable
 | digitRadiusRatio | number | 0.7 | 否 | 表盘数字中心到表盘中心距离 / 表盘资源边长的一半。  - 有效范围为(0, 1]。  - 该参数用于计算表盘数字在表盘上距离圆心的位置。  - 该参数可以保证同一套表盘资源在不同组件尺寸下都有同样的相对位置，而不需要针对每个组件尺寸都重新调整数字位置。  - 该参数设为1时数字会有部分区域超出表盘，建议结合表盘区域合理设置digitRadiusRatio。 |
 | digitSizeRatio | number | 0.08 | 否 | 表盘数字尺寸/表盘资源边长。  - 有效范围为(0, 0.142]。  - 该参数用于计算表盘数字相对表盘尺寸的大小。  - 该参数可以保证同一套表盘资源在不同组件尺寸下都有同样的相对大小，而不需要针对每个组件尺寸都重新调整字号。 |
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/nX51wP3QTXCowae19e83kQ/zh-cn_image_0000002558766956.png?HW-CC-KV=V1&HW-CC-Date=20260429T055401Z&HW-CC-Expire=86400&HW-CC-Sign=1714881B852455F40244BC8D7F4208E91E1FE522EDE573ACE76382C50C07F5EF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/nX51wP3QTXCowae19e83kQ/zh-cn_image_0000002558766956.png)
 
 ## 样式
 
@@ -132,4 +132,4 @@ PhonePC/2in1TabletTVWearable
 
 **2\*4卡片**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/4OZJxjC3RlSCR06p-Tml6Q/zh-cn_image_0000002558607296.png?HW-CC-KV=V1&HW-CC-Date=20260429T055401Z&HW-CC-Expire=86400&HW-CC-Sign=5A492BB7B7448D3D0639383DB975DC80C6DA0B0E298F5FEC4269577A43F37F99)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/4OZJxjC3RlSCR06p-Tml6Q/zh-cn_image_0000002558607296.png)

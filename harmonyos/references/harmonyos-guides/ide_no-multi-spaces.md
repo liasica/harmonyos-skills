@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_no-multi-spaces
-title: @hw-stylistic/no-multi-spaces
+title: "@hw-stylistic/no-multi-spaces"
 category: harmonyos-guides
 scraped_at: 2026-04-28T07:56:30+08:00
 doc_updated_at: 2026-01-15

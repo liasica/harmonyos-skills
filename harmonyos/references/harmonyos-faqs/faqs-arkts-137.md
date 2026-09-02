@@ -5,7 +5,7 @@ breadcrumb: FAQ > 应用框架开发 > ArkTS语言 > 方舟编程语言（ArkTS�
 category: harmonyos-faqs
 scraped_at: 2026-04-29T14:15:33+08:00
 doc_updated_at: 2026-03-17
-content_hash: sha256:75c1f27c1593ad22ce556c9a2012e83f22432a4bc600df0d7e92996a9d01c8a7
+content_hash: sha256:3332d154fd9128a54197b1a9c1cc2a4b06fc75c5fada2b9b30e0e274f0301011
 ---
 
 **问题现象**
@@ -14,7 +14,7 @@ TextEncoder编码字符串“你好abc”，格式是gbk，分别获取编码结
 
 TextEncoder编码结果属性buffer的长度比编码结果的长度略大。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/iQYEO_2VRdSiqDgW2_nXNw/zh-cn_image_0000002194318536.png?HW-CC-KV=V1&HW-CC-Date=20260429T061532Z&HW-CC-Expire=86400&HW-CC-Sign=9DBA0475258EED75B9E423DDDF60EE43A93E5E02EBE2E3EFAAC7CD7802DB0CE9 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/iQYEO_2VRdSiqDgW2_nXNw/zh-cn_image_0000002194318536.png "点击放大")
 
 **原因解释**
 

@@ -5,7 +5,7 @@ breadcrumb: FAQ > DevEco Studio > 编译构建 > 如何解决DevEco Studio编译
 category: harmonyos-faqs
 scraped_at: 2026-04-29T14:20:36+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:13441317451d31ee4732eeb1319e9f363b8b50a21fff7785ab24b3810d086b0b
+content_hash: sha256:595c98fddecb58a2d0935c17631a489fe765b7dc23044162d76c573256785933
 ---
 
 说明
@@ -18,7 +18,7 @@ content_hash: sha256:13441317451d31ee4732eeb1319e9f363b8b50a21fff7785ab24b3810d0
 
 1. 生成 sourceFile，在遍历文件时生成声明文件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/le5KPUZ0SBSFQDWLrqDCiQ/zh-cn_image_0000002229603953.png?HW-CC-KV=V1&HW-CC-Date=20260429T062034Z&HW-CC-Expire=86400&HW-CC-Sign=3F187F1EA7E4055A8032EB44845BAA6512331B7538BCC94ED4BEFA1259D57DA8 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/le5KPUZ0SBSFQDWLrqDCiQ/zh-cn_image_0000002229603953.png "点击放大")
 2. 修改 getEmitOutput 函数，将其改为 getFileEmitOutput 函数，以获取声明文件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/H4RrIYuGRr-0mfRzbby6KQ/zh-cn_image_0000002194318168.png?HW-CC-KV=V1&HW-CC-Date=20260429T062034Z&HW-CC-Expire=86400&HW-CC-Sign=C0784EDD95529EE9FF1419E317A27937D5FF526DEFFCF880BC726D8AFE11BA45 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/H4RrIYuGRr-0mfRzbby6KQ/zh-cn_image_0000002194318168.png "点击放大")

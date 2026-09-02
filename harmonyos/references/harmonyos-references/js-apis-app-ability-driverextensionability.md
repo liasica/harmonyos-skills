@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-driverextensionability
-title: @ohos.app.ability.DriverExtensionAbility (驱动程序扩展能力)
+title: "@ohos.app.ability.DriverExtensionAbility (驱动程序扩展能力)"
 breadcrumb: API参考 > 系统 > 硬件 > Driver Development Kit（驱动开发服务） > ArkTS API > @ohos.app.ability.DriverExtensionAbility (驱动程序扩展能力)
 category: harmonyos-references
 scraped_at: 2026-04-29T14:01:19+08:00

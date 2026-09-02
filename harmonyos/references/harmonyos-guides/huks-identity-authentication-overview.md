@@ -5,7 +5,7 @@ breadcrumb: 指南 > 系统 > 安全 > Universal Keystore Kit（密钥管理服�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:32:03+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:628ea929ea002924ef1d50ee47bba212382072bfc62729a2370925588424330a
+content_hash: sha256:9e5a386337b575b9ae42094183cf51a29e1a1937a265ea8420f37834822cd038
 ---
 
 HUKS提供了完备的密钥访问控制能力，以保证存储在HUKS中的密钥被合法正确地访问：
@@ -70,7 +70,7 @@ HUKS提供了完备的密钥访问控制能力，以保证存储在HUKS中的密
 
 * **根据AuthToken进行访问控制**
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/yHnstc8dRZWb3cLvoob_5Q/zh-cn_image_0000002589324779.png?HW-CC-KV=V1&HW-CC-Date=20260429T053201Z&HW-CC-Expire=86400&HW-CC-Sign=3AE1B5B5DD4D5339E645FD2B95B1F645AA1A027782B67730D1E5946811D68CD6)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/yHnstc8dRZWb3cLvoob_5Q/zh-cn_image_0000002589324779.png)
 
   用户身份认证访问控制流程如上图所示。
 

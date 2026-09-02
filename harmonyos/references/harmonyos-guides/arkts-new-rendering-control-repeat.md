@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:27:35+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:269fc4d48641957a5d37acfae7482019d388bc021132b8777a4014f1389c8f9e
+content_hash: sha256:636f3ceb2cd7082293d44da2785b867eb2287dd19e865734a0192a8a545f49d5
 ---
 
 说明
@@ -100,7 +100,7 @@ Repeat通过[.each()](../harmonyos-references/ts-rendering-control-repeat.md#eac
 
 运行后界面如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/cAEhpUqJRKCn0ZOpYo5eGQ/zh-cn_image_0000002558764154.png?HW-CC-KV=V1&HW-CC-Date=20260429T052733Z&HW-CC-Expire=86400&HW-CC-Sign=14C66225B3BBBE84FDBC4C8DE1651F474A0E48862F64170F6CC98C5012015CB5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/cAEhpUqJRKCn0ZOpYo5eGQ/zh-cn_image_0000002558764154.png)
 
 **多种类型子组件**
 
@@ -166,7 +166,7 @@ Repeat提供渲染模板（template）能力，可以在同一个数据源中渲
 
 运行后界面如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/1unsaUvIQCCjpyS8rt8F7g/zh-cn_image_0000002558604498.png?HW-CC-KV=V1&HW-CC-Date=20260429T052733Z&HW-CC-Expire=86400&HW-CC-Sign=D63E3F54C51D307A0FA64C8EA2B05ED448D0E0A4F65EF1A9FBD5E69AADAD928A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/1unsaUvIQCCjpyS8rt8F7g/zh-cn_image_0000002558604498.png)
 
 ### 键值生成规则
 
@@ -237,7 +237,7 @@ Repeat加载子节点具有懒加载和全量加载两种模式。开发者可�
 
 使用Repeat的.virtualScroll()属性，即可使能懒加载能力。在懒加载模式下，Repeat根据当前的容器组件显示区域和预加载区域范围，按需加载子组件。如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/F0xTYe8aTDe69XG_6SHBNA/zh-cn_image_0000002589324023.png?HW-CC-KV=V1&HW-CC-Date=20260429T052733Z&HW-CC-Expire=86400&HW-CC-Sign=23F5086FE74490AB48134DB53AD0A80D2F3C9D2D14F0DE8C41E32A8C5BEBF9E5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/F0xTYe8aTDe69XG_6SHBNA/zh-cn_image_0000002589324023.png)
 
 说明
 
@@ -285,7 +285,7 @@ Repeat节点复用时，不会触发子组件的[aboutToRecycle](../harmonyos-re
 
    首次渲染时列表的节点状态如下图所示（template type在图中简写为ttype）。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/VbtRdtjYQ16tNbsI3bVFWQ/zh-cn_image_0000002589243963.png?HW-CC-KV=V1&HW-CC-Date=20260429T052733Z&HW-CC-Expire=86400&HW-CC-Sign=8E307BC31BB01329683BA3420F9F30B8A650B582960BD5EFDC5B2221D9228363)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/VbtRdtjYQ16tNbsI3bVFWQ/zh-cn_image_0000002589243963.png)
 2. 滑动场景。
 
    将列表向下滑动一个节点的距离，Repeat会复用缓存池中的节点。
@@ -296,7 +296,7 @@ Repeat节点复用时，不会触发子组件的[aboutToRecycle](../harmonyos-re
 
    3）其余节点仍在容器显示区域和预加载区域范围，均只更新索引index。如果对应template type的缓存池已满，Repeat会在UI主线程空闲时销毁掉多余的节点。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/JQC1oAqOQbarD2czMJ6ZIw/zh-cn_image_0000002558764156.png?HW-CC-KV=V1&HW-CC-Date=20260429T052733Z&HW-CC-Expire=86400&HW-CC-Sign=210188A9D299614D411D7815A0DBE99540C278C2C83847DEC51E80412B1EF1BE)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/JQC1oAqOQbarD2czMJ6ZIw/zh-cn_image_0000002558764156.png)
 3. 数据更新场景。
 
    在上一小节的基础上做如下的数组更新操作，删除index=4的节点，修改节点数据07为new。
@@ -307,7 +307,7 @@ Repeat节点复用时，不会触发子组件的[aboutToRecycle](../harmonyos-re
 
    3）对于节点数据从07变为new的情况，页面监听到数据源变化将会触发重新渲染。Repeat数据更新触发重新渲染的逻辑是比较当前索引处节点数据item是否变化，以此判断是否进行UI刷新，仅改变键值不改变item的情况不会触发刷新。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/ViUkMSzhRAGf9CGmunOLeA/zh-cn_image_0000002558604500.png?HW-CC-KV=V1&HW-CC-Date=20260429T052733Z&HW-CC-Expire=86400&HW-CC-Sign=1915D1859AC52765ACDEB0499944492D7923EB0C1F7F3EB43200D2EF5812377F)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/ViUkMSzhRAGf9CGmunOLeA/zh-cn_image_0000002558604500.png)
 
 **全量加载模式下的节点更新/复用**
 
@@ -323,11 +323,11 @@ Repeat节点复用时，不会触发子组件的[aboutToRecycle](../harmonyos-re
 
 最后，如果新数组键值遍历结束后，deletedKeys非空，则销毁集合中的键值所对应的节点。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/r385_h0ETVenqErhj-FcWw/zh-cn_image_0000002589324025.png?HW-CC-KV=V1&HW-CC-Date=20260429T052733Z&HW-CC-Expire=86400&HW-CC-Sign=FDA6D7D78F64BD0D8FEC9020B8942FAA29B80F3EA850215D2278D1A7A299074F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/r385_h0ETVenqErhj-FcWw/zh-cn_image_0000002589324025.png)
 
 以下图中的数组变化为例，图中的item\_X表示数据项的键值key。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/OOwpX_V6SZGDH1u1fLgYpA/zh-cn_image_0000002589243965.png?HW-CC-KV=V1&HW-CC-Date=20260429T052733Z&HW-CC-Expire=86400&HW-CC-Sign=ED70CABC1440256844D5E5E724C29D0BB3296616A12A2A29351CFDA5110FDCD0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/OOwpX_V6SZGDH1u1fLgYpA/zh-cn_image_0000002589243965.png)
 
 根据上述判断逻辑：item\_0没有变化，item\_1和item\_2只更新了索引，item\_n1和item\_n2分别由item\_4和item\_3进行节点更新获得，item\_n3为新创建的节点。
 
@@ -387,7 +387,7 @@ Repeat全量加载模式与[ForEach](arkts-rendering-control-foreach.md)组件�
 
 [NodeUpdateMechanism.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/RenderingControl/entry/src/main/ets/pages/RenderingRepeat/NodeUpdateMechanism.ets#L16-L57)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/oFPWW_4DR3i1pzAdS4K4vQ/zh-cn_image_0000002558604480.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052733Z&HW-CC-Expire=86400&HW-CC-Sign=6C2AC4FC6AD254C53C4A5901E3DAC9BFEB35FAFDCAE4767B1C65A2240044C62C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/oFPWW_4DR3i1pzAdS4K4vQ/zh-cn_image_0000002558604480.gif)
 
 点击红色字体，第三个数据项发生变化（直接使用旧的组件节点，仅刷新数据）。
 
@@ -395,7 +395,7 @@ Repeat全量加载模式与[ForEach](arkts-rendering-control-foreach.md)组件�
 
 查看节点是否为复用可以使用[DevEco Testing](deveco-testing.md)工具进行查看，进入DevEco Testing工具后，选择实用工具，界面如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/IoBvJQkqQ3m-Bh3aazaLRA/zh-cn_image_0000002558764158.png?HW-CC-KV=V1&HW-CC-Date=20260429T052733Z&HW-CC-Expire=86400&HW-CC-Sign=7EDC2EEE7C3D97EB841BBB9A85F6402A948E007B31CDF877BFFEC83AC3EC284A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/IoBvJQkqQ3m-Bh3aazaLRA/zh-cn_image_0000002558764158.png)
 
 在实用工具中选择UIViewer，该工具可以获取设备快照、控件树信息及控件节点属性，在右侧的控件树中选择Repeat子节点，右下方的节点属性会显示节点ID等信息，可以通过节点ID是否相同，判断组件复用或者新建的情况。
 
@@ -462,7 +462,7 @@ Repeat全量加载模式与[ForEach](arkts-rendering-control-foreach.md)组件�
 
 运行效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/_ppO5i0ASqO28bBZnHe-6g/zh-cn_image_0000002558604502.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052733Z&HW-CC-Expire=86400&HW-CC-Sign=14017C28E0C54D001F21B5EA60D05803145D4B56EABE3B5C42E6AA1DB6196EEF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/_ppO5i0ASqO28bBZnHe-6g/zh-cn_image_0000002558604502.gif)
 
 **示例2**
 
@@ -512,7 +512,7 @@ Repeat全量加载模式与[ForEach](arkts-rendering-control-foreach.md)组件�
 
 运行效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/LdteCv7nRlyLqoHNblraHQ/zh-cn_image_0000002589324027.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052733Z&HW-CC-Expire=86400&HW-CC-Sign=D1AF373448512F181607603F2D60D1D8BB5084CB93158EE1DEACFF05353743C6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/LdteCv7nRlyLqoHNblraHQ/zh-cn_image_0000002589324027.gif)
 
 **示例3**
 
@@ -572,7 +572,7 @@ Repeat全量加载模式与[ForEach](arkts-rendering-control-foreach.md)组件�
 
 运行效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/jBfY6kXCR7S_svySsDyIHA/zh-cn_image_0000002589243967.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052733Z&HW-CC-Expire=86400&HW-CC-Sign=3E9AE519A91A5B27F50089E6D46D91B6CDEFCD2F44131D04B5A3F9460B101F11)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/jBfY6kXCR7S_svySsDyIHA/zh-cn_image_0000002589243967.gif)
 
 ### 拖拽排序
 
@@ -636,7 +636,7 @@ Repeat全量加载模式与[ForEach](arkts-rendering-control-foreach.md)组件�
 
 运行效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/zMvBYSHtQxSy0AwSnCktfQ/zh-cn_image_0000002558764160.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052733Z&HW-CC-Expire=86400&HW-CC-Sign=FB4ADC9BD390C8865361924A00D9F920D23EEE393EC541E209585104967D0019)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/zMvBYSHtQxSy0AwSnCktfQ/zh-cn_image_0000002558764160.gif)
 
 ### 数据前插保持
 
@@ -710,7 +710,7 @@ Repeat全量加载模式与[ForEach](arkts-rendering-control-foreach.md)组件�
 
 运行效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/a66dm5NfQBqSDICeNLCnmQ/zh-cn_image_0000002558604504.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052733Z&HW-CC-Expire=86400&HW-CC-Sign=786606992152332B56994A7BFBC2C99DD23A28F1796CD92EC083E9ECD679892E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/a66dm5NfQBqSDICeNLCnmQ/zh-cn_image_0000002558604504.gif)
 
 ## 常见使用场景
 
@@ -860,7 +860,7 @@ Repeat全量加载模式与[ForEach](arkts-rendering-control-foreach.md)组件�
 
 该示例代码展示了100项自定义类RepeatClazz的message字符串属性，[List](../harmonyos-references/ts-container-list.md)组件的[cachedCount](../harmonyos-references/ts-container-list.md#cachedcount)属性设为2，模板'odd'和'even'的空闲节点缓存池大小分别设为3和1。运行后界面如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/HWKNCZ_KR-O280wvZCHMnw/zh-cn_image_0000002589324029.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052733Z&HW-CC-Expire=86400&HW-CC-Sign=2527809FE43EB793FE7D67A0C1AD4C3036CA1F29D25D7F7090EB2DDF334AED86)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/HWKNCZ_KR-O280wvZCHMnw/zh-cn_image_0000002589324029.gif)
 
 ### Repeat嵌套
 
@@ -930,7 +930,7 @@ Repeat支持嵌套使用，示例代码如下：
 
 运行效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/GbxI7F_NQWeLkQDocFHyLA/zh-cn_image_0000002589243969.png?HW-CC-KV=V1&HW-CC-Date=20260429T052733Z&HW-CC-Expire=86400&HW-CC-Sign=1F9335BEC2F41733C9F61647900317A4A8B1D84D8D07A3D5A61D28D00B88D414)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/GbxI7F_NQWeLkQDocFHyLA/zh-cn_image_0000002589243969.png)
 
 ### 父容器组件应用场景
 
@@ -1039,7 +1039,7 @@ Repeat支持嵌套使用，示例代码如下：
 
 右滑并点击按钮，或点击底部按钮，可删除视频卡片：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/QeXwU6B2Su6pcFmfzfM5Cg/zh-cn_image_0000002558764162.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052733Z&HW-CC-Expire=86400&HW-CC-Sign=956EC1E937C26DCBEC2F6E55FF0E0C3538F012275AE7154FFBC5E33DA4453316)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/QeXwU6B2Su6pcFmfzfM5Cg/zh-cn_image_0000002558764162.gif)
 
 **与Grid组合使用**
 
@@ -1173,7 +1173,7 @@ Repeat支持嵌套使用，示例代码如下：
 
 下拉屏幕，或点击刷新按钮，或点击“先前浏览至此，点击刷新”，可加载新的视频内容：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/Zp-Qw8IpQX68hRkR7A9vQQ/zh-cn_image_0000002558604506.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052733Z&HW-CC-Expire=86400&HW-CC-Sign=41318A53A6929D5CD48008059C259DC0E94EFD324D2EDF8D0DBA22F72A57EDD1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/Zp-Qw8IpQX68hRkR7A9vQQ/zh-cn_image_0000002558604506.gif)
 
 **与Swiper组合使用**
 
@@ -1252,7 +1252,7 @@ Repeat支持嵌套使用，示例代码如下：
 
 定时1秒后加载图片，模拟网络延迟：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/3p6c1J12SXqu9wJTjeRjow/zh-cn_image_0000002589324031.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052733Z&HW-CC-Expire=86400&HW-CC-Sign=F38EC09E761CDA9FF9814160EA3729F0167EE148A013B59A0914391E222A1833)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/3p6c1J12SXqu9wJTjeRjow/zh-cn_image_0000002589324031.gif)
 
 ## 常见问题
 
@@ -1323,7 +1323,7 @@ Repeat支持嵌套使用，示例代码如下：
 
 运行效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/WAz67yhYR9-uqK_gK_vrig/zh-cn_image_0000002589243971.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052733Z&HW-CC-Expire=86400&HW-CC-Sign=AE1516A353A6184B48C3418A95FF1F49A8DAB92929D182DBD3348EB5FBA71474)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/WAz67yhYR9-uqK_gK_vrig/zh-cn_image_0000002589243971.gif)
 
 以下为修正后的示例：
 
@@ -1405,7 +1405,7 @@ Repeat从API version 20开始支持[数据前插保持](arkts-new-rendering-cont
 
 运行效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/SngR5W1RQF2420lCCy3M0A/zh-cn_image_0000002558764164.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052733Z&HW-CC-Expire=86400&HW-CC-Sign=700DCDFBC7FC5899C090435DD6EBE9945E8E9CCA0BA7CAEC66A5FC97F5441CA4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/SngR5W1RQF2420lCCy3M0A/zh-cn_image_0000002558764164.gif)
 
 ### totalCount值大于数据源长度
 
@@ -1506,7 +1506,7 @@ Repeat从API version 19开始支持[数据精准懒加载](arkts-new-rendering-c
 
 示例代码运行效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/mZnV7b-oT2CwSf_ebm8u1w/zh-cn_image_0000002558604508.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052733Z&HW-CC-Expire=86400&HW-CC-Sign=E38310075D49FA8C637CDCDD58A89CBF7AAFD6A870F859F7F64CACBCB7FF89B3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/mZnV7b-oT2CwSf_ebm8u1w/zh-cn_image_0000002558604508.gif)
 
 ### 与@Builder混用时状态变量未刷新
 
@@ -1578,7 +1578,7 @@ Repeat从API version 19开始支持[数据精准懒加载](arkts-new-rendering-c
 
 @Builder传参方式依次为makeBinding()、地址传递和值传递，界面展示如下图，进入页面后点击按钮改变数据。在@Builder构造函数中使用值传递传参不会引起函数内的UI刷新。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/NBIlbHTaRiiznh7Tv47gHg/zh-cn_image_0000002589324033.png?HW-CC-KV=V1&HW-CC-Date=20260429T052733Z&HW-CC-Expire=86400&HW-CC-Sign=5DEBBCC4331DBEFA5FDD80EFDB3814C396FEF922710B0A6B0680F9DBB2B7AFBD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/NBIlbHTaRiiznh7Tv47gHg/zh-cn_image_0000002589324033.png)
 
 ### expandSafeArea属性失效
 

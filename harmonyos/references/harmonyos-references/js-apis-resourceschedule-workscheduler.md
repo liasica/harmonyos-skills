@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-resourceschedule-workscheduler
-title: @ohos.resourceschedule.workScheduler (延迟任务调度)
+title: "@ohos.resourceschedule.workScheduler (延迟任务调度)"
 breadcrumb: API参考 > 应用框架 > Background Tasks Kit（后台任务开发服务） > ArkTS API > @ohos.resourceschedule.workScheduler (延迟任务调度)
 category: harmonyos-references
 scraped_at: 2026-04-28T08:05:33+08:00

@@ -5,7 +5,7 @@ breadcrumb: 最佳实践 > 稳定性 > 稳定性优化 > 稳定性编码规范 >
 category: best-practices
 scraped_at: 2026-04-29T14:14:14+08:00
 doc_updated_at: 2026-03-19
-content_hash: sha256:404bf2e909fe49a93a37fcddf45a5cd8eda85110d7e58056fa86d5fe9e8b39fe
+content_hash: sha256:5d56f284638df701117c8d97918d5cfbb40c42131d81762a8ff2d3797cfd34b9
 ---
 
 ## 视效API
@@ -16,7 +16,7 @@ content_hash: sha256:404bf2e909fe49a93a37fcddf45a5cd8eda85110d7e58056fa86d5fe9e8
 
 内外部多个应用在使用取色模糊时，AdaptiveColor参数选择了AVERAGE方式，导致出现帧率不达标问题。此参数已经标注在非DEFAULT方式下会产生耗时。典型 trace 如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/zHWzHGGASZCurHvh4VsmiA/zh-cn_image_0000002194009804.png?HW-CC-KV=V1&HW-CC-Date=20260429T061413Z&HW-CC-Expire=86400&HW-CC-Sign=E6E711F3154B2BC6C27955C02BECAAF6F2F7BDD2ED1C6D4D012E5056B9A5778A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/zHWzHGGASZCurHvh4VsmiA/zh-cn_image_0000002194009804.png)
 
 **【使用错误影响】**
 
@@ -1406,11 +1406,11 @@ MessageSequence类中的读写方法：
 
 具体创建的typedArray跟写时传递的类型枚举值TypeCode不匹配，报错read data from message sequence failed
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/nLEkxdbASB2VB4Y4-msZYw/zh-cn_image_0000002229335629.png?HW-CC-KV=V1&HW-CC-Date=20260429T061413Z&HW-CC-Expire=86400&HW-CC-Sign=444537B3C4D08E56D39E6B95DA0CD2FE25C4AABA91C25CDF084AFFD66FD67332)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/nLEkxdbASB2VB4Y4-msZYw/zh-cn_image_0000002229335629.png)
 
 字节不匹配，写入失败
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/ji9VwE4ERKq0p0PZHRaZIQ/zh-cn_image_0000002229335593.png?HW-CC-KV=V1&HW-CC-Date=20260429T061413Z&HW-CC-Expire=86400&HW-CC-Sign=BFD6470E514F7505EAF306F792F470D0AB164EF5CBD4626444A86D8B585A6BA8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/ji9VwE4ERKq0p0PZHRaZIQ/zh-cn_image_0000002229335593.png)
 
 7、onRemoteRequest函数报错，返回错误码4
 
@@ -1418,7 +1418,7 @@ MessageSequence类中的读写方法：
 
 客户端发送信息给服务端，服务端处理时出现错误，错误日志为：OnJsRemoteRequest failed, ret:4, time:xxxxx。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/chgKUmwjQ9uDoxi0HkzWEw/zh-cn_image_0000002193850224.png?HW-CC-KV=V1&HW-CC-Date=20260429T061413Z&HW-CC-Expire=86400&HW-CC-Sign=39D6CFC333910E45C1D2CC4CB639231FC506640CC0736F70128D196F43948B35)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/chgKUmwjQ9uDoxi0HkzWEw/zh-cn_image_0000002193850224.png)
 
 **【使用错误影响】**
 
@@ -1454,13 +1454,13 @@ sendMessageRequest(code: number, data: MessageSequence, reply: MessageSequence, 
 
 在使用上述方法时，确保在promise的.finally回调中释放不再需要的对象，并且确保promise的.then或.catch回调中的逻辑先于释放对象的操作。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/uqVXWDCPT-2v96qnvEBsAw/zh-cn_image_0000002229335609.png?HW-CC-KV=V1&HW-CC-Date=20260429T061413Z&HW-CC-Expire=86400&HW-CC-Sign=2FF42A94280E14F0B98ED6D3CBCFB6D4B57D663D06DDFCBEE5C03131B55F7DB4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/uqVXWDCPT-2v96qnvEBsAw/zh-cn_image_0000002229335609.png)
 
 sendMessageRequest(code: number, data: MessageSequence, reply: MessageSequence, options: MessageOption, callback: AsyncCallback<RequestResult>): void
 
 在使用此方法时，必须在AsyncCallback回调中获取业务数据后才能释放。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/a_YI1fMARYGbg-xEo1RkXA/zh-cn_image_0000002229335617.png?HW-CC-KV=V1&HW-CC-Date=20260429T061413Z&HW-CC-Expire=86400&HW-CC-Sign=D4AD7C4A13FFF0E746A64A24AF07BB6B8A4D7E6545FDEBEFC61228D091F69C67)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/a_YI1fMARYGbg-xEo1RkXA/zh-cn_image_0000002229335617.png)
 
 ## 图形API
 
@@ -1488,7 +1488,7 @@ sendMessageRequest(code: number, data: MessageSequence, reply: MessageSequence, 
 
 通过Native层接口调用时出现的崩溃问题
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/elXryqDbRuOjikpdjWuIxA/zh-cn_image_0000002229450073.png?HW-CC-KV=V1&HW-CC-Date=20260429T061413Z&HW-CC-Expire=86400&HW-CC-Sign=EF2801D051EEE3F483F76AB6A5F57D0C38FD00501AC055BAD2B385A0F488ADF6 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/elXryqDbRuOjikpdjWuIxA/zh-cn_image_0000002229450073.png "点击放大")
 
 **【使用错误影响】**
 
@@ -1511,7 +1511,7 @@ sendMessageRequest(code: number, data: MessageSequence, reply: MessageSequence, 
 
 crash的栈顶在libsurface.z.so中。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/0W-cSD3RRQiayuAQR7T_Fw/zh-cn_image_0000002194009832.png?HW-CC-KV=V1&HW-CC-Date=20260429T061413Z&HW-CC-Expire=86400&HW-CC-Sign=1D29A2107FFE8B104EC862BF691D76A72413F9E99BFE8E02EC1C6BACEA378FE2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/0W-cSD3RRQiayuAQR7T_Fw/zh-cn_image_0000002194009832.png)
 
 **【使用错误影响】**
 
@@ -1519,11 +1519,11 @@ crash的栈顶在libsurface.z.so中。
 
 2、另一个线程触发了nativewindow的析构流程。在析构流程中，会将buffer进行unreference操作，随后触发buffer的析构，最后将sfbuffer置空。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/rN5nbZAMQX6eswNkpJpDHQ/zh-cn_image_0000002194009780.png?HW-CC-KV=V1&HW-CC-Date=20260429T061413Z&HW-CC-Expire=86400&HW-CC-Sign=557414C1409E82273AB25EDD6504FCB01B7804F0E058445A4DF7AABB830F1C35)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/rN5nbZAMQX6eswNkpJpDHQ/zh-cn_image_0000002194009780.png)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/OqoaQKrRQIGPZzzwy0LuPQ/zh-cn_image_0000002229335597.png?HW-CC-KV=V1&HW-CC-Date=20260429T061413Z&HW-CC-Expire=86400&HW-CC-Sign=673FAE21ED3B14B5E3243BD0AF41190213AA2B19FCE20FDDB09667E9280BCD34)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/OqoaQKrRQIGPZzzwy0LuPQ/zh-cn_image_0000002229335597.png)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/otcpmPfjT6OanFvTreKVlQ/zh-cn_image_0000002193850200.png?HW-CC-KV=V1&HW-CC-Date=20260429T061413Z&HW-CC-Expire=86400&HW-CC-Sign=0D4908A6986428F9E32B1833C71BB87F768D4D42AB2394902478757116E4A4A4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/otcpmPfjT6OanFvTreKVlQ/zh-cn_image_0000002193850200.png)
 
 **【使用建议】**
 
@@ -1553,15 +1553,15 @@ napi\_async\_work 使用不规范导致了 UAF 问题。涉及的接口主要包
 
 打开某应用时发生闪退。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/UcBi-FL3RvCDo1z5TEOHow/zh-cn_image_0000002229450089.png?HW-CC-KV=V1&HW-CC-Date=20260429T061413Z&HW-CC-Expire=86400&HW-CC-Sign=579288BA0459FC836CC66CC49A32040579F58D36963047A5C5585FCDFB543950)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/UcBi-FL3RvCDo1z5TEOHow/zh-cn_image_0000002229450089.png)
 
 此栈主要由native开发者使用napi\_async\_work变量时，因生命周期管理不当导致UAF问题。难点在于这些栈都是系统栈，无法追踪到具体的调用方。然而，该问题是必然出现的，因此使用memtracker压测后，崩溃栈如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/Tm-jc1C9T5SwhZgO_6MuIA/zh-cn_image_0000002229335605.png?HW-CC-KV=V1&HW-CC-Date=20260429T061413Z&HW-CC-Expire=86400&HW-CC-Sign=8C4F7B7C6EC7527B3E44172E6A4CADFD16433AF1E0AD1737D924A45142BC83B7 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/Tm-jc1C9T5SwhZgO_6MuIA/zh-cn_image_0000002229335605.png "点击放大")
 
 根据上面崩溃栈，发现是liblargelanguagemodel.z.so申请和释放的内存，看一下他们的代码
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/JtT8isDcTr6Sjnpqddx10g/zh-cn_image_0000002229450065.png?HW-CC-KV=V1&HW-CC-Date=20260429T061413Z&HW-CC-Expire=86400&HW-CC-Sign=E6B2AC6950C8345486185F79E764C05FE62184B318C4173D9EB1CA6451617F54 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/JtT8isDcTr6Sjnpqddx10g/zh-cn_image_0000002229450065.png "点击放大")
 
 开发者使用智能指针管理AsyncWorkData这块内存。在将任务插入到异步任务队列后，智能指针被重置，导致在析构函数中调用napi\_delete\_async\_work。这使得异步任务流程还未完成时，内存已被释放，从而产生了UAF问题：
 
@@ -1645,13 +1645,13 @@ napi\_create\_arraybuffer、napi\_create\_sendable\_arraybuffer、napi\_get\_arr
 
 安装某应用后，如果搁置一段时间，会被强制退出，崩溃栈如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/vuU3NCXDTQ2cTrr2R23USw/zh-cn_image_0000002229450097.png?HW-CC-KV=V1&HW-CC-Date=20260429T061413Z&HW-CC-Expire=86400&HW-CC-Sign=6C2D4C3D11995CFC437D9969FF696B8BE7FAB1ACBC2369E1B69504505203E279 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/vuU3NCXDTQ2cTrr2R23USw/zh-cn_image_0000002229450097.png "点击放大")
 
 【案例分析】
 
 安装MemTracker地址越界检测工具后，发现问题是由于开发者手动释放了通过虚拟机创建的ArrayBuffer内存，而虚拟机在垃圾回收时再次尝试释放同一块内存，导致了double free。对于ArrayBuffer内存，应由虚拟机统一管理，无需开发者手动释放。如果开发者尝试手动释放这块内存，可能会引发double free问题。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/MiGgFG5fSW-Tsihnc-Yzyw/zh-cn_image_0000002194009824.png?HW-CC-KV=V1&HW-CC-Date=20260429T061413Z&HW-CC-Expire=86400&HW-CC-Sign=3A26FA5AAF96F01EF89E0AD81432C47D84BE765706D42B20B340163648EFA64F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/MiGgFG5fSW-Tsihnc-Yzyw/zh-cn_image_0000002194009824.png)
 
 **【最佳实践】**
 
@@ -1797,7 +1797,7 @@ napi\_create\_arraybuffer、napi\_create\_sendable\_arraybuffer、napi\_get\_arr
 
 也可在DevEco Studio中勾选多线程检测选项。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/885vBS4GTkylzMoQYe7-4g/zh-cn_image_0000002194009784.png?HW-CC-KV=V1&HW-CC-Date=20260429T061413Z&HW-CC-Expire=86400&HW-CC-Sign=D372EFFA26072B8A026051B6E1223C8862664690C96B64C1C3E30E3B5175EDA3 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/885vBS4GTkylzMoQYe7-4g/zh-cn_image_0000002194009784.png "点击放大")
 
 5、【multi-thread】跨线程使用napi\_add\_env\_cleanup\_hook导致多线程安全问题
 
@@ -1836,7 +1836,7 @@ napi\_create\_arraybuffer、napi\_create\_sendable\_arraybuffer、napi\_get\_arr
 
 开发过程中可打开多线程安全检测开关。若存在napi\_add\_env\_cleanup\_hook或napi\_remove\_env\_cleanup\_hook的多线程问题，hilog会打印第一现场的调用栈。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/jbxopWJnRLu_-bsOU9PYgg/zh-cn_image_0000002229450085.png?HW-CC-KV=V1&HW-CC-Date=20260429T061413Z&HW-CC-Expire=86400&HW-CC-Sign=3EC7588B6B1E51F600D43D8C145059BDF50CCCA6D11D02E28DDE42EC2488D736 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/jbxopWJnRLu_-bsOU9PYgg/zh-cn_image_0000002229450085.png "点击放大")
 
 6、开发者使用napi\_add\_env\_cleanup\_hook时，键值重复导致注册失败
 
@@ -1858,13 +1858,13 @@ napi\_create\_arraybuffer、napi\_create\_sendable\_arraybuffer、napi\_get\_arr
 
 修改方案：使用唯一的key
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/e3EYnrBORhuIY_cNA9vSUg/zh-cn_image_0000002194009776.png?HW-CC-KV=V1&HW-CC-Date=20260429T061413Z&HW-CC-Expire=86400&HW-CC-Sign=4875B4E1CEAB419BE2F685B867AD02CEDF9F00A37B964C6BC4FAE3D27AEE3C41 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/e3EYnrBORhuIY_cNA9vSUg/zh-cn_image_0000002194009776.png "点击放大")
 
 **【最佳实践】**
 
 打开多线程检测开关后，hilog会打印注册失败的backtrace。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/_q0rhWgWQeqNteZiz_ijJA/zh-cn_image_0000002229335637.png?HW-CC-KV=V1&HW-CC-Date=20260429T061413Z&HW-CC-Expire=86400&HW-CC-Sign=86A6FB0B029CFEB89C812B88D0F04D363BEACA17F2A9FE7400589AA3F5CD677F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/_q0rhWgWQeqNteZiz_ijJA/zh-cn_image_0000002229335637.png)
 
 7、【use after free】合理运用napi\_handle\_scope，避免超napi\_value生命周期导致崩溃
 
@@ -1907,7 +1907,7 @@ napi\_value受scope管控，出scope后napi\_value将失效，出scope后再使�
 16. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/XxnHaYubTW6dVHg6LDqibw/zh-cn_image_0000002193850244.png?HW-CC-KV=V1&HW-CC-Date=20260429T061413Z&HW-CC-Expire=86400&HW-CC-Sign=A2D177B3E9A74457EA661184430C4D25D40DCCD24C888F0D7F79E204E21D26B1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/XxnHaYubTW6dVHg6LDqibw/zh-cn_image_0000002193850244.png)
 
 创建时是对象（obj），但超出作用域后再次使用时，类型变为字符串（string），导致行为异常。
 
@@ -1928,7 +1928,7 @@ napi\_value受scope管控，出scope后napi\_value将失效，出scope后再使�
 7. static napi_value Test4(napi_env env, napi_callback_info info) { return objvalues; }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/CZUZUL5aStWX3J3PkWv49w/zh-cn_image_0000002229335621.png?HW-CC-KV=V1&HW-CC-Date=20260429T061413Z&HW-CC-Expire=86400&HW-CC-Sign=FE4860202237B046BD4A17882E273CD8B62ECB00642B92C7221099F98B77A962)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/CZUZUL5aStWX3J3PkWv49w/zh-cn_image_0000002229335621.png)
 
 **原因分析：**
 
@@ -1966,7 +1966,7 @@ napi\_value受scope管控，出scope后napi\_value将失效，出scope后再使�
 
 以上代码，结果符合预期
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/3-A-YXcmQRy6qZHBpLBsEg/zh-cn_image_0000002193850212.png?HW-CC-KV=V1&HW-CC-Date=20260429T061413Z&HW-CC-Expire=86400&HW-CC-Sign=E441F1FD779159CC80AE2E8BA60F7ADABB2922E65EF12FEF2FDF639C72609E89)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/3-A-YXcmQRy6qZHBpLBsEg/zh-cn_image_0000002193850212.png)
 
 2. 针对案例2，使用napi\_ref保存强引用。
 
@@ -2024,7 +2024,7 @@ napi\_value受scope管控，出scope后napi\_value将失效，出scope后再使�
 
 根据日志打印的env地址定位，发现env被释放后仍在使用。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/VlHbehFlR62_oNAT2sen1g/zh-cn_image_0000002229450105.png?HW-CC-KV=V1&HW-CC-Date=20260429T061413Z&HW-CC-Expire=86400&HW-CC-Sign=CC6D3E99FF4FED0674190F2F22825AD2A77D883137DF9B604C902E19698BAA5E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/VlHbehFlR62_oNAT2sen1g/zh-cn_image_0000002229450105.png)
 
 9、【use after free】开发者使用napi\_get\_reference\_value时，napi\_ref已被释放，导致UAF问题
 
@@ -2044,7 +2044,7 @@ napi\_value受scope管控，出scope后napi\_value将失效，出scope后再使�
 
 napi\_ref被释放后使用
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/kv7q8jkGTOmD5ze3hKD8pg/zh-cn_image_0000002229450077.png?HW-CC-KV=V1&HW-CC-Date=20260429T061413Z&HW-CC-Expire=86400&HW-CC-Sign=FA82845A9A2920F321ADF55F4B28D4900029F42AB68174DDA4F766041F16AE9A "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/kv7q8jkGTOmD5ze3hKD8pg/zh-cn_image_0000002229450077.png "点击放大")
 
 10、【buffer overflow】napi\_get\_value\_string\_utf8时，buffer长度不足导致越界问题
 
@@ -2075,7 +2075,7 @@ argc的值超过argv数组的实际长度，导致数组越界。
 6. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/ez_H_F0qRySaXhxa4cPI6Q/zh-cn_image_0000002193850216.png?HW-CC-KV=V1&HW-CC-Date=20260429T061413Z&HW-CC-Expire=86400&HW-CC-Sign=7D4A7B7B7A4BE5C04AA6A5BC38F37A3BE2C4877E36D2296F24458948FCDA19D2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/ez_H_F0qRySaXhxa4cPI6Q/zh-cn_image_0000002193850216.png)
 
 ## 示例代码
 

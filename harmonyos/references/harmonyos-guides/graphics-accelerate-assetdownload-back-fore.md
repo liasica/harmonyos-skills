@@ -5,14 +5,14 @@ breadcrumb: 指南 > 图形 > Graphics Accelerate Kit（图形加速服务） > 
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:36:31+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:037b9fe72164ce5a03d21452f886f10e5cfaf775d01d64a680f88b51f9e32ba3
+content_hash: sha256:3eae88b2f8b2378528758896dfb84646adc1156c428ee8f3d15fcd00244d947c
 ---
 
 系统后台静默下载过程中启动游戏，应用前台将接管系统后台下载任务，资源包下载任务将在应用前台接续执行。
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/jDfeeMkZQNOkrVY1-ybZiw/zh-cn_image_0000002558605562.png?HW-CC-KV=V1&HW-CC-Date=20260429T053629Z&HW-CC-Expire=86400&HW-CC-Sign=BA7C13DBF2CC043F64458D40770B6934B2F2D515E1843D54F66D7EE2E320F719)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/jDfeeMkZQNOkrVY1-ybZiw/zh-cn_image_0000002558605562.png)
 
 1. 用户在应用市场安装游戏后、用户在应用市场更新游戏后、系统检测到用户设备符合闲时条件时，游戏资源加速服务开启资源包后台下载。
 2. 游戏资源加速服务携带manifestUrl资源清单，向资源加速ExtensionAbility获取资源包下载任务列表。

@@ -5,7 +5,7 @@ breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC�
 category: harmonyos-guides
 scraped_at: 2026-04-28T07:51:31+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:f350955e9641feb1f74569fa749a05ffd9f23bc48cc9ecbc593070eb13d1d629
+content_hash: sha256:004c61467c2c5a543c496a97baf0dad24867a1518fd2a166201adf8682abf7d2
 ---
 
 ## 功能介绍
@@ -35,7 +35,7 @@ content_hash: sha256:f350955e9641feb1f74569fa749a05ffd9f23bc48cc9ecbc593070eb13d
    --dump-mode取normal，开启通用打印Scalar模式，其他参数参考[NPU调测参数](cannkit-cli-parameters.md#npu调测参数)按需配置。
 3. 查看屏显打印结果，示例如下。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/XBVZzxYVRjOb-UZlHMuA8Q/zh-cn_image_0000002552959250.png?HW-CC-KV=V1&HW-CC-Date=20260427T235129Z&HW-CC-Expire=86400&HW-CC-Sign=DB7373F19BD294B95E3D6543B8860296D4C6AF564BFDF5B084A73C572378246C)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/XBVZzxYVRjOb-UZlHMuA8Q/zh-cn_image_0000002552959250.png)
 
 ## 接口说明
 

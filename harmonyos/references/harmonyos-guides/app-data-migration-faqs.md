@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > Core File Kit（文件基础服务） > 应�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:29:42+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:854f6070da277d3d187ae935523b15ab0a9c20013d57ae1cdb3565c732f058dd
+content_hash: sha256:0baf04335c10978ff66db9056349565e396acff3af83bb20e17e51bd2c3d654e
 ---
 
 ## 应用数据迁移暂停
@@ -14,7 +14,7 @@ content_hash: sha256:854f6070da277d3d187ae935523b15ab0a9c20013d57ae1cdb3565c732f
 
 在数据加载界面，应用数据迁移暂停。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/esqLiqeGQJ2TR7mfehFVZg/zh-cn_image_0000002589244575.png?HW-CC-KV=V1&HW-CC-Date=20260429T052941Z&HW-CC-Expire=86400&HW-CC-Sign=2C9614843B25B74E3969117A210DECE8E4297F3F8B06267ED194A2CE2ACD3FF4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/esqLiqeGQJ2TR7mfehFVZg/zh-cn_image_0000002589244575.png)
 
 **可能原因**
 
@@ -24,7 +24,7 @@ content_hash: sha256:854f6070da277d3d187ae935523b15ab0a9c20013d57ae1cdb3565c732f
 
 单击“稍后连接WLAN加载”按钮，进入桌面后连接网络，终端设备网络可用后，恢复应用数据迁移。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/IL2VovVyQf67AoFyfZ1iBQ/zh-cn_image_0000002558764770.png?HW-CC-KV=V1&HW-CC-Date=20260429T052941Z&HW-CC-Expire=86400&HW-CC-Sign=FDB37CAA1E9504037A1D787A6830E141F44E4D25BEA614F64EE54F42177AB35D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/IL2VovVyQf67AoFyfZ1iBQ/zh-cn_image_0000002558764770.png)
 
 **问题现象2**
 
@@ -32,7 +32,7 @@ content_hash: sha256:854f6070da277d3d187ae935523b15ab0a9c20013d57ae1cdb3565c732f
 
 在应用加载界面，应用数据迁移暂停。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/Q3Ux7VrCT4m7axin_CKJDA/zh-cn_image_0000002558605114.png?HW-CC-KV=V1&HW-CC-Date=20260429T052941Z&HW-CC-Expire=86400&HW-CC-Sign=28A6099BECDBA608631F62349E0BE7E37E5C269E35EC6F7EAFC49D94A0A97513)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/Q3Ux7VrCT4m7axin_CKJDA/zh-cn_image_0000002558605114.png)
 
 **可能原因**
 
@@ -42,7 +42,7 @@ content_hash: sha256:854f6070da277d3d187ae935523b15ab0a9c20013d57ae1cdb3565c732f
 
 单击“稍后连接WLAN加载”按钮，进入桌面后连接网络，终端设备网络可用后，恢复应用数据迁移。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/_b_kXs0lTKWaYa6Gn_shXw/zh-cn_image_0000002589324639.png?HW-CC-KV=V1&HW-CC-Date=20260429T052941Z&HW-CC-Expire=86400&HW-CC-Sign=14D928E910B4C045E4D4B089367604A1125C8862EB194A4E2E1A0785EDC2D855)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/_b_kXs0lTKWaYa6Gn_shXw/zh-cn_image_0000002589324639.png)
 
 ## 应用数据迁移执行十五分钟后失败
 
@@ -50,7 +50,7 @@ content_hash: sha256:854f6070da277d3d187ae935523b15ab0a9c20013d57ae1cdb3565c732f
 
 应用数据迁移执行十五分钟后显示失败。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/6oeYGTHcTTSMUVnNm0MLNA/zh-cn_image_0000002558605112.png?HW-CC-KV=V1&HW-CC-Date=20260429T052941Z&HW-CC-Expire=86400&HW-CC-Sign=D622D35EC9D373A47AE3766166D2C94128909E80DEFEC5A6031ECC86C7C2298F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/6oeYGTHcTTSMUVnNm0MLNA/zh-cn_image_0000002558605112.png)
 
 **可能原因**
 

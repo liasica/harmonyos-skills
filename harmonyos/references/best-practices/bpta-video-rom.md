@@ -5,7 +5,7 @@ breadcrumb: 最佳实践 > 功耗 > 应用功耗优化 > 前台任务低功耗 >
 category: best-practices
 scraped_at: 2026-04-29T14:13:51+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:369c057a8ae1458143af5174e03fd072f9f5615e2fee43036818f6c238ad1aea
+content_hash: sha256:41aaf538b32777bf07610f0cd9ae2e1afdd012b4fccc3798f6eda6b70c3dc5ca
 ---
 
 ## 建议
@@ -36,4 +36,4 @@ content_hash: sha256:369c057a8ae1458143af5174e03fd072f9f5615e2fee43036818f6c238a
 
 通过查看storage\_info节点的信息，如下所示：Total Host Write Data表示整机下载文件的总大小（单位为100MB）。建议文件下载的总速率不超过20MB/min。以视频播放10分钟为例，测试前后的Total Host Write Data节点差值应小于或等于2，符合要求。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/RI_cXgyzQrWTip5ZY-PzGw/zh-cn_image_0000002229337325.png?HW-CC-KV=V1&HW-CC-Date=20260429T061350Z&HW-CC-Expire=86400&HW-CC-Sign=E19A017CB31FE4B8DCF84FDAC59D3534B654C02B5B5FA8D757610E89B981C0A8 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/RI_cXgyzQrWTip5ZY-PzGw/zh-cn_image_0000002229337325.png "点击放大")

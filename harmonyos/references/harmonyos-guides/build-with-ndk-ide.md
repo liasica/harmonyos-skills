@@ -5,12 +5,12 @@ breadcrumb: 指南 > NDK开发 > 构建NDK工程 > 使用DevEco Studio模板构�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:43:53+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:c2cf07630955b19f58aa11fb6f692373316b116f0d9a98903a7dae525034cf03
+content_hash: sha256:2e2f5439249e65e1b5015acea78005e7eac3b431d24d6311f301259e264e171c
 ---
 
 NDK通过CMake和Ninja编译应用的C/C++代码，编译过程如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/ysywgyuIQmaT84JfOF_6Jw/zh-cn_image_0000002589245667.png?HW-CC-KV=V1&HW-CC-Date=20260429T054352Z&HW-CC-Expire=86400&HW-CC-Sign=3395B2460ED70881339F728B5C23072E3CDA9557D13A36411150DF2EBC0F2B73)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/ysywgyuIQmaT84JfOF_6Jw/zh-cn_image_0000002589245667.png)
 
 核心编译过程如下：
 

@@ -1,6 +1,6 @@
 # HarmonyOS 文档全量索引
 
-共 12232 篇文档。先在本文件 grep 关键词获取相对路径，再 Read 对应 `.md`。
+共 12228 篇文档。先在本文件 grep 关键词获取相对路径，再 Read 对应 `.md`。
 
 ## 版本说明（`harmonyos-releases`）— 1009 篇
 
@@ -1014,7 +1014,7 @@
 - [应用升级适配指导-向6.0.0(20)升级](harmonyos-releases/upgrade-adaptation.md)
 - [开发工具链升级](harmonyos-releases/upgrade-tool-chain.md)
 
-## 指南（`harmonyos-guides`）— 4852 篇
+## 指南（`harmonyos-guides`）— 4851 篇
 
 - [使用ECC压缩/非压缩公钥格式转换(C/C++)](harmonyos-guides/-convert-compressed-or-uncompressed-ecc-pubkey-ndk.md)
 - [ArkTS卡片编辑概述](harmonyos-guides/-ui-widget-event-formeditextensionability-overview.md)
@@ -1230,7 +1230,6 @@
 - [应用配置文件（Stage模型）](harmonyos-guides/application-configuration-file-stage.md)
 - [FA模型的Context](harmonyos-guides/application-context-fa.md)
 - [应用上下文Context](harmonyos-guides/application-context-stage.md)
-- [应用开发导读](harmonyos-guides/application-dev-guide.md)
 - [应用开发导读](harmonyos-guides/application-dev-guide.md)
 - [应用开发准备](harmonyos-guides/application-dev-overview.md)
 - [应用模型](harmonyos-guides/application-models.md)
@@ -5869,7 +5868,7 @@
 - [XML解析](harmonyos-guides/xml-parsing.md)
 - [使用ECC压缩/非压缩公钥格式转换(ArkTS)](harmonyos-guides/ypto-convert-compressed-or-uncompressed-ecc-pubkey.md)
 
-## API 参考（`harmonyos-references`）— 4273 篇
+## API 参考（`harmonyos-references`）— 4272 篇
 
 - [AppServiceExtensionContext (应用后台服务扩展组件上下文)](harmonyos-references/-apis-inner-application-appserviceextensioncontext.md)
 - [EmbeddableUIAbilityContext](harmonyos-references/-apis-inner-application-embeddableuiabilitycontext.md)
@@ -7949,7 +7948,6 @@
 - [recoveryKey（企业恢复密钥）](harmonyos-references/dataguard-recoverykey.md)
 - [ArkUI_NodeAttributeType（导航类组件相关属性）](harmonyos-references/de-h-nodeattributetype-navigationrelatedcomponents.md)
 - [quickBarManager（快捷栏管理服务）](harmonyos-references/desktop-quickbar-extension-manager.md)
-- [开发说明](harmonyos-references/development-intro-api.md)
 - [开发说明](harmonyos-references/development-intro-api.md)
 - [Device Certificate Kit（设备证书服务）](harmonyos-references/device-certificate-api.md)
 - [错误码](harmonyos-references/device-certificate-arkts-errcode.md)
@@ -10145,7 +10143,7 @@
 - [用户券](harmonyos-references/yment-api-common-promotion-service-merc-coup-ucoup.md)
 - [zlib](harmonyos-references/zlib.md)
 
-## 最佳实践（`best-practices`）— 447 篇
+## 最佳实践（`best-practices`）— 446 篇
 
 - [PC/2in1异形窗口](best-practices/bpta-2in1-window-shape.md)
 - [水印添加](best-practices/bpta-add-watermark.md)
@@ -10206,7 +10204,6 @@
 - [图像模糊高效使用](best-practices/bpta-background-blur.md)
 - [应用退后台禁止使用传感器问题分析](best-practices/bpta-background-sensors-baned-analysis.md)
 - [长列表加载丢帧优化](best-practices/bpta-best-practices-long-list.md)
-- [最佳实践概览](best-practices/bpta-best-practices-overview.md)
 - [最佳实践概览](best-practices/bpta-best-practices-overview.md)
 - [低功耗蓝牙基础使用](best-practices/bpta-bluetooth-low-energy.md)
 - [基于Buffer模式进行视频转码](best-practices/bpta-buffer-mode-transcoding.md)
@@ -10595,7 +10592,7 @@
 - [多设备地图导航界面](best-practices/multi-travel-navigation.md)
 - [多设备长视频界面](best-practices/multi-video-app.md)
 
-## FAQ（`harmonyos-faqs`）— 1651 篇
+## FAQ（`harmonyos-faqs`）— 1650 篇
 
 - [如何获取系统时间戳](harmonyos-faqs/faq-basics-service-kit-1.md)
 - [如何获取系统版本号](harmonyos-faqs/faq-basics-service-kit-10.md)
@@ -10669,7 +10666,6 @@
 - [开发非UI功能，使用ts开发而非ets开发对应用有哪些影响（内存、CPU、hap大小等方面）](harmonyos-faqs/faqs-ability-98.md)
 - [如何判断App的启动来源](harmonyos-faqs/faqs-ability-99.md)
 - [程序框架（Ability）](harmonyos-faqs/faqs-ability-kit.md)
-- [多设备场景](harmonyos-faqs/faqs-ability-kit.md)
 - [程序框架](harmonyos-faqs/faqs-ability.md)
 - [权限申请被拒绝后，再次申请权限，是否出现申请权限弹窗](harmonyos-faqs/faqs-access-control-1.md)
 - [在系统设置修改了应用权限，应用能否监听到权限变化](harmonyos-faqs/faqs-access-control-10.md)

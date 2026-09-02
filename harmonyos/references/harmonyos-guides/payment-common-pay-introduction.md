@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用服务 > Payment Kit（鸿蒙支付服务） > 通用
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:39:32+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:f5358798a0bfcdf26e81dcdeb8d90638105495996412832f37b6edaeae0dac11
+content_hash: sha256:de2a4416f196b0ddda103c6fdaaba6f86616b8f82031b6e09941f7b37c54b5df
 ---
 
 说明
@@ -40,7 +40,7 @@ Payment Kit通用收银台上可以包含多种支付方式，支持自由组合
 
 可参考如下表格格式填写配置提供：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/9KbnPPvrTCCiTewO6mPjEA/zh-cn_image_0000002589245399.png?HW-CC-KV=V1&HW-CC-Date=20260429T053932Z&HW-CC-Expire=86400&HW-CC-Sign=5B4F52C50FDA4815BF145775CCC4F1B4538338AE74DDF0AB812205D15C827016)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/9KbnPPvrTCCiTewO6mPjEA/zh-cn_image_0000002589245399.png)
 
 ## 约束与限制
 

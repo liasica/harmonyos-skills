@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用服务 > Payment Kit（鸿蒙支付服务） > 运营
 category: harmonyos-guides
 scraped_at: 2026-04-28T07:50:13+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:2f9ef5644987152ee20ae4a094033c829b132748127b39603edcf9caae7a7934
+content_hash: sha256:7f08e2364628ae2a8770999458a5da285124ab9904f815eb6f745f5da33000c1
 ---
 
 ## 场景介绍
@@ -22,7 +22,7 @@ content_hash: sha256:2f9ef5644987152ee20ae4a094033c829b132748127b39603edcf9caae7
 
 领券场景展示效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/ULDxJ_HqQS-DhFXWugeIvQ/zh-cn_image_0000002552959098.png?HW-CC-KV=V1&HW-CC-Date=20260427T235012Z&HW-CC-Expire=86400&HW-CC-Sign=8002F7529C1712599C22339C2D8035FD10D832120C774A2130D6A53533E4971E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/ULDxJ_HqQS-DhFXWugeIvQ/zh-cn_image_0000002552959098.png)
 
 ## 接入流程
 
@@ -35,7 +35,7 @@ content_hash: sha256:2f9ef5644987152ee20ae4a094033c829b132748127b39603edcf9caae7
 
 关于领券场景的业务流程如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/9LFbAww6SFiORVn1wX5fTQ/zh-cn_image_0000002583479099.png?HW-CC-KV=V1&HW-CC-Date=20260427T235012Z&HW-CC-Expire=86400&HW-CC-Sign=BCCDF3193912F5721C3B0A779AE29A1BDB39CF741CD8B84242BC86F6ECA4EF58)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/9LFbAww6SFiORVn1wX5fTQ/zh-cn_image_0000002583479099.png)
 
 1. 用户进入商户服务。
 2. 商户客户端调用Payment Kit客户端的[startPromotionEntryDialog](../harmonyos-references/payment-promotionservice.md#startpromotionentrydialog)拉起活动入口组件。

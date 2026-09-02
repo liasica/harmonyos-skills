@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS并发 
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:26:40+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:11567c83337d98b001c6f59347911fcd0f4e09a911fa914e546a530ae048ba7e
+content_hash: sha256:398fd1c1dd6b8a9e99258a622574c5ec28f698ad4a7cacedc181b6b28985ab51
 ---
 
 CPU密集型任务是指需要占用系统资源进行大量计算的任务，这类任务需要长时间运行，会阻塞线程中其他事件的处理，因此不适合在UI主线程中执行。例如图像处理、视频编码、数据分析等。
@@ -83,7 +83,7 @@ CPU密集型任务是指需要占用系统资源进行大量计算的任务，�
 
 1. DevEco Studio提供了Worker创建的模板，创建一个Worker线程，例如命名为“MyWorker”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/-vKR51x4Tmef4nhdVXnPHw/zh-cn_image_0000002558764026.png?HW-CC-KV=V1&HW-CC-Date=20260429T052639Z&HW-CC-Expire=86400&HW-CC-Sign=92A2DCADB9EA3715D347F5BD5E791CCA5693B3EAA164B3D5813256533E457280)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/-vKR51x4Tmef4nhdVXnPHw/zh-cn_image_0000002558764026.png)
 2. 在宿主线程中首先调用ThreadWorker的[constructor()](../harmonyos-references/js-apis-worker.md#constructor9)方法创建Worker对象；然后通过注册[onmessage()](../harmonyos-references/js-apis-worker.md#属性-1)回调接收Worker线程发送过来的消息；最后通过调用[postMessage()](../harmonyos-references/js-apis-worker.md#postmessage9)方法向Worker线程发送消息。
 
    例如，向Worker线程发送训练和预测的消息，并接收Worker线程发送回来的消息。

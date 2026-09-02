@@ -5,7 +5,7 @@ breadcrumb: FAQ > DevEco Studio > 编译构建 > 构建报错"Cannot read proper
 category: harmonyos-faqs
 scraped_at: 2026-04-29T14:20:43+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:fcc24930a689fcfc4452140595136c0b3b012fec1adebc9ebd40176329ff6d35
+content_hash: sha256:f0d876cd95c8a9d071cc536fce57891c044dc412f84587d835b3c078a242cf07
 ---
 
 请先根据XXX的值从以下场景排查，没解决问题再参考最终方案。
@@ -37,7 +37,7 @@ content_hash: sha256:fcc24930a689fcfc4452140595136c0b3b012fec1adebc9ebd40176329f
 
      假设是entry模块的hvigorfile.ts中的代码导致的问题 ，XXX的有效值就是下图中的“default@SignHap”、“default@CollectDebugSymbol”、“assembleHap”等值。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/m6sJrRo5Rq218RfAESIcwA/zh-cn_image_0000002289418625.png?HW-CC-KV=V1&HW-CC-Date=20260429T061840Z&HW-CC-Expire=86400&HW-CC-Sign=A90428D44739459009535689941F0AD6ECFF0C8945C95C87F56AE95B968A50BF)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/m6sJrRo5Rq218RfAESIcwA/zh-cn_image_0000002289418625.png)
   2. 确保getTaskByName的使用位置是在Hvigor的配置阶段及之后的生命周期里，包括beforeNodeEvaluate、afterNodeEvaluate、nodesEvaluated、taskGraphResolved、buildFinished。
 
   **参考链接**
@@ -171,7 +171,7 @@ content_hash: sha256:fcc24930a689fcfc4452140595136c0b3b012fec1adebc9ebd40176329f
 
   确认堆栈内容是否如下。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/RBOT8QvTR02PjXDFaNSaAw/zh-cn_image_0000002289305561.png?HW-CC-KV=V1&HW-CC-Date=20260429T061840Z&HW-CC-Expire=86400&HW-CC-Sign=75A11363B6000F129F13D7CF20F72EC6BAFF5D79468CC40EA3C4620610B0413C)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/RBOT8QvTR02PjXDFaNSaAw/zh-cn_image_0000002289305561.png)
 
   **解决措施**
 
@@ -182,7 +182,7 @@ content_hash: sha256:fcc24930a689fcfc4452140595136c0b3b012fec1adebc9ebd40176329f
 
   执行hap覆盖率测试时，出现报错：“Error Message: Cannot read properties of undefined (reading 'module')”。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/aXa4N4eNRbWIBML7RttzDA/zh-cn_image_0000002523012117.png?HW-CC-KV=V1&HW-CC-Date=20260429T061840Z&HW-CC-Expire=86400&HW-CC-Sign=D8F6CB1EF6D2141493B4B892DF679F34FEAF0F9AE12E8590E8F92E089E6AAD2E)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/aXa4N4eNRbWIBML7RttzDA/zh-cn_image_0000002523012117.png)
 
   **可能原因**
 
@@ -192,7 +192,7 @@ content_hash: sha256:fcc24930a689fcfc4452140595136c0b3b012fec1adebc9ebd40176329f
 
   检查工程所有模块，如果build-profile.json5下targets里配置了ohosTest，模块内确保有src/ohosTest目录及目录对应结构；如不需要ohosTest，则在targets内删除ohosTest。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/KGWwij54T1u98UUtnW6xhA/zh-cn_image_0000002490972342.png?HW-CC-KV=V1&HW-CC-Date=20260429T061840Z&HW-CC-Expire=86400&HW-CC-Sign=AE461CA3E1B8E1105423F3D73B7A9036C93930CD9C3D7E0C6D746DE0583D6CFE)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/KGWwij54T1u98UUtnW6xhA/zh-cn_image_0000002490972342.png)
 * **最终方案：**
 
   如果以上场景都不符合，打开堆栈后，根据堆栈信息排查代码。
@@ -216,4 +216,4 @@ content_hash: sha256:fcc24930a689fcfc4452140595136c0b3b012fec1adebc9ebd40176329f
 
   请按照如下步骤进行操作：[提单链接](https://developer.huawei.com/consumer/cn/support/)，在线提单 -> 问题分类选择"HarmonyOS NEXT / 开发工具 / DevEco Studio"。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/1YKcbaGQSsKjAQ53S_C6mw/zh-cn_image_0000002254825302.png?HW-CC-KV=V1&HW-CC-Date=20260429T061840Z&HW-CC-Expire=86400&HW-CC-Sign=D3B2ADEFC3B9634761DC5C40B1404159C2C3B704AF4E1749DB89A6C0586805DF)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/1YKcbaGQSsKjAQ53S_C6mw/zh-cn_image_0000002254825302.png)

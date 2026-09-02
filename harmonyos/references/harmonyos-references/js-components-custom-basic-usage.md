@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > �
 category: harmonyos-references
 scraped_at: 2026-04-29T13:53:39+08:00
 doc_updated_at: 2026-03-23
-content_hash: sha256:624730462cd53abe388df41a092b723cb636dec39edaf484e58a8133f353e7db
+content_hash: sha256:f68e213c8e8a27542d210f54931cf9c8bc0af691a6eadcca2ddd02e365eb6041
 ---
 
 自定义组件是用户根据业务需求，将已有的组件组合，封装成的新组件，可以在工程中多次调用，从而提高代码的可读性。自定义组件通过element引入到宿主页面，使用方法如下：
@@ -153,7 +153,7 @@ PhonePC/2in1TabletTVWearable
 9. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/LSSduMQhSYyZhHRHsncyhQ/zh-cn_image_0000002558607122.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055338Z&HW-CC-Expire=86400&HW-CC-Sign=5675589CC4D0D121F47A7C649529FFD173B99D3A0D480448051043F3434013E4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/LSSduMQhSYyZhHRHsncyhQ/zh-cn_image_0000002558607122.gif)
 
 ## 自定义组件数据
 

@@ -5,7 +5,7 @@ breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > 创建�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:44:55+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:c6758d20fdefcb8dc515e7c8b590f2f410b5bd04654a5a621a0b908b31f7969c
+content_hash: sha256:2a59d0912d128fdfd3f8b97110fa4ff50d57e6bedf3e794aac5dbb059b17b627
 ---
 
 ## 概述
@@ -58,7 +58,7 @@ content_hash: sha256:c6758d20fdefcb8dc515e7c8b590f2f410b5bd04654a5a621a0b908b31f
    * API 11 Stage模型及以上，创建元服务工程或在元服务工程中创建模块时，不再默认创建卡片和EntryCard。
 2. 在**Choose a Template for Your Service Widget**界面中，选择卡片模板，单击**Next**。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/BrfXnZD7SPauI9V3AcgYPA/zh-cn_image_0000002561832691.png?HW-CC-KV=V1&HW-CC-Date=20260429T054454Z&HW-CC-Expire=86400&HW-CC-Sign=77D6234D090F38EDF5B1373EA50EC8B083911875BE80AFCDF26187F120BDBD45)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/BrfXnZD7SPauI9V3AcgYPA/zh-cn_image_0000002561832691.png)
 3. 在**Configure Your Service Widget**界面中，配置卡片的基本信息，包括：
    * **Service widget name**：卡片的名称，在同一个应用/元服务中，卡片名称不能重复，且只能包含大小写字母、数字和下划线。
    * **Display name**：卡片预览面板上显示的卡片名称。仅API 11 及以上Stage工程支持配置该字段。
@@ -69,7 +69,7 @@ content_hash: sha256:c6758d20fdefcb8dc515e7c8b590f2f410b5bd04654a5a621a0b908b31f
    * **Ability name：**选择一个挂靠卡片的Form Ability，或者创建一个新的Form Ability。
    * **Module name：**卡片所属的模块。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/5E_RFGE_QYWW8F4VH3lbuQ/zh-cn_image_0000002530752768.png?HW-CC-KV=V1&HW-CC-Date=20260429T054454Z&HW-CC-Expire=86400&HW-CC-Sign=D146C25E2F8170B0A2AE58E99A3283BB47EFC28BF62A246B51CFE7CF3CF0CEDD)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/5E_RFGE_QYWW8F4VH3lbuQ/zh-cn_image_0000002530752768.png)
 4. 单击**Finish**完成卡片的创建。创建完成后，工具会自动创建出卡片的布局文件，并在form\_config.json文件中写入服务卡片的属性字段，关于各字段的说明请参考[配置文件说明](arkts-ui-widget-configuration.md)。
 5. 卡片创建完成后，请根据开发指导，完成卡片的开发，详情请参考[服务卡片开发指南](arkts-ui-widget.md)。
 
@@ -77,6 +77,6 @@ content_hash: sha256:c6758d20fdefcb8dc515e7c8b590f2f410b5bd04654a5a621a0b908b31f
 
 在开发卡片过程中，支持对卡片进行实时预览。卡片通过ArkTS文件进行布局设计，在开发过程中，可以对布局文件进行实时预览，只要在布局文件中保存了修改的源代码，在预览器中就可以实时查看布局效果。在Phone和Tablet卡片的预览效果中，每个尺寸的卡片提供3种场景的预览效果，分别为极窄（Minimum）、默认（Default）、极宽(Maximum)，开发者应确保三种尺寸的显示效果均正常，以便适应不同屏幕尺寸的设备。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/_VztaM3NTRmYNHAK24MBcw/zh-cn_image_0000002530912762.png?HW-CC-KV=V1&HW-CC-Date=20260429T054454Z&HW-CC-Expire=86400&HW-CC-Sign=EFD0DA0556EE9EBF69E270ED7C47005599D9BB227FA50542DCB415B5C6DACAE4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/_VztaM3NTRmYNHAK24MBcw/zh-cn_image_0000002530912762.png)
 
 关于预览器的使用详细说明请参考[界面预览](ide-previewer-01.md)。

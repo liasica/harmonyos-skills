@@ -5,14 +5,14 @@ breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 在地图上绘�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:39:10+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:3981dd55e0fbef6249a715b153c3a9dd889c636c828fb213d3c3b4aa7db0ee0e
+content_hash: sha256:6eab36ad0c72c5076044d84116a0a783a0ae183df1a2ed62016db14e936081ac
 ---
 
 ## 场景介绍
 
 本章节将向您介绍如何在地图上绘制圆形。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/w2Rqx8nyScmTKOTpvq_AXg/zh-cn_image_0000002589245347.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053908Z&HW-CC-Expire=86400&HW-CC-Sign=1CBDEAE2CF03D5268C24EF23EF94FA66EF504AE08D96EB453B59728F2EE2E82B "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/w2Rqx8nyScmTKOTpvq_AXg/zh-cn_image_0000002589245347.jpg "点击放大")
 
 ## 接口说明
 
@@ -94,4 +94,4 @@ content_hash: sha256:3981dd55e0fbef6249a715b153c3a9dd889c636c828fb213d3c3b4aa7db
    57. }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/HftGvE7dQrqI5FvXYOv4yg/zh-cn_image_0000002558765540.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053908Z&HW-CC-Expire=86400&HW-CC-Sign=91E4E599FBFF38D056594F7889EB441F3F2DB477E870CDA6426A78E8CC4CB2F9 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/HftGvE7dQrqI5FvXYOv4yg/zh-cn_image_0000002558765540.jpg "点击放大")

@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_curly
-title: @hw-stylistic/curly
+title: "@hw-stylistic/curly"
 breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > ArkTS代码风格规则@hw-stylistic > @hw-stylistic/curly
 category: harmonyos-guides
 scraped_at: 2026-04-28T07:56:25+08:00

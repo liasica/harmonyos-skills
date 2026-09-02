@@ -5,7 +5,7 @@ breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:34:58+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:13a78f00a3257fe8513447218261cae9e5d0570f23952a243e3743e31f74e5d2
+content_hash: sha256:2ef04b77c58df838b64e73306565e8b5e29161caf9a3fdebecc41bfee8199c28
 ---
 
 [Worker](worker-introduction.md)主要作用是为应用程序提供一个多线程的运行环境，可满足应用程序在执行过程中与主线程分离，在后台线程中运行一个脚本进行耗时操作，极大避免类似计算密集型或高延迟的任务阻塞主线程的运行。
@@ -249,8 +249,8 @@ content_hash: sha256:13a78f00a3257fe8513447218261cae9e5d0570f23952a243e3743e31f7
 
 不使用Worker：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/n-C5PNdvRQWltMIxybAvNQ/zh-cn_image_0000002589324939.png?HW-CC-KV=V1&HW-CC-Date=20260429T053457Z&HW-CC-Expire=86400&HW-CC-Sign=F488F1861D699D68D196ED6F5F0E1ADD78AF956A77DEC354BF222A91E32976A1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/n-C5PNdvRQWltMIxybAvNQ/zh-cn_image_0000002589324939.png)
 
 使用Worker：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/5Xs_bXnHSNi96HAlCJgUzA/zh-cn_image_0000002589244875.png?HW-CC-KV=V1&HW-CC-Date=20260429T053457Z&HW-CC-Expire=86400&HW-CC-Sign=34973784250AA96479AB319382952729E634BA90CCE43C9EAE5E99D5DAB27373)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/5Xs_bXnHSNi96HAlCJgUzA/zh-cn_image_0000002589244875.png)

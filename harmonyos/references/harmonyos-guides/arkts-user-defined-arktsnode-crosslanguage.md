@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:28:19+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:600742ecd2152e8640d79163ba2394915a22492e4cbff8d85014f05435e8fccf
+content_hash: sha256:0e7db8aed422e0f2a1001819b2601df403bcff1441e206dddb7c6caafcada245
 ---
 
 ## 概述
@@ -391,7 +391,7 @@ ArkUI支持在前端使用ArkTS语言创建命令式节点，即[FrameNode](../h
    ```
 5. 运行程序，在ArkTS侧点击按钮，设置当前attributeSetting为true，在Native侧点击按钮，设置ArkTS侧Scroll组件滚动条的颜色和粗细属性。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/J4AX8vFiRPmQLWnxMyUn-Q/zh-cn_image_0000002589244315.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052817Z&HW-CC-Expire=86400&HW-CC-Sign=C3A26371351CE1FDD671DC0CEB5D2C919F90D21E14DA3D168AE205A9322C9085)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/J4AX8vFiRPmQLWnxMyUn-Q/zh-cn_image_0000002589244315.gif)
 
 ## 支持跨语言设置属性的节点类型
 

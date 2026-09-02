@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-avoid-overusing-custom-component-check
-title: @performance/avoid-overusing-custom-component-check
+title: "@performance/avoid-overusing-custom-component-check"
 breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 性能规则@performance > @performance/avoid-overusing-custom-component-check
 category: harmonyos-guides
 scraped_at: 2026-04-28T07:55:58+08:00

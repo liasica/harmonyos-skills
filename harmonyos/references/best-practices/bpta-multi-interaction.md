@@ -5,7 +5,7 @@ breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 >
 category: best-practices
 scraped_at: 2026-04-29T14:12:11+08:00
 doc_updated_at: 2026-04-13
-content_hash: sha256:675a43971bcdbc79d6138246d9dce733ef13c54f89d057c94f779154bb9ad236
+content_hash: sha256:046af0b54dfee27c7b11ba44d6729bed7008717afb401d5f262f5c4044c7acb7
 ---
 
 ## 概述
@@ -39,7 +39,7 @@ content_hash: sha256:675a43971bcdbc79d6138246d9dce733ef13c54f89d057c94f779154bb9
 交互归一是一种面向多设备输入的响应框架，通过将不同输入设备的交互行为抽象为同一事件，来简化开发逻辑，例如：触屏点击、触控板点击、鼠标左键单击、遥控器OK键确认等统一抽象为点击事件；遥控器功能键、键盘快捷键抽象为按键事件。交互归一实现对多样化输入源的统一处理，确保组件在不同交互场景下具备一致的行为逻辑与用户体验。
 
 **图1** 输入设备  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/4uXrFf0wQ4SW86w5OqHVFw/zh-cn_image_0000002499409917.png?HW-CC-KV=V1&HW-CC-Date=20260429T061208Z&HW-CC-Expire=86400&HW-CC-Sign=5E99AFBC01429F2B693442659A430415E1D64AD4C389E46C33BEDAC34454B7BD "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/4uXrFf0wQ4SW86w5OqHVFw/zh-cn_image_0000002499409917.png "点击放大")
 
 交互归一并非将所有输入方式简单合并为单一事件或通过一个API处理，而是通过对不同设备的几十种底层交互事件进行语义抽象与归类，在保证交互差异可控的前提下，大幅减少事件类型数量。最终形成的是一组标准化的交互API集合，开发者仍需根据具体场景选择并适配相应的抽象事件，以实现跨设备的一致性与灵活性兼顾的交互体验。
 
@@ -56,7 +56,7 @@ ArkUI框架提供了丰富的交互功能，支持直接处理[基础输入事�
   场景案例：使用手写笔在屏幕上书写，当手写笔在屏幕的某个位置第一次点击的位置（例如画板），当前画板组件就是交互的目标。
 
   **图2** 手写笔套件效果图  
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/02N6y-r1QfS6OGoHDf0anA/zh-cn_image_0000002513308069.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061208Z&HW-CC-Expire=86400&HW-CC-Sign=6E4ED4B46A5FFD458C42C2CC5147CE86414BDE7C000F2120DC32D59B6E230766 "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/02N6y-r1QfS6OGoHDf0anA/zh-cn_image_0000002513308069.gif "点击放大")
 
   手写笔套件的示例代码如下所示：
 
@@ -113,7 +113,7 @@ ArkUI框架提供了丰富的交互功能，支持直接处理[基础输入事�
   下图为常见基础输入事件，在不同输入设备上的触发方式。
 
   **图3** 输入设备基础输入事件触发方式一览表  
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/bGkItq-VTNK18qKrtccIrg/zh-cn_image_0000002545929217.png?HW-CC-KV=V1&HW-CC-Date=20260429T061208Z&HW-CC-Expire=86400&HW-CC-Sign=5004A80BDCD3A34C82CDDE7CEB47B9962C3DBEA74096B0E0B565FD7D0AA4B13B "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/bGkItq-VTNK18qKrtccIrg/zh-cn_image_0000002545929217.png "点击放大")
 
   说明
 
@@ -134,7 +134,7 @@ ArkUI框架提供了丰富的交互功能，支持直接处理[基础输入事�
 下图为常见手势事件在不同输入设备上的触发方式。
 
 **图4** 输入设备手势事件触发方式一览表  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/-aGOn7dzTBOlMCi-syTlnQ/zh-cn_image_0000002518761840.png?HW-CC-KV=V1&HW-CC-Date=20260429T061208Z&HW-CC-Expire=86400&HW-CC-Sign=B238E4A469FD021E34B107BAE8991A81B40261D1510E347E8C6101CB449C84B9 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/-aGOn7dzTBOlMCi-syTlnQ/zh-cn_image_0000002518761840.png "点击放大")
 
 如下是旋转手势的示例代码：
 
@@ -218,10 +218,10 @@ ArkUI框架提供了丰富的交互功能，支持直接处理[基础输入事�
 * 走焦：触发走焦时，系统遍历组件树中可走焦的组件。当前焦点框架支持三种走焦算法：线性走焦，按照子节点在节点树中的挂载顺序进行焦点导航；投影走焦，适用于容器内子组件尺寸不一的场景，通过空间位置关系计算最佳焦点目标；此外，开发者还可通过 [tabIndex](../harmonyos-references/ts-universal-attributes-focus.md#tabindex9)和[nextFocus](../harmonyos-references/ts-universal-attributes-focus.md#nextfocus18)灵活自定义走焦逻辑，满足复杂交互需求。详情可参考[走焦规范](../harmonyos-guides/arkts-common-events-focus-event.md#走焦规范)和[走焦算法](../harmonyos-guides/arkts-common-events-focus-event.md#走焦算法)。
 
   **图5** 使用键盘走焦  
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/5TXCpyaIQHCbJshNhLzpuA/zh-cn_image_0000002513429655.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061208Z&HW-CC-Expire=86400&HW-CC-Sign=02AF29C6C25373CEAC9AA211565D7E93377469095F60FF1E674D90A4B31D76C3 "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/5TXCpyaIQHCbJshNhLzpuA/zh-cn_image_0000002513429655.gif "点击放大")
 
 **图6** 走焦样式指引案例  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/R1VnADgVTRWJgBaZrREvdw/zh-cn_image_0000002499449901.png?HW-CC-KV=V1&HW-CC-Date=20260429T061208Z&HW-CC-Expire=86400&HW-CC-Sign=8C45EADB7CB2545688057AA0BDA529D2850FC7D81507C903A6967C569AFDA8B0 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/R1VnADgVTRWJgBaZrREvdw/zh-cn_image_0000002499449901.png "点击放大")
 
 更多焦点事件的能力和规范请参考[支持焦点处理](../harmonyos-guides/arkts-common-events-focus-event.md)。
 
@@ -238,7 +238,7 @@ ArkUI框架提供了丰富的交互功能，支持直接处理[基础输入事�
 下图为不同输入设备上支持触发焦点事件的方式。
 
 **图7** 输入设备焦点事件触发方式一览表  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/nCDiLMDsSNKZrH6uDWA7iw/zh-cn_image_0000002545901089.png?HW-CC-KV=V1&HW-CC-Date=20260429T061208Z&HW-CC-Expire=86400&HW-CC-Sign=BA5441AACFE3625C3233EAE7D9831103C84BBC5E30B38BB0C316CC1F52F5B6DA "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/nCDiLMDsSNKZrH6uDWA7iw/zh-cn_image_0000002545901089.png "点击放大")
 
 ### 拖拽事件
 
@@ -264,7 +264,7 @@ ArkUI框架提供了丰富的交互功能，支持直接处理[基础输入事�
 下图为不同输入设备上触发拖拽事件的方式。
 
 **图8** 输入设备拖拽事件触发方式一览表  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/hglzWxXJSuWz9uuAy0x12g/zh-cn_image_0000002545813259.png?HW-CC-KV=V1&HW-CC-Date=20260429T061208Z&HW-CC-Expire=86400&HW-CC-Sign=0F8D63A484823890BAA2B648311E76ADD9F3DDD784615847C8E66C2F94E79CD6 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/hglzWxXJSuWz9uuAy0x12g/zh-cn_image_0000002545813259.png "点击放大")
 
 如下是图片拖拽的示例代码：
 

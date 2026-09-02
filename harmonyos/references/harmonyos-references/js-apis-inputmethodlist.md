@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inputmethodlist
-title: @ohos.inputMethodList (输入法切换列表控件)
+title: "@ohos.inputMethodList (输入法切换列表控件)"
 breadcrumb: API参考 > 应用框架 > IME Kit（输入法开发服务） > ArkTS API > @ohos.inputMethodList (输入法切换列表控件)
 category: harmonyos-references
 scraped_at: 2026-04-29T13:56:40+08:00
 doc_updated_at: 2026-04-10
-content_hash: sha256:8552512a908a06dec589c055158e5b169de179ac890332cd5c6936449efa96f5
+content_hash: sha256:5d4efad2389e2f1c2e66c3f62e53126211d2574c1632d82d3992172184ba943b
 ---
 
 本模块主要面向系统应用和输入法应用，提供输入法切换列表控件，控件中显示默认输入法子类型和三方输入法应用列表，对于默认输入法应用，提供模式切换入口。
@@ -138,4 +138,4 @@ PhonePC/2in1TabletTVWearable
 
 示例效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/e9mpVfuPRWK37wgiinnocg/zh-cn_image_0000002589326911.png?HW-CC-KV=V1&HW-CC-Date=20260429T055636Z&HW-CC-Expire=86400&HW-CC-Sign=BAA1DD497B8E1A62C5FC792D7126AE0CC8B2B3D6EF1D8FF537B6A765D4EFFB53)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/e9mpVfuPRWK37wgiinnocg/zh-cn_image_0000002589326911.png)

@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:52:16+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:318bf6f7a473d942ae969c929cf90c720169e1e3faad65f81a44f303757f6685
+content_hash: sha256:1db8c6a8282cbe26443a03e15e6afe00be98ab856c02c9b82735407d1463e241
 ---
 
 SVG（Scalable Vector Graphics）是可缩放矢量图形，它是一种基于XML（可扩展标记语言）的图形格式，用于描述二维图形和图像。[Image](ts-basic-components-image.md)组件支持的SVG范围，为SVG1.1规范的部分功能。支持的标签以及属性如下：
@@ -123,7 +123,7 @@ SVG基础形状标签与支持的通用属性的示例如下。
 14. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/FOo_SGRlTx2-v8me-qLecg/zh-cn_image_0000002558606714.png?HW-CC-KV=V1&HW-CC-Date=20260429T055214Z&HW-CC-Expire=86400&HW-CC-Sign=8BADFB0B8DE544D42A0F2B24A7DCB6F202904E9AC857A7226BC25B16F4C5FDE2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/FOo_SGRlTx2-v8me-qLecg/zh-cn_image_0000002558606714.png)
 
 ## 图形效果
 

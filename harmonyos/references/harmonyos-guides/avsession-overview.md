@@ -5,7 +5,7 @@ breadcrumb: 指南 > 媒体 > AVSession Kit（音视频播控服务） > AVSessi
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:34:46+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:90a65e10ba93d47e07dfb55bb1b53a8bf0768989cb17348bd1e0c7ea1d269e92
+content_hash: sha256:6c53b4faa1e861d4a8579456ca4cbfc66b234d12774f9da67028222edd785389
 ---
 
 AVSession Kit（Audio & Video Session Kit，音视频播控服务）是系统提供的音视频管控服务，用于统一管理系统中所有音视频行为，帮助开发者快速构建音视频统一展示和控制能力。
@@ -52,7 +52,7 @@ AVSession Kit（Audio & Video Session Kit，音视频播控服务）是系统提
 
 媒体会话分为本地和分布式两种场景。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/xyk6D5HoR7aO2it8ejBF9Q/zh-cn_image_0000002589324923.png?HW-CC-KV=V1&HW-CC-Date=20260429T053445Z&HW-CC-Expire=86400&HW-CC-Sign=540E087648C73A033C8D750546338FB25A6429BD062894B7BBAB5F783F696EE0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/xyk6D5HoR7aO2it8ejBF9Q/zh-cn_image_0000002589324923.png)
 
 * 本地媒体会话
 

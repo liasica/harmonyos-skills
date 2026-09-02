@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发调试�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:29:00+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:39fb51e785007bc6c63b339d005d255b6cc10112b74bbd73dc4e8281245769c5
+content_hash: sha256:3822a22cef7c817718f27873cc2a59d12ffba861fb23212923d9a28def33835c
 ---
 
 本文档介绍按钮与选择组件的常见问题并提供参考。
@@ -16,11 +16,11 @@ Slider的滑块与滑轨显示样式[SliderStyle](../harmonyos-references/ts-bas
 
 SliderStyle.OutSet模式下，滑块的中心与滑轨的端点对齐，示例图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/Yh_TZuUiRhmwCGQdty6Qew/zh-cn_image_0000002589324525.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T052859Z&HW-CC-Expire=86400&HW-CC-Sign=C7354F4EF76B7CD58C962DB48B461955B8568497F846F4B9D004529F8E278A84)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/Yh_TZuUiRhmwCGQdty6Qew/zh-cn_image_0000002589324525.jpg)
 
 SliderStyle.InSet模式下，滑块与滑轨的中心对齐，即距离端点滑轨高度的一半的位置，示例图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/FlbTrlFeSzqEVgD5LY6TPg/zh-cn_image_0000002589244463.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T052859Z&HW-CC-Expire=86400&HW-CC-Sign=EAAC357070E6CC6618245703F091E8FC1CC490BBEF2FDE5669C7627C3F8C4639)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/FlbTrlFeSzqEVgD5LY6TPg/zh-cn_image_0000002589244463.jpg)
 
 **示例**
 
@@ -117,7 +117,7 @@ SliderStyle.InSet模式下，滑块与滑轨的中心对齐，即距离端点滑
 44. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/fwegmHcSRUG9w1z4N8rEzw/zh-cn_image_0000002558764656.png?HW-CC-KV=V1&HW-CC-Date=20260429T052859Z&HW-CC-Expire=86400&HW-CC-Sign=9C95F15B2BB0A0B8A3B59781AD7512DED4B644D9310264C67CCA7A7EF145E758)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/fwegmHcSRUG9w1z4N8rEzw/zh-cn_image_0000002558764656.png)
 
 ## Button组件设置type时，ButtonType枚举值与数字值不一致
 
@@ -186,4 +186,4 @@ Button组件的type属性支持使用[ButtonType](../harmonyos-references/ts-bas
 39. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/ISBwTYA8RfyPzltap4FgmA/zh-cn_image_0000002558605000.png?HW-CC-KV=V1&HW-CC-Date=20260429T052859Z&HW-CC-Expire=86400&HW-CC-Sign=3FA58888F6B95416A70E20421AA3566266EFF485BFEFECE1C40DF29B7D52E35B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/ISBwTYA8RfyPzltap4FgmA/zh-cn_image_0000002558605000.png)

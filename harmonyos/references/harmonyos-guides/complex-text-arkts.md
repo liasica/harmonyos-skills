@@ -5,7 +5,7 @@ breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 文本 
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:36:16+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:bab6ebafa81ac0f70e182f41a5ac23a5fc211703c3997cc230f49cf6edf57c36
+content_hash: sha256:0f9e74273e4782c120b369bd272224c876ff613af48332f275f31f38897e504b
 ---
 
 在进行文本绘制时，可以通过选择合适的字体、大小和颜色完成简单文本的绘制与显示；此外，还支持通过设置其他丰富的样式、语言、段落等进行复杂文本的绘制。
@@ -85,7 +85,7 @@ content_hash: sha256:bab6ebafa81ac0f70e182f41a5ac23a5fc211703c3997cc230f49cf6edf
 
 ### 效果展示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/vBTxiqF6QZKsKji1USieZA/zh-cn_image_0000002589244981.png?HW-CC-KV=V1&HW-CC-Date=20260429T053615Z&HW-CC-Expire=86400&HW-CC-Sign=F4999FCDC53E07D21E6F250258C4DF0EFD44A3C8EC9D7724579DE3BF44DD2976)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/vBTxiqF6QZKsKji1USieZA/zh-cn_image_0000002589244981.png)
 
 ## 多行文本绘制与显示
 

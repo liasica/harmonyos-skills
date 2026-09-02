@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-system-mediaquery
-title: @system.mediaquery (媒体查询)
+title: "@system.mediaquery (媒体查询)"
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > 已停止维护的接口 > @system.mediaquery (媒体查询)
 category: harmonyos-references
 scraped_at: 2026-04-28T08:00:51+08:00

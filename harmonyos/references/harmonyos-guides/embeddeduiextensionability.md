@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > Stage�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:25:45+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:a92168dea218eafcdd48618cf36bc1187f62f96e0478f1f57a478cc4027edbd9
+content_hash: sha256:682db90b391ff455adc63fd7fac0a43e781bba58f720019666eee413babffa7b
 ---
 
 ## 概述
@@ -18,7 +18,7 @@ EmbeddedUIExtensionAbility需要和[EmbeddedComponent](../harmonyos-references/t
 
 **图1** EmbeddedUIExtensionAbility示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/uALyDLpLTKOLBoEzJ1YS9A/zh-cn_image_0000002558604328.png?HW-CC-KV=V1&HW-CC-Date=20260429T052544Z&HW-CC-Expire=86400&HW-CC-Sign=CCDFD844898650BF1FC5F238B6311BD726DA7E7C34A8406CB5BFA4CA4A6AAA3F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/uALyDLpLTKOLBoEzJ1YS9A/zh-cn_image_0000002558604328.png)
 
 ## 约束限制
 

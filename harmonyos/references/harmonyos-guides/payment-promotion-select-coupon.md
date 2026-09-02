@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用服务 > Payment Kit（鸿蒙支付服务） > 运营
 category: harmonyos-guides
 scraped_at: 2026-04-28T07:50:13+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:c133f32f6ca965d43e3463b5b2878c083921aac2ac90460a6b866225718a2e16
+content_hash: sha256:a2502cb34c17d225dcdabef9b7fd71172f8631f43306d249b05bccfabe26658c
 ---
 
 ## 场景介绍
@@ -20,7 +20,7 @@ content_hash: sha256:c133f32f6ca965d43e3463b5b2878c083921aac2ac90460a6b866225718
 
 选券场景效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/f4AX1FFsRpOsF67NeBwarg/zh-cn_image_0000002552799450.png?HW-CC-KV=V1&HW-CC-Date=20260427T235012Z&HW-CC-Expire=86400&HW-CC-Sign=62FFB28A42B2888941A5BB67A458FBADF732F8A3298971176025504F86DAF049)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/f4AX1FFsRpOsF67NeBwarg/zh-cn_image_0000002552799450.png)
 
 ## 接入流程
 
@@ -33,7 +33,7 @@ content_hash: sha256:c133f32f6ca965d43e3463b5b2878c083921aac2ac90460a6b866225718
 
 关于选券场景的业务流程如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/Q9zY90PdScO355NygpAwfg/zh-cn_image_0000002583439145.png?HW-CC-KV=V1&HW-CC-Date=20260427T235012Z&HW-CC-Expire=86400&HW-CC-Sign=62CA1C057F2D5A52FF8D061BCA72F9B28C6D0B1A0CE523AB08CB964CE1EABF52)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/Q9zY90PdScO355NygpAwfg/zh-cn_image_0000002583439145.png)
 
 1. 用户选好商品后进入商家服务结算页。
 2. 商户客户端请求商户服务端查询用户可用券。

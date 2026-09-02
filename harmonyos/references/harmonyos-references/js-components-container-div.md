@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > �
 category: harmonyos-references
 scraped_at: 2026-04-29T13:53:17+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:8f8cfd35758927d16f976f3c49e1f9ce613b9a8a2329c2b42adc13833a163c00
+content_hash: sha256:6e132b99a9da8206d0d97de5bf6861e65f22d7c8f70d41710d6869e89b66553c
 ---
 
 说明
@@ -144,7 +144,7 @@ PhonePC/2in1TabletTVWearable
    29. }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/AXA5YTiDQwyRdGgishPUAA/zh-cn_image_0000002589326571.png?HW-CC-KV=V1&HW-CC-Date=20260429T055316Z&HW-CC-Expire=86400&HW-CC-Sign=2C4A3E8371FC75F9C97561196FA243A1E84CFD7C6D3429F4F086F09C2047913E)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/AXA5YTiDQwyRdGgishPUAA/zh-cn_image_0000002589326571.png)
 2. Flex Wrap样式
 
    ```
@@ -191,7 +191,7 @@ PhonePC/2in1TabletTVWearable
    30. }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/sUfJyyePRXOv1JkPt_zG5g/zh-cn_image_0000002589246513.png?HW-CC-KV=V1&HW-CC-Date=20260429T055316Z&HW-CC-Expire=86400&HW-CC-Sign=5F33D9CDA1226B2AC47A8131A6B744A802F027A9955C0CD806827DB0FFE80FAB)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/sUfJyyePRXOv1JkPt_zG5g/zh-cn_image_0000002589246513.png)
 3. Grid样式
 
    ```
@@ -256,7 +256,7 @@ PhonePC/2in1TabletTVWearable
    49. }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/GmyLNvirSjaVorLHvS95Gw/zh-cn_image_0000002558766706.png?HW-CC-KV=V1&HW-CC-Date=20260429T055316Z&HW-CC-Expire=86400&HW-CC-Sign=35E2129733C5EFE887A49243EBE3A6B333C442498A695D16AF840F49185D511E)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/GmyLNvirSjaVorLHvS95Gw/zh-cn_image_0000002558766706.png)
 4. 拖拽7+
 
    ```
@@ -306,7 +306,7 @@ PhonePC/2in1TabletTVWearable
    22. }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/59NWQUebRlGc5bAEC-JRZw/zh-cn_image_0000002558607046.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055316Z&HW-CC-Expire=86400&HW-CC-Sign=4AFE97BA8FAF692101B32412120C3E1FFAD75895AF119499785AB05C5FC9E216)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/59NWQUebRlGc5bAEC-JRZw/zh-cn_image_0000002558607046.gif)
 
    ```
    1. <!-- xxx.hml -->
@@ -369,7 +369,7 @@ PhonePC/2in1TabletTVWearable
    32. }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/A4xaheajT_aarGFp7u8ZqQ/zh-cn_image_0000002589326573.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055316Z&HW-CC-Expire=86400&HW-CC-Sign=E14D8DC63B19A1E631C0AC75154C8F415CF6FE7E41B159426C4A93ADC819968E)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/A4xaheajT_aarGFp7u8ZqQ/zh-cn_image_0000002589326573.gif)
 5. 手指捏合7+
 
    ```
@@ -425,4 +425,4 @@ PhonePC/2in1TabletTVWearable
    24. }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/Zt9_mstZRXivHxz8uWQGZw/zh-cn_image_0000002589246515.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055316Z&HW-CC-Expire=86400&HW-CC-Sign=065D819CD67101BDE69110D07219BA8B3B97CA72FE0D3D1B86FA80E0F9683ED6)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/Zt9_mstZRXivHxz8uWQGZw/zh-cn_image_0000002589246515.gif)

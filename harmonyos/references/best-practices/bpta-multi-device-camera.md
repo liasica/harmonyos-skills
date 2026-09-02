@@ -5,7 +5,7 @@ breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备功能开发 >
 category: best-practices
 scraped_at: 2026-04-29T14:12:40+08:00
 doc_updated_at: 2026-04-07
-content_hash: sha256:a3fda4570de24bb031a30941831d1d436e62255e1f6f2271171658da80c5a480
+content_hash: sha256:c54296c3279a4d414c64d9ba9b9c033f53221c9b9b818bae5d87c55edee4a664
 ---
 
 ## 概述
@@ -196,10 +196,10 @@ content_hash: sha256:a3fda4570de24bb031a30941831d1d436e62255e1f6f2271171658da80c
 
    * 在折叠态时CameraPosition为CAMERA\_POSITION\_FRONT，效果图如下：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/OFULryAnRGyvIPi7jgFeeg/zh-cn_image_0000002355147089.png?HW-CC-KV=V1&HW-CC-Date=20260429T061234Z&HW-CC-Expire=86400&HW-CC-Sign=FB36D8EA23E55F97ACEDDD3F1A2EA458EF96E1C51F5C0FBB8012928D2C7BCB7C "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/OFULryAnRGyvIPi7jgFeeg/zh-cn_image_0000002355147089.png "点击放大")
    * 在展开态时CameraPosition为CAMERA\_POSITION\_BACK，效果图如下：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/ThP3e7PfSY-MwP9Bg7GQZg/zh-cn_image_0000002321148366.png?HW-CC-KV=V1&HW-CC-Date=20260429T061234Z&HW-CC-Expire=86400&HW-CC-Sign=1AC846ACD66AB2E248B3665C0814FC7B010F15A2BFA954E4C711F309AA84D440 "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/ThP3e7PfSY-MwP9Bg7GQZg/zh-cn_image_0000002321148366.png "点击放大")
 2. 其他需要重置预览流的场景需要开发者单独处理。折叠状态切换（例如双折叠的折叠态切换至半折叠态），会导致显示屏幕变化，需要重新选择相机设备。所以在[display.on('foldStatusChange')](../harmonyos-references/js-apis-display.md#displayonfoldstatuschange10)中判断变化前后的折叠状态，并根据变化前使用的相机位置，选择变化后使用前置相机或后置相机。
 
    ```
@@ -474,7 +474,7 @@ XComponent组件对应Surface区域的宽高比，取决于用户预览时设备
 
 悬停态对应折叠状态为FOLD\_STATUS\_HALF\_FOLDED。在进入悬停态时，可以设计特殊的用户体验，UX效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/TiBsw5pBSq6mnBa4RrKaFg/zh-cn_image_0000002355266965.png?HW-CC-KV=V1&HW-CC-Date=20260429T061234Z&HW-CC-Expire=86400&HW-CC-Sign=AC6040313B1E9E4D6C6E90AC1139680C6B7F6C0D3EDAAF22751C2B5AC88033D5 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/TiBsw5pBSq6mnBa4RrKaFg/zh-cn_image_0000002355266965.png "点击放大")
 
 ### 开发步骤
 

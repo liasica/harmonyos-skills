@@ -5,7 +5,7 @@ breadcrumb: 最佳实践 > 应用架构 > 分层架构设计
 category: best-practices
 scraped_at: 2026-04-29T14:10:17+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:2811461cf9fd38c039c73dae13b88a9819ed0febb9e540039d337a81563f6562
+content_hash: sha256:7d86c4267ea55bd6e81d4942b635a9958adac61989dcf129b6f443886b466603
 ---
 
 HarmonyOS 应用的分层架构设计基于一套代码工程，支持华为手机、PC/2in1等1+8全场景设备，实现了“一次开发，多端部署”的开发理念。
@@ -17,7 +17,7 @@ HarmonyOS应用分层架构包括产品定制层、基础特性层和公共能�
 ## 逻辑模型
 
 **图1** 分层架构逻辑模型  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/ua3xkopNT9ia7O9iynETMg/zh-cn_image_0000002229336237.png?HW-CC-KV=V1&HW-CC-Date=20260429T061016Z&HW-CC-Expire=86400&HW-CC-Sign=7B57A56CBDCFF00779C6E9E4A3282CF8E3C3DAECCC090EB25CD20915FAF9C22F "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/ua3xkopNT9ia7O9iynETMg/zh-cn_image_0000002229336237.png "点击放大")
 
 * **产品定制层**
 
@@ -49,7 +49,7 @@ HarmonyOS应用分层架构包括产品定制层、基础特性层和公共能�
 ## 开发模型
 
 **图2** 分层架构开发模型  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/D35K9cwYSP-FJ1wQdR01BA/zh-cn_image_0000002194010440.png?HW-CC-KV=V1&HW-CC-Date=20260429T061016Z&HW-CC-Expire=86400&HW-CC-Sign=3354D1918825BD50C658C4F9651825DD9DA843F68D3DAFF3CAB4258705E49170 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/D35K9cwYSP-FJ1wQdR01BA/zh-cn_image_0000002194010440.png "点击放大")
 
 * **产品定制层**
 
@@ -69,7 +69,7 @@ HarmonyOS应用分层架构包括产品定制层、基础特性层和公共能�
 ## 部署模型
 
 **图3** 分层架构部署模型（不同设备的定制）  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/2Bm4Nn1kRii14SeYTHKn8w/zh-cn_image_0000002229450717.png?HW-CC-KV=V1&HW-CC-Date=20260429T061016Z&HW-CC-Expire=86400&HW-CC-Sign=0239820DEE2408A16A5244751DADF601D476F6CE1F1C78C126DD5A2670291BF4 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/2Bm4Nn1kRii14SeYTHKn8w/zh-cn_image_0000002229450717.png "点击放大")
 
 应用程序（.app文件）在流水线或应用市场上被解包为N个Entry类型的HAP和N个Feature类型的HAP，根据设备类型和使用场景部署到不同设备，实现多端统一用户体验。
 

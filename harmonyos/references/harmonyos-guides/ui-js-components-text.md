@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:28:47+08:00
 doc_updated_at: 2026-04-13
-content_hash: sha256:773d6cd1ddaeed72d9a27aeec9204f4b58ca4f24db2e461c7b06c6586029a71a
+content_hash: sha256:ad46c9dd5375c1cdbbab21bdc4f73e9512314c249f25eb669018f00660635872
 ---
 
 text是文本组件，用于呈现一段文本信息。具体用法请参考[text](../harmonyos-references/js-components-basic-text.md)的API文档。
@@ -33,7 +33,7 @@ text是文本组件，用于呈现一段文本信息。具体用法请参考[tex
 9. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/zbIQnrKaQmOqUt3eO4JQnA/zh-cn_image_0000002589324457.png?HW-CC-KV=V1&HW-CC-Date=20260429T052846Z&HW-CC-Expire=86400&HW-CC-Sign=198404074BFB09C13F9FB11ED5B144B1AE619D1F31365B459D92C0FE72DF4F48)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/zbIQnrKaQmOqUt3eO4JQnA/zh-cn_image_0000002589324457.png)
 
 ## 设置text组件样式和属性
 
@@ -66,7 +66,7 @@ text是文本组件，用于呈现一段文本信息。具体用法请参考[tex
   10. }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/pN3U4MRxRAeMvPVFNzM_RQ/zh-cn_image_0000002589244397.png?HW-CC-KV=V1&HW-CC-Date=20260429T052846Z&HW-CC-Expire=86400&HW-CC-Sign=890C7B4F9BD0B7DD141E3CEE36217154C0D0FC5B604AFED33D920B7205684F0F)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/pN3U4MRxRAeMvPVFNzM_RQ/zh-cn_image_0000002589244397.png)
 * 添加划线
 
   设置text-decoration和text-decoration-color属性为文本添加划线和划线颜色，text-decoration枚举值请参考 text自有样式。
@@ -97,7 +97,7 @@ text是文本组件，用于呈现一段文本信息。具体用法请参考[tex
   11. }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/N8wrox4KQjGC78IMGBBwZg/zh-cn_image_0000002558764590.png?HW-CC-KV=V1&HW-CC-Date=20260429T052846Z&HW-CC-Expire=86400&HW-CC-Sign=9320261A0873BEEF1CE930BD1FBBCDC1B1AFD7253AD970FFBBC2DC09CE1AF6DE)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/N8wrox4KQjGC78IMGBBwZg/zh-cn_image_0000002558764590.png)
 * 隐藏文本内容
 
   当文本内容过多而显示不全时，添加text-overflow属性将隐藏内容以省略号的形式展现。
@@ -133,7 +133,7 @@ text是文本组件，用于呈现一段文本信息。具体用法请参考[tex
   + text-overflow样式需配合max-lines样式使用，在设置了最大行数的情况下才会生效。
   + max-lines属性设置文本最多可以展示的行数。
 
-  ​ ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/Rzf81ZIAQB2T94epZj5QZQ/zh-cn_image_0000002558604934.png?HW-CC-KV=V1&HW-CC-Date=20260429T052846Z&HW-CC-Expire=86400&HW-CC-Sign=D6A2B2040C1BDCC599EDE45C21876CEB30EBCEE3CD7CC25BAF47D3F702B0FAE9)
+  ​ ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/Rzf81ZIAQB2T94epZj5QZQ/zh-cn_image_0000002558604934.png)
 * text组件支持[span](../harmonyos-references/js-components-basic-span.md)子组件
 
   ```
@@ -151,7 +151,7 @@ text是文本组件，用于呈现一段文本信息。具体用法请参考[tex
   12. </div>
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/D9zdnR6kRZ2J_iCqMwcV7g/zh-cn_image_0000002589324459.png?HW-CC-KV=V1&HW-CC-Date=20260429T052846Z&HW-CC-Expire=86400&HW-CC-Sign=35B1364EB8B17529DF8C1E5C1FF40CF04E5D248A1F8D5D219B7BBE5AFBB126CA)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/D9zdnR6kRZ2J_iCqMwcV7g/zh-cn_image_0000002589324459.png)
 
   说明
 
@@ -213,4 +213,4 @@ text组件通过数据绑定展示文本内容，span组件通过设置show属�
 11. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/smg7mui8Qkiv0RqjfYL9Lg/zh-cn_image_0000002589244399.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052846Z&HW-CC-Expire=86400&HW-CC-Sign=4389ED8F73F7F6429D9F25A5C76C635AC85634931948AC9EBB3DC7086F2ABBBE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/smg7mui8Qkiv0RqjfYL9Lg/zh-cn_image_0000002589244399.gif)

@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inputmethod-subtype
-title: @ohos.InputMethodSubtype (输入法子类型)
+title: "@ohos.InputMethodSubtype (输入法子类型)"
 breadcrumb: API参考 > 应用框架 > IME Kit（输入法开发服务） > ArkTS API > @ohos.InputMethodSubtype (输入法子类型)
 category: harmonyos-references
 scraped_at: 2026-04-28T08:06:06+08:00

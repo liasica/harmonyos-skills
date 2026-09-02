@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > Data Augmentation Kit（数据增强服务�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:29:52+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:f659f22d5f71ab26ef3dcd539aabde4a7333122289c28ecbf46e70846f7077ed
+content_hash: sha256:d6fcf53e455fb5ff326c53b8bb68bdda2bc541e01892f5fa7c440d6c8470ce69
 ---
 
 ## 场景介绍
@@ -70,7 +70,7 @@ content_hash: sha256:f659f22d5f71ab26ef3dcd539aabde4a7333122289c28ecbf46e70846f7
 
 以多路召回结果作为输入，基于RRF算法实现多路召回结果的重排，并支持多路召回的每路进行权重配置。RRF算法通常会根据元素在各个召回策略中的排名来计算RRF得分。例如，对于一个元素在不同召回策略中的排名分别为 \_r\_1,\_r\_2,⋯,r\*\*n，其 RRF得分可以通过以下公式来计算。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/0J4n-0mFTNOMwWUcZujMmw/zh-cn_image_0000002589324649.png?HW-CC-KV=V1&HW-CC-Date=20260429T052950Z&HW-CC-Expire=86400&HW-CC-Sign=25490F6362EEFD0EAD8606C2185010C2615B91F1324F088613608A85595699BA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/0J4n-0mFTNOMwWUcZujMmw/zh-cn_image_0000002589324649.png)
 
 其中\_k\_是一个常数，用于调整排名的影响程度。通过计算每个元素的RRF得分，将元素根据得分进行排序，得到结果列表。
 

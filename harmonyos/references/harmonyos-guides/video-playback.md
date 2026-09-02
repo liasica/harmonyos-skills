@@ -5,7 +5,7 @@ breadcrumb: 指南 > 媒体 > Media Kit（媒体服务） > 媒体开发指导(A
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:35:23+08:00
 doc_updated_at: 2026-04-13
-content_hash: sha256:c188bc1b04b326e0a953df60870b2cf5c6c3c48852711eb64ada7ac7d1bcdb8e
+content_hash: sha256:b379c899e3c66c62b9564cca6bc2ccd4d7cb776ba23b893f6b4e058be72ea23a
 ---
 
 当前提供两种视频播放开发的方案：
@@ -19,7 +19,7 @@ content_hash: sha256:c188bc1b04b326e0a953df60870b2cf5c6c3c48852711eb64ada7ac7d1b
 
 **图1** 播放状态变化示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/rL-Mt6tMR4GqgCX3ECfW6w/zh-cn_image_0000002589244901.png?HW-CC-KV=V1&HW-CC-Date=20260429T053522Z&HW-CC-Expire=86400&HW-CC-Sign=E305AB54D90099CCD5E02DD07D01417AA3872C604E493DD9055C4F4FEB39E5E9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/rL-Mt6tMR4GqgCX3ECfW6w/zh-cn_image_0000002589244901.png)
 
 状态的详细说明请参考[AVPlayerState](../harmonyos-references/arkts-apis-media-t.md#avplayerstate9)。当播放处于prepared / playing / paused / completed状态时，播放引擎处于工作状态，这需要占用系统较多的运行内存。当客户端暂时不使用播放器时，调用reset()或release()回收内存资源，做好资源释放。
 

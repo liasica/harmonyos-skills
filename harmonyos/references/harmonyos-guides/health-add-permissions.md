@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用服务 > Health Service Kit（运动健康服务） >
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:38:19+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:b4ab00d227cfdc52bc7f85ac02cd1479bfd8882ec4cec68d924e170f158d2914
+content_hash: sha256:69e06acfbf983a37c4f310ffcdc7067580a96c5ad6e8fda6711a45ab39224276
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:b4ab00d227cfdc52bc7f85ac02cd1479bfd8882ec4cec68d924e170f158
 
 应用所能操作的用户数据，是用户授权和运动健康服务审批通过的数据权限的交集。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/pnCL1OX2Qz6zPlFWKCKlhQ/zh-cn_image_0000002589245219.png?HW-CC-KV=V1&HW-CC-Date=20260429T053818Z&HW-CC-Expire=86400&HW-CC-Sign=D09173431F53A99B57512A710515792F0809E58072378DF561C3FF34E931810A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/pnCL1OX2Qz6zPlFWKCKlhQ/zh-cn_image_0000002589245219.png)
 
 ## 接口说明
 

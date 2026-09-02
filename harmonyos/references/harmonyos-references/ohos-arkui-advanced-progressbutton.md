@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:53:01+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:a883a0c2eacbb116a35000c49403547804cf4f538bc22874b13ef29b7949ae31
+content_hash: sha256:a4b8856f462b597bb4a1b0990254b85cd779e66d31d5f8dd377d60585706635e
 ---
 
 文本下载按钮，可显示具体下载进度。
@@ -129,7 +129,7 @@ PhonePC/2in1TabletTVWearable
 47. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/zkypm9ICQtW9PuuSiOfmFQ/zh-cn_image_0000002589326513.png?HW-CC-KV=V1&HW-CC-Date=20260429T055300Z&HW-CC-Expire=86400&HW-CC-Sign=DA2FB1FA6EE837C389DAB934AC226A5EFA1B4736027F70121CEEBC4EFC9EE0AE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/zkypm9ICQtW9PuuSiOfmFQ/zh-cn_image_0000002589326513.png)
 
 ### 示例2（自定义颜色按钮）
 
@@ -192,7 +192,7 @@ PhonePC/2in1TabletTVWearable
 54. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/9iaCBn_8TDqd0IFt7y9Qlw/zh-cn_image_0000002589246455.png?HW-CC-KV=V1&HW-CC-Date=20260429T055300Z&HW-CC-Expire=86400&HW-CC-Sign=8AB1922F5BB855334E531CFD2CDCBCE23C4DAE413C7E47D6B48B31BDF33A9A76)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/9iaCBn_8TDqd0IFt7y9Qlw/zh-cn_image_0000002589246455.png)
 
 ### 示例3（自定义圆角按钮）
 
@@ -249,4 +249,4 @@ PhonePC/2in1TabletTVWearable
 48. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/RSVIAMR8T22uL6kRW6KIcA/zh-cn_image_0000002558766648.png?HW-CC-KV=V1&HW-CC-Date=20260429T055300Z&HW-CC-Expire=86400&HW-CC-Sign=DEBC24C01783CC28831F7F961EF0A9B9E38ABF3BE5BE934B0350197E0B0DF533)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/RSVIAMR8T22uL6kRW6KIcA/zh-cn_image_0000002558766648.png)

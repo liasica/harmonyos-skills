@@ -5,7 +5,7 @@ breadcrumb: 指南 > 图形 > XEngine Kit（GPU加速引擎服务） > 光线追
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:36:44+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:1480d6cd25abf85b9711a5c279dd7e7ea4680dd1c12c4a8d53f53406ffeb2656
+content_hash: sha256:c8d8f1b806db45f511d31fd9713404c9e0ed0f220682f9ca3777b91efbcdfaeb
 ---
 
 从6.0.0(20) 版本开始，新增光线追踪阴影和环境光遮蔽特性。
@@ -32,7 +32,7 @@ XEngine VisibleMask特性提供开箱即用的光线追踪阴影和环境光遮�
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/nMFlo3FEROSrlkr7aIoF-w/zh-cn_image_0000002558765240.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053643Z&HW-CC-Expire=86400&HW-CC-Sign=32B3EA149BA353F99BC76A37F4772F42A6B8A27BFC951C634C73B956B6D54211)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/nMFlo3FEROSrlkr7aIoF-w/zh-cn_image_0000002558765240.jpg)
 
 1. 游戏进入适用光线追踪阴影和环境光遮蔽效果的游戏场景。
 2. 在确认设备支持光线追踪扩展和XEG\_RT\_SHADOW\_AO\_EXTENSION\_NAME扩展时，调用HMS\_XEG\_CreateRTVisibleMask接口创建实例。

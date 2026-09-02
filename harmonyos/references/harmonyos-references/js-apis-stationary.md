@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-stationary
-title: @ohos.stationary (设备状态感知框架)
+title: "@ohos.stationary (设备状态感知框架)"
 breadcrumb: API参考 > 系统 > 硬件 > Multimodal Awareness Kit（多模态融合感知服务） > ArkTS API > @ohos.stationary (设备状态感知框架)
 category: harmonyos-references
 scraped_at: 2026-04-28T08:10:54+08:00

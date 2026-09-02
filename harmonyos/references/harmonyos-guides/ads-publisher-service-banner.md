@@ -5,14 +5,14 @@ breadcrumb: 指南 > 应用服务 > Ads Kit（广告服务） > 流量变现服�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:37:02+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:0a13235ccf16629cb3f5e37ed9f7c799597670bfe707d29aabf8793f660dd1ed
+content_hash: sha256:0ea3d1011f03524883ae29d702819a4647107c650613f1ac169201dd2c255aad
 ---
 
 ## 场景介绍
 
 横幅广告又名Banner广告，是在应用程序顶部、中部或底部占据一个位置的矩形图片，广告内容每隔一段时间会自动刷新。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/b3Lf3yLkQ0eX8B_6SFjCCw/zh-cn_image_0000002558605608.png?HW-CC-KV=V1&HW-CC-Date=20260429T053701Z&HW-CC-Expire=86400&HW-CC-Sign=29A1F1B89C9867EC6B2BC5CE2966D1C127AC9DB93C8F353BB1E14A7D9B2EB8A8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/b3Lf3yLkQ0eX8B_6SFjCCw/zh-cn_image_0000002558605608.png)
 
 ## 约束与限制
 

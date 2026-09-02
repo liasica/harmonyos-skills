@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-nfccontroller
-title: @ohos.nfc.controller (标准NFC)
+title: "@ohos.nfc.controller (标准NFC)"
 breadcrumb: API参考 > 系统 > 网络 > Connectivity Kit（短距通信服务） > ArkTS API > @ohos.nfc.controller (标准NFC)
 category: harmonyos-references
 scraped_at: 2026-04-28T08:07:59+08:00

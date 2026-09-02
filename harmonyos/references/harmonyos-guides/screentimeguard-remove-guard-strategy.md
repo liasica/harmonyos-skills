@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用服务 > Screen Time Guard Kit（屏幕时间守护�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:40:29+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:91a881f4044081bbaf79943fd2dd9f6f2b3562dcdb83179c138765abf5364bee
+content_hash: sha256:c938b281fe2c6059731aca470fdfe6e91e69033a88354936a8dc236faef2e625
 ---
 
 ## 场景介绍
@@ -14,11 +14,11 @@ content_hash: sha256:91a881f4044081bbaf79943fd2dd9f6f2b3562dcdb83179c138765abf53
 
 ## 用户体验设计
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/8d1UMfBPQamkn0x8t3WINg/zh-cn_image_0000002558765672.png?HW-CC-KV=V1&HW-CC-Date=20260429T054028Z&HW-CC-Expire=86400&HW-CC-Sign=A8793A5C12AAF9AB92C2ED90659253459D4643F782AE4DE17DBCC42366D10A4D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/8d1UMfBPQamkn0x8t3WINg/zh-cn_image_0000002558765672.png)
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/bfocL1SHT8yJdRyxoCkI4g/zh-cn_image_0000002558606016.png?HW-CC-KV=V1&HW-CC-Date=20260429T054028Z&HW-CC-Expire=86400&HW-CC-Sign=2594408EDF562844DCA0709C79C5FED355D8EFCEA4B0654743E7E8BC60A36322)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/bfocL1SHT8yJdRyxoCkI4g/zh-cn_image_0000002558606016.png)
 
 流程说明：
 

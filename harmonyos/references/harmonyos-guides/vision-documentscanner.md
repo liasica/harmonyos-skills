@@ -5,7 +5,7 @@ breadcrumb: 指南 > AI > Vision Kit（场景化视觉服务） > 文档扫描
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:43:50+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:6b6de4cff8c9a042eb3de583a7a7780dcb47304a73e6fa7eb83c9282f4ab6447
+content_hash: sha256:acd96689e541e5c331f1031d2899854506762d0a692744596314e82e596ddad1
 ---
 
 ## 场景介绍
@@ -16,7 +16,7 @@ content_hash: sha256:6b6de4cff8c9a042eb3de583a7a7780dcb47304a73e6fa7eb83c9282f4a
 
 **图1** 文档扫描示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/vpSzyJnZT4abPtRgtKVuIA/zh-cn_image_0000002558606198.png?HW-CC-KV=V1&HW-CC-Date=20260429T054101Z&HW-CC-Expire=86400&HW-CC-Sign=107C66985B825C5D58DD66ED27194B3BCEE22169CC5CB792A8ACBB50A382CE29)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/vpSzyJnZT4abPtRgtKVuIA/zh-cn_image_0000002558606198.png)
 
 ## 约束与限制
 

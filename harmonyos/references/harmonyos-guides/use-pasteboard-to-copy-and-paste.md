@@ -5,7 +5,7 @@ breadcrumb: 指南 > 系统 > 基础功能 > Basic Services Kit（基础服务�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:33:15+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:262aa73f0362763ced710ae569acbca3c5dfcdbcefafd384085e12fec50fd3d7
+content_hash: sha256:7f928444dbc0aad68ac7bb56168be42185d145da573fe164e1fbf0fb03748f8b
 ---
 
 ## 场景介绍
@@ -23,7 +23,7 @@ content_hash: sha256:262aa73f0362763ced710ae569acbca3c5dfcdbcefafd384085e12fec50
 * 剪贴板为应用提供应用数据的复制粘贴能力，支持在应用内或应用间共享复制或剪切的应用数据。剪贴板默认支持文本、HTML富文本、文件URI、PixelMap通用数据格式类型数据，同时也支持应用自定义扩展类型数据处理。
 * 剪贴板数据定义对应PasteData，复制应用通过向剪贴板服务写入PasteData实现数据复制，粘贴应用通过读取剪贴板服务的PasteData实现数据粘贴，PasteData整体结构示意如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/vQGvcbYUSwyuhGDdnGWKSQ/zh-cn_image_0000002558764948.png?HW-CC-KV=V1&HW-CC-Date=20260429T053314Z&HW-CC-Expire=86400&HW-CC-Sign=2158B5449235399EFFD0542CC8096EEABC0610D25AE7ECF4A2BC6092B10D5732)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/vQGvcbYUSwyuhGDdnGWKSQ/zh-cn_image_0000002558764948.png)
 
 * Record对应复制数据的不同内容片段；
 * Entry对应同一份数据的不同格式；

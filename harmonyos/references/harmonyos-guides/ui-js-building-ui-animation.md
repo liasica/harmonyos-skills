@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:28:45+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:2a4d81e1109a97305ec6583bcaa3760fb6a574e987c2a848439fbc95d67b712a
+content_hash: sha256:7888ab1efe902a57d1fb819944b67452a529c1d79c5f04762d9ea48a1634774d
 ---
 
 动画分为[静态动画](ui-js-building-ui-animation.md#静态动画)和[连续动画](ui-js-building-ui-animation.md#连续动画)。
@@ -65,7 +65,7 @@ content_hash: sha256:2a4d81e1109a97305ec6583bcaa3760fb6a574e987c2a848439fbc95d67
 
 **图1** 静态动画效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/cqFWoNrjRz6AGqir5Z3Haw/zh-cn_image_0000002558764574.png?HW-CC-KV=V1&HW-CC-Date=20260429T052844Z&HW-CC-Expire=86400&HW-CC-Sign=298ED5A422FBDE6648B1B9E7472EBE7D3428F0BC2CA4F0BC67F3D579856B1B3B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/cqFWoNrjRz6AGqir5Z3Haw/zh-cn_image_0000002558764574.png)
 
 ## 连续动画
 
@@ -159,4 +159,4 @@ animation样式需要在css文件中先定义keyframe，在keyframe中设置动�
 
 **图2** 连续动画效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/gcfragmpQR6xvGZK31Ot0g/zh-cn_image_0000002558604918.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052844Z&HW-CC-Expire=86400&HW-CC-Sign=25166135C27B5E71126DF48D8B37B31DE6D1F3E702C1BECEAE355F3426AB9784)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/gcfragmpQR6xvGZK31Ot0g/zh-cn_image_0000002558604918.gif)

@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_no-commented-code
-title: @security/no-commented-code
+title: "@security/no-commented-code"
 breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 安全规则@security > @security/no-commented-code
 category: harmonyos-guides
 scraped_at: 2026-04-28T07:55:53+08:00

@@ -5,7 +5,7 @@ breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 图形�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:36:11+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:1d492343a8c5c6e14a86480fd3c311cc5e26c8bd91de08f0ced1ae32e58f8d3a
+content_hash: sha256:68d16a461f8df54f7515567d8a9368f979d54c8544552af61ae917644eee480e
 ---
 
 ## 场景介绍
@@ -50,7 +50,7 @@ Canvas通过drawTextBlob()来绘制字块。函数接受三个参数：TextBlob�
 
 [TextBlockDrawing.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/Drawing/ArkTSGraphicsDraw/entry/src/main/ets/drawing/pages/TextBlockDrawing.ets#L22-L31)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/x5dwOsL2RhyjEpSLPWgx1w/zh-cn_image_0000002589244965.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053610Z&HW-CC-Expire=86400&HW-CC-Sign=C194C26B60845399822D633B2FB1228F17766F17FA51D531916A02D81FDDE9B1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/x5dwOsL2RhyjEpSLPWgx1w/zh-cn_image_0000002589244965.jpg)
 
 ## 文字描边
 
@@ -87,7 +87,7 @@ Canvas通过drawTextBlob()来绘制字块。函数接受三个参数：TextBlob�
 
 [TextBlockDrawing.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/Drawing/ArkTSGraphicsDraw/entry/src/main/ets/drawing/pages/TextBlockDrawing.ets#L35-L56)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/VXh4IWKrQdO507CL6Ne5SQ/zh-cn_image_0000002558765160.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053610Z&HW-CC-Expire=86400&HW-CC-Sign=4081E98E95A3B7F9957E5A6EE64B4D124B6A099387C43FC979689CC14CAAF8DE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/VXh4IWKrQdO507CL6Ne5SQ/zh-cn_image_0000002558765160.jpg)
 
 ### 中文文字描边
 
@@ -131,7 +131,7 @@ Canvas通过drawTextBlob()来绘制字块。函数接受三个参数：TextBlob�
 
 [TextBlockDrawing.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/Drawing/ArkTSGraphicsDraw/entry/src/main/ets/drawing/pages/TextBlockDrawing.ets#L60-L93)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/Mcbbs9rmT82XeuSfBs4_Ug/zh-cn_image_0000002558605504.png?HW-CC-KV=V1&HW-CC-Date=20260429T053610Z&HW-CC-Expire=86400&HW-CC-Sign=72F7C14FA31064C39F5CC62260CEC1FEFC6A2D4EC0F8575052F73AF9FB6BA858)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/Mcbbs9rmT82XeuSfBs4_Ug/zh-cn_image_0000002558605504.png)
 
 ## 文字渐变
 
@@ -165,7 +165,7 @@ Canvas通过drawTextBlob()来绘制字块。函数接受三个参数：TextBlob�
 
 [TextBlockDrawing.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/Drawing/ArkTSGraphicsDraw/entry/src/main/ets/drawing/pages/TextBlockDrawing.ets#L97-L119)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/u2VDrEG-QA6FQHrNpb1ILQ/zh-cn_image_0000002589325031.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053610Z&HW-CC-Expire=86400&HW-CC-Sign=00B432422BAD45917F0BB7184A7934E0B13A3979E20643FD21AAEDC0A2CA6656)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/u2VDrEG-QA6FQHrNpb1ILQ/zh-cn_image_0000002589325031.jpg)
 
 ## 主题字体
 
@@ -223,7 +223,7 @@ Canvas通过drawTextBlob()来绘制字块。函数接受三个参数：TextBlob�
 
 [TextBlockDrawing.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/Drawing/ArkTSGraphicsDraw/entry/src/main/ets/drawing/pages/TextBlockDrawing.ets#L138-L153)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/MoyWqACKQoeXUF1e_pVMkA/zh-cn_image_0000002558605506.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053610Z&HW-CC-Expire=86400&HW-CC-Sign=543D7427D8A4718251E6B66CF219BC51B7C665877DAD5029FF2286ED9D3D9AE0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/MoyWqACKQoeXUF1e_pVMkA/zh-cn_image_0000002558605506.jpg)
 
 进阶场景：绘制带字体特征的字符。
 
@@ -250,7 +250,7 @@ Canvas通过drawTextBlob()来绘制字块。函数接受三个参数：TextBlob�
 
 [TextBlockDrawing.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/Drawing/ArkTSGraphicsDraw/entry/src/main/ets/drawing/pages/TextBlockDrawing.ets#L157-L174)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/B50ZS7E-Qf-p68gIo1KkLw/zh-cn_image_0000002589325033.png?HW-CC-KV=V1&HW-CC-Date=20260429T053610Z&HW-CC-Expire=86400&HW-CC-Sign=AB346CBCA60AD245C60BFD644C7C81A43B5E804B4E6DC33C584893739E2C8DD6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/B50ZS7E-Qf-p68gIo1KkLw/zh-cn_image_0000002589325033.png)
 
 说明
 

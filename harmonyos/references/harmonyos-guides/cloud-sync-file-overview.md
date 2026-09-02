@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > Core File Kit（文件基础服务） > 端�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:29:47+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:e9cc5a012953010dce714edf99755c31b512ba2ae283b029541d1b967ef7d8e2
+content_hash: sha256:0e8de00eebacfb9be46407937277cf24c0f87556ddb1cf8b8aaa7a0ad49af636
 ---
 
 端云文件协同为应用开发提供端云一体的统一文件系统能力，为用户和应用提供一致的文件同步与跨端访问体验。
@@ -55,4 +55,4 @@ content_hash: sha256:e9cc5a012953010dce714edf99755c31b512ba2ae283b029541d1b967ef
 
 端云文件协同能力基于系统级服务构建，由 cloudfiledaemon 进程提供基础文件操作、元数据管理、分片预读等核心功能；cloudfileservice 进程则在后台自动与云端服务进行交互，根据业务需求变化触发并完成文件上下行，文件缓存，同时也提供了接口支持版本管理和主动触发同步任务。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/WyRD8fefSzGMBX0VR9sUjg/zh-cn_image_0000002589324641.png?HW-CC-KV=V1&HW-CC-Date=20260429T052946Z&HW-CC-Expire=86400&HW-CC-Sign=05F5356AF670FC1CA29774485369D5D48B30A1D980F960C536343DEB8D214011)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/WyRD8fefSzGMBX0VR9sUjg/zh-cn_image_0000002589324641.png)

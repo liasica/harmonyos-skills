@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:28:24+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:e02fe35ad1d40bde7e9be8bad06a8c56fab78a3859c17d54053ce36047d9f195
+content_hash: sha256:3ce1566e9382b96a11f3cdbc5d06b11b298002a3657b1a0d57292eede46f9f28
 ---
 
 ## 概述
@@ -137,7 +137,7 @@ AttributeModifier可以分离UI与样式，支持参数传递及业务逻辑编�
 
 [Button1.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ButtonAttribute/entry/src/main/ets/pages/Button1.ets#L15-L41)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/eRggxFb1RfCoWhPN_b4RDA/zh-cn_image_0000002558604862.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052822Z&HW-CC-Expire=86400&HW-CC-Sign=3C75EA7328E739CA45DE852BC02ACFACB4971C70F08EF2227A390E82FBD92B59)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/eRggxFb1RfCoWhPN_b4RDA/zh-cn_image_0000002558604862.gif)
 
 当一个组件上同时使用属性方法和applyNormalAttribute设置相同的属性时，遵循属性覆盖原则，即后设置的属性生效。
 
@@ -197,7 +197,7 @@ AttributeModifier可以分离UI与样式，支持参数传递及业务逻辑编�
 
 [Button2.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ButtonAttribute/entry/src/main/ets/pages/Button2.ets#L15-L41)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/3XfvbDTPR5C2M1oM92Fruw/zh-cn_image_0000002589324387.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052822Z&HW-CC-Expire=86400&HW-CC-Sign=46A446D7159CF67B4776295D9895A230C2252C4BB2D2876F21BF1208CA7F59F5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/3XfvbDTPR5C2M1oM92Fruw/zh-cn_image_0000002589324387.gif)
 
 当一个组件上多次使用applyNormalAttribute设置不同的Modifier实例时，每次状态变量刷新均会按顺序执行这些实例的方法属性设置，遵循属性覆盖原则，即后设置的属性生效。
 
@@ -274,7 +274,7 @@ AttributeModifier可以分离UI与样式，支持参数传递及业务逻辑编�
 
 [Button3.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ButtonAttribute/entry/src/main/ets/pages/Button3.ets#L15-L43)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/DFOdMw6mS2etBp5YU8kSZQ/zh-cn_image_0000002589244327.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052822Z&HW-CC-Expire=86400&HW-CC-Sign=106617D1B9D84601AC4B98D9E2A4FEB19B84BBF39CB5B0C5039B42ABDA69ADFF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/DFOdMw6mS2etBp5YU8kSZQ/zh-cn_image_0000002589244327.gif)
 
 ## 设置多态样式、事件
 
@@ -324,7 +324,7 @@ AttributeModifier可以分离UI与样式，支持参数传递及业务逻辑编�
 
 [Button4.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ButtonAttribute/entry/src/main/ets/pages/Button4.ets#L15-L36)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/Ccc7YdslT0aCO0lP_GglIQ/zh-cn_image_0000002558764520.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052822Z&HW-CC-Expire=86400&HW-CC-Sign=7F72AFE2CA1C3C45EA11C09A6A7B3147DBE7ADAF0CD1D8D58E1E863CD9EFF61F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/Ccc7YdslT0aCO0lP_GglIQ/zh-cn_image_0000002558764520.gif)
 
 ## 属性或事件对attributeModifier的支持情况
 

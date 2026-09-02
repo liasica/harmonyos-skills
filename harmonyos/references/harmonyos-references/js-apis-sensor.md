@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-sensor
-title: @ohos.sensor (传感器)
+title: "@ohos.sensor (传感器)"
 breadcrumb: API参考 > 系统 > 硬件 > Sensor Service Kit（传感器服务） > ArkTS API > @ohos.sensor (传感器)
 category: harmonyos-references
 scraped_at: 2026-04-28T08:11:06+08:00

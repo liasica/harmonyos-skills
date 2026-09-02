@@ -5,7 +5,7 @@ breadcrumb: 指南 > 构建应用 > 定制构建 > 灵活定制编译选项 > �
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:47:17+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:cc5e0317b6604d9753cd66e34e0ec58deebc1950f5dad5cc21588610b3bafdf6
+content_hash: sha256:f33d276242b4471b74ebd5fbb3fefe3c8bdc84867d6242766fb395e245742730
 ---
 
 Hvigor支持灵活定制构建模式，当您创建新工程时，DevEco Studio会自动创建"debug" 、"release"和"test" 构建模式。"test"模式虽然没有出现在工程级build-profile.json5配置文件中，但是利用测试框架开启测试时，会自动使用"test"构建模式。
@@ -14,9 +14,9 @@ Hvigor支持灵活定制构建模式，当您创建新工程时，DevEco Studio�
 
 ### 界面设置
 
-DevEco Studio支持界面配置Build Mode配置选项，点击右上角![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/S-p6hs8-SMCq0VYd5ZvGmQ/zh-cn_image_0000002530753360.png?HW-CC-KV=V1&HW-CC-Date=20260429T054715Z&HW-CC-Expire=86400&HW-CC-Sign=D81B3D21BEF049ABC63FF2577F8EFD791E7D9154E1ABFA278117DFE1483290FC)图标选择构建模式：
+DevEco Studio支持界面配置Build Mode配置选项，点击右上角![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/S-p6hs8-SMCq0VYd5ZvGmQ/zh-cn_image_0000002530753360.png)图标选择构建模式：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/1v3oMyH6Sn-gX7RUyzmNbw/zh-cn_image_0000002561833281.png?HW-CC-KV=V1&HW-CC-Date=20260429T054715Z&HW-CC-Expire=86400&HW-CC-Sign=2F12528B30714B878994C4DC287103E777B7013EBDF6E84B3C14FE8181EFEE20)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/1v3oMyH6Sn-gX7RUyzmNbw/zh-cn_image_0000002561833281.png)
 
 内置三个选项：<Default>，debug，release。
 
@@ -95,4 +95,4 @@ Hvigor支持定制构建模式，采用buildOption字段声明编译选项，并
 
 优先级：命令行配置>targets配置>buildOptionSet配置>buildOption配置>products配置>buildModeSet配置
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/wp9hg-M1TLuMaERmJN_KpA/zh-cn_image_0000002530913352.png?HW-CC-KV=V1&HW-CC-Date=20260429T054715Z&HW-CC-Expire=86400&HW-CC-Sign=1884FA03895BD138558C5D8B553320804821EDD6856DC9FF731E9B0676BE8ED1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/wp9hg-M1TLuMaERmJN_KpA/zh-cn_image_0000002530913352.png)

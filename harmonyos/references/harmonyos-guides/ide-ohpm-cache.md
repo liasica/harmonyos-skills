@@ -5,7 +5,7 @@ breadcrumb: 指南 > 命令行工具 > 三方依赖管理工具（ohpm） > 常�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:47:54+08:00
 doc_updated_at: 2026-04-22
-content_hash: sha256:3f2e4626fd47754a7e7d206a32403de6f66f9e8cf3092eaa2333c802803a963e
+content_hash: sha256:6bf4243375cfa855c3287b19fbda4e45de61ec5cd817b78e509bb2d5dfe55314
 ---
 
 清理 ohpm 缓存文件夹。
@@ -46,7 +46,7 @@ content_hash: sha256:3f2e4626fd47754a7e7d206a32403de6f66f9e8cf3092eaa2333c802803
 
 结果示例：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/ZaCME-7FRcesf5Lgl7ENIQ/zh-cn_image_0000002561833321.png?HW-CC-KV=V1&HW-CC-Date=20260429T054753Z&HW-CC-Expire=86400&HW-CC-Sign=08D61E3D8B989BF8E2954AF5A9C5832CB7937342A498A8521EF1A74EA03764F0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/ZaCME-7FRcesf5Lgl7ENIQ/zh-cn_image_0000002561833321.png)
 
 ### 关于缓存设计的说明
 

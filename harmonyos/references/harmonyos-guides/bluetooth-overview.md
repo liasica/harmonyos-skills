@@ -5,7 +5,7 @@ breadcrumb: 指南 > 系统 > 网络 > Connectivity Kit（短距通信服务） 
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:32:27+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:1c776d67d670512a509527ab4941aac075b5972ad619d7fd8ac526883a1ea728
+content_hash: sha256:800ae1728be01850a8a2c0a3a967e4df877e025dc4875431e97cc69a0982f17f
 ---
 
 ## 概述
@@ -30,7 +30,7 @@ content_hash: sha256:1c776d67d670512a509527ab4941aac075b5972ad619d7fd8ac526883a1
 
 在蓝牙服务开发过程中，涉及两种维度的地址类型定义。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/yLvUPsvIROm5n6Xe-TH4cQ/zh-cn_image_0000002558605262.png?HW-CC-KV=V1&HW-CC-Date=20260429T053226Z&HW-CC-Expire=86400&HW-CC-Sign=4956501D27589D2C79D56380A46DC9B7819EC00F96BB80B6AB334A72B383CDB5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/yLvUPsvIROm5n6Xe-TH4cQ/zh-cn_image_0000002558605262.png)
 
 **图1** 蓝牙设备地址类型
 

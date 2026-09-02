@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-form-forminfo
-title: @ohos.app.form.formInfo (formInfo)
+title: "@ohos.app.form.formInfo (formInfo)"
 breadcrumb: API参考 > 应用框架 > Form Kit（卡片开发服务） > ArkTS API > @ohos.app.form.formInfo (formInfo)
 category: harmonyos-references
 scraped_at: 2026-04-29T13:56:30+08:00

@@ -5,7 +5,7 @@ breadcrumb: 指南 > 图形 > Graphics Accelerate Kit（图形加速服务） > 
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:36:26+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:6338fc9c0786c4505e23467f89dad1dd50fc53855908f5adeb60ef67399adefb
+content_hash: sha256:042dafb47c4ce7d5f1c066ff285e9865870f6b9b9a47b09a8ad892c2d3cec763
 ---
 
 ## 业务流程
@@ -16,7 +16,7 @@ content_hash: sha256:6338fc9c0786c4505e23467f89dad1dd50fc53855908f5adeb60ef67399
 
   开发阶段，开发者需要使用系统的图形驱动库提供的Vulkan接口，在期望被标记的物体绘制前后添加上开始标记指令和结束标记指令。运行阶段，基于Vulkan的Transform Feedback（变换反馈）特性，被标记的所有Draw Call处理的顶点数据将被缓存，再通过顶点匹配、运动估计、屏幕空间投影等过程，得到高精度运动向量，最终绘制出预测帧。运行阶段流程如下图所示：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/h46AhquDTwS2_hlyCecfxg/zh-cn_image_0000002558765210.png?HW-CC-KV=V1&HW-CC-Date=20260429T053625Z&HW-CC-Expire=86400&HW-CC-Sign=056B87DA86BF42211A4F3F60AA9BEF3D88DAB5B75ECB7385E4C60DA43BE16207)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/h46AhquDTwS2_hlyCecfxg/zh-cn_image_0000002558765210.png)
 * 顶点标记原则
 
   被标记的物体能在运动估计阶段得到更高精度的运动向量图（MV，Motion Vector），但需要付出额外的性能代价，开发者需要在这之间做出平衡。**建议只标记画面中相对场景运动的物体**，因为相对场景运动的物体的顶点数量较少，但运动预测却最为困难，这样的标记方式能以少量的性能代价换取较明显的超帧画质收益。

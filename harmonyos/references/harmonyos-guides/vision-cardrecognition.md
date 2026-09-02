@@ -5,7 +5,7 @@ breadcrumb: 指南 > AI > Vision Kit（场景化视觉服务） > 卡证识别
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:43:51+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:2576fa59bfa8bde7fee835e0f7bdc8b51bfda7879829a40d9776deec667c17a9
+content_hash: sha256:5b838fa051d984fc5a8ea906388cb86c1d8ad59b72abf597672bad96db4b2b32
 ---
 
 从5.1.1(19)开始，[CardRecognition](../harmonyos-references/vision-card-recognition.md#cardrecognition)接口中的callback参数废弃，请使用onResult代替。
@@ -18,7 +18,7 @@ content_hash: sha256:2576fa59bfa8bde7fee835e0f7bdc8b51bfda7879829a40d9776deec667
 
 **图1** 银行卡识别示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/DpShCHJjTr-jymyHJ4zIcQ/zh-cn_image_0000002558606198.png?HW-CC-KV=V1&HW-CC-Date=20260429T054119Z&HW-CC-Expire=86400&HW-CC-Sign=F12274B4A136EB9DD93265B4D26E1B8ED1887573735EC7ABE7BA987732934609)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/DpShCHJjTr-jymyHJ4zIcQ/zh-cn_image_0000002558606198.png)
 
 ## 约束与限制
 

@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用服务 > Reader Kit（阅读服务） > 书籍内容�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:40:03+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:47de211b42aef427798895443dd46a620651b819e384c711e1831be7156d1a8b
+content_hash: sha256:8f8c5aeb3615ddd79feff28e24b5ff9d33887025f8d3b5fa0874e15d896e51b9
 ---
 
 当应用需要支持自定义背景时，开发者可通过[ReaderSetting](../harmonyos-references/reader-read-core.md#readersetting)的themeColor及themeBgImg属性，实现对阅读内容自定义背景色及背景图片的实时修改。
@@ -19,7 +19,7 @@ content_hash: sha256:47de211b42aef427798895443dd46a620651b819e384c711e1831be7156
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/PDS5_TQpSwyAcf57H-zDTQ/zh-cn_image_0000002589245453.png?HW-CC-KV=V1&HW-CC-Date=20260429T054002Z&HW-CC-Expire=86400&HW-CC-Sign=C07F6F1567882F7AAA1E9DAF9C2D7182E2F62500CF356A0C221651030D8A46A9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/PDS5_TQpSwyAcf57H-zDTQ/zh-cn_image_0000002589245453.png)
 
 ## 接口说明
 

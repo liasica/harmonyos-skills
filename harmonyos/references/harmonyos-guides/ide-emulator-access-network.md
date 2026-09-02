@@ -5,7 +5,7 @@ breadcrumb: 指南 > 编写与调试应用 > 使用模拟器运行应用 > 使�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:46:37+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:29c395f7910396cf0e33ee335dd66309be5e3a86ca02ca5560da4ebd167216bb
+content_hash: sha256:a8341096226d0c996ca4d78652ddd167c6bc04ed578ef43fa5d5341dd2091dd5
 ---
 
 ## 模拟器访问互联网
@@ -39,4 +39,4 @@ content_hash: sha256:29c395f7910396cf0e33ee335dd66309be5e3a86ca02ca5560da4ebd167
    该命令中127.0.0.1:5555为模拟器B的HDC服务端口号，可通过hdc list targets命令查询。
 4. 在模拟器A上，设置客户端连接到10.0.2.2:<localPort>，其中10.0.2.2为模拟器的默认网关。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/9laeBSANS02CXLM5AlyVrA/zh-cn_image_0000002530911062.png?HW-CC-KV=V1&HW-CC-Date=20260429T054636Z&HW-CC-Expire=86400&HW-CC-Sign=524E5C10E319DAD4C774E06C8FB713DA35AF93DD18A13D00BF7C171134182B38)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/9laeBSANS02CXLM5AlyVrA/zh-cn_image_0000002530911062.png)

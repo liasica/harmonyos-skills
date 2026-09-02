@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-cryptoframework
-title: @ohos.security.cryptoFramework (加解密算法库框架)
+title: "@ohos.security.cryptoFramework (加解密算法库框架)"
 breadcrumb: API参考 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > ArkTS API > @ohos.security.cryptoFramework (加解密算法库框架)
 category: harmonyos-references
 scraped_at: 2026-04-28T08:06:53+08:00

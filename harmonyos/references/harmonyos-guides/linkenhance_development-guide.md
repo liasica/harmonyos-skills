@@ -5,7 +5,7 @@ breadcrumb: 指南 > 系统 > 网络 > Distributed Service Kit（分布式管理
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:32:37+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:b276fe9fd2424fb36fc3fd8a1efa4549c1daa6ed25216f18488651c40f7e47a9
+content_hash: sha256:370d7ad3a66170d0c8c82cce10812b6e12519e3ebc8b02990536dd8d58171380
 ---
 
 ## 简介
@@ -20,7 +20,7 @@ HarmonyOS提供了分布式增强连接能力，实现跨设备互联，完成�
 
 两个设备的交互实现如下，在使用[linkEnhance](../harmonyos-references/js-apis-link-enhance.md)能力后，当两端同时发起连接时，会自动识别合并底层多余物理链路，减少实际物理链路的个数，减少蓝牙链路资源的消耗，增加可用连接数量。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/mRtj2guHQ-GhgN_QqLHZnA/zh-cn_image_0000002558605266.png?HW-CC-KV=V1&HW-CC-Date=20260429T053236Z&HW-CC-Expire=86400&HW-CC-Sign=0741A9EBC7148E19A684064909371D91694EDA7AE9ADFE891D579FAD8598131E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/mRtj2guHQ-GhgN_QqLHZnA/zh-cn_image_0000002558605266.png)
 
 ### 约束与限制
 

@@ -5,7 +5,7 @@ breadcrumb: 版本说明 > 应用兼容性说明 > 应用开发中的兼容性�
 category: harmonyos-releases
 scraped_at: 2026-04-29T13:25:21+08:00
 doc_updated_at: 2026-01-21
-content_hash: sha256:e783b0b80c05631c0d8e0a12c495c5029354abf6044ac6f1421840df290bd36a
+content_hash: sha256:55a3c1bd83114b1f90babca7a302e091b23d946a9bd47b1d92d512f7a5c7b33a
 ---
 
 在应用开发过程中，会依赖大量的三方库，应用hap和三方库har之间因为SDK版本属性字段的版本差异，会存在各种兼容性问题。
@@ -28,7 +28,7 @@ content_hash: sha256:e783b0b80c05631c0d8e0a12c495c5029354abf6044ac6f1421840df290
 
 （3）因为在应用集成三方库的时候，最终打包到应用中的targetSdkVersion字段值会填写为应用的值，则为了让三方库被应用集成后的行为一致，需要进行一些适配。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/cnitJJoXQ-yHWu1NicdyYA/zh-cn_image_0000002409845612.png?HW-CC-KV=V1&HW-CC-Date=20260429T052520Z&HW-CC-Expire=86400&HW-CC-Sign=34DE46FB4DB2174234CB4B379D2D348AA6C6612445589393AB66812194F73C16 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/cnitJJoXQ-yHWu1NicdyYA/zh-cn_image_0000002409845612.png "点击放大")
 
 ```
 1. import bundleManager from '@ohos.bundle.bundleManager';

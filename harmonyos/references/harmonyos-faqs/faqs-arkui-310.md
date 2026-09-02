@@ -5,7 +5,7 @@ breadcrumb: FAQ > 应用框架开发 > UI框架 > 方舟UI框架（ArkUI） > �
 category: harmonyos-faqs
 scraped_at: 2026-04-29T14:17:19+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:663c5921a1fe204ee568657a24a9abc6df2860c60d30564739eeb7393891fdaa
+content_hash: sha256:c148bae1945ee6daffa91b61c0106c486bc044cef5ff593c83ecf2a9be27c0eb
 ---
 
 在Grid组件中，onItemDragStart事件的默认触发时长为170毫秒，但当前版本不支持直接修改该参数。可以通过自定义Grid，通过设置长按手势LongPressGesture中的duration参数，来实现自定义长按拖拽的开始触发时长，参考代码如下：
@@ -330,4 +330,4 @@ content_hash: sha256:663c5921a1fe204ee568657a24a9abc6df2860c60d30564739eeb739389
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/voLRAcmqSgCZ-E6yCDRTlQ/zh-cn_image_0000002194158820.png?HW-CC-KV=V1&HW-CC-Date=20260429T061717Z&HW-CC-Expire=86400&HW-CC-Sign=E61664DE13B186E305BC93399F7E875637E9725BD7284D13140CEFE82537E3C5 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/voLRAcmqSgCZ-E6yCDRTlQ/zh-cn_image_0000002194158820.png "点击放大")

@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-insightintentprovider
-title: @ohos.app.ability.insightIntentProvider (意图提供方管理能力)
+title: "@ohos.app.ability.insightIntentProvider (意图提供方管理能力)"
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > Stage模型能力的接口 > @ohos.app.ability.insightIntentProvider (意图提供方管理能力)
 category: harmonyos-references
 scraped_at: 2026-04-29T13:48:32+08:00

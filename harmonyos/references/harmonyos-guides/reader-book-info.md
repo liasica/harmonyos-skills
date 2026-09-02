@@ -5,14 +5,14 @@ breadcrumb: 指南 > 应用服务 > Reader Kit（阅读服务） > 书籍内容�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:40:02+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:761b620925909deecc40c117fd25a422c1bd350be2cfed9bec5c35f91c05fa42
+content_hash: sha256:3c5b501f50fd861889c7c99fa9fb553776d05bb055a629809824e5ba09d6c182
 ---
 
 在导入本地书籍到书架时，开发者需通过[DocumentViewPicker](../harmonyos-references/js-apis-file-picker.md#documentviewpicker)先将书籍文件导入到[应用沙箱目录](app-sandbox-directory.md)，然后利用解析能力获取书籍信息，包括书封、书名及作者等，以完成书架内容的展示。
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/prLOxflVSXKJ_rw2VQ9fLQ/zh-cn_image_0000002589245451.png?HW-CC-KV=V1&HW-CC-Date=20260429T054001Z&HW-CC-Expire=86400&HW-CC-Sign=415324472091CF2605851D3A4440CA943C3131101E549C5822107E344B721690)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/prLOxflVSXKJ_rw2VQ9fLQ/zh-cn_image_0000002589245451.png)
 
 ## 接口说明
 

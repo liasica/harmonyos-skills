@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > U
 category: harmonyos-references
 scraped_at: 2026-04-29T13:50:54+08:00
 doc_updated_at: 2026-03-27
-content_hash: sha256:28efda6d531cec2077091dbb094811f07a97f436cb5b4582a128b34fef628156
+content_hash: sha256:b4fdcfd016d5f9e096315751658ae1d79f981dd404bc666b8439bdfe0eaba5da
 ---
 
 提供自绘制渲染节点RenderNode，支持开发者通过C API进行开发，完成自定义绘制需求。
@@ -1943,7 +1943,7 @@ get shadowElevation(): number
 39. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/BVK3w8UcQKqh2lKspbt13w/zh-cn_image_0000002558765976.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T055047Z&HW-CC-Expire=86400&HW-CC-Sign=555DFB66583B3EEE6D1A4121E850FE1665B24EED80A28E87321556853F9C4879)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/BVK3w8UcQKqh2lKspbt13w/zh-cn_image_0000002558765976.jpg)
 
 ### shadowRadius
 
@@ -2027,7 +2027,7 @@ get shadowRadius(): number
 45. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/o22D1sLpQpWe9wEhqmctsg/zh-cn_image_0000002558606320.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T055047Z&HW-CC-Expire=86400&HW-CC-Sign=09FF9945B28965DECD0EC36137ECC4C5F411D01E28617065167D7685AD137AA4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/o22D1sLpQpWe9wEhqmctsg/zh-cn_image_0000002558606320.jpg)
 
 ### draw
 
@@ -2879,7 +2879,7 @@ set markNodeGroup(isNodeGroup: boolean)
 
 标记是否优先绘制节点及其子节点。若设置为true，则透明度等属性将在节点绘制完毕后再进行合成。设置效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/6ojwtezrRFSmVIbFKXNa5w/zh-cn_image_0000002589325847.png?HW-CC-KV=V1&HW-CC-Date=20260429T055047Z&HW-CC-Expire=86400&HW-CC-Sign=F27991A400CBF352E7D1DC591D8049687599949458517A0C5ADE03016864DDF5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/6ojwtezrRFSmVIbFKXNa5w/zh-cn_image_0000002589325847.png)
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -3154,4 +3154,4 @@ isDisposed(): boolean
 74. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/WswcRlwkS7SwvYKNy7HWEQ/zh-cn_image_0000002589245789.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055047Z&HW-CC-Expire=86400&HW-CC-Sign=713C85328158E5DFDC1D46EDB92397B46D91B38028579A7473EF219CB6ED731F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/WswcRlwkS7SwvYKNy7HWEQ/zh-cn_image_0000002589245789.gif)

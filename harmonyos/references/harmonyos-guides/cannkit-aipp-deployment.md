@@ -5,7 +5,7 @@ breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 端侧部
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:40:59+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:a524e9f3ce0fe63e73b8230ca35922cc78bf0b423e3dc997db651a5950bb4f63
+content_hash: sha256:3ced73c44670ec97643bbf24548738643ba5bf162f03f8289a64ed12fdbfd3df
 ---
 
 ## 基本概念
@@ -14,7 +14,7 @@ AIPP部署是指动态AIPP推理时开发者按需配置动态AIPP参数，从�
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/Mi0rwCa5SgKbvJbLaIH_uA/zh-cn_image_0000002589245529.png?HW-CC-KV=V1&HW-CC-Date=20260429T054058Z&HW-CC-Expire=86400&HW-CC-Sign=A92A116C025EBFA4A3F56826D169A156FA3C3FE38CC75B6F512902AFAC6E6B01)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/Mi0rwCa5SgKbvJbLaIH_uA/zh-cn_image_0000002589245529.png)
 
 ## 接口说明
 

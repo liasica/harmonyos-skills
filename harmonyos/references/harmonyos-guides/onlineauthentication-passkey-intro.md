@@ -5,7 +5,7 @@ breadcrumb: 指南 > 系统 > 安全 > Online Authentication Kit（在线认证�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:31:51+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:9a88489fb3a6864ce6561ad1f33d67c01c14c4112d2d348492405c5063f9e081
+content_hash: sha256:742b85c6ed1f1cd928f2eedd0cb34549c1c7b9947b55ce42c4ec422f71d873dc
 ---
 
 从HarmonyOS 6.0.0(20)开始，在线认证服务提供了通行密钥特性。通行密钥主要提供了以下能力：
@@ -22,19 +22,19 @@ content_hash: sha256:9a88489fb3a6864ce6561ad1f33d67c01c14c4112d2d348492405c5063f
 
 需要提供方便、快速、安全的本地应用或网页登录方式时，可以使用通行密钥服务的通行密钥注册能力为用户创建通行密钥。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/TDEe8d0ZR-arougJRWsyAQ/zh-cn_image_0000002589324775.png?HW-CC-KV=V1&HW-CC-Date=20260429T053150Z&HW-CC-Expire=86400&HW-CC-Sign=77D11447D4FF9E87B42101F90F5F0F4EB177AAE6601653ADBCD9C01972A7AD30)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/TDEe8d0ZR-arougJRWsyAQ/zh-cn_image_0000002589324775.png)
 
 ### 使用通行密钥登录本设备的应用或网页账号
 
 用户在登录应用或者网页时，需要验证用户的身份，可以使用通行密钥服务的本地免密认证能力。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/rwjByqiPQAqEzsytHzE15w/zh-cn_image_0000002589244713.png?HW-CC-KV=V1&HW-CC-Date=20260429T053150Z&HW-CC-Expire=86400&HW-CC-Sign=92A8309BAAA69AD48718DA37CEA77BEF5FA20C08D9CF7CBAADF9322F145ED4FD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/rwjByqiPQAqEzsytHzE15w/zh-cn_image_0000002589244713.png)
 
 ### 使用跨设备扫码登录其他设备的应用或网页账号
 
 用户在其他设备上登录应用或网页时，需要验证用户的身份，可以使用通行密钥服务的跨设备扫码认证能力。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/q30iz3NITPGAJ43WkjNo8A/zh-cn_image_0000002558764908.png?HW-CC-KV=V1&HW-CC-Date=20260429T053150Z&HW-CC-Expire=86400&HW-CC-Sign=6C06AD4587046AD1699430ED3A2A9346F8B003A87F69D703FD931E1E1A9FEC0B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/q30iz3NITPGAJ43WkjNo8A/zh-cn_image_0000002558764908.png)
 
 说明
 

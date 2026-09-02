@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:53:01+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:a1f95d650b9a930c8203a595df33fe0db351c01541afbf70a7dd9a9cc1c7f2bf
+content_hash: sha256:6e07f842e06f64fb9353949470803fc14dbd5952ddb457453e6710c8bd42e7c3
 ---
 
 文本下载按钮，可显示具体的下载进度。
@@ -198,4 +198,4 @@ PhonePC/2in1TabletTVWearable
 47. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/zKoIXVgOSCWHi7b0wHUz3A/zh-cn_image_0000002589326513.png?HW-CC-KV=V1&HW-CC-Date=20260429T055300Z&HW-CC-Expire=86400&HW-CC-Sign=BC80FD32809B1AF8741E8D6288AB4569ECE506B2EB03CB0A571BA5FA5CF0ED62)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/zKoIXVgOSCWHi7b0wHUz3A/zh-cn_image_0000002589326513.png)

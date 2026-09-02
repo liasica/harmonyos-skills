@@ -5,7 +5,7 @@ breadcrumb: 最佳实践 > 行业场景解决方案 > 社交通讯 > AI辅助图
 category: best-practices
 scraped_at: 2026-04-29T14:13:15+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:cc27c712a6ade950f6f77c06a7253521dc6d0764b0abd19caa1b4be8dbf45ccc
+content_hash: sha256:afca21a5f4bac552b5e448082c57e18711dae35a9dd681be94856bbc614015cc
 ---
 
 ## 概述
@@ -20,7 +20,7 @@ content_hash: sha256:cc27c712a6ade950f6f77c06a7253521dc6d0764b0abd19caa1b4be8dbf
 
 图文编创操作流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/j5VY_nBKT8KuVY-1hoXPyg/zh-cn_image_0000002229451385.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061310Z&HW-CC-Expire=86400&HW-CC-Sign=2B8229663B2AC40C4780B5B8CCAA8CFE70F9284CE719A10894B1E54BFAF4759E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/j5VY_nBKT8KuVY-1hoXPyg/zh-cn_image_0000002229451385.gif)
 
 ## 场景适用说明
 
@@ -107,7 +107,7 @@ content_hash: sha256:cc27c712a6ade950f6f77c06a7253521dc6d0764b0abd19caa1b4be8dbf
 
 长按图片可识别文字并实现物体抠图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/Yys908CxRbGB4LuPNGVw1g/zh-cn_image_0000002229336901.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061310Z&HW-CC-Expire=86400&HW-CC-Sign=97C4F3438A383BAA127EE5CFCC288519F8629A12592EF94713E75593A7DDA388)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/Yys908CxRbGB4LuPNGVw1g/zh-cn_image_0000002229336901.gif)
 
 ### 关键点说明
 
@@ -323,7 +323,7 @@ content_hash: sha256:cc27c712a6ade950f6f77c06a7253521dc6d0764b0abd19caa1b4be8dbf
 
 跨端相册获取新的图片
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/VRnucn6XTB6gjnTeb32VSg/zh-cn_image_0000002229336897.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061310Z&HW-CC-Expire=86400&HW-CC-Sign=91D9A1FEB9BB5A6F6568848F0E98A33A72CF4929B32E35F518DE3C81B766A737 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/VRnucn6XTB6gjnTeb32VSg/zh-cn_image_0000002229336897.gif "点击放大")
 
 ### 子场景描述
 
@@ -420,7 +420,7 @@ onState方法的回调函数包含两个参数：stateCode表示业务完成状�
 
 自由流转，接续编辑图文内容的功能已启用。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/-WbgL0ARR1OftHTmR8kBsA/zh-cn_image_0000002229336905.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061310Z&HW-CC-Expire=86400&HW-CC-Sign=FA2F659502BEC07796831EFD464770450D9A7059E0D3C8A9AF8FE3A8465C0934 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/-WbgL0ARR1OftHTmR8kBsA/zh-cn_image_0000002229336905.gif "点击放大")
 
 ### 关键点说明
 

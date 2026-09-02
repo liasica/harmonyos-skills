@@ -5,7 +5,7 @@ breadcrumb: FAQ > 应用质量 > 技术质量 > 运维 > 如何通过hdc命令�
 category: harmonyos-faqs
 scraped_at: 2026-04-29T14:14:34+08:00
 doc_updated_at: 2026-03-17
-content_hash: sha256:27176562991751a6c4fc0124a319b51bc7c9ebdf32a57cb9a262417f756dffea
+content_hash: sha256:f44e394a61ac09e94f160601cbd5b5cc3c6ff4434f18c8753c1bf9c079e7a80b
 ---
 
 使用命令拉起指定UIAbility：
@@ -22,7 +22,7 @@ content_hash: sha256:27176562991751a6c4fc0124a319b51bc7c9ebdf32a57cb9a262417f756
 1. hdc shell aa start -a EntryAbility -b com.example.myapplication
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/DLXUXeenRyOpCvaUeM887g/zh-cn_image_0000002229758597.png?HW-CC-KV=V1&HW-CC-Date=20260429T061433Z&HW-CC-Expire=86400&HW-CC-Sign=8DF1E13E504F059E605298BDEEDB8FFA57777BA1099026E06D859CC826E9CA16 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/DLXUXeenRyOpCvaUeM887g/zh-cn_image_0000002229758597.png "点击放大")
 
 **参考链接**
 

@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:27:39+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:cd9a99119ffa8621f71fca85b8cadede0797c02001b819be8385e0b0383b7f54
+content_hash: sha256:662043af1ef9672b9dd42602d580f5b4f4ecb06f35c2f6c48049b919c2a9e01b
 ---
 
 Navigation提供[系统路由表](arkts-navigation-cross-package.md#系统路由表)和[自定义路由表](arkts-navigation-cross-package.md#自定义路由表)两种实现方式，通过路由表的配置可以完成本包和跨包的页面跳转。
@@ -362,7 +362,7 @@ Navigation提供[系统路由表](arkts-navigation-cross-package.md#系统路由
 
    **图1** HSP、HAR编译产物示意图
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/PkjwOuZ_TcKMo-5BKZbV4Q/zh-cn_image_0000002558604518.png?HW-CC-KV=V1&HW-CC-Date=20260429T052736Z&HW-CC-Expire=86400&HW-CC-Sign=ACA56F45D2C422997F27E9788572EBC8587CAA3BF203A0DA1F181A67A9962A51)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/PkjwOuZ_TcKMo-5BKZbV4Q/zh-cn_image_0000002558604518.png)
 
    在HAP的oh-package.json5配置文件中配置对HAR与HSP的依赖。
 
@@ -385,4 +385,4 @@ Navigation提供[系统路由表](arkts-navigation-cross-package.md#系统路由
 
    **图2** Navigation跨包跳转示例
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/dJa39JVqSIqm8s1RcrA87w/zh-cn_image_0000002589324043.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052736Z&HW-CC-Expire=86400&HW-CC-Sign=7A48DA8A6A4293499FEB0BBFD5F50579B57677CA5D38C34D8DBF811522ACD0A0)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/dJa39JVqSIqm8s1RcrA87w/zh-cn_image_0000002589324043.gif)

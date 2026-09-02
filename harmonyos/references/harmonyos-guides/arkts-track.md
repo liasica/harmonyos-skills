@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-track
-title: @Track装饰器：class对象属性级更新
+title: "@Track装饰器：class对象属性级更新"
 category: harmonyos-guides
 scraped_at: 2026-04-28T07:39:05+08:00
 doc_updated_at: 2026-04-20

@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-dark-color-mode-check
-title: @performance/dark-color-mode-check
+title: "@performance/dark-color-mode-check"
 category: harmonyos-guides
 scraped_at: 2026-04-28T07:56:00+08:00
 doc_updated_at: 2026-04-20

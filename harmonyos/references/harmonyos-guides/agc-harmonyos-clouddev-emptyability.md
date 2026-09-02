@@ -5,7 +5,7 @@ breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > 端云�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:45:06+08:00
 doc_updated_at: 2026-04-22
-content_hash: sha256:86abab565ef496907451afd7506ea8c8d6c246be7d922d685d2eb116bf33af19
+content_hash: sha256:0e4144c02dfa9cecbdea2779b8b52d5e2d38e627ad2a080f0002eb0a287184b1
 ---
 
 ## 适用范围
@@ -49,7 +49,7 @@ content_hash: sha256:86abab565ef496907451afd7506ea8c8d6c246be7d922d685d2eb116bf3
       5. ]
       ```
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/iyj7C-pcTDaxPomMZPXBvg/zh-cn_image_0000002492564672.png?HW-CC-KV=V1&HW-CC-Date=20260429T054505Z&HW-CC-Expire=86400&HW-CC-Sign=B6EBA9DD68E883FCBB3FC78155485ED2008F5EA55448E0A993AC3B403ECAFAA7)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/iyj7C-pcTDaxPomMZPXBvg/zh-cn_image_0000002492564672.png)
 4. 将模板工程推包到手机上，在手机上开通应用访问数据权限，即可开始体验模板。
 
    注意

@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-accessibility-gesturepoint
-title: @ohos.accessibility.GesturePoint (手势触摸点)
+title: "@ohos.accessibility.GesturePoint (手势触摸点)"
 breadcrumb: API参考 > 应用框架 > Accessibility Kit（无障碍服务） > ArkTS API > @ohos.accessibility.GesturePoint (手势触摸点)
 category: harmonyos-references
 scraped_at: 2026-04-28T07:59:06+08:00

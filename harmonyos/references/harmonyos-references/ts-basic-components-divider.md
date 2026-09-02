@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:52:23+08:00
 doc_updated_at: 2026-04-02
-content_hash: sha256:0585425d81d744357c3c1331dcf90308ddc762c5b68049d8e30e45abe5bc5864
+content_hash: sha256:81773ae8a0f8dcc600c02c58e75ad1f434ba179824df100387980e7f2f741075
 ---
 
 提供分割线组件，分割不同内容块/内容元素。
@@ -213,7 +213,7 @@ PhonePC/2in1TabletTVWearable
 67. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/bpEQjcs-Tm6ttCr-6u2Tgg/zh-cn_image_0000002558606790.png?HW-CC-KV=V1&HW-CC-Date=20260429T055222Z&HW-CC-Expire=86400&HW-CC-Sign=6A603242397FDB40971BBC0ADEBA0E3E3A92CB1BD514829D313B5B7352FC82DD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/bpEQjcs-Tm6ttCr-6u2Tgg/zh-cn_image_0000002558606790.png)
 
 ### 示例2（定义Divider的lineCap样式）
 
@@ -252,4 +252,4 @@ PhonePC/2in1TabletTVWearable
 30. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/rR2CnZHnQhui00jY_vNLfQ/zh-cn_image_0000002589326317.png?HW-CC-KV=V1&HW-CC-Date=20260429T055222Z&HW-CC-Expire=86400&HW-CC-Sign=41221494EFAEF15E8E1D4C3C36545803958B5227EE6962F6F46F9674246003A5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/rR2CnZHnQhui00jY_vNLfQ/zh-cn_image_0000002589326317.png)

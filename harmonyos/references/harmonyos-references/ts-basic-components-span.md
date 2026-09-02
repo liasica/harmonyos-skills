@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:52:11+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:f499bb6fa512497e3e734745d3bfc6b2e02ed3fe77decba000118bc4c44f7e96
+content_hash: sha256:e2969f686ae7e273b945b35ce0d5eb7ad72ca117b70128e5bb56b8026e4a8c25
 ---
 
 作为[Text](ts-basic-components-text.md)、[ContainerSpan](ts-basic-components-containerspan.md)组件的子组件，用于显示行内文本的组件。
@@ -497,7 +497,7 @@ PhonePC/2in1TabletTVWearable
 131. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/yU8Bt3p5QpCkmDKHoVJZOA/zh-cn_image_0000002589246141.png?HW-CC-KV=V1&HW-CC-Date=20260429T055206Z&HW-CC-Expire=86400&HW-CC-Sign=1A9CE7CC4DF3B14E1F144BA47919F4DE3B1FDF256DF5A19B767F92B6972B95EE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/yU8Bt3p5QpCkmDKHoVJZOA/zh-cn_image_0000002589246141.png)
 
 ### 示例2（设置文本阴影）
 
@@ -551,7 +551,7 @@ PhonePC/2in1TabletTVWearable
 45. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/8S0snUZaRzanK92oucpblw/zh-cn_image_0000002558766332.png?HW-CC-KV=V1&HW-CC-Date=20260429T055206Z&HW-CC-Expire=86400&HW-CC-Sign=6F09C6ADE3BAF6EAE090D8C13A627DBA65FD670747CF275EC92F618D57D1EAFE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/8S0snUZaRzanK92oucpblw/zh-cn_image_0000002558766332.png)
 
 ### 示例3（设置背景样式）
 
@@ -575,7 +575,7 @@ PhonePC/2in1TabletTVWearable
 15. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/JzeEFpJoTNi4d10127KKVQ/zh-cn_image_0000002558606674.png?HW-CC-KV=V1&HW-CC-Date=20260429T055206Z&HW-CC-Expire=86400&HW-CC-Sign=B4AC81484BAFD209E5D8E6744E344C318AEBA6E5606FB4D9DD43240EA5AFE7F0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/JzeEFpJoTNi4d10127KKVQ/zh-cn_image_0000002558606674.png)
 
 ### 示例4（设置文本基线偏移量）
 
@@ -612,4 +612,4 @@ PhonePC/2in1TabletTVWearable
 28. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/3wq2_C_ZSWGRQ0ktNhijtw/zh-cn_image_0000002589326201.png?HW-CC-KV=V1&HW-CC-Date=20260429T055206Z&HW-CC-Expire=86400&HW-CC-Sign=D9F713B41050F6D041BCE25E9FF35CAE8FDB436B681DE063F9649255C3782A05)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/3wq2_C_ZSWGRQ0ktNhijtw/zh-cn_image_0000002589326201.png)

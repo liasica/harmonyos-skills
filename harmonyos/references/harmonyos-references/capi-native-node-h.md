@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > C API > 头�
 category: harmonyos-references
 scraped_at: 2026-04-29T13:54:12+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:04e7b4d2433ed196ef6f6a2aa0652977146195fd5e7f312b3e30ac6b456e0f2a
+content_hash: sha256:34758bb7711be740cb713f6c6ed6746764df40e6e9c0176b2d9abf877da57c37
 ---
 
 ## 概述
@@ -3358,7 +3358,7 @@ PhonePC/2in1TabletTVWearable
 
 将点的坐标从指定节点的坐标系转换至当前窗口的坐标系。节点的坐标系考虑节点本身的变换，例如，节点A的变换效果为向左平移100，会使得其坐标系中的点的坐标也向左平移100。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/XCPHrRlOSCGxbowkDohJdQ/zh-cn_image_0000002558607372.png?HW-CC-KV=V1&HW-CC-Date=20260429T055409Z&HW-CC-Expire=86400&HW-CC-Sign=7594C9A4A95949A3BF31C3C3DBCC7AF9A9451CF603C5325A0B3EBDF4EC77D7C7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/XCPHrRlOSCGxbowkDohJdQ/zh-cn_image_0000002558607372.png)
 
 如上图所示，将指定节点坐标系中的坐标(x0, y0)转换成窗口坐标系的坐标，结果为(x1, y1)。
 
@@ -3390,7 +3390,7 @@ PhonePC/2in1TabletTVWearable
 
 将点的坐标从当前窗口的坐标系转换至目标节点的坐标系。节点的坐标系考虑节点本身的变换，例如，节点A的变换效果为向左平移100，会使得其坐标系中的点的坐标也向左平移100。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/RuPxX9H7Sve-Dixna_cVWQ/zh-cn_image_0000002589326901.png?HW-CC-KV=V1&HW-CC-Date=20260429T055409Z&HW-CC-Expire=86400&HW-CC-Sign=B3C9CB525BB66DA7727150F69A693F4BC79EE4018466443900E528BD811C30E6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/RuPxX9H7Sve-Dixna_cVWQ/zh-cn_image_0000002589326901.png)
 
 如上图所示，将窗口坐标系中的坐标(x1, y1)转换成目标节点坐标系的坐标，结果为(x0, y0)。
 

@@ -5,7 +5,7 @@ breadcrumb: 指南 > 媒体 > AVCodec Kit（音视频编解码服务） > 音视
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:34:39+08:00
 doc_updated_at: 2026-03-23
-content_hash: sha256:1974fa37c1a99652bb7999a4f362788d3d29aecb666cfe4c11b3100b8e58bf7d
+content_hash: sha256:74fdf4e48b76cc5e5642f323cc1955885a615c7ef92e00cf73669ff9763dae0f
 ---
 
 从API version 20开始，支持音频编码同步模式。
@@ -47,7 +47,7 @@ content_hash: sha256:1974fa37c1a99652bb7999a4f362788d3d29aecb666cfe4c11b3100b8e5
 * 虚线表示可选。音频编码不涉及解密，无需调用OH\_AudioCodec\_SetDecryptionConfig。
 * 实线表示必选。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/iXdxQqTrSt2sodw-lLs0mA/zh-cn_image_0000002558605386.png?HW-CC-KV=V1&HW-CC-Date=20260429T053438Z&HW-CC-Expire=86400&HW-CC-Sign=11FB0121D014123E32B69EAE2D974DAB20122C49E522EAE86BD714E3BE9735CB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/iXdxQqTrSt2sodw-lLs0mA/zh-cn_image_0000002558605386.png)
 
 ### 在CMake脚本中链接动态库
 
@@ -99,11 +99,11 @@ content_hash: sha256:1974fa37c1a99652bb7999a4f362788d3d29aecb666cfe4c11b3100b8e5
 
    配置选项key值说明：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/qpNuHJ1DQSWhzhCnYSojzQ/zh-cn_image_0000002589244847.png?HW-CC-KV=V1&HW-CC-Date=20260429T053438Z&HW-CC-Expire=86400&HW-CC-Sign=5B716EC8436DEA394410946BF96EA2BDB9FC57AB09A9E1B0C17574BA82D7E4E9)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/qpNuHJ1DQSWhzhCnYSojzQ/zh-cn_image_0000002589244847.png)
 
    各音频编码类型参数范围说明：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/Yb9Fdrt6TvuR3xGkxjQ9gg/zh-cn_image_0000002558765042.png?HW-CC-KV=V1&HW-CC-Date=20260429T053438Z&HW-CC-Expire=86400&HW-CC-Sign=FF27FD9D9F4B256ACDA64DA5F3F199F71E370B6C862F5A507AF69D1695FF5FD2)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/Yb9Fdrt6TvuR3xGkxjQ9gg/zh-cn_image_0000002558765042.png)
 
    例如，对44100Hz采样率、2声道立体声、SAMPLE\_S16LE采样格式的PCM音频，以32000bps的码率进行AAC编码的调用流程如下：
 

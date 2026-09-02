@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:51:35+08:00
 doc_updated_at: 2026-04-08
-content_hash: sha256:4a282c96fc9540ba75daec0d1f2e0b890e970c087e1abba558edcbbc6cbb2fab
+content_hash: sha256:353309e65273b2dff3266be52acbb0cb2a6e60f81e58695e936c706bdf94f21d
 ---
 
 滑动手势事件，当滑动的最小距离达到设定的最小值时触发滑动手势事件。
@@ -360,8 +360,8 @@ PhonePC/2in1TabletTVWearable
 
 向左滑动：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/QGXoloy3QlCMOy0sop2SGw/zh-cn_image_0000002558766104.png?HW-CC-KV=V1&HW-CC-Date=20260429T055134Z&HW-CC-Expire=86400&HW-CC-Sign=D0DCC8A43BD032062FDEC8D999785556C5A919CFE69C2FB2FDA2C8CB1CC5EE6E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/QGXoloy3QlCMOy0sop2SGw/zh-cn_image_0000002558766104.png)
 
 点击按钮时，修改PanGesture触发条件为双指向左下方滑动：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/Mrjbvn5ySbK_DZndWKn8tQ/zh-cn_image_0000002558606446.png?HW-CC-KV=V1&HW-CC-Date=20260429T055134Z&HW-CC-Expire=86400&HW-CC-Sign=2E3554CAD26E9FC3659E2D7A01F875518F42AF54EDD56E11B2B825665B45FDD0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/Mrjbvn5ySbK_DZndWKn8tQ/zh-cn_image_0000002558606446.png)

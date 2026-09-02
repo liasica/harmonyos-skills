@@ -5,7 +5,7 @@ breadcrumb: 最佳实践 > 应用框架 > 程序包结构 > 应用图标配置�
 category: best-practices
 scraped_at: 2026-04-29T14:10:48+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:9a08fa649b2302b3d7abf6752c0d781639a0d535d1ba9717b7691ea36e7463d5
+content_hash: sha256:db4ed937a7d3f1a23ee49acb610f99f5b76b4b3e10193633a52979f24e3512a7
 ---
 
 ## 概述
@@ -200,7 +200,7 @@ UI Design Kit提供了应用图标处理能力，支持单层图标和双层图�
   2. 打开DevEco Testing，选择专项测试的UX基础质量测试。
   3. 在测试规则中选择应用图标，并选择测试时长后创建测试任务。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/FJYXCuBfRkKk0vcNNbv7qg/zh-cn_image_0000002548106143.png?HW-CC-KV=V1&HW-CC-Date=20260429T061047Z&HW-CC-Expire=86400&HW-CC-Sign=895192F5F1A5E3C261C8AD4317024D01F29AA6478CCFA1829908E789440CE68F)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/FJYXCuBfRkKk0vcNNbv7qg/zh-cn_image_0000002548106143.png)
 * 使用DevEco Testing的[上架预检](../harmonyos-guides/publish-testing.md)服务。
 * 使用AppGallery Connect平台的云测试服务进行[UX测试](../app/agc-help-cloudtest-uxtest-0000002289534109.md)。
 
@@ -224,8 +224,8 @@ UI Design Kit提供了应用图标处理能力，支持单层图标和双层图�
 
    app.json5文件：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/pD0-SirySjWAitmkd80MbA/zh-cn_image_0000002548066135.png?HW-CC-KV=V1&HW-CC-Date=20260429T061047Z&HW-CC-Expire=86400&HW-CC-Sign=E7590D4FAEABCB892379E4BC89DCD85B4636F54DA9F3A1864A8C064FC9829CB9)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/pD0-SirySjWAitmkd80MbA/zh-cn_image_0000002548066135.png)
 
    module.json5文件的abilities标签：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/DDQXGFQLTqicL0u6pc52Sw/zh-cn_image_0000002516546242.png?HW-CC-KV=V1&HW-CC-Date=20260429T061047Z&HW-CC-Expire=86400&HW-CC-Sign=806DFA28350064AE0E32716F3AC85D281D5895075DECDB8E1A5613E2E8CAF530)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/DDQXGFQLTqicL0u6pc52Sw/zh-cn_image_0000002516546242.png)

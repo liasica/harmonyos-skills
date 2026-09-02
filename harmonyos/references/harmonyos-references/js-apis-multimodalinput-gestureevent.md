@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-multimodalinput-gestureevent
-title: @ohos.multimodalInput.gestureEvent (手势事件)
+title: "@ohos.multimodalInput.gestureEvent (手势事件)"
 breadcrumb: API参考 > 系统 > 基础功能 > Input Kit（多模输入服务） > ArkTS API > @ohos.multimodalInput.gestureEvent (手势事件)
 category: harmonyos-references
 scraped_at: 2026-04-28T08:10:14+08:00

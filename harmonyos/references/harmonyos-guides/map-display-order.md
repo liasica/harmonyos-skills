@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 在地图上绘�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:39:11+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:50ec40a29211e186ced1f73db9c5795ddf8a76996b4609cc59be534025cb44b0
+content_hash: sha256:fd1691be42544a44b96b05f99b52438d8b21ac8d04f4c8f5eca2e364d4d9e7ff
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:50ec40a29211e186ced1f73db9c5795ddf8a76996b4609cc59be534025c
 
 设置地图元素的显示顺序，按照从低到高排列，即后面的地图元素会压盖前面的地图元素。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/cNBjUpMQSWCVgBRSYEF--w/zh-cn_image_0000002589245353.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053516Z&HW-CC-Expire=86400&HW-CC-Sign=4EDE126BF78B1C5706C928826109A0A0EAE5127EC70C0C23C995459A7356C10D "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/cNBjUpMQSWCVgBRSYEF--w/zh-cn_image_0000002589245353.jpg "点击放大")
 
 **表1** 地图元素类型压盖顺序
 

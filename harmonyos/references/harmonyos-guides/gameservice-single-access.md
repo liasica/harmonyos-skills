@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用服务 > Game Service Kit（游戏服务） > 基础�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:38:09+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:32c44745c7b9de5938ca69b6649f5247537438f790e979cdbb88f08ad837d8d5
+content_hash: sha256:b33cee6aa73255c745bd7e2b046841b1651d5466041566a45c26f4797318e478
 ---
 
 单机游戏是指数据本地化存储，不依赖服务器的游戏。
@@ -48,7 +48,7 @@ AppGallery Connect会自动生成证书对应的公钥信息，并计算出对�
 
 1. 登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)，在“开发与服务”下选择项目及项目下的游戏，获取“应用”下的APP ID和Client ID。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/jS2i11HASF60P2qHbBe-nQ/zh-cn_image_0000002589325255.png?HW-CC-KV=V1&HW-CC-Date=20260429T053808Z&HW-CC-Expire=86400&HW-CC-Sign=D3ACE5D9B6CF73E0EF0C2539BB585203A9A87969EB456F586FD3B47D09B249F1)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/jS2i11HASF60P2qHbBe-nQ/zh-cn_image_0000002589325255.png)
 2. 在工程的entry模块module.json5文件中，新增metadata并配置client\_id和app\_id，同时新增requestPermissions以配置网络权限。如下所示：
 
    ```
@@ -82,14 +82,14 @@ AppGallery Connect会自动生成证书对应的公钥信息，并计算出对�
 
 1. 登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)，在“开发与服务”下选择项目及项目下的游戏，左侧菜单选择“构建 > 游戏服务”，在右侧点击“新增配置”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/H0hQDGsiRbu0QR0HqCEuoA/zh-cn_image_0000002589245191.png?HW-CC-KV=V1&HW-CC-Date=20260429T053808Z&HW-CC-Expire=86400&HW-CC-Sign=149E74060D58BFF8C4EB56FBBFE42E0B22C41E99F446855C3C6245ACE3EE2576)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/H0hQDGsiRbu0QR0HqCEuoA/zh-cn_image_0000002589245191.png)
 2. 在弹出的“新增配置信息”窗口中选择HAP游戏和APK游戏，完成后点击“下一步”。
 
    说明
 
    请正确配置HAP游戏与APK游戏的映射关系。若开发者配置错误类型的游戏，将有提示框提示重新选择游戏。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/n7syxLfPTYypd85mlJ8xIw/zh-cn_image_0000002558765386.png?HW-CC-KV=V1&HW-CC-Date=20260429T053808Z&HW-CC-Expire=86400&HW-CC-Sign=BBB96231644EF806DA5545529588AC363B4726B7CB2A3AFEAF276E5E608A0507)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/n7syxLfPTYypd85mlJ8xIw/zh-cn_image_0000002558765386.png)
 
    | 信息项 | 说明 |
    | --- | --- |
@@ -97,26 +97,26 @@ AppGallery Connect会自动生成证书对应的公钥信息，并计算出对�
    | HarmonyOS 4及以下游戏 | 请选择已上架或待上架的APK游戏。 |
 3. 在弹出的窗口中继续填写信息，完成后点击“下一步”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/eUvwFEy1RN6xisRKza9a3Q/zh-cn_image_0000002558605730.png?HW-CC-KV=V1&HW-CC-Date=20260429T053808Z&HW-CC-Expire=86400&HW-CC-Sign=B8328B89D0F98091C5A1623133E57B9DCA39C03348A7B664F4AEA39F915E68C2)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/eUvwFEy1RN6xisRKza9a3Q/zh-cn_image_0000002558605730.png)
 4. （可选）填写开发者服务器的回调地址，完成后点击“确定”提交APP ID映射关系的审批申请。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/04LofuCLQsW0fE2fKLVFAQ/zh-cn_image_0000002589325257.png?HW-CC-KV=V1&HW-CC-Date=20260429T053808Z&HW-CC-Expire=86400&HW-CC-Sign=314FF2EB4FF32E41B325D59FCFA3F34540B7E3C3B2777D0CECDEB23B49082BAB)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/04LofuCLQsW0fE2fKLVFAQ/zh-cn_image_0000002589325257.png)
 5. 若出现异常情况（例如在架状态不符合要求），将在提示框以红字提醒，建议点击“取消”并重新配置映射关系。若忽略异常情况点击“确定”继续提交申请，可能会造成映射关系审批不通过。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/5ca4RmgXQYiQy8ISq2OHEA/zh-cn_image_0000002589245193.png?HW-CC-KV=V1&HW-CC-Date=20260429T053808Z&HW-CC-Expire=86400&HW-CC-Sign=3DC2CBE7F27EE82A211197CABD84C5D095A0DB224896E96FD9E05546633FCE65)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/5ca4RmgXQYiQy8ISq2OHEA/zh-cn_image_0000002589245193.png)
 6. 提交申请后，华为工作人员完成审核需要1-3个工作日，请耐心等待。
 
    APP ID映射关系生效后如需重新配置，请先提交映射关系的删除申请。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/OqA7HnzkRJeoy7nYiwXX6w/zh-cn_image_0000002558765388.png?HW-CC-KV=V1&HW-CC-Date=20260429T053808Z&HW-CC-Expire=86400&HW-CC-Sign=ADEC5C89C12A67E7329A4FA699B619480C9005AE74DEFE068FE38C92920A1172)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/OqA7HnzkRJeoy7nYiwXX6w/zh-cn_image_0000002558765388.png)
 
    配置/删除APP ID映射关系的审核结果将通过互动中心或邮件进行通知。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/UIchM7V2RMuyiaTeWw3hUA/zh-cn_image_0000002558605732.png?HW-CC-KV=V1&HW-CC-Date=20260429T053808Z&HW-CC-Expire=86400&HW-CC-Sign=B421E9B2FB45974DB7D7250B60D3EA806435909DFF9E2B6081F89C18317C9002)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/UIchM7V2RMuyiaTeWw3hUA/zh-cn_image_0000002558605732.png)
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/6pnh3lX9QlO3dFHEKYvmjQ/zh-cn_image_0000002558765394.png?HW-CC-KV=V1&HW-CC-Date=20260429T053808Z&HW-CC-Expire=86400&HW-CC-Sign=9BE1A36DF462F2A5338ACEF6CDF9BF9E50B0A77B290DBD5E30DDFCAF5D6A9802)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/6pnh3lX9QlO3dFHEKYvmjQ/zh-cn_image_0000002558765394.png)
 
 1. 玩家启动游戏。
 2. 游戏调用[init](../harmonyos-references/gameservice-gameplayer.md#gameplayerinit-1)接口初始化Game Service Kit。初始化后，弹出华为隐私协议窗口，玩家确认同意后，则继续往下执行。
@@ -177,7 +177,7 @@ AppGallery Connect会自动生成证书对应的公钥信息，并计算出对�
 
 初始化后，游戏弹出华为隐私协议窗口，用户同意签署协议，则继续往下执行。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/XU3CHTZwQ5yfMOcRH63rcA/zh-cn_image_0000002558765390.png?HW-CC-KV=V1&HW-CC-Date=20260429T053808Z&HW-CC-Expire=86400&HW-CC-Sign=3E0F997D1A0E6E27A5E5E72AF4BE1317F1D33481AFDA3944829A1813D0F00FC6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/XU3CHTZwQ5yfMOcRH63rcA/zh-cn_image_0000002558765390.png)
 
 若当前华为账号同意过游戏服务隐私协议，后续使用该华为账号登录的游戏将不会再弹出隐私协议窗口。
 
@@ -205,7 +205,7 @@ AppGallery Connect会自动生成证书对应的公钥信息，并计算出对�
 
 用户完成登录流程后，游戏顶部弹出欢迎横幅，并向游戏返回accountName（华为账号登录返回值为hw\_account）、gamePlayerId等信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/HV6Tqa5pQRm5i9MqCxvp8A/zh-cn_image_0000002558605734.png?HW-CC-KV=V1&HW-CC-Date=20260429T053808Z&HW-CC-Expire=86400&HW-CC-Sign=8E99E14C6AF3DF0E09CFCCD4FF691E665526005C44C8D4249DD6C522AA3CF83F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/HV6Tqa5pQRm5i9MqCxvp8A/zh-cn_image_0000002558605734.png)
 
 ### 合规校验
 
@@ -236,4 +236,4 @@ AppGallery Connect会自动生成证书对应的公钥信息，并计算出对�
 | 未成年人防沉迷 | 校验已实名认证为未成年人的华为账号是否在规定时间内登录游戏。 | 根据国家新闻出版署的最新规定，所有网络游戏企业仅可在周五、周六、周日和法定节假日每日20时至21时向未成年人提供1小时网络游戏服务，其他时间均不得以任何形式向未成年人提供网络游戏服务。 | - 已实名认证为未成年人的华为账号在规定时间内登录游戏，当游戏进行到晚上21时，基础游戏服务会弹窗提示玩家已到游戏时间，强制玩家退出游戏并返回[1002000006](../harmonyos-references/gameservice-error-code.md#section1002000006-玩家未成年并且当前不在可游戏时间)错误码。  - 已实名认证为未成年人的华为账号在非规定游戏时间内登录游戏，基础游戏服务会弹框提示玩家不允许游戏，强制玩家退出游戏并返回[1002000006](../harmonyos-references/gameservice-error-code.md#section1002000006-玩家未成年并且当前不在可游戏时间)错误码。 |
 | 未成年人支付限额 | 校验已实名认证为未成年人的华为账号是否限额付费。 | 根据国家新闻出版署的最新规定，网络游戏企业不得为未满8周岁的用户提供游戏付费服务。同一网络游戏企业所提供的游戏付费服务，8周岁以上未满16周岁的用户，单次充值金额不得超过50元人民币，每月充值金额累计不得超过200元人民币；16周岁以上未满18周岁的用户，单次充值金额不得超过100元人民币，每月充值金额累计不得超过400元人民币。 | 已实名认证为未成年人的华为账号在游戏内超额付费，IAP Kit会弹窗提示消费金额超出限制。  用户在使用华为应用内支付时，华为会自动根据国家新闻出版署的要求进行支付限额控制，开发者无需处理。 |
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/YDK7pLFrRRKSwTO0VWXPig/zh-cn_image_0000002589245197.png?HW-CC-KV=V1&HW-CC-Date=20260429T053808Z&HW-CC-Expire=86400&HW-CC-Sign=A4A012BC7B21A2D271C946D2311D947ECDD932585828D15A9E41BE38CC2C7EB4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/YDK7pLFrRRKSwTO0VWXPig/zh-cn_image_0000002589245197.png)

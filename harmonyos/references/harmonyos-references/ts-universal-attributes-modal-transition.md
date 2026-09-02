@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:51:30+08:00
 doc_updated_at: 2026-03-23
-content_hash: sha256:e833e2055ba929aaedd60760187cbbf4142e2c325202a192d3e0b8f231e438ec
+content_hash: sha256:444e06dabf9029d23d52752f3c1e1e5790c8b5d97f8a03c63c09108eeef90640
 ---
 
 通过bindContentCover属性为组件绑定全屏模态页面，在组件插入和移除时可通过设置转场参数ModalTransition显示过渡动效。
@@ -204,7 +204,7 @@ PhonePC/2in1TabletTVWearable
 89. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/9-8fJCKRRuSUx2nQeTFKug/zh-cn_image_0000002589325953.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055127Z&HW-CC-Expire=86400&HW-CC-Sign=D51E0AEA64BF131895CC044FF7FB3D4EF1A13D61868090343D5C01905DA50E37)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/9-8fJCKRRuSUx2nQeTFKug/zh-cn_image_0000002589325953.gif)
 
 ### 示例2（自定义转场动画）
 
@@ -318,7 +318,7 @@ PhonePC/2in1TabletTVWearable
 105. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/Ubn5ap8JTwG_eF3H9h8ExQ/zh-cn_image_0000002589245895.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055127Z&HW-CC-Expire=86400&HW-CC-Sign=9049B669A76EFBA8761AAD9085DB6DE773863F5BB54463893FF989380BAC9FA9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/Ubn5ap8JTwG_eF3H9h8ExQ/zh-cn_image_0000002589245895.gif)
 
 ### 示例3（上下切换转场）
 
@@ -416,7 +416,7 @@ PhonePC/2in1TabletTVWearable
 89. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/wTuMgR_tQkm8vHoasPTLSA/zh-cn_image_0000002558766086.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055127Z&HW-CC-Expire=86400&HW-CC-Sign=8969AA87CEA2B1EDAEFB79BC0C576E64CA4BC6BE618D64F6BE0DE9C954EC5592)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/wTuMgR_tQkm8vHoasPTLSA/zh-cn_image_0000002558766086.gif)
 
 ### 示例4（透明度渐变转场）
 
@@ -515,7 +515,7 @@ PhonePC/2in1TabletTVWearable
 90. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/yu0rY1_yQ_msAZQw8JM4vg/zh-cn_image_0000002558606428.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055127Z&HW-CC-Expire=86400&HW-CC-Sign=8232EB8B07ADEA620EDFFBBBBC41F175DA970C86DE94E2ED539926795A741039)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/yu0rY1_yQ_msAZQw8JM4vg/zh-cn_image_0000002558606428.gif)
 
 ### 示例5（设置不同效果的自定义转场）
 
@@ -631,7 +631,7 @@ PhonePC/2in1TabletTVWearable
 107. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/o_rGaNpHT6axrW_XcM0MeA/zh-cn_image_0000002589325955.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055127Z&HW-CC-Expire=86400&HW-CC-Sign=B3EE5A9FDC8192F7852D381A111AF84B9C35C15BDD41E1E9C5E14EEC965CA2C0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/o_rGaNpHT6axrW_XcM0MeA/zh-cn_image_0000002589325955.gif)
 
 ### 示例6（设置全屏模态适配安全区）
 
@@ -694,4 +694,4 @@ PhonePC/2in1TabletTVWearable
 54. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/-j5D--6sS_yZHBLLCSzfrA/zh-cn_image_0000002589245897.png?HW-CC-KV=V1&HW-CC-Date=20260429T055127Z&HW-CC-Expire=86400&HW-CC-Sign=3D8C524087DA878BA239C316BC246E754BBA5517090CCA44AD6555801F6C8116)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/-j5D--6sS_yZHBLLCSzfrA/zh-cn_image_0000002589245897.png)

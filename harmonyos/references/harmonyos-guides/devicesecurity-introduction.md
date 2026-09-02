@@ -5,7 +5,7 @@ breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:31:28+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:f41ddb9b348b21486c81af974cf1110d34ffc054ac8e28509b36a353db513af5
+content_hash: sha256:bc00f87ea7a8550ec5bb60a6275210025e5c95889031c71f4605a4b50f1320cb
 ---
 
 Device Security Kit（设备安全服务）提供应用设备状态检测（DeviceVerify）、安全检测（SafetyDetect）、可信应用服务（TrustedAppService）、数字盾服务（TrustedAuthentication）、业务风险检测（BusinessRiskIntelligentDetection）、安全审计（SecurityAudit）、反诈选择器（AntifraudPicker）、防窥保护（DlpAntiPeep）、病毒防护服务管理（VirusProtectionServiceManager）和超级隐私模式（SuperPrivacyMode），可以保护应用程序免受安全威胁和保证应用的数据安全。
@@ -37,7 +37,7 @@ Device Security Kit（设备安全服务）提供应用设备状态检测（Devi
 
 业务关联如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/X-ffilxmS7qwkY3mEm5JIw/zh-cn_image_0000002558605222.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053126Z&HW-CC-Expire=86400&HW-CC-Sign=E4E28CAF7F49E92F89DCC6791ACA879287F25836BF033359AC45611943A48E40)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/X-ffilxmS7qwkY3mEm5JIw/zh-cn_image_0000002558605222.jpg)
 
 ## 约束与限制
 

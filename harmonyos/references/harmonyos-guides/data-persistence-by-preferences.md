@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkData（方舟数据管理） > 应用数�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:26:16+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:e0ad10f63c956ea64093c5d721c0ef948f40c2086c4009cfab3ec0fdddf667b3
+content_hash: sha256:9de07da57c11c9a7b583b72dd8377dc57cf70eea4fbad9f9c3142a1ead1737af
 ---
 
 ## 场景介绍
@@ -20,7 +20,7 @@ content_hash: sha256:e0ad10f63c956ea64093c5d721c0ef948f40c2086c4009cfab3ec0fdddf
 
 **图1** 用户首选项运作机制
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/Z4rHVszfQhmxu5USQpXF0w/zh-cn_image_0000002589323881.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T052615Z&HW-CC-Expire=86400&HW-CC-Sign=CDABF64B96765322AF089F015B5228A674653466DE7697873655D12AA573EC70)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/Z4rHVszfQhmxu5USQpXF0w/zh-cn_image_0000002589323881.jpg)
 
 ## 存储模式说明
 

@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用服务 > Game Controller Kit（游戏控制器服务�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:38:06+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:eaa177a438355c85308f0eb6944f1b1826c13ed89cc865ab462bb901dffa98a0
+content_hash: sha256:5a3d0380815a5d80b0d170ff444825037f21e35c6f8e6eb1e04bf56faccfae86
 ---
 
 ## 功能介绍
@@ -14,7 +14,7 @@ Game Controller Kit提供设备上下线事件监听和查询在线设备信息�
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/cA8Qem5TTWCkRsvLwgFySw/zh-cn_image_0000002558605726.png?HW-CC-KV=V1&HW-CC-Date=20260429T053805Z&HW-CC-Expire=86400&HW-CC-Sign=DC2D7B220363FF11642BFEE5D04FA560E7E9B80A4856F6C09C8311223B90D2C6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/cA8Qem5TTWCkRsvLwgFySw/zh-cn_image_0000002558605726.png)
 
 1. 玩家启动游戏。
 2. 游戏调用OH\_GameDevice\_RegisterDeviceMonitor接口注册设备状态变化事件监听。

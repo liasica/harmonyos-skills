@@ -5,7 +5,7 @@ breadcrumb: FAQ > 应用框架开发 > UI框架 > 方舟UI框架（ArkUI） > Li
 category: harmonyos-faqs
 scraped_at: 2026-04-29T14:16:14+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:7e3602cb9432ce616f3947290979610540b95d457b117cc37b54c82d8bb68bd6
+content_hash: sha256:6e47d811a341b72655374e96b148fb3f9331e99dce3327e1d48b6049fab9e74e
 ---
 
 设置[List](../harmonyos-references/ts-container-list.md)组件的lanes属性，以实现交叉轴上的多列布局。示例代码如下：
@@ -48,4 +48,4 @@ content_hash: sha256:7e3602cb9432ce616f3947290979610540b95d457b117cc37b54c82d8bb
 
 效果如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/gg5dh4zbT7qDxs224BBE_Q/zh-cn_image_0000002194158740.png?HW-CC-KV=V1&HW-CC-Date=20260429T061435Z&HW-CC-Expire=86400&HW-CC-Sign=EBC6DF64076FB6357466986586ECF8C060FA1A9ADEADFE5640504031521FAFC7 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/gg5dh4zbT7qDxs224BBE_Q/zh-cn_image_0000002194158740.png "点击放大")

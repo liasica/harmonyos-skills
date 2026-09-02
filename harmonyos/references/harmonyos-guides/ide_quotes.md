@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_quotes
-title: @typescript-eslint/quotes
+title: "@typescript-eslint/quotes"
 breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/quotes
 category: harmonyos-guides
 scraped_at: 2026-04-28T07:55:48+08:00

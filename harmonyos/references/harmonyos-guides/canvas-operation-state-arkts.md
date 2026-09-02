@@ -5,7 +5,7 @@ breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 图形�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:36:08+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:afab172a43f3e933d67d1a9e53e1ce36d2819147ac0c10982e5677887ee91f20
+content_hash: sha256:416115a6208fbcb92743ad867e63b79018d5f06e8c7a8b0a1b442db08dbd4892
 ---
 
 ## 场景介绍
@@ -218,7 +218,7 @@ content_hash: sha256:afab172a43f3e933d67d1a9e53e1ce36d2819147ac0c10982e5677887ee
 
 [CanvasOperationState.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/Drawing/ArkTSGraphicsDraw/entry/src/main/ets/drawing/pages/CanvasOperationState.ets#L92-L113)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/OlItGIsORseffRCex6ZUHA/zh-cn_image_0000002558765136.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053607Z&HW-CC-Expire=86400&HW-CC-Sign=7AACFA104375BA2ECBCC3EBDB61015AA3C8401902C7AC9011D88ABD46B6501C7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/OlItGIsORseffRCex6ZUHA/zh-cn_image_0000002558765136.jpg)
 
 ## 示例代码
 

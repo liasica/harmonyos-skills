@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:27:02+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:f0fc59089e189af35516b989c6e9a1f2e99e472b5c235bcfd5e4c66c18425ce7
+content_hash: sha256:b94f1eeeaa9eb8815208628ad0d0c1cafabe7a8ddc9245e9eea7f0401f46af63
 ---
 
 ## 概述
@@ -23,7 +23,7 @@ content_hash: sha256:f0fc59089e189af35516b989c6e9a1f2e99e472b5c235bcfd5e4c66c184
 
 自定义组件生命周期受状态机限制，流程如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/AR7JvBO9R-K728bVm9Qetw/zh-cn_image_0000002589323913.png?HW-CC-KV=V1&HW-CC-Date=20260429T052701Z&HW-CC-Expire=86400&HW-CC-Sign=6B47440774DBCFD3E34CB15F3167306C0DA1B1E9440B9DD82E0E2341CBCC6200)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/AR7JvBO9R-K728bVm9Qetw/zh-cn_image_0000002589323913.png)
 
 ### 自定义组件的创建和渲染流程
 
@@ -186,7 +186,7 @@ content_hash: sha256:f0fc59089e189af35516b989c6e9a1f2e99e472b5c235bcfd5e4c66c184
 
 当showchild为默认值true时，该示例的生命周期流程图如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/etbq5S70Qv-HAJOw0QWO-A/zh-cn_image_0000002589243853.png?HW-CC-KV=V1&HW-CC-Date=20260429T052701Z&HW-CC-Expire=86400&HW-CC-Sign=889B484D5BC5C93ACD9A166C6FB866A85D1722BF9F5B7DC1814B9F8D09EC5A03)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/etbq5S70Qv-HAJOw0QWO-A/zh-cn_image_0000002589243853.png)
 
 ### 自定义组件回收复用
 

@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:52:23+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:a066a6628166d35c5b808cf5d41acbad225bbbd6e510250b44d4d9d10ed3c462
+content_hash: sha256:8e0dcf44d901068852bf32e49f4f8e26d68428cb89dc29f386df258342768695
 ---
 
 空白填充组件，在容器主轴方向上，空白填充组件具有自动填充容器空余部分的能力。仅当父组件为[Row](ts-container-row.md)/[Column](ts-container-column.md)/[Flex](ts-container-flex.md)时生效。
@@ -105,11 +105,11 @@ Blank组件在横竖屏占满空余空间效果。
 
 竖屏状态
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/iUjUOKGzQEiKskteFvuNuQ/zh-cn_image_0000002589326315.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055222Z&HW-CC-Expire=86400&HW-CC-Sign=A723E00ED9BA7EEDB991698404FEFFA2AFCCCDEB591D29DD8C8EA29C283EA87C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/iUjUOKGzQEiKskteFvuNuQ/zh-cn_image_0000002589326315.gif)
 
 横屏状态
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/sTeeyj2pQKOvJiVRY9yrVQ/zh-cn_image_0000002589246257.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055222Z&HW-CC-Expire=86400&HW-CC-Sign=5E871E44338A6C921D2B70330526D27C4E325764FACF395B3CBE4202A44695AB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/sTeeyj2pQKOvJiVRY9yrVQ/zh-cn_image_0000002589246257.gif)
 
 ### 示例2（填充固定宽度）
 
@@ -143,4 +143,4 @@ Blank组件的父组件未设置宽度时，min参数的使用效果。
 
 Blank父组件未设置宽度时，子组件间无空白填充，使用min参数设置填充尺寸
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/rd-TCwUiRtWKbNwiOqLGsA/zh-cn_image_0000002558766450.png?HW-CC-KV=V1&HW-CC-Date=20260429T055222Z&HW-CC-Expire=86400&HW-CC-Sign=F639440C5AD0EE9B041098D64921391489D3A8F1E7064E438FC5C50DAEB9BD31)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/rd-TCwUiRtWKbNwiOqLGsA/zh-cn_image_0000002558766450.png)

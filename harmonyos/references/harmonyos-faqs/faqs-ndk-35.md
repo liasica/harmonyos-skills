@@ -5,7 +5,7 @@ breadcrumb: FAQ > 应用框架开发 > NDK开发 > NDK开发 > Native侧如何�
 category: harmonyos-faqs
 scraped_at: 2026-04-29T14:15:52+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:3cc5d386b4f12c240e8297b3511e5133e2c6c3b743e30ab0e0f7531b3640687e
+content_hash: sha256:6c96cbdc3f72c55b5251737612fe75e0439090db47a5064a325a34cef9604295
 ---
 
 1.在CMakeLists.txt中新增libhilog\_ndk.z.so链接：
@@ -41,7 +41,7 @@ content_hash: sha256:3cc5d386b4f12c240e8297b3511e5133e2c6c3b743e30ab0e0f7531b364
 
 结果展示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/btiSFL7DS-mQRoQRZShn9g/zh-cn_image_0000002194318320.png?HW-CC-KV=V1&HW-CC-Date=20260429T061551Z&HW-CC-Expire=86400&HW-CC-Sign=6732B999D31AE83D3A4C5D576D0F9CB7CFD9235BE69EFCFA5CB7783CAEA661C8 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/btiSFL7DS-mQRoQRZShn9g/zh-cn_image_0000002194318320.png "点击放大")
 
 **参考链接：**
 

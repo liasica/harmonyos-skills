@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-crypto-replacement-check
-title: @performance/crypto-replacement-check
+title: "@performance/crypto-replacement-check"
 category: harmonyos-guides
 scraped_at: 2026-04-28T07:56:01+08:00
 doc_updated_at: 2026-01-21

@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:28:29+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:2f8389f966556d15ac389e317da41c2f90c97fdd9939f730db9ac02e314fac2d
+content_hash: sha256:5963e66c484cc86335db698510747a060ba8f6af54fe4d5b2f5b65d1cfb6862f
 ---
 
 ## 概述
@@ -207,7 +207,7 @@ content_hash: sha256:2f8389f966556d15ac389e317da41c2f90c97fdd9939f730db9ac02e314
 
   [EntryAbility.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ThemeSkinning/entry/src/main/ets/entryability/EntryAbility.ets#L16-L55)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/f1zpCH2RSGeQH03iMM_ARQ/zh-cn_image_0000002589244335.png?HW-CC-KV=V1&HW-CC-Date=20260429T052825Z&HW-CC-Expire=86400&HW-CC-Sign=0FE80F16108CCBEB1324E0CB78B8C9D694A90187927446A4FA31B8AC99197AF6)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/f1zpCH2RSGeQH03iMM_ARQ/zh-cn_image_0000002589244335.png)
 
   说明
 
@@ -291,7 +291,7 @@ content_hash: sha256:2f8389f966556d15ac389e317da41c2f90c97fdd9939f730db9ac02e314
 
 [Theme2.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ThemeSkinning/entry/src/main/ets/pages/Theme2/Theme2.ets#L16-L79)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/ZdycFLAzSe-TqNf9HtyJsw/zh-cn_image_0000002558764528.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052825Z&HW-CC-Expire=86400&HW-CC-Sign=5665C58F365101DA6E945AABC7ED6BD26A7FAA327C65D04C813207726D160154)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/ZdycFLAzSe-TqNf9HtyJsw/zh-cn_image_0000002558764528.gif)
 
 ## 设置应用页面局部深浅色
 
@@ -303,7 +303,7 @@ content_hash: sha256:2f8389f966556d15ac389e317da41c2f90c97fdd9939f730db9ac02e314
 
 设置局部深浅色时，需要添加dark.json资源文件，深浅色模式才会生效。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/IaMlgAMzTpeTKu407aj1Jw/zh-cn_image_0000002558604872.png?HW-CC-KV=V1&HW-CC-Date=20260429T052825Z&HW-CC-Expire=86400&HW-CC-Sign=CDA02540716385D019B9D322AC4E5189623EBF183E0F449339C853422D47B012)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/IaMlgAMzTpeTKu407aj1Jw/zh-cn_image_0000002558604872.png)
 
 dark.json数据示例：
 
@@ -358,7 +358,7 @@ dark.json数据示例：
 
 [Theme3.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ThemeSkinning/entry/src/main/ets/pages/Theme3/Theme3.ets#L16-L50)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/5KTQQUczSvOMkTFSmQF7LQ/zh-cn_image_0000002589324397.png?HW-CC-KV=V1&HW-CC-Date=20260429T052825Z&HW-CC-Expire=86400&HW-CC-Sign=9535D4893882C840F249D30F89002A1B188483D9C332DF31065425F3BED27ED7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/5KTQQUczSvOMkTFSmQF7LQ/zh-cn_image_0000002589324397.png)
 
 ## 系统缺省token色值
 

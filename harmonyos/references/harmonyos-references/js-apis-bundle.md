@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-bundle
-title: @ohos.bundle (Bundle模块)
+title: "@ohos.bundle (Bundle模块)"
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > 已停止维护的接口 > @ohos.bundle (Bundle模块)
 category: harmonyos-references
 scraped_at: 2026-04-28T07:58:51+08:00

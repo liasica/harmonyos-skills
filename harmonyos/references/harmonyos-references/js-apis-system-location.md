@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-system-location
-title: @system.geolocation (地理位置)
+title: "@system.geolocation (地理位置)"
 breadcrumb: API参考 > 应用服务 > Location Kit（位置服务） > ArkTS API > 已停止维护的接口 > @system.geolocation (地理位置)
 category: harmonyos-references
 scraped_at: 2026-04-28T08:17:05+08:00

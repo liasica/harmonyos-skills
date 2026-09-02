@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:52:19+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:5276e2736579043c6aa81f8b0e3b573fcf644ca83abab577cd0f2d18fb3eb17c
+content_hash: sha256:7bb3fb552662967a33d8099785d58a37f9d4391f1d29144d28c786a7033c1464
 ---
 
 弧形索引条是一种弧形的、可按字母顺序排序进行快速定位的组件，可以与容器组件联动，按逻辑结构快速定位至容器显示区域。
@@ -469,4 +469,4 @@ PhonePC/2in1TabletTVWearable
 95. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/JsV_dfnwT7KAfXVcd4yVeg/zh-cn_image_0000002558606766.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055216Z&HW-CC-Expire=86400&HW-CC-Sign=431A94877777E56822CF1413035795F43181214C12797E87C00363BD2A3ED37B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/JsV_dfnwT7KAfXVcd4yVeg/zh-cn_image_0000002558606766.gif)

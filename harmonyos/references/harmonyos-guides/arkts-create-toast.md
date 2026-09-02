@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:27:59+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:730b64bb441f000c3e7813518d1efdbf70c776a261fd5c475940e739c605fc8c
+content_hash: sha256:d4ba6389c56ed5a7d4057b0fd123cad3e7d85066c19f92a5844a38fb7b5fb958
 ---
 
 即时反馈（Toast）是一种临时性的消息提示框，用于向用户显示简短的操作反馈或状态信息。​它通常在屏幕的底部或顶部短暂弹出，随后在一段时间后自动消失。即时反馈的主要目的是提供简洁、不打扰的信息反馈，避免干扰用户当前的操作流程。
@@ -105,7 +105,7 @@ content_hash: sha256:730b64bb441f000c3e7813518d1efdbf70c776a261fd5c475940e739c60
 
 [DefaultAndTopToast.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/DialogProject/entry/src/main/ets/pages/Toast/DefaultAndTopToast.ets#L16-L80)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/BUjjvks0SWmtNtKu0ukDVg/zh-cn_image_0000002589244223.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052625Z&HW-CC-Expire=86400&HW-CC-Sign=9C1CAA904A3EA08F34DDD89625512D8636754A27742408A901B71268C2016253)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/BUjjvks0SWmtNtKu0ukDVg/zh-cn_image_0000002589244223.gif)
 
 ## 创建即时反馈
 
@@ -148,7 +148,7 @@ content_hash: sha256:730b64bb441f000c3e7813518d1efdbf70c776a261fd5c475940e739c60
 
 [CreateToast.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/DialogProject/entry/src/main/ets/pages/Toast/CreateToast.ets#L16-L56)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/psoES4_ZQpKYmadZpQOkBg/zh-cn_image_0000002558764416.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052625Z&HW-CC-Expire=86400&HW-CC-Sign=337442273E73A54851123E55415D3C554BDCF945730E159C93106635691C45C4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/psoES4_ZQpKYmadZpQOkBg/zh-cn_image_0000002558764416.gif)
 
 ## 显示和关闭即时反馈
 
@@ -210,4 +210,4 @@ content_hash: sha256:730b64bb441f000c3e7813518d1efdbf70c776a261fd5c475940e739c60
 
 [OpenCloseToast.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/DialogProject/entry/src/main/ets/pages/Toast/OpenCloseToast.ets#L15-L74)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/hmKK-k-_TYCFo0RQSzcV-w/zh-cn_image_0000002558604760.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052625Z&HW-CC-Expire=86400&HW-CC-Sign=53804A9649AD019777FD281C808FCF3964A5500A7F808184FA2E24A9E3B44E98)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/hmKK-k-_TYCFo0RQSzcV-w/zh-cn_image_0000002558604760.gif)

@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-base
-title: @ohos.base (公共回调信息)
+title: "@ohos.base (公共回调信息)"
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > ArkTS API > 其他 > @ohos.base (公共回调信息)
 category: harmonyos-references
 scraped_at: 2026-04-28T08:09:40+08:00

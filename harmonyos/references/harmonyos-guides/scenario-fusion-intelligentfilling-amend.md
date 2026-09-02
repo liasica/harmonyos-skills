@@ -5,14 +5,14 @@ breadcrumb: 指南 > 应用服务 > Scenario Fusion Kit（融合场景服务） 
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:40:18+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:6308a28609303ec93c94a18699e1c821b583c80a5bccaa164c28245106ce0e8c
+content_hash: sha256:c9ee3193585a5edd191ecac791908353ab90db057082259f743f454694cc4039
 ---
 
 在填写实名信息表单的场景，表单中存在身份证和其他证件输入，其中，多种证件号共用一个输入框，ContentType.ID\_CARD\_NUMBER目前只支持身份证号的推荐、填充，不支持其他类型的证件，需要开发者根据输入场景动态配置输入框的ContentType，只在身份证输入场景下使用ContentType.ID\_CARD\_NUMBER。
 
 ## 效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/Vr7juKBQQC-GKu5KfxBGKg/zh-cn_image_0000002558606002.png?HW-CC-KV=V1&HW-CC-Date=20260429T053616Z&HW-CC-Expire=86400&HW-CC-Sign=46B9FD1A9EC58B1DEBC7666D4B6E5364B9281390CF63CD89EDB28A6A34DA37F7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/Vr7juKBQQC-GKu5KfxBGKg/zh-cn_image_0000002558606002.png)
 
 ## 示例代码
 

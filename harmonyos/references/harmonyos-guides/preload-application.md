@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > Stage�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:25:48+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:e76771c974a1cb1b2405abef2ba5f7a494f15aecead2cb81294516030e924464
+content_hash: sha256:71fa43e4b96aeef10b027a4b86e99ef2f3c0eabc9b5a6553bf61ebcc8b610037
 ---
 
 ## 概述
@@ -32,7 +32,7 @@ content_hash: sha256:e76771c974a1cb1b2405abef2ba5f7a494f15aecead2cb81294516030e9
 * abilityStageCreated：[AbilityStage](../harmonyos-references/js-apis-app-ability-abilitystage.md)创建完成阶段。开发者配置此阶段后，预加载机制会创建空进程并初始化Application，随后触发entry模块[AbilityStage](../harmonyos-references/js-apis-app-ability-abilitystage.md)的[onCreate](../harmonyos-references/js-apis-app-ability-abilitystage.md#oncreate)回调。
 * windowStageCreated：[WindowStage](../harmonyos-references/arkts-apis-window-windowstage.md)创建完成阶段。开发者配置此阶段后，预加载机制会创建空进程并初始化Application，随后触发entry模块[AbilityStage](../harmonyos-references/js-apis-app-ability-abilitystage.md)的[onCreate](../harmonyos-references/js-apis-app-ability-abilitystage.md#oncreate)回调。接着会拉起entry模块的入口UIAbility，并触发其[onCreate](../harmonyos-references/js-apis-app-ability-uiability.md#oncreate)回调和[onWindowStageCreate](../harmonyos-references/js-apis-app-ability-uiability.md#onwindowstagecreate)回调。开发者可以在UIAbility的[onCreate](../harmonyos-references/js-apis-app-ability-uiability.md#oncreate)回调中，通过[launchParam.launchReason](../harmonyos-references/js-apis-app-ability-abilityconstant.md#launchreason)的枚举值获取启动原因。枚举值为PRELOAD表示当前UIAbility是由预加载机制启动的。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/him_M5A_R6e9htGoG5qFQA/zh-cn_image_0000002558604336.png?HW-CC-KV=V1&HW-CC-Date=20260429T052547Z&HW-CC-Expire=86400&HW-CC-Sign=FEC4F2B163DC853AD7803BE244EFD4EDCCF6C84279F3F6B38B3EA058B9FEE659)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/him_M5A_R6e9htGoG5qFQA/zh-cn_image_0000002558604336.png)
 
 ## 开发步骤
 

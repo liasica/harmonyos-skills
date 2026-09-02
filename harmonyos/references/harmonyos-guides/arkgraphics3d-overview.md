@@ -5,7 +5,7 @@ breadcrumb: 指南 > 图形 > ArkGraphics 3D（方舟3D图形） > ArkGraphics 3
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:36:20+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:e93209ae31e14035bf3f371c0b61ef9ed93487b1f117c0092b0bbdb670df486d
+content_hash: sha256:0e19d4efab4c26cd5aca9b4c97bf9765b66918dceeb53ff417b56997d78df446
 ---
 
 ArkGraphics 3D（方舟3D图形）基于轻量级的3D引擎以及渲染管线为开发者提供基础3D场景绘制能力，供开发者便捷、高效地构建3D场景并完成渲染。
@@ -26,7 +26,7 @@ ArkGraphics 3D以自定义场景模式为核心能力，支持开发者自行构
 
 ## 框架原理
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/p-H0he15S7-z0btwkNyuPg/zh-cn_image_0000002558605546.png?HW-CC-KV=V1&HW-CC-Date=20260429T053348Z&HW-CC-Expire=86400&HW-CC-Sign=84DF71CA4C2E046991800CF75D2B825CD32D0CC64B6E66A4FE012803C85101DE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/p-H0he15S7-z0btwkNyuPg/zh-cn_image_0000002558605546.png)
 
 如上图 ArkGraphics 3D接口能力由图形后端、引擎层以及接口层三个关键部分共同组成。
 

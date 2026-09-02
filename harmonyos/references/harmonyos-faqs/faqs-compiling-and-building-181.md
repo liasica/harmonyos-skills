@@ -1,18 +1,18 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-and-building-181
-title: 编译报错“Error: open 'xxx\libimage_transcoder_shared.dll' failed”
-breadcrumb: FAQ > DevEco Studio > 编译构建 > 编译报错“Error: open 'xxx\libimage_transcoder_shared.dll' failed”
+title: "编译报错“Error: open 'xxx\\libimage_transcoder_shared.dll' failed”"
+breadcrumb: "FAQ > DevEco Studio > 编译构建 > 编译报错“Error: open 'xxx\\libimage_transcoder_shared.dll' failed”"
 category: harmonyos-faqs
 scraped_at: 2026-04-29T14:21:01+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:a08fa8a3f8749943deffac7fbe22a24265132917523369640141ff5ea0e0d8c1
+content_hash: sha256:9d53562f7dd47274183c156c418a51badcb6aec6b00121ac82206f691ade7dc1
 ---
 
 **问题现象**
 
 Windows下编译工程出现错误，提示“Error: open 'xxx\deveco-studio\sdk\default\hms\toolchains\lib\libimage\_transcoder\_shared.dll' failed”，加载dll失败。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/2R0MlrhfRIKwgN1h1a78Cg/zh-cn_image_0000002194158948.png?HW-CC-KV=V1&HW-CC-Date=20260429T062100Z&HW-CC-Expire=86400&HW-CC-Sign=FB221E73F1E46AA53E1045E48A7C55E3C4A6C2C94EC95D9F4804F84DE00BA4F4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/2R0MlrhfRIKwgN1h1a78Cg/zh-cn_image_0000002194158948.png)
 
 **可能原因**
 
@@ -22,11 +22,11 @@ Windows下编译工程出现错误，提示“Error: open 'xxx\deveco-studio\sdk
 
 例如，用户环境变量中包含%USERPROFILE%\AppData\Local\Microsoft\WindowsApps。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/40twT5KkT7SGZJoQ8kLaiQ/zh-cn_image_0000002229758829.png?HW-CC-KV=V1&HW-CC-Date=20260429T062100Z&HW-CC-Expire=86400&HW-CC-Sign=1538F46C5181E8C2BF50F9967F8E448526D17FEE5691384D30C5AFA7D5C8715B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/40twT5KkT7SGZJoQ8kLaiQ/zh-cn_image_0000002229758829.png)
 
 该路径的文件无法访问。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/fcjzXAC6S92_zDWAIWCbtg/zh-cn_image_0000002194158944.png?HW-CC-KV=V1&HW-CC-Date=20260429T062100Z&HW-CC-Expire=86400&HW-CC-Sign=07E58BE78B8F356E748D7E3BA70387E19F83DE9D32FEE4BD07B4C29C11599C93)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/fcjzXAC6S92_zDWAIWCbtg/zh-cn_image_0000002194158944.png)
 
 **解决措施**
 

@@ -5,14 +5,14 @@ breadcrumb: FAQ > DevEco Studio > 命令行工具 > 通过命令行或终端可�
 category: harmonyos-faqs
 scraped_at: 2026-04-29T14:21:39+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:49779615366f8dc9e34b6a76f8e5d1463dbdaa10105643213a52fa3085f9da73
+content_hash: sha256:9018b5714e24ed2252a6d5af42bb3c0b0f7551dcb9e3203fc665af5379e83f87
 ---
 
 **问题现象**
 
 通过命令行或终端可以正常发布，但在Git Bash上发布时出现错误。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/pPd-jEweQsOpGHTNyxCfHQ/zh-cn_image_0000002194158912.png?HW-CC-KV=V1&HW-CC-Date=20260429T062138Z&HW-CC-Expire=86400&HW-CC-Sign=0FBF1A9D0FDE089099781C062FE6EE4ED40180BE7811DBC60F3E11DFEB2C5747 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/pPd-jEweQsOpGHTNyxCfHQ/zh-cn_image_0000002194158912.png "点击放大")
 
 **解决措施**
 

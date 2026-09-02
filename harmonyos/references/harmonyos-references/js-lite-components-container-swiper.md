@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > �
 category: harmonyos-references
 scraped_at: 2026-04-29T13:53:51+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:e47257f7711ed24a20db0b5d17e78e9e7dec7618f42a03ce7647b4ead3c4b17b
+content_hash: sha256:66fb2422ad323b2acc640833d10dfddc65750a331ecfb8ec93e84a30c69c921b
 ---
 
 滑动容器，提供切换子组件显示的能力。
@@ -130,4 +130,4 @@ PhonePC/2in1TabletTVWearableLite Wearable
 9. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/MaUUcKjAR9ev2PwM4pgFAA/zh-cn_image_0000002589326801.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055349Z&HW-CC-Expire=86400&HW-CC-Sign=93E9968D7A7CF3E66AA805F5B077AAE3A5921CF5DA37BC77AC4CE6C7882A2E40)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/MaUUcKjAR9ev2PwM4pgFAA/zh-cn_image_0000002589326801.gif)

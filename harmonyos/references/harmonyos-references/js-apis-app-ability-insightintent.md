@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-insightintent
-title: @ohos.app.ability.insightIntent (意图框架基础定义)
+title: "@ohos.app.ability.insightIntent (意图框架基础定义)"
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > Stage模型能力的接口 > @ohos.app.ability.insightIntent (意图框架基础定义)
 category: harmonyos-references
 scraped_at: 2026-04-28T07:58:19+08:00

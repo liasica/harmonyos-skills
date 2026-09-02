@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 在地图上绘�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:39:09+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:1d470561ab1d551f56af68819cf86e26454a77eea45ecd2007aece1bcf235509
+content_hash: sha256:2fad5dc8cea9ccde10a13434c1cd04755166579282df657a22a243b26cb38f8a
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:1d470561ab1d551f56af68819cf86e26454a77eea45ecd2007aece1bcf2
 
 5.0.3(15)开始，支持折线绘制纹理功能。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/6JIXacicRmawVMLip-jlgQ/zh-cn_image_0000002558605878.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053510Z&HW-CC-Expire=86400&HW-CC-Sign=F8FF7D26604056ED54B65D4420E89B070B29DEA3D2DC5BCAF19F053C3B01D242 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/6JIXacicRmawVMLip-jlgQ/zh-cn_image_0000002558605878.jpg "点击放大")
 
 ## 接口说明
 
@@ -101,7 +101,7 @@ content_hash: sha256:1d470561ab1d551f56af68819cf86e26454a77eea45ecd2007aece1bcf2
    60. }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/pKDS6qpfQderaHmzY0xIdA/zh-cn_image_0000002589325405.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053510Z&HW-CC-Expire=86400&HW-CC-Sign=413DE86ECAAFFCAB8B70DA99FDE2819806E39224B630A83EF3DA7477EC0EA759 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/pKDS6qpfQderaHmzY0xIdA/zh-cn_image_0000002589325405.jpg "点击放大")
 
 ### 设置折线分段颜色
 
@@ -135,7 +135,7 @@ content_hash: sha256:1d470561ab1d551f56af68819cf86e26454a77eea45ecd2007aece1bcf2
 2. this.mapPolyline.setColors(colors);
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/6pmVTtItSC-EKdND2MlyVg/zh-cn_image_0000002589245343.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053510Z&HW-CC-Expire=86400&HW-CC-Sign=E14FF44CF1970B0AFE166E33DC57050E37CB73D053BEAE870AB014FD352A14BD "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/6pmVTtItSC-EKdND2MlyVg/zh-cn_image_0000002589245343.jpg "点击放大")
 
 ### 设置折线可渐变
 
@@ -168,7 +168,7 @@ content_hash: sha256:1d470561ab1d551f56af68819cf86e26454a77eea45ecd2007aece1bcf2
 1. this.mapPolyline.setGradient(true);
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/frcUUeOhTsitDxPF_KWjQw/zh-cn_image_0000002558765536.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053510Z&HW-CC-Expire=86400&HW-CC-Sign=434EA1AA5FA85067FA6612D3E7BF2858372EF5C5C25ACE75D40D4B12D972C29B "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/frcUUeOhTsitDxPF_KWjQw/zh-cn_image_0000002558765536.jpg "点击放大")
 
 ### 绘制纹理
 
@@ -197,7 +197,7 @@ content_hash: sha256:1d470561ab1d551f56af68819cf86e26454a77eea45ecd2007aece1bcf2
 1. await this.mapPolyline.setCustomTexture("icon/naviline_arrow.png");
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/UIbRUqmQRv-9Zh7kCNbSsA/zh-cn_image_0000002558605880.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053510Z&HW-CC-Expire=86400&HW-CC-Sign=6E4618F3F25FAF24B0C541A0D13EE5D4C09FAD98BDFCE0593DB8FAABF0FD22EB "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/UIbRUqmQRv-9Zh7kCNbSsA/zh-cn_image_0000002558605880.jpg "点击放大")
 
 ### 折线设置分段纹理
 
@@ -233,4 +233,4 @@ content_hash: sha256:1d470561ab1d551f56af68819cf86e26454a77eea45ecd2007aece1bcf2
 27. let mapPolyline = await this.mapController.addPolyline(polylineOption);
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/wr8t9RyaRAuH4LirlVv_xA/zh-cn_image_0000002589325407.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053510Z&HW-CC-Expire=86400&HW-CC-Sign=6A52AB89E6B8B84DBCD5672BAEB31C015ACBFC076300182C945D5B1E4BA5CAB8 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/wr8t9RyaRAuH4LirlVv_xA/zh-cn_image_0000002589325407.jpg "点击放大")

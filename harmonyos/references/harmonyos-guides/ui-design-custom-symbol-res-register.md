@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > UI Design Kit（UI设计套件） > 应用�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:30:25+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:6a52aeb09ffd21bd39b5074c99d13d24d8617201369973f3f731d22d5a2fb5e7
+content_hash: sha256:1135c414426be27694f67c0882fa61312e6edaaaa97c716d41c2750a6695ed47
 ---
 
 ## 场景介绍
@@ -24,10 +24,10 @@ content_hash: sha256:6a52aeb09ffd21bd39b5074c99d13d24d8617201369973f3f731d22d5a2
 
    说明：[Symbol资源制作流程参考](../design-guides/system-icons-0000001929854962.md)
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/OGgnWYMxQGGTodk4UmkY4Q/zh-cn_image_0000002558605192.png?HW-CC-KV=V1&HW-CC-Date=20260429T053024Z&HW-CC-Expire=86400&HW-CC-Sign=F84A9929136AAFD70AD95B0E828823608C0C929EBAC2EF4167730E222E379595)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/OGgnWYMxQGGTodk4UmkY4Q/zh-cn_image_0000002558605192.png)
 2. 多语言场景，在entry/src/main/resources目录中对应语言目录下的string.json文件中配置对应的Symbol图标Unicode值。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/bEVolGGqSi-Kuq-VMIx59Q/zh-cn_image_0000002589324717.png?HW-CC-KV=V1&HW-CC-Date=20260429T053024Z&HW-CC-Expire=86400&HW-CC-Sign=E7DF4EB71A2CAEAD387B86B9F1EE92D2898DA8098270934BC8DAFE0CA4EDC31D)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/bEVolGGqSi-Kuq-VMIx59Q/zh-cn_image_0000002589324717.png)
 
    ```
    1. {
@@ -94,4 +94,4 @@ content_hash: sha256:6a52aeb09ffd21bd39b5074c99d13d24d8617201369973f3f731d22d5a2
 21. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/tjsXcg3MSU64Wp6o1Pn3Tw/zh-cn_image_0000002589244655.png?HW-CC-KV=V1&HW-CC-Date=20260429T053024Z&HW-CC-Expire=86400&HW-CC-Sign=AEBB40EC7E1F1D79C9E1132C1A93AEF5E94E5E1CA55642B2D6A315673BB28D9C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/tjsXcg3MSU64Wp6o1Pn3Tw/zh-cn_image_0000002589244655.png)

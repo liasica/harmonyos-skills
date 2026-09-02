@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > �
 category: harmonyos-references
 scraped_at: 2026-04-29T13:53:53+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:76964a0ae3775b5466a1fb83454992ce13a722af3378561ea3ba4412de0c5cc8
+content_hash: sha256:a4d153c83ae40db6192ce28f279e107c9e05e5f88c5294b475a249a1ecbeb73e
 ---
 
 滑动条组件，用来快速调节设置值，如音量、亮度等。
@@ -125,4 +125,4 @@ PhonePC/2in1TabletTVWearableLite Wearable
 15. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/OIYAc3G6SdOcGYW8dcPkMQ/zh-cn_image_0000002589326807.png?HW-CC-KV=V1&HW-CC-Date=20260429T055352Z&HW-CC-Expire=86400&HW-CC-Sign=41AF5D482B7BBB420CEE419F47392074951E3B41FC1426ABAD773B61C08F455C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/OIYAc3G6SdOcGYW8dcPkMQ/zh-cn_image_0000002589326807.png)

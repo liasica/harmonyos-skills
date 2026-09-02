@@ -5,7 +5,7 @@ breadcrumb: 指南 > 命令行工具 > 三方依赖管理工具（ohpm） > 常�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:47:52+08:00
 doc_updated_at: 2026-04-22
-content_hash: sha256:e9f15184471abbf42e1301de5e41fa1ba4397b878bd9c2a23b35a458ea4b344b
+content_hash: sha256:61a7492cac471fe42472f0cad6857cabec74b34cadb8b0afd812201cd7980955
 ---
 
 在标准输出中打印有效的 oh\_modules 目录路径信息。
@@ -47,7 +47,7 @@ content_hash: sha256:e9f15184471abbf42e1301de5e41fa1ba4397b878bd9c2a23b35a458ea4
 
 项目结构为：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/vMnpEzIZRPSRd7z1whcZJA/zh-cn_image_0000002561752639.png?HW-CC-KV=V1&HW-CC-Date=20260429T054751Z&HW-CC-Expire=86400&HW-CC-Sign=78477E09DEB80495427B1CB4D4773515F01510A5E998809EBB382E0DF7408544)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/vMnpEzIZRPSRd7z1whcZJA/zh-cn_image_0000002561752639.png)
 
 在entry模块的src目录下执行：
 
@@ -57,4 +57,4 @@ content_hash: sha256:e9f15184471abbf42e1301de5e41fa1ba4397b878bd9c2a23b35a458ea4
 
 结果示例：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/krbvOxoDQr2A0xu9FN1nUg/zh-cn_image_0000002530752698.png?HW-CC-KV=V1&HW-CC-Date=20260429T054751Z&HW-CC-Expire=86400&HW-CC-Sign=99F272255DE581132F45DDEF9EC184C8359AEB40CF4B593F05DB294B356CFC71)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/krbvOxoDQr2A0xu9FN1nUg/zh-cn_image_0000002530752698.png)

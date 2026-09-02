@@ -5,7 +5,7 @@ breadcrumb: 指南 > AI > Neural Network Runtime Kit（Neural Network运行时�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:43:49+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:f01a59f3b6bf3da81f43554908d66fc321d36cf78722c45e0c47454cedc6b130
+content_hash: sha256:e3d9c55c30bb33a145a6612ee8be55f7701628f46cbb9164df6735a404e9b941
 ---
 
 ## 场景介绍
@@ -16,7 +16,7 @@ Neural Network Runtime作为AI推理引擎和加速芯片的桥梁，为AI推理
 
 **图1** Add单算子网络示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/nfyG3NqHQpyawnMRhnb4sQ/zh-cn_image_0000002558765852.png?HW-CC-KV=V1&HW-CC-Date=20260429T054005Z&HW-CC-Expire=86400&HW-CC-Sign=524F46E09EBEA62CF51F9AE383B73649BA704A53CFE44E648D6FC1C28091EDC4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/nfyG3NqHQpyawnMRhnb4sQ/zh-cn_image_0000002558765852.png)
 
 ## 环境准备
 

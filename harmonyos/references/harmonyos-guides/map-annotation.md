@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 在地图上绘�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:39:12+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:22464f9b6c37e633ca2ebf4459cd128a451f2b1ab20690993dab4f228df9a698
+content_hash: sha256:1488613368aff5f455b1a59fbee98f17049c52678b778d14fc88221b24e0cb28
 ---
 
 ## 场景介绍
@@ -19,7 +19,7 @@ content_hash: sha256:22464f9b6c37e633ca2ebf4459cd128a451f2b1ab20690993dab4f228df
 
 [PointAnnotation](../harmonyos-references/map-map-pointannotation.md)有默认风格，同时也支持自定义。由于内容丰富，以下只展示一些基础功能的使用，详细内容可参见[接口文档](../harmonyos-references/map-map-pointannotation.md)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/PI3TAbMPTPGrYAhEcj5KJA/zh-cn_image_0000002558605884.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053908Z&HW-CC-Expire=86400&HW-CC-Sign=E421A52AB2660F364844A91153CC757C59E55BFA5C80744102ADDE3049D29D20 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/PI3TAbMPTPGrYAhEcj5KJA/zh-cn_image_0000002558605884.jpg "点击放大")
 
 ## 接口说明
 
@@ -136,7 +136,7 @@ content_hash: sha256:22464f9b6c37e633ca2ebf4459cd128a451f2b1ab20690993dab4f228df
    88. }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/Ze_wKZH2T2236G6mgP9r5Q/zh-cn_image_0000002589325411.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053908Z&HW-CC-Expire=86400&HW-CC-Sign=C86F75493EAE3211782F0EC49C4F94900396495A50FF7D83ACE16BB936D17B7A "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/Ze_wKZH2T2236G6mgP9r5Q/zh-cn_image_0000002589325411.jpg "点击放大")
 3. 在添加点注释之后，修改已经设置的点注释属性。
 
    ```
@@ -187,7 +187,7 @@ content_hash: sha256:22464f9b6c37e633ca2ebf4459cd128a451f2b1ab20690993dab4f228df
 23. this.pointAnnotation.startAnimation();
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/MPvLyGShScOWXUJ09F0H7w/zh-cn_image_0000002589245349.gif?HW-CC-KV=V1&HW-CC-Date=20260429T053908Z&HW-CC-Expire=86400&HW-CC-Sign=40F5EAE8CB2CA7CA0B56A9548F68980D49C5FF2769A161591A3E834557F658F4 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/MPvLyGShScOWXUJ09F0H7w/zh-cn_image_0000002589245349.gif "点击放大")
 
 ### 点注释标题动画
 
@@ -221,4 +221,4 @@ content_hash: sha256:22464f9b6c37e633ca2ebf4459cd128a451f2b1ab20690993dab4f228df
 23. this.pointAnnotation.startTitleAnimation();
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/7oSGN3xjTrO3k_ZuWAZq0w/zh-cn_image_0000002558765542.gif?HW-CC-KV=V1&HW-CC-Date=20260429T053908Z&HW-CC-Expire=86400&HW-CC-Sign=51DEE98BF72013A8FBD4605259467594ACC66DD9E5050B9F69494D07C93828E9 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/7oSGN3xjTrO3k_ZuWAZq0w/zh-cn_image_0000002558765542.gif "点击放大")

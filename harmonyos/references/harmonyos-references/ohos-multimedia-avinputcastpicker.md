@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-multimedia-avinputcastpicker
-title: @ohos.multimedia.avInputCastPicker (录音设备选择组件)
+title: "@ohos.multimedia.avInputCastPicker (录音设备选择组件)"
 breadcrumb: API参考 > 媒体 > AVSession Kit（音视频播控服务） > ArkTS组件 > @ohos.multimedia.avInputCastPicker (录音设备选择组件)
 category: harmonyos-references
 scraped_at: 2026-04-28T08:12:22+08:00

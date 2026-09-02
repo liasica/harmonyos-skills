@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:28:52+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:63db31773812008350de709b7a76fc9078b855daf4d9c19f74fe4316ce592406
+content_hash: sha256:0d26c7c41a30a6a2f7ad687eadada28c672c83e9628606cda48aac02dbc47d31
 ---
 
 路径对象，支持通过对象的接口进行路径的描述，并通过Canvas的[stroke](../harmonyos-references/ts-canvasrenderingcontext2d.md#stroke-1)接口进行绘制。具体请参考[Path2D对象](../harmonyos-references/js-components-canvas-path2d.md)。
@@ -81,7 +81,7 @@ content_hash: sha256:63db31773812008350de709b7a76fc9078b855daf4d9c19f74fe4316ce5
 38. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/z6jutU-eQ4u8DojDVqhPUg/zh-cn_image_0000002558764626.png?HW-CC-KV=V1&HW-CC-Date=20260429T052850Z&HW-CC-Expire=86400&HW-CC-Sign=9388458E3F3860529C4176BD14B38211EAA85BC1807A1DC18FC1645CE702F369)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/z6jutU-eQ4u8DojDVqhPUg/zh-cn_image_0000002558764626.png)
 
 ## 画图形
 
@@ -200,4 +200,4 @@ content_hash: sha256:63db31773812008350de709b7a76fc9078b855daf4d9c19f74fe4316ce5
 61. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/8jB3Gu0fTaG72H2psS3cIA/zh-cn_image_0000002558604970.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052850Z&HW-CC-Expire=86400&HW-CC-Sign=AD3930157FF5C481D0EDC78CE046CF77DD1E24B2049A691192A365E8914D4C88)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/8jB3Gu0fTaG72H2psS3cIA/zh-cn_image_0000002558604970.gif)

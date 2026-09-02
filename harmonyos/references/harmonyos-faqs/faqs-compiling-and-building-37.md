@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-and-building-37
-title: 构建报错“ERROR: Task xxx was not found in the project xxx”
-breadcrumb: FAQ > DevEco Studio > 编译构建 > 构建报错“ERROR: Task xxx was not found in the project xxx”
+title: "构建报错“ERROR: Task xxx was not found in the project xxx”"
+breadcrumb: "FAQ > DevEco Studio > 编译构建 > 构建报错“ERROR: Task xxx was not found in the project xxx”"
 category: harmonyos-faqs
 scraped_at: 2026-04-29T14:20:28+08:00
 doc_updated_at: 2026-04-27
-content_hash: sha256:8fa4ade606cc116cc570dc6aa1c7686261a07d6a4456276c80c32468dad316ec
+content_hash: sha256:33b1bc98582ed9192dde7363d8019d899f09564d2dc69f546ad3295791ce588a
 ---
 
 **问题现象**
@@ -18,7 +18,7 @@ content_hash: sha256:8fa4ade606cc116cc570dc6aa1c7686261a07d6a4456276c80c32468dad
 
 - 确认项目路径是否正确。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/p8yNuI9sR1Gz7PIgRMJSRA/zh-cn_image_0000002194318376.png?HW-CC-KV=V1&HW-CC-Date=20260429T062027Z&HW-CC-Expire=86400&HW-CC-Sign=71DACD5389FD1F42D5DE8E93AF55245F72943294B35681A02DEF33719BCDF31A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/p8yNuI9sR1Gz7PIgRMJSRA/zh-cn_image_0000002194318376.png)
 
 **问题确认**
 

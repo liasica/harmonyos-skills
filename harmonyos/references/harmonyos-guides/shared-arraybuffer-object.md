@@ -5,12 +5,12 @@ breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS并发 
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:26:35+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:cabe9e3f2289aa3e297a934298b6493aa7623cd341d94a915135068ba4f888b8
+content_hash: sha256:cbf19aa411f5a90067f68f0b12a3ab1a261e74d850ac80ecc5636484a64517a3
 ---
 
 SharedArrayBuffer内部包含一块Native内存，其JS对象壳被分配在虚拟机本地堆（LocalHeap）。支持跨并发实例间共享Native内存，但是对共享Native内存的访问及修改需要采用Atomics类，防止数据竞争。SharedArrayBuffer可用于多个并发实例间的状态或数据共享。通信过程如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/6HVIC11oSd6aAJMLa_q1FQ/zh-cn_image_0000002589243831.png?HW-CC-KV=V1&HW-CC-Date=20260429T052634Z&HW-CC-Expire=86400&HW-CC-Sign=ADE684D622164963E68D88EA8441A9760D4640EEF1395CE6B29204B6D04738F5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/6HVIC11oSd6aAJMLa_q1FQ/zh-cn_image_0000002589243831.png)
 
 ## 使用示例
 

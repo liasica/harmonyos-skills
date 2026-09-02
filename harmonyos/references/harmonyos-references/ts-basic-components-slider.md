@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:52:05+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:f814c46e7eb8f830afbeed1a5eb7e6b4d42cc3fc79ac9f6dd863ddc37b6f456e
+content_hash: sha256:7d36c247995edc34f445a878de0c517272065fd368aed052dda8abeaee17bca4
 ---
 
 滑动条组件，通常用于快速调节设置值，如音量调节、亮度调节等应用场景。
@@ -1138,7 +1138,7 @@ PhonePC/2in1TabletTVWearable
 172. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/Z4o-l-JSR5uD3DL2eBQCTw/zh-cn_image_0000002589326117.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055203Z&HW-CC-Expire=86400&HW-CC-Sign=156BD313D50DF33BF6DF25DB159DEC5AA1A77F3B241EBE40B3CE50C21129F9FE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/Z4o-l-JSR5uD3DL2eBQCTw/zh-cn_image_0000002589326117.gif)
 
 ### 示例2（设置滑动条样式）
 
@@ -1193,7 +1193,7 @@ PhonePC/2in1TabletTVWearable
 46. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/vMM3DZ0MRCCqd7teb9c2Sw/zh-cn_image_0000002589246059.png?HW-CC-KV=V1&HW-CC-Date=20260429T055203Z&HW-CC-Expire=86400&HW-CC-Sign=4F9EEEEE2301638CC64C8D060C0372CFF04B0369BD154086CFDCB5187D1548D4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/vMM3DZ0MRCCqd7teb9c2Sw/zh-cn_image_0000002589246059.png)
 
 ### 示例3（自定义滑动条）
 
@@ -1311,7 +1311,7 @@ PhonePC/2in1TabletTVWearable
 110. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/FWtA1mQcQ12RijJqEEeCTQ/zh-cn_image_0000002558766250.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055203Z&HW-CC-Expire=86400&HW-CC-Sign=D48184D7BECCE5DBE5C6178A409C876CD89B362140639B1849915F350A332F9B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/FWtA1mQcQ12RijJqEEeCTQ/zh-cn_image_0000002558766250.gif)
 
 ### 示例4（设置滑动条渐变色）
 
@@ -1394,7 +1394,7 @@ PhonePC/2in1TabletTVWearable
 74. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/fQIHYEtWT72PtH2GK2AaXQ/zh-cn_image_0000002558606592.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055203Z&HW-CC-Expire=86400&HW-CC-Sign=B99A2E61CA7AEB08628F7172F748CBDF3166639BFE627BC12816566DCFEB247E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/fQIHYEtWT72PtH2GK2AaXQ/zh-cn_image_0000002558606592.gif)
 
 ### 示例5（滑动条设置前后缀内容）
 
@@ -1611,7 +1611,7 @@ PhonePC/2in1TabletTVWearable
 208. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/bX5LM3VuQNu2TQlpXJTlPQ/zh-cn_image_0000002589326119.jpeg?HW-CC-KV=V1&HW-CC-Date=20260429T055203Z&HW-CC-Expire=86400&HW-CC-Sign=130919A3BA847A769975399347B86ADDBDED3AAB158C0C5FE8C4B78E6688DB28)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/bX5LM3VuQNu2TQlpXJTlPQ/zh-cn_image_0000002589326119.jpeg)
 
 ### 示例6（滑动条设置刻度点无障碍文本）
 
@@ -1679,7 +1679,7 @@ PhonePC/2in1TabletTVWearable
 59. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/GymUn7dyREasww9vNrXzPw/zh-cn_image_0000002589246061.png?HW-CC-KV=V1&HW-CC-Date=20260429T055203Z&HW-CC-Expire=86400&HW-CC-Sign=91C1A3355CD938EE7697711F06DC2B1044DDB28F6FF508221033D53A6868F8CB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/GymUn7dyREasww9vNrXzPw/zh-cn_image_0000002589246061.png)
 
 ### 示例7（设置滑动条的双向绑定）
 
@@ -1712,7 +1712,7 @@ PhonePC/2in1TabletTVWearable
 24. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/THA_W4ukTAOj66dTxhPckA/zh-cn_image_0000002558766252.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055203Z&HW-CC-Expire=86400&HW-CC-Sign=34D3F0F23B76FC0E23012EDA10221E3F5FCC03490DCD0E0E078036291ADDB886)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/THA_W4ukTAOj66dTxhPckA/zh-cn_image_0000002558766252.gif)
 
 ### 示例8（滑块设置渐变色）
 
@@ -1831,7 +1831,7 @@ PhonePC/2in1TabletTVWearable
 110. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/tlX3MQmrSPaCJ4IIb29w_A/zh-cn_image_0000002558606594.png?HW-CC-KV=V1&HW-CC-Date=20260429T055203Z&HW-CC-Expire=86400&HW-CC-Sign=4B4026B074358F522F2ED1E68DB126243262AC2549629DBC9EC7C25CD1EC707B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/tlX3MQmrSPaCJ4IIb29w_A/zh-cn_image_0000002558606594.png)
 
 ### 示例9（设置滑轨的背景颜色）
 
@@ -1875,4 +1875,4 @@ PhonePC/2in1TabletTVWearable
 33. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/imeGKUkgTsONFDFhUU9wSQ/zh-cn_image_0000002589326121.png?HW-CC-KV=V1&HW-CC-Date=20260429T055203Z&HW-CC-Expire=86400&HW-CC-Sign=51CE97F4D22F0DE6A0497185FE8AB2CBF5578C06F1259F021359B6D41F2E24C6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/imeGKUkgTsONFDFhUU9wSQ/zh-cn_image_0000002589326121.png)

@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:51:48+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:bf0c0149517dc9014437592ae8fe530819bba601fa2e5236b77410d47949d07f
+content_hash: sha256:6e24700458dafe4226ec143da6190cf68268aae4642d4314421d38119a9da9a8
 ---
 
 滑块视图容器，提供子组件滑动轮播显示的能力。
@@ -2289,7 +2289,7 @@ PhonePC/2in1TabletTVWearable
 129. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/sDj0MU2WTh-nyb45gIxLJQ/zh-cn_image_0000002589326029.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055030Z&HW-CC-Expire=86400&HW-CC-Sign=7950BEC7441CC9136ADE8FCE50B84B3A0624E09941C9ED56A1D6CDCA1836E662)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/sDj0MU2WTh-nyb45gIxLJQ/zh-cn_image_0000002589326029.gif)
 
 ### 示例2（设置数字指示器）
 
@@ -2376,7 +2376,7 @@ PhonePC/2in1TabletTVWearable
 78. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/MoyfNvtvTLOvCjEFVF-S7g/zh-cn_image_0000002589245971.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055030Z&HW-CC-Expire=86400&HW-CC-Sign=0324C5C33948FF0B328658B3B8916BBA34005F289B2A2ED2485BA6E39E73D6A8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/MoyfNvtvTLOvCjEFVF-S7g/zh-cn_image_0000002589245971.gif)
 
 ### 示例3（设置按组翻页）
 
@@ -2463,7 +2463,7 @@ PhonePC/2in1TabletTVWearable
 78. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/PXpgMu6tSoGuBForMXiRYg/zh-cn_image_0000002558766162.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055030Z&HW-CC-Expire=86400&HW-CC-Sign=B0832574F5F8242FE48F0EDE5772AD726CC6911EFE7633D055D9F5D861153C2F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/PXpgMu6tSoGuBForMXiRYg/zh-cn_image_0000002558766162.gif)
 
 ### 示例4（设置自定义页面切换动画）
 
@@ -2599,7 +2599,7 @@ PhonePC/2in1TabletTVWearable
 96. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/QLZrTr8QT9CIjq5DAUC1gw/zh-cn_image_0000002558606504.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055030Z&HW-CC-Expire=86400&HW-CC-Sign=5F654C86A9052A130449735AE3F5DC2B9F4DC9C623FA52945C92142637D5C8D1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/QLZrTr8QT9CIjq5DAUC1gw/zh-cn_image_0000002558606504.gif)
 
 ### 示例5（设置圆点导航点超长显示）
 
@@ -2695,7 +2695,7 @@ PhonePC/2in1TabletTVWearable
 87. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/PbZObJF7SLSveR-aOR5gYA/zh-cn_image_0000002589326031.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055030Z&HW-CC-Expire=86400&HW-CC-Sign=5F3185BAB09DA6C67089ADE3D5952BE8C83BBFCFDC41295DD11D42D024B4324B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/PbZObJF7SLSveR-aOR5gYA/zh-cn_image_0000002589326031.gif)
 
 ### 示例6（预加载子节点）
 
@@ -2875,7 +2875,7 @@ PhonePC/2in1TabletTVWearable
 100. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/7_Pigw7SSTiaDwNQetNtuA/zh-cn_image_0000002589245973.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055030Z&HW-CC-Expire=86400&HW-CC-Sign=C9962918D2054FCA666175DD5D0C1908F1F09753CC78069DCC4A0F58EAFF8F10)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/7_Pigw7SSTiaDwNQetNtuA/zh-cn_image_0000002589245973.gif)
 
 ### 示例8（滑动行为拦截事件）
 
@@ -2964,7 +2964,7 @@ PhonePC/2in1TabletTVWearable
 80. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/7cnvBIZaTC6GWdp4-QcCMA/zh-cn_image_0000002558766164.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055030Z&HW-CC-Expire=86400&HW-CC-Sign=7368DA79B1B229D7EDC9B001F6A2CEC17CAFB6732A41A81D187DABB1AEC4206A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/7cnvBIZaTC6GWdp4-QcCMA/zh-cn_image_0000002558766164.gif)
 
 ### 示例9（演示导航点space与bottom）
 
@@ -3068,7 +3068,7 @@ PhonePC/2in1TabletTVWearable
 95. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/21vf81zNRgmXffcimM-waA/zh-cn_image_0000002558606506.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055030Z&HW-CC-Expire=86400&HW-CC-Sign=F1F88CC18833522C2EF92CF5733BA9CFD193E7CF70E33E643444D73408145EA5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/21vf81zNRgmXffcimM-waA/zh-cn_image_0000002558606506.gif)
 
 ### 示例10（Swiper组件基于断点配置显示个数）
 
@@ -3132,11 +3132,11 @@ PhonePC/2in1TabletTVWearable
 
 Swiper宽度属于[sm](../harmonyos-guides/arkts-layout-development-grid-layout.md#栅格容器断点)及更小的断点区间时显示1列。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/FM3F-_Y_QfOKRIjpIHUhgQ/zh-cn_image_0000002589326033.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T055030Z&HW-CC-Expire=86400&HW-CC-Sign=9CEA6E7958C1B1482FFFC692F68A7DF7D68FD79DEEE063DB68F092E50967889B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/FM3F-_Y_QfOKRIjpIHUhgQ/zh-cn_image_0000002589326033.jpg)
 
 Swiper宽度属于[md](../harmonyos-guides/arkts-layout-development-grid-layout.md#栅格容器断点)断点区间时显示2列。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/0Ny9gb9SSK2RT7C6JlMOSA/zh-cn_image_0000002589245975.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T055030Z&HW-CC-Expire=86400&HW-CC-Sign=C2A592273148B54EB7BA3F3EA50A91FABFEEC4A28320666269A996FE45C89E14)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/0Ny9gb9SSK2RT7C6JlMOSA/zh-cn_image_0000002589245975.jpg)
 
 ### 示例11（Swiper组件模拟拖拽）
 
@@ -3200,4 +3200,4 @@ Swiper宽度属于[md](../harmonyos-guides/arkts-layout-development-grid-layout.
 53. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/q5SHIgajQY6M29gyrZUrrA/zh-cn_image_0000002558766166.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055030Z&HW-CC-Expire=86400&HW-CC-Sign=652CCD02C98E499429013F2BAC9E6A3200C695A497B03DC07C1DE8FD46F4AE8B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/q5SHIgajQY6M29gyrZUrrA/zh-cn_image_0000002558766166.gif)

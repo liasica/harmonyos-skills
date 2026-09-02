@@ -5,7 +5,7 @@ breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 文本 
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:36:14+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:bc59057aa0ebb1b6bdd373e2540323eeb5980dbae3df8460f097afc5ca26bd75
+content_hash: sha256:316dc0543744ee1a28fb9630682946188dea360f7bd9a49e4270346410483709
 ---
 
 ## 场景介绍
@@ -66,7 +66,7 @@ content_hash: sha256:bc59057aa0ebb1b6bdd373e2540323eeb5980dbae3df8460f097afc5ca2
 
 以下打印的示例为应用设备系统对应的部分系统字体配置信息情况，不同设备系统配置信息可能不同，此处仅示意。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/xmewWXtRRneGK_9bD8M0qA/zh-cn_image_0000002558605516.png?HW-CC-KV=V1&HW-CC-Date=20260429T053613Z&HW-CC-Expire=86400&HW-CC-Sign=07635E23EE53C9A42AD247F842FD5F212E6FFD2EEBC2847CB18D32DBC8224342)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/xmewWXtRRneGK_9bD8M0qA/zh-cn_image_0000002558605516.png)
 
 ## 使用或切换系统字体
 
@@ -140,4 +140,4 @@ content_hash: sha256:bc59057aa0ebb1b6bdd373e2540323eeb5980dbae3df8460f097afc5ca2
 
 效果展示如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/2KAFCNA8TTKsXgGQQCv6EQ/zh-cn_image_0000002589325043.png?HW-CC-KV=V1&HW-CC-Date=20260429T053613Z&HW-CC-Expire=86400&HW-CC-Sign=FC13EF8875AFC9BFD86078A51823FFFBA9BAC9AA404BEBB03AC6E22F6204A0C5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/2KAFCNA8TTKsXgGQQCv6EQ/zh-cn_image_0000002589325043.png)

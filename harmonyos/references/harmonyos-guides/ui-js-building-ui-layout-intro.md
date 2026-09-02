@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:28:43+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:d03a3b07bbfb22a8ac4b3213b88f2f3708569b8f20403bd51bb502fe10c32b66
+content_hash: sha256:be5536d78d6b40705ff4926cf4426af943530be3d5b29d471145df13e63fa04e
 ---
 
 设备的基准宽度为720px（px为逻辑像素，非物理像素），实际显示效果会根据实际屏幕宽度进行缩放。
@@ -26,8 +26,8 @@ content_hash: sha256:d03a3b07bbfb22a8ac4b3213b88f2f3708569b8f20403bd51bb502fe10c
 
 **图1** 页面布局分解
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/3gudWTHfRaClIKSH2-yMgQ/zh-cn_image_0000002558764572.png?HW-CC-KV=V1&HW-CC-Date=20260429T052842Z&HW-CC-Expire=86400&HW-CC-Sign=2C2DF5414DAD4D179C9625FCAD88DCF9EB4B2B2F99F77DF8B0B947B939B32456)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/3gudWTHfRaClIKSH2-yMgQ/zh-cn_image_0000002558764572.png)
 
 **图2** 留言区布局分解
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/FsDMapm0S0yUYY5xtX4CPw/zh-cn_image_0000002558604916.png?HW-CC-KV=V1&HW-CC-Date=20260429T052842Z&HW-CC-Expire=86400&HW-CC-Sign=BABA0F59F51255A530C2EA2E7D2BE866EB4366CC73965F188360D3E59971514E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/FsDMapm0S0yUYY5xtX4CPw/zh-cn_image_0000002558604916.png)

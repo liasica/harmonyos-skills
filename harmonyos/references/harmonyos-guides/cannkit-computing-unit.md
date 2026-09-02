@@ -5,7 +5,7 @@ breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:41:04+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:27adf0db20720dd34e47cee6604bad8856f0073f4636ffba44220845ea544f2a
+content_hash: sha256:5dd01e79a4b2a73e4f68699e05053b5abd8431eea95279137f5c9eea225dc013
 ---
 
 计算单元是AI Core中提供强大算力的核心单元，包括三种基础**计算单元**：Cube（矩阵）计算单元、Vector（向量）计算单元和Scalar（标量）计算单元，完成AI Core中不同类型的数据计算。
@@ -18,7 +18,7 @@ Scalar负责各类型的标量数据运算和程序的流程控制。功能上�
 
 **图1** Scalar对指令和数据的访问
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/408eSkb_QfG2_ffOrpkKIw/zh-cn_image_0000002589245537.png?HW-CC-KV=V1&HW-CC-Date=20260429T054103Z&HW-CC-Expire=86400&HW-CC-Sign=0C3C6A0C98F8D7A0BC2ED73E6BFCBF5697AF7AA6305C311EAAFD265E2E106E7C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/408eSkb_QfG2_ffOrpkKIw/zh-cn_image_0000002589245537.png)
 
 ALU需要的代码段和数据段（栈空间）都来自于GM。ICache用于缓存代码段，缓存大小与硬件规格相关，比如为16K或32K，以2K为单位加载；DCache用于缓存数据段，大小也与硬件规格相关，比如为16K，以cacheline(64Byte)为单位加载。
 
@@ -30,7 +30,7 @@ Vector负责执行向量运算。向量计算单元执行向量指令，类似�
 
 **图2** 向量运算
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/Ut4ityarSDKdtQoBdmr6iw/zh-cn_image_0000002558765728.png?HW-CC-KV=V1&HW-CC-Date=20260429T054103Z&HW-CC-Expire=86400&HW-CC-Sign=28072C6F4F92B94E089F8E5913A9CD5506CF679A2976B9253A8BBEEA9DDB5CD7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/Ut4ityarSDKdtQoBdmr6iw/zh-cn_image_0000002558765728.png)
 
 Vector所有计算的源数据以及目标数据都要求存储在Unified Buffer中，**并要求首地址和操作长度都满足32Byte**对齐。
 
@@ -40,4 +40,4 @@ Cube计算单元负责执行矩阵运算。Cube一次执行可以完成A矩阵(M
 
 **图3** 矩阵运算
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/JhfntH02R8Kqniuoi0MM7g/zh-cn_image_0000002558606072.png?HW-CC-KV=V1&HW-CC-Date=20260429T054103Z&HW-CC-Expire=86400&HW-CC-Sign=67713CC45048ECAE9940388A67D90A25AF92E515548AF220825C1065D08D2E68)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/JhfntH02R8Kqniuoi0MM7g/zh-cn_image_0000002558606072.png)

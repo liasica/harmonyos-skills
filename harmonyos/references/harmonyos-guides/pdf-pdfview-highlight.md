@@ -5,14 +5,14 @@ breadcrumb: 指南 > 应用服务 > PDF Kit（PDF服务） > PdfView预览组件
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:39:47+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:24c5604bc14d75830db69d2395013f8323fa29fbaa2662342f77c234c6b568a1
+content_hash: sha256:135caaa1c42feaa0b8daf2d3f3ab0b27043d95af1125aa6bd323adb16d81800b
 ---
 
 PDF文档在预览时，可以对页面的矩形区域或文本设置高亮显示，高亮颜色可以自定义。
 
 [setHighlightText](../harmonyos-references/pdf-arkts-pdfviewmanage.md#sethighlighttext)可以同时高亮多个不同的文本。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/bJTK4tGHTzytIuDSFgxzjg/zh-cn_image_0000002558605950.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053946Z&HW-CC-Expire=86400&HW-CC-Sign=B324D52D9824F715AF26A817B603DAC5F3DEF68EFA2D071EDCCC7F98798A7C75)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/bJTK4tGHTzytIuDSFgxzjg/zh-cn_image_0000002558605950.jpg)
 
 ## 接口说明
 

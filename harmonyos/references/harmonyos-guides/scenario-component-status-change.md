@@ -5,14 +5,14 @@ breadcrumb: 指南 > 应用框架 > Accessibility Kit（无障碍服务） > 提
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:26:09+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:d83398ea0294a94c3d72677be74f4fd476d0edba3f8c0665510e7937906f03c3
+content_hash: sha256:4272685d61e16c0736b1575942698dc835b34a27d079b9d9d875c1ca89f9f4e9
 ---
 
 ## 开发实例
 
 例如下图，播放暂停按钮对应着两种状态，在状态切换时需要实时变化对应的标注信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/Pvb_5gDOQbWH3YT8FKEUVw/zh-cn_image_0000002589243817.png?HW-CC-KV=V1&HW-CC-Date=20260429T052608Z&HW-CC-Expire=86400&HW-CC-Sign=644410FDE22CB388E7F70C46701AFD043C7B3CEFE50FB759F7FDC6272D1670F6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/Pvb_5gDOQbWH3YT8FKEUVw/zh-cn_image_0000002589243817.png)
 
 ```
 1. import { PromptAction } from "@kit.ArkUI"

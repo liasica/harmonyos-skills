@@ -5,7 +5,7 @@ breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:41:27+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:506883d6b371a074e6bf088bd15815811fe5401efefe15bb20fdfe1060861fe5
+content_hash: sha256:db3f1a50314ceeb124df014a23f97f859166ad3f5e9c4c3ec9f0c359dee6b2c3
 ---
 
 ## 函数功能
@@ -28,7 +28,7 @@ DumpAccChkPoint接口打印功能会对算子实际运行的性能带来一定�
 
 Dump时，每个block核的dump信息前会增加对应信息头DumpHead（32字节大小），用于记录核号和资源使用信息。每次Dump的Tensor数据前也会添加信息头DumpTensorHead（32字节大小），用于记录Tensor的相关信息。如下图所示，展示了多核打印场景下的打印信息结构。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/wu7nAhgARRa9IsJjZxLbvQ/zh-cn_image_0000002589325657.png?HW-CC-KV=V1&HW-CC-Date=20260429T054126Z&HW-CC-Expire=86400&HW-CC-Sign=426774E9EBF49EF84C9A7D5A1414E997675AAF23893F7D5B64117014A8FDA482)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/wu7nAhgARRa9IsJjZxLbvQ/zh-cn_image_0000002589325657.png)
 
 **DumpHead的具体信息如下。**
 

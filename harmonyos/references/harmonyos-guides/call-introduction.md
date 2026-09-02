@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用服务 > Call Service Kit（通话服务） > Call Se
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:37:38+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:a3658399f3a3cb30ec2eade29f4262981fddcc2a595663a778c435e19f920ea1
+content_hash: sha256:f22845b960bd06107e13b46670ad08677a5754e6d5430aa97c38daeadd7fbbdd
 ---
 
 Call Service Kit（通话服务）是HarmonyOS为开发者提供的应用内通话管理服务。
@@ -36,7 +36,7 @@ Call Service Kit（通话服务）是HarmonyOS为开发者提供的应用内通�
 
 业务流程如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/0pJ4lSCGSy6_pJufsk-nhg/zh-cn_image_0000002589325197.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053736Z&HW-CC-Expire=86400&HW-CC-Sign=046B804B6A424F4EF3E4EAED06DFFC5026D1BD7C7E849E9B6D1AD4D7A0A728C9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/0pJ4lSCGSy6_pJufsk-nhg/zh-cn_image_0000002589325197.jpg)
 
 ## 约束和限制
 

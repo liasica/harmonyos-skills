@@ -5,7 +5,7 @@ breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.0.2(14) > OS平台能力 >
 category: harmonyos-releases
 scraped_at: 2026-04-29T13:23:38+08:00
 doc_updated_at: 2026-01-16
-content_hash: sha256:56d5ef40afbc5b322018b02ebf8386020c577ada6b75d39058f2d9dde789e49e
+content_hash: sha256:5de1a3723ea668ae1f6edeb49d01b4de35bf7e7639d09d97731a8b2101cc3a40
 ---
 
 ## borderImage的outset属性按照实际的延伸距离来绘制边框向外扩展的效果
@@ -86,11 +86,11 @@ API version 14及以后，设备宽度在600-840vp间时，默认显示居中弹
 
 变更前：设备宽度在600-840vp间时，SheetOptions中的preferType设置为SheetType.POPUP，实际显示居中弹窗样式。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/przeKRN_SqSM3Rp8CqqN-w/zh-cn_image_0000002334372189.png?HW-CC-KV=V1&HW-CC-Date=20260429T052337Z&HW-CC-Expire=86400&HW-CC-Sign=BBA9AB1B73C8160D189F5E6178AD85CF577B381C3B7098477F213CDE496A7C0C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/przeKRN_SqSM3Rp8CqqN-w/zh-cn_image_0000002334372189.png)
 
 变更后：设备宽度在600-840vp间时，SheetOptions中的preferType设置为SheetType.POPUP，实际显示跟手弹窗样式。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/qlA2LDb0QOOfiT1yOK8qAQ/zh-cn_image_0000002334332009.png?HW-CC-KV=V1&HW-CC-Date=20260429T052337Z&HW-CC-Expire=86400&HW-CC-Sign=123E6E4A92222D33B36CE58F24D585CF085B3297C737049EB541717E4A774CAA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/qlA2LDb0QOOfiT1yOK8qAQ/zh-cn_image_0000002334332009.png)
 
 **起始API Level**
 

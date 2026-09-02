@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:28:42+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:8851791e32aee07c3850385df11079de091cae11c0375b4f22e4c3306b37d005
+content_hash: sha256:b9900b9a11f94028ef248829c886fe2b0d3525b4c50c3a76055da115dde7f551
 ---
 
 HML是一套类HTML的标记语言，通过组件，事件构建出页面的内容。页面具备数据绑定、事件绑定、列表渲染、条件渲染和逻辑控制等高级能力。
@@ -55,7 +55,7 @@ HML是一套类HTML的标记语言，通过组件，事件构建出页面的内�
 * 针对数组内的数据修改，请使用splice方法生效数据绑定变更。
 * hml文件中的js表达式不支持ES6语法。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/hSp3Y9nIQaSBMvTIJiM4zQ/zh-cn_image_0000002558604910.png?HW-CC-KV=V1&HW-CC-Date=20260429T052840Z&HW-CC-Expire=86400&HW-CC-Sign=34E07EC94546DDCA47B266C3B396F3AA3954557D1B4F0CA56D44B82343EBE55A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/hSp3Y9nIQaSBMvTIJiM4zQ/zh-cn_image_0000002558604910.png)
 
 ## 普通事件绑定
 
@@ -133,7 +133,7 @@ HML是一套类HTML的标记语言，通过组件，事件构建出页面的内�
   30. }
   ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/KKBg75EbSkCgONZGKd9F1Q/zh-cn_image_0000002589324435.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052840Z&HW-CC-Expire=86400&HW-CC-Sign=28CF500132471A61E8C31689118DADE3F86641290C11C58C60DBAA378D16CF74)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/KKBg75EbSkCgONZGKd9F1Q/zh-cn_image_0000002589324435.gif)
 
 ## 冒泡事件绑定5+
 
@@ -264,7 +264,7 @@ tid属性主要用来加速for循环的重渲染，旨在列表中的数据有�
 * 数组中被tid指定的属性要保证唯一性，如果不是则会造成性能损耗。比如，示例中只有id和name可以作为tid字段，因为它们属于唯一字段。
 * tid不支持表达式。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/vD8VCq6zQzCIv6mik19wIA/zh-cn_image_0000002589244375.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052840Z&HW-CC-Expire=86400&HW-CC-Sign=D485E262EDA30BF13B2376EF6D5E0778424BBBCE3B795B8AC13201DDE5AFD5CD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/vD8VCq6zQzCIv6mik19wIA/zh-cn_image_0000002589244375.gif)
 
 ## 条件渲染
 
@@ -310,7 +310,7 @@ tid属性主要用来加速for循环的重渲染，旨在列表中的数据有�
 13. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/HP18Wve4QA6H0kVByQkctw/zh-cn_image_0000002558764568.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052840Z&HW-CC-Expire=86400&HW-CC-Sign=562B03B38DE8FC03868901A0330F4EC24D884901BD545826636000552B9B2DCD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/HP18Wve4QA6H0kVByQkctw/zh-cn_image_0000002558764568.gif)
 
 优化渲染：show方法。当show为true时，节点正常渲染；当为false时，仅仅设置display样式为none。
 
@@ -351,7 +351,7 @@ tid属性主要用来加速for循环的重渲染，旨在列表中的数据有�
 
 禁止在同一个元素上同时设置for和if属性。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/iRi1NczVTCy3zWaiJ0ENhA/zh-cn_image_0000002558604912.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052840Z&HW-CC-Expire=86400&HW-CC-Sign=95CCBF946C2CB9958A1BC5A4F99596F345088B540ACC4639AE224C3C0BB0B325)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/iRi1NczVTCy3zWaiJ0ENhA/zh-cn_image_0000002558604912.gif)
 
 ## 逻辑控制块
 
@@ -385,7 +385,7 @@ tid属性主要用来加速for循环的重渲染，旨在列表中的数据有�
 9. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/ObakUOEMRMuwkbEJ8pzNAw/zh-cn_image_0000002589324437.png?HW-CC-KV=V1&HW-CC-Date=20260429T052840Z&HW-CC-Expire=86400&HW-CC-Sign=6D41F69DAC74F8C6E2C1FFBE2B28F4E31C390803E312C2D0F0490B35458B7ACE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/ObakUOEMRMuwkbEJ8pzNAw/zh-cn_image_0000002589324437.png)
 
 ## 模板引用
 

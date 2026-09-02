@@ -5,7 +5,7 @@ breadcrumb: 指南 > 系统 > 基础功能 > Basic Services Kit（基础服务�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:33:06+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:2fd3e2bd8e585a5fb4df987b9fd026938a3e41fbea66ca06946e12a931b6316e
+content_hash: sha256:6c179aae1c7f1b8948307297fadc3cc612eea2272e9724f069a6a2103aa1639d
 ---
 
 CES（Common Event Service，公共事件服务）为应用程序提供订阅、发布、退订公共事件的能力。
@@ -29,7 +29,7 @@ CES（Common Event Service，公共事件服务）为应用程序提供订阅、
 
 **图1** 公共事件示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/pF4SPfPwSY-wDs5y7F0yLw/zh-cn_image_0000002558764946.png?HW-CC-KV=V1&HW-CC-Date=20260429T053230Z&HW-CC-Expire=86400&HW-CC-Sign=BAFA615111835785BDDD740EDA4C587320BECCFA6054922AFB06269952A0E9DC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/pF4SPfPwSY-wDs5y7F0yLw/zh-cn_image_0000002558764946.png)
 
 ## 安全注意事项
 

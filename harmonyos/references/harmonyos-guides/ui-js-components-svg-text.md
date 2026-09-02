@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:28:54+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:94a49ba5b4b0a8cbad910a643a355300c6653d41cea2443701afd295d9dc02d6
+content_hash: sha256:45b0318301ed50c669cd1fdd4b0fa54e9b5e9e307402ed9ea28162386dc4db95
 ---
 
 svg组件还可以绘制文本。
@@ -32,7 +32,7 @@ svg组件还可以绘制文本。
 9. </div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/NhCgj6sCSTK09kQ5WQ1FkA/zh-cn_image_0000002558764632.png?HW-CC-KV=V1&HW-CC-Date=20260429T052853Z&HW-CC-Expire=86400&HW-CC-Sign=8F3DD717B24E93C2048DB60B324D3AF9CFDA5EB85A0BC6DCF9A6E2543A424B0D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/NhCgj6sCSTK09kQ5WQ1FkA/zh-cn_image_0000002558764632.png)
 
 ## 沿路径绘制文本
 
@@ -52,4 +52,4 @@ textpath文本内容沿着属性path中的路径绘制文本。
 11. </div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/gS_yVwdDTd-2nOpeYGMcHA/zh-cn_image_0000002558604976.png?HW-CC-KV=V1&HW-CC-Date=20260429T052853Z&HW-CC-Expire=86400&HW-CC-Sign=60C680C6B7BE0D1784AADD54CD7757FC8A0BC9811FF5DC1519443F7BE9468612)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/gS_yVwdDTd-2nOpeYGMcHA/zh-cn_image_0000002558604976.png)

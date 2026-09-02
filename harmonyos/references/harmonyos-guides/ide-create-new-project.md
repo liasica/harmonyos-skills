@@ -5,7 +5,7 @@ breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 创建一个新的工�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:44:34+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:1573f5943743c230efba4c01aba17824caa06634c2500f80d89b1765d607ae83
+content_hash: sha256:d0c4f1bcfabf02ee8de81aba8e606777256fab0bf9b29dd9d566dbdab55a1e06
 ---
 
 当您开始开发一个应用/元服务时，首先需要根据工程创建向导，创建一个新的工程，工具会自动生成对应的代码和资源模板。
@@ -33,7 +33,7 @@ DevEco Studio提供了基础的工程模板资源，不同模板支持的设备�
    * Atomic Service元服务工程暂不支持Native开发。
    * [CloudDev]Empty Ability模板：该功能仅支持中国境内（香港特别行政区、澳门特别行政区、中国台湾除外）。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/tXE5YHbiT4OrxDO55L-zGw/zh-cn_image_0000002561753153.png?HW-CC-KV=V1&HW-CC-Date=20260429T054433Z&HW-CC-Expire=86400&HW-CC-Sign=9E0C4B80D2FF9E67B3E07E8B2B0A0DBB677EC5A8E677027F3B1517C2E14BE0F6)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/tXE5YHbiT4OrxDO55L-zGw/zh-cn_image_0000002561753153.png)
 3. 在工程配置页面，需要根据向导配置工程的基本信息。
    * **Project name**：工程的名称，可以自定义，由大小写字母、数字和下划线组成，必须由大小写字母开头，长度为1~200个字符。
    * **Bundle name**：标识应用的包名，用于标识应用的唯一性。
@@ -52,7 +52,7 @@ DevEco Studio提供了基础的工程模板资源，不同模板支持的设备�
    * **Device type：**该工程模板支持的设备类型。设备类型说明请参考[deviceTypes标签](module-configuration-file.md#devicetypes标签)。
    * **C++ Standard：**C++标准库，取值包括：Toolchain Default、C++11、C++14。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/JdWoaxFcScObP0s_xUklcg/zh-cn_image_0000002530913214.png?HW-CC-KV=V1&HW-CC-Date=20260429T054433Z&HW-CC-Expire=86400&HW-CC-Sign=573BC8A7F19E528A936143C12EA8D08E99178E80B103D3072E39675E8EFF49B1)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/JdWoaxFcScObP0s_xUklcg/zh-cn_image_0000002530913214.png)
 4. 单击**Finish**，工具会自动生成示例代码和相关资源，等待工程创建完成。
 
 ### （可选）创建OpenHarmony工程
@@ -86,7 +86,7 @@ DevEco Studio提供了基础的工程模板资源，不同模板支持的设备�
    ```
 2. 单击Sync Now进行同步。在Sync Check弹窗中点击**Yes**，同意将module.json5/config.json文件中的phone切换为OpenHarmony支持的default类型，并删除在OpenHarmony不适用的其他设备类型，同步成功无其他报错则工程创建完成。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/AXw3POdUQkqL6zAq28ZXNQ/zh-cn_image_0000002561753155.png?HW-CC-KV=V1&HW-CC-Date=20260429T054433Z&HW-CC-Expire=86400&HW-CC-Sign=F9954F066B303674AEC0783D125803D23AC0787B5D2325605DC7F559744A289D)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/AXw3POdUQkqL6zAq28ZXNQ/zh-cn_image_0000002561753155.png)
 
 说明
 

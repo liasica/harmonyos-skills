@@ -5,7 +5,7 @@ breadcrumb: 指南 > 基础入门 > 开发基础知识 > 应用程序包基础�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:25:28+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:655a5ba5000f03e224b1a6d2935536abfb5d72151303c00ca49b2735290d3645
+content_hash: sha256:9b1b514e331a9ae547a544a4d33c38338ca0af60e7708e7b1ac235d974debf60
 ---
 
 在基于[Stage模型](application-configuration-file-overview-stage.md)开发应用之前，开发者需要了解应用的设计机制、应用程序包结构等基础知识。
@@ -47,7 +47,7 @@ Module按照使用场景可以分为两种类型：
 
   **图1** HAR和HSP在APP包中的形态示意图
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/hGX_cnEGQ9OmTFWAoWnwCA/zh-cn_image_0000002589323833.png?HW-CC-KV=V1&HW-CC-Date=20260429T052147Z&HW-CC-Expire=86400&HW-CC-Sign=DB0D5303718197B27482651F9A9305F37D7B92D2FF1185716ECCD3A9DDCEF3F7)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/hGX_cnEGQ9OmTFWAoWnwCA/zh-cn_image_0000002589323833.png)
 
 ## 选择合适的包类型
 

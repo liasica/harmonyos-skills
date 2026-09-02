@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-perftest
-title: @ohos.test.PerfTest
+title: "@ohos.test.PerfTest"
 breadcrumb: API参考 > 系统 > 调测调优 > Test Kit（应用测试服务） > ArkTS API > @ohos.test.PerfTest
 category: harmonyos-references
 scraped_at: 2026-04-28T08:11:32+08:00

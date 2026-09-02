@@ -5,7 +5,7 @@ breadcrumb: 指南 > 媒体 > Media Kit（媒体服务） > 媒体开发指导(A
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:35:26+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:641fb64895b07b7feb118883338a290f313e076c8256e9d04ea5497b290d9cc1
+content_hash: sha256:aca41bc1b42239d4957a0e8f7b48f9abdc404516b63865cb16014da340f13f80
 ---
 
 在开发过程中，应用经常会创建异步线程执行视频转码任务以满足不同诉求，主要包括：
@@ -55,13 +55,13 @@ content_hash: sha256:641fb64895b07b7feb118883338a290f313e076c8256e9d04ea5497b290
 
   计算过程：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/8342kSOWRDeAKXeAR51Quw/zh-cn_image_0000002589324967.png?HW-CC-KV=V1&HW-CC-Date=20260429T053525Z&HW-CC-Expire=86400&HW-CC-Sign=627E886A63D80AF3A7ADAE6644B3FA4C7802C31F90FC2775407D35072047D58C)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/8342kSOWRDeAKXeAR51Quw/zh-cn_image_0000002589324967.png)
 
   分辨率和帧率的系数由以下经验公式计算可得。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/DPOSnr9_T4qbvsafzTPMXg/zh-cn_image_0000002589244903.png?HW-CC-KV=V1&HW-CC-Date=20260429T053525Z&HW-CC-Expire=86400&HW-CC-Sign=DF7F366D504C8C9071D8B2BA539ADBD74954078775F2C3FF493596C7CED9E51E)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/DPOSnr9_T4qbvsafzTPMXg/zh-cn_image_0000002589244903.png)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/9ocZrJfPTAGb0DeBHzqidw/zh-cn_image_0000002558765098.png?HW-CC-KV=V1&HW-CC-Date=20260429T053525Z&HW-CC-Expire=86400&HW-CC-Sign=F237D94FEB01C5052F6BF97F161711441B2B94A20E6D3A27FE25A8D168A7D191)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/9ocZrJfPTAGb0DeBHzqidw/zh-cn_image_0000002558765098.png)
 
   上述计算帧率的公式y=clip(0.5, 2, x)表示：如果x∈[0.5, 2.0]，取y=x；如果x＜0.5，取y=0.5；如果x＞2.0，取y=2.0。
 * **码率计算**

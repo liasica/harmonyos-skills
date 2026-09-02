@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:51:05+08:00
 doc_updated_at: 2026-03-26
-content_hash: sha256:ec9b959ab68f99e36e7272e708876e1976b009e44c1fd877b274a22a8b68afb3
+content_hash: sha256:64c73f62cda81a2dd32f6bd44eefd011d11eb2f6671ec848b33b1ccf1a741e84
 ---
 
 由手指、手写笔或鼠标左键在组件上按下、滑动或抬起时触发。
@@ -209,4 +209,4 @@ PhonePC/2in1TabletTVWearable
 75. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/YuSH8XJmSjCEqPHoXKz-9g/zh-cn_image_0000002558765982.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055103Z&HW-CC-Expire=86400&HW-CC-Sign=37315FEAD83EF1FB86F9636F8FAE74460D683FB91DBAF32176A391CA83B1144B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/YuSH8XJmSjCEqPHoXKz-9g/zh-cn_image_0000002558765982.gif)

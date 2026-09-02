@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-provide-and-consume
-title: @Provide装饰器和@Consume装饰器：与后代组件双向同步
+title: "@Provide装饰器和@Consume装饰器：与后代组件双向同步"
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理（V1） > 管理组件拥有的状态 > @Provide装饰器和@Consume装饰器：与后代组件双向同步
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:27:14+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:ef30706ff5af35ad916e9a3940a29c7100464b102c37c9df033d78139ba11382
+content_hash: sha256:c7ed88dbb928439547e179f1fd6e1fd2d9c91730749bee24b6bcbe8b3823f5d2
 ---
 
 @Provide和@Consume，应用于与后代组件的双向数据同步、状态数据在多个层级之间传递的场景。不同于上文提到的父子组件之间通过命名参数机制传递，@Provide和@Consume摆脱参数传递机制的束缚，实现跨层级传递。
@@ -66,7 +66,7 @@ API version 19及以前，@Provide和@Consume双向同步仅支持声明式节�
 
 **图1** @Provide初始化规则图示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/48Gl_S3hSq2_jX38v3yl6g/zh-cn_image_0000002589243901.png?HW-CC-KV=V1&HW-CC-Date=20260429T052712Z&HW-CC-Expire=86400&HW-CC-Sign=D7785975556C76013B0CC9D2F65D5879E8FBAFFA25AA80F8C943E692A296D09A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/48Gl_S3hSq2_jX38v3yl6g/zh-cn_image_0000002589243901.png)
 
 | @Consume变量装饰器 | 说明 |
 | --- | --- |
@@ -78,7 +78,7 @@ API version 19及以前，@Provide和@Consume双向同步仅支持声明式节�
 
 **图2** @Consume初始化规则图示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/VBe1v9vWQvivpABgiLhjVA/zh-cn_image_0000002558764094.png?HW-CC-KV=V1&HW-CC-Date=20260429T052712Z&HW-CC-Expire=86400&HW-CC-Sign=534786905197D1FEF2C76612344397EC56B5282D43505EF29B51DEF029167FC0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/VBe1v9vWQvivpABgiLhjVA/zh-cn_image_0000002558764094.png)
 
 ## 观察变化和行为表现
 
@@ -107,7 +107,7 @@ API version 19及以前，@Provide和@Consume双向同步仅支持声明式节�
 
    通过初始渲染的步骤可知，子组件@Consume持有@Provide的实例。在@Consume更新后调用@Provide的更新方法，将更新的数值同步回@Provide，以此实现@Consume向@Provide的同步更新。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/FP8qmBjLRZe1U603sNeGqQ/zh-cn_image_0000002558604438.png?HW-CC-KV=V1&HW-CC-Date=20260429T052712Z&HW-CC-Expire=86400&HW-CC-Sign=F7E654AA866B833B6AF34FE797A74F93C2F15627024E12404959C7A1D2BB0037)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/FP8qmBjLRZe1U603sNeGqQ/zh-cn_image_0000002558604438.png)
 
 ## 限制条件
 

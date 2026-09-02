@@ -5,12 +5,12 @@ breadcrumb: 指南 > 图形 > Graphics Accelerate Kit（图形加速服务） > 
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:36:33+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:1462c00b87ddca60ab82c63d4bd8b378be35f979e0cab4836cc4549dfd65ae51
+content_hash: sha256:a17e689302e17b848a0d509a85d86917cad61d416950ce3453898dcd6d04e9a0
 ---
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/60OZ566jRKSvwXRX_r9JWQ/zh-cn_image_0000002589245035.png?HW-CC-KV=V1&HW-CC-Date=20260429T053632Z&HW-CC-Expire=86400&HW-CC-Sign=BC8CA1670FCE1E979F99BD46EAD6001CB371A17EF5E25A20C5FBEA3DB76A9B99)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/60OZ566jRKSvwXRX_r9JWQ/zh-cn_image_0000002589245035.png)
 
 1. 用户启动游戏。
 2. 游戏在onCreate生命周期中调用[setSupportedProcessCache](../harmonyos-references/js-apis-inner-application-applicationcontext.md#applicationcontextsetsupportedprocesscache12)接口，设置游戏支持缓存后快速启动。
@@ -34,7 +34,7 @@ content_hash: sha256:1462c00b87ddca60ab82c63d4bd8b378be35f979e0cab4836cc4549dfd6
 
 ## 生命周期
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/5oGfEVfSSXOB1ONL52FBfA/zh-cn_image_0000002558765230.png?HW-CC-KV=V1&HW-CC-Date=20260429T053632Z&HW-CC-Expire=86400&HW-CC-Sign=BC9378ABFE4D7B8D0E2EAAC7C2A3765A8CCB5434EB97BC1CC23C1C0BBCF24891)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/5oGfEVfSSXOB1ONL52FBfA/zh-cn_image_0000002558765230.png)
 
 * 游戏冷启动场景
 

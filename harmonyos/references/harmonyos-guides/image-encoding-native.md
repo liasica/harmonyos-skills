@@ -5,7 +5,7 @@ breadcrumb: 指南 > 媒体 > Image Kit（图片处理服务） > 图片开发�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:35:22+08:00
 doc_updated_at: 2026-03-20
-content_hash: sha256:7264d7b0c8da5ef763e569263ec2de8d9bb082ba00c5ee3a0c787f97f3f7aa0f
+content_hash: sha256:c0afdc5441b863a907857c25e249e19cc83501374a41d1ab8dafbff3a9e49521
 ---
 
 说明
@@ -39,7 +39,7 @@ content_hash: sha256:7264d7b0c8da5ef763e569263ec2de8d9bb082ba00c5ee3a0c787f97f3f
 
 如下为图片编码调用关系图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/6soAkzX1Ru-vSfjt6oUjtA/zh-cn_image_0000002558765092.png?HW-CC-KV=V1&HW-CC-Date=20260429T053520Z&HW-CC-Expire=86400&HW-CC-Sign=917030B4D5283F2955863E05103CE736EF98DF19DBBED64F2916F3B02A93A1E6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/6soAkzX1Ru-vSfjt6oUjtA/zh-cn_image_0000002558765092.png)
 
 ### 在 CMake 脚本中链接动态库
 

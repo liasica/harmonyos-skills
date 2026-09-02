@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用服务 > IAP Kit（应用内支付服务） > 开发�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:38:37+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:19c3315987b2f0dd23d1516c63d11209135d0a1f56f7f4bc47bda1c1f9ead7d4
+content_hash: sha256:9c77f4ba2eed1747757cbcedc992e13f85f03319011feebb158c6cfe8fec80f6
 ---
 
 ## bundleName配置
@@ -31,7 +31,7 @@ content_hash: sha256:19c3315987b2f0dd23d1516c63d11209135d0a1f56f7f4bc47bda1c1f9e
    * 下图中的APP ID可用于服务器API接口请求。
    * 如果开发者应用的compatibleSdkVersion>=14，则接入IAP Kit不要求开发者[添加公钥指纹](application-dev-overview.md#条件必选添加公钥指纹) 以及配置应用身份信息。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/a4PlVcoQTvmgLfBZfrjRxQ/zh-cn_image_0000002589245229.png?HW-CC-KV=V1&HW-CC-Date=20260429T053835Z&HW-CC-Expire=86400&HW-CC-Sign=724BD343F32B23BCAA0EC00BF95FD84A1D30E553A66DA1AA86B84A7E77279F52)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/a4PlVcoQTvmgLfBZfrjRxQ/zh-cn_image_0000002589245229.png)
 2. 在工程“entry/src/main/module.json5”的**module**节点增加如下**client\_id**属性配置，用于IAP Kit接口的应用身份鉴权。
 
    ```

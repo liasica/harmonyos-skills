@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:28:43+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:19c35e530af3a45fc0b4892a01efcaf003557ca183eb9e2372a5e44fde260567
+content_hash: sha256:99830fb088722f1d4f0db338eb69ea513b801474e2193bd65167aa53186081c7
 ---
 
 实现标题和文本区域最常用的是基础组件text。text组件用于展示文本，可以设置不同的属性和样式，文本内容需要写在标签内容区，完整属性和样式信息请参考[text](../harmonyos-references/js-components-basic-text.md)。在页面中插入标题和文本区域的示例如下：
@@ -52,4 +52,4 @@ content_hash: sha256:19c35e530af3a45fc0b4892a01efcaf003557ca183eb9e2372a5e44fde2
 8. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/0q2yKO5eT7O03yNL3-xOxg/zh-cn_image_0000002589324441.png?HW-CC-KV=V1&HW-CC-Date=20260429T052842Z&HW-CC-Expire=86400&HW-CC-Sign=F416D789DB18E834E95B71BCDBFF5995574FFA6548A97D82DB2AAA4147FAF4A7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/0q2yKO5eT7O03yNL3-xOxg/zh-cn_image_0000002589324441.png)

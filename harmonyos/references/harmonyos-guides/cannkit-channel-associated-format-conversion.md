@@ -5,7 +5,7 @@ breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:41:25+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:437ef658008146157f2981ecd0cbbdc3ede07d020452861435c58466c8779b9e
+content_hash: sha256:3fc9737d0fb3a54325ed8ffe73d57222b77d640f18ef3828abc187d058835887
 ---
 
 ## 功能说明
@@ -92,7 +92,7 @@ ND2NZ转换示意图如下，样例中参数设置值和解释说明如下。
 
 **图1** Nd2Nz转换示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/AhnVvZ7CQcWYhVrBGLE0Mw/zh-cn_image_0000002589245589.png?HW-CC-KV=V1&HW-CC-Date=20260429T054124Z&HW-CC-Expire=86400&HW-CC-Sign=A05681CF375ABAB9EF643B875B93973060A5AEBD6406542F91E401A4EC6BCBA0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/AhnVvZ7CQcWYhVrBGLE0Mw/zh-cn_image_0000002589245589.png)
 
 ## 支持的型号
 

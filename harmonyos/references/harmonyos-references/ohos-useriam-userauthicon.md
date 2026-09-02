@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-useriam-userauthicon
-title: @ohos.userIAM.userAuthIcon (嵌入式用户身份认证控件)
+title: "@ohos.userIAM.userAuthIcon (嵌入式用户身份认证控件)"
 breadcrumb: API参考 > 系统 > 安全 > User Authentication Kit（用户认证服务） > ArkTS组件 > @ohos.userIAM.userAuthIcon (嵌入式用户身份认证控件)
 category: harmonyos-references
 scraped_at: 2026-04-29T13:58:23+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:7695e8fc9d3a06a1eeab44699e3a5ebd3287f2abd5783863ee25851e78c9ba51
+content_hash: sha256:47d45d6d54f70e11cc66125ba2522a0c2c5e5f6a83fe24b2fc64ab95e850de30
 ---
 
 提供应用界面上展示的人脸、指纹认证图标，具体功能如下：
@@ -124,8 +124,8 @@ PhonePC/2in1TabletWearable
 
 **人脸认证图例：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/ph_5JseaS2-9xbdSPWxh6A/zh-cn_image_0000002589246867.png?HW-CC-KV=V1&HW-CC-Date=20260429T055822Z&HW-CC-Expire=86400&HW-CC-Sign=9D951EE9ACA06B0ECCE4D755A5ED649B39A0D386C8D8617623500F848DA7225F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/ph_5JseaS2-9xbdSPWxh6A/zh-cn_image_0000002589246867.png)
 
 **指纹认证图例：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/Mg_7xx6QSkKaMRIqSgrMvA/zh-cn_image_0000002558767060.png?HW-CC-KV=V1&HW-CC-Date=20260429T055822Z&HW-CC-Expire=86400&HW-CC-Sign=0852221B5B9A57E58B48FA0521EC71B57E2C779D7B5C5D2E823B3758EBBC3BFF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/Mg_7xx6QSkKaMRIqSgrMvA/zh-cn_image_0000002558767060.png)

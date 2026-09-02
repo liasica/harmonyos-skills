@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用服务 > Game Service Kit（游戏服务） > 游戏�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:38:11+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:ad03c5900b9584df1beffb34812f21aa42e9a02b948b0ab9640c32cdb09c249b
+content_hash: sha256:6d5fe6c6000159cf69c941f340e8dd68429c9518c139edc295f80b55a5a0db57
 ---
 
 游戏场景感知包括：
@@ -15,7 +15,7 @@ content_hash: sha256:ad03c5900b9584df1beffb34812f21aa42e9a02b948b0ab9640c32cdb09
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/wZknRLVXSAWEMx6YxMKruQ/zh-cn_image_0000002589245205.png?HW-CC-KV=V1&HW-CC-Date=20260429T053810Z&HW-CC-Expire=86400&HW-CC-Sign=5C7DC4729999DCDCA10FA1A6411F4B7835EE1BC0218609B966B29CEAA54EE523)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/wZknRLVXSAWEMx6YxMKruQ/zh-cn_image_0000002589245205.png)
 
 1. 游戏启动后调用[gamePerformance.init](../harmonyos-references/gameservice-gameperformance.md#gameperformanceinit)接口对游戏场景感知进行初始化。
 2. 初始化成功后，游戏调用[gamePerformance.on](../harmonyos-references/gameservice-gameperformance.md#gameperformanceondevicestatechanged)接口注册设备状态变化事件监听，订阅设备状态变化通知。

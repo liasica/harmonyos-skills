@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:28:08+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:488bb6f34f072d04da9115558040a8a244ddd4bc3f0c2b51a8885ff8badf9d30
+content_hash: sha256:54cbec815121385eb1c7e1e6b9613742dd9295ad5ae0812dd94f719924b448e1
 ---
 
 属性动画是指当可动画属性的参数值发生变化时，在UI上产生的连续视觉效果。当参数值连续变化，且设置到可以引起UI发生变化的属性接口上时，即可实现属性动画。
@@ -44,7 +44,7 @@ ArkUI提供[@AnimatableExtend装饰器](arkts-animatable-extend.md)，用于自�
 
 [Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/Animation/entry/src/main/ets/pages/animatableProperty/template1/Index.ets#L16-L43)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/6scz3Um1R3iBU5fIxubTjQ/zh-cn_image_0000002558604816.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052807Z&HW-CC-Expire=86400&HW-CC-Sign=F4C9D5623DE2C1B151F0C4AED81A91806644CAF90CEAFEDD90B04217B5F81B44)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/6scz3Um1R3iBU5fIxubTjQ/zh-cn_image_0000002558604816.gif)
 
 ## 使用自定义数据类型和@AnimatableExtend装饰器改变图形形状
 
@@ -188,4 +188,4 @@ ArkUI提供[@AnimatableExtend装饰器](arkts-animatable-extend.md)，用于自�
 
 [Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/Animation/entry/src/main/ets/pages/animatableProperty/template2/Index.ets#L16-L153)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/eixtg6gISBWtoA8fC3ulfg/zh-cn_image_0000002589324341.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052807Z&HW-CC-Expire=86400&HW-CC-Sign=2139526FA70426D60A763AAFD9908E1076B276EAAA7E31354B06E2D0F65EABEB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/eixtg6gISBWtoA8fC3ulfg/zh-cn_image_0000002589324341.gif)

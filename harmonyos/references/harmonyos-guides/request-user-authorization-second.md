@@ -5,7 +5,7 @@ breadcrumb: 指南 > 系统 > 安全 > 程序访问控制 > 应用权限管控 >
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:30:35+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:062fa7711aa5405229958c7ff79b1788767c6afa2d9abbcb93940dc5a4f14b4f
+content_hash: sha256:b2806851279041ed27becee63588486f7901953853472f96a29e40f441bf843d
 ---
 
 当应用通过[requestPermissionsFromUser()](../harmonyos-references/js-apis-abilityaccessctrl.md#requestpermissionsfromuser9)拉起弹框[请求用户授权](request-user-authorization.md)时，如果用户拒绝授权，应用将无法再次通过requestPermissionsFromUser()拉起弹框。用户需要在系统设置中手动授权。
@@ -19,7 +19,7 @@ content_hash: sha256:062fa7711aa5405229958c7ff79b1788767c6afa2d9abbcb93940dc5a4f
 
 效果展示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/nhTkeNwAR7ego7BQhG-HGQ/zh-cn_image_0000002558764854.png?HW-CC-KV=V1&HW-CC-Date=20260429T053033Z&HW-CC-Expire=86400&HW-CC-Sign=A03D67B61C51C7E8C7F0C1D25DB41E3FE893344407CDC81578196D150E38326E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/nhTkeNwAR7ego7BQhG-HGQ/zh-cn_image_0000002558764854.png)
 
 以下示例代码展示了如何再次拉起弹框申请ohos.permission.APPROXIMATELY\_LOCATION权限。
 

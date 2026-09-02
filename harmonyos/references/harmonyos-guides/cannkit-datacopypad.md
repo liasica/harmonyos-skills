@@ -5,7 +5,7 @@ breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:41:25+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:78d681932a1e80e09c572226e740cbca365c6820466b1cf82cf9de8ffadec3bd
+content_hash: sha256:4d5add8a5b0729946e013616e5382e753cc1b816b9d48bf86314b44a7415bce5
 ---
 
 ## 功能说明
@@ -108,7 +108,7 @@ content_hash: sha256:78d681932a1e80e09c572226e740cbca365c6820466b1cf82cf9de8ffad
   + blockLen+leftPadding+rightPadding满足32字节对齐，isPad为false，左右两侧填充的数据值会默认为随机值，否则为paddingValue。此处示例中，leftPadding、rightPadding均为0，则不填充。
   + blockLen+leftPadding+rightPadding不满足32字节对齐时，框架会填充一些假数据dummy，保证左右填充的数据和blockLen、假数据为32字节对齐。leftPadding/rightPadding不为0：若isPad为false，左右两侧填充的数据值和dummy值均为随机值，否则为paddingValue。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/lXWvkPB_Qea-wYKF4bxzBw/zh-cn_image_0000002558765780.png?HW-CC-KV=V1&HW-CC-Date=20260429T054124Z&HW-CC-Expire=86400&HW-CC-Sign=0A0BFEDE23B4E6F2E1EA089DEE2EC63972CDC644DAA83C10ED04137D9624547D)
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/lXWvkPB_Qea-wYKF4bxzBw/zh-cn_image_0000002558765780.png)
 
   **配置示例2：**
 
@@ -116,23 +116,23 @@ content_hash: sha256:78d681932a1e80e09c572226e740cbca365c6820466b1cf82cf9de8ffad
   + blockLen+leftPadding+rightPadding不满足32字节对齐，leftPadding、rightPadding均为0：dummy会默认填充待搬运数据块的第一个元素值。
   + blockLen+leftPadding+rightPadding不满足32字节对齐，leftPadding/rightPadding不为0：若isPad为false，左右两侧填充的数据值和dummy值均为随机值，否则为paddingValue。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/ftOLqUqaSWGTGNDbnItE1Q/zh-cn_image_0000002558606124.png?HW-CC-KV=V1&HW-CC-Date=20260429T054124Z&HW-CC-Expire=86400&HW-CC-Sign=5F4B9C23BD23CE185BF515D7827D1A0F816AAE8E5BB7D7405F0DB7B84C902359)
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/ftOLqUqaSWGTGNDbnItE1Q/zh-cn_image_0000002558606124.png)
 * **VECIN/VECOUT**->**GM**
 
   当每个连续传输数据块长度blockLen为32字节对齐时，下图呈现了需要传入的DataCopyParams示例，blockLen为64，每个连续传输数据块包含64Bytes；srcStride为1，因为源操作数的逻辑位置为VECIN/VECOUT，srcStride的单位为dataBlock(32Bytes)，也就是说源操作数相邻数据块之间间隔1个dataBlock；dstStride为1，因为目的操作数的逻辑位置为GM，dstStride的单位为Byte，也就是说目的操作数相邻数据块之间间隔1Byte。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/aaaILJCnQgO-EBNBNTKAXg/zh-cn_image_0000002589325651.png?HW-CC-KV=V1&HW-CC-Date=20260429T054124Z&HW-CC-Expire=86400&HW-CC-Sign=172ACED466C5A3EEBC089774EFF3E6A10E842445D22AE1A947E8C2AB1E31B59C)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/aaaILJCnQgO-EBNBNTKAXg/zh-cn_image_0000002589325651.png)
 
   当每个连续传输数据块长度blockLen不满足32字节对齐，由于Unified Buffer要求32字节对齐，框架在搬出时会自动补充一些假数据来保证对齐，但在当搬到GM时会自动将填充的假数据丢弃掉。下图呈现了该场景下需要传入的DataCopyParams示例和假数据补齐的原理。blockLen为47，每个连续传输数据块包含47Bytes，不满足32字节对齐；srcStride为1，表示源操作数相邻数据块之间间隔1个dataBlock；dstStride为1，表示目的操作数相邻数据块之间间隔1Byte。框架在搬出时会自动补充17Bytes的假数据来保证对齐，搬到GM时再自动将填充的假数据丢弃掉。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/UPiPvQBVSKC6Mq4JRho9KQ/zh-cn_image_0000002589245591.png?HW-CC-KV=V1&HW-CC-Date=20260429T054124Z&HW-CC-Expire=86400&HW-CC-Sign=41BD59BB33E1685F72012C1A02694E7CD69EFAF1DDFD73FAAFE34232CC65F4EC)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/UPiPvQBVSKC6Mq4JRho9KQ/zh-cn_image_0000002589245591.png)
 * **VECIN/VECOUT->TSCM**
 
   内部实现涉及AIC和AIV之间的通信，实际搬运路径为VECIN/VECOUT->GM->TSCM，**发送通信消息会有开销，性能会受到影响**。
 
   如下图所示，展示了从VECIN/VECOUT搬运到GM，再搬运到TSCM的过程：示例中数据类型为half，单个datablock（32B）含有16个half元素，源操作数中的 A1~A6、B1~B6、C1~C6为需要进行搬运的数据。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/3kAATfaDTWWtvB-wz6jLFg/zh-cn_image_0000002558765782.png?HW-CC-KV=V1&HW-CC-Date=20260429T054124Z&HW-CC-Expire=86400&HW-CC-Sign=2DE8F8115077D81556732C2E97056C8D69EE60048010966BE6FB028862ED00FF)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/3kAATfaDTWWtvB-wz6jLFg/zh-cn_image_0000002558765782.png)
 
   从VECIN/VECOUT->GM的搬运，数据存储格式没有发生转变，依然是ND。
 

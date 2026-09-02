@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-awareness-motion
-title: @ohos.multimodalAwareness.motion (动作感知能力)
+title: "@ohos.multimodalAwareness.motion (动作感知能力)"
 breadcrumb: API参考 > 系统 > 硬件 > Multimodal Awareness Kit（多模态融合感知服务） > ArkTS API > @ohos.multimodalAwareness.motion (动作感知能力)
 category: harmonyos-references
 scraped_at: 2026-04-28T08:10:54+08:00

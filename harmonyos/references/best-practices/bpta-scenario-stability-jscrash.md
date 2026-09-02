@@ -5,7 +5,7 @@ breadcrumb: 最佳实践 > 稳定性 > 稳定性案例 > 应用异常退出类�
 category: best-practices
 scraped_at: 2026-04-29T14:14:19+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:eda676edec9f40a3bd7ccb3d140683555b45b7f70a4b6e64cc9aea23344980c6
+content_hash: sha256:3e40c543beb70f9c845eeff4a12ed1101ac747171e8c7b806ad6e474ff52dc38
 ---
 
 本文将基于当前开发者所遇到的高频JS Crash故障进行案例介绍。开发者可阅读[应用崩溃类问题检测方法](bpta-stability-runtime-crash-detection.md)了解系统检测JS Crash问题的原理和机制，阅读[JS Crash类问题分析方法](bpta-stability-app-crash-js-way.md)了解分析JS Crash问题的一般步骤。
@@ -479,7 +479,7 @@ Error类问题一般是开发者或JS库主动抛出来的JS异常。
 
 通过DevEco Studio的FaultLog工具可收集到此类异常日志，其中JS异常栈信息可直接定位到抛异常的代码位置。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/za8R6S1uQGyK2pbm0NSURg/zh-cn_image_0000002370565640.png?HW-CC-KV=V1&HW-CC-Date=20260429T061417Z&HW-CC-Expire=86400&HW-CC-Sign=96B029E62695D8179FEADA0B7B1553836EA98FCA7B72A1E33DA0A3AA382294BC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/za8R6S1uQGyK2pbm0NSURg/zh-cn_image_0000002370565640.png)
 
 这类问题可通过故障日志定位到具体的代码行，检视上下文来分析问题即可。
 
@@ -600,13 +600,13 @@ Error name:OutOfMemoryError字段代表应用存在内存泄漏的场景，对�
 
    在方舟虚拟机采用的是标记清除法回收内存，内存是通过维护一棵树来管理的，这颗树的根节点被称为GC Root，ArkTs对象只要被挂载到这颗树上则说明该对象存活。很多刚接触内存的同学可能会对GC Root产生误解，认为挂在GC Root上的对象是需要被回收的，而根节点之所以叫GC Root是因为标记清楚法在标记阶段，垃圾收集器从GC Root开始遍历。所有从GC Root可达的对象都会被标记为“存活”。在清除阶段，垃圾收集器会扫描内存中的所有对象。如果某个对象没有在标记阶段被标记为存活，那么该对象就是“垃圾”，可以被回收。垃圾收集器会释放这些未标记对象所占用的内存空间。每次GC都是从根节点开始，所以根节点被称为GC Root。该树的快照如图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/7n6UIJ9rSr6VnRpYfwasUQ/zh-cn_image_0000002425122964.png?HW-CC-KV=V1&HW-CC-Date=20260429T061417Z&HW-CC-Expire=86400&HW-CC-Sign=74E162A6CD1558C7CCEB0282AEA3C840FB6BEB6CD61AB927A58C2B1F13841467)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/7n6UIJ9rSr6VnRpYfwasUQ/zh-cn_image_0000002425122964.png)
 
    ArkTs的对象是存在引用和被引用关系的，图中箭头指向的都是被引用对象，所有存活的对象都直接或间接被GC Root所引用，从GC Root到被引用对象的路径为该对象的引用链。因此，解决内存泄漏的关键就是在于将对象的引用链在合适的地方（结合业务判断）断开。
 
    * 如下图，distance为1的时候为js\_proxy，没有被具体的应用的jsobject对象持有，下面就介绍下这些对象如何分析。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/-G9-crq3S2aQ9G7nrxmAQA/zh-cn_image_0000002425282796.png?HW-CC-KV=V1&HW-CC-Date=20260429T061417Z&HW-CC-Expire=86400&HW-CC-Sign=0EEC3CC13ECD489B4FEED25CAA2238B7F53A47CB41D99762E60E47958A9C4402 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/-G9-crq3S2aQ9G7nrxmAQA/zh-cn_image_0000002425282796.png "点击放大")
 
 **场景构造：**
 
@@ -672,15 +672,15 @@ Error name:OutOfMemoryError字段代表应用存在内存泄漏的场景，对�
 
 demo构造完成后，下面进行堆快照测试，在不点击前拍摄一个堆快照，点击7次后再拍摄一个堆快照，然后对比Snapshot1和Snapshot2看一下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/aKEFnbxZRDGIaH0mxS1A3A/zh-cn_image_0000002458681541.png?HW-CC-KV=V1&HW-CC-Date=20260429T061417Z&HW-CC-Expire=86400&HW-CC-Sign=B63E19829685829566C80402E1EF37FAA4FAEF0F6A4E12138AF0999638F4CA7F "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/aKEFnbxZRDGIaH0mxS1A3A/zh-cn_image_0000002458681541.png "点击放大")
 
 在两个快照对比的结果中，我们可以看到Proxy的Delta（New/Delete）显示为7/0，这表示有7个对象被创建，但均未被释放。再进一步查看Proxy相关的属性，展开它的fields，可以看到它的target是一个叫testYY的function，它的handler是一个JSObject。通过这两个属性，就可以结合应用代码分析这个Proxy在哪创建的，在哪传入native的，再分析native的函数哪里存在内存泄漏。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/leBmYPdKTtidEzaY0pn6VA/zh-cn_image_0000002497762978.png?HW-CC-KV=V1&HW-CC-Date=20260429T061417Z&HW-CC-Expire=86400&HW-CC-Sign=8E0B6974D1A44178A055C55DEA6FE9D4E8B420A88F2524134352C7345C40BCCB "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/leBmYPdKTtidEzaY0pn6VA/zh-cn_image_0000002497762978.png "点击放大")
 
 下面查看testYY的引用链，testYY被Proxy持有，这与背景中的引用链相符，只是该引用链较长，未在testYY中调用其他方法。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/phvcup2HQA6d6_C2vkg-Ag/zh-cn_image_0000002425122976.png?HW-CC-KV=V1&HW-CC-Date=20260429T061417Z&HW-CC-Expire=86400&HW-CC-Sign=542108A15203AD13A1B28D8D446B43DEA33BBCD668B011DE06E5CB2FEE55D486 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/phvcup2HQA6d6_C2vkg-Ag/zh-cn_image_0000002425122976.png "点击放大")
 
 ### 建议与总结
 

@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:28:50+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:21ca0cb36374f14b3cd11fff64c0d93fe9e44c9cd42bfd53c675ede86feaa497
+content_hash: sha256:15aa15bbc006135a342d50a13c9c35c511b9dc7175c5a0e04156b4de0059aeb1
 ---
 
 toolbar为页面工具栏组件，用于展示针对当前界面的操作选项，可作为页面的一级导航。具体用法请参考[toolbar](../harmonyos-references/js-components-basic-toolbar.md)。
@@ -39,7 +39,7 @@ toolbar为页面工具栏组件，用于展示针对当前界面的操作选项�
 12. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/mQLYaS3eTiepdVx-CdW9Ag/zh-cn_image_0000002589324481.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052848Z&HW-CC-Expire=86400&HW-CC-Sign=DB88CAEAC66F11B2126C792CB5D30E60CF01CE039FBB95218F61F89613E130CE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/mQLYaS3eTiepdVx-CdW9Ag/zh-cn_image_0000002589324481.gif)
 
 ## 添加子组件
 
@@ -74,7 +74,7 @@ toolbar组件仅支持toolbar-item为子组件，页面最多可以展示5个too
 12. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/NXw5D1NaQu67uszlhvcRmw/zh-cn_image_0000002589244419.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052848Z&HW-CC-Expire=86400&HW-CC-Sign=3533FC5029794956CA443C8E2E1C1DA553D04EB10CE7686C65B54C1400F49155)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/NXw5D1NaQu67uszlhvcRmw/zh-cn_image_0000002589244419.gif)
 
 ## 设置样式
 
@@ -107,7 +107,7 @@ toolbar组件仅支持toolbar-item为子组件，页面最多可以展示5个too
 12. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/BV5C1xxjTjGiTHCfzJPTrg/zh-cn_image_0000002558764612.png?HW-CC-KV=V1&HW-CC-Date=20260429T052848Z&HW-CC-Expire=86400&HW-CC-Sign=4E6A1B7C9ACD2F6D5613BFD6E347A14A5ACE94FFF963D2EF367448610AF75DD4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/BV5C1xxjTjGiTHCfzJPTrg/zh-cn_image_0000002558764612.png)
 
 ## 绑定事件
 
@@ -157,7 +157,7 @@ toolbar组件仅支持toolbar-item为子组件，页面最多可以展示5个too
 15. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/Su616zsySteYQdFN4eKpEg/zh-cn_image_0000002558604956.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052848Z&HW-CC-Expire=86400&HW-CC-Sign=7D2237C22B4E1720572F8D46A5B023EFFE3130EEB648849BC2B9BFC24CCC7662)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/Su616zsySteYQdFN4eKpEg/zh-cn_image_0000002558604956.gif)
 
 说明
 
@@ -212,4 +212,4 @@ toolbar组件不支持添加事件和方法，但其子组件toolbar-item支持�
 16. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/Od8h1unjSLaTybs1Ygqncg/zh-cn_image_0000002589324483.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052848Z&HW-CC-Expire=86400&HW-CC-Sign=F13559E3756E8C468ECCB841BE4238370359BEA6518EB0C197E277EACC60C0A6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/Od8h1unjSLaTybs1Ygqncg/zh-cn_image_0000002589324483.gif)

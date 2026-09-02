@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用服务 > Scenario Fusion Kit（融合场景服务） 
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:40:20+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:ec02723f6986c8fd70e1813c05fef0cafbfaa29cf631282e5d440aca015f6d52
+content_hash: sha256:641883f8fcb10b696e70373ca6b3685f652364d830449e19df004608c5290ff6
 ---
 
 说明
@@ -26,7 +26,7 @@ HarmonyOS版React Native环境搭建请参考官方文档[React Native环境搭�
 
 ## React Native输入框效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/JHde4bbVSJKMjdjydiS5tQ/zh-cn_image_0000002558606004.png?HW-CC-KV=V1&HW-CC-Date=20260429T053638Z&HW-CC-Expire=86400&HW-CC-Sign=A7611F61A8E038DF39F93877D99F7CAC6873FD698DCDEC991F55C9704C821A5C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/JHde4bbVSJKMjdjydiS5tQ/zh-cn_image_0000002558606004.png)
 
 ## 示例代码
 
@@ -106,7 +106,7 @@ HarmonyOS版React Native环境搭建请参考官方文档[React Native环境搭�
 
 ## React Native框架中加载的H5页面效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/8RtYrU92SmatBg4KsU6ejQ/zh-cn_image_0000002589325531.png?HW-CC-KV=V1&HW-CC-Date=20260429T053638Z&HW-CC-Expire=86400&HW-CC-Sign=59DA2B804F45B4803047883465837A65276CCAF0A2B095B5E71017BA795CCA81)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/8RtYrU92SmatBg4KsU6ejQ/zh-cn_image_0000002589325531.png)
 
 React Native框架加载H5页面场景，通过给form表单的input输入框（form表单的子节点）配置[autocomplete](scenario-fusion-mappingrelationship.md#h5-autocomplete和harmonyos的contenttype的映射关系)属性来支持智能填充，代码如下：
 

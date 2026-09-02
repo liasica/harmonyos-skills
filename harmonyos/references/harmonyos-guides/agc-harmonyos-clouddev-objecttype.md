@@ -5,7 +5,7 @@ breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > 端云�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:45:02+08:00
 doc_updated_at: 2026-04-22
-content_hash: sha256:ccf0104009f9cc524f2b18702540123fac4eefba4bf2b919124d651b659a34f5
+content_hash: sha256:aa3fa8005d73b32f341ff6c50d7da35cb094b62c5aeeacb70f35561e469891b7
 ---
 
 对象类型（ObjectType）用于定义存储对象的集合，不同的对象类型对应的不同数据结构。每创建一个对象类型，云数据库会在每个存储区实例化一个与之结构相对应的对象类型，用于存储对应的数据。
@@ -14,7 +14,7 @@ content_hash: sha256:ccf0104009f9cc524f2b18702540123fac4eefba4bf2b919124d651b659
 
 1. 右击“clouddb/objecttype”目录，选择“New > Cloud DB Object Type”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/gKCUMJf4TnCrf_mtS3LYnA/zh-cn_image_0000002416494957.png?HW-CC-KV=V1&HW-CC-Date=20260429T054501Z&HW-CC-Expire=86400&HW-CC-Sign=43B99D78E4839C53B71ED605DFC4DE29D38E6CD9C35DC29844E08338B6992504)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/gKCUMJf4TnCrf_mtS3LYnA/zh-cn_image_0000002416494957.png)
 
 2. 输入对象类型名称（下文以“objecttype1”为例）后，点击“OK”。
 
@@ -26,11 +26,11 @@ content_hash: sha256:ccf0104009f9cc524f2b18702540123fac4eefba4bf2b919124d651b659
    * 必须以字母开头，以字母或者数字结尾，不允许以“sqlite\_”开头，不允许以下划线（\_）结尾。
    * 不允许使用如下系统保留名称： naturalbase\_metadata、objecttypeinfohelper、t\_data\_upgrade\_info、t\_index\_schema、t\_nstore\_config、t\_schema\_negotiate\_info、t\_metadata\_schema、t\_nstore\_permission、t\_system\_config。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/LZKTAGU7SQubCwRBM6ZE7A/zh-cn_image_0000002179498152.png?HW-CC-KV=V1&HW-CC-Date=20260429T054501Z&HW-CC-Expire=86400&HW-CC-Sign=D15C19CBA57FF685FC1150DB64BC3D451D887B25C40326E77467C84DEE928F71)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/LZKTAGU7SQubCwRBM6ZE7A/zh-cn_image_0000002179498152.png)
 
    “clouddb/objecttype”目录下生成并打开新建的对象类型JSON文件“objecttype1.json”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/TVlWN-y7TpKq7dB9Tmo_ng/zh-cn_image_0000002179338468.png?HW-CC-KV=V1&HW-CC-Date=20260429T054501Z&HW-CC-Expire=86400&HW-CC-Sign=D43794D821515BF1FAEEA5F8C557FAC33CCA60A536CE73CCF31262C114FD08CA)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/TVlWN-y7TpKq7dB9Tmo_ng/zh-cn_image_0000002179338468.png)
 3. 在“fields”中为该对象类型配置字段信息。
 
    | 参数 | 必选(M)/可选(O) | 说明 |
@@ -54,7 +54,7 @@ content_hash: sha256:ccf0104009f9cc524f2b18702540123fac4eefba4bf2b919124d651b659
    | price | Double | - | - | - | - |
    | publishTime | Date | - | - | - | - |
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/x7IKl3gsSPqdaPf6UquZpg/zh-cn_image_0000002214858781.png?HW-CC-KV=V1&HW-CC-Date=20260429T054501Z&HW-CC-Expire=86400&HW-CC-Sign=0D253D8E5BF80262B0429C3B8987FDECE39C780113EF1559E5C148A159C5CC92)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/x7IKl3gsSPqdaPf6UquZpg/zh-cn_image_0000002214858781.png)
 4. 在“indexes”中为该对象类型配置索引、索引包含的字段、以及索引包含的字段的排序方式。
 
    | 参数 | 必选(M)/可选(O) | 说明 |
@@ -70,7 +70,7 @@ content_hash: sha256:ccf0104009f9cc524f2b18702540123fac4eefba4bf2b919124d651b659
    | id\_Index | id | ASC |
    | price\_Index | price | DESC |
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/P7igdZqtTriaZwtQVKj4yg/zh-cn_image_0000002179338460.png?HW-CC-KV=V1&HW-CC-Date=20260429T054501Z&HW-CC-Expire=86400&HW-CC-Sign=9DF47F66C7321897F819163AC7481CE97533F5EEB88CF7B9BF3C00B3BE2F5AC3)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/P7igdZqtTriaZwtQVKj4yg/zh-cn_image_0000002179338460.png)
 5. 在“permissions”中设置各角色是否具有该对象类型的Read、Upsert（包含新增和修改）和Delete权限。
 
    | 参数 | 必选(M)/可选(O) | 说明 |
@@ -91,4 +91,4 @@ content_hash: sha256:ccf0104009f9cc524f2b18702540123fac4eefba4bf2b919124d651b659
    | Creator | √ | √ | √ |
    | Administrator | √ | √ | √ |
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/tescI3BjTsiuW7Gk6G36Gg/zh-cn_image_0000002214858785.png?HW-CC-KV=V1&HW-CC-Date=20260429T054501Z&HW-CC-Expire=86400&HW-CC-Sign=F620C695216D4FDDB6CFC3B66C54C5159A7751CD5C3510A6575507207D5EDAFF)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/tescI3BjTsiuW7Gk6G36Gg/zh-cn_image_0000002214858785.png)

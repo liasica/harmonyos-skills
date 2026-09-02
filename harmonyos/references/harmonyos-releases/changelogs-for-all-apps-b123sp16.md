@@ -5,7 +5,7 @@ breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.0.2(14) > OS平台能力 >
 category: harmonyos-releases
 scraped_at: 2026-04-29T13:23:38+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:ef5d6990fb3639bd747e50032c2728e4ae83a5f2898d1fbcb532abfff46535cc
+content_hash: sha256:d1c2361d080f7e38044666ba152bf26ae0026b7fed18c210cfa43ef515dd5dc3
 ---
 
 ## Ability
@@ -642,7 +642,7 @@ zIndex接口
 
 实现效果如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/EKVrQdbyStaUPKOkfzz38A/zh-cn_image_0000002300492512.png?HW-CC-KV=V1&HW-CC-Date=20260429T052337Z&HW-CC-Expire=86400&HW-CC-Sign=773F7D9BA60D1A928B1B58267461E3C25F63AEC0A8BB70B1AD84BCF442353679)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/EKVrQdbyStaUPKOkfzz38A/zh-cn_image_0000002300492512.png)
 
 ### 屏幕Display对象rotation和orientation属性变更
 
@@ -1706,7 +1706,7 @@ hdc命令行工具
 1. hidumper --mem `pidof render_service_`
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/k6kprOTVTGqiE0pZcGaqlQ/zh-cn_image_0000002334331997.png?HW-CC-KV=V1&HW-CC-Date=20260429T052337Z&HW-CC-Expire=86400&HW-CC-Sign=AB69F89CEA6DA99AA189B41CF6A45111ECEF225415B6F932ADF3902D7E18C3CE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/k6kprOTVTGqiE0pZcGaqlQ/zh-cn_image_0000002334331997.png)
 
 变更后：每一列数据后新增一个空格
 
@@ -1714,7 +1714,7 @@ hdc命令行工具
 1. hidumper --mem `pidof render_service_`
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/5slBazDaToiOrlwBnnA4Iw/zh-cn_image_0000002334372173.png?HW-CC-KV=V1&HW-CC-Date=20260429T052337Z&HW-CC-Expire=86400&HW-CC-Sign=01574A826A1128B8F540D52694AFA9211504398A0DBE67281951DFB082C6ED15)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/5slBazDaToiOrlwBnnA4Iw/zh-cn_image_0000002334372173.png)
 
 其中hidumper、hidumper --mem、hidumper -c [system]变更效果与hidumper --mem [pid]命令效果一致。
 

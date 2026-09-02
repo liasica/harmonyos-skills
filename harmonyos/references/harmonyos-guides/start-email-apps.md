@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > Stage�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:25:53+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:f350d072bed93dd4f41629c0fcbf68f64346f77492143ee3f3f809ba6a8ea1d9
+content_hash: sha256:38697cc2733148903549364548119dd5f04133bdee108a2024f791d43f39874e
 ---
 
 本章节介绍如何拉起邮件类应用扩展面板。
@@ -95,7 +95,7 @@ startAbilityByType接口中type字段为mail，对应的wantParam参数：
 
    效果示例图：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/CCkymBI-QX6g4uMEjLF8uQ/zh-cn_image_0000002589323865.png?HW-CC-KV=V1&HW-CC-Date=20260429T052552Z&HW-CC-Expire=86400&HW-CC-Sign=D58DA3694EA374346C418130FED07321370C527CD6D0A0C90AB0979D21B14B6E)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/CCkymBI-QX6g4uMEjLF8uQ/zh-cn_image_0000002589323865.png)
 
 ## 目标方开发步骤
 

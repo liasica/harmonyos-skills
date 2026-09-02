@@ -5,14 +5,14 @@ breadcrumb: 指南 > 媒体 > Media Kit（媒体服务） > 媒体开发指导(C
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:35:31+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:4b34b6124a70b7b71ec47713a55c481e9515809d03ee28d39ed58b967ea30d3b
+content_hash: sha256:3b922d25788159eb3ba1adcb762f310ee4e4c84a9e21487ac6eae5317a41e831
 ---
 
 调用者可以调用本模块提供的[C API接口](../harmonyos-references/capi-videoprocessing.md)，实现HDRVivid标准动态元数据生成。
 
 该能力常用于视频编辑中，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/LCRhilvMQX2Zff7NqDiBbQ/zh-cn_image_0000002558605446.png?HW-CC-KV=V1&HW-CC-Date=20260429T053530Z&HW-CC-Expire=86400&HW-CC-Sign=164887CCEC1EDE92F23FD7C69F6F5C60831A1A9B97B377B2979C74F491D931E9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/LCRhilvMQX2Zff7NqDiBbQ/zh-cn_image_0000002558605446.png)
 
 ## 规格说明
 

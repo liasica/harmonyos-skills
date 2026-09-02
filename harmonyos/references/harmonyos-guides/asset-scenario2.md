@@ -5,7 +5,7 @@ breadcrumb: 指南 > 系统 > 安全 > Asset Store Kit（关键资产存储服�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:30:42+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:3cdd07e9d4240b8139550892e1530b9c53cd1abef9f7a60089ea7de6528cbf8c
+content_hash: sha256:cf1ac4d12bdea38c7b0b6945814e3dde7dfd45d065aff99cc23a2a4ca2059c79
 ---
 
 说明
@@ -26,7 +26,7 @@ content_hash: sha256:3cdd07e9d4240b8139550892e1530b9c53cd1abef9f7a60089ea7de6528
 
 由于统一用户认证（UserIAM）只提供ArkTS接口，故本场景只支持使用ArkTS语言开发。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/3gWimyp-Ty22AvM-PxORzw/zh-cn_image_0000002558605218.png?HW-CC-KV=V1&HW-CC-Date=20260429T053041Z&HW-CC-Expire=86400&HW-CC-Sign=8779C8BE13BC7BD2C9A08664FA787B1E62DA8C92414AABDFEAE08A176B9A1321)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/3gWimyp-Ty22AvM-PxORzw/zh-cn_image_0000002558605218.png)
 
 1. 业务查询符合条件的关键资产属性，根据查询成功或失败，判断关键资产是否存在。
 

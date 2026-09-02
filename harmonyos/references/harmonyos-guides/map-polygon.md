@@ -5,14 +5,14 @@ breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 在地图上绘�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:39:10+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:6ef04a802a2dc500aa76b48085d882877c6387b206bc5ba6bafebf1463610b56
+content_hash: sha256:6ae83ea16bd70560d3c0d828c90c8109060f96de6a500c301663b477a3494b99
 ---
 
 ## 场景介绍
 
 本章节将向您介绍如何在地图上绘制多边形。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/MUjwkhcuQn2pYbgPviY6BQ/zh-cn_image_0000002558605882.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053907Z&HW-CC-Expire=86400&HW-CC-Sign=C117712054F8A064097BA0B479DB9E24E7456185B775A2DD801BF5ED3E5628A3 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/MUjwkhcuQn2pYbgPviY6BQ/zh-cn_image_0000002558605882.jpg "点击放大")
 
 ## 接口说明
 
@@ -96,4 +96,4 @@ content_hash: sha256:6ef04a802a2dc500aa76b48085d882877c6387b206bc5ba6bafebf14636
    59. }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/L43hp1GdSsqrGReoW0TKAw/zh-cn_image_0000002589325409.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053907Z&HW-CC-Expire=86400&HW-CC-Sign=40E8F9028E2B181028FF547CE79106080659F7FC056505372EC9482105D27AEC "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/L43hp1GdSsqrGReoW0TKAw/zh-cn_image_0000002589325409.jpg "点击放大")

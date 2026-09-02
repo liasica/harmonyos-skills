@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_no-unsafe-ecdsa
-title: @security/no-unsafe-ecdsa
+title: "@security/no-unsafe-ecdsa"
 breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 安全规则@security > @security/no-unsafe-ecdsa
 category: harmonyos-guides
 scraped_at: 2026-04-28T07:55:55+08:00

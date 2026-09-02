@@ -5,7 +5,7 @@ breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > 音频录制 > 使�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:34:32+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:bdae4455a5d8ee33a61835b5d836f7d1f81564fef7004cf05ca6d64f28134702
+content_hash: sha256:4fcab7740d3c8b507eb04511007eb8eaff112d46829e3f460d2a2c557f39dfb8
 ---
 
 AudioCapturer是音频采集器，用于录制PCM（Pulse Code Modulation）音频数据，适合有音频开发经验的开发者实现更灵活的录制功能。
@@ -18,7 +18,7 @@ AudioCapturer是音频采集器，用于录制PCM（Pulse Code Modulation）音�
 
 **图1** AudioCapturer状态变化示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/RXYWBJi1RtSpCIT2lnZT_w/zh-cn_image_0000002558605374.png?HW-CC-KV=V1&HW-CC-Date=20260429T053430Z&HW-CC-Expire=86400&HW-CC-Sign=66DCDD1BEA7BA276B64995E84C55D79EBC01D28DEE59E8B425AB377202A256C9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/RXYWBJi1RtSpCIT2lnZT_w/zh-cn_image_0000002558605374.png)
 
 使用[on('stateChange')](../harmonyos-references/arkts-apis-audio-audiocapturer.md#onstatechange8)方法可以监听AudioCapturer的状态变化，每个状态对应值与说明见[AudioState](../harmonyos-references/arkts-apis-audio-e.md#audiostate8)。
 

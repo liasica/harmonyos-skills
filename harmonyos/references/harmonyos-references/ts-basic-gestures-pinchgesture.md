@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:51:35+08:00
 doc_updated_at: 2026-04-10
-content_hash: sha256:8e31c8f4dcd38ed072c9805e4a94417077cd186b0f9f80306d222f1d014f94c6
+content_hash: sha256:fa147859753d50c534cec39119608da4cb5683083f757df8c9a8222ac53b2d21
 ---
 
 用于触发捏合手势，最少需要2指，最多5指，最小识别距离为5vp。在支持鼠标和键盘输入的设备上，通过“Ctrl+鼠标滚轮”也可以触发捏合手势。
@@ -207,7 +207,7 @@ PhonePC/2in1TabletTVWearable
 42. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/su0_4dDKRsyBIR-qhPXfOA/zh-cn_image_0000002589325973.png?HW-CC-KV=V1&HW-CC-Date=20260429T055134Z&HW-CC-Expire=86400&HW-CC-Sign=D410452436FAC35D10B9916428DFF3B7370BA7AEAD8965744C8F7685F42D4524)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/su0_4dDKRsyBIR-qhPXfOA/zh-cn_image_0000002589325973.png)
 
 ### 示例2（实现图片跟手缩放）
 
@@ -304,4 +304,4 @@ PhonePC/2in1TabletTVWearable
 88. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/D-nDB6GcTSe7eQgG1XE8nQ/zh-cn_image_0000002589245915.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055134Z&HW-CC-Expire=86400&HW-CC-Sign=97B06734D545A9F66D2689A272F6D9C9AC790BD1074A1F7D252DB682BBA8EFED)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/D-nDB6GcTSe7eQgG1XE8nQ/zh-cn_image_0000002589245915.gif)

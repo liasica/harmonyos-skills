@@ -5,7 +5,7 @@ breadcrumb: 指南 > 开发环境搭建 > 离线环境配置指导
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:45:09+08:00
 doc_updated_at: 2026-01-15
-content_hash: sha256:688205a8ab964d65183d5e42f298171421f9db549d8627ee9827e9c4490ab967
+content_hash: sha256:045595e8727caf98dfb4ab29e5ab5d452392264b4ab1b4a55754b5fb85012e2b
 ---
 
 如果开发者所使用的电脑处于完全无网络的离线环境中，需要先在一台可访问网络的电脑上准备好以下文件，将这些文件拷贝到无网络电脑中。
@@ -26,7 +26,7 @@ content_hash: sha256:688205a8ab964d65183d5e42f298171421f9db549d8627ee9827e9c4490
 
 先配置[环境变量](ide-environment-config.md#zh-cn_topic_0000001056725590_li1012418311835)，再打开[命令行工具](ide-commandline-get.md#section21298572437)，执行 ohpm install 命令，会生成oh\_modules文件夹和oh-package-lock.json5文件。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/xkoqvOzwSO6mWLOACv0MHQ/zh-cn_image_0000002530753602.png?HW-CC-KV=V1&HW-CC-Date=20260429T054317Z&HW-CC-Expire=86400&HW-CC-Sign=F6713AA3FC1603CF882CB463A1C3DC5BCE54D84F4B1CCF046258993196558FE0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/xkoqvOzwSO6mWLOACv0MHQ/zh-cn_image_0000002530753602.png)
 
 将oh\_modules文件夹和oh-package-lock.json5文件拷贝到无网络电脑的工程根目录下。
 
@@ -52,7 +52,7 @@ content_hash: sha256:688205a8ab964d65183d5e42f298171421f9db549d8627ee9827e9c4490
 
   打开命令行工具，执行 ohpm install 命令，会生成oh\_modules文件夹和oh-package-lock.json5文件。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/l3rNEwzCR-ewGLrVReuPIw/zh-cn_image_0000002530753604.png?HW-CC-KV=V1&HW-CC-Date=20260429T054317Z&HW-CC-Expire=86400&HW-CC-Sign=8805478C78BF79CE8DC526F43756099ABCE722F92E6A7BBD34AA4C4963BB8AD5)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/l3rNEwzCR-ewGLrVReuPIw/zh-cn_image_0000002530753604.png)
 
   将oh\_modules文件夹和oh-package-lock.json5文件拷贝到无网络电脑的工程根目录下。
 

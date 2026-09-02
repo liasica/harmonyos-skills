@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:27:58+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:908ad2ac37f8d8609fb6d0686bb19f0b50921c627ee66c13e7a8d290b4c04531
+content_hash: sha256:451ca742326b337b58776130f7a3c965b80b02a1e8a9811aee1a83c9341a866d
 ---
 
 Popup属性可绑定在组件上显示气泡弹窗提示，设置弹窗内容、交互逻辑和显示状态。主要用于屏幕录制、信息弹出提醒等显示状态。
@@ -49,7 +49,7 @@ Popup属性可绑定在组件上显示气泡弹窗提示，设置弹窗内容、
 
 [TextPrompts.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/DialogProject/entry/src/main/ets/pages/popup/TextPrompts.ets#L16-L42)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/ntKctrheQtSJCTqnIxYJqA/zh-cn_image_0000002558764408.png?HW-CC-KV=V1&HW-CC-Date=20260429T052757Z&HW-CC-Expire=86400&HW-CC-Sign=05999E04B5D225DBF834E7AABA700C25E5800BC332E35EC6FDDDF75637795427)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/ntKctrheQtSJCTqnIxYJqA/zh-cn_image_0000002558764408.png)
 
 ## 添加气泡状态变化的事件
 
@@ -87,7 +87,7 @@ Popup属性可绑定在组件上显示气泡弹窗提示，设置弹窗内容、
 
 [PopupStateChange.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/DialogProject/entry/src/main/ets/pages/popup/PopupStateChange.ets#L16-L47)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/EY4VlUbmRlSiaoCT6xbfwg/zh-cn_image_0000002558604752.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052757Z&HW-CC-Expire=86400&HW-CC-Sign=2CCA7E19445C42BC5436187B565A1033DD25074BCEED8C8506FCAF15F83D371A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/EY4VlUbmRlSiaoCT6xbfwg/zh-cn_image_0000002558604752.gif)
 
 ## 带按钮的提示气泡
 
@@ -139,7 +139,7 @@ Popup属性可绑定在组件上显示气泡弹窗提示，设置弹窗内容、
 
 [ButtonPopup.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/DialogProject/entry/src/main/ets/pages/popup/ButtonPopup.ets#L16-L61)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/HoY4eNDjSCOuzZvMeb4RUQ/zh-cn_image_0000002589324277.jpeg?HW-CC-KV=V1&HW-CC-Date=20260429T052757Z&HW-CC-Expire=86400&HW-CC-Sign=901BC4C4250037FA7366E117ABE580A727B98B3FB89089DBA1D54350E5CD66AE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/HoY4eNDjSCOuzZvMeb4RUQ/zh-cn_image_0000002589324277.jpeg)
 
 ## 气泡的动画
 
@@ -215,7 +215,7 @@ Popup属性可绑定在组件上显示气泡弹窗提示，设置弹窗内容、
 
 [PopupAnimation.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/DialogProject/entry/src/main/ets/pages/popup/PopupAnimation.ets#L16-L85)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/7xQlJ0LrRRCK4mr9kcj11A/zh-cn_image_0000002589244217.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052757Z&HW-CC-Expire=86400&HW-CC-Sign=5D91E4949A22109AEFD003FAC15F24F80F70EE134ABCD505F838789DAAF32E12)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/7xQlJ0LrRRCK4mr9kcj11A/zh-cn_image_0000002589244217.gif)
 
 ## 自定义气泡
 
@@ -269,7 +269,7 @@ Popup属性可绑定在组件上显示气泡弹窗提示，设置弹窗内容、
 
 使用者通过配置placement参数将弹出的气泡放到需要提示的位置。弹窗构造器会触发弹出提示信息，来引导使用者完成操作，也让使用者有更好的UI体验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/Jbh7LjpOSi29toLb0N2NtQ/zh-cn_image_0000002558764410.jpeg?HW-CC-KV=V1&HW-CC-Date=20260429T052757Z&HW-CC-Expire=86400&HW-CC-Sign=7A00D85C4F336D3C3DD23A2C1A7E55302B8B23584C61A6F9980D9F5454E70650)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/Jbh7LjpOSi29toLb0N2NtQ/zh-cn_image_0000002558764410.jpeg)
 
 ## 气泡样式
 
@@ -320,7 +320,7 @@ Popup属性可绑定在组件上显示气泡弹窗提示，设置弹窗内容、
 
 [PopupStyle.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/DialogProject/entry/src/main/ets/pages/popup/PopupStyle.ets#L16-L50)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/o1rZo5T0RMSKPQjLHA9UoQ/zh-cn_image_0000002558604754.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052757Z&HW-CC-Expire=86400&HW-CC-Sign=45A31BB4CB2BD2B8E7C984AC7324F63F9BF4633BB58DB2C8365FFC41E509B29E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/o1rZo5T0RMSKPQjLHA9UoQ/zh-cn_image_0000002558604754.gif)
 
 ## 气泡避让软键盘
 
@@ -370,7 +370,7 @@ Popup属性可绑定在组件上显示气泡弹窗提示，设置弹窗内容、
 
 [PopupAvoidSoftKeyboard.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/DialogProject/entry/src/main/ets/pages/popup/PopupAvoidSoftKeyboard.ets#L16-L59)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/Q3U0jhHhSEeHjJMOwpcglA/zh-cn_image_0000002589324279.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052757Z&HW-CC-Expire=86400&HW-CC-Sign=A71A8B5E3674851CD7722297EE3C2B7D640CB5927D52ED2F4CB2EF2EEA876F45)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/Q3U0jhHhSEeHjJMOwpcglA/zh-cn_image_0000002589324279.gif)
 
 ## 设置气泡内的多态效果
 
@@ -477,7 +477,7 @@ Popup属性可绑定在组件上显示气泡弹窗提示，设置弹窗内容、
 
 [PopupPolymorphicEffect.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/DialogProject/entry/src/main/ets/pages/popup/PopupPolymorphicEffect.ets#L17-L117)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/Cnvd3z8QSoifQI8hn4RDYw/zh-cn_image_0000002589244219.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052757Z&HW-CC-Expire=86400&HW-CC-Sign=A0127E647E8CBDF936D2AE4DC34359E106181354073FEDA8734C0DC800B856C8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/Cnvd3z8QSoifQI8hn4RDYw/zh-cn_image_0000002589244219.gif)
 
 ## 气泡支持避让中轴
 

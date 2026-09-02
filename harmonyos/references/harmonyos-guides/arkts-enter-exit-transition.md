@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:28:11+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:6f29b4c0eb4ea27deccc14c2bc41e195094ee3223b65c917b227590f570ee5d3
+content_hash: sha256:ae563a6c0807d733cdd8284eb86f58a3baf4b1f75133d07f8c0c2934150e6d45
 ---
 
 [transition](../harmonyos-references/ts-transition-animation-component.md)是基础的组件转场接口，用于实现一个组件出现或者消失时的动画效果。可以通过[TransitionEffect对象](../harmonyos-references/ts-transition-animation-component.md#transitioneffect10对象说明)的组合使用，定义出各式效果。
@@ -141,7 +141,7 @@ content_hash: sha256:6f29b4c0eb4ea27deccc14c2bc41e195094ee3223b65c917b227590f570
 
 [Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/Animation/entry/src/main/ets/pages/compTransition/template4/Index.ets#L15-L76)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/TGC3S9u6R_KFHXCFvwspiQ/zh-cn_image_0000002589244281.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052809Z&HW-CC-Expire=86400&HW-CC-Sign=2DDF909FCAE424AA73A3C99E87383F1288915144DFD846ABDEABF1D191966A40)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/TGC3S9u6R_KFHXCFvwspiQ/zh-cn_image_0000002589244281.gif)
 
 对多个组件添加转场效果时，可以在[animation](../harmonyos-references/ts-animatorproperty.md#animation)动画参数中配置不同的delay值，实现组件渐次出现消失的效果：
 
@@ -208,4 +208,4 @@ content_hash: sha256:6f29b4c0eb4ea27deccc14c2bc41e195094ee3223b65c917b227590f570
 
 [Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/Animation/entry/src/main/ets/pages/compTransition/template5/Index.ets#L15-L74)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/k3uVRfijQBeQCbcH7dO7Tw/zh-cn_image_0000002558764474.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052809Z&HW-CC-Expire=86400&HW-CC-Sign=AB506829D2C4A8B82E33D4D5621363D2CA2BD9F73DBD8BAEE5C96297AA6AA862)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/k3uVRfijQBeQCbcH7dO7Tw/zh-cn_image_0000002558764474.gif)

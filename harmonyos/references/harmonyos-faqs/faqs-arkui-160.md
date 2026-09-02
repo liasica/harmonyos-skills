@@ -5,14 +5,14 @@ breadcrumb: FAQ > 应用框架开发 > UI框架 > 方舟UI框架（ArkUI） > St
 category: harmonyos-faqs
 scraped_at: 2026-04-29T14:16:40+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:afdaeabde73619639c8eaae78921b44fe5ebe350752f123278dd496922ab04e0
+content_hash: sha256:6e15640c2ca3541718398252ffa8a89bfc4043838bb4fcc2627ebf7d744af33a
 ---
 
 **问题现象**
 
 在build()中使用Stack作为容器，设置alignContent为Alignment.Bottom，同时设置align为Alignment.Center。但alignContent为Alignment.Bottom未生效。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/qMUALhWoTZqL9QL5auu_VQ/zh-cn_image_0000002229604149.png?HW-CC-KV=V1&HW-CC-Date=20260429T061639Z&HW-CC-Expire=86400&HW-CC-Sign=8A689FD7780423F92D455ACDFE7E2EEA6DE47A899710018C52856E5481C21D67)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/qMUALhWoTZqL9QL5auu_VQ/zh-cn_image_0000002229604149.png)
 
 **解决措施**
 

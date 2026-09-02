@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:51:58+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:cffd491ae85299ec501f804bd890cf72a614d1d94c082c32c0f6927036dc49b8
+content_hash: sha256:6d4ede02ca3de34792d012efc21a25df72af505e51761352520ff21cbfb0f913
 ---
 
 提供多选框组件，通常用于某选项的打开或关闭。
@@ -412,7 +412,7 @@ PhonePC/2in1TabletTVWearable
 23. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/h2Qd83yUTF2gMhe6oUn04g/zh-cn_image_0000002589246029.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055154Z&HW-CC-Expire=86400&HW-CC-Sign=A9AE09C51721811985B9D5F370A3C011B5D520C21BD449497467CEBBED213FCC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/h2Qd83yUTF2gMhe6oUn04g/zh-cn_image_0000002589246029.gif)
 
 ### 示例2（设置多选框颜色）
 
@@ -463,7 +463,7 @@ PhonePC/2in1TabletTVWearable
 42. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/iplpD52UQQq-yD-gCcNSaA/zh-cn_image_0000002558766220.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055154Z&HW-CC-Expire=86400&HW-CC-Sign=34190E3879DFE5163D92671D36B248AE412210F63193D2657732352FE45794D5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/iplpD52UQQq-yD-gCcNSaA/zh-cn_image_0000002558766220.gif)
 
 ### 示例3（自定义多选框样式）
 
@@ -554,7 +554,7 @@ PhonePC/2in1TabletTVWearable
 82. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/9VUGLFXmQeqJE9HlFVjoEw/zh-cn_image_0000002558606562.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055154Z&HW-CC-Expire=86400&HW-CC-Sign=7113C4CC22FFC45CF9349E5F2CD72857983052148532609B8FDC6C573AF8E576)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/9VUGLFXmQeqJE9HlFVjoEw/zh-cn_image_0000002558606562.gif)
 
 ### 示例4（设置文本多选框样式）
 
@@ -611,7 +611,7 @@ PhonePC/2in1TabletTVWearable
 48. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/gKArHU9LQC-i1DQ_WFs7Aw/zh-cn_image_0000002589326089.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055154Z&HW-CC-Expire=86400&HW-CC-Sign=63436866D0FDC9C845B53EEDCE4346DFE7F54005454088C813BE2E78FE4F4333)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/gKArHU9LQC-i1DQ_WFs7Aw/zh-cn_image_0000002589326089.gif)
 
 ### 示例5（获取多选框选中信息）
 
@@ -771,7 +771,7 @@ PhonePC/2in1TabletTVWearable
 151. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/d4M9LTk8S2OxsRDqzFDYQw/zh-cn_image_0000002589246031.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055154Z&HW-CC-Expire=86400&HW-CC-Sign=E2ADF339522BB238E67C5C919A3154671951FBF85F6DA40116737B71C1D5D20F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/d4M9LTk8S2OxsRDqzFDYQw/zh-cn_image_0000002589246031.gif)
 
 ### 示例6（设置滑动多选）
 
@@ -986,4 +986,4 @@ PhonePC/2in1TabletTVWearable
 206. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/l5AQRg6lROO4NxI6QETebA/zh-cn_image_0000002558766222.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055154Z&HW-CC-Expire=86400&HW-CC-Sign=D06B2CC46D3BE28555B2BC4C418B66ABB4569C2A5446768C55DEDD9EFF430B20)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/l5AQRg6lROO4NxI6QETebA/zh-cn_image_0000002558766222.gif)

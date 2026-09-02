@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:28:46+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:8cdd22f41fdba7e2067b9371b993b3614fbca08e13b15f59d0e57ba2cef68ad2
+content_hash: sha256:9157cae52a53ac4c2996da4c8ee9a772e10181d0df4c4a9713adbdf03fbbd992
 ---
 
 当一个任务需要多个步骤时，可以使用stepper组件展示当前进展。具体用法请参考[stepper API](../harmonyos-references/js-components-container-stepper.md)。
@@ -45,7 +45,7 @@ content_hash: sha256:8cdd22f41fdba7e2067b9371b993b3614fbca08e13b15f59d0e57ba2cef
 14. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/yqwnn6XzRRmlVGPIhxFfBw/zh-cn_image_0000002558764582.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052845Z&HW-CC-Expire=86400&HW-CC-Sign=FAAEBEB8E201CE0E6610895C29AD0B4835C071275EC718287C9B75B459C7E48F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/yqwnn6XzRRmlVGPIhxFfBw/zh-cn_image_0000002558764582.gif)
 
 ## 设置index属性
 
@@ -83,7 +83,7 @@ content_hash: sha256:8cdd22f41fdba7e2067b9371b993b3614fbca08e13b15f59d0e57ba2cef
 12. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/z89Duq5CQIyipGrz3YmRkQ/zh-cn_image_0000002558604926.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052845Z&HW-CC-Expire=86400&HW-CC-Sign=09E46CEF6CFC7072D55CD13E822CD894B1E393474BC3B247E9FBE60A6D7990D5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/z89Duq5CQIyipGrz3YmRkQ/zh-cn_image_0000002558604926.gif)
 
 通过设置label属性，自定义stepper-item的提示按钮。
 
@@ -144,7 +144,7 @@ content_hash: sha256:8cdd22f41fdba7e2067b9371b993b3614fbca08e13b15f59d0e57ba2cef
 19. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/7hD6jfYeQv-TZyKJseyPUQ/zh-cn_image_0000002589324451.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052845Z&HW-CC-Expire=86400&HW-CC-Sign=A9F42E905BAFE4C9B1F149A86BC9DD5094C1E7559EFB7D533B98490000311CA8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/7hD6jfYeQv-TZyKJseyPUQ/zh-cn_image_0000002589324451.gif)
 
 ## 设置样式
 
@@ -188,7 +188,7 @@ stepper组件默认填充父容器，通过border和background-color设置边框
 22. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/fehPHHvOQOOCbMiOrrqesQ/zh-cn_image_0000002589244391.png?HW-CC-KV=V1&HW-CC-Date=20260429T052845Z&HW-CC-Expire=86400&HW-CC-Sign=B144528E8465F07653DF58B6531EB844D9943B05E7D9A2B8110F5888CF557EB9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/fehPHHvOQOOCbMiOrrqesQ/zh-cn_image_0000002589244391.png)
 
 ## 添加事件
 
@@ -288,4 +288,4 @@ stepper分别添加finish，change，next，back，skip事件。
 39. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/kpp_kOlYS528AIKyARvOxQ/zh-cn_image_0000002558764584.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052845Z&HW-CC-Expire=86400&HW-CC-Sign=2C25DBFA275501022E1BF39E10A90710C45AB5A3A67E841AF935E92D0A71FD9A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/kpp_kOlYS528AIKyARvOxQ/zh-cn_image_0000002558764584.gif)

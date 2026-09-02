@@ -5,14 +5,14 @@ breadcrumb: FAQ > DevEco Studio > 代码编辑 > DevEco Studio上使用生成NAP
 category: harmonyos-faqs
 scraped_at: 2026-04-29T14:20:16+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:eaee306392446c0ecac7bce4aa6798408e5ac036ed8635e594d5368d1b8b5474
+content_hash: sha256:9449a46c3d92ab20ddc4c422cc41f13a0fd24bff79521db7f564ff22d5aabc4b
 ---
 
 **问题现象**
 
 右键单击函数， 在弹出的菜单中依次选择 Generate... > NAPI， 生成胶水代码报错。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/q464FHGRQPCYzXstejn0Ew/zh-cn_image_0000002229758437.png?HW-CC-KV=V1&HW-CC-Date=20260429T062015Z&HW-CC-Expire=86400&HW-CC-Sign=B969FF128EA2D0407D39F61E18FD5904C684CCC82857A5F9D026CC54836F1252)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/q464FHGRQPCYzXstejn0Ew/zh-cn_image_0000002229758437.png)
 
 **解决措施**
 
@@ -34,6 +34,6 @@ nm\_priv: 私有数据指针
 
 reserved: 保留字段
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/RbBkK1MlSRePtl3MHXnFNA/zh-cn_image_0000002519864254.png?HW-CC-KV=V1&HW-CC-Date=20260429T062015Z&HW-CC-Expire=86400&HW-CC-Sign=61DEF0BEFE50B20FF1868FCDA1BBD6A3EED35A50D3583BA8CF1E8698B04CF9A0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/RbBkK1MlSRePtl3MHXnFNA/zh-cn_image_0000002519864254.png)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/sDOKXaR5TZq4cC_k6NCCjA/zh-cn_image_0000002229603969.png?HW-CC-KV=V1&HW-CC-Date=20260429T062015Z&HW-CC-Expire=86400&HW-CC-Sign=8DA5505B119FD0D28485DFEF40B6E840C9203B0029F57260B7B72D1B422FE53B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/sDOKXaR5TZq4cC_k6NCCjA/zh-cn_image_0000002229603969.png)

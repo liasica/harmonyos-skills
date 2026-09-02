@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用测试 > 专项测试 > 命令行工具 > wukong稳�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:48:04+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:6f7fb1ea2d9fe7485d03643e7305698a466688e4fa19c8a18337517abd022078
+content_hash: sha256:cfbbb446c207f72f18ac85ed20fe7e0914e16fd713206827ef8db32afd875054
 ---
 
 ## 功能介绍
@@ -22,7 +22,7 @@ wukong是系统自带的一种命令行工具，支持Ability的随机事件注�
 
 wukong部件架构图以及部件内子模块职责如下所述。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/YfFrR0JdTc2zkAp4D8JDrg/zh-cn_image_0000002558607840.png?HW-CC-KV=V1&HW-CC-Date=20260429T054801Z&HW-CC-Expire=86400&HW-CC-Sign=1E3E80DB5027464B0C92F346DDF23D4E47ADD24DADB0489E8D483A8719A55659)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/YfFrR0JdTc2zkAp4D8JDrg/zh-cn_image_0000002558607840.png)
 
 * 命令行解析：支持命令行获取参数并解析。
 * 运行环境管理：根据命令行初始化wukong整体运行环境。

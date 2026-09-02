@@ -5,14 +5,14 @@ breadcrumb: 指南 > 媒体 > AVSession Kit（音视频播控服务） > 分布�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:34:50+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:c960ce7ec35d3b8b96c12b21920c220becc305101eb1699513c5bbf3fa30e126
+content_hash: sha256:bb718564bc9f5f661d071f29092ca4b10281390bb4ae0e03e116038b7cf79dc7
 ---
 
 通过本节开发指导，可在系统镜像投屏后，获取投屏设备信息，实现扩展屏模式的投播，实现双屏协作的能力。
 
 ## 运作机制
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/e7HxpY5ZRHKQJf-Uo7Rc6Q/zh-cn_image_0000002558605398.png?HW-CC-KV=V1&HW-CC-Date=20260429T053449Z&HW-CC-Expire=86400&HW-CC-Sign=3CA3B2EB0FAF0D6E3D819617F990ED766A6AAD4409C6776CC607DDF93AC5FA7E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/e7HxpY5ZRHKQJf-Uo7Rc6Q/zh-cn_image_0000002558605398.png)
 
 * **虚拟扩展屏**
 

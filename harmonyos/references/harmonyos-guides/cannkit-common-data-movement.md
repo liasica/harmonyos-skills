@@ -5,7 +5,7 @@ breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:41:24+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:c920ed06452368b86518109d3a3cd6c589226f8a2aa36521b9e6442984ff59c4
+content_hash: sha256:bfc3ea6b586b131de17fc6c9f37855565ef262817058edc59a15a1348fcaf9c7
 ---
 
 ## 函数功能
@@ -114,7 +114,7 @@ content_hash: sha256:c920ed06452368b86518109d3a3cd6c589226f8a2aa36521b9e6442984f
 
 下面的样例呈现了DataCopyParams结构体参数的使用方法，样例中完成了2个连续传输数据块的搬运，每个数据块含有8个datablock，源操作数相邻数据块之间无间隔，目的操作数相邻数据块尾与头之间间隔1个datablock。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/frtba7siRMO7bUbn5GMukQ/zh-cn_image_0000002589325649.png?HW-CC-KV=V1&HW-CC-Date=20260429T054123Z&HW-CC-Expire=86400&HW-CC-Sign=D7F933A484BAA17B552B048288EAF45C07650B3D48F6D4EC51C759903FBFA1A3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/frtba7siRMO7bUbn5GMukQ/zh-cn_image_0000002589325649.png)
 
 ## 支持的型号
 

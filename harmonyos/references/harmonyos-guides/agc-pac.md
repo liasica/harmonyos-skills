@@ -5,7 +5,7 @@ breadcrumb: 指南 > 编写与调试应用 > 附录 > pac.json5隐私清单文�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:47:07+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:5c99f30c669abe840a6fa6e3fce68678a8590d67131be8f264187fee6477989c
+content_hash: sha256:e950f2ce64ff426880eb1102654ede2cc229f7b9de8bdc44aec1bafa1a54f939
 ---
 
 ## 概述
@@ -22,11 +22,11 @@ content_hash: sha256:5c99f30c669abe840a6fa6e3fce68678a8590d67131be8f264187fee647
 
 * 开发App情况下，选中AppScope目录新建pac.json5文件。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/OCpnjSCQT--SFcpxy3iQpg/zh-cn_image_0000002530912976.png?HW-CC-KV=V1&HW-CC-Date=20260429T054706Z&HW-CC-Expire=86400&HW-CC-Sign=F7287781D74DB3D93D8924EBCA39370A0794EBD36FD3024940C6D2C720A71861)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/OCpnjSCQT--SFcpxy3iQpg/zh-cn_image_0000002530912976.png)
 
 * 开发HSP或HAR情况下，选中HSP或HAR模块目录新建pac.json5文件。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/fJ_Llc3mTWmkWiVp4PhcYQ/zh-cn_image_0000002530752982.png?HW-CC-KV=V1&HW-CC-Date=20260429T054706Z&HW-CC-Expire=86400&HW-CC-Sign=91BFC5C49A67CDA3E99A9B6119343B1285D26A1C06A11DB9BA6C354B1DAB8DDB)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/fJ_Llc3mTWmkWiVp4PhcYQ/zh-cn_image_0000002530752982.png)
 
 ## 配置文件结构
 

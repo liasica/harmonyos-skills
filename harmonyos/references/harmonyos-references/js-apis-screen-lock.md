@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-screen-lock
-title: @ohos.screenLock (锁屏管理)
+title: "@ohos.screenLock (锁屏管理)"
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > ArkTS API > 已停止维护的接口 > @ohos.screenLock (锁屏管理)
 category: harmonyos-references
 scraped_at: 2026-04-28T08:09:43+08:00

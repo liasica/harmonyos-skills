@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:52:38+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:ef5abd38d66d2451d1db4edc71019e60cb1edf7cf210a1844280ac7cabe58a29
+content_hash: sha256:fb876c355980a564eb73b247f5799d82cfefdb36a85bb941885bb17e9e230c7f
 ---
 
 矩形绘制组件。
@@ -427,7 +427,7 @@ PhonePC/2in1TabletTVWearable
 41. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/gsyRowD3QXmD3F0-gaO1Pw/zh-cn_image_0000002589246347.png?HW-CC-KV=V1&HW-CC-Date=20260429T055236Z&HW-CC-Expire=86400&HW-CC-Sign=26F8523AB19C86AAF1CF43D194A1575F87FAF32904D5DCC5D2921EBE4F54D543)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/gsyRowD3QXmD3F0-gaO1Pw/zh-cn_image_0000002589246347.png)
 
 ### 示例2（绘制渐变色矩形）
 
@@ -468,7 +468,7 @@ PhonePC/2in1TabletTVWearable
 30. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/iLPUU32bSTWIPLjwwRG_GQ/zh-cn_image_0000002558766540.jpeg?HW-CC-KV=V1&HW-CC-Date=20260429T055236Z&HW-CC-Expire=86400&HW-CC-Sign=6DD424B92F7E2B8C0BB78A6AA60A24F5A3BE9A4F13E1FA3CF48F4B63E66A7F6F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/iLPUU32bSTWIPLjwwRG_GQ/zh-cn_image_0000002558766540.jpeg)
 
 ### 示例3（使用不同参数类型绘制矩形）
 
@@ -503,7 +503,7 @@ width、height、radius、radiusWidth、radiusHeight等属性分别使用不同�
 26. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/MquG2clTQCGxR1lQpPLXaA/zh-cn_image_0000002558606880.png?HW-CC-KV=V1&HW-CC-Date=20260429T055236Z&HW-CC-Expire=86400&HW-CC-Sign=55D96F12305DDBDA08DC14CE820CF5DF60A97D0A9DD725776B2B90494165FA2E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/MquG2clTQCGxR1lQpPLXaA/zh-cn_image_0000002558606880.png)
 
 ### 示例4（使用attributeModifier动态设置Rect组件的属性）
 
@@ -545,4 +545,4 @@ width、height、radius、radiusWidth、radiusHeight等属性分别使用不同�
 33. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/u8WLMGH_Sue7Y_MyA49aVw/zh-cn_image_0000002589326407.png?HW-CC-KV=V1&HW-CC-Date=20260429T055236Z&HW-CC-Expire=86400&HW-CC-Sign=067D9C616329661E360EC5FF27730C474156748EF7FFDDCD59AC668CB63F2C34)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/u8WLMGH_Sue7Y_MyA49aVw/zh-cn_image_0000002589326407.png)

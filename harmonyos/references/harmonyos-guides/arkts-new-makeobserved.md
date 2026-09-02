@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:27:22+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:1cc7aa27370a24b820ecba9f2cbea316edd14a47e788a563a9e3a89b980cfbb8
+content_hash: sha256:9b7605e63fba3b4b7a056803d007fc2adce672eae490e961db9776092952a7ae
 ---
 
 为了将普通不可观察数据变为可观察数据，开发者可以使用[makeObserved接口](../harmonyos-references/js-apis-statemanagement.md#makeobserved)。
@@ -411,7 +411,7 @@ collections.Array可以触发UI刷新的API有：
 
 [Page4.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MakeObserved/entry/src/main/ets/View/Page4.ets#L15-L167)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/G_WJ4-MyQmuOybwH_X5KaQ/zh-cn_image_0000002589243917.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052720Z&HW-CC-Expire=86400&HW-CC-Sign=B7A7715AE9B9F8FE408AFCEF597A6EAFDEB58A253C886FE97AC09429086C0C38)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/G_WJ4-MyQmuOybwH_X5KaQ/zh-cn_image_0000002589243917.gif)
 
 **collections.Map**
 
@@ -482,7 +482,7 @@ collections.Map可以触发UI刷新的API有：set、clear、delete。
 
 [Page5.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MakeObserved/entry/src/main/ets/View/Page5.ets#L15-L78)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/5hK686PARh-KcGGYM_dnDA/zh-cn_image_0000002558764110.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052720Z&HW-CC-Expire=86400&HW-CC-Sign=DC84FA4433471D53942FCEA3F7002289F332ADFFBFBB9F32AEE8F0F437A0CE1E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/5hK686PARh-KcGGYM_dnDA/zh-cn_image_0000002558764110.gif)
 
 **collections.Set**
 
@@ -551,7 +551,7 @@ collections.Set可以触发UI刷新的API有：add、clear、delete。
 
 [Page6.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MakeObserved/entry/src/main/ets/View/Page6.ets#L15-L75)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/8_0P4sggTTml3gtUmnVzNQ/zh-cn_image_0000002558604454.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052720Z&HW-CC-Expire=86400&HW-CC-Sign=627BD2F82EAA966592F6A1EC91819D6D341D6F5C6F20ACBD7690F771C3DD854C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/8_0P4sggTTml3gtUmnVzNQ/zh-cn_image_0000002558604454.gif)
 
 ### makeObserved的入参为JSON.parse的返回值
 
@@ -694,7 +694,7 @@ makeObserved可以和V2的装饰器一起使用。对于[@Monitor](arkts-new-mon
 
 [Page8.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MakeObserved/entry/src/main/ets/View/Page8.ets#L15-L93)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/DS8iqAjCTlGN3qgdcqy17w/zh-cn_image_0000002589323979.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052720Z&HW-CC-Expire=86400&HW-CC-Sign=821B0CA9FC6807884D1E995591E1645D3D2B782820B3556CDD17757D6451317B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/DS8iqAjCTlGN3qgdcqy17w/zh-cn_image_0000002589323979.gif)
 
 ### makeObserved在@Component内使用
 

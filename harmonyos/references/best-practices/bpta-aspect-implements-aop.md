@@ -5,7 +5,7 @@ breadcrumb: 最佳实践 > 应用框架 > ArkTS语言 > 基于Aspect插件库实
 category: best-practices
 scraped_at: 2026-04-29T14:10:47+08:00
 doc_updated_at: 2026-03-27
-content_hash: sha256:27e4fa0ddbc900f9016a44cfbe21052e6d15db2cb6cc9d265f8d7423bf31a598
+content_hash: sha256:79357804871f0c672f72cedb620c1bad1fda68119abd7ff58d77e6cd3dd6c2a3
 ---
 
 ## 概述
@@ -35,7 +35,7 @@ Aspect插件库底层对[AbcKit方舟字节码工具库](https://gitcode.com/ope
 
 开发者要使用Aspect插件对HarmonyOS工程进行插桩，需要进行编写切面类和注册切面类两个步骤。其中切面类的编写会因场景不同而略有差异，本文将在[不同应用场景的切面类开发](bpta-aspect-implements-aop.md#section7558828115214)中详细介绍。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/nRjqFhLnRPC8YaiDFE39sw/zh-cn_image_0000002563843797.png?HW-CC-KV=V1&HW-CC-Date=20260429T061046Z&HW-CC-Expire=86400&HW-CC-Sign=F77A067BD23B6494F725DC8F6A388B7BAEDB00EEDE225580D4E386680AFCD5D1 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/nRjqFhLnRPC8YaiDFE39sw/zh-cn_image_0000002563843797.png "点击放大")
 
 ### 编写切面类
 
@@ -167,7 +167,7 @@ Aspect插件库底层对[AbcKit方舟字节码工具库](https://gitcode.com/ope
 
 **开发步骤**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/AHppVmevQQGdouhcRGiu1Q/zh-cn_image_0000002532723966.png?HW-CC-KV=V1&HW-CC-Date=20260429T061046Z&HW-CC-Expire=86400&HW-CC-Sign=18718A266B5268838949A29CD341AB379C01F88F5D2B8D01333447D9478909EB "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/AHppVmevQQGdouhcRGiu1Q/zh-cn_image_0000002532723966.png "点击放大")
 
 1. 定义类MyDefinitionAspect，添加装饰器@Aspect将其标记为切面类。
 2. 在切面类MyDefinitionAspect中定义方法addBefore()，使用@Before将其标记为前置插桩切面函数。
@@ -239,7 +239,7 @@ Aspect插件库底层对[AbcKit方舟字节码工具库](https://gitcode.com/ope
 
 **开发步骤**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/uq52LC24QxeEeKrfUCqkoQ/zh-cn_image_0000002532883912.png?HW-CC-KV=V1&HW-CC-Date=20260429T061046Z&HW-CC-Expire=86400&HW-CC-Sign=E470A4A4F8C5594DD1CECEBF1D9D6CE42D084D39ED416846D2C9ACF3EE03220B "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/uq52LC24QxeEeKrfUCqkoQ/zh-cn_image_0000002532883912.png "点击放大")
 
 1. 定义类MyCallAspect，添加装饰器@Aspect将其标记为切面类。
 2. 在切面类MyCallAspect中定义方法addBefore()，使用@Before将其标记为前置插桩切面方法。
@@ -316,7 +316,7 @@ Aspect插件库底层对[AbcKit方舟字节码工具库](https://gitcode.com/ope
 
 **开发步骤**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/ibylmMZsQEuFFphK9t6Ryw/zh-cn_image_0000002563763873.png?HW-CC-KV=V1&HW-CC-Date=20260429T061046Z&HW-CC-Expire=86400&HW-CC-Sign=8F446F8862F10F468A412E5D4AD5D206F3811893CCCEB41EB8634AFD766E8675 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/ibylmMZsQEuFFphK9t6Ryw/zh-cn_image_0000002563763873.png "点击放大")
 
 1. 定义类MyCallAspect，添加装饰器@Aspect将其标记为切面类。
 2. 在切面类MyCallAspect中定义方法replaceGetLocation()，使用@Replace将其标记为替换插桩切面函数。
@@ -394,7 +394,7 @@ Aspect插件库底层对[AbcKit方舟字节码工具库](https://gitcode.com/ope
 
 **开发步骤**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/7Fn0GbJ2TsyOlB3d2V-1eg/zh-cn_image_0000002563843849.png?HW-CC-KV=V1&HW-CC-Date=20260429T061046Z&HW-CC-Expire=86400&HW-CC-Sign=C8E21C3C74A6DBC6D7BF01D3AD3B603623B940628E40CE9EE1023443F6EE658A "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/7Fn0GbJ2TsyOlB3d2V-1eg/zh-cn_image_0000002563843849.png "点击放大")
 
 1. 定义类MyCallbackAspect，添加装饰器@Aspect将其标记为切面类。
 2. 在切面类MyCallbackAspect中定义方法getAddress()，使用@Replace将其标记为替换插桩切面类方法。
@@ -477,7 +477,7 @@ ArkTS源码如下所示：
 
 **开发步骤**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/bC3Z1CjiQWC-QBViKqZZaA/zh-cn_image_0000002532724012.png?HW-CC-KV=V1&HW-CC-Date=20260429T061046Z&HW-CC-Expire=86400&HW-CC-Sign=4BB2BC798B1599A8CCF87E962F14DC4C5524A078EDACE16C1B207F1272E06956 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/bC3Z1CjiQWC-QBViKqZZaA/zh-cn_image_0000002532724012.png "点击放大")
 
 1. 定义类MyEventCallbackAspect，添加装饰器@Aspect将其标记为切面类。
 2. 在切面类MyEventCallbackAspect中定义方法addBefore()，使用@Before将其标记为前置插桩切面方法，其中切面方法就是实际监听的业务代码。

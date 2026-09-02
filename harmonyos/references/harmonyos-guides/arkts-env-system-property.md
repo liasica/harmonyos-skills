@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-env-system-property
-title: @Env：环境变量
+title: "@Env：环境变量"
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习响应式环境变量 > @Env：环境变量
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:27:35+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:b0d37be43466be78ba9cb079d44156e7dbe2c4a284811d615deaf0562a105ab1
+content_hash: sha256:48adbe64d3e7755106a02efefbe5a05b04f387eaba36f8ac39f95c3b432bcd2a
 ---
 
 在多设备开发的场景中，开发者可以使用[@Env](../harmonyos-references/ts-env-system-property.md)装饰器监听系统环境变量的改变，并根据系统环境变量来进行相应的场景判断，以减少不同设备间的适配逻辑和重复开发。
@@ -205,11 +205,11 @@ content_hash: sha256:b0d37be43466be78ba9cb079d44156e7dbe2c4a284811d615deaf0562a1
 
 流程图如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/-Euf2zUNQ2W0jIwDFYA83A/zh-cn_image_0000002589243973.png?HW-CC-KV=V1&HW-CC-Date=20260429T052734Z&HW-CC-Expire=86400&HW-CC-Sign=A214291342B81F1B3CE23F9D6756A07A4D6F99A1DFF0A5E6B58DD7BDCEBE7F42)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/-Euf2zUNQ2W0jIwDFYA83A/zh-cn_image_0000002589243973.png)
 
 基于上面流程，下面的示例中以@Env使用SystemProperties.BREAK\_POINT为例，各个组件中的初始化如下图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/WZchCLX-R3WscL2Wsi6pXQ/zh-cn_image_0000002558764166.png?HW-CC-KV=V1&HW-CC-Date=20260429T052734Z&HW-CC-Expire=86400&HW-CC-Sign=F11F5A72E558B672E6DDE942B9C38F5B94DA504DFACE5F0AD14500D81C29CF0F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/WZchCLX-R3WscL2Wsi6pXQ/zh-cn_image_0000002558764166.png)
 
 1. Child1初始化@Env(SystemProperties.BREAK\_POINT)：
    * 递归查找直到父组件为空：向上查找父组件Index，没有@Env对应的SystemProperties.BREAK\_POINT实例。
@@ -762,7 +762,7 @@ content_hash: sha256:b0d37be43466be78ba9cb079d44156e7dbe2c4a284811d615deaf0562a1
 
 运行效果图如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/pGGmmeArQhmVUdFubihUkA/zh-cn_image_0000002558604510.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052734Z&HW-CC-Expire=86400&HW-CC-Sign=89FD63D26540F427ED9FB164C7DC78723D5D2F2DD295A10091C0512E2359A326)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/pGGmmeArQhmVUdFubihUkA/zh-cn_image_0000002558604510.gif)
 
 可以使用lambda闭包函数将ComponentUnderBuilderNode中的@Env向下传递。通过这种方式ComponentUnderBuilderNode中的@Env可以收集到子组件Comp内组件的依赖，在切换窗口实例的时候触发Comp内组件的刷新。
 
@@ -975,4 +975,4 @@ content_hash: sha256:b0d37be43466be78ba9cb079d44156e7dbe2c4a284811d615deaf0562a1
 
 运行效果图如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/w-ZNVJljSEm408-7jLYx4w/zh-cn_image_0000002589324035.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052734Z&HW-CC-Expire=86400&HW-CC-Sign=466CFC47497BCD18C657B55619BE7C847BD7382676F8AD453DAF8DE75400A64B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/w-ZNVJljSEm408-7jLYx4w/zh-cn_image_0000002589324035.gif)

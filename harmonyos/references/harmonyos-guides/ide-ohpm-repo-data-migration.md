@@ -5,7 +5,7 @@ breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-rep
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:44:50+08:00
 doc_updated_at: 2026-03-17
-content_hash: sha256:53e0b795056d290875aa2d3eb40ed83545c046e15d0586e5d9e0e7745b998b17
+content_hash: sha256:a1135f1a873f4e49235278377c019bd8200ff065f5192925ce868545905f1c83
 ---
 
 ohpm-repo**2.2.0**版本开始支持数据迁移功能。在ohpm-repo配置文件中，db是元数据存储的配置项，store是文件存储的配置项，db和store不能随意搭配，需要符合下面表格中的匹配规范。如果需要改变db和store的存储方式，需要进行数据迁移操作。
@@ -125,7 +125,7 @@ ohpm-repo**2.2.0**版本开始支持数据迁移功能。在ohpm-repo配置文�
 1. ohpm-repo install --config <配置文件路径>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/dr2o1bUPTw-dMSLcWfBraQ/zh-cn_image_0000002561751511.png?HW-CC-KV=V1&HW-CC-Date=20260429T054447Z&HW-CC-Expire=86400&HW-CC-Sign=148E957144758535C0C02E288F17714A93CE9EAC1F55ED79DCE994597918F621 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/dr2o1bUPTw-dMSLcWfBraQ/zh-cn_image_0000002561751511.png "点击放大")
 
 根据提示信息刷新环境变量，然后重新启动ohpm-repo。
 
@@ -133,7 +133,7 @@ ohpm-repo**2.2.0**版本开始支持数据迁移功能。在ohpm-repo配置文�
 1. ohpm-repo start
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/C0jc4HlvTYOoKsbRgD02XQ/zh-cn_image_0000002530911568.png?HW-CC-KV=V1&HW-CC-Date=20260429T054447Z&HW-CC-Expire=86400&HW-CC-Sign=65DE085A3003F843A8D72CF2AF97B02BD1ADB589034E5C8BDC918C314ABADBF7 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/C0jc4HlvTYOoKsbRgD02XQ/zh-cn_image_0000002530911568.png "点击放大")
 
 ## 使用迁移命令导入数据
 
@@ -172,7 +172,7 @@ ohpm-repo**2.2.0**版本开始支持数据迁移功能。在ohpm-repo配置文�
 
    数据导入成功后，可启动ohpm-repo服务并登录管理页验证。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/dR-vJ58fRn2f0_6SE0ObPQ/zh-cn_image_0000002530751574.png?HW-CC-KV=V1&HW-CC-Date=20260429T054447Z&HW-CC-Expire=86400&HW-CC-Sign=00ECB1C669377B3C97ED396D61395A7296AA18B1ADF813B21ADE37593CFC2259 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/dR-vJ58fRn2f0_6SE0ObPQ/zh-cn_image_0000002530751574.png "点击放大")
 3. 批量上传包到ohpm-repo配置的store目录。
 
    使用[batch\_publish](ide-ohpm-repo-batch-publish.md)命令，将批量下载生成的batch\_download\_xxx.zip中的包依次发布到ohpm-repo。

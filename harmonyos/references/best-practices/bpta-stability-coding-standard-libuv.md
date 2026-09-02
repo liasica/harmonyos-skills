@@ -5,7 +5,7 @@ breadcrumb: 最佳实践 > 稳定性 > 稳定性优化 > 稳定性编码规范 >
 category: best-practices
 scraped_at: 2026-04-29T14:14:15+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:8442fc9dc86f79d57aa29aae1411b43f7b83fcc93290d57b60e2f6e487267e1e
+content_hash: sha256:c6e1013f9d7b36f8d01385e2edad305975832f2bbe6cf63e1f798f64db44d355
 ---
 
 ## 前言
@@ -290,7 +290,7 @@ uv\_\_queue\_remove表示将某结点从事件循环队列上摘除。现在崩�
 
 崩溃原因如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/LVMJ7uExQnWxwwvBHexaRQ/zh-cn_image_0000002229335745.png?HW-CC-KV=V1&HW-CC-Date=20260429T061413Z&HW-CC-Expire=86400&HW-CC-Sign=CF5269F4F760F37424F52AA776F3280741BB1E02CB933A4044F2ABF431F3A2A6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/LVMJ7uExQnWxwwvBHexaRQ/zh-cn_image_0000002229335745.png)
 
 解决方法：
 
@@ -382,15 +382,15 @@ uv\_\_queue\_remove表示将某结点从事件循环队列上摘除。现在崩�
 
 初次分配的调用栈如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/AGTkTddKQQm6lqr--RpE6Q/zh-cn_image_0000002193850396.png?HW-CC-KV=V1&HW-CC-Date=20260429T061413Z&HW-CC-Expire=86400&HW-CC-Sign=340C8F58D80F1708C566C5EBF382D89649D73B309F315BAE5390C031EDAF668F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/AGTkTddKQQm6lqr--RpE6Q/zh-cn_image_0000002193850396.png)
 
 第一次释放的调用栈如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/8-ci7GHoRmKSTMg-LeVbbw/zh-cn_image_0000002194009964.png?HW-CC-KV=V1&HW-CC-Date=20260429T061413Z&HW-CC-Expire=86400&HW-CC-Sign=EE603215A923BF6092021246D0082D09528A460915D7FE2105B19FDE15A3B776)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/8-ci7GHoRmKSTMg-LeVbbw/zh-cn_image_0000002194009964.png)
 
 经过相关开发者的反编译，定位到现场，代码如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/GyC11BtbTxSaQD3sl2aMEQ/zh-cn_image_0000002194009972.png?HW-CC-KV=V1&HW-CC-Date=20260429T061413Z&HW-CC-Expire=86400&HW-CC-Sign=2C784233BEB5F773F431E669125D42D533AC54205B402E20A70B6D73E062E963)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/GyC11BtbTxSaQD3sl2aMEQ/zh-cn_image_0000002194009972.png)
 
 问题结论：调用uv\_work\_t相关的函数时，内存的释放动作一定要放在after\_work\_cb里面。如果开发者没法控制好自定义对象的生命周期，就可以通过uv\_work\_t和自定义对象分开的方式，将uv\_work\_t的内存释放放在after\_work\_cb里，自定义对象的内存由开发者自行管理。
 
@@ -433,7 +433,7 @@ uv\_\_queue\_remove表示将某结点从事件循环队列上摘除。现在崩�
 
 首先，经过反编译，可以看到具体的代码行和汇编指令，如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/Qq9kbEOSS02oY4oAdhgZWg/zh-cn_image_0000002229450237.png?HW-CC-KV=V1&HW-CC-Date=20260429T061413Z&HW-CC-Expire=86400&HW-CC-Sign=EE28A4C7BAB89E29F457D040D20644781500937F44CE08A5E874B1C06B2D03C5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/Qq9kbEOSS02oY4oAdhgZWg/zh-cn_image_0000002229450237.png)
 
 上图红框中的汇编指令含义：
 
@@ -459,11 +459,11 @@ uv\_\_queue\_remove表示将某结点从事件循环队列上摘除。现在崩�
 
 after\_work\_cb是开发者传入的函数指针，通常在开发者编写的代码文件中定义，并最终编译到动态库（so）中。HarmonyOS上的crash文件包含当前应用进程映射的so文件的地址范围。因此，开发者可以通过after\_work\_cb的地址在crash文件中找到对应的so文件，并通过起始地址定位到具体代码行。检查x0寄存器是否仍然保留after\_work\_cb的信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/RSskQQeVRAeZ0x6xhhWfKQ/zh-cn_image_0000002194009968.png?HW-CC-KV=V1&HW-CC-Date=20260429T061413Z&HW-CC-Expire=86400&HW-CC-Sign=CDE54622A666479A6F74540C212FB9DFEA86FBD1367BD26101AEF03299A01314)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/RSskQQeVRAeZ0x6xhhWfKQ/zh-cn_image_0000002194009968.png)
 
 x0包含after\_work\_cb的地址。根据该地址确定其所在的so文件地址范围，再用该地址减去so文件的起始地址，即可得到其偏移地址。通过反编译可以找到具体的代码行。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/-msFX5KITy2zOr1BIU_4iA/zh-cn_image_0000002193850392.png?HW-CC-KV=V1&HW-CC-Date=20260429T061413Z&HW-CC-Expire=86400&HW-CC-Sign=3F1207E5958802F3DCE36310AB2F7B2EBD30DB0C3B249B83A96922562F62FA8D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/-msFX5KITy2zOr1BIU_4iA/zh-cn_image_0000002193850392.png)
 
 具体的代码：
 
@@ -570,7 +570,7 @@ x0包含after\_work\_cb的地址。根据该地址确定其所在的so文件地�
 
 由于该问题场景复现极其困难，只能依赖大数据复现，因此工具的作用并不大。最终只能排查代码，将前文伪代码写法2的代码全部分离，采用自定义对象与uv对象独立创建的形式，修改完毕后，该问题不再复现。修改如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/64bkMQAfQXCHAxLFDAmbYQ/zh-cn_image_0000002194009980.png?HW-CC-KV=V1&HW-CC-Date=20260429T061413Z&HW-CC-Expire=86400&HW-CC-Sign=99FB115CCB109A1C8D9208291555A0AD2822714E40BB49A3143FDAD592A5CA88 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/64bkMQAfQXCHAxLFDAmbYQ/zh-cn_image_0000002194009980.png "点击放大")
 
 问题结论：参考场景一，如果不确定自定义创建的对象与UV异步任务对象的生命周期管理是否同步，建议将两者分离开来，独立进行管理。
 
@@ -681,7 +681,7 @@ libuv作为框架提供给开发者一些异步IO的能力，它本身不会造�
 
 首先经过反编译，看一下卡死在哪一行：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/bfNjGZZBRAGQmpA9dV_86w/zh-cn_image_0000002194009984.png?HW-CC-KV=V1&HW-CC-Date=20260429T061413Z&HW-CC-Expire=86400&HW-CC-Sign=85BA4989AA2E2C3904D34BC74638C22F423F326840603CF1D5D6187D94A31E41)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/bfNjGZZBRAGQmpA9dV_86w/zh-cn_image_0000002194009984.png)
 
 这段代码的逻辑是依次遍历loop上的队列，判断内部的pending是否已更改。如果已更改，则往下执行传入的回调函数。
 
@@ -692,19 +692,19 @@ Freeze发生在这个循环里，一直处于死循环。造成这种现象的�
 
 针对第一种情况，可能性较低。经过加日志验证，确实不是该原因导致的。对于第二种情况，通过GDB调试，模拟出卡死时链表的操作过程：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/xbnLBS09SFie_Sov9fQ9nw/zh-cn_image_0000002194009976.png?HW-CC-KV=V1&HW-CC-Date=20260429T061413Z&HW-CC-Expire=86400&HW-CC-Sign=3811F521615237FD67B088607434715BCB763C38A5175DC81F60B749B9D8979D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/xbnLBS09SFie_Sov9fQ9nw/zh-cn_image_0000002194009976.png)
 
 该图显示，在卡死发生时，遍历loop上的async\_handles队列会将之前取出的节点重新挂载到当前队列上，导致死循环。这种现象可能是由于同一个句柄在两个事件循环中初始化，导致两个链表互相交织。为了验证这一推断，我们再次加日志复现，日志如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/BRT7XqI6QtWR4fbiuNZQzQ/zh-cn_image_0000002229450229.png?HW-CC-KV=V1&HW-CC-Date=20260429T061413Z&HW-CC-Expire=86400&HW-CC-Sign=2BA79103F4118B161A729590DA1DCB3EABB51CE1893BD4CC53449C838E355403)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/BRT7XqI6QtWR4fbiuNZQzQ/zh-cn_image_0000002229450229.png)
 
 该日志证明了同一个句柄在主线程的loop和taskpool的TaskWorker线程上进行了初始化。
 
 接下来查看该SDK下的so代码，代码如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/UwV2GMGdRh-t8bHFFTcOeA/zh-cn_image_0000002194009948.png?HW-CC-KV=V1&HW-CC-Date=20260429T061413Z&HW-CC-Expire=86400&HW-CC-Sign=E60A708FDC7715C6103108212BBEB1B2F960BB734B02A7F0E5AD552A922EE817)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/UwV2GMGdRh-t8bHFFTcOeA/zh-cn_image_0000002194009948.png)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/9ij4ixDmTsCWr3YJDVDoSg/zh-cn_image_0000002193850384.png?HW-CC-KV=V1&HW-CC-Date=20260429T061413Z&HW-CC-Expire=86400&HW-CC-Sign=ECC3DBC5463B7777FE02DE5C490156734E4FBF9E8440483AF0B98B20FC8405EB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/9ij4ixDmTsCWr3YJDVDoSg/zh-cn_image_0000002193850384.png)
 
 该代码保存了一个普通的uv\_async\_t对象在静态对象中，但未进行call\_once处理，导致每次导入组件时都会初始化，从而造成同一个句柄在不同的事件循环中被多次初始化。
 
@@ -763,13 +763,13 @@ Freeze发生在这个循环里，一直处于死循环。造成这种现象的�
 
 问题描述：应用存在double close导致偶现崩溃。复现步骤为退出账号后点击应用，出现crash。崩溃栈与文章第一幅图中的崩溃栈一致，主要集中在worker线程或与taskpool相关的线程（TaskManager线程、TaskWorker线程）。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/cQgrnNbfSA-W7lFl_w0ujQ/zh-cn_image_0000002194009956.png?HW-CC-KV=V1&HW-CC-Date=20260429T061413Z&HW-CC-Expire=86400&HW-CC-Sign=977F620DE02165BC14C435D9E04A30DED9AE0EEE86A229224121106AECF496F8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/cQgrnNbfSA-W7lFl_w0ujQ/zh-cn_image_0000002194009956.png)
 
 问题分析：
 
 排查应用方代码，代码如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/A_vPlomvRTSHDJgGmCjsjw/zh-cn_image_0000002229450221.png?HW-CC-KV=V1&HW-CC-Date=20260429T061413Z&HW-CC-Expire=86400&HW-CC-Sign=DB8240EE4F8A982161D946182A0C43E46B6DC4B8BA6BB755A51BCA672D5FE096)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/A_vPlomvRTSHDJgGmCjsjw/zh-cn_image_0000002229450221.png)
 
 其中rawFileDescriptor是资源管理子系统通过rawFilePath获取的文件描述符的管理对象。
 

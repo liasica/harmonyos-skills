@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:28:54+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:96dab8f2f344da58df91bf4fef8cfe43e0fb5c5e6125de9a2d64221fc1efd378
+content_hash: sha256:1bf91aede0a55bbf38bf0d6ed0c42f8da556a6b5e8c591a9233ac62ae6979ef7
 ---
 
 svg组件主要作为svg画布的根节点使用，也可以在svg中嵌套使用。具体用法请参考[svg](../harmonyos-references/js-components-svg.md)。
@@ -40,7 +40,7 @@ svg父组件或者svg组件需要定义宽高值，否则不进行绘制。
 12. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/bweW-bjFQKSBfTY6pEuO4g/zh-cn_image_0000002558764630.png?HW-CC-KV=V1&HW-CC-Date=20260429T052853Z&HW-CC-Expire=86400&HW-CC-Sign=7336DFEF244771867CE80EF6C93E58149A9F72199E0A752A49855FC3151F5729)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/bweW-bjFQKSBfTY6pEuO4g/zh-cn_image_0000002558764630.png)
 
 ## 设置属性
 
@@ -74,7 +74,7 @@ svg父组件或者svg组件需要定义宽高值，否则不进行绘制。
 15. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/DrCaFZNGQgGFgQWsQ3ruWw/zh-cn_image_0000002558604974.png?HW-CC-KV=V1&HW-CC-Date=20260429T052853Z&HW-CC-Expire=86400&HW-CC-Sign=249BE6B7B10D9C7933FB4783D741A4B00CE2437A2D27FF8AD344B689DBA5F263)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/DrCaFZNGQgGFgQWsQ3ruWw/zh-cn_image_0000002558604974.png)
 
 说明
 

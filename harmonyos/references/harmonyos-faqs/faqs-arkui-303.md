@@ -5,7 +5,7 @@ breadcrumb: FAQ > 应用框架开发 > UI框架 > 方舟UI框架（ArkUI） > To
 category: harmonyos-faqs
 scraped_at: 2026-04-29T14:17:15+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:9254b87620a2a2b265f775dc448d816e8e499af6f02dfb38a962164f49617e4a
+content_hash: sha256:cfc82df7bb7965b94a2950be3f6f5f2cefbc981a9f8b0c725531ed8ba4a14709
 ---
 
 通过isDragging状态变量区分拖动与点击操作，在拖动过程中屏蔽toggleIsOn的状态变更，示例代码如下：
@@ -68,4 +68,4 @@ content_hash: sha256:9254b87620a2a2b265f775dc448d816e8e499af6f02dfb38a962164f496
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/2NbazlMjSnS9N0SsNsf5Ww/zh-cn_image_0000002229758509.png?HW-CC-KV=V1&HW-CC-Date=20260429T061713Z&HW-CC-Expire=86400&HW-CC-Sign=C009AE715C1184F4A91B3030017CEB6898E99F4FB6B727753B5543B42994DBF2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/2NbazlMjSnS9N0SsNsf5Ww/zh-cn_image_0000002229758509.png)

@@ -5,7 +5,7 @@ breadcrumb: 版本说明 > 应用升级适配指导-向6.0.0(20)升级 > 应用�
 category: harmonyos-releases
 scraped_at: 2026-04-29T13:25:21+08:00
 doc_updated_at: 2026-01-21
-content_hash: sha256:7345cc48859b8566e9aaa5e38d5d96877dbd47465faf94bf833acd04503c5b12
+content_hash: sha256:44fdb5bfee4a6f77c00e9f201f9fe27e36774ce53100a296731e4c2d94f41b33
 ---
 
 本文档指导开发者将HarmonyOS应用的开发工具套件升级至6.0.0(20)并完成应用的升级适配，确保开发者平稳切换并保证终端用户在HarmonyOS 6.0（指设备ROM版本）上获得良好的应用使用体验。
@@ -14,4 +14,4 @@ HarmonyOS版本在快速迭代更新的过程中，新增了大量的API，少�
 
 迁移阶段包含以下几个阶段：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/Hi9SsCMGT6WDT0m6T92sdA/zh-cn_image_0000002423275136.png?HW-CC-KV=V1&HW-CC-Date=20260429T052520Z&HW-CC-Expire=86400&HW-CC-Sign=66DEF7703BD1866A1AC0D0636C22701CB2B686B306BE422D88FC48BFBCE5FE2F "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/Hi9SsCMGT6WDT0m6T92sdA/zh-cn_image_0000002423275136.png "点击放大")

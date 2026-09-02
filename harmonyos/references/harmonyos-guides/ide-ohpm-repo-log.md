@@ -5,7 +5,7 @@ breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-rep
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:44:37+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:1300981ed8a99fa70120761ed21d708cfec0b5ae2100aefcef6bb138dbd75300
+content_hash: sha256:df1455099b01b143326a4e71496f9ec63aefd42ac7f534e33b3f7d5f56fd0afe
 ---
 
 与任何web应用程序相同，ohpm-repo有一个内置的日志记录器，其定义了四种日志类型。
@@ -18,7 +18,7 @@ content_hash: sha256:1300981ed8a99fa70120761ed21d708cfec0b5ae2100aefcef6bb138dbd
 
 操作日志中主要包含操作时间、日志级别、操作人id（userId）、终端IP（ip）、操作资源（resource）、操作方法名（event）以及操作结果（result），其文件保存个数最多为180个。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/pTLiwWtlSR2drnEmUMw_1g/zh-cn_image_0000002561751223.png?HW-CC-KV=V1&HW-CC-Date=20260429T054436Z&HW-CC-Expire=86400&HW-CC-Sign=07B084A6BE17A57A42A99110825E65749E847D2C8BBC84C4AE33348A08F1C6A1 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/pTLiwWtlSR2drnEmUMw_1g/zh-cn_image_0000002561751223.png "点击放大")
 
 说明
 
@@ -58,7 +58,7 @@ content_hash: sha256:1300981ed8a99fa70120761ed21d708cfec0b5ae2100aefcef6bb138dbd
 
 运行日志中主要包含操作时间、日志级别以及日志信息，其文件保存个数最多为30个。运行日志定义了日志级别：all，trace，debug，info，warn，error，fatal，mark和off。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/Auc88Vh3SWS1aldLwbGefg/zh-cn_image_0000002530751280.png?HW-CC-KV=V1&HW-CC-Date=20260429T054436Z&HW-CC-Expire=86400&HW-CC-Sign=0D30FCF8CBF22D4949ED112835BD6CC891F9BA270B5B8A5FD7CD64D64D104AB7 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/Auc88Vh3SWS1aldLwbGefg/zh-cn_image_0000002530751280.png "点击放大")
 
 ## 运行错误日志 - repoError.log
 

@@ -5,14 +5,14 @@ breadcrumb: 指南 > 系统 > 网络 > Network Boost Kit（网络加速服务）
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:32:48+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:5d783a5c26fb2a29fe86635b6da2a65b3a495ea1076ecb93fb0563037fee1652
+content_hash: sha256:6d4f3a4673770043a44452fb936ff5012d67ec500c8f66f71b4e56873be78cdd
 ---
 
 从6.0.0(20)版本开始，支持连接迁移（多网并发）功能。
 
 多网并发是系统提供接口可以建立多个网络通路，应用发起多网请求后，系统依据业务场景决定并发组合和实施相应的并发管控，并对并发做收益度量。使用多网并发功能的原则是应用申请（受限权限）、系统管控、最小化使用。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/qsgtAN6aRX-iPlZ0uDi8mA/zh-cn_image_0000002589324797.png?HW-CC-KV=V1&HW-CC-Date=20260429T053247Z&HW-CC-Expire=86400&HW-CC-Sign=9638D45E3636F7D57B94EA06A9597832A3E70B861716DCB4F2EC08B7D50D657F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/qsgtAN6aRX-iPlZ0uDi8mA/zh-cn_image_0000002589324797.png)
 
 其中各步骤功能如下：
 

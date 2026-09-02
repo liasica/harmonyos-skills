@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 同层渲染
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:29:30+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:24a527b76f5f0285561e9fd57dc3a145d4f7a884e00478cde336916f6c15b70d
+content_hash: sha256:71e22d529e79d2f1d6fb20533b361edd8a7b6ae3f35e16330f9a1546d44559c3
 ---
 
 在系统中，应用可以使用Web组件加载Web网页。当非系统框架的UI组件功能或性能不如系统组件时，可使用同层渲染技术，通过ArkUI组件渲染这些组件（简称为同层组件）。
@@ -35,7 +35,7 @@ ArkWeb同层渲染特性主要提供两种能力：同层标签生命周期和�
 
 **图1** 同层渲染整体架构
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/Lgb6nbSCT0ehjkXhp4jhCw/zh-cn_image_0000002589244541.png?HW-CC-KV=V1&HW-CC-Date=20260429T052928Z&HW-CC-Expire=86400&HW-CC-Sign=FE60C24109ECC321D068447CCF6916579C6F8E8BA04309CABED6595DCB3C179C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/Lgb6nbSCT0ehjkXhp4jhCw/zh-cn_image_0000002589244541.png)
 
 ## 规格约束
 
@@ -115,11 +115,11 @@ display，position，z-index，visibility，opacity, background-color，backgrou
 
   **图2** 未使用Stack包裹，TextInput的位置错位
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/3OYDOa4FQrakgVS4ql6xtA/zh-cn_image_0000002558764736.png?HW-CC-KV=V1&HW-CC-Date=20260429T052928Z&HW-CC-Expire=86400&HW-CC-Sign=3855FE4C3B6028F895EEC24B724035CDA6103E53731C8FE7B285E40BD09FA330)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/3OYDOa4FQrakgVS4ql6xtA/zh-cn_image_0000002558764736.png)
 
   **图3** 使用Stack包裹，TextInput的位置正常
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/Sw0iF9YrQZGzz6CuSOqBkQ/zh-cn_image_0000002558605080.png?HW-CC-KV=V1&HW-CC-Date=20260429T052928Z&HW-CC-Expire=86400&HW-CC-Sign=22B1E2D588D485A57E110CA1DF6B1F575E761ADC59F5056EADACEFE0FE895617)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/Sw0iF9YrQZGzz6CuSOqBkQ/zh-cn_image_0000002558605080.png)
 
 ## Web页面中同层渲染输入框
 
@@ -127,7 +127,7 @@ display，position，z-index，visibility，opacity, background-color，backgrou
 
 **图4** 同层渲染输入框
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/dCU8ecHKRr-EOv2gUjW99w/zh-cn_image_0000002589324605.png?HW-CC-KV=V1&HW-CC-Date=20260429T052928Z&HW-CC-Expire=86400&HW-CC-Sign=339F400E5799CF9DC423BB1F7148FB2F468924FF42E927B7752E4AEE994E64FC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/dCU8ecHKRr-EOv2gUjW99w/zh-cn_image_0000002589324605.png)
 
 1. 在Web页面中标记需要同层渲染的HTML标签。
 
@@ -1133,7 +1133,7 @@ display，position，z-index，visibility，opacity, background-color，backgrou
   ```
 * 实现效果：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/f5sBql1DRKOOIRIL06uEvA/zh-cn_image_0000002589244543.png?HW-CC-KV=V1&HW-CC-Date=20260429T052928Z&HW-CC-Expire=86400&HW-CC-Sign=1C52DECC54A1C58111563290C8D3F2DB87A5F3757B3951C9CB7D8707DA92B6AC)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/f5sBql1DRKOOIRIL06uEvA/zh-cn_image_0000002589244543.png)
 
 ## 同层标签设置为最高层级
 
@@ -1430,11 +1430,11 @@ display，position，z-index，visibility，opacity, background-color，backgrou
 
   未设置arkwebnativestyle的display属性：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/lvtIKwrWSiOqaeW5rdvHBw/zh-cn_image_0000002558764738.png?HW-CC-KV=V1&HW-CC-Date=20260429T052928Z&HW-CC-Expire=86400&HW-CC-Sign=2F0F4C925B4D6524F8C55B7739CBBE38A326AEF4E860B87D36BA98CE78909A5C)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/lvtIKwrWSiOqaeW5rdvHBw/zh-cn_image_0000002558764738.png)
 
   设置arkwebnativestyle的display属性：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/JJkuG9bcSzSF7CwonmgGHQ/zh-cn_image_0000002558605082.png?HW-CC-KV=V1&HW-CC-Date=20260429T052928Z&HW-CC-Expire=86400&HW-CC-Sign=F9888638425D465011B872373618FF6A732126D07FB3233BCBF10191BC31542E)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/JJkuG9bcSzSF7CwonmgGHQ/zh-cn_image_0000002558605082.png)
 
 ## 同层渲染纹理贴图对齐方式
 

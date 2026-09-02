@@ -5,7 +5,7 @@ breadcrumb: 指南 > 媒体 > AVCodec Kit（音视频编解码服务） > 音视
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:34:40+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:44ad44d707ee7e89491566719a911b5ca0fb369aeb8ae03ffeb5768213397cad
+content_hash: sha256:2b73c5bc67ed358bd2af27908219420d3cf9a8c642d4d8e66a7d6a8cc1288951
 ---
 
 ## 基础概念
@@ -18,13 +18,13 @@ content_hash: sha256:44ad44d707ee7e89491566719a911b5ca0fb369aeb8ae03ffeb57682133
 
 **时域可分层视频编码**，是指能编码出时域分层码流的视频编码，下图展示了通过参考关系构建的4层时域分层码流结构。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/gL62GfGbTWiEKcHPonMY0g/zh-cn_image_0000002558765046.png?HW-CC-KV=V1&HW-CC-Date=20260429T053439Z&HW-CC-Expire=86400&HW-CC-Sign=3FA27B89EB1B461F553A9F3D1F25D3AAD6FC59F8BD3BE045F78D902864A4B70C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/gL62GfGbTWiEKcHPonMY0g/zh-cn_image_0000002558765046.png)
 
 从高到低逐层丢弃部分层级的码流（丢弃顺序L3->L2->L1），能实现不同程度的帧率伸缩，以满足传输和解码能力的变化需求。
 
 如下图所示，这是上述4层时域分层码流结构丢弃L3后组成的新的码流结构，能在解码正常的情况下实现帧率减半的效果。其他层的丢弃同理。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/CjjdP2q1Qhav_tVo63Qn6A/zh-cn_image_0000002558605390.png?HW-CC-KV=V1&HW-CC-Date=20260429T053439Z&HW-CC-Expire=86400&HW-CC-Sign=B45330C98E183E642EB2414890926289D9A6B772D5A36B81027306BB517B4E5E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/CjjdP2q1Qhav_tVo63Qn6A/zh-cn_image_0000002558605390.png)
 
 ### 时域分层码流结构介绍
 
@@ -93,15 +93,15 @@ content_hash: sha256:44ad44d707ee7e89491566719a911b5ca0fb369aeb8ae03ffeb57682133
 
 使用举例1：TGOP=4时的相邻参考模式。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/FAniqpNrSPibEt4rb7llgw/zh-cn_image_0000002589324917.png?HW-CC-KV=V1&HW-CC-Date=20260429T053439Z&HW-CC-Expire=86400&HW-CC-Sign=060E5C9AC19BF8750FE9625902E44ABBE9FDC92F391DC9238AF8F780D475B3D7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/FAniqpNrSPibEt4rb7llgw/zh-cn_image_0000002589324917.png)
 
 使用举例2：TGOP=4时的跨帧参考模式。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/GYW9nn8MThivEAVjVDoaXQ/zh-cn_image_0000002589244853.png?HW-CC-KV=V1&HW-CC-Date=20260429T053439Z&HW-CC-Expire=86400&HW-CC-Sign=EDFC88893C2D958B6736693DC48171FCC95C9C3460DA50694C9D88A7A2BF3CFA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/GYW9nn8MThivEAVjVDoaXQ/zh-cn_image_0000002589244853.png)
 
 使用举例3：TGOP=4时的均匀分层模式。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/q8cNtaSwRIWYhpXkVaO-7A/zh-cn_image_0000002558765048.png?HW-CC-KV=V1&HW-CC-Date=20260429T053439Z&HW-CC-Expire=86400&HW-CC-Sign=D244C6A98D4B43F98DB4FD14CF18B4CFE9389821BB35BCDE06C86F9AE5E5796E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/q8cNtaSwRIWYhpXkVaO-7A/zh-cn_image_0000002558765048.png)
 
 ### 开发指导
 

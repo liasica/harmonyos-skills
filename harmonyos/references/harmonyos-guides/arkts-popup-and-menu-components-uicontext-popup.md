@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:27:59+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:94f7035c74d23e5a48260fc41317ea418647639ee49d70ac5982f2a4bec3913c
+content_hash: sha256:06d396f7719b2e529c3db346b80d71820d1e05933d6e45df8adc7d443849c642
 ---
 
 [气泡提示（Popup）](arkts-popup-and-menu-components-popup.md)在使用时依赖绑定UI组件，否则无法使用。从API version 18开始，可以通过使用全局接口[openPopup](../harmonyos-references/arkts-apis-uicontext-promptaction.md#openpopup18)的方式，在无UI组件的场景下直接或封装使用，例如在事件回调中使用或封装后对外提供能力。
@@ -349,4 +349,4 @@ content_hash: sha256:94f7035c74d23e5a48260fc41317ea418647639ee49d70ac5982f2a4bec
 
 [OpenPopup.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/DialogProject/entry/src/main/ets/pages/popup/globalpopupsindependentofuicomponents/OpenPopup.ets#L16-L99)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/QLIT0lXhQ8uVaaplBO0f7A/zh-cn_image_0000002558764412.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052757Z&HW-CC-Expire=86400&HW-CC-Sign=CCCF5827B4CFCC36AE6F089A3B761D4559D4535004D3AF41132CA9DF3E5CB620)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/QLIT0lXhQ8uVaaplBO0f7A/zh-cn_image_0000002558764412.gif)

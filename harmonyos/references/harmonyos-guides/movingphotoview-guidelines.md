@@ -5,7 +5,7 @@ breadcrumb: 指南 > 媒体 > Media Library Kit（媒体文件管理服务） > 
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:35:35+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:9d7f3245a7b45790f24b4c8d642836c95297c24f3e9744a15f0389ba59d71199
+content_hash: sha256:5aa886c65f13ddbcbf5bbd1444bc1642f9558161a91a8bc67ceb6ff791b65b2d
 ---
 
 系统提供了MovingPhotoView组件，在一些社交类、图库类应用中，可用于播放动态照片文件。
@@ -119,4 +119,4 @@ content_hash: sha256:9d7f3245a7b45790f24b4c8d642836c95297c24f3e9744a15f0389ba59d
 
 ## 效果展示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/_HV6zOFYTmSbMmlu9gMMAQ/zh-cn_image_0000002558605452.gif?HW-CC-KV=V1&HW-CC-Date=20260429T053534Z&HW-CC-Expire=86400&HW-CC-Sign=6551B91F4C30E56DE33F62E9140EBB74395CF05A1F197D87998F05636053964F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/_HV6zOFYTmSbMmlu9gMMAQ/zh-cn_image_0000002558605452.gif)

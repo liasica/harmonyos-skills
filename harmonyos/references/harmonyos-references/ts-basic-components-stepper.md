@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:53:14+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:c09df7ac7a7c68f80b04f397e76b7f44636e02d118947ba4bdf75ecd90873756
+content_hash: sha256:92f865a5f8a5a7f97dcbe0ed5b2775793253014b1f365dc4edbfaf1c71e56957
 ---
 
 步骤导航器组件，适用于引导用户按照步骤完成任务的导航场景。
@@ -272,7 +272,7 @@ PhonePC/2in1TabletTVWearable
 95. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/0boL9XzBTQypcPPuCgNn4g/zh-cn_image_0000002589326561.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055313Z&HW-CC-Expire=86400&HW-CC-Sign=84400C5CD88466EEE345B1A3451D209E7C5A9E844EAF6B4F9B9438F6F02B7BF3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/0boL9XzBTQypcPPuCgNn4g/zh-cn_image_0000002589326561.gif)
 
 ### 示例2（使用Swiper替代Stepper）
 

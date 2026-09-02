@@ -5,7 +5,7 @@ breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 >
 category: best-practices
 scraped_at: 2026-04-29T14:12:01+08:00
 doc_updated_at: 2026-04-07
-content_hash: sha256:39a9472f4fe80497d5160c7a67fa4efe3df1ddf67d848d34a5d02d3eca408c04
+content_hash: sha256:20f67b71fade8da528130bf6e3e3b50b9a26cdc55ee071f1f0a14bf192d32cde
 ---
 
 ## 概述
@@ -35,7 +35,7 @@ content_hash: sha256:39a9472f4fe80497d5160c7a67fa4efe3df1ddf67d848d34a5d02d3eca4
 
 目前HarmonyOS系统中的窗口旋转形态有以下四种，对应真机实际状态如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/gLDP4RGBTsyvkyn4F3v7dw/zh-cn_image_0000002566756945.png?HW-CC-KV=V1&HW-CC-Date=20260429T061150Z&HW-CC-Expire=86400&HW-CC-Sign=303C85E1F67C7B2C6268E74F663324181997C1F4BB62A8B8FD018A7B0AFE9D70)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/gLDP4RGBTsyvkyn4F3v7dw/zh-cn_image_0000002566756945.png)
 
 说明
 
@@ -226,7 +226,7 @@ content_hash: sha256:39a9472f4fe80497d5160c7a67fa4efe3df1ddf67d848d34a5d02d3eca4
 
 应用随系统旋转切换横竖屏
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/pi3cp7DuRUCOShIT8YuEyA/zh-cn_image_0000002535997144.png?HW-CC-KV=V1&HW-CC-Date=20260429T061150Z&HW-CC-Expire=86400&HW-CC-Sign=B7DE014C64C9AFBBEFD5D667F941A3D026AA66F530400F68E9CAA3F2E905939E "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/pi3cp7DuRUCOShIT8YuEyA/zh-cn_image_0000002535997144.png "点击放大")
 
 ### 窗口级配置
 
@@ -271,7 +271,7 @@ content_hash: sha256:39a9472f4fe80497d5160c7a67fa4efe3df1ddf67d848d34a5d02d3eca4
 
 视频播窗横竖屏切换
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/2rugD-9JTteKZzy0shSuNw/zh-cn_image_0000002566916979.png?HW-CC-KV=V1&HW-CC-Date=20260429T061150Z&HW-CC-Expire=86400&HW-CC-Sign=34C5A62E5124E74E281DD0DC6E56AAEB80593898DC812331776B3A899694F222 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/2rugD-9JTteKZzy0shSuNw/zh-cn_image_0000002566916979.png "点击放大")
 
 ### 页面级配置
 
@@ -422,11 +422,11 @@ NavDestination组件提供[preferredOrientation](../harmonyos-references/ts-basi
 
 例如：视频或者游戏类应用在横屏模式下开启悬浮窗后，页面没有适配横屏，导致内容显示不全或者观看体验不好。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/ul0JCkO6ROKqQS24Tj0I3Q/zh-cn_image_0000002566757003.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061150Z&HW-CC-Expire=86400&HW-CC-Sign=5F2F39A1E24AB24CF24DC542AB2F1C126D6BE489E80744469C58AAC81B146032 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/ul0JCkO6ROKqQS24Tj0I3Q/zh-cn_image_0000002566757003.gif "点击放大")
 
 优化后效果如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/rxc4pJqESrOzJOEUN237rg/zh-cn_image_0000002535837220.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061150Z&HW-CC-Expire=86400&HW-CC-Sign=240C70924B779463275622B06706CA8F27D5D7132EB781F4FF470D3813776958 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/rxc4pJqESrOzJOEUN237rg/zh-cn_image_0000002535837220.gif "点击放大")
 
 ## 为多设备配置旋转策略
 
@@ -998,7 +998,7 @@ NavDestination组件提供[preferredOrientation](../harmonyos-references/ts-basi
 
 rotation的取值有4种，分别对应下图所示的4个方向（以直板机为例）。如果需要更精准的角度信息，则需要配合设备sensor获取。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/XAJXkSJYTx2DzXxHkk8WFg/zh-cn_image_0000002535837336.png?HW-CC-KV=V1&HW-CC-Date=20260429T061150Z&HW-CC-Expire=86400&HW-CC-Sign=0670FC487D508C502465142E484EAFE4C3E37264BAA1D2FC14B0FCE37920E1F8 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/XAJXkSJYTx2DzXxHkk8WFg/zh-cn_image_0000002535837336.png "点击放大")
 
 | 值 | 含义 |
 | --- | --- |
@@ -1044,7 +1044,7 @@ rotation的取值有4种，分别对应下图所示的4个方向（以直板机�
 
 窗口的orientation和屏幕rotation并没有直接关联关系，在使用上也不能相互替代，否则在多设备适配场景下可能会出现兼容性问题。以三折叠不同形态下的window.orientation与display.rotation映射关系为例说明。在rotation为0度的情况下，window.orientation可能是竖屏也可能是横屏。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/7k-uFA8rRCK0vS8sDvfuog/zh-cn_image_0000002535997274.png?HW-CC-KV=V1&HW-CC-Date=20260429T061150Z&HW-CC-Expire=86400&HW-CC-Sign=A99BF03737D445A1F568E63B377A6B717643F36A220964B105117860D6C15881 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/7k-uFA8rRCK0vS8sDvfuog/zh-cn_image_0000002535997274.png "点击放大")
 
 ## 示例代码
 

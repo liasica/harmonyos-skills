@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:27:42+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:a9f2a934c5b22961210c81d135f29fbbb53c76c51cf09b14e55a2d5a49166c8d
+content_hash: sha256:cba4dc49017d89028a3980c13e08e26cf4b0c17c045cdbd586fed1331378eeae
 ---
 
 从API version 18开始支持弧形列表。弧形列表是一种专为圆形屏幕设备设计的特殊列表，它能够以结构化、可滚动的形式高效展示信息。具体用法可参考[ArcList](../harmonyos-references/ts-container-arclist.md)。
@@ -157,7 +157,7 @@ content_hash: sha256:a9f2a934c5b22961210c81d135f29fbbb53c76c51cf09b14e55a2d5a491
 
 **图1** 显示弧形列表数据
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/pWtCgDIpTH2oDqgFFOVs3w/zh-cn_image_0000002589244063.png?HW-CC-KV=V1&HW-CC-Date=20260429T052740Z&HW-CC-Expire=86400&HW-CC-Sign=3A54561AD249D92FC4A97497DA0C5E1C3E1841E6374A7189EB84C150C679B442)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/pWtCgDIpTH2oDqgFFOVs3w/zh-cn_image_0000002589244063.png)
 
 ## 迭代弧形列表内容
 
@@ -238,7 +238,7 @@ ArkTS通过[ForEach](arkts-rendering-control-foreach.md)提供了组件的循环
 
 **图2** 迭代弧形列表内容
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/8boJV1TFQHSD11zzK79cIg/zh-cn_image_0000002558764270.png?HW-CC-KV=V1&HW-CC-Date=20260429T052740Z&HW-CC-Expire=86400&HW-CC-Sign=FE848CC0052A76887E4344457C2F043A7FD31A3695049669B84EA18DDD8A67D7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/8boJV1TFQHSD11zzK79cIg/zh-cn_image_0000002558764270.png)
 
 ## 自定义弧形列表样式
 
@@ -288,7 +288,7 @@ ArkTS通过[ForEach](arkts-rendering-control-foreach.md)提供了组件的循环
 
 **图3** 自定义弧形列表标题
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/8RcGELrNQUeuUJHBR0iyYQ/zh-cn_image_0000002558604614.png?HW-CC-KV=V1&HW-CC-Date=20260429T052740Z&HW-CC-Expire=86400&HW-CC-Sign=BA127C588B458C85D533989D6E0E1A5EA40FEB0BB6F07ADF35F41C31A9C2F900)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/8RcGELrNQUeuUJHBR0iyYQ/zh-cn_image_0000002558604614.png)
 
 ### 设置弧形列表项间距
 
@@ -305,7 +305,7 @@ ArkTS通过[ForEach](arkts-rendering-control-foreach.md)提供了组件的循环
 
 **图4** 设置弧形列表项间距
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/TUt9BuNvT1G9lYGHJmLb2A/zh-cn_image_0000002589324139.png?HW-CC-KV=V1&HW-CC-Date=20260429T052740Z&HW-CC-Expire=86400&HW-CC-Sign=522FD159970A71539E14A82BD11E2822370DD64D80700E192F3EA32BF936097C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/TUt9BuNvT1G9lYGHJmLb2A/zh-cn_image_0000002589324139.png)
 
 ### 列表项关闭自动缩放
 
@@ -322,7 +322,7 @@ ArkTS通过[ForEach](arkts-rendering-control-foreach.md)提供了组件的循环
 
 **图5** 列表项关闭自动缩放
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/aurjQE0xQfeOY6Axk15VXQ/zh-cn_image_0000002589244079.png?HW-CC-KV=V1&HW-CC-Date=20260429T052740Z&HW-CC-Expire=86400&HW-CC-Sign=5ADFBFF7B97BDAA8BAC61C549D671ED5A86948539EBF1718CF53E11FC2BE007D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/aurjQE0xQfeOY6Axk15VXQ/zh-cn_image_0000002589244079.png)
 
 ### 添加内置滚动条
 
@@ -343,7 +343,7 @@ ArkTS通过[ForEach](arkts-rendering-control-foreach.md)提供了组件的循环
 
 **图6** 弧形列表的内置滚动条
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/7oadTvswS7q4ka0-Z6GDPQ/zh-cn_image_0000002558764272.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052740Z&HW-CC-Expire=86400&HW-CC-Sign=2D8C21ACF17F1FD63B3EE8692C8C3D5890B0CD3534A64A08ACAFEF83B01A4FB0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/7oadTvswS7q4ka0-Z6GDPQ/zh-cn_image_0000002558764272.gif)
 
 ## 添加外置滚动条ArcScrollBar
 
@@ -377,7 +377,7 @@ ArkTS通过[ForEach](arkts-rendering-control-foreach.md)提供了组件的循环
 
 **图7** 弧形列表的外置滚动条
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/WGzQHVl7S0iQQMhZG1hxjg/zh-cn_image_0000002558604616.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052740Z&HW-CC-Expire=86400&HW-CC-Sign=23D3B25CF9F75CE746D69F3A5B5B687AD11ED421C5B6C018A77EE850EC953463)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/WGzQHVl7S0iQQMhZG1hxjg/zh-cn_image_0000002558604616.gif)
 
 说明
 
@@ -446,7 +446,7 @@ ArkTS通过[ForEach](arkts-rendering-control-foreach.md)提供了组件的循环
 
 **图8** 弧形列表与弧形索引条联动
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/f700f8acTQ-sUjxqNBjP2w/zh-cn_image_0000002589324141.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052740Z&HW-CC-Expire=86400&HW-CC-Sign=DBFC71C6669A85212671FED93F360652A00379072DA115A44F6257FF90D45717)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/f700f8acTQ-sUjxqNBjP2w/zh-cn_image_0000002589324141.gif)
 
 ## 响应列表项侧滑
 
@@ -506,7 +506,7 @@ ArkTS通过[ForEach](arkts-rendering-control-foreach.md)提供了组件的循环
 
 **图9** 侧滑删除列表项
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/blyhEpGgQBeDiniQLr2eKw/zh-cn_image_0000002589244081.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052740Z&HW-CC-Expire=86400&HW-CC-Sign=6DF409837F1A181265E010BF822DEC792A601BF6F4C68B69386E2ECCC6CBF452)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/blyhEpGgQBeDiniQLr2eKw/zh-cn_image_0000002589244081.gif)
 
 ## 处理长列表
 

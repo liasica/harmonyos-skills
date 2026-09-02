@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkData（方舟数据管理） > 标准化�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:26:13+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:ff61fcb22a13953685f66eaa18506fde2d4494e1457169591a9c4726cf26edf3
+content_hash: sha256:be466f41b29c1970714cb0481324b206d8664c6221d5a4d6787d58d08bcc9fd4
 ---
 
 ## 场景介绍
@@ -39,11 +39,11 @@ UTD中定义的标准化数据类型在设计原则上按物理和逻辑分为�
 
 **图1** 物理标准化数据类型示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/HBMTMmTZR12yHswIa1SgSQ/zh-cn_image_0000002558764012.png?HW-CC-KV=V1&HW-CC-Date=20260429T052612Z&HW-CC-Expire=86400&HW-CC-Sign=01C0997118DA8D3AC3F78CA627AE12459E81F9A9E4D390CAF05127B8B38B675F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/HBMTMmTZR12yHswIa1SgSQ/zh-cn_image_0000002558764012.png)
 
 **图2** 逻辑标准化数据类型示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/YtybRfxfRouDiyrsbxHE3A/zh-cn_image_0000002558604356.png?HW-CC-KV=V1&HW-CC-Date=20260429T052612Z&HW-CC-Expire=86400&HW-CC-Sign=53FE415BA9A2B72AE280D383BED6E088228FE5C8F45EA97A656B56136C922CE4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/YtybRfxfRouDiyrsbxHE3A/zh-cn_image_0000002558604356.png)
 
 ## 标准化数据类型的定义
 

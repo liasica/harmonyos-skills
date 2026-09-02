@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:52:37+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:b4153347cc661f6a7f6c31d0f2c77c54273dae494617323563e18ba70b3251d7
+content_hash: sha256:3108684f31534da9743b7a4d8b064ccd6d699e93f7f4283fa30192555c7c773a
 ---
 
 多边形绘制组件。
@@ -350,7 +350,7 @@ PhonePC/2in1TabletTVWearable
 28. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/Pza5ESZVQmK4dTm_jhCARg/zh-cn_image_0000002558606876.png?HW-CC-KV=V1&HW-CC-Date=20260429T055235Z&HW-CC-Expire=86400&HW-CC-Sign=8ECFA30263BED95326C00FE71815615B0F5A483135F01A949E7BFB1DB12348B1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/Pza5ESZVQmK4dTm_jhCARg/zh-cn_image_0000002558606876.png)
 
 ### 示例2（宽和高使用不同参数类型绘制多边形）
 
@@ -381,7 +381,7 @@ width、height属性分别使用不同的长度类型绘制图形。
 22. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/XQ9bta9vS02O1ill8UWCpw/zh-cn_image_0000002589326403.png?HW-CC-KV=V1&HW-CC-Date=20260429T055235Z&HW-CC-Expire=86400&HW-CC-Sign=1ED516067BEE1A79B0338AE3C16818FD008BEC4E4366B3FB1D848982162032D1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/XQ9bta9vS02O1ill8UWCpw/zh-cn_image_0000002589326403.png)
 
 ### 示例3（使用attributeModifier动态设置Polygon组件的属性）
 
@@ -424,4 +424,4 @@ width、height属性分别使用不同的长度类型绘制图形。
 34. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/opdJO78ySTm4QSpRrR0GBQ/zh-cn_image_0000002589246345.png?HW-CC-KV=V1&HW-CC-Date=20260429T055235Z&HW-CC-Expire=86400&HW-CC-Sign=20A05BDADF1330E645BD63D7D9DCD0A663F7ED11C6269508E4779C86DD59BA44)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/opdJO78ySTm4QSpRrR0GBQ/zh-cn_image_0000002589246345.png)

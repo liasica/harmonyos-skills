@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > U
 category: harmonyos-references
 scraped_at: 2026-04-29T13:50:36+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:a1abd4b5bbe81286ffb3f0a5cbf12895040ad70a68ad64ae40a4f14f6a7aaa28
+content_hash: sha256:10695433110ab50bd0d7f1928a835753fde975bce3c0270c7516bab0c7ff59b6
 ---
 
 提供绘制浮层的能力。
@@ -132,7 +132,7 @@ addComponentContent(content: ComponentContent, index?: number): void
 89. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/4aa1hRS8RL-ZC9LRVAlsXA/zh-cn_image_0000002589245743.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055035Z&HW-CC-Expire=86400&HW-CC-Sign=D4866A0E720D0D4FDABF50DA79AE30627F2980D0771ECFF34E12C9479C740FDA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/4aa1hRS8RL-ZC9LRVAlsXA/zh-cn_image_0000002589245743.gif)
 
 ## addComponentContentWithOrder18+
 
@@ -236,7 +236,7 @@ addComponentContentWithOrder(content: ComponentContent, levelOrder?: LevelOrder)
 74. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/wXtHStiCQUCcANQBHwsi5w/zh-cn_image_0000002558765932.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055035Z&HW-CC-Expire=86400&HW-CC-Sign=E159C50E0AD8D52399586EF926B0CE17FD0AB39A5C3E701E6D40F50D0F7A79DF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/wXtHStiCQUCcANQBHwsi5w/zh-cn_image_0000002558765932.gif)
 
 ## removeComponentContent12+
 

@@ -5,7 +5,7 @@ breadcrumb: 指南 > 媒体 > AVCodec Kit（音视频编解码服务） > 音视
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:34:39+08:00
 doc_updated_at: 2026-03-20
-content_hash: sha256:be059318fec81139d80a0eb34c702f50cc593a5aeacaf5bda29627a0f2d5c052
+content_hash: sha256:536adc267cb552f89f222ece7226c77e0add12037417c87ba51a14264e6a2e29
 ---
 
 开发者可以调用本模块的Native API接口，完成音频编码，即将音频PCM编码压缩成不同的格式。
@@ -41,7 +41,7 @@ content_hash: sha256:be059318fec81139d80a0eb34c702f50cc593a5aeacaf5bda29627a0f2d
 * 虚线表示可选。
 * 实线表示必选。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/Z-yZSzf8SXCC9hDRmDf4vw/zh-cn_image_0000002589324911.png?HW-CC-KV=V1&HW-CC-Date=20260429T053438Z&HW-CC-Expire=86400&HW-CC-Sign=70731F71784F4AACF00883E9AF90A698D07AA3DFEBB8389DF49E0E53DED173D7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/Z-yZSzf8SXCC9hDRmDf4vw/zh-cn_image_0000002589324911.png)
 
 ### 在 CMake 脚本中链接动态库
 
@@ -187,11 +187,11 @@ content_hash: sha256:be059318fec81139d80a0eb34c702f50cc593a5aeacaf5bda29627a0f2d
 
    配置选项key值说明：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/FhLZyDdGT_uFzGaPJJpkdw/zh-cn_image_0000002589244847.png?HW-CC-KV=V1&HW-CC-Date=20260429T053438Z&HW-CC-Expire=86400&HW-CC-Sign=36EA696FF84AB650ED3D1E3463647AD5A12A83A1935C90B77128C8B02E345794)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/FhLZyDdGT_uFzGaPJJpkdw/zh-cn_image_0000002589244847.png)
 
    各音频编码类型参数范围说明：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/dsBMxpMxQSiJl-Dmdx3Nmg/zh-cn_image_0000002558765042.png?HW-CC-KV=V1&HW-CC-Date=20260429T053438Z&HW-CC-Expire=86400&HW-CC-Sign=F71338B32FE570C1F6DC90EB261F6B27277F0801CCAE08ADBE0947DCF3000F9D)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/dsBMxpMxQSiJl-Dmdx3Nmg/zh-cn_image_0000002558765042.png)
 
    例如对一个44100Hz采样率、2声道立体声、SAMPLE\_S16LE采样格式的PCM音频，以32000bps的码率进行AAC编码的调用流程如下：
 

@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > UI Design Kit（UI设计套件） > 视效 >
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:30:25+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:a697a3d6749ff90e5497c0bc01948d8c682d0051c73cba730ea35cd3423b6a0f
+content_hash: sha256:a564e50be11e05eabd97e28ee8a81d95687c8a2b1679bedb09294a3a1e5570db
 ---
 
 ## 场景介绍
@@ -161,4 +161,4 @@ content_hash: sha256:a697a3d6749ff90e5497c0bc01948d8c682d0051c73cba730ea35cd3423
    129. }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/2XzCTjWJQn2fUWsTJ7vw8g/zh-cn_image_0000002558764850.png?HW-CC-KV=V1&HW-CC-Date=20260429T053024Z&HW-CC-Expire=86400&HW-CC-Sign=CF9AF6551478A6AC5B73E0FFFE947814939312D068B33CDD700CEE9752739B64)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/2XzCTjWJQn2fUWsTJ7vw8g/zh-cn_image_0000002558764850.png)

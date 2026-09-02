@@ -5,7 +5,7 @@ breadcrumb: 指南 > 系统 > 调测调优 > 调试命令 > hilogtool
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:34:21+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:f475d9c6f8f16d5f58052c2ae8ec717f664128e42e5d26b0cf7397cae07ad645
+content_hash: sha256:ee836a8c3988f4cc16e9287a09ebc167506162afeedbef23b81b5803980959ab
 ---
 
 ## 使用场景
@@ -102,19 +102,19 @@ hilogtool parse --input xxx --output xxx --dict xxx
 
 在当前日志所在目录，通过cmd进入shell窗口，在shell窗口直接执行hilogtool parse，即可进行解析操作，如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/INqj5zE3SXaC5vcUFJC-bQ/zh-cn_image_0000002589324873.png?HW-CC-KV=V1&HW-CC-Date=20260429T053420Z&HW-CC-Expire=86400&HW-CC-Sign=FBF3815F796428A4C5AF8D033B77036233DA322E2BF5F6DBE570769F3EC3819D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/INqj5zE3SXaC5vcUFJC-bQ/zh-cn_image_0000002589324873.png)
 
 ### 解析指定目录下的hilog文件
 
 hilogtool parse -i D:\09-temp\dict-test -d D:\09-temp\dict-test
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/HuJMqmiuS6K9yOflhzUTZw/zh-cn_image_0000002589244809.png?HW-CC-KV=V1&HW-CC-Date=20260429T053420Z&HW-CC-Expire=86400&HW-CC-Sign=06723225D9DF95B9D8228DA05B19D8B00D04CB006C25023EE6554D4712137C08)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/HuJMqmiuS6K9yOflhzUTZw/zh-cn_image_0000002589244809.png)
 
 ### 解析单个hilog文件
 
 hilogtool parse -i D:\09-temp\dict-test\hilog.025.20231020-154659.gz -d D:\09-temp\dict-test
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/iOSHaf-zRNuw6ZMkTxr4wQ/zh-cn_image_0000002558765004.png?HW-CC-KV=V1&HW-CC-Date=20260429T053420Z&HW-CC-Expire=86400&HW-CC-Sign=9CCCFB3A5D9B6DA3ACD2ADC2A8FE1EADF68CBE4115968AF1FC295B124F2A7A10)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/iOSHaf-zRNuw6ZMkTxr4wQ/zh-cn_image_0000002558765004.png)
 
 ## 自动化脚本
 
@@ -136,7 +136,7 @@ windows平台 get\_hilog.bat 脚本内容参考：
 
 脚本运行结果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/La4zKxnpRy-RlIvBkybFyg/zh-cn_image_0000002558605348.png?HW-CC-KV=V1&HW-CC-Date=20260429T053420Z&HW-CC-Expire=86400&HW-CC-Sign=7E78BEE47D24FE055A58ED3A4E1D72EE0F3467109155108BA9E0676BF76A1275)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/La4zKxnpRy-RlIvBkybFyg/zh-cn_image_0000002558605348.png)
 
 ### mac平台脚本
 

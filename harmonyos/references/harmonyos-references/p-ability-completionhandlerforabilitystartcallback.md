@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/p-ability-completionhandlerforabilitystartcallback
-title: @ohos.app.ability.CompletionHandlerForAbilityStartCallback (拉起应用结果回调的操作类)
+title: "@ohos.app.ability.CompletionHandlerForAbilityStartCallback (拉起应用结果回调的操作类)"
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > Stage模型能力的接口 > @ohos.app.ability.CompletionHandlerForAbilityStartCallback (拉起应用结果回调的操作类)
 category: harmonyos-references
 scraped_at: 2026-04-28T07:58:17+08:00

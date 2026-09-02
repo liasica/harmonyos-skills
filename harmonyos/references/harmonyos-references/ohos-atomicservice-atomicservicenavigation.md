@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:52:51+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:402ea4147ca60e5991e9ee5da68844f7132e2297c0b5d29c453149882b393ec4
+content_hash: sha256:ef57538d2cc32a3291d018a74a236a0e82ba513b55166bd7cf6aea54670b6d07
 ---
 
 作为Page页面的根容器使用，其内部默认包含了标题栏、内容区，其中内容区默认首页显示导航内容或非首页显示（[NavDestination](ts-basic-components-navdestination.md)的子组件），首页和非首页通过路由进行切换。
@@ -353,7 +353,7 @@ AtomicServiceNavigation的基础样式，并展示渐变色背景。
 128. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/JKq1iXAwSUi-IBMkGVo9XA/zh-cn_image_0000002558606944.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T055249Z&HW-CC-Expire=86400&HW-CC-Sign=7B60F14D0E63B04F6613A3B51324B6FAF6EB0AC3C5F22607B090A19B8B187797)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/JKq1iXAwSUi-IBMkGVo9XA/zh-cn_image_0000002558606944.jpg)
 
 ### 示例2（抽屉模式，宽屏场景下插入自定义布局）
 
@@ -496,7 +496,7 @@ AtomicServiceNavigation的基础样式，并展示渐变色背景。
 134. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/n2nguYySRyS002SeoDhxdA/zh-cn_image_0000002589326471.png?HW-CC-KV=V1&HW-CC-Date=20260429T055249Z&HW-CC-Expire=86400&HW-CC-Sign=8235AB5A3FD540F3088FF10DEB2B5411EEA82E0C8420C2FA54369820E0C1BF63)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/n2nguYySRyS002SeoDhxdA/zh-cn_image_0000002589326471.png)
 
 ### 示例3（边栏使用场景）
 
@@ -648,4 +648,4 @@ AtomicServiceNavigation的基础样式，并展示渐变色背景。
 143. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/ffEbuGqmSouh0RcxBylGLw/zh-cn_image_0000002589246413.png?HW-CC-KV=V1&HW-CC-Date=20260429T055249Z&HW-CC-Expire=86400&HW-CC-Sign=86DBED0ADCE18B8DE8A5BEB20B6FC809AD8E8704B04DC1F1DB2F2FF80825DBDF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/ffEbuGqmSouh0RcxBylGLw/zh-cn_image_0000002589246413.png)

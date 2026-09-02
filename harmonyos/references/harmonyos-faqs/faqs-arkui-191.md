@@ -5,7 +5,7 @@ breadcrumb: FAQ > 应用框架开发 > UI框架 > 方舟UI框架（ArkUI） > �
 category: harmonyos-faqs
 scraped_at: 2026-04-29T14:16:48+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:77ca23cac2819902bf4c5d99ee3df2cb3f06762310eea745ec2fd906d12d724a
+content_hash: sha256:174aec30801ba52211a311759b1a539fd42542f69cb55d80948398140338c929
 ---
 
 通用属性width支持设置变量。
@@ -37,4 +37,4 @@ content_hash: sha256:77ca23cac2819902bf4c5d99ee3df2cb3f06762310eea745ec2fd906d12
 
 效果如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/cGH94RmlRKWkVGAFYk2AHg/zh-cn_image_0000002194158632.png?HW-CC-KV=V1&HW-CC-Date=20260429T061647Z&HW-CC-Expire=86400&HW-CC-Sign=934F285CE78699B45B3BB688AB30CB29954B678DA76026BA4EAA43F750E62B46 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/cGH94RmlRKWkVGAFYk2AHg/zh-cn_image_0000002194158632.png "点击放大")

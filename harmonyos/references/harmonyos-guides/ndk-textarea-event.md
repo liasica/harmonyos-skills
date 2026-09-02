@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (基于
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:28:33+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:29f92dadc430cd49151f2c77796835dce8de29ea1ad4c97d4c5e1b8fdd4119a0
+content_hash: sha256:e7e77c093f986e699504720819091fb54c7692d3a477eb9ff10c680ea5f0860c
 ---
 
 输入框包含多种交互行为，开发者可注册事件监听并获取状态。
@@ -170,4 +170,4 @@ content_hash: sha256:29f92dadc430cd49151f2c77796835dce8de29ea1ad4c97d4c5e1b8fdd4
 
   [manager.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextAreaEventNDK/entry/src/main/cpp/manager.cpp#L15-L115)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/95RZXnQ2SM-mf1xz72mudw/zh-cn_image_0000002558764558.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052832Z&HW-CC-Expire=86400&HW-CC-Sign=F738A74D970CB08314E5307B9B27022027BAD8AA91D802F9505388DC2206D058)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/95RZXnQ2SM-mf1xz72mudw/zh-cn_image_0000002558764558.gif)

@@ -5,7 +5,7 @@ breadcrumb: 最佳实践 > 媒体 > 相机 > 自定义相机录像
 category: best-practices
 scraped_at: 2026-04-29T14:11:13+08:00
 doc_updated_at: 2026-03-19
-content_hash: sha256:6ce557ba1aadf0be461b61ed16da05e65ddb9943a2b3f3902f2e19a9fbb5faa2
+content_hash: sha256:c4f80d5c9f6af8f610bdb9e2eef984dd5b5c41dd25549f445f24d3baee0b87ae
 ---
 
 ## 概述
@@ -18,13 +18,13 @@ content_hash: sha256:6ce557ba1aadf0be461b61ed16da05e65ddb9943a2b3f3902f2e19a9fbb
 
 录像功能是自定义相机应用的核心功能，提供实时预览和构图调整能力。通过点击界面上的录像按钮，用户即可开始视频录制。在录制过程中，相机应用会持续采集画面数据并将其保存为视频文件，用户可根据需要随时暂停或结束录制。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/7-C2Gup5SDy-MkiYj00ZEw/zh-cn_image_0000002401601769.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061106Z&HW-CC-Expire=86400&HW-CC-Sign=C5D508982763421A9F0C6FB0B7AF50ADF127171700BD57B897C5A77D05D005DB "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/7-C2Gup5SDy-MkiYj00ZEw/zh-cn_image_0000002401601769.gif "点击放大")
 
 ### 开发步骤
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/RuolIUzBSQeCMuGWVOAB-w/zh-cn_image_0000002367922004.png?HW-CC-KV=V1&HW-CC-Date=20260429T061106Z&HW-CC-Expire=86400&HW-CC-Sign=4238ADD69ACD0F4C90EB0C80E2F661D51BBD4530B6152D819703E9683DEE660A "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/RuolIUzBSQeCMuGWVOAB-w/zh-cn_image_0000002367922004.png "点击放大")
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/jgZLgnPHS-Wo3tk9uaGnfg/zh-cn_image_0000002383780282.png?HW-CC-KV=V1&HW-CC-Date=20260429T061106Z&HW-CC-Expire=86400&HW-CC-Sign=CA37CCD9A65FD6459AA8A5BFF3A414D89802A850298BCC09DC6CDA07C09EA192 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/jgZLgnPHS-Wo3tk9uaGnfg/zh-cn_image_0000002383780282.png "点击放大")
 
 详细的API说明请参考[Camera API参考](../harmonyos-references/js-apis-camera.md)。
 

@@ -5,12 +5,12 @@ breadcrumb: 指南 > 应用服务 > Wallet Kit（钱包服务） > 接入交通�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:40:46+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:081cad79373b3efa5388aa207a44287c900b59a1d9a90969fbac02fc9bbb148e
+content_hash: sha256:9021068abbe9d2cc0ecce25262ffa94aa77495339e3e68dcdd4a542c87a2b984
 ---
 
 交通卡的更新可以用在更新卡片有效期等卡内数据的场景，其过程分为：卡片展示、生成更新业务订单和发起更新三个步骤，整体流程如下图，相关接口定义请参照[钱包服务API](../harmonyos-references/wallet-wallettransitcard.md)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/gegXrPpfTPK1Ar2VvSKGBw/zh-cn_image_0000002589325577.png?HW-CC-KV=V1&HW-CC-Date=20260429T054045Z&HW-CC-Expire=86400&HW-CC-Sign=645808F87314935F11214891157C467AE53140FBCD7C8306C683EC236B9DAB55)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/gegXrPpfTPK1Ar2VvSKGBw/zh-cn_image_0000002589325577.png)
 
 * 开发者的app启动后，可调用[getCardMetadataInDevice](../harmonyos-references/wallet-wallettransitcard.md#getcardmetadataindevice)接口获取指定设备上开发者的app可以访问的交通卡的信息以数组的方式返回。如返回的数组为空，则表示开发者的app在该设备上没有可访问的交通卡，无需显示卡片开通入口；如返回数组不为空，则按具体的交通卡信息做展示。如果交通卡信息中包括卡号、余额信息，则表明该卡片在设备上已开通，显示卡片信息即可；否则可显示卡片的开通入口。
 * 用户选择了要更新的交通卡后，开发者的app需向开发者的后台服务器发起更新业务订单的生成请求。

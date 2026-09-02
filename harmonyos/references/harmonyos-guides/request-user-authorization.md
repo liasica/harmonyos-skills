@@ -5,7 +5,7 @@ breadcrumb: 指南 > 系统 > 安全 > 程序访问控制 > 应用权限管控 >
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:30:34+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:435ca86ad11f69fdb57672da4ac6982c3956533bfaa0b888cc4f4d992c4c1517
+content_hash: sha256:e6b333a494cafe785f50ae141ab25a358e35f75e5fe5ea9ed6a1326d31e5b3d7
 ---
 
 当应用需要访问用户的隐私信息或使用系统能力时，如获取位置信息、访问日历、使用相机拍摄照片或录制视频等，应向用户申请授权。这些权限属于user\_grant权限。
@@ -46,7 +46,7 @@ content_hash: sha256:435ca86ad11f69fdb57672da4ac6982c3956533bfaa0b888cc4f4d992c4
 
 效果展示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/0Grn-2ifQEawSR7LD198tg/zh-cn_image_0000002589244659.png?HW-CC-KV=V1&HW-CC-Date=20260429T053033Z&HW-CC-Expire=86400&HW-CC-Sign=72B689DF4FF012AE5E628FB830728886F3B56618BFEB5D360339E8442A118CA6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/0Grn-2ifQEawSR7LD198tg/zh-cn_image_0000002589244659.png)
 
 1. 申请ohos.permission.LOCATION、ohos.permission.APPROXIMATELY\_LOCATION权限，配置方式请参见[声明权限](declare-permissions.md)。
 2. 校验当前是否已经授权。

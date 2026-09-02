@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用服务 > Scenario Fusion Kit（融合场景服务） 
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:40:18+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:102aa775e41ccf525ac05fb2d709f6530939d1a92973880839991eab60e96a71
+content_hash: sha256:f7985d6e47b58c7af81877ca1021a47fcd79ad3497ff066ce596d26e01775b00
 ---
 
 在填写地址表单场景时，当应用使用了所在地区的省市区选择器，需要开发者对表单中的地址字段进行开发。
@@ -20,7 +20,7 @@ content_hash: sha256:102aa775e41ccf525ac05fb2d709f6530939d1a92973880839991eab60e
 
 地址表单中的所在地区能根据详细地址内容自动补全，当补全内容不符合预期时，可通过地址选择器进行修改。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/in_ajKqJRuyTSlgqA0DeZg/zh-cn_image_0000002589325529.png?HW-CC-KV=V1&HW-CC-Date=20260429T054016Z&HW-CC-Expire=86400&HW-CC-Sign=E1F81E9236F77B6EBE95073FD7E97B1A2F269A3D045F26197B7B5D7924D31943)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/in_ajKqJRuyTSlgqA0DeZg/zh-cn_image_0000002589325529.png)
 
 ## 示例代码
 

@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-useriam-userauth
-title: @ohos.userIAM.userAuth (用户认证)
+title: "@ohos.userIAM.userAuth (用户认证)"
 breadcrumb: API参考 > 系统 > 安全 > User Authentication Kit（用户认证服务） > ArkTS API > @ohos.userIAM.userAuth (用户认证)
 category: harmonyos-references
 scraped_at: 2026-04-28T08:07:51+08:00

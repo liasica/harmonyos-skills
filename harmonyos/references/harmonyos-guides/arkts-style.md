@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-style
-title: @Styles装饰器：定义组件重用样式
+title: "@Styles装饰器：定义组件重用样式"
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式基本语法 > 组件扩展 > @Styles装饰器：定义组件重用样式
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:27:07+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:2ba5b54f45cad71dc3f695eb9a2f8272756a54fb194dbb436c0b593e242f52f5
+content_hash: sha256:6726f0f4d4106ec7162c928fc81f0355d3ba33df67d512420bdc32a05d0c3218
 ---
 
 如果每个组件的样式都需要单独设置，在开发过程中会出现大量代码在进行重复样式设置，虽然可以复制粘贴，但为了代码简洁性和后续方便维护，我们推出了可以提炼公共样式进行复用的装饰器@Styles。
@@ -62,7 +62,7 @@ content_hash: sha256:2ba5b54f45cad71dc3f695eb9a2f8272756a54fb194dbb436c0b593e242
 
 [StylesDecorator2.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ComponentExtension/entry/src/main/ets/pages/StylesDecorator/StylesDecorator2.ets#L30-L54)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/AQel9SoKSlyNIRxh_KvZzA/zh-cn_image_0000002589243881.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052706Z&HW-CC-Expire=86400&HW-CC-Sign=33CA2670F95FD4BD8D29496948667739E7E3124857AD865F803A0C7617B835E8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/AQel9SoKSlyNIRxh_KvZzA/zh-cn_image_0000002589243881.gif)
 
 ## 限制条件
 
@@ -155,4 +155,4 @@ content_hash: sha256:2ba5b54f45cad71dc3f695eb9a2f8272756a54fb194dbb436c0b593e242
 
 [StylesDecorator1.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ComponentExtension/entry/src/main/ets/pages/StylesDecorator/StylesDecorator1.ets#L16-L52)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/sCZXEUc1ShanBDN58WZMxw/zh-cn_image_0000002558764074.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052706Z&HW-CC-Expire=86400&HW-CC-Sign=14FA02F6AD6D0D00B20175E512F6A6C5472CE453830BC5B2EEC2BE3066005FDD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/sCZXEUc1ShanBDN58WZMxw/zh-cn_image_0000002558764074.gif)

@@ -5,7 +5,7 @@ breadcrumb: 指南 > 媒体 > Media Kit（媒体服务） > 媒体开发指导(A
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:35:25+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:c54e5c3c8832d4d5390375f2e176bd36ca58a58872c990c0ead57314d6da8427
+content_hash: sha256:2c91ce2a42064f172c65641e0605e4efbde7e75d40d2340384cf6efcdd78b55b
 ---
 
 使用[AVRecorder](media-kit-intro.md#avrecorder)可以实现音频录制功能，本开发指导将以“开始录制-暂停录制-恢复录制-停止录制”的一次流程为例，向开发者讲解AVRecorder音频录制相关功能。
@@ -14,7 +14,7 @@ content_hash: sha256:c54e5c3c8832d4d5390375f2e176bd36ca58a58872c990c0ead57314d6d
 
 **图1** 录制状态变化示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/KHo0dCPrQUyIYXl8xHo-RA/zh-cn_image_0000002558765096.png?HW-CC-KV=V1&HW-CC-Date=20260429T053524Z&HW-CC-Expire=86400&HW-CC-Sign=7255A2112E8899932C37EAFA2FE2DAC5742AB2AFE0485932C08E840787404980)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/KHo0dCPrQUyIYXl8xHo-RA/zh-cn_image_0000002558765096.png)
 
 状态的详细说明请参考[AVRecorderState](../harmonyos-references/arkts-apis-media-t.md#avrecorderstate9)。
 

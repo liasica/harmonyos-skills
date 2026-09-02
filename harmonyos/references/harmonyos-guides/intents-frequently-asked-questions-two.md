@@ -1,7 +1,7 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/intents-frequently-asked-questions-two
-title: inputParams报错Value should be one of: "intentName", "domain", "intentVersion", "srcEntry", "uiAbility", "serviceExtension", "uiExtension", "form"如何解决？
-breadcrumb: 指南 > AI > Intents Kit（意图框架服务） > 常见问题 > inputParams报错Value should be one of: "intentName", "domain", "intentVersion", "srcEntry", "uiAbility", "serviceExtension", "uiExtension", "form"如何解决？
+title: "inputParams报错Value should be one of: \"intentName\", \"domain\", \"intentVersion\", \"srcEntry\", \"uiAbility\", \"serviceExtension\", \"uiExtension\", \"form\"如何解决？"
+breadcrumb: "指南 > AI > Intents Kit（意图框架服务） > 常见问题 > inputParams报错Value should be one of: \"intentName\", \"domain\", \"intentVersion\", \"srcEntry\", \"uiAbility\", \"serviceExtension\", \"uiExtension\", \"form\"如何解决？"
 category: harmonyos-guides
 scraped_at: 2026-04-28T07:53:45+08:00
 doc_updated_at: 2026-03-09

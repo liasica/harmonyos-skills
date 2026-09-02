@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-linkedlist
-title: @ohos.util.LinkedList (线性容器LinkedList)
+title: "@ohos.util.LinkedList (线性容器LinkedList)"
 breadcrumb: API参考 > 应用框架 > ArkTS（方舟编程语言） > ArkTS API > @ohos.util.LinkedList (线性容器LinkedList)
 category: harmonyos-references
 scraped_at: 2026-04-28T08:00:08+08:00

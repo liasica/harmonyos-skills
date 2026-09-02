@@ -5,7 +5,7 @@ breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:42:20+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:1a7d0e96d7f474747e3968a523c8de3c6ec9cf599e68d5d65cf79cfc79808a0f
+content_hash: sha256:5cf3e747de95799b56a0fbe43d99a586c929460fccea2d8af011d7f481eba758
 ---
 
 ## 函数功能
@@ -100,4 +100,4 @@ content_hash: sha256:1a7d0e96d7f474747e3968a523c8de3c6ec9cf599e68d5d65cf79cfc798
 
 **图1** 一对多转换示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/7w4byvmXT82Zs5lrBpYnZA/zh-cn_image_0000002589325663.png?HW-CC-KV=V1&HW-CC-Date=20260429T054219Z&HW-CC-Expire=86400&HW-CC-Sign=4EDB68B8CF977F8BE68E09BFC4D5859748F2A3CBFA4C50F310F35B87B806C03D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/7w4byvmXT82Zs5lrBpYnZA/zh-cn_image_0000002589325663.png)

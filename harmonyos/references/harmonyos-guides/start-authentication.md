@@ -5,7 +5,7 @@ breadcrumb: 指南 > 系统 > 安全 > User Authentication Kit（用户认证服
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:32:25+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:c7be6a60ab699f245a83d01efcc5c47cd58abf9bd026652e83c99af871db326f
+content_hash: sha256:9b54842c75491c86c13ca1f7c4dce2a973ff66a17cb2df08eaea4fbbf1c1972e
 ---
 
 应用发起身份认证请求，获取身份认证结果，以访问受保护的系统、服务或应用的功能和数据，包括用户个人数据。
@@ -30,7 +30,7 @@ content_hash: sha256:c7be6a60ab699f245a83d01efcc5c47cd58abf9bd026652e83c99af871d
 
 认证控件的样式如图所示，通过[WidgetParam](../harmonyos-references/js-apis-useriam-userauth.md#widgetparam10)配置对应参数。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/lMHSDD6bSMSwzWALSUjT0w/zh-cn_image_0000002558764916.png?HW-CC-KV=V1&HW-CC-Date=20260429T053224Z&HW-CC-Expire=86400&HW-CC-Sign=B4DCF1CCD4C70A639BA3459457440C774F7A00DE3F429CE6D22CFFAEA6BB658E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/lMHSDD6bSMSwzWALSUjT0w/zh-cn_image_0000002558764916.png)
 
 * 标注1：用户认证界面的标题（WidgetParam.title），不支持传空字串，最大长度为500字符。应用可在此配置符合场景的字符串，建议传入认证目的，例如用于支付、登录应用等。
 * 标注2：当生物认证失败后，将显示一个按钮。点击该按钮，可以从生物认证切换到其他口令认证类型（AuthParam.authType）。

@@ -5,7 +5,7 @@ breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 文本 
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:36:16+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:505d6b6a676ccae45c08f2ec15cbe92028a381c64c2907d88605e14782d18be0
+content_hash: sha256:0d4911ad71b0e2dfabbd828a9d648163c7ada8869bf943208c65bdb614fda341
 ---
 
 ## 场景介绍
@@ -88,4 +88,4 @@ content_hash: sha256:505d6b6a676ccae45c08f2ec15cbe92028a381c64c2907d88605e14782d
 
 ## 效果展示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/uw9VCROoRWmWhwm87hHp7w/zh-cn_image_0000002589244995.png?HW-CC-KV=V1&HW-CC-Date=20260429T053615Z&HW-CC-Expire=86400&HW-CC-Sign=CC228E7068A6959658B455F4B1EE85D9AC742D7399BFAEDC74A10C5AA7112A4C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/uw9VCROoRWmWhwm87hHp7w/zh-cn_image_0000002589244995.png)

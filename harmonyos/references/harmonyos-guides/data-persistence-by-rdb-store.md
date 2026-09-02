@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkData（方舟数据管理） > 应用数�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:26:17+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:5565a75ea98748c6f25272748d0788f75115a2995bd1673196e77e8e25ee48ac
+content_hash: sha256:36b7c1924cb2a87cd95261b56099de38c547277e2f034d7281a5a9e4c0afe996
 ---
 
 ## 场景介绍
@@ -30,7 +30,7 @@ content_hash: sha256:5565a75ea98748c6f25272748d0788f75115a2995bd1673196e77e8e25e
 
 **图1** 关系型数据库运作机制
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/GP97p4sSQy6YsjkDCj-VqQ/zh-cn_image_0000002589243821.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T052616Z&HW-CC-Expire=86400&HW-CC-Sign=2EBDC15099815B4FB6D8282B2BD74134BCD7057572394588185662C02DAE9BE2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/GP97p4sSQy6YsjkDCj-VqQ/zh-cn_image_0000002589243821.jpg)
 
 ## 约束限制
 

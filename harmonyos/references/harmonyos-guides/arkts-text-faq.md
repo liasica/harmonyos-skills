@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发调试�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:29:01+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:eb7b5e6e0229c8de9e93d913ef79d0d4b4c7875963fa5702a2f24ec8233c6b46
+content_hash: sha256:cdd0adddf5bad96a26f0678d8614695019b4d1fe925865cd8df31596576dd86d
 ---
 
 本文档介绍使用文本的常见问题并提供参考。
@@ -20,7 +20,7 @@ content_hash: sha256:eb7b5e6e0229c8de9e93d913ef79d0d4b4c7875963fa5702a2f24ec8233
 
 在Text组件上未设置宽度，当内容过长时，省略号与组件边缘之间会留有较大空白，且内容更新时省略号的位置会发生变化。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/B-8l5O2yTc6BU8OAD87D7g/zh-cn_image_0000002589244465.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052900Z&HW-CC-Expire=86400&HW-CC-Sign=B53CDDFC39C66E942C585C142352DCD5B5787709B67EFE1A20465CD27A9C59D7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/B-8l5O2yTc6BU8OAD87D7g/zh-cn_image_0000002589244465.gif)
 
 **原因分析**
 
@@ -65,7 +65,7 @@ content_hash: sha256:eb7b5e6e0229c8de9e93d913ef79d0d4b4c7875963fa5702a2f24ec8233
 30. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/TWDNrgRhTGSgYPbMdIB2VA/zh-cn_image_0000002558764658.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052900Z&HW-CC-Expire=86400&HW-CC-Sign=454A828162FFEB101D70E1F662DC1BDEFC91E4DBA9DE7BD6A63A5A849BB2A80D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/TWDNrgRhTGSgYPbMdIB2VA/zh-cn_image_0000002558764658.gif)
 
 ### Text组件如何实现行末展开样式
 
@@ -126,7 +126,7 @@ content_hash: sha256:eb7b5e6e0229c8de9e93d913ef79d0d4b4c7875963fa5702a2f24ec8233
 38. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/R0socLdYQpm-VVSEd6A6Ig/zh-cn_image_0000002558605002.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052900Z&HW-CC-Expire=86400&HW-CC-Sign=03706E9928106414520740964D4403E7BB7C775CC29B17CC3D0108F0374421BE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/R0socLdYQpm-VVSEd6A6Ig/zh-cn_image_0000002558605002.gif)
 
 ### 在文本前后添加自定义标签
 
@@ -259,7 +259,7 @@ content_hash: sha256:eb7b5e6e0229c8de9e93d913ef79d0d4b4c7875963fa5702a2f24ec8233
 
 [LengthMetric.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/text/LengthMetric.ets#L15-L112)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/cZgJbAoyQdqaFzZMMHv5Fg/zh-cn_image_0000002589324529.png?HW-CC-KV=V1&HW-CC-Date=20260429T052900Z&HW-CC-Expire=86400&HW-CC-Sign=23C0E01A38A22E1E94635F7F60C155ADCDE1203857196C2A78136E5FEF84C045)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/cZgJbAoyQdqaFzZMMHv5Fg/zh-cn_image_0000002589324529.png)
 
 ### Text组件如何实现表情与文字一起显示
 
@@ -374,7 +374,7 @@ emoji表情有时以表情符号的形式表示，如何将表情符号转换为
 
 [DisplayedTogether.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/text/DisplayedTogether.ets#L15-L120)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/BxTW48yHQIKHqByv8cWCvg/zh-cn_image_0000002589244467.png?HW-CC-KV=V1&HW-CC-Date=20260429T052900Z&HW-CC-Expire=86400&HW-CC-Sign=4D5DB87AEB798A6CCA783CBD4210001D911AAD921EAD21E0063C4D4B505C00A4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/BxTW48yHQIKHqByv8cWCvg/zh-cn_image_0000002589244467.png)
 
 ### 文本超长时如何展示
 
@@ -418,7 +418,7 @@ Text文本是自动折行的，当没有限制Text高度[height](../harmonyos-re
 
 [TextLong.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/text/TextLong.ets#L17-L46)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/Fxxcc5LQSDaXjTN-ed_lbQ/zh-cn_image_0000002558764660.png?HW-CC-KV=V1&HW-CC-Date=20260429T052900Z&HW-CC-Expire=86400&HW-CC-Sign=4AE1B1291B3C6465A0475DE6D4C13F0DCB1C70B55938CE3CA9F2D069F82FE8C9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/Fxxcc5LQSDaXjTN-ed_lbQ/zh-cn_image_0000002558764660.png)
 
 **解决措施二**
 
@@ -455,7 +455,7 @@ Text文本是自动折行的，当没有限制Text高度[height](../harmonyos-re
 
 [TextLongTow.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/text/TextLongTow.ets#L17-L47)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/7QyZQlpzS5qyPBwrQsdbDw/zh-cn_image_0000002558605004.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052900Z&HW-CC-Expire=86400&HW-CC-Sign=4910CBDAD9A8C38115480181F02EAAA2E26E298E1BE5EE099037EBF057013CDC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/7QyZQlpzS5qyPBwrQsdbDw/zh-cn_image_0000002558605004.gif)
 
 ### selection如何触发弹出自定义菜单并设置菜单字体大小
 
@@ -524,7 +524,7 @@ Text文本是自动折行的，当没有限制Text高度[height](../harmonyos-re
 54. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/E7YFM0aoQXWITFZGTkHTkw/zh-cn_image_0000002589324531.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052900Z&HW-CC-Expire=86400&HW-CC-Sign=7161C92C7626C549D23994DC14CA37B2036926AD2BC19B7915534B6C33F8E522)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/E7YFM0aoQXWITFZGTkHTkw/zh-cn_image_0000002589324531.gif)
 
 ### 如何屏蔽文本的长按手势
 
@@ -640,4 +640,4 @@ TextInput被遮挡时，如果通过[TextInputController](../harmonyos-reference
 38. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/N6p53fimQXSskNytJtW8rg/zh-cn_image_0000002589244469.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052900Z&HW-CC-Expire=86400&HW-CC-Sign=9811A05783707632226E0CC91196F9517D3F425C135E177240DFC343E6855235)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/N6p53fimQXSskNytJtW8rg/zh-cn_image_0000002589244469.gif)

@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:51:44+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:77cd4453fb63879601cfadd1a7cd9ef6bee2623fb45e4a08a9c1cd5852bd8258
+content_hash: sha256:6381dad76e83a495aeeee2f0d483d535a1c0b99a0cb8c910a383dae1b10e7d04
 ---
 
 该组件用来展示列表item分组，宽度默认充满[List](ts-container-list.md)组件，必须配合List组件来使用。
@@ -296,7 +296,7 @@ ListDataSource实现了LazyForEach数据源接口[IDataSource](ts-rendering-cont
 72. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/7rLg9IAlRzGlVp5HvQCsfQ/zh-cn_image_0000002558606480.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055141Z&HW-CC-Expire=86400&HW-CC-Sign=D7150C8951A08BC31A1F19F8DAC2A4417B1D3A735A212BD23A0A2388FF5DF997)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/7rLg9IAlRzGlVp5HvQCsfQ/zh-cn_image_0000002558606480.gif)
 
 ### 示例2（设置卡片样式）
 
@@ -358,7 +358,7 @@ ListDataSource实现了LazyForEach数据源接口[IDataSource](ts-rendering-cont
 53. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/XITlSSYySgONh2FQBzphxw/zh-cn_image_0000002589326007.jpeg?HW-CC-KV=V1&HW-CC-Date=20260429T055141Z&HW-CC-Expire=86400&HW-CC-Sign=43AD19CED47AB9CC37B5D9EC32D2DF5C8789EB46789C38A66CCAAD004605D786)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/XITlSSYySgONh2FQBzphxw/zh-cn_image_0000002589326007.jpeg)
 
 ### 示例3（设置Header/Footer）
 
@@ -496,7 +496,7 @@ ListDataSource说明及完整代码参考[示例1设置吸顶/吸底](ts-contain
 127. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/pTXMSczZTde2R1Ln36HQpw/zh-cn_image_0000002589245949.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055141Z&HW-CC-Expire=86400&HW-CC-Sign=7499918EA74849BF4018DDCCF6FA5D84C2382E77EED0802CB09A0E151B52F2F0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/pTXMSczZTde2R1Ln36HQpw/zh-cn_image_0000002589245949.gif)
 
 ### 示例4（设置多列布局）
 
@@ -660,4 +660,4 @@ ListDataSource说明及完整代码参考[示例1设置吸顶/吸底](ts-contain
 153. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/kQC-6IdMSCOQ45G9LoETDw/zh-cn_image_0000002558766140.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055141Z&HW-CC-Expire=86400&HW-CC-Sign=B78EED3DB5BAE46FE7F9AB0517404227761F31424DF442F241F160CA2A0094E1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/kQC-6IdMSCOQ45G9LoETDw/zh-cn_image_0000002558766140.gif)

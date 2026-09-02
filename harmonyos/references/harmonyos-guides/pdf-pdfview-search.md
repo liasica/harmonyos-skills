@@ -5,14 +5,14 @@ breadcrumb: 指南 > 应用服务 > PDF Kit（PDF服务） > PdfView预览组件
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:39:47+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:0e20232e9ae829eb3c5b76d256a9b7fa3433d52c554fb540ba7334a7a2985ce8
+content_hash: sha256:d4a499ee748ffe1b78be6cf3998f081d6a25c1894df7f3aae7128c98c0079186
 ---
 
 预览PDF文档时，可以对页面的关键词（英文字符不区分大小写）进行搜索并高亮显示，同时使用[setSearchIndex](../harmonyos-references/pdf-arkts-pdfviewmanage.md#setsearchindex)方法高亮显示指定的搜索结果。
 
 使用[getSearchIndex](../harmonyos-references/pdf-arkts-pdfviewmanage.md#getsearchindex)方法获取当前高亮的索引，可以使用[clearSearch](../harmonyos-references/pdf-arkts-pdfviewmanage.md#clearsearch)方法清除所有搜索结果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/jL9U4JuITrqvJFJU9rhgpw/zh-cn_image_0000002558765606.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053946Z&HW-CC-Expire=86400&HW-CC-Sign=D71E69CFF5D803AC80A7C1345F74A6A89C4403EA9593D4D98F9CA8437300D193)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/jL9U4JuITrqvJFJU9rhgpw/zh-cn_image_0000002558765606.jpg)
 
 ## 接口说明
 

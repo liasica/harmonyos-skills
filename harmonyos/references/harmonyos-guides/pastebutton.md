@@ -5,7 +5,7 @@ breadcrumb: 指南 > 系统 > 安全 > 程序访问控制 > 使用安全控件 >
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:30:37+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:7272a7b1753a98a178eaaf06fa11ebcff2d85acdd293419694e19ed62c881fd4
+content_hash: sha256:b2b3cb1dcff7662a9be33b60ed4986493551ab98b8276f566747dc260ff91364
 ---
 
 粘贴控件是一种特殊的系统安全控件，它允许应用在用户的授权下静默读取剪贴板数据。
@@ -16,7 +16,7 @@ content_hash: sha256:7272a7b1753a98a178eaaf06fa11ebcff2d85acdd293419694e19ed62c8
 
 粘贴控件效果如图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/UaLlxjsLSmaWk-zGzn08Rg/zh-cn_image_0000002558764858.gif?HW-CC-KV=V1&HW-CC-Date=20260429T053036Z&HW-CC-Expire=86400&HW-CC-Sign=F19882A54E3878B90E8EAB26C4CC0F379247548C63CB8FF1024818BD051B6742)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/UaLlxjsLSmaWk-zGzn08Rg/zh-cn_image_0000002558764858.gif)
 
 ## 约束与限制
 

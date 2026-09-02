@@ -5,7 +5,7 @@ breadcrumb: 最佳实践 > NDK开发 > 三方动态链接库集成
 category: best-practices
 scraped_at: 2026-04-29T14:11:53+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:64f80971fcaeb1e067511c47197cf0bc61237b0dd4ef5a3a73e0003e0cc731b1
+content_hash: sha256:c88ca08f379bbfb291a18265d412f0bb39f40b366e176d16f176ea0ea876618a
 ---
 
 ## 概述
@@ -40,9 +40,9 @@ content_hash: sha256:64f80971fcaeb1e067511c47197cf0bc61237b0dd4ef5a3a73e0003e0cc
 
 1. 将第一部分生成的so库文件置于entry/libs对应的架构目录下，将其对应的头文件置于src/main/cpp目录下。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/hHeiRclqRsKZ8tIhaNlBIQ/zh-cn_image_0000002193852148.png?HW-CC-KV=V1&HW-CC-Date=20260429T061146Z&HW-CC-Expire=86400&HW-CC-Sign=941A700FC946B5383F94132AB10A62238D811DD452C6C8B7D6E9F3AFBF2E2E0A)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/hHeiRclqRsKZ8tIhaNlBIQ/zh-cn_image_0000002193852148.png)
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/OeAoUgcqQT6wHlSxZWdE9w/zh-cn_image_0000002193852140.png?HW-CC-KV=V1&HW-CC-Date=20260429T061146Z&HW-CC-Expire=86400&HW-CC-Sign=DF1ED4F7F0ECAF4D4A13B563DC9A0E39425869D4C4FD6A134DADA3925EA7D6A4)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/OeAoUgcqQT6wHlSxZWdE9w/zh-cn_image_0000002193852140.png)
 2. 修改src/main/cpp目录下CMakeLists.txt文件配置，使用target\_link\_libraries命令将需要预加载的加法so库链接到项目中。
 
    ```
@@ -111,7 +111,7 @@ content_hash: sha256:64f80971fcaeb1e067511c47197cf0bc61237b0dd4ef5a3a73e0003e0cc
    [Index.ets](https://gitcode.com/HarmonyOS_Samples/NativeSoIntegration/blob/master/entry/src/main/ets/pages/Index.ets#L80-L81)
 
 **图1** 在Native侧通过编译动态链接库的方式引用so库完成加法运算效果展示  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/GwdKeKmQQqShqUVk9rdD6A/zh-cn_image_0000002194011732.png?HW-CC-KV=V1&HW-CC-Date=20260429T061146Z&HW-CC-Expire=86400&HW-CC-Sign=8B29E94A7A3F155331E175E46C58C8EF25F44B4FB62A6AB8E95AE03AD2E172CA "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/GwdKeKmQQqShqUVk9rdD6A/zh-cn_image_0000002194011732.png "点击放大")
 
 ### 通过调用dlopen的方式引用
 
@@ -125,7 +125,7 @@ content_hash: sha256:64f80971fcaeb1e067511c47197cf0bc61237b0dd4ef5a3a73e0003e0cc
 
 1. 将第一部分生成的so库文件置于entry/libs对应的架构目录下。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/L_urREuiS4CHsQapHHqkHA/zh-cn_image_0000002194011724.png?HW-CC-KV=V1&HW-CC-Date=20260429T061146Z&HW-CC-Expire=86400&HW-CC-Sign=F02927C736DFDEBA1266C3A133F487E102D7F0498E3D418A3434B01E380BCEE8)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/L_urREuiS4CHsQapHHqkHA/zh-cn_image_0000002194011724.png)
 2. 在ArkTS侧将so库的[沙箱路径](../harmonyos-guides/app-sandbox-directory.md)传递至Native侧。
 
    说明
@@ -204,7 +204,7 @@ content_hash: sha256:64f80971fcaeb1e067511c47197cf0bc61237b0dd4ef5a3a73e0003e0cc
    [Index.ets](https://gitcode.com/HarmonyOS_Samples/NativeSoIntegration/blob/master/entry/src/main/ets/pages/Index.ets#L101-L102)
 
 **图2** 在Native侧通过调用dlopen引用三方so库完成减法运算效果展示  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/KU4PAwz9QBCLOQrzjZutWA/zh-cn_image_0000002193852144.png?HW-CC-KV=V1&HW-CC-Date=20260429T061146Z&HW-CC-Expire=86400&HW-CC-Sign=DF901F5F333BD4F258AAEFCC6A088DB4CBB8D715154C7EB85BC8415A7805CAB4 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/KU4PAwz9QBCLOQrzjZutWA/zh-cn_image_0000002193852144.png "点击放大")
 
 ## 在ArkTS侧引用三方so库
 
@@ -226,10 +226,10 @@ content_hash: sha256:64f80971fcaeb1e067511c47197cf0bc61237b0dd4ef5a3a73e0003e0cc
 
 1. 将第一部分生成的so库文件置于entry/libs对应的架构目录下。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/Cj7SxmxKRIuauFbUYTFcBQ/zh-cn_image_0000002193852156.png?HW-CC-KV=V1&HW-CC-Date=20260429T061146Z&HW-CC-Expire=86400&HW-CC-Sign=6594CBD97D9720AB8AB42389A5FF59796FF286BAD18EE45A9D30CAF3E55EE1C2)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/Cj7SxmxKRIuauFbUYTFcBQ/zh-cn_image_0000002193852156.png)
 2. 在src/main/cpp/types下新建目录并将so库模块src/main/cpp/types目录下的index.d.ts、oh-package.json5移动到该目录下。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/bj6OGYsiRoC-oSjccPGf_w/zh-cn_image_0000002194011736.png?HW-CC-KV=V1&HW-CC-Date=20260429T061146Z&HW-CC-Expire=86400&HW-CC-Sign=3D463A20D2F47CD66C794D04C7A7F8E12066A92E175A4C8F3B412C78B658231E)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/bj6OGYsiRoC-oSjccPGf_w/zh-cn_image_0000002194011736.png)
 3. 在模块级oh-package.json5中声明乘法so库根目录路径。
 
    ```
@@ -254,7 +254,7 @@ content_hash: sha256:64f80971fcaeb1e067511c47197cf0bc61237b0dd4ef5a3a73e0003e0cc
    [Index.ets](https://gitcode.com/HarmonyOS_Samples/NativeSoIntegration/blob/master/entry/src/main/ets/pages/Index.ets#L117-L118)
 
 **图3** 在ArkTS侧引用已经适配Native的三方so库完成乘法运算效果展示  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/R8jPbVJxTd2i9oXar5FuOw/zh-cn_image_0000002194011728.png?HW-CC-KV=V1&HW-CC-Date=20260429T061146Z&HW-CC-Expire=86400&HW-CC-Sign=478CA39D0E9205C7333CDAA4FB04DCDF76FD01A2FD7B48C06092FA4EEE2EEA4D "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/R8jPbVJxTd2i9oXar5FuOw/zh-cn_image_0000002194011728.png "点击放大")
 
 ## 常见问题
 
@@ -285,7 +285,7 @@ content_hash: sha256:64f80971fcaeb1e067511c47197cf0bc61237b0dd4ef5a3a73e0003e0cc
 
 **示例如下**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/psBoc844ROKcI3_c3arbJQ/zh-cn_image_0000002193852152.png?HW-CC-KV=V1&HW-CC-Date=20260429T061146Z&HW-CC-Expire=86400&HW-CC-Sign=576914E038CA1897DE3260B4C5C2E7598DE5EEDA0900DE01491A756B3BA1ED06)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/sTuCTIA1SSSOROF1yr3c_g/zh-cn_image_0000002194011740.png?HW-CC-KV=V1&HW-CC-Date=20260429T061146Z&HW-CC-Expire=86400&HW-CC-Sign=9E92C1B0518ACF3889FFCE6AEE1C62267805ADB17E3024ED49980AB2C1717217)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/psBoc844ROKcI3_c3arbJQ/zh-cn_image_0000002193852152.png)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/sTuCTIA1SSSOROF1yr3c_g/zh-cn_image_0000002194011740.png)
 
 ## 示例代码
 

@@ -5,7 +5,7 @@ breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:31:29+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:44f6fa45499ca55e6b0e9b8cecc0b0aab6e7c19963cdf4ddd3dc3363f3a81811
+content_hash: sha256:2ba4ef32254fa201680c614594643c903bb11e4c4cfec1d9f82eaeaf7b71811f
 ---
 
 注意
@@ -40,7 +40,7 @@ content_hash: sha256:44f6fa45499ca55e6b0e9b8cecc0b0aab6e7c19963cdf4ddd3dc3363f3a
 
    开发者需要在华为开发者联盟的[API Console](https://developer.huawei.com/consumer/cn/console/overview)上创建并下载服务账号的密钥文件，相关创建步骤请参见[API Console操作指南-服务账号密钥](../start/api-0000001062522591.md#section91275725415)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/1dgCM3wfR3m1fGBQB7LMvw/zh-cn_image_0000002589324751.png?HW-CC-KV=V1&HW-CC-Date=20260429T053127Z&HW-CC-Expire=86400&HW-CC-Sign=CE2A0B2ED2335F0616DDA7347213967DCA4BCBCD8E0F5259EC6033486024FFD1)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/1dgCM3wfR3m1fGBQB7LMvw/zh-cn_image_0000002589324751.png)
 
    说明
 

@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-file-albumpickercomponent
-title: @ohos.file.AlbumPickerComponent (Album Picker组件)
+title: "@ohos.file.AlbumPickerComponent (Album Picker组件)"
 breadcrumb: API参考 > 媒体 > Media Library Kit（媒体文件管理服务） > ArkTS组件 > @ohos.file.AlbumPickerComponent (Album Picker组件)
 category: harmonyos-references
 scraped_at: 2026-04-28T08:14:18+08:00

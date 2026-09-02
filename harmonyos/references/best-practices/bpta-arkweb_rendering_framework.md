@@ -5,7 +5,7 @@ breadcrumb: 最佳实践 > 应用框架 > ArkWeb > ArkWeb渲染框架适配
 category: best-practices
 scraped_at: 2026-04-29T14:11:03+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:10334aa6c086594d69b9e6ed423e3fc9372ffb0a612aec505d874ca7c11eb31c
+content_hash: sha256:a56270817bcc4344a2fb99ec6a08a52bbc0c90eb89f3f464d2fd613b981e55e1
 ---
 
 ## 概述
@@ -16,7 +16,7 @@ Hybrid应用开发是介于Web应用和系统应用两者之间的应用开发�
 
 ### 整体架构
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/GZqSF3eRQvGXTBbcXuqf4Q/zh-cn_image_0000002194010404.png?HW-CC-KV=V1&HW-CC-Date=20260429T061102Z&HW-CC-Expire=86400&HW-CC-Sign=1697E72404ADF72376AD372FD419D7FCB12DB23F7226D2049B9D2C6822AB2D37)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/GZqSF3eRQvGXTBbcXuqf4Q/zh-cn_image_0000002194010404.png)
 
 1. Ark进程：由ArkTS引擎提供运行时，具备调用系统API的能力。应用启动从Ark进程进入，完成EntryAbility的初始化并创建HarmonyOS应用页面。Ark进程可以动态或者静态创建Webview运行时环境，并加载html/css/js资源文件。
 2. Webview进程：默认支持标准W3C API，对ArkTS侧资源的访问有限制。Webview渲染能力主要由Web组件提供。用户可以通过Web组件的属性配置是否开启同层渲染能力、是否允许执行JavaScript脚本等。
@@ -26,7 +26,7 @@ Hybrid应用开发是介于Web应用和系统应用两者之间的应用开发�
 
 Hybrid应用鸿蒙化方案主要集中在双端通信JSBridge实现、拓展接口实现和基于同层渲染的原生组件实现。JSBridge是前端与ArkTS进行双向通信的桥梁。通过JSBridge，前端应用能访问到ArkTS侧实现的拓展接口，实现更丰富的业务功能。视图层方面，可以使用系统提供的同层渲染能力，把部分性能要求比较高的前端组件改成ArkTS实现，以达到更好的体验效果。下图蓝色背景的方框图展示了上述三点所处的框架位置：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/nVmfJjiwRVGJD20a4wJY8w/zh-cn_image_0000002229450681.png?HW-CC-KV=V1&HW-CC-Date=20260429T061102Z&HW-CC-Expire=86400&HW-CC-Sign=68DF8FA231CECA3B79CABF4C65C774F76E0B7299F38830F26CE55A2620330161)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/nVmfJjiwRVGJD20a4wJY8w/zh-cn_image_0000002229450681.png)
 
 ## 业务实现中的关键点
 
@@ -84,7 +84,7 @@ JSBridge扮演Webview进程与ArkUI主进程沟通的桥梁，是一种双向通
 
 通过对比，javaScriptProxy注入对象的方式构造JSBridge是一个比较好的技术选型。建议JSBridge的实现基于注入机制进行设计，并考虑分层设计来提高其通用性和灵活性，下图展示一种分层设计思路：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/nKVmt6sSQdmDgSv9mib4NA/zh-cn_image_0000002229450697.png?HW-CC-KV=V1&HW-CC-Date=20260429T061102Z&HW-CC-Expire=86400&HW-CC-Sign=8141DC2BA6FD3C121120C72F8C505865C701E8255A3729A010D54AEF057EFC94)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/nKVmt6sSQdmDgSv9mib4NA/zh-cn_image_0000002229450697.png)
 
 1. 通信层：对上层屏蔽具体的通信机制，主要负责Web侧和ArkTS侧数据的传递，但不解析数据的业务含义，不关注传递的数据内容。数据可以序列化为字符串进行传递或者以object对象进行传递。使用javaScriptProxy代理机制实现的通信层代码示例如下：
 
@@ -165,7 +165,7 @@ JSBridge的设计是否合理关系到应用的性能，开发者也可以考虑
 
 H5业务设计中除了使用W3C API外，还可以使用ArkTS侧API拓展来访问设备。如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/3BZpw6Q1SIyiWPy-RXZ3YQ/zh-cn_image_0000002229450693.png?HW-CC-KV=V1&HW-CC-Date=20260429T061102Z&HW-CC-Expire=86400&HW-CC-Sign=56F0D78ADFA462713DF3C4A397A187238945570622C12AF1F5AEE7995961EACB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/3BZpw6Q1SIyiWPy-RXZ3YQ/zh-cn_image_0000002229450693.png)
 
 系统高阶API是对系统API的一层封装，实现更符合业务要求的接口。拓展API的规范设计具有较大的灵活性，建议对API的参数，返回值类型格式进行限制，使用基本类型或者简单的字典对象，尽量避免使用复杂的类型的参数或返回值，可以参考比较成熟的小程序框架，其规范格式可以分成三种类型：
 
@@ -175,7 +175,7 @@ H5业务设计中除了使用W3C API外，还可以使用ArkTS侧API拓展来访
 
 设计过程中可以把API都汇聚到一个对象作为属性字段存在，方便在切面视角增加统一的参数、返回值加工处理，拦截处理。示意图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/QXuSUyqPQCaV62aQ0CK6nA/zh-cn_image_0000002229450701.png?HW-CC-KV=V1&HW-CC-Date=20260429T061102Z&HW-CC-Expire=86400&HW-CC-Sign=BC2B48F271C93752C967D70AAB78F637EA0572B40CED0D11B1503EFCB9BF45B7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/QXuSUyqPQCaV62aQ0CK6nA/zh-cn_image_0000002229450701.png)
 
 ### 组件鸿蒙化
 
@@ -183,11 +183,11 @@ HarmonyOS提供同层渲染能力把原生组件直接渲染到WebView层级，�
 
 开发角度：前端页面开发者使用<embed>标签来表示使用原生组件；应用开发者使用NodeContainer关联离屏节点树，使用makeNode()接口在H5页面上渲染出组件。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/sdTZFxyfSQSrDd1dOs2HrA/zh-cn_image_0000002229450685.png?HW-CC-KV=V1&HW-CC-Date=20260429T061102Z&HW-CC-Expire=86400&HW-CC-Sign=F186FA9E98A29D140133CC145DD67152191D43578E278CA85C2A68D435D2157E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/sdTZFxyfSQSrDd1dOs2HrA/zh-cn_image_0000002229450685.png)
 
 离屏节点动态上下树：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/Y8wpslDKSruu9kNiDa-sHg/zh-cn_image_0000002229450689.png?HW-CC-KV=V1&HW-CC-Date=20260429T061102Z&HW-CC-Expire=86400&HW-CC-Sign=625CAA074AB0E533301AA9103B9DF34EDFD618E3FDF57F07DADF5322D0AE3E59)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/Y8wpslDKSruu9kNiDa-sHg/zh-cn_image_0000002229450689.png)
 
 1）开发者初始构建一个NodeContainer对象表示一个空的占位符。NodeContainer里面内容为空时，在初始化的时候大小为0，不参与布局。
 

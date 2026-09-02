@@ -5,7 +5,7 @@ breadcrumb: 指南 > 系统 > 硬件 > Driver Development Kit（驱动开发服�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:33:32+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:38e2265023114b187998fe6cf91a6cf9ba59778ce72f692daafea739f3458c01
+content_hash: sha256:8153e5708de78168bfc378cf80a088f91a6bd944cb3a9902e22e29509de1cc9b
 ---
 
 ## 简介
@@ -31,7 +31,7 @@ UsbDdk（USB Driver Development Kit）是为开发者提供的USB驱动程序开
 
 **图1** UsbDdk调用原理
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/Av3OichPRt64YLrHnMLO0w/zh-cn_image_0000002589244779.png?HW-CC-KV=V1&HW-CC-Date=20260429T053331Z&HW-CC-Expire=86400&HW-CC-Sign=F321AC4BD1A676FC218F934BD87BF38E539090513B1C03EBC47A126FDADE1859)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/Av3OichPRt64YLrHnMLO0w/zh-cn_image_0000002589244779.png)
 
 ## 约束与限制
 

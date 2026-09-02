@@ -5,18 +5,18 @@ breadcrumb: FAQ > DevEco Studio > 界面预览 > 预览告警“There are proper
 category: harmonyos-faqs
 scraped_at: 2026-04-29T14:20:18+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:ee491566e45092bebb69d01f60c915df550e4dacc5476175c937a7ea409e72ed
+content_hash: sha256:8d91125e256221c84e0e91862db5cd85e233cc2c8027ddca2b4881145776f03d
 ---
 
 **问题现象**
 
 启动预览后，预览窗口白屏，并显示错误信息：“Preview failed. View details in the PreviewerLog window.”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/2uvQOuqZSdKVwafCxMaejw/zh-cn_image_0000002194317976.png?HW-CC-KV=V1&HW-CC-Date=20260429T062017Z&HW-CC-Expire=86400&HW-CC-Sign=AD532E37755565C2FAC77693E03EC211BBD3EDB8FBA43148E9A974B95499DD75 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/2uvQOuqZSdKVwafCxMaejw/zh-cn_image_0000002194317976.png "点击放大")
 
 此时下方PreviewLog窗口出现告警信息：“There are properties not initialized.”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/JxaYAw2LTOOUnSBG5WLkWQ/zh-cn_image_0000002194158356.png?HW-CC-KV=V1&HW-CC-Date=20260429T062017Z&HW-CC-Expire=86400&HW-CC-Sign=8214017C7830EA266DEE1610F55346CBB4BE8E0AC8C91F2A710D0F14CB023AEA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/JxaYAw2LTOOUnSBG5WLkWQ/zh-cn_image_0000002194158356.png)
 
 **解决措施**
 

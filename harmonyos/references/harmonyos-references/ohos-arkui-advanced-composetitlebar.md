@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:52:58+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:a86e40a02861653990ddabc785ee61fd0f6324636dff46270c49447ade12d9fe
+content_hash: sha256:c008ff5ed7e97c81559901524aa1220089c523897505c0a7bcc57c334de14bc4
 ---
 
 一种普通标题栏，支持设置标题、头像（可选）和副标题（可选），可用于一级页面、二级及其以上界面配置返回键。
@@ -161,7 +161,7 @@ PhonePC/2in1TabletTVWearable
 70. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/Fvd_c6X7QcWlIwBJgcW9-Q/zh-cn_image_0000002558766626.png?HW-CC-KV=V1&HW-CC-Date=20260429T055257Z&HW-CC-Expire=86400&HW-CC-Sign=E04403611DC495FC364F4323DC717B8765B40D1C7B91C04A220C25D772A43EE2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/Fvd_c6X7QcWlIwBJgcW9-Q/zh-cn_image_0000002558766626.png)
 
 ### 示例2（右侧自定义按钮播报）
 
@@ -256,7 +256,7 @@ PhonePC/2in1TabletTVWearable
 86. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/TIr24t8PQv66YpCKSPcwfg/zh-cn_image_0000002558606966.png?HW-CC-KV=V1&HW-CC-Date=20260429T055257Z&HW-CC-Expire=86400&HW-CC-Sign=DCBBBBA5228CC6B0240DCB3A1C49386D16903A0E630A21F5E999262587C88730)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/TIr24t8PQv66YpCKSPcwfg/zh-cn_image_0000002558606966.png)
 
 ### 示例3（设置Symbol类型图标）
 
@@ -338,4 +338,4 @@ PhonePC/2in1TabletTVWearable
 73. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/pBYDMNQ9SGaqU3FP2sQnYA/zh-cn_image_0000002589326493.png?HW-CC-KV=V1&HW-CC-Date=20260429T055257Z&HW-CC-Expire=86400&HW-CC-Sign=B5A7FEA5B4AA7C61450035D6E8A1CD064F8AC391BD144C6F73CEA73D6E588C19)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/pBYDMNQ9SGaqU3FP2sQnYA/zh-cn_image_0000002589326493.png)

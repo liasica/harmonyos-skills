@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:52:53+08:00
 doc_updated_at: 2026-03-27
-content_hash: sha256:7e1c6755e488e491523ae904d8b3282cc3380aadbebb6c0bbc51fa4adfc24d57
+content_hash: sha256:6ea92893552149acb621db7467097a58a4af7866ada86ca61608a0c1bb5831fe
 ---
 
 当跳转的目标[NavDestination](ts-basic-components-navdestination.md)在不同的hsp分包，且未被主包依赖，首次运行元服务只会下载安装主包，需要使用NavPushPathHelper先下载安装相应hsp分包，再将指定的[NavDestination](ts-basic-components-navdestination.md)页面信息入栈。使[Navigation](ts-basic-components-navigation.md)支持动态加载hsp分包后再跳转。
@@ -787,4 +787,4 @@ PhonePC/2in1TabletTVWearable
 12. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/cPGe58WtSeCE83nwtQVuxA/zh-cn_image_0000002558606954.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055252Z&HW-CC-Expire=86400&HW-CC-Sign=A03DBF4082C7976CC9DFC9A0F445E29A994D6CD1028DAD3D553A84A355E7C896)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/cPGe58WtSeCE83nwtQVuxA/zh-cn_image_0000002558606954.gif)

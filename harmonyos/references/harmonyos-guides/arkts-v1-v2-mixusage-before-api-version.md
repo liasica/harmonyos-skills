@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS�
 category: harmonyos-guides
 scraped_at: 2026-04-28T07:39:19+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:ad868b9489f05c82862691d0ed3b755b3bd76dbaede8e56a4feef99ffcfa8596
+content_hash: sha256:6340ae694e4855cde579deffca4f0aa25d472b0a205e39a3aac54f5589bb90ef
 ---
 
 ## 概述
@@ -306,7 +306,7 @@ content_hash: sha256:ad868b9489f05c82862691d0ed3b755b3bd76dbaede8e56a4feef99ffcf
 
 V2装饰器不能和@Observed一起使用，V1传递@Observed装饰的class类给V2自定义组件时，不直接用@Param接收数据，如下图所示先定义V1BridgeComponent组件作为桥接层。在桥接层监听V1组件的数据，同步到V2定义的单例数据。V1组件直接使用V1BridgeComponent，在V1BridgeComponent中引入V2自定义组件。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/6YgFmXEgToCiXXHlConnBg/zh-cn_image_0000002552957632.png?HW-CC-KV=V1&HW-CC-Date=20260427T233916Z&HW-CC-Expire=86400&HW-CC-Sign=C2CC98955012786C31E8B877313AA10C46B6A7E79AA6B72BDF693ADB275C06FD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/6YgFmXEgToCiXXHlConnBg/zh-cn_image_0000002552957632.png)
 
 具体实现可参考以下示例代码：
 

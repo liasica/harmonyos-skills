@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用服务 > Payment Kit（鸿蒙支付服务） > 用户
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:39:34+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:34ac425b02e448c3987224bea4e3dee0cb22feb0e816441c3581fd093f974045
+content_hash: sha256:99eb326f1a59f6f0bc362c1b3bbbb812e11eb7da2073c80bb542e63310afb331
 ---
 
 ## 场景介绍
@@ -18,7 +18,7 @@ content_hash: sha256:34ac425b02e448c3987224bea4e3dee0cb22feb0e816441c3581fd093f9
 
 实名信息验证授权页面展示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/vmTb-MgPQ2qIGTacO7JoQw/zh-cn_image_0000002589325465.png?HW-CC-KV=V1&HW-CC-Date=20260429T053933Z&HW-CC-Expire=86400&HW-CC-Sign=DFC52518609C839FB8DBDE99FF04C95B6C84850853BC25F7D004CCB68377DBB4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/vmTb-MgPQ2qIGTacO7JoQw/zh-cn_image_0000002589325465.png)
 
 ## 接入流程
 
@@ -33,7 +33,7 @@ content_hash: sha256:34ac425b02e448c3987224bea4e3dee0cb22feb0e816441c3581fd093f9
 
 开发者通过接入Payment Kit实名信息验证授权能力，可以简便快捷地实现用户实名信息验证或获取用户授权后的实名信息（可二选一）。具体接入流程如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/WoS5DVI5T6-PZPf_ZOgkVQ/zh-cn_image_0000002589245403.png?HW-CC-KV=V1&HW-CC-Date=20260429T053933Z&HW-CC-Expire=86400&HW-CC-Sign=D202D869D77D4FFC12FE4524A6A57EAFD715163E122643CC0956522C728F8342)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/WoS5DVI5T6-PZPf_ZOgkVQ/zh-cn_image_0000002589245403.png)
 
 ### 实名信息验证
 

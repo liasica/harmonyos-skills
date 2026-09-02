@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:27:25+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:9bfc894ae30110b937fb7d5be7fcf761122eab37b28112f4bac16bdbf5c5494a
+content_hash: sha256:eb3d3c458082e379741522be4ad2184b859e426c9c0d6daa52082921a9afb879
 ---
 
 为了实现状态管理V2与[animateTo](../harmonyos-references/arkts-apis-uicontext-uicontext.md#animateto)等动效的同步刷新，开发者可以使用[applySync](../harmonyos-references/js-apis-statemanagement.md#applysync22)、[flushUpdates](../harmonyos-references/js-apis-statemanagement.md#flushupdates22)或[flushUIUpdates](../harmonyos-references/js-apis-statemanagement.md#flushuiupdates22)接口。
@@ -77,7 +77,7 @@ content_hash: sha256:9bfc894ae30110b937fb7d5be7fcf761122eab37b28112f4bac16bdbf5c
   46. }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/lgIXogfyQkCAW7wXUQYh5w/zh-cn_image_0000002589243919.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052723Z&HW-CC-Expire=86400&HW-CC-Sign=3B0F798554CA5D4651EBE0CF853EF7E2FEC7942AD5E1C43FB035F186831CF41C)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/lgIXogfyQkCAW7wXUQYh5w/zh-cn_image_0000002589243919.gif)
 * flushUpdates接口用于同步刷新在调用该函数之前所有的状态变量修改，包括更新@Computed计算、@Monitor回调以及重新渲染UI节点。
 
   ```
@@ -128,7 +128,7 @@ content_hash: sha256:9bfc894ae30110b937fb7d5be7fcf761122eab37b28112f4bac16bdbf5c
   45. }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/KsxMwlNmQVqwkA16ufcfKw/zh-cn_image_0000002589243919.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052723Z&HW-CC-Expire=86400&HW-CC-Sign=818F9FB870EA3CE242A119EDF8208F5D05BA40739E5BDDFFF235E7ADD15098A0)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/KsxMwlNmQVqwkA16ufcfKw/zh-cn_image_0000002589243919.gif)
 * 上述的applySync、flushUpdates接口都会同步执行@Computed计算和@Monitor回调，这会使得在上述示例代码中，一次点击事件里触发了两次@Monitor回调，这可能会与开发者的预期不符，因此引入了flushUIUpdates接口，该接口仅用于同步刷新在调用该函数之前所有的UI节点，不会执行@Computed计算和@Monitor回调。
 
   ```
@@ -383,7 +383,7 @@ content_hash: sha256:9bfc894ae30110b937fb7d5be7fcf761122eab37b28112f4bac16bdbf5c
 49. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/fwDHRdTRSXml4r6OqAClLw/zh-cn_image_0000002558764112.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052723Z&HW-CC-Expire=86400&HW-CC-Sign=CFFE20DCEDF2CB10D3E477AAE39955FF0F669A2B1319BF92EA7DFFF71BF61167)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/fwDHRdTRSXml4r6OqAClLw/zh-cn_image_0000002558764112.gif)
 
 ### 路由场景
 
@@ -457,4 +457,4 @@ content_hash: sha256:9bfc894ae30110b937fb7d5be7fcf761122eab37b28112f4bac16bdbf5c
 27. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/vg9_GckITJC6lP5QDNaDIw/zh-cn_image_0000002558604456.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052723Z&HW-CC-Expire=86400&HW-CC-Sign=0D1FD590EFBA944B3D68ABF3D2E03899E15AAF13EFD30B2278CD1C52BD90EAC3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/vg9_GckITJC6lP5QDNaDIw/zh-cn_image_0000002558604456.gif)

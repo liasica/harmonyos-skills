@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > UI Design Kit（UI设计套件） > ArkTS
 category: harmonyos-references
 scraped_at: 2026-04-29T13:57:14+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:57c6c789fabc85ad974ae44591fd7cb571a258bcb5c84f2c901b8b48bc1c851a
+content_hash: sha256:751954e468ad7fbac986764b3a612f2345aacd5eeacfb201eb14e5da1600cd1e
 ---
 
 本模块提供导航组件的能力，默认支持标题栏随内容区滚动的动态模糊样式。6.0.0(20)版本以后，推荐使用[bindToScrollable](ui-design-hdsnavigation.md#bindtoscrollable)、[bindToNestedScrollable](ui-design-hdsnavigation.md#bindtonestedscrollable)属性绑定导航组件和可滚动容器组件后，再使用导航组件滚动相关的功能，从而获得更优的体验。如滚动生效动态模糊样式，标题栏随内容区滚动动态显隐功能等。
@@ -1541,7 +1541,7 @@ PhonePC/2in1TabletTV
 120. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/dubJhekFSn6pGbGTIMDJog/zh-cn_image_0000002558607386.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055426Z&HW-CC-Expire=86400&HW-CC-Sign=E03B8F36EEF13D30AC5CB5E62F254D93C1150DF2070708DFDC88A52D3DF75598 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/dubJhekFSn6pGbGTIMDJog/zh-cn_image_0000002558607386.gif "点击放大")
 
 ### 设置菜单消息提醒
 
@@ -1605,7 +1605,7 @@ PhonePC/2in1TabletTV
 55. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/mjO1qLzzTnqQljaqTCl06A/zh-cn_image_0000002589326915.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T055426Z&HW-CC-Expire=86400&HW-CC-Sign=AFFF76FA5C6D401F54DF5E90D1C2BCBE08DFE513622B4E4E0E6B4BA823CB1B52 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/mjO1qLzzTnqQljaqTCl06A/zh-cn_image_0000002589326915.jpg "点击放大")
 
 ### 设置自定义区域
 
@@ -1693,7 +1693,7 @@ PhonePC/2in1TabletTV
 79. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/RBwlYxa_SsK85kRAgchpVQ/zh-cn_image_0000002589246855.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T055426Z&HW-CC-Expire=86400&HW-CC-Sign=166F9DCE3AFC272CD9E546A71B295AD63AA4BF5671488EAF5FD92C04B09E7434 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/RBwlYxa_SsK85kRAgchpVQ/zh-cn_image_0000002589246855.jpg "点击放大")
 
 ### 设置标题栏的动态显隐
 
@@ -1760,7 +1760,7 @@ PhonePC/2in1TabletTV
 58. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/Z5LDDnbiQU6JoFHqb45Zxw/zh-cn_image_0000002558767048.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055426Z&HW-CC-Expire=86400&HW-CC-Sign=89273320A8617A14032A646437CEB7A33AAA4B8E80C07A3747302CA43AB935CB "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/Z5LDDnbiQU6JoFHqb45Zxw/zh-cn_image_0000002558767048.gif "点击放大")
 
 ### 设置标题栏图标样式
 
@@ -1837,7 +1837,7 @@ PhonePC/2in1TabletTV
 68. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/CT-YV9MbRV6fWlV7Zq5fbw/zh-cn_image_0000002558607388.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T055426Z&HW-CC-Expire=86400&HW-CC-Sign=807754416BC676B699075E2D6BED814CB2A35D77408C6DF79DE4180C83F26CA1 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/CT-YV9MbRV6fWlV7Zq5fbw/zh-cn_image_0000002558607388.jpg "点击放大")
 
 ### 半模态标题栏样式
 
@@ -1930,7 +1930,7 @@ PhonePC/2in1TabletTV
 84. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/x2qXxhQoQ3yqVr69a7k8SA/zh-cn_image_0000002589326917.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T055426Z&HW-CC-Expire=86400&HW-CC-Sign=3F8905F1D81AA0C52B49D4F5CEF407F356E1545891C05845DB46CB0A83A9802E "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/x2qXxhQoQ3yqVr69a7k8SA/zh-cn_image_0000002589326917.jpg "点击放大")
 
 ### 图标上绑定自定义menu
 
@@ -2018,7 +2018,7 @@ PhonePC/2in1TabletTV
 79. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/ikRKCeM_QYG52Cf8Mjd4DA/zh-cn_image_0000002589246857.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055426Z&HW-CC-Expire=86400&HW-CC-Sign=D66ED7EE92D2E11EE96A1A7A3A23406D9BD5F94B547779B5A975BC28F32FAA3B "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/ikRKCeM_QYG52Cf8Mjd4DA/zh-cn_image_0000002589246857.gif "点击放大")
 
 ### 设置应用内多窗图标
 
@@ -2071,7 +2071,7 @@ PhonePC/2in1TabletTV
 44. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/hNr_pwuwQ0adOsFg383Mpg/zh-cn_image_0000002558767050.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T055426Z&HW-CC-Expire=86400&HW-CC-Sign=E3DCEAD70C4A342970DB5AFAC1CD9967EA91E66B7E88E9352CEB64B27841C878 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/hNr_pwuwQ0adOsFg383Mpg/zh-cn_image_0000002558767050.jpg "点击放大")
 
 ### 设置HdsNavigation双栏模式
 
@@ -2138,7 +2138,7 @@ PhonePC/2in1TabletTV
 58. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/Ap2ZAvmoSm6MEKRxorakSg/zh-cn_image_0000002558607390.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055426Z&HW-CC-Expire=86400&HW-CC-Sign=18B73F8DE13C010BA5A2981DB90457FD959374B69B0E33E5299BF500D02896DA "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/Ap2ZAvmoSm6MEKRxorakSg/zh-cn_image_0000002558607390.gif "点击放大")
 
 ### 设置标题栏沉浸式样式
 
@@ -2232,4 +2232,4 @@ PhonePC/2in1TabletTV
 85. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/nn0_a121T6anB9etTBtRVQ/zh-cn_image_0000002589326919.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055426Z&HW-CC-Expire=86400&HW-CC-Sign=278781456C8025051B1CDF2BD7CF0DCB8ED943AA11E62B7EFC819D96D0141F57 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/nn0_a121T6anB9etTBtRVQ/zh-cn_image_0000002589326919.gif "点击放大")

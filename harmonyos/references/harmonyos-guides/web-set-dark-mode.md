@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 设置基本属性�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:29:15+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:6ec768110769c5cb170491ced2f6835edfb96e3de6067e0a9e73e494bc3e9113
+content_hash: sha256:80743d1043860d2517229a56b26d1e63f68ecc3c14f9f04241a32aea8a09f710
 ---
 
 系统提供浅色和深色的主题模式供用户选择。深色模式在低光环境下能够降低屏幕亮度，减少光线刺激，改善阅读体验。Web组件根据网页样式进行渲染。若网页未适配深色模式，会造成与系统主题的割裂感。网页开发者应考虑用户的主题偏好，适配深色模式，以保证用户体验的一致性。
@@ -65,7 +65,7 @@ ArkWeb提供灵活控制Web组件深色模式的能力，支持独立于系统�
 
   **图1** color-scheme效果图
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/AizjUAD5RtmzNssx17-GmA/zh-cn_image_0000002558764698.png?HW-CC-KV=V1&HW-CC-Date=20260429T052914Z&HW-CC-Expire=86400&HW-CC-Sign=8E0C0B0976C268149226E0CC10E6FF76FCD330C924DDF4125AC3EE9F12A6BABD)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/AizjUAD5RtmzNssx17-GmA/zh-cn_image_0000002558764698.png)
 * prefers-color-scheme是CSS中的一个媒体查询功能，可以检测系统的主题颜色。网页开发者可以通过该特性，为不同的系统主题颜色定义不同的网页CSS样式，以适应用户的主题偏好。使用样例如下：
 
   ```
@@ -100,7 +100,7 @@ ArkWeb提供灵活控制Web组件深色模式的能力，支持独立于系统�
 
   **图2** prefers-color-scheme效果图
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/W6u11Br-QHyn31wizUzIfQ/zh-cn_image_0000002558605044.png?HW-CC-KV=V1&HW-CC-Date=20260429T052914Z&HW-CC-Expire=86400&HW-CC-Sign=F7CC362839F1F4F632B4B5F185C87BE9BFB2EB0DABD23FFEF671AADD9545D090)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/W6u11Br-QHyn31wizUzIfQ/zh-cn_image_0000002558605044.png)
 
 ## Web深色模式设置
 
@@ -177,7 +177,7 @@ darkModePage.html页面在深色模式关闭、深色模式开启及强制深色
 
 **图3** Web深色模式和强制深色模式效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/sqSOF7jDS4al35sRkAHj4w/zh-cn_image_0000002589324569.png?HW-CC-KV=V1&HW-CC-Date=20260429T052914Z&HW-CC-Expire=86400&HW-CC-Sign=E2841EB01EB0843971D1BF555354378447E4456A65D542E0A943E693A5DB7860)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/sqSOF7jDS4al35sRkAHj4w/zh-cn_image_0000002589324569.png)
 
 ## Web组件背景色适配
 

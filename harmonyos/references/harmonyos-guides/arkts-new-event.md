@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-event
-title: @Event装饰器：规范组件输出
+title: "@Event装饰器：规范组件输出"
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理（V2） > 管理组件拥有的状态 > @Event装饰器：规范组件输出
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:27:18+08:00

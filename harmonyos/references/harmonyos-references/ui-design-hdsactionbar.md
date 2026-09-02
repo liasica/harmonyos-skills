@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > UI Design Kit（UI设计套件） > ArkTS
 category: harmonyos-references
 scraped_at: 2026-04-29T13:57:12+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:cb7406f53e0a9e413d5c1cad71b3c3a7995493d3bbf275bbf9a6eb47c5b854cb
+content_hash: sha256:9cd5eca9f9370c714f81d935bea56695648c1baf0b76f2e9fd5fc5dc6b414296
 ---
 
 提供多个按钮操作，如果有主按钮则支持展开和收缩的动效，其内部包含了0或1个主按钮、0或多个非主按钮和背板，其中主按钮可以用户自定义CustomBuilder。
@@ -295,4 +295,4 @@ HdsActionBar提供一种多按钮组件。
 
 效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/8LVvCdjzQBCDSdRKE8HqTA/zh-cn_image_0000002589246861.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055711Z&HW-CC-Expire=86400&HW-CC-Sign=7BC02C9EB4A30E777F775E7B341449A8849BF45EACEAA1EA446AB668E1D05182)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/8LVvCdjzQBCDSdRKE8HqTA/zh-cn_image_0000002589246861.gif)

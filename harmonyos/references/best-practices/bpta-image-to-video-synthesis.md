@@ -5,7 +5,7 @@ breadcrumb: 最佳实践 > 媒体 > 音频和视频 > 图片合成视频开发�
 category: best-practices
 scraped_at: 2026-04-29T14:11:41+08:00
 doc_updated_at: 2026-04-01
-content_hash: sha256:d343a5a559281bfae61a6421a419bc0a58d10347f2e6d106cc1b7564fd7f2213
+content_hash: sha256:dcb12777c86da7da74728c612970c17b15e8ecb8112f1e8af8e43de72af8024d
 ---
 
 ## 概述
@@ -24,13 +24,13 @@ content_hash: sha256:d343a5a559281bfae61a6421a419bc0a58d10347f2e6d106cc1b7564fd7
 
 以将图库中的图片转换为MP4文件为例，本场景展示使用图片和编解码的基础能力来实现图片合成视频的功能。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/xgC0AOLHQ7ydMSvoHepNyw/zh-cn_image_0000002529433631.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061138Z&HW-CC-Expire=86400&HW-CC-Sign=ACF9738E8179B5BE5C0D3B5C8A33C8C5E57F5381EA3B0BF09C896AF87D0EED4B "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/xgC0AOLHQ7ydMSvoHepNyw/zh-cn_image_0000002529433631.gif "点击放大")
 
 ### 实现原理
 
 [Image Kit](../harmonyos-guides/image-overview.md)中的[PixelMap](../harmonyos-references/arkts-apis-image-pixelmap.md)是用于读取或写入图像数据以及获取图像信息的图像像素类。在图片合成视频的过程中，首先将图片解码为PixelMap，然后使用[Buffer模式](../harmonyos-guides/video-encoding.md#buffer模式)编码，将PixelMap中保存的图像数据复制到编码器的输入buffer中，未压缩的YUV输出成已压缩的视频码流H.264，编码完成后封装成视频文件。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/3XUtnc3-RnCYucFz1E-nVQ/zh-cn_image_0000002497593680.png?HW-CC-KV=V1&HW-CC-Date=20260429T061138Z&HW-CC-Expire=86400&HW-CC-Sign=D86A8FEE70C38AD43FDBDBA42A904FC191962540A8A9BAF631BDB4D0AB75A014)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/3XUtnc3-RnCYucFz1E-nVQ/zh-cn_image_0000002497593680.png)
 
 如果需要使用[Surface模式](../harmonyos-guides/video-encoding.md#surface模式)编码，将图片解码成PixelMap后，需要先从编码器的NativeWindow申请buffer，然后将PixelMap中保存的图像数据复制到申请的buffer中并提交buffer，编码完成后再封装为视频文件，具体实现可以参考[NativeWindow开发指导 (C/C++)](../harmonyos-guides/native-window-guidelines.md)。
 

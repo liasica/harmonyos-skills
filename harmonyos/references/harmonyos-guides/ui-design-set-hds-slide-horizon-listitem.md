@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > UI Design Kit（UI设计套件） > 列表 >
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:30:25+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:31edff8cae332ee80e79ae226149b7e74d1c217fe20e040a333a48f17fe745b9
+content_hash: sha256:1b6b3f3e0abf2e6898ec0828660b7eb5eca68f1a96970782359fbfa11fb0a15a
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:31edff8cae332ee80e79ae226149b7e74d1c217fe20e040a333a48f17fe
 
 应用使用[HdsListItem](../harmonyos-references/ui-design-hdslistitem.md)组件实现多设备上的系统列表的横滑动效按钮的内容和样式。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/yYVC0fwiQsSXrn-9w06RTw/zh-cn_image_0000002589244653.gif?HW-CC-KV=V1&HW-CC-Date=20260429T053024Z&HW-CC-Expire=86400&HW-CC-Sign=170EDC0EEE4E80EAD02FDD318062351AE2A60D9847051A56EA8C04CE31ECFD0F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/yYVC0fwiQsSXrn-9w06RTw/zh-cn_image_0000002589244653.gif)
 
 ## 开发步骤
 

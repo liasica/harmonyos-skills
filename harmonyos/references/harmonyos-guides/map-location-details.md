@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 地图Picker > �
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:39:17+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:a55db667a37d61d75209a4b21f0cfccdfb5117cb61e789eaadd958c88889d7b5
+content_hash: sha256:69f8c5d92122a57793a266b33a528120733c83a37c85dda56c67bd97b2f2f80f
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:a55db667a37d61d75209a4b21f0cfccdfb5117cb61e789eaadd958c8888
 
 **图1** 地点详情
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/zOZqx8f2TyCrHImjN0sjPg/zh-cn_image_0000002589245357.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053916Z&HW-CC-Expire=86400&HW-CC-Sign=CC0052AF69093B8D5957FFBA70D9BF01F47FCD0462E66F6F711B3957ED71634D "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/zOZqx8f2TyCrHImjN0sjPg/zh-cn_image_0000002589245357.jpg "点击放大")
 
 ## 约束与限制
 

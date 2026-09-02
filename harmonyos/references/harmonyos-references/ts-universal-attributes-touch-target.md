@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:51:26+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:eac14d73bdc1b5dbdcdfebf2422110cd172acc3a16648160cd4df384a4be44c2
+content_hash: sha256:1617734bd930472bb1d91df2a6e5a5f436e1bd1e7db109fbac0026fefcd35bc9
 ---
 
 设置组件的响应热区。在ArkUI开发框架中，处理触屏事件和鼠标事件时，会在事件触发前进行按压点与组件响应热区的[触摸测试](../harmonyos-guides/arkts-interaction-basic-principles.md#触摸测试)，以收集需响应事件的组件。基于测试结果，框架会分发相应的事件。影响[点击事件](ts-universal-events-click.md)、[触摸事件](ts-universal-events-touch.md)、[拖拽事件](ts-universal-events-drag-drop.md)、[鼠标事件](ts-universal-mouse-key.md)、[轴事件](ts-universal-events-axis.md)、[悬浮事件](ts-universal-events-hover.md)、[无障碍悬浮事件](ts-universal-accessibility-hover-event.md)和[手势事件](ts-gesture-settings.md)的分发。
@@ -209,7 +209,7 @@ PhonePC/2in1TabletTVWearable
 59. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/FinD5ujxReCKu0O7yfvleg/zh-cn_image_0000002558606406.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055124Z&HW-CC-Expire=86400&HW-CC-Sign=FF1D04DBF5DA3CC6AD86F7134639DD1CBE699D4076F233FD8CADD7D9C23339D2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/FinD5ujxReCKu0O7yfvleg/zh-cn_image_0000002558606406.gif)
 
 ### 示例2（通过responseRegionList接口设置触摸热区）
 
@@ -267,7 +267,7 @@ PhonePC/2in1TabletTVWearable
 47. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/MR2H6zRfRnuGP11RV0zbGw/zh-cn_image_0000002589325933.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055124Z&HW-CC-Expire=86400&HW-CC-Sign=1904DD1B508CE242F49D7D20C881D5B9F459C8DB685AA921D27EC1E8134F5DCB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/MR2H6zRfRnuGP11RV0zbGw/zh-cn_image_0000002589325933.gif)
 
 ### 示例3（设置鼠标的触摸热区以响应点击事件）
 
@@ -359,4 +359,4 @@ PhonePC/2in1TabletTVWearable
 83. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/UTj6KzzKTeCUZPm7X6Xi-w/zh-cn_image_0000002589245875.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055124Z&HW-CC-Expire=86400&HW-CC-Sign=0FDC75C920F7E58D115D4424288BADB1543810F6F86F2B2B410AA638376061A5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/UTj6KzzKTeCUZPm7X6Xi-w/zh-cn_image_0000002589245875.gif)

@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > UI Design Kit（UI设计套件） > ArkTS
 category: harmonyos-references
 scraped_at: 2026-04-29T13:57:12+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:a7c4517081ee44d318f32d5d15832160fbd3768df9745155b6f1235f617043ca
+content_hash: sha256:618a7a3ffa03c29e05165c72be15413de586f8505b68a54d4c25ca6a930b81d5
 ---
 
 本模块提供一种菜单栏样式组件。设置侧边栏对应的一级菜单和二级菜单，并显示其新消息数量。
@@ -394,4 +394,4 @@ HdsSideMenu提供一种菜单栏样式。
 94. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/MI3F8MgjR9Cjm5VtszdU3Q/zh-cn_image_0000002589326921.png?HW-CC-KV=V1&HW-CC-Date=20260429T055710Z&HW-CC-Expire=86400&HW-CC-Sign=BDD981919350E1ECF55CC6D4F4BA9FDF267FA2D271D4429FEF7A31A18F818BBA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/MI3F8MgjR9Cjm5VtszdU3Q/zh-cn_image_0000002589326921.png)

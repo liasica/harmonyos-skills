@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS编译�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:26:59+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:26fefbfcbb5dbd872aa540645f5d5debd5ea58430bfbc6ca1be97f4183c4739c
+content_hash: sha256:d929e8afb17f80667982f8b58434dc27e3e978d54c0d1074ea2753b977bfb3fe
 ---
 
 注意
@@ -181,7 +181,7 @@ content_hash: sha256:26fefbfcbb5dbd872aa540645f5d5debd5ea58430bfbc6ca1be97f4183c
 * origin目录：混淆前的modules.abc文件。
 * 配置信息文件：config.json，该文件记录了混淆的配置项和白名单列表。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/g1E1NTg_RUy7AjZY4NFi0g/zh-cn_image_0000002558604382.png?HW-CC-KV=V1&HW-CC-Date=20260429T052657Z&HW-CC-Expire=86400&HW-CC-Sign=DC6CE844A9CC3F12C053E15BFFD3A290E60FA18EA4F6E761E515AC45A5D2EC64)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/g1E1NTg_RUy7AjZY4NFi0g/zh-cn_image_0000002558604382.png)
 
 ## 报错栈还原
 
@@ -189,4 +189,4 @@ content_hash: sha256:26fefbfcbb5dbd872aa540645f5d5debd5ea58430bfbc6ca1be97f4183c
 
 反混淆工具需要使用应用编译过程中生成的sourceMaps.json文件以及混淆名称映射文件nameCache.json文件，因此请本地备份它们；为方便问题定位，建议备份release目录。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/fOnj2X7WTRKgUK0zcrrv_g/zh-cn_image_0000002589323907.png?HW-CC-KV=V1&HW-CC-Date=20260429T052657Z&HW-CC-Expire=86400&HW-CC-Sign=9C928A4BA8D13C093562042D6AD2F81D442529FDBAF818E2654B13FBA2C6D635)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/fOnj2X7WTRKgUK0zcrrv_g/zh-cn_image_0000002589323907.png)

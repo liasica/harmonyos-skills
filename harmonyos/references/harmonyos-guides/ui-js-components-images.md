@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:28:48+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:74059c9a554ed967057c7ffd1ee444ba2d6af3ee8dd8c682699ca7b2913053ef
+content_hash: sha256:66c546e10e1b88c946985c34817221aa8b7ba28eb532b635da4209e3598349e3
 ---
 
 image是图片组件，用来渲染展示图片。具体用法请参考[image](../harmonyos-references/js-components-basic-image.md)组件。
@@ -33,7 +33,7 @@ image是图片组件，用来渲染展示图片。具体用法请参考[image](.
 9. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/F5zAVfp8R4uLCkoDUeXe_g/zh-cn_image_0000002589324467.png?HW-CC-KV=V1&HW-CC-Date=20260429T052847Z&HW-CC-Expire=86400&HW-CC-Sign=24D08600ED91BCE335A6D929F2B5FD4E9ABADEB5B472DA3469E24FEF0236C30A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/F5zAVfp8R4uLCkoDUeXe_g/zh-cn_image_0000002589324467.png)
 
 ## 设置image样式
 
@@ -66,7 +66,7 @@ image是图片组件，用来渲染展示图片。具体用法请参考[image](.
 17. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/0REX6IzyRdu7DA1LB_o-Kw/zh-cn_image_0000002589244407.png?HW-CC-KV=V1&HW-CC-Date=20260429T052847Z&HW-CC-Expire=86400&HW-CC-Sign=75AC77873A77677760D53EC57163AA8FBCD5197B02A9BC240727EFCDEECA3D7E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/0REX6IzyRdu7DA1LB_o-Kw/zh-cn_image_0000002589244407.png)
 
 ## 加载图片
 
@@ -123,7 +123,7 @@ image是图片组件，用来渲染展示图片。具体用法请参考[image](.
 18. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/T4V7810MS6iCLoIskUiAtg/zh-cn_image_0000002558764600.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052847Z&HW-CC-Expire=86400&HW-CC-Sign=D58EBB597EEC0FB05D632EFFC5C17093B3D8F9D566EC70A4C703107A48DC068B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/T4V7810MS6iCLoIskUiAtg/zh-cn_image_0000002558764600.gif)
 
 ## 场景示例
 
@@ -204,4 +204,4 @@ image是图片组件，用来渲染展示图片。具体用法请参考[image](.
 24. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/2k1vQcNrSAKnba3tov7jMw/zh-cn_image_0000002558604944.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052847Z&HW-CC-Expire=86400&HW-CC-Sign=E3C552CDD57012C174D1F4576AA136A2B0E007CE9CED094FB4511EC5CE45EAD8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/2k1vQcNrSAKnba3tov7jMw/zh-cn_image_0000002558604944.gif)

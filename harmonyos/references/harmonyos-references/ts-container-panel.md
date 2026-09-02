@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:53:12+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:9011eeb8af50974c5d168f1017067c285bbd8858963cbf6543cb67a9bbd38a3f
+content_hash: sha256:eeb29452789ffbeeb3dfefeb7b8f901e29971447bbb1ceaa8e6e8ce51efcdce7
 ---
 
 可滑动面板，提供一种轻量的内容展示窗口，方便在不同尺寸中切换。
@@ -387,4 +387,4 @@ PhonePC/2in1TabletTVWearable
 35. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/qEoeltmvRx6u58Bpe2uLFA/zh-cn_image_0000002589326557.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055311Z&HW-CC-Expire=86400&HW-CC-Sign=76B39C9FC39F8BA01E14AE98D1CA8628C0E4BA4F75463FEBC908D993759E7165)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/qEoeltmvRx6u58Bpe2uLFA/zh-cn_image_0000002589326557.gif)

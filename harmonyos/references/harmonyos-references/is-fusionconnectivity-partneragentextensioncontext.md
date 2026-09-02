@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/is-fusionconnectivity-partneragentextensioncontext
-title: @ohos.FusionConnectivity.PartnerAgentExtensionContext (设备状态通知能力上下文)
+title: "@ohos.FusionConnectivity.PartnerAgentExtensionContext (设备状态通知能力上下文)"
 breadcrumb: API参考 > 系统 > 网络 > Connectivity Kit（短距通信服务） > ArkTS API > @ohos.FusionConnectivity.PartnerAgentExtensionContext (设备状态通知能力上下文)
 category: harmonyos-references
 scraped_at: 2026-04-28T08:08:03+08:00

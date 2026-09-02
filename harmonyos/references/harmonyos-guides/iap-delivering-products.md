@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用服务 > IAP Kit（应用内支付服务） > 商品�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:38:38+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:c9b41d986de3a178498b1cd068d0c37d445c438c9b6de08f9823a422319b473e
+content_hash: sha256:ba8fd4dcbecb22f53614c844afd8cfed866d89f216945895f52344810f217c8e
 ---
 
 ## 场景介绍
@@ -26,7 +26,7 @@ content_hash: sha256:c9b41d986de3a178498b1cd068d0c37d445c438c9b6de08f9823a422319
 
 ### 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/UG_qwtGYQheXYXHLVfsG5w/zh-cn_image_0000002589325295.png?HW-CC-KV=V1&HW-CC-Date=20260429T053837Z&HW-CC-Expire=86400&HW-CC-Sign=48C76C0BE577701394EF3946E574791D9C00A47AF77EA95C620C47257A72719A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/UG_qwtGYQheXYXHLVfsG5w/zh-cn_image_0000002589325295.png)
 
 1. 应用客户端向IAP Kit发起[queryPurchases](../harmonyos-references/iap-iap.md#iapquerypurchases)请求，查询用户已购买但未确认发货的订单信息。
 2. IAP Kit返回[PurchaseData](../harmonyos-references/iap-data-model.md#purchasedata)列表。[PurchaseData](../harmonyos-references/iap-data-model.md#purchasedata)为JWS格式的字符串，承载了相关的订单信息。

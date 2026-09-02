@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkts-lang
-title: @arkts.lang (ArkTS语言基础能力)
+title: "@arkts.lang (ArkTS语言基础能力)"
 breadcrumb: API参考 > 应用框架 > ArkTS（方舟编程语言） > ArkTS API > @arkts.lang (ArkTS语言基础能力)
 category: harmonyos-references
 scraped_at: 2026-04-28T07:59:56+08:00

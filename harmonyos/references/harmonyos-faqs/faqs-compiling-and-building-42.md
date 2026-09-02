@@ -5,14 +5,14 @@ breadcrumb: FAQ > DevEco Studio > 编译构建 > 编译报错“Property 'XX' do
 category: harmonyos-faqs
 scraped_at: 2026-04-29T14:20:29+08:00
 doc_updated_at: 2026-03-17
-content_hash: sha256:d8616b300e5df3e04f73030d9cb96155939b38d412db6964302a64741c73906b
+content_hash: sha256:0367015b2bfe5cdd5e1eea43e14b12ec8eccee3e52be618c544bab99d676ea3f
 ---
 
 **问题现象**
 
 本地HSP模块对外提供的接口中使用了未在HAP中定义的自定义参数BuildProfileFields。HAP引用了HSP中的该接口，导致编译失败，提示“Property 'XX' does not exist on type 'typeof BuildProfile'”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/BZychf3jQLK6wKbC8-y0wA/zh-cn_image_0000002194158808.png?HW-CC-KV=V1&HW-CC-Date=20260429T062028Z&HW-CC-Expire=86400&HW-CC-Sign=F5D3CEBA09096F1F95ED24F57B0ACEFCFA9B9168385A7A76764FD38537484523)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/BZychf3jQLK6wKbC8-y0wA/zh-cn_image_0000002194158808.png)
 
 **解决措施**
 

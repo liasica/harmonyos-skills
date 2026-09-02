@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:27:37+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:a8d325fe7d42dcd3c6ce80ea8c52e916d64179fb22a65c7d38f9e9ba7777f441
+content_hash: sha256:e1cfc3317c67d33b3b803ce79bb0f7d63f14489d04c6c7a3aa34472d92651e2e
 ---
 
 [Navigation](../harmonyos-references/ts-basic-components-navigation.md)路由相关操作均基于导航控制器[NavPathStack](../harmonyos-references/ts-basic-components-navigation.md#navpathstack10)提供的方法实现，每个Navigation都需要创建并传入一个NavPathStack对象，用于管理页面。NavPathStack主要提供了页面跳转、页面返回、页面替换、页面删除、参数获取、路由拦截等功能。
@@ -756,4 +756,4 @@ NavPathStack提供了[setInterception](../harmonyos-references/ts-basic-componen
    ```
 2. 工程配置文件[module.json5](module-configuration-file.md)中配置{"routerMap": "$profile:router\_map"}。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/RVmvKq0oSFekQMRFtL_HYw/zh-cn_image_0000002558764174.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052735Z&HW-CC-Expire=86400&HW-CC-Sign=6E8668041E30DDF19EF42BD372A5FC7DB477C4D6C96A696CBF6A9E735DD1ADDF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/RVmvKq0oSFekQMRFtL_HYw/zh-cn_image_0000002558764174.gif)

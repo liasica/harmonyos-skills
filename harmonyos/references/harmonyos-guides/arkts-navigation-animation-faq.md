@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发调试�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:28:59+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:c644673807d67a913a1f9c11b27131020ec34bfc5680ce0a90cdc64dd6d49615
+content_hash: sha256:fb2488d2f9a4fee2cacd16b25279a9be133924de6cf4021d843edfd41f139be9
 ---
 
 ## Dialog类型NavDestination蒙层动画不流畅
@@ -16,10 +16,10 @@ content_hash: sha256:c644673807d67a913a1f9c11b27131020ec34bfc5680ce0a90cdc64dd6d
 
 * 将蒙层背景色设置在页面上：pop页面的时候蒙层没有马上消失，而是等内容下滑退出后才消失。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/xW9g8TFMTI2LsKSiUC5fhw/zh-cn_image_0000002589244461.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052858Z&HW-CC-Expire=86400&HW-CC-Sign=96A48DF4DCEEDCC16599DCD678F9A389B8A519D0862FD147A624A9A9DABEAB4C)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/xW9g8TFMTI2LsKSiUC5fhw/zh-cn_image_0000002589244461.gif)
 * 将蒙层背景色设置在内容区域：蒙层一起从上向下退出。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/JN-ZMW7XS8CLQ_WhxflPKg/zh-cn_image_0000002558764654.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052858Z&HW-CC-Expire=86400&HW-CC-Sign=FB3FDA0FD559208C0B658E96196F3F6FDBF096F15F936D9A436CF2439CFEFF15)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/JN-ZMW7XS8CLQ_WhxflPKg/zh-cn_image_0000002558764654.gif)
 
 期望退出时蒙层渐隐，同时内容区域向下退出。
 
@@ -69,7 +69,7 @@ content_hash: sha256:c644673807d67a913a1f9c11b27131020ec34bfc5680ce0a90cdc64dd6d
 
 [DialogNavDestination.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/NavigationSample/entry/src/main/ets/pages/navigation/animation/DialogNavDestination.ets#L16-L54)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/E4XMJdLVRc2IQAq83GgULQ/zh-cn_image_0000002558604998.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052858Z&HW-CC-Expire=86400&HW-CC-Sign=1F2F43D72B9F93165F6845217742857AF5007847257F62B6A9F3F3E678BE5465)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/E4XMJdLVRc2IQAq83GgULQ/zh-cn_image_0000002558604998.gif)
 
 ## router、navigation动画冲突
 

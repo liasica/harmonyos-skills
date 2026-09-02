@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:27:39+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:eeb2b68ae9fcc971d4f7279588205e3dab164d26afa892ca5cbd0ee9cd5d099d
+content_hash: sha256:70b9f0986f7deb8243a32bf7be0e94bf498193335165aa1fd3eacd4ba19878c9
 ---
 
 ## 概述
@@ -18,11 +18,11 @@ content_hash: sha256:eeb2b68ae9fcc971d4f7279588205e3dab164d26afa892ca5cbd0ee9cd5
 
 **图1** Column容器内子元素排列示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/BPHu9Zq6T4yVVW8VULosmw/zh-cn_image_0000002558604528.png?HW-CC-KV=V1&HW-CC-Date=20260429T052738Z&HW-CC-Expire=86400&HW-CC-Sign=0BD439A8E07658D0D5085C2993FAE5C773D9A51E9619C124ECFB7703AF3EB281)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/BPHu9Zq6T4yVVW8VULosmw/zh-cn_image_0000002558604528.png)
 
 **图2** Row容器内子元素排列示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/U8lpIzQpTHK3psR-UZWEaw/zh-cn_image_0000002589324053.png?HW-CC-KV=V1&HW-CC-Date=20260429T052738Z&HW-CC-Expire=86400&HW-CC-Sign=7B8F243FEBA55B34E183F9389C04F2805FD2292F23495B8BB3D6E78E99C1A15B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/U8lpIzQpTHK3psR-UZWEaw/zh-cn_image_0000002589324053.png)
 
 ## 基本概念
 
@@ -40,7 +40,7 @@ content_hash: sha256:eeb2b68ae9fcc971d4f7279588205e3dab164d26afa892ca5cbd0ee9cd5
 
 **图3** Column容器内排列方向的间距图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/-zttnzJXQBmtVFn96Pt-Kw/zh-cn_image_0000002589243993.png?HW-CC-KV=V1&HW-CC-Date=20260429T052738Z&HW-CC-Expire=86400&HW-CC-Sign=5FA1758C1FD5247B1F3F1E80CC66046C164DC9618209164B4D91164D123FF45D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/-zttnzJXQBmtVFn96Pt-Kw/zh-cn_image_0000002589243993.png)
 
 ```
 1. Column({ space: 20 }) {
@@ -53,13 +53,13 @@ content_hash: sha256:eeb2b68ae9fcc971d4f7279588205e3dab164d26afa892ca5cbd0ee9cd5
 
 [ColumnLayoutExample.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/linearlayout/ColumnLayoutExample.ets#L20-L27)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/UT6hJMKQSeCw6_Q0YJva6g/zh-cn_image_0000002558764186.png?HW-CC-KV=V1&HW-CC-Date=20260429T052738Z&HW-CC-Expire=86400&HW-CC-Sign=2D4B20C1B05D6062B2EDDAE5FE2B988420A92329A66F84BB2DAC9864DC3131CF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/UT6hJMKQSeCw6_Q0YJva6g/zh-cn_image_0000002558764186.png)
 
 ### Row容器内排列方向上的间距
 
 **图4** Row容器内排列方向的间距图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/gaQ-9NE7SHqZK5B_SvwbpQ/zh-cn_image_0000002558604530.png?HW-CC-KV=V1&HW-CC-Date=20260429T052738Z&HW-CC-Expire=86400&HW-CC-Sign=B102E53985532BDB24D4D50F98EAB3611C09B6D4DD5C5BD440713350E8E69EE8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/gaQ-9NE7SHqZK5B_SvwbpQ/zh-cn_image_0000002558604530.png)
 
 ```
 1. Row({ space: 35 }) {
@@ -72,7 +72,7 @@ content_hash: sha256:eeb2b68ae9fcc971d4f7279588205e3dab164d26afa892ca5cbd0ee9cd5
 
 [RowLayoutExample.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/linearlayout/RowLayoutExample.ets#L20-L27)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/8CWXlhnzQWOsgHvKqspskw/zh-cn_image_0000002589324055.png?HW-CC-KV=V1&HW-CC-Date=20260429T052738Z&HW-CC-Expire=86400&HW-CC-Sign=E937A24AAEE0CB369D59FB8A8E02E5DFDFED7BC46B4A670F1D0463C62D2AC020)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/8CWXlhnzQWOsgHvKqspskw/zh-cn_image_0000002589324055.png)
 
 ## 布局子元素在主轴上的排列方式
 
@@ -82,7 +82,7 @@ content_hash: sha256:eeb2b68ae9fcc971d4f7279588205e3dab164d26afa892ca5cbd0ee9cd5
 
 **图5** Column容器内子元素在垂直方向上的排列图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/ikbHKaahSreXmS0kU29N_w/zh-cn_image_0000002589243995.png?HW-CC-KV=V1&HW-CC-Date=20260429T052738Z&HW-CC-Expire=86400&HW-CC-Sign=A136837A61A71F8014881318AC600CB820FDD3B91257FEF469085F7DB4A4F42B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/ikbHKaahSreXmS0kU29N_w/zh-cn_image_0000002589243995.png)
 
 * justifyContent(FlexAlign.Start，默认值)：元素在垂直方向首端对齐，第一个元素与行首对齐，同时后续的元素与前一个对齐。
 
@@ -101,7 +101,7 @@ content_hash: sha256:eeb2b68ae9fcc971d4f7279588205e3dab164d26afa892ca5cbd0ee9cd5
 
   [ColumnLayoutJustifyContentStart.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/linearlayout/ColumnLayoutJustifyContentStart.ets#L20-L164)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/UnEbcs19Sp6f4JtDgRJBNg/zh-cn_image_0000002558764188.png?HW-CC-KV=V1&HW-CC-Date=20260429T052738Z&HW-CC-Expire=86400&HW-CC-Sign=BE9FCE5601A5F7E13AB14850719B672DE1F8A93CB0AE288A9FDCDC56BF5BAACC)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/UnEbcs19Sp6f4JtDgRJBNg/zh-cn_image_0000002558764188.png)
 * justifyContent(FlexAlign.Center)：元素在垂直方向中心对齐，第一个元素与行首的距离与最后一个元素与行尾距离相同。
 
   ```
@@ -119,7 +119,7 @@ content_hash: sha256:eeb2b68ae9fcc971d4f7279588205e3dab164d26afa892ca5cbd0ee9cd5
 
   [ColumnLayoutJustifyContentCenter.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/linearlayout/ColumnLayoutJustifyContentCenter.ets#L20-L31)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/NvzojBLsR4ypnmBehmxWdQ/zh-cn_image_0000002558604532.png?HW-CC-KV=V1&HW-CC-Date=20260429T052738Z&HW-CC-Expire=86400&HW-CC-Sign=CC6674EF3E48A617D8D171CEF8584896E3178E5A7B3B655085AFA631DB69AB32)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/NvzojBLsR4ypnmBehmxWdQ/zh-cn_image_0000002558604532.png)
 * justifyContent(FlexAlign.End)：元素在垂直方向尾部对齐，最后一个元素与行尾对齐，其他元素与后一个对齐。
 
   ```
@@ -137,7 +137,7 @@ content_hash: sha256:eeb2b68ae9fcc971d4f7279588205e3dab164d26afa892ca5cbd0ee9cd5
 
   [ColumnLayoutJustifyContentEnd.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/linearlayout/ColumnLayoutJustifyContentEnd.ets#L20-L31)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/BvMz2mOQRgC_NwcramVHjQ/zh-cn_image_0000002589324057.png?HW-CC-KV=V1&HW-CC-Date=20260429T052738Z&HW-CC-Expire=86400&HW-CC-Sign=5DF67C176CCBE8A8097182E8B38DD2FD6E2E217037798A02CF1CEA16694EA175)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/BvMz2mOQRgC_NwcramVHjQ/zh-cn_image_0000002589324057.png)
 * justifyContent(FlexAlign.SpaceBetween)：垂直方向均匀分配元素，相邻元素之间距离相同。第一个元素与行首对齐，最后一个元素与行尾对齐。
 
   ```
@@ -155,7 +155,7 @@ content_hash: sha256:eeb2b68ae9fcc971d4f7279588205e3dab164d26afa892ca5cbd0ee9cd5
 
   [ColumnLayoutJustifyContentSpaceBetween.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/linearlayout/ColumnLayoutJustifyContentSpaceBetween.ets#L20-L31)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/B__YjFwuQG-uy0eHR8XOSg/zh-cn_image_0000002589243997.png?HW-CC-KV=V1&HW-CC-Date=20260429T052738Z&HW-CC-Expire=86400&HW-CC-Sign=39DFCC6EBFB21935743F886031CED5739BB460D4D3C2F84B7195F91DC8EC1CDD)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/B__YjFwuQG-uy0eHR8XOSg/zh-cn_image_0000002589243997.png)
 * justifyContent(FlexAlign.SpaceAround)：垂直方向均匀分配元素，相邻元素之间距离相同。第一个元素到行首的距离和最后一个元素到行尾的距离是相邻元素之间距离的一半。
 
   ```
@@ -173,7 +173,7 @@ content_hash: sha256:eeb2b68ae9fcc971d4f7279588205e3dab164d26afa892ca5cbd0ee9cd5
 
   [ColumnLayoutJustifyContentSpaceAround.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/linearlayout/ColumnLayoutJustifyContentSpaceAround.ets#L20-L31)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/NRjt-iizSM2jbauZj3NRHA/zh-cn_image_0000002558764190.png?HW-CC-KV=V1&HW-CC-Date=20260429T052738Z&HW-CC-Expire=86400&HW-CC-Sign=5C3C979E549C6F854ECEE9763EC0AFA32C4FEC3DB11084A2930E04FCDAA9C420)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/NRjt-iizSM2jbauZj3NRHA/zh-cn_image_0000002558764190.png)
 * justifyContent(FlexAlign.SpaceEvenly)：垂直方向均匀分配元素，相邻元素之间的距离、第一个元素与行首的间距、最后一个元素到行尾的间距都完全一样。
 
   ```
@@ -191,13 +191,13 @@ content_hash: sha256:eeb2b68ae9fcc971d4f7279588205e3dab164d26afa892ca5cbd0ee9cd5
 
   [ColumnLayoutJustifyContentSpaceEvenly.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/linearlayout/ColumnLayoutJustifyContentSpaceEvenly.ets#L20-L31)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/Lc_9OezgTlaHAC7pNLJEjQ/zh-cn_image_0000002558604534.png?HW-CC-KV=V1&HW-CC-Date=20260429T052738Z&HW-CC-Expire=86400&HW-CC-Sign=5DD334E3E8408960CA42EFFD32102E7CFC9293C3144AAB0D0F2875A474743E5D)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/Lc_9OezgTlaHAC7pNLJEjQ/zh-cn_image_0000002558604534.png)
 
 ### Row容器内子元素在水平方向上的排列
 
 **图6** Row容器内子元素在水平方向上的排列图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/iuJhoctNQt2iWx1_cYiKjA/zh-cn_image_0000002589324059.png?HW-CC-KV=V1&HW-CC-Date=20260429T052738Z&HW-CC-Expire=86400&HW-CC-Sign=529FB23F13CBDE13D48CE82A9E5F547B93549EE2B32FC489AC4F55434B3F5D46)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/iuJhoctNQt2iWx1_cYiKjA/zh-cn_image_0000002589324059.png)
 
 * justifyContent(FlexAlign.Start，默认值)：元素在水平方向首端对齐，第一个元素与行首对齐，同时后续的元素与前一个对齐。
 
@@ -216,7 +216,7 @@ content_hash: sha256:eeb2b68ae9fcc971d4f7279588205e3dab164d26afa892ca5cbd0ee9cd5
 
   [RowLayoutJustifyContentStart.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/linearlayout/RowLayoutJustifyContentStart.ets#L20-L146)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/LqRpnAHRS9Se5osgdNGC3Q/zh-cn_image_0000002589243999.png?HW-CC-KV=V1&HW-CC-Date=20260429T052738Z&HW-CC-Expire=86400&HW-CC-Sign=D95092DCF94E2D7E663D44ABB3A7D94D29B9BB39ED618F1706938272EFCF1834)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/LqRpnAHRS9Se5osgdNGC3Q/zh-cn_image_0000002589243999.png)
 * justifyContent(FlexAlign.Center)：元素在水平方向中心对齐，第一个元素与行首的距离与最后一个元素与行尾距离相同。
 
   ```
@@ -234,7 +234,7 @@ content_hash: sha256:eeb2b68ae9fcc971d4f7279588205e3dab164d26afa892ca5cbd0ee9cd5
 
   [RowLayoutJustifyContentCenter.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/linearlayout/RowLayoutJustifyContentCenter.ets#L20-L31)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/iQtDnyHmTMitrW17PVKqMw/zh-cn_image_0000002558764192.png?HW-CC-KV=V1&HW-CC-Date=20260429T052738Z&HW-CC-Expire=86400&HW-CC-Sign=B6AB3E5CEF9906C81C3283B018D99C93F3CCD76F071CB2E0D24BD5A66E0AE7C8)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/iQtDnyHmTMitrW17PVKqMw/zh-cn_image_0000002558764192.png)
 * justifyContent(FlexAlign.End)：元素在水平方向尾部对齐，最后一个元素与行尾对齐，其他元素与后一个对齐。
 
   ```
@@ -252,7 +252,7 @@ content_hash: sha256:eeb2b68ae9fcc971d4f7279588205e3dab164d26afa892ca5cbd0ee9cd5
 
   [RowLayoutJustifyContentEnd.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/linearlayout/RowLayoutJustifyContentEnd.ets#L20-L31)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/jghS6_S2QgeRG_QMZhOgog/zh-cn_image_0000002558604536.png?HW-CC-KV=V1&HW-CC-Date=20260429T052738Z&HW-CC-Expire=86400&HW-CC-Sign=FB06777D75A76971FFEED7F9ECE7A0D99058D38C4B4C0EC569D4AA4B470C79E5)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/jghS6_S2QgeRG_QMZhOgog/zh-cn_image_0000002558604536.png)
 * justifyContent(FlexAlign.SpaceBetween)：水平方向均匀分配元素，相邻元素之间距离相同。第一个元素与行首对齐，最后一个元素与行尾对齐。
 
   ```
@@ -270,7 +270,7 @@ content_hash: sha256:eeb2b68ae9fcc971d4f7279588205e3dab164d26afa892ca5cbd0ee9cd5
 
   [RowLayoutJustifyContentSpaceBetween.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/linearlayout/RowLayoutJustifyContentSpaceBetween.ets#L20-L31)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/TVMYlm5MRI6xGNWk9TCd4g/zh-cn_image_0000002589324061.png?HW-CC-KV=V1&HW-CC-Date=20260429T052738Z&HW-CC-Expire=86400&HW-CC-Sign=F3A104C280B21F35347CBFD57C9ABA630AE31F7BCF946F4A0E3E1C618B8173CD)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/TVMYlm5MRI6xGNWk9TCd4g/zh-cn_image_0000002589324061.png)
 * justifyContent(FlexAlign.SpaceAround)：水平方向均匀分配元素，相邻元素之间距离相同。第一个元素到行首的距离和最后一个元素到行尾的距离是相邻元素之间距离的一半。
 
   ```
@@ -288,7 +288,7 @@ content_hash: sha256:eeb2b68ae9fcc971d4f7279588205e3dab164d26afa892ca5cbd0ee9cd5
 
   [RowLayoutJustifyContentSpaceAround.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/linearlayout/RowLayoutJustifyContentSpaceAround.ets#L20-L31)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/540PHJozR3Ksq12oHMsOjA/zh-cn_image_0000002589244001.png?HW-CC-KV=V1&HW-CC-Date=20260429T052738Z&HW-CC-Expire=86400&HW-CC-Sign=4732ECCF9CBD8AF2D747AD15914203CB102C015128CE1744BA5A7770F2D24DBA)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/540PHJozR3Ksq12oHMsOjA/zh-cn_image_0000002589244001.png)
 * justifyContent(FlexAlign.SpaceEvenly)：水平方向均匀分配元素，相邻元素之间的距离、第一个元素与行首的间距、最后一个元素到行尾的间距都完全一样。
 
   ```
@@ -306,7 +306,7 @@ content_hash: sha256:eeb2b68ae9fcc971d4f7279588205e3dab164d26afa892ca5cbd0ee9cd5
 
   [RowLayoutJustifyContentSpaceEvenly.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/linearlayout/RowLayoutJustifyContentSpaceEvenly.ets#L20-L31)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/OXS89gkHStOd5NrsSaDeBA/zh-cn_image_0000002558764194.png?HW-CC-KV=V1&HW-CC-Date=20260429T052738Z&HW-CC-Expire=86400&HW-CC-Sign=717545EC10303D5507B13528968E3A61AC5B8FEA4D1DB121AC1F4FC14792F5F5)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/OXS89gkHStOd5NrsSaDeBA/zh-cn_image_0000002558764194.png)
 
 ## 布局子元素在交叉轴上的对齐方式
 
@@ -318,7 +318,7 @@ content_hash: sha256:eeb2b68ae9fcc971d4f7279588205e3dab164d26afa892ca5cbd0ee9cd5
 
 **图7** Column容器内子元素在水平方向上的排列图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/Hg8WFGOWRLWvYUM95dnd3Q/zh-cn_image_0000002558604538.png?HW-CC-KV=V1&HW-CC-Date=20260429T052738Z&HW-CC-Expire=86400&HW-CC-Sign=414D143F20A976D61226C79C21FCE410C4B01B5C7A70209C15A9C9E5C4659981)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/Hg8WFGOWRLWvYUM95dnd3Q/zh-cn_image_0000002558604538.png)
 
 * HorizontalAlign.Start：子元素在水平方向左对齐。
 
@@ -337,7 +337,7 @@ content_hash: sha256:eeb2b68ae9fcc971d4f7279588205e3dab164d26afa892ca5cbd0ee9cd5
 
   [RowLayoutHorizontalAlignStart.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/linearlayout/RowLayoutHorizontalAlignStart.ets#L20-L74)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/6U7-mzgsSxirQhYogfrxKA/zh-cn_image_0000002589324063.png?HW-CC-KV=V1&HW-CC-Date=20260429T052738Z&HW-CC-Expire=86400&HW-CC-Sign=5A4717BDC8DC45D8C1B6C31F5B7AF9B9612E1A5848D380E3C774FA2EDFDF61F9)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/6U7-mzgsSxirQhYogfrxKA/zh-cn_image_0000002589324063.png)
 * HorizontalAlign.Center（默认值）：子元素在水平方向居中对齐。
 
   ```
@@ -355,7 +355,7 @@ content_hash: sha256:eeb2b68ae9fcc971d4f7279588205e3dab164d26afa892ca5cbd0ee9cd5
 
   [RowLayoutHorizontalAlignCenter.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/linearlayout/RowLayoutHorizontalAlignCenter.ets#L20-L31)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/Vv3djp_3T9eMyEyELp4rUg/zh-cn_image_0000002589244003.png?HW-CC-KV=V1&HW-CC-Date=20260429T052738Z&HW-CC-Expire=86400&HW-CC-Sign=D9521BDFC54057D01C3974D85890122856B4703CA92D387E77B2045B9E48A5B0)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/Vv3djp_3T9eMyEyELp4rUg/zh-cn_image_0000002589244003.png)
 * HorizontalAlign.End：子元素在水平方向右对齐。
 
   ```
@@ -373,13 +373,13 @@ content_hash: sha256:eeb2b68ae9fcc971d4f7279588205e3dab164d26afa892ca5cbd0ee9cd5
 
   [RowLayoutHorizontalAlignEnd.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/linearlayout/RowLayoutHorizontalAlignEnd.ets#L20-L31)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/ZgEHoh_bTzWGVgvxOH9whA/zh-cn_image_0000002558764196.png?HW-CC-KV=V1&HW-CC-Date=20260429T052738Z&HW-CC-Expire=86400&HW-CC-Sign=B297CB9F4D0BD898DAE4B7B38FB048FE82F11AF735AF9460ADE4EF3CC54479DC)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/ZgEHoh_bTzWGVgvxOH9whA/zh-cn_image_0000002558764196.png)
 
 ### Row容器内子元素在垂直方向上的排列
 
 **图8** Row容器内子元素在垂直方向上的排列图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/1Ixx_nNARi-wsCLLJLuUSw/zh-cn_image_0000002558604540.png?HW-CC-KV=V1&HW-CC-Date=20260429T052738Z&HW-CC-Expire=86400&HW-CC-Sign=06B0F33C103A6558CA6B554F85BCDB51AEE43428773CEA8669BC6389B849ACEB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/1Ixx_nNARi-wsCLLJLuUSw/zh-cn_image_0000002558604540.png)
 
 * VerticalAlign.Top：子元素在垂直方向顶部对齐。
 
@@ -398,7 +398,7 @@ content_hash: sha256:eeb2b68ae9fcc971d4f7279588205e3dab164d26afa892ca5cbd0ee9cd5
 
   [RowLayoutVerticalAlignTop.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/linearlayout/RowLayoutVerticalAlignTop.ets#L20-L31)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/m0l4-PKuSZqTbbnpKbl34w/zh-cn_image_0000002589324065.png?HW-CC-KV=V1&HW-CC-Date=20260429T052738Z&HW-CC-Expire=86400&HW-CC-Sign=0267E93C4EB4975AF62506DDB911E01A266B5ACAAE126B151148B10702D37C5C)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/m0l4-PKuSZqTbbnpKbl34w/zh-cn_image_0000002589324065.png)
 * VerticalAlign.Center（默认值）：子元素在垂直方向居中对齐。
 
   ```
@@ -416,7 +416,7 @@ content_hash: sha256:eeb2b68ae9fcc971d4f7279588205e3dab164d26afa892ca5cbd0ee9cd5
 
   [RowLayoutVerticalAlignCenter.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/linearlayout/RowLayoutVerticalAlignCenter.ets#L20-L31)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/MBj3ZtonRsyFnsneOQzmlg/zh-cn_image_0000002589244005.png?HW-CC-KV=V1&HW-CC-Date=20260429T052738Z&HW-CC-Expire=86400&HW-CC-Sign=CC1D341E2946968FAC61DE3314A01223DA06C0AE87E6079AFDD67B49F6D2F4FD)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/MBj3ZtonRsyFnsneOQzmlg/zh-cn_image_0000002589244005.png)
 * VerticalAlign.Bottom：子元素在垂直方向底部对齐。
 
   ```
@@ -434,7 +434,7 @@ content_hash: sha256:eeb2b68ae9fcc971d4f7279588205e3dab164d26afa892ca5cbd0ee9cd5
 
   [RowLayoutVerticalAlignBottom.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/linearlayout/RowLayoutVerticalAlignBottom.ets#L20-L31)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/jrkh6syRQuOCv3AIze5Ghg/zh-cn_image_0000002558764198.png?HW-CC-KV=V1&HW-CC-Date=20260429T052738Z&HW-CC-Expire=86400&HW-CC-Sign=ED69E012A9C6AB32B2A36CE578EA2C6EA97939997C117D70B9689ADF0EDB5A6C)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/jrkh6syRQuOCv3AIze5Ghg/zh-cn_image_0000002558764198.png)
 
 ## 自适应拉伸
 
@@ -460,11 +460,11 @@ content_hash: sha256:eeb2b68ae9fcc971d4f7279588205e3dab164d26afa892ca5cbd0ee9cd5
 
 **图9** 竖屏（自适应屏幕窄边）
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/AkmEB-wHQuGwxcg3zTz_YQ/zh-cn_image_0000002558604542.png?HW-CC-KV=V1&HW-CC-Date=20260429T052738Z&HW-CC-Expire=86400&HW-CC-Sign=E010013A7D08419C41F0301EF9D02F232AABE18774589D72781CB93628D3572F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/AkmEB-wHQuGwxcg3zTz_YQ/zh-cn_image_0000002558604542.png)
 
 **图10** 横屏（自适应屏幕宽边）
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/5lg6WXuhT8CP4KlTOwkrtg/zh-cn_image_0000002589324067.png?HW-CC-KV=V1&HW-CC-Date=20260429T052738Z&HW-CC-Expire=86400&HW-CC-Sign=2F231F0B00C7E4DA23A244C8CD3A014DEB87FEFBE100C4D0063E5EB70A6B20B7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/5lg6WXuhT8CP4KlTOwkrtg/zh-cn_image_0000002589324067.png)
 
 ## 自适应缩放
 
@@ -523,11 +523,11 @@ content_hash: sha256:eeb2b68ae9fcc971d4f7279588205e3dab164d26afa892ca5cbd0ee9cd5
 
   **图11** 横屏
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/8r1WSO6WTvyd45L5KipifQ/zh-cn_image_0000002589244007.png?HW-CC-KV=V1&HW-CC-Date=20260429T052738Z&HW-CC-Expire=86400&HW-CC-Sign=C3319124E321D1FA9C8F6CD53B77CE55EDDA09C28079B4903B887FF445290249)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/8r1WSO6WTvyd45L5KipifQ/zh-cn_image_0000002589244007.png)
 
   **图12** 竖屏
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/Kt3rB8U-TVKChm5mIr9Ruw/zh-cn_image_0000002558764200.png?HW-CC-KV=V1&HW-CC-Date=20260429T052738Z&HW-CC-Expire=86400&HW-CC-Sign=3606C48286F164C11515E3BD2205B8860F3FDDEAB73BD00F0E8000A0302346D6)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/Kt3rB8U-TVKChm5mIr9Ruw/zh-cn_image_0000002558764200.png)
 * 父容器尺寸确定时，使用百分比设置子元素和兄弟元素的宽度，使他们在任意尺寸的设备下保持固定的自适应占比。
 
   ```
@@ -561,11 +561,11 @@ content_hash: sha256:eeb2b68ae9fcc971d4f7279588205e3dab164d26afa892ca5cbd0ee9cd5
 
   **图13** 横屏
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/g1cOH6F2Qwq71i4QTzZHwQ/zh-cn_image_0000002558604544.png?HW-CC-KV=V1&HW-CC-Date=20260429T052738Z&HW-CC-Expire=86400&HW-CC-Sign=5377D5F0A85A0A9AAB8B64C05C7775F9F1B1DE75C19249B0FC7A46E8773707B6)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/g1cOH6F2Qwq71i4QTzZHwQ/zh-cn_image_0000002558604544.png)
 
   **图14** 竖屏
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/3-O8suVvSWuNv8FNBPqv1w/zh-cn_image_0000002589324069.png?HW-CC-KV=V1&HW-CC-Date=20260429T052738Z&HW-CC-Expire=86400&HW-CC-Sign=64C4C63B441391D9B3B0DE6BBB729748DB25A23AD2B8AF98B31001AD6CC18B0F)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/3-O8suVvSWuNv8FNBPqv1w/zh-cn_image_0000002589324069.png)
 
 ## 自适应延伸
 
@@ -612,7 +612,7 @@ content_hash: sha256:eeb2b68ae9fcc971d4f7279588205e3dab164d26afa892ca5cbd0ee9cd5
 
   [ScrollVerticalExample.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/linearlayout/ScrollVerticalExample.ets#L15-L47)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/7viPQkgERbudLlnOviud1A/zh-cn_image_0000002589244009.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052738Z&HW-CC-Expire=86400&HW-CC-Sign=1DC88C9A483BE8BCEC091D5A78E178FBE792AE6C5F59C9C5D2724B2B0C825354)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/7viPQkgERbudLlnOviud1A/zh-cn_image_0000002589244009.gif)
 
   水平方向布局中使用Scroll组件：
 
@@ -652,4 +652,4 @@ content_hash: sha256:eeb2b68ae9fcc971d4f7279588205e3dab164d26afa892ca5cbd0ee9cd5
 
   [ScrollHorizontalExample.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/linearlayout/ScrollHorizontalExample.ets#L15-L47)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/6YCmaJU_SrK5bMwVwCmgEQ/zh-cn_image_0000002558764202.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052738Z&HW-CC-Expire=86400&HW-CC-Sign=8BB1521229F96B148139192BB6AB9C7173F2A4BFC5728B1076F2ACC778675F95)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/6YCmaJU_SrK5bMwVwCmgEQ/zh-cn_image_0000002558764202.gif)

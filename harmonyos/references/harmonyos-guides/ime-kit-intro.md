@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > IME Kit（输入法开发服务） > IME Kit
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:30:06+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:b405a0f33213695778efe96d2aa7130a78ba81f144ea8807cad4273224455f9f
+content_hash: sha256:abbd09a773cd9a0b297ac8caaea9daa5ceb7e84a3d97fef4a2818424fd16f0df
 ---
 
 IME Kit 负责建立编辑框所在应用与输入法应用之间的通信通道，确保两者可以共同协作提供文本输入功能，也为系统应用提供管理输入法应用的能力。
@@ -16,7 +16,7 @@ IME Kit提供输入法框架和输入法服务两类API。用于实现输入法�
 
 ## 框架原理
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/rA4AZmvoSIWtuYK2AWm_ZQ/zh-cn_image_0000002558764814.png?HW-CC-KV=V1&HW-CC-Date=20260429T053004Z&HW-CC-Expire=86400&HW-CC-Sign=4E89DA8CEE0AA5333452378E3C98DE380E712230EF9156ED91DA5190925C0FE2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/rA4AZmvoSIWtuYK2AWm_ZQ/zh-cn_image_0000002558764814.png)
 
 ## 功能特点
 

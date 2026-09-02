@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > UI Design Kit（UI设计套件） > 图标�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:30:19+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:08c1b079250dc303d6ee51e8f3f2c8ea4bf8a269336a7a0a8d141840a7db338f
+content_hash: sha256:ed42eaf344c8ba8bfa667e14128ba77c8dfaf3dd130faae2e77bc7c13116d2fc
 ---
 
 ## 场景介绍
@@ -18,7 +18,7 @@ content_hash: sha256:08c1b079250dc303d6ee51e8f3f2c8ea4bf8a269336a7a0a8d141840a7d
 * 展示应用详情：可调用UI Design Kit处理单个分层图标的接口获取处理后的应用图标。
 * 展示跟随在线主题的应用图标：可调用UI Design Kit处理分层图标的接口获取主题换肤后的应用图标。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/jDyaPHq3S7uxhuoKZ9AbgQ/zh-cn_image_0000002589324697.png?HW-CC-KV=V1&HW-CC-Date=20260429T053017Z&HW-CC-Expire=86400&HW-CC-Sign=6C89B8340B0D9924D44C2A4B9EA86B968F45EE0F474681A6E32EF83D2CF7FFDB)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/wzlmcONuQ1yMwZaguMmx7w/zh-cn_image_0000002589244635.png?HW-CC-KV=V1&HW-CC-Date=20260429T053017Z&HW-CC-Expire=86400&HW-CC-Sign=311DC24C7EBB65A1109B21FD5894639E18E3FDE4AECF19C757F078E360E953AA)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/VpMx4tWWQ_W5zbzGf_sz8Q/zh-cn_image_0000002558764830.png?HW-CC-KV=V1&HW-CC-Date=20260429T053017Z&HW-CC-Expire=86400&HW-CC-Sign=00B0263562FEBD3B574327E56B0413FE1F379FC11B4B399918537305DE9EEFDC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/jDyaPHq3S7uxhuoKZ9AbgQ/zh-cn_image_0000002589324697.png)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/wzlmcONuQ1yMwZaguMmx7w/zh-cn_image_0000002589244635.png)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/VpMx4tWWQ_W5zbzGf_sz8Q/zh-cn_image_0000002558764830.png)
 
 ## 约束条件
 
@@ -26,7 +26,7 @@ content_hash: sha256:08c1b079250dc303d6ee51e8f3f2c8ea4bf8a269336a7a0a8d141840a7d
 
 ## 开发步骤
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/x2fWIdLESq-KixpswEHetA/zh-cn_image_0000002558605174.png?HW-CC-KV=V1&HW-CC-Date=20260429T053017Z&HW-CC-Expire=86400&HW-CC-Sign=C4DBC462FC669A5BB8F548760024E6BE30FC809955BF9767B9DA9CD187803188)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/x2fWIdLESq-KixpswEHetA/zh-cn_image_0000002558605174.png)
 
 1. 设置分层图标，将前景资源和背景资源放至entry/src/main/resources/base/media文件中，并在该目录下创建一个json文件（例如：drawable.json）：
 

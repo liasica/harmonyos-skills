@@ -5,7 +5,7 @@ breadcrumb: 指南 > 系统 > 安全 > Universal Keystore Kit（密钥管理服�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:32:09+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:446301af2109aba22abaf9a1fb10dd4419e48be10c36127a58d46db09cbc839a
+content_hash: sha256:18c0d5d7b7fab2229153960296af349a8a3358214b87f85814e040dde95b8e4e
 ---
 
 您可以利用应用真实性证明能力在服务器验证来自应用的请求，具体包括验证请求是否源自真实应用、真实设备，以及请求内容是否未经篡改。
@@ -25,7 +25,7 @@ content_hash: sha256:446301af2109aba22abaf9a1fb10dd4419e48be10c36127a58d46db09cb
 
 您的应用可以通过调用Universal Keystore Kit相关接口，并在您的服务器上完成对应的校验，以验证应用请求的真实性。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/UUUGrkqLRoOOm2hbQhf5Qg/zh-cn_image_0000002589244717.png?HW-CC-KV=V1&HW-CC-Date=20260429T053208Z&HW-CC-Expire=86400&HW-CC-Sign=E149E3F0DFB716980184F5B90B607E1BD3B1EBD4A89E76E523D2482ECE92B287)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/UUUGrkqLRoOOm2hbQhf5Qg/zh-cn_image_0000002589244717.png)
 
 本文介绍如何在您的应用和应用服务器上验证应用请求真实性，使用过程为：
 

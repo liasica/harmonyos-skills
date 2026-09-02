@@ -5,7 +5,7 @@ breadcrumb: 指南 > 图形 > XEngine Kit（GPU加速引擎服务） > 自适应
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:36:43+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:260f8705d248ba60d524538b24bdc3e3cb84ca4ef1ad2511b432ee25ffa5f96d
+content_hash: sha256:97c519ef4ddf69a2a1483ab92baf0c25560a31be6d235384de9e07c9c564e49d
 ---
 
 XEngine Kit提供自适应VRS功能，其通过合理分配画面的计算资源，视觉无损降低渲染频次，使不同的渲染图像使用不同的渲染速率，能够有效提高渲染性能。
@@ -36,7 +36,7 @@ XEngine Kit提供自适应VRS功能，其通过合理分配画面的计算资源
 
 * 下面是基于GLES图形API平台集成自适应VRS的主要业务流程
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/jTYmabT3SxyWjPD_NEc94A/zh-cn_image_0000002589245043.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053642Z&HW-CC-Expire=86400&HW-CC-Sign=5008807E394835C3C3CEBAB7E9454460C4E08F5C8A88925D652107E2DDD9A7CC)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/jTYmabT3SxyWjPD_NEc94A/zh-cn_image_0000002589245043.jpg)
 
 1. 用户在进入游戏初始化场景时调用HMS\_XEG\_GetString接口查询XEngine支持的特性，当查询接口返回支持的特性列表中包含自适应VRS时代表可以使用此特性。
 2. 此时调用HMS\_XEG\_AdaptiveVRSParameter接口配置超分参数。
@@ -49,7 +49,7 @@ XEngine Kit提供自适应VRS功能，其通过合理分配画面的计算资源
 
 * 下面是基于Vulkan图形API平台集成自适应VRS的主要业务流程
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/TC0mCJudTQabzRP5HqxKWw/zh-cn_image_0000002558765238.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053642Z&HW-CC-Expire=86400&HW-CC-Sign=E83BF3455794F815A9FBBE0BC3202FF06B6D7F5D577BDAFF1A8B23B57AD63FE8)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/TC0mCJudTQabzRP5HqxKWw/zh-cn_image_0000002558765238.jpg)
 
 1. 用户在进入游戏初始化场景时调用HMS\_XEG\_EnumerateDeviceExtensionProperties接口查询XEngine支持的特性，当查询接口返回支持的特性列表中包含自适应VRS时代表可以使用此特性。
 2. 此时调用HMS\_XEG\_CreateAdaptiveVRS接口创建自适应VRS实例。

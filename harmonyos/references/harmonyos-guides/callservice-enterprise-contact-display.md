@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用服务 > Call Service Kit（通话服务） > 企业�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:37:38+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:f17097a342a9f75f425cfe627e1abce29608de493f5af475d5441f51babb4d8b
+content_hash: sha256:038abfbfbe5ddc6866fa6d524a35f98e59e1d21f179eaa809c10bf09bd41bf50
 ---
 
 本功能仅供企业应用开发者接入。
@@ -36,11 +36,11 @@ content_hash: sha256:f17097a342a9f75f425cfe627e1abce29608de493f5af475d5441f51bab
 
 3.进入“项目设置 > 开放能力管理”页面，点击“企业来电显示”对应的“申请”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/2yjz1pDyTOudFMWPs8_GIw/zh-cn_image_0000002558765336.png?HW-CC-KV=V1&HW-CC-Date=20260429T053736Z&HW-CC-Expire=86400&HW-CC-Sign=8EFCC22F7509E6B3528182C762FF74AC0DF1AB013FAAA7F91D937BBD23B7B7E7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/2yjz1pDyTOudFMWPs8_GIw/zh-cn_image_0000002558765336.png)
 
 4.请根据实际业务需求在弹框中填写对应信息，完成后，点击右上角“提交”，提交后将在3个工作日内回复。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/kUx8_yQ8QqK-sehOZXxhZA/zh-cn_image_0000002558605680.png?HW-CC-KV=V1&HW-CC-Date=20260429T053736Z&HW-CC-Expire=86400&HW-CC-Sign=D6F9A82B94576D696FFB54B8FA332606E0910EDE086AE09545DBDBE115ACD1DD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/kUx8_yQ8QqK-sehOZXxhZA/zh-cn_image_0000002558605680.png)
 
 ## 替换调试Profile
 

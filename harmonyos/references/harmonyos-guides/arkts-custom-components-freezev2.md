@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:27:05+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:e009eea5a6235b1f45dc46063e967a0066fca9250f67cdd9109d18c89fa3c107
+content_hash: sha256:48d9daec564054af4c3d98348b03ff278642923b398420234198e4e952a8f17d
 ---
 
 当@ComponentV2装饰的自定义组件处于非激活状态时，状态变量将不响应更新，即[@Monitor](arkts-new-monitor.md)不会调用，状态变量关联的节点不会刷新。该冻结机制在复杂UI场景下能显著优化性能，避免非激活组件因状态变量更新进行无效刷新，从而减少资源消耗。通过freezeWhenInactive属性来决定是否使用冻结功能，不传参数时默认不使用。支持的场景有：[页面路由](../harmonyos-references/js-apis-router.md)、[TabContent](../harmonyos-references/ts-container-tabcontent.md)、[Navigation](../harmonyos-references/ts-basic-components-navigation.md)、[Repeat](../harmonyos-references/ts-rendering-control-repeat.md)。
@@ -34,7 +34,7 @@ content_hash: sha256:e009eea5a6235b1f45dc46063e967a0066fca9250f67cdd9109d18c89fa
 
 图示如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/b3ii7OXyS0mu4KL4UFEtHw/zh-cn_image_0000002589323919.png?HW-CC-KV=V1&HW-CC-Date=20260429T052703Z&HW-CC-Expire=86400&HW-CC-Sign=20DAE4976D8750BB981312FF6DEACA58C3905766E5FF652B119DAFD171605173)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/b3ii7OXyS0mu4KL4UFEtHw/zh-cn_image_0000002589323919.png)
 
 页面1：
 
@@ -114,11 +114,11 @@ content_hash: sha256:e009eea5a6235b1f45dc46063e967a0066fca9250f67cdd9109d18c89fa
 
 Trace如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/FXXdWN-BT7GOfzL0xfzq6Q/zh-cn_image_0000002558604404.png?HW-CC-KV=V1&HW-CC-Date=20260429T052703Z&HW-CC-Expire=86400&HW-CC-Sign=5B871486818992C674192F1DD25B2981976E23ADEC3D979D95A4A946D0A98814)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/FXXdWN-BT7GOfzL0xfzq6Q/zh-cn_image_0000002558604404.png)
 
 3.点击Back，页面2被销毁，页面1的状态由inactive变为active。状态变量bookTest的更新被观察到，@Monitor中注册的方法onMessageChange被调用，对应的Text显示内容改变。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/F52SNu1YStWr6SUyyv57mg/zh-cn_image_0000002589323929.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052703Z&HW-CC-Expire=86400&HW-CC-Sign=156D294A6AC2F2643635BCF7AE17C423F6CDF488BFA4412FF90203223DBFC415)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/F52SNu1YStWr6SUyyv57mg/zh-cn_image_0000002589323929.gif)
 
 ### TabContent
 
@@ -128,7 +128,7 @@ Trace如下：
 
 图示如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/nRF7Us-pRlafcF1q--xZDg/zh-cn_image_0000002589243859.png?HW-CC-KV=V1&HW-CC-Date=20260429T052703Z&HW-CC-Expire=86400&HW-CC-Sign=571908BE4F90B94C2064D1FF15A6D6328C096D3F9C1FC1366D64DCDDEA2F9A5B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/nRF7Us-pRlafcF1q--xZDg/zh-cn_image_0000002589243859.png)
 
 ```
 1. import { hilog } from '@kit.PerformanceAnalysisKit';
@@ -191,7 +191,7 @@ Trace如下：
 
 3.再次点击change message更改message的值，仅当前显示的TabContent子组件中@Monitor注册的方法onMessageUpdated被触发。其他inactive的TabContent组件不会触发@Monitor。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/2cPdyz4gQeiu2VC53zU-0Q/zh-cn_image_0000002558764052.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052703Z&HW-CC-Expire=86400&HW-CC-Sign=F70B76D5EF4DE3DD89FDDED5E0B3DD9489C63592C5641A1F26DD957075C3D8BF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/2cPdyz4gQeiu2VC53zU-0Q/zh-cn_image_0000002558764052.gif)
 
 ### Navigation
 
@@ -382,7 +382,7 @@ Trace如下：
 
 10.再次点击Back Page回到初始页，此时，无任何触发。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/jr2eS2jwS-KlIWKBGCXbnw/zh-cn_image_0000002589323921.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052703Z&HW-CC-Expire=86400&HW-CC-Sign=97401409797EB5BF029C693650A8C929B21C624A473A9779127C80F176798382)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/jr2eS2jwS-KlIWKBGCXbnw/zh-cn_image_0000002589323921.gif)
 
 ### Repeat
 
@@ -471,7 +471,7 @@ Repeat从API version 18开始支持自定义组件冻结。
 
 开启组件冻结（freezeWhenInactive: true），只有剩余节点中@Monitor装饰的方法onBgColorChange被触发，如示例中屏上的5个节点会刷新并打印5条日志，缓存池中的节点则不会。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/u91SusSSSZy4huDGJkepkA/zh-cn_image_0000002589243869.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052703Z&HW-CC-Expire=86400&HW-CC-Sign=A9D24DB339B6507CD74216239C0FCE72B1027F937B132FDE873E7D6F611795AF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/u91SusSSSZy4huDGJkepkA/zh-cn_image_0000002589243869.gif)
 
 ```
 1. import { hilog } from '@kit.PerformanceAnalysisKit';
@@ -502,7 +502,7 @@ Repeat从API version 18开始支持自定义组件冻结。
 
 不开启组件冻结（freezeWhenInactive: false，当未指定freezeWhenInactive参数时默认不开启组件冻结），剩余节点和缓存池节点中@Monitor装饰的方法onBgColorChange都会被触发，即会有7个节点会刷新并打印7条日志。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/2ncOjXSYRo2aA7dvW8_lmQ/zh-cn_image_0000002558764062.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052703Z&HW-CC-Expire=86400&HW-CC-Sign=50EF802A3AE17BD45CE3A65C07B9E6882408F1CD00313620C1CEE652FFF13226)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/2ncOjXSYRo2aA7dvW8_lmQ/zh-cn_image_0000002558764062.gif)
 
 ### 仅子组件开启组件冻结
 
@@ -964,4 +964,4 @@ API version 21及之前版本，如下面示例所示，FreezeBuildNode中使用
 
 点击change，改变message的值，当前正在显示的TabContent组件中@Monitor注册的方法onMessageChange被触发。未显示的TabContent中的BuilderNode节点下组件的@Monitor方法onMessageChange也被触发，并没有被冻结。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/7NwxxWuPT8-xObXLbsZmnQ/zh-cn_image_0000002558764060.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052703Z&HW-CC-Expire=86400&HW-CC-Sign=117B726487286E8F1EDBD4BD1A49023F77DC23D03615736C0C9F720BC5348901)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/7NwxxWuPT8-xObXLbsZmnQ/zh-cn_image_0000002558764060.gif)

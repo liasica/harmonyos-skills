@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:28:56+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:436464b8f482b1fbb1edfe30f732586de00b7ddc3d3f5b7d6ee01600423589f1
+content_hash: sha256:d7183d765675f32b5b5fc41a5c0363a154b048c90b516c47d7d7e6c832b12b0f
 ---
 
 在组件上创建和运行动画的快捷方式。具体用法请参考[通用方法](../harmonyos-references/js-components-common-methods.md)。
@@ -65,7 +65,7 @@ content_hash: sha256:436464b8f482b1fbb1edfe30f732586de00b7ddc3d3f5b7d6ee01600423
 25. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/cMGoOf76RtegSuxcmMvr7w/zh-cn_image_0000002558604982.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052855Z&HW-CC-Expire=86400&HW-CC-Sign=868AA140C546BAA4833129DFF3A9642A25BB1608ACAA4A199795A4FB9ACC16B6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/cMGoOf76RtegSuxcmMvr7w/zh-cn_image_0000002558604982.gif)
 
 说明
 
@@ -144,7 +144,7 @@ content_hash: sha256:436464b8f482b1fbb1edfe30f732586de00b7ddc3d3f5b7d6ee01600423
 41. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/4xzgZfjSRRS_DLO3S686bQ/zh-cn_image_0000002589324509.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052855Z&HW-CC-Expire=86400&HW-CC-Sign=8CE00AC229C628D8793328B79663ED61CE4F05B6ADFCB61C3B5E6DCD8B26D376)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/4xzgZfjSRRS_DLO3S686bQ/zh-cn_image_0000002589324509.gif)
 
 说明
 
@@ -212,7 +212,7 @@ content_hash: sha256:436464b8f482b1fbb1edfe30f732586de00b7ddc3d3f5b7d6ee01600423
 33. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/Jb8ZirkoRVm6Mq-ZuMtz8A/zh-cn_image_0000002589244447.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052855Z&HW-CC-Expire=86400&HW-CC-Sign=FB99E19564D63010E4508080A5D77D17044F0626B5652B7376091F2F0DDD47D8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/Jb8ZirkoRVm6Mq-ZuMtz8A/zh-cn_image_0000002589244447.gif)
 
 说明
 

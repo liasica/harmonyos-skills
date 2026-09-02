@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用服务 > Cloud Foundation Kit（云开发服务） > 
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:37:54+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:127c731a53235c8c86233a8b3a5807195d3c9f54421e5c9d1310a2e8ea4e9451
+content_hash: sha256:b040d5c22ba76a8e794c0298b19b48756e8b69bfa5e910fedc3cf383363789bb
 ---
 
 **问题现象**
@@ -14,10 +14,10 @@ content_hash: sha256:127c731a53235c8c86233a8b3a5807195d3c9f54421e5c9d1310a2e8ea4
 
 * app日志提示“"state":65”
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/qbXAoiaVTCWe8Gue4Avhjw/zh-cn_image_0000002558765378.png?HW-CC-KV=V1&HW-CC-Date=20260429T053754Z&HW-CC-Expire=86400&HW-CC-Sign=1AF49ECB77E69DC4656EB08E012B3289A1F9CFB8B0E1416BE4D26B52FDA7112C)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/qbXAoiaVTCWe8Gue4Avhjw/zh-cn_image_0000002558765378.png)
 * upload进程的日志提示“403 Forbidden”（通过设置“No filters”模式、过滤“C01C50”关键字查找）
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/TS4AAPugTe-nkiJJosRPFw/zh-cn_image_0000002558605722.png?HW-CC-KV=V1&HW-CC-Date=20260429T053754Z&HW-CC-Expire=86400&HW-CC-Sign=E702F2A1A0BB6C115737859394EFFFF4111B9DB28306EBCE8B8AA95660C27E21)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/TS4AAPugTe-nkiJJosRPFw/zh-cn_image_0000002558605722.png)
 
 **解决措施**
 

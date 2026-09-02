@@ -5,7 +5,7 @@ breadcrumb: 指南 > 系统 > 基础功能 > Basic Services Kit（基础服务�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:33:08+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:0b58a772e34fc9407cbaf704b035a9bd8e2a7bd4fc9a4819fe06eb3cf4df755d
+content_hash: sha256:08b7359d4f7151653a1a6d79c8b9b7f7bc7cc7af88723de1a87b1e560414f5a7
 ---
 
 Emitter是一种作用在进程内的事件处理机制，为应用程序提供订阅事件、发布事件、取消事件订阅的能力。
@@ -18,7 +18,7 @@ Emitter用于同一进程内相同线程或不同线程间的事件处理，事�
 
 Emitter通过维护一个内部事件队列，来进行任务分发。应用需要先订阅某个事件并设置好该事件的回调方法，当应用程序发布事件后，就会往队列里面插入一个事件。任务队列会串行执行队列里面的任务，执行任务时会调用该任务订阅者的回调方法进行事件处理。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/hjtIAMIDQ2aumwAFlyfksw/zh-cn_image_0000002558605290.png?HW-CC-KV=V1&HW-CC-Date=20260429T053307Z&HW-CC-Expire=86400&HW-CC-Sign=EEC827D2CF9C083A7FD3A8914A28E0FA5BC2AD85C237AC257FC2AE5497A163F3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/hjtIAMIDQ2aumwAFlyfksw/zh-cn_image_0000002558605290.png)
 
 ## 接口说明
 

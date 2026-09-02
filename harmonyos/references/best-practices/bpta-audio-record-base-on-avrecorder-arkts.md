@@ -5,7 +5,7 @@ breadcrumb: 最佳实践 > 媒体 > 音频和视频 > 音频录制系列开发�
 category: best-practices
 scraped_at: 2026-04-29T14:11:28+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:76a3e67f3c35ecc05e4ab3833cb30bbdf722c895918656fcf0676bd4bb58d49c
+content_hash: sha256:b9c478a23014325ac29cec593c37bd4a9c73504bcbb000d644a2b5ebc35a9562
 ---
 
 ## 概述
@@ -14,7 +14,7 @@ AVRecorder集成了音频输入录制、音频编码和媒体封装的功能，�
 
 基于AVRecorder录制格式化音频（ArkTS）实现的功能效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/RIYVxnGXSAi80mE_vqXkew/zh-cn_image_0000002524061074.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061127Z&HW-CC-Expire=86400&HW-CC-Sign=1548D2FC1EF97DAC7D18F3F9B6617D83B8F5F0384E16478AC44776889112AD3B "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/RIYVxnGXSAi80mE_vqXkew/zh-cn_image_0000002524061074.gif "点击放大")
 
 本文的主要内容如下：
 
@@ -30,7 +30,7 @@ AVRecorder提供了开始录制、暂停录制、恢复录制、停止录制、�
 
 **图1** 录制状态变化示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/Q4g4KXTRS-ms-9R358kvkA/zh-cn_image_0000002555220983.png?HW-CC-KV=V1&HW-CC-Date=20260429T061127Z&HW-CC-Expire=86400&HW-CC-Sign=7DF5C6E6752CCE4C339D7ED1F1B5F05AFA4692A5E1C6310B77D47B3D752B90BA "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/Q4g4KXTRS-ms-9R358kvkA/zh-cn_image_0000002555220983.png "点击放大")
 
 ### 开发步骤
 

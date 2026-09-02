@@ -5,7 +5,7 @@ breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 >
 category: best-practices
 scraped_at: 2026-04-29T14:12:37+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:d3a9616792d1dda1d5b9d9a63aedcebae7d642fca839ff769ef275026a365db1
+content_hash: sha256:379bd6fffd5615d698b8e2d241d1da2979fc9f3ce0a7122587435b372bc477c0
 ---
 
 本小节以“设置”应用页面为例，介绍如何使用自适应布局能力和响应式布局能力适配不同尺寸窗口。
@@ -14,7 +14,7 @@ content_hash: sha256:d3a9616792d1dda1d5b9d9a63aedcebae7d642fca839ff769ef275026a3
 
 为充分利用屏幕尺寸优势，应用常常有在小屏设备上单栏显示，大屏设备上左右分两栏显示的设计，设置应用页面设计如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/vDa3-0nTTxy36tsvP4RzMw/zh-cn_image_0000002472234181.png?HW-CC-KV=V1&HW-CC-Date=20260429T061231Z&HW-CC-Expire=86400&HW-CC-Sign=814E2B755F89D97DEB214CD8AB06CB0FEEAD7FAE6D50D1B7D52CA436606829D9 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/vDa3-0nTTxy36tsvP4RzMw/zh-cn_image_0000002472234181.png "点击放大")
 
 观察“设置”应用页面设计，不同断点下“设置主页”、“WLAN页面”和“更多WLAN设置页面”几乎完全一致，只是在sm断点下采用单栏显示，在md和lg断点下采用双栏显示。
 
@@ -34,10 +34,10 @@ Navigation组件由NavBar和Content两部分区域组成，支持Stack、Split�
 
 * Stack模式
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/6qhZ-OHITNS7qDsA8T3ggQ/zh-cn_image_0000002321148442.png?HW-CC-KV=V1&HW-CC-Date=20260429T061231Z&HW-CC-Expire=86400&HW-CC-Sign=AEAD7F31242F979D50E65B1E24910097A3802F9AE02D1E4FFCCCE5634818BFEB "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/6qhZ-OHITNS7qDsA8T3ggQ/zh-cn_image_0000002321148442.png "点击放大")
 * Split模式
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/xZEC9ocWTde8sSk2-UhfSg/zh-cn_image_0000002355266989.png?HW-CC-KV=V1&HW-CC-Date=20260429T061231Z&HW-CC-Expire=86400&HW-CC-Sign=11D455013FE945422CD3DA53AC1DF5005631E3FF30B367F1A5FCEE0D4EEF2FA1 "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/xZEC9ocWTde8sSk2-UhfSg/zh-cn_image_0000002355266989.png "点击放大")
 * Auto模式
 
   Auto模式是指Navigation组件可以根据应用窗口尺寸，自动选择合适的模式：窗口宽度小于520vp时，采用Stack模式显示；窗口宽度大于等于520vp时，采用Split模式显示。当窗口尺寸发生改变时，Navigation组件也会自动在Stack模式和Split模式之间切换。
@@ -228,7 +228,7 @@ Navigation组件通常搭配[NavPathStack](../harmonyos-references/ts-basic-comp
 
 NavPathStack对象用于控制Navigation组件中页面的跳转，通过[Push相关的接口](../harmonyos-references/ts-basic-components-navigation.md#pushpath12)将指定的NavDestination页面信息入栈去实现页面跳转的功能。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/3g9kUow3R8WWxmvt3qMcKw/zh-cn_image_0000002321308278.png?HW-CC-KV=V1&HW-CC-Date=20260429T061231Z&HW-CC-Expire=86400&HW-CC-Sign=8785B3E23B5D9E1173898218BC5B816A16220D969AE5A94AF23336F89058CD8D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/3g9kUow3R8WWxmvt3qMcKw/zh-cn_image_0000002321308278.png)
 
 结合设置应用的具体场景来看，点击上图1号小红框，跳转至2号红框WLAN页面，相应的核心代码实现如下。
 
@@ -393,7 +393,7 @@ NavDestination组件用于实际刷新Navigation组件Content区域的显示。
 
 特别的，Navigation组件会根据当前的状态决定是否在NavDestination组件标题栏起始部分自动添加返回键图标。当Navigation组件添加了返回键图标时，还可以自动响应及处理系统三键导航中的返回键事件。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/K0hliisOSEGhhLDrQaOFNA/zh-cn_image_0000002438914430.png?HW-CC-KV=V1&HW-CC-Date=20260429T061231Z&HW-CC-Expire=86400&HW-CC-Sign=CBB1BBEFA271899CEC6E18BA105734081FFAF208EFB7C950F1AA4E913297EE3F "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/K0hliisOSEGhhLDrQaOFNA/zh-cn_image_0000002438914430.png "点击放大")
 
 ## 如何实现多级跳转
 
@@ -510,7 +510,7 @@ NavDestination组件用于实际刷新Navigation组件Content区域的显示。
 
 ## 总结
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/ksUlnRXFREW_q5q8ZegpGg/zh-cn_image_0000002321308294.png?HW-CC-KV=V1&HW-CC-Date=20260429T061231Z&HW-CC-Expire=86400&HW-CC-Sign=FE9E04017D333B0E6F76D413F749CAB2AFB7951D2DFCA400350039B1356CA227 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/ksUlnRXFREW_q5q8ZegpGg/zh-cn_image_0000002321308294.png "点击放大")
 
 本示例的基础导航结构上图所示：
 

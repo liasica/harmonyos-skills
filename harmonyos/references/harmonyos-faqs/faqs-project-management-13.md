@@ -5,14 +5,14 @@ breadcrumb: FAQ > DevEco Studio > 工程管理 > 如何解决mac启动DevEco Stu
 category: harmonyos-faqs
 scraped_at: 2026-04-29T14:20:11+08:00
 doc_updated_at: 2026-03-17
-content_hash: sha256:c952fcb292ce28e0d0adae8032a45845eec13fd7f147ea0a4a384a1a8b041371
+content_hash: sha256:043b4b7ef18f3bf65bce0c74805ceab1029bc2ea2421b0b90457596425fe36e0
 ---
 
 **问题描述**
 
 Mac启动DevEco Studio时，“DevEco Studio”意外退出。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/xw5amg6hRWmOGQHtEntGPA/zh-cn_image_0000002229758581.png?HW-CC-KV=V1&HW-CC-Date=20260429T062009Z&HW-CC-Expire=86400&HW-CC-Sign=A08D1B68B137C531DE3E55F4C55F4303DC17D19FCD14AA3594F5754250EEA22F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/xw5amg6hRWmOGQHtEntGPA/zh-cn_image_0000002229758581.png)
 
 **解决方案**
 

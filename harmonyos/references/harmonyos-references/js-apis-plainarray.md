@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-plainarray
-title: @ohos.util.PlainArray (非线性容器PlainArray)
+title: "@ohos.util.PlainArray (非线性容器PlainArray)"
 breadcrumb: API参考 > 应用框架 > ArkTS（方舟编程语言） > ArkTS API > @ohos.util.PlainArray (非线性容器PlainArray)
 category: harmonyos-references
 scraped_at: 2026-04-28T08:00:10+08:00

@@ -5,14 +5,14 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:27:09+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:b57c53322f0e8b043616e4c57b37ddd1b1dc100f83dd086db1ca51a879969696
+content_hash: sha256:47c37d310e403a6d8518b88f4761316508320cc261dfc1abe1150c104a0c4e6b
 ---
 
 在前文的描述中，构建的页面主要为静态界面。如果要构建一个动态的、有交互的界面，就需要引入“状态”的概念。
 
 **图1** 效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/NmnFlbJOQ4iOz9NOBvl6Gw/zh-cn_image_0000002558604386.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052708Z&HW-CC-Expire=86400&HW-CC-Sign=553E311950A7B44B8E2E81CA98A4E24B873C7425E43AF36738D10804482865E7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/NmnFlbJOQ4iOz9NOBvl6Gw/zh-cn_image_0000002558604386.gif)
 
 上面的示例中，用户与应用程序的交互触发了文本状态变更，状态变更引起了UI渲染，UI从“Hello World”变更为“Hello ArkUI”。
 
@@ -20,7 +20,7 @@ content_hash: sha256:b57c53322f0e8b043616e4c57b37ddd1b1dc100f83dd086db1ca51a8799
 
 自定义组件中的变量，必须使用装饰器装饰，才能成为状态变量，状态变量的改变会引起UI的渲染刷新。如果不使用状态变量，UI只能在初始化时渲染，后续将不会再刷新。下图展示了State和View（UI）之间的关系。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/S5gD9gOAQDaD5Wk891gIfA/zh-cn_image_0000002558604422.png?HW-CC-KV=V1&HW-CC-Date=20260429T052708Z&HW-CC-Expire=86400&HW-CC-Sign=2BCDEAFE3996F61E8F548EA6C996EADF5D7950D7EE381FFD9EB7159D4D009F6C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/S5gD9gOAQDaD5Wk891gIfA/zh-cn_image_0000002558604422.png)
 
 * View(UI)：UI渲染，指将build方法内的UI描述和@Builder装饰的方法内的UI描述映射到界面。
 * State：状态，指驱动UI更新的数据。通过触发组件的事件方法，改变状态数据。状态数据的改变，引起UI的重新渲染。
@@ -54,7 +54,7 @@ ArkUI状态管理V1提供了多种装饰器，通过使用这些装饰器，状�
 
 图示如下，具体装饰器的介绍，可详见[管理组件拥有的状态](arkts-v1-component-state-management.md)和[管理应用拥有的状态](arkts-v1-application-state-management.md)。开发者可以利用这些能力来实现数据和UI的联动。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/8GGFWuN4RAar4_SZW6C2IQ/zh-cn_image_0000002589323947.png?HW-CC-KV=V1&HW-CC-Date=20260429T052708Z&HW-CC-Expire=86400&HW-CC-Sign=6400E8EF82BA385F334C39C054211B894AFCBE3C5449E5F17193135A983461AA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/8GGFWuN4RAar4_SZW6C2IQ/zh-cn_image_0000002589323947.png)
 
 上图中，Components部分的装饰器为组件级别的状态管理，Application部分为应用的状态管理。开发者可以通过[@StorageLink](arkts-appstorage.md#storagelink)/[@LocalStorageLink](arkts-localstorage.md#localstoragelink)实现应用和组件状态的双向同步，通过[@StorageProp](arkts-appstorage.md#storageprop)/[@LocalStorageProp](arkts-localstorage.md#localstorageprop)实现应用和组件状态的单向同步。
 
@@ -96,7 +96,7 @@ ArkUI状态管理V1提供了多种装饰器，通过使用这些装饰器，状�
 * 在更改对象中属性以及更改数组中元素的场景下存在冗余更新的问题。
 * 装饰器间配合使用限制多，不易用。组件中没有明确状态变量的输入与输出，不利于组件化。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/UM54ds6RTKOc9LWyJkZZug/zh-cn_image_0000002589243887.png?HW-CC-KV=V1&HW-CC-Date=20260429T052708Z&HW-CC-Expire=86400&HW-CC-Sign=D6AEC9436E944D544E2EFF8F93650BD2FB3A624F3C674C3B4AD13609F770BCB6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/UM54ds6RTKOc9LWyJkZZug/zh-cn_image_0000002589243887.png)
 
 状态管理V2增强了数据的观察能力，使数据本身可观察。更改数据时，会触发相应视图的更新。相较于状态管理V1，状态管理V2有如下优点：
 
@@ -105,7 +105,7 @@ ArkUI状态管理V1提供了多种装饰器，通过使用这些装饰器，状�
 * 支持对象中属性级精准更新及数组中元素的最小化更新。
 * 装饰器易用性高、拓展性强，在组件中明确输入与输出，有利于组件化。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/6cLQAYllQ-e3-hmB0Ur81g/zh-cn_image_0000002558764080.png?HW-CC-KV=V1&HW-CC-Date=20260429T052708Z&HW-CC-Expire=86400&HW-CC-Sign=705170ADA0154AC26D994F391C2E314BAB59E86B79639CCBAC0BEDC6152042A3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/6cLQAYllQ-e3-hmB0Ur81g/zh-cn_image_0000002558764080.png)
 
 ### 装饰器总览
 

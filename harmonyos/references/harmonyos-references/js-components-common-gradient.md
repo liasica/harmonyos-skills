@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > �
 category: harmonyos-references
 scraped_at: 2026-04-29T13:53:16+08:00
 doc_updated_at: 2026-03-23
-content_hash: sha256:ea6ccb58118a4dc164c66624dd64557138468bee3f0baca3c16817fb787c078e
+content_hash: sha256:77b704c424853a26f50c9e503887ae19d666ad34398e07527d41a04555d9963d
 ---
 
 说明
@@ -64,7 +64,7 @@ PhonePC/2in1TabletTVWearable
    6. }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/EMkK9jPMTCu57bvk_F5ijg/zh-cn_image_0000002589246507.png?HW-CC-KV=V1&HW-CC-Date=20260429T055315Z&HW-CC-Expire=86400&HW-CC-Sign=7254C7967EF1931E1C0CDAE77FA360FA2F5C548D73FECDF6331379E6ECEEC1F8)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/EMkK9jPMTCu57bvk_F5ijg/zh-cn_image_0000002589246507.png)
 2. 45度夹角渐变。
 
    ```
@@ -72,7 +72,7 @@ PhonePC/2in1TabletTVWearable
    2. background: linear-gradient(45deg, rgb(255,0,0),rgb(0, 255, 0));
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/n9bau9XXSr2kMlC08mh0ZA/zh-cn_image_0000002558766700.png?HW-CC-KV=V1&HW-CC-Date=20260429T055315Z&HW-CC-Expire=86400&HW-CC-Sign=B89FA84A2DFEECAD09C2FC2E39DDF2E2248C43F245BBD9E2DB71BF01879A1C85)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/n9bau9XXSr2kMlC08mh0ZA/zh-cn_image_0000002558766700.png)
 3. 设置方向从左向右渐变。
 
    ```
@@ -80,7 +80,7 @@ PhonePC/2in1TabletTVWearable
    2. background: linear-gradient(to right, rgb(255,0,0) 90px, rgb(0, 255, 0) 60%);
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/SYfVNAaVSFC19hprkFSXqw/zh-cn_image_0000002558607040.png?HW-CC-KV=V1&HW-CC-Date=20260429T055315Z&HW-CC-Expire=86400&HW-CC-Sign=2E5AF81A63F004CB7DFCF67E3DFD15F4F3F41FC0E2E3708E72160E10673DE12A)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/SYfVNAaVSFC19hprkFSXqw/zh-cn_image_0000002558607040.png)
 4. 重复渐变。
 
    ```
@@ -88,4 +88,4 @@ PhonePC/2in1TabletTVWearable
    2. background: repeating-linear-gradient(to right, rgba(255, 255, 0, 1) 30px,rgba(0, 0, 255, .5) 60px);
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/QI9Az5GtSz6npgfEJo-JsA/zh-cn_image_0000002589326567.png?HW-CC-KV=V1&HW-CC-Date=20260429T055315Z&HW-CC-Expire=86400&HW-CC-Sign=4F98C5B4E902D3D802A413F6664581A9AE9C039AC0D33C606B23A1E1CF818B59)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/QI9Az5GtSz6npgfEJo-JsA/zh-cn_image_0000002589326567.png)

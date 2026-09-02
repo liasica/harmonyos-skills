@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-222
-title: @Style 和 @Extend 是否支持export导出
+title: "@Style 和 @Extend 是否支持export导出"
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 方舟UI框架（ArkUI） > @Style 和 @Extend 是否支持export导出
 category: harmonyos-faqs
 scraped_at: 2026-04-28T08:25:58+08:00

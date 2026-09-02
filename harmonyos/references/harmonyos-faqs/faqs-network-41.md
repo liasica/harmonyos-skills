@@ -5,7 +5,7 @@ breadcrumb: FAQ > 系统开发 > 网络 > 网络（Network） > httpRequest.requ
 category: harmonyos-faqs
 scraped_at: 2026-04-29T14:19:16+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:91a95bfd3cb827aa92751ff31e914a79e136419b3dc6af147e4c960d0c863622
+content_hash: sha256:a3b2a780a45c6a04889b01a825bf5ed62bcbebbc2fd6e257cfd9546655fc5a5e
 ---
 
 **问题现象**
@@ -40,7 +40,7 @@ HTTPS校验主要包括以下几个步骤：
 SSL劫持原理：第三方攻击者会先接入请求方和接收方之间，通过伪造的证书与请求方交换数据，再以请求方的身份与接收方进行数据交互。SSL劫持通常发生在用户安装了未经权威CA认证的证书时，因此需要进行证书校验。
 
 **图1** SSL劫持  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/zFQcX8_9SHW0rRFXGeiRgQ/zh-cn_image_0000002194158516.png?HW-CC-KV=V1&HW-CC-Date=20260429T061915Z&HW-CC-Expire=86400&HW-CC-Sign=4F6AC718976F7AF2F4710A8AD278FACD4303CC9CE1C05E513605904454009152 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/zFQcX8_9SHW0rRFXGeiRgQ/zh-cn_image_0000002194158516.png "点击放大")
 
 SSL剥离通常发生在HTTP请求中，现代网站多强制使用HTTPS。
 

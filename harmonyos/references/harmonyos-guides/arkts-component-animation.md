@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:28:13+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:e1a46bfd3a458f52f60c5058d32be5661b5a1dc9308d726f802cd868ef6d8bce
+content_hash: sha256:4da44d5981ebb885ed50189f7b631a6590dee216f3405cd442d64ae0db5aa651
 ---
 
 ArkUI为组件提供了通用的属性动画和转场动画能力的同时，还为一些组件提供了默认的动画效果。例如，[List](../harmonyos-references/ts-container-list.md)的滑动动效、[Button](../harmonyos-references/ts-basic-components-button.md)的点击动效，是组件自带的默认动画效果。在组件默认动画效果的基础上，开发者还可以通过属性动画和转场动画对容器组件内的子组件动效进行定制。
@@ -42,7 +42,7 @@ ArkUI为组件提供了通用的属性动画和转场动画能力的同时，还
 
 [Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/Animation/entry/src/main/ets/pages/component/template1/Index.ets#L16-L33)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/yVmwauXmQOSthXT3gXlAPA/zh-cn_image_0000002558764486.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052810Z&HW-CC-Expire=86400&HW-CC-Sign=F82C143C172FEC0F47B4BF89129D2890DECB27FD0DED51EF84DE9BFF1E23262E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/yVmwauXmQOSthXT3gXlAPA/zh-cn_image_0000002558764486.gif)
 
 ## 打造组件定制化动效
 
@@ -356,7 +356,7 @@ ArkUI为组件提供了通用的属性动画和转场动画能力的同时，还
 
 [Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/Animation/entry/src/main/ets/pages/component/template2/Index.ets#L16-L314)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/2jijB7zaQ5-VZuHlP6__0Q/zh-cn_image_0000002558604830.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052810Z&HW-CC-Expire=86400&HW-CC-Sign=B4E3C83541CDC0103961FCA7400AB05461C4ABFEB99188A1077431C21E4ADBC2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/2jijB7zaQ5-VZuHlP6__0Q/zh-cn_image_0000002558604830.gif)
 
 通过animateTo可以实现将List中指定的Item替换到首位，List中其余Item依次向下排列。定制List组件动态替换动效的示例代码和效果如下。
 
@@ -534,7 +534,7 @@ ArkUI为组件提供了通用的属性动画和转场动画能力的同时，还
 
 [Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/Animation/entry/src/main/ets/pages/component/template3/Index.ets#L16-L186)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/QaiUHDm8T_-h6qWneBtJCA/zh-cn_image_0000002589324355.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052810Z&HW-CC-Expire=86400&HW-CC-Sign=D6AD29FA18C48FAFC993EBE8B26883381DDDCBFF236F9AF5A526838E05FA89D0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/QaiUHDm8T_-h6qWneBtJCA/zh-cn_image_0000002589324355.gif)
 
 ## 示例代码
 

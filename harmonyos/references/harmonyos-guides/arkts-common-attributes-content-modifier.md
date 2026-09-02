@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:28:24+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:997d4622c2967ebfe235a1edeb425f06eed364527adb08d48e4d0d85794c764a
+content_hash: sha256:2301e5e95320464add3f2012a54257b40c26cdfdbd29908e487ff0abd20475d1
 ---
 
 当开发者期望自定义组件的内容区时，比如Checkbox的内部显示一个五角星等场景时，可以使用此功能。
@@ -106,4 +106,4 @@ content_hash: sha256:997d4622c2967ebfe235a1edeb425f06eed364527adb08d48e4d0d85794
 
 [MyCheckboxStyle.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/Modifier/entry/src/main/ets/pages/MyCheckboxStyle.ets#L16-L104)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/ykZeyoDySWWIxoyi0a0_Cg/zh-cn_image_0000002558764518.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052823Z&HW-CC-Expire=86400&HW-CC-Sign=FFC0FBE444C03EB5A0FD5566F88B42DE58346475C27F926165646181B814DA05)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/ykZeyoDySWWIxoyi0a0_Cg/zh-cn_image_0000002558764518.gif)

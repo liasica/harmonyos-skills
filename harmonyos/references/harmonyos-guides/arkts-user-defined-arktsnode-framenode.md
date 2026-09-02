@@ -5,18 +5,18 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:28:19+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:f061e94cfd035e7aef00754a2c2d8af22801b0874d349b08e2c23f264ac27e20
+content_hash: sha256:1d0d1a3f34d102af33cce9a9fbc1b3bbe4b49faca7a49484b939659028ba8c78
 ---
 
 ## 概述
 
 对于拥有自定义前端的第三方框架（如JSON、XML、DOM树等），需将特定的DSL转换为ArkUI的声明式描述。如下图描述了JSON定义的前端框架和ArkUI声明式描述的对应关系。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/Ls-8flKXRXKSI4pyVzkXpg/zh-cn_image_0000002558604840.png?HW-CC-KV=V1&HW-CC-Date=20260429T052817Z&HW-CC-Expire=86400&HW-CC-Sign=17A5AC03574C090D39124A19FEB9C290618C76E309AC0CE890648934A3E6755C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/Ls-8flKXRXKSI4pyVzkXpg/zh-cn_image_0000002558604840.png)
 
 上述转换过程需要依赖额外的数据驱动，绑定至[Builder](arkts-builder.md)中，较为复杂且性能欠佳。这类框架通常依赖于ArkUI的布局、事件处理、基础的节点操作和自定义能力。大部分组件通过自定义实现，但需结合使用部分系统组件以实现混合显示，如下图示例既使用了FrameNode的自定义方法进行绘制，又使用了系统组件Column及其子组件Text，通过BuilderNode的方式将其挂载到根节点的FrameNode上混合显示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/2FTCq1v9TAug5ZoSbIcAAw/zh-cn_image_0000002589324365.png?HW-CC-KV=V1&HW-CC-Date=20260429T052817Z&HW-CC-Expire=86400&HW-CC-Sign=D52C4BCC27FF11EE1969F5B2515A06A2C39DDDBB57840E9B8C1386AB61F3DE07)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/2FTCq1v9TAug5ZoSbIcAAw/zh-cn_image_0000002589324365.png)
 
 [FrameNode](../harmonyos-references/js-apis-arkui-framenode.md)的设计初衷正是为了解决上述转换问题。FrameNode表示组件树中的实体节点，与自定义占位容器组件[NodeContainer](../harmonyos-references/ts-basic-components-nodecontainer.md)相配合，实现在占位容器内构建一棵自定义的节点树。该节点树支持动态操作，如节点的增加、修改和删除。基础的FrameNode具备设置通用属性和事件回调的功能，同时提供完整的自定义能力，涵盖自定义测量、布局和绘制等方面。
 
@@ -439,7 +439,7 @@ FrameNode提供了节点的增、删、查、改的能力，能够修改非代�
 
 [FrameNodeMoveTo.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/FrameNode/entry/src/main/ets/pages/framenode/FrameNodeMoveTo.ets#L16-L72)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/WtMpvwuBRYCpmYXSWq6LJg/zh-cn_image_0000002589244305.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052817Z&HW-CC-Expire=86400&HW-CC-Sign=7E5C15D63D62A63E0C6338B66F61E1740F479A77E9532723C8DADB0A14CC40B5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/WtMpvwuBRYCpmYXSWq6LJg/zh-cn_image_0000002589244305.gif)
 
 ## 设置节点通用属性和事件回调
 
@@ -828,7 +828,7 @@ FrameNode提供了查询节点相对窗口、父组件以及屏幕位置偏移�
 
 [getPositionToWindow](../harmonyos-references/js-apis-arkui-framenode.md#getpositiontowindow12)，[getPositionToParent](../harmonyos-references/js-apis-arkui-framenode.md#getpositiontoparent12)，[getPositionToScreen](../harmonyos-references/js-apis-arkui-framenode.md#getpositiontoscreen12)三个接口获取到的位置信息关系如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/NXGMvY1vSWykUR6m57kP5g/zh-cn_image_0000002558764498.png?HW-CC-KV=V1&HW-CC-Date=20260429T052817Z&HW-CC-Expire=86400&HW-CC-Sign=1E8293F2FE6D31E4A716549015F3557112DBAECF586BB6786AF8C1834042CBD4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/NXGMvY1vSWykUR6m57kP5g/zh-cn_image_0000002558764498.png)
 
 ```
 1. import { NodeController, FrameNode, UIContext } from '@kit.ArkUI';
@@ -2118,7 +2118,7 @@ FrameNode提供了查询节点相对窗口、父组件以及屏幕位置偏移�
 
 [FrameNodeCanvas.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/FrameNode/entry/src/main/ets/pages/framenode/FrameNodeCanvas.ets#L16-L148)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/96w_NhW9TtOR-C49SE0evw/zh-cn_image_0000002558604842.png?HW-CC-KV=V1&HW-CC-Date=20260429T052817Z&HW-CC-Expire=86400&HW-CC-Sign=25FC00836F873280051EFB907EAC321360E7DA9C581B15C49861EB78EF93B9F8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/96w_NhW9TtOR-C49SE0evw/zh-cn_image_0000002558604842.png)
 
 ## 更新当前帧节点
 
@@ -2218,7 +2218,7 @@ FrameNode提供了查询节点相对窗口、父组件以及屏幕位置偏移�
 91. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/n5Bfk13ZQ2K-2Dh4lFpaOw/zh-cn_image_0000002589324367.png?HW-CC-KV=V1&HW-CC-Date=20260429T052817Z&HW-CC-Expire=86400&HW-CC-Sign=2504BE3D1F1EB10F80A64A5D9E5B8A83BFF56A38F14464FAA7EB8E0C9BC42DDB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/n5Bfk13ZQ2K-2Dh4lFpaOw/zh-cn_image_0000002589324367.png)
 
 ## 判断节点是否处于渲染状态
 
@@ -2289,4 +2289,4 @@ FrameNode提供了查询节点相对窗口、父组件以及屏幕位置偏移�
 62. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/GGlOnsZARHytMg41iI7yYw/zh-cn_image_0000002589244307.png?HW-CC-KV=V1&HW-CC-Date=20260429T052817Z&HW-CC-Expire=86400&HW-CC-Sign=F876BF21AA27BD43FB96C5B7F303463682C6C15D989A52B77CB75C792891EB83)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/GGlOnsZARHytMg41iI7yYw/zh-cn_image_0000002589244307.png)

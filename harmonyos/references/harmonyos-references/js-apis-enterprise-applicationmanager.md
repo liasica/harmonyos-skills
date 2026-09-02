@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-enterprise-applicationmanager
-title: @ohos.enterprise.applicationManager（应用管理）
+title: "@ohos.enterprise.applicationManager（应用管理）"
 breadcrumb: API参考 > 系统 > 基础功能 > MDM Kit（企业设备管理服务） > ArkTS API > @ohos.enterprise.applicationManager（应用管理）
 category: harmonyos-references
 scraped_at: 2026-04-28T08:10:24+08:00

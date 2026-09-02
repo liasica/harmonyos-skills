@@ -5,7 +5,7 @@ breadcrumb: 最佳实践 > 稳定性 > 稳定性检测 > 开发态稳定性检�
 category: best-practices
 scraped_at: 2026-04-29T14:14:00+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:ba461a2305c6befd5555b757805121a9f548130211a50858951007bcbc218421
+content_hash: sha256:08d6aea34a5339587d34e3144232b9fb7d81648e3f1662186502098fe2c5b34c
 ---
 
 GWP-ASan的能力概述和检测原理可参看[地址越界检测能力概述](bpta-stability-address-sanitizer-overview.md)以及[GWP-ASan检测原理](bpta-stability-address-sanitizer-principle.md#section555616291854)，适用于运行态商用场景。
@@ -18,7 +18,7 @@ ASan、TSan、UBSan、HWASan、GWP-ASan不能同时开启，五个只能开启�
 
 在app.json5中添加"GWPAsanEnabled": true配置，如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/DZQW2qt8TQOutZkJVZnk4w/zh-cn_image_0000002404125097.png?HW-CC-KV=V1&HW-CC-Date=20260429T061359Z&HW-CC-Expire=86400&HW-CC-Sign=71E190D21F69B4B041C292B09302FE4798CAAA969EBEE5E7D6C4ADFA0D314CEF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/DZQW2qt8TQOutZkJVZnk4w/zh-cn_image_0000002404125097.png)
 
 开启GWP-ASan检测后，如果应用发生地址越界问题，且该问题正好被GWP-ASan采样监控，GWP-ASan会记录地址越界事件并且使进程崩溃，开发者可以通过订阅地址越界事件来获取相关信息，请参考：[地址越界事件介绍](../harmonyos-guides/hiappevent-watcher-address-sanitizer-events.md)。
 

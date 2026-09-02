@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_operator-linebreak
-title: @hw-stylistic/operator-linebreak
+title: "@hw-stylistic/operator-linebreak"
 category: harmonyos-guides
 scraped_at: 2026-04-28T07:56:27+08:00
 doc_updated_at: 2026-01-15

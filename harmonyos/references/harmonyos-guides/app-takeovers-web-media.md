@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 使用网页多媒�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:29:27+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:b9b80296558e19e3eb3eb4ab76f60d2298825d1a58cb8a2aededdf9646d2353e
+content_hash: sha256:5a5f11a87c624223172edb31c1b661290ee7fefb8db13812ccece2780d0a32ad
 ---
 
 Web组件提供了应用接管网页中媒体播放的能力，用来支持应用增强网页的媒体播放，如画质增强等。
@@ -22,7 +22,7 @@ Web组件提供了应用接管网页中媒体播放的能力，用来支持应�
 
 不开启该功能时，ArkWeb内核的播放架构如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/FqwL2fh9SP2OULzQgvQT_g/zh-cn_image_0000002589244529.png?HW-CC-KV=V1&HW-CC-Date=20260429T052926Z&HW-CC-Expire=86400&HW-CC-Sign=51D38EFBA4C7BAEC08B5E766458310AF23A4EEEC717CABA1D5D2FB3F4016F713)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/FqwL2fh9SP2OULzQgvQT_g/zh-cn_image_0000002589244529.png)
 
 说明
 
@@ -31,7 +31,7 @@ Web组件提供了应用接管网页中媒体播放的能力，用来支持应�
 
 开启该功能后，ArkWeb内核的播放架构如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/3-kWqZXQQz-KiCyJBE9JGw/zh-cn_image_0000002558764722.png?HW-CC-KV=V1&HW-CC-Date=20260429T052926Z&HW-CC-Expire=86400&HW-CC-Sign=1402532EF9660605593E2273F9E2FB292A3F81970F03038E751719566EA3D4FD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/3-kWqZXQQz-KiCyJBE9JGw/zh-cn_image_0000002558764722.png)
 
 说明
 
@@ -40,7 +40,7 @@ Web组件提供了应用接管网页中媒体播放的能力，用来支持应�
 
 ### ArkWeb内核与应用的交互
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/Cugx8g64QrmmO8t_GxeXPA/zh-cn_image_0000002558605068.png?HW-CC-KV=V1&HW-CC-Date=20260429T052926Z&HW-CC-Expire=86400&HW-CC-Sign=B097D3AA28937A9D334804C3A0958B9877BB3B6B2E89A951D362D4D04542AC0B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/Cugx8g64QrmmO8t_GxeXPA/zh-cn_image_0000002558605068.png)
 
 说明
 

@@ -4,7 +4,7 @@ title: 基于Link的装饰器方案
 category: harmonyos-guides
 scraped_at: 2026-04-28T07:53:39+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:855bb71b4a5e057df1d613593bb255c56e259fe34cf66085d9e28158c0923892
+content_hash: sha256:4b290595e4892504f3ab7a39deeaa7a653089031e5d6ef6b69a3eff26c88e4f2
 ---
 
 开发者使用@InsightIntentLink装饰器进行基于Link的意图声明，可快速将已实现的Link跳转功能接入意图框架，以购买电影票意图为例，详细说明如下：
@@ -97,28 +97,28 @@ content_hash: sha256:855bb71b4a5e057df1d613593bb255c56e259fe34cf66085d9e28158c09
 
    1. 打开CodeGenie插件：在DevEco Studio右侧边栏点击CodeGenie或输入快捷键Alt/Option+U，可以进入DevEco CodeGenie。若使用非最新版本的DevEco Studio，可通过[下载中心](https://developer.huawei.com/consumer/cn/download/deveco-codegenie)获取并使用相关功能，具体请参考[插件获取及安装](ide-codegenie.md#section18337533718)。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/xMqKHhx2T_SI1bPDic-pfg/zh-cn_image_0000002552959320.png?HW-CC-KV=V1&HW-CC-Date=20260427T235337Z&HW-CC-Expire=86400&HW-CC-Sign=5FEDD21FA308127A475663858AA7F7DCAF62B02934559DAB9CED2857D1AED9A6)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/xMqKHhx2T_SI1bPDic-pfg/zh-cn_image_0000002552959320.png)
    2. 框选想要接入意图框架功能的代码。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/796I19ywQVaMpXl-T9iGrg/zh-cn_image_0000002583479321.png?HW-CC-KV=V1&HW-CC-Date=20260427T235337Z&HW-CC-Expire=86400&HW-CC-Sign=03C988AD4990C83D70869000514C8F66F4C0608BB4A91CB3D8A2F22B70BDDB2A)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/796I19ywQVaMpXl-T9iGrg/zh-cn_image_0000002583479321.png)
    3. 在选中的代码块上右键CodeGenie > Insight Intent > 选择适合的装饰器。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/-SEpDVVVQmGZiwOxv7tj1A/zh-cn_image_0000002552799672.png?HW-CC-KV=V1&HW-CC-Date=20260427T235337Z&HW-CC-Expire=86400&HW-CC-Sign=5D3B5E343B2C443633A9C381877096AD839B09CEB73B05A4B634C29681D6BC8C)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/-SEpDVVVQmGZiwOxv7tj1A/zh-cn_image_0000002552799672.png)
    4. 在DevEco CodeGenie对话框中对意图定义、功能和参数等进行描述。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/wVdElwL6QryVD6y-zcTVOg/zh-cn_image_0000002583439367.png?HW-CC-KV=V1&HW-CC-Date=20260427T235337Z&HW-CC-Expire=86400&HW-CC-Sign=6B4F1AC3AA9050E8DD3006AFD8191CCD36A8D3C347553791200BBC1488D27718)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/wVdElwL6QryVD6y-zcTVOg/zh-cn_image_0000002583439367.png)
    5. 回车或者点击发送按钮，即可生成对应的装饰器内容。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/LiC51sZoTtGxvbkeGqSU4Q/zh-cn_image_0000002552959322.png?HW-CC-KV=V1&HW-CC-Date=20260427T235337Z&HW-CC-Expire=86400&HW-CC-Sign=1FE041BB04142F399ABAFDC9008504B485D9B59B6F79AE3C9F29723BCB1B4122)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/LiC51sZoTtGxvbkeGqSU4Q/zh-cn_image_0000002552959322.png)
    6. 将光标放置于要插入装饰器的位置，点击插入图标，即可在对应位置插入装饰器。
 
    插入前：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/GwtyqQpFQL6m0CJersjYBA/zh-cn_image_0000002583479323.png?HW-CC-KV=V1&HW-CC-Date=20260427T235337Z&HW-CC-Expire=86400&HW-CC-Sign=BE602EF4C72F603DB3E934C444C6C7333E1DBBFFFB09199E7677CBD85B3DD87D)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/GwtyqQpFQL6m0CJersjYBA/zh-cn_image_0000002583479323.png)
 
    插入后：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/WnUbYU7CQi-FAkeuV2rfyw/zh-cn_image_0000002552799674.png?HW-CC-KV=V1&HW-CC-Date=20260427T235337Z&HW-CC-Expire=86400&HW-CC-Sign=E5F91652E9DB909A9A9B43BF431EBFC6DA3C06936B842CFAE3B8E536D53C558F)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/WnUbYU7CQi-FAkeuV2rfyw/zh-cn_image_0000002552799674.png)
 4. 装饰器的使用约束和说明：
 
    * Link装饰器包含通过Link接入意图的所有配置，因此对装饰器所在Class、变量、成员没有要求，但是必须要在被依赖的ets文件中添加装饰器才可以被编译。

@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:53:12+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:19ad2da91c416782d6217d81930fb1c10e0b71c956251f11b267fb2c903a9d9b
+content_hash: sha256:6db87257424d8055c266aaa8e9863cc54dfc5c4ba4affca430710435f442e9f1
 ---
 
 路由容器组件，提供路由跳转能力。
@@ -254,4 +254,4 @@ PhonePC/2in1TabletTVWearable
 12. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/xzecYjGGQO215G_TWP_JhA/zh-cn_image_0000002558766692.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055311Z&HW-CC-Expire=86400&HW-CC-Sign=BCCF4F9BD72E554796AEDF2972274123B1513106D55EB04321FD302E41B6D6FA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/xzecYjGGQO215G_TWP_JhA/zh-cn_image_0000002558766692.gif)

@@ -5,7 +5,7 @@ breadcrumb: 指南 > 优化应用性能 > 冷启动：Launch分析 > Launch模�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:47:32+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:931ff46cec63be45d177f627e7edbbc592b16b0b542d8bf793bb5cc091f81984
+content_hash: sha256:5a4c4f5c237d17a507d090261b9ad6bcb83c8821b5fa2fa5222c29098b8d341c
 ---
 
 开发应用或元服务过程中，启动速度是很重要的一个指标。如果开发者需要分析启动过程的耗时瓶颈，优化应用或元服务的冷启动速度，可使用DevEco Profiler提供的Launch场景分析能力，录制启动过程中的关键数据进行分析，从而识别出导致启动缓慢的原因所在。此外，Launch任务窗口还集成了Time、CPU、Frame、Network场景分析任务的功能，方便开发者在分析启动耗时的过程中同步对比同一时段的其他资源占用情况。
@@ -19,7 +19,7 @@ content_hash: sha256:931ff46cec63be45d177f627e7edbbc592b16b0b542d8bf793bb5cc091f
 
 ## 启动模式
 
-启动模式分为![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/aCCC58X7R2CAFeVmp2W72w/zh-cn_image_0000002530912822.png?HW-CC-KV=V1&HW-CC-Date=20260429T054731Z&HW-CC-Expire=86400&HW-CC-Sign=3875B3890037F9A8BFBABC1D39D35FD1A814EE421F7D900DAEF95B1A4241264F)自动启动和![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/hnOVzGK9Q1iqqPR2CI0EGg/zh-cn_image_0000002561832753.png?HW-CC-KV=V1&HW-CC-Date=20260429T054731Z&HW-CC-Expire=86400&HW-CC-Sign=80F73F810457E455DE7DF9AAF7EA800411A2C0ED78E0F45B1F0F3D61B176630A)手动启动，可点击图标切换两种不同模式：
+启动模式分为![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/aCCC58X7R2CAFeVmp2W72w/zh-cn_image_0000002530912822.png)自动启动和![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/hnOVzGK9Q1iqqPR2CI0EGg/zh-cn_image_0000002561832753.png)手动启动，可点击图标切换两种不同模式：
 
 * 若选择自动启动模式，当用户使用Launch模板并开始录制时，将主动重启所选应用；
 * 手动启动模式在开始录制时，只会主动终止所选应用，等待界面出现弹窗提示启动应用后，开发者需要手动启动应用。
@@ -34,12 +34,12 @@ content_hash: sha256:931ff46cec63be45d177f627e7edbbc592b16b0b542d8bf793bb5cc091f
    * Launch分析支持离线符号解析能力，请参见[离线符号解析](ide-insight-session-time.md#section186881175012)。
    * Launch分析支持动效场景调优，请参见[支持动效场景调优](ide-insight-session-frame.md#section258014238619)。
 
-   Launch分析任务支持在录制前单击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/y6NMAkImSqudYLIkXRitIQ/zh-cn_image_0000002561832759.png?HW-CC-KV=V1&HW-CC-Date=20260429T054731Z&HW-CC-Expire=86400&HW-CC-Sign=A772533C66AE61F74597A0BD936534713721628369B5BC4915F97254BA3C4495)指定要录制的泳道。“Launch”泳道显示启动生命周期各阶段的耗时分布情况。
+   Launch分析任务支持在录制前单击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/y6NMAkImSqudYLIkXRitIQ/zh-cn_image_0000002561832759.png)指定要录制的泳道。“Launch”泳道显示启动生命周期各阶段的耗时分布情况。
 2. 单击“Launch”泳道上的单个阶段，或框选多个阶段，在下方的“Details”页签中，可查看到所选阶段的耗时统计情况。
 
    展开各阶段的统计信息折叠表，可以看到各个任务的具体耗时信息。单击跳转按钮，可直接跳转至相关线程打点任务中。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/sCdh8HnTRcivgf9jSKuQZg/zh-cn_image_0000002530912832.png?HW-CC-KV=V1&HW-CC-Date=20260429T054731Z&HW-CC-Expire=86400&HW-CC-Sign=98240DCA46E985A781EE286CC05E31BDCCCC60575440423D2080EDBF1749837A "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/sCdh8HnTRcivgf9jSKuQZg/zh-cn_image_0000002530912832.png "点击放大")
 3. 切换到“Load ETS Files”页签，从DevEco Studio 6.0.0 Beta1版本开始，支持查看冷启动过程中ETS文件的加载情况。各字段含义如下：
    * Category：该ETS文件在应用启动过程中是否被使用。
    * Weight**：**该ETS文件加载子节点文件（不包括自身）的总耗时。
@@ -48,10 +48,10 @@ content_hash: sha256:931ff46cec63be45d177f627e7edbbc592b16b0b542d8bf793bb5cc091f
    * File Name：该ETS文件的名称。
    * Path：该ETS文件构建产物的路径。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/hsSPA6xOSSOV1-oMH2lHng/zh-cn_image_0000002530912836.png?HW-CC-KV=V1&HW-CC-Date=20260429T054731Z&HW-CC-Expire=86400&HW-CC-Sign=DE230E4388FA75B9D59EAE88D0E7024A6908E4176925527FC15497EC44E82248 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/hsSPA6xOSSOV1-oMH2lHng/zh-cn_image_0000002530912836.png "点击放大")
 4. 切换到“TOP Redundant”页签，可查看冷启动过程中TOP 100冗余ETS加载文件信息。若File Name字段显示为蓝色，双击可快速跳转至对应工程源文件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/kFy6A7TmT3WpmpAK9CVctA/zh-cn_image_0000002561832751.png?HW-CC-KV=V1&HW-CC-Date=20260429T054731Z&HW-CC-Expire=86400&HW-CC-Sign=E6823E968F55D5DEC684452FFEDD21FE67AB20D239DF66E2DA1214703EA447E3 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/kFy6A7TmT3WpmpAK9CVctA/zh-cn_image_0000002561832751.png "点击放大")
 
 说明
 
@@ -64,7 +64,7 @@ content_hash: sha256:931ff46cec63be45d177f627e7edbbc592b16b0b542d8bf793bb5cc091f
 
    针对耗时超过预期的加载任务，可单击跳转按钮，跳转至相关线程打点任务中进行深度分析。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/a2tYkBOKSZ286n8kY-0XDQ/zh-cn_image_0000002530752842.png?HW-CC-KV=V1&HW-CC-Date=20260429T054731Z&HW-CC-Expire=86400&HW-CC-Sign=36195732D0414A4DD0B5EF5AEC37F6253C637A6B8AECF37BB16A15403B6D27E0 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/a2tYkBOKSZ286n8kY-0XDQ/zh-cn_image_0000002530752842.png "点击放大")
 
 ## 查看核心线程在CPU Core的运行情况
 
@@ -73,7 +73,7 @@ content_hash: sha256:931ff46cec63be45d177f627e7edbbc592b16b0b542d8bf793bb5cc091f
 
    单击对应CPU的跳转按钮，可进一步跳转到CPU Core泳道查看详细的调度信息。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/g94eeDwoQTy2YanNVTjQSA/zh-cn_image_0000002530752828.png?HW-CC-KV=V1&HW-CC-Date=20260429T054731Z&HW-CC-Expire=86400&HW-CC-Sign=4D43B8DAA01B70E0365588FE6AB52676E4F5E1316E1526121865E243E698577D "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/g94eeDwoQTy2YanNVTjQSA/zh-cn_image_0000002530752828.png "点击放大")
 
 ## 查看启动过程相关的线程Trace数据
 
@@ -85,4 +85,4 @@ content_hash: sha256:931ff46cec63be45d177f627e7edbbc592b16b0b542d8bf793bb5cc091f
    * “Slice List”区域展示所选对象的切片统计信息。
    * “Load Statistics”区域展示所选对象的中载重载信息。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/L3RyszAUQauHPFMUT0giGQ/zh-cn_image_0000002561832755.png?HW-CC-KV=V1&HW-CC-Date=20260429T054731Z&HW-CC-Expire=86400&HW-CC-Sign=85FDFA9977EB7BC35F73C4FA4E269EA8770476443C321DC6BEE57FC6D32FC43E "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/L3RyszAUQauHPFMUT0giGQ/zh-cn_image_0000002561832755.png "点击放大")

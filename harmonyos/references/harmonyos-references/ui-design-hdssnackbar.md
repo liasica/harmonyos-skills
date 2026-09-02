@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > UI Design Kit（UI设计套件） > ArkTS
 category: harmonyos-references
 scraped_at: 2026-04-29T13:57:12+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:3ca180e5f5e1583cbc75db4f27d8ef9e4a89e7cd0d21472b71396ac8dbb48968
+content_hash: sha256:79d3c98f166e05d706e5ddd9b9a60f14e2819f1ddc32140a3785d1ef416c5430
 ---
 
 提供简短通知的非模态弹窗，其内部默认包含了图标区、内容区和操作区。
@@ -285,4 +285,4 @@ HdsSnackBar提供带按钮操作的通知弹窗。
 
 效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/OsYYeCDvQPitgcBCNrZEPw/zh-cn_image_0000002558607392.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055710Z&HW-CC-Expire=86400&HW-CC-Sign=1810720B4B2DE194D7D5D1B540DB6FC20A462234EFD4E7ED37920FF8E4E83940)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/OsYYeCDvQPitgcBCNrZEPw/zh-cn_image_0000002558607392.gif)

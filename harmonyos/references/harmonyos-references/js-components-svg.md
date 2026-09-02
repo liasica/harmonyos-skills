@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > �
 category: harmonyos-references
 scraped_at: 2026-04-29T13:53:36+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:c1e4dcb40f71283c62a7dcc3c727a2a7625647c3c245402fbed51c441bc638dd
+content_hash: sha256:e42b69a5913f68b9379c8d2e4eaf21210869cbec6092db9dc9600c2ae6837069
 ---
 
 基础容器，主要作为svg的根节点使用，也可以在svg中嵌套使用。
@@ -64,4 +64,4 @@ PhonePC/2in1TabletTVWearable
 15. </div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/zGyzkSUbQHChVDjzhC-9ww/zh-cn_image_0000002558607106.png?HW-CC-KV=V1&HW-CC-Date=20260429T055335Z&HW-CC-Expire=86400&HW-CC-Sign=933B0C03AF835DA364D36AA261E5DB23A9890780708B021059EAA1D111584155)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/zGyzkSUbQHChVDjzhC-9ww/zh-cn_image_0000002558607106.png)

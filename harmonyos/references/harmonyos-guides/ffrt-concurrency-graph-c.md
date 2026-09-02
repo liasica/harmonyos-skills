@@ -5,7 +5,7 @@ breadcrumb: 指南 > 系统 > 基础功能 > Function Flow Runtime Kit（任务�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:33:21+08:00
 doc_updated_at: 2026-04-08
-content_hash: sha256:696fbf16811a152f356d9e6b3ae1fdde64c11daa85bcc930cc2a4280a099efe6
+content_hash: sha256:93fabd21bcb8d5a9b19fd0ac8aaedc1a33501f80ae884510ad656e918cd89a4a
 ---
 
 ## 概述
@@ -65,7 +65,7 @@ FFRT在运行时可动态构建任务之间的基于生产者/消费者的数据
 5. task5(OUT A);
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/f5cKHMbHSR-e8xWmhjFaGA/zh-cn_image_0000002589244763.png?HW-CC-KV=V1&HW-CC-Date=20260429T053320Z&HW-CC-Expire=86400&HW-CC-Sign=75D38D5DED78DADC0E3A0942D4878A820372E9C4E0AD511BCAC7C7C0C7AF00D8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/f5cKHMbHSR-e8xWmhjFaGA/zh-cn_image_0000002589244763.png)
 
 为表述方便，本文中的数据流图均以圆圈表示Task，方块表示数据。
 
@@ -79,7 +79,7 @@ FFRT在运行时可动态构建任务之间的基于生产者/消费者的数据
 
 用户上传视频到流媒体平台，处理步骤包含：视频解析A、视频转码B、视频缩略图生成C、视频水印添加D和视频发布E，其中步骤B和步骤C可以并行执行。任务流程如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/JxV8OiovQKyQBVTGexOGiA/zh-cn_image_0000002558764958.png?HW-CC-KV=V1&HW-CC-Date=20260429T053320Z&HW-CC-Expire=86400&HW-CC-Sign=06362B845EE4ED1512384C33EFC225C5326093516FB5290C19909423C5C0645A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/JxV8OiovQKyQBVTGexOGiA/zh-cn_image_0000002558764958.png)
 
 借助FFRT提供了图依赖并发范式，可以描述任务依赖关系，同时并行化上述视频处理流程，代码如下所示：
 
@@ -253,7 +253,7 @@ ffrt\_submit\_f接口可以接收裸函数指针任务作为参数，如果任�
 
 各个任务在FFRT内部形成了一棵调用树：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/uCx2HUJlTT6zjf_eIhg6hg/zh-cn_image_0000002558605302.png?HW-CC-KV=V1&HW-CC-Date=20260429T053320Z&HW-CC-Expire=86400&HW-CC-Sign=64B04F7BFF19D9EFFE3C860148FB020BB87897701BB244236D838EADC24021A6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/uCx2HUJlTT6zjf_eIhg6hg/zh-cn_image_0000002558605302.png)
 
 ## 接口说明
 

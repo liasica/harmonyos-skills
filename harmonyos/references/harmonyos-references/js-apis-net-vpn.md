@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-net-vpn
-title: @ohos.net.vpn (VPN管理)
+title: "@ohos.net.vpn (VPN管理)"
 breadcrumb: API参考 > 系统 > 网络 > Network Kit（网络服务） > ArkTS API > @ohos.net.vpn (VPN管理)
 category: harmonyos-references
 scraped_at: 2026-04-28T08:08:28+08:00

@@ -5,7 +5,7 @@ breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > 端云�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:45:00+08:00
 doc_updated_at: 2026-01-15
-content_hash: sha256:e917cc7d2def319fc3278d13693fa36c075d61f32cdc11c6d46223cadee7842e
+content_hash: sha256:9e79b3c9e27934d647f465b1a0f310c2a4b005362b7dec2fa6225cc7beeae2e1
 ---
 
 函数创建并配置完成后，您便可以开始编写函数业务代码了。
@@ -80,8 +80,8 @@ content_hash: sha256:e917cc7d2def319fc3278d13693fa36c075d61f32cdc11c6d46223cadee
 
    右击“package.json”文件，选择“Run 'npm install'”菜单，也可以实现依赖包安装。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/DwJjya4LRkSQsMfEKAjmbA/zh-cn_image_0000002425891501.png?HW-CC-KV=V1&HW-CC-Date=20260429T054457Z&HW-CC-Expire=86400&HW-CC-Sign=883C8E88B296C09D3518BEB2FE581B38A45695AA29AFBF0AF21E736E6DB6514C)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/DwJjya4LRkSQsMfEKAjmbA/zh-cn_image_0000002425891501.png)
 
    所有安装的依赖包都会存储在当前函数的“node\_modules”目录下。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/09CLfu7tS3SS4FCS_W0RZQ/zh-cn_image_0000002392213118.png?HW-CC-KV=V1&HW-CC-Date=20260429T054457Z&HW-CC-Expire=86400&HW-CC-Sign=DEBA3DFA904CA1AAAF94A991BD46C4757906A8D26446413ED6614A6B95F3BFCF)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/09CLfu7tS3SS4FCS_W0RZQ/zh-cn_image_0000002392213118.png)

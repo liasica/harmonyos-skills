@@ -5,7 +5,7 @@ breadcrumb: 指南 > 系统 > 安全 > 密码自动填充服务 > 应用接入�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:30:40+08:00
 doc_updated_at: 2026-03-20
-content_hash: sha256:c87631a0a25445b83b00a9528d9f5f78f2f73411d53813abd93f25d2de5a1d61
+content_hash: sha256:1bb913317efda651b4e182a126bba52cf308ce047d0fa8a21bce93c2f535fd19
 ---
 
 密码保险箱可以在登录或修改密码时，自动填充已保存的用户名和密码。
@@ -22,7 +22,7 @@ content_hash: sha256:c87631a0a25445b83b00a9528d9f5f78f2f73411d53813abd93f25d2de5
 
 ## 登录
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/Ci4ifwCMQgSxtFnGYVTgtA/zh-cn_image_0000002558764862.png?HW-CC-KV=V1&HW-CC-Date=20260429T053038Z&HW-CC-Expire=86400&HW-CC-Sign=5E33DCEDDE29BA0EB8977E83D308F3F40BEE93DA7FFF37525822E20AB34F466B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/Ci4ifwCMQgSxtFnGYVTgtA/zh-cn_image_0000002558764862.png)
 
 示例代码如下：
 
@@ -120,7 +120,7 @@ content_hash: sha256:c87631a0a25445b83b00a9528d9f5f78f2f73411d53813abd93f25d2de5
 
 ## 修改密码
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/STZmOrm0RP-FUNN5YJmSTQ/zh-cn_image_0000002558605206.png?HW-CC-KV=V1&HW-CC-Date=20260429T053038Z&HW-CC-Expire=86400&HW-CC-Sign=4D9737608854E7BCB3A27A309C7EE532BCF451537ABE21203A3E8012AAD4EA38)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/STZmOrm0RP-FUNN5YJmSTQ/zh-cn_image_0000002558605206.png)
 
 示例代码如下：
 

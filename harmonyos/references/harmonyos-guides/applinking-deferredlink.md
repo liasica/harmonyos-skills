@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用服务 > App Linking Kit（应用链接服务） > �
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:37:34+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:e10c036124de70a771eee5f63b714f117e419661a295c2fb16189276a8d91190
+content_hash: sha256:9b5d5d3cbaaa6145ca9a6227955231bde8093859b618318a844c592295543284
 ---
 
 ## 场景介绍
@@ -16,7 +16,7 @@ content_hash: sha256:e10c036124de70a771eee5f63b714f117e419661a295c2fb16189276a8d
 
 例如：华为阅读结合App Linking Kit延迟链接能力，实现了即使用户未安装应用，点击链接完成下载并首次打开时，仍能直接跳转至预设页面（如书籍详情页）。与传统方式（需先打开APP再手动定位内容）相比，操作步骤减少了43%。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/6neICzkMSwupH06fxJn0fQ/zh-cn_image_0000002558765306.gif?HW-CC-KV=V1&HW-CC-Date=20260429T053731Z&HW-CC-Expire=86400&HW-CC-Sign=BB1612957AF4D862862E304865E57C38F7CBDF42AB6A4970F0F954F9ECA5D9B6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/6neICzkMSwupH06fxJn0fQ/zh-cn_image_0000002558765306.gif)
 
 ## 原理机制
 

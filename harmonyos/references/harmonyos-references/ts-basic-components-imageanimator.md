@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:52:17+08:00
 doc_updated_at: 2026-04-10
-content_hash: sha256:cef8295f092863bb4071e1c1c891cffa8f65049688e614bea470b67c66638eb2
+content_hash: sha256:1700c60812e3a59e8a3b44a74876bd300628f19228ac52f2781774f61fd3ce00
 ---
 
 提供帧动画组件来实现逐帧播放图片的能力，可以配置需要播放的图片列表，每张图片可以配置时长。
@@ -427,7 +427,7 @@ PhonePC/2in1TabletTVWearable
 79. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/lw1D5DUqQyeBY9BLX8ojFQ/zh-cn_image_0000002589326235.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055214Z&HW-CC-Expire=86400&HW-CC-Sign=854E8A29A44D4DFD05DE35130A3BDBA66A7C977DD4B4822E3D04ECD5A400F052)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/lw1D5DUqQyeBY9BLX8ojFQ/zh-cn_image_0000002589326235.gif)
 
 ### 示例2（播放PixelMap动画）
 
@@ -527,7 +527,7 @@ PhonePC/2in1TabletTVWearable
 91. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/QKlUgQ1jSmyrOuQBcLtZGQ/zh-cn_image_0000002589246177.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055214Z&HW-CC-Expire=86400&HW-CC-Sign=0A2760047B789C74C13EAB8230A876C8B96B816FDBC31E4C1F88FD1951710CDD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/QKlUgQ1jSmyrOuQBcLtZGQ/zh-cn_image_0000002589246177.gif)
 
 ### 示例3（设置不可见自动停播）
 
@@ -630,4 +630,4 @@ PhonePC/2in1TabletTVWearable
 94. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/OkS32ogEStueZ8_TDo0mGw/zh-cn_image_0000002558766370.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055214Z&HW-CC-Expire=86400&HW-CC-Sign=0D4C43797FFA21F6EAE49115145A7DE6CDEAD34332BC147BB48AF82D477BC91E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/OkS32ogEStueZ8_TDo0mGw/zh-cn_image_0000002558766370.gif)

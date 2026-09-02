@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-extend
-title: @Extend装饰器：定义扩展组件样式
+title: "@Extend装饰器：定义扩展组件样式"
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式基本语法 > 组件扩展 > @Extend装饰器：定义扩展组件样式
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:27:07+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:8805606868f36cc4cbdafd280e1152a6554cefcd2c8336667c4e192f899c185a
+content_hash: sha256:f6a1f904428deeee51f185e9a02a61e761a4160620130b66d0ee28f5477aa3f7
 ---
 
 在前文的示例中，可以使用[@Styles](arkts-style.md)用于样式的重用，在@Styles的基础上，我们提供了@Extend，用于扩展组件样式。
@@ -145,7 +145,7 @@ content_hash: sha256:8805606868f36cc4cbdafd280e1152a6554cefcd2c8336667c4e192f899
 
   [ExtendUIStateVariable.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/extend/ExtendUIStateVariable.ets#L29-L51)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/ljCFbqSJSB-iiaMDDWKteg/zh-cn_image_0000002558604418.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052706Z&HW-CC-Expire=86400&HW-CC-Sign=B4B0D7612736ADCAC37BAACAF2B5CFA87F507606E1223CC052BED215816B2EFD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/ljCFbqSJSB-iiaMDDWKteg/zh-cn_image_0000002558604418.gif)
 
 ## 限制条件
 
@@ -231,7 +231,7 @@ content_hash: sha256:8805606868f36cc4cbdafd280e1152a6554cefcd2c8336667c4e192f899
 
 [ExtendUsageScenario.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/extend/ExtendUsageScenario.ets#L29-L52)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/CZitWo0lQiqgAvmxJYezeg/zh-cn_image_0000002589323943.png?HW-CC-KV=V1&HW-CC-Date=20260429T052706Z&HW-CC-Expire=86400&HW-CC-Sign=D431E2D439C4AE55A6FECC4E04AF032BB76B23E94B3AF26EF7D668EB5AB6B41B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/CZitWo0lQiqgAvmxJYezeg/zh-cn_image_0000002589323943.png)
 
 使用@Extend将样式组合复用，示例如下。
 

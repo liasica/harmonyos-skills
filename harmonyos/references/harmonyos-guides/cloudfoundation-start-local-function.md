@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用服务 > Cloud Foundation Kit（云开发服务） > 
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:37:44+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:6d7a45d451027e4ac89ce94793d212be1114fe565c7d1ae092b1bd898ae5e9f2
+content_hash: sha256:4b0592c71e145bad7c7e368b820e40f3e2c7aef7149f7d08577cbd1ac4919ed2
 ---
 
 请按照如下步骤启动本地云函数：
@@ -23,4 +23,4 @@ content_hash: sha256:6d7a45d451027e4ac89ce94793d212be1114fe565c7d1ae092b1bd898ae
 
    完整示例代码请参见[函数示例](cloudfoundation-develop-function-nodejs.md#函数示例)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/vbDy66zTQ_aZA1brceJLPg/zh-cn_image_0000002558605704.png?HW-CC-KV=V1&HW-CC-Date=20260429T053742Z&HW-CC-Expire=86400&HW-CC-Sign=0158CD7E657638DEAE2CD9976B1760667DEFA43B6D55926F81D8FEC997294F67)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/vbDy66zTQ_aZA1brceJLPg/zh-cn_image_0000002558605704.png)

@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-application-testrunner
-title: @ohos.application.testRunner (TestRunner)
+title: "@ohos.application.testRunner (TestRunner)"
 breadcrumb: API参考 > 系统 > 调测调优 > Test Kit（应用测试服务） > ArkTS API > @ohos.application.testRunner (TestRunner)
 category: harmonyos-references
 scraped_at: 2026-04-28T08:11:31+08:00

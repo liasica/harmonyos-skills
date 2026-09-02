@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > U
 category: harmonyos-references
 scraped_at: 2026-04-29T13:50:54+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:b3251211883a5f90e4b5c88f21151db451bbaa4e2f8adaef9bdc80186ee47f26
+content_hash: sha256:fa75184371129548e58b9fca278dd3084abab23ed2657be92585e47c36ff76bd
 ---
 
 FrameNode表示组件树的实体节点。[NodeController](js-apis-arkui-nodecontroller.md)可通过[BuilderNode](js-apis-arkui-buildernode.md)持有的FrameNode将其挂载到[NodeContainer](ts-basic-components-nodecontainer.md)上，也可通过FrameNode获取[RenderNode](js-apis-arkui-rendernode.md)，挂载到其他FrameNode上。最佳实践请参考[组件动态创建-组件动态添加、更新和删除](../best-practices/bpta-ui-dynamic-operations.md#section153921947151012)。
@@ -1617,7 +1617,7 @@ dispose(): void
 83. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/ex0aZdimSryqairGhJlFSQ/zh-cn_image_0000002589245777.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055046Z&HW-CC-Expire=86400&HW-CC-Sign=12118959DFCDEA87931AB52B55C25676B98D2CC5C64745A281A62D1C9DC524A6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/ex0aZdimSryqairGhJlFSQ/zh-cn_image_0000002589245777.gif)
 
 ### commonAttribute12+
 
@@ -2147,7 +2147,7 @@ disposeTree(): void
 174. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/AdtPhZ82QrCdZzz7j5bhdA/zh-cn_image_0000002558765966.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055046Z&HW-CC-Expire=86400&HW-CC-Sign=3E9754C59679FE2A20BA687EB0E5EC26A099327BCB07333BCD3C9E4B596F6C4E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/AdtPhZ82QrCdZzz7j5bhdA/zh-cn_image_0000002558765966.gif)
 
 ### setCrossLanguageOptions15+
 
@@ -8819,7 +8819,7 @@ PhonePC/2in1TabletTVWearable
 33. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/OyaSr6BmQ0Cksg1_7nBZcA/zh-cn_image_0000002558606310.png?HW-CC-KV=V1&HW-CC-Date=20260429T055046Z&HW-CC-Expire=86400&HW-CC-Sign=B2BC584090BD78E9102A6698584631BE808E62F6538D4D487124F5CFB15F720F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/OyaSr6BmQ0Cksg1_7nBZcA/zh-cn_image_0000002558606310.png)
 
 ## 节点操作示例
 
@@ -10794,7 +10794,7 @@ PhonePC/2in1TabletTVWearable
 94. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/XPBNC8YcT1moSDkJ7i7AbQ/zh-cn_image_0000002589325837.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055046Z&HW-CC-Expire=86400&HW-CC-Sign=CC627E6A85384B5352BABE70EBC4ECB47E3CA478970527894A675639C74BDE9B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/XPBNC8YcT1moSDkJ7i7AbQ/zh-cn_image_0000002589325837.gif)
 
 ## 滚动事件示例
 
@@ -11005,7 +11005,7 @@ PhonePC/2in1TabletTVWearable
 106. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/6sXo274ERpuKXn6Uf1atzg/zh-cn_image_0000002589245779.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055046Z&HW-CC-Expire=86400&HW-CC-Sign=8279FCCEA701ADBE9F49B81DB7A05CC328B33229C227108AF45796660508C235)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/6sXo274ERpuKXn6Uf1atzg/zh-cn_image_0000002589245779.gif)
 
 ## 检验NodeAdapter是否有效示例
 
@@ -11126,7 +11126,7 @@ PhonePC/2in1TabletTVWearable
 110. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/A4pspSydQtWFasI1lmj0zw/zh-cn_image_0000002558765968.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055046Z&HW-CC-Expire=86400&HW-CC-Sign=449FCB85FC60F3715503BDA2B83FC42F7825E8D2DF2529F5EA40B827D4FFDF3A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/A4pspSydQtWFasI1lmj0zw/zh-cn_image_0000002558765968.gif)
 
 ## 获取根节点示例
 

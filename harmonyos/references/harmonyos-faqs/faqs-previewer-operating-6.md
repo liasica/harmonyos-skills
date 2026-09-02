@@ -5,14 +5,14 @@ breadcrumb: FAQ > DevEco Studio > 界面预览 > 预览窗口顶部和底部出�
 category: harmonyos-faqs
 scraped_at: 2026-04-29T14:20:19+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:3b477e5959d86c4b0b7f42681f895fbe2cb4e352048216afecbaf0e92857fefe
+content_hash: sha256:0feaf2e607059e6cb8c65c3cc23ad729d06565abfd4c7b2f074c0dd3aa02d9e2
 ---
 
 **问题现象**
 
 预览窗口顶部和底部出现白边。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/zmKSdQosQJCjvC94aERxHA/zh-cn_image_0000002229603709.png?HW-CC-KV=V1&HW-CC-Date=20260429T062017Z&HW-CC-Expire=86400&HW-CC-Sign=F8C4F34D49CB8F94D1E46AAD164F91A3AEAC47EFD931459AEE4E53CA79EDC1B9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/zmKSdQosQJCjvC94aERxHA/zh-cn_image_0000002229603709.png)
 
 **解决措施**
 

@@ -5,7 +5,7 @@ breadcrumb: 指南 > 优化应用性能 > 使用Profiler进行性能调优 > 性
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:47:30+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:b516689756474cc1c60eeedeac40fee8c4a1f138009978dfd7ec40cb5625b0e8
+content_hash: sha256:a8d0e51357fd482e6bb3006b9011cdf7a7ee592742716ebe22a0374f15e41c95
 ---
 
 解决性能问题，首先对当前应用的运行情况以及设备的资源消耗进行监测，以初步确定可能存在的性能问题以及问题出现的位置。
@@ -24,11 +24,11 @@ DevEco Profiler提供实时监控（Realtime Monitor）能力，可以实时监�
    * 在DevEco Studio底部工具栏中单击“Profiler”。
    * 使用“Ctrl+Shift+A”（macOS中为双击“Shift”）打开搜索功能，搜索“Profiler”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/Yw9toaMlRQ2zMqtNS32TCw/zh-cn_image_0000002530753444.png?HW-CC-KV=V1&HW-CC-Date=20260429T054729Z&HW-CC-Expire=86400&HW-CC-Sign=12D153C823262E5E4C23E16B209E5B9CE92584A645D1A66B00A07AA6F31B2678)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/Yw9toaMlRQ2zMqtNS32TCw/zh-cn_image_0000002530753444.png)
 3. 在设备上启动您想要监测的应用。
 4. 在DevEco Profiler界面左上角的设备、应用及进程列表中，选择调优设备及待调优的应用/元服务进程。如果您的应用不止有一个主进程（还存在Extension或者Render进程），那么您需要再手动选择一个您想要监控的进程。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/17zcAs-CSaqB1hyZouHSVw/zh-cn_image_0000002530753442.png?HW-CC-KV=V1&HW-CC-Date=20260429T054729Z&HW-CC-Expire=86400&HW-CC-Sign=5425159B7FB56DCB99135CE9BD505B9EE63AA025DE32042F0AC20FBF65726600)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/17zcAs-CSaqB1hyZouHSVw/zh-cn_image_0000002530753442.png)
 
 ## 实时监控应用，多维度对比识别性能热区
 
@@ -41,7 +41,7 @@ DevEco Profiler提供实时监控（Realtime Monitor）能力，可以实时监�
 
 整个实时监控页面从上到下，依次展示了系统事件、异常事件、前台应用、CPU占用、内存占用、帧率、GPU使用率、温度、电流、能耗以及网络流量消耗等各个维度的数据，帮助您从多个维度来对比识别当前应用的性能热区。下面为您依次介绍每一条泳道的数据内容。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/B-ejPkr_R7i12Ts8WRbCVw/zh-cn_image_0000002530753452.png?HW-CC-KV=V1&HW-CC-Date=20260429T054729Z&HW-CC-Expire=86400&HW-CC-Sign=62AFE7E8841E6D1776F82BB981E7208E5B3C06B7C864C0881D2513920F07A937 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/B-ejPkr_R7i12Ts8WRbCVw/zh-cn_image_0000002530753452.png "点击放大")
 
 ### 泳道简介
 
@@ -82,15 +82,15 @@ FPS、GPU、Temperature、\*Device Current泳道显示的是所使用设备的�
 
 * 启停控制
 
-  点击会话区“Realtime Monitor”页签上的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/4VuI0MiFT_aLBWzIdmdMGA/zh-cn_image_0000002561753383.png?HW-CC-KV=V1&HW-CC-Date=20260429T054729Z&HW-CC-Expire=86400&HW-CC-Sign=592E26BA567DD96451FEB425D69A8F3677CC199EB911BC5E242006B669C38D52)、![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/CQdRN69eTXyuFsTPXtGTDQ/zh-cn_image_0000002561753387.png?HW-CC-KV=V1&HW-CC-Date=20260429T054729Z&HW-CC-Expire=86400&HW-CC-Sign=224B2B972B9108319B57831B04A30F688E149DE16062C8635F80DA825BD85C96)按钮或工具控制栏上的 ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/1FfN8IkDSGSbyNYhDncvcw/zh-cn_image_0000002530753446.png?HW-CC-KV=V1&HW-CC-Date=20260429T054729Z&HW-CC-Expire=86400&HW-CC-Sign=B0FBF945267298BB766D3299B26CE9CAEDE83C47919F8FC3913E40BE9A5AFCF6)、![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/WTLL2fkfQVCjMOOgQuPfMQ/zh-cn_image_0000002530753450.png?HW-CC-KV=V1&HW-CC-Date=20260429T054729Z&HW-CC-Expire=86400&HW-CC-Sign=2AAA77391F3753B0A69AE48F3B7CAEE1F10453C42A9D82263FE58985954B8FBA)来即时控制实时监控界面的录制状态。
+  点击会话区“Realtime Monitor”页签上的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/4VuI0MiFT_aLBWzIdmdMGA/zh-cn_image_0000002561753383.png)、![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/CQdRN69eTXyuFsTPXtGTDQ/zh-cn_image_0000002561753387.png)按钮或工具控制栏上的 ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/1FfN8IkDSGSbyNYhDncvcw/zh-cn_image_0000002530753446.png)、![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/WTLL2fkfQVCjMOOgQuPfMQ/zh-cn_image_0000002530753450.png)来即时控制实时监控界面的录制状态。
 * 泳道筛选
 
-  点击工具控制栏上的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/O4dZU6FCQh-QoD1lpae-rg/zh-cn_image_0000002561753389.png?HW-CC-KV=V1&HW-CC-Date=20260429T054729Z&HW-CC-Expire=86400&HW-CC-Sign=1708BBFE4F7C666F6946C1F30D9C71FA097E4EA6F0B60821BA64441020C142AD)按钮，可以选择泳道进行筛选。筛选无需录制的泳道，可以降低数据采集本身的开销，但同时会造成数据分析维度的减少。
+  点击工具控制栏上的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/O4dZU6FCQh-QoD1lpae-rg/zh-cn_image_0000002561753389.png)按钮，可以选择泳道进行筛选。筛选无需录制的泳道，可以降低数据采集本身的开销，但同时会造成数据分析维度的减少。
 * 详细数据展示
 
   将鼠标悬浮于所关心的泳道数据上时，界面上会出现当前时间点的时间标线以及含有当前时间点上泳道详细数据的Tooltips。更进一步，当您将鼠标悬浮于时间轴上时，实时监控页面内的所有泳道均会以Tooltips展示出该时刻的数据。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/64-6qRb9RueabbCW4yb3RQ/zh-cn_image_0000002561753385.png?HW-CC-KV=V1&HW-CC-Date=20260429T054729Z&HW-CC-Expire=86400&HW-CC-Sign=516F23CB173535907687BD22FA6B6297C665236505D568DE68FD720B53CBE0CB "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/64-6qRb9RueabbCW4yb3RQ/zh-cn_image_0000002561753385.png "点击放大")
 
 * 图例选择
 

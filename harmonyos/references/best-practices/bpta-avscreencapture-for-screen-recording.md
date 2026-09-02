@@ -5,7 +5,7 @@ breadcrumb: 最佳实践 > 媒体 > 音频和视频 > 基于AVScreenCapture实�
 category: best-practices
 scraped_at: 2026-04-29T14:11:44+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:be88529c4deffe775475feee61abe0d83644591ba9fc532f478a5db441a06456
+content_hash: sha256:05a02b81040b284d98f471d19170d7b55b09122b0d77c715b0a1d8493c1533a4
 ---
 
 ## 概述
@@ -49,13 +49,13 @@ HarmonyOS 提供了用于实现录屏功能的ArkTS接口，能够支持屏幕�
 
 **案例展示图：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/GLz7oxkvSI2-VqCQHZUWNA/zh-cn_image_0000002358208918.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061138Z&HW-CC-Expire=86400&HW-CC-Sign=490B5643EE6D4751BF9D83E6D13CE24D45DEE182CA19E369FE14E90FE52BD4BB "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/GLz7oxkvSI2-VqCQHZUWNA/zh-cn_image_0000002358208918.gif "点击放大")
 
 ### 实现原理
 
 **调用流程图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/pEhryRo9Ro2Gv6lMYWeiDg/zh-cn_image_0000002439565978.png?HW-CC-KV=V1&HW-CC-Date=20260429T061138Z&HW-CC-Expire=86400&HW-CC-Sign=5F47DFB84D5C474A2BAD5E19C538C4557E6B4E1CAD0DF1B4E9CFDF7CC99F8DCB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/pEhryRo9Ro2Gv6lMYWeiDg/zh-cn_image_0000002439565978.png)
 
 当点击录制按钮时，会调用异步方法进行屏幕录制。关键过程如下：
 
@@ -269,13 +269,13 @@ EventLoop事件循环是ArkTS异步编程模型的核心（单线程+任务队�
 
 **案例展示图：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/OrUye0qwTS-sf6qOW0ytgg/zh-cn_image_0000002358368862.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061138Z&HW-CC-Expire=86400&HW-CC-Sign=0FD92066D34CE345CD894A79FAD1DC36A8A773046EC3A0DA6BE93D4840DE6F9B "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/OrUye0qwTS-sf6qOW0ytgg/zh-cn_image_0000002358368862.gif "点击放大")
 
 ### 实现原理
 
 **调用流程图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/4dpGfiyHTqqvD4v8AMd_pw/zh-cn_image_0000002473046625.png?HW-CC-KV=V1&HW-CC-Date=20260429T061138Z&HW-CC-Expire=86400&HW-CC-Sign=2A4C004F9A4ACFE73F630DB6EA60576004225F187D7E0DBDB722D09F5AFC4CF1 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/4dpGfiyHTqqvD4v8AMd_pw/zh-cn_image_0000002473046625.png "点击放大")
 
 当点击录制按钮时，会调用异步方法进行屏幕录制。关键过程如下：
 
@@ -610,13 +610,13 @@ EventLoop事件循环是ArkTS异步编程模型的核心（单线程+任务队�
 
 **案例展示图：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/MYLwNYkjTj24EMEQPsgpCw/zh-cn_image_0000002358208954.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061138Z&HW-CC-Expire=86400&HW-CC-Sign=F3AFCFF9E736727B301F490B692A36F9096971BA3E761FFCB27C027481F9073E "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/MYLwNYkjTj24EMEQPsgpCw/zh-cn_image_0000002358208954.gif "点击放大")
 
 ### 实现原理
 
 **调用流程图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/jtQCI3y2SwGCRPdZGnaUew/zh-cn_image_0000002472889049.png?HW-CC-KV=V1&HW-CC-Date=20260429T061138Z&HW-CC-Expire=86400&HW-CC-Sign=B9386DCC189AD63520F6451632F2DFD2651694317FF587F3BF960B2DAC88739F "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/jtQCI3y2SwGCRPdZGnaUew/zh-cn_image_0000002472889049.png "点击放大")
 
 当点击录制按钮时，系统会调用异步方法来执行屏幕录制。关键过程如下：
 

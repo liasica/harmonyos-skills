@@ -5,7 +5,7 @@ breadcrumb: 指南 > 基础入门 > 开发基础知识 > 应用配置文件（FA
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:25:33+08:00
 doc_updated_at: 2026-04-10
-content_hash: sha256:a99281bc931f0635d1c522b2d410f530e59efa7594f4fd5ceac392fd011618b4
+content_hash: sha256:ac31858f35fc9ae2dcc569823c16eec7dfb5ab69e431fababd8dc5080de7c469
 ---
 
 module对象包含HAP的配置信息。
@@ -281,7 +281,7 @@ metadata对象示例：
 
 **图1** 应用的详情页示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/tGtmAZQjTpCN-_t4Sohqdg/zh-cn_image_0000002558604312.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T052531Z&HW-CC-Expire=86400&HW-CC-Sign=52FEF04F3AB4A819136CB72F2D8601FA38C6B930C056A8372F42681A06638F44)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/tGtmAZQjTpCN-_t4Sohqdg/zh-cn_image_0000002558604312.jpg)
 
 注：应用详情页面中显示的label可能与桌面上显示的不同。如果非Page类型的PageAbility配置了入口图标和label，那么详情页中显示的即为配置的。
 

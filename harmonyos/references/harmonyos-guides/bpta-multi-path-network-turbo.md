@@ -5,7 +5,7 @@ breadcrumb: 指南 > 系统 > 网络 > Network Boost Kit（网络加速服务）
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:32:50+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:9aa3449dff302aeb2e38ae50fb9459fa7827bf778d3de42c0cc69e5c578fa479
+content_hash: sha256:d3801d33894033892fb01034960b06bf7c2621f6a17dc78eadcf7b8ae089d17e
 ---
 
 ## 概述
@@ -55,7 +55,7 @@ content_hash: sha256:9aa3449dff302aeb2e38ae50fb9459fa7827bf778d3de42c0cc69e5c578
 
 ### 开发步骤
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/AWQ5KBbLTrum5ppOQUjYRA/zh-cn_image_0000002589244735.png?HW-CC-KV=V1&HW-CC-Date=20260429T053248Z&HW-CC-Expire=86400&HW-CC-Sign=3230B9A733FF8B690B8BEA543DB6C1F02DA4B72A91FE2FF9CFD1CAD59BC87981)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/AWQ5KBbLTrum5ppOQUjYRA/zh-cn_image_0000002589244735.png)
 
 ### 代码实现
 
@@ -559,7 +559,7 @@ content_hash: sha256:9aa3449dff302aeb2e38ae50fb9459fa7827bf778d3de42c0cc69e5c578
 
 ### 开发步骤
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/_PvjAkttSnW2qaa8-DFklw/zh-cn_image_0000002558764930.png?HW-CC-KV=V1&HW-CC-Date=20260429T053248Z&HW-CC-Expire=86400&HW-CC-Sign=E14C997B0B85837528AE43D6E5F2372CBA5997A78DDACF54B226FD8704E13623)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/_PvjAkttSnW2qaa8-DFklw/zh-cn_image_0000002558764930.png)
 
 ### 代码实现
 

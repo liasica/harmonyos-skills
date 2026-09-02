@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-builderparam
-title: @BuilderParam装饰器：引用@Builder函数
+title: "@BuilderParam装饰器：引用@Builder函数"
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式基本语法 > 组件扩展 > @BuilderParam装饰器：引用@Builder函数
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:27:07+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:8c7b761a7c74b2e6e69a04e6eed206ac23fbc9e10d510b6a36054903641ed2d0
+content_hash: sha256:bbc97e882ca284b79cc1661c6bb9901b5224afae082f26c1fc3c33750cf066e0
 ---
 
 当开发者创建[自定义组件](arkts-create-custom-components.md)并需要为其添加特定功能（例如[页面跳转](../harmonyos-references/ts-basic-components-navigation.md)功能）时，如果直接在组件内嵌入事件方法，会导致所有该自定义组件的实例都增加此功能。为了解决此问题，ArkUI引入了@BuilderParam装饰器。@BuilderParam用于装饰指向@Builder方法的变量，开发者可以在初始化自定义组件时，使用不同的方式（如参数修改、尾随闭包、借用箭头函数等）对@BuilderParam装饰的自定义构建函数进行传参赋值。在自定义组件内部，通过调用@BuilderParam为组件增加特定功能。
@@ -89,7 +89,7 @@ content_hash: sha256:8c7b761a7c74b2e6e69a04e6eed206ac23fbc9e10d510b6a36054903641
 
 **图1** 示例效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/rObRRoz0SXqSsRBL2CsrQw/zh-cn_image_0000002589323937.png?HW-CC-KV=V1&HW-CC-Date=20260429T052705Z&HW-CC-Expire=86400&HW-CC-Sign=5EB0FA7B1C036E42CE0174A64C63434441ECFDD363B699E9BCB930BE73869A7D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/rObRRoz0SXqSsRBL2CsrQw/zh-cn_image_0000002589323937.png)
 
 * 需要注意this的指向。
 
@@ -151,7 +151,7 @@ content_hash: sha256:8c7b761a7c74b2e6e69a04e6eed206ac23fbc9e10d510b6a36054903641
 
 **图2** 示例效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/6GcKpz-uSGK2zKUhsJQ4Bw/zh-cn_image_0000002589243877.png?HW-CC-KV=V1&HW-CC-Date=20260429T052705Z&HW-CC-Expire=86400&HW-CC-Sign=6C1DF09D0A36B2745D48292CB0582951C63823B0F93FBD22E1CA2756884B22B5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/6GcKpz-uSGK2zKUhsJQ4Bw/zh-cn_image_0000002589243877.png)
 
 ## 限制条件
 
@@ -222,7 +222,7 @@ content_hash: sha256:8c7b761a7c74b2e6e69a04e6eed206ac23fbc9e10d510b6a36054903641
 
 **图3** 示例效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/_Hx8_OlPS3SoWZJLgXVH6Q/zh-cn_image_0000002558764070.png?HW-CC-KV=V1&HW-CC-Date=20260429T052705Z&HW-CC-Expire=86400&HW-CC-Sign=63CD1950241C0C15E679946425ACA15FCFBC10357AF0DDDF95AE75FE4AC16FE0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/_Hx8_OlPS3SoWZJLgXVH6Q/zh-cn_image_0000002558764070.png)
 
 ### 尾随闭包初始化组件
 
@@ -294,7 +294,7 @@ content_hash: sha256:8c7b761a7c74b2e6e69a04e6eed206ac23fbc9e10d510b6a36054903641
 
 **图4** 示例效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/A00_3C04QTmQCpZv3f03EQ/zh-cn_image_0000002558604414.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052705Z&HW-CC-Expire=86400&HW-CC-Sign=8F5005170DABBFB0A360A1ACE57E4B27E1D27B523EBCA4B3AF76F9625EB624D4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/A00_3C04QTmQCpZv3f03EQ/zh-cn_image_0000002558604414.gif)
 
 可以使用全局或局部@Builder通过尾随闭包的形式对[@ComponentV2](arkts-create-custom-components.md#componentv2)装饰的自定义组件中的@BuilderParam装饰的方法进行初始化。
 
@@ -520,7 +520,7 @@ content_hash: sha256:8c7b761a7c74b2e6e69a04e6eed206ac23fbc9e10d510b6a36054903641
 
 **图5** 示例效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/wz_bm_OxRiGf0t8Rqi6iqA/zh-cn_image_0000002589323939.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052705Z&HW-CC-Expire=86400&HW-CC-Sign=972A52B9C75D99A688D0B5699A5054B4D923506952CD5BE4A5E273B1AA068052)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/wz_bm_OxRiGf0t8Rqi6iqA/zh-cn_image_0000002589323939.gif)
 
 ### 使用全局和局部@Builder初始化@BuilderParam
 
@@ -608,7 +608,7 @@ content_hash: sha256:8c7b761a7c74b2e6e69a04e6eed206ac23fbc9e10d510b6a36054903641
 
 **图6** 示例效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/Cr01zopfQiGy1p8nV917zw/zh-cn_image_0000002589243879.png?HW-CC-KV=V1&HW-CC-Date=20260429T052705Z&HW-CC-Expire=86400&HW-CC-Sign=EEF3E0DF2E71D1AD321D2DD6701D81F000E315F138A0B52C9762B688E51B8B0C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/Cr01zopfQiGy1p8nV917zw/zh-cn_image_0000002589243879.png)
 
 ### 在@ComponentV2装饰的自定义组件中使用@BuilderParam
 
@@ -696,7 +696,7 @@ content_hash: sha256:8c7b761a7c74b2e6e69a04e6eed206ac23fbc9e10d510b6a36054903641
 
 **图7** 示例效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/rODHaOCpRrasEudUk7Wq7w/zh-cn_image_0000002558764072.png?HW-CC-KV=V1&HW-CC-Date=20260429T052705Z&HW-CC-Expire=86400&HW-CC-Sign=EA6022553565B47E29153B45451E7D711061657E459837A6E0C2D5590FE1A669)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/rODHaOCpRrasEudUk7Wq7w/zh-cn_image_0000002558764072.png)
 
 ## 常见问题
 

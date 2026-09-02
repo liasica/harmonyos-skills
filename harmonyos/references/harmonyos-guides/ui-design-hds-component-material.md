@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > UI Design Kit（UI设计套件） > 沉浸�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:30:27+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:589da5a10cdd91a9e186a223133596c95be55d2be8cc4a9164fe267d3e4db389
+content_hash: sha256:a30ba8c358b4014f27c1bfc6fd83ba22af38d49bb0d858762930540550a2e5a5
 ---
 
 ## 场景介绍
@@ -324,4 +324,4 @@ content_hash: sha256:589da5a10cdd91a9e186a223133596c95be55d2be8cc4a9164fe267d3e4
 
    **沉浸光感材质效果展示**
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/0KherWvbTBGUmHllhGx8Jw/zh-cn_image_0000002589324721.png?HW-CC-KV=V1&HW-CC-Date=20260429T053026Z&HW-CC-Expire=86400&HW-CC-Sign=455B43E9EEDEF5205F2EC9AC8B47820AF376B91124F0885EB7FF166A923FE3FA)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/0KherWvbTBGUmHllhGx8Jw/zh-cn_image_0000002589324721.png)

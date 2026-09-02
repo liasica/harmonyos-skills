@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > Data Augmentation Kit（数据增强服务�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:29:49+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:ebc240493b286987ae12d56fbc79fedf761ba537c49e8d5e6dfcd1882098152e
+content_hash: sha256:13c29b7615ae8ef16b0d20482d2ccfdcb648ff6df6651f35cdf28b4e9fb5c8b9
 ---
 
 知识问答是通过检索增强生成（RAG）技术，从数据源中精准提取信息并生成答案的智能交互方式。可用于企业客服、医疗辅助、IT支持等领域。
@@ -324,4 +324,4 @@ RAG关键接口如下表所示，具体API说明详见[API参考](../harmonyos-r
 
 ## 流式问答调用流程图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/KizoMQElRLiV4rjlT1oinQ/zh-cn_image_0000002558605124.png?HW-CC-KV=V1&HW-CC-Date=20260429T052948Z&HW-CC-Expire=86400&HW-CC-Sign=C6862243BBECBE02B415A4C712122010AADD3D3242262F7542DAB391AA8F2FCE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/KizoMQElRLiV4rjlT1oinQ/zh-cn_image_0000002558605124.png)

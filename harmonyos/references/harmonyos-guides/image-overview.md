@@ -5,7 +5,7 @@ breadcrumb: 指南 > 媒体 > Image Kit（图片处理服务） > Image Kit简�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:35:11+08:00
 doc_updated_at: 2026-03-20
-content_hash: sha256:8e518bc16a10015dc9664b3970dbd607878d9f84e9e23e3f6f085a025b145ffb
+content_hash: sha256:fbb1782f0fc353a423af170812edd3cc234b5ce2209d1b20926de2856192f5a1
 ---
 
 开发者通过调用Image Kit（图片处理服务）提供的接口，可以实现图片的解码、编码、编辑、元数据处理和图片接收等功能。
@@ -51,11 +51,11 @@ Image Kit还提供了读取和[编辑图片EXIF信息](image-tool.md)的能力�
 
 **图1** 图片解码流程示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/F6sM6AyeTXOT0m7dFeU-9A/zh-cn_image_0000002558605428.png?HW-CC-KV=V1&HW-CC-Date=20260429T053510Z&HW-CC-Expire=86400&HW-CC-Sign=4C4F35FBF768B21DB223D872D01C66869D30889F0E7CE96D1E0815A7ED43DA2B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/F6sM6AyeTXOT0m7dFeU-9A/zh-cn_image_0000002558605428.png)
 
 **图2** 图片编码流程示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/99B0g4rgRA2dE2L5xeqPFw/zh-cn_image_0000002589324955.png?HW-CC-KV=V1&HW-CC-Date=20260429T053510Z&HW-CC-Expire=86400&HW-CC-Sign=796BE735546FABB00A5A63B16DC5EB06A63C58B8DBC4F08D209247A6343299A0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/99B0g4rgRA2dE2L5xeqPFw/zh-cn_image_0000002589324955.png)
 
 ## 约束与限制
 

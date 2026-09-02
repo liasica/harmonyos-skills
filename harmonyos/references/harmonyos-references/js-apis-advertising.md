@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-advertising
-title: @ohos.advertising (广告服务框架)
+title: "@ohos.advertising (广告服务框架)"
 breadcrumb: API参考 > 应用服务 > Ads Kit（广告服务） > ArkTS API > @ohos.advertising (广告服务框架)
 category: harmonyos-references
 scraped_at: 2026-04-29T14:06:56+08:00

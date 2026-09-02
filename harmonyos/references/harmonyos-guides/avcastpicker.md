@@ -5,12 +5,12 @@ breadcrumb: 指南 > 媒体 > AVSession Kit（音视频播控服务） > 应用�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:34:51+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:2ad9d5c835918d5dc4199d9368066cc926632d005bcbff85222a2099dab7642d
+content_hash: sha256:e30750915b6d8a5918e1905079200597dc296f9a4d09d9b98626aa74ef95e77e
 ---
 
 针对音视频类应用，播控中心提供系统级设备切换、投播能力选择入口，提供音视频发声设备统一投播组件。应用通过接入统一投播组件，可以实现在应用内及系统播控中心，将应用音视频资源通过Cast+协议/DLNA协议投播到远端设备。应用需先按自检要求接入[基础播控](basic-playback-control.md)，才可正常接入音视频投播组件。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/YRiYu20YSzGExHT1EK9i3g/zh-cn_image_0000002589324933.png?HW-CC-KV=V1&HW-CC-Date=20260429T053450Z&HW-CC-Expire=86400&HW-CC-Sign=054030175098AD33230DEE9D23861C0D0A6EA224200BAB2B85312825AA71DC1A) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/RUstyj40RsqHOuyzD0GbFg/zh-cn_image_0000002589244869.png?HW-CC-KV=V1&HW-CC-Date=20260429T053450Z&HW-CC-Expire=86400&HW-CC-Sign=9FFECA8E3CACF00E05C2804AB8960898AB9858ECB931B25D1FB4F8B2556518AE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/YRiYu20YSzGExHT1EK9i3g/zh-cn_image_0000002589324933.png) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/RUstyj40RsqHOuyzD0GbFg/zh-cn_image_0000002589244869.png)
 
 ## 基础投播能力
 

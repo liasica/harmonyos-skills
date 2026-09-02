@@ -5,7 +5,7 @@ breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 端侧部
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:41:00+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:3c2d4ea787aed4e977ee53d50a2eec9a1c415441f784806862a9dc17851fa247
+content_hash: sha256:b957fe1fd62e39855f07cf3eea4ff1d58b0644f683e5caa3f5e6154f632cf121
 ---
 
 模型的加载、编译和推理主要是在native层实现，应用层主要作为数据传递和展示作用。
@@ -14,7 +14,7 @@ content_hash: sha256:3c2d4ea787aed4e977ee53d50a2eec9a1c415441f784806862a9dc17851
 
 本节阐述同步模式下单模型的使用，从流程上分别阐述每个步骤在应用层和native层的实现和调用。接口请参见[API参考](../harmonyos-references/cannkit.md)，示例请参见[SampleCode](https://gitcode.com/HarmonyOS_Samples/cannkit-samplecode-clientdemo-cpp)，本示例支持加载离线模型对图片中的物体进行分类，App运行效果图如下所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/YEqrfpClRpCbaB4BN30Uag/zh-cn_image_0000002558765724.png?HW-CC-KV=V1&HW-CC-Date=20260429T054059Z&HW-CC-Expire=86400&HW-CC-Sign=5FF994D65C2867FBB86400859CB486055D5C7246C0CD989FC78FAEC5FFB36EDC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/YEqrfpClRpCbaB4BN30Uag/zh-cn_image_0000002558765724.png)
 
 ## 预置模型
 

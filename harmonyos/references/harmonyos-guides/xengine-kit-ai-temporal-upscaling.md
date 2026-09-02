@@ -5,7 +5,7 @@ breadcrumb: 指南 > 图形 > XEngine Kit（GPU加速引擎服务） > 时域AI�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:36:43+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:9215dc4165b5b7bda34774d96f0f1c64e030b76feabe60d7ad03ba0741b104e2
+content_hash: sha256:0d664b096e3e28fb34457ec5d638b8604996659b558ba4c442d97894bf30d0eb
 ---
 
 从6.0.0(20) 版本开始，新增支持OpenGL ES协议。
@@ -16,7 +16,7 @@ XEngine Kit提供时域AI超分能力，利用相机的抖动获取不同位置�
 
 * 下面是基于GLES图形API平台集成时域AI超分的主要业务流程
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/fXOExD8gRZaJqT2kpNzDSQ/zh-cn_image_0000002558765236.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053642Z&HW-CC-Expire=86400&HW-CC-Sign=B882EE0F70680600C53A6CCF182A5373A33802CA952707444F31A39AE626EA08)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/fXOExD8gRZaJqT2kpNzDSQ/zh-cn_image_0000002558765236.jpg)
 
 1. 用户在进入游戏初始化场景时调用HMS\_XEG\_GetString接口查询XEngine支持的特性，当查询接口返回支持的特性列表中包含时域AI超分时代表可以使用此特性。
 2. 此时调用HMS\_XEG\_TemporalUpscaleParameter接口配置超分参数。
@@ -28,7 +28,7 @@ XEngine Kit提供时域AI超分能力，利用相机的抖动获取不同位置�
 
 * 下面是基于Vulkan图形API平台集成时域AI超分的主要业务流程
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/YFKtL9syQQKlS5FxzTKtRQ/zh-cn_image_0000002558605580.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053642Z&HW-CC-Expire=86400&HW-CC-Sign=D39634DFE133D8DE514E23409A10BC8D8AFE3D513477160D4B89E6FA669C8EC7)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/YFKtL9syQQKlS5FxzTKtRQ/zh-cn_image_0000002558605580.jpg)
 
 1. 用户在进入游戏初始化场景时调用HMS\_XEG\_EnumerateDeviceExtensionProperties接口查询XEngine支持的特性，当查询接口返回支持的特性列表中包含时域AI超分时代表可以使用此特性。
 2. 此时调用HMS\_XEG\_CreateTemporalUpscale接口创建超分实例。

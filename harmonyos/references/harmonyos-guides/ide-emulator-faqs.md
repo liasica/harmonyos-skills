@@ -5,7 +5,7 @@ breadcrumb: 指南 > 编写与调试应用 > 使用模拟器运行应用 > 模�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:46:39+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:0548b89b7a460cb952d0892b552ade63425faae8b5e89d7d0c2d3161d97a4245
+content_hash: sha256:71a5a429f0f2b2eb64c8f2df427b691f4ac75f64bca1898cf8c6075780982836
 ---
 
 当模拟器运行出现错误时，您可以向我们提交错误信息。在扩展菜单栏打开**Bug报告**界面：
@@ -15,7 +15,7 @@ content_hash: sha256:0548b89b7a460cb952d0892b552ade63425faae8b5e89d7d0c2d3161d97
 * 在日志文件内容中，可以查看收集的日志内容。
 * 在界面右下方勾选同意用户协议后，点击**保存并发送**按钮，即可将问题和Bug日志传递给我们。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/-l6RNf8LRjSfk40Rkw5CMQ/zh-cn_image_0000002561831011.png?HW-CC-KV=V1&HW-CC-Date=20260429T054638Z&HW-CC-Expire=86400&HW-CC-Sign=19D8806613A646BC7D6E1B841481493B60C53E03C1E283D48CD9628969CA257A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/-l6RNf8LRjSfk40Rkw5CMQ/zh-cn_image_0000002561831011.png)
 
 ## 00801001 未开启Hyper-V
 
@@ -39,7 +39,7 @@ Hyper-V Not Enabled.
    * 如果不存在，说明系统未预装Hyper-V，请根据系统版本先安装Hyper-V。
    * 如果存在，勾选这三个功能，点击确定并重启电脑。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/BYsfTu3pTKylTO84GTPlfQ/zh-cn_image_0000002530751086.png?HW-CC-KV=V1&HW-CC-Date=20260429T054638Z&HW-CC-Expire=86400&HW-CC-Sign=BC624CA12EC06EAE314EC1C2818F2BC8361941BB4021EC88D820483D04592F0C)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/BYsfTu3pTKylTO84GTPlfQ/zh-cn_image_0000002530751086.png)
 3. 若勾选后启动模拟器仍然提示该错误，需要以管理员权限打开命令行窗口执行以下命令，并重启电脑。
 
    ```
@@ -47,7 +47,7 @@ Hyper-V Not Enabled.
    ```
 4. 如果按照上述步骤无法解决，打开**任务管理器->性能**，若显示虚拟化已禁用或未开启，则是BIOS中虚拟化没有开启，请根据计算机的主板型号，进入BIOS设置界面，并开启虚拟化功能。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/UYoCeSKcRx6phv_ogj3MkA/zh-cn_image_0000002530911074.png?HW-CC-KV=V1&HW-CC-Date=20260429T054638Z&HW-CC-Expire=86400&HW-CC-Sign=BEEADF3203AB9CF88922ABB3D833AA4D68FF19EA5F1AFDAB2B53D4A902078775)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/UYoCeSKcRx6phv_ogj3MkA/zh-cn_image_0000002530911074.png)
 
 更多关于Hyper-V安装请参考[在 Windows 上安装 Hyper-V](https://learn.microsoft.com/zh-cn/windows-server/virtualization/hyper-v/get-started/Install-Hyper-V?f=255&MSPPError=-2147217396)和[Hyper-V 系统要求](https://learn.microsoft.com/zh-cn/windows-server/virtualization/hyper-v/host-hardware-requirements)。
 
@@ -124,10 +124,10 @@ Emulator failed to start due to insufficient memory.
 
 1. 首先打开**任务管理器>详细信息**，在列表表头右键**>选择列**，找到并勾选“**提交大小**”，点击“**提交大小**”列进行排序，关闭部分提交大小占用高的进程。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/8vHSiovZRyCUBCpMAmCQZg/zh-cn_image_0000002561831013.png?HW-CC-KV=V1&HW-CC-Date=20260429T054638Z&HW-CC-Expire=86400&HW-CC-Sign=37533E21F0587DE80A00ED89E045F502EA5B2286A75C1F99B1F14E09B503634B)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/8vHSiovZRyCUBCpMAmCQZg/zh-cn_image_0000002561831013.png)
 2. 打开**任务管理器>性能>内存**页面，确保已提交内存的剩余量大于模拟器设置的RAM大小。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/t-W2mCiAQjmJLr7JQTS0jA/zh-cn_image_0000002561831015.png?HW-CC-KV=V1&HW-CC-Date=20260429T054638Z&HW-CC-Expire=86400&HW-CC-Sign=EE3DB902FA91019F0B90C0BC1879CA60C96306A2C5EC0EC1B6DAA4C2B79A5FD6)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/t-W2mCiAQjmJLr7JQTS0jA/zh-cn_image_0000002561831015.png)
 
 ## 00801006 Windows系统版本过低
 

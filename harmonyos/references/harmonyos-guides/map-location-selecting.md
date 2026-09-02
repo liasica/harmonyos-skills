@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 地图Picker > �
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:39:17+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:53ee8351ffbf233da782e2a6a09885c79b635e9a8f0e906f8004063d2b396a1a
+content_hash: sha256:b8cabc45ef1fc42f1d440742520b8cf51f5f091b3d2d7b07380250cb9b689bf2
 ---
 
 ## 场景介绍
@@ -14,11 +14,11 @@ content_hash: sha256:53ee8351ffbf233da782e2a6a09885c79b635e9a8f0e906f8004063d2b3
 
 **图1** 地点选取页
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/NpDBbyC3QhK2h_XNzMEkew/zh-cn_image_0000002558765550.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053659Z&HW-CC-Expire=86400&HW-CC-Sign=6B013E76461049A3A67FED27E2F340B8F5A1337A7B5C79A83B1DD0FA14FCA45D "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/NpDBbyC3QhK2h_XNzMEkew/zh-cn_image_0000002558765550.jpg "点击放大")
 
 **图2** 地点选取
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/MDPFUh46R_S0KJLPcT1Row/zh-cn_image_0000002558605894.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053659Z&HW-CC-Expire=86400&HW-CC-Sign=E9D08AC48DA0F18D3DB1D28B83F8ECA143F0B9859D8B4ECDA4307E3405639F25 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/MDPFUh46R_S0KJLPcT1Row/zh-cn_image_0000002558605894.jpg "点击放大")
 
 ## 约束与限制
 

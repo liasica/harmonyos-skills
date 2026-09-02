@@ -5,7 +5,7 @@ breadcrumb: 指南 > 系统 > 硬件 > Sensor Service Kit（传感器服务） >
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:33:41+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:12693d9ccc463db244551b396aad8a997b66bb76135b515c681dab1a4ec519c9
+content_hash: sha256:25ae96aa0e340d9c3bf44eba3b8bac3e8087d655917285ea540c1a899a815720
 ---
 
 ## 场景介绍
@@ -32,7 +32,7 @@ content_hash: sha256:12693d9ccc463db244551b396aad8a997b66bb76135b515c681dab1a4ec
 
 1. 新建一个工程。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/O5efIzExRzG_fI1mTni1Ew/zh-cn_image_0000002589324847.png?HW-CC-KV=V1&HW-CC-Date=20260429T053339Z&HW-CC-Expire=86400&HW-CC-Sign=83D045D3854DB2F8D684C7CE50DFA211D33728AAB369E0C05F777BF78F5AC7AB)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/O5efIzExRzG_fI1mTni1Ew/zh-cn_image_0000002589324847.png)
 2. 配置加速度传感器权限，具体配置方式请参考[声明权限](declare-permissions.md)。
 
    ```
@@ -75,7 +75,7 @@ content_hash: sha256:12693d9ccc463db244551b396aad8a997b66bb76135b515c681dab1a4ec
    16. }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/8STdkMYHTZqDZjLAB5581w/zh-cn_image_0000002589244785.png?HW-CC-KV=V1&HW-CC-Date=20260429T053339Z&HW-CC-Expire=86400&HW-CC-Sign=064C1B006DB1D317DFF1B689382CF179AB9AA230C8C6E4D00B4F49D02788FFC9)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/8STdkMYHTZqDZjLAB5581w/zh-cn_image_0000002589244785.png)
 
    该传感器支持的最小采样周期为5000000纳秒，最大采样周期是200000000纳秒。不同传感器支持的采样周期范围也不同，interval应该设置在传感器支持范围内，大于最大值时以最大值上报数据，小于最小值时以最小值上报数据。设置数值越小数据上报越频繁，其功耗越大。
 
@@ -140,7 +140,7 @@ content_hash: sha256:12693d9ccc463db244551b396aad8a997b66bb76135b515c681dab1a4ec
    9. }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/TRAZQ519TJGRBgj-pyOxlg/zh-cn_image_0000002558764980.png?HW-CC-KV=V1&HW-CC-Date=20260429T053339Z&HW-CC-Expire=86400&HW-CC-Sign=9AE9C1D28F6786603CC819CA1071AB87D44B8F96ABADC36F439F6E5A5370D361)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/TRAZQ519TJGRBgj-pyOxlg/zh-cn_image_0000002558764980.png)
 
    通过once()接口，实现对传感器的一次监听。
 
@@ -156,7 +156,7 @@ content_hash: sha256:12693d9ccc463db244551b396aad8a997b66bb76135b515c681dab1a4ec
    9. }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/wLaE7MxPSD2QBzmC958krw/zh-cn_image_0000002558605324.png?HW-CC-KV=V1&HW-CC-Date=20260429T053339Z&HW-CC-Expire=86400&HW-CC-Sign=0266B0DC232D29337A1D022373BD7327D4685FE60F830CC04C66002156089B17)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/wLaE7MxPSD2QBzmC958krw/zh-cn_image_0000002558605324.png)
 7. 取消持续监听。
 
    取消持续监听，此场景下未订阅而取消监听为异常行为，需处理异常。

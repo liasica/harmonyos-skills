@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:27:55+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:98bd9d8b37f5f34a12c3d5e711d8116fc6284904ea62d45b88029154c7b08475
+content_hash: sha256:b77e5b6269b210d6f197ae7125bd9786a8364a9bf8d033a21939ebbee96ad1d0
 ---
 
 ArkUI的弹出框焦点策略可以设定是否中断用户当前操作，并聚焦到新弹出的弹出框。若设定弹出框不获取焦点，则新弹出时不会中断用户当前操作，例如，当用户正在文本框中输入内容时，新弹出的弹出框不会关闭软键盘，焦点仍保留在文本框中。
@@ -117,4 +117,4 @@ ArkUI的弹出框焦点策略可以设定是否中断用户当前操作，并聚
 
 [DialogFocusStrategy.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/DialogProject/entry/src/main/ets/pages/customdialog/dialogboxfocuspolicy/DialogFocusStrategy.ets#L16-L63)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/WhMZcsuhRCiz_4TIviZy2A/zh-cn_image_0000002558604744.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052754Z&HW-CC-Expire=86400&HW-CC-Sign=17726A73C1856A92F8DBEAE87572AD04390D0AB040BF7DF5A30A46B012E759A2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/WhMZcsuhRCiz_4TIviZy2A/zh-cn_image_0000002558604744.gif)

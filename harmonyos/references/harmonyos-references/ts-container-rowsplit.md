@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:51:41+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:1394f890c2e4b1d58c4cc034eb81d6f1036cc3b67a5c257cce42684e2dfc963a
+content_hash: sha256:1efbf9e59b49c5dc615197cc905016fe84cc0fde286066ffcc1bf33f2cb259a8
 ---
 
 将子组件横向布局，并在每个子组件之间插入纵向分割线。
@@ -102,4 +102,4 @@ RowSplit的基本用法。设置可拖动的、横向布局的子组件。
 19. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/t_5XyXFGQ7Guhnft7gKMWw/zh-cn_image_0000002589245935.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055140Z&HW-CC-Expire=86400&HW-CC-Sign=7AAC7FADD19A94F10999414CFE830D5287365C9C50FF7CC3F8F1FA6740FE6EC3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/t_5XyXFGQ7Guhnft7gKMWw/zh-cn_image_0000002589245935.gif)

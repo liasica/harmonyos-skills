@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用服务 > AppGallery Kit（应用市场服务） > 应
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:37:17+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:377e9bae0989ec7551694a03f5b931ec289c7520255ebc0546390fefef65dfb8
+content_hash: sha256:ce19b185728a99ec75dc98a1fb76c404eb3925eb3de18e6e32c5b02cf6d6ac21
 ---
 
 通过应用评论服务，用户无需进入应用市场应用详情页，可以直接在应用内进行评论。
@@ -20,11 +20,11 @@ content_hash: sha256:377e9bae0989ec7551694a03f5b931ec289c7520255ebc0546390fefef6
 
   开发者可以通过该接口拉起应用评论弹窗对应用进行评分及评论，无需进入应用市场应用详情页进行评论。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/X7B3UB8dQk-08OBEnfNRuQ/zh-cn_image_0000002558765294.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053716Z&HW-CC-Expire=86400&HW-CC-Sign=37AB25FEB93C8DEEBB19E875DBBC49BE34AA98DC43DC29836F6E14D238603CA2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/X7B3UB8dQk-08OBEnfNRuQ/zh-cn_image_0000002558765294.jpg)
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/4D9HPjOITkyuCtE0gbbKBA/zh-cn_image_0000002558605638.png?HW-CC-KV=V1&HW-CC-Date=20260429T053716Z&HW-CC-Expire=86400&HW-CC-Sign=4FDBC36D933CA8741983D805A9760CD7381013FFDC2A971EB0D3B1183C946C7C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/4D9HPjOITkyuCtE0gbbKBA/zh-cn_image_0000002558605638.png)
 
 1. 用户需要在应用内评论应用。
 2. 应用调用showCommentDialog接口拉起应用评论弹窗。

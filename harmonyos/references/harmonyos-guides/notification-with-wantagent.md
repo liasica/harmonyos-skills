@@ -5,18 +5,18 @@ breadcrumb: 指南 > 应用服务 > Notification Kit（用户通知服务） > �
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:39:24+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:f6e91b1e26fb22a30cc1ef78f3e6fa7a508cf09f5c0ab1e5ea93d55fafda691c
+content_hash: sha256:41400c0648623d2e270de1384d411afefb3c37de964b30a613435e30b4cc29a7
 ---
 
 应用向Ability Kit申请[WantAgent](../harmonyos-references/js-apis-app-ability-wantagent.md)，并将WantAgent封装至通知中。当发布通知时，用户便可以通过点击通知栏中的消息或按钮，拉起目标应用组件或发布公共事件。
 
 携带了actionButtons的通知示意图如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/9hoeEmeuTIyuR_N3XamqUA/zh-cn_image_0000002589325433.png?HW-CC-KV=V1&HW-CC-Date=20260429T053922Z&HW-CC-Expire=86400&HW-CC-Sign=8100E47DEC69ED35195F676E0E3ABB571D4D4553FCE1DC0E9E86071B429E52C9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/9hoeEmeuTIyuR_N3XamqUA/zh-cn_image_0000002589325433.png)
 
 ## 运行机制
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/9sl_k5clTgGvTs1o6Bmc1g/zh-cn_image_0000002589245371.png?HW-CC-KV=V1&HW-CC-Date=20260429T053922Z&HW-CC-Expire=86400&HW-CC-Sign=1D5C0ED7FB5DE1A567F6958C6A3641A555D89C815106F04DED9B44D946781363)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/9sl_k5clTgGvTs1o6Bmc1g/zh-cn_image_0000002589245371.png)
 
 ## 接口说明
 

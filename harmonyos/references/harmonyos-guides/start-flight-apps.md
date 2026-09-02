@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > Stage�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:25:53+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:83fdf3cd043d169eca226e56357776f692cf8c51ad93ad3a61a716d24dc2a1de
+content_hash: sha256:59ac555ea00c931069e4919473caa7c1830a32dd187be98ea3c221cd89a62bf7
 ---
 
 本章节介绍如何拉起航班类应用扩展面板。
@@ -88,7 +88,7 @@ startAbilityByType接口中type字段为flight，支持按航班号查询、按�
 
    效果示例图：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/AdIs4r6RRuGQFsReVIYoGw/zh-cn_image_0000002589323867.png?HW-CC-KV=V1&HW-CC-Date=20260429T052552Z&HW-CC-Expire=86400&HW-CC-Sign=67431FB5231FCDEF0892EB7136C6ECA7007FA4C54E6948E6BBC397A7D60BA19F)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/AdIs4r6RRuGQFsReVIYoGw/zh-cn_image_0000002589323867.png)
 
 ## 目标方开发步骤
 

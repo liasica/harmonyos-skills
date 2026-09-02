@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 创建地图 > �
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:39:01+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:2b539ee3465abb9d6b4646c0d00f5efca0fe9ecb62b10e92c85833fc54652352
+content_hash: sha256:543a5a8a86824f0a1eabc896849e62f49a2bd57d0586e071cbe9122aa61eae5c
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:2b539ee3465abb9d6b4646c0d00f5efca0fe9ecb62b10e92c85833fc546
 
 本章节将向您介绍如何开启和展示“我的位置”功能，“我的位置”指的是进入地图后点击“我的位置”显示当前位置点的功能。效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/mu_cDKX-REuZcUrfmxOREw/zh-cn_image_0000002558605856.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053859Z&HW-CC-Expire=86400&HW-CC-Sign=4EABF092610EB8796408746D1B0E3574F7B6E2939EF126B6CB8D432F37B10433 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/mu_cDKX-REuZcUrfmxOREw/zh-cn_image_0000002558605856.jpg "点击放大")
 
 ## 接口说明
 
@@ -175,9 +175,9 @@ content_hash: sha256:2b539ee3465abb9d6b4646c0d00f5efca0fe9ecb62b10e92c85833fc546
    ```
 3. 检查“我的位置”功能是否成功启用。
 
-   “我的位置”按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/kZJd_ef9QRy2yzv41M68PA/zh-cn_image_0000002589325383.png?HW-CC-KV=V1&HW-CC-Date=20260429T053859Z&HW-CC-Expire=86400&HW-CC-Sign=BD03DE2C097CF0F98B4DB5801CCE6911E5F4801B7E318C9A017B7448E896132F)默认显示在地图的右下角。点击“我的位置”按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/me3hByNZRHiTsrus49QBtQ/zh-cn_image_0000002589245319.png?HW-CC-KV=V1&HW-CC-Date=20260429T053859Z&HW-CC-Expire=86400&HW-CC-Sign=3A70785A28B216AA8328D36FD32789D42BA346E45D6E365BA0F07512C5A2347C)，将会在屏幕中心显示当前定位，以蓝色圆点的形式呈现，效果如下图所示，效果根据获取到的用户位置会有变化。
+   “我的位置”按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/kZJd_ef9QRy2yzv41M68PA/zh-cn_image_0000002589325383.png)默认显示在地图的右下角。点击“我的位置”按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/me3hByNZRHiTsrus49QBtQ/zh-cn_image_0000002589245319.png)，将会在屏幕中心显示当前定位，以蓝色圆点的形式呈现，效果如下图所示，效果根据获取到的用户位置会有变化。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/cUWRZmYfSLeY54kTkINYtg/zh-cn_image_0000002558765514.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053859Z&HW-CC-Expire=86400&HW-CC-Sign=A79F6A4CE86BB8FED9D9CB583E640390E6A536D83ACDE7AA0F0E225E8EA60E9B "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/cUWRZmYfSLeY54kTkINYtg/zh-cn_image_0000002558765514.jpg "点击放大")
 4. 获取用户位置坐标并设置用户的位置。
 
    Map Kit默认使用系统的连续定位能力，如果您希望定制显示频率或者精准度，可以调用[geoLocationManager](../harmonyos-references/js-apis-geolocationmanager.md)相关接口获取用户位置坐标（WGS84坐标系）。注意访问设备的位置信息必须申请权限，并且获得用户授权，详情见[geoLocationManager](../harmonyos-references/js-apis-geolocationmanager.md)。
@@ -231,7 +231,7 @@ content_hash: sha256:2b539ee3465abb9d6b4646c0d00f5efca0fe9ecb62b10e92c85833fc546
 9. await this.mapController.setMyLocationStyle(style);
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/c9G-VGv2Ta26plZXsvl69Q/zh-cn_image_0000002558605858.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053859Z&HW-CC-Expire=86400&HW-CC-Sign=720E2DB535BC84820BABEADE434953891A947D5EE01D0362A40142876239E852 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/c9G-VGv2Ta26plZXsvl69Q/zh-cn_image_0000002558605858.jpg "点击放大")
 
 ### 更改我的位置图层相对于覆盖物的压盖顺序
 
@@ -242,4 +242,4 @@ content_hash: sha256:2b539ee3465abb9d6b4646c0d00f5efca0fe9ecb62b10e92c85833fc546
 2. this.mapController?.changeMyLocationLayerOrder(true);
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/4CxQy0LxTO6U0D2gjzlhfA/zh-cn_image_0000002589325385.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053859Z&HW-CC-Expire=86400&HW-CC-Sign=891795DC836C2CC096D8BFD0E2082842565CD99A95CCE77E2B6768B6E9607F74 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/4CxQy0LxTO6U0D2gjzlhfA/zh-cn_image_0000002589325385.jpg "点击放大")

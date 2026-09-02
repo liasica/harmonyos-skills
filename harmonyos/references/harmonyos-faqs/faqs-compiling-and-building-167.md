@@ -5,7 +5,7 @@ breadcrumb: FAQ > DevEco Studio > 编译构建 > 编译报错“Duplicate 'Modul
 category: harmonyos-faqs
 scraped_at: 2026-04-29T14:21:00+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:37f492b6068ac87d97a12caa41e6411a65b926b92cdb0f2cdd5f21809d44b389
+content_hash: sha256:4dc3953441a0ee6dda4f42de6a6042c0ac4f28ed1174a6c927888d00d27fd36a
 ---
 
 **错误描述**
@@ -16,7 +16,7 @@ Module-Abilities对象名称重复。
 
 依赖的HAR模块中module.json5的abilities数组中存在重复的ability对象名称。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/257vx7CoQYa18-Fl5sUrPA/zh-cn_image_0000002194158504.png?HW-CC-KV=V1&HW-CC-Date=20260429T062059Z&HW-CC-Expire=86400&HW-CC-Sign=5AD17BC595B92CB4810FB7538B91678DC09D9A7118DD144ACBAE1E382C95085C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/257vx7CoQYa18-Fl5sUrPA/zh-cn_image_0000002194158504.png)
 
 **解决措施**
 

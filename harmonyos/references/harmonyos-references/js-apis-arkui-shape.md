@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-shape
-title: @ohos.arkui.shape (形状)
+title: "@ohos.arkui.shape (形状)"
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.arkui.shape (形状)
 category: harmonyos-references
 scraped_at: 2026-04-29T13:50:32+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:1e72dead0336bce3f2aca259d67f8906e80d498fc01961b0e471ae88d33e90bf
+content_hash: sha256:7ce415111433216371835d03ffc0ada69a3bcdbdc64ea089b484825dfdae3e32
 ---
 
 在[clipShape](ts-universal-attributes-sharp-clipping.md#clipshape12)和[maskShape](ts-universal-attributes-sharp-clipping.md#maskshape12)接口中可以传入对应的形状。
@@ -556,4 +556,4 @@ PhonePC/2in1TabletTVWearable
 35. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/tSDJAD09Rk-GboCEKPIs5Q/zh-cn_image_0000002558765924.png?HW-CC-KV=V1&HW-CC-Date=20260429T055030Z&HW-CC-Expire=86400&HW-CC-Sign=C3EA2EAE8F9B886F7358620CF5F5878E1F9A198CB627EC6705831CFB5D12D85B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/tSDJAD09Rk-GboCEKPIs5Q/zh-cn_image_0000002558765924.png)

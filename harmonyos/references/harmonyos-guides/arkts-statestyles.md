@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:27:07+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:3a25a186b4220adee57935f8c9a2528847ae4d6662ca8f724690f73fc3013afe
+content_hash: sha256:8ccf1e83a11fb625b09217ad008617f23b92eccf60ad70c9e7183dcd3aa5ebcf
 ---
 
 @Styles仅应用于静态页面的样式复用，stateStyles可以依据组件的内部状态的不同，快速设置不同样式。这就是我们本章要介绍的内容stateStyles（又称为：多态样式）。
@@ -75,7 +75,7 @@ stateStyles是属性方法，可以根据UI内部状态来设置样式，类似�
 
 **图1** 获焦态和按压态
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/pErwopcLRhaf9KPGK4oZhQ/zh-cn_image_0000002589243883.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052706Z&HW-CC-Expire=86400&HW-CC-Sign=17EAC7E55B37AB872003BD02B0D054730DBB8299A73AD220E968B45F45A64487)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/pErwopcLRhaf9KPGK4oZhQ/zh-cn_image_0000002589243883.gif)
 
 ### @Styles和stateStyles联合使用
 
@@ -110,7 +110,7 @@ stateStyles是属性方法，可以根据UI内部状态来设置样式，类似�
 
 **图2** 正常态和按压态
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/HQnn75UaQjmNzsfaGPDL2w/zh-cn_image_0000002558764076.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052706Z&HW-CC-Expire=86400&HW-CC-Sign=3591A3778908737E2F5301D86B9387B13BE89697BCDE3919B7EA34F5FB883DEE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/HQnn75UaQjmNzsfaGPDL2w/zh-cn_image_0000002558764076.gif)
 
 ### 在stateStyles里使用常规变量和状态变量
 
@@ -151,4 +151,4 @@ Button默认normal态显示蓝色，第一次按下Tab键让Button获焦显示�
 
 **图3** 点击改变获焦态样式
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/rxQvz7X4QP6746ZEoVT_wQ/zh-cn_image_0000002558604420.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052706Z&HW-CC-Expire=86400&HW-CC-Sign=2980EAB49E2B1BAD1A59B6CD945B0DB5687FAD690E785D1773339447A1AB38DB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/rxQvz7X4QP6746ZEoVT_wQ/zh-cn_image_0000002558604420.gif)

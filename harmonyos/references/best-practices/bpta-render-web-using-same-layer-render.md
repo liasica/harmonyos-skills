@@ -5,7 +5,7 @@ breadcrumb: 最佳实践 > 应用框架 > ArkWeb > 同层渲染原生组件
 category: best-practices
 scraped_at: 2026-04-29T14:11:03+08:00
 doc_updated_at: 2026-03-27
-content_hash: sha256:13de7da730d6381fada98c6d02292e20aa5672aabbcfe23daf4aa8634cf7125b
+content_hash: sha256:358761566733fedefae2a83dd9349dfb601d65a48221daab55b9ade30d832a0b
 ---
 
 ## 概述
@@ -35,7 +35,7 @@ content_hash: sha256:13de7da730d6381fada98c6d02292e20aa5672aabbcfe23daf4aa8634cf
 
 **图1** 同层渲染和非同层渲染区别
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/911AqAArRDGEKEay-NugHw/zh-cn_image_0000002229450225.png?HW-CC-KV=V1&HW-CC-Date=20260429T061102Z&HW-CC-Expire=86400&HW-CC-Sign=3DD4CAF843BC6016046A718A2EF06760A947FC37CD94A9179D8CED34AC8ED946 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/911AqAArRDGEKEay-NugHw/zh-cn_image_0000002229450225.png "点击放大")
 
 ## 场景示例
 
@@ -43,7 +43,7 @@ content_hash: sha256:13de7da730d6381fada98c6d02292e20aa5672aabbcfe23daf4aa8634cf
 
 **图2** 页面效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/LeWkqG2_Q_as03PdUaA4kw/zh-cn_image_0000002229450245.png?HW-CC-KV=V1&HW-CC-Date=20260429T061102Z&HW-CC-Expire=86400&HW-CC-Sign=017C4D31A4178159324125B6A56A75EC0D0592E75797103212EE9253BC1833E8 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/LeWkqG2_Q_as03PdUaA4kw/zh-cn_image_0000002229450245.png "点击放大")
 
 提供承载的H5页面代码如下：
 
@@ -549,7 +549,7 @@ content_hash: sha256:13de7da730d6381fada98c6d02292e20aa5672aabbcfe23daf4aa8634cf
 
 **图3** 非同层渲染的Trace图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/54yyGtzhRai4o4XRkFD7iQ/zh-cn_image_0000002229450241.png?HW-CC-KV=V1&HW-CC-Date=20260429T061102Z&HW-CC-Expire=86400&HW-CC-Sign=ECB18EBD1A51ACC7437CA005F33174C6DDED42E77A80AD94E4A69C577B8912B4 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/54yyGtzhRai4o4XRkFD7iQ/zh-cn_image_0000002229450241.png "点击放大")
 
 非同层渲染的分析：
 
@@ -560,7 +560,7 @@ content_hash: sha256:13de7da730d6381fada98c6d02292e20aa5672aabbcfe23daf4aa8634cf
 
 **图4** 同层渲染的Trace图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/PVYDHW8bRNquxZ2Q1EExxA/zh-cn_image_0000002193850380.png?HW-CC-KV=V1&HW-CC-Date=20260429T061102Z&HW-CC-Expire=86400&HW-CC-Sign=0CB5E8545696482CE302FCAC5F04CB759AF019FA751C1E1832F95F17C2C91A6D "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/PVYDHW8bRNquxZ2Q1EExxA/zh-cn_image_0000002193850380.png "点击放大")
 
 同层渲染的分析：
 
@@ -571,7 +571,7 @@ content_hash: sha256:13de7da730d6381fada98c6d02292e20aa5672aabbcfe23daf4aa8634cf
 
 下表为各种方法完成原生组件加载（蓝线）前后几帧render\_service侧的耗时对比（-1为完成前一帧，1为完成后一帧，以此类推）
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/mZW8rz5ZRRueKjX-VQHljw/zh-cn_image_0000002194009960.png?HW-CC-KV=V1&HW-CC-Date=20260429T061102Z&HW-CC-Expire=86400&HW-CC-Sign=1BF948AE2DE211EA551F58CF9276E5FAC0211D80ECFF8DF25F30DFE17A61F325)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/mZW8rz5ZRRueKjX-VQHljw/zh-cn_image_0000002194009960.png)
 
 从此表格可以看出，非同层渲染会导致render\_service侧每帧耗时大幅提升，同层渲染相比起非同层渲染，并不影响render\_service侧的每帧耗时。
 
@@ -583,7 +583,7 @@ content_hash: sha256:13de7da730d6381fada98c6d02292e20aa5672aabbcfe23daf4aa8634cf
 
 **图5** 非同层渲染滑动时单帧图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/C27FkbuLQQmS4Aa4pp7_8w/zh-cn_image_0000002229450233.png?HW-CC-KV=V1&HW-CC-Date=20260429T061102Z&HW-CC-Expire=86400&HW-CC-Sign=D2CDDEDB9DE1409151885EABCB674309881B6ADBA0C381946B86C29D9AEAD0BB "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/C27FkbuLQQmS4Aa4pp7_8w/zh-cn_image_0000002229450233.png "点击放大")
 
 非同层渲染的分析：
 
@@ -594,7 +594,7 @@ content_hash: sha256:13de7da730d6381fada98c6d02292e20aa5672aabbcfe23daf4aa8634cf
 
 **图6** 同层渲染滑动时单帧图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/rzLpPA1cTT2m_C5aK1S2PA/zh-cn_image_0000002193850364.png?HW-CC-KV=V1&HW-CC-Date=20260429T061102Z&HW-CC-Expire=86400&HW-CC-Sign=4A9D192D9C2F5AF1B532D4E4F766C4DBBDD9D68B2E426674C17897BAFB34ED2D "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/rzLpPA1cTT2m_C5aK1S2PA/zh-cn_image_0000002193850364.png "点击放大")
 
 同层渲染的分析：
 

@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用服务 > AppGallery Kit（应用市场服务） > 应
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:37:13+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:75c0aaf86418983533196c1b7f107003cc95ac06ddc170074a68beef9fbf5a73
+content_hash: sha256:577b2f2755896cb2a9eba6409a6e6f414b5dabdcb9bda769e8554de47b56cf31
 ---
 
 通过归因策略管理，支持开发者在应用归因云端管理台维护可归因的分发平台及归因优先级、归因窗口期、归因节点设置，从而提升归因能力拓展性，适配开发者多样化归因诉求。
@@ -16,7 +16,7 @@ content_hash: sha256:75c0aaf86418983533196c1b7f107003cc95ac06ddc170074a68beef9fb
 
 点击左侧归因策略管理菜单栏，进入归因策略管理页面，开发者基于推广应用、转化事件等维度进行归因策略的维护，所有的归因策略都是基于开发者下具体某个推广应用配置。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/XnYO5IdhS8SiuXZi9nYerg/zh-cn_image_0000002558765288.png?HW-CC-KV=V1&HW-CC-Date=20260429T053712Z&HW-CC-Expire=86400&HW-CC-Sign=7A3EB99F3E17F6DA0E059B7817CDA477EC16227B0914162DA9A3A8F9BFAD2902)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/XnYO5IdhS8SiuXZi9nYerg/zh-cn_image_0000002558765288.png)
 
 说明
 
@@ -26,7 +26,7 @@ content_hash: sha256:75c0aaf86418983533196c1b7f107003cc95ac06ddc170074a68beef9fb
 
 在归因策略管理页面点击“新增”按钮，进入“新增归因策略”页面。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/rfg4j3F1SZ-MUNOY2igKaA/zh-cn_image_0000002558605632.png?HW-CC-KV=V1&HW-CC-Date=20260429T053712Z&HW-CC-Expire=86400&HW-CC-Sign=659CF1FE47A24C4DF30EBEA60FF9AA39FD7A51C2AD5EE502F862A17A6A3114C3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/rfg4j3F1SZ-MUNOY2igKaA/zh-cn_image_0000002558605632.png)
 
 参数填写说明如下：
 
@@ -50,7 +50,7 @@ content_hash: sha256:75c0aaf86418983533196c1b7f107003cc95ac06ddc170074a68beef9fb
 
 在归因策略管理页面点击右侧“编辑”按钮，弹出窗口期维护页面。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/L93Ae3rwQLW3lCuZlkWAdg/zh-cn_image_0000002589325159.png?HW-CC-KV=V1&HW-CC-Date=20260429T053712Z&HW-CC-Expire=86400&HW-CC-Sign=61A5061FDA1F3B79DA1AF1EC444DA52D064D24587B0B1F6CEA34F7A685CEF8D9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/L93Ae3rwQLW3lCuZlkWAdg/zh-cn_image_0000002589325159.png)
 
 维护完成后，点击“确认”即可生成有效记录，若点击“取消”，则不创建相应记录。
 
@@ -58,7 +58,7 @@ content_hash: sha256:75c0aaf86418983533196c1b7f107003cc95ac06ddc170074a68beef9fb
 
 在归因策略管理页面点击右侧“查看”按钮，弹出归因策略查看页面。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/1tK0cYSeQFqgf7hl-0prpw/zh-cn_image_0000002589245095.png?HW-CC-KV=V1&HW-CC-Date=20260429T053712Z&HW-CC-Expire=86400&HW-CC-Sign=CF9D4EB3F5E0A07B3BCED44E9C36A6EBF6E04E20D765E21188F6927262ABA27B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/1tK0cYSeQFqgf7hl-0prpw/zh-cn_image_0000002589245095.png)
 
 可点击“编辑”按钮进入编辑页面，或点击“取消”关闭当前页面返回列表页面。
 
@@ -66,7 +66,7 @@ content_hash: sha256:75c0aaf86418983533196c1b7f107003cc95ac06ddc170074a68beef9fb
 
 在归因策略管理页面点击右侧“删除”按钮：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/itPLjDfoQP-usGKBg5nm8Q/zh-cn_image_0000002558765290.png?HW-CC-KV=V1&HW-CC-Date=20260429T053712Z&HW-CC-Expire=86400&HW-CC-Sign=11BFFFAF90AAC1C792F3C302933128529A62F738B2AD5C89605C0E4D5E38BAB1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/itPLjDfoQP-usGKBg5nm8Q/zh-cn_image_0000002558765290.png)
 
 点击确认该记录状态变为“删除”，删除状态的记录仅可查看。
 

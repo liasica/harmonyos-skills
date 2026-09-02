@@ -5,14 +5,14 @@ breadcrumb: 指南 > 应用服务 > Share Kit（分享服务） > 系统分享 >
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:40:36+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:78a3cbe1ae675a62458660644cc371ac50476171e8f96e8bd7f1d5c2ce21673c
+content_hash: sha256:9dd659ecebf141158eb825a051d34474fe95bd8e9377077156ebf03d62d9297e
 ---
 
 ## 分享App Linking直达应用
 
 使用App Linking分享应用，目标设备接收后可直达应用，参见：[使用App Linking实现应用间跳转](app-linking-startup.md)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/qGnjaNrMRy-90Pgn-4AuPw/zh-cn_image_0000002589245489.png?HW-CC-KV=V1&HW-CC-Date=20260429T054035Z&HW-CC-Expire=86400&HW-CC-Sign=5B489F270BEE2223E048F90A3C3989D88DBC02C3E472C047BB1C8E0B60665722)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/qGnjaNrMRy-90Pgn-4AuPw/zh-cn_image_0000002589245489.png)
 
 ### 开发步骤
 

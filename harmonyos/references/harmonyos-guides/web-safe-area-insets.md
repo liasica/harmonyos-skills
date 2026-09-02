@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 处理网页内容 >
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:29:29+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:0ec37ed99b2e915b52d3a74227d602a60d5948125ed60ce3d3dab04744949b0f
+content_hash: sha256:d32b28b09078aae4a3196f3efa87ee268654c073fa7ec09f0e26722fda307def
 ---
 
 早期设备屏幕多为矩形，应用界面能够完整展示。随着全面屏、刘海屏等异形屏幕的普及，屏幕边缘可能出现圆角、摄像头或系统导航条，导致界面部分被遮挡。
@@ -106,7 +106,7 @@ safe-area-inset-\*是一组CSS环境变量，定义了安全区域与Web可视�
 
 **图1** safe-area-inset-\*示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/or24_V6YRZeA5lJcmZ91Eg/zh-cn_image_0000002589324595.png?HW-CC-KV=V1&HW-CC-Date=20260429T052928Z&HW-CC-Expire=86400&HW-CC-Sign=6EB6A33E19ACBC5B831672DEDDC80145ECF481940B538592831ECB39ACE1110E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/or24_V6YRZeA5lJcmZ91Eg/zh-cn_image_0000002589324595.png)
 
 当设置viewport-fit=cover时，ArkWeb内核将持续监测Web组件及系统非安全区域的位置与尺寸，根据两者的重叠部分计算网页在四个方向上需避让的具体距离，并设置给环境变量safe-area-inset-\*。在矩形显示器（如普通PC/2in1设备的屏幕）上，这些值为零。在非矩形显示器（如圆形表盘或移动设备屏幕）上，safe-area-inset-\*所界定的内矩形区域即为安全区域，网页内容在该区域内可完整显示，避免被非矩形显示区域裁剪。
 
@@ -142,7 +142,7 @@ Web组件启用沉浸式效果时，渲染内容可能与非安全区域重叠�
 
 **图2** Web组件开启沉浸式效果时网页元素被非安全区域遮挡
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/pRPv4WxDRkesoLCPnpFxsA/zh-cn_image_0000002589244533.png?HW-CC-KV=V1&HW-CC-Date=20260429T052928Z&HW-CC-Expire=86400&HW-CC-Sign=F964B58C151E0CCC61E6F4D8F3E620BE0FCBB927504CA1C5DC45961D316E0D11)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/pRPv4WxDRkesoLCPnpFxsA/zh-cn_image_0000002589244533.png)
 
 ```
 1. <!-- index.html -->
@@ -224,4 +224,4 @@ Web组件启用沉浸式效果时，渲染内容可能与非安全区域重叠�
 
 **图3** Web组件开启沉浸式效果时网页元素避让非安全区域
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/3ZADdiLOTQWPPhi3rp6SmQ/zh-cn_image_0000002558764728.png?HW-CC-KV=V1&HW-CC-Date=20260429T052928Z&HW-CC-Expire=86400&HW-CC-Sign=540DAF6228A9836A42D1ED991A43C0369F7BF5826793C0982D084ADDBE9DE65A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/3ZADdiLOTQWPPhi3rp6SmQ/zh-cn_image_0000002558764728.png)

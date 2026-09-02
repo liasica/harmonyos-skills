@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用服务 > AppGallery Kit（应用市场服务） > 数
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:37:08+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:3bab8a750b97c6049dcecf498a7f4a881996e3c6f87f0edbf8363176586378fe
+content_hash: sha256:b946cb3bc432aeb300a85caaa2f167efe235ea1e76607c8902b92a7fac88cdd9
 ---
 
 接入数字商品服务前，需要先完成应用的bundleName配置和应用身份信息配置。
@@ -35,7 +35,7 @@ content_hash: sha256:3bab8a750b97c6049dcecf498a7f4a881996e3c6f87f0edbf8363176586
    * 下图中的APPID可用于服务器API接口请求。
    * 如果开发者应用的compatibleSdkVersion>=14，则接入IAP Kit不要求开发者[添加公钥指纹](application-dev-overview.md#条件必选添加公钥指纹)以及配置应用身份信息。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/jsFU8pcXS8WfCRL_s62jJw/zh-cn_image_0000002589245075.png?HW-CC-KV=V1&HW-CC-Date=20260429T053707Z&HW-CC-Expire=86400&HW-CC-Sign=03FF26EBD6ADFFB1701F2A46B9F8D5FE94507BAB24031B1A5864E46A38FBCF57)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/jsFU8pcXS8WfCRL_s62jJw/zh-cn_image_0000002589245075.png)
 2. 在工程“entry/src/main/module.json5”的**module**节点增加如下**client\_id**属性配置，用于数字商品服务接口的应用身份鉴权。
 
    ```

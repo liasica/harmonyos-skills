@@ -4,7 +4,7 @@ title: extension协同下载
 category: harmonyos-guides
 scraped_at: 2026-04-28T07:47:42+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:962d54de2a8d36e76f7a8f50f039648b0e05241b341b3b6108704e37cfeef389
+content_hash: sha256:6fa5087ac0f391d3f2feed28436a60adb082183b5166f473276fd03fa77990db
 ---
 
 从5.1.1(19)版本开始，新增extension协同下载。
@@ -13,7 +13,7 @@ content_hash: sha256:962d54de2a8d36e76f7a8f50f039648b0e05241b341b3b6108704e37cfe
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/lF399TcdQ6uii4jn0gEamg/zh-cn_image_0000002583438763.png?HW-CC-KV=V1&HW-CC-Date=20260427T234740Z&HW-CC-Expire=86400&HW-CC-Sign=5158230577FF52B3EA59529DDA2605FBED3E7E8A4A3DEFDC8C2F606BAF4F1442)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/lF399TcdQ6uii4jn0gEamg/zh-cn_image_0000002583438763.png)
 
 1. 用户在应用市场安装游戏后、用户在应用市场更新游戏后、系统检测到用户设备符合闲时条件时，游戏资源加速服务开启资源包后台下载。
 2. 游戏资源加速服务从AppGallery Connect获取相关资源下载配置信息，例如下载类型、CDN类型、manifestUrl、域名白名单等。具体资源下载配置信息请参见[发布资源包下载任务](graphics-accelerate-assetdownload-release.md)。

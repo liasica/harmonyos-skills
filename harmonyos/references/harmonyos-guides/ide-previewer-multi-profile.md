@@ -5,7 +5,7 @@ breadcrumb: 指南 > 编写与调试应用 > 界面预览 > 查看多端设备�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:46:33+08:00
 doc_updated_at: 2026-01-15
-content_hash: sha256:312338f1b0e443e49996a308a86a803aed49ea141b2999611198f55ae4a538cd
+content_hash: sha256:dd3ca9b3013b706a3fbbf88d58ceec6f2c30be808c9ba439501ea21b8abd272e
 ---
 
 DevEco Studio支持HarmonyOS分布式应用/元服务开发，同一个应用/元服务可以运行在多个设备上。在HarmonyOS分布式应用/元服务的开发阶段，因不同设备的屏幕分辨率、形状、大小等不同，开发者需要在不同的设备上查看应用/元服务的UI布局和交互效果，此时便可以使用多端设备预览器功能，方便开发者在应用/元服务开发过程中，随时查看不同设备上的界面显示效果。
@@ -28,8 +28,8 @@ DevEco Studio支持HarmonyOS分布式应用/元服务开发，同一个应用/�
 
    多端设备预览不支持动画的预览，如果需要查看动画在设备上的预览效果，请关闭Multi-profile preview功能后在单设备预览界面进行查看。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/L3yrGL1zSnW7AGhy_Dx4yw/zh-cn_image_0000002561752931.png?HW-CC-KV=V1&HW-CC-Date=20260429T054632Z&HW-CC-Expire=86400&HW-CC-Sign=C50D125B3D4BD8E944F7620D05DA0F7CBAC2DB551FC5412660884F9AE71077B6)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/L3yrGL1zSnW7AGhy_Dx4yw/zh-cn_image_0000002561752931.png)
 
    多设备预览效果如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/H-0wQSR3Tv6LdIGxFyNGIA/zh-cn_image_0000002530912994.gif?HW-CC-KV=V1&HW-CC-Date=20260429T054632Z&HW-CC-Expire=86400&HW-CC-Sign=18EDAAFB2D9C60C1AA49A85A990058D6DF134FFE3DBE211B2BFA3BA5F552D392 "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/H-0wQSR3Tv6LdIGxFyNGIA/zh-cn_image_0000002530912994.gif "点击放大")

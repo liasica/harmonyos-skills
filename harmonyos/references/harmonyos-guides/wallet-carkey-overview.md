@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用服务 > Wallet Kit（钱包服务） > 数字车钥�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:40:44+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:4cffe3d8b6fb584d76c6855c27fa58e0dcd40fb980c6dae9a99152acddd2fe96
+content_hash: sha256:731da92ce934d6634d7ea7135ff6f98d190ae6a0c5858e719dd2c032ce2664e1
 ---
 
 华为数字车钥匙依托华为钱包数字车钥匙业务集成方案，基于华为手机“芯-端-云”一体化的安全能力，且满足ICCE标准，可快速实现手机模拟车钥匙的功能。
@@ -18,7 +18,7 @@ content_hash: sha256:4cffe3d8b6fb584d76c6855c27fa58e0dcd40fb980c6dae9a99152acddd
 
 ## 整体架构
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/ioqhu-mcQOuLLjG-_mSd0Q/zh-cn_image_0000002589245507.png?HW-CC-KV=V1&HW-CC-Date=20260429T054043Z&HW-CC-Expire=86400&HW-CC-Sign=D3C7E5FDD1477D76A6C83A5432E9C77EEB6E86A300E671132154F3C26495CCB5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/ioqhu-mcQOuLLjG-_mSd0Q/zh-cn_image_0000002589245507.png)
 
 ### 按照参与各方的角色说明
 

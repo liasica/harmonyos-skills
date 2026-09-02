@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:51:06+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:6db344360892d883c1a5ba2543d9e0a0ef1f0cd7fd1277a5ad599fa6d1d529d9
+content_hash: sha256:c835b5fe4c8b80df74a1f685c7acd4ed868dab2ce7b0ac137ebb2a8db937caac
 ---
 
 焦点轴事件是指在与游戏手柄交互时，通过十字按键或者操作杆上报的轴事件，此轴事件通过获得焦点的组件分发并回调给应用。若组件默认可获焦，如Button，则不需要额外设置属性。若组件在默认情况下不可获焦，如Text和Image，可以通过将[focusable](ts-universal-attributes-focus.md#focusable)属性设置为true来启用焦点轴事件。
@@ -102,4 +102,4 @@ PhonePC/2in1TabletTVWearable
 
 游戏手柄摇杆移动时：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/4RO1jyBmT-W6QJffRckZKw/zh-cn_image_0000002589325855.png?HW-CC-KV=V1&HW-CC-Date=20260429T055105Z&HW-CC-Expire=86400&HW-CC-Sign=1FC9125D19122AE28C21419EC4DE352AF5102AF4F423016A869550CE8E21F236)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/4RO1jyBmT-W6QJffRckZKw/zh-cn_image_0000002589325855.png)

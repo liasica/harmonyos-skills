@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > UI Design Kit（UI设计套件） > ArkTS
 category: harmonyos-references
 scraped_at: 2026-04-29T13:57:13+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:732c6db5575c70d547fc89ae553af82ffa1d422a7fdb68533362e92dde4fbc66
+content_hash: sha256:04e544cafc1b6357c21a2e44a6e27654403c59ed295ab69ff648c818b931642a
 ---
 
 本模块提供Tabs容器组件的分割线样式，模糊样式和页签侧边栏半屏居中对齐样式的效果。
@@ -1317,7 +1317,7 @@ PhonePC/2in1TabletTV
 
 效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/N8OI6sDxTUuMYNx3gzbjeQ/zh-cn_image_0000002589246863.png?HW-CC-KV=V1&HW-CC-Date=20260429T055711Z&HW-CC-Expire=86400&HW-CC-Sign=F23AE26120B02AD2242101FA99098878E6502E6A0089A83499F12E365BC1112B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/N8OI6sDxTUuMYNx3gzbjeQ/zh-cn_image_0000002589246863.png)
 
 ### 支持出血效果
 
@@ -1366,7 +1366,7 @@ PhonePC/2in1TabletTV
 
 效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/obsJLnDeR5mGuz4x2aTUjw/zh-cn_image_0000002558767056.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T055711Z&HW-CC-Expire=86400&HW-CC-Sign=6A56F5F1C0E11C854C7239758516BEDBC2EDB7069D5240D8CF1D1E1041FAF2A8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/obsJLnDeR5mGuz4x2aTUjw/zh-cn_image_0000002558767056.jpg)
 
 ### 页签半屏居中对齐布局
 
@@ -1412,4 +1412,4 @@ PhonePC/2in1TabletTV
 
 效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/bpuQYQRnQm6O-58rXB3AiQ/zh-cn_image_0000002558607396.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T055711Z&HW-CC-Expire=86400&HW-CC-Sign=89CD58286362338F42A1D4CB4D121259CC2C677A3EB33B1CB6345A165CA1C4B2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/bpuQYQRnQm6O-58rXB3AiQ/zh-cn_image_0000002558607396.jpg)

@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:28:03+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:7e4df99b579ade760c2b95c43d07dd62b98e36f7d54316a9b509eeaaac62aa4a
+content_hash: sha256:d1217ee0faaa7199667f954a7c3bd694914774e785290dafc5a29ea7d8719001
 ---
 
 物理按键产生的按键事件为非指向性事件，与触摸等指向性事件不同，其事件并没有坐标位置信息，所以其会按照一定次序向获焦组件进行派发，大多数文字输入场景下，按键事件都会优先派发给输入法进行处理，以便其处理文字的联想和候选词，应用可以通过[onKeyPreIme](../harmonyos-references/ts-universal-events-key.md#onkeypreime12)提前感知事件。
@@ -16,7 +16,7 @@ content_hash: sha256:7e4df99b579ade760c2b95c43d07dd62b98e36f7d54316a9b509eeaaac6
 
 ## 按键事件数据流
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/p_BTwHvSQluv5H7e4_YJMg/zh-cn_image_0000002558604784.png?HW-CC-KV=V1&HW-CC-Date=20260429T052802Z&HW-CC-Expire=86400&HW-CC-Sign=F8471D2D05E36E09B06977167386021A052529D55020C016AECF1EA5EE9324FB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/p_BTwHvSQluv5H7e4_YJMg/zh-cn_image_0000002558604784.png)
 
 按键事件由外设键盘等设备触发，经驱动和多模处理转换后发送给当前获焦的窗口，窗口获取到事件后，会尝试分发三次事件。三次分发的优先顺序如下，一旦事件被消费，则跳过后续分发流程。
 
@@ -100,7 +100,7 @@ Web组件的KeyEvent流程与上述过程有所不同。在[onKeyPreIme](../harm
 
 上述示例中给组件Button和其父容器Column绑定onKeyEvent。应用打开页面加载后，组件树上第一个可获焦的非容器组件自动获焦，设置Button为当前页面的默认焦点，由于Button是Column的子节点，Button获焦也同时意味着Column获焦。获焦机制见[支持焦点处理](arkts-common-events-focus-event.md)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/_KYVvMU9SUaBDACQB6RSWA/zh-cn_image_0000002589324309.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052802Z&HW-CC-Expire=86400&HW-CC-Sign=A4392C8454D9C68637D53DB8F0709539C10578F998DA880C32B5C6F4769442DC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/_KYVvMU9SUaBDACQB6RSWA/zh-cn_image_0000002589324309.gif)
 
 打开应用后，依次在键盘上按这些按键：空格、回车、左Ctrl、左Shift、字母A、字母Z。
 
@@ -168,7 +168,7 @@ Web组件的KeyEvent流程与上述过程有所不同。在[onKeyPreIme](../harm
 
 [OnKeyPreventBubble.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/EventProject/entry/src/main/ets/pages/device/OnKeyPreventBubble.ets#L16-L71)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/4yoiFikDS16tHSpjycvi4A/zh-cn_image_0000002589244249.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052802Z&HW-CC-Expire=86400&HW-CC-Sign=10BC404631D060F7CB732E34DA734E1436D53916A007C0FB259F1158AFFC8DA3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/4yoiFikDS16tHSpjycvi4A/zh-cn_image_0000002589244249.gif)
 
 使用OnKeyPreIme屏蔽在输入框中使用方向左键。
 
@@ -204,7 +204,7 @@ Web组件的KeyEvent流程与上述过程有所不同。在[onKeyPreIme](../harm
 
 [OnKeyPreIme.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/EventProject/entry/src/main/ets/pages/device/OnKeyPreIme.ets#L16-L44)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/A7Wx8uwqS-uqjQDT4kg1LQ/zh-cn_image_0000002558764442.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052802Z&HW-CC-Expire=86400&HW-CC-Sign=6074CA0434BBCC707732FC5A4D729584C51063CE6CC32825DF56FDB7F20FDA7E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/A7Wx8uwqS-uqjQDT4kg1LQ/zh-cn_image_0000002558764442.gif)
 
 使用onKeyEventDispatch分发按键事件到子组件，子组件使用onKeyEvent。
 
@@ -261,7 +261,7 @@ Web组件的KeyEvent流程与上述过程有所不同。在[onKeyPreIme](../harm
 
 [OnKeyDistributeEvent.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/EventProject/entry/src/main/ets/pages/device/OnKeyDistributeEvent.ets#L15-L65)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/qw989i4NQJa7ziHl9ZX_lg/zh-cn_image_0000002558604786.png?HW-CC-KV=V1&HW-CC-Date=20260429T052802Z&HW-CC-Expire=86400&HW-CC-Sign=1C64D5107B9855E4171FDDEAAB2762F9C9BE3F2CBE60342C128BFABCE4209682)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/qw989i4NQJa7ziHl9ZX_lg/zh-cn_image_0000002558604786.png)
 
 使用OnKeyPreIme实现回车提交（建议使用物理键盘）。
 
@@ -309,8 +309,8 @@ Web组件的KeyEvent流程与上述过程有所不同。在[onKeyPreIme](../harm
 
 [OnKeyPreImeCommit.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/EventProject/entry/src/main/ets/pages/device/OnKeyPreImeCommit.ets#L15-L55)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/tIdJuDNzQymEtIvmS4DqdQ/zh-cn_image_0000002589324311.png?HW-CC-KV=V1&HW-CC-Date=20260429T052802Z&HW-CC-Expire=86400&HW-CC-Sign=EC1C67F98545379F6C49BCC121A0F2E1767353D6F829848485CD528548D62899)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/tIdJuDNzQymEtIvmS4DqdQ/zh-cn_image_0000002589324311.png)
 
 在输入框中输入内容后回车。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/2DJyuYePRUm4XHzBJUJjeQ/zh-cn_image_0000002589244251.png?HW-CC-KV=V1&HW-CC-Date=20260429T052802Z&HW-CC-Expire=86400&HW-CC-Sign=940D98CA517522A50F64226CA619D6AE45DFDB1753DD85428EB41F5A030FDD2B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/2DJyuYePRUm4XHzBJUJjeQ/zh-cn_image_0000002589244251.png)

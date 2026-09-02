@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-prompt
-title: @ohos.prompt (弹窗)
+title: "@ohos.prompt (弹窗)"
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > 已停止维护的接口 > @ohos.prompt (弹窗)
 category: harmonyos-references
 scraped_at: 2026-04-29T13:51:02+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:5bf828ee2cf687e1fca0fba894d11c25fd670be7bcb7e5c779ded04a5719d9ad
+content_hash: sha256:4516280eab5861007770864550bf684559ba64e269d018d72dc72541afbd26c3
 ---
 
 创建并显示文本提示框、对话框和操作菜单。
@@ -50,7 +50,7 @@ showToast(options: ShowToastOptions): void
 5. });
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/4idmK20gQlKCwp055DgLTQ/zh-cn_image_0000002589325851.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055058Z&HW-CC-Expire=86400&HW-CC-Sign=64075094EF9A67CD4A53C7BA8B861719D0CB9FA5AFAA2FD7DD1EB3D4FDFE7E05)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/4idmK20gQlKCwp055DgLTQ/zh-cn_image_0000002589325851.gif)
 
 ## ShowToastOptions
 
@@ -114,7 +114,7 @@ showDialog(options: ShowDialogOptions): Promise<ShowDialogSuccessResponse>
 21. })
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/z4cs7W0ASX-6dpXuZUP2Dw/zh-cn_image_0000002589325815.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055058Z&HW-CC-Expire=86400&HW-CC-Sign=2BBCCE57A232478D30D1B5CC85A3A112BB0EF1F0DB0EAA2643C065B1E85ABECB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/z4cs7W0ASX-6dpXuZUP2Dw/zh-cn_image_0000002589325815.gif)
 
 ## prompt.showDialog
 
@@ -159,7 +159,7 @@ showDialog(options: ShowDialogOptions, callback: AsyncCallback<ShowDialogSuccess
 21. });
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/dJ3uc8_gR1GLpyvYgPE14Q/zh-cn_image_0000002589245757.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055058Z&HW-CC-Expire=86400&HW-CC-Sign=5E4597C161522BE6AC91C6F3A9CD437646E962954FAE3EC88E7E4EA1324ADC22)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/dJ3uc8_gR1GLpyvYgPE14Q/zh-cn_image_0000002589245757.gif)
 
 ## ShowDialogOptions
 
@@ -229,7 +229,7 @@ showActionMenu(options: ActionMenuOptions, callback: AsyncCallback<ActionMenuSuc
 20. })
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/DmqLZ7OxRU6k44L_l5TCKQ/zh-cn_image_0000002589325817.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055058Z&HW-CC-Expire=86400&HW-CC-Sign=434BD3955FB98F6DAB8E8D70F61A9C2EFAB2A3276C43BA70AF96659F9ADBDBEC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/DmqLZ7OxRU6k44L_l5TCKQ/zh-cn_image_0000002589325817.gif)
 
 ## prompt.showActionMenu
 
@@ -278,7 +278,7 @@ showActionMenu(options: ActionMenuOptions): Promise<ActionMenuSuccessResponse>
 20. })
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/dxEKdPJPSAiGqhQWUD1dlg/zh-cn_image_0000002558765948.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055058Z&HW-CC-Expire=86400&HW-CC-Sign=172649AF577BF6D1E918430361D89B60A41D0FA5C3BE217284053E74D7F12396)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/dxEKdPJPSAiGqhQWUD1dlg/zh-cn_image_0000002558765948.gif)
 
 ## ActionMenuOptions
 

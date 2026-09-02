@@ -5,14 +5,14 @@ breadcrumb: FAQ > DevEco Studio > 编译构建 > 编译报错“Property xxx doe
 category: harmonyos-faqs
 scraped_at: 2026-04-29T14:20:22+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:4ad4a8ee2306ee715b5856beaef321ca9edd23ba9805dbb9602f9cea97c27057
+content_hash: sha256:1a1a5ebd258e6510303920814d9a18aee2fe403dcd358016b4311dc2add3828d
 ---
 
 **问题现象****1**
 
 使用自定义参数BuildProfile时，编译过程中未出现异常，但编译构建失败，提示“Property xxx does not exist on type 'typeof BuildProfile'”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/f1WGJTeMQnmXxtFRmyxF1Q/zh-cn_image_0000002229604165.png?HW-CC-KV=V1&HW-CC-Date=20260429T062021Z&HW-CC-Expire=86400&HW-CC-Sign=668E216E844372CCBB9DA1D603C417974228BCF4C4356630FFD2D34FDA058724)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/f1WGJTeMQnmXxtFRmyxF1Q/zh-cn_image_0000002229604165.png)
 
 **解决措施**
 
@@ -55,7 +55,7 @@ content_hash: sha256:4ad4a8ee2306ee715b5856beaef321ca9edd23ba9805dbb9602f9cea97c
 
 使用了自定义参数BuildProfile并且编译器标红且构建失败，提示“Property xxx does not exist on type 'typeof BuildProfile'.”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/AlmsVrhVTAmIaJp94VIZ3g/zh-cn_image_0000002194318396.png?HW-CC-KV=V1&HW-CC-Date=20260429T062021Z&HW-CC-Expire=86400&HW-CC-Sign=CDF103AEF481D487B7EAD635E6C1864AD6BE47B1D444306E78FD2C0734DA9767)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/AlmsVrhVTAmIaJp94VIZ3g/zh-cn_image_0000002194318396.png)
 
 **解决措施**
 

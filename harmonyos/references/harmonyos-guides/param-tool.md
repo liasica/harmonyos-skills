@@ -5,7 +5,7 @@ breadcrumb: 指南 > 系统 > 调测调优 > 调试命令 > param工具
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:34:20+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:c1100e79be93c1692aa7728cbca78cc0fcb26a0fcc10a3db15de7f50dca3a37a
+content_hash: sha256:0ae20b179f7d2414119056afc2c8382d243547a7d88fdc424aaf7c2d69b7c263
 ---
 
 param是为开发人员提供用于操作系统参数的工具，该工具只支持标准系统。
@@ -44,11 +44,11 @@ param是为开发人员提供用于操作系统参数的工具，该工具只支
 
   **示例**
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/Jeex3UgZSVGjS3qJloNQvQ/zh-cn_image_0000002558605366.png?HW-CC-KV=V1&HW-CC-Date=20260429T053419Z&HW-CC-Expire=86400&HW-CC-Sign=931A31D735145A3CF089175E08114B0C279011979EDF4FD0CDE28FE62E95D305)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/Jeex3UgZSVGjS3qJloNQvQ/zh-cn_image_0000002558605366.png)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/pIZcCG3cSDOrvn1mVQ_fdw/zh-cn_image_0000002589324893.png?HW-CC-KV=V1&HW-CC-Date=20260429T053419Z&HW-CC-Expire=86400&HW-CC-Sign=B9FB4DCB56C2AEB6BAC1CD7B10FC5B84ECEAA8769762046AF55648681CD65D2F)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/pIZcCG3cSDOrvn1mVQ_fdw/zh-cn_image_0000002589324893.png)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/fbWkgSr2TjmP9HKaq-2yJA/zh-cn_image_0000002589244829.png?HW-CC-KV=V1&HW-CC-Date=20260429T053419Z&HW-CC-Expire=86400&HW-CC-Sign=9C7B074AAD8867709E8EBCB3EC335EDAF60ED6E9D654B195C16B395181B04C84)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/fbWkgSr2TjmP9HKaq-2yJA/zh-cn_image_0000002589244829.png)
 
 ## 获取系统参数的值
 
@@ -60,7 +60,7 @@ param是为开发人员提供用于操作系统参数的工具，该工具只支
 
   **示例**
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/Eu8AgwhQTOC_KFD6ywSlpA/zh-cn_image_0000002558765024.png?HW-CC-KV=V1&HW-CC-Date=20260429T053419Z&HW-CC-Expire=86400&HW-CC-Sign=A7953AF4F3ACC697A32E7CCDF7751AB541628F85419E605F04F7744A55D3ACCB)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/Eu8AgwhQTOC_KFD6ywSlpA/zh-cn_image_0000002558765024.png)
 
 ## 设置系统参数的值
 
@@ -72,7 +72,7 @@ param是为开发人员提供用于操作系统参数的工具，该工具只支
 
   **示例**
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/eybH7lSCT3GRxIdWj2A4wg/zh-cn_image_0000002558605368.png?HW-CC-KV=V1&HW-CC-Date=20260429T053419Z&HW-CC-Expire=86400&HW-CC-Sign=8C377BB1D6307D367EAF3E485F1699F3CA0A59419442B63736F3F81ECFD4E6CD)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/eybH7lSCT3GRxIdWj2A4wg/zh-cn_image_0000002558605368.png)
 
 ## 等待系统参数值匹配
 
@@ -84,7 +84,7 @@ param是为开发人员提供用于操作系统参数的工具，该工具只支
 
   **示例**
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/iaZLT2gkTrSfyolL2JFErA/zh-cn_image_0000002589324895.png?HW-CC-KV=V1&HW-CC-Date=20260429T053419Z&HW-CC-Expire=86400&HW-CC-Sign=32E7738D655B4937170D35D8BF5555C1D8AC7A616AA22A6A5C146F22AE4706A0)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/iaZLT2gkTrSfyolL2JFErA/zh-cn_image_0000002589324895.png)
 
 ## 保存persist(可持久化)参数
 
@@ -96,4 +96,4 @@ param是为开发人员提供用于操作系统参数的工具，该工具只支
 
   **示例**
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/9yLnyUM1SluqvQiXMMVLDA/zh-cn_image_0000002589244831.png?HW-CC-KV=V1&HW-CC-Date=20260429T053419Z&HW-CC-Expire=86400&HW-CC-Sign=F812A913423331FACA62B429B766D6D8065EFFE753142AB1668089A018D23143)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/9yLnyUM1SluqvQiXMMVLDA/zh-cn_image_0000002589244831.png)

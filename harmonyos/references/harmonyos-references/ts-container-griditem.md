@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:51:45+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:6c2cf5deb6536b1e31f924bf3a387f378be69be8486eee6b4cfcd8149c2ba57b
+content_hash: sha256:b6f3b04c0540544eea68d648d86d52fdd861b57840790938bb5fc439d74e269a
 ---
 
 网格容器中单项内容容器。
@@ -310,7 +310,7 @@ GridItem通过设置合理的ColumnStart、ColumnEnd、RowStart、RowEnd属性�
 44. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/_GkRUXkYRySFcRtSc4aCcA/zh-cn_image_0000002558766154.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055143Z&HW-CC-Expire=86400&HW-CC-Sign=EE44178900D6FBD1701A56EE6FAB2B2AE143B76050AF1BC69BDF28BE559E3515)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/_GkRUXkYRySFcRtSc4aCcA/zh-cn_image_0000002558766154.gif)
 
 ### 示例2（设置GridItem样式）
 
@@ -377,4 +377,4 @@ GridItem通过设置合理的ColumnStart、ColumnEnd、RowStart、RowEnd属性�
 58. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/FyIgAo4-TLGhvk5VjB5fSw/zh-cn_image_0000002558606496.png?HW-CC-KV=V1&HW-CC-Date=20260429T055143Z&HW-CC-Expire=86400&HW-CC-Sign=A3B1700BEF55A99BEE9389297381B757B97D2A5814F88EE034EA14274C24429F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/FyIgAo4-TLGhvk5VjB5fSw/zh-cn_image_0000002558606496.png)

@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:28:29+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:c72d65a4417ab38f6d63ae6a0a21fb42835b3138e7b0957e31a3c3d8ed812a94
+content_hash: sha256:a9732c8e49330c652b27301647b59706d14a49ce92cd64bb91428e7e66928460
 ---
 
 ## 概述
@@ -270,11 +270,11 @@ FA模型下的示例：
 
 **图1** 竖屏
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/apCkJ9pKS_yeBVzKSo3Ehw/zh-cn_image_0000002558764548.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T052825Z&HW-CC-Expire=86400&HW-CC-Sign=538E651103DA45ABB0206C1A0A1E63D83198DED102047F9B8D87620A78F11E0D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/apCkJ9pKS_yeBVzKSo3Ehw/zh-cn_image_0000002558764548.jpg)
 
 **图2** 横屏
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/Tqty5YRvT3y1-a-G0ZlIrw/zh-cn_image_0000002558604892.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T052825Z&HW-CC-Expire=86400&HW-CC-Sign=92B341FBA2DA6DCDEC409061D725E28AD1A0664309A7D64C1B88B9B8180479C9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/Tqty5YRvT3y1-a-G0ZlIrw/zh-cn_image_0000002558604892.jpg)
 
 示例二使用媒体查询实现屏幕横竖屏切换时Flex组件的不同布局，竖屏时Flex采用垂直方向布局，横屏时采用水平方向布局。
 
@@ -371,8 +371,8 @@ FA模型下的示例：
 
 **图3** 竖屏
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/FOUb7KeORIqMpJ5XuhUlEQ/zh-cn_image_0000002589324417.png?HW-CC-KV=V1&HW-CC-Date=20260429T052825Z&HW-CC-Expire=86400&HW-CC-Sign=39EE2028B11D1B6801DE07C92BDB3EA283B0ABA34A1F0E04428F5C670DF58650)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/FOUb7KeORIqMpJ5XuhUlEQ/zh-cn_image_0000002589324417.png)
 
 **图4** 横屏
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/3FYY2LGcQFi47qp-YItrQQ/zh-cn_image_0000002589244357.png?HW-CC-KV=V1&HW-CC-Date=20260429T052825Z&HW-CC-Expire=86400&HW-CC-Sign=807FF4D1AE6390F671AD406ABB27B2487C853B581E94365FCCD6ECCF60DD7599)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/3FYY2LGcQFi47qp-YItrQQ/zh-cn_image_0000002589244357.png)

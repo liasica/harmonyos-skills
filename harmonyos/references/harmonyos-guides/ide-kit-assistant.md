@@ -5,17 +5,17 @@ breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 快速插入场景�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:46:31+08:00
 doc_updated_at: 2026-01-15
-content_hash: sha256:35061b3599596e82096ccb8984b5268a1790221a7791aa9d2e3ef2946f24f719
+content_hash: sha256:153261d15b7dd28e8ca6d7391ca6ebb33373d3a2d6b2093e7544f127fd6e3af9
 ---
 
 DevEco Studio提供Kit Assistant能力，支持通过拖拽方式将基础的场景化的控件/代码片段插入ArkTS工程中，减少高频场景代码的编写时间。
 
 1. 在菜单栏点击**View > Tool Windows > Kit Assistant**，或使用快捷键**Alt + K**（macOS为**O****ption + K**），进入Kit Assistant页面。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/5JrSU6z7TOS2mr7sj8J_EQ/zh-cn_image_0000002530913278.png?HW-CC-KV=V1&HW-CC-Date=20260429T054629Z&HW-CC-Expire=86400&HW-CC-Sign=0C3A213E235CE72AFD49EA7B5D809833720798B4CA275A9D7352C58B964AF870)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/5JrSU6z7TOS2mr7sj8J_EQ/zh-cn_image_0000002530913278.png)
 2. 在左侧目录中支持搜索、查看不同Kit提供的场景化控件或代码片段。Kit Assistant面板右侧展示该控件的使用约束、适用场景等详细信息。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/xJVq0HIaT6unVd34BsCPpw/zh-cn_image_0000002530913282.png?HW-CC-KV=V1&HW-CC-Date=20260429T054629Z&HW-CC-Expire=86400&HW-CC-Sign=7F2C90998D408F58B1DF3D830070114826EA0AEE7B88B572591C7F51A12ECF85)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/xJVq0HIaT6unVd34BsCPpw/zh-cn_image_0000002530913282.png)
 3. 在目录中点击选中需要的控件或功能代码，并拖拽至.ets文件中适当位置，即可在当前位置插入相应的代码片段。
 
    说明

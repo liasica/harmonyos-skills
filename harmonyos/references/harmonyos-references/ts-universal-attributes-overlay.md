@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:51:14+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:c974539521ba26af917cf6f05ee0ece7d955a31ac192f29d7d22450233a04367
+content_hash: sha256:b203951a30f03d2223eaf58fd9fedfd2fe4a59f9d8d82f6370df2d53c0d2547a
 ---
 
 设置组件的浮层。
@@ -141,7 +141,7 @@ PhonePC/2in1TabletTVWearable
 22. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/FarTrtX1RzauQ10bBpcAcg/zh-cn_image_0000002558766004.png?HW-CC-KV=V1&HW-CC-Date=20260429T055112Z&HW-CC-Expire=86400&HW-CC-Sign=DAA82EB20131A7636D9381E5B0B729CF2F6C13B6F2F5A8F4173548EFFEDECC05)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/FarTrtX1RzauQ10bBpcAcg/zh-cn_image_0000002558766004.png)
 
 ### 示例2（通过builder设置浮层）
 
@@ -177,7 +177,7 @@ PhonePC/2in1TabletTVWearable
 27. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/OHKhK21KQiKG_SDZgbPvbA/zh-cn_image_0000002558606346.png?HW-CC-KV=V1&HW-CC-Date=20260429T055112Z&HW-CC-Expire=86400&HW-CC-Sign=E440929A200BFE94E813B8893BFDFC39A6002FD1E15F5FBB300A87B039BE05B3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/OHKhK21KQiKG_SDZgbPvbA/zh-cn_image_0000002558606346.png)
 
 ### 示例3（通过ComponentContent设置浮层）
 
@@ -236,4 +236,4 @@ PhonePC/2in1TabletTVWearable
 50. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/KnKYMg39Tu2hAioU68n9Nw/zh-cn_image_0000002589325873.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055112Z&HW-CC-Expire=86400&HW-CC-Sign=5840785C778453CD4DE7E3984C8F17B196ED8F7752E8C0C7AD8B24A397A140E0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/KnKYMg39Tu2hAioU68n9Nw/zh-cn_image_0000002589325873.gif)

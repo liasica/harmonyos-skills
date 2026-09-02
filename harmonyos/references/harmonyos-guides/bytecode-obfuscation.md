@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS编译�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:26:59+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:40f76f4abb07e425b158e0d47e96dec8255f55f31781d045f32d26e6be07fb8c
+content_hash: sha256:2eefda954227cdfe0141556a9b2195250f02a09eae0d6882bd4cf30d0893e061
 ---
 
 ## 术语清单
@@ -99,7 +99,7 @@ ArkGuard提供的是**面向方舟字节码的基础名称混淆**：在可选�
 
 下图为应用编译的简要流程图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/vnvAJdePTuS_thh_bh-cYg/zh-cn_image_0000002558764038.png?HW-CC-KV=V1&HW-CC-Date=20260429T052657Z&HW-CC-Expire=86400&HW-CC-Sign=2AE039962EB9B36E8EAFA26E40ED91D5E11CAC2B49096D1845630C2AB1500505)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/vnvAJdePTuS_thh_bh-cYg/zh-cn_image_0000002558764038.png)
 
 开发者可以在模块的build-profile.json5配置文件中开启混淆功能，详细参考[字节码混淆开启指南](bytecode-obfuscation-guide.md)，从而在编译打包的过程中自动对abc进行混淆处理。
 

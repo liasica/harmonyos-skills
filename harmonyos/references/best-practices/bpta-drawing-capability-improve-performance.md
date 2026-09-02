@@ -5,7 +5,7 @@ breadcrumb: 最佳实践 > 图形 > 图形绘制 > Drawing自绘制性能提升
 category: best-practices
 scraped_at: 2026-04-29T14:11:43+08:00
 doc_updated_at: 2026-04-13
-content_hash: sha256:2f8a7b05b446b8432243ee887b94f399a245a65d266b80c87850e09424239972
+content_hash: sha256:e5824f8564d6991f3cb1a3665d320d04b210c031c020d7c46276c8f2d46013a7
 ---
 
 ## 概述
@@ -28,7 +28,7 @@ content_hash: sha256:2f8a7b05b446b8432243ee887b94f399a245a65d266b80c87850e094242
 
 下图是一个绘制1000个透明空心圆与背景图融合的绘制场景，下面分别使用Canvas CanvasRenderingContext2D和Native侧的Drawing来实现该场景，并分析两者的性能差异。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/5eAgt3cqRg6MdEqxWpFnaA/zh-cn_image_0000002229450853.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061141Z&HW-CC-Expire=86400&HW-CC-Sign=29E6F80C56485E3E8485E35D8386A92EFF399F4CE9E7E750D79C4C547A63EE71 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/5eAgt3cqRg6MdEqxWpFnaA/zh-cn_image_0000002229450853.gif "点击放大")
 
 ### 使用Canvas CanvasRenderingContext2D绘制
 
@@ -169,7 +169,7 @@ Canvas CanvasRenderingContext2D使用[globalCompositeOperation](../harmonyos-ref
 
    使用Canvas CanvasRenderingContext2D绘制的trace图，可以看到绘制1000个圆圈耗时14.9毫秒。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/tYxuvo4WQDGE4obFoUnmMg/zh-cn_image_0000002283607973.png?HW-CC-KV=V1&HW-CC-Date=20260429T061141Z&HW-CC-Expire=86400&HW-CC-Sign=B8E69B1E8473FB282D9D6769F211A20D0ABA6B6CD2ED042874EC0A48DE7E0975)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/tYxuvo4WQDGE4obFoUnmMg/zh-cn_image_0000002283607973.png)
 
 ### 使用Native侧Drawing绘制
 
@@ -435,7 +435,7 @@ Native Drawing主要使用分层接口[OH\_Drawing\_CanvasSaveLayer()](../harmon
 
    使用Native侧Drawing绘制trace图，可以看到绘制1000个圆圈耗时2.4毫秒，相较于Canvas CanvasRenderingContext2D绘制有较大的性能提升。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/Um2tHuJMRZGx9liCTsHHcw/zh-cn_image_0000002283528493.png?HW-CC-KV=V1&HW-CC-Date=20260429T061141Z&HW-CC-Expire=86400&HW-CC-Sign=33B032549C79258CBF8F72813998EFB9D31A12D635BDBE2EEA438DE638CC9F00)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/Um2tHuJMRZGx9liCTsHHcw/zh-cn_image_0000002283528493.png)
 
 ## 效果对比
 

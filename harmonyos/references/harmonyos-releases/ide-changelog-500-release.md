@@ -5,7 +5,7 @@ breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.0.0(12) > DevEco Studio > 
 category: harmonyos-releases
 scraped_at: 2026-04-29T13:25:18+08:00
 doc_updated_at: 2026-01-21
-content_hash: sha256:1fa55709a79d9e3c44f5b5c47a6c9cc1b7b4865f3e7c08e5e9102a6621c7a2eb
+content_hash: sha256:3241c486b2702ddbfb96e4b00ac39bbc427a711e9002d466c9894addc2dcb13e
 ---
 
 ## 5.0.3.814至5.0.3.900
@@ -83,7 +83,7 @@ content_hash: sha256:1fa55709a79d9e3c44f5b5c47a6c9cc1b7b4865f3e7c08e5e9102a6621c
 21. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/k1mPPDl2QTGT8sOw-Y-Nyw/zh-cn_image_0000002336528273.png?HW-CC-KV=V1&HW-CC-Date=20260429T052517Z&HW-CC-Expire=86400&HW-CC-Sign=FD9307162FBC7FBAB60362F791F658DCF8663FBBED202266CEBBF9C1EF4E967F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/k1mPPDl2QTGT8sOw-Y-Nyw/zh-cn_image_0000002336528273.png)
 
 ## 5.0.3.706至5.0.3.800
 
@@ -142,7 +142,7 @@ Code Linter检查安全规则@security/specified-interface-call-chain-check中�
     ```
   + 如果工程级build-profile.json5文件的useNormalizedOHMUrl字段为true，则oh-package.json5中依赖的包使用的别名需要和依赖包的oh-package.json5的name保持一致，否则编译会报错。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/TGD3mjMZTy-fxQ_FYLIW0A/zh-cn_image_0000002336448501.png?HW-CC-KV=V1&HW-CC-Date=20260429T052517Z&HW-CC-Expire=86400&HW-CC-Sign=BED74AFD819F8ED114B933984AD1B2DD61E6A885B080E1E6FBEF6A880BE115DF "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/TGD3mjMZTy-fxQ_FYLIW0A/zh-cn_image_0000002336448501.png "点击放大")
 * 新建工程时，默认构建[字节码格式的HAR](../harmonyos-guides-V5/ide-hvigor-build-har-V5.md#section179161312181613)。
 
 **适配指导**
@@ -194,7 +194,7 @@ Code Linter检查安全规则@security/specified-interface-call-chain-check中�
 
 打开历史工程，请根据DevEco Studio提示进行操作，点击Enable按钮，配置完成后会在obfuscation-rules.txt文件中增加四项推荐的混淆规则。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/xZdT4MH5TMyQJ8kzw_3vRw/zh-cn_image_0000002302688922.png?HW-CC-KV=V1&HW-CC-Date=20260429T052517Z&HW-CC-Expire=86400&HW-CC-Sign=E36646953007042B1E8362653C7F4046859D6194B11A746580837A82CADDB4EB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/xZdT4MH5TMyQJ8kzw_3vRw/zh-cn_image_0000002302688922.png)
 
 ## 5.0.3.500至5.0.3.502
 

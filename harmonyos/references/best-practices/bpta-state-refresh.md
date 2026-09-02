@@ -5,14 +5,14 @@ breadcrumb: 最佳实践 > 性能 > 性能优化 > 状态刷新控制
 category: best-practices
 scraped_at: 2026-04-29T14:13:27+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:01076a296834f7d13b130b716516af5c3e51b5b286c8bca64f8a10c7d394c605
+content_hash: sha256:f656935ed3411c4fdc22d0606382d7e5b50674335a550653b0336464a29328a3
 ---
 
 在声明式UI编程范式中，UI是应用程序状态的函数，应用程序状态的修改会更新相应的UI界面。ArkUI采用了[MVVM](../harmonyos-guides/arkts-mvvm.md)模式，其中ViewModel将数据与视图绑定在一起，更新数据的时候直接更新视图。如下图所示：
 
 **图1** ArkUI的MVVM模式
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/0mTQiIS0TQGryoJ-IalXWg/zh-cn_image_0000002229336545.png?HW-CC-KV=V1&HW-CC-Date=20260429T061326Z&HW-CC-Expire=86400&HW-CC-Sign=D4B8F96907F5EA7B8B1F05FDA16AD76193DE3E7922E61C16688702082550DE39 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/0mTQiIS0TQGryoJ-IalXWg/zh-cn_image_0000002229336545.png "点击放大")
 
 ArkUI提供了一系列装饰器实现ViewModel的能力，如[@Prop](../harmonyos-guides/arkts-prop.md)、[@Link](../harmonyos-guides/arkts-link.md)、[@Provide](../harmonyos-guides/arkts-provide-and-consume.md)、[LocalStorage](../harmonyos-guides/arkts-localstorage.md)等。当自定义组件内变量被装饰器装饰时变为状态变量，状态变量的改变会引起UI的渲染刷新。
 

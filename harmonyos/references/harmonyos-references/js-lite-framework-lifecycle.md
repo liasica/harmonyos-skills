@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > �
 category: harmonyos-references
 scraped_at: 2026-04-29T13:53:43+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:efcc57970126f328f202a3e8cc12fb942697ff15c4630954f738fbc87d0673f2
+content_hash: sha256:6f82119a5a1854bf221f91b78a3966b6e746bd1aa9de1b4ab0956a8cdfecd098
 ---
 
 ## 应用生命周期
@@ -46,4 +46,4 @@ PhonePC/2in1TabletTVWearableLite Wearable
 * 页面隐藏到后台运行：onHide()
 * 页面从后台运行恢复到前台：onShow()
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/k9YUxaenSVupo6NCykTyGA/zh-cn_image_0000002589326723.png?HW-CC-KV=V1&HW-CC-Date=20260429T055341Z&HW-CC-Expire=86400&HW-CC-Sign=D8C97028DF3C3FD8591B0D0EBE7AF8C132C64B6B691B324419942DD26ADA1EFD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/k9YUxaenSVupo6NCykTyGA/zh-cn_image_0000002589326723.png)

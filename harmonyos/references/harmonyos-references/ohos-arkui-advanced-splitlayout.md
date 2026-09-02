@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:53:03+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:8df5b7f5db107c9ee0ab985ca60432187bd3a3898fe07c92c097b9258182b129
+content_hash: sha256:343478cc7a8f5a49c65616563d74da186f2aa033181ca885b4286292ea87886a
 ---
 
 上下结构布局介绍了常用的页面布局样式。主要分为上下文本和上下图文两种类型。
@@ -93,12 +93,12 @@ PhonePC/2in1TabletTVWearable
 
 小于等于600vp布局：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/bsX4t19tSKWfjzdckNDMDg/zh-cn_image_0000002589246463.png?HW-CC-KV=V1&HW-CC-Date=20260429T055302Z&HW-CC-Expire=86400&HW-CC-Sign=367AF959FC03571FDC7EFA53FE0836C7242D5C04E71DD38C6A18F026BB29A376)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/bsX4t19tSKWfjzdckNDMDg/zh-cn_image_0000002589246463.png)
 
 大于600vp且小于等于840vp的布局：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/IxTmxQ9ZSHWWtvN8Psie8g/zh-cn_image_0000002558766656.png?HW-CC-KV=V1&HW-CC-Date=20260429T055302Z&HW-CC-Expire=86400&HW-CC-Sign=B64C75A63E69BB155DC02CC97C9E905DF5D875623869D571D9BD708DA9F31EA4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/IxTmxQ9ZSHWWtvN8Psie8g/zh-cn_image_0000002558766656.png)
 
 大于840vp布局：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/XxOKskj8QvG5h5NYCxPNvQ/zh-cn_image_0000002558606996.png?HW-CC-KV=V1&HW-CC-Date=20260429T055302Z&HW-CC-Expire=86400&HW-CC-Sign=9B7D520A9BF4DDC89EA57622B8F7480487FCC6BBD507C31585E73C611E7A8D38)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/XxOKskj8QvG5h5NYCxPNvQ/zh-cn_image_0000002558606996.png)

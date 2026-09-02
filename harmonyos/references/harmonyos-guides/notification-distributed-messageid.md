@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用服务 > Notification Kit（用户通知服务） > �
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:39:25+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:ac0bcc27bc3e890c78733532a6476ce4420646d2b400f53c78229811abd965c1
+content_hash: sha256:b46d93ff18e80697476933d012d90f2f98288b00273d07a2f82f0a1439d227aa
 ---
 
 从API version 20开始，为了避免不同渠道发布的通知重复打扰用户（例如，手机协同到当前设备的通知与Push推送服务发布的通知重复），可以使用通知去重功能，清除跨设备场景下的重复通知。
@@ -18,7 +18,7 @@ content_hash: sha256:ac0bcc27bc3e890c78733532a6476ce4420646d2b400f53c78229811abd
 
 **图1** 全场景通知去重流程图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/Jp-jkvkqSMagiHYo165J5Q/zh-cn_image_0000002558605908.png?HW-CC-KV=V1&HW-CC-Date=20260429T053924Z&HW-CC-Expire=86400&HW-CC-Sign=378F9832A0A56DE389DDAD9D74A4BB221356ACD2A6FD2811C340D3BA2E2ED765)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/Jp-jkvkqSMagiHYo165J5Q/zh-cn_image_0000002558605908.png)
 
 ## 约束条件
 

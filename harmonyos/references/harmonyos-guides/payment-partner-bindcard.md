@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用服务 > Payment Kit（鸿蒙支付服务） > 引导
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:39:34+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:23940eaac1b35475722ea680fe11aec0380d939f3399b40d6e6d41d74b6f37b7
+content_hash: sha256:c70937a74a45ecb10f629245c08cdc4776fb3115aaced082ecb136639438e006
 ---
 
 ## 场景介绍
@@ -18,7 +18,7 @@ content_hash: sha256:23940eaac1b35475722ea680fe11aec0380d939f3399b40d6e6d41d74b6
 
 引导用户绑卡页面展示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/TKnycP6bSjKfOSTP1IwnZA/zh-cn_image_0000002558765594.png?HW-CC-KV=V1&HW-CC-Date=20260429T053933Z&HW-CC-Expire=86400&HW-CC-Sign=30970F1FF952690F7FA94F895EC1054E76EE4D0727F13EBEE07799507CAC54E1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/TKnycP6bSjKfOSTP1IwnZA/zh-cn_image_0000002558765594.png)
 
 ## 提供绑卡跳转应用信息
 
@@ -32,7 +32,7 @@ content_hash: sha256:23940eaac1b35475722ea680fe11aec0380d939f3399b40d6e6d41d74b6
 
 开发者接入引导用户绑卡，具体接入流程如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/DjZOGXGoSGqEfVSEuf2PRA/zh-cn_image_0000002558605938.png?HW-CC-KV=V1&HW-CC-Date=20260429T053933Z&HW-CC-Expire=86400&HW-CC-Sign=6FF618730EA663E31F75005D0A6D2299875F19AAB3B1DDEEC7094279BB6D3CF9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/DjZOGXGoSGqEfVSEuf2PRA/zh-cn_image_0000002558605938.png)
 
 **场景1：用户取消绑卡**
 

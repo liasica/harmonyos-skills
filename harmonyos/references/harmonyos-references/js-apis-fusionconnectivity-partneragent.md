@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-fusionconnectivity-partneragent
-title: @ohos.FusionConnectivity.partnerAgent（设备状态通知模块）
+title: "@ohos.FusionConnectivity.partnerAgent（设备状态通知模块）"
 breadcrumb: API参考 > 系统 > 网络 > Connectivity Kit（短距通信服务） > ArkTS API > @ohos.FusionConnectivity.partnerAgent（设备状态通知模块）
 category: harmonyos-references
 scraped_at: 2026-04-28T08:08:03+08:00

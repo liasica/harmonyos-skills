@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:28:54+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:035c58871451d31c864695bbd03f15b960f5e745065efde4feff7cc928080324
+content_hash: sha256:0c8611f9c8ccd220dd74a5bb1c951c45e0391657641b98608f3095eed6bb40af
 ---
 
 在关键帧（Keyframes）中动态设置父组件的width和height，实现组件变大缩小。子组件设置scale属性使父子组件同时缩放，再设置opacity实现父子组件的显示与隐藏。
@@ -88,7 +88,7 @@ content_hash: sha256:035c58871451d31c864695bbd03f15b960f5e745065efde4feff7cc9280
 63. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/ItAwCy9OTUKUqvB3V53xaQ/zh-cn_image_0000002589324503.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052853Z&HW-CC-Expire=86400&HW-CC-Sign=06524BE2639A9A9E39D9353518DDB7C23B8A83F5390C72BEF6B871953BC1F478)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/ItAwCy9OTUKUqvB3V53xaQ/zh-cn_image_0000002589324503.gif)
 
 说明
 

@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-application-formprovider
-title: @ohos.application.formProvider (formProvider)
+title: "@ohos.application.formProvider (formProvider)"
 breadcrumb: API参考 > 应用框架 > Form Kit（卡片开发服务） > 已停止维护的接口 > @ohos.application.formProvider (formProvider)
 category: harmonyos-references
 scraped_at: 2026-04-28T08:06:05+08:00

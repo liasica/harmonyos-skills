@@ -5,14 +5,14 @@ breadcrumb: 指南 > 应用服务 > Account Kit（华为账号服务） > 获取
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:36:53+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:3596d9be4ec401549f3c3a11f60b82053877177b132209d9332f06427780a648
+content_hash: sha256:4bf1a81f170eb780206aabdb2a8b94a4a87b14e6322357fb735c81f88043eff2
 ---
 
 ## 场景介绍
 
 当应用需要获取用户收货地址时，可使用Account Kit提供的获取收货地址的能力，引导用户添加或选择已有的收货地址，并最终获取用户的收货地址。以下对Account Kit提供的获取收货地址能力进行介绍，获取收货地址功能还可使用场景化控件[选择收货地址Button](scenario-fusion-button-ship-to.md)进行实现。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/7RpFI7juRcawYuJQQzNowQ/zh-cn_image_0000002589245061.png?HW-CC-KV=V1&HW-CC-Date=20260429T053652Z&HW-CC-Expire=86400&HW-CC-Sign=2F11DAA8C99781EF6B9C35777DC23491242F524985DADBF16AFB230751F5F837 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/7RpFI7juRcawYuJQQzNowQ/zh-cn_image_0000002589245061.png "点击放大")
 
 ## 约束与限制
 
@@ -21,7 +21,7 @@ content_hash: sha256:3596d9be4ec401549f3c3a11f60b82053877177b132209d9332f0642778
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/MLBFoStiRbiMQrOlFx9itg/zh-cn_image_0000002558765256.png?HW-CC-KV=V1&HW-CC-Date=20260429T053652Z&HW-CC-Expire=86400&HW-CC-Sign=77237DBF66E75B34FC40B1E44D7F90EBC611C5F8C4F7C25A7DE166988F33EB3B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/MLBFoStiRbiMQrOlFx9itg/zh-cn_image_0000002558765256.png)
 
 流程说明：
 

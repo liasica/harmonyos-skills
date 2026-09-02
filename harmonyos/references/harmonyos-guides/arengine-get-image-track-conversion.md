@@ -5,7 +5,7 @@ breadcrumb: 指南 > 图形 > AR Engine（AR引擎服务） > 图像跟踪 > 图
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:36:01+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:ed9fcc8cac9eee62513854ee939a21535f755ff19f6f1ac6fa1184b5ecf62867
+content_hash: sha256:9fcd2df1bfcdfff4436423ac197906314e44357f5712cde0c69841eb40e81772
 ---
 
 AR Engine可以检测场景中是否存在用户提供的图像，识别之后输出图像的位姿。
@@ -14,4 +14,4 @@ AR Engine可以检测场景中是否存在用户提供的图像，识别之后�
 
 **图1** 图像跟踪示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/NaHPcp4FQ6-2j8ayr8mNtw/zh-cn_image_0000002558765126.png?HW-CC-KV=V1&HW-CC-Date=20260429T053559Z&HW-CC-Expire=86400&HW-CC-Sign=CA09FA6E7B97A537D1B6D9B264C49971132AB4447AB1CC78574D87B392BB7382)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/NaHPcp4FQ6-2j8ayr8mNtw/zh-cn_image_0000002558765126.png)

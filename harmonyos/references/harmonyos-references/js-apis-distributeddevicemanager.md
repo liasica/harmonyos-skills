@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-distributeddevicemanager
-title: @ohos.distributedDeviceManager (设备管理)
+title: "@ohos.distributedDeviceManager (设备管理)"
 breadcrumb: API参考 > 系统 > 网络 > Distributed Service Kit（分布式管理服务） > ArkTS API > @ohos.distributedDeviceManager (设备管理)
 category: harmonyos-references
 scraped_at: 2026-04-28T08:08:12+08:00

@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:27:09+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:e59872f06e874f18ef0f5e1dfbe2ce4b8224b6491136b8e4f06dc749d1648d6a
+content_hash: sha256:f72a153818d046dfcf268c57bbe087d7c44160ec8d8ec17e5a7b711e70c41d5c
 ---
 
 ## V1状态管理演进到V2状态管理背景
@@ -147,7 +147,7 @@ V2装饰变量赋值，对象属性或数组（Map、Set）项变化，会触发
 
 如下图所示，展示V1组件和V2状态变量更新差异的流程图，相比V1状态管理，V2状态管理在状态变量变化时，会异步标脏组件。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/oVLGQk2VR7q-5o3UgaKorA/zh-cn_image_0000002558764082.png?HW-CC-KV=V1&HW-CC-Date=20260429T052708Z&HW-CC-Expire=86400&HW-CC-Sign=AF76E588BFE2B4769AB22CEDAA083492441A512F4A361590DA0EC0DE0B029D88)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/oVLGQk2VR7q-5o3UgaKorA/zh-cn_image_0000002558764082.png)
 
 ### V1组件的更新
 

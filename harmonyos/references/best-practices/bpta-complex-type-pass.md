@@ -5,7 +5,7 @@ breadcrumb: 最佳实践 > NDK开发 > 跨语言调用复杂参数传递
 category: best-practices
 scraped_at: 2026-04-29T14:11:48+08:00
 doc_updated_at: 2026-03-26
-content_hash: sha256:bed08dd650c9ba3c6dd5b1ba42f9a92b893aa4554ff7bfaa151b5a9fba59ff21
+content_hash: sha256:3db9afdb4d3315f8a2c27f1ca839b9e414d410ba33176a193315e427e4e4e920
 ---
 
 ## 概述
@@ -15,7 +15,7 @@ content_hash: sha256:bed08dd650c9ba3c6dd5b1ba42f9a92b893aa4554ff7bfaa151b5a9fba5
 在开始介绍不同场景的开发流程之前，请注意，跨语言数据传递，需要使用[Node-API](../harmonyos-references/napi.md)。因此，在新建项目后，请手动新建Native模块，方法如图所示:
 
 **图1** 新建Napi模块  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/9WC7MjjsRO2BIS9aA1dM3Q/zh-cn_image_0000002229450485.png?HW-CC-KV=V1&HW-CC-Date=20260429T061146Z&HW-CC-Expire=86400&HW-CC-Sign=F49A54A2A7F1BB462457DE4E1649DE5F1044C7D150C20A04ED37C9098FF3E840 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/9WC7MjjsRO2BIS9aA1dM3Q/zh-cn_image_0000002229450485.png "点击放大")
 
 ## 场景案例
 
@@ -184,7 +184,7 @@ ArrayBuffer是一种用于表示通用的、固定长度的原始二进制数据
 
 **实现效果**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/m04cS4yyTJG1TczQ0EFjUg/zh-cn_image_0000002194010204.png?HW-CC-KV=V1&HW-CC-Date=20260429T061146Z&HW-CC-Expire=86400&HW-CC-Sign=AF2677169A28FDE2F3214E0710FDE3BE828D6556BA49B0CDA36AA663DA10BE12 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/m04cS4yyTJG1TczQ0EFjUg/zh-cn_image_0000002194010204.png "点击放大")
 
 ### object类型数据交互
 
@@ -299,7 +299,7 @@ Object类是所有其他类型的基类。在C++侧接收该类型参数时一�
 
 **实现效果**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/64JV31uwTAiwiIyx_y7pug/zh-cn_image_0000002194010224.png?HW-CC-KV=V1&HW-CC-Date=20260429T061146Z&HW-CC-Expire=86400&HW-CC-Sign=F34B45E13360A27539D3AF55B2B7248B9ABBF293D55C554E2FC86C24AB90735C "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/64JV31uwTAiwiIyx_y7pug/zh-cn_image_0000002194010224.png "点击放大")
 
 ### hashMap类型数据交互
 
@@ -471,7 +471,7 @@ hashMap是一种基于哈希表的Map接口实现的数据结构。在C++侧接�
 
 **实现效果**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/vdo3f7a8RYGMQKlREfyGPA/zh-cn_image_0000002193850624.png?HW-CC-KV=V1&HW-CC-Date=20260429T061146Z&HW-CC-Expire=86400&HW-CC-Sign=559DF5793FF69049E18CD30BCB2CFC7B9148F12F7F1551F22D9D4ABC2578F735 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/vdo3f7a8RYGMQKlREfyGPA/zh-cn_image_0000002193850624.png "点击放大")
 
 ### pixelMap类型数据交互
 
@@ -597,7 +597,7 @@ PixelMap是一种用于显示图像的数据结构。在C++侧接收该类型参
 
 **实现效果**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/pnvU6F68SsyHUyA-R8xDmA/zh-cn_image_0000002194010228.png?HW-CC-KV=V1&HW-CC-Date=20260429T061146Z&HW-CC-Expire=86400&HW-CC-Sign=5F612AAA03BD02A5C19142E8B849ECB0EA85D740FD78F5E34FD93BAEF9584FF9 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/pnvU6F68SsyHUyA-R8xDmA/zh-cn_image_0000002194010228.png "点击放大")
 
 ### class类型数据，ArkTS传递至C++
 
@@ -705,7 +705,7 @@ ArkTS语言中，class（类）是用于定义对象的模板，并拥有特有�
 
 **实现效果**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/eJf8fOnXQqGa3Oqmoi2smw/zh-cn_image_0000002193850628.png?HW-CC-KV=V1&HW-CC-Date=20260429T061146Z&HW-CC-Expire=86400&HW-CC-Sign=0B8FE77B8AFA68CC579C91AE528ED4CBCAC77DED091CBAE295E5D22341EA8C0C "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/eJf8fOnXQqGa3Oqmoi2smw/zh-cn_image_0000002193850628.png "点击放大")
 
 ### class类型数据，C++传递至ArkTS
 
@@ -931,7 +931,7 @@ ArkTS语言中，class（类）是用于定义对象的模板，并拥有特有�
 
 **实现效果**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/bR6oh4-3S9K1-OfTdYP40Q/zh-cn_image_0000002229450497.png?HW-CC-KV=V1&HW-CC-Date=20260429T061146Z&HW-CC-Expire=86400&HW-CC-Sign=C44801FB5D91324DB70F22073E3CB3E0D5184CE7AAD3D82861602BDDD021353B "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/bR6oh4-3S9K1-OfTdYP40Q/zh-cn_image_0000002229450497.png "点击放大")
 
 ## 示例代码
 

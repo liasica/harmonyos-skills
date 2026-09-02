@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 管理网页交互 >
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:29:24+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:e1609de25a674b53488ffb67e5ce0b3ee23e1406dd059251a0fa639957475f88
+content_hash: sha256:ec1ac6123edd093a0baa51a2cb001545299c5b530dd00d53b4f0cca75725b3e1
 ---
 
 在HTML中，可以使用JavaScript创建三种类型的弹框：警告框window.alert(message)、确认框window.confirm(message)和提示框window.prompt(message, defaultValue)。这些弹框可以用于向用户传递信息、确认操作或请求输入。
@@ -179,7 +179,7 @@ window.alert()用于显示一个包含可选信息的对话框。警告框用于
   26. </html>
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/scugqx9bR4-jx70aa553Ww/zh-cn_image_0000002558605058.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052922Z&HW-CC-Expire=86400&HW-CC-Sign=DA46D42DEBB1EF8FA9F5764EDC350297F8A71D38160FDE1BB14201F52E5F479A)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/scugqx9bR4-jx70aa553Ww/zh-cn_image_0000002558605058.gif)
 
 ## 实现Confirm弹框
 
@@ -380,7 +380,7 @@ window.confirm()用于显示一个包含可选消息的对话框，并等待用�
   29. </html>
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/M3OSFtSxQs67BVY3Xeq1Hg/zh-cn_image_0000002589324583.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052922Z&HW-CC-Expire=86400&HW-CC-Sign=ADC5E04D3D7975162816AF453CB06A3C2565971C75BC9FC21EB343AA5707B399)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/M3OSFtSxQs67BVY3Xeq1Hg/zh-cn_image_0000002589324583.gif)
 
 ## 实现Prompt弹框
 
@@ -540,4 +540,4 @@ window.prompt()用于显示一个对话框，并等待用户提交文本或取�
 24. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/yDdbH-iiR1-WL_wnicAEwA/zh-cn_image_0000002589244521.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052922Z&HW-CC-Expire=86400&HW-CC-Sign=3879692A6D2A9EE6CE808C44BE56639A060EE345BC4E23B6182A06FD632C0578)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/yDdbH-iiR1-WL_wnicAEwA/zh-cn_image_0000002589244521.gif)

@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:27:56+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:7af28186353e8b22b9941146439639483a5aa948d5775c5bf665ebbf6f414973
+content_hash: sha256:ec40b132550b83031b8098e5298986e1490da79d4394b5bd3ddafedda8478a18
 ---
 
 ArkUI的弹出框控制器在绑定弹出框后，可提供对弹出框的操作能力，当前支持关闭功能。可以将控制器传入弹出框内容区域后进行操作。
@@ -499,4 +499,4 @@ ArkUI的弹出框控制器在绑定弹出框后，可提供对弹出框的操作
 
 [DialogController.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/DialogProject/entry/src/main/ets/pages/customdialog/dialogcontroller/DialogController.ets#L16-L261)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/_P5OJmU-QjqEQgKRhscc1Q/zh-cn_image_0000002558764400.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052754Z&HW-CC-Expire=86400&HW-CC-Sign=0B1359B804BABDEF78FD721F1C321183E3D055173B8C969BDBC54C6BE0159D07)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/_P5OJmU-QjqEQgKRhscc1Q/zh-cn_image_0000002558764400.gif)

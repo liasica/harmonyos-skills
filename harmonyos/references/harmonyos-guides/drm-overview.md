@@ -5,7 +5,7 @@ breadcrumb: 指南 > 媒体 > DRM Kit（数字版权保护服务） > DRM Kit �
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:35:09+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:55df7cc5471aa87a5f8a361db28458858f206443d361b09b1edddd1c63505487
+content_hash: sha256:8203c3b159219a1bd5a39f6b7b4de47e6f9367722cf03140858e6a09385200e0
 ---
 
 DRM Kit（Digital Rights Management Kit，数字版权保护服务）提供了DRM加密节目授权解密的功能，包括DRM插件管理、DRM证书管理、DRM许可证管理、DRM节目授权、DRM节目解密等功能，可实现DRM解决方案的集成、DRM解决方案的证书下载、节目的授权及解密。
@@ -80,7 +80,7 @@ DRM插件管理功能一般由DRM解决方案集成方实现。
 
 应用集成DRM Kit工作流程如图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/Yy1lLj5jQ56tpgxkEb3o5A/zh-cn_image_0000002558765084.png?HW-CC-KV=V1&HW-CC-Date=20260429T053508Z&HW-CC-Expire=86400&HW-CC-Sign=F240D60F1A883A2FFFC11A7DF3E21E09DBF1FAE8E6AFBAC39D0137E780A251FC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/Yy1lLj5jQ56tpgxkEb3o5A/zh-cn_image_0000002558765084.png)
 
 工作流程主要包括：
 

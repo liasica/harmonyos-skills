@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 在地图上绘�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:39:10+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:c3d38361dae14d7d38ca396b2005b7216d0466337c71f4ff875e4d4e9290bff9
+content_hash: sha256:49c5ca4fa020431b6211adfdd09ba5c20a4b0f115002c120c7e4f8bd5bf37704
 ---
 
 ## 场景介绍
@@ -24,7 +24,7 @@ content_hash: sha256:c3d38361dae14d7d38ca396b2005b7216d0466337c71f4ff875e4d4e929
 
 5.0.3(15)开始，支持聚合标记点击事件监听功能。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/SteZ7IeuQJO_Wyk5TXar_w/zh-cn_image_0000002589245351.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053908Z&HW-CC-Expire=86400&HW-CC-Sign=DD888B7D54504B013280109AE768AC17505B2DC1FD915BE1542C735A317818AC "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/SteZ7IeuQJO_Wyk5TXar_w/zh-cn_image_0000002589245351.jpg "点击放大")
 
 ## 接口说明
 

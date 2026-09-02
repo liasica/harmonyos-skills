@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 管理Web组件的�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:29:24+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:77a343dbcf98dcdb6c4e1172cc43812ea6800f84b22acb77de35d4eaae736d9c
+content_hash: sha256:0c9247cbe5c54869390ef6c7fc60ed4ae9feafd0e73f765c94cff25afe8da735
 ---
 
 坚盾守护模式提供给高安全需求用户的系统级别安全模式。该模式通过限制设备基础功能，增强安全性，有效抵御远程攻击面的针对性攻击。
@@ -29,7 +29,7 @@ content_hash: sha256:77a343dbcf98dcdb6c4e1172cc43812ea6800f84b22acb77de35d4eaae7
 
 要评估应用在坚盾守护模式下的受影响程度及兼容性，可前往“设置 > 隐私和安全 > 坚盾守护模式”开启。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/-tIbnPUkQKCX-zEfcQx31Q/zh-cn_image_0000002558764716.png?HW-CC-KV=V1&HW-CC-Date=20260429T052923Z&HW-CC-Expire=86400&HW-CC-Sign=E9A583C52F764EB12BB49252106EA1097A439B4592323282D5D10B5A0EE7F67A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/-tIbnPUkQKCX-zEfcQx31Q/zh-cn_image_0000002558764716.png)
 
 说明
 

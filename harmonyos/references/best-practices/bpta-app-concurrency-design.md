@@ -5,7 +5,7 @@ breadcrumb: 最佳实践 > 应用框架 > ArkTS语言 > 应用并发设计
 category: best-practices
 scraped_at: 2026-04-29T14:10:45+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:25f6aade2c9349667593f0bf1c829a1115690618fb18dac911a8bb9da0c8cac4
+content_hash: sha256:58725e8bad3277f6d3caa0e4ad11467ec9b18a65ae86854bfe74218dee4085df
 ---
 
 ## 概述
@@ -42,7 +42,7 @@ ArkTS是HarmonyOS APP的开发语言，它在保持TypeScript（简称TS）基�
 
 并发能力框架如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/BKVW_pTvQX60duqgZ1RvuQ/zh-cn_image_0000002194011076.png?HW-CC-KV=V1&HW-CC-Date=20260429T061043Z&HW-CC-Expire=86400&HW-CC-Sign=6D796BE2A8A503773FC5EF31CA613D9D87F24E8A846EEDD0A88A40F9ACE373DA "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/BKVW_pTvQX60duqgZ1RvuQ/zh-cn_image_0000002194011076.png "点击放大")
 
 * **主线程：**执行UI业务、不耗时操作、单次I/O任务，与其他ArkTS线程共享系统I/O线程池，不阻塞ArkTS线程。
 * **TaskPool****高并发任务池：**执行耗时任务，封装任务入口，统计模块负载，开发者无需管理线程生命周期。
@@ -56,21 +56,21 @@ ArkTS是HarmonyOS APP的开发语言，它在保持TypeScript（简称TS）基�
 
 ### 共享内存并发模型
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/Oxh-FxCUQJa4a7DxDpWVmQ/zh-cn_image_0000002194011072.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T061043Z&HW-CC-Expire=86400&HW-CC-Sign=2FE63672390F670D47788E5EB72B613F7981AB24CC67CF9ECB8417F349B8543E "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/Oxh-FxCUQJa4a7DxDpWVmQ/zh-cn_image_0000002194011072.jpg "点击放大")
 
 共享内存模型采用线程和锁的并发机制，不同线程共享内存并通过锁保护临界区。对于包含I/O操作或锁的业务，为防止阻塞，需开启多个线程执行不同业务。线程情况如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/31DtrlTITlCRqtArEW3H3Q/zh-cn_image_0000002194011068.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T061043Z&HW-CC-Expire=86400&HW-CC-Sign=FFDCB4EFF87386FFF426835DF242A6D02CCBF84EDDCA805C2F8D2FEB8F67F9AA "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/31DtrlTITlCRqtArEW3H3Q/zh-cn_image_0000002194011068.jpg "点击放大")
 
 因此，应用经常存在几百个线程，增加调度开销和内存占用。
 
 ### ArkTS并发模型
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/rIwFxN9yTJiUfcUAQJ139w/zh-cn_image_0000002194011084.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T061043Z&HW-CC-Expire=86400&HW-CC-Sign=F9D9D7103DA62E78A7C53F1A1F826AEE5C0001D9F60380031D23C3BACE3207F6 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/rIwFxN9yTJiUfcUAQJ139w/zh-cn_image_0000002194011084.jpg "点击放大")
 
 ArkTS采用内存隔离的线程模型，不同线程间通过消息通信，线程内无锁化运行。业务内部的I/O操作由系统分发到后台的I/O任务池，不阻塞ArkTS上层逻辑，线程情况如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/8NfihLEhQx2HX3pbyc7EhQ/zh-cn_image_0000002229336865.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T061043Z&HW-CC-Expire=86400&HW-CC-Sign=4A6012CD2265E16BEE1CA5C5EDA9A39CA01AAFDC84350070B94E6E6B4F4C8BB1 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/8NfihLEhQx2HX3pbyc7EhQ/zh-cn_image_0000002229336865.jpg "点击放大")
 
 异步I/O不阻塞ArkTS线程，TaskPool及I/O线程池由系统管理，提升能效。
 
@@ -878,7 +878,7 @@ ArkTS采用内存隔离的并发模型，不支持跨线程共享对象，必须
 
   步骤二：初始化完成后通知主线程，主线程导入并使用该单例对象。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/R73ypdwKS8SMKzX0RD3QDg/zh-cn_image_0000002194011080.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T061043Z&HW-CC-Expire=86400&HW-CC-Sign=1E204A29F3EE1E73895871E78A5177F6207D5817D3C9C9A516494814406C2E07 "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/R73ypdwKS8SMKzX0RD3QDg/zh-cn_image_0000002194011080.jpg "点击放大")
 * **业务实现中的关键点**
   1. JS模块对象
 

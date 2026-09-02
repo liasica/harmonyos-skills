@@ -5,7 +5,7 @@ breadcrumb: 最佳实践 > 应用框架 > 输入法 > 软键盘布局适配
 category: best-practices
 scraped_at: 2026-04-29T14:11:02+08:00
 doc_updated_at: 2026-03-19
-content_hash: sha256:87e38d626d02efa444d497617824bbeb017cf2f25ef0f05e4656996cfba17c58
+content_hash: sha256:e9d9b6aa85258a716d60f6913b7c3f4c43a4761731c099b92ee1a1545b10a034
 ---
 
 ## 概述
@@ -26,7 +26,7 @@ content_hash: sha256:87e38d626d02efa444d497617824bbeb017cf2f25ef0f05e4656996cfba
 
 有时候进入页面，希望页面中的输入框能主动获焦并且弹出软键盘，方便用户直接输入，例如，点击应用首页的搜索框，进入应用搜索页面。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/YEd5SU0WRtuef3ZdOS8-oA/zh-cn_image_0000002345807137.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061100Z&HW-CC-Expire=86400&HW-CC-Sign=D4187EEC97E5574E28178690BD1A78C6A4129A086168740BCC8CE5DDD35FE4F0 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/YEd5SU0WRtuef3ZdOS8-oA/zh-cn_image_0000002345807137.gif "点击放大")
 
 可以通过将输入框的defaultFocus设置为true来实现。
 
@@ -41,7 +41,7 @@ content_hash: sha256:87e38d626d02efa444d497617824bbeb017cf2f25ef0f05e4656996cfba
 
 开发者可以使用FocusController的[requestFocus()](../harmonyos-references/arkts-apis-uicontext-focuscontroller.md#requestfocus12)方法，通过组件的id将焦点转移到组件树对应的实体节点，并且弹出软键盘。例如，表情面板切换到文本输入时，点击表情图标拉起系统软键盘，便于用户直接输入。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/dztQmQYrQMuHWazoRNoVUA/zh-cn_image_0000002349352709.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061100Z&HW-CC-Expire=86400&HW-CC-Sign=55D4F31FD71EA5631AE57C8F5E2E87DB70B8F656A35FC03EA42F10E19F3C7EA0 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/dztQmQYrQMuHWazoRNoVUA/zh-cn_image_0000002349352709.gif "点击放大")
 
 示例如下：
 
@@ -65,7 +65,7 @@ content_hash: sha256:87e38d626d02efa444d497617824bbeb017cf2f25ef0f05e4656996cfba
 
 通过全局的焦点控制对象FocusController的[clearFocus](../harmonyos-references/arkts-apis-uicontext-focuscontroller.md#clearfocus12)方法，软键盘收起，例如在下面的搜索页面中，点击搜索按钮时软键盘收起。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/BT60at9LQ0CZIK2FQcXeBg/zh-cn_image_0000002315512768.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061100Z&HW-CC-Expire=86400&HW-CC-Sign=5D2D148F241537A364BEDB41DF77E5B03A597EF2460C6D4CEF765E4D653F9492 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/BT60at9LQ0CZIK2FQcXeBg/zh-cn_image_0000002315512768.gif "点击放大")
 
 示例代码如下：
 
@@ -104,7 +104,7 @@ content_hash: sha256:87e38d626d02efa444d497617824bbeb017cf2f25ef0f05e4656996cfba
 
 开发者可以通过获取软键盘高度、监听软键盘的弹出和收起状态，调整组件位置以适配界面或显示隐藏某些组件。通过[window](../harmonyos-references/js-apis-window.md)模块的[on('keyboardHeightChange')](../harmonyos-references/arkts-apis-window-window.md#onkeyboardheightchange7)方法开启软键盘高度变化的监听，实时获取软键盘高度。例如下面这个示例软键盘弹起后显示表情栏，软键盘收起后隐藏表情栏。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/zojzLEneR52miMJeeAoBbQ/zh-cn_image_0000002312007956.png?HW-CC-KV=V1&HW-CC-Date=20260429T061100Z&HW-CC-Expire=86400&HW-CC-Sign=2B72BC67994ED48A56D0D252098808EE32AAADF6CB87879F6BCE22945C66E213 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/zojzLEneR52miMJeeAoBbQ/zh-cn_image_0000002312007956.png "点击放大")
 
 上面效果图的实现示例代码如下，通过[on('keyboardHeightChange')](../harmonyos-references/arkts-apis-window-window.md#onkeyboardheightchange7)方法实时获取软键盘高度（返回值为整数，单位为px），并赋值给变量keyboardHeight。当keyboardHeight为0的时候表示软键盘处于收起状态，此时隐藏表情栏；keyboardHeight不为0的时候表示软键盘处于弹出状态，此时显示表情栏。
 
@@ -215,7 +215,7 @@ content_hash: sha256:87e38d626d02efa444d497617824bbeb017cf2f25ef0f05e4656996cfba
 
 为了确保输入框不被软键盘挡住，系统默认提供了输入框避让软键盘的能力，结合下面这个输入框列表，介绍软键盘避让的主要表现形式。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/av9-wptgTgac0wyoKyba0A/zh-cn_image_0000002345807161.png?HW-CC-KV=V1&HW-CC-Date=20260429T061100Z&HW-CC-Expire=86400&HW-CC-Sign=A0057606D1F3BA2E46496B4C3FC12317EFD52D8A2BE40102358CE5213EFE22D9 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/av9-wptgTgac0wyoKyba0A/zh-cn_image_0000002345807161.png "点击放大")
 
 默认情况下，系统针对输入框位置，执行安全避让策略，保证输入框不会被软键盘遮挡：
 
@@ -232,7 +232,7 @@ content_hash: sha256:87e38d626d02efa444d497617824bbeb017cf2f25ef0f05e4656996cfba
 
 弹窗避让可以通过BaseDialogOptions，设置弹窗的避让模式KeyboardAvoidMode，当设置为默认避让Default模式时，如果软键盘弹出会覆盖输入框，弹窗整体会上抬，并且为了UX美观，会存在默认的间隔，默认大小为16vp。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/JtEjuP2AReyxrP5A4BDJ0w/zh-cn_image_0000002312007964.png?HW-CC-KV=V1&HW-CC-Date=20260429T061100Z&HW-CC-Expire=86400&HW-CC-Sign=F931CB50838CC6C7E020EBF1E4A05821B1D36D565DC4FF8BDF8300FE5E79D38B "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/JtEjuP2AReyxrP5A4BDJ0w/zh-cn_image_0000002312007964.png "点击放大")
 
 系统默认的软键盘避让形式仅能确保输入框不被遮挡，但输入框下方的组件可能会被软键盘遮挡。要解决此问题，需要了解软键盘的避让模式。
 
@@ -260,7 +260,7 @@ content_hash: sha256:87e38d626d02efa444d497617824bbeb017cf2f25ef0f05e4656996cfba
 
   示意效果如下，上抬整个页面实现软键盘避让：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/-jU0YugRSBKFypTWVpTw_g/zh-cn_image_0000002345807165.png?HW-CC-KV=V1&HW-CC-Date=20260429T061100Z&HW-CC-Expire=86400&HW-CC-Sign=53DC4A1AF1A5BEE60E75BC1C903A9EBB320A4366B4A6F7F5E2A7921C37FE9BA0 "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/-jU0YugRSBKFypTWVpTw_g/zh-cn_image_0000002345807165.png "点击放大")
 * 压缩模式（KeyboardAvoidMode.RESIZE）：当软键盘高度改变时，调整Page大小。Page下设置百分比宽高的组件会跟随压缩，直接设置宽高的组件保持固定大小。设置KeyboardAvoidMode.RESIZE时，expandSafeArea([SafeAreaType.KEYBOARD],[SafeAreaEdge.BOTTOM])不生效。
 
   ```
@@ -278,7 +278,7 @@ content_hash: sha256:87e38d626d02efa444d497617824bbeb017cf2f25ef0f05e4656996cfba
 
   示意效果如下，通过压缩内容区域高度实现软键盘避让：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/ddILJ9dsTcGHI_pxnLo0Dw/zh-cn_image_0000002311848196.png?HW-CC-KV=V1&HW-CC-Date=20260429T061100Z&HW-CC-Expire=86400&HW-CC-Sign=9426E2C74CDAB1818ECB0AB96E14006BB6200C39CE138001857525C0FF9CC8A4 "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/ddILJ9dsTcGHI_pxnLo0Dw/zh-cn_image_0000002311848196.png "点击放大")
 * 不避让模式（KeyboardAvoidMode.NONE）：软键盘将直接覆盖页面UI，不会触发界面布局调整。例如在全屏沉浸式场景（游戏/视频播放器等），为保障用户体验的完整性，开发者可以使用KeyboardAvoidMode.NONE模式。
 
   ```
@@ -319,7 +319,7 @@ content_hash: sha256:87e38d626d02efa444d497617824bbeb017cf2f25ef0f05e4656996cfba
 
 通过[expandSafeArea](../harmonyos-references/ts-universal-attributes-expand-safe-area.md#expandsafearea)属性支持组件不改变布局情况下扩展其绘制区域至安全区外，当设置expandSafeArea属性type为SafeAreaType.KEYBOARD的时候，即expandSafeArea([SafeAreaType.KEYBOARD])，系统会将软键盘区域视作安全区，从而不会避让软键盘。如果开发者希望某些组件不避让软键盘，可以给组件设置expandSafeArea属性。组件避让软键盘的示例效果如下，软键盘弹出时页面整体上抬，自定义标题栏固定不动，具体实现可以参考[软键盘弹出导致布局错位](bpta-keyboard-layout-adapt.md#section20196428133211)的示例。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/Nkw-9P4fRsCUsGmHeNLOAA/zh-cn_image_0000002345926957.png?HW-CC-KV=V1&HW-CC-Date=20260429T061100Z&HW-CC-Expire=86400&HW-CC-Sign=243C91FF53BBF257F31BE36DEDC0E9084BC76062CC919A9602F5D832EC81AD91 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/Nkw-9P4fRsCUsGmHeNLOAA/zh-cn_image_0000002345926957.png "点击放大")
 
 ## 软键盘避让常见问题
 
@@ -329,7 +329,7 @@ content_hash: sha256:87e38d626d02efa444d497617824bbeb017cf2f25ef0f05e4656996cfba
 
 例如下面这个电子邮件示例，内容包括标题栏、内容区域和底部操作栏。点击输入内容的输入框时，软键盘会遮挡底部操作栏，影响用户体验。具体如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/2SXNyTEbQFuoFEwga8cLsQ/zh-cn_image_0000002312007968.png?HW-CC-KV=V1&HW-CC-Date=20260429T061100Z&HW-CC-Expire=86400&HW-CC-Sign=4FE102A5A8E018EF203D75E14B503E3BCD59E3E91499754D14FD47349C124397 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/2SXNyTEbQFuoFEwga8cLsQ/zh-cn_image_0000002312007968.png "点击放大")
 
 对应的示例代码如下，其中标题栏和底部操作栏都是固定的高度56，内容区域高度是非固定高度layoutWeight(1)，自适应高度。
 
@@ -397,7 +397,7 @@ content_hash: sha256:87e38d626d02efa444d497617824bbeb017cf2f25ef0f05e4656996cfba
 
 需要注意的是内容区域高度的设置需要用百分比的方式实现，效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/L_RyI7j8Qt64rBmgNo6eTg/zh-cn_image_0000002345807169.png?HW-CC-KV=V1&HW-CC-Date=20260429T061100Z&HW-CC-Expire=86400&HW-CC-Sign=EEACD75CBD324EB022FF4E9B99951E096757B1701426BDDC26A543330DA926CB "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/L_RyI7j8Qt64rBmgNo6eTg/zh-cn_image_0000002345807169.png "点击放大")
 
 **通过监听软键盘弹出，实现软键盘避让**
 
@@ -510,11 +510,11 @@ content_hash: sha256:87e38d626d02efa444d497617824bbeb017cf2f25ef0f05e4656996cfba
 
 由于软键盘避让默认为上抬模式，会将整个页面向上抬起，因此标题也会被顶上去，如图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/kzgh3OwDQai6DlrKzmpEFg/zh-cn_image_0000002311848204.png?HW-CC-KV=V1&HW-CC-Date=20260429T061100Z&HW-CC-Expire=86400&HW-CC-Sign=02134F040808A559DF4E838344A6EC2D27CC84CB2795E2C6F1937E3D737D236A "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/kzgh3OwDQai6DlrKzmpEFg/zh-cn_image_0000002311848204.png "点击放大")
 
 现在需求是希望顶部标题固定，点击底部输入框软键盘弹起的时候，标题不上抬，只有内容区域上抬。效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/MSrNcd2lRTWZ_QicdaILFg/zh-cn_image_0000002345926969.png?HW-CC-KV=V1&HW-CC-Date=20260429T061100Z&HW-CC-Expire=86400&HW-CC-Sign=12E17B06D5B3D0E38EE311C7D89B4359370AC19772E44E01F7776D5ABB98B893 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/MSrNcd2lRTWZ_QicdaILFg/zh-cn_image_0000002345926969.png "点击放大")
 
 想要顶部标题不被软键盘向上抬，需要给对应的组件设置 .expandSafeArea([SafeAreaType.KEYBOARD])属性，使标题组件不避让键盘，示例代码如下：
 
@@ -631,7 +631,7 @@ content_hash: sha256:87e38d626d02efa444d497617824bbeb017cf2f25ef0f05e4656996cfba
 
 当用户点击弹窗底部的输入框的时候，弹窗会整体上抬，输入框上抬的距离也过多。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/QzILrWvVQsuFXCuqjeRMJw/zh-cn_image_0000002312007980.png?HW-CC-KV=V1&HW-CC-Date=20260429T061100Z&HW-CC-Expire=86400&HW-CC-Sign=22C80626917303D7D6029C3AA7A42AC56413AED78CED21BAFA2F95526BC5E9E9 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/QzILrWvVQsuFXCuqjeRMJw/zh-cn_image_0000002312007980.png "点击放大")
 
 为了解决以上问题，可以使用[Navigation.Dialog](../harmonyos-guides/arkts-navigation-navigation.md#页面显示类型)，通过设置NavDestination的mode为NavDestinationMode.DIALOG弹窗类型，此时整个NavDestination默认透明显示，示例代码如下：
 
@@ -732,7 +732,7 @@ content_hash: sha256:87e38d626d02efa444d497617824bbeb017cf2f25ef0f05e4656996cfba
 
 运行效果如下，点击输入框后，内容区域会进行压缩，弹窗整体不会发生上抬。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/N8BTx_nDQv-iSxEotKbIUg/zh-cn_image_0000002345807177.png?HW-CC-KV=V1&HW-CC-Date=20260429T061100Z&HW-CC-Expire=86400&HW-CC-Sign=C7895039C8B6CA61BAD065E14ACDB7114EAA16BD02D8544514E7CE1FEAA3383D "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/N8BTx_nDQv-iSxEotKbIUg/zh-cn_image_0000002345807177.png "点击放大")
 
 关于评论回复场景的实现，可以参考：[评论回复弹窗](bpta-comment-reply-pop-up-window.md)。
 

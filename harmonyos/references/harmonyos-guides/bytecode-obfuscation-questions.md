@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS编译�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:26:58+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:caaf7623180bdae9a57505c0bf202c7c3861142609dae5e71f0c9cde357095dc
+content_hash: sha256:a1f97223becaf1c5fce98ba4791ef0f406509e3ecac01c4d8399e0b3b4484c6d
 ---
 
 ## 字节码混淆与源码混淆差异
@@ -25,7 +25,7 @@ content_hash: sha256:caaf7623180bdae9a57505c0bf202c7c3861142609dae5e71f0c9cde357
 
 **目录差异**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/4_YfvMHdQ1-rlJCjVl9fsw/zh-cn_image_0000002589243847.png?HW-CC-KV=V1&HW-CC-Date=20260429T052657Z&HW-CC-Expire=86400&HW-CC-Sign=A939743E9E6507D9C517F33798CB17CCA0064B2E510E58221C967F97DBF4D950) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/IhRZJsOfQfy9nms6Zody8Q/zh-cn_image_0000002558764040.png?HW-CC-KV=V1&HW-CC-Date=20260429T052657Z&HW-CC-Expire=86400&HW-CC-Sign=7D4A61A072937481EF5EE1F863F3BB3392A2571F4D27D5B4F111167E1DBF085B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/4_YfvMHdQ1-rlJCjVl9fsw/zh-cn_image_0000002589243847.png) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/IhRZJsOfQfy9nms6Zody8Q/zh-cn_image_0000002558764040.png)
 
 字节码混淆后，obfuscation目录中多了obf、origin文件夹和config.json文件，具体详见[混淆效果](bytecode-obfuscation-guide.md#查看混淆效果)。
 
@@ -221,7 +221,7 @@ nameCache.json文件：
 * 混淆后的文件目录：build/default/[...]/release/obfuscation/obf。
 * 混淆名称映射表及系统API白名单目录：build/default/[...]/release/obfuscation。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/Uj1-ZKu8SBG28dCs_MBM6w/zh-cn_image_0000002558604382.png?HW-CC-KV=V1&HW-CC-Date=20260429T052657Z&HW-CC-Expire=86400&HW-CC-Sign=0AC109DF50A60051157D36B62678540CF3A1BF53AD5C77C960272898BBF31151)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/Uj1-ZKu8SBG28dCs_MBM6w/zh-cn_image_0000002558604382.png)
 
 * 名称映射表文件：nameCache.json，该文件记录了源码名称混淆的映射关系。
 * 系统API白名单文件：systemApiCache.json，该文件记录了SDK中的接口与属性名称，与其重名的源码不会被混淆。
@@ -514,7 +514,7 @@ parameters的类型为Record<string, Object>，在开启属性混淆后，parame
 
 HSP需要将给其他模块用的方法配置到白名单中。因为主模块里也需要配置相同的白名单，所以推荐将HSP配置了白名单的混淆文件（假设名称为hsp-white-list.txt）添加到依赖它的模块的混淆配置项里，即下图files字段里。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/meCEJzB_SpSV1pl0W2Dlkg/zh-cn_image_0000002558604384.png?HW-CC-KV=V1&HW-CC-Date=20260429T052657Z&HW-CC-Expire=86400&HW-CC-Sign=DBA1F567BDCED8BA71939D4EF98452EE2A35E3505461E05D27B09A9B2048551A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/meCEJzB_SpSV1pl0W2Dlkg/zh-cn_image_0000002558604384.png)
 
 **案例一：动态导入某个类，类定义的地方被混淆，导入类名时却没有混淆，导致报错**
 
@@ -706,7 +706,7 @@ namespace中的foo属于export元素，当通过NS.foo调用时被视为属性�
 
 工程的目录结构如下图所示，模块library1的外层还有目录"directory"，开启文件名混淆后，"directory" 被混淆为f12，导致路径找不到。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/i6jqIoMdTrS_H-c_rx_KRQ/zh-cn_image_0000002589323909.png?HW-CC-KV=V1&HW-CC-Date=20260429T052657Z&HW-CC-Expire=86400&HW-CC-Sign=063CE4EB14379EC4283C6F3E665B142E87B4234CB869E59991A9447E396507D3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/i6jqIoMdTrS_H-c_rx_KRQ/zh-cn_image_0000002589323909.png)
 
 **解决方案**：
 

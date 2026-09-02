@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_strict-boolean-expressions
-title: @typescript-eslint/strict-boolean-expressions
+title: "@typescript-eslint/strict-boolean-expressions"
 breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/strict-boolean-expressions
 category: harmonyos-guides
 scraped_at: 2026-04-28T07:55:51+08:00

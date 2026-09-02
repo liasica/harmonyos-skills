@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用服务 > Screen Time Guard Kit（屏幕时间守护�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:40:30+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:6f23c06992f208322f9458020af376898cb2fae9629db79b1b0b270ed399580f
+content_hash: sha256:da1c96554fdac1ece959043565c0a884a5aacd815b7c4494de6d60bb2f25e332
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:6f23c06992f208322f9458020af376898cb2fae9629db79b1b0b270ed39
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/_PbuEXiSQtCEuXsEJyQOWg/zh-cn_image_0000002558765676.png?HW-CC-KV=V1&HW-CC-Date=20260429T054030Z&HW-CC-Expire=86400&HW-CC-Sign=10CC7EB02D850F941599AD7868F7A392D4CBD0152B6C6CD29BEF25BD7FBCD0CD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/_PbuEXiSQtCEuXsEJyQOWg/zh-cn_image_0000002558765676.png)
 
 流程说明：
 

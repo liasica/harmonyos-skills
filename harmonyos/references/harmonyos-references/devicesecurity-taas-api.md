@@ -5,7 +5,7 @@ breadcrumb: API参考 > 系统 > 安全 > Device Security Kit（设备安全服�
 category: harmonyos-references
 scraped_at: 2026-04-29T13:57:40+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:74e826a505e849c0c01795e3d6384eb427844d824565022822ef32ca52ea3ff3
+content_hash: sha256:ca773b0deab043104d4d01036f0b0fe58f7b8e91780dc479b5315c85681ee3c8
 ---
 
 本模块提供应用数据的安全证明服务，支持创建证明密钥、销毁证明密钥、初始化证明会话、结束证明会话和获取安全地理位置，能够为安全摄像头和安全地理位置功能提供安全证明能力，确保图像或位置数据未被篡改。
@@ -716,7 +716,7 @@ PhonePC/2in1Tablet
 | width | number | 否 | 否 | 裁剪区域的宽度，即横向的长度，取值范围在 0 到 640 之间的偶数，且需满足 x 与 width 的和不大于 640。单位是像素（pixel）。 |
 | height | number | 否 | 否 | 裁剪区域的高度，即纵向的长度，取值范围在 0 到 480 之间的偶数，且需满足 y 与 height 的和不大于 480。单位是像素（pixel）。 |
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/pFZthqy2QISqUbE5ZY9Y_Q/zh-cn_image_0000002589326927.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T055739Z&HW-CC-Expire=86400&HW-CC-Sign=49188E5CF0B68472C90B0842ED62E8CA1D01F89C458FED7B726E318B2B2094FA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/pFZthqy2QISqUbE5ZY9Y_Q/zh-cn_image_0000002589326927.jpg)
 
 ## SecImageBuffer
 

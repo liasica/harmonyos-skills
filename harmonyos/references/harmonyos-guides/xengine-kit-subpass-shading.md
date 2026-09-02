@@ -5,7 +5,7 @@ breadcrumb: 指南 > 图形 > XEngine Kit（GPU加速引擎服务） > Subpass S
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:36:43+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:fb1c7060174d3da266fb2a6baae943bd2d0df6d4b18c53a8481d8292189108a9
+content_hash: sha256:21aff5b51116bb2974d6089d8177dc07e94cad9dc1c2fbed8fc6c24cf61ae8a6
 ---
 
 随着游戏场景的复杂化，越来越多的光照效果被应用到游戏场景中，随之也带来大量的光照计算以及带宽消耗。目前通过Tile-Based Deferred Rendering（TBDR）和Forward+等方法可以解决大量光照的渲染时间消耗，但是大量带宽的占用问题还是没有解决，Subpass Shading能力主要减少计算过程中的读写从而减少带宽的占用。
@@ -14,11 +14,11 @@ content_hash: sha256:fb1c7060174d3da266fb2a6baae943bd2d0df6d4b18c53a8481d8292189
 
 **图1** Forward+读取过程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/TmTmi65LSH-CwFjhkNBDIg/zh-cn_image_0000002558605582.png?HW-CC-KV=V1&HW-CC-Date=20260429T053642Z&HW-CC-Expire=86400&HW-CC-Sign=F915CA4620F270943CB8E06D87336F78C066DE61E566037396CE2F90BCE205AB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/TmTmi65LSH-CwFjhkNBDIg/zh-cn_image_0000002558605582.png)
 
 **图2** Subpass Shading读取过程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/6uegWU4-SVu0fr57SZ27Rg/zh-cn_image_0000002589325109.png?HW-CC-KV=V1&HW-CC-Date=20260429T053642Z&HW-CC-Expire=86400&HW-CC-Sign=E821450D18C8BF699B3E6583CBC3E24771D6A38FF90279C9FB930C00A600FCDB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/6uegWU4-SVu0fr57SZ27Rg/zh-cn_image_0000002589325109.png)
 
 ## 约束与限制
 

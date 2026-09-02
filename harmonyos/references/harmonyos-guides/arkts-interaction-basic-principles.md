@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:28:01+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:fe879f5da8c0e1a3244d1b11928c04b45fae21bdd0ed03a05d73b2e9e11e38f5
+content_hash: sha256:30ee639f45509e304cb27d9b088ce4086f06add5da03497c667067cb7fc3d4ad
 ---
 
 对于[触摸事件](../harmonyos-references/ts-universal-events-touch.md)、[鼠标事件](../harmonyos-references/ts-universal-mouse-key.md)、[轴事件](../harmonyos-references/ts-universal-events-axis.md)等指向性事件的交互，交互框架基于坐标信息进行命中测试确定事件和手势的响应目标，即收集形成响应链，系统会根据触控事件的坐标、类型等信息，结合UI布局，将事件发送给对应UI组件。多个事件可以组合触发手势或其他功能，如长按、点击、拖拽。
@@ -52,7 +52,7 @@ ArkUI事件响应链通过触摸测试进行收集，遵循右子树（按组件
 
 因为组件3的hitTestBehavior属性为Default，收集到事件后会阻塞兄弟节点，所以没有收集组件1的左子树。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/rCrxc-3ZTvCdauetAAklQA/zh-cn_image_0000002558604772.png?HW-CC-KV=V1&HW-CC-Date=20260429T052800Z&HW-CC-Expire=86400&HW-CC-Sign=231231E94F903592ADD34C4571B106876644A33A75F1A6D97041829B2DF09B2D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/rCrxc-3ZTvCdauetAAklQA/zh-cn_image_0000002558604772.png)
 
 ## 触摸测试
 
@@ -62,7 +62,7 @@ ArkUI事件响应链通过触摸测试进行收集，遵循右子树（按组件
 
 对于指向性基础事件的派发，系统不会直接从页面根节点递归遍历所有组件节点，而是在首次事件发生时确定能够响应此次交互的组件范围，即识别用户点击的组件。对于未被点击的组件，在此次交互中将不会有任何响应。这一过程称为命中测试（hit test/touch test）。系统依据组件响应热区是否包含事件坐标来判定是否被点击。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/s1IspY2oTJyQkx3-q4xUmg/zh-cn_image_0000002589324297.png?HW-CC-KV=V1&HW-CC-Date=20260429T052800Z&HW-CC-Expire=86400&HW-CC-Sign=77B18D628A88FBB7EA60F3EFFBDE3DEF15AF7BF1308CD346C0EECC3E746CE376)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/s1IspY2oTJyQkx3-q4xUmg/zh-cn_image_0000002589324297.png)
 
 当用户触发按下事件时，系统将自上而下、自右向左遍历组件树，收集每个组件上绑定的手势和事件，然后将这些信息逐级向上冒泡至父组件进行整合，最终构建完整的事件响应链。
 
@@ -70,7 +70,7 @@ ArkUI事件响应链通过触摸测试进行收集，遵循右子树（按组件
 
 以下是描述命中测试过程的流程图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/Xii459qmQ5uQ2n4KPah32Q/zh-cn_image_0000002589244237.png?HW-CC-KV=V1&HW-CC-Date=20260429T052800Z&HW-CC-Expire=86400&HW-CC-Sign=5D5F63230341DE6ADFB7D2A84739DE05196983D19F6F6B14761086085D77FEE6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/Xii459qmQ5uQ2n4KPah32Q/zh-cn_image_0000002589244237.png)
 
 如图所示，当起始事件被分发至组件时，组件会收集自身绑定的手势与事件，随后将收集结果传递给父组件，直至达到根节点。若组件透明、已从组件树中移除，或事件坐标不在组件响应热区范围内，将不会触发收集过程，父组件接收的反馈为空。除此之外，所有组件均会执行手势与事件的收集，并将结果反馈给父组件。
 
@@ -149,7 +149,7 @@ ArkUI事件响应链通过触摸测试进行收集，遵循右子树（按组件
 
    上面的代码可以将按钮切分成了3部分，中间40%的区域不响应点击，而两侧的剩下部分可响应。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/73tbS053QAOSz_V0tIarJg/zh-cn_image_0000002558764430.png?HW-CC-KV=V1&HW-CC-Date=20260429T052800Z&HW-CC-Expire=86400&HW-CC-Sign=44656FFC4D92F3E701FDC42E889EBA49017390B662DA2272421256AD6AB70317)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/73tbS053QAOSz_V0tIarJg/zh-cn_image_0000002558764430.png)
 2. 触摸测试控制
 
    在组件上绑定[触摸测试控制](../harmonyos-references/ts-universal-attributes-hit-test-behavior.md)时，可能影响兄弟节点和父子节点的触摸测试。子组件对父组件的触摸测试影响程度取决于最后一个未被阻塞触摸测试的子组件状态。
@@ -158,22 +158,22 @@ ArkUI事件响应链通过触摸测试进行收集，遵循右子树（按组件
 
    * HitTestMode.Default：默认不配hitTestBehavior属性，自身如果命中会阻塞兄弟组件，但是不阻塞子组件。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/hj5Dvj2ERJGRJ2SE3jNUVA/zh-cn_image_0000002558604774.png?HW-CC-KV=V1&HW-CC-Date=20260429T052800Z&HW-CC-Expire=86400&HW-CC-Sign=38E300A26D4D6A180E25280C02C663466F5ADA62F06B46242DFF5BE18BCA10E2)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/hj5Dvj2ERJGRJ2SE3jNUVA/zh-cn_image_0000002558604774.png)
    * HitTestMode.None：自身不接收事件，但不会阻塞兄弟组件或子组件继续做触摸测试。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/vNePxkCdSZaS2D3rNVn3vA/zh-cn_image_0000002589324299.png?HW-CC-KV=V1&HW-CC-Date=20260429T052800Z&HW-CC-Expire=86400&HW-CC-Sign=2EF97E161B8974FF8606CC7F59E9283610C78B09854DBD948393E8564C71AC83)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/vNePxkCdSZaS2D3rNVn3vA/zh-cn_image_0000002589324299.png)
    * HitTestMode.Block：阻塞子组件的触摸测试，如果自身触摸测试命中，会阻塞兄弟组件及父组件的触摸测试。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/cWNcSG2rTMy1SzflDrVLNA/zh-cn_image_0000002589244239.png?HW-CC-KV=V1&HW-CC-Date=20260429T052800Z&HW-CC-Expire=86400&HW-CC-Sign=40DDDDC174A245D967A01768295303245D90F5D168A6C1F0C172E6552627D78E)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/cWNcSG2rTMy1SzflDrVLNA/zh-cn_image_0000002589244239.png)
    * HitTestMode.Transparent：自身进行触摸测试，同时不阻塞兄弟组件及父组件。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/MzWtX5kMRAGr3zXO0t6mkg/zh-cn_image_0000002558764432.png?HW-CC-KV=V1&HW-CC-Date=20260429T052800Z&HW-CC-Expire=86400&HW-CC-Sign=96404A9B859DD9372366B5C925B2F620DE7742770E5604FB1353EE9A3E4EFF98)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/MzWtX5kMRAGr3zXO0t6mkg/zh-cn_image_0000002558764432.png)
    * HitTestMode.BLOCK\_HIERARCHY（从API version 20开始支持）: 自身和子节点响应触摸测试，阻止所有优先级较低的兄弟节点和父节点参与触摸测试。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/dGRqFrB5Q56oFgfJzTrfjw/zh-cn_image_0000002558604776.png?HW-CC-KV=V1&HW-CC-Date=20260429T052800Z&HW-CC-Expire=86400&HW-CC-Sign=D74FFA44A6B36C11955ADBDA18410323079BDE76E55175EEFEFD2353ABED9C93)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/dGRqFrB5Q56oFgfJzTrfjw/zh-cn_image_0000002558604776.png)
    * HitTestMode.BLOCK\_DESCENDANTS（从API version 20开始支持）: 自身不响应触摸测试，并且所有的后代（孩子，孙子等）也不响应触摸测试，不会影响祖先节点的触摸测试。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/XMud3ar4Rtuda2NUX2AeqA/zh-cn_image_0000002589324301.png?HW-CC-KV=V1&HW-CC-Date=20260429T052800Z&HW-CC-Expire=86400&HW-CC-Sign=8F1BDBBF093393E78E4CC53BF5FBB2D807A762DDB275F489BD4F2DEBF21CFB48)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/XMud3ar4Rtuda2NUX2AeqA/zh-cn_image_0000002589324301.png)
 3. 自定义事件拦截
 
    当用户执行按下操作时，将触发组件上绑定的[自定义事件拦截](../harmonyos-references/ts-universal-attributes-on-touch-intercept.md)的回调。开发者可根据应用状态，动态调整组件的hitTestBehavior属性，进而影响触控测试的流程。
@@ -194,7 +194,7 @@ ArkUI包含的安全组件有：[使用粘贴控件](pastebutton.md)、[使用�
 
 stopPropagation可终止冒泡。如下图所示，以Touch事件为例，当一个Touch事件传递至C节点时，如果调用了该事件上的stopPropagation接口，则B节点和root节点将不再接收到此事件，但B节点上的手势对象仍能接收和处理该Touch事件。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/EAbTqKgiSSeiUQlHeBQemg/zh-cn_image_0000002589244241.png?HW-CC-KV=V1&HW-CC-Date=20260429T052800Z&HW-CC-Expire=86400&HW-CC-Sign=CF472793FD59C93FF9DD1AE8527A7113FDAA68D4D1DF0FBCC2A84343118C124D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/EAbTqKgiSSeiUQlHeBQemg/zh-cn_image_0000002589244241.png)
 
 说明
 

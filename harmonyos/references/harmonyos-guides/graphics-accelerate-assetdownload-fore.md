@@ -5,14 +5,14 @@ breadcrumb: 指南 > 图形 > Graphics Accelerate Kit（图形加速服务） > 
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:36:31+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:e89871a91681cac1fb51a0d0b2ab417252f82713de235f2fa3a11bb59f186bf2
+content_hash: sha256:f2bb566b57b628916070dcadda8e7e721b11f771ca95a71c7b0100fbe8765ffa
 ---
 
 启动游戏后，为游戏提供管理、创建资源包下载任务功能。
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/Cru7LNdpTAGayH5vDTAWWw/zh-cn_image_0000002558765218.png?HW-CC-KV=V1&HW-CC-Date=20260429T053628Z&HW-CC-Expire=86400&HW-CC-Sign=7D869F79B7624CCF5AEF57126AE1A5B75CE59FC596DF3B36568362A22B408589)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/Cru7LNdpTAGayH5vDTAWWw/zh-cn_image_0000002558765218.png)
 
 1. 用户打开游戏App。
 2. 游戏调用[fetchManifestUrl](../harmonyos-references/graphics-accelerate-assetdownloadmanager.md#assetdownloadmanagerfetchmanifesturl)方法，从游戏资源加速服务获取manifestUrl资源清单。

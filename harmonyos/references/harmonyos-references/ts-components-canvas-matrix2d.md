@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:52:35+08:00
 doc_updated_at: 2026-04-02
-content_hash: sha256:7d2b4bf497e882dffc2694a0d09bccc2b882deed9f2c5176ef706cbaac5efdfb
+content_hash: sha256:59edbc2efd950ab33a92fbb17a2f89e38fd52fa0fd5558f5b7457060d70da3fa
 ---
 
 用于画布绘制[CanvasRenderingContext2D](ts-canvasrenderingcontext2d.md)、[OffscreenCanvasRenderingContext2D](ts-offscreencanvasrenderingcontext2d.md)、[CanvasPattern](ts-components-canvas-canvaspattern.md)和[Path2D](ts-components-canvas-path2d.md)的矩阵对象，可以对矩阵进行缩放、旋转和平移等变换。
@@ -116,7 +116,7 @@ PhonePC/2in1TabletTVWearable
 30. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/nS2y1MlpQjGhVw6X-ljPSA/zh-cn_image_0000002558766496.png?HW-CC-KV=V1&HW-CC-Date=20260429T055230Z&HW-CC-Expire=86400&HW-CC-Sign=4AB2440234BBCB38E9FE8CBD0E23608B82B2EB73FC080CAC50B527B6648982CD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/nS2y1MlpQjGhVw6X-ljPSA/zh-cn_image_0000002558766496.png)
 
 ## 方法
 
@@ -172,7 +172,7 @@ identity(): Matrix2D
 25. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/HCfmAjy2QGioFL-5OQq9sw/zh-cn_image_0000002558606836.png?HW-CC-KV=V1&HW-CC-Date=20260429T055230Z&HW-CC-Expire=86400&HW-CC-Sign=4F27582F5F10622203A03CD5BCFEBEEC178D58CEE15CA925C620D2ABF1B7402A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/HCfmAjy2QGioFL-5OQq9sw/zh-cn_image_0000002558606836.png)
 
 ### invert
 
@@ -230,7 +230,7 @@ invert(): Matrix2D
 31. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/eBwh8-zVRrO5nH7XYqlcWA/zh-cn_image_0000002589326363.png?HW-CC-KV=V1&HW-CC-Date=20260429T055230Z&HW-CC-Expire=86400&HW-CC-Sign=C7D992ED6E8BC5A1D18EA1DC000B7041D4871655D3D8ACD19AE9F580B923DC70)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/eBwh8-zVRrO5nH7XYqlcWA/zh-cn_image_0000002589326363.png)
 
 ### multiply(deprecated)
 
@@ -313,7 +313,7 @@ rotate(rx?: number, ry?: number): Matrix2D
 31. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/EN6lI16fQ_61eLCYUGv8pQ/zh-cn_image_0000002589246305.png?HW-CC-KV=V1&HW-CC-Date=20260429T055230Z&HW-CC-Expire=86400&HW-CC-Sign=18EB86DDEE5A54096A127E67BC934B7E202F71626C1CE5F279686000980904E6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/EN6lI16fQ_61eLCYUGv8pQ/zh-cn_image_0000002589246305.png)
 
 ### rotate10+
 
@@ -379,7 +379,7 @@ rotate(degree: number, rx?: number, ry?: number): Matrix2D
 31. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/FsrccqgCQFGOWNbEhXq7FQ/zh-cn_image_0000002558766498.png?HW-CC-KV=V1&HW-CC-Date=20260429T055230Z&HW-CC-Expire=86400&HW-CC-Sign=366AB90FB9400C0AE5F5AC6C7BA4EE3FB67284BAFE586326B35E7BEEA9B603AD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/FsrccqgCQFGOWNbEhXq7FQ/zh-cn_image_0000002558766498.png)
 
 ### translate
 
@@ -444,7 +444,7 @@ translate(tx?: number, ty?: number): Matrix2D
 31. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/DU6cjY-ATyah34LhLdvfrw/zh-cn_image_0000002558606838.png?HW-CC-KV=V1&HW-CC-Date=20260429T055230Z&HW-CC-Expire=86400&HW-CC-Sign=5B0C67EE4DC8A66E22B33A4E1325DD3DE8648A620F070DC4022E32CE63A95E92)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/DU6cjY-ATyah34LhLdvfrw/zh-cn_image_0000002558606838.png)
 
 ### scale
 
@@ -509,4 +509,4 @@ scale(sx?: number, sy?: number): Matrix2D
 31. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/kv-djepkQ5ipnvViYIATXw/zh-cn_image_0000002589326365.png?HW-CC-KV=V1&HW-CC-Date=20260429T055230Z&HW-CC-Expire=86400&HW-CC-Sign=4F93C1682D7FE693886A373C43B978FD8E0A61598846610D296452D7DFF2E640)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/kv-djepkQ5ipnvViYIATXw/zh-cn_image_0000002589326365.png)

@@ -5,7 +5,7 @@ breadcrumb: 指南 > 系统 > 硬件 > Driver Development Kit（驱动开发服�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:33:31+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:b09ffc650a863c289d75221d7f79c609e3905646f8717680b624b67b11c4fe41
+content_hash: sha256:749f1fbb59e48ffe03a57554a44e283239d406cb5e45a95d940c723d8955be1e
 ---
 
 ## 开发工具及配置
@@ -31,7 +31,7 @@ DevEco Studio作为驱动开发工具，是进行驱动开发的必备条件之�
 
 检查DevEco Studio是否已连接上HarmonyOS设备。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/cCe7-CQyQ8iY7QhBvKqu-g/zh-cn_image_0000002589324841.png?HW-CC-KV=V1&HW-CC-Date=20260429T053330Z&HW-CC-Expire=86400&HW-CC-Sign=8726ECC738BCA268AD5F01F4139C29C847121E5F8678776C6561E7D95B9B69DE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/cCe7-CQyQ8iY7QhBvKqu-g/zh-cn_image_0000002589324841.png)
 
 ## HDC配置
 

@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:52:39+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:ce6b26797fd8e68a852380e222d5c08b543c3155563c1d046efd25f5223c2a0b
+content_hash: sha256:3b0730b0e09e2407db3369c3759c7af86a1f4ebbdffe2291766eb9403f6552ba
 ---
 
 EmbeddedComponent用于支持在当前页面嵌入本应用内其他[EmbeddedUIExtensionAbility](js-apis-app-ability-embeddeduiextensionability.md)提供的UI。EmbeddedUIExtensionAbility在独立进程中运行，完成页面布局和渲染。
@@ -283,4 +283,4 @@ PhonePC/2in1TabletTVWearable
   ```
 * 示例图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/Bz2Ci4n8TiSvYj6g04Fbsw/zh-cn_image_0000002589246353.png?HW-CC-KV=V1&HW-CC-Date=20260429T055237Z&HW-CC-Expire=86400&HW-CC-Sign=008D5F62F3481BA717B77F16F0A29A82F4413F641FF5426A6E8CD185954C3478)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/Bz2Ci4n8TiSvYj6g04Fbsw/zh-cn_image_0000002589246353.png)

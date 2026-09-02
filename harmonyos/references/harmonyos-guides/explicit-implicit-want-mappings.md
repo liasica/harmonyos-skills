@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > Stage�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:25:47+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:0afb177c2e64e1f39d599bb31c1a786efd8ae4b6c549f20124f56cc84e56ed1f
+content_hash: sha256:f3961f00cbdede0c2df7e24e22e867614502dfb7e88d8c900bb22c3c646c5b17
 ---
 
 在启动目标应用组件时，会通过显式[Want](../harmonyos-references/js-apis-app-ability-want.md)或者隐式[Want](../harmonyos-references/js-apis-app-ability-want.md)进行目标应用组件的匹配，这里说的匹配规则就是调用方传入的[want](../harmonyos-references/js-apis-app-ability-want.md)参数中设置的参数如何与目标应用组件声明的配置文件进行匹配。
@@ -68,7 +68,7 @@ content_hash: sha256:0afb177c2e64e1f39d599bb31c1a786efd8ae4b6c549f20124f56cc84e5
 
 **图1** want参数的action匹配规则
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/lcoumBAtRriC_73WUHWAig/zh-cn_image_0000002558763986.png?HW-CC-KV=V1&HW-CC-Date=20260429T052545Z&HW-CC-Expire=86400&HW-CC-Sign=35A3DEA29DAF742A62CFF288C9CC805CAEC279516C29684743454ADDF6530BBE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/lcoumBAtRriC_73WUHWAig/zh-cn_image_0000002558763986.png)
 
 ### want参数的entities匹配规则
 
@@ -82,7 +82,7 @@ content_hash: sha256:0afb177c2e64e1f39d599bb31c1a786efd8ae4b6c549f20124f56cc84e5
 
 **图2** want参数的entities匹配规则
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/PsDQQ9q9QgeoqSxLUzXW6Q/zh-cn_image_0000002558604330.png?HW-CC-KV=V1&HW-CC-Date=20260429T052545Z&HW-CC-Expire=86400&HW-CC-Sign=58C600FACC7937DE69490B6CD19FE8BFB7BAD394CB2A33EABA84D356049BF3E1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/PsDQQ9q9QgeoqSxLUzXW6Q/zh-cn_image_0000002558604330.png)
 
 ### want参数的uri和type匹配规则
 
@@ -113,7 +113,7 @@ content_hash: sha256:0afb177c2e64e1f39d599bb31c1a786efd8ae4b6c549f20124f56cc84e5
 
 **图3** want参数中uri和type皆不为空时的匹配规则
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/eC3vt4ISTJGsLOrISjKwUA/zh-cn_image_0000002589323855.png?HW-CC-KV=V1&HW-CC-Date=20260429T052545Z&HW-CC-Expire=86400&HW-CC-Sign=423F12339263F8048A621A983F752A5DD4F7A04AA3D6EE685B70C65E9EF53FED)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/eC3vt4ISTJGsLOrISjKwUA/zh-cn_image_0000002589323855.png)
 
 为了简化描述：
 
@@ -122,7 +122,7 @@ content_hash: sha256:0afb177c2e64e1f39d599bb31c1a786efd8ae4b6c549f20124f56cc84e5
 
 **图4** want参数中uri和type的具体匹配规则
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/JdCmlNqwSH6liPa4EM_PDQ/zh-cn_image_0000002589243793.png?HW-CC-KV=V1&HW-CC-Date=20260429T052545Z&HW-CC-Expire=86400&HW-CC-Sign=3F5E17DC556F09F34A84F7CD6DF780BA987667794BE0662EBE0775895E2CF247)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/JdCmlNqwSH6liPa4EM_PDQ/zh-cn_image_0000002589243793.png)
 
 ### uri匹配规则
 
@@ -152,7 +152,7 @@ content_hash: sha256:0afb177c2e64e1f39d599bb31c1a786efd8ae4b6c549f20124f56cc84e5
 
 **图5** want参数中uri的匹配规则示例
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/nNfkrKNqT7yFWCsGDdD5-A/zh-cn_image_0000002558763988.png?HW-CC-KV=V1&HW-CC-Date=20260429T052545Z&HW-CC-Expire=86400&HW-CC-Sign=DC9D1264A4100B19FFCF2FB26FB21C1E6480E9AB4AB222D806F6DDFBB6E32202)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/nNfkrKNqT7yFWCsGDdD5-A/zh-cn_image_0000002558763988.png)
 
 ### type匹配规则
 
@@ -180,6 +180,6 @@ content_hash: sha256:0afb177c2e64e1f39d599bb31c1a786efd8ae4b6c549f20124f56cc84e5
 
 **图6** want参数中linkFeature具体匹配规则
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/gR67S0GbQoK_NlmQQdQIsg/zh-cn_image_0000002558604332.png?HW-CC-KV=V1&HW-CC-Date=20260429T052545Z&HW-CC-Expire=86400&HW-CC-Sign=5703409F49CBD7A548A80EAAC338BBB334EFA8CADDD632D173418F2ACE512372)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/gR67S0GbQoK_NlmQQdQIsg/zh-cn_image_0000002558604332.png)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/UbuJZwdSRLKJVrOPsVS6EA/zh-cn_image_0000002589323857.png?HW-CC-KV=V1&HW-CC-Date=20260429T052545Z&HW-CC-Expire=86400&HW-CC-Sign=0546A97E406BEF4ED048631F6E5E0EB011DA0B03064A978BDA8BF644F8DD902E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/UbuJZwdSRLKJVrOPsVS6EA/zh-cn_image_0000002589323857.png)

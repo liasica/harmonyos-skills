@@ -5,14 +5,14 @@ breadcrumb: FAQ > DevEco Studio > 编译构建 > 执行sync过程中修改Hvigor
 category: harmonyos-faqs
 scraped_at: 2026-04-29T14:20:28+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:91043d4d006e991977fe8be37be1dc5f3b911d6db274f7159085b29f8e744067
+content_hash: sha256:989e2986fbb6c7f8d6ad6adcc8b935dc46576760e283095068c121a749939669
 ---
 
 **问题现象**
 
 在配置Hvigor和hvigor-ohos-plugin的版本号后，点击Sync。如果之后再次修改了版本号，会导致重复下载引发版本冲突，表现为build init报错及日志刷屏。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/aj3lPDNER_abIxKLdqLeyQ/zh-cn_image_0000002194158832.png?HW-CC-KV=V1&HW-CC-Date=20260429T062026Z&HW-CC-Expire=86400&HW-CC-Sign=AE14CC6A5AFAD41E3C479CAAC06DAA5B5D7C581767C8D9292B318B75553AFC51)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/aj3lPDNER_abIxKLdqLeyQ/zh-cn_image_0000002194158832.png)
 
 **解决措施**
 

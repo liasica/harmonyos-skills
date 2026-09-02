@@ -5,7 +5,7 @@ breadcrumb: FAQ > 应用框架开发 > NDK开发 > 任务并发调度（Function
 category: harmonyos-faqs
 scraped_at: 2026-04-29T14:16:04+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:1e6b27331d1b923bd92aad471a388ae28b9e20c3be7e4ca74dabd9a211bbcdb5
+content_hash: sha256:e84ee6062462e4e71bef99caaab6e53f8055429218f65a2cc6a4711412d9a629
 ---
 
 该场景可以通过在Native侧获取ArkTS侧的Promise对象来实现。具体步骤如下：
@@ -139,7 +139,7 @@ content_hash: sha256:1e6b27331d1b923bd92aad471a388ae28b9e20c3be7e4ca74dabd9a211b
 
 运行结果
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/aFkvAtmORXyMZ1TkRLUsiA/zh-cn_image_0000002194158996.png?HW-CC-KV=V1&HW-CC-Date=20260429T061603Z&HW-CC-Expire=86400&HW-CC-Sign=FF34DD3A506AAE3950527B196C7EADB0AB62DBCA0C5C253165BBAA34C15761CE "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/aFkvAtmORXyMZ1TkRLUsiA/zh-cn_image_0000002194158996.png "点击放大")
 
 * 结果（1）：表示ArkTS侧调用Native接口后，Native侧运行未阻塞，直接返回。
 * 结果（2）：表示ArkTS侧调用Native接口后，等待2秒（异步计算）。如果异步操作中生成的随机数小于或等于50，通过Promise对象的reject接口传入异常信息到Native侧，并通过catch回调进行处理。

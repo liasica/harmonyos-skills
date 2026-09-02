@@ -5,7 +5,7 @@ breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:41:10+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:47378b9d838a9b870df6fa0d3703f98d454808502eac0fd12fed596f2c334c78
+content_hash: sha256:452c7108b944d95821fc5854fc811405184c43af10a7058dac90e200d94ff2bb
 ---
 
 算子kernel侧和host侧实现开发完成后，需要对算子工程进行编译，将自定义算子部署到omg工具中，详细的编译操作包括：
@@ -23,7 +23,7 @@ content_hash: sha256:47378b9d838a9b870df6fa0d3703f98d454808502eac0fd12fed596f2c3
 
 **图1** 算子工程编译示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/cJvP3relQsm_auCKkTK5ug/zh-cn_image_0000002558765750.png?HW-CC-KV=V1&HW-CC-Date=20260429T054109Z&HW-CC-Expire=86400&HW-CC-Sign=92939C22194D82CFB50C5310FFB13264D1760F9304D25D3CA6D5DFB53DA03786)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/cJvP3relQsm_auCKkTK5ug/zh-cn_image_0000002558765750.png)
 
 ## 编译步骤
 

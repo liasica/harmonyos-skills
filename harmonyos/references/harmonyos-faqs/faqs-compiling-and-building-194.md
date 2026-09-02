@@ -5,14 +5,14 @@ breadcrumb: FAQ > DevEco Studio > 编译构建 > 编译报错“failed with:Exit
 category: harmonyos-faqs
 scraped_at: 2026-04-29T14:21:06+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:85113c621bd2d890a272db8b3d9785dbfdb50094042449628e90444f50ef34c8
+content_hash: sha256:dac8d614b3d8894b85b89a836f71679a0be2ad88a44b35aedd91f4d678970ca6
 ---
 
 **问题现象**
 
 编译构建Native C++模块时，出现报错“failed with:Exit code 0xc0000043”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/cb4xJXx6QSGqeOmqLucQ5g/zh-cn_image_0000002547275017.png?HW-CC-KV=V1&HW-CC-Date=20260429T062105Z&HW-CC-Expire=86400&HW-CC-Sign=F7944CEDC5CF5EDDFEA9D13314890789450392E0BA69F5512C1F424943A64A90)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/cb4xJXx6QSGqeOmqLucQ5g/zh-cn_image_0000002547275017.png)
 
 **问题原因**
 

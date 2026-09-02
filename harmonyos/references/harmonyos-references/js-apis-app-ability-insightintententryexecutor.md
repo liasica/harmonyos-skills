@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-insightintententryexecutor
-title: @ohos.app.ability.InsightIntentEntryExecutor (@InsightIntentEntry的意图执行基类)
+title: "@ohos.app.ability.InsightIntentEntryExecutor (@InsightIntentEntry的意图执行基类)"
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > Stage模型能力的接口 > @ohos.app.ability.InsightIntentEntryExecutor (@InsightIntentEntry的意图执行基类)
 category: harmonyos-references
 scraped_at: 2026-04-28T07:58:20+08:00

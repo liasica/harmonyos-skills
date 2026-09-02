@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:51:53+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:b3ba96214b7e764d2906a451f3b2e346f2122c149f8c1c7fe2797c2ed0971525
+content_hash: sha256:de1ef40b075ad42688a45825e8fc2a9f57882706628aedf6de6cf9746e6074cb
 ---
 
 作为子页面的根容器，用于显示[Navigation](ts-basic-components-navigation.md)的内容区。
@@ -1170,7 +1170,7 @@ PhonePC/2in1TabletTVWearable
 137. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/TAOkrT_uQNWOIBeuyVR22Q/zh-cn_image_0000002558606534.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055150Z&HW-CC-Expire=86400&HW-CC-Sign=3C975B471E4BE56638A9017EB5DE2F9AFF36091EC3AB135259528BB6F3688B2A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/TAOkrT_uQNWOIBeuyVR22Q/zh-cn_image_0000002558606534.gif)
 
 ### 示例2（设置NavDestination自定义转场）
 
@@ -1312,7 +1312,7 @@ PhonePC/2in1TabletTVWearable
 133. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/fptm5K21Q4CIKhHPoNO92g/zh-cn_image_0000002589326061.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055150Z&HW-CC-Expire=86400&HW-CC-Sign=4CD9C06916A194ACE7E86713BF603A80377982B6B8C47D541007DF2CB000DE7C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/fptm5K21Q4CIKhHPoNO92g/zh-cn_image_0000002589326061.gif)
 
 ### 示例3（设置指定的NavDestination系统转场）
 
@@ -1560,13 +1560,13 @@ PhonePC/2in1TabletTVWearable
 239. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/QRu7i_5xQACrdcwJyz0-Vg/zh-cn_image_0000002589246003.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055150Z&HW-CC-Expire=86400&HW-CC-Sign=6906D20C239F2A2E2095224E25672B2EA7450C604B20BA22F7935A4710D18CD7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/QRu7i_5xQACrdcwJyz0-Vg/zh-cn_image_0000002589246003.gif)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/xbIZcIIHQ0een67Z26qiSg/zh-cn_image_0000002558766194.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055150Z&HW-CC-Expire=86400&HW-CC-Sign=D3CC599B31CAD05A6CFA1BB7846603137103A97BC44A5979EAE25D792B2D814E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/xbIZcIIHQ0een67Z26qiSg/zh-cn_image_0000002558766194.gif)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/NArEB4IOTfGnDfJzkvuxCA/zh-cn_image_0000002558606536.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055150Z&HW-CC-Expire=86400&HW-CC-Sign=766AAF2F092C18CB5FCBB9ECBF47200F7672EEB376584A95B59BB7C7B67498F9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/NArEB4IOTfGnDfJzkvuxCA/zh-cn_image_0000002558606536.gif)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/53ZVxSCKStq8RaNjZfwgOw/zh-cn_image_0000002589326063.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055150Z&HW-CC-Expire=86400&HW-CC-Sign=A6CE572924ABF196F0BAD4B7F8EC19F4200EE8B9AEF4A488CFCFC8CE83E04D46)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/53ZVxSCKStq8RaNjZfwgOw/zh-cn_image_0000002589326063.gif)
 
 ### 示例4（NavDestination配置页面方向和对应状态栏、导航条显隐）
 
@@ -1655,7 +1655,7 @@ PhonePC/2in1TabletTVWearable
 80. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/dLOvns6ZQhaHFvCbuG9_Bg/zh-cn_image_0000002589246005.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055150Z&HW-CC-Expire=86400&HW-CC-Sign=BF859F5809BDF6EC4F2856F51CF9940306EE0F0FF799F4D405C7BC4A367BBABA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/dLOvns6ZQhaHFvCbuG9_Bg/zh-cn_image_0000002589246005.gif)
 
 ### 示例5（NavDestination的onActive与onInActive生命周期）
 
@@ -1872,6 +1872,6 @@ PhonePC/2in1TabletTVWearable
 208. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/V2I1GC7jR5iLDWcJOQdfHw/zh-cn_image_0000002558766196.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055150Z&HW-CC-Expire=86400&HW-CC-Sign=9A2254D7E81A2DEBEFE0DF22FCC316DBFD414A0A9882535F5893ABC6B12174A8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/V2I1GC7jR5iLDWcJOQdfHw/zh-cn_image_0000002558766196.gif)
 
 NavDestination其他用法可参考[Navigation示例](ts-basic-components-navigation.md#示例)。

@@ -5,14 +5,14 @@ breadcrumb: 指南 > 应用服务 > PDF Kit（PDF服务） > pdfService能力 > 
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:39:45+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:f49a1bbf9a21514f7cfdb89124669bf8d94caec9b263838e0b589b327b3c4fcd
+content_hash: sha256:5f349bee2357111d2d509153e285e4d8497c5affabf515bb5b6af6f348726c4e
 ---
 
 PDF Kit支持添加和删除PDF文档书签。
 
 添加书签时，可设置标题、颜色，是否粗体、斜体、跳转信息等。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/wc4ukonVTFCEcNq7kBcJug/zh-cn_image_0000002589245411.png?HW-CC-KV=V1&HW-CC-Date=20260429T053944Z&HW-CC-Expire=86400&HW-CC-Sign=844C2723DEDA473DFE9C562097CC1F0C6C18E3A4B25FC0158B93245D70356D71)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/wc4ukonVTFCEcNq7kBcJug/zh-cn_image_0000002589245411.png)
 
 ## 接口说明
 

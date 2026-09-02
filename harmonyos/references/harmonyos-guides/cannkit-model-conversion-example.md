@@ -5,7 +5,7 @@ breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 模型转
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:40:57+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:6d50169e69aae961aac6fefef3fd3920ca719f638f7fb6fc10f75fedba31d9d7
+content_hash: sha256:0c001ae3707f67c887f8e4c0ce48a9a874a079b504b4bb5161bd69d05d8c05e5
 ---
 
 使用CANN Kit SDK时，可以预先使用OMG工具将Caffe、TensorFlow、ONNX、MindSpore模型转换为OM离线模型，移动端AI程序直接读取离线模型进行推理。OMG工具位于[Tools下载](cannkit-preparations.md#tools下载)的tools/tools\_omg下，可运行在64位Linux平台上。
@@ -64,7 +64,7 @@ content_hash: sha256:6d50169e69aae961aac6fefef3fd3920ca719f638f7fb6fc10f75fedba3
 
 当看到如下log时，则说明转换成功，会在当前目录下生成resnet18.om。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/tTeW9L03RcOeBXQHKyaWyA/zh-cn_image_0000002589245525.png?HW-CC-KV=V1&HW-CC-Date=20260429T054056Z&HW-CC-Expire=86400&HW-CC-Sign=2CB7C4C15CBED325B5DA05C66DD76F99B9E1FE2657AFF1A888639A1B0C9F0698)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/tTeW9L03RcOeBXQHKyaWyA/zh-cn_image_0000002589245525.png)
 
 ## 量化模型转换（以Caffe模型为例）
 

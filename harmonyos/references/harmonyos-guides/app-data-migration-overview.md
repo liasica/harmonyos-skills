@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > Core File Kit（文件基础服务） > 应�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:29:41+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:6803d051b5f39184f0e5dc3415cb5044c3ef70b9ed56116018af2b0e26eb8372
+content_hash: sha256:897ee5a1098c49d89797b654aedab84e9fb0cb5be9c182b6b125244b304511e3
 ---
 
 ## 使用场景
@@ -14,7 +14,7 @@ content_hash: sha256:6803d051b5f39184f0e5dc3415cb5044c3ef70b9ed56116018af2b0e26e
 
 如下图所示，应用需要的数据，包含云端服务器中的数据，本地应用沙箱中的数据和本地公共媒体库中的数据。为了应用的数据可以继承，开发者需要保证云端数据定义兼容APK应用和HarmonyOS应用，确保系统升级后同一账号下的数据可识别。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/YdLFJLdyTEK4yKfPRSX9DA/zh-cn_image_0000002558764758.png?HW-CC-KV=V1&HW-CC-Date=20260429T052940Z&HW-CC-Expire=86400&HW-CC-Sign=FAA73B86C58BC0C3CBFE8C3AACCE876BFAF74BDD8404D2D45D65FE70F54B3358)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/YdLFJLdyTEK4yKfPRSX9DA/zh-cn_image_0000002558764758.png)
 
 ## 数据迁移机制
 
@@ -40,10 +40,10 @@ content_hash: sha256:6803d051b5f39184f0e5dc3415cb5044c3ef70b9ed56116018af2b0e26e
 
 后续HarmonyOS应用通过访问HarmonyOS应用沙箱获取应用的数据。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/KWGnrVGaSsGl5YKkWBCKaw/zh-cn_image_0000002558605102.png?HW-CC-KV=V1&HW-CC-Date=20260429T052940Z&HW-CC-Expire=86400&HW-CC-Sign=A5EBE08B256C609DDCF328C262EC257C5C29707E4487C08E57133CC033D05CB8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/KWGnrVGaSsGl5YKkWBCKaw/zh-cn_image_0000002558605102.png)
 
 ### 公共媒体库中数据迁移机制
 
 公共媒体库中的数据，在终端设备从HarmonyOS升级到HarmonyOS NEXT后，会整体搬迁直接继承。应用可以使用HarmonyOS NEXT提供的API，访问公共媒体库中的数据。媒体库的使用指导可以参考：[媒体文件管理服务](photoaccesshelper-overview.md)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/446ptf-ATX-cqpvP2FJc8Q/zh-cn_image_0000002589324627.png?HW-CC-KV=V1&HW-CC-Date=20260429T052940Z&HW-CC-Expire=86400&HW-CC-Sign=7B4271EE935BB8BB6C1589FDA5830C3EBE0F3953C2AD1A53273748E0A8263869)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/446ptf-ATX-cqpvP2FJc8Q/zh-cn_image_0000002589324627.png)

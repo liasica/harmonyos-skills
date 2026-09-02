@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:51:15+08:00
 doc_updated_at: 2026-03-23
-content_hash: sha256:5722bad09ff4b20a8a3b09bdb6de0f49f506666a0492d0c27ed37f0a2ab26028
+content_hash: sha256:96b113c85b2d8b9df417f3349239a44ff35f54cac4e995eb65c09176e871e229
 ---
 
 设置组件的宽高、边距。
@@ -444,7 +444,7 @@ PhonePC/2in1TabletTVWearable
 90. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/zdyr7y6pQN6MHVFVmyH6eQ/zh-cn_image_0000002589245819.png?HW-CC-KV=V1&HW-CC-Date=20260429T055114Z&HW-CC-Expire=86400&HW-CC-Sign=F14A629041340D990AF6564A0806F9F8418E9DC563EC420AF11E63DD7B8F2256)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/zdyr7y6pQN6MHVFVmyH6eQ/zh-cn_image_0000002589245819.png)
 
 ### 示例2（LocalizedPadding和LocalizedMargin类型的使用）
 
@@ -496,11 +496,11 @@ PhonePC/2in1TabletTVWearable
 
 从左至右显示语言示例图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/BxM_8NhKT6SeZEdZpo4_YQ/zh-cn_image_0000002558766010.png?HW-CC-KV=V1&HW-CC-Date=20260429T055114Z&HW-CC-Expire=86400&HW-CC-Sign=CD6FF98E13BC4A49D39A913236098514B847E70FB645525EAF17A2286DD23820)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/BxM_8NhKT6SeZEdZpo4_YQ/zh-cn_image_0000002558766010.png)
 
 从右至左显示语言示例图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/crfQJwW0T8yJ86STuVfMFA/zh-cn_image_0000002558606352.png?HW-CC-KV=V1&HW-CC-Date=20260429T055114Z&HW-CC-Expire=86400&HW-CC-Sign=301AC16EF88CA98722572A76B36B17B48733E4BB350187B764A89DF31D15BCE7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/crfQJwW0T8yJ86STuVfMFA/zh-cn_image_0000002558606352.png)
 
 ### 示例3（设置组件级安全区）
 
@@ -534,7 +534,7 @@ PhonePC/2in1TabletTVWearable
 25. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/vmYfCzzARCOcNz496mG4cQ/zh-cn_image_0000002589325879.png?HW-CC-KV=V1&HW-CC-Date=20260429T055114Z&HW-CC-Expire=86400&HW-CC-Sign=A097FA774F8F30B0D3613B65B22DC6C502ECB3BA62D52D56CDBC0BA0AC80A779)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/vmYfCzzARCOcNz496mG4cQ/zh-cn_image_0000002589325879.png)
 
 ### 示例4（使用attributeModifier动态设置安全区）
 
@@ -579,7 +579,7 @@ PhonePC/2in1TabletTVWearable
 36. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/-_9fwWkJQRSj1VJdV6ftag/zh-cn_image_0000002589245821.png?HW-CC-KV=V1&HW-CC-Date=20260429T055114Z&HW-CC-Expire=86400&HW-CC-Sign=4472BFFE991052E34ED6AA8F57A07B729CE6EF9A1F0217F78C7F68AE91D2ECED)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/-_9fwWkJQRSj1VJdV6ftag/zh-cn_image_0000002589245821.png)
 
 ### 示例5（设置布局策略）
 
@@ -636,4 +636,4 @@ PhonePC/2in1TabletTVWearable
 48. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/xNsDM84QRxiMtENTareFYg/zh-cn_image_0000002558766012.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T055114Z&HW-CC-Expire=86400&HW-CC-Sign=87BA1A91C4983A355BB9B036B97339D307B56C4CB3F0478795E6299D8E83C70A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/xNsDM84QRxiMtENTareFYg/zh-cn_image_0000002558766012.jpg)

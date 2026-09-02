@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:52:45+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:e1bcee75bb3a266917c7f8c54b55842748f4aa7b08b6a58b42976b975ce3c7f1
+content_hash: sha256:77436dd5e3bf567d2ff7eb57dda8e584d95b3b5d5bd15d1315e3b44587e38461
 ---
 
 通过CustomDialogController类显示自定义弹窗。使用弹窗组件时，优先考虑自定义弹窗，便于弹窗样式与内容的自定义。
@@ -352,7 +352,7 @@ PhonePC/2in1TabletTVWearable
 140. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/7jOXvP3XTzminD7XnCxh-w/zh-cn_image_0000002558766568.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055243Z&HW-CC-Expire=86400&HW-CC-Sign=A16FCAF6D13A2A5A25FA2CAA2B4D938592E398F831DA9CCF6119C9243DA8C413)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/7jOXvP3XTzminD7XnCxh-w/zh-cn_image_0000002558766568.gif)
 
 ### 示例2（可在主窗外弹出的弹窗）
 
@@ -441,7 +441,7 @@ PhonePC/2in1TabletTVWearable
 80. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/STNGYpHnTFajiOJsDtQCDg/zh-cn_image_0000002558606908.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T055243Z&HW-CC-Expire=86400&HW-CC-Sign=33000643728FAC9E1FF81013CEDEAE71A58C48CB955A7D7E772ECFB37E4F0ED4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/STNGYpHnTFajiOJsDtQCDg/zh-cn_image_0000002558606908.jpg)
 
 ### 示例3（设置弹窗的样式）
 
@@ -533,7 +533,7 @@ PhonePC/2in1TabletTVWearable
 83. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/UvT2yQLaSuyxLJ2HROjItQ/zh-cn_image_0000002589326435.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055243Z&HW-CC-Expire=86400&HW-CC-Sign=8470572C4B23E9FA3FBC2F0352F740B5CEB0B2F9FC93D410A879F6A32266B75E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/UvT2yQLaSuyxLJ2HROjItQ/zh-cn_image_0000002589326435.gif)
 
 ### 示例4（悬停态弹窗）
 
@@ -627,7 +627,7 @@ PhonePC/2in1TabletTVWearable
 85. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/1h_2luD3TMa8IYeACXR2dQ/zh-cn_image_0000002589246377.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055243Z&HW-CC-Expire=86400&HW-CC-Sign=D90D685A10A790C7520CE44F6AF692EB9006349118713FC47AC6C31C2A136524)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/1h_2luD3TMa8IYeACXR2dQ/zh-cn_image_0000002589246377.gif)
 
 ### 示例5（获取弹窗的状态）
 
@@ -792,7 +792,7 @@ PhonePC/2in1TabletTVWearable
 95. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/Ix0IKxKsQ4yFDeAnj2xPAA/zh-cn_image_0000002558766570.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055243Z&HW-CC-Expire=86400&HW-CC-Sign=798E5E03895512F679B5F25F93602A81C8B6C8C2A90DA9F194C0D10EE34589EC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/Ix0IKxKsQ4yFDeAnj2xPAA/zh-cn_image_0000002558766570.gif)
 
 ### 示例7（自定义带loading的弹窗）
 
@@ -897,7 +897,7 @@ PhonePC/2in1TabletTVWearable
 96. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/QmK4FJ0tQn6v-188gKmH-g/zh-cn_image_0000002558606910.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055243Z&HW-CC-Expire=86400&HW-CC-Sign=1D75C9E7EF662AC123F9046D9CE779FDA86E0148352F3189B073034D28AC24B2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/QmK4FJ0tQn6v-188gKmH-g/zh-cn_image_0000002558606910.gif)
 
 ### 示例8（不使用keyboardAvoidDistance调整弹窗与软键盘的间距）
 
@@ -1036,7 +1036,7 @@ PhonePC/2in1TabletTVWearable
 128. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/YdYxwEjSTj2-hMqMo-QQ9w/zh-cn_image_0000002589326437.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055243Z&HW-CC-Expire=86400&HW-CC-Sign=1D8B10EAD7AC60E1EC4DECC4804FB212E1D26AA97E682F0D5CDC341E7193005F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/YdYxwEjSTj2-hMqMo-QQ9w/zh-cn_image_0000002589326437.gif)
 
 ### 示例9（弹窗生命周期）
 
@@ -1133,7 +1133,7 @@ PhonePC/2in1TabletTVWearable
 86. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/zOEPo1QSQxec8FueLveBKA/zh-cn_image_0000002589246379.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055243Z&HW-CC-Expire=86400&HW-CC-Sign=B32A0F622AF5CC14AD806F47D364F512ADE736393BCA9A4AAB795E97337FDF8F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/zOEPo1QSQxec8FueLveBKA/zh-cn_image_0000002589246379.gif)
 
 ### 示例10（不同customStyle下的弹窗示例）
 
@@ -1219,7 +1219,7 @@ PhonePC/2in1TabletTVWearable
 77. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/GDe9evVjQ5u5n1PcXezSxg/zh-cn_image_0000002558766572.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055243Z&HW-CC-Expire=86400&HW-CC-Sign=EE5848171955FDE079B0C5DEFB022951E803281D790C6FAC60B5CA9D5E500C35)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/GDe9evVjQ5u5n1PcXezSxg/zh-cn_image_0000002558766572.gif)
 
 ### 示例11（自定义背景模糊效果参数）
 
@@ -1281,7 +1281,7 @@ PhonePC/2in1TabletTVWearable
 51. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/cFJmn920SWO5oct2xnq6mw/zh-cn_image_0000002558606912.png?HW-CC-KV=V1&HW-CC-Date=20260429T055243Z&HW-CC-Expire=86400&HW-CC-Sign=17A9ACC4DDA6D442E070609E91AC85383A96E689CDE0B5C89F10281AEA7072B0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/cFJmn920SWO5oct2xnq6mw/zh-cn_image_0000002558606912.png)
 
 ### 示例12（自定义背景效果参数）
 
@@ -1344,7 +1344,7 @@ PhonePC/2in1TabletTVWearable
 52. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/AMIKaOOETQK7j6MNJvSclw/zh-cn_image_0000002589326439.png?HW-CC-KV=V1&HW-CC-Date=20260429T055243Z&HW-CC-Expire=86400&HW-CC-Sign=C92837FFFA4DEAFD5C163D0CC1DCAE759BCDEF831019315F5735EA4C21A07A38)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/AMIKaOOETQK7j6MNJvSclw/zh-cn_image_0000002589326439.png)
 
 ### 示例13（自定义弹窗动态刷新宽度）
 
@@ -1411,4 +1411,4 @@ PhonePC/2in1TabletTVWearable
 58. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/IhVvQ0_VRm-XF_xG8lzJPw/zh-cn_image_0000002589246381.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055243Z&HW-CC-Expire=86400&HW-CC-Sign=108022CB19FDBE4AF6DCD704B4588AF0F0FEDFCEE97AB24296B2C828BF4541B2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/IhVvQ0_VRm-XF_xG8lzJPw/zh-cn_image_0000002589246381.gif)

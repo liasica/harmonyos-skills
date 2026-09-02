@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 在地图上绘�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:39:09+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:c0e620cb9b1d6a95e8c04648a4b7021996e21f87362e23230e0f27c93597e2a4
+content_hash: sha256:e583a0bdb1ebc7e983f398aa636d824a7ad095f95b47540a4105df2bda746edb
 ---
 
 ## 场景介绍
@@ -20,7 +20,7 @@ Marker有默认风格，同时也支持自定义。由于内容丰富，以下�
 
 6.0.0(20)开始，支持自定义组件实现marker图标功能。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/Cab_5UTgQH6qaay080pl1w/zh-cn_image_0000002589325399.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053504Z&HW-CC-Expire=86400&HW-CC-Sign=D9C8289894092763BCEC38027A8C410F5B3878B4FA8323459D0039DEAB615E54 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/Cab_5UTgQH6qaay080pl1w/zh-cn_image_0000002589325399.jpg "点击放大")
 
 ## 接口说明
 
@@ -107,7 +107,7 @@ Marker有默认风格，同时也支持自定义。由于内容丰富，以下�
    60. }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/FnQUU41ZQICLSnbGA7OUgg/zh-cn_image_0000002589245337.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053504Z&HW-CC-Expire=86400&HW-CC-Sign=F0378799F809A544E67784FAF7BFEB67AF4ED970D973AA60D52F94FC49348CAD "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/FnQUU41ZQICLSnbGA7OUgg/zh-cn_image_0000002589245337.jpg "点击放大")
 3. 在添加标记之后，修改已经设置的标记属性。
 
    ```
@@ -142,7 +142,7 @@ Marker有默认风格，同时也支持自定义。由于内容丰富，以下�
 18. this.marker = await this.mapController.addMarker(markerOptions);
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/LLHV-xxBSsinCm1VkKQiMg/zh-cn_image_0000002558765530.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053504Z&HW-CC-Expire=86400&HW-CC-Sign=08857DF71FC6B1BB7040FF977E15A47920858CE61BCD7F7F2EFC9CA74D8DB7B0 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/LLHV-xxBSsinCm1VkKQiMg/zh-cn_image_0000002558765530.jpg "点击放大")
 
 ### 控制Marker文字显隐
 
@@ -183,11 +183,11 @@ Marker有默认风格，同时也支持自定义。由于内容丰富，以下�
 
 **图1** 隐藏Marker文字之前
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/K0ioGMFZQf6HGxLmSz7AyA/zh-cn_image_0000002558605874.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053504Z&HW-CC-Expire=86400&HW-CC-Sign=280F7C5ACA0A088FC170A260AFC579BBBAE17085ACA7AA43BF3FBD3902A57A1D "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/K0ioGMFZQf6HGxLmSz7AyA/zh-cn_image_0000002558605874.jpg "点击放大")
 
 **图2** 隐藏Marker文字之后
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/JEZDXtLbQteZDBtC2qEBgw/zh-cn_image_0000002589325401.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053504Z&HW-CC-Expire=86400&HW-CC-Sign=1F57EBF8F56623F2096A314E5E897E3155B7FEE504939C4A7FCB35C30F687C44 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/JEZDXtLbQteZDBtC2qEBgw/zh-cn_image_0000002589325401.jpg "点击放大")
 
 ### 碰撞检测
 
@@ -224,7 +224,7 @@ Marker有默认风格，同时也支持自定义。由于内容丰富，以下�
 28. this.marker = await this.mapController.addMarker(markerOptions);
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/DpK8xIVtRROVrEU5x-VRfQ/zh-cn_image_0000002589245339.gif?HW-CC-KV=V1&HW-CC-Date=20260429T053504Z&HW-CC-Expire=86400&HW-CC-Sign=2EA4D9296129D9B02C2464F2CE7B6482CA54C050CDD73FDB4FAADDDB45752609 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/DpK8xIVtRROVrEU5x-VRfQ/zh-cn_image_0000002589245339.gif "点击放大")
 
 ### 设置监听标记点击事件
 
@@ -290,7 +290,7 @@ Marker有默认风格，同时也支持自定义。由于内容丰富，以下�
 18. this.marker.setInfoWindowVisible(true);
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/HG2-NETXT4anIpIbTkdp0w/zh-cn_image_0000002558765532.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053504Z&HW-CC-Expire=86400&HW-CC-Sign=0AEBAEA7C415D7FD12DCA6211D04FD0E46B33AA51B16CAEFB26A1C33305E7A53 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/HG2-NETXT4anIpIbTkdp0w/zh-cn_image_0000002558765532.jpg "点击放大")
 
 ### 自定义信息窗
 
@@ -366,7 +366,7 @@ Marker有默认风格，同时也支持自定义。由于内容丰富，以下�
 69. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/70YL59AkR6qsikXlj95UMw/zh-cn_image_0000002558605876.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053504Z&HW-CC-Expire=86400&HW-CC-Sign=03B7CCAC15C13A42B67F725AAB428BB7E5D73C18CA3A3998D16914D4464EAF25 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/70YL59AkR6qsikXlj95UMw/zh-cn_image_0000002558605876.jpg "点击放大")
 
 ### 标记动画
 
@@ -463,7 +463,7 @@ Marker支持设置旋转、缩放、平移、透明、图片动画播放和组�
 
 展示效果如图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/4XV0OYT_SGumdCVkKG6hZw/zh-cn_image_0000002589325403.gif?HW-CC-KV=V1&HW-CC-Date=20260429T053504Z&HW-CC-Expire=86400&HW-CC-Sign=78AEC4906AA65270A5B2DE373CC8888C489ADA226272D5A3619D88F1C5E01D92 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/4XV0OYT_SGumdCVkKG6hZw/zh-cn_image_0000002589325403.gif "点击放大")
 
 ### 图片动画播放
 
@@ -563,7 +563,7 @@ Marker支持设置旋转、缩放、平移、透明、图片动画播放和组�
 
 展示效果如图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/hi8WVYrER6Gg4GVXfb36lw/zh-cn_image_0000002589245341.gif?HW-CC-KV=V1&HW-CC-Date=20260429T053504Z&HW-CC-Expire=86400&HW-CC-Sign=8D822B59DED9653FD264C0EE398F73330C3D4944C79A23D8C2EDBDA3523B3D73 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/hi8WVYrER6Gg4GVXfb36lw/zh-cn_image_0000002589245341.gif "点击放大")
 
 ### 自定义组件实现marker图标
 
@@ -634,4 +634,4 @@ Marker支持设置旋转、缩放、平移、透明、图片动画播放和组�
 
 展示效果如图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/bQoOh2cFTriDk7YY2sg1vw/zh-cn_image_0000002558765534.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053504Z&HW-CC-Expire=86400&HW-CC-Sign=56FCED0D81EB4B5FFCE26AC667766861454A9BFB5B6A4328A3EE38F146EF3090 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/bQoOh2cFTriDk7YY2sg1vw/zh-cn_image_0000002558765534.jpg "点击放大")

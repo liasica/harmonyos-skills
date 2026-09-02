@@ -5,7 +5,7 @@ breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > 音频编创 > 音�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:34:36+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:482d7697e8b539187fadf83bf70974b0bf3505e13f9e63894fdca65e4eb24308
+content_hash: sha256:46bf1e7578f6ded95715c8434a45f9cbab43da048b7665585cb00c2bdfcf134d
 ---
 
 从API version 22开始，支持音频编创（[OHAudioSuite](../harmonyos-references/capi-ohaudiosuite.md)）功能。音频编创是一款提供专业级音频效果处理的开发接口，旨在帮助开发者高效构建各种音频创作应用。该套件提供高品质、低延迟、智能化的音频处理能力，集成了降噪、均衡器、人声分离等丰富音效功能。开发者可以根据具体的应用场景，轻松地将所需音频功能集成到应用中。
@@ -14,7 +14,7 @@ content_hash: sha256:482d7697e8b539187fadf83bf70974b0bf3505e13f9e63894fdca65e4eb
 
 **图1**：音频编创实现原理图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/-5CwdegoQDehLZzMSyGQuw/zh-cn_image_0000002589244841.png?HW-CC-KV=V1&HW-CC-Date=20260429T053435Z&HW-CC-Expire=86400&HW-CC-Sign=5986504B0CDD608C330A78246DCC5DE8738313C56C0033B76130596A34E04ECD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/-5CwdegoQDehLZzMSyGQuw/zh-cn_image_0000002589244841.png)
 
 ## 引擎
 
@@ -54,7 +54,7 @@ content_hash: sha256:482d7697e8b539187fadf83bf70974b0bf3505e13f9e63894fdca65e4eb
 
 **图2**：管线运行状态图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/UMNUBHD0RhiKxTdQQ4gMqg/zh-cn_image_0000002558765036.png?HW-CC-KV=V1&HW-CC-Date=20260429T053435Z&HW-CC-Expire=86400&HW-CC-Sign=F432F516B327135E5BD7769D0C6EE8CF89FD4507189451F82D253C0A80692B33)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/UMNUBHD0RhiKxTdQQ4gMqg/zh-cn_image_0000002558765036.png)
 
 状态的功能如下表所示。
 

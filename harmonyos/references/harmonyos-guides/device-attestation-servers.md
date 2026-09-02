@@ -5,7 +5,7 @@ breadcrumb: 指南 > 系统 > 安全 > Universal Keystore Kit（密钥管理服�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:32:10+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:f46456462822670b51d2fc0202f372a0b14d4f5db90727e20ee5982a023e214a
+content_hash: sha256:8bb4919f632c9653635a63c3352afd17d111d46c3fc999416842d851801d3e74
 ---
 
 ## 校验密钥证明证书链
@@ -28,9 +28,9 @@ content_hash: sha256:f46456462822670b51d2fc0202f372a0b14d4f5db90727e20ee5982a023
 
 **密钥证明证书格式说明：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/jTU0J0AeQHml8wVns6pJXQ/zh-cn_image_0000002558605256.png?HW-CC-KV=V1&HW-CC-Date=20260429T053209Z&HW-CC-Expire=86400&HW-CC-Sign=D1697E3E1BCECF5FF389F0F5417730FF2B017218380E55621DBF78F9EE3CCAAA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/jTU0J0AeQHml8wVns6pJXQ/zh-cn_image_0000002558605256.png)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/L6r84f5RR0KhQrl52Cf-Mw/zh-cn_image_0000002589324781.png?HW-CC-KV=V1&HW-CC-Date=20260429T053209Z&HW-CC-Expire=86400&HW-CC-Sign=166395A9287F6182818C55DA6D2BCF59E74EED414C664B7B09E4634881587179)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/L6r84f5RR0KhQrl52Cf-Mw/zh-cn_image_0000002589324781.png)
 
 密钥证明扩展域段为Asn.1 DER标准编码格式，数据结构定义如下：
 

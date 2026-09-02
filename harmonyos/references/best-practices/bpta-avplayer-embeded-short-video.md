@@ -5,7 +5,7 @@ breadcrumb: 最佳实践 > 媒体 > 音频和视频 > 基于AVPlayer播放视频
 category: best-practices
 scraped_at: 2026-04-29T14:11:21+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:62d64c937cc0905c9c0fa8b7f9832f7b53ea4c307ed014f40e2e87cae5b63858
+content_hash: sha256:32048c7283c4859ed1eae3df03d27638c667c654969732d13fa3215137c2eebc
 ---
 
 ## 概述
@@ -31,7 +31,7 @@ content_hash: sha256:62d64c937cc0905c9c0fa8b7f9832f7b53ea4c307ed014f40e2e87cae5b
 
 前台视频播放过程中，音频被后台闹钟、电话等中断事件打断，完成播放过程音视频焦点管理。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/Zc4VLJL5Qe-VmJz2WxnkKw/zh-cn_image_0000002485843225.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061114Z&HW-CC-Expire=86400&HW-CC-Sign=5D1EA106F88D467AE4E5F4207977B593B4F58288E5AC38C074BE1503E8A8E03E "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/Zc4VLJL5Qe-VmJz2WxnkKw/zh-cn_image_0000002485843225.gif "点击放大")
 
 ### 开发步骤
 
@@ -43,7 +43,7 @@ content_hash: sha256:62d64c937cc0905c9c0fa8b7f9832f7b53ea4c307ed014f40e2e87cae5b
 
 应用从后台切回到前台时，保持原视频播放且会从之前的位置继续播放。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/gbcfU-6iQoGJdRFh53NOBQ/zh-cn_image_0000002485723289.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061114Z&HW-CC-Expire=86400&HW-CC-Sign=0EFE73D10169B999A2A2AC3573B8EFF6D0F44ADABFD7C78C96403AFA4C439EBE "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/gbcfU-6iQoGJdRFh53NOBQ/zh-cn_image_0000002485723289.gif "点击放大")
 
 ### 开发步骤
 
@@ -55,7 +55,7 @@ content_hash: sha256:62d64c937cc0905c9c0fa8b7f9832f7b53ea4c307ed014f40e2e87cae5b
 
 播放视频时可以手动进行横竖屏切换，也支持根据设备旋转方向自动切换横竖屏模式，以适应不同屏幕方向下的视频播放需求。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/VT4s5mugSSa3hY5GDaJrIg/zh-cn_image_0000002452803500.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061114Z&HW-CC-Expire=86400&HW-CC-Sign=250756D186F49103464192BB6E2373B2362E7D28956441B5D00C6DCC47748448 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/VT4s5mugSSa3hY5GDaJrIg/zh-cn_image_0000002452803500.gif "点击放大")
 
 ### 开发步骤
 
@@ -67,7 +67,7 @@ content_hash: sha256:62d64c937cc0905c9c0fa8b7f9832f7b53ea4c307ed014f40e2e87cae5b
 
 画中画模式用户可进行其他界面操作，提升使用体验。应用场景包括视频播放、直播、视频通话和视频会议等。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/yQPhyR_rQKysnd0Gl_egOQ/zh-cn_image_0000002452643884.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061114Z&HW-CC-Expire=86400&HW-CC-Sign=1971ABA5E3CAB949D34C4026C50210B95BA194ABA5C8B7612B55F17C86ABE796 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/yQPhyR_rQKysnd0Gl_egOQ/zh-cn_image_0000002452643884.gif "点击放大")
 
 ### 开发步骤
 
@@ -79,7 +79,7 @@ content_hash: sha256:62d64c937cc0905c9c0fa8b7f9832f7b53ea4c307ed014f40e2e87cae5b
 
 视频播放列表或播放窗口中显示视频首帧作为视频描述信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/bXHR3AWASfS9jVIXrJi52Q/zh-cn_image_0000002485843233.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061114Z&HW-CC-Expire=86400&HW-CC-Sign=50AD7698AEACD84A4E5D1568F75F1FCAF1009186FA85F6826C1D4AC8B6746AF8 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/bXHR3AWASfS9jVIXrJi52Q/zh-cn_image_0000002485843233.gif "点击放大")
 
 ### 开发步骤
 
@@ -91,7 +91,7 @@ content_hash: sha256:62d64c937cc0905c9c0fa8b7f9832f7b53ea4c307ed014f40e2e87cae5b
 
 用户浏览视频列表时自动播放视频，在用户滑动视频列表时自动切换至首个完全可见的视频播放。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/jdZvQpK-RUSPGRgD08EryQ/zh-cn_image_0000002485723317.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061114Z&HW-CC-Expire=86400&HW-CC-Sign=F255150349A3879B8ECDAEF1346041BCE4366A9F9CEA24CDD8776DB048A82498 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/jdZvQpK-RUSPGRgD08EryQ/zh-cn_image_0000002485723317.gif "点击放大")
 
 ### 实现原理
 
@@ -99,7 +99,7 @@ content_hash: sha256:62d64c937cc0905c9c0fa8b7f9832f7b53ea4c307ed014f40e2e87cae5b
 
 逻辑如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/S3Zsn0qsSkmyeDmOvulGsg/zh-cn_image_0000002455462614.png?HW-CC-KV=V1&HW-CC-Date=20260429T061114Z&HW-CC-Expire=86400&HW-CC-Sign=CB4B5AC0E3CC82E625AD15F38D43B7CF069F3DA877570585B3A1923EA67539BB "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/S3Zsn0qsSkmyeDmOvulGsg/zh-cn_image_0000002455462614.png "点击放大")
 
 ### 开发步骤
 
@@ -337,7 +337,7 @@ content_hash: sha256:62d64c937cc0905c9c0fa8b7f9832f7b53ea4c307ed014f40e2e87cae5b
 
 视频播放无缝转场是影音娱乐类应用中的典型场景之一，如视频列表中自动播放的热门视频，点击当前播放视频跳转至视频详情页后继续播放。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/YqSV-4ZqQaeoy1QKPDbvag/zh-cn_image_0000002452643900.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061114Z&HW-CC-Expire=86400&HW-CC-Sign=44C50EEE873B627CA1D97F6FFFBDB2E0F553C7578210D619057CA85C10076D19 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/YqSV-4ZqQaeoy1QKPDbvag/zh-cn_image_0000002452643900.gif "点击放大")
 
 ### 实现原理
 
@@ -349,7 +349,7 @@ content_hash: sha256:62d64c937cc0905c9c0fa8b7f9832f7b53ea4c307ed014f40e2e87cae5b
 
 逻辑如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/ih8ZYW_OQOezrp-3tzqhQg/zh-cn_image_0000002485843257.png?HW-CC-KV=V1&HW-CC-Date=20260429T061114Z&HW-CC-Expire=86400&HW-CC-Sign=134E06168969E9A51F9886BACE7B6E8567BE474D26DB5FFA728DD18A0437F019 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/ih8ZYW_OQOezrp-3tzqhQg/zh-cn_image_0000002485843257.png "点击放大")
 
 ### 开发步骤
 

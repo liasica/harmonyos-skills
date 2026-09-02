@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_value-for-local-initialization
-title: @previewer/mandatory-default-value-for-local-initialization
+title: "@previewer/mandatory-default-value-for-local-initialization"
 breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 预览规则@previewer > @previewer/mandatory-default-value-for-local-initialization
 category: harmonyos-guides
 scraped_at: 2026-04-28T07:56:20+08:00

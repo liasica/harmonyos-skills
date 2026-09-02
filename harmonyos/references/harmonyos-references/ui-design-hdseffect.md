@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > UI Design Kit（UI设计套件） > ArkTS
 category: harmonyos-references
 scraped_at: 2026-04-29T13:57:10+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:07829f2c40eee01a10e8904d5f43a22bab07ffd57fb2e0bab90989ae96203504
+content_hash: sha256:461b36cb12573ecaabb7be4bbce9a0fdf46deafd83e19a8d569ece55c808eede
 ---
 
 本模块提供组件的拓展视效能力，包括组件点光源效果、按压光效、动画控制。
@@ -135,7 +135,7 @@ pointLight(value: PointLightEffect): HdsEffectBuilder
 58. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/xZRQGyNnRvqLTLV6Pu2sUA/zh-cn_image_0000002589326913.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T055708Z&HW-CC-Expire=86400&HW-CC-Sign=7CB79CCBF426E76B90339044FB5336D81559A8CD83EF5BC81562D36525556D8A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/xZRQGyNnRvqLTLV6Pu2sUA/zh-cn_image_0000002589326913.jpg)
 
 ### pressShadow
 
@@ -212,7 +212,7 @@ pressShadow(type: PressShadowType): HdsEffectBuilder
 44. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/sjfZiupWTqud3sRJ9vgTBQ/zh-cn_image_0000002589246853.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055708Z&HW-CC-Expire=86400&HW-CC-Sign=0ADC78D6927E5AF0B99A31D90AF492AC19F5B4BBF049A0B461763DAC0CC36425)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/sjfZiupWTqud3sRJ9vgTBQ/zh-cn_image_0000002589246853.gif)
 
 ### shaderEffect
 
@@ -294,7 +294,7 @@ shaderEffect(params: ShaderEffectParams): HdsEffectBuilder
 49. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/dULkOq4YRGiLYTBiU5rjUw/zh-cn_image_0000002558767046.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055708Z&HW-CC-Expire=86400&HW-CC-Sign=40F9C458632F02A52DD7B35656916434F10641C0A7998EE54A19947AD9180B8B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/dULkOq4YRGiLYTBiU5rjUw/zh-cn_image_0000002558767046.gif)
 
 ### buildEffect
 

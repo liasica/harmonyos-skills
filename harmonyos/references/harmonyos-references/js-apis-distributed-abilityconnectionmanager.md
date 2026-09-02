@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-distributed-abilityconnectionmanager
-title: @ohos.distributedsched.abilityConnectionManager (应用多端协同管理)
+title: "@ohos.distributedsched.abilityConnectionManager (应用多端协同管理)"
 breadcrumb: API参考 > 系统 > 网络 > Distributed Service Kit（分布式管理服务） > ArkTS API > @ohos.distributedsched.abilityConnectionManager (应用多端协同管理)
 category: harmonyos-references
 scraped_at: 2026-04-28T08:08:14+08:00

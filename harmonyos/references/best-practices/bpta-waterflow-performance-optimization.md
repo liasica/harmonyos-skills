@@ -5,7 +5,7 @@ breadcrumb: 最佳实践 > 性能 > 性能场景优化案例 > 界面渲染性�
 category: best-practices
 scraped_at: 2026-04-29T14:13:32+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:2fd15658d2550e79708c389a9192cf885d40116071e60399896c952a85cf8795
+content_hash: sha256:aaff4f1843d3b6400406c1cee17b4707df9f7a4f792094a0794c0fe6a8988098
 ---
 
 ## 概述
@@ -84,7 +84,7 @@ content_hash: sha256:2fd15658d2550e79708c389a9192cf885d40116071e60399896c952a85c
 
 **瀑布流组件加载流程图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/toykN91oSxWXY9X8NPSaUw/zh-cn_image_0000002194010900.png?HW-CC-KV=V1&HW-CC-Date=20260429T061329Z&HW-CC-Expire=86400&HW-CC-Sign=0CCC8B008D9278F982A62877ED0ADB28168A06B11354AF31C7D6B391EF945CE9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/toykN91oSxWXY9X8NPSaUw/zh-cn_image_0000002194010900.png)
 
 示例如下：
 
@@ -138,7 +138,7 @@ Image组件异步加载，提前设定FlowItem高度，避免图片加载后高�
 
 **图1** 瀑布流页面卡片宽高计算逻辑示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/cyjxG_AZRxuzw8nhD5k5iA/zh-cn_image_0000002194010908.png?HW-CC-KV=V1&HW-CC-Date=20260429T061329Z&HW-CC-Expire=86400&HW-CC-Sign=C3BF7F77F6BBC74655F0D5F6C9F030232694870051D233ADA4F606ABC881BB0F "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/cyjxG_AZRxuzw8nhD5k5iA/zh-cn_image_0000002194010908.png "点击放大")
 
 如上图所示，两列瀑布流卡片的宽度 = （屏幕宽度 - 2 \* 组件外边距（margin） - 瀑布流组件内边距（gap））/ 2。
 
@@ -167,7 +167,7 @@ Image组件异步加载，提前设定FlowItem高度，避免图片加载后高�
 
 **整体效果图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/mKpdoKfLTx6csYuwuGV6-w/zh-cn_image_0000002194010904.png?HW-CC-KV=V1&HW-CC-Date=20260429T061329Z&HW-CC-Expire=86400&HW-CC-Sign=A6CABBA3711FE2D92C91B4E9C815A2246DBA293CDE0B12B92F559C82E950E011 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/mKpdoKfLTx6csYuwuGV6-w/zh-cn_image_0000002194010904.png "点击放大")
 
 下表为通过网络请求500条数据加载渲染，测试获得的数据（数据测试方式采用技术从左向右累加测试的）：
 

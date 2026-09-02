@@ -5,7 +5,7 @@ breadcrumb: 指南 > 系统 > 安全 > Data Protection Kit（数据保护服务�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:31:19+08:00
 doc_updated_at: 2026-03-23
-content_hash: sha256:b87bda2b9484ed8bf2e0dbd461b58df6917cce0e37f969766f60b9b92e8aed52
+content_hash: sha256:12c506ea60ceed54a82f7226a6fd12313b791c3225a524b6cdf18fa1dfa1d087
 ---
 
 数据防泄漏服务（Data Loss Prevention，简称为DLP），是系统提供的系统级的数据防泄漏解决方案，提供文件权限管理、加密存储、授权访问等能力，数据所有者可以基于账号认证对机密文件进行权限配置，允许设置只读、编辑、拥有者等权限，随后机密文件会通过密文存储，在支持DLP机制的设备上可以通过端云协调进行认证授权，获取对数据的访问和修改的能力。
@@ -26,7 +26,7 @@ DLP整体解决方案由3个主要部件构成。
 
 ## 运作流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/q_xGHqx9TSmWyjOKVENAsw/zh-cn_image_0000002589324743.png?HW-CC-KV=V1&HW-CC-Date=20260429T053119Z&HW-CC-Expire=86400&HW-CC-Sign=261BE981834DC1B5827A7159E28327C153D0213D6816F067F7062BC5630C138B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/q_xGHqx9TSmWyjOKVENAsw/zh-cn_image_0000002589324743.png)
 
 **DLP文件生成**
 

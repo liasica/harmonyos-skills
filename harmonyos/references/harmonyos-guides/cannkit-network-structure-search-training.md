@@ -5,7 +5,7 @@ breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 模型优
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:40:55+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:825ed5613c0bacf8577dca78e0f84277ce618e1fed3c020f2e32d9e91b17969d
+content_hash: sha256:2ac60138e352362178c72befb8a929d25b87e3d6920287a48ecd0ff335e6fb38
 ---
 
 网络结构搜索训练请按照如下步骤进行：
@@ -295,13 +295,13 @@ TensorFlow开发者执行python3 tools\_dopt/dopt\_tf\_py3/dopt\_so.py -c scen.y
 
 * loss-模型精度损失loss曲线
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/14dXy4eCSMeubw01W8kOjQ/zh-cn_image_0000002589245519.png?HW-CC-KV=V1&HW-CC-Date=20260429T054054Z&HW-CC-Expire=86400&HW-CC-Sign=522558003C7003F878EC87BF1D898D64480829CBEF6FEBDDF0EEFA8BDB8350F8)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/14dXy4eCSMeubw01W8kOjQ/zh-cn_image_0000002589245519.png)
 * lr-学习率变化曲线
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/tJj4eJ5wT6-FtRIc07CQQg/zh-cn_image_0000002558765712.png?HW-CC-KV=V1&HW-CC-Date=20260429T054054Z&HW-CC-Expire=86400&HW-CC-Sign=19AAD7DD77BAAA12FBADB58740EE7E5CFBAB89F8A476171E93F6280B6C29CF91)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/tJj4eJ5wT6-FtRIc07CQQg/zh-cn_image_0000002558765712.png)
 * pareto-帕累托前沿图
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/p9H0UCAhTPGSFL6O00MLnA/zh-cn_image_0000002558606056.png?HW-CC-KV=V1&HW-CC-Date=20260429T054054Z&HW-CC-Expire=86400&HW-CC-Sign=E6CFD9F120247A69386B7D20E90E22991F721E339EA817EC1D64A185E7B1837A)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/p9H0UCAhTPGSFL6O00MLnA/zh-cn_image_0000002558606056.png)
 
 帕累托图横坐标为模型大小或计算量即约束项，纵坐标为结构搜索后的精度。图中的精度为搜索过程的评估结果，如果要获得更好的精度，建议对搜索结构进行充分训练。
 
@@ -311,7 +311,7 @@ TensorFlow开发者执行python3 tools\_dopt/dopt\_tf\_py3/dopt\_so.py -c scen.y
 
 搜索结束后，工具会自动将pareto图中模型结构保存在results目录，生成多个model\_arch\_result\_$NUM.py文件。其中$NUM文件编号与pareto图上的编号一致，头部有model\_param\_size和accuracy，开发者可根据TensorBoard中的pareto图或者这两个参数选择合适的网络结构，例如TensorFlow版本的搜索结果（PyTorch版本的搜索结果只是实现框架不同，不再赘述）如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/d6fw4hOJTO22-kvhVUqK9w/zh-cn_image_0000002589325583.png?HW-CC-KV=V1&HW-CC-Date=20260429T054054Z&HW-CC-Expire=86400&HW-CC-Sign=AE21FE6411A2B2681FD108FDC69A4B55EE59A705A323EEFF1B1A59261CAA5061)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/d6fw4hOJTO22-kvhVUqK9w/zh-cn_image_0000002589325583.png)
 
 开发者选定合适的模型结构文件，可以拷贝到results的上一级目录，并执行模型结构文件。
 
@@ -321,4 +321,4 @@ TensorFlow开发者执行python3 tools\_dopt/dopt\_tf\_py3/dopt\_so.py -c scen.y
 
 执行结束后，当前目录下会生成模型的pb文件和TensorBoard日志文件，开发者可通过TensorBoard查看模型的图结构。如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/gs3cB-tCT46SJd0GnQ3mAw/zh-cn_image_0000002589245521.png?HW-CC-KV=V1&HW-CC-Date=20260429T054054Z&HW-CC-Expire=86400&HW-CC-Sign=8347842C95BDA2E664653FA31A79448A1A652CAA86AA7E4DE06ABA29D514EFF9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/gs3cB-tCT46SJd0GnQ3mAw/zh-cn_image_0000002589245521.png)

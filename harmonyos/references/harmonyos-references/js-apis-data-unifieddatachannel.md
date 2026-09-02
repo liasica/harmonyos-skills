@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-data-unifieddatachannel
-title: @ohos.data.unifiedDataChannel (标准化数据通路)
+title: "@ohos.data.unifiedDataChannel (标准化数据通路)"
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > ArkTS API > @ohos.data.unifiedDataChannel (标准化数据通路)
 category: harmonyos-references
 scraped_at: 2026-04-28T07:59:20+08:00

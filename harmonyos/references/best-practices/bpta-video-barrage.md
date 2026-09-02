@@ -5,7 +5,7 @@ breadcrumb: 最佳实践 > 功耗 > 应用功耗优化 > 前台任务低功耗 >
 category: best-practices
 scraped_at: 2026-04-29T14:13:50+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:f17b2b6586a58ad4f4c3b450198c6418441bcc2f71e371b63b9565ec696fddc5
+content_hash: sha256:083337e51b16e105cd5a19bed367993c5ee6b36d1f7c2eebc63995a5a969dd2e
 ---
 
 ## 规则
@@ -63,7 +63,7 @@ XComponent组件作为一种渲染组件，可用于EGL/OpenGLES和媒体数据�
 
 抓取视频弹幕播放的systrace，三方应用调用RenderService进程进行弹幕绘制时，调用“H:RSDisplayRenderNodeDrawable Flush”函数，表示执行基于GPU硬件加速的渲染。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/9qh31egrSb-6fenLngjFbA/zh-cn_image_0000002194011168.png?HW-CC-KV=V1&HW-CC-Date=20260429T061349Z&HW-CC-Expire=86400&HW-CC-Sign=AC6C811376616E65CEA7480988537553E0B8252302E684A6199C673273CE931E "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/9qh31egrSb-6fenLngjFbA/zh-cn_image_0000002194011168.png "点击放大")
 
 ## 示例代码
 

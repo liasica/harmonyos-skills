@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:51:06+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:e30dd0aa2ab4c7283beabd9f91591e2700436c647a41b8cd80aaa66f0f0422be
+content_hash: sha256:0db552de1412eb3cf11f7f5cfa9887a91ba673a7a5a61ab92ae20a6175c2f8fd
 ---
 
 按键事件是指组件与物理键盘、遥控器等按键设备交互时触发的事件，适用于所有可获焦组件，例如Button。对于默认不可获焦的组件，如Text，Image等，可以将[focusable](ts-universal-attributes-focus.md#focusable)属性设置为true后使用按键事件。
@@ -224,7 +224,7 @@ PhonePC/2in1TabletTVWearable
 27. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/eslrh4VfTAKaUwE0_Z8E_g/zh-cn_image_0000002589245795.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055104Z&HW-CC-Expire=86400&HW-CC-Sign=796585502E24F4384E29D5FE3468B89305A44958415E6F3109CF740C6124F085)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/eslrh4VfTAKaUwE0_Z8E_g/zh-cn_image_0000002589245795.gif)
 
 ### 示例2（获取Unicode码值）
 
@@ -268,7 +268,7 @@ PhonePC/2in1TabletTVWearable
 35. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/n_4IhczyQReAVK8tvJzjZg/zh-cn_image_0000002558765984.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055104Z&HW-CC-Expire=86400&HW-CC-Sign=18DF91B19E3BA5FE780C91D24371C151051486D2326C2F8C97E9982E98BDD0C9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/n_4IhczyQReAVK8tvJzjZg/zh-cn_image_0000002558765984.gif)
 
 ### 示例3（触发onKeyPreIme回调）
 
@@ -372,4 +372,4 @@ PhonePC/2in1TabletTVWearable
 54. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/hUY0jMTUQkKgl7daRlSyGw/zh-cn_image_0000002558606328.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055104Z&HW-CC-Expire=86400&HW-CC-Sign=96841B309ADBA5B1F387F5EEE63CDDB5638A9F0CAB1B9FB549FE2B85E51ED9EB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/hUY0jMTUQkKgl7daRlSyGw/zh-cn_image_0000002558606328.gif)

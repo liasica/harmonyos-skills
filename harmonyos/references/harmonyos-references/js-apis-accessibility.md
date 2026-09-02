@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-accessibility
-title: @ohos.accessibility (辅助功能)
+title: "@ohos.accessibility (辅助功能)"
 breadcrumb: API参考 > 应用框架 > Accessibility Kit（无障碍服务） > ArkTS API > @ohos.accessibility (辅助功能)
 category: harmonyos-references
 scraped_at: 2026-04-29T13:49:19+08:00

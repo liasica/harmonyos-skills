@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:52:43+08:00
 doc_updated_at: 2026-04-10
-content_hash: sha256:adbcdf53e0d69f01a6317b42aae1e1a758889cad6eb4ae7b43094f9600f1a1f4
+content_hash: sha256:251a1671e55aa0ab7eb032e7f3f50253440b27e118d7e7a7db5a190564dfc9b2
 ---
 
 在视图切换过程中提供丝滑的上下文传承过渡。通用transition机制提供了opacity、scale等转场效果，geometryTransition通过安排绑定的in/out组件（in指新视图、out指旧视图）的frame、position使得原本独立的transition动画在空间位置上发生联系，将视觉焦点由旧视图位置引导到新视图位置。
@@ -130,4 +130,4 @@ PhonePC/2in1TabletTVWearable
 46. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/tNjzuKHbRvS8rijwpwSWwg/zh-cn_image_0000002558606894.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055241Z&HW-CC-Expire=86400&HW-CC-Sign=531F92DBE9E3AB589620022CFD351D17C77EF5B7107098C9DE1A31D4FA412BA0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/tNjzuKHbRvS8rijwpwSWwg/zh-cn_image_0000002558606894.gif)

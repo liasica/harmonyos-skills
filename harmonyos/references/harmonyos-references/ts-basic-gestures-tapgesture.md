@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:51:35+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:ceb6b65ca9309e60065529da231dd31ec80a0c5d450182744be4004e4aeeff11
+content_hash: sha256:9f14e8988e47a8100bae0cc424adf81e61c5079c7a3f556777a8c03b0e2cbbc6
 ---
 
 支持单击、双击和多次点击事件的识别。
@@ -139,7 +139,7 @@ PhonePC/2in1TabletTVWearable
 27. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/Y95QQA8UQBCLrsrDY_GG-A/zh-cn_image_0000002558606444.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055134Z&HW-CC-Expire=86400&HW-CC-Sign=162AA0D30AE2E2F7970CA14ED1843E6D7F022DBABBD9D56B20FDD3CA6D0AB743)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/Y95QQA8UQBCLrsrDY_GG-A/zh-cn_image_0000002558606444.gif)
 
 ### 示例2（获取单击手势坐标）
 
@@ -180,4 +180,4 @@ PhonePC/2in1TabletTVWearable
 32. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/84jqV7NpR1eFABiw2311yA/zh-cn_image_0000002589325971.png?HW-CC-KV=V1&HW-CC-Date=20260429T055134Z&HW-CC-Expire=86400&HW-CC-Sign=F01D0A17E415D17B66C095D72FC5754D2258D216F6E03A94BC4E36EA8C7C1426)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/84jqV7NpR1eFABiw2311yA/zh-cn_image_0000002589325971.png)

@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-mindsporelite
-title: @ohos.ai.mindSporeLite (端侧AI框架)
+title: "@ohos.ai.mindSporeLite (端侧AI框架)"
 breadcrumb: API参考 > AI > MindSpore Lite Kit（昇思推理框架服务） > ArkTS API > @ohos.ai.mindSporeLite (端侧AI框架)
 category: harmonyos-references
 scraped_at: 2026-04-28T08:19:01+08:00

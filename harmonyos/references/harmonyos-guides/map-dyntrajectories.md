@@ -5,14 +5,14 @@ breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 在地图上绘�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:39:13+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:cc15605c2986219bf3fba85045b0329c687c11c4fee0956e1c3aa013ebf24194
+content_hash: sha256:7bfff2c801c245068225fdb17ebd84172d54d4b370026edbdd2d9ddc7cefd013
 ---
 
 ## 场景介绍
 
 本章节将向您介绍如何在地图上绘制动态轨迹。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/h43izq_mSVuOKQPACAfvKQ/zh-cn_image_0000002589325415.gif?HW-CC-KV=V1&HW-CC-Date=20260429T053910Z&HW-CC-Expire=86400&HW-CC-Sign=A22CCE96C5F1AC441CFCC96BDE578710DC65C3F8D7D370C70BB237E97DC102C9 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/h43izq_mSVuOKQPACAfvKQ/zh-cn_image_0000002589325415.gif "点击放大")
 
 ## 接口说明
 

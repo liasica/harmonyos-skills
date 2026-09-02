@@ -5,16 +5,16 @@ breadcrumb: FAQ > DevEco Studio > 应用调试 > 真机设备连接后，在DevE
 category: harmonyos-faqs
 scraped_at: 2026-04-29T14:21:21+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:0d01563958f81afcff68814249ee2bbd1b0a5c96bf91652318af405eebbda2e5
+content_hash: sha256:4503b30e6b164b7fdf7687c760ebfb82b48da5f69d817174c50e829d227c0172
 ---
 
 **问题现象**
 
 调试运行时，安装HAP失败并提示“设备未找到或未连接”；或DevEco Studio设备列表显示“No device”（未识别设备）。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/mg_3CnzlTXy83euFhgubNw/zh-cn_image_0000002370362990.png?HW-CC-KV=V1&HW-CC-Date=20260429T062003Z&HW-CC-Expire=86400&HW-CC-Sign=4654CF40D3FBCD3AC0E41825FD77C26ECC7FEF8BB6A2866DA6ACE946AFE6CEA2 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/mg_3CnzlTXy83euFhgubNw/zh-cn_image_0000002370362990.png "点击放大")
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/bHxMk-YPRG6an6_gj4jAfw/zh-cn_image_0000002403922581.png?HW-CC-KV=V1&HW-CC-Date=20260429T062003Z&HW-CC-Expire=86400&HW-CC-Sign=1FD4066AD1C6B107498692F1F75F176D6656475A5AFA8854609CB1B0AACBE53D "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/bHxMk-YPRG6an6_gj4jAfw/zh-cn_image_0000002403922581.png "点击放大")
 
 **可能原因**
 
@@ -33,7 +33,7 @@ content_hash: sha256:0d01563958f81afcff68814249ee2bbd1b0a5c96bf91652318af405eebb
 1. 在设备上打开“[开发者选项](../harmonyos-guides/ide-developer-mode.md)”开关，打开“USB调试”开关或“无线调试”开关。
 2. 务必确认版本的配套关系是否与当前所使用的开发套件是一致的，可参考[版本概览](../harmonyos-releases/overview-502-release.md)使用对应的配套版本。如无真机设备，可使用Device Manager模拟器。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/_cr0IFZ4S7mZq3Wt_6sA3w/zh-cn_image_0000002403917585.png?HW-CC-KV=V1&HW-CC-Date=20260429T062003Z&HW-CC-Expire=86400&HW-CC-Sign=AD5D148BF1E2DDD6723B8AB53B2A6F712F13FA00ED5B78A5F2BE683DC6D46842)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/_cr0IFZ4S7mZq3Wt_6sA3w/zh-cn_image_0000002403917585.png)
 3. 请更换为符合USB2.0标准的数据线；建议直接连接，不要使用拓展坞。
 4. 请更换USB数据口后重新尝试，并检查端口驱动是否正常。
 5. 执行如下命令，结束hdc进程，然后重新连接。

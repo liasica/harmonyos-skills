@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 窗口管理 > �
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:29:11+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:b97002e97930c9871946bda80d5c028a6e92a36e52a3a9d0f06742c4be9fc562
+content_hash: sha256:c5d7851c7afa6cab683a2368cec9e2b081160a517cedf11b7488e1f253f2a304
 ---
 
 ## 窗口类型
@@ -60,7 +60,7 @@ content_hash: sha256:b97002e97930c9871946bda80d5c028a6e92a36e52a3a9d0f06742c4be9
 
 自由窗口可以通过拖动窗口边缘调节窗口大小，可以通过拖动标题栏移动窗口位置。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/2kAPOFO5RJSD_kicnUE1hA/zh-cn_image_0000002589324563.png?HW-CC-KV=V1&HW-CC-Date=20260429T052909Z&HW-CC-Expire=86400&HW-CC-Sign=93AFE1931B0F897E69133D235473299736B93E81FD3DAB97FBED17A3B2D2A3CE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/2kAPOFO5RJSD_kicnUE1hA/zh-cn_image_0000002589324563.png)
 
 当前设备支持情况：
 
@@ -78,7 +78,7 @@ content_hash: sha256:b97002e97930c9871946bda80d5c028a6e92a36e52a3a9d0f06742c4be9
 
 部分Phone设备上，可通过下拉控制中心，点击“自由多窗”按钮开启自由多窗。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/JYmZqwlfRVSxzNqyYQooVg/zh-cn_image_0000002589244501.png?HW-CC-KV=V1&HW-CC-Date=20260429T052909Z&HW-CC-Expire=86400&HW-CC-Sign=15F2EBBC509C6CE3EF10581F2376CF8BFC49BD6C8DFC6050B4FF02E6A159AFB7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/JYmZqwlfRVSxzNqyYQooVg/zh-cn_image_0000002589244501.png)
 
 ### 电脑模式
 
@@ -114,7 +114,7 @@ content_hash: sha256:b97002e97930c9871946bda80d5c028a6e92a36e52a3a9d0f06742c4be9
 
 在该坐标系中，所有物理屏幕被映射到同一连续的虚拟坐标空间内，各类窗口操作、坐标转换及窗口矩形变化事件均基于该坐标空间进行计算和回调。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/r2GTg-EvT3uDug2CMQG_uA/zh-cn_image_0000002558764696.png?HW-CC-KV=V1&HW-CC-Date=20260429T052909Z&HW-CC-Expire=86400&HW-CC-Sign=C82EC49CB9ABDE5026ABF5EE08FB67B7A750F349EE69EA293C1162D14CD40B9E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/r2GTg-EvT3uDug2CMQG_uA/zh-cn_image_0000002558764696.png)
 
 使用场景：
 

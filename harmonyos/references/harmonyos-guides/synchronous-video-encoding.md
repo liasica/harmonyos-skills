@@ -5,7 +5,7 @@ breadcrumb: 指南 > 媒体 > AVCodec Kit（音视频编解码服务） > 音视
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:34:40+08:00
 doc_updated_at: 2026-03-23
-content_hash: sha256:9a7776239904977e79443ead3286536ffb1c0a35e90cd6d116b33208faab0298
+content_hash: sha256:9328d3d8173bf4cd6b936c1118156a6cc2556eb7df31ecda0e0235fb4c285efb
 ---
 
 从API version 20开始，支持视频编码同步模式。
@@ -26,7 +26,7 @@ content_hash: sha256:9a7776239904977e79443ead3286536ffb1c0a35e90cd6d116b33208faa
 
 详细的API说明请参考[VideoEncoder](../harmonyos-references/capi-native-avcodec-videoencoder-h.md)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/qmbQ8RZzTYGf8nOLZdo-Pg/zh-cn_image_0000002589244851.png?HW-CC-KV=V1&HW-CC-Date=20260429T053439Z&HW-CC-Expire=86400&HW-CC-Sign=A75F0819A7359442ADF92CE04F31E4BDECCF84723571ED449FF8D18ABB02FDC5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/qmbQ8RZzTYGf8nOLZdo-Pg/zh-cn_image_0000002589244851.png)
 
 ### 在CMake脚本中链接动态库
 

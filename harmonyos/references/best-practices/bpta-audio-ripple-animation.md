@@ -5,14 +5,14 @@ breadcrumb: 最佳实践 > 媒体 > 音频和视频 > 基于AudioRenderer和Audi
 category: best-practices
 scraped_at: 2026-04-29T14:11:43+08:00
 doc_updated_at: 2026-04-07
-content_hash: sha256:bd352837b4c37b9e51defb4497538cc964ce5657df505d6fec8508b04542f949
+content_hash: sha256:ad2113e853f16cac98a85719fed33b54511e361cfcdf5834cd869b849f1db6a4
 ---
 
 ## 概述
 
 音频波形动画是音频数据的线性波形显示，其中，水平X轴用于衡量时间，垂直Y轴用于衡量振幅，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/QCzdW9JCRyma1xf-JGC9Mw/zh-cn_image_0000002507968404.png?HW-CC-KV=V1&HW-CC-Date=20260429T061138Z&HW-CC-Expire=86400&HW-CC-Sign=6779C03C99FFBA05D8659E59401A9049872C976708F60DBA6225A05D3BC01B06 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/QCzdW9JCRyma1xf-JGC9Mw/zh-cn_image_0000002507968404.png "点击放大")
 
 由于音频波形可以清晰地显示振幅变化，因此非常适合于直观显示声音、音乐等的音量大小变化，常用于用户在录音或播放录音过程中实时展示音量大小的场景。
 
@@ -25,7 +25,7 @@ content_hash: sha256:bd352837b4c37b9e51defb4497538cc964ce5657df505d6fec8508b0454
 
 dBFS是描述音频信号在数字系统中的幅度的单位，在波形显示中，通常使用dBFS衡量数字音频中的信号强度。其计算公式如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/QxrAqI3eR8ubaKFXMeJfxQ/zh-cn_formulaimage_0000002539808087.png?HW-CC-KV=V1&HW-CC-Date=20260429T061138Z&HW-CC-Expire=86400&HW-CC-Sign=31DD34F2652BD80D39BB7CF8EEA7640C65B0C53639E5B95B1C02092E2E7BDC19)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/QxrAqI3eR8ubaKFXMeJfxQ/zh-cn_formulaimage_0000002539808087.png)
 
 其中，A表示当前的振幅数值，即当前音频数据的位深。Amax表示振幅数值的最大值，即音频的最大位深。
 
@@ -37,7 +37,7 @@ dBFS是描述音频信号在数字系统中的幅度的单位，在波形显示�
 
 开发者在开发录音播放等场景时，为了体现当前播放音量的大小，需要实现音频播放波形，下面将介绍如何基于AudioRenderer实现音频播放波形。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/pRC_b8yYTteLwFILpNqCHg/zh-cn_image_0000002539688123.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061138Z&HW-CC-Expire=86400&HW-CC-Sign=7860F21BBD3F3A193440FDA1F596D847AB82A13EE16E2A612A8261C91CA0400A "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/pRC_b8yYTteLwFILpNqCHg/zh-cn_image_0000002539688123.gif "点击放大")
 
 ### 实现原理
 
@@ -131,7 +131,7 @@ dBFS是描述音频信号在数字系统中的幅度的单位，在波形显示�
 
 开发者在开发通讯软件的语音录制发送、音乐录制等场景时，为了体现当前录制音量的大小，需要实现音频录制波形。下面将介绍如何基于AudioCapturer实现音频录制波形。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/p0CJ8SHHQi6JFudPS83Odw/zh-cn_image_0000002507968406.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061138Z&HW-CC-Expire=86400&HW-CC-Sign=A6AA00F8FCF6CCF1088617DBE79C1439C9ED336D242DCDC522FB8B5960077423 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/p0CJ8SHHQi6JFudPS83Odw/zh-cn_image_0000002507968406.gif "点击放大")
 
 ### 实现原理
 

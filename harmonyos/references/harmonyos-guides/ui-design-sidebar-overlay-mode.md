@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > UI Design Kit（UI设计套件） > 侧边�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:30:21+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:667f0696880640d561837b1fc44d3f898335d0b7a105499d8082e8bc81cf7c15
+content_hash: sha256:a7f5c31efac6ca243469a20950d0b56a11c1c98d80b4e7b1c0c846e895100045
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:667f0696880640d561837b1fc44d3f898335d0b7a105499d8082e8bc81c
 
 [HdsSideBar](../harmonyos-references/ui-design-hdssidebar.md)提供可以显示和隐藏的侧边栏容器，通过子组件定义侧边栏和内容区，第一个子组件表示侧边栏，第二个子组件表示内容区，通过设置[sideBarContainerType](../harmonyos-references/ts-container-sidebarcontainer.md#sidebarcontainertype枚举说明)的值为SideBarContainerType.Overlay，使得当前HdsSideBar为悬浮样式。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/nOKpjZ7YTbCn2jrXOj_fcg/zh-cn_image_0000002589324705.png?HW-CC-KV=V1&HW-CC-Date=20260429T053020Z&HW-CC-Expire=86400&HW-CC-Sign=7CF9CA063737664C7D7AEB6F4E671FE028078349AB3D0B7BB7B37152EF50C638)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/nOKpjZ7YTbCn2jrXOj_fcg/zh-cn_image_0000002589324705.png)
 
 ## 开发步骤
 
@@ -27,7 +27,7 @@ content_hash: sha256:667f0696880640d561837b1fc44d3f898335d0b7a105499d8082e8bc81c
 
    将图片资源，放到entry/src/main/resources/base/media下。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/E6JCI59vQV2c7QJPx3WuRw/zh-cn_image_0000002589244643.png?HW-CC-KV=V1&HW-CC-Date=20260429T053020Z&HW-CC-Expire=86400&HW-CC-Sign=BF761F2BE863520468869DE941613362C0C4E6FA8AED2685851B31402DDA3E11)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/E6JCI59vQV2c7QJPx3WuRw/zh-cn_image_0000002589244643.png)
 3. 创建HdsSideBar侧边栏组件，设置展开模式为overlay。
 
    ```

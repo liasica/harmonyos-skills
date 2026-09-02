@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > Stage�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:25:54+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:16973b1f55fce9f1caa4aadf0e3f07db6f46d35e585827f27dc8bee201ac2406
+content_hash: sha256:761c0b78ddbda53ec32b414f273eab8379e7e38c74bf58c5f109ca85299ba51a
 ---
 
 ## 概述
@@ -26,7 +26,7 @@ content_hash: sha256:16973b1f55fce9f1caa4aadf0e3f07db6f46d35e585827f27dc8bee201a
 
 **图1** 基本进程类型
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/-Lr9RxKqS7-obVYNJipr7g/zh-cn_image_0000002589323869.png?HW-CC-KV=V1&HW-CC-Date=20260429T052553Z&HW-CC-Expire=86400&HW-CC-Sign=4BB55EF206410B46BF41D28ED3D1D3EA4A6D1A1028BF2A6D22CD6AC37CA3D4B3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/-Lr9RxKqS7-obVYNJipr7g/zh-cn_image_0000002589323869.png)
 
 说明
 
@@ -44,7 +44,7 @@ content_hash: sha256:16973b1f55fce9f1caa4aadf0e3f07db6f46d35e585827f27dc8bee201a
 
 **图2** 其他进程类型
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/gwTlvWSESeGoY_PedBOVOw/zh-cn_image_0000002589243807.png?HW-CC-KV=V1&HW-CC-Date=20260429T052553Z&HW-CC-Expire=86400&HW-CC-Sign=79F607D6D89EA2D15DD486D69A1B26A7991ED47955DB5AE84CE8AE287A5325BA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/gwTlvWSESeGoY_PedBOVOw/zh-cn_image_0000002589243807.png)
 
 ## 线程模型
 

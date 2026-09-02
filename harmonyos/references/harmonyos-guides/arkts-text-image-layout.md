@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:27:47+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:1bd281ec2f8a69c24de2bd85b5328776bd359318e703cdc864ac2ba06828832a
+content_hash: sha256:c730ca5d34d0ab9c4223bcd0df38f53f387270aaa435618515d61b30561f7aeb
 ---
 
 图文混排是指图片与文字混合排列，文字可展示于图片四周。此排列方式能够直观呈现页面信息，增强视觉冲击力，使页面展示效果更加多样化。
@@ -38,7 +38,7 @@ content_hash: sha256:1bd281ec2f8a69c24de2bd85b5328776bd359318e703cdc864ac2ba0682
 
 [TextImageComponent.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/textImageMixedLayout/TextImageComponent.ets#L21-L41)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/ubzc-tBgTGOgPL9h4pmylA/zh-cn_image_0000002558604684.png?HW-CC-KV=V1&HW-CC-Date=20260429T052744Z&HW-CC-Expire=86400&HW-CC-Sign=9D8AC95F186A287A34799A4434BD82C0B051069E7587D4BC680D55E23586C3FC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/ubzc-tBgTGOgPL9h4pmylA/zh-cn_image_0000002558604684.png)
 
 ## 使用属性字符串实现图文混排
 
@@ -235,4 +235,4 @@ content_hash: sha256:1bd281ec2f8a69c24de2bd85b5328776bd359318e703cdc864ac2ba0682
 
 [TextImageAttribute.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/textImageMixedLayout/TextImageAttribute.ets#L16-L203)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/LYTUPiMeTbOfOHRjpowWUg/zh-cn_image_0000002589324209.png?HW-CC-KV=V1&HW-CC-Date=20260429T052744Z&HW-CC-Expire=86400&HW-CC-Sign=9EDEA40243061230274A8572F1EC150406BD5152236EF17234965CEE172DBBC3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/LYTUPiMeTbOfOHRjpowWUg/zh-cn_image_0000002589324209.png)

@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-file-securitylabel
-title: @ohos.file.securityLabel (数据标签)
+title: "@ohos.file.securityLabel (数据标签)"
 breadcrumb: API参考 > 应用框架 > Core File Kit（文件基础服务） > ArkTS API > @ohos.file.securityLabel (数据标签)
 category: harmonyos-references
 scraped_at: 2026-04-28T08:05:45+08:00

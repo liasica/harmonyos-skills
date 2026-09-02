@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:52:21+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:0b2f63f0ea9c3f4c2e427b210a0c3b3bf43286c546bd947fe0296f026dc42aab
+content_hash: sha256:66d9b434b04d75456926b88f28ba027ebf8808482f9836d5cf7032213615f941
 ---
 
 图案密码锁组件，以九宫格图案的方式输入密码，用于密码验证场景。手指在PatternLock组件区域按下时开始进入输入状态，手指离开屏幕时结束输入状态完成密码输入。
@@ -422,7 +422,7 @@ PhonePC/2in1TabletTVWearable
 28. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/-WZcnHmJRL-eF8x2hWOVog/zh-cn_image_0000002589246245.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055220Z&HW-CC-Expire=86400&HW-CC-Sign=5845721759E4DD08C44827722F194B1A7A57A5830F5DB616A56AFA14644AEB22)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/-WZcnHmJRL-eF8x2hWOVog/zh-cn_image_0000002589246245.gif)
 
 ### 示例2（判断密码是否正确）
 
@@ -497,4 +497,4 @@ PhonePC/2in1TabletTVWearable
 62. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/BEtxpe1eTtWB1lDm5YF_vA/zh-cn_image_0000002558766438.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055220Z&HW-CC-Expire=86400&HW-CC-Sign=C6C796DBDD5BECD06242B3CEBE84367558202CF40AA1C04D9BCB9B2318BECDCB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/BEtxpe1eTtWB1lDm5YF_vA/zh-cn_image_0000002558766438.gif)

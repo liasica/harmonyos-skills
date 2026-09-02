@@ -5,7 +5,7 @@ breadcrumb: 指南 > 媒体 > Scan Kit（统一扫码服务） > 默认界面扫
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:35:40+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:e1cb8aedb61569e8bcf71de81211c760348719029403e71fa3f6cc72f713a274
+content_hash: sha256:01a8c7e76152fc8a14475efc8beac57cc941f1c52ba7e09d8fc730a18d6b5e4f
 ---
 
 ## 基本概念
@@ -22,7 +22,7 @@ content_hash: sha256:e1cb8aedb61569e8bcf71de81211c760348719029403e71fa3f6cc72f71
 
 默认界面扫码UX：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/1h5-85qdQCOZnZF5POXCmg/zh-cn_image_0000002589244917.png?HW-CC-KV=V1&HW-CC-Date=20260429T053539Z&HW-CC-Expire=86400&HW-CC-Sign=46C24AD9CE001A96187589D7AB3F74BB97C3EF77F543E6EE0A61A7519ECD7C68)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/1h5-85qdQCOZnZF5POXCmg/zh-cn_image_0000002589244917.png)
 
 说明
 
@@ -49,7 +49,7 @@ content_hash: sha256:e1cb8aedb61569e8bcf71de81211c760348719029403e71fa3f6cc72f71
 
 使用默认界面扫码的主要业务流程如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/avU2JV9fR5KaF3gkeCzhcA/zh-cn_image_0000002558765112.png?HW-CC-KV=V1&HW-CC-Date=20260429T053539Z&HW-CC-Expire=86400&HW-CC-Sign=AB648BE3D2B08FCD7077FFF7FCC9EACEE0B8A388DA7D38D4E6597105FEDE22F4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/avU2JV9fR5KaF3gkeCzhcA/zh-cn_image_0000002558765112.png)
 
 1. 用户向开发者的应用发起扫码请求。
 2. 开发者的应用通过调用Scan Kit的startScanForResult接口启动扫码界面。

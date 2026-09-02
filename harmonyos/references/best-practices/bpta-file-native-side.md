@@ -5,7 +5,7 @@ breadcrumb: 最佳实践 > 应用框架 > 数据和文件 > Native侧实现文�
 category: best-practices
 scraped_at: 2026-04-29T14:11:02+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:f3f4982156ae9253697bfa0170cdea415982e09bf0fd6ebf93915c0c82962eed
+content_hash: sha256:3f6be6a466c3fe4aaaecf14d957920fe7f5a01c41fc5299b28b0a66881c4dfb6
 ---
 
 ## 概述
@@ -28,7 +28,7 @@ content_hash: sha256:f3f4982156ae9253697bfa0170cdea415982e09bf0fd6ebf93915c0c829
 ### 方案一：ArkTS侧获取沙箱路径传递给Native侧访问文件
 
 **图1** ArkTS侧获取沙箱路径传递给Native侧访问文件示意图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/vGAg6F3JS9C8t9s8uchIew/zh-cn_image_0000002194010972.png?HW-CC-KV=V1&HW-CC-Date=20260429T061100Z&HW-CC-Expire=86400&HW-CC-Sign=78D1274ECEC64664A886F7174CF2351842874D8FA9012A09B1210018F7B16A0A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/vGAg6F3JS9C8t9s8uchIew/zh-cn_image_0000002194010972.png)
 
 **实现方案**
 
@@ -127,14 +127,14 @@ content_hash: sha256:f3f4982156ae9253697bfa0170cdea415982e09bf0fd6ebf93915c0c829
 **效果展示**
 
 **图2** ArkTS侧传递沙箱路径到Native侧方案效果展示  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/OUARLc2kQtebVndgfOPAUA/zh-cn_image_0000002194010940.png?HW-CC-KV=V1&HW-CC-Date=20260429T061100Z&HW-CC-Expire=86400&HW-CC-Sign=7CB1BFCBA963D286559CA579C6427A3812EED4F9FD62EDF292896A15B6D98241 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/OUARLc2kQtebVndgfOPAUA/zh-cn_image_0000002194010940.png "点击放大")
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/a-XO-TOSQsitKOi_MpoocQ/zh-cn_image_0000002194010944.png?HW-CC-KV=V1&HW-CC-Date=20260429T061100Z&HW-CC-Expire=86400&HW-CC-Sign=CD214D93D6FA22B3A740301E940CB25403BCE8F8FB5040099D31AEC7EF4BF5E0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/a-XO-TOSQsitKOi_MpoocQ/zh-cn_image_0000002194010944.png)
 
 ### 方案二：Native侧直接拼接沙箱路径访问文件
 
 **图3** Native侧直接拼接沙箱路径访问文件示意图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/ZUOdQKp-TO69CPpxYLf3WQ/zh-cn_image_0000002229451237.png?HW-CC-KV=V1&HW-CC-Date=20260429T061100Z&HW-CC-Expire=86400&HW-CC-Sign=65DD17879FFDB2D535895A71F2690B9B61C83AC359A894D21FFD89E73855A942)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/ZUOdQKp-TO69CPpxYLf3WQ/zh-cn_image_0000002229451237.png)
 
 **实现方案**
 
@@ -234,16 +234,16 @@ content_hash: sha256:f3f4982156ae9253697bfa0170cdea415982e09bf0fd6ebf93915c0c829
 **效果展示**
 
 **图4** Native侧拼接沙箱路径方案效果展示  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/amAYBVM-S5uSkHIunZfzOA/zh-cn_image_0000002193851360.png?HW-CC-KV=V1&HW-CC-Date=20260429T061100Z&HW-CC-Expire=86400&HW-CC-Sign=F1BE1F08C2D58109579D0CA380E06285079F5208F5ED5528E6CB25BECA543EEA "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/amAYBVM-S5uSkHIunZfzOA/zh-cn_image_0000002193851360.png "点击放大")
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/25uxI5VzSp2J8WuDFBqjNw/zh-cn_image_0000002229336761.png?HW-CC-KV=V1&HW-CC-Date=20260429T061100Z&HW-CC-Expire=86400&HW-CC-Sign=0503EB6E6AF103B8123AA6F1F0856E746655790BCC94B2E82607FA722147366B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/25uxI5VzSp2J8WuDFBqjNw/zh-cn_image_0000002229336761.png)
 
 ## 访问应用包内资源文件
 
 Native侧可以通过Resource Manager[操作应用资源文件中的Rawfile目录和文件](../harmonyos-guides/rawfile-guidelines.md)，这里以Native侧读取Rawfile文件内容的场景为例介绍该方案。
 
 **图5** Native侧访问应用资源文件方案示意图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/LC-IIGsVQoOEczKHdw2_hA/zh-cn_image_0000002229336753.png?HW-CC-KV=V1&HW-CC-Date=20260429T061100Z&HW-CC-Expire=86400&HW-CC-Sign=89FD2FE67744E2B1C178BA426998992EE28C93FB70533C6044D503667496C0E6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/LC-IIGsVQoOEczKHdw2_hA/zh-cn_image_0000002229336753.png)
 
 **实现方案**
 
@@ -353,9 +353,9 @@ Native侧可以通过Resource Manager[操作应用资源文件中的Rawfile目�
 **效果展示**
 
 **图6** ArkTS侧传递resource manager到Native侧方案效果展示  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/QqVZ7gJVRgimyaB82ebCKA/zh-cn_image_0000002193851368.png?HW-CC-KV=V1&HW-CC-Date=20260429T061100Z&HW-CC-Expire=86400&HW-CC-Sign=9B35ADB60E245C35EE508186B2298AC4BF8E1A7ED99C76A155C24BD083C639D1 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/QqVZ7gJVRgimyaB82ebCKA/zh-cn_image_0000002193851368.png "点击放大")
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/zja39cO9SemHAmExWSXb0Q/zh-cn_image_0000002194010964.png?HW-CC-KV=V1&HW-CC-Date=20260429T061100Z&HW-CC-Expire=86400&HW-CC-Sign=89F22A3CA43F5208615BD6A6CE9704EE19BD4BD21A4244E23E6F8655D8813445)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/zja39cO9SemHAmExWSXb0Q/zh-cn_image_0000002194010964.png)
 
 ## 访问公共目录文件
 
@@ -371,7 +371,7 @@ Native侧可以通过Resource Manager[操作应用资源文件中的Rawfile目�
 ArkTS侧通过文件picker在公共目录下创建文件，并传递文件描述符到Native侧，Native侧通过文件描述符打开文件并将数据写入到文件中。
 
 **图7** Native侧写入公共目录文件场景示意图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/tLJcO8AjSZa3PwT3uJ4xdw/zh-cn_image_0000002229451265.png?HW-CC-KV=V1&HW-CC-Date=20260429T061100Z&HW-CC-Expire=86400&HW-CC-Sign=B6276E930E7E3C6232EFB1781686F4C6B03FC29DA9E639907B4E23EC9ACB915B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/tLJcO8AjSZa3PwT3uJ4xdw/zh-cn_image_0000002229451265.png)
 
 **实现方案**
 
@@ -500,9 +500,9 @@ ArkTS侧通过文件picker在公共目录下创建文件，并传递文件描述
 **效果展示**
 
 **图8** Native侧写公共目录文件场景方案效果展示  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/qqR67MSoQbqP_iU2Gf11CA/zh-cn_image_0000002194010980.png?HW-CC-KV=V1&HW-CC-Date=20260429T061100Z&HW-CC-Expire=86400&HW-CC-Sign=DE4068F8420C89CEA6DA9BD5CCC3F6BF22F7C1F255346F7714AF779CFB048E27 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/qqR67MSoQbqP_iU2Gf11CA/zh-cn_image_0000002194010980.png "点击放大")
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/HLwRvoNJRoya396Tr6IxiA/zh-cn_image_0000002194010936.png?HW-CC-KV=V1&HW-CC-Date=20260429T061100Z&HW-CC-Expire=86400&HW-CC-Sign=B23E77857703BB1E9724F99A164BB0CB8E43E33491524815401994A549E8EAE7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/HLwRvoNJRoya396Tr6IxiA/zh-cn_image_0000002194010936.png)
 
 ### 场景二：从公共目录文件中读取数据
 
@@ -511,7 +511,7 @@ ArkTS侧通过文件picker在公共目录下创建文件，并传递文件描述
 ArkTS侧通过文件picker选择文件，并传递文件描述符到Native侧，Native侧通过文件描述符打开文件并读取文件数据。
 
 **图9** Native侧读取公共目录文件场景示意图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/YBTGGcU_TIqLAXbpI1Q9qw/zh-cn_image_0000002193851388.png?HW-CC-KV=V1&HW-CC-Date=20260429T061100Z&HW-CC-Expire=86400&HW-CC-Sign=2C6F3AF165025305CDAC2E0D0015CDF184C568EE7A55FC5C0EB3CD62921EE99E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/YBTGGcU_TIqLAXbpI1Q9qw/zh-cn_image_0000002193851388.png)
 
 **实现方案**
 
@@ -631,9 +631,9 @@ ArkTS侧通过文件picker选择文件，并传递文件描述符到Native侧，
 **效果展示**
 
 **图10** Native侧读公共目录文件场景方案效果展示  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/KvJvsPSXRP-D0ynyxXi1hg/zh-cn_image_0000002194010968.png?HW-CC-KV=V1&HW-CC-Date=20260429T061100Z&HW-CC-Expire=86400&HW-CC-Sign=1B03EC313A4506BE50947A96D57343E029BC695C248AFC6C1BF2BBEDF93134A1 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/KvJvsPSXRP-D0ynyxXi1hg/zh-cn_image_0000002194010968.png "点击放大")
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/w2u3pCZ4TZ6xpIzC-sLYAA/zh-cn_image_0000002229451245.png?HW-CC-KV=V1&HW-CC-Date=20260429T061100Z&HW-CC-Expire=86400&HW-CC-Sign=506A4633177773AD4B60E5DE03EBB2C04F0292B587323E8C75CA8515589D32C5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/w2u3pCZ4TZ6xpIzC-sLYAA/zh-cn_image_0000002229451245.png)
 
 ## 示例代码
 

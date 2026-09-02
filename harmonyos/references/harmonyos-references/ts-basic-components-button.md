@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:51:57+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:3372ef6407b421e8a012f02bb257538597be179ba00ab007122ed89e967cac59
+content_hash: sha256:f7f84d9084eaf5a1d4de9504055bc54a3c9fe5be18c26e1f955a3f7d51373478
 ---
 
 按钮组件，可快速创建不同样式的按钮。
@@ -587,7 +587,7 @@ PhonePC/2in1TabletTVWearable
 53. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/85VBxrQ3QRu08liVE-XN3g/zh-cn_image_0000002558766214.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055151Z&HW-CC-Expire=86400&HW-CC-Sign=966E96578FFAA3FC3843094BB9FC1A06141197972DB26A6C8C2330378329C3AA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/85VBxrQ3QRu08liVE-XN3g/zh-cn_image_0000002558766214.gif)
 
 ### 示例2 （为按钮添加渲染控制）
 
@@ -619,7 +619,7 @@ PhonePC/2in1TabletTVWearable
 23. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/_OTr5QypRjeyFbVC2owGHA/zh-cn_image_0000002558606556.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055151Z&HW-CC-Expire=86400&HW-CC-Sign=CEE8383F9C28F8383F7AE77649E428C08C78F664AA22373ABE3E11C79D4D1CD8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/_OTr5QypRjeyFbVC2owGHA/zh-cn_image_0000002558606556.gif)
 
 ### 示例3 （设置按钮文本样式）
 
@@ -661,7 +661,7 @@ PhonePC/2in1TabletTVWearable
 33. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/QJ2sCKrZRY6TF4UTJgRn3A/zh-cn_image_0000002589326083.png?HW-CC-KV=V1&HW-CC-Date=20260429T055151Z&HW-CC-Expire=86400&HW-CC-Sign=6EFC2006540D2638CFCE8D3A23417FBD99B72FE3C228B0E74291864A62DD0B5E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/QJ2sCKrZRY6TF4UTJgRn3A/zh-cn_image_0000002589326083.png)
 
 ### 示例4（设置不同尺寸按钮的重要程度）
 
@@ -700,7 +700,7 @@ PhonePC/2in1TabletTVWearable
 30. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/ZcNVd1tLTrm6Qg_c4GHN7w/zh-cn_image_0000002589246025.jpeg?HW-CC-KV=V1&HW-CC-Date=20260429T055151Z&HW-CC-Expire=86400&HW-CC-Sign=4377952B1BDFAC2D5560567E77C62E74C1746E4A2E05FBBE36FB2B1EF7D8EC15)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/ZcNVd1tLTrm6Qg_c4GHN7w/zh-cn_image_0000002589246025.jpeg)
 
 ### 示例5（设置按钮的角色）
 
@@ -730,7 +730,7 @@ PhonePC/2in1TabletTVWearable
 21. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/9fYcfZsFQOycmU2lDgGfrQ/zh-cn_image_0000002558766216.jpeg?HW-CC-KV=V1&HW-CC-Date=20260429T055151Z&HW-CC-Expire=86400&HW-CC-Sign=2CDBF5A5D4AABD098B8B3083FB503FF77BB09B59C5C737CD3F5439A533936B67)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/9fYcfZsFQOycmU2lDgGfrQ/zh-cn_image_0000002558766216.jpeg)
 
 ### 示例6（设置自定义样式按钮）
 
@@ -801,7 +801,7 @@ PhonePC/2in1TabletTVWearable
 62. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/5LIqlnUYTUefOA4nybNeTQ/zh-cn_image_0000002558606558.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055151Z&HW-CC-Expire=86400&HW-CC-Sign=13C475EC09FFF25004C0FAF0931B74C4BA7DB72706BFFD819F0BE860E8B949AF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/5LIqlnUYTUefOA4nybNeTQ/zh-cn_image_0000002558606558.gif)
 
 ### 示例7（设置圆角矩形按钮）
 
@@ -843,7 +843,7 @@ PhonePC/2in1TabletTVWearable
 33. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/RnEWgQD9S5CYGJoswZgicQ/zh-cn_image_0000002589326085.jpeg?HW-CC-KV=V1&HW-CC-Date=20260429T055151Z&HW-CC-Expire=86400&HW-CC-Sign=0A566B8EB53707F9838B1CC9A1A83C6ED21AF6FCAAAF30DA5D948863790193E8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/RnEWgQD9S5CYGJoswZgicQ/zh-cn_image_0000002589326085.jpeg)
 
 ### 示例8（设置label文本水平对齐方式）
 
@@ -869,4 +869,4 @@ PhonePC/2in1TabletTVWearable
 15. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/_dX4yBEMTrOk7wbsRosV1A/zh-cn_image_0000002589246027.jpeg?HW-CC-KV=V1&HW-CC-Date=20260429T055151Z&HW-CC-Expire=86400&HW-CC-Sign=847E844977B08E85CB7E2D1B2964F74686D1B0DEC9114A639D6FC1C112FB40DC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/_dX4yBEMTrOk7wbsRosV1A/zh-cn_image_0000002589246027.jpeg)

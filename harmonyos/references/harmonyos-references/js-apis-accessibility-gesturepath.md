@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-accessibility-gesturepath
-title: @ohos.accessibility.GesturePath (手势路径)
+title: "@ohos.accessibility.GesturePath (手势路径)"
 breadcrumb: API参考 > 应用框架 > Accessibility Kit（无障碍服务） > ArkTS API > @ohos.accessibility.GesturePath (手势路径)
 category: harmonyos-references
 scraped_at: 2026-04-28T07:59:06+08:00

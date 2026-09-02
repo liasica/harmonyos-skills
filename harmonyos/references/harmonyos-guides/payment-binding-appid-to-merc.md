@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用服务 > Payment Kit（鸿蒙支付服务） > 开发
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:39:30+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:593f10f97bb045ce7f086892eedb13e3f77b8fd49d457de60ba0841fec2ecdea
+content_hash: sha256:4f6bb6be6614072e3ebe617b37da2c66b8f5d4c1f80c4800166c83f740d5992c
 ---
 
 说明
@@ -33,15 +33,15 @@ AppID绑定详细可参见[AppID管理及关联](../pay-docs/hwzf-appidguanli-00
 
 1. 请登录[华为支付商户平台](https://petalpay-merchant.cloud.huawei.com/)进入“商户中心 > 产品功能 > AppID管理 > 新增关联AppID”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/zduBdvAjRuK2iaXYYiDATQ/zh-cn_image_0000002558605922.png?HW-CC-KV=V1&HW-CC-Date=20260429T053929Z&HW-CC-Expire=86400&HW-CC-Sign=965D07AF59F266382E615574387638D2341707F47B79F68C045F4CE5C39F9456)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/zduBdvAjRuK2iaXYYiDATQ/zh-cn_image_0000002558605922.png)
 2. 申请绑定AppID后，应用管理员登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)网站选择对应的项目后，完成对应的商户“授权”操作， 操作路径如下：
 
    * **HarmonyOS应用**：“盈利 > 鸿蒙支付服务（可在‘全部功能’中搜索服务并固定到导航栏）> 支付服务（非虚拟类）> 待关联商户号”。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/127ZDc6ATPSrBcX39P9d7g/zh-cn_image_0000002589325449.png?HW-CC-KV=V1&HW-CC-Date=20260429T053929Z&HW-CC-Expire=86400&HW-CC-Sign=727F84198D3936E71CC91992325686E373143A5CA07100E408D8BB546F75CC31)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/127ZDc6ATPSrBcX39P9d7g/zh-cn_image_0000002589325449.png)
    * **元服务**：“支付与交易 > 鸿蒙支付服务（可在‘全部功能’中搜索服务并固定到导航栏）> 支付服务（非虚拟类）> 待关联商户号”。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/hAw-_OUcQzCY-8yJbhVCNg/zh-cn_image_0000002589245387.png?HW-CC-KV=V1&HW-CC-Date=20260429T053929Z&HW-CC-Expire=86400&HW-CC-Sign=0133608DC93A9E3729EFD2BED058BD8CA74A02E0CD0149B7B4ED51777ED64255)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/hAw-_OUcQzCY-8yJbhVCNg/zh-cn_image_0000002589245387.png)
 
 ## 服务商绑定
 
@@ -58,29 +58,29 @@ AppID绑定详细可参见[AppID管理及关联](../pay-docs/hwzf-appidguanli-00
 
 1. 服务商登录[华为支付商户平台](https://petalpay-merchant.cloud.huawei.com/)进入“商户中心 > 产品功能 > AppID管理”，在“服务商绑定的AppID”页签内点击“新增关联AppID”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/kbQ8Vlf7Q1a5RC-ehsHElg/zh-cn_image_0000002558765580.png?HW-CC-KV=V1&HW-CC-Date=20260429T053929Z&HW-CC-Expire=86400&HW-CC-Sign=C2EC3B44E0EBC5A5C814C2C4F22C6452A677F5F9DDC03E2F1ECE1BFA1DC106F9)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/kbQ8Vlf7Q1a5RC-ehsHElg/zh-cn_image_0000002558765580.png)
 2. 申请绑定AppID后，应用管理员登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)网站选择对应的项目后，完成对应的商户“授权”操作， 操作路径如下：
 
    * **HarmonyOS应用**：“盈利 > 鸿蒙支付服务（可在‘全部功能’中搜索服务并固定到导航栏）> 支付服务（非虚拟类）> 待关联商户号”。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/Cj5zdVssRZWSpYhng3UDtw/zh-cn_image_0000002589325449.png?HW-CC-KV=V1&HW-CC-Date=20260429T053929Z&HW-CC-Expire=86400&HW-CC-Sign=D3897D9F303311F8D21B35523821795519A797A9095BE1335192193CB1E88872)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/Cj5zdVssRZWSpYhng3UDtw/zh-cn_image_0000002589325449.png)
    * **元服务**：“支付与交易 > 鸿蒙支付服务（可在‘全部功能’中搜索服务并固定到导航栏）> 支付服务（非虚拟类）> 待关联商户号”。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/H28AJDLpReO-sFLjPUudjQ/zh-cn_image_0000002589245387.png?HW-CC-KV=V1&HW-CC-Date=20260429T053929Z&HW-CC-Expire=86400&HW-CC-Sign=B218D65D0EC9B71FB8048CF91955A4899DD08D9B12B76A27E5C3762DEB0E2758)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/H28AJDLpReO-sFLjPUudjQ/zh-cn_image_0000002589245387.png)
 
 ### 服务商邀请特约商户绑定
 
 1. 服务商登录[华为支付商户平台](https://petalpay-merchant.cloud.huawei.com/)进入“商户中心 > 产品功能 > AppID管理”，在“特约商户绑定的AppID”页签内根据服务商下的特约商户列表，选择特约商户发起AppID绑定申请邀请。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/mOOyxnKERlKjaXtr9RgVtQ/zh-cn_image_0000002558605924.png?HW-CC-KV=V1&HW-CC-Date=20260429T053929Z&HW-CC-Expire=86400&HW-CC-Sign=A289E96451BFB4C3575956710A65792B3EF7414D7B564C304E6EEA42FB3528B0)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/mOOyxnKERlKjaXtr9RgVtQ/zh-cn_image_0000002558605924.png)
 2. 特约商户登录[华为支付商户平台](https://petalpay-merchant.cloud.huawei.com/)进入“商户中心 > 产品功能 > AppID管理”选择“服务商为我绑定的AppID列表”中的数据，点击去确认，对服务商邀请绑定AppID进行确认。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/chsdt2QaT1anHom4fpFHUQ/zh-cn_image_0000002589325451.png?HW-CC-KV=V1&HW-CC-Date=20260429T053929Z&HW-CC-Expire=86400&HW-CC-Sign=43C1A255B8662B698FD4225D7B2FD11CB0ADC37BD7A92C64BCD734EFD8B290E8)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/chsdt2QaT1anHom4fpFHUQ/zh-cn_image_0000002589325451.png)
 3. 特约商户确认绑定AppID后，应用管理员登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)网站选择对应的项目后，完成对应的商户“授权”操作， 操作路径如下：
 
    * **HarmonyOS应用**：“盈利 > 鸿蒙支付服务（可在‘全部功能’中搜索服务并固定到导航栏）> 支付服务（非虚拟类）> 待关联商户号”。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/8bINzuVuRLm4gREzFGEQTg/zh-cn_image_0000002589325449.png?HW-CC-KV=V1&HW-CC-Date=20260429T053929Z&HW-CC-Expire=86400&HW-CC-Sign=841DCA5FFB2BF65A3C1CD854898F10267A47F730890C6C7519B4E4D730A16F3E)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/8bINzuVuRLm4gREzFGEQTg/zh-cn_image_0000002589325449.png)
    * **元服务**：“支付与交易 > 鸿蒙支付服务（可在‘全部功能’中搜索服务并固定到导航栏）> 支付服务（非虚拟类）> 待关联商户号”。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/BnANEjkJR0KKpsQ0VYsW4g/zh-cn_image_0000002589245387.png?HW-CC-KV=V1&HW-CC-Date=20260429T053929Z&HW-CC-Expire=86400&HW-CC-Sign=B67F4D1C00E730DE33FDEDB1C7B117B5082DE13B63093ED97484439994F9B1EB)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/BnANEjkJR0KKpsQ0VYsW4g/zh-cn_image_0000002589245387.png)

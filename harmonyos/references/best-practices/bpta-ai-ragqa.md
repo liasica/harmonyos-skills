@@ -5,7 +5,7 @@ breadcrumb: 最佳实践 > AI使能 > 基于RAG框架实现邮件智能问答
 category: best-practices
 scraped_at: 2026-04-29T14:13:14+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:9dbdfb4e9eb23714670d2a35704ef359e1897b568d4a5a111696636ca09262be
+content_hash: sha256:0fc130da63cf7aa19c902fb2b9589cc68bed3660b88febe59aec6f1ddadf4d64
 ---
 
 ## 概述
@@ -20,7 +20,7 @@ RAG（检索增强生成）是一种结合了信息检索与文本生成技术�
 
 ## 用户体验
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/97joQ8OSSCiuWnHnlteNQQ/zh-cn_image_0000002368829345.png?HW-CC-KV=V1&HW-CC-Date=20260429T061312Z&HW-CC-Expire=86400&HW-CC-Sign=A016A4BD92A5E366AA31930B2BEB46825975D9239313D283CD00FCB3228510BE "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/97joQ8OSSCiuWnHnlteNQQ/zh-cn_image_0000002368829345.png "点击放大")
 
 本文案例依托用户自定义的邮件数据库进行智能问答，准确识别语义并提供精确答案，并有以下基本功能：
 
@@ -29,7 +29,7 @@ RAG（检索增强生成）是一种结合了信息检索与文本生成技术�
 
 ## 实现原理
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/BuWvJ9mzRKyxr8U6TAXjyQ/zh-cn_image_0000002368709477.png?HW-CC-KV=V1&HW-CC-Date=20260429T061312Z&HW-CC-Expire=86400&HW-CC-Sign=4079EBBEBD38EC042BBECC22A1812AE77BFA361A99B575C41A19C7B56099B790 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/BuWvJ9mzRKyxr8U6TAXjyQ/zh-cn_image_0000002368709477.png "点击放大")
 
 RAG提供用于进行流式问答的接口，整体问答流程分为两个阶段：
 

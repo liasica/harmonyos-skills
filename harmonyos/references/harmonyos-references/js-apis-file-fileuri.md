@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-file-fileuri
-title: @ohos.file.fileuri (文件URI)
+title: "@ohos.file.fileuri (文件URI)"
 breadcrumb: API参考 > 应用框架 > Core File Kit（文件基础服务） > ArkTS API > @ohos.file.fileuri (文件URI)
 category: harmonyos-references
 scraped_at: 2026-04-28T08:05:42+08:00

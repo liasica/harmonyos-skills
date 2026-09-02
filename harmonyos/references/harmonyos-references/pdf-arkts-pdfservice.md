@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用服务 > PDF Kit（PDF服务） > ArkTS API > pdfS
 category: harmonyos-references
 scraped_at: 2026-04-29T14:09:00+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:3f7027185665ae63252e6bc0b5d326752e2b7c3aab4ae87fa9661b15a52d3176
+content_hash: sha256:83f4ed2a62654c562f728910f2993142593d9de87c57f9d1268c23d36938209b
 ---
 
 本模块为应用提供统一的管理PDF页面的页眉页脚、水印和背景、文档的多种批注风格和书签便捷的PDF能力。
@@ -506,7 +506,7 @@ movePage(2, 3)，不会有变化，2是第3页，3是第4页，第3页只能移�
 
 movePage(3, 2)，会有变化，顺序：0，1，3，2，4。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/CLkVZ3-CTvi1gbdH1XmN2w/zh-cn_image_0000002558767434.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T060858Z&HW-CC-Expire=86400&HW-CC-Sign=C14683E9BDBEF716E80B4963436C23EBB733AB93FD6833956651CF5043B0A824)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/CLkVZ3-CTvi1gbdH1XmN2w/zh-cn_image_0000002558767434.jpg)
 
 **系统能力：** SystemCapability.OfficeService.PDFService.Core
 

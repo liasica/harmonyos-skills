@@ -5,7 +5,7 @@ breadcrumb: 最佳实践 > 性能 > 性能场景优化案例 > 资源与存储�
 category: best-practices
 scraped_at: 2026-04-29T14:13:37+08:00
 doc_updated_at: 2026-03-19
-content_hash: sha256:9de3b1b8b4024b4ff054b2f47681521a6dca3a9b17f77ba06fea9f77ba8c9c04
+content_hash: sha256:a84b72edcc97cc7a3865fe24d5ba4a7f825ff266c2f71e2253dddaae670f4411
 ---
 
 ## 概述
@@ -67,7 +67,7 @@ DevEco Studio 默认在打包应用时不压缩 so 库文件。配置 so 压缩�
 
 对于ohpm 1.5.0之前的版本，如果hap依赖了不同版本的har（例如下图中的V1版本的harC和V2版本的harC），默认情况下，V1和V2两个版本的harC都会被打包到hap中。开发者可以使用ohpm的[override](../harmonyos-guides/ide-oh-package-json5.md#zh-cn_topic_0000001792256137_overrides)机制，指定只打包一个版本。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/biQLgq64ST-SW1mQKgy9KA/zh-cn_image_0000002194011048.png?HW-CC-KV=V1&HW-CC-Date=20260429T061333Z&HW-CC-Expire=86400&HW-CC-Sign=6A765CFDD064B88D011F597358D7847BFBC5B2B7B9087AEC0D9274754B3A372D "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/biQLgq64ST-SW1mQKgy9KA/zh-cn_image_0000002194011048.png "点击放大")
 
 如果使用的是ohpm 1.4.0 版本，可以使用override机制，开发者可以在项目级别的 oh-package.json5 （即项目根目录下的 oh-package.json5）文件中添加 overrides 配置，将依赖树中的依赖替换为另一个版本。替换的版本既可以是一个具体的版本号，也可以是本地存在的HAR包或源码目录。
 
@@ -119,8 +119,8 @@ DevEco Studio 默认在打包应用时不压缩 so 库文件。配置 so 压缩�
 
 在多包场景下，如果应用的多个HAP或HSP包使用HAR包实现代码和资源的共享，打包后的每个HAP或HSP包中都会包含共享HAR包的拷贝，导致App包中存在冗余代码和资源。如下图示例，应用模块HAP1和HAP2/HSP1都引用了HAR2和HAR3，打包后，App包中HAR2和HAR3有多份重复拷贝，体积较大。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/NWp2adUgQka7gDMQXAXoag/zh-cn_image_0000002229451341.png?HW-CC-KV=V1&HW-CC-Date=20260429T061333Z&HW-CC-Expire=86400&HW-CC-Sign=4C23E1CF921C98D3739D74A5DDBF59362F43F5E0BF22DB87547ADBCB4346AEA7 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/NWp2adUgQka7gDMQXAXoag/zh-cn_image_0000002229451341.png "点击放大")
 
 推荐使用HSP代替HAR实现代码和资源共享。如下图示例，使用HSP2对原应用进行升级改造，打包后，APP包中HAR2和HAR3仅保留一份拷贝。当HAR2和HAR3的总大小超过HSP时，可以减小应用包大小。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/yAN-fcgoSUaLmO50vAycng/zh-cn_image_0000002229336845.png?HW-CC-KV=V1&HW-CC-Date=20260429T061333Z&HW-CC-Expire=86400&HW-CC-Sign=BD2BCBA94B7ADD3DA6CE9405548E2B7402337D99B86564F75E8F09DB1F148FBA "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/yAN-fcgoSUaLmO50vAycng/zh-cn_image_0000002229336845.png "点击放大")

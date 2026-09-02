@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用服务 > Screen Time Guard Kit（屏幕时间守护�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:40:28+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:c7cfc7298d3d64f79945c13bf9e764e9d8d8db6f918eb4f0dba7ecc80b048b75
+content_hash: sha256:888b04282d3b2b599bc5d24625b5191e18d0334e53108e3c5f42fcc5aff6f0cc
 ---
 
 ## 场景介绍
@@ -14,11 +14,11 @@ content_hash: sha256:c7cfc7298d3d64f79945c13bf9e764e9d8d8db6f918eb4f0dba7ecc80b0
 
 ## 用户体验设计
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/pKkZLzVSTESCvS9an8j2tw/zh-cn_image_0000002558765670.png?HW-CC-KV=V1&HW-CC-Date=20260429T054027Z&HW-CC-Expire=86400&HW-CC-Sign=26FB405E834B0582B3617E2DA57D4ACC67E7F5EF3A25D4A690CCFC143A013FF0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/pKkZLzVSTESCvS9an8j2tw/zh-cn_image_0000002558765670.png)
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/SwAUzEBPSbOSkArkdsQsEA/zh-cn_image_0000002558606014.png?HW-CC-KV=V1&HW-CC-Date=20260429T054027Z&HW-CC-Expire=86400&HW-CC-Sign=6D513EECC85F029E0D169B1AE7AA3198C9DD3DA1C71472EECE4CCEB83AD6795B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/SwAUzEBPSbOSkArkdsQsEA/zh-cn_image_0000002558606014.png)
 
 流程说明：
 

@@ -5,7 +5,7 @@ breadcrumb: 指南 > 系统 > 硬件 > Sensor Service Kit（传感器服务） >
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:33:41+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:d210692d1ed876ca1ff97e5b88fba406f3e73f3f07b9f47efa3d1811b5a84dac
+content_hash: sha256:cfbe75e99d06991435f29fa6b5eacd704513d7cfc455256e745da78c62d5b275
 ---
 
 ## 场景介绍
@@ -49,7 +49,7 @@ content_hash: sha256:d210692d1ed876ca1ff97e5b88fba406f3e73f3f07b9f47efa3d1811b5a
 
 1. 新建一个Native C++工程。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/rdQ5iTntTp-eAE_DPpXBeg/zh-cn_image_0000002589324849.png?HW-CC-KV=V1&HW-CC-Date=20260429T053339Z&HW-CC-Expire=86400&HW-CC-Sign=FE2AD5DAAA8057F15DEF2721B16D5629A814246BCD36392A283FEC23D8F43C26)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/rdQ5iTntTp-eAE_DPpXBeg/zh-cn_image_0000002589324849.png)
 2. 配置加速度传感器权限，具体配置方式请参考[声明权限](declare-permissions.md)。
 
    ```

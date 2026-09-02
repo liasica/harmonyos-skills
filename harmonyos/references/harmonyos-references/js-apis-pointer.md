@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-pointer
-title: @ohos.multimodalInput.pointer (鼠标光标)
+title: "@ohos.multimodalInput.pointer (鼠标光标)"
 breadcrumb: API参考 > 系统 > 基础功能 > Input Kit（多模输入服务） > ArkTS API > @ohos.multimodalInput.pointer (鼠标光标)
 category: harmonyos-references
 scraped_at: 2026-04-28T08:10:15+08:00

@@ -5,7 +5,7 @@ breadcrumb: 指南 > 构建应用 > 定制构建 > 获取自定义编译参数 >
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:47:18+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:f3677df9d7c6ce80154bdac2c2d2938a4a2dbba88a8698f36caf2c181805281a
+content_hash: sha256:ceff48113424646a08de49d8af7ff82ce1b25f497b55ae26b11a808849849baf
 ---
 
 在编译构建时，Hvigor会生成BuildProfile类，开发者可以通过该类在运行时获取编译构建参数，也可以在build-profile.json5中通过buildProfileFields增加自定义字段，从而在运行时获取自定义的参数。
@@ -30,7 +30,7 @@ buildProfileFields的优先级：模块级target > 模块级buildOptionSet > 模
 
 执行完上述操作后，将在“${moduleName} / build / ${productName} / generated / profile / ${targetName} ”目录下生成BuildProfile.ets文件。示例如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/tIAF4FeKTJ2G_KwDKplucw/zh-cn_image_0000002561753361.png?HW-CC-KV=V1&HW-CC-Date=20260429T054716Z&HW-CC-Expire=86400&HW-CC-Sign=32B1880ECEFFEB7869B07DB7D5E7A98CDA197197543A65E84F61383C7D5E3339)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/tIAF4FeKTJ2G_KwDKplucw/zh-cn_image_0000002561753361.png)
 
 ### 在代码中获取构建参数
 
@@ -155,7 +155,7 @@ buildProfileFields的优先级：模块级target > 模块级buildOptionSet > 模
 
 执行完上述操作后，将在模块根目录下生成BuildProfile.ets文件（该文件可放置在.gitignore文件中进行忽略）。示例如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/1miFq0npTA6dMB4VrnkDFg/zh-cn_image_0000002561833337.png?HW-CC-KV=V1&HW-CC-Date=20260429T054716Z&HW-CC-Expire=86400&HW-CC-Sign=EAF4D9F0B6DF6E4F52F26D394B979CF2B6A9D327627A897D2B7FCFE8914A0756)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/1miFq0npTA6dMB4VrnkDFg/zh-cn_image_0000002561833337.png)
 
 ### 在代码中获取构建参数
 
@@ -171,7 +171,7 @@ buildProfileFields的优先级：模块级target > 模块级buildOptionSet > 模
 1. const HAR_VERSION: string = BuildProfile.HAR_VERSION;
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/buVDIXTiSm6CdjOctGWDVg/zh-cn_image_0000002530753418.png?HW-CC-KV=V1&HW-CC-Date=20260429T054716Z&HW-CC-Expire=86400&HW-CC-Sign=9CBB7C540C69FCE6FB1B1EDF5373C8596BDAF8D088EF9F9FD1128F6296932A3F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/buVDIXTiSm6CdjOctGWDVg/zh-cn_image_0000002530753418.png)
 
 ### 默认参数
 

@@ -5,7 +5,7 @@ breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > Camera Kit简介
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:34:52+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:bb796478c809dd24d0959517b056f82a457e7f05c9b0420c7ca783f5dd1aab36
+content_hash: sha256:d9466eb5f836dd61a30742b0f0b3123ee8dc79fdde1cebea00a2ea29178d41a3
 ---
 
 开发者通过调用Camera Kit（相机服务）提供的接口可以开发相机应用，应用通过访问和操作相机硬件，实现基础操作，如预览、拍照和录像；还可以通过接口组合完成更多操作，如控制闪光灯和曝光时间、对焦或调焦等。
@@ -28,7 +28,7 @@ content_hash: sha256:bb796478c809dd24d0959517b056f82a457e7f05c9b0420c7ca783f5dd1
 
 **图1** 相机工作流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/FKwZ25S5TTuCEc3OzOEahQ/zh-cn_image_0000002558605408.png?HW-CC-KV=V1&HW-CC-Date=20260429T053451Z&HW-CC-Expire=86400&HW-CC-Sign=294C60BA77273F49FB3D07A1EEA0A5C7F63AE01E8870C3DB5B2A4BF4697DDA06)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/FKwZ25S5TTuCEc3OzOEahQ/zh-cn_image_0000002558605408.png)
 
 为便于开发者更好地开发相机应用，建议先了解相机开发工作流程，再了解相机的开发模型（如图2所示）。
 
@@ -38,4 +38,4 @@ content_hash: sha256:bb796478c809dd24d0959517b056f82a457e7f05c9b0420c7ca783f5dd1
 
 **图2** 相机开发模型
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/0b7ttQyxQWehsUb-cmR2zg/zh-cn_image_0000002589324935.png?HW-CC-KV=V1&HW-CC-Date=20260429T053451Z&HW-CC-Expire=86400&HW-CC-Sign=61467F276A995AD1AD43EEDA0BEF59A2F22C847450BD00D3F8145A20ED1BCCAB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/0b7ttQyxQWehsUb-cmR2zg/zh-cn_image_0000002589324935.png)

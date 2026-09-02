@@ -5,7 +5,7 @@ breadcrumb: 版本说明 > 应用兼容性说明 > 应用开发中的兼容性�
 category: harmonyos-releases
 scraped_at: 2026-04-29T13:25:20+08:00
 doc_updated_at: 2026-01-21
-content_hash: sha256:93e3e12d1b424435f6165697b036e501f576354148b5e9d9695bcafb5ff08a4a
+content_hash: sha256:e0ac994440b5baca343c6a161470b59011467c23e9821addc859e7dc24fddffe
 ---
 
 应用的源码工程配置项（build-profile.json5文件）中通过targetSdkVersion和compatibleSdkVersion定义了应用运行的目标SDK版本和最低SDK版本。
@@ -16,7 +16,7 @@ content_hash: sha256:93e3e12d1b424435f6165697b036e501f576354148b5e9d9695bcafb5ff
 
 例如：接口A在SDK版本5.0.2(14)产生行为变更并进行了版本隔离，应用升级targetSDKVersion≥5.0.2(14)并适配了新版本行为， compatibleSdkVersion还保持设置为5.0.1(13)， 则若应用分发到低版本设备5.0.1(13)上，需保证该应用在低版本设备能够兼容运行正常（如下图所示）。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/AwG3E2qPSAaE0CmqrlfkkA/zh-cn_image_0000002448697365.png?HW-CC-KV=V1&HW-CC-Date=20260429T052520Z&HW-CC-Expire=86400&HW-CC-Sign=E238D7423616961FB384BB645B0179BCB75A7224F43331004316D992A469F6E2 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/AwG3E2qPSAaE0CmqrlfkkA/zh-cn_image_0000002448697365.png "点击放大")
 
 这种场景开发者可以使用如下方式进行兼容处理：
 

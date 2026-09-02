@@ -5,7 +5,7 @@ breadcrumb: 指南 > NDK开发 > 代码开发 > 资源管理 > Rawfile开发指�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:44:27+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:b4aeb33364ef15d08a9da42cdf129a01e1e9161e0d383294c3c76c73c4941019
+content_hash: sha256:3f6d1ce921760969b982a2886f3e00f15755f785cc0e3887b7b663adf2f3c10b
 ---
 
 ## 场景介绍
@@ -39,7 +39,7 @@ content_hash: sha256:b4aeb33364ef15d08a9da42cdf129a01e1e9161e0d383294c3c76c73c49
 
 **1. 创建工程**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/USu4RvLmSiWxZrp-ecUmwA/zh-cn_image_0000002558606232.png?HW-CC-KV=V1&HW-CC-Date=20260429T054425Z&HW-CC-Expire=86400&HW-CC-Sign=0F6BF69B090A3E797880EB7275808A0B70D10406318FC0F6504769D557B3D43F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/USu4RvLmSiWxZrp-ecUmwA/zh-cn_image_0000002558606232.png)
 
 **2. 添加依赖**
 

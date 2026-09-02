@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:28:08+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:26bddcde7d62e1505b97c42978deb6813e25f7c980147510b61b61b4197827ef
+content_hash: sha256:e09d7d459bbcf8f0a7e72fc92751e6142fbff13bf520b79b99ad4521752b36f6
 ---
 
 ## 基础概念与规范
@@ -64,11 +64,11 @@ content_hash: sha256:26bddcde7d62e1505b97c42978deb6813e25f7c980147510b61b61b4197
 
 按下Tab键，焦点激活态显示。点击鼠标退出焦点激活态。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/HNdfu5ZzSX-mZSD9C0vRYQ/zh-cn_image_0000002589244267.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052806Z&HW-CC-Expire=86400&HW-CC-Sign=155FF6008A1211837EB1E147640535F3E36146E8739A4735320D3A1604C27F75)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/HNdfu5ZzSX-mZSD9C0vRYQ/zh-cn_image_0000002589244267.gif)
 
 调用[activate](../harmonyos-references/arkts-apis-uicontext-focuscontroller.md#activate14)接口进入和退出焦点激活态。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/iFIpUCMTRBqRBo_fYpEUmg/zh-cn_image_0000002558764460.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052806Z&HW-CC-Expire=86400&HW-CC-Sign=90CBE3A690E6A3D31BA6090B31A13A83BEA7FC144FF0EB508B51AC50CF68CAC9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/iFIpUCMTRBqRBo_fYpEUmg/zh-cn_image_0000002558764460.gif)
 
 示例操作步骤：
 
@@ -179,7 +179,7 @@ NavBar、NavDestination没有第3条特性，对于它们的走焦范围，是�
 
 运行后点击Button1，请求焦点给Row组件，Row组件的第一个可获焦子节点Button2获焦。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/11uHKhY8TE611ipT_KlQ7w/zh-cn_image_0000002558604804.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052806Z&HW-CC-Expire=86400&HW-CC-Sign=EC09BFC507B805C1CF2A2D1C3F10D8207479F918BECA93B8B0B646F98A462119)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/11uHKhY8TE611ipT_KlQ7w/zh-cn_image_0000002558604804.gif)
 
 ### 走焦规范
 
@@ -283,15 +283,15 @@ NavBar、NavDestination没有第3条特性，对于它们的走焦范围，是�
 
 Tab键走焦：按照子节点的挂载顺序循环走焦。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/zYvZJcmbTYi6O5EKIdYxCA/zh-cn_image_0000002589324329.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052806Z&HW-CC-Expire=86400&HW-CC-Sign=55BCA151A9BCB57B20E17F96763E77E385A8391322FE150B49F8D9CEF8170E07)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/zYvZJcmbTYi6O5EKIdYxCA/zh-cn_image_0000002589324329.gif)
 
 方向键上下走焦：纵向的Column容器中，可以使用上下键走焦，无法使用左右键走焦。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/23-VIvzxRpyV4BxG9_BU4g/zh-cn_image_0000002589244269.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052806Z&HW-CC-Expire=86400&HW-CC-Sign=4DEB3FCCC1AA6DAD734D3F6FE49508B3445C4318824604346229CD158C1CB7F7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/23-VIvzxRpyV4BxG9_BU4g/zh-cn_image_0000002589244269.gif)
 
 横向的Row容器中，可以使用左右键走焦，无法使用上下键走焦。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/Yo7zNIw8RxWFUiTDilzYgg/zh-cn_image_0000002558764462.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052806Z&HW-CC-Expire=86400&HW-CC-Sign=31F7BA9EE81BF263EECA1356A62FA6FAFE19E6369996EC11783A477DA2DB526D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/Yo7zNIw8RxWFUiTDilzYgg/zh-cn_image_0000002558764462.gif)
 
 **投影走焦算法**
 
@@ -337,7 +337,7 @@ Tab键走焦：按照子节点的挂载顺序循环走焦。
 
 Flex多行组件布局，组件大小一致，走焦正常。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/xpeTU2qYR6qEg274Lvx92A/zh-cn_image_0000002558604806.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052806Z&HW-CC-Expire=86400&HW-CC-Sign=B8AF0CCC672D29893B5E79432ECC7ADAAA843F538A363D20A2AC8EB2213574B3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/xpeTU2qYR6qEg274Lvx92A/zh-cn_image_0000002558604806.gif)
 
 ```
 1. @Entry
@@ -370,7 +370,7 @@ Flex多行组件布局，组件大小一致，走焦正常。
 
 Flex多行组件布局，组件大小不一且有纵向的交叠关系，无法Tab键走焦至下方4、5按钮组件。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/hwyxw3vZQTC6fRE0NCItaQ/zh-cn_image_0000002589324331.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052806Z&HW-CC-Expire=86400&HW-CC-Sign=865D4D10F9A87517D024839ED6558B6259DF5BAEBC2B404CE3FFB32D9516731F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/hwyxw3vZQTC6fRE0NCItaQ/zh-cn_image_0000002589324331.gif)
 
 **自定义走焦算法**
 
@@ -454,7 +454,7 @@ onFocus和onBlur两个接口通常成对使用，来监听组件的焦点变化�
 
 [onFocusBlur.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/EventProject/entry/src/main/ets/pages/focus/onFocusBlur.ets#L16-L78)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/ZKPZuGE4TTaWiegViIJc4w/zh-cn_image_0000002589244271.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052806Z&HW-CC-Expire=86400&HW-CC-Sign=603AC571FF2F72D972A8E9A4BBC3C081B156E1CAB15D7B5FE18F385CD5EC2803)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/ZKPZuGE4TTaWiegViIJc4w/zh-cn_image_0000002589244271.gif)
 
 上述示例包含以下3步：
 
@@ -680,7 +680,7 @@ Button1走焦到Button2，日志打印顺序：
 
 运行效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/0a1YfOYbS6io2We33EUDvQ/zh-cn_image_0000002558764464.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052806Z&HW-CC-Expire=86400&HW-CC-Sign=028F7D675EBD7C633AEA367EFCB1B1AB74B234B603F61E7DD32D2E2FB3D69E23)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/0a1YfOYbS6io2We33EUDvQ/zh-cn_image_0000002558764464.gif)
 
 上述示例包含以下3步：
 
@@ -748,7 +748,7 @@ Button1走焦到Button2，日志打印顺序：
 
 [ScopeFocus.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/EventProject/entry/src/main/ets/pages/focus/ScopeFocus.ets#L16-L66)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/kXeXmXBETBShUYfPz6NFaQ/zh-cn_image_0000002558604808.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052806Z&HW-CC-Expire=86400&HW-CC-Sign=056A672A022AC24C4DE566A86D9523E2278B7172DCE0C5627BCD4A477240BBD0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/kXeXmXBETBShUYfPz6NFaQ/zh-cn_image_0000002558604808.gif)
 
 上述示例包含以下2步：
 
@@ -793,7 +793,7 @@ Button1走焦到Button2，日志打印顺序：
 
 [TabStop.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/EventProject/entry/src/main/ets/pages/focus/TabStop.ets#L16-L46)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/CviPXQ-HTEuSg1n2DGszpA/zh-cn_image_0000002589324333.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052806Z&HW-CC-Expire=86400&HW-CC-Sign=494EE1D14DC4E1D0F62381EE1BD08FA8F2756405E886BC3089CCFCFFC5CCEC6C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/CviPXQ-HTEuSg1n2DGszpA/zh-cn_image_0000002589324333.gif)
 
 上述示例包含以下2步：
 
@@ -874,7 +874,7 @@ Button1走焦到Button2，日志打印顺序：
 
 [DefaultFocus.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/EventProject/entry/src/main/ets/pages/focus/DefaultFocus.ets#L16-L80)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/WfUBK8ZATi274RynlS_YGA/zh-cn_image_0000002589244273.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052806Z&HW-CC-Expire=86400&HW-CC-Sign=B9207018A00CD7A1DDFDF9B9F09131824657587D76419DF66BB34A0BEB73278B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/WfUBK8ZATi274RynlS_YGA/zh-cn_image_0000002589244273.gif)
 
 上述示例包含以下2步：
 
@@ -975,7 +975,7 @@ Button1走焦到Button2，日志打印顺序：
 
 [RequestFocus.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/EventProject/entry/src/main/ets/pages/focus/RequestFocus.ets#L16-L47)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/Cdo7VxmATUmvRYakw_j0AA/zh-cn_image_0000002558764466.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052806Z&HW-CC-Expire=86400&HW-CC-Sign=FD70CBC85BE2CEB0CF60F638523AE4BE2AE9992CB922A055ABCB7FA53B36E34A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/Cdo7VxmATUmvRYakw_j0AA/zh-cn_image_0000002558764466.gif)
 
 上述示例包含以下2步：
 
@@ -1090,7 +1090,7 @@ Button1走焦到Button2，日志打印顺序：
 
   [FocusController.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/EventProject/entry/src/main/ets/pages/focus/FocusController.ets#L16-L93)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/qcN-73oQSfS7wGgInI5EhQ/zh-cn_image_0000002558604810.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052806Z&HW-CC-Expire=86400&HW-CC-Sign=3E5637031A3AEACE2A0DA52649CF97352021AC217D362C03FA7636526ACFFCF9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/qcN-73oQSfS7wGgInI5EhQ/zh-cn_image_0000002558604810.gif)
 
 上述示例包含以下3步：
 
@@ -1160,11 +1160,11 @@ Button1走焦到Button2，日志打印顺序：
 
 Tab键走焦：未配置nextFocus时，Tab键走焦顺序为A->B->C->D->E->F。配置nextFocus之后，Tab键走焦顺序为A->F->B->C->D->E->A。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/jMDc8HqwS5WzUYm_72HXzw/zh-cn_image_0000002589324335.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052806Z&HW-CC-Expire=86400&HW-CC-Sign=F7630ED9587C9E5B98AE6D16D9AED1E5FBC54312D278FBB298A85A320A43807D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/jMDc8HqwS5WzUYm_72HXzw/zh-cn_image_0000002589324335.gif)
 
 方向键走焦（以方向下键为例）：未配置nextFocus时，按下Tab键激活焦点态之后，按方向下键走焦顺序为A->D->E->F。配置nextFocus之后，按下Tab键激活焦点态之后，按方向下键走焦顺序为A->B->C->D->E->F->A。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/2y248U6mSDi3HJ6zgsiQ5A/zh-cn_image_0000002589244275.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052806Z&HW-CC-Expire=86400&HW-CC-Sign=80918681D3C2DCCBBC004C1412D2262D638623DEB3E14BF0F734C74EC293A71E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/2y248U6mSDi3HJ6zgsiQ5A/zh-cn_image_0000002589244275.gif)
 
 ### tabIndex自定义走焦
 
@@ -1218,7 +1218,7 @@ tabIndex只能够自定义Tab键走焦，若想同时自定义方向键等走焦
 
 Tab键走焦：只在配置TabIndex的节点间循环走焦。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/t8MeuaiQSn2UPIsQjNCouA/zh-cn_image_0000002558764468.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052806Z&HW-CC-Expire=86400&HW-CC-Sign=0BE03633BC06927EE3DAA565DDD232A50207D742DD8B55B010950102759583BC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/t8MeuaiQSn2UPIsQjNCouA/zh-cn_image_0000002558764468.gif)
 
 tabIndex配置在容器上时，如果容器中的所有组件都没有获焦过，则走到第一个可获焦组件上，否则会走到上次获焦的节点。
 
@@ -1254,7 +1254,7 @@ tabIndex配置在容器上时，如果容器中的所有组件都没有获焦过
 
 Tab键走焦：tabIndex配置在容器上。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/ybSyrTbvQOCifb1mhQPPEQ/zh-cn_image_0000002558604812.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052806Z&HW-CC-Expire=86400&HW-CC-Sign=FF0957E7CA6BA786947B3A66455CE6E0F076AB73C2217FFBDA930E70D641149A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/ybSyrTbvQOCifb1mhQPPEQ/zh-cn_image_0000002558604812.gif)
 
 上述示例包含以下3步：
 
@@ -1410,7 +1410,7 @@ Tab键走焦：tabIndex配置在容器上。
 
 [FocusScopePriority.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/EventProject/entry/src/main/ets/pages/focus/FocusScopePriority.ets#L16-L150)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/pK4tfyg4TZOq8MRLvFRtVg/zh-cn_image_0000002589324337.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052806Z&HW-CC-Expire=86400&HW-CC-Sign=4C37E40D6D2A6DAF9834A5DF3896379460712EC0EE7F7328453123E159555A18)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/pK4tfyg4TZOq8MRLvFRtVg/zh-cn_image_0000002589324337.gif)
 
 上述示例包含以下2步：
 
@@ -1483,7 +1483,7 @@ Tab键走焦：tabIndex配置在容器上。
 
 [FocusScopeId.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/EventProject/entry/src/main/ets/pages/focus/FocusScopeId.ets#L16-L76)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/MFJSHywaTzG7xHuPm0Dn1A/zh-cn_image_0000002589244277.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052806Z&HW-CC-Expire=86400&HW-CC-Sign=728D8A81A19621DD7572F77060FA37636215080089E806C52A697212F7CA905A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/MFJSHywaTzG7xHuPm0Dn1A/zh-cn_image_0000002589244277.gif)
 
 上述示例包含以下3步：
 
@@ -1535,7 +1535,7 @@ TextInput组件本身对方向键存在独有处理，因此无法使用方向�
 
 [FocusOnClick.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/EventProject/entry/src/main/ets/pages/focus/FocusOnClick.ets#L16-L45)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/S92j9vo4Sx6KFtIaGULTzw/zh-cn_image_0000002558764470.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052806Z&HW-CC-Expire=86400&HW-CC-Sign=3C368AD60AA0AC383F029CAA81410470CA268E403A1797054F4EEA541A942FB0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/S92j9vo4Sx6KFtIaGULTzw/zh-cn_image_0000002558764470.gif)
 
 ## 组件获焦能力说明
 

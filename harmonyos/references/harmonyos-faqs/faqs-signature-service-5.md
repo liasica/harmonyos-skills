@@ -5,14 +5,14 @@ breadcrumb: FAQ > DevEco Studio > 签名服务 > 点击“允许”后，浏览�
 category: harmonyos-faqs
 scraped_at: 2026-04-29T14:21:08+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:a664a807660feb4a5249369b5019ebae2677fe77f2740ce79bb8a076b53d4d4b
+content_hash: sha256:195b51f17aa9856c37c0deabb2864364f9bb013f420cc7fbeb015e5adf2fe8af
 ---
 
 **问题现象**
 
 使用浏览器登录华为账号并点击“允许”按钮后，浏览器将跳转至http://localhost:10101/xxx，显示“无法访问此网站”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/-vk_QZpRR9-5huAurJpnqg/zh-cn_image_0000002194318008.png?HW-CC-KV=V1&HW-CC-Date=20260429T062107Z&HW-CC-Expire=86400&HW-CC-Sign=C497A2F25109EF954D60EA2AA3CB0F5F14EC25938E519B361BB88F3DD4C423FE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/-vk_QZpRR9-5huAurJpnqg/zh-cn_image_0000002194318008.png)
 
 **解决措施**
 

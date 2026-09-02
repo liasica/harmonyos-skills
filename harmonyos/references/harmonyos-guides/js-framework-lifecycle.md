@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:28:42+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:ca62e66095eeeed2b45edd0cf74edbbc2bb5dc2f9eb923250ec6174569d77214
+content_hash: sha256:60317751afd635b3426b2cb556962324106966296c7a1a42d05e47e889f73e23
 ---
 
 ## 应用生命周期
@@ -39,7 +39,7 @@ content_hash: sha256:ca62e66095eeeed2b45edd0cf74edbbc2bb5dc2f9eb923250ec6174569d
 
 **图1** 生命周期函数调用顺序图示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/elkibFFCQSyNhmrkk47w3A/zh-cn_image_0000002589244379.png?HW-CC-KV=V1&HW-CC-Date=20260429T052840Z&HW-CC-Expire=86400&HW-CC-Sign=9A91513FC8D7CD2CD13B51AA20CCD2EEC741A0205054E5933D20F10ADF5B7616)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/elkibFFCQSyNhmrkk47w3A/zh-cn_image_0000002589244379.png)
 
 ## 示例代码
 

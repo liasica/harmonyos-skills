@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > JS
 category: harmonyos-references
 scraped_at: 2026-04-29T13:53:59+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:715c553a6bca3454befbb105db148556f16e485890fbeda9012127b5d84bffce
+content_hash: sha256:ce7e508260220d1e3c7de476d76931c356648fb87a9d3ee41f91a601b3191ade
 ---
 
 应用中如果有需用户关注的新事件提醒，可以采用新事件标记来标识。
@@ -111,4 +111,4 @@ PhonePC/2in1TabletTVWearable
 9. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/JA0WysYqRuq2IQFcyNFaAQ/zh-cn_image_0000002558607290.png?HW-CC-KV=V1&HW-CC-Date=20260429T055358Z&HW-CC-Expire=86400&HW-CC-Sign=2C5FE1636736695434C57B9B100F7F1E6311522A35895F62AFED7ED7E54CC415)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/JA0WysYqRuq2IQFcyNFaAQ/zh-cn_image_0000002558607290.png)

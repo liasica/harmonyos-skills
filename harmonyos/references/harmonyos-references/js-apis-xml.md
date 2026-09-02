@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-xml
-title: @ohos.xml (XML解析与生成)
+title: "@ohos.xml (XML解析与生成)"
 breadcrumb: API参考 > 应用框架 > ArkTS（方舟编程语言） > ArkTS API > @ohos.xml (XML解析与生成)
 category: harmonyos-references
 scraped_at: 2026-04-28T08:00:13+08:00

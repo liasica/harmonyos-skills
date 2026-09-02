@@ -5,14 +5,14 @@ breadcrumb: FAQ > DevEco Studio > 编译构建 > 编译告警“The re-export na
 category: harmonyos-faqs
 scraped_at: 2026-04-29T14:20:23+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:96b6ee6b70849504b979a52452877c41c551ac6701b3d6ceea0371c857ce9879
+content_hash: sha256:4e93b069b438fb272e07fedd9dfa11c2473a8dc2d651594deb4447f8d62f7443
 ---
 
 **问题现象**
 
 升级DevEco Studio至3.1 Beta2 Release版本后，API 9的Stage工程编译时出现告警，提示“The re-export name 'T' need to be marked as type, please use 'export type'”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/KczJw0zlRrWyW8NqqYItIw/zh-cn_image_0000002229604241.png?HW-CC-KV=V1&HW-CC-Date=20260429T062021Z&HW-CC-Expire=86400&HW-CC-Sign=00A9226DE62EC64AAAA1934FA866267E40E0D3C4721581E5CB232BF79E214F1F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/KczJw0zlRrWyW8NqqYItIw/zh-cn_image_0000002229604241.png)
 
 **解决措施**
 

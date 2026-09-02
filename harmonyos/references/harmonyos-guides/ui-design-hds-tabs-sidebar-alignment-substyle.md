@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > UI Design Kit（UI设计套件） > 底部�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:30:23+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:7eab8e65af365def7423a6374021e2845f16cf28b6d8d903b18363fb35f12151
+content_hash: sha256:326baa0769723c94c7a153843d506b24c12ae151236ce5d14d4b9d1b3fb1de1f
 ---
 
 ## 场景介绍
@@ -16,12 +16,12 @@ content_hash: sha256:7eab8e65af365def7423a6374021e2845f16cf28b6d8d903b18363fb35f
 
 * 半屏居中对齐布局
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/CCDXBxoYQaiaBfxgRN0StQ/zh-cn_image_0000002558605186.png?HW-CC-KV=V1&HW-CC-Date=20260429T053022Z&HW-CC-Expire=86400&HW-CC-Sign=56C20189FE39870D8FA173C67EC344DCDD80A355EB87CB39E8D6C93C495E878C)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/CCDXBxoYQaiaBfxgRN0StQ/zh-cn_image_0000002558605186.png)
 * 默认横向和纵向宽度
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/xRaOj6BYRDm80rdnGVg9Ug/zh-cn_image_0000002589324711.png?HW-CC-KV=V1&HW-CC-Date=20260429T053022Z&HW-CC-Expire=86400&HW-CC-Sign=B941839CA8A9D1521549338B183ED11AFBBC1B5209CE421512C22F367523E13F)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/xRaOj6BYRDm80rdnGVg9Ug/zh-cn_image_0000002589324711.png)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/IPuBUTTCRjK-c53VJEnnhQ/zh-cn_image_0000002589244649.png?HW-CC-KV=V1&HW-CC-Date=20260429T053022Z&HW-CC-Expire=86400&HW-CC-Sign=7168B7006D0F8C6FE525C7D25511AC7D027AEC48EA8C22A5D8F25C4A1E406A20)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/IPuBUTTCRjK-c53VJEnnhQ/zh-cn_image_0000002589244649.png)
 
 ## 约束条件
 

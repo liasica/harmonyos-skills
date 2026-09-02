@@ -5,7 +5,7 @@ breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.0.0(12) > OS平台能力 >
 category: harmonyos-releases
 scraped_at: 2026-04-29T13:24:11+08:00
 doc_updated_at: 2026-01-21
-content_hash: sha256:e32ea7cb42a7baa9a6f6e5fdaae02fdff42f50416ee2eb01b544d9c1d09aa1b2
+content_hash: sha256:d89d3467621a63e620ffcfb11244feec6df1a8b65a1bcb5679f47542c5b4c43b
 ---
 
 ## Ability Kit
@@ -591,7 +591,7 @@ SymbolGlyph中已定义SymbolRenderingStrategy和SymbolEffectStrategy，避免�
 
 在PC/2in1设备下，全屏状态下的状态栏显示控制由系统布局约束，无需再调用接口去控制状态栏的显示和隐藏。即设置的setWindowSystemBarEnable、setSystemBarEnable在PC/2in1设备上不生效。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/LOqYv0vuSHifTY_ezpR3jQ/zh-cn_image_0000001993261849.png?HW-CC-KV=V1&HW-CC-Date=20260429T052410Z&HW-CC-Expire=86400&HW-CC-Sign=36B44CCFB5E9BFE4CB8CDD221602398FF7A9AC6C3EF819395DF11F3DDB23EAF7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/LOqYv0vuSHifTY_ezpR3jQ/zh-cn_image_0000001993261849.png)
 
 **变更影响**
 

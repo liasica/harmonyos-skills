@@ -5,14 +5,14 @@ breadcrumb: 指南 > AI > Intents Kit（意图框架服务） > 习惯推荐方�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:43:31+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:57f62a1f689f6438582305543786689a61cb2179d1d2873cb7fee90a1f366d34
+content_hash: sha256:71273b55d032ef4bde1e0e9ed94f81b42ac58682e766c9fb939427632bd7abad
 ---
 
 ## 方案概述
 
 当用户在应用/元服务内使用功能时，开发者需要按照标准意图Schema向系统共享行为数据，并支持意图调用（空调用与传参调用），以实现用户点击模板卡后跳转回对应页面。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/nR_c_fSfRKCT8xk9qDp5tg/zh-cn_image_0000002589325683.png?HW-CC-KV=V1&HW-CC-Date=20260429T054329Z&HW-CC-Expire=86400&HW-CC-Sign=89D7542BD2A43E5786BBDCF14685CE814BD448E49B5CF1B7879EF91372099B0E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/nR_c_fSfRKCT8xk9qDp5tg/zh-cn_image_0000002589325683.png)
 
 ## 意图注册
 

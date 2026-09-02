@@ -5,7 +5,7 @@ breadcrumb: 指南 > 编写与调试应用 > 应用调试 > 代码调试 > Nativ
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:46:47+08:00
 doc_updated_at: 2026-01-15
-content_hash: sha256:8ec3f2aa647a9a467a0dd560a3350afa62f93881f89a6e704e8fe5bcb262234f
+content_hash: sha256:254a48471c08addf436ed015c513cfbfa23bd01298b3afe122aae05702c4399c
 ---
 
 开发者可以通过“设置执行点”在调试会话期间跳转到编辑器中的任意代码行，并在对应位置设置执行点，跳过当前位置到目标位置之间的所有代码。
@@ -16,10 +16,10 @@ content_hash: sha256:8ec3f2aa647a9a467a0dd560a3350afa62f93881f89a6e704e8fe5bcb26
 
 1. 将当前执行指针（代表当前运行位置的橙色箭头）拖动到所需的代码行。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/7bo3Ea4aSbGIZR1Fenqmyg/zh-cn_image_0000002530912830.png?HW-CC-KV=V1&HW-CC-Date=20260429T054646Z&HW-CC-Expire=86400&HW-CC-Sign=9DD1847B70445221106763C2C979249448E8FA4788C38D8F7B335F15AE4B08D4)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/7bo3Ea4aSbGIZR1Fenqmyg/zh-cn_image_0000002530912830.png)
 2. 在需要设置执行点的行，点击鼠标右键，在弹出菜单中选择“Set Execution Point to Cursor”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/jodYOY0hTYWMwIY9uxFkvw/zh-cn_image_0000002530912826.png?HW-CC-KV=V1&HW-CC-Date=20260429T054646Z&HW-CC-Expire=86400&HW-CC-Sign=BDEE23574130EE2D67EE433B668DE2AA01ABEE12D93C67103F3496126EAEE14E)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/jodYOY0hTYWMwIY9uxFkvw/zh-cn_image_0000002530912826.png)
 
 说明
 

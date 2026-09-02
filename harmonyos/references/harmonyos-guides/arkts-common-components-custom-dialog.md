@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:27:54+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:38a9dcb05d6f927afeadbba15f72bc554e404c68a329eeffb8cd95b31beef203
+content_hash: sha256:07ff779247bd78ff7e6c8b0bcef6d88dbd01bf8a422a1471a6a466af3ee40e4f
 ---
 
 CustomDialog是自定义弹出框，可用于广告、中奖、警告、软件更新等与用户交互响应操作。开发者可以通过CustomDialogController类显示自定义弹出框。具体用法请参考[自定义弹出框](../harmonyos-references/ts-methods-custom-dialog-box.md)。
@@ -87,7 +87,7 @@ CustomDialog是自定义弹出框，可用于广告、中奖、警告、软件�
 
    [CreateCustomDialogNew.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/DialogProject/entry/src/main/ets/pages/customdialog/CreateCustomDialogNew.ets#L32-L54)
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/5GiWSB51QR6gbN3erQosGg/zh-cn_image_0000002558764390.png?HW-CC-KV=V1&HW-CC-Date=20260429T052753Z&HW-CC-Expire=86400&HW-CC-Sign=BBE134426CD9EFB20678FFC89330AB6DEED6F83F1FA33698FCC68C6889CBEE64)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/5GiWSB51QR6gbN3erQosGg/zh-cn_image_0000002558764390.png)
 
 ## 弹出框的交互
 
@@ -166,7 +166,7 @@ CustomDialog是自定义弹出框，可用于广告、中奖、警告、软件�
 
    [DialogInteractionUseConstructor.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/DialogProject/entry/src/main/ets/pages/customdialog/DialogInteractionUseConstructor.ets#L53-L83)
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/MYLmlh2rSbGjtVWTagPzOQ/zh-cn_image_0000002558604734.png?HW-CC-KV=V1&HW-CC-Date=20260429T052753Z&HW-CC-Expire=86400&HW-CC-Sign=3155C6F274BC45869DD0BC4D5CA883D0065D21C17774601C2F6A5D09041CA81A)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/MYLmlh2rSbGjtVWTagPzOQ/zh-cn_image_0000002558604734.png)
 3. 可通过弹出框中的按钮实现路由跳转，同时获取跳转页面向当前页传入的参数。
 
    ```
@@ -300,7 +300,7 @@ CustomDialog是自定义弹出框，可用于广告、中奖、警告、软件�
 
    [IndexNew.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/DialogProject/entry/src/main/ets/pages/customdialog/IndexNew.ets#L16-L40)
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/nwfuVVrpQmKk4kIDxv0m7w/zh-cn_image_0000002589324259.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052753Z&HW-CC-Expire=86400&HW-CC-Sign=8B7F75DED53AA969B55A2426F8359EC050E26B79F7A0DFE46CE6472DCA84A2AD)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/nwfuVVrpQmKk4kIDxv0m7w/zh-cn_image_0000002589324259.gif)
 
 ## 弹出框的动画
 
@@ -367,7 +367,7 @@ CustomDialog是自定义弹出框，可用于广告、中奖、警告、软件�
 
 [DialogAnimationNew.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/DialogProject/entry/src/main/ets/pages/customdialog/DialogAnimationNew.ets#L18-L75)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/jP5CE17nRbCguXKMHn-Dxw/zh-cn_image_0000002589244199.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052753Z&HW-CC-Expire=86400&HW-CC-Sign=4754F37A89FA903E93519A3B25BE2F8394875DCB3147D0339E2B891145679434)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/jP5CE17nRbCguXKMHn-Dxw/zh-cn_image_0000002589244199.gif)
 
 ## 弹出框的样式
 
@@ -435,7 +435,7 @@ CustomDialog是自定义弹出框，可用于广告、中奖、警告、软件�
 
 [DialogStyleNew.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/DialogProject/entry/src/main/ets/pages/customdialog/DialogStyleNew.ets#L16-L75)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/J_pobabhTLK2-OLVu1L3TQ/zh-cn_image_0000002558764392.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052753Z&HW-CC-Expire=86400&HW-CC-Sign=20E1827B0D39F2F21CF671482F491E2A4D151D2E98F750FC7B6B7549C7262B6E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/J_pobabhTLK2-OLVu1L3TQ/zh-cn_image_0000002558764392.gif)
 
 ## 嵌套自定义弹出框
 
@@ -549,7 +549,7 @@ CustomDialog是自定义弹出框，可用于广告、中奖、警告、软件�
 
 [NestDialogNew.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/DialogProject/entry/src/main/ets/pages/customdialog/NestDialogNew.ets#L18-L122)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/Nk0aDrgASye1gPCdj_RG4Q/zh-cn_image_0000002558604736.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052753Z&HW-CC-Expire=86400&HW-CC-Sign=16BACA44899C396D69D5D747DD513ED67EBC221172A58BF9418061CA6D9BD7F2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/Nk0aDrgASye1gPCdj_RG4Q/zh-cn_image_0000002558604736.gif)
 
 由于自定义弹出框在状态管理侧有父子关系，如果将第二个弹出框定义在第一个弹出框内，那么当父组件（第一个弹出框）被销毁（关闭）时，子组件（第二个弹出框）内无法再继续创建新的组件。
 
@@ -652,7 +652,7 @@ CustomDialog是自定义弹出框，可用于广告、中奖、警告、软件�
 
 [DialogWithPhysicalBack.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/DialogProject/entry/src/main/ets/pages/customdialog/DialogWithPhysicalBack.ets#L18-L109)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/p0tB9lTeQT-xw_9040YcEg/zh-cn_image_0000002589324261.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052753Z&HW-CC-Expire=86400&HW-CC-Sign=657FCE26E3BB46529E86C805B85236E38ED52D5576CBF9D4F035B3954232E77C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/p0tB9lTeQT-xw_9040YcEg/zh-cn_image_0000002589324261.gif)
 
 ## 设置弹出框避让软键盘的距离
 
@@ -719,7 +719,7 @@ CustomDialog是自定义弹出框，可用于广告、中奖、警告、软件�
 
 [DialogAvoidSoftKeyboard.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/DialogProject/entry/src/main/ets/pages/customdialog/DialogAvoidSoftKeyboard.ets#L16-L72)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/pzM5j8imQD6lsrQFaFQWgw/zh-cn_image_0000002589324257.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052753Z&HW-CC-Expire=86400&HW-CC-Sign=60ACB775C0C39C731386CBD0D90BD9A1210914874C29BA86CF82388F8A57D076)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/pzM5j8imQD6lsrQFaFQWgw/zh-cn_image_0000002589324257.gif)
 
 ## 获取弹出框的状态
 
@@ -789,4 +789,4 @@ CustomDialog是自定义弹出框，可用于广告、中奖、警告、软件�
 
 [GetDialogStatus.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/DialogProject/entry/src/main/ets/pages/customdialog/GetDialogStatus.ets#L18-L74)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/ZbOUODJ9RFy5XmVlwDy2gw/zh-cn_image_0000002589244201.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052753Z&HW-CC-Expire=86400&HW-CC-Sign=8EB300DDEF145889B3BD74C7C12A850D12490872278611E6070B5278ACA3248B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/ZbOUODJ9RFy5XmVlwDy2gw/zh-cn_image_0000002589244201.gif)

@@ -5,7 +5,7 @@ breadcrumb: 最佳实践 > 多端设备体验提升 > 平板 > 平板应用开�
 category: best-practices
 scraped_at: 2026-04-29T14:13:03+08:00
 doc_updated_at: 2026-04-07
-content_hash: sha256:5d253ee2ca2b1ce212ac26e20979ebe12dd1a1117ffc7aa19bd58675086402f3
+content_hash: sha256:f1acc3a3fa4b04de7fb25ce4395da8554d2937856795ade2dc0c8a43d9b3a7d2
 ---
 
 ## 概述
@@ -25,7 +25,7 @@ content_hash: sha256:5d253ee2ca2b1ce212ac26e20979ebe12dd1a1117ffc7aa19bd58675086
 
 平板目前主要包括MatePad Edge 系列、MatePad Pro系列、MatePad Mini 系列、MatePad Air系列、MatePad系列、MatePad SE 系列。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/ZPgH0TPiTCy-YTr_r1dX_A/zh-cn_image_0000002424467940.png?HW-CC-KV=V1&HW-CC-Date=20260429T061259Z&HW-CC-Expire=86400&HW-CC-Sign=DFD4D813FD66A42419A6026DE1A0E472ED299248778AE9EAACD122BAB0EF01E0 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/ZPgH0TPiTCy-YTr_r1dX_A/zh-cn_image_0000002424467940.png "点击放大")
 
 ## 硬件说明
 
@@ -87,7 +87,7 @@ content_hash: sha256:5d253ee2ca2b1ce212ac26e20979ebe12dd1a1117ffc7aa19bd58675086
 
 平板设备同时支持自由多窗和悬浮窗，当开启自由多窗模式后，FLOATING代表自由多窗模式，反之，FLOATING代表悬浮窗模式。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/0O00ZYPnT568gR9IJG_0EA/zh-cn_image_0000002430371977.png?HW-CC-KV=V1&HW-CC-Date=20260429T061259Z&HW-CC-Expire=86400&HW-CC-Sign=3651900F4E8F53A7AE83FDAF6D3CCA6D5DD22BBDD1B6034D19ACAAAF2DF768FC "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/0O00ZYPnT568gR9IJG_0EA/zh-cn_image_0000002430371977.png "点击放大")
 
 **支持外接鼠标键盘**
 
@@ -151,7 +151,7 @@ content_hash: sha256:5d253ee2ca2b1ce212ac26e20979ebe12dd1a1117ffc7aa19bd58675086
 
 当前平板设备支持全屏、分屏、自由悬浮窗口三种应用窗口模式，其中自由悬浮窗口分为自由窗口和悬浮窗，各模式的详细信息见[窗口模式](bpta-multi-device-window-mode.md)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/P9GWnS07QYmPE2BAHDyiHQ/zh-cn_image_0000002430493789.png?HW-CC-KV=V1&HW-CC-Date=20260429T061259Z&HW-CC-Expire=86400&HW-CC-Sign=E1A40886C63C17AC2AE60084298A513CBB87041FF4717BE9C0920CF50133C57C "点击放大")**全屏**
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/P9GWnS07QYmPE2BAHDyiHQ/zh-cn_image_0000002430493789.png "点击放大")**全屏**
 
 平板设备上的应用启动时默认全屏模式。
 
@@ -182,10 +182,10 @@ content_hash: sha256:5d253ee2ca2b1ce212ac26e20979ebe12dd1a1117ffc7aa19bd58675086
 
   平板设备进入自由多窗模式后设备强制横屏，不支持切换竖屏。为优化窗口显示内容，DPI默认调整为最小档，并记忆调整前的DPI，用户可在设置-显示和亮度-字体大小和界面缩放中按需调整。退出自由多窗时恢复到记忆的DPI，如果用户在自由多窗模式下主动调整过DPI，则保持当前值不恢复记忆。具体适配信息请参考[自由窗口模式适配](bpta-multi-device-window-mode.md#section151195853214)。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/WabMzYTGRsuFedcoz_cyPQ/zh-cn_image_0000002396894182.png?HW-CC-KV=V1&HW-CC-Date=20260429T061259Z&HW-CC-Expire=86400&HW-CC-Sign=5E466A862CE867581F4E3585C44A30F9D78F3A308D7D6B49BEBB789E12CCB901 "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/WabMzYTGRsuFedcoz_cyPQ/zh-cn_image_0000002396894182.png "点击放大")
 * **悬浮窗**：悬浮窗是一种在设备屏幕上悬浮的非全屏应用窗口。一般用于在已有全屏任务运行的基础上，临时处理另一个任务，或短时间多任务并行使用。如浏览网页的同时回复消息。具体适配信息请参考[悬浮窗口模式适配](bpta-multi-device-window-mode.md#section8433735123611)。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/5JIe9jxlSHKeLmO99WzX3w/zh-cn_image_0000002397054066.png?HW-CC-KV=V1&HW-CC-Date=20260429T061259Z&HW-CC-Expire=86400&HW-CC-Sign=08B1CF345F38BC834AC1D0DFA2D50AAB50F4541FE9735D4A75A3135FB2AB3DDA "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/5JIe9jxlSHKeLmO99WzX3w/zh-cn_image_0000002397054066.png "点击放大")
 
   在使用多窗口功能时，窗口尺寸会发生变化，可能影响布局。例如：应用进入竖向悬浮窗模式，窗口内容会根据窗口大小等比缩放。然而，窗口的高宽比变为3:4.575，与全屏模式（16:9或4:3）的比例不同。纵向比例相对较小，可能导致内容截断。开发者可参考[窗口模式变化常见问题](bpta-multi-device-window-mode.md#section2763122110135)。
 
@@ -232,13 +232,13 @@ content_hash: sha256:5d253ee2ca2b1ce212ac26e20979ebe12dd1a1117ffc7aa19bd58675086
 
 大屏横屏的特点主要表现为横向分辨率超过840vp，提供更宽广的显示视野和更强的信息承载能力，支持同时展示多个应用界面或复杂内容布局，显著提升多任务处理效率。典型设备有平板、三折叠三屏等。详情请参考[大屏横屏](bpta-multi-device-screen-layout.md#section6493354468)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/p_ukoEtNTQmh8PPXWbMcOA/zh-cn_image_0000002396895258.png?HW-CC-KV=V1&HW-CC-Date=20260429T061259Z&HW-CC-Expire=86400&HW-CC-Sign=BB8331E2A592753281AB483853FFCB3A13AB41A36B0074FA77123B16E3189A5B "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/p_ukoEtNTQmh8PPXWbMcOA/zh-cn_image_0000002396895258.png "点击放大")
 
 **大屏竖屏**
 
 大屏竖屏是指原本设计为横屏使用的大屏幕设备在垂直方向上的展示形态，即这些设备从默认的横向模式旋转90度后的状态。大屏竖屏为大屏设备的竖向态，典型设备有平板（竖屏）、三折叠G态（竖屏）。详情请参考[大屏竖屏](bpta-multi-device-screen-layout.md#section86231545125515)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/RdZ1cLYgT1-sUP1uyc5ZeQ/zh-cn_image_0000002430374909.png?HW-CC-KV=V1&HW-CC-Date=20260429T061259Z&HW-CC-Expire=86400&HW-CC-Sign=4CF263879816BCFBD39E89572BBC3913FBBC83D6919ADB87B95D6EF04B538FF2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/RdZ1cLYgT1-sUP1uyc5ZeQ/zh-cn_image_0000002430374909.png)
 
 ### 典型布局场景
 
@@ -271,10 +271,10 @@ content_hash: sha256:5d253ee2ca2b1ce212ac26e20979ebe12dd1a1117ffc7aa19bd58675086
 
   1. 屏幕高度，窗口宽度与高度的比例为9:18。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/hZqHEgZ5S-613so6Aa-jeg/zh-cn_image_0000002397057082.png?HW-CC-KV=V1&HW-CC-Date=20260429T061259Z&HW-CC-Expire=86400&HW-CC-Sign=5D9B50D417E7666571303658FF8041FD00B051405C1407BB967BA9034B031250 "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/hZqHEgZ5S-613so6Aa-jeg/zh-cn_image_0000002397057082.png "点击放大")
   2. 屏幕高度，窗口宽度与高度的比例为1:1。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/0rX-nEefTE65UVhM6ZzD2g/zh-cn_image_0000002430496785.png?HW-CC-KV=V1&HW-CC-Date=20260429T061259Z&HW-CC-Expire=86400&HW-CC-Sign=1978C1A7FF35221C8ECFFD5DD87885AD121E0A4715A7E8AEEFC4844034B890D4 "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/0rX-nEefTE65UVhM6ZzD2g/zh-cn_image_0000002430496785.png "点击放大")
 * **兼容运行工程配置**
 
   **项目工程配置**
@@ -305,14 +305,14 @@ content_hash: sha256:5d253ee2ca2b1ce212ac26e20979ebe12dd1a1117ffc7aa19bd58675086
 
   应用安装后，检查设置中的相应选项（设置->显示和亮度->强制横屏），将比例调整为原始比例，以退出兼容模式，供开发者调试。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/jFXaAyepTbmRxLivPPuwkA/zh-cn_image_0000002396897210.png?HW-CC-KV=V1&HW-CC-Date=20260429T061259Z&HW-CC-Expire=86400&HW-CC-Sign=57105FFBE4BD6D0AE3C21FA6F39D279AF6CC61D5A14891EF44B4C2A986BEC343 "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/jFXaAyepTbmRxLivPPuwkA/zh-cn_image_0000002396897210.png "点击放大")
 * **兼容运行上架配置**
 
   **PAD兼容运行方式如何上架**
 
   应用上架过程中，默认将以兼容模式上架PAD设备。上架说明如下图：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/fgyPEKFlT0ypZFfrnMP_lw/zh-cn_image_0000002430376837.png?HW-CC-KV=V1&HW-CC-Date=20260429T061259Z&HW-CC-Expire=86400&HW-CC-Sign=70FAF7928F8243A73E7BB18D1C039BAE38CC8226E8F265575E76D6A70EBDABDF "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/fgyPEKFlT0ypZFfrnMP_lw/zh-cn_image_0000002430376837.png "点击放大")
 * **需要排查或简单适配内容**
 
   **兼容模式下应用运行和适配的原则**
@@ -369,15 +369,15 @@ content_hash: sha256:5d253ee2ca2b1ce212ac26e20979ebe12dd1a1117ffc7aa19bd58675086
 
 **PlaceHolder显示效果**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/TuaJHg89QfqVK_e3u_PNTw/zh-cn_image_0000002397057086.png?HW-CC-KV=V1&HW-CC-Date=20260429T061259Z&HW-CC-Expire=86400&HW-CC-Sign=B47A7F6C89A80046E02D68FC64D06E9ED56CB5EE93CF30E2ED2667AD71A00C0D "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/TuaJHg89QfqVK_e3u_PNTw/zh-cn_image_0000002397057086.png "点击放大")
 
 **Page分栏显示效果**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/r1wY14HLTqeI949yqSeMbg/zh-cn_image_0000002430496789.png?HW-CC-KV=V1&HW-CC-Date=20260429T061259Z&HW-CC-Expire=86400&HW-CC-Sign=DC15FDF149DA1A17B7214D877691C5C6FBA43A5AE7D3AC3DA7817997F5CDD3CD "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/r1wY14HLTqeI949yqSeMbg/zh-cn_image_0000002430496789.png "点击放大")
 
 **强制分栏下的页面跳转规则**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/N8nntxJXQ1-WXJyft9AN1Q/zh-cn_image_0000002458144425.png?HW-CC-KV=V1&HW-CC-Date=20260429T061259Z&HW-CC-Expire=86400&HW-CC-Sign=DF6935B2AEF9863193EA2FA01D651F183F4D744EBA3CB32AF8B26ABE28EDAF8E "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/N8nntxJXQ1-WXJyft9AN1Q/zh-cn_image_0000002458144425.png "点击放大")
 
 **分栏显示模式下的应用可进行的优化**
 
@@ -440,12 +440,12 @@ content_hash: sha256:5d253ee2ca2b1ce212ac26e20979ebe12dd1a1117ffc7aa19bd58675086
 
 在全屏播放视频时，长视频类应用通过横向大屏能有效提升用户的观看体验。详细开发方案可参考[多设备长视频界面](multi-video-app.md)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/mrUBfn8PTtO6_Sm_Q8jO8w/zh-cn_image_0000002396902526.png?HW-CC-KV=V1&HW-CC-Date=20260429T061259Z&HW-CC-Expire=86400&HW-CC-Sign=A5C2C794046F1587A712C95B2CBF4DA26432AA72B7326535A5CA0A182533558D "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/mrUBfn8PTtO6_Sm_Q8jO8w/zh-cn_image_0000002396902526.png "点击放大")
 
 ### 即时通讯
 
 在即时通讯应用中，平板可采用三分栏布局，带来流畅的聊天体验。左侧为目录，中间显示联系人列表，右侧为聊天区域。自适应布局，配合手写笔支持，使社交沟通更加便捷。详细开发方案可参考[多设备即时通讯界面](multi-communication-app.md)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/rMNO-VRsQxSuSB2_D-mL0g/zh-cn_image_0000002397144262.png?HW-CC-KV=V1&HW-CC-Date=20260429T061259Z&HW-CC-Expire=86400&HW-CC-Sign=CB31E45D7C90C76712DEAE126BF5C124EBD4F3FCF9301C7C04077F04CA947710 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/rMNO-VRsQxSuSB2_D-mL0g/zh-cn_image_0000002397144262.png "点击放大")
 
 更多垂域案例可参考[多设备界面开发案例](bpta-multi-device-ui-development.md)。

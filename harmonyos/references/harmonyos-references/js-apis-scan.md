@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-scan
-title: @ohos.scan (扫描)
+title: "@ohos.scan (扫描)"
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > ArkTS API > 数据文件处理 > @ohos.scan (扫描)
 category: harmonyos-references
 scraped_at: 2026-04-28T08:09:32+08:00

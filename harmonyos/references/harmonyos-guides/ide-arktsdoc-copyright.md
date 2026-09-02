@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-arktsdoc-copyright
-title: @copyright
+title: "@copyright"
 breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 生成ArkTSDoc文档 > 标准标签 > @copyright
 category: harmonyos-guides
 scraped_at: 2026-04-28T07:56:33+08:00

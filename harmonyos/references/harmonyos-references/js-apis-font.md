@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-font
-title: @ohos.font (注册自定义字体)
+title: "@ohos.font (注册自定义字体)"
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.font (注册自定义字体)
 category: harmonyos-references
 scraped_at: 2026-04-28T08:00:31+08:00

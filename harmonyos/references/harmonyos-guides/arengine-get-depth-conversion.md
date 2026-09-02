@@ -5,7 +5,7 @@ breadcrumb: 指南 > 图形 > AR Engine（AR引擎服务） > 深度估计 > 深
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:35:56+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:0416758aa8e4d44739ba6f3396e6f2c03df7ec4823d76d0c67bd8b2ac628314a
+content_hash: sha256:44501a42cbd8bf52e402ff25fedb9584a543f44ef28a43b843a4683f4fbd17ab
 ---
 
 AR Engine支持持续输出周围环境相对终端设备的深度信息，利用这些深度信息，可以实现更加自然、无缝的虚实体验。
@@ -16,4 +16,4 @@ AR Engine支持持续输出周围环境相对终端设备的深度信息，利�
 
 **图1** 深度渲染示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/UGnTPUQYQKmxXpWwlZRo5g/zh-cn_image_0000002589324993.png?HW-CC-KV=V1&HW-CC-Date=20260429T053555Z&HW-CC-Expire=86400&HW-CC-Sign=E7BA598682BCE6C5235CF3980D240AA97E960BEFE1883610D5A6291F4A4E0783)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/UGnTPUQYQKmxXpWwlZRo5g/zh-cn_image_0000002589324993.png)

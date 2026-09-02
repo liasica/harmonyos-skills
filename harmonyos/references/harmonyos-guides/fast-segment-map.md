@@ -5,12 +5,12 @@ breadcrumb: 指南 > 系统 > 基础功能 > FAST Kit（算法加速服务） > 
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:33:19+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:5fdd30aa0116dcecf1c4218e531bc4dae0c86637a6ca5c46e8a598d7f7dc6d90
+content_hash: sha256:89bdc4982613dc2689ff5960eea82c04ababb0932b14a382c466cf9b82d81a1d
 ---
 
 FAST Kit提供Segment Map用于查询维护区间信息，实现数据序列区间段的快速更新和快速查询。线段表（Segment Map）是一种用于高效处理区间段信息的数据结构，适用于需要频繁对数据序列的某个区间段进行统计或修改的场景。其典型操作包括单点修改、区间修改、区间查询等。
 
-线段表有多种实现方式，其中最常见的是使用二分树的方案，也被称为线段树（Segment Tree）。与直接遍历区间相比，线段表能将许多区间操作的时间复杂度从 ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/JrUaG0opQiGQe42-p5vEyw/zh-cn_image_0000002589244755.png?HW-CC-KV=V1&HW-CC-Date=20260429T053318Z&HW-CC-Expire=86400&HW-CC-Sign=FA564D561F2F2E1243C3527BAA2C93B9033DFF5FD90EB5786CCCC0521114799E) 优化至![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/_ggiEddWTUOfQ5VobgwXXA/zh-cn_image_0000002558764950.png?HW-CC-KV=V1&HW-CC-Date=20260429T053318Z&HW-CC-Expire=86400&HW-CC-Sign=25D35330199D6A52D35AFFAF3CA2E2FA6F29BA8763A9568252BE584FA77E7FC1)，在处理大规模数据时优势显著，为构建高性能、响应迅速的应用程序提供数据结构基础。
+线段表有多种实现方式，其中最常见的是使用二分树的方案，也被称为线段树（Segment Tree）。与直接遍历区间相比，线段表能将许多区间操作的时间复杂度从 ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/JrUaG0opQiGQe42-p5vEyw/zh-cn_image_0000002589244755.png) 优化至![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/_ggiEddWTUOfQ5VobgwXXA/zh-cn_image_0000002558764950.png)，在处理大规模数据时优势显著，为构建高性能、响应迅速的应用程序提供数据结构基础。
 
 ## 接口说明
 

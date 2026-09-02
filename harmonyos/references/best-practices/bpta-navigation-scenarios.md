@@ -5,7 +5,7 @@ breadcrumb: 最佳实践 > 功耗 > 应用功耗优化 > 前台任务低功耗 >
 category: best-practices
 scraped_at: 2026-04-29T14:13:50+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:9b45b26721db58c1cb333a3a342c36d1f321339d07dc978858e4432006ffc3de
+content_hash: sha256:693f96dc2621178d012e6455e0a20ded0cce9c77ea1ac51c2edbab2280ce7e96
 ---
 
 ## 规则
@@ -58,14 +58,14 @@ content_hash: sha256:9b45b26721db58c1cb333a3a342c36d1f321339d07dc978858e4432006f
   ```
 * 执行效果如下图：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/kvUH7LF-Qu-rRoeKGUtx1g/zh-cn_image_0000002229450993.png?HW-CC-KV=V1&HW-CC-Date=20260429T061349Z&HW-CC-Expire=86400&HW-CC-Sign=4D1BC3DAF6DA9C274DBD24ABF2F89AC312834960048B524102A57D6E3ACBFAD9 "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/kvUH7LF-Qu-rRoeKGUtx1g/zh-cn_image_0000002229450993.png "点击放大")
 
 ## 结果对比
 
 * 优化前：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/eUtu96aMTNWBjow2jq9xiA/zh-cn_image_0000002193851136.png?HW-CC-KV=V1&HW-CC-Date=20260429T061349Z&HW-CC-Expire=86400&HW-CC-Sign=AF33A71E4BE47B10A562933226F5300C3C03B379766E3749183F544D0D42FEA8 "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/eUtu96aMTNWBjow2jq9xiA/zh-cn_image_0000002193851136.png "点击放大")
 
 * 优化后，图中字段证明系统低功耗方案使能成功（根据实验室测试功耗，功耗负载降低约43.89%。）：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/aypZ4dwRQQ-V-Psn4XLbKg/zh-cn_image_0000002194010716.png?HW-CC-KV=V1&HW-CC-Date=20260429T061349Z&HW-CC-Expire=86400&HW-CC-Sign=3CB8CFA076E6F6EF6C07B54F65167E02996984455276F676D76CC53AE03CDDCC "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/aypZ4dwRQQ-V-Psn4XLbKg/zh-cn_image_0000002194010716.png "点击放大")

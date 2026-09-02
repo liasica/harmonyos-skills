@@ -5,7 +5,7 @@ breadcrumb: 指南 > 媒体 > Scan Kit（统一扫码服务） > 图像识码 > 
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:35:41+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:b310daf5afdbcd4545cda5dec870f1ce8019fccaf839b4c1ccf83883674edf12
+content_hash: sha256:b48c37da3f329e088086cb59dfcd977fd236ce4772bbe3706199119020fb23b4
 ---
 
 ## 基本概念
@@ -18,7 +18,7 @@ content_hash: sha256:b310daf5afdbcd4545cda5dec870f1ce8019fccaf839b4c1ccf83883674
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/dTsEUzfYRIygorkE2LM6nA/zh-cn_image_0000002558765114.png?HW-CC-KV=V1&HW-CC-Date=20260429T053540Z&HW-CC-Expire=86400&HW-CC-Sign=F61915679E452EE3434CDD6F7CC89D19CDD369AE046591638062154064BF4B16)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/dTsEUzfYRIygorkE2LM6nA/zh-cn_image_0000002558765114.png)
 
 1. 用户向应用发起识码请求。
 2. 应用通过调用[Camera Kit](camera-overview.md)启动相机，获取预览流数据。

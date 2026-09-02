@@ -5,7 +5,7 @@ breadcrumb: 指南 > 系统 > 硬件 > Car Kit（车服务） > 实现车机导�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:33:29+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:cac71f896145358b8e702ebdc9f77df860792c615b3f540d9c1d12b8c7f976a0
+content_hash: sha256:9b8f0d7e887b8cecae45dd7a8a72a2c79e977177f4bbd355c5942b670c57e420
 ---
 
 ## 场景介绍
@@ -14,13 +14,13 @@ content_hash: sha256:cac71f896145358b8e702ebdc9f77df860792c615b3f540d9c1d12b8c7f
 
 * 碰一碰导航流转：用户在手机地图的指定页面中（地图选点页面、规划路线页面、驾车导航页面），与车机中控屏指定区域碰一碰后，将手机上的导航数据流转至车机。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/DaRr_7bvTbGj48wqRecQ_w/zh-cn_image_0000002558605310.png?HW-CC-KV=V1&HW-CC-Date=20260429T053328Z&HW-CC-Expire=86400&HW-CC-Sign=8AEC9F2B3D4846179EBB5C367BDF3314DC2172262FFC829C15FB3AF823857580)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/DaRr_7bvTbGj48wqRecQ_w/zh-cn_image_0000002558605310.png)
 * 上车导航自动流转：用户使用手机地图应用发起驾车导航后上车，手机上的导航数据会自动流转至车机。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/aFNCpp_ySzG6GwPg-rmaqg/zh-cn_image_0000002589324835.png?HW-CC-KV=V1&HW-CC-Date=20260429T053328Z&HW-CC-Expire=86400&HW-CC-Sign=4C0800E5E6D448ED8ADAA41C449DFBAA425E9385C35784E81B3220C36CBB6DC0)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/aFNCpp_ySzG6GwPg-rmaqg/zh-cn_image_0000002589324835.png)
 * 车内导航自动流转：用户在车内，使用手机地图应用发起驾车导航，手机上的导航数据会自动流转至车机。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/VQLjacuYSbeE5VYvUNpByg/zh-cn_image_0000002589244773.png?HW-CC-KV=V1&HW-CC-Date=20260429T053328Z&HW-CC-Expire=86400&HW-CC-Sign=4BAD30AB9A65E8F56C7468939B1A6C348FBDFB4DE319F7571FB6AABB010F3501)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/VQLjacuYSbeE5VYvUNpByg/zh-cn_image_0000002589244773.png)
 
 ## 接口说明
 
@@ -44,7 +44,7 @@ SmartMobilityEvent事件名（eventName）取值如下：
 
 ## 开发流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/VfKZu2prRu-ob_NoER6RIA/zh-cn_image_0000002558764968.png?HW-CC-KV=V1&HW-CC-Date=20260429T053328Z&HW-CC-Expire=86400&HW-CC-Sign=376FEED4F6AFB5905564CAB59E87F60F0DE23D74A945B924513201CEC640F407)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/VfKZu2prRu-ob_NoER6RIA/zh-cn_image_0000002558764968.png)
 
 ## 开发步骤
 

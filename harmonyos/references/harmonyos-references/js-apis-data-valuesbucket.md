@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-data-valuesbucket
-title: @ohos.data.ValuesBucket (数据集)
+title: "@ohos.data.ValuesBucket (数据集)"
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > ArkTS API > @ohos.data.ValuesBucket (数据集)
 category: harmonyos-references
 scraped_at: 2026-04-29T13:49:34+08:00

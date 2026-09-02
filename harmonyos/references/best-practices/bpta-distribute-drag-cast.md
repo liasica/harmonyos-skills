@@ -5,7 +5,7 @@ breadcrumb: 最佳实践 > 自由流转 > 多端协同 > 跨设备拖拽
 category: best-practices
 scraped_at: 2026-04-29T14:12:43+08:00
 doc_updated_at: 2026-04-01
-content_hash: sha256:43d19174946b24da48180e0723610491004615fae41097c97a3e039f2564aeaf
+content_hash: sha256:bac08c761ab571c4e6e619ed102d7c2d7e1776ae69b5a4d8ca885019c544de43
 ---
 
 跨端拖拽提供跨设备的键鼠共享能力，支持在平板或2in1类型的任意两台设备之间拖拽文本、图片、视频、PDF文档等文件。
@@ -19,11 +19,11 @@ content_hash: sha256:43d19174946b24da48180e0723610491004615fae41097c97a3e039f256
 
 开发者可以根据实际需求，实现组件的拖入或拖出，即可接入跨设备拖拽。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/sf6HtvF0Q0izLac0PdAKlA/zh-cn_image_0000002564391905.png?HW-CC-KV=V1&HW-CC-Date=20260429T061239Z&HW-CC-Expire=86400&HW-CC-Sign=E093F9C7C366FC4239314838F2DFD41528E631292C00BFD7E79260F1473A2441 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/sf6HtvF0Q0izLac0PdAKlA/zh-cn_image_0000002564391905.png "点击放大")
 
 ## 运作机制
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/RydLAWw-QTay2tP6srLp9g/zh-cn_image_0000002564471935.png?HW-CC-KV=V1&HW-CC-Date=20260429T061239Z&HW-CC-Expire=86400&HW-CC-Sign=E056D5A1F0F1A7308A8F6F0A0672705A368522F8948C2E9C997E293499C0BB0F "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/RydLAWw-QTay2tP6srLp9g/zh-cn_image_0000002564471935.png "点击放大")
 
 1. 用户使用鼠标点击组件，触发拖拽事件。
 2. 应用设置拖拽数据。

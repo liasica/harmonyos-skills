@@ -5,7 +5,7 @@ breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-rep
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:44:48+08:00
 doc_updated_at: 2026-03-11
-content_hash: sha256:b01bd0dca35ca8937e07118aa98906dbc390f4fd7be8d41ea11831776f885661
+content_hash: sha256:e49fe45bb6dadd77a6b444d1d8c0ebc8148e9ef705b469f069dad15b60ffc002
 ---
 
 为了保障用户在使用ohpm-repo过程中更加安全可靠，我们收集如下推荐安全配置项，用户可以根据自己的需要采纳配置。
@@ -79,7 +79,7 @@ ohpm-repo用于存储私有仓库三方包数据，为了避免数据丢失，�
 
 在默认设置下，ohpm-repo仓库中的所有包信息均可供任意用户自由查看，且包文件也支持任意用户下载。为了避免不相关的人访问ohpm-repo，我们建议在ohpm-repo管理界面的**系统设置>系统安全**页面，关闭匿名访问功能（默认保持开启）。关闭后，只有在.ohpmrc文件中正确[配置仓库只读或读写AccessToken](ide-ohpm-certification.md#li168806431480)的用户才能够通过ohpm工具下载三方包，只有登录ohpm-repo账户，才能够访问ohpm-repo管理界面。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/nJbYxWKOT_auOAvCPmyulw/zh-cn_image_0000002561751207.png?HW-CC-KV=V1&HW-CC-Date=20260429T054445Z&HW-CC-Expire=86400&HW-CC-Sign=56712BC2C366304C843FD6163CC1E3DC66D36ABD750161B0AF20B2BB7B3DB552 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/nJbYxWKOT_auOAvCPmyulw/zh-cn_image_0000002561751207.png "点击放大")
 
 ## 用户访问频率控制
 

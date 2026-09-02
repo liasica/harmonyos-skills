@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > U
 category: harmonyos-references
 scraped_at: 2026-04-29T13:50:39+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:bb714229e79322e0b7b7e097a06c6f8c962352822eed53d9c69306f162690b0a
+content_hash: sha256:984f7a5087811cc928f7d215408e21aed3346248681f64534fa49df61f830dc3
 ---
 
 提供UI组件行为变化的无感监听能力。
@@ -2359,7 +2359,7 @@ on(type: 'nodeRenderState', nodeIdentity: NodeIdentity, callback: NodeRenderStat
 107. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/HSrQi_3URlaabTO6WeyqFQ/zh-cn_image_0000002558606280.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055037Z&HW-CC-Expire=86400&HW-CC-Sign=8AB40DDB9BC530B04D4D3D861B0715488F4E6C963785C6514C751B4026ECD5CC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/HSrQi_3URlaabTO6WeyqFQ/zh-cn_image_0000002558606280.gif)
 
 ## off('nodeRenderState')20+
 
@@ -2584,7 +2584,7 @@ addGlobalGestureListener(type: GestureListenerType, option: GestureObserverConfi
 172. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/p9EmvYlXRXS_2MjgRSt1iw/zh-cn_image_0000002589325807.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055037Z&HW-CC-Expire=86400&HW-CC-Sign=78BC69C58A53D34010360BCFC832A25F927F4498D57F0558B41DA925619E24C7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/p9EmvYlXRXS_2MjgRSt1iw/zh-cn_image_0000002589325807.gif)
 
 ## removeGlobalGestureListener20+
 

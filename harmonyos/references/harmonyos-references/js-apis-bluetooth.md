@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-bluetooth
-title: @ohos.bluetooth (蓝牙)
+title: "@ohos.bluetooth (蓝牙)"
 breadcrumb: API参考 > 系统 > 网络 > Connectivity Kit（短距通信服务） > 已停止维护的接口 > @ohos.bluetooth (蓝牙)
 category: harmonyos-references
 scraped_at: 2026-04-28T08:08:09+08:00

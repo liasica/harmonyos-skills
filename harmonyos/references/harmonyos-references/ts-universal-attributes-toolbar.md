@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:51:33+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:d0a8df7e4fb6d8a56a1a4d4ba27584af03befac48d55fe9a8fdb0ef1a0165c5b
+content_hash: sha256:6ae453f60871c6ea2583a1b9361747a4aca81a514e575e4f95af287bb25d6804
 ---
 
 设置组件对应的工具栏。
@@ -167,4 +167,4 @@ PhonePC/2in1TabletTVWearable
 104. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/3ms6EZ2fQLG6qcwLuybRDQ/zh-cn_image_0000002589325969.png?HW-CC-KV=V1&HW-CC-Date=20260429T055132Z&HW-CC-Expire=86400&HW-CC-Sign=A9EF9187F203889E8C8F63B312701583BFAEEE66DABAA36942A4EE90D2CD398F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/3ms6EZ2fQLG6qcwLuybRDQ/zh-cn_image_0000002589325969.png)

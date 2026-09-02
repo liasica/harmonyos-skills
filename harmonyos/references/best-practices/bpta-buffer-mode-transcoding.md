@@ -5,7 +5,7 @@ breadcrumb: 最佳实践 > 媒体 > 音频和视频 > 基于Buffer模式进行�
 category: best-practices
 scraped_at: 2026-04-29T14:11:33+08:00
 doc_updated_at: 2026-03-19
-content_hash: sha256:076458342d7d5fdfa930932f5bd63e9c034cafa76e32ed6233ae50404b91fe0c
+content_hash: sha256:eaf8e8c0a4540b542c3dfee5c197224894321cf259e9682379977dc8aec5f7b0
 ---
 
 ## 概述
@@ -20,11 +20,11 @@ content_hash: sha256:076458342d7d5fdfa930932f5bd63e9c034cafa76e32ed6233ae50404b9
 
 视频文件格式是视频保存的格式，常见的格式有MP4、AVI等。在视频文件（以MP4文件解码为例）解码时，首先需要将视频进行解封装，解封装会将一个封装好的音视频文件（如MP4、FLV等）中的音频和视频数据流分离出来。然后，从数据流中取出视频的媒体样本sample，通过视频解码器将媒体数据解码成YUV数据，流程如下所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/LLmumTkYTDSBjSuP6-Qh4g/zh-cn_image_0000002353142782.png?HW-CC-KV=V1&HW-CC-Date=20260429T061132Z&HW-CC-Expire=86400&HW-CC-Sign=CDFAD94D1FEB7DA479B16B30E64A68C4454DC948C96024A5A75A0B382F8DD861 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/LLmumTkYTDSBjSuP6-Qh4g/zh-cn_image_0000002353142782.png "点击放大")
 
 在视频文件编码（以MP4文件编码为例）时，首先会通过视频编码器对YUV数据进行编码，将未压缩的视频数据YUV压缩成视频码流H.264，然后，将编码后的媒体数据按一定的格式封装存储到MP4文件里，流程如下所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/-fvkijrrTAOthUjO6E3ARA/zh-cn_image_0000002387023117.png?HW-CC-KV=V1&HW-CC-Date=20260429T061132Z&HW-CC-Expire=86400&HW-CC-Sign=35EEA27BE6C7FF76D06ED165A06E337727303DB059A8F06BE837976EDE8903C9 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/-fvkijrrTAOthUjO6E3ARA/zh-cn_image_0000002387023117.png "点击放大")
 
 关于视频文件编解码支持的格式，详情请参考[AVCodec支持的格式](../harmonyos-guides/avcodec-support-formats.md)。
 
@@ -36,7 +36,7 @@ YUV是编译true-color颜色空间（color space）的种类，Y'UV、YUV等专�
 
 以I420格式为例，其跨距对齐后的格式如下所示。其中，w\_stride是数据填充后的宽跨距，h\_stride是数据填充后的高跨距，height是实际的高度，width是实际的宽度。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/faXAxqsqQMGdwvNcCZjHKQ/zh-cn_image_0000002353302590.png?HW-CC-KV=V1&HW-CC-Date=20260429T061132Z&HW-CC-Expire=86400&HW-CC-Sign=9A1F59B0098CC11B5BD96D22FB2F87936A91F7AB31C1791D2086DE39F001F5E8 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/faXAxqsqQMGdwvNcCZjHKQ/zh-cn_image_0000002353302590.png "点击放大")
 
 ### 视频编解码原理
 
@@ -44,7 +44,7 @@ YUV是编译true-color颜色空间（color space）的种类，Y'UV、YUV等专�
 
 在视频解码的过程中，主要包含两个部分，分别为输入数据流转和输出数据流转。开发者需要通过输入数据流转将需要解码的数据填充给解码器，解码器再进行解码处理。在输出数据流转中，解码器会将解码完成的数据返回给开发者使用，在开发者使用完毕后，需要通知解码器释放视频数据，从而实现整体的Buffer循环，详细原理流程如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/FPLkBdnZS1GrY5HtleIhJQ/zh-cn_image_0000002386942825.png?HW-CC-KV=V1&HW-CC-Date=20260429T061132Z&HW-CC-Expire=86400&HW-CC-Sign=1C5DB1F75DAE4959FF24B76F9E3D7AC4C570B30435D9DD82E66A069D9857F694 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/FPLkBdnZS1GrY5HtleIhJQ/zh-cn_image_0000002386942825.png "点击放大")
 
 输入数据流转的步骤如下所示。
 
@@ -72,7 +72,7 @@ YUV是编译true-color颜色空间（color space）的种类，Y'UV、YUV等专�
 
 在视频转码的场景中，视频文件会经历解封装、视频解码、视频编码和视频封装的步骤，如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/CjFRZD3pSoSmbi66tBIz6w/zh-cn_image_0000002353142786.png?HW-CC-KV=V1&HW-CC-Date=20260429T061132Z&HW-CC-Expire=86400&HW-CC-Sign=66AA4513EB6769599C4D37C8012518A7C9FF9F693E571BE6E8C49914C428583B "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/CjFRZD3pSoSmbi66tBIz6w/zh-cn_image_0000002353142786.png "点击放大")
 
 其主要包含三个大步骤。
 
@@ -94,7 +94,7 @@ YUV是编译true-color颜色空间（color space）的种类，Y'UV、YUV等专�
 
 在视频文件解码中，主要包含两个步骤，输入缓存处理、输出缓存处理。在OnNeedInputBuffer()回调函数中，维护了一个空Buffer的缓存队列，在实现输入缓存处理时，需要解封装、填充视频数据。在OnNewOutputBuffer()回调函数中，维护了一个已解码视频数据的缓存队列，在实现输出缓存处理时，需要处理视频数据，其调用顺序如下所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/UkZ7kY98SA276mYNd8PKRw/zh-cn_image_0000002387023121.png?HW-CC-KV=V1&HW-CC-Date=20260429T061132Z&HW-CC-Expire=86400&HW-CC-Sign=9746D19178CFA436D618E0067596DF02978E63E16888D179A47E001092E6C687 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/UkZ7kY98SA276mYNd8PKRw/zh-cn_image_0000002387023121.png "点击放大")
 
 **视频文件解码**开发步骤如下所示。
 

@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:53:01+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:417e9157b4adcb64f8e6ffdcd0a90cdbe0df654bb338e6ec4117610852c5e150
+content_hash: sha256:4c502f96cf9179e4deda6584f043aaac17c1f07ac15c2888b5f7a35257e5d135
 ---
 
 网格对象排序组件，用于网格对象的编辑、拖动排序、新增和删除。
@@ -192,4 +192,4 @@ PhonePC/2in1TabletTVWearable
 67. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/wjk1hlYWR7q11Vmb4jj3SQ/zh-cn_image_0000002589326511.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055300Z&HW-CC-Expire=86400&HW-CC-Sign=59569EAD9DBAD76C33823302F81721EBC5D250A66E609CBAE6FCBE63E3005BF8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/wjk1hlYWR7q11Vmb4jj3SQ/zh-cn_image_0000002589326511.gif)

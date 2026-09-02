@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > �
 category: harmonyos-references
 scraped_at: 2026-04-29T13:53:21+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:0291de14892837aebb6c17dfb21ee9e39823ae8945c1dbccf2cc23fa03282f47
+content_hash: sha256:6a205592798ba1428c63ddae094f034c35f542ee000189909ec5f73ee2fea0d0
 ---
 
 说明
@@ -175,4 +175,4 @@ PhonePC/2in1TabletTVWearable
 12. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/WhpkWRqsSSG_d4WKFwvbsg/zh-cn_image_0000002558766712.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055320Z&HW-CC-Expire=86400&HW-CC-Sign=02526F40FFDED48D8E48BF2C6B51CE0DAC8D87BC23DF8DCF43EA41DCA9D99B8F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/WhpkWRqsSSG_d4WKFwvbsg/zh-cn_image_0000002558766712.gif)

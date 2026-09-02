@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:51:44+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:99fad9422f49b0a8f724174b42aea363a50ec56591cf27831a98d07869a2d682
+content_hash: sha256:d8c25e6fb8f4b64364a65bc76e30f12d1d63bc94cdc2e5eed04db2a0c188231d
 ---
 
 用来展示列表具体子组件，必须配合[ArcList](ts-container-arclist.md)来使用。
@@ -158,4 +158,4 @@ PhonePC/2in1TabletTVWearable
 51. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/xbAfXOhESueHZsouYU7Iow/zh-cn_image_0000002589326009.png?HW-CC-KV=V1&HW-CC-Date=20260429T055142Z&HW-CC-Expire=86400&HW-CC-Sign=8812DC0ED0AB6F56432D20725F05E834A50FFC2775932265CA0D817B9A72B1DE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/xbAfXOhESueHZsouYU7Iow/zh-cn_image_0000002589326009.png)

@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-constant-property-check-in-loops
-title: @performance/constant-property-referencing-check-in-loops
+title: "@performance/constant-property-referencing-check-in-loops"
 breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 性能规则@performance > @performance/constant-property-referencing-check-in-loops
 category: harmonyos-guides
 scraped_at: 2026-04-28T07:56:01+08:00

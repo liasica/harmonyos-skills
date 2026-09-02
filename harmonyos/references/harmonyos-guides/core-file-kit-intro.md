@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > Core File Kit（文件基础服务） > Core
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:29:34+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:e426f2b21cf5b84a816aaffa678016b5fc5de58f8526eeaa31d5e7dc62e9c18c
+content_hash: sha256:96a8be35f861b32c6ba5d7e71c4d116f76edee3d80a3c9ac081a50510308a429
 ---
 
 Core File Kit（文件基础服务）为开发者提供一套访问和管理应用文件和用户文件的能力。帮助用户更高效地管理、查找和备份各类文件，使用户能够轻松应对各种文件管理的需求。
@@ -26,7 +26,7 @@ Core File Kit（文件基础服务）为开发者提供一套访问和管理应�
 
 **图1** 文件分类模型示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/WUGWHH_YQCultjNd9YWmKw/zh-cn_image_0000002589324621.png?HW-CC-KV=V1&HW-CC-Date=20260429T052933Z&HW-CC-Expire=86400&HW-CC-Sign=902DA7EF7C74902F41FF95B9E670E77ABDD44782E6586568D0686A3824B18DA3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/WUGWHH_YQCultjNd9YWmKw/zh-cn_image_0000002589324621.png)
 
 ## Kit使用场景
 
@@ -84,7 +84,7 @@ Core File Kit常见的使用场景：
 
 **图2** 用户文件访问框架示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/J92Ucs8DQL6iZKMTpIyOwA/zh-cn_image_0000002589244559.png?HW-CC-KV=V1&HW-CC-Date=20260429T052933Z&HW-CC-Expire=86400&HW-CC-Sign=7F7D3F6A5926AAB53249F5AD893D868649D3D7D148D59BE936B29BC9B09D780B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/J92Ucs8DQL6iZKMTpIyOwA/zh-cn_image_0000002589244559.png)
 
 * 系统应用或三方应用（即图中的文件访问客户端）若需访问用户文件，如选择一张照片或保存多个文档等，可以通过拉起“文件选择器应用”来实现。
 * FilePicker：系统预置应用，提供文件访问客户端选择和保存文件的能力，无需配置权限。FilePicker的使用指导请参见[选择用户文件](select-user-file.md)。

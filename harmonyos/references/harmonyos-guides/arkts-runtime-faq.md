@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS运行�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:26:52+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:f1a601d567675270dab03408f189e54388134d846adf97eb59e0dfc83a624f91
+content_hash: sha256:b65cd2843dbc2b3a6d64afa0088805951a68c5fc090c0edd2984d5dd711c9ab3
 ---
 
 ## 正则运算与预期输出结果不一致场景
@@ -274,7 +274,7 @@ parseFloat接口不支持对非规格化数进行解析。当输入字符串表�
 
 然后点击DevEco Studio下方HiLog选项卡，输入过滤条件“Throw error:”，即可查看到Async函数内产生的异常信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/p9QnLUEpTDSWI0W4GJ2VHw/zh-cn_image_0000002558604378.png?HW-CC-KV=V1&HW-CC-Date=20260429T052650Z&HW-CC-Expire=86400&HW-CC-Sign=2AE6CDA171AB526DFFD1567B2D38385D91AE2AB14F82227FCB3C449F37941C48)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/p9QnLUEpTDSWI0W4GJ2VHw/zh-cn_image_0000002558604378.png)
 
 ## Array.flatMap()接口常见问题
 

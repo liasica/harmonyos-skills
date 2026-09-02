@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用服务 > Reader Kit（阅读服务） > 书籍内容�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:40:03+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:d40166c7cb1a90a2d948cb96b8d7c5bc6e74818d8dfd2c32f2250c3214178e63
+content_hash: sha256:4ee75949f12c757dee12b67f1c1a7aba1b691fd11c5b35bd25e7b96551fcbf06
 ---
 
 当应用需要支持自定义字体时，开发者可通过[ReaderSetting](../harmonyos-references/reader-read-core.md#readersetting)的fontPath属性，实现对阅读内容字体的实时修改。
@@ -17,7 +17,7 @@ content_hash: sha256:d40166c7cb1a90a2d948cb96b8d7c5bc6e74818d8dfd2c32f2250c32141
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/9Q51HO2sSS-d7ZO9e-uSKw/zh-cn_image_0000002589325515.png?HW-CC-KV=V1&HW-CC-Date=20260429T054002Z&HW-CC-Expire=86400&HW-CC-Sign=FB2810F0720B754F23389AE3102DDF3E9B9818E9C00199F0DF3E3B26FF3E9F20)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/9Q51HO2sSS-d7ZO9e-uSKw/zh-cn_image_0000002589325515.png)
 
 ## 接口说明
 

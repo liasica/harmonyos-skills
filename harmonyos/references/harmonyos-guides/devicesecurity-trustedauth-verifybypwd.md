@@ -5,7 +5,7 @@ breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:31:34+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:1a7791a6413ca619b9f0b652ac16d8c5854c84952b0b00fffc2c9483d2892ec3
+content_hash: sha256:15ebecc3be17b29dda006955643374af104fe79477da444a09a4584f34cfcd5b
 ---
 
 ## 场景介绍
@@ -18,7 +18,7 @@ content_hash: sha256:1a7791a6413ca619b9f0b652ac16d8c5854c84952b0b00fffc2c9483d28
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/2l7gn10IRoW9SyXB9b2IDw/zh-cn_image_0000002558764892.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053133Z&HW-CC-Expire=86400&HW-CC-Sign=2027D2510B1C5ACB9777A0A44AF4F695C9CDB042770319EF2E7E1C771BD9102E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/2l7gn10IRoW9SyXB9b2IDw/zh-cn_image_0000002558764892.jpg)
 
 ## 接口说明
 
@@ -37,15 +37,15 @@ content_hash: sha256:1a7791a6413ca619b9f0b652ac16d8c5854c84952b0b00fffc2c9483d28
 
 **图1** 无翻页密码认证
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/n9Jw_7ySRfmO7VMzomvXhA/zh-cn_image_0000002558605236.png?HW-CC-KV=V1&HW-CC-Date=20260429T053133Z&HW-CC-Expire=86400&HW-CC-Sign=20C770E138C2F5401D01F46A969346C2CA808212FC3542E9DBEA8383C80DDCC5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/n9Jw_7ySRfmO7VMzomvXhA/zh-cn_image_0000002558605236.png)
 
 **图2** 翻页密码认证-1
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/9rp0ec1dTLKRYSEmCaA-jg/zh-cn_image_0000002589324761.png?HW-CC-KV=V1&HW-CC-Date=20260429T053133Z&HW-CC-Expire=86400&HW-CC-Sign=DBCAE7A248978C3959F0A65E0A342A4BF95DCFE0BEF8440C59585BEB4788ECB7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/9rp0ec1dTLKRYSEmCaA-jg/zh-cn_image_0000002589324761.png)
 
 **图3** 翻页密码认证-2
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/_zq-AO8LSjONrl1ccjcpAQ/zh-cn_image_0000002589244699.png?HW-CC-KV=V1&HW-CC-Date=20260429T053133Z&HW-CC-Expire=86400&HW-CC-Sign=A73DACC23AE0A78B98BF29BE7E451FE016C57D770A57127B527158205E8BAE46)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/_zq-AO8LSjONrl1ccjcpAQ/zh-cn_image_0000002589244699.png)
 
 交易信息格式说明如下：
 

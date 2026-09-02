@@ -5,7 +5,7 @@ breadcrumb: 指南 > 系统 > 安全 > Universal Keystore Kit（密钥管理服�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:31:54+08:00
 doc_updated_at: 2026-03-20
-content_hash: sha256:bcf603db044ffb0092067e21e25508c05d0468688c33d79ecdc7d150411571db
+content_hash: sha256:f1c0e279e1c641fc1e0fb93e8d36bea9ff3e426baf2425248f9f2ddd261f2554
 ---
 
 在使用通用密钥库完成应用开发前，开发者需要了解以下相关概念，以下概念将贯穿整个开发过程。
@@ -26,7 +26,7 @@ content_hash: sha256:bcf603db044ffb0092067e21e25508c05d0468688c33d79ecdc7d150411
 
 下图为RSA密钥材料内存结构为例，其他算法格式见样例下方表格。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/pEmds7AGS-iLPugXsJsx4Q/zh-cn_image_0000002589324777.png?HW-CC-KV=V1&HW-CC-Date=20260429T053153Z&HW-CC-Expire=86400&HW-CC-Sign=A309C15B1EF8C04E15921E48A5D3EA73476C722A4777503D7DE2B254F11885C9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/pEmds7AGS-iLPugXsJsx4Q/zh-cn_image_0000002589324777.png)
 
 其中，密钥算法的值取自枚举类[HuksKeyAlg](../harmonyos-references/js-apis-huks.md#hukskeyalg)。
 
@@ -122,7 +122,7 @@ content_hash: sha256:bcf603db044ffb0092067e21e25508c05d0468688c33d79ecdc7d150411
 
 以RSA私钥材料为例：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/404D7RjVTLS0nqDjrHcNvg/zh-cn_image_0000002589244715.png?HW-CC-KV=V1&HW-CC-Date=20260429T053153Z&HW-CC-Expire=86400&HW-CC-Sign=C35A1BCDDCF7226FA06A3EA0CE2D2C0C6C5A9F06C98CB76C0F054CA542F5CE3E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/404D7RjVTLS0nqDjrHcNvg/zh-cn_image_0000002589244715.png)
 
 ```
 1. let rsa2048PrivateKeyMaterial = new Uint8Array([

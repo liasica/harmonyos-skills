@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:51:40+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:8bdbcc3326a5da067282e0693f2bfa2e65e237acdd75a99e7f77ad9cd4695084
+content_hash: sha256:09163f837e8b4d8c70b119826d82b84a4917649a8f1e84d6fd715a4beae41aaf
 ---
 
 沿垂直方向布局的容器。
@@ -287,7 +287,7 @@ PhonePC/2in1TabletTVWearable
 56. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/w4Gx02HRSPCW5FiO7ydaOw/zh-cn_image_0000002589245925.png?HW-CC-KV=V1&HW-CC-Date=20260429T055138Z&HW-CC-Expire=86400&HW-CC-Sign=6E8FE8D368FFBAA39B1D900A4F258E9E25AEFA4125A1257CAC9E0A24DCB0DEDF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/w4Gx02HRSPCW5FiO7ydaOw/zh-cn_image_0000002589245925.png)
 
 ### 示例2（设置反转属性）
 
@@ -317,4 +317,4 @@ PhonePC/2in1TabletTVWearable
 21. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/MtNjFIoSTyGNqS7EZ5jNUA/zh-cn_image_0000002558766116.png?HW-CC-KV=V1&HW-CC-Date=20260429T055138Z&HW-CC-Expire=86400&HW-CC-Sign=BC165AE4C78BC7C506C0BD1885BCB66EFF2B760E9FC24A0818F4A838DDFE0235)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/MtNjFIoSTyGNqS7EZ5jNUA/zh-cn_image_0000002558766116.png)

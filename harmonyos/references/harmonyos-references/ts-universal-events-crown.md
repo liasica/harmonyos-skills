@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:51:06+08:00
 doc_updated_at: 2026-04-02
-content_hash: sha256:5f1f75ef378980ef326df4dc75826afae2b1f2af0e67f40d2f93bc68be797ce1
+content_hash: sha256:27d4fa2bd238b0fd3055d7d6758fc40815bbac106cfd4514a7e4933ada20f953
 ---
 
 指旋转表冠时触发的事件，事件的分发依赖于应用焦点，开发者可以通过[焦点事件](ts-universal-focus-event.md)自定义事件处理。
@@ -105,4 +105,4 @@ PhonePC/2in1TabletTVWearable
 32. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/KnldIfZCRXGk6MWhhECAEg/zh-cn_image_0000002589244253.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055105Z&HW-CC-Expire=86400&HW-CC-Sign=336CBB5412F7F92ACD9E24244EA37FE2956FE6FF9137F4049777BB14BFAE6755)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/KnldIfZCRXGk6MWhhECAEg/zh-cn_image_0000002589244253.gif)

@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > Stage�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:25:49+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:5ec2250fc3d6c6ef2d93fb64cb9bdcfbb14deb8acbfc23f5ba67c461a5c5b6c3
+content_hash: sha256:b282366e7b34ab943dcde0483d9fde547fe2411e5471259d767ee09da6b4a521
 ---
 
 本章节主要介绍如何通过应用链接跳转的方式拉起指定应用。
@@ -59,11 +59,11 @@ Deep Linking与App Linking均可以使用[openLink](../harmonyos-references/js-a
 
 通过App Linking方式拉起指定应用的示意图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/-4e3beLGTBi1APsAZ4NrcQ/zh-cn_image_0000002589323861.png?HW-CC-KV=V1&HW-CC-Date=20260429T052548Z&HW-CC-Expire=86400&HW-CC-Sign=975AEFCE7CDB73A9B5A760453DE1F9E2FEB23A6A141221FFFC989B01E64B2EAA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/-4e3beLGTBi1APsAZ4NrcQ/zh-cn_image_0000002589323861.png)
 
 通过Deep Linking方式拉起应用时，如果存在多个符合条件的应用，需要用户选择后方可跳转到指定应用。示意图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/v9waFtHNSTuwKQKwSCS8Tw/zh-cn_image_0000002589243799.png?HW-CC-KV=V1&HW-CC-Date=20260429T052548Z&HW-CC-Expire=86400&HW-CC-Sign=222CF9CE7D5E60C6C2EEE2F59BD5581FCEFB2FE8B77C3EF43DA39D1A5E28FF8F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/v9waFtHNSTuwKQKwSCS8Tw/zh-cn_image_0000002589243799.png)
 
 ## FAQ
 

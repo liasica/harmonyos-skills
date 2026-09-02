@@ -5,7 +5,7 @@ breadcrumb: FAQ > DevEco Studio > 签名服务 > 签名密钥库文件与JDK版�
 category: harmonyos-faqs
 scraped_at: 2026-04-29T14:21:10+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:d2aaac0cad4e3615c2009e91fd94ef9a26a8f71e0bfd8b009acd455fe57cccf6
+content_hash: sha256:21543cde7bbbe389d353a9213fbeeeeee2afe7a3e88653babad737b14591a711
 ---
 
 **问题现象**
@@ -27,7 +27,7 @@ content_hash: sha256:d2aaac0cad4e3615c2009e91fd94ef9a26a8f71e0bfd8b009acd455fe57
 
 1. 查看DevEco Studio预置的JDK版本信息，DevEco Studio Terminal窗口执行java -version命令，当前示例DevEco Studio预置的JDK版本为21.0.6。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/ZVsRZoW9RVSa1gGmMC0IYw/zh-cn_image_0000002422340574.png?HW-CC-KV=V1&HW-CC-Date=20260429T062109Z&HW-CC-Expire=86400&HW-CC-Sign=4743849BA8147DA010D3FD2AF872FC9EA193DE17076177B65C71E6FDCC3F342D)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/ZVsRZoW9RVSa1gGmMC0IYw/zh-cn_image_0000002422340574.png)
 2. 查看本地系统JDK版本信息，CMD窗口执行java -version命令，当前示例本地系统JDK版本为1.8.0\_292，与步骤1示例中DevEco Studio预置的JDK版本不一致。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/LJwg7O17RHSMVedZREk6ig/zh-cn_image_0000002342518430.png?HW-CC-KV=V1&HW-CC-Date=20260429T062109Z&HW-CC-Expire=86400&HW-CC-Sign=8447156CEA4FCFF4F7489DDC3D48B72D22E8EB4C4385952A0F92F97BFFD4771D)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/LJwg7O17RHSMVedZREk6ig/zh-cn_image_0000002342518430.png)

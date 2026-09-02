@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:28:49+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:50f9bce163255cbb588acc033b23c36631436ba176437063766c3fd20ad77ddd
+content_hash: sha256:0708c29335a3f18de18a7285423174a2b15c362fab9f55fffb9e23c763771d01
 ---
 
 chart为图表组件，用于呈现线形图、柱状图和量规图界面。具体用法请参考[chart](../harmonyos-references/js-components-basic-chart.md)。
@@ -67,7 +67,7 @@ chart为图表组件，用于呈现线形图、柱状图和量规图界面。具
 27. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/2Cey9l-AQAmVh9aOV5BHpQ/zh-cn_image_0000002558764608.png?HW-CC-KV=V1&HW-CC-Date=20260429T052848Z&HW-CC-Expire=86400&HW-CC-Sign=52BA2E8637488450E7FDA234BFE3B5F0EAEA17C402740FA7CE9C5B30EC56414C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/2Cey9l-AQAmVh9aOV5BHpQ/zh-cn_image_0000002558764608.png)
 
 ## 设置图表类型
 
@@ -210,7 +210,7 @@ chart组件通过设置type属性定义图表类型，如将图表设置为柱�
 62. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/nPooaM3NSkS4PougmqHrMg/zh-cn_image_0000002558604952.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052848Z&HW-CC-Expire=86400&HW-CC-Sign=2E98F4E9A860B0A9C6B17E30928B5C1D88D7015F20FF0BAD25517C02035D83C1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/nPooaM3NSkS4PougmqHrMg/zh-cn_image_0000002558604952.gif)
 
 说明
 
@@ -507,4 +507,4 @@ chart组件在options属性中设置对x轴、y轴和数据序列参数的设置
 113. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/0KsVKJfpS_emW0qjqxK8Aw/zh-cn_image_0000002589324479.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052848Z&HW-CC-Expire=86400&HW-CC-Sign=CA8607EB357FF0B8061E40B24EDFEEE581CC7271B6765BDFEA3DE8624CDF443E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/0KsVKJfpS_emW0qjqxK8Aw/zh-cn_image_0000002589324479.gif)

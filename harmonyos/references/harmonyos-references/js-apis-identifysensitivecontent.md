@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-identifysensitivecontent
-title: @ohos.security.identifySensitiveContent (识别敏感内容)
+title: "@ohos.security.identifySensitiveContent (识别敏感内容)"
 breadcrumb: API参考 > 系统 > 安全 > Data Protection Kit（数据保护服务） > ArkTS API > @ohos.security.identifySensitiveContent (识别敏感内容)
 category: harmonyos-references
 scraped_at: 2026-04-28T08:07:07+08:00

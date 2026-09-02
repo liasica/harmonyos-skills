@@ -5,7 +5,7 @@ breadcrumb: FAQ > DevEco Studio > 应用调试 > 应用运行报错：hap path e
 category: harmonyos-faqs
 scraped_at: 2026-04-29T14:21:27+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:e940ebcd479c878ec14551ace7af23ba2b06ffdad32eb4c515451a027e5272f9
+content_hash: sha256:0c1dc993347f4fba44a9ad046ee215c869f3ce9b60c9e8603724c83200fb1a50
 ---
 
 **问题现象**
@@ -16,4 +16,4 @@ content_hash: sha256:e940ebcd479c878ec14551ace7af23ba2b06ffdad32eb4c515451a027e5
 
 如果依赖的应用包未安装，建议进入**Run/Debug Configurations > Deploy Multi Hap****/Hsp**页签，勾选**Deploy Multi Hap/Hsp Packages**，选择所需依赖的应用包，然后重新运行应用。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/V73fFJjZRU6TwojLxeAeNA/zh-cn_image_0000002487797922.png?HW-CC-KV=V1&HW-CC-Date=20260429T062126Z&HW-CC-Expire=86400&HW-CC-Sign=27A4D126A13767D011A90D88B7CDFC100F5FFCF2B6BC48EE6CAD96DAA03CB47A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/V73fFJjZRU6TwojLxeAeNA/zh-cn_image_0000002487797922.png)

@@ -5,7 +5,7 @@ breadcrumb: 指南 > NDK开发 > 代码开发 > 包管理 > NativeBundle开发�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:44:28+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:0539596f180a2e53193fa4414dba34b9c06002c809c0ae098b95a4cc36f41d01
+content_hash: sha256:73ff27a972a7d22731996188095fbf1e2e11a21a3510561f715e381f485ab2ea
 ---
 
 ## 场景介绍
@@ -31,7 +31,7 @@ content_hash: sha256:0539596f180a2e53193fa4414dba34b9c06002c809c0ae098b95a4cc36f
 
 **1. 创建工程**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/_PJUGgegSxCWJEZByGkpFw/zh-cn_image_0000002558606232.png?HW-CC-KV=V1&HW-CC-Date=20260429T054427Z&HW-CC-Expire=86400&HW-CC-Sign=41AF3BC845AD71A591501683AE089D63DCDD5A8491248CCFEB8CD5A60BCDA70B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/_PJUGgegSxCWJEZByGkpFw/zh-cn_image_0000002558606232.png)
 
 **2. 添加依赖**
 

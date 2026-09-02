@@ -5,14 +5,14 @@ breadcrumb: 指南 > 媒体 > Image Kit（图片处理服务） > 图片开发�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:35:18+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:3f220fc75023739c4a6b7191210c8b231df1782b108be5c9ccfc204541650159
+content_hash: sha256:7c51fce02f2e0f7b67c28e60403e118f76b6d6769dc5a0b2f5208596ed46b4bf
 ---
 
 调用者可以调用本模块提供的[C API接口](../harmonyos-references/capi-imageprocessing.md)，实现将双层HDR图片转换为单层HDR图片。
 
 该能力常用于图片分享中，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/PQ153ZnrSGC7ujQ9kfO1tA/zh-cn_image_0000002589244897.png?HW-CC-KV=V1&HW-CC-Date=20260429T053516Z&HW-CC-Expire=86400&HW-CC-Sign=AE773C6C41847CB565BE19315894EEB7171F5900E7C2AACB6C4EF334E418B047)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/PQ153ZnrSGC7ujQ9kfO1tA/zh-cn_image_0000002589244897.png)
 
 ## 规格说明
 

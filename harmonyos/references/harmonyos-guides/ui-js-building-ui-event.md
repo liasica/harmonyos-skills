@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:28:44+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:661854dd3465f6f3290e60edfe75d410891a288bee85618e7fb14c2bcf7d8f48
+content_hash: sha256:4c120110c8df9575620ea66204cac2a71795e3347269f0da90e3127f5243bfc4
 ---
 
 手势表示由单个或多个事件识别的语义动作（例如：触摸、点击和长按）。一个完整的手势也可能由多个事件组成，对应手势的生命周期。支持的事件有：
@@ -112,4 +112,4 @@ longpress：用户在相同位置长时间保持与屏幕接触。
 33. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/odfCeEC3Q42jCzeow_fBbw/zh-cn_image_0000002589324443.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052843Z&HW-CC-Expire=86400&HW-CC-Sign=4BC2D061B1A481EBEC95D6FD4D201E448A03CC7FCDCB97BEC74B5C86B104087C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/odfCeEC3Q42jCzeow_fBbw/zh-cn_image_0000002589324443.gif)

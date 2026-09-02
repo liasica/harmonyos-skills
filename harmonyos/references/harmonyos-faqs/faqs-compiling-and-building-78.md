@@ -5,14 +5,14 @@ breadcrumb: FAQ > DevEco Studio > 编译构建 > DevEco Studio编译报“Operat
 category: harmonyos-faqs
 scraped_at: 2026-04-29T14:20:38+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:941455d4a608426a93fc2e04d5edec1c8f333bddf3ab5cb804afe7c204c7a66f
+content_hash: sha256:fb01e97d3b2b0c3e98b5b91c886e747d7eca01eb89d7edffa98195e9d3271366
 ---
 
 **问题描述**
 
 DevEco Studio安装完成后一直报Operation not permitted无权限，具体报错如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/7Rut4BHFSj2PS0HKpLVcGA/zh-cn_image_0000002194158416.png?HW-CC-KV=V1&HW-CC-Date=20260429T062037Z&HW-CC-Expire=86400&HW-CC-Sign=9FCF5AAB566BCF2392FD8C2A9D888EA41481CC8301A6C47E95B36C8609027792)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/7Rut4BHFSj2PS0HKpLVcGA/zh-cn_image_0000002194158416.png)
 
 **解决方案**
 

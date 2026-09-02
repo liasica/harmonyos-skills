@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:52:46+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:d26f50fb903fd8db73a2c6fce68c85cfcec2f769c92a5b89199d5c7ef30f0d81
+content_hash: sha256:f2581f6fc7e8cf7c5d76ff55734406895414afd70d3d5e5050a259086a2cf716
 ---
 
 点击日期弹出日历选择器弹窗，可在弹窗内选择日期。
@@ -134,7 +134,7 @@ PhonePC/2in1TabletTVWearable
 47. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/ydGNFJ9-SXiCBVcHgyXbog/zh-cn_image_0000002558766574.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055244Z&HW-CC-Expire=86400&HW-CC-Sign=7C4CA044404A9949D1E19D3457AE38CEA96BBB98DADCD70D4C4801DA8238C32A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/ydGNFJ9-SXiCBVcHgyXbog/zh-cn_image_0000002558766574.gif)
 
 ### 示例2（自定义按钮样式）
 
@@ -190,7 +190,7 @@ PhonePC/2in1TabletTVWearable
 47. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/RWR8uUqTRqq8l6dVEYEB6A/zh-cn_image_0000002558606914.png?HW-CC-KV=V1&HW-CC-Date=20260429T055244Z&HW-CC-Expire=86400&HW-CC-Sign=7A69E3FC30741D74D080291B81657A120743F4733BF79CD07D67F41405CFAA7B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/RWR8uUqTRqq8l6dVEYEB6A/zh-cn_image_0000002558606914.png)
 
 ### 示例3（悬停态弹窗）
 
@@ -240,7 +240,7 @@ PhonePC/2in1TabletTVWearable
 41. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/xOkK62DIRiS9Of_cX_88WQ/zh-cn_image_0000002589326441.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055244Z&HW-CC-Expire=86400&HW-CC-Sign=CEBA36E1CA2B1776779F4323B61743B7A8FFC376D2935E39CB06BA1E6322114F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/xOkK62DIRiS9Of_cX_88WQ/zh-cn_image_0000002589326441.gif)
 
 ### 示例4（设置日期选中态底板样式）
 
@@ -273,7 +273,7 @@ PhonePC/2in1TabletTVWearable
 24. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/twIKnXZBTMmljR0KwgRlrw/zh-cn_image_0000002589246383.png?HW-CC-KV=V1&HW-CC-Date=20260429T055244Z&HW-CC-Expire=86400&HW-CC-Sign=6FB7F22A5541EF4F4035F38A3FBD4CABC800C07396AD842C47B0FC9DF8E90C3F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/twIKnXZBTMmljR0KwgRlrw/zh-cn_image_0000002589246383.png)
 
 ### 示例5（设置开始日期和结束日期）
 
@@ -306,7 +306,7 @@ PhonePC/2in1TabletTVWearable
 24. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/0PqI1lKRS1Sw3QH52uvQUg/zh-cn_image_0000002558766576.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055244Z&HW-CC-Expire=86400&HW-CC-Sign=78FC2AA064CAE2B30AF57331F7BC909168289E09521AA65DA84A393C13DAF1EF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/0PqI1lKRS1Sw3QH52uvQUg/zh-cn_image_0000002558766576.gif)
 
 ### 示例6（设置系统当前日期在日历选择器弹窗内保持高亮显示，并设置禁用日期区间）
 
@@ -338,7 +338,7 @@ PhonePC/2in1TabletTVWearable
 23. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/akY_chMISbKpOvH1zsDyhA/zh-cn_image_0000002558606916.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055244Z&HW-CC-Expire=86400&HW-CC-Sign=9235453FC2F942303F7FC45E4A2614C8D65647A7FB6E52BC0F3A0601680E6B61)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/akY_chMISbKpOvH1zsDyhA/zh-cn_image_0000002558606916.gif)
 
 ### 示例7（自定义背景模糊效果参数）
 
@@ -377,7 +377,7 @@ PhonePC/2in1TabletTVWearable
 30. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/fxu42uOzSuyTvVGjPwTFdw/zh-cn_image_0000002589326443.png?HW-CC-KV=V1&HW-CC-Date=20260429T055244Z&HW-CC-Expire=86400&HW-CC-Sign=C29776BBB5016883AA665E7C755658D958E2105FE1F58322DD0069AC24A14ED5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/fxu42uOzSuyTvVGjPwTFdw/zh-cn_image_0000002589326443.png)
 
 ### 示例8（自定义背景效果参数）
 
@@ -417,4 +417,4 @@ PhonePC/2in1TabletTVWearable
 31. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/I3816solQlGfgLPXS1Ywig/zh-cn_image_0000002589246385.png?HW-CC-KV=V1&HW-CC-Date=20260429T055244Z&HW-CC-Expire=86400&HW-CC-Sign=48AB41558C8BB94487E2547CCA8ED4A0F967BB2E3BBC5900DB5D4AEDDD543016)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/I3816solQlGfgLPXS1Ywig/zh-cn_image_0000002589246385.png)

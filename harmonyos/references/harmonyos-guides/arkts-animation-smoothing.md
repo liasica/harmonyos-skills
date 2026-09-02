@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:28:14+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:03b60b14cf356e559dfa475ea30a69e4ea08911f5c421530cb3f9d0833170573
+content_hash: sha256:e1deb7f7e525ed91651858516dda65540ad598b3928afe83933adc8b6139e64b
 ---
 
 UI界面除了运行动画之外，还承载着与用户进行实时交互的功能。当用户行为根据意图变化发生改变时，UI界面应做到即时响应。例如用户在应用启动过程中，上滑退出，那么启动动画应该立即过渡到退出动画，而不应该等启动动画完成后再退出，从而减少用户等待时间。对于桌面翻页类从跟手到离手触发动画的场景，离手后动画的初始速度应继承手势速度，避免由于速度不连续导致停顿感的产生。针对以上场景，系统已提供动画与动画、手势与动画之间的衔接能力，保证各类场景下动画平稳光滑地过渡的同时，尽可能降低开发难度。
@@ -65,7 +65,7 @@ UI界面除了运行动画之外，还承载着与用户进行实时交互的功
 
 [Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/Animation/entry/src/main/ets/pages/cohesion/template1/Index.ets#L15-L62)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/2tT8Aa_USbyMaFRImHdsAQ/zh-cn_image_0000002558604832.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052813Z&HW-CC-Expire=86400&HW-CC-Sign=FDE1A4789AFC0006503E638040092B0817CB55D2C8ED360971F515F04F1EDC58)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/2tT8Aa_USbyMaFRImHdsAQ/zh-cn_image_0000002558604832.gif)
 
 ## 手势与动画的衔接
 
@@ -143,4 +143,4 @@ UI界面除了运行动画之外，还承载着与用户进行实时交互的功
 
 [Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/Animation/entry/src/main/ets/pages/cohesion/template2/Index.ets#L15-L77)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/ixVJMieNRkOjweB6rO3WuQ/zh-cn_image_0000002589324357.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052813Z&HW-CC-Expire=86400&HW-CC-Sign=5BADDCADCEF32F2D7BF223FEE782529400574B7DFFAAB23A3D5FB64B09ED651D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/ixVJMieNRkOjweB6rO3WuQ/zh-cn_image_0000002589324357.gif)

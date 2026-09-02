@@ -5,7 +5,7 @@ breadcrumb: 最佳实践 > 功耗 > 应用功耗优化 > 前台任务低功耗 >
 category: best-practices
 scraped_at: 2026-04-29T14:13:49+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:781f2e50f996db9ac2807996e26185c7cada37ad387d6d689a70681c0933a7e3
+content_hash: sha256:51262dc131c2b94f61dd5a4c1f243b1e20d77b5c655a9e912204513f48a02cb9
 ---
 
 ## 概述
@@ -52,7 +52,7 @@ LTPO是自适应刷新率技术，按需调整显示刷新率，优化性能和�
 
 打开开发者模式中的"显示刷新频率"开关。具体操作：设置中搜索"开发者" -> "显示刷新频率"。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/eaF5fa5FRvOExc2Nt0x7MA/zh-cn_image_0000002194009772.png?HW-CC-KV=V1&HW-CC-Date=20260429T061347Z&HW-CC-Expire=86400&HW-CC-Sign=84015B9B8FFA658F307434095B4033E61B9E04308B15C0A6ACD206B27310206B) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/xnt2rBk0RsidsQaKH3AP_g/zh-cn_image_0000002229335585.png?HW-CC-KV=V1&HW-CC-Date=20260429T061347Z&HW-CC-Expire=86400&HW-CC-Sign=7D82534CB43BB2D3C98BC76C120D251D6781713773494A5184C6E5698BD98A78)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/eaF5fa5FRvOExc2Nt0x7MA/zh-cn_image_0000002194009772.png) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/xnt2rBk0RsidsQaKH3AP_g/zh-cn_image_0000002229335585.png)
 
 ### Profiler工具测试手机功耗
 
@@ -60,7 +60,7 @@ LTPO是自适应刷新率技术，按需调整显示刷新率，优化性能和�
 
 2. 打开工具Profiler，并按图示选择需要监控的设备、app、进程。未启动app会出现设备、app等选项为空的情况，此时不能进行Profiler性能分析。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/Fi9wosYcS6Cqvk0mnHIZcw/zh-cn_image_0000002229335569.png?HW-CC-KV=V1&HW-CC-Date=20260429T061347Z&HW-CC-Expire=86400&HW-CC-Sign=2CA7C31148914B97DC11D8C0684CD0DF75D49ABB0AEA21527EB0F7BB812CEBE6 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/Fi9wosYcS6Cqvk0mnHIZcw/zh-cn_image_0000002229335569.png "点击放大")
 
 图中的黄色折线展示整机的电量消耗，斜率为正表示设备耗电，斜率为负表示设备充电。
 
@@ -68,7 +68,7 @@ LTPO是自适应刷新率技术，按需调整显示刷新率，优化性能和�
 
 4. 将鼠标悬浮在关注的泳道数据上时，界面上会显示当前时间点的时间标线和详细数据的Tooltips。当鼠标悬浮在时间轴上时，实时监控页面内的所有泳道均会以Tooltips显示该时刻的数据。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/mHZdNNmORRWqT06Rw1iw-g/zh-cn_image_0000002194009788.png?HW-CC-KV=V1&HW-CC-Date=20260429T061347Z&HW-CC-Expire=86400&HW-CC-Sign=868EB9A35B38E7AFC2F617A4F50BB1EFF22B07B723747B707FCD1D9B24DE4421 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/mHZdNNmORRWqT06Rw1iw-g/zh-cn_image_0000002194009788.png "点击放大")
 
 本文采用的测试方式是让应用运行30秒，每3秒记录一次功耗数据，取设备从第6秒到第21秒的5个节点的平均功耗。此时设备已平稳运行，功耗也趋于稳定。
 
@@ -96,7 +96,7 @@ LTPO是自适应刷新率技术，按需调整显示刷新率，优化性能和�
 
 **效果展示**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/jFwFQkZQT82h69PKrKKJbQ/zh-cn_image_0000002229335581.png?HW-CC-KV=V1&HW-CC-Date=20260429T061347Z&HW-CC-Expire=86400&HW-CC-Sign=840D867C6033D7957A7067BE8989BB756DBB8975882CEC90C8B1769F91D40C0C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/jFwFQkZQT82h69PKrKKJbQ/zh-cn_image_0000002229335581.png)
 
 **功耗对比**
 
@@ -108,7 +108,7 @@ LTPO是自适应刷新率技术，按需调整显示刷新率，优化性能和�
 
 打开手机屏幕刷新率设置，可以查看刷新率变化。使用Profiler工具，可以查看功耗变化。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/L_cFGz2pSem2rOPgHskZyg/zh-cn_image_0000002229450069.png?HW-CC-KV=V1&HW-CC-Date=20260429T061347Z&HW-CC-Expire=86400&HW-CC-Sign=A82DC1B9B391CDAB27AD4C475B37B47F6F8EE1C034A619F3D97FB37A9DB6A674 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/L_cFGz2pSem2rOPgHskZyg/zh-cn_image_0000002229450069.png "点击放大")
 
 从图中可以发现，当屏幕刷新率降低时，功耗也会降低。
 
@@ -274,7 +274,7 @@ LTPO是自适应刷新率技术，按需调整显示刷新率，优化性能和�
 
 **效果展示**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/_DilYC4CQxmVIOBbdMzZTQ/zh-cn_image_0000002193850184.png?HW-CC-KV=V1&HW-CC-Date=20260429T061347Z&HW-CC-Expire=86400&HW-CC-Sign=7482C70A224F8BF633916497CB311CC87C13D170BAC33ECF1E6851ABF694CF34)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/_DilYC4CQxmVIOBbdMzZTQ/zh-cn_image_0000002193850184.png)
 
 **功耗对比**
 
@@ -286,7 +286,7 @@ LTPO是自适应刷新率技术，按需调整显示刷新率，优化性能和�
 
 开启手机帧率设置，查看帧率变化；使用Profiler工具，查看功耗变化。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/cf66-jliSfKm6WwrM7-JXg/zh-cn_image_0000002229450057.png?HW-CC-KV=V1&HW-CC-Date=20260429T061347Z&HW-CC-Expire=86400&HW-CC-Sign=7CF384BF04B6A6AE8B2EA228D828955CE74FAB6960F203FE329812F64ADCFE81 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/cf66-jliSfKm6WwrM7-JXg/zh-cn_image_0000002229450057.png "点击放大")
 
 屏幕刷新率降低时，功耗也会降低。
 

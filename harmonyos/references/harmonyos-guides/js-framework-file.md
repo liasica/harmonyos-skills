@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:28:37+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:dbf33133a77c4120454a98057a3c1b0813247f87cb0934e6094e9f736ef6db36
+content_hash: sha256:87b01c2655ceecf7b68f2a71f7cb90492e5e0fc6758b02bf1741113fe4c4eddf
 ---
 
 ## 目录结构
@@ -14,11 +14,11 @@ JS FA应用的JS模块（entry/src/main/js/module）的典型开发目录结构�
 
 **图1** 目录结构
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/Dbjil8zOQ0eRYvrIjrJdFw/zh-cn_image_0000002589244373.png?HW-CC-KV=V1&HW-CC-Date=20260429T052837Z&HW-CC-Expire=86400&HW-CC-Sign=91FDC8FA35F9202846C6C5EA0C7E412FBAF3E532AA9136F2A2ADCD4ED8A8F2F9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/Dbjil8zOQ0eRYvrIjrJdFw/zh-cn_image_0000002589244373.png)
 
 **图2** [多实例](pageability-launch-type.md)资源共享目录结构
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/_2NlRrefTk6k9qVYY58D6A/zh-cn_image_0000002558764566.png?HW-CC-KV=V1&HW-CC-Date=20260429T052837Z&HW-CC-Expire=86400&HW-CC-Sign=C8C03E125BFD8C4F26C5AD988BE2329B95E8B4D5E3A8FE9CA302EFCFDB36FC1F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/_2NlRrefTk6k9qVYY58D6A/zh-cn_image_0000002558764566.png)
 
 目录结构中文件分类如下：
 

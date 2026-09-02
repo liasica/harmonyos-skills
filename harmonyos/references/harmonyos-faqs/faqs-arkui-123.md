@@ -1,7 +1,7 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-123
-title: Color支持哪些格式，使用color: 'rgba(0, 0, 255, .5)'格式不生效
-breadcrumb: FAQ > 应用框架开发 > UI框架 > 方舟UI框架（ArkUI） > Color支持哪些格式，使用color: 'rgba(0, 0, 255, .5)'格式不生效
+title: "Color支持哪些格式，使用color: 'rgba(0, 0, 255, .5)'格式不生效"
+breadcrumb: "FAQ > 应用框架开发 > UI框架 > 方舟UI框架（ArkUI） > Color支持哪些格式，使用color: 'rgba(0, 0, 255, .5)'格式不生效"
 category: harmonyos-faqs
 scraped_at: 2026-04-28T08:25:33+08:00
 doc_updated_at: 2026-03-10

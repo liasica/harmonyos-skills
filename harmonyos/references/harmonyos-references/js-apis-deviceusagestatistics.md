@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-deviceusagestatistics
-title: @ohos.bundleState (设备使用信息统计)
+title: "@ohos.bundleState (设备使用信息统计)"
 breadcrumb: API参考 > 应用框架 > Background Tasks Kit（后台任务开发服务） > ArkTS API > 已停止维护的接口 > @ohos.bundleState (设备使用信息统计)
 category: harmonyos-references
 scraped_at: 2026-04-28T08:05:36+08:00

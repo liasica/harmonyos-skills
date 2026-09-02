@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:27:45+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:3d53c86c927453550033b48a93ea67c976fb9fc5f233abb5f2925ea496aa3cd6
+content_hash: sha256:f8096fe1c79cff75ce0d9daba94f695fa8c2dc99384d60147960874c91948610
 ---
 
 Text是文本组件，用于展示用户视图，如显示文章的文字内容。该组件支持绑定自定义文本选择菜单，用户可根据需要选择不同功能。此外，还可以扩展自定义菜单，丰富可用选项，进一步提升用户体验。Span则用于展示行内文本。
@@ -26,7 +26,7 @@ Text可通过以下两种方式来创建：
 
   [CreateText.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/text/CreateText.ets#L25-L28)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/6XRaf7HoRMeSvCmSwFkY6Q/zh-cn_image_0000002589244089.png?HW-CC-KV=V1&HW-CC-Date=20260429T052743Z&HW-CC-Expire=86400&HW-CC-Sign=31AAEE56070E9239BFAD17AEE53E70445494886E6BB858A1177137B3CC496E82)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/6XRaf7HoRMeSvCmSwFkY6Q/zh-cn_image_0000002589244089.png)
 
 * 引用Resource资源。
 
@@ -55,7 +55,7 @@ Text可通过以下两种方式来创建：
 
   [CreateText.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/text/CreateText.ets#L35-L43)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/9L_F6p9wQGCwm5obA16qJQ/zh-cn_image_0000002558764282.png?HW-CC-KV=V1&HW-CC-Date=20260429T052743Z&HW-CC-Expire=86400&HW-CC-Sign=56A48D4EB5D0428C50EA80BE32DD679BFDE4501A5295803122DDA4FA391FE40E)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/9L_F6p9wQGCwm5obA16qJQ/zh-cn_image_0000002558764282.png)
 
 ## 添加子组件
 
@@ -77,7 +77,7 @@ Text可通过以下两种方式来创建：
 
   [TextSpan.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/text/TextSpan.ets#L28-L36)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/xkg1bznpRVquMLuXLQVmdw/zh-cn_image_0000002558604626.png?HW-CC-KV=V1&HW-CC-Date=20260429T052743Z&HW-CC-Expire=86400&HW-CC-Sign=1B7CCEA61BBBAC94738DD342B837DE44BD88781D2673DDA2649962677980CDFD)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/xkg1bznpRVquMLuXLQVmdw/zh-cn_image_0000002558604626.png)
 * 设置文本装饰线及颜色。
 
   通过[decoration](../harmonyos-references/ts-basic-components-span.md#decoration)设置文本装饰线及颜色。
@@ -107,7 +107,7 @@ Text可通过以下两种方式来创建：
 
   [TextSpan.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/text/TextSpan.ets#L41-L62)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/ccEp-vD4STKqVGMvFjFZFA/zh-cn_image_0000002589324151.png?HW-CC-KV=V1&HW-CC-Date=20260429T052743Z&HW-CC-Expire=86400&HW-CC-Sign=39AF7B24032648F6DC7778533D538D529ED05B391B706AAE7A41B89E29CE3530)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/ccEp-vD4STKqVGMvFjFZFA/zh-cn_image_0000002589324151.png)
 * 通过[textCase](../harmonyos-references/ts-basic-components-span.md#textcase)设置文字一直保持大写或者小写状态。
 
   ```
@@ -121,7 +121,7 @@ Text可通过以下两种方式来创建：
 
   [TextSpan.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/text/TextSpan.ets#L67-L74)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/ppqCoNMdRR2e6fce1YofBA/zh-cn_image_0000002589244091.png?HW-CC-KV=V1&HW-CC-Date=20260429T052743Z&HW-CC-Expire=86400&HW-CC-Sign=0F851D481FDDDBEC2AFDB96812524905E46EED057A8DF5F7BBF0839BACF77D3F)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/ppqCoNMdRR2e6fce1YofBA/zh-cn_image_0000002589244091.png)
 * 添加事件。
 
   由于Span组件无尺寸信息，仅支持添加点击事件[onClick](../harmonyos-references/ts-universal-events-click.md#onclick)、悬浮事件[onHover](../harmonyos-references/ts-universal-events-hover.md#onhover)。
@@ -169,7 +169,7 @@ Text可通过以下两种方式来创建：
 
   [TextSpanOnHover.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/text/TextSpanOnHover.ets#L15-L58)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/24gS26mdS8CNwn4ZQ7KVEg/zh-cn_image_0000002558764284.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052743Z&HW-CC-Expire=86400&HW-CC-Sign=CEBE02C9C45929897BB3B76F7C67EB1285BB36348385CA5D6EFDF9EF0BAE65AC)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/24gS26mdS8CNwn4ZQ7KVEg/zh-cn_image_0000002558764284.gif)
 
 ## 创建自定义文本样式
 
@@ -237,7 +237,7 @@ Text组件支持创建自定义文本样式，以下为修改文本样式的主�
 
   [CustomTextStyle.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/text/CustomTextStyle.ets#L30-L49)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/cxBa6K0PTKGRKWyU1qfO_A/zh-cn_image_0000002558604628.png?HW-CC-KV=V1&HW-CC-Date=20260429T052743Z&HW-CC-Expire=86400&HW-CC-Sign=ADC83DA57EDED5DB21E4E0B77AC5D7DFE490AB4A8C1E02E4D278ED0AD97A2917)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/cxBa6K0PTKGRKWyU1qfO_A/zh-cn_image_0000002558604628.png)
 * 通过[textOverflow](../harmonyos-references/ts-basic-components-text.md#textoverflow)属性控制文本超长处理，textOverflow需配合[maxLines](../harmonyos-references/ts-basic-components-text.md#maxlines)一起使用（默认情况下文本自动折行）。从API version 18开始，文本超长时设置跑马灯的方式展示时，支持设置跑马灯的配置项，比如开关、步长、循环次数、方向等。
 
   ```
@@ -292,7 +292,7 @@ Text组件支持创建自定义文本样式，以下为修改文本样式的主�
 
   [CustomTextStyle.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/text/CustomTextStyle.ets#L62-L110)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/m_VlnjmJTV64gFKi_b7r1Q/zh-cn_image_0000002589324153.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052743Z&HW-CC-Expire=86400&HW-CC-Sign=9B2DCA36607C715EAAB988987608AED26FFE851A8BD8DFE9B4D3923F776B8C67)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/m_VlnjmJTV64gFKi_b7r1Q/zh-cn_image_0000002589324153.gif)
 * 通过[lineHeight](../harmonyos-references/ts-basic-components-text.md#lineheight)属性设置文本行高。
 
   ```
@@ -308,7 +308,7 @@ Text组件支持创建自定义文本样式，以下为修改文本样式的主�
 
   [CustomTextStyle.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/text/CustomTextStyle.ets#L117-L126)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/L0bBWeFoQTyMZwLkzb6bcw/zh-cn_image_0000002589244093.png?HW-CC-KV=V1&HW-CC-Date=20260429T052743Z&HW-CC-Expire=86400&HW-CC-Sign=D900D0EBB4B027413CA1F15AB4FB01267737E38CC37097A8329B684E3983AF0C)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/L0bBWeFoQTyMZwLkzb6bcw/zh-cn_image_0000002589244093.png)
 * 通过[decoration](../harmonyos-references/ts-basic-components-text.md#decoration)属性设置文本装饰线样式、颜色及其粗细。
 
   ```
@@ -363,7 +363,7 @@ Text组件支持创建自定义文本样式，以下为修改文本样式的主�
 
   [CustomTextStyle.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/text/CustomTextStyle.ets#L134-L182)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/w7fy17b5R7-s1c1YFUUqsw/zh-cn_image_0000002558764286.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T052743Z&HW-CC-Expire=86400&HW-CC-Sign=49B3D3484452B2DE2C80471851598F847A7576205664EAF7DCAE2D114894380D)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/w7fy17b5R7-s1c1YFUUqsw/zh-cn_image_0000002558764286.jpg)
 * 通过[baselineOffset](../harmonyos-references/ts-basic-components-text.md#baselineoffset)属性设置文本基线的偏移量。
 
   ```
@@ -392,7 +392,7 @@ Text组件支持创建自定义文本样式，以下为修改文本样式的主�
 
   [CustomTextStyle.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/text/CustomTextStyle.ets#L190-L212)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/GHDY-SnmSjqVWQtezqh0Lg/zh-cn_image_0000002558604630.png?HW-CC-KV=V1&HW-CC-Date=20260429T052743Z&HW-CC-Expire=86400&HW-CC-Sign=CF225FE069CCA25119F0EDDC8A53C18F91489D5E05F5632361E88B72D4B5485A)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/GHDY-SnmSjqVWQtezqh0Lg/zh-cn_image_0000002558604630.png)
 * 通过[letterSpacing](../harmonyos-references/ts-basic-components-text.md#letterspacing)属性设置文本字符间距。
 
   ```
@@ -421,7 +421,7 @@ Text组件支持创建自定义文本样式，以下为修改文本样式的主�
 
   [CustomTextStyle.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/text/CustomTextStyle.ets#L219-L241)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/4UKVT7maTiKBZPvySC3ZSQ/zh-cn_image_0000002589324155.png?HW-CC-KV=V1&HW-CC-Date=20260429T052743Z&HW-CC-Expire=86400&HW-CC-Sign=C843EDBE70A81333960651ED58327013CA6213B8A02E601F5D398D564BE57686)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/4UKVT7maTiKBZPvySC3ZSQ/zh-cn_image_0000002589324155.png)
 * 通过[minFontSize](../harmonyos-references/ts-basic-components-text.md#minfontsize)与[maxFontSize](../harmonyos-references/ts-basic-components-text.md#maxfontsize)自适应字体大小。
 
   minFontSize用于设置文本的最小显示字号，maxFontSize用于设置文本的最大显示字号。这两个属性必须同时设置才能生效，并且需要与[maxLines](../harmonyos-references/ts-basic-components-text.md#maxlines)属性或布局大小限制配合使用，单独设置任一属性将不会产生效果。
@@ -475,7 +475,7 @@ Text组件支持创建自定义文本样式，以下为修改文本样式的主�
 
   [CustomTextStyle.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/text/CustomTextStyle.ets#L249-L290)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/uTAQ5crMRD6usry9dy9RpA/zh-cn_image_0000002589244095.png?HW-CC-KV=V1&HW-CC-Date=20260429T052743Z&HW-CC-Expire=86400&HW-CC-Sign=9697A7FA01CEE3F8CAEFB37198B197308F71728C0D5570CC0465CC71243B9055)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/uTAQ5crMRD6usry9dy9RpA/zh-cn_image_0000002589244095.png)
 * 通过[textCase](../harmonyos-references/ts-basic-components-text.md#textcase)属性设置文本大小写。
 
   ```
@@ -503,7 +503,7 @@ Text组件支持创建自定义文本样式，以下为修改文本样式的主�
 
   [CustomTextStyle.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/text/CustomTextStyle.ets#L297-L318)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/HNYItOKuTpqQAx0WnSv-OA/zh-cn_image_0000002558764288.png?HW-CC-KV=V1&HW-CC-Date=20260429T052743Z&HW-CC-Expire=86400&HW-CC-Sign=7FA9675C74E7C06A7EEFC2133B1E9588C0BDC826010F2A99CB5DC7D222035D55)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/HNYItOKuTpqQAx0WnSv-OA/zh-cn_image_0000002558764288.png)
 * 通过[copyOption](../harmonyos-references/ts-basic-components-text.md#copyoption9)属性设置文本是否可复制粘贴。
 
   ```
@@ -515,7 +515,7 @@ Text组件支持创建自定义文本样式，以下为修改文本样式的主�
 
   [CustomTextStyle.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/text/CustomTextStyle.ets#L329-L334)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/GCrOr1i5QdWN1O0W4lkk9w/zh-cn_image_0000002558604632.png?HW-CC-KV=V1&HW-CC-Date=20260429T052743Z&HW-CC-Expire=86400&HW-CC-Sign=C3E4B1D71E372D463456C30B75AF77ECE5383CBBA58DD576CC07E1A8C2886509)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/GCrOr1i5QdWN1O0W4lkk9w/zh-cn_image_0000002558604632.png)
 * 通过[fontFamily](../harmonyos-references/ts-basic-components-text.md#fontfamily)属性设置字体列表。应用当前支持'HarmonyOS Sans'字体和[注册自定义字体](../harmonyos-references/js-apis-font.md)。
 
   ```
@@ -526,7 +526,7 @@ Text组件支持创建自定义文本样式，以下为修改文本样式的主�
 
   [CustomTextStyle.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/text/CustomTextStyle.ets#L319-L323)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/pliPN0CnRuiza-feQX20tA/zh-cn_image_0000002589324157.png?HW-CC-KV=V1&HW-CC-Date=20260429T052743Z&HW-CC-Expire=86400&HW-CC-Sign=AA33F9C5824E716D6402A5DFD0A4ED56FE1ED1415DB9059822EFB2CECA88F351)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/pliPN0CnRuiza-feQX20tA/zh-cn_image_0000002589324157.png)
 * 从API version 20开始，支持通过[contentTransition](../harmonyos-references/ts-basic-components-text.md#contenttransition20)属性设置数字翻牌效果。
 
   ```
@@ -560,7 +560,7 @@ Text组件支持创建自定义文本样式，以下为修改文本样式的主�
 
   [ContentTransition.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/text/ContentTransition.ets#L15-L47)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/TurS0xXVTp2iodxrbOS26w/zh-cn_image_0000002589244097.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052743Z&HW-CC-Expire=86400&HW-CC-Sign=7382FCD086A33198416919AA08ECA04BC90E13650A3C772D48F42552AA83CE8E)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/TurS0xXVTp2iodxrbOS26w/zh-cn_image_0000002589244097.gif)
 * 从API version 20开始，支持通过[optimizeTrailingSpace](../harmonyos-references/ts-basic-components-text.md#optimizetrailingspace20)设置是否在文本布局过程中优化每行末尾的空格，可解决行尾空格影响对齐显示效果问题。
 
   ```
@@ -584,7 +584,7 @@ Text组件支持创建自定义文本样式，以下为修改文本样式的主�
 
   [TextLayout.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/text/TextLayout.ets#L65-L83)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/TN8RWebqTiC3Qx-RfMfZSA/zh-cn_image_0000002558764290.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T052743Z&HW-CC-Expire=86400&HW-CC-Sign=9BD797B4C53C125CD3B53D00208911DE827BAF2DDBC5C38CC034EDFFA9FC2D11)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/TN8RWebqTiC3Qx-RfMfZSA/zh-cn_image_0000002558764290.jpg)
 * 从API version 20开始，支持通过[lineSpacing](../harmonyos-references/ts-basic-components-text.md#linespacing20)设置文本的行间距。当不配置[LineSpacingOptions](../harmonyos-references/ts-text-common.md#linespacingoptions20对象说明)时，首行上方和尾行下方默认会有行间距，当onlyBetweenLines设置为true时，行间距仅适用于行与行之间，首行上方无额外的行间距。
 
   ```
@@ -617,7 +617,7 @@ Text组件支持创建自定义文本样式，以下为修改文本样式的主�
 
   [LineSpacing.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/text/LineSpacing.ets#L16-L46)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/lrU6b4k8TNSCoHUG2r8mJg/zh-cn_image_0000002558604634.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T052743Z&HW-CC-Expire=86400&HW-CC-Sign=57823A5220F0DCBF8E0EA18D93E64A9D8027C7E329E580BB988B3F062C6A5E04)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/lrU6b4k8TNSCoHUG2r8mJg/zh-cn_image_0000002558604634.jpg)
 * 从API version 20开始，支持通过[enableAutoSpacing](../harmonyos-references/ts-basic-components-text.md#enableautospacing20)设置是否开启中文与西文的自动间距。
 
   ```
@@ -673,7 +673,7 @@ Text组件支持创建自定义文本样式，以下为修改文本样式的主�
 
   [EnableAutoSpacing.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/text/EnableAutoSpacing.ets#L16-L68)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/2G3YPARWRaOpZKiLg-3flQ/zh-cn_image_0000002589324159.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052743Z&HW-CC-Expire=86400&HW-CC-Sign=EA9AF2E14F9BFFCB1633D480F897897454903F767FACF30F500AA469EABE210A)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/2G3YPARWRaOpZKiLg-3flQ/zh-cn_image_0000002589324159.gif)
 * 从API version 20开始，支持通过[shaderStyle](../harmonyos-references/ts-basic-components-text.md#shaderstyle20)设置渐变色。
 
   ```
@@ -710,7 +710,7 @@ Text组件支持创建自定义文本样式，以下为修改文本样式的主�
 
   [ShaderStyle.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/text/ShaderStyle.ets#L16-L51)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/beqr0-3LTkKP3SfQXe9sJw/zh-cn_image_0000002589244099.png?HW-CC-KV=V1&HW-CC-Date=20260429T052743Z&HW-CC-Expire=86400&HW-CC-Sign=A9E2B7EE9A6915B0557C5EB2CE2D21510BB4DC547580C44E81C9E9F4D2646978)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/beqr0-3LTkKP3SfQXe9sJw/zh-cn_image_0000002589244099.png)
 
 ## 添加事件
 
@@ -754,7 +754,7 @@ Text组件可以添加通用事件，可以绑定[onClick](../harmonyos-referenc
 
 [GeneralEvents.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/text/GeneralEvents.ets#L16-L54)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/LcIGZ50vQe2jjk3oFky8pw/zh-cn_image_0000002558764292.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052743Z&HW-CC-Expire=86400&HW-CC-Sign=630785D7E92CC27A2AFE4CD2610F183C5CA2CF2C7379D74C2CDCE7428E694908)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/LcIGZ50vQe2jjk3oFky8pw/zh-cn_image_0000002558764292.gif)
 
 ## 设置垂直居中
 
@@ -777,7 +777,7 @@ Text组件可以添加通用事件，可以绑定[onClick](../harmonyos-referenc
 
   [TextLayout.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/text/TextLayout.ets#L85-L97)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/2GG9-9WVT-Gb1VSyLsRC8Q/zh-cn_image_0000002558604636.png?HW-CC-KV=V1&HW-CC-Date=20260429T052743Z&HW-CC-Expire=86400&HW-CC-Sign=D1FDF1743B4237D3A9EB5063CFB2C500B8A1DAB9884AB22A979BFE81E29AADA0)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/2GG9-9WVT-Gb1VSyLsRC8Q/zh-cn_image_0000002558604636.png)
 
 ## 设置选中菜单
 
@@ -796,7 +796,7 @@ Text组件可以添加通用事件，可以绑定[onClick](../harmonyos-referenc
 
   [TextLayout.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/text/TextLayout.ets#L101-L106)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/ThltYVbhTs2xgrzkguFR4w/zh-cn_image_0000002589324161.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T052743Z&HW-CC-Expire=86400&HW-CC-Sign=5A43BE7D7DD58F620AD234623036C02508CB349E83D05D14CB9A26196FD75552)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/ThltYVbhTs2xgrzkguFR4w/zh-cn_image_0000002589324161.jpg)
 * Text组件通过设置[bindSelectionMenu](../harmonyos-references/ts-basic-components-text.md#bindselectionmenu11)属性绑定自定义选择菜单。
 
   ```
@@ -852,7 +852,7 @@ Text组件可以添加通用事件，可以绑定[onClick](../harmonyos-referenc
 
   [SelectMenu.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/text/SelectMenu.ets#L27-L46)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/lC5lHROoQnyNZGdGjzd4ng/zh-cn_image_0000002589244101.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052743Z&HW-CC-Expire=86400&HW-CC-Sign=29024C0761D806CE92FDD88B03BB18682C5190B38C6E98F229D4DEC2F2C4ADB9)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/lC5lHROoQnyNZGdGjzd4ng/zh-cn_image_0000002589244101.gif)
 * Text组件通过设置[editMenuOptions](../harmonyos-references/ts-basic-components-text.md#editmenuoptions12)属性扩展自定义选择菜单，可以设置扩展项的文本内容、图标以及回调方法。
 
   ```
@@ -916,7 +916,7 @@ Text组件可以添加通用事件，可以绑定[onClick](../harmonyos-referenc
 
   [SelectMenu.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/text/SelectMenu.ets#L47-L88)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/yqw3x0HpRgSd7zbvbo721g/zh-cn_image_0000002558764294.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052743Z&HW-CC-Expire=86400&HW-CC-Sign=5B6CC0E32EA3A2EBADB151B79580423388026854B961A8A61258444DD9681FD1)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/yqw3x0HpRgSd7zbvbo721g/zh-cn_image_0000002558764294.gif)
 
 ### 关闭选中菜单
 
@@ -967,7 +967,7 @@ Text组件可以添加通用事件，可以绑定[onClick](../harmonyos-referenc
 
   [SelectionChange.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/text/SelectionChange.ets#L15-L57)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/MUCrTyYpQZqxq5FMvLTRJw/zh-cn_image_0000002558604638.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052743Z&HW-CC-Expire=86400&HW-CC-Sign=497FE0E601FACD59B2940A6C85E30C514A3575A456D9F92AB585F7E486498A64)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/MUCrTyYpQZqxq5FMvLTRJw/zh-cn_image_0000002558604638.gif)
 
 ### 屏蔽系统菜单回调和自定义扩展菜单
 
@@ -1105,7 +1105,7 @@ Text组件可以添加通用事件，可以绑定[onClick](../harmonyos-referenc
 129. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/VhgfJLTjSxyspCRpe55KrA/zh-cn_image_0000002589324163.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052743Z&HW-CC-Expire=86400&HW-CC-Sign=27A174F326316234CE39A45526DA5C8B334DC229154E5EA0485B7B65C4F79FDE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/VhgfJLTjSxyspCRpe55KrA/zh-cn_image_0000002589324163.gif)
 
 ### 屏蔽系统服务类菜单
 
@@ -1157,7 +1157,7 @@ Text组件可以添加通用事件，可以绑定[onClick](../harmonyos-referenc
 
   [ServiceMenuItems.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/text/ServiceMenuItems.ets#L15-L62)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/nDIA3RePQuaPDVsiZPSSLg/zh-cn_image_0000002589244103.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T052743Z&HW-CC-Expire=86400&HW-CC-Sign=97DDCD95B2857F96037FD5BEF63883B9A6AF603D8FD05469157BCD63803FB9DD)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/nDIA3RePQuaPDVsiZPSSLg/zh-cn_image_0000002589244103.jpg)
 * 从API version 20开始，支持通过[disableMenuItems](../harmonyos-references/arkts-apis-uicontext-textmenucontroller.md#disablemenuitems20)屏蔽文本选择菜单内指定的系统服务菜单项。更多详见[disableMenuItems](../harmonyos-references/arkts-apis-uicontext-textmenucontroller.md#disablemenuitems20)的API文档接口说明。以下示例只是完整示例工程中的一个示例，为了不影响工程其他页面示例效果，仅在页面的出现和消失生命周期中进行系统服务菜单的禁用和恢复，实际场景可自行选择其他时机，比如[UIAbility](../harmonyos-references/js-apis-app-ability-uiability.md)的[onCreate](../harmonyos-references/js-apis-app-ability-uiability.md#oncreate)和[onDestroy](../harmonyos-references/js-apis-app-ability-uiability.md#ondestroy)。
 
   ```
@@ -1208,7 +1208,7 @@ Text组件可以添加通用事件，可以绑定[onClick](../harmonyos-referenc
 
   [DisableMenuItems.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/text/DisableMenuItems.ets#L15-L64)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/YoqncCGYQQm0f8kGiWFRaw/zh-cn_image_0000002558764296.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T052743Z&HW-CC-Expire=86400&HW-CC-Sign=C79FE4CDB65C7432E97F3FBA8D63CFFE8B7B391BA5C75F52A7450D48A9F6F765)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/YoqncCGYQQm0f8kGiWFRaw/zh-cn_image_0000002558764296.jpg)
 
 ### 默认菜单支持自定义刷新能力
 
@@ -1296,7 +1296,7 @@ Text组件可以添加通用事件，可以绑定[onClick](../harmonyos-referenc
 
 [PrepareMenu.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/text/PrepareMenu.ets#L15-L96)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/Uw01m4cQQ6-l-qhXVBfo8Q/zh-cn_image_0000002558604640.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052743Z&HW-CC-Expire=86400&HW-CC-Sign=2F927696BED5B76641AB4A811E41DBD42707074F788B97763C146276C90D02B3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/Uw01m4cQQ6-l-qhXVBfo8Q/zh-cn_image_0000002558604640.gif)
 
 ## 设置AI菜单
 
@@ -1331,9 +1331,9 @@ Text组件通过[enableDataDetector](../harmonyos-references/ts-basic-components
 * 如果需要调整识别出的样式，可以通过[dataDetectorConfig](../harmonyos-references/ts-basic-components-text.md#datadetectorconfig11)实现，具体可以参考[TextDataDetectorConfig](../harmonyos-references/ts-text-common.md#textdatadetectorconfig11对象说明)配置项。
 * 如果需要调整菜单的位置，可以通过[editMenuOptions](../harmonyos-references/ts-basic-components-text.md#editmenuoptions12)实现，具体可以参考示例[文本扩展自定义菜单](../harmonyos-references/ts-basic-components-text.md#示例12文本扩展自定义菜单)。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/GPXHzZzBQWyZU8M5tWN4oA/zh-cn_image_0000002589324165.png?HW-CC-KV=V1&HW-CC-Date=20260429T052743Z&HW-CC-Expire=86400&HW-CC-Sign=1C68E0AFEAFD9A0E63C9B2265C19790FCE6D1B992DDC1816842F1988097FDEFC)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/GPXHzZzBQWyZU8M5tWN4oA/zh-cn_image_0000002589324165.png)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/J4W6MoYwTI2ToWxCfaesDw/zh-cn_image_0000002589244105.png?HW-CC-KV=V1&HW-CC-Date=20260429T052743Z&HW-CC-Expire=86400&HW-CC-Sign=71971AC4B5AC66E7F8E2889393B21AED38CD5600C49C75D832A8073C4B766203)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/J4W6MoYwTI2ToWxCfaesDw/zh-cn_image_0000002589244105.png)
 
 ## 实现热搜榜
 
@@ -1447,7 +1447,7 @@ Text组件通过[enableDataDetector](../harmonyos-references/ts-basic-components
 
 [TextHotSearch.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/TextComponent/entry/src/main/ets/pages/text/TextHotSearch.ets#L16-L127)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/xBP6-q9WR6Og4CCUqs1EHg/zh-cn_image_0000002558764298.png?HW-CC-KV=V1&HW-CC-Date=20260429T052743Z&HW-CC-Expire=86400&HW-CC-Sign=5E3BEC030B07264BC7EE4E13591935257F94DDFA656D0DDB161D2DC218D33ACA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/xBP6-q9WR6Og4CCUqs1EHg/zh-cn_image_0000002558764298.png)
 
 ## 示例代码
 

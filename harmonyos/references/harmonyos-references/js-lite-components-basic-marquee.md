@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > �
 category: harmonyos-references
 scraped_at: 2026-04-29T13:53:52+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:c6d58057469a491800c79c44636317309d1606b74c1b40185be0ad65c1715a20
+content_hash: sha256:2dfe1d7298719c29c6cef7b9be54b0627bb505cc9395c0fc75f68d362afee09c
 ---
 
 跑马灯组件，用于展示一段单行滚动的文字。
@@ -129,4 +129,4 @@ PhonePC/2in1TabletTVWearableLite Wearable
 16. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/vPwFqs8HSSSS5x1NqBZv0g/zh-cn_image_0000002589326805.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055351Z&HW-CC-Expire=86400&HW-CC-Sign=3A929862C036B1B485D64DD6AAE9086C0C21AAE734FA1B751695DA06384E461D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/vPwFqs8HSSSS5x1NqBZv0g/zh-cn_image_0000002589326805.gif)

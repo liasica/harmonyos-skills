@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:51:32+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:73ab5d82aea33c591f9a8c1d07d620f8ea706e956fd400ae3bdbc4e6d5218dab
+content_hash: sha256:f512b571e21aac3ce5e8381504294f24210f4250b5b9661491c06f60d39d4c7c
 ---
 
 SymbolGlyphModifier用于动态设置SymbolGlyph组件的属性和样式，支持使用if/else语句进行设置。[SymbolGlyph](ts-basic-components-symbolglyph.md)是一个用于展示图标符号的组件。
@@ -90,4 +90,4 @@ PhonePC/2in1TabletTVWearable
 21. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/IJBrbymbRVm_386-Y3F7bQ/zh-cn_image_0000002558606442.png?HW-CC-KV=V1&HW-CC-Date=20260429T055131Z&HW-CC-Expire=86400&HW-CC-Sign=F5CCA782DB9E1505C2D5E1F8849F6DF43C3883A31AC829646240D8F834155214)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/IJBrbymbRVm_386-Y3F7bQ/zh-cn_image_0000002558606442.png)

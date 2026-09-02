@@ -5,7 +5,7 @@ breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:31:32+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:1c8259f9d7eba629b102d5b0d4c66ad14d3397bb566aefa2c5d8481501ee3446
+content_hash: sha256:d2458e31579176b1bc9e41dcaab06bfff209467cea8f08cd59c0ab1ee9509ada
 ---
 
 如果需要在端侧校验安全图像数据或安全地理位置数据签名的有效性，可以使用[Crypto Architecture Kit](crypto-architecture-kit-intro.md)，使用方法请参考“[使用ECDSA密钥对签名验签](crypto-ecdsa-sign-sig-verify.md)”章节。
@@ -20,7 +20,7 @@ content_hash: sha256:1c8259f9d7eba629b102d5b0d4c66ad14d3397bb566aefa2c5d8481501e
 
 安全图像数据的结构如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/zfYlmX4cRt-L9igwS8KTqA/zh-cn_image_0000002589244693.png?HW-CC-KV=V1&HW-CC-Date=20260429T053131Z&HW-CC-Expire=86400&HW-CC-Sign=0A0EB100EAED47E1800609353B57F49330E862013A4671F56AD1AB2947CABE35)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/zfYlmX4cRt-L9igwS8KTqA/zh-cn_image_0000002589244693.png)
 
 其中，用户数据和图像数据为被签名的原始数据，图像数据长度固定为460800字节，签名数据是Base64编码的签名结果，开发者需要解析出这些数据用来验证安全图像数据签名。参考代码如下：
 
@@ -46,7 +46,7 @@ content_hash: sha256:1c8259f9d7eba629b102d5b0d4c66ad14d3397bb566aefa2c5d8481501e
 
 压缩、裁剪处理后返回的安全图像数据的结构如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/N-Q52rLJTDaBVtP3DIgPTA/zh-cn_image_0000002558764888.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053131Z&HW-CC-Expire=86400&HW-CC-Sign=2B64DB45D0831E0D266D27DA7531EF85ABDA9D6CF4ACF5BFB1D0A9B6B081CBA4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/N-Q52rLJTDaBVtP3DIgPTA/zh-cn_image_0000002558764888.jpg)
 
 返回的处理后安全图像数据具体包含：
 

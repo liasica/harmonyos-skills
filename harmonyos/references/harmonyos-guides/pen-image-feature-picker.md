@@ -5,7 +5,7 @@ breadcrumb: 指南 > 系统 > 硬件 > Pen Kit（手写笔服务） > 手写功�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:33:37+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:dcc1d19fb6fbefd639cf1010a9788a67e4431b9ca574214310144432bbded28a
+content_hash: sha256:9ade75683c0191a64d6f812a6d07b3ceab3b0dc3fe96cdcc2a6ada87abcf1a3e
 ---
 
 接入全局取色功能，用户可以使用手指或者手写笔操作取色器在屏幕上移动，在目标位置抬起手指/抬起手写笔，会生成该位置色值对应的图像信息。
@@ -14,7 +14,7 @@ content_hash: sha256:dcc1d19fb6fbefd639cf1010a9788a67e4431b9ca574214310144432bbd
 
 在应用中拉起全局取色，效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/1P8bdJ6KTLaJOeK4aV33hQ/zh-cn_image_0000002558764976.png?HW-CC-KV=V1&HW-CC-Date=20260429T053336Z&HW-CC-Expire=86400&HW-CC-Sign=BF145597AD137B8374114A5648A881AE0ABB6E591B58254279D757C6A1BFAD8C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/1P8bdJ6KTLaJOeK4aV33hQ/zh-cn_image_0000002558764976.png)
 
 支持获取当前屏幕上选中位置的色值和色域空间。
 

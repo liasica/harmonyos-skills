@@ -5,7 +5,7 @@ breadcrumb: FAQ > 应用框架开发 > UI框架 > 方舟UI框架（ArkUI） > �
 category: harmonyos-faqs
 scraped_at: 2026-04-29T14:17:26+08:00
 doc_updated_at: 2026-03-10
-content_hash: sha256:54b4572457a1c3dd195c1dac396e5f42cf5b41f3b171fad1161cb79286ecdb93
+content_hash: sha256:8278147c6460613f6d81e67180771e552b48c6a97a15348fa93b13a079f4b0e6
 ---
 
 1. 开发者可使用overlay在当前组件上添加遮罩。
@@ -69,4 +69,4 @@ content_hash: sha256:54b4572457a1c3dd195c1dac396e5f42cf5b41f3b171fad1161cb79286e
 
 实现效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/xiyMlsvrRfGO7aXLFq2T1g/zh-cn_image_0000002229604397.png?HW-CC-KV=V1&HW-CC-Date=20260429T061725Z&HW-CC-Expire=86400&HW-CC-Sign=58A8AA88654DB9E0681DAD1BEACA3C658CF8ECE20085F14C3425344AA8D1DC86)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/xiyMlsvrRfGO7aXLFq2T1g/zh-cn_image_0000002229604397.png)

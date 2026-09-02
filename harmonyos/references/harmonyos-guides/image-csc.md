@@ -5,14 +5,14 @@ breadcrumb: 指南 > 媒体 > Image Kit（图片处理服务） > 图片开发�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:35:17+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:1cb18a41af8d502c572d227238ee25241526cde068534d588bd65fc5e69a1ca7
+content_hash: sha256:cc8bd365e72bd31ffa8d5f815f6a16e95283ad03c354432baecbf376b2cda847
 ---
 
 调用者可以调用本模块提供的[C API接口](../harmonyos-references/capi-imageprocessing.md)，实现HDR2SDR、SDR2HDR、SDR2SDR的图片色彩空间转换。
 
 该能力常用于图片编辑中，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/gKm7zF4DRtq0GTHlLbutQA/zh-cn_image_0000002558605434.png?HW-CC-KV=V1&HW-CC-Date=20260429T053516Z&HW-CC-Expire=86400&HW-CC-Sign=11C81E72C24AEE60B8693818EA980C74314611D3C475C0BBC074B5443B78D9EE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/gKm7zF4DRtq0GTHlLbutQA/zh-cn_image_0000002558605434.png)
 
 ## 规格说明
 

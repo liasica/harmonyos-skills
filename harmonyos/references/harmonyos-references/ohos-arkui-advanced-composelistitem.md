@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:52:58+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:d21802254b93ee9cddf96445adabc21a28a4febb486ca6a85b16957f05a8c2ea
+content_hash: sha256:982b50fb15502bef4ed00853c7fe9d68622f3bb8f13651bde5ce6e98a2a256b6
 ---
 
 该组件用于展示一系列宽度相同的列表项，适用于展示连续、多行的同类数据组合（如图片与文本）。
@@ -219,7 +219,7 @@ PhonePC/2in1TabletTVWearable
 34. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/GWxClgZTR-WVjzzm0NrKHQ/zh-cn_image_0000002558606964.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T055256Z&HW-CC-Expire=86400&HW-CC-Sign=139E38B0823EEF291FBECBD4AC624B27A43E8D3C02E632F9EA3BB4AE1A68FDB5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/GWxClgZTR-WVjzzm0NrKHQ/zh-cn_image_0000002558606964.jpg)
 
 ### 示例2（设置右侧不同元素自定义播报）
 
@@ -302,7 +302,7 @@ PhonePC/2in1TabletTVWearable
 74. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/zNFkx3XgRxu8-QnU0MPCyQ/zh-cn_image_0000002589326491.png?HW-CC-KV=V1&HW-CC-Date=20260429T055256Z&HW-CC-Expire=86400&HW-CC-Sign=EA0A94333026C54BA763F73D638EDB59788EE64BE625721217209CD26050A2AB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/zNFkx3XgRxu8-QnU0MPCyQ/zh-cn_image_0000002589326491.png)
 
 ### 示例3（设置Symbol类型图标）
 
@@ -377,4 +377,4 @@ PhonePC/2in1TabletTVWearable
 66. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/-lXq1YNfQBqlxxUAwC0QVw/zh-cn_image_0000002589246433.png?HW-CC-KV=V1&HW-CC-Date=20260429T055256Z&HW-CC-Expire=86400&HW-CC-Sign=22A81B889A9758D15CC332478E0D0CB68916512094DEDE6649CDB7993B4B48D7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/-lXq1YNfQBqlxxUAwC0QVw/zh-cn_image_0000002589246433.png)

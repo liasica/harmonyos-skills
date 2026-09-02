@@ -5,7 +5,7 @@ breadcrumb: 指南 > 系统 > 安全 > Device Certificate Kit（设备证书服�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:31:20+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:f89e3e47d253add5f8da064785ce9f24ba1a9df9372fa27239280d232bfd5430
+content_hash: sha256:875b9177510d869a32f313dbe23a80edc47440ab5ab7a752e673b6851354fbf5
 ---
 
 Device Certificate Kit（设备证书服务）面向应用开发者，提供了[证书算法库](device-certificate-kit-intro.md#证书算法库)和[证书管理](device-certificate-kit-intro.md#证书管理)的能力。
@@ -26,7 +26,7 @@ Device Certificate Kit（设备证书服务）面向应用开发者，提供了[
 
 系统提供证书算法库框架，开发者只需要调用API接口层即可实现证书的操作，证书算法库框架能够屏蔽不同三方算法库的差异。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/ch-qKnLXRh6kWcPKHQj_vA/zh-cn_image_0000002589244681.png?HW-CC-KV=V1&HW-CC-Date=20260429T053120Z&HW-CC-Expire=86400&HW-CC-Sign=F05B6AEFCF2AB49D540CD107B1BFE1EB17FE3456D96A572EE4A1EFBBAC5CF586)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/ch-qKnLXRh6kWcPKHQj_vA/zh-cn_image_0000002589244681.png)
 
 ### 与相关Kit的关系
 

@@ -5,7 +5,7 @@ breadcrumb: 版本说明 > 应用兼容性说明 > 应用开发中的兼容性�
 category: harmonyos-releases
 scraped_at: 2026-04-29T13:25:20+08:00
 doc_updated_at: 2026-04-27
-content_hash: sha256:1c4aabd10fc58f2b2edcc3b7b177e47df8e144c211fbf43f429cefa3a3eddde3
+content_hash: sha256:96795d0ccc899d1b251074999824180f9534bc0363e3791d9c122a6bcbf444cb
 ---
 
 从API version 22版本开始，推荐使用APIAVAILABLE接口，进行兼容性判断保护。
@@ -47,11 +47,11 @@ content_hash: sha256:1c4aabd10fc58f2b2edcc3b7b177e47df8e144c211fbf43f429cefa3a3e
   + 针对OpenHarmony工程，"compatibleSdkVersion"：N，"-DOHOS\_COMPATIBLE\_SDK\_VERSION=N.0.0"。
   + 示例：工程级build-profile.json5文件中的compatibleSdkVersion配置的版本号为6.0.2(22)，
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/2BShj5FUQTy7qUc8k5N_1Q/zh-cn_image_0000002550606910.png?HW-CC-KV=V1&HW-CC-Date=20260429T052519Z&HW-CC-Expire=86400&HW-CC-Sign=A5426892821CDA41F92C7DF0719FF70BDA8D6EA4BD4FD46FE1D2F540B335D38A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/2BShj5FUQTy7qUc8k5N_1Q/zh-cn_image_0000002550606910.png)
 
 模块级build-profile.json5配置文件中增加编译参数 "arguments": "-DOHOS\_COMPATIBLE\_SDK\_VERSION=22.0.0"。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/hQ954pfYTiqADgU6sKHLwA/zh-cn_image_0000002581206647.png?HW-CC-KV=V1&HW-CC-Date=20260429T052519Z&HW-CC-Expire=86400&HW-CC-Sign=2C6D33851CBD9D0E4CB8DF3773BA87588BAD9B5338AC4436A0301AA756903793)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/hQ954pfYTiqADgU6sKHLwA/zh-cn_image_0000002581206647.png)
 
 * **场景2：DevEco Studio版本高于 6.0.2.650 Release（API 22 Release）时：**
 
@@ -72,7 +72,7 @@ content_hash: sha256:1c4aabd10fc58f2b2edcc3b7b177e47df8e144c211fbf43f429cefa3a3e
 
 具体传递过程如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/ap6Jij5QTTKy1Vejycz8mg/zh-cn_image_0000002550766556.png?HW-CC-KV=V1&HW-CC-Date=20260429T052519Z&HW-CC-Expire=86400&HW-CC-Sign=A3D6450DC67B85B873469A67582E0A1405876F2D97CF2A231D01190BB9099296)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/ap6Jij5QTTKy1Vejycz8mg/zh-cn_image_0000002550766556.png)
 
 **步骤2** 兼容性保护。
 

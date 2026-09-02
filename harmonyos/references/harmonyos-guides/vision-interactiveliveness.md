@@ -5,7 +5,7 @@ breadcrumb: 指南 > AI > Vision Kit（场景化视觉服务） > 人脸活体�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:43:50+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:f641010a69f20e5f19135366544239a54ef7caa598468362feae2d82375c2ba5
+content_hash: sha256:c6295367cb6d76340a157eaf8c26f094e160a836b80c0c96acf08fca22af6572
 ---
 
 ## 场景介绍
@@ -22,11 +22,11 @@ content_hash: sha256:f641010a69f20e5f19135366544239a54ef7caa598468362feae2d82375
 
 **图1** 权威认证**增强级**检测报告
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/GhSwIdwFScyF4sWC7uojzQ/zh-cn_image_0000002589245663.png?HW-CC-KV=V1&HW-CC-Date=20260429T054349Z&HW-CC-Expire=86400&HW-CC-Sign=8B458D8E9B307B7E385AE3E668AD085C9AD242E580D22D6016E9CEE9B1BFABDC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/GhSwIdwFScyF4sWC7uojzQ/zh-cn_image_0000002589245663.png)
 
 **图2** 活体检测示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/4V-SRmn6SY-3_9iMZ9p_QA/zh-cn_image_0000002558765854.png?HW-CC-KV=V1&HW-CC-Date=20260429T054349Z&HW-CC-Expire=86400&HW-CC-Sign=251A9E8A397DE12C876E87759E0537878EC1512D79EC5CD1691DA49AE72F0717)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/4V-SRmn6SY-3_9iMZ9p_QA/zh-cn_image_0000002558765854.png)
 
 ## 约束与限制
 

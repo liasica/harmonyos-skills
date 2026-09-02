@@ -5,7 +5,7 @@ breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:31:33+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:8e9f5b4a6c3ada608d084127fe18acfad7576984484a68c1659cc887db80c018
+content_hash: sha256:757315d94bf7893960bcd1413f65d4c8eae8d2010294d8391453f9917c8f48b9
 ---
 
 ## 场景介绍
@@ -18,7 +18,7 @@ content_hash: sha256:8e9f5b4a6c3ada608d084127fe18acfad7576984484a68c1659cc887db8
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/E6JNVeE7Qb2wiUMIlxEWFw/zh-cn_image_0000002558605232.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053132Z&HW-CC-Expire=86400&HW-CC-Sign=B0998ACE160E83A5F56AC9E85747EF54283ABD2AC9F2741D0DEB984109BAD981)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/E6JNVeE7Qb2wiUMIlxEWFw/zh-cn_image_0000002558605232.jpg)
 
 ## 接口说明
 
@@ -32,7 +32,7 @@ content_hash: sha256:8e9f5b4a6c3ada608d084127fe18acfad7576984484a68c1659cc887db8
 
 如图为开通数字盾服务时对应的TUI（Trusted User Interface）界面示例，其中密码长度、对应TUI应用图标以及当前应用场景说明均由开发者调用接口时传入，当设置盾密码长度不符合要求、密码强度低、两次密码设置不一致时，均会有对应失败报错提醒。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/YKWMnWtDRuGrg_OQpoGNTg/zh-cn_image_0000002589324757.png?HW-CC-KV=V1&HW-CC-Date=20260429T053132Z&HW-CC-Expire=86400&HW-CC-Sign=683F99496C3C340C57DD01AA8452CC0B3B4E1739D9132386859E2E55A67D086E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/YKWMnWtDRuGrg_OQpoGNTg/zh-cn_image_0000002589324757.png)
 
 ## 开发步骤
 

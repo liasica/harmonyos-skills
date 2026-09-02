@@ -5,7 +5,7 @@ breadcrumb: 指南 > 系统 > 安全 > Universal Keystore Kit（密钥管理服�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:31:53+08:00
 doc_updated_at: 2026-04-17
-content_hash: sha256:2cfd6b443a321e11feb1b8614fcf05b37d04818b680c38a1345897f9139f105e
+content_hash: sha256:0a29acdc149e42afb507c610991933656a9cc0be38e5ff2883c3eaa5ff22dcea
 ---
 
 Universal Keystore Kit（密钥管理服务，下述简称为HUKS）向业务/应用提供各类密钥的统一安全操作能力，包括密钥管理（密钥生成/销毁、密钥导入、密钥证明、密钥协商、密钥派生）及密钥使用（加密/解密、签名/验签、访问控制）等功能。
@@ -24,7 +24,7 @@ HUKS管理的密钥可以由业务/应用导入或调用HUKS的接口生成。�
 
   对于具备安全环境（如[TEE](huks-concepts.md#可信执行环境tee)）的系统、设备，HUKS核心层必须运行在安全环境内。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/xh_sv4SNS0SOnj6xw6ejxw/zh-cn_image_0000002558605252.png?HW-CC-KV=V1&HW-CC-Date=20260429T053152Z&HW-CC-Expire=86400&HW-CC-Sign=C8E1EFC10F5CFC1F207EC844B2C9FE02C358F612BF371FADABF475E2C4CECCA9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/xh_sv4SNS0SOnj6xw6ejxw/zh-cn_image_0000002558605252.png)
 
 ## 核心功能
 

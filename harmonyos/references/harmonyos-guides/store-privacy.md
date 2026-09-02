@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用服务 > AppGallery Kit（应用市场服务） > 隐
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:37:15+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:dfcf7dce21d67d3b2bef984d6d42c36299d847e2aa15760d34b81e953687f0f9
+content_hash: sha256:29b0d92928b303936138e91768bab87141952ee0ce4b5e6643a8f6c47d60319b
 ---
 
 隐私管理服务为使用[标准化隐私声明托管服务](../app/agc-help-privacy-policy-0000002316794885.md)的应用/元服务提供查询隐私链接、查询隐私签署状态、撤销同意记录和拉起标准化隐私弹框请求用户同意功能。
@@ -31,7 +31,7 @@ content_hash: sha256:dfcf7dce21d67d3b2bef984d6d42c36299d847e2aa15760d34b81e95368
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/4LdYsStCSWul__Q9jpmR5g/zh-cn_image_0000002558605634.png?HW-CC-KV=V1&HW-CC-Date=20260429T053713Z&HW-CC-Expire=86400&HW-CC-Sign=8D923F71FE42EBAA30FF96A950DF8D27802CA0CB4FEE03B8C6E96BE8E9281225)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/4LdYsStCSWul__Q9jpmR5g/zh-cn_image_0000002558605634.png)
 
 ### 查询隐私链接信息
 
@@ -176,7 +176,7 @@ content_hash: sha256:dfcf7dce21d67d3b2bef984d6d42c36299d847e2aa15760d34b81e95368
 
 在接入[标准化隐私声明托管服务](../app/agc-help-privacy-policy-0000002316794885.md)之后，用户未签署隐私声明前，打开应用/元服务会弹出标准化隐私弹框，弹框样式如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/of-nt-HtRlW8jarjtvx0RQ/zh-cn_image_0000002589325161.png?HW-CC-KV=V1&HW-CC-Date=20260429T053713Z&HW-CC-Expire=86400&HW-CC-Sign=A871A10D4BB4309DE6E16908AEEB909E84F70E008058FBCDD9D7B47521A4E7A0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/of-nt-HtRlW8jarjtvx0RQ/zh-cn_image_0000002589325161.png)
 
 用户点击同意隐私弹框，应用市场会发送隐私弹框签署结果公共事件。应用可通过监听该事件，感知用户隐私签署结果。
 

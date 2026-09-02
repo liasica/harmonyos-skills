@@ -5,7 +5,7 @@ breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:31:41+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:e010b0a43b797c4ec42282d82b004eb3c88e45434d04c64e53f50ecd930d5734
+content_hash: sha256:17c4fd44f80846b2d6808a4d9d65f0acc12241fd25f873ef466008f1226ab3e4
 ---
 
 ## 场景介绍
@@ -22,7 +22,7 @@ content_hash: sha256:e010b0a43b797c4ec42282d82b004eb3c88e45434d04c64e53f50ecd930
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/7nPtoetNRGe1Rmu-drRMng/zh-cn_image_0000002558605244.png?HW-CC-KV=V1&HW-CC-Date=20260429T053139Z&HW-CC-Expire=86400&HW-CC-Sign=E4E407E9CB5B0A655CF6CBE1FE861422D5CA95B931CA701AA58671FA42421C35)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/7nPtoetNRGe1Rmu-drRMng/zh-cn_image_0000002558605244.png)
 
 **流程说明：**
 

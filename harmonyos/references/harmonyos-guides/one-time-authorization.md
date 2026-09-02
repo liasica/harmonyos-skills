@@ -5,7 +5,7 @@ breadcrumb: 指南 > 系统 > 安全 > 程序访问控制 > 应用权限管控 >
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:30:35+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:ab6ad67a893a6ec3541a6d26d2dc413617791b58b506c11891c8b693db2d280b
+content_hash: sha256:b1d4ad629801e85973a133e519053b2e9a025ed52b7418e465f0cc8f1058b75b
 ---
 
 基于授权最小化原则，防止应用获取和滥用用户数据。针对部分应用敏感权限，在弹窗向用户申请授权时，新增“允许本次使用”的授权选项。
@@ -14,7 +14,7 @@ content_hash: sha256:ab6ad67a893a6ec3541a6d26d2dc413617791b58b506c11891c8b693db2
 
 授权弹窗如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/F-6JsTkpQH2GwgQfV4iXOg/zh-cn_image_0000002558605198.png?HW-CC-KV=V1&HW-CC-Date=20260429T053034Z&HW-CC-Expire=86400&HW-CC-Sign=D6CBD34B54333630AD0AE8FB02B81A0CB85FB1E994187BAE6661EA75BD968664)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/F-6JsTkpQH2GwgQfV4iXOg/zh-cn_image_0000002558605198.png)
 
 同时，用户可以在“设置”中修改授权。修改路径：设置 > 隐私 > 权限管理 > 应用 > 目标应用 > 位置信息。
 
@@ -40,5 +40,5 @@ content_hash: sha256:ab6ad67a893a6ec3541a6d26d2dc413617791b58b506c11891c8b693db2
 
     如下图样例所示，小艺建议处于卡片可见状态：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/FTi3iLE1TDm5b7hRHB14KQ/zh-cn_image_0000002589324723.png?HW-CC-KV=V1&HW-CC-Date=20260429T053034Z&HW-CC-Expire=86400&HW-CC-Sign=294F8C798A5FB31B49EAA800AB8CE3FC6E74943162CDC87CF279630E5F6C2067)
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/FTi3iLE1TDm5b7hRHB14KQ/zh-cn_image_0000002589324723.png)
 * 当用户在权限设置中选择“每次询问”时，应用将获得模糊位置和位置临时权限。取消临时授权的操作与此相同。

@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > �
 category: harmonyos-references
 scraped_at: 2026-04-29T13:53:51+08:00
 doc_updated_at: 2026-03-20
-content_hash: sha256:cc11ace9a15a34c8b19329ab7f8853386f1767c5ef2be1c20995e83ceec71522
+content_hash: sha256:22f1d079feb9d105b02084e7027ab13f503caa773a13714b82aae2893bb44c4f
 ---
 
 列表包含一系列相同宽度的列表项。适合连续、多行呈现同类数据，例如图片和文本。
@@ -149,4 +149,4 @@ PhonePC/2in1TabletTVWearableLite Wearable
 24. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/BzGoNXcCT_icgXZh-ypLAQ/zh-cn_image_0000002558766932.png?HW-CC-KV=V1&HW-CC-Date=20260429T055349Z&HW-CC-Expire=86400&HW-CC-Sign=E19AACBE8769646BCA977CEDD055BBCEAEC238750B9D62233106D49CF26B9DDF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/BzGoNXcCT_icgXZh-ypLAQ/zh-cn_image_0000002558766932.png)

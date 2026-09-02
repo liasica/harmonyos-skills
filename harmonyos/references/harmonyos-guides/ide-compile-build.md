@@ -5,14 +5,14 @@ breadcrumb: 指南 > 构建应用 > 概述 > 构建产物说明
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:47:10+08:00
 doc_updated_at: 2026-01-15
-content_hash: sha256:8bb3b55eafbb243d59beb9881dce7a6652dae354ad5a303e562150e11e284bcc
+content_hash: sha256:270b5c362589fbb022e803c9c96818ccc0377be168a60e87dcc1018211340577
 ---
 
 ## HAP/HSP构建产物说明
 
 以HAP为例，release模式的构建产物一般包含以下文件：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/3Kqr7Be9Rpa79pZ6s1SbFg/zh-cn_image_0000002561832711.png?HW-CC-KV=V1&HW-CC-Date=20260429T054708Z&HW-CC-Expire=86400&HW-CC-Sign=F1B280A1FA9A81CA96E3702BE2ED45194ABA001E340B96525A08CD4A8A4B9112)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/3Kqr7Be9Rpa79pZ6s1SbFg/zh-cn_image_0000002561832711.png)
 
 * resources：构建产物中的资源文件目录，如图片、媒体资源、配置文件等。
 * modules.abc：构建产物中通过源码编译出的字节码文件。
@@ -36,7 +36,7 @@ content_hash: sha256:8bb3b55eafbb243d59beb9881dce7a6652dae354ad5a303e562150e11e2
 
 APP构建产物如下，其中包名取决于个人项目中的模块名，与下图可能不同：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/e0fDfq72QS6_JwDosM_hEg/zh-cn_image_0000002530912788.png?HW-CC-KV=V1&HW-CC-Date=20260429T054708Z&HW-CC-Expire=86400&HW-CC-Sign=4906EC4F7AC262A1FE193C3FC1AE45106C9C6CEC3F1C4087A463823FCF00EB4F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/e0fDfq72QS6_JwDosM_hEg/zh-cn_image_0000002530912788.png)
 
 * entry-default.hap：由字节码、资源、三方库、配置文件等打包生成的entry类型的hap包，是App应用安装和运行的基本单元，application-default.hap是feature类型的hap。
 * library-default.hsp：由字节码、资源、三方库、配置文件等打包生成的动态共享包，可实现代码和资源共享。

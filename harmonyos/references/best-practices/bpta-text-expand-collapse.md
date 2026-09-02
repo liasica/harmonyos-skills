@@ -5,7 +5,7 @@ breadcrumb: 最佳实践 > 布局与弹窗 > 文本展开折叠
 category: best-practices
 scraped_at: 2026-04-29T14:10:18+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:c8b2cd40e6da9b4421eaf12ee47cbe7dd68cecf461a3532f72daeb56dd8e3caa
+content_hash: sha256:c9f132ca69e044fc26e0a299b9cfa48d38f571c2652a65f3efa22bfdfbd48879
 ---
 
 ## 概述
@@ -14,7 +14,7 @@ content_hash: sha256:c8b2cd40e6da9b4421eaf12ee47cbe7dd68cecf461a3532f72daeb56dd8
 
 本文将介绍解决这一问题的基本逻辑和解决方案，帮助开发者使用系统自带模块，更简洁的解决问题。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/E-Jl-BERRFqu4gXjKHoqGA/zh-cn_image_0000002340609309.png?HW-CC-KV=V1&HW-CC-Date=20260429T061017Z&HW-CC-Expire=86400&HW-CC-Sign=C4D0956C25F4377D5420342E3BF3AC71770095CBB6DC453C948077DB26A72F46 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/E-Jl-BERRFqu4gXjKHoqGA/zh-cn_image_0000002340609309.png "点击放大")
 
 ## 纯文本展开折叠
 
@@ -25,13 +25,13 @@ content_hash: sha256:c8b2cd40e6da9b4421eaf12ee47cbe7dd68cecf461a3532f72daeb56dd8
 1. 文本中只有文字。
 2. 超出2行要能显示"...展开"，展开后显示收起。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/FX9akniKT4iVo_uw7QPLzQ/zh-cn_image_0000002306649880.png?HW-CC-KV=V1&HW-CC-Date=20260429T061017Z&HW-CC-Expire=86400&HW-CC-Sign=EA4B5AC86ADD9EDE4739316B06B8CD0C87257B057E5AACA3ABAF6634C8A53CF1 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/FX9akniKT4iVo_uw7QPLzQ/zh-cn_image_0000002306649880.png "点击放大")
 
 ### 实现原理
 
 需要计算出“...”前最后一个文字的索引和显示行高，以确定“收起”“展开”按钮的位置，其原理如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/RRiZ7W9TTnqOX4EaAfbohA/zh-cn_image_0000002306490160.png?HW-CC-KV=V1&HW-CC-Date=20260429T061017Z&HW-CC-Expire=86400&HW-CC-Sign=335E2C84CED45F41EAA23D71B6041573D05A9BEDDA9A2740C3BF12D16931DB58 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/RRiZ7W9TTnqOX4EaAfbohA/zh-cn_image_0000002306490160.png "点击放大")
 
 计算文本高度，结合按钮和“...”的宽度，计算收起文本最后一个文字的坐标，换算为对应内容索引，截断显示相应的内容。
 
@@ -153,13 +153,13 @@ content_hash: sha256:c8b2cd40e6da9b4421eaf12ee47cbe7dd68cecf461a3532f72daeb56dd8
 
 当前展示内容需要针对整个文本做截断并最终显示...和"展开"字眼，例如图片中的文本就比较长，需要在"潮声与你"的位置截断。该场景由于文本中有图片和不同字号的限制，使得计算截断文本的位置比较困难。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/tMdf2v9sTRCEZ4FpdUknqA/zh-cn_image_0000002340489169.png?HW-CC-KV=V1&HW-CC-Date=20260429T061017Z&HW-CC-Expire=86400&HW-CC-Sign=ED64418B3573DC6437538DD41A593D448C46BEE92B8AC37D7395D229B7E48165 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/tMdf2v9sTRCEZ4FpdUknqA/zh-cn_image_0000002340489169.png "点击放大")
 
 ### 实现原理
 
 需要计算出“...”前最后一个文字的索引和显示行高，以确定“收起”“展开”按钮的位置，其原理如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/xLyARxQARq6c9tbvg62slw/zh-cn_image_0000002340609313.png?HW-CC-KV=V1&HW-CC-Date=20260429T061017Z&HW-CC-Expire=86400&HW-CC-Sign=923D467C7ABBA7BA02C3406AFEFA278848AC5A58DB9A4FBE0C1A788A5B2A1DEE "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/xLyARxQARq6c9tbvg62slw/zh-cn_image_0000002340609313.png "点击放大")
 
 使用排版，计算实际需要收起内容的高度，结合按钮和“...”的宽度，计算收起文本最后一个文字的坐标，换算为对应内容索引，截断显示相应的内容。
 

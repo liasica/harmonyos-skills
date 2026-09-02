@@ -5,7 +5,7 @@ breadcrumb: 最佳实践 > 动画与转场 > 页面间转场
 category: best-practices
 scraped_at: 2026-04-29T14:10:42+08:00
 doc_updated_at: 2026-03-19
-content_hash: sha256:c348259c5e990f7e0c4b47cfc577ff0163c5015cb49dea5cca49538c0cf41320
+content_hash: sha256:53459383110a2f61c165a0d7058ab0080b91dd81895223d1050ca9c70ea9f257
 ---
 
 ## 概述
@@ -17,7 +17,7 @@ HarmonyOS为开发者提供了丰富的转场能力，如UIAbility转场、页�
 在实际开发过程中，需要把上述UX设计视角转换为开发实现视角，即使用HarmonyOS提供的转场能力和动画能力来实现UX设计的场景和动效。在视角转化上，包含了分析UX设计视角、设计转场方案、使用转场与动画能力、使用高级模板化转场、调试和优化，详细可以参考[《合理使用动画》](bpta-fair-use-animation.md)。通过以上步骤，开发者可以将UX设计视角转换为开发实现视角，并将设计师提供的转场场景和动效转化为具体的代码实现。这样可以确保应用在实际使用中达到设计的预期效果，并提供良好的用户体验。
 
 **图1** 合理使用导航组件和转场动效  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/epnOnE3RTYSrpWllaRNVZQ/zh-cn_image_0000002229336729.png?HW-CC-KV=V1&HW-CC-Date=20260429T061036Z&HW-CC-Expire=86400&HW-CC-Sign=5E4DD8A72B138AC26C77C18A2705125B27D3F9F2CA79C6BFF0DE81525960F5B9 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/epnOnE3RTYSrpWllaRNVZQ/zh-cn_image_0000002229336729.png "点击放大")
 
 ## 转场场景设计
 
@@ -43,12 +43,12 @@ HarmonyOS系统为开发者提供了丰富的转场动效库，使开发者能�
 
 **图2** 左右位移遮罩在列表展开场景下的用例
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/5cjaTKjhTUe-U5OGytxL9A/zh-cn_image_0000002193851348.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061036Z&HW-CC-Expire=86400&HW-CC-Sign=BA07AAE18B24AB851C8B9FAACAEFF00AC2265310E801F599EB035E41AE632A9F "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/5cjaTKjhTUe-U5OGytxL9A/zh-cn_image_0000002193851348.gif "点击放大")
 
 * 卡片/图表展开：单体独立卡片展开推荐使用一镜到底动效，见图3；相对复杂的组合卡片样式则需要由开发者以更为符合用户视觉流畅感为标准，根据实际情况选择左右位移遮罩动效或一镜到底动效。
 
 **图3** 一镜到底在单体卡片场景下的用例  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/_PcYzSXxRD-i1b89hfe1CQ/zh-cn_image_0000002229336725.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061036Z&HW-CC-Expire=86400&HW-CC-Sign=C22076245B37B1356D2484D38C0627F784E0A4C877C944DE38CEF9C26F03D3A0 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/_PcYzSXxRD-i1b89hfe1CQ/zh-cn_image_0000002229336725.gif "点击放大")
 
 对于层级转场，推荐使用系统转场，页面转场采用左右位移的运动方式，不应单帧直接切换或上下位移切换，曲线优先使用弹簧曲线。
 
@@ -59,12 +59,12 @@ HarmonyOS系统为开发者提供了丰富的转场动效库，使开发者能�
 * 固定搜索区域：在固定搜索区域中，大部分空间是不需要变化的，只是在上面增加了一层蒙版。主要变化区域集中在页眉，即搜索框和返回按键。当用户触发搜索操作时，页面可以使用淡入淡出动效来优化搜索体验，搜索框和返回按键通过渐变的方式进入视图，从而吸引用户的注意力，见图4。
 
 **图4** 淡入淡出在固定搜索区域场景下的用例  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/hsQ3dwR4RMGd3Tg4jZYMxg/zh-cn_image_0000002229451241.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061036Z&HW-CC-Expire=86400&HW-CC-Sign=37B031EDA78B2899F0FA8683D0DB6EA18EFB2A188FCE5DF8BF25338D8104439D "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/hsQ3dwR4RMGd3Tg4jZYMxg/zh-cn_image_0000002229451241.gif "点击放大")
 
 * 非固定搜索区域：在非固定搜索区域中，页面的变化更加复杂。为了保持用户的注意力和流畅的体验，可以使用一镜到底的动效，让搜索框始终保持在用户视线焦点中，相对忽视页面中其余变动较大的部分，见图5。
 
 **图5** 一镜到底在非固定搜索区域场景下的用例  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/x-jcRqFoQYqUEz_febfI2g/zh-cn_image_0000002193851356.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061036Z&HW-CC-Expire=86400&HW-CC-Sign=438D09F2185FA9EFE0298FD6886A170534DE4586D53E4FE0139141DB8D072B09 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/x-jcRqFoQYqUEz_febfI2g/zh-cn_image_0000002193851356.gif "点击放大")
 
 对于搜索转场，推荐使用共享元素转场，搜索框作为持续存在的元素串联前后两个界面，其他元素可采用淡入淡出或者其他过渡方式，不应单帧切换或非共享元素的方式转场。
 
@@ -73,7 +73,7 @@ HarmonyOS系统为开发者提供了丰富的转场动效库，使开发者能�
 新建转场是指用户创建新内容或实体时，应用页面发生的过渡效果，它可以让用户感知到新的事物的添加或创建，并提供一种连贯和引人注目的视觉切换。由于新建页面中需要完成整个页面的替换，推荐开发者使用左右位移遮罩作为转场动效，如下图所示。
 
 **图6** 左右位移遮罩在新建文本场景下的用例  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/l3KEmLk6QSyLLOJ9DIdCLg/zh-cn_image_0000002193851352.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061036Z&HW-CC-Expire=86400&HW-CC-Sign=09E382EA86B4530A7C65951974AE96ADB2792319177A392CBF7C4437FAE9A4E3 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/l3KEmLk6QSyLLOJ9DIdCLg/zh-cn_image_0000002193851352.gif "点击放大")
 
 对于新建转场，推荐使用系统转场，页面转场采用左右位移的运动方式，不应单帧直接切换或上下位移切换，曲线优先使用弹簧曲线。
 
@@ -82,7 +82,7 @@ HarmonyOS系统为开发者提供了丰富的转场动效库，使开发者能�
 用户对现有内容或实体进行编辑时，例如点击“编辑”按钮，选择要编辑的项目或内容，或者执行其他与编辑相关的动作，应用应提供动效引导用户进入一个用于编辑现有内容的页面，修改所需的信息。在这个场景下，开发者需要达成的视觉效果是从编辑按键处弹出编辑页面，类似于单体卡片展开的效果。但由于一般的编辑按键并没有分明的外框，并不适用一镜到底的动效，此时淡入淡出能够提供类似于一镜到底的效果，如下图所示。
 
 **图7** 淡入淡出在编辑联系人信息场景下的用例  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/A2KRRs5HSUuZ477PQz5_qQ/zh-cn_image_0000002229451221.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061036Z&HW-CC-Expire=86400&HW-CC-Sign=78825DE2CF5723C5F11F578DFC57EB6C22456B064C0F793B939A15EC8F6CD24A "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/A2KRRs5HSUuZ477PQz5_qQ/zh-cn_image_0000002229451221.gif "点击放大")
 
 对于编辑转场，推荐使用系统转场，页面转场采用淡入淡出的过渡方式，不应单帧直接切换或位移切换。
 
@@ -91,14 +91,14 @@ HarmonyOS系统为开发者提供了丰富的转场动效库，使开发者能�
 通用转场是一种广泛适用于不同情境和应用类型的页面过渡效果，目的是提供一种通用的、可重复使用的方式，以改善用户页面之间的切换，增强用户体验。其关键点在于要适用各种应用情境，包括不同类型的应用（例如社交媒体、电子商务、新闻等）和不同操作（例如导航、搜索、编辑等）。这就需要一种通用的、不需要复杂操作的动效来完成跳转任务，而缩放能够满足绝大多数用户的需求和视觉体验感受，如下图所示。
 
 **图8** 缩放在单体卡片场景下的用例  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/j-Le6-A3TFWj_eZ-1iIR5A/zh-cn_image_0000002193851344.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061036Z&HW-CC-Expire=86400&HW-CC-Sign=9D507163AD0F55C31DB8F4153C53FE74661D1E3C1156DDEE6AC81F0F94F20573 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/j-Le6-A3TFWj_eZ-1iIR5A/zh-cn_image_0000002193851344.gif "点击放大")
 
 **跨应用转场**
 
 跨应用转场是指用户从一个应用程序切换到另一个应用程序，用户能够无缝地从一个应用切换到另一个应用，而不会感到中断或不适。和以上几类转场都不同的是，用户点击应用内的链接、按钮或执行其他与外部应用交互的动作后，页面的跳转已经不仅仅存在于页面与页面之间，而是应用与应用之间，为此，推荐开发者使用专为此设计的左右间隔位移动效，跳转效果如下图所示。
 
 **图9** 左右间隔位移在跨应用跳转场景下的用例  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/wuUCeHOcQhGpYSsLEVMTww/zh-cn_image_0000002229336721.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061036Z&HW-CC-Expire=86400&HW-CC-Sign=79D0675F7E375249B2D38620D888505B6429E8F1FDA08C07769C83B9432B5083 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/wuUCeHOcQhGpYSsLEVMTww/zh-cn_image_0000002229336721.gif "点击放大")
 
 ### 场景解构
 
@@ -110,7 +110,7 @@ HarmonyOS系统为开发者提供了丰富的转场动效库，使开发者能�
 * 静止元素：转场中无任何变化的元素。
 
   **图10** 分析元素示例  
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/6t7eoqNTTselcIr4pU4mlA/zh-cn_image_0000002229451217.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061036Z&HW-CC-Expire=86400&HW-CC-Sign=3F56D0DA2F04FFC4E0620D29A19B3A50D6809FAE493379A8C2EDF1427553E741 "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/6t7eoqNTTselcIr4pU4mlA/zh-cn_image_0000002229451217.gif "点击放大")
 
   如上图中示例，①是进场元素，②是出场元素，③是持续元素，④是静止元素。
 
@@ -150,7 +150,7 @@ HarmonyOS系统为开发者提供了丰富的转场动效库，使开发者能�
 在日常的各类应用交互场景中，搜索转场是极为常见的页面转场。通过点击当前页面的搜索栏会跳转进入搜索输入页面，详细效果如下所示。
 
 **图11** 共享元素转场实现搜索转场  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/pyoxX9NaQ-ybzjTMvbOFjw/zh-cn_image_0000002229336749.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061036Z&HW-CC-Expire=86400&HW-CC-Sign=8259B81BE322BF1FB7A7B2BBB6669518A8C6E65B8F95CAFD4D4CE2E81991623C "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/pyoxX9NaQ-ybzjTMvbOFjw/zh-cn_image_0000002229336749.gif "点击放大")
 
 **实现原理**
 
@@ -306,7 +306,7 @@ HarmonyOS系统为开发者提供了丰富的转场动效库，使开发者能�
 如图所示，在进入第一个页面时为半模态转场，通过半模态展现多种登录的方式。点击进入第二个页面时为全模态转场，展示了手机验证码登录页面。
 
 **图12** 模态转场实现通用转场  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/YElfDVHsQtCv36HY2qcnNQ/zh-cn_image_0000002229451213.gif?HW-CC-KV=V1&HW-CC-Date=20260429T061036Z&HW-CC-Expire=86400&HW-CC-Sign=E1661E945819D5104113C8D1759412234D257047B249036144F9352D410D2D9C "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/YElfDVHsQtCv36HY2qcnNQ/zh-cn_image_0000002229451213.gif "点击放大")
 
 **实现原理**
 

@@ -5,7 +5,7 @@ breadcrumb: 指南 > NDK开发 > 代码开发 > C/C++标准库 > C/C++标准库�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:43:55+08:00
 doc_updated_at: 2026-03-20
-content_hash: sha256:f3486cb0503b6d1a764617918244d15e43fb6eeddcdf0d32d0cef2bbbfb1043c
+content_hash: sha256:9a3c17bda52ce9a306431a62360002c1d216aff41e3a7fd3ee58c4018f052cdc
 ---
 
 HarmonyOS NDK提供业界标准库[libc标准库](../harmonyos-references/musl.md)、[c++标准库](../harmonyos-references/cpp.md)，本文用于介绍C/C++标准库在HarmonyOS中的机制，开发者了解这些机制有助于在NDK开发过程中避免相关问题。
@@ -46,7 +46,7 @@ HarmonyOS中动态库加载namespace配置的情况
 1. default ns和ndk ns可以互相访问全部so，不能访问app ns的so。
 2. app ns能访问ndk ns的全部so，不能访问default ns的so。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/z3YD8g9CSpa3Cy7jZ0tObg/zh-cn_image_0000002558765868.png?HW-CC-KV=V1&HW-CC-Date=20260429T054354Z&HW-CC-Expire=86400&HW-CC-Sign=55ACD6C0F7137BB2AF702173E5A55BA37D768B5962B9A6C5AA4DC868D1D98A72)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/z3YD8g9CSpa3Cy7jZ0tObg/zh-cn_image_0000002558765868.png)
 
 ### rpath机制
 
@@ -61,7 +61,7 @@ rpath（run-time path）是在运行时指定共享库搜索路径的机制。�
 2. SET(CMAKE_INSTALL_RPATH "\${ORIGIN}/module")
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/PsGyWyQ8SsCyZdXivd9Nmg/zh-cn_image_0000002558606212.png?HW-CC-KV=V1&HW-CC-Date=20260429T054354Z&HW-CC-Expire=86400&HW-CC-Sign=E082AEB4534349031E8EE95A602DD5D8BB342A18A100826D9654EF2C6D092FA1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/PsGyWyQ8SsCyZdXivd9Nmg/zh-cn_image_0000002558606212.png)
 
 ### 支持dlclose
 

@@ -5,7 +5,7 @@ breadcrumb: 最佳实践 > 性能 > 性能优化 > 运行效率提高
 category: best-practices
 scraped_at: 2026-04-29T14:13:28+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:576dedc39e4e5e666d854fe5fd1b8db27f1dbd354f298086df4fd54111f4570e
+content_hash: sha256:16b94450ac52c4a4c40b12515fcbc60e8abf96f36cf7678b57f616cc5dfe088d
 ---
 
 在开发过程中，优化影响性能的代码片段，以提高运行效率。以下实践总结了一些高性能的写法和建议：
@@ -161,7 +161,7 @@ oh-package.json如下增加模块依赖library包：
 
 [oh-package.json5](https://gitcode.com/HarmonyOS_Samples/BestPracticeSnippets/blob/master/ArkTSModuleHighPerformanceSegment/ExpandImportPath/entry/oh-package.json5#L9-L12)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/EaRiwCp0SRu499VKpI9_UQ/zh-cn_image_0000002515417448.png?HW-CC-KV=V1&HW-CC-Date=20260429T061326Z&HW-CC-Expire=86400&HW-CC-Sign=F79CED203D2A83DB0317C66F6CBED6AAF6BCBE312C326CE13F7920D5085A37A9 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/EaRiwCp0SRu499VKpI9_UQ/zh-cn_image_0000002515417448.png "点击放大")
 
 **使用路径展开**
 
@@ -202,4 +202,4 @@ oh-package.json如下增加模块依赖library包：
 
 [Index.ets](https://gitcode.com/HarmonyOS_Samples/BestPracticeSnippets/blob/master/ArkTSModuleHighPerformanceSegment/ExpandImportPath/entry/src/main/ets/pages/Index.ets#L2-L31)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/p60HjOxKSCWDsklACp4SZw/zh-cn_image_0000002515577362.png?HW-CC-KV=V1&HW-CC-Date=20260429T061326Z&HW-CC-Expire=86400&HW-CC-Sign=1DBB216746C402390F3246392317972B56E59F094E16F38562507413A12D06C3 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/p60HjOxKSCWDsklACp4SZw/zh-cn_image_0000002515577362.png "点击放大")

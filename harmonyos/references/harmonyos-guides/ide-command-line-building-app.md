@@ -5,7 +5,7 @@ breadcrumb: 指南 > 命令行工具 > 搭建流水线
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:47:59+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:36e91ab60c5b1f31f3eddb65ed85e6365fba535001747587d888c3afe8c9603d
+content_hash: sha256:1d7d6ad54408bdb96937ec57d525404d3caf59b04cb2295f5394eef34506240e
 ---
 
 除了使用DevEco Studio一键式构建应用/元服务外，还可以使用命令行工具来调用Hvigor任务进行构建。通过命令行的方式构建应用或元服务，可用于构建CI（Continuous Integration）流水线，按照计划时间自动化地构建HAP/APP、签名、安装运行等操作。
@@ -48,7 +48,7 @@ content_hash: sha256:36e91ab60c5b1f31f3eddb65ed85e6365fba535001747587d888c3afe8c
    1. java -version
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/sGFDxzbgRT-n_gFxkKIP4g/zh-cn_image_0000002561752785.png?HW-CC-KV=V1&HW-CC-Date=20260429T054758Z&HW-CC-Expire=86400&HW-CC-Sign=A04BAAD141793FFDD3DB4FD3C3FBA6560E48FCFE40530DBECCB39FC09044F231)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/sGFDxzbgRT-n_gFxkKIP4g/zh-cn_image_0000002561752785.png)
 
 ### 获取命令行工具
 
@@ -59,7 +59,7 @@ content_hash: sha256:36e91ab60c5b1f31f3eddb65ed85e6365fba535001747587d888c3afe8c
    1. unzip commandline-tools-linux-x64-5.0.3.XXX.zip
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/NQL2KPDrRtugruyawjcb2g/zh-cn_image_0000002530752854.png?HW-CC-KV=V1&HW-CC-Date=20260429T054758Z&HW-CC-Expire=86400&HW-CC-Sign=EC01D2C57172399C845EC8EC01E59D26529554A021377DF294DDDACF8AC595EB)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/NQL2KPDrRtugruyawjcb2g/zh-cn_image_0000002530752854.png)
 3. 将解压后所在的路径定义为COMMANDLINE\_TOOL\_DIR，在后续配置Node、hdc、hvigor、ohpm工具环境变量时使用。例如解压在/opt路径下。
 
    ```
@@ -87,7 +87,7 @@ content_hash: sha256:36e91ab60c5b1f31f3eddb65ed85e6365fba535001747587d888c3afe8c
    1. node -v
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/uGiP1Mz0T8WAomioO0Ckaw/zh-cn_image_0000002561832775.png?HW-CC-KV=V1&HW-CC-Date=20260429T054758Z&HW-CC-Expire=86400&HW-CC-Sign=B0B77DD8A9B21A023A5C4587C99C3ECF005A758A6E3D9C967570DEEFA557041D)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/uGiP1Mz0T8WAomioO0Ckaw/zh-cn_image_0000002561832775.png)
 
 说明
 
@@ -458,7 +458,7 @@ hdc命令行工具是调试HarmonyOS应用/元服务的工具，该工具存放�
    ```
 2. 先配置[环境变量](ide-environment-config.md#zh-cn_topic_0000001056725590_li358362302311)，再打开[命令行工具](ide-commandline-get.md)，在文件夹下执行 npm install 命令，会生成node\_modules文件夹。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/aAxdEU2KQSuNTpN5F1zs8g/zh-cn_image_0000002530752848.png?HW-CC-KV=V1&HW-CC-Date=20260429T054758Z&HW-CC-Expire=86400&HW-CC-Sign=953745388AE24A591155D6C7CC5354FF6062C7B10C10B7392EDEBFC8F310E878)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/aAxdEU2KQSuNTpN5F1zs8g/zh-cn_image_0000002530752848.png)
 3. 将node\_modules文件夹和package.json文件拷贝到无网络电脑的C:\Users\*用户名目录*\.hvigor\wrapper\tools下（若当前无该目录，请手动创建）。
 4. 在无网络电脑上执行如下命令，设置npm离线模式：
 
@@ -479,7 +479,7 @@ hdc命令行工具是调试HarmonyOS应用/元服务的工具，该工具存放�
    ```
 2. 打开[命令行工具](ide-commandline-get.md)，在文件夹下执行 npm install 命令，会生成node\_modules文件夹。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/oyrUL_HxQs-JCnPgtBvHjg/zh-cn_image_0000002530752850.png?HW-CC-KV=V1&HW-CC-Date=20260429T054758Z&HW-CC-Expire=86400&HW-CC-Sign=04D9A46AB482948C9708AB7542AA7FB06D295D48BDAA523721E1D8F5EDB0F630)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/oyrUL_HxQs-JCnPgtBvHjg/zh-cn_image_0000002530752850.png)
 3. 将node\_modules文件夹拷贝到无网络电脑的工程根目录下。
 
 ### 安装ohpm依赖插件

@@ -5,7 +5,7 @@ breadcrumb: 指南 > 命令行工具 > 三方依赖管理工具（ohpm） > 常�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:47:55+08:00
 doc_updated_at: 2026-04-22
-content_hash: sha256:4ba5e61a85ca913a03ae64bc8d6139e8a1d0eabe6b238c3e7c4c66a685f2ae62
+content_hash: sha256:5215068435c6bcd705fc2dea8841a33c83b37dd71235cf8e38052d834e8181e5
 ---
 
 将npm三方库转换为ohpm三方库。因为语法差异，转换时仅对文件进行格式转换，不修改原npm包的代码逻辑。若HAR包在转换后出现代码不兼容的报错，开发者需修改原npm包的代码做适配。
@@ -98,13 +98,13 @@ ohpm convert命令仅保留npm包中package.json配置文件中的name、version
 8. ohpm INFO: Converted packages are saved to the "C:\Users\xxxxx\Desktop\convert_1712127991590" directory.
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/zanbUNf6QL2CauH8MzRSTg/zh-cn_image_0000002561833683.png?HW-CC-KV=V1&HW-CC-Date=20260429T054754Z&HW-CC-Expire=86400&HW-CC-Sign=D139D5B3442B9F4E5B3BBF95DE035EC7B3A8A3A4B76066BB6F5B675EA3570245 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/zanbUNf6QL2CauH8MzRSTg/zh-cn_image_0000002561833683.png "点击放大")
 
 **转换本地node\_modules目录中的包**
 
 执行npm install uuid后，转换本地node\_modules目录中的包，执行以下命令：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/GNmZI-QWSRK6iKrLKrv1Tg/zh-cn_image_0000002561753703.png?HW-CC-KV=V1&HW-CC-Date=20260429T054754Z&HW-CC-Expire=86400&HW-CC-Sign=4E0FAEAC0AB3DB1631B06C9DC69E0EBB51E5F04C35F2D3F59ECDF2B6D08C8F26)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/GNmZI-QWSRK6iKrLKrv1Tg/zh-cn_image_0000002561753703.png)
 
 ```
 1. ohpm convert C:\Users\xxxxx\Desktop\uuidInstallDir\node_modules
@@ -120,4 +120,4 @@ ohpm convert命令仅保留npm包中package.json配置文件中的name、version
 5. ohpm INFO: Converted packages are saved to the "C:\Users\xxxxx\Desktop\convert_1712128912583" directory.
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/JyxZ210KRumDC693HHJ2kg/zh-cn_image_0000002530913760.png?HW-CC-KV=V1&HW-CC-Date=20260429T054754Z&HW-CC-Expire=86400&HW-CC-Sign=8447E91286A1FA7637CE29A890A604DFD46797031F58D7D51ED3DDEF925A29B4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/JyxZ210KRumDC693HHJ2kg/zh-cn_image_0000002530913760.png)

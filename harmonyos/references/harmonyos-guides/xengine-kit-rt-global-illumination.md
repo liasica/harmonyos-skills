@@ -5,7 +5,7 @@ breadcrumb: 指南 > 图形 > XEngine Kit（GPU加速引擎服务） > 光线追
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:36:44+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:d20ed16d7ce059b3304133388e459304a86d2a1fa80fce5455451ec64d18bd6f
+content_hash: sha256:376de1c6dcb23091b14087255fbd18665b51561ed8eab1bc53b79b08e259f0f3
 ---
 
 从6.0.0(20) 版本开始，新增光线追踪全局光照特性。
@@ -76,7 +76,7 @@ NNGI算法：结合了AI和光线追踪技术，通过非常小分辨率（例�
 
 * 下面是基于Vulkan图形API平台集成动态漫反射全局光照的主要业务流程
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/U95L7n75TU-_I6P5kxF7DA/zh-cn_image_0000002558605584.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053643Z&HW-CC-Expire=86400&HW-CC-Sign=B4E2FFEA8FEC86E6EA36E81CF9186EA22C3C01EB8753B821BA1D42FC1675F0F8)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/U95L7n75TU-_I6P5kxF7DA/zh-cn_image_0000002558605584.jpg)
 
 1. 用户在使用动态漫反射全局光照特性前需要查询硬件平台是否支持光线追踪扩展。
 2. 用户在进入游戏初始化场景时调用HMS\_XEG\_EnumerateDeviceExtensionProperties接口查询XEngine支持的特性，当查询接口返回支持的特性列表中包含动态漫反射全局光照特性时代表可以使用此特性。
@@ -317,7 +317,7 @@ NNGI算法：结合了AI和光线追踪技术，通过非常小分辨率（例�
 
 下面是基于Vulkan图形API平台集成神经网络全局光照的主要业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/eJhDD5NjSBiKHlFZMbZlBQ/zh-cn_image_0000002589325111.jpg?HW-CC-KV=V1&HW-CC-Date=20260429T053643Z&HW-CC-Expire=86400&HW-CC-Sign=CBC586CB976E9DEFE76EE0F5D632FAD21CD141AB2DA54119B49FEA7459E0C316)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/eJhDD5NjSBiKHlFZMbZlBQ/zh-cn_image_0000002589325111.jpg)
 
 1. 用户在使用神经网络全局光照特性前需要查询硬件平台是否支持光线追踪扩展。
 2. 用户在进入游戏初始化场景时调用HMS\_XEG\_EnumerateDeviceExtensionProperties接口查询XEngine支持的特性，当查询接口返回支持的特性列表中包含神经网络全局光照特性时代表可以使用此特性。

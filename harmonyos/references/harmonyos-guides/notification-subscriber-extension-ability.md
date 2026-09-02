@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用服务 > Notification Kit（用户通知服务） > �
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:39:25+08:00
 doc_updated_at: 2026-04-02
-content_hash: sha256:c847901f903f2aa4e8c1f55fca571cbe5da7a3e5f7759ed9765e37a9666256d6
+content_hash: sha256:4bff5916118677e5b43ee87bb67796c8be32fa35ac1b4a7866e57dcfc24251ad
 ---
 
 ## 功能简介
@@ -32,4 +32,4 @@ content_hash: sha256:c847901f903f2aa4e8c1f55fca571cbe5da7a3e5f7759ed9765e37a9666
 
 ## 运作机制
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/UbmmwOx2SMWwq50FnXcHNA/zh-cn_image_0000002589325435.png?HW-CC-KV=V1&HW-CC-Date=20260429T053924Z&HW-CC-Expire=86400&HW-CC-Sign=9B15222C74B59C631CB44D4DC3ECADDF9BA0CF535901C478EB91EE7FA83893BD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/UbmmwOx2SMWwq50FnXcHNA/zh-cn_image_0000002589325435.png)

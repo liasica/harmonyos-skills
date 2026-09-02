@@ -5,7 +5,7 @@ breadcrumb: 最佳实践 > 功耗 > 应用功耗优化 > 前台任务低功耗 >
 category: best-practices
 scraped_at: 2026-04-29T14:13:49+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:24372db2a7ac6528d726ab1e0372e7ea4d18fd19cc2debf05181d2ba1f161967
+content_hash: sha256:4ff1b8cd5aa08c1b6231617026d431c86ca6254a20bd72171feb9caf08b65f07
 ---
 
 ## 规则
@@ -123,4 +123,4 @@ usage可以通过以下命令查看日志确认：
 
 执行效果示意如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/_YSNq_DxRdOIwd6NNPTYtw/zh-cn_image_0000002193850672.png?HW-CC-KV=V1&HW-CC-Date=20260429T061348Z&HW-CC-Expire=86400&HW-CC-Sign=75B382500BBA21B0F957B1E8608087C3566E14868815EE30F4989EC3BFE84829 "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/_YSNq_DxRdOIwd6NNPTYtw/zh-cn_image_0000002193850672.png "点击放大")

@@ -5,7 +5,7 @@ breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 >
 category: harmonyos-references
 scraped_at: 2026-04-29T13:52:43+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:d320204711449abc723759f5a3346af4ded58616f170a2e5d9f56ae44458ec69
+content_hash: sha256:fae15c83e9b65949023f0d14d61bb6d5189c2c41a2add2ee519734a4a8fdc71d
 ---
 
 animateToImmediately接口用来提供[显式动画](ts-explicit-animation.md)立即下发功能。同时加载多个属性动画的情况下，使用该接口可以立即执行闭包代码中状态变化导致的过渡动效。
@@ -105,4 +105,4 @@ PhonePC/2in1TabletTVWearable
 53. }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/P5oJcbaCSTCpjazGg9g5ng/zh-cn_image_0000002589246367.gif?HW-CC-KV=V1&HW-CC-Date=20260429T055242Z&HW-CC-Expire=86400&HW-CC-Sign=93996069FE057E2E60BB3ABD8DC9C45397DF720A8F2AB796CEA0A0E31BE2B50C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/P5oJcbaCSTCpjazGg9g5ng/zh-cn_image_0000002589246367.gif)

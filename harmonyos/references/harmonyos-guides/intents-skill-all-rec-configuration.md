@@ -5,14 +5,14 @@ breadcrumb: 指南 > AI > Intents Kit（意图框架服务） > 技能调用方�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:43:36+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:dbfa2830c2f9937696a4638d9b48d9bb5dc43db4d12f97155e6f3056d9243b47
+content_hash: sha256:d4665e7a75dda137149e0c95b723531112e19417c27601092b1c4493bb95f49e
 ---
 
 ## 方案概述
 
 开发者需要按照意图定义，进行意图注册并实现意图调用；用户通过对小艺对话进行自然语言输入，小艺理解语义转换成意图调用（含意图参数），执行意图调用实现对应交互体验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/hFbdkiZxSdKyVEpCjJ6WVg/zh-cn_image_0000002558606164.png?HW-CC-KV=V1&HW-CC-Date=20260429T054335Z&HW-CC-Expire=86400&HW-CC-Sign=458D3021A569F2BD3C31D1CE5A3672DE5A86AA489783D98BD6B9BBF1BBAFBB00)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/hFbdkiZxSdKyVEpCjJ6WVg/zh-cn_image_0000002558606164.png)
 
 ## 意图声明
 

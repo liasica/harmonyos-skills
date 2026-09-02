@@ -5,7 +5,7 @@ breadcrumb: 指南 > 系统 > 网络 > Distributed Service Kit（分布式管理
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:32:37+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:19a44a2e5f5012995e8974fe7f400b3608cc9d92433fc3aeebbfc277de42bc2c
+content_hash: sha256:2100e04548f6685ad70e41322cc725316c43b5472d0591249e49152f77f7e1dc
 ---
 
 ## 简介
@@ -37,7 +37,7 @@ content_hash: sha256:19a44a2e5f5012995e8974fe7f400b3608cc9d92433fc3aeebbfc277de4
 
 **图1** 应用跨设备连接运行机制
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/W1qDXl0NSu28K7CbCyG43Q/zh-cn_image_0000002558764922.png?HW-CC-KV=V1&HW-CC-Date=20260429T053236Z&HW-CC-Expire=86400&HW-CC-Sign=55DF5C49A4A432A039EA040E204994B62713A42D0E875E347FACC102FD5E2B71)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/W1qDXl0NSu28K7CbCyG43Q/zh-cn_image_0000002558764922.png)
 
 ### 约束与限制
 

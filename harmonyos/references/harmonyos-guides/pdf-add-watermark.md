@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用服务 > PDF Kit（PDF服务） > pdfService能力 > 
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:39:45+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:ff24f54dad3c1775ee5e5b6ea8e1dc6f810e0458b3d108a269abc27abe0a7e39
+content_hash: sha256:aa6789b74c7bdf8142ffb364bed264c866a528a1924bd80c3bd7dd99429dc464
 ---
 
 对指定页面添加水印，包括文本水印或图片水印。
@@ -13,7 +13,7 @@ content_hash: sha256:ff24f54dad3c1775ee5e5b6ea8e1dc6f810e0458b3d108a269abc27abe0
 * 文本水印可以设置字体、大小、旋转，位置等属性。
 * 图片水印可以设置缩放、旋转、透明度和位置等属性。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/jR1Km9m_T2esGNhpWFampQ/zh-cn_image_0000002558605948.png?HW-CC-KV=V1&HW-CC-Date=20260429T053944Z&HW-CC-Expire=86400&HW-CC-Sign=DFA6147E8FBDA838CA842484A2D059536088B0EC5BC0F8977191D51FB557CCFB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/jR1Km9m_T2esGNhpWFampQ/zh-cn_image_0000002558605948.png)
 
 ## 接口说明
 

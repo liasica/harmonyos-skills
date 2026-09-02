@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > Form Kit（卡片开发服务） > ArkTS卡�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:29:55+08:00
 doc_updated_at: 2026-04-17
-content_hash: sha256:89ee94b9db7a19bfeeb3738bfa6aa7182a03950d0ee9975902aafc999d7cb4cd
+content_hash: sha256:067710a8a19c7f34c4acc2aa38e80ead4fb9c0f76428e3eca6c267c084ea9b0e
 ---
 
 API version 22开始新增了[ohos.graphics.text.FontCollection.getLocalInstance](../harmonyos-references/js-apis-graphics-text.md#getlocalinstance22)接口获取本地字体集实例，应用可以通过这个本地实例为卡片加载自定义字体。
@@ -58,4 +58,4 @@ API version 22开始新增了[ohos.graphics.text.FontCollection.getLocalInstance
 
 ### 运行结果
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/EdVhQM5HTQeQrrtbdSfV-A/zh-cn_image_0000002558764792.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052954Z&HW-CC-Expire=86400&HW-CC-Sign=6962A326B82DA166997D227E16F2B997F190F331EEAB9FB932BC20333BE12B15)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/EdVhQM5HTQeQrrtbdSfV-A/zh-cn_image_0000002558764792.gif)

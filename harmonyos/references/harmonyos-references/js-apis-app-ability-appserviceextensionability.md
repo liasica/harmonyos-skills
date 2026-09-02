@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-appserviceextensionability
-title: @ohos.app.ability.AppServiceExtensionAbility (应用后台服务扩展组件)
+title: "@ohos.app.ability.AppServiceExtensionAbility (应用后台服务扩展组件)"
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > Stage模型能力的接口 > @ohos.app.ability.AppServiceExtensionAbility (应用后台服务扩展组件)
 category: harmonyos-references
 scraped_at: 2026-04-29T13:48:27+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:ade7b2ede88f71d03bc90741452b59548bcfe60f35e2d30003ce6cf131f7a0f5
+content_hash: sha256:45510c24004c90b5f5df41fc69d3a5291c7c7dbe2d4421e765d6a44456c7dc2c
 ---
 
 AppServiceExtensionAbility模块提供后台服务相关扩展能力，包括后台服务的创建、销毁、连接、断开等生命周期回调。
@@ -29,7 +29,7 @@ PhonePC/2in1TabletTVWearable
 
 AppServiceExtensionAbility提供了[onCreate()](js-apis-app-ability-appserviceextensionability.md#oncreate)、[onRequest()](js-apis-app-ability-appserviceextensionability.md#onrequest)、[onConnect()](js-apis-app-ability-appserviceextensionability.md#onconnect)、[onDisconnect()](js-apis-app-ability-appserviceextensionability.md#ondisconnect)和[onDestroy()](js-apis-app-ability-appserviceextensionability.md#ondestroy)生命周期回调，开发者可根据需要重写对应的回调方法。下图展示了AppServiceExtensionAbility的生命周期。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/V2we3f3oT7e49MjACH25yw/zh-cn_image_0000002589245725.png?HW-CC-KV=V1&HW-CC-Date=20260429T054506Z&HW-CC-Expire=86400&HW-CC-Sign=495428F2EE475A09DB54CACF4D0C15751D245A949BBCE612C1614E0C195BA8E6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/V2we3f3oT7e49MjACH25yw/zh-cn_image_0000002589245725.png)
 
 * **onCreate**
 

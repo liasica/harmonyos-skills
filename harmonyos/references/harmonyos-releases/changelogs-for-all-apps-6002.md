@@ -5,7 +5,7 @@ breadcrumb: 版本说明 > HarmonyOS 6.0.0(20) > OS平台能力 > OS平台行为
 category: harmonyos-releases
 scraped_at: 2026-04-29T13:21:48+08:00
 doc_updated_at: 2026-01-21
-content_hash: sha256:dca2465750f25573547d69c2d7693c2d7bbb015878f5bdbe8171dd29a8dd6870
+content_hash: sha256:c6e762c1cdb7fe750d3523cef30240bd3c756727c90c1349530255924d3218da
 ---
 
 ## Ability Kit
@@ -372,7 +372,7 @@ CanvasRenderingContext2D和OffscreenCanvasRenderingContext2D的font接口。
 
 保存控件系统提示弹框：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/6ubE1rI_TgqWMk6LAmdfsg/zh-cn_image_0000002394557509.png?HW-CC-KV=V1&HW-CC-Date=20260429T052147Z&HW-CC-Expire=86400&HW-CC-Sign=E946D5C0F0CDA4F64F3CB9E2D640515B646C5ED8118B84C3612C30AE76B3510F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/6ubE1rI_TgqWMk6LAmdfsg/zh-cn_image_0000002394557509.png)
 
 经评估，强制弹出系统弹框会与应用内已有弹框冲突，体验不够友好，系统将取消该系统强制弹框的行为。
 

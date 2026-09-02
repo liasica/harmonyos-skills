@@ -4,12 +4,12 @@ title: 方案概述
 category: harmonyos-guides
 scraped_at: 2026-04-28T07:53:39+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:8d492abb811157c2b831ee9e83ef63feeec8ac6e59b4a91d151e559925f0fbb9
+content_hash: sha256:6819879f0062f59249005b17d63937c64f2108f6aca00719081f6ec175ced312
 ---
 
 从6.0.0(20)开始，支持通过装饰器开发意图，支持将现有功能通过装饰器快速集成至系统入口。开发者可自定义意图，通过添加装饰器方式实现意图快速接入，支持Link跳转、Page和函数等意图装饰器，方便开发者快速开放应用内功能。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/IURFWL3PR-yXdGM8k61yTQ/zh-cn_image_0000002583439365.png?HW-CC-KV=V1&HW-CC-Date=20260427T235336Z&HW-CC-Expire=86400&HW-CC-Sign=3536577E350477C050AF918F9F382C61792A557416244BBA1155644B56AB3019)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/IURFWL3PR-yXdGM8k61yTQ/zh-cn_image_0000002583439365.png)
 
 开发者可根据想要暴露的应用功能，选择不同类型的装饰器进行意图声明：
 

@@ -5,7 +5,7 @@ breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC�
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:41:32+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:983812cd93022046672ad5ca0c860aac1aabb8036640f10d8730620ac4e0c1e3
+content_hash: sha256:96a0282fd13f8ad4f51ce8e449c30187d97f92726a5d90a8ae1f4614625bf917
 ---
 
 ## 功能说明
@@ -14,10 +14,10 @@ content_hash: sha256:983812cd93022046672ad5ca0c860aac1aabb8036640f10d8730620ac4e
 
 * update为false：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/DKfi23cFRem0Xei8J3J1rg/zh-cn_image_0000002558606134.png?HW-CC-KV=V1&HW-CC-Date=20260429T054131Z&HW-CC-Expire=86400&HW-CC-Sign=A16634761F9D64FB2D13704FC5968CBDE5A64B95877A0837C41BE8D8D9BDDBED)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/DKfi23cFRem0Xei8J3J1rg/zh-cn_image_0000002558606134.png)
 * update为true：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/ayCrQyRhQpu4hpVmaRQG4w/zh-cn_image_0000002589325661.png?HW-CC-KV=V1&HW-CC-Date=20260429T054131Z&HW-CC-Expire=86400&HW-CC-Sign=CA23F1DD1504C42DBF97E3C7C13B43BB7F6875C28DE5FFFB053C9B18B0D4376A)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/ayCrQyRhQpu4hpVmaRQG4w/zh-cn_image_0000002589325661.png)
 
 当输入shape为ND格式时，内部的reduce过程按last轴进行。当输入shape为NZ格式时，内部的reduce过程按照last轴和first轴进行
 

@@ -5,7 +5,7 @@ breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 管理网页交互 >
 category: harmonyos-guides
 scraped_at: 2026-04-29T13:29:20+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:7d57c2a1a8819236c5ba8119ddbaadb4eb1929c0df3b5ec78a331e4f295d4800
+content_hash: sha256:0ac8ca917cc99de237ea8f26ab96db012b9b181e2a1fbe1bed939b82e2ec0cf8
 ---
 
 开发者可利用Web组件的焦点管理功能，有效管理Web组件的获焦与失焦，同时利用H5端的W3C标准接口，管理网页界面上唯一可交互的元素获焦与失焦。
@@ -142,7 +142,7 @@ Web组件焦点、焦点链和走焦的详情说明请参考[ArkUI焦点基础�
 
 通过requestFocus接口主动请求获焦，并监听通用接口onFocus和onBlur事件，改变Web组件边框颜色。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/D2YbavtLTG2gJMDknUpZJg/zh-cn_image_0000002558764710.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052919Z&HW-CC-Expire=86400&HW-CC-Sign=D5FB9BDA4D56D178C4F179A30CA0D23C2B59FBE53A06318B180E6ED7850D2530)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/D2YbavtLTG2gJMDknUpZJg/zh-cn_image_0000002558764710.gif)
 
 ## Web组件内H5元素焦点控制
 
@@ -233,4 +233,4 @@ Web组件焦点、焦点链和走焦的详情说明请参考[ArkUI焦点基础�
 
 通过监听W3C接口focus和blur事件，改变输入背景色。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/6_zR62rsQfmJjP8zR1Mqgw/zh-cn_image_0000002558605056.gif?HW-CC-KV=V1&HW-CC-Date=20260429T052919Z&HW-CC-Expire=86400&HW-CC-Sign=D243E2FC34B4099669F13D81499780F98EEC5D363E4F2DA56F6C9DF629235091)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/6_zR62rsQfmJjP8zR1Mqgw/zh-cn_image_0000002558605056.gif)

@@ -1,6 +1,6 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-notificationextensionsubscription
-title: @ohos.notificationExtensionSubscription (notificationExtensionSubscription模块)
+title: "@ohos.notificationExtensionSubscription (notificationExtensionSubscription模块)"
 breadcrumb: API参考 > 应用服务 > Notification Kit（用户通知服务） > ArkTS API > @ohos.notificationExtensionSubscription (notificationExtensionSubscription模块)
 category: harmonyos-references
 scraped_at: 2026-04-28T08:17:33+08:00
