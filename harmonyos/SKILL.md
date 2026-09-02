@@ -19,6 +19,10 @@ HarmonyOS NEXT 开发者文档离线镜像。来源：`developer.huawei.com/cons
 
 3. 当用户需要参考链接时，从 frontmatter 的 `url` 字段返回——这是华为官方文档的规范引用。
 
+## MCP 工具（可选）
+
+若客户端已接入本仓库的 MCP 服务 `harmonyos-docs`（Claude Code 以 plugin 方式安装时自动启用），可直接用它的工具替代上面的 grep / Read：`search_docs` 检索索引或全文，`read_doc` 读正文（支持分页），`coding_rules` 读编码规则，`fetch_online` 在线兜底。两种方式效果等价，都要引用 `url` 作为出处。
+
 ## 分类
 
 | 路径 | 内容 |
@@ -28,6 +32,7 @@ HarmonyOS NEXT 开发者文档离线镜像。来源：`developer.huawei.com/cons
 | `references/harmonyos-references/` | API 参考（`@ohos.*` 模块、组件签名、错误码） |
 | `references/best-practices/` | 性能、兼容性、能耗等官方最佳实践 |
 | `references/harmonyos-faqs/` | 常见问题与解答 |
+| `references/harmonyos-roadmap/` | 变更预告（API 与特性的变更预告、changelog） |
 
 每个分类有专属 `INDEX.md`（含标题与统计），范围明确时可缩到分类内查找：
 

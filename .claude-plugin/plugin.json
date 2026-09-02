@@ -18,5 +18,11 @@
     "reference",
     "documentation"
   ],
-  "skills": "./harmonyos/"
+  "skills": "./harmonyos/",
+  "mcpServers": {
+    "harmonyos-docs": {
+      "command": "uv",
+      "args": ["run", "${CLAUDE_PLUGIN_ROOT}/mcp/server.py"]
+    }
+  }
 }
